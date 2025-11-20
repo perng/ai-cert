@@ -13,8 +13,14 @@ book:
     - part4.md
     - part5.md
 
+lang: zh-TW 
+
 format:
   html:
     theme: cosmo
   pdf:
     documentclass: scrreprt
+    pdf-engine: lualatex
+    mainfont: "Noto Serif TC"
+    sansfont: "Noto Serif TC"   # 標題也用同一個字型
+    CJKmainfont: "Noto Serif TC"
