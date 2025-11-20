@@ -1,0 +1,182 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "AI 雙認證全攻略：AI 應用規劃師 & 工程素養認證",
+    "section": "",
+    "text": "1 書名：AI 雙認證全攻略：AI 應用規劃師 & 工程素養認證\n適用對象： 準備經濟部 iPAS AI 應用規劃師（初/中級）及資策會人工智慧工程素養認證之考生。\n本攻略旨在協助考生掌握 AI 應用規劃師與工程素養認證之核心知識，內容涵蓋人工智慧基礎、機器學習、深度學習、生成式 AI、大數據分析、AI 倫理與法規，以及 Python 程式語言基礎。\n請點選左側目錄開始閱讀各章節。",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>書名：AI 雙認證全攻略：AI 應用規劃師 & 工程素養認證</span>"
+    ]
+  },
+  {
+    "objectID": "part1.html",
+    "href": "part1.html",
+    "title": "2  第一篇：人工智慧與機器學習基礎 (AI & Machine Learning Fundamentals)",
+    "section": "",
+    "text": "2.1 人工智慧概論",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>第一篇：人工智慧與機器學習基礎 (AI & Machine Learning Fundamentals)</span>"
+    ]
+  },
+  {
+    "objectID": "part1.html#人工智慧概論",
+    "href": "part1.html#人工智慧概論",
+    "title": "2  第一篇：人工智慧與機器學習基礎 (AI & Machine Learning Fundamentals)",
+    "section": "",
+    "text": "人工智慧概念 (L111)\n\nAI 的定義與分類 (L11101)\n\n關鍵術語： 弱人工智慧、強人工智慧、基本理論、核心目標 。\n核心概念： 掌握人工智慧的基本概念與應用領域 。\nAI 分類詳解：\n\n弱人工智慧 (ANI)： 專注於單一任務 (如 AlphaGo, Siri)。\n強人工智慧 (AGI)： 具備人類般的通用智慧與學習能力。\n超人工智慧 (ASI)： 超越人類智慧的 AI (理論階段)。",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>第一篇：人工智慧與機器學習基礎 (AI & Machine Learning Fundamentals)</span>"
+    ]
+  },
+  {
+    "objectID": "part1.html#機器學習基礎",
+    "href": "part1.html#機器學習基礎",
+    "title": "2  第一篇：人工智慧與機器學習基礎 (AI & Machine Learning Fundamentals)",
+    "section": "2.2 機器學習基礎",
+    "text": "2.2 機器學習基礎\n\n機器學習概念 (L113)\n\n機器學習基本原理 (L11301)\n\n關鍵術語： 機器學習 (Machine Learning) 。\n核心概念： 理解機器學習的基本原理及其在 AI 中的作用 。\n\n常見的機器學習模型 (L11302)\n\n核心概念： 熟悉常見的機器學習方法及其應用 。\n常見模型詳解：\n\n線性回歸 (Linear Regression) 與 邏輯回歸 (Logistic Regression)： 基礎的預測與分類模型。\n決策樹 (Decision Tree)： 樹狀結構的決策模型，易於解釋。\n隨機森林 (Random Forest)： 結合多棵決策樹的集成學習方法。\n支援向量機 (SVM)： 尋找最佳超平面以區分數據類別。\n單純貝氏分類器 (Naive Bayes)： 基於貝氏定理的機率分類器。\nK-近鄰演算法 (KNN)： 基於鄰近樣本進行分類。\nK-平均演算法 (K-Means)： 非監督式分群演算法。\n\n\n\n機器學習基礎數學 (L231)\n\n機率/統計之機器學習基礎應用 (L23101)\n線性代數之機器學習基礎應用 (L23102)\n數值優化技術與方法 (L23103)\n\n核心概念： 熟悉線性代數、微積分 (如梯度下降法)、機率和統計等基本數學知識 。",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>第一篇：人工智慧與機器學習基礎 (AI & Machine Learning Fundamentals)</span>"
+    ]
+  },
+  {
+    "objectID": "part1.html#演算法與理論",
+    "href": "part1.html#演算法與理論",
+    "title": "2  第一篇：人工智慧與機器學習基礎 (AI & Machine Learning Fundamentals)",
+    "section": "2.3 演算法與理論",
+    "text": "2.3 演算法與理論\n\n機器學習與深度學習 (L232)\n\n機器學習原理與技術 (L23201)\n常見機器學習演算法 (L23202)\n深度學習原理與框架 (L23203)\n\n核心概念： 理解演算法運作原理，瞭解機器學習與深度學習的技術差異 。\n深度學習架構：\n\n卷積神經網路 (CNN)： 影像識別 (如 ResNet, VGG)。\n循環神經網路 (RNN/LSTM/GRU)： 序列數據處理。\nTransformer： 自注意力機制 (如 BERT, GPT)。\n\n\n\n機器學習與深度學習理論 (L332)\n\n關鍵術語： 準確率 (Accuracy)、召回率 (Recall) 。\n核心概念：\n\n模型評估指標： Accuracy, Precision, Recall, F1-Score, ROC/AUC。\n集成學習： Bagging (Random Forest), Boosting (XGBoost), Stacking。\n正規化： L1 (Lasso), L2 (Ridge), Dropout, Batch Normalization。",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>第一篇：人工智慧與機器學習基礎 (AI & Machine Learning Fundamentals)</span>"
+    ]
+  },
+  {
+    "objectID": "part1.html#建模與調校",
+    "href": "part1.html#建模與調校",
+    "title": "2  第一篇：人工智慧與機器學習基礎 (AI & Machine Learning Fundamentals)",
+    "section": "2.4 建模與調校",
+    "text": "2.4 建模與調校\n\n機器學習建模與參數調校 (L233)\n\n數據準備與特徵工程 (L23301)\n\n技術： One-hot Encoding, 標準化/正規化, 缺失值填補。\n\n模型選擇與架構設計 (L23302)\n模型訓練、評估與驗證 (L23303)\n\n技術： 交叉驗證 (Cross-validation), 混淆矩陣 (Confusion Matrix)。\n\n模型調整與優化 (L22304)\n\n核心概念： 具備建構、訓練、調校模型的能力 (如 Grid Search)。",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>第一篇：人工智慧與機器學習基礎 (AI & Machine Learning Fundamentals)</span>"
+    ]
+  },
+  {
+    "objectID": "part2.html",
+    "href": "part2.html",
+    "title": "3  第二篇：AI 技術應用與生成式 AI (AI Applications & Generative AI)",
+    "section": "",
+    "text": "3.1 鑑別式與生成式 AI",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>第二篇：AI 技術應用與生成式 AI (AI Applications & Generative AI)</span>"
+    ]
+  },
+  {
+    "objectID": "part2.html#鑑別式與生成式-ai",
+    "href": "part2.html#鑑別式與生成式-ai",
+    "title": "3  第二篇：AI 技術應用與生成式 AI (AI Applications & Generative AI)",
+    "section": "",
+    "text": "鑑別式 AI 與生成式 AI 概念 (L114)\n\n鑑別式 AI 與生成式 AI 的基本原理 (L11401)\n\n關鍵術語： 鑑別式 AI (Discriminative AI)、生成式 AI (Generative AI) 。\n核心概念： 區分兩者的特性 (分類/預測 vs 創造新數據)。\n\n鑑別式 AI 與生成式 AI 的整合應用 (L11402)\n\n核心概念： 理解兩者的相關應用 。",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>第二篇：AI 技術應用與生成式 AI (AI Applications & Generative AI)</span>"
+    ]
+  },
+  {
+    "objectID": "part2.html#生成式-ai-應用與工具",
+    "href": "part2.html#生成式-ai-應用與工具",
+    "title": "3  第二篇：AI 技術應用與生成式 AI (AI Applications & Generative AI)",
+    "section": "3.2 生成式 AI 應用與工具",
+    "text": "3.2 生成式 AI 應用與工具\n\n生成式 AI 應用與規劃 (L12)\n\nNo Code / Low Code 概念 (L121)\n\nNo Code / Low Code 的基本概念 (L12101)\n\n關鍵術語： No Code (無程式碼)、Low Code (低程式碼) 。\n\nNo Code / Low Code 的優勢與限制 (L12102)\n\n核心概念： 掌握工具在生成式 AI 應用中的功用與優勢 。\n常見工具： Zapier, Make, Coze, Dify。\n\n\n生成式 AI 應用領域與工具使用 (L122)\n\n生成式 AI 應用領域與常見工具 (L12201)\n\n核心概念： 熟悉常見工具的基本操作 。\n熱門工具： ChatGPT, Claude, Midjourney, Stable Diffusion, GitHub Copilot。\n\n如何善用生成式 AI 工具 (L12202)\n\n應用能力： Prompt Engineering (Zero-shot, Few-shot, CoT)。\n\n\n生成式 AI 導入評估規劃 (L123)\n\n生成式 AI 導入評估 (L12301)\n生成式 AI 導入規劃 (L12302)\n\n關鍵術語： 需求確認、資源分配、試用測試 。\n\n生成式 AI 風險管理 (L12303)\n\n\n生成式 AI 應用 (L343)\n\n核心概念： 使用生成式 AI 創作音樂時，提供具體的音樂結構和風格描述可提高準確性 。",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>第二篇：AI 技術應用與生成式 AI (AI Applications & Generative AI)</span>"
+    ]
+  },
+  {
+    "objectID": "part2.html#進階-ai-技術與部署",
+    "href": "part2.html#進階-ai-技術與部署",
+    "title": "3  第二篇：AI 技術應用與生成式 AI (AI Applications & Generative AI)",
+    "section": "3.3 進階 AI 技術與部署",
+    "text": "3.3 進階 AI 技術與部署\n\n人工智慧技術應用與規劃 (L21)\n\nAI 相關技術應用 (L211)\n\n自然語言處理技術與應用 (L21101)\n電腦視覺技術與應用 (L21102)\n生成式 AI 技術與應用 (L21103)\n多模態人工智慧應用 (L21104)\n核心概念： 熟悉 AI 相關技術框架 。\n進階技術：\n\nGAN： 生成對抗網路。\nDiffusion Model： 擴散模型。\nLLM： 大型語言模型 (Transformer)。\n\n\nAI 導入評估規劃 (L212)\n\nAI 導入評估 (L21201)\nAI 導入規劃 (L21202)\nAI 風險管理 (L21203)\n\nAI 技術應用與系統部署 (L213)\n\n數據準備與模型選擇 (L21301)\nAI 技術系統集成與部署 (L21302)\n核心概念： MLOps, Edge AI, Cloud AI, API 整合。\n\n\n自然語言處理與電腦視覺 (L342)\n\n關鍵術語： 詞袋模型 (Bag-of-Words) 。\n核心概念： 詞袋模型用於文字特徵提取 。\nNLP 技術： TF-IDF, Word2Vec, BERT, GPT。\nCV 技術： YOLO (物件偵測), Segmentation (影像分割)。",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>第二篇：AI 技術應用與生成式 AI (AI Applications & Generative AI)</span>"
+    ]
+  },
+  {
+    "objectID": "part3.html",
+    "href": "part3.html",
+    "title": "4  第三篇：資料科學與大數據 (Data Science & Big Data)",
+    "section": "",
+    "text": "4.1 資料處理基礎",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>第三篇：資料科學與大數據 (Data Science & Big Data)</span>"
+    ]
+  },
+  {
+    "objectID": "part3.html#資料處理基礎",
+    "href": "part3.html#資料處理基礎",
+    "title": "4  第三篇：資料科學與大數據 (Data Science & Big Data)",
+    "section": "",
+    "text": "資料處理與分析概念 (L112)\n\n資料基本概念與來源 (L11201)\n\n關鍵術語： 資料收集、資料清洗 。\n\n資料整理與分析流程 (L11202)\n\n關鍵術語： 資料分析、資料視覺化 。\n核心概念： 理解資料在 AI 模型中扮演的角色與作用 。\n\n資料隱私與安全 (L11203)\n\n核心概念： 資料處理過程中的安全規範 。\n\n\n資料科學基礎 (L331)\n\n關鍵術語： 圓餅圖 (Pie Chart) 。\n核心概念： 圓餅圖最適合用於比較各類別的比例 。\n常見圖表類型：\n\n長條圖 (Bar Chart)： 比較不同類別的數值大小。\n折線圖 (Line Chart)： 顯示數據隨時間變化的趨勢。\n直方圖 (Histogram)： 顯示數據的分佈情況 (如常態分佈)。\n散佈圖 (Scatter Plot)： 觀察兩個變數之間的相關性。\n箱型圖 (Box Plot)： 顯示數據的四分位數、中位數及離群值。\n熱力圖 (Heatmap)： 以顏色深淺表示數值大小，常用於相關係數矩陣。",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>第三篇：資料科學與大數據 (Data Science & Big Data)</span>"
+    ]
+  },
+  {
+    "objectID": "part3.html#大數據技術與應用",
+    "href": "part3.html#大數據技術與應用",
+    "title": "4  第三篇：資料科學與大數據 (Data Science & Big Data)",
+    "section": "4.2 大數據技術與應用",
+    "text": "4.2 大數據技術與應用\n\n大數據處理分析與應用 (L22)\n\n機率統計基礎 (L221)\n\n敘述性統計與資料摘要技術 (L22101)\n機率分佈與資料分佈模型 (L22102)\n假設檢定與統計推論 (L22103)\n核心概念： 瞭解機率與統計基礎知識，確保數據處理與分析結果的準確性 。\n\n大數據處理技術 (L222)\n\n數據收集與清理 (L22201)\n數據儲存與管理 (L22202)\n數據處理技術與工具 (L22203)\n核心概念： 具備使用大數據處理技術與分析方法的能力 。\n分散式運算框架： Hadoop (MapReduce), Spark (記憶體內運算)。\nNoSQL 資料庫： MongoDB (文件型), Cassandra (寬欄型), Redis (鍵值型)。\n資料流處理： Kafka (訊息佇列)。\n\n大數據分析方法與工具 (L223)\n\n統計學在大數據中的應用 (L22301)\n常見的大數據分析方法 (L22302)\n數據可視化工具 (L22303)\n核心概念： 熟悉使用工具進行數據視覺化，深入挖掘數據洞察 。\n\n大數據在人工智慧之應用 (L224)\n\n大數據與機器學習 (L22401)\n大數據在鑑別式 AI 中的應用 (L22402)\n大數據在生成式 AI 中的應用 (L22403)\n大數據隱私保護、安全與合規 (L22404)\n核心概念： 具備評估大數據在 AI 應用中效益的能力 。",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>第三篇：資料科學與大數據 (Data Science & Big Data)</span>"
+    ]
+  },
+  {
+    "objectID": "part4.html",
+    "href": "part4.html",
+    "title": "5  第四篇：AI 倫理、治理與風險 (AI Ethics, Governance & Risks)",
+    "section": "",
+    "text": "5.1 AI 治理與風險",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>第四篇：AI 倫理、治理與風險 (AI Ethics, Governance & Risks)</span>"
+    ]
+  },
+  {
+    "objectID": "part4.html#ai-治理與風險",
+    "href": "part4.html#ai-治理與風險",
+    "title": "5  第四篇：AI 倫理、治理與風險 (AI Ethics, Governance & Risks)",
+    "section": "",
+    "text": "AI 治理概念 (L11102)\n\n關鍵術語： 隱私 (Privacy)、安全性 (Security)、AI 倫理 (Ethics) 。\n核心概念： AI 技術在隱私、安全性與倫理層面可能面臨的挑戰 。\n\n機器學習治理 (L234)\n\n數據隱私、安全與合規 (L23401)\n演算法偏見與公平性 (L23402)\n\nAI 趨勢與風險 (L341)\n\n關鍵術語： AI 幻覺 (AI Hallucination) 。\n核心概念： AI 幻覺指模型生成錯誤或誤導性結果 。\n常見 AI 風險：\n\n偏見 (Bias)： 訓練數據不平衡導致模型產生歧視性結果。\nDeepfake： 利用 AI 生成逼真的虛假影像或音訊。\n對抗式攻擊 (Adversarial Attacks)： 透過微小擾動欺騙 AI 模型。\n模型漂移 (Model Drift)： 模型效能隨時間推移而下降。",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>第四篇：AI 倫理、治理與風險 (AI Ethics, Governance & Risks)</span>"
+    ]
+  },
+  {
+    "objectID": "part4.html#ai-倫理",
+    "href": "part4.html#ai-倫理",
+    "title": "5  第四篇：AI 倫理、治理與風險 (AI Ethics, Governance & Risks)",
+    "section": "5.2 AI 倫理",
+    "text": "5.2 AI 倫理\n\nAI 倫理與社會影響 (L31)\n\nAI 倫理概念理解 (L311)\n\n關鍵術語： 資料匿名化 (Data Anonymization)、用戶同意管理 (User Consent Management) 。\n核心概念： 資料匿名化是遵守倫理規範並保護個資最常見的作法 。\n\nAI 倫理原則應用與案例分析 (L312)\n\n關鍵術語： 算法公正性 。\n核心概念： 金融領域的主要挑戰在於決策過程的透明度與隱私保護 。\n醫療應用： 醫療影像診斷輔助是 AI 在醫療領域的常見應用 。",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>第四篇：AI 倫理、治理與風險 (AI Ethics, Governance & Risks)</span>"
+    ]
+  },
+  {
+    "objectID": "part5.html",
+    "href": "part5.html",
+    "title": "6  第五篇：AI 程式語言 (AI Programming)",
+    "section": "",
+    "text": "6.1 Python 基礎",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>第五篇：AI 程式語言 (AI Programming)</span>"
+    ]
+  },
+  {
+    "objectID": "part5.html#python-基礎",
+    "href": "part5.html#python-基礎",
+    "title": "6  第五篇：AI 程式語言 (AI Programming)",
+    "section": "",
+    "text": "AI 程式語言：Python 基礎運用 (L32)\n\n基本語法與變數 (L321)\n\n關鍵術語： 變數命名規則 。\n核心概念： 變數名稱不能以數字開頭（如 3_Pig 是錯誤的） 。\n型態轉換： 掌握字串與數字的輸出格式，如 print(5, 10, sep=',') 輸出為 5,10 。\n\n運算子與邏輯控制 (L322)\n\n關鍵術語： // (求商數運算子) 。\n其他運算子： ** (次方), % (取餘數)。\n迴圈結構：\n\nwhile...else：當迴圈條件不成立而結束時會執行 else 區塊。\nfor 迴圈：遍歷序列 (List, String 等)。\nbreak 與 continue：控制迴圈的執行流程。\n\n\n資料結構 (L323)\n\n關鍵術語： List (列表), Tuple (元組), Dictionary (字典) 。\n核心概念： Dictionary 使用鍵值對 (key-value) 儲存資料；Tuple 是不可變資料型態 。\n集合 (Set)： 無序且不重複的元素集合，常用於去重或集合運算。",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>第五篇：AI 程式語言 (AI Programming)</span>"
+    ]
+  }
+]
