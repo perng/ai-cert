@@ -7,6 +7,11 @@ book:
   date: "2025-11-20"
   chapters:
     - index.md
+    - part1.md
+    - part2.md
+    - part3.md
+    - part4.md
+    - part5.md
 
 format:
   html:
