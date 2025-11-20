@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-TW" xml:lang="zh-TW"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
@@ -57,20 +57,49 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "沒有結果",
+    "search-matching-documents-text": "符合的文件",
+    "search-copy-link-title": "複製搜尋連結",
+    "search-hide-matches-text": "隱藏其他符合的結果",
+    "search-more-match-text": "更多符合結果",
+    "search-more-matches-text": "更多符合結果",
+    "search-clear-button-title": "清除",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "取消",
+    "search-submit-button-title": "送出",
+    "search-label": "搜尋"
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -80,13 +109,13 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切換側邊欄導航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part1.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">第一篇：人工智慧與機器學習基礎 (AI &amp; Machine Learning Fundamentals)</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切換側邊欄導航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="搜尋" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -103,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="搜尋"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -151,12 +180,13 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">目錄</h2>
    
   <ul>
   <li><a href="#第一章人工智慧概論-introduction-to-ai" id="toc-第一章人工智慧概論-introduction-to-ai" class="nav-link active" data-scroll-target="#第一章人工智慧概論-introduction-to-ai"><span class="header-section-number">2.1</span> 第一章：人工智慧概論 (Introduction to AI)</a>
   <ul class="collapse">
-  <li><a href="#ai-的三種型態" id="toc-ai-的三種型態" class="nav-link" data-scroll-target="#ai-的三種型態"><span class="header-section-number">2.1.1</span> AI 的三種型態</a></li>
+  <li><a href="#什麼是人工智慧" id="toc-什麼是人工智慧" class="nav-link" data-scroll-target="#什麼是人工智慧"><span class="header-section-number">2.1.1</span> 什麼是人工智慧？</a></li>
+  <li><a href="#ai-的三種型態" id="toc-ai-的三種型態" class="nav-link" data-scroll-target="#ai-的三種型態"><span class="header-section-number">2.1.2</span> AI 的三種型態</a></li>
   </ul></li>
   <li><a href="#第二章機器學習基礎-machine-learning-basics" id="toc-第二章機器學習基礎-machine-learning-basics" class="nav-link" data-scroll-target="#第二章機器學習基礎-machine-learning-basics"><span class="header-section-number">2.2</span> 第二章：機器學習基礎 (Machine Learning Basics)</a>
   <ul class="collapse">
@@ -200,10 +230,12 @@ ul.task-list li input[type="checkbox"] {
 <p>歡迎來到人工智慧 (AI) 的世界！這本書將帶領你從零開始，深入淺出地理解 AI 的核心概念、運作原理以及它如何改變我們的生活。我們不需要複雜的數學公式，而是用直觀的語言和生動的例子，讓你輕鬆掌握這些看似高深的技術。</p>
 <section id="第一章人工智慧概論-introduction-to-ai" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="第一章人工智慧概論-introduction-to-ai"><span class="header-section-number">2.1</span> 第一章：人工智慧概論 (Introduction to AI)</h2>
-<p>. ### 什麼是人工智慧？</p>
+<section id="什麼是人工智慧" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="什麼是人工智慧"><span class="header-section-number">2.1.1</span> 什麼是人工智慧？</h3>
 <p>簡單來說，人工智慧 (Artificial Intelligence, AI) 就是讓電腦擁有像人類一樣的「智慧」。這包括學習、推理、解決問題、理解語言，甚至感知環境的能力。想像一下，傳統的電腦程式就像是一個只會聽命行事的工廠作業員，你必須給它明確的指令（程式碼），它才會動作。而 AI 則像是一個聰明的學徒，它可以透過觀察數據和經驗，自己學會如何完成任務。</p>
-<section id="ai-的三種型態" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="ai-的三種型態"><span class="header-section-number">2.1.1</span> AI 的三種型態</h3>
+</section>
+<section id="ai-的三種型態" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="ai-的三種型態"><span class="header-section-number">2.1.2</span> AI 的三種型態</h3>
 <p>我們可以將 AI 依據其能力的強弱，分為三個等級：</p>
 <blockquote class="blockquote">
 <p><strong>Figure Prompt:</strong> Generate a flat illustration comparing three types of AI. 1. Weak AI: A smartphone showing Siri/Assistant icon. 2. Strong AI: A robot shaking hands with a human, looking equal. 3. Super AI: A glowing, abstract digital brain hovering above a city, symbolizing superior intelligence. Style: Modern, clean, vector art.</p>
@@ -238,20 +270,59 @@ ul.task-list li input[type="checkbox"] {
 <section id="常見的機器學習模型-你的-ai-工具箱" class="level3" data-number="2.2.2">
 <h3 data-number="2.2.2" class="anchored" data-anchor-id="常見的機器學習模型-你的-ai-工具箱"><span class="header-section-number">2.2.2</span> 常見的機器學習模型 (你的 AI 工具箱)</h3>
 <p>機器學習有很多種方法（模型），就像工具箱裡有不同的工具，適用於不同的問題。</p>
+<div id="fig-linear-regression" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-linear-regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/linear-regression.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-linear-regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+圖&nbsp;2.1: 線性回歸
+</figcaption>
+</figure>
+</div>
 <ol type="1">
-<li><p><strong>線性回歸 (Linear Regression)</strong>：</p>
+<li><strong>線性回歸 (Linear Regression)</strong>：
 <ul>
 <li><strong>概念</strong>：想像你在畫一張圖，橫軸是房子的大小，縱軸是房價。你會發現點點大致分佈在一條線附近。線性回歸就是試著畫出這條「最佳直線」，用來預測未來的趨勢。</li>
+<li><strong>數學原理 (Friendly Math)</strong>： 其實這條線的公式非常簡單，就是國中學過的： <span class="math display">\[ y = wx + b \]</span>
+<ul>
+<li><strong><span class="math inline">\(y\)</span> (預測值)</strong>：我們想知道的答案（例如：房價）。</li>
+<li><strong><span class="math inline">\(x\)</span> (輸入值)</strong>：我們已知的資訊（例如：房子坪數）。</li>
+<li><strong><span class="math inline">\(w\)</span> (權重 Weight)</strong>：這代表影響力的大小。例如，每多一坪，房價會增加多少？這個「多少」就是 <span class="math inline">\(w\)</span>（斜率）。</li>
+<li><strong><span class="math inline">\(b\)</span> (偏差 Bias)</strong>：這代表起跑點。就算坪數是 0，房子也不會是免費的（可能有地段的基本價值），這個基本值就是 <span class="math inline">\(b\)</span>（截距）。</li>
+</ul>
+<strong>AI 的任務</strong>，就是透過看大量的數據，自動算出最準確的 <span class="math inline">\(w\)</span> 和 <span class="math inline">\(b\)</span> 是多少。</li>
 <li><strong>應用</strong>：預測房價、股票走勢、銷售量。</li>
+<li><strong>如何知道準不準？(RSE)</strong>： 我們怎麼知道這條線畫得好不好？這就要看 <strong>RSE (殘差標準誤, Residual Standard Error)</strong>。
+<ul>
+<li><strong>概念</strong>：想像這條線是「標準答案」，但真實的房價（紅點）通常不會剛好落在線上，而是會散落在線的上下。RSE 就是在計算這些點<strong>平均偏離</strong>這條線多遠。</li>
+<li><strong>解讀</strong>：RSE <strong>越小越好</strong>。
+<ul>
+<li>如果 RSE = 0，代表所有點都在線上，預測完美（但現實中幾乎不可能）。</li>
+<li>如果 RSE 很大，代表點點分佈得很散，這條線的預測能力很差。</li>
 </ul></li>
-<li><p><strong>邏輯回歸 (Logistic Regression)</strong>：</p>
+<li><strong>公式 (Friendly Math)</strong>： <span class="math display">\[ RSE = \sqrt{\frac{1}{n-2}\sum (y_i - \hat{y}_i)^2} \]</span> 別被嚇到了！簡單來說就是：把每個點的誤差 <span class="math inline">\((y - \hat{y})\)</span> 平方加起來，除以點的數量，再開根號。就像是算所有誤差的「平均值」。</li>
+</ul></li>
+</ul></li>
+<li><strong>邏輯回歸 (Logistic Regression)</strong>：
 <ul>
 <li><strong>概念</strong>：雖然名字有「回歸」，但它其實是用來做「分類」的。它像是一個開關，判斷事情是「是」或「否」（0 或 1）。</li>
+<li><strong>數學原理 (Friendly Math)</strong>： 它其實就是把線性回歸的結果，丟進一個 S 型的函數（Sigmoid 函數）裡面： <span class="math display">\[ P(y=1) = \frac{1}{1 + e^{-(wx+b)}} \]</span>
+<ul>
+<li><strong>Sigmoid 函數</strong>：這個函數很神奇，不管你輸入多大或多小的數字，它吐出來的結果永遠在 0 到 1 之間。</li>
+<li><strong>機率</strong>：這個 0 到 1 的數字，就代表「機率」。例如算出 0.8，就代表有 80% 的機率是垃圾郵件。</li>
+<li><strong>決策</strong>：通常我們設 0.5 為門檻。大於 0.5 就是「是」，小於 0.5 就是「否」。</li>
+</ul></li>
 <li><strong>應用</strong>：判斷電子郵件是不是垃圾郵件、這筆交易是不是詐騙。</li>
 </ul></li>
-<li><p><strong>決策樹 (Decision Tree)</strong>：</p>
+<li><strong>決策樹 (Decision Tree)</strong>：
 <ul>
 <li><strong>概念</strong>：這就像是在玩「20 個問題」遊戲。透過一連串的「是/否」問題，將數據層層分類，直到得出結論。</li>
+<li><strong>數學原理 (Friendly Math)</strong>： 決策樹怎麼知道要先問哪個問題？它會算一個叫做 <strong>「亂度 (Entropy)」</strong> 或 <strong>「基尼係數 (Gini Impurity)」</strong> 的東西。
+<ul>
+<li><strong>亂度</strong>：想像一個房間裡有紅球和藍球。如果紅藍各半，亂度最大（最難猜）；如果全是紅球，亂度為 0（最好猜）。</li>
+<li><strong>資訊獲利 (Information Gain)</strong>：AI 會試著問一個問題（例如：球是大顆的嗎？），如果問完之後，分出來的兩堆球「亂度」變小了，代表這個問題問得好！AI 就是一直在找能讓亂度下降最快的問題。</li>
+</ul></li>
 <li><strong>結構</strong>：樹根是第一個問題，樹枝是選項，樹葉是最終的分類結果。</li>
 <li><strong>應用</strong>：銀行審核貸款（年收入 &gt; 100萬？是 -&gt; 信用良好？是 -&gt; 核准）。</li>
 </ul></li>
@@ -263,18 +334,43 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>隨機森林 (Random Forest)</strong>：
 <ul>
 <li><strong>概念</strong>：俗話說「三個臭皮匠，勝過一個諸葛亮」。隨機森林就是種植很多棵「決策樹」，然後讓它們投票。如果大部分的樹都說是「A 類」，那結果就是 A。這通常比單一決策樹更準確。</li>
+<li><strong>數學原理 (Friendly Math)</strong>：
+<ul>
+<li><strong>集成學習 (Ensemble Learning)</strong>：這背後的數學原理叫做「大數法則」。假設每一棵樹的準確率只有 60%（比亂猜好一點），但如果我們有 100 棵樹一起投票，犯錯的機率就會大幅下降。</li>
+<li><strong>隨機性</strong>：為什麼叫「隨機」？因為每棵樹看到的數據都不太一樣（隨機抽樣），這樣它們才會有不同的觀點，投票起來才客觀。</li>
+</ul></li>
 </ul></li>
 <li><strong>支援向量機 (SVM)</strong>：
 <ul>
 <li><strong>概念</strong>：想像桌上有紅球和藍球混在一起。SVM 的任務就是拿一根棍子（在二維平面是線，三維空間是面），試著把紅球和藍球分得越開越好，這根棍子就是「最佳超平面」。</li>
+<li><strong>數學原理 (Friendly Math)</strong>： SVM 不只是要分開，還要找 <strong>「最寬的馬路 (Margin)」</strong>。
+<ul>
+<li><strong>Margin</strong>：這條線到最近的紅球和最近的藍球的距離。SVM 想要讓這個距離最大化。</li>
+<li><strong>公式</strong>：目標是 Maximize <span class="math inline">\(\frac{2}{||w||}\)</span>。簡單說，就是讓路越寬越好，這樣以後有新的球丟進來，才不會容易判斷錯誤。</li>
+</ul></li>
 </ul></li>
 <li><strong>K-近鄰演算法 (KNN)</strong>：
 <ul>
 <li><strong>概念</strong>：物以類聚。當來了一個新數據，KNN 會看它最近的 K 個鄰居是誰。如果鄰居大多是紅球，那它大概也是紅球。</li>
+<li><strong>數學原理 (Friendly Math)</strong>： 怎麼算「最近」？就是用我們國中學過的 <strong>「距離公式 (Euclidean Distance)」</strong>： <span class="math display">\[ d = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2} \]</span>
+<ul>
+<li>AI 會算出新點跟所有舊點的距離，然後挑出最近的 K 個（例如 K=3）。</li>
+<li>如果這 3 個鄰居是「紅、紅、藍」，那新點就是「紅」。</li>
+</ul></li>
 </ul></li>
 <li><strong>K-平均演算法 (K-Means)</strong>：
 <ul>
 <li><strong>概念</strong>：這是一種「非監督式學習」（沒有標準答案）。想像你有一堆混在一起的珠子，K-Means 會自動幫你把顏色或大小相近的珠子分成 K 堆。</li>
+<li><strong>數學原理 (Friendly Math)</strong>： 它在找 <strong>「重心 (Centroid)」</strong>。
+<ol type="1">
+<li>先隨便選 K 個點當隊長（重心）。</li>
+<li>每個人（數據點）都加入離自己最近的隊長那組。</li>
+<li>隊長重新計算自己這組的中心位置，移動過去。</li>
+<li>重複步驟 2 和 3，直到隊長不再移動為止。</li>
+</ol>
+<ul>
+<li>這就像是大家在操場上集合，最後會自然形成幾個小圈圈，每個圈圈都有一個中心點。</li>
+</ul></li>
 </ul></li>
 </ol>
 <hr>
@@ -375,12 +471,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "已複製");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "已複製");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",

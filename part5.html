@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-TW" xml:lang="zh-TW"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -56,17 +91,17 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "沒有結果",
+    "search-matching-documents-text": "符合的文件",
+    "search-copy-link-title": "複製搜尋連結",
+    "search-hide-matches-text": "隱藏其他符合的結果",
+    "search-more-match-text": "更多符合結果",
+    "search-more-matches-text": "更多符合結果",
+    "search-clear-button-title": "清除",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "取消",
+    "search-submit-button-title": "送出",
+    "search-label": "搜尋"
   }
 }</script>
 
@@ -79,13 +114,13 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切換側邊欄導航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part5.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">第五篇：AI 程式語言 (AI Programming)</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切換側邊欄導航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="搜尋" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -102,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="搜尋"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -150,10 +185,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">目錄</h2>
    
   <ul>
-  <li><a href="#python-基礎" id="toc-python-基礎" class="nav-link active" data-scroll-target="#python-基礎"><span class="header-section-number">6.1</span> Python 基礎</a></li>
+  <li><a href="#第十二章python-基礎-python-basics" id="toc-第十二章python-基礎-python-basics" class="nav-link active" data-scroll-target="#第十二章python-基礎-python-basics"><span class="header-section-number">6.1</span> 第十二章：Python 基礎 (Python Basics)</a>
+  <ul class="collapse">
+  <li><a href="#為什麼是-python" id="toc-為什麼是-python" class="nav-link" data-scroll-target="#為什麼是-python"><span class="header-section-number">6.1.1</span> 為什麼是 Python？</a></li>
+  <li><a href="#python-語法速成" id="toc-python-語法速成" class="nav-link" data-scroll-target="#python-語法速成"><span class="header-section-number">6.1.2</span> Python 語法速成</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -179,38 +218,112 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="python-基礎" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="python-基礎"><span class="header-section-number">6.1</span> Python 基礎</h2>
+<p>想親手打造自己的 AI 嗎？那你必須學會與電腦溝通的語言。在 AI 領域，這個語言只有一個霸主，那就是 <strong>Python</strong>。</p>
+<section id="第十二章python-基礎-python-basics" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="第十二章python-基礎-python-basics"><span class="header-section-number">6.1</span> 第十二章：Python 基礎 (Python Basics)</h2>
+<section id="為什麼是-python" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="為什麼是-python"><span class="header-section-number">6.1.1</span> 為什麼是 Python？</h3>
+<p>Python 之所以成為 AI 界的通用語言，原因很簡單： 1. <strong>簡單易學</strong>：它的語法非常接近英文，讀起來像在讀文章，而不是在解密碼。 2. <strong>生態系豐富</strong>：擁有海量的 AI 函式庫（如 TensorFlow, PyTorch, Scikit-learn），別人已經幫你寫好 90% 的程式碼了，你只需要學會怎麼「呼叫」它們。</p>
+</section>
+<section id="python-語法速成" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="python-語法速成"><span class="header-section-number">6.1.2</span> Python 語法速成</h3>
+<p>讓我們從最基礎的語法開始，踏出程式設計的第一步。</p>
+<section id="變數-variables資料的容器" class="level4" data-number="6.1.2.1">
+<h4 data-number="6.1.2.1" class="anchored" data-anchor-id="變數-variables資料的容器"><span class="header-section-number">6.1.2.1</span> 1. 變數 (Variables)：資料的容器</h4>
+<p>變數就像是一個貼了標籤的箱子，用來裝資料。 * <strong>命名規則</strong>： * 可以包含字母、數字、底線 <code>_</code>。 * <strong>不能以數字開頭</strong>：<code>3_Pig</code> 是錯的，<code>Pig_3</code> 是對的。 * <strong>區分大小寫</strong>：<code>Apple</code> 和 <code>apple</code> 是兩個不同的箱子。 * <strong>範例</strong>：</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Alice"</span>   <span class="co"># 字串 (String)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">25</span>         <span class="co"># 整數 (Integer)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>height <span class="op">=</span> <span class="fl">1.65</span>    <span class="co"># 浮點數 (Float)</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>is_student <span class="op">=</span> <span class="va">True</span> <span class="co"># 布林值 (Boolean)</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="輸出-print讓電腦說話" class="level4" data-number="6.1.2.2">
+<h4 data-number="6.1.2.2" class="anchored" data-anchor-id="輸出-print讓電腦說話"><span class="header-section-number">6.1.2.2</span> 2. 輸出 (Print)：讓電腦說話</h4>
+<p>用 <code>print()</code> 函數把結果顯示在螢幕上。 * <strong>基本用法</strong>：<code>print("Hello World")</code> * <strong>進階用法</strong>：可以用逗號分隔多個東西，預設會用空白隔開。</p>
 <ul>
-<li><strong>AI 程式語言：Python 基礎運用 (L32)</strong>
+<li><strong>範例</strong>：</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">5</span>, <span class="dv">10</span>)          <span class="co"># 輸出: 5 10</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">5</span>, <span class="dv">10</span>, sep<span class="op">=</span><span class="st">','</span>) <span class="co"># 輸出: 5,10 (指定分隔符號為逗號)</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="運算子-operators數學計算" class="level4" data-number="6.1.2.3">
+<h4 data-number="6.1.2.3" class="anchored" data-anchor-id="運算子-operators數學計算"><span class="header-section-number">6.1.2.3</span> 3. 運算子 (Operators)：數學計算</h4>
 <ul>
-<li><strong>基本語法與變數 (L321)</strong>
+<li><strong>基本運算</strong>：<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> (除法，結果是小數)。</li>
+<li><strong>特殊運算</strong>：
 <ul>
-<li><strong>關鍵術語：</strong> 變數命名規則 。</li>
-<li><strong>核心概念：</strong> 變數名稱不能以數字開頭（如 <code>3_Pig</code> 是錯誤的） 。</li>
-<li><strong>型態轉換：</strong> 掌握字串與數字的輸出格式，如 <code>print(5, 10, sep=',')</code> 輸出為 <code>5,10</code> 。</li>
-</ul></li>
-<li><strong>運算子與邏輯控制 (L322)</strong>
-<ul>
-<li><strong>關鍵術語：</strong> <code>//</code> (求商數運算子) 。</li>
-<li><strong>其他運算子：</strong> <code>**</code> (次方), <code>%</code> (取餘數)。</li>
-<li><strong>迴圈結構：</strong>
-<ul>
-<li><code>while...else</code>：當迴圈條件不成立而結束時會執行 <code>else</code> 區塊。</li>
-<li><code>for</code> 迴圈：遍歷序列 (List, String 等)。</li>
-<li><code>break</code> 與 <code>continue</code>：控制迴圈的執行流程。</li>
-</ul></li>
-</ul></li>
-<li><strong>資料結構 (L323)</strong>
-<ul>
-<li><strong>關鍵術語：</strong> List (列表), Tuple (元組), Dictionary (字典) 。</li>
-<li><strong>核心概念：</strong> Dictionary 使用鍵值對 (key-value) 儲存資料；Tuple 是不可變資料型態 。</li>
-<li><strong>集合 (Set)：</strong> 無序且不重複的元素集合，常用於去重或集合運算。</li>
-</ul></li>
+<li><code>//</code> <strong>求商數</strong> (地板除法)：<code>7 // 2</code> 等於 <code>3</code> (只取整數部分)。</li>
+<li><code>%</code> <strong>取餘數</strong>：<code>7 % 2</code> 等於 <code>1</code> (7 除以 2 餘 1)。</li>
+<li><code>**</code> <strong>次方</strong>：<code>2 ** 3</code> 等於 <code>8</code> (2 的 3 次方)。</li>
 </ul></li>
 </ul>
+</section>
+<section id="邏輯控制-logic-control決定程式的走向" class="level4" data-number="6.1.2.4">
+<h4 data-number="6.1.2.4" class="anchored" data-anchor-id="邏輯控制-logic-control決定程式的走向"><span class="header-section-number">6.1.2.4</span> 4. 邏輯控制 (Logic Control)：決定程式的走向</h4>
+<ul>
+<li><strong>if…else</strong> (如果…否則)：</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> <span class="dv">80</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> score <span class="op">&gt;=</span> <span class="dv">60</span>:</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"及格"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"不及格"</span>)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="迴圈-loops重複做一樣的事" class="level4" data-number="6.1.2.5">
+<h4 data-number="6.1.2.5" class="anchored" data-anchor-id="迴圈-loops重複做一樣的事"><span class="header-section-number">6.1.2.5</span> 5. 迴圈 (Loops)：重複做一樣的事</h4>
+<ul>
+<li><strong>for 迴圈</strong>：當你知道要跑幾次，或要遍歷一個清單時。</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>): <span class="co"># 跑 5 次 (0 到 4)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><strong>while 迴圈</strong>：當你不知道要跑幾次，只知道停止條件時。</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> count <span class="op">&lt;</span> <span class="dv">5</span>:</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(count)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"跑完了"</span>) <span class="co"># while...else: 當迴圈正常結束時執行</span></span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><strong>控制指令</strong>：
+<ul>
+<li><code>break</code>：立刻跳出迴圈（不跑了）。</li>
+<li><code>continue</code>：跳過這一次，直接進入下一輪。</li>
+</ul></li>
+</ul>
+</section>
+<section id="資料結構-data-structures收納資料的櫃子" class="level4" data-number="6.1.2.6">
+<h4 data-number="6.1.2.6" class="anchored" data-anchor-id="資料結構-data-structures收納資料的櫃子"><span class="header-section-number">6.1.2.6</span> 6. 資料結構 (Data Structures)：收納資料的櫃子</h4>
+<ul>
+<li><strong>List (列表)</strong>：最常用的，什麼都能裝，且有順序。
+<ul>
+<li><code>fruits = ["apple", "banana", "cherry"]</code></li>
+<li>可以用 <code>fruits[0]</code> 拿到 “apple”。</li>
+</ul></li>
+<li><strong>Tuple (元組)</strong>：跟 List 很像，但是<strong>不可變</strong> (Immutable)。一旦建立就不能修改。
+<ul>
+<li><code>point = (10, 20)</code></li>
+<li>適合用來存座標或設定檔，保護資料不被誤改。</li>
+</ul></li>
+<li><strong>Dictionary (字典)</strong>：用「鍵-值對 (Key-Value)」來存資料，像查字典一樣。
+<ul>
+<li><code>student = {"name": "Bob", "age": 20}</code></li>
+<li>可以用 <code>student["name"]</code> 拿到 “Bob”。</li>
+</ul></li>
+<li><strong>Set (集合)</strong>：一堆<strong>不重複</strong>的資料，沒有順序。
+<ul>
+<li><code>numbers = {1, 2, 2, 3}</code> -&gt; 實際存的是 <code>{1, 2, 3}</code> (自動去重)。</li>
+<li>常用來做集合運算（交集、聯集）。</li>
+</ul></li>
+</ul>
+<blockquote class="blockquote">
+<p><strong>Figure Prompt:</strong> A visual cheat sheet for Python Data Structures. Four quadrants. 1. List: A train with numbered cars [0], [1], [2]. 2. Tuple: A sealed glass box containing items (Immutable). 3. Dictionary: A library card catalog with “Key” labels pointing to “Value” books. 4. Set: A basket of unique fruits (no duplicates allowed). Style: Cute, educational illustrations.</p>
+</blockquote>
+<p>恭喜你！你已經完成了這本書的旅程。從 AI 的基本概念，到機器學習的原理，再到實際的應用與程式實作。這只是起點，AI 的世界浩瀚無垠，期待你繼續探索，用 AI 創造更美好的未來！</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -239,12 +352,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "已複製");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "已複製");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",

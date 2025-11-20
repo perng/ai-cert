@@ -14,7 +14,7 @@
     "href": "part1.html",
     "title": "2  第一篇：人工智慧與機器學習基礎 (AI & Machine Learning Fundamentals)",
     "section": "",
-    "text": "2.1 第一章：人工智慧概論 (Introduction to AI)\n歡迎來到人工智慧 (AI) 的世界！這本書將帶領你從零開始，深入淺出地理解 AI 的核心概念、運作原理以及它如何改變我們的生活。我們不需要複雜的數學公式，而是用直觀的語言和生動的例子，讓你輕鬆掌握這些看似高深的技術。\n. ### 什麼是人工智慧？\n簡單來說，人工智慧 (Artificial Intelligence, AI) 就是讓電腦擁有像人類一樣的「智慧」。這包括學習、推理、解決問題、理解語言，甚至感知環境的能力。想像一下，傳統的電腦程式就像是一個只會聽命行事的工廠作業員，你必須給它明確的指令（程式碼），它才會動作。而 AI 則像是一個聰明的學徒，它可以透過觀察數據和經驗，自己學會如何完成任務。",
+    "text": "2.1 第一章：人工智慧概論 (Introduction to AI)\n歡迎來到人工智慧 (AI) 的世界！這本書將帶領你從零開始，深入淺出地理解 AI 的核心概念、運作原理以及它如何改變我們的生活。我們不需要複雜的數學公式，而是用直觀的語言和生動的例子，讓你輕鬆掌握這些看似高深的技術。",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>第一篇：人工智慧與機器學習基礎 (AI & Machine Learning Fundamentals)</span>"
     ]
@@ -24,7 +24,7 @@
     "href": "part1.html#第一章人工智慧概論-introduction-to-ai",
     "title": "2  第一篇：人工智慧與機器學習基礎 (AI & Machine Learning Fundamentals)",
     "section": "",
-    "text": "2.1.1 AI 的三種型態\n我們可以將 AI 依據其能力的強弱，分為三個等級：\n\nFigure Prompt: Generate a flat illustration comparing three types of AI. 1. Weak AI: A smartphone showing Siri/Assistant icon. 2. Strong AI: A robot shaking hands with a human, looking equal. 3. Super AI: A glowing, abstract digital brain hovering above a city, symbolizing superior intelligence. Style: Modern, clean, vector art.\n\n\n弱人工智慧 (Artificial Narrow Intelligence, ANI)： 這是我們目前生活中最常見的 AI。它們是「專才」，非常擅長做某一件特定的事情，甚至做得比人類更好，但在其他方面則一竅不通。\n\n例子：打敗圍棋冠軍的 AlphaGo、手機裡的 Siri 語音助理、Netflix 的影片推薦系統。AlphaGo 雖然下圍棋無敵，但它不會開車，也不會聊天。\n\n強人工智慧 (Artificial General Intelligence, AGI)： 這是科學家們努力的目標，也是科幻電影中常見的 AI。它們是「通才」，具備像人類一樣的通用智慧，可以學習任何人類能學會的技能，具備常識、情感和自我意識。\n\n例子：電影《雲端情人 (Her)》中的薩曼莎，或是《鋼鐵人》中的賈維斯。目前我們尚未真正達成 AGI。\n\n超人工智慧 (Artificial Super Intelligence, ASI)： 這是理論上 AI 發展的終極階段。當 AI 的智慧在所有領域（包括創造力、社交技巧、問題解決能力）都遠遠超越最聰明的人類時，我們就稱之為超人工智慧。這是一個充滿未知與想像的領域。",
+    "text": "2.1.1 什麼是人工智慧？\n簡單來說，人工智慧 (Artificial Intelligence, AI) 就是讓電腦擁有像人類一樣的「智慧」。這包括學習、推理、解決問題、理解語言，甚至感知環境的能力。想像一下，傳統的電腦程式就像是一個只會聽命行事的工廠作業員，你必須給它明確的指令（程式碼），它才會動作。而 AI 則像是一個聰明的學徒，它可以透過觀察數據和經驗，自己學會如何完成任務。\n\n\n2.1.2 AI 的三種型態\n我們可以將 AI 依據其能力的強弱，分為三個等級：\n\nFigure Prompt: Generate a flat illustration comparing three types of AI. 1. Weak AI: A smartphone showing Siri/Assistant icon. 2. Strong AI: A robot shaking hands with a human, looking equal. 3. Super AI: A glowing, abstract digital brain hovering above a city, symbolizing superior intelligence. Style: Modern, clean, vector art.\n\n\n弱人工智慧 (Artificial Narrow Intelligence, ANI)： 這是我們目前生活中最常見的 AI。它們是「專才」，非常擅長做某一件特定的事情，甚至做得比人類更好，但在其他方面則一竅不通。\n\n例子：打敗圍棋冠軍的 AlphaGo、手機裡的 Siri 語音助理、Netflix 的影片推薦系統。AlphaGo 雖然下圍棋無敵，但它不會開車，也不會聊天。\n\n強人工智慧 (Artificial General Intelligence, AGI)： 這是科學家們努力的目標，也是科幻電影中常見的 AI。它們是「通才」，具備像人類一樣的通用智慧，可以學習任何人類能學會的技能，具備常識、情感和自我意識。\n\n例子：電影《雲端情人 (Her)》中的薩曼莎，或是《鋼鐵人》中的賈維斯。目前我們尚未真正達成 AGI。\n\n超人工智慧 (Artificial Super Intelligence, ASI)： 這是理論上 AI 發展的終極階段。當 AI 的智慧在所有領域（包括創造力、社交技巧、問題解決能力）都遠遠超越最聰明的人類時，我們就稱之為超人工智慧。這是一個充滿未知與想像的領域。",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>第一篇：人工智慧與機器學習基礎 (AI & Machine Learning Fundamentals)</span>"
     ]
@@ -34,7 +34,7 @@
     "href": "part1.html#第二章機器學習基礎-machine-learning-basics",
     "title": "2  第一篇：人工智慧與機器學習基礎 (AI & Machine Learning Fundamentals)",
     "section": "2.2 第二章：機器學習基礎 (Machine Learning Basics)",
-    "text": "2.2 第二章：機器學習基礎 (Machine Learning Basics)\n\n2.2.1 教電腦「學習」，而不是「聽令」\n機器學習 (Machine Learning, ML) 是 AI 的一個子領域，也是目前 AI 發展的核心動力。\n\n傳統程式設計：我們輸入「規則」和「數據」，電腦給出「答案」。例如，我們告訴電腦「如果下雨，就帶傘」，電腦看到「下雨」的數據，就會輸出「帶傘」。\n機器學習：我們輸入「數據」和「答案」，電腦自己找出「規則」。例如，我們給電腦看一萬張貓的照片（數據）並告訴它這些是貓（答案），電腦就會自己分析出貓的特徵（有尖耳朵、鬍鬚…），最後學會如何辨識貓。\n\n\nFigure Prompt: Generate a diagram contrasting “Traditional Programming” vs “Machine Learning”. Top flow: Rules + Data -&gt; [Traditional Programming] -&gt; Answers. Bottom flow: Data + Answers -&gt; [Machine Learning] -&gt; Rules. Use icons for Data (document), Rules (scroll), and Answers (lightbulb).\n\n\n\n2.2.2 常見的機器學習模型 (你的 AI 工具箱)\n機器學習有很多種方法（模型），就像工具箱裡有不同的工具，適用於不同的問題。\n\n線性回歸 (Linear Regression)：\n\n概念：想像你在畫一張圖，橫軸是房子的大小，縱軸是房價。你會發現點點大致分佈在一條線附近。線性回歸就是試著畫出這條「最佳直線」，用來預測未來的趨勢。\n應用：預測房價、股票走勢、銷售量。\n\n邏輯回歸 (Logistic Regression)：\n\n概念：雖然名字有「回歸」，但它其實是用來做「分類」的。它像是一個開關，判斷事情是「是」或「否」（0 或 1）。\n應用：判斷電子郵件是不是垃圾郵件、這筆交易是不是詐騙。\n\n決策樹 (Decision Tree)：\n\n概念：這就像是在玩「20 個問題」遊戲。透過一連串的「是/否」問題，將數據層層分類，直到得出結論。\n結構：樹根是第一個問題，樹枝是選項，樹葉是最終的分類結果。\n應用：銀行審核貸款（年收入 &gt; 100萬？是 -&gt; 信用良好？是 -&gt; 核准）。\n\n\n\nFigure Prompt: Generate a visualization of a Decision Tree. The root node asks “Is it raining?”. Left branch “Yes” -&gt; “Is it windy?” -&gt; “Don’t go out”. Right branch “No” -&gt; “Go out”. Style: Clean, flowchart style with icons.\n\n\n隨機森林 (Random Forest)：\n\n概念：俗話說「三個臭皮匠，勝過一個諸葛亮」。隨機森林就是種植很多棵「決策樹」，然後讓它們投票。如果大部分的樹都說是「A 類」，那結果就是 A。這通常比單一決策樹更準確。\n\n支援向量機 (SVM)：\n\n概念：想像桌上有紅球和藍球混在一起。SVM 的任務就是拿一根棍子（在二維平面是線，三維空間是面），試著把紅球和藍球分得越開越好，這根棍子就是「最佳超平面」。\n\nK-近鄰演算法 (KNN)：\n\n概念：物以類聚。當來了一個新數據，KNN 會看它最近的 K 個鄰居是誰。如果鄰居大多是紅球，那它大概也是紅球。\n\nK-平均演算法 (K-Means)：\n\n概念：這是一種「非監督式學習」（沒有標準答案）。想像你有一堆混在一起的珠子，K-Means 會自動幫你把顏色或大小相近的珠子分成 K 堆。",
+    "text": "2.2 第二章：機器學習基礎 (Machine Learning Basics)\n\n2.2.1 教電腦「學習」，而不是「聽令」\n機器學習 (Machine Learning, ML) 是 AI 的一個子領域，也是目前 AI 發展的核心動力。\n\n傳統程式設計：我們輸入「規則」和「數據」，電腦給出「答案」。例如，我們告訴電腦「如果下雨，就帶傘」，電腦看到「下雨」的數據，就會輸出「帶傘」。\n機器學習：我們輸入「數據」和「答案」，電腦自己找出「規則」。例如，我們給電腦看一萬張貓的照片（數據）並告訴它這些是貓（答案），電腦就會自己分析出貓的特徵（有尖耳朵、鬍鬚…），最後學會如何辨識貓。\n\n\nFigure Prompt: Generate a diagram contrasting “Traditional Programming” vs “Machine Learning”. Top flow: Rules + Data -&gt; [Traditional Programming] -&gt; Answers. Bottom flow: Data + Answers -&gt; [Machine Learning] -&gt; Rules. Use icons for Data (document), Rules (scroll), and Answers (lightbulb).\n\n\n\n2.2.2 常見的機器學習模型 (你的 AI 工具箱)\n機器學習有很多種方法（模型），就像工具箱裡有不同的工具，適用於不同的問題。\n\n\n\n\n\n\n圖 2.1: 線性回歸\n\n\n\n\n線性回歸 (Linear Regression)：\n\n概念：想像你在畫一張圖，橫軸是房子的大小，縱軸是房價。你會發現點點大致分佈在一條線附近。線性回歸就是試著畫出這條「最佳直線」，用來預測未來的趨勢。\n數學原理 (Friendly Math)： 其實這條線的公式非常簡單，就是國中學過的： \\[ y = wx + b \\]\n\n\\(y\\) (預測值)：我們想知道的答案（例如：房價）。\n\\(x\\) (輸入值)：我們已知的資訊（例如：房子坪數）。\n\\(w\\) (權重 Weight)：這代表影響力的大小。例如，每多一坪，房價會增加多少？這個「多少」就是 \\(w\\)（斜率）。\n\\(b\\) (偏差 Bias)：這代表起跑點。就算坪數是 0，房子也不會是免費的（可能有地段的基本價值），這個基本值就是 \\(b\\)（截距）。\n\nAI 的任務，就是透過看大量的數據，自動算出最準確的 \\(w\\) 和 \\(b\\) 是多少。\n應用：預測房價、股票走勢、銷售量。\n如何知道準不準？(RSE)： 我們怎麼知道這條線畫得好不好？這就要看 RSE (殘差標準誤, Residual Standard Error)。\n\n概念：想像這條線是「標準答案」，但真實的房價（紅點）通常不會剛好落在線上，而是會散落在線的上下。RSE 就是在計算這些點平均偏離這條線多遠。\n解讀：RSE 越小越好。\n\n如果 RSE = 0，代表所有點都在線上，預測完美（但現實中幾乎不可能）。\n如果 RSE 很大，代表點點分佈得很散，這條線的預測能力很差。\n\n公式 (Friendly Math)： \\[ RSE = \\sqrt{\\frac{1}{n-2}\\sum (y_i - \\hat{y}_i)^2} \\] 別被嚇到了！簡單來說就是：把每個點的誤差 \\((y - \\hat{y})\\) 平方加起來，除以點的數量，再開根號。就像是算所有誤差的「平均值」。\n\n\n邏輯回歸 (Logistic Regression)：\n\n概念：雖然名字有「回歸」，但它其實是用來做「分類」的。它像是一個開關，判斷事情是「是」或「否」（0 或 1）。\n數學原理 (Friendly Math)： 它其實就是把線性回歸的結果，丟進一個 S 型的函數（Sigmoid 函數）裡面： \\[ P(y=1) = \\frac{1}{1 + e^{-(wx+b)}} \\]\n\nSigmoid 函數：這個函數很神奇，不管你輸入多大或多小的數字，它吐出來的結果永遠在 0 到 1 之間。\n機率：這個 0 到 1 的數字，就代表「機率」。例如算出 0.8，就代表有 80% 的機率是垃圾郵件。\n決策：通常我們設 0.5 為門檻。大於 0.5 就是「是」，小於 0.5 就是「否」。\n\n應用：判斷電子郵件是不是垃圾郵件、這筆交易是不是詐騙。\n\n決策樹 (Decision Tree)：\n\n概念：這就像是在玩「20 個問題」遊戲。透過一連串的「是/否」問題，將數據層層分類，直到得出結論。\n數學原理 (Friendly Math)： 決策樹怎麼知道要先問哪個問題？它會算一個叫做 「亂度 (Entropy)」 或 「基尼係數 (Gini Impurity)」 的東西。\n\n亂度：想像一個房間裡有紅球和藍球。如果紅藍各半，亂度最大（最難猜）；如果全是紅球，亂度為 0（最好猜）。\n資訊獲利 (Information Gain)：AI 會試著問一個問題（例如：球是大顆的嗎？），如果問完之後，分出來的兩堆球「亂度」變小了，代表這個問題問得好！AI 就是一直在找能讓亂度下降最快的問題。\n\n結構：樹根是第一個問題，樹枝是選項，樹葉是最終的分類結果。\n應用：銀行審核貸款（年收入 &gt; 100萬？是 -&gt; 信用良好？是 -&gt; 核准）。\n\n\n\nFigure Prompt: Generate a visualization of a Decision Tree. The root node asks “Is it raining?”. Left branch “Yes” -&gt; “Is it windy?” -&gt; “Don’t go out”. Right branch “No” -&gt; “Go out”. Style: Clean, flowchart style with icons.\n\n\n隨機森林 (Random Forest)：\n\n概念：俗話說「三個臭皮匠，勝過一個諸葛亮」。隨機森林就是種植很多棵「決策樹」，然後讓它們投票。如果大部分的樹都說是「A 類」，那結果就是 A。這通常比單一決策樹更準確。\n數學原理 (Friendly Math)：\n\n集成學習 (Ensemble Learning)：這背後的數學原理叫做「大數法則」。假設每一棵樹的準確率只有 60%（比亂猜好一點），但如果我們有 100 棵樹一起投票，犯錯的機率就會大幅下降。\n隨機性：為什麼叫「隨機」？因為每棵樹看到的數據都不太一樣（隨機抽樣），這樣它們才會有不同的觀點，投票起來才客觀。\n\n\n支援向量機 (SVM)：\n\n概念：想像桌上有紅球和藍球混在一起。SVM 的任務就是拿一根棍子（在二維平面是線，三維空間是面），試著把紅球和藍球分得越開越好，這根棍子就是「最佳超平面」。\n數學原理 (Friendly Math)： SVM 不只是要分開，還要找 「最寬的馬路 (Margin)」。\n\nMargin：這條線到最近的紅球和最近的藍球的距離。SVM 想要讓這個距離最大化。\n公式：目標是 Maximize \\(\\frac{2}{||w||}\\)。簡單說，就是讓路越寬越好，這樣以後有新的球丟進來，才不會容易判斷錯誤。\n\n\nK-近鄰演算法 (KNN)：\n\n概念：物以類聚。當來了一個新數據，KNN 會看它最近的 K 個鄰居是誰。如果鄰居大多是紅球，那它大概也是紅球。\n數學原理 (Friendly Math)： 怎麼算「最近」？就是用我們國中學過的 「距離公式 (Euclidean Distance)」： \\[ d = \\sqrt{(x_1-x_2)^2 + (y_1-y_2)^2} \\]\n\nAI 會算出新點跟所有舊點的距離，然後挑出最近的 K 個（例如 K=3）。\n如果這 3 個鄰居是「紅、紅、藍」，那新點就是「紅」。\n\n\nK-平均演算法 (K-Means)：\n\n概念：這是一種「非監督式學習」（沒有標準答案）。想像你有一堆混在一起的珠子，K-Means 會自動幫你把顏色或大小相近的珠子分成 K 堆。\n數學原理 (Friendly Math)： 它在找 「重心 (Centroid)」。\n\n先隨便選 K 個點當隊長（重心）。\n每個人（數據點）都加入離自己最近的隊長那組。\n隊長重新計算自己這組的中心位置，移動過去。\n重複步驟 2 和 3，直到隊長不再移動為止。\n\n\n這就像是大家在操場上集合，最後會自然形成幾個小圈圈，每個圈圈都有一個中心點。",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>第一篇：人工智慧與機器學習基礎 (AI & Machine Learning Fundamentals)</span>"
     ]
@@ -64,37 +64,37 @@
     "href": "part2.html",
     "title": "3  第二篇：AI 技術應用與生成式 AI (AI Applications & Generative AI)",
     "section": "",
-    "text": "3.1 鑑別式與生成式 AI",
+    "text": "3.1 第五章：鑑別式與生成式 AI (Discriminative vs Generative AI)\n歡迎來到 AI 的應用世界！如果說第一篇是學習內功（基礎理論），那麼這一篇就是學習招式（實際應用）。我們將深入探討目前最熱門的「生成式 AI」，以及它如何與傳統的「鑑別式 AI」相輔相成，改變我們的創造與工作方式。",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>第二篇：AI 技術應用與生成式 AI (AI Applications & Generative AI)</span>"
     ]
   },
   {
-    "objectID": "part2.html#鑑別式與生成式-ai",
-    "href": "part2.html#鑑別式與生成式-ai",
+    "objectID": "part2.html#第五章鑑別式與生成式-ai-discriminative-vs-generative-ai",
+    "href": "part2.html#第五章鑑別式與生成式-ai-discriminative-vs-generative-ai",
     "title": "3  第二篇：AI 技術應用與生成式 AI (AI Applications & Generative AI)",
     "section": "",
-    "text": "鑑別式 AI 與生成式 AI 概念 (L114)\n\n鑑別式 AI 與生成式 AI 的基本原理 (L11401)\n\n關鍵術語： 鑑別式 AI (Discriminative AI)、生成式 AI (Generative AI) 。\n核心概念： 區分兩者的特性 (分類/預測 vs 創造新數據)。\n\n鑑別式 AI 與生成式 AI 的整合應用 (L11402)\n\n核心概念： 理解兩者的相關應用 。",
+    "text": "3.1.1 兩大 AI 陣營的對決與合作\n在 AI 的廣闊領域中，我們可以粗略地將模型分為兩大類，它們就像是人類大腦中的「左腦」與「右腦」，各司其職。\n\n3.1.1.1 1. 鑑別式 AI (Discriminative AI)：嚴謹的判官\n這類 AI 就像是一位經驗豐富的鑑識專家或法官。它的主要任務是「分類」和「預測」。 * 運作方式：它學習數據之間的邊界。給它一張照片，它會判斷「這是貓還是狗？」；給它一筆交易紀錄，它會判斷「這是不是詐騙？」。 * 核心邏輯：它尋找的是 \\(P(Y|X)\\)，也就是在給定輸入 \\(X\\) 的情況下，它是類別 \\(Y\\) 的機率是多少。 * 應用場景： * 垃圾郵件過濾：判斷這封信是不是垃圾信。 * 人臉辨識：判斷這個人是不是員工。 * 信用評分：判斷這個人會不會還錢。\n\n\n3.1.1.2 2. 生成式 AI (Generative AI)：天馬行空的藝術家\n這類 AI 就像是一位充滿創意的畫家或作家。它的主要任務是「創造」全新的數據。 * 運作方式：它學習數據的分佈規律，然後試著模仿並產生新的樣本。它不是在做選擇題，而是在做申論題或繪畫題。 * 核心邏輯：它尋找的是 \\(P(X, Y)\\) 或 \\(P(X)\\)，也就是試著去理解數據 \\(X\\) 本身長什麼樣子，然後憑空（或根據提示）生出一個新的 \\(X'\\)。 * 應用場景： * 寫作：幫你寫一首詩、一篇新聞稿 (如 ChatGPT)。 * 繪圖：畫出一隻在太空漫步的貓 (如 Midjourney)。 * 作曲：創作一段貝多芬風格的音樂。\n\nFigure Prompt: Create a split-screen comparison illustration. Left side (Discriminative AI): A robot judge looking at a basket of mixed fruit and sorting them into “Apples” and “Oranges” bins. Right side (Generative AI): A robot artist looking at a fruit basket and painting a completely new, unique fruit on a canvas. Style: Colorful, isometric 3D.\n\n\n\n\n3.1.2 當判官遇見藝術家：整合應用\n在實際應用中，這兩者往往不是對立，而是合作的。例如，在訓練一個強大的生成模型（如 GAN）時，我們同時需要一個生成器（藝術家）和一個鑑別器（判官）。藝術家努力畫出逼真的假畫，判官努力抓出假畫，兩者在競爭中共同進步，最後藝術家的畫功達到以假亂真的境界。",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>第二篇：AI 技術應用與生成式 AI (AI Applications & Generative AI)</span>"
     ]
   },
   {
-    "objectID": "part2.html#生成式-ai-應用與工具",
-    "href": "part2.html#生成式-ai-應用與工具",
+    "objectID": "part2.html#第六章生成式-ai-應用與工具-generative-ai-tools-applications",
+    "href": "part2.html#第六章生成式-ai-應用與工具-generative-ai-tools-applications",
     "title": "3  第二篇：AI 技術應用與生成式 AI (AI Applications & Generative AI)",
-    "section": "3.2 生成式 AI 應用與工具",
-    "text": "3.2 生成式 AI 應用與工具\n\n生成式 AI 應用與規劃 (L12)\n\nNo Code / Low Code 概念 (L121)\n\nNo Code / Low Code 的基本概念 (L12101)\n\n關鍵術語： No Code (無程式碼)、Low Code (低程式碼) 。\n\nNo Code / Low Code 的優勢與限制 (L12102)\n\n核心概念： 掌握工具在生成式 AI 應用中的功用與優勢 。\n常見工具： Zapier, Make, Coze, Dify。\n\n\n生成式 AI 應用領域與工具使用 (L122)\n\n生成式 AI 應用領域與常見工具 (L12201)\n\n核心概念： 熟悉常見工具的基本操作 。\n熱門工具： ChatGPT, Claude, Midjourney, Stable Diffusion, GitHub Copilot。\n\n如何善用生成式 AI 工具 (L12202)\n\n應用能力： Prompt Engineering (Zero-shot, Few-shot, CoT)。\n\n\n生成式 AI 導入評估規劃 (L123)\n\n生成式 AI 導入評估 (L12301)\n生成式 AI 導入規劃 (L12302)\n\n關鍵術語： 需求確認、資源分配、試用測試 。\n\n生成式 AI 風險管理 (L12303)\n\n\n生成式 AI 應用 (L343)\n\n核心概念： 使用生成式 AI 創作音樂時，提供具體的音樂結構和風格描述可提高準確性 。",
+    "section": "3.2 第六章：生成式 AI 應用與工具 (Generative AI Tools & Applications)",
+    "text": "3.2 第六章：生成式 AI 應用與工具 (Generative AI Tools & Applications)\n\n3.2.1 No Code / Low Code：AI 民主化運動\n過去，要開發 AI 應用程式，你必須是精通 Python 的工程師。但現在，No Code (無程式碼) 和 Low Code (低程式碼) 平台的興起，讓不懂程式設計的一般人也能輕鬆駕馭 AI。\n\nNo Code：完全不需要寫任何程式碼，透過「拖拉放 (Drag-and-Drop)」的方式，像堆積木一樣把功能組裝起來。\n\n優勢：門檻極低，快速驗證點子。\n限制：客製化程度較低，只能用平台提供的積木。\n\nLow Code：需要寫少量的程式碼來進行客製化，適合有一定技術基礎但想加快開發速度的人。\n\n熱門工具推薦： * Zapier / Make：自動化神器。你可以設定「當 Gmail 收到信時，自動叫 ChatGPT 幫我寫回覆草稿，並存到 Google Docs」。 * Coze / Dify：專門用來打造 AI 機器人的平台。你可以上傳自己的知識庫（PDF、網頁），快速做出一個「公司客服 AI」或「法律諮詢 AI」。\n\n\n3.2.2 駕馭 AI 的關鍵技能：Prompt Engineering (提示工程)\n擁有最強的 AI 工具（如 ChatGPT），如果你只會問「你好」，那就像開著法拉利去買菜。Prompt Engineering 就是與 AI 溝通的藝術，教你如何下達精準的指令，讓 AI 發揮 100% 的實力。\n\n3.2.2.1 三大心法：\n\nZero-shot (零樣本提示)：直接問，不給範例。\n\nPrompt：「將這句話翻譯成英文：『今天天氣真好』。」\n適用：簡單、常見的任務。\n\nFew-shot (少樣本提示)：給它幾個範例，讓它照樣造句。\n\nPrompt：「將下列形容詞轉為顏色。天空 -&gt; 藍色；草地 -&gt; 綠色；太陽 -&gt; ？」\n適用：需要特定格式或風格的任務。\n\nChain of Thought (CoT, 思維鏈)：叫 AI 把思考過程寫出來，不要直接給答案。\n\nPrompt：「這道數學題很難，請一步一步推理給我看，最後再給出答案。」\n適用：複雜的邏輯推理、數學問題。\n\n\n\nFigure Prompt: A visual guide to Prompt Engineering. Three panels. Panel 1 (Zero-shot): User says “Translate”, AI outputs text. Panel 2 (Few-shot): User shows flashcards “A=1, B=2”, then asks “C?”, AI says “3”. Panel 3 (Chain of Thought): User asks complex question, AI shows a thought bubble with gears turning and steps “1..2..3..” before speaking.\n\n\n\n\n3.2.3 生成式 AI 的導入與風險\n企業在引進 AI 時，不能只是一頭熱，必須經過審慎的評估： 1. 需求確認：我們真的需要 AI 嗎？它能解決什麼痛點？ 2. 資源盤點：我們有足夠的數據嗎？算力夠嗎？預算多少？ 3. 風險管理： * 幻覺 (Hallucination)：AI 會一本正經地胡說八道。 * 資安：員工會不會把公司機密丟給 AI？ * 版權：AI 生成的圖片會不會侵權？",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>第二篇：AI 技術應用與生成式 AI (AI Applications & Generative AI)</span>"
     ]
   },
   {
-    "objectID": "part2.html#進階-ai-技術與部署",
-    "href": "part2.html#進階-ai-技術與部署",
+    "objectID": "part2.html#第七章進階-ai-技術與部署-advanced-ai-tech-deployment",
+    "href": "part2.html#第七章進階-ai-技術與部署-advanced-ai-tech-deployment",
     "title": "3  第二篇：AI 技術應用與生成式 AI (AI Applications & Generative AI)",
-    "section": "3.3 進階 AI 技術與部署",
-    "text": "3.3 進階 AI 技術與部署\n\n人工智慧技術應用與規劃 (L21)\n\nAI 相關技術應用 (L211)\n\n自然語言處理技術與應用 (L21101)\n電腦視覺技術與應用 (L21102)\n生成式 AI 技術與應用 (L21103)\n多模態人工智慧應用 (L21104)\n核心概念： 熟悉 AI 相關技術框架 。\n進階技術：\n\nGAN： 生成對抗網路。\nDiffusion Model： 擴散模型。\nLLM： 大型語言模型 (Transformer)。\n\n\nAI 導入評估規劃 (L212)\n\nAI 導入評估 (L21201)\nAI 導入規劃 (L21202)\nAI 風險管理 (L21203)\n\nAI 技術應用與系統部署 (L213)\n\n數據準備與模型選擇 (L21301)\nAI 技術系統集成與部署 (L21302)\n核心概念： MLOps, Edge AI, Cloud AI, API 整合。\n\n\n自然語言處理與電腦視覺 (L342)\n\n關鍵術語： 詞袋模型 (Bag-of-Words) 。\n核心概念： 詞袋模型用於文字特徵提取 。\nNLP 技術： TF-IDF, Word2Vec, BERT, GPT。\nCV 技術： YOLO (物件偵測), Segmentation (影像分割)。",
+    "section": "3.3 第七章：進階 AI 技術與部署 (Advanced AI Tech & Deployment)",
+    "text": "3.3 第七章：進階 AI 技術與部署 (Advanced AI Tech & Deployment)\n\n3.3.1 深入 AI 的技術核心\n除了基礎模型，還有一些進階技術正在推動 AI 的邊界：\n\nGAN (生成對抗網路)：如前所述，這是兩個神經網路在打架。\n\n應用：Deepfake 換臉、將黑白照片變彩色、修復模糊照片。\n\nDiffusion Model (擴散模型)：這是目前最強大的繪圖 AI (如 Stable Diffusion) 的核心。\n\n原理：想像把一滴墨水滴入水中（擴散），圖案變模糊（加噪聲）。擴散模型就是學習這個過程的「倒帶」，從一團雜訊中慢慢還原出清晰的圖像。\n\nLLM (大型語言模型)：基於 Transformer 架構，閱讀了網路上幾乎所有的文字。它們是通用的語言大師。\n\n\n\n3.3.2 NLP 與 CV：AI 的聽說讀寫\n\n自然語言處理 (NLP)：讓電腦聽懂人話。\n\n詞袋模型 (Bag-of-Words)：把句子變成單字的集合，不考慮順序。雖然簡單，但在垃圾郵件分類還是很有用。\nWord2Vec：把單字變成向量（數字列表）。神奇的是，它能捕捉語意關係，例如：國王 - 男人 + 女人 = 女王。\nBERT / GPT：現代 NLP 的霸主，能理解上下文的深層含義。\n\n電腦視覺 (CV)：讓電腦看懂世界。\n\nYOLO (You Only Look Once)：超快速的物件偵測。它看一眼照片，就能框出裡面有幾個人、幾輛車、幾隻狗，而且速度快到可以處理即時影片。\nSegmentation (影像分割)：比偵測更精細，它能把物體的輪廓精確地描出來，像素級的分類。這在醫療影像（標記腫瘤範圍）和自駕車（區分路面和人行道）非常重要。\n\n\n\nFigure Prompt: A diagram illustrating “Diffusion Model”. From left to right: A clear image of a cat -&gt; slightly grainy cat -&gt; very noisy static -&gt; pure noise. Then an arrow curving back underneath labeled “Reverse Diffusion (Generation)” showing the noise turning back into a clear cat image.\n\n\n\n3.3.3 AI 系統部署：從實驗室到真實世界\n模型訓練好只是第一步，如何讓它在真實世界穩定運作才是挑戰。 * MLOps：就像 DevOps，但是針對機器學習。它管理模型的全生命週期：訓練、版控、部署、監控。 * Edge AI (邊緣運算)：把 AI 模型瘦身，塞進手機、攝影機或無人機裡，不用連上雲端也能運作。優點是速度快、隱私好（數據不出門）。 * Cloud AI (雲端運算)：使用 Google、AWS 的強大伺服器來跑超大模型。優點是算力無限，但需要網路。\n這篇我們探討了 AI 的應用面，從生成式 AI 的創意爆發，到 NLP 與 CV 的感知能力，以及最後如何將這些技術落地部署。掌握這些，你就擁有了改變世界的工具箱！",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>第二篇：AI 技術應用與生成式 AI (AI Applications & Generative AI)</span>"
     ]
@@ -104,27 +104,27 @@
     "href": "part3.html",
     "title": "4  第三篇：資料科學與大數據 (Data Science & Big Data)",
     "section": "",
-    "text": "4.1 資料處理基礎",
+    "text": "4.1 第八章：資料處理基礎 (Data Processing Basics)\n在 AI 的世界裡，演算法是引擎，而資料 (Data) 就是燃料。沒有高品質的燃料，再好的引擎也跑不動。這一篇我們將探討如何開採、提煉並使用這些珍貴的數位石油。",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>第三篇：資料科學與大數據 (Data Science & Big Data)</span>"
     ]
   },
   {
-    "objectID": "part3.html#資料處理基礎",
-    "href": "part3.html#資料處理基礎",
+    "objectID": "part3.html#第八章資料處理基礎-data-processing-basics",
+    "href": "part3.html#第八章資料處理基礎-data-processing-basics",
     "title": "4  第三篇：資料科學與大數據 (Data Science & Big Data)",
     "section": "",
-    "text": "資料處理與分析概念 (L112)\n\n資料基本概念與來源 (L11201)\n\n關鍵術語： 資料收集、資料清洗 。\n\n資料整理與分析流程 (L11202)\n\n關鍵術語： 資料分析、資料視覺化 。\n核心概念： 理解資料在 AI 模型中扮演的角色與作用 。\n\n資料隱私與安全 (L11203)\n\n核心概念： 資料處理過程中的安全規範 。\n\n\n資料科學基礎 (L331)\n\n關鍵術語： 圓餅圖 (Pie Chart) 。\n核心概念： 圓餅圖最適合用於比較各類別的比例 。\n常見圖表類型：\n\n長條圖 (Bar Chart)： 比較不同類別的數值大小。\n折線圖 (Line Chart)： 顯示數據隨時間變化的趨勢。\n直方圖 (Histogram)： 顯示數據的分佈情況 (如常態分佈)。\n散佈圖 (Scatter Plot)： 觀察兩個變數之間的相關性。\n箱型圖 (Box Plot)： 顯示數據的四分位數、中位數及離群值。\n熱力圖 (Heatmap)： 以顏色深淺表示數值大小，常用於相關係數矩陣。",
+    "text": "4.1.1 資料：AI 的糧食\n資料科學 (Data Science) 是一門從數據中挖掘知識的學問。在餵給 AI 吃之前，我們必須先處理好這些食材。\n\n4.1.1.1 1. 資料收集與清洗 (Data Collection & Cleaning)\n現實世界中的數據往往是髒亂的。 * 資料收集：來源可能來自資料庫、網頁爬蟲、感測器 (IoT) 或問卷調查。 * 資料清洗：這是資料科學家花最多時間的地方（通常佔 80%）。 * 缺失值處理：有的欄位是空的怎麼辦？補平均值？補 0？還是直接刪掉這筆資料？ * 異常值處理：年齡欄位出現 200 歲？這明顯是錯誤，需要修正或剔除。 * 格式統一：日期格式有 2023/01/01 也有 Jan 1, 2023，必須統一才能運算。\n\n\n4.1.1.2 2. 資料視覺化 (Data Visualization)：讓數據說話\n人類對數字不敏感，但對圖形很敏感。好的視覺化能讓你一眼看出數據背後的故事。\n\n圓餅圖 (Pie Chart)：適合看比例。例如：市佔率（A公司 30%, B公司 20%…）。\n長條圖 (Bar Chart)：適合比較大小。例如：各部門的營收比較。\n折線圖 (Line Chart)：適合看趨勢。例如：股價走勢、氣溫變化。\n直方圖 (Histogram)：適合看分佈。例如：全校學生的身高分佈（大部分集中在中間，兩邊人少）。\n散佈圖 (Scatter Plot)：適合看相關性。例如：唸書時間 vs 考試成績（通常是正相關，點點往右上跑）。\n熱力圖 (Heatmap)：用顏色深淺代表數值。例如：網站點擊熱圖，紅色代表最多人點的地方。\n\n\nFigure Prompt: A dashboard style illustration showing multiple charts. Top left: A colorful Pie Chart. Top right: A rising Line Chart. Bottom left: A Bar Chart comparing 3 items. Bottom right: A Scatter Plot with a trend line. Style: Modern UI dashboard, dark mode.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>第三篇：資料科學與大數據 (Data Science & Big Data)</span>"
     ]
   },
   {
-    "objectID": "part3.html#大數據技術與應用",
-    "href": "part3.html#大數據技術與應用",
+    "objectID": "part3.html#第九章大數據技術與應用-big-data-technologies",
+    "href": "part3.html#第九章大數據技術與應用-big-data-technologies",
     "title": "4  第三篇：資料科學與大數據 (Data Science & Big Data)",
-    "section": "4.2 大數據技術與應用",
-    "text": "4.2 大數據技術與應用\n\n大數據處理分析與應用 (L22)\n\n機率統計基礎 (L221)\n\n敘述性統計與資料摘要技術 (L22101)\n機率分佈與資料分佈模型 (L22102)\n假設檢定與統計推論 (L22103)\n核心概念： 瞭解機率與統計基礎知識，確保數據處理與分析結果的準確性 。\n\n大數據處理技術 (L222)\n\n數據收集與清理 (L22201)\n數據儲存與管理 (L22202)\n數據處理技術與工具 (L22203)\n核心概念： 具備使用大數據處理技術與分析方法的能力 。\n分散式運算框架： Hadoop (MapReduce), Spark (記憶體內運算)。\nNoSQL 資料庫： MongoDB (文件型), Cassandra (寬欄型), Redis (鍵值型)。\n資料流處理： Kafka (訊息佇列)。\n\n大數據分析方法與工具 (L223)\n\n統計學在大數據中的應用 (L22301)\n常見的大數據分析方法 (L22302)\n數據可視化工具 (L22303)\n核心概念： 熟悉使用工具進行數據視覺化，深入挖掘數據洞察 。\n\n大數據在人工智慧之應用 (L224)\n\n大數據與機器學習 (L22401)\n大數據在鑑別式 AI 中的應用 (L22402)\n大數據在生成式 AI 中的應用 (L22403)\n大數據隱私保護、安全與合規 (L22404)\n核心概念： 具備評估大數據在 AI 應用中效益的能力 。",
+    "section": "4.2 第九章：大數據技術與應用 (Big Data Technologies)",
+    "text": "4.2 第九章：大數據技術與應用 (Big Data Technologies)\n\n4.2.1 當資料大到無法想像：大數據 (Big Data)\n當資料量大到一台電腦存不下、算不完時，我們就進入了「大數據」的領域。大數據通常具備 3V 特性： 1. Volume (大量)：資料量極大 (TB, PB 等級)。 2. Velocity (高速)：資料產生速度極快 (如即時交易、社群媒體貼文)。 3. Variety (多樣)：資料格式千奇百怪 (文字、圖片、影片、Log 檔)。\n\n\n4.2.2 大數據的統計學基礎\n在處理大數據時，我們依然依賴統計學來幫助我們理解全貌。 * 敘述性統計：用平均數、中位數、標準差來描述這堆數據長什麼樣子。 * 推論性統計：從大數據中抽樣一小部分來研究，然後推斷整體的狀況（因為全部分析可能太慢了）。 * 假設檢定：科學地驗證你的猜想。例如：「改版後的網站真的有提高轉換率嗎？」還是只是運氣好？\n\n\n4.2.3 駕馭大數據的工具\n工欲善其事，必先利其器。處理大數據需要特殊的工具：\n\n分散式運算 (Distributed Computing)：\n\nHadoop (MapReduce)：大數據的祖師爺。它的概念是「分而治之」。把一個大任務切成一千份，分給一千台電腦算，最後再把結果合併起來。\nSpark：Hadoop 的進化版。它把資料放在記憶體 (RAM) 裡運算，速度比 Hadoop 快 100 倍。現在是主流。\n\nNoSQL 資料庫： 傳統的 SQL 資料庫（像 Excel 表格）在面對超大數據時會變慢。NoSQL 放棄了一些嚴格的規則，換取極致的速度和擴充性。\n\nMongoDB：文件型。存資料像存 JSON 檔案一樣自由，適合存結構不固定的資料。\nRedis：鍵值型 (Key-Value)。資料存在記憶體裡，讀寫速度快如閃電，常用來做快取 (Cache)。\nCassandra：寬欄型。Facebook 開發的，寫入速度極快，適合存大量的 Log 或感測器數據。\n\n資料流處理 (Stream Processing)：\n\nKafka：就像一個超大容量的數位水管。它可以承接每秒百萬筆的數據洪流（如使用者點擊、交易紀錄），然後穩穩地輸送給後端的系統去處理。\n\n\n\n\n4.2.4 大數據與 AI 的強強聯手\n大數據是 AI 的最佳拍檔。 * 鑑別式 AI：需要大數據來訓練出更準確的模型（如 Google 的廣告推薦）。 * 生成式 AI：需要海量的文本（整個網際網路的資料）來訓練 LLM（如 GPT-4）。\n同時，我們也要注意資料隱私。在使用大數據時，必須遵守法規（如 GDPR），做好去識別化，保護用戶的隱私權。\n\nFigure Prompt: An illustration of the “3Vs of Big Data”. Three icons arranged in a triangle. 1. Volume: A stack of server racks or hard drives. 2. Velocity: A speedometer or a fast-moving train. 3. Variety: A collage of icons representing video, text, images, and audio. Style: Infographic style.\n\n這篇我們學習了如何處理和分析資料，以及在大數據時代不可或缺的技術棧。掌握了燃料，下一篇我們將探討如何安全地駕駛這輛 AI 跑車——AI 的倫理與治理。",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>第三篇：資料科學與大數據 (Data Science & Big Data)</span>"
     ]
@@ -134,27 +134,27 @@
     "href": "part4.html",
     "title": "5  第四篇：AI 倫理、治理與風險 (AI Ethics, Governance & Risks)",
     "section": "",
-    "text": "5.1 AI 治理與風險",
+    "text": "5.1 第十章：AI 治理與風險 (AI Governance & Risks)\n能力越強，責任越大。AI 就像一把雙面刃，用得好可以造福人類，用不好則可能帶來災難。在這一篇，我們將探討如何安全、負責任地開發和使用 AI。",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>第四篇：AI 倫理、治理與風險 (AI Ethics, Governance & Risks)</span>"
     ]
   },
   {
-    "objectID": "part4.html#ai-治理與風險",
-    "href": "part4.html#ai-治理與風險",
+    "objectID": "part4.html#第十章ai-治理與風險-ai-governance-risks",
+    "href": "part4.html#第十章ai-治理與風險-ai-governance-risks",
     "title": "5  第四篇：AI 倫理、治理與風險 (AI Ethics, Governance & Risks)",
     "section": "",
-    "text": "AI 治理概念 (L11102)\n\n關鍵術語： 隱私 (Privacy)、安全性 (Security)、AI 倫理 (Ethics) 。\n核心概念： AI 技術在隱私、安全性與倫理層面可能面臨的挑戰 。\n\n機器學習治理 (L234)\n\n數據隱私、安全與合規 (L23401)\n演算法偏見與公平性 (L23402)\n\nAI 趨勢與風險 (L341)\n\n關鍵術語： AI 幻覺 (AI Hallucination) 。\n核心概念： AI 幻覺指模型生成錯誤或誤導性結果 。\n常見 AI 風險：\n\n偏見 (Bias)： 訓練數據不平衡導致模型產生歧視性結果。\nDeepfake： 利用 AI 生成逼真的虛假影像或音訊。\n對抗式攻擊 (Adversarial Attacks)： 透過微小擾動欺騙 AI 模型。\n模型漂移 (Model Drift)： 模型效能隨時間推移而下降。",
+    "text": "5.1.1 AI 的潛在威脅\nAI 並不是完美的，它也會犯錯，甚至被惡意利用。我們必須認識這些風險，才能有效地防範。\n\nAI 幻覺 (AI Hallucination)：\n\n現象：AI 有時候會一本正經地胡說八道。例如，問它「林肯總統是哪一年發明燈泡的？」，它可能會編造一個看起來很真實的年份，但事實上林肯根本沒發明燈泡。\n原因：生成式 AI 的本質是「機率預測」，它只是在預測下一個字最可能接什麼，而不是在查證事實。\n對策：對於關鍵事實（如醫療、法律建議），必須進行人工查核 (Human-in-the-loop)。\n\n偏見 (Bias)：\n\n現象：如果訓練數據本身就有偏見，AI 就會學壞。例如，如果訓練數據中大部分的工程師都是男性，AI 可能會誤以為「女性不適合當工程師」，在篩選履歷時歧視女性。\n對策：使用多樣化、平衡的數據集，並在模型上線前進行公平性測試。\n\nDeepfake (深偽技術)：\n\n現象：利用 AI 生成極度逼真的假影片或假聲音。這可能被用來製造假新聞、詐騙（假裝親人聲音借錢）或毀壞他人名譽。\n對策：開發 Deepfake 偵測工具，並推動數位浮水印技術。\n\n對抗式攻擊 (Adversarial Attacks)：\n\n現象：駭客在圖片上加入人類看不見的微小雜訊，就能騙過 AI。例如，在一張熊貓的照片上加一點點雜訊，AI 竟然會把它誤判成長臂猿。\n對策：進行對抗式訓練 (Adversarial Training)，讓模型看過這些攻擊樣本，增強抵抗力。\n\n模型漂移 (Model Drift)：\n\n現象：世界在變，數據也在變。一個半年前訓練好的模型，現在可能已經不準了。例如，消費者的購物習慣改變了，原本的推薦系統就會失效。\n對策：持續監控模型效能，並定期重新訓練 (Retrain)。\n\n\n\nFigure Prompt: An illustration of “AI Hallucination”. A robot wearing glasses is reading a book and confidently telling a story to a human, but the speech bubble contains a mix of real facts and obvious fantasy elements (like a unicorn). The human looks confused. Style: Cartoonish, humorous.",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>第四篇：AI 倫理、治理與風險 (AI Ethics, Governance & Risks)</span>"
     ]
   },
   {
-    "objectID": "part4.html#ai-倫理",
-    "href": "part4.html#ai-倫理",
+    "objectID": "part4.html#第十一章ai-倫理-ai-ethics",
+    "href": "part4.html#第十一章ai-倫理-ai-ethics",
     "title": "5  第四篇：AI 倫理、治理與風險 (AI Ethics, Governance & Risks)",
-    "section": "5.2 AI 倫理",
-    "text": "5.2 AI 倫理\n\nAI 倫理與社會影響 (L31)\n\nAI 倫理概念理解 (L311)\n\n關鍵術語： 資料匿名化 (Data Anonymization)、用戶同意管理 (User Consent Management) 。\n核心概念： 資料匿名化是遵守倫理規範並保護個資最常見的作法 。\n\nAI 倫理原則應用與案例分析 (L312)\n\n關鍵術語： 算法公正性 。\n核心概念： 金融領域的主要挑戰在於決策過程的透明度與隱私保護 。\n醫療應用： 醫療影像診斷輔助是 AI 在醫療領域的常見應用 。",
+    "section": "5.2 第十一章：AI 倫理 (AI Ethics)",
+    "text": "5.2 第十一章：AI 倫理 (AI Ethics)\n\n5.2.1 AI 應該遵守的道德規範\n除了技術上的風險，我們還必須考慮 AI 對社會的影響。AI 倫理就是一套指導原則，確保 AI 的發展符合人類的價值觀。\n\n5.2.1.1 1. 隱私保護 (Privacy)\nAI 需要大量數據，這往往涉及個人隱私。 * 資料匿名化 (Data Anonymization)：在收集數據時，去除可以識別個人身分的資訊（如姓名、身分證號），只保留分析所需的特徵。 * 用戶同意 (Consent)：必須明確告知用戶我們會收集什麼資料、用來做什麼，並取得用戶同意。\n\n\n5.2.1.2 2. 透明度與可解釋性 (Transparency & Explainability)\nAI 不應該是一個黑盒子 (Black Box)。 * 問題：如果 AI 拒絕了你的貸款申請，你一定想知道「為什麼？」。如果銀行說「不知道，是 AI 算的」，這顯然無法接受。 * 原則：對於影響重大的決策（如醫療、司法、金融），AI 的決策過程必須是可解釋的，讓人們理解它是依據什麼邏輯做出判斷。\n\n\n5.2.1.3 3. 公平性 (Fairness)\nAI 應該公平地對待每一個人，不分種族、性別、年齡或宗教。 * 算法公正性：開發者必須意識到自己的偏見，並積極消除模型中的歧視。\n\n\n\n5.2.2 案例分析：AI 倫理的兩難\n\n自駕車的電車難題：如果自駕車煞車失靈，前方有五個路人，轉向會撞死一個路人（或乘客自己），AI 該如何選擇？這是一個沒有標準答案的倫理難題。\n醫療診斷輔助：AI 可以幫忙看 X 光片，但如果 AI 誤診了，責任在誰？是醫生？是 AI 開發商？還是醫院？\n\n\nFigure Prompt: A conceptual illustration of “Explainable AI”. On the left, a “Black Box” AI with a question mark, outputting a decision “Rejected”. On the right, a “Glass Box” AI (transparent) showing the internal gears and logic, outputting “Rejected because: Income too low”. Style: Comparative diagram.\n\nAI 治理不僅僅是技術問題，更是法律、社會和哲學問題。只有建立完善的治理框架，我們才能安心地享受 AI 帶來的便利。",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>第四篇：AI 倫理、治理與風險 (AI Ethics, Governance & Risks)</span>"
     ]
@@ -164,17 +164,17 @@
     "href": "part5.html",
     "title": "6  第五篇：AI 程式語言 (AI Programming)",
     "section": "",
-    "text": "6.1 Python 基礎",
+    "text": "6.1 第十二章：Python 基礎 (Python Basics)\n想親手打造自己的 AI 嗎？那你必須學會與電腦溝通的語言。在 AI 領域，這個語言只有一個霸主，那就是 Python。",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>第五篇：AI 程式語言 (AI Programming)</span>"
     ]
   },
   {
-    "objectID": "part5.html#python-基礎",
-    "href": "part5.html#python-基礎",
+    "objectID": "part5.html#第十二章python-基礎-python-basics",
+    "href": "part5.html#第十二章python-基礎-python-basics",
     "title": "6  第五篇：AI 程式語言 (AI Programming)",
     "section": "",
-    "text": "AI 程式語言：Python 基礎運用 (L32)\n\n基本語法與變數 (L321)\n\n關鍵術語： 變數命名規則 。\n核心概念： 變數名稱不能以數字開頭（如 3_Pig 是錯誤的） 。\n型態轉換： 掌握字串與數字的輸出格式，如 print(5, 10, sep=',') 輸出為 5,10 。\n\n運算子與邏輯控制 (L322)\n\n關鍵術語： // (求商數運算子) 。\n其他運算子： ** (次方), % (取餘數)。\n迴圈結構：\n\nwhile...else：當迴圈條件不成立而結束時會執行 else 區塊。\nfor 迴圈：遍歷序列 (List, String 等)。\nbreak 與 continue：控制迴圈的執行流程。\n\n\n資料結構 (L323)\n\n關鍵術語： List (列表), Tuple (元組), Dictionary (字典) 。\n核心概念： Dictionary 使用鍵值對 (key-value) 儲存資料；Tuple 是不可變資料型態 。\n集合 (Set)： 無序且不重複的元素集合，常用於去重或集合運算。",
+    "text": "6.1.1 為什麼是 Python？\nPython 之所以成為 AI 界的通用語言，原因很簡單： 1. 簡單易學：它的語法非常接近英文，讀起來像在讀文章，而不是在解密碼。 2. 生態系豐富：擁有海量的 AI 函式庫（如 TensorFlow, PyTorch, Scikit-learn），別人已經幫你寫好 90% 的程式碼了，你只需要學會怎麼「呼叫」它們。\n\n\n6.1.2 Python 語法速成\n讓我們從最基礎的語法開始，踏出程式設計的第一步。\n\n6.1.2.1 1. 變數 (Variables)：資料的容器\n變數就像是一個貼了標籤的箱子，用來裝資料。 * 命名規則： * 可以包含字母、數字、底線 _。 * 不能以數字開頭：3_Pig 是錯的，Pig_3 是對的。 * 區分大小寫：Apple 和 apple 是兩個不同的箱子。 * 範例：\nname = \"Alice\"   # 字串 (String)\nage = 25         # 整數 (Integer)\nheight = 1.65    # 浮點數 (Float)\nis_student = True # 布林值 (Boolean)\n\n\n6.1.2.2 2. 輸出 (Print)：讓電腦說話\n用 print() 函數把結果顯示在螢幕上。 * 基本用法：print(\"Hello World\") * 進階用法：可以用逗號分隔多個東西，預設會用空白隔開。\n\n範例：\n\nprint(5, 10)          # 輸出: 5 10\nprint(5, 10, sep=',') # 輸出: 5,10 (指定分隔符號為逗號)\n\n\n6.1.2.3 3. 運算子 (Operators)：數學計算\n\n基本運算：+, -, *, / (除法，結果是小數)。\n特殊運算：\n\n// 求商數 (地板除法)：7 // 2 等於 3 (只取整數部分)。\n% 取餘數：7 % 2 等於 1 (7 除以 2 餘 1)。\n** 次方：2 ** 3 等於 8 (2 的 3 次方)。\n\n\n\n\n6.1.2.4 4. 邏輯控制 (Logic Control)：決定程式的走向\n\nif…else (如果…否則)：\n\nscore = 80\nif score &gt;= 60:\n    print(\"及格\")\nelse:\n    print(\"不及格\")\n\n\n6.1.2.5 5. 迴圈 (Loops)：重複做一樣的事\n\nfor 迴圈：當你知道要跑幾次，或要遍歷一個清單時。\n\nfor i in range(5): # 跑 5 次 (0 到 4)\n    print(i)\n\nwhile 迴圈：當你不知道要跑幾次，只知道停止條件時。\n\ncount = 0\nwhile count &lt; 5:\n    print(count)\n    count += 1\nelse:\n    print(\"跑完了\") # while...else: 當迴圈正常結束時執行\n\n控制指令：\n\nbreak：立刻跳出迴圈（不跑了）。\ncontinue：跳過這一次，直接進入下一輪。\n\n\n\n\n6.1.2.6 6. 資料結構 (Data Structures)：收納資料的櫃子\n\nList (列表)：最常用的，什麼都能裝，且有順序。\n\nfruits = [\"apple\", \"banana\", \"cherry\"]\n可以用 fruits[0] 拿到 “apple”。\n\nTuple (元組)：跟 List 很像，但是不可變 (Immutable)。一旦建立就不能修改。\n\npoint = (10, 20)\n適合用來存座標或設定檔，保護資料不被誤改。\n\nDictionary (字典)：用「鍵-值對 (Key-Value)」來存資料，像查字典一樣。\n\nstudent = {\"name\": \"Bob\", \"age\": 20}\n可以用 student[\"name\"] 拿到 “Bob”。\n\nSet (集合)：一堆不重複的資料，沒有順序。\n\nnumbers = {1, 2, 2, 3} -&gt; 實際存的是 {1, 2, 3} (自動去重)。\n常用來做集合運算（交集、聯集）。\n\n\n\nFigure Prompt: A visual cheat sheet for Python Data Structures. Four quadrants. 1. List: A train with numbered cars [0], [1], [2]. 2. Tuple: A sealed glass box containing items (Immutable). 3. Dictionary: A library card catalog with “Key” labels pointing to “Value” books. 4. Set: A basket of unique fruits (no duplicates allowed). Style: Cute, educational illustrations.\n\n恭喜你！你已經完成了這本書的旅程。從 AI 的基本概念，到機器學習的原理，再到實際的應用與程式實作。這只是起點，AI 的世界浩瀚無垠，期待你繼續探索，用 AI 創造更美好的未來！",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>第五篇：AI 程式語言 (AI Programming)</span>"
     ]

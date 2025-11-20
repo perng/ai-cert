@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-TW" xml:lang="zh-TW"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
@@ -57,20 +57,49 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "沒有結果",
+    "search-matching-documents-text": "符合的文件",
+    "search-copy-link-title": "複製搜尋連結",
+    "search-hide-matches-text": "隱藏其他符合的結果",
+    "search-more-match-text": "更多符合結果",
+    "search-more-matches-text": "更多符合結果",
+    "search-clear-button-title": "清除",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "取消",
+    "search-submit-button-title": "送出",
+    "search-label": "搜尋"
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -80,13 +109,13 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切換側邊欄導航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part2.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">第二篇：AI 技術應用與生成式 AI (AI Applications &amp; Generative AI)</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切換側邊欄導航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="搜尋" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -103,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="搜尋"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -151,12 +180,26 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">目錄</h2>
    
   <ul>
-  <li><a href="#鑑別式與生成式-ai" id="toc-鑑別式與生成式-ai" class="nav-link active" data-scroll-target="#鑑別式與生成式-ai"><span class="header-section-number">3.1</span> 鑑別式與生成式 AI</a></li>
-  <li><a href="#生成式-ai-應用與工具" id="toc-生成式-ai-應用與工具" class="nav-link" data-scroll-target="#生成式-ai-應用與工具"><span class="header-section-number">3.2</span> 生成式 AI 應用與工具</a></li>
-  <li><a href="#進階-ai-技術與部署" id="toc-進階-ai-技術與部署" class="nav-link" data-scroll-target="#進階-ai-技術與部署"><span class="header-section-number">3.3</span> 進階 AI 技術與部署</a></li>
+  <li><a href="#第五章鑑別式與生成式-ai-discriminative-vs-generative-ai" id="toc-第五章鑑別式與生成式-ai-discriminative-vs-generative-ai" class="nav-link active" data-scroll-target="#第五章鑑別式與生成式-ai-discriminative-vs-generative-ai"><span class="header-section-number">3.1</span> 第五章：鑑別式與生成式 AI (Discriminative vs Generative AI)</a>
+  <ul class="collapse">
+  <li><a href="#兩大-ai-陣營的對決與合作" id="toc-兩大-ai-陣營的對決與合作" class="nav-link" data-scroll-target="#兩大-ai-陣營的對決與合作"><span class="header-section-number">3.1.1</span> 兩大 AI 陣營的對決與合作</a></li>
+  <li><a href="#當判官遇見藝術家整合應用" id="toc-當判官遇見藝術家整合應用" class="nav-link" data-scroll-target="#當判官遇見藝術家整合應用"><span class="header-section-number">3.1.2</span> 當判官遇見藝術家：整合應用</a></li>
+  </ul></li>
+  <li><a href="#第六章生成式-ai-應用與工具-generative-ai-tools-applications" id="toc-第六章生成式-ai-應用與工具-generative-ai-tools-applications" class="nav-link" data-scroll-target="#第六章生成式-ai-應用與工具-generative-ai-tools-applications"><span class="header-section-number">3.2</span> 第六章：生成式 AI 應用與工具 (Generative AI Tools &amp; Applications)</a>
+  <ul class="collapse">
+  <li><a href="#no-code-low-codeai-民主化運動" id="toc-no-code-low-codeai-民主化運動" class="nav-link" data-scroll-target="#no-code-low-codeai-民主化運動"><span class="header-section-number">3.2.1</span> No Code / Low Code：AI 民主化運動</a></li>
+  <li><a href="#駕馭-ai-的關鍵技能prompt-engineering-提示工程" id="toc-駕馭-ai-的關鍵技能prompt-engineering-提示工程" class="nav-link" data-scroll-target="#駕馭-ai-的關鍵技能prompt-engineering-提示工程"><span class="header-section-number">3.2.2</span> 駕馭 AI 的關鍵技能：Prompt Engineering (提示工程)</a></li>
+  <li><a href="#生成式-ai-的導入與風險" id="toc-生成式-ai-的導入與風險" class="nav-link" data-scroll-target="#生成式-ai-的導入與風險"><span class="header-section-number">3.2.3</span> 生成式 AI 的導入與風險</a></li>
+  </ul></li>
+  <li><a href="#第七章進階-ai-技術與部署-advanced-ai-tech-deployment" id="toc-第七章進階-ai-技術與部署-advanced-ai-tech-deployment" class="nav-link" data-scroll-target="#第七章進階-ai-技術與部署-advanced-ai-tech-deployment"><span class="header-section-number">3.3</span> 第七章：進階 AI 技術與部署 (Advanced AI Tech &amp; Deployment)</a>
+  <ul class="collapse">
+  <li><a href="#深入-ai-的技術核心" id="toc-深入-ai-的技術核心" class="nav-link" data-scroll-target="#深入-ai-的技術核心"><span class="header-section-number">3.3.1</span> 深入 AI 的技術核心</a></li>
+  <li><a href="#nlp-與-cvai-的聽說讀寫" id="toc-nlp-與-cvai-的聽說讀寫" class="nav-link" data-scroll-target="#nlp-與-cvai-的聽說讀寫"><span class="header-section-number">3.3.2</span> NLP 與 CV：AI 的聽說讀寫</a></li>
+  <li><a href="#ai-系統部署從實驗室到真實世界" id="toc-ai-系統部署從實驗室到真實世界" class="nav-link" data-scroll-target="#ai-系統部署從實驗室到真實世界"><span class="header-section-number">3.3.3</span> AI 系統部署：從實驗室到真實世界</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -182,110 +225,121 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="鑑別式與生成式-ai" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="鑑別式與生成式-ai"><span class="header-section-number">3.1</span> 鑑別式與生成式 AI</h2>
-<ul>
-<li><strong>鑑別式 AI 與生成式 AI 概念 (L114)</strong>
-<ul>
-<li><strong>鑑別式 AI 與生成式 AI 的基本原理 (L11401)</strong>
-<ul>
-<li><strong>關鍵術語：</strong> 鑑別式 AI (Discriminative AI)、生成式 AI (Generative AI) 。</li>
-<li><strong>核心概念：</strong> 區分兩者的特性 (分類/預測 vs 創造新數據)。</li>
-</ul></li>
-<li><strong>鑑別式 AI 與生成式 AI 的整合應用 (L11402)</strong>
-<ul>
-<li><strong>核心概念：</strong> 理解兩者的相關應用 。</li>
-</ul></li>
-</ul></li>
-</ul>
+<p>歡迎來到 AI 的應用世界！如果說第一篇是學習內功（基礎理論），那麼這一篇就是學習招式（實際應用）。我們將深入探討目前最熱門的「生成式 AI」，以及它如何與傳統的「鑑別式 AI」相輔相成，改變我們的創造與工作方式。</p>
+<section id="第五章鑑別式與生成式-ai-discriminative-vs-generative-ai" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="第五章鑑別式與生成式-ai-discriminative-vs-generative-ai"><span class="header-section-number">3.1</span> 第五章：鑑別式與生成式 AI (Discriminative vs Generative AI)</h2>
+<section id="兩大-ai-陣營的對決與合作" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="兩大-ai-陣營的對決與合作"><span class="header-section-number">3.1.1</span> 兩大 AI 陣營的對決與合作</h3>
+<p>在 AI 的廣闊領域中，我們可以粗略地將模型分為兩大類，它們就像是人類大腦中的「左腦」與「右腦」，各司其職。</p>
+<section id="鑑別式-ai-discriminative-ai嚴謹的判官" class="level4" data-number="3.1.1.1">
+<h4 data-number="3.1.1.1" class="anchored" data-anchor-id="鑑別式-ai-discriminative-ai嚴謹的判官"><span class="header-section-number">3.1.1.1</span> 1. 鑑別式 AI (Discriminative AI)：嚴謹的判官</h4>
+<p>這類 AI 就像是一位經驗豐富的鑑識專家或法官。它的主要任務是<strong>「分類」</strong>和<strong>「預測」</strong>。 * <strong>運作方式</strong>：它學習數據之間的邊界。給它一張照片，它會判斷「這是貓還是狗？」；給它一筆交易紀錄，它會判斷「這是不是詐騙？」。 * <strong>核心邏輯</strong>：它尋找的是 <span class="math inline">\(P(Y|X)\)</span>，也就是在給定輸入 <span class="math inline">\(X\)</span> 的情況下，它是類別 <span class="math inline">\(Y\)</span> 的機率是多少。 * <strong>應用場景</strong>： * <strong>垃圾郵件過濾</strong>：判斷這封信是不是垃圾信。 * <strong>人臉辨識</strong>：判斷這個人是不是員工。 * <strong>信用評分</strong>：判斷這個人會不會還錢。</p>
 </section>
-<section id="生成式-ai-應用與工具" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="生成式-ai-應用與工具"><span class="header-section-number">3.2</span> 生成式 AI 應用與工具</h2>
-<ul>
-<li><strong>生成式 AI 應用與規劃 (L12)</strong>
-<ul>
-<li><strong>No Code / Low Code 概念 (L121)</strong>
-<ul>
-<li><strong>No Code / Low Code 的基本概念 (L12101)</strong>
-<ul>
-<li><strong>關鍵術語：</strong> No Code (無程式碼)、Low Code (低程式碼) 。</li>
-</ul></li>
-<li><strong>No Code / Low Code 的優勢與限制 (L12102)</strong>
-<ul>
-<li><strong>核心概念：</strong> 掌握工具在生成式 AI 應用中的功用與優勢 。</li>
-<li><strong>常見工具：</strong> Zapier, Make, Coze, Dify。</li>
-</ul></li>
-</ul></li>
-<li><strong>生成式 AI 應用領域與工具使用 (L122)</strong>
-<ul>
-<li><strong>生成式 AI 應用領域與常見工具 (L12201)</strong>
-<ul>
-<li><strong>核心概念：</strong> 熟悉常見工具的基本操作 。</li>
-<li><strong>熱門工具：</strong> ChatGPT, Claude, Midjourney, Stable Diffusion, GitHub Copilot。</li>
-</ul></li>
-<li><strong>如何善用生成式 AI 工具 (L12202)</strong>
-<ul>
-<li><strong>應用能力：</strong> Prompt Engineering (Zero-shot, Few-shot, CoT)。</li>
-</ul></li>
-</ul></li>
-<li><strong>生成式 AI 導入評估規劃 (L123)</strong>
-<ul>
-<li><strong>生成式 AI 導入評估 (L12301)</strong></li>
-<li><strong>生成式 AI 導入規劃 (L12302)</strong>
-<ul>
-<li><strong>關鍵術語：</strong> 需求確認、資源分配、試用測試 。</li>
-</ul></li>
-<li><strong>生成式 AI 風險管理 (L12303)</strong></li>
-</ul></li>
-</ul></li>
-<li><strong>生成式 AI 應用 (L343)</strong>
-<ul>
-<li><strong>核心概念：</strong> 使用生成式 AI 創作音樂時，提供具體的音樂結構和風格描述可提高準確性 。</li>
-</ul></li>
-</ul>
+<section id="生成式-ai-generative-ai天馬行空的藝術家" class="level4" data-number="3.1.1.2">
+<h4 data-number="3.1.1.2" class="anchored" data-anchor-id="生成式-ai-generative-ai天馬行空的藝術家"><span class="header-section-number">3.1.1.2</span> 2. 生成式 AI (Generative AI)：天馬行空的藝術家</h4>
+<p>這類 AI 就像是一位充滿創意的畫家或作家。它的主要任務是<strong>「創造」</strong>全新的數據。 * <strong>運作方式</strong>：它學習數據的分佈規律，然後試著模仿並產生新的樣本。它不是在做選擇題，而是在做申論題或繪畫題。 * <strong>核心邏輯</strong>：它尋找的是 <span class="math inline">\(P(X, Y)\)</span> 或 <span class="math inline">\(P(X)\)</span>，也就是試著去理解數據 <span class="math inline">\(X\)</span> 本身長什麼樣子，然後憑空（或根據提示）生出一個新的 <span class="math inline">\(X'\)</span>。 * <strong>應用場景</strong>： * <strong>寫作</strong>：幫你寫一首詩、一篇新聞稿 (如 ChatGPT)。 * <strong>繪圖</strong>：畫出一隻在太空漫步的貓 (如 Midjourney)。 * <strong>作曲</strong>：創作一段貝多芬風格的音樂。</p>
+<blockquote class="blockquote">
+<p><strong>Figure Prompt:</strong> Create a split-screen comparison illustration. Left side (Discriminative AI): A robot judge looking at a basket of mixed fruit and sorting them into “Apples” and “Oranges” bins. Right side (Generative AI): A robot artist looking at a fruit basket and painting a completely new, unique fruit on a canvas. Style: Colorful, isometric 3D.</p>
+</blockquote>
 </section>
-<section id="進階-ai-技術與部署" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="進階-ai-技術與部署"><span class="header-section-number">3.3</span> 進階 AI 技術與部署</h2>
+</section>
+<section id="當判官遇見藝術家整合應用" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="當判官遇見藝術家整合應用"><span class="header-section-number">3.1.2</span> 當判官遇見藝術家：整合應用</h3>
+<p>在實際應用中，這兩者往往不是對立，而是合作的。例如，在訓練一個強大的生成模型（如 GAN）時，我們同時需要一個生成器（藝術家）和一個鑑別器（判官）。藝術家努力畫出逼真的假畫，判官努力抓出假畫，兩者在競爭中共同進步，最後藝術家的畫功達到以假亂真的境界。</p>
+<hr>
+</section>
+</section>
+<section id="第六章生成式-ai-應用與工具-generative-ai-tools-applications" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="第六章生成式-ai-應用與工具-generative-ai-tools-applications"><span class="header-section-number">3.2</span> 第六章：生成式 AI 應用與工具 (Generative AI Tools &amp; Applications)</h2>
+<section id="no-code-low-codeai-民主化運動" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="no-code-low-codeai-民主化運動"><span class="header-section-number">3.2.1</span> No Code / Low Code：AI 民主化運動</h3>
+<p>過去，要開發 AI 應用程式，你必須是精通 Python 的工程師。但現在，<strong>No Code (無程式碼)</strong> 和 <strong>Low Code (低程式碼)</strong> 平台的興起，讓不懂程式設計的一般人也能輕鬆駕馭 AI。</p>
 <ul>
-<li><strong>人工智慧技術應用與規劃 (L21)</strong>
+<li><strong>No Code</strong>：完全不需要寫任何程式碼，透過「拖拉放 (Drag-and-Drop)」的方式，像堆積木一樣把功能組裝起來。
 <ul>
-<li><strong>AI 相關技術應用 (L211)</strong>
-<ul>
-<li><strong>自然語言處理技術與應用 (L21101)</strong></li>
-<li><strong>電腦視覺技術與應用 (L21102)</strong></li>
-<li><strong>生成式 AI 技術與應用 (L21103)</strong></li>
-<li><strong>多模態人工智慧應用 (L21104)</strong></li>
-<li><strong>核心概念：</strong> 熟悉 AI 相關技術框架 。</li>
-<li><strong>進階技術：</strong>
-<ul>
-<li><strong>GAN：</strong> 生成對抗網路。</li>
-<li><strong>Diffusion Model：</strong> 擴散模型。</li>
-<li><strong>LLM：</strong> 大型語言模型 (Transformer)。</li>
+<li><strong>優勢</strong>：門檻極低，快速驗證點子。</li>
+<li><strong>限制</strong>：客製化程度較低，只能用平台提供的積木。</li>
 </ul></li>
-</ul></li>
-<li><strong>AI 導入評估規劃 (L212)</strong>
+<li><strong>Low Code</strong>：需要寫少量的程式碼來進行客製化，適合有一定技術基礎但想加快開發速度的人。</li>
+</ul>
+<p><strong>熱門工具推薦</strong>： * <strong>Zapier / Make</strong>：自動化神器。你可以設定「當 Gmail 收到信時，自動叫 ChatGPT 幫我寫回覆草稿，並存到 Google Docs」。 * <strong>Coze / Dify</strong>：專門用來打造 AI 機器人的平台。你可以上傳自己的知識庫（PDF、網頁），快速做出一個「公司客服 AI」或「法律諮詢 AI」。</p>
+</section>
+<section id="駕馭-ai-的關鍵技能prompt-engineering-提示工程" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="駕馭-ai-的關鍵技能prompt-engineering-提示工程"><span class="header-section-number">3.2.2</span> 駕馭 AI 的關鍵技能：Prompt Engineering (提示工程)</h3>
+<p>擁有最強的 AI 工具（如 ChatGPT），如果你只會問「你好」，那就像開著法拉利去買菜。<strong>Prompt Engineering</strong> 就是與 AI 溝通的藝術，教你如何下達精準的指令，讓 AI 發揮 100% 的實力。</p>
+<section id="三大心法" class="level4" data-number="3.2.2.1">
+<h4 data-number="3.2.2.1" class="anchored" data-anchor-id="三大心法"><span class="header-section-number">3.2.2.1</span> 三大心法：</h4>
+<ol type="1">
+<li><strong>Zero-shot (零樣本提示)</strong>：直接問，不給範例。
 <ul>
-<li><strong>AI 導入評估 (L21201)</strong></li>
-<li><strong>AI 導入規劃 (L21202)</strong></li>
-<li><strong>AI 風險管理 (L21203)</strong></li>
+<li><em>Prompt</em>：「將這句話翻譯成英文：『今天天氣真好』。」</li>
+<li><em>適用</em>：簡單、常見的任務。</li>
 </ul></li>
-<li><strong>AI 技術應用與系統部署 (L213)</strong>
+<li><strong>Few-shot (少樣本提示)</strong>：給它幾個範例，讓它照樣造句。
 <ul>
-<li><strong>數據準備與模型選擇 (L21301)</strong></li>
-<li><strong>AI 技術系統集成與部署 (L21302)</strong></li>
-<li><strong>核心概念：</strong> MLOps, Edge AI, Cloud AI, API 整合。</li>
+<li><em>Prompt</em>：「將下列形容詞轉為顏色。天空 -&gt; 藍色；草地 -&gt; 綠色；太陽 -&gt; ？」</li>
+<li><em>適用</em>：需要特定格式或風格的任務。</li>
 </ul></li>
-</ul></li>
-<li><strong>自然語言處理與電腦視覺 (L342)</strong>
+<li><strong>Chain of Thought (CoT, 思維鏈)</strong>：叫 AI 把思考過程寫出來，不要直接給答案。
 <ul>
-<li><strong>關鍵術語：</strong> 詞袋模型 (Bag-of-Words) 。</li>
-<li><strong>核心概念：</strong> 詞袋模型用於文字特徵提取 。</li>
-<li><strong>NLP 技術：</strong> TF-IDF, Word2Vec, BERT, GPT。</li>
-<li><strong>CV 技術：</strong> YOLO (物件偵測), Segmentation (影像分割)。</li>
+<li><em>Prompt</em>：「這道數學題很難，請一步一步推理給我看，最後再給出答案。」</li>
+<li><em>適用</em>：複雜的邏輯推理、數學問題。</li>
+</ul></li>
+</ol>
+<blockquote class="blockquote">
+<p><strong>Figure Prompt:</strong> A visual guide to Prompt Engineering. Three panels. Panel 1 (Zero-shot): User says “Translate”, AI outputs text. Panel 2 (Few-shot): User shows flashcards “A=1, B=2”, then asks “C?”, AI says “3”. Panel 3 (Chain of Thought): User asks complex question, AI shows a thought bubble with gears turning and steps “1..2..3..” before speaking.</p>
+</blockquote>
+</section>
+</section>
+<section id="生成式-ai-的導入與風險" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="生成式-ai-的導入與風險"><span class="header-section-number">3.2.3</span> 生成式 AI 的導入與風險</h3>
+<p>企業在引進 AI 時，不能只是一頭熱，必須經過審慎的評估： 1. <strong>需求確認</strong>：我們真的需要 AI 嗎？它能解決什麼痛點？ 2. <strong>資源盤點</strong>：我們有足夠的數據嗎？算力夠嗎？預算多少？ 3. <strong>風險管理</strong>： * <strong>幻覺 (Hallucination)</strong>：AI 會一本正經地胡說八道。 * <strong>資安</strong>：員工會不會把公司機密丟給 AI？ * <strong>版權</strong>：AI 生成的圖片會不會侵權？</p>
+<hr>
+</section>
+</section>
+<section id="第七章進階-ai-技術與部署-advanced-ai-tech-deployment" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="第七章進階-ai-技術與部署-advanced-ai-tech-deployment"><span class="header-section-number">3.3</span> 第七章：進階 AI 技術與部署 (Advanced AI Tech &amp; Deployment)</h2>
+<section id="深入-ai-的技術核心" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="深入-ai-的技術核心"><span class="header-section-number">3.3.1</span> 深入 AI 的技術核心</h3>
+<p>除了基礎模型，還有一些進階技術正在推動 AI 的邊界：</p>
+<ol type="1">
+<li><strong>GAN (生成對抗網路)</strong>：如前所述，這是兩個神經網路在打架。
+<ul>
+<li><em>應用</em>：Deepfake 換臉、將黑白照片變彩色、修復模糊照片。</li>
+</ul></li>
+<li><strong>Diffusion Model (擴散模型)</strong>：這是目前最強大的繪圖 AI (如 Stable Diffusion) 的核心。
+<ul>
+<li><em>原理</em>：想像把一滴墨水滴入水中（擴散），圖案變模糊（加噪聲）。擴散模型就是學習這個過程的「倒帶」，從一團雜訊中慢慢還原出清晰的圖像。</li>
+</ul></li>
+<li><strong>LLM (大型語言模型)</strong>：基於 Transformer 架構，閱讀了網路上幾乎所有的文字。它們是通用的語言大師。</li>
+</ol>
+</section>
+<section id="nlp-與-cvai-的聽說讀寫" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="nlp-與-cvai-的聽說讀寫"><span class="header-section-number">3.3.2</span> NLP 與 CV：AI 的聽說讀寫</h3>
+<ul>
+<li><strong>自然語言處理 (NLP)</strong>：讓電腦聽懂人話。
+<ul>
+<li><strong>詞袋模型 (Bag-of-Words)</strong>：把句子變成單字的集合，不考慮順序。雖然簡單，但在垃圾郵件分類還是很有用。</li>
+<li><strong>Word2Vec</strong>：把單字變成向量（數字列表）。神奇的是，它能捕捉語意關係，例如：<code>國王 - 男人 + 女人 = 女王</code>。</li>
+<li><strong>BERT / GPT</strong>：現代 NLP 的霸主，能理解上下文的深層含義。</li>
+</ul></li>
+<li><strong>電腦視覺 (CV)</strong>：讓電腦看懂世界。
+<ul>
+<li><strong>YOLO (You Only Look Once)</strong>：超快速的物件偵測。它看一眼照片，就能框出裡面有幾個人、幾輛車、幾隻狗，而且速度快到可以處理即時影片。</li>
+<li><strong>Segmentation (影像分割)</strong>：比偵測更精細，它能把物體的輪廓精確地描出來，像素級的分類。這在醫療影像（標記腫瘤範圍）和自駕車（區分路面和人行道）非常重要。</li>
 </ul></li>
 </ul>
+<blockquote class="blockquote">
+<p><strong>Figure Prompt:</strong> A diagram illustrating “Diffusion Model”. From left to right: A clear image of a cat -&gt; slightly grainy cat -&gt; very noisy static -&gt; pure noise. Then an arrow curving back underneath labeled “Reverse Diffusion (Generation)” showing the noise turning back into a clear cat image.</p>
+</blockquote>
+</section>
+<section id="ai-系統部署從實驗室到真實世界" class="level3" data-number="3.3.3">
+<h3 data-number="3.3.3" class="anchored" data-anchor-id="ai-系統部署從實驗室到真實世界"><span class="header-section-number">3.3.3</span> AI 系統部署：從實驗室到真實世界</h3>
+<p>模型訓練好只是第一步，如何讓它在真實世界穩定運作才是挑戰。 * <strong>MLOps</strong>：就像 DevOps，但是針對機器學習。它管理模型的全生命週期：訓練、版控、部署、監控。 * <strong>Edge AI (邊緣運算)</strong>：把 AI 模型瘦身，塞進手機、攝影機或無人機裡，不用連上雲端也能運作。優點是速度快、隱私好（數據不出門）。 * <strong>Cloud AI (雲端運算)</strong>：使用 Google、AWS 的強大伺服器來跑超大模型。優點是算力無限，但需要網路。</p>
+<p>這篇我們探討了 AI 的應用面，從生成式 AI 的創意爆發，到 NLP 與 CV 的感知能力，以及最後如何將這些技術落地部署。掌握這些，你就擁有了改變世界的工具箱！</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -314,12 +368,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "已複製");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "已複製");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
