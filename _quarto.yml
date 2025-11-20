@@ -1,0 +1,15 @@
+project:
+  type: book
+
+book:
+  title: "AI 雙認證全攻略：AI 應用規劃師 & 工程素養認證"
+  author: "AI仁波切"
+  date: "2025-11-20"
+  chapters:
+    - index.md
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
