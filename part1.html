@@ -154,10 +154,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#人工智慧概論" id="toc-人工智慧概論" class="nav-link active" data-scroll-target="#人工智慧概論"><span class="header-section-number">2.1</span> 人工智慧概論</a></li>
-  <li><a href="#機器學習基礎" id="toc-機器學習基礎" class="nav-link" data-scroll-target="#機器學習基礎"><span class="header-section-number">2.2</span> 機器學習基礎</a></li>
-  <li><a href="#演算法與理論" id="toc-演算法與理論" class="nav-link" data-scroll-target="#演算法與理論"><span class="header-section-number">2.3</span> 演算法與理論</a></li>
-  <li><a href="#建模與調校" id="toc-建模與調校" class="nav-link" data-scroll-target="#建模與調校"><span class="header-section-number">2.4</span> 建模與調校</a></li>
+  <li><a href="#第一章人工智慧概論-introduction-to-ai" id="toc-第一章人工智慧概論-introduction-to-ai" class="nav-link active" data-scroll-target="#第一章人工智慧概論-introduction-to-ai"><span class="header-section-number">2.1</span> 第一章：人工智慧概論 (Introduction to AI)</a>
+  <ul class="collapse">
+  <li><a href="#ai-的三種型態" id="toc-ai-的三種型態" class="nav-link" data-scroll-target="#ai-的三種型態"><span class="header-section-number">2.1.1</span> AI 的三種型態</a></li>
+  </ul></li>
+  <li><a href="#第二章機器學習基礎-machine-learning-basics" id="toc-第二章機器學習基礎-machine-learning-basics" class="nav-link" data-scroll-target="#第二章機器學習基礎-machine-learning-basics"><span class="header-section-number">2.2</span> 第二章：機器學習基礎 (Machine Learning Basics)</a>
+  <ul class="collapse">
+  <li><a href="#教電腦學習而不是聽令" id="toc-教電腦學習而不是聽令" class="nav-link" data-scroll-target="#教電腦學習而不是聽令"><span class="header-section-number">2.2.1</span> 教電腦「學習」，而不是「聽令」</a></li>
+  <li><a href="#常見的機器學習模型-你的-ai-工具箱" id="toc-常見的機器學習模型-你的-ai-工具箱" class="nav-link" data-scroll-target="#常見的機器學習模型-你的-ai-工具箱"><span class="header-section-number">2.2.2</span> 常見的機器學習模型 (你的 AI 工具箱)</a></li>
+  </ul></li>
+  <li><a href="#第三章深度學習與神經網路-deep-learning-neural-networks" id="toc-第三章深度學習與神經網路-deep-learning-neural-networks" class="nav-link" data-scroll-target="#第三章深度學習與神經網路-deep-learning-neural-networks"><span class="header-section-number">2.3</span> 第三章：深度學習與神經網路 (Deep Learning &amp; Neural Networks)</a>
+  <ul class="collapse">
+  <li><a href="#模仿大腦的運作" id="toc-模仿大腦的運作" class="nav-link" data-scroll-target="#模仿大腦的運作"><span class="header-section-number">2.3.1</span> 模仿大腦的運作</a></li>
+  <li><a href="#深度學習的三大巨頭" id="toc-深度學習的三大巨頭" class="nav-link" data-scroll-target="#深度學習的三大巨頭"><span class="header-section-number">2.3.2</span> 深度學習的三大巨頭</a></li>
+  </ul></li>
+  <li><a href="#第四章建模與調校-modeling-tuning" id="toc-第四章建模與調校-modeling-tuning" class="nav-link" data-scroll-target="#第四章建模與調校-modeling-tuning"><span class="header-section-number">2.4</span> 第四章：建模與調校 (Modeling &amp; Tuning)</a>
+  <ul class="collapse">
+  <li><a href="#打造完美的-ai-模型" id="toc-打造完美的-ai-模型" class="nav-link" data-scroll-target="#打造完美的-ai-模型"><span class="header-section-number">2.4.1</span> 打造完美的 AI 模型</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -183,113 +197,156 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="人工智慧概論" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="人工智慧概論"><span class="header-section-number">2.1</span> 人工智慧概論</h2>
+<p>歡迎來到人工智慧 (AI) 的世界！這本書將帶領你從零開始，深入淺出地理解 AI 的核心概念、運作原理以及它如何改變我們的生活。我們不需要複雜的數學公式，而是用直觀的語言和生動的例子，讓你輕鬆掌握這些看似高深的技術。</p>
+<section id="第一章人工智慧概論-introduction-to-ai" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="第一章人工智慧概論-introduction-to-ai"><span class="header-section-number">2.1</span> 第一章：人工智慧概論 (Introduction to AI)</h2>
+<p>. ### 什麼是人工智慧？</p>
+<p>簡單來說，人工智慧 (Artificial Intelligence, AI) 就是讓電腦擁有像人類一樣的「智慧」。這包括學習、推理、解決問題、理解語言，甚至感知環境的能力。想像一下，傳統的電腦程式就像是一個只會聽命行事的工廠作業員，你必須給它明確的指令（程式碼），它才會動作。而 AI 則像是一個聰明的學徒，它可以透過觀察數據和經驗，自己學會如何完成任務。</p>
+<section id="ai-的三種型態" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="ai-的三種型態"><span class="header-section-number">2.1.1</span> AI 的三種型態</h3>
+<p>我們可以將 AI 依據其能力的強弱，分為三個等級：</p>
+<blockquote class="blockquote">
+<p><strong>Figure Prompt:</strong> Generate a flat illustration comparing three types of AI. 1. Weak AI: A smartphone showing Siri/Assistant icon. 2. Strong AI: A robot shaking hands with a human, looking equal. 3. Super AI: A glowing, abstract digital brain hovering above a city, symbolizing superior intelligence. Style: Modern, clean, vector art.</p>
+</blockquote>
+<ol type="1">
+<li><strong>弱人工智慧 (Artificial Narrow Intelligence, ANI)</strong>： 這是我們目前生活中最常見的 AI。它們是「專才」，非常擅長做某一件特定的事情，甚至做得比人類更好，但在其他方面則一竅不通。
 <ul>
-<li><strong>人工智慧概念 (L111)</strong>
-<ul>
-<li><strong>AI 的定義與分類 (L11101)</strong>
-<ul>
-<li><strong>關鍵術語：</strong> 弱人工智慧、強人工智慧、基本理論、核心目標 。</li>
-<li><strong>核心概念：</strong> 掌握人工智慧的基本概念與應用領域 。</li>
-<li><strong>AI 分類詳解：</strong>
-<ul>
-<li><strong>弱人工智慧 (ANI)：</strong> 專注於單一任務 (如 AlphaGo, Siri)。</li>
-<li><strong>強人工智慧 (AGI)：</strong> 具備人類般的通用智慧與學習能力。</li>
-<li><strong>超人工智慧 (ASI)：</strong> 超越人類智慧的 AI (理論階段)。</li>
+<li><strong>例子</strong>：打敗圍棋冠軍的 AlphaGo、手機裡的 Siri 語音助理、Netflix 的影片推薦系統。AlphaGo 雖然下圍棋無敵，但它不會開車，也不會聊天。</li>
 </ul></li>
+<li><strong>強人工智慧 (Artificial General Intelligence, AGI)</strong>： 這是科學家們努力的目標，也是科幻電影中常見的 AI。它們是「通才」，具備像人類一樣的通用智慧，可以學習任何人類能學會的技能，具備常識、情感和自我意識。
+<ul>
+<li><strong>例子</strong>：電影《雲端情人 (Her)》中的薩曼莎，或是《鋼鐵人》中的賈維斯。目前我們尚未真正達成 AGI。</li>
 </ul></li>
-</ul></li>
-</ul>
+<li><strong>超人工智慧 (Artificial Super Intelligence, ASI)</strong>： 這是理論上 AI 發展的終極階段。當 AI 的智慧在所有領域（包括創造力、社交技巧、問題解決能力）都遠遠超越最聰明的人類時，我們就稱之為超人工智慧。這是一個充滿未知與想像的領域。</li>
+</ol>
+<hr>
 </section>
-<section id="機器學習基礎" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="機器學習基礎"><span class="header-section-number">2.2</span> 機器學習基礎</h2>
-<ul>
-<li><strong>機器學習概念 (L113)</strong>
-<ul>
-<li><strong>機器學習基本原理 (L11301)</strong>
-<ul>
-<li><strong>關鍵術語：</strong> 機器學習 (Machine Learning) 。</li>
-<li><strong>核心概念：</strong> 理解機器學習的基本原理及其在 AI 中的作用 。</li>
-</ul></li>
-<li><strong>常見的機器學習模型 (L11302)</strong>
-<ul>
-<li><strong>核心概念：</strong> 熟悉常見的機器學習方法及其應用 。</li>
-<li><strong>常見模型詳解：</strong>
-<ul>
-<li><strong>線性回歸 (Linear Regression) 與 邏輯回歸 (Logistic Regression)：</strong> 基礎的預測與分類模型。</li>
-<li><strong>決策樹 (Decision Tree)：</strong> 樹狀結構的決策模型，易於解釋。</li>
-<li><strong>隨機森林 (Random Forest)：</strong> 結合多棵決策樹的集成學習方法。</li>
-<li><strong>支援向量機 (SVM)：</strong> 尋找最佳超平面以區分數據類別。</li>
-<li><strong>單純貝氏分類器 (Naive Bayes)：</strong> 基於貝氏定理的機率分類器。</li>
-<li><strong>K-近鄰演算法 (KNN)：</strong> 基於鄰近樣本進行分類。</li>
-<li><strong>K-平均演算法 (K-Means)：</strong> 非監督式分群演算法。</li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><strong>機器學習基礎數學 (L231)</strong>
-<ul>
-<li><strong>機率/統計之機器學習基礎應用 (L23101)</strong></li>
-<li><strong>線性代數之機器學習基礎應用 (L23102)</strong></li>
-<li><strong>數值優化技術與方法 (L23103)</strong>
-<ul>
-<li><strong>核心概念：</strong> 熟悉線性代數、微積分 (如梯度下降法)、機率和統計等基本數學知識 。</li>
-</ul></li>
-</ul></li>
-</ul>
 </section>
-<section id="演算法與理論" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="演算法與理論"><span class="header-section-number">2.3</span> 演算法與理論</h2>
+<section id="第二章機器學習基礎-machine-learning-basics" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="第二章機器學習基礎-machine-learning-basics"><span class="header-section-number">2.2</span> 第二章：機器學習基礎 (Machine Learning Basics)</h2>
+<section id="教電腦學習而不是聽令" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="教電腦學習而不是聽令"><span class="header-section-number">2.2.1</span> 教電腦「學習」，而不是「聽令」</h3>
+<p>機器學習 (Machine Learning, ML) 是 AI 的一個子領域，也是目前 AI 發展的核心動力。</p>
 <ul>
-<li><strong>機器學習與深度學習 (L232)</strong>
-<ul>
-<li><strong>機器學習原理與技術 (L23201)</strong></li>
-<li><strong>常見機器學習演算法 (L23202)</strong></li>
-<li><strong>深度學習原理與框架 (L23203)</strong>
-<ul>
-<li><strong>核心概念：</strong> 理解演算法運作原理，瞭解機器學習與深度學習的技術差異 。</li>
-<li><strong>深度學習架構：</strong>
-<ul>
-<li><strong>卷積神經網路 (CNN)：</strong> 影像識別 (如 ResNet, VGG)。</li>
-<li><strong>循環神經網路 (RNN/LSTM/GRU)：</strong> 序列數據處理。</li>
-<li><strong>Transformer：</strong> 自注意力機制 (如 BERT, GPT)。</li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><strong>機器學習與深度學習理論 (L332)</strong>
-<ul>
-<li><strong>關鍵術語：</strong> 準確率 (Accuracy)、召回率 (Recall) 。</li>
-<li><strong>核心概念：</strong>
-<ul>
-<li><strong>模型評估指標：</strong> Accuracy, Precision, Recall, F1-Score, ROC/AUC。</li>
-<li><strong>集成學習：</strong> Bagging (Random Forest), Boosting (XGBoost), Stacking。</li>
-<li><strong>正規化：</strong> L1 (Lasso), L2 (Ridge), Dropout, Batch Normalization。</li>
-</ul></li>
-</ul></li>
+<li><strong>傳統程式設計</strong>：我們輸入「規則」和「數據」，電腦給出「答案」。例如，我們告訴電腦「如果下雨，就帶傘」，電腦看到「下雨」的數據，就會輸出「帶傘」。</li>
+<li><strong>機器學習</strong>：我們輸入「數據」和「答案」，電腦自己找出「規則」。例如，我們給電腦看一萬張貓的照片（數據）並告訴它這些是貓（答案），電腦就會自己分析出貓的特徵（有尖耳朵、鬍鬚…），最後學會如何辨識貓。</li>
 </ul>
+<blockquote class="blockquote">
+<p><strong>Figure Prompt:</strong> Generate a diagram contrasting “Traditional Programming” vs “Machine Learning”. Top flow: Rules + Data -&gt; [Traditional Programming] -&gt; Answers. Bottom flow: Data + Answers -&gt; [Machine Learning] -&gt; Rules. Use icons for Data (document), Rules (scroll), and Answers (lightbulb).</p>
+</blockquote>
 </section>
-<section id="建模與調校" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="建模與調校"><span class="header-section-number">2.4</span> 建模與調校</h2>
+<section id="常見的機器學習模型-你的-ai-工具箱" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="常見的機器學習模型-你的-ai-工具箱"><span class="header-section-number">2.2.2</span> 常見的機器學習模型 (你的 AI 工具箱)</h3>
+<p>機器學習有很多種方法（模型），就像工具箱裡有不同的工具，適用於不同的問題。</p>
+<ol type="1">
+<li><p><strong>線性回歸 (Linear Regression)</strong>：</p>
 <ul>
-<li><strong>機器學習建模與參數調校 (L233)</strong>
-<ul>
-<li><strong>數據準備與特徵工程 (L23301)</strong>
-<ul>
-<li><strong>技術：</strong> One-hot Encoding, 標準化/正規化, 缺失值填補。</li>
+<li><strong>概念</strong>：想像你在畫一張圖，橫軸是房子的大小，縱軸是房價。你會發現點點大致分佈在一條線附近。線性回歸就是試著畫出這條「最佳直線」，用來預測未來的趨勢。</li>
+<li><strong>應用</strong>：預測房價、股票走勢、銷售量。</li>
 </ul></li>
-<li><strong>模型選擇與架構設計 (L23302)</strong></li>
-<li><strong>模型訓練、評估與驗證 (L23303)</strong>
+<li><p><strong>邏輯回歸 (Logistic Regression)</strong>：</p>
 <ul>
-<li><strong>技術：</strong> 交叉驗證 (Cross-validation), 混淆矩陣 (Confusion Matrix)。</li>
+<li><strong>概念</strong>：雖然名字有「回歸」，但它其實是用來做「分類」的。它像是一個開關，判斷事情是「是」或「否」（0 或 1）。</li>
+<li><strong>應用</strong>：判斷電子郵件是不是垃圾郵件、這筆交易是不是詐騙。</li>
 </ul></li>
-<li><strong>模型調整與優化 (L22304)</strong>
+<li><p><strong>決策樹 (Decision Tree)</strong>：</p>
 <ul>
-<li><strong>核心概念：</strong> 具備建構、訓練、調校模型的能力 (如 Grid Search)。</li>
+<li><strong>概念</strong>：這就像是在玩「20 個問題」遊戲。透過一連串的「是/否」問題，將數據層層分類，直到得出結論。</li>
+<li><strong>結構</strong>：樹根是第一個問題，樹枝是選項，樹葉是最終的分類結果。</li>
+<li><strong>應用</strong>：銀行審核貸款（年收入 &gt; 100萬？是 -&gt; 信用良好？是 -&gt; 核准）。</li>
 </ul></li>
+</ol>
+<blockquote class="blockquote">
+<p><strong>Figure Prompt:</strong> Generate a visualization of a Decision Tree. The root node asks “Is it raining?”. Left branch “Yes” -&gt; “Is it windy?” -&gt; “Don’t go out”. Right branch “No” -&gt; “Go out”. Style: Clean, flowchart style with icons.</p>
+</blockquote>
+<ol start="4" type="1">
+<li><strong>隨機森林 (Random Forest)</strong>：
+<ul>
+<li><strong>概念</strong>：俗話說「三個臭皮匠，勝過一個諸葛亮」。隨機森林就是種植很多棵「決策樹」，然後讓它們投票。如果大部分的樹都說是「A 類」，那結果就是 A。這通常比單一決策樹更準確。</li>
 </ul></li>
+<li><strong>支援向量機 (SVM)</strong>：
+<ul>
+<li><strong>概念</strong>：想像桌上有紅球和藍球混在一起。SVM 的任務就是拿一根棍子（在二維平面是線，三維空間是面），試著把紅球和藍球分得越開越好，這根棍子就是「最佳超平面」。</li>
+</ul></li>
+<li><strong>K-近鄰演算法 (KNN)</strong>：
+<ul>
+<li><strong>概念</strong>：物以類聚。當來了一個新數據，KNN 會看它最近的 K 個鄰居是誰。如果鄰居大多是紅球，那它大概也是紅球。</li>
+</ul></li>
+<li><strong>K-平均演算法 (K-Means)</strong>：
+<ul>
+<li><strong>概念</strong>：這是一種「非監督式學習」（沒有標準答案）。想像你有一堆混在一起的珠子，K-Means 會自動幫你把顏色或大小相近的珠子分成 K 堆。</li>
+</ul></li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="第三章深度學習與神經網路-deep-learning-neural-networks" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="第三章深度學習與神經網路-deep-learning-neural-networks"><span class="header-section-number">2.3</span> 第三章：深度學習與神經網路 (Deep Learning &amp; Neural Networks)</h2>
+<section id="模仿大腦的運作" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="模仿大腦的運作"><span class="header-section-number">2.3.1</span> 模仿大腦的運作</h3>
+<p>深度學習 (Deep Learning) 是機器學習的一種特殊形式，它的靈感來自於人類大腦的運作方式。我們的大腦由數十億個神經元組成，它們相互連接傳遞訊號。深度學習使用「人工神經網路 (Artificial Neural Networks)」，模擬這種結構。</p>
+<ul>
+<li><strong>神經元 (Neuron)</strong>：接收輸入訊號，經過處理（權重加權），決定是否向下傳遞。</li>
+<li><strong>層 (Layer)</strong>：神經網路通常有好幾層。輸入層接收數據，隱藏層負責複雜的運算，輸出層給出結果。「深度」學習就是指有很多層隱藏層。</li>
 </ul>
+<blockquote class="blockquote">
+<p><strong>Figure Prompt:</strong> Generate a diagram of a Neural Network. Left side: Input Layer (nodes). Middle: Several Hidden Layers (nodes connected by lines). Right side: Output Layer (nodes). Highlight the connections showing data flowing from left to right. Style: Tech, glowing lines, dark background.</p>
+</blockquote>
+</section>
+<section id="深度學習的三大巨頭" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="深度學習的三大巨頭"><span class="header-section-number">2.3.2</span> 深度學習的三大巨頭</h3>
+<ol type="1">
+<li><strong>卷積神經網路 (CNN - Convolutional Neural Networks)</strong>：
+<ul>
+<li><strong>專長</strong>：<strong>看</strong>。CNN 非常擅長處理影像。它像人類的眼睛一樣，會先辨識邊緣、線條，再組合成形狀，最後辨識出物體。</li>
+<li><strong>應用</strong>：人臉辨識、醫療影像診斷、自駕車看路標。</li>
+</ul></li>
+<li><strong>循環神經網路 (RNN - Recurrent Neural Networks)</strong>：
+<ul>
+<li><strong>專長</strong>：<strong>記</strong>。RNN 擅長處理有順序的數據，它有「記憶」功能，能記住前面的資訊來幫助理解後面的資訊。</li>
+<li><strong>應用</strong>：語音辨識（理解句子的前後文）、股票預測（時間序列）、語言翻譯。</li>
+</ul></li>
+<li><strong>Transformer</strong>：
+<ul>
+<li><strong>專長</strong>：<strong>專注</strong>。這是目前最強大的架構（如 ChatGPT 背後的技術）。它引入了「自注意力機制 (Self-Attention)」，能同時看到整篇文章，並知道哪些字詞之間有強烈的關聯，而不受距離限制。</li>
+<li><strong>應用</strong>：大型語言模型 (LLM)、生成式 AI。</li>
+</ul></li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="第四章建模與調校-modeling-tuning" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="第四章建模與調校-modeling-tuning"><span class="header-section-number">2.4</span> 第四章：建模與調校 (Modeling &amp; Tuning)</h2>
+<section id="打造完美的-ai-模型" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="打造完美的-ai-模型"><span class="header-section-number">2.4.1</span> 打造完美的 AI 模型</h3>
+<p>建立一個 AI 模型就像是訓練一個運動員，需要經過精心的準備和訓練。</p>
+<ol type="1">
+<li><strong>數據準備 (Data Preparation)</strong>：
+<ul>
+<li><strong>垃圾進，垃圾出 (Garbage In, Garbage Out)</strong>：如果你給模型錯誤或雜亂的數據，它學出來的東西也會是一團糟。</li>
+<li><strong>特徵工程</strong>：把數據轉換成電腦好理解的格式。例如，電腦看不懂「紅色」、「藍色」，我們要把它變成數字編碼 (One-hot Encoding)。</li>
+<li><strong>標準化</strong>：把不同單位的數據（如身高 180 cm 和體重 70 kg）縮放到同一個範圍，避免模型產生偏差。</li>
+</ul></li>
+<li><strong>模型訓練與評估 (Training &amp; Evaluation)</strong>：
+<ul>
+<li><strong>訓練集與測試集</strong>：我們通常把數據分成兩份。80% 用來訓練（像課本），20% 用來考試（像期末考），看看模型是不是真的學會了，還是只是死背答案。</li>
+<li><strong>交叉驗證 (Cross-validation)</strong>：為了更客觀，我們會輪流用不同的數據來考試。</li>
+</ul></li>
+<li><strong>評估指標 (Metrics)</strong>：
+<ul>
+<li><strong>準確率 (Accuracy)</strong>：考對了幾題？（最直觀，但不一定最好）。</li>
+<li><strong>召回率 (Recall)</strong>：該抓出來的壞人，抓出了幾個？（在醫療診斷或詐騙偵測中很重要，我們寧可抓錯，不可放過）。</li>
+</ul></li>
+<li><strong>過擬合 (Overfitting) 與 欠擬合 (Underfitting)</strong>：
+<ul>
+<li><strong>過擬合</strong>：書讀太死。模型在訓練集（課本）表現滿分，但遇到新數據（考試）就掛了。解決方法：多做題目（增加數據）、不要讀太細（正規化）。</li>
+<li><strong>欠擬合</strong>：書沒讀懂。模型連訓練集都學不好。解決方法：換個更聰明的腦袋（更複雜的模型）。</li>
+</ul></li>
+</ol>
+<p>這就是 AI 與機器學習的基礎之旅。希望這些概念能幫助你更好地理解這個正在改變世界的技術！</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
