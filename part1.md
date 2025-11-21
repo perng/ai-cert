@@ -49,7 +49,6 @@
 
 機器學習有很多種方法（模型），就像工具箱裡有不同的工具，適用於不同的問題。
 
-![線性回歸](images/linear-regression.jpg){#fig-linear-regression}
 
 
 1.  **線性回歸 (Linear Regression)**：
@@ -74,10 +73,11 @@
             $$ RSE = \sqrt{\frac{1}{n-2}\sum (y_i - \hat{y}_i)^2} $$
             別被嚇到了！簡單來說就是：把每個點的誤差 $(y - \hat{y})$ 平方加起來，除以點的數量，再開根號。就像是算所有誤差的「平均值」。
 
+![線性回歸](images/linear-regression.jpg){#fig-linear-regression}
+
+
+
 2.  **邏輯回歸 (Logistic Regression)**：
-
-![邏輯回歸](images/logistic-regression.jpg){#fig-logistic-regression}
-
     *   **概念**：雖然名字有「回歸」，但它其實是用來做「分類」的。它像是一個開關，判斷事情是「是」或「否」（0 或 1）。
     *   **數學原理 (Friendly Math)**：
         它其實就是把線性回歸的結果，丟進一個 S 型的函數（Sigmoid 函數）裡面：
@@ -87,8 +87,10 @@
         *   **決策**：通常我們設 0.5 為門檻。大於 0.5 就是「是」，小於 0.5 就是「否」。
     *   **應用**：判斷電子郵件是不是垃圾郵件、這筆交易是不是詐騙。
 
+![邏輯回歸](images/logistic-regression.jpg){#fig-logistic-regression}
+
+
 3.  **決策樹 (Decision Tree)**：
-![決策樹](images/decision-tree.png){#fig-decision-tree}
     *   **概念**：這就像是在玩「20 個問題」遊戲。透過一連串的「是/否」問題，將數據層層分類，直到得出結論。
     *   **數學原理 (Friendly Math)**：
         決策樹怎麼知道要先問哪個問題？它會算一個叫做 **「亂度 (Entropy)」** 或 **「基尼係數 (Gini Impurity)」** 的東西。
@@ -97,9 +99,13 @@
     *   **結構**：樹根是第一個問題，樹枝是選項，樹葉是最終的分類結果。
     *   **應用**：銀行審核貸款（年收入 > 100萬？是 -> 信用良好？是 -> 核准）。
 
-> **Figure Prompt:** Generate a visualization of a Decision Tree. The root node asks "Is it raining?". Left branch "Yes" -> "Is it windy?" -> "Don't go out". Right branch "No" -> "Go out". Style: Clean, flowchart style with icons.
+![決策樹](images/decision-tree.png){#fig-decision-tree}
+
 
 4.  **隨機森林 (Random Forest)**：
+
+![隨機森林](images/random-forest.jpg){#fig-random-forest}
+
     *   **概念**：俗話說「三個臭皮匠，勝過一個諸葛亮」。隨機森林就是種植很多棵「決策樹」，然後讓它們投票。如果大部分的樹都說是「A 類」，那結果就是 A。這通常比單一決策樹更準確。
     *   **數學原理 (Friendly Math)**：
         *   **集成學習 (Ensemble Learning)**：這背後的數學原理叫做「大數法則」。假設每一棵樹的準確率只有 60%（比亂猜好一點），但如果我們有 100 棵樹一起投票，犯錯的機率就會大幅下降。
@@ -112,6 +118,9 @@
         *   **Margin**：這條線到最近的紅球和最近的藍球的距離。SVM 想要讓這個距離最大化。
         *   **公式**：目標是 Maximize $\frac{2}{||w||}$。簡單說，就是讓路越寬越好，這樣以後有新的球丟進來，才不會容易判斷錯誤。
 
+![支援向量機](images/svm.png){#fig-svm}
+
+
 6.  **K-近鄰演算法 (KNN)**：
     *   **概念**：物以類聚。當來了一個新數據，KNN 會看它最近的 K 個鄰居是誰。如果鄰居大多是紅球，那它大概也是紅球。
     *   **數學原理 (Friendly Math)**：
@@ -119,6 +128,8 @@
         $$ d = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2} $$
         *   AI 會算出新點跟所有舊點的距離，然後挑出最近的 K 個（例如 K=3）。
         *   如果這 3 個鄰居是「紅、紅、藍」，那新點就是「紅」。
+
+![K-近鄰演算法](images/knn.png){#fig-knn}
 
 7.  **K-平均演算法 (K-Means)**：
     *   **概念**：這是一種「非監督式學習」（沒有標準答案）。想像你有一堆混在一起的珠子，K-Means 會自動幫你把顏色或大小相近的珠子分成 K 堆。
@@ -129,6 +140,24 @@
         3.  隊長重新計算自己這組的中心位置，移動過去。
         4.  重複步驟 2 和 3，直到隊長不再移動為止。
         *   這就像是大家在操場上集合，最後會自然形成幾個小圈圈，每個圈圈都有一個中心點。
+
+![K-平均演算法](images/k-means.png){#fig-k-means}
+
+
+8.  **單純貝氏分類器 (Naive Bayes Classifier)**：
+    *   **概念**：這是一個基於「機率」的分類器。它很「單純 (Naive)」，因為它假設所有的特徵都是獨立的（例如：它認為「有翅膀」和「會飛」這兩件事完全沒關係，雖然現實中通常有關）。
+    *   **數學原理 (Friendly Math)**：
+        它的核心是 **貝氏定理 (Bayes' Theorem)**：
+        $$ P(A|B) = \frac{P(B|A) \times P(A)}{P(B)} $$
+        *   **例子**：我們想知道「這封信是垃圾郵件 (A)」的機率，已知「信裡有 '免費' 這個字 (B)」。
+        *   AI 會去算：
+            1.  **$P(A)$**：原本垃圾郵件的比例有多少？（先驗機率）
+            2.  **$P(B|A)$**：如果已經知道是垃圾郵件，出現「免費」這個字的機率有多高？（概似度）
+        *   把這些乘起來，就能算出我們想知道的答案。
+    *   **應用**：垃圾郵件過濾（最經典的應用）、情感分析（這句話是稱讚還是批評？）。
+
+![單純貝氏分類器](images/naive-bayes.png){#fig-naive-bayes}
+
 
 ---
 
@@ -141,7 +170,9 @@
 *   **神經元 (Neuron)**：接收輸入訊號，經過處理（權重加權），決定是否向下傳遞。
 *   **層 (Layer)**：神經網路通常有好幾層。輸入層接收數據，隱藏層負責複雜的運算，輸出層給出結果。「深度」學習就是指有很多層隱藏層。
 
-> **Figure Prompt:** Generate a diagram of a Neural Network. Left side: Input Layer (nodes). Middle: Several Hidden Layers (nodes connected by lines). Right side: Output Layer (nodes). Highlight the connections showing data flowing from left to right. Style: Tech, glowing lines, dark background.
+![人工神經網路](images/neural-network.png){#fig-neural-network}
+
+ <!-- **Figure Prompt:** Generate a diagram of a Neural Network. Left side: Input Layer (nodes). Middle: Several Hidden Layers (nodes connected by lines). Right side: Output Layer (nodes). Highlight the connections showing data flowing from left to right. Style: Tech, glowing lines, dark background. -->
 
 ### 深度學習的三大巨頭
 
@@ -149,13 +180,19 @@
     *   **專長**：**看**。CNN 非常擅長處理影像。它像人類的眼睛一樣，會先辨識邊緣、線條，再組合成形狀，最後辨識出物體。
     *   **應用**：人臉辨識、醫療影像診斷、自駕車看路標。
 
+![卷積神經網路](images/cnn.png){#fig-cnn}
+
 2.  **循環神經網路 (RNN - Recurrent Neural Networks)**：
     *   **專長**：**記**。RNN 擅長處理有順序的數據，它有「記憶」功能，能記住前面的資訊來幫助理解後面的資訊。
     *   **應用**：語音辨識（理解句子的前後文）、股票預測（時間序列）、語言翻譯。
 
+![循環神經網路](images/rnn.png){#fig-rnn}
+
 3.  **Transformer**：
     *   **專長**：**專注**。這是目前最強大的架構（如 ChatGPT 背後的技術）。它引入了「自注意力機制 (Self-Attention)」，能同時看到整篇文章，並知道哪些字詞之間有強烈的關聯，而不受距離限制。
     *   **應用**：大型語言模型 (LLM)、生成式 AI。
+
+![Transformer](images/transformer.png){#fig-transformer}
 
 ---
 
