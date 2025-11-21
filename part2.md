@@ -1,8 +1,8 @@
-# 第二篇：AI 技術應用與生成式 AI (AI Applications & Generative AI)
+# AI 技術應用與生成式 AI (AI Applications & Generative AI)
 
 歡迎來到 AI 的應用世界！如果說第一篇是學習內功（基礎理論）， 那麼這一篇就是學習招式（實際應用）。 我們將深入探討目前最熱門的「生成式 AI」， 以及它如何與傳統的「鑑別式 AI」相輔相成， 改變我們的創造與工作方式。 
 
-## 第五章：鑑別式與生成式 AI (Discriminative vs Generative AI)
+## 鑑別式與生成式 AI (Discriminative vs Generative AI)
 
 ### 兩大 AI 陣營的對決與合作
 
@@ -33,7 +33,7 @@
 
 ---
 
-## 第六章：生成式 AI 應用與工具 (Generative AI Tools & Applications)
+## 生成式 AI 應用與工具 (Generative AI Tools & Applications)
 
 ### No Code / Low Code：AI 民主化運動
 
@@ -77,7 +77,7 @@
 
 ---
 
-## 第七章：進階 AI 技術與部署 (Advanced AI Tech & Deployment)
+## 進階 AI 技術與部署 (Advanced AI Tech & Deployment)
 
 ### 深入 AI 的技術核心
 
@@ -89,7 +89,7 @@
     *   *原理*：想像把一滴墨水滴入水中（擴散）， 圖案變模糊（加噪聲）。 擴散模型就是學習這個過程的「倒帶」， 從一團雜訊中慢慢還原出清晰的圖像。 
 3.  **LLM (大型語言模型)**：基於 Transformer 架構， 閱讀了網路上幾乎所有的文字。 它們是通用的語言大師。 
 
-### NLP 與 CV：AI 的聽說讀寫
+### 自然語言處理與電腦視覺 (NLP & CV)
 
 *   **自然語言處理 (NLP)**：讓電腦聽懂人話。 
     *   **詞袋模型 (Bag-of-Words)**：把句子變成單字的集合， 不考慮順序。 雖然簡單， 但在垃圾郵件分類還是很有用。 

@@ -1,8 +1,8 @@
-# 第五篇：AI 程式語言 (AI Programming)
+# AI 程式語言 (AI Programming)
 
 想親手打造自己的 AI 嗎？ 那你必須學會與電腦溝通的語言。 在 AI 領域， 這個語言只有一個霸主， 那就是 **Python**。 
 
-## 第十二章：Python 基礎 (Python Basics)
+## Python 基礎 (Python Basics)
 
 ### 為什麼是 Python？ 
 

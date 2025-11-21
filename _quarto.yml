@@ -21,9 +21,13 @@ format:
   pdf:
     documentclass: scrreprt
     pdf-engine: xelatex
+    top-level-division: part
     fig-pos: 'H'
     header-includes:
       - \usepackage{float}
+      - \usepackage{zhnumber}
+      - \renewcommand\partformat{第\zhnum{part}篇\enskip}
+      - \renewcommand\chapterformat{第\zhnum{chapter}章\enskip}
     mainfont: "Noto Serif TC"
     sansfont: "Noto Serif TC"   # 標題也用同一個字型
     CJKmainfont: "Noto Serif TC"

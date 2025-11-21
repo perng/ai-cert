@@ -1,8 +1,8 @@
-# 第四篇：AI 倫理、 治理與風險 (AI Ethics, Governance & Risks)
+# AI 倫理、 治理與風險 (AI Ethics, Governance & Risks)
 
 能力越強， 責任越大。 AI 就像一把雙面刃， 用得好可以造福人類， 用不好則可能帶來災難。 在這一篇， 我們將探討如何安全、 負責任地開發和使用 AI。 
 
-## 第十章：AI 治理與風險 (AI Governance & Risks)
+## AI 治理與風險 (AI Governance & Risks)
 
 ### AI 的潛在威脅
 
@@ -27,19 +27,6 @@ AI 並不是完美的， 它也會犯錯， 甚至被惡意利用。 我們必�
 
 5.  **模型漂移 (Model Drift)**：
     *   **現象**：世界在變， 數據也在變。 一個半年前訓練好的模型， 現在可能已經不準了。 例如， 消費者的購物習慣改變了， 原本的推薦系統就會失效。 
-    *   **對策**：持續監控模型效能， 並定期重新訓練 (Retrain)。 
-
-> **Figure Prompt:** An illustration of "AI Hallucination". A robot wearing glasses is reading a book and confidently telling a story to a human, but the speech bubble contains a mix of real facts and obvious fantasy elements (like a unicorn). The human looks confused. Style: Cartoonish, humorous.
-
----
-
-## 第十一章：AI 倫理 (AI Ethics)
-
-### AI 應該遵守的道德規範
-
-除了技術上的風險， 我們還必須考慮 AI 對社會的影響。 AI 倫理就是一套指導原則， 確保 AI 的發展符合人類的價值觀。 
-
-#### 1. 隱私保護 (Privacy)
 AI 需要大量數據， 這往往涉及個人隱私。 
 *   **資料匿名化 (Data Anonymization)**：在收集數據時， 去除可以識別個人身分的資訊（如姓名、 身分證號）， 只保留分析所需的特徵。 
 *   **用戶同意 (Consent)**：必須明確告知用戶我們會收集什麼資料、 用來做什麼， 並取得用戶同意。 

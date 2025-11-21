@@ -1,8 +1,8 @@
-# 第三篇：資料科學與大數據 (Data Science & Big Data)
+# 資料科學與大數據 (Data Science & Big Data)
 
 在 AI 的世界裡， 演算法是引擎， 而**資料 (Data)** 就是燃料。 沒有高品質的燃料， 再好的引擎也跑不動。 這一篇我們將探討如何開採、 提煉並使用這些珍貴的數位石油。 
 
-## 第八章：資料處理基礎 (Data Processing Basics)
+## 資料處理基礎 (Data Processing Basics)
 
 ### 資料：AI 的糧食
 
@@ -24,19 +24,6 @@
 *   **折線圖 (Line Chart)**：適合看**趨勢**。 例如：股價走勢、 氣溫變化。 
 *   **直方圖 (Histogram)**：適合看**分佈**。 例如：全校學生的身高分佈（大部分集中在中間， 兩邊人少）。 
 *   **散佈圖 (Scatter Plot)**：適合看**相關性**。 例如：唸書時間 vs 考試成績（通常是正相關， 點點往右上跑）。 
-*   **熱力圖 (Heatmap)**：用顏色深淺代表數值。 例如：網站點擊熱圖， 紅色代表最多人點的地方。 
-
-> **Figure Prompt:** A dashboard style illustration showing multiple charts. Top left: A colorful Pie Chart. Top right: A rising Line Chart. Bottom left: A Bar Chart comparing 3 items. Bottom right: A Scatter Plot with a trend line. Style: Modern UI dashboard, dark mode.
-
----
-
-## 第九章：大數據技術與應用 (Big Data Technologies)
-
-### 當資料大到無法想像：大數據 (Big Data)
-
-當資料量大到一台電腦存不下、 算不完時， 我們就進入了「大數據」的領域。 大數據通常具備 **3V** 特性：
-1.  **Volume (大量)**：資料量極大 (TB, PB 等級)。 
-2.  **Velocity (高速)**：資料產生速度極快 (如即時交易、 社群媒體貼文)。 
 3.  **Variety (多樣)**：資料格式千奇百怪 (文字、 圖片、 影片、 Log 檔)。 
 
 ### 大數據的統計學基礎
