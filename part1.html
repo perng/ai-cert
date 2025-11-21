@@ -237,13 +237,17 @@ window.Quarto = {
 <section id="ai-的三種型態" class="level3" data-number="2.1.2">
 <h3 data-number="2.1.2" class="anchored" data-anchor-id="ai-的三種型態"><span class="header-section-number">2.1.2</span> AI 的三種型態</h3>
 <p>我們可以將 AI 依據其能力的強弱，分為三個等級：</p>
-<blockquote class="blockquote">
-<p><strong>Figure Prompt:</strong> Generate a flat illustration comparing three types of AI. 1. Weak AI: A smartphone showing Siri/Assistant icon. 2. Strong AI: A robot shaking hands with a human, looking equal. 3. Super AI: A glowing, abstract digital brain hovering above a city, symbolizing superior intelligence. Style: Modern, clean, vector art.</p>
-</blockquote>
+<!-- Generate a flat illustration comparing three types of AI. 1. Weak AI: A smartphone showing Siri/Assistant icon. 2. Strong AI: A robot shaking hands with a human, looking equal. 3. Super AI: A glowing, abstract digital brain hovering above a city, symbolizing superior intelligence. Style: Modern, clean, vector art. -->
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/3-ai.jpg" class="img-fluid figure-img"></p>
+<figcaption>AI 的三種型態</figcaption>
+</figure>
+</div>
 <ol type="1">
 <li><strong>弱人工智慧 (Artificial Narrow Intelligence, ANI)</strong>： 這是我們目前生活中最常見的 AI。它們是「專才」，非常擅長做某一件特定的事情，甚至做得比人類更好，但在其他方面則一竅不通。
 <ul>
-<li><strong>例子</strong>：打敗圍棋冠軍的 AlphaGo、手機裡的 Siri 語音助理、Netflix 的影片推薦系統。AlphaGo 雖然下圍棋無敵，但它不會開車，也不會聊天。</li>
+<li><strong>例子</strong>：打敗圍棋冠軍的 AlphaGo、手機裡的 Siri 語音助理、Netflix 的影片推薦系統。AlphaGo 雖然下圍棋無敵，但它不會開車，也不會和你哈拉聊天。</li>
 </ul></li>
 <li><strong>強人工智慧 (Artificial General Intelligence, AGI)</strong>： 這是科學家們努力的目標，也是科幻電影中常見的 AI。它們是「通才」，具備像人類一樣的通用智慧，可以學習任何人類能學會的技能，具備常識、情感和自我意識。
 <ul>
@@ -258,6 +262,12 @@ window.Quarto = {
 <h2 data-number="2.2" class="anchored" data-anchor-id="第二章機器學習基礎-machine-learning-basics"><span class="header-section-number">2.2</span> 第二章：機器學習基礎 (Machine Learning Basics)</h2>
 <section id="教電腦學習而不是聽令" class="level3" data-number="2.2.1">
 <h3 data-number="2.2.1" class="anchored" data-anchor-id="教電腦學習而不是聽令"><span class="header-section-number">2.2.1</span> 教電腦「學習」，而不是「聽令」</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/programs-vs-ai.jpg" class="img-fluid figure-img"></p>
+<figcaption>傳統電腦程式 vs 人工智慧</figcaption>
+</figure>
+</div>
 <p>機器學習 (Machine Learning, ML) 是 AI 的一個子領域，也是目前 AI 發展的核心動力。</p>
 <ul>
 <li><strong>傳統程式設計</strong>：我們輸入「規則」和「數據」，電腦給出「答案」。例如，我們告訴電腦「如果下雨，就帶傘」，電腦看到「下雨」的數據，就會輸出「帶傘」。</li>
@@ -304,18 +314,28 @@ window.Quarto = {
 <li><strong>公式 (Friendly Math)</strong>： <span class="math display">\[ RSE = \sqrt{\frac{1}{n-2}\sum (y_i - \hat{y}_i)^2} \]</span> 別被嚇到了！簡單來說就是：把每個點的誤差 <span class="math inline">\((y - \hat{y})\)</span> 平方加起來，除以點的數量，再開根號。就像是算所有誤差的「平均值」。</li>
 </ul></li>
 </ul></li>
-<li><strong>邏輯回歸 (Logistic Regression)</strong>：
-<ul>
-<li><strong>概念</strong>：雖然名字有「回歸」，但它其實是用來做「分類」的。它像是一個開關，判斷事情是「是」或「否」（0 或 1）。</li>
-<li><strong>數學原理 (Friendly Math)</strong>： 它其實就是把線性回歸的結果，丟進一個 S 型的函數（Sigmoid 函數）裡面： <span class="math display">\[ P(y=1) = \frac{1}{1 + e^{-(wx+b)}} \]</span>
-<ul>
-<li><strong>Sigmoid 函數</strong>：這個函數很神奇，不管你輸入多大或多小的數字，它吐出來的結果永遠在 0 到 1 之間。</li>
-<li><strong>機率</strong>：這個 0 到 1 的數字，就代表「機率」。例如算出 0.8，就代表有 80% 的機率是垃圾郵件。</li>
-<li><strong>決策</strong>：通常我們設 0.5 為門檻。大於 0.5 就是「是」，小於 0.5 就是「否」。</li>
-</ul></li>
-<li><strong>應用</strong>：判斷電子郵件是不是垃圾郵件、這筆交易是不是詐騙。</li>
-</ul></li>
-<li><strong>決策樹 (Decision Tree)</strong>：
+<li><strong>邏輯回歸 (Logistic Regression)</strong>：</li>
+</ol>
+<div id="fig-logistic-regression" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-logistic-regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/logistic-regression.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-logistic-regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+圖&nbsp;2.2: 邏輯回歸
+</figcaption>
+</figure>
+</div>
+<pre><code>*   **概念**：雖然名字有「回歸」，但它其實是用來做「分類」的。它像是一個開關，判斷事情是「是」或「否」（0 或 1）。
+*   **數學原理 (Friendly Math)**：
+    它其實就是把線性回歸的結果，丟進一個 S 型的函數（Sigmoid 函數）裡面：
+    $$ P(y=1) = \frac{1}{1 + e^{-(wx+b)}} $$
+    *   **Sigmoid 函數**：這個函數很神奇，不管你輸入多大或多小的數字，它吐出來的結果永遠在 0 到 1 之間。
+    *   **機率**：這個 0 到 1 的數字，就代表「機率」。例如算出 0.8，就代表有 80% 的機率是垃圾郵件。
+    *   **決策**：通常我們設 0.5 為門檻。大於 0.5 就是「是」，小於 0.5 就是「否」。
+*   **應用**：判斷電子郵件是不是垃圾郵件、這筆交易是不是詐騙。</code></pre>
+<ol start="3" type="1">
+<li><strong>決策樹 (Decision Tree)</strong>： <img src="images/decision-tree.png" id="fig-decision-tree" class="img-fluid" alt="決策樹">
 <ul>
 <li><strong>概念</strong>：這就像是在玩「20 個問題」遊戲。透過一連串的「是/否」問題，將數據層層分類，直到得出結論。</li>
 <li><strong>數學原理 (Friendly Math)</strong>： 決策樹怎麼知道要先問哪個問題？它會算一個叫做 <strong>「亂度 (Entropy)」</strong> 或 <strong>「基尼係數 (Gini Impurity)」</strong> 的東西。
