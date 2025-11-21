@@ -169,7 +169,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./part4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">第四篇：AI 倫理、治理與風險 (AI Ethics, Governance &amp; Risks)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">第四篇：AI 倫理、 治理與風險 (AI Ethics, Governance &amp; Risks)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -218,19 +218,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>想親手打造自己的 AI 嗎？那你必須學會與電腦溝通的語言。在 AI 領域，這個語言只有一個霸主，那就是 <strong>Python</strong>。</p>
+<p>想親手打造自己的 AI 嗎？ 那你必須學會與電腦溝通的語言。 在 AI 領域， 這個語言只有一個霸主， 那就是 <strong>Python</strong>。</p>
 <section id="第十二章python-基礎-python-basics" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="第十二章python-基礎-python-basics"><span class="header-section-number">6.1</span> 第十二章：Python 基礎 (Python Basics)</h2>
 <section id="為什麼是-python" class="level3" data-number="6.1.1">
 <h3 data-number="6.1.1" class="anchored" data-anchor-id="為什麼是-python"><span class="header-section-number">6.1.1</span> 為什麼是 Python？</h3>
-<p>Python 之所以成為 AI 界的通用語言，原因很簡單： 1. <strong>簡單易學</strong>：它的語法非常接近英文，讀起來像在讀文章，而不是在解密碼。 2. <strong>生態系豐富</strong>：擁有海量的 AI 函式庫（如 TensorFlow, PyTorch, Scikit-learn），別人已經幫你寫好 90% 的程式碼了，你只需要學會怎麼「呼叫」它們。</p>
+<p>Python 之所以成為 AI 界的通用語言， 原因很簡單： 1. <strong>簡單易學</strong>：它的語法非常接近英文， 讀起來像在讀文章， 而不是在解密碼。 2. <strong>生態系豐富</strong>：擁有海量的 AI 函式庫（如 TensorFlow, PyTorch, Scikit-learn）， 別人已經幫你寫好 90% 的程式碼了， 你只需要學會怎麼「呼叫」它們。</p>
 </section>
 <section id="python-語法速成" class="level3" data-number="6.1.2">
 <h3 data-number="6.1.2" class="anchored" data-anchor-id="python-語法速成"><span class="header-section-number">6.1.2</span> Python 語法速成</h3>
-<p>讓我們從最基礎的語法開始，踏出程式設計的第一步。</p>
+<p>讓我們從最基礎的語法開始， 踏出程式設計的第一步。</p>
 <section id="變數-variables資料的容器" class="level4" data-number="6.1.2.1">
 <h4 data-number="6.1.2.1" class="anchored" data-anchor-id="變數-variables資料的容器"><span class="header-section-number">6.1.2.1</span> 1. 變數 (Variables)：資料的容器</h4>
-<p>變數就像是一個貼了標籤的箱子，用來裝資料。 * <strong>命名規則</strong>： * 可以包含字母、數字、底線 <code>_</code>。 * <strong>不能以數字開頭</strong>：<code>3_Pig</code> 是錯的，<code>Pig_3</code> 是對的。 * <strong>區分大小寫</strong>：<code>Apple</code> 和 <code>apple</code> 是兩個不同的箱子。 * <strong>範例</strong>：</p>
+<p>變數就像是一個貼了標籤的箱子， 用來裝資料。 * <strong>命名規則</strong>： * 可以包含字母、 數字、 底線 <code>_</code>。 * <strong>不能以數字開頭</strong>：<code>3_Pig</code> 是錯的， <code>Pig_3</code> 是對的。 * <strong>區分大小寫</strong>：<code>Apple</code> 和 <code>apple</code> 是兩個不同的箱子。 * <strong>範例</strong>：</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Alice"</span>   <span class="co"># 字串 (String)</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">25</span>         <span class="co"># 整數 (Integer)</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>height <span class="op">=</span> <span class="fl">1.65</span>    <span class="co"># 浮點數 (Float)</span></span>
@@ -238,7 +238,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="輸出-print讓電腦說話" class="level4" data-number="6.1.2.2">
 <h4 data-number="6.1.2.2" class="anchored" data-anchor-id="輸出-print讓電腦說話"><span class="header-section-number">6.1.2.2</span> 2. 輸出 (Print)：讓電腦說話</h4>
-<p>用 <code>print()</code> 函數把結果顯示在螢幕上。 * <strong>基本用法</strong>：<code>print("Hello World")</code> * <strong>進階用法</strong>：可以用逗號分隔多個東西，預設會用空白隔開。</p>
+<p>用 <code>print()</code> 函數把結果顯示在螢幕上。 * <strong>基本用法</strong>：<code>print("Hello World")</code> * <strong>進階用法</strong>：可以用逗號分隔多個東西， 預設會用空白隔開。</p>
 <ul>
 <li><strong>範例</strong>：</li>
 </ul>
@@ -248,7 +248,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="運算子-operators數學計算" class="level4" data-number="6.1.2.3">
 <h4 data-number="6.1.2.3" class="anchored" data-anchor-id="運算子-operators數學計算"><span class="header-section-number">6.1.2.3</span> 3. 運算子 (Operators)：數學計算</h4>
 <ul>
-<li><strong>基本運算</strong>：<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> (除法，結果是小數)。</li>
+<li><strong>基本運算</strong>：<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> (除法， 結果是小數)。</li>
 <li><strong>特殊運算</strong>：
 <ul>
 <li><code>//</code> <strong>求商數</strong> (地板除法)：<code>7 // 2</code> 等於 <code>3</code> (只取整數部分)。</li>
@@ -271,12 +271,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="迴圈-loops重複做一樣的事" class="level4" data-number="6.1.2.5">
 <h4 data-number="6.1.2.5" class="anchored" data-anchor-id="迴圈-loops重複做一樣的事"><span class="header-section-number">6.1.2.5</span> 5. 迴圈 (Loops)：重複做一樣的事</h4>
 <ul>
-<li><strong>for 迴圈</strong>：當你知道要跑幾次，或要遍歷一個清單時。</li>
+<li><strong>for 迴圈</strong>：當你知道要跑幾次， 或要遍歷一個清單時。</li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>): <span class="co"># 跑 5 次 (0 到 4)</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div><button title="複製到剪貼簿" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
-<li><strong>while 迴圈</strong>：當你不知道要跑幾次，只知道停止條件時。</li>
+<li><strong>while 迴圈</strong>：當你不知道要跑幾次， 只知道停止條件時。</li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> count <span class="op">&lt;</span> <span class="dv">5</span>:</span>
@@ -288,38 +288,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>控制指令</strong>：
 <ul>
 <li><code>break</code>：立刻跳出迴圈（不跑了）。</li>
-<li><code>continue</code>：跳過這一次，直接進入下一輪。</li>
+<li><code>continue</code>：跳過這一次， 直接進入下一輪。</li>
 </ul></li>
 </ul>
 </section>
 <section id="資料結構-data-structures收納資料的櫃子" class="level4" data-number="6.1.2.6">
 <h4 data-number="6.1.2.6" class="anchored" data-anchor-id="資料結構-data-structures收納資料的櫃子"><span class="header-section-number">6.1.2.6</span> 6. 資料結構 (Data Structures)：收納資料的櫃子</h4>
 <ul>
-<li><strong>List (列表)</strong>：最常用的，什麼都能裝，且有順序。
+<li><strong>List (列表)</strong>：最常用的， 什麼都能裝， 且有順序。
 <ul>
 <li><code>fruits = ["apple", "banana", "cherry"]</code></li>
 <li>可以用 <code>fruits[0]</code> 拿到 “apple”。</li>
 </ul></li>
-<li><strong>Tuple (元組)</strong>：跟 List 很像，但是<strong>不可變</strong> (Immutable)。一旦建立就不能修改。
+<li><strong>Tuple (元組)</strong>：跟 List 很像， 但是<strong>不可變</strong> (Immutable)。 一旦建立就不能修改。
 <ul>
 <li><code>point = (10, 20)</code></li>
-<li>適合用來存座標或設定檔，保護資料不被誤改。</li>
+<li>適合用來存座標或設定檔， 保護資料不被誤改。</li>
 </ul></li>
-<li><strong>Dictionary (字典)</strong>：用「鍵-值對 (Key-Value)」來存資料，像查字典一樣。
+<li><strong>Dictionary (字典)</strong>：用「鍵-值對 (Key-Value)」來存資料， 像查字典一樣。
 <ul>
 <li><code>student = {"name": "Bob", "age": 20}</code></li>
 <li>可以用 <code>student["name"]</code> 拿到 “Bob”。</li>
 </ul></li>
-<li><strong>Set (集合)</strong>：一堆<strong>不重複</strong>的資料，沒有順序。
+<li><strong>Set (集合)</strong>：一堆<strong>不重複</strong>的資料， 沒有順序。
 <ul>
 <li><code>numbers = {1, 2, 2, 3}</code> -&gt; 實際存的是 <code>{1, 2, 3}</code> (自動去重)。</li>
-<li>常用來做集合運算（交集、聯集）。</li>
+<li>常用來做集合運算（交集、 聯集）。</li>
 </ul></li>
 </ul>
 <blockquote class="blockquote">
 <p><strong>Figure Prompt:</strong> A visual cheat sheet for Python Data Structures. Four quadrants. 1. List: A train with numbered cars [0], [1], [2]. 2. Tuple: A sealed glass box containing items (Immutable). 3. Dictionary: A library card catalog with “Key” labels pointing to “Value” books. 4. Set: A basket of unique fruits (no duplicates allowed). Style: Cute, educational illustrations.</p>
 </blockquote>
-<p>恭喜你！你已經完成了這本書的旅程。從 AI 的基本概念，到機器學習的原理，再到實際的應用與程式實作。這只是起點，AI 的世界浩瀚無垠，期待你繼續探索，用 AI 創造更美好的未來！</p>
+<p>恭喜你！你已經完成了這本書的旅程。 從 AI 的基本概念， 到機器學習的原理， 再到實際的應用與程式實作。 這只是起點， AI 的世界浩瀚無垠， 期待你繼續探索， 用 AI 創造更美好的未來！</p>
 
 
 </section>
@@ -729,8 +729,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./part4.html" class="pagination-link" aria-label="第四篇：AI 倫理、治理與風險 (AI Ethics, Governance &amp; Risks)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">第四篇：AI 倫理、治理與風險 (AI Ethics, Governance &amp; Risks)</span></span>
+      <a href="./part4.html" class="pagination-link" aria-label="第四篇：AI 倫理、 治理與風險 (AI Ethics, Governance &amp; Risks)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">第四篇：AI 倫理、 治理與風險 (AI Ethics, Governance &amp; Risks)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
