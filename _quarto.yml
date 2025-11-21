@@ -20,7 +20,10 @@ format:
     theme: cosmo
   pdf:
     documentclass: scrreprt
-    pdf-engine: lualatex
+    pdf-engine: xelatex
+    fig-pos: 'H'
+    header-includes:
+      - \usepackage{float}
     mainfont: "Noto Serif TC"
     sansfont: "Noto Serif TC"   # 標題也用同一個字型
     CJKmainfont: "Noto Serif TC"
