@@ -5,8 +5,8 @@ date: "2025-11-24"
 format:
   html:
     toc: true
-    number-sections: true
-lang: zh-TW
+    number-sections: false
+# lang: zh-TW
 ---
 
 # 前言 {.unnumbered}
