@@ -1,0 +1,49 @@
+project:
+  type: book
+
+book:
+  title: "AI 應用規劃師全攻略"
+  author: "AI仁波切"
+  date: "2025-11-20"
+  chapters:
+    - index.md
+    - part: "第一部：人工智慧基礎與戰略定位"
+      chapters:
+        - chapter1.md
+        - chapter2.md
+    - part: "第二部：數據工程——AI 的堅實地基"
+      chapters:
+        - chapter3.md
+        - chapter4.md
+    - part: "第三部：機器學習演算法核心"
+      chapters:
+        - chapter5.md
+        - chapter6.md
+    - part: "第四部：深度學習與生成式 AI 前沿"
+      chapters:
+        - chapter7.md
+        - chapter8.md
+    - part: "第五部：模型評估、可解釋性與治理"
+      chapters:
+        - chapter9.md
+        - chapter10.md
+        - chapter11.md
+
+# lang: zh-TW 
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+    pdf-engine: xelatex
+    top-level-division: part
+    fig-pos: 'H'
+    header-includes:
+      - \usepackage{float}
+      - \usepackage{zhnumber}
+      - \renewcommand\partformat{第\zhnum{part}篇\enskip}
+      - \renewcommand\chapterformat{第\zhnum{chapter}章\enskip}
+    mainfont: "Noto Serif TC"
+    sansfont: "Noto Serif TC"   # 標題也用同一個字型
+    CJKmainfont: "Noto Serif TC"
