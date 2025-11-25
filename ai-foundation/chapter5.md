@@ -3,8 +3,8 @@
 監督式學習 (Supervised Learning) 是目前 AI 應用最成熟、商業價值最高的領域。它的核心運作模式就像是**人類的正規教育**：老師（系統）提供大量的題目（輸入 $X$）和標準答案（標籤 $Y$），學生（模型）透過不斷練習，學會找出題目與答案之間的關聯函數 $f$，使得 $f(X) \approx Y$。
 
 根據目標變數 $Y$ 的型態，監督式學習主要分為兩大類：
-1.  **分類 (Classification)**：預測的是**類別**（離散值）。例如：這封信是垃圾郵件嗎？（是/否）、這張照片是貓還是狗？
-2.  **迴歸 (Regression)**：預測的是**數值**（連續值）。例如：明天的氣溫是幾度？這間房子的房價是多少？
+  1.  **分類 (Classification)**：預測的是**類別**（離散值）。例如：這封信是垃圾郵件嗎？（是/否）、這張照片是貓還是狗？
+  2.  **迴歸 (Regression)**：預測的是**數值**（連續值）。例如：明天的氣溫是幾度？這間房子的房價是多少？
 
 ## 5.1 分類演算法 (Classification) {#sec-classification}
 
@@ -22,19 +22,38 @@
     *   *優點*：簡單直觀，不需要訓練過程（Lazy Learning），新資料進來直接算。
     *   *缺點*：資料量大時，計算距離非常耗時（計算成本高）。
 
+![K-近鄰演算法](images/knn.png)
+
 ### 貝氏分類器 (Naive Bayes) {#sec-naive-bayes}
-![貝氏分類器](images/naive-bayes.png)
+
 *   **核心概念**：基於**機率統計**的預測。利用貝氏定理 (Bayes' Theorem) 計算在已知特徵下，屬於某類別的機率。
 *   **「樸素/天真」(Naive) 的假設**：假設所有特徵之間是**互相獨立**的。雖然這在現實中很少見（例如「下雨」和「潮濕」通常相關），但這個假設讓計算變得非常簡單且快速。
-*   **應用實例：垃圾郵件過濾**
-    *   計算包含 "中獎"、"匯款"、"免費" 等詞彙的信件，是垃圾信的機率。
-    *   $P(\text{Spam} | \text{"Free"}) = \frac{P(\text{"Free"} | \text{Spam}) \times P(\text{Spam})}{P(\text{"Free"})}$
+*   **應用實例：垃圾郵件過濾計算**
+    *   假設我們有 100 封信，其中 40 封是垃圾信 (Spam)，60 封是正常信 (Ham)。
+    *   **先驗機率 (Prior)**：
+        *   $P(Spam) = 40/100 = 0.4$
+        *   $P(Ham) = 60/100 = 0.6$
+    *   **似然機率 (Likelihood)**：統計發現，垃圾信中有 50% 包含 "Free" 這個字，正常信中只有 5% 包含 "Free"。
+        *   $P("Free" | Spam) = 0.5$
+        *   $P("Free" | Ham) = 0.05$
+    *   **情境**：現在收到一封新信，裡面有 "Free"，它是垃圾信的機率是多少？
+    *   **計算 (Bayes' Theorem)**：
+        $$ P(Spam | "Free") = \frac{P("Free" | Spam) \times P(Spam)}{P("Free")} $$
+        1.  分子 (是垃圾信且有 Free)：$0.5 \times 0.4 = 0.2$
+        2.  分母 (所有有 Free 的信)：
+            *   來自垃圾信：$0.5 \times 0.4 = 0.2$
+            *   來自正常信：$0.05 \times 0.6 = 0.03$
+            *   總和：$0.2 + 0.03 = 0.23$
+        3.  結果：$0.2 / 0.23 \approx \mathbf{87\%}$
+    *   **結論**：看到 "Free"，這封信有 87% 的機率是垃圾信。
 *   **優缺點**：
     *   *優點*：速度極快，適合處理高維度文本資料（如 NLP）。
     *   *缺點*：如果特徵之間高度相關，預測效果會變差。
 
+![貝氏分類器](images/naive-bayes.png)
+
+
 ### 邏輯迴歸 (Logistic Regression) {#sec-logistic-regression}
-![邏輯迴歸](images/logistic-regression.png)
 *   **注意**：雖然名字裡有「迴歸」，但它是經典的**二元分類**演算法！
 *   **核心概念**：
     1.  先計算一個線性方程式 $z = wX + b$。
@@ -47,8 +66,9 @@
     *   *優點*：可解釋性高（可以看到每個特徵的權重），計算快。
     *   *缺點*：只能處理線性可分的問題（除非人工轉換特徵）。
 
+![邏輯迴歸](images/logistic-regression.png)
+
 ### 支援向量機 (SVM, Support Vector Machine) {#sec-svm}
-![支持向量機](images/svm.png)
 *   **核心概念**：試圖在不同類別的資料之間，畫出一條最寬的「馬路」（決策邊界）。
     *   **邊界 (Margin)**：馬路兩側到最近資料點的距離。SVM 的目標是**最大化邊界**。
     *   **支援向量 (Support Vectors)**：那些落在馬路邊緣、真正決定馬路怎麼畫的關鍵資料點。
@@ -59,8 +79,10 @@
     *   *優點*：在小樣本、高維度資料上表現極佳，泛化能力強。
     *   *缺點*：在大數據集上訓練慢，且對參數設定敏感。
 
+![支持向量機](images/svm.png)
+
+
 ### 決策樹 (Decision Tree) {#sec-decision-tree}
-![決策樹](images/decision-tree.png)
 *   **核心概念**：就像玩「20 個問題」遊戲。透過一系列的是非問句來對資料進行切割。
 *   **結構**：
     *   **根節點 (Root)**：第一個問題（例如：年齡 > 30？）。
@@ -72,11 +94,13 @@
     *   *優點*：**可解釋性最強**（白箱模型），畫出來的樹狀圖非專業人士也能懂。
     *   *缺點*：容易**過度擬合 (Overfitting)**，變成死記硬背的學生。
 
+![決策樹](images/decision-tree.png)
+
+
 ## 5.2 集成學習 (Ensemble Learning) {#sec-ensemble}
 
 三個臭皮匠，勝過諸葛亮。集成學習的核心思想是結合多個弱學習器 (Weak Learners) 來構建一個強學習器 (Strong Learner)。主要分為兩大流派：**Bagging** 與 **Boosting**。
 
-![Bagging vs Boosting](images/bagging-vs-boosting.png)
 
 ### Bagging (Bootstrap Aggregating) {#sec-bagging}
 
@@ -90,7 +114,7 @@
         *   除了對資料取樣 (Row Subsampling)，還對特徵取樣 (Feature Subsampling)。
         *   **優點**：準確、抗過擬合、可平行運算（速度快）。
         *   **缺點**：模型大、黑箱。
-
+![Bagging](images/bagging.png)
 ### Boosting (提升法) {#sec-boosting}
 
 *   **口訣**：「循序漸進，知錯能改」。
@@ -103,21 +127,34 @@
     *   **AdaBoost**：早期代表，調整資料權重。
     *   **XGBoost / LightGBM / CatBoost**：現代 Kaggle 比賽常勝軍。基於梯度提升 (Gradient Boosting)，效能極強，但參數多難調。
 
+![Boosting](images/boosting.png)
+
+### Bagging 與 Boosting 的關鍵差異 {#sec-bagging-vs-boosting}
+
+| 特性 | Bagging (如隨機森林) | Boosting (如 XGBoost) |
+| :--- | :--- | :--- |
+| **訓練方式** | **並行 (Parallel)**：各棵樹獨立訓練，互不影響。 | **序列 (Sequential)**：後面的樹依賴前面的樹（修正錯誤）。 |
+| **核心目標** | **降低變異 (Variance)**：透過平均多個模型來減少過度擬合。 | **降低偏差 (Bias)**：透過不斷修正錯誤來提升準確度。 |
+| **樣本權重** | 所有樣本權重相同。 | 錯誤樣本的權重會被放大。 |
+| **對雜訊敏感度** | 較低（抗雜訊能力強）。 | 較高（容易對雜訊過度擬合）。 |
+| **運算速度** | 快（可平行運算）。 | 慢（必須依序訓練）。 |
+
+
 ## 5.3 迴歸演算法 (Regression) {#sec-regression}
 
 目標是預測一個連續的數值（如房價、銷量）。
 
 ### 線性迴歸 (Linear Regression) {#sec-linear-regression}
-![線性迴歸](images/linear-regression.png)
 *   **核心概念**：試圖畫出一條直線 ($y = wx + b$)，讓這條線盡可能靠近所有的資料點。
 *   **損失函數 (Loss Function)**：**均方誤差 (MSE, Mean Squared Error)**。即計算所有點到線的距離平方和，找出讓這個誤差最小的參數 $w$ 和 $b$。
 *   **多項式迴歸**：如果資料不是直線分佈，可以用曲線（$x^2, x^3$）來擬合。
 
+![線性迴歸](images/linear-regression.png)
+
+
 ### 正規化迴歸 (Regularized Regression) {#sec-regularized-regression}
 
 為了防止模型過度擬合（例如用了太高次方的多項式，導致線條扭曲），我們在損失函數中加入一個「懲罰項」，強迫模型的權重 $w$ 不要太大，保持簡單。這就像是給模型戴上「緊箍咒」，不讓它太狂野。
-
-![正規化迴歸](images/regularized-regression.png)
 
 #### 1. L1 正則化 (Lasso Regression)
 
@@ -144,6 +181,9 @@
     *   假設特徵中有「坪數 (平方公尺)」和「坪數 (坪)」。這兩個特徵高度相關（幾乎一樣）。
     *   **一般迴歸的問題**：模型可能會困惑，給其中一個巨大的正權重，另一個巨大的負權重，導致模型不穩定。
     *   **Ridge 的效果**：它會把這兩個特徵的權重都壓得很小且接近，讓模型更穩健，不會因為數據的一點小雜訊就劇烈波動。
+
+![正規化迴歸](images/regularized-regression.png)
+
 
 #### 總結比較
 
