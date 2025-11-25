@@ -2,7 +2,40 @@
 
 在 AI 的世界裡，有一句名言：「垃圾進，垃圾出 (Garbage In, Garbage Out, GIGO)」。無論你的模型多麼先進，如果餵給它的資料品質低劣，結果也將毫無價值。本章將探討資料如何從原始狀態，經過層層處理，最終變成模型可用的燃料。
 
-## 3.1 資料管道 (Data Pipeline) {#sec-data-pipeline}
+## 3.1 資料類型與儲存 (Data Types & Storage) {#sec-data-types-storage}
+
+在建立資料管道之前，我們必須先了解手上有什麼樣的資料，以及該把它存在哪裡。
+
+![結構化資料 vs 非結構化資料](images/structured-vs-unstructured.png)
+
+### 結構化資料 (Structured Data)
+
+*   **定義**：高度組織化，有固定的格式與長度。通常以「表格」形式呈現（行與列）。
+*   **例子**：Excel 報表、銀行交易紀錄、客戶資料表 (Name, Age, Phone)。
+*   **儲存方式**：**關聯式資料庫 (RDB, Relational Database)**。
+    *   **SQL (Structured Query Language)**：用於查詢和管理資料的標準語言。
+    *   **特性**：強調 **ACID**（原子性、一致性、隔離性、持久性），確保交易絕對準確。
+    *   **常見工具**：MySQL, PostgreSQL, Oracle, Microsoft SQL Server。
+
+### 非結構化資料 (Unstructured Data)
+
+*   **定義**：沒有固定格式，電腦難以直接解析。佔了全世界資料的 80% 以上。
+*   **例子**：圖片、影片、音訊、PDF 文件、社群貼文、電子郵件內容。
+*   **儲存方式**：**NoSQL 資料庫** 或 **物件儲存 (Object Storage)**。
+    *   **特性**：靈活、擴充性強 (Scalable)，通常不保證強一致性 (BASE)。
+    *   **常見工具**：
+        *   **物件儲存**：Amazon S3, Google Cloud Storage (存圖片、影片)。
+        *   **NoSQL**：MongoDB (存文件), Redis (存快取), Cassandra (存大量日誌)。
+
+### 半結構化資料 (Semi-structured Data)
+
+*   **定義**：介於兩者之間。沒有嚴格的表格架構，但有標籤 (Tags) 或鍵值 (Keys) 來描述資料層次。
+*   **例子**：**JSON** (API 回傳格式), **XML**, **HTML**, Log 檔。
+*   **儲存方式**：通常存於 **NoSQL (Document DB)** 如 MongoDB，或現代 RDB 的 JSON 欄位中。
+
+![SQL vs NoSQL](images/sql-vs-nosql.png)
+
+## 3.2 資料管道 (Data Pipeline) {#sec-data-pipeline}
 
 資料管道就像是城市的**供水系統**。水源（原始資料）可能來自水庫、河流或地下水，必須經過過濾、消毒、輸送（處理過程），最後才能從家裡的水龍頭流出乾淨的自來水（可用資料）。
 
@@ -66,7 +99,7 @@
 
 ![批次處理 vs. 串流處理](images/batch-vs-streaming.png)
 
-## 3.2 探索性資料分析 (Exploratory Data Analysis, EDA) {#sec-eda}
+## 3.3 探索性資料分析 (Exploratory Data Analysis, EDA) {#sec-eda}
 
 在正式建模之前，我們必須先「認識」資料。探索性資料分析 (Exploratory Data Analysis, EDA) 就像是**相親**，你需要透過各種方式了解對方的個性、習慣和背景。
 
@@ -176,7 +209,7 @@
 *   **盒鬚圖 (Box Plot)**：快速看出資料的分佈範圍、中位數以及**離群值**。
 ![Box Plot](images/box-plot.png)
 
-## 3.3 資料清理與品質管理 {#sec-data-cleaning}
+## 3.4 資料清理與品質管理 {#sec-data-cleaning}
 
 現實世界的資料往往是髒亂的。資料清理 (Data Cleaning) 通常佔據資料科學家 80% 的時間。
 
@@ -213,9 +246,10 @@
     | **分群平均 (Group Mean)** | **50** | 只算 Sales 部門的平均 $(40+60)/2$ | 考慮了部門特徵，比全體平均更準確。 |
     | **KNN (K-近鄰)** | **45-55** | 找跟 Bob 最像的人（Sales, 年資 3）。Alice (2年) 和 Charlie (5年) 是鄰居。 | 最精準，利用了「年資」與「部門」的綜合資訊。 |
 
-### 異常值/離群值處理 (Outliers) {#sec-outliers}
+### 異常值/離群值處理 (Outliers Handling) {#sec-outliers}
 
 有些資料點明顯與眾不同，例如身高 300 公分的人，或是年齡 200 歲。這些點可能是錯誤，也可能是極具價值的特殊案例（如詐欺交易）。
+![離群值偵測](images/outlier-detection.png)
 
 *   **偵測方法**：
     *   **Z-score 檢測**：假設資料呈常態分佈，超過平均數 $\pm 3$ 個標準差 ($3\sigma$) 的數值通常被視為異常。
@@ -223,10 +257,13 @@
         *   上限：$Q3 + 1.5 \times IQR$
         *   下限：$Q1 - 1.5 \times IQR$
         *   超過上下限的點即為離群值。
+    
 *   **處理方式**：
     *   **修正或刪除**：如果是明顯的輸入錯誤（如年齡 -5 歲），應直接修正或刪除。
     *   **轉換 (Transformation)**：使用**對數轉換 (Log Transformation)**（例如取 $log(x)$）來壓縮數值範圍，讓極端值不再那麼突兀，減少對模型的干擾。
     *   **蓋帽法 (Winsorizing)**：將超過特定百分位數（如 99%）的值，強制設定為該百分位數的值（例如所有超過 1000 的數都設為 1000）。
+
+![離群值處理](images/outlier-processing.png)
 
 ### 數據一致性處理 (Data Consistency) {#sec-consistency}
 
@@ -235,6 +272,7 @@
 *   **格式標準化**：
     *   **日期**：統一將 "2023/1/1", "01-01-2023", "Jan 1st, 23" 轉換為 `YYYY-MM-DD` 格式。
     *   **大小寫**：將 "Apple", "apple", "APPLE" 統一轉為小寫 "apple"。
+    *   **單位**：將不同欄位或來源的計量單位（如「公尺」vs「英呎」、「台斤」vs「公斤」、「美金」vs「台幣」）統一換算為同一標準，避免數值比較失準。
 *   **語意合併**：
     *   將 "Taipei", "Taipei City", "TP", "台北市" 統一映射為 "Taipei"。
 *   **去重 (Deduplication)**：
@@ -242,7 +280,17 @@
 
 ### 資料匿名化與隱私保護 (PII 處理) {#sec-anonymization}
 
-在處理涉及**個人識別資訊 (PII, Personally Identifiable Information)**（如姓名、身分證號、電話、地址）的資料時，必須嚴格遵守法規（如 GDPR、個資法）。
+在處理涉及**個人識別資訊 (PII, Personally Identifiable Information)**（如姓名、身分證號、電話、地址）的資料時，必須嚴格遵守法規（如歐盟 GDPR、台灣《個人資料保護法》）。
+
+**個資法合規關鍵 (Compliance Requirements)**：
+
+1.  **告知與同意 (Notice & Consent)**：蒐集資料前，必須明確告知使用者蒐集目的、類別及利用期間，並取得當事人同意。
+2.  **目的拘束 (Purpose Limitation)**：資料只能用於當初聲明的特定目的，不得隨意挪作他用（例如：為了「配送商品」蒐集的地址，不能拿去「寄送廣告」）。
+3.  **資料最小化 (Data Minimization)**：只蒐集「必要」的資料。如果分析不需要身分證號，就不要蒐集。
+4.  **安全維護措施 (Security Measures)**：企業有義務採取適當的技術與組織措施（如加密、存取控制）來防止資料外洩。
+5.  **當事人權利 (Data Subject Rights)**：使用者有權要求查詢、更正、或刪除其個人資料（被遺忘權）。
+
+為了符合上述要求，常見的技術手段包括：
 
 *   **遮罩 (Masking)**：隱藏部分資訊。
     *   姓名："王大明" $\rightarrow$ "王O明"
@@ -251,6 +299,8 @@
     *   年齡："25 歲" $\rightarrow$ "20-30 歲區間"
     *   地址："台北市信義區信義路五段 7 號" $\rightarrow$ "台北市信義區"
 *   **假名化 (Pseudonymization)**：用隨機生成的代碼（Token）取代真實 ID。只有擁有對照表的人才能還原，比單純刪除更具可追溯性。
+
+![PII 處理](images/pii.png)
 
 ## 本章總結與考點提示 {#sec-chapter3-summary}
 
@@ -269,6 +319,8 @@
     *   **缺失值**：刪除、插補（平均數/中位數/KNN）。
     *   **離群值**：Z-score (>3)、IQR (1.5倍)。
     *   **隱私**：去識別化、差分隱私。
+
+
 
 ### AI 應用規劃師認證考點
 

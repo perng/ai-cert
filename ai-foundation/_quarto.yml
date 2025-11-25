@@ -31,6 +31,9 @@ book:
 
 # lang: zh-TW 
 
+preview:
+    watch-inputs: true 
+
 format:
   html:
     theme: cosmo
