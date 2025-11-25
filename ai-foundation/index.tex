@@ -1,0 +1,5170 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\PassOptionsToPackage{space}{xeCJK}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{Noto Serif TC}
+  \setsansfont[]{Noto Serif TC}
+  \ifXeTeX
+    \usepackage{xeCJK}
+    \setCJKmainfont[]{Noto Serif TC}
+  \fi
+  \ifLuaTeX
+    \usepackage[]{luatexja-fontspec}
+    \setmainjfont[]{Noto Serif TC}
+  \fi
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\KOMAoption{captions}{tableheading}
+\usepackage{float}
+\usepackage{zhnumber}
+\renewcommand\partformat{第\zhnum{part}篇\enskip}
+\renewcommand\chapterformat{第\zhnum{chapter}章\enskip}
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={AI 應用規劃師全攻略},
+  pdfauthor={AI仁波切},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{AI 應用規劃師全攻略}
+\author{AI仁波切}
+\date{2025-11-20}
+\begin{document}
+\maketitle
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+
+\bookmarksetup{startatroot}
+
+\part{人工智慧基礎理論}\label{ux4ebaux5de5ux667aux6167ux57faux790eux7406ux8ad6}
+
+\bookmarksetup{startatroot}
+
+\part*{前言}\label{ux524dux8a00}
+\addcontentsline{toc}{part}{前言}
+
+\markboth{前言}{前言}
+
+\textbf{適用對象：} 準備經濟部 iPAS AI 應用規劃師（初/中級）之考生。
+
+本攻略旨在協助考生掌握 AI 應用規劃師之核心知識， 內容涵蓋人工智慧基礎、
+機器學習、 深度學習、 生成式 AI、 大數據分析、 AI 倫理與法規， 以及
+Python 程式語言基礎。
+
+\part{第一部：人工智慧基礎與戰略定位}
+
+\part{人工智慧的本質與層次架構}\label{ux4ebaux5de5ux667aux6167ux7684ux672cux8ceaux8207ux5c64ux6b21ux67b6ux69cb}
+
+人工智慧 (Artificial Intelligence, AI)
+已經成為當今科技發展的核心驅動力，深刻地改變著我們的生活與工作方式。本章將帶領讀者深入探討
+AI 的定義、技術層次架構，以及人類與 AI
+之間多樣化的協作模式，為後續的學習奠定堅實的基礎。
+
+\chapter{1.1 AI
+的定義與範疇}\label{ai-ux7684ux5b9aux7fa9ux8207ux7bc4ux7587}
+
+\section{人工智慧 (Artificial Intelligence, AI) 定義}\label{sec-ai-def}
+
+人工智慧 (AI)
+是一個廣泛的學科，旨在創造能夠展現「智慧」行為的機器或軟體。簡單來說，AI
+就是讓電腦具備模擬人類認知功能的能力，例如學習、推理、解決問題、感知環境、理解語言等。
+
+AI
+的目標並非僅僅是模仿人類，更在於透過計算能力來增強人類的智慧，解決複雜的問題。從早期的邏輯推理程式到現在的生成式
+AI，AI 的定義隨著技術的演進而不斷擴展。
+
+\section{弱 AI (Narrow AI) vs.~強 AI (General
+AI/AGI)}\label{ux5f31-ai-narrow-ai-vs.-ux5f37-ai-general-aiagi}
+
+根據 AI 的能力範圍，我們可以將其分為兩大類：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{弱人工智慧 (Artificial Narrow Intelligence, ANI)}
+  \{\#def-ani\}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{定義}：又稱為「專用 AI」。這類 AI
+    專精於執行「單一」或「特定」的任務，且在該領域的表現可能超越人類。目前我們生活中所見到的
+    AI 幾乎都屬於此類。
+  \item
+    \textbf{特徵}：不具備自我意識，無法跨領域學習。它的智慧是「被設計」出來解決特定問題的。
+  \item
+    \textbf{例子}：
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \textbf{AlphaGo}：雖然圍棋下得比世界冠軍好，但它不會開車，也不會聊天。
+    \item
+      \textbf{Siri / Google
+      Assistant}：能聽懂語音指令，但無法理解複雜的情感或進行深度的哲學思考。
+    \item
+      \textbf{人臉辨識系統}：能精準辨識身分，但無法欣賞照片的美感。
+    \end{itemize}
+  \end{itemize}
+\item
+  \textbf{強人工智慧 (Artificial General Intelligence, AGI)}
+  \{\#def-agi\}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{定義}：又稱為「通用 AI」。這類 AI
+    具備像人類一樣的「通用智慧」，能夠像人類一樣學習任何智力任務。它具備常識、推理能力、情感理解，甚至自我意識。
+  \item
+    \textbf{特徵}：能夠跨領域遷移學習，面對未曾見過的問題也能嘗試解決。
+  \item
+    \textbf{現狀}：目前仍處於理論和研發階段，尚未真正實現。電影《雲端情人
+    (Her)》中的薩曼莎或《鋼鐵人》中的賈維斯 (Jarvis) 就是 AGI 的想像。
+  \end{itemize}
+\end{enumerate}
+
+\section{超人工智慧 (Super AI)}\label{sec-super-ai}
+
+\begin{itemize}
+\item
+  \textbf{定義}：當 AI
+  在所有領域（包括科學創新、藝術創作、社交技巧）的智慧都遠遠超越最聰明的人類時，我們稱之為「超人工智慧」。
+\item
+  \textbf{展望}：這是一個充滿未知與想像的領域，也是許多科幻作品探討的主題，同時引發了關於
+  AI 安全與控制的深刻倫理討論。
+
+\begin{verbatim}
+*   **缺乏彈性**：無法處理模糊、不確定或規則難以窮舉的問題（例如：如何定義「貓」的長相？）。一旦遇到規則庫以外的情況，系統就會崩潰。
+*   **知識擷取瓶頸 (Knowledge Acquisition Bottleneck)**：將人類專家的隱性知識轉化為明確的規則，需要耗費大量的人力與時間。
+\end{verbatim}
+\end{itemize}
+
+\section{統計式 AI (Statistical AI)}\label{sec-statistical-ai}
+
+隨著電腦算力的提升和大數據的出現，AI 的發展重心轉向了「統計式
+AI」，也就是現在主流的機器學習。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{核心概念}：不再由人類手寫規則，而是讓電腦從大量的「數據」中，利用統計學方法自己找出規律和模式。
+\item
+  \textbf{代表技術}：決策樹 (Decision Tree)、支援向量機
+  (SVM)、類神經網路 (Neural Networks) 等。
+\item
+  \textbf{優勢}：能夠處理複雜、模糊的非結構化數據（如影像、語音、自然語言），並且具備從經驗中學習的能力。
+\item
+  \textbf{缺點}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{可解釋性低 (Black
+    Box)}：統計模型內部的運作複雜，基本上是無法理解的黑盒子，難以解釋為何做出某個判斷。
+  \item
+    \textbf{依賴數據 (Data
+    Dependency)}：模型的好壞取決於數據的品質與數量（Garbage In, Garbage
+    Out）。
+  \item
+    \textbf{偏差風險
+    (Bias)}：如果訓練數據包含偏見，模型也會學到這些偏見。
+  \end{itemize}
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\chapter{1.2 技術層次關係}\label{ux6280ux8853ux5c64ux6b21ux95dcux4fc2}
+
+要釐清 AI 領域的各種名詞，最簡單的方法是理解它們之間的「包含關係」。
+
+\section{AI、機器學習 (ML)、深度學習 (DL)
+的包含關係}\label{sec-ai-ml-dl}
+
+這三者就像是俄羅斯娃娃一樣，一層包著一層：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{人工智慧 (Artificial Intelligence)}
+  \{\#def-ai\}：最外層的大圈圈。包含了所有讓機器展現智慧的技術，包括早期的符號式
+  AI 和現代的機器學習。
+\item
+  \textbf{機器學習 (Machine Learning, ML)} \{\#def-ml\}：AI
+  的子集。專指那些「不需明確編寫指令，就能讓電腦從數據中學習」的演算法。它包含了傳統的統計學習方法（如決策樹、SVM）和深度學習。
+\item
+  \textbf{深度學習 (Deep Learning, DL)}
+  \{\#def-dl\}：機器學習的子集。特指使用「多層類神經網路 (Deep Neural
+  Networks)」來模擬人類大腦運作的技術。它是目前推動 AI 爆發性成長（如
+  AlphaGo, ChatGPT）的核心技術。
+\end{enumerate}
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/ai-ml-dl.png}}
+
+}
+
+\caption{AI、機器學習、深度學習的包含關係}
+
+\end{figure}%
+
+\section{資料驅動 (Data-Driven) vs.~規則驅動
+(Rule-Based)}\label{sec-data-vs-rule}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{規則驅動 (Rule-Based)} \{\#def-rule-based\}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{代表}：符號式 AI、專家系統。
+  \item
+    \textbf{邏輯}：輸入 + 規則 = 輸出。
+  \item
+    \textbf{比喻}：像是一個只會照著食譜做菜的廚師，食譜沒寫的就不會做。
+  \end{itemize}
+\item
+  \textbf{資料驅動 (Data-Driven)} \{\#def-data-driven\}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{代表}：機器學習、深度學習。
+  \item
+    \textbf{邏輯}：輸入 + 輸出 = 規則（模型）。
+  \item
+    \textbf{比喻}：像是一個聰明的學徒，看了一萬次師傅做菜（數據），自己領悟出了做菜的訣竅（模型）。
+  \end{itemize}
+\end{itemize}
+
+\section{傳統機器學習
+vs.~深度學習的適用場景與成本效益分析}\label{sec-ml-vs-dl-cost}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+特性
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+傳統機器學習 (Traditional ML)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+深度學習 (Deep Learning)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{數據需求量} & 較少，小數據集也能運作良好。 &
+極大，需要海量數據才能發揮優勢。 \\
+\textbf{硬體需求} & 較低，一般 CPU 即可訓練。 & 極高，通常需要高階 GPU
+加速運算。 \\
+\textbf{特徵工程} &
+\textbf{關鍵}。需要人類專家手工提取特徵（如定義貓有尖耳朵）。 &
+\textbf{自動化}。模型能自動從數據中提取特徵（End-to-End Learning）。 \\
+\textbf{可解釋性} & 較高（如決策樹），容易理解判斷依據。 &
+較低（黑盒子），難以解釋神經網路內部的運作。 \\
+\textbf{適用場景} & 表格數據 (Tabular Data)、簡單分類、資源受限的環境。
+& 影像辨識、自然語言處理 (NLP)、語音生成、複雜決策。 \\
+\end{longtable}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\chapter{1.3 人類與 AI 的協作模式 (Human-AI
+Collaboration)}\label{sec-human-ai-collab}
+
+AI
+並非要完全取代人類，更多時候是與人類協作。根據人類介入的程度，我們可以將協作模式分為三種：
+
+\section{1. 人在迴圈中 (Human-in-the-loop, HITL)}\label{sec-hitl}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{定義}：人類是 AI 系統運作流程中\textbf{不可或缺}的一部分。AI
+  無法獨立完成任務，必須由人類進行確認、修正或提供回饋，系統才能繼續運作或改進。
+\item
+  \textbf{應用場景}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{資料標註 (Data Labeling)}：AI
+    需要人類教它什麼是「貓」。人類負責標記圖片，AI 才能學習。
+  \item
+    \textbf{醫療診斷輔助}：AI 分析 X
+    光片並標記出可疑病灶，但\textbf{最終診斷}必須由醫生確認並簽名。AI
+    只是醫生的助手，決策權在人。
+  \item
+    \textbf{AI 輔助寫作/翻譯}：AI 產生初稿，人類進行潤飾與確認。
+  \item
+    \textbf{法律合約審查}：AI 標記潛在風險條款，律師進行最終判斷。
+  \end{itemize}
+\end{itemize}
+
+\section{2. 人在迴圈上 / 人監督迴路 (Human-over-the-loop /
+Human-on-the-loop, HOTL)}\label{sec-hotl}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{定義}：AI 可以獨立完成大部分的任務，人類扮演\textbf{監督者
+  (Supervisor)}
+  的角色。人類不直接參與每一個決策，但會監控系統運作，並在發生異常或信心不足時介入。
+\item
+  \textbf{應用場景}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{智慧工廠監控}：AI
+    自動控制生產線的溫度與速度。人類工程師在控制室監控儀表板，只有在警報響起或數值異常時，才手動接管控制。
+  \item
+    \textbf{自駕車 (Level
+    3)}：車輛在高速公路上自動駕駛，但駕駛人必須隨時準備好在系統請求時接手方向盤。
+  \item
+    \textbf{IT 維運監控 (AIOps)}：AI
+    自動偵測並修復常見故障，遇到未知問題才通知工程師。
+  \item
+    \textbf{智慧交通號誌控制}：AI
+    根據車流自動調整紅綠燈，交警僅在特殊狀況（如事故）時介入。
+  \end{itemize}
+\end{itemize}
+
+\section{3. 人在迴圈外 (Human-out-of-the-loop, HOOTL)}\label{sec-hootl}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{定義}：AI
+  系統完全\textbf{全自動化}運作，人類不介入其決策過程，甚至無法即時干預。這通常用於需要極快反應速度或人類無法處理的場景。
+\item
+  \textbf{應用場景}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{高頻交易 (High-Frequency Trading)}：AI
+    在毫秒等級內分析股市並自動下單。人類根本來不及反應，只能事後檢討演算法。
+  \item
+    \textbf{全自動化網路防禦}：面對大規模 DDoS 攻擊，AI
+    必須即時自動阻擋惡意流量，等待人類批准會造成系統癱瘓。
+  \item
+    \textbf{個人化推薦系統}：Netflix 或 YouTube
+    根據你的觀看紀錄自動推薦影片，人類完全不介入。
+  \item
+    \textbf{動態定價 (Dynamic Pricing)}：Uber
+    或機票網站根據供需自動調整價格。
+  \end{itemize}
+\item
+  \textbf{風險}：由於人類無法即時監控，HOOTL
+  系統必須具備極高的可靠性，並內建嚴格的安全機制 (Safety Guardrails)
+  以防止災難性的錯誤（如股市閃崩）。
+\end{itemize}
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/human-ai-collaboration.png}}
+
+}
+
+\caption{Human-AI Collaboration Models}
+
+\end{figure}%
+
+\chapter{本章總結與考點提示}\label{sec-chapter1-summary}
+
+\section{核心概念回顧}\label{ux6838ux5fc3ux6982ux5ff5ux56deux9867}
+
+本章建立了 AI 的基礎世界觀，釐清了
+AI、機器學習與深度學習的層級關係，並介紹了 AI 的發展歷史與分類。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{AI 層級關係}：同心圓結構。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{AI (人工智慧)}：最外層，模擬人類智慧的總稱。
+  \item
+    \textbf{ML (機器學習)}：AI
+    的子集，讓機器從資料中學習規則，而非人工撰寫規則。
+  \item
+    \textbf{DL (深度學習)}：ML
+    的子集，使用多層神經網路，具備自動特徵提取能力。
+  \end{itemize}
+\item
+  \textbf{AI 發展史}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{1956 達特茅斯會議}：AI 誕生。
+  \item
+    \textbf{寒冬與復甦}：經歷兩次寒冬，因算力不足與資料缺乏。
+  \item
+    \textbf{2012 AlexNet}：深度學習爆發。
+  \item
+    \textbf{2022 ChatGPT}：生成式 AI 普及。
+  \end{itemize}
+\item
+  \textbf{AI 類型}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{弱 AI (ANI)}：專精單一任務（如下棋、導航）。目前所有的 AI
+    都是弱 AI。
+  \item
+    \textbf{強 AI (AGI)}：具備人類般的通用智慧。尚未實現。
+  \item
+    \textbf{超 AI (ASI)}：超越人類智慧。
+  \end{itemize}
+\end{itemize}
+
+\section{AI
+應用規劃師認證考點}\label{ai-ux61c9ux7528ux898fux5283ux5e2bux8a8dux8b49ux8003ux9ede}
+
+\textbf{常考題型與解題策略}：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{層級關係題}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「下列關於 AI、ML、DL 的關係何者正確？」
+  \item
+    \textbf{解答}：AI \textgreater{} ML \textgreater{}
+    DL。深度學習是機器學習的一種，機器學習是人工智慧的一種。
+  \end{itemize}
+\item
+  \textbf{定義辨析題}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「AlphaGo 是屬於哪一種 AI？」
+  \item
+    \textbf{解答}：弱 AI (ANI)。因為它只會下圍棋，不會開車或聊天。
+  \item
+    \emph{例題}：「圖靈測試 (Turing Test) 的目的是什麼？」
+  \item
+    \textbf{解答}：測試機器是否具備人類智慧（能否騙過人類評審）。
+  \end{itemize}
+\item
+  \textbf{歷史里程碑題}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{關鍵字}：達特茅斯會議 (AI 誕生)、AlexNet (深度學習爆發)、Deep
+    Blue (擊敗西洋棋王)、AlphaGo (擊敗圍棋王)。
+  \end{itemize}
+\end{enumerate}
+
+\section{記憶口訣}\label{ux8a18ux61b6ux53e3ux8a23}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{層級}：「大中細」（AI 大、ML 中、DL 細）。
+\item
+  \textbf{類型}：「弱強超」（現在是弱、未來是強、科幻是超）。
+\end{itemize}
+
+\section{延伸思考}\label{ux5ef6ux4f38ux601dux8003}
+
+\begin{itemize}
+\tightlist
+\item
+  為什麼深度學習直到 2010 年代才爆發？（關鍵：大數據 + GPU 算力）
+\item
+  目前的生成式 AI (如 ChatGPT) 是強 AI
+  嗎？為什麼？（它看起來很全能，但本質上還是基於機率預測，且缺乏真正的理解與意識，仍處於弱
+  AI 邁向強 AI 的過渡期）。
+\end{itemize}
+
+\part{AI 應用問題類型}\label{ai-ux61c9ux7528ux554fux984cux985eux578b}
+
+在開始深入各種技術細節之前，我們需要先了解 AI
+究竟能解決什麼樣的問題。這就像在學習使用工具箱之前，先了解有哪些類型的釘子和螺絲一樣。本章將介紹
+AI
+的學習範式（它是如何學習的）以及資料分析的層次（它能提供多深的見解）。
+
+\chapter{2.1 學習範式}\label{sec-learning-paradigms}
+
+機器學習的核心在於「從資料中學習」。根據資料的型態以及學習的方式，我們可以將其分為幾種主要的範式。
+
+\section{監督式學習 (Supervised
+Learning)}\label{sec-supervised-learning}
+
+這是目前應用最廣泛的 AI
+學習方式。想像一位\textbf{老師}在教導學生，老師會提供題目（輸入資料）以及標準答案（標籤）。學生的目標是找出題目與答案之間的關聯規則，以便將來遇到沒有答案的新題目時，也能答對。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{關鍵要素}：需要有標籤的資料 (Labeled Data)。
+\item
+  \textbf{生活案例}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{垃圾郵件過濾}：系統看過成千上萬封標示為「垃圾信」或「正常信」的郵件後，學會分辨新郵件。
+  \item
+    \textbf{房價預測}：根據過去房屋的坪數、地點、屋齡（輸入）以及最終成交價（答案），預測新房子的價格。
+  \end{itemize}
+\end{itemize}
+
+\section{非監督式學習 (Unsupervised
+Learning)}\label{sec-unsupervised-learning}
+
+這種方式就像是\textbf{自修}，或者是一個嬰兒在探索世界。沒有老師告訴它什麼是對的、什麼是錯的，也沒有標準答案。模型必須自己從資料中尋找隱藏的結構或規律。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{關鍵要素}：只有輸入資料，沒有標籤。
+\item
+  \textbf{生活案例}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{顧客分群 (Customer
+    Segmentation)}：電商平台分析消費者的購買紀錄，自動將顧客分成「精打細算型」、「衝動購物型」等群體，但系統事先並不知道這些群體的定義。
+  \item
+    \textbf{異常偵測}：信用卡公司分析刷卡行為，發現某筆交易與平常的模式差異過大，判定為潛在盜刷。
+  \end{itemize}
+\end{itemize}
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/supervised.png}}
+
+}
+
+\caption{監督式學習與非監督式學習}
+
+\end{figure}%
+
+\section{半監督式學習 (Semi-supervised
+Learning)}\label{sec-semi-supervised-learning}
+
+這是一種折衷方案。在現實世界中，取得有標籤的資料往往很昂貴（需要人工標註），但沒標籤的資料卻隨處可見。半監督式學習結合了少量的標籤資料和大量的無標籤資料。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{類比}：老師只教了幾個核心概念（少量標籤），剩下的要學生舉一反三，從大量練習題中自己摸索（大量無標籤）。
+\item
+  \textbf{應用}：醫療影像分析（醫生標註幾張 X
+  光片很花時間，但醫院有大量未標註的片子）。
+\end{itemize}
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/semi-supervised.png}}
+
+}
+
+\caption{半監督式學習}
+
+\end{figure}%
+
+\section{強化學習 (Reinforcement
+Learning)}\label{sec-reinforcement-learning}
+
+這就像是\textbf{訓練寵物}。我們不會直接告訴 AI
+每一步該怎麼走，而是讓它在一個環境中嘗試。做對了就給予獎勵（Reward），做錯了就給予懲罰（Penalty）。AI
+的目標是透過不斷嘗試錯誤（Trial and
+Error），找出能獲得最大累積獎勵的策略。
+
+強化學習的過程可以拆解為以下幾個關鍵要素的互動：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{代理人 (Agent)}：也就是正在學習的 AI
+  模型（例如：掃地機器人）。
+\item
+  \textbf{環境
+  (Environment)}：代理人所處的世界（例如：充滿家具的客廳）。
+\item
+  \textbf{狀態 (State)}：代理人當前的情況（例如：前方 10
+  公分有障礙物）。
+\item
+  \textbf{行動 (Action)}：代理人採取的動作（例如：向左轉）。
+\item
+  \textbf{獎勵 (Reward)}：環境給予的回饋（例如：成功避開障礙物得 +1
+  分，撞到桌腳得 -10 分）。
+\end{enumerate}
+
+\textbf{探索與利用 (Exploration vs.~Exploitation)}
+
+強化學習中有一個經典的難題： * \textbf{探索
+(Exploration)}：嘗試新的、未知的行動，希望能發現更好的策略（但也可能失敗）。
+* \textbf{利用
+(Exploitation)}：堅持目前已知最好的策略，確保獲得穩定的獎勵。 AI
+必須在這兩者之間取得平衡，才能不斷進步。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{生活案例}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{AlphaGo}：圍棋程式透過無數次的自我對弈，學習如何贏得比賽。它不僅學習人類棋譜，更透過自我探索發現了人類未曾想過的下法。
+  \item
+    \textbf{掃地機器人}：在房間裡碰撞學習，慢慢規劃出最有效率的清掃路徑，同時避開障礙物。
+  \end{itemize}
+\end{itemize}
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/reinforcement-learning.png}}
+
+}
+
+\caption{強化學習}
+
+\end{figure}%
+
+\section{遷移學習 (Transfer Learning)}\label{sec-transfer-learning}
+
+這就是所謂的「站在巨人的肩膀上」。人類在學習新技能時，通常會運用舊有的經驗。例如學會騎腳踏車的人，學騎機車會比較快。遷移學習就是將一個已經訓練好的強大模型（預訓練模型），微調後應用到新的、類似的任務上。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{優勢}：不需要從頭開始訓練，大幅節省時間與資料需求。
+\item
+  \textbf{生活案例}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{醫療影像診斷}：使用一個已經看過數百萬張日常照片（如貓、狗、車）的模型，因為它已經學會了如何辨識邊緣、形狀和紋理，只需要再給它少量的
+    X 光片或 MRI 影像，它就能快速學會判讀病灶。
+  \item
+    \textbf{特定領域的語言模型}：使用像 GPT
+    這樣已經讀過整個網際網路的通用模型，針對「法律文件」或「醫療報告」進行微調，讓它變成該領域的專家助手。
+  \item
+    \textbf{風格轉換}：將一位畫家（如梵谷）的畫風「遷移」到一張普通的風景照上，讓照片瞬間變成名畫風格。
+  \end{itemize}
+\end{itemize}
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/transfer-learning.png}}
+
+}
+
+\caption{遷移學習}
+
+\end{figure}%
+
+\chapter{2.2 資料分析層次}\label{sec-data-analysis-levels}
+
+AI
+與資料科學不僅僅是預測未來，它在商業應用上通常被分為四個價值層次，由淺入深：
+
+\section{1. 描述性分析 (Descriptive Analysis):
+發生了什麼？}\label{sec-descriptive-analysis}
+
+這是最基礎的層次，重點在於\textbf{總結過去}。透過報表、儀表板
+(Dashboard) 來呈現歷史數據。 * \textbf{例子}： *
+\textbf{銷售報表}：上個月的總銷售額是多少？哪個產品賣得最好？ *
+\textbf{網站分析}：昨天有多少人造訪網站？平均停留時間多久？ *
+\textbf{人資盤點}：目前公司有多少員工？各部門的人數分佈為何？
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/descriptive-analysis.png}}
+
+}
+
+\caption{描述性分析}
+
+\end{figure}%
+
+\section{2. 診斷性分析 (Diagnostic Analysis):
+為什麼發生？}\label{sec-diagnostic-analysis}
+
+這層次試圖找出\textbf{原因}。透過資料鑽取 (Drill-down)
+或相關性分析，解釋過去事件的成因。 * \textbf{例子}： *
+\textbf{銷售檢討}：為什麼上個月銷售額下降？是因為季節性因素，還是競爭對手降價？
+* \textbf{設備故障}：為什麼這台機器突然停機？是因為過熱還是零件磨損？ *
+\textbf{客戶流失}：為什麼這群客戶不再續約？是因為價格太高還是服務滿意度下降？
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/diagnostic-analysis.png}}
+
+}
+
+\caption{診斷性分析}
+
+\end{figure}%
+
+\section{3. 預測性分析 (Predictive Analysis):
+將會發生什麼？}\label{sec-predictive-analysis}
+
+這正是 AI
+與機器學習大顯身手的地方。利用過去的模式來\textbf{預測未來}的趨勢或事件。
+* \textbf{例子}： *
+\textbf{銷售預測}：根據目前的趨勢，下個月的銷售額預計會是多少？ *
+\textbf{預防性維護}：這台機器在未來一週內故障的機率有多高？ *
+\textbf{信用評分}：這位申請人未來違約的機率是多少？
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/predictive-analysis.png}}
+
+}
+
+\caption{預測性分析}
+
+\end{figure}%
+
+\section{4. 處方性分析 (Prescriptive Analysis):
+應該怎麼做？}\label{sec-prescriptive-analysis}
+
+這是分析的最高境界。不僅預測未來，還能提供\textbf{最佳行動建議}，告訴決策者如何優化結果。
+* \textbf{例子}： *
+\textbf{庫存優化}：既然預測下個月庫存會不足，系統建議現在應該向供應商 A
+訂購 500 個零件，並向供應商 B 訂購 300 個，以達到成本最低且到貨最快。 *
+\textbf{路徑規劃}：考量到預測的塞車狀況，導航系統建議司機改走 B
+路線以節省 10 分鐘。 * \textbf{行銷配置}：為了最大化轉換率，系統建議將
+60\% 的預算投入 Instagram 廣告，40\% 投入 Google 關鍵字。
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/prescriptive-analysis.png}}
+
+}
+
+\caption{處方性分析}
+
+\end{figure}%
+
+\chapter{本章總結與考點提示}\label{sec-chapter2-summary}
+
+\section{核心概念回顧}\label{ux6838ux5fc3ux6982ux5ff5ux56deux9867-1}
+
+本章介紹了 AI 應用的兩大基礎框架：\textbf{學習範式}（AI
+如何學習）與\textbf{資料分析層次}（AI 能提供什麼價值）。
+
+\textbf{學習範式比較表}：
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+學習範式
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+資料特性
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+典型應用
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+關鍵概念
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{監督式學習} & 有標籤資料 & 分類、迴歸 & 訓練集、測試集 \\
+\textbf{非監督式學習} & 無標籤資料 & 分群、降維 & 隱藏結構、模式發現 \\
+\textbf{半監督式學習} & 少量標籤 + 大量無標籤 & 醫療影像 & 標註成本 \\
+\textbf{強化學習} & 獎勵/懲罰訊號 & 遊戲、機器人 &
+Agent、Environment、Policy \\
+\textbf{遷移學習} & 預訓練模型 & 微調應用 & Pre-training、Fine-tuning \\
+\end{longtable}
+
+\textbf{資料分析層次}：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{描述性} → 發生了什麼？（報表、儀表板）
+\item
+  \textbf{診斷性} → 為什麼發生？（根因分析）
+\item
+  \textbf{預測性} → 將會發生什麼？（機器學習預測）
+\item
+  \textbf{處方性} → 應該怎麼做？（最佳化建議）
+\end{enumerate}
+
+\section{AI
+應用規劃師認證考點}\label{ai-ux61c9ux7528ux898fux5283ux5e2bux8a8dux8b49ux8003ux9ede-1}
+
+\textbf{常考題型與解題策略}：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{情境判斷題}：給定商業問題，選擇最適合的學習範式
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「公司想根據客戶過去的購買紀錄預測流失率」
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \textbf{解答}：監督式學習（分類問題）
+    \item
+      \textbf{關鍵字}：「過去紀錄」= 有標籤資料；「預測」= 監督式學習
+    \end{itemize}
+  \item
+    \emph{例題}：「想將客戶分成不同群組進行精準行銷，但不知道該分幾群」
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \textbf{解答}：非監督式學習（分群）
+    \item
+      \textbf{關鍵字}：「不知道分幾群」= 無預設標籤；「分群」=
+      非監督式學習
+    \end{itemize}
+  \end{itemize}
+\item
+  \textbf{分析層次判斷題}：識別問題屬於哪個分析層次
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「為什麼上個月銷售下降？」→
+    \textbf{診斷性分析}（找原因）
+  \item
+    \emph{例題}：「下個月銷售會是多少？」→
+    \textbf{預測性分析}（預測未來）
+  \item
+    \emph{例題}：「應該如何調整行銷策略以提升銷售？」→
+    \textbf{處方性分析}（給建議）
+  \end{itemize}
+\item
+  \textbf{概念辨析題}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{監督 vs.~非監督}：關鍵在於「是否有標籤」
+  \item
+    \textbf{強化學習的特點}：透過「試錯」學習，需要「獎勵機制」
+  \item
+    \textbf{遷移學習的優勢}：「站在巨人肩膀上」，減少訓練時間與資料需求
+  \item
+    \textbf{探索
+    vs.~利用}：新嘗試（可能更好但有風險）vs.~已知最佳（穩定但不會進步）
+  \end{itemize}
+\item
+  \textbf{應用場景配對題}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    垃圾郵件過濾 → 監督式學習（分類）
+  \item
+    客戶分群 → 非監督式學習
+  \item
+    AlphaGo 圍棋 → 強化學習
+  \item
+    醫療影像診斷（資料少）→ 遷移學習
+  \item
+    異常交易偵測 → 非監督式學習（異常偵測）
+  \end{itemize}
+\end{enumerate}
+
+\section{記憶口訣}\label{ux8a18ux61b6ux53e3ux8a23-1}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{學習範式}：「監非半強遷」（監督、非監督、半監督、強化、遷移）
+\item
+  \textbf{分析層次}：「描診預處」（描述、診斷、預測、處方）
+\item
+  \textbf{強化學習}：「代環狀動獎」（代理人、環境、狀態、行動、獎勵）
+\end{itemize}
+
+\section{延伸思考}\label{ux5ef6ux4f38ux601dux8003-1}
+
+\begin{itemize}
+\tightlist
+\item
+  為什麼 AlphaGo 使用強化學習而不是監督式學習？
+\item
+  在什麼情況下，描述性分析就足夠了，不需要預測性分析？
+\item
+  遷移學習為何能讓小公司也能使用 AI？
+\end{itemize}
+
+\part{第二部：數據工程------AI 的堅實地基}
+
+\part{數據處理生命週期與架構}\label{ux6578ux64daux8655ux7406ux751fux547dux9031ux671fux8207ux67b6ux69cb}
+
+在 AI 的世界裡，有一句名言：「垃圾進，垃圾出 (Garbage In, Garbage Out,
+GIGO)」。無論你的模型多麼先進，如果餵給它的資料品質低劣，結果也將毫無價值。本章將探討資料如何從原始狀態，經過層層處理，最終變成模型可用的燃料。
+
+\chapter{3.1 資料類型與儲存 (Data Types \&
+Storage)}\label{sec-data-types-storage}
+
+在建立資料管道之前，我們必須先了解手上有什麼樣的資料，以及該把它存在哪裡。
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/structured-vs-unstructured.png}}
+
+}
+
+\caption{結構化資料 vs 非結構化資料}
+
+\end{figure}%
+
+\section{結構化資料 (Structured
+Data)}\label{ux7d50ux69cbux5316ux8cc7ux6599-structured-data}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{定義}：高度組織化，有固定的格式與長度。通常以「表格」形式呈現（行與列）。
+\item
+  \textbf{例子}：Excel 報表、銀行交易紀錄、客戶資料表 (Name, Age,
+  Phone)。
+\item
+  \textbf{儲存方式}：\textbf{關聯式資料庫 (RDB, Relational Database)}。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{SQL (Structured Query
+    Language)}：用於查詢和管理資料的標準語言。
+  \item
+    \textbf{特性}：強調
+    \textbf{ACID}（原子性、一致性、隔離性、持久性），確保交易絕對準確。
+  \item
+    \textbf{常見工具}：MySQL, PostgreSQL, Oracle, Microsoft SQL Server。
+  \end{itemize}
+\end{itemize}
+
+\section{非結構化資料 (Unstructured
+Data)}\label{ux975eux7d50ux69cbux5316ux8cc7ux6599-unstructured-data}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{定義}：沒有固定格式，電腦難以直接解析。佔了全世界資料的 80\%
+  以上。
+\item
+  \textbf{例子}：圖片、影片、音訊、PDF 文件、社群貼文、電子郵件內容。
+\item
+  \textbf{儲存方式}：\textbf{NoSQL 資料庫} 或 \textbf{物件儲存 (Object
+  Storage)}。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{特性}：靈活、擴充性強 (Scalable)，通常不保證強一致性
+    (BASE)。
+  \item
+    \textbf{常見工具}：
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \textbf{物件儲存}：Amazon S3, Google Cloud Storage
+      (存圖片、影片)。
+    \item
+      \textbf{NoSQL}：MongoDB (存文件), Redis (存快取), Cassandra
+      (存大量日誌)。
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\section{半結構化資料 (Semi-structured
+Data)}\label{ux534aux7d50ux69cbux5316ux8cc7ux6599-semi-structured-data}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{定義}：介於兩者之間。沒有嚴格的表格架構，但有標籤 (Tags)
+  或鍵值 (Keys) 來描述資料層次。
+\item
+  \textbf{例子}：\textbf{JSON} (API 回傳格式), \textbf{XML},
+  \textbf{HTML}, Log 檔。
+\item
+  \textbf{儲存方式}：通常存於 \textbf{NoSQL (Document DB)} 如
+  MongoDB，或現代 RDB 的 JSON 欄位中。
+\end{itemize}
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/sql-vs-nosql.png}}
+
+}
+
+\caption{SQL vs NoSQL}
+
+\end{figure}%
+
+\chapter{3.2 資料管道 (Data Pipeline)}\label{sec-data-pipeline}
+
+資料管道就像是城市的\textbf{供水系統}。水源（原始資料）可能來自水庫、河流或地下水，必須經過過濾、消毒、輸送（處理過程），最後才能從家裡的水龍頭流出乾淨的自來水（可用資料）。
+
+\section{ETL (Extract-Transform-Load) 架構}\label{sec-etl}
+
+這是最傳統也最常見的資料處理流程，特別適用於結構化資料（如資料庫表格）。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{資料擷取
+  (Extract)}：從各種來源（資料庫、API、檔案）收集資料。就像去市場\textbf{買菜}。
+\item
+  \textbf{資料轉換
+  (Transform)}：清洗、格式化、計算衍生欄位。就像在廚房\textbf{備料}（洗菜、切肉、醃製）。這是最耗時的步驟。
+\item
+  \textbf{資料載入 (Load)}：將處理好的資料存入目標系統（通常是資料倉儲
+  Data Warehouse）。就像將煮好的菜\textbf{端上桌}。
+\end{enumerate}
+
+\textbf{優缺點分析}： * \textbf{優點 (Pros)}： *
+\textbf{資料品質高}：進入倉儲的資料都經過清洗和驗證，乾淨且格式統一。 *
+\textbf{查詢效能好}：資料倉儲通常針對讀取優化，分析速度快。 *
+\textbf{節省儲存空間}：只儲存需要的、處理過的資料。 * \textbf{缺點
+(Cons)}： *
+\textbf{靈活性低}：如果分析需求改變（例如想看原始資料），需要重新設計轉換流程。
+*
+\textbf{延遲較高}：必須等所有轉換步驟完成才能使用資料，不適合即時分析。
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/etl.png}}
+
+}
+
+\caption{ETL 架構}
+
+\end{figure}%
+
+\section{ELT (Extract-Load-Transform) 架構與資料湖 (Data
+Lake)}\label{sec-elt}
+
+隨著大數據 (Big Data)
+的興起，資料量大到無法先處理再儲存，或者資料是非結構化的（如日誌、圖片、影片），ELT
+架構應運而生。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{流程}：先把所有資料（不管髒不髒）全部抓進來（Extract \&
+  Load），存放在一個巨大的儲存庫中，稱為\textbf{資料湖 (Data
+  Lake)}。等到需要分析時，再進行轉換 (Transform)。
+\item
+  \textbf{類比}：這就像\textbf{搬家}。先把舊家的東西全部裝箱搬到新家（Load），等到要用某個東西時，再打開箱子整理（Transform）。
+\end{itemize}
+
+\textbf{優缺點分析}： * \textbf{優點 (Pros)}： *
+\textbf{極高靈活性}：保留了所有原始資料，隨時可以根據新需求進行不同的轉換分析。
+* \textbf{載入速度快}：不需要等待繁重的轉換過程，資料能快速進入系統。 *
+\textbf{支援非結構化資料}：圖片、影片、日誌都可以先丟進去再說。 *
+\textbf{缺點 (Cons)}： *
+\textbf{資料治理困難}：如果沒有妥善管理，資料湖很容易變成「資料沼澤
+(Data Swamp)」，充滿垃圾資料。 *
+\textbf{查詢效能較差}：因為資料未經優化，查詢時可能需要即時處理大量原始數據。
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/elt.png}}
+
+}
+
+\caption{ELT 架構}
+
+\end{figure}%
+
+\section{批次處理 vs.~串流處理}\label{sec-batch-vs-streaming}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{批次處理 (Batch
+  Processing)}：累積一段時間的資料後，一次性處理。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{類比}：\textbf{公車}。要等到時刻表到了或人坐滿了才發車。
+  \item
+    \textbf{優點 (Pros)}：
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \textbf{技術成熟}：工具多，容易實作與維護。
+    \item
+      \textbf{計算效率高}：一次處理大量資料，平均成本低。
+    \end{itemize}
+  \item
+    \textbf{缺點 (Cons)}：
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \textbf{資料延遲}：無法看到最新的數據，通常有數小時到數天的落差。
+    \end{itemize}
+  \item
+    \textbf{適用}：日報表、月結算、不需要即時性的分析。
+  \end{itemize}
+\item
+  \textbf{串流處理 (Streaming Processing)}：資料一產生就立刻處理。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{類比}：\textbf{計程車}。隨叫隨走，來一個載一個。
+  \item
+    \textbf{優點 (Pros)}：
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \textbf{即時性}：能立刻對新事件做出反應（如阻擋盜刷）。
+    \item
+      \textbf{平滑負載}：資料持續流入處理，不會像批次處理那樣在特定時間出現巨大的運算高峰。
+    \end{itemize}
+  \item
+    \textbf{缺點 (Cons)}：
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \textbf{技術複雜}：需要處理資料亂序、遺失、重複等問題，開發難度高。
+    \item
+      \textbf{成本較高}：需要 24 小時運行的基礎設施。
+    \end{itemize}
+  \item
+    \textbf{適用}：即時詐欺偵測、股市交易監控、即時推薦系統。
+  \end{itemize}
+\end{itemize}
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/batch-vs-streaming.png}}
+
+}
+
+\caption{批次處理 vs.~串流處理}
+
+\end{figure}%
+
+\chapter{3.3 探索性資料分析 (Exploratory Data Analysis,
+EDA)}\label{sec-eda}
+
+在正式建模之前，我們必須先「認識」資料。探索性資料分析 (Exploratory Data
+Analysis, EDA)
+就像是\textbf{相親}，你需要透過各種方式了解對方的個性、習慣和背景。
+
+\section{數值型 vs.~類別型資料 (Numerical vs.~Categorical
+Data)}\label{sec-data-types}
+
+在資料科學中，區分資料的類型至關重要，因為不同的演算法適用於不同類型的資料。
+
+\subsection{1. 數值型資料 (Numerical
+Data)}\label{ux6578ux503cux578bux8cc7ux6599-numerical-data}
+
+代表\textbf{數量}或\textbf{大小}的資料，可以進行數學運算（加減乘除）。 *
+\textbf{連續型 (Continuous)}：可以取任意小數點的值。例如：身高 (175.5
+cm)、溫度 (26.8°C)、股價。 * \textbf{離散型
+(Discrete)}：只能取整數值。例如：小孩的人數 (1, 2, 3)、網頁點擊次數。
+
+\subsection{2. 類別型資料 (Categorical
+Data)}\label{ux985eux5225ux578bux8cc7ux6599-categorical-data}
+
+代表\textbf{特徵}或\textbf{群組}的資料，通常是文字或代碼，無法直接進行數學運算。
+* \textbf{名目型 (Nominal)}：沒有順序關係。例如：血型 (A, B, O,
+AB)、顏色 (紅, 藍, 綠)、城市 (台北, 東京, 紐約)。 * \textbf{順序型
+(Ordinal)}：有順序或等級關係，但間距不一定相等。例如：滿意度 (非常滿意
+\textgreater{} 滿意 \textgreater{} 普通 \textgreater{} 不滿意)、衣服尺寸
+(S \textless{} M \textless{} L \textless{} XL)。
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/category-vs-number.png}}
+
+}
+
+\caption{類別型 vs.~數值型資料}
+
+\end{figure}%
+
+\subsection{為什麼不能輕易轉換？}\label{ux70baux4ec0ux9ebcux4e0dux80fdux8f15ux6613ux8f49ux63db}
+
+雖然電腦最終只看得懂數字，但我們不能隨意將類別轉為數字，或將數字轉為類別，這會造成模型誤解：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{類別轉數值的陷阱}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    如果將「顏色」編碼為：紅=1, 綠=2, 藍=3。
+  \item
+    \textbf{誤解}：模型會以為「藍色 (3) 大於 紅色 (1)」，或者「紅色 (1)
+    + 綠色 (2) = 藍色 (3)」。這在數學上是荒謬的。
+  \item
+    \textbf{解法}：對於類別型資料，應使用\textbf{獨熱編碼 (One-Hot
+    Encoding)}，將每個顏色變成獨立的欄位（是紅色嗎？是綠色嗎？）。
+  \end{itemize}
+\item
+  \textbf{數值轉類別的代價}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    如果將「年齡」轉為「年齡層」（0-18歲, 19-35歲\ldots）。
+  \item
+    \textbf{資訊流失}：19 歲和 35
+    歲被視為完全一樣，失去了細微的差異。這稱為\textbf{離散化
+    (Discretization)}，雖然有助於簡化問題，但會犧牲精確度。
+  \end{itemize}
+\end{enumerate}
+
+\section{統計摘要 (Descriptive
+Statistics)}\label{sec-descriptive-statistics}
+
+用數字來描述資料的整體樣貌，這是了解資料的第一步。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{集中趨勢 (Central
+  Tendency)}：尋找資料的「中心」，代表大多數資料落在哪裡。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{平均數 (Mean)}：所有數值加總除以個數。
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \emph{缺點}：非常容易受\textbf{極端值 (Outliers)} 影響。
+    \end{itemize}
+  \item
+    \textbf{中位數 (Median)}：將資料由小到大排列，位於正中間的那個數（第
+    50 百分位數）。
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \emph{優點}：不受極端值影響，更能代表「一般人」的水準。在房價或薪資統計中，中位數通常比平均數更有參考價值。
+    \end{itemize}
+  \item
+    \textbf{眾數
+    (Mode)}：出現次數最多的數值。適用於類別資料（如「最熱賣的飲料」）。
+  \end{itemize}
+
+  \begin{quote}
+  \textbf{實例演練：薪資統計}
+
+  假設一間新創公司有 5
+  位員工，月薪（萬元）分別為：\texttt{3,\ 3,\ 4,\ 5,\ 100}（最後一位是老闆）。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{平均數}：\((3+3+4+5+100) / 5 = 23\) 萬。
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \emph{解讀}：平均薪資 23 萬，聽起來這家公司待遇超好？但其實 4
+      個人都領不到 6 萬。這就是平均數被極端值（老闆的 100
+      萬）拉高的假象。
+    \end{itemize}
+  \item
+    \textbf{中位數}：排序後是
+    \texttt{3,\ 3,\ {[}4{]},\ 5,\ 100}。中位數是 \textbf{4} 萬。
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \emph{解讀}：4 萬比較接近大多數員工的真實感受。
+    \end{itemize}
+  \item
+    \textbf{眾數}：\textbf{3} 萬（出現 2 次，最多）。
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \emph{解讀}：領 3 萬的人最多。
+    \end{itemize}
+  \end{itemize}
+  \end{quote}
+\item
+  \textbf{離散程度
+  (Dispersion)}：資料分佈得有多「散」，代表資料的波動性或不確定性。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{標準差 (Standard Deviation, SD)}：數值與平均數的平均距離。
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \textbf{公式}：\[ s = \sqrt{\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}} \]
+    \item
+      \textbf{注意 (貝塞爾校正)}：為什麼除以 \(n-1\) 而不是 \(n\)？
+
+      \begin{itemize}
+      \tightlist
+      \item
+        當我們只擁有\textbf{樣本 (Sample)} 資料時，用 \(n-1\)
+        能提供對母體標準差更準確的\textbf{不偏估計 (Unbiased
+        Estimate)}。
+      \item
+        如果是計算\textbf{母體 (Population)}
+        標準差（擁有全部資料），則除以 \(n\)。
+      \end{itemize}
+    \item
+      \emph{意義}：SD 越小，代表資料越集中（品質穩定）；SD
+      越大，代表資料越參差不齊（風險高）。
+    \item
+      \emph{例子}：兩個班級平均分都是 80 分。A 班大家都在 75-85
+      分之間（SD 小）；B 班有人考 100 也有人考 60（SD 大）。
+      \pandocbounded{\includegraphics[keepaspectratio]{images/standard-deviation.png}}
+    \end{itemize}
+  \item
+    \textbf{四分位數 (Quartiles)}：將資料由小到大切成四等份的切點。
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \textbf{Q1 (第 1 四分位數)}：贏過 25\% 的人。
+    \item
+      \textbf{Q2 (第 2 四分位數)}：即中位數，贏過 50\% 的人。
+    \item
+      \textbf{Q3 (第 3 四分位數)}：贏過 75\% 的人。
+    \item
+      \textbf{四分位距 (IQR)}：代表中間 50\%
+      資料的範圍，常用於偵測離群值。
+    \item
+      \textbf{公式}：\[ IQR = Q_3 - Q_1 \]
+    \end{itemize}
+  \end{itemize}
+\item
+  \textbf{分佈形狀 (Distribution Shape)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{偏態 (Skewness)}：資料分佈是否對稱。
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \textbf{公式}：\[ Skewness = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^3}{n \times s^3} \]
+    \item
+      \textbf{變數說明}：
+
+      \begin{itemize}
+      \tightlist
+      \item
+        \(x_i\)：第 \(i\) 個資料點。
+      \item
+        \(\bar{x}\)：平均數。
+      \item
+        \(n\)：資料總數。
+      \item
+        \(s\)：標準差。
+      \end{itemize}
+    \item
+      \textbf{右偏 (Right Skewed / Positive
+      Skew)}：長尾巴在右邊（大數值方向）。代表少數極大值拉高了平均數。例如：\textbf{所得分佈}（少數富人）、\textbf{房價}。此時
+      \textbf{平均數 \textgreater{} 中位數}。
+    \item
+      \textbf{左偏 (Left Skewed / Negative
+      Skew)}：長尾巴在左邊（小數值方向）。例如：\textbf{考試成績}（題目很簡單，大多數人考高分，少數人考低分）。此時
+      \textbf{平均數 \textless{} 中位數}。
+      \pandocbounded{\includegraphics[keepaspectratio]{images/skewness.png}}
+    \end{itemize}
+  \item
+    \textbf{峰度
+    (Kurtosis)}：資料分佈的「尖銳」程度。峰度高代表資料集中在中心，且有較厚的尾部（容易出現極端值）。
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \textbf{公式}：\[ Kurtosis = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^4}{n \times s^4} - 3 \]
+      (超額峰度)
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/kurtosis.png}}
+
+}
+
+\caption{峰度}
+
+\end{figure}%
+
+\section{資料視覺化決策邏輯}\label{sec-data-visualization}
+
+一張圖勝過千言萬語，但選錯圖表會造成誤導。
+
+\begin{itemize}
+\item
+  \textbf{散佈圖 (Scatter
+  Plot)}：看兩個變數之間的\textbf{關聯}（例如：身高 vs.~體重）。
+  \pandocbounded{\includegraphics[keepaspectratio]{images/scatter-plot.png}}
+\item
+  \textbf{圓餅圖 (Pie
+  Chart)}：顯示各類別佔整體的\textbf{比例}（例如：市佔率）。
+  \pandocbounded{\includegraphics[keepaspectratio]{images/pie-chart.png}}
+\item
+  \textbf{折線圖 (Line
+  Chart)}：看\textbf{時間趨勢}（例如：股價走勢、氣溫變化）。
+  \pandocbounded{\includegraphics[keepaspectratio]{images/line-chart.png}}
+\item
+  \textbf{直方圖
+  (Histogram)}：看單一變數的\textbf{分佈}情況（例如：全校學生的成績分佈）。
+  \pandocbounded{\includegraphics[keepaspectratio]{images/histogram.png}}
+\item
+  \textbf{長條圖 (Bar
+  Chart)}：比較不同\textbf{類別}的大小（例如：各部門的業績比較）。
+  \pandocbounded{\includegraphics[keepaspectratio]{images/bar-chart.png}}
+\item
+  \textbf{熱圖
+  (Heatmap)}：用顏色深淺表示數值大小，常用於顯示\textbf{相關係數矩陣}（哪些變數連動性高）。
+  \pandocbounded{\includegraphics[keepaspectratio]{images/heatmap.png}}
+\item
+  \textbf{盒鬚圖 (Box
+  Plot)}：快速看出資料的分佈範圍、中位數以及\textbf{離群值}。
+  \pandocbounded{\includegraphics[keepaspectratio]{images/box-plot.png}}
+\end{itemize}
+
+\chapter{3.4 資料清理與品質管理}\label{sec-data-cleaning}
+
+現實世界的資料往往是髒亂的。資料清理 (Data Cleaning) 通常佔據資料科學家
+80\% 的時間。
+
+\section{缺失值處理 (Missing Values)}\label{sec-missing-values}
+
+資料中有空格（Null 或
+NaN）是常態。這就像拼圖缺了幾片，我們必須決定怎麼處理。
+
+\begin{itemize}
+\item
+  \textbf{刪除法 (Deletion)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{列刪除 (Listwise Deletion)}：只要這一列資料有缺，整列丟掉。
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \emph{優點}：簡單快速。
+    \item
+      \emph{缺點}：如果資料量本來就不多，會浪費寶貴的資訊。
+    \end{itemize}
+  \item
+    \textbf{欄刪除 (Dropping
+    Features)}：如果某個欄位（如「備註」）缺損率高達
+    90\%，這個欄位可能就沒有參考價值，直接移除。
+  \end{itemize}
+\item
+  \textbf{插補法 (Imputation)}：用「猜」的來填補空格。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{統計值填補}：
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \textbf{數值型}：用\textbf{平均數
+      (Mean)}（容易受極端值影響）或\textbf{中位數
+      (Median)}（較穩健）填補。
+    \item
+      \textbf{類別型}：用\textbf{眾數 (Mode)}（出現最多次的類別）填補。
+    \end{itemize}
+  \item
+    \textbf{模型預測填補}：將缺失的欄位當作「目標」，其他欄位當作「特徵」，訓練一個模型（如
+    KNN 或迴歸）來預測缺失值。這是最精準但也最耗算力的方法。
+  \end{itemize}
+
+  \textbf{插補效果比較表}： 假設我們有以下員工資料，其中 Bob
+  的薪資缺失：
+
+  \begin{longtable}[]{@{}llll@{}}
+  \toprule\noalign{}
+  員工 & 部門 & 年資 & 薪資 (萬元) \\
+  \midrule\noalign{}
+  \endhead
+  \bottomrule\noalign{}
+  \endlastfoot
+  Alice & Sales & 2 & 40 \\
+  \textbf{Bob} & \textbf{Sales} & \textbf{3} & \textbf{?} \\
+  Charlie & Sales & 5 & 60 \\
+  David & IT & 2 & 80 \\
+  Eve & IT & 3 & 90 \\
+  \end{longtable}
+
+  \begin{longtable}[]{@{}
+    >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+    >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+    >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+    >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+  \toprule\noalign{}
+  \begin{minipage}[b]{\linewidth}\raggedright
+  插補方法
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+  填補值
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+  計算邏輯
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+  優缺點
+  \end{minipage} \\
+  \midrule\noalign{}
+  \endhead
+  \bottomrule\noalign{}
+  \endlastfoot
+  \textbf{平均數 (Mean)} & \textbf{67.5} & \((40+60+80+90)/4\) &
+  簡單，但被 IT 部門的高薪拉高，不符合 Bob 的 Sales 身分。 \\
+  \textbf{中位數 (Median)} & \textbf{70} & \(40, 60, 80, 90\) 的中間值 &
+  比平均數穩健，但仍未考慮部門差異。 \\
+  \textbf{分群平均 (Group Mean)} & \textbf{50} & 只算 Sales 部門的平均
+  \((40+60)/2\) & 考慮了部門特徵，比全體平均更準確。 \\
+  \textbf{KNN (K-近鄰)} & \textbf{45-55} & 找跟 Bob 最像的人（Sales,
+  年資 3）。Alice (2年) 和 Charlie (5年) 是鄰居。 &
+  最精準，利用了「年資」與「部門」的綜合資訊。 \\
+  \end{longtable}
+\end{itemize}
+
+\section{異常值/離群值處理 (Outliers Handling)}\label{sec-outliers}
+
+有些資料點明顯與眾不同，例如身高 300 公分的人，或是年齡 200
+歲。這些點可能是錯誤，也可能是極具價值的特殊案例（如詐欺交易）。
+\pandocbounded{\includegraphics[keepaspectratio]{images/outlier-detection.png}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{偵測方法}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Z-score 檢測}：假設資料呈常態分佈，超過平均數 \(\pm 3\)
+    個標準差 (\(3\sigma\)) 的數值通常被視為異常。
+  \item
+    \textbf{四分位距 (IQR) 檢測}：利用盒鬚圖的概念。計算
+    \(IQR = Q3 - Q1\)。
+
+    \begin{itemize}
+    \tightlist
+    \item
+      上限：\(Q3 + 1.5 \times IQR\)
+    \item
+      下限：\(Q1 - 1.5 \times IQR\)
+    \item
+      超過上下限的點即為離群值。
+    \end{itemize}
+  \end{itemize}
+\item
+  \textbf{處理方式}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{修正或刪除}：如果是明顯的輸入錯誤（如年齡 -5
+    歲），應直接修正或刪除。
+  \item
+    \textbf{轉換 (Transformation)}：使用\textbf{對數轉換 (Log
+    Transformation)}（例如取
+    \(log(x)\)）來壓縮數值範圍，讓極端值不再那麼突兀，減少對模型的干擾。
+  \item
+    \textbf{蓋帽法 (Winsorizing)}：將超過特定百分位數（如
+    99\%）的值，強制設定為該百分位數的值（例如所有超過 1000 的數都設為
+    1000）。
+  \end{itemize}
+\end{itemize}
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/outlier-processing.png}}
+
+}
+
+\caption{離群值處理}
+
+\end{figure}%
+
+\section{數據一致性處理 (Data Consistency)}\label{sec-consistency}
+
+資料來源不同，格式往往五花八門。這就像聯合國開會，大家得先講好用同一種語言。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{格式標準化}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{日期}：統一將 ``2023/1/1'', ``01-01-2023'', ``Jan 1st, 23''
+    轉換為 \texttt{YYYY-MM-DD} 格式。
+  \item
+    \textbf{大小寫}：將 ``Apple'', ``apple'', ``APPLE'' 統一轉為小寫
+    ``apple''。
+  \item
+    \textbf{單位}：將不同欄位或來源的計量單位（如「公尺」vs「英呎」、「台斤」vs「公斤」、「美金」vs「台幣」）統一換算為同一標準，避免數值比較失準。
+  \end{itemize}
+\item
+  \textbf{語意合併}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    將 ``Taipei'', ``Taipei City'', ``TP'', ``台北市'' 統一映射為
+    ``Taipei''。
+  \end{itemize}
+\item
+  \textbf{去重 (Deduplication)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    檢查是否有完全重複的資料列，或者「ID
+    相同但內容略有不同」的衝突資料，並依據時間戳記保留最新的一筆。
+  \end{itemize}
+\end{itemize}
+
+\section{資料匿名化與隱私保護 (PII 處理)}\label{sec-anonymization}
+
+在處理涉及\textbf{個人識別資訊 (PII, Personally Identifiable
+Information)}（如姓名、身分證號、電話、地址）的資料時，必須嚴格遵守法規（如歐盟
+GDPR、台灣《個人資料保護法》）。
+
+\textbf{個資法合規關鍵 (Compliance Requirements)}：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{告知與同意 (Notice \&
+  Consent)}：蒐集資料前，必須明確告知使用者蒐集目的、類別及利用期間，並取得當事人同意。
+\item
+  \textbf{目的拘束 (Purpose
+  Limitation)}：資料只能用於當初聲明的特定目的，不得隨意挪作他用（例如：為了「配送商品」蒐集的地址，不能拿去「寄送廣告」）。
+\item
+  \textbf{資料最小化 (Data
+  Minimization)}：只蒐集「必要」的資料。如果分析不需要身分證號，就不要蒐集。
+\item
+  \textbf{安全維護措施 (Security
+  Measures)}：企業有義務採取適當的技術與組織措施（如加密、存取控制）來防止資料外洩。
+\item
+  \textbf{當事人權利 (Data Subject
+  Rights)}：使用者有權要求查詢、更正、或刪除其個人資料（被遺忘權）。
+\end{enumerate}
+
+為了符合上述要求，常見的技術手段包括：
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{遮罩 (Masking)}：隱藏部分資訊。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    姓名：``王大明'' \(\rightarrow\) ``王O明''
+  \item
+    電話：``0912-345-678'' \(\rightarrow\) ``0912-\textbf{\emph{-}}''
+  \end{itemize}
+\item
+  \textbf{泛化
+  (Generalization)}：降低資料的精確度，使其無法識別特定個人，但仍保有統計意義。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    年齡：``25 歲'' \(\rightarrow\) ``20-30 歲區間''
+  \item
+    地址：``台北市信義區信義路五段 7 號'' \(\rightarrow\)
+    ``台北市信義區''
+  \end{itemize}
+\item
+  \textbf{假名化 (Pseudonymization)}：用隨機生成的代碼（Token）取代真實
+  ID。只有擁有對照表的人才能還原，比單純刪除更具可追溯性。
+\end{itemize}
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/pii.png}}
+
+}
+
+\caption{PII 處理}
+
+\end{figure}%
+
+\chapter{本章總結與考點提示}\label{sec-chapter3-summary}
+
+\section{核心概念回顧}\label{ux6838ux5fc3ux6982ux5ff5ux56deux9867-2}
+
+本章重點在於資料進入模型前的準備工作，這是 AI 專案成敗的關鍵。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{資料架構}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{ETL}：先處理再存（傳統，結構化資料）。
+  \item
+    \textbf{ELT}：先存再處理（大數據，資料湖）。
+  \end{itemize}
+\item
+  \textbf{資料分析 (EDA)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{集中趨勢}：平均數（怕極端值）、中位數（穩健）、眾數。
+  \item
+    \textbf{離散程度}：標準差（波動大小）、IQR（四分位距）。
+  \item
+    \textbf{分佈形狀}：偏態（左偏/右偏）、峰度。
+  \end{itemize}
+\item
+  \textbf{資料清理}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{缺失值}：刪除、插補（平均數/中位數/KNN）。
+  \item
+    \textbf{離群值}：Z-score (\textgreater3)、IQR (1.5倍)。
+  \item
+    \textbf{隱私}：去識別化、差分隱私。
+  \end{itemize}
+\end{itemize}
+
+\section{AI
+應用規劃師認證考點}\label{ai-ux61c9ux7528ux898fux5283ux5e2bux8a8dux8b49ux8003ux9ede-2}
+
+\textbf{常考題型與解題策略}：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{統計指標選擇題}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「某公司薪資分佈極不平均，老闆想用哪個指標來『美化』薪資水準？」
+  \item
+    \textbf{解答}：平均數 (Mean)。因為會被高薪者拉高。
+  \item
+    \emph{例題}：「想了解大多數員工的真實薪資，應看哪個指標？」
+  \item
+    \textbf{解答}：中位數 (Median)。
+  \end{itemize}
+\item
+  \textbf{資料處理方法題}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「資料中有大量缺失值，且該欄位對預測很重要，該怎麼辦？」
+  \item
+    \textbf{解答}：插補法
+    (Imputation)。不能直接刪除（會掉資料），也不能刪欄位（會掉特徵）。
+  \item
+    \emph{例題}：「如何處理年齡欄位中的 `200歲'？」
+  \item
+    \textbf{解答}：視為異常值，進行修正或刪除。
+  \end{itemize}
+\item
+  \textbf{架構比較題}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{關鍵字}：結構化資料/資料倉儲 \(\rightarrow\)
+    ETL；非結構化/大數據/資料湖 \(\rightarrow\) ELT。
+  \end{itemize}
+\item
+  \textbf{圖表選擇題}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    比例 \(\rightarrow\) 圓餅圖。
+  \item
+    趨勢 \(\rightarrow\) 折線圖。
+  \item
+    分佈 \(\rightarrow\) 直方圖。
+  \item
+    關聯 \(\rightarrow\) 散佈圖。
+  \end{itemize}
+\end{enumerate}
+
+\section{記憶口訣}\label{ux8a18ux61b6ux53e3ux8a23-2}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{右偏分佈}：「貧富差距大」，平均數 \textgreater{}
+  中位數（被富人拉高）。
+\item
+  \textbf{左偏分佈}：「考試簡單」，平均數 \textless{}
+  中位數（被低分拉低）。
+\item
+  \textbf{ETL vs ELT}：看「T」(Transform) 的位置。T 在中間是傳統，T
+  在最後是大數據。
+\end{itemize}
+
+\section{延伸思考}\label{ux5ef6ux4f38ux601dux8003-2}
+
+\begin{itemize}
+\tightlist
+\item
+  為什麼在醫療數據中，我們通常不隨意刪除有缺失值的資料？（因為每一筆病歷都很珍貴，且缺失本身可能帶有資訊，例如病人太嚴重無法測量）。
+\end{itemize}
+
+\part{特徵工程 (Feature
+Engineering)}\label{ux7279ux5fb5ux5de5ux7a0b-feature-engineering}
+
+特徵工程被認為是機器學習中「最像藝術」的部分。吳恩達 (Andrew Ng)
+曾說：「數據就像原油，而特徵工程就是煉油的過程。」好的特徵工程能讓普通的模型表現出色，而糟糕的特徵工程則會讓頂尖的模型無用武之地。
+
+簡單來說，特徵工程就是\textbf{將原始資料轉換為更能代表問題本質的特徵}，讓演算法更容易理解和學習。
+
+\chapter{4.1 數值特徵處理}\label{sec-numerical-features}
+
+數值資料（如身高、價格、次數）看似可以直接使用，但往往需要經過轉換才能發揮最大效用。
+
+\section{特徵縮放 (Feature Scaling)}\label{sec-feature-scaling}
+
+當不同特徵的單位或範圍差異很大時，模型可能會被數值大的特徵主導，導致學習效果不佳。這在計算「距離」的演算法（如
+KNN, K-Means）中尤為嚴重。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{為什麼需要縮放？}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    假設我們有兩個特徵：
+
+    \begin{enumerate}
+    \def\labelenumi{\arabic{enumi}.}
+    \tightlist
+    \item
+      \textbf{年齡}：範圍 0-100。
+    \item
+      \textbf{年薪}：範圍 22,000 - 10,000,000。
+    \end{enumerate}
+  \item
+    如果不縮放，年薪差 1 萬元（數值差
+    10000）對距離的影響，會遠大於年齡差 50 歲（數值差
+    50）。模型會誤以為「年薪」才是唯一重要的因素。
+  \end{itemize}
+\item
+  \textbf{常見方法}：
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    \textbf{標準化 (Standardization / Z-score Normalization)}：
+
+    \begin{itemize}
+    \tightlist
+    \item
+      將資料轉換為平均值 (\(\mu\)) 為 0，標準差 (\(\sigma\)) 為 1
+      的分佈。
+    \item
+      \textbf{公式}：\[ z = \frac{x - \mu}{\sigma} \]
+    \item
+      \textbf{適用}：大部分機器學習演算法（如 SVM, Logistic Regression,
+      Neural Networks），特別是假設資料呈常態分佈時。
+    \end{itemize}
+  \item
+    \textbf{正規化 (Normalization / Min-Max Scaling)}：
+
+    \begin{itemize}
+    \tightlist
+    \item
+      將資料壓縮到固定範圍（通常是 {[}0, 1{]}）。
+    \item
+      \textbf{公式}：\[ x_{new} = \frac{x - x_{min}}{x_{max} - x_{min}} \]
+    \item
+      \textbf{適用}：對範圍敏感的演算法，或影像處理（像素值
+      0-255）。缺點是容易受極端值 (Outlier) 影響。
+    \end{itemize}
+  \end{enumerate}
+\end{itemize}
+
+\section{特徵轉換}\label{sec-feature-transformation}
+
+有時候，原始數值的分布形狀不利於模型學習，我們需要改變它的形狀。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{對數轉換 (Log Transformation)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{目的}：處理\textbf{長尾分佈}或\textbf{右偏}資料（如收入、房價、網頁點擊數）。
+  \item
+    \textbf{原理}：取 Log
+    可以將原本擠在一起的較小數值拉開，並壓縮極端大的數值，使分佈更接近\textbf{常態分佈
+    (Normal Distribution)}。
+  \item
+    \textbf{例子}：
+
+    \begin{itemize}
+    \tightlist
+    \item
+      原始：{[}10, 100, 1000, 10000, 100000{]} (級距很大)
+    \item
+      Log10 後：{[}1, 2, 3, 4, 5{]} (變成等距，線性關係更明顯)
+    \end{itemize}
+  \end{itemize}
+\item
+  \textbf{特徵分箱 (Binning / Discretization)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{目的}：將連續數值轉為區間類別，過濾掉微小的雜訊。
+  \item
+    \textbf{例子}：將「年齡」轉為「年齡層」。
+
+    \begin{itemize}
+    \tightlist
+    \item
+      原始：18, 19, 20, 21, \ldots, 65, 66\ldots{}
+    \item
+      分箱後：
+
+      \begin{itemize}
+      \tightlist
+      \item
+        0-18: 未成年
+      \item
+        19-35: 青年
+      \item
+        36-60: 中年
+      \item
+        60+: 老年
+      \end{itemize}
+    \end{itemize}
+  \item
+    \textbf{效果}：增加模型的\textbf{魯棒性
+    (Robustness)}，防止模型過度關注「25 歲和 26 歲有什麼不同」。
+  \end{itemize}
+\end{itemize}
+
+\chapter{4.2 類別特徵編碼}\label{sec-categorical-encoding}
+
+機器學習模型通常是數學公式，只看得懂數字，看不懂文字。我們需要將類別資料（如顏色、城市）轉換為數字。
+
+\section{常見編碼方式}\label{ux5e38ux898bux7de8ux78bcux65b9ux5f0f}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+編碼方式
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+說明
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+適用情境
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+範例 (T-shirt 尺寸)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{序數編碼}(Ordinal Encoding) &
+依據類別的\textbf{順序}或\textbf{大小}賦予整數值。 &
+類別間\textbf{有}順序關係 (Size, Rating)。 & S \(\to\) 1M \(\to\) 2L
+\(\to\) 3XL \(\to\) 4 \\
+\textbf{獨熱編碼}(One-hot Encoding) & 為每個類別建立一個獨立的欄位
+(Dummy Variable)，是該類別則標為 1，否則為 0。 &
+類別間\textbf{無}順序關係 (Color, City)。 & \textbf{紅色} \(\to\) {[}1,
+0, 0{]}\textbf{綠色} \(\to\) {[}0, 1, 0{]}\textbf{藍色} \(\to\) {[}0, 0,
+1{]} \\
+\end{longtable}
+
+\section{獨熱編碼的潛在問題}\label{ux7368ux71b1ux7de8ux78bcux7684ux6f5bux5728ux554fux984c}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{維度災難 (Curse of
+  Dimensionality)}：如果類別數量非常多（例如：台灣的「路名」有成千上萬個），使用
+  One-hot Encoding
+  會產生數萬個新欄位，導致資料變得極度稀疏，計算量爆炸，模型也容易過擬合。
+\item
+  \textbf{解決方案}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{特徵雜湊 (Feature Hashing)}：將類別映射到固定數量的桶
+    (Bucket) 中。
+  \item
+    \textbf{目標編碼 (Target Encoding)}：用該類別在目標變數 (Target)
+    的平均值來取代類別（例如：用「台北市的平均房價」來代表「台北市」這個特徵）。
+  \item
+    \textbf{特徵嵌入 (Feature Embedding)}：(見下文)
+  \end{itemize}
+\end{itemize}
+
+\section{特徵嵌入 (Feature
+Embedding)}\label{ux7279ux5fb5ux5d4cux5165-feature-embedding}
+
+這是在深度學習中處理高基數類別（High Cardinality）或文本資料的神器。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{做法}：將每個類別映射到一個低維度的向量空間（Vector Space）。
+\item
+  \textbf{效果}：讓意義相近的類別在空間中距離較近。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    例如在 Word2Vec
+    中：\(Vector(國王) - Vector(男人) + Vector(女人) \approx Vector(皇后)\)。
+  \item
+    這不僅解決了維度問題，還捕捉了類別之間的\textbf{語意關係}。
+  \end{itemize}
+\end{itemize}
+
+\chapter{4.3 進階特徵技巧}\label{sec-advanced-features}
+
+\section{特徵交叉 (Feature
+Cross)}\label{ux7279ux5fb5ux4ea4ux53c9-feature-cross}
+
+有時候，單一特徵不足以解釋結果，特徵之間的\textbf{組合}才是關鍵。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{定義}：將兩個或多個特徵組合起來，捕捉非線性的交互作用。
+\item
+  \textbf{例子}：\textbf{房地產價格預測}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    特徵 A：\textbf{經度} (Longitude)
+  \item
+    特徵 B：\textbf{緯度} (Latitude)
+  \item
+    單看經度或緯度，很難判斷房價（同一經度有精華區也有郊區）。
+  \item
+    \textbf{交叉特徵}：將地圖切成網格，\texttt{經度\ x\ 緯度}
+    代表一個具體的\textbf{區塊
+    (Block)}。信義區的某個區塊房價顯然比山區的某個區塊高。這就是特徵交叉的威力。
+  \end{itemize}
+\end{itemize}
+
+\section{特徵選擇 (Feature
+Selection)}\label{ux7279ux5fb5ux9078ux64c7-feature-selection}
+
+「特徵越多越好」是新手的迷思。過多的特徵（包含無關特徵或雜訊）會導致：
+1. \textbf{過度擬合 (Overfitting)}：模型硬背雜訊。 2.
+\textbf{計算量大增}：訓練變慢。 3. \textbf{維度災難}。
+
+\textbf{常見篩選方法}：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{過濾法 (Filter)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    在進模型之前，先用統計方法篩選。
+  \item
+    例如：計算每個特徵與目標變數的\textbf{相關係數
+    (Correlation)}，太低的直接丟掉。
+  \item
+    \emph{優點}：快。 \emph{缺點}：忽略了特徵之間的組合效果。
+  \end{itemize}
+\item
+  \textbf{包裝法 (Wrapper)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    直接把特徵丟進模型試跑，看效果好不好。
+  \item
+    例如：\textbf{遞迴特徵消除
+    (RFE)}，先用所有特徵訓練，把最沒用的特徵踢掉，再訓練，重複直到剩 N
+    個特徵。
+  \item
+    \emph{優點}：準。 \emph{缺點}：慢（要訓練很多次模型）。
+  \end{itemize}
+\item
+  \textbf{嵌入法 (Embedded)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    模型在訓練過程中自動決定特徵重要性。
+  \item
+    例如：\textbf{Lasso 回歸 (L1 Regularization)}
+    會自動將不重要特徵的係數變成 0；\textbf{決策樹/隨機森林} 會計算
+    Feature Importance。
+  \end{itemize}
+\end{enumerate}
+
+\chapter{4.4 不平衡資料處理 (Imbalanced
+Data)}\label{sec-imbalanced-data}
+
+在現實應用中（如詐欺偵測、罕見疾病篩檢、工廠瑕疵檢測），正樣本（異常）通常極少，負樣本（正常）極多。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{問題}：如果詐欺只有 1\%，模型只要全部猜「正常」，準確率
+  (Accuracy) 就高達 99\%。但這個模型對抓詐欺完全沒用。
+\item
+  \textbf{解法}：
+\end{itemize}
+
+\section{1. 重採樣技術
+(Resampling)}\label{ux91cdux63a1ux6a23ux6280ux8853-resampling}
+
+改變資料的分佈，讓正負樣本平衡一點。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{過採樣 (Oversampling)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{隨機複製}：直接複製少數類別的樣本。容易造成過擬合。
+  \item
+    \textbf{SMOTE (Synthetic Minority Over-sampling Technique)}：
+
+    \begin{itemize}
+    \tightlist
+    \item
+      不是單純複製，而是透過演算法在少數類別樣本之間「連線」，在連線上隨機產生新的人工樣本。
+    \item
+      \emph{類比}：在兩個「詐欺犯」之間，想像出一個「中間型詐欺犯」。
+    \end{itemize}
+  \end{itemize}
+\item
+  \textbf{欠採樣 (Undersampling)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    隨機刪除多數類別的樣本。
+  \item
+    \emph{缺點}：可能會丟掉重要的資訊。
+  \end{itemize}
+\end{itemize}
+
+\section{2. 類別權重調整 (Class
+Weights)}\label{ux985eux5225ux6b0aux91cdux8abfux6574-class-weights}
+
+不改變資料，而是改變模型的\textbf{計分方式}。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{做法}：在訓練模型時，告訴模型：「答錯一筆少數類別（詐欺）的懲罰，是答錯一筆多數類別（正常）的
+  \textbf{100 倍}。」
+\item
+  \textbf{效果}：強迫模型重視少數類別，即使犧牲一點整體的準確率，也要把詐欺抓出來。
+\end{itemize}
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/smote.png}}
+
+}
+
+\caption{SMOTE 示意圖}
+
+\end{figure}%
+
+\chapter{本章總結與考點提示}\label{sec-chapter4-summary}
+
+\section{核心概念回顧}\label{ux6838ux5fc3ux6982ux5ff5ux56deux9867-3}
+
+特徵工程是提升模型效能最有效的方法。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{數值處理}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{縮放}：標準化 (Z-score)、正規化 (Min-Max)。
+  \item
+    \textbf{轉換}：Log 轉換（處理長尾/右偏）、分箱（抗雜訊）。
+  \end{itemize}
+\item
+  \textbf{類別處理}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{有序}：序數編碼 (Label Encoding)。
+  \item
+    \textbf{無序}：獨熱編碼 (One-Hot Encoding)。
+  \end{itemize}
+\item
+  \textbf{特徵選擇}：過濾法（快）、包裝法（準）、嵌入法（自動）。
+\item
+  \textbf{不平衡資料}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{重採樣}：過採樣 (SMOTE)、欠採樣。
+  \item
+    \textbf{權重調整}：增加少數類別的懲罰權重。
+  \end{itemize}
+\end{itemize}
+
+\section{AI
+應用規劃師認證考點}\label{ai-ux61c9ux7528ux898fux5283ux5e2bux8a8dux8b49ux8003ux9ede-3}
+
+\textbf{常考題型與解題策略}：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{編碼選擇題}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「處理『衣服尺寸 (S, M, L)』應使用何種編碼？」
+  \item
+    \textbf{解答}：序數編碼 (Ordinal Encoding)。因為有大小關係。
+  \item
+    \emph{例題}：「處理『居住城市 (台北, 台中, 高雄)』應使用何種編碼？」
+  \item
+    \textbf{解答}：獨熱編碼 (One-Hot Encoding)。因為沒有大小關係。
+  \end{itemize}
+\item
+  \textbf{縮放時機題}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「使用 KNN 演算法時，是否需要特徵縮放？」
+  \item
+    \textbf{解答}：需要。因為 KNN 計算距離，不縮放會被大數值特徵主導。
+  \item
+    \emph{例題}：「決策樹是否需要特徵縮放？」
+  \item
+    \textbf{解答}：不需要。決策樹只看數值大小關係，不看距離。
+  \end{itemize}
+\item
+  \textbf{不平衡資料題}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「在信用卡詐欺偵測中，模型預測全為『正常』，準確率
+    99\%，這有什麼問題？」
+  \item
+    \textbf{解答}：這是「準確率陷阱」。雖然準確率高，但 Recall (召回率)
+    為 0，完全沒抓到詐欺。應使用 SMOTE 或調整權重。
+  \end{itemize}
+\end{enumerate}
+
+\section{記憶口訣}\label{ux8a18ux61b6ux53e3ux8a23-3}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{有順序}用序數，\textbf{沒順序}用獨熱。
+\item
+  \textbf{算距離}（KNN, SVM,
+  K-Means）要縮放，\textbf{切規則}（決策樹）免縮放。
+\item
+  \textbf{右偏}取 Log，\textbf{雜訊}用分箱。
+\end{itemize}
+
+\section{延伸思考}\label{ux5ef6ux4f38ux601dux8003-3}
+
+\begin{itemize}
+\tightlist
+\item
+  為什麼 One-Hot Encoding
+  在類別太多時會失效？（維度災難，導致計算量大且模型難以收斂。解法：Target
+  Encoding 或 Embedding）。
+\end{itemize}
+
+\part{第三部：機器學習演算法核心}
+
+\part{監督式學習演算法 (Supervised Learning
+Algorithms)}\label{ux76e3ux7763ux5f0fux5b78ux7fd2ux6f14ux7b97ux6cd5-supervised-learning-algorithms}
+
+監督式學習 (Supervised Learning) 是目前 AI
+應用最成熟、商業價值最高的領域。它的核心運作模式就像是\textbf{人類的正規教育}：老師（系統）提供大量的題目（輸入
+\(X\)）和標準答案（標籤
+\(Y\)），學生（模型）透過不斷練習，學會找出題目與答案之間的關聯函數
+\(f\)，使得 \(f(X) \approx Y\)。
+
+根據目標變數 \(Y\) 的型態，監督式學習主要分為兩大類： 1. \textbf{分類
+(Classification)}：預測的是\textbf{類別}（離散值）。例如：這封信是垃圾郵件嗎？（是/否）、這張照片是貓還是狗？
+2. \textbf{迴歸
+(Regression)}：預測的是\textbf{數值}（連續值）。例如：明天的氣溫是幾度？這間房子的房價是多少？
+
+\chapter{5.1 分類演算法 (Classification)}\label{sec-classification}
+
+\section{K-近鄰演算法 (KNN, K-Nearest Neighbors)}\label{sec-knn}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{核心概念}：「近朱者赤，近墨者黑」。
+\item
+  \textbf{運作方式}：
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    當一個新的資料點出現時，算出它與現有所有資料點的距離。
+  \item
+    找出距離最近的 \(K\) 個鄰居。
+  \item
+    \textbf{投票表決}：如果這 \(K\)
+    個鄰居中，大多數是紅色，那這個新點就被歸類為紅色。
+  \end{enumerate}
+\item
+  \textbf{關鍵參數 \(K\)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(K\) 太小（如 \(K=1\)）：容易受雜訊影響（過度擬合）。
+  \item
+    \(K\) 太大：容易被多數類別主導（欠擬合）。
+  \end{itemize}
+\item
+  \textbf{優缺點}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{優點}：簡單直觀，不需要訓練過程（Lazy
+    Learning），新資料進來直接算。
+  \item
+    \emph{缺點}：資料量大時，計算距離非常耗時（計算成本高）。
+  \end{itemize}
+\end{itemize}
+
+\section{貝氏分類器 (Naive Bayes)}\label{sec-naive-bayes}
+
+\pandocbounded{\includegraphics[keepaspectratio]{images/naive-bayes.png}}
+* \textbf{核心概念}：基於\textbf{機率統計}的預測。利用貝氏定理 (Bayes'
+Theorem) 計算在已知特徵下，屬於某類別的機率。 *
+\textbf{「樸素/天真」(Naive)
+的假設}：假設所有特徵之間是\textbf{互相獨立}的。雖然這在現實中很少見（例如「下雨」和「潮濕」通常相關），但這個假設讓計算變得非常簡單且快速。
+* \textbf{應用實例：垃圾郵件過濾} * 計算包含
+``中獎''、``匯款''、``免費'' 等詞彙的信件，是垃圾信的機率。 *
+\(P(\text{Spam} | \text{"Free"}) = \frac{P(\text{"Free"} | \text{Spam}) \times P(\text{Spam})}{P(\text{"Free"})}\)
+* \textbf{優缺點}： * \emph{優點}：速度極快，適合處理高維度文本資料（如
+NLP）。 * \emph{缺點}：如果特徵之間高度相關，預測效果會變差。
+
+\section{邏輯迴歸 (Logistic Regression)}\label{sec-logistic-regression}
+
+\pandocbounded{\includegraphics[keepaspectratio]{images/logistic-regression.png}}
+*
+\textbf{注意}：雖然名字裡有「迴歸」，但它是經典的\textbf{二元分類}演算法！
+* \textbf{核心概念}： 1. 先計算一個線性方程式 \(z = wX + b\)。 2. 將
+\(z\) 通過一個 \textbf{Sigmoid 函數}（S 型曲線），將數值壓縮到 0 到 1
+之間。 3. 輸出值代表「屬於正類別的機率」。 *
+\textbf{決策邊界}：通常設定閾值為 0.5。 * 機率 \textgreater{} 0.5
+\(\rightarrow\) 判為 1 (Positive) * 機率 \textless{} 0.5 \(\rightarrow\)
+判為 0 (Negative) * \textbf{優缺點}： *
+\emph{優點}：可解釋性高（可以看到每個特徵的權重），計算快。 *
+\emph{缺點}：只能處理線性可分的問題（除非人工轉換特徵）。
+
+\section{支援向量機 (SVM, Support Vector Machine)}\label{sec-svm}
+
+\pandocbounded{\includegraphics[keepaspectratio]{images/svm.png}} *
+\textbf{核心概念}：試圖在不同類別的資料之間，畫出一條最寬的「馬路」（決策邊界）。
+* \textbf{邊界 (Margin)}：馬路兩側到最近資料點的距離。SVM
+的目標是\textbf{最大化邊界}。 * \textbf{支援向量 (Support
+Vectors)}：那些落在馬路邊緣、真正決定馬路怎麼畫的關鍵資料點。 *
+\textbf{核函數技巧 (Kernel Trick)}： *
+當資料在二維平面上無法用直線分開時（例如同心圓分佈），SVM
+可以利用核函數將資料投影到\textbf{高維空間}（例如三維）。 *
+\emph{類比}：桌上有紅豆和綠豆混在一起，無法用一根筷子分開。但如果你用力拍桌子，豆子彈到空中（三維），你就可以用一張紙（平面）在空中把它們切開。
+* \textbf{優缺點}： *
+\emph{優點}：在小樣本、高維度資料上表現極佳，泛化能力強。 *
+\emph{缺點}：在大數據集上訓練慢，且對參數設定敏感。
+
+\section{決策樹 (Decision Tree)}\label{sec-decision-tree}
+
+\pandocbounded{\includegraphics[keepaspectratio]{images/decision-tree.png}}
+* \textbf{核心概念}：就像玩「20
+個問題」遊戲。透過一系列的是非問句來對資料進行切割。 * \textbf{結構}： *
+\textbf{根節點 (Root)}：第一個問題（例如：年齡 \textgreater{} 30？）。 *
+\textbf{內部節點 (Node)}：後續的問題（例如：收入 \textgreater{}
+5萬？）。 * \textbf{葉節點 (Leaf)}：最終的分類結果（例如：會買 /
+不會買）。 *
+\textbf{分裂準則}：如何決定問什麼問題？目標是讓分出來的子群組越「純」越好。
+* \textbf{熵 (Entropy)} / \textbf{吉尼係數 (Gini
+Impurity)}：衡量混亂程度的指標。 * \textbf{優缺點}： *
+\emph{優點}：\textbf{可解釋性最強}（白箱模型），畫出來的樹狀圖非專業人士也能懂。
+* \emph{缺點}：容易\textbf{過度擬合 (Overfitting)}，變成死記硬背的學生。
+
+\chapter{5.2 集成學習 (Ensemble Learning)}\label{sec-ensemble}
+
+三個臭皮匠，勝過諸葛亮。集成學習的核心思想是結合多個弱學習器 (Weak
+Learners) 來構建一個強學習器 (Strong
+Learner)。主要分為兩大流派：\textbf{Bagging} 與 \textbf{Boosting}。
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/bagging-vs-boosting.png}}
+
+}
+
+\caption{Bagging vs Boosting}
+
+\end{figure}%
+
+\section{Bagging (Bootstrap Aggregating)}\label{sec-bagging}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{口訣}：「並行合作，各做各的」。
+\item
+  \textbf{原理}：
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    \textbf{Bootstrap (自助法)}：從訓練資料中有放回地隨機抽取多組樣本。
+  \item
+    \textbf{Aggregating
+    (聚合)}：每一組樣本訓練一個模型（通常是決策樹），最後透過\textbf{投票}（分類）或\textbf{平均}（迴歸）來決定結果。
+  \end{enumerate}
+\item
+  \textbf{目的}：降低\textbf{變異 (Variance)}，解決過度擬合問題。
+\item
+  \textbf{代表演算法}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{隨機森林 (Random Forest)}：
+
+    \begin{itemize}
+    \tightlist
+    \item
+      除了對資料取樣 (Row Subsampling)，還對特徵取樣 (Feature
+      Subsampling)。
+    \item
+      \textbf{優點}：準確、抗過擬合、可平行運算（速度快）。
+    \item
+      \textbf{缺點}：模型大、黑箱。
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\section{Boosting (提升法)}\label{sec-boosting}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{口訣}：「循序漸進，知錯能改」。
+\item
+  \textbf{原理}：
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    訓練第一個模型，找出它預測錯誤的資料。
+  \item
+    訓練第二個模型，\textbf{專注於修正第一個模型犯錯的資料}（加大權重）。
+  \item
+    不斷重複，將所有模型加權組合起來。
+  \end{enumerate}
+\item
+  \textbf{目的}：降低\textbf{偏差 (Bias)}，提升預測準確度。
+\item
+  \textbf{代表演算法}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{AdaBoost}：早期代表，調整資料權重。
+  \item
+    \textbf{XGBoost / LightGBM / CatBoost}：現代 Kaggle
+    比賽常勝軍。基於梯度提升 (Gradient
+    Boosting)，效能極強，但參數多難調。
+  \end{itemize}
+\end{itemize}
+
+\chapter{5.3 迴歸演算法 (Regression)}\label{sec-regression}
+
+目標是預測一個連續的數值（如房價、銷量）。
+
+\section{線性迴歸 (Linear Regression)}\label{sec-linear-regression}
+
+\pandocbounded{\includegraphics[keepaspectratio]{images/linear-regression.png}}
+* \textbf{核心概念}：試圖畫出一條直線
+(\(y = wx + b\))，讓這條線盡可能靠近所有的資料點。 * \textbf{損失函數
+(Loss Function)}：\textbf{均方誤差 (MSE, Mean Squared
+Error)}。即計算所有點到線的距離平方和，找出讓這個誤差最小的參數 \(w\) 和
+\(b\)。 *
+\textbf{多項式迴歸}：如果資料不是直線分佈，可以用曲線（\(x^2, x^3\)）來擬合。
+
+\section{正規化迴歸 (Regularized
+Regression)}\label{sec-regularized-regression}
+
+為了防止模型過度擬合（例如用了太高次方的多項式，導致線條扭曲），我們在損失函數中加入一個「懲罰項」，強迫模型的權重
+\(w\) 不要太大，保持簡單。這就像是給模型戴上「緊箍咒」，不讓它太狂野。
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/regularized-regression.png}}
+
+}
+
+\caption{正規化迴歸}
+
+\end{figure}%
+
+\subsection{1. L1 正則化 (Lasso
+Regression)}\label{l1-ux6b63ux5247ux5316-lasso-regression}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{全名}：Least Absolute Shrinkage and Selection Operator。
+\item
+  \textbf{數學公式}：
+  \[ J(w) = \underbrace{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}_{\text{原始誤差 (MSE)}} + \underbrace{\lambda \sum_{j=1}^{m} |w_j|}_{\text{L1 懲罰項}} \]
+\item
+  \textbf{機制}：在損失函數加入權重\textbf{絕對值}的總和。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(\lambda\) (Lambda) 是\textbf{正則化強度}。\(\lambda\)
+    越大，懲罰越重，越多權重會變成 0。
+  \end{itemize}
+\item
+  \textbf{特性}：傾向於讓不重要的特徵權重\textbf{變成 0}。
+\item
+  \textbf{應用場景：特徵選擇}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    假設我們要預測房價，手上有 100 個特徵。
+  \item
+    \textbf{有用特徵}：坪數、地點、屋齡。
+  \item
+    \textbf{無用特徵}：屋主的星座、門牌號碼的奇偶數、當天的天氣。
+  \item
+    \textbf{Lasso
+    的效果}：它會發現「星座」對房價沒影響，直接把「星座」的權重砍成
+    0。最後模型只剩下真正重要的幾個特徵。這就是\textbf{稀疏模型 (Sparse
+    Model)}。
+  \end{itemize}
+\end{itemize}
+
+\subsection{2. L2 正則化 (Ridge
+Regression)}\label{l2-ux6b63ux5247ux5316-ridge-regression}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{全名}：Ridge Regression (脊迴歸)。
+\item
+  \textbf{數學公式}：
+  \[ J(w) = \underbrace{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}_{\text{原始誤差 (MSE)}} + \underbrace{\lambda \sum_{j=1}^{m} w_j^2}_{\text{L2 懲罰項}} \]
+\item
+  \textbf{機制}：在損失函數加入權重\textbf{平方}的總和。
+\item
+  \textbf{特性}：傾向於讓所有特徵權重\textbf{變小}，但不會變成 0。
+\item
+  \textbf{應用場景：處理共線性 (Multicollinearity)}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    假設特徵中有「坪數 (平方公尺)」和「坪數
+    (坪)」。這兩個特徵高度相關（幾乎一樣）。
+  \item
+    \textbf{一般迴歸的問題}：模型可能會困惑，給其中一個巨大的正權重，另一個巨大的負權重，導致模型不穩定。
+  \item
+    \textbf{Ridge
+    的效果}：它會把這兩個特徵的權重都壓得很小且接近，讓模型更穩健，不會因為數據的一點小雜訊就劇烈波動。
+  \end{itemize}
+\end{itemize}
+
+\subsection{總結比較}\label{ux7e3dux7d50ux6bd4ux8f03}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+特性
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Lasso (L1)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Ridge (L2)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{數學懲罰} & 絕對值 \(|w|\) & 平方 \(w^2\) \\
+\textbf{對權重的影響} & 變成 0 & 變小 (趨近於 0) \\
+\textbf{主要功能} & \textbf{特徵選擇} (排除無用特徵) &
+\textbf{防止過擬合} (處理共線性) \\
+\textbf{幾何解釋} & 解空間是菱形 (容易切到軸上) & 解空間是圓形 \\
+\end{longtable}
+
+\chapter{5.4 演算法比較總結}\label{sec-algo-comparison}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+演算法
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+類型
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+核心特點
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+適用情境
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+缺點
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{KNN} & 分類/迴歸 & 找鄰居，近朱者赤 & 簡單問題，資料量小 &
+計算慢，對雜訊敏感 \\
+\textbf{Naive Bayes} & 分類 & 基於機率，假設特徵獨立 & 文本分類
+(NLP)，垃圾郵件 & 假設過於理想化 \\
+\textbf{Logistic Regression} & 分類 & 線性邊界，輸出機率 &
+二元分類，需要解釋權重 & 只能處理線性問題 \\
+\textbf{SVM} & 分類/迴歸 & 最大化邊界，核函數技巧 &
+小樣本，高維度，非線性 & 大數據訓練慢 \\
+\textbf{Decision Tree} & 分類/迴歸 & 樹狀規則，若 P 則 Q &
+需要解釋規則，非線性 & 容易過度擬合 \\
+\textbf{Random Forest} & 分類/迴歸 & 多棵樹投票 (Bagging) &
+高準確率需求，大數據 & 黑箱，訓練預測慢 \\
+\textbf{Linear Regression} & 迴歸 & 擬合直線 & 預測數值，趨勢分析 &
+只能處理線性關係 \\
+\end{longtable}
+
+\chapter{本章總結與考點提示}\label{sec-chapter5-summary}
+
+\section{核心概念回顧}\label{ux6838ux5fc3ux6982ux5ff5ux56deux9867-4}
+
+監督式學習是目前應用最廣泛的 AI 技術。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{分類 (Classification)}：預測類別（離散）。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{KNN}：看鄰居（懶惰學習）。
+  \item
+    \textbf{Naive Bayes}：算機率（假設獨立）。
+  \item
+    \textbf{Logistic Regression}：畫線分兩邊（輸出機率）。
+  \item
+    \textbf{SVM}：畫最寬的馬路（最大化邊界）。
+  \item
+    \textbf{Decision Tree}：問問題（可解釋性高）。
+  \end{itemize}
+\item
+  \textbf{集成學習 (Ensemble)}：結合多個弱學習器。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Bagging (如 Random Forest)}：並行訓練 \(\rightarrow\) 投票
+    \(\rightarrow\) 降低變異 (Variance) \(\rightarrow\) 抗過擬合。
+  \item
+    \textbf{Boosting (如 XGBoost)}：循序修正 \(\rightarrow\) 加權
+    \(\rightarrow\) 降低偏差 (Bias) \(\rightarrow\) 提升準確度。
+  \end{itemize}
+\item
+  \textbf{迴歸 (Regression)}：預測數值（連續）。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Linear Regression}：畫一條線擬合。
+  \item
+    \textbf{Lasso (L1)}：特徵選擇 (權重變 0)。
+  \item
+    \textbf{Ridge (L2)}：處理共線性 (權重變小)。
+  \end{itemize}
+\end{itemize}
+
+\section{AI
+應用規劃師認證考點}\label{ai-ux61c9ux7528ux898fux5283ux5e2bux8a8dux8b49ux8003ux9ede-4}
+
+\textbf{常考題型與解題策略}：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{演算法選擇題}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「需要向銀行監管單位解釋為何拒絕客戶貸款，應選哪個模型？」
+  \item
+    \textbf{解答}：決策樹 (Decision
+    Tree)。因為可解釋性最高（白箱）。避免選神經網路或隨機森林（黑箱）。
+  \item
+    \emph{例題}：「垃圾郵件過濾通常使用哪個演算法？」
+  \item
+    \textbf{解答}：貝氏分類器 (Naive Bayes)。擅長處理文本特徵。
+  \end{itemize}
+\item
+  \textbf{集成學習比較題 (Bagging vs Boosting)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「隨機森林屬於哪種集成技術？主要解決什麼問題？」
+  \item
+    \textbf{解答}：Bagging；解決過度擬合 (降低 Variance)。
+  \item
+    \emph{例題}：「XGBoost 屬於哪種集成技術？主要解決什麼問題？」
+  \item
+    \textbf{解答}：Boosting；解決欠擬合 (降低 Bias)。
+  \end{itemize}
+\item
+  \textbf{Lasso vs Ridge}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{關鍵字}：Lasso (L1) \(\rightarrow\) 特徵選擇 (變 0)；Ridge
+    (L2) \(\rightarrow\) 處理共線性 (變小)。
+  \end{itemize}
+\end{enumerate}
+
+\section{記憶口訣}\label{ux8a18ux61b6ux53e3ux8a23-4}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{KNN}：「近朱者赤」。
+\item
+  \textbf{SVM}：「楚河漢界」（畫最寬的界線）。
+\item
+  \textbf{決策樹}：「打破砂鍋問到底」。
+\item
+  \textbf{Bagging}：「三個臭皮匠」（大家一起投票）。
+\item
+  \textbf{Boosting}：「知錯能改」（修正前人的錯誤）。
+\end{itemize}
+
+\section{延伸思考}\label{ux5ef6ux4f38ux601dux8003-4}
+
+\begin{itemize}
+\tightlist
+\item
+  為什麼邏輯迴歸 (Logistic Regression)
+  叫「迴歸」卻是用來做「分類」？（因為它底層是預測一個 0\textasciitilde1
+  的機率數值，只是我們設了門檻把它變成分類）。
+\end{itemize}
+
+\part{非監督式學習與強化學習 (Unsupervised \& Reinforcement
+Learning)}\label{ux975eux76e3ux7763ux5f0fux5b78ux7fd2ux8207ux5f37ux5316ux5b78ux7fd2-unsupervised-reinforcement-learning}
+
+如果說監督式學習是「有老師教」，那麼\textbf{非監督式學習 (Unsupervised
+Learning)} 就是「自修」，讓 AI
+在沒有標準答案的情況下，自己從資料中尋找隱藏的結構。而\textbf{強化學習
+(Reinforcement Learning)}
+則是「從做中學」，像生物一樣透過與環境互動、嘗試錯誤來學習生存策略。
+
+\chapter{6.1 分群演算法 (Clustering)}\label{sec-clustering}
+
+分群的目標是「物以類聚」，將相似的資料點歸為同一群，而群與群之間差異越大越好。
+
+\section{K-means 演算法}\label{sec-kmeans}
+
+這是最簡單也最常用的分群方法。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{運作步驟}：
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    \textbf{初始化}：隨機選定 \(K\) 個點作為初始中心（質心）。
+  \item
+    \textbf{分配}：將每個資料點分配給距離最近的中心。
+  \item
+    \textbf{更新}：計算每一群的新平均位置，移動中心點到新位置。
+  \item
+    \textbf{重複}：重複步驟 2-3，直到中心點不再移動或收斂。
+  \end{enumerate}
+\item
+  \textbf{如何決定 K 值？}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{手肘法 (Elbow Method)}：畫出 K 值與誤差平方和 (SSE) 的圖。當
+    K
+    增加時，誤差會下降，但在某個點下降幅度會變緩（像手肘彎曲處），那個點通常就是最佳的
+    K。
+  \end{itemize}
+\item
+  \textbf{優缺點}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{優點}：速度快，適合大數據。
+  \item
+    \emph{缺點}：必須事先指定
+    K；對\textbf{離群值}敏感；只能分出圓形/球形的群聚。
+  \end{itemize}
+\end{itemize}
+
+\section{階層式分群 (Hierarchical
+Clustering)}\label{sec-hierarchical-clustering}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{核心概念}：建立一個樹狀結構（樹狀圖
+  Dendrogram），不需要事先決定 K 值。
+\item
+  \textbf{做法}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{聚合式
+    (Agglomerative)}：由下而上。一開始每個點都是一群，然後慢慢把最近的兩群合併，直到剩下一大群。
+  \item
+    \textbf{分裂式
+    (Divisive)}：由上而下。一開始所有點是一大群，然後慢慢切分。
+  \end{itemize}
+\item
+  \textbf{優缺點}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{優點}：不需要指定 K，樹狀圖能完整呈現資料的層次結構。
+  \item
+    \emph{缺點}：計算量大，不適合大數據。
+  \end{itemize}
+\end{itemize}
+
+\section{DBSCAN (Density-Based Spatial Clustering)}\label{sec-dbscan}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{核心概念}：基於\textbf{密度}的分群。只要點夠密集（在半徑
+  \(\epsilon\) 內有超過 MinPts
+  個點）就算同一群，如果不夠密集就被視為雜訊。
+\item
+  \textbf{優勢}：
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    可以找出\textbf{任意形狀}的群聚（如彎月形、包圍形），不像 K-means
+    只能找圓形。
+  \item
+    能自動識別並排除\textbf{離群值 (Outliers)}，不會硬要把雜訊歸類。
+  \end{enumerate}
+\end{itemize}
+
+\chapter{6.2 關聯規則與降維}\label{sec-association-rules}
+
+\section{Apriori 演算法 (購物籃分析)}\label{sec-apriori}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{經典案例}：「啤酒與尿布」。沃爾瑪透過分析發現，週五晚上買尿布的爸爸，通常也會順便買啤酒。
+\item
+  \textbf{三大指標}：
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    \textbf{支持度 (Support)}：某個商品組合出現的頻率。
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \(P(A \cap B)\)：同時買 A 和 B 的訂單佔比。
+    \end{itemize}
+  \item
+    \textbf{信心度 (Confidence)}：買了 A 的人，有多大概率也會買 B。
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \(P(B|A) = \frac{P(A \cap B)}{P(A)}\)
+    \end{itemize}
+  \item
+    \textbf{提升度 (Lift)}：A 的出現是否有助於 B 的出現。
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \(Lift > 1\)：正相關（買 A 會促進買 B）。
+    \item
+      \(Lift = 1\)：無關（獨立事件）。
+    \item
+      \(Lift < 1\)：負相關（買 A 的人反而不買 B）。
+    \end{itemize}
+  \end{enumerate}
+\end{itemize}
+
+\section{降維技術 (Dimensionality
+Reduction)}\label{ux964dux7dadux6280ux8853-dimensionality-reduction}
+
+當特徵太多時，我們需要「降維」來簡化問題。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{主成分分析 (PCA)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    找出資料變異量最大的方向，投影到低維空間。保留最重要的資訊，捨棄次要資訊。
+  \end{itemize}
+\item
+  \textbf{自動編碼器 (Autoencoder)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    一種神經網路架構。
+  \item
+    \textbf{編碼器 (Encoder)}：將輸入壓縮成低維度的「潛在表示 (Latent
+    Representation)」。
+  \item
+    \textbf{解碼器 (Decoder)}：嘗試將潛在表示還原回原始輸入。
+  \item
+    \textbf{應用}：資料壓縮、\textbf{去噪
+    (Denoising)}（輸入加雜訊的圖，訓練它輸出乾淨的圖）、\textbf{異常偵測}（如果還原誤差很大，代表是異常資料）。
+  \end{itemize}
+\end{itemize}
+
+\chapter{6.3 強化學習 (Reinforcement
+Learning)}\label{sec-reinforcement-learning-detail}
+
+強化學習是 AI 邁向自主決策的關鍵，目標是訓練一個 Agent
+在環境中採取行動，以最大化累積獎勵。
+
+\section{核心要素 (RL Elements)}\label{sec-rl-elements}
+
+以「超級瑪利歐」遊戲為例：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{代理人 (Agent)}：瑪利歐（學習的主角）。
+\item
+  \textbf{環境 (Environment)}：遊戲關卡（充滿水管、磚塊、敵人）。
+\item
+  \textbf{狀態 (State)}：當前的畫面（瑪利歐的位置、敵人的位置）。
+\item
+  \textbf{行動 (Action)}：手把的操作（左、右、跳、發射火球）。
+\item
+  \textbf{獎勵 (Reward)}：環境給的回饋。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    正獎勵：吃到金幣 (+10)、過關 (+100)。
+  \item
+    負獎勵 (Penalty)：碰到烏龜 (-10)、掉進洞裡 (-100)、時間流逝 (-1)。
+  \end{itemize}
+\end{enumerate}
+
+\section{關鍵挑戰：探索與利用 (Exploration
+vs.~Exploitation)}\label{ux95dcux9375ux6311ux6230ux63a2ux7d22ux8207ux5229ux7528-exploration-vs.-exploitation}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{探索 (Exploration)}：嘗試新的、未知的路徑。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{目的}：尋找潛在的更好策略（但也可能踩雷）。
+  \end{itemize}
+\item
+  \textbf{利用 (Exploitation)}：堅持目前已知最好的策略。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{目的}：確保獲得穩定的高分。
+  \end{itemize}
+\item
+  \textbf{\(\epsilon\)-Greedy 策略}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    設定一個機率 \(\epsilon\)（例如 10\%）。
+  \item
+    10\% 的時間隨機亂試（探索）。
+  \item
+    90\% 的時間選擇目前認為最好的動作（利用）。
+  \end{itemize}
+\end{itemize}
+
+\section{常見演算法}\label{sec-rl-algorithms}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Q-Learning}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    建立一張查閱表
+    \textbf{(Q-Table)}，記錄在每個「狀態」下做每個「動作」的預期價值
+    (Q-Value)。
+  \item
+    \emph{缺點}：當狀態太多（如圍棋棋盤有 \(10^{170}\)
+    種狀態）時，表格存不下。
+  \end{itemize}
+\item
+  \textbf{Deep Q-Network (DQN)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    結合深度學習。用一個\textbf{神經網路}來取代
+    Q-Table，輸入狀態，輸出每個動作的 Q 值。
+  \item
+    \emph{成就}：DeepMind 用 DQN 讓 AI 學會玩 Atari 遊戲，表現超越人類。
+  \end{itemize}
+\end{itemize}
+
+\chapter{本章總結與考點提示}\label{sec-chapter6-summary}
+
+\section{核心概念回顧}\label{ux6838ux5fc3ux6982ux5ff5ux56deux9867-5}
+
+本章涵蓋了沒有標準答案的學習方式。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{分群 (Clustering)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{K-means}：找圓形群聚，需指定 K。
+  \item
+    \textbf{DBSCAN}：找高密度群聚，能抗雜訊，免指定 K。
+  \item
+    \textbf{階層式}：畫樹狀圖，層次分明。
+  \end{itemize}
+\item
+  \textbf{關聯規則}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Apriori}：啤酒與尿布。指標：Support, Confidence, Lift。
+  \end{itemize}
+\item
+  \textbf{降維}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{PCA}：找變異最大的投影方向。
+  \item
+    \textbf{Autoencoder}：壓縮再還原。
+  \end{itemize}
+\item
+  \textbf{強化學習 (RL)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{要素}：Agent, Environment, Reward, Action, State.
+  \item
+    \textbf{核心}：最大化累積獎勵。探索 vs 利用。
+  \end{itemize}
+\end{itemize}
+
+\section{AI
+應用規劃師認證考點}\label{ai-ux61c9ux7528ux898fux5283ux5e2bux8a8dux8b49ux8003ux9ede-5}
+
+\textbf{常考題型與解題策略}：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{分群演算法比較}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「資料形狀不規則（如彎月形），且有許多雜訊，應選哪個分群法？」
+  \item
+    \textbf{解答}：DBSCAN。K-means 做不到。
+  \item
+    \emph{例題}：「不知道要分幾群，想看資料的層次結構？」
+  \item
+    \textbf{解答}：階層式分群。
+  \end{itemize}
+\item
+  \textbf{關聯規則指標}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「Lift \textgreater{} 1 代表什麼？」
+  \item
+    \textbf{解答}：正相關（買 A 會促進買 B）。
+  \item
+    \emph{例題}：「Lift \textless{} 1 代表什麼？」
+  \item
+    \textbf{解答}：負相關（買 A 的人反而不買 B）。
+  \end{itemize}
+\item
+  \textbf{強化學習應用}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「訓練 AI 玩瑪利歐賽車，屬於哪種學習範式？」
+  \item
+    \textbf{解答}：強化學習。因為有明確的獎勵（名次、金幣）與懲罰（撞牆）。
+  \end{itemize}
+\end{enumerate}
+
+\section{記憶口訣}\label{ux8a18ux61b6ux53e3ux8a23-5}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{K-means}：「物以類聚，人以群分」（算距離）。
+\item
+  \textbf{DBSCAN}：「人多的地方不要去」（算密度）。
+\item
+  \textbf{Apriori}：「啤酒尿布」（關聯）。
+\item
+  \textbf{RL}：「糖果與鞭子」（獎勵與懲罰）。
+\end{itemize}
+
+\section{延伸思考}\label{ux5ef6ux4f38ux601dux8003-5}
+
+\begin{itemize}
+\tightlist
+\item
+  為什麼 K-means
+  對離群值很敏感？（因為平均數會被拉走，導致中心點偏移）。
+\end{itemize}
+
+\part{第四部：深度學習與生成式 AI 前沿}
+
+\part{神經網路架構演進 (Neural Network Architecture
+Evolution)}\label{ux795eux7d93ux7db2ux8defux67b6ux69cbux6f14ux9032-neural-network-architecture-evolution}
+
+深度學習 (Deep Learning)
+是機器學習的一個分支，靈感來自人類大腦的神經元運作方式。從簡單的感知機到如今強大的
+Transformer，神經網路架構經歷了數十年的演進，每一次的突破都帶來了 AI
+能力的飛躍。
+
+\chapter{7.1 基礎神經網路}\label{sec-basic-nn}
+
+\section{多層感知機 (MLP, Multi-Layer Perceptron)}\label{sec-mlp}
+
+這是最基礎的深度學習架構，也稱為全連接網路 (Fully Connected Network)。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{結構}：
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    \textbf{輸入層 (Input Layer)}：接收原始資料（如圖片的像素值）。
+  \item
+    \textbf{隱藏層 (Hidden
+    Layers)}：中間的黑盒子，負責提取特徵。層數越多，能學到的特徵越抽象、越複雜。
+  \item
+    \textbf{輸出層 (Output Layer)}：給出最終預測（如分類機率）。
+  \end{enumerate}
+\item
+  \textbf{運作原理}：每個神經元接收上一層的訊號，乘上\textbf{權重
+  (Weight)}，加上\textbf{偏差
+  (Bias)}，最後通過\textbf{啟動函數}輸出給下一層。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{公式}：\[ y = \sigma(\sum_{i=1}^{n} w_i x_i + b) \]
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \(x_i\): 輸入訊號
+    \item
+      \(w_i\): 權重 (Weight)，代表該輸入的重要性
+    \item
+      \(b\): 偏差 (Bias)，調整啟動門檻
+    \item
+      \(\sigma\): 啟動函數 (Activation Function)
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\section{啟動函數 (Activation
+Functions)}\label{sec-activation-functions}
+
+如果沒有啟動函數，神經網路不管有幾層，本質上都只是線性變換（矩陣相乘），無法解決複雜的非線性問題（如分類貓和狗）。啟動函數引入了\textbf{非線性}。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Sigmoid}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{公式}：\[ f(x) = \frac{1}{1 + e^{-x}} \]
+  \item
+    \textbf{特性}：將數值壓縮到 \((0, 1)\) 之間。
+  \item
+    \textbf{缺點}：容易導致\textbf{梯度消失 (Vanishing
+    Gradient)}，即在深層網路中，誤差訊號傳不回去，導致前面的層學不到東西。
+  \end{itemize}
+\item
+  \textbf{ReLU (Rectified Linear Unit)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{公式}：\[ f(x) = \max(0, x) \]
+  \item
+    \textbf{特性}：負數變 0，正數不變。
+  \item
+    \textbf{優點}：計算極快，且有效解決了梯度消失問題。是目前最常用的啟動函數。
+  \end{itemize}
+\item
+  \textbf{Softmax}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{公式}：\[ P(y=j) = \frac{e^{z_j}}{\sum_{k=1}^{K} e^{z_k}} \]
+  \item
+    \textbf{特性}：通常用於\textbf{輸出層}。將一組數值轉換為\textbf{機率分佈}（總和為
+    1）。例如：{[}貓: 0.8, 狗: 0.1, 鳥: 0.1{]}。
+  \end{itemize}
+\end{itemize}
+
+\section{反向傳播 (Backpropagation) 與優化器}\label{sec-backpropagation}
+
+神經網路是如何「學習」的？
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{前向傳播 (Forward)}：資料從輸入算到輸出，得到預測值。
+\item
+  \textbf{計算損失 (Loss)}：比較預測值與真實答案的差距（誤差）。
+\item
+  \textbf{反向傳播 (Backward)}：利用\textbf{連鎖律 (Chain
+  Rule)}，將誤差\textbf{從後往前}傳遞，計算每個權重對誤差的貢獻（梯度）。
+\item
+  \textbf{更新權重 (Update)}：利用\textbf{優化器 (Optimizer)}
+  調整權重，讓誤差變小。
+\end{enumerate}
+
+\textbf{常見優化器}： * \textbf{SGD (Stochastic Gradient
+Descent)}：隨機梯度下降。像下山一樣，每次走一步，方向是目前最陡的下坡。
+* \textbf{Adam}：結合了動量 (Momentum)
+的概念。像滾動的球，會有慣性，能更快收斂且不易卡在局部最佳解。
+
+\chapter{7.2 經典深度架構}\label{sec-deep-architectures}
+
+\section{卷積神經網路 (CNN, Convolutional Neural
+Networks)}\label{sec-cnn}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{專長}：\textbf{影像辨識}、電腦視覺 (CV)。
+\item
+  \textbf{靈感}：人類視覺皮層對邊緣、形狀的反應。我們看東西不是一個像素一個像素看，而是看特徵（線條、圓圈、眼睛、鼻子）。
+\item
+  \textbf{關鍵元件}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{卷積層 (Convolution Layer)}：使用\textbf{濾鏡 (Filter)}
+    在圖片上滑動，提取局部特徵（如垂直線、水平線）。
+  \item
+    \textbf{池化層 (Pooling Layer)}：將圖片縮小（如 Max Pooling 取 2x2
+    區域的最大值）。
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \emph{目的}：減少運算量，並保留最顯著的特徵（就像瞇著眼睛看東西，只看大輪廓）。
+    \end{itemize}
+  \end{itemize}
+\item
+  \textbf{應用}：人臉辨識、醫療影像分析 (X光/MRI)、自駕車視覺系統。
+\end{itemize}
+
+\section{循環神經網路 (RNN, Recurrent Neural Networks)}\label{sec-rnn}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{專長}：\textbf{序列數據}（文字、語音、股票走勢）。
+\item
+  \textbf{特點}：具有\textbf{記憶}功能。神經元會把上一步的輸出
+  (\(h_{t-1}\))，跟這一步的輸入 (\(x_t\)) 一起處理。
+\item
+  \textbf{致命傷}：\textbf{短期記憶}。對於太長的序列（如長篇文章），前面的資訊傳到後面早就忘光了（梯度消失）。
+\item
+  \textbf{救星：LSTM (Long Short-Term Memory)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    設計了精巧的「門控」機制（遺忘門、輸入門、輸出門），像水庫的閘門一樣，主動決定什麼該記、什麼該忘。
+  \item
+    \emph{應用}：Google 翻譯（早期版本）、語音辨識 (Siri)。
+  \end{itemize}
+\end{itemize}
+
+\chapter{7.3 Transformer 與注意力機制}\label{sec-transformer}
+
+2017 年 Google 發表論文《Attention Is All You Need》，徹底改變了 NLP
+領域，也開啟了大型語言模型 (LLM) 的時代。
+
+\section{自注意力機制 (Self-Attention)}\label{sec-self-attention}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{核心概念}：在處理一個句子時，模型會計算每個字與其他所有字的\textbf{關聯強度
+  (Attention Score)}。
+\item
+  \textbf{數學公式}：
+  \[ Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V \]
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Q (Query)}：查詢向量（我想找什麼？）
+  \item
+    \textbf{K (Key)}：鍵值向量（你是什麼？）
+  \item
+    \textbf{V (Value)}：數值向量（你的內容是什麼？）
+  \item
+    \emph{類比}：你在圖書館找書。Q 是你的關鍵字，K 是書背上的標籤，V
+    是書的內容。算出 Q 和 K 的相似度，決定要拿出哪些 V。
+  \end{itemize}
+\item
+  \textbf{例子}：``The animal didn't cross the street because
+  \textbf{it} was too tired.''
+
+  \begin{itemize}
+  \tightlist
+  \item
+    當模型讀到 ``\textbf{it}'' 時，Attention 機制會告訴它，這個 ``it''
+    與 ``\textbf{animal}'' 的關聯性最強（Attention Score 最高），而不是
+    ``street''。這讓模型真正「讀懂」了代名詞的指涉。
+  \end{itemize}
+\end{itemize}
+
+\section{Transformer 架構優勢}\label{sec-transformer-arch}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{並行計算 (Parallelization)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    RNN 必須一個字一個字讀（讀完第一個字才能讀第二個），無法平行化。
+  \item
+    Transformer 可以\textbf{一次讀入整篇文章}，利用 GPU
+    的強大平行運算能力，訓練速度大幅提升。這使得訓練像 GPT-4
+    這種超巨大模型成為可能。
+  \end{itemize}
+\item
+  \textbf{長距離依賴 (Long-range Dependency)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    透過 Attention，無論兩個字距離多遠，都能直接建立關聯，不再有 LSTM
+    的記憶長度限制。
+  \end{itemize}
+\end{enumerate}
+
+\section{Encoder 與 Decoder
+家族}\label{encoder-ux8207-decoder-ux5bb6ux65cf}
+
+Transformer 由 Encoder（編碼器）和
+Decoder（解碼器）組成，後來衍生出三大流派：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Encoder-only (如 BERT)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    擅長「理解」文本。
+  \item
+    \emph{應用}：情感分析、分類、問答系統。
+  \end{itemize}
+\item
+  \textbf{Decoder-only (如 GPT 系列)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    擅長「生成」文本。像接龍一樣，預測下一個字。
+  \item
+    \emph{應用}：聊天機器人、文章寫作、程式碼生成。
+  \end{itemize}
+\item
+  \textbf{Encoder-Decoder (如 T5, Bart)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    同時具備理解與生成能力。
+  \item
+    \emph{應用}：機器翻譯（英文入 \(\to\) 理解 \(\to\) 生成 \(\to\)
+    中文出）、摘要生成。
+  \end{itemize}
+\end{enumerate}
+
+\chapter{本章總結與考點提示}\label{sec-chapter7-summary}
+
+\section{核心概念回顧}\label{ux6838ux5fc3ux6982ux5ff5ux56deux9867-6}
+
+深度學習是 AI 的核心引擎。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{基礎元件}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{MLP}：全連接，基礎結構。
+  \item
+    \textbf{Activation}：ReLU (防梯度消失)、Sigmoid (二元分類)、Softmax
+    (多類別)。
+  \item
+    \textbf{Backpropagation}：誤差反向傳播，更新權重。
+  \end{itemize}
+\item
+  \textbf{三大架構}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{CNN}：影像霸主。卷積 (特徵) + 池化 (降維)。
+  \item
+    \textbf{RNN/LSTM}：序列專家。有記憶，但怕長序列 (梯度消失)。
+  \item
+    \textbf{Transformer}：NLP 新皇。Self-Attention
+    (平行運算、長距離依賴)。
+  \end{itemize}
+\end{itemize}
+
+\section{AI
+應用規劃師認證考點}\label{ai-ux61c9ux7528ux898fux5283ux5e2bux8a8dux8b49ux8003ux9ede-6}
+
+\textbf{常考題型與解題策略}：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{架構對應題}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「人臉辨識系統通常使用哪種架構？」
+  \item
+    \textbf{解答}：CNN。
+  \item
+    \emph{例題}：「股價預測或語音辨識通常使用哪種架構？」
+  \item
+    \textbf{解答}：RNN 或 LSTM。
+  \item
+    \emph{例題}：「ChatGPT 是基於哪種架構？」
+  \item
+    \textbf{解答}：Transformer。
+  \end{itemize}
+\item
+  \textbf{功能題}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「CNN 中池化層 (Pooling) 的主要功能是什麼？」
+  \item
+    \textbf{解答}：降低維度（減少運算量）並保留重要特徵。
+  \item
+    \emph{例題}：「為什麼 LSTM 比傳統 RNN 好？」
+  \item
+    \textbf{解答}：解決了梯度消失問題，能記住更長的序列。
+  \end{itemize}
+\item
+  \textbf{啟動函數題}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「目前最常用的隱藏層啟動函數是什麼？」
+  \item
+    \textbf{解答}：ReLU。因為計算快且無梯度消失問題。
+  \end{itemize}
+\end{enumerate}
+
+\section{記憶口訣}\label{ux8a18ux61b6ux53e3ux8a23-6}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{CNN}：「看圖」（卷積）。
+\item
+  \textbf{RNN}：「讀書」（序列）。
+\item
+  \textbf{Transformer}：「劃重點」（Attention）。
+\end{itemize}
+
+\section{延伸思考}\label{ux5ef6ux4f38ux601dux8003-6}
+
+\begin{itemize}
+\tightlist
+\item
+  為什麼 Transformer 可以取代 RNN？（因為它可以平行運算，速度快很多，且
+  Attention 機制解決了長距離記憶問題）。
+\end{itemize}
+
+\part{生成式 AI 與大型語言模型 (Generative AI \&
+LLM)}\label{ux751fux6210ux5f0f-ai-ux8207ux5927ux578bux8a9eux8a00ux6a21ux578b-generative-ai-llm}
+
+生成式 AI (Generative AI)
+不再只是分析既有資料（如分類貓狗），而是能\textbf{創造}出全新的內容。從寫詩、繪畫到寫程式，它正在重塑創意產業。
+
+\chapter{8.1 生成式模型原理}\label{sec-generative-models}
+
+\section{變分自編碼器 (VAE, Variational Autoencoder)}\label{sec-vae}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{核心概念}：將資料壓縮到一個機率分佈（潛在空間 Latent
+  Space），然後從這個分佈中隨機採樣，解碼出新的資料。
+\item
+  \textbf{運作}：
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    \textbf{Encoder}：將圖片壓縮成兩個向量：平均值 \(\mu\) 和標準差
+    \(\sigma\)。
+  \item
+    \textbf{Sampling}：從常態分佈 \(N(\mu, \sigma)\) 中抽樣出一個點
+    \(z\)。
+  \item
+    \textbf{Decoder}：將 \(z\) 還原成圖片。
+  \end{enumerate}
+\item
+  \textbf{特點}：生成的圖像較模糊，但數學理論紮實，且潛在空間連續（可以做平滑的漸變效果）。
+\end{itemize}
+
+\section{生成對抗網路 (GAN, Generative Adversarial
+Network)}\label{sec-gan}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{核心概念}：兩個神經網路在打架（零和賽局）。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{生成器 (Generator,
+    G)}：負責偽造假鈔（生成假圖片）。目標是騙過判別器。
+  \item
+    \textbf{判別器 (Discriminator,
+    D)}：負責分辨真鈔與假鈔（分辨真圖與假圖）。目標是抓出生成器。
+  \end{itemize}
+\item
+  \textbf{訓練過程}：
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    G 生成假圖。
+  \item
+    D 判斷這張圖是真的還是假的。
+  \item
+    如果 D 抓到了，G 就修正自己變得更強；如果 D 被騙了，D
+    就修正自己變得更嚴格。
+  \item
+    最終達到\textbf{納許均衡 (Nash Equilibrium)}：G 生成的圖逼真到 D
+    只能瞎猜（機率 0.5）。
+  \end{enumerate}
+\item
+  \textbf{特點}：生成的圖像極度逼真，但訓練不穩定（容易模式崩潰 Mode
+  Collapse，即 G 只會生成同一種圖）。
+\end{itemize}
+
+\section{擴散模型 (Diffusion Models)}\label{sec-diffusion}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{核心概念}：學習如何「破壞」一張圖，然後反過來學習如何「修復」它。
+\item
+  \textbf{流程}：
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    \textbf{前向擴散 (Forward
+    Diffusion)}：在一張清晰的圖片上，一步步加入高斯雜訊，直到它變成完全的雜訊圖。
+  \item
+    \textbf{逆向擴散 (Reverse Diffusion)}：訓練一個神經網路（通常是
+    U-Net），學習如何預測並\textbf{減去}雜訊，從雜訊中還原出清晰的影像。
+  \end{enumerate}
+\item
+  \textbf{代表作}：Stable Diffusion, Midjourney, DALL-E。
+\item
+  \textbf{特點}：生成品質極高，多樣性好，是目前 AI 繪圖的主流技術。
+\end{itemize}
+
+\chapter{8.2 大型語言模型 (LLM) 技術}\label{sec-llm-tech}
+
+LLM (Large Language Model) 如 GPT
+系列，本質上是一個超巨大的「文字接龍」機器。
+
+\section{預訓練與微調 (Pre-training \&
+Fine-tuning)}\label{sec-pretrain-finetune}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{預訓練 (Pre-training)}：\textbf{通識教育}。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    讓模型閱讀網際網路上數兆字的文本（Wikipedia, 書籍, 程式碼）。
+  \item
+    \textbf{目標}：預測下一個字 (Next Token Prediction)。
+  \item
+    \emph{成果}：模型學會了文法、世界知識、邏輯推理，但還不懂得如何當個好助手（可能會講髒話或續寫小說）。
+  \item
+    \emph{成本}：耗資巨大（數百萬美金，數千張 GPU）。
+  \end{itemize}
+\item
+  \textbf{微調 (Fine-tuning)}：\textbf{職前訓練}。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{指令微調 (Instruction
+    Tuning)}：使用高品質的「問題-答案」對，教導模型如何聽懂指令並給出有用的回答。
+  \item
+    \textbf{RLHF (Reinforcement Learning from Human
+    Feedback)}：讓人類對模型的回答評分（按讚/按倒讚），用強化學習來調整模型，使其更符合人類價值觀（有用、誠實、無害）。
+  \end{itemize}
+\end{enumerate}
+
+\section{Scaling Laws (擴展定律)}\label{sec-scaling-laws}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{觀察}：OpenAI 發現，模型的性能與三個因素呈\textbf{冪律 (Power
+  Law)} 關係：
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    \textbf{參數量 (Parameters)}：模型腦容量。
+  \item
+    \textbf{資料量 (Data Size)}：讀了多少書。
+  \item
+    \textbf{計算量 (Compute)}：訓練用了多少 GPU 時間。
+  \end{enumerate}
+\item
+  \textbf{啟示}：只要持續擴大這三者，AI
+  就會變強。這引發了科技巨頭的軍備競賽。
+\end{itemize}
+
+\section{提示工程 (Prompt Engineering)}\label{sec-prompt-engineering}
+
+既然我們無法輕易重新訓練模型，那就改變我們問問題的方式。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Zero-shot}：直接問，不給範例。「將這句話翻譯成法文：\ldots」
+\item
+  \textbf{Few-shot Prompting}：給幾個範例
+  (Example)，讓模型模仿。「將這句話翻譯成法文。例如：Hello
+  -\textgreater{} Bonjour。Good morning -\textgreater{}
+  Bonjour。現在翻譯：Good night -\textgreater」
+\item
+  \textbf{Chain-of-Thought (CoT)}：要求模型「一步步思考 (Let's think
+  step by step)」。這能顯著提升模型解決數學或邏輯問題的能力。
+\end{itemize}
+
+\chapter{8.3 LLM 優化與應用架構}\label{sec-llm-optimization}
+
+\section{檢索增強生成 (RAG, Retrieval-Augmented
+Generation)}\label{sec-rag}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{痛點}：LLM 有\textbf{幻覺
+  (Hallucination)}（一本正經胡說八道），且知識截止於訓練時間（不知道昨天發生的新聞）。
+\item
+  \textbf{解法}：考試時允許「開書考」。
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    \textbf{檢索
+    (Retrieve)}：當使用者問問題時，系統先去外部知識庫（如公司文件、Google
+    搜尋）找相關資料。
+  \item
+    \textbf{增強 (Augment)}：將找到的資料連同使用者的問題，組合成一個
+    Prompt：「請根據以下資料回答問題\ldots」。
+  \item
+    \textbf{生成 (Generate)}：LLM 根據參考資料回答問題。
+  \end{enumerate}
+\item
+  \textbf{優勢}：資料即時更新，回答有憑有據，且不需要重新訓練模型。
+\end{itemize}
+
+\section{模型壓縮 (Model Compression)}\label{sec-model-compression}
+
+為了讓 LLM 能在手機或較小的伺服器上跑：
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{量化 (Quantization)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    降低數值的精確度。
+  \item
+    從 32-bit 浮點數 (FP32) 降到 8-bit 整數 (INT8) 甚至 4-bit。
+  \item
+    \emph{效果}：模型體積縮小 4-8
+    倍，速度變快，記憶體需求大減，且對準確率影響微乎其微。
+  \end{itemize}
+\item
+  \textbf{知識蒸餾 (Knowledge Distillation)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    讓一個大模型（老師）教導一個小模型（學生）。
+  \item
+    學生不僅學習正確答案，還學習老師的「機率分佈」（老師對每個選項的信心）。
+  \item
+    \emph{效果}：小模型能達到接近大模型的效能，但速度快得多。
+  \end{itemize}
+\end{itemize}
+
+\chapter{本章總結與考點提示}\label{sec-chapter8-summary}
+
+\section{核心概念回顧}\label{ux6838ux5fc3ux6982ux5ff5ux56deux9867-7}
+
+生成式 AI 是當前最熱門的技術。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{生成模型}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{VAE}：潛在空間採樣 (模糊)。
+  \item
+    \textbf{GAN}：生成器 vs 判別器 (逼真但難訓練)。
+  \item
+    \textbf{Diffusion}：加噪再去噪 (高品質、慢)。
+  \end{itemize}
+\item
+  \textbf{LLM 技術}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{預訓練}：Next Token Prediction (通識)。
+  \item
+    \textbf{微調}：Instruction Tuning (聽話)、RLHF (價值觀)。
+  \item
+    \textbf{Scaling Laws}：參數、資料、算力越大越強。
+  \end{itemize}
+\item
+  \textbf{優化技術}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{RAG}：外掛知識庫 (解幻覺、時效性)。
+  \item
+    \textbf{Prompt Engineering}：Few-shot, CoT (激發潛能)。
+  \item
+    \textbf{量化}：降低精度 (省資源)。
+  \end{itemize}
+\end{itemize}
+
+\section{AI
+應用規劃師認證考點}\label{ai-ux61c9ux7528ux898fux5283ux5e2bux8a8dux8b49ux8003ux9ede-7}
+
+\textbf{常考題型與解題策略}：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{模型原理題}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「Stable Diffusion 是基於哪種技術？」
+  \item
+    \textbf{解答}：擴散模型 (Diffusion Model)。
+  \item
+    \emph{例題}：「GAN 的核心機制是什麼？」
+  \item
+    \textbf{解答}：零和賽局 (Zero-Sum Game)，生成器與判別器對抗。
+  \end{itemize}
+\item
+  \textbf{LLM 應用題}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「企業想用 LLM
+    客服，但擔心它亂回答公司政策，該怎麼辦？」
+  \item
+    \textbf{解答}：使用 RAG
+    (檢索增強生成)，限制它只能根據檢索到的公司文件回答。
+  \item
+    \emph{例題}：「如何讓 LLM 數學變好？」
+  \item
+    \textbf{解答}：使用 Chain-of-Thought (CoT) 提示技巧。
+  \end{itemize}
+\item
+  \textbf{名詞解釋題}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{關鍵字}：RLHF (讓 AI 符合人類價值觀)、幻覺
+    (一本正經胡說八道)、量化 (模型壓縮)。
+  \end{itemize}
+\end{enumerate}
+
+\section{記憶口訣}\label{ux8a18ux61b6ux53e3ux8a23-7}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{GAN}：「左右互搏」。
+\item
+  \textbf{Diffusion}：「覆水難收，但我收得回來」。
+\item
+  \textbf{RAG}：「開書考」。
+\item
+  \textbf{CoT}：「一步步來」。
+\end{itemize}
+
+\section{延伸思考}\label{ux5ef6ux4f38ux601dux8003-7}
+
+\begin{itemize}
+\tightlist
+\item
+  為什麼 RAG 比微調 (Fine-tuning)
+  更適合處理企業內部知識？（因為微調成本高、更新慢，且容易有災難性遺忘；RAG
+  只要更新資料庫即可，即時又準確）。
+\end{itemize}
+
+\part{第五部：模型評估、可解釋性與治理}
+
+\part{模型評估與效能優化 (Model Evaluation \&
+Optimization)}\label{ux6a21ux578bux8a55ux4f30ux8207ux6548ux80fdux512aux5316-model-evaluation-optimization}
+
+訓練完模型只是第一步，更重要的是知道它「好不好用」。如果沒有正確的評估，你可能會把一個只會死記硬背的模型誤認為天才。
+
+\chapter{9.1 評估流程與指標}\label{sec-evaluation-metrics}
+
+\section{資料集劃分 (Data Splitting)}\label{sec-data-split}
+
+為了考試公平，我們不能拿「練習題」來當「期末考題」。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{訓練集 (Training
+  Set)}：\textbf{課本}。用來訓練模型，調整權重。通常佔 60-80\%。
+\item
+  \textbf{驗證集 (Validation
+  Set)}：\textbf{模擬考}。用來調整\textbf{超參數
+  (Hyperparameters)}（如學習率、樹的深度），挑選最佳模型。
+\item
+  \textbf{測試集 (Test
+  Set)}：\textbf{期末考}。考完就定案了，用來評估最終效能。\textbf{絕對不能偷看}（不能用於訓練或調整參數）！
+\end{enumerate}
+
+\section{K-fold 交叉驗證 (Cross-Validation)}\label{sec-cross-validation}
+
+如果資料很少，切成三份太浪費怎麼辦？
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{做法}：將資料切成 \(K\) 等份（例如 \(K=5\)）。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    第 1 輪：拿第 1 份當驗證集，剩下 4 份當訓練集。
+  \item
+    第 2 輪：拿第 2 份當驗證集，剩下 4 份當訓練集。
+  \item
+    \ldots 以此類推，跑 5 次。
+  \end{itemize}
+\item
+  \textbf{結果}：取 5 次評估分數的\textbf{平均值}。
+\item
+  \textbf{優點}：每一筆資料都被當過驗證集，評估結果更客觀穩健，不會因為剛好切到簡單/困難的資料而失準。
+\end{itemize}
+
+\section{分類指標 (Classification
+Metrics)}\label{sec-classification-metrics}
+
+對於二元分類問題（如：有病/沒病），我們使用\textbf{混淆矩陣 (Confusion
+Matrix)}：
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+預測：有病 (Positive)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+預測：沒病 (Negative)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{實際：有病 (True)} & \textbf{TP} (True Positive)
+抓到了！(真陽性) & \textbf{FN} (False Negative) 漏報！(假陰性) \\
+\textbf{實際：沒病 (False)} & \textbf{FP} (False Positive)
+誤報！(假陽性) & \textbf{TN} (True Negative) 沒事！(真陰性) \\
+\end{longtable}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{準確率 (Accuracy)}：答對的比例。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \[ Accuracy = \frac{TP + TN}{TP + TN + FP + FN} \]
+  \item
+    \textbf{陷阱}：如果 99\% 的人沒病，模型全部猜「沒病」，準確率也有
+    99\%，但完全沒用（抓不到病人）。\textbf{資料不平衡時別用 Accuracy}。
+  \end{itemize}
+\item
+  \textbf{精確率
+  (Precision)}：在所有\textbf{被判斷為有病}的人中，真的有病的比例。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \[ Precision = \frac{TP}{TP + FP} \]
+  \item
+    \textbf{應用}：垃圾郵件過濾（寧可漏抓，也不要誤把重要信件當垃圾信）。希望
+    FP 越低越好。
+  \end{itemize}
+\item
+  \textbf{召回率
+  (Recall)}：在所有\textbf{真的有病}的人中，被成功抓出來的比例。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \[ Recall = \frac{TP}{TP + FN} \]
+  \item
+    \textbf{應用}：癌症篩檢、地震預警（寧可誤判複檢，也不能漏掉任何一個病人）。希望
+    FN 越低越好。
+  \end{itemize}
+\item
+  \textbf{F1-Score}：Precision 和 Recall 的調和平均數。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \[ F1 = 2 \times \frac{Precision \times Recall}{Precision + Recall} \]
+  \item
+    當需要兼顧兩者時使用。
+  \end{itemize}
+\item
+  \textbf{AUC-ROC 曲線}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{ROC 曲線}：描繪在不同閾值下，TPR (Recall) 與 FPR (誤報率)
+    的關係。
+  \item
+    \textbf{AUC (Area Under Curve)}：曲線下的面積。AUC = 0.5
+    代表亂猜，AUC = 1 代表完美。AUC 越接近 1 越好。
+  \end{itemize}
+\end{itemize}
+
+\section{迴歸指標 (Regression Metrics)}\label{sec-regression-metrics}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{均方誤差 (MSE, Mean Squared Error)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \[ MSE = \frac{1}{n} \sum (y_{true} - y_{pred})^2 \]
+  \item
+    \textbf{特點}：會放大極端誤差（因為平方）。如果很在意大錯，就看這個。
+  \end{itemize}
+\item
+  \textbf{平均絕對誤差 (MAE, Mean Absolute Error)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \[ MAE = \frac{1}{n} \sum |y_{true} - y_{pred}| \]
+  \item
+    \textbf{特點}：對離群值較不敏感，解釋直觀（平均差幾分）。
+  \end{itemize}
+\item
+  \textbf{R-squared (\(R^2\))}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    衡量模型解釋了資料多少變異。1 代表完美擬合，0
+    代表跟用平均值猜一樣爛。
+  \end{itemize}
+\end{itemize}
+
+\chapter{9.2 誤差分析與正則化}\label{sec-error-analysis}
+
+\section{偏差-變異權衡 (Bias-Variance
+Tradeoff)}\label{sec-bias-variance}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{偏差 (Bias)}：模型準不準？（訓練集誤差）
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{高偏差 (High
+    Bias)}：模型太簡單，學不會資料的規律。稱為\textbf{欠擬合
+    (Underfitting)}。
+  \item
+    \emph{解法}：增加模型複雜度（加層數、加特徵）、減少正則化。
+  \end{itemize}
+\item
+  \textbf{變異 (Variance)}：模型穩不穩？（訓練集 vs 驗證集誤差差距）
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{高變異 (High
+    Variance)}：模型太複雜，把雜訊也學進去了，導致在訓練集考 100
+    分，驗證集不及格。稱為\textbf{過擬合 (Overfitting)}。
+  \item
+    \emph{解法}：增加資料量、正則化、簡化模型。
+  \end{itemize}
+\end{itemize}
+
+\section{防止過擬合技術 (Regularization)}\label{sec-prevent-overfitting}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{L1/L2 正則化}：在損失函數加懲罰項，限制權重大小（參見 5.2
+  節）。
+\item
+  \textbf{Dropout}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    在訓練神經網路時，隨機「關掉」一些神經元（設為 0）。
+  \item
+    \emph{類比}：軍隊演習時隨機抽走指揮官，強迫部隊不能依賴特定的人，必須每個人都學會作戰。這能讓網路學出更強健的特徵。
+  \end{itemize}
+\item
+  \textbf{早停 (Early Stopping)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    觀察驗證集的誤差。如果訓練集的誤差還在降，但驗證集的誤差開始上升，代表開始過擬合了，立刻停止訓練。
+  \end{itemize}
+\item
+  \textbf{資料增強 (Data Augmentation)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    如果資料不夠，就自己造！
+  \item
+    例如：把圖片旋轉、裁切、調亮、水平翻轉，產生更多訓練資料。這在影像辨識中非常有效。
+  \end{itemize}
+\end{enumerate}
+
+\chapter{本章總結與考點提示}\label{sec-chapter9-summary}
+
+\section{核心概念回顧}\label{ux6838ux5fc3ux6982ux5ff5ux56deux9867-8}
+
+評估是優化的基礎。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{資料劃分}：Train (課本) / Validation (模擬考) / Test
+  (期末考)。
+\item
+  \textbf{分類指標}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Accuracy}：整體答對率 (小心不平衡資料)。
+  \item
+    \textbf{Precision}：抓到的有多少是真的 (寧缺勿濫)。
+  \item
+    \textbf{Recall}：真的有多少被抓到 (寧濫勿缺)。
+  \item
+    \textbf{F1-Score}：P 和 R 的平衡。
+  \end{itemize}
+\item
+  \textbf{迴歸指標}：MSE (怕大錯)、MAE (直觀)。
+\item
+  \textbf{誤差分析}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Bias}：準不準 (Underfitting)。
+  \item
+    \textbf{Variance}：穩不穩 (Overfitting)。
+  \end{itemize}
+\item
+  \textbf{抗過擬合}：L1/L2 正則化、Dropout、Early Stopping、Data
+  Augmentation。
+\end{itemize}
+
+\section{AI
+應用規劃師認證考點}\label{ai-ux61c9ux7528ux898fux5283ux5e2bux8a8dux8b49ux8003ux9ede-8}
+
+\textbf{常考題型與解題策略}：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{指標選擇題}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「癌症篩檢模型應最重視哪個指標？」
+  \item
+    \textbf{解答}：Recall (召回率)。因為漏診後果嚴重。
+  \item
+    \emph{例題}：「垃圾郵件過濾應最重視哪個指標？」
+  \item
+    \textbf{解答}：Precision (精確率)。因為不想把重要信件誤判為垃圾信。
+  \end{itemize}
+\item
+  \textbf{過擬合判斷題}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「訓練集準確率 99\%，測試集準確率
+    60\%，這是什麼情況？」
+  \item
+    \textbf{解答}：過度擬合 (Overfitting) / 高變異 (High Variance)。
+  \item
+    \emph{例題}：「訓練集準確率 60\%，測試集準確率
+    59\%，這是什麼情況？」
+  \item
+    \textbf{解答}：欠擬合 (Underfitting) / 高偏差 (High Bias)。
+  \end{itemize}
+\item
+  \textbf{解決方案題}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「遇到過度擬合該怎麼辦？」
+  \item
+    \textbf{解答}：增加資料、使用 Dropout、L2 正則化、早停。
+  \end{itemize}
+\end{enumerate}
+
+\section{記憶口訣}\label{ux8a18ux61b6ux53e3ux8a23-8}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Precision}：「貴精不貴多」（抓得準）。
+\item
+  \textbf{Recall}：「一網打盡」（抓得全）。
+\item
+  \textbf{Overfitting}：「死讀書」（只會考題，不會應用）。
+\item
+  \textbf{Underfitting}：「書沒讀好」（連考題都不會）。
+\end{itemize}
+
+\section{延伸思考}\label{ux5ef6ux4f38ux601dux8003-8}
+
+\begin{itemize}
+\tightlist
+\item
+  為什麼 Accuracy
+  在資料不平衡時會騙人？（因為模型只要全部猜多數類別，分數就會很高，但完全沒有鑑別力）。
+\end{itemize}
+
+\part{可解釋 AI (XAI)}\label{ux53efux89e3ux91cb-ai-xai}
+
+隨著 AI 模型越來越複雜（尤其是深度學習），它們變成了「黑箱 (Black
+Box)」。我們把資料丟進去，答案跑出來，但沒人知道中間發生了什麼。在醫療、金融、法律等高風險領域，我們不能只知道「結果」，必須知道「原因」。這就是\textbf{可解釋
+AI (Explainable AI, XAI)} 的使命。
+
+\chapter{10.1 XAI 的層次}\label{sec-xai-levels}
+
+\section{黑箱模型 vs.~白箱模型}\label{sec-black-white-box}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{白箱模型 (White Box)}：結構簡單，人類可以直接看懂。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{線性迴歸}：係數 \(w\)
+    直接代表特徵的影響力（正/負相關、大小）。
+  \item
+    \textbf{決策樹}：規則清楚（如果年齡 \textgreater{} 20 且 收入
+    \textgreater{} 3萬，則\ldots）。
+  \end{itemize}
+\item
+  \textbf{黑箱模型 (Black Box)}：結構複雜，人類無法直觀理解。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{深度神經網路}：幾百萬個參數，看不出意義。
+  \item
+    \textbf{隨機森林}：幾百棵樹的投票結果，難以追蹤。
+  \end{itemize}
+\end{itemize}
+
+\section{全局解釋 vs.~局部解釋}\label{sec-global-local}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{全局解釋 (Global Explanation)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{問題}：這個模型\textbf{整體來說}是怎麼運作的？哪些特徵最重要？
+  \item
+    \textbf{例子}：在預測房價時，模型認為「坪數」和「地點」是最重要的因素，「油漆顏色」不重要。
+  \end{itemize}
+\item
+  \textbf{局部解釋 (Local Explanation)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{問題}：為什麼\textbf{這一筆}特定的貸款申請被拒絕了？
+  \item
+    \textbf{例子}：雖然這人收入高（正向因素），但因為「信用紀錄太短」（負向因素）且「近期查詢次數過多」（負向因素），綜合起來導致被拒絕。
+  \end{itemize}
+\end{itemize}
+
+\chapter{10.2 解釋技術與工具}\label{sec-xai-techniques}
+
+\section{LIME (Local Interpretable Model-agnostic
+Explanations)}\label{sec-lime}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{核心概念}：雖然整個黑箱模型很複雜（像彎彎曲曲的曲線），但在「局部」範圍內，它通常是簡單的（像直線）。
+\item
+  \textbf{運作方式}：
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    選定想解釋的那個資料點 \(x\)。
+  \item
+    在 \(x\)
+    附近隨機撒一些擾動過的資料點，並觀察黑箱模型對這些點的預測。
+  \item
+    用這些點訓練一個簡單的\textbf{線性模型}（白箱）來模擬黑箱模型在這一小塊區域的行為。
+  \item
+    解釋這個線性模型。
+  \end{enumerate}
+\item
+  \textbf{優點}：與模型無關
+  (Model-agnostic)，任何模型（神經網路、SVM、隨機森林）都能用。
+\end{itemize}
+
+\section{SHAP (Shapley Values)}\label{sec-shap}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{核心概念}：源自\textbf{賽局理論 (Game
+  Theory)}。假設所有特徵是合作玩遊戲的玩家，最後贏得的分數（預測結果）該如何\textbf{公平分配}給每個玩家（特徵）？
+\item
+  \textbf{運作方式}：計算某個特徵「有它」跟「沒它」時，預測結果的差異平均值。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    例如：預測房價 1000 萬。基準值是 800 萬。
+  \item
+    「靠近捷運」貢獻了 +150 萬。
+  \item
+    「屋齡老」貢獻了 -50 萬。
+  \item
+    「有車位」貢獻了 +100 萬。
+  \end{itemize}
+\item
+  \textbf{優點}：數學理論最紮實，能提供\textbf{一致性 (Consistency)}
+  的解釋，且同時支援全局與局部解釋。
+\end{itemize}
+
+\section{特徵重要度 (Feature Importance)}\label{sec-feature-importance}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{概念}：直接列出哪些特徵對模型的貢獻最大。
+\item
+  \textbf{應用}：隨機森林 (Random Forest) 和 XGBoost
+  內建特徵重要度排序（基於分裂時帶來的資訊增益）。
+\item
+  \textbf{限制}：只能看全局，不能解釋單一筆預測。
+\end{itemize}
+
+\section{反事實解釋 (Counterfactual
+Explanation)}\label{sec-counterfactual}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{概念}：告訴使用者「如果\ldots\ldots 就會\ldots\ldots」。這對一般使用者最直觀。
+\item
+  \textbf{例子}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{現況}：貸款被拒。
+  \item
+    \emph{反事實解釋}：「\textbf{如果}你的年收入增加 5
+    萬元，\textbf{或者}你的信用卡負債減少 2
+    萬元，你的貸款\textbf{就會}通過。」
+  \end{itemize}
+\item
+  \textbf{重點}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{可操作性 (Actionability)}：建議必須是使用者能改變的。
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \emph{好建議}：增加收入、減少負債。
+    \item
+      \emph{壞建議}：如果你年輕 10
+      歲、如果你出生在美國（使用者無法改變）。
+    \end{itemize}
+  \item
+    \textbf{稀疏性 (Sparsity)}：改變的特徵越少越好（不要叫使用者同時改
+    10 件事）。
+  \end{itemize}
+\end{itemize}
+
+\chapter{本章總結與考點提示}\label{sec-chapter10-summary}
+
+\section{核心概念回顧}\label{ux6838ux5fc3ux6982ux5ff5ux56deux9867-9}
+
+XAI 是建立 AI 信任的關鍵。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{模型類型}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{白箱}：線性迴歸、決策樹 (簡單、可解釋)。
+  \item
+    \textbf{黑箱}：深度學習、隨機森林 (複雜、難解釋)。
+  \end{itemize}
+\item
+  \textbf{解釋範圍}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{全局}：整體特徵重要性。
+  \item
+    \textbf{局部}：單一案例的判斷依據。
+  \end{itemize}
+\item
+  \textbf{技術工具}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{LIME}：局部線性近似 (Model-agnostic)。
+  \item
+    \textbf{SHAP}：賽局理論 (公平分配貢獻)。
+  \item
+    \textbf{Counterfactual}：如果\ldots 就會\ldots{} (行動建議)。
+  \end{itemize}
+\end{itemize}
+
+\section{AI
+應用規劃師認證考點}\label{ai-ux61c9ux7528ux898fux5283ux5e2bux8a8dux8b49ux8003ux9ede-9}
+
+\textbf{常考題型與解題策略}：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{情境選擇題}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「銀行拒絕貸款，客戶要求解釋，哪種方法最適合？」
+  \item
+    \textbf{解答}：反事實解釋
+    (Counterfactual)。因為客戶想知道「怎麼做才能通過」。
+  \item
+    \emph{例題}：「想知道模型整體最看重哪些特徵？」
+  \item
+    \textbf{解答}：全局特徵重要性 (Global Feature Importance) 或 SHAP
+    Summary Plot。
+  \end{itemize}
+\item
+  \textbf{黑白箱辨析}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「下列哪個模型的可解釋性最高？」
+  \item
+    \textbf{解答}：決策樹 \textgreater{} 線性迴歸 \textgreater{}
+    隨機森林 \textgreater{} 神經網路。
+  \end{itemize}
+\item
+  \textbf{工具特性題}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「LIME 的核心思想是什麼？」
+  \item
+    \textbf{解答}：在局部範圍內，用簡單的線性模型來模擬複雜的黑箱模型。
+  \end{itemize}
+\end{enumerate}
+
+\section{記憶口訣}\label{ux8a18ux61b6ux53e3ux8a23-9}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{LIME}：「以管窺天」（局部近似）。
+\item
+  \textbf{SHAP}：「分錢分得平」（賽局理論）。
+\item
+  \textbf{Counterfactual}：「早知如此，何必當初」（如果\ldots 就會\ldots）。
+\end{itemize}
+
+\section{延伸思考}\label{ux5ef6ux4f38ux601dux8003-9}
+
+\begin{itemize}
+\tightlist
+\item
+  可解釋性與準確率通常存在什麼關係？（Trade-off。通常模型越複雜準確率越高，但可解釋性越低。XAI
+  的目標就是打破這個權衡）。
+\end{itemize}
+
+\part{AI 治理、法規與倫理 (AI Governance, Regulations \&
+Ethics)}\label{ai-ux6cbbux7406ux6cd5ux898fux8207ux502bux7406-ai-governance-regulations-ethics}
+
+AI 的強大能力伴隨著巨大的風險。如何確保 AI 是向善的 (AI for
+Good)，而不是帶來歧視、侵犯隱私或失控，是當前各國政府與企業最關注的議題。這不僅是道德問題，更是法律合規問題。
+
+\chapter{11.1 倫理原則與風險管理}\label{sec-ethics-risk}
+
+\section{公平性與偏見 (Bias \& Fairness)}\label{sec-bias-fairness}
+
+AI 模型是從歷史數據中學習的，如果歷史數據包含人類的偏見，AI
+就會放大這些偏見。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{偏見來源}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{歷史偏見}：例如過去主管多為男性，AI
+    學習後可能會認為「男性」是好主管的特徵。
+  \item
+    \textbf{抽樣偏見}：訓練資料中某些族群樣本太少（例如人臉辨識對深色人種準確率較低）。
+  \end{itemize}
+\item
+  \textbf{案例}：Amazon 的 AI 招聘系統因為過去 10
+  年都錄取男性，學會了歧視女性履歷（看到 ``Women's Chess Club''
+  就扣分）。
+\item
+  \textbf{解法}：\textbf{資料去偏 (Data
+  Debiasing)}。在訓練前檢查資料分佈，或在訓練中加入公平性約束 (Fairness
+  Constraints)。
+\end{itemize}
+
+\section{隱私保護技術 (Privacy-Preserving AI)}\label{sec-privacy}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{差分隱私 (Differential Privacy)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{概念}：在資料中加入適量的\textbf{數學雜訊
+    (Noise)}，使得攻擊者無法反推出特定個人的資訊，但整體的統計特性（如平均值）仍然準確。
+  \item
+    \textbf{應用}：Apple/Google
+    收集用戶使用習慣時，會加入雜訊，確保無法追蹤到單一用戶。
+  \end{itemize}
+\item
+  \textbf{聯邦學習 (Federated Learning)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{概念}：\textbf{數據不離地}。
+
+    \begin{enumerate}
+    \def\labelenumi{\arabic{enumi}.}
+    \tightlist
+    \item
+      模型傳送到用戶的手機上訓練。
+    \item
+      手機只回傳訓練好的「參數更新 (Gradients)」，不回傳原始照片或訊息。
+    \item
+      伺服器整合所有人的參數更新。
+    \end{enumerate}
+  \item
+    \textbf{應用}：Google Gboard 輸入法預測、醫療跨院研究。
+  \end{itemize}
+\end{itemize}
+
+\section{責任歸屬與問責性 (Accountability)}\label{sec-accountability}
+
+\begin{itemize}
+\tightlist
+\item
+  當 AI 犯錯（如自駕車撞人、醫療 AI
+  誤診）時，誰該負責？是開發者、使用者，還是 AI 本身？
+\item
+  \textbf{人機協作
+  (Human-in-the-loop)}：目前的共識是，高風險決策（如醫療、司法）不能全交給
+  AI，必須有人類專家介入審核。最終決策權與責任仍在人類身上。
+\end{itemize}
+
+\chapter{11.2 台灣與國際法規架構}\label{sec-regulations}
+
+\section{台灣《人工智慧基本法》草案}\label{sec-taiwan-ai-law}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{定位}：作為上位法，確立 AI
+  發展的基本原則（如以人為本、永續發展）。
+\item
+  \textbf{重點機制}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{監理沙盒 (Regulatory
+    Sandbox)}：為了鼓勵創新，允許企業在風險可控的範圍內測試新技術，暫時豁免部分法規限制。
+  \item
+    \textbf{風險分級管理}：不一竿子打翻一船人，依據 AI
+    應用的風險程度，採取不同強度的管理。
+  \end{itemize}
+\end{itemize}
+
+\section{台灣金融業 AI 規範}\label{sec-financial-ai}
+
+金融業因涉及金錢與個資，監管最嚴格。金管會發布了「金融業運用人工智慧之核心原則」。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{建立治理架構}：董事會要對 AI 負責，不能說「那是 IT 的事」。
+\item
+  \textbf{公平性}：貸款審核模型不能歧視特定族群。
+\item
+  \textbf{保護隱私}：客戶資料不能隨便拿去訓練。
+\item
+  \textbf{系統安全性}：防止駭客攻擊 AI 模型。
+\item
+  \textbf{透明度與可解釋性}：要能解釋為什麼拒絕客戶貸款。
+\item
+  \textbf{當責性}：出事時要能負責。
+\end{enumerate}
+
+\section{歐盟《人工智慧法案》(EU AI Act)}\label{sec-eu-ai-act}
+
+全球第一部綜合性 AI 法規，採\textbf{風險導向 (Risk-based
+approach)}，影響力如同 GDPR：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{不可接受風險 (Unacceptable Risk)}：\textbf{完全禁止}。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    社會信用評分 (Social Scoring)。
+  \item
+    公共場所的即時遠端生物辨識（警察抓重犯除外）。
+  \item
+    潛意識操縱（如用 AI 誘導兒童）。
+  \end{itemize}
+\item
+  \textbf{高風險 (High Risk)}：\textbf{嚴格監管}。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    醫療器材、招聘系統、信用評分、關鍵基礎設施、邊境管制。
+  \item
+    \textbf{義務}：必須通過合規評估 (Conformity
+    Assessment)、使用高品質資料、保留紀錄、有人類監督。
+  \end{itemize}
+\item
+  \textbf{有限風險 (Limited Risk)}：\textbf{透明度義務}。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Chatbot、Deepfake。
+  \item
+    \textbf{義務}：必須明確告知使用者「你正在跟 AI
+    說話」或「這是生成的影像」。
+  \end{itemize}
+\item
+  \textbf{最小風險 (Minimal Risk)}：\textbf{不監管}。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    垃圾郵件過濾器、電玩遊戲 AI。
+  \end{itemize}
+\end{enumerate}
+
+\chapter{11.3 AI 產品評測標準}\label{sec-ai-evaluation}
+
+\section{數位發展部 AI 產品與系統評測中心}\label{sec-moda-eval}
+
+為了建立 AI 產品的信賴度，台灣成立了評測中心，參考國際標準（如
+NIST）制定評測規範。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{主要評測指標}：
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    \textbf{安全性 (Safety)}：系統是否穩定？是否容易被攻擊（如 Prompt
+    Injection）？
+  \item
+    \textbf{可解釋性 (Explainability)}：能否解釋輸出結果？
+  \item
+    \textbf{彈性 (Resilience)}：遇到異常輸入時，是否能維持運作？
+  \item
+    \textbf{公平性 (Fairness)}：是否存在偏見？
+  \item
+    \textbf{準確性 (Accuracy)}：答案是否正確？有無幻覺？
+  \end{enumerate}
+\item
+  \textbf{排除項目}：目前的評測主要針對語言模型本身，不包含「資料複雜性」（資料好不好是廠商的事）或單純的「互動性」（好不好聊）。
+\end{itemize}
+
+\chapter{本章總結與考點提示}\label{sec-chapter11-summary}
+
+\section{核心概念回顧}\label{ux6838ux5fc3ux6982ux5ff5ux56deux9867-10}
+
+AI 治理是確保 AI 永續發展的基石。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{倫理風險}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{偏見}：歷史數據、抽樣偏差。解法：去偏。
+  \item
+    \textbf{隱私}：差分隱私 (加雜訊)、聯邦學習 (數據不離地)。
+  \item
+    \textbf{當責}：Human-in-the-loop (人機協作)。
+  \end{itemize}
+\item
+  \textbf{法規架構}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{歐盟 AI Act}：風險導向 (禁止、高風險、有限、最小)。
+  \item
+    \textbf{台灣 AI 基本法}：監理沙盒、風險分級。
+  \item
+    \textbf{金融業規範}：公平、隱私、透明、當責。
+  \end{itemize}
+\end{itemize}
+
+\section{AI
+應用規劃師認證考點}\label{ai-ux61c9ux7528ux898fux5283ux5e2bux8a8dux8b49ux8003ux9ede-10}
+
+\textbf{常考題型與解題策略}：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{法規分級題 (EU AI Act)}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「社會信用評分屬於哪一級風險？」
+  \item
+    \textbf{解答}：不可接受風險 (禁止)。
+  \item
+    \emph{例題}：「招聘系統或醫療器材屬於哪一級？」
+  \item
+    \textbf{解答}：高風險 (嚴格監管)。
+  \item
+    \emph{例題}：「聊天機器人屬於哪一級？」
+  \item
+    \textbf{解答}：有限風險 (需揭露是 AI)。
+  \end{itemize}
+\item
+  \textbf{隱私技術題}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「希望多家醫院聯合訓練模型，但病歷不能出醫院，該用什麼技術？」
+  \item
+    \textbf{解答}：聯邦學習 (Federated Learning)。
+  \item
+    \emph{例題}：「Apple
+    收集用戶數據時加入雜訊以保護隱私，這是什麼技術？」
+  \item
+    \textbf{解答}：差分隱私 (Differential Privacy)。
+  \end{itemize}
+\item
+  \textbf{倫理情境題}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{例題}：「AI 判斷履歷時，對女性分數較低，這是什麼問題？」
+  \item
+    \textbf{解答}：偏見 (Bias)。
+  \item
+    \emph{例題}：「醫生使用 AI 輔助診斷，最後簽名負責的是誰？」
+  \item
+    \textbf{解答}：醫生 (Human-in-the-loop)。
+  \end{itemize}
+\end{enumerate}
+
+\section{記憶口訣}\label{ux8a18ux61b6ux53e3ux8a23-10}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{EU AI Act}：「禁高限微」（禁止、高、有限、微小）。
+\item
+  \textbf{聯邦學習}：「資料不動模型動」。
+\item
+  \textbf{差分隱私}：「加點雜訊更安全」。
+\end{itemize}
+
+\section{延伸思考}\label{ux5ef6ux4f38ux601dux8003-10}
+
+\begin{itemize}
+\tightlist
+\item
+  為什麼「監理沙盒」對 AI
+  新創很重要？（因為法規通常落後於科技，沙盒提供了一個合法的試錯空間，避免創新被舊法規扼殺）。
+\end{itemize}
+
+
+
+
+\end{document}
