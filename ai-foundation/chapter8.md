@@ -202,10 +202,6 @@ LLM (Large Language Model) 如 GPT 系列，本質上是一個超巨大的「文
 
 ### 模型壓縮 (Model Compression) {#sec-model-compression}
 
-為了讓 LLM 能在手機或較小的伺服器上跑：
-
-### 模型壓縮 (Model Compression) {#sec-model-compression}
-
 為了讓 LLM 能在手機或較小的伺服器上跑，我們需要把模型「變小」：
 
 *   **量化 (Quantization)**：

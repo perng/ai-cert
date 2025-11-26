@@ -1,0 +1,27 @@
+project:
+  type: book
+
+book:
+  title: "生成式 AI 應用與規劃"
+  author: "AI仁波切"
+  date: "2025-11-26"
+  chapters:
+    - index.md
+    - chapter1.md
+    - chapter2.md
+    - chapter3.md
+    - chapter4.md
+    - chapter5.md
+    - chapter6.md
+    - chapter7.md
+
+format:
+  html:
+    theme: cosmo
+    number-sections: true
+  pdf:
+    documentclass: scrreprt
+    pdf-engine: xelatex
+    mainfont: "Noto Serif TC"
+    sansfont: "Noto Serif TC"
+    CJKmainfont: "Noto Serif TC"

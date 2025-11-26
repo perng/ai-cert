@@ -16,8 +16,6 @@
 
 ### K-fold 交叉驗證 (Cross-Validation) {#sec-cross-validation}
 
-### K-fold 交叉驗證 (Cross-Validation) {#sec-cross-validation}
-
 如果資料很少，切成三份（訓練/驗證/測試）太浪費怎麼辦？或者我們擔心切出來的驗證集剛好特別簡單或特別難？
 
 *   **核心概念**：**輪流當驗證集**。
