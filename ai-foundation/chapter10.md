@@ -13,6 +13,8 @@
     *   **深度神經網路**：幾百萬個參數，看不出意義。
     *   **隨機森林**：幾百棵樹的投票結果，難以追蹤。
 
+![黑箱模型 vs. 白箱模型](images/black-white-box.png)
+
 ### 全局解釋 vs. 局部解釋 {#sec-global-local}
 
 *   **全局解釋 (Global Explanation)**：
