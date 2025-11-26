@@ -128,17 +128,37 @@
 2017 年 Google 發表論文《Attention Is All You Need》，徹底改變了 NLP 領域，也開啟了大型語言模型 (LLM) 的時代。
 
 ### 自注意力機制 (Self-Attention) {#sec-self-attention}
+![自注意力機制](images/self-attention.png)
 
-*   **核心概念**：在處理一個句子時，模型會計算每個字與其他所有字的**關聯強度 (Attention Score)**。
-*   **數學公式**：
-    $$ Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V $$
-    *   **Q (Query)**：查詢向量（我想找什麼？）
-    *   **K (Key)**：鍵值向量（你是什麼？）
-    *   **V (Value)**：數值向量（你的內容是什麼？）
-    *   *類比*：你在圖書館找書。Q 是你的關鍵字，K 是書背上的標籤，V 是書的內容。算出 Q 和 K 的相似度，決定要拿出哪些 V。
+這是 Transformer 的靈魂，讓模型能理解字與字之間的關係。
 
-*   **例子**："The animal didn't cross the street because **it** was too tired."
-    *   當模型讀到 "**it**" 時，Attention 機制會告訴它，這個 "it" 與 "**animal**" 的關聯性最強（Attention Score 最高），而不是 "street"。這讓模型真正「讀懂」了代名詞的指涉。
+*   **核心概念**：**雞尾酒會效應 (Cocktail Party Effect)**。
+    *   在吵雜的派對中，你的耳朵會自動過濾背景雜音，**聚焦 (Attend)** 在你想聽的那個人說話。
+    *   同樣地，當模型讀到一個字時，它會去「關注」句子中其他相關的字，而忽略不相關的字。
+
+*   **運作機制 (Q, K, V)**：
+    每個字都會被轉換成三個向量：
+    *   **Query (Q, 查詢)**：我想找什麼？（像拿著麥克風問問題）
+    *   **Key (Key, 索引)**：你是什麼？（像每個人身上掛的名牌）
+    *   **Value (Value, 內容)**：你的實質內容是什麼？（像這個人腦中的知識）
+    *   **流程**：
+        1.  拿我的 **Q** 去跟所有人的 **K** 算相似度（點積 Dot Product）。
+        2.  相似度越高，代表我們關係越密切（Attention Score 越高）。
+        3.  根據相似度，把對方的 **V** 加權總合起來，變成我對這個字的理解。
+    *   *類比*：**圖書館找書**。
+        *   **Q**：你想找的主題（如「人工智慧」）。
+        *   **K**：書背上的分類標籤。
+        *   **V**：書裡的內容。
+        *   你會把 K 跟 Q 符合的書挑出來，閱讀裡面的 V。
+
+*   **多頭注意力 (Multi-Head Attention)**：
+    *   **概念**：不只用一種觀點看事情，而是用多個「頭」（濾鏡）同時看。
+    *   *例子*：讀一句話時，Head 1 關注「文法結構」，Head 2 關注「代名詞指涉」，Head 3 關注「情緒」。最後把大家的看法綜合起來，理解就更全面。
+
+*   **實例**："The animal didn't cross the street because **it** was too tired."
+    *   當模型讀到 "**it**" 時，Attention 機制會算出它跟 "**animal**" 的關聯度最高（因為 tired 通常形容動物），而不是 "street"。這讓模型真正「讀懂」了代名詞。
+
+![Transformer](images/transformer.png)
 
 ### Transformer 架構優勢 {#sec-transformer-arch}
 
@@ -147,6 +167,8 @@
     *   Transformer 可以**一次讀入整篇文章**，利用 GPU 的強大平行運算能力，訓練速度大幅提升。這使得訓練像 GPT-4 這種超巨大模型成為可能。
 2.  **長距離依賴 (Long-range Dependency)**：
     *   透過 Attention，無論兩個字距離多遠，都能直接建立關聯，不再有 LSTM 的記憶長度限制。
+
+![Transformer 架構優勢](images/transformer-advantages.png)
 
 ### Encoder 與 Decoder 家族
 
