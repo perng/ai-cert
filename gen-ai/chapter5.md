@@ -36,6 +36,10 @@
     *   **Composer**：可以同時編輯多個檔案，一次完成跨檔案的修改。
 *   **Windsurf**：
     *   強調 "Flow" 範式。Agent 能持續監控你的開發行為，預測你下一步想做什麼，並主動提供協助。
+*   **Google Antigravity**：
+    *   **核心**：Google 推出的 "Agent-first" IDE，基於 VS Code 修改。
+    *   **特色**：內建 Gemini 3 Pro 模型。採用雙視圖設計 (Editor & Manager)，允許使用者同時指揮多個 AI Agent 進行自主規劃、寫程式、執行終端機指令甚至瀏覽網頁。
+    *   **優勢**：強調「可驗證性 (Verifiability)」，Agent 會產出實作計畫、螢幕截圖等 Artifacts，適合處理高度複雜的系統級任務。
 
 ### 2. 雲端與 Agentic 平台
 *   **Replit**：
@@ -48,6 +52,42 @@
     *   最普及的 AI 助手。提供即時的程式碼補全 (Autocomplete) 和單元測試建議。
 *   **Claude Code**：
     *   Anthropic 推出的 CLI 工具，具備強大的邏輯推理能力，能在終端機中直接操作檔案系統、執行指令並修改程式碼。
+*   **[OpenAI Codex](https://openai.com/codex/)**：
+    *   **核心**：最初是 GitHub Copilot 背後的模型，現已演化為全方位的雲端軟體工程 Agent。
+    *   **特色**：可透過 CLI 或 IDE 擴充功能使用。具備在隔離沙箱 (Sandbox) 中導航程式碼庫、執行測試與修復 Bug 的能力。
+    *   **模型**：由 `codex-1` (基於 o3 微調) 等專用模型驅動，擅長精確的程式碼生成與除錯。
+
+### 4. 工作流自動化與視覺化編排 (Workflow Automation & Visual Orchestration)
+這類工具專注於將 AI 模型與其他應用程式串接，或是提供視覺化的介面來設計複雜的 AI 處理流程。
+
+*   **n8n**：
+    *   **定位**：強大的工作流自動化工具 (Workflow Automation Tool)，強調可自託管與高度客製化。
+    *   **AI 整合**：內建 AI Agent 節點，可以輕鬆將 LLM (如 GPT-4, Claude) 與超過 400 種外部服務 (如 Google Sheets, Slack, Email) 串接。
+    *   **應用場景**：自動化辦公流程，例如「收到客戶 Email -> 用 AI 分析情緒與摘要 -> 寫入 Notion 資料庫 -> 自動草擬回信」。
+*   **ComfyUI**：
+    *   **定位**：專為 [Stable Diffusion](https://en.wikipedia.org/wiki/Stable_Diffusion) 設計的節點式圖形介面 (Node-based GUI)。
+    *   **核心**：將圖像生成的各個步驟 (如 Checkpoint 載入、CLIP 編碼、採樣器 Sampler、VAE 解碼) 拆解成獨立的節點，讓使用者能精細控制生成流程。
+    *   **應用場景**：進階圖像生成、影片製作、建立複雜的圖像處理工作流 (Workflow)。
+*   **LangFlow / Flowise**：
+    *   **定位**：專為構建 LLM 應用設計的視覺化平台，通常基於 [LangChain](https://www.langchain.com/) 框架。
+    *   **核心**：提供拖拉介面來組裝 RAG (檢索增強生成) 系統、聊天機器人 (Chatbot) 或 Agent。
+    *   **應用場景**：快速原型開發 (Prototyping)，無需寫程式即可測試不同的 Prompt 策略或知識庫檢索效果。
+
+### 5. 工具比較總結 (Summary Table)
+
+| 工具名稱 (Tool) | 類別 (Category) | 核心特色 (Key Features) | 適用場景 (Use Case) |
+| :--- | :--- | :--- | :--- |
+| **Cursor** | AI-Native IDE | Codebase RAG, Composer (跨檔案編輯) | 專業開發者日常 Coding |
+| **Windsurf** | AI-Native IDE | Flow 範式, 主動預測開發行為 | 追求流暢開發體驗的工程師 |
+| **Google Antigravity** | AI-Native IDE | Agent-first, 雙視圖, 可驗證 Artifacts | 複雜系統開發, 需高度自主 Agent |
+| **Replit** | Cloud / Agentic | 雲端 IDE, 自然語言生成 App (Replit Agent) | 快速構建 MVP, 非專業開發者 |
+| **Lovable / v0** | UI Generation | 圖像/草圖轉前端程式碼 (React/Tailwind) | 前端介面設計, 快速 UI 原型 |
+| **GitHub Copilot** | CLI / Extension | 程式碼補全, 單元測試建議 | 輔助 Coding, 提升寫碼速度 |
+| **Claude Code** | CLI | 終端機操作, 邏輯推理, 檔案系統控制 | 腳本自動化, 複雜重構任務 |
+| **OpenAI Codex** | Model / Agent | 雲端軟體工程 Agent, 沙箱執行 | 程式碼生成, Bug 修復, 測試 |
+| **n8n** | Workflow Automation | 串接 LLM 與 400+ 外部服務, 辦公自動化 | 企業流程自動化, 資料串接 |
+| **ComfyUI** | Visual Orchestration | 節點式 Stable Diffusion 工作流 | 進階 AI 圖像/影片生成 |
+| **LangFlow / Flowise** | Visual Orchestration | 視覺化 LLM/RAG 應用構建 (LangChain) | 快速打造 Chatbot, RAG 原型 |
 
 ## 5.3 整合策略與風險
 

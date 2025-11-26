@@ -19,9 +19,9 @@ format:
   html:
     theme: cosmo
     number-sections: true
-  pdf:
-    documentclass: scrreprt
-    pdf-engine: xelatex
-    mainfont: "Noto Serif TC"
-    sansfont: "Noto Serif TC"
-    CJKmainfont: "Noto Serif TC"
+  # pdf:
+  #   documentclass: scrreprt
+  #   pdf-engine: xelatex
+  #   mainfont: "Noto Serif TC"
+  #   sansfont: "Noto Serif TC"
+  #   CJKmainfont: "Noto Serif TC"
