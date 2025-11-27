@@ -326,9 +326,9 @@ TSWLatexianTemp*
 #*Notes.bib
 
 # Quarto
-/.quarto/
-*/_book/
-*/_site/
+**/.quarto/
+**/_book/
+**/_site/
 
 **/*.quarto_ipynb
 **/*.pdf

@@ -338,7 +338,7 @@ questions:
   - id: 2025
     chapter_title: "進階提示工程"
     section_title: "提示攻擊與防禦"
-    text: "使用 `"""` 包裹使用者輸入是為了？"
+    text: '使用 `"""` 包裹使用者輸入是為了？'
     type: multiple_choice
     options:
       - "標示註解"
