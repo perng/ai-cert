@@ -8,7 +8,7 @@ label: sec-chapter7
 
 深度學習 (Deep Learning) 是機器學習的一個分支，靈感來自人類大腦的神經元運作方式。從簡單的感知機到如今強大的 Transformer，神經網路架構經歷了數十年的演進，每一次的突破都帶來了 AI 能力的飛躍。
 
-## 7.1 基礎神經網路 {#sec-basic-nn}
+## 基礎神經網路 {#sec-basic-nn}
 
 ### 多層感知機 (MLP, Multi-Layer Perceptron) {#sec-mlp}
 
@@ -79,7 +79,7 @@ label: sec-chapter7
 
 ![優化器](images/optimizer.png)
 
-## 7.2 經典深度架構 {#sec-deep-architectures}
+## 經典深度架構 {#sec-deep-architectures}
 
 ### 卷積神經網路 (CNN, Convolutional Neural Networks) {#sec-cnn}
 
@@ -129,7 +129,7 @@ label: sec-chapter7
 
 ![RNN](images/rnn.png)
 
-## 7.3 Transformer 與注意力機制 {#sec-transformer}
+## Transformer 與注意力機制 {#sec-transformer}
 
 2017 年 Google 發表論文《Attention Is All You Need》，徹底改變了 NLP 領域，也開啟了大型語言模型 (LLM) 的時代。
 

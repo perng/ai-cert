@@ -10,7 +10,7 @@ label: sec-chapter4
 
 簡單來說，特徵工程就是**將原始資料轉換為更能代表問題本質的特徵**，讓演算法更容易理解和學習。
 
-## 4.1 數值特徵處理 {#sec-numerical-features}
+## 數值特徵處理 {#sec-numerical-features}
 
 數值資料（如身高、價格、次數）看似可以直接使用，但往往需要經過轉換才能發揮最大效用。
 
@@ -59,7 +59,7 @@ label: sec-chapter4
             *   60+: 老年
     *   **效果**：增加模型的**魯棒性 (Robustness)**，防止模型過度關注「25 歲和 26 歲有什麼不同」。
     ![特徵轉換](images/feature_transformation.png)
-## 4.2 類別特徵編碼 {#sec-categorical-encoding}
+## 類別特徵編碼 {#sec-categorical-encoding}
 
 機器學習模型通常是數學公式，只看得懂數字，看不懂文字。我們需要將類別資料（如顏色、城市）轉換為數字。
 
@@ -91,7 +91,7 @@ label: sec-chapter4
 
 ![特徵嵌入](images/feature_embedding.png)
 
-## 4.3 進階特徵技巧 {#sec-advanced-features}
+## 進階特徵技巧 {#sec-advanced-features}
 
 ### 特徵交叉 (Feature Cross)
 
@@ -135,7 +135,7 @@ label: sec-chapter4
     *   模型在訓練過程中自動決定特徵重要性。
     *   例如：**Lasso 回歸 (L1 Regularization)** 會自動將不重要特徵的係數變成 0；**決策樹/隨機森林** 會計算 Feature Importance。
 
-## 4.4 不平衡資料處理 (Imbalanced Data) {#sec-imbalanced-data}
+## 不平衡資料處理 (Imbalanced Data) {#sec-imbalanced-data}
 
 在現實應用中（如詐欺偵測、罕見疾病篩檢、工廠瑕疵檢測），正樣本（異常）通常極少，負樣本（正常）極多。
 

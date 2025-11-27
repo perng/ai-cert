@@ -8,7 +8,7 @@ label: sec-chapter9
 
 訓練完模型只是第一步，更重要的是知道它「好不好用」。如果沒有正確的評估，你可能會把一個只會死記硬背的模型誤認為天才。
 
-## 9.1 評估流程與指標 {#sec-evaluation-metrics}
+## 評估流程與指標 {#sec-evaluation-metrics}
 
 ### 資料集劃分 (Data Splitting) {#sec-data-split}
 
@@ -95,7 +95,7 @@ label: sec-chapter9
 
 ![迴歸指標](images/regression-metrics.png)
 
-## 9.2 誤差分析與正則化 {#sec-error-analysis}
+## 誤差分析與正則化 {#sec-error-analysis}
 
 ### 偏差-變異權衡 (Bias-Variance Tradeoff) {#sec-bias-variance}
 

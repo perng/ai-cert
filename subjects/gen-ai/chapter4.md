@@ -8,7 +8,7 @@ label: sec-gen-chapter4
 
 > **考點摘要**：從對話走向行動，Agent 的規劃、工具使用與多代理協作是進階考點。
 
-## 4.1 Agent 架構與組件
+## Agent 架構與組件
 
 傳統的 Chatbot 只能「說」，而 Agent (代理人) 能夠「做」。Agent 具備感知環境、進行決策並執行行動的能力。
 
@@ -40,7 +40,7 @@ label: sec-gen-chapter4
     *   **深度優先搜尋 (DFS)**：選定一條路一直走到底，如果不通再回頭。適合需要深入挖掘的任務。
     *   **最佳優先搜尋 (Best-First Search)**：評估哪條路看起來最有希望 (Heuristic)，優先走那條。
 
-## 4.2 多代理系統 (Multi-Agent Systems, MAS)
+## 多代理系統 (Multi-Agent Systems, MAS)
 
 當任務太複雜，一個 Agent 做不來時，我們就需要一個團隊。
 

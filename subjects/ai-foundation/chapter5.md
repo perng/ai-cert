@@ -12,7 +12,7 @@ label: sec-chapter5
   1.  **分類 (Classification)**：預測的是**類別**（離散值）。例如：這封信是垃圾郵件嗎？（是/否）、這張照片是貓還是狗？
   2.  **迴歸 (Regression)**：預測的是**數值**（連續值）。例如：明天的氣溫是幾度？這間房子的房價是多少？
 
-## 5.1 分類演算法 (Classification) {#sec-classification}
+## 分類演算法 (Classification) {#sec-classification}
 
 ### K-近鄰演算法 (KNN, K-Nearest Neighbors) {#sec-knn}
 
@@ -120,7 +120,7 @@ label: sec-chapter5
 ![隨機森林](images/random-forest.png)
 
 
-## 5.2 集成學習 (Ensemble Learning) {#sec-ensemble}
+## 集成學習 (Ensemble Learning) {#sec-ensemble}
 
 三個臭皮匠，勝過諸葛亮。集成學習的核心思想是結合多個弱學習器 (Weak Learners) 來構建一個強學習器 (Strong Learner)。主要分為兩大流派：**Bagging** 與 **Boosting**。
 
@@ -165,7 +165,7 @@ label: sec-chapter5
 | **運算速度** | 快（可平行運算）。 | 慢（必須依序訓練）。 |
 
 
-## 5.3 迴歸演算法 (Regression) {#sec-regression}
+## 迴歸演算法 (Regression) {#sec-regression}
 
 目標是預測一個連續的數值（如房價、銷量）。
 
@@ -219,7 +219,7 @@ label: sec-chapter5
 | **主要功能** | **特徵選擇** (排除無用特徵) | **防止過擬合** (處理共線性) |
 | **幾何解釋** | 解空間是菱形 (容易切到軸上) | 解空間是圓形 |
 
-## 5.4 演算法比較總結 {#sec-algo-comparison}
+## 演算法比較總結 {#sec-algo-comparison}
 
 | 演算法 | 類型 | 核心特點 | 適用情境 | 缺點 |
 | :--- | :--- | :--- | :--- | :--- |

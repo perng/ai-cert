@@ -8,7 +8,7 @@ label: sec-chapter10
 
 隨著 AI 模型越來越複雜（尤其是深度學習），它們變成了「黑箱 (Black Box)」。我們把資料丟進去，答案跑出來，但沒人知道中間發生了什麼。在醫療、金融、法律等高風險領域，我們不能只知道「結果」，必須知道「原因」。這就是**可解釋 AI (Explainable AI, XAI)** 的使命。
 
-## 10.1 XAI 的層次 {#sec-xai-levels}
+## XAI 的層次 {#sec-xai-levels}
 
 ### 黑箱模型 vs. 白箱模型 {#sec-black-white-box}
 
@@ -32,7 +32,7 @@ label: sec-chapter10
 
 ![全局解釋 vs. 局部解釋](images/global-local.png)
 
-## 10.2 解釋技術與工具 {#sec-xai-techniques}
+## 解釋技術與工具 {#sec-xai-techniques}
 
 ### LIME (Local Interpretable Model-agnostic Explanations) {#sec-lime}
 

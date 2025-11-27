@@ -20,7 +20,7 @@ label: sec-chapter8
 | **典型應用** | 垃圾郵件過濾、人臉辨識、房價預測 | 寫作、繪圖、作曲、寫程式 |
 | **代表模型** | Logistic Regression, SVM, CNN (分類用) | VAE, GAN, Diffusion, Transformer (GPT) |
 
-## 8.1 生成式模型原理 {#sec-generative-models}
+## 生成式模型原理 {#sec-generative-models}
 
 ### 變分自編碼器 (VAE, Variational Autoencoder) {#sec-vae}
 
@@ -83,7 +83,7 @@ label: sec-chapter8
 
 ![Diffusion](images/diffusion.png)
 
-## 8.2 大型語言模型 (LLM) 技術 {#sec-llm-tech}
+## 大型語言模型 (LLM) 技術 {#sec-llm-tech}
 
 LLM (Large Language Model) 如 GPT 系列，本質上是一個超巨大的「文字接龍」機器。
 
@@ -190,7 +190,7 @@ LLM (Large Language Model) 如 GPT 系列，本質上是一個超巨大的「文
 
 ![提示工程](images/prompt-engineering.png)
 
-## 8.3 LLM 優化與應用架構 {#sec-llm-optimization}
+## LLM 優化與應用架構 {#sec-llm-optimization}
 
 ### 檢索增強生成 (RAG, Retrieval-Augmented Generation) {#sec-rag}
 

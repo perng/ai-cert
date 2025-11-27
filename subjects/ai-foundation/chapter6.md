@@ -8,7 +8,7 @@ label: sec-chapter6
 
 如果說監督式學習是「有老師教」，那麼**非監督式學習 (Unsupervised Learning)** 就是「自修」，讓 AI 在沒有標準答案的情況下，自己從資料中尋找隱藏的結構。而**強化學習 (Reinforcement Learning)** 則是「從做中學」，像生物一樣透過與環境互動、嘗試錯誤來學習生存策略。
 
-## 6.1 分群演算法 (Clustering) {#sec-clustering}
+## 分群演算法 (Clustering) {#sec-clustering}
 
 分群的目標是「物以類聚」，將相似的資料點歸為同一群，而群與群之間差異越大越好。
 
@@ -72,7 +72,7 @@ label: sec-chapter6
 
 ![DBSCAN](images/dbscan.png)
 
-## 6.2 關聯規則與降維 {#sec-association-rules}
+## 關聯規則與降維 {#sec-association-rules}
 
 ### Apriori 演算法 (購物籃分析) {#sec-apriori}
 
@@ -133,7 +133,7 @@ label: sec-chapter6
 
 ![Autoencoder](images/autoencoder.png)
 
-## 6.3 強化學習 (Reinforcement Learning) {#sec-reinforcement-learning-detail}
+## 強化學習 (Reinforcement Learning) {#sec-reinforcement-learning-detail}
 
 強化學習是 AI 邁向自主決策的關鍵，目標是訓練一個 Agent 在環境中採取行動，以最大化累積獎勵。
 

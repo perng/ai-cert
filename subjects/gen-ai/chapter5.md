@@ -8,7 +8,7 @@ label: sec-gen-chapter5
 
 > **考點摘要**：結合傳統 Low Code 概念與新一代 AI Native 開發工具，強調非技術人員的賦能與開發效率。
 
-## 5.1 平台特性與選擇 (理論基礎)
+## 平台特性與選擇 (理論基礎)
 
 ### 1. No Code vs. Low Code
 這兩者都是為了加速開發，但目標客群與適用場景不同。
@@ -29,7 +29,7 @@ label: sec-gen-chapter5
 *   它抽象地描述了資料結構（如客戶資料表包含姓名、電話）、業務流程（訂單審核流程）與介面邏輯。
 *   這讓開發者可以專注於業務邏輯，而不用管底層的資料庫語法。
 
-## 5.2 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
+## 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
 
 新一代的開發工具深度整合了生成式 AI，模糊了 Coding 與 No Code 的界線。
 
@@ -95,7 +95,7 @@ label: sec-gen-chapter5
 | **ComfyUI** | Visual Orchestration | 節點式 Stable Diffusion 工作流 | 進階 AI 圖像/影片生成 |
 | **LangFlow / Flowise** | Visual Orchestration | 視覺化 LLM/RAG 應用構建 (LangChain) | 快速打造 Chatbot, RAG 原型 |
 
-## 5.3 整合策略與風險
+## 整合策略與風險
 
 ### 1. 影子 IT (Shadow IT)
 *   **定義**：員工在未經 IT 部門核准的情況下，擅自使用外部的 No Code/AI 工具來處理公務。

@@ -8,7 +8,7 @@ label: sec-chapter11
 
 AI 的強大能力伴隨著巨大的風險。如何確保 AI 是向善的 (AI for Good)，而不是帶來歧視、侵犯隱私或失控，是當前各國政府與企業最關注的議題。這不僅是道德問題，更是法律合規問題。
 
-## 11.1 倫理原則與風險管理 {#sec-ethics-risk}
+## 倫理原則與風險管理 {#sec-ethics-risk}
 
 ### 公平性與偏見 (Bias & Fairness) {#sec-bias-fairness}
 
@@ -48,7 +48,7 @@ AI 模型是從歷史數據中學習的，如果歷史數據包含人類的偏�
 *   當 AI 犯錯（如自駕車撞人、醫療 AI 誤診）時，誰該負責？是開發者、使用者，還是 AI 本身？
 *   **人機協作 (Human-in-the-loop)**：目前的共識是，高風險決策（如醫療、司法）不能全交給 AI，必須有人類專家介入審核。最終決策權與責任仍在人類身上。
 
-## 11.2 台灣與國際法規架構 {#sec-regulations}
+## 台灣與國際法規架構 {#sec-regulations}
 
 ### 台灣《人工智慧基本法》草案 {#sec-taiwan-ai-law}
 
@@ -101,7 +101,7 @@ AI 模型是從歷史數據中學習的，如果歷史數據包含人類的偏�
 
 ![EU AI Act](images/eu-ai-act.png)
 
-## 11.3 AI 產品評測標準 {#sec-ai-evaluation}
+## AI 產品評測標準 {#sec-ai-evaluation}
 
 ### 數位發展部 AI 產品與系統評測中心 {#sec-moda-eval}
 

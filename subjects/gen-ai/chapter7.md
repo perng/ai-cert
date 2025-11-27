@@ -8,7 +8,7 @@ label: sec-gen-chapter7
 
 > **考點摘要**：生成內容特有的風險與資安攻擊手法。
 
-## 7.1 生成式 AI 特有資安威脅
+## 生成式 AI 特有資安威脅
 
 ### 1. 提示注入 (Prompt Injection)
 這是 LLM 時代最經典的攻擊手法。
@@ -23,7 +23,7 @@ label: sec-gen-chapter7
     *   **Zero-Retention (零留存)**：確保 API 供應商（如 OpenAI Enterprise 版）承諾不保留使用者的輸入資料，也不用其來訓練模型。
     *   **去識別化 (De-identification)**：在將資料送給 AI 前，先將姓名、身分證字號替換成代碼。
 
-## 7.2 隱私強化技術 (Privacy-Enhancing Technologies, PETs)
+## 隱私強化技術 (Privacy-Enhancing Technologies, PETs)
 
 ### 1. 同態加密 (Homomorphic Encryption)
 這被視為隱私保護的聖杯。
@@ -35,7 +35,7 @@ label: sec-gen-chapter7
 *   **概念**：多個參與者共同計算一個函數的結果，但不需要公開各自的私密輸入。
 *   **例子**：百萬富翁問題。兩個富翁想知道誰比較有錢，但不想告訴對方自己具體有多少錢。
 
-## 7.3 合規與治理
+## 合規與治理
 
 ### 1. 幻覺 (Hallucination)
 *   **定義**：AI 生成看似合理但與事實不符的內容。

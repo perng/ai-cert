@@ -8,7 +8,7 @@ label: sec-chapter3
 
 在 AI 的世界裡，有一句名言：「垃圾進，垃圾出 (Garbage In, Garbage Out, GIGO)」。無論你的模型多麼先進，如果餵給它的資料品質低劣，結果也將毫無價值。本章將探討資料如何從原始狀態，經過層層處理，最終變成模型可用的燃料。
 
-## 3.1 資料類型與儲存 (Data Types & Storage) {#sec-data-types-storage}
+## 資料類型與儲存 (Data Types & Storage) {#sec-data-types-storage}
 
 在建立資料管道之前，我們必須先了解手上有什麼樣的資料，以及該把它存在哪裡。
 
@@ -41,7 +41,7 @@ label: sec-chapter3
 
 ![SQL vs NoSQL](images/sql-vs-nosql.png)
 
-## 3.2 資料管道 (Data Pipeline) {#sec-data-pipeline}
+## 資料管道 (Data Pipeline) {#sec-data-pipeline}
 
 資料管道就像是城市的**供水系統**。水源（原始資料）可能來自水庫、河流或地下水，必須經過過濾、消毒、輸送（處理過程），最後才能從家裡的水龍頭流出乾淨的自來水（可用資料）。
 
@@ -105,7 +105,7 @@ label: sec-chapter3
 
 ![批次處理 vs. 串流處理](images/batch-vs-streaming.png)
 
-## 3.3 探索性資料分析 (Exploratory Data Analysis, EDA) {#sec-eda}
+## 探索性資料分析 (Exploratory Data Analysis, EDA) {#sec-eda}
 
 在正式建模之前，我們必須先「認識」資料。探索性資料分析 (Exploratory Data Analysis, EDA) 就像是**相親**，你需要透過各種方式了解對方的個性、習慣和背景。
 
@@ -215,7 +215,7 @@ label: sec-chapter3
 *   **盒鬚圖 (Box Plot)**：快速看出資料的分佈範圍、中位數以及**離群值**。
 ![Box Plot](images/box-plot.png)
 
-## 3.4 資料清理與品質管理 {#sec-data-cleaning}
+## 資料清理與品質管理 {#sec-data-cleaning}
 
 現實世界的資料往往是髒亂的。資料清理 (Data Cleaning) 通常佔據資料科學家 80% 的時間。
 

@@ -8,7 +8,7 @@ label: sec-gen-chapter3
 
 > **考點摘要**：解決 AI 幻覺與時效性問題的主流架構，考題常涉及 RAG 與 Fine-tuning 的選擇決策。
 
-## 3.1 模型微調 (Fine-tuning) 與優化
+## 模型微調 (Fine-tuning) 與優化
 
 在企業導入生成式 AI 時，最常面臨的抉擇就是：**該用 RAG 還是 Fine-tuning？**
 
@@ -40,7 +40,7 @@ label: sec-gen-chapter3
         *   Teacher 傳遞出的「這張圖有點像貓」的資訊 (Dark Knowledge)，能幫助 Student 學得更好。
 *   **應用**：將 GPT-4 的能力蒸餾到 LLaMA-7B 或更小的模型中，以降低推論成本並提升速度。
 
-## 3.2 Model Context Protocol (MCP)
+## Model Context Protocol (MCP)
 
 隨著 AI 應用越來越複雜，我們需要讓 AI 連接更多的工具與資料源。MCP 應運而生。
 
