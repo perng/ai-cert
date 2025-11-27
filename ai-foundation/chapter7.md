@@ -1,4 +1,10 @@
-# 神經網路架構演進 (Neural Network Architecture Evolution)
+---
+title: "神經網路架構演進 (Neural Network Architecture Evolution)"
+order: 7
+label: sec-chapter7
+---
+
+<!-- # 神經網路架構演進 (Neural Network Architecture Evolution) -->
 
 深度學習 (Deep Learning) 是機器學習的一個分支，靈感來自人類大腦的神經元運作方式。從簡單的感知機到如今強大的 Transformer，神經網路架構經歷了數十年的演進，每一次的突破都帶來了 AI 能力的飛躍。
 

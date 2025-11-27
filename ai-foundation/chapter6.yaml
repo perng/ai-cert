@@ -1,0 +1,560 @@
+questions:
+  - id: 6001
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "非監督式學習概述"
+    text: "非監督式學習 (Unsupervised Learning) 的核心特徵是什麼？"
+    type: multiple_choice
+    options:
+      - "有老師教導標準答案"
+      - "沒有標準答案，模型需自行尋找隱藏結構"
+      - "透過獎勵與懲罰學習"
+      - "需要預訓練模型"
+    correct_index: 1
+    explanation: "非監督式學習就像自修，資料沒有標籤，模型必須自己找出資料中的規律或結構。"
+    tags: ["sec-chapter6", "sec-chapter6-summary"]
+
+  - id: 6002
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "分群演算法"
+    text: "分群 (Clustering) 的主要目標是什麼？"
+    type: multiple_choice
+    options:
+      - "預測未來的數值"
+      - "將相似的資料歸為同一群，群間差異最大化"
+      - "找出變數間的因果關係"
+      - "將資料壓縮到低維度"
+    correct_index: 1
+    explanation: "分群旨在實現「物以類聚」，讓同一群內的資料越像越好，不同群之間的差異越大越好。"
+    tags: ["sec-chapter6", "sec-clustering"]
+
+  - id: 6003
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "分群演算法"
+    text: "K-means 演算法的一個主要缺點是什麼？"
+    type: multiple_choice
+    options:
+      - "計算速度太慢"
+      - "必須事先指定 K 值（群數）"
+      - "只能處理文字資料"
+      - "無法處理數值資料"
+    correct_index: 1
+    explanation: "K-means 需要使用者預先設定 K 值，若設錯 K 值（如將 3 群硬分成 2 群），效果會很差。"
+    tags: ["sec-chapter6", "sec-kmeans"]
+
+  - id: 6004
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "分群演算法"
+    text: "決定 K-means 最佳 K 值的常用方法是？"
+    type: multiple_choice
+    options:
+      - "手肘法 (Elbow Method)"
+      - "隨機猜測"
+      - "看心情"
+      - "使用梯度下降"
+    correct_index: 0
+    explanation: "手肘法透過觀察誤差平方和 (SSE) 隨 K 值增加的下降趨勢，找出下降幅度變緩的轉折點（手肘處）。"
+    tags: ["sec-chapter6", "sec-kmeans"]
+
+  - id: 6005
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "分群演算法"
+    text: "DBSCAN 演算法是基於什麼概念進行分群的？"
+    type: multiple_choice
+    options:
+      - "距離平均值"
+      - "資料密度 (Density)"
+      - "樹狀結構"
+      - "機率分佈"
+    correct_index: 1
+    explanation: "DBSCAN 透過尋找高密度區域來形成群聚，能找出任意形狀的群，並排除低密度的雜訊。"
+    tags: ["sec-chapter6", "sec-dbscan"]
+
+  - id: 6006
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "分群演算法"
+    text: "如果資料形狀是不規則的（如彎月形），應優先選擇哪種分群演算法？"
+    type: multiple_choice
+    options:
+      - "K-means"
+      - "DBSCAN"
+      - "線性迴歸"
+      - "PCA"
+    correct_index: 1
+    explanation: "K-means 假設群聚是球形的，難以處理不規則形狀；DBSCAN 則能順著密度連通性找出任意形狀。"
+    tags: ["sec-chapter6", "sec-dbscan"]
+
+  - id: 6007
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "分群演算法"
+    text: "階層式分群 (Hierarchical Clustering) 的結果通常用什麼圖表呈現？"
+    type: multiple_choice
+    options:
+      - "散佈圖"
+      - "樹狀圖 (Dendrogram)"
+      - "長條圖"
+      - "圓餅圖"
+    correct_index: 1
+    explanation: "樹狀圖能完整呈現資料如何一步步合併或分裂的層次結構。"
+    tags: ["sec-chapter6", "sec-hierarchical-clustering"]
+
+  - id: 6008
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "關聯規則"
+    text: "「啤酒與尿布」的故事是哪種演算法的經典案例？"
+    type: multiple_choice
+    options:
+      - "K-means"
+      - "Apriori (關聯規則)"
+      - "DBSCAN"
+      - "Random Forest"
+    correct_index: 1
+    explanation: "這是購物籃分析的經典案例，利用 Apriori 演算法找出商品間的關聯性。"
+    tags: ["sec-chapter6", "sec-apriori"]
+
+  - id: 6009
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "關聯規則"
+    text: "在關聯規則中，「支持度 (Support)」代表什麼？"
+    type: multiple_choice
+    options:
+      - "規則的可信度"
+      - "某個商品組合在所有交易中出現的頻率"
+      - "兩個商品之間的相關係數"
+      - "商品的價格"
+    correct_index: 1
+    explanation: "Support 衡量一個組合（如同時買 A 和 B）在資料庫中出現的普遍程度。"
+    tags: ["sec-chapter6", "sec-apriori"]
+
+  - id: 6010
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "關聯規則"
+    text: "在關聯規則中，「提升度 (Lift)」大於 1 代表什麼？"
+    type: multiple_choice
+    options:
+      - "兩者無關"
+      - "兩者呈負相關"
+      - "兩者呈正相關（買 A 會提升買 B 的機率）"
+      - "計算錯誤"
+    correct_index: 2
+    explanation: "Lift > 1 表示 A 的出現會增加 B 出現的機率，兩者有正向關聯。"
+    tags: ["sec-chapter6", "sec-apriori"]
+
+  - id: 6011
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "降維技術"
+    text: "主成分分析 (PCA) 的核心目標是什麼？"
+    type: multiple_choice
+    options:
+      - "將資料分類"
+      - "找出變異量 (Variance) 最大的投影方向以保留最多資訊"
+      - "增加資料維度"
+      - "消除所有雜訊"
+    correct_index: 1
+    explanation: "PCA 試圖找到一個新的視角（主成分），讓資料投影後分得最開（變異最大），從而保留最多資訊。"
+    tags: ["sec-chapter6", "sec-association-rules"]
+
+  - id: 6012
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "降維技術"
+    text: "PCA 是一種什麼類型的降維技術？"
+    type: multiple_choice
+    options:
+      - "線性降維"
+      - "非線性降維"
+      - "基於樹的降維"
+      - "基於密度的降維"
+    correct_index: 0
+    explanation: "PCA 透過線性變換（矩陣運算）進行投影，無法處理非線性的流形結構（如捲曲的瑞士捲）。"
+    tags: ["sec-chapter6", "sec-association-rules"]
+
+  - id: 6013
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "降維技術"
+    text: "自動編碼器 (Autoencoder) 的訓練目標是什麼？"
+    type: multiple_choice
+    options:
+      - "預測標籤"
+      - "最小化輸入與輸出之間的還原誤差"
+      - "最大化分類準確率"
+      - "最大化獎勵"
+    correct_index: 1
+    explanation: "Autoencoder 試圖將輸入壓縮後再還原，目標是讓還原後的輸出盡可能接近原始輸入。"
+    tags: ["sec-chapter6", "sec-association-rules"]
+
+  - id: 6014
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "降維技術"
+    text: "Autoencoder 可以用於什麼應用？"
+    type: multiple_choice
+    options:
+      - "圖像去噪 (Denoising)"
+      - "股價預測"
+      - "垃圾郵件分類"
+      - "路徑規劃"
+    correct_index: 0
+    explanation: "透過學習資料的核心特徵，Autoencoder 能學會忽略輸入圖片中的隨機雜訊，還原出乾淨的圖片。"
+    tags: ["sec-chapter6", "sec-association-rules"]
+
+  - id: 6015
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "強化學習"
+    text: "強化學習 (Reinforcement Learning) 的核心目標是什麼？"
+    type: multiple_choice
+    options:
+      - "最小化誤差"
+      - "最大化累積獎勵 (Cumulative Reward)"
+      - "預測下一個狀態"
+      - "分類正確率最高"
+    correct_index: 1
+    explanation: "Agent 的目標是透過一連串的行動，獲得長期下來最多的總獎勵。"
+    tags: ["sec-chapter6", "sec-reinforcement-learning-detail"]
+
+  - id: 6016
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "強化學習"
+    text: "在強化學習中，「探索 (Exploration)」是指？"
+    type: multiple_choice
+    options:
+      - "選擇目前已知最好的行動"
+      - "嘗試未知的行動以尋找潛在更好的策略"
+      - "停止行動"
+      - "分析歷史數據"
+    correct_index: 1
+    explanation: "探索是為了跳出局部最佳解，嘗試新的可能性，雖然有風險但可能發現更好的策略。"
+    tags: ["sec-chapter6", "sec-reinforcement-learning-detail"]
+
+  - id: 6017
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "強化學習"
+    text: "Q-Learning 演算法使用什麼來儲存學習到的知識？"
+    type: multiple_choice
+    options:
+      - "神經網路"
+      - "決策樹"
+      - "Q-Table (查閱表)"
+      - "線性方程式"
+    correct_index: 2
+    explanation: "Q-Learning 使用一個表格 (Q-Table) 來記錄每個狀態下採取每個行動的預期獎勵 (Q-Value)。"
+    tags: ["sec-chapter6", "sec-rl-algorithms"]
+
+  - id: 6018
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "強化學習"
+    text: "Deep Q-Network (DQN) 解決了 Q-Learning 的什麼問題？"
+    type: multiple_choice
+    options:
+      - "計算速度慢"
+      - "維度災難 (狀態過多導致表格存不下)"
+      - "無法處理負獎勵"
+      - "只能處理離散動作"
+    correct_index: 1
+    explanation: "DQN 用深度神經網路取代龐大的 Q-Table，能處理像圍棋或電玩畫面這種狀態無限多的問題。"
+    tags: ["sec-chapter6", "sec-rl-algorithms"]
+
+  - id: 6019
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "強化學習"
+    text: "DQN 中的「經驗重播 (Experience Replay)」機制有什麼作用？"
+    type: multiple_choice
+    options:
+      - "節省記憶體"
+      - "打破資料的時間相關性，讓訓練更穩定"
+      - "加快訓練速度"
+      - "增加獎勵值"
+    correct_index: 1
+    explanation: "透過隨機抽取過去的經驗來訓練，避免模型因為資料的高度連續性而鑽牛角尖（過擬合於近期經驗）。"
+    tags: ["sec-chapter6", "sec-rl-algorithms"]
+
+  - id: 6020
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "強化學習"
+    text: "DQN 中的「目標網路 (Target Network)」主要用於解決什麼問題？"
+    type: multiple_choice
+    options:
+      - "目標值變動過快導致訓練難以收斂"
+      - "計算量過大"
+      - "梯度消失"
+      - "過度擬合"
+    correct_index: 0
+    explanation: "固定目標網路一段時間，就像固定射箭的靶心，讓主網路能穩定地學習更新。"
+    tags: ["sec-chapter6", "sec-rl-algorithms"]
+
+  - id: 6021
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "分群演算法"
+    text: "下列何者不是 K-means 演算法的步驟？"
+    type: multiple_choice
+    options:
+      - "隨機初始化中心點"
+      - "計算每個點到中心的距離並分配群組"
+      - "計算梯度下降"
+      - "更新中心點位置"
+    correct_index: 2
+    explanation: "K-means 使用迭代更新中心點的方式，而非梯度下降法。"
+    tags: ["sec-chapter6", "sec-kmeans"]
+
+  - id: 6022
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "分群演算法"
+    text: "DBSCAN 對於「離群值 (Outliers)」的處理方式是？"
+    type: multiple_choice
+    options:
+      - "將其歸類到最近的一群"
+      - "將其視為雜訊 (Noise) 並排除"
+      - "刪除整個資料集"
+      - "強制分為單獨的一群"
+    correct_index: 1
+    explanation: "DBSCAN 能自動識別低密度區域的點為雜訊，不會強迫將其歸類。"
+    tags: ["sec-chapter6", "sec-dbscan"]
+
+  - id: 6023
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "關聯規則"
+    text: "如果 Confidence(A -> B) = 100%，代表什麼？"
+    type: multiple_choice
+    options:
+      - "買 A 的人一定會買 B"
+      - "買 B 的人一定會買 A"
+      - "A 和 B 是同一種商品"
+      - "資料有誤"
+    correct_index: 0
+    explanation: "信心度 100% 代表在包含 A 的所有交易中，B 也都出現了。"
+    tags: ["sec-chapter6", "sec-apriori"]
+
+  - id: 6024
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "降維技術"
+    text: "t-SNE 主要用於什麼目的？"
+    type: multiple_choice
+    options:
+      - "資料壓縮儲存"
+      - "高維資料的視覺化 (2D/3D)"
+      - "特徵選擇"
+      - "線性迴歸"
+    correct_index: 1
+    explanation: "t-SNE 擅長將高維數據映射到低維空間並保留局部結構，非常適合用於視覺化。"
+    tags: ["sec-chapter6", "sec-association-rules"]
+
+  - id: 6025
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "強化學習"
+    text: "在強化學習中，「狀態 (State)」是指？"
+    type: multiple_choice
+    options:
+      - "Agent 採取的動作"
+      - "Agent 當前所處的情況或環境畫面"
+      - "獲得的獎勵分數"
+      - "遊戲的規則"
+    correct_index: 1
+    explanation: "狀態描述了 Agent 在特定時間點所觀察到的環境資訊。"
+    tags: ["sec-chapter6", "sec-rl-elements"]
+
+  - id: 6026
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "強化學習"
+    text: "$\epsilon$-Greedy 策略中的 $\epsilon$ (Epsilon) 通常代表什麼機率？"
+    type: multiple_choice
+    options:
+      - "利用的機率"
+      - "探索 (隨機行動) 的機率"
+      - "成功的機率"
+      - "失敗的機率"
+    correct_index: 1
+    explanation: "$\epsilon$ 是設定用來進行隨機探索的機率，例如 10% 的時間亂走，90% 的時間選最好的。"
+    tags: ["sec-chapter6", "sec-reinforcement-learning-detail"]
+
+  - id: 6027
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "分群演算法"
+    text: "階層式分群的「聚合式 (Agglomerative)」策略是？"
+    type: multiple_choice
+    options:
+      - "由上而下分裂"
+      - "由下而上合併"
+      - "隨機分群"
+      - "基於密度分群"
+    correct_index: 1
+    explanation: "聚合式策略一開始將每個點視為一群，然後逐步合併最近的群，直到剩下一大群。"
+    tags: ["sec-chapter6", "sec-hierarchical-clustering"]
+
+  - id: 6028
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "非監督式學習概述"
+    text: "下列哪項任務屬於非監督式學習？"
+    type: multiple_choice
+    options:
+      - "預測房價"
+      - "分辨貓和狗的照片"
+      - "將新聞文章自動分組"
+      - "下圍棋"
+    correct_index: 2
+    explanation: "新聞分組（分群）通常沒有預定義的標籤，屬於非監督式學習。"
+    tags: ["sec-chapter6", "sec-clustering"]
+
+  - id: 6029
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "降維技術"
+    text: "PCA 轉換後的第一主成分 (PC1) 具有什麼特性？"
+    type: multiple_choice
+    options:
+      - "變異量最小"
+      - "變異量最大 (解釋最多的資料變異)"
+      - "與原始特徵完全無關"
+      - "總是垂直於第二主成分"
+    correct_index: 1
+    explanation: "PC1 是資料投影後變異量最大的方向，保留了最多的資訊。"
+    tags: ["sec-chapter6", "sec-association-rules"]
+
+  - id: 6030
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "強化學習"
+    text: "AlphaGo Zero 與 AlphaGo 的最大不同在於？"
+    type: multiple_choice
+    options:
+      - "AlphaGo Zero 需要人類棋譜"
+      - "AlphaGo Zero 完全不需要人類棋譜，從零開始自我對弈學習"
+      - "AlphaGo Zero 使用了監督式學習"
+      - "AlphaGo Zero 運算更慢"
+    correct_index: 1
+    explanation: "AlphaGo Zero 證明了強化學習可以不依賴人類知識，僅憑規則和自我對弈就能達到超人類水準。"
+    tags: ["sec-chapter6", "sec-reinforcement-learning-detail"]
+
+  - id: 6031
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "分群演算法"
+    text: "K-means 對離群值敏感的原因是？"
+    type: multiple_choice
+    options:
+      - "因為它使用中位數"
+      - "因為它使用平均數，極端值會拉動中心點"
+      - "因為它忽略距離"
+      - "因為它只看密度"
+    correct_index: 1
+    explanation: "平均數容易受極端值影響，導致 K-means 的群中心偏移。"
+    tags: ["sec-chapter6", "sec-kmeans"]
+
+  - id: 6032
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "關聯規則"
+    text: "在 Apriori 演算法中，如果 Support 太低，通常會怎麼處理？"
+    type: multiple_choice
+    options:
+      - "視為重要規則"
+      - "視為雜訊或偶然，通常過濾掉"
+      - "增加權重"
+      - "單獨分析"
+    correct_index: 1
+    explanation: "Support 太低代表該組合極少出現，統計意義不足，通常會設定門檻過濾掉。"
+    tags: ["sec-chapter6", "sec-apriori"]
+
+  - id: 6033
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "降維技術"
+    text: "Autoencoder 的「瓶頸層 (Bottleneck)」是指？"
+    type: multiple_choice
+    options:
+      - "輸入層"
+      - "輸出層"
+      - "中間維度最小的隱藏層"
+      - "損失函數"
+    correct_index: 2
+    explanation: "瓶頸層強迫模型將資訊壓縮到最低維度，提取出資料的最重要特徵。"
+    tags: ["sec-chapter6", "sec-association-rules"]
+
+  - id: 6034
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "強化學習"
+    text: "在強化學習中，「利用 (Exploitation)」過度會導致什麼問題？"
+    type: multiple_choice
+    options:
+      - "學不到任何東西"
+      - "陷入局部最佳解 (Local Optimum)，錯失更好的策略"
+      - "獎勵太高"
+      - "模型不穩定"
+    correct_index: 1
+    explanation: "如果只利用已知策略而不探索，AI 可能永遠不知道還有更好的走法。"
+    tags: ["sec-chapter6", "sec-reinforcement-learning-detail"]
+
+  - id: 6035
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "分群演算法"
+    text: "客戶分群 (Customer Segmentation) 屬於哪種商業應用？"
+    type: multiple_choice
+    options:
+      - "精準行銷"
+      - "庫存管理"
+      - "路徑規劃"
+      - "語音辨識"
+    correct_index: 0
+    explanation: "透過分群了解不同客戶群體的特性，能針對性地設計行銷活動。"
+    tags: ["sec-chapter6", "sec-clustering"]
+
+  - id: 6036
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "降維技術"
+    text: "PCA 的限制是無法處理哪種關係？"
+    type: multiple_choice
+    options:
+      - "線性關係"
+      - "非線性關係"
+      - "正相關"
+      - "負相關"
+    correct_index: 1
+    explanation: "PCA 是線性投影，對於非線性結構（如彎曲的流形）效果不佳。"
+    tags: ["sec-chapter6", "sec-association-rules"]
+
+  - id: 6037
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "強化學習"
+    text: "強化學習最適合應用於下列哪個領域？"
+    type: multiple_choice
+    options:
+      - "靜態影像分類"
+      - "歷史資料分析"
+      - "機器人控制與遊戲決策"
+      - "文本翻譯"
+    correct_index: 2
+    explanation: "機器人控制和遊戲涉及連續的決策與環境互動，是 RL 的強項。"
+    tags: ["sec-chapter6", "sec-reinforcement-learning-detail"]
+
+  - id: 6038
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "分群演算法"
+    text: "DBSCAN 中的 Epsilon ($\epsilon$) 參數代表？"
+    type: multiple_choice
+    options:
+      - "最小點數"
+      - "鄰域半徑"
+      - "群組數量"
+      - "學習率"
+    correct_index: 1
+    explanation: "Epsilon 定義了掃描密度的半徑範圍。"
+    tags: ["sec-chapter6", "sec-dbscan"]
+
+  - id: 6039
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "關聯規則"
+    text: "Lift = 0.5 代表 A 和 B 的關係是？"
+    type: multiple_choice
+    options:
+      - "正相關"
+      - "負相關"
+      - "獨立"
+      - "強烈相關"
+    correct_index: 1
+    explanation: "Lift < 1 代表負相關，即 A 出現時，B 出現的機率反而降低。"
+    tags: ["sec-chapter6", "sec-apriori"]
+
+  - id: 6040
+    chapter_title: "非監督式學習與強化學習"
+    section_title: "強化學習"
+    text: "Agent 在環境中採取行動後，會收到哪兩個回饋？"
+    type: multiple_choice
+    options:
+      - "新的狀態 (Next State) 與獎勵 (Reward)"
+      - "標籤與預測值"
+      - "權重與偏差"
+      - "輸入與輸出"
+    correct_index: 0
+    explanation: "這是 RL 的基本循環：Action -> Environment -> Next State + Reward。"
+    tags: ["sec-chapter6", "sec-rl-elements"]

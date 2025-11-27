@@ -1,4 +1,10 @@
-# 第六章：生成式 AI 專案管理與評估 (Project Planning & Eval) {#sec-project-planning}
+---
+title: "第六章：生成式 AI 專案管理與評估 (Project Planning & Eval)"
+order: 6
+label: sec-gen-chapter6
+---
+
+<!-- # 第六章：生成式 AI 專案管理與評估 (Project Planning & Eval) {#sec-project-planning} -->
 
 > **考點摘要**：涵蓋從 POC 到上線的完整流程，以及如何量化評估生成模型的好壞。
 

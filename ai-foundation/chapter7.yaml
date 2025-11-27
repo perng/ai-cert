@@ -1,0 +1,560 @@
+questions:
+  - id: 7001
+    chapter_title: "神經網路架構演進"
+    section_title: "基礎神經網路"
+    text: "多層感知機 (MLP) 又被稱為什麼？"
+    type: multiple_choice
+    options:
+      - "全連接網路 (Fully Connected Network)"
+      - "卷積神經網路 (CNN)"
+      - "循環神經網路 (RNN)"
+      - "Transformer"
+    correct_index: 0
+    explanation: "MLP 是最基礎的神經網路，所有神經元都與下一層的所有神經元相連，故稱全連接網路。"
+    tags: ["sec-chapter7", "sec-mlp"]
+
+  - id: 7002
+    chapter_title: "神經網路架構演進"
+    section_title: "基礎神經網路"
+    text: "神經網路中「隱藏層 (Hidden Layers)」的主要功能是什麼？"
+    type: multiple_choice
+    options:
+      - "接收原始輸入"
+      - "提取特徵與進行非線性轉換"
+      - "輸出最終結果"
+      - "儲存資料"
+    correct_index: 1
+    explanation: "隱藏層負責從輸入中提取複雜的特徵，層數越多，能學到的特徵越抽象。"
+    tags: ["sec-chapter7", "sec-mlp"]
+
+  - id: 7003
+    chapter_title: "神經網路架構演進"
+    section_title: "基礎神經網路"
+    text: "若沒有啟動函數 (Activation Function)，神經網路會變成什麼？"
+    type: multiple_choice
+    options:
+      - "深度學習模型"
+      - "線性模型 (Linear Model)"
+      - "隨機森林"
+      - "決策樹"
+    correct_index: 1
+    explanation: "沒有非線性的啟動函數，多層神經網路的運算僅是矩陣相乘，等同於單層的線性變換。"
+    tags: ["sec-chapter7", "sec-activation-functions"]
+
+  - id: 7004
+    chapter_title: "神經網路架構演進"
+    section_title: "基礎神經網路"
+    text: "Sigmoid 啟動函數的主要缺點是什麼？"
+    type: multiple_choice
+    options:
+      - "計算太快"
+      - "輸出範圍太大"
+      - "容易導致梯度消失 (Vanishing Gradient)"
+      - "無法微分"
+    correct_index: 2
+    explanation: "Sigmoid 在輸入值很大或很小時，梯度趨近於 0，導致反向傳播時誤差訊號消失，深層網路無法訓練。"
+    tags: ["sec-chapter7", "sec-activation-functions"]
+
+  - id: 7005
+    chapter_title: "神經網路架構演進"
+    section_title: "基礎神經網路"
+    text: "目前最常用的隱藏層啟動函數是哪一個？"
+    type: multiple_choice
+    options:
+      - "Sigmoid"
+      - "Tanh"
+      - "ReLU (Rectified Linear Unit)"
+      - "Linear"
+    correct_index: 2
+    explanation: "ReLU 計算簡單且有效解決了梯度消失問題，是目前深度學習的預設選擇。"
+    tags: ["sec-chapter7", "sec-activation-functions"]
+
+  - id: 7006
+    chapter_title: "神經網路架構演進"
+    section_title: "基礎神經網路"
+    text: "Softmax 函數通常用於神經網路的哪一層？"
+    type: multiple_choice
+    options:
+      - "輸入層"
+      - "隱藏層"
+      - "卷積層"
+      - "輸出層 (Output Layer)"
+    correct_index: 3
+    explanation: "Softmax 能將輸出數值轉換為機率分佈（總和為 1），常用於多類別分類的輸出層。"
+    tags: ["sec-chapter7", "sec-activation-functions"]
+
+  - id: 7007
+    chapter_title: "神經網路架構演進"
+    section_title: "基礎神經網路"
+    text: "反向傳播 (Backpropagation) 的主要目的是什麼？"
+    type: multiple_choice
+    options:
+      - "計算預測結果"
+      - "計算梯度並更新權重"
+      - "增加神經元數量"
+      - "壓縮資料"
+    correct_index: 1
+    explanation: "反向傳播利用連鎖律計算誤差對每個權重的梯度，讓優化器知道如何調整權重以降低誤差。"
+    tags: ["sec-chapter7", "sec-backpropagation"]
+
+  - id: 7008
+    chapter_title: "神經網路架構演進"
+    section_title: "基礎神經網路"
+    text: "SGD (隨機梯度下降) 優化器的特點是？"
+    type: multiple_choice
+    options:
+      - "每次使用全部資料更新，路徑平滑"
+      - "每次使用一小批資料更新，路徑震盪但計算快"
+      - "不更新權重"
+      - "只能用於線性模型"
+    correct_index: 1
+    explanation: "SGD 每次只看部分資料就調整方向，雖然路徑較曲折，但能在大數據下快速迭代。"
+    tags: ["sec-chapter7", "sec-backpropagation"]
+
+  - id: 7009
+    chapter_title: "神經網路架構演進"
+    section_title: "經典深度架構"
+    text: "卷積神經網路 (CNN) 最擅長處理哪種資料？"
+    type: multiple_choice
+    options:
+      - "時間序列"
+      - "文字"
+      - "影像 (Image)"
+      - "表格數據"
+    correct_index: 2
+    explanation: "CNN 的卷積層能有效提取影像的空間特徵（如邊緣、紋理），是電腦視覺的首選架構。"
+    tags: ["sec-chapter7", "sec-cnn"]
+
+  - id: 7010
+    chapter_title: "神經網路架構演進"
+    section_title: "經典深度架構"
+    text: "CNN 中「卷積層 (Convolution Layer)」的功能是？"
+    type: multiple_choice
+    options:
+      - "降低維度"
+      - "提取特徵 (Feature Extraction)"
+      - "分類"
+      - "生成影像"
+    correct_index: 1
+    explanation: "卷積層利用濾鏡 (Filter) 在影像上滑動掃描，提取出各種視覺特徵。"
+    tags: ["sec-chapter7", "sec-cnn"]
+
+  - id: 7011
+    chapter_title: "神經網路架構演進"
+    section_title: "經典深度架構"
+    text: "CNN 中「池化層 (Pooling Layer)」的主要功能是？"
+    type: multiple_choice
+    options:
+      - "增加維度"
+      - "提取特徵"
+      - "降低維度與抗雜訊 (Downsampling)"
+      - "反向傳播"
+    correct_index: 2
+    explanation: "池化層（如 Max Pooling）透過保留區域最大值來縮小特徵圖，減少運算量並保留重要特徵。"
+    tags: ["sec-chapter7", "sec-cnn"]
+
+  - id: 7012
+    chapter_title: "神經網路架構演進"
+    section_title: "經典深度架構"
+    text: "循環神經網路 (RNN) 最擅長處理哪種資料？"
+    type: multiple_choice
+    options:
+      - "靜態影像"
+      - "序列數據 (Sequential Data)"
+      - "隨機雜訊"
+      - "高維度表格"
+    correct_index: 1
+    explanation: "RNN 具有記憶功能，能處理前後相關的序列數據，如文字、語音、股票走勢。"
+    tags: ["sec-chapter7", "sec-rnn"]
+
+  - id: 7013
+    chapter_title: "神經網路架構演進"
+    section_title: "經典深度架構"
+    text: "傳統 RNN 面臨的最大挑戰是什麼？"
+    type: multiple_choice
+    options:
+      - "計算量太小"
+      - "梯度消失 (Vanishing Gradient) 導致無法記憶長序列"
+      - "無法處理數值"
+      - "過度擬合"
+    correct_index: 1
+    explanation: "在長序列中，RNN 的梯度會隨時間步長指數衰減，導致模型「忘記」前面的資訊。"
+    tags: ["sec-chapter7", "sec-rnn"]
+
+  - id: 7014
+    chapter_title: "神經網路架構演進"
+    section_title: "經典深度架構"
+    text: "LSTM (長短期記憶網路) 如何解決 RNN 的梯度消失問題？"
+    type: multiple_choice
+    options:
+      - "使用更深的網路"
+      - "引入「閘門 (Gates)」機制控制資訊流"
+      - "使用 ReLU"
+      - "刪除記憶功能"
+    correct_index: 1
+    explanation: "LSTM 透過遺忘門、輸入門和輸出門來精確控制記憶的保留與更新，建立了一條傳遞長期記憶的高速公路。"
+    tags: ["sec-chapter7", "sec-rnn"]
+
+  - id: 7015
+    chapter_title: "神經網路架構演進"
+    section_title: "Transformer 與注意力機制"
+    text: "Transformer 架構的核心機制是什麼？"
+    type: multiple_choice
+    options:
+      - "卷積 (Convolution)"
+      - "遞歸 (Recurrence)"
+      - "自注意力機制 (Self-Attention)"
+      - "池化 (Pooling)"
+    correct_index: 2
+    explanation: "Transformer 拋棄了循環與卷積，完全依賴 Self-Attention 來捕捉序列中字與字的關聯。"
+    tags: ["sec-chapter7", "sec-transformer"]
+
+  - id: 7016
+    chapter_title: "神經網路架構演進"
+    section_title: "Transformer 與注意力機制"
+    text: "自注意力機制 (Self-Attention) 的運作常被比喻為？"
+    type: multiple_choice
+    options:
+      - "瞎子摸象"
+      - "雞尾酒會效應 (Cocktail Party Effect)"
+      - "蝴蝶效應"
+      - "溫水煮青蛙"
+    correct_index: 1
+    explanation: "就像在吵雜派對中聚焦於某人的聲音，Self-Attention 讓模型能聚焦於句子中相關的字詞。"
+    tags: ["sec-chapter7", "sec-self-attention"]
+
+  - id: 7017
+    chapter_title: "神經網路架構演進"
+    section_title: "Transformer 與注意力機制"
+    text: "在 Self-Attention 的 Q, K, V 中，Q 代表什麼？"
+    type: multiple_choice
+    options:
+      - "Value (內容)"
+      - "Key (索引)"
+      - "Query (查詢)"
+      - "Quality (品質)"
+    correct_index: 2
+    explanation: "Q 代表 Query，即「我想找什麼？」，用來與其他字的 Key 進行匹配。"
+    tags: ["sec-chapter7", "sec-self-attention"]
+
+  - id: 7018
+    chapter_title: "神經網路架構演進"
+    section_title: "Transformer 與注意力機制"
+    text: "相較於 RNN，Transformer 最大的架構優勢是什麼？"
+    type: multiple_choice
+    options:
+      - "參數量更少"
+      - "可以平行計算 (Parallelization)，訓練速度快"
+      - "不需要 GPU"
+      - "只能處理短文本"
+    correct_index: 1
+    explanation: "Transformer 可以一次讀入整篇文章進行矩陣運算，不像 RNN 必須按順序一個字一個字讀，因此能充分利用 GPU 平行運算。"
+    tags: ["sec-chapter7", "sec-transformer-arch"]
+
+  - id: 7019
+    chapter_title: "神經網路架構演進"
+    section_title: "Transformer 與注意力機制"
+    text: "BERT 模型屬於 Transformer 的哪一部分？"
+    type: multiple_choice
+    options:
+      - "Encoder-only"
+      - "Decoder-only"
+      - "Encoder-Decoder"
+      - "RNN"
+    correct_index: 0
+    explanation: "BERT 使用 Transformer 的 Encoder 部分，擅長理解文本內容（如分類、情感分析）。"
+    tags: ["sec-chapter7", "sec-transformer-arch"]
+
+  - id: 7020
+    chapter_title: "神經網路架構演進"
+    section_title: "Transformer 與注意力機制"
+    text: "GPT 系列模型屬於 Transformer 的哪一部分？"
+    type: multiple_choice
+    options:
+      - "Encoder-only"
+      - "Decoder-only"
+      - "Encoder-Decoder"
+      - "CNN"
+    correct_index: 1
+    explanation: "GPT (Generative Pre-trained Transformer) 使用 Decoder 部分，擅長生成文本（預測下一個字）。"
+    tags: ["sec-chapter7", "sec-transformer-arch"]
+
+  - id: 7021
+    chapter_title: "神經網路架構演進"
+    section_title: "基礎神經網路"
+    text: "ReLU 函數的公式是？"
+    type: multiple_choice
+    options:
+      - "f(x) = 1 / (1 + e^-x)"
+      - "f(x) = max(0, x)"
+      - "f(x) = x^2"
+      - "f(x) = sin(x)"
+    correct_index: 1
+    explanation: "ReLU 將負數轉為 0，正數保持不變。"
+    tags: ["sec-chapter7", "sec-activation-functions"]
+
+  - id: 7022
+    chapter_title: "神經網路架構演進"
+    section_title: "基礎神經網路"
+    text: "ADAM 優化器結合了哪兩個概念？"
+    type: multiple_choice
+    options:
+      - "動量 (Momentum) 與 自適應學習率"
+      - "卷積與池化"
+      - "遞歸與注意力"
+      - "隨機與確定"
+    correct_index: 0
+    explanation: "ADAM 結合了 Momentum（慣性）和 RMSprop（自適應學習率），是目前最常用的優化器。"
+    tags: ["sec-chapter7", "sec-backpropagation"]
+
+  - id: 7023
+    chapter_title: "神經網路架構演進"
+    section_title: "經典深度架構"
+    text: "CNN 的「平移不變性 (Translation Invariance)」是指？"
+    type: multiple_choice
+    options:
+      - "圖片旋轉後無法辨識"
+      - "物體在圖片中移動位置後，仍能被辨識出來"
+      - "圖片顏色改變後無法辨識"
+      - "只能辨識固定大小的物體"
+    correct_index: 1
+    explanation: "透過卷積和池化，CNN 能夠辨識出物體，無論它出現在圖片的哪個位置。"
+    tags: ["sec-chapter7", "sec-cnn"]
+
+  - id: 7024
+    chapter_title: "神經網路架構演進"
+    section_title: "經典深度架構"
+    text: "LSTM 中的「遺忘門 (Forget Gate)」負責做什麼？"
+    type: multiple_choice
+    options:
+      - "決定輸出什麼"
+      - "決定要丟棄哪些舊資訊"
+      - "決定要存入哪些新資訊"
+      - "決定權重大小"
+    correct_index: 1
+    explanation: "遺忘門透過 Sigmoid 函數決定哪些舊的記憶（如舊主詞）應該被遺忘。"
+    tags: ["sec-chapter7", "sec-rnn"]
+
+  - id: 7025
+    chapter_title: "神經網路架構演進"
+    section_title: "Transformer 與注意力機制"
+    text: "多頭注意力 (Multi-Head Attention) 的好處是？"
+    type: multiple_choice
+    options:
+      - "減少運算量"
+      - "讓模型能從多個不同角度（如文法、語意）關注資訊"
+      - "只能處理單一語言"
+      - "不需要訓練"
+    correct_index: 1
+    explanation: "多個 Head 就像多個濾鏡，能同時捕捉句子中不同層次的特徵與關聯。"
+    tags: ["sec-chapter7", "sec-self-attention"]
+
+  - id: 7026
+    chapter_title: "神經網路架構演進"
+    section_title: "Transformer 與注意力機制"
+    text: "機器翻譯（如中翻英）通常使用哪種 Transformer 架構？"
+    type: multiple_choice
+    options:
+      - "Encoder-only"
+      - "Decoder-only"
+      - "Encoder-Decoder"
+      - "MLP"
+    correct_index: 2
+    explanation: "機器翻譯需要先理解輸入語言（Encoder），再生成目標語言（Decoder），因此使用 Encoder-Decoder 架構。"
+    tags: ["sec-chapter7", "sec-transformer-arch"]
+
+  - id: 7027
+    chapter_title: "神經網路架構演進"
+    section_title: "基礎神經網路"
+    text: "損失函數 (Loss Function) 的作用是？"
+    type: multiple_choice
+    options:
+      - "增加模型準確度"
+      - "衡量模型預測值與真實答案之間的誤差"
+      - "加快訓練速度"
+      - "初始化權重"
+    correct_index: 1
+    explanation: "損失函數量化了模型預測錯誤的程度，是優化過程的指標。"
+    tags: ["sec-chapter7", "sec-backpropagation"]
+
+  - id: 7028
+    chapter_title: "神經網路架構演進"
+    section_title: "經典深度架構"
+    text: "在 CNN 中，特徵圖 (Feature Map) 是由哪一層產生的？"
+    type: multiple_choice
+    options:
+      - "全連接層"
+      - "卷積層 (Convolution Layer)"
+      - "輸出層"
+      - "輸入層"
+    correct_index: 1
+    explanation: "卷積層的濾鏡掃描輸入影像後，輸出的結果即為特徵圖。"
+    tags: ["sec-chapter7", "sec-cnn"]
+
+  - id: 7029
+    chapter_title: "神經網路架構演進"
+    section_title: "經典深度架構"
+    text: "RNN 的「迴圈」結構使其具備什麼能力？"
+    type: multiple_choice
+    options:
+      - "平行運算"
+      - "記憶 (Memory)"
+      - "卷積"
+      - "降維"
+    correct_index: 1
+    explanation: "迴圈讓 RNN 能將上一步的狀態傳遞到這一步，形成短期記憶。"
+    tags: ["sec-chapter7", "sec-rnn"]
+
+  - id: 7030
+    chapter_title: "神經網路架構演進"
+    section_title: "Transformer 與注意力機制"
+    text: "Attention 機制解決了 LSTM 的什麼限制？"
+    type: multiple_choice
+    options:
+      - "無法處理影像"
+      - "長距離依賴 (Long-range Dependency) 的記憶限制"
+      - "無法分類"
+      - "參數過少"
+    correct_index: 1
+    explanation: "Attention 能直接連結序列中任意兩個位置，無論距離多遠，解決了 LSTM 記憶長度有限的問題。"
+    tags: ["sec-chapter7", "sec-transformer-arch"]
+
+  - id: 7031
+    chapter_title: "神經網路架構演進"
+    section_title: "基礎神經網路"
+    text: "權重 (Weight) 在神經網路中代表什麼？"
+    type: multiple_choice
+    options:
+      - "輸入訊號的重要性"
+      - "誤差大小"
+      - "學習率"
+      - "迭代次數"
+    correct_index: 0
+    explanation: "權重決定了輸入訊號對輸出結果的影響程度。"
+    tags: ["sec-chapter7", "sec-mlp"]
+
+  - id: 7032
+    chapter_title: "神經網路架構演進"
+    section_title: "經典深度架構"
+    text: "CNN 中的濾鏡 (Filter) 類似於人類視覺的什麼功能？"
+    type: multiple_choice
+    options:
+      - "記憶"
+      - "特徵偵測 (如偵測邊緣、線條)"
+      - "邏輯推理"
+      - "情感分析"
+    correct_index: 1
+    explanation: "濾鏡專門用來偵測特定的視覺特徵，如垂直線、水平線等。"
+    tags: ["sec-chapter7", "sec-cnn"]
+
+  - id: 7033
+    chapter_title: "神經網路架構演進"
+    section_title: "經典深度架構"
+    text: "LSTM 的「輸入門 (Input Gate)」負責？"
+    type: multiple_choice
+    options:
+      - "丟棄資訊"
+      - "決定哪些新資訊要存入記憶狀態"
+      - "輸出結果"
+      - "重置網路"
+    correct_index: 1
+    explanation: "輸入門控制新資訊流入記憶單元的程度。"
+    tags: ["sec-chapter7", "sec-rnn"]
+
+  - id: 7034
+    chapter_title: "神經網路架構演進"
+    section_title: "Transformer 與注意力機制"
+    text: "Transformer 模型最初是為了什麼任務而設計的？"
+    type: multiple_choice
+    options:
+      - "影像辨識"
+      - "機器翻譯 (Machine Translation)"
+      - "語音合成"
+      - "玩遊戲"
+    correct_index: 1
+    explanation: "Google 的《Attention Is All You Need》論文最初是應用於機器翻譯任務。"
+    tags: ["sec-chapter7", "sec-transformer"]
+
+  - id: 7035
+    chapter_title: "神經網路架構演進"
+    section_title: "基礎神經網路"
+    text: "偏差 (Bias) 在神經元中的作用是？"
+    type: multiple_choice
+    options:
+      - "調整啟動門檻"
+      - "增加權重"
+      - "減少誤差"
+      - "消除雜訊"
+    correct_index: 0
+    explanation: "偏差允許啟動函數向左或向右平移，調整神經元被啟動的難易度（門檻）。"
+    tags: ["sec-chapter7", "sec-mlp"]
+
+  - id: 7036
+    chapter_title: "神經網路架構演進"
+    section_title: "經典深度架構"
+    text: "CNN 最後通常會接上什麼層來進行分類？"
+    type: multiple_choice
+    options:
+      - "卷積層"
+      - "池化層"
+      - "全連接層 (Fully Connected Layer)"
+      - "遞歸層"
+    correct_index: 2
+    explanation: "提取完特徵後，通常會將特徵攤平並輸入全連接層，進行最終的類別判斷。"
+    tags: ["sec-chapter7", "sec-cnn"]
+
+  - id: 7037
+    chapter_title: "神經網路架構演進"
+    section_title: "經典深度架構"
+    text: "RNN 處理序列數據時是怎麼進行的？"
+    type: multiple_choice
+    options:
+      - "一次全部讀入"
+      - "按時間順序逐步讀入 (Sequential)"
+      - "隨機讀入"
+      - "反向讀入"
+    correct_index: 1
+    explanation: "RNN 必須依照時間步 (Time Step) 順序處理數據，這也是它無法平行化的原因。"
+    tags: ["sec-chapter7", "sec-rnn"]
+
+  - id: 7038
+    chapter_title: "神經網路架構演進"
+    section_title: "Transformer 與注意力機制"
+    text: "在 Self-Attention 中，Attention Score 是透過什麼計算的？"
+    type: multiple_choice
+    options:
+      - "Q 和 K 的點積 (Dot Product)"
+      - "Q 和 V 的相加"
+      - "K 和 V 的相乘"
+      - "Q 的平方"
+    correct_index: 0
+    explanation: "透過計算 Query 和 Key 的點積來衡量兩者的相似度，進而得到 Attention Score。"
+    tags: ["sec-chapter7", "sec-self-attention"]
+
+  - id: 7039
+    chapter_title: "神經網路架構演進"
+    section_title: "Transformer 與注意力機制"
+    text: "BERT 的全名中包含了哪個關鍵字？"
+    type: multiple_choice
+    options:
+      - "Recurrent"
+      - "Bidirectional (雙向)"
+      - "Generative"
+      - "Convolutional"
+    correct_index: 1
+    explanation: "BERT = Bidirectional Encoder Representations from Transformers，強調其雙向理解能力。"
+    tags: ["sec-chapter7", "sec-transformer-arch"]
+
+  - id: 7040
+    chapter_title: "神經網路架構演進"
+    section_title: "神經網路架構演進"
+    text: "深度學習的靈感來源是？"
+    type: multiple_choice
+    options:
+      - "電腦 CPU 架構"
+      - "人類大腦神經元運作"
+      - "量子力學"
+      - "統計學"
+    correct_index: 1
+    explanation: "深度學習的神經網路架構是模仿生物神經元連接與傳遞訊號的方式而設計的。"
+    tags: ["sec-chapter7", "sec-chapter7-summary"]

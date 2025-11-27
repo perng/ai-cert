@@ -1,4 +1,10 @@
-# 模型評估與效能優化 (Model Evaluation & Optimization)
+---
+title: "模型評估與效能優化 (Model Evaluation & Optimization)"
+order: 9
+label: sec-chapter9
+---
+
+<!-- # 模型評估與效能優化 (Model Evaluation & Optimization) -->
 
 訓練完模型只是第一步，更重要的是知道它「好不好用」。如果沒有正確的評估，你可能會把一個只會死記硬背的模型誤認為天才。
 

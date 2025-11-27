@@ -1,4 +1,10 @@
-# 非監督式學習與強化學習 (Unsupervised & Reinforcement Learning)
+---
+title: "非監督式學習與強化學習 (Unsupervised & Reinforcement Learning)"
+order: 6
+label: sec-chapter6
+---
+
+<!-- # 非監督式學習與強化學習 (Unsupervised & Reinforcement Learning) -->
 
 如果說監督式學習是「有老師教」，那麼**非監督式學習 (Unsupervised Learning)** 就是「自修」，讓 AI 在沒有標準答案的情況下，自己從資料中尋找隱藏的結構。而**強化學習 (Reinforcement Learning)** 則是「從做中學」，像生物一樣透過與環境互動、嘗試錯誤來學習生存策略。
 

@@ -1,4 +1,10 @@
-# 特徵工程 (Feature Engineering)
+---
+title: "特徵工程 (Feature Engineering)"
+order: 4
+label: sec-chapter4
+---
+
+<!-- # 特徵工程 (Feature Engineering) -->
 
 特徵工程被認為是機器學習中「最像藝術」的部分。吳恩達 (Andrew Ng) 曾說：「數據就像原油，而特徵工程就是煉油的過程。」好的特徵工程能讓普通的模型表現出色，而糟糕的特徵工程則會讓頂尖的模型無用武之地。
 

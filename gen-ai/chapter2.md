@@ -1,4 +1,10 @@
-# 第二章：進階提示工程 (Advanced Prompt Engineering) {#sec-advanced-prompt}
+---
+title: "第二章：進階提示工程 (Advanced Prompt Engineering)"
+order: 2
+label: sec-gen-chapter2
+---
+
+<!-- # 第二章：進階提示工程 (Advanced Prompt Engineering) {#sec-advanced-prompt} -->
 
 > **考點摘要**：此為本科核心，需精通各種推理策略的適用情境，特別是針對複雜任務的引導方式。
 

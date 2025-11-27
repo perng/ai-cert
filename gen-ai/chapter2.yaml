@@ -1,0 +1,560 @@
+questions:
+  - id: 2001
+    chapter_title: "進階提示工程"
+    section_title: "進階提示策略"
+    text: "角色扮演 (Persona Prompting) 的主要功能是？"
+    type: multiple_choice
+    options:
+      - "增加模型的運算速度"
+      - "透過賦予 AI 特定身分，改變其輸出的語氣、專業度與視角"
+      - "讓模型學會演戲"
+      - "減少 Token 使用量"
+    correct_index: 1
+    explanation: "設定角色（如「你是資深工程師」）能引導模型調用特定領域的知識與詞彙，使回答更符合預期情境。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2002
+    chapter_title: "進階提示工程"
+    section_title: "進階提示策略"
+    text: "如果希望 AI 用簡單易懂的方式解釋複雜概念，最好的提示策略是？"
+    type: multiple_choice
+    options:
+      - "Zero-shot Prompting"
+      - "Persona Prompting (設定為幼兒園老師或科普作家)"
+      - "Graph Prompting"
+      - "APE"
+    correct_index: 1
+    explanation: "透過設定「幼兒園老師」等角色，模型會自動調整語言複雜度，使用譬喻法來解釋概念。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2003
+    chapter_title: "進階提示工程"
+    section_title: "進階提示策略"
+    text: "圖提示 (Graph Prompting) 與思維鏈 (CoT) 的主要區別在於？"
+    type: multiple_choice
+    options:
+      - "CoT 是線性的，Graph Prompting 適合處理非線性結構與複雜關係"
+      - "CoT 不需要範例"
+      - "Graph Prompting 只能處理圖片"
+      - "兩者完全相同"
+    correct_index: 0
+    explanation: "CoT 適合逐步推理，而 Graph Prompting 將問題建模為節點與邊，適合分析網狀關係或路徑搜尋。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2004
+    chapter_title: "進階提示工程"
+    section_title: "自動化與優化技術"
+    text: "自動提示工程 (APE) 的核心概念是？"
+    type: multiple_choice
+    options:
+      - "人工手寫 Prompt"
+      - "利用 LLM 自動生成並評估多個 Prompt，找出效果最好的指令"
+      - "隨機生成文字"
+      - "禁止使用 Prompt"
+    correct_index: 1
+    explanation: "APE 利用 AI 來優化 AI 的指令，透過生成與評估循環，找出人類可能想不到的高效 Prompt。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2005
+    chapter_title: "進階提示工程"
+    section_title: "自動化與優化技術"
+    text: "「迷失在中間 (Lost in the Middle)」現象指出 LLM 對哪部分的資訊記憶最差？"
+    type: multiple_choice
+    options:
+      - "開頭"
+      - "結尾"
+      - "中間"
+      - "全部"
+    correct_index: 2
+    explanation: "研究顯示 LLM 的注意力呈現 U 型分佈，對長文本中間的資訊容易忽略或遺忘。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2006
+    chapter_title: "進階提示工程"
+    section_title: "自動化與優化技術"
+    text: "為了避免「迷失在中間」，重要的指令應該放在 Prompt 的哪裡？"
+    type: multiple_choice
+    options:
+      - "中間"
+      - "隨機位置"
+      - "最前面或最後面 (置頂或置底)"
+      - "隱藏起來"
+    correct_index: 2
+    explanation: "將關鍵指令置於 Context 的首尾，能最大程度確保模型注意到並遵循該指令。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2007
+    chapter_title: "進階提示工程"
+    section_title: "提示攻擊與防禦"
+    text: "Prompt Injection (提示注入攻擊) 的目的是？"
+    type: multiple_choice
+    options:
+      - "幫助模型學習"
+      - "繞過模型的安全限制或改變其預設行為"
+      - "增加模型速度"
+      - "測試模型準確度"
+    correct_index: 1
+    explanation: "攻擊者透過輸入惡意指令（如「忽略之前的指令」），試圖操控模型執行未經授權的動作。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2008
+    chapter_title: "進階提示工程"
+    section_title: "提示攻擊與防禦"
+    text: "使用分隔符號 (Delimiters) 如 `###` 的主要防禦作用是？"
+    type: multiple_choice
+    options:
+      - "美化輸出"
+      - "明確區隔系統指令與使用者輸入，防止模型混淆"
+      - "增加 Token 數"
+      - "加速運算"
+    correct_index: 1
+    explanation: "分隔符號幫助模型分辨哪部分是不可變更的指令，哪部分是可能包含惡意內容的資料。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2009
+    chapter_title: "進階提示工程"
+    section_title: "進階提示策略"
+    text: "Graph Prompting 最適合應用於下列哪個場景？"
+    type: multiple_choice
+    options:
+      - "簡單的加法運算"
+      - "分析社交網絡中的人物關係或尋找最短路徑"
+      - "翻譯句子"
+      - "寫一首詩"
+    correct_index: 1
+    explanation: "社交網絡具有複雜的網狀結構，適合用圖論的方法進行推理與分析。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2010
+    chapter_title: "進階提示工程"
+    section_title: "自動化與優化技術"
+    text: "APE 的潛在限制是什麼？"
+    type: multiple_choice
+    options:
+      - "速度太快"
+      - "在處理圖資料或超長上下文時，可能不如人類專家設計的 Prompt"
+      - "只能處理英文"
+      - "完全無效"
+    correct_index: 1
+    explanation: "對於需要高度結構化理解或全局觀的複雜任務，AI 自動生成的 Prompt 可能缺乏人類的洞察力。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2011
+    chapter_title: "進階提示工程"
+    section_title: "進階提示策略"
+    text: "當你需要 AI 扮演一位「嚴格的程式碼審查員」時，這屬於哪種提示策略？"
+    type: multiple_choice
+    options:
+      - "CoT"
+      - "Persona Prompting"
+      - "Zero-shot"
+      - "Few-shot"
+    correct_index: 1
+    explanation: "這是典型的角色扮演，設定特定身分以獲取特定風格的輸出。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2012
+    chapter_title: "進階提示工程"
+    section_title: "提示攻擊與防禦"
+    text: "「忽略之前的指令 (Ignore previous instructions)」是哪種攻擊的常見手法？"
+    type: multiple_choice
+    options:
+      - "DDoS 攻擊"
+      - "Prompt Injection"
+      - "SQL Injection"
+      - "XSS 攻擊"
+    correct_index: 1
+    explanation: "這是最經典的 Prompt Injection 手法，試圖覆蓋系統預設的行為準則。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2013
+    chapter_title: "進階提示工程"
+    section_title: "自動化與優化技術"
+    text: "在 RAG 系統中，為了優化 Context，通常會將最相關的文件放在？"
+    type: multiple_choice
+    options:
+      - "中間"
+      - "開頭或結尾"
+      - "隨機位置"
+      - "不放入 Context"
+    correct_index: 1
+    explanation: "利用 U 型注意力曲線特性，將重要資訊置於首尾可提高模型引用的準確率。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2014
+    chapter_title: "進階提示工程"
+    section_title: "進階提示策略"
+    text: "Graph Prompting 將問題建模為哪兩個基本元素？"
+    type: multiple_choice
+    options:
+      - "輸入與輸出"
+      - "節點 (Nodes) 與 邊 (Edges)"
+      - "問題與答案"
+      - "圖片與文字"
+    correct_index: 1
+    explanation: "這是圖論的基本構成，節點代表實體，邊代表實體間的關係。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2015
+    chapter_title: "進階提示工程"
+    section_title: "自動化與優化技術"
+    text: "APE 的運作流程通常包含哪三個步驟？"
+    type: multiple_choice
+    options:
+      - "輸入、處理、輸出"
+      - "生成 (Generate)、評估 (Evaluate)、選擇 (Select)"
+      - "訓練、測試、驗證"
+      - "讀取、寫入、執行"
+    correct_index: 1
+    explanation: "APE 先生成多個候選 Prompt，評估其效果後，選擇最佳的一個。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2016
+    chapter_title: "進階提示工程"
+    section_title: "提示攻擊與防禦"
+    text: "後設提示 (Meta-Prompting) 如何防禦攻擊？"
+    type: multiple_choice
+    options:
+      - "刪除使用者輸入"
+      - "在 Prompt 結尾再次強調系統指令的優先級"
+      - "關閉模型"
+      - "加密輸出"
+    correct_index: 1
+    explanation: "透過在最後再次提醒模型「不要洩漏指令」，可以抵銷使用者輸入中試圖覆蓋指令的嘗試。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2017
+    chapter_title: "進階提示工程"
+    section_title: "進階提示策略"
+    text: "Persona Prompting 的原理是利用模型在訓練資料中學到的？"
+    type: multiple_choice
+    options:
+      - "數學公式"
+      - "角色相關的知識與語言風格"
+      - "圖片特徵"
+      - "程式碼邏輯"
+    correct_index: 1
+    explanation: "模型在預訓練階段閱讀過大量不同角色的文本，Persona Prompting 喚醒了這些特定的潛在知識。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2018
+    chapter_title: "進階提示工程"
+    section_title: "自動化與優化技術"
+    text: "當內容過長無法一次塞入 Context Window 時，可以使用什麼策略？"
+    type: multiple_choice
+    options:
+      - "直接放棄"
+      - "分段摘要與壓縮"
+      - "只讀第一頁"
+      - "隨機刪除字元"
+    correct_index: 1
+    explanation: "先將長文分段進行摘要，再將摘要餵給模型，是處理超長文本的常用技巧。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2019
+    chapter_title: "進階提示工程"
+    section_title: "進階提示策略"
+    text: "CoT 適合哪種任務？"
+    type: multiple_choice
+    options:
+      - "非線性結構分析"
+      - "算術與邏輯推理 (單一正確答案)"
+      - "情感發洩"
+      - "隨機生成"
+    correct_index: 1
+    explanation: "CoT 的逐步推理特性非常適合需要邏輯推導且有明確答案的數學或邏輯題。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2020
+    chapter_title: "進階提示工程"
+    section_title: "提示攻擊與防禦"
+    text: "DAN (Do Anything Now) 模式是一種？"
+    type: multiple_choice
+    options:
+      - "優化技術"
+      - "越獄 (Jailbreak) / 提示攻擊手法"
+      - "官方功能"
+      - "程式語言"
+    correct_index: 1
+    explanation: "DAN 是早期著名的越獄 Prompt，試圖強迫模型無視道德限制，執行任何指令。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2021
+    chapter_title: "進階提示工程"
+    section_title: "進階提示策略"
+    text: "Graph Prompting 有助於進行什麼類型的推論？"
+    type: multiple_choice
+    options:
+      - "因果推論 (Causal Inference)"
+      - "情感推論"
+      - "語法推論"
+      - "拼字檢查"
+    correct_index: 0
+    explanation: "透過圖結構分析變數間的連接關係，有助於理解複雜系統中的因果效應。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2022
+    chapter_title: "進階提示工程"
+    section_title: "自動化與優化技術"
+    text: "APE 的優勢之一是？"
+    type: multiple_choice
+    options:
+      - "完全不需要算力"
+      - "能發現人類意想不到但對模型有效的指令"
+      - "保證 100% 準確率"
+      - "只能手動執行"
+    correct_index: 1
+    explanation: "AI 可能會找到一些人類覺得奇怪，但能觸發模型特定反應的關鍵字組合。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2023
+    chapter_title: "進階提示工程"
+    section_title: "進階提示策略"
+    text: "在 Persona Prompting 中，設定「你是一位 5 歲小孩」會導致？"
+    type: multiple_choice
+    options:
+      - "模型變笨"
+      - "模型使用簡單、童言童語的詞彙與句型"
+      - "模型拒絕回答"
+      - "模型變成圖片"
+    correct_index: 1
+    explanation: "模型會模仿 5 歲小孩的語言風格，適合用於生成兒童讀物或對話。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2024
+    chapter_title: "進階提示工程"
+    section_title: "自動化與優化技術"
+    text: "Context Engineering 的目標是？"
+    type: multiple_choice
+    options:
+      - "增加模型參數量"
+      - "優化資訊在 Context 中的安排，以提升模型理解與記憶效果"
+      - "減少電費"
+      - "設計網頁"
+    correct_index: 1
+    explanation: "透過策略性地安排資訊順序（如置頂關鍵字），克服模型的注意力缺陷。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2025
+    chapter_title: "進階提示工程"
+    section_title: "提示攻擊與防禦"
+    text: "使用 `"""` 包裹使用者輸入是為了？"
+    type: multiple_choice
+    options:
+      - "標示註解"
+      - "作為分隔符號，防止 Prompt Injection"
+      - "增加字數"
+      - "格式化程式碼"
+    correct_index: 1
+    explanation: "這是一種防禦機制，明確告訴模型引號內的內容是資料而非指令。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2026
+    chapter_title: "進階提示工程"
+    section_title: "進階提示策略"
+    text: "Graph Prompting 適合處理哪種資料？"
+    type: multiple_choice
+    options:
+      - "純文字小說"
+      - "知識圖譜 (Knowledge Graph)"
+      - "音訊檔"
+      - "單一數字"
+    correct_index: 1
+    explanation: "知識圖譜本身就是節點與邊的結構，與 Graph Prompting 的概念完美契合。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2027
+    chapter_title: "進階提示工程"
+    section_title: "自動化與優化技術"
+    text: "APE 中的 Generator 通常是？"
+    type: multiple_choice
+    options:
+      - "人類專家"
+      - "一個 LLM 模型"
+      - "隨機亂數產生器"
+      - "搜尋引擎"
+    correct_index: 1
+    explanation: "APE 利用 LLM 強大的生成能力來撰寫 Prompt 候選方案。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2028
+    chapter_title: "進階提示工程"
+    section_title: "進階提示策略"
+    text: "Persona Prompting 能否改變模型的事實知識？"
+    type: multiple_choice
+    options:
+      - "可以，模型會變更聰明"
+      - "不行，它只能改變表達方式與視角，不能無中生有知識"
+      - "可以，模型會連網"
+      - "不一定"
+    correct_index: 1
+    explanation: "Persona 只是引導模型調用既有知識的方式，無法讓模型知道它原本不知道的事實。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2029
+    chapter_title: "進階提示工程"
+    section_title: "自動化與優化技術"
+    text: "Lost in the Middle 現象呈現什麼樣的注意力分佈曲線？"
+    type: multiple_choice
+    options:
+      - "倒 U 型"
+      - "U 型 (首尾高，中間低)"
+      - "水平線"
+      - "垂直線"
+    correct_index: 1
+    explanation: "首尾記憶好，中間記憶差，形成 U 型曲線。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2030
+    chapter_title: "進階提示工程"
+    section_title: "提示攻擊與防禦"
+    text: "Meta-Prompting 通常放在 Prompt 的哪個位置？"
+    type: multiple_choice
+    options:
+      - "最開頭"
+      - "中間"
+      - "結尾 (作為最後的提醒)"
+      - "隨機"
+    correct_index: 2
+    explanation: "放在結尾可以利用 Recency Bias（近因偏差），加強模型對安全指令的印象。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2031
+    chapter_title: "進階提示工程"
+    section_title: "進階提示策略"
+    text: "下列何者是 Graph Prompting 的應用範例？"
+    type: multiple_choice
+    options:
+      - "計算 1+1"
+      - "分析藥物分子結構與副作用的關係"
+      - "翻譯英文單字"
+      - "分類垃圾郵件"
+    correct_index: 1
+    explanation: "分子結構是典型的圖結構（原子為節點，鍵結為邊），適合用 Graph Prompting 分析。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2032
+    chapter_title: "進階提示工程"
+    section_title: "自動化與優化技術"
+    text: "APE 的全名是？"
+    type: multiple_choice
+    options:
+      - "Artificial Prompt Engine"
+      - "Automatic Prompt Engineer"
+      - "Automated Processing Entity"
+      - "Advanced Prompt Editor"
+    correct_index: 1
+    explanation: "APE 代表 Automatic Prompt Engineer。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2033
+    chapter_title: "進階提示工程"
+    section_title: "進階提示策略"
+    text: "Persona Prompting 設定「你是一位憤世嫉俗的評論家」會導致？"
+    type: multiple_choice
+    options:
+      - "模型變得很有禮貌"
+      - "模型輸出帶有批判性、諷刺的語氣"
+      - "模型只輸出數字"
+      - "模型停止運作"
+    correct_index: 1
+    explanation: "模型會模仿憤世嫉俗者的語氣，產出尖銳的評論。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2034
+    chapter_title: "進階提示工程"
+    section_title: "自動化與優化技術"
+    text: "Context Engineering 屬於哪一類優化？"
+    type: multiple_choice
+    options:
+      - "模型參數優化"
+      - "提示 (Prompt) 優化"
+      - "硬體優化"
+      - "網路優化"
+    correct_index: 1
+    explanation: "它是在不改變模型參數的前提下，透過優化輸入內容的結構來提升效果。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2035
+    chapter_title: "進階提示工程"
+    section_title: "提示攻擊與防禦"
+    text: "Prompt Injection 屬於哪種資安風險？"
+    type: multiple_choice
+    options:
+      - "硬體漏洞"
+      - "應用層攻擊 (針對 LLM 的輸入)"
+      - "網路層攻擊"
+      - "物理攻擊"
+    correct_index: 1
+    explanation: "它是針對應用程式邏輯（LLM 的指令遵循機制）進行的攻擊。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2036
+    chapter_title: "進階提示工程"
+    section_title: "進階提示策略"
+    text: "Graph Prompting 是否一定比 CoT 好？"
+    type: multiple_choice
+    options:
+      - "是，永遠比較好"
+      - "否，視任務性質而定（線性任務用 CoT 即可）"
+      - "否，Graph Prompting 比較差"
+      - "兩者不能比較"
+    correct_index: 1
+    explanation: "工具沒有絕對好壞，CoT 處理線性邏輯更有效率，Graph 處理網狀關係更強大。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2037
+    chapter_title: "進階提示工程"
+    section_title: "自動化與優化技術"
+    text: "APE 的評估階段 (Evaluate) 目的是？"
+    type: multiple_choice
+    options:
+      - "生成更多 Prompt"
+      - "測試生成的 Prompt 實際效果如何，給予評分"
+      - "刪除 Prompt"
+      - "訓練模型"
+    correct_index: 1
+    explanation: "透過評估才能知道哪些自動生成的 Prompt 是真正有效的，進而進行篩選。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2038
+    chapter_title: "進階提示工程"
+    section_title: "進階提示策略"
+    text: "Persona Prompting 的一個常見應用是？"
+    type: multiple_choice
+    options:
+      - "計算圓周率"
+      - "模擬面試（AI 扮演面試官）"
+      - "分類圖片"
+      - "壓縮檔案"
+    correct_index: 1
+    explanation: "透過讓 AI 扮演面試官，使用者可以進行模擬面試練習。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2039
+    chapter_title: "進階提示工程"
+    section_title: "自動化與優化技術"
+    text: "在 Context 中放入摘要 (Summary) 的好處是？"
+    type: multiple_choice
+    options:
+      - "增加 Token 數"
+      - "避免資訊過載，讓模型能掌握長文重點"
+      - "讓模型變慢"
+      - "混淆模型"
+    correct_index: 1
+    explanation: "摘要能濃縮資訊，讓模型在有限的 Context Window 內獲取更多內容的精華。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2040
+    chapter_title: "進階提示工程"
+    section_title: "進階提示工程"
+    text: "進階提示工程的核心目標是？"
+    type: multiple_choice
+    options:
+      - "寫出最長的 Prompt"
+      - "針對複雜任務，設計能引導模型發揮最大潛能的指令策略"
+      - "取代程式設計"
+      - "欺騙模型"
+    correct_index: 1
+    explanation: "進階提示工程旨在透過結構化、策略性的引導，解決 Zero-shot 無法處理的複雜問題。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]

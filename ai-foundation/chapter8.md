@@ -1,4 +1,10 @@
-# 生成式 AI 與大型語言模型 (Generative AI & LLM)
+---
+title: "生成式 AI 與大型語言模型 (Generative AI & LLM)"
+order: 8
+label: sec-chapter8
+---
+
+<!-- # 生成式 AI 與大型語言模型 (Generative AI & LLM) -->
 
 生成式 AI (Generative AI) 不再只是分析既有資料（如分類貓狗），而是能**創造**出全新的內容。從寫詩、繪畫到寫程式，它正在重塑創意產業。
 

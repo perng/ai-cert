@@ -1,0 +1,560 @@
+questions:
+  - id: 5001
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "平台特性與選擇 (理論基礎)"
+    text: "No Code (無程式碼) 平台的主要目標客群是？"
+    type: multiple_choice
+    options:
+      - "資深後端工程師"
+      - "非技術人員 (Citizen Developers)、行銷、PM"
+      - "駭客"
+      - "系統管理員"
+    correct_index: 1
+    explanation: "No Code 旨在賦能不懂程式語言的業務人員，讓他們能透過拖拉介面自行構建簡單應用。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5002
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "平台特性與選擇 (理論基礎)"
+    text: "Low Code (低程式碼) 平台與 No Code 的主要區別在於？"
+    type: multiple_choice
+    options:
+      - "Low Code 比較便宜"
+      - "Low Code 允許或需要撰寫少量程式碼來處理複雜邏輯，適合專業開發者加速開發"
+      - "Low Code 沒有圖形介面"
+      - "Low Code 只能在手機上用"
+    correct_index: 1
+    explanation: "Low Code 保留了 Coding 的彈性，適合需要高度客製化或串接複雜系統的企業級應用。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5003
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具 (實務趨勢)"
+    text: "Cursor 編輯器的 Codebase RAG 功能是指？"
+    type: multiple_choice
+    options:
+      - "自動刪除程式碼"
+      - "索引整個專案的程式碼，讓 AI 回答時能參考現有的風格與架構"
+      - "隨機生成程式碼"
+      - "將程式碼上傳到 Facebook"
+    correct_index: 1
+    explanation: "這讓 AI 不再是瞎猜，而是能根據專案上下文提供精準的建議，如同熟悉專案的同事。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5004
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具 (實務趨勢)"
+    text: "Replit Agent 的主要特色是？"
+    type: multiple_choice
+    options:
+      - "只能寫 Python"
+      - "允許使用者用自然語言描述需求，Agent 自動規劃、寫碼並部署應用"
+      - "需要使用者自己架設伺服器"
+      - "只能做靜態網頁"
+    correct_index: 1
+    explanation: "Replit Agent 實現了從自然語言直接到可運行 App 的自動化流程，大幅降低開發門檻。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5005
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具 (實務趨勢)"
+    text: "v0 或 Lovable 這類工具專注於生成什麼？"
+    type: multiple_choice
+    options:
+      - "後端資料庫"
+      - "前端使用者介面 (UI) 程式碼"
+      - "作業系統"
+      - "防毒軟體"
+    correct_index: 1
+    explanation: "這些工具能將草圖或文字描述轉換為 React/Tailwind 等前端程式碼，加速 UI 原型開發。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5006
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "整合策略與風險"
+    text: "影子 IT (Shadow IT) 是指？"
+    type: multiple_choice
+    options:
+      - "在黑暗中寫程式"
+      - "員工未經 IT 部門核准，擅自使用外部工具處理公務"
+      - "駭客攻擊"
+      - "公司停電"
+    correct_index: 1
+    explanation: "影子 IT 雖然能提升個別員工效率，但往往帶來資安風險與資料孤島問題。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5007
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具 (實務趨勢)"
+    text: "n8n 的主要功能是？"
+    type: multiple_choice
+    options:
+      - "繪圖軟體"
+      - "工作流自動化工具，串接 AI 與外部服務"
+      - "防毒軟體"
+      - "作業系統"
+    correct_index: 1
+    explanation: "n8n 提供節點式介面，讓使用者能輕鬆串接 LLM 與各種 API，實現辦公流程自動化。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5008
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具 (實務趨勢)"
+    text: "ComfyUI 是專為哪個 AI 模型設計的圖形介面？"
+    type: multiple_choice
+    options:
+      - "GPT-4"
+      - "Stable Diffusion"
+      - "Claude 3"
+      - "Llama 3"
+    correct_index: 1
+    explanation: "ComfyUI 將 Stable Diffusion 的生成流程拆解為節點，提供高度可控的圖像生成體驗。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5009
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "平台特性與選擇 (理論基礎)"
+    text: "在 Low Code 平台中，「Model」通常指的是？"
+    type: multiple_choice
+    options:
+      - "AI 模型 (如 GPT)"
+      - "資料模型 (Data Model)，描述資料結構與業務邏輯"
+      - "3D 模型"
+      - "模特兒"
+    correct_index: 1
+    explanation: "在軟體開發語境下，Model 通常指資料庫綱要或業務物件的抽象定義。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5010
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具 (實務趨勢)"
+    text: "Google Antigravity 的核心特色是？"
+    type: multiple_choice
+    options:
+      - "只能用手機操作"
+      - "Agent-first IDE，強調多 Agent 協作與可驗證性"
+      - "不支援 Python"
+      - "完全免費"
+    correct_index: 1
+    explanation: "Antigravity 透過雙視圖與 Agent 協作，專注於解決複雜的系統級開發任務。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5011
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "整合策略與風險"
+    text: "使用 AI 生成程式碼時，最重要的安全守則是？"
+    type: multiple_choice
+    options:
+      - "直接部署到正式環境"
+      - "人類必須進行 Code Review，檢查 Bug 與漏洞"
+      - "完全信任 AI"
+      - "不看程式碼"
+    correct_index: 1
+    explanation: "AI 生成的程式碼可能包含錯誤或安全隱患，人工審查是不可或缺的防線。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5012
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具 (實務趨勢)"
+    text: "Claude Code 是一個什麼樣的工具？"
+    type: multiple_choice
+    options:
+      - "網頁瀏覽器"
+      - "CLI (命令列介面) 工具，能在終端機操作檔案與指令"
+      - "繪圖軟體"
+      - "遊戲"
+    correct_index: 1
+    explanation: "Claude Code 將 AI 的能力帶入終端機，適合進行腳本自動化與系統管理任務。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5013
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具 (實務趨勢)"
+    text: "LangFlow 主要用於構建什麼類型的應用？"
+    type: multiple_choice
+    options:
+      - "3D 遊戲"
+      - "LLM 應用 (如 RAG, Chatbot)"
+      - "會計系統"
+      - "防毒軟體"
+    correct_index: 1
+    explanation: "LangFlow 提供視覺化介面來組裝 LangChain 元件，加速 LLM 應用的原型開發。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5014
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "平台特性與選擇 (理論基礎)"
+    text: "No Code 平台的限制通常在於？"
+    type: multiple_choice
+    options:
+      - "太貴"
+      - "靈活性低，難以客製化複雜邏輯"
+      - "太難學"
+      - "需要寫程式"
+    correct_index: 1
+    explanation: "No Code 為了易用性犧牲了靈活性，使用者通常受限於平台預設的功能模組。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5015
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具 (實務趨勢)"
+    text: "Windsurf 編輯器強調的「Flow」範式是指？"
+    type: multiple_choice
+    options:
+      - "水流模擬"
+      - "Agent 主動監控並預測開發行為，提供流暢協助"
+      - "強制休息"
+      - "限制打字速度"
+    correct_index: 1
+    explanation: "Windsurf 試圖讓 AI 融入開發者的心流 (Flow)，而非被動等待指令。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5016
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具 (實務趨勢)"
+    text: "OpenAI Codex 最初是哪個工具背後的模型？"
+    type: multiple_choice
+    options:
+      - "ChatGPT"
+      - "GitHub Copilot"
+      - "DALL-E"
+      - "Sora"
+    correct_index: 1
+    explanation: "Codex 是 OpenAI 專為程式碼生成訓練的模型，早期驅動了 GitHub Copilot。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5017
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "整合策略與風險"
+    text: "影子 IT 可能導致的「資料孤島」問題是指？"
+    type: multiple_choice
+    options:
+      - "資料被存在海島上"
+      - "數據散落在各個獨立應用中，無法整合與共享"
+      - "資料被刪除"
+      - "資料只有一份"
+    correct_index: 1
+    explanation: "各部門各自為政使用不同工具，導致企業數據無法流通，形成資訊壁壘。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5018
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具 (實務趨勢)"
+    text: "Cursor 的 Composer 功能允許使用者？"
+    type: multiple_choice
+    options:
+      - "作曲"
+      - "同時編輯多個檔案，進行跨檔案修改"
+      - "玩遊戲"
+      - "看影片"
+    correct_index: 1
+    explanation: "Composer 突破了單一檔案編輯的限制，能理解並修改整個專案的相關檔案。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5019
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "平台特性與選擇 (理論基礎)"
+    text: "Low Code 平台適合哪種開發者？"
+    type: multiple_choice
+    options:
+      - "完全不懂電腦的人"
+      - "專業開發者或具備基本程式概念的 IT 人員"
+      - "美術設計師"
+      - "會計師"
+    correct_index: 1
+    explanation: "Low Code 雖然簡化了開發，但仍涉及邏輯設計與少量編碼，需要一定的技術背景。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5020
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具 (實務趨勢)"
+    text: "n8n 的優勢之一是強調？"
+    type: multiple_choice
+    options:
+      - "只能在雲端跑"
+      - "可自託管 (Self-hosted) 與高度客製化"
+      - "不支援 AI"
+      - "介面很醜"
+    correct_index: 1
+    explanation: "自託管特性讓企業能完全掌控數據隱私，避免敏感資料外流。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5021
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具 (實務趨勢)"
+    text: "ComfyUI 的節點式設計讓使用者能？"
+    type: multiple_choice
+    options:
+      - "隨便亂畫"
+      - "精細控制圖像生成的每一個步驟"
+      - "只能用預設設定"
+      - "無法控制"
+    correct_index: 1
+    explanation: "透過連接不同的功能節點，使用者可以客製化極其複雜的圖像生成工作流。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5022
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具 (實務趨勢)"
+    text: "GitHub Copilot 主要提供什麼功能？"
+    type: multiple_choice
+    options:
+      - "自動部署"
+      - "即時程式碼補全 (Autocomplete) 與建議"
+      - "專案管理"
+      - "薪資計算"
+    correct_index: 1
+    explanation: "Copilot 就像隨身的結對程式設計師，隨時預測並補完你正在寫的程式碼。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5023
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具 (實務趨勢)"
+    text: "OpenAI Codex 擅長於？"
+    type: multiple_choice
+    options:
+      - "寫小說"
+      - "精確的程式碼生成、除錯與測試"
+      - "畫圖"
+      - "唱歌"
+    correct_index: 1
+    explanation: "Codex 經過大量程式碼數據訓練，對程式語言的語法與邏輯有深刻理解。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5024
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "整合策略與風險"
+    text: "影子 IT 帶來的「孤兒系統」風險是指？"
+    type: multiple_choice
+    options:
+      - "系統沒有父母"
+      - "員工離職後，其建立的系統無人維護"
+      - "系統很孤單"
+      - "系統被隔離"
+    correct_index: 1
+    explanation: "非正規開發的系統通常缺乏文件與交接機制，一旦原作者離開，往往難以為繼。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5025
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具 (實務趨勢)"
+    text: "Replit 是一個什麼類型的平台？"
+    type: multiple_choice
+    options:
+      - "單機編輯器"
+      - "雲端 IDE"
+      - "作業系統"
+      - "資料庫"
+    correct_index: 1
+    explanation: "Replit 提供基於瀏覽器的開發環境，讓使用者隨時隨地都能寫程式。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5026
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具 (實務趨勢)"
+    text: "Google Antigravity 的「可驗證性 (Verifiability)」是指？"
+    type: multiple_choice
+    options:
+      - "可以驗證身分"
+      - "Agent 會產出實作計畫與截圖，讓使用者確認其行為"
+      - "可以驗證信用卡"
+      - "可以驗證密碼"
+    correct_index: 1
+    explanation: "在複雜任務中，讓使用者能追蹤並驗證 Agent 的決策過程與執行結果至關重要。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5027
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "平台特性與選擇 (理論基礎)"
+    text: "No Code 平台通常使用什麼樣的介面？"
+    type: multiple_choice
+    options:
+      - "命令列 (CLI)"
+      - "圖形化介面 (GUI)，拖拉元件"
+      - "純文字編輯器"
+      - "二進位碼"
+    correct_index: 1
+    explanation: "直觀的拖拉介面是 No Code 降低門檻的關鍵。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5028
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具 (實務趨勢)"
+    text: "LangFlow 通常基於哪個框架？"
+    type: multiple_choice
+    options:
+      - "TensorFlow"
+      - "LangChain"
+      - "PyTorch"
+      - "Keras"
+    correct_index: 1
+    explanation: "LangFlow 是 LangChain 生態系的一部分，將 LangChain 的程式碼元件視覺化。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5029
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具 (實務趨勢)"
+    text: "Claude Code 能在終端機中執行什麼操作？"
+    type: multiple_choice
+    options:
+      - "只能聊天"
+      - "操作檔案系統、執行指令並修改程式碼"
+      - "只能看檔案"
+      - "只能關機"
+    correct_index: 1
+    explanation: "Claude Code 具備 Agent 能力，能直接對開發環境進行讀寫操作。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5030
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "No Code / Low Code 平台與 AI 開發工具"
+    text: "新一代 AI 開發工具的趨勢是？"
+    type: multiple_choice
+    options:
+      - "完全取代人類"
+      - "模糊了 Coding 與 No Code 的界線，深度整合生成式 AI"
+      - "回到組合語言"
+      - "禁止使用 AI"
+    correct_index: 1
+    explanation: "AI 讓寫程式變得像說話一樣自然，同時讓 No Code 工具具備了處理複雜邏輯的能力。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5031
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具 (實務趨勢)"
+    text: "v0 的主要功能是將什麼轉換為程式碼？"
+    type: multiple_choice
+    options:
+      - "聲音"
+      - "圖像/草圖/文字描述"
+      - "腦波"
+      - "影片"
+    correct_index: 1
+    explanation: "v0 利用多模態模型理解視覺設計，並生成對應的前端程式碼。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5032
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "整合策略與風險"
+    text: "AI 輔助開發的主要效益是？"
+    type: multiple_choice
+    options:
+      - "讓開發者可以睡覺"
+      - "生成樣板程式碼與測試數據，讓開發者專注於核心邏輯"
+      - "增加 Bug"
+      - "降低薪水"
+    correct_index: 1
+    explanation: "AI 能處理繁瑣重複的編碼工作，釋放開發者的創造力。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5033
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具 (實務趨勢)"
+    text: "n8n 內建的 AI Agent 節點可以連接？"
+    type: multiple_choice
+    options:
+      - "只有 GPT-4"
+      - "多種 LLM 與超過 400 種外部服務"
+      - "只有 Google Sheets"
+      - "只有 Slack"
+    correct_index: 1
+    explanation: "n8n 的強大之處在於其廣泛的整合能力，能將 AI 智慧注入各種第三方服務。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5034
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具 (實務趨勢)"
+    text: "ComfyUI 適合哪種使用者？"
+    type: multiple_choice
+    options:
+      - "只需要一鍵生成的人"
+      - "需要進階控制圖像生成流程的專業使用者"
+      - "文字工作者"
+      - "會計師"
+    correct_index: 1
+    explanation: "ComfyUI 的學習曲線較陡，但提供了無與倫比的控制力，適合專業創作者。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5035
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具 (實務趨勢)"
+    text: "Cursor 是基於哪個編輯器修改的？"
+    type: multiple_choice
+    options:
+      - "Vim"
+      - "VS Code"
+      - "Sublime Text"
+      - "Atom"
+    correct_index: 1
+    explanation: "Cursor 繼承了 VS Code 的生態系與操作習慣，讓開發者能無痛轉移。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5036
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "平台特性與選擇 (理論基礎)"
+    text: "Low Code 平台的優勢在於兼具？"
+    type: multiple_choice
+    options:
+      - "便宜與免費"
+      - "開發速度與擴展性 (Scalability)"
+      - "好看與好用"
+      - "簡單與複雜"
+    correct_index: 1
+    explanation: "Low Code 在提升效率的同時，保留了透過程式碼擴充功能的空間，避免被平台限制鎖死。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5037
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具 (實務趨勢)"
+    text: "Google Antigravity 採用什麼樣的介面設計？"
+    type: multiple_choice
+    options:
+      - "單一視窗"
+      - "雙視圖 (Editor & Manager)"
+      - "全螢幕"
+      - "VR 介面"
+    correct_index: 1
+    explanation: "雙視圖設計讓使用者能同時關注程式碼細節與 Agent 的高層規劃。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5038
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具 (實務趨勢)"
+    text: "OpenAI Codex 具備在什麼環境中執行測試的能力？"
+    type: multiple_choice
+    options:
+      - "使用者的電腦"
+      - "隔離沙箱 (Sandbox)"
+      - "公開網路"
+      - "區塊鏈"
+    correct_index: 1
+    explanation: "沙箱環境確保 AI 執行的程式碼不會對外部系統造成危害，提供安全的測試空間。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5039
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具 (實務趨勢)"
+    text: "Windsurf 的 Agent 能做什麼？"
+    type: multiple_choice
+    options:
+      - "只能回答問題"
+      - "持續監控並預測開發者下一步想做什麼"
+      - "只能寫註解"
+      - "只能格式化程式碼"
+    correct_index: 1
+    explanation: "Windsurf 的主動性是其一大特色，試圖減少開發者手動下指令的頻率。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5040
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具 (實務趨勢)"
+    text: "Replit Agent 適合用來？"
+    type: multiple_choice
+    options:
+      - "開發大型企業系統"
+      - "快速構建 MVP (最小可行性產品)"
+      - "維護舊系統"
+      - "寫組合語言"
+    correct_index: 1
+    explanation: "Replit Agent 能快速將想法轉化為可運行的原型，非常適合驗證創意或構建小型應用。"
+    tags: ["sec-gen-chapter5", "sec-no-code-low-code"]

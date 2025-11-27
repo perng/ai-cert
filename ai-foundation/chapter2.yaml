@@ -1,0 +1,560 @@
+questions:
+  - id: 2001
+    chapter_title: "AI 應用問題類型"
+    section_title: "監督式學習 (Supervised Learning)"
+    text: "監督式學習 (Supervised Learning) 的核心特徵是什麼？"
+    type: multiple_choice
+    options:
+      - "不需要任何數據"
+      - "使用無標籤的數據進行自我探索"
+      - "使用有標籤的數據 (Labeled Data) 進行訓練"
+      - "透過獎勵與懲罰機制學習"
+    correct_index: 2
+    explanation: "監督式學習就像老師教學生，必須提供題目（輸入）和標準答案（標籤），讓模型學習兩者之間的關聯。"
+    tags: ["sec-chapter2", "sec-supervised-learning"]
+
+  - id: 2002
+    chapter_title: "AI 應用問題類型"
+    section_title: "監督式學習 (Supervised Learning)"
+    text: "下列哪一個應用場景最適合使用「監督式學習」？"
+    type: multiple_choice
+    options:
+      - "將客戶自動分成未知的群體"
+      - "讓機器人學會走路"
+      - "預測房價（根據坪數、地點等已知成交資料）"
+      - "探索未知的火星地形"
+    correct_index: 2
+    explanation: "房價預測有明確的歷史數據（輸入）和成交價（標籤），屬於典型的監督式學習（迴歸問題）。"
+    tags: ["sec-chapter2", "sec-supervised-learning"]
+
+  - id: 2003
+    chapter_title: "AI 應用問題類型"
+    section_title: "監督式學習 (Supervised Learning)"
+    text: "垃圾郵件過濾系統通常屬於哪一種學習範式？"
+    type: multiple_choice
+    options:
+      - "非監督式學習"
+      - "監督式學習"
+      - "強化學習"
+      - "遷移學習"
+    correct_index: 1
+    explanation: "系統透過學習已標記為「垃圾信」或「正常信」的郵件特徵來判斷新郵件，這是監督式學習中的分類任務。"
+    tags: ["sec-chapter2", "sec-supervised-learning"]
+
+  - id: 2004
+    chapter_title: "AI 應用問題類型"
+    section_title: "非監督式學習 (Unsupervised Learning)"
+    text: "非監督式學習 (Unsupervised Learning) 的主要特點是什麼？"
+    type: multiple_choice
+    options:
+      - "使用有標籤的數據"
+      - "只有輸入數據，沒有標準答案 (標籤)"
+      - "依賴外部獎勵訊號"
+      - "需要預訓練模型"
+    correct_index: 1
+    explanation: "非監督式學習就像自修，模型必須在沒有標準答案的情況下，自己從數據中尋找隱藏的結構。"
+    tags: ["sec-chapter2", "sec-unsupervised-learning"]
+
+  - id: 2005
+    chapter_title: "AI 應用問題類型"
+    section_title: "非監督式學習 (Unsupervised Learning)"
+    text: "下列何者是非監督式學習的典型應用？"
+    type: multiple_choice
+    options:
+      - "手寫數字辨識"
+      - "顧客分群 (Customer Segmentation)"
+      - "天氣預報"
+      - "語音轉文字"
+    correct_index: 1
+    explanation: "顧客分群通常事先不知道有哪些群體，需要模型自動根據消費行為將相似的客戶聚在一起，屬於非監督式學習。"
+    tags: ["sec-chapter2", "sec-unsupervised-learning"]
+
+  - id: 2006
+    chapter_title: "AI 應用問題類型"
+    section_title: "非監督式學習 (Unsupervised Learning)"
+    text: "信用卡盜刷偵測（異常偵測）常使用哪種學習範式？"
+    type: multiple_choice
+    options:
+      - "監督式學習"
+      - "非監督式學習"
+      - "強化學習"
+      - "遷移學習"
+    correct_index: 1
+    explanation: "異常偵測常使用非監督式學習來找出與正常模式差異極大的數據點（異常值）。"
+    tags: ["sec-chapter2", "sec-unsupervised-learning"]
+
+  - id: 2007
+    chapter_title: "AI 應用問題類型"
+    section_title: "半監督式學習 (Semi-supervised Learning)"
+    text: "為什麼會需要使用「半監督式學習」？"
+    type: multiple_choice
+    options:
+      - "因為數據量太少"
+      - "因為取得有標籤的數據成本很高，但無標籤數據很多"
+      - "因為模型運算速度太慢"
+      - "因為不需要任何標籤"
+    correct_index: 1
+    explanation: "半監督式學習是為了解決標註成本高昂的問題，利用少量有標籤數據搭配大量無標籤數據來提升學習效果。"
+    tags: ["sec-chapter2", "sec-semi-supervised-learning"]
+
+  - id: 2008
+    chapter_title: "AI 應用問題類型"
+    section_title: "半監督式學習 (Semi-supervised Learning)"
+    text: "醫療影像分析常採用半監督式學習，主要原因為何？"
+    type: multiple_choice
+    options:
+      - "醫生標註影像非常耗時且昂貴"
+      - "醫療影像解析度太低"
+      - "病人隱私問題"
+      - "AI 無法處理彩色圖片"
+    correct_index: 0
+    explanation: "專業醫生標註 X 光片需要高度專業且耗時，因此利用少量標註資料配合大量未標註資料是較經濟的做法。"
+    tags: ["sec-chapter2", "sec-semi-supervised-learning"]
+
+  - id: 2009
+    chapter_title: "AI 應用問題類型"
+    section_title: "強化學習 (Reinforcement Learning)"
+    text: "強化學習 (Reinforcement Learning) 的學習機制最像下列哪一種過程？"
+    type: multiple_choice
+    options:
+      - "背誦教科書"
+      - "訓練寵物（透過獎勵與懲罰）"
+      - "觀看教學影片"
+      - "填寫問卷調查"
+    correct_index: 1
+    explanation: "強化學習透過試誤 (Trial and Error) 以及環境給予的獎勵或懲罰來調整行為，就像訓練寵物一樣。"
+    tags: ["sec-chapter2", "sec-reinforcement-learning"]
+
+  - id: 2010
+    chapter_title: "AI 應用問題類型"
+    section_title: "強化學習 (Reinforcement Learning)"
+    text: "在強化學習中，「代理人 (Agent)」指的是什麼？"
+    type: multiple_choice
+    options:
+      - "負責標註資料的人類"
+      - "正在學習的 AI 模型"
+      - "提供獎勵的環境"
+      - "最終的預測結果"
+    correct_index: 1
+    explanation: "代理人 (Agent) 是強化學習中採取行動並進行學習的主體，例如掃地機器人或圍棋程式。"
+    tags: ["sec-chapter2", "sec-reinforcement-learning"]
+
+  - id: 2011
+    chapter_title: "AI 應用問題類型"
+    section_title: "強化學習 (Reinforcement Learning)"
+    text: "強化學習中的「探索 (Exploration)」是指什麼？"
+    type: multiple_choice
+    options:
+      - "堅持目前已知最好的策略"
+      - "嘗試新的、未知的行動以發現更好的策略"
+      - "停止學習並輸出結果"
+      - "分析過去的歷史數據"
+    correct_index: 1
+    explanation: "探索是指嘗試未曾做過的行動，雖然有風險，但有機會發現比目前策略更好的方法。"
+    tags: ["sec-chapter2", "sec-reinforcement-learning"]
+
+  - id: 2012
+    chapter_title: "AI 應用問題類型"
+    section_title: "強化學習 (Reinforcement Learning)"
+    text: "AlphaGo 能夠超越人類棋手，主要歸功於哪種學習範式？"
+    type: multiple_choice
+    options:
+      - "監督式學習"
+      - "非監督式學習"
+      - "強化學習"
+      - "半監督式學習"
+    correct_index: 2
+    explanation: "AlphaGo 透過強化學習進行自我對弈，從數百萬盤棋局中探索出人類未曾發現的致勝策略。"
+    tags: ["sec-chapter2", "sec-reinforcement-learning"]
+
+  - id: 2013
+    chapter_title: "AI 應用問題類型"
+    section_title: "遷移學習 (Transfer Learning)"
+    text: "遷移學習 (Transfer Learning) 的核心概念可以用哪句諺語形容？"
+    type: multiple_choice
+    options:
+      - "熟能生巧"
+      - "站在巨人的肩膀上"
+      - "瞎子摸象"
+      - "揠苗助長"
+    correct_index: 1
+    explanation: "遷移學習利用預訓練好的強大模型（巨人）來解決新的任務，避免從頭開始訓練，即「站在巨人的肩膀上」。"
+    tags: ["sec-chapter2", "sec-transfer-learning"]
+
+  - id: 2014
+    chapter_title: "AI 應用問題類型"
+    section_title: "遷移學習 (Transfer Learning)"
+    text: "使用預訓練模型 (Pre-trained Model) 進行微調 (Fine-tuning) 是哪種學習範式的特徵？"
+    type: multiple_choice
+    options:
+      - "強化學習"
+      - "非監督式學習"
+      - "遷移學習"
+      - "監督式學習"
+    correct_index: 2
+    explanation: "這正是遷移學習的標準流程：先在大數據上預訓練，再於特定任務數據上進行微調。"
+    tags: ["sec-chapter2", "sec-transfer-learning"]
+
+  - id: 2015
+    chapter_title: "AI 應用問題類型"
+    section_title: "遷移學習 (Transfer Learning)"
+    text: "下列何者不是遷移學習的優勢？"
+    type: multiple_choice
+    options:
+      - "節省訓練時間"
+      - "減少對大量標註資料的需求"
+      - "可以利用現有的強大模型"
+      - "完全不需要任何新資料"
+    correct_index: 3
+    explanation: "遷移學習通常仍需要少量的特定領域資料進行微調，並非完全不需要新資料。"
+    tags: ["sec-chapter2", "sec-transfer-learning"]
+
+  - id: 2016
+    chapter_title: "AI 應用問題類型"
+    section_title: "資料分析層次"
+    text: "資料分析的四個層次中，最基礎的是哪一個？"
+    type: multiple_choice
+    options:
+      - "診斷性分析"
+      - "預測性分析"
+      - "描述性分析"
+      - "處方性分析"
+    correct_index: 2
+    explanation: "描述性分析 (Descriptive Analysis) 是最基礎的層次，重點在於總結過去發生的事情（如報表）。"
+    tags: ["sec-chapter2", "sec-descriptive-analysis"]
+
+  - id: 2017
+    chapter_title: "AI 應用問題類型"
+    section_title: "資料分析層次"
+    text: "「上個月的銷售總額是多少？」這個問題屬於哪種分析層次？"
+    type: multiple_choice
+    options:
+      - "描述性分析"
+      - "診斷性分析"
+      - "預測性分析"
+      - "處方性分析"
+    correct_index: 0
+    explanation: "這是在詢問過去發生的事實，屬於描述性分析。"
+    tags: ["sec-chapter2", "sec-descriptive-analysis"]
+
+  - id: 2018
+    chapter_title: "AI 應用問題類型"
+    section_title: "資料分析層次"
+    text: "診斷性分析 (Diagnostic Analysis) 的主要目的是什麼？"
+    type: multiple_choice
+    options:
+      - "預測未來趨勢"
+      - "找出事件發生的原因"
+      - "提供最佳行動建議"
+      - "總結歷史數據"
+    correct_index: 1
+    explanation: "診斷性分析試圖回答「為什麼發生？」，透過鑽取數據找出成因。"
+    tags: ["sec-chapter2", "sec-diagnostic-analysis"]
+
+  - id: 2019
+    chapter_title: "AI 應用問題類型"
+    section_title: "資料分析層次"
+    text: "「為什麼上個月客戶流失率突然升高？」屬於哪種分析層次？"
+    type: multiple_choice
+    options:
+      - "描述性分析"
+      - "診斷性分析"
+      - "預測性分析"
+      - "處方性分析"
+    correct_index: 1
+    explanation: "這是在探討問題背後的原因，屬於診斷性分析。"
+    tags: ["sec-chapter2", "sec-diagnostic-analysis"]
+
+  - id: 2020
+    chapter_title: "AI 應用問題類型"
+    section_title: "資料分析層次"
+    text: "預測性分析 (Predictive Analysis) 的核心功能是什麼？"
+    type: multiple_choice
+    options:
+      - "解釋過去"
+      - "監控現狀"
+      - "預測未來可能發生的事件"
+      - "自動執行決策"
+    correct_index: 2
+    explanation: "預測性分析利用歷史數據模型來推估未來的趨勢或事件機率。"
+    tags: ["sec-chapter2", "sec-predictive-analysis"]
+
+  - id: 2021
+    chapter_title: "AI 應用問題類型"
+    section_title: "資料分析層次"
+    text: "「這台機器下週故障的機率是多少？」屬於哪種分析層次？"
+    type: multiple_choice
+    options:
+      - "描述性分析"
+      - "診斷性分析"
+      - "預測性分析"
+      - "處方性分析"
+    correct_index: 2
+    explanation: "這是在預測未來事件（故障）的機率，屬於預測性分析。"
+    tags: ["sec-chapter2", "sec-predictive-analysis"]
+
+  - id: 2022
+    chapter_title: "AI 應用問題類型"
+    section_title: "資料分析層次"
+    text: "處方性分析 (Prescriptive Analysis) 是分析的最高境界，它能提供什麼？"
+    type: multiple_choice
+    options:
+      - "最準確的歷史報表"
+      - "事件發生的詳細原因"
+      - "未來的預測數值"
+      - "最佳行動建議與決策優化"
+    correct_index: 3
+    explanation: "處方性分析不僅預測未來，還進一步建議「應該怎麼做」才能達到最佳結果。"
+    tags: ["sec-chapter2", "sec-prescriptive-analysis"]
+
+  - id: 2023
+    chapter_title: "AI 應用問題類型"
+    section_title: "資料分析層次"
+    text: "導航系統建議「改走 B 路線以節省 10 分鐘」，這是哪種分析層次的應用？"
+    type: multiple_choice
+    options:
+      - "描述性分析"
+      - "診斷性分析"
+      - "預測性分析"
+      - "處方性分析"
+    correct_index: 3
+    explanation: "系統給出了具體的行動建議（改走 B 路線）來優化結果（節省時間），屬於處方性分析。"
+    tags: ["sec-chapter2", "sec-prescriptive-analysis"]
+
+  - id: 2024
+    chapter_title: "AI 應用問題類型"
+    section_title: "學習範式"
+    text: "在監督式學習中，我們將資料分為哪兩部分來驗證模型效果？"
+    type: multiple_choice
+    options:
+      - "輸入集與輸出集"
+      - "訓練集 (Training Set) 與測試集 (Test Set)"
+      - "正面集與負面集"
+      - "大數據與小數據"
+    correct_index: 1
+    explanation: "為了驗證模型的泛化能力，通常將資料分為訓練集（學習用）和測試集（考試用）。"
+    tags: ["sec-chapter2", "sec-chapter2-summary"]
+
+  - id: 2025
+    chapter_title: "AI 應用問題類型"
+    section_title: "學習範式"
+    text: "下列哪種學習範式不需要「人類標註」的介入？"
+    type: multiple_choice
+    options:
+      - "監督式學習"
+      - "半監督式學習"
+      - "非監督式學習"
+      - "弱監督式學習"
+    correct_index: 2
+    explanation: "非監督式學習完全依賴無標籤數據，不需要人類進行標註。"
+    tags: ["sec-chapter2", "sec-unsupervised-learning"]
+
+  - id: 2026
+    chapter_title: "AI 應用問題類型"
+    section_title: "強化學習"
+    text: "在強化學習中，「利用 (Exploitation)」是指什麼？"
+    type: multiple_choice
+    options:
+      - "嘗試新的策略"
+      - "隨機採取行動"
+      - "堅持目前已知最好的策略以獲得穩定獎勵"
+      - "分析環境結構"
+    correct_index: 2
+    explanation: "利用是指根據目前的經驗，選擇預期獎勵最高的行動，以確保穩定的收益。"
+    tags: ["sec-chapter2", "sec-reinforcement-learning"]
+
+  - id: 2027
+    chapter_title: "AI 應用問題類型"
+    section_title: "遷移學習"
+    text: "風格轉換 (Style Transfer) 將梵谷的畫風應用到照片上，這是哪種技術的應用？"
+    type: multiple_choice
+    options:
+      - "監督式學習"
+      - "遷移學習"
+      - "強化學習"
+      - "診斷性分析"
+    correct_index: 1
+    explanation: "這是將從梵谷畫作中學到的「風格特徵」遷移到另一張圖片上，屬於遷移學習的應用。"
+    tags: ["sec-chapter2", "sec-transfer-learning"]
+
+  - id: 2028
+    chapter_title: "AI 應用問題類型"
+    section_title: "資料分析層次"
+    text: "企業儀表板 (Dashboard) 主要呈現的是哪種分析結果？"
+    type: multiple_choice
+    options:
+      - "描述性分析"
+      - "預測性分析"
+      - "處方性分析"
+      - "強化學習"
+    correct_index: 0
+    explanation: "儀表板通常用於監控現狀和回顧歷史數據，屬於描述性分析。"
+    tags: ["sec-chapter2", "sec-descriptive-analysis"]
+
+  - id: 2029
+    chapter_title: "AI 應用問題類型"
+    section_title: "資料分析層次"
+    text: "「庫存優化系統建議向供應商 A 訂貨」屬於哪種分析？"
+    type: multiple_choice
+    options:
+      - "描述性分析"
+      - "診斷性分析"
+      - "預測性分析"
+      - "處方性分析"
+    correct_index: 3
+    explanation: "系統給出了具體的訂貨建議以優化庫存，屬於處方性分析。"
+    tags: ["sec-chapter2", "sec-prescriptive-analysis"]
+
+  - id: 2030
+    chapter_title: "AI 應用問題類型"
+    section_title: "學習範式"
+    text: "如果我有一堆客戶資料，想知道他們自然形成了哪些群體，該用什麼方法？"
+    type: multiple_choice
+    options:
+      - "監督式學習 (分類)"
+      - "非監督式學習 (分群)"
+      - "強化學習"
+      - "迴歸分析"
+    correct_index: 1
+    explanation: "在不知道群體定義的情況下進行分組，屬於非監督式學習中的分群 (Clustering) 任務。"
+    tags: ["sec-chapter2", "sec-unsupervised-learning"]
+
+  - id: 2031
+    chapter_title: "AI 應用問題類型"
+    section_title: "學習範式"
+    text: "如果我想預測明天的氣溫（數值），該用什麼方法？"
+    type: multiple_choice
+    options:
+      - "監督式學習 (迴歸)"
+      - "監督式學習 (分類)"
+      - "非監督式學習 (分群)"
+      - "強化學習"
+    correct_index: 0
+    explanation: "預測連續數值（如氣溫）屬於監督式學習中的迴歸 (Regression) 任務。"
+    tags: ["sec-chapter2", "sec-supervised-learning"]
+
+  - id: 2032
+    chapter_title: "AI 應用問題類型"
+    section_title: "學習範式"
+    text: "如果我想判斷這張照片是貓還是狗，該用什麼方法？"
+    type: multiple_choice
+    options:
+      - "監督式學習 (迴歸)"
+      - "監督式學習 (分類)"
+      - "非監督式學習 (分群)"
+      - "強化學習"
+    correct_index: 1
+    explanation: "判斷類別（貓或狗）屬於監督式學習中的分類 (Classification) 任務。"
+    tags: ["sec-chapter2", "sec-supervised-learning"]
+
+  - id: 2033
+    chapter_title: "AI 應用問題類型"
+    section_title: "強化學習"
+    text: "在強化學習中，環境給予的回饋稱為什麼？"
+    type: multiple_choice
+    options:
+      - "標籤 (Label)"
+      - "特徵 (Feature)"
+      - "獎勵 (Reward)"
+      - "權重 (Weight)"
+    correct_index: 2
+    explanation: "環境根據代理人的行動給予獎勵 (Reward) 或懲罰，作為學習的依據。"
+    tags: ["sec-chapter2", "sec-reinforcement-learning"]
+
+  - id: 2034
+    chapter_title: "AI 應用問題類型"
+    section_title: "遷移學習"
+    text: "BERT 模型先閱讀大量文本，再針對特定任務微調，這是什麼技術？"
+    type: multiple_choice
+    options:
+      - "非監督式學習"
+      - "遷移學習"
+      - "強化學習"
+      - "規則式 AI"
+    correct_index: 1
+    explanation: "BERT 的「預訓練 + 微調」模式是自然語言處理中遷移學習的經典應用。"
+    tags: ["sec-chapter2", "sec-transfer-learning"]
+
+  - id: 2035
+    chapter_title: "AI 應用問題類型"
+    section_title: "資料分析層次"
+    text: "「分析設備故障的根本原因」屬於哪種分析？"
+    type: multiple_choice
+    options:
+      - "描述性分析"
+      - "診斷性分析"
+      - "預測性分析"
+      - "處方性分析"
+    correct_index: 1
+    explanation: "尋找根本原因 (Root Cause Analysis) 是診斷性分析的核心。"
+    tags: ["sec-chapter2", "sec-diagnostic-analysis"]
+
+  - id: 2036
+    chapter_title: "AI 應用問題類型"
+    section_title: "學習範式"
+    text: "半監督式學習結合了哪兩種資料？"
+    type: multiple_choice
+    options:
+      - "訓練集與測試集"
+      - "少量有標籤資料與大量無標籤資料"
+      - "影像資料與文字資料"
+      - "結構化資料與非結構化資料"
+    correct_index: 1
+    explanation: "半監督式學習的特徵就是結合少量有標籤和大量無標籤資料。"
+    tags: ["sec-chapter2", "sec-semi-supervised-learning"]
+
+  - id: 2037
+    chapter_title: "AI 應用問題類型"
+    section_title: "強化學習"
+    text: "掃地機器人在房間裡碰撞學習路徑，這是什麼學習方式？"
+    type: multiple_choice
+    options:
+      - "監督式學習"
+      - "強化學習"
+      - "遷移學習"
+      - "深度學習"
+    correct_index: 1
+    explanation: "機器人透過與環境互動（碰撞）並調整策略（路徑），屬於強化學習。"
+    tags: ["sec-chapter2", "sec-reinforcement-learning"]
+
+  - id: 2038
+    chapter_title: "AI 應用問題類型"
+    section_title: "資料分析層次"
+    text: "信用評分系統預測客戶違約機率，屬於哪種分析？"
+    type: multiple_choice
+    options:
+      - "描述性分析"
+      - "診斷性分析"
+      - "預測性分析"
+      - "處方性分析"
+    correct_index: 2
+    explanation: "預測未來的違約機率，屬於預測性分析。"
+    tags: ["sec-chapter2", "sec-predictive-analysis"]
+
+  - id: 2039
+    chapter_title: "AI 應用問題類型"
+    section_title: "學習範式"
+    text: "下列哪種情況最適合使用遷移學習？"
+    type: multiple_choice
+    options:
+      - "擁有海量的標註數據"
+      - "目標任務的數據非常稀少，但有類似的通用模型可用"
+      - "完全沒有任何數據"
+      - "算力無限充足"
+    correct_index: 1
+    explanation: "當目標任務數據稀缺時，利用預訓練模型進行遷移學習是最有效的策略。"
+    tags: ["sec-chapter2", "sec-transfer-learning"]
+
+  - id: 2040
+    chapter_title: "AI 應用問題類型"
+    section_title: "學習範式"
+    text: "在機器學習中，「標籤 (Label)」通常指的是什麼？"
+    type: multiple_choice
+    options:
+      - "輸入資料的特徵"
+      - "模型預測的結果"
+      - "資料對應的正確答案"
+      - "資料的編號"
+    correct_index: 2
+    explanation: "在監督式學習中，標籤就是我們希望模型學會預測的「正確答案」（如房價、類別）。"
+    tags: ["sec-chapter2", "sec-supervised-learning"]

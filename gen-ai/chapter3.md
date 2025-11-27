@@ -1,4 +1,10 @@
-# 第三章：進階 RAG 與系統架構 (Advanced RAG & Architecture) {#sec-advanced-rag}
+---
+title: "第三章：進階 RAG 與系統架構 (Advanced RAG & Architecture)"
+order: 3
+label: sec-gen-chapter3
+---
+
+<!-- # 第三章：進階 RAG 與系統架構 (Advanced RAG & Architecture) {#sec-advanced-rag} -->
 
 > **考點摘要**：解決 AI 幻覺與時效性問題的主流架構，考題常涉及 RAG 與 Fine-tuning 的選擇決策。
 

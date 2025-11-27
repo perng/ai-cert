@@ -1,0 +1,560 @@
+questions:
+  - id: 6001
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "導入流程與策略"
+    text: "在導入 GenAI 專案的流程中，通常最耗時但也最重要的步驟是？"
+    type: multiple_choice
+    options:
+      - "購買硬體"
+      - "資料準備 (Data Preparation)"
+      - "模型選型"
+      - "POC"
+    correct_index: 1
+    explanation: "資料是 AI 的糧食，清洗、去個資與格式轉換往往佔據專案大部分的時間與精力。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6002
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "導入流程與策略"
+    text: "雲端 API (Cloud API) 部署的主要缺點是？"
+    type: multiple_choice
+    options:
+      - "模型能力太弱"
+      - "建置速度慢"
+      - "資料需傳出企業，且長期成本可能較高"
+      - "無法使用 Python"
+    correct_index: 2
+    explanation: "資料隱私與累積的使用成本是企業採用雲端 API 時最主要的考量點。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6003
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "導入流程與策略"
+    text: "本地部署 (On-Premise) 最適合哪種場景？"
+    type: multiple_choice
+    options:
+      - "個人部落格"
+      - "金融/醫療等高監管行業，需處理機密資料"
+      - "公開新聞網站"
+      - "學生作業"
+    correct_index: 1
+    explanation: "本地部署能確保資料完全不出企業內網，符合最嚴格的資安與法規要求。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6004
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "導入流程與策略"
+    text: "POC (概念驗證) 階段的主要目標是？"
+    type: multiple_choice
+    options:
+      - "賺大錢"
+      - "快速做出原型，驗證技術可行性與解決方案的有效性"
+      - "購買所有設備"
+      - "招聘員工"
+    correct_index: 1
+    explanation: "POC 旨在以最小成本快速試錯，確認方向正確後再投入大量資源。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6005
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "導入流程與策略"
+    text: "若 GPU 利用率低，常見的原因不包括？"
+    type: multiple_choice
+    options:
+      - "Batch Size 設太小"
+      - "I/O 瓶頸 (硬碟讀取太慢)"
+      - "CPU 運算太慢"
+      - "模型參數量太大"
+    correct_index: 3
+    explanation: "模型參數量大通常會讓 GPU 滿載而非利用率低；利用率低通常是因為資料餵得不夠快或批次太小。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6006
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "效能評估指標"
+    text: "MMLU (Massive Multitask Language Understanding) 測試集的目的是？"
+    type: multiple_choice
+    options:
+      - "測試寫程式能力"
+      - "測試模型的廣度知識與跨學科推理能力"
+      - "測試數學能力"
+      - "測試翻譯能力"
+    correct_index: 1
+    explanation: "MMLU 涵蓋 57 個學科，是目前評估 LLM 綜合知識水平最權威的基準之一。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6007
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "效能評估指標"
+    text: "GSM8K 基準測試主要評估模型的什麼能力？"
+    type: multiple_choice
+    options:
+      - "寫詩"
+      - "小學數學應用題的多步驟推理能力"
+      - "法律知識"
+      - "醫療診斷"
+    correct_index: 1
+    explanation: "GSM8K 透過數學應用題，測試模型是否具備邏輯推理與步驟拆解的能力。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6008
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "效能評估指標"
+    text: "TTFT (Time to First Token) 指標直接影響？"
+    type: multiple_choice
+    options:
+      - "生成內容的準確度"
+      - "使用者體驗 (感知延遲)"
+      - "模型的訓練時間"
+      - "硬體成本"
+    correct_index: 1
+    explanation: "使用者最在意的是「多久看到第一個字」，TTFT 越短，使用者感覺系統越流暢。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6009
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "效能評估指標"
+    text: "TPS (Tokens Per Second) 代表？"
+    type: multiple_choice
+    options:
+      - "總延遲"
+      - "生成速度"
+      - "準確率"
+      - "錯誤率"
+    correct_index: 1
+    explanation: "TPS 衡量模型生成文字的快慢，數值越高代表生成速度越快。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6010
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "效能評估指標"
+    text: "LLM-as-a-Judge 是一種什麼樣的評估方法？"
+    type: multiple_choice
+    options:
+      - "請人類法官評分"
+      - "用更強的模型 (如 GPT-4) 來評估其他模型的回答品質"
+      - "用亂數評分"
+      - "不評分"
+    correct_index: 1
+    explanation: "利用強大模型的判斷力來自動化評估過程，解決人工評估成本高昂的問題。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6011
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "效能評估指標"
+    text: "紅隊演練 (Red Teaming) 的目的是？"
+    type: multiple_choice
+    options:
+      - "攻擊競爭對手"
+      - "模擬攻擊者行為，找出模型的安全漏洞與有害輸出"
+      - "慶祝專案成功"
+      - "增加模型速度"
+    correct_index: 1
+    explanation: "透過主動攻擊測試，提前發現並修補模型可能被濫用的弱點。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6012
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "導入流程與策略"
+    text: "量化 (Quantization) 技術 (如 INT4) 對 VRAM 的影響是？"
+    type: multiple_choice
+    options:
+      - "增加 VRAM 需求"
+      - "顯著降低 VRAM 需求"
+      - "無影響"
+      - "損壞 VRAM"
+    correct_index: 1
+    explanation: "量化降低了模型參數的精度（如從 FP16 降到 INT4），從而大幅減少記憶體佔用。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6013
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "效能評估指標"
+    text: "HumanEval 基準測試主要用於評估？"
+    type: multiple_choice
+    options:
+      - "寫作能力"
+      - "程式碼生成能力"
+      - "翻譯能力"
+      - "繪圖能力"
+    correct_index: 1
+    explanation: "HumanEval 包含一系列程式設計題目，測試模型能否寫出功能正確的程式碼。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6014
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "導入流程與策略"
+    text: "在技術選型階段，決定使用 RAG 還是 Fine-tuning 是為了？"
+    type: multiple_choice
+    options:
+      - "決定硬體規格"
+      - "選擇最適合業務需求與資源限制的技術架構"
+      - "決定辦公室地點"
+      - "決定員工薪水"
+    correct_index: 1
+    explanation: "不同的技術架構有不同的成本與效益，需根據具體需求（如知識時效性、準確度）進行權衡。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6015
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "效能評估指標"
+    text: "TTQA (Taiwan Truthful QA) 的特色是？"
+    type: multiple_choice
+    options:
+      - "全英文題目"
+      - "針對台灣本土文化與知識設計，避免模型只懂外國文化"
+      - "只有數學題"
+      - "只有選擇題"
+    correct_index: 1
+    explanation: "TTQA 填補了通用基準測試在在地化知識方面的空白，確保模型懂台灣。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6016
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "導入流程與策略"
+    text: "雲端 API 的優點不包括？"
+    type: multiple_choice
+    options:
+      - "建置快"
+      - "無需維護硬體"
+      - "資料隱私最高"
+      - "模型能力強"
+    correct_index: 2
+    explanation: "資料需上傳至雲端供應商，隱私性通常不如本地部署。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6017
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "導入流程與策略"
+    text: "跑一個 7B 參數的模型 (FP16) 大約需要多少 VRAM？"
+    type: multiple_choice
+    options:
+      - "2GB"
+      - "14GB"
+      - "32GB"
+      - "100GB"
+    correct_index: 1
+    explanation: "7B * 2 bytes (FP16) ≈ 14GB。這是估算顯卡需求的基本公式。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6018
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "效能評估指標"
+    text: "Throughput (吞吐量) 是指？"
+    type: multiple_choice
+    options:
+      - "網路頻寬"
+      - "系統單位時間內能處理的請求數量或 Token 數量"
+      - "硬碟容量"
+      - "電力消耗"
+    correct_index: 1
+    explanation: "吞吐量衡量系統的負載能力，是評估伺服器效能的關鍵指標。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6019
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "導入流程與策略"
+    text: "目標設定 (Goal Setting) 階段應該？"
+    type: multiple_choice
+    options:
+      - "直接開始寫程式"
+      - "明確定義問題與 KPI (如減少 30% 工作量)"
+      - "購買最貴的 GPU"
+      - "忽略使用者需求"
+    correct_index: 1
+    explanation: "明確的目標與量化指標是專案成功的導航燈，避免迷失方向。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6020
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "效能評估指標"
+    text: "對抗性測試 (Adversarial Testing) 是為了？"
+    type: multiple_choice
+    options:
+      - "訓練模型"
+      - "測試模型的強健性 (Robustness)，看微小擾動是否會導致崩潰或錯誤"
+      - "增加模型速度"
+      - "減少模型參數"
+    correct_index: 1
+    explanation: "透過輸入精心設計的擾動樣本，檢驗模型是否容易被愚弄或失效。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6021
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "導入流程與策略"
+    text: "本地部署的缺點是？"
+    type: multiple_choice
+    options:
+      - "資料不安全"
+      - "初期硬體投資大，且需專業團隊維護 MLOps"
+      - "延遲很高"
+      - "無法客製化"
+    correct_index: 1
+    explanation: "自建基礎設施需要昂貴的硬體採購與專業的人力維護成本。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6022
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "效能評估指標"
+    text: "Latency (總延遲) 包含？"
+    type: multiple_choice
+    options:
+      - "只有 TTFT"
+      - "生成完整回應所需的時間"
+      - "只有網路傳輸時間"
+      - "使用者思考時間"
+    correct_index: 1
+    explanation: "總延遲是用戶從發出請求到接收完所有內容的總等待時間。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6023
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "導入流程與策略"
+    text: "部署與監控階段需要特別關注？"
+    type: multiple_choice
+    options:
+      - "辦公室溫度"
+      - "幻覺率與使用者滿意度"
+      - "午餐吃什麼"
+      - "股價"
+    correct_index: 1
+    explanation: "上線後的持續監控能確保模型行為符合預期，並及時發現品質下降問題。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6024
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "效能評估指標"
+    text: "MBPP (Mostly Basic Python Problems) 是用來測試？"
+    type: multiple_choice
+    options:
+      - "英文寫作"
+      - "基礎 Python 程式設計能力"
+      - "數學證明"
+      - "歷史知識"
+    correct_index: 1
+    explanation: "MBPP 專注於基礎程式邏輯測試，常與 HumanEval 一起使用。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6025
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "導入流程與策略"
+    text: "為什麼 POC 階段適合使用雲端 API？"
+    type: multiple_choice
+    options:
+      - "因為比較慢"
+      - "因為建置快、無需硬體投資，能快速驗證想法"
+      - "因為比較難用"
+      - "因為只能用 API"
+    correct_index: 1
+    explanation: "POC 強調速度與低成本，雲端 API 即開即用的特性非常符合此需求。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6026
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "效能評估指標"
+    text: "評估生成式 AI 的難點在於？"
+    type: multiple_choice
+    options:
+      - "沒有難點"
+      - "「好文筆」與「創意」難以量化"
+      - "模型跑太快"
+      - "資料太少"
+    correct_index: 1
+    explanation: "生成內容的主觀性強，缺乏像準確率那樣單一且客觀的標準答案。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6027
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "導入流程與策略"
+    text: "資料準備階段的「去個資」是為了？"
+    type: multiple_choice
+    options:
+      - "減少資料量"
+      - "保護隱私並符合法規 (如 GDPR)"
+      - "增加雜訊"
+      - "破壞資料"
+    correct_index: 1
+    explanation: "確保訓練或檢索用的資料不包含敏感個人資訊，是合規的基本要求。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6028
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "效能評估指標"
+    text: "LLM-as-a-Judge 的優點是？"
+    type: multiple_choice
+    options:
+      - "完全準確"
+      - "比人工評估快且成本低，且具備一定的一致性"
+      - "不需要模型"
+      - "只能評估英文"
+    correct_index: 1
+    explanation: "雖然不如人類專家完美，但在大規模評估時，它提供了極佳的成本效益比。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6029
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "導入流程與策略"
+    text: "I/O 瓶頸會導致？"
+    type: multiple_choice
+    options:
+      - "GPU 運算加速"
+      - "GPU 空轉等待資料 (利用率低)"
+      - "硬碟爆炸"
+      - "網路斷線"
+    correct_index: 1
+    explanation: "如果資料讀取速度跟不上 GPU 的運算速度，GPU 就會被迫閒置等待。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6030
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "生成式 AI 專案管理與評估"
+    text: "本章強調的專案管理核心是？"
+    type: multiple_choice
+    options:
+      - "只管寫程式"
+      - "從目標設定、技術選型到上線監控的完整生命週期管理"
+      - "只管買硬體"
+      - "只管找人"
+    correct_index: 1
+    explanation: "成功的 AI 專案需要全方位的規劃與管理，而非僅僅是技術實作。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6031
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "效能評估指標"
+    text: "基準測試 (Benchmarks) 的主要作用是？"
+    type: multiple_choice
+    options:
+      - "訓練模型"
+      - "提供一個標準化的比較基準，衡量模型在不同領域的能力"
+      - "加速模型"
+      - "加密模型"
+    correct_index: 1
+    explanation: "透過統一的考卷，我們才能客觀比較不同模型之間的優劣。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6032
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "導入流程與策略"
+    text: "若使用量化技術 (INT4)，7B 模型的 VRAM 需求可降至約？"
+    type: multiple_choice
+    options:
+      - "1GB"
+      - "5-6GB"
+      - "14GB"
+      - "20GB"
+    correct_index: 1
+    explanation: "量化能將記憶體需求壓縮至原本的 1/3 到 1/4 左右，讓消費級顯卡也能跑模型。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6033
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "效能評估指標"
+    text: "服務指標 (Service Metrics) 主要關注？"
+    type: multiple_choice
+    options:
+      - "模型的知識量"
+      - "系統的運作效率與使用者體驗 (速度、延遲)"
+      - "模型的參數量"
+      - "訓練資料量"
+    correct_index: 1
+    explanation: "這些指標反映了系統在實際運作時的效能表現，直接關係到服務品質。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6034
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "導入流程與策略"
+    text: "API 速率限制 (Rate Limit) 是哪種部署方式的缺點？"
+    type: multiple_choice
+    options:
+      - "本地部署"
+      - "雲端 API"
+      - "混合部署"
+      - "離線部署"
+    correct_index: 1
+    explanation: "雲端服務商通常會限制每分鐘的請求次數，可能影響高併發場景的穩定性。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6035
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "效能評估指標"
+    text: "紅隊演練通常由誰執行？"
+    type: multiple_choice
+    options:
+      - "一般使用者"
+      - "安全專家或專門的測試團隊"
+      - "模型自己"
+      - "老闆"
+    correct_index: 1
+    explanation: "需要具備攻擊思維與專業知識的專家，才能有效挖掘深層的安全漏洞。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6036
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "導入流程與策略"
+    text: "Batch Size 設太小會導致？"
+    type: multiple_choice
+    options:
+      - "VRAM 不足"
+      - "GPU 利用率低 (沒吃飽)"
+      - "模型準確率下降"
+      - "訓練速度變快"
+    correct_index: 1
+    explanation: "GPU 擅長平行運算，Batch Size 太小無法充分發揮其平行處理能力。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6037
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "效能評估指標"
+    text: "TTQA 測試集的重要性在於？"
+    type: multiple_choice
+    options:
+      - "它很難"
+      - "確保模型具備在地化的文化與知識理解能力"
+      - "它是免費的"
+      - "它由 AI 生成"
+    correct_index: 1
+    explanation: "避免模型出現「水土不服」，例如不知道台灣的法律或習俗。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6038
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "導入流程與策略"
+    text: "部署策略中，混合模式通常是指？"
+    type: multiple_choice
+    options:
+      - "同時使用 CPU 和 GPU"
+      - "敏感資料用本地模型，一般資料用雲端 API"
+      - "同時使用 Windows 和 Linux"
+      - "同時使用 Python 和 Java"
+    correct_index: 1
+    explanation: "混合模式兼顧了雲端的強大能力與本地的隱私安全，是企業常見的折衷方案。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6039
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "效能評估指標"
+    text: "GSM8K 的「多步驟推理」是指？"
+    type: multiple_choice
+    options:
+      - "一次做很多題"
+      - "需要經過多個邏輯步驟才能得出答案 (如先乘除後加減)"
+      - "多人一起推理"
+      - "用多個模型推理"
+    correct_index: 1
+    explanation: "這類題目無法一步到位，考驗模型拆解問題與維持邏輯鏈的能力。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6040
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "導入流程與策略"
+    text: "資料清洗 (Data Cleaning) 的工作包括？"
+    type: multiple_choice
+    options:
+      - "用水洗硬碟"
+      - "去除雜訊、修正錯誤、統一格式"
+      - "刪除所有資料"
+      - "加密資料"
+    correct_index: 1
+    explanation: "高品質的資料是模型效能的基礎，Garbage In Garbage Out。"
+    tags: ["sec-gen-chapter6", "sec-project-planning"]

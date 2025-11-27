@@ -1,0 +1,560 @@
+questions:
+  - id: 11001
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "倫理原則與風險管理"
+    text: "AI 模型產生偏見 (Bias) 的主要原因通常是？"
+    type: multiple_choice
+    options:
+      - "演算法本身的數學錯誤"
+      - "訓練資料反映了歷史上的社會偏見或抽樣不均"
+      - "電腦硬體故障"
+      - "程式碼寫太長"
+    correct_index: 1
+    explanation: "AI 模型是從歷史數據中學習，若數據本身包含人類社會的偏見（如性別歧視），模型就會學到並放大這些偏見。"
+    tags: ["sec-chapter11", "sec-bias-fairness"]
+
+  - id: 11002
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "倫理原則與風險管理"
+    text: "Amazon 的 AI 招聘系統曾發生什麼倫理問題？"
+    type: multiple_choice
+    options:
+      - "洩漏個資"
+      - "歧視女性求職者（對包含女性詞彙的履歷扣分）"
+      - "系統當機"
+      - "錄取太多人"
+    correct_index: 1
+    explanation: "因為過去科技業多為男性，AI 學習歷史數據後誤以為「男性」是好員工的特徵，導致歧視女性。"
+    tags: ["sec-chapter11", "sec-bias-fairness"]
+
+  - id: 11003
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "倫理原則與風險管理"
+    text: "差分隱私 (Differential Privacy) 的核心技術是？"
+    type: multiple_choice
+    options:
+      - "資料加密"
+      - "在資料中加入適量的數學雜訊 (Noise)"
+      - "刪除資料"
+      - "使用區塊鏈"
+    correct_index: 1
+    explanation: "差分隱私透過加入雜訊，使得攻擊者無法分辨特定個人的資訊，但仍能保持整體統計數據的準確性。"
+    tags: ["sec-chapter11", "sec-privacy"]
+
+  - id: 11004
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "倫理原則與風險管理"
+    text: "聯邦學習 (Federated Learning) 的最大特色是？"
+    type: multiple_choice
+    options:
+      - "所有資料都上傳到雲端"
+      - "數據不離地 (Data stays local)，只交換模型參數"
+      - "不需要模型"
+      - "只能由政府使用"
+    correct_index: 1
+    explanation: "聯邦學習讓模型在本地裝置訓練，只回傳參數更新給伺服器，原始私密資料保留在用戶端。"
+    tags: ["sec-chapter11", "sec-privacy"]
+
+  - id: 11005
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "倫理原則與風險管理"
+    text: "在 AI 輔助決策（如醫療診斷）中，「人機協作 (Human-in-the-loop)」意味著？"
+    type: multiple_choice
+    options:
+      - "AI 全權負責"
+      - "人類完全不介入"
+      - "最終決策權與責任仍在人類專家身上"
+      - "AI 取代人類"
+    correct_index: 2
+    explanation: "高風險決策不能全交給 AI，必須有人類專家審核 AI 的建議並做出最終決定。"
+    tags: ["sec-chapter11", "sec-accountability"]
+
+  - id: 11006
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "台灣與國際法規架構"
+    text: "台灣《人工智慧基本法》草案中提到的「監理沙盒 (Regulatory Sandbox)」目的是？"
+    type: multiple_choice
+    options:
+      - "禁止 AI 發展"
+      - "允許企業在風險可控範圍內測試創新技術，暫時豁免部分法規"
+      - "處罰違規企業"
+      - "建立兒童遊樂場"
+    correct_index: 1
+    explanation: "監理沙盒提供一個實驗場域，讓創新技術能在法規尚未完備前先行測試，促進產業發展。"
+    tags: ["sec-chapter11", "sec-taiwan-ai-law"]
+
+  - id: 11007
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "台灣與國際法規架構"
+    text: "台灣金融業運用 AI 的核心原則中，關於「治理 (Governance)」的重點是？"
+    type: multiple_choice
+    options:
+      - "由 IT 部門全權負責"
+      - "董事會與高層管理階層應負起監督責任"
+      - "外包給廠商負責"
+      - "不需要治理"
+    correct_index: 1
+    explanation: "金管會強調 AI 治理是董事會層級的責任，不能僅視為技術操作層面的問題。"
+    tags: ["sec-chapter11", "sec-financial-ai"]
+
+  - id: 11008
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "台灣與國際法規架構"
+    text: "歐盟《人工智慧法案》(EU AI Act) 採取什麼樣的監管模式？"
+    type: multiple_choice
+    options:
+      - "全面禁止"
+      - "完全放任"
+      - "風險導向 (Risk-based approach)"
+      - "技術導向"
+    correct_index: 2
+    explanation: "EU AI Act 根據 AI 應用的風險等級（不可接受、高、有限、最小）實施不同強度的監管。"
+    tags: ["sec-chapter11", "sec-eu-ai-act"]
+
+  - id: 11009
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "台灣與國際法規架構"
+    text: "根據 EU AI Act，「社會信用評分 (Social Scoring)」屬於哪一級風險？"
+    type: multiple_choice
+    options:
+      - "最小風險"
+      - "有限風險"
+      - "高風險"
+      - "不可接受風險 (Unacceptable Risk) - 禁止"
+    correct_index: 3
+    explanation: "社會信用評分被認為嚴重侵犯人權，在歐盟是完全禁止的。"
+    tags: ["sec-chapter11", "sec-eu-ai-act"]
+
+  - id: 11010
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "台灣與國際法規架構"
+    text: "根據 EU AI Act，招聘系統或醫療器材 AI 屬於哪一級風險？"
+    type: multiple_choice
+    options:
+      - "最小風險"
+      - "有限風險"
+      - "高風險 (High Risk) - 嚴格監管"
+      - "不可接受風險"
+    correct_index: 2
+    explanation: "這些應用直接影響人們的生計與健康，被列為高風險，需通過嚴格的合規評估。"
+    tags: ["sec-chapter11", "sec-eu-ai-act"]
+
+  - id: 11011
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "台灣與國際法規架構"
+    text: "根據 EU AI Act，聊天機器人 (Chatbot) 屬於哪一級風險，需履行什麼義務？"
+    type: multiple_choice
+    options:
+      - "高風險，需審查"
+      - "有限風險 (Limited Risk)，需履行透明度義務（告知是 AI）"
+      - "不可接受風險，需禁止"
+      - "最小風險，不需監管"
+    correct_index: 1
+    explanation: "使用者有權知道自己正在與機器互動，因此必須揭露 AI 身分。"
+    tags: ["sec-chapter11", "sec-eu-ai-act"]
+
+  - id: 11012
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "AI 產品評測標準"
+    text: "數位發展部 AI 產品評測中心的評測指標不包含下列何者？"
+    type: multiple_choice
+    options:
+      - "安全性 (Safety)"
+      - "公平性 (Fairness)"
+      - "資料複雜性 (Data Complexity)"
+      - "可解釋性 (Explainability)"
+    correct_index: 2
+    explanation: "評測中心主要評估模型本身的性能與安全，資料品質通常被視為廠商的責任，不在直接評測範圍內。"
+    tags: ["sec-chapter11", "sec-moda-eval"]
+
+  - id: 11013
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "倫理原則與風險管理"
+    text: "「資料去偏 (Data Debiasing)」的主要目的是？"
+    type: multiple_choice
+    options:
+      - "減少資料量"
+      - "消除訓練資料中的不公平偏見，確保模型公平性"
+      - "加快訓練速度"
+      - "加密資料"
+    correct_index: 1
+    explanation: "透過調整資料分佈或演算法約束，減少模型因歷史數據而產生的歧視行為。"
+    tags: ["sec-chapter11", "sec-bias-fairness"]
+
+  - id: 11014
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "倫理原則與風險管理"
+    text: "聯邦學習適合應用於哪個場景？"
+    type: multiple_choice
+    options:
+      - "公開數據集的訓練"
+      - "多家醫院聯合研究，但病歷個資不能出院"
+      - "單機遊戲"
+      - "天氣預報"
+    correct_index: 1
+    explanation: "聯邦學習是解決跨機構資料隱私共享問題的最佳方案。"
+    tags: ["sec-chapter11", "sec-privacy"]
+
+  - id: 11015
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "台灣與國際法規架構"
+    text: "金融業 AI 規範中的「透明度與可解釋性」要求什麼？"
+    type: multiple_choice
+    options:
+      - "公開所有程式碼"
+      - "當 AI 做出重大決策（如拒貸）時，必須能解釋原因"
+      - "使用透明的機殼"
+      - "完全不使用 AI"
+    correct_index: 1
+    explanation: "客戶有權知道為何被拒絕，金融機構不能以「黑箱」為由拒絕解釋。"
+    tags: ["sec-chapter11", "sec-financial-ai"]
+
+  - id: 11016
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "台灣與國際法規架構"
+    text: "EU AI Act 對於 Deepfake 的規範是？"
+    type: multiple_choice
+    options:
+      - "完全禁止"
+      - "必須標示為生成內容（透明度義務）"
+      - "不需管制"
+      - "只能用於娛樂"
+    correct_index: 1
+    explanation: "Deepfake 屬於有限風險，必須明確標示以避免誤導大眾。"
+    tags: ["sec-chapter11", "sec-eu-ai-act"]
+
+  - id: 11017
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "AI 產品評測標準"
+    text: "Prompt Injection 攻擊是針對 AI 的哪項指標進行測試？"
+    type: multiple_choice
+    options:
+      - "準確性"
+      - "安全性 (Safety)"
+      - "公平性"
+      - "效率"
+    correct_index: 1
+    explanation: "Prompt Injection 試圖誘導模型輸出有害內容，測試其安全性防護是否足夠。"
+    tags: ["sec-chapter11", "sec-moda-eval"]
+
+  - id: 11018
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "倫理原則與風險管理"
+    text: "當責性 (Accountability) 強調的是？"
+    type: multiple_choice
+    options:
+      - "AI 必須有自我意識"
+      - "AI 犯錯時，必須有人類負責"
+      - "AI 永遠不會犯錯"
+      - "使用者要負責修好 AI"
+    correct_index: 1
+    explanation: "無論技術如何發展，法律與道德責任最終必須歸屬於人類（開發者或使用者）。"
+    tags: ["sec-chapter11", "sec-accountability"]
+
+  - id: 11019
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "台灣與國際法規架構"
+    text: "下列何者屬於 EU AI Act 定義的「最小風險」？"
+    type: multiple_choice
+    options:
+      - "垃圾郵件過濾器"
+      - "自駕車"
+      - "招聘系統"
+      - "邊境管制系統"
+    correct_index: 0
+    explanation: "垃圾郵件過濾器對人權影響極微，屬於最小風險，幾乎不需監管。"
+    tags: ["sec-chapter11", "sec-eu-ai-act"]
+
+  - id: 11020
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "台灣與國際法規架構"
+    text: "台灣金融業 AI 規範的口訣「治平隱安透責」中，「透」代表？"
+    type: multiple_choice
+    options:
+      - "透明度與可解釋性"
+      - "透支"
+      - "透露個資"
+      - "透視"
+    correct_index: 0
+    explanation: "透代表透明度與可解釋性，要求決策過程需對客戶透明。"
+    tags: ["sec-chapter11", "sec-financial-ai"]
+
+  - id: 11021
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "倫理原則與風險管理"
+    text: "抽樣偏見 (Sampling Bias) 是指？"
+    type: multiple_choice
+    options:
+      - "訓練資料太少"
+      - "訓練資料中某些族群的樣本數過少，導致模型對該族群表現不佳"
+      - "模型參數錯誤"
+      - "隨機抽樣"
+    correct_index: 1
+    explanation: "若訓練資料集中缺乏某特定族群（如深色人種）的數據，模型在該族群上的準確率就會偏低。"
+    tags: ["sec-chapter11", "sec-bias-fairness"]
+
+  - id: 11022
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "倫理原則與風險管理"
+    text: "Google Gboard 使用什麼技術來保護用戶輸入隱私？"
+    type: multiple_choice
+    options:
+      - "區塊鏈"
+      - "聯邦學習 (Federated Learning)"
+      - "防火牆"
+      - "生物辨識"
+    correct_index: 1
+    explanation: "Gboard 利用聯邦學習在手機端改進預測模型，無需上傳用戶的打字內容。"
+    tags: ["sec-chapter11", "sec-privacy"]
+
+  - id: 11023
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "台灣與國際法規架構"
+    text: "EU AI Act 對於「潛意識操縱」的規範是？"
+    type: multiple_choice
+    options:
+      - "高風險"
+      - "禁止 (不可接受風險)"
+      - "有限風險"
+      - "最小風險"
+    correct_index: 1
+    explanation: "利用 AI 操控人類潛意識被視為嚴重侵犯自主權，屬於絕對禁止的項目。"
+    tags: ["sec-chapter11", "sec-eu-ai-act"]
+
+  - id: 11024
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "台灣與國際法規架構"
+    text: "金融業 AI 規範中，「系統安全性」要求防止什麼？"
+    type: multiple_choice
+    options:
+      - "防止斷電"
+      - "防止對抗式攻擊與駭客入侵"
+      - "防止員工偷懶"
+      - "防止客戶投訴"
+    correct_index: 1
+    explanation: "金融系統必須具備強健性，能抵禦惡意攻擊並確保服務不中斷。"
+    tags: ["sec-chapter11", "sec-financial-ai"]
+
+  - id: 11025
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "AI 產品評測標準"
+    text: "AI 產品評測中的「彈性 (Resilience)」是指？"
+    type: multiple_choice
+    options:
+      - "模型可以隨意變形"
+      - "遇到異常輸入或攻擊時，系統仍能維持運作的能力"
+      - "價格彈性"
+      - "回應速度"
+    correct_index: 1
+    explanation: "彈性測試系統在面對壓力或惡意輸入時的穩定性與恢復能力。"
+    tags: ["sec-chapter11", "sec-moda-eval"]
+
+  - id: 11026
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "台灣與國際法規架構"
+    text: "台灣 AI 基本法草案的定位是？"
+    type: multiple_choice
+    options:
+      - "處罰條例"
+      - "技術手冊"
+      - "上位法，確立基本原則"
+      - "僅適用於公部門"
+    correct_index: 2
+    explanation: "基本法作為指導性法律，為 AI 發展與監管提供大方向與原則。"
+    tags: ["sec-chapter11", "sec-taiwan-ai-law"]
+
+  - id: 11027
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "倫理原則與風險管理"
+    text: "歷史偏見 (Historical Bias) 的例子是？"
+    type: multiple_choice
+    options:
+      - "相機畫素不足"
+      - "因為過去主管多為男性，AI 認為男性較適合當主管"
+      - "資料標註錯誤"
+      - "硬碟損壞"
+    correct_index: 1
+    explanation: "這是典型的歷史偏見，AI 忠實地學到了人類社會過去存在的不平等。"
+    tags: ["sec-chapter11", "sec-bias-fairness"]
+
+  - id: 11028
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "台灣與國際法規架構"
+    text: "EU AI Act 中，公共場所的即時遠端生物辨識原則上是？"
+    type: multiple_choice
+    options:
+      - "鼓勵使用"
+      - "禁止 (除特定執法例外)"
+      - "完全開放"
+      - "僅限商業使用"
+    correct_index: 1
+    explanation: "為了保障隱私與自由，原則上禁止，除非是為了追捕重犯等重大公共利益。"
+    tags: ["sec-chapter11", "sec-eu-ai-act"]
+
+  - id: 11029
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "台灣與國際法規架構"
+    text: "金融業 AI 規範中，「保護隱私」強調什麼原則？"
+    type: multiple_choice
+    options:
+      - "最大化蒐集"
+      - "最小化蒐集 (Data Minimization)"
+      - "公開所有資料"
+      - "隨意分享"
+    correct_index: 1
+    explanation: "只蒐集業務所需的必要資料，避免過度蒐集個資，降低隱私風險。"
+    tags: ["sec-chapter11", "sec-financial-ai"]
+
+  - id: 11030
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "AI 治理、法規與倫理"
+    text: "AI 治理 (AI Governance) 的核心目標是？"
+    type: multiple_choice
+    options:
+      - "限制 AI 發展"
+      - "確保 AI 向善 (AI for Good)，降低風險並符合法規"
+      - "提高 AI 價格"
+      - "取代人類政府"
+    correct_index: 1
+    explanation: "AI 治理旨在平衡創新與風險，確保技術發展造福人類而非造成傷害。"
+    tags: ["sec-chapter11", "sec-chapter11-summary"]
+
+  - id: 11031
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "倫理原則與風險管理"
+    text: "下列哪項技術可以在不洩漏個資的情況下進行數據統計？"
+    type: multiple_choice
+    options:
+      - "差分隱私"
+      - "公開數據"
+      - "備份數據"
+      - "數據清洗"
+    correct_index: 0
+    explanation: "差分隱私專為此目的設計，能在保護個體的同時提供準確的群體統計。"
+    tags: ["sec-chapter11", "sec-privacy"]
+
+  - id: 11032
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "台灣與國際法規架構"
+    text: "EU AI Act 的影響力常被比喻為？"
+    type: multiple_choice
+    options:
+      - "GDPR (一般資料保護規則)"
+      - "ISO 9001"
+      - "憲法"
+      - "交通規則"
+    correct_index: 0
+    explanation: "如同 GDPR 成為全球隱私標竿，EU AI Act 預計將成為全球 AI 監管的黃金標準。"
+    tags: ["sec-chapter11", "sec-eu-ai-act"]
+
+  - id: 11033
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "AI 產品評測標準"
+    text: "AI 產品評測中的「幻覺 (Hallucination)」檢測屬於哪項指標？"
+    type: multiple_choice
+    options:
+      - "效率"
+      - "準確性 (Accuracy)"
+      - "相容性"
+      - "易用性"
+    correct_index: 1
+    explanation: "幻覺代表模型生成錯誤資訊，直接影響輸出的準確性。"
+    tags: ["sec-chapter11", "sec-moda-eval"]
+
+  - id: 11034
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "台灣與國際法規架構"
+    text: "風險分級管理的好處是？"
+    type: multiple_choice
+    options:
+      - "增加管理成本"
+      - "避免一竿子打翻一船人，針對不同風險採取適當強度的管理"
+      - "讓所有 AI 都被禁止"
+      - "讓所有 AI 都不受管"
+    correct_index: 1
+    explanation: "風險分級能兼顧安全與創新，避免對低風險應用造成不必要的法規負擔。"
+    tags: ["sec-chapter11", "sec-taiwan-ai-law"]
+
+  - id: 11035
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "倫理原則與風險管理"
+    text: "「數據不離地」是哪種技術的口號？"
+    type: multiple_choice
+    options:
+      - "雲端運算"
+      - "聯邦學習"
+      - "邊緣運算"
+      - "區塊鏈"
+    correct_index: 1
+    explanation: "這正是聯邦學習的核心隱私保護機制。"
+    tags: ["sec-chapter11", "sec-privacy"]
+
+  - id: 11036
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "台灣與國際法規架構"
+    text: "對於高風險 AI 系統，EU AI Act 要求必須？"
+    type: multiple_choice
+    options:
+      - "自我宣告即可"
+      - "通過合規評估 (Conformity Assessment) 並有人類監督"
+      - "完全開源"
+      - "免費提供"
+    correct_index: 1
+    explanation: "高風險系統上市前必須經過嚴格的第三方或自我評估，確保符合法規要求。"
+    tags: ["sec-chapter11", "sec-eu-ai-act"]
+
+  - id: 11037
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "台灣與國際法規架構"
+    text: "金融業 AI 規範中，關於「當責性」的要求包括？"
+    type: multiple_choice
+    options:
+      - "AI 必須有身分證"
+      - "必須建立申訴管道與補救機制"
+      - "AI 必須買保險"
+      - "客戶要自己負責"
+    correct_index: 1
+    explanation: "當責性意味著機構必須為 AI 的決策負責，提供客戶救濟的途徑。"
+    tags: ["sec-chapter11", "sec-financial-ai"]
+
+  - id: 11038
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "AI 產品評測標準"
+    text: "目前的 AI 產品評測主要針對？"
+    type: multiple_choice
+    options:
+      - "硬體效能"
+      - "語言模型本身"
+      - "使用者介面"
+      - "網路速度"
+    correct_index: 1
+    explanation: "評測中心目前的重點在於評估 LLM 等核心模型的安全性與性能。"
+    tags: ["sec-chapter11", "sec-moda-eval"]
+
+  - id: 11039
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "倫理原則與風險管理"
+    text: "為了避免 AI 偏見，我們應該？"
+    type: multiple_choice
+    options:
+      - "停止使用 AI"
+      - "在訓練前檢查資料分佈，進行去偏處理"
+      - "只使用男性資料"
+      - "只使用女性資料"
+    correct_index: 1
+    explanation: "主動檢測並修正訓練資料中的偏差，是解決 AI 偏見最根本的方法。"
+    tags: ["sec-chapter11", "sec-bias-fairness"]
+
+  - id: 11040
+    chapter_title: "AI 治理、法規與倫理"
+    section_title: "台灣與國際法規架構"
+    text: "監理沙盒對新創企業的重要性在於？"
+    type: multiple_choice
+    options:
+      - "提供資金"
+      - "提供合法的試錯空間，避免創新被舊法規扼殺"
+      - "提供辦公室"
+      - "提供免費人力"
+    correct_index: 1
+    explanation: "沙盒機制允許新創在受控環境下測試法規未明的新業務，降低法律風險。"
+    tags: ["sec-chapter11", "sec-taiwan-ai-law"]

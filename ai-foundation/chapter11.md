@@ -1,4 +1,10 @@
-# AI 治理、法規與倫理 (AI Governance, Regulations & Ethics)
+---
+title: "AI 治理、法規與倫理 (AI Governance, Regulations & Ethics)"
+order: 11
+label: sec-chapter11
+---
+
+<!-- # AI 治理、法規與倫理 (AI Governance, Regulations & Ethics) -->
 
 AI 的強大能力伴隨著巨大的風險。如何確保 AI 是向善的 (AI for Good)，而不是帶來歧視、侵犯隱私或失控，是當前各國政府與企業最關注的議題。這不僅是道德問題，更是法律合規問題。
 

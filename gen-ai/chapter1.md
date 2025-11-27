@@ -1,4 +1,10 @@
-# 生成式 AI 模型架構與機制 (Generative Models & Mechanisms) {#sec-gen-ai-models}
+---
+title: "生成式 AI 模型架構與機制 (Generative Models & Mechanisms)"
+order: 1
+label: sec-gen-chapter1
+---
+
+<!-- # 生成式 AI 模型架構與機制 (Generative Models & Mechanisms) {#sec-gen-ai-models} -->
 
 > **考點摘要**：不同於基礎 AI 概論，本科聚焦於「生成」技術的特點、Transformer 變體應用以及推論參數的控制。
 

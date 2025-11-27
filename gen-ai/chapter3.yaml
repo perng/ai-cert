@@ -1,0 +1,560 @@
+questions:
+  - id: 3001
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調與優化"
+    text: "在 RAG 與 Fine-tuning 的比較中，若企業需要 AI 具備「即時更新的知識」，應選擇？"
+    type: multiple_choice
+    options:
+      - "Fine-tuning (微調)"
+      - "RAG (檢索增強生成)"
+      - "兩者皆可"
+      - "兩者皆不可"
+    correct_index: 1
+    explanation: "RAG 透過檢索外部資料庫，只要資料庫更新，AI 就能立即獲取新知識，無需重新訓練。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3002
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調與優化"
+    text: "RAG 被比喻為哪種考試方式？"
+    type: multiple_choice
+    options:
+      - "默寫"
+      - "開書考 (Open Book Exam)"
+      - "口試"
+      - "體育測驗"
+    correct_index: 1
+    explanation: "RAG 允許模型在回答問題時翻閱參考資料（向量資料庫），就像開書考一樣。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3003
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調與優化"
+    text: "Fine-tuning 被比喻為哪種學習方式？"
+    type: multiple_choice
+    options:
+      - "開書考"
+      - "考前衝刺班 (內化知識)"
+      - "小組討論"
+      - "校外教學"
+    correct_index: 1
+    explanation: "Fine-tuning 透過大量訓練將知識內化到模型的權重中，就像考前死背硬記。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3004
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調與優化"
+    text: "若要降低 AI 的「幻覺 (Hallucination)」風險，RAG 與 Fine-tuning 何者較佳？"
+    type: multiple_choice
+    options:
+      - "Fine-tuning"
+      - "RAG"
+      - "兩者一樣差"
+      - "無法比較"
+    correct_index: 1
+    explanation: "RAG 要求模型根據檢索到的事實回答，並可附上引用來源，顯著降低胡說八道的機率。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3005
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調與優化"
+    text: "在資料隱私控管方面，RAG 的優勢在於？"
+    type: multiple_choice
+    options:
+      - "資料完全公開"
+      - "可透過權限控管 (ACL) 決定誰能檢索到什麼文件"
+      - "資料被加密在模型權重中"
+      - "不需要資料庫"
+    correct_index: 1
+    explanation: "RAG 的檢索階段可以整合現有的企業權限系統，確保使用者只能看到自己有權限的資料。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3006
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調與優化"
+    text: "Fine-tuning 最適合的應用場景是？"
+    type: multiple_choice
+    options:
+      - "查詢即時股價"
+      - "學習特定的語氣、風格或專有名詞理解"
+      - "查詢公司內部規章"
+      - "避免幻覺"
+    correct_index: 1
+    explanation: "Fine-tuning 能有效調整模型的行為模式，使其模仿特定的說話風格或理解特定領域的術語。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3007
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調與優化"
+    text: "知識蒸餾 (Knowledge Distillation) 的核心概念是？"
+    type: multiple_choice
+    options:
+      - "讓小模型 (Student) 模仿大模型 (Teacher) 的行為"
+      - "讓大模型模仿小模型"
+      - "刪除模型參數"
+      - "增加模型層數"
+    correct_index: 0
+    explanation: "知識蒸餾旨在將大模型的智慧轉移到輕量化的小模型上，以利在邊緣裝置運行。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3008
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調與優化"
+    text: "在知識蒸餾中，Student 模型除了學習正確答案 (Hard Label)，還要學習什麼？"
+    type: multiple_choice
+    options:
+      - "錯誤答案"
+      - "Teacher 的機率分佈 (Soft Label / Dark Knowledge)"
+      - "訓練資料的雜訊"
+      - "使用者的個資"
+    correct_index: 1
+    explanation: "Teacher 輸出的機率分佈包含了類別間的相似性資訊（如狗有點像貓），這對 Student 的學習至關重要。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3009
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "Model Context Protocol (MCP)"
+    text: "MCP (Model Context Protocol) 的主要目的是？"
+    type: multiple_choice
+    options:
+      - "加密 AI 模型"
+      - "標準化 AI 模型與外部數據/工具之間的連接方式"
+      - "取代 HTTP 協定"
+      - "加速 GPU 運算"
+    correct_index: 1
+    explanation: "MCP 旨在解決 AI 連接外部工具時的碎片化問題，提供統一的介面標準。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3010
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "Model Context Protocol (MCP)"
+    text: "MCP 架構中，負責提供數據或功能的是？"
+    type: multiple_choice
+    options:
+      - "MCP Client"
+      - "MCP Server"
+      - "MCP Host"
+      - "MCP User"
+    correct_index: 1
+    explanation: "MCP Server 扮演服務提供者的角色，如 Google Drive Server 提供檔案存取功能。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3011
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "Model Context Protocol (MCP)"
+    text: "MCP 與 RAG 的主要差異在於？"
+    type: multiple_choice
+    options:
+      - "RAG 比較快"
+      - "MCP 只關注靜態知識"
+      - "MCP 更關注動態工具的使用與雙向互動 (讀寫/執行)"
+      - "兩者完全相同"
+    correct_index: 2
+    explanation: "RAG 側重於資訊檢索，而 MCP 則賦予 AI 執行操作（如發送訊息、寫入資料庫）的能力。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3012
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調與優化"
+    text: "企業導入 AI 的最佳實務通常建議？"
+    type: multiple_choice
+    options:
+      - "直接 Fine-tuning"
+      - "先 RAG，後 Fine-tuning"
+      - "只用 Prompt Engineering"
+      - "自己從頭訓練大模型"
+    correct_index: 1
+    explanation: "先用 RAG 解決知識問題成本較低且見效快，若效果不足再考慮成本較高的 Fine-tuning。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3013
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調與優化"
+    text: "Fine-tuning 的主要缺點是？"
+    type: multiple_choice
+    options:
+      - "模型會變笨"
+      - "知識更新慢且成本高 (需重新訓練)"
+      - "無法理解中文"
+      - "只能在手機上跑"
+    correct_index: 1
+    explanation: "每次知識更新都需要重新準備資料並進行訓練，維護成本高且缺乏時效性。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3014
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調與優化"
+    text: "RAG 的運作依賴於哪種資料庫技術？"
+    type: multiple_choice
+    options:
+      - "關聯式資料庫 (SQL)"
+      - "向量資料庫 (Vector Database)"
+      - "圖資料庫"
+      - "區塊鏈"
+    correct_index: 1
+    explanation: "向量資料庫用於儲存與檢索文本的語意向量，是 RAG 的核心組件。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3015
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "Model Context Protocol (MCP)"
+    text: "MCP Client (如 Claude Desktop) 的角色是？"
+    type: multiple_choice
+    options:
+      - "儲存資料"
+      - "發起請求的主體 (AI Host)"
+      - "執行 SQL 查詢"
+      - "提供 API"
+    correct_index: 1
+    explanation: "MCP Client 是 AI 運行的前端，負責理解使用者需求並向 Server 發送請求。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3016
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調與優化"
+    text: "知識蒸餾可以降低模型的？"
+    type: multiple_choice
+    options:
+      - "準確率"
+      - "推論成本與延遲"
+      - "創造力"
+      - "安全性"
+    correct_index: 1
+    explanation: "小模型運算量小，能顯著降低硬體需求與回應時間。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3017
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調與優化"
+    text: "Fine-tuning 在資料隱私方面的風險是？"
+    type: multiple_choice
+    options:
+      - "資料容易被駭客竊取"
+      - "一旦知識寫入權重，很難限制特定人存取 (難以實作 ACL)"
+      - "資料會自動刪除"
+      - "模型會拒絕回答"
+    correct_index: 1
+    explanation: "模型權重是黑箱，無法像資料庫那樣針對不同使用者設定精細的存取權限。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3018
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "Model Context Protocol (MCP)"
+    text: "MCP 被比喻為電腦界的什麼標準？"
+    type: multiple_choice
+    options:
+      - "HDMI"
+      - "USB"
+      - "Bluetooth"
+      - "Wi-Fi"
+    correct_index: 1
+    explanation: "就像 USB 讓各種周邊設備能隨插即用於電腦，MCP 讓各種資料源能標準化地連接 AI。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3019
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調與優化"
+    text: "若要讓 AI 學習輸出特定的 JSON 格式，最有效的方法是？"
+    type: multiple_choice
+    options:
+      - "RAG"
+      - "Fine-tuning"
+      - "知識蒸餾"
+      - "增加溫度"
+    correct_index: 1
+    explanation: "Fine-tuning 非常適合讓模型學習固定的輸出格式或語法結構。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3020
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "Model Context Protocol (MCP)"
+    text: "MCP 是否可以包含 RAG 的功能？"
+    type: multiple_choice
+    options:
+      - "不行，兩者互斥"
+      - "可以，MCP 可以連接向量資料庫來實現 RAG"
+      - "不一定"
+      - "RAG 包含 MCP"
+    correct_index: 1
+    explanation: "MCP 是一個連接協議，可以將向量資料庫視為一個 Server 來連接，從而實現 RAG 功能。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3021
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調與優化"
+    text: "RAG 的「Grounded」特性是指？"
+    type: multiple_choice
+    options:
+      - "模型接地氣"
+      - "回答有憑有據，基於檢索到的事實"
+      - "模型在本地運行"
+      - "模型被禁足"
+    correct_index: 1
+    explanation: "Groundedness 指的是生成的內容有明確的來源依據，而非模型憑空捏造。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3022
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調與優化"
+    text: "知識蒸餾中的 Teacher 模型通常是？"
+    type: multiple_choice
+    options:
+      - "參數少的小模型"
+      - "參數多、效能強的大模型"
+      - "隨機初始化的模型"
+      - "線性迴歸模型"
+    correct_index: 1
+    explanation: "Teacher 必須是能力強的專家，才能指導 Student。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3023
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "Model Context Protocol (MCP)"
+    text: "MCP 解決了 AI 開發中的什麼痛點？"
+    type: multiple_choice
+    options:
+      - "模型訓練太慢"
+      - "連接器 (Connector) 的碎片化問題"
+      - "資料不足"
+      - "硬體太貴"
+    correct_index: 1
+    explanation: "開發者不再需要為每個模型-資料源組合重複開發連接器，只需遵循 MCP 標準即可。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3024
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調與優化"
+    text: "下列何者不是 RAG 的優點？"
+    type: multiple_choice
+    options:
+      - "知識時效性高"
+      - "幻覺風險低"
+      - "能改變模型的說話語氣"
+      - "資料隱私可控"
+    correct_index: 2
+    explanation: "改變語氣或風格是 Fine-tuning 的強項，RAG 主要負責提供知識內容。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3025
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調與優化"
+    text: "Dark Knowledge (暗知識) 在知識蒸餾中指的是？"
+    type: multiple_choice
+    options:
+      - "黑市交易的知識"
+      - "Teacher 模型輸出的非最高機率類別資訊"
+      - "錯誤的知識"
+      - "加密的知識"
+    correct_index: 1
+    explanation: "暗知識隱藏在 Soft Label 中，揭示了類別間的細微關係，對 Student 的學習很有幫助。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3026
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "Model Context Protocol (MCP)"
+    text: "MCP Server 可以執行哪些操作？"
+    type: multiple_choice
+    options:
+      - "只能讀取資料"
+      - "讀取資料與執行功能 (如 API 呼叫)"
+      - "只能寫入資料"
+      - "只能顯示圖片"
+    correct_index: 1
+    explanation: "MCP Server 具備執行能力，能代表 AI 與外部系統進行完整的互動。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3027
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調與優化"
+    text: "如果需要 AI 理解醫療領域的艱深術語，建議使用？"
+    type: multiple_choice
+    options:
+      - "RAG"
+      - "Fine-tuning (Domain Adaptation)"
+      - "Prompt Engineering"
+      - "降低溫度"
+    correct_index: 1
+    explanation: "對於特定領域的語言模式與術語理解，Fine-tuning (領域適應) 的效果通常優於僅提供上下文的 RAG。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3028
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調與優化"
+    text: "RAG 的成本主要來自？"
+    type: multiple_choice
+    options:
+      - "模型訓練"
+      - "向量資料庫建置與檢索運算"
+      - "資料標註"
+      - "購買 GPU"
+    correct_index: 1
+    explanation: "RAG 不需訓練模型，成本集中在檢索系統的維運與 API 呼叫。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3029
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "Model Context Protocol (MCP)"
+    text: "MCP Host 的功能是？"
+    type: multiple_choice
+    options:
+      - "提供數據"
+      - "執行 MCP Client 的環境"
+      - "發送請求"
+      - "訓練模型"
+    correct_index: 1
+    explanation: "MCP Host 提供 Client 運作所需的 runtime 環境。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3030
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調與優化"
+    text: "Fine-tuning 的「考前衝刺班」比喻意指？"
+    type: multiple_choice
+    options:
+      - "臨時抱佛腳"
+      - "透過密集訓練將特定知識內化"
+      - "作弊"
+      - "放鬆心情"
+    correct_index: 1
+    explanation: "強調透過針對性的訓練數據，強化模型在特定任務上的表現。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3031
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調與優化"
+    text: "RAG 適合用於查詢法規的原因是？"
+    type: multiple_choice
+    options:
+      - "法規很有趣"
+      - "法規需要精確引用且會隨時間更新"
+      - "法規不需要準確"
+      - "模型天生懂法規"
+    correct_index: 1
+    explanation: "法規查詢要求高度準確性與時效性，且需引用條文依據，這正是 RAG 的強項。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3032
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調與優化"
+    text: "知識蒸餾的 Student 模型通常比 Teacher 模型？"
+    type: multiple_choice
+    options:
+      - "更大更慢"
+      - "更小更快"
+      - "一樣大"
+      - "更笨重"
+    correct_index: 1
+    explanation: "知識蒸餾的目的就是獲得一個輕量級但效能接近 Teacher 的模型。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3033
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "Model Context Protocol (MCP)"
+    text: "MCP 是一個？"
+    type: multiple_choice
+    options:
+      - "封閉系統"
+      - "開放標準協議"
+      - "付費軟體"
+      - "硬體裝置"
+    correct_index: 1
+    explanation: "MCP 旨在建立一個開源、通用的標準，促進生態系發展。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3034
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調與優化"
+    text: "Soft Label (軟標籤) 包含了什麼資訊？"
+    type: multiple_choice
+    options:
+      - "只有正確答案"
+      - "各類別的機率分佈"
+      - "文字描述"
+      - "圖片特徵"
+    correct_index: 1
+    explanation: "Soft Label 提供了比 Hard Label 更豐富的資訊，顯示了模型對各類別的信心程度。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3035
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調與優化"
+    text: "Fine-tuning 的成本主要來自？"
+    type: multiple_choice
+    options:
+      - "檢索運算"
+      - "算力 (GPU) 與高品質資料準備"
+      - "硬碟空間"
+      - "網路頻寬"
+    correct_index: 1
+    explanation: "訓練過程需要昂貴的 GPU 資源以及經過清洗標註的高品質資料集。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3036
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "Model Context Protocol (MCP)"
+    text: "MCP 的出現是為了應對 AI 應用的什麼趨勢？"
+    type: multiple_choice
+    options:
+      - "模型越來越小"
+      - "需要連接更多樣化的工具與資料源"
+      - "使用者越來越少"
+      - "資料越來越少"
+    correct_index: 1
+    explanation: "隨著 Agentic AI 發展，AI 需要與外部世界進行更廣泛的互動，MCP 提供了標準化的連接基礎。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3037
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調與優化"
+    text: "RAG 的「開書考」比喻強調了？"
+    type: multiple_choice
+    options:
+      - "模型記憶力很好"
+      - "模型依賴外部資料源而非內部記憶"
+      - "考試很簡單"
+      - "可以作弊"
+    correct_index: 1
+    explanation: "強調模型在推論時動態獲取資訊的能力，而非依賴訓練時記住的參數。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3038
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調與優化"
+    text: "知識蒸餾適合用於？"
+    type: multiple_choice
+    options:
+      - "雲端超級電腦"
+      - "邊緣運算 (Edge Computing) 與行動裝置"
+      - "資料庫管理"
+      - "網路爬蟲"
+    correct_index: 1
+    explanation: "在資源受限的邊緣裝置上部署 AI 模型是知識蒸餾最主要的應用場景。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3039
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "Model Context Protocol (MCP)"
+    text: "MCP Client 在流程中負責？"
+    type: multiple_choice
+    options:
+      - "執行 SQL"
+      - "判斷需求並發送請求"
+      - "提供數據"
+      - "顯示廣告"
+    correct_index: 1
+    explanation: "Client 是大腦，負責決策何時以及如何調用 Server 的功能。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3040
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "進階 RAG 與系統架構"
+    text: "本章的核心主題是？"
+    type: multiple_choice
+    options:
+      - "基礎 Python 程式設計"
+      - "解決 AI 幻覺與時效性問題的架構 (RAG, Fine-tuning, MCP)"
+      - "電腦硬體組裝"
+      - "歷史故事"
+    correct_index: 1
+    explanation: "本章探討了如何透過不同的系統架構與優化技術，提升生成式 AI 的實用性與可靠性。"
+    tags: ["sec-gen-chapter3", "sec-advanced-rag"]

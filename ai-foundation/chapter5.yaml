@@ -1,0 +1,560 @@
+questions:
+  - id: 5001
+    chapter_title: "監督式學習演算法"
+    section_title: "監督式學習概述"
+    text: "監督式學習 (Supervised Learning) 的核心運作模式最像什麼？"
+    type: multiple_choice
+    options:
+      - "嬰兒自我探索"
+      - "人類的正規教育（老師給題目和答案）"
+      - "訓練寵物（獎勵與懲罰）"
+      - "隨機猜測"
+    correct_index: 1
+    explanation: "監督式學習需要輸入資料 (題目) 和對應的標籤 (答案)，就像老師教學生一樣。"
+    tags: ["sec-chapter5", "sec-chapter5-summary"]
+
+  - id: 5002
+    chapter_title: "監督式學習演算法"
+    section_title: "監督式學習概述"
+    text: "如果目標變數是「明天會不會下雨（是/否）」，這是哪種任務？"
+    type: multiple_choice
+    options:
+      - "迴歸 (Regression)"
+      - "分類 (Classification)"
+      - "分群 (Clustering)"
+      - "降維 (Dimensionality Reduction)"
+    correct_index: 1
+    explanation: "預測離散的類別（是/否）屬於分類任務。"
+    tags: ["sec-chapter5", "sec-classification"]
+
+  - id: 5003
+    chapter_title: "監督式學習演算法"
+    section_title: "監督式學習概述"
+    text: "如果目標變數是「明天的氣溫（攝氏度）」，這是哪種任務？"
+    type: multiple_choice
+    options:
+      - "迴歸 (Regression)"
+      - "分類 (Classification)"
+      - "分群 (Clustering)"
+      - "強化學習"
+    correct_index: 0
+    explanation: "預測連續的數值（氣溫）屬於迴歸任務。"
+    tags: ["sec-chapter5", "sec-regression"]
+
+  - id: 5004
+    chapter_title: "監督式學習演算法"
+    section_title: "分類演算法"
+    text: "K-近鄰演算法 (KNN) 的核心概念可以用哪句成語形容？"
+    type: multiple_choice
+    options:
+      - "近朱者赤，近墨者黑"
+      - "瞎子摸象"
+      - "三個臭皮匠，勝過諸葛亮"
+      - "知錯能改"
+    correct_index: 0
+    explanation: "KNN 透過觀察最近的鄰居來決定類別，即「近朱者赤」。"
+    tags: ["sec-chapter5", "sec-knn"]
+
+  - id: 5005
+    chapter_title: "監督式學習演算法"
+    section_title: "分類演算法"
+    text: "KNN 演算法中，如果 K 值設得太小（如 K=1），容易發生什麼問題？"
+    type: multiple_choice
+    options:
+      - "欠擬合 (Underfitting)"
+      - "過度擬合 (Overfitting)"
+      - "計算速度變慢"
+      - "模型過於簡單"
+    correct_index: 1
+    explanation: "K=1 代表只看最近的一個鄰居，容易受雜訊干擾，導致過度擬合。"
+    tags: ["sec-chapter5", "sec-knn"]
+
+  - id: 5006
+    chapter_title: "監督式學習演算法"
+    section_title: "分類演算法"
+    text: "貝氏分類器 (Naive Bayes) 的「樸素/天真 (Naive)」假設是指什麼？"
+    type: multiple_choice
+    options:
+      - "假設所有特徵之間互相獨立"
+      - "假設資料呈常態分佈"
+      - "假設沒有雜訊"
+      - "假設類別數量很少"
+    correct_index: 0
+    explanation: "Naive Bayes 假設特徵之間互不影響（獨立），雖然這在現實中很少見，但簡化了計算。"
+    tags: ["sec-chapter5", "sec-naive-bayes"]
+
+  - id: 5007
+    chapter_title: "監督式學習演算法"
+    section_title: "分類演算法"
+    text: "垃圾郵件過濾系統最常使用哪種演算法？"
+    type: multiple_choice
+    options:
+      - "K-Means"
+      - "貝氏分類器 (Naive Bayes)"
+      - "線性迴歸"
+      - "PCA"
+    correct_index: 1
+    explanation: "Naive Bayes 計算速度快且擅長處理高維度文本特徵，是垃圾郵件過濾的經典選擇。"
+    tags: ["sec-chapter5", "sec-naive-bayes"]
+
+  - id: 5008
+    chapter_title: "監督式學習演算法"
+    section_title: "分類演算法"
+    text: "邏輯迴歸 (Logistic Regression) 雖然名字有迴歸，但它主要用於解決什麼問題？"
+    type: multiple_choice
+    options:
+      - "數值預測"
+      - "二元分類"
+      - "圖片生成"
+      - "路徑規劃"
+    correct_index: 1
+    explanation: "邏輯迴歸透過 Sigmoid 函數輸出機率，通常用於二元分類（如是/否）。"
+    tags: ["sec-chapter5", "sec-logistic-regression"]
+
+  - id: 5009
+    chapter_title: "監督式學習演算法"
+    section_title: "分類演算法"
+    text: "邏輯迴歸使用哪個函數將數值壓縮到 0 到 1 之間？"
+    type: multiple_choice
+    options:
+      - "ReLU"
+      - "Sigmoid"
+      - "Tanh"
+      - "Softmax"
+    correct_index: 1
+    explanation: "Sigmoid 函數呈 S 型曲線，能將任意實數映射到 (0, 1) 區間，代表機率。"
+    tags: ["sec-chapter5", "sec-logistic-regression"]
+
+  - id: 5010
+    chapter_title: "監督式學習演算法"
+    section_title: "分類演算法"
+    text: "支援向量機 (SVM) 的核心目標是什麼？"
+    type: multiple_choice
+    options:
+      - "最小化誤差平方和"
+      - "最大化決策邊界 (Margin)"
+      - "最大化樹的深度"
+      - "最小化特徵數量"
+    correct_index: 1
+    explanation: "SVM 試圖在類別之間畫出一條最寬的「馬路」，即最大化邊界。"
+    tags: ["sec-chapter5", "sec-svm"]
+
+  - id: 5011
+    chapter_title: "監督式學習演算法"
+    section_title: "分類演算法"
+    text: "當資料在低維空間無法線性分割時，SVM 使用什麼技巧解決？"
+    type: multiple_choice
+    options:
+      - "降維"
+      - "核函數技巧 (Kernel Trick)"
+      - "隨機採樣"
+      - "特徵選擇"
+    correct_index: 1
+    explanation: "Kernel Trick 將資料投影到高維空間，使其變得線性可分。"
+    tags: ["sec-chapter5", "sec-svm"]
+
+  - id: 5012
+    chapter_title: "監督式學習演算法"
+    section_title: "分類演算法"
+    text: "決策樹 (Decision Tree) 的最大優點是什麼？"
+    type: multiple_choice
+    options:
+      - "預測準確率最高"
+      - "可解釋性強 (White Box)"
+      - "不易過度擬合"
+      - "計算速度最快"
+    correct_index: 1
+    explanation: "決策樹的規則（如年齡 > 30）清晰易懂，非專業人士也能理解，屬於白箱模型。"
+    tags: ["sec-chapter5", "sec-decision-tree"]
+
+  - id: 5013
+    chapter_title: "監督式學習演算法"
+    section_title: "分類演算法"
+    text: "決策樹容易發生什麼問題，導致在訓練集表現很好但在測試集很差？"
+    type: multiple_choice
+    options:
+      - "欠擬合"
+      - "過度擬合 (Overfitting)"
+      - "梯度消失"
+      - "無法收斂"
+    correct_index: 1
+    explanation: "決策樹如果長得太深，會死記硬背訓練資料的細節（包含雜訊），導致過度擬合。"
+    tags: ["sec-chapter5", "sec-decision-tree"]
+
+  - id: 5014
+    chapter_title: "監督式學習演算法"
+    section_title: "分類演算法"
+    text: "隨機森林 (Random Forest) 是由許多什麼模型組成的？"
+    type: multiple_choice
+    options:
+      - "SVM"
+      - "決策樹"
+      - "類神經網路"
+      - "邏輯迴歸"
+    correct_index: 1
+    explanation: "隨機森林由許多棵決策樹組成，透過投票來決定最終結果。"
+    tags: ["sec-chapter5", "sec-random-forest"]
+
+  - id: 5015
+    chapter_title: "監督式學習演算法"
+    section_title: "集成學習"
+    text: "Bagging (如隨機森林) 的主要目的是降低模型的什麼？"
+    type: multiple_choice
+    options:
+      - "偏差 (Bias)"
+      - "變異 (Variance)"
+      - "維度"
+      - "雜訊"
+    correct_index: 1
+    explanation: "Bagging 透過平均多個模型的結果，能有效降低變異，減少過度擬合。"
+    tags: ["sec-chapter5", "sec-bagging"]
+
+  - id: 5016
+    chapter_title: "監督式學習演算法"
+    section_title: "集成學習"
+    text: "Boosting (如 XGBoost) 的主要目的是降低模型的什麼？"
+    type: multiple_choice
+    options:
+      - "偏差 (Bias)"
+      - "變異 (Variance)"
+      - "資料量"
+      - "特徵數"
+    correct_index: 0
+    explanation: "Boosting 透過循序修正前一個模型的錯誤，能有效降低偏差，提升準確度。"
+    tags: ["sec-chapter5", "sec-boosting"]
+
+  - id: 5017
+    chapter_title: "監督式學習演算法"
+    section_title: "集成學習"
+    text: "下列關於 Bagging 和 Boosting 的比較，何者正確？"
+    type: multiple_choice
+    options:
+      - "Bagging 是序列訓練，Boosting 是並行訓練"
+      - "Bagging 是並行訓練，Boosting 是序列訓練"
+      - "兩者都是並行訓練"
+      - "兩者都是序列訓練"
+    correct_index: 1
+    explanation: "Bagging (隨機森林) 的樹互不影響可同時訓練 (並行)；Boosting 的樹依賴前一棵樹的結果 (序列)。"
+    tags: ["sec-chapter5", "sec-bagging-vs-boosting"]
+
+  - id: 5018
+    chapter_title: "監督式學習演算法"
+    section_title: "迴歸演算法"
+    text: "線性迴歸 (Linear Regression) 使用什麼作為損失函數？"
+    type: multiple_choice
+    options:
+      - "交叉熵 (Cross Entropy)"
+      - "均方誤差 (MSE)"
+      - "準確率 (Accuracy)"
+      - "F1-Score"
+    correct_index: 1
+    explanation: "線性迴歸通常使用 MSE (預測值與真實值的距離平方和) 來評估誤差。"
+    tags: ["sec-chapter5", "sec-linear-regression"]
+
+  - id: 5019
+    chapter_title: "監督式學習演算法"
+    section_title: "迴歸演算法"
+    text: "Lasso 回歸 (L1 正則化) 的主要功能是什麼？"
+    type: multiple_choice
+    options:
+      - "處理共線性"
+      - "特徵選擇 (將不重要特徵權重變為 0)"
+      - "增加模型複雜度"
+      - "將權重變大"
+    correct_index: 1
+    explanation: "Lasso 加入絕對值懲罰項，傾向於將不重要的特徵權重壓縮至 0，達到特徵選擇的效果。"
+    tags: ["sec-chapter5", "sec-regularized-regression"]
+
+  - id: 5020
+    chapter_title: "監督式學習演算法"
+    section_title: "迴歸演算法"
+    text: "Ridge 回歸 (L2 正則化) 主要用於解決什麼問題？"
+    type: multiple_choice
+    options:
+      - "特徵選擇"
+      - "共線性 (Multicollinearity) 與過度擬合"
+      - "欠擬合"
+      - "資料缺失"
+    correct_index: 1
+    explanation: "Ridge 加入平方懲罰項，能限制權重大小，防止共線性導致的參數不穩定。"
+    tags: ["sec-chapter5", "sec-regularized-regression"]
+
+  - id: 5021
+    chapter_title: "監督式學習演算法"
+    section_title: "演算法比較"
+    text: "如果需要向監管單位解釋拒絕貸款的原因，應優先選擇哪種模型？"
+    type: multiple_choice
+    options:
+      - "深度神經網路"
+      - "隨機森林"
+      - "決策樹 (Decision Tree)"
+      - "SVM"
+    correct_index: 2
+    explanation: "決策樹提供清晰的規則路徑，解釋性最強，適合需要合規解釋的場景。"
+    tags: ["sec-chapter5", "sec-algo-comparison"]
+
+  - id: 5022
+    chapter_title: "監督式學習演算法"
+    section_title: "演算法比較"
+    text: "在 Kaggle 比賽中，哪種演算法常因其強大的效能而獲勝？"
+    type: multiple_choice
+    options:
+      - "線性迴歸"
+      - "KNN"
+      - "XGBoost / LightGBM (Boosting)"
+      - "Naive Bayes"
+    correct_index: 2
+    explanation: "基於 Gradient Boosting 的演算法 (如 XGBoost) 因其極高的準確率，是競賽中的常勝軍。"
+    tags: ["sec-chapter5", "sec-algo-comparison"]
+
+  - id: 5023
+    chapter_title: "監督式學習演算法"
+    section_title: "分類演算法"
+    text: "KNN 是一種 Lazy Learning，這意味著什麼？"
+    type: multiple_choice
+    options:
+      - "它很懶，不想學習"
+      - "它沒有顯式的訓練過程，預測時才進行計算"
+      - "它只能處理簡單問題"
+      - "它需要訓練很久"
+    correct_index: 1
+    explanation: "KNN 在訓練階段只是把資料存起來，直到預測時才計算距離，因此稱為 Lazy Learning。"
+    tags: ["sec-chapter5", "sec-knn"]
+
+  - id: 5024
+    chapter_title: "監督式學習演算法"
+    section_title: "分類演算法"
+    text: "SVM 中的「支援向量」指的是？"
+    type: multiple_choice
+    options:
+      - "所有的資料點"
+      - "落在決策邊界邊緣、決定邊界位置的關鍵資料點"
+      - "異常值"
+      - "中心點"
+    correct_index: 1
+    explanation: "只有落在 Margin 邊緣的點（支援向量）會影響 SVM 的決策邊界，其他點都不重要。"
+    tags: ["sec-chapter5", "sec-svm"]
+
+  - id: 5025
+    chapter_title: "監督式學習演算法"
+    section_title: "分類演算法"
+    text: "決策樹的分裂準則通常基於什麼指標？"
+    type: multiple_choice
+    options:
+      - "距離"
+      - "熵 (Entropy) 或吉尼係數 (Gini Impurity)"
+      - "梯度"
+      - "權重"
+    correct_index: 1
+    explanation: "決策樹透過計算熵或吉尼係數來衡量資料的純度，決定如何切割。"
+    tags: ["sec-chapter5", "sec-decision-tree"]
+
+  - id: 5026
+    chapter_title: "監督式學習演算法"
+    section_title: "分類演算法"
+    text: "隨機森林中的「隨機」體現在哪兩個方面？"
+    type: multiple_choice
+    options:
+      - "隨機參數與隨機權重"
+      - "隨機採樣資料 (Bootstrap) 與隨機選取特徵"
+      - "隨機分類與隨機迴歸"
+      - "隨機時間與隨機地點"
+    correct_index: 1
+    explanation: "隨機森林對資料進行 Bootstrap 採樣，且在分裂節點時隨機選取部分特徵，以增加多樣性。"
+    tags: ["sec-chapter5", "sec-random-forest"]
+
+  - id: 5027
+    chapter_title: "監督式學習演算法"
+    section_title: "集成學習"
+    text: "OOB (Out-of-Bag) 誤差可以用來做什麼？"
+    type: multiple_choice
+    options:
+      - "增加訓練資料"
+      - "驗證隨機森林模型的效能，無需額外切分驗證集"
+      - "計算特徵重要性"
+      - "調整學習率"
+    correct_index: 1
+    explanation: "OOB 資料是那些未被該棵樹採樣到的資料，可直接用來測試該樹的準確度。"
+    tags: ["sec-chapter5", "sec-random-forest"]
+
+  - id: 5028
+    chapter_title: "監督式學習演算法"
+    section_title: "集成學習"
+    text: "AdaBoost 的核心機制是？"
+    type: multiple_choice
+    options:
+      - "隨機採樣"
+      - "調整資料權重，放大錯誤樣本的權重"
+      - "使用深度神經網路"
+      - "並行訓練"
+    correct_index: 1
+    explanation: "AdaBoost 會給予前一個模型預測錯誤的樣本更高的權重，讓下一個模型專注學習這些難題。"
+    tags: ["sec-chapter5", "sec-boosting"]
+
+  - id: 5029
+    chapter_title: "監督式學習演算法"
+    section_title: "迴歸演算法"
+    text: "如果資料特徵比資料筆數還多 (High Dimensionality)，哪種迴歸模型較適合？"
+    type: multiple_choice
+    options:
+      - "一般線性迴歸"
+      - "Lasso 或 Ridge 回歸 (正規化迴歸)"
+      - "KNN"
+      - "Naive Bayes"
+    correct_index: 1
+    explanation: "在高維度情況下，一般線性迴歸容易過擬合，正規化迴歸 (Lasso/Ridge) 能透過懲罰項限制模型複雜度。"
+    tags: ["sec-chapter5", "sec-regularized-regression"]
+
+  - id: 5030
+    chapter_title: "監督式學習演算法"
+    section_title: "分類演算法"
+    text: "邏輯迴歸的決策邊界通常預設為多少機率？"
+    type: multiple_choice
+    options:
+      - "0.1"
+      - "0.5"
+      - "0.9"
+      - "0.0"
+    correct_index: 1
+    explanation: "通常以 0.5 為界，大於 0.5 判為正類別，小於 0.5 判為負類別。"
+    tags: ["sec-chapter5", "sec-logistic-regression"]
+
+  - id: 5031
+    chapter_title: "監督式學習演算法"
+    section_title: "分類演算法"
+    text: "SVM 適合處理哪種規模的資料？"
+    type: multiple_choice
+    options:
+      - "海量大數據"
+      - "小樣本、高維度資料"
+      - "只有一個特徵的資料"
+      - "非結構化影片資料"
+    correct_index: 1
+    explanation: "SVM 在小樣本和高維度資料上表現出色，但因計算複雜度高，不適合海量數據。"
+    tags: ["sec-chapter5", "sec-svm"]
+
+  - id: 5032
+    chapter_title: "監督式學習演算法"
+    section_title: "分類演算法"
+    text: "哪種演算法被稱為「白箱 (White Box)」模型？"
+    type: multiple_choice
+    options:
+      - "隨機森林"
+      - "深度神經網路"
+      - "決策樹"
+      - "SVM (使用核函數)"
+    correct_index: 2
+    explanation: "決策樹的決策過程完全透明，每一步規則都清晰可見，故稱白箱。"
+    tags: ["sec-chapter5", "sec-decision-tree"]
+
+  - id: 5033
+    chapter_title: "監督式學習演算法"
+    section_title: "集成學習"
+    text: "隨機森林屬於哪種集成學習方法？"
+    type: multiple_choice
+    options:
+      - "Bagging"
+      - "Boosting"
+      - "Stacking"
+      - "Clustering"
+    correct_index: 0
+    explanation: "隨機森林是 Bagging (Bootstrap Aggregating) 的代表性演算法。"
+    tags: ["sec-chapter5", "sec-bagging"]
+
+  - id: 5034
+    chapter_title: "監督式學習演算法"
+    section_title: "迴歸演算法"
+    text: "Lasso 回歸的解空間幾何形狀是？"
+    type: multiple_choice
+    options:
+      - "圓形"
+      - "菱形"
+      - "橢圓形"
+      - "拋物線"
+    correct_index: 1
+    explanation: "L1 正則化的等高線是菱形，容易與坐標軸相交，導致係數變為 0。"
+    tags: ["sec-chapter5", "sec-regularized-regression"]
+
+  - id: 5035
+    chapter_title: "監督式學習演算法"
+    section_title: "迴歸演算法"
+    text: "Ridge 回歸的解空間幾何形狀是？"
+    type: multiple_choice
+    options:
+      - "圓形"
+      - "菱形"
+      - "方形"
+      - "三角形"
+    correct_index: 0
+    explanation: "L2 正則化的等高線是圓形，傾向於讓係數變小但不易為 0。"
+    tags: ["sec-chapter5", "sec-regularized-regression"]
+
+  - id: 5036
+    chapter_title: "監督式學習演算法"
+    section_title: "分類演算法"
+    text: "下列何者不是監督式學習的應用？"
+    type: multiple_choice
+    options:
+      - "房價預測"
+      - "垃圾郵件分類"
+      - "客戶分群 (無標籤)"
+      - "手寫數字辨識"
+    correct_index: 2
+    explanation: "客戶分群若無預先定義的標籤，屬於非監督式學習。"
+    tags: ["sec-chapter5", "sec-chapter5-summary"]
+
+  - id: 5037
+    chapter_title: "監督式學習演算法"
+    section_title: "集成學習"
+    text: "Boosting 演算法對雜訊的敏感度如何？"
+    type: multiple_choice
+    options:
+      - "非常低"
+      - "較高，容易對雜訊過度擬合"
+      - "完全免疫"
+      - "與 Bagging 一樣"
+    correct_index: 1
+    explanation: "因為 Boosting 會拼命修正錯誤，如果錯誤來自雜訊，它也會強行去擬合，導致過擬合。"
+    tags: ["sec-chapter5", "sec-bagging-vs-boosting"]
+
+  - id: 5038
+    chapter_title: "監督式學習演算法"
+    section_title: "分類演算法"
+    text: "在貝氏分類器中，先驗機率 (Prior) 是指？"
+    type: multiple_choice
+    options:
+      - "在還沒看特徵前，某類別出現的機率"
+      - "看到特徵後，某類別的機率"
+      - "特徵出現的機率"
+      - "預測錯誤的機率"
+    correct_index: 0
+    explanation: "先驗機率是基於歷史數據統計出的類別原始分佈機率（如垃圾信佔 40%）。"
+    tags: ["sec-chapter5", "sec-naive-bayes"]
+
+  - id: 5039
+    chapter_title: "監督式學習演算法"
+    section_title: "分類演算法"
+    text: "決策樹中的「葉節點 (Leaf)」代表什麼？"
+    type: multiple_choice
+    options:
+      - "第一個問題"
+      - "中間的決策過程"
+      - "最終的分類結果"
+      - "特徵名稱"
+    correct_index: 2
+    explanation: "葉節點是決策樹的末端，代表最終的預測輸出。"
+    tags: ["sec-chapter5", "sec-decision-tree"]
+
+  - id: 5040
+    chapter_title: "監督式學習演算法"
+    section_title: "分類演算法"
+    text: "邏輯迴歸的輸出值範圍是？"
+    type: multiple_choice
+    options:
+      - "負無限大到正無限大"
+      - "0 到 1"
+      - "-1 到 1"
+      - "0 到 100"
+    correct_index: 1
+    explanation: "經過 Sigmoid 函數轉換，輸出值被限制在 0 到 1 之間，代表機率。"
+    tags: ["sec-chapter5", "sec-logistic-regression"]

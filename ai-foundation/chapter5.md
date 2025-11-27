@@ -1,4 +1,10 @@
-# 監督式學習演算法 (Supervised Learning Algorithms)
+---
+title: "監督式學習演算法 (Supervised Learning Algorithms)"
+order: 5
+label: sec-chapter5
+---
+
+<!-- # 監督式學習演算法 (Supervised Learning Algorithms) -->
 
 監督式學習 (Supervised Learning) 是目前 AI 應用最成熟、商業價值最高的領域。它的核心運作模式就像是**人類的正規教育**：老師（系統）提供大量的題目（輸入 $X$）和標準答案（標籤 $Y$），學生（模型）透過不斷練習，學會找出題目與答案之間的關聯函數 $f$，使得 $f(X) \approx Y$。
 

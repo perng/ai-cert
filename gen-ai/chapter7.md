@@ -1,4 +1,10 @@
-# 第七章：生成式 AI 的資安、合規與倫理 (Security, Compliance & Ethics) {#sec-security-ethics}
+---
+title: "第七章：生成式 AI 的資安、合規與倫理 (Security, Compliance & Ethics)"
+order: 7
+label: sec-gen-chapter7
+---
+
+<!-- # 第七章：生成式 AI 的資安、合規與倫理 (Security, Compliance & Ethics) {#sec-security-ethics} -->
 
 > **考點摘要**：生成內容特有的風險與資安攻擊手法。
 

@@ -1,0 +1,560 @@
+questions:
+  - id: 10001
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "XAI 的層次"
+    text: "在 AI 領域中，「黑箱 (Black Box)」通常指的是什麼？"
+    type: multiple_choice
+    options:
+      - "模型的顏色是黑色的"
+      - "模型結構複雜，人類無法直觀理解其決策過程"
+      - "模型只能在晚上運作"
+      - "模型沒有輸出"
+    correct_index: 1
+    explanation: "黑箱模型（如深度神經網路）內部運作複雜，雖然能給出準確結果，但難以解釋其推論邏輯。"
+    tags: ["sec-chapter10", "sec-black-white-box"]
+
+  - id: 10002
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "XAI 的層次"
+    text: "下列哪種模型通常被視為「白箱 (White Box)」模型？"
+    type: multiple_choice
+    options:
+      - "深度卷積神經網路 (CNN)"
+      - "隨機森林 (Random Forest)"
+      - "決策樹 (Decision Tree)"
+      - "大型語言模型 (LLM)"
+    correct_index: 2
+    explanation: "決策樹的規則（如 If A > 5 Then B）清晰易懂，人類可以直接理解其決策路徑。"
+    tags: ["sec-chapter10", "sec-black-white-box"]
+
+  - id: 10003
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "XAI 的層次"
+    text: "「全局解釋 (Global Explanation)」旨在回答什麼問題？"
+    type: multiple_choice
+    options:
+      - "為什麼這一筆貸款被拒絕？"
+      - "模型整體而言最看重哪些特徵？"
+      - "模型的準確率是多少？"
+      - "模型的訓練時間多長？"
+    correct_index: 1
+    explanation: "全局解釋關注模型整體的行為模式，例如哪些特徵對預測結果普遍具有最大的影響力。"
+    tags: ["sec-chapter10", "sec-global-local"]
+
+  - id: 10004
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "XAI 的層次"
+    text: "「局部解釋 (Local Explanation)」旨在回答什麼問題？"
+    type: multiple_choice
+    options:
+      - "模型整體的運作邏輯"
+      - "為什麼針對這一個特定案例做出這樣的預測？"
+      - "模型的架構是什麼？"
+      - "資料集的分布情況"
+    correct_index: 1
+    explanation: "局部解釋聚焦於單一預測實例，解釋為何模型對該特定輸入給出該輸出。"
+    tags: ["sec-chapter10", "sec-global-local"]
+
+  - id: 10005
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "解釋技術與工具"
+    text: "LIME (Local Interpretable Model-agnostic Explanations) 的核心思想是？"
+    type: multiple_choice
+    options:
+      - "將模型轉換為決策樹"
+      - "在局部範圍內，用簡單的線性模型來模擬複雜的黑箱模型"
+      - "計算所有特徵的平均值"
+      - "重新訓練一個白箱模型"
+    correct_index: 1
+    explanation: "LIME 假設即使模型整體是非線性的，但在局部小範圍內通常是線性的，因此可以用簡單模型來近似解釋。"
+    tags: ["sec-chapter10", "sec-lime"]
+
+  - id: 10006
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "解釋技術與工具"
+    text: "LIME 的 Model-agnostic 特性意味著什麼？"
+    type: multiple_choice
+    options:
+      - "它只能解釋線性模型"
+      - "它只能解釋神經網路"
+      - "它適用於任何類型的模型（與模型無關）"
+      - "它不需要模型"
+    correct_index: 2
+    explanation: "Model-agnostic 代表該技術不依賴特定模型的內部結構，可以應用於 SVM、隨機森林、神經網路等任何模型。"
+    tags: ["sec-chapter10", "sec-lime"]
+
+  - id: 10007
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "解釋技術與工具"
+    text: "SHAP (Shapley Values) 源自於哪個領域的理論？"
+    type: multiple_choice
+    options:
+      - "生物學"
+      - "賽局理論 (Game Theory)"
+      - "物理學"
+      - "心理學"
+    correct_index: 1
+    explanation: "SHAP 基於合作賽局理論中的 Shapley Value，計算每個特徵（玩家）對最終預測（總收益）的邊際貢獻。"
+    tags: ["sec-chapter10", "sec-shap"]
+
+  - id: 10008
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "解釋技術與工具"
+    text: "SHAP 值的主要優點是？"
+    type: multiple_choice
+    options:
+      - "計算速度最快"
+      - "提供數學上一致且公平的解釋"
+      - "只能做全局解釋"
+      - "不需要任何計算"
+    correct_index: 1
+    explanation: "SHAP 提供了理論上唯一滿足公平性與一致性公理的解釋方法，能精確量化特徵貢獻。"
+    tags: ["sec-chapter10", "sec-shap"]
+
+  - id: 10009
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "解釋技術與工具"
+    text: "反事實解釋 (Counterfactual Explanation) 的形式通常是？"
+    type: multiple_choice
+    options:
+      - "特徵 A 的重要性是 0.5"
+      - "如果特徵 X 改變成 Y，預測結果就會變成 Z"
+      - "模型的準確率是 90%"
+      - "這是一個貓的圖片"
+    correct_index: 1
+    explanation: "反事實解釋提供「如果...就會...」的假設性情境，告訴使用者如何改變輸入以獲得想要的結果。"
+    tags: ["sec-chapter10", "sec-counterfactual"]
+
+  - id: 10010
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "解釋技術與工具"
+    text: "反事實解釋的三大原則不包括下列何者？"
+    type: multiple_choice
+    options:
+      - "可操作性 (Actionability)"
+      - "稀疏性 (Sparsity)"
+      - "有效性 (Validity)"
+      - "複雜性 (Complexity)"
+    correct_index: 3
+    explanation: "好的反事實解釋應該簡單易懂（稀疏性），而不是複雜；且建議必須是使用者能做到的（可操作性）。"
+    tags: ["sec-chapter10", "sec-counterfactual"]
+
+  - id: 10011
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "解釋技術與工具"
+    text: "「如果你年輕 10 歲，貸款就會通過」這是一個好的反事實解釋嗎？"
+    type: multiple_choice
+    options:
+      - "是，因為它很誠實"
+      - "否，因為它違反了「可操作性」原則（使用者無法改變年齡）"
+      - "是，因為它很簡單"
+      - "否，因為它不夠精確"
+    correct_index: 1
+    explanation: "建議使用者改變無法改變的特徵（如年齡、出生地）是沒有建設性的，違反了可操作性原則。"
+    tags: ["sec-chapter10", "sec-counterfactual"]
+
+  - id: 10012
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "解釋技術與工具"
+    text: "特徵重要度 (Feature Importance) 通常無法做到什麼？"
+    type: multiple_choice
+    options:
+      - "排序特徵的影響力"
+      - "解釋單一筆預測的具體原因"
+      - "找出無關特徵"
+      - "比較特徵權重"
+    correct_index: 1
+    explanation: "傳統的特徵重要度（如隨機森林的 Gini Importance）是全局指標，無法解釋為何「某個特定案例」被判斷為正或負。"
+    tags: ["sec-chapter10", "sec-feature-importance"]
+
+  - id: 10013
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "XAI 的層次"
+    text: "線性迴歸模型的可解釋性來自於？"
+    type: multiple_choice
+    options:
+      - "它的預測很準"
+      - "它的係數 (Weights) 直接反映了特徵與結果的正負相關及強度"
+      - "它使用深度學習"
+      - "它沒有參數"
+    correct_index: 1
+    explanation: "線性迴歸的方程式 y = wx + b 中，w 的大小和正負號直接告訴我們 x 對 y 的影響，非常直觀。"
+    tags: ["sec-chapter10", "sec-black-white-box"]
+
+  - id: 10014
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "XAI 的層次"
+    text: "為什麼深度學習模型被稱為黑箱？"
+    type: multiple_choice
+    options:
+      - "因為它們通常在暗房訓練"
+      - "因為它們包含數百萬個參數與非線性轉換，難以追蹤單一特徵的影響路徑"
+      - "因為它們不公開原始碼"
+      - "因為它們只能處理黑白圖片"
+    correct_index: 1
+    explanation: "深度神經網路的複雜結構使得輸入與輸出之間的映射關係變得極度抽象且難以解析。"
+    tags: ["sec-chapter10", "sec-black-white-box"]
+
+  - id: 10015
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "解釋技術與工具"
+    text: "LIME 透過什麼方式來生成解釋？"
+    type: multiple_choice
+    options:
+      - "解析神經網路的權重"
+      - "對輸入資料進行擾動 (Perturbation)，觀察輸出變化"
+      - "計算梯度的平均值"
+      - "重寫模型架構"
+    correct_index: 1
+    explanation: "LIME 透過在原始資料點附近隨機撒點（擾動），探測模型在該區域的行為邊界。"
+    tags: ["sec-chapter10", "sec-lime"]
+
+  - id: 10016
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "解釋技術與工具"
+    text: "SHAP Summary Plot 可以展示什麼資訊？"
+    type: multiple_choice
+    options:
+      - "只有特徵重要性排序"
+      - "特徵重要性排序以及特徵值高低對預測結果的正負影響"
+      - "模型的訓練過程"
+      - "模型的損失函數"
+    correct_index: 1
+    explanation: "SHAP Summary Plot 結合了特徵重要性與特徵效應，能顯示出「數值高的特徵 A 會導致預測值增加還是減少」。"
+    tags: ["sec-chapter10", "sec-shap"]
+
+  - id: 10017
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "解釋技術與工具"
+    text: "如果客戶問：「我該怎麼做才能讓貸款通過？」，最適合用哪種技術回答？"
+    type: multiple_choice
+    options:
+      - "LIME"
+      - "SHAP"
+      - "反事實解釋 (Counterfactual Explanation)"
+      - "混淆矩陣"
+    correct_index: 2
+    explanation: "這是一個尋求「行動建議」的問題，反事實解釋能直接提供達成目標所需的改變條件。"
+    tags: ["sec-chapter10", "sec-counterfactual"]
+
+  - id: 10018
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "XAI 的層次"
+    text: "可解釋性 (Explainability) 與模型效能 (Performance) 之間通常存在什麼關係？"
+    type: multiple_choice
+    options:
+      - "正相關"
+      - "權衡關係 (Trade-off)"
+      - "無關"
+      - "完全相同"
+    correct_index: 1
+    explanation: "通常模型越複雜（如深度學習），效能越好但可解釋性越差；模型越簡單（如線性迴歸），可解釋性越好但效能可能受限。"
+    tags: ["sec-chapter10", "sec-chapter10-summary"]
+
+  - id: 10019
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "解釋技術與工具"
+    text: "反事實解釋中的「稀疏性 (Sparsity)」原則建議？"
+    type: multiple_choice
+    options:
+      - "建議改變的特徵數量越少越好"
+      - "建議改變的特徵數量越多越好"
+      - "建議改變所有特徵"
+      - "不建議任何改變"
+    correct_index: 0
+    explanation: "為了讓使用者容易執行，建議的改變應該集中在少數幾個關鍵特徵上，而不是要求使用者改頭換面。"
+    tags: ["sec-chapter10", "sec-counterfactual"]
+
+  - id: 10020
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "解釋技術與工具"
+    text: "SHAP 值為正數代表該特徵？"
+    type: multiple_choice
+    options:
+      - "對預測結果有負向影響（拉低分數）"
+      - "對預測結果有正向影響（推高分數）"
+      - "對預測結果無影響"
+      - "特徵值是正數"
+    correct_index: 1
+    explanation: "SHAP 值代表相對於基準值，該特徵將預測結果推高（正值）或拉低（負值）的程度。"
+    tags: ["sec-chapter10", "sec-shap"]
+
+  - id: 10021
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "XAI 的層次"
+    text: "下列何者屬於高風險 AI 應用領域，特別需要 XAI？"
+    type: multiple_choice
+    options:
+      - "音樂推薦"
+      - "醫療診斷與金融貸款"
+      - "遊戲 NPC 行為"
+      - "垃圾郵件分類"
+    correct_index: 1
+    explanation: "醫療與金融涉及人身安全與財產權益，法規與倫理要求決策必須透明可解釋。"
+    tags: ["sec-chapter10", "sec-chapter10-summary"]
+
+  - id: 10022
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "解釋技術與工具"
+    text: "LIME 解釋的線性模型是？"
+    type: multiple_choice
+    options:
+      - "全局的"
+      - "局部的 (Local)"
+      - "隨機的"
+      - "非線性的"
+    correct_index: 1
+    explanation: "LIME 訓練的解釋模型只在被解釋樣本的局部鄰域內有效，不能推廣到整個資料空間。"
+    tags: ["sec-chapter10", "sec-lime"]
+
+  - id: 10023
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "解釋技術與工具"
+    text: "SHAP 的計算複雜度通常？"
+    type: multiple_choice
+    options:
+      - "非常低"
+      - "非常高（因為要考慮所有特徵組合）"
+      - "是常數"
+      - "為零"
+    correct_index: 1
+    explanation: "精確計算 Shapley Value 需要遍歷所有可能的特徵組合，計算量隨特徵數指數成長，通常需使用近似演算法。"
+    tags: ["sec-chapter10", "sec-shap"]
+
+  - id: 10024
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "解釋技術與工具"
+    text: "反事實解釋的「有效性 (Validity)」是指？"
+    type: multiple_choice
+    options:
+      - "建議必須合法"
+      - "建議的改變必須真的能讓預測結果翻盤"
+      - "建議必須很便宜"
+      - "建議必須很短"
+    correct_index: 1
+    explanation: "如果使用者照著建議做了改變，結果卻沒變（例如貸款還是被拒），那這個解釋就是無效的。"
+    tags: ["sec-chapter10", "sec-counterfactual"]
+
+  - id: 10025
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "XAI 的層次"
+    text: "決策樹雖然是白箱，但在什麼情況下可解釋性會下降？"
+    type: multiple_choice
+    options:
+      - "樹很淺的時候"
+      - "樹變得非常深且複雜的時候"
+      - "資料量很少的時候"
+      - "只有兩個特徵的時候"
+    correct_index: 1
+    explanation: "當決策樹過深（例如幾百層），規則變得極度繁瑣，人類也難以追蹤其邏輯，可解釋性隨之降低。"
+    tags: ["sec-chapter10", "sec-black-white-box"]
+
+  - id: 10026
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "解釋技術與工具"
+    text: "LIME 適用於解釋哪種資料類型？"
+    type: multiple_choice
+    options:
+      - "只能解釋表格"
+      - "只能解釋圖片"
+      - "表格、圖片、文字皆可"
+      - "只能解釋聲音"
+    correct_index: 2
+    explanation: "LIME 是通用的解釋框架，可以透過不同的擾動方式處理各種資料類型。"
+    tags: ["sec-chapter10", "sec-lime"]
+
+  - id: 10027
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "解釋技術與工具"
+    text: "SHAP 的基準值 (Base Value) 通常是指？"
+    type: multiple_choice
+    options:
+      - "0"
+      - "模型預測值的平均數"
+      - "最大預測值"
+      - "最小預測值"
+    correct_index: 1
+    explanation: "SHAP 解釋的是「為什麼這個預測值偏離了平均」，基準值通常是訓練集預測結果的平均值。"
+    tags: ["sec-chapter10", "sec-shap"]
+
+  - id: 10028
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "XAI 的層次"
+    text: "隨機森林的可解釋性介於？"
+    type: multiple_choice
+    options:
+      - "白箱與黑箱之間（灰箱）"
+      - "完全白箱"
+      - "完全黑箱"
+      - "沒有可解釋性"
+    correct_index: 0
+    explanation: "隨機森林雖然由白箱（決策樹）組成，但因數量龐大且隨機，整體行為難以直觀理解，常被視為灰箱或偏黑箱。"
+    tags: ["sec-chapter10", "sec-black-white-box"]
+
+  - id: 10029
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "解釋技術與工具"
+    text: "反事實解釋主要關注於？"
+    type: multiple_choice
+    options:
+      - "過去的原因"
+      - "未來的改變 (What-if)"
+      - "現在的狀態"
+      - "模型的參數"
+    correct_index: 1
+    explanation: "反事實解釋探討「如果輸入改變，輸出會如何變化」，是一種面向未來的假設性分析。"
+    tags: ["sec-chapter10", "sec-counterfactual"]
+
+  - id: 10030
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "XAI 的層次"
+    text: "XAI 的主要目標是？"
+    type: multiple_choice
+    options:
+      - "提高模型準確率"
+      - "建立人類對 AI 的信任與理解"
+      - "加快運算速度"
+      - "減少資料需求"
+    correct_index: 1
+    explanation: "XAI 旨在打破黑箱，讓人類能理解、信任並有效管理 AI 系統。"
+    tags: ["sec-chapter10", "sec-chapter10-summary"]
+
+  - id: 10031
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "解釋技術與工具"
+    text: "LIME 的全名是？"
+    type: multiple_choice
+    options:
+      - "Linear Interpretable Model Explanation"
+      - "Local Interpretable Model-agnostic Explanations"
+      - "Large Image Model Engine"
+      - "Local Inference Machine Explanation"
+    correct_index: 1
+    explanation: "LIME 代表 Local Interpretable Model-agnostic Explanations。"
+    tags: ["sec-chapter10", "sec-lime"]
+
+  - id: 10032
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "解釋技術與工具"
+    text: "SHAP 值滿足的「可加性 (Additivity)」是指？"
+    type: multiple_choice
+    options:
+      - "所有特徵的 SHAP 值相加等於 0"
+      - "所有特徵的 SHAP 值相加等於預測值與基準值的差"
+      - "所有特徵的 SHAP 值相加等於 1"
+      - "所有特徵的 SHAP 值相加等於無限大"
+    correct_index: 1
+    explanation: "這是 SHAP 的核心性質：預測值 = 基準值 + sum(各特徵 SHAP 值)。"
+    tags: ["sec-chapter10", "sec-shap"]
+
+  - id: 10033
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "解釋技術與工具"
+    text: "在反事實解釋中，若建議「改變性別」，這違反了？"
+    type: multiple_choice
+    options:
+      - "稀疏性"
+      - "可操作性 (Actionability)"
+      - "有效性"
+      - "一致性"
+    correct_index: 1
+    explanation: "性別通常被視為不可變特徵（在貸款審核情境下），建議改變它不具備可操作性。"
+    tags: ["sec-chapter10", "sec-counterfactual"]
+
+  - id: 10034
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "XAI 的層次"
+    text: "下列哪種情況最需要局部解釋？"
+    type: multiple_choice
+    options:
+      - "開發者想優化模型整體架構"
+      - "客戶申訴為何他的信用卡被停卡"
+      - "資料科學家想篩選特徵"
+      - "老闆想知道模型準不準"
+    correct_index: 1
+    explanation: "客戶關心的是「自己」的案子為何被這樣判斷，這是典型的局部解釋需求。"
+    tags: ["sec-chapter10", "sec-global-local"]
+
+  - id: 10035
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "解釋技術與工具"
+    text: "LIME 在解釋圖像分類時，通常會將圖片切分成？"
+    type: multiple_choice
+    options:
+      - "像素"
+      - "超像素 (Superpixels) / 區塊"
+      - "RGB 通道"
+      - "頻率"
+    correct_index: 1
+    explanation: "LIME 會將圖片分割成多個語意區塊（超像素），並透過隨機遮蔽這些區塊來觀察預測變化。"
+    tags: ["sec-chapter10", "sec-lime"]
+
+  - id: 10036
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "解釋技術與工具"
+    text: "SHAP 的缺點之一是？"
+    type: multiple_choice
+    options:
+      - "缺乏理論基礎"
+      - "計算成本高"
+      - "只能解釋線性模型"
+      - "結果不一致"
+    correct_index: 1
+    explanation: "由於涉及複雜的組合計算，SHAP 的運算速度通常比 LIME 慢很多。"
+    tags: ["sec-chapter10", "sec-shap"]
+
+  - id: 10037
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "解釋技術與工具"
+    text: "反事實解釋可以幫助使用者？"
+    type: multiple_choice
+    options:
+      - "了解模型的內部權重"
+      - "找到改變結果的最小代價路徑"
+      - "計算 SHAP 值"
+      - "繪製決策樹"
+    correct_index: 1
+    explanation: "反事實解釋能指出達成目標（如通過貸款）所需付出的最小努力（如只需增加一點收入）。"
+    tags: ["sec-chapter10", "sec-counterfactual"]
+
+  - id: 10038
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "XAI 的層次"
+    text: "GDPR (歐盟通用資料保護規則) 中的「解釋權 (Right to Explanation)」要求？"
+    type: multiple_choice
+    options:
+      - "AI 不能用於決策"
+      - "使用者有權知道演算法決策背後的邏輯"
+      - "AI 必須開源"
+      - "AI 必須免費"
+    correct_index: 1
+    explanation: "GDPR 保障歐盟公民有權要求解釋對其產生重大影響的自動化決策。"
+    tags: ["sec-chapter10", "sec-chapter10-summary"]
+
+  - id: 10039
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "解釋技術與工具"
+    text: "LIME 的解釋結果通常以什麼形式呈現？"
+    type: multiple_choice
+    options:
+      - "決策樹圖"
+      - "特徵權重長條圖 (Feature Weight Bar Chart)"
+      - "散佈圖"
+      - "熱圖"
+    correct_index: 1
+    explanation: "LIME 通常會列出對該預測貢獻最大的幾個特徵及其權重（正向或負向影響）。"
+    tags: ["sec-chapter10", "sec-lime"]
+
+  - id: 10040
+    chapter_title: "可解釋 AI (XAI)"
+    section_title: "XAI 的層次"
+    text: "如果一個模型完全不可解釋，我們稱之為？"
+    type: multiple_choice
+    options:
+      - "白箱"
+      - "黑箱 (Black Box)"
+      - "灰箱"
+      - "透明箱"
+    correct_index: 1
+    explanation: "黑箱模型是指輸入與輸出之間的運作機制對人類來說是不透明的。"
+    tags: ["sec-chapter10", "sec-black-white-box"]

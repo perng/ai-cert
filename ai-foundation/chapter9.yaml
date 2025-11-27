@@ -1,0 +1,560 @@
+questions:
+  - id: 9001
+    chapter_title: "模型評估與效能優化"
+    section_title: "評估流程與指標"
+    text: "在機器學習中，將資料集劃分為訓練集、驗證集和測試集的主要目的是？"
+    type: multiple_choice
+    options:
+      - "增加資料量"
+      - "公平評估模型效能，避免作弊（偷看答案）"
+      - "減少計算時間"
+      - "方便儲存"
+    correct_index: 1
+    explanation: "透過劃分資料集，確保模型在未見過的資料上進行測試，以評估其真實的泛化能力。"
+    tags: ["sec-chapter9", "sec-data-split"]
+
+  - id: 9002
+    chapter_title: "模型評估與效能優化"
+    section_title: "評估流程與指標"
+    text: "驗證集 (Validation Set) 的主要用途是什麼？"
+    type: multiple_choice
+    options:
+      - "訓練模型權重"
+      - "調整超參數 (Hyperparameters) 與挑選最佳模型"
+      - "最終效能評估"
+      - "資料增強"
+    correct_index: 1
+    explanation: "驗證集就像模擬考，用來在訓練過程中評估模型表現，以調整學習率、樹的深度等超參數。"
+    tags: ["sec-chapter9", "sec-data-split"]
+
+  - id: 9003
+    chapter_title: "模型評估與效能優化"
+    section_title: "評估流程與指標"
+    text: "K-fold 交叉驗證 (Cross-Validation) 的主要優點是？"
+    type: multiple_choice
+    options:
+      - "計算速度最快"
+      - "每一筆資料都有機會被用來訓練和驗證，評估結果更穩健"
+      - "不需要測試集"
+      - "可以自動調整參數"
+    correct_index: 1
+    explanation: "K-fold 輪流使用不同部分的資料當驗證集，能避免因資料切分運氣好壞而導致的評估偏差。"
+    tags: ["sec-chapter9", "sec-cross-validation"]
+
+  - id: 9004
+    chapter_title: "模型評估與效能優化"
+    section_title: "評估流程與指標"
+    text: "混淆矩陣 (Confusion Matrix) 中的 TP (True Positive) 代表什麼？"
+    type: multiple_choice
+    options:
+      - "實際有病，預測沒病"
+      - "實際沒病，預測有病"
+      - "實際有病，預測有病（抓到了）"
+      - "實際沒病，預測沒病"
+    correct_index: 2
+    explanation: "True Positive (真陽性) 代表模型正確地預測了正類別（如成功抓到病人）。"
+    tags: ["sec-chapter9", "sec-classification-metrics"]
+
+  - id: 9005
+    chapter_title: "模型評估與效能優化"
+    section_title: "評估流程與指標"
+    text: "在資料極度不平衡的情況下（如詐欺偵測），哪個指標最容易產生誤導？"
+    type: multiple_choice
+    options:
+      - "F1-Score"
+      - "Recall"
+      - "Precision"
+      - "Accuracy (準確率)"
+    correct_index: 3
+    explanation: "如果詐欺只佔 1%，模型全部猜「正常」也有 99% 準確率，但完全沒用，因此 Accuracy 會騙人。"
+    tags: ["sec-chapter9", "sec-classification-metrics"]
+
+  - id: 9006
+    chapter_title: "模型評估與效能優化"
+    section_title: "評估流程與指標"
+    text: "精確率 (Precision) 的定義是？"
+    type: multiple_choice
+    options:
+      - "所有真的有病的人中，被抓到的比例"
+      - "所有被判斷為有病的人中，真的有病的比例"
+      - "答對的總比例"
+      - "預測錯誤的比例"
+    correct_index: 1
+    explanation: "Precision 關注的是「預測為正」的樣本中，有多少是真的正樣本（寧缺勿濫）。"
+    tags: ["sec-chapter9", "sec-classification-metrics"]
+
+  - id: 9007
+    chapter_title: "模型評估與效能優化"
+    section_title: "評估流程與指標"
+    text: "召回率 (Recall) 的定義是？"
+    type: multiple_choice
+    options:
+      - "所有真的有病的人中，被成功抓出來的比例"
+      - "所有被判斷為有病的人中，真的有病的比例"
+      - "答對的總比例"
+      - "預測錯誤的比例"
+    correct_index: 0
+    explanation: "Recall 關注的是「真實為正」的樣本中，有多少被模型成功找出來（寧濫勿缺）。"
+    tags: ["sec-chapter9", "sec-classification-metrics"]
+
+  - id: 9008
+    chapter_title: "模型評估與效能優化"
+    section_title: "評估流程與指標"
+    text: "癌症篩檢模型應該最重視哪個指標？"
+    type: multiple_choice
+    options:
+      - "Precision"
+      - "Recall"
+      - "Accuracy"
+      - "MSE"
+    correct_index: 1
+    explanation: "癌症篩檢漏診後果嚴重（人命關天），因此希望盡可能抓出所有病人，即最大化 Recall。"
+    tags: ["sec-chapter9", "sec-classification-metrics"]
+
+  - id: 9009
+    chapter_title: "模型評估與效能優化"
+    section_title: "評估流程與指標"
+    text: "垃圾郵件過濾應該最重視哪個指標？"
+    type: multiple_choice
+    options:
+      - "Precision"
+      - "Recall"
+      - "Accuracy"
+      - "MAE"
+    correct_index: 0
+    explanation: "使用者很討厭重要信件被誤判為垃圾信（False Positive），因此希望預測為垃圾信的準度要高，即最大化 Precision。"
+    tags: ["sec-chapter9", "sec-classification-metrics"]
+
+  - id: 9010
+    chapter_title: "模型評估與效能優化"
+    section_title: "評估流程與指標"
+    text: "F1-Score 是哪兩個指標的調和平均數？"
+    type: multiple_choice
+    options:
+      - "Accuracy 和 Recall"
+      - "Precision 和 Recall"
+      - "TPR 和 FPR"
+      - "MSE 和 MAE"
+    correct_index: 1
+    explanation: "F1-Score 綜合考量了 Precision 和 Recall，適用於需要平衡兩者的場景。"
+    tags: ["sec-chapter9", "sec-classification-metrics"]
+
+  - id: 9011
+    chapter_title: "模型評估與效能優化"
+    section_title: "評估流程與指標"
+    text: "AUC-ROC 曲線中，AUC = 0.5 代表模型的表現如何？"
+    type: multiple_choice
+    options:
+      - "完美預測"
+      - "跟隨機亂猜一樣"
+      - "預測完全相反"
+      - "非常準確"
+    correct_index: 1
+    explanation: "AUC = 0.5 代表 ROC 曲線是對角線，意味著模型沒有鑑別力，跟丟銅板亂猜一樣。"
+    tags: ["sec-chapter9", "sec-classification-metrics"]
+
+  - id: 9012
+    chapter_title: "模型評估與效能優化"
+    section_title: "評估流程與指標"
+    text: "均方誤差 (MSE) 的特點是？"
+    type: multiple_choice
+    options:
+      - "對離群值不敏感"
+      - "會放大極端誤差（因為平方）"
+      - "數值範圍在 0 到 1 之間"
+      - "只能用於分類"
+    correct_index: 1
+    explanation: "MSE 計算誤差的平方和，因此大誤差的影響會被顯著放大，適合用於懲罰大錯的模型。"
+    tags: ["sec-chapter9", "sec-regression-metrics"]
+
+  - id: 9013
+    chapter_title: "模型評估與效能優化"
+    section_title: "評估流程與指標"
+    text: "R-squared (決定係數) 為 1 代表什麼？"
+    type: multiple_choice
+    options:
+      - "模型完全無法解釋資料變異"
+      - "模型完美擬合所有資料點"
+      - "模型跟猜平均值一樣"
+      - "模型過度擬合"
+    correct_index: 1
+    explanation: "R-squared = 1 表示預測值與真實值完全一致，沒有任何殘差。"
+    tags: ["sec-chapter9", "sec-regression-metrics"]
+
+  - id: 9014
+    chapter_title: "模型評估與效能優化"
+    section_title: "誤差分析與正則化"
+    text: "高偏差 (High Bias) 通常對應到什麼問題？"
+    type: multiple_choice
+    options:
+      - "過度擬合 (Overfitting)"
+      - "欠擬合 (Underfitting)"
+      - "資料不平衡"
+      - "計算錯誤"
+    correct_index: 1
+    explanation: "高偏差代表模型太簡單，連訓練集的規律都學不會，即欠擬合。"
+    tags: ["sec-chapter9", "sec-bias-variance"]
+
+  - id: 9015
+    chapter_title: "模型評估與效能優化"
+    section_title: "誤差分析與正則化"
+    text: "高變異 (High Variance) 通常對應到什麼問題？"
+    type: multiple_choice
+    options:
+      - "過度擬合 (Overfitting)"
+      - "欠擬合 (Underfitting)"
+      - "模型太簡單"
+      - "資料太少"
+    correct_index: 0
+    explanation: "高變異代表模型在訓練集表現很好，但在驗證集表現很差，即過度擬合。"
+    tags: ["sec-chapter9", "sec-bias-variance"]
+
+  - id: 9016
+    chapter_title: "模型評估與效能優化"
+    section_title: "誤差分析與正則化"
+    text: "下列何者不是解決過度擬合 (Overfitting) 的方法？"
+    type: multiple_choice
+    options:
+      - "增加資料量"
+      - "使用 Dropout"
+      - "增加模型複雜度（如加深網路）"
+      - "使用 L2 正則化"
+    correct_index: 2
+    explanation: "增加模型複雜度會讓模型更容易死記硬背，反而會加重過度擬合。"
+    tags: ["sec-chapter9", "sec-prevent-overfitting"]
+
+  - id: 9017
+    chapter_title: "模型評估與效能優化"
+    section_title: "誤差分析與正則化"
+    text: "L1 正則化 (Lasso) 的特殊效果是？"
+    type: multiple_choice
+    options:
+      - "讓權重變大"
+      - "讓不重要的特徵權重變成 0 (特徵選擇)"
+      - "讓所有權重相等"
+      - "增加計算時間"
+    correct_index: 1
+    explanation: "L1 正則化傾向於產生稀疏解，即將不重要的特徵係數壓縮為 0。"
+    tags: ["sec-chapter9", "sec-prevent-overfitting"]
+
+  - id: 9018
+    chapter_title: "模型評估與效能優化"
+    section_title: "誤差分析與正則化"
+    text: "Dropout 機制是如何運作的？"
+    type: multiple_choice
+    options:
+      - "刪除訓練資料"
+      - "訓練時隨機關閉一部分神經元"
+      - "停止訓練"
+      - "刪除錯誤的標籤"
+    correct_index: 1
+    explanation: "Dropout 在每次迭代中隨機讓部分神經元失活，強迫網路學習分散特徵，避免依賴特定路徑。"
+    tags: ["sec-chapter9", "sec-prevent-overfitting"]
+
+  - id: 9019
+    chapter_title: "模型評估與效能優化"
+    section_title: "誤差分析與正則化"
+    text: "早停 (Early Stopping) 是監控哪個數據來決定何時停止訓練？"
+    type: multiple_choice
+    options:
+      - "訓練集誤差 (Training Loss)"
+      - "驗證集誤差 (Validation Loss)"
+      - "測試集誤差 (Test Loss)"
+      - "訓練時間"
+    correct_index: 1
+    explanation: "當訓練集誤差下降但驗證集誤差開始上升時，代表過擬合開始，此時應停止訓練。"
+    tags: ["sec-chapter9", "sec-prevent-overfitting"]
+
+  - id: 9020
+    chapter_title: "模型評估與效能優化"
+    section_title: "誤差分析與正則化"
+    text: "資料增強 (Data Augmentation) 的主要目的是？"
+    type: multiple_choice
+    options:
+      - "減少資料量"
+      - "透過變換原始資料創造新樣本，增加資料多樣性以抗過擬合"
+      - "修正錯誤標籤"
+      - "壓縮圖片"
+    correct_index: 1
+    explanation: "資料增強透過旋轉、裁切等方式擴充訓練資料，讓模型看過更多變體，提升泛化能力。"
+    tags: ["sec-chapter9", "sec-prevent-overfitting"]
+
+  - id: 9021
+    chapter_title: "模型評估與效能優化"
+    section_title: "評估流程與指標"
+    text: "測試集 (Test Set) 絕對不能用於什麼用途？"
+    type: multiple_choice
+    options:
+      - "最終效能評估"
+      - "訓練模型或調整超參數"
+      - "計算 Accuracy"
+      - "計算 Confusion Matrix"
+    correct_index: 1
+    explanation: "測試集必須保持純淨，若用於訓練或調參（偷看答案），評估結果將失去公信力（資料洩漏）。"
+    tags: ["sec-chapter9", "sec-data-split"]
+
+  - id: 9022
+    chapter_title: "模型評估與效能優化"
+    section_title: "評估流程與指標"
+    text: "混淆矩陣中，FN (False Negative) 代表？"
+    type: multiple_choice
+    options:
+      - "誤報 (沒病判有病)"
+      - "漏報 (有病判沒病)"
+      - "正確抓到"
+      - "正確排除"
+    correct_index: 1
+    explanation: "False Negative (假陰性) 代表實際是正樣本（有病），但模型錯誤預測為負樣本（沒病），即漏報。"
+    tags: ["sec-chapter9", "sec-classification-metrics"]
+
+  - id: 9023
+    chapter_title: "模型評估與效能優化"
+    section_title: "評估流程與指標"
+    text: "ROC 曲線的 X 軸和 Y 軸分別是？"
+    type: multiple_choice
+    options:
+      - "Precision 和 Recall"
+      - "FPR (誤報率) 和 TPR (召回率)"
+      - "Accuracy 和 Loss"
+      - "TP 和 TN"
+    correct_index: 1
+    explanation: "ROC 曲線描繪了在不同門檻下，FPR (False Positive Rate) 與 TPR (True Positive Rate) 的權衡關係。"
+    tags: ["sec-chapter9", "sec-classification-metrics"]
+
+  - id: 9024
+    chapter_title: "模型評估與效能優化"
+    section_title: "評估流程與指標"
+    text: "平均絕對誤差 (MAE) 的優點是？"
+    type: multiple_choice
+    options:
+      - "可微分"
+      - "對離群值較不敏感，解釋直觀"
+      - "會放大誤差"
+      - "計算複雜"
+    correct_index: 1
+    explanation: "MAE 計算誤差絕對值的平均，不像 MSE 會平方放大，因此受極端值影響較小，且單位與原資料相同。"
+    tags: ["sec-chapter9", "sec-regression-metrics"]
+
+  - id: 9025
+    chapter_title: "模型評估與效能優化"
+    section_title: "誤差分析與正則化"
+    text: "如果模型在訓練集和驗證集的誤差都很高，這是什麼情況？"
+    type: multiple_choice
+    options:
+      - "過度擬合"
+      - "欠擬合 (Underfitting)"
+      - "資料洩漏"
+      - "模型太複雜"
+    correct_index: 1
+    explanation: "訓練集誤差高代表模型沒學好，驗證集自然也差，這是典型的高偏差（欠擬合）症狀。"
+    tags: ["sec-chapter9", "sec-bias-variance"]
+
+  - id: 9026
+    chapter_title: "模型評估與效能優化"
+    section_title: "誤差分析與正則化"
+    text: "L2 正則化 (Ridge) 對權重的影響是？"
+    type: multiple_choice
+    options:
+      - "讓權重變成 0"
+      - "讓權重變小（趨近於 0 但不為 0）"
+      - "讓權重變大"
+      - "隨機改變權重"
+    correct_index: 1
+    explanation: "L2 正則化透過平方懲罰項限制權重大小，防止單一特徵對模型影響過大，使模型更平滑。"
+    tags: ["sec-chapter9", "sec-prevent-overfitting"]
+
+  - id: 9027
+    chapter_title: "模型評估與效能優化"
+    section_title: "誤差分析與正則化"
+    text: "在影像處理中，水平翻轉 (Horizontal Flip) 屬於哪種技術？"
+    type: multiple_choice
+    options:
+      - "特徵選擇"
+      - "資料增強 (Data Augmentation)"
+      - "降維"
+      - "正規化"
+    correct_index: 1
+    explanation: "水平翻轉是創造新影像樣本的常用手段，屬於資料增強。"
+    tags: ["sec-chapter9", "sec-prevent-overfitting"]
+
+  - id: 9028
+    chapter_title: "模型評估與效能優化"
+    section_title: "評估流程與指標"
+    text: "如果訓練集準確率 99%，測試集準確率 60%，最可能的診斷是？"
+    type: multiple_choice
+    options:
+      - "欠擬合"
+      - "過度擬合 (Overfitting)"
+      - "資料量太少"
+      - "模型太簡單"
+    correct_index: 1
+    explanation: "訓練集表現極佳但測試集慘不忍睹，代表模型死記硬背了訓練資料，沒有泛化能力。"
+    tags: ["sec-chapter9", "sec-bias-variance"]
+
+  - id: 9029
+    chapter_title: "模型評估與效能優化"
+    section_title: "評估流程與指標"
+    text: "R-squared < 0 代表什麼？"
+    type: multiple_choice
+    options:
+      - "模型表現很好"
+      - "模型表現比直接猜平均值還差"
+      - "計算錯誤"
+      - "資料是線性的"
+    correct_index: 1
+    explanation: "R-squared 為負值表示模型的預測誤差比僅使用平均值預測的誤差還大，模型完全失效。"
+    tags: ["sec-chapter9", "sec-regression-metrics"]
+
+  - id: 9030
+    chapter_title: "模型評估與效能優化"
+    section_title: "誤差分析與正則化"
+    text: "解決欠擬合 (Underfitting) 的有效方法是？"
+    type: multiple_choice
+    options:
+      - "減少特徵"
+      - "增加模型複雜度（如增加層數、特徵）"
+      - "增加正則化強度"
+      - "減少訓練時間"
+    correct_index: 1
+    explanation: "欠擬合是因為模型太簡單學不會，所以需要給它更強的學習能力（更複雜的模型）。"
+    tags: ["sec-chapter9", "sec-bias-variance"]
+
+  - id: 9031
+    chapter_title: "模型評估與效能優化"
+    section_title: "評估流程與指標"
+    text: "混淆矩陣中，FP (False Positive) 又被稱為？"
+    type: multiple_choice
+    options:
+      - "型一錯誤 (Type I Error)"
+      - "型二錯誤 (Type II Error)"
+      - "正確預測"
+      - "遺漏"
+    correct_index: 0
+    explanation: "False Positive (誤報) 在統計學上稱為型一錯誤。"
+    tags: ["sec-chapter9", "sec-classification-metrics"]
+
+  - id: 9032
+    chapter_title: "模型評估與效能優化"
+    section_title: "評估流程與指標"
+    text: "混淆矩陣中，FN (False Negative) 又被稱為？"
+    type: multiple_choice
+    options:
+      - "型一錯誤 (Type I Error)"
+      - "型二錯誤 (Type II Error)"
+      - "正確預測"
+      - "誤報"
+    correct_index: 1
+    explanation: "False Negative (漏報) 在統計學上稱為型二錯誤。"
+    tags: ["sec-chapter9", "sec-classification-metrics"]
+
+  - id: 9033
+    chapter_title: "模型評估與效能優化"
+    section_title: "評估流程與指標"
+    text: "AUC = 1.0 通常意味著什麼？"
+    type: multiple_choice
+    options:
+      - "模型非常完美"
+      - "可能發生了資料洩漏 (Data Leakage)，需檢查資料"
+      - "模型壞了"
+      - "資料太難"
+    correct_index: 1
+    explanation: "現實世界中幾乎不可能有完美的模型，AUC=1 通常暗示測試資料被混入訓練集，或標籤直接洩漏給了特徵。"
+    tags: ["sec-chapter9", "sec-classification-metrics"]
+
+  - id: 9034
+    chapter_title: "模型評估與效能優化"
+    section_title: "誤差分析與正則化"
+    text: "Dropout 類似於哪種機器學習技術？"
+    type: multiple_choice
+    options:
+      - "SVM"
+      - "集成學習 (Ensemble Learning)"
+      - "K-means"
+      - "PCA"
+    correct_index: 1
+    explanation: "Dropout 每次訓練不同的子網路，預測時等同於多個子網路的平均，具有集成學習的效果。"
+    tags: ["sec-chapter9", "sec-prevent-overfitting"]
+
+  - id: 9035
+    chapter_title: "模型評估與效能優化"
+    section_title: "誤差分析與正則化"
+    text: "在文字資料增強中，「回譯 (Back Translation)」是指？"
+    type: multiple_choice
+    options:
+      - "把文字倒著寫"
+      - "翻譯成外文再翻譯回來，以取得語意相近但用詞不同的句子"
+      - "刪除翻譯"
+      - "翻譯成二進位"
+    correct_index: 1
+    explanation: "回譯能產生多樣化的句型，是 NLP 常用的資料增強技巧。"
+    tags: ["sec-chapter9", "sec-prevent-overfitting"]
+
+  - id: 9036
+    chapter_title: "模型評估與效能優化"
+    section_title: "評估流程與指標"
+    text: "如果我們希望模型「寧可錯殺一百，不可放過一個」，應優化哪個指標？"
+    type: multiple_choice
+    options:
+      - "Precision"
+      - "Recall"
+      - "Accuracy"
+      - "Specificity"
+    correct_index: 1
+    explanation: "這句話意味著要極大化抓到正樣本的能力，即使誤報也沒關係，即最大化 Recall。"
+    tags: ["sec-chapter9", "sec-classification-metrics"]
+
+  - id: 9037
+    chapter_title: "模型評估與效能優化"
+    section_title: "評估流程與指標"
+    text: "如果我們希望模型「寧缺勿濫」，應優化哪個指標？"
+    type: multiple_choice
+    options:
+      - "Precision"
+      - "Recall"
+      - "Accuracy"
+      - "Sensitivity"
+    correct_index: 0
+    explanation: "這句話意味著只有非常確定才報警，希望報警的都是真的，即最大化 Precision。"
+    tags: ["sec-chapter9", "sec-classification-metrics"]
+
+  - id: 9038
+    chapter_title: "模型評估與效能優化"
+    section_title: "誤差分析與正則化"
+    text: "Bias 和 Variance 之間通常存在什麼關係？"
+    type: multiple_choice
+    options:
+      - "正相關"
+      - "權衡關係 (Tradeoff)"
+      - "無關"
+      - "相等"
+    correct_index: 1
+    explanation: "降低 Bias 通常會增加 Variance（模型變複雜），反之亦然，需要找到最佳平衡點。"
+    tags: ["sec-chapter9", "sec-bias-variance"]
+
+  - id: 9039
+    chapter_title: "模型評估與效能優化"
+    section_title: "評估流程與指標"
+    text: "K-fold 中的 K 通常設為多少？"
+    type: multiple_choice
+    options:
+      - "1"
+      - "5 或 10"
+      - "100"
+      - "1000"
+    correct_index: 1
+    explanation: "K=5 或 K=10 是經驗上最常用的數值，能在計算成本與評估穩健性間取得平衡。"
+    tags: ["sec-chapter9", "sec-cross-validation"]
+
+  - id: 9040
+    chapter_title: "模型評估與效能優化"
+    section_title: "模型評估與效能優化"
+    text: "訓練完模型後，最重要的第一步是？"
+    type: multiple_choice
+    options:
+      - "直接上線使用"
+      - "進行評估 (Evaluation)"
+      - "刪除資料"
+      - "重寫程式碼"
+    correct_index: 1
+    explanation: "沒有經過評估的模型就像沒改過的考卷，無法得知其效能與可靠性。"
+    tags: ["sec-chapter9", "sec-chapter9-summary"]

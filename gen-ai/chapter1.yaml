@@ -1,0 +1,560 @@
+questions:
+  - id: 1001
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "Transformer 架構變體"
+    text: "BERT 模型屬於 Transformer 的哪一種架構變體？"
+    type: multiple_choice
+    options:
+      - "Encoder-only (編碼器模型)"
+      - "Decoder-only (解碼器模型)"
+      - "Encoder-Decoder (編碼器-解碼器模型)"
+      - "RNN 模型"
+    correct_index: 0
+    explanation: "BERT 僅使用 Transformer 的編碼器部分，利用雙向注意力機制來深入理解上下文語意。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1002
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "Transformer 架構變體"
+    text: "GPT 系列模型屬於 Transformer 的哪一種架構變體？"
+    type: multiple_choice
+    options:
+      - "Encoder-only"
+      - "Decoder-only (解碼器模型)"
+      - "Encoder-Decoder"
+      - "CNN"
+    correct_index: 1
+    explanation: "GPT (Generative Pre-trained Transformer) 使用解碼器部分，專注於單向的下一個字預測與生成。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1003
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "Transformer 架構變體"
+    text: "T5 (Text-to-Text Transfer Transformer) 模型屬於哪種架構？"
+    type: multiple_choice
+    options:
+      - "Encoder-only"
+      - "Decoder-only"
+      - "Encoder-Decoder (編碼器-解碼器模型)"
+      - "LSTM"
+    correct_index: 2
+    explanation: "T5 保留了完整的 Transformer 架構（編碼器+解碼器），擅長序列到序列的轉換任務，如翻譯和摘要。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1004
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "Transformer 架構變體"
+    text: "Encoder-only 架構最擅長處理哪類任務？"
+    type: multiple_choice
+    options:
+      - "創意寫作"
+      - "理解與分類 (如情感分析、NER)"
+      - "機器翻譯"
+      - "圖像生成"
+    correct_index: 1
+    explanation: "由於具備雙向注意力，Encoder-only 模型能最好地捕捉整句的語意，適合分類與標註任務。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1005
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "Transformer 架構變體"
+    text: "Decoder-only 架構的核心機制是？"
+    type: multiple_choice
+    options:
+      - "雙向注意力"
+      - "遮罩注意力 (Masked Self-Attention)"
+      - "卷積運算"
+      - "池化運算"
+    correct_index: 1
+    explanation: "為了防止模型在預測下一個字時「偷看」後面的答案，Decoder-only 使用遮罩機制確保只能看到過去的資訊。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1006
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "模型參數與控制"
+    text: "在生成式 AI 中，溫度 (Temperature) 參數主要控制什麼？"
+    type: multiple_choice
+    options:
+      - "模型的運算速度"
+      - "輸出內容的隨機性與創造力"
+      - "模型的記憶長度"
+      - "輸出的字數"
+    correct_index: 1
+    explanation: "溫度調整了下一個 Token 的機率分佈，低溫讓輸出更確定，高溫讓輸出更多樣化。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1007
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "模型參數與控制"
+    text: "如果希望模型回答事實性問題（如「台灣首都在哪」），應將溫度設為？"
+    type: multiple_choice
+    options:
+      - "低溫 (如 0.1)"
+      - "高溫 (如 0.9)"
+      - "中溫 (如 0.5)"
+      - "隨機"
+    correct_index: 0
+    explanation: "事實性問題需要精確且穩定的答案，低溫能減少隨機性，確保模型輸出機率最高的正確答案。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1008
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "模型參數與控制"
+    text: "Top-P (Nucleus Sampling) 的運作原理是？"
+    type: multiple_choice
+    options:
+      - "只選機率最高的前 P 個字"
+      - "從累積機率達到 P 的前幾個候選字中抽樣"
+      - "隨機選擇 P 個字"
+      - "刪除機率低於 P 的字"
+    correct_index: 1
+    explanation: "Top-P 動態選擇一組候選字，其機率總和剛好超過 P，這樣既保留了多樣性，又排除了極低機率的離譜選項。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1009
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "模型參數與控制"
+    text: "LLM 處理文字的基本單位是？"
+    type: multiple_choice
+    options:
+      - "單字 (Word)"
+      - "字母 (Character)"
+      - "Token (代幣)"
+      - "句子 (Sentence)"
+    correct_index: 2
+    explanation: "LLM 將文本切分為 Token 進行處理，Token 可以是字、詞的一部分或標點符號。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1010
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "模型參數與控制"
+    text: "Context Window (上下文視窗) 超過限制會發生什麼事？"
+    type: multiple_choice
+    options:
+      - "模型會當機"
+      - "最早的訊息會被遺忘（擠出記憶）"
+      - "模型會自動付費升級"
+      - "模型會拒絕回答"
+    correct_index: 1
+    explanation: "Context Window 是滑動的，當新訊息進來且總長度超過限制時，最舊的訊息就會被丟棄。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1011
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "模型參數與控制"
+    text: "頻率懲罰 (Frequency Penalty) 的主要用途是？"
+    type: multiple_choice
+    options:
+      - "增加生成速度"
+      - "減少模型重複同一句話或跳針的情況"
+      - "讓模型使用更難的單字"
+      - "限制輸出長度"
+    correct_index: 1
+    explanation: "透過懲罰已經出現多次的 Token，降低其再次被選中的機率，從而減少重複。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1012
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "Transformer 架構變體"
+    text: "下列哪個任務最適合使用 Encoder-Decoder 架構？"
+    type: multiple_choice
+    options:
+      - "情感分析"
+      - "文本生成"
+      - "文本摘要 (Summarization)"
+      - "命名實體識別"
+    correct_index: 2
+    explanation: "摘要任務需要先理解長文（Encoder），再生成精簡的短文（Decoder），是典型的 Seq2Seq 任務。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1013
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "模型參數與控制"
+    text: "通常 1000 個英文字 Tokens 大約等於多少個英文單字？"
+    type: multiple_choice
+    options:
+      - "500 個"
+      - "750 個"
+      - "1000 個"
+      - "1500 個"
+    correct_index: 1
+    explanation: "經驗法則上，1000 Tokens 約為 750 個英文單字（1 word ≈ 1.3 tokens）。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1014
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "模型參數與控制"
+    text: "若要進行創意寫作或腦力激盪，建議將溫度設為？"
+    type: multiple_choice
+    options:
+      - "低溫 (0.2)"
+      - "高溫 (0.7 - 1.0)"
+      - "零度"
+      - "負數"
+    correct_index: 1
+    explanation: "高溫能鼓勵模型選擇較不常見的詞彙，激發創意與多樣性。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1015
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "Transformer 架構變體"
+    text: "Decoder-only 模型在訓練時的目標通常是？"
+    type: multiple_choice
+    options:
+      - "填空題 (Masked Language Modeling)"
+      - "預測下一個字 (Next Token Prediction)"
+      - "翻譯"
+      - "分類"
+    correct_index: 1
+    explanation: "Decoder-only 模型透過自回歸方式，根據前文預測下一個 Token 來進行訓練。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1016
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "模型參數與控制"
+    text: "存在懲罰 (Presence Penalty) 與頻率懲罰的區別在於？"
+    type: multiple_choice
+    options:
+      - "存在懲罰只看是否出現過，頻率懲罰看出現次數"
+      - "存在懲罰看次數，頻率懲罰看是否出現過"
+      - "兩者一樣"
+      - "存在懲罰用於影像"
+    correct_index: 0
+    explanation: "Presence Penalty 只要 Token 出現過就懲罰（鼓勵新話題），Frequency Penalty 則隨次數累加懲罰（抑制重複）。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1017
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "Transformer 架構變體"
+    text: "BERT 的雙向注意力機制使其能夠？"
+    type: multiple_choice
+    options:
+      - "生成流暢的文章"
+      - "同時看到一個字的上下文 (前後文)"
+      - "預測未來"
+      - "處理圖片"
+    correct_index: 1
+    explanation: "雙向注意力允許模型在理解每個字時，同時參考它前面和後面的字，從而獲得更完整的語意。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1018
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "模型參數與控制"
+    text: "API 計費通常依據什麼？"
+    type: multiple_choice
+    options:
+      - "使用時間"
+      - "請求次數"
+      - "Token 總數 (輸入 + 輸出)"
+      - "模型準確度"
+    correct_index: 2
+    explanation: "大多數 LLM API 服務商（如 OpenAI）是根據處理的 Token 總量來計費。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1019
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "Transformer 架構變體"
+    text: "下列何者不是 Encoder-only 模型的典型應用？"
+    type: multiple_choice
+    options:
+      - "情感分析"
+      - "文本分類"
+      - "寫故事 (Story Generation)"
+      - "命名實體識別"
+    correct_index: 2
+    explanation: "寫故事屬於生成任務，是 Decoder-only 模型的強項，而非 Encoder-only。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1020
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "模型參數與控制"
+    text: "RAG (檢索增強生成) 技術常用來解決什麼問題？"
+    type: multiple_choice
+    options:
+      - "模型訓練太慢"
+      - "Context Window 限制與知識時效性問題"
+      - "溫度設定困難"
+      - "Token 太貴"
+    correct_index: 1
+    explanation: "RAG 透過檢索外部知識庫，讓模型能處理超過 Context Window 的大量資訊，並獲取最新知識。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1021
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "Transformer 架構變體"
+    text: "BART 模型屬於哪一類架構？"
+    type: multiple_choice
+    options:
+      - "Encoder-only"
+      - "Decoder-only"
+      - "Encoder-Decoder"
+      - "RNN"
+    correct_index: 2
+    explanation: "BART (Bidirectional and Auto-Regressive Transformers) 結合了雙向編碼器和自回歸解碼器，屬於 Encoder-Decoder 架構。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1022
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "模型參數與控制"
+    text: "當 Temperature 設為 0 時，模型通常會？"
+    type: multiple_choice
+    options:
+      - "隨機輸出"
+      - "總是選擇機率最高的下一個字 (Greedy Decoding)"
+      - "拒絕回答"
+      - "輸出亂碼"
+    correct_index: 1
+    explanation: "溫度為 0（或極低）時，模型會變成確定性的，每次都選機率最大的 Token，結果不再有隨機性。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1023
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "Transformer 架構變體"
+    text: "RoBERTa 是哪個模型的優化版本？"
+    type: multiple_choice
+    options:
+      - "GPT-2"
+      - "BERT"
+      - "T5"
+      - "Transformer-XL"
+    correct_index: 1
+    explanation: "RoBERTa (Robustly optimized BERT approach) 是 BERT 的改進版，透過更多資料和更久的訓練提升效能。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1024
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "模型參數與控制"
+    text: "Top-P 又被稱為什麼採樣方法？"
+    type: multiple_choice
+    options:
+      - "Greedy Sampling"
+      - "Nucleus Sampling (核採樣)"
+      - "Random Sampling"
+      - "Beam Search"
+    correct_index: 1
+    explanation: "Top-P 採樣的學術名稱是 Nucleus Sampling。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1025
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "模型參數與控制"
+    text: "對於程式碼生成 (Code Generation) 任務，建議的溫度設定是？"
+    type: multiple_choice
+    options:
+      - "高溫 (0.8)"
+      - "低溫 (0.1 - 0.2)"
+      - "隨機"
+      - "不限制"
+    correct_index: 1
+    explanation: "程式碼講求邏輯精確與語法正確，不容許隨意發揮，因此適合低溫設定。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1026
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "Transformer 架構變體"
+    text: "LLaMA 模型屬於哪一類架構？"
+    type: multiple_choice
+    options:
+      - "Encoder-only"
+      - "Decoder-only"
+      - "Encoder-Decoder"
+      - "GAN"
+    correct_index: 1
+    explanation: "Meta 的 LLaMA 系列模型採用 Decoder-only 架構，與 GPT 系列類似。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1027
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "模型參數與控制"
+    text: "一個中文字通常對應幾個 Token？"
+    type: multiple_choice
+    options:
+      - "0.5 個"
+      - "1 個"
+      - "1.5 ~ 2 個"
+      - "5 個"
+    correct_index: 2
+    explanation: "由於中文字元較多且編碼複雜，一個中文字通常會佔用 1.5 到 2 個 Token。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1028
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "Transformer 架構變體"
+    text: "Encoder-Decoder 架構被比喻為？"
+    type: multiple_choice
+    options:
+      - "小說家"
+      - "閱讀測驗高手"
+      - "翻譯官"
+      - "畫家"
+    correct_index: 2
+    explanation: "因為它先理解輸入（聽懂）再生成輸出（表達），就像翻譯官的工作流程。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1029
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "模型參數與控制"
+    text: "如果希望模型在對話中不斷開啟新話題，應該調整哪個參數？"
+    type: multiple_choice
+    options:
+      - "降低 Temperature"
+      - "提高 Presence Penalty"
+      - "提高 Frequency Penalty"
+      - "降低 Top-P"
+    correct_index: 1
+    explanation: "提高 Presence Penalty 會懲罰已經出現過的話題詞彙，鼓勵模型使用未出現過的詞，從而轉向新話題。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1030
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "Transformer 架構變體"
+    text: "Claude 模型屬於哪一類架構？"
+    type: multiple_choice
+    options:
+      - "Encoder-only"
+      - "Decoder-only"
+      - "Encoder-Decoder"
+      - "VAE"
+    correct_index: 1
+    explanation: "Anthropic 的 Claude 模型也是基於 Decoder-only 架構的大型語言模型。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1031
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "模型參數與控制"
+    text: "Context Window 的大小通常包含？"
+    type: multiple_choice
+    options:
+      - "只有輸入 (Prompt)"
+      - "只有輸出 (Completion)"
+      - "輸入 + 輸出 (Prompt + Completion)"
+      - "訓練資料量"
+    correct_index: 2
+    explanation: "Context Window 限制的是單次對話中，輸入與輸出 Token 的總和。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1032
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "Transformer 架構變體"
+    text: "Encoder-only 模型被比喻為？"
+    type: multiple_choice
+    options:
+      - "小說家"
+      - "閱讀測驗高手"
+      - "翻譯官"
+      - "詩人"
+    correct_index: 1
+    explanation: "因為它擅長理解文章內容並回答相關問題（分類、標註），但不擅長自己創作長文。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1033
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "模型參數與控制"
+    text: "Top-P 設為 0.9 意味著？"
+    type: multiple_choice
+    options:
+      - "有 90% 的機率選錯字"
+      - "從累積機率達 90% 的候選字中進行採樣"
+      - "只選機率大於 90% 的字"
+      - "刪除 90% 的字"
+    correct_index: 1
+    explanation: "這表示模型會考慮一組機率加總起來達到 90% 的候選字，從中隨機選擇。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1034
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "Transformer 架構變體"
+    text: "Decoder-only 模型被比喻為？"
+    type: multiple_choice
+    options:
+      - "小說家 / 即興演講者"
+      - "閱讀測驗高手"
+      - "翻譯官"
+      - "評論家"
+    correct_index: 0
+    explanation: "因為它擅長根據前文不斷續寫內容，就像即興創作一樣。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1035
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "模型參數與控制"
+    text: "如果模型一直重複同一句話，最有效的解決方法是？"
+    type: multiple_choice
+    options:
+      - "提高 Temperature"
+      - "提高 Frequency Penalty"
+      - "降低 Top-P"
+      - "增加 Context Window"
+    correct_index: 1
+    explanation: "提高 Frequency Penalty 會直接懲罰重複出現的字詞，有效抑制跳針現象。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1036
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "Transformer 架構變體"
+    text: "機器翻譯任務 (如英翻中) 最適合哪種架構？"
+    type: multiple_choice
+    options:
+      - "Encoder-only"
+      - "Decoder-only"
+      - "Encoder-Decoder"
+      - "MLP"
+    correct_index: 2
+    explanation: "機器翻譯是標準的 Seq2Seq 任務，Encoder-Decoder 架構能兼顧來源語言的理解與目標語言的生成。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1037
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "模型參數與控制"
+    text: "現代 LLM (如 GPT-4) 的 Context Window 可達到多少？"
+    type: multiple_choice
+    options:
+      - "512 Tokens"
+      - "4k Tokens"
+      - "128k Tokens 或更多"
+      - "無限大"
+    correct_index: 2
+    explanation: "隨著技術進步，現代模型的 Context Window 已大幅擴展，能處理整本書籍長度的內容。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1038
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "模型參數與控制"
+    text: "在資料萃取 (Data Extraction) 任務中，溫度應設為？"
+    type: multiple_choice
+    options:
+      - "低溫"
+      - "高溫"
+      - "隨機"
+      - "最高"
+    correct_index: 0
+    explanation: "資料萃取要求準確還原資訊，不容許模型發揮創意篡改內容，故需低溫。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1039
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "Transformer 架構變體"
+    text: "Transformer 模型最早是在哪一年提出的？"
+    type: multiple_choice
+    options:
+      - "2010"
+      - "2015"
+      - "2017"
+      - "2020"
+    correct_index: 2
+    explanation: "Google 於 2017 年發表《Attention Is All You Need》論文，提出了 Transformer 架構。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1040
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "模型參數與控制"
+    text: "下列關於 Token 的敘述何者正確？"
+    type: multiple_choice
+    options:
+      - "Token 就是單字"
+      - "Token 數量總是等於字元數"
+      - "Token 是 LLM 處理文本的基本單位，不同語言的 Token 密度不同"
+      - "只有英文有 Token"
+    correct_index: 2
+    explanation: "Token 是模型理解文本的最小單位，其切分方式取決於分詞器，且不同語言的 Token/字數比例不同。"
+    tags: ["sec-gen-chapter1", "sec-gen-ai-models"]

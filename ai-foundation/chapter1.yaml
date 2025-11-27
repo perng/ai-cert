@@ -1,0 +1,560 @@
+questions:
+  - id: 1001
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "AI 的定義與範疇"
+    text: "下列關於人工智慧 (AI) 的定義，何者最為準確？"
+    type: multiple_choice
+    options:
+      - "AI 的目標僅僅是模仿人類的外觀。"
+      - "AI 旨在創造能夠展現智慧行為的機器，增強人類解決問題的能力。"
+      - "AI 必須具備自我意識才能稱為 AI。"
+      - "AI 只能處理邏輯運算，無法處理感知任務。"
+    correct_index: 1
+    explanation: "AI 的目標是模擬人類認知功能（如學習、推理）並增強人類智慧，不一定需要自我意識或模仿外觀。"
+    tags: ["sec-chapter1", "sec-ai-def"]
+
+  - id: 1002
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "弱 AI vs. 強 AI"
+    text: "AlphaGo 圍棋程式屬於下列哪一種類型的 AI？"
+    type: multiple_choice
+    options:
+      - "強人工智慧 (AGI)"
+      - "超人工智慧 (Super AI)"
+      - "弱人工智慧 (ANI)"
+      - "符號式 AI"
+    correct_index: 2
+    explanation: "AlphaGo 專精於單一任務（圍棋），無法跨領域學習或具備自我意識，因此屬於弱 AI (ANI)。"
+    tags: ["sec-chapter1", "def-ani"]
+
+  - id: 1003
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "弱 AI vs. 強 AI"
+    text: "關於強人工智慧 (AGI)，下列描述何者正確？"
+    type: multiple_choice
+    options:
+      - "目前已經廣泛應用於日常生活中（如 Siri）。"
+      - "只能處理單一領域的任務。"
+      - "具備像人類一樣的通用智慧，能跨領域學習與推理。"
+      - "其智慧程度遠遠超越人類最聰明的水平。"
+    correct_index: 2
+    explanation: "強人工智慧 (AGI) 具備人類般的通用智慧，能跨領域遷移學習。目前的 Siri 屬於弱 AI，超越人類智慧的是超 AI。"
+    tags: ["sec-chapter1", "def-agi"]
+
+  - id: 1004
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "超人工智慧 (Super AI)"
+    text: "當 AI 在科學創新、藝術創作等所有領域的智慧都遠超越人類時，稱之為？"
+    type: multiple_choice
+    options:
+      - "弱人工智慧 (ANI)"
+      - "強人工智慧 (AGI)"
+      - "超人工智慧 (Super AI)"
+      - "符號式 AI"
+    correct_index: 2
+    explanation: "超人工智慧 (Super AI) 定義為在所有領域的智慧都遠遠超越最聰明的人類。"
+    tags: ["sec-chapter1", "sec-super-ai"]
+
+  - id: 1005
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "符號式 AI"
+    text: "下列何者是「符號式 AI (Symbolic AI)」的主要缺點？"
+    type: multiple_choice
+    options:
+      - "缺乏可解釋性 (Black Box)"
+      - "需要大量的運算資源 (GPU)"
+      - "知識擷取瓶頸與缺乏彈性"
+      - "無法處理邏輯推論問題"
+    correct_index: 2
+    explanation: "符號式 AI 依賴人工規則，難以處理模糊問題（缺乏彈性），且將專家知識轉化為規則非常耗時（知識擷取瓶頸）。"
+    tags: ["sec-chapter1", "sec-symbolic-ai"]
+
+  - id: 1006
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "符號式 AI"
+    text: "「專家系統 (Expert Systems)」屬於哪一種 AI 技術範疇？"
+    type: multiple_choice
+    options:
+      - "深度學習 (Deep Learning)"
+      - "符號式 AI (Symbolic AI)"
+      - "統計式 AI (Statistical AI)"
+      - "非監督式學習"
+    correct_index: 1
+    explanation: "專家系統是符號式 AI 的代表技術，由人類專家定義明確的邏輯規則進行推論。"
+    tags: ["sec-chapter1", "def-expert-systems"]
+
+  - id: 1007
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "統計式 AI"
+    text: "統計式 AI (Statistical AI) 與符號式 AI 最大的不同在於？"
+    type: multiple_choice
+    options:
+      - "統計式 AI 依賴人工手寫規則。"
+      - "統計式 AI 從大量數據中自動找出規律。"
+      - "統計式 AI 具有高度可解釋性。"
+      - "統計式 AI 無法處理影像或語音。"
+    correct_index: 1
+    explanation: "統計式 AI (機器學習) 的核心是不再由人類手寫規則，而是讓電腦從數據中利用統計方法找出規律。"
+    tags: ["sec-chapter1", "sec-statistical-ai"]
+
+  - id: 1008
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "技術層次關係"
+    text: "關於 AI、機器學習 (ML) 與深度學習 (DL) 的包含關係，下列何者正確？"
+    type: multiple_choice
+    options:
+      - "DL > ML > AI"
+      - "AI > DL > ML"
+      - "AI > ML > DL"
+      - "ML > AI > DL"
+    correct_index: 2
+    explanation: "深度學習是機器學習的子集，而機器學習是人工智慧的子集。關係為 AI > ML > DL。"
+    tags: ["sec-chapter1", "sec-ai-ml-dl"]
+
+  - id: 1009
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "資料驅動 vs. 規則驅動"
+    text: "機器學習 (Machine Learning) 的核心邏輯可以用下列哪個公式表示？"
+    type: multiple_choice
+    options:
+      - "輸入 + 規則 = 輸出"
+      - "輸入 + 輸出 = 規則 (模型)"
+      - "規則 + 輸出 = 輸入"
+      - "輸入 + 運算 = 儲存"
+    correct_index: 1
+    explanation: "機器學習是「資料驅動」的，電腦從輸入數據和對應的輸出答案中，自己學習出規則（模型）。"
+    tags: ["sec-chapter1", "def-data-driven"]
+
+  - id: 1010
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "傳統機器學習 vs. 深度學習"
+    text: "相較於深度學習，下列何者是「傳統機器學習」的特徵？"
+    type: multiple_choice
+    options:
+      - "需要大量數據才能運作良好"
+      - "特徵工程通常由人工專家手動提取"
+      - "模型通常是無法解釋的黑盒子"
+      - "主要依賴 GPU 進行加速運算"
+    correct_index: 1
+    explanation: "傳統機器學習高度依賴人工特徵工程 (Feature Engineering)，而深度學習具備自動特徵提取能力。"
+    tags: ["sec-chapter1", "sec-ml-vs-dl-cost"]
+
+  - id: 1011
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "人類與 AI 的協作模式"
+    text: "在「資料標註 (Data Labeling)」的工作中，人類必須教導 AI 什麼是正確答案，這屬於哪種協作模式？"
+    type: multiple_choice
+    options:
+      - "人在迴圈中 (HITL)"
+      - "人在迴圈上 (HOTL)"
+      - "人在迴圈外 (HOOTL)"
+      - "全自動化模式"
+    correct_index: 0
+    explanation: "HITL (Human-in-the-loop) 指人類是系統運作不可或缺的一部分，如資料標註或醫療最終診斷。"
+    tags: ["sec-chapter1", "sec-hitl"]
+
+  - id: 1012
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "人類與 AI 的協作模式"
+    text: "在「自駕車 (Level 3)」的應用中，人類駕駛必須隨時準備接手，這屬於哪種協作模式？"
+    type: multiple_choice
+    options:
+      - "人在迴圈中 (HITL)"
+      - "人在迴圈上 (HOTL)"
+      - "人在迴圈外 (HOOTL)"
+      - "全自動無人監控"
+    correct_index: 1
+    explanation: "HOTL (Human-over-the-loop) 指 AI 可獨立完成大部分任務，人類扮演監督者，僅在異常時介入。Level 3 自駕車符合此定義。"
+    tags: ["sec-chapter1", "sec-hotl"]
+
+  - id: 1013
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "人類與 AI 的協作模式"
+    text: "下列哪個場景最適合採用「人在迴圈外 (HOOTL)」模式？"
+    type: multiple_choice
+    options:
+      - "醫療診斷與手術"
+      - "高頻交易 (High-Frequency Trading)"
+      - "法律判決"
+      - "招聘面試"
+    correct_index: 1
+    explanation: "高頻交易需要在毫秒級內做出決策，人類無法即時反應，因此適合全自動化的 HOOTL 模式。"
+    tags: ["sec-chapter1", "sec-hootl"]
+
+  - id: 1014
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "AI 發展歷史"
+    text: "人工智慧 (AI) 這個術語是在哪一場會議中正式誕生的？"
+    type: multiple_choice
+    options:
+      - "1950 圖靈測試"
+      - "1956 達特茅斯會議 (Dartmouth Conference)"
+      - "2012 ImageNet 競賽"
+      - "1997 深藍電腦對弈"
+    correct_index: 1
+    explanation: "1956 年的達特茅斯會議 (Dartmouth Conference) 被公認為 AI 的誕生地，正式確立了人工智慧這個學科。"
+    tags: ["sec-chapter1", "sec-chapter1-summary"]
+
+  - id: 1015
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "AI 發展歷史"
+    text: "圖靈測試 (Turing Test) 的主要目的是什麼？"
+    type: multiple_choice
+    options:
+      - "測試電腦的運算速度"
+      - "測試機器是否具備人類智慧（能否騙過人類評審）"
+      - "測試機器能否下贏圍棋"
+      - "測試機器能否辨識圖像"
+    correct_index: 1
+    explanation: "圖靈測試由艾倫·圖靈提出，旨在測試機器是否能展現出與人類無異的智慧行為，若人類評審無法區分機器與真人，則通過測試。"
+    tags: ["sec-chapter1", "sec-chapter1-summary"]
+
+  - id: 1016
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "AI 發展歷史"
+    text: "2012 年哪一個模型的出現標誌著深度學習 (Deep Learning) 的爆發？"
+    type: multiple_choice
+    options:
+      - "AlphaGo"
+      - "AlexNet"
+      - "ChatGPT"
+      - "Deep Blue"
+    correct_index: 1
+    explanation: "2012 年 AlexNet 在 ImageNet 競賽中大幅降低錯誤率，證明了深度學習在影像辨識的強大能力，開啟了深度學習的爆發期。"
+    tags: ["sec-chapter1", "sec-chapter1-summary"]
+
+  - id: 1017
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "AI 的定義與範疇"
+    text: "下列哪一項不是 AI 的主要目標？"
+    type: multiple_choice
+    options:
+      - "解決複雜問題"
+      - "增強人類智慧"
+      - "完全取代人類所有工作"
+      - "模擬人類認知功能"
+    correct_index: 2
+    explanation: "AI 的目標是增強人類智慧與解決問題，而非完全取代人類，特別是在涉及情感、道德與創造力的領域。"
+    tags: ["sec-chapter1", "sec-ai-def"]
+
+  - id: 1018
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "弱 AI vs. 強 AI"
+    text: "下列關於弱人工智慧 (ANI) 的敘述，何者錯誤？"
+    type: multiple_choice
+    options:
+      - "它是目前唯一實現的 AI 類型"
+      - "它具備自我意識"
+      - "它專精於特定任務"
+      - "Siri 和 Google Assistant 都是弱 AI"
+    correct_index: 1
+    explanation: "弱 AI (ANI) 不具備自我意識，這是強 AI (AGI) 的特徵。"
+    tags: ["sec-chapter1", "def-ani"]
+
+  - id: 1019
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "弱 AI vs. 強 AI"
+    text: "人臉辨識系統雖然能精準辨識身分，卻無法欣賞照片的美感，這說明了弱 AI 的什麼特性？"
+    type: multiple_choice
+    options:
+      - "缺乏運算能力"
+      - "缺乏通用智慧與情感理解"
+      - "缺乏數據支持"
+      - "缺乏邏輯推理能力"
+    correct_index: 1
+    explanation: "弱 AI 缺乏通用智慧和情感理解能力，只能執行被設計好的特定任務（如辨識像素特徵）。"
+    tags: ["sec-chapter1", "def-ani"]
+
+  - id: 1020
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "弱 AI vs. 強 AI"
+    text: "強人工智慧 (AGI) 的關鍵特徵之一是什麼？"
+    type: multiple_choice
+    options:
+      - "只能處理影像數據"
+      - "具備跨領域遷移學習的能力"
+      - "運算速度必須達到光速"
+      - "必須使用生物神經元"
+    correct_index: 1
+    explanation: "AGI 的核心特徵是具備像人類一樣的通用智慧，能夠將在一個領域學到的知識遷移應用到另一個未知的領域。"
+    tags: ["sec-chapter1", "def-agi"]
+
+  - id: 1021
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "超人工智慧 (Super AI)"
+    text: "超人工智慧 (Super AI) 的出現引發了哪方面的深刻討論？"
+    type: multiple_choice
+    options:
+      - "硬體散熱問題"
+      - "AI 安全與控制的倫理問題"
+      - "網路頻寬不足"
+      - "數據儲存成本"
+    correct_index: 1
+    explanation: "當 AI 智慧超越人類時，如何確保其目標與人類利益一致（AI Alignment）以及如何控制它，是倫理與安全領域的重大議題。"
+    tags: ["sec-chapter1", "sec-super-ai"]
+
+  - id: 1022
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "符號式 AI"
+    text: "符號式 AI 又被稱為什麼？"
+    type: multiple_choice
+    options:
+      - "GOFAI (Good Old-Fashioned AI)"
+      - "Deep Learning"
+      - "Neural Networks"
+      - "Generative AI"
+    correct_index: 0
+    explanation: "符號式 AI 是早期的 AI 範式，常被稱為 GOFAI (Good Old-Fashioned AI)。"
+    tags: ["sec-chapter1", "sec-symbolic-ai"]
+
+  - id: 1023
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "符號式 AI"
+    text: "邏輯程式設計 (Logic Programming) 是哪一種 AI 的代表技術？"
+    type: multiple_choice
+    options:
+      - "統計式 AI"
+      - "符號式 AI"
+      - "連接主義 AI"
+      - "演化式 AI"
+    correct_index: 1
+    explanation: "邏輯程式設計依賴明確的邏輯規則與符號推論，屬於符號式 AI。"
+    tags: ["sec-chapter1", "sec-symbolic-ai"]
+
+  - id: 1024
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "符號式 AI"
+    text: "「知識擷取瓶頸 (Knowledge Acquisition Bottleneck)」指的是什麼困難？"
+    type: multiple_choice
+    options:
+      - "硬碟容量不足以儲存知識"
+      - "將人類專家的隱性知識轉化為明確規則耗時費力"
+      - "網路速度太慢無法下載知識"
+      - "電腦運算速度太慢無法處理知識"
+    correct_index: 1
+    explanation: "知識擷取瓶頸是指將人類專家腦中那些「只可意會不可言傳」的隱性知識，轉化為電腦能執行的 If-Then 規則是非常困難且耗時的。"
+    tags: ["sec-chapter1", "def-knowledge-bottleneck"]
+
+  - id: 1025
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "統計式 AI"
+    text: "統計式 AI 能夠處理哪種類型的數據，這是符號式 AI 難以做到的？"
+    type: multiple_choice
+    options:
+      - "結構化資料庫"
+      - "明確的邏輯規則"
+      - "非結構化數據（如影像、語音、自然語言）"
+      - "數學公式"
+    correct_index: 2
+    explanation: "統計式 AI (機器學習) 擅長從模糊、複雜的非結構化數據中找出模式，而符號式 AI 難以定義規則來處理這些數據。"
+    tags: ["sec-chapter1", "sec-statistical-ai"]
+
+  - id: 1026
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "統計式 AI"
+    text: "「垃圾進，垃圾出 (Garbage In, Garbage Out)」主要描述統計式 AI 的什麼缺點？"
+    type: multiple_choice
+    options:
+      - "可解釋性低"
+      - "高度依賴數據品質"
+      - "運算成本過高"
+      - "缺乏彈性"
+    correct_index: 1
+    explanation: "統計式 AI 的模型是從數據中學習而來的，如果訓練數據品質低劣或有錯誤，模型的表現也會很差。"
+    tags: ["sec-chapter1", "sec-statistical-ai"]
+
+  - id: 1027
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "統計式 AI"
+    text: "如果訓練數據包含偏見 (Bias)，統計式 AI 模型會如何？"
+    type: multiple_choice
+    options:
+      - "自動修正偏見"
+      - "拒絕學習"
+      - "學到並複製這些偏見"
+      - "崩潰無法運作"
+    correct_index: 2
+    explanation: "機器學習模型會忠實地反映訓練數據中的統計規律，因此若數據有偏見，模型也會產生有偏見的結果。"
+    tags: ["sec-chapter1", "sec-statistical-ai"]
+
+  - id: 1028
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "技術層次關係"
+    text: "機器學習 (Machine Learning) 的定義特徵是什麼？"
+    type: multiple_choice
+    options:
+      - "必須使用類神經網路"
+      - "不需明確編寫指令，讓電腦從數據中學習"
+      - "必須具備自我意識"
+      - "完全不依賴數據"
+    correct_index: 1
+    explanation: "機器學習的核心定義是讓電腦具備「從數據中學習」的能力，而不需要人類明確編寫每一條規則指令。"
+    tags: ["sec-chapter1", "def-ml"]
+
+  - id: 1029
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "技術層次關係"
+    text: "深度學習 (Deep Learning) 是使用什麼架構來模擬人類大腦運作？"
+    type: multiple_choice
+    options:
+      - "決策樹 (Decision Tree)"
+      - "多層類神經網路 (Deep Neural Networks)"
+      - "支援向量機 (SVM)"
+      - "專家系統 (Expert Systems)"
+    correct_index: 1
+    explanation: "深度學習特指使用多層（深層）的類神經網路來進行學習的技術。"
+    tags: ["sec-chapter1", "def-dl"]
+
+  - id: 1030
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "資料驅動 vs. 規則驅動"
+    text: "將「規則驅動 (Rule-Based)」比喻為廚師，那他是什麼樣的廚師？"
+    type: multiple_choice
+    options:
+      - "會自己發明新菜色的廚師"
+      - "只會照著食譜做菜的廚師"
+      - "會看客人臉色調整口味的廚師"
+      - "完全不會做菜的廚師"
+    correct_index: 1
+    explanation: "規則驅動系統嚴格遵循預定義的規則，就像廚師嚴格照著食譜做菜，食譜沒寫的就不會做。"
+    tags: ["sec-chapter1", "def-rule-based"]
+
+  - id: 1031
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "資料驅動 vs. 規則驅動"
+    text: "將「資料驅動 (Data-Driven)」比喻為學徒，他是如何學會做菜的？"
+    type: multiple_choice
+    options:
+      - "背誦食譜"
+      - "觀察師傅做菜一萬次，自己領悟訣竅"
+      - "請師傅手把手教學"
+      - "看電視節目學習"
+    correct_index: 1
+    explanation: "資料驅動系統透過觀察大量的數據（師傅做菜），自己歸納出模式（領悟訣竅），而非死記規則。"
+    tags: ["sec-chapter1", "def-data-driven"]
+
+  - id: 1032
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "傳統機器學習 vs. 深度學習"
+    text: "為什麼深度學習通常需要高階 GPU？"
+    type: multiple_choice
+    options:
+      - "因為 GPU 比較便宜"
+      - "因為深度學習涉及大量的矩陣運算，GPU 擅長平行處理"
+      - "因為 CPU 無法執行數學運算"
+      - "因為 GPU 耗電量較低"
+    correct_index: 1
+    explanation: "深度學習的神經網路訓練涉及海量的矩陣乘法運算，GPU 的平行運算架構比 CPU 更適合處理這類任務。"
+    tags: ["sec-chapter1", "sec-ml-vs-dl-cost"]
+
+  - id: 1033
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "傳統機器學習 vs. 深度學習"
+    text: "傳統機器學習在小數據集上的表現通常如何？"
+    type: multiple_choice
+    options:
+      - "完全無法運作"
+      - "表現通常比深度學習差"
+      - "也能運作良好，有時甚至優於深度學習"
+      - "需要將數據量擴增一萬倍才能運作"
+    correct_index: 2
+    explanation: "深度學習依賴海量數據，若數據量不足，傳統機器學習（如 SVM, Random Forest）往往能有更好或相當的表現。"
+    tags: ["sec-chapter1", "sec-ml-vs-dl-cost"]
+
+  - id: 1034
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "人類與 AI 的協作模式"
+    text: "法律合約審查中，AI 標記風險條款，律師進行最終判斷，這是哪種協作模式？"
+    type: multiple_choice
+    options:
+      - "HITL (Human-in-the-loop)"
+      - "HOTL (Human-over-the-loop)"
+      - "HOOTL (Human-out-of-the-loop)"
+      - "AI 取代人類"
+    correct_index: 0
+    explanation: "律師必須介入進行最終判斷，AI 無法獨立完成合約審查的法律責任，因此屬於 HITL。"
+    tags: ["sec-chapter1", "sec-hitl"]
+
+  - id: 1035
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "人類與 AI 的協作模式"
+    text: "智慧工廠中，工程師只在警報響起時才介入控制，這是哪種協作模式？"
+    type: multiple_choice
+    options:
+      - "HITL (Human-in-the-loop)"
+      - "HOTL (Human-over-the-loop)"
+      - "HOOTL (Human-out-of-the-loop)"
+      - "手動控制模式"
+    correct_index: 1
+    explanation: "AI 獨立運作，人類僅在異常時介入監督，屬於 HOTL。"
+    tags: ["sec-chapter1", "sec-hotl"]
+
+  - id: 1036
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "人類與 AI 的協作模式"
+    text: "Netflix 的影片推薦系統屬於哪種協作模式？"
+    type: multiple_choice
+    options:
+      - "HITL (Human-in-the-loop)"
+      - "HOTL (Human-over-the-loop)"
+      - "HOOTL (Human-out-of-the-loop)"
+      - "隨機推薦模式"
+    correct_index: 2
+    explanation: "推薦系統全自動運作，人類不介入每一次的推薦決策，屬於 HOOTL。"
+    tags: ["sec-chapter1", "sec-hootl"]
+
+  - id: 1037
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "人類與 AI 的協作模式"
+    text: "HOOTL (Human-out-of-the-loop) 系統必須具備什麼機制以防止災難？"
+    type: multiple_choice
+    options:
+      - "人工審核機制"
+      - "嚴格的安全機制 (Safety Guardrails)"
+      - "隨機暫停機制"
+      - "自我毀滅機制"
+    correct_index: 1
+    explanation: "由於人類無法即時監控，HOOTL 系統必須內建嚴格的安全護欄 (Guardrails) 以防止失控（如股市熔斷機制）。"
+    tags: ["sec-chapter1", "sec-hootl"]
+
+  - id: 1038
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "AI 發展歷史"
+    text: "AI 發展經歷了兩次「寒冬」，主要原因不包括下列何者？"
+    type: multiple_choice
+    options:
+      - "算力不足"
+      - "資料缺乏"
+      - "演算法過度承諾但無法兌現"
+      - "電力不足"
+    correct_index: 3
+    explanation: "AI 寒冬的主因是當時的硬體算力不足、數據量不夠，以及大眾對 AI 的期望過高導致失望，而非電力問題。"
+    tags: ["sec-chapter1", "sec-chapter1-summary"]
+
+  - id: 1039
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "AI 發展歷史"
+    text: "1997 年擊敗西洋棋世界冠軍的 AI 是？"
+    type: multiple_choice
+    options:
+      - "AlphaGo"
+      - "Deep Blue (深藍)"
+      - "Watson"
+      - "ChatGPT"
+    correct_index: 1
+    explanation: "IBM 的 Deep Blue 在 1997 年擊敗了西洋棋棋王卡斯帕洛夫，是 AI 歷史上的重要里程碑。"
+    tags: ["sec-chapter1", "sec-chapter1-summary"]
+
+  - id: 1040
+    chapter_title: "人工智慧的本質與層次架構"
+    section_title: "技術層次關係"
+    text: "下列哪一個是「弱 AI (ANI)」的特徵？"
+    type: multiple_choice
+    options:
+      - "具有自我意識"
+      - "能解決跨領域的通用問題"
+      - "專注於解決特定領域的單一問題"
+      - "比人類更聰明"
+    correct_index: 2
+    explanation: "弱 AI (ANI) 的定義就是專精於單一或特定任務，無法跨領域遷移。"
+    tags: ["sec-chapter1", "def-ani"]

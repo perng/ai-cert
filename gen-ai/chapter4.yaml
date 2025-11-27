@@ -1,0 +1,560 @@
+questions:
+  - id: 4001
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "Agent (代理人) 與傳統 Chatbot 最大的區別在於？"
+    type: multiple_choice
+    options:
+      - "Agent 比較貴"
+      - "Agent 具備感知環境、決策並執行行動 (Action) 的能力，而不僅是說話"
+      - "Agent 只能說英文"
+      - "Chatbot 比較聰明"
+    correct_index: 1
+    explanation: "Chatbot 僅限於對話，而 Agent 擁有「手腳」，能透過工具與外部世界互動並執行任務。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4002
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "Agent 的「大腦 (Brain)」通常由什麼擔任？"
+    type: multiple_choice
+    options:
+      - "CPU"
+      - "大型語言模型 (LLM)"
+      - "硬碟"
+      - "網路卡"
+    correct_index: 1
+    explanation: "LLM 負責理解指令、邏輯推理與規劃，是 Agent 的智慧核心。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4003
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "Agent 的「規劃 (Planning)」模組負責什麼？"
+    type: multiple_choice
+    options:
+      - "儲存資料"
+      - "任務拆解與自我反思"
+      - "執行 API"
+      - "顯示畫面"
+    correct_index: 1
+    explanation: "規劃模組將複雜目標拆解為可執行的步驟，並在執行過程中反思修正。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4004
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "Agent 的「長期記憶」通常儲存在哪裡？"
+    type: multiple_choice
+    options:
+      - "RAM"
+      - "向量資料庫 (Vector DB)"
+      - "CPU 快取"
+      - "紙本筆記"
+    correct_index: 1
+    explanation: "向量資料庫能高效儲存與檢索大量非結構化資料，作為 Agent 的長期知識庫。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4005
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "Agent 使用工具 (Tool Use) 的例子包括？"
+    type: multiple_choice
+    options:
+      - "思考人生"
+      - "調用 API (如搜尋 Google、發送 Email)"
+      - "睡覺"
+      - "做夢"
+    correct_index: 1
+    explanation: "透過 API 調用，Agent 能夠執行實際操作，如獲取資訊或控制軟體。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4006
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "解決方案圖譜 (Solution Graph) 將解決問題的過程建模為？"
+    type: multiple_choice
+    options:
+      - "一條直線"
+      - "一個圖 (Graph)，包含節點與邊"
+      - "一個圓圈"
+      - "一個點"
+    correct_index: 1
+    explanation: "圖結構能表達非線性的決策路徑與狀態轉換，比線性思考更靈活。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4007
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "在 Solution Graph 中，廣度優先搜尋 (BFS) 適合？"
+    type: multiple_choice
+    options:
+      - "深入挖掘單一路徑"
+      - "尋找最短路徑或探索所有可能的下一步"
+      - "隨機亂走"
+      - "什麼都不做"
+    correct_index: 1
+    explanation: "BFS 層層推進，能確保找到步數最少的解，適合路徑搜尋。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4008
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "在 Solution Graph 中，深度優先搜尋 (DFS) 適合？"
+    type: multiple_choice
+    options:
+      - "尋找最短路徑"
+      - "需要深入挖掘的任務 (一條路走到底)"
+      - "廣泛探索"
+      - "快速瀏覽"
+    correct_index: 1
+    explanation: "DFS 優先探索深層節點，適合需要連續推理或鑽研到底的場景。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4009
+    chapter_title: "AI 代理人與自動化"
+    section_title: "多代理系統 (MAS)"
+    text: "多代理系統 (Multi-Agent Systems) 的主要優勢是？"
+    type: multiple_choice
+    options:
+      - "省電"
+      - "透過角色分工協作，解決單一 Agent 無法處理的複雜任務"
+      - "減少程式碼量"
+      - "不需要 LLM"
+    correct_index: 1
+    explanation: "透過專業分工（如 PM、工程師、測試員），多個 Agent 能協作完成大型專案。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4010
+    chapter_title: "AI 代理人與自動化"
+    section_title: "多代理系統 (MAS)"
+    text: "在多代理協作中，負責拆解需求並分派任務的角色通常是？"
+    type: multiple_choice
+    options:
+      - "工程師 Agent"
+      - "產品經理 (PM) Agent"
+      - "測試 Agent"
+      - "實習生 Agent"
+    correct_index: 1
+    explanation: "PM Agent 負責統籌規劃，將大目標轉化為可執行的子任務並指派給專責 Agent。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4011
+    chapter_title: "AI 代理人與自動化"
+    section_title: "多代理系統 (MAS)"
+    text: "多代理系統常見的挑戰「無限循環 (Infinite Loops)」是指？"
+    type: multiple_choice
+    options:
+      - "Agent 跑得太快"
+      - "Agent 之間互相踢皮球，任務無法推進"
+      - "Agent 當機"
+      - "Agent 拒絕工作"
+    correct_index: 1
+    explanation: "當 Agent A 等待 Agent B，而 Agent B 又等待 Agent A 時，就會陷入死結或無窮迴圈。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4012
+    chapter_title: "AI 代理人與自動化"
+    section_title: "多代理系統 (MAS)"
+    text: "解決多代理系統「無限循環」的常見方法是？"
+    type: multiple_choice
+    options:
+      - "拔掉電源"
+      - "設定最大對話輪數 (Max Turns) 或引入監督者 Agent"
+      - "增加更多 Agent"
+      - "刪除記憶"
+    correct_index: 1
+    explanation: "強制限制互動次數或由上層監督者介入中斷，能有效防止系統空轉。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4013
+    chapter_title: "AI 代理人與自動化"
+    section_title: "多代理系統 (MAS)"
+    text: "若多個 Agent 對同一問題有不同答案（答案衝突），該如何解決？"
+    type: multiple_choice
+    options:
+      - "隨機選一個"
+      - "引入「決策者 Agent」或投票機制"
+      - "讓它們吵架"
+      - "全部捨棄"
+    correct_index: 1
+    explanation: "透過仲裁機制或多數決，可以從衝突的意見中整合出最終決策。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4014
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "Agent 的「自我反思 (Self-Reflection)」功能是指？"
+    type: multiple_choice
+    options:
+      - "照鏡子"
+      - "執行後檢查結果是否符合預期，並進行修正"
+      - "自我備份"
+      - "自我刪除"
+    correct_index: 1
+    explanation: "反思能力讓 Agent 能從錯誤中學習並調整策略，而非盲目執行錯誤的計畫。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4015
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "最佳優先搜尋 (Best-First Search) 的策略是？"
+    type: multiple_choice
+    options:
+      - "隨機選擇"
+      - "評估哪條路看起來最有希望 (Heuristic)，優先走那條"
+      - "先走最難的路"
+      - "先走最長的路"
+    correct_index: 1
+    explanation: "利用啟發式函數評估節點價值，優先探索最可能通往目標的路徑，效率通常比盲目搜尋高。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4016
+    chapter_title: "AI 代理人與自動化"
+    section_title: "多代理系統 (MAS)"
+    text: "在 A2A 協作中，Client Agent 的角色是？"
+    type: multiple_choice
+    options:
+      - "執行任務"
+      - "發起者，接收人類指令並轉發給執行者"
+      - "測試軟體"
+      - "資料庫"
+    correct_index: 1
+    explanation: "Client Agent 作為人類與 Agent 系統的介面，負責接收需求與回報結果。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4017
+    chapter_title: "AI 代理人與自動化"
+    section_title: "多代理系統 (MAS)"
+    text: "為了解決「角色定義不清」的問題，應該？"
+    type: multiple_choice
+    options:
+      - "讓 Agent 自己猜"
+      - "在 System Prompt 中極度明確地定義每個 Agent 的職責邊界"
+      - "隨機指派任務"
+      - "不給任何指令"
+    correct_index: 1
+    explanation: "明確的職責定義能避免責任重疊或推卸，確保協作順暢。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4018
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "Agent 的短期記憶通常是指？"
+    type: multiple_choice
+    options:
+      - "訓練資料"
+      - "當下的對話上下文 (Context)"
+      - "硬碟檔案"
+      - "網路搜尋結果"
+    correct_index: 1
+    explanation: "短期記憶維持對當前對話狀態的認知，受限於 Context Window 大小。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4019
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "Solution Graph 中的「邊 (Edge)」代表？"
+    type: multiple_choice
+    options:
+      - "狀態"
+      - "採取的行動或轉換"
+      - "錯誤"
+      - "終點"
+    correct_index: 1
+    explanation: "邊連接了不同的狀態節點，代表導致狀態改變的動作或決策。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4020
+    chapter_title: "AI 代理人與自動化"
+    section_title: "多代理系統 (MAS)"
+    text: "Remote Agent 在 A2A 架構中負責？"
+    type: multiple_choice
+    options:
+      - "發號施令"
+      - "執行被指派的任務"
+      - "休息"
+      - "付錢"
+    correct_index: 1
+    explanation: "Remote Agent 是實際的執行者，負責完成 Client Agent 指派的具體工作。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4021
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "Agent 能夠「感知環境」意味著？"
+    type: multiple_choice
+    options:
+      - "它有眼睛"
+      - "它能透過輸入（如文字、API 回傳值）獲取外部狀態資訊"
+      - "它有感覺"
+      - "它能預知未來"
+    correct_index: 1
+    explanation: "感知是指接收並理解外部資訊的能力，這是做出正確決策的前提。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4022
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "下列何者屬於 Agent 的「工具」？"
+    type: multiple_choice
+    options:
+      - "Python 直譯器"
+      - "搜尋引擎 API"
+      - "計算機"
+      - "以上皆是"
+    correct_index: 3
+    explanation: "任何能擴展 Agent 能力、與外部互動的介面或軟體都可視為工具。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4023
+    chapter_title: "AI 代理人與自動化"
+    section_title: "多代理系統 (MAS)"
+    text: "軟體開發團隊的 Agent 協作模式是模仿？"
+    type: multiple_choice
+    options:
+      - "動物行為"
+      - "人類公司的組織分工"
+      - "物理定律"
+      - "隨機漫步"
+    correct_index: 1
+    explanation: "MAS 常借鑑人類社會的組織架構，透過專業分工提升效率。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4024
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "Solution Graph 的功能是作為 Agent 的？"
+    type: multiple_choice
+    options:
+      - "導航地圖"
+      - "燃料"
+      - "外觀"
+      - "聲音"
+    correct_index: 0
+    explanation: "它提供了決策空間的結構化視圖，指引 Agent 如何從起點到達目標狀態。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4025
+    chapter_title: "AI 代理人與自動化"
+    section_title: "多代理系統 (MAS)"
+    text: "監督者 Agent (Supervisor) 的主要職責是？"
+    type: multiple_choice
+    options:
+      - "寫程式"
+      - "監控流程、協調衝突並防止無限循環"
+      - "發送 Email"
+      - "掃地"
+    correct_index: 1
+    explanation: "監督者負責維持系統秩序，確保各 Agent 依循規則協作，並在異常時介入。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4026
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "Agent 的「任務拆解」能力為何重要？"
+    type: multiple_choice
+    options:
+      - "因為 LLM 只能處理短句"
+      - "因為複雜目標通常無法一步登天，需分解為可執行的小步驟"
+      - "為了拖延時間"
+      - "為了增加成本"
+    correct_index: 1
+    explanation: "將大目標（如旅遊規劃）拆解為小步驟（如訂票），能降低單一步驟的難度與出錯率。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4027
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "BFS 與 DFS 都是在哪種結構上進行的搜尋策略？"
+    type: multiple_choice
+    options:
+      - "列表 (List)"
+      - "圖 (Graph) 或 樹 (Tree)"
+      - "堆疊 (Stack)"
+      - "佇列 (Queue)"
+    correct_index: 1
+    explanation: "這兩者是圖論與演算法中遍歷圖形結構的經典方法。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4028
+    chapter_title: "AI 代理人與自動化"
+    section_title: "多代理系統 (MAS)"
+    text: "工程師 Agent 與 測試 Agent 的關係通常是？"
+    type: multiple_choice
+    options:
+      - "競爭"
+      - "協作與回饋循環 (工程師寫 -> 測試測 -> 回報 Bug -> 工程師修)"
+      - "互不相干"
+      - "敵對"
+    correct_index: 1
+    explanation: "這模擬了軟體開發中的迭代流程，透過回饋循環不斷提升程式碼品質。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4029
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "Agent 的四大組件不包含？"
+    type: multiple_choice
+    options:
+      - "大腦 (Brain)"
+      - "規劃 (Planning)"
+      - "情感 (Emotion)"
+      - "工具使用 (Tool Use)"
+    correct_index: 2
+    explanation: "目前的 Agent 架構主要關注功能性組件（腦、記憶、規劃、工具），情感模組並非標準配備。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4030
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "Solution Graph 中的節點 (Node) 代表？"
+    type: multiple_choice
+    options:
+      - "行動"
+      - "某個狀態或中間結果"
+      - "起點"
+      - "終點"
+    correct_index: 1
+    explanation: "節點儲存了任務執行過程中的快照或暫存結果。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4031
+    chapter_title: "AI 代理人與自動化"
+    section_title: "多代理系統 (MAS)"
+    text: "為何需要多代理系統？"
+    type: multiple_choice
+    options:
+      - "因為一個 Agent 太寂寞"
+      - "因為單一 Agent 的 Context Window 有限且能力單一，難以處理超大型任務"
+      - "為了消耗更多算力"
+      - "為了好玩"
+    correct_index: 1
+    explanation: "MAS 突破了單一模型的限制，透過擴展性架構處理更複雜、更多元的任務。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4032
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "Agent 執行 Python 程式碼的能力屬於？"
+    type: multiple_choice
+    options:
+      - "大腦"
+      - "工具使用 (Tool Use)"
+      - "記憶"
+      - "規劃"
+    correct_index: 1
+    explanation: "Python 直譯器是 Agent 用來執行計算或處理資料的外部工具。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4033
+    chapter_title: "AI 代理人與自動化"
+    section_title: "多代理系統 (MAS)"
+    text: "在 A2A 互動中，Agent 之間的溝通通常透過？"
+    type: multiple_choice
+    options:
+      - "心電感應"
+      - "自然語言 (文字訊息)"
+      - "二進位碼"
+      - "圖片"
+    correct_index: 1
+    explanation: "LLM Agent 之間主要透過自然語言進行對話與協調，這也是其靈活性的來源。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4034
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "自我反思 (Self-Reflection) 有助於避免？"
+    type: multiple_choice
+    options:
+      - "成功"
+      - "一錯再錯 (累積誤差)"
+      - "修正"
+      - "學習"
+    correct_index: 1
+    explanation: "透過及時檢查與修正，Agent 能防止錯誤擴大，提高任務成功率。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4035
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "Heuristic (啟發式) 在最佳優先搜尋中的作用是？"
+    type: multiple_choice
+    options:
+      - "隨機猜測"
+      - "評估路徑的好壞，指引搜尋方向"
+      - "阻擋搜尋"
+      - "記錄路徑"
+    correct_index: 1
+    explanation: "啟發式函數提供了一種估計方法，幫助演算法判斷哪個方向更接近目標。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4036
+    chapter_title: "AI 代理人與自動化"
+    section_title: "多代理系統 (MAS)"
+    text: "投票機制在 MAS 中用於？"
+    type: multiple_choice
+    options:
+      - "選總統"
+      - "解決 Agent 間的答案衝突"
+      - "決定誰休息"
+      - "娛樂"
+    correct_index: 1
+    explanation: "當多個 Agent 意見不一致時，投票是一種簡單有效的決策整合方式。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4037
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "Agent 的長期記憶通常使用哪種技術實現？"
+    type: multiple_choice
+    options:
+      - "RAG (檢索增強生成)"
+      - "Fine-tuning"
+      - "Prompting"
+      - "Coding"
+    correct_index: 0
+    explanation: "長期記憶的存取機制本質上就是 RAG，透過檢索向量資料庫來回憶過去的資訊。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4038
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "Agent 能夠「做」事情，是因為它具備？"
+    type: multiple_choice
+    options:
+      - "手腳"
+      - "執行力 (Action / Tool Use)"
+      - "夢想"
+      - "勇氣"
+    correct_index: 1
+    explanation: "執行力是 Agent 與 Chatbot 的分水嶺，使其能對現實世界產生影響。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4039
+    chapter_title: "AI 代理人與自動化"
+    section_title: "多代理系統 (MAS)"
+    text: "System Prompt 在 MAS 中的重要性在於？"
+    type: multiple_choice
+    options:
+      - "不重要"
+      - "定義 Agent 的角色、職責與行為準則"
+      - "增加 Token"
+      - "美化介面"
+    correct_index: 1
+    explanation: "System Prompt 是 Agent 的「人設」與「規則書」，決定了它在團隊中的行為模式。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4040
+    chapter_title: "AI 代理人與自動化"
+    section_title: "AI 代理人與自動化"
+    text: "Agentic AI 的發展標誌著 AI 從？"
+    type: multiple_choice
+    options:
+      - "對話走向行動 (Chat to Action)"
+      - "行動走向對話"
+      - "圖片走向文字"
+      - "文字走向圖片"
+    correct_index: 0
+    explanation: "Agentic AI 代表 AI 不再只是被動的聊天機器人，而是能主動解決問題的數位勞動力。"
+    tags: ["sec-gen-chapter4", "sec-agentic-ai"]
