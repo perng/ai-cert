@@ -10,8 +10,8 @@
       "chapters": [
         {
           "id": 1000,
-          "order": 1000,
-          "title": "chapter1",
+          "order": 1,
+          "title": "人工智慧的本質與層次架構",
           "sections": [
             {
               "id": 10000,
@@ -428,20 +428,6 @@
               "questions": []
             }
           ]
-        },
-        {
-          "id": 1011,
-          "order": 1011,
-          "title": "人工智慧基礎理論",
-          "sections": [
-            {
-              "id": 10043,
-              "order": 1,
-              "title": "Introduction",
-              "content": "<body class=\"nav-sidebar floating quarto-light\">\n<div id=\"quarto-search-results\"></div>\n<header class=\"headroom fixed-top\" id=\"quarto-header\">\n<nav class=\"quarto-secondary-nav\">\n<div class=\"container-fluid d-flex\">\n<button aria-controls=\"quarto-sidebar\" aria-expanded=\"false\" aria-label=\"Toggle sidebar navigation\" class=\"quarto-btn-toggle btn\" data-bs-target=\".quarto-sidebar-collapse-item\" data-bs-toggle=\"collapse\" onclick=\"if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }\" role=\"button\" type=\"button\">\n<i class=\"bi bi-layout-text-sidebar-reverse\"></i>\n</button>\n<nav aria-label=\"breadcrumb\" class=\"quarto-page-breadcrumbs\"><ol class=\"breadcrumb\"><li class=\"breadcrumb-item\"><a href=\"./index.html\"><span class=\"chapter-title\">人工智慧基礎理論</span></a></li></ol></nav>\n<a aria-controls=\"quarto-sidebar\" aria-expanded=\"false\" aria-label=\"Toggle sidebar navigation\" class=\"flex-grow-1\" data-bs-target=\".quarto-sidebar-collapse-item\" data-bs-toggle=\"collapse\" onclick=\"if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }\" role=\"navigation\">\n</a>\n<button aria-label=\"Search\" class=\"btn quarto-search-button\" onclick=\"window.quartoOpenSearch();\" type=\"button\">\n<i class=\"bi bi-search\"></i>\n</button>\n</div>\n</nav>\n</header>\n<!-- content -->\n<div class=\"quarto-container page-columns page-rows-contents page-layout-article\" id=\"quarto-content\">\n<!-- sidebar -->\n<nav class=\"sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto\" id=\"quarto-sidebar\">\n<div class=\"pt-lg-2 mt-2 text-left sidebar-header\">\n<div class=\"sidebar-title mb-0 py-0\">\n<a href=\"./\">AI 應用規劃師全攻略</a>\n</div>\n</div>\n<div class=\"mt-2 flex-shrink-0 align-items-center\">\n<div class=\"sidebar-search\">\n<div class=\"\" id=\"quarto-search\" title=\"Search\"></div>\n</div>\n</div>\n<div class=\"sidebar-menu-container\">\n<ul class=\"list-unstyled mt-1\">\n<li class=\"sidebar-item\">\n<div class=\"sidebar-item-container\">\n<a class=\"sidebar-item-text sidebar-link active\" href=\"./index.html\"><span class=\"chapter-title\">人工智慧基礎理論</span></a>\n</div>\n</li>\n<li class=\"sidebar-item sidebar-item-section\">\n<div class=\"sidebar-item-container\">\n<a aria-expanded=\"true\" class=\"sidebar-item-text sidebar-link text-start\" data-bs-target=\"#quarto-sidebar-section-1\" data-bs-toggle=\"collapse\" role=\"navigation\">\n<span class=\"menu-text\">第一部：人工智慧基礎與戰略定位</span></a>\n<a aria-expanded=\"true\" aria-label=\"Toggle section\" class=\"sidebar-item-toggle text-start\" data-bs-target=\"#quarto-sidebar-section-1\" data-bs-toggle=\"collapse\" role=\"navigation\">\n<i class=\"bi bi-chevron-right ms-2\"></i>\n</a>\n</div>\n<ul class=\"collapse list-unstyled sidebar-section depth1 show\" id=\"quarto-sidebar-section-1\">\n<li class=\"sidebar-item\">\n<div class=\"sidebar-item-container\">\n<a class=\"sidebar-item-text sidebar-link\" href=\"./chapter1.html\"><span class=\"chapter-title\">人工智慧的本質與層次架構</span></a>\n</div>\n</li>\n<li class=\"sidebar-item\">\n<div class=\"sidebar-item-container\">\n<a class=\"sidebar-item-text sidebar-link\" href=\"./chapter2.html\"><span class=\"chapter-title\">AI 應用問題類型</span></a>\n</div>\n</li>\n</ul>\n</li>\n<li class=\"sidebar-item sidebar-item-section\">\n<div class=\"sidebar-item-container\">\n<a aria-expanded=\"true\" class=\"sidebar-item-text sidebar-link text-start\" data-bs-target=\"#quarto-sidebar-section-2\" data-bs-toggle=\"collapse\" role=\"navigation\">\n<span class=\"menu-text\">第二部：數據工程——AI 的堅實地基</span></a>\n<a aria-expanded=\"true\" aria-label=\"Toggle section\" class=\"sidebar-item-toggle text-start\" data-bs-target=\"#quarto-sidebar-section-2\" data-bs-toggle=\"collapse\" role=\"navigation\">\n<i class=\"bi bi-chevron-right ms-2\"></i>\n</a>\n</div>\n<ul class=\"collapse list-unstyled sidebar-section depth1 show\" id=\"quarto-sidebar-section-2\">\n<li class=\"sidebar-item\">\n<div class=\"sidebar-item-container\">\n<a class=\"sidebar-item-text sidebar-link\" href=\"./chapter3.html\"><span class=\"chapter-title\">數據處理生命週期與架構</span></a>\n</div>\n</li>\n<li class=\"sidebar-item\">\n<div class=\"sidebar-item-container\">\n<a class=\"sidebar-item-text sidebar-link\" href=\"./chapter4.html\"><span class=\"chapter-title\">特徵工程 (Feature Engineering)</span></a>\n</div>\n</li>\n</ul>\n</li>\n<li class=\"sidebar-item sidebar-item-section\">\n<div class=\"sidebar-item-container\">\n<a aria-expanded=\"true\" class=\"sidebar-item-text sidebar-link text-start\" data-bs-target=\"#quarto-sidebar-section-3\" data-bs-toggle=\"collapse\" role=\"navigation\">\n<span class=\"menu-text\">第三部：機器學習演算法核心</span></a>\n<a aria-expanded=\"true\" aria-label=\"Toggle section\" class=\"sidebar-item-toggle text-start\" data-bs-target=\"#quarto-sidebar-section-3\" data-bs-toggle=\"collapse\" role=\"navigation\">\n<i class=\"bi bi-chevron-right ms-2\"></i>\n</a>\n</div>\n<ul class=\"collapse list-unstyled sidebar-section depth1 show\" id=\"quarto-sidebar-section-3\">\n<li class=\"sidebar-item\">\n<div class=\"sidebar-item-container\">\n<a class=\"sidebar-item-text sidebar-link\" href=\"./chapter5.html\"><span class=\"chapter-title\">監督式學習演算法 (Supervised Learning Algorithms)</span></a>\n</div>\n</li>\n<li class=\"sidebar-item\">\n<div class=\"sidebar-item-container\">\n<a class=\"sidebar-item-text sidebar-link\" href=\"./chapter6.html\"><span class=\"chapter-title\">非監督式學習與強化學習 (Unsupervised &amp; Reinforcement Learning)</span></a>\n</div>\n</li>\n</ul>\n</li>\n<li class=\"sidebar-item sidebar-item-section\">\n<div class=\"sidebar-item-container\">\n<a aria-expanded=\"true\" class=\"sidebar-item-text sidebar-link text-start\" data-bs-target=\"#quarto-sidebar-section-4\" data-bs-toggle=\"collapse\" role=\"navigation\">\n<span class=\"menu-text\">第四部：深度學習與生成式 AI 前沿</span></a>\n<a aria-expanded=\"true\" aria-label=\"Toggle section\" class=\"sidebar-item-toggle text-start\" data-bs-target=\"#quarto-sidebar-section-4\" data-bs-toggle=\"collapse\" role=\"navigation\">\n<i class=\"bi bi-chevron-right ms-2\"></i>\n</a>\n</div>\n<ul class=\"collapse list-unstyled sidebar-section depth1 show\" id=\"quarto-sidebar-section-4\">\n<li class=\"sidebar-item\">\n<div class=\"sidebar-item-container\">\n<a class=\"sidebar-item-text sidebar-link\" href=\"./chapter7.html\"><span class=\"chapter-title\">神經網路架構演進 (Neural Network Architecture Evolution)</span></a>\n</div>\n</li>\n<li class=\"sidebar-item\">\n<div class=\"sidebar-item-container\">\n<a class=\"sidebar-item-text sidebar-link\" href=\"./chapter8.html\"><span class=\"chapter-title\">生成式 AI 與大型語言模型 (Generative AI &amp; LLM)</span></a>\n</div>\n</li>\n</ul>\n</li>\n<li class=\"sidebar-item sidebar-item-section\">\n<div class=\"sidebar-item-container\">\n<a aria-expanded=\"true\" class=\"sidebar-item-text sidebar-link text-start\" data-bs-target=\"#quarto-sidebar-section-5\" data-bs-toggle=\"collapse\" role=\"navigation\">\n<span class=\"menu-text\">第五部：模型評估、可解釋性與治理</span></a>\n<a aria-expanded=\"true\" aria-label=\"Toggle section\" class=\"sidebar-item-toggle text-start\" data-bs-target=\"#quarto-sidebar-section-5\" data-bs-toggle=\"collapse\" role=\"navigation\">\n<i class=\"bi bi-chevron-right ms-2\"></i>\n</a>\n</div>\n<ul class=\"collapse list-unstyled sidebar-section depth1 show\" id=\"quarto-sidebar-section-5\">\n<li class=\"sidebar-item\">\n<div class=\"sidebar-item-container\">\n<a class=\"sidebar-item-text sidebar-link\" href=\"./chapter9.html\"><span class=\"chapter-title\">模型評估與效能優化 (Model Evaluation &amp; Optimization)</span></a>\n</div>\n</li>\n<li class=\"sidebar-item\">\n<div class=\"sidebar-item-container\">\n<a class=\"sidebar-item-text sidebar-link\" href=\"./chapter10.html\"><span class=\"chapter-title\">可解釋 AI (XAI)</span></a>\n</div>\n</li>\n<li class=\"sidebar-item\">\n<div class=\"sidebar-item-container\">\n<a class=\"sidebar-item-text sidebar-link\" href=\"./chapter11.html\"><span class=\"chapter-title\">AI 治理、法規與倫理 (AI Governance, Regulations &amp; Ethics)</span></a>\n</div>\n</li>\n</ul>\n</li>\n</ul>\n</div>\n</nav>\n<div class=\"quarto-sidebar-collapse-item\" data-bs-target=\".quarto-sidebar-collapse-item\" data-bs-toggle=\"collapse\" id=\"quarto-sidebar-glass\"></div>\n<!-- margin-sidebar -->\n<div class=\"sidebar margin-sidebar\" id=\"quarto-margin-sidebar\">\n<nav class=\"toc-active\" id=\"TOC\" role=\"doc-toc\">\n<h2 id=\"toc-title\">Table of contents</h2>\n<ul>\n<li><a class=\"nav-link active\" data-scroll-target=\"#前言\" href=\"#前言\" id=\"toc-前言\">前言</a></li>\n</ul>\n</nav>\n</div>\n<!-- main -->\n<main class=\"content\" id=\"quarto-document-content\">\n<header class=\"quarto-title-block default\" id=\"title-block-header\">\n<div class=\"quarto-title\">\n<h1 class=\"title\">AI 應用規劃師全攻略</h1>\n</div>\n<div class=\"quarto-title-meta\">\n<div>\n<div class=\"quarto-title-meta-heading\">Author</div>\n<div class=\"quarto-title-meta-contents\">\n<p>AI仁波切 </p>\n</div>\n</div>\n<div>\n<div class=\"quarto-title-meta-heading\">Published</div>\n<div class=\"quarto-title-meta-contents\">\n<p class=\"date\">November 24, 2025</p>\n</div>\n</div>\n</div>\n</header>\n<section class=\"level1 unnumbered\" id=\"前言\">\n<h1 class=\"unnumbered\">前言</h1>\n<p><strong>適用對象：</strong> 準備經濟部 iPAS AI 應用規劃師（初/中級）之考生。</p>\n<p>本攻略旨在協助考生掌握 AI 應用規劃師之核心知識， 內容涵蓋人工智慧基礎、 機器學習、 深度學習、 生成式 AI、 大數據分析、 AI 倫理與法規， 以及 Python 程式語言基礎。</p>\n</section>\n</main> <!-- /main -->\n<script id=\"quarto-html-after-body\" type=\"application/javascript\">\n  window.document.addEventListener(\"DOMContentLoaded\", function (event) {\n    const icon = \"\";\n    const anchorJS = new window.AnchorJS();\n    anchorJS.options = {\n      placement: 'right',\n      icon: icon\n    };\n    anchorJS.add('.anchored');\n    const isCodeAnnotation = (el) => {\n      for (const clz of el.classList) {\n        if (clz.startsWith('code-annotation-')) {                     \n          return true;\n        }\n      }\n      return false;\n    }\n    const onCopySuccess = function(e) {\n      // button target\n      const button = e.trigger;\n      // don't keep focus\n      button.blur();\n      // flash \"checked\"\n      button.classList.add('code-copy-button-checked');\n      var currentTitle = button.getAttribute(\"title\");\n      button.setAttribute(\"title\", \"Copied!\");\n      let tooltip;\n      if (window.bootstrap) {\n        button.setAttribute(\"data-bs-toggle\", \"tooltip\");\n        button.setAttribute(\"data-bs-placement\", \"left\");\n        button.setAttribute(\"data-bs-title\", \"Copied!\");\n        tooltip = new bootstrap.Tooltip(button, \n          { trigger: \"manual\", \n            customClass: \"code-copy-button-tooltip\",\n            offset: [0, -8]});\n        tooltip.show();    \n      }\n      setTimeout(function() {\n        if (tooltip) {\n          tooltip.hide();\n          button.removeAttribute(\"data-bs-title\");\n          button.removeAttribute(\"data-bs-toggle\");\n          button.removeAttribute(\"data-bs-placement\");\n        }\n        button.setAttribute(\"title\", currentTitle);\n        button.classList.remove('code-copy-button-checked');\n      }, 1000);\n      // clear code selection\n      e.clearSelection();\n    }\n    const getTextToCopy = function(trigger) {\n      const outerScaffold = trigger.parentElement.cloneNode(true);\n      const codeEl = outerScaffold.querySelector('code');\n      for (const childEl of codeEl.children) {\n        if (isCodeAnnotation(childEl)) {\n          childEl.remove();\n        }\n      }\n      return codeEl.innerText;\n    }\n    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {\n      text: getTextToCopy\n    });\n    clipboard.on('success', onCopySuccess);\n    if (window.document.getElementById('quarto-embedded-source-code-modal')) {\n      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {\n        text: getTextToCopy,\n        container: window.document.getElementById('quarto-embedded-source-code-modal')\n      });\n      clipboardModal.on('success', onCopySuccess);\n    }\n      var localhostRegex = new RegExp(/^(?:http|https):\\/\\/localhost\\:?[0-9]*\\//);\n      var mailtoRegex = new RegExp(/^mailto:/);\n        var filterRegex = new RegExp('/' + window.location.host + '/');\n      var isInternal = (href) => {\n          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);\n      }\n      // Inspect non-navigation links and adorn them if external\n     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');\n      for (var i=0; i<links.length; i++) {\n        const link = links[i];\n        if (!isInternal(link.href)) {\n          // undo the damage that might have been done by quarto-nav.js in the case of\n          // links that we want to consider external\n          if (link.dataset.originalHref !== undefined) {\n            link.href = link.dataset.originalHref;\n          }\n        }\n      }\n    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {\n      const config = {\n        allowHTML: true,\n        maxWidth: 500,\n        delay: 100,\n        arrow: false,\n        appendTo: function(el) {\n            return el.parentElement;\n        },\n        interactive: true,\n        interactiveBorder: 10,\n        theme: 'quarto',\n        placement: 'bottom-start',\n      };\n      if (contentFn) {\n        config.content = contentFn;\n      }\n      if (onTriggerFn) {\n        config.onTrigger = onTriggerFn;\n      }\n      if (onUntriggerFn) {\n        config.onUntrigger = onUntriggerFn;\n      }\n      window.tippy(el, config); \n    }\n    const noterefs = window.document.querySelectorAll('a[role=\"doc-noteref\"]');\n    for (var i=0; i<noterefs.length; i++) {\n      const ref = noterefs[i];\n      tippyHover(ref, function() {\n        // use id or data attribute instead here\n        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');\n        try { href = new URL(href).hash; } catch {}\n        const id = href.replace(/^#\\/?/, \"\");\n        const note = window.document.getElementById(id);\n        if (note) {\n          return note.innerHTML;\n        } else {\n          return \"\";\n        }\n      });\n    }\n    const xrefs = window.document.querySelectorAll('a.quarto-xref');\n    const processXRef = (id, note) => {\n      // Strip column container classes\n      const stripColumnClz = (el) => {\n        el.classList.remove(\"page-full\", \"page-columns\");\n        if (el.children) {\n          for (const child of el.children) {\n            stripColumnClz(child);\n          }\n        }\n      }\n      stripColumnClz(note)\n      if (id === null || id.startsWith('sec-')) {\n        // Special case sections, only their first couple elements\n        const container = document.createElement(\"div\");\n        if (note.children && note.children.length > 2) {\n          container.appendChild(note.children[0].cloneNode(true));\n          for (let i = 1; i < note.children.length; i++) {\n            const child = note.children[i];\n            if (child.tagName === \"P\" && child.innerText === \"\") {\n              continue;\n            } else {\n              container.appendChild(child.cloneNode(true));\n              break;\n            }\n          }\n          if (window.Quarto?.typesetMath) {\n            window.Quarto.typesetMath(container);\n          }\n          return container.innerHTML\n        } else {\n          if (window.Quarto?.typesetMath) {\n            window.Quarto.typesetMath(note);\n          }\n          return note.innerHTML;\n        }\n      } else {\n        // Remove any anchor links if they are present\n        const anchorLink = note.querySelector('a.anchorjs-link');\n        if (anchorLink) {\n          anchorLink.remove();\n        }\n        if (window.Quarto?.typesetMath) {\n          window.Quarto.typesetMath(note);\n        }\n        if (note.classList.contains(\"callout\")) {\n          return note.outerHTML;\n        } else {\n          return note.innerHTML;\n        }\n      }\n    }\n    for (var i=0; i<xrefs.length; i++) {\n      const xref = xrefs[i];\n      tippyHover(xref, undefined, function(instance) {\n        instance.disable();\n        let url = xref.getAttribute('href');\n        let hash = undefined; \n        if (url.startsWith('#')) {\n          hash = url;\n        } else {\n          try { hash = new URL(url).hash; } catch {}\n        }\n        if (hash) {\n          const id = hash.replace(/^#\\/?/, \"\");\n          const note = window.document.getElementById(id);\n          if (note !== null) {\n            try {\n              const html = processXRef(id, note.cloneNode(true));\n              instance.setContent(html);\n            } finally {\n              instance.enable();\n              instance.show();\n            }\n          } else {\n            // See if we can fetch this\n            fetch(url.split('#')[0])\n            .then(res => res.text())\n            .then(html => {\n              const parser = new DOMParser();\n              const htmlDoc = parser.parseFromString(html, \"text/html\");\n              const note = htmlDoc.getElementById(id);\n              if (note !== null) {\n                const html = processXRef(id, note);\n                instance.setContent(html);\n              } \n            }).finally(() => {\n              instance.enable();\n              instance.show();\n            });\n          }\n        } else {\n          // See if we can fetch a full url (with no hash to target)\n          // This is a special case and we should probably do some content thinning / targeting\n          fetch(url)\n          .then(res => res.text())\n          .then(html => {\n            const parser = new DOMParser();\n            const htmlDoc = parser.parseFromString(html, \"text/html\");\n            const note = htmlDoc.querySelector('main.content');\n            if (note !== null) {\n              // This should only happen for chapter cross references\n              // (since there is no id in the URL)\n              // remove the first header\n              if (note.children.length > 0 && note.children[0].tagName === \"HEADER\") {\n                note.children[0].remove();\n              }\n              const html = processXRef(null, note);\n              instance.setContent(html);\n            } \n          }).finally(() => {\n            instance.enable();\n            instance.show();\n          });\n        }\n      }, function(instance) {\n      });\n    }\n        let selectedAnnoteEl;\n        const selectorForAnnotation = ( cell, annotation) => {\n          let cellAttr = 'data-code-cell=\"' + cell + '\"';\n          let lineAttr = 'data-code-annotation=\"' +  annotation + '\"';\n          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';\n          return selector;\n        }\n        const selectCodeLines = (annoteEl) => {\n          const doc = window.document;\n          const targetCell = annoteEl.getAttribute(\"data-target-cell\");\n          const targetAnnotation = annoteEl.getAttribute(\"data-target-annotation\");\n          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));\n          const lines = annoteSpan.getAttribute(\"data-code-lines\").split(\",\");\n          const lineIds = lines.map((line) => {\n            return targetCell + \"-\" + line;\n          })\n          let top = null;\n          let height = null;\n          let parent = null;\n          if (lineIds.length > 0) {\n              //compute the position of the single el (top and bottom and make a div)\n              const el = window.document.getElementById(lineIds[0]);\n              top = el.offsetTop;\n              height = el.offsetHeight;\n              parent = el.parentElement.parentElement;\n            if (lineIds.length > 1) {\n              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);\n              const bottom = lastEl.offsetTop + lastEl.offsetHeight;\n              height = bottom - top;\n            }\n            if (top !== null && height !== null && parent !== null) {\n              // cook up a div (if necessary) and position it \n              let div = window.document.getElementById(\"code-annotation-line-highlight\");\n              if (div === null) {\n                div = window.document.createElement(\"div\");\n                div.setAttribute(\"id\", \"code-annotation-line-highlight\");\n                div.style.position = 'absolute';\n                parent.appendChild(div);\n              }\n              div.style.top = top - 2 + \"px\";\n              div.style.height = height + 4 + \"px\";\n              div.style.left = 0;\n              let gutterDiv = window.document.getElementById(\"code-annotation-line-highlight-gutter\");\n              if (gutterDiv === null) {\n                gutterDiv = window.document.createElement(\"div\");\n                gutterDiv.setAttribute(\"id\", \"code-annotation-line-highlight-gutter\");\n                gutterDiv.style.position = 'absolute';\n                const codeCell = window.document.getElementById(targetCell);\n                const gutter = codeCell.querySelector('.code-annotation-gutter');\n                gutter.appendChild(gutterDiv);\n              }\n              gutterDiv.style.top = top - 2 + \"px\";\n              gutterDiv.style.height = height + 4 + \"px\";\n            }\n            selectedAnnoteEl = annoteEl;\n          }\n        };\n        const unselectCodeLines = () => {\n          const elementsIds = [\"code-annotation-line-highlight\", \"code-annotation-line-highlight-gutter\"];\n          elementsIds.forEach((elId) => {\n            const div = window.document.getElementById(elId);\n            if (div) {\n              div.remove();\n            }\n          });\n          selectedAnnoteEl = undefined;\n        };\n          // Handle positioning of the toggle\n      window.addEventListener(\n        \"resize\",\n        throttle(() => {\n          elRect = undefined;\n          if (selectedAnnoteEl) {\n            selectCodeLines(selectedAnnoteEl);\n          }\n        }, 10)\n      );\n      function throttle(fn, ms) {\n      let throttle = false;\n      let timer;\n        return (...args) => {\n          if(!throttle) { // first call gets through\n              fn.apply(this, args);\n              throttle = true;\n          } else { // all the others get throttled\n              if(timer) clearTimeout(timer); // cancel #2\n              timer = setTimeout(() => {\n                fn.apply(this, args);\n                timer = throttle = false;\n              }, ms);\n          }\n        };\n      }\n        // Attach click handler to the DT\n        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');\n        for (const annoteDlNode of annoteDls) {\n          annoteDlNode.addEventListener('click', (event) => {\n            const clickedEl = event.target;\n            if (clickedEl !== selectedAnnoteEl) {\n              unselectCodeLines();\n              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');\n              if (activeEl) {\n                activeEl.classList.remove('code-annotation-active');\n              }\n              selectCodeLines(clickedEl);\n              clickedEl.classList.add('code-annotation-active');\n            } else {\n              // Unselect the line\n              unselectCodeLines();\n              clickedEl.classList.remove('code-annotation-active');\n            }\n          });\n        }\n    const findCites = (el) => {\n      const parentEl = el.parentElement;\n      if (parentEl) {\n        const cites = parentEl.dataset.cites;\n        if (cites) {\n          return {\n            el,\n            cites: cites.split(' ')\n          };\n        } else {\n          return findCites(el.parentElement)\n        }\n      } else {\n        return undefined;\n      }\n    };\n    var bibliorefs = window.document.querySelectorAll('a[role=\"doc-biblioref\"]');\n    for (var i=0; i<bibliorefs.length; i++) {\n      const ref = bibliorefs[i];\n      const citeInfo = findCites(ref);\n      if (citeInfo) {\n        tippyHover(citeInfo.el, function() {\n          var popup = window.document.createElement('div');\n          citeInfo.cites.forEach(function(cite) {\n            var citeDiv = window.document.createElement('div');\n            citeDiv.classList.add('hanging-indent');\n            citeDiv.classList.add('csl-entry');\n            var biblioDiv = window.document.getElementById('ref-' + cite);\n            if (biblioDiv) {\n              citeDiv.innerHTML = biblioDiv.innerHTML;\n            }\n            popup.appendChild(citeDiv);\n          });\n          return popup.innerHTML;\n        });\n      }\n    }\n  });\n  </script>\n<nav class=\"page-navigation\">\n<div class=\"nav-page nav-page-previous\">\n</div>\n<div class=\"nav-page nav-page-next\">\n<a aria-label=\"人工智慧的本質與層次架構\" class=\"pagination-link\" href=\"./chapter1.html\">\n<span class=\"nav-page-text\"><span class=\"chapter-title\">人工智慧的本質與層次架構</span></span> <i class=\"bi bi-arrow-right-short\"></i>\n</a>\n</div>\n</nav>\n</div> <!-- /content -->\n</body>",
-              "questions": []
-            }
-          ]
         }
       ]
     },
@@ -453,12 +439,12 @@
       "description": "生成式 AI 應用與規劃, No Code / Low Code",
       "chapters": [
         {
-          "id": 1012,
+          "id": 1011,
           "order": 1,
           "title": "生成式 AI 模型架構與機制 (Generative Models & Mechanisms)",
           "sections": [
             {
-              "id": 10044,
+              "id": 10043,
               "order": 1,
               "title": "1.1 1.1 Transformer 架構變體",
               "link_id": "transformer-架構變體",
@@ -466,7 +452,7 @@
               "questions": []
             },
             {
-              "id": 10045,
+              "id": 10044,
               "order": 2,
               "title": "1.2 1.2 模型參數與控制",
               "link_id": "模型參數與控制",
@@ -476,12 +462,12 @@
           ]
         },
         {
-          "id": 1013,
+          "id": 1012,
           "order": 2,
           "title": "第二章：進階提示工程 (Advanced Prompt Engineering)",
           "sections": [
             {
-              "id": 10046,
+              "id": 10045,
               "order": 1,
               "title": "2.1 2.1 進階提示策略",
               "link_id": "進階提示策略",
@@ -489,7 +475,7 @@
               "questions": []
             },
             {
-              "id": 10047,
+              "id": 10046,
               "order": 2,
               "title": "2.2 2.2 自動化與優化技術",
               "link_id": "自動化與優化技術",
@@ -497,7 +483,7 @@
               "questions": []
             },
             {
-              "id": 10048,
+              "id": 10047,
               "order": 3,
               "title": "2.3 2.3 提示攻擊與防禦 (Prompt Injection)",
               "link_id": "提示攻擊與防禦-prompt-injection",
@@ -507,12 +493,12 @@
           ]
         },
         {
-          "id": 1014,
+          "id": 1013,
           "order": 3,
           "title": "第三章：進階 RAG 與系統架構 (Advanced RAG & Architecture)",
           "sections": [
             {
-              "id": 10049,
+              "id": 10048,
               "order": 1,
               "title": "3.1 3.1 模型微調 (Fine-tuning) 與優化",
               "link_id": "模型微調-fine-tuning-與優化",
@@ -520,7 +506,7 @@
               "questions": []
             },
             {
-              "id": 10050,
+              "id": 10049,
               "order": 2,
               "title": "3.2 3.2 Model Context Protocol (MCP)",
               "link_id": "model-context-protocol-mcp",
@@ -530,12 +516,12 @@
           ]
         },
         {
-          "id": 1015,
+          "id": 1014,
           "order": 4,
           "title": "第四章：AI 代理人 (Agentic AI) 與自動化",
           "sections": [
             {
-              "id": 10051,
+              "id": 10050,
               "order": 1,
               "title": "4.1 4.1 Agent 架構與組件",
               "link_id": "agent-架構與組件",
@@ -543,7 +529,7 @@
               "questions": []
             },
             {
-              "id": 10052,
+              "id": 10051,
               "order": 2,
               "title": "4.2 4.2 多代理系統 (Multi-Agent Systems, MAS)",
               "link_id": "多代理系統-multi-agent-systems-mas",
@@ -553,12 +539,12 @@
           ]
         },
         {
-          "id": 1016,
+          "id": 1015,
           "order": 5,
           "title": "第五章：No Code / Low Code 平台與 AI 開發工具",
           "sections": [
             {
-              "id": 10053,
+              "id": 10052,
               "order": 1,
               "title": "5.1 5.1 平台特性與選擇 (理論基礎)",
               "link_id": "平台特性與選擇-理論基礎",
@@ -566,7 +552,7 @@
               "questions": []
             },
             {
-              "id": 10054,
+              "id": 10053,
               "order": 2,
               "title": "5.2 5.2 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)",
               "link_id": "熱門-ai-開發與-nolow-code-工具-實務趨勢",
@@ -574,7 +560,7 @@
               "questions": []
             },
             {
-              "id": 10055,
+              "id": 10054,
               "order": 3,
               "title": "5.3 5.3 整合策略與風險",
               "link_id": "整合策略與風險",
@@ -584,12 +570,12 @@
           ]
         },
         {
-          "id": 1017,
+          "id": 1016,
           "order": 6,
           "title": "第六章：生成式 AI 專案管理與評估 (Project Planning & Eval)",
           "sections": [
             {
-              "id": 10056,
+              "id": 10055,
               "order": 1,
               "title": "6.1 6.1 導入流程與策略",
               "link_id": "導入流程與策略",
@@ -597,7 +583,7 @@
               "questions": []
             },
             {
-              "id": 10057,
+              "id": 10056,
               "order": 2,
               "title": "6.2 6.2 效能評估指標",
               "link_id": "效能評估指標",
@@ -607,12 +593,12 @@
           ]
         },
         {
-          "id": 1018,
+          "id": 1017,
           "order": 7,
           "title": "第七章：生成式 AI 的資安、合規與倫理 (Security, Compliance & Ethics)",
           "sections": [
             {
-              "id": 10058,
+              "id": 10057,
               "order": 1,
               "title": "7.1 7.1 生成式 AI 特有資安威脅",
               "link_id": "生成式-ai-特有資安威脅",
@@ -620,7 +606,7 @@
               "questions": []
             },
             {
-              "id": 10059,
+              "id": 10058,
               "order": 2,
               "title": "7.2 7.2 隱私強化技術 (Privacy-Enhancing Technologies, PETs)",
               "link_id": "隱私強化技術-privacy-enhancing-technologies-pets",
@@ -628,26 +614,11 @@
               "questions": []
             },
             {
-              "id": 10060,
+              "id": 10059,
               "order": 3,
               "title": "7.3 7.3 合規與治理",
               "link_id": "合規與治理",
               "content": "<section class=\"level2\" data-number=\"7.3\" id=\"合規與治理\">\n<h2 class=\"anchored\" data-anchor-id=\"合規與治理\" data-number=\"7.3\"><span class=\"header-section-number\">7.3</span> 7.3 合規與治理</h2>\n<section class=\"level3\" data-number=\"7.3.1\" id=\"幻覺-hallucination\">\n<h3 class=\"anchored\" data-anchor-id=\"幻覺-hallucination\" data-number=\"7.3.1\"><span class=\"header-section-number\">7.3.1</span> 1. 幻覺 (Hallucination)</h3>\n<ul>\n<li><strong>定義</strong>：AI 生成看似合理但與事實不符的內容。</li>\n<li><strong>成因</strong>：\n<ul>\n<li><strong>語料不足</strong>：訓練資料沒看過相關知識。</li>\n<li><strong>機率本質</strong>：模型只是在預測下一個字，而非查證事實。</li>\n</ul></li>\n<li><strong>解法</strong>：RAG (檢索增強)、Grounding (接地/引用來源)。</li>\n</ul>\n</section>\n<section class=\"level3\" data-number=\"7.3.2\" id=\"防護機制-guardrails\">\n<h3 class=\"anchored\" data-anchor-id=\"防護機制-guardrails\" data-number=\"7.3.2\"><span class=\"header-section-number\">7.3.2</span> 2. 防護機制 (Guardrails)</h3>\n<p>企業級 AI 應用必須加上護欄。 * <strong>輸入過濾 (Input Rail)</strong>：檢測使用者是否輸入了敏感詞、仇恨言論或 Prompt Injection 攻擊。 * <strong>輸出過濾 (Output Rail)</strong>：檢測 AI 的回答是否包含個資、偏見或不當內容。 * <strong>NVIDIA NeMo Guardrails</strong>：一套開源的工具，允許開發者定義對話的邊界與規則（如「不准談論政治」）。</p>\n</section>\n</section>",
-              "questions": []
-            }
-          ]
-        },
-        {
-          "id": 1019,
-          "order": 1019,
-          "title": "index",
-          "sections": [
-            {
-              "id": 10061,
-              "order": 1,
-              "title": "考試大綱與知識體系",
-              "link_id": "考試大綱與知識體系",
-              "content": "<section class=\"level2\" id=\"考試大綱與知識體系\">\n<h2 class=\"anchored\" data-anchor-id=\"考試大綱與知識體系\">考試大綱與知識體系</h2>\n<p>本書內容基於歷屆試題與最新技術趨勢歸納，涵蓋以下核心領域：</p>\n<ol type=\"1\">\n<li><strong>生成式 AI 模型架構與機制</strong>：深入理解 Transformer、Diffusion 等核心技術。</li>\n<li><strong>進階提示工程</strong>：掌握 CoT、ToT 等高階推理策略。</li>\n<li><strong>進階 RAG 與系統架構</strong>：探討 RAG、Fine-tuning 與 MCP 等架構選擇。</li>\n<li><strong>AI 代理人 (Agentic AI)</strong>：從單一模型走向自主代理與多代理系統。</li>\n<li><strong>No Code / Low Code 開發</strong>：利用現代工具加速 AI 應用開發。</li>\n<li><strong>專案管理與評估</strong>：從 POC 到部署的完整流程與效能指標。</li>\n<li><strong>資安、合規與倫理</strong>：應對 Prompt Injection、隱私洩漏等新興威脅。</li>\n</ol>\n<p>希望本書能成為您通往 AI 應用規劃師之路的有力助手。</p>\n</section>",
               "questions": []
             }
           ]

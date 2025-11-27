@@ -332,3 +332,4 @@ TSWLatexianTemp*
 
 **/*.quarto_ipynb
 **/*.pdf
+assets/*
