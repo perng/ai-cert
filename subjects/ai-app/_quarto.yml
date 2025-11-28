@@ -1,0 +1,30 @@
+project:
+  type: book
+
+book:
+  title: "AI 應用規劃師中級考：技術應用與規劃"
+  author: "AI仁波切"
+  date: "2025-11-28"
+  chapters:
+    - index.md
+    - part: "第一部：進階自然語言處理"
+      chapters:
+        - chapter1.md
+        - chapter2.md
+    - part: "第二部：電腦視覺與多模態 AI"
+      chapters:
+        - chapter3.md
+        - chapter4.md
+    - part: "第三部：特徵工程與數據分析"
+      chapters:
+        - chapter5.md
+    - part: "第四部：模型訓練與 MLOps"
+      chapters:
+        - chapter6.md
+        - chapter7.md
+        - chapter8.md
+
+format:
+  html:
+    theme: cosmo
+    number-sections: false

@@ -8,15 +8,17 @@ label: sec-gen-chapter3
 
 > **考點摘要**：解決 AI 幻覺與時效性問題的主流架構，考題常涉及 RAG 與 Fine-tuning 的選擇決策。
 
-## 模型微調 (Fine-tuning) 與優化
+## 模型微調 (Fine-tuning) 與優化 {#sec-fine-tuning-optimization}
 
 在企業導入生成式 AI 時，最常面臨的抉擇就是：**該用 RAG 還是 Fine-tuning？**
 
-### 1. RAG vs. Fine-tuning 決策矩陣
+### 1. RAG vs. Fine-tuning 決策矩陣 {.unnumbered}
 
 這兩者並非互斥，而是互補。我們可以將它們比喻為：
 *   **RAG (檢索增強生成)**：像是**開書考**。模型本身不需要背誦知識，考試時翻閱教科書（向量資料庫）即可。
 *   **Fine-tuning (微調)**：像是**考前衝刺班**。透過大量練習，將知識內化到大腦（權重）中，並學習特定的答題技巧。
+
+<!-- Image Prompt: Title: "RAG vs. Fine-tuning". Style: Stick figures with color. Content: A split scene. Left (RAG): A stick figure taking a test with a huge pile of open books on the desk. Label: "Open-Book Exam (RAG)". Right (Fine-tuning): A stick figure with a huge head (swollen with knowledge) taking a test without any books. Label: "Internalized Knowledge (Fine-tuning)". Note: dialogs and all texts/labels should be in Traditional Chinese. -->
 
 | 比較項目 | RAG (檢索增強生成) | Fine-tuning (模型微調) |
 | :--- | :--- | :--- |
@@ -28,10 +30,12 @@ label: sec-gen-chapter3
 
 > **最佳實務**：通常建議**先 RAG，後 Fine-tuning**。先用 RAG 解決知識獲取問題，如果發現模型聽不懂專業術語或語氣不對，再考慮 Fine-tuning。
 
-### 2. 知識蒸餾 (Knowledge Distillation)
+### 2. 知識蒸餾 (Knowledge Distillation) {.unnumbered}
 當我們希望在邊緣裝置（手機、IoT）上執行 AI，但大模型 (Teacher) 太大跑不動時，就需要用到知識蒸餾。
 
 *   **核心概念**：讓一個參數少、運算快的小模型 (**Student**)，去模仿大模型 (**Teacher**) 的行為。
+
+<!-- Image Prompt: Title: "Knowledge Distillation". Style: Stick figures with color. Content: A giant, wise-looking stick figure (Teacher) wearing a robe is pouring glowing liquid from a large flask into a small cup held by a tiny stick figure (Student). The liquid represents "Knowledge & Probability Distribution". Label: "Compressing Knowledge". Note: dialogs and all texts/labels should be in Traditional Chinese. -->
 *   **運作方式**：
     *   Student 不只是學習「正確答案」(Hard Label)，更要學習 Teacher 的「機率分佈」(Soft Label)。
     *   *例子*：分辨一張模糊的狗照片。
@@ -40,15 +44,17 @@ label: sec-gen-chapter3
         *   Teacher 傳遞出的「這張圖有點像貓」的資訊 (Dark Knowledge)，能幫助 Student 學得更好。
 *   **應用**：將 GPT-4 的能力蒸餾到 LLaMA-7B 或更小的模型中，以降低推論成本並提升速度。
 
-## Model Context Protocol (MCP)
+## Model Context Protocol (MCP) {#sec-mcp}
 
 隨著 AI 應用越來越複雜，我們需要讓 AI 連接更多的工具與資料源。MCP 應運而生。
 
-### 1. 定義與目的
+### 1. 定義與目的 {.unnumbered}
 *   **定義**：MCP 是一個開放標準協議，旨在標準化 AI 模型 (Client) 與外部數據/工具 (Server) 之間的連接方式。
 *   **目的**：解決「每個 AI 模型都要為每個資料源寫一個專屬 Connector」的碎片化問題。就像 USB 標準化了電腦周邊設備的連接一樣。
 
-### 2. 運作架構
+<!-- Image Prompt: Title: "Model Context Protocol (MCP)". Style: Stick figures with color. Content: A stick figure (AI) holding a universal plug (labeled "MCP"). It easily plugs into various different shaped sockets labeled "Google Drive", "Slack", "Database", just like a USB connects to many devices. Label: "Universal Connector for AI". Note: dialogs and all texts/labels should be in Traditional Chinese. -->
+
+### 2. 運作架構 {.unnumbered}
 *   **MCP Client (AI Host)**：如 Claude Desktop, IDE (Cursor)。它是 AI 運行的主體，負責發起請求。
 *   **MCP Server**：提供數據或功能的服務端。例如 Google Drive Server, Slack Server, PostgreSQL Server。
 *   **MCP Host**：執行 Client 的環境。
@@ -60,7 +66,7 @@ label: sec-gen-chapter3
 4.  **MCP Server** 將數據回傳給 Client。
 5.  AI 根據數據生成回答。
 
-### 3. MCP 與 RAG 的差異
+### 3. MCP 與 RAG 的差異 {.unnumbered}
 *   **RAG**：主要關注**靜態知識的檢索**（讀取）。將文件切塊、向量化、搜尋。
 *   **MCP**：更關注**動態工具的使用與雙向互動**（讀寫/執行）。不僅能讀取資料，還能執行 API (如發送 Slack 訊息、寫入資料庫)。
 *   **關係**：MCP 可以作為實現 RAG 的一種手段（透過 MCP 連接向量資料庫），但 MCP 的能力遠大於此。

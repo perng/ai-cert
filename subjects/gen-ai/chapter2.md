@@ -8,12 +8,14 @@ label: sec-gen-chapter2
 
 > **考點摘要**：此為本科核心，需精通各種推理策略的適用情境，特別是針對複雜任務的引導方式。
 
-## 進階提示策略
+## 進階提示策略 {#sec-advanced-prompting}
 
 除了基礎的 Zero-shot 和 Few-shot，面對更複雜的任務，我們需要更精細的引導策略。
 
-### 1. 角色扮演 (Persona Prompting)
+### 1. 角色扮演 (Persona Prompting) {.unnumbered}
 這是一種簡單但極強大的技巧。透過賦予 AI 一個特定的身分或專家角色，可以顯著改變其輸出的語氣、專業度與視角。
+
+<!-- Image Prompt: Title: "Persona Prompting". Style: Stick figures with color. Content: A split scene. Left: A stick figure labeled "AI" wearing a graduation cap, explaining Quantum Mechanics with complex formulas on a blackboard (Text: "Academic Tone"). Right: The same stick figure wearing a kindergarten teacher's apron, explaining Quantum Mechanics using toy blocks to a child stick figure (Text: "Simple & Fun"). Note: dialogs and all texts/labels should be in Traditional Chinese. -->
 
 *   **原理**：LLM 在訓練資料中看過各種人的說話方式。當你設定角色時，模型會將自己「定位」在潛在空間中與該角色相關的區域，從而調用相關的知識與詞彙。
 *   **範例**：
@@ -21,7 +23,7 @@ label: sec-gen-chapter2
     *   *角色提示*：「**你是一位擅長用譬喻法教學的幼兒園老師**，請向 5 歲小孩解釋量子力學。」(回答會充滿玩具、魔法等易懂的概念)
     *   *專業提示*：「**你是一位擁有 20 年經驗的資深後端工程師**，請評論這段程式碼的安全性與效能。」(回答會聚焦在 SQL Injection, Memory Leak 等專業細節)
 
-### 2. 圖提示 (Graph Prompting)
+### 2. 圖提示 (Graph Prompting) {.unnumbered}
 傳統的 CoT (思維鏈) 是線性的 (Step 1 -> Step 2 -> Step 3)。但在處理複雜關係（如社交網絡、知識圖譜、分子結構）時，線性思考往往不足。
 
 *   **核心概念**：將問題建模為**圖 (Graph)** 結構，包含**節點 (Nodes)** 與**邊 (Edges)**，並引導模型在圖上進行推理。
@@ -33,11 +35,11 @@ label: sec-gen-chapter2
     *   CoT 適合算術、邏輯推理（單一正確答案）。
     *   Graph Prompting 適合探索、關聯分析、結構化資料理解。
 
-## 自動化與優化技術
+## 自動化與優化技術 {#sec-automation-optimization}
 
 隨著 Prompt 變得越來越長、越來越複雜，手動調整 Prompt (Hand-crafting) 變得效率低落且難以最佳化。
 
-### 1. 自動提示工程 (Automatic Prompt Engineer, APE)
+### 1. 自動提示工程 (Automatic Prompt Engineer, APE) {.unnumbered}
 既然 LLM 這麼聰明，為什麼不讓它自己寫 Prompt？
 
 *   **運作流程**：
@@ -50,18 +52,20 @@ label: sec-gen-chapter2
 *   **限制**：
     *   在**圖資料**或**超長上下文**的任務中，APE 的效果可能不如人類專家精心設計的 Prompt，因為模型可能難以掌握全局結構。
 
-### 2. 上下文工程 (Context Engineering)
+### 2. 上下文工程 (Context Engineering) {.unnumbered}
 當我們需要餵給模型大量資料（如整本書、整份財報）時，如何安排資訊的順序至關重要。
 
 *   **迷失在中間 (Lost in the Middle)**：
     *   史丹佛大學研究發現，LLM 對於 Context **開頭**和**結尾**的資訊記憶最清楚，但對於放在**中間**的資訊容易忽略或遺忘。
     *   這呈現一個 U 型曲線的專注力分佈。
+
+    <!-- Image Prompt: Title: "Lost in the Middle Phenomenon". Style: Stick figures with color. Content: A long scroll of paper representing "Context". A stick figure (AI) is looking at the scroll. The top and bottom parts of the scroll are bright and clear. The middle part is foggy and blurry. The stick figure looks confused while pointing at the middle section. Label: "High Recall at Start/End, Low Recall in Middle". Note: dialogs and all texts/labels should be in Traditional Chinese. -->
 *   **優化策略**：
     *   **關鍵指令置頂/置底**：將最重要的 Instruction（如「請只回答是或否」）放在 Prompt 的最前面或最後面。
     *   **相關性排序**：在使用 RAG 時，將檢索到最相關的文件片段放在 Context 的頭尾，較不相關的放中間。
     *   **摘要與壓縮**：如果內容太長，先分段摘要，再將摘要餵給模型，避免資訊過載。
 
-## 提示攻擊與防禦 (Prompt Injection)
+## 提示攻擊與防禦 (Prompt Injection) {#sec-prompt-injection}
 (此部分雖屬資安，但在提示工程中亦需了解)
 
 *   **定義**：使用者輸入惡意指令，試圖繞過模型的安全限制或改變其預設行為。

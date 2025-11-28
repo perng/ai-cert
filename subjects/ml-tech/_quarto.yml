@@ -1,0 +1,26 @@
+project:
+  type: book
+
+book:
+  title: "機器學習技術與應用"
+  author: "AI仁波切"
+  date: "2025-11-28"
+  chapters:
+    - index.md
+    - part: "第一部：基礎與評估"
+      chapters:
+        - chapter1.md
+        - chapter2.md
+    - part: "第二部：深度學習與優化"
+      chapters:
+        - chapter3.md
+        - chapter4.md
+    - part: "第三部：進階演算法與應用"
+      chapters:
+        - chapter5.md
+        - chapter6.md
+
+format:
+  html:
+    theme: cosmo
+    number-sections: false

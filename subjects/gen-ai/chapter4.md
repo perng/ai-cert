@@ -8,12 +8,14 @@ label: sec-gen-chapter4
 
 > **考點摘要**：從對話走向行動，Agent 的規劃、工具使用與多代理協作是進階考點。
 
-## Agent 架構與組件
+## Agent 架構與組件 {#sec-agent-architecture}
 
 傳統的 Chatbot 只能「說」，而 Agent (代理人) 能夠「做」。Agent 具備感知環境、進行決策並執行行動的能力。
 
-### 1. 核心模組
+### 1. 核心模組 {.unnumbered}
 一個完整的 Agent 通常包含以下四大組件：
+
+<!-- Image Prompt: Title: "Anatomy of an AI Agent". Style: Stick figures with color. Content: A central stick figure labeled "Brain (LLM)" wearing a captain's hat. It is connected to three modules: 1. A map labeled "Planning". 2. A filing cabinet labeled "Memory". 3. A robotic arm labeled "Tools" holding a wrench and a phone. Label: "From Chatbot to Agent". Note: dialogs and all texts/labels should be in Traditional Chinese. -->
 
 1.  **大腦 (Brain / LLM)**：
     *   負責理解指令、進行邏輯推理、規劃任務步驟。
@@ -28,7 +30,7 @@ label: sec-gen-chapter4
     *   Agent 需要手腳才能與世界互動。
     *   **API 調用**：搜尋 Google、發送 Email、查詢天氣、執行 Python 程式碼。
 
-### 2. 解決方案圖譜 (Solution Graph)
+### 2. 解決方案圖譜 (Solution Graph) {.unnumbered}
 在處理複雜問題時，單線性的思考往往不夠。Solution Graph 提供了一個更結構化的框架。
 
 *   **定義**：將解決問題的過程建模為一個圖 (Graph)。
@@ -40,12 +42,14 @@ label: sec-gen-chapter4
     *   **深度優先搜尋 (DFS)**：選定一條路一直走到底，如果不通再回頭。適合需要深入挖掘的任務。
     *   **最佳優先搜尋 (Best-First Search)**：評估哪條路看起來最有希望 (Heuristic)，優先走那條。
 
-## 多代理系統 (Multi-Agent Systems, MAS)
+## 多代理系統 (Multi-Agent Systems, MAS) {#sec-multi-agent-systems}
 
 當任務太複雜，一個 Agent 做不來時，我們就需要一個團隊。
 
-### 1. 協作模式 (Agent-to-Agent, A2A)
+### 1. 協作模式 (Agent-to-Agent, A2A) {.unnumbered}
 *   **角色分工**：就像人類公司一樣，不同的 Agent 扮演不同的角色。
+
+<!-- Image Prompt: Title: "Multi-Agent Collaboration". Style: Stick figures with color. Content: A meeting room scene. A stick figure labeled "Product Manager" points to a whiteboard. Another stick figure labeled "Coder" types on a laptop. A third stick figure labeled "Tester" holds a magnifying glass checking the work. They are all passing notes (messages) to each other. Label: "Teamwork makes the dream work". Note: dialogs and all texts/labels should be in Traditional Chinese. -->
     *   *產品經理 Agent*：負責拆解需求，分派任務。
     *   *工程師 Agent*：負責寫程式碼。
     *   *測試 Agent*：負責跑測試，回報 Bug 給工程師。
@@ -56,7 +60,7 @@ label: sec-gen-chapter4
     4.  Remote Agent 將結果回傳給 Client Agent。
     5.  Client Agent 整合結果回報給人類。
 
-### 2. 常見挑戰
+### 2. 常見挑戰 {.unnumbered}
 多個 Agent 合作雖然強大，但也帶來了新的問題：
 
 *   **無限循環 (Infinite Loops)**：
