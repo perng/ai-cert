@@ -1,560 +1,691 @@
 questions:
-  - id: 3001
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料類型與儲存"
-    text: "下列何者屬於「結構化資料 (Structured Data)」？"
-    type: multiple_choice
-    options:
-      - "電子郵件內容"
-      - "關聯式資料庫中的客戶資料表"
-      - "YouTube 影片"
-      - "社群媒體貼文"
-    correct_index: 1
-    explanation: "結構化資料具有固定的格式與長度，通常以表格形式呈現，如資料庫中的資料表。"
-    tags: ["sec-chapter3", "sec-data-types-storage"]
-
-  - id: 3002
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料類型與儲存"
-    text: "非結構化資料 (Unstructured Data) 通常佔據全世界資料的比例約為多少？"
-    type: multiple_choice
-    options:
-      - "不到 10%"
-      - "約 50%"
-      - "80% 以上"
-      - "100%"
-    correct_index: 2
-    explanation: "非結構化資料（如圖片、影片、文字）佔據了全世界資料的絕大多數，約 80% 以上。"
-    tags: ["sec-chapter3", "sec-data-types-storage"]
-
-  - id: 3003
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料類型與儲存"
-    text: "JSON 格式通常被歸類為哪種資料類型？"
-    type: multiple_choice
-    options:
-      - "結構化資料"
-      - "非結構化資料"
-      - "半結構化資料 (Semi-structured Data)"
-      - "二進位資料"
-    correct_index: 2
-    explanation: "JSON 具有標籤或鍵值結構，但沒有嚴格的表格架構，屬於半結構化資料。"
-    tags: ["sec-chapter3", "sec-data-types-storage"]
-
-  - id: 3004
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料管道 (Data Pipeline)"
-    text: "ETL 架構中的 'T' 代表什麼？"
-    type: multiple_choice
-    options:
-      - "Transfer (傳輸)"
-      - "Transform (轉換)"
-      - "Test (測試)"
-      - "Table (表格)"
-    correct_index: 1
-    explanation: "ETL 代表 Extract (擷取), Transform (轉換), Load (載入)。"
-    tags: ["sec-chapter3", "sec-etl"]
-
-  - id: 3005
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料管道 (Data Pipeline)"
-    text: "相較於 ETL，ELT 架構的主要優勢是什麼？"
-    type: multiple_choice
-    options:
-      - "資料品質較高"
-      - "節省儲存空間"
-      - "載入速度快且保留原始資料靈活性"
-      - "適合小規模資料"
-    correct_index: 2
-    explanation: "ELT 先將資料載入資料湖，需要時再轉換，因此載入速度快且能保留原始資料供不同分析使用。"
-    tags: ["sec-chapter3", "sec-elt"]
-
-  - id: 3006
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料管道 (Data Pipeline)"
-    text: "「資料湖 (Data Lake)」通常與哪種資料處理架構相關聯？"
-    type: multiple_choice
-    options:
-      - "ETL"
-      - "ELT"
-      - "RDB"
-      - "Data Warehouse"
-    correct_index: 1
-    explanation: "ELT 架構通常將原始資料直接載入資料湖 (Data Lake) 中。"
-    tags: ["sec-chapter3", "sec-elt"]
-
-  - id: 3007
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "批次處理 vs. 串流處理"
-    text: "下列哪個場景最適合使用「串流處理 (Streaming Processing)」？"
-    type: multiple_choice
-    options:
-      - "月度銷售報表"
-      - "歷史資料備份"
-      - "即時信用卡盜刷偵測"
-      - "年度庫存盤點"
-    correct_index: 2
-    explanation: "盜刷偵測需要即時反應，不能等待批次處理的延遲，因此適合串流處理。"
-    tags: ["sec-chapter3", "sec-batch-vs-streaming"]
-
-  - id: 3008
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "批次處理 vs. 串流處理"
-    text: "批次處理 (Batch Processing) 的主要缺點是什麼？"
-    type: multiple_choice
-    options:
-      - "計算成本高"
-      - "技術太複雜"
-      - "資料有延遲 (Latency)"
-      - "無法處理大量資料"
-    correct_index: 2
-    explanation: "批次處理需要累積一段時間的資料才執行，因此無法提供即時數據，會有時間落差。"
-    tags: ["sec-chapter3", "sec-batch-vs-streaming"]
-
-  - id: 3009
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "探索性資料分析 (EDA)"
-    text: "下列何者屬於「連續型數值資料」？"
-    type: multiple_choice
-    options:
-      - "血型 (A, B, O)"
-      - "衣服尺寸 (S, M, L)"
-      - "身高 (175.5 cm)"
-      - "小孩人數 (1, 2, 3)"
-    correct_index: 2
-    explanation: "身高可以取任意小數點的值，屬於連續型資料；小孩人數是離散型；血型和尺寸是類別型。"
-    tags: ["sec-chapter3", "sec-data-types"]
-
-  - id: 3010
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "探索性資料分析 (EDA)"
-    text: "對於類別型資料（如顏色：紅、綠、藍），應使用哪種編碼方式避免模型誤解？"
-    type: multiple_choice
-    options:
-      - "數值編碼 (1, 2, 3)"
-      - "獨熱編碼 (One-Hot Encoding)"
-      - "平均數編碼"
-      - "刪除該欄位"
-    correct_index: 1
-    explanation: "獨熱編碼將每個類別轉換為獨立的二元欄位，避免模型誤以為類別之間有大小順序關係。"
-    tags: ["sec-chapter3", "sec-data-types"]
-
-  - id: 3011
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "統計摘要"
-    text: "當資料中存在極端值 (Outliers) 時，哪種集中趨勢指標較為穩健？"
-    type: multiple_choice
-    options:
-      - "平均數 (Mean)"
-      - "中位數 (Median)"
-      - "標準差 (SD)"
-      - "最大值 (Max)"
-    correct_index: 1
-    explanation: "中位數是排序後位於中間的數值，不受極大或極小值的影響，因此比平均數更穩健。"
-    tags: ["sec-chapter3", "sec-descriptive-statistics"]
-
-  - id: 3012
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "統計摘要"
-    text: "標準差 (Standard Deviation) 主要用來衡量資料的什麼特性？"
-    type: multiple_choice
-    options:
-      - "集中趨勢"
-      - "離散程度 (Dispersion)"
-      - "偏態"
-      - "峰度"
-    correct_index: 1
-    explanation: "標準差衡量數值與平均數的平均距離，反映資料分佈的離散程度或波動性。"
-    tags: ["sec-chapter3", "sec-descriptive-statistics"]
-
-  - id: 3013
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "統計摘要"
-    text: "如果一組資料呈現「右偏 (Right Skewed)」，通常意味著什麼？"
-    type: multiple_choice
-    options:
-      - "平均數 < 中位數"
-      - "平均數 > 中位數"
-      - "平均數 = 中位數"
-      - "沒有極端值"
-    correct_index: 1
-    explanation: "右偏分佈代表長尾巴在右邊（大數值方向），少數極大值會拉高平均數，使其大於中位數。"
-    tags: ["sec-chapter3", "sec-descriptive-statistics"]
-
-  - id: 3014
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料視覺化"
-    text: "若要觀察兩個變數之間的「關聯性」（如身高 vs. 體重），最適合使用哪種圖表？"
-    type: multiple_choice
-    options:
-      - "圓餅圖"
-      - "折線圖"
-      - "散佈圖 (Scatter Plot)"
-      - "長條圖"
-    correct_index: 2
-    explanation: "散佈圖透過點的分佈位置，能直觀呈現兩個變數之間的相關程度與模式。"
-    tags: ["sec-chapter3", "sec-data-visualization"]
-
-  - id: 3015
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料視覺化"
-    text: "若要觀察單一變數的「分佈情況」（如全校成績分佈），最適合使用哪種圖表？"
-    type: multiple_choice
-    options:
-      - "直方圖 (Histogram)"
-      - "圓餅圖"
-      - "散佈圖"
-      - "熱圖"
-    correct_index: 0
-    explanation: "直方圖將數值分組並顯示各組的頻率，適合觀察資料的分佈形狀。"
-    tags: ["sec-chapter3", "sec-data-visualization"]
-
-  - id: 3016
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料清理"
-    text: "處理缺失值 (Missing Values) 時，若該欄位對預測很重要且資料量不大，應避免使用哪種方法？"
-    type: multiple_choice
-    options:
-      - "插補法 (Imputation)"
-      - "直接刪除該列 (Listwise Deletion)"
-      - "使用模型預測填補"
-      - "使用中位數填補"
-    correct_index: 1
-    explanation: "直接刪除會導致寶貴的資料流失，特別是在資料量本來就不多的情況下，應優先考慮插補。"
-    tags: ["sec-chapter3", "sec-missing-values"]
-
-  - id: 3017
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料清理"
-    text: "KNN (K-近鄰) 插補法的原理是什麼？"
-    type: multiple_choice
-    options:
-      - "用全體平均數填補"
-      - "用全體眾數填補"
-      - "找特徵最相似的鄰居資料來推估缺失值"
-      - "隨機填補"
-    correct_index: 2
-    explanation: "KNN 插補法透過尋找特徵最相似的 K 個樣本（鄰居），參考它們的數值來填補缺失值，通常比單純平均更精準。"
-    tags: ["sec-chapter3", "sec-missing-values"]
-
-  - id: 3018
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "異常值處理"
-    text: "利用 Z-score 偵測異常值時，通常將超過多少個標準差的數值視為異常？"
-    type: multiple_choice
-    options:
-      - "1 個"
-      - "2 個"
-      - "3 個"
-      - "10 個"
-    correct_index: 2
-    explanation: "在常態分佈下，約 99.7% 的資料會落在平均數正負 3 個標準差內，因此超過 3 個標準差通常被視為異常。"
-    tags: ["sec-chapter3", "sec-outliers"]
-
-  - id: 3019
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "異常值處理"
-    text: "「蓋帽法 (Winsorizing)」是如何處理異常值的？"
-    type: multiple_choice
-    options:
-      - "直接刪除"
-      - "將超過特定百分位數的值強制設定為該百分位數的值"
-      - "取對數轉換"
-      - "不處理"
-    correct_index: 1
-    explanation: "蓋帽法將極端值限制在某個範圍內（如第 99 百分位數），減少其對模型的影響，但保留了部分資訊。"
-    tags: ["sec-chapter3", "sec-outliers"]
-
-  - id: 3020
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料隱私"
-    text: "在處理個資 (PII) 時，「去識別化 (De-identification)」的主要目的是什麼？"
-    type: multiple_choice
-    options:
-      - "節省儲存空間"
-      - "提高運算速度"
-      - "使資料無法識別特定個人，以保護隱私"
-      - "增加資料的精確度"
-    correct_index: 2
-    explanation: "去識別化透過遮罩、泛化等技術移除或模糊化個資，確保分析過程中無法回溯到特定個人。"
-    tags: ["sec-chapter3", "sec-anonymization"]
-
-  - id: 3021
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料隱私"
-    text: "將「王大明」轉換為「王O明」，屬於哪種隱私保護技術？"
-    type: multiple_choice
-    options:
-      - "泛化 (Generalization)"
-      - "遮罩 (Masking)"
-      - "假名化 (Pseudonymization)"
-      - "加密 (Encryption)"
-    correct_index: 1
-    explanation: "遮罩技術透過隱藏部分字元來保護隱私，如將名字中間字隱藏。"
-    tags: ["sec-chapter3", "sec-anonymization"]
-
-  - id: 3022
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料隱私"
-    text: "根據個資法，「目的拘束 (Purpose Limitation)」原則是指什麼？"
-    type: multiple_choice
-    options:
-      - "資料只能保存一年"
-      - "資料只能用於當初聲明的特定目的"
-      - "資料必須加密儲存"
-      - "資料不能傳輸到國外"
-    correct_index: 1
-    explanation: "目的拘束原則要求資料的利用必須限制在蒐集時所告知的特定目的範圍內，不得任意挪作他用。"
-    tags: ["sec-chapter3", "sec-anonymization"]
-
-  - id: 3023
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料一致性"
-    text: "將不同來源的日期格式統一轉換為 `YYYY-MM-DD`，屬於資料清理中的哪個步驟？"
-    type: multiple_choice
-    options:
-      - "缺失值處理"
-      - "異常值處理"
-      - "格式標準化"
-      - "去重"
-    correct_index: 2
-    explanation: "這是將資料格式統一的過程，稱為格式標準化。"
-    tags: ["sec-chapter3", "sec-consistency"]
-
-  - id: 3024
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料管道"
-    text: "「資料倉儲 (Data Warehouse)」通常存放哪種狀態的資料？"
-    type: multiple_choice
-    options:
-      - "未經處理的原始資料"
-      - "經過清洗與轉換的結構化資料"
-      - "非結構化的影片檔"
-      - "暫存的快取資料"
-    correct_index: 1
-    explanation: "資料倉儲主要用於存放經過 ETL 流程處理後、乾淨且結構化的歷史資料，供分析使用。"
-    tags: ["sec-chapter3", "sec-etl"]
-
-  - id: 3025
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料分析層次"
-    text: "四分位距 (IQR) 常用於協助偵測什麼？"
-    type: multiple_choice
-    options:
-      - "缺失值"
-      - "異常值 (Outliers)"
-      - "平均數"
-      - "眾數"
-    correct_index: 1
-    explanation: "IQR 是計算 Q3 與 Q1 的差距，常用於定義異常值的上下界限（Box Plot 法）。"
-    tags: ["sec-chapter3", "sec-descriptive-statistics"]
-
-  - id: 3026
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料類型"
-    text: "「滿意度調查（非常滿意、滿意、普通、不滿意）」屬於哪種資料類型？"
-    type: multiple_choice
-    options:
-      - "名目型 (Nominal)"
-      - "順序型 (Ordinal)"
-      - "連續型 (Continuous)"
-      - "離散型 (Discrete)"
-    correct_index: 1
-    explanation: "滿意度有等級順序關係，但間距不一定相等，屬於順序型類別資料。"
-    tags: ["sec-chapter3", "sec-data-types"]
-
-  - id: 3027
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料視覺化"
-    text: "盒鬚圖 (Box Plot) 無法直接顯示下列哪個統計量？"
-    type: multiple_choice
-    options:
-      - "中位數"
-      - "四分位數"
-      - "平均數"
-      - "離群值"
-    correct_index: 2
-    explanation: "標準的盒鬚圖顯示的是中位數、四分位數和極值/離群值，平均數通常需要額外標記才看得到。"
-    tags: ["sec-chapter3", "sec-data-visualization"]
-
-  - id: 3028
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料清理"
-    text: "「資料最小化 (Data Minimization)」原則建議企業怎麼做？"
-    type: multiple_choice
-    options:
-      - "蒐集越多資料越好"
-      - "只蒐集達成目的所必要的最小限度資料"
-      - "將資料壓縮到最小"
-      - "只保存最近一天的資料"
-    correct_index: 1
-    explanation: "為了降低隱私風險，應只蒐集業務執行上真正需要的資料，避免過度蒐集。"
-    tags: ["sec-chapter3", "sec-anonymization"]
-
-  - id: 3029
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料管道"
-    text: "NoSQL 資料庫的主要優勢不包括下列何者？"
-    type: multiple_choice
-    options:
-      - "擴充性強 (Scalable)"
-      - "靈活的資料結構"
-      - "支援非結構化資料"
-      - "保證 ACID 強一致性"
-    correct_index: 3
-    explanation: "NoSQL 通常遵循 BASE 模型，犧牲強一致性 (ACID) 以換取高可用性與擴充性。"
-    tags: ["sec-chapter3", "sec-data-types-storage"]
-
-  - id: 3030
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料管道"
-    text: "Redis 是一種常見的 NoSQL 資料庫，它主要用於什麼用途？"
-    type: multiple_choice
-    options:
-      - "儲存大量影片"
-      - "快取 (Cache) 與高速存取"
-      - "複雜的關聯查詢"
-      - "長期封存資料"
-    correct_index: 1
-    explanation: "Redis 是基於記憶體的鍵值資料庫，讀寫速度極快，常被用作快取系統。"
-    tags: ["sec-chapter3", "sec-data-types-storage"]
-
-  - id: 3031
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "統計摘要"
-    text: "如果平均數遠大於中位數，這組資料的分佈形狀是？"
-    type: multiple_choice
-    options:
-      - "對稱"
-      - "左偏 (Left Skewed)"
-      - "右偏 (Right Skewed)"
-      - "雙峰分佈"
-    correct_index: 2
-    explanation: "平均數被極大值拉高，導致大於中位數，這是右偏分佈的特徵。"
-    tags: ["sec-chapter3", "sec-descriptive-statistics"]
-
-  - id: 3032
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料清理"
-    text: "對數轉換 (Log Transformation) 常用於處理什麼問題？"
-    type: multiple_choice
-    options:
-      - "缺失值"
-      - "類別不平衡"
-      - "右偏分佈與極端值"
-      - "重複資料"
-    correct_index: 2
-    explanation: "對數轉換可以壓縮數值範圍，讓右偏分佈（長尾）變得更接近常態分佈，並減輕極端值的影響。"
-    tags: ["sec-chapter3", "sec-outliers"]
-
-  - id: 3033
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料視覺化"
-    text: "熱圖 (Heatmap) 最常用來呈現什麼資訊？"
-    type: multiple_choice
-    options:
-      - "時間趨勢"
-      - "相關係數矩陣"
-      - "部分佔整體的比例"
-      - "離群值"
-    correct_index: 1
-    explanation: "熱圖利用顏色深淺來表示數值大小，非常適合展示多變數之間的相關係數矩陣。"
-    tags: ["sec-chapter3", "sec-data-visualization"]
-
-  - id: 3034
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料管道"
-    text: "SQL 是用於操作哪種資料庫的標準語言？"
-    type: multiple_choice
-    options:
-      - "NoSQL"
-      - "關聯式資料庫 (RDB)"
-      - "物件儲存"
-      - "圖形資料庫"
-    correct_index: 1
-    explanation: "SQL (Structured Query Language) 是專門設計用來管理與查詢關聯式資料庫的語言。"
-    tags: ["sec-chapter3", "sec-data-types-storage"]
-
-  - id: 3035
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料隱私"
-    text: "「假名化 (Pseudonymization)」與「匿名化」的主要區別在於？"
-    type: multiple_choice
-    options:
-      - "假名化完全無法還原"
-      - "假名化可透過對照表還原，具可追溯性"
-      - "匿名化比較不安全"
-      - "兩者完全相同"
-    correct_index: 1
-    explanation: "假名化使用代碼取代個資，但保留了對照表（金鑰），特定權限下可還原；匿名化則是永久去除連結，無法還原。"
-    tags: ["sec-chapter3", "sec-anonymization"]
-
-  - id: 3036
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料清理"
-    text: "下列何者不是處理缺失值的常見策略？"
-    type: multiple_choice
-    options:
-      - "刪除法"
-      - "插補法"
-      - "保留缺失值並讓模型處理（如果模型支援）"
-      - "將缺失值全部填為無限大"
-    correct_index: 3
-    explanation: "將缺失值填為無限大通常會導致模型運算錯誤或發散，不是合理的處理方式。"
-    tags: ["sec-chapter3", "sec-missing-values"]
-
-  - id: 3037
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料管道"
-    text: "Amazon S3 和 Google Cloud Storage 屬於哪種儲存服務？"
-    type: multiple_choice
-    options:
-      - "關聯式資料庫"
-      - "物件儲存 (Object Storage)"
-      - "記憶體快取"
-      - "區塊鏈儲存"
-    correct_index: 1
-    explanation: "這些服務專門用於儲存大量的非結構化檔案（物件），屬於物件儲存服務。"
-    tags: ["sec-chapter3", "sec-data-types-storage"]
-
-  - id: 3038
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "統計摘要"
-    text: "眾數 (Mode) 最適合用於描述哪種資料的集中趨勢？"
-    type: multiple_choice
-    options:
-      - "連續型數值"
-      - "類別型資料"
-      - "時間序列"
-      - "高維度向量"
-    correct_index: 1
-    explanation: "對於類別型資料（如最受歡迎的顏色、最熱賣的商品），平均數和中位數沒有意義，只能看眾數。"
-    tags: ["sec-chapter3", "sec-descriptive-statistics"]
-
-  - id: 3039
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料管道"
-    text: "「資料沼澤 (Data Swamp)」是指什麼狀況？"
-    type: multiple_choice
-    options:
-      - "資料湖中的資料缺乏管理與治理，變成垃圾堆"
-      - "資料庫淹水"
-      - "資料量太少"
-      - "資料處理速度太快"
-    correct_index: 0
-    explanation: "當資料湖缺乏適當的 metadata 管理、品質控管和生命週期管理時，就會變成難以使用的資料沼澤。"
-    tags: ["sec-chapter3", "sec-elt"]
-
-  - id: 3040
-    chapter_title: "數據處理生命週期與架構"
-    section_title: "資料分析層次"
-    text: "貝塞爾校正 (Bessel's Correction) 在計算樣本標準差時，分母為什麼是 n-1？"
-    type: multiple_choice
-    options:
-      - "為了方便計算"
-      - "為了提供對母體變異數的不偏估計"
-      - "為了讓標準差變小"
-      - "這是打字錯誤"
-    correct_index: 1
-    explanation: "使用 n-1 可以修正樣本變異數傾向於低估母體變異數的偏差，提供不偏估計。"
-    tags: ["sec-chapter3", "sec-descriptive-statistics"]
+- id: 3001
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料類型與儲存
+  text: 下列何者屬於「結構化資料 (Structured Data)」？
+  type: multiple_choice
+  options:
+  - 關聯式資料庫中的客戶資料表
+  - 電子郵件內容
+  - 社群媒體貼文
+  - YouTube 影片
+  correct_index: 0
+  explanation: 結構化資料具有固定的格式與長度，通常以表格形式呈現，如資料庫中的資料表。
+  tags:
+  - sec-chapter3
+  - sec-data-types-storage
+- id: 3002
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料類型與儲存
+  text: 非結構化資料 (Unstructured Data) 通常佔據全世界資料的比例約為多少？
+  type: multiple_choice
+  options:
+  - 不到 10%
+  - 100%
+  - 80% 以上
+  - 約 50%
+  correct_index: 2
+  explanation: 非結構化資料（如圖片、影片、文字）佔據了全世界資料的絕大多數，約 80% 以上。
+  tags:
+  - sec-chapter3
+  - sec-data-types-storage
+- id: 3003
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料類型與儲存
+  text: JSON 格式通常被歸類為哪種資料類型？
+  type: multiple_choice
+  options:
+  - 結構化資料
+  - 半結構化資料 (Semi-structured Data)
+  - 非結構化資料
+  - 二進位資料
+  correct_index: 1
+  explanation: JSON 具有標籤或鍵值結構，但沒有嚴格的表格架構，屬於半結構化資料。
+  tags:
+  - sec-chapter3
+  - sec-data-types-storage
+- id: 3004
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料管道 (Data Pipeline)
+  text: ETL 架構中的 'T' 代表什麼？
+  type: multiple_choice
+  options:
+  - Transfer (傳輸)
+  - Table (表格)
+  - Test (測試)
+  - Transform (轉換)
+  correct_index: 3
+  explanation: ETL 代表 Extract (擷取), Transform (轉換), Load (載入)。
+  tags:
+  - sec-chapter3
+  - sec-etl
+- id: 3005
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料管道 (Data Pipeline)
+  text: 相較於 ETL，ELT 架構的主要優勢是什麼？
+  type: multiple_choice
+  options:
+  - 載入速度快且保留原始資料靈活性
+  - 適合小規模資料
+  - 資料品質較高
+  - 節省儲存空間
+  correct_index: 0
+  explanation: ELT 先將資料載入資料湖，需要時再轉換，因此載入速度快且能保留原始資料供不同分析使用。
+  tags:
+  - sec-chapter3
+  - sec-elt
+- id: 3006
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料管道 (Data Pipeline)
+  text: 「資料湖 (Data Lake)」通常與哪種資料處理架構相關聯？
+  type: multiple_choice
+  options:
+  - ELT
+  - RDB
+  - ETL
+  - Data Warehouse
+  correct_index: 0
+  explanation: ELT 架構通常將原始資料直接載入資料湖 (Data Lake) 中。
+  tags:
+  - sec-chapter3
+  - sec-elt
+- id: 3007
+  chapter_title: 數據處理生命週期與架構
+  section_title: 批次處理 vs. 串流處理
+  text: 下列哪個場景最適合使用「串流處理 (Streaming Processing)」？
+  type: multiple_choice
+  options:
+  - 歷史資料備份
+  - 年度庫存盤點
+  - 月度銷售報表
+  - 即時信用卡盜刷偵測
+  correct_index: 3
+  explanation: 盜刷偵測需要即時反應，不能等待批次處理的延遲，因此適合串流處理。
+  tags:
+  - sec-chapter3
+  - sec-batch-vs-streaming
+- id: 3008
+  chapter_title: 數據處理生命週期與架構
+  section_title: 批次處理 vs. 串流處理
+  text: 批次處理 (Batch Processing) 的主要缺點是什麼？
+  type: multiple_choice
+  options:
+  - 無法處理大量資料
+  - 計算成本高
+  - 資料有延遲 (Latency)
+  - 技術太複雜
+  correct_index: 2
+  explanation: 批次處理需要累積一段時間的資料才執行，因此無法提供即時數據，會有時間落差。
+  tags:
+  - sec-chapter3
+  - sec-batch-vs-streaming
+- id: 3009
+  chapter_title: 數據處理生命週期與架構
+  section_title: 探索性資料分析 (EDA)
+  text: 下列何者屬於「連續型數值資料」？
+  type: multiple_choice
+  options:
+  - 小孩人數 (1, 2, 3)
+  - 衣服尺寸 (S, M, L)
+  - 血型 (A, B, O)
+  - 身高 (175.5 cm)
+  correct_index: 3
+  explanation: 身高可以取任意小數點的值，屬於連續型資料；小孩人數是離散型；血型和尺寸是類別型。
+  tags:
+  - sec-chapter3
+  - sec-data-types
+- id: 3010
+  chapter_title: 數據處理生命週期與架構
+  section_title: 探索性資料分析 (EDA)
+  text: 對於類別型資料（如顏色：紅、綠、藍），應使用哪種編碼方式避免模型誤解？
+  type: multiple_choice
+  options:
+  - 數值編碼 (1, 2, 3)
+  - 平均數編碼
+  - 獨熱編碼 (One-Hot Encoding)
+  - 刪除該欄位
+  correct_index: 2
+  explanation: 獨熱編碼將每個類別轉換為獨立的二元欄位，避免模型誤以為類別之間有大小順序關係。
+  tags:
+  - sec-chapter3
+  - sec-data-types
+- id: 3011
+  chapter_title: 數據處理生命週期與架構
+  section_title: 統計摘要
+  text: 當資料中存在極端值 (Outliers) 時，哪種集中趨勢指標較為穩健？
+  type: multiple_choice
+  options:
+  - 中位數 (Median)
+  - 標準差 (SD)
+  - 最大值 (Max)
+  - 平均數 (Mean)
+  correct_index: 0
+  explanation: 中位數是排序後位於中間的數值，不受極大或極小值的影響，因此比平均數更穩健。
+  tags:
+  - sec-chapter3
+  - sec-descriptive-statistics
+- id: 3012
+  chapter_title: 數據處理生命週期與架構
+  section_title: 統計摘要
+  text: 標準差 (Standard Deviation) 主要用來衡量資料的什麼特性？
+  type: multiple_choice
+  options:
+  - 偏態
+  - 離散程度 (Dispersion)
+  - 峰度
+  - 集中趨勢
+  correct_index: 1
+  explanation: 標準差衡量數值與平均數的平均距離，反映資料分佈的離散程度或波動性。
+  tags:
+  - sec-chapter3
+  - sec-descriptive-statistics
+- id: 3013
+  chapter_title: 數據處理生命週期與架構
+  section_title: 統計摘要
+  text: 如果一組資料呈現「右偏 (Right Skewed)」，通常意味著什麼？
+  type: multiple_choice
+  options:
+  - 沒有極端值
+  - 平均數 = 中位數
+  - 平均數 < 中位數
+  - 平均數 > 中位數
+  correct_index: 3
+  explanation: 右偏分佈代表長尾巴在右邊（大數值方向），少數極大值會拉高平均數，使其大於中位數。
+  tags:
+  - sec-chapter3
+  - sec-descriptive-statistics
+- id: 3014
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料視覺化
+  text: 若要觀察兩個變數之間的「關聯性」（如身高 vs. 體重），最適合使用哪種圖表？
+  type: multiple_choice
+  options:
+  - 折線圖
+  - 長條圖
+  - 圓餅圖
+  - 散佈圖 (Scatter Plot)
+  correct_index: 3
+  explanation: 散佈圖透過點的分佈位置，能直觀呈現兩個變數之間的相關程度與模式。
+  tags:
+  - sec-chapter3
+  - sec-data-visualization
+- id: 3015
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料視覺化
+  text: 若要觀察單一變數的「分佈情況」（如全校成績分佈），最適合使用哪種圖表？
+  type: multiple_choice
+  options:
+  - 直方圖 (Histogram)
+  - 散佈圖
+  - 圓餅圖
+  - 熱圖
+  correct_index: 0
+  explanation: 直方圖將數值分組並顯示各組的頻率，適合觀察資料的分佈形狀。
+  tags:
+  - sec-chapter3
+  - sec-data-visualization
+- id: 3016
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料清理
+  text: 處理缺失值 (Missing Values) 時，若該欄位對預測很重要且資料量不大，應避免使用哪種方法？
+  type: multiple_choice
+  options:
+  - 直接刪除該列 (Listwise Deletion)
+  - 使用模型預測填補
+  - 插補法 (Imputation)
+  - 使用中位數填補
+  correct_index: 0
+  explanation: 直接刪除會導致寶貴的資料流失，特別是在資料量本來就不多的情況下，應優先考慮插補。
+  tags:
+  - sec-chapter3
+  - sec-missing-values
+- id: 3017
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料清理
+  text: KNN (K-近鄰) 插補法的原理是什麼？
+  type: multiple_choice
+  options:
+  - 用全體眾數填補
+  - 用全體平均數填補
+  - 找特徵最相似的鄰居資料來推估缺失值
+  - 隨機填補
+  correct_index: 2
+  explanation: KNN 插補法透過尋找特徵最相似的 K 個樣本（鄰居），參考它們的數值來填補缺失值，通常比單純平均更精準。
+  tags:
+  - sec-chapter3
+  - sec-missing-values
+- id: 3018
+  chapter_title: 數據處理生命週期與架構
+  section_title: 異常值處理
+  text: 利用 Z-score 偵測異常值時，通常將超過多少個標準差的數值視為異常？
+  type: multiple_choice
+  options:
+  - 1 個
+  - 3 個
+  - 10 個
+  - 2 個
+  correct_index: 1
+  explanation: 在常態分佈下，約 99.7% 的資料會落在平均數正負 3 個標準差內，因此超過 3 個標準差通常被視為異常。
+  tags:
+  - sec-chapter3
+  - sec-outliers
+- id: 3019
+  chapter_title: 數據處理生命週期與架構
+  section_title: 異常值處理
+  text: 「蓋帽法 (Winsorizing)」是如何處理異常值的？
+  type: multiple_choice
+  options:
+  - 取對數轉換
+  - 將超過特定百分位數的值強制設定為該百分位數的值
+  - 直接刪除
+  - 不處理
+  correct_index: 1
+  explanation: 蓋帽法將極端值限制在某個範圍內（如第 99 百分位數），減少其對模型的影響，但保留了部分資訊。
+  tags:
+  - sec-chapter3
+  - sec-outliers
+- id: 3020
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料隱私
+  text: 在處理個資 (PII) 時，「去識別化 (De-identification)」的主要目的是什麼？
+  type: multiple_choice
+  options:
+  - 節省儲存空間
+  - 增加資料的精確度
+  - 提高運算速度
+  - 使資料無法識別特定個人，以保護隱私
+  correct_index: 3
+  explanation: 去識別化透過遮罩、泛化等技術移除或模糊化個資，確保分析過程中無法回溯到特定個人。
+  tags:
+  - sec-chapter3
+  - sec-anonymization
+- id: 3021
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料隱私
+  text: 將「王大明」轉換為「王O明」，屬於哪種隱私保護技術？
+  type: multiple_choice
+  options:
+  - 加密 (Encryption)
+  - 泛化 (Generalization)
+  - 假名化 (Pseudonymization)
+  - 遮罩 (Masking)
+  correct_index: 3
+  explanation: 遮罩技術透過隱藏部分字元來保護隱私，如將名字中間字隱藏。
+  tags:
+  - sec-chapter3
+  - sec-anonymization
+- id: 3022
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料隱私
+  text: 根據個資法，「目的拘束 (Purpose Limitation)」原則是指什麼？
+  type: multiple_choice
+  options:
+  - 資料不能傳輸到國外
+  - 資料只能保存一年
+  - 資料必須加密儲存
+  - 資料只能用於當初聲明的特定目的
+  correct_index: 3
+  explanation: 目的拘束原則要求資料的利用必須限制在蒐集時所告知的特定目的範圍內，不得任意挪作他用。
+  tags:
+  - sec-chapter3
+  - sec-anonymization
+- id: 3023
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料一致性
+  text: 將不同來源的日期格式統一轉換為 `YYYY-MM-DD`，屬於資料清理中的哪個步驟？
+  type: multiple_choice
+  options:
+  - 格式標準化
+  - 異常值處理
+  - 缺失值處理
+  - 去重
+  correct_index: 0
+  explanation: 這是將資料格式統一的過程，稱為格式標準化。
+  tags:
+  - sec-chapter3
+  - sec-consistency
+- id: 3024
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料管道
+  text: 「資料倉儲 (Data Warehouse)」通常存放哪種狀態的資料？
+  type: multiple_choice
+  options:
+  - 暫存的快取資料
+  - 未經處理的原始資料
+  - 經過清洗與轉換的結構化資料
+  - 非結構化的影片檔
+  correct_index: 2
+  explanation: 資料倉儲主要用於存放經過 ETL 流程處理後、乾淨且結構化的歷史資料，供分析使用。
+  tags:
+  - sec-chapter3
+  - sec-etl
+- id: 3025
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料分析層次
+  text: 四分位距 (IQR) 常用於協助偵測什麼？
+  type: multiple_choice
+  options:
+  - 缺失值
+  - 異常值 (Outliers)
+  - 眾數
+  - 平均數
+  correct_index: 1
+  explanation: IQR 是計算 Q3 與 Q1 的差距，常用於定義異常值的上下界限（Box Plot 法）。
+  tags:
+  - sec-chapter3
+  - sec-descriptive-statistics
+- id: 3026
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料類型
+  text: 「滿意度調查（非常滿意、滿意、普通、不滿意）」屬於哪種資料類型？
+  type: multiple_choice
+  options:
+  - 名目型 (Nominal)
+  - 離散型 (Discrete)
+  - 順序型 (Ordinal)
+  - 連續型 (Continuous)
+  correct_index: 2
+  explanation: 滿意度有等級順序關係，但間距不一定相等，屬於順序型類別資料。
+  tags:
+  - sec-chapter3
+  - sec-data-types
+- id: 3027
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料視覺化
+  text: 盒鬚圖 (Box Plot) 無法直接顯示下列哪個統計量？
+  type: multiple_choice
+  options:
+  - 離群值
+  - 四分位數
+  - 中位數
+  - 平均數
+  correct_index: 3
+  explanation: 標準的盒鬚圖顯示的是中位數、四分位數和極值/離群值，平均數通常需要額外標記才看得到。
+  tags:
+  - sec-chapter3
+  - sec-data-visualization
+- id: 3028
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料清理
+  text: 「資料最小化 (Data Minimization)」原則建議企業怎麼做？
+  type: multiple_choice
+  options:
+  - 只保存最近一天的資料
+  - 只蒐集達成目的所必要的最小限度資料
+  - 將資料壓縮到最小
+  - 蒐集越多資料越好
+  correct_index: 1
+  explanation: 為了降低隱私風險，應只蒐集業務執行上真正需要的資料，避免過度蒐集。
+  tags:
+  - sec-chapter3
+  - sec-anonymization
+- id: 3029
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料管道
+  text: NoSQL 資料庫的主要優勢不包括下列何者？
+  type: multiple_choice
+  options:
+  - 靈活的資料結構
+  - 保證 ACID 強一致性
+  - 擴充性強 (Scalable)
+  - 支援非結構化資料
+  correct_index: 1
+  explanation: NoSQL 通常遵循 BASE 模型，犧牲強一致性 (ACID) 以換取高可用性與擴充性。
+  tags:
+  - sec-chapter3
+  - sec-data-types-storage
+- id: 3030
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料管道
+  text: Redis 是一種常見的 NoSQL 資料庫，它主要用於什麼用途？
+  type: multiple_choice
+  options:
+  - 儲存大量影片
+  - 長期封存資料
+  - 快取 (Cache) 與高速存取
+  - 複雜的關聯查詢
+  correct_index: 2
+  explanation: Redis 是基於記憶體的鍵值資料庫，讀寫速度極快，常被用作快取系統。
+  tags:
+  - sec-chapter3
+  - sec-data-types-storage
+- id: 3031
+  chapter_title: 數據處理生命週期與架構
+  section_title: 統計摘要
+  text: 如果平均數遠大於中位數，這組資料的分佈形狀是？
+  type: multiple_choice
+  options:
+  - 右偏 (Right Skewed)
+  - 對稱
+  - 左偏 (Left Skewed)
+  - 雙峰分佈
+  correct_index: 0
+  explanation: 平均數被極大值拉高，導致大於中位數，這是右偏分佈的特徵。
+  tags:
+  - sec-chapter3
+  - sec-descriptive-statistics
+- id: 3032
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料清理
+  text: 對數轉換 (Log Transformation) 常用於處理什麼問題？
+  type: multiple_choice
+  options:
+  - 重複資料
+  - 缺失值
+  - 類別不平衡
+  - 右偏分佈與極端值
+  correct_index: 3
+  explanation: 對數轉換可以壓縮數值範圍，讓右偏分佈（長尾）變得更接近常態分佈，並減輕極端值的影響。
+  tags:
+  - sec-chapter3
+  - sec-outliers
+- id: 3033
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料視覺化
+  text: 熱圖 (Heatmap) 最常用來呈現什麼資訊？
+  type: multiple_choice
+  options:
+  - 時間趨勢
+  - 離群值
+  - 相關係數矩陣
+  - 部分佔整體的比例
+  correct_index: 2
+  explanation: 熱圖利用顏色深淺來表示數值大小，非常適合展示多變數之間的相關係數矩陣。
+  tags:
+  - sec-chapter3
+  - sec-data-visualization
+- id: 3034
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料管道
+  text: SQL 是用於操作哪種資料庫的標準語言？
+  type: multiple_choice
+  options:
+  - 圖形資料庫
+  - 關聯式資料庫 (RDB)
+  - NoSQL
+  - 物件儲存
+  correct_index: 1
+  explanation: SQL (Structured Query Language) 是專門設計用來管理與查詢關聯式資料庫的語言。
+  tags:
+  - sec-chapter3
+  - sec-data-types-storage
+- id: 3035
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料隱私
+  text: 「假名化 (Pseudonymization)」與「匿名化」的主要區別在於？
+  type: multiple_choice
+  options:
+  - 匿名化比較不安全
+  - 兩者完全相同
+  - 假名化完全無法還原
+  - 假名化可透過對照表還原，具可追溯性
+  correct_index: 3
+  explanation: 假名化使用代碼取代個資，但保留了對照表（金鑰），特定權限下可還原；匿名化則是永久去除連結，無法還原。
+  tags:
+  - sec-chapter3
+  - sec-anonymization
+- id: 3036
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料清理
+  text: 下列何者不是處理缺失值的常見策略？
+  type: multiple_choice
+  options:
+  - 保留缺失值並讓模型處理（如果模型支援）
+  - 插補法
+  - 刪除法
+  - 將缺失值全部填為無限大
+  correct_index: 3
+  explanation: 將缺失值填為無限大通常會導致模型運算錯誤或發散，不是合理的處理方式。
+  tags:
+  - sec-chapter3
+  - sec-missing-values
+- id: 3037
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料管道
+  text: Amazon S3 和 Google Cloud Storage 屬於哪種儲存服務？
+  type: multiple_choice
+  options:
+  - 記憶體快取
+  - 區塊鏈儲存
+  - 物件儲存 (Object Storage)
+  - 關聯式資料庫
+  correct_index: 2
+  explanation: 這些服務專門用於儲存大量的非結構化檔案（物件），屬於物件儲存服務。
+  tags:
+  - sec-chapter3
+  - sec-data-types-storage
+- id: 3038
+  chapter_title: 數據處理生命週期與架構
+  section_title: 統計摘要
+  text: 眾數 (Mode) 最適合用於描述哪種資料的集中趨勢？
+  type: multiple_choice
+  options:
+  - 高維度向量
+  - 時間序列
+  - 連續型數值
+  - 類別型資料
+  correct_index: 3
+  explanation: 對於類別型資料（如最受歡迎的顏色、最熱賣的商品），平均數和中位數沒有意義，只能看眾數。
+  tags:
+  - sec-chapter3
+  - sec-descriptive-statistics
+- id: 3039
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料管道
+  text: 「資料沼澤 (Data Swamp)」是指什麼狀況？
+  type: multiple_choice
+  options:
+  - 資料庫淹水
+  - 資料處理速度太快
+  - 資料量太少
+  - 資料湖中的資料缺乏管理與治理，變成垃圾堆
+  correct_index: 3
+  explanation: 當資料湖缺乏適當的 metadata 管理、品質控管和生命週期管理時，就會變成難以使用的資料沼澤。
+  tags:
+  - sec-chapter3
+  - sec-elt
+- id: 3040
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料分析層次
+  text: 貝塞爾校正 (Bessel's Correction) 在計算樣本標準差時，分母為什麼是 n-1？
+  type: multiple_choice
+  options:
+  - 為了方便計算
+  - 為了提供對母體變異數的不偏估計
+  - 這是打字錯誤
+  - 為了讓標準差變小
+  correct_index: 1
+  explanation: 使用 n-1 可以修正樣本變異數傾向於低估母體變異數的偏差，提供不偏估計。
+  tags:
+  - sec-chapter3
+  - sec-descriptive-statistics
+- id: 3051
+  chapter_title: 數據工程與資料處理
+  section_title: 數據類型與儲存
+  text: 若你需要儲存大量的社交媒體貼文、圖片與影片，並希望未來能進行彈性的分析，應選擇哪種儲存方案？
+  type: multiple_choice
+  options:
+  - 資料湖 (Data Lake)，如 Amazon S3
+  - 關聯式資料庫 (RDBMS)，如 MySQL
+  - 記憶體快取 (Redis)
+  - Excel 試算表
+  correct_index: 0
+  explanation: 資料湖適合以原始格式儲存海量的結構化與非結構化數據 (Schema-on-Read)，保留最大的彈性。
+  tags:
+  - sec-ai-chapter3
+  - sec-data-storage
+- id: 3052
+  chapter_title: 數據工程與資料處理
+  section_title: 數據處理流程
+  text: 在現代的大數據架構中，為何 ELT (Extract, Load, Transform) 逐漸取代傳統的 ETL？
+  type: multiple_choice
+  options:
+  - 因為硬碟空間變貴了，必須先轉換再儲存
+  - 因為雲端資料倉儲 (如 BigQuery, Snowflake) 的運算能力大幅提升，先載入再轉換能保留原始數據並加速處理
+  - 因為 ETL 的工具已經停止維護
+  - 因為 ELT 不需要寫程式
+  correct_index: 1
+  explanation: ELT 利用目標端強大的運算資源進行轉換，且保留了原始數據 (Raw Data) 供後續不同用途使用，更具靈活性。
+  tags:
+  - sec-ai-chapter3
+  - sec-data-pipeline
+- id: 3053
+  chapter_title: 數據工程與資料處理
+  section_title: 探索式資料分析 (EDA)
+  text: 在 EDA 階段發現兩個變數高度相關 (Correlation)，我們可以斷定它們有因果關係 (Causation) 嗎？
+  type: multiple_choice
+  options:
+  - 不行，可能存在混淆變數 (Confounding Variable) 或僅是巧合，必須進一步實驗驗證
+  - 可以，只要相關係數大於 0.9
+  - 不行，除非數據量超過一億筆
+  - 可以，相關性即代表因果性
+  correct_index: 0
+  explanation: 「相關不等於因果」是統計學的基本原則。例如「冰淇淋銷量」與「溺水人數」正相關，是因為「夏天」這個共同因素。
+  tags:
+  - sec-ai-chapter3
+  - sec-eda
+- id: 3054
+  chapter_title: 數據工程與資料處理
+  section_title: 數據清洗與品質
+  text: 處理缺失值 (Missing Values) 時，若該欄位缺失比例高達 80%，最安全的處理方式通常是？
+  type: multiple_choice
+  options:
+  - 用平均值填補
+  - 直接刪除該欄位 (Drop Column)
+  - 用機器學習模型預測填補
+  - 用 0 填補
+  correct_index: 1
+  explanation: 當缺失比例過高，填補過多人工數據會引入嚴重偏差，且該特徵可能本身就缺乏資訊價值，刪除是較穩健的選擇。
+  tags:
+  - sec-ai-chapter3
+  - sec-data-cleaning
+- id: 3055
+  chapter_title: 數據工程與資料處理
+  section_title: 數據清洗與品質
+  text: 在偵測異常值 (Outliers) 時，使用 IQR (四分位距) 法比使用 Z-Score 法有什麼優勢？
+  type: multiple_choice
+  options:
+  - IQR 法計算比較簡單
+  - IQR 法可以偵測出更多的異常值
+  - Z-Score 法已經過時了
+  - IQR 法對數據分佈的假設較少，不需要數據符合常態分佈 (Normal Distribution)
+  correct_index: 3
+  explanation: Z-Score 高度依賴平均值與標準差，容易受極端值影響且假設常態分佈；IQR 基於排序位置，對偏態分佈更穩健。
+  tags:
+  - sec-ai-chapter3
+  - sec-data-cleaning
+- id: 3056
+  chapter_title: 數據工程與資料處理
+  section_title: 數據處理流程
+  text: 對於即時詐欺偵測系統，應採用哪種數據處理架構？
+  type: multiple_choice
+  options:
+  - 隨機抽樣處理
+  - 批次處理 (Batch Processing)，每天晚上跑一次
+  - 串流處理 (Streaming Processing)，如 Apache Kafka + Flink
+  - 手動處理，由人工審核每一筆交易
+  correct_index: 2
+  explanation: 詐欺偵測講求毫秒級的反應速度，批次處理的延遲太高，無法在損失發生前攔截。
+  tags:
+  - sec-ai-chapter3
+  - sec-data-pipeline
