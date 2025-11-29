@@ -558,3 +558,143 @@ questions:
     correct_index: 0
     explanation: "Agentic AI 代表 AI 不再只是被動的聊天機器人，而是能主動解決問題的數位勞動力。"
     tags: ["sec-gen-chapter4", "sec-agentic-ai"]
+
+  - id: 4041
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "一個完整的 Agent 架構通常包含哪四大組件？"
+    type: multiple_choice
+    options:
+      - "CPU, RAM, SSD, GPU"
+      - "大腦 (Brain), 規劃 (Planning), 記憶 (Memory), 工具使用 (Tools)"
+      - "輸入, 輸出, 處理, 儲存"
+      - "前端, 後端, 資料庫, API"
+    correct_index: 1
+    explanation: "這是 Agent 架構的標準模型，涵蓋了思考、決策、記憶與行動的能力。"
+    tags: ["sec-gen-chapter4", "sec-agent-architecture"]
+
+  - id: 4042
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "LLM 使用工具的標準機制稱為？"
+    type: multiple_choice
+    options:
+      - "Tool Calling"
+      - "Function Calling (函數呼叫)"
+      - "API Request"
+      - "Web Scraping"
+    correct_index: 1
+    explanation: "Function Calling 允許 LLM 輸出結構化的 JSON 來請求執行特定函數。"
+    tags: ["sec-gen-chapter4", "sec-agent-architecture"]
+
+  - id: 4043
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "Agent 的「自我反思 (Self-Reflection)」能力是指？"
+    type: multiple_choice
+    options:
+      - "照鏡子"
+      - "在執行失敗後，分析原因並修改計畫，而非直接放棄"
+      - "自我複製"
+      - "自我刪除"
+    correct_index: 1
+    explanation: "反思能力讓 Agent 具備從錯誤中學習並自我修正的韌性。"
+    tags: ["sec-gen-chapter4", "sec-agent-architecture"]
+
+  - id: 4044
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "在 Solution Graph 中，若要尋找最短路徑，通常使用哪種搜尋策略？"
+    type: multiple_choice
+    options:
+      - "深度優先搜尋 (DFS)"
+      - "廣度優先搜尋 (BFS)"
+      - "隨機搜尋"
+      - "暴力搜尋"
+    correct_index: 1
+    explanation: "BFS 層層推進，能保證找到起始點到目標點的最短路徑。"
+    tags: ["sec-gen-chapter4", "sec-agent-architecture"]
+
+  - id: 4045
+    chapter_title: "AI 代理人與自動化"
+    section_title: "多代理系統 (MAS)"
+    text: "多代理系統 (Multi-Agent Systems) 常見的挑戰之一是？"
+    type: multiple_choice
+    options:
+      - "Agent 太多導致電腦當機"
+      - "無限循環 (Infinite Loops)，Agent 間互相踢皮球"
+      - "Agent 會吵架"
+      - "Agent 會罷工"
+    correct_index: 1
+    explanation: "若缺乏明確的終止條件或職責劃分，Agent 容易陷入無窮的對話迴圈。"
+    tags: ["sec-gen-chapter4", "sec-multi-agent-systems"]
+
+  - id: 4046
+    chapter_title: "AI 代理人與自動化"
+    section_title: "多代理系統 (MAS)"
+    text: "Microsoft AutoGen 框架的主要特色是？"
+    type: multiple_choice
+    options:
+      - "只能用 C# 開發"
+      - "透過多個 Agent 之間的「對話」來解決問題"
+      - "只支援單一 Agent"
+      - "專注於影像處理"
+    correct_index: 1
+    explanation: "AutoGen 強調 Conversational Programming，讓 Agent 像人類團隊一樣溝通協作。"
+    tags: ["sec-gen-chapter4", "sec-multi-agent-systems"]
+
+  - id: 4047
+    chapter_title: "AI 代理人與自動化"
+    section_title: "多代理系統 (MAS)"
+    text: "CrewAI 框架強調什麼概念？"
+    type: multiple_choice
+    options:
+      - "角色扮演 (Role-Playing) 與團隊運作"
+      - "數學運算"
+      - "網頁爬蟲"
+      - "遊戲開發"
+    correct_index: 0
+    explanation: "CrewAI 將 Agent 視為擁有特定角色、目標與背景故事的團隊成員 (Crew)。"
+    tags: ["sec-gen-chapter4", "sec-multi-agent-systems"]
+
+  - id: 4048
+    chapter_title: "AI 代理人與自動化"
+    section_title: "多代理系統 (MAS)"
+    text: "Microsoft Semantic Kernel 特別適合哪種場景？"
+    type: multiple_choice
+    options:
+      - "兒童教育"
+      - "企業級應用整合，特別是 .NET 生態系"
+      - "手機遊戲"
+      - "繪圖軟體"
+    correct_index: 1
+    explanation: "Semantic Kernel 提供了強大的 SDK，方便將 LLM 整合進現有的企業應用程式中。"
+    tags: ["sec-gen-chapter4", "sec-multi-agent-systems"]
+
+  - id: 4049
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "Agent 與傳統 Chatbot 最大的區別在於？"
+    type: multiple_choice
+    options:
+      - "Agent 會說話"
+      - "Agent 具備感知環境、決策並執行行動 (Action) 的能力"
+      - "Agent 比較貴"
+      - "Agent 只能打字"
+    correct_index: 1
+    explanation: "Chatbot 止於對話，Agent 始於行動。"
+    tags: ["sec-gen-chapter4", "sec-agent-architecture"]
+
+  - id: 4050
+    chapter_title: "AI 代理人與自動化"
+    section_title: "Agent 架構與組件"
+    text: "Agent 的長期記憶通常儲存在哪裡？"
+    type: multiple_choice
+    options:
+      - "RAM"
+      - "向量資料庫 (Vector DB)"
+      - "CPU 快取"
+      - "紙本筆記"
+    correct_index: 1
+    explanation: "向量資料庫能高效儲存與檢索大量的非結構化經驗數據，作為 Agent 的長期記憶。"
+    tags: ["sec-gen-chapter4", "sec-agent-architecture"]

@@ -558,3 +558,143 @@ questions:
     correct_index: 1
     explanation: "預防勝於治療，在源頭阻斷攻擊比事後補救更有效。"
     tags: ["sec-gen-chapter7", "sec-security-ethics"]
+
+  - id: 7041
+    chapter_title: "生成式 AI 的資安、合規與倫理"
+    section_title: "生成式 AI 特有資安威脅"
+    text: "間接提示注入 (Indirect Prompt Injection) 通常發生在什麼情境？"
+    type: multiple_choice
+    options:
+      - "使用者直接輸入惡意指令"
+      - "AI 讀取了包含隱藏惡意指令的外部內容 (如網頁、郵件)"
+      - "駭客入侵伺服器"
+      - "模型訓練失敗"
+    correct_index: 1
+    explanation: "攻擊者將指令埋藏在 AI 可能讀取的外部資料中，當 AI 處理這些資料時就會中招。"
+    tags: ["sec-gen-chapter7", "sec-genai-security-threats"]
+
+  - id: 7042
+    chapter_title: "生成式 AI 的資安、合規與倫理"
+    section_title: "生成式 AI 特有資安威脅"
+    text: "「奶奶漏洞 (Grandma Exploit)」屬於哪種攻擊手法？"
+    type: multiple_choice
+    options:
+      - "DDoS"
+      - "越獄 (Jailbreaking) / 角色扮演"
+      - "SQL Injection"
+      - "XSS"
+    correct_index: 1
+    explanation: "透過設定虛構的情境（如奶奶講故事），誘導模型繞過原本的安全限制。"
+    tags: ["sec-gen-chapter7", "sec-genai-security-threats"]
+
+  - id: 7043
+    chapter_title: "生成式 AI 的資安、合規與倫理"
+    section_title: "生成式 AI 特有資安威脅"
+    text: "模型反轉攻擊 (Model Inversion Attack) 試圖從模型中還原什麼？"
+    type: multiple_choice
+    options:
+      - "模型權重"
+      - "訓練資料中的敏感個資"
+      - "模型架構"
+      - "使用者輸入"
+    correct_index: 1
+    explanation: "攻擊者利用模型對特定輸入的反應，推測出訓練資料中包含的隱私資訊。"
+    tags: ["sec-gen-chapter7", "sec-genai-security-threats"]
+
+  - id: 7044
+    chapter_title: "生成式 AI 的資安、合規與倫理"
+    section_title: "生成式 AI 特有資安威脅"
+    text: "「零留存政策 (Zero-Retention Policy)」的主要目的是？"
+    type: multiple_choice
+    options:
+      - "節省儲存空間"
+      - "保護使用者隱私，確保輸入資料不被保留或用於訓練"
+      - "加快運算速度"
+      - "降低成本"
+    correct_index: 1
+    explanation: "這是企業級 AI 服務的重要承諾，消除企業對於機密外洩的疑慮。"
+    tags: ["sec-gen-chapter7", "sec-genai-security-threats"]
+
+  - id: 7045
+    chapter_title: "生成式 AI 的資安、合規與倫理"
+    section_title: "生成式 AI 特有資安威脅"
+    text: "文字浮水印 (Text Watermarking) 的主要弱點是？"
+    type: multiple_choice
+    options:
+      - "肉眼可見"
+      - "容易透過改寫 (Paraphrasing) 或翻譯而失效"
+      - "計算成本太高"
+      - "無法偵測英文"
+    correct_index: 1
+    explanation: "只要改變了文字的統計分佈（如換句話說），基於詞彙選擇機率的浮水印就會被破壞。"
+    tags: ["sec-gen-chapter7", "sec-genai-security-threats"]
+
+  - id: 7046
+    chapter_title: "生成式 AI 的資安、合規與倫理"
+    section_title: "隱私強化技術 (PETs)"
+    text: "同態加密 (Homomorphic Encryption) 的核心特性是？"
+    type: multiple_choice
+    options:
+      - "加密速度最快"
+      - "允許在加密狀態下直接進行運算，無需解密"
+      - "無法被破解"
+      - "只能加密圖片"
+    correct_index: 1
+    explanation: "這使得資料可以在不暴露原始內容的情況下被外包處理，保護了「使用中」的資料隱私。"
+    tags: ["sec-gen-chapter7", "sec-privacy-enhancing-tech"]
+
+  - id: 7047
+    chapter_title: "生成式 AI 的資安、合規與倫理"
+    section_title: "隱私強化技術 (PETs)"
+    text: "安全多方計算 (SMPC) 解決了什麼經典問題？"
+    type: multiple_choice
+    options:
+      - "雞生蛋問題"
+      - "百萬富翁問題 (Millionaires' Problem)"
+      - "P=NP 問題"
+      - "圖靈測試"
+    correct_index: 1
+    explanation: "即如何在不洩漏各自財產具體數值的前提下，比較誰比較有錢。"
+    tags: ["sec-gen-chapter7", "sec-privacy-enhancing-tech"]
+
+  - id: 7048
+    chapter_title: "生成式 AI 的資安、合規與倫理"
+    section_title: "合規與治理"
+    text: "「內在衝突 (Intrinsic Hallucination)」是指？"
+    type: multiple_choice
+    options:
+      - "模型與使用者吵架"
+      - "生成的內容前後矛盾"
+      - "模型違背事實"
+      - "模型拒絕回答"
+    correct_index: 1
+    explanation: "模型在同一段回答中出現邏輯不一致或自我否定的情況。"
+    tags: ["sec-gen-chapter7", "sec-compliance-governance"]
+
+  - id: 7049
+    chapter_title: "生成式 AI 的資安、合規與倫理"
+    section_title: "合規與治理"
+    text: "輸入護欄 (Input Rail) 的功能不包括？"
+    type: multiple_choice
+    options:
+      - "意圖識別"
+      - "攻擊偵測"
+      - "幻覺檢測"
+      - "個資過濾"
+    correct_index: 2
+    explanation: "幻覺檢測通常是在模型生成回答之後進行的，屬於輸出護欄 (Output Rail)。"
+    tags: ["sec-gen-chapter7", "sec-compliance-governance"]
+
+  - id: 7050
+    chapter_title: "生成式 AI 的資安、合規與倫理"
+    section_title: "合規與治理"
+    text: "為了減少 AI 偏見 (Bias)，可以採取什麼措施？"
+    type: multiple_choice
+    options:
+      - "使用更多偏見數據"
+      - "使用平衡的數據集微調，或透過 RLHF 懲罰歧視性回答"
+      - "禁止 AI 回答問題"
+      - "只使用英文訓練"
+    correct_index: 1
+    explanation: "從數據源頭改善平衡性，以及在訓練過程中引入人類價值觀的反饋，是減輕偏見的有效手段。"
+    tags: ["sec-gen-chapter7", "sec-compliance-governance"]

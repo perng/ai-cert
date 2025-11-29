@@ -558,3 +558,143 @@ questions:
     correct_index: 1
     explanation: "本章探討了如何透過不同的系統架構與優化技術，提升生成式 AI 的實用性與可靠性。"
     tags: ["sec-gen-chapter3", "sec-advanced-rag"]
+
+  - id: 3041
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調 (Fine-tuning) 與優化"
+    text: "RAG (檢索增強生成) 與 Fine-tuning (微調) 的關係最像下列哪種比喻？"
+    type: multiple_choice
+    options:
+      - "RAG 是考前衝刺班，Fine-tuning 是開書考"
+      - "RAG 是開書考，Fine-tuning 是考前衝刺班"
+      - "兩者都是作弊"
+      - "兩者都是體育課"
+    correct_index: 1
+    explanation: "RAG 讓模型在回答時翻閱資料庫（開書考），Fine-tuning 則是透過訓練將知識內化（考前衝刺）。"
+    tags: ["sec-gen-chapter3", "sec-fine-tuning-optimization"]
+
+  - id: 3042
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "RAG 運作原理與架構"
+    text: "向量資料庫 (Vector Database) 與傳統關聯式資料庫最大的不同在於？"
+    type: multiple_choice
+    options:
+      - "只能存數字"
+      - "透過「語意相似度」進行模糊搜尋，而非關鍵字精確比對"
+      - "速度比較慢"
+      - "容量比較小"
+    correct_index: 1
+    explanation: "向量資料庫計算向量間的距離，能找出語意相近的內容，即使關鍵字完全不同。"
+    tags: ["sec-gen-chapter3", "sec-rag-architecture"]
+
+  - id: 3043
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調 (Fine-tuning) 與優化"
+    text: "混合搜尋 (Hybrid Search) 通常結合了哪兩種搜尋方式？"
+    type: multiple_choice
+    options:
+      - "圖片搜尋與文字搜尋"
+      - "關鍵字搜尋 (Keyword Search) 與 向量搜尋 (Vector Search)"
+      - "Google 搜尋與 Bing 搜尋"
+      - "線性搜尋與二元搜尋"
+    correct_index: 1
+    explanation: "混合搜尋兼具關鍵字的精準匹配與向量的語意理解優勢。"
+    tags: ["sec-gen-chapter3", "sec-fine-tuning-optimization"]
+
+  - id: 3044
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調 (Fine-tuning) 與優化"
+    text: "重排序 (Re-ranking) 在 RAG 流程中的作用是？"
+    type: multiple_choice
+    options:
+      - "重新排列資料庫索引"
+      - "對初步檢索出的候選片段進行更精細的評分與排序"
+      - "隨機打亂結果"
+      - "刪除重複資料"
+    correct_index: 1
+    explanation: "Re-ranking 使用更精準的模型（如 Cross-Encoder）從候選名單中挑出最相關的片段給 LLM。"
+    tags: ["sec-gen-chapter3", "sec-fine-tuning-optimization"]
+
+  - id: 3045
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調 (Fine-tuning) 與優化"
+    text: "知識蒸餾 (Knowledge Distillation) 的主要目的是？"
+    type: multiple_choice
+    options:
+      - "讓大模型變更大"
+      - "讓小模型 (Student) 模仿大模型 (Teacher) 的行為，以降低運算成本"
+      - "提煉石油"
+      - "加密模型"
+    correct_index: 1
+    explanation: "透過蒸餾，可以將大模型的智慧轉移到輕量級模型上，適合在邊緣裝置運行。"
+    tags: ["sec-gen-chapter3", "sec-fine-tuning-optimization"]
+
+  - id: 3046
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "Model Context Protocol (MCP)"
+    text: "MCP (Model Context Protocol) 被比喻為 AI 界的什麼？"
+    type: multiple_choice
+    options:
+      - "USB-C 接口"
+      - "藍牙耳機"
+      - "無線充電"
+      - "電源開關"
+    correct_index: 0
+    explanation: "MCP 旨在標準化 AI 與外部資料源的連接，就像 USB-C 統一了各種裝置的連接介面。"
+    tags: ["sec-gen-chapter3", "sec-mcp"]
+
+  - id: 3047
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "Model Context Protocol (MCP)"
+    text: "MCP 定義的三大核心原語 (Primitives) 不包含下列何者？"
+    type: multiple_choice
+    options:
+      - "資源 (Resources)"
+      - "提示 (Prompts)"
+      - "工具 (Tools)"
+      - "模型 (Models)"
+    correct_index: 3
+    explanation: "MCP 的核心原語是 Resources (讀取資料)、Prompts (預設指令) 和 Tools (執行動作)。"
+    tags: ["sec-gen-chapter3", "sec-mcp"]
+
+  - id: 3048
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "RAG 運作原理與架構"
+    text: "在 RAG 流程中，為什麼需要進行「文件切塊 (Chunking)」？"
+    type: multiple_choice
+    options:
+      - "為了節省硬碟空間"
+      - "因為 LLM 的 Context Window 有限，且過長的文本會稀釋語意"
+      - "為了加密文件"
+      - "為了增加文件數量"
+    correct_index: 1
+    explanation: "切塊能確保檢索到的內容精確且不超過模型的處理上限。"
+    tags: ["sec-gen-chapter3", "sec-rag-architecture"]
+
+  - id: 3049
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調 (Fine-tuning) 與優化"
+    text: "相較於 RAG，Fine-tuning 的一個主要缺點是？"
+    type: multiple_choice
+    options:
+      - "回答速度慢"
+      - "知識更新成本高且時效性低"
+      - "無法理解中文"
+      - "只能處理圖片"
+    correct_index: 1
+    explanation: "Fine-tuning 需要重新訓練才能學到新知識，不如 RAG 更新資料庫那樣即時且低成本。"
+    tags: ["sec-gen-chapter3", "sec-fine-tuning-optimization"]
+
+  - id: 3050
+    chapter_title: "進階 RAG 與系統架構"
+    section_title: "模型微調 (Fine-tuning) 與優化"
+    text: "查詢轉換 (Query Transformation) 的作用是？"
+    type: multiple_choice
+    options:
+      - "將使用者的問題翻譯成英文"
+      - "利用 LLM 改寫或優化使用者的原始問題，以提升檢索效果"
+      - "將問題轉換為 SQL"
+      - "刪除使用者的問題"
+    correct_index: 1
+    explanation: "使用者的提問往往模糊或不完整，透過 LLM 改寫可以產生更適合檢索的關鍵字或語句。"
+    tags: ["sec-gen-chapter3", "sec-fine-tuning-optimization"]

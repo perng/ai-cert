@@ -558,3 +558,143 @@ questions:
     correct_index: 2
     explanation: "Token 是模型理解文本的最小單位，其切分方式取決於分詞器，且不同語言的 Token/字數比例不同。"
     tags: ["sec-gen-chapter1", "sec-gen-ai-models"]
+
+  - id: 1041
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "Transformer 核心機制"
+    text: "Transformer 模型使用什麼機制來解決長距離依賴 (Long-term Dependency) 的問題？"
+    type: multiple_choice
+    options:
+      - "卷積神經網路 (CNN)"
+      - "自注意力機制 (Self-Attention)"
+      - "遞歸神經網路 (RNN)"
+      - "池化層 (Pooling)"
+    correct_index: 1
+    explanation: "自注意力機制允許模型直接關注序列中的任何位置，無論距離多遠，從而有效捕捉長距離依賴關係。"
+    tags: ["sec-gen-chapter1", "sec-transformer-core"]
+
+  - id: 1042
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "Transformer 核心機制"
+    text: "為什麼 Transformer 需要位置編碼 (Positional Encoding)？"
+    type: multiple_choice
+    options:
+      - "為了增加模型的參數量"
+      - "因為模型是並行處理，本身無法識別輸入序列的順序"
+      - "為了加密輸入資料"
+      - "為了壓縮輸入資料"
+    correct_index: 1
+    explanation: "Transformer 並行處理所有輸入 Token，缺乏像 RNN 那樣的順序處理機制，因此需要額外的位置編碼來標記順序。"
+    tags: ["sec-gen-chapter1", "sec-transformer-core"]
+
+  - id: 1043
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "LLM 訓練生命週期"
+    text: "在 LLM 預訓練 (Pre-training) 階段，通常使用什麼學習方法？"
+    type: multiple_choice
+    options:
+      - "監督式學習 (Supervised Learning)"
+      - "自監督學習 (Self-Supervised Learning)"
+      - "強化學習 (Reinforcement Learning)"
+      - "非監督式學習 (Unsupervised Learning)"
+    correct_index: 1
+    explanation: "預訓練階段通常使用自監督學習，例如透過遮罩語言模型 (Masked Language Modeling) 或下一個詞預測，利用海量無標籤文本進行訓練。"
+    tags: ["sec-gen-chapter1", "sec-llm-lifecycle"]
+
+  - id: 1044
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "LLM 訓練生命週期"
+    text: "RLHF (人類回饋強化學習) 中的「獎勵模型 (Reward Model)」主要功能是什麼？"
+    type: multiple_choice
+    options:
+      - "生成高品質的文本"
+      - "模擬人類的喜好，對模型的回答進行評分"
+      - "將文本轉換為向量"
+      - "壓縮模型大小"
+    correct_index: 1
+    explanation: "獎勵模型是根據人類標註的排序資料訓練出來的，用來預測人類會給模型的回答打幾分，作為強化學習的獎勵訊號。"
+    tags: ["sec-gen-chapter1", "sec-llm-lifecycle"]
+
+  - id: 1045
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "模型參數與控制"
+    text: "關於 Beam Search (束搜尋) 的敘述，下列何者正確？"
+    type: multiple_choice
+    options:
+      - "每次只選擇機率最高的一個字"
+      - "速度比 Greedy Search 快"
+      - "同時保留多條可能的路徑，最終選擇總分最高的"
+      - "生成的內容通常比 Sampling 方法更具多樣性"
+    correct_index: 2
+    explanation: "Beam Search 會在每一步保留前 N 個 (Beam Width) 最可能的路徑，能找到比 Greedy Search 更好的解，但計算量較大。"
+    tags: ["sec-gen-chapter1", "sec-model-params"]
+
+  - id: 1046
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "模型參數與控制"
+    text: "Top-K Sampling 的運作方式是？"
+    type: multiple_choice
+    options:
+      - "從機率最高的 K 個 Token 中進行抽樣"
+      - "從累積機率達到 K 的 Token 中抽樣"
+      - "選擇第 K 個 Token"
+      - "刪除前 K 個 Token"
+    correct_index: 0
+    explanation: "Top-K Sampling 強制模型只能從機率排名前 K 的候選字中選擇，過濾掉機率過低的選項。"
+    tags: ["sec-gen-chapter1", "sec-model-params"]
+
+  - id: 1047
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "LLM 訓練生命週期"
+    text: "哪一個階段的訓練讓模型學會了「聽懂指令」？"
+    type: multiple_choice
+    options:
+      - "預訓練 (Pre-training)"
+      - "監督式微調 (SFT)"
+      - "人類回饋強化學習 (RLHF)"
+      - "推論 (Inference)"
+    correct_index: 1
+    explanation: "監督式微調 (SFT) 使用「指令-回答」對進行訓練，讓模型學會根據使用者的指令生成回應。"
+    tags: ["sec-gen-chapter1", "sec-llm-lifecycle"]
+
+  - id: 1048
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "Transformer 架構變體"
+    text: "下列哪種模型架構最類似於「閱讀測驗高手」？"
+    type: multiple_choice
+    options:
+      - "Encoder-only"
+      - "Decoder-only"
+      - "Encoder-Decoder"
+      - "GAN"
+    correct_index: 0
+    explanation: "Encoder-only 模型 (如 BERT) 擅長理解整段文本的語意，適合做分類、問答等理解型任務，就像閱讀測驗高手。"
+    tags: ["sec-gen-chapter1", "sec-transformer-variants"]
+
+  - id: 1049
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "模型參數與控制"
+    text: "Greedy Search (貪婪搜尋) 的主要缺點是什麼？"
+    type: multiple_choice
+    options:
+      - "計算速度太慢"
+      - "容易陷入局部最佳解，導致生成的句子重複或缺乏創意"
+      - "需要大量的記憶體"
+      - "無法生成中文"
+    correct_index: 1
+    explanation: "Greedy Search 每次只看眼前機率最高的字，缺乏長遠規劃，容易生成重複或枯燥的內容。"
+    tags: ["sec-gen-chapter1", "sec-model-params"]
+
+  - id: 1050
+    chapter_title: "生成式 AI 模型架構與機制"
+    section_title: "模型參數與控制"
+    text: "如果希望模型生成的內容非常穩定且可預測，應該如何設定參數？"
+    type: multiple_choice
+    options:
+      - "高 Temperature, 高 Top-P"
+      - "低 Temperature, 低 Top-P"
+      - "高 Temperature, 低 Top-P"
+      - "低 Temperature, 高 Top-P"
+    correct_index: 1
+    explanation: "降低 Temperature 和 Top-P 都會減少隨機性，迫使模型選擇機率最高的詞彙，使輸出趨於穩定。"
+    tags: ["sec-gen-chapter1", "sec-model-params"]

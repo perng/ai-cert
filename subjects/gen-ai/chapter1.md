@@ -31,7 +31,7 @@ Transformer 的強大來自於其獨特的設計，摒棄了傳統 RNN 的循環
 
 Transformer 模型自 2017 年問世以來，已成為自然語言處理 (NLP) 的基石。根據其架構的不同部分，主要可以分為三大類：
 
-![Transformer 架構變體](images/transformer_architectures.png)
+![Transformer 架構變體](images/transformer_architectures.webp)
 
 ### 1. Encoder-only (編碼器模型) {.unnumbered}
 這類模型只使用了 Transformer 的編碼器部分。它們透過**雙向注意力機制 (Bidirectional Attention)** 同時關注上下文，因此非常擅長理解語意。
@@ -100,7 +100,7 @@ Transformer 模型自 2017 年問世以來，已成為自然語言處理 (NLP) �
 ### 1. 溫度 (Temperature) {.unnumbered}
 溫度參數控制了模型在選擇下一個 Token 時的**隨機性 (Randomness)**。
 
-![AI 溫度](images/ai_temperature.png)
+![AI 溫度](images/ai_temperature.webp)
 
 *   **低溫 (0.1 - 0.3)**：
     *   **效果**：模型會傾向選擇機率最高的 Token。輸出非常穩定、確定性高，幾乎每次跑結果都一樣。
@@ -123,7 +123,7 @@ Transformer 模型自 2017 年問世以來，已成為自然語言處理 (NLP) �
 
 ### 4. Token (詞元) 與 Context (上下文) {.unnumbered}
 
-![Token](images/token.png)
+![Token](images/token.webp)
 
 *   **Token (詞元)**：
     *   LLM 看不懂中文字或英文字母，它看的是 Token。
@@ -132,7 +132,7 @@ Transformer 模型自 2017 年問世以來，已成為自然語言處理 (NLP) �
         *   中文：通常 1 個中文字 $\approx$ 1.5 ~ 2 個 Token (取決於分詞器)。
     *   *考點*：API 計費通常是以 Token 數計算，包含輸入 (Prompt) 和輸出 (Completion)。
 
-![Context Window](images/context_window.png)
+![Context Window](images/context_window.webp)
 
 *   **Context Window (上下文窗口)**：
     *   **定義**：模型一次能「記住」的最大 Token 數量 (包含輸入 + 輸出)。

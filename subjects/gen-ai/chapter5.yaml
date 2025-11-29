@@ -558,3 +558,143 @@ questions:
     correct_index: 1
     explanation: "Replit Agent 能快速將想法轉化為可運行的原型，非常適合驗證創意或構建小型應用。"
     tags: ["sec-gen-chapter5", "sec-no-code-low-code"]
+
+  - id: 5041
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "平台特性與選擇"
+    text: "No Code (無程式碼) 平台的主要目標客群通常是？"
+    type: multiple_choice
+    options:
+      - "資深後端工程師"
+      - "非技術人員 (Citizen Developers)、行銷、PM"
+      - "系統架構師"
+      - "駭客"
+    correct_index: 1
+    explanation: "No Code 旨在賦能不懂程式碼的人員，透過圖形化介面也能構建應用程式。"
+    tags: ["sec-gen-chapter5", "sec-platform-characteristics"]
+
+  - id: 5042
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具"
+    text: "AI-Native IDE (如 Cursor) 與傳統 IDE 外掛最大的不同在於？"
+    type: multiple_choice
+    options:
+      - "比較便宜"
+      - "會建立專案的 AST 與向量索引，能理解整個 Codebase 的上下文"
+      - "只能寫 Python"
+      - "沒有語法高亮"
+    correct_index: 1
+    explanation: "AI-Native IDE 從底層整合 AI，能跨檔案理解專案結構，而非僅限於當前編輯的檔案。"
+    tags: ["sec-gen-chapter5", "sec-ai-tools"]
+
+  - id: 5043
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具"
+    text: "Cursor 編輯器的 Codebase RAG 功能主要用途是？"
+    type: multiple_choice
+    options:
+      - "自動上色"
+      - "讓 AI 參考整個專案的程式碼風格與架構來回答問題"
+      - "刪除多餘程式碼"
+      - "編譯程式碼"
+    correct_index: 1
+    explanation: "透過索引整個專案，Cursor 能給出符合現有架構與規範的建議，而非通用的範例代碼。"
+    tags: ["sec-gen-chapter5", "sec-ai-tools"]
+
+  - id: 5044
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具"
+    text: "Windsurf 編輯器強調的 \"Flow\" 範式是指？"
+    type: multiple_choice
+    options:
+      - "水流冷卻系統"
+      - "Agent 主動監控開發行為並預測下一步，提供無縫協助"
+      - "強制休息提醒"
+      - "音樂播放功能"
+    correct_index: 1
+    explanation: "Flow 範式強調 AI 與開發者的無縫協作，AI 不再被動等待指令，而是主動預判需求。"
+    tags: ["sec-gen-chapter5", "sec-ai-tools"]
+
+  - id: 5045
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具"
+    text: "Google Antigravity IDE 的核心設計理念是？"
+    type: multiple_choice
+    options:
+      - "Agent-first，強調多 Agent 協作與可驗證性 (Verifiability)"
+      - "Mobile-first"
+      - "Offline-first"
+      - "No-code only"
+    correct_index: 0
+    explanation: "Antigravity 讓使用者指揮多個 Agent 進行自主規劃與實作，並提供 Artifacts 供驗證。"
+    tags: ["sec-gen-chapter5", "sec-ai-tools"]
+
+  - id: 5046
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具"
+    text: "Replit Agent 的主要功能是？"
+    type: multiple_choice
+    options:
+      - "聊天機器人"
+      - "根據自然語言描述，自動規劃、撰寫並部署應用程式"
+      - "雲端儲存"
+      - "版本控制"
+    correct_index: 1
+    explanation: "Replit Agent 降低了開發門檻，讓使用者只需描述想法，AI 就能完成從開發到部署的全流程。"
+    tags: ["sec-gen-chapter5", "sec-ai-tools"]
+
+  - id: 5047
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具"
+    text: "n8n 是一個什麼樣的工具？"
+    type: multiple_choice
+    options:
+      - "繪圖軟體"
+      - "工作流自動化工具，可串接 LLM 與外部服務"
+      - "防毒軟體"
+      - "作業系統"
+    correct_index: 1
+    explanation: "n8n 透過節點串接不同服務 (如 Gmail, Slack, LLM)，實現辦公流程自動化。"
+    tags: ["sec-gen-chapter5", "sec-ai-tools"]
+
+  - id: 5048
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "熱門 AI 開發與 No/Low Code 工具"
+    text: "ComfyUI 主要是為了哪個 AI 模型設計的節點式介面？"
+    type: multiple_choice
+    options:
+      - "GPT-4"
+      - "Stable Diffusion"
+      - "BERT"
+      - "Llama 3"
+    correct_index: 1
+    explanation: "ComfyUI 讓使用者能以節點方式精細控制 Stable Diffusion 的圖像生成流程。"
+    tags: ["sec-gen-chapter5", "sec-ai-tools"]
+
+  - id: 5049
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "整合策略與風險"
+    text: "「影子 IT (Shadow IT)」帶來的風險不包括？"
+    type: multiple_choice
+    options:
+      - "資安漏洞"
+      - "資料孤島"
+      - "系統缺乏維護"
+      - "提升 IT 部門權力"
+    correct_index: 3
+    explanation: "影子 IT 通常發生在 IT 部門管轄之外，削弱了 IT 的管控能力，而非提升。"
+    tags: ["sec-gen-chapter5", "sec-integration-risks"]
+
+  - id: 5050
+    chapter_title: "No Code / Low Code 平台與 AI 開發工具"
+    section_title: "整合策略與風險"
+    text: "利用 AI 生成 Boilerplate Code (樣板程式碼) 的好處是？"
+    type: multiple_choice
+    options:
+      - "完全取代工程師"
+      - "節省撰寫重複性高、結構化程式碼的時間"
+      - "保證程式碼無 Bug"
+      - "增加程式碼複雜度"
+    correct_index: 1
+    explanation: "AI 非常擅長生成標準化、重複性的代碼，讓開發者能專注於核心邏輯。"
+    tags: ["sec-gen-chapter5", "sec-integration-risks"]

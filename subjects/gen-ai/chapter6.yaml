@@ -558,3 +558,143 @@ questions:
     correct_index: 1
     explanation: "高品質的資料是模型效能的基礎，Garbage In Garbage Out。"
     tags: ["sec-gen-chapter6", "sec-project-planning"]
+
+  - id: 6041
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "導入流程與策略"
+    text: "使用雲端 API (如 GPT-4) 的主要缺點是？"
+    type: multiple_choice
+    options:
+      - "模型能力太弱"
+      - "資料需傳出企業，且長期成本可能較高"
+      - "建置速度慢"
+      - "需要購買 GPU"
+    correct_index: 1
+    explanation: "雲端 API 涉及資料傳輸與按量計費，對於高隱私或高用量的場景可能不適用。"
+    tags: ["sec-gen-chapter6", "sec-implementation-strategy"]
+
+  - id: 6042
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "導入流程與策略"
+    text: "本地部署 (Local Deployment) 的最大優勢是？"
+    type: multiple_choice
+    options:
+      - "成本最低"
+      - "資料隱私最高，且可完全掌控模型"
+      - "不需要維護"
+      - "模型一定最強"
+    correct_index: 1
+    explanation: "資料完全保留在企業內部網路，消除了外洩給第三方的風險。"
+    tags: ["sec-gen-chapter6", "sec-implementation-strategy"]
+
+  - id: 6043
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "導入流程與策略"
+    text: "模型量化 (Quantization) 到 INT4 的主要目的是？"
+    type: multiple_choice
+    options:
+      - "提高模型準確度"
+      - "降低記憶體佔用與加速運算，讓消費級硬體也能跑大模型"
+      - "增加模型參數量"
+      - "加密模型"
+    correct_index: 1
+    explanation: "量化透過降低數值精度來大幅減少資源需求，是本地部署的關鍵技術。"
+    tags: ["sec-gen-chapter6", "sec-implementation-strategy"]
+
+  - id: 6044
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "導入流程與策略"
+    text: "Flash Attention 技術主要解決了什麼問題？"
+    type: multiple_choice
+    options:
+      - "模型訓練太慢"
+      - "長文本處理時的記憶體存取瓶頸，顯著提升速度"
+      - "硬碟容量不足"
+      - "網路延遲"
+    correct_index: 1
+    explanation: "Flash Attention 優化了 GPU 記憶體讀寫模式，大幅加速了 Attention 機制的計算。"
+    tags: ["sec-gen-chapter6", "sec-implementation-strategy"]
+
+  - id: 6045
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "投資效益評估 (ROI Analysis)"
+    text: "投資回報率 (ROI) 的計算公式是？"
+    type: multiple_choice
+    options:
+      - "(總效益 - 總成本) / 總成本"
+      - "總成本 / 總效益"
+      - "總效益 + 總成本"
+      - "總效益 * 總成本"
+    correct_index: 0
+    explanation: "這是評估投資效益最基本的財務指標。"
+    tags: ["sec-gen-chapter6", "sec-roi-analysis"]
+
+  - id: 6046
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "效能評估指標"
+    text: "在 RAGAS 評估框架中，Context Recall (召回率) 衡量的是？"
+    type: multiple_choice
+    options:
+      - "檢索速度"
+      - "所有相關的內容中，有多少被成功檢索到了"
+      - "檢索到的內容有多少是相關的"
+      - "生成的回答是否通順"
+    correct_index: 1
+    explanation: "召回率關注的是「有沒有漏掉」重要資訊。"
+    tags: ["sec-gen-chapter6", "sec-performance-metrics"]
+
+  - id: 6047
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "效能評估指標"
+    text: "在 RAGAS 評估框架中，Faithfulness (忠實度) 衡量的是？"
+    type: multiple_choice
+    options:
+      - "回答是否有趣"
+      - "生成的回答是否完全基於檢索到的內容 (有無幻覺)"
+      - "回答是否解決使用者問題"
+      - "檢索速度"
+    correct_index: 1
+    explanation: "忠實度檢查模型是否「看圖說故事」，沒有憑空捏造檢索內容中不存在的資訊。"
+    tags: ["sec-gen-chapter6", "sec-performance-metrics"]
+
+  - id: 6048
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "效能評估指標"
+    text: "TTFT (Time to First Token) 指標直接影響的是？"
+    type: multiple_choice
+    options:
+      - "模型準確度"
+      - "使用者體驗 (感知延遲)"
+      - "硬體成本"
+      - "網路頻寬"
+    correct_index: 1
+    explanation: "使用者越快看到第一個字，感覺系統越流暢，等待的焦慮感越低。"
+    tags: ["sec-gen-chapter6", "sec-performance-metrics"]
+
+  - id: 6049
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "效能評估指標"
+    text: "LLM-as-a-Judge 的概念是？"
+    type: multiple_choice
+    options:
+      - "讓人類當法官"
+      - "使用更強的模型 (如 GPT-4) 來評估其他模型的表現"
+      - "用 AI 取代法官"
+      - "隨機評分"
+    correct_index: 1
+    explanation: "利用強大模型的判斷力來自動化評估過程，比人工評估更高效且具備一定的一致性。"
+    tags: ["sec-gen-chapter6", "sec-performance-metrics"]
+
+  - id: 6050
+    chapter_title: "生成式 AI 專案管理與評估"
+    section_title: "效能評估指標"
+    text: "紅隊演練 (Red Teaming) 的目的是？"
+    type: multiple_choice
+    options:
+      - "慶祝專案成功"
+      - "模擬攻擊者的行為，找出模型的安全漏洞與有害輸出"
+      - "訓練模型寫程式"
+      - "增加模型速度"
+    correct_index: 1
+    explanation: "透過主動攻擊測試，提前發現並修補潛在的安全風險。"
+    tags: ["sec-gen-chapter6", "sec-performance-metrics"]

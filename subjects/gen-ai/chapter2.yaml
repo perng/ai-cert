@@ -558,3 +558,143 @@ questions:
     correct_index: 1
     explanation: "進階提示工程旨在透過結構化、策略性的引導，解決 Zero-shot 無法處理的複雜問題。"
     tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2041
+    chapter_title: "進階提示工程"
+    section_title: "進階提示策略"
+    text: "ReAct 框架的核心概念是結合了哪兩個部分？"
+    type: multiple_choice
+    options:
+      - "閱讀 (Reading) 與 寫作 (Acting)"
+      - "推理 (Reasoning) 與 行動 (Acting)"
+      - "回憶 (Recalling) 與 啟動 (Activating)"
+      - "重複 (Repeating) 與 行動 (Acting)"
+    correct_index: 1
+    explanation: "ReAct 代表 Reasoning + Acting，讓模型在執行行動前先進行推理思考。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2042
+    chapter_title: "進階提示工程"
+    section_title: "進階提示策略"
+    text: "ReAct 框架常被比喻為？"
+    type: multiple_choice
+    options:
+      - "只會讀書的學生"
+      - "邊試味邊調味的廚師"
+      - "只會跑步的運動員"
+      - "只會畫畫的畫家"
+    correct_index: 1
+    explanation: "廚師試味（觀察）後決定加鹽（行動），這是一個典型的推理與行動循環。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2043
+    chapter_title: "進階提示工程"
+    section_title: "進階提示策略"
+    text: "思維樹 (ToT) 相比於思維鏈 (CoT)，多了什麼機制？"
+    type: multiple_choice
+    options:
+      - "只能線性思考"
+      - "探索多種可能性與回溯 (Backtracking)"
+      - "完全隨機生成"
+      - "禁止使用邏輯"
+    correct_index: 1
+    explanation: "ToT 允許模型在思維過程中探索不同分支，並在發現錯誤時回溯，適合解決複雜問題。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2044
+    chapter_title: "進階提示工程"
+    section_title: "進階提示策略"
+    text: "要觸發 Zero-shot CoT，只需要在 Prompt 加上哪句話？"
+    type: multiple_choice
+    options:
+      - "Hello AI"
+      - "Let's think step by step (請一步一步思考)"
+      - "Give me the answer directly"
+      - "Ignore previous instructions"
+    correct_index: 1
+    explanation: "這句魔法咒語能引導模型展現出推理過程，顯著提升邏輯題的準確率。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2045
+    chapter_title: "進階提示工程"
+    section_title: "提示攻擊與防禦"
+    text: "「三明治防禦 (Sandwich Defense)」是指？"
+    type: multiple_choice
+    options:
+      - "請模型吃三明治"
+      - "在 Prompt 的開頭和結尾都加上防禦指令"
+      - "只在中間加防禦指令"
+      - "使用三層加密"
+    correct_index: 1
+    explanation: "透過前後包夾的方式，確保無論使用者輸入什麼，模型最後都會看到安全指令。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2046
+    chapter_title: "進階提示工程"
+    section_title: "自動化與優化技術"
+    text: "APE (自動提示工程) 在哪種情況下效果可能不如人類專家？"
+    type: multiple_choice
+    options:
+      - "簡單的分類任務"
+      - "涉及圖資料或超長上下文的複雜任務"
+      - "翻譯任務"
+      - "摘要任務"
+    correct_index: 1
+    explanation: "對於需要高度結構化理解或全局觀的任務，人類專家的直覺與經驗往往優於自動生成的 Prompt。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2047
+    chapter_title: "進階提示工程"
+    section_title: "自動化與優化技術"
+    text: "將重要指令放在 Prompt 結尾是利用了模型的什麼特性？"
+    type: multiple_choice
+    options:
+      - "近因偏差 (Recency Bias)"
+      - "首因效應"
+      - "隨機性"
+      - "遺忘曲線"
+    correct_index: 0
+    explanation: "模型往往對最近看到（最後出現）的資訊印象最深刻。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2048
+    chapter_title: "進階提示工程"
+    section_title: "進階提示策略"
+    text: "Persona Prompting 之所以有效，是因為它引導模型定位到了？"
+    type: multiple_choice
+    options:
+      - "記憶體位址"
+      - "潛在空間 (Latent Space) 中與該角色相關的區域"
+      - "網際網路"
+      - "硬碟磁區"
+    correct_index: 1
+    explanation: "透過角色設定，模型能更精準地調用與該角色相關的訓練資料分佈。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2049
+    chapter_title: "進階提示工程"
+    section_title: "進階提示策略"
+    text: "與 CoT 相比，Graph Prompting 更強調？"
+    type: multiple_choice
+    options:
+      - "線性邏輯"
+      - "非線性結構與關係分析"
+      - "快速生成"
+      - "簡短回答"
+    correct_index: 1
+    explanation: "Graph Prompting 專注於處理節點間的複雜連接關係，而非單純的線性步驟。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]
+
+  - id: 2050
+    chapter_title: "進階提示工程"
+    section_title: "提示攻擊與防禦"
+    text: "Prompt Injection 攻擊成功的最嚴重後果之一是？"
+    type: multiple_choice
+    options:
+      - "模型變慢"
+      - "洩漏系統原本的 Prompt (可能包含商業機密)"
+      - "模型變聰明"
+      - "使用者斷線"
+    correct_index: 1
+    explanation: "攻擊者可能誘導模型輸出其 System Prompt，導致企業的智慧財產權外洩。"
+    tags: ["sec-gen-chapter2", "sec-advanced-prompt"]

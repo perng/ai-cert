@@ -30,7 +30,6 @@ label: sec-gen-chapter2
 ### 2. 思維鏈 (Chain of Thought, CoT) {.unnumbered}
 這是提示工程中最具里程碑意義的技術之一，它讓 LLM 展現出驚人的邏輯推理能力。
 
-![Chain of Thought](images/chain_of_thought.webp) 
 
 *   **核心概念**：在 Prompt 中引導模型「一步一步地思考」(Let's think step by step)，將一個複雜問題拆解成多個簡單的邏輯步驟。
 *   **類比**：就像小學數學考試，老師要求你「寫出計算過程」，而不只是寫最後答案。寫出過程不僅能幫助你釐清思緒，也能讓老師（使用者）更容易除錯。
@@ -39,10 +38,12 @@ label: sec-gen-chapter2
     *   *CoT*：「Roger 一開始有 5 顆。2 罐網球等於 2 * 3 = 6 顆。5 + 6 = 11。所以答案是 11 顆。」
 *   **Zero-shot CoT**：即使不給範例，只要在句尾加上「**請一步一步思考 (Let's think step by step)**」，往往就能觸發模型的推理能力。
 
+![Chain of Thought](images/chain_of_thought.webp) 
+
+
 ### 3. 思維樹 (Tree of Thoughts, ToT) {.unnumbered}
 當問題非常複雜，需要探索多種可能性，甚至需要「反悔」或「回溯」時，線性的 CoT 就不夠用了。
 
-![Tree of Thoughts](images/tree_of_thoughts.webp)
 
 *   **核心概念**：讓模型在思維過程的每一步都產生多個可能的方案（分支），並評估每個方案的可行性。如果發現某條路走不通，就回溯並嘗試另一條路。
 *   **類比**：
@@ -53,6 +54,7 @@ label: sec-gen-chapter2
     2.  **生成 (Generation)**：在每一步生成多個候選想法。
     3.  **評估 (Evaluation)**：評估這些想法的好壞。
     4.  **搜尋 (Search)**：使用 BFS (廣度優先搜尋) 或 DFS (深度優先搜尋) 找出最佳路徑。
+![Tree of Thoughts](images/tree_of_thoughts.webp)
 
 ### 4. 圖提示 (Graph Prompting) {.unnumbered}
 傳統的 CoT (思維鏈) 是線性的 (Step 1 -> Step 2 -> Step 3)。但在處理複雜關係（如社交網絡、知識圖譜、分子結構）時，線性思考往往不足。
@@ -71,13 +73,14 @@ label: sec-gen-chapter2
 ### 5. ReAct (Reasoning + Acting) {.unnumbered}
 LLM 本身是靜態的，它只有訓練時期的知識。ReAct 框架讓 LLM 能夠「手腳並用」，與外部世界互動。
 
-![ReAct Framework](images/react_framework.webp)
 
 *   **核心概念**：結合 **推理 (Reasoning)** 與 **行動 (Acting)**。模型先思考要做什麼，然後執行行動（如搜尋 Google、查詢資料庫），觀察行動的結果，再根據結果進行下一步推理。
 *   **類比**：
     *   **廚師試味**：廚師嚐了一口湯（Action/Observation），覺得太淡了（Reasoning），決定加鹽（Action），再嚐一口（Observation）。
     *   **偵探辦案**：偵探發現線索（Observation），推測嫌疑犯在倉庫（Reasoning），前往倉庫搜查（Action）。
 *   **重要性**：這是 Agent (代理人) 技術的基礎，讓 AI 不再只是聊天機器人，而是能幫你買票、訂房、分析即時股價的助手。
+
+![ReAct Framework](images/react_framework.webp)
 
 ## 自動化與優化技術 {#sec-automation-optimization}
 

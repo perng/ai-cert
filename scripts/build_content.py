@@ -128,7 +128,7 @@ def process_chapter(md_file, questions_map, image_output_dir=None,
             if src and not src.startswith(('http', 'https', 'data:')):
                 # Resolve source path (relative to the markdown file)
                 # Quarto usually keeps relative paths. 
-                # e.g. src="images/fig1.png" -> md_file.parent / "images" / "fig1.png"
+                # e.g. src="images/fig1.webp" -> md_file.parent / "images" / "fig1.webp"
                 img_source_path = (md_file.parent / src).resolve()
                 
                 if img_source_path.exists():
