@@ -15,20 +15,30 @@ label: sec-gen-chapter4
 ### 1. 核心模組 {.unnumbered}
 一個完整的 Agent 通常包含以下四大組件：
 
-<!-- Image Prompt: Title: "Anatomy of an AI Agent". Style: Stick figures with color. Content: A central stick figure labeled "Brain (LLM)" wearing a captain's hat. It is connected to three modules: 1. A map labeled "Planning". 2. A filing cabinet labeled "Memory". 3. A robotic arm labeled "Tools" holding a wrench and a phone. Label: "From Chatbot to Agent". Note: dialogs and all texts/labels should be in Traditional Chinese. -->
 
 1.  **大腦 (Brain / LLM)**：
     *   負責理解指令、進行邏輯推理、規劃任務步驟。
     *   這是 Agent 的核心，通常由強大的 LLM (如 GPT-4) 擔任。
 2.  **規劃 (Planning)**：
     *   **任務拆解**：將一個大目標（如「幫我規劃日本旅遊」）拆解成多個小步驟（訂機票、訂飯店、排行程）。
-    *   **自我反思 (Self-Reflection)**：執行完一步後，檢查結果是否符合預期，如果不對就修正。
+    *   **任務拆解**：將一個大目標（如「幫我規劃日本旅遊」）拆解成多個小步驟（訂機票、訂飯店、排行程）。
+    *   **自我反思 (Self-Reflection / Reflexion)**：
+        *   Agent 不只是執行，還會「回頭看」。
+        *   *流程*：執行 -> 失敗 -> 思考原因 -> 修改計畫 -> 再次執行。
+        *   *類比*：寫程式時遇到 Error，你會看錯誤訊息，修改程式碼，再跑一次，而不是直接放棄。
 3.  **記憶 (Memory)**：
     *   **短期記憶**：當下的對話上下文。
     *   **長期記憶**：透過向量資料庫 (Vector DB) 儲存過去的經驗或知識，隨時調用。
 4.  **工具使用 (Tool Use / Action)**：
     *   Agent 需要手腳才能與世界互動。
     *   **API 調用**：搜尋 Google、發送 Email、查詢天氣、執行 Python 程式碼。
+    *   **函數呼叫 (Function Calling)**：
+        *   這是 LLM 使用工具的標準機制。
+        *   開發者提供工具的「說明書」(JSON Schema)，告訴 LLM 這個工具有什麼功能、需要什麼參數。
+        *   LLM 讀懂後，會輸出一個結構化的 JSON (如 `{"tool": "get_weather", "location": "Taipei"}`)。
+        *   程式執行該工具，並將結果回傳給 LLM。
+
+![Agent Architecture](images/agent_architecture.webp)
 
 ### 2. 解決方案圖譜 (Solution Graph) {.unnumbered}
 在處理複雜問題時，單線性的思考往往不夠。Solution Graph 提供了一個更結構化的框架。
@@ -48,8 +58,6 @@ label: sec-gen-chapter4
 
 ### 1. 協作模式 (Agent-to-Agent, A2A) {.unnumbered}
 *   **角色分工**：就像人類公司一樣，不同的 Agent 扮演不同的角色。
-
-<!-- Image Prompt: Title: "Multi-Agent Collaboration". Style: Stick figures with color. Content: A meeting room scene. A stick figure labeled "Product Manager" points to a whiteboard. Another stick figure labeled "Coder" types on a laptop. A third stick figure labeled "Tester" holds a magnifying glass checking the work. They are all passing notes (messages) to each other. Label: "Teamwork makes the dream work". Note: dialogs and all texts/labels should be in Traditional Chinese. -->
     *   *產品經理 Agent*：負責拆解需求，分派任務。
     *   *工程師 Agent*：負責寫程式碼。
     *   *測試 Agent*：負責跑測試，回報 Bug 給工程師。
@@ -59,6 +67,8 @@ label: sec-gen-chapter4
     3.  Remote Agent 執行任務（可能需要調用工具或其他 Agent）。
     4.  Remote Agent 將結果回傳給 Client Agent。
     5.  Client Agent 整合結果回報給人類。
+
+![Multi-Agent System](images/mas.webp)
 
 ### 2. 常見挑戰 {.unnumbered}
 多個 Agent 合作雖然強大，但也帶來了新的問題：
@@ -72,3 +82,25 @@ label: sec-gen-chapter4
 *   **答案衝突**：
     *   Agent A 說要用 Python，Agent B 說要用 Node.js。
     *   *解法*：引入「決策者 Agent」或投票機制來解決歧見。
+
+### 3. 常見 Agent 開發框架 {.unnumbered}
+工欲善其事，必先利其器。開發 Agent 不需從頭造輪子。
+
+*   **LangChain / LangGraph**：
+    *   最流行的框架，提供豐富的工具整合與 Chain/Graph 的抽象層。
+    *   *特色*：高度靈活，適合建構複雜的單體或多體 Agent。
+*   **LlamaIndex**：
+    *   最初專注於 RAG，現已發展出強大的 Agentic RAG 能力。
+    *   *特色*：擅長處理**資料密集型 (Data-Centric)** 的 Agent，能將複雜的資料檢索策略轉化為 Agent 的工具。
+*   **Microsoft AutoGen**：
+    *   專注於**多代理協作 (Multi-Agent Collaboration)**。
+    *   *特色*：透過「對話」來解決問題。你可以定義多個 Agent (如 UserProxy, Assistant)，讓它們互相聊天來完成任務。
+*   **Microsoft Semantic Kernel**：
+    *   微軟推出的輕量級 SDK，強調將 LLM 與現有程式碼 (C#, Python, Java) 整合。
+    *   *特色*：企業級整合首選，特別是 .NET 生態系。強調 **Plugins** 與 **Planners** 的概念。
+*   **CrewAI**：
+    *   基於 LangChain，強調**角色扮演 (Role-Playing)** 與**任務指派**。
+    *   *特色*：讓 Agent 像一個團隊 (Crew) 一樣運作，每個 Agent 有明確的角色 (Role)、目標 (Goal) 與背景故事 (Backstory)。
+*   **OpenAI Swarm (Experimental)**：
+    *   OpenAI 推出的教育性質框架，展示輕量級的多代理編排。
+    *   *特色*：強調 **Handoffs (交接)** 機制，讓 Agent 能將對話控制權轉交給另一個更適合的 Agent。

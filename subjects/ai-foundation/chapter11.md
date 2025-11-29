@@ -20,7 +20,7 @@ AI 模型是從歷史數據中學習的，如果歷史數據包含人類的偏�
 *   **案例**：Amazon 的 AI 招聘系統因為過去 10 年都錄取男性，學會了歧視女性履歷（看到 "Women's Chess Club" 就扣分）。
 *   **解法**：**資料去偏 (Data Debiasing)**。在訓練前檢查資料分佈，或在訓練中加入公平性約束 (Fairness Constraints)。
 
-![公平性](images/fairness.png)
+![公平性](images/fairness.webp)
 
 ### 隱私保護技術 (Privacy-Preserving AI) {#sec-privacy}
 
@@ -41,7 +41,7 @@ AI 模型是從歷史數據中學習的，如果歷史數據包含人類的偏�
         *   總部修改食譜，發布新版本。
     *   **應用**：Google Gboard 輸入法預測（不會上傳你打的字）、醫療跨院研究（醫院不能共享病患個資，但可以共享模型參數）。
 
-![聯邦學習](images/federated-learning.png)
+![聯邦學習](images/federated-learning.webp)
 
 ### 責任歸屬與問責性 (Accountability) {#sec-accountability}
 
@@ -57,7 +57,7 @@ AI 模型是從歷史數據中學習的，如果歷史數據包含人類的偏�
     *   **監理沙盒 (Regulatory Sandbox)**：為了鼓勵創新，允許企業在風險可控的範圍內測試新技術，暫時豁免部分法規限制。
     *   **風險分級管理**：不一竿子打翻一船人，依據 AI 應用的風險程度，採取不同強度的管理。
 
-![台灣《人工智慧基本法》草案](images/taiwan-ai-law.png)
+![台灣《人工智慧基本法》草案](images/taiwan-ai-law.webp)
 
 ### 台灣金融業 AI 規範 {#sec-financial-ai}
 
@@ -80,7 +80,7 @@ AI 模型是從歷史數據中學習的，如果歷史數據包含人類的偏�
 6.  **當責性 (Accountability)**：
     *   **重點**：**有人扛**。無論 AI 多聰明，最終的決策責任還是在人類身上。必須確保有申訴管道與補救機制。
 
-![金融業 AI 規範](images/financial-ai.png)
+![金融業 AI 規範](images/financial-ai.webp)
 
 ### 歐盟《人工智慧法案》(EU AI Act) {#sec-eu-ai-act}
 
@@ -99,7 +99,7 @@ AI 模型是從歷史數據中學習的，如果歷史數據包含人類的偏�
 4.  **最小風險 (Minimal Risk)**：**不監管**。
     *   垃圾郵件過濾器、電玩遊戲 AI。
 
-![EU AI Act](images/eu-ai-act.png)
+![EU AI Act](images/eu-ai-act.webp)
 
 ## AI 產品評測標準 {#sec-ai-evaluation}
 
@@ -115,7 +115,7 @@ AI 模型是從歷史數據中學習的，如果歷史數據包含人類的偏�
     5.  **準確性 (Accuracy)**：答案是否正確？有無幻覺？
 *   **排除項目**：目前的評測主要針對語言模型本身，不包含「資料複雜性」（資料好不好是廠商的事）或單純的「互動性」（好不好聊）。
 
-![數位發展部 AI 產品評測](images/moda-ai-evaluation.png)
+![數位發展部 AI 產品評測](images/moda-ai-evaluation.webp)
 
 ## 本章總結與考點提示 {#sec-chapter11-summary}
 

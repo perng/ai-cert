@@ -18,10 +18,14 @@ Transformer 的強大來自於其獨特的設計，摒棄了傳統 RNN 的循環
     *   當模型處理「它」這個字時，Self-Attention 機制會告訴模型，「它」指代的是前面的「蘋果」，而不是「我」。
 *   **優勢**：解決了長距離依賴問題 (Long-term Dependency)，即使句子很長，開頭和結尾的關係也能被捕捉。
 
+<!-- Image Prompt: Title: "Self-Attention Mechanism". Style: Stick figures with color. Content: A sentence "The animal didn't cross the street because it was too tired." The word "it" has glowing lines connecting it strongly to "animal" and weakly to "street". A stick figure is holding a magnifying glass looking at the connections. Label: "Understanding Context". Note: dialogs and all texts/labels should be in Traditional Chinese. -->
+
 ### 2. 位置編碼 (Positional Encoding) {.unnumbered}
 由於 Transformer 是並行處理所有字（不像 RNN 一個字一個字讀），它本身不知道「順序」。
 *   **功能**：給每個字加上一個「位置標籤」，讓模型知道哪個字在前面，哪個字在後面。
 *   **意義**：確保「貓追狗」和「狗追貓」能被區分為不同的語意。
+
+<!-- Image Prompt: Title: "Positional Encoding". Style: Stick figures with color. Content: Two identical twin stick figures (representing the word "Dog"). One is wearing a shirt with number "1", the other with number "3". A sentence "Dog(1) chases Cat(2) chases Dog(3)". The numbers show that position matters. Label: "Order Matters". Note: dialogs and all texts/labels should be in Traditional Chinese. -->
 
 ## Transformer 架構變體 {#sec-transformer-variants}
 
@@ -86,6 +90,8 @@ Transformer 模型自 2017 年問世以來，已成為自然語言處理 (NLP) �
     *   訓練一個獎勵模型 (Reward Model) 來模擬人類喜好。
     *   用強化學習 (PPO) 優化模型。
 *   **產出**：對齊模型 (Aligned Model)。這是我們最終使用的版本 (如 GPT-4)。
+
+<!-- Image Prompt: Title: "LLM Training Lifecycle". Style: Stick figures with color. Content: Three stages. Stage 1 (Pre-training): A robot reading a mountain of books (Base Model). Stage 2 (SFT): A teacher showing the robot Q&A flashcards (Instruction Tuned). Stage 3 (RLHF): A human giving a thumbs up/down to the robot's answers (Aligned Model). Label: "From Reading to Chatting". Note: dialogs and all texts/labels should be in Traditional Chinese. -->
 
 ## 模型參數與控制 {#sec-model-params}
 

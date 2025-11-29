@@ -28,7 +28,7 @@ label: sec-chapter5
     *   *優點*：簡單直觀，不需要訓練過程（Lazy Learning），新資料進來直接算。
     *   *缺點*：資料量大時，計算距離非常耗時（計算成本高）。
 
-![K-近鄰演算法](images/knn.png)
+![K-近鄰演算法](images/knn.webp)
 
 ### 貝氏分類器 (Naive Bayes) {#sec-naive-bayes}
 
@@ -56,7 +56,7 @@ label: sec-chapter5
     *   *優點*：速度極快，適合處理高維度文本資料（如 NLP）。
     *   *缺點*：如果特徵之間高度相關，預測效果會變差。
 
-![貝氏分類器](images/naive-bayes.png)
+![貝氏分類器](images/naive-bayes.webp)
 
 
 ### 邏輯迴歸 (Logistic Regression) {#sec-logistic-regression}
@@ -72,7 +72,7 @@ label: sec-chapter5
     *   *優點*：可解釋性高（可以看到每個特徵的權重），計算快。
     *   *缺點*：只能處理線性可分的問題（除非人工轉換特徵）。
 
-![邏輯迴歸](images/logistic-regression.png)
+![邏輯迴歸](images/logistic-regression.webp)
 
 ### 支援向量機 (SVM, Support Vector Machine) {#sec-svm}
 *   **核心概念**：試圖在不同類別的資料之間，畫出一條最寬的「馬路」（決策邊界）。
@@ -85,7 +85,7 @@ label: sec-chapter5
     *   *優點*：在小樣本、高維度資料上表現極佳，泛化能力強。
     *   *缺點*：在大數據集上訓練慢，且對參數設定敏感。
 
-![支持向量機](images/svm.png)
+![支持向量機](images/svm.webp)
 
 
 ### 決策樹 (Decision Tree) {#sec-decision-tree}
@@ -100,7 +100,7 @@ label: sec-chapter5
     *   *優點*：**可解釋性最強**（白箱模型），畫出來的樹狀圖非專業人士也能懂。
     *   *缺點*：容易**過度擬合 (Overfitting)**，變成死記硬背的學生。
 
-![決策樹](images/decision-tree.png)
+![決策樹](images/decision-tree.webp)
 
 
 ### 隨機森林 (Random Forest) {#sec-random-forest}
@@ -117,7 +117,7 @@ label: sec-chapter5
     *   *優點*：準確率極高，非常穩健，不易過度擬合（因為有隨機性），能處理高維度資料。
     *   *缺點*：模型龐大（幾百棵樹），預測速度較慢，且失去了單一決策樹的可解釋性（變成了黑箱模型）。
 
-![隨機森林](images/random-forest.png)
+![隨機森林](images/random-forest.webp)
 
 
 ## 集成學習 (Ensemble Learning) {#sec-ensemble}
@@ -138,7 +138,7 @@ label: sec-chapter5
         *   **優點**：準確、抗過擬合、可平行運算（速度快）。
         *   **缺點**：模型大、黑箱。
 
-![Bagging](images/bagging.png)
+![Bagging](images/bagging.webp)
 
 ### Boosting (提升法) {#sec-boosting}
 
@@ -152,7 +152,7 @@ label: sec-chapter5
     *   **AdaBoost**：早期代表，調整資料權重。
     *   **XGBoost / LightGBM / CatBoost**：現代 Kaggle 比賽常勝軍。基於梯度提升 (Gradient Boosting)，效能極強，但參數多難調。
 
-![Boosting](images/boosting.png)
+![Boosting](images/boosting.webp)
 
 ### Bagging 與 Boosting 的關鍵差異 {#sec-bagging-vs-boosting}
 
@@ -174,7 +174,7 @@ label: sec-chapter5
 *   **損失函數 (Loss Function)**：**均方誤差 (MSE, Mean Squared Error)**。即計算所有點到線的距離平方和，找出讓這個誤差最小的參數 $w$ 和 $b$。
 *   **多項式迴歸**：如果資料不是直線分佈，可以用曲線（$x^2, x^3$）來擬合。
 
-![線性迴歸](images/linear-regression.png)
+![線性迴歸](images/linear-regression.webp)
 
 
 ### 正規化迴歸 (Regularized Regression) {#sec-regularized-regression}
@@ -207,7 +207,7 @@ label: sec-chapter5
     *   **一般迴歸的問題**：模型可能會困惑，給其中一個巨大的正權重，另一個巨大的負權重，導致模型不穩定。
     *   **Ridge 的效果**：它會把這兩個特徵的權重都壓得很小且接近，讓模型更穩健，不會因為數據的一點小雜訊就劇烈波動。
 
-![正規化迴歸](images/regularized-regression.png)
+![正規化迴歸](images/regularized-regression.webp)
 
 
 #### 總結比較

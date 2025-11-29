@@ -12,7 +12,7 @@ label: sec-chapter3
 
 在建立資料管道之前，我們必須先了解手上有什麼樣的資料，以及該把它存在哪裡。
 
-![結構化資料 vs 非結構化資料](images/structured-vs-unstructured.png)
+![結構化資料 vs 非結構化資料](images/structured-vs-unstructured.webp)
 
 ### 結構化資料 (Structured Data)
 
@@ -39,7 +39,7 @@ label: sec-chapter3
 *   **例子**：**JSON** (API 回傳格式), **XML**, **HTML**, Log 檔。
 *   **儲存方式**：通常存於 **NoSQL (Document DB)** 如 MongoDB，或現代 RDB 的 JSON 欄位中。
 
-![SQL vs NoSQL](images/sql-vs-nosql.png)
+![SQL vs NoSQL](images/sql-vs-nosql.webp)
 
 ## 資料管道 (Data Pipeline) {#sec-data-pipeline}
 
@@ -62,7 +62,7 @@ label: sec-chapter3
     *   **靈活性低**：如果分析需求改變（例如想看原始資料），需要重新設計轉換流程。
     *   **延遲較高**：必須等所有轉換步驟完成才能使用資料，不適合即時分析。
 
-![ETL 架構](images/etl.png)
+![ETL 架構](images/etl.webp)
 
 ### ELT (Extract-Load-Transform) 架構與資料湖 (Data Lake) {#sec-elt}
 
@@ -80,7 +80,7 @@ label: sec-chapter3
     *   **資料治理困難**：如果沒有妥善管理，資料湖很容易變成「資料沼澤 (Data Swamp)」，充滿垃圾資料。
     *   **查詢效能較差**：因為資料未經優化，查詢時可能需要即時處理大量原始數據。
 
-![ELT 架構](images/elt.png)
+![ELT 架構](images/elt.webp)
 
 ### 批次處理 vs. 串流處理 {#sec-batch-vs-streaming}
 
@@ -103,7 +103,7 @@ label: sec-chapter3
         *   **成本較高**：需要 24 小時運行的基礎設施。
     *   **適用**：即時詐欺偵測、股市交易監控、即時推薦系統。
 
-![批次處理 vs. 串流處理](images/batch-vs-streaming.png)
+![批次處理 vs. 串流處理](images/batch-vs-streaming.webp)
 
 ## 探索性資料分析 (Exploratory Data Analysis, EDA) {#sec-eda}
 
@@ -123,7 +123,7 @@ label: sec-chapter3
 *   **名目型 (Nominal)**：沒有順序關係。例如：血型 (A, B, O, AB)、顏色 (紅, 藍, 綠)、城市 (台北, 東京, 紐約)。
 *   **順序型 (Ordinal)**：有順序或等級關係，但間距不一定相等。例如：滿意度 (非常滿意 > 滿意 > 普通 > 不滿意)、衣服尺寸 (S < M < L < XL)。
 
-![類別型 vs. 數值型資料](images/category-vs-number.png)
+![類別型 vs. 數值型資料](images/category-vs-number.webp)
 
 #### 為什麼不能輕易轉換？
 
@@ -169,7 +169,7 @@ label: sec-chapter3
             *   如果是計算**母體 (Population)** 標準差（擁有全部資料），則除以 $n$。
         *   *意義*：SD 越小，代表資料越集中（品質穩定）；SD 越大，代表資料越參差不齊（風險高）。
         *   *例子*：兩個班級平均分都是 80 分。A 班大家都在 75-85 分之間（SD 小）；B 班有人考 100 也有人考 60（SD 大）。
-    ![標準差](images/standard-deviation.png)
+    ![標準差](images/standard-deviation.webp)
 
     *   **四分位數 (Quartiles)**：將資料由小到大切成四等份的切點。
         *   **Q1 (第 1 四分位數)**：贏過 25% 的人。
@@ -188,32 +188,32 @@ label: sec-chapter3
             *   $s$：標準差。
         *   **右偏 (Right Skewed / Positive Skew)**：長尾巴在右邊（大數值方向）。代表少數極大值拉高了平均數。例如：**所得分佈**（少數富人）、**房價**。此時 **平均數 > 中位數**。
         *   **左偏 (Left Skewed / Negative Skew)**：長尾巴在左邊（小數值方向）。例如：**考試成績**（題目很簡單，大多數人考高分，少數人考低分）。此時 **平均數 < 中位數**。
-        ![偏態](images/skewness.png)    
+        ![偏態](images/skewness.webp)    
     
     *   **峰度 (Kurtosis)**：資料分佈的「尖銳」程度。峰度高代表資料集中在中心，且有較厚的尾部（容易出現極端值）。
         *   **公式**：$$ Kurtosis = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^4}{n \times s^4} - 3 $$ (超額峰度)
 
-![峰度](images/kurtosis.png)
+![峰度](images/kurtosis.webp)
 
 ### 資料視覺化決策邏輯 {#sec-data-visualization}
 
 一張圖勝過千言萬語，但選錯圖表會造成誤導。
 
 *   **散佈圖 (Scatter Plot)**：看兩個變數之間的**關聯**（例如：身高 vs. 體重）。
-![Scatter Plot](images/scatter-plot.png)
+![Scatter Plot](images/scatter-plot.webp)
 *   **圓餅圖 (Pie Chart)**：顯示各類別佔整體的**比例**（例如：市佔率）。
-![Pie Chart](images/pie-chart.png)
+![Pie Chart](images/pie-chart.webp)
 
 *   **折線圖 (Line Chart)**：看**時間趨勢**（例如：股價走勢、氣溫變化）。
-![Line Chart](images/line-chart.png)
+![Line Chart](images/line-chart.webp)
 *   **直方圖 (Histogram)**：看單一變數的**分佈**情況（例如：全校學生的成績分佈）。
-![Histogram](images/histogram.png)
+![Histogram](images/histogram.webp)
 *   **長條圖 (Bar Chart)**：比較不同**類別**的大小（例如：各部門的業績比較）。
-![Bar Chart](images/bar-chart.png)
+![Bar Chart](images/bar-chart.webp)
 *   **熱圖 (Heatmap)**：用顏色深淺表示數值大小，常用於顯示**相關係數矩陣**（哪些變數連動性高）。
-![Heatmap](images/heatmap.png)
+![Heatmap](images/heatmap.webp)
 *   **盒鬚圖 (Box Plot)**：快速看出資料的分佈範圍、中位數以及**離群值**。
-![Box Plot](images/box-plot.png)
+![Box Plot](images/box-plot.webp)
 
 ## 資料清理與品質管理 {#sec-data-cleaning}
 
@@ -255,7 +255,7 @@ label: sec-chapter3
 ### 異常值/離群值處理 (Outliers Handling) {#sec-outliers}
 
 有些資料點明顯與眾不同，例如身高 300 公分的人，或是年齡 200 歲。這些點可能是錯誤，也可能是極具價值的特殊案例（如詐欺交易）。
-![離群值偵測](images/outlier-detection.png)
+![離群值偵測](images/outlier-detection.webp)
 
 *   **偵測方法**：
     *   **Z-score 檢測**：假設資料呈常態分佈，超過平均數 $\pm 3$ 個標準差 ($3\sigma$) 的數值通常被視為異常。
@@ -269,7 +269,7 @@ label: sec-chapter3
     *   **轉換 (Transformation)**：使用**對數轉換 (Log Transformation)**（例如取 $log(x)$）來壓縮數值範圍，讓極端值不再那麼突兀，減少對模型的干擾。
     *   **蓋帽法 (Winsorizing)**：將超過特定百分位數（如 99%）的值，強制設定為該百分位數的值（例如所有超過 1000 的數都設為 1000）。
 
-![離群值處理](images/outlier-processing.png)
+![離群值處理](images/outlier-processing.webp)
 
 ### 數據一致性處理 (Data Consistency) {#sec-consistency}
 
@@ -306,7 +306,7 @@ label: sec-chapter3
     *   地址："台北市信義區信義路五段 7 號" $\rightarrow$ "台北市信義區"
 *   **假名化 (Pseudonymization)**：用隨機生成的代碼（Token）取代真實 ID。只有擁有對照表的人才能還原，比單純刪除更具可追溯性。
 
-![PII 處理](images/pii.png)
+![PII 處理](images/pii.webp)
 
 ## 本章總結與考點提示 {#sec-chapter3-summary}
 

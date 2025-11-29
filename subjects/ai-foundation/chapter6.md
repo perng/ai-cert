@@ -19,7 +19,7 @@ label: sec-chapter6
 2.  **簡化數據**：用少數幾個「群代表」來概括大量數據。
 3.  **作為前處理**：分群結果可以作為監督式學習的新特徵。
 
-![為什麼要做分群？](images/why_clustering.png)
+![為什麼要做分群？](images/why_clustering.webp)
 
 #### 常見應用場景 (Applications)
 
@@ -32,7 +32,7 @@ label: sec-chapter6
 *   **文件分群 (Document Clustering)**：
     *   將大量新聞或文章自動歸類為「體育」、「財經」、「政治」等主題。
 
-![分群常見應用場景](images/clustering_applications.png)
+![分群常見應用場景](images/clustering_applications.webp)
 
 ### K-means 演算法 {#sec-kmeans}
 
@@ -49,7 +49,7 @@ label: sec-chapter6
     *   *優點*：速度快，適合大數據。
     *   *缺點*：必須事先指定 K；對**離群值**敏感；只能分出圓形/球形的群聚。
 
-![K-means](images/kmeans.png)
+![K-means](images/kmeans.webp)
 
 ### 階層式分群 (Hierarchical Clustering) {#sec-hierarchical-clustering}
 
@@ -61,7 +61,7 @@ label: sec-chapter6
     *   *優點*：不需要指定 K，樹狀圖能完整呈現資料的層次結構。
     *   *缺點*：計算量大，不適合大數據。
 
-![階層式分群](images/hierarchical_clustering.png)
+![階層式分群](images/hierarchical_clustering.webp)
 
 ### DBSCAN (Density-Based Spatial Clustering) {#sec-dbscan}
 
@@ -70,7 +70,7 @@ label: sec-chapter6
     1.  可以找出**任意形狀**的群聚（如彎月形、包圍形），不像 K-means 只能找圓形。
     2.  能自動識別並排除**離群值 (Outliers)**，不會硬要把雜訊歸類。
 
-![DBSCAN](images/dbscan.png)
+![DBSCAN](images/dbscan.webp)
 
 ## 關聯規則與降維 {#sec-association-rules}
 
@@ -101,7 +101,7 @@ label: sec-chapter6
             *   $Lift = 1$：無關。
             *   $Lift < 1$：負相關。
 
-![Apriori](images/apriori.png)
+![Apriori](images/apriori.webp)
 
 ### 降維技術 (Dimensionality Reduction)
 
@@ -115,7 +115,7 @@ label: sec-chapter6
         *   PCA 就是要找出這個「資訊保留最多」的最佳視角。
     *   **缺點**：只能處理線性關係，無法展開捲曲的結構（如瑞士捲資料）。
 
-![PCA](images/pca.png)
+![PCA](images/pca.webp)
 
 *   **t-SNE 與 UMAP**：
     *   **用途**：專門用於**資料視覺化**（將高維資料壓到 2D 或 3D）。
@@ -131,7 +131,7 @@ label: sec-chapter6
         *   **去噪 (Denoising)**：輸入雜訊圖，要求輸出乾淨圖。AI 會學會忽略雜訊，只還原物體結構。
         *   **異常偵測 (Anomaly Detection)**：只用「正常資料」訓練。當遇到「異常資料」時，模型會因為沒看過而無法還原，導致**還原誤差極大**，藉此抓出異常。
 
-![Autoencoder](images/autoencoder.png)
+![Autoencoder](images/autoencoder.webp)
 
 ## 強化學習 (Reinforcement Learning) {#sec-reinforcement-learning-detail}
 
@@ -149,7 +149,7 @@ label: sec-chapter6
     *   正獎勵：吃到金幣 (+10)、過關 (+100)。
     *   負獎勵 (Penalty)：碰到烏龜 (-10)、掉進洞裡 (-100)、時間流逝 (-1)。
 
-![RL](images/rl.png)
+![RL](images/rl.webp)
 
 ### 關鍵挑戰：探索與利用 (Exploration vs. Exploitation)
 
@@ -172,7 +172,7 @@ label: sec-chapter6
     *   **運作**：AI 查表找 Q 值最大的動作去做。做完後，根據拿到的獎勵更新表格。
     *   **缺點**：**維度災難**。當狀態太多（如圍棋棋盤有 $10^{170}$ 種狀態，比宇宙原子還多）時，表格根本存不下，也查不完。
 
-![Q-Learning](images/q-learning.png)
+![Q-Learning](images/q-learning.webp)
 
 *   **Deep Q-Network (DQN, 深度強化學習)**：
     *   **核心概念**：結合深度學習。用一個**神經網路 (Brain)** 來取代 Q-Table (Cheat Sheet)。
@@ -188,7 +188,7 @@ label: sec-chapter6
             *   *類比*：就像射箭練習。如果靶心一直亂動（目標變動），很難射準。Target Network 就是把**靶心固定住**，讓你練一陣子後，再把靶心移到新位置。
     *   *成就*：DeepMind 用 DQN 讓 AI 學會玩 Atari 遊戲（如打磚塊），表現超越人類。
 
-![DQN](images/dqn.png)
+![DQN](images/dqn.webp)
 
 ## 本章總結與考點提示 {#sec-chapter6-summary}
 

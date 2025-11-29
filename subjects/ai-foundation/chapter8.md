@@ -37,7 +37,7 @@ label: sec-chapter8
     *   **連續性**：潛在空間是連續的。
         *   *應用*：**插值 (Interpolation)**。你可以從「笑臉」慢慢變形到「哭臉」，中間的每一張圖都是合理的過渡（不會出現斷裂或雜訊）。
 
-![VAE](images/vae.png)
+![VAE](images/vae.webp)
 
 ### 生成對抗網路 (GAN, Generative Adversarial Network) {#sec-gan}
 
@@ -60,7 +60,7 @@ label: sec-chapter8
         *   **訓練不穩定**：很難平衡 G 和 D 的實力。如果 D 太強，G 會因為一直失敗而學不到東西（梯度消失）；如果 G 太強，D 就沒用了。
         *   **模式崩潰 (Mode Collapse)**：G 發現某個特定的圖（例如某張臉）很容易騙過 D，就開始**只生成這張圖**，失去了多樣性。
 
-![GAN](images/gan.png)
+![GAN](images/gan.webp)
 
 ### 擴散模型 (Diffusion Models) {#sec-diffusion}
 
@@ -81,7 +81,7 @@ label: sec-chapter8
     *   **缺點**：
         *   **速度慢**：生成一張圖需要跑幾十到幾百步的去噪過程（GAN 只要跑一步）。
 
-![Diffusion](images/diffusion.png)
+![Diffusion](images/diffusion.webp)
 
 ## 大型語言模型 (LLM) 技術 {#sec-llm-tech}
 
@@ -110,7 +110,7 @@ LLM (Large Language Model) 如 GPT 系列，本質上是一個超巨大的「文
         *   *類比*：**家教/社會化**。教導模型什麼是「好的回答」（有禮貌、不說謊、不帶偏見）。
         *   **目標**：**3H 原則** (Helpful 有用, Honest 誠實, Harmless 無害)。
 
-![LLM](images/llm-training.png)
+![LLM](images/llm-training.webp)
 
 ### Scaling Laws (擴展定律) {#sec-scaling-laws}
 
@@ -123,7 +123,7 @@ LLM (Large Language Model) 如 GPT 系列，本質上是一個超巨大的「文
     3.  **計算量 (Compute, C)**：訓練所花費的 FLOPs（讀書時間/算力）。
 *   **結論**：**大力出奇蹟**。只要單純地把模型變大、資料變多、算力增強，AI 就會變聰明。這引發了全球科技巨頭的 GPU 軍備競賽。
 
-![Scaling Laws](images/scaling-laws.png)
+![Scaling Laws](images/scaling-laws.webp)
 
 #### 能力湧現 (Emergent Abilities)
 
@@ -137,7 +137,7 @@ LLM (Large Language Model) 如 GPT 系列，本質上是一個超巨大的「文
     *   **寫程式 (Coding)**：小模型只會寫亂碼，大模型突然能寫出可執行的 Python 程式碼。
     *   **邏輯推理**：大模型開始展現出推論能力。
 
-![Emergent Abilities](images/emergent-abilities.png)
+![Emergent Abilities](images/emergent-abilities.webp)
 
 ### 提示工程 (Prompt Engineering) {#sec-prompt-engineering}
 
@@ -188,7 +188,7 @@ LLM (Large Language Model) 如 GPT 系列，本質上是一個超巨大的「文
         *   研究發現，LLM 對於放在**開頭**和**結尾**的資訊印象最深刻，放在**中間**的資訊容易被忽略。
     *   **策略**：將最重要的指令或關鍵資料放在 Prompt 的最前面或最後面，避免埋沒在中間。
 
-![提示工程](images/prompt-engineering.png)
+![提示工程](images/prompt-engineering.webp)
 
 ## LLM 優化與應用架構 {#sec-llm-optimization}
 
@@ -204,7 +204,7 @@ LLM (Large Language Model) 如 GPT 系列，本質上是一個超巨大的「文
     3.  **生成 (Generate)**：LLM 根據參考資料回答問題。
 *   **優勢**：資料即時更新，回答有憑有據，且不需要重新訓練模型。
 
-![檢索增強生成](images/rag.png)
+![檢索增強生成](images/rag.webp)
 
 ### 模型壓縮 (Model Compression) {#sec-model-compression}
 
@@ -222,7 +222,7 @@ LLM (Large Language Model) 如 GPT 系列，本質上是一個超巨大的「文
         *   例如分辨一張模糊的狗的照片，標準答案是「狗」。但老師會告訴學生：「這張圖 90% 像狗，但也有 10% 像貓」。這 10% 的資訊（暗知識 Dark Knowledge）對學生很有幫助。
     *   *類比*：**名師出高徒**。老師把畢生功力濃縮成精華（軟標籤 Soft Targets）傳授給徒弟，讓徒弟用較少的腦容量就能達到接近老師的水平。
 
-![模型壓縮](images/model-compression.png)
+![模型壓縮](images/model-compression.webp)
 
 ## 本章總結與考點提示 {#sec-chapter8-summary}
 

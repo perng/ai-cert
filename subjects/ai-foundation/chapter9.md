@@ -18,7 +18,7 @@ label: sec-chapter9
 2.  **驗證集 (Validation Set)**：**模擬考**。用來調整**超參數 (Hyperparameters)**（如學習率、樹的深度），挑選最佳模型。
 3.  **測試集 (Test Set)**：**期末考**。考完就定案了，用來評估最終效能。**絕對不能偷看**（不能用於訓練或調整參數）！
 
-![資料集劃分](images/data-split.png)
+![資料集劃分](images/data-split.webp)
 
 ### K-fold 交叉驗證 (Cross-Validation) {#sec-cross-validation}
 
@@ -39,7 +39,7 @@ label: sec-chapter9
     *   **不浪費資料**：每一筆資料都有機會被用來訓練，也有機會被用來驗證。
     *   **穩健 (Robust)**：評估結果更客觀，不會因為運氣好切到簡單的資料就以為模型很強。
 
-![K-fold 交叉驗證](images/cross-validation.png)
+![K-fold 交叉驗證](images/cross-validation.webp)
 
 ### 分類指標 (Classification Metrics) {#sec-classification-metrics}
 
@@ -63,7 +63,7 @@ label: sec-chapter9
     *   $$ F1 = 2 \times \frac{Precision \times Recall}{Precision + Recall} $$
     *   當需要兼顧兩者時使用。
 
-![分類指標](images/classification-metrics.png)
+![分類指標](images/classification-metrics.webp)
 
 *   **AUC-ROC 曲線**：
     *   **概念**：評估模型在**所有可能的分類門檻 (Threshold)** 下的表現。
@@ -76,7 +76,7 @@ label: sec-chapter9
         *   **AUC = 1.0**：完美神人（但通常是資料洩漏）。
     *   *類比*：**排隊能力**。AUC 越高，代表模型越能把「有病的人」排在「沒病的人」前面（機率值較高）。
 
-![AUC-ROC 曲線](images/auc-roc.png)
+![AUC-ROC 曲線](images/auc-roc.webp)
 
 ### 迴歸指標 (Regression Metrics) {#sec-regression-metrics}
 
@@ -93,7 +93,7 @@ label: sec-chapter9
         *   $R^2 = 0$：跟「直接猜平均值」一樣爛。
         *   $R^2 < 0$：比亂猜還爛（模型完全錯了）。
 
-![迴歸指標](images/regression-metrics.png)
+![迴歸指標](images/regression-metrics.webp)
 
 ## 誤差分析與正則化 {#sec-error-analysis}
 
@@ -106,7 +106,7 @@ label: sec-chapter9
     *   **高變異 (High Variance)**：模型太複雜，把雜訊也學進去了，導致在訓練集考 100 分，驗證集不及格。稱為**過擬合 (Overfitting)**。
     *   *解法*：增加資料量、正則化、簡化模型。    
 
-![偏差-變異權衡](images/bias-variance.png)
+![偏差-變異權衡](images/bias-variance.webp)
 
 ### 防止過擬合技術 (Regularization) {#sec-prevent-overfitting}
 
@@ -127,7 +127,7 @@ label: sec-chapter9
     *   **文字**：同義詞替換、隨機刪除、回譯 (Back Translation, 中->英->中)。
     *   **聲音**：調整音調、改變速度、加入背景噪音。
 
-![防止過擬合技術](images/prevent-overfitting.png)
+![防止過擬合技術](images/prevent-overfitting.webp)
 
 ## 本章總結與考點提示 {#sec-chapter9-summary}
 

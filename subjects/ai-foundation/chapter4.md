@@ -35,7 +35,7 @@ label: sec-chapter4
         *   **公式**：$$ x_{new} = \frac{x - x_{min}}{x_{max} - x_{min}} $$
         *   **適用**：對範圍敏感的演算法，或影像處理（像素值 0-255）。缺點是容易受極端值 (Outlier) 影響。
 
-    ![特徵縮放](images/feature_scaling.png)
+    ![特徵縮放](images/feature_scaling.webp)
 
 ### 特徵轉換 {#sec-feature-transformation}
 
@@ -58,7 +58,7 @@ label: sec-chapter4
             *   36-60: 中年
             *   60+: 老年
     *   **效果**：增加模型的**魯棒性 (Robustness)**，防止模型過度關注「25 歲和 26 歲有什麼不同」。
-    ![特徵轉換](images/feature_transformation.png)
+    ![特徵轉換](images/feature_transformation.webp)
 ## 類別特徵編碼 {#sec-categorical-encoding}
 
 機器學習模型通常是數學公式，只看得懂數字，看不懂文字。我們需要將類別資料（如顏色、城市）轉換為數字。
@@ -70,7 +70,7 @@ label: sec-chapter4
 | **序數編碼**<br>(Ordinal Encoding) | 依據類別的**順序**或**大小**賦予整數值。 | 類別間**有**順序關係 (Size, Rating)。 | S $\to$ 1<br>M $\to$ 2<br>L $\to$ 3<br>XL $\to$ 4 |
 | **獨熱編碼**<br>(One-hot Encoding) | 為每個類別建立一個獨立的欄位 (Dummy Variable)，是該類別則標為 1，否則為 0。 | 類別間**無**順序關係 (Color, City)。 | **紅色** $\to$ [1, 0, 0]<br>**綠色** $\to$ [0, 1, 0]<br>**藍色** $\to$ [0, 0, 1] |
 
-![獨熱編碼](images/one_hot_encoding.png)
+![獨熱編碼](images/one_hot_encoding.webp)
 
 ### 獨熱編碼的潛在問題
 
@@ -89,7 +89,7 @@ label: sec-chapter4
     *   例如在 Word2Vec 中：$Vector(國王) - Vector(男人) + Vector(女人) \approx Vector(皇后)$。
     *   這不僅解決了維度問題，還捕捉了類別之間的**語意關係**。
 
-![特徵嵌入](images/feature_embedding.png)
+![特徵嵌入](images/feature_embedding.webp)
 
 ## 進階特徵技巧 {#sec-advanced-features}
 
@@ -104,7 +104,7 @@ label: sec-chapter4
     *   單看經度或緯度，很難判斷房價（同一經度有精華區也有郊區）。
     *   **交叉特徵**：將地圖切成網格，`經度 x 緯度` 代表一個具體的**區塊 (Block)**。信義區的某個區塊房價顯然比山區的某個區塊高。這就是特徵交叉的威力。
 
-![特徵交叉](images/feature_cross.png)
+![特徵交叉](images/feature_cross.webp)
 
 ### 特徵選擇 (Feature Selection)
 
@@ -119,7 +119,7 @@ label: sec-chapter4
     *   隨著特徵維度增加，資料在空間中會變得極度**稀疏 (Sparse)**。
     *   為了維持同樣的資料密度，所需的訓練資料量需要呈指數級增加。如果資料量不夠，模型就無法有效學習。
 
-![特徵選擇](images/feature_selection.png)
+![特徵選擇](images/feature_selection.webp)
 
 **常見篩選方法**：
 
@@ -142,7 +142,7 @@ label: sec-chapter4
 *   **問題**：如果詐欺只有 1%，模型只要全部猜「正常」，準確率 (Accuracy) 就高達 99%。但這個模型對抓詐欺完全沒用。
 *   **解法**：
 
-![不平衡資料](images/imbalanced_data.png)
+![不平衡資料](images/imbalanced_data.webp)
 
 ### 1. 重採樣 (Resampling)
 

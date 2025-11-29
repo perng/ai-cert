@@ -19,7 +19,7 @@ label: sec-chapter10
     *   **深度神經網路**：幾百萬個參數，看不出意義。
     *   **隨機森林**：幾百棵樹的投票結果，難以追蹤。
 
-![黑箱模型 vs. 白箱模型](images/black-white-box.png)
+![黑箱模型 vs. 白箱模型](images/black-white-box.webp)
 
 ### 全局解釋 vs. 局部解釋 {#sec-global-local}
 
@@ -30,7 +30,7 @@ label: sec-chapter10
     *   **問題**：為什麼**這一筆**特定的貸款申請被拒絕了？
     *   **例子**：雖然這人收入高（正向因素），但因為「信用紀錄太短」（負向因素）且「近期查詢次數過多」（負向因素），綜合起來導致被拒絕。
 
-![全局解釋 vs. 局部解釋](images/global-local.png)
+![全局解釋 vs. 局部解釋](images/global-local.webp)
 
 ## 解釋技術與工具 {#sec-xai-techniques}
 
@@ -44,7 +44,7 @@ label: sec-chapter10
     4.  解釋這個線性模型。
 *   **優點**：與模型無關 (Model-agnostic)，任何模型（神經網路、SVM、隨機森林）都能用。
 
-![LIME](images/lime.png)
+![LIME](images/lime.webp)
 
 ### SHAP (Shapley Values) {#sec-shap}
 
@@ -56,7 +56,7 @@ label: sec-chapter10
     *   「有車位」貢獻了 +100 萬。
 *   **優點**：數學理論最紮實，能提供**一致性 (Consistency)** 的解釋，且同時支援全局與局部解釋。
 
-![SHAP](images/shap.png)
+![SHAP](images/shap.webp)
 
 ### 特徵重要度 (Feature Importance) {#sec-feature-importance}
 
@@ -84,7 +84,7 @@ label: sec-chapter10
         *   不要叫使用者同時改 10 件事（如：收入加倍、換工作、搬家、結婚...），這太難做到了。通常建議 1-2 個最有效的改變。
     3.  **有效性 (Validity)**：這個改變必須真的能讓 AI 的預測結果翻盤（從 Reject 變 Accept）。
 
-![反事實解釋](images/counterfactual.png)
+![反事實解釋](images/counterfactual.webp)
 
 ## 本章總結與考點提示 {#sec-chapter10-summary}
 

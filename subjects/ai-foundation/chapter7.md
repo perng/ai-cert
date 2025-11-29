@@ -25,7 +25,7 @@ label: sec-chapter7
         *   $b$: 偏差 (Bias)，調整啟動門檻
         *   $\sigma$: 啟動函數 (Activation Function)
 
-![MLP](images/mlp.png)
+![MLP](images/mlp.webp)
 
 ### 啟動函數 (Activation Functions) {#sec-activation-functions}
 
@@ -43,7 +43,7 @@ label: sec-chapter7
     *   **公式**：$$ P(y=j) = \frac{e^{z_j}}{\sum_{k=1}^{K} e^{z_k}} $$
     *   **特性**：通常用於**輸出層**。將一組數值轉換為**機率分佈**（總和為 1）。例如：[貓: 0.8, 狗: 0.1, 鳥: 0.1]。
 
-![Activation Functions](images/activation-functions.png)
+![Activation Functions](images/activation-functions.webp)
 
 ### 反向傳播 (Backpropagation) 與優化器(Optimizer) {#sec-backpropagation}
 
@@ -62,7 +62,7 @@ label: sec-chapter7
     *   **修正**：利用**優化器 (Optimizer)** 根據梯度調整權重，讓下次誤差變小。
     *   *類比*：學生修正錯誤觀念，下次考試就能拿高分。
 
-![神經網路如何「學習」](images/backpropagation.png)
+![神經網路如何「學習」](images/backpropagation.webp)
 
 **常見優化器 (Optimizer)**：
 負責決定「如何調整權重」的演算法。
@@ -77,7 +77,7 @@ label: sec-chapter7
         *   **自適應**：在平坦的地方滾快一點，在陡峭的地方滾慢一點。
     *   **地位**：目前最常用的預設優化器。
 
-![優化器](images/optimizer.png)
+![優化器](images/optimizer.webp)
 
 ## 經典深度架構 {#sec-deep-architectures}
 
@@ -101,7 +101,7 @@ label: sec-chapter7
         *   *類比*：把拼圖的碎片（特徵）全部蒐集起來，拼出最後的結論。
 *   **應用**：人臉辨識、醫療影像分析 (X光/MRI)、自駕車視覺系統。
 
-![CNN](images/cnn.png)
+![CNN](images/cnn.webp)
 
 ### 循環神經網路 (RNN, Recurrent Neural Networks) {#sec-rnn}
 
@@ -127,14 +127,14 @@ label: sec-chapter7
         *   (輸入) 寫入新的預約。
         *   (輸出) 在適當的時間提醒老闆該開會了。
 
-![RNN](images/rnn.png)
+![RNN](images/rnn.webp)
 
 ## Transformer 與注意力機制 {#sec-transformer}
 
 2017 年 Google 發表論文《Attention Is All You Need》，徹底改變了 NLP 領域，也開啟了大型語言模型 (LLM) 的時代。
 
 ### 自注意力機制 (Self-Attention) {#sec-self-attention}
-![自注意力機制](images/self-attention.png)
+![自注意力機制](images/self-attention.webp)
 
 這是 Transformer 的靈魂，讓模型能理解字與字之間的關係。
 
@@ -164,7 +164,7 @@ label: sec-chapter7
 *   **實例**："The animal didn't cross the street because **it** was too tired."
     *   當模型讀到 "**it**" 時，Attention 機制會算出它跟 "**animal**" 的關聯度最高（因為 tired 通常形容動物），而不是 "street"。這讓模型真正「讀懂」了代名詞。
 
-![Transformer](images/transformer.png)
+![Transformer](images/transformer.webp)
 
 ### Transformer 架構優勢 {#sec-transformer-arch}
 
@@ -174,7 +174,7 @@ label: sec-chapter7
 2.  **長距離依賴 (Long-range Dependency)**：
     *   透過 Attention，無論兩個字距離多遠，都能直接建立關聯，不再有 LSTM 的記憶長度限制。
 
-![Transformer 架構優勢](images/transformer-advantages.png)
+![Transformer 架構優勢](images/transformer-advantages.webp)
 
 ### Encoder 與 Decoder 家族
 

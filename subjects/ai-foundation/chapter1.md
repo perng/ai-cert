@@ -76,7 +76,7 @@ AI 的目標並非僅僅是模仿人類，更在於透過計算能力來增強�
 2.  **機器學習 (Machine Learning, ML)** {#def-ml}：AI 的子集。專指那些「不需明確編寫指令，就能讓電腦從數據中學習」的演算法。它包含了傳統的統計學習方法（如決策樹、SVM）和深度學習。
 3.  **深度學習 (Deep Learning, DL)** {#def-dl}：機器學習的子集。特指使用「多層類神經網路 (Deep Neural Networks)」來模擬人類大腦運作的技術。它是目前推動 AI 爆發性成長（如 AlphaGo, ChatGPT）的核心技術。
 
-![AI、機器學習、深度學習的包含關係](images/ai-ml-dl.png)
+![AI、機器學習、深度學習的包含關係](images/ai-ml-dl.webp)
 
 ### 資料驅動 (Data-Driven) vs. 規則驅動 (Rule-Based) {#sec-data-vs-rule}
 
@@ -133,7 +133,7 @@ AI 並非要完全取代人類，更多時候是與人類協作。根據人類�
     *   **動態定價 (Dynamic Pricing)**：Uber 或機票網站根據供需自動調整價格。
 *   **風險**：由於人類無法即時監控，HOOTL 系統必須具備極高的可靠性，並內建嚴格的安全機制 (Safety Guardrails) 以防止災難性的錯誤（如股市閃崩）。
 
-![Human-AI Collaboration Models](images/human-ai-collaboration.png)
+![Human-AI Collaboration Models](images/human-ai-collaboration.webp)
 
 ## 本章總結與考點提示 {#sec-chapter1-summary}
 

@@ -31,7 +31,7 @@ label: sec-chapter2
     *   **顧客分群 (Customer Segmentation)**：電商平台分析消費者的購買紀錄，自動將顧客分成「精打細算型」、「衝動購物型」等群體，但系統事先並不知道這些群體的定義。
     *   **異常偵測**：信用卡公司分析刷卡行為，發現某筆交易與平常的模式差異過大，判定為潛在盜刷。
 
-![監督式學習與非監督式學習](images/supervised.png)
+![監督式學習與非監督式學習](images/supervised.webp)
 
 
 ### 半監督式學習 (Semi-supervised Learning) {#sec-semi-supervised-learning}
@@ -41,7 +41,7 @@ label: sec-chapter2
 *   **類比**：老師只教了幾個核心概念（少量標籤），剩下的要學生舉一反三，從大量練習題中自己摸索（大量無標籤）。
 *   **應用**：醫療影像分析（醫生標註幾張 X 光片很花時間，但醫院有大量未標註的片子）。
 
-![半監督式學習](images/semi-supervised.png)
+![半監督式學習](images/semi-supervised.webp)
 
 ### 強化學習 (Reinforcement Learning) {#sec-reinforcement-learning}
 
@@ -66,7 +66,7 @@ AI 必須在這兩者之間取得平衡，才能不斷進步。
     *   **AlphaGo**：圍棋程式透過無數次的自我對弈，學習如何贏得比賽。它不僅學習人類棋譜，更透過自我探索發現了人類未曾想過的下法。
     *   **掃地機器人**：在房間裡碰撞學習，慢慢規劃出最有效率的清掃路徑，同時避開障礙物。
 
-![強化學習](images/reinforcement-learning.png)
+![強化學習](images/reinforcement-learning.webp)
 
 ### 遷移學習 (Transfer Learning) {#sec-transfer-learning}
 
@@ -78,7 +78,7 @@ AI 必須在這兩者之間取得平衡，才能不斷進步。
     *   **特定領域的語言模型**：使用像 GPT 這樣已經讀過整個網際網路的通用模型，針對「法律文件」或「醫療報告」進行微調，讓它變成該領域的專家助手。
     *   **風格轉換**：將一位畫家（如梵谷）的畫風「遷移」到一張普通的風景照上，讓照片瞬間變成名畫風格。
 
-![遷移學習](images/transfer-learning.png)
+![遷移學習](images/transfer-learning.webp)
 
 ## 資料分析層次 {#sec-data-analysis-levels}
 
@@ -92,7 +92,7 @@ AI 與資料科學不僅僅是預測未來，它在商業應用上通常被分�
     *   **網站分析**：昨天有多少人造訪網站？平均停留時間多久？
     *   **人資盤點**：目前公司有多少員工？各部門的人數分佈為何？
 
-![描述性分析](images/descriptive-analysis.png)
+![描述性分析](images/descriptive-analysis.webp)
 
 ### 2. 診斷性分析 (Diagnostic Analysis): 為什麼發生？ {#sec-diagnostic-analysis}
 
@@ -102,7 +102,7 @@ AI 與資料科學不僅僅是預測未來，它在商業應用上通常被分�
     *   **設備故障**：為什麼這台機器突然停機？是因為過熱還是零件磨損？
     *   **客戶流失**：為什麼這群客戶不再續約？是因為價格太高還是服務滿意度下降？
 
-![診斷性分析](images/diagnostic-analysis.png)
+![診斷性分析](images/diagnostic-analysis.webp)
 
 ### 3. 預測性分析 (Predictive Analysis): 將會發生什麼？ {#sec-predictive-analysis}
 
@@ -112,7 +112,7 @@ AI 與資料科學不僅僅是預測未來，它在商業應用上通常被分�
     *   **預防性維護**：這台機器在未來一週內故障的機率有多高？
     *   **信用評分**：這位申請人未來違約的機率是多少？
 
-![預測性分析](images/predictive-analysis.png)
+![預測性分析](images/predictive-analysis.webp)
 
 ### 4. 處方性分析 (Prescriptive Analysis): 應該怎麼做？ {#sec-prescriptive-analysis}
 
@@ -122,7 +122,7 @@ AI 與資料科學不僅僅是預測未來，它在商業應用上通常被分�
     *   **路徑規劃**：考量到預測的塞車狀況，導航系統建議司機改走 B 路線以節省 10 分鐘。
     *   **行銷配置**：為了最大化轉換率，系統建議將 60% 的預算投入 Instagram 廣告，40% 投入 Google 關鍵字。
 
-![處方性分析](images/prescriptive-analysis.png)
+![處方性分析](images/prescriptive-analysis.webp)
 
 ## 本章總結與考點提示 {#sec-chapter2-summary}
 
