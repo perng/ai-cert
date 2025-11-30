@@ -1,7 +1,7 @@
 ---
 title: "生成式 AI 與大型語言模型 (Generative AI & LLM)"
 order: 8
-label: sec-chapter8
+label: chap-chapter8
 ---
 
 <!-- # 生成式 AI 與大型語言模型 (Generative AI & LLM) -->
@@ -224,7 +224,7 @@ LLM (Large Language Model) 如 GPT 系列，本質上是一個超巨大的「文
 
 ![模型壓縮](images/model-compression.webp)
 
-## 本章總結與考點提示 {#sec-chapter8-summary}
+## 本章總結與考點提示 {#chap-chapter8-summary}
 
 ### 核心概念回顧
 

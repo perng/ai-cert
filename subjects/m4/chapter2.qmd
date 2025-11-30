@@ -1,0 +1,75 @@
+# 深度學習框架與架構 {#sec-m4-ch2}
+
+深度學習的快速發展離不開強大的框架與架構。
+
+## 深度學習框架 {#sec-dl-frameworks}
+
+深度學習框架 (Deep Learning Frameworks) 簡化了模型的開發與訓練，提供了自動微分 (Automatic Differentiation) 和 GPU 加速功能。
+
+### TensorFlow vs PyTorch {#sec-tf-pytorch}
+
+*   **TensorFlow**：由 Google 開發，工業界部署廣泛。Keras 是其高階 API，非常易用。
+*   **PyTorch**：由 Meta (Facebook) 開發，採用動態計算圖 (Dynamic Computation Graph)，除錯方便，學術界研究首選。
+
+**Python 範例：PyTorch 與 TensorFlow 定義簡單層的比較**
+
+```{python}
+# PyTorch
+import torch.nn as nn
+linear_layer = nn.Linear(in_features=10, out_features=5)
+
+# TensorFlow (Keras)
+import tensorflow as tf
+linear_layer = tf.keras.layers.Dense(units=5, input_shape=(10,))
+```
+
+## 進階架構 {#sec-adv-architectures}
+
+進階架構 (Advanced Architectures) 解決了更複雜的任務。
+
+### 卷積神經網路變體 {#sec-cnn-variants}
+
+*   **Inception (GoogLeNet)**：引入 Inception 模組，並行使用不同大小的卷積核。
+*   **MobileNet**：使用深度可分離卷積 (Depthwise Separable Convolution)，專為行動裝置設計。
+
+### 循環神經網路深入 {#sec-rnn-deep}
+
+深入探討 RNN、LSTM 和 GRU 的內部機制。
+
+**Mermaid 流程圖：LSTM 單元結構**
+
+```{mermaid}
+graph LR
+    Input[Input] --> ForgetGate[Forget Gate]
+    Input --> InputGate[Input Gate]
+    Input --> CellState[Cell State Update]
+    ForgetGate --> CellState
+    InputGate --> CellState
+    CellState --> OutputGate[Output Gate]
+    OutputGate --> HiddenState[Hidden State]
+```
+
+## 遷移學習與微調策略 {#sec-transfer-learning}
+
+遷移學習與微調策略 (Transfer Learning and Fine-tuning Strategies) 允許利用預訓練模型（如 ImageNet 上訓練的 ResNet）來解決新問題，只需少量數據。
+
+**Python 範例：PyTorch 遷移學習**
+
+```{python}
+import torchvision.models as models
+import torch.nn as nn
+
+# 載入預訓練的 ResNet18
+model = models.resnet18(pretrained=True)
+
+# 凍結所有參數
+for param in model.parameters():
+    param.requires_grad = False
+
+# 替換最後一層全連接層 (假設新任務有 10 類)
+num_ftrs = model.fc.in_features
+model.fc = nn.Linear(num_ftrs, 10)
+
+# 現在只會訓練最後一層
+print(model)
+```

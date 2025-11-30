@@ -1,0 +1,291 @@
+# 人工智慧數學基礎 {#sec-m1-ch1}
+
+本章將介紹人工智慧 (Artificial Intelligence, AI) 所需的數學基礎，包括機率統計、線性代數以及微積分與最佳化。這些數學工具是理解機器學習演算法背後原理的關鍵。
+
+## 機率與統計 {#sec-prob-stats}
+
+機率與統計 (Probability & Statistics) 是理解數據不確定性的基石。對於 STEM 背景的讀者來說，我們將重點放在統計推論與分佈特性上。
+
+### 敘述統計 {#sec-descriptive-stats}
+
+敘述統計 (Descriptive Statistics) 用於總結和描述數據集的特徵。
+
+*   **集中趨勢 (Central Tendency)**：
+    *   **平均數 (Mean, $\mu$)**：所有數值的總和除以數值的個數。
+        $$ \mu = \frac{1}{N} \sum_{i=1}^{N} x_i $$
+    *   **中位數 (Median)**：將數據排序後位於中間的數值。對極端值 (Outliers) 較不敏感。
+    *   **眾數 (Mode)**：出現次數最多的數值。
+
+*   **離散程度 (Dispersion)**：
+    *   **變異數 (Variance, $\sigma^2$)**：衡量數據點與平均值的平均距離平方。
+        $$ \sigma^2 = \frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2 $$
+    *   **標準差 (Standard Deviation, $\sigma$)**：變異數的平方根，與原始數據單位相同，更直觀。
+        $$ \sigma = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2} $$
+
+**Python 範例：計算敘述統計量**
+
+```{python}
+import numpy as np
+import pandas as pd
+
+# 創建一個隨機數據集
+data = np.random.normal(loc=50, scale=10, size=100) # 平均值 50，標準差 10
+df = pd.DataFrame(data, columns=['Values'])
+
+# 計算敘述統計
+stats = df.describe()
+print(stats)
+
+# 計算樣本變異數 (注意 pandas 預設 ddof=1，即除以 n-1)
+variance = df['Values'].var()
+print(f"Variance: {variance:.2f}")
+```
+
+### 機率分佈 {#sec-prob-dist}
+
+機率分佈 (Probability Distributions) 描述了隨機變數 (Random Variable) 可能取值的機率。
+
+*   **常態分佈 (Normal Distribution)**：又稱高斯分佈 (Gaussian Distribution)。
+    *   **定義**：PDF 為 $f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}$。
+    *   **特性**：
+        *   **對稱性**：分佈以平均數 $\mu$ 為中心對稱。
+        *   **68-95-99.7 法則**：約 68% 的數據落在 $\mu \pm \sigma$ 內，95% 落在 $\mu \pm 2\sigma$ 內，99.7% 落在 $\mu \pm 3\sigma$ 內。
+    *   **應用**：根據**中央極限定理 (Central Limit Theorem)**，當樣本數量足夠大時，獨立隨機變數的總和趨向於常態分佈。廣泛用於模擬自然現象（如身高、測量誤差）。
+
+*   **伯努利分佈 (Bernoulli Distribution)**：
+    *   **定義**：描述只有兩種可能結果（成功/失敗）的單次試驗。$P(X=1)=p, P(X=0)=1-p$。
+    *   **特性**：
+        *   期望值 $E[X] = p$。
+        *   變異數 $Var(X) = p(1-p)$。
+    *   **應用**：二元分類問題的基礎（如電子郵件是垃圾郵件與否）。
+
+*   **二項式分佈 (Binomial Distribution)**：
+    *   **定義**：$n$ 次獨立伯努利試驗中成功 $k$ 次的機率。
+    *   **特性**：
+        *   是 $n$ 個獨立伯努利試驗的總和。
+        *   期望值 $E[X] = np$，變異數 $Var(X) = np(1-p)$。
+    *   **應用**：預測多次重複實驗的結果（如投擲 10 次硬幣出現 5 次正面的機率）。
+
+*   **泊松分佈 (Poisson Distribution)**：
+    *   **定義**：描述在固定時間或空間間隔內發生某事件次數的機率。
+    *   **特性**：
+        *   **稀有事件定律**：當二項式分佈的 $n$ 很大且 $p$ 很小時，可近似為泊松分佈。
+        *   **均異同性**：期望值與變異數相等，皆為 $\lambda$ ($E[X] = Var(X) = \lambda$)。
+        *   **無記憶性 (Memoryless)**：雖然泊松分佈本身描述的是計數，但其事件發生的**時間間隔**服從指數分佈 (Exponential Distribution)，而指數分佈具有無記憶性（即過去的時間不影響未來的發生機率）。
+    *   **應用**：預測客服中心每小時接到的電話數量、網站每分鐘的訪問量。
+
+**Python 範例：繪製常態分佈**
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+import scipy.stats as stats
+
+# 設定參數
+mu = 0
+sigma = 1
+x = np.linspace(mu - 3*sigma, mu + 3*sigma, 100)
+
+# 繪製 PDF (機率密度函數)
+plt.plot(x, stats.norm.pdf(x, mu, sigma))
+plt.title('Standard Normal Distribution (mu=0, sigma=1)')
+plt.xlabel('x')
+plt.ylabel('Probability Density')
+plt.grid(True)
+plt.show()
+```
+
+**Python 範例：繪製離散機率分佈 (Bernoulli, Binomial, Poisson)**
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+import scipy.stats as stats
+
+# 設定圖表大小 (垂直排列)
+plt.figure(figsize=(8, 12))
+
+# 1. 伯努利分佈 (Bernoulli) - 比較不同 p 值
+plt.subplot(3, 1, 1)
+probs = [0.2, 0.5, 0.8]
+x = np.arange(2)
+width = 0.25
+
+for i, p in enumerate(probs):
+    pmf = [1-p, p]
+    # 將長條圖稍微錯開，以便並排顯示
+    position = x + (i - 1) * width
+    plt.bar(position, pmf, width, label=f'p={p}', edgecolor='black', alpha=0.8)
+
+plt.xticks(x, ['Failure (0)', 'Success (1)'])
+plt.title('Bernoulli Distribution (Comparison of p)')
+plt.ylabel('Probability')
+plt.legend()
+
+# 2. 二項式分佈 (Binomial)
+plt.subplot(3, 1, 2)
+n, p = 10, 0.5
+x = np.arange(0, n+1)
+prob = stats.binom.pmf(x, n, p)
+plt.bar(x, prob, color='lightgreen', edgecolor='black')
+plt.title(f'Binomial Distribution (n={n}, p={p})')
+plt.xlabel('Number of Successes')
+plt.ylabel('Probability')
+
+# 3. 泊松分佈 (Poisson)
+plt.subplot(3, 1, 3)
+lam = 3
+x = np.arange(0, 15)
+prob = stats.poisson.pmf(x, lam)
+plt.bar(x, prob, color='salmon', edgecolor='black')
+plt.title(f'Poisson Distribution ($\lambda$={lam})')
+plt.xlabel('Number of Events')
+plt.ylabel('Probability')
+
+plt.tight_layout()
+plt.show()
+```
+
+### 假設檢定 {#sec-hypothesis-testing}
+
+假設檢定 (Hypothesis Testing) 是一種統計推論方法，用於判斷樣本數據是否支持某個關於母體的假設。
+
+1.  **設定假設**：
+    *   **虛無假設 (Null Hypothesis, $H_0$)**：通常假設沒有效應或沒有差異（例如：新藥無效）。
+    *   **對立假設 (Alternative Hypothesis, $H_1$)**：通常是我們想要證明的效應（例如：新藥有效）。
+
+2.  **選擇顯著水準 ($\alpha$)**：通常設為 0.05。表示當 $H_0$ 為真時，我們錯誤地拒絕它的機率（Type I Error）。
+
+3.  **計算 p 值 (p-value)**：在 $H_0$ 為真的前提下，觀察到當前樣本（或更極端情況）的機率。
+    *   **步驟**：
+        1.  計算**檢定統計量 (Test Statistic)**（如 t 分數、z 分數）。
+        2.  根據統計量的分佈（如 t 分佈、常態分佈），計算該統計量出現的累積機率。
+        3.  對於雙尾檢定，p-value 通常是極端區域面積的兩倍。
+    *   **直觀理解**：p 值越小，表示在 $H_0$ 為真的情況下，觀察到當前數據的機率越低，因此我們越有理由懷疑 $H_0$。
+
+4.  **決策**：若 p-value < $\alpha$，則拒絕 $H_0$，認為結果具有統計顯著性。
+
+**Python 範例：單樣本 t 檢定**
+
+```{python}
+from scipy import stats
+
+# 假設我們有一組學生成績，想檢驗平均分是否顯著異於 70 分
+scores = [72, 75, 68, 70, 74, 78, 71, 73, 69, 76]
+
+# H0: mu = 70
+# H1: mu != 70
+t_stat, p_val = stats.ttest_1samp(scores, 70)
+
+print(f"T-statistic: {t_stat:.2f}")
+print(f"P-value: {p_val:.4f}")
+
+if p_val < 0.05:
+    print("拒絕虛無假設，平均分顯著異於 70")
+else:
+    print("無法拒絕虛無假設")
+```
+
+## 線性代數 {#sec-linear-algebra}
+
+線性代數 (Linear Algebra) 處理向量、矩陣及其運算，是 AI 模型（特別是深度學習）運算的基礎。
+
+### 向量與矩陣 {#sec-vectors-matrices}
+
+*   **向量 (Vectors)**：具有大小和方向的量。
+    *   **內積 (Dot Product)**：$a \cdot b = ||a|| ||b|| \cos \theta = \sum a_i b_i$。幾何上，它衡量兩個向量的方向一致性。若內積為 0，則兩向量正交（垂直）。
+*   **矩陣 (Matrices)**：數字的矩形陣列。
+    *   **矩陣乘法**：$C = AB$，其中 $C_{ij} = \sum_k A_{ik} B_{kj}$。這可以視為將矩陣 $A$ 的列向量與矩陣 $B$ 的行向量進行內積。
+
+**Python 範例：矩陣運算**
+
+```{python}
+import numpy as np
+
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+
+# 矩陣乘法
+C = np.dot(A, B)
+# 或者
+C_alt = A @ B
+
+print("Matrix Product:\n", C)
+```
+
+### 特徵值與特徵向量 {#sec-eigenvalues}
+
+對於方陣 $A$，若存在非零向量 $v$ 和純量 $\lambda$ 使得：
+$$ Av = \lambda v $$
+則 $\lambda$ 為**特徵值 (Eigenvalue)**，$v$ 為對應的**特徵向量 (Eigenvector)**。
+
+*   **幾何意義**：矩陣 $A$ 作用在特徵向量 $v$ 上，僅改變其長度（縮放 $\lambda$ 倍），而不改變其方向。
+*   **應用**：PCA（主成分分析）利用共變異數矩陣的特徵向量來找到數據變異最大的方向；Google 的 PageRank 演算法利用特徵向量來計算網頁的重要性。
+
+**Python 範例：計算特徵值**
+
+```{python}
+import numpy as np
+
+A = np.array([[4, 2], [1, 3]])
+eigenvalues, eigenvectors = np.linalg.eig(A)
+
+print("Eigenvalues:", eigenvalues)
+print("Eigenvectors:\n", eigenvectors)
+```
+
+## 微積分與最佳化 {#sec-calculus-optimization}
+
+微積分與最佳化 (Calculus & Optimization) 用於訓練模型，尋找最佳參數以最小化誤差。
+
+### 導數與梯度 {#sec-derivatives-gradients}
+
+*   **導數 (Derivative)**：函數 $f(x)$ 在某一點的切線斜率，表示變化率。$f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$。
+*   **偏導數 (Partial Derivative)**：多變數函數對其中一個變數求導，將其他變數視為常數。$\frac{\partial f}{\partial x_i}$。
+*   **梯度 (Gradient)**：多變數函數 $f(x_1, \dots, x_n)$ 的所有偏導數組成的向量 $\nabla f = [\frac{\partial f}{\partial x_1}, \dots, \frac{\partial f}{\partial x_n}]^T$。
+    *   **性質**：梯度指向函數增長最快的方向；梯度的反方向是函數下降最快的方向。
+
+### 梯度下降 {#sec-gradient-descent}
+
+梯度下降 (Gradient Descent) 是一種迭代最佳化演算法。為了最小化損失函數 $L(\theta)$，我們沿著梯度的反方向更新參數 $\theta$：
+
+$$ \theta_{t+1} = \theta_{t} - \eta \nabla L(\theta_{t}) $$
+
+其中 $\eta$ 是**學習率 (Learning Rate)**，控制步長的大小。
+*   **學習率過大**：可能導致震盪或發散。
+*   **學習率過小**：收斂速度過慢。
+
+**Python 範例：實作簡單梯度下降**
+
+我們嘗試尋找 $f(x) = x^2$ 的最小值（顯然在 $x=0$）。
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+
+def f(x):
+    return x**2
+
+def grad_f(x):
+    return 2*x
+
+# 參數設定
+learning_rate = 0.1
+iterations = 20
+x = 10 # 初始猜測
+history = []
+
+for i in range(iterations):
+    history.append(x)
+    x = x - learning_rate * grad_f(x)
+
+print(f"Final x: {x:.4f}")
+
+# 繪圖
+x_vals = np.linspace(-10, 10, 100)
+plt.plot(x_vals, f(x_vals), label='f(x) = x^2')
+plt.scatter(history, [f(val) for val in history], c='red', label='Gradient Descent Steps')
+plt.title('Gradient Descent Visualization')
+plt.legend()
+plt.show()
+```

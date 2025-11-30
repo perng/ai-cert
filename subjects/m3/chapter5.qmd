@@ -1,0 +1,31 @@
+# 大數據治理 {#sec-m3-ch5}
+
+大數據治理 (Big Data Governance) 確保數據的可用性、完整性和安全性。
+
+## 資料品質管理 {#sec-data-quality}
+
+資料品質管理 (Data Quality Management) 致力於維護數據的高準確性和一致性。
+*   **維度**：準確性 (Accuracy)、完整性 (Completeness)、一致性 (Consistency)、及時性 (Timeliness)。
+
+## 隱私保護 {#sec-privacy}
+
+隱私保護 (Privacy Preservation) 在大數據時代尤為重要。
+
+### 去識別化 {#sec-anonymization}
+
+去識別化 (Anonymization) 技術用於保護個人隱私。
+*   **k-匿名 (k-anonymity)**：確保每個記錄至少與 k-1 個其他記錄無法區分。
+
+### 差分隱私 {#sec-differential-privacy}
+
+差分隱私 (Differential Privacy) 提供了一種數學上嚴格的隱私保護定義。它通過在查詢結果中加入雜訊，使得攻擊者無法判斷特定個體是否在數據集中。
+
+$$ P(M(D) \in S) \le e^\epsilon P(M(D') \in S) $$
+
+其中 $\epsilon$ 是隱私預算，$\epsilon$ 越小，隱私保護越強，但數據可用性越低。
+
+## 合規與安全 {#sec-compliance}
+
+合規與安全 (Compliance and Security) 是大數據專案必須遵守的底線。
+*   **GDPR**：歐盟的一般資料保護規範。
+*   **資料加密**：靜態數據加密 (Encryption at Rest) 和傳輸中加密 (Encryption in Transit)。

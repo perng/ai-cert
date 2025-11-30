@@ -1,0 +1,69 @@
+# 模型最佳化與調校 {#sec-m4-ch3}
+
+模型最佳化與調校 (Model Optimization & Tuning) 是提升模型性能的關鍵步驟。
+
+## 超參數調校 {#sec-hyperparameter-tuning}
+
+超參數 (Hyperparameters) 是在訓練前設定的參數（如學習率、樹的深度、Batch size），模型無法從數據中學習它們。
+
+### 網格搜尋與隨機搜尋 {#sec-grid-random-search}
+
+*   **網格搜尋 (Grid Search)**：窮舉所有可能的參數組合。保證找到搜尋空間內的最佳解，但計算成本極高。
+*   **隨機搜尋 (Random Search)**：在參數空間中隨機採樣。通常比網格搜尋更高效，因為它能探索更多重要參數的取值。
+*   **貝葉斯最佳化 (Bayesian Optimization)**：建立一個概率模型來估計目標函數，並利用該模型選擇下一個最有希望的參數組合。
+
+**Python 範例：使用 Scikit-learn 進行網格搜尋**
+
+```{python}
+from sklearn.model_selection import GridSearchCV
+from sklearn.svm import SVC
+from sklearn.datasets import load_iris
+
+iris = load_iris()
+parameters = {'kernel':('linear', 'rbf'), 'C':[1, 10]}
+svc = SVC()
+clf = GridSearchCV(svc, parameters)
+clf.fit(iris.data, iris.target)
+
+print("Best parameters:", clf.best_params_)
+```
+
+## 正規化技術 {#sec-regularization}
+
+正規化技術 (Regularization Techniques) 用於防止過擬合 (Overfitting)，通過在損失函數中加入懲罰項來限制模型複雜度。
+
+$$ L_{total} = L_{original} + \lambda \cdot R(w) $$
+其中 $\lambda$ 是正規化強度。
+
+### L1/L2 正規化 {#sec-l1-l2}
+
+*   **L1 正規化 (Lasso)**：懲罰權重的絕對值總和。
+    $$ R(w) = \sum |w_i| $$
+    L1 傾向於產生**稀疏權重**（許多權重變為 0），因此也可用於**特徵選擇**。
+*   **L2 正規化 (Ridge)**：懲罰權重的平方和。
+    $$ R(w) = \sum w_i^2 $$
+    L2 傾向於使權重變小但不為 0，能有效防止單一特徵對模型影響過大。
+
+### Dropout {#sec-dropout}
+
+Dropout 在訓練過程中隨機丟棄（歸零）一部分神經元（例如 50%）。這強迫網路學習更魯棒的特徵，因為它不能依賴任何特定的神經元。在測試時，所有神經元都啟用，但輸出需要按比例縮放。
+
+### 提前停止 {#sec-early-stopping}
+
+提前停止 (Early Stopping) 監控驗證集誤差。當驗證誤差不再下降甚至開始上升時，停止訓練。這是一種簡單而有效的防止過擬合方法。
+
+## 模型壓縮 {#sec-model-compression}
+
+模型壓縮 (Model Compression) 技術減小模型體積，加速推論，使其能在邊緣設備上運行。
+
+### 量化 {#sec-quantization}
+
+量化 (Quantization) 將權重從 32 位浮點數 (FP32) 轉換為 8 位整數 (INT8)。
+*   **優點**：模型大小減少 4 倍，計算速度顯著提升。
+*   **缺點**：可能會造成輕微的精度損失。
+
+### 知識蒸餾 {#sec-distillation}
+
+知識蒸餾 (Knowledge Distillation) 訓練一個小的學生模型 (Student) 來模仿大的教師模型 (Teacher) 的輸出（Soft targets）。
+$$ L = \alpha L_{CE}(y, \hat{y}_{student}) + (1-\alpha) L_{KL}(\hat{y}_{teacher}, \hat{y}_{student}) $$
+學生模型不僅學習真實標籤，還學習教師模型的「暗知識」（例如，這張圖雖然是貓，但也有一點像狗）。

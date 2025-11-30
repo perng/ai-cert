@@ -333,3 +333,4 @@ TSWLatexianTemp*
 **/*.quarto_ipynb
 
 assets/
+future/

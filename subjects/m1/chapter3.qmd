@@ -1,0 +1,478 @@
+# 機器學習基礎概念 {#sec-m1-ch3}
+
+本章將介紹機器學習 (Machine Learning) 的核心概念，包括監督式學習、非監督式學習以及模型評估。
+
+## 監督式學習 {#sec-supervised-learning}
+
+監督式學習 (Supervised Learning) 使用標記好的數據 (Labeled Data) 來訓練模型，即每個輸入 $x$ 都有對應的正確輸出 $y$。目標是學習一個函數 $f: X \to Y$。
+
+### 線性迴歸 {#sec-linear-regression}
+
+線性迴歸 (Linear Regression) 用於預測連續數值。它試圖找到一條直線（或超平面）來擬合數據，使得預測值與真實值之間的均方誤差 (MSE) 最小。
+
+$$ y = w_0 + w_1 x_1 + \dots + w_n x_n = \mathbf{w}^T \mathbf{x} $$
+
+其中 $\mathbf{w}$ 是權重向量，$\mathbf{x}$ 是特徵向量。
+
+**演算法偽代碼 (Pseudo-code)：**
+
+```text
+Algorithm: Linear Regression with Gradient Descent
+
+Input: Training data (X, y), Learning rate alpha, Iterations N
+Output: Optimized weights w
+
+1. Initialize weights w randomly (or to zeros)
+2. For i = 1 to N:
+    a. Predict y_pred = X * w
+    b. Calculate Error = y_pred - y
+    c. Calculate Gradient = (2/m) * X.T * Error  (where m is number of samples)
+    d. Update weights: w = w - alpha * Gradient
+3. Return w
+```
+
+**Python 範例：簡單線性迴歸**
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+
+# 產生數據
+X = np.array([[1], [2], [3], [4], [5]])
+y = np.array([2, 4, 5, 4, 5])
+
+# 訓練模型
+model = LinearRegression()
+model.fit(X, y)
+
+# 預測
+y_pred = model.predict(X)
+
+# 繪圖
+plt.scatter(X, y, color='blue')
+plt.plot(X, y_pred, color='red')
+plt.title('Linear Regression')
+plt.show()
+```
+
+### 邏輯迴歸 {#sec-logistic-regression}
+
+邏輯迴歸 (Logistic Regression) 雖然名字中有「迴歸」，但實際上是用於**二元分類**問題。它使用 **Sigmoid 函數**將線性模型的輸出壓縮到 (0, 1) 之間，表示屬於正類的機率。
+
+**Sigmoid 函數定義**：
+$$ \sigma(z) = \frac{1}{1 + e^{-z}} $$
+
+**模型公式**：
+$$ P(y=1|x) = \sigma(\mathbf{w}^T \mathbf{x} + b) = \frac{1}{1 + e^{-(\mathbf{w}^T \mathbf{x} + b)}} $$
+
+*   當 $z \to \infty$，$\sigma(z) \to 1$。
+*   當 $z \to -\infty$，$\sigma(z) \to 0$。
+*   當 $z = 0$，$\sigma(z) = 0.5$（決策邊界）。
+
+**Python 範例：繪製 Sigmoid 函數**
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+def sigmoid(z):
+    return 1 / (1 + np.exp(-z))
+
+z = np.linspace(-10, 10, 100)
+y = sigmoid(z)
+
+plt.figure(figsize=(8, 6))
+plt.plot(z, y, label='Sigmoid Function')
+plt.axvline(x=0, color='k', linestyle='--', alpha=0.5)
+plt.axhline(y=0.5, color='r', linestyle='--', alpha=0.5, label='0.5 Threshold')
+plt.title('Sigmoid Function for Logistic Regression')
+plt.xlabel('z (Linear Output)')
+plt.ylabel('Probability')
+plt.legend()
+plt.grid(True)
+plt.show()
+```
+
+**Python 範例：邏輯迴歸分類**
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LogisticRegression
+from sklearn.datasets import make_classification
+
+# 1. 產生二元分類數據
+X, y = make_classification(n_samples=100, n_features=2, n_redundant=0, 
+                           n_informative=2, random_state=1, n_clusters_per_class=1)
+
+# 2. 訓練邏輯迴歸模型
+model = LogisticRegression()
+model.fit(X, y)
+
+# 3. 繪製決策邊界
+# 建立網格
+x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
+y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1
+xx, yy = np.meshgrid(np.arange(x_min, x_max, 0.02),
+                     np.arange(y_min, y_max, 0.02))
+
+# 預測網格中每個點的類別
+Z = model.predict(np.c_[xx.ravel(), yy.ravel()])
+Z = Z.reshape(xx.shape)
+
+# 繪圖
+plt.figure(figsize=(8, 6))
+plt.contourf(xx, yy, Z, alpha=0.3, cmap='coolwarm')
+plt.scatter(X[:, 0], X[:, 1], c=y, edgecolors='k', cmap='coolwarm')
+plt.title('Logistic Regression Decision Boundary')
+plt.xlabel('Feature 1')
+plt.ylabel('Feature 2')
+plt.show()
+```
+
+### 決策樹 {#sec-decision-trees}
+
+決策樹 (Decision Trees) 通過一系列規則對數據進行分類或回歸。它模擬人類的決策過程，易於理解和解釋。
+*   **節點 (Node)**：代表一個特徵的測試。
+*   **分支 (Branch)**：代表測試的結果。
+*   **葉節點 (Leaf)**：代表最終的類別或數值。
+
+**如何建構決策樹？**
+
+決策樹的建構過程就是不斷選擇「最佳特徵」來分割數據，直到滿足停止條件（如葉節點純度夠高或達到最大深度）。
+*   **資訊獲利 (Information Gain)**：基於**熵 (Entropy)** 的概念。熵衡量數據的混亂程度。我們希望分割後的子集熵越小越好（越純）。
+    $$ Entropy(S) = - \sum p_i \log_2 p_i $$
+*   **Gini 不純度 (Gini Impurity)**：衡量從集合中隨機選取一個元素被錯誤標記的機率。CART 演算法使用 Gini 不純度。
+    $$ Gini(S) = 1 - \sum p_i^2 $$
+
+**Python 範例：視覺化決策樹**
+
+```{python}
+from sklearn.datasets import load_iris
+from sklearn.tree import DecisionTreeClassifier
+from sklearn import tree
+import matplotlib.pyplot as plt
+
+# 載入 Iris 數據集
+iris = load_iris()
+X, y = iris.data, iris.target
+
+# 訓練決策樹模型 (限制深度以便視覺化)
+clf = DecisionTreeClassifier(max_depth=3, random_state=0)
+clf.fit(X, y)
+
+# 繪製決策樹
+plt.figure(figsize=(12, 8))
+tree.plot_tree(clf, filled=True, feature_names=iris.feature_names, class_names=iris.target_names)
+plt.title("Decision Tree Visualization (Iris Dataset)")
+plt.show()
+```
+
+### 支援向量機 {#sec-svm}
+
+支援向量機 (SVM, Support Vector Machine) 是一種強大的監督式學習演算法，用於分類和迴歸。
+*   **核心概念**：尋找一個最佳超平面 (Hyperplane)，使得不同類別之間的**邊界 (Margin)** 最大化。邊界是超平面到最近的數據點（稱為**支援向量 Support Vectors**）的距離。
+*   **數學目標**：最大化 $\frac{2}{||\mathbf{w}||}$，等同於最小化 $\frac{1}{2}||\mathbf{w}||^2$。
+*   **核函數 (Kernel Trick)**：當數據在低維空間線性不可分時，SVM 使用核函數（如 RBF, Polynomial）將數據映射到高維空間，使其變得線性可分。
+
+**Python 範例：SVM 分類與決策邊界**
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn import svm
+from sklearn.datasets import make_blobs
+
+# 建立 40 個分離的點
+X, y = make_blobs(n_samples=40, centers=2, random_state=6)
+
+# 擬合模型，並為了展示正則化，使用一個大的 C
+clf = svm.SVC(kernel='linear', C=1000)
+clf.fit(X, y)
+
+plt.figure(figsize=(8, 6))
+plt.scatter(X[:, 0], X[:, 1], c=y, s=30, cmap=plt.cm.Paired)
+
+# 繪製決策函數
+ax = plt.gca()
+xlim = ax.get_xlim()
+ylim = ax.get_ylim()
+
+# 建立網格來評估模型
+xx = np.linspace(xlim[0], xlim[1], 30)
+yy = np.linspace(ylim[0], ylim[1], 30)
+YY, XX = np.meshgrid(yy, xx)
+xy = np.vstack([XX.ravel(), YY.ravel()]).T
+Z = clf.decision_function(xy).reshape(XX.shape)
+
+# 繪製決策邊界和邊界 (Margins)
+ax.contour(XX, YY, Z, colors='k', levels=[-1, 0, 1], alpha=0.5,
+           linestyles=['--', '-', '--'])
+# 繪製支援向量
+ax.scatter(clf.support_vectors_[:, 0], clf.support_vectors_[:, 1], s=100,
+           linewidth=1, facecolors='none', edgecolors='k')
+plt.title('SVM Decision Boundary with Support Vectors')
+plt.show()
+```
+
+### K-近鄰演算法 {#sec-knn}
+
+K-近鄰演算法 (KNN, K-Nearest Neighbors) 是一種簡單直觀的監督式學習演算法。
+*   **原理**：對於一個新的數據點，查看其在特徵空間中最近的 $K$ 個鄰居。
+    *   **分類**：由這 $K$ 個鄰居中出現次數最多的類別決定（多數決）。
+    *   **迴歸**：由這 $K$ 個鄰居的平均值決定。
+*   **距離度量**：最常用的是歐幾里得距離 (Euclidean Distance)。
+*   **K 的選擇**：
+    *   $K$ 太小：模型容易受雜訊影響，導致過擬合 (Overfitting)。
+    *   $K$ 太大：模型過於平滑，導致欠擬合 (Underfitting)。
+
+**Python 範例：KNN 分類**
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.colors import ListedColormap
+from sklearn import neighbors, datasets
+
+n_neighbors = 15
+
+# 載入 Iris 數據集 (只取前兩個特徵以便繪圖)
+iris = datasets.load_iris()
+X = iris.data[:, :2]
+y = iris.target
+
+h = .02  # 網格步長
+
+# 建立顏色圖
+cmap_light = ListedColormap(['orange', 'cyan', 'cornflowerblue'])
+cmap_bold = ListedColormap(['darkorange', 'c', 'darkblue'])
+
+clf = neighbors.KNeighborsClassifier(n_neighbors, weights='uniform')
+clf.fit(X, y)
+
+# 繪製決策邊界
+x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
+y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1
+xx, yy = np.meshgrid(np.arange(x_min, x_max, h),
+                     np.arange(y_min, y_max, h))
+Z = clf.predict(np.c_[xx.ravel(), yy.ravel()])
+
+Z = Z.reshape(xx.shape)
+plt.figure(figsize=(8, 6))
+plt.contourf(xx, yy, Z, cmap=cmap_light)
+
+# 繪製訓練點
+plt.scatter(X[:, 0], X[:, 1], c=y, cmap=cmap_bold,
+            edgecolor='k', s=20)
+plt.xlim(xx.min(), xx.max())
+plt.ylim(yy.min(), yy.max())
+plt.title("3-Class classification (k = %i, weights = 'uniform')"
+          % (n_neighbors))
+plt.xlabel('Sepal length')
+plt.ylabel('Sepal width')
+plt.show()
+```
+
+## 非監督式學習 {#sec-unsupervised-learning}
+
+非監督式學習 (Unsupervised Learning) 處理沒有標籤的數據，旨在發現數據中的隱藏結構。
+
+### K-平均分群 {#sec-kmeans}
+
+K-平均分群 (K-means Clustering) 將數據劃分為 K 個群集 (Clusters)。
+*   **目標函數**：最小化群集內變異數總和 (Within-Cluster Sum of Squares, WCSS)。
+    $$ J = \sum_{i=1}^{K} \sum_{x \in C_i} ||x - \mu_i||^2 $$
+    其中 $\mu_i$ 是群集 $C_i$ 的中心。
+
+**演算法偽代碼 (Pseudo-code)：**
+
+```text
+Algorithm: K-Means Clustering
+
+Input: Data points X, Number of clusters K
+Output: Cluster assignments for each point
+
+1. Initialize K centroids randomly
+2. Repeat until convergence (centroids do not change):
+    a. Assignment Step:
+       For each data point x:
+           Assign x to the nearest centroid (based on Euclidean distance)
+    b. Update Step:
+       For each cluster:
+           Calculate new centroid as the mean of all points assigned to it
+3. Return cluster assignments
+```
+
+**如何決定 K 值？**
+
+決定最佳的群集數量 $K$ 是一個常見的問題。最常用的方法是**手肘法 (Elbow Method)**。
+*   **原理**：計算不同 $K$ 值下的 WCSS (Within-Cluster Sum of Squares)。隨著 $K$ 增加，WCSS 會逐漸減小。
+*   **選擇**：選擇 WCSS 下降幅度開始變緩的那個點（看起來像手肘的彎曲處），作為最佳的 $K$。
+
+::: {.callout-note}
+## WCSS (Within-Cluster Sum of Squares)
+WCSS 是群集內變異數的總和，用來衡量群集的緊密程度。WCSS 越小，表示群集內的點越集中，分群效果越好。但在使用手肘法時，我們尋找的是 WCSS 下降幅度變緩的點，以平衡群集數量與緊密程度。
+:::
+
+**Python 範例：手肘法**
+
+```{python}
+from sklearn.cluster import KMeans
+from sklearn.datasets import make_blobs
+import matplotlib.pyplot as plt
+
+# 產生數據 (為了手肘法範例)
+X, _ = make_blobs(n_samples=300, centers=4, cluster_std=0.60, random_state=0)
+
+wcss = []
+for i in range(1, 11):
+    kmeans = KMeans(n_clusters=i, init='k-means++', max_iter=300, n_init=10, random_state=0)
+    kmeans.fit(X)
+    wcss.append(kmeans.inertia_)
+
+plt.figure(figsize=(8, 5))
+plt.plot(range(1, 11), wcss, marker='o')
+plt.title('Elbow Method')
+plt.xlabel('Number of clusters')
+plt.ylabel('WCSS')
+plt.show()
+```
+
+**Python 範例：K-means 分群**
+
+```{python}
+from sklearn.cluster import KMeans
+from sklearn.datasets import make_blobs
+import matplotlib.pyplot as plt
+
+# 產生數據
+X, _ = make_blobs(n_samples=300, centers=4, cluster_std=0.60, random_state=0)
+
+# 訓練 K-Means
+kmeans = KMeans(n_clusters=4)
+kmeans.fit(X)
+y_kmeans = kmeans.predict(X)
+
+# 繪圖
+plt.scatter(X[:, 0], X[:, 1], c=y_kmeans, s=50, cmap='viridis')
+centers = kmeans.cluster_centers_
+plt.scatter(centers[:, 0], centers[:, 1], c='red', s=200, alpha=0.5)
+plt.title('K-Means Clustering')
+plt.show()
+```
+
+## 模型評估 {#sec-model-evaluation}
+
+模型評估 (Model Evaluation) 是衡量模型性能的關鍵步驟。
+
+### 評估指標 {#sec-metrics}
+
+對於二元分類問題，我們通常使用混淆矩陣 (Confusion Matrix)：
+
+| | 預測 Positive | 預測 Negative |
+|---|---|---|
+| **真實 Positive** | TP (True Positive) | FN (False Negative) |
+| **真實 Negative** | FP (False Positive) | TN (True Negative) |
+
+*   **準確率 (Accuracy)**：預測正確的比例。
+    $$ Accuracy = \frac{TP + TN}{TP + TN + FP + FN} $$
+*   **精確率 (Precision)**：預測為正例中真正為正例的比例（寧缺毋濫）。
+    $$ Precision = \frac{TP}{TP + FP} $$
+*   **召回率 (Recall)**：真正為正例中被預測為正例的比例（寧濫毋缺）。
+    $$ Recall = \frac{TP}{TP + FN} $$
+*   **F1 分數 (F1 Score)**：精確率和召回率的調和平均數，用於平衡兩者。
+    $$ F1 = 2 \cdot \frac{Precision \cdot Recall}{Precision + Recall} $$
+*   **ROC 曲線 (Receiver Operating Characteristic Curve)**：
+    *   描述分類器在不同**閾值 (Threshold)** 下的表現。
+    *   **X 軸**：偽陽性率 (FPR, False Positive Rate) = $\frac{FP}{FP + TN}$ (1 - Specificity)。
+    *   **Y 軸**：真陽性率 (TPR, True Positive Rate) = $\frac{TP}{TP + FN}$ (Recall)。
+    *   理想的曲線應盡可能靠近左上角 (TPR=1, FPR=0)。
+*   **AUC (Area Under the Curve)**：ROC 曲線下的面積。
+    *   **AUC = 0.5**：相當於隨機猜測（無鑑別力）。
+    *   **0.7 < AUC < 0.8**：可接受的鑑別力。
+    *   **AUC > 0.9**：極佳的鑑別力。
+    *   **AUC = 1.0**：完美分類。
+
+**Python 範例：繪製 ROC 曲線與計算 AUC**
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.metrics import roc_curve, auc
+from sklearn.datasets import make_classification
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+
+# 1. 產生不平衡的二元分類數據
+X, y = make_classification(n_samples=1000, n_classes=2, weights=[0.9, 0.1], random_state=42)
+
+# 2. 分割數據並訓練模型
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+model = LogisticRegression()
+model.fit(X_train, y_train)
+
+# 3. 預測機率 (取正類的機率)
+y_score = model.predict_proba(X_test)[:, 1]
+
+# 4. 計算 FPR, TPR, Thresholds
+fpr, tpr, thresholds = roc_curve(y_test, y_score)
+roc_auc = auc(fpr, tpr)
+
+# 5. 繪製 ROC 曲線
+plt.figure(figsize=(8, 6))
+plt.plot(fpr, tpr, color='darkorange', lw=2, label=f'ROC curve (AUC = {roc_auc:.2f})')
+plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--', label='Random Guess')
+plt.xlim([0.0, 1.0])
+plt.ylim([0.0, 1.05])
+plt.xlabel('False Positive Rate (1 - Specificity)')
+plt.ylabel('True Positive Rate (Sensitivity)')
+plt.title('Receiver Operating Characteristic (ROC)')
+plt.legend(loc="lower right")
+plt.grid(True)
+plt.show()
+```
+
+### 交叉驗證 {#sec-cross-validation}
+
+交叉驗證 (Cross-validation) 是一種評估模型泛化能力的技術，能有效減少因數據劃分不同而帶來的評估誤差。
+*   **K-Fold 交叉驗證**：最常用的方法。
+    1.  將數據隨機分為 $K$ 份 (Folds)。
+    2.  輪流使用其中 $K-1$ 份作為訓練集，剩餘 1 份作為驗證集。
+    3.  重複 $K$ 次，計算 $K$ 次評估指標的平均值作為最終性能指標。
+
+**Python 範例：K-Fold 交叉驗證**
+
+```{python}
+from sklearn.model_selection import cross_val_score
+from sklearn.datasets import load_iris
+from sklearn.linear_model import LogisticRegression
+
+iris = load_iris()
+clf = LogisticRegression(max_iter=200)
+
+# 執行 5-Fold 交叉驗證
+scores = cross_val_score(clf, iris.data, iris.target, cv=5)
+
+print(f"Cross-validation scores: {scores}")
+print(f"Average score: {scores.mean():.2f}")
+```
+
+### 偏差-變異數權衡 {#sec-bias-variance}
+
+偏差-變異數權衡 (Bias-Variance Tradeoff) 是機器學習中的核心問題，描述了模型複雜度與預測誤差之間的關係。
+
+*   **偏差 (Bias)**：模型預測值的期望與真實值之間的差異。
+    *   **高偏差**：通常發生在模型太簡單時（如用直線擬合曲線數據），導致**欠擬合 (Underfitting)**。模型無法捕捉數據中的規律。
+*   **變異數 (Variance)**：模型預測值對於訓練數據變動的敏感度。
+    *   **高變異數**：通常發生在模型太複雜時（如高階多項式擬合），導致**過擬合 (Overfitting)**。模型記住了訓練數據中的雜訊，導致泛化能力差。
+
+*   **總誤差** = $Bias^2 + Variance + Irreducible Error$。
+    *   隨著模型複雜度增加，偏差下降，但變異數上升。
+    *   **目標**：找到兩者之間的平衡點（Sweet Spot），使得總誤差最小。
+
+::: {.callout-tip}
+## 解決策略
+*   **高偏差 (欠擬合)**：增加模型複雜度（如增加特徵、增加神經網路層數）、減少正則化。
+*   **高變異數 (過擬合)**：增加訓練數據、減少模型複雜度（如特徵選擇）、增加正則化 (Regularization)、使用 Dropout。
+:::

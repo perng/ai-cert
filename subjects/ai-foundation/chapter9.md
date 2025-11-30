@@ -1,7 +1,7 @@
 ---
 title: "模型評估與效能優化 (Model Evaluation & Optimization)"
 order: 9
-label: sec-chapter9
+label: chap-chapter9
 ---
 
 <!-- # 模型評估與效能優化 (Model Evaluation & Optimization) -->
@@ -129,7 +129,7 @@ label: sec-chapter9
 
 ![防止過擬合技術](images/prevent-overfitting.webp)
 
-## 本章總結與考點提示 {#sec-chapter9-summary}
+## 本章總結與考點提示 {#chap-chapter9-summary}
 
 ### 核心概念回顧
 

@@ -1,0 +1,59 @@
+# 進階資料處理 {#sec-m3-ch2}
+
+隨著數據量的增長，進階資料處理 (Advanced Data Processing) 技術變得不可或缺。
+
+## 資料攝取 {#sec-data-ingestion}
+
+資料攝取 (Data Ingestion) 是將數據導入系統的過程。
+
+### 批次處理 {#sec-batch-processing}
+
+批次處理 (Batch Processing) 適用於處理大量歷史數據，通常在夜間或離峰時間運行。例如：每天生成的銷售報表。
+
+### 串流處理 {#sec-streaming-processing}
+
+串流處理 (Streaming Processing) 用於即時處理數據流，具有低延遲特性。
+*   **Kafka**：一個高吞吐量的分散式發布訂閱消息系統。它充當數據管道的緩衝區。
+*   **Flink**：一個強大的串流處理框架，支持事件時間處理和狀態管理。
+
+**Mermaid 流程圖：Kafka 架構**
+
+```{mermaid}
+graph LR
+    Producer[Producer] -->|Push| Topic[Kafka Topic]
+    Topic -->|Pull| ConsumerA[Consumer Group A]
+    Topic -->|Pull| ConsumerB[Consumer Group B]
+```
+
+## ETL 流程與工作流自動化 {#sec-etl-workflow}
+
+ETL (Extract, Transform, Load) 流程與工作流自動化 (Workflow Automation) 確保數據處理的效率和可靠性。
+
+### Airflow {#sec-airflow}
+
+Apache Airflow 是一個以程式碼定義工作流 (Workflow as Code) 的平台。它使用 **DAG (Directed Acyclic Graph)** 來管理任務依賴。
+
+**Python 範例：定義 Airflow DAG**
+
+```{python}
+#| eval: false
+from airflow import DAG
+from airflow.operators.python import PythonOperator
+from datetime import datetime
+
+def extract():
+    print("Extracting data...")
+
+def transform():
+    print("Transforming data...")
+
+def load():
+    print("Loading data...")
+
+with DAG('simple_etl', start_date=datetime(2023, 1, 1), schedule_interval='@daily') as dag:
+    t1 = PythonOperator(task_id='extract', python_callable=extract)
+    t2 = PythonOperator(task_id='transform', python_callable=transform)
+    t3 = PythonOperator(task_id='load', python_callable=load)
+
+    t1 >> t2 >> t3 # 定義依賴關係
+```

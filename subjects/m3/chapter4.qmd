@@ -1,0 +1,41 @@
+# 資料視覺化與報告 {#sec-m3-ch4}
+
+資料視覺化與報告 (Data Visualization & Reporting) 是溝通分析結果的有效手段。一張好的圖表勝過千言萬語。
+
+## 視覺化原則與工具 {#sec-viz-principles}
+
+掌握視覺化原則與工具 (Visualization Principles and Tools) 是製作優秀圖表的關鍵。
+*   **選擇正確的圖表**：
+    *   比較：長條圖 (Bar Chart)
+    *   趨勢：折線圖 (Line Chart)
+    *   分佈：直方圖 (Histogram)、箱型圖 (Box Plot)
+    *   關係：散點圖 (Scatter Plot)
+*   **簡潔原則**：去除不必要的裝飾（Chart Junk），突出數據本身。
+
+### Tableau 與 Power BI {#sec-bi-tools}
+
+*   **Tableau**：以其強大的互動式視覺化能力著稱。
+*   **Power BI**：與 Microsoft 生態系統整合良好，適合企業報表。
+
+**Python 範例：使用 Seaborn 繪製熱力圖**
+
+```{python}
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# 載入範例數據
+flights = sns.load_dataset("flights")
+flights_pivot = flights.pivot(index="month", columns="year", values="passengers")
+
+# 繪製熱力圖
+plt.figure(figsize=(10, 8))
+sns.heatmap(flights_pivot, annot=True, fmt="d", cmap="YlGnBu")
+plt.title("Monthly Passengers")
+plt.show()
+```
+
+## 建立有效的儀表板 {#sec-dashboards}
+
+建立有效的儀表板 (Creating Effective Dashboards) 有助於決策者快速掌握關鍵資訊。
+*   **F 型佈局**：將最重要的資訊放在左上角。
+*   **KPI 指標**：清晰展示關鍵績效指標。

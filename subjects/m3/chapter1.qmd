@@ -1,0 +1,61 @@
+# 大數據生態系統 {#sec-m3-ch1}
+
+大數據生態系統 (Big Data Ecosystem) 包含了一系列用於處理海量數據的工具和技術。
+
+## 分散式運算框架 {#sec-distributed-computing}
+
+分散式運算框架 (Distributed Computing Frameworks) 是大數據處理的核心，解決了單機無法處理大規模數據的問題。
+
+### Hadoop {#sec-hadoop}
+
+Hadoop 是一個開源框架，允許使用簡單的程式設計模型跨計算機叢集分散式處理大數據。
+*   **MapReduce**：Hadoop 的核心運算模型，分為 Map（映射）和 Reduce（歸約）兩個階段。
+
+### Spark {#sec-spark}
+
+Spark 提供了更快速的記憶體內運算 (In-Memory Computing) 能力，比 Hadoop MapReduce 快 100 倍。
+*   **RDD (Resilient Distributed Dataset)**：Spark 的基本數據結構，具有彈性和容錯性。
+*   **DataFrame**：類似於關聯式資料庫的表格，提供了更高級的 API。
+
+**Python 範例：使用 PySpark 進行字數統計**
+
+```{python}
+#| eval: false
+# 假設已安裝 pyspark
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.appName("WordCount").getOrCreate()
+
+# 創建一個簡單的 DataFrame
+data = [("Hello world",), ("Hello Spark",), ("Big Data",)]
+df = spark.createDataFrame(data, ["text"])
+
+# 拆分單詞並計數
+from pyspark.sql.functions import explode, split, col
+
+words = df.select(explode(split(col("text"), " ")).alias("word"))
+word_counts = words.groupBy("word").count()
+
+word_counts.show()
+spark.stop()
+```
+
+## 儲存解決方案 {#sec-storage-solutions}
+
+有效的儲存解決方案 (Storage Solutions) 是管理大數據的基礎。
+
+### HDFS {#sec-hdfs}
+
+Hadoop 分散式檔案系統 (HDFS, Hadoop Distributed File System) 將大文件分割成區塊 (Blocks)，並複製到多個節點上以確保可靠性。
+
+### NoSQL 資料庫 {#sec-nosql}
+
+NoSQL (Not Only SQL) 資料庫適應了非結構化數據的儲存需求，具有高擴展性。
+*   **文件型 (Document)**：如 MongoDB，儲存 JSON 格式數據。
+*   **鍵值對 (Key-Value)**：如 Redis，適合快取。
+*   **列式 (Column-family)**：如 Cassandra，適合寫入密集型應用。
+*   **圖形 (Graph)**：如 Neo4j，適合儲存社交網絡關係。
+
+### 資料湖 {#sec-data-lakes}
+
+資料湖 (Data Lakes) 允許以原生格式儲存大量結構化和非結構化數據，通常基於物件儲存（如 AWS S3）。

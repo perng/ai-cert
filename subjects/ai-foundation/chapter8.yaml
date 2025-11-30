@@ -12,8 +12,8 @@ questions:
   correct_index: 1
   explanation: 鑑別式 AI 學習資料的邊界（分類），而生成式 AI 學習資料的分佈以創造全新的內容。
   tags:
-  - sec-chapter8
-  - sec-chapter8-summary
+  - chap-chapter8
+  - chap-chapter8-summary
 - id: 8002
   chapter_title: 生成式 AI 與大型語言模型
   section_title: 生成式模型原理
@@ -27,7 +27,7 @@ questions:
   correct_index: 3
   explanation: VAE 透過 Encoder 將資料編碼為常態分佈參數，再從中採樣並透過 Decoder 還原。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-vae
 - id: 8003
   chapter_title: 生成式 AI 與大型語言模型
@@ -42,7 +42,7 @@ questions:
   correct_index: 3
   explanation: GAN 由負責偽造的生成器和負責鑑識的判別器組成，兩者進行零和賽局的對抗訓練。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-gan
 - id: 8004
   chapter_title: 生成式 AI 與大型語言模型
@@ -57,7 +57,7 @@ questions:
   correct_index: 2
   explanation: 當生成器發現某種特定的騙術（樣本）特別有效時，就會一直重複生成該樣本，導致輸出缺乏變化。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-gan
 - id: 8005
   chapter_title: 生成式 AI 與大型語言模型
@@ -72,7 +72,7 @@ questions:
   correct_index: 0
   explanation: Diffusion Model 學習逆向擴散過程，從純雜訊開始，逐步去除雜訊直到生成清晰圖像。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-diffusion
 - id: 8006
   chapter_title: 生成式 AI 與大型語言模型
@@ -87,7 +87,7 @@ questions:
   correct_index: 3
   explanation: 這些現代圖像生成工具都是基於擴散模型技術，能生成高品質且多樣化的圖像。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-diffusion
 - id: 8007
   chapter_title: 生成式 AI 與大型語言模型
@@ -102,7 +102,7 @@ questions:
   correct_index: 2
   explanation: LLM 透過閱讀海量文本，學習預測句子中的下一個字，藉此學會語言結構與知識。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-pretrain-finetune
 - id: 8008
   chapter_title: 生成式 AI 與大型語言模型
@@ -117,7 +117,7 @@ questions:
   correct_index: 2
   explanation: RLHF 引入人類回饋來微調模型，使其產出更符合人類偏好與道德標準的內容。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-pretrain-finetune
 - id: 8009
   chapter_title: 生成式 AI 與大型語言模型
@@ -132,7 +132,7 @@ questions:
   correct_index: 3
   explanation: OpenAI 研究發現，只要增加參數量、訓練資料量和計算量，模型的 Loss 就會可預測地下降。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-scaling-laws
 - id: 8010
   chapter_title: 生成式 AI 與大型語言模型
@@ -147,7 +147,7 @@ questions:
   correct_index: 3
   explanation: 當模型規模（參數或運算量）達到一定程度時，會突然展現出小模型所沒有的能力（如推理、寫程式）。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-scaling-laws
 - id: 8011
   chapter_title: 生成式 AI 與大型語言模型
@@ -162,7 +162,7 @@ questions:
   correct_index: 2
   explanation: Zero-shot 測試模型在沒有看過任何範例的情況下，直接完成任務的能力。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-prompt-engineering
 - id: 8012
   chapter_title: 生成式 AI 與大型語言模型
@@ -177,7 +177,7 @@ questions:
   correct_index: 0
   explanation: 透過要求模型「一步步思考」，能引導模型分解複雜問題，大幅提升推理正確率。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-prompt-engineering
 - id: 8013
   chapter_title: 生成式 AI 與大型語言模型
@@ -192,7 +192,7 @@ questions:
   correct_index: 0
   explanation: 研究顯示 LLM 對 Context Window 開頭和結尾的資訊關注度較高，中間的資訊容易被忽略。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-prompt-engineering
 - id: 8014
   chapter_title: 生成式 AI 與大型語言模型
@@ -207,7 +207,7 @@ questions:
   correct_index: 0
   explanation: RAG 允許模型檢索外部知識庫，能提供有憑有據的回答，並解決模型訓練後知識無法更新的問題。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-rag
 - id: 8015
   chapter_title: 生成式 AI 與大型語言模型
@@ -222,7 +222,7 @@ questions:
   correct_index: 3
   explanation: 向量資料庫用於儲存與檢索文本的語意向量，是 RAG 系統檢索知識的關鍵。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-rag
 - id: 8016
   chapter_title: 生成式 AI 與大型語言模型
@@ -237,7 +237,7 @@ questions:
   correct_index: 1
   explanation: 量化透過降低數值精度（如 FP32 轉 INT8），大幅減少模型體積，使其能在資源受限的設備上運行。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-model-compression
 - id: 8017
   chapter_title: 生成式 AI 與大型語言模型
@@ -252,7 +252,7 @@ questions:
   correct_index: 2
   explanation: 知識蒸餾讓小模型學習大模型的輸出機率分佈（暗知識），使其在較小規模下也能達到不錯的效能。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-model-compression
 - id: 8018
   chapter_title: 生成式 AI 與大型語言模型
@@ -267,7 +267,7 @@ questions:
   correct_index: 1
   explanation: 由於 VAE 的損失函數特性，它傾向於生成平均化的結果，導致圖像邊緣較模糊。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-vae
 - id: 8019
   chapter_title: 生成式 AI 與大型語言模型
@@ -282,7 +282,7 @@ questions:
   correct_index: 1
   explanation: 生成器和判別器的利益是衝突的（一方贏另一方就輸），屬於零和賽局。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-gan
 - id: 8020
   chapter_title: 生成式 AI 與大型語言模型
@@ -297,7 +297,7 @@ questions:
   correct_index: 1
   explanation: 預訓練後的模型只會接龍，指令微調透過問答對資料，教導模型如何正確回應使用者的請求。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-pretrain-finetune
 - id: 8021
   chapter_title: 生成式 AI 與大型語言模型
@@ -312,7 +312,7 @@ questions:
   correct_index: 3
   explanation: Few-shot 提供 1 到多個範例 (Examples)，幫助模型理解任務格式與邏輯。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-prompt-engineering
 - id: 8022
   chapter_title: 生成式 AI 與大型語言模型
@@ -327,7 +327,7 @@ questions:
   correct_index: 3
   explanation: Fine-tuning 成本高且資料更新慢，RAG 只要更新資料庫就能讓模型知道最新資訊，且能避免災難性遺忘。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-rag
 - id: 8023
   chapter_title: 生成式 AI 與大型語言模型
@@ -342,7 +342,7 @@ questions:
   correct_index: 1
   explanation: 由於需要執行數十到數百步的逆向擴散過程，Diffusion Model 的生成速度通常比 GAN 慢。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-diffusion
 - id: 8024
   chapter_title: 生成式 AI 與大型語言模型
@@ -357,7 +357,7 @@ questions:
   correct_index: 2
   explanation: Base Model 雖然博學，但尚未經過指令微調，傾向於續寫文本而非回答問題。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-pretrain-finetune
 - id: 8025
   chapter_title: 生成式 AI 與大型語言模型
@@ -372,7 +372,7 @@ questions:
   correct_index: 0
   explanation: ToT 引導模型探索多種可能的思考路徑，並評估每條路徑的可行性，類似搜尋演算法。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-prompt-engineering
 - id: 8026
   chapter_title: 生成式 AI 與大型語言模型
@@ -387,7 +387,7 @@ questions:
   correct_index: 1
   explanation: 向量資料庫透過計算查詢向量與文件向量的距離（如餘弦相似度），找出語意最相關的內容。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-rag
 - id: 8027
   chapter_title: 生成式 AI 與大型語言模型
@@ -402,7 +402,7 @@ questions:
   correct_index: 0
   explanation: 這是量化的標準定義，犧牲些微精度換取模型輕量化。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-model-compression
 - id: 8028
   chapter_title: 生成式 AI 與大型語言模型
@@ -417,8 +417,8 @@ questions:
   correct_index: 1
   explanation: 撰寫文案屬於創造新內容，是生成式 AI 的典型應用。
   tags:
-  - sec-chapter8
-  - sec-chapter8-summary
+  - chap-chapter8
+  - chap-chapter8-summary
 - id: 8029
   chapter_title: 生成式 AI 與大型語言模型
   section_title: 生成式模型原理
@@ -432,7 +432,7 @@ questions:
   correct_index: 3
   explanation: 判別器扮演警察的角色，負責識破生成器製造的假圖。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-gan
 - id: 8030
   chapter_title: 生成式 AI 與大型語言模型
@@ -447,7 +447,7 @@ questions:
   correct_index: 2
   explanation: 幻覺是指 LLM 自信地編造出錯誤的事實或不存在的資訊。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-rag
 - id: 8031
   chapter_title: 生成式 AI 與大型語言模型
@@ -462,7 +462,7 @@ questions:
   correct_index: 3
   explanation: Context Window 決定了模型一次能「讀」多少字，超過這個長度的資訊會被截斷或遺忘。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-prompt-engineering
 - id: 8032
   chapter_title: 生成式 AI 與大型語言模型
@@ -477,7 +477,7 @@ questions:
   correct_index: 3
   explanation: 軟標籤包含了各類別的機率值（如 90% 狗, 10% 貓），比單純的硬標籤（100% 狗）包含更多資訊。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-model-compression
 - id: 8033
   chapter_title: 生成式 AI 與大型語言模型
@@ -492,7 +492,7 @@ questions:
   correct_index: 0
   explanation: VAE 的潛在空間是連續的，因此可以在兩個概念（如笑臉和哭臉）之間平滑過渡。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-vae
 - id: 8034
   chapter_title: 生成式 AI 與大型語言模型
@@ -507,7 +507,7 @@ questions:
   correct_index: 0
   explanation: 前向過程是不斷破壞圖片結構，加入雜訊直到無法辨識。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-diffusion
 - id: 8035
   chapter_title: 生成式 AI 與大型語言模型
@@ -522,7 +522,7 @@ questions:
   correct_index: 0
   explanation: RLHF 的目標是讓 AI 有用、誠實且無害，幽默並非核心安全要求。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-pretrain-finetune
 - id: 8036
   chapter_title: 生成式 AI 與大型語言模型
@@ -537,7 +537,7 @@ questions:
   correct_index: 1
   explanation: 為了避免「迷失在中間」效應，關鍵資訊應置於 Context 的首尾。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-prompt-engineering
 - id: 8037
   chapter_title: 生成式 AI 與大型語言模型
@@ -552,7 +552,7 @@ questions:
   correct_index: 1
   explanation: 將外部知識注入到 Prompt 中，讓 LLM 能夠參考這些資訊回答，即為增強。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-rag
 - id: 8038
   chapter_title: 生成式 AI 與大型語言模型
@@ -567,7 +567,7 @@ questions:
   correct_index: 2
   explanation: 32 bits / 8 bits = 4，理論上縮小了 4 倍。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-model-compression
 - id: 8039
   chapter_title: 生成式 AI 與大型語言模型
@@ -582,8 +582,8 @@ questions:
   correct_index: 0
   explanation: 鑑別式 AI 關注於給定輸入 X，判斷其標籤 Y 的機率，即尋找分類邊界。
   tags:
-  - sec-chapter8
-  - sec-chapter8-summary
+  - chap-chapter8
+  - chap-chapter8-summary
 - id: 8040
   chapter_title: 生成式 AI 與大型語言模型
   section_title: 大型語言模型技術
@@ -597,7 +597,7 @@ questions:
   correct_index: 2
   explanation: 預訓練階段利用文本本身的上下文關係（如 Next Token Prediction）作為監督訊號，無需人工標註。
   tags:
-  - sec-chapter8
+  - chap-chapter8
   - sec-pretrain-finetune
 - id: 8051
   chapter_title: 生成式 AI 與大型語言模型
@@ -657,5 +657,90 @@ questions:
   correct_index: 3
   explanation: LLM 像是一個讀過很多書但沒有求證能力的鸚鵡，它會一本正經地胡說八道，因為那樣說起來很「順」。
   tags:
+  - sec-ai-chapter8
+  - sec-llm-technologies
+- id: 11422
+  chapter_title: 生成式 AI 與大型語言模型
+  section_title: 生成式 AI 原理
+  text: 關於變分自編碼器（Variational Autoencoder, VAE）的運作流程，下 列何者敘述最為正確？ (114年第四梯次)
+  type: multiple_choice
+  options:
+  - 解碼器的任務是將低維壓縮向量分類為不同類別
+  - 編碼器將輸入資料轉換為可視化圖像以利模型學習
+  - 編碼器將資料轉換為潛在空間表示，解碼器再重建資料
+  - 編碼器利用最大邊際機率對資料進行異常點偵測
+  correct_index: 2
+  explanation: 此題涉及 生成式 AI 原理 的核心概念。正確答案為「編碼器將資料轉換為潛在空間表示，解碼器再重建資料」。 
+  tags:
+  - past-exam
+  - 114-4
+  - sec-ai-chapter8
+  - sec-generative-principles
+- id: 11426
+  chapter_title: 生成式 AI 與大型語言模型
+  section_title: LLM 技術與應用
+  text: 在深度學習模型的微調（Fine-tuning）過程中，可能出現所謂的「災 難性遺忘 （Catastrophic Forgetting） 」 。 此現象最可能造成哪種情況？ (114年第四梯次)
+  type: multiple_choice
+  options:
+  - 由於計算資源或訓練步驟不足，模型在微調過程中無法完整收斂， 導致學習效果受限
+  - 微調後模型的表現變得隨機，無法有效記憶新學到的模式與知識
+  - 微調後模型的部分權重產生偏移，導致模型無法針對較長的文字進 行回應
+  - 模型過度適應微調的資料分佈，逐漸遺忘先前預訓練所獲得的廣泛 知識，在原有任務或廣泛領域上表現變差
+  correct_index: 3
+  explanation: 此題涉及 LLM 技術與應用 的核心概念。正確答案為「模型過度適應微調的資料分佈，逐漸遺忘先前預訓練所獲得的廣泛 知識，在原有任務或廣泛領域上表現變差」。 
+  tags:
+  - past-exam
+  - 114-4
+  - sec-ai-chapter8
+  - sec-llm-technologies
+- id: 11408
+  chapter_title: 生成式 AI 與大型語言模型
+  section_title: 生成式 AI 原理
+  text: 為提升生成式 AI 系統回應的語境一致性，常會結合哪類模型技術？ (114年第四梯次)
+  type: multiple_choice
+  options:
+  - 決策樹分類器（Decision Tree Classifier）
+  - 條件語言模型（Conditional Language Model）
+  - 強化學習 Q-learning函數模型
+  - 基因演算法（Genetic Algorithm）
+  correct_index: 1
+  explanation: 此題涉及 生成式 AI 原理 的核心概念。正確答案為「條件語言模型（Conditional Language Model）」。 
+  tags:
+  - past-exam
+  - 114-4
+  - sec-ai-chapter8
+  - sec-generative-principles
+- id: 11438
+  chapter_title: 生成式 AI 與大型語言模型
+  section_title: LLM 技術與應用
+  text: 某公司建置基於檢索增強生成（RAG）的知識查詢系統，需同時兼顧查 詢效能與資料的即時更新。近期發現回應內容偶爾過時，且每次更新文 件都需完整重建索引，導致系統在更新期間無法服務。若要解決此問題 並提升整體穩健性，下列哪項做法最適合？ (114年第四梯次)
+  type: multiple_choice
+  options:
+  - 調整生成模型的回應隨機性參數，以降低答案偏差並提升一致性
+  - 提升檢索與索引的運算效能，以縮短查詢與更新所需時間
+  - 採用索引的增量或分段更新方式，使新資料能即時納入而不需全部 重建
+  - 建立常見問題的標準答案集，透過快速檢索回應以降低模型負擔
+  correct_index: 2
+  explanation: RAG (檢索增強生成) 結合了檢索系統與生成模型，能讓 LLM 參考外部知識庫回答問題，有效減少幻覺並確保資訊時效性。 
+  tags:
+  - past-exam
+  - 114-4
+  - sec-ai-chapter8
+  - sec-llm-technologies
+- id: 11450
+  chapter_title: 生成式 AI 與大型語言模型
+  section_title: LLM 技術與應用
+  text: 某雲端服務公司計畫將大型語言模型部署於線上系統，並以批次推論  答案 題    目 （Batch Inference）方式處理每日上百萬筆用戶請求。專案團隊在評 估可能遇到的挑戰時，下列哪一項通常不會被視為批次推論階段的主 要難題？ (114年第四梯次)
+  type: multiple_choice
+  options:
+  - 如何確保訓練語料的涵蓋性與標註品質，以避免模型偏差影響輸 出
+  - 當批次規模增大時，如何降低推論延遲並保持即時回應能力
+  - 在推論過程中，有效管理與分配龐大的輸入資料量以避免資源壅 塞
+  - 在叢集環境中精確安排推論任務，以提升GPU/TPU 等硬體資源的利 用率 《以下空白》
+  correct_index: 0
+  explanation: 此題涉及 LLM 技術與應用 的核心概念。正確答案為「如何確保訓練語料的涵蓋性與標註品質，以避免模型偏差影響輸 出」。 
+  tags:
+  - past-exam
+  - 114-4
   - sec-ai-chapter8
   - sec-llm-technologies

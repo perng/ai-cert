@@ -1,7 +1,7 @@
 ---
 title: "AI 治理、法規與倫理 (AI Governance, Regulations & Ethics)"
 order: 11
-label: sec-chapter11
+label: chap-chapter11
 ---
 
 <!-- # AI 治理、法規與倫理 (AI Governance, Regulations & Ethics) -->
@@ -117,7 +117,7 @@ AI 模型是從歷史數據中學習的，如果歷史數據包含人類的偏�
 
 ![數位發展部 AI 產品評測](images/moda-ai-evaluation.webp)
 
-## 本章總結與考點提示 {#sec-chapter11-summary}
+## 本章總結與考點提示 {#chap-chapter11-summary}
 
 ### 核心概念回顧
 

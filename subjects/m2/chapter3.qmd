@@ -1,0 +1,83 @@
+# 電腦視覺 (CV) {#sec-m2-ch3}
+
+電腦視覺 (Computer Vision, CV) 賦予電腦「看」的能力，使其能從圖像或影片中提取資訊。
+
+## 影像處理基礎 {#sec-image-processing}
+
+影像處理基礎 (Image Processing Basics) 是 CV 的前置步驟。影像在電腦中通常表示為像素矩陣（例如 RGB 三通道）。
+
+**Python 範例：使用 OpenCV 讀取與處理影像**
+
+```{python}
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 創建一個簡單的圖像 (黑色背景，白色矩形)
+image = np.zeros((100, 100), dtype=np.uint8)
+cv2.rectangle(image, (20, 20), (80, 80), 255, -1)
+
+# 邊緣檢測 (Canny)
+edges = cv2.Canny(image, 100, 200)
+
+# 顯示
+plt.figure(figsize=(6, 8))
+plt.subplot(2, 1, 1)
+plt.imshow(image, cmap='gray')
+plt.title('Original')
+plt.subplot(2, 1, 2)
+plt.imshow(edges, cmap='gray')
+plt.title('Edges')
+plt.tight_layout()
+plt.show()
+```
+
+## 模型 {#sec-cv-models}
+
+深度學習模型 (Models) 在 CV 領域取得了巨大成功。
+
+### 卷積神經網路架構 {#sec-cnn-arch}
+
+卷積神經網路 (CNN, Convolutional Neural Network) 利用**卷積層 (Convolutional Layer)** 提取特徵，**池化層 (Pooling Layer)** 降低維度。
+
+*   **卷積運算 (Convolution Operation)**：
+    卷積核 (Kernel/Filter) 在輸入圖像上滑動，計算對應元素的乘積之和。
+    $$ (I * K)_{ij} = \sum_{m} \sum_{n} I_{i+m, j+n} K_{m, n} $$
+    這能有效提取局部特徵（如邊緣、紋理）。
+
+*   **池化運算 (Pooling Operation)**：
+    *   **最大池化 (Max Pooling)**：取窗口內的最大值。保留最顯著的特徵，具有平移不變性。
+    *   **平均池化 (Average Pooling)**：取窗口內的平均值。
+
+*   **VGG**：使用重複的 3x3 卷積核，結構深但參數多。
+*   **ResNet (Residual Network)**：引入**殘差連接 (Residual Connection)**，允許梯度直接流向前面的層，解決了深層網路的退化問題。
+    $$ y = F(x) + x $$
+
+### 物件偵測 {#sec-object-detection}
+
+物件偵測 (Object Detection) 不僅要識別物體是什麼（分類），還要找出它在哪裡（定位，Bounding Box）。
+*   **YOLO (You Only Look Once)**：將物件偵測視為單一的回歸問題，直接預測邊界框和類別機率。速度極快，適合即時應用。
+*   **IoU (Intersection over Union)**：衡量預測框與真實框重疊程度的指標。
+    $$ IoU = \frac{\text{Area of Overlap}}{\text{Area of Union}} $$
+
+### 影像分割 {#sec-segmentation}
+
+影像分割 (Segmentation) 將影像劃分為不同的區域，精確到像素級別。
+*   **語義分割 (Semantic Segmentation)**：區分不同類別的區域（如人、車、路）。
+*   **實例分割 (Instance Segmentation)**：區分同一類別的不同個體。
+
+## 應用 {#sec-cv-applications}
+
+CV 技術廣泛應用於各個領域 (Applications)。
+
+### 人臉辨識 {#sec-facial-recognition}
+
+人臉辨識 (Facial Recognition) 用於身份驗證、門禁系統。
+
+### 醫療影像 {#sec-medical-imaging}
+
+醫療影像 (Medical Imaging) 分析輔助醫生進行診斷，如偵測 X 光片中的腫瘤。
+
+### 自動駕駛 {#sec-autonomous-driving}
+
+自動駕駛 (Autonomous Driving) 依賴 CV 技術感知周圍環境，識別車道線、行人、交通號誌等。

@@ -1,0 +1,52 @@
+# 系統部署與 MLOps {#sec-m2-ch5}
+
+將模型轉化為實際應用需要系統部署與 MLOps 的支持。模型訓練完成只是第一步，如何讓模型穩定、高效地服務用戶才是關鍵。
+
+## 模型部署策略 {#sec-deployment-strategies}
+
+模型部署策略 (Model Deployment Strategies) 決定了模型如何服務用戶。
+
+### 雲端部署 {#sec-cloud-deployment}
+
+雲端 (Cloud) 部署（如 AWS, GCP, Azure）提供強大的計算資源和可擴展性。適合處理複雜模型和大規模請求。
+
+### 邊緣運算 {#sec-edge-computing}
+
+邊緣 (Edge) 運算將模型部署在靠近數據源的設備上（如手機、IoT 設備），降低延遲並保護隱私。通常需要對模型進行壓縮（如 Quantization, Pruning）。
+
+**Python 範例：使用 FastAPI 建立模型 API**
+
+```python
+from fastapi import FastAPI
+from pydantic import BaseModel
+
+# 假設我們有一個預先訓練好的模型
+# model = load_model(...)
+
+app = FastAPI()
+
+class InputData(BaseModel):
+    feature1: float
+    feature2: float
+
+@app.post("/predict")
+def predict(data: InputData):
+    # prediction = model.predict([[data.feature1, data.feature2]])
+    prediction = 0.8 # 假裝的預測結果
+    return {"prediction": prediction}
+
+# 啟動指令: uvicorn main:app --reload
+```
+
+## AI 的持續整合/持續部署 (CI/CD) {#sec-cicd4ai}
+
+AI 的持續整合/持續部署 (CI/CD for AI) 確保模型的快速迭代和交付。
+*   **CT (Continuous Training)**：當新數據可用或模型性能下降時，自動觸發重新訓練流程。
+
+## 監控與維護 {#sec-monitoring}
+
+監控與維護 (Monitoring and Maintenance) 對於保持模型性能至關重要。
+*   **數據漂移 (Data Drift)**：輸入數據的分佈隨時間發生變化（例如，用戶習慣改變）。
+*   **概念漂移 (Concept Drift)**：輸入與輸出之間的關係發生變化。
+
+需要建立監控儀表板，一旦偵測到漂移，即觸發警報或重新訓練。

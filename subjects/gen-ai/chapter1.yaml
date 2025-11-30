@@ -869,3 +869,37 @@ questions:
   tags:
   - sec-gen-chapter1
   - sec-model-parameters
+- id: 11429
+  chapter_title: 生成式 AI 基礎與原理
+  section_title: 生成式 AI 模型原理
+  text: 某投資公司導入生成式 AI，用於即時分析股市波動並提供市場背景資 訊。若希望AI 能兼顧「即時性」與「可靠性」 。下列哪一項設計最能有 效提升 AI 在即時股市分析上的表現？ (114年第四梯次)
+  type: multiple_choice
+  options:
+  - 將 AI 系統連結至公司內部歷史交易資料庫，以便快速調用既有的 案例參考；
+  - 調整模型的回應邏輯，讓 AI 優先輸出最新市場行情，而不是完整 的背景分析；
+  - 建立與外部即時行情來源同步的查詢模組，確保 AI 能即時擷取最 新金融數據；
+  - 增加訓練資料中模擬的金融危機與市場異常案例，以提升 AI 在特 殊情境下的表現能力
+  correct_index: 0
+  explanation: 此題涉及 某投資公司導入生成式... 的核心概念。正確答案為「將 AI 系統連結至公司內部歷史交易資料庫，以便快速調用既有的 案例參考；」。 
+  tags:
+  - past-exam
+  - 114-4
+  - sec-gen-chapter1
+  - sec-genai-principles
+- id: 11426
+  chapter_title: 生成式 AI 基礎與原理
+  section_title: 生成式 AI 模型原理
+  text: 某電商平台希望生成的商品描述在風格與用詞上保持一致性，但不需 要新增專業知識。下列哪種方法最適合？ (114年第四梯次)
+  type: multiple_choice
+  options:
+  - 擴充語料庫並微調模型，使風格統一；
+  - 增加提示詞複雜度，引導模型風格一致；
+  - 降低生成溫度，以減少隨機性並提升風格一致性；
+  - 使用全連接神經網路對生成結果後期篩選
+  correct_index: 0
+  explanation: 此題涉及 某電商平台希望生成的... 的核心概念。正確答案為「擴充語料庫並微調模型，使風格統一；」。 
+  tags:
+  - past-exam
+  - 114-4
+  - sec-gen-chapter1
+  - sec-genai-principles

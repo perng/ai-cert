@@ -1,0 +1,103 @@
+# 自然語言處理 (NLP) {#sec-m2-ch2}
+
+自然語言處理 (Natural Language Processing, NLP) 使電腦能夠理解和生成人類語言。
+
+## 文字處理技術 {#sec-text-processing}
+
+文字處理技術 (Text Processing Techniques) 是 NLP 的基礎。
+
+### 斷詞 {#sec-tokenization}
+
+斷詞 (Tokenization) 將文本分割成更小的單位（Token，如單詞或子詞）。在中文中，這通常涉及分詞工具（如 Jieba）。
+
+### 詞幹提取與詞形還原 {#sec-stemming-lemmatization}
+
+*   **詞幹提取 (Stemming)**：粗略地切除詞綴（例如 "running" -> "run"）。
+*   **詞形還原 (Lemmatization)**：考慮詞性，將詞還原為字典中的原型（例如 "better" -> "good"）。
+
+### 詞袋模型與 TF-IDF {#sec-tfidf}
+
+*   **詞袋模型 (Bag of Words)**：忽略語序，只統計詞頻。
+*   **TF-IDF (Term Frequency-Inverse Document Frequency)**：衡量一個詞在文件中重要性的統計量。
+    $$ TF(t, d) = \frac{\text{詞 t 在文件 d 出現次數}}{\text{文件 d 總詞數}} $$
+    $$ IDF(t) = \log \frac{\text{總文件數}}{\text{包含詞 t 的文件數} + 1} $$
+    $$ TF\text{-}IDF = TF \times IDF $$
+    如果一個詞在當前文章出現頻率高 (High TF)，但在所有文章中出現頻率低 (High IDF)，則該詞具有很高的區別力。
+
+**Python 範例：使用 NLTK 進行斷詞與詞幹提取**
+
+```{python}
+import nltk
+from nltk.tokenize import word_tokenize
+from nltk.stem import PorterStemmer
+
+# 確保已下載必要的 NLTK 數據
+# nltk.download('punkt')
+
+text = "AI is transforming the world with amazing technologies."
+tokens = word_tokenize(text)
+print("Tokens:", tokens)
+
+stemmer = PorterStemmer()
+stems = [stemmer.stem(token) for token in tokens]
+print("Stems:", stems)
+```
+
+## 模型 {#sec-nlp-models}
+
+現代 NLP 依賴於強大的模型 (Models)。
+
+### 循環神經網路 {#sec-rnn}
+
+循環神經網路 (RNN, Recurrent Neural Network) 擅長處理序列數據，因為它具有「記憶」功能，能保留前文的信息。但 RNN 存在梯度消失問題，難以捕捉長距離依賴。
+
+### 長短期記憶網路 {#sec-lstm}
+
+長短期記憶網路 (LSTM, Long Short-Term Memory) 通過引入「閘門」機制（遺忘閘、輸入閘、輸出閘）解決了 RNN 的長期依賴問題。
+
+### Transformer {#sec-transformer}
+
+Transformer 架構徹底改變了 NLP 領域。它完全基於**注意力機制 (Attention Mechanism)**，特別是**自注意力 (Self-Attention)**，允許模型同時關注序列中的所有位置，實現了高度並行化。
+
+**自注意力機制公式**：
+$$ \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V $$
+*   **Q (Query)**：查詢向量。
+*   **K (Key)**：鍵向量。
+*   **V (Value)**：值向量。
+*   **$d_k$**：向量維度，用於縮放以防止梯度消失。
+這類似於資料庫查詢：用 Query 去匹配 Key，根據匹配程度（權重）聚合 Value。
+
+### BERT 與 GPT {#sec-bert-gpt}
+
+*   **BERT (Bidirectional Encoder Representations from Transformers)**：Transformer 的**編碼器 (Encoder)** 部分。它是雙向的，擅長理解上下文（如問答、分類）。
+*   **GPT (Generative Pre-trained Transformer)**：Transformer 的**解碼器 (Decoder)** 部分。它是單向的（只能看前面），擅長生成文本。
+
+**Python 範例：使用 Hugging Face Transformers 進行情感分析**
+
+```{python}
+from transformers import pipeline
+
+# 載入預訓練的情感分析 pipeline
+classifier = pipeline('sentiment-analysis')
+
+results = classifier(["I love this AI course!", "The weather is terrible today."])
+
+for result in results:
+    print(f"Label: {result['label']}, Score: {result['score']:.4f}")
+```
+
+## 應用 {#sec-nlp-applications}
+
+NLP 技術有廣泛的應用 (Applications)。
+
+### 情感分析 {#sec-sentiment-analysis}
+
+情感分析 (Sentiment Analysis) 用於判斷文本的情緒傾向（正面、負面、中性），常用於社群媒體監控。
+
+### 聊天機器人 {#sec-chatbots}
+
+聊天機器人 (Chatbots) 提供自動化的對話服務，從簡單的規則式到基於 LLM 的智慧助理。
+
+### 機器翻譯 {#sec-machine-translation}
+
+機器翻譯 (Machine Translation) 實現不同語言間的自動轉換，如 Google Translate。

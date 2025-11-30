@@ -1,7 +1,7 @@
 ---
 title: "非監督式學習與強化學習 (Unsupervised & Reinforcement Learning)"
 order: 6
-label: sec-chapter6
+label: chap-chapter6
 ---
 
 <!-- # 非監督式學習與強化學習 (Unsupervised & Reinforcement Learning) -->
@@ -190,7 +190,7 @@ label: sec-chapter6
 
 ![DQN](images/dqn.webp)
 
-## 本章總結與考點提示 {#sec-chapter6-summary}
+## 本章總結與考點提示 {#chap-chapter6-summary}
 
 ### 核心概念回顧
 

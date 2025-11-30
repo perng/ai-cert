@@ -1,0 +1,66 @@
+# 強化學習 {#sec-m4-ch4}
+
+強化學習 (Reinforcement Learning, RL) 讓代理透過與環境互動來學習策略，目標是最大化累積獎勵。
+
+## 基本概念 {#sec-rl-concepts}
+
+*   **代理 (Agent)**：做出決策的主體。
+*   **環境 (Environment)**：代理所在的外部世界。
+*   **狀態 (State, $S$)**：環境當前的狀況。
+*   **行動 (Action, $A$)**：代理採取的動作。
+*   **獎勵 (Reward, $R$)**：環境對代理行動的反饋。
+*   **策略 (Policy, $\pi$)**：代理在給定狀態下選擇行動的規則。$\pi(a|s)$。
+
+## 貝爾曼方程式 {#sec-bellman}
+
+**價值函數 (Value Function, $V(s)$)**：從狀態 $s$ 開始，遵循策略 $\pi$ 所能獲得的預期累積獎勵。
+**貝爾曼方程式 (Bellman Equation)** 描述了當前狀態價值與未來狀態價值之間的關係：
+
+$$ V(s) = \max_a \left( R(s,a) + \gamma \sum_{s'} P(s'|s,a) V(s') \right) $$
+
+其中 $\gamma$ 是**折扣因子 (Discount Factor)**，用於平衡當前獎勵與未來獎勵的重要性。
+
+## 演算法 {#sec-rl-algorithms}
+
+### Q-learning {#sec-q-learning}
+
+Q-learning 是一種基於值的 (Value-based) 演算法，學習一個 Q 表 (Q-table)，記錄在狀態 $s$ 採取行動 $a$ 的預期獎勵 $Q(s, a)$。
+
+**更新規則**：
+$$ Q(s, a) \leftarrow Q(s, a) + \alpha [R + \gamma \max_{a'} Q(s', a') - Q(s, a)] $$
+這利用了**時序差分 (Temporal Difference, TD)** 誤差來更新 Q 值。
+
+### 深度 Q 網路 {#sec-dqn}
+
+深度 Q 網路 (DQN, Deep Q-Network) 使用神經網路來近似 Q 函數 $Q(s, a; \theta) \approx Q^*(s, a)$，解決了狀態空間過大無法建立 Q 表的問題（如 Atari 遊戲的像素輸入）。
+
+DQN 的兩個關鍵技術：
+1.  **經驗重播 (Experience Replay)**：將轉移樣本 $(s, a, r, s')$ 存入緩衝區，訓練時隨機採樣，打破數據相關性。
+2.  **固定目標網路 (Fixed Target Network)**：計算目標值時使用一個參數凍結的網路，提高訓練穩定性。
+
+### 策略梯度 {#sec-policy-gradients}
+
+策略梯度 (Policy Gradients) 直接最佳化策略函數 $\pi(a|s; \theta)$。
+$$ \nabla_\theta J(\theta) = \mathbb{E} [\nabla_\theta \log \pi(a|s; \theta) \cdot R] $$
+這使得它能處理連續動作空間。
+
+**Python 範例：OpenAI Gym 環境**
+
+```{python}
+#| eval: false
+import gym
+
+# 創建 CartPole 環境
+env = gym.make('CartPole-v1')
+observation = env.reset()
+
+for _ in range(100):
+    env.render()
+    action = env.action_space.sample() # 隨機採取行動
+    observation, reward, done, info = env.step(action)
+
+    if done:
+        observation = env.reset()
+
+env.close()
+```

@@ -1,0 +1,47 @@
+# 生成式 AI 與多模態 AI {#sec-m2-ch4}
+
+生成式 AI (Generative AI) 與多模態 AI (Multimodal AI) 是當前 AI 發展的熱點，能夠創造全新的內容。
+
+## 生成模型 {#sec-generative-models}
+
+生成模型 (Generative Models) 學習數據的分佈 $P(X)$，從而能夠生成新的、類似的數據。
+
+### 生成對抗網路 {#sec-gan}
+
+生成對抗網路 (GANs, Generative Adversarial Networks) 由兩個網路組成：
+*   **生成器 (Generator, G)**：試圖生成逼真的假數據 $G(z)$ 來欺騙判別器。
+*   **判別器 (Discriminator, D)**：試圖區分真實數據 $x$ 和假數據 $G(z)$。
+
+**損失函數 (Min-Max Game)**：
+$$ \min_G \max_D V(D, G) = \mathbb{E}_{x \sim p_{data}(x)}[\log D(x)] + \mathbb{E}_{z \sim p_z(z)}[\log(1 - D(G(z)))] $$
+*   判別器希望最大化 $V$，即正確識別真假。
+*   生成器希望最小化 $V$，即讓判別器無法區分（$D(G(z)) \to 1$）。
+
+### 變分自動編碼器 {#sec-vae}
+
+變分自動編碼器 (VAEs, Variational Autoencoders) 學習數據的潛在分佈 (Latent Distribution)，並從中採樣生成新數據。它最大化證據下界 (ELBO)。
+
+### 擴散模型 {#sec-diffusion}
+
+擴散模型 (Diffusion Models) 是目前圖像生成的主流技術（如 Stable Diffusion, DALL-E 3）。
+1.  **前向過程 (Forward Process)**：逐步向圖像添加高斯雜訊，直到變成純雜訊。
+2.  **反向過程 (Reverse Process)**：訓練神經網路預測並去除雜訊，從純雜訊中恢復出清晰圖像。
+
+## 多模態應用 {#sec-multimodal}
+
+多模態應用 (Multimodal Applications) 結合了多種數據類型（如文本、圖像、音頻）。
+
+### CLIP {#sec-clip}
+
+CLIP (Contrastive Language-Image Pre-training) 模型由 OpenAI 開發，它將圖像和文本映射到同一個向量空間，使得模型能夠理解圖像與文本之間的關聯。
+*   **對比學習 (Contrastive Learning)**：最大化配對的圖像-文本的相似度，最小化不配對的相似度。
+
+### 文字轉圖像生成 {#sec-text-to-image}
+
+文字轉圖像生成 (Text-to-image Generation) 允許用戶通過文字描述（Prompt）生成圖像。
+
+**Prompt Engineering 範例**
+
+> Prompt: "A futuristic city with flying cars, cyberpunk style, neon lights, high resolution, 8k."
+
+這類技術背後通常結合了 CLIP 的語義理解能力和擴散模型的生成能力。

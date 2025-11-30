@@ -1,0 +1,81 @@
+# 進階分析方法 {#sec-m3-ch3}
+
+進階分析方法 (Advanced Analytics Methods) 幫助我們從數據中挖掘更深層次的價值。
+
+## 時間序列分析 {#sec-time-series}
+
+時間序列分析 (Time-series Analysis) 用於分析隨時間變化的數據，如股票價格、氣溫、銷售額。
+*   **平穩性 (Stationarity)**：數據的統計特性（平均值、變異數）不隨時間變化。
+*   **季節性 (Seasonality)**：數據呈現週期性的變化模式。
+
+### ARIMA {#sec-arima}
+
+ARIMA (AutoRegressive Integrated Moving Average) 是經典的時間序列預測方法，包含三個部分 $(p, d, q)$：
+1.  **AR (AutoRegressive, p)**：自迴歸。當前值與過去 $p$ 個值的線性組合有關。
+    $$ Y_t = c + \phi_1 Y_{t-1} + \dots + \phi_p Y_{t-p} + \epsilon_t $$
+2.  **I (Integrated, d)**：差分。將非平穩數據轉換為平穩數據所需的差分次數 $d$。
+3.  **MA (Moving Average, q)**：移動平均。當前值與過去 $q$ 個預測誤差的線性組合有關。
+    $$ Y_t = \mu + \epsilon_t + \theta_1 \epsilon_{t-1} + \dots + \theta_q \epsilon_{t-q} $$
+
+### Prophet {#sec-prophet}
+
+Prophet 是由 Facebook 開發的時間序列預測工具，特別擅長處理具有強烈季節性和假期效應的數據。它基於加法模型：
+$$ y(t) = g(t) + s(t) + h(t) + \epsilon_t $$
+其中 $g(t)$ 是趨勢，$s(t)$ 是季節性，$h(t)$ 是假期效應。
+
+**Python 範例：使用 Prophet 預測**
+
+```{python}
+#| eval: false
+from prophet import Prophet
+import pandas as pd
+
+import numpy as np
+# 準備數據 (Prophet 要求列名為 ds 和 y)
+# 創建一個更有趨勢和季節性的數據，避免優化失敗
+dates = pd.date_range(start='2023-01-01', periods=100)
+y = np.linspace(0, 10, 100) + np.sin(np.linspace(0, 10, 100)) + np.random.normal(0, 0.1, 100)
+
+df = pd.DataFrame({
+    'ds': dates,
+    'y': y
+})
+
+# 訓練模型
+m = Prophet()
+m.fit(df)
+
+# 建立未來 dataframe
+future = m.make_future_dataframe(periods=30)
+forecast = m.predict(future)
+
+# 繪圖
+fig1 = m.plot(forecast)
+```
+
+## 網路分析與圖演算法 {#sec-network-analysis}
+
+網路分析與圖演算法 (Network Analysis and Graph Algorithms) 用於研究實體之間的關係。
+
+### 中心性指標 {#sec-centrality}
+
+*   **度中心性 (Degree Centrality)**：節點的連接數。
+*   **中介中心性 (Betweenness Centrality)**：節點位於其他節點對之間最短路徑上的次數。
+*   **PageRank**：Google 搜尋引擎的核心演算法。一個網頁的重要性取決於指向它的網頁的重要性。
+    $$ PR(u) = \sum_{v \in B_u} \frac{PR(v)}{L(v)} $$
+
+**Python 範例：使用 NetworkX 計算中心性**
+
+```{python}
+import networkx as nx
+
+G = nx.karate_club_graph()
+
+# 計算 Degree Centrality
+degree_cent = nx.degree_centrality(G)
+print("Top 5 nodes by degree:", sorted(degree_cent.items(), key=lambda x: x[1], reverse=True)[:5])
+```
+
+## 地理空間資料分析 {#sec-geospatial}
+
+地理空間資料分析 (Geospatial Data Analysis) 處理帶有地理位置信息的數據，常用工具包括 GeoPandas。

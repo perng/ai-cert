@@ -1,0 +1,69 @@
+# AI 專案生命週期 {#sec-m2-ch1}
+
+成功的 AI 專案需要嚴謹的生命週期管理。本章將介紹 AI 專案從評估、規劃到風險管理的完整流程。
+
+## AI 導入評估與可行性研究 {#sec-feasibility}
+
+在啟動專案前，必須進行 AI 導入評估與可行性研究 (AI adoption assessment and feasibility study)。這不是為了趕流行，而是要解決實際問題。
+
+### 需求分析 {#sec-requirements}
+
+確認業務需求與 AI 技術的契合度。
+*   **痛點 (Pain Points)**：目前流程中有什麼問題？
+*   **價值 (Value)**：AI 能帶來什麼具體的效益（如節省成本、提高效率）？
+
+### 技術可行性 {#sec-tech-feasibility}
+
+評估現有數據、基礎設施與技術能力。
+*   **數據可用性**：是否有足夠、高品質的標記數據？
+*   **技術成熟度**：所需的 AI 模型是否已經成熟？
+
+## 專案規劃 {#sec-project-planning}
+
+專案規劃 (Project Planning) 是確保專案按時按質完成的關鍵。
+
+### 資源分配 {#sec-resource-allocation}
+
+資源分配 (Resource Allocation) 涉及預算、硬體（如 GPU 伺服器）與軟體資源的配置。
+
+### 時程安排 {#sec-timeline}
+
+制定詳細的時程表 (Timeline) 與里程碑。
+
+**Mermaid 甘特圖範例：AI 專案時程**
+
+```{mermaid}
+gantt
+    title AI 專案開發時程
+    dateFormat  YYYY-MM-DD
+    section 數據準備
+    數據收集           :a1, 01-01, 30d
+    數據清理與標註     :after a1  , 20d
+    section 模型開發
+    模型選擇與基準測試 :02-20  , 10d
+    模型訓練與調優     :03-01  , 30d
+    section 部署與測試
+    系統整合           :04-01  , 15d
+    驗收測試           :04-16  , 10d
+    上線部署           :04-26  , 5d
+```
+
+### 團隊角色 {#sec-team-roles}
+
+定義明確的團隊角色 (Team Roles)：
+*   **資料科學家 (Data Scientist)**：負責模型建模與分析。
+*   **資料工程師 (Data Engineer)**：負責數據管道與基礎設施。
+*   **ML 工程師 (ML Engineer)**：負責模型部署與 MLOps。
+*   **領域專家 (Domain Expert)**：提供業務知識。
+
+## 風險管理 {#sec-risk-management}
+
+風險管理 (Risk Management) 旨在識別並緩解潛在風險。
+
+### 倫理與偏見 {#sec-ethics-bias}
+
+關注 AI 倫理 (Ethics) 與潛在的偏見 (Bias) 問題。例如，招聘系統是否對特定性別或種族有偏見？
+
+### 法律合規 {#sec-legal-compliance}
+
+確保專案符合相關法律合規 (Legal Compliance) 要求，如 GDPR 或個資法。

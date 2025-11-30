@@ -1,0 +1,39 @@
+# 機器學習治理與倫理 {#sec-m4-ch5}
+
+隨著 AI 的普及，機器學習治理與倫理 (ML Governance & Ethics) 變得越來越重要。我們不能只關注模型準不準，還要關注它是否公平、透明。
+
+## ML 中的公平性、當責性與透明度 (FAT) {#sec-fat}
+
+*   **公平性 (Fairness)**：模型不應對特定群體（如種族、性別）產生歧視。
+*   **當責性 (Accountability)**：誰應對 AI 的決策負責？
+*   **透明度 (Transparency)**：模型的決策過程應該是可見的。
+
+## 解決偏見與確保可解釋性 (XAI) {#sec-xai}
+
+可解釋 AI (XAI, Explainable AI) 旨在讓人類理解 AI 模型的決策邏輯。
+
+### SHAP (SHapley Additive exPlanations)
+
+SHAP 基於博弈論，為每個特徵分配一個重要性值，解釋其對預測結果的貢獻。
+
+**Python 範例：使用 SHAP 解釋模型**
+
+```{python}
+#| eval: false
+import shap
+import xgboost
+# 訓練模型
+X, y = shap.datasets.california()
+model = xgboost.XGBRegressor().fit(X, y)
+
+# 計算 SHAP 值
+explainer = shap.Explainer(model)
+shap_values = explainer(X)
+
+# 繪製摘要圖
+# shap.summary_plot(shap_values, X)
+```
+
+### LIME (Local Interpretable Model-agnostic Explanations)
+
+LIME 通過在局部擾動數據，訓練一個簡單的線性模型來近似複雜模型的決策邊界。

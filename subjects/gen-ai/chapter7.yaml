@@ -869,3 +869,105 @@ questions:
   tags:
   - sec-gen-chapter7
   - sec-compliance-governance
+- id: 11446
+  chapter_title: 生成式 AI 的資安、合規與倫理
+  section_title: 風險管理框架
+  text: 某智慧工廠導入生成式 AI，協助產線工程師即時產生維修指引與操作 建議。下列哪一項並非團隊在系統設計中加入Guardrails（防護機制） 的主要目的？ (114年第四梯次)
+  type: multiple_choice
+  options:
+  - 檢查工程師輸入內容，避免觸發錯誤或危險需求；
+  - 過濾與驗證 AI 輸出的維修指引，確保符合安全標準；
+  - 確保生成的操作建議符合法規與產業安全規範；
+  - 完整重建並追蹤 AI 模型的全部推理過程
+  correct_index: 0
+  explanation: 此題涉及 某智慧工廠導入生成式... 的核心概念。正確答案為「檢查工程師輸入內容，避免觸發錯誤或危險需求；」。 
+  tags:
+  - past-exam
+  - 114-4
+  - sec-gen-chapter7
+  - sec-risk-management
+- id: 11402
+  chapter_title: 生成式 AI 的資安、合規與倫理
+  section_title: 隱私強化技術 (PETs)
+  text: 企業在導入生成式 AI 平台時，往往需要利用分散於不同部門或機構中 的大量敏感文本資料。若希望在確保隱私的前提下，仍能讓模型持續優 化並降低資料外洩風險，下列哪一種方法最適合？ (114年第四梯次)
+  type: multiple_choice
+  options:
+  - 同態加密（Homomorphic Encryption）；
+  - 安全多方計算（Secure Multi-party Computation）；
+  - 零知識證明（Zero-knowledge Proofs）；
+  - 聯邦學習（Federated Learning）
+  correct_index: 0
+  explanation: 此題涉及 企業在導入生成式 A... 的核心概念。正確答案為「同態加密（Homomorphic Encryption）；」。 
+  tags:
+  - past-exam
+  - 114-4
+  - sec-gen-chapter7
+  - sec-privacy-enhancing-tech
+- id: 11431
+  chapter_title: 生成式 AI 的資安、合規與倫理
+  section_title: 風險管理框架
+  text: 某跨國電商企業導入生成式 AI，協助處理顧客服務請求，並根據顧客 歷史訂單提供個人化建議。資安與法遵部門擔心AI 在回覆時可能洩漏 顧客個資，若要在導入初期優先避免觸法風險，下列哪一項措施最符合 要求？ (114年第四梯次)
+  type: multiple_choice
+  options:
+  - 在加密環境下導入完整的顧客訂單與行為資料，並透過嚴格存取控 管降低洩漏風險；
+  - 實施資料最小化與去識別化，確保 AI 在訓練與生成過程中不直接 處理或暴露敏感個資； 第二科：生成式 AI 應用與規劃
+  - 強化模型的回覆審查流程，透過自動過濾與人工抽查結合，降低個 資外洩的機率；
+  - 設定 AI 的角色與回覆範圍，讓其專注於客服相關內容，避免回答 其他敏感議題
+  correct_index: 0
+  explanation: 此題涉及 某跨國電商企業導入生... 的核心概念。正確答案為「在加密環境下導入完整的顧客訂單與行為資料，並透過嚴格存取控 管降低洩漏風險；」。 
+  tags:
+  - past-exam
+  - 114-4
+  - sec-gen-chapter7
+  - sec-risk-management
+- id: 11432
+  chapter_title: 生成式 AI 的資安、合規與倫理
+  section_title: 合規與治理
+  text: 某國際銀行導入生成式 AI，用於彙整不同國家金融監管機構的合規規 範，建立跨國合規知識庫。由於各國條文表述方式不同，且監管要求具 有高度專業性與隱含邏輯，若要確保知識庫在後續查詢與生成報告時 能維持正確性與一致性，下列哪一項 AI 能力最為關鍵？ (114年第四梯次)
+  type: multiple_choice
+  options:
+  - 具備跨語言專業術語對齊與條文語意抽取能力，能正確辨識不同國 家規範間的對應與差異；
+  - 能自動最佳化文件檢索效率，縮短跨國法規查詢的延遲時間，提升 合規部門使用體驗；
+  - 能將合規文件轉換為多種輸出形式（如簡報、摘要或法規清單） ，以 符合不同決策層級需求；
+  - 具備根據歷史案例生成合規解釋的能力，協助新進員工快速理解法 規在實務上的應用
+  correct_index: 0
+  explanation: 此題涉及 某國際銀行導入生成式... 的核心概念。正確答案為「具備跨語言專業術語對齊與條文語意抽取能力，能正確辨識不同國 家規範間的對應與差異；」。 
+  tags:
+  - past-exam
+  - 114-4
+  - sec-gen-chapter7
+  - sec-compliance-governance
+- id: 11436
+  chapter_title: 生成式 AI 的資安、合規與倫理
+  section_title: 生成式 AI 特有資安威脅
+  text: 某航空公司導入生成式 AI 聲控客服，提供航班與票務查詢。有人員透 過惡意提示，試圖讓系統洩漏內部安檢流程。在此情境中，下列何者為 降低提示攻擊（Prompt Injection）風險的最佳策略？ (114年第四梯次)
+  type: multiple_choice
+  options:
+  - 導入輸入檢測與回應審核流程，防止敏感指令被執行；
+  - 限制 AI 可回應的主題範圍，使系統僅回答非敏感的航班與票務查 詢，避免處理內部或敏感流程資訊；
+  - 隨機變化回覆內容，讓攻擊者難以預測回應行為以增加攻擊難度；
+  - 擴充與更新航班與票務資料來源，以提升模型的知識正確性與覆蓋 率
+  correct_index: 0
+  explanation: Prompt Injection 是一種攻擊手法，透過惡意指令誤導模型忽略原有的安全限制或執行未授權的操作。 
+  tags:
+  - past-exam
+  - 114-4
+  - sec-gen-chapter7
+  - sec-genai-security-threats
+- id: 11438
+  chapter_title: 生成式 AI 的資安、合規與倫理
+  section_title: 風險管理框架
+  text: 某銀行導入生成式 AI 放貸審核系統，用於分析申貸人條件並生成初步 審核意見。測試過程中發現，模型對不同族群的核准率存在顯著差異， 可能引發演算法偏見問題。為降低此風險，下列哪一項措施最合適？ (114年第四梯次)
+  type: multiple_choice
+  options:
+  - 提升模型運算速度與效能，以確保在大量申請中快速回應；
+  - 全面移除與申貸人身份相關的敏感屬性，避免模型因變數影響而產 生偏差；
+  - 導入資料與結果的公平性檢測流程，並依合規規範調整模型或決策 邏輯；
+  - 減少訓練樣本數量，降低偏見被放大的可能性
+  correct_index: 0
+  explanation: AI 偏見通常源自訓練數據中的社會刻板印象。緩解策略包括數據平衡、去偏演算法以及人類回饋強化學習 (RLHF)。 
+  tags:
+  - past-exam
+  - 114-4
+  - sec-gen-chapter7
+  - sec-risk-management

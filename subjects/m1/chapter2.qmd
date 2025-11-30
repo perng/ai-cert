@@ -1,0 +1,202 @@
+# 資料處理基礎 {#sec-m1-ch2}
+
+高品質的資料是 AI 模型成功的關鍵。本章將介紹資料處理的基礎知識，包括資料預處理與特徵工程。
+
+## 資料預處理 {#sec-data-preprocessing}
+
+資料預處理 (Data Preprocessing) 是將原始資料轉換為適合模型訓練格式的過程。現實世界的資料往往是不完整的、不一致的，且包含許多錯誤。
+
+### 資料清理 {#sec-data-cleaning}
+
+資料清理 (Data Cleaning) 涉及處理錯誤、雜訊和不一致的資料。
+
+*   **處理缺失值 (Handling Missing Values)**：
+    *   **刪除 (Deletion)**：刪除包含缺失值的行或列。
+    *   **填補 (Imputation)**：使用平均值、中位數、眾數或預測模型填補缺失值。
+
+**Python 範例：使用 Pandas 處理缺失值**
+
+```{python}
+import pandas as pd
+import numpy as np
+
+# 創建包含缺失值的 DataFrame
+df = pd.DataFrame({
+    'A': [1, 2, np.nan, 4],
+    'B': [5, np.nan, np.nan, 8],
+    'C': [10, 11, 12, 13]
+})
+
+# 檢查缺失值
+print(df.isnull().sum())
+
+# 填補缺失值 (使用平均值)
+df_filled = df.fillna(df.mean())
+print("Filled DataFrame:\n", df_filled)
+
+# 刪除包含缺失值的行
+df_dropped = df.dropna()
+print("Dropped DataFrame:\n", df_dropped)
+```
+
+### 正規化 {#sec-normalization}
+
+正規化 (Normalization) 將數據縮放到特定的範圍，這對於基於距離的演算法（如 KNN、SVM）和使用梯度下降的演算法非常重要。
+
+*   **Min-Max Scaling**：將數據縮放到 [0, 1] 區間。
+    $$ x' = \frac{x - \min(x)}{\max(x) - \min(x)} $$
+*   **標準化 (Standardization / Z-score Normalization)**：將數據轉換為平均值為 0，標準差為 1 的分佈。
+    $$ x' = \frac{x - \mu}{\sigma} $$
+
+**Python 範例：使用 Scikit-learn 進行正規化**
+
+```{python}
+from sklearn.preprocessing import MinMaxScaler, StandardScaler
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 生成隨機數據 (常態分佈，平均值 50，標準差 10)
+np.random.seed(0)
+data = np.random.normal(loc=50, scale=10, size=(100, 1))
+
+# Min-Max Scaling
+min_max_scaler = MinMaxScaler()
+data_min_max = min_max_scaler.fit_transform(data)
+
+# Standardization
+std_scaler = StandardScaler()
+data_std = std_scaler.fit_transform(data)
+
+# 繪圖比較 (垂直排列)
+plt.figure(figsize=(6, 12))
+
+# 原始數據
+plt.subplot(3, 1, 1)
+plt.hist(data, bins=15, color='blue', alpha=0.7, edgecolor='black')
+plt.title('Original Data\n(Mean $\\approx$ 50, Std $\\approx$ 10)')
+plt.xlabel('Value')
+
+# Min-Max Scaled
+plt.subplot(3, 1, 2)
+plt.hist(data_min_max, bins=15, color='green', alpha=0.7, edgecolor='black')
+plt.title('Min-Max Scaled\n(Range [0, 1])')
+plt.xlabel('Value')
+
+# Standardized
+plt.subplot(3, 1, 3)
+plt.hist(data_std, bins=15, color='red', alpha=0.7, edgecolor='black')
+plt.title('Standardized\n(Mean $\\approx$ 0, Std $\\approx$ 1)')
+plt.xlabel('Value')
+
+plt.tight_layout()
+plt.show()
+```
+
+## 特徵工程 {#sec-feature-engineering}
+
+特徵工程 (Feature Engineering) 是利用領域知識從原始數據中提取特徵的過程，旨在提升機器學習模型的性能。
+
+### 特徵選擇 {#sec-feature-selection}
+
+特徵選擇 (Feature Selection) 旨在選出對模型預測最有幫助的特徵子集，以減少過擬合、提高訓練速度並增強模型可解釋性。
+*   **過濾法 (Filter)**：基於統計指標（如相關係數、卡方檢定）。
+*   **包裹法 (Wrapper)**：使用模型來評估特徵子集（如遞歸特徵消除 RFE）。
+*   **嵌入法 (Embedded)**：特徵選擇是模型訓練的一部分（如 Lasso 回歸）。
+
+### 特徵提取與降維 {#sec-dim-reduction}
+
+特徵提取 (Feature Extraction) 通過轉換原始數據來創建新的特徵。降維 (Dimensionality Reduction) 是其中的重要技術。
+
+*   **主成分分析 (PCA, Principal Component Analysis)**：
+    *   **原理**：一種無監督的線性降維技術。它通過正交變換將可能相關的變數轉換為一組線性不相關的變數，稱為**主成分 (Principal Components)**。
+    *   **核心概念**：
+        *   **最大化變異數**：PCA 試圖找到數據分佈最廣的方向（變異數最大），因為這代表了數據包含最多資訊的方向。
+        *   **正交性**：第一個主成分 (PC1) 解釋了最大的變異數；第二個主成分 (PC2) 在與 PC1 正交（垂直）的方向上解釋了剩餘最大的變異數，依此類推。
+    *   **數學步驟**：
+        1.  **中心化 (Centering)**：將數據減去平均值，使中心移至原點。
+        2.  **計算共變異數矩陣 (Covariance Matrix)**：$C = \frac{1}{n-1} X^T X$。這描述了特徵之間的相關性。
+        3.  **特徵分解 (Eigendecomposition)**：計算 $C$ 的特徵值 ($\lambda$) 和特徵向量 ($v$)。
+        4.  **排序與投影**：將特徵值由大到小排序，選擇前 $k$ 個特徵值對應的特徵向量，將數據投影到這些向量構成的子空間。
+
+*   **t-SNE (t-Distributed Stochastic Neighbor Embedding)**：
+    *   **原理**：一種非線性降維技術，特別適合用於高維數據的視覺化（通常降至 2D 或 3D）。
+    *   **特點**：
+        *   **保留局部結構**：t-SNE 擅長將高維空間中距離相近的點（鄰居），在低維空間中也保持靠近。這使得它非常適合發現數據中的群聚 (Clusters)。
+        *   **機率分佈**：它使用高斯分佈定義高維空間點的相似度，並使用 t 分佈定義低維空間點的相似度，通過最小化兩個分佈之間的 KL 散度 (Kullback-Leibler Divergence) 來優化。
+    *   **對比 PCA**：PCA 側重於保留全局結構（變異數），而 t-SNE 側重於保留局部鄰域關係。
+
+::: {.callout-note}
+## KL 散度 (Kullback-Leibler Divergence)
+KL 散度是一種衡量兩個機率分佈差異的非對稱指標。在 t-SNE 中，它被用來衡量「高維空間點的相似度分佈」與「低維空間點的相似度分佈」之間的差異。t-SNE 的目標就是最小化這個差異，使得低維空間的點能盡可能還原高維空間的結構。
+:::
+
+**Python 範例：PCA 降維**
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+from sklearn import datasets
+from sklearn.decomposition import PCA
+
+# 載入 Iris 數據集
+iris = datasets.load_iris()
+X = iris.data
+y = iris.target
+
+# 為了視覺化 PCA 原理，我們先只取前兩個特徵 (Sepal Length, Sepal Width)
+X_2d = X[:, :2]
+pca_2d = PCA(n_components=2)
+pca_2d.fit(X_2d)
+
+# 應用 PCA 將完整 4 維數據降至 2 維 (用於第二張圖)
+pca_full = PCA(n_components=2)
+X_pca = pca_full.fit_transform(X)
+
+# 繪圖比較
+plt.figure(figsize=(8, 12))
+
+# 1. PCA 原理示意 (原始數據 + 主成分向量)
+plt.subplot(2, 1, 1)
+plt.scatter(X_2d[:, 0], X_2d[:, 1], c=y, cmap='viridis', alpha=0.6)
+
+# 繪製主成分向量
+mean = pca_2d.mean_
+# 縮放向量長度以便觀察 (3 * std_dev)
+for i, (var, vector) in enumerate(zip(pca_2d.explained_variance_, pca_2d.components_)):
+    v = vector * 3 * np.sqrt(var)
+    plt.arrow(mean[0], mean[1], v[0], v[1], color='red', width=0.05, head_width=0.15)
+    plt.text(mean[0] + v[0], mean[1] + v[1], f'PC{i+1}', color='red', fontsize=12, fontweight='bold')
+
+plt.xlabel('Sepal Length')
+plt.ylabel('Sepal Width')
+plt.title('PCA Concept: Data + Principal Components')
+plt.axis('equal') # 確保向量角度正確
+plt.grid(True, linestyle='--', alpha=0.5)
+
+# 2. PCA 降維後的數據 (從 4D 降到 2D)
+plt.subplot(2, 1, 2)
+scatter2 = plt.scatter(X_pca[:, 0], X_pca[:, 1], c=y, cmap='viridis')
+plt.xlabel('First Principal Component')
+plt.ylabel('Second Principal Component')
+plt.title('Result: Data Projected to PC Space (4D -> 2D)')
+plt.colorbar(scatter2)
+
+plt.tight_layout()
+plt.show()
+```
+
+### 獨熱編碼 {#sec-one-hot-encoding}
+
+對於類別型特徵 (Categorical Features)，如「顏色」（紅、綠、藍），機器學習模型通常無法直接處理。獨熱編碼 (One-Hot Encoding) 將其轉換為二進制向量。
+
+*   紅 -> [1, 0, 0]
+*   綠 -> [0, 1, 0]
+*   藍 -> [0, 0, 1]
+
+```{python}
+import pandas as pd
+
+df = pd.DataFrame({'Color': ['Red', 'Green', 'Blue', 'Green']})
+df_encoded = pd.get_dummies(df, columns=['Color'])
+print(df_encoded)
+```

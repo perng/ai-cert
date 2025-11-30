@@ -839,3 +839,139 @@ questions:
   tags:
   - sec-gen-chapter3
   - sec-mcp
+- id: 11418
+  chapter_title: 檢索增強生成 (RAG) 與模型微調
+  section_title: 檢索增強生成 (RAG)
+  text: 某客服系統在回覆「訂單取消政策」時，即使生成溫度固定為 0.6，回 覆品質仍常出現差異。調查顯示，檢索到的政策內容有時是最新版本， 有時則是過時文件，此外 Prompt 約束不足，微調語料也有模糊描述。 若要優先改善品質波動，應先解決下列哪一項問題？ (114年第四梯次)
+  type: multiple_choice
+  options:
+  - 調整溫度參數，降低生成隨機性；
+  - 加強 Prompt 設計，限制模型表達方式；
+  - 優化微調語料，減少含糊描述；
+  - 提升檢索系統品質，確保取得的政策內容正確且最新
+  correct_index: 0
+  explanation: Fine-tuning 透過在特定領域數據上繼續訓練模型，能深度調整模型的知識與行為，適合需要高度專業化或特定格式的任務。 
+  tags:
+  - past-exam
+  - 114-4
+  - sec-gen-chapter3
+  - sec-rag-architecture
+- id: 11444
+  chapter_title: 檢索增強生成 (RAG) 與模型微調
+  section_title: 檢索增強生成 (RAG)
+  text: 在 AI 應用設計中，Model Context Protocol（MCP）與檢索增強生成 （RAG）都能擴展模型的能力，但兩者的核心差異主要為下列何者？ (114年第四梯次)
+  type: multiple_choice
+  options:
+  - MCP 擴展模型工具，但主要用於補足訓練資料不足；
+  - MCP 能標準化連接資源，但仍需依賴向量資料庫；
+  - RAG 常用於擴展知識庫內容，而 MCP 更著重於動態工具與 API 呼叫 的整合；
+  - RAG 透過統一協議，提升回答相關性
+  correct_index: 0
+  explanation: RAG (Retrieval-Augmented Generation) 結合檢索系統與生成模型，能引入外部即時資訊，有效減少幻覺並提升回答的準確性。 
+  tags:
+  - past-exam
+  - 114-4
+  - sec-gen-chapter3
+  - sec-rag-architecture
+- id: 11448
+  chapter_title: 檢索增強生成 (RAG) 與模型微調
+  section_title: 檢索增強生成 (RAG)
+  text: 某開發團隊在建置企業內部知識檢索系統時，選擇採用多向量檢索器 （Multi-vector Retriever） ，下列何者為協助提升系統查詢的完整性 第二科：生成式 AI 應用與規劃 與精準度的主要方式？ (114年第四梯次)
+  type: multiple_choice
+  options:
+  - 支援同時處理多種資訊表示，提升跨文本型態的檢索效果；
+  - 透過多向量壓縮與共享權重方式，降低檢索過程的運算與儲存成 本；
+  - 以切分並過濾文件片段，減少上下文長度帶來的 Token 負擔；
+  - 透過調整生成階段的溫度參數，使模型在回覆時更穩定一致
+  correct_index: 0
+  explanation: 此題涉及 某開發團隊在建置企業... 的核心概念。正確答案為「支援同時處理多種資訊表示，提升跨文本型態的檢索效果；」。 
+  tags:
+  - past-exam
+  - 114-4
+  - sec-gen-chapter3
+  - sec-rag-architecture
+- id: 11417
+  chapter_title: 檢索增強生成 (RAG) 與模型微調
+  section_title: 檢索增強生成 (RAG)
+  text: 某公司部署結合 Fine-tuning 與檢索增強生成（RAG）的語言模型系統 作為內部文件助理。系統需同時確保回覆語氣一致、能即時查詢每日新 增文件、維持效能穩定，並避免頻繁重新訓練。在長期維護與效能平衡 下，下列哪一種策略最合適？ (114年第四梯次)
+  type: multiple_choice
+  options:
+  - 每週重新 Fine-tune模型，將新文件整合進模型知識，逐步取代RAG 模組； 第二科：生成式 AI 應用與規劃
+  - 完全依靠基礎模型與 RAG，不進行 Fine-tune，僅透過提示設計控 制語氣；
+  - 每日進行增量 Fine-tune，讓模型即時學習新文件內容，避免依賴 檢索；
+  - 保留語氣相關 Fine-tuning，僅透過檢索系統更新文件內容，不頻 繁改動模型
+  correct_index: 0
+  explanation: RAG (Retrieval-Augmented Generation) 結合檢索系統與生成模型，能引入外部即時資訊，有效減少幻覺並提升回答的準確性。 
+  tags:
+  - past-exam
+  - 114-4
+  - sec-gen-chapter3
+  - sec-rag-architecture
+- id: 11419
+  chapter_title: 檢索增強生成 (RAG) 與模型微調
+  section_title: 檢索增強生成 (RAG)
+  text: 某醫院導入了一套智慧系統，由三個模組構成：語音辨識 （ASR） → 語 言模型生成（LLM） → 查詢醫療資料庫 API。近期發現部分查詢結果 錯誤，例如醫師詢問「術後復健流程」時，系統卻誤判為要查詢「術前 注意事項」 ，因此查詢到錯誤的文件。經檢查已排除語音辨識的錯誤， 下列何者最可能是造成查詢錯誤的來源？ (114年第四梯次)
+  type: multiple_choice
+  options:
+  - 醫療資料庫 API 對應規則設計不清，造成意圖映射模糊；
+  - LLM 的 Prompt 缺乏明確指示，導致語意分類判斷錯誤；
+  - 查詢 API 回傳速度過慢，影響系統處理正確性；
+  - LLM 未經醫療領域微調，難以正確理解專業性詞彙
+  correct_index: 0
+  explanation: 此題涉及 某醫院導入了一套智慧... 的核心概念。正確答案為「醫療資料庫 API 對應規則設計不清，造成意圖映射模糊；」。 
+  tags:
+  - past-exam
+  - 114-4
+  - sec-gen-chapter3
+  - sec-rag-architecture
+- id: 11421
+  chapter_title: 檢索增強生成 (RAG) 與模型微調
+  section_title: 檢索增強生成 (RAG)
+  text: 某公司開發的智慧車載語音助理，可透過語音辨識（ASR）辨識駕駛語 音，再由 LLM 生成回答並查詢車載 API。測試中發現：ASR 對汽車專 業術語辨識錯誤率高；LLM 的回覆常不精確；系統回覆延遲雖存在但仍 可接受。若目標是「優先提升準確性與回答品質」 ，下列改進步驟的最 合理執行順序為何？ 1. 擴充並標註汽車領域語音資料，微調 ASR 模型 2. 微調 LLM 並加入檢索增強（RAG） 3. 優化系統架構，引入批次推論降低延遲 4. 動態調整生成溫度，平衡準確度與多樣性 (114年第四梯次)
+  type: multiple_choice
+  options:
+  - 1 → 2 → 4 → 3；
+  - 2 → 1→ 3 → 4；
+  - 1 → 3 → 2 → 4；
+  - 3 → 1 → 2 → 4
+  correct_index: 0
+  explanation: RAG (Retrieval-Augmented Generation) 結合檢索系統與生成模型，能引入外部即時資訊，有效減少幻覺並提升回答的準確性。 
+  tags:
+  - past-exam
+  - 114-4
+  - sec-gen-chapter3
+  - sec-rag-architecture
+- id: 11442
+  chapter_title: 檢索增強生成 (RAG) 與模型微調
+  section_title: 檢索增強生成 (RAG)
+  text: 某金融機構導入檢索增強生成（ Retrieval-Augmented Generation, RAG）模型，用於客服文件查詢與自動回覆。由於大型模型運算成本過 高，若考慮引入知識蒸餾（Knowledge Distillation, KD）技術，下列 何者為帶來的主要效益？ (114年第四梯次)
+  type: multiple_choice
+  options:
+  - 讓小型模型學習大型模型的知識，在降低運算成本的同時維持檢索 與生成品質；
+  - 只能應用於語音或影像辨識，無法提升文字檢索生成效能；
+  - 因為 RAG 已有檢索機制，因此無需額外蒸餾知識；
+  - 僅能依賴特定 API 供應商才能使用，無法在自建模型中實現
+  correct_index: 0
+  explanation: RAG (Retrieval-Augmented Generation) 結合檢索系統與生成模型，能引入外部即時資訊，有效減少幻覺並提升回答的準確性。 
+  tags:
+  - past-exam
+  - 114-4
+  - sec-gen-chapter3
+  - sec-rag-architecture
+- id: 11447
+  chapter_title: 檢索增強生成 (RAG) 與模型微調
+  section_title: 檢索增強生成 (RAG)
+  text: 某顧問公司導入生成式 AI，協助團隊快速檢索並摘要長篇的法規文件。 為了改善檢索結果常出現不相關或過於分散內容的問題，下列何者為 團隊決定對文件進行文本切分（Chunking）的主要目的？ (114年第四梯次)
+  type: multiple_choice
+  options:
+  - 讓模型在回答時能加快推理速度；
+  - 提高檢索相關性與降低長上下文噪音；
+  - 降低系統記憶體和硬體資源的負擔；
+  - 使模型在生成回覆時更具創造性與多樣化
+  correct_index: 0
+  explanation: 此題涉及 某顧問公司導入生成式... 的核心概念。正確答案為「讓模型在回答時能加快推理速度；」。 
+  tags:
+  - past-exam
+  - 114-4
+  - sec-gen-chapter3
+  - sec-rag-architecture
