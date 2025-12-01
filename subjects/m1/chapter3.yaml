@@ -1,0 +1,676 @@
+questions:
+- id: 3301
+  chapter_title: 機器學習基礎概念
+  section_title: 監督式學習
+  text: 監督式學習 (Supervised Learning) 的主要特徵是什麼？
+  type: multiple_choice
+  options:
+  - 數據沒有標籤
+  - 數據有標籤 (Labeled Data)
+  - 機器透過試錯來學習
+  - 不需要訓練過程
+  correct_index: 1
+  explanation: 監督式學習的核心在於使用成對的 $(x, y)$ 數據進行訓練，讓模型學習從 $x$ 預測 $y$ 的映射關係。
+  tags:
+  - chap-m1-ch3
+  - sec-supervised-learning
+- id: 3302
+  chapter_title: 機器學習基礎概念
+  section_title: 監督式學習
+  text: 線性迴歸 (Linear Regression) 的目標是最小化什麼函數？
+  type: multiple_choice
+  options:
+  - 交叉熵 (Cross-Entropy)
+  - 均方誤差 (MSE, Mean Squared Error)
+  - 準確率 (Accuracy)
+  - 絕對誤差 (MAE)
+  correct_index: 1
+  explanation: 線性迴歸試圖找到一條直線，使得所有數據點到直線的垂直距離平方和（即 MSE）最小。
+  tags:
+  - chap-m1-ch3
+  - sec-supervised-learning
+- id: 3303
+  chapter_title: 機器學習基礎概念
+  section_title: 監督式學習
+  text: 邏輯迴歸 (Logistic Regression) 雖然名為迴歸，但實際上主要用於解決什麼問題？
+  type: multiple_choice
+  options:
+  - 連續數值預測
+  - 分類問題 (Classification)
+  - 分群問題
+  - 降維問題
+  correct_index: 1
+  explanation: 邏輯迴歸使用 Sigmoid 函數將輸出壓縮到 (0, 1) 之間，代表屬於某類別的機率，因此是用於二元分類。
+  tags:
+  - chap-m1-ch3
+  - sec-supervised-learning
+- id: 3304
+  chapter_title: 機器學習基礎概念
+  section_title: 監督式學習
+  text: 決策樹 (Decision Tree) 在選擇最佳分割特徵時，通常使用什麼指標？
+  type: multiple_choice
+  options:
+  - 均方誤差
+  - 資訊獲利 (Information Gain) 或 Gini 不純度
+  - 梯度下降
+  - 學習率
+  correct_index: 1
+  explanation: 決策樹透過最大化資訊獲利或最小化 Gini 不純度，來選擇能將數據分得最「純」的特徵進行分割。
+  tags:
+  - chap-m1-ch3
+  - sec-supervised-learning
+- id: 3305
+  chapter_title: 機器學習基礎概念
+  section_title: 監督式學習
+  text: 支援向量機 (SVM) 的核心目標是尋找一個超平面，使得什麼最大化？
+  type: multiple_choice
+  options:
+  - 分類錯誤率
+  - 邊界 (Margin)
+  - 支援向量的數量
+  - 特徵的維度
+  correct_index: 1
+  explanation: SVM 試圖找到一個決策邊界，使得兩類數據點距離該邊界的最小距離（即 Margin）最大化，以提高模型的泛化能力。
+  tags:
+  - chap-m1-ch3
+  - sec-supervised-learning
+- id: 3306
+  chapter_title: 機器學習基礎概念
+  section_title: 監督式學習
+  text: KNN (K-Nearest Neighbors) 演算法中，若 K 值設定過小（例如 K=1），容易導致什麼問題？
+  type: multiple_choice
+  options:
+  - 欠擬合 (Underfitting)
+  - 過擬合 (Overfitting)
+  - 計算速度變慢
+  - 無法分類
+  correct_index: 1
+  explanation: K=1 時，模型會受到單一最近鄰居的強烈影響，容易捕捉到數據中的雜訊，導致決策邊界破碎且過擬合。
+  tags:
+  - chap-m1-ch3
+  - sec-supervised-learning
+- id: 3307
+  chapter_title: 機器學習基礎概念
+  section_title: 非監督式學習
+  text: K-Means 分群演算法的目標函數是最小化什麼？
+  type: multiple_choice
+  options:
+  - 群集間的距離
+  - 群集內變異數總和 (WCSS)
+  - 群集的數量
+  - 異常值的數量
+  correct_index: 1
+  explanation: K-Means 試圖讓每個點到其所屬群集中心的距離平方和最小，即讓群集內部越緊密越好。
+  tags:
+  - chap-m1-ch3
+  - sec-unsupervised-learning
+- id: 3308
+  chapter_title: 機器學習基礎概念
+  section_title: 非監督式學習
+  text: 決定 K-Means 最佳群集數量 K 的常用方法是？
+  type: multiple_choice
+  options:
+  - 隨機猜測
+  - 手肘法 (Elbow Method)
+  - 梯度下降法
+  - 交叉驗證
+  correct_index: 1
+  explanation: 手肘法觀察 WCSS 隨 K 增加的下降趨勢，選擇下降幅度開始變緩的轉折點（手肘處）作為最佳 K 值。
+  tags:
+  - chap-m1-ch3
+  - sec-unsupervised-learning
+- id: 3309
+  chapter_title: 機器學習基礎概念
+  section_title: 模型評估
+  text: 在混淆矩陣中，TP (True Positive) 代表什麼？
+  type: multiple_choice
+  options:
+  - 真實為正，預測為負
+  - 真實為正，預測為正
+  - 真實為負，預測為正
+  - 真實為負，預測為負
+  correct_index: 1
+  explanation: TP 表示模型正確地將正例預測為正例。
+  tags:
+  - chap-m1-ch3
+  - sec-model-evaluation
+- id: 3310
+  chapter_title: 機器學習基礎概念
+  section_title: 模型評估
+  text: 哪一個指標同時考慮了精確率 (Precision) 和召回率 (Recall)，是兩者的調和平均數？
+  type: multiple_choice
+  options:
+  - Accuracy
+  - F1 Score
+  - AUC
+  - Specificity
+  correct_index: 1
+  explanation: F1 Score = 2 * (Precision * Recall) / (Precision + Recall)，用於平衡 Precision 和 Recall，特別適用於類別不平衡的情況。
+  tags:
+  - chap-m1-ch3
+  - sec-model-evaluation
+- id: 3311
+  chapter_title: 機器學習基礎概念
+  section_title: 模型評估
+  text: ROC 曲線下的面積 (AUC) 為 0.5 代表模型的表現如何？
+  type: multiple_choice
+  options:
+  - 完美分類
+  - 與隨機猜測無異 (無鑑別力)
+  - 表現極差 (比隨機還差)
+  - 表現良好
+  correct_index: 1
+  explanation: AUC=0.5 表示 ROC 曲線是一條對角線，意味著模型的預測能力等同於擲硬幣猜測。
+  tags:
+  - chap-m1-ch3
+  - sec-model-evaluation
+- id: 3312
+  chapter_title: 機器學習基礎概念
+  section_title: 模型評估
+  text: K-Fold 交叉驗證 (Cross-Validation) 的主要目的是？
+  type: multiple_choice
+  options:
+  - 增加訓練數據量
+  - 減少因數據劃分不同帶來的評估誤差
+  - 加速模型訓練
+  - 自動調整超參數
+  correct_index: 1
+  explanation: 透過多次隨機劃分訓練/驗證集並取平均，K-Fold 能提供比單次劃分更穩定、更可靠的模型性能評估。
+  tags:
+  - chap-m1-ch3
+  - sec-model-evaluation
+- id: 3313
+  chapter_title: 機器學習基礎概念
+  section_title: 模型評估
+  text: 當模型出現「高偏差 (High Bias)」時，通常意味著什麼？
+  type: multiple_choice
+  options:
+  - 過擬合 (Overfitting)
+  - 欠擬合 (Underfitting)
+  - 數據量太少
+  - 模型太複雜
+  correct_index: 1
+  explanation: 高偏差表示模型太簡單（如用直線擬合曲線），無法捕捉數據的規律，導致在訓練集和測試集上表現都差（欠擬合）。
+  tags:
+  - chap-m1-ch3
+  - sec-model-evaluation
+- id: 3314
+  chapter_title: 機器學習基礎概念
+  section_title: 模型評估
+  text: 解決過擬合 (Overfitting) 的策略不包括下列何者？
+  type: multiple_choice
+  options:
+  - 增加訓練數據
+  - 使用正則化 (Regularization)
+  - 增加模型複雜度 (如增加層數)
+  - 特徵選擇 (減少特徵)
+  correct_index: 2
+  explanation: 過擬合是因為模型太複雜，記住了雜訊。增加模型複雜度會加劇過擬合。應簡化模型或增加數據。
+  tags:
+  - chap-m1-ch3
+  - sec-model-evaluation
+- id: 3315
+  chapter_title: 機器學習基礎概念
+  section_title: 監督式學習
+  text: Sigmoid 函數的輸出範圍是？
+  type: multiple_choice
+  options:
+  - [-1, 1]
+  - [0, 1]
+  - [0, infinity]
+  - [-infinity, infinity]
+  correct_index: 1
+  explanation: Sigmoid 函數 $\sigma(z) = 1 / (1 + e^{-z})$ 將任意實數映射到 (0, 1) 區間，適合表示機率。
+  tags:
+  - chap-m1-ch3
+  - sec-supervised-learning
+- id: 3316
+  chapter_title: 機器學習基礎概念
+  section_title: 監督式學習
+  text: 在 SVM 中，核函數 (Kernel Trick) 的作用是？
+  type: multiple_choice
+  options:
+  - 降維
+  - 將數據映射到高維空間，使其線性可分
+  - 計算距離
+  - 增加樣本數
+  correct_index: 1
+  explanation: 核函數允許 SVM 在不顯式計算高維座標的情況下，隱式地在高維特徵空間中尋找線性決策邊界，解決低維不可分問題。
+  tags:
+  - chap-m1-ch3
+  - sec-supervised-learning
+- id: 3317
+  chapter_title: 機器學習基礎概念
+  section_title: 監督式學習
+  text: 決策樹中的「熵 (Entropy)」是用來衡量什麼？
+  type: multiple_choice
+  options:
+  - 數據的距離
+  - 數據的混亂程度或不確定性
+  - 數據的大小
+  - 數據的相關性
+  correct_index: 1
+  explanation: 熵越高，代表數據越混亂（各類別混合）；熵越低，代表數據越純（主要屬於同一類）。
+  tags:
+  - chap-m1-ch3
+  - sec-supervised-learning
+- id: 3318
+  chapter_title: 機器學習基礎概念
+  section_title: 模型評估
+  text: 召回率 (Recall) 的公式是？
+  type: multiple_choice
+  options:
+  - TP / (TP + FP)
+  - TP / (TP + FN)
+  - (TP + TN) / Total
+  - FP / (FP + TN)
+  correct_index: 1
+  explanation: Recall 衡量的是「所有真正的正例中，有多少被模型成功抓出來」。
+  tags:
+  - chap-m1-ch3
+  - sec-model-evaluation
+- id: 3319
+  chapter_title: 機器學習基礎概念
+  section_title: 模型評估
+  text: 偽陽性率 (False Positive Rate, FPR) 是 ROC 曲線的 X 軸，其意義是？
+  type: multiple_choice
+  options:
+  - 所有正例被預測錯誤的比例
+  - 所有負例被錯誤預測為正例的比例
+  - 所有預測為正例中錯誤的比例
+  - 準確率的倒數
+  correct_index: 1
+  explanation: FPR = FP / (FP + TN)，即在所有真實的負例中，有多少比例被誤判為正例。
+  tags:
+  - chap-m1-ch3
+  - sec-model-evaluation
+- id: 3320
+  chapter_title: 機器學習基礎概念
+  section_title: 監督式學習
+  text: 邏輯迴歸的決策邊界通常是？
+  type: multiple_choice
+  options:
+  - 線性的 (Linear)
+  - 圓形的
+  - 多項式的
+  - 不規則的
+  correct_index: 0
+  explanation: 標準邏輯迴歸是一個線性分類器，其決策邊界由 $\mathbf{w}^T \mathbf{x} + b = 0$ 定義，是一個超平面（直線）。
+  tags:
+  - chap-m1-ch3
+  - sec-supervised-learning
+- id: 3321
+  chapter_title: 機器學習基礎概念
+  section_title: 非監督式學習
+  text: K-Means++ 初始化方法的主要改進是？
+  type: multiple_choice
+  options:
+  - 隨機選擇初始中心
+  - 選擇彼此距離較遠的點作為初始中心
+  - 固定初始中心位置
+  - 減少 K 值
+  correct_index: 1
+  explanation: 傳統 K-Means 隨機初始化可能導致收斂慢或結果差。K-Means++ 透過機率性地選擇距離已選中心較遠的點作為新中心，優化了起始狀態。
+  tags:
+  - chap-m1-ch3
+  - sec-unsupervised-learning
+- id: 3322
+  chapter_title: 機器學習基礎概念
+  section_title: 監督式學習
+  text: 決策樹容易發生的主要問題是？
+  type: multiple_choice
+  options:
+  - 欠擬合
+  - 過擬合 (Overfitting)
+  - 計算量過大
+  - 無法處理類別特徵
+  correct_index: 1
+  explanation: 決策樹若不限制深度，傾向於生長得非常複雜以完美擬合訓練數據，導致泛化能力差（過擬合）。
+  tags:
+  - chap-m1-ch3
+  - sec-supervised-learning
+- id: 3323
+  chapter_title: 機器學習基礎概念
+  section_title: 模型評估
+  text: 偏差-變異數權衡 (Bias-Variance Tradeoff) 指出，隨著模型複雜度增加，通常會發生什麼？
+  type: multiple_choice
+  options:
+  - 偏差增加，變異數增加
+  - 偏差減少，變異數減少
+  - 偏差減少，變異數增加
+  - 偏差增加，變異數減少
+  correct_index: 2
+  explanation: 複雜模型能更好地擬合訓練數據（低偏差），但也更容易受到數據微小變動的影響（高變異數）。
+  tags:
+  - chap-m1-ch3
+  - sec-model-evaluation
+- id: 3324
+  chapter_title: 機器學習基礎概念
+  section_title: 監督式學習
+  text: 在 KNN 中，距離度量除了歐幾里得距離，對於文本數據常用哪種距離？
+  type: multiple_choice
+  options:
+  - 曼哈頓距離
+  - 餘弦相似度 (Cosine Similarity)
+  - 切比雪夫距離
+  - 漢明距離
+  correct_index: 1
+  explanation: 在高維稀疏的文本向量空間中，餘弦相似度（衡量向量夾角）通常比歐幾里得距離更能反映語意相似性。
+  tags:
+  - chap-m1-ch3
+  - sec-supervised-learning
+- id: 3325
+  chapter_title: 機器學習基礎概念
+  section_title: 監督式學習
+  text: 隨機森林 (Random Forest) 如何改進決策樹？
+  type: multiple_choice
+  options:
+  - 減少樹的深度
+  - 結合多棵樹的預測結果 (Bagging)
+  - 使用更複雜的分裂準則
+  - 只使用部分數據訓練
+  correct_index: 1
+  explanation: 隨機森林透過集成學習 (Ensemble Learning)，平均多棵樹的預測，有效平滑了單棵樹的過擬合傾向。
+  tags:
+  - chap-m1-ch3
+  - sec-supervised-learning
+- id: 3326
+  chapter_title: 機器學習基礎概念
+  section_title: 模型評估
+  text: 什麼是「不可約誤差 (Irreducible Error)」？
+  type: multiple_choice
+  options:
+  - 模型偏差造成的誤差
+  - 模型變異數造成的誤差
+  - 數據本身固有的雜訊
+  - 計算精度誤差
+  correct_index: 2
+  explanation: 總誤差 = Bias^2 + Variance + Irreducible Error。前兩者可控，但後者源於數據本身的隨機性或測量誤差，是性能的上限。
+  tags:
+  - chap-m1-ch3
+  - sec-model-evaluation
+- id: 3327
+  chapter_title: 機器學習基礎概念
+  section_title: 監督式學習
+  text: 梯度下降法中的「學習率 (Learning Rate)」控制什麼？
+  type: multiple_choice
+  options:
+  - 迭代次數
+  - 每次參數更新的步長大小
+  - 損失函數的大小
+  - 模型的複雜度
+  correct_index: 1
+  explanation: 學習率決定了我們沿梯度方向移動的幅度。太大會震盪，太小會收斂過慢。
+  tags:
+  - chap-m1-ch3
+  - sec-supervised-learning
+- id: 3328
+  chapter_title: 機器學習基礎概念
+  section_title: 非監督式學習
+  text: 層次分群 (Hierarchical Clustering) 的結果通常用什麼圖形表示？
+  type: multiple_choice
+  options:
+  - 散點圖
+  - 樹狀圖 (Dendrogram)
+  - 直方圖
+  - 熱力圖
+  correct_index: 1
+  explanation: 樹狀圖展示了數據點如何一步步合併成群集的過程，可以直觀地選擇分群數量。
+  tags:
+  - chap-m1-ch3
+  - sec-unsupervised-learning
+- id: 3329
+  chapter_title: 機器學習基礎概念
+  section_title: 模型評估
+  text: 留一法交叉驗證 (Leave-One-Out CV) 是 K-Fold 的一種特例，其中 K 等於？
+  type: multiple_choice
+  options:
+  - 1
+  - 5
+  - 10
+  - 樣本總數 N
+  correct_index: 3
+  explanation: LOOCV 每次只留 1 個樣本驗證，其餘 N-1 個訓練，重複 N 次。計算成本高但評估偏差小。
+  tags:
+  - chap-m1-ch3
+  - sec-model-evaluation
+- id: 3330
+  chapter_title: 機器學習基礎概念
+  section_title: 監督式學習
+  text: 在線性迴歸中，若特徵之間高度相關，會導致什麼問題？
+  type: multiple_choice
+  options:
+  - 過擬合
+  - 多重共線性 (Multicollinearity)
+  - 欠擬合
+  - 無法計算梯度
+  correct_index: 1
+  explanation: 共線性使得模型難以區分不同特徵的個別貢獻，導致係數變異數大，對數據微小變動敏感。
+  tags:
+  - chap-m1-ch3
+  - sec-supervised-learning
+- id: 3331
+  chapter_title: 機器學習基礎概念
+  section_title: 監督式學習
+  text: 決策樹的剪枝 (Pruning) 是為了？
+  type: multiple_choice
+  options:
+  - 增加樹的深度
+  - 減少樹的複雜度，防止過擬合
+  - 增加計算量
+  - 提高訓練準確率
+  correct_index: 1
+  explanation: 剪枝移除對預測貢獻不大或只擬合雜訊的分支，簡化模型以提升泛化能力。
+  tags:
+  - chap-m1-ch3
+  - sec-supervised-learning
+- id: 3332
+  chapter_title: 機器學習基礎概念
+  section_title: 監督式學習
+  text: SVM 中的 C 參數 (正則化參數) 如何影響模型？
+  type: multiple_choice
+  options:
+  - C 越大，容錯率越低，邊界越窄
+  - C 越大，容錯率越高，邊界越寬
+  - C 不影響模型
+  - C 控制核函數類型
+  correct_index: 0
+  explanation: C 參數權衡了「最大化邊界」與「最小化分類錯誤」。C 大表示對錯誤零容忍，導致硬邊界；C 小表示允許部分錯誤，追求更寬的軟邊界。
+  tags:
+  - chap-m1-ch3
+  - sec-supervised-learning
+- id: 3333
+  chapter_title: 機器學習基礎概念
+  section_title: 模型評估
+  text: 哪種評估指標對於「垃圾郵件偵測」（寧可漏抓，不可誤殺正常郵件）最為重要？
+  type: multiple_choice
+  options:
+  - Recall
+  - Precision
+  - Accuracy
+  - MSE
+  correct_index: 1
+  explanation: 我們希望被預測為垃圾郵件的信件中，真正是垃圾郵件的比例很高（Precision 高），以免使用者錯過重要信件（誤殺）。
+  tags:
+  - chap-m1-ch3
+  - sec-model-evaluation
+- id: 3334
+  chapter_title: 機器學習基礎概念
+  section_title: 非監督式學習
+  text: DBSCAN 分群演算法相較於 K-Means 的一個主要優勢是？
+  type: multiple_choice
+  options:
+  - 速度更快
+  - 不需要預先指定群集數量，且能識別任意形狀的群集和雜訊
+  - 只能處理圓形群集
+  - 總是將所有點分群
+  correct_index: 1
+  explanation: DBSCAN 基於密度分群，能自動發現群集數量，適應不規則形狀，並能將稀疏區域的點標記為雜訊。
+  tags:
+  - chap-m1-ch3
+  - sec-unsupervised-learning
+- id: 3335
+  chapter_title: 機器學習基礎概念
+  section_title: 監督式學習
+  text: 樸素貝氏分類器 (Naive Bayes) 的「樸素」假設是指？
+  type: multiple_choice
+  options:
+  - 假設模型很簡單
+  - 假設所有特徵之間相互獨立
+  - 假設數據是常態分佈
+  - 假設沒有雜訊
+  correct_index: 1
+  explanation: 為了簡化計算，Naive Bayes 假設給定類別下，各特徵是條件獨立的。雖然這在現實中很少成立，但模型效果通常出奇地好。
+  tags:
+  - chap-m1-ch3
+  - sec-supervised-learning
+- id: 3336
+  chapter_title: 機器學習基礎概念
+  section_title: 模型評估
+  text: 學習曲線 (Learning Curve) 顯示訓練誤差和驗證誤差隨什麼變化的趨勢？
+  type: multiple_choice
+  options:
+  - 時間
+  - 訓練樣本數量
+  - 特徵數量
+  - 學習率
+  correct_index: 1
+  explanation: 學習曲線幫助我們判斷模型是過擬合（兩條線分開）還是欠擬合（兩條線收斂但誤差高），以及增加數據是否有幫助。
+  tags:
+  - chap-m1-ch3
+  - sec-model-evaluation
+- id: 3337
+  chapter_title: 機器學習基礎概念
+  section_title: 監督式學習
+  text: 隨機森林中的「Bootstrap」採樣是指？
+  type: multiple_choice
+  options:
+  - 不放回抽樣
+  - 取後放回抽樣 (Sampling with Replacement)
+  - 分層抽樣
+  - 系統抽樣
+  correct_index: 1
+  explanation: 每棵樹使用從原始數據中取後放回抽樣產生的子集進行訓練，這增加了數據的多樣性。
+  tags:
+  - chap-m1-ch3
+  - sec-supervised-learning
+- id: 3338
+  chapter_title: 機器學習基礎概念
+  section_title: 監督式學習
+  text: 梯度消失 (Vanishing Gradient) 問題最容易發生在？
+  type: multiple_choice
+  options:
+  - 線性迴歸
+  - 淺層神經網路
+  - 深層神經網路 (Deep Neural Networks)
+  - 決策樹
+  correct_index: 2
+  explanation: 在深層網路中，梯度在反向傳播過程中經過多次連乘，若數值小於 1，梯度會指數級衰減趨近於 0，導致前層參數無法更新。
+  tags:
+  - chap-m1-ch3
+  - sec-supervised-learning
+- id: 3339
+  chapter_title: 機器學習基礎概念
+  section_title: 模型評估
+  text: 網格搜尋 (Grid Search) 用於？
+  type: multiple_choice
+  options:
+  - 特徵選擇
+  - 超參數調整 (Hyperparameter Tuning)
+  - 數據清洗
+  - 模型訓練
+  correct_index: 1
+  explanation: Grid Search 透過窮舉預定義的超參數組合（如 C, kernel, gamma），尋找驗證集表現最佳的配置。
+  tags:
+  - chap-m1-ch3
+  - sec-model-evaluation
+- id: 3340
+  chapter_title: 機器學習基礎概念
+  section_title: 監督式學習
+  text: 哪種演算法被稱為「懶惰學習 (Lazy Learning)」？
+  type: multiple_choice
+  options:
+  - SVM
+  - 決策樹
+  - KNN
+  - 邏輯迴歸
+  correct_index: 2
+  explanation: KNN 在訓練階段不建立模型，只是單純儲存數據。直到預測時才進行計算（找鄰居），因此稱為懶惰學習。
+  tags:
+  - chap-m1-ch3
+  - sec-supervised-learning
+- id: 3341
+  chapter_title: 機器學習基礎概念
+  section_title: 深度思考情境題
+  text: 情境：你正在訓練一個癌症預測模型，數據集中 99% 是健康樣本，1% 是癌症樣本。你發現模型的 Accuracy 為 99%，但 Recall 為 0%。這意味著什麼？你該如何向非技術背景的主管解釋這個問題的嚴重性？
+  type: multiple_choice
+  options:
+  - 模型表現完美，無需解釋。
+  - 模型學會了「偷懶」，它只要預測所有人都是健康的，就能拿高分。
+  - 數據有問題，應該刪除健康樣本。
+  - 應該改用線性迴歸。
+  correct_index: 1
+  explanation: 這是類別不平衡的典型陷阱。向主管解釋時，應強調模型雖然「考試分數高」，但對於「抓出病患」這個核心任務完全失敗，因此需要更換評估指標（如 Recall）並調整訓練策略。
+  tags:
+  - chap-m1-ch3
+  - sec-scenario
+- id: 3342
+  chapter_title: 機器學習基礎概念
+  section_title: 深度思考情境題
+  text: 情境：在房價預測比賽中，你使用決策樹模型，發現訓練誤差幾乎為 0，但測試誤差很高。你嘗試增加樹的深度，結果測試誤差更高了。這是什麼現象？你應該採取什麼反向操作？
+  type: multiple_choice
+  options:
+  - 欠擬合；應增加特徵。
+  - 過擬合；應限制樹的深度 (max_depth) 或進行剪枝 (Pruning)。
+  - 數據雜訊太大；應刪除一半數據。
+  - 學習率太高；應降低學習率。
+  correct_index: 1
+  explanation: 訓練好但測試差是過擬合的特徵。增加深度只會讓模型記住更多訓練細節（雜訊），加劇過擬合。正確做法是限制模型複雜度，如限制深度、增加葉節點最小樣本數限制。
+  tags:
+  - chap-m1-ch3
+  - sec-scenario
+- id: 3343
+  chapter_title: 機器學習基礎概念
+  section_title: 深度思考情境題
+  text: 情境：你正在使用 K-Means 對客戶進行分群。你發現無論怎麼調整 K 值，分群結果都不太合理，且可視化發現數據呈現「甜甜圈」狀（一圈包一圈）。為什麼 K-Means 失效了？應改用什麼演算法？
+  type: multiple_choice
+  options:
+  - K-Means 假設群集是凸形 (Convex) 或球狀的，無法處理非凸形結構。
+  - K 值選錯了，應該選 K=100。
+  - 數據沒有標準化。
+  - 應該用監督式學習。
+  correct_index: 0
+  explanation: K-Means 基於中心點和歐氏距離，傾向於發現球狀群集。對於環狀、新月形等複雜幾何結構，K-Means 無能為力。DBSCAN 基於密度連通性，能有效識別這些形狀。
+  tags:
+  - chap-m1-ch3
+  - sec-scenario
+- id: 3344
+  chapter_title: 機器學習基礎概念
+  section_title: 深度思考情境題
+  text: 情境：你的模型在訓練集和測試集上的表現都很差（高偏差）。你的同事建議「增加更多數據」來解決問題。你認為這個建議有效嗎？為什麼？
+  type: multiple_choice
+  options:
+  - 有效，更多數據總是好的。
+  - 無效。高偏差意味著模型太簡單（欠擬合），無法捕捉數據規律。
+  - 有效，數據能降低偏差。
+  - 無效，應該減少特徵。
+  correct_index: 1
+  explanation: 學習曲線理論告訴我們，當模型處於高偏差（欠擬合）狀態時，增加訓練數據通常無助於提升性能，因為瓶頸在於模型本身的表達能力不足。
+  tags:
+  - chap-m1-ch3
+  - sec-scenario
+- id: 3345
+  chapter_title: 機器學習基礎概念
+  section_title: 深度思考情境題
+  text: 情境：你正在構建一個推薦系統，使用矩陣分解 (Matrix Factorization)。你發現模型傾向於推薦熱門商品給所有人。為了增加推薦的「多樣性」和「驚喜度」，你可以在損失函數中加入什麼項？
+  type: multiple_choice
+  options:
+  - 正則化項 (Regularization)
+  - 準確率項
+  - 覆蓋率 (Coverage) 懲罰或多樣性 (Diversity) 懲罰項。
+  - 增加學習率
+  correct_index: 2
+  explanation: 僅優化準確率（如 RMSE）往往導致「大者恆大」的馬太效應。為了兼顧多樣性，需在目標函數中引入相關約束，或在模型輸出後加入多樣性過濾機制，犧牲一點準確率換取更好的使用者體驗。
+  tags:
+  - chap-m1-ch3
+  - sec-scenario

@@ -1,0 +1,676 @@
+questions:
+- id: 6101
+  chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: 隨機森林 (Random Forest) 是基於哪種整合學習技術？
+  type: multiple_choice
+  options:
+  - Boosting
+  - Bagging
+  - Stacking
+  - Clustering
+  correct_index: 1
+  explanation: 隨機森林透過 Bagging 技術並行訓練多棵決策樹，每棵樹使用隨機採樣的數據與特徵，最後透過投票或平均來整合結果。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+- id: 6102
+  chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: 梯度提升 (Gradient Boosting) 的核心思想是？
+  type: multiple_choice
+  options:
+  - 並行訓練多個獨立模型
+  - 串行訓練模型，每一個新模型都試圖修正前一個模型的錯誤
+  - 使用元學習器組合預測結果
+  - 隨機選擇特徵進行分割
+  correct_index: 1
+  explanation: Gradient Boosting 是一種迭代式的 Boosting 方法，每一輪新的弱學習器都是為了減少上一輪模型的殘差 (Residual)。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+- id: 6103
+  chapter_title: 進階機器學習演算法
+  section_title: 進階非監督式學習
+  text: 在關聯規則學習中，「支持度 (Support)」指標代表什麼？
+  type: multiple_choice
+  options:
+  - 規則的可信程度
+  - 規則在數據集中出現的頻率
+  - 規則的提升效果
+  - 規則的複雜度
+  correct_index: 1
+  explanation: 支持度衡量一個項目集（如「啤酒與尿布」）在所有交易中出現的機率或頻率。
+  tags:
+  - chap-m4-ch1
+  - sec-adv-unsupervised
+- id: 6104
+  chapter_title: 進階機器學習演算法
+  section_title: 進階非監督式學習
+  text: 孤立森林 (Isolation Forest) 檢測異常點的核心原理是？
+  type: multiple_choice
+  options:
+  - 異常點密度較高
+  - 異常點距離群集中心較遠
+  - 異常點更容易被隨機分割隔離
+  - 異常點的重構誤差較大
+  correct_index: 2
+  explanation: 孤立森林利用異常點「少且不同」的特性，在隨機構建的樹中，異常點通常會比正常點更快被隔離到葉節點（即路徑更短）。
+  tags:
+  - chap-m4-ch1
+  - sec-adv-unsupervised
+- id: 6105
+  chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: CatBoost 演算法最大的特色在於擅長處理哪種類型的特徵？
+  type: multiple_choice
+  options:
+  - 圖像特徵
+  - 文本特徵
+  - 類別特徵 (Categorical Features)
+  - 時間序列特徵
+  correct_index: 2
+  explanation: CatBoost (Categorical Boosting) 專為處理類別型特徵而設計，能自動處理編碼問題，無需預先進行 One-hot Encoding。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+- id: 6106
+  chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: 在決策樹中，若「吉尼不純度 (Gini Impurity)」越小，代表該節點的純度如何？
+  type: multiple_choice
+  options:
+  - 越低
+  - 越高
+  - 不變
+  - 無法判斷
+  correct_index: 1
+  explanation: Gini 不純度衡量樣本集合的混雜程度。數值為 0 代表所有樣本屬於同一類（最純），數值越大代表越混雜。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+- id: 6107
+  chapter_title: 進階機器學習演算法
+  section_title: 進階非監督式學習
+  text: 若關聯規則 A -> B 的「提升度 (Lift)」大於 1，代表什麼意義？
+  type: multiple_choice
+  options:
+  - A 與 B 是負相關
+  - A 與 B 是獨立的
+  - A 的出現會提高 B 出現的機率
+  - A 的出現會降低 B 出現的機率
+  correct_index: 2
+  explanation: Lift > 1 表示 A 的發生對 B 的發生有正向影響；Lift = 1 表示獨立；Lift < 1 表示負相關。
+  tags:
+  - chap-m4-ch1
+  - sec-adv-unsupervised
+- id: 6108
+  chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: Stacking (堆疊法) 通常使用什麼來組合多個基學習器的預測結果？
+  type: multiple_choice
+  options:
+  - 簡單平均
+  - 投票
+  - 元學習器 (Meta-learner)
+  - 隨機選擇
+  correct_index: 2
+  explanation: Stacking 訓練一個第二層模型（元學習器），將第一層多個基學習器的輸出作為輸入特徵，學習如何最佳地組合它們。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+- id: 6109
+  chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: LightGBM 相比於 XGBoost 的一個主要優勢是？
+  type: multiple_choice
+  options:
+  - 準確率更高
+  - 訓練速度更快，記憶體佔用更低
+  - 支援更多演算法
+  - 程式碼更簡單
+  correct_index: 1
+  explanation: LightGBM 使用基於直方圖的演算法和 Leaf-wise 生長策略，大幅減少了計算量和記憶體消耗。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+- id: 6110
+  chapter_title: 進階機器學習演算法
+  section_title: 進階非監督式學習
+  text: Apriori 演算法的主要缺點是？
+  type: multiple_choice
+  options:
+  - 準確率低
+  - 需要多次掃描資料庫，效率較低
+  - 只能處理數值數據
+  - 無法發現關聯規則
+  correct_index: 1
+  explanation: Apriori 每次生成候選集都需要掃描一次資料庫，當數據量大時，I/O 開銷非常大。
+  tags:
+  - chap-m4-ch1
+  - sec-adv-unsupervised
+- id: 6111
+  chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: 隨機森林中的「隨機」體現在哪兩個方面？
+  type: multiple_choice
+  options:
+  - 隨機選擇模型和隨機選擇參數
+  - 隨機採樣數據 (Bootstrap) 和隨機選擇特徵
+  - 隨機選擇標籤和隨機選擇損失函數
+  - 隨機初始化權重和隨機停止訓練
+  correct_index: 1
+  explanation: 這種雙重隨機性增加了樹之間的多樣性 (Diversity)，從而降低了整合模型的變異數 (Variance)，防止過擬合。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+- id: 6112
+  chapter_title: 進階機器學習演算法
+  section_title: 進階非監督式學習
+  text: FP-Growth 演算法如何改進 Apriori 的效率？
+  type: multiple_choice
+  options:
+  - 使用 GPU 加速
+  - 構建 FP 樹，只需掃描兩次資料庫
+  - 減少數據量
+  - 忽略低頻項目
+  correct_index: 1
+  explanation: FP-Growth 將數據壓縮成一棵樹結構，避免了多次掃描資料庫，大大提高了頻繁項集挖掘的效率。
+  tags:
+  - chap-m4-ch1
+  - sec-adv-unsupervised
+- id: 6113
+  chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: 資訊熵 (Entropy) 越大，代表系統？
+  type: multiple_choice
+  options:
+  - 越有序
+  - 越混亂 (不確定性越高)
+  - 越簡單
+  - 越穩定
+  correct_index: 1
+  explanation: 熵是衡量混亂程度的指標。如果一個集合裡各類別樣本數量相等，熵最大（最難猜）；如果只有一類，熵為 0。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+- id: 6114
+  chapter_title: 進階機器學習演算法
+  section_title: 進階非監督式學習
+  text: Local Outlier Factor (LOF) 適合檢測哪種異常？
+  type: multiple_choice
+  options:
+  - 全域異常
+  - 局部異常
+  - 時間序列異常
+  - 圖像異常
+  correct_index: 1
+  explanation: 有些點雖然在全域看來不稀疏，但相對於它周圍密集的鄰居來說，它顯得孤立，這就是局部異常。
+  tags:
+  - chap-m4-ch1
+  - sec-adv-unsupervised
+- id: 6115
+  chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: XGBoost 中的「正則化項」有什麼作用？
+  type: multiple_choice
+  options:
+  - 加速訓練
+  - 控制模型複雜度，防止過擬合
+  - 增加特徵
+  - 減少數據
+  correct_index: 1
+  explanation: XGBoost 在目標函數中加入了對葉節點數量和權重的懲罰項，這使得它比傳統的 GBDT 更不容易過擬合。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+- id: 6116
+  chapter_title: 進階機器學習演算法
+  section_title: 進階非監督式學習
+  text: One-Class SVM 是一種什麼類型的演算法？
+  type: multiple_choice
+  options:
+  - 監督式分類
+  - 非監督式異常檢測
+  - 迴歸分析
+  - 聚類分析
+  correct_index: 1
+  explanation: 它只需要「正常」數據進行訓練，學習一個包圍正常數據的邊界。落在邊界外的就被視為異常。
+  tags:
+  - chap-m4-ch1
+  - sec-adv-unsupervised
+- id: 6117
+  chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: Bagging 的主要目的是降低模型的？
+  type: multiple_choice
+  options:
+  - 偏差 (Bias)
+  - 變異數 (Variance)
+  - 訓練誤差
+  - 計算成本
+  correct_index: 1
+  explanation: 通過平均多個模型的預測，Bagging 能有效平滑單個模型的隨機誤差，從而降低整體變異數。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+- id: 6118
+  chapter_title: 進階機器學習演算法
+  section_title: 進階非監督式學習
+  text: 信賴度 (Confidence) P(Y|X) 衡量的是？
+  type: multiple_choice
+  options:
+  - X 和 Y 同時出現的機率
+  - 在包含 X 的交易中，同時包含 Y 的條件機率
+  - Y 出現的機率
+  - X 出現的機率
+  correct_index: 1
+  explanation: 即「買了 X 的人，有多大比例也會買 Y」。這是衡量規則強度的重要指標。
+  tags:
+  - chap-m4-ch1
+  - sec-adv-unsupervised
+- id: 6119
+  chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: Boosting 的主要目的是降低模型的？
+  type: multiple_choice
+  options:
+  - 偏差 (Bias)
+  - 變異數 (Variance)
+  - 噪音
+  - 數據量
+  correct_index: 0
+  explanation: Boosting 透過不斷修正前一個模型的錯誤（擬合殘差），逐步逼近真實函數，從而降低偏差。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+- id: 6120
+  chapter_title: 進階機器學習演算法
+  section_title: 進階非監督式學習
+  text: 孤立森林 (Isolation Forest) 對於高維數據的表現通常？
+  type: multiple_choice
+  options:
+  - 很差
+  - 很好，因為它不需要計算距離
+  - 無法處理
+  - 與維度無關
+  correct_index: 1
+  explanation: 許多基於距離的演算法在高維空間會失效（維度詛咒），而孤立森林基於隨機分割，對高維數據有較好的魯棒性。
+  tags:
+  - chap-m4-ch1
+  - sec-adv-unsupervised
+- id: 6121
+  chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: 資訊增益 (Information Gain) 是指？
+  type: multiple_choice
+  options:
+  - 分裂前後資訊熵的差值
+  - 分裂後的資訊熵
+  - 分裂前的資訊熵
+  - 資訊熵的和
+  correct_index: 0
+  explanation: 決策樹選擇特徵的標準是：哪個特徵能讓系統的混亂程度（熵）下降最多，即資訊增益最大。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+- id: 6122
+  chapter_title: 進階機器學習演算法
+  section_title: 進階非監督式學習
+  text: 關聯規則學習中，如果 Lift = 1，表示？
+  type: multiple_choice
+  options:
+  - 正相關
+  - 負相關
+  - 兩個項目相互獨立
+  - 規則無效
+  correct_index: 2
+  explanation: Lift = P(XY) / (P(X)P(Y))。如果等於 1，說明 P(XY) = P(X)P(Y)，即統計獨立。
+  tags:
+  - chap-m4-ch1
+  - sec-adv-unsupervised
+- id: 6123
+  chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: 隨機森林處理迴歸問題時，通常採用什麼方式整合結果？
+  type: multiple_choice
+  options:
+  - 多數決 (Voting)
+  - 平均值 (Averaging)
+  - 最小值
+  - 最大值
+  correct_index: 1
+  explanation: 對於數值預測，平均所有樹的預測值是最直觀且有效的整合方式。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+- id: 6124
+  chapter_title: 進階機器學習演算法
+  section_title: 進階非監督式學習
+  text: 異常檢測在工業界的一個常見應用是？
+  type: multiple_choice
+  options:
+  - 推薦系統
+  - 預測性維護
+  - 圖像分類
+  - 語音識別
+  correct_index: 1
+  explanation: 機器壞掉前通常會有異常的震動或溫度，異常檢測能捕捉這些訊號，提前預警。
+  tags:
+  - chap-m4-ch1
+  - sec-adv-unsupervised
+- id: 6125
+  chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: 哪種 Boosting 演算法使用了 Leaf-wise (按葉子生長) 策略？
+  type: multiple_choice
+  options:
+  - AdaBoost
+  - XGBoost
+  - LightGBM
+  - Random Forest
+  correct_index: 2
+  explanation: Leaf-wise 策略每次選擇分裂增益最大的葉子進行分裂，而不是像 Level-wise 那樣一層層長。這通常能得到更深的樹和更高的精度，但也更容易過擬合。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+- id: 6126
+  chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: Stacking 的第一層模型通常稱為？
+  type: multiple_choice
+  options:
+  - 元學習器 (Meta-learner)
+  - 基學習器 (Base Learners)
+  - 弱學習器
+  - 強學習器
+  correct_index: 1
+  explanation: 第一層由多個不同的模型（如 SVM, RF, KNN）組成，它們的輸出被當作第二層模型的輸入特徵。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+- id: 6127
+  chapter_title: 進階機器學習演算法
+  section_title: 進階非監督式學習
+  text: 在 Apriori 演算法中，如果一個項目集是頻繁的，那麼它的所有子集？
+  type: multiple_choice
+  options:
+  - 必須也是頻繁的
+  - 必須是不頻繁的
+  - 可能是頻繁的
+  - 無法確定
+  correct_index: 0
+  explanation: 這是 Apriori 原理：如果 {啤酒, 尿布} 常出現，那 {啤酒} 和 {尿布} 單獨出現的次數一定更多（或相等），所以也一定是頻繁的。
+  tags:
+  - chap-m4-ch1
+  - sec-adv-unsupervised
+- id: 6128
+  chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: 隨機森林能否計算特徵重要性？
+  type: multiple_choice
+  options:
+  - 不能
+  - 能，根據特徵在樹分裂中帶來的平均不純度減少量來評估
+  - 只能計算線性特徵
+  - 只能計算類別特徵
+  correct_index: 1
+  explanation: 某個特徵被選為分裂點的次數越多，且帶來的純度提升越大，該特徵就越重要。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+- id: 6129
+  chapter_title: 進階機器學習演算法
+  section_title: 進階非監督式學習
+  text: 異常檢測中的「污染率 (Contamination)」參數是指？
+  type: multiple_choice
+  options:
+  - 數據中的雜訊比例
+  - 預期數據中異常點的比例
+  - 模型的錯誤率
+  - 訓練時間
+  correct_index: 1
+  explanation: 這是 Isolation Forest 等演算法的重要超參數，告訴模型「大概有多少比例的數據是壞人」，用來決定切分異常的閾值。
+  tags:
+  - chap-m4-ch1
+  - sec-adv-unsupervised
+- id: 6130
+  chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: XGBoost 支援並行處理 (Parallel Processing)，是指？
+  type: multiple_choice
+  options:
+  - 並行訓練多棵樹
+  - 在特徵粒度上並行
+  - 並行預測
+  - 並行下載數據
+  correct_index: 1
+  explanation: Boosting 本質是串行的（樹要一棵棵長），但 XGBoost 優化了建樹過程，能同時在多個 CPU 核心上計算不同特徵的分裂增益，從而加速訓練。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+- id: 6131
+  chapter_title: 進階機器學習演算法
+  section_title: 進階非監督式學習
+  text: 為什麼 One-Class SVM 適合處理不平衡數據的異常檢測？
+  type: multiple_choice
+  options:
+  - 因為它需要大量異常樣本
+  - 因為它只需要正常樣本進行訓練
+  - 因為它會自動平衡數據
+  - 因為它忽略正常樣本
+  correct_index: 1
+  explanation: 在很多場景（如飛機引擎故障），異常樣本極難取得。One-Class SVM 只要學會「什麼是正常」，凡是不像正常的都當作異常，完美解決了負樣本缺乏的問題。
+  tags:
+  - chap-m4-ch1
+  - sec-adv-unsupervised
+- id: 6132
+  chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: 決策樹容易發生什麼問題？
+  type: multiple_choice
+  options:
+  - 欠擬合
+  - 過擬合 (Overfitting)
+  - 計算太慢
+  - 無法處理類別特徵
+  correct_index: 1
+  explanation: 單棵決策樹如果沒有限制深度，會傾向於死記硬背訓練數據的每一個細節（包括雜訊），導致泛化能力差。隨機森林通過整合多棵樹解決了這個問題。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+- id: 6133
+  chapter_title: 進階機器學習演算法
+  section_title: 進階非監督式學習
+  text: 關聯規則 {麵包, 牛奶} -> {雞蛋} 的 Confidence = 0.8 意味著？
+  type: multiple_choice
+  options:
+  - 80% 的交易包含雞蛋
+  - 同時買了麵包和牛奶的人中，有 80% 也買了雞蛋
+  - 80% 的交易包含麵包和牛奶
+  - 雞蛋的銷量是麵包牛奶的 80%
+  correct_index: 1
+  explanation: 這是條件機率 P(雞蛋 | 麵包, 牛奶) = 0.8。
+  tags:
+  - chap-m4-ch1
+  - sec-adv-unsupervised
+- id: 6134
+  chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: 弱學習器 (Weak Learner) 通常是指？
+  type: multiple_choice
+  options:
+  - 準確率很低的模型
+  - 表現僅比隨機猜測好一點點的簡單模型
+  - 參數量很大的模型
+  - 訓練時間很長的模型
+  correct_index: 1
+  explanation: Boosting 的魔力就在於能將許多個「臭皮匠」（弱學習器）組合成一個「諸葛亮」（強學習器）。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+- id: 6135
+  chapter_title: 進階機器學習演算法
+  section_title: 進階非監督式學習
+  text: 孤立森林中，異常點的路徑長度通常？
+  type: multiple_choice
+  options:
+  - 較長
+  - 較短
+  - 與正常點一樣
+  - 為 0
+  correct_index: 1
+  explanation: 異常點因為「格格不入」，在隨機切分空間時，很容易一兩刀就被切出來（隔離），所以位於樹的淺層，路徑短。
+  tags:
+  - chap-m4-ch1
+  - sec-adv-unsupervised
+- id: 6136
+  chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: 隨機森林的 OOB (Out-of-Bag) 誤差可以用來？
+  type: multiple_choice
+  options:
+  - 訓練模型
+  - 評估模型泛化能力
+  - 增加數據量
+  - 計算梯度
+  correct_index: 1
+  explanation: 由於 Bootstrap 採樣，每棵樹大約有 1/3 的數據沒看過（OOB 數據）。用這些數據來測試這棵樹，平均後就是 OOB 誤差，近似於交叉驗證誤差。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+- id: 6137
+  chapter_title: 進階機器學習演算法
+  section_title: 進階非監督式學習
+  text: 頻繁項目集 (Frequent Itemset) 是指？
+  type: multiple_choice
+  options:
+  - 價格最高的商品組合
+  - 支持度 (Support) 大於等於最小支持度閾值的項目集
+  - 利潤最高的商品組合
+  - 隨機組合
+  correct_index: 1
+  explanation: 只有出現頻率夠高的組合，才值得我們去分析它們之間的關聯規則。
+  tags:
+  - chap-m4-ch1
+  - sec-adv-unsupervised
+- id: 6138
+  chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: 為什麼 CatBoost 不需要對類別特徵做 One-hot Encoding？
+  type: multiple_choice
+  options:
+  - 它忽略類別特徵
+  - 它使用 Ordered Target Statistics 等技術將類別轉換為數值
+  - 它只處理數值特徵
+  - 它使用文字嵌入
+  correct_index: 1
+  explanation: CatBoost 內部有一套聰明的機制，利用目標變數的統計值來編碼類別特徵，既保留了資訊又避免了維度爆炸。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+- id: 6139
+  chapter_title: 進階機器學習演算法
+  section_title: 進階非監督式學習
+  text: 異常檢測中的「偽陽性 (False Positive)」是指？
+  type: multiple_choice
+  options:
+  - 漏報異常
+  - 將正常數據誤判為異常
+  - 正確檢測到異常
+  - 正確判斷正常
+  correct_index: 1
+  explanation: 狼來了（但狼沒來）。在工業檢測中，偽陽性太高會導致不必要的停機檢查，增加成本。
+  tags:
+  - chap-m4-ch1
+  - sec-adv-unsupervised
+- id: 6140
+  chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: Stacking 的主要風險是？
+  type: multiple_choice
+  options:
+  - 欠擬合
+  - 過擬合 (Overfitting)
+  - 準確率低
+  - 無法解釋
+  correct_index: 1
+  explanation: 疊了兩層模型，複雜度大增。如果沒有做好交叉驗證（如使用 Out-of-fold 預測），很容易發生數據洩漏導致過擬合。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+- id: 6141
+  chapter_title: 進階機器學習演算法
+  section_title: 深度思考情境題
+  text: 情境：你正在參加一個預測房價的 Kaggle 比賽。你已經訓練了 XGBoost, LightGBM, 和 Random Forest 三個模型，它們的表現都差不多，但預測結果的相關性不高。為了進一步提升排名，你應該怎麼做？
+  type: multiple_choice
+  options:
+  - 只選表現最好的一個。
+  - 使用 Stacking 或簡單平均 (Blending) 將這三個模型整合起來。
+  - 放棄比賽。
+  - 重新收集數據。
+  correct_index: 1
+  explanation: 這是競賽拿分的標準操作。模型間的相關性低意味著它們犯錯的地方不同，整合它們可以互補長短，通常能帶來顯著的性能提升。
+  tags:
+  - chap-m4-ch1
+  - sec-scenario
+- id: 6142
+  chapter_title: 進階機器學習演算法
+  section_title: 深度思考情境題
+  text: 情境：你負責一家超市的銷售分析，發現「尿布 -> 啤酒」的 Lift 值高達 3.5。這對行銷策略有什麼啟示？
+  type: multiple_choice
+  options:
+  - 應該把尿布和啤酒分開擺放。
+  - 應該把尿布和啤酒擺在一起，或進行交叉銷售。
+  - 這是巧合，忽略它。
+  - 停止銷售啤酒。
+  correct_index: 1
+  explanation: Lift > 1 且很高，表示強關聯。這是經典的交叉銷售 (Cross-selling) 機會，利用這種關聯性可以顯著提升客單價。
+  tags:
+  - chap-m4-ch1
+  - sec-scenario
+- id: 6143
+  chapter_title: 進階機器學習演算法
+  section_title: 深度思考情境題
+  text: 情境：你使用孤立森林檢測信用卡詐欺，發現檢測出的異常點中有很多是 VIP 客戶的大額消費（偽陽性）。你該如何改進？
+  type: multiple_choice
+  options:
+  - 降低污染率 (Contamination)，或增加特徵。
+  - 刪除 VIP 客戶數據。
+  - 停止使用孤立森林。
+  - 接受這個結果。
+  correct_index: 0
+  explanation: 異常不等於詐欺。VIP 的行為模式本身就與普通人不同（異常）。需要引入更多上下文特徵，讓模型理解「對這個人來說，這筆交易是正常的」。
+  tags:
+  - chap-m4-ch1
+  - sec-scenario
+- id: 6144
+  chapter_title: 進階機器學習演算法
+  section_title: 深度思考情境題
+  text: 情境：你的 XGBoost 模型在訓練集上準確率 99%，但在測試集上只有 70%。你應該調整哪些參數來解決這個問題？
+  type: multiple_choice
+  options:
+  - 增加樹的深度 (max_depth)。
+  - 降低樹的深度 (max_depth)，增加正則化參數。
+  - 增加迭代次數 (n_estimators)。
+  - 減少數據量。
+  correct_index: 1
+  explanation: 這是過擬合。需要限制模型複雜度（樹淺一點、正則化強一點）或增加隨機性（子採樣），讓模型不要學得太死。
+  tags:
+  - chap-m4-ch1
+  - sec-scenario
+- id: 6145
+  chapter_title: 進階機器學習演算法
+  section_title: 深度思考情境題
+  text: 情境：你正在處理一個包含大量類別特徵（如用戶 ID、商品 ID）的推薦系統數據集。為了快速建立基準模型，你會優先選擇哪個演算法？
+  type: multiple_choice
+  options:
+  - SVM。
+  - CatBoost。
+  - Linear Regression。
+  - K-Means。
+  correct_index: 1
+  explanation: CatBoost 對類別特徵的處理非常強大且自動化，無需繁瑣的特徵工程（如 Target Encoding），非常適合這種場景作為強大的 Baseline。
+  tags:
+  - chap-m4-ch1
+  - sec-scenario

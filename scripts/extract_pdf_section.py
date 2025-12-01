@@ -24,17 +24,18 @@ def extract_section(pdf_path, keyword, output_file):
                     f.write(text)
                     f.write("\n------------------------\n")
                     
-                    # Extract next page too
-                    if i + 1 < len(reader.pages):
-                        f.write(f"\n--- Page {i+2} Content (Continuation) ---\n")
-                        f.write(reader.pages[i+1].extract_text())
-                        f.write("\n------------------------\n")
+                    # Extract next 25 pages
+                    for k in range(1, 26):
+                        if i + k < len(reader.pages):
+                            f.write(f"\n--- Page {i+1+k} Content (Continuation) ---\n")
+                            f.write(reader.pages[i+k].extract_text())
+                            f.write("\n------------------------\n")
 
     except Exception as e:
         print(f"Error reading PDF: {e}")
 
 if __name__ == "__main__":
-    pdf_file = r"c:\Users\charl\Documents\ai-cert\docs\iPAS-level2\AI應用規劃師(中級)-學習指引-科目1人工智慧技術應用規劃.pdf"
-    output_path = r"c:\Users\charl\Documents\ai-cert\scripts\extracted_5_2.txt"
-    # Search for "5.2"
-    extract_section(pdf_file, "5.2", output_path)
+    pdf_file = r"c:\Users\charl\Documents\ai-cert\docs\iPAS-level2\AI應用規劃師(中級)-學習指引-科目2大數據處理分析與應用.pdf"
+    output_path = r"c:\Users\charl\Documents\ai-cert\scripts\extracted_bigdata_6_4.txt"
+    # Search for "6.4"
+    extract_section(pdf_file, "6.4", output_path)

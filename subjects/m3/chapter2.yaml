@@ -1,0 +1,676 @@
+questions:
+- id: 5201
+  chapter_title: 進階資料處理
+  section_title: 資料品質與清理
+  text: 資料品質維度中的「一致性 (Consistency)」是指？
+  type: multiple_choice
+  options:
+  - 數據沒有缺失值
+  - 數據在不同來源或系統中不矛盾 (如地址相同)
+  - 數據格式正確
+  - 數據是即時的
+  correct_index: 1
+  explanation: 一致性確保同一實體在不同資料庫中的資訊是吻合的，避免出現「張三在 A 系統住台北，在 B 系統住高雄」的矛盾。
+  tags:
+  - chap-m3-ch2
+  - sec-data-quality
+- id: 5202
+  chapter_title: 進階資料處理
+  section_title: 資料品質與清理
+  text: 處理缺失值 (Missing Values) 的「填補 (Imputation)」方法不包括？
+  type: multiple_choice
+  options:
+  - 使用平均值填補
+  - 使用 KNN 預測填補
+  - 直接刪除該行
+  - 使用眾數填補
+  correct_index: 2
+  explanation: 直接刪除是「刪除法」，不是「填補法」。填補旨在保留數據行，用估計值替代缺失部分。
+  tags:
+  - chap-m3-ch2
+  - sec-data-quality
+- id: 5203
+  chapter_title: 進階資料處理
+  section_title: 資料轉換與特徵工程
+  text: One-hot Encoding 的主要缺點是？
+  type: multiple_choice
+  options:
+  - 計算速度慢
+  - 當類別數量很多時，會導致維度災難 (Curse of Dimensionality)
+  - 無法處理文字
+  - 容易過擬合
+  correct_index: 1
+  explanation: 如果一個特徵有 1000 個類別，One-hot 會產生 1000 個新欄位，導致資料變得極度稀疏且維度過高。
+  tags:
+  - chap-m3-ch2
+  - sec-feature-engineering
+- id: 5204
+  chapter_title: 進階資料處理
+  section_title: 資料轉換與特徵工程
+  text: Min-Max Normalization 將數據縮放到哪個區間？
+  type: multiple_choice
+  options:
+  - [-1, 1]
+  - [0, 1]
+  - [0, 100]
+  - [-∞, +∞]
+  correct_index: 1
+  explanation: 公式 (X - min) / (max - min) 保證了結果必定落在 0 到 1 之間。
+  tags:
+  - chap-m3-ch2
+  - sec-feature-engineering
+- id: 5205
+  chapter_title: 進階資料處理
+  section_title: 資料攝取
+  text: Kafka 在串流處理架構中的角色是？
+  type: multiple_choice
+  options:
+  - 資料庫
+  - 緩衝區與解耦生產者/消費者的高吞吐量消息系統
+  - 網頁伺服器
+  - 機器學習模型
+  correct_index: 1
+  explanation: Kafka 作為中間件，能暫存海量數據，讓生產者（如 Log 收集器）與消費者（如 Spark）不必同步等待，實現解耦。
+  tags:
+  - chap-m3-ch2
+  - sec-data-ingestion
+- id: 5206
+  chapter_title: 進階資料處理
+  section_title: 資料攝取
+  text: 滾動視窗 (Tumbling Window) 的特點是？
+  type: multiple_choice
+  options:
+  - 視窗大小固定且不重疊
+  - 視窗大小固定且重疊
+  - 視窗大小動態變化
+  - 視窗永不結束
+  correct_index: 0
+  explanation: 滾動視窗像翻頁一樣，每 5 分鐘一頁，頁與頁之間沒有交集。
+  tags:
+  - chap-m3-ch2
+  - sec-data-ingestion
+- id: 5207
+  chapter_title: 進階資料處理
+  section_title: ETL 流程與工作流自動化
+  text: Apache Airflow 使用什麼來定義工作流？
+  type: multiple_choice
+  options:
+  - XML
+  - DAG (有向無環圖) 與 Python 程式碼
+  - SQL
+  - Excel
+  correct_index: 1
+  explanation: Airflow 的核心理念是 "Workflow as Code"，開發者用 Python 編寫 DAG 來描述任務間的依賴關係。
+  tags:
+  - chap-m3-ch2
+  - sec-etl-workflow
+- id: 5208
+  chapter_title: 進階資料處理
+  section_title: 資料治理與安全
+  text: Data Lineage (血緣分析) 的主要用途是？
+  type: multiple_choice
+  options:
+  - 加密數據
+  - 追蹤數據從源頭到最終報表的流向，協助問題排查
+  - 壓縮數據
+  - 備份數據
+  correct_index: 1
+  explanation: 當報表數據出錯時，血緣分析能幫我們往回追溯，找出是哪個上游環節（如 ETL 任務）出了問題。
+  tags:
+  - chap-m3-ch2
+  - sec-data-governance
+- id: 5209
+  chapter_title: 進階資料處理
+  section_title: 資料治理與安全
+  text: 零信任架構 (Zero Trust) 的核心原則是？
+  type: multiple_choice
+  options:
+  - 信任內部網路
+  - Never Trust, Always Verify (從不信任，總是驗證)
+  - 只驗證一次
+  - 不使用密碼
+  correct_index: 1
+  explanation: 零信任假設內網也不安全，因此對任何資源的存取請求（無論來自內部或外部）都必須經過嚴格的身份驗證。
+  tags:
+  - chap-m3-ch2
+  - sec-data-governance
+- id: 5210
+  chapter_title: 進階資料處理
+  section_title: 大數據在人工智慧之應用
+  text: 在分散式訓練中，資料平行 (Data Parallelism) 是指？
+  type: multiple_choice
+  options:
+  - 將模型切分到不同節點
+  - 將數據切分到多個節點，每個節點擁有完整的模型副本並同步梯度
+  - 只使用一個節點訓練
+  - 不使用 GPU
+  correct_index: 1
+  explanation: 這是最常見的分散式訓練方式。每個 GPU 算一部分數據的梯度，然後大家平均一下梯度來更新模型。
+  tags:
+  - chap-m3-ch2
+  - sec-bigdata-ai-apps
+- id: 5211
+  chapter_title: 進階資料處理
+  section_title: 資料品質與清理
+  text: 識別異常值 (Outliers) 的常用統計方法是？
+  type: multiple_choice
+  options:
+  - 圓餅圖
+  - 箱形圖 (Box Plot) 或 Z-score
+  - 散佈圖
+  - 長條圖
+  correct_index: 1
+  explanation: 箱形圖利用四分位距 (IQR) 定義上下界，超出範圍的點即視為異常值。
+  tags:
+  - chap-m3-ch2
+  - sec-data-quality
+- id: 5212
+  chapter_title: 進階資料處理
+  section_title: 資料轉換與特徵工程
+  text: Label Encoding 適合用於哪種變數？
+  type: multiple_choice
+  options:
+  - 無序類別 (如顏色：紅、藍、綠)
+  - 有序類別 (如尺寸：S, M, L)
+  - 連續數值
+  - 圖片
+  correct_index: 1
+  explanation: Label Encoding 將類別轉為 0, 1, 2...，這隱含了大小關係 (0 < 1 < 2)，因此適合有序類別。若用於無序類別會誤導模型。
+  tags:
+  - chap-m3-ch2
+  - sec-feature-engineering
+- id: 5213
+  chapter_title: 進階資料處理
+  section_title: 資料攝取
+  text: Sqoop 的主要功能是？
+  type: multiple_choice
+  options:
+  - 串流處理
+  - 在 Hadoop 與關聯式資料庫 (RDBMS) 之間傳輸數據
+  - 機器學習
+  - 繪圖
+  correct_index: 1
+  explanation: Sqoop 是 "SQL to Hadoop" 的縮寫，專門用於將傳統資料庫的數據匯入大數據平台，或反向匯出。
+  tags:
+  - chap-m3-ch2
+  - sec-data-ingestion
+- id: 5214
+  chapter_title: 進階資料處理
+  section_title: ETL 流程與工作流自動化
+  text: ELT (Extract, Load, Transform) 相比於 ETL 的優勢在於？
+  type: multiple_choice
+  options:
+  - 節省硬碟空間
+  - 利用現代雲端資料倉儲的強大算力進行轉換，且保留了原始數據
+  - 速度較慢
+  - 只能處理小數據
+  correct_index: 1
+  explanation: 先把數據 Load 進 BigQuery/Snowflake，再用 SQL 進行 Transform，比在外部 ETL Server 處理更高效且靈活。
+  tags:
+  - chap-m3-ch2
+  - sec-etl-workflow
+- id: 5215
+  chapter_title: 進階資料處理
+  section_title: 資料治理與安全
+  text: RBAC (Role-Based Access Control) 是基於什麼來分配權限？
+  type: multiple_choice
+  options:
+  - 用戶的屬性 (如部門、時間)
+  - 用戶的角色 (如管理員、分析師)
+  - 用戶的 IP
+  - 用戶的密碼
+  correct_index: 1
+  explanation: RBAC 將權限綁定在「角色」上，再將角色分配給用戶，簡化了權限管理。
+  tags:
+  - chap-m3-ch2
+  - sec-data-governance
+- id: 5216
+  chapter_title: 進階資料處理
+  section_title: 大數據在人工智慧之應用
+  text: 主動式學習 (Active Learning) 的核心思想是？
+  type: multiple_choice
+  options:
+  - 標註所有數據
+  - 模型主動挑選「最不確定」的樣本交由專家標註，以節省標註成本
+  - 隨機挑選樣本
+  - 不進行標註
+  correct_index: 1
+  explanation: 既然標註很貴，就只標註那些模型「看不懂」的難題，這樣能用最少的數據達到最好的訓練效果。
+  tags:
+  - chap-m3-ch2
+  - sec-bigdata-ai-apps
+- id: 5217
+  chapter_title: 進階資料處理
+  section_title: 資料轉換與特徵工程
+  text: SMOTE 技術主要用於解決什麼問題？
+  type: multiple_choice
+  options:
+  - 缺失值
+  - 類別不平衡 (Imbalanced Data)
+  - 異常值
+  - 維度過高
+  correct_index: 1
+  explanation: SMOTE 透過插值合成少數類別的新樣本，讓數據集變得平衡，避免模型偏向多數類別。
+  tags:
+  - chap-m3-ch2
+  - sec-feature-engineering
+- id: 5218
+  chapter_title: 進階資料處理
+  section_title: 資料攝取
+  text: 滑動視窗 (Sliding Window) 與滾動視窗的主要區別是？
+  type: multiple_choice
+  options:
+  - 滑動視窗大小可變
+  - 滑動視窗允許重疊 (Overlapping)，滾動視窗不重疊
+  - 滑動視窗只處理過去的數據
+  - 滑動視窗不使用時間
+  correct_index: 1
+  explanation: 滑動視窗（如每 1 分鐘統計過去 5 分鐘）會有重疊部分，能提供更平滑的趨勢分析。
+  tags:
+  - chap-m3-ch2
+  - sec-data-ingestion
+- id: 5219
+  chapter_title: 進階資料處理
+  section_title: 資料治理與安全
+  text: 差分隱私 (Differential Privacy) 如何保護隱私？
+  type: multiple_choice
+  options:
+  - 刪除所有數據
+  - 在數據中加入統計雜訊，使得單一特定樣本的存在與否不影響整體統計結果
+  - 加密硬碟
+  - 限制存取 IP
+  correct_index: 1
+  explanation: 這是目前最強的隱私保護數學定義，保證攻擊者無法從查詢結果反推特定個人的資訊。
+  tags:
+  - chap-m3-ch2
+  - sec-data-governance
+- id: 5220
+  chapter_title: 進階資料處理
+  section_title: 大數據在人工智慧之應用
+  text: 聯邦學習 (Federated Learning) 的特點是？
+  type: multiple_choice
+  options:
+  - 數據集中到雲端訓練
+  - 數據不出本地 (如手機)，僅上傳加密的模型參數更新
+  - 不使用模型
+  - 只在伺服器訓練
+  correct_index: 1
+  explanation: 這種去中心化的訓練方式徹底解決了數據隱私問題，適合醫療、金融等敏感領域。
+  tags:
+  - chap-m3-ch2
+  - sec-bigdata-ai-apps
+- id: 5221
+  chapter_title: 進階資料處理
+  section_title: 資料品質與清理
+  text: 資料完整性 (Completeness) 關注的是？
+  type: multiple_choice
+  options:
+  - 數據是否準確
+  - 數據是否有缺失值 (Missing Values)
+  - 數據是否重複
+  - 數據是否即時
+  correct_index: 1
+  explanation: 完整性檢查欄位是否為空 (Null)，例如客戶資料是否都有填寫電話號碼。
+  tags:
+  - chap-m3-ch2
+  - sec-data-quality
+- id: 5222
+  chapter_title: 進階資料處理
+  section_title: 資料轉換與特徵工程
+  text: Z-score Standardization 後的數據分佈特徵是？
+  type: multiple_choice
+  options:
+  - 均值為 1，標準差為 0
+  - 均值為 0，標準差為 1
+  - 最小值為 0，最大值為 1
+  - 均值為 100
+  correct_index: 1
+  explanation: Z-score 將數據轉換為標準常態分佈，消除了不同量綱的影響。
+  tags:
+  - chap-m3-ch2
+  - sec-feature-engineering
+- id: 5223
+  chapter_title: 進階資料處理
+  section_title: 資料攝取
+  text: Flume 主要用於收集哪種類型的數據？
+  type: multiple_choice
+  options:
+  - 結構化交易數據
+  - 大量日誌數據 (Logs)
+  - 圖片
+  - 影片
+  correct_index: 1
+  explanation: Flume 專為高效收集分散式伺服器上的 Log 文件而設計。
+  tags:
+  - chap-m3-ch2
+  - sec-data-ingestion
+- id: 5224
+  chapter_title: 進階資料處理
+  section_title: ETL 流程與工作流自動化
+  text: Airflow 中的 Operator 代表？
+  type: multiple_choice
+  options:
+  - 一個工作流
+  - 一個具體的任務單元 (如執行 Python 函數或 SQL 查詢)
+  - 一個排程器
+  - 一個變數
+  correct_index: 1
+  explanation: Operator 是 DAG 中的節點，定義了實際要執行的動作。
+  tags:
+  - chap-m3-ch2
+  - sec-etl-workflow
+- id: 5225
+  chapter_title: 進階資料處理
+  section_title: 大數據在人工智慧之應用
+  text: 弱監督 (Weak Supervision) 標註通常使用什麼方法？
+  type: multiple_choice
+  options:
+  - 專家逐一標註
+  - 利用規則、關鍵字或外部知識庫自動生成標籤
+  - 隨機標註
+  - 不標註
+  correct_index: 1
+  explanation: 雖然準確率不如人工，但能快速生成海量標註數據，適合大數據場景。
+  tags:
+  - chap-m3-ch2
+  - sec-bigdata-ai-apps
+- id: 5226
+  chapter_title: 進階資料處理
+  section_title: 資料轉換與特徵工程
+  text: 特徵選擇 (Feature Selection) 中的 Filter 方法是基於什麼來篩選特徵？
+  type: multiple_choice
+  options:
+  - 模型的預測結果
+  - 統計測試 (如相關係數、卡方檢定)
+  - 隨機選擇
+  - 人工主觀判斷
+  correct_index: 1
+  explanation: Filter 方法不依賴特定模型，而是根據特徵與目標變數之間的統計關聯性進行初步篩選。
+  tags:
+  - chap-m3-ch2
+  - sec-feature-engineering
+- id: 5227
+  chapter_title: 進階資料處理
+  section_title: 資料攝取
+  text: 會話視窗 (Session Window) 的結束條件通常是？
+  type: multiple_choice
+  options:
+  - 固定時間到達
+  - 超過一段時間無活動 (Inactivity Gap)
+  - 數據量達到上限
+  - 手動結束
+  correct_index: 1
+  explanation: 適合分析用戶行為（如網頁瀏覽），當用戶停止操作一段時間後，視為一次 Session 結束。
+  tags:
+  - chap-m3-ch2
+  - sec-data-ingestion
+- id: 5228
+  chapter_title: 進階資料處理
+  section_title: 資料治理與安全
+  text: 最小權限原則 (Least Privilege) 是指？
+  type: multiple_choice
+  options:
+  - 給予所有用戶管理員權限
+  - 只授予完成工作所需的最小權限
+  - 不給予任何權限
+  - 權限隨機分配
+  correct_index: 1
+  explanation: 這是資安的基本原則，能將帳號被盜用時的損害降到最低。
+  tags:
+  - chap-m3-ch2
+  - sec-data-governance
+- id: 5229
+  chapter_title: 進階資料處理
+  section_title: 大數據在人工智慧之應用
+  text: Horovod 是一個什麼框架？
+  type: multiple_choice
+  options:
+  - 資料庫框架
+  - 分散式深度學習訓練框架
+  - 網頁框架
+  - 繪圖框架
+  correct_index: 1
+  explanation: Horovod 讓 TensorFlow/PyTorch 程式碼能輕易擴展到多 GPU/多機環境進行高效訓練。
+  tags:
+  - chap-m3-ch2
+  - sec-bigdata-ai-apps
+- id: 5230
+  chapter_title: 進階資料處理
+  section_title: 資料品質與清理
+  text: 資料有效性 (Validity) 檢查的是？
+  type: multiple_choice
+  options:
+  - 數據是否重複
+  - 數據是否符合定義的格式、類型或範圍 (如 Email 格式)
+  - 數據是否缺失
+  - 數據是否一致
+  correct_index: 1
+  explanation: 例如檢查年齡是否在 0-120 之間，Email 是否包含 @ 符號。
+  tags:
+  - chap-m3-ch2
+  - sec-data-quality
+- id: 5231
+  chapter_title: 進階資料處理
+  section_title: 資料轉換與特徵工程
+  text: Robust Scaling 使用什麼統計量進行縮放？
+  type: multiple_choice
+  options:
+  - 均值與標準差
+  - 最大值與最小值
+  - 中位數與四分位距 (IQR)
+  - 眾數
+  correct_index: 2
+  explanation: 因為中位數和 IQR 不受極端值影響，所以 Robust Scaling 對異常值具有魯棒性。
+  tags:
+  - chap-m3-ch2
+  - sec-feature-engineering
+- id: 5232
+  chapter_title: 進階資料處理
+  section_title: ETL 流程與工作流自動化
+  text: Airflow 的 Scheduler 負責？
+  type: multiple_choice
+  options:
+  - 執行任務
+  - 監控 DAG 並觸發任務實例
+  - 顯示 UI
+  - 儲存日誌
+  correct_index: 1
+  explanation: Scheduler 是 Airflow 的心臟，決定何時該執行哪個任務。
+  tags:
+  - chap-m3-ch2
+  - sec-etl-workflow
+- id: 5233
+  chapter_title: 進階資料處理
+  section_title: 大數據在人工智慧之應用
+  text: 生成式 AI 對訓練數據的一個關鍵需求是？
+  type: multiple_choice
+  options:
+  - 數據量越少越好
+  - 多樣性 (Diversity) 與代表性，避免生成單調或有偏見的內容
+  - 只需要結構化數據
+  - 只需要文字數據
+  correct_index: 1
+  explanation: 如果訓練數據都是貓，模型就畫不出狗。多樣性是生成豐富內容的前提。
+  tags:
+  - chap-m3-ch2
+  - sec-bigdata-ai-apps
+- id: 5234
+  chapter_title: 進階資料處理
+  section_title: 資料轉換與特徵工程
+  text: Target Encoding 的主要風險是？
+  type: multiple_choice
+  options:
+  - 維度災難
+  - 資料洩漏 (Data Leakage) 與過擬合
+  - 計算太慢
+  - 無法處理類別變數
+  correct_index: 1
+  explanation: 因為使用了目標變數（答案）的資訊來編碼特徵，如果處理不當（如未進行交叉驗證），模型會「偷看答案」。
+  tags:
+  - chap-m3-ch2
+  - sec-feature-engineering
+- id: 5235
+  chapter_title: 進階資料處理
+  section_title: 大數據在人工智慧之應用
+  text: Streaming Confusion Matrix 用於？
+  type: multiple_choice
+  options:
+  - 靜態評估
+  - 即時監控模型在數據流上的分類表現
+  - 訓練模型
+  - 壓縮數據
+  correct_index: 1
+  explanation: 傳統混淆矩陣是靜態的，Streaming 版本會隨時間動態更新，反映模型當下的準確度。
+  tags:
+  - chap-m3-ch2
+  - sec-bigdata-ai-apps
+- id: 5236
+  chapter_title: 進階資料處理
+  section_title: 資料治理與安全
+  text: 去識別化中的「遮罩 (Masking)」是指？
+  type: multiple_choice
+  options:
+  - 刪除數據
+  - 將敏感資訊部分隱藏 (如顯示為 A12****89)
+  - 加密數據
+  - 壓縮數據
+  correct_index: 1
+  explanation: 讓數據在保留部分可讀性的同時，隱藏關鍵隱私資訊。
+  tags:
+  - chap-m3-ch2
+  - sec-data-governance
+- id: 5237
+  chapter_title: 進階資料處理
+  section_title: 資料轉換與特徵工程
+  text: 特徵衍生 (Feature Generation) 的目的是？
+  type: multiple_choice
+  options:
+  - 減少特徵數量
+  - 利用領域知識創造新特徵，以提升模型預測能力
+  - 刪除異常值
+  - 填補缺失值
+  correct_index: 1
+  explanation: 例如將「長」和「寬」組合成「面積」，可能對房價預測更有幫助。
+  tags:
+  - chap-m3-ch2
+  - sec-feature-engineering
+- id: 5238
+  chapter_title: 進階資料處理
+  section_title: 資料攝取
+  text: 批次處理 (Batch Processing) 通常在何時運行？
+  type: multiple_choice
+  options:
+  - 隨時
+  - 夜間或離峰時間，處理大量歷史數據
+  - 用戶點擊時
+  - 系統崩潰時
+  correct_index: 1
+  explanation: 批次處理吞吐量大但延遲高，適合處理非即時性的報表或模型訓練任務。
+  tags:
+  - chap-m3-ch2
+  - sec-data-ingestion
+- id: 5239
+  chapter_title: 進階資料處理
+  section_title: 大數據在人工智慧之應用
+  text: 模型平行 (Model Parallelism) 適用於什麼情況？
+  type: multiple_choice
+  options:
+  - 數據量很大
+  - 模型過大 (如 LLM)，無法放入單張 GPU 的記憶體
+  - 網路很慢
+  - CPU 很強
+  correct_index: 1
+  explanation: 當模型本身大到一張卡裝不下，就必須把模型的不同層切分到不同 GPU 上執行。
+  tags:
+  - chap-m3-ch2
+  - sec-bigdata-ai-apps
+- id: 5240
+  chapter_title: 進階資料處理
+  section_title: 資料品質與清理
+  text: 資料唯一性 (Uniqueness) 檢查是為了？
+  type: multiple_choice
+  options:
+  - 確保沒有重複記錄 (Duplicates)
+  - 確保數據格式正確
+  - 確保數據完整
+  - 確保數據準確
+  correct_index: 0
+  explanation: 重複數據會導致統計偏差（如銷售額被重複計算），必須去除。
+  tags:
+  - chap-m3-ch2
+  - sec-data-quality
+- id: 5241
+  chapter_title: 進階資料處理
+  section_title: 深度思考情境題
+  text: 情境：你正在處理一個房價預測的數據集，發現「房屋面積」這個特徵有一些極端大的豪宅數據（異常值），導致模型預測失準。你應該優先考慮哪種標準化方法？
+  type: multiple_choice
+  options:
+  - Min-Max Normalization。
+  - Z-score Standardization。
+  - Robust Scaling。
+  - 不做處理。
+  correct_index: 2
+  explanation: Min-Max 和 Z-score 都會受到極端值的嚴重影響（拉扯均值或範圍）。Robust Scaling 使用中位數和 IQR，能有效抵抗異常值的干擾。
+  tags:
+  - chap-m3-ch2
+  - sec-scenario
+- id: 5242
+  chapter_title: 進階資料處理
+  section_title: 深度思考情境題
+  text: 情境：你的電商推薦系統需要即時處理用戶的點擊流數據，並在 1 秒內更新推薦清單。你應該選擇哪種資料處理架構？
+  type: multiple_choice
+  options:
+  - 批次處理 (Batch Processing)；使用 Sqoop。
+  - 串流處理 (Streaming Processing)；使用 Kafka + Flink/Spark Streaming。
+  - 手動處理。
+  - 使用 Excel。
+  correct_index: 1
+  explanation: 批次處理延遲太高（通常數小時）。即時推薦需要低延遲的串流架構，Kafka 負責接收點擊流，Flink 負責即時計算特徵。
+  tags:
+  - chap-m3-ch2
+  - sec-scenario
+- id: 5243
+  chapter_title: 進階資料處理
+  section_title: 深度思考情境題
+  text: 情境：你正在訓練一個醫療影像診斷模型，但標註好的 X 光片非常少。為了提升模型效能，你應該優先嘗試哪種特徵工程技術？
+  type: multiple_choice
+  options:
+  - 特徵選擇。
+  - 資料增強 (Data Augmentation)；如旋轉、翻轉、縮放圖片。
+  - 降維。
+  - 分箱。
+  correct_index: 1
+  explanation: 在影像領域，資料增強是擴充數據集最有效的方法。透過幾何變換產生新樣本，能讓模型學到更魯棒的特徵，減輕過擬合。
+  tags:
+  - chap-m3-ch2
+  - sec-scenario
+- id: 5244
+  chapter_title: 進階資料處理
+  section_title: 深度思考情境題
+  text: 情境：你的 ETL 流程經常因為網路波動而失敗，導致下游報表空白。在 Airflow 中，你應該如何改進 DAG 定義？
+  type: multiple_choice
+  options:
+  - 刪除失敗的任務。
+  - 設定 `retries` (重試次數) 和 `retry_delay` (重試間隔) 參數。
+  - 手動重跑。
+  - 忽略錯誤。
+  correct_index: 1
+  explanation: 自動重試機制是強健 ETL 流程的關鍵。網路波動通常是暫時的，稍後重試往往就能成功，無需人工介入。
+  tags:
+  - chap-m3-ch2
+  - sec-scenario
+- id: 5245
+  chapter_title: 進階資料處理
+  section_title: 深度思考情境題
+  text: 情境：公司計畫將客戶數據用於訓練行銷模型，但擔心違反個資法。作為資料工程師，你建議採用什麼技術來平衡數據利用與隱私保護？
+  type: multiple_choice
+  options:
+  - 直接使用原始數據。
+  - 僅刪除姓名。
+  - 實施去識別化 (De-identification) 與差分隱私 (Differential Privacy)，或採用聯邦學習 (Federated Learning)。
+  - 放棄專案。
+  correct_index: 2
+  explanation: 單純刪除姓名不夠（可能透過其他欄位反推）。差分隱私和聯邦學習提供了更高級別的數學保證，能在不洩漏個資的前提下訓練模型。
+  tags:
+  - chap-m3-ch2
+  - sec-scenario

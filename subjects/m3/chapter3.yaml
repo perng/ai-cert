@@ -1,0 +1,676 @@
+questions:
+- id: 5301
+  chapter_title: 進階分析方法
+  section_title: 時間序列分析
+  text: 時間序列的平穩性 (Stationarity) 是指？
+  type: multiple_choice
+  options:
+  - 數據隨時間遞增
+  - 數據的統計特性 (如平均值、變異數) 不隨時間變化
+  - 數據是靜止的
+  - 數據沒有缺失值
+  correct_index: 1
+  explanation: 許多時間序列模型（如 ARIMA）假設數據是平穩的，這意味著過去的統計規律在未來依然適用。
+  tags:
+  - chap-m3-ch3
+  - sec-time-series
+- id: 5302
+  chapter_title: 進階分析方法
+  section_title: 時間序列分析
+  text: ARIMA 模型中的 "I" (Integrated) 代表什麼操作？
+  type: multiple_choice
+  options:
+  - 積分
+  - 差分 (Differencing)，用於消除非平穩性
+  - 插值
+  - 迭代
+  correct_index: 1
+  explanation: 差分（當前值減去前一值）能去除數據中的趨勢，將非平穩序列轉換為平穩序列。
+  tags:
+  - chap-m3-ch3
+  - sec-time-series
+- id: 5303
+  chapter_title: 進階分析方法
+  section_title: 時間序列分析
+  text: Prophet 模型特別擅長處理哪類數據？
+  type: multiple_choice
+  options:
+  - 隨機雜訊
+  - 具有強烈季節性 (Seasonality) 和假期效應 (Holiday Effects) 的商業數據
+  - 圖像數據
+  - 文字數據
+  correct_index: 1
+  explanation: Prophet 專為商業預測設計，能自動捕捉日、週、年的週期性變化以及特定節日的影響。
+  tags:
+  - chap-m3-ch3
+  - sec-time-series
+- id: 5304
+  chapter_title: 進階分析方法
+  section_title: 網路分析與圖演算法
+  text: PageRank 演算法的核心思想是？
+  type: multiple_choice
+  options:
+  - 網頁內容越多越重要
+  - 一個網頁的重要性取決於指向它的其他網頁的重要性
+  - 網頁更新越快越重要
+  - 網頁圖片越多越重要
+  correct_index: 1
+  explanation: 這是 Google 搜尋的基石。被高品質網頁連結的網頁，其品質通常也較高。
+  tags:
+  - chap-m3-ch3
+  - sec-network-analysis
+- id: 5305
+  chapter_title: 進階分析方法
+  section_title: 網路分析與圖演算法
+  text: 中介中心性 (Betweenness Centrality) 衡量的是節點的什麼能力？
+  type: multiple_choice
+  options:
+  - 連接數多寡
+  - 作為網路中「橋樑」或「最短路徑必經之地」的重要性
+  - 傳播訊息的速度
+  - 自身的權重
+  correct_index: 1
+  explanation: 中介中心性高的節點控制著資訊在網路中的流動，移除它們會導致網路斷裂。
+  tags:
+  - chap-m3-ch3
+  - sec-network-analysis
+- id: 5306
+  chapter_title: 進階分析方法
+  section_title: 地理空間資料分析
+  text: WGS84 (EPSG:4326) 座標系統使用什麼單位？
+  type: multiple_choice
+  options:
+  - 公尺
+  - 經緯度 (度)
+  - 英里
+  - 像素
+  correct_index: 1
+  explanation: WGS84 是 GPS 全球定位系統使用的標準座標系，以經度和緯度表示位置。
+  tags:
+  - chap-m3-ch3
+  - sec-geospatial
+- id: 5307
+  chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 獨立樣本 t 檢定 (Independent two-sample t-test) 用於比較？
+  type: multiple_choice
+  options:
+  - 同一組樣本的前後差異
+  - 兩個獨立樣本的平均值是否存在顯著差異
+  - 三組以上樣本的平均值
+  - 兩個類別變數的關聯性
+  correct_index: 1
+  explanation: 例如比較實驗組（吃藥）和對照組（吃安慰劑）的平均康復時間是否不同。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+- id: 5308
+  chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 當需要比較三組或以上樣本的平均值時，應使用？
+  type: multiple_choice
+  options:
+  - t 檢定
+  - 變異數分析 (ANOVA)
+  - 卡方檢定
+  - 相關分析
+  correct_index: 1
+  explanation: 多次進行 t 檢定會增加型一錯誤的機率，ANOVA 能一次性檢驗多組均值是否相等。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+- id: 5309
+  chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 卡方獨立性檢定 (Chi-square Test of Independence) 用於檢驗？
+  type: multiple_choice
+  options:
+  - 兩個連續變數的相關性
+  - 兩個類別變數之間是否獨立 (即是否有關聯)
+  - 平均值的差異
+  - 變異數的差異
+  correct_index: 1
+  explanation: 例如檢驗「性別」與「購買意願」是否有關。若 p 值小，表示兩者有關聯（不獨立）。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+- id: 5310
+  chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 型一錯誤 (Type I Error) 是指？
+  type: multiple_choice
+  options:
+  - 偽陰性 (False Negative)
+  - 偽陽性 (False Positive)，即虛無假設為真卻被拒絕
+  - 計算錯誤
+  - 數據錯誤
+  correct_index: 1
+  explanation: 就像法庭判決無罪的人有罪（冤獄）。在統計上，是錯誤地宣稱發現了效應（拒絕 H0），但實際上並沒有效應。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+- id: 5311
+  chapter_title: 進階分析方法
+  section_title: 時間序列分析
+  text: ADF (Augmented Dickey-Fuller) 檢定的目的是？
+  type: multiple_choice
+  options:
+  - 預測未來
+  - 檢驗時間序列是否平穩 (Stationary)
+  - 計算相關係數
+  - 分解季節性
+  correct_index: 1
+  explanation: 若 ADF 檢定的 p-value < 0.05，我們拒絕非平穩假設，認為數據是平穩的。
+  tags:
+  - chap-m3-ch3
+  - sec-time-series
+- id: 5312
+  chapter_title: 進階分析方法
+  section_title: 網路分析與圖演算法
+  text: 度中心性 (Degree Centrality) 是指？
+  type: multiple_choice
+  options:
+  - 節點的連接數 (Degree)
+  - 節點到其他節點的距離
+  - 節點的重要性
+  - 節點的顏色
+  correct_index: 0
+  explanation: 最直觀的指標。連接數越多，代表該節點越活躍或越受歡迎（如社交網絡中的名人）。
+  tags:
+  - chap-m3-ch3
+  - sec-network-analysis
+- id: 5313
+  chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 皮爾森相關係數 (Pearson Correlation Coefficient) r = -1 代表？
+  type: multiple_choice
+  options:
+  - 完全正相關
+  - 完全負相關
+  - 無相關
+  - 弱相關
+  correct_index: 1
+  explanation: 兩個變數呈現完美的負線性關係，一個增加，另一個就按比例減少。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+- id: 5314
+  chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 當數據不符合常態分佈假設時，比較兩組獨立樣本應使用哪種非參數檢定？
+  type: multiple_choice
+  options:
+  - t 檢定
+  - Mann-Whitney U 檢定
+  - ANOVA
+  - 卡方檢定
+  correct_index: 1
+  explanation: Mann-Whitney U 檢定比較的是中位數而非平均值，不依賴常態分佈假設，是 t 檢定的非參數替代方案。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+- id: 5315
+  chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 檢定力 (Statistical Power) 是指？
+  type: multiple_choice
+  options:
+  - 犯型一錯誤的機率
+  - 正確拒絕錯誤的虛無假設的機率 (1 - β)
+  - 接受虛無假設的機率
+  - 樣本數
+  correct_index: 1
+  explanation: 檢定力越高，代表我們越有能力偵測到真實存在的效應（不犯型二錯誤的能力）。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+- id: 5316
+  chapter_title: 進階分析方法
+  section_title: 地理空間資料分析
+  text: 空間操作 "Buffer" 的作用是？
+  type: multiple_choice
+  options:
+  - 計算交集
+  - 在幾何圖形周圍建立指定距離的緩衝區域
+  - 計算面積
+  - 測量距離
+  correct_index: 1
+  explanation: 例如找出距離河流 100 公尺內的所有建築物。
+  tags:
+  - chap-m3-ch3
+  - sec-geospatial
+- id: 5317
+  chapter_title: 進階分析方法
+  section_title: 時間序列分析
+  text: 時間序列分解 (Decomposition) 通常將序列分為哪三個部分？
+  type: multiple_choice
+  options:
+  - 過去、現在、未來
+  - 趨勢 (Trend)、季節性 (Seasonality)、殘差 (Residual)
+  - 輸入、輸出、隱藏層
+  - 平均、變異、標準差
+  correct_index: 1
+  explanation: 這種分解幫助我們理解數據的構成：長期走向、週期性波動以及隨機雜訊。
+  tags:
+  - chap-m3-ch3
+  - sec-time-series
+- id: 5318
+  chapter_title: 進階分析方法
+  section_title: 網路分析與圖演算法
+  text: Louvain 演算法用於？
+  type: multiple_choice
+  options:
+  - 計算最短路徑
+  - 社群偵測 (Community Detection)
+  - 排序網頁
+  - 預測連結
+  correct_index: 1
+  explanation: Louvain 演算法透過優化模組度 (Modularity)，快速找出網路中連接緊密的群體（社群）。
+  tags:
+  - chap-m3-ch3
+  - sec-network-analysis
+- id: 5319
+  chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 單因子變異數分析 (One-way ANOVA) 的虛無假設 (H0) 是？
+  type: multiple_choice
+  options:
+  - 所有組別的平均值都相等
+  - 至少有一組平均值不同
+  - 所有組別的變異數相等
+  - 樣本不獨立
+  correct_index: 0
+  explanation: ANOVA 檢驗的是「組間差異」是否顯著大於「組內差異」。若拒絕 H0，表示至少有一組的平均值與其他組不同。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+- id: 5320
+  chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 斯皮爾曼等級相關係數 (Spearman Rank Correlation) 適用於？
+  type: multiple_choice
+  options:
+  - 僅限線性關係的連續變數
+  - 非常態分佈或順序尺度 (Ordinal) 的變數，評估單調關係
+  - 類別變數
+  - 時間序列
+  correct_index: 1
+  explanation: Spearman 不看數值本身，而是看數值的排名 (Rank)，因此能捕捉非線性的單調關係且對異常值較不敏感。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+- id: 5321
+  chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 型二錯誤 (Type II Error) 是指？
+  type: multiple_choice
+  options:
+  - 偽陽性
+  - 偽陰性 (False Negative)，即虛無假設為假卻未被拒絕
+  - 抽樣錯誤
+  - 計算錯誤
+  correct_index: 1
+  explanation: 就像有病的人被診斷為沒病（縱放）。實際上有效應，但檢定結果說沒有。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+- id: 5322
+  chapter_title: 進階分析方法
+  section_title: 時間序列分析
+  text: ACF (Autocorrelation Function) 用於決定 ARIMA 模型的哪個參數？
+  type: multiple_choice
+  options:
+  - AR 階數 p
+  - MA 階數 q
+  - 差分次數 d
+  - 季節性週期
+  correct_index: 1
+  explanation: ACF 衡量序列與其自身滯後版本的相關性，有助於識別移動平均 (MA) 過程的階數。
+  tags:
+  - chap-m3-ch3
+  - sec-time-series
+- id: 5323
+  chapter_title: 進階分析方法
+  section_title: 網路分析與圖演算法
+  text: 接近中心性 (Closeness Centrality) 衡量的是？
+  type: multiple_choice
+  options:
+  - 節點的權力
+  - 節點到所有其他節點的最短路徑長度總和的倒數 (傳播速度)
+  - 節點的連接數
+  - 節點的群聚程度
+  correct_index: 1
+  explanation: 接近中心性高的節點位於網路的幾何中心，能最快將訊息傳播給所有其他節點。
+  tags:
+  - chap-m3-ch3
+  - sec-network-analysis
+- id: 5324
+  chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 成對樣本 t 檢定 (Paired samples t-test) 適用於？
+  type: multiple_choice
+  options:
+  - 比較兩組完全無關的人
+  - 比較同一組樣本在不同時間點 (如前後測) 的平均值
+  - 比較三個時間點
+  - 比較類別比例
+  correct_index: 1
+  explanation: 因為是同一群人測兩次，樣本間存在依賴關係，成對 t 檢定能消除個體差異的干擾，更精確地檢測變化。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+- id: 5325
+  chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: Kruskal-Wallis 檢定是哪種參數檢定的非參數版本？
+  type: multiple_choice
+  options:
+  - t 檢定
+  - One-way ANOVA
+  - 卡方檢定
+  - 回歸分析
+  correct_index: 1
+  explanation: 當多組數據不符合常態分佈時，不能用 ANOVA，應改用 Kruskal-Wallis 檢定來比較其中位數差異。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+- id: 5326
+  chapter_title: 進階分析方法
+  section_title: 地理空間資料分析
+  text: Web Mercator (EPSG:3857) 座標系統常用于？
+  type: multiple_choice
+  options:
+  - GPS 設備
+  - Google Maps 等網路地圖服務
+  - 測量海拔
+  - 氣象預報
+  correct_index: 1
+  explanation: Web Mercator 是一種投影座標，將地球表面投影到平面上，便於在電腦螢幕上顯示地圖。
+  tags:
+  - chap-m3-ch3
+  - sec-geospatial
+- id: 5327
+  chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 比例檢定 (Proportion Test) 用於？
+  type: multiple_choice
+  options:
+  - 比較平均值
+  - 檢驗比例 (如成功率、支持率) 是否符合預期或兩組間是否有差異
+  - 檢驗變異數
+  - 檢驗相關性
+  correct_index: 1
+  explanation: 例如 A/B 測試中比較兩個網頁版本的點擊率 (CTR) 差異。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+- id: 5328
+  chapter_title: 進階分析方法
+  section_title: 時間序列分析
+  text: Prophet 模型中的 $g(t)$ 代表？
+  type: multiple_choice
+  options:
+  - 季節性
+  - 趨勢 (Trend)
+  - 假期效應
+  - 誤差
+  correct_index: 1
+  explanation: Prophet 是一個加法模型，由趨勢、季節性、假期效應組成。$g(t)$ 模擬非週期性的變化趨勢。
+  tags:
+  - chap-m3-ch3
+  - sec-time-series
+- id: 5329
+  chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 在假設檢定中，p-value < 0.05 通常意味著？
+  type: multiple_choice
+  options:
+  - 虛無假設為真的機率大於 95%
+  - 結果不顯著
+  - 在顯著水準 0.05 下，拒絕虛無假設 (結果具有統計顯著性)
+  - 實驗失敗
+  correct_index: 2
+  explanation: p 值代表在虛無假設為真的前提下，觀察到當前數據（或更極端數據）的機率。p 值很小表示虛無假設不太可能為真。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+- id: 5330
+  chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 卡方適合度檢定 (Goodness of Fit Test) 用於？
+  type: multiple_choice
+  options:
+  - 檢驗兩個變數是否獨立
+  - 檢驗一個類別變數的觀察分佈是否符合預期分佈 (如均勻分佈)
+  - 比較平均值
+  - 預測未來
+  correct_index: 1
+  explanation: 例如檢驗骰子是否公正（每面出現機率是否均為 1/6）。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+- id: 5331
+  chapter_title: 進階分析方法
+  section_title: 時間序列分析
+  text: PACF (Partial Autocorrelation Function) 用於決定 ARIMA 模型的哪個參數？
+  type: multiple_choice
+  options:
+  - AR 階數 p
+  - MA 階數 q
+  - 差分次數 d
+  - 誤差項
+  correct_index: 0
+  explanation: PACF 衡量序列與滯後版本在排除中間滯後影響後的直接相關性，有助於識別自迴歸 (AR) 過程的階數。
+  tags:
+  - chap-m3-ch3
+  - sec-time-series
+- id: 5332
+  chapter_title: 進階分析方法
+  section_title: 網路分析與圖演算法
+  text: 網路分析中的「模組度 (Modularity)」是用來衡量？
+  type: multiple_choice
+  options:
+  - 網路的大小
+  - 社群結構的強度 (社群內連接緊密，社群間連接稀疏)
+  - 節點的數量
+  - 邊的數量
+  correct_index: 1
+  explanation: 模組度越高，代表網路劃分出的社群結構越明顯，社群內部凝聚力越強。
+  tags:
+  - chap-m3-ch3
+  - sec-network-analysis
+- id: 5333
+  chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 雙樣本比例檢定 (Two-sample proportion test) 的虛無假設通常是？
+  type: multiple_choice
+  options:
+  - 兩個母體比例相等 (p1 = p2)
+  - 兩個母體比例不相等
+  - 比例大於 0.5
+  - 比例小於 0
+  correct_index: 0
+  explanation: 我們假設兩組沒有差異，然後看數據是否提供足夠證據推翻這個假設。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+- id: 5334
+  chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 為了降低型二錯誤 (偽陰性) 的機率，最有效的方法是？
+  type: multiple_choice
+  options:
+  - 降低顯著水準 α
+  - 增加樣本數 (Sample Size)
+  - 減少樣本數
+  - 隨機猜測
+  correct_index: 1
+  explanation: 樣本數越大，檢定力 (Power) 越強，越容易偵測到微小的真實效應，從而降低犯型二錯誤的風險。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+- id: 5335
+  chapter_title: 進階分析方法
+  section_title: 地理空間資料分析
+  text: Intersection 操作用於？
+  type: multiple_choice
+  options:
+  - 合併圖形
+  - 計算兩個幾何圖形的交集區域
+  - 刪除圖形
+  - 移動圖形
+  correct_index: 1
+  explanation: 例如找出「淹水潛勢區」與「住宅區」重疊的部分，評估受災範圍。
+  tags:
+  - chap-m3-ch3
+  - sec-geospatial
+- id: 5336
+  chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 皮爾森相關係數 (r) 為 0 表示？
+  type: multiple_choice
+  options:
+  - 兩個變數完全無關
+  - 兩個變數之間沒有「線性」相關 (但可能存在非線性關係)
+  - 數據錯誤
+  - 變數相等
+  correct_index: 1
+  explanation: 皮爾森只能捕捉線性關係。如果兩者呈現 U 型關係（二次函數），r 可能為 0，但實際上是有強烈關聯的。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+- id: 5337
+  chapter_title: 進階分析方法
+  section_title: 時間序列分析
+  text: ARIMA 模型假設數據是？
+  type: multiple_choice
+  options:
+  - 非平穩的
+  - 平穩的 (Stationary)
+  - 隨機的
+  - 季節性的
+  correct_index: 1
+  explanation: 如果數據不平穩，必須先進行差分 (Differencing) 處理，使其平穩後才能套用 AR 和 MA 模型。
+  tags:
+  - chap-m3-ch3
+  - sec-time-series
+- id: 5338
+  chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 單樣本 t 檢定 (One-sample t-test) 的自由度 (df) 是？
+  type: multiple_choice
+  options:
+  - n
+  - n - 1
+  - n - 2
+  - n + 1
+  correct_index: 1
+  explanation: 自由度通常與樣本數有關。對於單樣本均值檢定，自由度為樣本數減 1。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+- id: 5339
+  chapter_title: 進階分析方法
+  section_title: 網路分析與圖演算法
+  text: Girvan-Newman 演算法是一種什麼類型的社群偵測方法？
+  type: multiple_choice
+  options:
+  - 凝聚型
+  - 分裂型 (Divisive)，基於邊介數 (Edge Betweenness) 逐步移除邊
+  - 隨機型
+  - 貪婪型
+  correct_index: 1
+  explanation: 該演算法不斷移除網路中「最像橋樑」的邊（邊介數最高），直到網路分裂成多個社群。
+  tags:
+  - chap-m3-ch3
+  - sec-network-analysis
+- id: 5340
+  chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 當我們說「結果具有統計顯著性」時，通常是指？
+  type: multiple_choice
+  options:
+  - 效應很大
+  - 結果很重要
+  - 觀察到的差異不太可能是由隨機機率造成的 (p < α)
+  - 實驗設計完美
+  correct_index: 2
+  explanation: 統計顯著性只告訴我們「有差異」，不代表差異很大或很有實務價值（那是效應量 Effect Size 的事）。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+- id: 5341
+  chapter_title: 進階分析方法
+  section_title: 深度思考情境題
+  text: 情境：你正在分析公司網站的改版效果。A/B 測試顯示新版網頁的轉換率比舊版高 0.5%，p-value 為 0.03。但老闆認為 0.5% 的提升太小，不值得花錢改版。這反映了什麼統計概念與實務決策的衝突？
+  type: multiple_choice
+  options:
+  - 統計顯著性 (Statistical Significance) vs. 實務顯著性 (Practical Significance)。
+  - 型一錯誤。
+  - 樣本數太少。
+  - 計算錯誤。
+  correct_index: 0
+  explanation: 樣本數夠大時，微小的差異也能達到統計顯著 (p < 0.05)。但決策者更關心這個差異是否具有商業價值（實務顯著性）。統計顯著不等於重要。
+  tags:
+  - chap-m3-ch3
+  - sec-scenario
+- id: 5342
+  chapter_title: 進階分析方法
+  section_title: 深度思考情境題
+  text: 情境：你使用 ARIMA 預測下個月的銷售額，但預測結果是一條水平直線，完全沒有捕捉到過去幾年的明顯增長趨勢。最可能的原因是什麼？
+  type: multiple_choice
+  options:
+  - 差分次數 (d) 不足，數據未達到平穩，或者模型參數 (p, q) 選擇不當。
+  - 數據量太多。
+  - 應該用 Prophet。
+  - 電腦壞了。
+  correct_index: 0
+  explanation: 如果原始序列有趨勢但未進行差分 (d=0)，ARIMA 可能無法捕捉趨勢。或者模型退化成了簡單的平均值模型。
+  tags:
+  - chap-m3-ch3
+  - sec-scenario
+- id: 5343
+  chapter_title: 進階分析方法
+  section_title: 深度思考情境題
+  text: 情境：你想找出社交網絡中的「關鍵意見領袖 (KOL)」，希望找到那些能最快將訊息傳播給所有人的人。你應該參考哪個中心性指標？
+  type: multiple_choice
+  options:
+  - 度中心性 (Degree)。
+  - 接近中心性 (Closeness Centrality)。
+  - 中介中心性 (Betweenness)。
+  - PageRank。
+  correct_index: 1
+  explanation: 雖然度中心性高的人朋友多，但接近中心性高的人位於網路幾何中心，到所有人的平均距離最短，傳播訊息效率最高。
+  tags:
+  - chap-m3-ch3
+  - sec-scenario
+- id: 5344
+  chapter_title: 進階分析方法
+  section_title: 深度思考情境題
+  text: 情境：你正在比較三個不同廣告活動的轉換率。ANOVA 檢定結果顯著 (p < 0.05)。接下來你應該做什麼？
+  type: multiple_choice
+  options:
+  - 直接宣布三個活動都有效。
+  - 進行事後檢定 (Post-hoc Test)，如 Tukey's HSD，以確認具體是哪兩組之間有差異。
+  - 重新做實驗。
+  - 選擇平均值最高的那組。
+  correct_index: 1
+  explanation: ANOVA 只告訴我們「至少有一組不同」，但沒說是哪一組。事後檢定能進行兩兩比較，找出差異來源，並控制多重比較帶來的型一錯誤膨脹。
+  tags:
+  - chap-m3-ch3
+  - sec-scenario
+- id: 5345
+  chapter_title: 進階分析方法
+  section_title: 深度思考情境題
+  text: 情境：你發現某個變數與目標變數的皮爾森相關係數接近 0，但畫出散佈圖卻發現兩者呈現明顯的 U 型關係。這時你應該？
+  type: multiple_choice
+  options:
+  - 放棄該變數。
+  - 嘗試非線性轉換 (如平方項) 或使用非參數相關檢定 (如 Spearman)，並將該變數納入模型。
+  - 認為兩者無關。
+  - 檢查數據錯誤。
+  correct_index: 1
+  explanation: 皮爾森係數只能衡量線性關係。面對非線性關係，應透過特徵工程（如加入 $x^2$）讓線性模型能捕捉到，或使用能處理非線性的樹模型。
+  tags:
+  - chap-m3-ch3
+  - sec-scenario

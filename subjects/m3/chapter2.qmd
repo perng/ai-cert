@@ -2,6 +2,63 @@
 
 隨著數據量的增長，進階資料處理 (Advanced Data Processing) 技術變得不可或缺。這包括如何高效地收集數據、即時處理數據流以及自動化複雜的數據管道。
 
+
+
+## 資料品質與清理 (Data Quality & Cleaning) {#sec-data-quality}
+
+高品質的數據是分析和 AI 模型的基礎。
+
+### 資料品質維度 (Data Quality Dimensions) {.unnumbered}
+
+*   **Accuracy (準確性)**：數據是否真實反映了實際情況（如：年齡不應為負數）。
+*   **Completeness (完整性)**：數據是否有缺失值（如：客戶資料中缺少電話號碼）。
+*   **Consistency (一致性)**：不同來源的數據是否矛盾（如：兩個系統中的客戶地址不一致）。
+*   **Timeliness (時效性)**：數據是否即時更新。
+*   **Validity (有效性)**：數據是否符合定義的格式或範圍（如：Email 格式是否正確）。
+*   **Uniqueness (唯一性)**：數據是否有重複記錄。
+
+### 資料清理技術 (Data Cleaning Techniques) {.unnumbered}
+
+*   **缺失值處理 (Handling Missing Values)**：
+    *   **刪除 (Deletion)**：直接刪除含有缺失值的行或列（適用於缺失很少的情況）。
+    *   **填補 (Imputation)**：使用平均值、中位數、眾數或預測模型（如 KNN）填補缺失值。
+*   **異常值處理 (Handling Outliers)**：
+    *   **識別**：使用箱形圖 (Box Plot) 或 Z-score 識別。
+    *   **處理**：刪除、截斷 (Winsorizing) 或轉換 (Log transform)。
+*   **重複值處理 (Handling Duplicates)**：根據主鍵或所有欄位檢查並刪除重複記錄。
+
+## 資料轉換與特徵工程 (Data Transformation & Feature Engineering) {#sec-feature-engineering}
+
+將原始數據轉換為適合模型訓練的格式。
+
+### 資料轉換 (Data Transformation) {.unnumbered}
+
+*   **分箱 (Binning)**：將連續變數轉換為類別變數（如：將年齡分為 0-18, 19-35, 36-60, 60+）。
+*   **編碼 (Encoding)**：將類別變數轉換為數值。
+    *   **Label Encoding**：將類別映射為整數（如：Low=0, Medium=1, High=2）。適合有序類別。
+    *   **One-hot Encoding**：為每個類別創建一個二進位欄位（如：Color_Red, Color_Blue）。適合無序類別，但可能導致維度災難。
+    *   **Target Encoding**：使用目標變數的平均值來編碼類別。適合高基數類別，但需小心資料洩漏。
+
+### 數值標準化 (Normalization & Standardization) {.unnumbered}
+
+*   **Min-Max Normalization**：將數據縮放到 [0, 1] 區間。對異常值敏感。
+    $$X_{new} = \frac{X - X_{min}}{X_{max} - X_{min}}$$
+*   **Z-score Standardization**：將數據轉換為均值為 0，標準差為 1 的分佈。
+    $$X_{new} = \frac{X - \mu}{\sigma}$$
+*   **Robust Scaling**：使用中位數和四分位距 (IQR) 進行縮放。對異常值魯棒。
+
+### 特徵工程 (Feature Engineering) {.unnumbered}
+
+*   **特徵選擇 (Feature Selection)**：
+    *   **Filter**：使用統計測試（如卡方檢定、相關係數）篩選。
+    *   **Wrapper**：使用模型（如遞迴特徵消除 RFE）篩選。
+    *   **Embedded**：模型訓練過程中自動選擇（如 Lasso, Random Forest）。
+*   **特徵衍生 (Feature Generation)**：創造新特徵（如：BMI = 體重 / 身高^2）。
+*   **資料增強 (Data Augmentation)**：
+    *   **影像**：旋轉、翻轉、縮放。
+    *   **文字**：同義詞替換。
+    *   **表格**：SMOTE (Synthetic Minority Over-sampling Technique) 用於處理不平衡數據。
+
 ## 資料攝取 {#sec-data-ingestion}
 
 資料攝取 (Data Ingestion) 是將數據導入系統的過程。
@@ -83,3 +140,120 @@ with DAG('simple_etl', start_date=datetime(2023, 1, 1), schedule_interval='@dail
 
     t1 >> t2 >> t3 # 定義依賴關係
 ```
+
+## 資料治理與安全 (Data Governance & Security) {#sec-data-governance}
+
+有效的資料治理確保數據的可用性、完整性和安全性。
+
+### 元資料管理 (Metadata Management) {.unnumbered}
+
+元資料 (Metadata) 是「關於數據的數據」，如數據來源、創建時間、欄位定義等。
+*   **Data Lineage (血緣分析)**：追蹤數據從源頭到最終報表的流向，有助於問題排查和影響分析。
+*   **Data Catalog (數據目錄)**：幫助使用者發現和理解可用的數據資產。
+
+### 存取控制 (Access Control) {.unnumbered}
+
+*   **RBAC (Role-Based Access Control)**：基於角色（如管理員、分析師）分配權限。簡單易管理。
+*   **ABAC (Attribute-Based Access Control)**：基於屬性（如用戶部門、數據敏感度、時間）分配權限。更靈活細緻。
+
+### 零信任架構 (Zero Trust Architecture) {.unnumbered}
+
+"Never Trust, Always Verify" (從不信任，總是驗證)。
+*   **最小權限原則 (Least Privilege)**：只授予完成工作所需的最小權限。
+*   **持續驗證**：不僅在登錄時驗證，在訪問資源時也持續驗證身份和設備狀態。
+
+## 大數據在人工智慧之應用 (Big Data Applications in AI) {#sec-bigdata-ai-apps}
+
+大數據為人工智慧提供了燃料，而人工智慧則賦予了大數據價值。本節探討大數據在機器學習、鑑別式 AI 與生成式 AI 中的具體應用與挑戰。
+
+### 大數據與機器學習 (Big Data & Machine Learning) {.unnumbered}
+
+大數據的 "3V" 特性深刻影響了機器學習的發展，促使訓練模式從單機走向分散式，評估方式從靜態走向動態。
+
+*   **Volume (大量)**：更多的數據通常能帶來更好的模型性能，但也帶來了計算與記憶體的挑戰。
+*   **Velocity (高速)**：即時數據流推動了線上學習 (Online Learning) 和即時推論 (Real-time Inference) 的需求。
+*   **Variety (多樣)**：多模態數據（文字、影像、聲音）的融合促進了更強大的 AI 應用。
+
+#### 1. 分散式訓練策略 (Distributed Training Strategies) {.unnumbered}
+
+當數據量超過單機記憶體負荷時，需採用分散式架構：
+*   **資料平行 (Data Parallelism)**：將數據切分到多個節點，每個節點有完整的模型副本。
+    *   **Horovod**：Uber 開源的分散式訓練框架，支援 TensorFlow, PyTorch，利用 Ring-AllReduce 演算法高效同步梯度。
+    *   **TensorFlow MultiWorker Strategy**：TensorFlow 原生的多機訓練策略。
+    *   **Spark MLlib**：在 Spark 叢集上執行傳統機器學習演算法（如邏輯迴歸、隨機森林）。
+*   **模型平行 (Model Parallelism)**：當模型過大（如 LLM）無法放入單張 GPU 時，將模型層切分到不同設備。
+
+#### 2. 資料載入與處理 (Data Loading & Processing) {.unnumbered}
+*   **Mini-Batch Loading**：分批載入數據進行訓練，避免記憶體溢出 (OOM)。
+*   **Sampling (取樣)**：在保留數據分佈特徵的前提下，減少訓練數據量以加速迭代。
+*   **列式儲存 (Columnar Storage)**：使用 Parquet 或 ORC 格式儲存訓練數據，加速特定特徵的讀取效率。
+
+#### 3. 串流評估指標 (Streaming Evaluation Metrics) {.unnumbered}
+對於不斷流入的數據，傳統的靜態評估不再適用，需使用累積或滑動視窗指標：
+*   **Streaming Confusion Matrix**：動態更新的混淆矩陣，即時反映模型在當前數據流上的表現。
+*   **Streaming AUC**：隨著數據累積動態計算 AUC 值，監控模型效能的長期趨勢。
+
+### 大數據在鑑別式 AI 中的應用 (Discriminative AI Applications) {.unnumbered}
+
+鑑別式 AI (Discriminative AI) 專注於分類和預測任務，如判斷這張圖片是貓還是狗。
+
+*   **應用場景**：
+    *   **推薦系統**：電商根據用戶行為推薦商品。
+    *   **風險控管**：銀行利用交易數據偵測信用卡盜刷。
+    *   **醫療診斷**：分析醫學影像輔助醫生判讀。
+    *   **資安異常偵測**：分析網路流量識別惡意攻擊。
+
+*   **資料型態 (Data Types)**：
+    *   **結構化 (Structured)**：
+        *   *來源*：關聯式資料庫 (RDBMS)，如 ERP、CRM、POS 交易紀錄。
+        *   *特性*：欄位明確，適合轉換為數值或類別特徵。
+    *   **半結構化 (Semi-structured)**：
+        *   *來源*：JSON/XML API 回傳值、伺服器日誌 (Logs)、點擊流 (Clickstream)。
+        *   *特性*：具巢狀結構，需解析 (Parsing) 或展平 (Flattening)。
+    *   **非結構化 (Unstructured)**：
+        *   *來源*：客服對話 (文字)、醫療 X 光片 (影像)、會議錄音 (聲音)。
+        *   *特性*：無固定結構，需透過特徵萃取 (Feature Extraction) 轉為向量。
+
+*   **資料標註策略 (Data Labeling Strategies)**：
+    *   **人工標註 (Manual Labeling)**：
+        *   *適用*：高風險、高精確度需求（如醫療影像診斷）。
+        *   *缺點*：成本高、速度慢。
+    *   **弱監督 (Weak Supervision)**：
+        *   *方法*：利用規則、關鍵字或外部知識庫自動生成標籤。
+        *   *適用*：大規模數據的初步標註，雖有雜訊但成本極低。
+    *   **群眾外包 (Crowdsourcing)**：
+        *   *方法*：利用平台 (如 Amazon Mechanical Turk) 分發簡單任務。
+        *   *適用*：常識性判斷（如圖片分類），不適合專業領域。
+    *   **主動式學習 (Active Learning)**：
+        *   *方法*：模型主動挑選「最不確定」或「資訊量最大」的樣本交由專家標註。
+        *   *優點*：顯著降低所需的標註樣本數，提升訓練效率。
+
+*   **資料整合挑戰**：
+    *   **主鍵不一致**：不同系統的 User ID 不同。
+    *   **時間戳記對齊**：不同時區或延遲導致時間無法對齊。
+    *   **更新頻率差異**：即時流與批次數據的整合困難。
+
+### 大數據在生成式 AI 中的應用 (Generative AI Applications) {.unnumbered}
+
+生成式 AI (Generative AI) 專注於創造新內容，如撰寫文章或生成圖片。
+
+*   **資料需求**：
+    *   **多樣性 (Diversity)**：需涵蓋不同風格、主題和模態，避免生成單調內容。
+    *   **代表性 (Representativeness)**：需反映真實世界的分布，避免特定群體被忽視。
+    *   **品質 (Quality)**：垃圾進，垃圾出 (Garbage In, Garbage Out)。高品質數據是生成高品質內容的前提。
+    *   **時效性 (Timeliness)**：模型需學習最新知識（如 RAG 技術結合最新檢索結果）。
+
+*   **偏誤風險 (Bias Risks)**：
+    *   **性別與族群偏誤**：訓練數據中的刻板印象會被模型放大（如護士多為女性）。
+    *   **地區與文化偏誤**：主流語系（如英文）主導，少數文化被邊緣化。
+    *   **社經地位偏誤**：數據多來自數位化程度高的群體，忽視弱勢群體。
+
+### 隱私保護與合規 (Privacy & Compliance) {.unnumbered}
+
+在大數據與 AI 應用中，保護個人隱私至關重要。
+
+*   **去識別化 (De-identification)**：
+    *   **遮罩 (Masking)**：將敏感資訊（如身分證號）部分隱藏。
+    *   **雜湊 (Hashing)**：將數據轉換為不可逆的雜湊值。
+*   **差分隱私 (Differential Privacy)**：在數據中加入統計雜訊，使得攻擊者無法推斷出特定個體的資訊，同時保留整體統計特性。
+*   **聯邦學習 (Federated Learning)**：數據不出本地（如手機端），僅將模型參數加密上傳至伺服器聚合，從根本上解決數據隱私問題。

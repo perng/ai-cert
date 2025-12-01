@@ -1,0 +1,676 @@
+questions:
+- id: 5501
+  chapter_title: 大數據治理
+  section_title: 資料品質管理
+  text: 資料品質維度中的「唯一性 (Uniqueness)」是指？
+  type: multiple_choice
+  options:
+  - 數據沒有缺失值
+  - 數據沒有重複記錄
+  - 數據格式正確
+  - 數據是即時的
+  correct_index: 1
+  explanation: 唯一性確保資料庫中沒有重複的實體（如同一位客戶出現兩次），避免統計錯誤。
+  tags:
+  - chap-m3-ch5
+  - sec-data-quality
+- id: 5502
+  chapter_title: 大數據治理
+  section_title: 隱私保護
+  text: k-匿名 (k-anonymity) 的主要目標是？
+  type: multiple_choice
+  options:
+  - 加密所有數據
+  - 確保每個記錄至少與 k-1 個其他記錄在準標識符上無法區分
+  - 刪除所有數據
+  - 增加數據量
+  correct_index: 1
+  explanation: 透過泛化（如將年齡改為區間）或隱藏，使得攻擊者無法從一群人中精確指認出特定個體。
+  tags:
+  - chap-m3-ch5
+  - sec-privacy
+- id: 5503
+  chapter_title: 大數據治理
+  section_title: 隱私保護
+  text: 差分隱私 (Differential Privacy) 中的隱私預算 ε (Epsilon) 越小，代表？
+  type: multiple_choice
+  options:
+  - 隱私保護越弱，數據可用性越高
+  - 隱私保護越強，但數據可用性 (Utility) 越低
+  - 計算速度越快
+  - 數據量越大
+  correct_index: 1
+  explanation: ε 控制了允許洩漏的隱私量。ε 越小，加入的雜訊越大，隱私越安全，但數據分析的精確度也會下降。
+  tags:
+  - chap-m3-ch5
+  - sec-privacy
+- id: 5504
+  chapter_title: 大數據治理
+  section_title: 隱私保護
+  text: 同態加密 (Homomorphic Encryption) 的核心特性是？
+  type: multiple_choice
+  options:
+  - 加密速度最快
+  - 允許在加密數據上直接進行運算，且解密結果與明文運算一致
+  - 不需要金鑰
+  - 只能加密文字
+  correct_index: 1
+  explanation: 這被視為隱私計算的聖杯，因為雲端服務商可以在完全「看不懂」數據的情況下幫你算完模型。
+  tags:
+  - chap-m3-ch5
+  - sec-privacy
+- id: 5505
+  chapter_title: 大數據治理
+  section_title: 合規與安全
+  text: GDPR 中的「資料最小化 (Data Minimization)」原則是指？
+  type: multiple_choice
+  options:
+  - 蒐集越多數據越好
+  - 僅蒐集完成特定目的所需的最少數據
+  - 不蒐集任何數據
+  - 壓縮數據以節省空間
+  correct_index: 1
+  explanation: 企業不應抱著「先存再說」的心態。只拿該拿的，能降低資安風險並符合隱私倫理。
+  tags:
+  - chap-m3-ch5
+  - sec-compliance
+- id: 5506
+  chapter_title: 大數據治理
+  section_title: 資料與 AI 治理架構
+  text: 「模型卡片 (Model Card)」的主要用途是？
+  type: multiple_choice
+  options:
+  - 儲存模型權重
+  - 作為模型的「說明書」，記錄訓練數據、適用範圍、限制與偏誤測試結果
+  - 加速模型訓練
+  - 視覺化模型結構
+  correct_index: 1
+  explanation: 這是 AI 透明化的重要實踐，讓使用者清楚知道這個模型的能與不能，以及潛在的偏見。
+  tags:
+  - chap-m3-ch5
+  - sec-governance-framework
+- id: 5507
+  chapter_title: 大數據治理
+  section_title: 隱私保護
+  text: 聯邦學習 (Federated Learning) 如何保護隱私？
+  type: multiple_choice
+  options:
+  - 將所有數據上傳到雲端加密儲存
+  - 數據不出本地 (如手機)，僅上傳加密的模型參數更新
+  - 使用區塊鏈
+  - 刪除所有數據
+  correct_index: 1
+  explanation: 數據保留在用戶設備上，只有數學參數在網路上跑，從物理上隔離了隱私風險。
+  tags:
+  - chap-m3-ch5
+  - sec-privacy
+- id: 5508
+  chapter_title: 大數據治理
+  section_title: 資料品質管理
+  text: 資料剖析 (Data Profiling) 的作用是？
+  type: multiple_choice
+  options:
+  - 繪製圖表
+  - 自動分析數據的統計特徵 (如分佈、空值率)，以發現潛在品質問題
+  - 刪除數據
+  - 備份數據
+  correct_index: 1
+  explanation: 在開始分析前，先對數據做「健康檢查」，了解數據的樣貌與缺陷。
+  tags:
+  - chap-m3-ch5
+  - sec-data-quality
+- id: 5509
+  chapter_title: 大數據治理
+  section_title: 合規與安全
+  text: 靜態數據加密 (Encryption at Rest) 保護的是？
+  type: multiple_choice
+  options:
+  - 正在網路上傳輸的數據
+  - 存儲在磁碟或資料庫中的數據
+  - 正在記憶體中運算的數據
+  - 螢幕上顯示的數據
+  correct_index: 1
+  explanation: 防止硬碟被竊取或資料庫文件被非法複製時導致的數據外洩。
+  tags:
+  - chap-m3-ch5
+  - sec-compliance
+- id: 5510
+  chapter_title: 大數據治理
+  section_title: 資料與 AI 治理架構
+  text: 資料目錄 (Data Catalog) 的功能是？
+  type: multiple_choice
+  options:
+  - 銷售數據
+  - 盤點數據資產，記錄來源、用途與敏感度，幫助使用者發現數據
+  - 清洗數據
+  - 訓練模型
+  correct_index: 1
+  explanation: 就像圖書館的目錄系統，讓企業內部的數據資產可被搜尋、理解與管理。
+  tags:
+  - chap-m3-ch5
+  - sec-governance-framework
+- id: 5511
+  chapter_title: 大數據治理
+  section_title: 隱私保護
+  text: l-多樣性 (l-diversity) 是為了改進 k-匿名的什麼缺點？
+  type: multiple_choice
+  options:
+  - 計算太慢
+  - 容易受到同質性攻擊 (即同一組內的敏感屬性值都一樣)
+  - 數據量太大
+  - 無法處理文字
+  correct_index: 1
+  explanation: 如果一個 k-匿名組裡的 3 個人都患有「癌症」，那攻擊者只要知道目標在這一組，就能確定他有癌症。l-多樣性要求組內敏感屬性必須多樣化。
+  tags:
+  - chap-m3-ch5
+  - sec-privacy
+- id: 5512
+  chapter_title: 大數據治理
+  section_title: 合規與安全
+  text: TLS 1.3 協議主要用於？
+  type: multiple_choice
+  options:
+  - 靜態數據加密
+  - 傳輸中加密 (Encryption in Transit)，保護網路通訊安全
+  - 資料庫加密
+  - 檔案壓縮
+  correct_index: 1
+  explanation: 這是 HTTPS 背後的安全協定，防止數據在網路上傳輸時被竊聽或篡改。
+  tags:
+  - chap-m3-ch5
+  - sec-compliance
+- id: 5513
+  chapter_title: 大數據治理
+  section_title: 隱私保護
+  text: 全同態加密 (FHE) 目前面臨的主要挑戰是？
+  type: multiple_choice
+  options:
+  - 安全性不足
+  - 計算成本極高，速度極慢
+  - 無法加密數字
+  - 只能在本地運行
+  correct_index: 1
+  explanation: 雖然理論完美，但 FHE 的運算速度比明文慢數千倍甚至百萬倍，限制了其在大規模 AI 訓練中的應用。
+  tags:
+  - chap-m3-ch5
+  - sec-privacy
+- id: 5514
+  chapter_title: 大數據治理
+  section_title: 合規與安全
+  text: 「目的限制 (Purpose Limitation)」原則要求？
+  type: multiple_choice
+  options:
+  - 數據可以用於任何目的
+  - 數據僅能用於蒐集時告知的特定目的，不得隨意二次利用
+  - 數據必須永久保存
+  - 數據必須公開
+  correct_index: 1
+  explanation: 你為了「送貨」蒐集的地址，不能拿去「寄廣告信」，除非重新取得用戶同意。
+  tags:
+  - chap-m3-ch5
+  - sec-compliance
+- id: 5515
+  chapter_title: 大數據治理
+  section_title: 資料品質管理
+  text: 資料一致性 (Consistency) 檢查是為了？
+  type: multiple_choice
+  options:
+  - 確保數據格式正確
+  - 確保不同系統或資料表中的數據不矛盾
+  - 確保數據沒有缺失
+  - 確保數據是唯一的
+  correct_index: 1
+  explanation: 避免出現「A 系統說庫存剩 10 個，B 系統說剩 0 個」的情況。
+  tags:
+  - chap-m3-ch5
+  - sec-data-quality
+- id: 5516
+  chapter_title: 大數據治理
+  section_title: 隱私保護
+  text: 差分隱私透過什麼機制來保護隱私？
+  type: multiple_choice
+  options:
+  - 刪除數據
+  - 在查詢結果中加入隨機雜訊 (如拉普拉斯雜訊)
+  - 加密數據
+  - 隱藏 IP
+  correct_index: 1
+  explanation: 加入雜訊讓查詢結果變得模糊，使得攻擊者無法區分結果的變化是由於某個特定個體的存在還是隨機波動。
+  tags:
+  - chap-m3-ch5
+  - sec-privacy
+- id: 5517
+  chapter_title: 大數據治理
+  section_title: 資料與 AI 治理架構
+  text: 資料治理委員會通常由哪些成員組成？
+  type: multiple_choice
+  options:
+  - 只有 IT 人員
+  - 只有法務人員
+  - 跨部門成員，包括法務、資安、IT 與業務主管
+  - 外部顧問
+  correct_index: 2
+  explanation: 資料治理涉及法律、技術與業務等多個層面，必須跨部門協作才能制定有效的政策。
+  tags:
+  - chap-m3-ch5
+  - sec-governance-framework
+- id: 5518
+  chapter_title: 大數據治理
+  section_title: 合規與安全
+  text: 「被遺忘權 (Right to be Forgotten)」賦予使用者什麼權利？
+  type: multiple_choice
+  options:
+  - 要求企業備份其數據
+  - 要求企業刪除其個人數據
+  - 要求企業公開其數據
+  - 要求企業修改其數據
+  correct_index: 1
+  explanation: 當數據不再需要或使用者撤回同意時，使用者有權要求企業徹底刪除其個資。
+  tags:
+  - chap-m3-ch5
+  - sec-compliance
+- id: 5519
+  chapter_title: 大數據治理
+  section_title: 隱私保護
+  text: 部分同態加密 (PHE) 通常支持哪種運算？
+  type: multiple_choice
+  options:
+  - 任意運算
+  - 單一類型的運算 (僅加法或僅乘法)
+  - 邏輯運算
+  - 比較運算
+  correct_index: 1
+  explanation: 例如 Paillier 算法支持加法同態，雖然功能有限，但效率比全同態加密高很多，適合特定場景（如電子投票計票）。
+  tags:
+  - chap-m3-ch5
+  - sec-privacy
+- id: 5520
+  chapter_title: 大數據治理
+  section_title: 資料品質管理
+  text: 資料及時性 (Timeliness) 是指？
+  type: multiple_choice
+  options:
+  - 數據量很大
+  - 數據是否即時更新，反映當前狀態
+  - 數據格式正確
+  - 數據沒有錯誤
+  correct_index: 1
+  explanation: 過期的數據（如昨天的股價）對於即時決策（如高頻交易）是沒有價值的。
+  tags:
+  - chap-m3-ch5
+  - sec-data-quality
+- id: 5521
+  chapter_title: 大數據治理
+  section_title: 隱私保護
+  text: t-接近性 (t-closeness) 要求？
+  type: multiple_choice
+  options:
+  - 每個組內有 t 個記錄
+  - 每個等價類中敏感屬性的分佈與整體數據集的分佈之間的距離小於閾值 t
+  - 數據加密 t 次
+  - 數據保留 t 年
+  correct_index: 1
+  explanation: 這是比 l-多樣性更嚴格的標準，防止攻擊者透過分佈差異（如某組人患病率高達 90%，遠高於平均）推斷隱私。
+  tags:
+  - chap-m3-ch5
+  - sec-privacy
+- id: 5522
+  chapter_title: 大數據治理
+  section_title: 合規與安全
+  text: AI 訓練資料的合法取得依據不包括？
+  type: multiple_choice
+  options:
+  - 使用者明確同意
+  - 契約履行必要
+  - 網路上隨意抓取且未經授權的個資
+  - 符合公共利益且經去識別化的學術研究
+  correct_index: 2
+  explanation: 網路公開不代表可以隨意使用。未經同意抓取個資用於商業模型訓練可能違反個資法。
+  tags:
+  - chap-m3-ch5
+  - sec-compliance
+- id: 5523
+  chapter_title: 大數據治理
+  section_title: 資料與 AI 治理架構
+  text: 敏感資料偵測工具的主要功能是？
+  type: multiple_choice
+  options:
+  - 加密數據
+  - 自動掃描並標記 PII (個人識別資訊)
+  - 刪除數據
+  - 壓縮數據
+  correct_index: 1
+  explanation: 防止敏感數據（如身分證號、信用卡號）意外洩漏或未經加密存儲。
+  tags:
+  - chap-m3-ch5
+  - sec-governance-framework
+- id: 5524
+  chapter_title: 大數據治理
+  section_title: 隱私保護
+  text: 差分隱私中的「相鄰資料集」是指？
+  type: multiple_choice
+  options:
+  - 兩個完全不同的資料集
+  - 兩個資料集之間只差一筆資料
+  - 兩個大小相同的資料集
+  - 兩個來源相同的資料集
+  correct_index: 1
+  explanation: 差分隱私的定義基礎：即使你的資料被加入（或移除），查詢結果的機率分佈幾乎不變。
+  tags:
+  - chap-m3-ch5
+  - sec-privacy
+- id: 5525
+  chapter_title: 大數據治理
+  section_title: 合規與安全
+  text: 資料血緣 (Data Lineage) 在合規中的作用是？
+  type: multiple_choice
+  options:
+  - 加速查詢
+  - 追蹤數據來源與流向，確保可追溯性與合規性
+  - 節省儲存空間
+  - 提高數據品質
+  correct_index: 1
+  explanation: 當監管機構查核時，能證明數據是從合法來源取得，並經過了正確的處理流程。
+  tags:
+  - chap-m3-ch5
+  - sec-compliance
+- id: 5526
+  chapter_title: 大數據治理
+  section_title: 資料品質管理
+  text: 資料清洗 (Data Cleansing) 通常不包括？
+  type: multiple_choice
+  options:
+  - 修正錯誤數據
+  - 填補缺失值
+  - 刪除重複記錄
+  - 隨意修改數據以符合預期
+  correct_index: 3
+  explanation: 清洗是為了還原真實，而不是造假。隨意修改會破壞數據的真實性。
+  tags:
+  - chap-m3-ch5
+  - sec-data-quality
+- id: 5527
+  chapter_title: 大數據治理
+  section_title: 隱私保護
+  text: 安全多方計算 (MPC) 允許？
+  type: multiple_choice
+  options:
+  - 多個機構聯合分析數據，而不洩露各自的原始數據
+  - 數據公開共享
+  - 數據集中存儲
+  - 不進行計算
+  correct_index: 0
+  explanation: MPC 讓多方（如多家銀行）能共同計算一個結果（如聯防詐欺黑名單），但誰也看不到對方的具體客戶資料。
+  tags:
+  - chap-m3-ch5
+  - sec-privacy
+- id: 5528
+  chapter_title: 大數據治理
+  section_title: 合規與安全
+  text: AES-256 是一種？
+  type: multiple_choice
+  options:
+  - 非對稱加密演算法
+  - 對稱加密演算法，常用於靜態數據加密
+  - 雜湊演算法
+  - 壓縮演算法
+  correct_index: 1
+  explanation: AES 是目前最通用的高強度加密標準，廣泛用於硬碟加密、資料庫加密。
+  tags:
+  - chap-m3-ch5
+  - sec-compliance
+- id: 5529
+  chapter_title: 大數據治理
+  section_title: 資料與 AI 治理架構
+  text: 首席 AI 官 (CAIO) 的職責通常包括？
+  type: multiple_choice
+  options:
+  - 維修電腦
+  - 監督 AI 策略、模型合規性與數據品質
+  - 銷售產品
+  - 撰寫前端程式碼
+  correct_index: 1
+  explanation: CAIO 是企業 AI 轉型的掌舵者，確保 AI 落地過程中既能創造價值，又能守住風險底線。
+  tags:
+  - chap-m3-ch5
+  - sec-governance-framework
+- id: 5530
+  chapter_title: 大數據治理
+  section_title: 隱私保護
+  text: 去識別化中的「準標識符 (Quasi-identifier)」是指？
+  type: multiple_choice
+  options:
+  - 直接能識別個人的欄位 (如身分證號)
+  - 本身不能直接識別，但結合外部資訊可能識別出個人的欄位 (如性別、生日、郵遞區號)
+  - 無關緊要的欄位
+  - 加密後的欄位
+  correct_index: 1
+  explanation: 雖然「生日」本身不能鎖定你，但「生日+性別+郵遞區號」的組合可能在一個小區域內是唯一的。
+  tags:
+  - chap-m3-ch5
+  - sec-privacy
+- id: 5531
+  chapter_title: 大數據治理
+  section_title: 合規與安全
+  text: 「保存期限限制 (Storage Limitation)」原則建議？
+  type: multiple_choice
+  options:
+  - 數據應永久保存
+  - 設定保留期限，逾期應刪除或匿名化
+  - 數據應每天刪除
+  - 數據應備份無限次
+  correct_index: 1
+  explanation: 數據不是資產就是負債。過期數據不僅沒用，還增加被駭客竊取的風險與合規成本。
+  tags:
+  - chap-m3-ch5
+  - sec-compliance
+- id: 5532
+  chapter_title: 大數據治理
+  section_title: 隱私保護
+  text: 差分隱私主要應用於？
+  type: multiple_choice
+  options:
+  - 數據加密
+  - 統計查詢結果的發布 (如人口普查、使用習慣統計)
+  - 身份驗證
+  - 存取控制
+  correct_index: 1
+  explanation: 它解決了「如何發布總體統計數據，又不洩露個體隱私」的難題。
+  tags:
+  - chap-m3-ch5
+  - sec-privacy
+- id: 5533
+  chapter_title: 大數據治理
+  section_title: 資料品質管理
+  text: 資料準確性 (Accuracy) 是指？
+  type: multiple_choice
+  options:
+  - 數據格式正確
+  - 數據真實反映了現實世界的情況
+  - 數據沒有缺失
+  - 數據是唯一的
+  correct_index: 1
+  explanation: 例如客戶的年齡是 30 歲，資料庫裡存的也是 30 歲，這就是準確。如果存成 300 歲就不準確（也不合理）。
+  tags:
+  - chap-m3-ch5
+  - sec-data-quality
+- id: 5534
+  chapter_title: 大數據治理
+  section_title: 合規與安全
+  text: 雜湊 (Hashing) 與加密的主要區別是？
+  type: multiple_choice
+  options:
+  - 雜湊是可逆的，加密是不可逆的
+  - 雜湊是不可逆的 (單向)，加密是可逆的 (雙向，可解密)
+  - 兩者一樣
+  - 雜湊比較慢
+  correct_index: 1
+  explanation: 雜湊（如 SHA-256）通常用於驗證數據完整性或儲存密碼（不存明文）；加密則是為了傳輸或儲存後能再還原。
+  tags:
+  - chap-m3-ch5
+  - sec-compliance
+- id: 5535
+  chapter_title: 大數據治理
+  section_title: 資料與 AI 治理架構
+  text: 模型監控 (Model Monitoring) 的重點之一是？
+  type: multiple_choice
+  options:
+  - 監控 CPU 溫度
+  - 監控模型飄移 (Model Drift) 與公平性
+  - 監控網路速度
+  - 監控硬碟空間
+  correct_index: 1
+  explanation: 確保模型上線後表現穩定，且沒有因為數據變化而產生對特定群體的歧視。
+  tags:
+  - chap-m3-ch5
+  - sec-governance-framework
+- id: 5536
+  chapter_title: 大數據治理
+  section_title: 隱私保護
+  text: 聯邦學習中的「聚合 (Aggregation)」通常發生在？
+  type: multiple_choice
+  options:
+  - 客戶端
+  - 中央伺服器
+  - 區塊鏈
+  - 第三方
+  correct_index: 1
+  explanation: 中央伺服器收集各端傳來的參數更新（梯度），計算平均值後更新全局模型，再發回給各端。
+  tags:
+  - chap-m3-ch5
+  - sec-privacy
+- id: 5537
+  chapter_title: 大數據治理
+  section_title: 合規與安全
+  text: 根據 GDPR，若發生資料外洩，企業通常需要在多久內通報？
+  type: multiple_choice
+  options:
+  - 72 小時內
+  - 1 個月內
+  - 不需通報
+  - 1 年內
+  correct_index: 0
+  explanation: 黃金 72 小時原則。快速通報能讓監管機構與受害者及時採取應對措施，降低損害。
+  tags:
+  - chap-m3-ch5
+  - sec-compliance
+- id: 5538
+  chapter_title: 大數據治理
+  section_title: 資料品質管理
+  text: 資料完整性 (Completeness) 的常見問題是？
+  type: multiple_choice
+  options:
+  - 數據重複
+  - 數據缺失 (Null Values)
+  - 數據格式錯誤
+  - 數據過期
+  correct_index: 1
+  explanation: 欄位空白或缺漏會影響分析結果的代表性。
+  tags:
+  - chap-m3-ch5
+  - sec-data-quality
+- id: 5539
+  chapter_title: 大數據治理
+  section_title: 隱私保護
+  text: 同質性攻擊 (Homogeneity Attack) 是針對哪種隱私技術的攻擊？
+  type: multiple_choice
+  options:
+  - 差分隱私
+  - k-匿名
+  - 同態加密
+  - 聯邦學習
+  correct_index: 1
+  explanation: 當一個 k-匿名組內的所有人敏感屬性都相同時，k-匿名就失效了。
+  tags:
+  - chap-m3-ch5
+  - sec-privacy
+- id: 5540
+  chapter_title: 大數據治理
+  section_title: 合規與安全
+  text: 「合法性、正當性與透明性」原則要求企業？
+  type: multiple_choice
+  options:
+  - 隱瞞數據用途
+  - 必須告知使用者蒐集目的與使用範圍
+  - 隨意使用數據
+  - 不需取得同意
+  correct_index: 1
+  explanation: 誠實是上策。使用者有權知道自己的資料被拿去做什麼。
+  tags:
+  - chap-m3-ch5
+  - sec-compliance
+- id: 5541
+  chapter_title: 大數據治理
+  section_title: 深度思考情境題
+  text: 情境：你是一家醫院的資料科學家，想與另一家醫院合作訓練疾病預測模型，但雙方都受限於法規不能交換病歷資料。你應該建議採用什麼技術？
+  type: multiple_choice
+  options:
+  - 差分隱私。
+  - 聯邦學習 (Federated Learning)。
+  - k-匿名。
+  - 放棄合作。
+  correct_index: 1
+  explanation: 這是聯邦學習最經典的應用場景。資料不動模型動，雙方既能合作提升模型準確度，又能確保病歷不出自家大門。
+  tags:
+  - chap-m3-ch5
+  - sec-scenario
+- id: 5542
+  chapter_title: 大數據治理
+  section_title: 深度思考情境題
+  text: 情境：公司決定發布一份匿名的用戶行為數據集供學術研究。你使用了 k-匿名技術，但發現某個分組裡的所有用戶都購買了同一種敏感商品。這存在什麼風險？應如何改進？
+  type: multiple_choice
+  options:
+  - 同質性攻擊風險；應進一步採用 l-多樣性 (l-diversity) 或 t-接近性 (t-closeness)。
+  - 背景知識攻擊；應刪除數據。
+  - 重識別風險；應增加 k 值。
+  - 沒有風險。
+  correct_index: 0
+  explanation: k-匿名無法防止屬性洩漏。如果某個 k=3 的組裡三個人都買了「威而鋼」，那攻擊者只要知道目標在這一組，就知道他買了什麼。l-多樣性強制組內敏感屬性必須多樣化。
+  tags:
+  - chap-m3-ch5
+  - sec-scenario
+- id: 5543
+  chapter_title: 大數據治理
+  section_title: 深度思考情境題
+  text: 情境：行銷部門要求你提供客戶名單進行精準行銷，但該名單當初蒐集時的使用條款僅註明「用於改善服務品質」。你應該如何處理？
+  type: multiple_choice
+  options:
+  - 直接提供。
+  - 拒絕提供，因為違反「目的限制 (Purpose Limitation)」原則。需重新取得用戶同意或進行去識別化處理（若法規允許）。
+  - 加密後提供。
+  - 匿名發布。
+  correct_index: 1
+  explanation: 目的不符是常見的合規地雷。當初說做 A，現在拿去做 B，必須重新獲得授權，否則就是違法。
+  tags:
+  - chap-m3-ch5
+  - sec-scenario
+- id: 5544
+  chapter_title: 大數據治理
+  section_title: 深度思考情境題
+  text: 情境：你正在設計一個需要高隱私保護的統計查詢系統。為了防止差分攻擊，你決定引入差分隱私。當你將隱私預算 (epsilon) 設定得非常小時，會發生什麼事？
+  type: multiple_choice
+  options:
+  - 查詢結果非常精確，但隱私保護弱。
+  - 查詢結果充滿雜訊，可用性 (Utility) 大幅降低，但隱私保護極強。
+  - 系統崩潰。
+  - 計算速度變快。
+  correct_index: 1
+  explanation: 隱私與可用性是蹺蹺板。epsilon 小意味著雜訊大，雖然保護了隱私，但統計結果可能歪到無法使用（例如統計人數是負的）。需要尋找平衡點。
+  tags:
+  - chap-m3-ch5
+  - sec-scenario
+- id: 5545
+  chapter_title: 大數據治理
+  section_title: 深度思考情境題
+  text: 情境：公司計畫將核心業務數據上傳至公有雲進行 AI 分析，但資安長擔心雲端供應商會偷看數據。哪種技術能從根本上消除這個疑慮？
+  type: multiple_choice
+  options:
+  - 傳輸中加密 (TLS)。
+  - 靜態數據加密 (AES)。
+  - 全同態加密 (FHE)。
+  - 簽署保密協定 (NDA)。
+  correct_index: 2
+  explanation: 傳統加密在運算時必須解密（明文暴露在記憶體中）。全同態加密允許雲端直接對密文進行運算，雲端供應商從頭到尾都看不到明文，實現了「可用不可見」。
+  tags:
+  - chap-m3-ch5
+  - sec-scenario

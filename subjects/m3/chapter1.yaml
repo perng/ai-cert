@@ -1,0 +1,676 @@
+questions:
+- id: 5101
+  chapter_title: 大數據生態系統
+  section_title: 分散式運算框架
+  text: Hadoop 的核心組件中，負責資源管理和調度的是？
+  type: multiple_choice
+  options:
+  - HDFS
+  - MapReduce
+  - YARN (Yet Another Resource Negotiator)
+  - Spark
+  correct_index: 2
+  explanation: YARN 是 Hadoop 2.0 引入的資源管理層，負責將叢集資源（CPU, Memory）分配給各種應用程式。
+  tags:
+  - chap-m3-ch1
+  - sec-distributed-computing
+- id: 5102
+  chapter_title: 大數據生態系統
+  section_title: 分散式運算框架
+  text: HDFS (Hadoop Distributed File System) 如何保證數據的可靠性？
+  type: multiple_choice
+  options:
+  - 使用 RAID 磁碟陣列
+  - 將數據塊 (Blocks) 複製多份 (預設 3 份) 並存儲在不同的節點上
+  - 定期備份到磁帶
+  - 使用加密技術
+  correct_index: 1
+  explanation: HDFS 的設計初衷是在廉價硬體上運行，因此透過軟體層面的多副本機制來容忍硬體故障。
+  tags:
+  - chap-m3-ch1
+  - sec-distributed-computing
+- id: 5103
+  chapter_title: 大數據生態系統
+  section_title: 分散式運算框架
+  text: Spark 相比於 Hadoop MapReduce 的主要優勢是？
+  type: multiple_choice
+  options:
+  - 儲存容量更大
+  - 記憶體內運算 (In-Memory Computing)，速度快 100 倍
+  - 更便宜
+  - 支援更多語言
+  correct_index: 1
+  explanation: MapReduce 每次運算都要讀寫磁碟，而 Spark 將中間結果存在記憶體中，大幅減少了 I/O 開銷。
+  tags:
+  - chap-m3-ch1
+  - sec-distributed-computing
+- id: 5104
+  chapter_title: 大數據生態系統
+  section_title: 分散式運算框架
+  text: Spark 中的 RDD (Resilient Distributed Dataset) 特性不包括？
+  type: multiple_choice
+  options:
+  - 不可變性 (Immutable)
+  - 彈性 (Resilient)，可從錯誤中恢復
+  - 分散式 (Distributed)
+  - 總是儲存在磁碟上
+  correct_index: 3
+  explanation: RDD 優先儲存在記憶體中，只有在記憶體不足時才會溢寫到磁碟。
+  tags:
+  - chap-m3-ch1
+  - sec-distributed-computing
+- id: 5105
+  chapter_title: 大數據生態系統
+  section_title: 儲存解決方案
+  text: ACID 原則中的 "A" 代表？
+  type: multiple_choice
+  options:
+  - Availability (可用性)
+  - Atomicity (原子性)
+  - Accuracy (準確性)
+  - Authentication (認證)
+  correct_index: 1
+  explanation: 原子性保證交易是不可分割的最小單位，要麼全部成功，要麼全部失敗回滾。
+  tags:
+  - chap-m3-ch1
+  - sec-storage-solutions
+- id: 5106
+  chapter_title: 大數據生態系統
+  section_title: 儲存解決方案
+  text: 根據 CAP 定理，分散式系統不可能同時滿足哪三個特性？
+  type: multiple_choice
+  options:
+  - 一致性 (Consistency)、可用性 (Availability)、分區容錯性 (Partition Tolerance)
+  - 速度、成本、品質
+  - 安全性、隱私性、便利性
+  - 原子性、一致性、隔離性
+  correct_index: 0
+  explanation: CAP 定理是分散式系統設計的基石，指出在網路分區 (P) 發生時，必須在一致性 (C) 和可用性 (A) 之間做出選擇。
+  tags:
+  - chap-m3-ch1
+  - sec-storage-solutions
+- id: 5107
+  chapter_title: 大數據生態系統
+  section_title: 儲存解決方案
+  text: MongoDB 屬於哪種類型的 NoSQL 資料庫？
+  type: multiple_choice
+  options:
+  - 鍵值對 (Key-Value)
+  - 文件型 (Document)
+  - 列式 (Column-family)
+  - 圖形 (Graph)
+  correct_index: 1
+  explanation: MongoDB 儲存 BSON (Binary JSON) 格式的文件，結構靈活，適合內容管理與快速開發。
+  tags:
+  - chap-m3-ch1
+  - sec-storage-solutions
+- id: 5108
+  chapter_title: 大數據生態系統
+  section_title: 儲存解決方案
+  text: Redis 最適合的應用場景是？
+  type: multiple_choice
+  options:
+  - 複雜的關聯查詢
+  - 快取 (Caching) 與 Session 管理
+  - 儲存海量日誌
+  - 圖形分析
+  correct_index: 1
+  explanation: Redis 是基於記憶體的 Key-Value 資料庫，讀寫速度極快，是快取系統的首選。
+  tags:
+  - chap-m3-ch1
+  - sec-storage-solutions
+- id: 5109
+  chapter_title: 大數據生態系統
+  section_title: 儲存解決方案
+  text: 資料湖 (Data Lake) 的 "Schema-on-Read" 特性意味著？
+  type: multiple_choice
+  options:
+  - 寫入數據時必須定義 Schema
+  - 數據必須是結構化的
+  - 寫入時不限制格式，讀取時再根據需求定義 Schema
+  - 數據只能讀取不能寫入
+  correct_index: 2
+  explanation: 這賦予了資料湖極大的靈活性，可以先存下所有原始數據 (Raw Data)，日後再決定如何分析。
+  tags:
+  - chap-m3-ch1
+  - sec-storage-solutions
+- id: 5110
+  chapter_title: 大數據生態系統
+  section_title: 儲存解決方案
+  text: Parquet 檔案格式的主要優點是？
+  type: multiple_choice
+  options:
+  - 易於人類閱讀
+  - 列式儲存 (Columnar)，支援高效壓縮與查詢優化 (只讀取需要的列)
+  - 寫入速度最快
+  - 支援事務處理
+  correct_index: 1
+  explanation: 對於 OLAP 分析查詢（通常只查少數幾個欄位但涉及大量行），列式儲存能大幅減少 I/O，提升效能。
+  tags:
+  - chap-m3-ch1
+  - sec-storage-solutions
+- id: 5111
+  chapter_title: 大數據生態系統
+  section_title: 分散式運算框架
+  text: Spark 的「惰性求值 (Lazy Evaluation)」是指？
+  type: multiple_choice
+  options:
+  - 系統運作很慢
+  - Transformation 操作不會立即執行，直到遇到 Action 操作才觸發計算
+  - 隨機執行操作
+  - 只執行一半的操作
+  correct_index: 1
+  explanation: 這種機制允許 Spark 優化整個執行計畫（例如合併多個 map 操作），減少不必要的數據傳輸與計算。
+  tags:
+  - chap-m3-ch1
+  - sec-distributed-computing
+- id: 5112
+  chapter_title: 大數據生態系統
+  section_title: 儲存解決方案
+  text: ACID 中的 "I" 代表？
+  type: multiple_choice
+  options:
+  - Integrity (完整性)
+  - Isolation (隔離性)
+  - Identity (身份)
+  - Intelligence (智慧)
+  correct_index: 1
+  explanation: 隔離性確保並發執行的交易互不干擾，防止髒讀 (Dirty Read) 等問題。
+  tags:
+  - chap-m3-ch1
+  - sec-storage-solutions
+- id: 5113
+  chapter_title: 大數據生態系統
+  section_title: 儲存解決方案
+  text: 圖形資料庫 (Graph Database) 如 Neo4j 最擅長處理？
+  type: multiple_choice
+  options:
+  - 簡單的鍵值存取
+  - 複雜的關係網絡分析 (如社交網絡、推薦引擎)
+  - 時間序列數據
+  - 文件儲存
+  correct_index: 1
+  explanation: 圖形資料庫直接儲存節點與邊的關係，查詢深度關聯（朋友的朋友的朋友）時效率遠高於關聯式資料庫。
+  tags:
+  - chap-m3-ch1
+  - sec-storage-solutions
+- id: 5114
+  chapter_title: 大數據生態系統
+  section_title: 儲存解決方案
+  text: 資料倉儲 (Data Warehouse) 通常採用什麼 Schema 策略？
+  type: multiple_choice
+  options:
+  - Schema-on-Read
+  - Schema-on-Write
+  - No Schema
+  - Dynamic Schema
+  correct_index: 1
+  explanation: 資料倉儲要求數據在寫入前必須經過清洗與轉換 (ETL)，符合預定義的嚴格 Schema，以確保報表品質。
+  tags:
+  - chap-m3-ch1
+  - sec-storage-solutions
+- id: 5115
+  chapter_title: 大數據生態系統
+  section_title: 分散式運算框架
+  text: Hadoop MapReduce 的兩個主要階段是？
+  type: multiple_choice
+  options:
+  - Input 和 Output
+  - Map (映射) 和 Reduce (歸約)
+  - Read 和 Write
+  - Shuffle 和 Sort
+  correct_index: 1
+  explanation: Map 階段並行處理數據片段，Reduce 階段匯總 Map 的結果。
+  tags:
+  - chap-m3-ch1
+  - sec-distributed-computing
+- id: 5116
+  chapter_title: 大數據生態系統
+  section_title: 儲存解決方案
+  text: BASE 模型中的 "Soft state" 意味著？
+  type: multiple_choice
+  options:
+  - 系統狀態是固定的
+  - 系統狀態可能會隨時間改變，即使沒有輸入（因為數據正在同步中）
+  - 軟體狀態
+  - 硬體狀態
+  correct_index: 1
+  explanation: 這是最終一致性過程中的中間狀態，允許不同節點的數據在短時間內不一致。
+  tags:
+  - chap-m3-ch1
+  - sec-storage-solutions
+- id: 5117
+  chapter_title: 大數據生態系統
+  section_title: 儲存解決方案
+  text: Cassandra 屬於哪種類型的 NoSQL 資料庫？
+  type: multiple_choice
+  options:
+  - 鍵值對
+  - 文件型
+  - 列式 (Column-family)
+  - 圖形
+  correct_index: 2
+  explanation: Cassandra 採用寬列儲存 (Wide Column Store)，具有極高的寫入吞吐量，適合儲存大量日誌或物聯網數據。
+  tags:
+  - chap-m3-ch1
+  - sec-storage-solutions
+- id: 5118
+  chapter_title: 大數據生態系統
+  section_title: 儲存解決方案
+  text: Avro 格式通常適用於？
+  type: multiple_choice
+  options:
+  - 頻繁讀取的分析場景
+  - 大量寫入操作與數據序列化 (如 Kafka 消息)
+  - 網頁顯示
+  - 圖片儲存
+  correct_index: 1
+  explanation: Avro 是行式儲存，寫入效率高，且 Schema 隨數據一起存儲，支援 Schema Evolution，非常適合串流數據。
+  tags:
+  - chap-m3-ch1
+  - sec-storage-solutions
+- id: 5119
+  chapter_title: 大數據生態系統
+  section_title: 分散式運算框架
+  text: Spark SQL 的主要功能是？
+  type: multiple_choice
+  options:
+  - 繪圖
+  - 使用 SQL 語法查詢結構化數據
+  - 機器學習
+  - 串流處理
+  correct_index: 1
+  explanation: Spark SQL 讓熟悉 SQL 的分析師能輕鬆操作大數據，並透過 DataFrame API 與 Spark 其他組件整合。
+  tags:
+  - chap-m3-ch1
+  - sec-distributed-computing
+- id: 5120
+  chapter_title: 大數據生態系統
+  section_title: 儲存解決方案
+  text: 在 CAP 定理中，CP 系統選擇犧牲什麼？
+  type: multiple_choice
+  options:
+  - 一致性
+  - 可用性 (Availability)
+  - 分區容錯性
+  - 安全性
+  correct_index: 1
+  explanation: 當網路分區發生時，為了保證數據絕對一致，CP 系統會拒絕部分請求（犧牲可用性），直到數據同步完成。
+  tags:
+  - chap-m3-ch1
+  - sec-storage-solutions
+- id: 5121
+  chapter_title: 大數據生態系統
+  section_title: 分散式運算框架
+  text: HDFS 中的 NameNode 負責管理？
+  type: multiple_choice
+  options:
+  - 實際數據塊
+  - 文件系統的元數據 (Metadata)
+  - 資源調度
+  - 計算任務
+  correct_index: 1
+  explanation: NameNode 是 HDFS 的大腦，記錄文件名稱、目錄結構以及每個文件對應的數據塊位置。
+  tags:
+  - chap-m3-ch1
+  - sec-distributed-computing
+- id: 5122
+  chapter_title: 大數據生態系統
+  section_title: 儲存解決方案
+  text: 關聯式資料庫 (RDBMS) 最適合處理？
+  type: multiple_choice
+  options:
+  - 非結構化數據 (如影片)
+  - 高度結構化且需要嚴格一致性的交易數據 (如銀行轉帳)
+  - 社群網絡關係
+  - 海量日誌
+  correct_index: 1
+  explanation: RDBMS 的強項在於 ACID 事務保證與複雜的 SQL 關聯查詢，是核心業務系統的基石。
+  tags:
+  - chap-m3-ch1
+  - sec-storage-solutions
+- id: 5123
+  chapter_title: 大數據生態系統
+  section_title: 儲存解決方案
+  text: 最終一致性 (Eventual Consistency) 是指？
+  type: multiple_choice
+  options:
+  - 數據永遠不一致
+  - 經過一段時間後，所有節點的數據最終會達到一致
+  - 數據在寫入時立即一致
+  - 只有主節點一致
+  correct_index: 1
+  explanation: 這是 AP 系統常見的特性。允許短暫的不一致以換取高可用性，系統會透過背景同步機制最終讓數據同步。
+  tags:
+  - chap-m3-ch1
+  - sec-storage-solutions
+- id: 5124
+  chapter_title: 大數據生態系統
+  section_title: 分散式運算框架
+  text: Spark Streaming 用於？
+  type: multiple_choice
+  options:
+  - 批次處理
+  - 即時數據流處理
+  - 圖形計算
+  - 機器學習
+  correct_index: 1
+  explanation: 處理來自 Kafka, Flume 等來源的即時數據流。
+  tags:
+  - chap-m3-ch1
+  - sec-distributed-computing
+- id: 5125
+  chapter_title: 大數據生態系統
+  section_title: 儲存解決方案
+  text: 資料湖通常基於哪種儲存技術？
+  type: multiple_choice
+  options:
+  - 磁帶
+  - 物件儲存 (Object Storage，如 AWS S3)
+  - 關聯式資料庫
+  - 記憶體
+  correct_index: 1
+  explanation: 物件儲存具有極高的擴展性與低廉的成本，非常適合存放海量的非結構化數據。
+  tags:
+  - chap-m3-ch1
+  - sec-storage-solutions
+- id: 5126
+  chapter_title: 大數據生態系統
+  section_title: 分散式運算框架
+  text: YARN 中的 ResourceManager 負責？
+  type: multiple_choice
+  options:
+  - 單個節點的資源管理
+  - 全局資源管理與調度
+  - 儲存數據
+  - 執行 MapReduce 任務
+  correct_index: 1
+  explanation: 它是叢集的總管，決定哪個應用程式能獲得多少資源。
+  tags:
+  - chap-m3-ch1
+  - sec-distributed-computing
+- id: 5127
+  chapter_title: 大數據生態系統
+  section_title: 儲存解決方案
+  text: CSV 格式的主要缺點是？
+  type: multiple_choice
+  options:
+  - 難以閱讀
+  - 佔用空間大，解析速度慢，缺乏類型資訊
+  - 不支援 Excel
+  - 只能存數字
+  correct_index: 1
+  explanation: 雖然通用，但文字格式效率低，且沒有 Schema 約束，容易出現數據品質問題。
+  tags:
+  - chap-m3-ch1
+  - sec-storage-solutions
+- id: 5128
+  chapter_title: 大數據生態系統
+  section_title: 儲存解決方案
+  text: 哪種 NoSQL 資料庫適合用於「購物車」功能？
+  type: multiple_choice
+  options:
+  - 圖形資料庫
+  - 鍵值對 (Key-Value) 資料庫 (如 Redis)
+  - 列式資料庫
+  - 關聯式資料庫
+  correct_index: 1
+  explanation: 購物車數據結構簡單，讀寫頻繁且需要極低延遲，Redis 是最佳選擇。
+  tags:
+  - chap-m3-ch1
+  - sec-storage-solutions
+- id: 5129
+  chapter_title: 大數據生態系統
+  section_title: 分散式運算框架
+  text: Spark MLlib 是什麼？
+  type: multiple_choice
+  options:
+  - 資料庫
+  - 機器學習庫
+  - 繪圖工具
+  - 網頁伺服器
+  correct_index: 1
+  explanation: Spark 內建的可擴展機器學習庫，提供分類、回歸、分群等演算法。
+  tags:
+  - chap-m3-ch1
+  - sec-distributed-computing
+- id: 5130
+  chapter_title: 大數據生態系統
+  section_title: 儲存解決方案
+  text: ACID 中的 "D" 代表？
+  type: multiple_choice
+  options:
+  - Distribution (分佈)
+  - Durability (持久性)
+  - Data (數據)
+  - Delete (刪除)
+  correct_index: 1
+  explanation: 持久性保證一旦交易提交，數據就永久寫入磁碟，即使斷電也不會丟失。
+  tags:
+  - chap-m3-ch1
+  - sec-storage-solutions
+- id: 5131
+  chapter_title: 大數據生態系統
+  section_title: 儲存解決方案
+  text: ORC (Optimized Row Columnar) 格式通常與哪個工具配合使用效果最佳？
+  type: multiple_choice
+  options:
+  - Spark
+  - Hive
+  - Kafka
+  - Redis
+  correct_index: 1
+  explanation: ORC 是專為 Hive 優化的列式儲存格式，能顯著提升 Hive 查詢效能。
+  tags:
+  - chap-m3-ch1
+  - sec-storage-solutions
+- id: 5132
+  chapter_title: 大數據生態系統
+  section_title: 分散式運算框架
+  text: Spark DataFrame 經過哪個優化器優化？
+  type: multiple_choice
+  options:
+  - Cost-based Optimizer
+  - Catalyst Optimizer
+  - Rule-based Optimizer
+  - Gradient Descent
+  correct_index: 1
+  explanation: Catalyst 是 Spark SQL 的核心優化引擎，能自動優化查詢計畫，提升執行效率。
+  tags:
+  - chap-m3-ch1
+  - sec-distributed-computing
+- id: 5133
+  chapter_title: 大數據生態系統
+  section_title: 儲存解決方案
+  text: 資料倉儲的主要使用者通常是？
+  type: multiple_choice
+  options:
+  - 系統管理員
+  - 商業分析師 (BI)
+  - 一般用戶
+  - 駭客
+  correct_index: 1
+  explanation: 資料倉儲提供清洗過的高品質數據，供 BI 分析師製作報表與儀表板，支援商業決策。
+  tags:
+  - chap-m3-ch1
+  - sec-storage-solutions
+- id: 5134
+  chapter_title: 大數據生態系統
+  section_title: 儲存解決方案
+  text: 3V 問題中的 "Velocity" 指的是？
+  type: multiple_choice
+  options:
+  - 數據量大
+  - 數據生成與處理的高速度
+  - 數據類型多樣
+  - 數據價值高
+  correct_index: 1
+  explanation: 大數據不僅量大，生成速度也極快（如感測器數據、點擊流），需要即時或近即時的處理能力。
+  tags:
+  - chap-m3-ch1
+  - sec-storage-solutions
+- id: 5135
+  chapter_title: 大數據生態系統
+  section_title: 儲存解決方案
+  text: HBase 是一個基於什麼的資料庫？
+  type: multiple_choice
+  options:
+  - 記憶體
+  - HDFS
+  - MySQL
+  - S3
+  correct_index: 1
+  explanation: HBase 是建立在 HDFS 之上的分散式列式資料庫，提供對大數據的隨機讀寫能力。
+  tags:
+  - chap-m3-ch1
+  - sec-storage-solutions
+- id: 5136
+  chapter_title: 大數據生態系統
+  section_title: 分散式運算框架
+  text: HDFS 的預設區塊大小 (Block Size) 通常是？
+  type: multiple_choice
+  options:
+  - 4KB
+  - 128MB
+  - 1GB
+  - 1TB
+  correct_index: 1
+  explanation: 較大的區塊大小是為了最小化尋道時間 (Seek Time)，提高大文件傳輸的吞吐量。
+  tags:
+  - chap-m3-ch1
+  - sec-distributed-computing
+- id: 5137
+  chapter_title: 大數據生態系統
+  section_title: 儲存解決方案
+  text: 為什麼 NoSQL 資料庫具有高擴展性 (Scalability)？
+  type: multiple_choice
+  options:
+  - 因為它們不使用 SQL
+  - 因為它們通常採用水平擴展 (Scale-out) 架構，易於透過增加節點來提升容量
+  - 因為它們只存小數據
+  - 因為它們比較便宜
+  correct_index: 1
+  explanation: RDBMS 通常依賴垂直擴展 (Scale-up，買更強的機器)，而 NoSQL 設計上就支援分散式叢集，能線性擴展。
+  tags:
+  - chap-m3-ch1
+  - sec-storage-solutions
+- id: 5138
+  chapter_title: 大數據生態系統
+  section_title: 儲存解決方案
+  text: JSON 格式屬於哪種 NoSQL 類型的特點？
+  type: multiple_choice
+  options:
+  - 鍵值對
+  - 文件型 (Document)
+  - 列式
+  - 圖形
+  correct_index: 1
+  explanation: 文件型資料庫（如 MongoDB）直接儲存 JSON 物件，這使得數據結構非常靈活，能對應程式中的物件。
+  tags:
+  - chap-m3-ch1
+  - sec-storage-solutions
+- id: 5139
+  chapter_title: 大數據生態系統
+  section_title: 分散式運算框架
+  text: Spark GraphX 用於處理？
+  type: multiple_choice
+  options:
+  - 圖片
+  - 圖形與圖形並行計算 (Graph Processing)
+  - 文字
+  - 音訊
+  correct_index: 1
+  explanation: 用於社交網絡分析、路徑規劃等圖演算法。
+  tags:
+  - chap-m3-ch1
+  - sec-distributed-computing
+- id: 5140
+  chapter_title: 大數據生態系統
+  section_title: 儲存解決方案
+  text: 3V 問題中的 "Variety" 指的是？
+  type: multiple_choice
+  options:
+  - 數據量大
+  - 數據速度快
+  - 數據來源與格式的多樣性 (結構化、半結構化、非結構化)
+  - 數據變異性
+  correct_index: 2
+  explanation: 傳統資料庫難以處理影片、日誌、圖片等多樣化的非結構化數據。
+  tags:
+  - chap-m3-ch1
+  - sec-storage-solutions
+- id: 5141
+  chapter_title: 大數據生態系統
+  section_title: 深度思考情境題
+  text: 情境：你的公司需要建立一個即時戰情室，顯示全台 1000 家門市的即時銷售額。數據源是 Kafka 串流。你會選擇哪種儲存與查詢方案？
+  type: multiple_choice
+  options:
+  - 將數據寫入 HDFS，用 Hive 查詢。
+  - 將數據寫入 Redis 或 HBase，並結合 Spark Streaming 進行即時聚合。
+  - 將數據寫入 MySQL。
+  - 將數據寫入 CSV 文件。
+  correct_index: 1
+  explanation: HDFS/Hive 延遲太高，不適合即時戰情室。MySQL 難以承受高併發寫入。Redis/HBase 具備高吞吐與低延遲特性，配合 Spark Streaming 可實現秒級的即時分析與展示。
+  tags:
+  - chap-m3-ch1
+  - sec-scenario
+- id: 5142
+  chapter_title: 大數據生態系統
+  section_title: 深度思考情境題
+  text: 情境：你需要分析過去 10 年的銷售數據（約 100TB），主要進行依據地區和產品類別的聚合查詢 (Group By)。你會選擇哪種檔案格式存儲這些數據？
+  type: multiple_choice
+  options:
+  - CSV；因為通用。
+  - JSON；因為靈活。
+  - Parquet；因為它是列式儲存，非常適合 OLAP 聚合查詢，且壓縮率高。
+  - Avro；因為寫入快。
+  correct_index: 2
+  explanation: 對於分析型查詢（讀取少數欄位，掃描大量行），列式儲存 (Parquet) 遠優於行式儲存 (CSV, JSON, Avro)。它能跳過不相關的欄位，大幅減少 I/O。
+  tags:
+  - chap-m3-ch1
+  - sec-scenario
+- id: 5143
+  chapter_title: 大數據生態系統
+  section_title: 深度思考情境題
+  text: 情境：你的銀行核心交易系統需要升級資料庫。業務要求絕對的數據一致性，不能有任何差錯。你應該選擇？
+  type: multiple_choice
+  options:
+  - MongoDB (NoSQL)。
+  - Cassandra (AP 系統)。
+  - 支援 ACID 的關聯式資料庫 (RDBMS) 或 CP 型的分散式資料庫。
+  - Redis。
+  correct_index: 2
+  explanation: 金融交易對一致性要求極高（錢不能憑空消失）。必須選擇支援 ACID 事務的資料庫，AP 系統的最終一致性在此場景下是不可接受的。
+  tags:
+  - chap-m3-ch1
+  - sec-scenario
+- id: 5144
+  chapter_title: 大數據生態系統
+  section_title: 深度思考情境題
+  text: 情境：資料科學團隊抱怨從資料倉儲取數據太慢且格式受限，無法進行探索性分析。作為資料架構師，你建議引入什麼架構？
+  type: multiple_choice
+  options:
+  - 刪除資料倉儲。
+  - 建立資料湖 (Data Lake)，讓他們能直接存取原始數據 (Raw Data)，並使用 Spark 等工具進行靈活分析。
+  - 限制他們的使用權限。
+  - 叫他們用 Excel。
+  correct_index: 1
+  explanation: 資料湖補足了資料倉儲的靈活性不足。它保留了數據的原始細節，適合資料科學家進行特徵工程、機器學習等探索性工作。
+  tags:
+  - chap-m3-ch1
+  - sec-scenario
+- id: 5145
+  chapter_title: 大數據生態系統
+  section_title: 深度思考情境題
+  text: 情境：你的 Spark 任務執行非常慢，檢查後發現大量時間花在 Shuffle 階段。這通常意味著什麼？
+  type: multiple_choice
+  options:
+  - 數據量太小。
+  - 寬依賴 (Wide Dependency) 操作 (如 groupByKey, reduceByKey) 導致了大量的跨節點數據傳輸。應嘗試優化算法或增加分區。
+  - CPU 太快。
+  - 記憶體太大。
+  correct_index: 1
+  explanation: Shuffle 是分散式運算的效能瓶頸，涉及網路傳輸與磁碟 I/O。優化 Spark 任務的關鍵往往在於減少 Shuffle 的數據量（例如使用 map-side combine）。
+  tags:
+  - chap-m3-ch1
+  - sec-scenario

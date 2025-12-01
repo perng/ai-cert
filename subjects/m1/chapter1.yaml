@@ -1,0 +1,676 @@
+questions:
+- id: 3101
+  chapter_title: 人工智慧數學基礎
+  section_title: 敘述統計
+  text: 在敘述統計中，哪一個指標最容易受到極端值 (Outliers) 的影響？
+  type: multiple_choice
+  options:
+  - 中位數 (Median)
+  - 眾數 (Mode)
+  - 平均數 (Mean)
+  - 四分位距 (IQR)
+  correct_index: 2
+  explanation: 平均數涉及所有數值的總和，因此極端值會顯著拉高或拉低平均數。中位數和眾數則相對穩健。
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+- id: 3102
+  chapter_title: 人工智慧數學基礎
+  section_title: 敘述統計
+  text: 變異數 (Variance) 與標準差 (Standard Deviation) 的關係為何？
+  type: multiple_choice
+  options:
+  - 標準差是變異數的平方
+  - 變異數是標準差的平方根
+  - 標準差是變異數的平方根
+  - 兩者無關
+  correct_index: 2
+  explanation: 標準差是變異數的平方根 ($\sigma = \sqrt{\sigma^2}$)，這使得標準差的單位與原始數據一致，更直觀。
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+- id: 3103
+  chapter_title: 人工智慧數學基礎
+  section_title: 機率分佈
+  text: 根據「68-95-99.7 法則」，在常態分佈中，約有多少比例的數據落在平均值正負兩個標準差 ($\mu \pm 2\sigma$) 範圍內？
+  type: multiple_choice
+  options:
+  - 68%
+  - 95%
+  - 99.7%
+  - 50%
+  correct_index: 1
+  explanation: 常態分佈的特性是：$\mu \pm 1\sigma$ 涵蓋約 68%，$\mu \pm 2\sigma$ 涵蓋約 95%，$\mu \pm 3\sigma$ 涵蓋約 99.7%。
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+- id: 3104
+  chapter_title: 人工智慧數學基礎
+  section_title: 機率分佈
+  text: 哪一種機率分佈最適合用來描述「投擲一枚硬幣 10 次，出現正面 5 次的機率」？
+  type: multiple_choice
+  options:
+  - 泊松分佈 (Poisson Distribution)
+  - 常態分佈 (Normal Distribution)
+  - 二項式分佈 (Binomial Distribution)
+  - 指數分佈 (Exponential Distribution)
+  correct_index: 2
+  explanation: 二項式分佈描述的是在 $n$ 次獨立的伯努利試驗（只有成功/失敗兩種結果）中，成功 $k$ 次的機率。
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+- id: 3105
+  chapter_title: 人工智慧數學基礎
+  section_title: 假設檢定
+  text: 在假設檢定中，p-value 代表什麼意義？
+  type: multiple_choice
+  options:
+  - 虛無假設 ($H_0$) 為真的機率
+  - 對立假設 ($H_1$) 為真的機率
+  - 在 $H_0$ 為真的前提下，觀察到當前數據的機率
+  - 實驗失敗的機率
+  correct_index: 2
+  explanation: p-value 是在虛無假設成立的條件下，出現目前觀測結果或更極端結果的機率。p 值越小，拒絕 $H_0$ 的證據越強。
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+- id: 3106
+  chapter_title: 人工智慧數學基礎
+  section_title: 線性代數
+  text: 若兩個向量的內積 (Dot Product) 為 0，代表這兩個向量的幾何關係為何？
+  type: multiple_choice
+  options:
+  - 平行
+  - 垂直 (正交)
+  - 相反方向
+  - 長度相等
+  correct_index: 1
+  explanation: 內積公式為 $a \cdot b = ||a|| ||b|| \cos \theta$。當內積為 0 時，$\cos \theta = 0$，即 $\theta = 90^\circ$，表示兩向量垂直（正交）。
+  tags:
+  - chap-m1-ch1
+  - sec-linear-algebra
+- id: 3107
+  chapter_title: 人工智慧數學基礎
+  section_title: 線性代數
+  text: 對於矩陣 $A$，若 $Av = \lambda v$ (其中 $v \neq 0$)，則 $\lambda$ 稱為 $A$ 的什麼？
+  type: multiple_choice
+  options:
+  - 特徵向量 (Eigenvector)
+  - 特徵值 (Eigenvalue)
+  - 行列式 (Determinant)
+  - 逆矩陣 (Inverse Matrix)
+  correct_index: 1
+  explanation: 滿足 $Av = \lambda v$ 的純量 $\lambda$ 稱為矩陣 $A$ 的特徵值，向量 $v$ 稱為對應的特徵向量。
+  tags:
+  - chap-m1-ch1
+  - sec-linear-algebra
+- id: 3108
+  chapter_title: 人工智慧數學基礎
+  section_title: 微積分與最佳化
+  text: 函數 $f(x)$ 在某一點的導數 (Derivative) 代表什麼幾何意義？
+  type: multiple_choice
+  options:
+  - 曲線在該點的高度
+  - 曲線與 x 軸的交點
+  - 曲線在該點的切線斜率 (變化率)
+  - 曲線下的面積
+  correct_index: 2
+  explanation: 導數定義為函數在某一點的切線斜率，反映了函數在該點的瞬時變化率。
+  tags:
+  - chap-m1-ch1
+  - sec-calculus-optimization
+- id: 3109
+  chapter_title: 人工智慧數學基礎
+  section_title: 微積分與最佳化
+  text: 梯度下降 (Gradient Descent) 演算法中，為了最小化損失函數，我們應該沿著梯度的哪個方向更新參數？
+  type: multiple_choice
+  options:
+  - 梯度的方向
+  - 梯度的反方向
+  - 與梯度垂直的方向
+  - 隨機方向
+  correct_index: 1
+  explanation: 梯度指向函數增長最快的方向，因此為了尋找最小值（最小化損失），我們應沿著梯度的反方向（下降最快的方向）移動。
+  tags:
+  - chap-m1-ch1
+  - sec-calculus-optimization
+- id: 3110
+  chapter_title: 人工智慧數學基礎
+  section_title: 微積分與最佳化
+  text: 在梯度下降中，若「學習率 (Learning Rate)」設定過大，可能會發生什麼後果？
+  type: multiple_choice
+  options:
+  - 收斂速度過慢
+  - 陷入局部最小值
+  - 在最小值附近震盪或發散，無法收斂
+  - 計算精度提高
+  correct_index: 2
+  explanation: 學習率控制每次參數更新的步長。若太大，步長過大可能會跨過最低點，導致在最小值附近震盪甚至發散。
+  tags:
+  - chap-m1-ch1
+  - sec-calculus-optimization
+- id: 3111
+  chapter_title: 人工智慧數學基礎
+  section_title: 機率分佈
+  text: 貝氏定理 (Bayes' Theorem) 的核心公式是？
+  type: multiple_choice
+  options:
+  - $P(A|B) = P(B|A)P(A) / P(B)$
+  - $P(A|B) = P(A)P(B)$
+  - $P(A|B) = P(A) + P(B)$
+  - $P(A|B) = P(B|A)$
+  correct_index: 0
+  explanation: 貝氏定理描述了在已知 B 發生的條件下 A 發生的機率，公式為 $P(A|B) = \frac{P(B|A)P(A)}{P(B)}$。
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+- id: 3112
+  chapter_title: 人工智慧數學基礎
+  section_title: 線性代數
+  text: 單位矩陣 (Identity Matrix) $I$ 的特性是？
+  type: multiple_choice
+  options:
+  - 所有元素皆為 1
+  - 對角線元素為 1，其餘為 0
+  - 對角線元素為 0，其餘為 1
+  - 行列式為 0
+  correct_index: 1
+  explanation: 單位矩陣是對角線上元素為 1，其餘元素為 0 的方陣。任何矩陣與其相乘都等於原矩陣。
+  tags:
+  - chap-m1-ch1
+  - sec-linear-algebra
+- id: 3113
+  chapter_title: 人工智慧數學基礎
+  section_title: 線性代數
+  text: 矩陣乘法 $AB$ 成立的條件是？
+  type: multiple_choice
+  options:
+  - A 的列數等於 B 的行數
+  - A 的行數等於 B 的列數
+  - A 和 B 的維度完全相同
+  - A 和 B 必須是方陣
+  correct_index: 1
+  explanation: 若 A 是 $m \times n$ 矩陣，B 是 $p \times q$ 矩陣，則必須 $n = p$ (A 的行數等於 B 的列數) 才能相乘。
+  tags:
+  - chap-m1-ch1
+  - sec-linear-algebra
+- id: 3114
+  chapter_title: 人工智慧數學基礎
+  section_title: 微積分與最佳化
+  text: 偏導數 (Partial Derivative) 是針對多變數函數的哪種運算？
+  type: multiple_choice
+  options:
+  - 對所有變數同時微分
+  - 對其中一個變數微分，將其他變數視為常數
+  - 對函數積分
+  - 計算函數的極限
+  correct_index: 1
+  explanation: 偏導數 $\frac{\partial f}{\partial x}$ 表示在保持其他變數不變的情況下，函數隨 $x$ 的變化率。
+  tags:
+  - chap-m1-ch1
+  - sec-calculus-optimization
+- id: 3115
+  chapter_title: 人工智慧數學基礎
+  section_title: 微積分與最佳化
+  text: 連鎖律 (Chain Rule) 用於計算什麼函數的導數？
+  type: multiple_choice
+  options:
+  - 多項式函數
+  - 複合函數 (Composite Function)
+  - 指數函數
+  - 對數函數
+  correct_index: 1
+  explanation: 連鎖律是用於計算複合函數導數的法則，即 $\frac{d}{dx}f(g(x)) = f'(g(x))g'(x)$。
+  tags:
+  - chap-m1-ch1
+  - sec-calculus-optimization
+- id: 3116
+  chapter_title: 人工智慧數學基礎
+  section_title: 機率分佈
+  text: 兩個事件 A 和 B 獨立 (Independent) 意味著？
+  type: multiple_choice
+  options:
+  - $P(A \cap B) = 0$
+  - $P(A \cap B) = P(A) + P(B)$
+  - $P(A \cap B) = P(A)P(B)$
+  - $P(A|B) = 0$
+  correct_index: 2
+  explanation: 若 A 與 B 獨立，則 A 的發生不影響 B，且兩者同時發生的機率等於各自發生機率的乘積。
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+- id: 3117
+  chapter_title: 人工智慧數學基礎
+  section_title: 機率分佈
+  text: 期望值 (Expectation) $E[X]$ 在幾何上對應於機率分佈的？
+  type: multiple_choice
+  options:
+  - 重心 (Center of Mass) 或平均位置
+  - 最高點
+  - 寬度
+  - 面積
+  correct_index: 0
+  explanation: 期望值是隨機變數的加權平均，幾何上對應於機率密度函數圖形的重心。
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+- id: 3118
+  chapter_title: 人工智慧數學基礎
+  section_title: 線性代數
+  text: 轉置矩陣 (Transpose Matrix) $A^T$ 是如何從 $A$ 得到的？
+  type: multiple_choice
+  options:
+  - 將所有元素取倒數
+  - 將所有元素變號
+  - 將列與行互換
+  - 將矩陣旋轉 90 度
+  correct_index: 2
+  explanation: 轉置矩陣是將原矩陣的第 $i$ 列變成第 $i$ 行，即 $A^T_{ij} = A_{ji}$。
+  tags:
+  - chap-m1-ch1
+  - sec-linear-algebra
+- id: 3119
+  chapter_title: 人工智慧數學基礎
+  section_title: 線性代數
+  text: 向量的 L2 範數 (Norm) 通常用來表示向量的？
+  type: multiple_choice
+  options:
+  - 方向
+  - 長度 (歐幾里得距離)
+  - 維度
+  - 總和
+  correct_index: 1
+  explanation: L2 範數 $||x||_2 = \sqrt{\sum x_i^2}$ 代表向量在歐幾里得空間中的長度。
+  tags:
+  - chap-m1-ch1
+  - sec-linear-algebra
+- id: 3120
+  chapter_title: 人工智慧數學基礎
+  section_title: 假設檢定
+  text: 型一錯誤 (Type I Error) 又稱為？
+  type: multiple_choice
+  options:
+  - 偽陰性 (False Negative)
+  - 偽陽性 (False Positive)
+  - 系統誤差
+  - 隨機誤差
+  correct_index: 1
+  explanation: 型一錯誤是指虛無假設為真卻被拒絕，即「無中生有」，稱為偽陽性。
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+- id: 3121
+  chapter_title: 人工智慧數學基礎
+  section_title: 假設檢定
+  text: 顯著水準 (Significance Level) $\alpha$ 通常設定為？
+  type: multiple_choice
+  options:
+  - 0.5
+  - 0.05
+  - 0.001
+  - 0.95
+  correct_index: 1
+  explanation: 統計學中常用的顯著水準是 0.05 (5%)，表示我們願意承擔 5% 的機率犯型一錯誤。
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+- id: 3122
+  chapter_title: 人工智慧數學基礎
+  section_title: 微積分與最佳化
+  text: 凸函數 (Convex Function) 的一個重要特性是？
+  type: multiple_choice
+  options:
+  - 有多個局部最小值
+  - 局部最小值即為全域最小值
+  - 沒有最小值
+  - 導數恆為正
+  correct_index: 1
+  explanation: 凸函數的幾何形狀像一個碗，保證了梯度下降法能找到全域最小值，不會陷入局部最佳解。
+  tags:
+  - chap-m1-ch1
+  - sec-calculus-optimization
+- id: 3123
+  chapter_title: 人工智慧數學基礎
+  section_title: 機率分佈
+  text: 中央極限定理 (Central Limit Theorem) 指出，當樣本數夠大時，樣本平均數的抽樣分佈會趨近於？
+  type: multiple_choice
+  options:
+  - 均勻分佈
+  - 常態分佈
+  - 泊松分佈
+  - 指數分佈
+  correct_index: 1
+  explanation: 中央極限定理是統計學的基石，指出無論母體分佈為何，只要樣本數夠大，樣本平均數的分佈都會近似常態分佈。
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+- id: 3124
+  chapter_title: 人工智慧數學基礎
+  section_title: 線性代數
+  text: 兩個非零向量正交 (Orthogonal) 時，它們的夾角是？
+  type: multiple_choice
+  options:
+  - 0 度
+  - 45 度
+  - 90 度
+  - 180 度
+  correct_index: 2
+  explanation: 正交即垂直，夾角為 90 度 ($\pi/2$)。
+  tags:
+  - chap-m1-ch1
+  - sec-linear-algebra
+- id: 3125
+  chapter_title: 人工智慧數學基礎
+  section_title: 線性代數
+  text: 矩陣的秩 (Rank) 代表什麼？
+  type: multiple_choice
+  options:
+  - 矩陣中元素的總和
+  - 矩陣中線性獨立的列 (或行) 的最大數量
+  - 矩陣的行數
+  - 矩陣的列數
+  correct_index: 1
+  explanation: 秩反映了矩陣所包含的資訊量或維度，即線性獨立向量的個數。
+  tags:
+  - chap-m1-ch1
+  - sec-linear-algebra
+- id: 3126
+  chapter_title: 人工智慧數學基礎
+  section_title: 微積分與最佳化
+  text: 在反向傳播中，我們計算損失函數對權重的梯度是為了？
+  type: multiple_choice
+  options:
+  - 增加損失
+  - 更新權重以減少損失
+  - 計算準確率
+  - 評估模型複雜度
+  correct_index: 1
+  explanation: 計算梯度的目的是為了知道如何調整權重（沿梯度反方向），使損失函數值下降。
+  tags:
+  - chap-m1-ch1
+  - sec-calculus-optimization
+- id: 3127
+  chapter_title: 人工智慧數學基礎
+  section_title: 機率分佈
+  text: 條件機率 $P(A|B)$ 的定義是？
+  type: multiple_choice
+  options:
+  - 在 A 發生的條件下 B 發生的機率
+  - 在 B 發生的條件下 A 發生的機率
+  - A 和 B 同時發生的機率
+  - A 或 B 發生的機率
+  correct_index: 1
+  explanation: $P(A|B)$ 讀作「在 B 給定下 A 的機率」，即已知 B 發生後 A 發生的可能性。
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+- id: 3128
+  chapter_title: 人工智慧數學基礎
+  section_title: 假設檢定
+  text: 對立假設 (Alternative Hypothesis, $H_1$) 通常代表？
+  type: multiple_choice
+  options:
+  - 現狀或無效應
+  - 研究者想要證明的效應或差異
+  - 實驗失敗
+  - 數據錯誤
+  correct_index: 1
+  explanation: 虛無假設 $H_0$ 通常代表「無差異」，而對立假設 $H_1$ 是研究者希望收集證據支持的假設（有差異、有效應）。
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+- id: 3129
+  chapter_title: 人工智慧數學基礎
+  section_title: 線性代數
+  text: 逆矩陣 (Inverse Matrix) $A^{-1}$ 滿足什麼性質？
+  type: multiple_choice
+  options:
+  - $AA^{-1} = A$
+  - $AA^{-1} = I$ (單位矩陣)
+  - $AA^{-1} = 0$
+  - $A^{-1} = A^T$
+  correct_index: 1
+  explanation: 矩陣與其逆矩陣相乘等於單位矩陣 $I$。
+  tags:
+  - chap-m1-ch1
+  - sec-linear-algebra
+- id: 3130
+  chapter_title: 人工智慧數學基礎
+  section_title: 微積分與最佳化
+  text: 隨機梯度下降 (SGD) 中的「隨機」指的是？
+  type: multiple_choice
+  options:
+  - 隨機初始化權重
+  - 每次更新只隨機選取一個（或一批）樣本來計算梯度
+  - 隨機調整學習率
+  - 隨機選擇損失函數
+  correct_index: 1
+  explanation: SGD 不使用全體數據計算梯度，而是隨機抽取樣本，這引入了隨機性但加快了計算。
+  tags:
+  - chap-m1-ch1
+  - sec-calculus-optimization
+- id: 3131
+  chapter_title: 人工智慧數學基礎
+  section_title: 機率分佈
+  text: 伯努利試驗 (Bernoulli Trial) 的特點是？
+  type: multiple_choice
+  options:
+  - 有無限多種結果
+  - 只有兩種可能的結果（成功/失敗）
+  - 結果是連續的數值
+  - 每次試驗結果互相影響
+  correct_index: 1
+  explanation: 伯努利試驗是最簡單的隨機試驗，只有兩種互斥結果，如投硬幣。
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+- id: 3132
+  chapter_title: 人工智慧數學基礎
+  section_title: 線性代數
+  text: 兩個向量線性相依 (Linearly Dependent) 表示？
+  type: multiple_choice
+  options:
+  - 它們互相垂直
+  - 它們長度相等
+  - 其中一個向量可以表示為另一個向量的純量倍數
+  - 它們的內積為 0
+  correct_index: 2
+  explanation: 線性相依意味著向量之間存在冗餘，一個向量可以由其他向量線性組合而成（在二維中即平行）。
+  tags:
+  - chap-m1-ch1
+  - sec-linear-algebra
+- id: 3133
+  chapter_title: 人工智慧數學基礎
+  section_title: 微積分與最佳化
+  text: 鞍點 (Saddle Point) 在最佳化中的特徵是？
+  type: multiple_choice
+  options:
+  - 梯度不為 0
+  - 梯度為 0，但不是極大值也不是極小值
+  - 是全域最小值
+  - 是全域最大值
+  correct_index: 1
+  explanation: 鞍點處的梯度為 0，但在某些方向上是極小值，在另一些方向上是極大值（形狀像馬鞍），會阻礙梯度下降。
+  tags:
+  - chap-m1-ch1
+  - sec-calculus-optimization
+- id: 3134
+  chapter_title: 人工智慧數學基礎
+  section_title: 假設檢定
+  text: 雙尾檢定 (Two-tailed Test) 用於檢驗？
+  type: multiple_choice
+  options:
+  - 參數是否大於某個值
+  - 參數是否小於某個值
+  - 參數是否不等於某個值（差異可能在任何方向）
+  - 樣本數是否足夠
+  correct_index: 2
+  explanation: 雙尾檢定關注的是「有無差異」，而不論差異的方向（大於或小於）。
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+- id: 3135
+  chapter_title: 人工智慧數學基礎
+  section_title: 線性代數
+  text: 張量 (Tensor) 是什麼的推廣？
+  type: multiple_choice
+  options:
+  - 僅限於矩陣
+  - 純量、向量和矩陣到更高維度
+  - 僅限於向量
+  - 複數
+  correct_index: 1
+  explanation: 張量是多維陣列的通稱。0 階張量是純量，1 階是向量，2 階是矩陣，3 階以上稱為高階張量。
+  tags:
+  - chap-m1-ch1
+  - sec-linear-algebra
+- id: 3136
+  chapter_title: 人工智慧數學基礎
+  section_title: 微積分與最佳化
+  text: 在深度學習中，Hessian 矩陣包含函數的？
+  type: multiple_choice
+  options:
+  - 一階導數
+  - 二階偏導數
+  - 積分值
+  - 預測值
+  correct_index: 1
+  explanation: Hessian 矩陣由多變數函數的所有二階偏導數組成，描述了函數的曲率。
+  tags:
+  - chap-m1-ch1
+  - sec-calculus-optimization
+- id: 3137
+  chapter_title: 人工智慧數學基礎
+  section_title: 機率分佈
+  text: 聯合機率 (Joint Probability) $P(A, B)$ 表示？
+  type: multiple_choice
+  options:
+  - A 或 B 發生的機率
+  - A 和 B 同時發生的機率
+  - A 發生且 B 不發生的機率
+  - A 發生的機率
+  correct_index: 1
+  explanation: 聯合機率描述兩個事件同時發生的可能性。
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+- id: 3138
+  chapter_title: 人工智慧數學基礎
+  section_title: 線性代數
+  text: 矩陣的跡 (Trace) 是指？
+  type: multiple_choice
+  options:
+  - 所有元素的乘積
+  - 主對角線元素的總和
+  - 第一列元素的總和
+  - 最後一行元素的總和
+  correct_index: 1
+  explanation: Trace 是方陣主對角線上所有元素的和，具有基底變換不變性等重要性質。
+  tags:
+  - chap-m1-ch1
+  - sec-linear-algebra
+- id: 3139
+  chapter_title: 人工智慧數學基礎
+  section_title: 假設檢定
+  text: 自由度 (Degrees of Freedom) 通常與什麼有關？
+  type: multiple_choice
+  options:
+  - 樣本數
+  - 變數的單位
+  - 顯著水準
+  - 母體大小
+  correct_index: 0
+  explanation: 自由度通常取決於樣本數（如 $n-1$），影響 t 分佈或卡方分佈的形狀。
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+- id: 3140
+  chapter_title: 人工智慧數學基礎
+  section_title: 微積分與最佳化
+  text: 泰勒展開式 (Taylor Series) 的主要用途是？
+  type: multiple_choice
+  options:
+  - 計算矩陣的逆
+  - 用多項式近似複雜函數
+  - 解決線性方程組
+  - 進行數據分類
+  correct_index: 1
+  explanation: 泰勒展開式利用函數在某點的導數值，將複雜函數表示為無窮級數（多項式），便於分析和近似計算。
+  tags:
+  - chap-m1-ch1
+  - sec-calculus-optimization
+- id: 3141
+  chapter_title: 人工智慧數學基礎
+  section_title: 深度思考情境題
+  text: 情境：你正在開發一個用於檢測罕見疾病的 AI 模型。該疾病的發病率僅為 0.1%。如果你訓練的模型預測所有人都「沒病」，其準確率 (Accuracy) 將高達 99.9%。請問這個指標是否足以評估模型好壞？為什麼？
+  type: multiple_choice
+  options:
+  - 足以，因為 99.9% 準確率非常高。
+  - 不足以，因為這忽略了偽陽性。
+  - 不足以，應參考召回率 (Recall) 或 F1-score。
+  - 足以，只要模型運算速度夠快。
+  correct_index: 2
+  explanation: 在類別不平衡（Imbalanced Data）問題中，準確率 (Accuracy) 往往具有欺騙性。模型只需盲目猜測多數類別即可獲得高分，但對於我們真正關心的少數類別（罕見病）卻毫無偵測能力。因此需使用 Recall, Precision 或 F1-score 等指標。
+  tags:
+  - chap-m1-ch1
+  - sec-scenario
+- id: 3142
+  chapter_title: 人工智慧數學基礎
+  section_title: 深度思考情境題
+  text: 情境：在訓練神經網路時，你發現損失函數 (Loss) 在訓練集上持續下降，但在驗證集 (Validation Set) 上卻開始上升。這代表發生了什麼現象？應採取什麼數學上的策略來解決？
+  type: multiple_choice
+  options:
+  - 欠擬合 (Underfitting)；應增加模型複雜度。
+  - 過擬合 (Overfitting)；應使用正則化 (Regularization)。
+  - 梯度消失；應更換活化函數。
+  - 學習率過大；應降低學習率。
+  correct_index: 1
+  explanation: 訓練集表現好但驗證集表現變差是典型的過擬合現象。數學上，這意味著模型擬合了訓練數據中的雜訊。解決方案包括在損失函數中加入正則化項（限制權重大小）或使用 Dropout 等技術。
+  tags:
+  - chap-m1-ch1
+  - sec-scenario
+- id: 3143
+  chapter_title: 人工智慧數學基礎
+  section_title: 深度思考情境題
+  text: 情境：某電商平台希望透過 A/B 測試來評估新版網頁是否能提升購買率。經過一週測試，A 組購買率 5.0%，B 組 5.2%，p-value 為 0.03。若顯著水準設為 0.05，你應如何解讀並建議？
+  type: multiple_choice
+  options:
+  - p-value < 0.05，差異顯著，建議採用 B 版網頁。
+  - p-value < 0.05，差異不顯著，建議維持 A 版。
+  - 雖然統計顯著，但 0.2% 的提升可能不具商業實質意義。
+  - 數據不足，無法判斷。
+  correct_index: 2
+  explanation: 雖然 p < 0.05 達到統計顯著性，但在商業決策中，還需考慮「實質顯著性」。0.2% 的微幅提升是否值得投入巨大的改版成本？這需要結合商業邏輯（如預期營收增加 vs 開發成本）進行綜合判斷，而非僅看 p-value。
+  tags:
+  - chap-m1-ch1
+  - sec-scenario
+- id: 3144
+  chapter_title: 人工智慧數學基礎
+  section_title: 深度思考情境題
+  text: 情境：在使用梯度下降法訓練模型時，若損失函數的曲面呈現狹長的峽谷狀（在一個方向坡度陡，另一個方向坡度緩），標準 SGD 容易發生什麼問題？應如何改善？
+  type: multiple_choice
+  options:
+  - 收斂過快；應減少學習率。
+  - 在峽谷壁間來回震盪，收斂緩慢；應使用動量 (Momentum) 或自適應學習率優化器。
+  - 直接發散；應增加批次大小。
+  - 陷入局部最小值；應使用隨機初始化。
+  correct_index: 1
+  explanation: 在狹長峽谷狀的損失曲面上，SGD 容易在陡峭方向上大幅震盪，而在平緩方向上移動緩慢。動量法 (Momentum) 能累積過去的梯度方向，加速通過平緩區並抑制震盪；Adam 等自適應方法則能針對不同參數調整學習率，有效解決此問題。
+  tags:
+  - chap-m1-ch1
+  - sec-scenario
+- id: 3145
+  chapter_title: 人工智慧數學基礎
+  section_title: 深度思考情境題
+  text: 情境：你正在處理一個高維度的數據集（如 1000 個特徵），打算使用 PCA 進行降維。PCA 透過特徵值分解找到主成分。若前兩個主成分的特徵值總和佔所有特徵值總和的 95%，這代表什麼幾何意義？
+  type: multiple_choice
+  options:
+  - 數據在二維空間中是線性不可分的。
+  - 數據 95% 的變異量 (Variance) 集中在由這兩個主成分構成的二維平面上。
+  - 數據有 95% 是雜訊。
+  - 剩下的 998 個維度完全沒有用。
+  correct_index: 1
+  explanation: PCA 的特徵值代表了對應主成分方向上的變異量。若前兩個主成分解釋了 95% 的總變異，意味著數據的主要結構（資訊）幾乎都保留在這 2D 平面上，這為高維數據的視覺化和簡化提供了強有力的數學依據。
+  tags:
+  - chap-m1-ch1
+  - sec-scenario

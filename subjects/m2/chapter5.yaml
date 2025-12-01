@@ -1,0 +1,676 @@
+questions:
+- id: 4501
+  chapter_title: 系統部署與 MLOps
+  section_title: MLOps 核心概念
+  text: MLOps 的主要目標是？
+  type: multiple_choice
+  options:
+  - 增加模型複雜度
+  - 整合開發 (Development) 與營運 (Operations)
+  - 減少數據量
+  - 降低硬體成本
+  correct_index: 1
+  explanation: MLOps 借鑑 DevOps 理念，旨在解決 AI 模型從實驗室到生產環境的「最後一哩路」問題，確保高效、穩定的交付。
+  tags:
+  - chap-m2-ch5
+  - sec-mlops-core
+- id: 4502
+  chapter_title: 系統部署與 MLOps
+  section_title: 模型部署策略
+  text: 邊緣運算 (Edge Computing) 的主要優勢是？
+  type: multiple_choice
+  options:
+  - 運算能力最強
+  - 低延遲、保護隱私 (數據不出設備)、節省頻寬
+  - 儲存空間無限
+  - 維護最簡單
+  correct_index: 1
+  explanation: 將計算移至數據源頭（如手機、IoT），避免了將數據傳回雲端的延遲與隱私風險。
+  tags:
+  - chap-m2-ch5
+  - sec-deployment-strategies
+- id: 4503
+  chapter_title: 系統部署與 MLOps
+  section_title: 模型部署策略
+  text: 哪種部署策略最適合對資料隱私高度敏感的金融或醫療機構？
+  type: multiple_choice
+  options:
+  - 公有雲部署 (Public Cloud)
+  - 私有雲部署 (Private Cloud)
+  - 混合部署
+  - 邊緣部署
+  correct_index: 1
+  explanation: 私有雲提供專屬的基礎設施，企業能完全掌控資料流向與安全政策，符合嚴格的合規要求。
+  tags:
+  - chap-m2-ch5
+  - sec-deployment-strategies
+- id: 4504
+  chapter_title: 系統部署與 MLOps
+  section_title: 微服務架構
+  text: 微服務架構 (Microservices) 的核心特點是？
+  type: multiple_choice
+  options:
+  - 所有功能打包在一個巨大程式中 (Monolithic)
+  - 將應用程式拆解為一組小型、獨立部署且單一職責的服務
+  - 只能使用 Python 開發
+  - 不使用 API
+  correct_index: 1
+  explanation: 微服務強調解耦，每個服務獨立運行、獨立擴展，提升了系統的靈活性與容錯能力。
+  tags:
+  - chap-m2-ch5
+  - sec-microservices
+- id: 4505
+  chapter_title: 系統部署與 MLOps
+  section_title: AI 系統整合
+  text: API Gateway 在 AI 系統中的作用是？
+  type: multiple_choice
+  options:
+  - 訓練模型
+  - 統一管理外部請求，負責流量控管、身份驗證與日誌記錄
+  - 儲存數據
+  - 清洗數據
+  correct_index: 1
+  explanation: API Gateway 是系統的大門，保護後端微服務不直接暴露，並提供統一的接入點與安全管理。
+  tags:
+  - chap-m2-ch5
+  - sec-system-integration
+- id: 4506
+  chapter_title: 系統部署與 MLOps
+  section_title: AI 的持續整合/持續部署 (CI/CD)
+  text: 持續整合 (CI) 中的「自動化測試」通常不包括？
+  type: multiple_choice
+  options:
+  - 單元測試 (Unit Test)
+  - 數據驗證 (Data Validation)
+  - 人工手動測試
+  - 模型評估 (Model Evaluation)
+  correct_index: 2
+  explanation: CI 強調「自動化」。凡是需要人工介入的測試都不屬於自動化測試範疇，會拖慢整合速度。
+  tags:
+  - chap-m2-ch5
+  - sec-cicd4ai
+- id: 4507
+  chapter_title: 系統部署與 MLOps
+  section_title: AI 的持續整合/持續部署 (CI/CD)
+  text: 藍綠部署 (Blue-Green Deployment) 的運作方式是？
+  type: multiple_choice
+  options:
+  - 直接覆蓋舊版本
+  - 同時運行新舊兩個版本，確認新版無誤後瞬間切換流量
+  - 只讓 5% 用戶使用新版
+  - 隨機部署
+  correct_index: 1
+  explanation: 藍綠部署透過並行環境實現零停機 (Zero Downtime) 更新，且若新版有問題可隨時切回舊版。
+  tags:
+  - chap-m2-ch5
+  - sec-cicd4ai
+- id: 4508
+  chapter_title: 系統部署與 MLOps
+  section_title: 監控與維護
+  text: 概念漂移 (Concept Drift) 是指？
+  type: multiple_choice
+  options:
+  - 輸入數據的分佈改變
+  - 輸入與輸出之間的映射關係發生根本性變化
+  - 模型參數改變
+  - 硬體老化
+  correct_index: 1
+  explanation: 例如，「垃圾郵件」的定義隨時間改變（駭客換手法），即使輸入數據特徵沒變，舊模型的判斷邏輯也失效了。
+  tags:
+  - chap-m2-ch5
+  - sec-monitoring
+- id: 4509
+  chapter_title: 系統部署與 MLOps
+  section_title: 監控與維護
+  text: 常用的開源監控與視覺化工具組合是？
+  type: multiple_choice
+  options:
+  - Word + Excel
+  - Prometheus + Grafana
+  - Photoshop + Illustrator
+  - Notepad + Paint
+  correct_index: 1
+  explanation: Prometheus 負責收集時間序列數據（指標），Grafana 負責將這些數據繪製成漂亮的儀表板。
+  tags:
+  - chap-m2-ch5
+  - sec-monitoring
+- id: 4510
+  chapter_title: 系統部署與 MLOps
+  section_title: 部署後優化與績效指標
+  text: 系統層級的關鍵效能指標 (KPI) 包括？
+  type: multiple_choice
+  options:
+  - 準確率 (Accuracy)
+  - 投資報酬率 (ROI)
+  - 推論延遲 (Latency) 與吞吐量 (Throughput)
+  - 召回率 (Recall)
+  correct_index: 2
+  explanation: 系統層級關注「跑得快不快、穩不穩」，而非模型「準不準」（那是應用層級）。
+  tags:
+  - chap-m2-ch5
+  - sec-post-deployment
+- id: 4511
+  chapter_title: 系統部署與 MLOps
+  section_title: 微服務架構
+  text: Docker 容器化技術在微服務中的主要好處是？
+  type: multiple_choice
+  options:
+  - 提高運算速度
+  - 確保環境一致性，實現「一次構建，到處運行」
+  - 減少硬碟空間
+  - 自動寫程式
+  correct_index: 1
+  explanation: Docker 將程式碼與依賴環境打包，解決了依賴衝突問題，是微服務部署的標準載體。
+  tags:
+  - chap-m2-ch5
+  - sec-microservices
+- id: 4512
+  chapter_title: 系統部署與 MLOps
+  section_title: AI 系統整合
+  text: RESTful API 通常使用哪種格式傳輸數據？
+  type: multiple_choice
+  options:
+  - XML
+  - JSON
+  - Binary
+  - CSV
+  correct_index: 1
+  explanation: JSON (JavaScript Object Notation) 輕量且易讀，是現代 Web API 最通用的資料交換格式。
+  tags:
+  - chap-m2-ch5
+  - sec-system-integration
+- id: 4513
+  chapter_title: 系統部署與 MLOps
+  section_title: AI 的持續整合/持續部署 (CI/CD)
+  text: 金絲雀部署 (Canary Deployment) 的名稱由來是？
+  type: multiple_choice
+  options:
+  - 礦工帶金絲雀下礦坑偵測瓦斯
+  - 金絲雀很漂亮
+  - 金絲雀飛得快
+  - 金絲雀喜歡唱歌
+  correct_index: 0
+  explanation: 就像礦工用金絲雀偵測危險，軟體部署先讓小部分用戶試用新版（當白老鼠），若無問題才全面開放。
+  tags:
+  - chap-m2-ch5
+  - sec-cicd4ai
+- id: 4514
+  chapter_title: 系統部署與 MLOps
+  section_title: 監控與維護
+  text: 自動重新訓練 (Auto-retraining) 通常在什麼情況下觸發？
+  type: multiple_choice
+  options:
+  - 每天固定時間
+  - 偵測到顯著的模型漂移或數據漂移時
+  - 隨機觸發
+  - 手動觸發
+  correct_index: 1
+  explanation: 這是 MLOps 的閉環關鍵。當監控指標顯示模型「過期」了，系統自動啟動再訓練以維持效能。
+  tags:
+  - chap-m2-ch5
+  - sec-monitoring
+- id: 4515
+  chapter_title: 系統部署與 MLOps
+  section_title: 部署後優化與績效指標
+  text: 回饋迴圈 (Feedback Loop) 的作用是？
+  type: multiple_choice
+  options:
+  - 讓用戶投訴
+  - 收集實際運行數據與錯誤樣本，作為下一次模型迭代的養分
+  - 增加系統負載
+  - 減少數據量
+  correct_index: 1
+  explanation: AI 系統不是靜態的。透過收集真實世界的反饋（特別是模型做錯的案例），持續訓練，模型才會越來越聰明。
+  tags:
+  - chap-m2-ch5
+  - sec-post-deployment
+- id: 4516
+  chapter_title: 系統部署與 MLOps
+  section_title: AI 系統整合
+  text: JWT (JSON Web Token) 主要用於？
+  type: multiple_choice
+  options:
+  - 數據加密
+  - 身份驗證與授權 (Authentication & Authorization)
+  - 數據壓縮
+  - 模型訓練
+  correct_index: 1
+  explanation: JWT 是一種無狀態的認證機制，廣泛用於 API 的身份驗證，確保只有合法用戶能存取服務。
+  tags:
+  - chap-m2-ch5
+  - sec-system-integration
+- id: 4517
+  chapter_title: 系統部署與 MLOps
+  section_title: 模型部署策略
+  text: 混合部署 (Hybrid Deployment) 通常結合了？
+  type: multiple_choice
+  options:
+  - Windows 和 Linux
+  - 公有雲、私有雲或邊緣架構
+  - 手機和電腦
+  - 軟體和硬體
+  correct_index: 1
+  explanation: 混合架構能靈活運用各方優勢，例如在雲端訓練（算力強），在邊緣推論（速度快）。
+  tags:
+  - chap-m2-ch5
+  - sec-deployment-strategies
+- id: 4518
+  chapter_title: 系統部署與 MLOps
+  section_title: AI 的持續整合/持續部署 (CI/CD)
+  text: 持續交付 (Continuous Delivery) 與持續部署 (Continuous Deployment) 的主要差異在於？
+  type: multiple_choice
+  options:
+  - 是否自動化測試
+  - 部署到生產環境前是否需要「人工審核」
+  - 使用的工具不同
+  - 針對的語言不同
+  correct_index: 1
+  explanation: 持續交付在部署到 Production 前會停下來等人工按鈕確認；持續部署則是全自動，測試過了就直接上線。
+  tags:
+  - chap-m2-ch5
+  - sec-cicd4ai
+- id: 4519
+  chapter_title: 系統部署與 MLOps
+  section_title: 監控與維護
+  text: 數據漂移 (Data Drift) 的一個例子是？
+  type: multiple_choice
+  options:
+  - 訓練數據是夏天的銷量，預測時卻是冬天
+  - 硬碟壞軌
+  - 程式碼 Bug
+  - 網路斷線
+  correct_index: 0
+  explanation: 季節變化導致數據分佈改變（夏天賣冰，冬天賣火鍋），模型若沒更新就會預測失準。
+  tags:
+  - chap-m2-ch5
+  - sec-monitoring
+- id: 4520
+  chapter_title: 系統部署與 MLOps
+  section_title: 微服務架構
+  text: Kubernetes (K8s) 的主要功能是？
+  type: multiple_choice
+  options:
+  - 訓練模型
+  - 容器編排與管理 (Orchestration)，負責自動部署、擴展與管理容器化應用
+  - 寫程式
+  - 編輯圖片
+  correct_index: 1
+  explanation: K8s 是管理大規模 Docker 容器叢集的標準工具，確保服務的高可用性與自動擴展。
+  tags:
+  - chap-m2-ch5
+  - sec-microservices
+- id: 4521
+  chapter_title: 系統部署與 MLOps
+  section_title: AI 系統整合
+  text: Service Mesh 的作用是？
+  type: multiple_choice
+  options:
+  - 繪製 3D 網格
+  - 作為微服務間的通訊基礎設施，管理服務發現、負載均衡與安全
+  - 清洗數據
+  - 訓練神經網路
+  correct_index: 1
+  explanation: 在複雜的微服務架構中，Service Mesh（如 Istio）接管了服務間的通訊邏輯，讓開發者專注於業務邏輯。
+  tags:
+  - chap-m2-ch5
+  - sec-system-integration
+- id: 4522
+  chapter_title: 系統部署與 MLOps
+  section_title: AI 的持續整合/持續部署 (CI/CD)
+  text: DVC (Data Version Control) 用於管理？
+  type: multiple_choice
+  options:
+  - 程式碼版本
+  - 數據與模型的版本
+  - 文件版本
+  - 作業系統版本
+  correct_index: 1
+  explanation: Git 不適合管理大檔案。DVC 專為機器學習設計，能追蹤數據集與模型檔案的變更歷史。
+  tags:
+  - chap-m2-ch5
+  - sec-cicd4ai
+- id: 4523
+  chapter_title: 系統部署與 MLOps
+  section_title: 監控與維護
+  text: 為了檢測模型是否過時，我們主要監控？
+  type: multiple_choice
+  options:
+  - CPU 溫度
+  - 模型效能指標 (如準確率、F1-Score) 的變化趨勢
+  - 記憶體使用量
+  - 硬碟剩餘空間
+  correct_index: 1
+  explanation: 當準確率隨時間顯著下降，就是模型漂移的警訊，提示需要重新訓練。
+  tags:
+  - chap-m2-ch5
+  - sec-monitoring
+- id: 4524
+  chapter_title: 系統部署與 MLOps
+  section_title: 部署後優化與績效指標
+  text: A/B 測試在模型部署中的目的是？
+  type: multiple_choice
+  options:
+  - 測試 A 和 B 兩個工程師的能力
+  - 比較兩個模型版本在真實環境中的業務表現，以決定哪個更好
+  - 隨機選擇
+  - 節省流量
+  correct_index: 1
+  explanation: A/B 測試是驗證模型商業價值的黃金標準，讓數據說話。
+  tags:
+  - chap-m2-ch5
+  - sec-post-deployment
+- id: 4525
+  chapter_title: 系統部署與 MLOps
+  section_title: AI 系統整合
+  text: gRPC 相比於 RESTful API 的優勢是？
+  type: multiple_choice
+  options:
+  - 更容易閱讀
+  - 基於 HTTP/2 和 Protobuf，傳輸效率更高，延遲更低
+  - 支援瀏覽器
+  - 不需要定義介面
+  correct_index: 1
+  explanation: gRPC 使用二進位傳輸，效率遠高於文字格式的 JSON，適合內部微服務間的高頻通訊。
+  tags:
+  - chap-m2-ch5
+  - sec-system-integration
+- id: 4526
+  chapter_title: 系統部署與 MLOps
+  section_title: 模型部署策略
+  text: 雲端部署的一個潛在缺點是？
+  type: multiple_choice
+  options:
+  - 算力不足
+  - 長期營運成本可能較高，且存在資料傳輸延遲
+  - 無法擴展
+  - 維護困難
+  correct_index: 1
+  explanation: 雖然雲端彈性好，但持續的租賃費用與頻寬費用可能很驚人，且受限於網路速度。
+  tags:
+  - chap-m2-ch5
+  - sec-deployment-strategies
+- id: 4527
+  chapter_title: 系統部署與 MLOps
+  section_title: AI 的持續整合/持續部署 (CI/CD)
+  text: GitHub Actions 的設定檔通常使用什麼格式？
+  type: multiple_choice
+  options:
+  - XML
+  - JSON
+  - YAML
+  - INI
+  correct_index: 2
+  explanation: YAML 格式簡潔易讀，是現代 CI/CD 工具（如 GitHub Actions, GitLab CI）設定檔的主流格式。
+  tags:
+  - chap-m2-ch5
+  - sec-cicd4ai
+- id: 4528
+  chapter_title: 系統部署與 MLOps
+  section_title: 微服務架構
+  text: 微服務架構的一個缺點是？
+  type: multiple_choice
+  options:
+  - 系統太簡單
+  - 分散式系統的複雜性增加 (如網路延遲、數據一致性問題)
+  - 無法擴展
+  - 只能用一種語言
+  correct_index: 1
+  explanation: 服務拆分後，服務間的通訊、除錯、交易管理都變得比單體架構更複雜。
+  tags:
+  - chap-m2-ch5
+  - sec-microservices
+- id: 4529
+  chapter_title: 系統部署與 MLOps
+  section_title: 監控與維護
+  text: 持續訓練 (Continuous Training, CT) 是指？
+  type: multiple_choice
+  options:
+  - 模型 24 小時不停訓練
+  - 建立自動化機制，當數據更新或模型效能下降時，自動觸發重新訓練流程
+  - 人工手動訓練
+  - 只訓練一次
+  correct_index: 1
+  explanation: CT 確保模型能適應環境變化，保持「新鮮」。
+  tags:
+  - chap-m2-ch5
+  - sec-monitoring
+- id: 4530
+  chapter_title: 系統部署與 MLOps
+  section_title: 部署後優化與績效指標
+  text: 推論延遲 (Latency) 是指？
+  type: multiple_choice
+  options:
+  - 模型訓練的時間
+  - 系統處理單次請求所需的時間
+  - 系統一秒鐘能處理的請求數
+  - 網路頻寬
+  correct_index: 1
+  explanation: 對於即時應用（如自駕車、語音助理），低延遲至關重要。
+  tags:
+  - chap-m2-ch5
+  - sec-post-deployment
+- id: 4531
+  chapter_title: 系統部署與 MLOps
+  section_title: AI 系統整合
+  text: Webhooks 主要用於？
+  type: multiple_choice
+  options:
+  - 同步通訊
+  - 非同步事件通知 (如模型訓練完成後通知前端)
+  - 數據加密
+  - 身份驗證
+  correct_index: 1
+  explanation: Webhooks 是一種「反向 API」，當事件發生時，伺服器主動呼叫客戶端的 URL，避免客戶端頻繁輪詢 (Polling)。
+  tags:
+  - chap-m2-ch5
+  - sec-system-integration
+- id: 4532
+  chapter_title: 系統部署與 MLOps
+  section_title: 模型部署策略
+  text: 模型壓縮 (Model Compression) 技術如量化 (Quantization) 主要應用於？
+  type: multiple_choice
+  options:
+  - 雲端部署
+  - 邊緣運算部署
+  - 私有雲部署
+  - 混合部署
+  correct_index: 1
+  explanation: 邊緣設備資源有限，必須縮小模型體積與運算量才能跑得動。
+  tags:
+  - chap-m2-ch5
+  - sec-deployment-strategies
+- id: 4533
+  chapter_title: 系統部署與 MLOps
+  section_title: AI 的持續整合/持續部署 (CI/CD)
+  text: 在 CI 流程中，若新模型的評估結果低於基準 (Baseline)，系統應該？
+  type: multiple_choice
+  options:
+  - 強制部署
+  - 忽略警告
+  - 中止流程並通知開發者
+  - 自動修正模型
+  correct_index: 2
+  explanation: CI 的目的就是把關品質。表現變差的模型不應進入下一階段。
+  tags:
+  - chap-m2-ch5
+  - sec-cicd4ai
+- id: 4534
+  chapter_title: 系統部署與 MLOps
+  section_title: 監控與維護
+  text: 異常警報 (Anomaly Alerting) 的閾值設定過低會導致？
+  type: multiple_choice
+  options:
+  - 漏報
+  - 警報疲勞 (Alert Fatigue)，工程師被大量假警報淹沒
+  - 系統崩潰
+  - 模型變準
+  correct_index: 1
+  explanation: 狼來了的故事。太多不重要的警報會讓運維人員麻痺，反而忽略了真正的危機。
+  tags:
+  - chap-m2-ch5
+  - sec-monitoring
+- id: 4535
+  chapter_title: 系統部署與 MLOps
+  section_title: AI 系統整合
+  text: 資料湖 (Data Lake) 與資料倉儲 (Data Warehouse) 的主要區別是？
+  type: multiple_choice
+  options:
+  - 資料湖儲存原始、非結構化資料；資料倉儲儲存經過處理的結構化資料
+  - 資料湖比較小
+  - 資料倉儲比較便宜
+  - 兩者一樣
+  correct_index: 0
+  explanation: 資料湖像一個大水池，什麼水（數據）都先流進去再說；資料倉儲像瓶裝水工廠，只存處理好、規格化的水。
+  tags:
+  - chap-m2-ch5
+  - sec-system-integration
+- id: 4536
+  chapter_title: 系統部署與 MLOps
+  section_title: 微服務架構
+  text: 單一職責原則 (Single Responsibility Principle) 在微服務中意味著？
+  type: multiple_choice
+  options:
+  - 一個服務只做一件事
+  - 一個工程師只寫一行程式
+  - 一個伺服器只跑一個程式
+  - 一個資料庫只存一筆資料
+  correct_index: 0
+  explanation: 每個微服務應專注於解決單一業務問題，保持小巧、聚焦且易於維護。
+  tags:
+  - chap-m2-ch5
+  - sec-microservices
+- id: 4537
+  chapter_title: 系統部署與 MLOps
+  section_title: 部署後優化與績效指標
+  text: 吞吐量 (Throughput) 是指？
+  type: multiple_choice
+  options:
+  - 單次請求的處理時間
+  - 單位時間內系統能處理的請求總數 (如 RPS)
+  - 網路速度
+  - 硬碟讀寫速度
+  correct_index: 1
+  explanation: 吞吐量衡量系統的負載能力，越高代表能同時服務越多用戶。
+  tags:
+  - chap-m2-ch5
+  - sec-post-deployment
+- id: 4538
+  chapter_title: 系統部署與 MLOps
+  section_title: AI 系統整合
+  text: OAuth2 是一種？
+  type: multiple_choice
+  options:
+  - 加密演算法
+  - 授權框架 (Authorization Framework)
+  - 資料庫
+  - 作業系統
+  correct_index: 1
+  explanation: OAuth2 允許第三方應用在不取得用戶密碼的情況下，獲得有限的存取權限（如「使用 Google 帳號登入」）。
+  tags:
+  - chap-m2-ch5
+  - sec-system-integration
+- id: 4539
+  chapter_title: 系統部署與 MLOps
+  section_title: AI 的持續整合/持續部署 (CI/CD)
+  text: 影子模式 (Shadow Mode) 部署是指？
+  type: multiple_choice
+  options:
+  - 在黑暗中部署
+  - 新模型與舊模型並行接收流量，但新模型的輸出不回傳給用戶
+  - 隱藏模型
+  - 刪除模型
+  correct_index: 1
+  explanation: 這是最安全的測試方式。新模型在真實流量下「假裝」工作，讓我們能安全地評估其表現，完全不影響用戶。
+  tags:
+  - chap-m2-ch5
+  - sec-cicd4ai
+- id: 4540
+  chapter_title: 系統部署與 MLOps
+  section_title: 監控與維護
+  text: 為了應對模型漂移，除了重新訓練，還可以採取什麼策略？
+  type: multiple_choice
+  options:
+  - 關閉系統
+  - 線上學習 (Online Learning)，讓模型根據新數據即時微調參數
+  - 刪除數據
+  - 增加硬體
+  correct_index: 1
+  explanation: 對於變化極快的場景（如推薦系統），線上學習能讓模型像人類一樣「邊做邊學」，即時適應變化。
+  tags:
+  - chap-m2-ch5
+  - sec-monitoring
+- id: 4541
+  chapter_title: 系統部署與 MLOps
+  section_title: 深度思考情境題
+  text: 情境：你的團隊開發了一個推薦系統，線下測試準確率很高，但上線後用戶點擊率卻沒有提升。這可能是什麼原因？應如何調查？
+  type: multiple_choice
+  options:
+  - 模型過擬合。
+  - 訓練數據與線上真實數據分佈不一致 (Training-Serving Skew)。
+  - 伺服器太慢。
+  - 前端介面太醜。
+  correct_index: 1
+  explanation: 這是經典的「實驗室與現實的差距」。離線指標好不代表業務效果好。可能訓練數據經過了不當的過濾，或者模型優化的目標（如點擊預測）與實際業務目標（如購買轉化）有落差。
+  tags:
+  - chap-m2-ch5
+  - sec-scenario
+- id: 4542
+  chapter_title: 系統部署與 MLOps
+  section_title: 深度思考情境題
+  text: 情境：公司要求將一個巨大的 LLM 部署到工廠的邊緣設備上，且不能連網。設備記憶體只有 4GB。你該採取什麼策略？
+  type: multiple_choice
+  options:
+  - 告訴老闆做不到。
+  - 購買更貴的設備。
+  - 使用模型蒸餾 (Distillation) 訓練一個小學生模型，並結合 4-bit 量化 (Quantization) 技術。
+  - 使用雲端 API。
+  correct_index: 2
+  explanation: 在資源極度受限且無網路的環境下，模型壓縮是唯一出路。蒸餾能將大模型的知識轉移給小模型，量化則能大幅減少記憶體佔用。
+  tags:
+  - chap-m2-ch5
+  - sec-scenario
+- id: 4543
+  chapter_title: 系統部署與 MLOps
+  section_title: 深度思考情境題
+  text: 情境：你的模型 API 偶爾會因為流量暴衝而崩潰 (OOM)。在不修改程式碼的前提下，最快的架構級解決方案是？
+  type: multiple_choice
+  options:
+  - 重啟伺服器。
+  - 在 API Gateway 層實施限流 (Rate Limiting) 與佇列 (Queuing) 機制。
+  - 升級 GPU。
+  - 優化模型。
+  correct_index: 1
+  explanation: 流量控制是保護系統的防波堤。透過限流拒絕過多請求，或透過佇列暫存請求慢慢處理，能防止系統被瞬間流量沖垮。
+  tags:
+  - chap-m2-ch5
+  - sec-scenario
+- id: 4544
+  chapter_title: 系統部署與 MLOps
+  section_title: 深度思考情境題
+  text: 情境：你發現每當促銷活動開始，詐欺偵測模型的誤判率就飆升。這屬於哪種漂移？應如何建立自動化機制應對？
+  type: multiple_choice
+  options:
+  - 模型漂移。
+  - 數據漂移 (Data Drift)；促銷期間用戶行為模式改變。
+  - 概念漂移。
+  - 系統故障。
+  correct_index: 1
+  explanation: 促銷期間的用戶行為（如瘋狂下單）與平時截然不同，導致輸入數據分佈劇烈變化。這需要專門的監控與應對策略，例如切換到較寬鬆的規則或專用模型。
+  tags:
+  - chap-m2-ch5
+  - sec-scenario
+- id: 4545
+  chapter_title: 系統部署與 MLOps
+  section_title: 深度思考情境題
+  text: 情境：開發團隊每次更新模型，都需要手動跑測試、手動打包 Docker、手動 SSH 到伺服器部署，常出錯且耗時。你建議引入 CI/CD，第一步應該做什麼？
+  type: multiple_choice
+  options:
+  - 安裝 Jenkins。
+  - 撰寫自動化測試腳本 (單元測試、整合測試)，並將建置與測試流程腳本化。
+  - 購買雲端服務。
+  - 開會討論。
+  correct_index: 1
+  explanation: 自動化的基礎是「可腳本化」。在引入複雜工具前，先確保測試和建置過程可以用指令自動執行，是 CI/CD 的第一步。
+  tags:
+  - chap-m2-ch5
+  - sec-scenario

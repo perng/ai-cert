@@ -165,27 +165,6 @@ plt.show()
 
 4.  **決策**：若 p-value < $\alpha$，則拒絕 $H_0$，認為結果具有統計顯著性。
 
-**Python 範例：單樣本 t 檢定**
-
-```{python}
-from scipy import stats
-
-# 假設我們有一組學生成績，想檢驗平均分是否顯著異於 70 分
-scores = [72, 75, 68, 70, 74, 78, 71, 73, 69, 76]
-
-# H0: mu = 70
-# H1: mu != 70
-t_stat, p_val = stats.ttest_1samp(scores, 70)
-
-print(f"T-statistic: {t_stat:.2f}")
-print(f"P-value: {p_val:.4f}")
-
-if p_val < 0.05:
-    print("拒絕虛無假設，平均分顯著異於 70")
-else:
-    print("無法拒絕虛無假設")
-```
-
 ## 線性代數 {#sec-linear-algebra}
 
 線性代數 (Linear Algebra) 處理向量、矩陣及其運算，是 AI 模型（特別是深度學習）運算的基礎。

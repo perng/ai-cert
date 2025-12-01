@@ -1,0 +1,676 @@
+questions:
+- id: 6501
+  chapter_title: 機器學習治理與倫理
+  section_title: ML 中的公平性、當責性與透明度 (FAT)
+  text: FAT 原則中的 "F" 代表？
+  type: multiple_choice
+  options:
+  - Fast (快速)
+  - Fairness (公平性)
+  - Feature (特徵)
+  - Future (未來)
+  correct_index: 1
+  explanation: 公平性確保 AI 不會因為性別、種族等敏感屬性而歧視特定群體。
+  tags:
+  - chap-m4-ch5
+  - sec-fat
+- id: 6502
+  chapter_title: 機器學習治理與倫理
+  section_title: 解決偏見與確保可解釋性 (XAI)
+  text: SHAP (SHapley Additive exPlanations) 基於什麼理論？
+  type: multiple_choice
+  options:
+  - 深度學習
+  - 博弈論 (Game Theory)
+  - 遺傳演算法
+  - 統計學
+  correct_index: 1
+  explanation: SHAP 利用 Shapley value 的概念，公平地分配每個特徵對預測結果的「貢獻度」。
+  tags:
+  - chap-m4-ch5
+  - sec-xai
+- id: 6503
+  chapter_title: 機器學習治理與倫理
+  section_title: 解決偏見與確保可解釋性 (XAI)
+  text: LIME 的主要特點是？
+  type: multiple_choice
+  options:
+  - 只能解釋線性模型
+  - 模型無關 (Model-agnostic)
+  - 基於博弈論
+  - 全域解釋
+  correct_index: 1
+  explanation: LIME 不管你是神經網路還是隨機森林，它只看輸入和輸出，透過在局部做實驗（擾動）來推測你的邏輯。
+  tags:
+  - chap-m4-ch5
+  - sec-xai
+- id: 6504
+  chapter_title: 機器學習治理與倫理
+  section_title: 模型監控與治理
+  text: 數據漂移 (Data Drift) 是指？
+  type: multiple_choice
+  options:
+  - 模型參數改變
+  - 輸入數據的統計分佈隨時間發生變化
+  - 程式碼改變
+  - 硬體故障
+  correct_index: 1
+  explanation: 例如訓練時用戶平均 20 歲，上線後變成 50 歲，這就是數據漂移，可能導致模型失效。
+  tags:
+  - chap-m4-ch5
+  - sec-model-governance
+- id: 6505
+  chapter_title: 機器學習治理與倫理
+  section_title: ML 中的公平性、當責性與透明度 (FAT)
+  text: 選擇性偏見 (Selection Bias) 發生在？
+  type: multiple_choice
+  options:
+  - 訓練數據無法代表真實世界的母體
+  - 測量工具不準
+  - 歷史數據本身不公
+  - 模型太簡單
+  correct_index: 0
+  explanation: 例如只用大學生的照片訓練人臉識別，結果模型認不出老年人。
+  tags:
+  - chap-m4-ch5
+  - sec-fat
+- id: 6506
+  chapter_title: 機器學習治理與倫理
+  section_title: 解決偏見與確保可解釋性 (XAI)
+  text: 全域解釋 (Global Interpretability) 旨在理解？
+  type: multiple_choice
+  options:
+  - 單個樣本的預測原因
+  - 模型整體的運作邏輯
+  - 模型的訓練時間
+  - 模型的準確率
+  correct_index: 1
+  explanation: 全域解釋告訴我們「一般來說，這個模型最看重什麼」，例如「信用評分模型最看重還款紀錄」。
+  tags:
+  - chap-m4-ch5
+  - sec-xai
+- id: 6507
+  chapter_title: 機器學習治理與倫理
+  section_title: 模型監控與治理
+  text: PSI (Population Stability Index) 用於衡量？
+  type: multiple_choice
+  options:
+  - 模型準確率
+  - 數據分佈的穩定性
+  - 計算速度
+  - 記憶體使用量
+  correct_index: 1
+  explanation: PSI < 0.1 通常表示分佈穩定；PSI > 0.25 表示分佈發生顯著變化（漂移），需要警惕。
+  tags:
+  - chap-m4-ch5
+  - sec-model-governance
+- id: 6508
+  chapter_title: 機器學習治理與倫理
+  section_title: ML 中的公平性、當責性與透明度 (FAT)
+  text: 當責性 (Accountability) 強調？
+  type: multiple_choice
+  options:
+  - 模型必須準確
+  - 必須有明確的責任歸屬機制
+  - 模型必須開源
+  - 數據必須免費
+  correct_index: 1
+  explanation: 當自駕車撞人，是車廠、軟體商還是駕駛的錯？當責性要求在 AI 系統設計之初就釐清這些問題。
+  tags:
+  - chap-m4-ch5
+  - sec-fat
+- id: 6509
+  chapter_title: 機器學習治理與倫理
+  section_title: 解決偏見與確保可解釋性 (XAI)
+  text: 局部解釋 (Local Interpretability) 旨在理解？
+  type: multiple_choice
+  options:
+  - 模型整體的邏輯
+  - 模型對單個特定樣本的預測原因
+  - 訓練數據的分佈
+  - 模型的架構
+  correct_index: 1
+  explanation: 局部解釋回答「為什麼拒絕『張三』的貸款？」，而不是「為什麼拒絕貸款」。
+  tags:
+  - chap-m4-ch5
+  - sec-xai
+- id: 6510
+  chapter_title: 機器學習治理與倫理
+  section_title: 模型監控與治理
+  text: 概念漂移 (Concept Drift) 是指？
+  type: multiple_choice
+  options:
+  - 輸入數據分佈改變
+  - 輸入與輸出之間的映射關係發生變化
+  - 模型過擬合
+  - 數據缺失
+  correct_index: 1
+  explanation: 例如「垃圾郵件」的定義變了，或者消費者對商品的喜好變了。即使輸入特徵沒變，舊的預測邏輯也失效了。
+  tags:
+  - chap-m4-ch5
+  - sec-model-governance
+- id: 6511
+  chapter_title: 機器學習治理與倫理
+  section_title: ML 中的公平性、當責性與透明度 (FAT)
+  text: 歷史偏見 (Historical Bias) 源於？
+  type: multiple_choice
+  options:
+  - 數據採樣錯誤
+  - 數據反映了現實世界中既有的社會偏見或不公
+  - 測量儀器故障
+  - 演算法錯誤
+  correct_index: 1
+  explanation: 如果歷史數據顯示「CEO 多為男性」，模型可能會學到「男性更適合當 CEO」的偏見，這就是歷史偏見的複製。
+  tags:
+  - chap-m4-ch5
+  - sec-fat
+- id: 6512
+  chapter_title: 機器學習治理與倫理
+  section_title: 解決偏見與確保可解釋性 (XAI)
+  text: SHAP 值為正表示該特徵？
+  type: multiple_choice
+  options:
+  - 降低了預測值
+  - 提升了預測值 (正向貢獻)
+  - 與預測值無關
+  - 是錯誤的
+  correct_index: 1
+  explanation: SHAP 值量化了特徵將預測結果從「平均值」推向「當前預測值」的推力。正值代表推高，負值代表拉低。
+  tags:
+  - chap-m4-ch5
+  - sec-xai
+- id: 6513
+  chapter_title: 機器學習治理與倫理
+  section_title: 解決偏見與確保可解釋性 (XAI)
+  text: LIME 通過什麼方式來解釋複雜模型？
+  type: multiple_choice
+  options:
+  - 訓練一個更複雜的模型
+  - 在局部訓練一個簡單的可解釋模型來近似
+  - 刪除模型
+  - 增加特徵
+  correct_index: 1
+  explanation: 雖然整個模型是非線性的，但在極小的局部範圍內，決策邊界通常是線性的。LIME 就是在找這條局部切線。
+  tags:
+  - chap-m4-ch5
+  - sec-xai
+- id: 6514
+  chapter_title: 機器學習治理與倫理
+  section_title: ML 中的公平性、當責性與透明度 (FAT)
+  text: 透明度 (Transparency) 要求？
+  type: multiple_choice
+  options:
+  - 公開所有程式碼
+  - 模型的決策過程應該是可理解、可解釋的
+  - 數據必須公開
+  - 模型必須簡單
+  correct_index: 1
+  explanation: 黑盒子模型（如深度學習）雖然準，但若無法解釋，在醫療、金融等高風險領域難以被信任。
+  tags:
+  - chap-m4-ch5
+  - sec-fat
+- id: 6515
+  chapter_title: 機器學習治理與倫理
+  section_title: 模型監控與治理
+  text: 為了應對模型漂移，最直接的解決方案是？
+  type: multiple_choice
+  options:
+  - 停止服務
+  - 使用新數據重新訓練模型 (Retraining)
+  - 修改程式碼
+  - 增加硬體
+  correct_index: 1
+  explanation: 當世界變了，模型也要跟著變。定期或觸發式地用新數據更新模型，是維持效能的關鍵。
+  tags:
+  - chap-m4-ch5
+  - sec-model-governance
+- id: 6516
+  chapter_title: 機器學習治理與倫理
+  section_title: 解決偏見與確保可解釋性 (XAI)
+  text: XAI 的主要目標是？
+  type: multiple_choice
+  options:
+  - 提高模型準確率
+  - 讓人類理解 AI 模型的決策邏輯，建立信任
+  - 加速訓練
+  - 減少數據量
+  correct_index: 1
+  explanation: 信任源於理解。XAI 試圖打開黑盒子，讓人知道 AI 是根據什麼做決定的。
+  tags:
+  - chap-m4-ch5
+  - sec-xai
+- id: 6517
+  chapter_title: 機器學習治理與倫理
+  section_title: ML 中的公平性、當責性與透明度 (FAT)
+  text: 測量偏見 (Measurement Bias) 發生在？
+  type: multiple_choice
+  options:
+  - 樣本太少
+  - 特徵或標籤的測量方式有誤
+  - 歷史數據不公
+  - 演算法太複雜
+  correct_index: 1
+  explanation: 例如用「逮捕率」作為「犯罪率」的代理變數。因為某些區域警察巡邏多，逮捕率自然高，這不代表該區人更愛犯罪，這就是測量偏見。
+  tags:
+  - chap-m4-ch5
+  - sec-fat
+- id: 6518
+  chapter_title: 機器學習治理與倫理
+  section_title: 解決偏見與確保可解釋性 (XAI)
+  text: SHAP Summary Plot (摘要圖) 可以展示？
+  type: multiple_choice
+  options:
+  - 模型的架構圖
+  - 特徵的重要性排序及其對預測值的影響方向
+  - 訓練過程的 Loss 曲線
+  - 混淆矩陣
+  correct_index: 1
+  explanation: 一張圖看懂所有特徵：誰最重要？數值大是加分還是扣分？
+  tags:
+  - chap-m4-ch5
+  - sec-xai
+- id: 6519
+  chapter_title: 機器學習治理與倫理
+  section_title: 模型監控與治理
+  text: 模型治理 (Model Governance) 包含？
+  type: multiple_choice
+  options:
+  - 只包含模型訓練
+  - 涵蓋模型全生命週期的管理
+  - 只包含模型部署
+  - 只包含數據清洗
+  correct_index: 1
+  explanation: 治理不是一次性的活動，而是一套完整的流程，確保模型在任何時候都是合規、有效且可控的。
+  tags:
+  - chap-m4-ch5
+  - sec-model-governance
+- id: 6520
+  chapter_title: 機器學習治理與倫理
+  section_title: 解決偏見與確保可解釋性 (XAI)
+  text: Model-agnostic (模型無關) 的意思是？
+  type: multiple_choice
+  options:
+  - 該方法只能用於特定模型
+  - 該方法不依賴於模型的內部結構，適用於任何機器學習模型
+  - 該方法不需要模型
+  - 該方法不需要數據
+  correct_index: 1
+  explanation: 像 LIME 和 SHAP (Kernel Explainer) 這種方法，把它們當成黑盒子測試工具，不管裡面是神經網路還是決策樹，都能解釋。
+  tags:
+  - chap-m4-ch5
+  - sec-xai
+- id: 6521
+  chapter_title: 機器學習治理與倫理
+  section_title: ML 中的公平性、當責性與透明度 (FAT)
+  text: 演算法歧視 (Algorithmic Discrimination) 通常是由什麼引起的？
+  type: multiple_choice
+  options:
+  - 電腦有惡意
+  - 訓練數據中的偏見被模型學習並放大
+  - 硬體故障
+  - 網路延遲
+  correct_index: 1
+  explanation: AI 是一面鏡子，反映了數據中的偏見。如果數據有毒，模型就有毒。
+  tags:
+  - chap-m4-ch5
+  - sec-fat
+- id: 6522
+  chapter_title: 機器學習治理與倫理
+  section_title: 解決偏見與確保可解釋性 (XAI)
+  text: 特徵重要性 (Feature Importance) 屬於哪種解釋？
+  type: multiple_choice
+  options:
+  - 局部解釋
+  - 全域解釋
+  - 隨機解釋
+  - 錯誤解釋
+  correct_index: 1
+  explanation: 它概括了整個模型對各個特徵的依賴程度，是對整體邏輯的描述。
+  tags:
+  - chap-m4-ch5
+  - sec-xai
+- id: 6523
+  chapter_title: 機器學習治理與倫理
+  section_title: 模型監控與治理
+  text: 監控 AUC 或準確率的變化趨勢是為了？
+  type: multiple_choice
+  options:
+  - 增加計算量
+  - 及時發現模型性能衰退 (Model Decay)
+  - 備份模型
+  - 展示圖表
+  correct_index: 1
+  explanation: 模型像汽車一樣會折舊。定期健檢（監控指標）才能知道何時該進廠維修（重新訓練）。
+  tags:
+  - chap-m4-ch5
+  - sec-model-governance
+- id: 6524
+  chapter_title: 機器學習治理與倫理
+  section_title: 解決偏見與確保可解釋性 (XAI)
+  text: SHAP 值具有可加性 (Additivity)，這意味著？
+  type: multiple_choice
+  options:
+  - 所有特徵的 SHAP 值相加等於預測值
+  - SHAP 值可以隨意相加
+  - SHAP 值都是正的
+  - SHAP 值都是負的
+  correct_index: 0
+  explanation: 這是 SHAP 最強大的數學特性。Prediction = Base Value + sum(SHAP values)。這讓解釋變得非常精確且直觀。
+  tags:
+  - chap-m4-ch5
+  - sec-xai
+- id: 6525
+  chapter_title: 機器學習治理與倫理
+  section_title: ML 中的公平性、當責性與透明度 (FAT)
+  text: 代理變數 (Proxy Variable) 在公平性問題中是指？
+  type: multiple_choice
+  options:
+  - 代理伺服器
+  - 表面上看似中立，但實際上與敏感屬性高度相關的變數
+  - 隨機變數
+  - 目標變數
+  correct_index: 1
+  explanation: 即使刪除了「種族」欄位，模型仍可能透過「郵遞區號」（因為種族居住隔離）學會歧視。這就是代理變數的陷阱。
+  tags:
+  - chap-m4-ch5
+  - sec-fat
+- id: 6526
+  chapter_title: 機器學習治理與倫理
+  section_title: 解決偏見與確保可解釋性 (XAI)
+  text: 反事實解釋 (Counterfactual Explanation) 是指？
+  type: multiple_choice
+  options:
+  - 解釋為什麼發生
+  - 解釋「如果輸入改變了什麼，輸出就會改變」
+  - 解釋模型的錯誤
+  - 解釋數據來源
+  correct_index: 1
+  explanation: 這種解釋方式對用戶最有用，因為它提供了具體的行動建議（Actionable Insight）。
+  tags:
+  - chap-m4-ch5
+  - sec-xai
+- id: 6527
+  chapter_title: 機器學習治理與倫理
+  section_title: 模型監控與治理
+  text: A/B 測試在模型監控中的作用是？
+  type: multiple_choice
+  options:
+  - 比較兩個模型在真實環境中的表現
+  - 測試硬體效能
+  - 檢查數據格式
+  - 備份數據
+  correct_index: 0
+  explanation: 這是驗證新模型是否真的比舊模型好的黃金標準。
+  tags:
+  - chap-m4-ch5
+  - sec-model-governance
+- id: 6528
+  chapter_title: 機器學習治理與倫理
+  section_title: ML 中的公平性、當責性與透明度 (FAT)
+  text: 為了減少偏見，在數據收集階段應該？
+  type: multiple_choice
+  options:
+  - 只收集方便取得的數據
+  - 確保數據的多樣性與代表性，覆蓋各個群體
+  - 刪除所有敏感數據
+  - 不收集數據
+  correct_index: 1
+  explanation: 源頭管理最重要。如果數據本身就是偏頗的，後續再怎麼調模型都事倍功半。
+  tags:
+  - chap-m4-ch5
+  - sec-fat
+- id: 6529
+  chapter_title: 機器學習治理與倫理
+  section_title: 解決偏見與確保可解釋性 (XAI)
+  text: 決策樹 (Decision Tree) 通常被認為是？
+  type: multiple_choice
+  options:
+  - 黑盒子模型
+  - 白盒子 (White-box) 或本身具備可解釋性的模型
+  - 不準確的模型
+  - 複雜模型
+  correct_index: 1
+  explanation: 決策樹的規則（如果 A>5 且 B<3 則...）符合人類邏輯，直接看樹圖就能理解，不需要額外的 XAI 工具。
+  tags:
+  - chap-m4-ch5
+  - sec-xai
+- id: 6530
+  chapter_title: 機器學習治理與倫理
+  section_title: 模型監控與治理
+  text: 模型退役 (Model Retirement) 是指？
+  type: multiple_choice
+  options:
+  - 模型壞了
+  - 當模型不再有效或被新模型取代時，將其從生產環境中移除的過程
+  - 模型去度假
+  - 刪除訓練數據
+  correct_index: 1
+  explanation: 殭屍模型（沒人用還在跑）會浪費資源並增加維護風險，必須有秩序地退場。
+  tags:
+  - chap-m4-ch5
+  - sec-model-governance
+- id: 6531
+  chapter_title: 機器學習治理與倫理
+  section_title: ML 中的公平性、當責性與透明度 (FAT)
+  text: 隱私保護與模型公平性之間？
+  type: multiple_choice
+  options:
+  - 完全無關
+  - 可能存在衝突
+  - 是一樣的
+  - 總是互相促進
+  correct_index: 1
+  explanation: 這是一個兩難。為了知道模型有沒有歧視女性，我必須知道誰是女性（收集隱私）；但為了保護隱私，我不該收集性別。
+  tags:
+  - chap-m4-ch5
+  - sec-fat
+- id: 6532
+  chapter_title: 機器學習治理與倫理
+  section_title: 解決偏見與確保可解釋性 (XAI)
+  text: 深度神經網路 (DNN) 通常被認為是？
+  type: multiple_choice
+  options:
+  - 白盒子模型
+  - 黑盒子 (Black-box) 模型
+  - 線性模型
+  - 規則模型
+  correct_index: 1
+  explanation: 幾百萬個參數的非線性運算，人類大腦無法直接解析，必須依賴 XAI 工具。
+  tags:
+  - chap-m4-ch5
+  - sec-xai
+- id: 6533
+  chapter_title: 機器學習治理與倫理
+  section_title: 模型監控與治理
+  text: 影子模式 (Shadow Mode) 部署是指？
+  type: multiple_choice
+  options:
+  - 在暗網部署
+  - 新模型與舊模型並行運行，但新模型的輸出僅用於記錄與分析
+  - 隱藏模型
+  - 刪除模型
+  correct_index: 1
+  explanation: 這是最安全的上線測試。讓新模型「假裝」在工作，評估它在真實流量下的表現，確認沒問題再扶正。
+  tags:
+  - chap-m4-ch5
+  - sec-model-governance
+- id: 6534
+  chapter_title: 機器學習治理與倫理
+  section_title: ML 中的公平性、當責性與透明度 (FAT)
+  text: 機器學習倫理的核心目標是？
+  type: multiple_choice
+  options:
+  - 阻止 AI 發展
+  - 確保 AI 技術的開發與應用符合人類價值觀，造福社會並減少傷害
+  - 賺更多錢
+  - 取代人類
+  correct_index: 1
+  explanation: 技術是中性的，但用技術的人要有良知。倫理確保 AI 是人類的助手而非敵人。
+  tags:
+  - chap-m4-ch5
+  - sec-fat
+- id: 6535
+  chapter_title: 機器學習治理與倫理
+  section_title: 解決偏見與確保可解釋性 (XAI)
+  text: 依賴圖 (Dependence Plot) 在 SHAP 中用於展示？
+  type: multiple_choice
+  options:
+  - 兩個特徵之間的交互作用 (Interaction)
+  - 模型的結構
+  - 數據的分佈
+  - 訓練時間
+  correct_index: 0
+  explanation: 它能揭示非線性關係（如年齡越大風險越高，但超過 60 歲風險反而降低）和交互作用（如年齡對風險的影響取決於性別）。
+  tags:
+  - chap-m4-ch5
+  - sec-xai
+- id: 6536
+  chapter_title: 機器學習治理與倫理
+  section_title: 模型監控與治理
+  text: 迴圈中的人 (Human-in-the-loop) 機制是指？
+  type: multiple_choice
+  options:
+  - 人類被 AI 控制
+  - 在 AI 決策過程中保留人類的介入與審核
+  - 人類與 AI 比賽
+  - 完全自動化
+  correct_index: 1
+  explanation: AI 只是輔助。在醫療診斷、司法判決等關鍵時刻，最終決定權應保留在人類專家手中，以防 AI 犯錯。
+  tags:
+  - chap-m4-ch5
+  - sec-model-governance
+- id: 6537
+  chapter_title: 機器學習治理與倫理
+  section_title: ML 中的公平性、當責性與透明度 (FAT)
+  text: 為了確保公平性，我們可以在模型訓練時加入？
+  type: multiple_choice
+  options:
+  - 更多雜訊
+  - 公平性約束 (Fairness Constraints) 或正規化項
+  - 更多特徵
+  - 更大的權重
+  correct_index: 1
+  explanation: 強制模型在優化準確率的同時，也要滿足公平性指標（如各群體的通過率要一致）。
+  tags:
+  - chap-m4-ch5
+  - sec-fat
+- id: 6538
+  chapter_title: 機器學習治理與倫理
+  section_title: 解決偏見與確保可解釋性 (XAI)
+  text: 為什麼線性回歸 (Linear Regression) 具有高可解釋性？
+  type: multiple_choice
+  options:
+  - 因為它很簡單
+  - 因為每個特徵的權重 (係數) 直接反映了該特徵對結果的影響方向與大小
+  - 因為它準確率高
+  - 因為它不需要訓練
+  correct_index: 1
+  explanation: y = 2x + 3。看到係數是 2，就知道 x 每增加 1，y 就增加 2。這種直接的對應關係就是可解釋性。
+  tags:
+  - chap-m4-ch5
+  - sec-xai
+- id: 6539
+  chapter_title: 機器學習治理與倫理
+  section_title: 模型監控與治理
+  text: 基準 (Baseline) 在模型監控中的作用是？
+  type: multiple_choice
+  options:
+  - 無作用
+  - 作為比較的參考點，判斷當前模型表現是否正常
+  - 增加複雜度
+  - 減少數據
+  correct_index: 1
+  explanation: 沒有比較就沒有傷害（也沒有監控）。基準通常是模型上線初期的表現，或者是簡單規則模型的表現。
+  tags:
+  - chap-m4-ch5
+  - sec-model-governance
+- id: 6540
+  chapter_title: 機器學習治理與倫理
+  section_title: ML 中的公平性、當責性與透明度 (FAT)
+  text: 偏見審計 (Bias Audit) 是指？
+  type: multiple_choice
+  options:
+  - 檢查程式碼錯誤
+  - 系統性地評估模型對不同群體的表現差異，以發現潛在歧視
+  - 審計財務報表
+  - 檢查硬體
+  correct_index: 1
+  explanation: 定期對模型進行「體檢」，看看它是否對某些人特別嚴苛或寬容。
+  tags:
+  - chap-m4-ch5
+  - sec-fat
+- id: 6541
+  chapter_title: 機器學習治理與倫理
+  section_title: 深度思考情境題
+  text: 情境：你的銀行信用評分模型被投訴對女性申請者不公。你檢查了特徵，發現已經刪除了「性別」欄位。這時你應該懷疑什麼？如何驗證？
+  type: multiple_choice
+  options:
+  - 模型有自我意識。
+  - 存在代理變數 (Proxy Variables)。應檢查其他特徵是否與性別高度相關。
+  - 數據量太少。
+  - 投訴者亂說。
+  correct_index: 1
+  explanation: 這是最常見的隱形歧視。即使不給性別，模型也能從「購買化妝品頻率」猜出性別。必須進行相關性分析和公平性指標檢測。
+  tags:
+  - chap-m4-ch5
+  - sec-scenario
+- id: 6542
+  chapter_title: 機器學習治理與倫理
+  section_title: 深度思考情境題
+  text: 情境：你使用深度學習模型預測房價，準確率很高，但客戶要求解釋為什麼他的房子被估這麼低。你應該使用什麼工具？
+  type: multiple_choice
+  options:
+  - 告訴他這是 AI 的決定，無法解釋。
+  - 使用 SHAP 或 LIME 進行局部解釋，指出具體是哪些特徵拉低了預測值。
+  - 畫出神經網路架構圖給他看。
+  - 重新訓練一個線性模型。
+  correct_index: 1
+  explanation: 客戶不關心神經網路有幾層，他只關心「為什麼」。SHAP/LIME 能給出「屋齡 -50 萬」、「捷運 +20 萬」這種人類聽得懂的理由。
+  tags:
+  - chap-m4-ch5
+  - sec-scenario
+- id: 6543
+  chapter_title: 機器學習治理與倫理
+  section_title: 深度思考情境題
+  text: 情境：你的模型上線一個月後，準確率從 90% 掉到 70%。檢查發現輸入數據的分佈與訓練時有很大差異。這是什麼現象？應如何處理？
+  type: multiple_choice
+  options:
+  - 程式 Bug。
+  - 數據漂移 (Data Drift)。應收集新數據重新訓練模型，並建立定期監控與自動更新機制。
+  - 過擬合。
+  - 欠擬合。
+  correct_index: 1
+  explanation: 環境變了，模型沒變，自然會水土不服。這是 MLOps 的核心問題，解法就是持續監控、持續訓練 (CT)。
+  tags:
+  - chap-m4-ch5
+  - sec-scenario
+- id: 6544
+  chapter_title: 機器學習治理與倫理
+  section_title: 深度思考情境題
+  text: 情境：在醫療影像診斷中，你發現模型過度依賴圖片邊緣的標記（醫院浮水印）來判斷疾病，而不是看病灶。這屬於什麼問題？如何發現的？
+  type: multiple_choice
+  options:
+  - 聰明的漢斯 (Clever Hans) 現象 / 捷徑學習。透過 XAI 工具觀察模型的關注區域發現的。
+  - 模型太強。
+  - 數據太乾淨。
+  - 標註錯誤。
+  correct_index: 0
+  explanation: 模型很懶，它發現「有 A 醫院浮水印的通常是重症」，就直接看浮水印猜答案，完全沒學會看病。XAI 熱力圖能揭示這種荒謬的邏輯。
+  tags:
+  - chap-m4-ch5
+  - sec-scenario
+- id: 6545
+  chapter_title: 機器學習治理與倫理
+  section_title: 深度思考情境題
+  text: 情境：為了保護隱私，你決定在發布數據前加入雜訊。但業務部門抱怨數據變得不可用。這反映了什麼權衡？
+  type: multiple_choice
+  options:
+  - 隱私 (Privacy) vs. 效用 (Utility)。
+  - 速度 vs. 成本。
+  - 準確 vs. 召回。
+  - 訓練 vs. 推論。
+  correct_index: 0
+  explanation: 這是差分隱私的核心難題。雜訊加多了，隱私安全但數據廢了；雜訊加少了，數據好用但隱私不保。需要在兩者間尋找可接受的平衡點。
+  tags:
+  - chap-m4-ch5
+  - sec-scenario

@@ -1,0 +1,676 @@
+questions:
+- id: 4201
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 定義與範疇
+  text: 自然語言理解 (NLU) 的主要任務是？
+  type: multiple_choice
+  options:
+  - 讓機器「說出」人類語言
+  - 讓機器「讀懂」輸入的語言，解析其結構與意圖
+  - 將文字轉為語音
+  - 將語音轉為文字
+  correct_index: 1
+  explanation: NLU 側重於理解輸入內容的含義（如意圖識別、實體提取），就像是做閱讀測驗。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-definition
+- id: 4202
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 技術演進脈絡
+  text: Word2Vec 技術的主要貢獻是？
+  type: multiple_choice
+  options:
+  - 建立了大量人工規則
+  - 將詞彙轉換為具有語意關係的數學向量 (Word Embeddings)
+  - 發明了 Transformer
+  - 解決了梯度消失問題
+  correct_index: 1
+  explanation: Word2Vec 讓電腦能透過向量運算理解詞彙間的關係（如國王 - 男人 + 女人 = 皇后），開啟了深度學習 NLP 的新時代。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-evolution
+- id: 4203
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: 在 TF-IDF 中，IDF (逆文件頻率) 的作用是？
+  type: multiple_choice
+  options:
+  - 計算詞彙在文章中出現的次數
+  - 降低那些在所有文章中都頻繁出現的常見詞的權重
+  - 增加長文章的權重
+  - 計算詞彙的向量
+  correct_index: 1
+  explanation: IDF 懲罰那些隨處可見的通用詞，獎勵那些只在少數文章中出現的獨特詞，從而凸顯關鍵詞。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+- id: 4204
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: 斷詞 (Tokenization) 在中文處理中比英文困難的原因是？
+  type: multiple_choice
+  options:
+  - 中文字太多
+  - 中文沒有空格來分隔詞彙，需要演算法判斷詞的邊界
+  - 中文文法太複雜
+  - 中文沒有時態
+  correct_index: 1
+  explanation: 英文單字間有天然的空格分隔，而中文是連續的字串，必須透過 Jieba 等工具進行分詞才能進行後續處理。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+- id: 4205
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: RNN (循環神經網路) 處理長序列時面臨的主要問題是？
+  type: multiple_choice
+  options:
+  - 計算量太小
+  - 梯度消失 (Vanishing Gradient)，導致遺忘前面的資訊
+  - 無法處理數字
+  - 只能處理圖像
+  correct_index: 1
+  explanation: RNN 的短期記憶使其難以捕捉長距離的依賴關係（例如文章開頭的主詞影響結尾的動詞），因為梯度在反向傳播中會逐漸消失。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+- id: 4206
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: LSTM (長短期記憶網路) 如何解決 RNN 的遺忘問題？
+  type: multiple_choice
+  options:
+  - 增加更多層數
+  - 引入「閘門」機制 (遺忘閘、輸入閘、輸出閘)
+  - 使用 ReLU 活化函數
+  - 移除循環結構
+  correct_index: 1
+  explanation: LSTM 的閘門機制允許模型主動選擇記住重要的長期資訊並忽略無關的雜訊，有效解決了長依賴問題。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+- id: 4207
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: Transformer 架構的核心機制是？
+  type: multiple_choice
+  options:
+  - 卷積神經網路 (CNN)
+  - 自注意力機制 (Self-Attention)
+  - 遞歸神經網路 (RNN)
+  - 遺傳演算法
+  correct_index: 1
+  explanation: Self-Attention 讓模型能同時關注序列中的所有位置，計算詞與詞之間的關聯性，實現了並行計算與全域理解。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+- id: 4208
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: BERT 模型的主要特性是？
+  type: multiple_choice
+  options:
+  - 單向生成 (只能看前面)
+  - 雙向理解 (Bidirectional)，能同時利用上下文資訊
+  - 專門用於圖像生成
+  - 結構簡單
+  correct_index: 1
+  explanation: BERT 使用 Transformer Encoder，透過遮罩語言模型 (MLM) 訓練，能同時看到前後文，因此在理解任務（如分類、問答）上表現優異。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+- id: 4209
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 進階技術：大語言模型時代
+  text: RAG (檢索增強生成) 技術主要用來解決 LLM 的什麼問題？
+  type: multiple_choice
+  options:
+  - 運算速度慢
+  - 幻覺 (Hallucination) 與知識過時
+  - 無法理解中文
+  - 參數量太大
+  correct_index: 1
+  explanation: RAG 結合了檢索系統與生成模型，讓 LLM 能參考最新的外部知識庫來回答問題，減少胡說八道並更新知識。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-advanced
+- id: 4210
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 進階技術：大語言模型時代
+  text: LoRA (低秩自適應) 的主要優勢是？
+  type: multiple_choice
+  options:
+  - 提高模型準確率
+  - 大幅降低微調大型模型所需的算力與儲存空間
+  - 增加模型參數量
+  - 加速模型推論
+  correct_index: 1
+  explanation: LoRA 凍結原模型參數，只訓練外掛的小型低秩矩陣，使得在消費級 GPU 上微調大模型成為可能。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-advanced
+- id: 4211
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 應用情境
+  text: 命名實體辨識 (NER) 的功能是？
+  type: multiple_choice
+  options:
+  - 翻譯文章
+  - 從文本中提取出具有特定意義的實體
+  - 分析情感
+  - 生成摘要
+  correct_index: 1
+  explanation: NER 將非結構化文本轉化為結構化資訊，識別出 "Steve Jobs" 是人名，"Apple" 是公司名。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-applications
+- id: 4212
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 風險與治理
+  text: 「提示注入 (Prompt Injection)」是一種什麼樣的攻擊？
+  type: multiple_choice
+  options:
+  - 修改模型權重
+  - 透過惡意指令繞過模型的安全機制，誘導其輸出有害內容
+  - 竊取訓練資料
+  - 癱瘓伺服器
+  correct_index: 1
+  explanation: 攻擊者利用 LLM 對指令的服從性，設計特殊 Prompt（如「忽略前面的限制...」）來突破防護。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-risks
+- id: 4213
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: 詞幹提取 (Stemming) 的目的是？
+  type: multiple_choice
+  options:
+  - 增加詞彙量
+  - 將詞彙還原為原型 (如 running -> run)
+  - 翻譯詞彙
+  - 標註詞性
+  correct_index: 1
+  explanation: Stemming 去除詞綴，將不同變化形式的詞統一為同一特徵，降低模型複雜度。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+- id: 4214
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: Transformer 中的「位置編碼 (Positional Encoding)」有什麼作用？
+  type: multiple_choice
+  options:
+  - 加密數據
+  - 告訴模型每個字在句子中的順序
+  - 壓縮數據
+  - 標註詞性
+  correct_index: 1
+  explanation: 由於 Transformer 是並行處理所有字，缺乏 RNN 的序列概念，必須人為加入位置資訊讓模型知道詞序。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+- id: 4215
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 進階技術：大語言模型時代
+  text: Zero-shot Learning (零樣本學習) 是指？
+  type: multiple_choice
+  options:
+  - 使用 0 個 GPU 訓練
+  - 不給模型任何範例，直接下指令要求完成任務
+  - 模型準確率為 0
+  - 使用 0 與 1 的數據
+  correct_index: 1
+  explanation: 利用 LLM 強大的泛化能力，僅憑任務描述（Prompt）就能完成未見過的任務，無需特定訓練數據。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-advanced
+- id: 4216
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 風險與治理
+  text: 為了防止 AI 生成的內容被濫用，可以使用什麼技術來標記來源？
+  type: multiple_choice
+  options:
+  - 浮水印 (Watermarking)
+  - 加密
+  - 壓縮
+  - 刪除
+  correct_index: 0
+  explanation: 數位浮水印可以在生成的文字或圖像中嵌入不可見的標記，幫助識別內容是否由 AI 產生。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-risks
+- id: 4217
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: GPT 模型屬於哪種架構？
+  type: multiple_choice
+  options:
+  - Transformer Encoder
+  - Transformer Decoder
+  - RNN
+  - CNN
+  correct_index: 1
+  explanation: GPT (Generative Pre-trained Transformer) 使用 Decoder 架構，專注於單向的下一個字預測（生成任務）。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+- id: 4218
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: 在自注意力機制中，Query (Q), Key (K), Value (V) 的比喻中，Value 代表？
+  type: multiple_choice
+  options:
+  - 你想找什麼 (借書單)
+  - 書背上的標籤
+  - 書本裡的實際內容 (你要的資訊)
+  - 圖書館管理員
+  correct_index: 2
+  explanation: Q 用來查詢，K 用來被比對，V 則是根據比對結果（注意力權重）被提取出的實際資訊內容。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+- id: 4219
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 應用情境
+  text: 情感分析 (Sentiment Analysis) 通常屬於哪種 NLP 任務？
+  type: multiple_choice
+  options:
+  - 文字生成
+  - 文字分類
+  - 機器翻譯
+  - 語音識別
+  correct_index: 1
+  explanation: 情感分析將文本分類為「正面」、「負面」或「中立」，本質上是一個分類問題。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-applications
+- id: 4220
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 風險與治理
+  text: 「紅隊演練 (Red Teaming)」在 AI 治理中的作用是？
+  type: multiple_choice
+  options:
+  - 慶祝專案成功
+  - 模擬攻擊者的角度，主動尋找模型的漏洞與有害輸出
+  - 增加訓練數據
+  - 提高運算速度
+  correct_index: 1
+  explanation: 紅隊演練是一種壓力測試，透過攻擊性測試來發現潛在風險，以便在產品發布前進行修補。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-risks
+- id: 4221
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 技術演進脈絡
+  text: 統計導向時期 (Statistical NLP) 的主要特點是？
+  type: multiple_choice
+  options:
+  - 依賴人工編寫的規則
+  - 利用機器學習算法從海量文本中尋找機率規律
+  - 使用深度神經網路
+  - 能夠完美理解語意
+  correct_index: 1
+  explanation: 統計方法（如 N-gram）放棄了死板的規則，轉而利用數據中的統計規律，但對長距離語意的理解仍有限。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-evolution
+- id: 4222
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: 多頭注意力 (Multi-Head Attention) 的好處是？
+  type: multiple_choice
+  options:
+  - 減少計算量
+  - 讓模型能從多個不同的角度捕捉詞與詞之間的關係
+  - 只能關注語法
+  - 只能關注語意
+  correct_index: 1
+  explanation: 多頭機制就像請了多個專家，分別關注語法、指代、語意等不同層面，最後綜合起來得到更全面的理解。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+- id: 4223
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 風險與治理
+  text: 「成員推論攻擊 (Membership Inference Attack)」旨在？
+  type: multiple_choice
+  options:
+  - 破壞模型結構
+  - 推斷某個特定數據點是否在模型的訓練資料集中
+  - 增加模型準確率
+  - 修改模型輸出
+  correct_index: 1
+  explanation: 這種攻擊利用模型對訓練數據的「過度自信」，來探測某人的個資是否被用於訓練，是隱私洩漏的重大風險。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-risks
+- id: 4224
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: 為什麼 TF-IDF 中的 IDF 需要取對數 (log)？
+  type: multiple_choice
+  options:
+  - 為了讓數值變負
+  - 為了避免數值過大，並平滑頻率分佈
+  - 為了增加計算難度
+  - 為了配合神經網路
+  correct_index: 1
+  explanation: 文件總數 N 可能很大，取 log 可以將數值範圍壓縮，避免 IDF 權重過大而壓倒 TF。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+- id: 4225
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 應用情境
+  text: 機器翻譯從「單字拼湊」進化到「通順句子」，主要歸功於哪項技術？
+  type: multiple_choice
+  options:
+  - 字典查詢
+  - 神經機器翻譯 (NMT) 與 Seq2Seq 模型
+  - 規則庫
+  - 關鍵字替換
+  correct_index: 1
+  explanation: NMT 模型（尤其是 Transformer）能考慮整句的上下文進行翻譯，而非逐字翻譯，因此結果更流暢自然。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-applications
+- id: 4226
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 風險與治理
+  text: XAI (可解釋 AI) 中的 SHAP 值用於？
+  type: multiple_choice
+  options:
+  - 加密數據
+  - 量化每個特徵對模型預測結果的貢獻程度
+  - 壓縮模型
+  - 生成圖像
+  correct_index: 1
+  explanation: SHAP 基於博弈論，能計算出每個輸入特徵（如某個關鍵字）對最終預測結果的影響力大小，提供解釋性。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-risks
+- id: 4227
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: 在 NLP 預處理中，去除「停用詞 (Stop Words)」是指？
+  type: multiple_choice
+  options:
+  - 刪除所有動詞
+  - 刪除對語意貢獻極低的高頻詞
+  - 刪除標點符號
+  - 刪除數字
+  correct_index: 1
+  explanation: 停用詞通常是語法功能詞，攜帶的資訊量很少，去除它們可以減少雜訊並提高處理效率。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+- id: 4228
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 進階技術：大語言模型時代
+  text: Few-shot Learning 通常需要提供多少個範例？
+  type: multiple_choice
+  options:
+  - 0 個
+  - 少量 (如 1-5 個)
+  - 數千個
+  - 數百萬個
+  correct_index: 1
+  explanation: Few-shot 介於 Zero-shot 和 Fine-tuning 之間，透過提供少數幾個範例讓模型「類比」學習，效果通常顯著提升。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-advanced
+- id: 4229
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 風險與治理
+  text: 對抗式訓練 (Adversarial Training) 的目的是？
+  type: multiple_choice
+  options:
+  - 攻擊對手
+  - 增強模型對抗惡意擾動樣本的魯棒性
+  - 減少訓練時間
+  - 增加模型偏見
+  correct_index: 1
+  explanation: 透過在訓練過程中主動加入被擾動的「攻擊樣本」，讓模型學會識別並防禦這些攻擊，提高安全性。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-risks
+- id: 4230
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: 詞嵌入 (Word Embeddings) 相比於 One-Hot Encoding 的主要優勢是？
+  type: multiple_choice
+  options:
+  - 維度更高
+  - 能夠捕捉詞彙之間的語意相似度，且維度較低
+  - 計算更簡單
+  - 不需要訓練
+  correct_index: 1
+  explanation: One-Hot 向量是正交的（無關聯），而 Word Embeddings 將語意相近的詞映射到距離相近的向量空間，且通常是低維稠密向量。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+- id: 4231
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: BERT 的預訓練任務「遮罩語言模型 (Masked Language Model)」是指？
+  type: multiple_choice
+  options:
+  - 預測下一個字
+  - 隨機遮蓋句子中的部分詞彙，讓模型利用上下文去猜測被遮蓋的詞
+  - 翻譯句子
+  - 判斷句子情感
+  correct_index: 1
+  explanation: MLM 類似於「克漏字填空」，迫使模型必須同時理解前後文才能填出正確的詞，從而學會雙向語境。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+- id: 4232
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 風險與治理
+  text: 「Human-in-the-loop (人機協作)」在 AI 治理中意味著？
+  type: multiple_choice
+  options:
+  - 人類完全取代 AI
+  - AI 完全取代人類
+  - 在關鍵決策環節保留人類的介入與最終決定權
+  - 人類只負責標註數據
+  correct_index: 2
+  explanation: 對於高風險應用，完全自動化是危險的。HITL 確保 AI 僅作為輔助，由人類把關最終結果，兼顧效率與安全。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-risks
+- id: 4233
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: N-gram 模型中的 "N" 代表？
+  type: multiple_choice
+  options:
+  - 神經網路層數
+  - 連續出現的 N 個詞彙的組合
+  - 訓練數據量
+  - 詞彙維度
+  correct_index: 1
+  explanation: N-gram 是一種統計語言模型，考慮連續 N 個詞的出現機率。例如 2-gram (Bigram) 考慮相鄰的兩個詞。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+- id: 4234
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: Transformer 中的 Encoder 和 Decoder 分別負責？
+  type: multiple_choice
+  options:
+  - Encoder 生成，Decoder 理解
+  - Encoder 理解 (編碼)，Decoder 生成 (解碼)
+  - 兩者功能相同
+  - Encoder 處理圖片，Decoder 處理文字
+  correct_index: 1
+  explanation: Encoder 將輸入序列轉換為語意向量（理解），Decoder 根據這些向量生成目標序列（生成）。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+- id: 4235
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 應用情境
+  text: 聊天機器人從關鍵字匹配進化到生成式 AI，主要提升了？
+  type: multiple_choice
+  options:
+  - 回應速度
+  - 對話的流暢度、邏輯性與上下文理解能力
+  - 系統穩定性
+  - 硬體需求
+  correct_index: 1
+  explanation: 舊式機器人只能針對特定關鍵字給出死板回覆；生成式 AI 能理解複雜語意並生成像人類一樣自然的回應。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-applications
+- id: 4236
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 風險與治理
+  text: 差分隱私 (Differential Privacy) 技術如何在訓練中保護隱私？
+  type: multiple_choice
+  options:
+  - 刪除所有數據
+  - 在數據或梯度中加入精心設計的雜訊
+  - 加密模型權重
+  - 限制存取權限
+  correct_index: 1
+  explanation: 差分隱私從數學上保證了攻擊者無法從模型輸出反推特定個體的資訊，是目前最強的隱私保護技術之一。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-risks
+- id: 4237
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: Bag of Words (詞袋模型) 的主要缺點是？
+  type: multiple_choice
+  options:
+  - 計算太慢
+  - 忽略了詞彙的順序與語法結構
+  - 詞彙量太少
+  - 無法處理英文
+  correct_index: 1
+  explanation: BoW 只統計詞頻，將句子視為一袋散亂的詞，丟失了「貓咬狗」與「狗咬貓」之間的語意差異。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+- id: 4238
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: 為什麼 LSTM 需要「遺忘閘 (Forget Gate)」？
+  type: multiple_choice
+  options:
+  - 為了節省記憶體
+  - 為了主動丟棄不再重要的舊資訊，騰出空間給新資訊
+  - 為了隨機遺忘
+  - 為了加速計算
+  correct_index: 1
+  explanation: 在處理長序列時，並非所有歷史資訊都有用。遺忘閘讓模型能動態更新記憶狀態，適應上下文的轉換。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+- id: 4239
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 進階技術：大語言模型時代
+  text: 系統提示 (System Prompt) 的作用是？
+  type: multiple_choice
+  options:
+  - 讓使用者輸入問題
+  - 設定 AI 的角色、行為準則與安全邊界
+  - 顯示錯誤訊息
+  - 儲存對話紀錄
+  correct_index: 1
+  explanation: System Prompt 是開發者寫給模型的「最高指令」，定義了「你是誰」、「你該怎麼回答」、「你不該回答什麼」。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-advanced
+- id: 4240
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 風險與治理
+  text: 資料偏見 (Data Bias) 會導致模型產生什麼後果？
+  type: multiple_choice
+  options:
+  - 模型無法訓練
+  - 模型內化並放大社會既有的刻板印象與歧視
+  - 模型準確率變高
+  - 模型運算變慢
+  correct_index: 1
+  explanation: 如果訓練數據本身有偏見（如性別歧視），模型不僅會學到，甚至會因為統計規律而放大這種偏見。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-risks
+- id: 4241
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 深度思考情境題
+  text: 情境：你正在開發一個法律諮詢 AI，使用 RAG 技術。然而，使用者回報 AI 引用了已經廢除的舊法條。這最可能是 RAG 系統的哪個環節出了問題？應如何改善？
+  type: multiple_choice
+  options:
+  - 生成模型 (LLM) 太笨。
+  - 檢索資料庫 (Knowledge Base) 未及時更新或缺乏版本控制。
+  - Prompt 寫得不好。
+  - 使用者問錯問題。
+  correct_index: 1
+  explanation: RAG 的準確性高度依賴於檢索到的文件品質。如果知識庫本身包含過時資訊且未被標記或過濾，LLM 就會基於錯誤資訊生成回答。資料庫的維護與更新是 RAG 成功的關鍵。
+  tags:
+  - chap-m2-ch2
+  - sec-scenario
+- id: 4242
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 深度思考情境題
+  text: 情境：你的公司想微調一個 LLM 來撰寫專業的醫療報告，但只有 100 份高品質的醫生手寫報告範例。直接進行全參數微調 (Full Fine-tuning) 容易導致什麼問題？應改用什麼策略？
+  type: multiple_choice
+  options:
+  - 欠擬合；應增加模型層數。
+  - 過擬合 (Overfitting) 或災難性遺忘 (Catastrophic Forgetting)；應採用 Parameter-Efficient Fine-Tuning (PEFT) 技術。
+  - 計算資源不足；應購買更多 GPU。
+  - 模型變笨；應從頭訓練。
+  correct_index: 1
+  explanation: 在極少數據下對巨大模型進行全量微調，極易導致模型死記硬背這 100 份報告（過擬合），並忘記原本通用的語言能力。LoRA 等技術凍結大部分參數，只微調少量參數，能有效避免此問題。
+  tags:
+  - chap-m2-ch2
+  - sec-scenario
+- id: 4243
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 深度思考情境題
+  text: 情境：在情感分析任務中，你發現模型對於「這部電影不算太差」這句話判斷錯誤，認為是負面評價（因為看到「差」字）。這顯示模型可能過度依賴什麼？應如何改進？
+  type: multiple_choice
+  options:
+  - 過度依賴關鍵字 (Keyword-based) 而非語意理解。
+  - 過度依賴語法。
+  - 數據量太少。
+  - 斷詞錯誤。
+  correct_index: 1
+  explanation: 傳統詞袋模型或簡單模型容易忽略「不」、「太」等修飾詞對語氣的反轉。BERT 等模型透過 Self-Attention 能理解「不...差」的雙重否定結構，從而正確判斷語意。
+  tags:
+  - chap-m2-ch2
+  - sec-scenario
+- id: 4244
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 深度思考情境題
+  text: 情境：攻擊者發現你的公開聊天機器人會洩漏訓練數據中的個資。他最可能使用了什麼攻擊手法？你該如何防禦？
+  type: multiple_choice
+  options:
+  - SQL Injection；應修補資料庫漏洞。
+  - Prompt Injection 或成員推論攻擊；應加強輸入過濾、實施差分隱私訓練。
+  - DDoS 攻擊；應增加頻寬。
+  - 暴力破解；應加強密碼。
+  correct_index: 1
+  explanation: 針對 LLM 的攻擊通常針對其生成特性。透過誘導式 Prompt 讓模型「吐真言」是常見手法。防禦需從訓練端（差分隱私）和應用端（輸入輸出過濾）雙管齊下。
+  tags:
+  - chap-m2-ch2
+  - sec-scenario
+- id: 4245
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 深度思考情境題
+  text: 情境：你使用 Word2Vec 訓練詞向量，發現 "Doctor" - "Man" + "Woman" 的結果竟然接近 "Nurse" 而非 "Doctor"。這揭示了什麼問題？
+  type: multiple_choice
+  options:
+  - 模型訓練失敗。
+  - 訓練數據中存在性別刻板印象 (Gender Bias)，模型忠實地學到了這些偏見。
+  - Word2Vec 演算法有 Bug。
+  - 向量維度不足。
+  correct_index: 1
+  explanation: 這是 NLP 領域著名的偏見案例。因為歷史文本中女性常與護士連結，男性與醫生連結，模型學到了這種相關性。這提醒我們必須對詞向量進行去偏見 (Debiasing) 處理，例如將性別方向從職業詞彙中移除。
+  tags:
+  - chap-m2-ch2
+  - sec-scenario

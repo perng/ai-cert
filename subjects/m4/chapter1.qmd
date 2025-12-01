@@ -24,9 +24,9 @@
 ### 梯度提升 {.unnumbered}
 
 梯度提升 (Gradient Boosting) 是基於**Boosting** 的整合模型。它串行訓練模型，每一個新模型都試圖修正前一個模型的錯誤（擬合殘差）。
-*   **XGBoost (eXtreme Gradient Boosting)**：以其高效、靈活和可移植性著稱。它引入了正則化項來控制過擬合，並支持並行處理。
-*   **LightGBM**：微軟開發，使用基於直方圖的演算法和 Leaf-wise 生長策略，速度更快，記憶體佔用更低。
-*   **CatBoost**：Yandex 開發，特別擅長處理**類別特徵 (Categorical Features)**，無需預先進行 One-hot Encoding。
+    *   **XGBoost (eXtreme Gradient Boosting)**：以其高效、靈活和可移植性著稱。它引入了正則化項來控制過擬合，並支持並行處理。
+    *   **LightGBM**：微軟開發，使用基於直方圖的演算法和 Leaf-wise 生長策略，速度更快，記憶體佔用更低。
+    *   **CatBoost**：Yandex 開發，特別擅長處理**類別特徵 (Categorical Features)**，無需預先進行 One-hot Encoding。
 
 ### 堆疊法 (Stacking) {.unnumbered}
 

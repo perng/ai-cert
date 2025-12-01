@@ -1,0 +1,676 @@
+questions:
+- id: 6301
+  chapter_title: 模型最佳化與調校
+  section_title: 超參數調校
+  text: 網格搜尋 (Grid Search) 的主要缺點是？
+  type: multiple_choice
+  options:
+  - 容易陷入局部最佳解
+  - 計算成本極高
+  - 無法找到最佳解
+  - 實作困難
+  correct_index: 1
+  explanation: 網格搜尋窮舉所有組合，雖然保證找到範圍內的最佳解，但對於高維度參數空間來說，計算量是不可接受的。
+  tags:
+  - chap-m4-ch3
+  - sec-hyperparameter-tuning
+- id: 6302
+  chapter_title: 模型最佳化與調校
+  section_title: 正規化技術
+  text: L1 正規化 (Lasso) 的一個重要特性是？
+  type: multiple_choice
+  options:
+  - 使權重平滑
+  - 傾向於產生稀疏權重 (Sparse Weights)
+  - 增加模型複雜度
+  - 加速訓練
+  correct_index: 1
+  explanation: L1 懲罰項的幾何形狀（菱形）使得最佳解容易落在座標軸上，從而將不重要的特徵權重壓縮為 0。
+  tags:
+  - chap-m4-ch3
+  - sec-regularization
+- id: 6303
+  chapter_title: 模型最佳化與調校
+  section_title: 正規化技術
+  text: Dropout 技術在訓練過程中如何運作？
+  type: multiple_choice
+  options:
+  - 隨機增加神經元
+  - 隨機丟棄 (歸零) 一部分神經元
+  - 移除所有神經元
+  - 固定神經元權重
+  correct_index: 1
+  explanation: Dropout 就像讓神經元「輪流休息」，防止它們過度依賴彼此（Co-adaptation），從而減少過擬合。
+  tags:
+  - chap-m4-ch3
+  - sec-regularization
+- id: 6304
+  chapter_title: 模型最佳化與調校
+  section_title: 模型壓縮
+  text: 量化 (Quantization) 通常將權重從 FP32 轉換為？
+  type: multiple_choice
+  options:
+  - FP64
+  - INT8 (8 位整數)
+  - FP16
+  - Binary
+  correct_index: 1
+  explanation: 將 32 位浮點數轉為 8 位整數，模型體積直接縮小 4 倍，且整數運算在硬體上通常更快。
+  tags:
+  - chap-m4-ch3
+  - sec-model-compression
+- id: 6305
+  chapter_title: 模型最佳化與調校
+  section_title: 模型壓縮
+  text: 知識蒸餾 (Knowledge Distillation) 的核心思想是？
+  type: multiple_choice
+  options:
+  - 訓練一個更大的模型
+  - 讓小的學生模型模仿大的教師模型的輸出
+  - 壓縮圖片
+  - 刪除數據
+  correct_index: 1
+  explanation: 學生模型不僅學習正確答案，還學習教師模型的「猶豫」（例如這張圖有 90% 像貓，10% 像狗），這些額外資訊有助於小模型達到接近大模型的效能。
+  tags:
+  - chap-m4-ch3
+  - sec-model-compression
+- id: 6306
+  chapter_title: 模型最佳化與調校
+  section_title: 超參數調校
+  text: 貝葉斯最佳化 (Bayesian Optimization) 相比於隨機搜尋的優勢是？
+  type: multiple_choice
+  options:
+  - 更簡單
+  - 利用過去的評估結果建立概率模型
+  - 速度最快
+  - 不需要定義搜尋空間
+  correct_index: 1
+  explanation: 隨機搜尋是盲目的，而貝葉斯優化是「有記憶」的，它會根據之前的嘗試結果來修正搜尋方向，效率更高。
+  tags:
+  - chap-m4-ch3
+  - sec-hyperparameter-tuning
+- id: 6307
+  chapter_title: 模型最佳化與調校
+  section_title: 正規化技術
+  text: 提前停止 (Early Stopping) 的判斷依據是？
+  type: multiple_choice
+  options:
+  - 訓練集誤差不再下降
+  - 驗證集誤差 (Validation Loss) 不再下降甚至開始上升
+  - 測試集誤差不再下降
+  - 訓練時間到達上限
+  correct_index: 1
+  explanation: 當訓練誤差持續下降但驗證誤差開始上升時，表示模型開始過擬合了，這時應該立即停止訓練。
+  tags:
+  - chap-m4-ch3
+  - sec-regularization
+- id: 6308
+  chapter_title: 模型最佳化與調校
+  section_title: 正規化技術
+  text: 批次正規化 (Batch Normalization) 的主要優點不包括？
+  type: multiple_choice
+  options:
+  - 加速訓練收斂
+  - 允許使用更高的學習率
+  - 減少模型參數數量
+  - 具有輕微的正規化效果
+  correct_index: 2
+  explanation: BN 層本身包含可學習的參數（scale 和 shift），因此實際上增加了少量的參數量，而不是減少。
+  tags:
+  - chap-m4-ch3
+  - sec-regularization
+- id: 6309
+  chapter_title: 模型最佳化與調校
+  section_title: 模型壓縮
+  text: 結構化剪枝 (Structured Pruning) 相比於非結構化剪枝的優勢是？
+  type: multiple_choice
+  options:
+  - 精度損失更小
+  - 移除整個通道或卷積核，通用硬體即可加速
+  - 壓縮率更高
+  - 實作更簡單
+  correct_index: 1
+  explanation: 非結構化剪枝會把權重矩陣挖得像蜂窩一樣（稀疏矩陣），一般 CPU/GPU 難以加速；結構化剪枝直接把矩陣變小，加速效果立竿見影。
+  tags:
+  - chap-m4-ch3
+  - sec-model-compression
+- id: 6310
+  chapter_title: 模型最佳化與調校
+  section_title: 超參數調校
+  text: 下列哪項屬於超參數 (Hyperparameter)？
+  type: multiple_choice
+  options:
+  - 神經網路的權重 (Weights)
+  - 神經網路的偏差 (Biases)
+  - 學習率 (Learning Rate)
+  - 模型的輸出
+  correct_index: 2
+  explanation: 權重和偏差是模型在訓練過程中自己學出來的參數；學習率是人為設定的，控制學習的速度，屬於超參數。
+  tags:
+  - chap-m4-ch3
+  - sec-hyperparameter-tuning
+- id: 6311
+  chapter_title: 模型最佳化與調校
+  section_title: 正規化技術
+  text: L2 正規化 (Ridge) 傾向於讓權重？
+  type: multiple_choice
+  options:
+  - 變為 0
+  - 變為無限大
+  - 變小但不為 0 (平滑化)
+  - 保持不變
+  correct_index: 2
+  explanation: L2 懲罰項是權重的平方和，它會抑制過大的權重值，使模型對單一特徵不那麼敏感，從而減少過擬合。
+  tags:
+  - chap-m4-ch3
+  - sec-regularization
+- id: 6312
+  chapter_title: 模型最佳化與調校
+  section_title: 超參數調校
+  text: Optuna 是一個什麼框架？
+  type: multiple_choice
+  options:
+  - 深度學習框架
+  - 自動超參數優化框架
+  - 數據清洗框架
+  - 網頁框架
+  correct_index: 1
+  explanation: Optuna 是目前最流行的超參數調優工具，支援高效的 TPE 演算法和自動剪枝功能。
+  tags:
+  - chap-m4-ch3
+  - sec-hyperparameter-tuning
+- id: 6313
+  chapter_title: 模型最佳化與調校
+  section_title: 模型壓縮
+  text: 剪枝 (Pruning) 的基本原理是？
+  type: multiple_choice
+  options:
+  - 增加神經元
+  - 移除神經網路中不重要的連接
+  - 改變激活函數
+  - 增加層數
+  correct_index: 1
+  explanation: 就像修剪樹木一樣，剪掉那些對輸出貢獻微乎其微的連接，可以讓模型變小變快。
+  tags:
+  - chap-m4-ch3
+  - sec-model-compression
+- id: 6314
+  chapter_title: 模型最佳化與調校
+  section_title: 正規化技術
+  text: 正規化 (Regularization) 的主要目的是？
+  type: multiple_choice
+  options:
+  - 增加訓練誤差
+  - 防止過擬合 (Overfitting)
+  - 加速訓練
+  - 減少數據量
+  correct_index: 1
+  explanation: 透過限制模型的複雜度（懲罰大權重），強迫模型學習更簡單、更通用的規律，而不是死記硬背訓練數據。
+  tags:
+  - chap-m4-ch3
+  - sec-regularization
+- id: 6315
+  chapter_title: 模型最佳化與調校
+  section_title: 超參數調校
+  text: 隨機搜尋 (Random Search) 相比於網格搜尋的一個優點是？
+  type: multiple_choice
+  options:
+  - 保證找到全域最佳解
+  - 在相同的計算預算下，通常能探索更多重要參數的取值
+  - 實作更複雜
+  - 只能搜尋整數參數
+  correct_index: 1
+  explanation: 對於某些參數對模型影響不大而某些影響很大的情況，網格搜尋可能會浪費時間在不重要的參數上，而隨機搜尋能更均勻地覆蓋重要參數的空間。
+  tags:
+  - chap-m4-ch3
+  - sec-hyperparameter-tuning
+- id: 6316
+  chapter_title: 模型最佳化與調校
+  section_title: 正規化技術
+  text: Batch Normalization 通常放在哪裡？
+  type: multiple_choice
+  options:
+  - 輸入層之前
+  - 每一層的激活函數之前 (或之後)
+  - 輸出層之後
+  - 損失函數之後
+  correct_index: 1
+  explanation: BN 層對每一層的輸入進行標準化，解決了內部協變量偏移 (Internal Covariate Shift) 問題，讓每一層都能在穩定的分佈下學習。
+  tags:
+  - chap-m4-ch3
+  - sec-regularization
+- id: 6317
+  chapter_title: 模型最佳化與調校
+  section_title: 模型壓縮
+  text: 知識蒸餾中的 Soft targets 是指？
+  type: multiple_choice
+  options:
+  - 真實標籤 (One-hot)
+  - 教師模型輸出層經過 Softmax 後的機率分佈
+  - 隨機標籤
+  - 錯誤標籤
+  correct_index: 1
+  explanation: Soft targets 包含了比 Hard targets (0 或 1) 豐富得多的資訊，例如類別之間的相似性關係。
+  tags:
+  - chap-m4-ch3
+  - sec-model-compression
+- id: 6318
+  chapter_title: 模型最佳化與調校
+  section_title: 正規化技術
+  text: 權重衰減 (Weight Decay) 通常等同於哪種正規化？
+  type: multiple_choice
+  options:
+  - L1 正規化
+  - L2 正規化
+  - Dropout
+  - Batch Normalization
+  correct_index: 1
+  explanation: 在隨機梯度下降 (SGD) 中，L2 正規化的效果就是在每次更新時讓權重衰減一點點。
+  tags:
+  - chap-m4-ch3
+  - sec-regularization
+- id: 6319
+  chapter_title: 模型最佳化與調校
+  section_title: 超參數調校
+  text: 學習率 (Learning Rate) 過大會導致？
+  type: multiple_choice
+  options:
+  - 收斂速度變慢
+  - 模型無法收斂，在最佳解附近震盪甚至發散
+  - 過擬合
+  - 欠擬合
+  correct_index: 1
+  explanation: 步伐太大，容易跨過最低點，甚至越跑越遠。
+  tags:
+  - chap-m4-ch3
+  - sec-hyperparameter-tuning
+- id: 6320
+  chapter_title: 模型最佳化與調校
+  section_title: 模型壓縮
+  text: Post-Training Quantization (PTQ) 是指？
+  type: multiple_choice
+  options:
+  - 訓練時進行量化
+  - 訓練完成後再進行量化
+  - 不進行量化
+  - 隨機量化
+  correct_index: 1
+  explanation: PTQ 不需要重新訓練模型，只需少量校準數據即可完成量化，是最簡單快速的壓縮方法。
+  tags:
+  - chap-m4-ch3
+  - sec-model-compression
+- id: 6321
+  chapter_title: 模型最佳化與調校
+  section_title: 正規化技術
+  text: Dropout 在測試 (Inference) 階段通常如何處理？
+  type: multiple_choice
+  options:
+  - 繼續隨機丟棄神經元
+  - 停止丟棄，並將權重乘以 (1 - dropout_rate)
+  - 移除所有神經元
+  - 重新訓練
+  correct_index: 1
+  explanation: 測試時我們希望模型火力全開，使用所有神經元。為了保持輸出數值的尺度與訓練時（只有部分神經元工作）一致，需要進行縮放。
+  tags:
+  - chap-m4-ch3
+  - sec-regularization
+- id: 6322
+  chapter_title: 模型最佳化與調校
+  section_title: 超參數調校
+  text: Batch Size 過小通常會導致？
+  type: multiple_choice
+  options:
+  - 記憶體溢出
+  - 訓練速度變快
+  - 梯度估計雜訊大，訓練過程震盪
+  - 泛化能力下降
+  correct_index: 2
+  explanation: 小 Batch 的梯度方向隨機性大，雖然有助於跳出局部最佳解，但也可能導致訓練不穩定。
+  tags:
+  - chap-m4-ch3
+  - sec-hyperparameter-tuning
+- id: 6323
+  chapter_title: 模型最佳化與調校
+  section_title: 模型壓縮
+  text: 稀疏矩陣 (Sparse Matrix) 是指？
+  type: multiple_choice
+  options:
+  - 矩陣中大部分元素為 0
+  - 矩陣中大部分元素為 1
+  - 矩陣很小
+  - 矩陣很大
+  correct_index: 0
+  explanation: 非結構化剪枝會產生稀疏矩陣。儲存和計算稀疏矩陣需要特殊的格式（如 CSR）和硬體支援才能發揮優勢。
+  tags:
+  - chap-m4-ch3
+  - sec-model-compression
+- id: 6324
+  chapter_title: 模型最佳化與調校
+  section_title: 正規化技術
+  text: 欠擬合 (Underfitting) 發生時，通常表現為？
+  type: multiple_choice
+  options:
+  - 訓練誤差低，測試誤差高
+  - 訓練誤差高，測試誤差也高
+  - 訓練誤差低，測試誤差低
+  - 模型太複雜
+  correct_index: 1
+  explanation: 模型太笨了，連訓練數據的規律都學不會，更別說舉一反三了。通常是因為模型複雜度不足或特徵不足。
+  tags:
+  - chap-m4-ch3
+  - sec-regularization
+- id: 6325
+  chapter_title: 模型最佳化與調校
+  section_title: 超參數調校
+  text: 哪種搜尋策略最適合並行化 (Parallelization)？
+  type: multiple_choice
+  options:
+  - 貝葉斯最佳化
+  - 網格搜尋 (Grid Search) 和隨機搜尋 (Random Search)
+  - 梯度下降
+  - 模擬退火
+  correct_index: 1
+  explanation: 網格搜尋和隨機搜尋的每一次嘗試都是獨立的，互不影響，因此可以同時在多台機器上跑。貝葉斯優化則依賴上一次的結果，較難並行。
+  tags:
+  - chap-m4-ch3
+  - sec-hyperparameter-tuning
+- id: 6326
+  chapter_title: 模型最佳化與調校
+  section_title: 正規化技術
+  text: L1 正規化常用於特徵選擇的原因是？
+  type: multiple_choice
+  options:
+  - 它讓權重變小
+  - 它讓權重變大
+  - 它傾向於將不重要的特徵權重壓縮為 0
+  - 它計算簡單
+  correct_index: 2
+  explanation: 權重為 0 意味著該特徵被模型「拋棄」了，這就是自動特徵選擇的過程。
+  tags:
+  - chap-m4-ch3
+  - sec-regularization
+- id: 6327
+  chapter_title: 模型最佳化與調校
+  section_title: 模型壓縮
+  text: 量化感知訓練 (Quantization-Aware Training, QAT) 是指？
+  type: multiple_choice
+  options:
+  - 訓練後量化
+  - 在訓練過程中模擬量化誤差
+  - 只量化權重
+  - 只量化激活值
+  correct_index: 1
+  explanation: QAT 讓模型在訓練時就「預習」量化後的世界，因此能比 PTQ 獲得更高的精度，適合對精度要求高的場景。
+  tags:
+  - chap-m4-ch3
+  - sec-model-compression
+- id: 6328
+  chapter_title: 模型最佳化與調校
+  section_title: 正規化技術
+  text: 驗證集 (Validation Set) 的主要用途是？
+  type: multiple_choice
+  options:
+  - 訓練模型參數
+  - 調整超參數與監控過擬合
+  - 最終評估模型效能
+  - 增加數據量
+  correct_index: 1
+  explanation: 驗證集是模型的「模擬考」，用來調整學習策略（超參數），避免在正式考試（測試集）時作弊。
+  tags:
+  - chap-m4-ch3
+  - sec-regularization
+- id: 6329
+  chapter_title: 模型最佳化與調校
+  section_title: 超參數調校
+  text: 樹模型 (如 Random Forest) 的重要超參數通常包括？
+  type: multiple_choice
+  options:
+  - 學習率
+  - 樹的數量 (n_estimators) 與最大深度 (max_depth)
+  - 卷積核大小
+  - 隱藏層層數
+  correct_index: 1
+  explanation: 樹越多、越深，模型越複雜，但也越容易過擬合。
+  tags:
+  - chap-m4-ch3
+  - sec-hyperparameter-tuning
+- id: 6330
+  chapter_title: 模型最佳化與調校
+  section_title: 模型壓縮
+  text: 混合精度訓練 (Mixed Precision Training) 通常結合使用哪兩種數據類型？
+  type: multiple_choice
+  options:
+  - FP32 和 FP64
+  - FP32 和 FP16 (或 BF16)
+  - INT8 和 INT4
+  - String 和 Boolean
+  correct_index: 1
+  explanation: 在保持 FP32 的數值穩定性的同時，利用 FP16 的速度優勢，大幅加速訓練並減少記憶體佔用。
+  tags:
+  - chap-m4-ch3
+  - sec-model-compression
+- id: 6331
+  chapter_title: 模型最佳化與調校
+  section_title: 正規化技術
+  text: 數據增強 (Data Augmentation) 也可以被視為一種？
+  type: multiple_choice
+  options:
+  - 模型壓縮技術
+  - 正規化技術
+  - 超參數調校技術
+  - 損失函數
+  correct_index: 1
+  explanation: 透過增加數據的多樣性（旋轉、雜訊），讓模型看過更多「世面」，從而提升泛化能力，效果等同於正規化。
+  tags:
+  - chap-m4-ch3
+  - sec-regularization
+- id: 6332
+  chapter_title: 模型最佳化與調校
+  section_title: 超參數調校
+  text: K-fold 交叉驗證 (Cross-Validation) 的主要目的是？
+  type: multiple_choice
+  options:
+  - 加速訓練
+  - 更可靠地評估模型效能
+  - 減少數據量
+  - 增加模型複雜度
+  correct_index: 1
+  explanation: 將數據切成 K 份輪流當驗證集，確保評估結果不是運氣好（剛好切到簡單的驗證集）造成的。
+  tags:
+  - chap-m4-ch3
+  - sec-hyperparameter-tuning
+- id: 6333
+  chapter_title: 模型最佳化與調校
+  section_title: 模型壓縮
+  text: 蒸餾溫度 (Temperature) 參數在知識蒸餾中的作用是？
+  type: multiple_choice
+  options:
+  - 控制模型過熱
+  - 軟化 (Soften) 機率分佈
+  - 加速訓練
+  - 增加雜訊
+  correct_index: 1
+  explanation: 溫度越高，Softmax 輸出的機率分佈越平滑，類別間的細微差異（暗知識）就越明顯。
+  tags:
+  - chap-m4-ch3
+  - sec-model-compression
+- id: 6334
+  chapter_title: 模型最佳化與調校
+  section_title: 正規化技術
+  text: 權重初始化 (Weight Initialization) 不當（如全為 0）會導致？
+  type: multiple_choice
+  options:
+  - 模型訓練更快
+  - 對稱性破壞失敗，導致模型無法學習
+  - 過擬合
+  - 欠擬合
+  correct_index: 1
+  explanation: 如果所有權重都一樣，那所有神經元的梯度更新也一樣，整個網路就退化成一個神經元了。
+  tags:
+  - chap-m4-ch3
+  - sec-regularization
+- id: 6335
+  chapter_title: 模型最佳化與調校
+  section_title: 超參數調校
+  text: 學習率衰減 (Learning Rate Decay) 策略是指？
+  type: multiple_choice
+  options:
+  - 學習率隨時間增加
+  - 學習率隨訓練進行逐漸減小
+  - 學習率保持不變
+  - 學習率隨機變化
+  correct_index: 1
+  explanation: 訓練初期用大步伐快速接近最佳解，後期用小步伐精細調整，避免震盪。
+  tags:
+  - chap-m4-ch3
+  - sec-hyperparameter-tuning
+- id: 6336
+  chapter_title: 模型最佳化與調校
+  section_title: 模型壓縮
+  text: 邊緣運算 (Edge Computing) 對模型的主要限制通常是？
+  type: multiple_choice
+  options:
+  - 網路頻寬
+  - 計算資源 (算力)、記憶體與功耗
+  - 數據量
+  - 螢幕大小
+  correct_index: 1
+  explanation: 手機或 IoT 設備的 CPU/GPU 遠不如雲端伺服器，且電池有限，因此模型必須輕量化。
+  tags:
+  - chap-m4-ch3
+  - sec-model-compression
+- id: 6337
+  chapter_title: 模型最佳化與調校
+  section_title: 正規化技術
+  text: 過擬合 (Overfitting) 的典型特徵是？
+  type: multiple_choice
+  options:
+  - 訓練誤差高，測試誤差高
+  - 訓練誤差低，測試誤差高
+  - 訓練誤差低，測試誤差低
+  - 訓練誤差高，測試誤差低
+  correct_index: 1
+  explanation: 模型在訓練集上考 100 分（死記硬背），但在沒看過的測試集上不及格。
+  tags:
+  - chap-m4-ch3
+  - sec-regularization
+- id: 6338
+  chapter_title: 模型最佳化與調校
+  section_title: 超參數調校
+  text: SVM 的 C 參數代表什麼？
+  type: multiple_choice
+  options:
+  - 核函數類型
+  - 懲罰係數，控制對錯誤分類的容忍度
+  - 樹的深度
+  - 學習率
+  correct_index: 1
+  explanation: C 越大，模型越不想犯錯，決策邊界會扭曲以迎合異常點；C 越小，模型越寬容，邊界越平滑。
+  tags:
+  - chap-m4-ch3
+  - sec-hyperparameter-tuning
+- id: 6339
+  chapter_title: 模型最佳化與調校
+  section_title: 模型壓縮
+  text: MobileNet 的核心設計是使用了？
+  type: multiple_choice
+  options:
+  - 標準卷積
+  - 深度可分離卷積 (Depthwise Separable Convolution)
+  - 全連接層
+  - RNN
+  correct_index: 1
+  explanation: 這種卷積將計算量大幅降低，是輕量化 CNN 的經典設計。
+  tags:
+  - chap-m4-ch3
+  - sec-model-compression
+- id: 6340
+  chapter_title: 模型最佳化與調校
+  section_title: 正規化技術
+  text: 殘差連接 (Residual Connection) 在 ResNet 中的作用是？
+  type: multiple_choice
+  options:
+  - 壓縮模型
+  - 解決梯度消失問題
+  - 增加過擬合
+  - 減少參數量
+  correct_index: 1
+  explanation: 透過「捷徑」讓梯度能無損地傳回前面的層，使得訓練數百層的網路成為可能。
+  tags:
+  - chap-m4-ch3
+  - sec-regularization
+- id: 6341
+  chapter_title: 模型最佳化與調校
+  section_title: 深度思考情境題
+  text: 情境：你正在訓練一個圖像分類模型，發現訓練準確率一直卡在 99%，但驗證準確率只有 70%。你嘗試了增加數據但效果有限。你應該優先嘗試什麼？
+  type: multiple_choice
+  options:
+  - 增加模型層數。
+  - 使用正規化技術或簡化模型結構。
+  - 減少 Batch Size。
+  - 增加學習率。
+  correct_index: 1
+  explanation: 這是典型的嚴重過擬合。模型太強了，把雜訊都學進去了。需要透過正規化或「降智」（簡化模型）來限制它的能力，強迫它學通用特徵。
+  tags:
+  - chap-m4-ch3
+  - sec-scenario
+- id: 6342
+  chapter_title: 模型最佳化與調校
+  section_title: 深度思考情境題
+  text: 情境：你需要將一個 BERT 模型部署到手機 App 上，要求模型大小小於 50MB，且推論時間小於 100ms。目前的模型大小是 400MB。你應該採取什麼策略？
+  type: multiple_choice
+  options:
+  - 購買更貴的手機。
+  - 結合知識蒸餾 (DistilBERT) 與量化 (Quantization) 技術。
+  - 使用 L1 正規化。
+  - 使用 Grid Search。
+  correct_index: 1
+  explanation: 蒸餾能將大模型的知識轉移給小模型（如 DistilBERT），量化能進一步將權重從 FP32 轉為 INT8，兩者結合通常能達到 10 倍以上的壓縮率。
+  tags:
+  - chap-m4-ch3
+  - sec-scenario
+- id: 6343
+  chapter_title: 模型最佳化與調校
+  section_title: 深度思考情境題
+  text: 情境：你使用網格搜尋 (Grid Search) 調優 XGBoost 的 5 個超參數，每個參數設 5 個候選值。發現預計需要跑 1 個月才能跑完。你該怎麼辦？
+  type: multiple_choice
+  options:
+  - 等一個月。
+  - 改用隨機搜尋 (Random Search) 或貝葉斯最佳化 (Optuna)。
+  - 放棄調優。
+  - 減少訓練數據。
+  correct_index: 1
+  explanation: 5^5 = 3125 次組合，太慢了。隨機搜尋或貝葉斯優化能在更少的嘗試次數內找到不錯的解，是高維參數空間調優的首選。
+  tags:
+  - chap-m4-ch3
+  - sec-scenario
+- id: 6344
+  chapter_title: 模型最佳化與調校
+  section_title: 深度思考情境題
+  text: 情境：你的模型在訓練初期 Loss 下降非常慢，甚至不動。檢查數據沒問題。最可能的原因是什麼？
+  type: multiple_choice
+  options:
+  - 學習率太小或權重初始化不當。
+  - 學習率太大。
+  - 過擬合。
+  - Batch Size 太小。
+  correct_index: 0
+  explanation: 學習率太小就像螞蟻搬家，走不動。權重初始化不好可能導致一開始梯度就是 0，模型根本沒在學。
+  tags:
+  - chap-m4-ch3
+  - sec-scenario
+- id: 6345
+  chapter_title: 模型最佳化與調校
+  section_title: 深度思考情境題
+  text: 情境：你使用了 Dropout (rate=0.5)，發現訓練時的 Loss 比驗證時的 Loss 還要高。這正常嗎？
+  type: multiple_choice
+  options:
+  - 不正常，程式寫錯了。
+  - 正常。因為訓練時有一半的神經元被關閉了，模型能力受限。
+  - 正常，因為驗證集比較簡單。
+  - 不正常，過擬合了。
+  correct_index: 1
+  explanation: 這是 Dropout 的特性。訓練時模型是「殘廢」的，考試（驗證）時是健全的，所以考試成績比平時練習好是正常的。
+  tags:
+  - chap-m4-ch3
+  - sec-scenario

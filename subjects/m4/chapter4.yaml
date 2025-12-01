@@ -1,0 +1,676 @@
+questions:
+- id: 6401
+  chapter_title: 強化學習
+  section_title: 基本概念
+  text: 在強化學習中，代理 (Agent) 的目標是？
+  type: multiple_choice
+  options:
+  - 預測未來
+  - 最大化累積獎勵 (Cumulative Reward)
+  - 最小化行動次數
+  - 模仿人類
+  correct_index: 1
+  explanation: 強化學習的核心就是透過試錯，學會一套策略，讓長期獲得的總獎勵（回報）最大化。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-concepts
+- id: 6402
+  chapter_title: 強化學習
+  section_title: 基本概念
+  text: 探索 (Exploration) 與利用 (Exploitation) 的權衡是指？
+  type: multiple_choice
+  options:
+  - 選擇最貴的硬體
+  - 選擇嘗試未知行動還是選擇當前已知最佳行動
+  - 選擇訓練資料
+  - 選擇演算法
+  correct_index: 1
+  explanation: 只利用不探索會陷入局部最佳解（井底之蛙）；只探索不利用則無法累積高分。必須在兩者間取得平衡。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-concepts
+- id: 6403
+  chapter_title: 強化學習
+  section_title: 貝爾曼方程式
+  text: 折扣因子 (Discount Factor) γ 的作用是？
+  type: multiple_choice
+  options:
+  - 加速訓練
+  - 平衡當前獎勵與未來獎勵的重要性
+  - 減少雜訊
+  - 增加隨機性
+  correct_index: 1
+  explanation: γ=0 代表只看眼前利益；γ 接近 1 代表非常重視長遠利益。
+  tags:
+  - chap-m4-ch4
+  - sec-bellman
+- id: 6404
+  chapter_title: 強化學習
+  section_title: 演算法
+  text: Q-learning 是一種什麼類型的演算法？
+  type: multiple_choice
+  options:
+  - 基於策略的 (Policy-based)
+  - 基於值的 (Value-based)
+  - 基於模型的 (Model-based)
+  - 監督式學習
+  correct_index: 1
+  explanation: Q-learning 不直接學策略，而是學每個動作「值多少分」(Q值)，然後選分最高的動作做。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-algorithms
+- id: 6405
+  chapter_title: 強化學習
+  section_title: 演算法
+  text: DQN (Deep Q-Network) 引入了什麼技術來解決數據相關性問題？
+  type: multiple_choice
+  options:
+  - 卷積神經網路
+  - 經驗重播 (Experience Replay)
+  - 遞歸神經網路
+  - 隨機森林
+  correct_index: 1
+  explanation: RL 的數據是序列產生的，前後高度相關。經驗重播將數據存入緩衝區並隨機打散採樣，讓神經網路訓練更穩定。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-algorithms
+- id: 6406
+  chapter_title: 強化學習
+  section_title: 演算法
+  text: 策略梯度 (Policy Gradients) 方法的主要優勢是？
+  type: multiple_choice
+  options:
+  - 只能處理離散動作
+  - 能直接處理連續動作空間 (Continuous Action Space)
+  - 不需要神經網路
+  - 計算最簡單
+  correct_index: 1
+  explanation: 對於機器人手臂控制等需要輸出連續數值（如角度、力度）的任務，策略梯度比 Q-learning 更自然且有效。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-algorithms
+- id: 6407
+  chapter_title: 強化學習
+  section_title: 應用案例
+  text: AlphaGo 結合了深度強化學習與什麼技術？
+  type: multiple_choice
+  options:
+  - 遺傳演算法
+  - 蒙地卡羅樹搜尋 (MCTS)
+  - 支援向量機
+  - 隨機森林
+  correct_index: 1
+  explanation: 深度學習負責直覺判斷（這步棋好不好），MCTS 負責邏輯推演（往後多看幾步），兩者結合戰勝了人類。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-applications
+- id: 6408
+  chapter_title: 強化學習
+  section_title: 基本概念
+  text: ε-Greedy 策略中的 ε 代表？
+  type: multiple_choice
+  options:
+  - 學習率
+  - 隨機探索的機率
+  - 折扣因子
+  - 獎勵值
+  correct_index: 1
+  explanation: 以 ε 的機率亂走（探索），以 1-ε 的機率走已知的最佳路徑（利用）。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-concepts
+- id: 6409
+  chapter_title: 強化學習
+  section_title: 演算法
+  text: PPO (Proximal Policy Optimization) 如何保證訓練穩定性？
+  type: multiple_choice
+  options:
+  - 增加學習率
+  - 限制策略更新的幅度 (Clip 操作)
+  - 使用更深的神經網路
+  - 減少獎勵
+  correct_index: 1
+  explanation: 策略梯度對步長非常敏感。PPO 透過限制新舊策略的差異，確保每次更新都是安全且有效的。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-algorithms
+- id: 6410
+  chapter_title: 強化學習
+  section_title: 應用案例
+  text: Sim2Real 技術主要用於解決什麼問題？
+  type: multiple_choice
+  options:
+  - 遊戲通關
+  - 先在模擬環境訓練再遷移到真實世界
+  - 推薦系統冷啟動
+  - 圖像識別
+  correct_index: 1
+  explanation: 讓機器人在真實世界摔倒幾萬次是不現實的。Sim2Real 讓它在虛擬世界摔夠了，學會走路後再放到現實中微調。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-applications
+- id: 6411
+  chapter_title: 強化學習
+  section_title: 基本概念
+  text: 強化學習中的「狀態 (State)」是指？
+  type: multiple_choice
+  options:
+  - 代理的心理狀態
+  - 環境當前的狀況描述
+  - 遊戲的得分
+  - 訓練的進度
+  correct_index: 1
+  explanation: 狀態是代理做決策的依據，包含了環境的所有相關資訊（如棋盤局面、機器人關節角度）。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-concepts
+- id: 6412
+  chapter_title: 強化學習
+  section_title: 貝爾曼方程式
+  text: 價值函數 V(s) 代表？
+  type: multiple_choice
+  options:
+  - 當前獲得的即時獎勵
+  - 從狀態 s 開始的預期累積獎勵
+  - 狀態 s 的複雜度
+  - 狀態 s 的發生機率
+  correct_index: 1
+  explanation: 價值函數評估的是「長遠來看，處於這個狀態有多好」，而不僅僅是當下拿到的糖果。
+  tags:
+  - chap-m4-ch4
+  - sec-bellman
+- id: 6413
+  chapter_title: 強化學習
+  section_title: 演算法
+  text: DQN 使用神經網路是為了近似？
+  type: multiple_choice
+  options:
+  - 策略函數
+  - Q 函數 (Q-function)
+  - 獎勵函數
+  - 狀態轉移函數
+  correct_index: 1
+  explanation: 當狀態空間太大（如螢幕像素）無法用表格 (Q-table) 存下時，用神經網路來擬合 Q 值函數。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-algorithms
+- id: 6414
+  chapter_title: 強化學習
+  section_title: 演算法
+  text: 時序差分 (Temporal Difference, TD) 誤差是用來？
+  type: multiple_choice
+  options:
+  - 計算梯度
+  - 更新 Q 值，利用對未來的估計來修正當前的估計
+  - 預測未來
+  - 評估模型
+  correct_index: 1
+  explanation: TD 是 RL 的精髓：不用等到遊戲結束，根據「下一步的估計值」就能更新「這一步的價值」。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-algorithms
+- id: 6415
+  chapter_title: 強化學習
+  section_title: 應用案例
+  text: 在推薦系統中，強化學習將用戶的點擊或購買視為？
+  type: multiple_choice
+  options:
+  - 狀態
+  - 行動
+  - 獎勵 (Reward)
+  - 懲罰
+  correct_index: 2
+  explanation: 推薦系統是代理，推薦內容是行動，用戶點擊就是環境給的獎勵。目標是最大化長期點擊率（累積獎勵）。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-applications
+- id: 6416
+  chapter_title: 強化學習
+  section_title: 演算法
+  text: 固定目標網路 (Fixed Target Network) 在 DQN 中的作用是？
+  type: multiple_choice
+  options:
+  - 加速計算
+  - 穩定訓練目標，避免 Q 值估計發散
+  - 增加探索
+  - 減少記憶體
+  correct_index: 1
+  explanation: 如果射箭的靶子（目標值）一直動，很難射準。固定目標網路讓靶子暫時不動一段時間，讓訓練更穩定。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-algorithms
+- id: 6417
+  chapter_title: 強化學習
+  section_title: 基本概念
+  text: 策略 (Policy) π(a|s) 定義了？
+  type: multiple_choice
+  options:
+  - 環境的規則
+  - 代理在給定狀態 s 下選擇行動 a 的機率或規則
+  - 獎勵的計算方式
+  - 狀態的價值
+  correct_index: 1
+  explanation: 策略就是代理的「大腦」，決定了在什麼情況下該做什麼事。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-concepts
+- id: 6418
+  chapter_title: 強化學習
+  section_title: 演算法
+  text: Q-learning 的 Q 表 (Q-table) 儲存的是？
+  type: multiple_choice
+  options:
+  - 狀態轉移機率
+  - 狀態-行動對 (State-Action pair) 的預期累積獎勵
+  - 策略
+  - 歷史記錄
+  correct_index: 1
+  explanation: Q(s, a) 告訴代理：在狀態 s 做動作 a，預期能拿多少分。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-algorithms
+- id: 6419
+  chapter_title: 強化學習
+  section_title: 演算法
+  text: 策略梯度方法直接優化的是？
+  type: multiple_choice
+  options:
+  - 價值函數
+  - 策略函數 π(θ)
+  - 環境模型
+  - 獎勵函數
+  correct_index: 1
+  explanation: 它不透過 Q 值間接推導，而是直接調整策略網路的參數，讓好動作的機率變大，壞動作的機率變小。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-algorithms
+- id: 6420
+  chapter_title: 強化學習
+  section_title: 基本概念
+  text: 環境 (Environment) 對代理的行動做出的反饋包括？
+  type: multiple_choice
+  options:
+  - 只有獎勵
+  - 新的狀態 (Next State) 和獎勵 (Reward)
+  - 只有新的狀態
+  - 策略更新
+  correct_index: 1
+  explanation: 代理做了一個動作後，環境會變（轉移到新狀態），並告訴代理這個動作好不好（給獎勵）。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-concepts
+- id: 6421
+  chapter_title: 強化學習
+  section_title: 演算法
+  text: 經驗重播 (Experience Replay) 的緩衝區儲存的是？
+  type: multiple_choice
+  options:
+  - 模型參數
+  - 轉移樣本 (s, a, r, s')
+  - 只有獎勵
+  - 只有圖像
+  correct_index: 1
+  explanation: 這些四元組記錄了代理的歷史經驗，是 DQN 訓練的素材。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-algorithms
+- id: 6422
+  chapter_title: 強化學習
+  section_title: 應用案例
+  text: OpenAI Gym 是一個？
+  type: multiple_choice
+  options:
+  - 強化學習演算法庫
+  - 提供標準化環境以測試 RL 演算法的工具包
+  - 健身房
+  - 深度學習框架
+  correct_index: 1
+  explanation: Gym 提供了統一的介面（reset, step），讓開發者能專注於演算法設計，而不用自己寫遊戲環境。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-applications
+- id: 6423
+  chapter_title: 強化學習
+  section_title: 貝爾曼方程式
+  text: 貝爾曼方程式中的 max 操作意味著？
+  type: multiple_choice
+  options:
+  - 代理總是選擇最差的行動
+  - 代理假設自己會選擇能帶來最大價值的最佳行動
+  - 環境是隨機的
+  - 獎勵是固定的
+  correct_index: 1
+  explanation: 這是最佳化控制的基礎：當前狀態的價值，取決於我接下來能做的「最好」選擇。
+  tags:
+  - chap-m4-ch4
+  - sec-bellman
+- id: 6424
+  chapter_title: 強化學習
+  section_title: 演算法
+  text: Q-learning 是 On-policy 還是 Off-policy？
+  type: multiple_choice
+  options:
+  - On-policy
+  - Off-policy
+  - 兩者皆非
+  - 兩者皆是
+  correct_index: 1
+  explanation: Q-learning 更新時使用的是 max Q(s', a')（假設下一步做最好的動作），而實際行動可能因為 ε-Greedy 而選了別的。學習的策略與行動的策略不同，故為 Off-policy。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-algorithms
+- id: 6425
+  chapter_title: 強化學習
+  section_title: 演算法
+  text: 在連續動作空間 (如駕駛方向盤角度) 中，哪種方法通常更適用？
+  type: multiple_choice
+  options:
+  - Q-learning
+  - DQN
+  - 策略梯度 (Policy Gradients) / PPO
+  - 查表法
+  correct_index: 2
+  explanation: Q-learning/DQN 需要對動作取 max，在連續空間中很難做（無限多個動作）。策略梯度直接輸出動作分佈，天然支持連續動作。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-algorithms
+- id: 6426
+  chapter_title: 強化學習
+  section_title: 基本概念
+  text: 稀疏獎勵 (Sparse Reward) 問題是指？
+  type: multiple_choice
+  options:
+  - 獎勵太多
+  - 代理很難獲得獎勵，導致難以學習
+  - 獎勵是負的
+  - 獎勵隨機出現
+  correct_index: 1
+  explanation: 就像在大海撈針。如果做了幾萬步操作都沒有任何反饋，代理根本不知道自己做得對不對，這是 RL 的一大難題。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-concepts
+- id: 6427
+  chapter_title: 強化學習
+  section_title: 演算法
+  text: Actor-Critic 架構結合了哪兩種方法？
+  type: multiple_choice
+  options:
+  - Q-learning 和 SARSA
+  - 策略梯度 (Actor) 和 價值函數 (Critic)
+  - DQN 和 CNN
+  - 隨機森林和 SVM
+  correct_index: 1
+  explanation: Actor 負責做動作（策略），Critic 負責打分數（價值）。兩者互補，訓練更穩定且效率更高。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-algorithms
+- id: 6428
+  chapter_title: 強化學習
+  section_title: 貝爾曼方程式
+  text: 如果折扣因子 γ = 0，代理會？
+  type: multiple_choice
+  options:
+  - 變得極度遠視
+  - 變得極度短視，只在乎當下的即時獎勵
+  - 隨機行動
+  - 停止行動
+  correct_index: 1
+  explanation: 未來的價值都被乘上 0 了，所以代理只在乎 R(s, a)，完全不管後面的 V(s')。
+  tags:
+  - chap-m4-ch4
+  - sec-bellman
+- id: 6429
+  chapter_title: 強化學習
+  section_title: 演算法
+  text: DQN 中的 Loss Function 通常計算什麼之間的差異？
+  type: multiple_choice
+  options:
+  - 預測的 Q 值與目標 Q 值 (Target Q)
+  - 策略與價值
+  - 狀態與行動
+  - 獎勵與懲罰
+  correct_index: 0
+  explanation: 目標是讓神經網路預測的 Q 值，盡可能接近由貝爾曼方程式算出來的目標 Q 值。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-algorithms
+- id: 6430
+  chapter_title: 強化學習
+  section_title: 基本概念
+  text: 馬可夫決策過程 (MDP) 的核心假設是？
+  type: multiple_choice
+  options:
+  - 歷史很重要
+  - 未來只取決於當前狀態，與過去無關
+  - 環境是靜態的
+  - 代理全知全能
+  correct_index: 1
+  explanation: 只要知道現在的狀態 (State)，就擁有了做決策所需的所有資訊，過去怎麼走到這一步的不重要。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-concepts
+- id: 6431
+  chapter_title: 強化學習
+  section_title: 演算法
+  text: 蒙地卡羅方法 (Monte Carlo) 在 RL 中通常用於？
+  type: multiple_choice
+  options:
+  - 計算梯度
+  - 透過完整的 Episode 採樣來估計價值函數
+  - 更新 Q 表
+  - 選擇動作
+  correct_index: 1
+  explanation: MC 方法要等到遊戲結束（Episode 結束），算出總分，再回頭更新每個狀態的價值。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-algorithms
+- id: 6432
+  chapter_title: 強化學習
+  section_title: 應用案例
+  text: 在自駕車訓練中，撞車通常會給予什麼樣的獎勵？
+  type: multiple_choice
+  options:
+  - 正獎勵
+  - 巨大的負獎勵 (懲罰)
+  - 零獎勵
+  - 隨機獎勵
+  correct_index: 1
+  explanation: 透過重罰，讓代理學會極力避免這種情況發生。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-applications
+- id: 6433
+  chapter_title: 強化學習
+  section_title: 演算法
+  text: SARSA 演算法與 Q-learning 的主要區別是？
+  type: multiple_choice
+  options:
+  - SARSA 是 On-policy，Q-learning 是 Off-policy
+  - SARSA 使用神經網路
+  - SARSA 不需要獎勵
+  - SARSA 只能處理連續動作
+  correct_index: 0
+  explanation: SARSA 更新時用的是實際採取的下一個動作 (State-Action-Reward-State-Action)，言行一致，比較保守。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-algorithms
+- id: 6434
+  chapter_title: 強化學習
+  section_title: 基本概念
+  text: Episode (回合) 是指？
+  type: multiple_choice
+  options:
+  - 一次行動
+  - 從初始狀態到終止狀態的完整互動序列
+  - 訓練的一個 Batch
+  - 一個神經元
+  correct_index: 1
+  explanation: 像玩一局遊戲，從開始到 Game Over，這就是一個 Episode。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-concepts
+- id: 6435
+  chapter_title: 強化學習
+  section_title: 演算法
+  text: 為什麼 DQN 不能直接用標準的監督式學習訓練？
+  type: multiple_choice
+  options:
+  - 因為沒有標籤
+  - 因為數據不是獨立同分佈 (i.i.d.) 且目標值不穩定
+  - 因為模型太簡單
+  - 因為速度太慢
+  correct_index: 1
+  explanation: RL 的數據是序列相關的，且「正確答案」（目標 Q 值）自己也在變。這違反了監督式學習的基本假設，所以需要經驗重播和固定目標網路來修正。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-algorithms
+- id: 6436
+  chapter_title: 強化學習
+  section_title: 演算法
+  text: PPO 中的 Clip 操作是為了防止？
+  type: multiple_choice
+  options:
+  - 過擬合
+  - 策略更新步伐過大，導致性能崩潰
+  - 梯度消失
+  - 數據洩漏
+  correct_index: 1
+  explanation: 限制新舊策略的比率在 [1-ε, 1+ε] 之間，確保每次只跨出一小步，穩步前進。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-algorithms
+- id: 6437
+  chapter_title: 強化學習
+  section_title: 應用案例
+  text: 強化學習在股票交易中的目標通常是？
+  type: multiple_choice
+  options:
+  - 預測股價
+  - 最大化投資組合的長期收益 (如夏普比率)
+  - 減少交易次數
+  - 增加手續費
+  correct_index: 1
+  explanation: 不只是預測漲跌，而是要學會「買、賣、持有」的決策策略，最終目的是賺錢。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-applications
+- id: 6438
+  chapter_title: 強化學習
+  section_title: 基本概念
+  text: 獎勵函數設計 (Reward Shaping) 的目的是？
+  type: multiple_choice
+  options:
+  - 讓獎勵變大
+  - 引導代理更有效地學習，解決稀疏獎勵問題
+  - 欺騙代理
+  - 減少計算量
+  correct_index: 1
+  explanation: 如果只在終點給獎勵太難學，我們可以設計一些「中間獎勵」（如靠近終點就給分），像麵包屑一樣引導代理。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-concepts
+- id: 6439
+  chapter_title: 強化學習
+  section_title: 演算法
+  text: A3C (Asynchronous Advantage Actor-Critic) 的特點是？
+  type: multiple_choice
+  options:
+  - 單執行緒
+  - 多執行緒非同步並行訓練
+  - 使用 GPU
+  - 不需要神經網路
+  correct_index: 1
+  explanation: 多個分身同時在不同的環境副本中探索，匯總經驗給主網路，大幅加速訓練並打破數據相關性。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-algorithms
+- id: 6440
+  chapter_title: 強化學習
+  section_title: 貝爾曼方程式
+  text: 貝爾曼最佳方程式 (Bellman Optimality Equation) 描述的是？
+  type: multiple_choice
+  options:
+  - 任意策略的價值
+  - 最佳策略 (Optimal Policy) 下的價值函數關係
+  - 隨機策略的價值
+  - 錯誤的價值
+  correct_index: 1
+  explanation: $V^*(s) = \max_a (R + \gamma \sum P V^*(s'))$，這是 RL 求解的終極目標。
+  tags:
+  - chap-m4-ch4
+  - sec-bellman
+- id: 6441
+  chapter_title: 強化學習
+  section_title: 深度思考情境題
+  text: 情境：你訓練一個玩迷宮遊戲的 AI，但發現它一直在原地打轉，不肯去終點。檢查發現你設定每走一步扣 0.01 分（為了鼓勵走最短路徑），終點給 10 分。為什麼它會打轉？
+  type: multiple_choice
+  options:
+  - 扣分太少。
+  - 可能是折扣因子 γ 太小，或探索率 ε 太低。
+  - AI 太笨。
+  - 迷宮太難。
+  correct_index: 1
+  explanation: 這是常見的獎勵設計陷阱。如果遠處的大獎勵被 γ 折扣到微乎其微，代理就會為了避免眼前的微小懲罰而選擇消極策略。需要調整 γ 或獎勵結構。
+  tags:
+  - chap-m4-ch4
+  - sec-scenario
+- id: 6442
+  chapter_title: 強化學習
+  section_title: 深度思考情境題
+  text: 情境：在訓練機械手臂抓取物體時，你發現模擬環境中訓練完美的模型，在真實世界完全無法工作。這叫什麼問題？該如何解決？
+  type: multiple_choice
+  options:
+  - 過擬合。
+  - Reality Gap (現實差距)。應使用域隨機化 (Domain Randomization)。
+  - 欠擬合。
+  - 硬體故障。
+  correct_index: 1
+  explanation: 模擬永遠無法完美複製現實。透過在模擬中引入大量隨機擾動，讓模型「見多識廣」，它在面對真實世界的複雜性時就能視為另一種擾動而從容應對。
+  tags:
+  - chap-m4-ch4
+  - sec-scenario
+- id: 6443
+  chapter_title: 強化學習
+  section_title: 深度思考情境題
+  text: 情境：使用 DQN 玩 Atari 遊戲時，訓練初期 Loss 波動非常大且不收斂。你檢查了程式碼沒錯。最可能忽略了什麼機制？
+  type: multiple_choice
+  options:
+  - 忘記加 Dropout。
+  - 忘記使用固定目標網路或經驗重播容量太小。
+  - 學習率太低。
+  - 遊戲太難。
+  correct_index: 1
+  explanation: 沒有固定目標網路，DQN 的訓練就像「追著自己的尾巴跑」，目標值一直在變，導致震盪。經驗重播不足則會導致數據相關性過高。
+  tags:
+  - chap-m4-ch4
+  - sec-scenario
+- id: 6444
+  chapter_title: 強化學習
+  section_title: 深度思考情境題
+  text: 情境：你的代理在訓練過程中表現極不穩定，有時候很高分，有時候很低分。你使用的是策略梯度方法。這可能是什麼原因？
+  type: multiple_choice
+  options:
+  - 學習率太大。應改用 PPO 或 TRPO。
+  - 獎勵太少。
+  - 環境太簡單。
+  - 代理太聰明。
+  correct_index: 0
+  explanation: 策略梯度方法對步長（學習率）極度敏感。一步走錯可能導致策略崩潰，且很難救回來。PPO 透過 Clip 機制限制了這一步的大小，保證了單調不減的改進。
+  tags:
+  - chap-m4-ch4
+  - sec-scenario
+- id: 6445
+  chapter_title: 強化學習
+  section_title: 深度思考情境題
+  text: 情境：你希望訓練一個 AI 控制數據中心的冷卻系統以節省電費。這是一個連續控制問題（調節風扇轉速、溫度設定）。你應該首選哪種演算法？
+  type: multiple_choice
+  options:
+  - Q-learning。
+  - DQN。
+  - PPO 或 DDPG。
+  - 隨機搜尋。
+  correct_index: 2
+  explanation: Q-learning 和 DQN 處理連續動作需要離散化（如將轉速分為 10 檔），這會丟失精度並導致維度災難。PPO/DDPG 專為連續動作空間設計，能輸出精確的控制數值。
+  tags:
+  - chap-m4-ch4
+  - sec-scenario

@@ -1,0 +1,676 @@
+questions:
+- id: 4101
+  chapter_title: AI 專案生命週期
+  section_title: AI 導入評估與可行性研究
+  text: 在 AI 專案啟動前，進行可行性研究的主要目的是？
+  type: multiple_choice
+  options:
+  - 為了趕上科技潮流
+  - 確保專案能解決實際問題並具備技術與經濟可行性
+  - 為了消耗預算
+  - 為了招聘更多員工
+  correct_index: 1
+  explanation: 盲目導入 AI 往往導致失敗。可行性研究能確認需求、技術能力與成本效益，是「謀定而後動」的關鍵。
+  tags:
+  - chap-m2-ch1
+  - sec-feasibility
+- id: 4102
+  chapter_title: AI 專案生命週期
+  section_title: AI 導入評估與可行性研究
+  text: 在需求分析中，「痛點 (Pain Points)」通常指什麼？
+  type: multiple_choice
+  options:
+  - 員工的身體疼痛
+  - 組織流程中的瓶頸、重複性工作或決策困難
+  - 硬體設備的故障
+  - 軟體的 Bug
+  correct_index: 1
+  explanation: 痛點是指組織運作中效率低落、成本高昂或無法滿足客戶需求的地方，正是 AI 可以發揮價值之處。
+  tags:
+  - chap-m2-ch1
+  - sec-feasibility
+- id: 4103
+  chapter_title: AI 專案生命週期
+  section_title: AI 導入評估與可行性研究
+  text: 評估「技術可行性」時，關於資料品質的考量不包括？
+  type: multiple_choice
+  options:
+  - 資料的完整性 (Completeness)
+  - 資料的標註品質 (Labeling)
+  - 資料的儲存成本
+  - 資料的代表性 (Representativeness)
+  correct_index: 2
+  explanation: 儲存成本屬於「成本效益評估」，而非資料本身的品質或技術可行性問題。
+  tags:
+  - chap-m2-ch1
+  - sec-feasibility
+- id: 4104
+  chapter_title: AI 專案生命週期
+  section_title: AI 導入評估與可行性研究
+  text: 投資報酬率 (ROI) 的計算公式是？
+  type: multiple_choice
+  options:
+  - (投資回報 - 投資成本) / 投資成本
+  - 投資成本 / 投資回報
+  - 投資回報 / 投資成本
+  - (投資回報 + 投資成本) / 投資成本
+  correct_index: 0
+  explanation: ROI 衡量每單位投資帶來的淨利潤，公式為 (淨回報 / 成本) * 100%。
+  tags:
+  - chap-m2-ch1
+  - sec-feasibility
+- id: 4105
+  chapter_title: AI 專案生命週期
+  section_title: AI 導入評估與可行性研究
+  text: 概念驗證 (POC) 的主要目的是？
+  type: multiple_choice
+  options:
+  - 完成最終產品開發
+  - 在最小風險下驗證技術可行性與商業價值
+  - 進行大規模推廣
+  - 訓練所有員工
+  correct_index: 1
+  explanation: POC 是小規模的實驗，旨在快速驗證想法是否可行，以決定是否值得投入更多資源進行全面開發。
+  tags:
+  - chap-m2-ch1
+  - sec-feasibility
+- id: 4106
+  chapter_title: AI 專案生命週期
+  section_title: 專案規劃
+  text: 在 AI 專案中，哪種硬體資源最適合用於大規模深度學習模型的訓練？
+  type: multiple_choice
+  options:
+  - CPU
+  - GPU (如 NVIDIA A100)
+  - 硬碟
+  - 記憶體
+  correct_index: 1
+  explanation: GPU 具有強大的並行計算能力，能顯著加速深度學習中大量的矩陣運算。
+  tags:
+  - chap-m2-ch1
+  - sec-project-planning
+- id: 4107
+  chapter_title: AI 專案生命週期
+  section_title: 專案規劃
+  text: 敏捷開發 (Agile) 中的 Sprint (短衝) 通常持續多久？
+  type: multiple_choice
+  options:
+  - 1-4 週
+  - 3-6 個月
+  - 1 年
+  - 1 天
+  correct_index: 0
+  explanation: Sprint 是敏捷開發的基本週期，通常為期 1 到 4 週，旨在快速迭代並產出可交付的成果。
+  tags:
+  - chap-m2-ch1
+  - sec-project-planning
+- id: 4108
+  chapter_title: AI 專案生命週期
+  section_title: 專案規劃
+  text: 負責建置資料管道 (Pipeline) 與 ETL 流程的角色是？
+  type: multiple_choice
+  options:
+  - 資料科學家 (Data Scientist)
+  - 資料工程師 (Data Engineer)
+  - 專案經理 (PM)
+  - UI 設計師
+  correct_index: 1
+  explanation: 資料工程師專注於資料的基礎建設，確保資料能穩定、乾淨地流向分析端。
+  tags:
+  - chap-m2-ch1
+  - sec-project-planning
+- id: 4109
+  chapter_title: AI 專案生命週期
+  section_title: 專案規劃
+  text: 哪種開發模式適合「核心業務、需高度客製化且資料隱私要求高」的專案？
+  type: multiple_choice
+  options:
+  - 購買現成 SaaS 服務
+  - 內部團隊開發 (In-house)
+  - 完全委外開發
+  - 使用開源軟體不修改
+  correct_index: 1
+  explanation: 內部開發能完全掌控技術與資料，雖成本高但最適合核心競爭力相關且敏感的專案。
+  tags:
+  - chap-m2-ch1
+  - sec-project-planning
+- id: 4110
+  chapter_title: AI 專案生命週期
+  section_title: 風險管理
+  text: 「垃圾進，垃圾出 (Garbage In, Garbage Out)」是指哪種風險？
+  type: multiple_choice
+  options:
+  - 模型過擬合
+  - 資料品質不足
+  - 運算資源不足
+  - 法規風險
+  correct_index: 1
+  explanation: 若輸入模型的訓練資料品質差（含錯誤、雜訊），無論模型多先進，輸出的結果必然也是無效的。
+  tags:
+  - chap-m2-ch1
+  - sec-risk-management
+- id: 4111
+  chapter_title: AI 專案生命週期
+  section_title: 風險管理
+  text: 針對高風險項目採取「暫緩執行」的策略，屬於哪種風險控管手段？
+  type: multiple_choice
+  options:
+  - 轉移 (Transfer)
+  - 緩解 (Mitigation)
+  - 迴避 (Avoidance)
+  - 接受 (Acceptance)
+  correct_index: 2
+  explanation: 迴避策略是指主動避開會引發風險的活動，例如因無法承擔法律風險而決定不做某個專案。
+  tags:
+  - chap-m2-ch1
+  - sec-risk-management
+- id: 4112
+  chapter_title: AI 專案生命週期
+  section_title: 風險管理
+  text: AI 倫理中的「公平性 (Fairness)」原則旨在避免什麼？
+  type: multiple_choice
+  options:
+  - 模型運算太慢
+  - 模型對特定群體產生歧視性結果
+  - 模型過擬合
+  - 資料洩漏
+  correct_index: 1
+  explanation: 公平性要求 AI 系統在決策時不應因受保護特徵（如種族、性別）而產生系統性的偏差或歧視。
+  tags:
+  - chap-m2-ch1
+  - sec-risk-management
+- id: 4113
+  chapter_title: AI 專案生命週期
+  section_title: 風險管理
+  text: 歐盟 GDPR 賦予使用者的權利不包括？
+  type: multiple_choice
+  options:
+  - 被遺忘權
+  - 資料可攜權
+  - 反對自動化決策權
+  - 無限索賠權
+  correct_index: 3
+  explanation: GDPR 雖有罰則，但並未賦予使用者「無限索賠權」。其他三項均為 GDPR 核心權利。
+  tags:
+  - chap-m2-ch1
+  - sec-risk-management
+- id: 4114
+  chapter_title: AI 專案生命週期
+  section_title: 風險管理
+  text: MLOps 中的「持續監控」主要在偵測什麼？
+  type: multiple_choice
+  options:
+  - 硬體溫度
+  - 模型漂移 (Model Drift) 與資料漂移 (Data Drift)
+  - 員工出勤
+  - 程式碼行數
+  correct_index: 1
+  explanation: AI 模型上線後，環境與資料分佈可能隨時間改變，導致模型失效。持續監控漂移是維護模型效能的關鍵。
+  tags:
+  - chap-m2-ch1
+  - sec-risk-management
+- id: 4115
+  chapter_title: AI 專案生命週期
+  section_title: 專案規劃
+  text: 在 Scrum 團隊中，負責「移除開發障礙，確保流程順暢」的角色是？
+  type: multiple_choice
+  options:
+  - Product Owner
+  - Scrum Master
+  - Dev Team
+  - Stakeholder
+  correct_index: 1
+  explanation: Scrum Master 是流程的守護者，負責排除干擾、促進溝通，讓開發團隊能專注於工作。
+  tags:
+  - chap-m2-ch1
+  - sec-project-planning
+- id: 4116
+  chapter_title: AI 專案生命週期
+  section_title: AI 導入評估與可行性研究
+  text: 淨現值 (NPV) 為正代表什麼？
+  type: multiple_choice
+  options:
+  - 專案會虧損
+  - 專案具投資價值，預期回報高於成本
+  - 專案風險很高
+  - 專案不需要資金
+  correct_index: 1
+  explanation: NPV 將未來現金流折現回當前價值。NPV > 0 表示考慮時間價值後，專案仍能獲利。
+  tags:
+  - chap-m2-ch1
+  - sec-feasibility
+- id: 4117
+  chapter_title: AI 專案生命週期
+  section_title: 專案規劃
+  text: 哪種雲端服務模式提供「彈性擴展的運算與儲存」，適合初期投入？
+  type: multiple_choice
+  options:
+  - 地端部署 (On-premise)
+  - 公有雲 (Public Cloud)
+  - 邊緣運算
+  - 大型主機
+  correct_index: 1
+  explanation: 公有雲提供按需付費 (Pay-as-you-go) 和彈性伸縮 (Scalability)，降低了初期硬體購置成本。
+  tags:
+  - chap-m2-ch1
+  - sec-project-planning
+- id: 4118
+  chapter_title: AI 專案生命週期
+  section_title: 風險管理
+  text: XAI (Explainable AI) 技術的主要目的是提升 AI 的？
+  type: multiple_choice
+  options:
+  - 準確率
+  - 運算速度
+  - 可解釋性與透明度
+  - 資料量
+  correct_index: 2
+  explanation: XAI 試圖打開 AI 的「黑盒子」，讓人類理解模型做出特定決策的原因，從而建立信任。
+  tags:
+  - chap-m2-ch1
+  - sec-risk-management
+- id: 4119
+  chapter_title: AI 專案生命週期
+  section_title: 專案規劃
+  text: 領域專家 (Domain Expert) 在 AI 專案中的主要貢獻是？
+  type: multiple_choice
+  options:
+  - 寫程式碼
+  - 提供業務知識，協助定義問題與驗收成果
+  - 維護伺服器
+  - 設計 UI
+  correct_index: 1
+  explanation: 領域專家（如醫生、金融分析師）懂業務不懂 AI，但他們的知識對於定義正確的問題和評估模型是否實用至關重要。
+  tags:
+  - chap-m2-ch1
+  - sec-project-planning
+- id: 4120
+  chapter_title: AI 專案生命週期
+  section_title: 風險管理
+  text: 透過購買保險來處理風險，屬於哪種策略？
+  type: multiple_choice
+  options:
+  - 迴避
+  - 轉移 (Transfer)
+  - 緩解
+  - 接受
+  correct_index: 1
+  explanation: 風險轉移是指將風險造成的財務後果轉嫁給第三方（如保險公司）。
+  tags:
+  - chap-m2-ch1
+  - sec-risk-management
+- id: 4121
+  chapter_title: AI 專案生命週期
+  section_title: AI 導入評估與可行性研究
+  text: 「回收期 (Payback Period)」越短，通常代表？
+  type: multiple_choice
+  options:
+  - 投資風險越高
+  - 資金流動性越好，投資回收越快
+  - 專案越複雜
+  - 效益越低
+  correct_index: 1
+  explanation: 回收期短意味著企業能更快拿回本金，降低了資金被長期佔用的風險。
+  tags:
+  - chap-m2-ch1
+  - sec-feasibility
+- id: 4122
+  chapter_title: AI 專案生命週期
+  section_title: 專案規劃
+  text: Git 主要用於什麼管理？
+  type: multiple_choice
+  options:
+  - 專案時程
+  - 程式碼版本控制 (Version Control)
+  - 伺服器監控
+  - 資料庫備份
+  correct_index: 1
+  explanation: Git 是目前最流行的分散式版本控制系統，用於追蹤程式碼的變更歷史。
+  tags:
+  - chap-m2-ch1
+  - sec-project-planning
+- id: 4123
+  chapter_title: AI 專案生命週期
+  section_title: 風險管理
+  text: 哪項法規主要規範美國醫療產業的資料隱私？
+  type: multiple_choice
+  options:
+  - GDPR
+  - HIPAA
+  - PCI-DSS
+  - PDPA
+  correct_index: 1
+  explanation: HIPAA (Health Insurance Portability and Accountability Act) 是美國保護病患健康資訊隱私的聯邦法律。
+  tags:
+  - chap-m2-ch1
+  - sec-risk-management
+- id: 4124
+  chapter_title: AI 專案生命週期
+  section_title: 專案規劃
+  text: 工作分解結構 (WBS) 的作用是？
+  type: multiple_choice
+  options:
+  - 增加工作量
+  - 將複雜的大專案拆解為可管理的小任務
+  - 計算成本
+  - 評估風險
+  correct_index: 1
+  explanation: WBS 將專案層層拆解，直到變成可分配、可監控的具體工作包 (Work Packages)。
+  tags:
+  - chap-m2-ch1
+  - sec-project-planning
+- id: 4125
+  chapter_title: AI 專案生命週期
+  section_title: 風險管理
+  text: 模型漂移 (Model Drift) 通常是由什麼引起的？
+  type: multiple_choice
+  options:
+  - 程式碼錯誤
+  - 硬體故障
+  - 真實世界的資料分佈隨時間發生變化
+  - 學習率設定錯誤
+  correct_index: 2
+  explanation: 模型是基於歷史數據訓練的。當現實環境改變（如消費者喜好改變），舊模型就不再適用，這就是漂移。
+  tags:
+  - chap-m2-ch1
+  - sec-risk-management
+- id: 4126
+  chapter_title: AI 專案生命週期
+  section_title: AI 導入評估與可行性研究
+  text: 下列何者屬於「結構化資料預測」的應用場景？
+  type: multiple_choice
+  options:
+  - 人臉辨識
+  - 銷售量預測 (基於歷史報表)
+  - 語音轉文字
+  - 文章摘要生成
+  correct_index: 1
+  explanation: 銷售報表是典型的表格數據（結構化數據），適合用機器學習模型進行回歸預測。其他選項多為非結構化數據。
+  tags:
+  - chap-m2-ch1
+  - sec-feasibility
+- id: 4127
+  chapter_title: AI 專案生命週期
+  section_title: 專案規劃
+  text: Docker 的主要功能是？
+  type: multiple_choice
+  options:
+  - 版本控制
+  - 環境容器化，確保開發與生產環境一致
+  - 模型訓練
+  - 資料清洗
+  correct_index: 1
+  explanation: Docker 將應用程式及其依賴打包成容器，解決了「在我的機器上可以跑，在伺服器上不行」的環境不一致問題。
+  tags:
+  - chap-m2-ch1
+  - sec-project-planning
+- id: 4128
+  chapter_title: AI 專案生命週期
+  section_title: 風險管理
+  text: 台灣個資法 (PDPA) 要求收集個資時必須履行什麼義務？
+  type: multiple_choice
+  options:
+  - 付費義務
+  - 告知義務 (告知目的、類別、利用期間等)
+  - 賠償義務
+  - 沉默義務
+  correct_index: 1
+  explanation: 根據個資法，收集個資前必須明確告知當事人收集目的、利用範圍等資訊，並取得同意。
+  tags:
+  - chap-m2-ch1
+  - sec-risk-management
+- id: 4129
+  chapter_title: AI 專案生命週期
+  section_title: 專案規劃
+  text: 在甘特圖中，橫軸通常代表？
+  type: multiple_choice
+  options:
+  - 成本
+  - 時間
+  - 人力
+  - 任務
+  correct_index: 1
+  explanation: 甘特圖以條狀圖顯示專案進度，橫軸表示時間軸，縱軸表示任務。
+  tags:
+  - chap-m2-ch1
+  - sec-project-planning
+- id: 4130
+  chapter_title: AI 專案生命週期
+  section_title: 風險管理
+  text: 為了降低「員工抗拒變革」的組織風險，應採取什麼措施？
+  type: multiple_choice
+  options:
+  - 強制裁員
+  - 進行 AI 轉型培訓與溝通，強調 AI 是輔助而非取代
+  - 隱瞞 AI 導入計畫
+  - 忽視員工意見
+  correct_index: 1
+  explanation: 變革管理 (Change Management) 是關鍵。透過溝通與賦能 (Upskilling)，讓員工看到 AI 對工作的幫助，能降低抵觸情緒。
+  tags:
+  - chap-m2-ch1
+  - sec-risk-management
+- id: 4131
+  chapter_title: AI 專案生命週期
+  section_title: AI 導入評估與可行性研究
+  text: 「現況流程 (As-Is)」與「理想流程 (To-Be)」的差距分析屬於哪個階段的工作？
+  type: multiple_choice
+  options:
+  - 模型訓練
+  - 需求分析
+  - 系統部署
+  - 維運監控
+  correct_index: 1
+  explanation: 需求分析階段需釐清現狀問題與未來目標，兩者之間的差距就是專案要解決的範圍。
+  tags:
+  - chap-m2-ch1
+  - sec-feasibility
+- id: 4132
+  chapter_title: AI 專案生命週期
+  section_title: 專案規劃
+  text: 哪種工具適合用於「實驗追蹤」，記錄不同參數下的模型表現？
+  type: multiple_choice
+  options:
+  - Git
+  - MLflow
+  - Docker
+  - Jenkins
+  correct_index: 1
+  explanation: MLflow 是一個開源平台，專門用於管理機器學習生命週期，包括實驗追蹤、模型註冊與部署。
+  tags:
+  - chap-m2-ch1
+  - sec-project-planning
+- id: 4133
+  chapter_title: AI 專案生命週期
+  section_title: 風險管理
+  text: PCI-DSS 規範主要針對哪類資料的安全？
+  type: multiple_choice
+  options:
+  - 醫療病歷
+  - 信用卡支付資料
+  - 學生學籍資料
+  - 政府機密
+  correct_index: 1
+  explanation: PCI-DSS (Payment Card Industry Data Security Standard) 是保護持卡人資料安全的全球統一規範。
+  tags:
+  - chap-m2-ch1
+  - sec-risk-management
+- id: 4134
+  chapter_title: AI 專案生命週期
+  section_title: 專案規劃
+  text: 資料科學家 (Data Scientist) 與資料工程師 (Data Engineer) 的主要分工差異在於？
+  type: multiple_choice
+  options:
+  - 科學家負責硬體，工程師負責軟體
+  - 科學家負責模型分析與優化，工程師負責資料管道與架構
+  - 兩者工作完全相同
+  - 工程師只負責修電腦
+  correct_index: 1
+  explanation: 工程師負責「把水管接好」（資料流），科學家負責「分析水質」（數據價值）。兩者相輔相成。
+  tags:
+  - chap-m2-ch1
+  - sec-project-planning
+- id: 4135
+  chapter_title: AI 專案生命週期
+  section_title: 風險管理
+  text: 自動重新訓練 (Automated Retraining) 機制通常在什麼時候被觸發？
+  type: multiple_choice
+  options:
+  - 每天固定時間
+  - 當監控系統偵測到模型漂移或效能低於閾值時
+  - 專案結束時
+  - 隨機觸發
+  correct_index: 1
+  explanation: MLOps 的核心就是自動化。當監控指標顯示模型「過期」了，系統應自動啟動再訓練流程以維持效能。
+  tags:
+  - chap-m2-ch1
+  - sec-risk-management
+- id: 4136
+  chapter_title: AI 專案生命週期
+  section_title: AI 導入評估與可行性研究
+  text: 評估資料「代表性 (Representativeness)」是為了避免？
+  type: multiple_choice
+  options:
+  - 取樣偏差 (Sampling Bias)
+  - 資料過多
+  - 儲存空間不足
+  - 計算速度太慢
+  correct_index: 0
+  explanation: 若訓練資料無法代表真實世界的狀況（例如只用夏天的數據訓練銷量預測模型），模型在實際應用（冬天）時就會失效。
+  tags:
+  - chap-m2-ch1
+  - sec-feasibility
+- id: 4137
+  chapter_title: AI 專案生命週期
+  section_title: 專案規劃
+  text: 哪種開發模式的「客製化彈性」最低？
+  type: multiple_choice
+  options:
+  - 內部團隊開發
+  - 委外開發
+  - 現有商業服務 (SaaS)
+  - 混合模式
+  correct_index: 2
+  explanation: SaaS 產品通常是標準化的，雖然好用但難以針對特定企業的特殊需求進行深度修改。
+  tags:
+  - chap-m2-ch1
+  - sec-project-planning
+- id: 4138
+  chapter_title: AI 專案生命週期
+  section_title: 風險管理
+  text: 下列何者不是 GDPR 規定的個資處理原則？
+  type: multiple_choice
+  options:
+  - 合法、公平、透明
+  - 目的限制
+  - 資料極大化 (Data Maximization)
+  - 資料最小化 (Data Minimization)
+  correct_index: 2
+  explanation: GDPR 強調「資料最小化」，即只收集達成目的所需的最小量資料，而非越多越好。
+  tags:
+  - chap-m2-ch1
+  - sec-risk-management
+- id: 4139
+  chapter_title: AI 專案生命週期
+  section_title: 專案規劃
+  text: 在 AI 專案中，UI/UX 設計師的重要性在於？
+  type: multiple_choice
+  options:
+  - 提高模型準確率
+  - 降低使用者的學習門檻，提升系統易用性
+  - 加速資料清洗
+  - 管理伺服器
+  correct_index: 1
+  explanation: 再好的模型若介面難用，使用者也不會買單。良好的 UI/UX 能促進 AI 落地應用。
+  tags:
+  - chap-m2-ch1
+  - sec-project-planning
+- id: 4140
+  chapter_title: AI 專案生命週期
+  section_title: 風險管理
+  text: 為了防止「侵權」風險，在使用網路爬蟲收集資料時應注意？
+  type: multiple_choice
+  options:
+  - 爬取速度越快越好
+  - 遵守 robots.txt 協議與著作權法，確認資料授權條款
+  - 只爬取文字不爬圖片
+  - 隱藏 IP 位址
+  correct_index: 1
+  explanation: 網路公開資料不代表可以隨意商用。必須尊重網站的爬蟲協議與資料的智慧財產權。
+  tags:
+  - chap-m2-ch1
+  - sec-risk-management
+- id: 4141
+  chapter_title: AI 專案生命週期
+  section_title: 深度思考情境題
+  text: 情境：公司決定導入 AI 客服，POC 階段模型準確率達 95%。但上線一週後，客服投訴率反而上升。經調查發現，AI 對於憤怒客戶的語氣無法辨識，仍使用制式回答激怒客戶。這反映了 POC 設計時忽略了什麼？
+  type: multiple_choice
+  options:
+  - 技術指標 (Accuracy) 選擇錯誤。
+  - 樣本代表性不足，未包含極端情緒案例 (Edge Cases)。
+  - 運算資源不足。
+  - 模型訓練時間太短。
+  correct_index: 1
+  explanation: POC 往往在理想或受控的環境下進行。若測試數據未包含真實世界中複雜、極端的情況（如憤怒客戶），模型上線後就會遇到「水土不服」。這強調了測試數據必須具備高度代表性和覆蓋率。
+  tags:
+  - chap-m2-ch1
+  - sec-scenario
+- id: 4142
+  chapter_title: AI 專案生命週期
+  section_title: 深度思考情境題
+  text: 情境：你是 PM，開發團隊表示模型準確率已達 99%，建議立即上線。但你發現該模型是用於預測生產線機台故障（故障率極低）。你應該問團隊什麼問題來確認模型真的可用？
+  type: multiple_choice
+  options:
+  - 「你們是用什麼 GPU 訓練的？」
+  - 「你們的 Recall 和 Precision 是多少？混淆矩陣長怎樣？」
+  - 「模型檔案有多大？」
+  - 「訓練花了多少時間？」
+  correct_index: 1
+  explanation: 在類別不平衡（故障率低）的場景下，99% Accuracy 可能毫無意義（全部預測正常就有 99%）。PM 必須確認模型是否真的抓得到故障（Recall）以及誤報率（Precision）是否在可接受範圍。
+  tags:
+  - chap-m2-ch1
+  - sec-scenario
+- id: 4143
+  chapter_title: AI 專案生命週期
+  section_title: 深度思考情境題
+  text: 情境：公司計畫將客戶資料送往雲端 AI 平台進行分析。法務部門擔心違反 GDPR。作為技術負責人，你可以提出什麼技術方案來緩解這個風險？
+  type: multiple_choice
+  options:
+  - 簽署免責聲明。
+  - 使用資料去識別化 (De-identification) 技術，如遮罩、雜湊或差分隱私。
+  - 告訴法務雲端很安全。
+  - 只傳送一半的資料。
+  correct_index: 1
+  explanation: 技術上，透過對敏感欄位進行去識別化處理（如將姓名加密、模糊化），使資料不再屬於「個資」，是合規上雲的常見做法。
+  tags:
+  - chap-m2-ch1
+  - sec-scenario
+- id: 4144
+  chapter_title: AI 專案生命週期
+  section_title: 深度思考情境題
+  text: 情境：一個用於招聘篩選的 AI 模型被發現傾向於錄取男性。經檢查，訓練資料反映了過去 10 年公司多錄取男性的歷史事實。這屬於哪種偏見？應如何修正？
+  type: multiple_choice
+  options:
+  - 標註偏見；應重新標註。
+  - 歷史偏見 (Historical Bias)；應使用重採樣 (Resampling) 平衡性別比例。
+  - 演算法偏見；應更換模型。
+  - 隨機誤差；無需修正。
+  correct_index: 1
+  explanation: 這是典型的歷史偏見，AI 忠實地學到了人類過去的偏見。修正方法包括在數據層面平衡樣本，或在算法層面加入懲罰項，強迫模型忽略性別特徵的影響。
+  tags:
+  - chap-m2-ch1
+  - sec-scenario
+- id: 4145
+  chapter_title: AI 專案生命週期
+  section_title: 深度思考情境題
+  text: 情境：專案進入開發階段，但資料標註進度嚴重落後，導致模型無法訓練。作為 PM，你發現標註品質也參差不齊。下列哪個應對措施最有效？
+  type: multiple_choice
+  options:
+  - 催促標註人員加快速度。
+  - 暫停標註，先制定明確的標註準則 (Guideline) 並進行試標註與校準。
+  - 直接使用未標註資料訓練。
+  - 刪除難標註的資料。
+  correct_index: 1
+  explanation: 標註品質決定模型上限。單純求快只會得到垃圾數據。正確做法是「磨刀不誤砍柴工」，先統一標準，並利用技術手段（如主動學習）優先標註對模型最有幫助的樣本，提升效率與品質。
+  tags:
+  - chap-m2-ch1
+  - sec-scenario

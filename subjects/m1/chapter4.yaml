@@ -1,0 +1,676 @@
+questions:
+- id: 3401
+  chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: 感知器 (Perceptron) 的基本運算過程是？
+  type: multiple_choice
+  options:
+  - 僅進行加權求和
+  - 僅進行活化函數運算
+  - 先進行加權求和，再通過活化函數
+  - 先通過活化函數，再進行加權求和
+  correct_index: 2
+  explanation: 感知器接收輸入 $x$，計算加權和 $z = w^T x + b$，然後將 $z$ 輸入活化函數 $\phi(z)$ 得到輸出。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+- id: 3402
+  chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: 為什麼神經網路需要活化函數 (Activation Function)？
+  type: multiple_choice
+  options:
+  - 為了增加計算速度
+  - 為了引入非線性，使模型能學習複雜的模式
+  - 為了將輸出限制在 0 和 1 之間
+  - 為了減少參數數量
+  correct_index: 1
+  explanation: 若沒有非線性活化函數，多層神經網路在數學上僅等價於單層線性模型，無法解決 XOR 等非線性問題。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+- id: 3403
+  chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: ReLU (Rectified Linear Unit) 活化函數的公式是？
+  type: multiple_choice
+  options:
+  - $f(x) = 1 / (1 + e^{-x})$
+  - $f(x) = \tanh(x)$
+  - $f(x) = \max(0, x)$
+  - $f(x) = x$
+  correct_index: 2
+  explanation: ReLU 函數在 $x > 0$ 時輸出 $x$，在 $x \le 0$ 時輸出 0。它計算簡單且有效緩解了梯度消失問題。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+- id: 3404
+  chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: Softmax 函數通常用於神經網路的哪一層？
+  type: multiple_choice
+  options:
+  - 輸入層
+  - 隱藏層
+  - 卷積層
+  - 多分類問題的輸出層
+  correct_index: 3
+  explanation: Softmax 將輸出向量轉換為機率分佈（所有元素總和為 1），因此非常適合用於多分類任務的最終輸出。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+- id: 3405
+  chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: 反向傳播 (Backpropagation) 演算法的核心數學原理是？
+  type: multiple_choice
+  options:
+  - 積分
+  - 微積分中的連鎖律 (Chain Rule)
+  - 傅立葉變換
+  - 矩陣分解
+  correct_index: 1
+  explanation: 反向傳播利用連鎖律，將損失函數對輸出層的梯度一層層反向傳遞回輸入層，以計算每個權重的梯度。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+- id: 3406
+  chapter_title: 深度學習簡介
+  section_title: 最佳化
+  text: 損失函數 (Loss Function) 的作用是？
+  type: multiple_choice
+  options:
+  - 衡量模型預測值與真實值之間的誤差
+  - 增加模型的準確率
+  - 減少模型的參數量
+  - 決定模型的架構
+  correct_index: 0
+  explanation: 損失函數量化了模型預測的好壞，最佳化的目標就是最小化這個函數值。
+  tags:
+  - chap-m1-ch4
+  - sec-optimization
+- id: 3407
+  chapter_title: 深度學習簡介
+  section_title: 最佳化
+  text: 對於二元分類問題，最常用的損失函數是？
+  type: multiple_choice
+  options:
+  - 均方誤差 (MSE)
+  - 交叉熵損失 (Cross-Entropy Loss)
+  - 絕對誤差 (MAE)
+  - Hinge Loss
+  correct_index: 1
+  explanation: 交叉熵損失能有效衡量兩個機率分佈（預測機率 vs 真實標籤）之間的差異，特別適合分類問題。
+  tags:
+  - chap-m1-ch4
+  - sec-optimization
+- id: 3408
+  chapter_title: 深度學習簡介
+  section_title: 最佳化
+  text: SGD (Stochastic Gradient Descent) 與傳統梯度下降的主要區別是？
+  type: multiple_choice
+  options:
+  - SGD 使用所有數據計算梯度
+  - SGD 每次隨機抽取一個樣本（或小批次）計算梯度
+  - SGD 不需要計算梯度
+  - SGD 只能用於線性模型
+  correct_index: 1
+  explanation: 傳統梯度下降每次更新都要遍歷整個數據集，計算量大；SGD 透過隨機採樣估計梯度，速度快且能跳出局部最佳解。
+  tags:
+  - chap-m1-ch4
+  - sec-optimization
+- id: 3409
+  chapter_title: 深度學習簡介
+  section_title: 最佳化
+  text: Adam 最佳化器結合了哪兩種技術的優點？
+  type: multiple_choice
+  options:
+  - L1 和 L2 正則化
+  - Momentum 和 RMSprop
+  - SGD 和 Adagrad
+  - Dropout 和 Batch Normalization
+  correct_index: 1
+  explanation: Adam 同時利用了一階矩估計（Momentum，慣性）和二階矩估計（RMSprop，自適應學習率），是目前最常用的最佳化器。
+  tags:
+  - chap-m1-ch4
+  - sec-optimization
+- id: 3410
+  chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: 梯度消失 (Vanishing Gradient) 問題會導致什麼後果？
+  type: multiple_choice
+  options:
+  - 模型訓練速度變快
+  - 深層網路的前面幾層參數幾乎無法更新
+  - 模型過擬合
+  - 損失函數變成負數
+  correct_index: 1
+  explanation: 當梯度趨近於 0 時，權重更新量 $\Delta w = -\eta \cdot \text{gradient}$ 也趨近於 0，使得深層網路的前端層「學不動」。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+- id: 3411
+  chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: Sigmoid 函數的輸出範圍是？
+  type: multiple_choice
+  options:
+  - [-1, 1]
+  - [0, 1]
+  - [0, infinity]
+  - [-infinity, infinity]
+  correct_index: 1
+  explanation: Sigmoid 將輸入壓縮到 (0, 1) 區間，常用於二元分類的輸出層表示機率。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+- id: 3412
+  chapter_title: 深度學習簡介
+  section_title: 最佳化
+  text: 均方誤差 (MSE) 最適合用於哪類問題？
+  type: multiple_choice
+  options:
+  - 二元分類
+  - 多元分類
+  - 迴歸 (Regression)
+  - 分群
+  correct_index: 2
+  explanation: MSE 衡量預測數值與真實數值之差的平方平均，是迴歸問題的標準損失函數。
+  tags:
+  - chap-m1-ch4
+  - sec-optimization
+- id: 3413
+  chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: 在神經網路中，「權重 (Weights)」的作用是？
+  type: multiple_choice
+  options:
+  - 儲存輸入數據
+  - 調節信號的強度，決定輸入特徵的重要性
+  - 引入非線性
+  - 計算損失
+  correct_index: 1
+  explanation: 權重 $w$ 決定了輸入 $x$ 對下一層神經元輸出的影響程度，是模型需要學習的主要參數。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+- id: 3414
+  chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: 「偏差 (Bias)」在神經元 $z = wx + b$ 中的作用類似於直線方程式中的？
+  type: multiple_choice
+  options:
+  - 斜率
+  - 截距
+  - 變數
+  - 誤差
+  correct_index: 1
+  explanation: 偏差 $b$ 允許活化函數向左或向右平移，這對於擬合數據至關重要（就像直線 $y=ax+b$ 中的截距 $b$）。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+- id: 3415
+  chapter_title: 深度學習簡介
+  section_title: 最佳化
+  text: 學習率 (Learning Rate) 過大會導致？
+  type: multiple_choice
+  options:
+  - 收斂速度極慢
+  - 在最小值附近震盪甚至發散，無法收斂
+  - 模型準確率提高
+  - 梯度消失
+  correct_index: 1
+  explanation: 學習率決定步長。步長太大可能直接跨過山谷底部的最低點，甚至衝到對面更高的位置，導致無法收斂。
+  tags:
+  - chap-m1-ch4
+  - sec-optimization
+- id: 3416
+  chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: 前向傳播 (Forward Propagation) 的主要目的是？
+  type: multiple_choice
+  options:
+  - 更新權重
+  - 計算梯度
+  - 根據當前參數計算預測輸出
+  - 初始化參數
+  correct_index: 2
+  explanation: 前向傳播是數據從輸入層流向輸出層的過程，最終產生預測結果。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+- id: 3417
+  chapter_title: 深度學習簡介
+  section_title: 最佳化
+  text: Momentum (動量) 技術的主要目的是？
+  type: multiple_choice
+  options:
+  - 減少參數量
+  - 加速收斂並抑制震盪
+  - 防止過擬合
+  - 自動調整學習率
+  correct_index: 1
+  explanation: 動量模擬物理慣性，讓參數更新方向保持一致，能加速通過平緩區域並減少在峽谷中的震盪。
+  tags:
+  - chap-m1-ch4
+  - sec-optimization
+- id: 3418
+  chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: 哪種活化函數在輸入為負時輸出為 0，輸入為正時輸出為輸入值本身？
+  type: multiple_choice
+  options:
+  - Sigmoid
+  - Tanh
+  - ReLU
+  - Leaky ReLU
+  correct_index: 2
+  explanation: 這是 ReLU (Rectified Linear Unit) 的定義：$\max(0, x)$。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+- id: 3419
+  chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: 全連接層 (Fully Connected Layer) 的特點是？
+  type: multiple_choice
+  options:
+  - 每個神經元只連接到上一層的部分神經元
+  - 每個神經元都與上一層的所有神經元相連
+  - 神經元之間沒有連接
+  - 權重是共享的
+  correct_index: 1
+  explanation: 全連接層（Dense Layer）中，上一層的每個輸出都連接到下一層的每個輸入，參數數量最多。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+- id: 3420
+  chapter_title: 深度學習簡介
+  section_title: 最佳化
+  text: Epoch 在深度學習訓練中代表什麼？
+  type: multiple_choice
+  options:
+  - 一次參數更新
+  - 一個批次 (Batch) 的數據通過模型
+  - 整個訓練數據集完整通過模型一次 (前向+反向)
+  - 訓練結束
+  correct_index: 2
+  explanation: 一個 Epoch 意味著模型已經看過所有的訓練數據一次。通常需要多個 Epoch 才能訓練收斂。
+  tags:
+  - chap-m1-ch4
+  - sec-optimization
+- id: 3421
+  chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: Tanh 活化函數的輸出範圍是？
+  type: multiple_choice
+  options:
+  - [0, 1]
+  - [-1, 1]
+  - [0, infinity]
+  - [-infinity, infinity]
+  correct_index: 1
+  explanation: Tanh (雙曲正切) 函數將輸入壓縮到 (-1, 1)，其中心為 0，通常比 Sigmoid 收斂更快。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+- id: 3422
+  chapter_title: 深度學習簡介
+  section_title: 最佳化
+  text: 批次大小 (Batch Size) 對訓練有什麼影響？
+  type: multiple_choice
+  options:
+  - 批次越大，訓練越快，但記憶體需求越高
+  - 批次越小，梯度估計越準確
+  - 批次大小不影響訓練
+  - 批次越大，泛化能力越好
+  correct_index: 0
+  explanation: 大批次能利用矩陣運算的並行性加速訓練，但需要更多 GPU 記憶體；小批次引入更多雜訊，有時有助於泛化。
+  tags:
+  - chap-m1-ch4
+  - sec-optimization
+- id: 3423
+  chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: 深度神經網路 (DNN) 中的「深度」指的是？
+  type: multiple_choice
+  options:
+  - 每一層神經元的數量
+  - 隱藏層的數量
+  - 數據的維度
+  - 訓練的時間
+  correct_index: 1
+  explanation: 深度學習之所以「深」，是因為它堆疊了多個隱藏層，使其能學習分層次的特徵表示。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+- id: 3424
+  chapter_title: 深度學習簡介
+  section_title: 最佳化
+  text: 權重初始化 (Weight Initialization) 若將所有權重設為 0，會發生什麼？
+  type: multiple_choice
+  options:
+  - 模型訓練非常快
+  - 喪失對稱性 (Symmetry Breaking) 失敗
+  - 模型準確率最高
+  - 不會有影響
+  correct_index: 1
+  explanation: 若所有權重初始化為 0，則同一層的所有神經元在反向傳播時獲得的梯度都相同，導致它們永遠同步更新，無法學習不同的特徵。
+  tags:
+  - chap-m1-ch4
+  - sec-optimization
+- id: 3425
+  chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: 為什麼 ReLU 比 Sigmoid 更受歡迎？
+  type: multiple_choice
+  options:
+  - ReLU 輸出範圍是 (-1, 1)
+  - ReLU 計算複雜
+  - ReLU 在正區間梯度恆為 1，有效解決梯度消失問題
+  - ReLU 是線性的
+  correct_index: 2
+  explanation: Sigmoid 在兩端飽和區梯度趨近 0，導致梯度消失。ReLU 簡單且在正區間無此問題，加速了深層網路的收斂。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+- id: 3426
+  chapter_title: 深度學習簡介
+  section_title: 最佳化
+  text: RMSprop 最佳化器的主要特點是？
+  type: multiple_choice
+  options:
+  - 使用動量
+  - 自適應調整學習率
+  - 隨機梯度下降
+  - 不更新權重
+  correct_index: 1
+  explanation: RMSprop 通過除以梯度的滑動平均平方根來調整每個參數的學習率，解決了 Adagrad 學習率單調遞減過快的問題。
+  tags:
+  - chap-m1-ch4
+  - sec-optimization
+- id: 3427
+  chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: 多層感知器 (MLP) 至少包含幾層？
+  type: multiple_choice
+  options:
+  - 1 層 (輸入層)
+  - 2 層 (輸入、輸出)
+  - 3 層 (輸入、隱藏、輸出)
+  - 無限層
+  correct_index: 2
+  explanation: MLP 至少包含一個隱藏層，才能處理非線性問題。結構為：輸入層 -> 隱藏層 -> 輸出層。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+- id: 3428
+  chapter_title: 深度學習簡介
+  section_title: 最佳化
+  text: 什麼是「早停 (Early Stopping)」？
+  type: multiple_choice
+  options:
+  - 在訓練開始前停止
+  - 當驗證集誤差不再下降（甚至開始上升）時停止訓練
+  - 當訓練集誤差為 0 時停止
+  - 固定訓練 10 個 Epoch
+  correct_index: 1
+  explanation: 早停是一種正則化技術，通過監控驗證集表現來決定何時停止訓練，避免模型過度擬合訓練數據。
+  tags:
+  - chap-m1-ch4
+  - sec-optimization
+- id: 3429
+  chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: 輸入層 (Input Layer) 的神經元數量取決於？
+  type: multiple_choice
+  options:
+  - 輸出類別數量
+  - 輸入數據的特徵維度
+  - 隱藏層數量
+  - 隨機決定
+  correct_index: 1
+  explanation: 輸入層負責接收原始數據，其神經元數量必須等於輸入向量的維度（特徵數）。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+- id: 3430
+  chapter_title: 深度學習簡介
+  section_title: 最佳化
+  text: 學習率衰減 (Learning Rate Decay) 的目的是？
+  type: multiple_choice
+  options:
+  - 隨著訓練進行逐漸減小學習率
+  - 增加學習率以加速訓練
+  - 保持學習率不變
+  - 隨機改變學習率
+  correct_index: 0
+  explanation: 初期使用大機率快速接近最佳解，後期減小學習率可以避免在最小值附近震盪，從而收斂得更精確。
+  tags:
+  - chap-m1-ch4
+  - sec-optimization
+- id: 3431
+  chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: Leaky ReLU 解決了 ReLU 的什麼問題？
+  type: multiple_choice
+  options:
+  - 梯度爆炸
+  - Dead ReLU 問題（神經元死亡）
+  - 計算過慢
+  - 輸出範圍太大
+  correct_index: 1
+  explanation: 標準 ReLU 在負區間梯度為 0，可能導致神經元永遠不再激活（死亡）。Leaky ReLU 在負區間給予一個很小的斜率（如 0.01），保留了梯度流動。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+- id: 3432
+  chapter_title: 深度學習簡介
+  section_title: 最佳化
+  text: 梯度爆炸 (Exploding Gradient) 通常發生在？
+  type: multiple_choice
+  options:
+  - 淺層網路
+  - 使用 ReLU 時
+  - 循環神經網路 (RNN) 處理長序列時
+  - 學習率過小
+  correct_index: 2
+  explanation: 在 RNN 中，梯度隨時間步長反向傳播，若權重矩陣特徵值大於 1，梯度會指數級增長，導致數值溢出 (NaN)。
+  tags:
+  - chap-m1-ch4
+  - sec-optimization
+- id: 3433
+  chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: 輸出層使用線性活化函數 (Linear Activation) 通常適用於？
+  type: multiple_choice
+  options:
+  - 二元分類
+  - 多元分類
+  - 迴歸問題 (預測任意實數)
+  - 圖像生成
+  correct_index: 2
+  explanation: 迴歸問題的目標值通常是無界的實數，因此輸出層不應使用限制範圍的活化函數（如 Sigmoid），直接輸出線性結果即可。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+- id: 3434
+  chapter_title: 深度學習簡介
+  section_title: 最佳化
+  text: 梯度剪裁 (Gradient Clipping) 用於解決什麼問題？
+  type: multiple_choice
+  options:
+  - 梯度消失
+  - 梯度爆炸
+  - 過擬合
+  - 欠擬合
+  correct_index: 1
+  explanation: 當檢測到梯度範數超過閾值時，強制將其縮放（剪裁）到該閾值內，防止梯度爆炸導致權重更新過大。
+  tags:
+  - chap-m1-ch4
+  - sec-optimization
+- id: 3435
+  chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: 萬能近似定理 (Universal Approximation Theorem) 指出？
+  type: multiple_choice
+  options:
+  - 神經網路可以解決所有問題
+  - 只要有足夠多的神經元，一個單隱藏層的前饋網路可以以任意精度近似任何連續函數
+  - 神經網路永遠比決策樹好
+  - 深度越深越好
+  correct_index: 1
+  explanation: 這是神經網路強大能力的理論基礎，證明了其擬合複雜函數的潛力（雖然實務上通常用多層網路更有效率）。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+- id: 3436
+  chapter_title: 深度學習簡介
+  section_title: 最佳化
+  text: 局部最小值 (Local Minima) 在高維空間中常見嗎？
+  type: multiple_choice
+  options:
+  - 非常常見，是最佳化的主要障礙
+  - 不常見，更常見的是鞍點 (Saddle Points)
+  - 不存在
+  - 只有一個
+  correct_index: 1
+  explanation: 研究表明，在高維非凸優化中，真正的局部極小值很少見，大部分梯度為 0 的點其實是鞍點（一個方向上升，一個方向下降）。
+  tags:
+  - chap-m1-ch4
+  - sec-optimization
+- id: 3437
+  chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: Dropout 層在訓練時的作用是？
+  type: multiple_choice
+  options:
+  - 隨機將部分神經元的輸出設為 0
+  - 刪除神經元
+  - 增加神經元
+  - 歸一化輸出
+  correct_index: 0
+  explanation: Dropout 透過在每次迭代中隨機「關閉」部分神經元，強迫網路學習更魯棒的特徵，是一種強大的正則化技術，防止過擬合。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+- id: 3438
+  chapter_title: 深度學習簡介
+  section_title: 最佳化
+  text: 為什麼要對輸入數據進行標準化 (Normalization)？
+  type: multiple_choice
+  options:
+  - 為了美觀
+  - 為了加速梯度下降收斂，使損失曲面更圓滑
+  - 為了增加數據量
+  - 為了減少特徵
+  correct_index: 1
+  explanation: 若特徵尺度不一，損失曲面會呈現狹長的橢圓形，導致梯度下降路徑曲折且收斂慢。標準化後曲面接近圓形，梯度直指圓心，收斂更快。
+  tags:
+  - chap-m1-ch4
+  - sec-optimization
+- id: 3439
+  chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: 卷積神經網路 (CNN) 最適合處理什麼類型的數據？
+  type: multiple_choice
+  options:
+  - 表格數據
+  - 網格狀數據 (如圖像)
+  - 時間序列
+  - 文字
+  correct_index: 1
+  explanation: CNN 利用卷積核提取局部特徵，並透過權重共享適應平移不變性，是處理圖像數據的標準架構。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+- id: 3440
+  chapter_title: 深度學習簡介
+  section_title: 最佳化
+  text: 哪種損失函數對於異常值 (Outliers) 較為魯棒 (Robust)？
+  type: multiple_choice
+  options:
+  - MSE (均方誤差)
+  - MAE (平均絕對誤差)
+  - Cross-Entropy
+  - Exponential Loss
+  correct_index: 1
+  explanation: MSE 會將誤差平方，導致異常值的巨大誤差主導損失函數。MAE 僅計算絕對差值，對異常值較不敏感。
+  tags:
+  - chap-m1-ch4
+  - sec-optimization
+- id: 3441
+  chapter_title: 深度學習簡介
+  section_title: 深度思考情境題
+  text: 情境：你正在訓練一個深層神經網路，發現前幾層的權重幾乎不更新，導致模型無法學習。檢查後發現你使用了 Sigmoid 活化函數。這是什麼問題？應如何解決？
+  type: multiple_choice
+  options:
+  - 梯度爆炸；應使用梯度剪裁。
+  - 梯度消失；應改用 ReLU 活化函數。
+  - 過擬合；應使用 Dropout。
+  - 學習率過大；應降低學習率。
+  correct_index: 1
+  explanation: Sigmoid 的導數最大值僅為 0.25，且在飽和區趨近於 0。在深層網路中，多個小於 1 的導數連乘會導致梯度迅速消失。改用 ReLU (導數為 1) 是標準解決方案。
+  tags:
+  - chap-m1-ch4
+  - sec-scenario
+- id: 3442
+  chapter_title: 深度學習簡介
+  section_title: 深度思考情境題
+  text: 情境：你使用 Adam 最佳化器訓練模型，初期損失下降很快，但到後期損失在一個較高值附近震盪，無法進一步下降。你應該嘗試調整什麼？
+  type: multiple_choice
+  options:
+  - 增加批次大小。
+  - 降低學習率 (Learning Rate Decay)。
+  - 更換成 SGD。
+  - 增加模型層數。
+  correct_index: 1
+  explanation: 雖然 Adam 有自適應學習率，但基礎學習率若設得太大，後期仍可能導致在最小值附近震盪。手動或自動降低學習率 (Learning Rate Schedule) 可以幫助模型在最後階段「沉澱」到更佳的極小值。
+  tags:
+  - chap-m1-ch4
+  - sec-scenario
+- id: 3443
+  chapter_title: 深度學習簡介
+  section_title: 深度思考情境題
+  text: 情境：你的模型在訓練集上表現極好 (Loss 接近 0)，但在測試集上表現很差。你決定使用 Dropout。請問 Dropout 應該加在哪裡？測試階段 (Inference) 需要保留 Dropout 嗎？
+  type: multiple_choice
+  options:
+  - 加在輸出層；測試時保留。
+  - 加在隱藏層後；測試時應移除 (或將權重乘以保留率)。
+  - 加在輸入層；測試時保留。
+  - 隨便加；測試時保留。
+  correct_index: 1
+  explanation: Dropout 通常加在全連接層之後。在訓練時它隨機關閉神經元以防止過擬合；在測試時，我們希望利用整個網路的能力，因此不應關閉神經元，但需要對權重進行縮放 (Scaling) 以保持期望值一致。
+  tags:
+  - chap-m1-ch4
+  - sec-scenario
+- id: 3444
+  chapter_title: 深度學習簡介
+  section_title: 深度思考情境題
+  text: 情境：你正在處理一個多標籤分類問題 (Multi-label Classification)，即一張圖片可能同時包含「貓」和「狗」。你的輸出層應該有多少個神經元？使用什麼活化函數？
+  type: multiple_choice
+  options:
+  - 1 個神經元；Sigmoid。
+  - N 個神經元 (N=類別數)；Softmax。
+  - N 個神經元 (N=類別數)；Sigmoid。
+  - N 個神經元；ReLU。
+  correct_index: 2
+  explanation: Softmax 強制所有類別機率和為 1，意味著類別互斥（單選）。對於多標籤問題（複選），每個類別是獨立的，應對每個輸出節點獨立使用 Sigmoid，使其輸出代表該類別存在的機率 (0~1)。
+  tags:
+  - chap-m1-ch4
+  - sec-scenario
+- id: 3445
+  chapter_title: 深度學習簡介
+  section_title: 深度思考情境題
+  text: 情境：在訓練過程中，Loss 突然變成 NaN (Not a Number)。這最可能是什麼原因造成的？應如何排查？
+  type: multiple_choice
+  options:
+  - 學習率過小。
+  - 梯度爆炸 (Exploding Gradient) 或除以零錯誤。
+  - 模型太簡單。
+  - 數據量太少。
+  correct_index: 1
+  explanation: Loss 變 NaN 通常意味著數值計算溢出。常見原因包括學習率過大導致參數更新飛出邊界、梯度爆炸（特別是在 RNN 中），或在計算 Log 時輸入了 0 或負數。梯度剪裁和降低學習率是常見對策。
+  tags:
+  - chap-m1-ch4
+  - sec-scenario

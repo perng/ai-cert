@@ -106,4 +106,208 @@ print("Top 5 nodes by degree:", sorted(degree_cent.items(), key=lambda x: x[1], 
 *   **空間操作**：
     *   **Buffer**：建立緩衝區（例如：距離商店 500 公尺內的區域）。
     *   **Intersection**：計算兩個幾何圖形的交集。
-    *   **Spatial Join**：基於空間關係合併兩個 GeoDataFrame。
+## 統計檢定與推論 (Statistical Hypothesis Testing) {#sec-statistical-tests}
+
+### t 檢定 (t-test) {.unnumbered}
+
+t 檢定是一種常用的統計假設檢定方法，用於比較兩個平均值（Means）是否存在顯著差異。它適用於樣本數較小且母體標準差未知的情況（假設母體為常態分佈）。
+
+*   **單樣本 t 檢定 (One-sample t-test)**：
+    *   比較一個樣本的平均值與已知的母體平均值（或特定值）。
+    *   *例子*：檢驗某班級的平均成績是否顯著高於全校平均成績 70 分。
+*   **獨立樣本 t 檢定 (Independent two-sample t-test)**：
+    *   比較兩個獨立樣本的平均值。
+    *   *例子*：檢驗服用新藥的組別與服用安慰劑的組別，其康復時間是否有顯著差異。
+*   **成對樣本 t 檢定 (Paired samples t-test)**：
+    *   比較同一組樣本在不同時間點（或不同條件下）的平均值。
+    *   *例子*：檢驗同一組學生在參加補習班前後的成績是否有顯著進步。
+
+### 變異數分析 (ANOVA) {.unnumbered}
+
+當需要比較**三組或以上**獨立樣本的平均值是否有顯著差異時，應使用變異數分析 (Analysis of Variance, ANOVA)。
+
+*   **單因子變異數分析 (One-way ANOVA)**：
+    *   **用途**：檢驗一個自變數（因子）的不同水準對應變數平均值是否有顯著影響。
+    *   **假設**：各組樣本呈常態分佈、變異數相等（齊一性）、樣本獨立。
+    *   **例子**：比較三種不同教學方法（A、B、C）對學生成績是否有顯著差異。
+
+**Python 範例：One-way ANOVA**
+
+```{python}
+from scipy import stats
+
+# 三組學生成績
+method_A = [82, 85, 88, 90, 86]
+method_B = [75, 78, 80, 79, 77]
+method_C = [92, 95, 94, 96, 93]
+
+# F-oneway ANOVA
+f_stat, p_val = stats.f_oneway(method_A, method_B, method_C)
+print(f"F-statistic: {f_stat:.2f}, p-value: {p_val:.4f}")
+```
+
+### 卡方檢定 (Chi-square Test) {.unnumbered}
+
+卡方檢定主要用於分析**類別資料 (Categorical Data)**。
+
+*   **獨立性檢定 (Test of Independence)**：
+    *   **用途**：檢驗兩個類別變數之間是否獨立（即是否有關聯）。
+    *   **例子**：檢驗「性別」與「購買意願」（買/不買）是否有關聯。
+*   **適合度檢定 (Goodness of Fit Test)**：
+    *   **用途**：檢驗一個類別變數的觀察分佈是否符合預期分佈。
+    *   **例子**：檢驗擲骰子 600 次，各點數出現次數是否均勻（各 100 次）。
+
+**Python 範例：卡方獨立性檢定**
+
+```{python}
+from scipy import stats
+import numpy as np
+
+# 建立列聯表 (Contingency Table)
+# 例如：性別 (男, 女) x 購買意願 (買, 不買)
+#        買   不買
+#  男    30    20
+#  女    40    10
+observed = np.array([[30, 20], [40, 10]])
+
+# 卡方檢定
+chi2, p, dof, expected = stats.chi2_contingency(observed)
+print(f"Chi2 statistic: {chi2:.2f}, p-value: {p:.4f}")
+```
+
+### 比例檢定 (Proportion Test) {.unnumbered}
+
+用於檢驗比例（如成功率、支持率）是否符合預期或兩組比例是否有差異。
+
+*   **單樣本比例檢定 (One-sample proportion test)**：
+    *   檢驗樣本比例是否顯著異於某個特定值（如 0.5）。
+    *   *例子*：檢驗某候選人的支持率是否顯著超過 50%。
+*   **雙樣本比例檢定 (Two-sample proportion test)**：
+    *   檢驗兩個獨立樣本的比例是否有顯著差異。
+    *   *例子*：檢驗 A 網頁與 B 網頁的轉換率（Conversion Rate）是否有顯著差異。
+
+**Python 範例：雙樣本比例檢定**
+
+```{python}
+from statsmodels.stats.proportion import proportions_ztest
+import numpy as np
+
+# 樣本數據：[成功次數 A, 成功次數 B]
+count = np.array([30, 45])
+# 樣本總數：[總數 A, 總數 B]
+nobs = np.array([100, 100])
+
+# 檢定兩組比例是否不同
+stat, pval = proportions_ztest(count, nobs)
+print(f"Z-statistic: {stat:.2f}, p-value: {pval:.4f}")
+```
+
+**Python 範例：單樣本 t 檢定**
+
+```{python}
+from scipy import stats
+
+# 假設我們有一組學生成績，想檢驗平均分是否顯著異於 70 分
+scores = [72, 75, 68, 70, 74, 78, 71, 73, 69, 76]
+
+# H0: mu = 70
+# H1: mu != 70
+t_stat, p_val = stats.ttest_1samp(scores, 70)
+
+print(f"T-statistic: {t_stat:.2f}, p-value: {p_val:.4f}")
+
+if p_val < 0.05:
+    print("拒絕虛無假設，平均分顯著異於 70")
+else:
+    print("無法拒絕虛無假設")
+```
+
+### 相關性檢定 (Correlation Test) {.unnumbered}
+
+相關性檢定用於評估兩個變數之間的關聯強度和方向。
+
+*   **皮爾森相關檢定 (Pearson correlation test)**：
+    *   **適用條件**：兩個變數皆為連續變數，且呈常態分佈，存在線性關係。
+    *   **指標**：皮爾森相關係數 ($r$)，範圍從 -1 到 1。
+        *   $r=1$：完全正相關。
+        *   $r=-1$：完全負相關。
+        *   $r=0$：無線性相關。
+*   **斯皮爾曼等級相關檢定 (Spearman rank correlation test)**：
+    *   **適用條件**：變數不符合常態分佈，或變數為順序尺度 (Ordinal)。它基於變數的**等級 (Rank)** 而非原始數值。
+    *   **指標**：斯皮爾曼等級相關係數 ($\rho$)。
+
+**Python 範例：計算相關係數**
+
+```{python}
+from scipy import stats
+import numpy as np
+
+# 產生線性相關的數據
+x = np.linspace(0, 10, 20)
+y = 2 * x + np.random.normal(0, 2, 20) # y = 2x + noise
+
+# 皮爾森相關
+r, p_pearson = stats.pearsonr(x, y)
+print(f"Pearson r: {r:.2f}, p-value: {p_pearson:.4f}")
+
+# 產生非線性單調相關的數據 (例如指數關係)
+y_exp = np.exp(x/3)
+
+# 斯皮爾曼相關
+rho, p_spearman = stats.spearmanr(x, y_exp)
+print(f"Spearman rho: {rho:.2f}, p-value: {p_spearman:.4f}")
+```
+
+### 非參數檢定 (Non-parametric Tests) {.unnumbered}
+
+當數據不符合常態分佈假設，或數據為順序尺度時，應使用非參數檢定。
+
+*   **Mann-Whitney U 檢定**：
+    *   **用途**：比較兩組獨立樣本的中位數是否有顯著差異（對應獨立樣本 t 檢定）。
+    *   **適用**：數據非常態分佈，或樣本數較小。
+*   **Kruskal-Wallis 檢定**：
+    *   **用途**：比較三組或以上獨立樣本的分佈位置（中位數）是否有顯著差異（對應 One-way ANOVA）。
+    *   **適用**：多組數據非常態分佈。
+
+**Python 範例：非參數檢定**
+
+```{python}
+from scipy import stats
+
+# 兩組非常態分佈數據
+group1 = [10, 12, 15, 18, 20]
+group2 = [25, 28, 30, 32, 35]
+
+# Mann-Whitney U test
+u_stat, p_u = stats.mannwhitneyu(group1, group2)
+print(f"Mann-Whitney U p-value: {p_u:.4f}")
+
+# 三組數據
+group3 = [15, 18, 22, 25, 28]
+
+# Kruskal-Wallis test
+h_stat, p_h = stats.kruskal(group1, group2, group3)
+print(f"Kruskal-Wallis p-value: {p_h:.4f}")
+```
+
+### 型一錯誤與型二錯誤 {.unnumbered}
+
+在假設檢定中，我們可能會犯兩種錯誤：
+
+*   **型一錯誤 (Type I Error, $\alpha$)**：**偽陽性 (False Positive)**。
+    *   **定義**：當虛無假設 $H_0$ 為真時，我們卻拒絕了它。
+    *   **機率**：顯著水準 $\alpha$ (通常為 0.05)。
+    *   **例子**：法庭判決無罪的人有罪（冤獄）；沒病的人被診斷為有病。
+*   **型二錯誤 (Type II Error, $\beta$)**：**偽陰性 (False Negative)**。
+    *   **定義**：當虛無假設 $H_0$ 為假（即對立假設 $H_1$ 為真）時，我們卻沒有拒絕 $H_0$。
+    *   **機率**：$\beta$。
+    *   **例子**：法庭判決有罪的人無罪（縱放）；有病的人被診斷為沒病。
+
+**檢定力 (Statistical Power)**：
+*   **定義**：正確拒絕錯誤的 $H_0$ 的機率，即 $1 - \beta$。
+*   **目標**：在固定 $\alpha$ 的情況下，盡量提高檢定力（例如增加樣本數）。
+
+| | $H_0$ 為真 (無效應) | $H_0$ 為假 (有效應) |
+| :--- | :--- | :--- |
+| **拒絕 $H_0$** | **型一錯誤 ($\alpha$)** <br> (偽陽性) | **正確決策 ($1-\beta$)** <br> (檢定力) |
+| **不拒絕 $H_0$** | **正確決策 ($1-\alpha$)** | **型二錯誤 ($\beta$)** <br> (偽陰性) |

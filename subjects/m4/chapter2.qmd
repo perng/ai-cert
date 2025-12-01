@@ -17,7 +17,7 @@
 
 **Python 範例：PyTorch 與 TensorFlow 定義簡單層的比較**
 
-```{python}
+```python
 # PyTorch
 import torch.nn as nn
 linear_layer = nn.Linear(in_features=10, out_features=5)

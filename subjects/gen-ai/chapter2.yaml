@@ -845,9 +845,9 @@ questions:
   text: 某公司在導入生成式 AI協助撰寫內部報告時，測試人員刻意在輸入的 上下文中放入互相矛盾的資訊 （例如：同一位員工在不同段落被描述為 「入職三年」與「入職五年」 ） 。在這種情況下，最常見的模型行為會是 什麼？ (114年第四梯次)
   type: multiple_choice
   options:
-  - 永遠選擇第一段資訊作為答案依據；
-  - 可能生成幻覺或隨機採信其中一方的內容；
-  - 拒絕回答，並要求提供更一致的輸入；
+  - 永遠選擇第一段資訊作為答案依據
+  - 可能生成幻覺或隨機採信其中一方的內容
+  - 拒絕回答，並要求提供更一致的輸入
   - 自動判斷並只選擇正確的資訊
   correct_index: 0
   explanation: 此題涉及 某公司在導入生成式 ... 的核心概念。正確答案為「永遠選擇第一段資訊作為答案依據；」。 
@@ -862,10 +862,10 @@ questions:
   text: 在生成式 AI 的提示工程中，Graph Prompting 在處理複雜關係資料時， 為何通常比 Chain-of-Thought（CoT）更有效？ (114年第四梯次)
   type: multiple_choice
   options:
-  - Graph Prompting 幾乎不需要推理，只依靠圖結構即可得出結論；
-  - Graph Prompting 僅需單次提示，即可避免多輪推理的誤差累積；
-  - Graph Prompting 的生成速度通常更快，因此效率更高；
-  - Graph Prompting 能捕捉非線性結構與上下文關聯，適合處理網絡 化資訊
+  - Graph Prompting 幾乎不需要推理，只依靠圖結構即可得出結論
+  - Graph Prompting 僅需單次提示，即可避免多輪推理的誤差累積
+  - Graph Prompting 的生成速度通常更快，因此效率更高
+  - Graph Prompting 能捕捉非線性結構與上下文關聯，適合處理網絡化資訊
   correct_index: 0
   explanation: Chain-of-Thought (CoT) 透過引導模型逐步推理（Step-by-step），能顯著提升複雜邏輯與數學問題的解題能力。 
   tags:
@@ -879,9 +879,9 @@ questions:
   text: 在少樣本提示（Few-shot Prompting）僅能提供 1–2 個範例的情況 下，若遇到領域偏移（Domain Shift） ，下列何者為模型最可能面臨的 核心挑戰？ (114年第四梯次)
   type: multiple_choice
   options:
-  - 範例數量過少，無法涵蓋新領域的多樣性，導致模型泛化不足；
-  - 範例表徵有限，模型容易依賴單一樣本特性而降低適應力；
-  - 範例覆蓋不足，使模型難以抽取跨領域的穩定模式；
+  - 範例數量過少，無法涵蓋新領域的多樣性，導致模型泛化不足
+  - 範例表徵有限，模型容易依賴單一樣本特性而降低適應力
+  - 範例覆蓋不足，使模型難以抽取跨領域的穩定模式
   - 範例資訊過於稀缺，模型缺乏應對不同輸入情境的能力
   correct_index: 0
   explanation: Few-shot Prompting 透過提供少量範例（Examples），讓模型快速學習任務模式與輸出格式，無需更新參數。 
@@ -896,9 +896,9 @@ questions:
   text: 某社交平台嘗試結合自動提示工程（ Automatic Prompt Engineer, APE）與圖提示（Graph Prompting） ，讓AI 協助分析使用者之間的互動 關係。在這個過程中，下列何者為最可能遇到的挑戰？ (114年第四梯次)
   type: multiple_choice
   options:
-  - 圖結構轉換為文字提示時，可能導致部分關聯資訊遺失；
-  - APE 在圖資料上無法產生任何提示內容；
-  - 圖轉文字後能完整保留所有上下文，對推理不造成影響；
+  - 圖結構轉換為文字提示時，可能導致部分關聯資訊遺失
+  - APE 在圖資料上無法產生任何提示內容
+  - 圖轉文字後能完整保留所有上下文，對推理不造成影響
   - Graph Prompting 僅能處理線性路徑，限制多分支探索
   correct_index: 0
   explanation: 此題涉及 某社交平台嘗試結合自... 的核心概念。正確答案為「圖結構轉換為文字提示時，可能導致部分關聯資訊遺失；」。 
@@ -913,9 +913,9 @@ questions:
   text: 在建置多代理大型語言模型（Multi-agent LLMs）系統時，如果沒有清 楚定義每個代理的任務啟動條件和角色分工，最可能出現什麼問題？ (114年第四梯次)
   type: multiple_choice
   options:
-  - 回覆內容前後不連貫，系統邏輯斷裂；
-  - 不同代理的答案互相衝突，無法判斷最終決策；
-  - 系統陷入無限對話循環，導致資源耗盡；
+  - 回覆內容前後不連貫，系統邏輯斷裂
+  - 不同代理的答案互相衝突，無法判斷最終決策
+  - 系統陷入無限對話循環，導致資源耗盡
   - 多個代理重複做同樣的任務，造成效率低落
   correct_index: 0
   explanation: AI Agent 具備感知、規劃、記憶與工具使用能力，能自主拆解目標並執行一連串行動以完成複雜任務。 
@@ -930,9 +930,9 @@ questions:
   text: 某團隊希望讓 AI 自動查詢 GitHub 上的程式碼庫，並生成摘要給使用 者參考。開發者決定透過Model Context Protocol（MCP）來實現，AI 需先發出請求，再經由 MCP 架構逐步完成查詢與回傳。在此情境下， MCP 運作流程的正確順序為何？ (114年第四梯次)
   type: multiple_choice
   options:
-  - MCP Server →AI Host →MCP Client →資料查詢→結果回傳 AI Host；
-  - MCP Client →AI Host →MCP Server →資料查詢→結果回傳 AI Host；
-  - AI Host →MCP Client → MCP Server →資料查詢→結果回傳 AI Host；
+  - MCP Server →AI Host →MCP Client →資料查詢→結果回傳 AI Host
+  - MCP Client →AI Host →MCP Server →資料查詢→結果回傳 AI Host
+  - AI Host →MCP Client → MCP Server →資料查詢→結果回傳 AI Host
   - AI Host→MCP Server→MCP Client→資料查詢→結果回傳 AI Host
   correct_index: 0
   explanation: Model Context Protocol (MCP) 是一種標準化協議，旨在簡化 AI 模型與外部數據、工具及資源的連接與互動。 
@@ -947,9 +947,9 @@ questions:
   text: 某公司正在開發一個智慧客服系統，負責回覆顧客關於退換貨、優惠活 動與商品建議等問題。研發團隊嘗試使用不同的提示設計方式來提升 模型效能 。 下列哪一個提示最符合 「少樣本提示 （Few-Shot Prompting）」 的設計原則？ (114年第四梯次)
   type: multiple_choice
   options:
-  - 「請回答顧客詢問：如何申請退貨？」； 第二科：生成式 AI 應用與規劃
-  - 「以下是兩組客服對話範例，請依照相同風格回覆新的顧客問題」；
-  - 「請逐步分析顧客投訴的原因，並依照推理過程生成合適回覆」；
+  - 「請回答顧客詢問：如何申請退貨？」
+  - 「以下是兩組客服對話範例，請依照相同風格回覆新的顧客問題」
+  - 「請逐步分析顧客投訴的原因，並依照推理過程生成合適回覆」
   - 「請以正式的語氣回覆顧客的提問」
   correct_index: 0
   explanation: Few-shot Prompting 透過提供少量範例（Examples），讓模型快速學習任務模式與輸出格式，無需更新參數。 
@@ -964,9 +964,9 @@ questions:
   text: 在應用零樣本提示（Zero-Shot Prompting）時，下列哪一種情境最可 能因缺乏示範而失敗，出現語意錯誤或結構錯誤的輸出？ (114年第四梯次)
   type: multiple_choice
   options:
-  - 要求模型判斷一段影評文字的情感傾向；
-  - 要求模型將一段新聞摘要濃縮為一句話；
-  - 要求模型將一段繁體中文翻譯成英文；
+  - 要求模型判斷一段影評文字的情感傾向
+  - 要求模型將一段新聞摘要濃縮為一句話
+  - 要求模型將一段繁體中文翻譯成英文
   - 要求模型從表格中擷取所有城市的最高氣溫
   correct_index: 0
   explanation: Zero-shot Prompting 不提供任何範例，直接依靠模型預訓練的知識來解決任務，考驗模型的泛化能力。 
@@ -981,9 +981,9 @@ questions:
   text: 在超長上下文任務中使用自動提示工程 （Automatic Prompt Engineer, 第二科：生成式 AI 應用與規劃 APE）時，可能面臨的最大限制是什麼？ (114年第四梯次)
   type: multiple_choice
   options:
-  - 迭代優化難以因應上下文的不斷變動，導致調整失效；
-  - 模型的記憶容量有限，無法完整保留所有長篇資訊；
-  - 提示內容難以有效分解，無法支援複雜任務拆解；
+  - 迭代優化難以因應上下文的不斷變動，導致調整失效
+  - 模型的記憶容量有限，無法完整保留所有長篇資訊
+  - 提示內容難以有效分解，無法支援複雜任務拆解
   - 回饋機制通常僅針對局部片段，難以全面評估最終輸出品質
   correct_index: 0
   explanation: 此題涉及 在超長上下文任務中使... 的核心概念。正確答案為「迭代優化難以因應上下文的不斷變動，導致調整失效；」。 
@@ -998,9 +998,9 @@ questions:
   text: 在導入生成式 AI 的應用規劃中，上下文工程（Context Engineering） 的核心目的為何？ (114年第四梯次)
   type: multiple_choice
   options:
-  - 縮短模型訓練時間；
-  - 優化提示與上下文；
-  - 增加模型參數數量；
+  - 縮短模型訓練時間
+  - 優化提示與上下文
+  - 增加模型參數數量
   - 優化 Fine-tuning 正確率
   correct_index: 0
   explanation: 此題涉及 在導入生成式 AI ... 的核心概念。正確答案為「縮短模型訓練時間；」。 
@@ -1015,9 +1015,9 @@ questions:
   text: 在提示工程 （Prompt Engineering） 的應用中，Chain-of-Thought（CoT） 與 Tree of Thoughts（ToT）各適用於不同的推理情境，請問以下兩個 情境，分別最適合採用哪一種方法？ 第二科：生成式 AI 應用與規劃 情境一：電商公司開發客服助理，用來協助客戶查詢退款流程與相關規 範 情境二：活動策劃團隊使用AI 協助規劃多場跨部門行銷活動，需要同 時考量預算、場地、時程與人力資源，並比較不同方案的可行性。 (114年第四梯次)
   type: multiple_choice
   options:
-  - 情境一採用 CoT，情境二採用ToT；
-  - 情境一採用 ToT，情境二採用CoT；
-  - 情境一與情境二都適合 CoT；
+  - 情境一採用 CoT，情境二採用ToT
+  - 情境一採用 ToT，情境二採用CoT
+  - 情境一與情境二都適合 CoT
   - 情境一與情境二都適合 ToT
   correct_index: 0
   explanation: Chain-of-Thought (CoT) 透過引導模型逐步推理（Step-by-step），能顯著提升複雜邏輯與數學問題的解題能力。 

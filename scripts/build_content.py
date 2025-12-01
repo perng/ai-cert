@@ -52,9 +52,19 @@ def render_quarto(file_path):
     output_filename = file_path.stem + ".html"
     output_path = file_path.parent / output_filename
     
-    # Check if quarto is installed
-    if shutil.which("quarto") is None:
-        raise RuntimeError("Quarto CLI is not found in PATH.")
+    # Check for _quarto.yml in the same directory to find custom output-dir
+    quarto_config_path = file_path.parent / "_quarto.yml"
+    custom_output_dir = None
+    if quarto_config_path.exists():
+        try:
+            config = load_yaml(quarto_config_path)
+            project_config = config.get('project', {})
+            output_dir_str = project_config.get('output-dir')
+            if output_dir_str:
+                # Resolve relative to the config file location
+                custom_output_dir = (file_path.parent / output_dir_str).resolve()
+        except Exception as e:
+            print(f"Warning: Failed to parse _quarto.yml: {e}")
 
     cmd = [
         "quarto", "render", str(file_path),
@@ -76,11 +86,14 @@ def render_quarto(file_path):
         file_path.parent / output_filename
     ]
     
+    if custom_output_dir:
+        possible_paths.insert(0, custom_output_dir / output_filename)
+    
     for p in possible_paths:
         if p.exists():
             return p
             
-    raise FileNotFoundError(f"Could not find generated HTML for {file_path}")
+    raise FileNotFoundError(f"Could not find generated HTML for {file_path}. Checked: {[str(p) for p in possible_paths]}")
 
 def process_chapter(md_file, questions_map, image_output_dir=None, 
                     current_chapter_id=0, current_section_id=0):
@@ -312,11 +325,11 @@ def main():
         }
         
         # Process Chapters
-        # Find .md files
-        md_files = sorted(sub_dir.glob("*.md"))
+        # Find .md and .qmd files
+        md_files = sorted(list(sub_dir.glob("*.md")) + list(sub_dir.glob("*.qmd")))
         
         for md_file in md_files:
-            if md_file.name == "index.md":
+            if md_file.name == "index.md" or md_file.name == "index.qmd":
                 continue
             print(f"  Processing Chapter: {md_file.name}")
             

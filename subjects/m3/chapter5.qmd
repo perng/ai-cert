@@ -34,16 +34,114 @@
 
 $$ P(M(D) \in S) \le e^\epsilon P(M(D') \in S) $$
 
-其中 $\epsilon$ 是隱私預算 (Privacy Budget)。$\epsilon$ 越小，隱私保護越強，但數據可用性 (Utility) 越低。
+**公式詳解**：
 
-## 合規與安全 {#sec-compliance}
+*   **$D$ 與 $D'$**：互為「相鄰資料集」(Neighboring Datasets)，即兩個資料集之間**只差一筆資料**（例如：有你 vs 沒你的資料集）。
+*   **$M$**：隨機演算法 (Mechanism)，例如一個查詢函數加上隨機雜訊。
+*   **$S$**：演算法輸出的任何可能結果集合。
+*   **$P$**：機率 (Probability)。
+*   **$\epsilon$ (Epsilon)**：隱私預算 (Privacy Budget)。
 
-合規與安全 (Compliance and Security) 是大數據專案必須遵守的底線。
+**直觀意義**：
 
-*   **法規遵循**：
-    *   **GDPR** (歐盟)：強調被遺忘權、資料可攜權。
-    *   **CCPA** (加州)：賦予消費者對其個人資訊的更多控制權。
+這個不等式保證了：無論特定個體是否在資料集中（$D$ 或 $D'$），演算法 $M$ 輸出結果為 $S$ 的機率是非常接近的（由 $e^\epsilon$ 控制）。這意味著攻擊者無法通過觀察輸出結果來反推某人是否在資料集中，從而保護了個體隱私。
+
+**應用場景**：
+
+*   **科技巨頭**：Apple、Google 使用差分隱私來收集用戶使用習慣（如 Emoji 使用頻率、Chrome 首頁訪問統計），而不會洩露單一用戶的行為。
+*   **人口普查**：美國人口普查局使用此技術發布統計數據，防止對特定家庭的重識別攻擊。
+
+**$\epsilon$ 的權衡**：
+
+*   **$\epsilon$ 越小**：$e^\epsilon$ 越接近 1，隱私保護越強，但加入的雜訊越大，數據可用性 (Utility) 越低。
+*   **$\epsilon$ 越大**：隱私保護越弱，但數據精確度越高。
+
+### 進階隱私強化技術 (Advanced PETs) {.unnumbered}
+
+除了去識別化與差分隱私，還有更多技術用於保護數據在使用過程中的安全：
+
+*   **聯邦學習 (Federated Learning)**：
+    *   **原理**：數據不出本地（如手機端），僅將模型參數加密上傳至伺服器聚合。
+    *   **優點**：從根本上解決數據外洩風險，適合跨機構合作（如多醫院聯合建模）。
+
+    ```{mermaid}
+    graph LR
+        Server["中央伺服器 (Central Server)"]
+        ClientA["客戶端 A (Hospital A)"]
+        ClientB["客戶端 B (Hospital B)"]
+        ClientC["客戶端 C (Hospital C)"]
+
+        Server -->|"發送全局模型"| ClientA
+        Server -->|"發送全局模型"| ClientB
+        Server -->|"發送全局模型"| ClientC
+
+        ClientA -->|"本地訓練"| ClientA
+        ClientB -->|"本地訓練"| ClientB
+        ClientC -->|"本地訓練"| ClientC
+
+        ClientA -->|"上傳參數更新"| Server
+        ClientB -->|"上傳參數更新"| Server
+        ClientC -->|"上傳參數更新"| Server
+
+        Server -->|"聚合參數"| Server
+    ```
+
+*   **同態加密 (Homomorphic Encryption, HE)**：
+    *   **原理**：允許在加密數據 (Ciphertext) 上直接進行數學運算，解密後的結果與在明文 (Plaintext) 上運算一致。即滿足：
+        $$ Dec(Enc(a) \oplus Enc(b)) = a + b $$
+        這意味著數據擁有者可以將加密數據發送給雲端進行複雜計算（如 AI 模型推論），雲端在完全不知道數據內容的情況下完成計算並返回加密結果。
+    *   **分類**：
+        *   **部分同態加密 (PHE)**：僅支持單一運算（如僅加法或僅乘法）。效率較高。例如：Paillier (加法同態), RSA (乘法同態)。
+        *   **全同態加密 (FHE)**：支持任意次數的加法和乘法運算，理論上可計算任何函數。但計算成本極高（比明文慢 $10^3$ ~ $10^6$ 倍）。
+    *   **應用場景**：
+        *   **隱私保護外包計算**：醫療機構將加密病歷上傳雲端進行疾病預測模型運算。
+        *   **安全多方計算 (MPC)**：多個機構聯合分析數據而不洩露各自的原始數據。
+    *   **挑戰**：計算速度慢、密文膨脹（加密後數據體積變大）。
+
+## 合規與安全 (Compliance & Security) {#sec-compliance}
+
+合規與安全是大數據專案必須遵守的底線，特別是在 AI 訓練階段。
+
+### 合規處理原則 (Compliance Principles) {.unnumbered}
+
+根據 GDPR 與台灣個資法，數據處理應遵循以下核心原則：
+
+*   **合法性、正當性與透明性**：必須告知使用者蒐集目的與使用範圍。
+*   **目的限制 (Purpose Limitation)**：數據僅能用於特定目的，不得二次利用（如客服數據轉作廣告）。
+*   **資料最小化 (Data Minimization)**：僅蒐集完成任務所需的最少數據。
+*   **保存期限限制 (Storage Limitation)**：設定保留期限，逾期應刪除或匿名化。
+*   **可追蹤與可刪除性**：落實使用者的「被遺忘權」與「更正權」。
+
+### 合法取得依據 (Legal Basis) {.unnumbered}
+
+AI 訓練資料的取得需具備合法依據：
+*   **明確同意 (Explicit Consent)**：使用者主動勾選同意。
+*   **契約履行必要**：如信用卡風險評估是服務的一部分。
+*   **公共利益或學術研究**：經去識別化且通過倫理審查 (IRB) 的數據。
+
+### 資料安全技術 {.unnumbered}
+
 *   **資料加密**：
-    *   **靜態數據加密 (Encryption at Rest)**：保護存儲在磁碟上的數據。
-    *   **傳輸中加密 (Encryption in Transit)**：保護在網路上傳輸的數據 (SSL/TLS)。
-*   **資料血緣 (Data Lineage)**：追蹤數據從源頭到目的地的完整路徑，有助於問題排查和合規審計。
+    *   **靜態數據加密 (Encryption at Rest)**：保護存儲在磁碟上的數據 (AES-256)。
+    *   **傳輸中加密 (Encryption in Transit)**：保護在網路上傳輸的數據 (TLS 1.3)。
+*   **資料血緣 (Data Lineage)**：追蹤數據從源頭到目的地的完整路徑，確保可追溯性。
+
+## 資料與 AI 治理架構 (Data & AI Governance Framework) {#sec-governance-framework}
+
+建立跨部門的治理架構是落實合規的關鍵。
+
+### 組織與角色 (Organization) {.unnumbered}
+
+*   **資料治理委員會**：由法務、資安、IT 與業務主管組成，制定政策。
+*   **首席 AI 官 (CAIO)** 或 **資料管理員 (Data Steward)**：監督模型合規性與數據品質。
+
+### 流程與管理 (Process) {.unnumbered}
+
+*   **資料目錄 (Data Catalog)**：盤點數據資產，記錄來源、用途與敏感度。
+*   **模型卡片 (Model Card)**：為每個 AI 模型建立「說明書」，記錄訓練數據、適用範圍、限制與偏誤測試結果。
+*   **生命週期管理**：從數據生成、使用到銷毀的全程控管。
+
+### 自動化工具 (Tools) {.unnumbered}
+
+*   **敏感資料偵測**：自動掃描並標記 PII (個人識別資訊)。
+*   **模型監控**：監控模型飄移 (Model Drift) 與公平性。

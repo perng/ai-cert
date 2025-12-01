@@ -66,6 +66,29 @@ spark.stop()
 
 Hadoop 分散式檔案系統 (HDFS, Hadoop Distributed File System) 將大文件分割成區塊 (Blocks, 預設 128MB)，並複製到多個節點上（預設 3 份）以確保可靠性。這使得 HDFS 能夠在廉價的硬體上運行並容忍硬體故障。
 
+### 關聯式資料庫與 ACID (RDBMS & ACID) {.unnumbered}
+
+傳統的關聯式資料庫 (RDBMS) 如 MySQL, PostgreSQL 強調數據的一致性與可靠性，這主要通過 **ACID** 原則來保證：
+
+*   **Atomicity (原子性)**：交易 (Transaction) 中的所有操作要麼全部成功，要麼全部失敗 (All-or-Nothing)。
+*   **Consistency (一致性)**：交易完成後，數據必須從一個有效狀態轉變為另一個有效狀態，符合所有定義的規則（如約束）。
+*   **Isolation (隔離性)**：多個並發交易之間互不干擾，一個交易的中間狀態對其他交易不可見。
+*   **Durability (持久性)**：一旦交易提交 (Commit)，其結果就是永久性的，即使系統崩潰也不會丟失。
+
+雖然 ACID 保證了數據的高度可靠性，但在大規模分散式環境下，為了追求高可用性 (Availability) 和分區容錯性 (Partition Tolerance)，NoSQL 資料庫往往會犧牲部分一致性 (Consistency)，遵循 **BASE** 模型 (Basically Available, Soft state, Eventual consistency)。
+
+#### CAP 定理 (CAP Theorem) {.unnumbered}
+
+CAP 定理指出，對於一個分散式計算系統，不可能同時滿足以下三點：
+
+*   **Consistency (一致性)**：所有節點在同一時間具有相同的數據。
+*   **Availability (可用性)**：保證每個請求都能得到響應（無論成功或失敗）。
+*   **Partition Tolerance (分區容錯性)**：系統在任意訊息丟失或失敗的情況下仍能繼續運行。
+
+在分散式系統中，**P (分區容錯性)** 通常是必須的，因此我們只能在 **C (一致性)** 和 **A (可用性)** 之間做權衡：
+*   **CP (Consistency + Partition Tolerance)**：如 HBase, MongoDB。犧牲可用性，確保數據一致。
+*   **AP (Availability + Partition Tolerance)**：如 Cassandra, DynamoDB。犧牲一致性（接受最終一致性），確保高可用。
+
 ### NoSQL 資料庫 {.unnumbered}
 
 NoSQL (Not Only SQL) 資料庫適應了非結構化數據的儲存需求，具有高擴展性 (Scalability) 和高性能 (Performance)。
@@ -86,6 +109,17 @@ NoSQL (Not Only SQL) 資料庫適應了非結構化數據的儲存需求，具�
     *   **例子**：Neo4j。
     *   **特點**：存儲節點和邊，擅長處理複雜關係。
     *   **適用場景**：社交網絡、推薦引擎、詐欺檢測。
+
+### 大數據儲存格式 (Big Data Storage Formats) {.unnumbered}
+
+選擇合適的檔案格式對大數據處理的效能至關重要。
+
+*   **行式儲存 (Row-based)**：
+    *   **CSV/JSON**：文字格式，易讀但佔用空間大，解析慢。
+    *   **Avro**：二進位格式，Schema 隨數據存儲。適合大量寫入操作（如 Kafka 消息）。
+*   **列式儲存 (Columnar)**：
+    *   **Parquet**：二進位列式儲存，支持高效壓縮和編碼。適合 OLAP 分析查詢（只讀取需要的列）。
+    *   **ORC (Optimized Row Columnar)**：高度優化的列式儲存，通常與 Hive 配合使用，壓縮比極高。
 
 ### 資料湖 {.unnumbered}
 

@@ -1,0 +1,676 @@
+questions:
+- id: 6201
+  chapter_title: 深度學習框架與架構
+  section_title: 深度學習框架
+  text: PyTorch 框架的主要特色是什麼，使其成為學術界研究的首選？
+  type: multiple_choice
+  options:
+  - 靜態計算圖
+  - 動態計算圖 (Dynamic Computation Graph)
+  - 只能在 CPU 上運行
+  - 不支援 Python
+  correct_index: 1
+  explanation: PyTorch 採用動態圖機制 (Define-by-Run)，允許在執行過程中改變網路結構，使得除錯和實驗新想法變得非常直觀和容易。
+  tags:
+  - chap-m4-ch2
+  - sec-dl-frameworks
+- id: 6202
+  chapter_title: 深度學習框架與架構
+  section_title: 進階架構
+  text: MobileNet 架構為了在行動裝置上高效運行，使用了哪種關鍵技術來減少參數和計算量？
+  type: multiple_choice
+  options:
+  - 殘差連接 (Residual Connection)
+  - 深度可分離卷積 (Depthwise Separable Convolution)
+  - 注意力機制 (Attention Mechanism)
+  - 膠囊網路 (Capsule Network)
+  correct_index: 1
+  explanation: 深度可分離卷積將標準卷積分解為 Depthwise 和 Pointwise 兩個步驟，大幅降低了運算成本。
+  tags:
+  - chap-m4-ch2
+  - sec-adv-architectures
+- id: 6203
+  chapter_title: 深度學習框架與架構
+  section_title: 遷移學習與微調策略
+  text: 當新任務的數據量很小，且與預訓練模型的原任務非常相似時，應採用哪種遷移學習策略？
+  type: multiple_choice
+  options:
+  - 從頭訓練 (Train from Scratch)
+  - 微調整個模型 (Fine-tuning all layers)
+  - 特徵提取 (Feature Extraction)
+  - 隨機初始化權重
+  correct_index: 2
+  explanation: 數據量少時容易過擬合，且任務相似意味著底層特徵通用，因此凍結預訓練好的特徵提取層，僅訓練最後的分類層是最安全有效的策略。
+  tags:
+  - chap-m4-ch2
+  - sec-transfer-learning
+- id: 6204
+  chapter_title: 深度學習框架與架構
+  section_title: 進階架構
+  text: EfficientNet 提出的「複合縮放 (Compound Scaling)」方法，主張同時調整哪三個維度以獲得最佳效能？
+  type: multiple_choice
+  options:
+  - 學習率、批次大小、迭代次數
+  - 深度 (Depth)、寬度 (Width)、解析度 (Resolution)
+  - 卷積核大小、步長、填充
+  - 訓練集大小、驗證集大小、測試集大小
+  correct_index: 1
+  explanation: EfficientNet 發現單純增加深度、寬度或解析度都有邊際效應遞減的問題，因此提出透過固定比例同時縮放這三者來達到最佳平衡。
+  tags:
+  - chap-m4-ch2
+  - sec-adv-architectures
+- id: 6205
+  chapter_title: 深度學習框架與架構
+  section_title: 進階架構
+  text: 雙向 RNN (Bidirectional RNN) 的主要優勢在於？
+  type: multiple_choice
+  options:
+  - 計算速度比單向 RNN 快
+  - 能同時利用過去和未來的上下文信息
+  - 不需要反向傳播
+  - 只能處理圖像數據
+  correct_index: 1
+  explanation: 雙向 RNN 包含兩個方向的隱藏層，一個從前向後讀，一個從後向前讀，因此在每個時間點都能看到完整的上下文（如整句翻譯）。
+  tags:
+  - chap-m4-ch2
+  - sec-adv-architectures
+- id: 6206
+  chapter_title: 深度學習框架與架構
+  section_title: 深度學習框架
+  text: 由 Google Research 開發，結合 Autograd 和 XLA，以極快速度著稱的框架是？
+  type: multiple_choice
+  options:
+  - TensorFlow
+  - PyTorch
+  - JAX
+  - Caffe
+  correct_index: 2
+  explanation: JAX 是 Google 推出的新一代高效能數值計算庫，特別適合需要大規模並行加速的前沿研究。
+  tags:
+  - chap-m4-ch2
+  - sec-dl-frameworks
+- id: 6207
+  chapter_title: 深度學習框架與架構
+  section_title: 進階架構
+  text: Inception (GoogLeNet) 模組的核心設計理念是？
+  type: multiple_choice
+  options:
+  - 網路越深越好
+  - 並行使用不同大小的卷積核
+  - 使用全連接層替代卷積層
+  - 移除所有活化函數
+  correct_index: 1
+  explanation: Inception 模組透過並行路徑讓網路自動選擇最適合的卷積核大小，從而能同時捕捉局部和全局特徵。
+  tags:
+  - chap-m4-ch2
+  - sec-adv-architectures
+- id: 6208
+  chapter_title: 深度學習框架與架構
+  section_title: 深度學習框架
+  text: TensorFlow 的高階 API，以易用性著稱的是？
+  type: multiple_choice
+  options:
+  - Slim
+  - Keras
+  - Sonnet
+  - Estimator
+  correct_index: 1
+  explanation: Keras 被整合進 TensorFlow (tf.keras) 作為官方的高階 API，提供了簡潔直觀的介面來構建和訓練模型。
+  tags:
+  - chap-m4-ch2
+  - sec-dl-frameworks
+- id: 6209
+  chapter_title: 深度學習框架與架構
+  section_title: 深度學習框架
+  text: TensorFlow 1.x 版本主要採用哪種計算圖機制？
+  type: multiple_choice
+  options:
+  - 動態計算圖 (Dynamic Computation Graph)
+  - 靜態計算圖 (Static Computation Graph)
+  - 混合計算圖 (Hybrid Computation Graph)
+  - 無計算圖 (No Computation Graph)
+  correct_index: 1
+  explanation: TF 1.x 採用 "Define-and-Run" 模式，先定義好整個圖結構再執行。雖然優化容易，但除錯困難。TF 2.x 預設改為 Eager Execution (類似 PyTorch)。
+  tags:
+  - chap-m4-ch2
+  - sec-dl-frameworks
+- id: 6210
+  chapter_title: 深度學習框架與架構
+  section_title: 進階架構
+  text: LSTM 中的「遺忘閘 (Forget Gate)」負責？
+  type: multiple_choice
+  options:
+  - 決定哪些新資訊要存入
+  - 決定哪些舊資訊要丟棄 (遺忘)
+  - 決定輸出什麼
+  - 初始化權重
+  correct_index: 1
+  explanation: 這是 LSTM 解決長期依賴問題的關鍵。如果某些舊資訊（如上一章的主題）不再重要，遺忘閘會將其清除，騰出空間給新資訊。
+  tags:
+  - chap-m4-ch2
+  - sec-adv-architectures
+- id: 6211
+  chapter_title: 深度學習框架與架構
+  section_title: 遷移學習與微調策略
+  text: 微調 (Fine-tuning) 時，通常建議使用什麼樣的學習率？
+  type: multiple_choice
+  options:
+  - 比從頭訓練時更大的學習率
+  - 比從頭訓練時更小的學習率
+  - 相同的學習率
+  - 隨機學習率
+  correct_index: 1
+  explanation: 預訓練模型的權重已經很好了，我們只想做微小的調整。如果學習率太大，會破壞原本學到的特徵（災難性遺忘）。
+  tags:
+  - chap-m4-ch2
+  - sec-transfer-learning
+- id: 6212
+  chapter_title: 深度學習框架與架構
+  section_title: 進階架構
+  text: Attention 機制最初是為了解決什麼問題而提出的？
+  type: multiple_choice
+  options:
+  - 圖像分類準確率低
+  - 機器翻譯中長序列的資訊丟失問題
+  - 計算速度太慢
+  - 過擬合
+  correct_index: 1
+  explanation: 傳統 Seq2Seq 將整句壓縮成一個固定長度的向量，長句資訊會丟失。Attention 允許解碼器在生成每個字時，回頭去「看」源句中最相關的部分。
+  tags:
+  - chap-m4-ch2
+  - sec-adv-architectures
+- id: 6213
+  chapter_title: 深度學習框架與架構
+  section_title: 深度學習框架
+  text: TFLite (TensorFlow Lite) 的主要用途是？
+  type: multiple_choice
+  options:
+  - 雲端訓練
+  - 在行動裝置和嵌入式設備上進行模型推論 (Inference)
+  - 數據清洗
+  - 網頁開發
+  correct_index: 1
+  explanation: TFLite 是 TF 的輕量化版本，專為手機、IoT 設備設計，支援量化等優化技術。
+  tags:
+  - chap-m4-ch2
+  - sec-dl-frameworks
+- id: 6214
+  chapter_title: 深度學習框架與架構
+  section_title: 進階架構
+  text: 深度可分離卷積 (Depthwise Separable Convolution) 將標準卷積分解為哪兩步？
+  type: multiple_choice
+  options:
+  - 卷積和池化
+  - Depthwise Convolution 和 Pointwise Convolution
+  - 前向傳播和反向傳播
+  - 卷積和全連接
+  correct_index: 1
+  explanation: 先對每個通道獨立卷積 (Depthwise)，再用 1x1 卷積 (Pointwise) 組合通道資訊。這比標準卷積少了很多乘法運算。
+  tags:
+  - chap-m4-ch2
+  - sec-adv-architectures
+- id: 6215
+  chapter_title: 深度學習框架與架構
+  section_title: 遷移學習與微調策略
+  text: ImageNet 預訓練模型通常包含多少類的分類能力？
+  type: multiple_choice
+  options:
+  - 10
+  - 100
+  - 1000
+  - 10000
+  correct_index: 2
+  explanation: 標準的 ImageNet (ILSVRC) 競賽數據集包含 1000 個類別。
+  tags:
+  - chap-m4-ch2
+  - sec-transfer-learning
+- id: 6216
+  chapter_title: 深度學習框架與架構
+  section_title: 進階架構
+  text: GRU (Gated Recurrent Unit) 相比於 LSTM 的主要區別是？
+  type: multiple_choice
+  options:
+  - 結構更複雜，參數更多
+  - 結構更簡單，參數更少
+  - 準確率總是更高
+  - 不能處理序列數據
+  correct_index: 1
+  explanation: GRU 將 LSTM 的遺忘閘和輸入閘合併為更新閘，移除了 Cell State，效果通常與 LSTM 相當但更輕量。
+  tags:
+  - chap-m4-ch2
+  - sec-adv-architectures
+- id: 6217
+  chapter_title: 深度學習框架與架構
+  section_title: 深度學習框架
+  text: 自動微分 (Automatic Differentiation) 的作用是？
+  type: multiple_choice
+  options:
+  - 自動調整超參數
+  - 自動計算梯度
+  - 自動清洗數據
+  - 自動生成代碼
+  correct_index: 1
+  explanation: 這是深度學習框架的核心功能。你只要寫前向傳播 (Forward)，框架會自動幫你算好反向傳播 (Backward) 的梯度。
+  tags:
+  - chap-m4-ch2
+  - sec-dl-frameworks
+- id: 6218
+  chapter_title: 深度學習框架與架構
+  section_title: 進階架構
+  text: Transformer 架構完全基於哪種機制？
+  type: multiple_choice
+  options:
+  - RNN
+  - CNN
+  - Attention 機制 (Self-Attention)
+  - MLP
+  correct_index: 2
+  explanation: '"Attention Is All You Need"。Transformer 拋棄了 RNN 的循環結構，完全依賴注意力機制來捕捉序列依賴，實現了高度並行化。'
+  tags:
+  - chap-m4-ch2
+  - sec-adv-architectures
+- id: 6219
+  chapter_title: 深度學習框架與架構
+  section_title: 遷移學習與微調策略
+  text: 凍結 (Freezing) 層的意思是？
+  type: multiple_choice
+  options:
+  - 將層刪除
+  - 將層的參數設為 0
+  - 在反向傳播時不更新該層的參數 (requires_grad = False)
+  - 降低該層的溫度
+  correct_index: 2
+  explanation: 保持預訓練學到的特徵不變，只訓練我們新加的層。
+  tags:
+  - chap-m4-ch2
+  - sec-transfer-learning
+- id: 6220
+  chapter_title: 深度學習框架與架構
+  section_title: 進階架構
+  text: 1x1 卷積 (Pointwise Convolution) 的主要作用之一是？
+  type: multiple_choice
+  options:
+  - 提取空間特徵
+  - 改變通道數 (升維或降維)
+  - 模糊圖像
+  - 放大圖像
+  correct_index: 1
+  explanation: 1x1 卷積不改變圖像長寬，只改變深度（通道數）。常用於 Inception 和 ResNet 中進行降維以減少計算量。
+  tags:
+  - chap-m4-ch2
+  - sec-adv-architectures
+- id: 6221
+  chapter_title: 深度學習框架與架構
+  section_title: 深度學習框架
+  text: ONNX (Open Neural Network Exchange) 的目的是？
+  type: multiple_choice
+  options:
+  - 取代 Python
+  - 提供一種開放的模型交換格式
+  - 加密模型
+  - 壓縮模型
+  correct_index: 1
+  explanation: 它是 AI 模型的「通用語言」，解決了框架碎片化的問題，方便模型部署。
+  tags:
+  - chap-m4-ch2
+  - sec-dl-frameworks
+- id: 6222
+  chapter_title: 深度學習框架與架構
+  section_title: 進階架構
+  text: 複合縮放 (Compound Scaling) 中的 $\phi$ 係數是用來？
+  type: multiple_choice
+  options:
+  - 控制學習率
+  - 統一控制深度、寬度、解析度的縮放比例
+  - 控制正則化
+  - 控制批次大小
+  correct_index: 1
+  explanation: EfficientNet 定義了一組公式，只要給定一個 $\phi$ (如 B0 到 B7)，就能自動算出最佳的三維縮放倍率。
+  tags:
+  - chap-m4-ch2
+  - sec-adv-architectures
+- id: 6223
+  chapter_title: 深度學習框架與架構
+  section_title: 遷移學習與微調策略
+  text: 什麼情況下適合使用「微調整個模型」？
+  type: multiple_choice
+  options:
+  - 數據量極小
+  - 數據量較大，且新任務與原任務有一定差異
+  - 計算資源極其有限
+  - 只要模型很大就可以
+  correct_index: 1
+  explanation: 數據夠多，我們就有本錢去調整整個網路的權重，讓它更適應新任務，而不用擔心過擬合。
+  tags:
+  - chap-m4-ch2
+  - sec-transfer-learning
+- id: 6224
+  chapter_title: 深度學習框架與架構
+  section_title: 進階架構
+  text: RNN 的主要缺點是？
+  type: multiple_choice
+  options:
+  - 參數太多
+  - 無法並行計算，且存在梯度消失問題
+  - 只能處理文字
+  - 結構太簡單
+  correct_index: 1
+  explanation: 必須等 t-1 算完才能算 t，這限制了訓練速度。且梯度在長序列中傳遞會逐漸衰減（遺忘）。
+  tags:
+  - chap-m4-ch2
+  - sec-adv-architectures
+- id: 6225
+  chapter_title: 深度學習框架與架構
+  section_title: 深度學習框架
+  text: XLA (Accelerated Linear Algebra) 是什麼？
+  type: multiple_choice
+  options:
+  - 一種新的程式語言
+  - 一種針對線性代數運算的編譯器優化技術
+  - 一種新的 GPU
+  - 一種神經網路架構
+  correct_index: 1
+  explanation: XLA 會將多個運算融合 (Fusion) 成一個 kernel，減少記憶體存取次數，大幅提升執行效率。
+  tags:
+  - chap-m4-ch2
+  - sec-dl-frameworks
+- id: 6226
+  chapter_title: 深度學習框架與架構
+  section_title: 進階架構
+  text: Inception 模組中的 1x1 卷積通常放在 3x3 和 5x5 卷積之前，目的是？
+  type: multiple_choice
+  options:
+  - 增加參數量
+  - 降維 (減少通道數)
+  - 升維
+  - 沒什麼特別目的
+  correct_index: 1
+  explanation: 這是 Inception 的精髓。先用 1x1 把厚度（通道）壓扁，再做昂貴的 5x5 卷積，既保留了特徵又節省了算力。
+  tags:
+  - chap-m4-ch2
+  - sec-adv-architectures
+- id: 6227
+  chapter_title: 深度學習框架與架構
+  section_title: 遷移學習與微調策略
+  text: 災難性遺忘 (Catastrophic Forgetting) 是指？
+  type: multiple_choice
+  options:
+  - 電腦當機
+  - 模型在學習新任務時忘記了舊任務的知識
+  - 數據遺失
+  - 模型訓練太慢
+  correct_index: 1
+  explanation: 如果微調時學習率太大或數據分佈差異太大，模型會為了迎合新數據而破壞原本通用的特徵提取能力。
+  tags:
+  - chap-m4-ch2
+  - sec-transfer-learning
+- id: 6228
+  chapter_title: 深度學習框架與架構
+  section_title: 進階架構
+  text: LSTM 的 Cell State (細胞狀態) 類似於？
+  type: multiple_choice
+  options:
+  - 短期記憶
+  - 長期記憶的高速公路
+  - 遺忘機制
+  - 輸出層
+  correct_index: 1
+  explanation: Cell State 貫穿整個序列，資訊只經過少量的線性操作，這讓梯度能流得更遠，保留了長期記憶。
+  tags:
+  - chap-m4-ch2
+  - sec-adv-architectures
+- id: 6229
+  chapter_title: 深度學習框架與架構
+  section_title: 深度學習框架
+  text: PyTorch Lightning 是一個？
+  type: multiple_choice
+  options:
+  - 新的框架
+  - PyTorch 的輕量級封裝庫
+  - 視覺化工具
+  - 資料庫
+  correct_index: 1
+  explanation: 它幫你把工程代碼（如 GPU 切換、Checkpoint 保存）和研究代碼（模型定義）分開，讓程式碼更整潔易讀。
+  tags:
+  - chap-m4-ch2
+  - sec-dl-frameworks
+- id: 6230
+  chapter_title: 深度學習框架與架構
+  section_title: 進階架構
+  text: EfficientNet-B0 是透過什麼方法設計出來的？
+  type: multiple_choice
+  options:
+  - 人工設計
+  - 神經架構搜尋 (Neural Architecture Search, NAS)
+  - 隨機生成
+  - 複製 ResNet
+  correct_index: 1
+  explanation: Google 使用強化學習 (NAS) 搜索出了基線網路 B0，然後再用複合縮放公式放大得到 B1-B7。
+  tags:
+  - chap-m4-ch2
+  - sec-adv-architectures
+- id: 6231
+  chapter_title: 深度學習框架與架構
+  section_title: 遷移學習與微調策略
+  text: 預訓練模型通常是在哪個數據集上訓練的？
+  type: multiple_choice
+  options:
+  - MNIST
+  - ImageNet (對於視覺任務) 或大型文本語料庫 (對於 NLP)
+  - CIFAR-10
+  - 鐵達尼號數據集
+  correct_index: 1
+  explanation: ImageNet 擁有 1400 萬張圖片，模型在上面學到了豐富的視覺特徵（邊緣、紋理、物體），這些特徵對大多數視覺任務都是通用的。
+  tags:
+  - chap-m4-ch2
+  - sec-transfer-learning
+- id: 6232
+  chapter_title: 深度學習框架與架構
+  section_title: 進階架構
+  text: 雙向 LSTM (BiLSTM) 常與什麼層結合用於序列標註任務 (如 NER)？
+  type: multiple_choice
+  options:
+  - CNN
+  - CRF (Conditional Random Field)
+  - SVM
+  - K-Means
+  correct_index: 1
+  explanation: BiLSTM-CRF 是 NLP 的經典架構。BiLSTM 提取特徵，CRF 考慮標籤之間的依賴關係（如 B-Person 後面不能接 I-Location），優化全局序列。
+  tags:
+  - chap-m4-ch2
+  - sec-adv-architectures
+- id: 6233
+  chapter_title: 深度學習框架與架構
+  section_title: 深度學習框架
+  text: TensorFlow Serving 的主要功能是？
+  type: multiple_choice
+  options:
+  - 訓練模型
+  - 在生產環境中部署和管理模型服務
+  - 數據標註
+  - 程式碼版本控制
+  correct_index: 1
+  explanation: 它提供了高性能的 gRPC/REST API，支援模型熱更新、版本管理，是工業界部署 TF 模型的標準。
+  tags:
+  - chap-m4-ch2
+  - sec-dl-frameworks
+- id: 6234
+  chapter_title: 深度學習框架與架構
+  section_title: 進階架構
+  text: MobileNetV2 引入了什麼新結構？
+  type: multiple_choice
+  options:
+  - Inception 模組
+  - Inverted Residuals 和 Linear Bottlenecks
+  - Attention
+  - DenseNet
+  correct_index: 1
+  explanation: 傳統 ResNet 是「肥-瘦-肥」，MobileNetV2 是「瘦-肥-瘦」（中間層通道多），並移除了最後的 ReLU 以保留特徵，進一步提升了效率。
+  tags:
+  - chap-m4-ch2
+  - sec-adv-architectures
+- id: 6235
+  chapter_title: 深度學習框架與架構
+  section_title: 遷移學習與微調策略
+  text: 領域適應 (Domain Adaptation) 是遷移學習的一種，旨在解決什麼問題？
+  type: multiple_choice
+  options:
+  - 訓練數據和測試數據分佈不同
+  - 模型太小
+  - 計算太慢
+  - 標籤錯誤
+  correct_index: 1
+  explanation: 例如在白天圖片上訓練的自駕車模型，要遷移到晚上場景。雖然任務一樣（開車），但數據分佈（光照）變了。
+  tags:
+  - chap-m4-ch2
+  - sec-transfer-learning
+- id: 6236
+  chapter_title: 深度學習框架與架構
+  section_title: 進階架構
+  text: Seq2Seq 模型通常由哪兩部分組成？
+  type: multiple_choice
+  options:
+  - Generator 和 Discriminator
+  - Encoder (編碼器) 和 Decoder (解碼器)
+  - Actor 和 Critic
+  - Teacher 和 Student
+  correct_index: 1
+  explanation: 編碼器將輸入序列壓縮成向量，解碼器將向量展開成輸出序列。這是機器翻譯、摘要生成的基礎架構。
+  tags:
+  - chap-m4-ch2
+  - sec-adv-architectures
+- id: 6237
+  chapter_title: 深度學習框架與架構
+  section_title: 深度學習框架
+  text: Hugging Face Transformers 庫主要基於哪個框架？
+  type: multiple_choice
+  options:
+  - 僅 PyTorch
+  - 僅 TensorFlow
+  - 同時支援 PyTorch, TensorFlow 和 JAX
+  - 僅 JAX
+  correct_index: 2
+  explanation: Hugging Face 致力於兼容性，讓開發者可以自由選擇喜歡的後端框架來使用最先進的 NLP 模型。
+  tags:
+  - chap-m4-ch2
+  - sec-dl-frameworks
+- id: 6238
+  chapter_title: 深度學習框架與架構
+  section_title: 進階架構
+  text: Self-Attention (自注意力) 機制計算的是？
+  type: multiple_choice
+  options:
+  - 輸入與輸出的關係
+  - 輸入序列中每個元素與其他所有元素的相關性
+  - 圖像與文字的關係
+  - 過去與未來的關係
+  correct_index: 1
+  explanation: 每個字都去「關注」句子裡的其他字，計算出相關性權重，從而理解上下文（如 "it" 到底指代什麼）。
+  tags:
+  - chap-m4-ch2
+  - sec-adv-architectures
+- id: 6239
+  chapter_title: 深度學習框架與架構
+  section_title: 遷移學習與微調策略
+  text: 負遷移 (Negative Transfer) 是指？
+  type: multiple_choice
+  options:
+  - 遷移學習效果很好
+  - 遷移學習導致新任務的性能反而下降
+  - 訓練失敗
+  - 模型變小
+  correct_index: 1
+  explanation: 如果源任務和目標任務差異太大（如用貓狗模型去預測股市），強行遷移反而會引入雜訊，干擾學習。
+  tags:
+  - chap-m4-ch2
+  - sec-transfer-learning
+- id: 6240
+  chapter_title: 深度學習框架與架構
+  section_title: 進階架構
+  text: 為什麼 ResNet 能訓練上千層的網路？
+  type: multiple_choice
+  options:
+  - 因為 GPU 很強
+  - 因為使用了殘差連接 (Residual Connection)
+  - 因為數據很多
+  - 因為使用了 Dropout
+  correct_index: 1
+  explanation: $H(x) = F(x) + x$。學習「殘差」比學習原始映射容易，且恆等映射 ($F(x)=0$) 保證了深層網路至少不會比淺層差。
+  tags:
+  - chap-m4-ch2
+  - sec-adv-architectures
+- id: 6241
+  chapter_title: 深度學習框架與架構
+  section_title: 深度思考情境題
+  text: 情境：你需要開發一個即時的手機端人臉識別 App。你會選擇哪個模型架構？
+  type: multiple_choice
+  options:
+  - VGG16
+  - MobileNetV2 或 EfficientNet-Lite
+  - ResNet-152
+  - Transformer-XL
+  correct_index: 1
+  explanation: 手機端對延遲和功耗要求極高。MobileNet 專為此設計，犧牲極小的精度換取極快的速度。
+  tags:
+  - chap-m4-ch2
+  - sec-scenario
+- id: 6242
+  chapter_title: 深度學習框架與架構
+  section_title: 深度思考情境題
+  text: 情境：你只有 100 張醫學影像，想訓練一個分類模型。直接訓練效果很差。你應該？
+  type: multiple_choice
+  options:
+  - 放棄。
+  - 使用遷移學習 (Transfer Learning) 和數據增強。
+  - 自己標註 100 萬張圖。
+  - 使用 GAN 生成數據。
+  correct_index: 1
+  explanation: 這是遷移學習的殺手級應用。雖然醫學影像和自然圖像不同，但底層的邊緣、紋理特徵是通用的。預訓練模型提供了很好的初始化，數據增強則擴充了樣本。
+  tags:
+  - chap-m4-ch2
+  - sec-scenario
+- id: 6243
+  chapter_title: 深度學習框架與架構
+  section_title: 深度思考情境題
+  text: 情境：你在訓練一個深層 RNN 時遇到梯度爆炸 (Gradient Exploding)，導致 Loss 變成 NaN。最有效的解決方法是？
+  type: multiple_choice
+  options:
+  - 增加學習率。
+  - 梯度裁剪 (Gradient Clipping)。
+  - 增加層數。
+  - 移除激活函數。
+  correct_index: 1
+  explanation: 梯度裁剪設定一個閾值（如 5），如果梯度超過這個值就強行切斷，防止它無限膨脹摧毀權重。
+  tags:
+  - chap-m4-ch2
+  - sec-scenario
+- id: 6244
+  chapter_title: 深度學習框架與架構
+  section_title: 深度思考情境題
+  text: 情境：你正在做一個學術研究，需要頻繁修改網路結構並查看中間層的梯度變化。你會首選哪個框架？
+  type: multiple_choice
+  options:
+  - TensorFlow 1.x
+  - PyTorch
+  - Caffe
+  - ONNX
+  correct_index: 1
+  explanation: PyTorch 的 "Define-by-Run" 讓你可以隨時 print 變數，隨時改邏輯，是研究人員的最愛。
+  tags:
+  - chap-m4-ch2
+  - sec-scenario
+- id: 6245
+  chapter_title: 深度學習框架與架構
+  section_title: 深度思考情境題
+  text: 情境：你的模型在訓練集和驗證集上表現都很好，但部署到實際環境後，發現對於「模糊」或「遮擋」的圖片辨識率極低。這說明了什麼？
+  type: multiple_choice
+  options:
+  - 模型過擬合。
+  - 訓練數據缺乏多樣性 (魯棒性不足)。
+  - 模型欠擬合。
+  - 框架有問題。
+  correct_index: 1
+  explanation: 模型沒看過模糊圖片，自然不會認。數據增強能模擬真實世界的各種惡劣情況，提升模型的魯棒性。
+  tags:
+  - chap-m4-ch2
+  - sec-scenario
