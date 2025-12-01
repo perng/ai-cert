@@ -5,10 +5,13 @@
 ## 時間序列分析 {#sec-time-series}
 
 時間序列分析 (Time-series Analysis) 用於分析隨時間變化的數據，如股票價格、氣溫、銷售額。
-*   **平穩性 (Stationarity)**：數據的統計特性（平均值、變異數）不隨時間變化。
-*   **季節性 (Seasonality)**：數據呈現週期性的變化模式。
 
-### ARIMA {#sec-arima}
+*   **平穩性 (Stationarity)**：數據的統計特性（平均值、變異數）不隨時間變化。
+    *   **檢定方法**：Augmented Dickey-Fuller (ADF) 檢定。若 p-value < 0.05，則拒絕非平穩假設（即數據是平穩的）。
+*   **季節性 (Seasonality)**：數據呈現週期性的變化模式。
+*   **分解 (Decomposition)**：將時間序列分解為趨勢 (Trend)、季節性 (Seasonality) 和殘差 (Residual)。
+
+### ARIMA {.unnumbered}
 
 ARIMA (AutoRegressive Integrated Moving Average) 是經典的時間序列預測方法，包含三個部分 $(p, d, q)$：
 1.  **AR (AutoRegressive, p)**：自迴歸。當前值與過去 $p$ 個值的線性組合有關。
@@ -17,11 +20,20 @@ ARIMA (AutoRegressive Integrated Moving Average) 是經典的時間序列預測�
 3.  **MA (Moving Average, q)**：移動平均。當前值與過去 $q$ 個預測誤差的線性組合有關。
     $$ Y_t = \mu + \epsilon_t + \theta_1 \epsilon_{t-1} + \dots + \theta_q \epsilon_{t-q} $$
 
-### Prophet {#sec-prophet}
+**參數選擇**：
+*   **ACF (Autocorrelation Function)**：決定 MA 的階數 $q$。
+*   **PACF (Partial Autocorrelation Function)**：決定 AR 的階數 $p$。
+
+### Prophet {.unnumbered}
 
 Prophet 是由 Facebook 開發的時間序列預測工具，特別擅長處理具有強烈季節性和假期效應的數據。它基於加法模型：
 $$ y(t) = g(t) + s(t) + h(t) + \epsilon_t $$
 其中 $g(t)$ 是趨勢，$s(t)$ 是季節性，$h(t)$ 是假期效應。
+
+*   **優點**：
+    *   自動處理缺失值和異常值。
+    *   可以加入自定義假期 (Holidays) 和事件。
+    *   允許趨勢變點 (Changepoints) 的自動檢測。
 
 **Python 範例：使用 Prophet 預測**
 
@@ -29,8 +41,8 @@ $$ y(t) = g(t) + s(t) + h(t) + \epsilon_t $$
 #| eval: false
 from prophet import Prophet
 import pandas as pd
-
 import numpy as np
+
 # 準備數據 (Prophet 要求列名為 ds 和 y)
 # 創建一個更有趨勢和季節性的數據，避免優化失敗
 dates = pd.date_range(start='2023-01-01', periods=100)
@@ -43,6 +55,7 @@ df = pd.DataFrame({
 
 # 訓練模型
 m = Prophet()
+m.add_country_holidays(country_name='TW') # 加入台灣假期
 m.fit(df)
 
 # 建立未來 dataframe
@@ -57,12 +70,19 @@ fig1 = m.plot(forecast)
 
 網路分析與圖演算法 (Network Analysis and Graph Algorithms) 用於研究實體之間的關係。
 
-### 中心性指標 {#sec-centrality}
+### 中心性指標 {.unnumbered}
 
-*   **度中心性 (Degree Centrality)**：節點的連接數。
-*   **中介中心性 (Betweenness Centrality)**：節點位於其他節點對之間最短路徑上的次數。
+*   **度中心性 (Degree Centrality)**：節點的連接數。衡量節點的活躍度。
+*   **中介中心性 (Betweenness Centrality)**：節點位於其他節點對之間最短路徑上的次數。衡量節點作為「橋樑」的重要性。
+*   **接近中心性 (Closeness Centrality)**：節點到所有其他節點的最短路徑長度總和的倒數。衡量節點傳播訊息的速度。
 *   **PageRank**：Google 搜尋引擎的核心演算法。一個網頁的重要性取決於指向它的網頁的重要性。
     $$ PR(u) = \sum_{v \in B_u} \frac{PR(v)}{L(v)} $$
+
+### 社群偵測 (Community Detection) {.unnumbered}
+
+用於發現網路中緊密連接的節點群體。
+*   **Louvain 演算法**：基於模組度 (Modularity) 最佳化的快速演算法。
+*   **Girvan-Newman 演算法**：基於邊介數 (Edge Betweenness) 的分裂演算法。
 
 **Python 範例：使用 NetworkX 計算中心性**
 
@@ -79,3 +99,11 @@ print("Top 5 nodes by degree:", sorted(degree_cent.items(), key=lambda x: x[1], 
 ## 地理空間資料分析 {#sec-geospatial}
 
 地理空間資料分析 (Geospatial Data Analysis) 處理帶有地理位置信息的數據，常用工具包括 GeoPandas。
+
+*   **CRS (Coordinate Reference Systems)**：座標參考系統。
+    *   **EPSG:4326** (WGS84)：經緯度，GPS 常用。
+    *   **EPSG:3857** (Web Mercator)：投影座標，Google Maps 常用。
+*   **空間操作**：
+    *   **Buffer**：建立緩衝區（例如：距離商店 500 公尺內的區域）。
+    *   **Intersection**：計算兩個幾何圖形的交集。
+    *   **Spatial Join**：基於空間關係合併兩個 GeoDataFrame。

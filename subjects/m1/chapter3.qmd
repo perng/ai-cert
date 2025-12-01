@@ -6,7 +6,7 @@
 
 監督式學習 (Supervised Learning) 使用標記好的數據 (Labeled Data) 來訓練模型，即每個輸入 $x$ 都有對應的正確輸出 $y$。目標是學習一個函數 $f: X \to Y$。
 
-### 線性迴歸 {#sec-linear-regression}
+### 線性迴歸 {.unnumbered}
 
 線性迴歸 (Linear Regression) 用於預測連續數值。它試圖找到一條直線（或超平面）來擬合數據，使得預測值與真實值之間的均方誤差 (MSE) 最小。
 
@@ -56,7 +56,7 @@ plt.title('Linear Regression')
 plt.show()
 ```
 
-### 邏輯迴歸 {#sec-logistic-regression}
+### 邏輯迴歸 {.unnumbered}
 
 邏輯迴歸 (Logistic Regression) 雖然名字中有「迴歸」，但實際上是用於**二元分類**問題。它使用 **Sigmoid 函數**將線性模型的輸出壓縮到 (0, 1) 之間，表示屬於正類的機率。
 
@@ -131,7 +131,7 @@ plt.ylabel('Feature 2')
 plt.show()
 ```
 
-### 決策樹 {#sec-decision-trees}
+### 決策樹 {.unnumbered}
 
 決策樹 (Decision Trees) 通過一系列規則對數據進行分類或回歸。它模擬人類的決策過程，易於理解和解釋。
 *   **節點 (Node)**：代表一個特徵的測試。
@@ -169,7 +169,7 @@ plt.title("Decision Tree Visualization (Iris Dataset)")
 plt.show()
 ```
 
-### 支援向量機 {#sec-svm}
+### 支援向量機 {.unnumbered}
 
 支援向量機 (SVM, Support Vector Machine) 是一種強大的監督式學習演算法，用於分類和迴歸。
 *   **核心概念**：尋找一個最佳超平面 (Hyperplane)，使得不同類別之間的**邊界 (Margin)** 最大化。邊界是超平面到最近的數據點（稱為**支援向量 Support Vectors**）的距離。
@@ -216,7 +216,7 @@ plt.title('SVM Decision Boundary with Support Vectors')
 plt.show()
 ```
 
-### K-近鄰演算法 {#sec-knn}
+### K-近鄰演算法 {.unnumbered}
 
 K-近鄰演算法 (KNN, K-Nearest Neighbors) 是一種簡單直觀的監督式學習演算法。
 *   **原理**：對於一個新的數據點，查看其在特徵空間中最近的 $K$ 個鄰居。
@@ -278,7 +278,7 @@ plt.show()
 
 非監督式學習 (Unsupervised Learning) 處理沒有標籤的數據，旨在發現數據中的隱藏結構。
 
-### K-平均分群 {#sec-kmeans}
+### K-平均分群 {.unnumbered}
 
 K-平均分群 (K-means Clustering) 將數據劃分為 K 個群集 (Clusters)。
 *   **目標函數**：最小化群集內變異數總和 (Within-Cluster Sum of Squares, WCSS)。
@@ -366,7 +366,7 @@ plt.show()
 
 模型評估 (Model Evaluation) 是衡量模型性能的關鍵步驟。
 
-### 評估指標 {#sec-metrics}
+### 評估指標 {.unnumbered}
 
 對於二元分類問題，我們通常使用混淆矩陣 (Confusion Matrix)：
 
@@ -433,7 +433,7 @@ plt.grid(True)
 plt.show()
 ```
 
-### 交叉驗證 {#sec-cross-validation}
+### 交叉驗證 {.unnumbered}
 
 交叉驗證 (Cross-validation) 是一種評估模型泛化能力的技術，能有效減少因數據劃分不同而帶來的評估誤差。
 *   **K-Fold 交叉驗證**：最常用的方法。
@@ -458,7 +458,7 @@ print(f"Cross-validation scores: {scores}")
 print(f"Average score: {scores.mean():.2f}")
 ```
 
-### 偏差-變異數權衡 {#sec-bias-variance}
+### 偏差-變異數權衡 {.unnumbered}
 
 偏差-變異數權衡 (Bias-Variance Tradeoff) 是機器學習中的核心問題，描述了模型複雜度與預測誤差之間的關係。
 

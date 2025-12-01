@@ -6,10 +6,14 @@
 
 深度學習框架 (Deep Learning Frameworks) 簡化了模型的開發與訓練，提供了自動微分 (Automatic Differentiation) 和 GPU 加速功能。
 
-### TensorFlow vs PyTorch {#sec-tf-pytorch}
+### TensorFlow vs PyTorch vs JAX {.unnumbered}
 
 *   **TensorFlow**：由 Google 開發，工業界部署廣泛。Keras 是其高階 API，非常易用。
+    *   *優點*：部署生態完善 (TFLite, TF.js, TFX)。
 *   **PyTorch**：由 Meta (Facebook) 開發，採用動態計算圖 (Dynamic Computation Graph)，除錯方便，學術界研究首選。
+    *   *優點*：Pythonic 風格，靈活易學。
+*   **JAX**：由 Google Research 開發，結合了 Autograd 和 XLA，支持高性能數值計算。
+    *   *優點*：速度極快，適合前沿研究。
 
 **Python 範例：PyTorch 與 TensorFlow 定義簡單層的比較**
 
@@ -27,14 +31,18 @@ linear_layer = tf.keras.layers.Dense(units=5, input_shape=(10,))
 
 進階架構 (Advanced Architectures) 解決了更複雜的任務。
 
-### 卷積神經網路變體 {#sec-cnn-variants}
+### 卷積神經網路變體 {.unnumbered}
 
-*   **Inception (GoogLeNet)**：引入 Inception 模組，並行使用不同大小的卷積核。
-*   **MobileNet**：使用深度可分離卷積 (Depthwise Separable Convolution)，專為行動裝置設計。
+*   **Inception (GoogLeNet)**：引入 Inception 模組，並行使用不同大小的卷積核 ($1\times1, 3\times3, 5\times5$)，讓網路自己學習最佳的特徵尺度。
+*   **MobileNet**：使用深度可分離卷積 (Depthwise Separable Convolution)，大幅減少參數和計算量，專為行動裝置設計。
+*   **EfficientNet**：提出複合縮放 (Compound Scaling) 方法，同時調整網路的深度、寬度和解析度，以達到最佳的性能/資源平衡。
 
-### 循環神經網路深入 {#sec-rnn-deep}
+### 循環神經網路深入 {.unnumbered}
 
 深入探討 RNN、LSTM 和 GRU 的內部機制。
+
+*   **雙向 RNN (Bidirectional RNN)**：同時從前向後和從後向前處理序列，能捕捉上下文信息（例如：翻譯時需要看完整個句子）。
+*   **Attention 機制**：解決了長序列依賴問題，允許模型在生成輸出時「關注」輸入序列的不同部分。這是 Transformer 架構的基礎。
 
 **Mermaid 流程圖：LSTM 單元結構**
 
@@ -53,6 +61,9 @@ graph LR
 
 遷移學習與微調策略 (Transfer Learning and Fine-tuning Strategies) 允許利用預訓練模型（如 ImageNet 上訓練的 ResNet）來解決新問題，只需少量數據。
 
+*   **特徵提取 (Feature Extraction)**：凍結預訓練模型的卷積層，只訓練最後的全連接分類層。適合數據量小且與原任務相似的情況。
+*   **微調 (Fine-tuning)**：解凍預訓練模型的部分或全部層，以較小的學習率進行訓練。適合數據量較大或與原任務差異較大的情況。
+
 **Python 範例：PyTorch 遷移學習**
 
 ```{python}
@@ -62,7 +73,7 @@ import torch.nn as nn
 # 載入預訓練的 ResNet18
 model = models.resnet18(pretrained=True)
 
-# 凍結所有參數
+# 凍結所有參數 (Feature Extraction)
 for param in model.parameters():
     param.requires_grad = False
 

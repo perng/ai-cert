@@ -5,16 +5,23 @@
 ## ML 中的公平性、當責性與透明度 (FAT) {#sec-fat}
 
 *   **公平性 (Fairness)**：模型不應對特定群體（如種族、性別）產生歧視。
-*   **當責性 (Accountability)**：誰應對 AI 的決策負責？
-*   **透明度 (Transparency)**：模型的決策過程應該是可見的。
+    *   **偏見類型**：
+        *   **選擇性偏見 (Selection Bias)**：訓練數據不能代表真實世界。
+        *   **歷史偏見 (Historical Bias)**：數據反映了歷史上的社會不公。
+        *   **測量偏見 (Measurement Bias)**：特徵或標籤的測量方式有誤。
+*   **當責性 (Accountability)**：誰應對 AI 的決策負責？需要明確的責任歸屬機制。
+*   **透明度 (Transparency)**：模型的決策過程應該是可見的，並能向使用者解釋。
 
 ## 解決偏見與確保可解釋性 (XAI) {#sec-xai}
 
 可解釋 AI (XAI, Explainable AI) 旨在讓人類理解 AI 模型的決策邏輯。
 
-### SHAP (SHapley Additive exPlanations)
+*   **全域解釋 (Global Interpretability)**：理解模型整體的運作邏輯（例如：特徵重要性）。
+*   **局部解釋 (Local Interpretability)**：理解模型對單個樣本的預測原因（例如：為什麼拒絕這筆貸款？）。
 
-SHAP 基於博弈論，為每個特徵分配一個重要性值，解釋其對預測結果的貢獻。
+### SHAP (SHapley Additive exPlanations) {.unnumbered}
+
+SHAP 基於博弈論，為每個特徵分配一個重要性值，解釋其對預測結果的貢獻。它具有堅實的數學理論基礎，能提供一致的解釋。
 
 **Python 範例：使用 SHAP 解釋模型**
 
@@ -34,6 +41,16 @@ shap_values = explainer(X)
 # shap.summary_plot(shap_values, X)
 ```
 
-### LIME (Local Interpretable Model-agnostic Explanations)
+### LIME (Local Interpretable Model-agnostic Explanations) {.unnumbered}
 
-LIME 通過在局部擾動數據，訓練一個簡單的線性模型來近似複雜模型的決策邊界。
+LIME 通過在局部擾動數據，訓練一個簡單的線性模型來近似複雜模型的決策邊界。它適用於任何模型 (Model-agnostic)。
+
+## 模型監控與治理 {#sec-model-governance}
+
+模型部署後，必須持續監控以確保其性能。
+
+*   **數據漂移 (Data Drift)**：輸入數據的分佈隨時間發生變化（例如：用戶行為改變）。
+*   **概念漂移 (Concept Drift)**：輸入與輸出之間的關係發生變化（例如：詐欺手法翻新）。
+*   **監控指標**：
+    *   **PSI (Population Stability Index)**：衡量數據分佈的穩定性。
+    *   **模型性能指標**：準確率、AUC 等的變化趨勢。

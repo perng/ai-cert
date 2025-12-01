@@ -6,11 +6,12 @@
 
 整合方法 (Ensemble Methods) 通過結合多個模型（稱為基學習器）來提高預測性能。其核心思想是「三個臭皮匠，勝過一個諸葛亮」。
 
-### 隨機森林 {#sec-random-forest}
+### 隨機森林 {.unnumbered}
 
 隨機森林 (Random Forest) 是基於**Bagging (Bootstrap Aggregating)** 的整合模型。它並行訓練多棵決策樹，每棵樹使用隨機採樣的數據和特徵。
 *   **分類**：多數決 (Voting)。
 *   **迴歸**：平均值 (Averaging)。
+*   **優點**：不易過擬合，能處理高維數據，提供特徵重要性。
 
 **決策樹的分裂準則**：
 *   **吉尼不純度 (Gini Impurity)**：衡量集合中隨機選取兩個樣本屬於不同類別的機率。
@@ -20,11 +21,19 @@
     $$ Entropy = - \sum_{i=1}^{C} p_i \log_2(p_i) $$
     資訊增益 (Information Gain) = 父節點熵 - 子節點加權熵。
 
-### 梯度提升 {#sec-gradient-boosting}
+### 梯度提升 {.unnumbered}
 
 梯度提升 (Gradient Boosting) 是基於**Boosting** 的整合模型。它串行訓練模型，每一個新模型都試圖修正前一個模型的錯誤（擬合殘差）。
 *   **XGBoost (eXtreme Gradient Boosting)**：以其高效、靈活和可移植性著稱。它引入了正則化項來控制過擬合，並支持並行處理。
 *   **LightGBM**：微軟開發，使用基於直方圖的演算法和 Leaf-wise 生長策略，速度更快，記憶體佔用更低。
+*   **CatBoost**：Yandex 開發，特別擅長處理**類別特徵 (Categorical Features)**，無需預先進行 One-hot Encoding。
+
+### 堆疊法 (Stacking) {.unnumbered}
+
+Stacking 使用一個元學習器 (Meta-learner) 來組合多個基學習器的預測結果。
+1.  將訓練集分為兩部分。
+2.  基學習器在第一部分訓練，在第二部分預測。
+3.  元學習器使用基學習器的預測結果作為特徵進行訓練。
 
 **Python 範例：使用 XGBoost 進行分類**
 
@@ -51,21 +60,30 @@ print(f"Accuracy: {accuracy_score(y_test, y_pred):.4f}")
 
 進階非監督式學習 (Advanced Unsupervised Learning) 技術用於發現數據中的複雜模式。
 
-### 關聯規則學習 {#sec-association-rule}
+### 關聯規則學習 {.unnumbered}
 
 關聯規則學習 (Association Rule Learning) 用於發現變數之間的有趣關係，最經典的例子是「啤酒與尿布」。
-*   **支持度 (Support)**：規則在數據集中出現的頻率。
-    $$ Support(X \to Y) = P(X \cup Y) $$
-*   **信賴度 (Confidence)**：若 X 出現，則 Y 出現的機率。
-    $$ Confidence(X \to Y) = P(Y|X) = \frac{Support(X \cup Y)}{Support(X)} $$
-*   **提升度 (Lift)**：X 的出現對 Y 出現機率的提升程度。
-    $$ Lift(X \to Y) = \frac{Confidence(X \to Y)}{P(Y)} $$
-    Lift > 1 表示正相關，Lift < 1 表示負相關。
 
-### 異常檢測 {#sec-anomaly-detection}
+*   **指標**：
+    *   **支持度 (Support)**：規則在數據集中出現的頻率。
+        $$ Support(X \to Y) = P(X \cup Y) $$
+    *   **信賴度 (Confidence)**：若 X 出現，則 Y 出現的機率。
+        $$ Confidence(X \to Y) = P(Y|X) = \frac{Support(X \cup Y)}{Support(X)} $$
+    *   **提升度 (Lift)**：X 的出現對 Y 出現機率的提升程度。
+        $$ Lift(X \to Y) = \frac{Confidence(X \to Y)}{P(Y)} $$
+        Lift > 1 表示正相關，Lift < 1 表示負相關。
+
+*   **演算法**：
+    *   **Apriori**：迭代地生成候選項目集。缺點是需要多次掃描資料庫。
+    *   **FP-Growth (Frequent Pattern Growth)**：構建 FP 樹，只需掃描兩次資料庫，效率更高。
+
+### 異常檢測 {.unnumbered}
 
 異常檢測 (Anomaly Detection) 用於識別不符合預期模式的數據點，常用於詐欺檢測、設備故障預測。
+
 *   **孤立森林 (Isolation Forest)**：通過隨機分割數據來隔離異常點。異常點通常更容易被隔離（路徑更短）。
+*   **One-Class SVM**：學習一個決策邊界，將正常數據包圍起來。適合高維數據。
+*   **Local Outlier Factor (LOF)**：基於密度的演算法，比較一個點與其鄰居的密度。適合發現局部異常。
 
 **Python 範例：使用 Isolation Forest 檢測異常**
 

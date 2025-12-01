@@ -6,7 +6,7 @@
 
 神經網路 (Neural Networks) 由層層堆疊的神經元組成。
 
-### 感知器 {#sec-perceptron}
+### 感知器 {.unnumbered}
 
 感知器 (Perceptron) 是最簡單的神經網路單元。它接收輸入向量 $\mathbf{x}$，計算加權和 $z$，然後通過活化函數 $\phi$ 輸出。
 $$ z = \sum_{i=1}^{n} w_i x_i + b = \mathbf{w}^T \mathbf{x} + b $$
@@ -60,7 +60,7 @@ graph LR
 ```
 
 
-### 活化函數 {#sec-activation-functions}
+### 活化函數 {.unnumbered}
 
 活化函數 (Activation Functions) 引入非線性，使神經網路能夠學習複雜的模式（如 XOR 問題）。若沒有活化函數，多層神經網路僅等價於單層線性模型。
 
@@ -118,7 +118,7 @@ plt.show()
 
 
 
-### 前向與反向傳播 {#sec-propagation}
+### 前向與反向傳播 {.unnumbered}
 
 神經網路的訓練過程包含兩個主要階段：
 
@@ -138,7 +138,7 @@ plt.show()
 
 最佳化 (Optimization) 過程旨在通過調整模型參數（權重和偏差）來最小化損失函數。
 
-### 損失函數 {#sec-loss-functions}
+### 損失函數 {.unnumbered}
 
 損失函數 (Loss Functions) 是模型性能的指標，數值越小越好。
 
@@ -153,7 +153,7 @@ plt.show()
     *   **二元分類**：$$ L = -[y \log(\hat{y}) + (1-y) \log(1-\hat{y})] $$
     *   **特性**：當預測錯誤且自信度高時（例如預測 0.9 但真實是 0），懲罰非常大。
 
-### 最佳化器 {#sec-optimizers}
+### 最佳化器 {.unnumbered}
 
 最佳化器 (Optimizers) 決定了如何根據梯度來更新參數。
 

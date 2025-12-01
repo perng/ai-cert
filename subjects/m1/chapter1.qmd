@@ -6,7 +6,7 @@
 
 機率與統計 (Probability & Statistics) 是理解數據不確定性的基石。對於 STEM 背景的讀者來說，我們將重點放在統計推論與分佈特性上。
 
-### 敘述統計 {#sec-descriptive-stats}
+### 敘述統計 {.unnumbered}
 
 敘述統計 (Descriptive Statistics) 用於總結和描述數據集的特徵。
 
@@ -41,7 +41,7 @@ variance = df['Values'].var()
 print(f"Variance: {variance:.2f}")
 ```
 
-### 機率分佈 {#sec-prob-dist}
+### 機率分佈 {.unnumbered}
 
 機率分佈 (Probability Distributions) 描述了隨機變數 (Random Variable) 可能取值的機率。
 
@@ -146,7 +146,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-### 假設檢定 {#sec-hypothesis-testing}
+### 假設檢定 {.unnumbered}
 
 假設檢定 (Hypothesis Testing) 是一種統計推論方法，用於判斷樣本數據是否支持某個關於母體的假設。
 
@@ -190,7 +190,7 @@ else:
 
 線性代數 (Linear Algebra) 處理向量、矩陣及其運算，是 AI 模型（特別是深度學習）運算的基礎。
 
-### 向量與矩陣 {#sec-vectors-matrices}
+### 向量與矩陣 {.unnumbered}
 
 *   **向量 (Vectors)**：具有大小和方向的量。
     *   **內積 (Dot Product)**：$a \cdot b = ||a|| ||b|| \cos \theta = \sum a_i b_i$。幾何上，它衡量兩個向量的方向一致性。若內積為 0，則兩向量正交（垂直）。
@@ -213,7 +213,7 @@ C_alt = A @ B
 print("Matrix Product:\n", C)
 ```
 
-### 特徵值與特徵向量 {#sec-eigenvalues}
+### 特徵值與特徵向量 {.unnumbered}
 
 對於方陣 $A$，若存在非零向量 $v$ 和純量 $\lambda$ 使得：
 $$ Av = \lambda v $$
@@ -238,14 +238,14 @@ print("Eigenvectors:\n", eigenvectors)
 
 微積分與最佳化 (Calculus & Optimization) 用於訓練模型，尋找最佳參數以最小化誤差。
 
-### 導數與梯度 {#sec-derivatives-gradients}
+### 導數與梯度 {.unnumbered}
 
 *   **導數 (Derivative)**：函數 $f(x)$ 在某一點的切線斜率，表示變化率。$f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$。
 *   **偏導數 (Partial Derivative)**：多變數函數對其中一個變數求導，將其他變數視為常數。$\frac{\partial f}{\partial x_i}$。
 *   **梯度 (Gradient)**：多變數函數 $f(x_1, \dots, x_n)$ 的所有偏導數組成的向量 $\nabla f = [\frac{\partial f}{\partial x_1}, \dots, \frac{\partial f}{\partial x_n}]^T$。
     *   **性質**：梯度指向函數增長最快的方向；梯度的反方向是函數下降最快的方向。
 
-### 梯度下降 {#sec-gradient-descent}
+### 梯度下降 {.unnumbered}
 
 梯度下降 (Gradient Descent) 是一種迭代最佳化演算法。為了最小化損失函數 $L(\theta)$，我們沿著梯度的反方向更新參數 $\theta$：
 

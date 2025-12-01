@@ -5,17 +5,30 @@
 ## 視覺化原則與工具 {#sec-viz-principles}
 
 掌握視覺化原則與工具 (Visualization Principles and Tools) 是製作優秀圖表的關鍵。
+
+### 設計原則 {.unnumbered}
+
 *   **選擇正確的圖表**：
-    *   比較：長條圖 (Bar Chart)
-    *   趨勢：折線圖 (Line Chart)
-    *   分佈：直方圖 (Histogram)、箱型圖 (Box Plot)
-    *   關係：散點圖 (Scatter Plot)
-*   **簡潔原則**：去除不必要的裝飾（Chart Junk），突出數據本身。
+    *   **比較 (Comparison)**：長條圖 (Bar Chart)、分組長條圖。
+    *   **趨勢 (Trend)**：折線圖 (Line Chart)、面積圖 (Area Chart)。
+    *   **分佈 (Distribution)**：直方圖 (Histogram)、箱型圖 (Box Plot)、小提琴圖 (Violin Plot)。
+    *   **關係 (Relationship)**：散點圖 (Scatter Plot)、氣泡圖 (Bubble Chart)。
+    *   **組成 (Composition)**：圓餅圖 (Pie Chart)、堆疊長條圖 (Stacked Bar Chart)。
+*   **簡潔原則 (Simplicity)**：去除不必要的裝飾（Chart Junk），如過多的網格線、3D 效果。
+*   **完形心理學 (Gestalt Principles)**：利用人類的視覺感知特性。
+    *   **鄰近性 (Proximity)**：距離近的物體被視為一組。
+    *   **相似性 (Similarity)**：顏色、形狀相似的物體被視為一組。
+*   **色彩理論 (Color Theory)**：
+    *   **順序色 (Sequential)**：單一顏色的深淺變化，用於數值大小（如熱力圖）。
+    *   **發散色 (Diverging)**：兩種對比色，用於正負值或偏差（如紅藍對比）。
+    *   **分類色 (Categorical)**：不同顏色，用於區分不同類別。
 
-### Tableau 與 Power BI {#sec-bi-tools}
+### 視覺化工具 {.unnumbered}
 
-*   **Tableau**：以其強大的互動式視覺化能力著稱。
-*   **Power BI**：與 Microsoft 生態系統整合良好，適合企業報表。
+*   **Tableau**：商業智慧 (BI) 領導者，以其強大的拖拉式介面和互動式儀表板著稱。
+*   **Power BI**：Microsoft 產品，與 Excel 和 Azure 整合良好，適合企業內部報表。
+*   **Plotly**：基於 Python/JavaScript 的互動式繪圖庫，支持縮放、懸停提示。
+*   **Streamlit**：快速構建資料應用 (Data Apps) 的 Python 框架，無需前端知識。
 
 **Python 範例：使用 Seaborn 繪製熱力圖**
 
@@ -37,5 +50,10 @@ plt.show()
 ## 建立有效的儀表板 {#sec-dashboards}
 
 建立有效的儀表板 (Creating Effective Dashboards) 有助於決策者快速掌握關鍵資訊。
-*   **F 型佈局**：將最重要的資訊放在左上角。
-*   **KPI 指標**：清晰展示關鍵績效指標。
+
+*   **F 型佈局**：利用使用者的閱讀習慣，將最重要的資訊（如 KPI）放在左上角。
+*   **KPI 指標**：清晰展示關鍵績效指標 (Key Performance Indicators)，並提供與目標或歷史數據的比較。
+*   **互動性**：提供篩選器 (Filters) 和鑽取 (Drill-down) 功能，讓使用者探索數據。
+*   **用數據說故事 (Storytelling with Data)**：
+    *   **情境 (Context)**：了解聽眾是誰，他們關心什麼。
+    *   **注意力 (Attention)**：使用顏色、大小和位置引導聽眾的視線。

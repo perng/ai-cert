@@ -1,20 +1,32 @@
 # 進階資料處理 {#sec-m3-ch2}
 
-隨著數據量的增長，進階資料處理 (Advanced Data Processing) 技術變得不可或缺。
+隨著數據量的增長，進階資料處理 (Advanced Data Processing) 技術變得不可或缺。這包括如何高效地收集數據、即時處理數據流以及自動化複雜的數據管道。
 
 ## 資料攝取 {#sec-data-ingestion}
 
 資料攝取 (Data Ingestion) 是將數據導入系統的過程。
 
-### 批次處理 {#sec-batch-processing}
+### 批次處理 {.unnumbered}
 
-批次處理 (Batch Processing) 適用於處理大量歷史數據，通常在夜間或離峰時間運行。例如：每天生成的銷售報表。
+批次處理 (Batch Processing) 適用於處理大量歷史數據，通常在夜間或離峰時間運行。
+*   **適用場景**：日結報表、歷史數據分析、模型訓練。
+*   **工具**：
+    *   **Sqoop**：用於在 Hadoop 和關聯式資料庫 (RDBMS) 之間傳輸數據。
+    *   **Flume**：用於高效收集、聚合和移動大量日誌數據。
 
-### 串流處理 {#sec-streaming-processing}
+### 串流處理 {.unnumbered}
 
 串流處理 (Streaming Processing) 用於即時處理數據流，具有低延遲特性。
-*   **Kafka**：一個高吞吐量的分散式發布訂閱消息系統。它充當數據管道的緩衝區。
+
+*   **Kafka**：一個高吞吐量的分散式發布訂閱消息系統。它充當數據管道的緩衝區，解耦生產者和消費者。
 *   **Flink**：一個強大的串流處理框架，支持事件時間處理和狀態管理。
+*   **Spark Streaming**：將流數據分解為微批次 (Micro-batches) 進行處理。
+
+**視窗操作 (Windowing)**：
+串流處理中常需對一段時間內的數據進行聚合，這稱為視窗。
+*   **滾動視窗 (Tumbling Window)**：固定大小，不重疊（例如：每 5 分鐘統計一次）。
+*   **滑動視窗 (Sliding Window)**：固定大小，可重疊（例如：每 1 分鐘統計過去 5 分鐘的數據）。
+*   **會話視窗 (Session Window)**：基於活動間隔動態定義（例如：用戶超過 30 分鐘無操作則視窗結束）。
 
 **Mermaid 流程圖：Kafka 架構**
 
@@ -23,15 +35,29 @@ graph LR
     Producer[Producer] -->|Push| Topic[Kafka Topic]
     Topic -->|Pull| ConsumerA[Consumer Group A]
     Topic -->|Pull| ConsumerB[Consumer Group B]
+    Zookeeper[Zookeeper] -.->|Manage| Topic
 ```
 
 ## ETL 流程與工作流自動化 {#sec-etl-workflow}
 
 ETL (Extract, Transform, Load) 流程與工作流自動化 (Workflow Automation) 確保數據處理的效率和可靠性。
 
-### Airflow {#sec-airflow}
+**ETL vs ELT**：
+*   **ETL**：先轉換再載入。適合傳統資料倉儲，減輕倉儲負擔。
+*   **ELT**：先載入再轉換。隨著雲端資料倉儲（如 Snowflake, BigQuery）計算能力增強，ELT 越來越流行，因為它保留了原始數據且轉換更靈活。
+
+### Airflow {.unnumbered}
 
 Apache Airflow 是一個以程式碼定義工作流 (Workflow as Code) 的平台。它使用 **DAG (Directed Acyclic Graph)** 來管理任務依賴。
+
+*   **核心組件**：
+    *   **Scheduler**：負責監控 DAG 並觸發任務實例。
+    *   **Web Server**：提供 UI 來查看 DAG 狀態和日誌。
+    *   **Worker**：實際執行任務的節點。
+*   **常用 Operator**：
+    *   `BashOperator`：執行 Bash 命令。
+    *   `PythonOperator`：執行 Python 函數。
+    *   `SqlOperator`：執行 SQL 查詢。
 
 **Python 範例：定義 Airflow DAG**
 

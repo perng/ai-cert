@@ -6,7 +6,7 @@
 
 資料預處理 (Data Preprocessing) 是將原始資料轉換為適合模型訓練格式的過程。現實世界的資料往往是不完整的、不一致的，且包含許多錯誤。
 
-### 資料清理 {#sec-data-cleaning}
+### 資料清理 {.unnumbered}
 
 資料清理 (Data Cleaning) 涉及處理錯誤、雜訊和不一致的資料。
 
@@ -39,7 +39,7 @@ df_dropped = df.dropna()
 print("Dropped DataFrame:\n", df_dropped)
 ```
 
-### 正規化 {#sec-normalization}
+### 正規化 {.unnumbered}
 
 正規化 (Normalization) 將數據縮放到特定的範圍，這對於基於距離的演算法（如 KNN、SVM）和使用梯度下降的演算法非常重要。
 
@@ -96,14 +96,14 @@ plt.show()
 
 特徵工程 (Feature Engineering) 是利用領域知識從原始數據中提取特徵的過程，旨在提升機器學習模型的性能。
 
-### 特徵選擇 {#sec-feature-selection}
+### 特徵選擇 {.unnumbered}
 
 特徵選擇 (Feature Selection) 旨在選出對模型預測最有幫助的特徵子集，以減少過擬合、提高訓練速度並增強模型可解釋性。
 *   **過濾法 (Filter)**：基於統計指標（如相關係數、卡方檢定）。
 *   **包裹法 (Wrapper)**：使用模型來評估特徵子集（如遞歸特徵消除 RFE）。
 *   **嵌入法 (Embedded)**：特徵選擇是模型訓練的一部分（如 Lasso 回歸）。
 
-### 特徵提取與降維 {#sec-dim-reduction}
+### 特徵提取與降維 {.unnumbered}
 
 特徵提取 (Feature Extraction) 通過轉換原始數據來創建新的特徵。降維 (Dimensionality Reduction) 是其中的重要技術。
 
@@ -185,7 +185,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-### 獨熱編碼 {#sec-one-hot-encoding}
+### 獨熱編碼 {.unnumbered}
 
 對於類別型特徵 (Categorical Features)，如「顏色」（紅、綠、藍），機器學習模型通常無法直接處理。獨熱編碼 (One-Hot Encoding) 將其轉換為二進制向量。
 
