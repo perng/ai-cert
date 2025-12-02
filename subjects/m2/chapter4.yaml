@@ -14,6 +14,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-ai-evolution
+  usage: quiz
 - id: 4402
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -29,6 +30,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: quiz
 - id: 4403
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -44,6 +46,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: quiz
 - id: 4404
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -59,6 +62,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: quiz
 - id: 4405
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -74,6 +78,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: quiz
 - id: 4406
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -89,6 +94,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: quiz
 - id: 4407
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -104,6 +110,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: quiz
 - id: 4408
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 多模態應用
@@ -119,6 +126,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-multimodal
+  usage: quiz
 - id: 4409
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 多模態應用
@@ -134,6 +142,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-multimodal
+  usage: quiz
 - id: 4410
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -149,6 +158,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: quiz
 - id: 4411
   chapter_title: 生成式 AI 與多模態 AI
   section_title: AI 發展演進
@@ -164,6 +174,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-ai-evolution
+  usage: both
 - id: 4412
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -179,6 +190,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: both
 - id: 4413
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -194,6 +206,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: both
 - id: 4414
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 多模態應用
@@ -209,6 +222,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-multimodal
+  usage: both
 - id: 4415
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -224,6 +238,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: both
 - id: 4416
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -239,6 +254,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: both
 - id: 4417
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 多模態應用
@@ -254,6 +270,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-multimodal
+  usage: both
 - id: 4418
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -269,6 +286,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: both
 - id: 4419
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -284,6 +302,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: both
 - id: 4420
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 多模態應用
@@ -299,6 +318,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-multimodal
+  usage: both
 - id: 4421
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -314,6 +334,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: both
 - id: 4422
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -329,6 +350,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: both
 - id: 4423
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -344,6 +366,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: both
 - id: 4424
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 多模態應用
@@ -359,6 +382,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-multimodal
+  usage: both
 - id: 4425
   chapter_title: 生成式 AI 與多模態 AI
   section_title: AI 發展演進
@@ -374,6 +398,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-ai-evolution
+  usage: both
 - id: 4426
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -389,6 +414,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: both
 - id: 4427
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -404,6 +430,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: both
 - id: 4428
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -419,6 +446,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: both
 - id: 4429
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 多模態應用
@@ -434,6 +462,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-multimodal
+  usage: both
 - id: 4430
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -449,6 +478,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: both
 - id: 4431
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -464,6 +494,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: both
 - id: 4432
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -479,6 +510,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: both
 - id: 4433
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -494,6 +526,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: both
 - id: 4434
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 多模態應用
@@ -509,6 +542,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-multimodal
+  usage: both
 - id: 4435
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -524,6 +558,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: both
 - id: 4436
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -539,6 +574,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: both
 - id: 4437
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -554,6 +590,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: both
 - id: 4438
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -569,6 +606,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: both
 - id: 4439
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 多模態應用
@@ -584,6 +622,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-multimodal
+  usage: both
 - id: 4440
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型
@@ -599,6 +638,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-generative-models
+  usage: both
 - id: 4441
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 深度思考情境題
@@ -614,6 +654,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-scenario
+  usage: mock
 - id: 4442
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 深度思考情境題
@@ -629,6 +670,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-scenario
+  usage: mock
 - id: 4443
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 深度思考情境題
@@ -644,6 +686,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-scenario
+  usage: mock
 - id: 4444
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 深度思考情境題
@@ -655,14 +698,17 @@ questions:
   - VAE 訓練時間不夠。
   - VAE 不適合生成圖像。
   correct_index: 0
-  explanation: VAE 的重建損失（通常是 MSE）假設數據服從高斯分佈，這會導致模型傾向於輸出像素的平均值，從而造成圖像邊緣模糊。相比之下，GAN 和 Diffusion 能生成更銳利的細節。
+  explanation: VAE 的重建損失（通常是 MSE）假設數據服從高斯分佈，這會導致模型傾向於輸出像素的平均值，從而造成圖像邊緣模糊。相比之下，GAN
+    和 Diffusion 能生成更銳利的細節。
   tags:
   - chap-m2-ch4
   - sec-scenario
+  usage: mock
 - id: 4445
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 深度思考情境題
-  text: 情境：你想要生成高品質的「貓咪騎機車」圖片。你輸入 Prompt "Cat riding a motorcycle"，但生成的圖片裡貓咪有 6 條腿，機車輪子是方形的。這說明了目前生成式 AI 的什麼局限？
+  text: 情境：你想要生成高品質的「貓咪騎機車」圖片。你輸入 Prompt "Cat riding a motorcycle"，但生成的圖片裡貓咪有 6 條腿，機車輪子是方形的。這說明了目前生成式
+    AI 的什麼局限？
   type: multiple_choice
   options:
   - 模型不懂物理常識與解剖學結構，只是在像素層面進行統計擬合。
@@ -674,3 +720,324 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-scenario
+  usage: mock
+- chapter_title: 生成式 AI 與多模態 AI
+  section_title: 生成模型
+  text: 情境：GAN (生成對抗網路) 中的生成器 (Generator) 的目標是？
+  type: multiple_choice
+  options:
+  - 區分真假
+  - 生成逼真的假數據以欺騙判別器
+  - 分類數據
+  - 壓縮數據
+  correct_index: 1
+  explanation: 生成器試圖模仿真實數據分佈，讓判別器無法分辨真偽。
+  tags:
+  - chap-m2-ch4
+  - sec-generative-models
+  id: 4446
+  usage: both
+- chapter_title: 生成式 AI 與多模態 AI
+  section_title: 生成模型
+  text: 情境：擴散模型 (Diffusion Models) 的「反向過程」是做什麼？
+  type: multiple_choice
+  options:
+  - 加雜訊
+  - 逐步去除雜訊，從純雜訊還原出清晰圖像
+  - 分類圖像
+  - 壓縮圖像
+  correct_index: 1
+  explanation: 反向過程是生成的關鍵，模型學習預測並減去雜訊。
+  tags:
+  - chap-m2-ch4
+  - sec-generative-models
+  id: 4447
+  usage: both
+- chapter_title: 生成式 AI 與多模態 AI
+  section_title: 多模態應用
+  text: 情境：CLIP 模型的核心訓練目標是？
+  type: multiple_choice
+  options:
+  - 生成圖像
+  - 最大化配對的圖像與文本向量的相似度 (對比學習)
+  - 翻譯文本
+  - 語音辨識
+  correct_index: 1
+  explanation: CLIP 透過對比學習將視覺與語言映射到同一語意空間。
+  tags:
+  - chap-m2-ch4
+  - sec-multimodal
+  id: 4448
+  usage: both
+- chapter_title: 生成式 AI 與多模態 AI
+  section_title: 生成模型
+  text: 情境：VAE (變分自動編碼器) 的損失函數包含哪兩部分？
+  type: multiple_choice
+  options:
+  - MSE 與 MAE
+  - 重建誤差與 KL 散度
+  - Cross Entropy 與 Accuracy
+  - Generator Loss 與 Discriminator Loss
+  correct_index: 1
+  explanation: 重建誤差確保還原度，KL 散度確保潛在空間的規則性。
+  tags:
+  - chap-m2-ch4
+  - sec-generative-models
+  id: 4449
+  usage: both
+- chapter_title: 生成式 AI 與多模態 AI
+  section_title: 生成模型
+  text: 情境：GAN 訓練達到「納什均衡」時，判別器的輸出機率通常接近？
+  type: multiple_choice
+  options:
+  - '0'
+  - '1'
+  - 0.5 (無法區分真假)
+  - '0.9'
+  correct_index: 2
+  explanation: 此時生成器生成的數據已完美擬合真實分佈，判別器只能隨機猜測。
+  tags:
+  - chap-m2-ch4
+  - sec-generative-models
+  id: 4450
+  usage: both
+- chapter_title: 生成式 AI 與多模態 AI
+  section_title: 多模態應用
+  text: 情境：Text-to-Image 生成 (如 Stable Diffusion) 通常結合了哪兩種技術？
+  type: multiple_choice
+  options:
+  - RNN 與 CNN
+  - CLIP (語意理解) 與 Diffusion Model (生成)
+  - GAN 與 VAE
+  - SVM 與 KNN
+  correct_index: 1
+  explanation: CLIP 提供文字指引，Diffusion Model 負責畫出符合指引的圖。
+  tags:
+  - chap-m2-ch4
+  - sec-multimodal
+  id: 4451
+  usage: both
+- chapter_title: 生成式 AI 與多模態 AI
+  section_title: 生成模型
+  text: 情境：生成式 AI 與鑑別式 AI 的最大區別是？
+  type: multiple_choice
+  options:
+  - 生成式 AI 比較貴
+  - 生成式 AI 學習資料分佈以創造新樣本，鑑別式 AI 學習決策邊界以分類
+  - 鑑別式 AI 比較聰明
+  - 沒區別
+  correct_index: 1
+  explanation: 一個是「創造者」，一個是「分類者」。
+  tags:
+  - chap-m2-ch4
+  - sec-generative-models
+  id: 4452
+  usage: both
+- chapter_title: 生成式 AI 與多模態 AI
+  section_title: 生成模型
+  text: 情境：擴散模型的前向過程 (Forward Process) 是？
+  type: multiple_choice
+  options:
+  - 去噪
+  - 逐步加入高斯雜訊，直到圖像變成純雜訊
+  - 訓練模型
+  - 生成圖像
+  correct_index: 1
+  explanation: 前向過程是一個固定的物理擴散過程，將訊號破壞為雜訊。
+  tags:
+  - chap-m2-ch4
+  - sec-generative-models
+  id: 4453
+  usage: both
+- chapter_title: 生成式 AI 與多模態 AI
+  section_title: 多模態應用
+  text: 情境：CLIP 的雙塔架構包含哪兩個編碼器？
+  type: multiple_choice
+  options:
+  - 圖像編碼器與文本編碼器
+  - 語音編碼器與視訊編碼器
+  - 編碼器與解碼器
+  - 生成器與判別器
+  correct_index: 0
+  explanation: 分別處理視覺與語言輸入，將其轉換為向量。
+  tags:
+  - chap-m2-ch4
+  - sec-multimodal
+  id: 4454
+  usage: both
+- chapter_title: 生成式 AI 與多模態 AI
+  section_title: 生成模型
+  text: 情境：VAE 中的「重參數化技巧 (Reparameterization Trick)」是為了解決什麼問題？
+  type: multiple_choice
+  options:
+  - 梯度消失
+  - 採樣過程不可微分，無法進行反向傳播
+  - 過擬合
+  - 計算太慢
+  correct_index: 1
+  explanation: 將隨機性轉移到外部雜訊變數 epsilon，使模型參數可微分。
+  tags:
+  - chap-m2-ch4
+  - sec-generative-models
+  id: 4455
+  usage: both
+- chapter_title: 生成式 AI 與多模態 AI
+  section_title: 生成模型
+  text: 情境：GAN 的判別器 (Discriminator) 的目標是？
+  type: multiple_choice
+  options:
+  - 生成假數據
+  - 正確區分真實數據與生成數據
+  - 混淆視聽
+  - 協助生成器
+  correct_index: 1
+  explanation: 判別器扮演警察的角色，努力識破偽鈔。
+  tags:
+  - chap-m2-ch4
+  - sec-generative-models
+  id: 4456
+  usage: both
+- chapter_title: 生成式 AI 與多模態 AI
+  section_title: 多模態應用
+  text: 情境：在 Text-to-Image 中，Prompt Engineering 的作用是？
+  type: multiple_choice
+  options:
+  - 寫程式
+  - 透過精確的文字描述引導模型生成期望的圖像
+  - 訓練模型
+  - 測試模型
+  correct_index: 1
+  explanation: 好的 Prompt 能提供準確的語意向量，指引擴散模型的去噪方向。
+  tags:
+  - chap-m2-ch4
+  - sec-multimodal
+  id: 4457
+  usage: both
+- chapter_title: 生成式 AI 與多模態 AI
+  section_title: 生成模型
+  text: 情境：擴散模型相比於 GAN 的一個優勢是？
+  type: multiple_choice
+  options:
+  - 生成速度快
+  - 訓練過程更穩定，不易發生模式崩潰 (Mode Collapse)
+  - 參數量少
+  - 不需要數據
+  correct_index: 1
+  explanation: GAN 的對抗訓練不穩定，而擴散模型的訓練目標（預測雜訊）相對單純且穩定。
+  tags:
+  - chap-m2-ch4
+  - sec-generative-models
+  id: 4458
+  usage: both
+- chapter_title: 生成式 AI 與多模態 AI
+  section_title: AI 發展演進
+  text: 情境：根據 NVIDIA 黃仁勳的分類，具備推理與計畫能力的 AI 屬於？
+  type: multiple_choice
+  options:
+  - 感知 AI
+  - 生成式 AI
+  - 代理式 AI (Agentic AI)
+  - 物理 AI
+  correct_index: 2
+  explanation: Agentic AI 能自主拆解任務並採取行動，超越了單純的生成。
+  tags:
+  - chap-m2-ch4
+  - sec-ai-evolution
+  id: 4459
+  usage: both
+- chapter_title: 生成式 AI 與多模態 AI
+  section_title: 生成模型
+  text: 情境：KL 散度在 VAE 中的作用是？
+  type: multiple_choice
+  options:
+  - 計算距離
+  - 作為正則化項，強制潛在分佈接近標準常態分佈
+  - 增加誤差
+  - 減少運算
+  correct_index: 1
+  explanation: 這確保了潛在空間的連續性與完整性，利於生成新樣本。
+  tags:
+  - chap-m2-ch4
+  - sec-generative-models
+  id: 4460
+  usage: both
+- chapter_title: 生成式 AI 與多模態 AI
+  section_title: 多模態應用
+  text: 情境：CLIP 的訓練數據來源是？
+  type: multiple_choice
+  options:
+  - 人工標註
+  - 網路上爬取的大規模「圖像-文本對」
+  - 單純的圖片
+  - 單純的文字
+  correct_index: 1
+  explanation: 利用網路上現成的海量圖文資料進行自監督學習。
+  tags:
+  - chap-m2-ch4
+  - sec-multimodal
+  id: 4461
+  usage: both
+- chapter_title: 生成式 AI 與多模態 AI
+  section_title: 生成模型
+  text: 情境：GAN 的損失函數本質上是一個？
+  type: multiple_choice
+  options:
+  - 極小極大博弈 (Min-Max Game)
+  - 最小二乘法
+  - 最大似然估計
+  - 梯度下降
+  correct_index: 0
+  explanation: G 試圖最小化 V，D 試圖最大化 V。
+  tags:
+  - chap-m2-ch4
+  - sec-generative-models
+  id: 4462
+  usage: both
+- chapter_title: 生成式 AI 與多模態 AI
+  section_title: 生成模型
+  text: 情境：擴散模型的雜訊調度參數 (Noise Schedule) 控制的是？
+  type: multiple_choice
+  options:
+  - 模型大小
+  - 每一步添加雜訊的量
+  - 訓練時間
+  - 圖片尺寸
+  correct_index: 1
+  explanation: 決定了前向過程中訊號被破壞的速度。
+  tags:
+  - chap-m2-ch4
+  - sec-generative-models
+  id: 4463
+  usage: both
+- chapter_title: 生成式 AI 與多模態 AI
+  section_title: AI 發展演進
+  text: 情境：物理 AI (Physical AI) 的特徵是？
+  type: multiple_choice
+  options:
+  - 只能在電腦裡運作
+  - 能與實體世界互動 (如機器人、自駕車)
+  - 只能處理文字
+  - 只能處理圖片
+  correct_index: 1
+  explanation: 物理 AI 將智慧延伸到實體軀幹，具備感知與操控物理世界的能力。
+  tags:
+  - chap-m2-ch4
+  - sec-ai-evolution
+  id: 4464
+  usage: both
+- chapter_title: 生成式 AI 與多模態 AI
+  section_title: 生成模型
+  text: 情境：VAE 的編碼器 (Encoder) 輸出的是？
+  type: multiple_choice
+  options:
+  - 一張圖片
+  - 潛在分佈的參數 (平均值與變異數)
+  - 一個類別
+  - 一段文字
+  correct_index: 1
+  explanation: VAE 不直接輸出潛在向量，而是輸出分佈參數，再從中採樣。
+  tags:
+  - chap-m2-ch4
+  - sec-generative-models
+  id: 4465
+  usage: both

@@ -14,6 +14,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-image-processing
+  usage: quiz
 - id: 4302
   chapter_title: 電腦視覺 (CV)
   section_title: 核心任務與模型
@@ -29,6 +30,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-models
+  usage: quiz
 - id: 4303
   chapter_title: 電腦視覺 (CV)
   section_title: 核心任務與模型
@@ -44,6 +46,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-models
+  usage: quiz
 - id: 4304
   chapter_title: 電腦視覺 (CV)
   section_title: 核心任務與模型
@@ -59,6 +62,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-models
+  usage: quiz
 - id: 4305
   chapter_title: 電腦視覺 (CV)
   section_title: 核心任務與模型
@@ -74,6 +78,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-models
+  usage: quiz
 - id: 4306
   chapter_title: 電腦視覺 (CV)
   section_title: 核心任務與模型
@@ -89,6 +94,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-models
+  usage: quiz
 - id: 4307
   chapter_title: 電腦視覺 (CV)
   section_title: 核心任務與模型
@@ -104,6 +110,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-models
+  usage: quiz
 - id: 4308
   chapter_title: 電腦視覺 (CV)
   section_title: 核心任務與模型
@@ -119,6 +126,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-models
+  usage: quiz
 - id: 4309
   chapter_title: 電腦視覺 (CV)
   section_title: 核心任務與模型
@@ -134,6 +142,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-models
+  usage: quiz
 - id: 4310
   chapter_title: 電腦視覺 (CV)
   section_title: 核心任務與模型
@@ -149,6 +158,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-models
+  usage: quiz
 - id: 4311
   chapter_title: 電腦視覺 (CV)
   section_title: 風險與挑戰
@@ -164,6 +174,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-risks
+  usage: both
 - id: 4312
   chapter_title: 電腦視覺 (CV)
   section_title: 風險與挑戰
@@ -179,6 +190,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-risks
+  usage: both
 - id: 4313
   chapter_title: 電腦視覺 (CV)
   section_title: 核心任務與模型
@@ -194,6 +206,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-models
+  usage: both
 - id: 4314
   chapter_title: 電腦視覺 (CV)
   section_title: 核心任務與模型
@@ -209,6 +222,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-models
+  usage: both
 - id: 4315
   chapter_title: 電腦視覺 (CV)
   section_title: 產業應用情境
@@ -224,6 +238,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-applications
+  usage: both
 - id: 4316
   chapter_title: 電腦視覺 (CV)
   section_title: 風險與挑戰
@@ -239,6 +254,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-risks
+  usage: both
 - id: 4317
   chapter_title: 電腦視覺 (CV)
   section_title: 核心任務與模型
@@ -254,6 +270,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-models
+  usage: both
 - id: 4318
   chapter_title: 電腦視覺 (CV)
   section_title: 核心任務與模型
@@ -269,6 +286,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-models
+  usage: both
 - id: 4319
   chapter_title: 電腦視覺 (CV)
   section_title: 產業應用情境
@@ -284,6 +302,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-applications
+  usage: both
 - id: 4320
   chapter_title: 電腦視覺 (CV)
   section_title: 風險與挑戰
@@ -299,6 +318,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-risks
+  usage: both
 - id: 4321
   chapter_title: 電腦視覺 (CV)
   section_title: 影像處理基礎
@@ -314,6 +334,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-image-processing
+  usage: both
 - id: 4322
   chapter_title: 電腦視覺 (CV)
   section_title: 核心任務與模型
@@ -329,6 +350,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-models
+  usage: both
 - id: 4323
   chapter_title: 電腦視覺 (CV)
   section_title: 核心任務與模型
@@ -344,6 +366,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-models
+  usage: both
 - id: 4324
   chapter_title: 電腦視覺 (CV)
   section_title: 核心任務與模型
@@ -359,6 +382,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-models
+  usage: both
 - id: 4325
   chapter_title: 電腦視覺 (CV)
   section_title: 風險與挑戰
@@ -374,6 +398,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-risks
+  usage: both
 - id: 4326
   chapter_title: 電腦視覺 (CV)
   section_title: 核心任務與模型
@@ -389,6 +414,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-models
+  usage: both
 - id: 4327
   chapter_title: 電腦視覺 (CV)
   section_title: 產業應用情境
@@ -404,6 +430,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-applications
+  usage: both
 - id: 4328
   chapter_title: 電腦視覺 (CV)
   section_title: 風險與挑戰
@@ -419,6 +446,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-risks
+  usage: both
 - id: 4329
   chapter_title: 電腦視覺 (CV)
   section_title: 核心任務與模型
@@ -434,6 +462,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-models
+  usage: both
 - id: 4330
   chapter_title: 電腦視覺 (CV)
   section_title: 核心任務與模型
@@ -449,6 +478,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-models
+  usage: both
 - id: 4331
   chapter_title: 電腦視覺 (CV)
   section_title: 影像處理基礎
@@ -464,6 +494,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-image-processing
+  usage: both
 - id: 4332
   chapter_title: 電腦視覺 (CV)
   section_title: 核心任務與模型
@@ -479,6 +510,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-models
+  usage: both
 - id: 4333
   chapter_title: 電腦視覺 (CV)
   section_title: 核心任務與模型
@@ -494,6 +526,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-models
+  usage: both
 - id: 4334
   chapter_title: 電腦視覺 (CV)
   section_title: 風險與挑戰
@@ -509,6 +542,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-risks
+  usage: both
 - id: 4335
   chapter_title: 電腦視覺 (CV)
   section_title: 產業應用情境
@@ -524,6 +558,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-applications
+  usage: both
 - id: 4336
   chapter_title: 電腦視覺 (CV)
   section_title: 核心任務與模型
@@ -539,6 +574,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-models
+  usage: both
 - id: 4337
   chapter_title: 電腦視覺 (CV)
   section_title: 核心任務與模型
@@ -554,6 +590,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-models
+  usage: both
 - id: 4338
   chapter_title: 電腦視覺 (CV)
   section_title: 風險與挑戰
@@ -569,6 +606,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-risks
+  usage: both
 - id: 4339
   chapter_title: 電腦視覺 (CV)
   section_title: 核心任務與模型
@@ -584,6 +622,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-models
+  usage: both
 - id: 4340
   chapter_title: 電腦視覺 (CV)
   section_title: 核心任務與模型
@@ -599,6 +638,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-cv-models
+  usage: both
 - id: 4341
   chapter_title: 電腦視覺 (CV)
   section_title: 深度思考情境題
@@ -614,6 +654,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-scenario
+  usage: mock
 - id: 4342
   chapter_title: 電腦視覺 (CV)
   section_title: 深度思考情境題
@@ -629,6 +670,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-scenario
+  usage: mock
 - id: 4343
   chapter_title: 電腦視覺 (CV)
   section_title: 深度思考情境題
@@ -644,6 +686,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-scenario
+  usage: mock
 - id: 4344
   chapter_title: 電腦視覺 (CV)
   section_title: 深度思考情境題
@@ -655,14 +698,17 @@ questions:
   - VGG。
   - MobileNet。
   correct_index: 1
-  explanation: YOLO 是偵測模型，只能給出矩形框 (Bounding Box)。手術規劃需要像素級的精確輪廓，這是語義分割/實例分割的任務，U-Net 是此領域的標竿模型。
+  explanation: YOLO 是偵測模型，只能給出矩形框 (Bounding Box)。手術規劃需要像素級的精確輪廓，這是語義分割/實例分割的任務，U-Net
+    是此領域的標竿模型。
   tags:
   - chap-m2-ch3
   - sec-scenario
+  usage: mock
 - id: 4345
   chapter_title: 電腦視覺 (CV)
   section_title: 深度思考情境題
-  text: 情境：你的公司計畫在商場安裝人臉辨識系統以分析客群。法務部門警告這可能違反個資法。除了取得顧客同意外，在技術架構上可以採取什麼「隱私設計 (Privacy by Design)」措施？
+  text: 情境：你的公司計畫在商場安裝人臉辨識系統以分析客群。法務部門警告這可能違反個資法。除了取得顧客同意外，在技術架構上可以採取什麼「隱私設計 (Privacy
+    by Design)」措施？
   type: multiple_choice
   options:
   - 將所有影像上傳雲端備份。
@@ -674,3 +720,324 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-scenario
+  usage: mock
+- chapter_title: 電腦視覺 (CV)
+  section_title: 核心任務與模型
+  text: 情境：CNN (卷積神經網路) 中的「池化層 (Pooling Layer)」主要功能是？
+  type: multiple_choice
+  options:
+  - 增加維度
+  - 降低維度並保留顯著特徵，減少運算量
+  - 分類
+  - 生成圖片
+  correct_index: 1
+  explanation: Pooling 透過降採樣 (Downsampling) 壓縮特徵圖，同時保持特徵的空間不變性。
+  tags:
+  - chap-m2-ch3
+  - sec-cv-models
+  id: 4346
+  usage: both
+- chapter_title: 電腦視覺 (CV)
+  section_title: 核心任務與模型
+  text: 情境：YOLO (You Only Look Once) 演算法的最大特色是？
+  type: multiple_choice
+  options:
+  - 準確率最高但速度慢
+  - 速度極快，能實現即時物件偵測
+  - 只能偵測一種物體
+  - 需要兩階段處理
+  correct_index: 1
+  explanation: YOLO 將偵測視為單一回歸問題，一次掃描即可完成定位與分類。
+  tags:
+  - chap-m2-ch3
+  - sec-cv-models
+  id: 4347
+  usage: both
+- chapter_title: 電腦視覺 (CV)
+  section_title: 核心任務與模型
+  text: 情境：ResNet (殘差網路) 透過什麼機制解決了深層網路的梯度消失問題？
+  type: multiple_choice
+  options:
+  - 殘差連接 (Residual Connection) / Shortcut
+  - 增加學習率
+  - 減少層數
+  - 使用 Sigmoid
+  correct_index: 0
+  explanation: Shortcut 創造了一條梯度高速公路，讓梯度能直接傳回淺層。
+  tags:
+  - chap-m2-ch3
+  - sec-cv-models
+  id: 4348
+  usage: both
+- chapter_title: 電腦視覺 (CV)
+  section_title: 核心任務與模型
+  text: 情境：語義分割 (Semantic Segmentation) 與實例分割 (Instance Segmentation) 的區別在於？
+  type: multiple_choice
+  options:
+  - 沒區別
+  - 語義分割只分顏色，實例分割分形狀
+  - 語義分割區分類別但不區分個體；實例分割既區分類別也區分個體
+  - 實例分割比較簡單
+  correct_index: 2
+  explanation: 語義分割將所有「人」視為同一類，實例分割則能區分「張三」與「李四」。
+  tags:
+  - chap-m2-ch3
+  - sec-cv-models
+  id: 4349
+  usage: both
+- chapter_title: 電腦視覺 (CV)
+  section_title: 核心任務與模型
+  text: 情境：VGG 模型的一個重要設計理念是？
+  type: multiple_choice
+  options:
+  - 使用大卷積核
+  - 全面使用小尺寸 (3x3) 卷積核堆疊
+  - 不使用卷積
+  - 只用全連接層
+  correct_index: 1
+  explanation: 堆疊小卷積核能在減少參數的同時增加網路深度與非線性。
+  tags:
+  - chap-m2-ch3
+  - sec-cv-models
+  id: 4350
+  usage: both
+- chapter_title: 電腦視覺 (CV)
+  section_title: 核心任務與模型
+  text: 情境：IoU (Intersection over Union) 指標用於評估？
+  type: multiple_choice
+  options:
+  - 分類準確率
+  - 物件偵測中預測框與真實框的重疊程度
+  - 圖片清晰度
+  - 生成速度
+  correct_index: 1
+  explanation: IoU 衡量定位的精準度，值越高代表框得越準。
+  tags:
+  - chap-m2-ch3
+  - sec-cv-models
+  id: 4351
+  usage: both
+- chapter_title: 電腦視覺 (CV)
+  section_title: 核心任務與模型
+  text: 情境：U-Net 模型最常用於哪個領域？
+  type: multiple_choice
+  options:
+  - 人臉辨識
+  - 醫療影像分割 (如細胞、腫瘤)
+  - 車牌辨識
+  - 風格轉換
+  correct_index: 1
+  explanation: U-Net 的 Skip Connection 設計能精準保留邊緣細節，非常適合醫療影像。
+  tags:
+  - chap-m2-ch3
+  - sec-cv-models
+  id: 4352
+  usage: both
+- chapter_title: 電腦視覺 (CV)
+  section_title: 風險與挑戰
+  text: 情境：在人臉辨識應用中，若訓練資料缺乏深色膚色樣本，可能導致？
+  type: multiple_choice
+  options:
+  - 模型更公平
+  - 模型對深色膚色人群的辨識率下降 (偏見)
+  - 模型速度變快
+  - 沒影響
+  correct_index: 1
+  explanation: 資料偏差是導致 AI 歧視的主要原因之一。
+  tags:
+  - chap-m2-ch3
+  - sec-cv-risks
+  id: 4353
+  usage: both
+- chapter_title: 電腦視覺 (CV)
+  section_title: 核心任務與模型
+  text: 情境：非極大值抑制 (NMS) 在物件偵測中的作用是？
+  type: multiple_choice
+  options:
+  - 增加框的數量
+  - 去除重疊且信心分數較低的框，只保留最佳結果
+  - 放大圖片
+  - 縮小圖片
+  correct_index: 1
+  explanation: NMS 確保每個物件只被一個最佳的邊界框標記。
+  tags:
+  - chap-m2-ch3
+  - sec-cv-models
+  id: 4354
+  usage: both
+- chapter_title: 電腦視覺 (CV)
+  section_title: 產業應用情境
+  text: 情境：AOI (自動光學檢測) 在製造業的主要用途是？
+  type: multiple_choice
+  options:
+  - 設計產品
+  - 檢測產品表面瑕疵 (如刮痕、裂紋)
+  - 包裝產品
+  - 運送產品
+  correct_index: 1
+  explanation: AOI 利用 CV 技術取代人工目檢，提升檢測速度與一致性。
+  tags:
+  - chap-m2-ch3
+  - sec-cv-applications
+  id: 4355
+  usage: both
+- chapter_title: 電腦視覺 (CV)
+  section_title: 核心任務與模型
+  text: 情境：FCN (全卷積網路) 將傳統 CNN 的全連接層替換為卷積層，是為了？
+  type: multiple_choice
+  options:
+  - 減少參數
+  - 接受任意尺寸輸入並輸出像素級預測 (熱點圖)
+  - 加速訓練
+  - 防止過擬合
+  correct_index: 1
+  explanation: 這使得 FCN 能進行像素級的語義分割。
+  tags:
+  - chap-m2-ch3
+  - sec-cv-models
+  id: 4356
+  usage: both
+- chapter_title: 電腦視覺 (CV)
+  section_title: 風險與挑戰
+  text: 情境：為了保護隱私，在儲存監控影像前應進行？
+  type: multiple_choice
+  options:
+  - 加密
+  - 去識別化 (如人臉模糊化)
+  - 壓縮
+  - 備份
+  correct_index: 1
+  explanation: 去識別化能降低個資外洩的風險。
+  tags:
+  - chap-m2-ch3
+  - sec-cv-risks
+  id: 4357
+  usage: both
+- chapter_title: 電腦視覺 (CV)
+  section_title: 核心任務與模型
+  text: 情境：Mask R-CNN 在 Faster R-CNN 的基礎上增加了什麼？
+  type: multiple_choice
+  options:
+  - 更快的速度
+  - 一個預測二值遮罩 (Mask) 的分支，用於實例分割
+  - 更多的卷積層
+  - 更小的輸入
+  correct_index: 1
+  explanation: 這讓 Mask R-CNN 能同時完成物件偵測與實例分割。
+  tags:
+  - chap-m2-ch3
+  - sec-cv-models
+  id: 4358
+  usage: both
+- chapter_title: 電腦視覺 (CV)
+  section_title: 核心任務與模型
+  text: 情境：卷積層 (Convolutional Layer) 的主要功能是？
+  type: multiple_choice
+  options:
+  - 分類
+  - 提取局部特徵 (如邊緣、紋理)
+  - 降維
+  - 正規化
+  correct_index: 1
+  explanation: 卷積核透過滑動視窗運算，捕捉影像的局部特徵。
+  tags:
+  - chap-m2-ch3
+  - sec-cv-models
+  id: 4359
+  usage: both
+- chapter_title: 電腦視覺 (CV)
+  section_title: 風險與挑戰
+  text: 情境：邊緣運算 (Edge Computing) 在 CV 應用中的優勢是？
+  type: multiple_choice
+  options:
+  - 算力最強
+  - 降低延遲並保護隱私 (資料不需全部上傳雲端)
+  - 儲存空間最大
+  - 成本最低
+  correct_index: 1
+  explanation: 在地端處理數據能減少傳輸延遲與資安風險。
+  tags:
+  - chap-m2-ch3
+  - sec-cv-risks
+  id: 4360
+  usage: both
+- chapter_title: 電腦視覺 (CV)
+  section_title: 核心任務與模型
+  text: 情境：U-Net 中的「跳躍連接 (Skip Connection)」作用是？
+  type: multiple_choice
+  options:
+  - 跳過訓練
+  - 將編碼器的特徵複製到解碼器，協助還原細節
+  - 刪除特徵
+  - 加速計算
+  correct_index: 1
+  explanation: Skip Connection 彌補了上採樣過程中丟失的空間資訊。
+  tags:
+  - chap-m2-ch3
+  - sec-cv-models
+  id: 4361
+  usage: both
+- chapter_title: 電腦視覺 (CV)
+  section_title: 核心任務與模型
+  text: 情境：影像分類 (Image Classification) 的目標是？
+  type: multiple_choice
+  options:
+  - 找出所有物體位置
+  - 判斷整張影像的主要類別
+  - 分割每個像素
+  - 生成新影像
+  correct_index: 1
+  explanation: 分類任務關注的是「這張圖是什麼」，而非「它在哪裡」。
+  tags:
+  - chap-m2-ch3
+  - sec-cv-models
+  id: 4362
+  usage: both
+- chapter_title: 電腦視覺 (CV)
+  section_title: 風險與挑戰
+  text: 情境：模型量化 (Quantization) 的主要目的是？
+  type: multiple_choice
+  options:
+  - 提高準確率
+  - 減少模型大小與運算量，利於邊緣部署
+  - 增加訓練時間
+  - 增加參數量
+  correct_index: 1
+  explanation: 量化將浮點數轉為整數，大幅降低硬體需求。
+  tags:
+  - chap-m2-ch3
+  - sec-cv-risks
+  id: 4363
+  usage: both
+- chapter_title: 電腦視覺 (CV)
+  section_title: 核心任務與模型
+  text: 情境：RoI Align 技術主要解決了什麼問題？
+  type: multiple_choice
+  options:
+  - 過擬合
+  - RoI Pooling 的量化誤差，實現像素級對齊
+  - 梯度消失
+  - 計算過慢
+  correct_index: 1
+  explanation: RoI Align 透過雙線性插值，避免了特徵圖座標取整帶來的精度損失。
+  tags:
+  - chap-m2-ch3
+  - sec-cv-models
+  id: 4364
+  usage: both
+- chapter_title: 電腦視覺 (CV)
+  section_title: 產業應用情境
+  text: 情境：車牌辨識系統通常包含哪三個步驟？
+  type: multiple_choice
+  options:
+  - 拍照、存檔、上傳
+  - 定位、分割、識別 (OCR)
+  - 分類、回歸、分群
+  - 編碼、解碼、生成
+  correct_index: 1
+  explanation: 先找到車牌，切分出字元，最後識別字元內容。
+  tags:
+  - chap-m2-ch3
+  - sec-cv-applications
+  id: 4365
+  usage: both

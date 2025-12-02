@@ -14,6 +14,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - sec-ai-def
+  usage: quiz
 - id: 1002
   chapter_title: 人工智慧的本質與層次架構
   section_title: 弱 AI vs. 強 AI
@@ -29,6 +30,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - def-ani
+  usage: quiz
 - id: 1003
   chapter_title: 人工智慧的本質與層次架構
   section_title: 弱 AI vs. 強 AI
@@ -44,6 +46,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - def-agi
+  usage: quiz
 - id: 1004
   chapter_title: 人工智慧的本質與層次架構
   section_title: 超人工智慧 (Super AI)
@@ -59,6 +62,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - sec-super-ai
+  usage: quiz
 - id: 1005
   chapter_title: 人工智慧的本質與層次架構
   section_title: 符號式 AI
@@ -74,6 +78,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - sec-symbolic-ai
+  usage: quiz
 - id: 1006
   chapter_title: 人工智慧的本質與層次架構
   section_title: 符號式 AI
@@ -89,6 +94,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - def-expert-systems
+  usage: quiz
 - id: 1007
   chapter_title: 人工智慧的本質與層次架構
   section_title: 統計式 AI
@@ -104,6 +110,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - sec-statistical-ai
+  usage: quiz
 - id: 1008
   chapter_title: 人工智慧的本質與層次架構
   section_title: 技術層次關係
@@ -119,6 +126,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - sec-ai-ml-dl
+  usage: quiz
 - id: 1009
   chapter_title: 人工智慧的本質與層次架構
   section_title: 資料驅動 vs. 規則驅動
@@ -134,6 +142,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - def-data-driven
+  usage: quiz
 - id: 1010
   chapter_title: 人工智慧的本質與層次架構
   section_title: 傳統機器學習 vs. 深度學習
@@ -149,6 +158,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - sec-ml-vs-dl-cost
+  usage: quiz
 - id: 1011
   chapter_title: 人工智慧的本質與層次架構
   section_title: 人類與 AI 的協作模式
@@ -164,6 +174,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - sec-hitl
+  usage: both
 - id: 1012
   chapter_title: 人工智慧的本質與層次架構
   section_title: 人類與 AI 的協作模式
@@ -175,10 +186,12 @@ questions:
   - 人在迴圈上 (HOTL)
   - 人在迴圈外 (HOOTL)
   correct_index: 2
-  explanation: HOTL (Human-over-the-loop) 指 AI 可獨立完成大部分任務，人類扮演監督者，僅在異常時介入。Level 3 自駕車符合此定義。
+  explanation: HOTL (Human-over-the-loop) 指 AI 可獨立完成大部分任務，人類扮演監督者，僅在異常時介入。Level 3
+    自駕車符合此定義。
   tags:
   - chap-ai-foundation-chapter1
   - sec-hotl
+  usage: both
 - id: 1013
   chapter_title: 人工智慧的本質與層次架構
   section_title: 人類與 AI 的協作模式
@@ -194,6 +207,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - sec-hootl
+  usage: both
 - id: 1014
   chapter_title: 人工智慧的本質與層次架構
   section_title: AI 發展歷史
@@ -209,6 +223,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - chap-ai-foundation-chapter1-summary
+  usage: both
 - id: 1015
   chapter_title: 人工智慧的本質與層次架構
   section_title: AI 發展歷史
@@ -224,6 +239,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - chap-ai-foundation-chapter1-summary
+  usage: both
 - id: 1016
   chapter_title: 人工智慧的本質與層次架構
   section_title: AI 發展歷史
@@ -239,6 +255,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - chap-ai-foundation-chapter1-summary
+  usage: both
 - id: 1017
   chapter_title: 人工智慧的本質與層次架構
   section_title: AI 的定義與範疇
@@ -254,6 +271,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - sec-ai-def
+  usage: both
 - id: 1018
   chapter_title: 人工智慧的本質與層次架構
   section_title: 弱 AI vs. 強 AI
@@ -269,6 +287,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - def-ani
+  usage: both
 - id: 1019
   chapter_title: 人工智慧的本質與層次架構
   section_title: 弱 AI vs. 強 AI
@@ -284,6 +303,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - def-ani
+  usage: both
 - id: 1020
   chapter_title: 人工智慧的本質與層次架構
   section_title: 弱 AI vs. 強 AI
@@ -299,6 +319,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - def-agi
+  usage: both
 - id: 1021
   chapter_title: 人工智慧的本質與層次架構
   section_title: 超人工智慧 (Super AI)
@@ -314,6 +335,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - sec-super-ai
+  usage: both
 - id: 1022
   chapter_title: 人工智慧的本質與層次架構
   section_title: 符號式 AI
@@ -329,6 +351,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - sec-symbolic-ai
+  usage: both
 - id: 1023
   chapter_title: 人工智慧的本質與層次架構
   section_title: 符號式 AI
@@ -344,6 +367,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - sec-symbolic-ai
+  usage: both
 - id: 1024
   chapter_title: 人工智慧的本質與層次架構
   section_title: 符號式 AI
@@ -359,6 +383,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - def-knowledge-bottleneck
+  usage: both
 - id: 1025
   chapter_title: 人工智慧的本質與層次架構
   section_title: 統計式 AI
@@ -374,6 +399,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - sec-statistical-ai
+  usage: both
 - id: 1026
   chapter_title: 人工智慧的本質與層次架構
   section_title: 統計式 AI
@@ -389,6 +415,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - sec-statistical-ai
+  usage: both
 - id: 1027
   chapter_title: 人工智慧的本質與層次架構
   section_title: 統計式 AI
@@ -404,6 +431,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - sec-statistical-ai
+  usage: both
 - id: 1028
   chapter_title: 人工智慧的本質與層次架構
   section_title: 技術層次關係
@@ -419,6 +447,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - def-ml
+  usage: both
 - id: 1029
   chapter_title: 人工智慧的本質與層次架構
   section_title: 技術層次關係
@@ -434,6 +463,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - def-dl
+  usage: both
 - id: 1030
   chapter_title: 人工智慧的本質與層次架構
   section_title: 資料驅動 vs. 規則驅動
@@ -449,6 +479,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - def-rule-based
+  usage: both
 - id: 1031
   chapter_title: 人工智慧的本質與層次架構
   section_title: 資料驅動 vs. 規則驅動
@@ -464,6 +495,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - def-data-driven
+  usage: both
 - id: 1032
   chapter_title: 人工智慧的本質與層次架構
   section_title: 傳統機器學習 vs. 深度學習
@@ -479,6 +511,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - sec-ml-vs-dl-cost
+  usage: both
 - id: 1033
   chapter_title: 人工智慧的本質與層次架構
   section_title: 傳統機器學習 vs. 深度學習
@@ -494,6 +527,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - sec-ml-vs-dl-cost
+  usage: both
 - id: 1034
   chapter_title: 人工智慧的本質與層次架構
   section_title: 人類與 AI 的協作模式
@@ -509,6 +543,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - sec-hitl
+  usage: both
 - id: 1035
   chapter_title: 人工智慧的本質與層次架構
   section_title: 人類與 AI 的協作模式
@@ -524,6 +559,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - sec-hotl
+  usage: both
 - id: 1036
   chapter_title: 人工智慧的本質與層次架構
   section_title: 人類與 AI 的協作模式
@@ -539,6 +575,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - sec-hootl
+  usage: both
 - id: 1037
   chapter_title: 人工智慧的本質與層次架構
   section_title: 人類與 AI 的協作模式
@@ -554,6 +591,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - sec-hootl
+  usage: both
 - id: 1038
   chapter_title: 人工智慧的本質與層次架構
   section_title: AI 發展歷史
@@ -569,6 +607,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - chap-ai-foundation-chapter1-summary
+  usage: both
 - id: 1039
   chapter_title: 人工智慧的本質與層次架構
   section_title: AI 發展歷史
@@ -584,6 +623,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - chap-ai-foundation-chapter1-summary
+  usage: both
 - id: 1040
   chapter_title: 人工智慧的本質與層次架構
   section_title: 技術層次關係
@@ -599,10 +639,12 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - def-ani
+  usage: both
 - id: 1041
   chapter_title: 人工智慧的本質與層次架構
   section_title: 人類與 AI 的協作模式
-  text: 情境題：某醫院引進一套 AI 系統協助判讀 CT 影像，該系統會自動標記出疑似腫瘤的位置，但最終診斷報告必須由放射科醫師檢視並簽名確認後才能發出。請問此系統屬於哪種 AI 類型與協作模式？
+  text: 情境題：某醫院引進一套 AI 系統協助判讀 CT 影像，該系統會自動標記出疑似腫瘤的位置，但最終診斷報告必須由放射科醫師檢視並簽名確認後才能發出。請問此系統屬於哪種
+    AI 類型與協作模式？
   type: multiple_choice
   options:
   - 強 AI (AGI) 搭配 人在迴圈外 (HOOTL)
@@ -614,10 +656,12 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - sec-hitl
+  usage: mock
 - id: 1042
   chapter_title: 人工智慧的本質與層次架構
   section_title: AI 的定義與範疇
-  text: 情境題：你正在開發一個垃圾郵件過濾器。若垃圾郵件的特徵每天都在變（例如從「中獎」變成「幸運得主」再變成「LUCKY WINNER」），為何「資料驅動 (Data-Driven)」的方法通常優於「規則驅動 (Rule-Based)」？
+  text: 情境題：你正在開發一個垃圾郵件過濾器。若垃圾郵件的特徵每天都在變（例如從「中獎」變成「幸運得主」再變成「LUCKY WINNER」），為何「資料驅動
+    (Data-Driven)」的方法通常優於「規則驅動 (Rule-Based)」？
   type: multiple_choice
   options:
   - 因為資料驅動的模型不需要任何運算資源
@@ -629,6 +673,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter1
   - sec-data-vs-rule
+  usage: mock
 - id: 11401
   chapter_title: 人工智慧的本質與層次架構
   section_title: 人機協作模式
@@ -640,8 +685,330 @@ questions:
   - 人類平時不參與 AI 的運作，僅在發生異常或重大錯誤時才接手控 制
   - AI 的所有判斷與行動在執行前，皆須經過人類逐一審核與批准
   correct_index: 1
-  explanation: Human-in-the-loop (HITL) 強調在 AI 系統中保留人類的監督與介入，特別是在高風險決策或模型信心不足時。 
+  explanation: Human-in-the-loop (HITL) 強調在 AI 系統中保留人類的監督與介入，特別是在高風險決策或模型信心不足時。
   tags:
   - past-exam
   - 114-4
   - sec-ai-chapter1
+  usage: mock
+- chapter_title: 人工智慧的本質與層次架構
+  section_title: AI 的定義與範疇
+  text: 情境：某科技公司宣稱開發出「通用人工智慧 (AGI)」，能像人類一樣處理任何未見過的任務。但經測試發現，該系統在下圍棋時表現完美，卻無法回答簡單的數學題。這說明該系統實際上屬於？
+  type: multiple_choice
+  options:
+  - 強人工智慧 (AGI)
+  - 弱人工智慧 (ANI)
+  - 超人工智慧 (ASI)
+  - 符號式 AI
+  correct_index: 1
+  explanation: 弱 AI (ANI) 的特徵是專精於單一領域（如下棋），無法跨領域遷移學習。真正的 AGI 應具備通用性。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-ai-def
+  id: 11402
+  usage: both
+- chapter_title: 人工智慧的本質與層次架構
+  section_title: AI 的定義與範疇
+  text: 情境：早期的醫療診斷系統是透過醫生手寫數千條「如果...則...」的規則來運作。這類系統遇到新型病毒時往往束手無策。這反映了哪種 AI 的侷限性？
+  type: multiple_choice
+  options:
+  - 統計式 AI
+  - 符號式 AI (Symbolic AI)
+  - 深度學習
+  - 生成式 AI
+  correct_index: 1
+  explanation: 符號式 AI 依賴人類定義的規則，缺乏彈性，難以處理規則庫以外的未知情況（知識擷取瓶頸）。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-symbolic-ai
+  id: 11403
+  usage: both
+- chapter_title: 人工智慧的本質與層次架構
+  section_title: 技術層次關係
+  text: 情境：客戶要求開發一個能自動從海量圖片中識別「瑕疵品」的系統，且不想人工定義瑕疵的特徵（如裂痕長度）。應選擇哪種技術？
+  type: multiple_choice
+  options:
+  - 專家系統
+  - 傳統機器學習 (SVM)
+  - 深度學習 (Deep Learning)
+  - 邏輯迴歸
+  correct_index: 2
+  explanation: 深度學習具備「自動特徵提取 (End-to-End Learning)」的能力，無需人工定義特徵，特別適合複雜的影像識別任務。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-ai-ml-dl
+  id: 11404
+  usage: both
+- chapter_title: 人工智慧的本質與層次架構
+  section_title: 人類與 AI 的協作模式
+  text: 情境：在自駕車的 Level 3 等級中，車輛主要由 AI 駕駛，但駕駛人必須坐在駕駛座上，隨時準備在系統發出警示時接手。這屬於哪種協作模式？
+  type: multiple_choice
+  options:
+  - 人在迴圈中 (HITL)
+  - 人在迴圈上 (HOTL)
+  - 人在迴圈外 (HOOTL)
+  - 完全自動化
+  correct_index: 1
+  explanation: HOTL (Human-on-the-loop) 模式下，AI 執行主要任務，人類扮演監督者，僅在例外狀況發生時介入。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-human-ai-collab
+  id: 11405
+  usage: both
+- chapter_title: 人工智慧的本質與層次架構
+  section_title: 人類與 AI 的協作模式
+  text: 情境：高頻交易系統在毫秒間自動完成數萬筆交易，人類根本來不及反應。這種模式稱為？
+  type: multiple_choice
+  options:
+  - HITL
+  - HOTL
+  - HOOTL (Human-out-of-the-loop)
+  - 混合模式
+  correct_index: 2
+  explanation: HOOTL 模式下，人類完全不介入決策迴圈，適用於超出人類反應速度的場景，但需有嚴格的安全機制。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-human-ai-collab
+  id: 11406
+  usage: both
+- chapter_title: 人工智慧的本質與層次架構
+  section_title: 技術層次關係
+  text: 情境：某新創公司想做「貓狗分類器」，但手上只有 100 張照片。技術長建議不要用深度學習，改用傳統機器學習（如 SVM）。理由可能是？
+  type: multiple_choice
+  options:
+  - 深度學習準確率太低
+  - 深度學習需要海量數據才能收斂，小數據集下傳統 ML 效果可能更好且不易過擬合
+  - SVM 運算更慢
+  - SVM 是最新的技術
+  correct_index: 1
+  explanation: 深度學習是「數據飢渴」的，在小數據集上往往不如傳統機器學習演算法有效率且穩健。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-ml-vs-dl-cost
+  id: 11407
+  usage: both
+- chapter_title: 人工智慧的本質與層次架構
+  section_title: AI 的定義與範疇
+  text: 情境：AlphaGo 在圍棋上擊敗人類，但它不懂圍棋的歷史，也不會感到開心或難過。這顯示目前的 AI 缺乏？
+  type: multiple_choice
+  options:
+  - 計算能力
+  - 自我意識與通用性 (Consciousness & Generalization)
+  - 數據
+  - 演算法
+  correct_index: 1
+  explanation: 這是弱 AI (ANI) 的典型特徵：在特定任務表現優異，但缺乏像人類一樣的意識、情感與跨領域理解力。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-ai-def
+  id: 11408
+  usage: both
+- chapter_title: 人工智慧的本質與層次架構
+  section_title: 技術層次關係
+  text: 情境：關於「資料驅動 (Data-Driven)」與「規則驅動 (Rule-Based)」的比較，下列何者描述正確？
+  type: multiple_choice
+  options:
+  - 規則驅動需要大量數據
+  - 資料驅動是「輸入 + 輸出 = 規則」
+  - 規則驅動適合模糊的問題
+  - 資料驅動不需要運算資源
+  correct_index: 1
+  explanation: 資料驅動（機器學習）的核心是讓電腦從「輸入」與「輸出（答案）」中自動歸納出「規則（模型）」。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-data-vs-rule
+  id: 11409
+  usage: both
+- chapter_title: 人工智慧的本質與層次架構
+  section_title: 人類與 AI 的協作模式
+  text: 情境：在醫療影像診斷中，AI 負責標記出 X 光片上的可疑病灶，但最終診斷報告必須由醫生簽名確認。這是為了？
+  type: multiple_choice
+  options:
+  - 節省醫生時間
+  - 確保責任歸屬與診斷正確性 (HITL)
+  - 訓練 AI
+  - 讓 AI 取代醫生
+  correct_index: 1
+  explanation: HITL (Human-in-the-loop) 模式確保了關鍵決策（如醫療診斷）的最終責任在人，AI 僅作為輔助。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-human-ai-collab
+  id: 11410
+  usage: both
+- chapter_title: 人工智慧的本質與層次架構
+  section_title: AI 的定義與範疇
+  text: 情境：符號式 AI (Symbolic AI) 在 1980 年代沒落的主要原因之一是？
+  type: multiple_choice
+  options:
+  - 電腦跑太快
+  - 知識擷取瓶頸 (Knowledge Acquisition Bottleneck)
+  - 數據太多
+  - 規則太簡單
+  correct_index: 1
+  explanation: 將人類專家的隱性知識轉化為明確的邏輯規則非常困難且耗時，限制了符號式 AI 的擴展性。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-symbolic-ai
+  id: 11411
+  usage: both
+- chapter_title: 人工智慧的本質與層次架構
+  section_title: 技術層次關係
+  text: 情境：深度學習 (DL) 相比於傳統機器學習 (ML)，最大的突破在於？
+  type: multiple_choice
+  options:
+  - 運算速度更快
+  - 不再需要人工特徵工程 (Feature Engineering)
+  - 模型更小
+  - 不需要數據
+  correct_index: 1
+  explanation: 傳統 ML 高度依賴專家定義特徵（如定義鳥有翅膀），DL 則能直接從原始像素中學習特徵，實現了端到端學習。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-ml-vs-dl-cost
+  id: 11412
+  usage: both
+- chapter_title: 人工智慧的本質與層次架構
+  section_title: AI 的定義與範疇
+  text: 情境：統計式 AI (Statistical AI) 的一個主要缺點是「黑盒子 (Black Box)」問題，這意味著？
+  type: multiple_choice
+  options:
+  - 模型外殼是黑色的
+  - 難以解釋模型內部的決策邏輯
+  - 模型只能在晚上運作
+  - 模型不準確
+  correct_index: 1
+  explanation: 統計模型（特別是深度學習）內部有數以億計的參數，人類難以直觀理解它是如何得出某個結論的。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-statistical-ai
+  id: 11413
+  usage: both
+- chapter_title: 人工智慧的本質與層次架構
+  section_title: 人類與 AI 的協作模式
+  text: 情境：為了訓練一個能辨識「紅綠燈」的 AI，需要大量人力在圖片上框出紅綠燈的位置。這個過程屬於？
+  type: multiple_choice
+  options:
+  - 資料標註 (Data Labeling)，屬於 HITL
+  - 非監督式學習
+  - 強化學習
+  - 規則引擎
+  correct_index: 0
+  explanation: 資料標註是典型的人在迴圈中 (HITL)，人類提供標準答案讓 AI 學習。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-human-ai-collab
+  id: 11414
+  usage: both
+- chapter_title: 人工智慧的本質與層次架構
+  section_title: 技術層次關係
+  text: 情境：若要解決的問題是「預測鐵達尼號乘客的生存率」，且資料是結構化的表格（年齡、票價、艙等）。最經濟實惠的選擇是？
+  type: multiple_choice
+  options:
+  - 訓練一個 100 層的深度神經網路
+  - 使用傳統機器學習模型（如決策樹或隨機森林）
+  - 手寫規則
+  - 使用生成式 AI
+  correct_index: 1
+  explanation: 對於結構化表格數據 (Tabular Data)，傳統 ML 模型通常能以較低的運算成本達到與 DL 相當甚至更好的效果。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-ml-vs-dl-cost
+  id: 11415
+  usage: both
+- chapter_title: 人工智慧的本質與層次架構
+  section_title: AI 的定義與範疇
+  text: 情境：圖靈測試 (Turing Test) 的主要目的是？
+  type: multiple_choice
+  options:
+  - 測試電腦的運算速度
+  - 判斷機器是否具備展現出與人類無法區分的智慧行為的能力
+  - 測試網路連線
+  - 測試硬體耐用度
+  correct_index: 1
+  explanation: 圖靈測試由艾倫·圖靈提出，如果人類評審無法區分對話對象是人還是機器，則該機器通過測試。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-ai-def
+  id: 11416
+  usage: both
+- chapter_title: 人工智慧的本質與層次架構
+  section_title: 人類與 AI 的協作模式
+  text: 情境：AIOps 系統自動監控伺服器，發現硬碟快滿了，於是自動清理暫存檔。這屬於？
+  type: multiple_choice
+  options:
+  - HITL
+  - HOTL
+  - HOOTL
+  - 手動維運
+  correct_index: 2
+  explanation: 如果清理過程完全自動化且無需人類批准，則屬於 HOOTL。若需人類批准則為 HOTL。通常 AIOps 的自動修復傾向於 HOOTL
+    以求時效。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-human-ai-collab
+  id: 11417
+  usage: both
+- chapter_title: 人工智慧的本質與層次架構
+  section_title: 技術層次關係
+  text: 情境：下列哪種技術不屬於「機器學習」的範疇？
+  type: multiple_choice
+  options:
+  - 深度學習
+  - 支援向量機 (SVM)
+  - 專家系統 (Expert Systems)
+  - 決策樹
+  correct_index: 2
+  explanation: 專家系統屬於「符號式 AI」或「規則驅動 AI」，不具備從數據中學習的能力，因此不屬於機器學習。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-ai-ml-dl
+  id: 11418
+  usage: both
+- chapter_title: 人工智慧的本質與層次架構
+  section_title: AI 的定義與範疇
+  text: 情境：超人工智慧 (Super AI) 的定義是？
+  type: multiple_choice
+  options:
+  - 會下圍棋的 AI
+  - 在所有領域（包括創造力、社交）都超越人類智慧的 AI
+  - 能自動駕駛的 AI
+  - 能聊天的 AI
+  correct_index: 1
+  explanation: Super AI 指的是在智力、創造力等各方面都全面碾壓人類的假設性存在。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-super-ai
+  id: 11419
+  usage: both
+- chapter_title: 人工智慧的本質與層次架構
+  section_title: 技術層次關係
+  text: 情境：為什麼深度學習需要 GPU？
+  type: multiple_choice
+  options:
+  - GPU 比較貴
+  - GPU 擅長處理大量的平行矩陣運算
+  - CPU 不能跑 Python
+  - GPU 記憶體比較大
+  correct_index: 1
+  explanation: 神經網路的訓練涉及海量的矩陣乘法，GPU 的平行運算架構能顯著加速這一過程。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-ml-vs-dl-cost
+  id: 11420
+  usage: both
+- chapter_title: 人工智慧的本質與層次架構
+  section_title: 人類與 AI 的協作模式
+  text: 情境：Netflix 的影片推薦系統屬於哪種協作模式？
+  type: multiple_choice
+  options:
+  - HITL
+  - HOTL
+  - HOOTL
+  - 人工推薦
+  correct_index: 2
+  explanation: 推薦過程是全自動的，根據演算法直接向用戶展示結果，人類員工不會介入每一次的推薦決策。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-human-ai-collab
+  id: 11421
+  usage: both

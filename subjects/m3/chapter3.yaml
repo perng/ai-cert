@@ -14,6 +14,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-time-series
+  usage: quiz
 - id: 5302
   chapter_title: 進階分析方法
   section_title: 時間序列分析
@@ -29,6 +30,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-time-series
+  usage: quiz
 - id: 5303
   chapter_title: 進階分析方法
   section_title: 時間序列分析
@@ -44,6 +46,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-time-series
+  usage: quiz
 - id: 5304
   chapter_title: 進階分析方法
   section_title: 網路分析與圖演算法
@@ -59,6 +62,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-network-analysis
+  usage: quiz
 - id: 5305
   chapter_title: 進階分析方法
   section_title: 網路分析與圖演算法
@@ -74,6 +78,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-network-analysis
+  usage: quiz
 - id: 5306
   chapter_title: 進階分析方法
   section_title: 地理空間資料分析
@@ -89,6 +94,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-geospatial
+  usage: quiz
 - id: 5307
   chapter_title: 進階分析方法
   section_title: 統計檢定與推論
@@ -104,6 +110,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-statistical-tests
+  usage: quiz
 - id: 5308
   chapter_title: 進階分析方法
   section_title: 統計檢定與推論
@@ -119,6 +126,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-statistical-tests
+  usage: quiz
 - id: 5309
   chapter_title: 進階分析方法
   section_title: 統計檢定與推論
@@ -134,6 +142,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-statistical-tests
+  usage: quiz
 - id: 5310
   chapter_title: 進階分析方法
   section_title: 統計檢定與推論
@@ -149,6 +158,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-statistical-tests
+  usage: quiz
 - id: 5311
   chapter_title: 進階分析方法
   section_title: 時間序列分析
@@ -164,6 +174,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-time-series
+  usage: both
 - id: 5312
   chapter_title: 進階分析方法
   section_title: 網路分析與圖演算法
@@ -179,6 +190,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-network-analysis
+  usage: both
 - id: 5313
   chapter_title: 進階分析方法
   section_title: 統計檢定與推論
@@ -194,6 +206,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-statistical-tests
+  usage: both
 - id: 5314
   chapter_title: 進階分析方法
   section_title: 統計檢定與推論
@@ -209,6 +222,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-statistical-tests
+  usage: both
 - id: 5315
   chapter_title: 進階分析方法
   section_title: 統計檢定與推論
@@ -224,6 +238,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-statistical-tests
+  usage: both
 - id: 5316
   chapter_title: 進階分析方法
   section_title: 地理空間資料分析
@@ -239,6 +254,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-geospatial
+  usage: both
 - id: 5317
   chapter_title: 進階分析方法
   section_title: 時間序列分析
@@ -254,6 +270,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-time-series
+  usage: both
 - id: 5318
   chapter_title: 進階分析方法
   section_title: 網路分析與圖演算法
@@ -269,6 +286,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-network-analysis
+  usage: both
 - id: 5319
   chapter_title: 進階分析方法
   section_title: 統計檢定與推論
@@ -284,6 +302,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-statistical-tests
+  usage: both
 - id: 5320
   chapter_title: 進階分析方法
   section_title: 統計檢定與推論
@@ -299,6 +318,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-statistical-tests
+  usage: both
 - id: 5321
   chapter_title: 進階分析方法
   section_title: 統計檢定與推論
@@ -314,6 +334,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-statistical-tests
+  usage: both
 - id: 5322
   chapter_title: 進階分析方法
   section_title: 時間序列分析
@@ -329,6 +350,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-time-series
+  usage: both
 - id: 5323
   chapter_title: 進階分析方法
   section_title: 網路分析與圖演算法
@@ -344,6 +366,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-network-analysis
+  usage: both
 - id: 5324
   chapter_title: 進階分析方法
   section_title: 統計檢定與推論
@@ -359,6 +382,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-statistical-tests
+  usage: both
 - id: 5325
   chapter_title: 進階分析方法
   section_title: 統計檢定與推論
@@ -374,6 +398,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-statistical-tests
+  usage: both
 - id: 5326
   chapter_title: 進階分析方法
   section_title: 地理空間資料分析
@@ -389,6 +414,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-geospatial
+  usage: both
 - id: 5327
   chapter_title: 進階分析方法
   section_title: 統計檢定與推論
@@ -404,6 +430,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-statistical-tests
+  usage: both
 - id: 5328
   chapter_title: 進階分析方法
   section_title: 時間序列分析
@@ -419,6 +446,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-time-series
+  usage: both
 - id: 5329
   chapter_title: 進階分析方法
   section_title: 統計檢定與推論
@@ -434,6 +462,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-statistical-tests
+  usage: both
 - id: 5330
   chapter_title: 進階分析方法
   section_title: 統計檢定與推論
@@ -449,6 +478,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-statistical-tests
+  usage: both
 - id: 5331
   chapter_title: 進階分析方法
   section_title: 時間序列分析
@@ -464,6 +494,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-time-series
+  usage: both
 - id: 5332
   chapter_title: 進階分析方法
   section_title: 網路分析與圖演算法
@@ -479,6 +510,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-network-analysis
+  usage: both
 - id: 5333
   chapter_title: 進階分析方法
   section_title: 統計檢定與推論
@@ -494,6 +526,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-statistical-tests
+  usage: both
 - id: 5334
   chapter_title: 進階分析方法
   section_title: 統計檢定與推論
@@ -509,6 +542,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-statistical-tests
+  usage: both
 - id: 5335
   chapter_title: 進階分析方法
   section_title: 地理空間資料分析
@@ -524,6 +558,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-geospatial
+  usage: both
 - id: 5336
   chapter_title: 進階分析方法
   section_title: 統計檢定與推論
@@ -539,6 +574,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-statistical-tests
+  usage: both
 - id: 5337
   chapter_title: 進階分析方法
   section_title: 時間序列分析
@@ -554,6 +590,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-time-series
+  usage: both
 - id: 5338
   chapter_title: 進階分析方法
   section_title: 統計檢定與推論
@@ -569,6 +606,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-statistical-tests
+  usage: both
 - id: 5339
   chapter_title: 進階分析方法
   section_title: 網路分析與圖演算法
@@ -584,6 +622,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-network-analysis
+  usage: both
 - id: 5340
   chapter_title: 進階分析方法
   section_title: 統計檢定與推論
@@ -599,6 +638,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-statistical-tests
+  usage: both
 - id: 5341
   chapter_title: 進階分析方法
   section_title: 深度思考情境題
@@ -614,6 +654,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-scenario
+  usage: mock
 - id: 5342
   chapter_title: 進階分析方法
   section_title: 深度思考情境題
@@ -629,6 +670,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-scenario
+  usage: mock
 - id: 5343
   chapter_title: 進階分析方法
   section_title: 深度思考情境題
@@ -644,6 +686,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-scenario
+  usage: mock
 - id: 5344
   chapter_title: 進階分析方法
   section_title: 深度思考情境題
@@ -659,6 +702,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-scenario
+  usage: mock
 - id: 5345
   chapter_title: 進階分析方法
   section_title: 深度思考情境題
@@ -674,3 +718,324 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-scenario
+  usage: mock
+- chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 情境：若 p-value < 0.05，我們通常會？
+  type: multiple_choice
+  options:
+  - 接受虛無假設
+  - 拒絕虛無假設，認為結果具統計顯著性
+  - 認為實驗失敗
+  - 重新做實驗
+  correct_index: 1
+  explanation: 小 p 值意味著在 H0 為真時觀察到此結果的機率極低。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+  id: 5346
+  usage: both
+- chapter_title: 進階分析方法
+  section_title: 時間序列分析
+  text: 情境：ARIMA 模型中的 'I' (Integrated) 代表？
+  type: multiple_choice
+  options:
+  - 積分
+  - 差分 (Differencing)，用於使數據平穩
+  - 智慧
+  - 獨立
+  correct_index: 1
+  explanation: 差分能消除趨勢，使非平穩序列變為平穩序列。
+  tags:
+  - chap-m3-ch3
+  - sec-time-series
+  id: 5347
+  usage: both
+- chapter_title: 進階分析方法
+  section_title: 網路分析與圖演算法
+  text: 情境：PageRank 演算法的核心思想是？
+  type: multiple_choice
+  options:
+  - 網頁內容越多越重要
+  - 被重要網頁連結的網頁也重要
+  - 網頁越新越重要
+  - 網頁圖片越多越重要
+  correct_index: 1
+  explanation: PageRank 透過連結結構評估網頁權威性。
+  tags:
+  - chap-m3-ch3
+  - sec-network-analysis
+  id: 5348
+  usage: both
+- chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 情境：型一錯誤 (Type I Error) 是指？
+  type: multiple_choice
+  options:
+  - 偽陽性 (False Positive)，H0 為真卻拒絕它
+  - 偽陰性 (False Negative)
+  - 計算錯誤
+  - 操作錯誤
+  correct_index: 0
+  explanation: 例如沒病誤診為有病。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+  id: 5349
+  usage: both
+- chapter_title: 進階分析方法
+  section_title: 時間序列分析
+  text: 情境：Prophet 模型特別擅長處理？
+  type: multiple_choice
+  options:
+  - 隨機數據
+  - 具有強烈季節性與假期效應的數據
+  - 靜態數據
+  - 文字數據
+  correct_index: 1
+  explanation: Prophet 內建了處理週期性變化與假日影響的機制。
+  tags:
+  - chap-m3-ch3
+  - sec-time-series
+  id: 5350
+  usage: both
+- chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 情境：若要比較三組學生的平均成績是否有顯著差異，應使用？
+  type: multiple_choice
+  options:
+  - t 檢定
+  - ANOVA (變異數分析)
+  - 卡方檢定
+  - 相關分析
+  correct_index: 1
+  explanation: ANOVA 專用於比較多組平均值的差異。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+  id: 5351
+  usage: both
+- chapter_title: 進階分析方法
+  section_title: 網路分析與圖演算法
+  text: 情境：中介中心性 (Betweenness Centrality) 衡量節點的什麼特性？
+  type: multiple_choice
+  options:
+  - 連接數量
+  - 作為最短路徑橋樑的重要性
+  - 傳播速度
+  - 群聚程度
+  correct_index: 1
+  explanation: 中介中心性高的節點控制著網路中的資訊流動。
+  tags:
+  - chap-m3-ch3
+  - sec-network-analysis
+  id: 5352
+  usage: both
+- chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 情境：卡方檢定 (Chi-square Test) 主要用於分析？
+  type: multiple_choice
+  options:
+  - 連續變數
+  - 類別資料 (Categorical Data) 的獨立性或適合度
+  - 時間序列
+  - 地理資料
+  correct_index: 1
+  explanation: 例如檢驗性別與購買意願是否關聯。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+  id: 5353
+  usage: both
+- chapter_title: 進階分析方法
+  section_title: 地理空間資料分析
+  text: 情境：EPSG:4326 代表哪種座標系統？
+  type: multiple_choice
+  options:
+  - Web Mercator
+  - WGS84 (經緯度)
+  - TWD97
+  - 火星座標
+  correct_index: 1
+  explanation: WGS84 是 GPS 使用的全球標準座標系統。
+  tags:
+  - chap-m3-ch3
+  - sec-geospatial
+  id: 5354
+  usage: both
+- chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 情境：皮爾森相關係數 (Pearson r) 為 0 代表？
+  type: multiple_choice
+  options:
+  - 完全正相關
+  - 完全負相關
+  - 無線性相關
+  - 強烈相關
+  correct_index: 2
+  explanation: r=0 表示兩變數間不存在線性關係。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+  id: 5355
+  usage: both
+- chapter_title: 進階分析方法
+  section_title: 時間序列分析
+  text: 情境：時間序列的「平穩性 (Stationarity)」是指？
+  type: multiple_choice
+  options:
+  - 數據不變
+  - 統計特性 (均值、變異數) 不隨時間變化
+  - 數據呈直線
+  - 數據隨機
+  correct_index: 1
+  explanation: 許多預測模型（如 ARIMA）假設數據是平穩的。
+  tags:
+  - chap-m3-ch3
+  - sec-time-series
+  id: 5356
+  usage: both
+- chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 情境：型二錯誤 (Type II Error) 是指？
+  type: multiple_choice
+  options:
+  - 偽陽性
+  - 偽陰性 (False Negative)，H0 為假卻沒拒絕
+  - 計算錯誤
+  - 操作錯誤
+  correct_index: 1
+  explanation: 例如有病誤診為沒病。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+  id: 5357
+  usage: both
+- chapter_title: 進階分析方法
+  section_title: 網路分析與圖演算法
+  text: 情境：Louvain 演算法用於？
+  type: multiple_choice
+  options:
+  - 路徑規劃
+  - 社群偵測 (Community Detection)
+  - 排序
+  - 加密
+  correct_index: 1
+  explanation: Louvain 能快速找出網路中緊密連結的群體。
+  tags:
+  - chap-m3-ch3
+  - sec-network-analysis
+  id: 5358
+  usage: both
+- chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 情境：當數據不符合常態分佈時，應使用？
+  type: multiple_choice
+  options:
+  - t 檢定
+  - 非參數檢定 (如 Mann-Whitney U)
+  - ANOVA
+  - 線性迴歸
+  correct_index: 1
+  explanation: 非參數檢定不依賴母體分佈假設，適用性更廣。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+  id: 5359
+  usage: both
+- chapter_title: 進階分析方法
+  section_title: 地理空間資料分析
+  text: 情境：Buffer 操作的作用是？
+  type: multiple_choice
+  options:
+  - 刪除數據
+  - 建立緩衝區 (如距離某點 500m 內的區域)
+  - 壓縮數據
+  - 旋轉地圖
+  correct_index: 1
+  explanation: 常用於鄰近分析。
+  tags:
+  - chap-m3-ch3
+  - sec-geospatial
+  id: 5360
+  usage: both
+- chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 情境：檢定力 (Statistical Power) 是指？
+  type: multiple_choice
+  options:
+  - 計算速度
+  - 正確拒絕錯誤 H0 的機率 (1 - beta)
+  - 型一錯誤率
+  - 型二錯誤率
+  correct_index: 1
+  explanation: 檢定力越高，越能偵測到真實存在的效應。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+  id: 5361
+  usage: both
+- chapter_title: 進階分析方法
+  section_title: 時間序列分析
+  text: 情境：ADF 檢定用於檢驗時間序列的？
+  type: multiple_choice
+  options:
+  - 長度
+  - 平穩性
+  - 季節性
+  - 缺失值
+  correct_index: 1
+  explanation: ADF 檢定是否存在單位根，若拒絕 H0 則為平穩。
+  tags:
+  - chap-m3-ch3
+  - sec-time-series
+  id: 5362
+  usage: both
+- chapter_title: 進階分析方法
+  section_title: 網路分析與圖演算法
+  text: 情境：度中心性 (Degree Centrality) 衡量的是？
+  type: multiple_choice
+  options:
+  - 節點的連接數量
+  - 節點的重要性
+  - 節點的位置
+  - 節點的顏色
+  correct_index: 0
+  explanation: 連接數越多，度中心性越高，通常代表該節點越活躍。
+  tags:
+  - chap-m3-ch3
+  - sec-network-analysis
+  id: 5363
+  usage: both
+- chapter_title: 進階分析方法
+  section_title: 統計檢定與推論
+  text: 情境：斯皮爾曼等級相關 (Spearman rho) 適用於？
+  type: multiple_choice
+  options:
+  - 線性關係
+  - 非線性單調關係或順序資料
+  - 類別資料
+  - 時間序列
+  correct_index: 1
+  explanation: Spearman 基於等級而非數值，對異常值較不敏感且能捕捉非線性關係。
+  tags:
+  - chap-m3-ch3
+  - sec-statistical-tests
+  id: 5364
+  usage: both
+- chapter_title: 進階分析方法
+  section_title: 時間序列分析
+  text: 情境：時間序列分解通常將序列分為哪三部分？
+  type: multiple_choice
+  options:
+  - 過去、現在、未來
+  - 趨勢、季節性、殘差
+  - 輸入、輸出、雜訊
+  - 訓練、驗證、測試
+  correct_index: 1
+  explanation: 這有助於理解數據的組成成分。
+  tags:
+  - chap-m3-ch3
+  - sec-time-series
+  id: 5365
+  usage: both

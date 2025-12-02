@@ -14,6 +14,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: quiz
 - id: 1002
   chapter_title: 生成式 AI 模型架構與機制
   section_title: Transformer 架構變體
@@ -29,6 +30,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: quiz
 - id: 1003
   chapter_title: 生成式 AI 模型架構與機制
   section_title: Transformer 架構變體
@@ -44,6 +46,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: quiz
 - id: 1004
   chapter_title: 生成式 AI 模型架構與機制
   section_title: Transformer 架構變體
@@ -59,6 +62,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: quiz
 - id: 1005
   chapter_title: 生成式 AI 模型架構與機制
   section_title: Transformer 架構變體
@@ -74,6 +78,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: quiz
 - id: 1006
   chapter_title: 生成式 AI 模型架構與機制
   section_title: 模型參數與控制
@@ -89,6 +94,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: quiz
 - id: 1007
   chapter_title: 生成式 AI 模型架構與機制
   section_title: 模型參數與控制
@@ -104,6 +110,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: quiz
 - id: 1008
   chapter_title: 生成式 AI 模型架構與機制
   section_title: 模型參數與控制
@@ -119,6 +126,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: quiz
 - id: 1009
   chapter_title: 生成式 AI 模型架構與機制
   section_title: 模型參數與控制
@@ -134,6 +142,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: quiz
 - id: 1010
   chapter_title: 生成式 AI 模型架構與機制
   section_title: 模型參數與控制
@@ -149,6 +158,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: quiz
 - id: 1011
   chapter_title: 生成式 AI 模型架構與機制
   section_title: 模型參數與控制
@@ -164,6 +174,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1012
   chapter_title: 生成式 AI 模型架構與機制
   section_title: Transformer 架構變體
@@ -179,6 +190,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1013
   chapter_title: 生成式 AI 模型架構與機制
   section_title: 模型參數與控制
@@ -194,6 +206,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1014
   chapter_title: 生成式 AI 模型架構與機制
   section_title: 模型參數與控制
@@ -209,6 +222,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1015
   chapter_title: 生成式 AI 模型架構與機制
   section_title: Transformer 架構變體
@@ -224,6 +238,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1016
   chapter_title: 生成式 AI 模型架構與機制
   section_title: 模型參數與控制
@@ -239,6 +254,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1017
   chapter_title: 生成式 AI 模型架構與機制
   section_title: Transformer 架構變體
@@ -254,6 +270,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1018
   chapter_title: 生成式 AI 模型架構與機制
   section_title: 模型參數與控制
@@ -269,6 +286,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1019
   chapter_title: 生成式 AI 模型架構與機制
   section_title: Transformer 架構變體
@@ -284,6 +302,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1020
   chapter_title: 生成式 AI 模型架構與機制
   section_title: 模型參數與控制
@@ -299,6 +318,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1021
   chapter_title: 生成式 AI 模型架構與機制
   section_title: Transformer 架構變體
@@ -310,10 +330,12 @@ questions:
   - RNN
   - Encoder-Decoder
   correct_index: 3
-  explanation: BART (Bidirectional and Auto-Regressive Transformers) 結合了雙向編碼器和自回歸解碼器，屬於 Encoder-Decoder 架構。
+  explanation: BART (Bidirectional and Auto-Regressive Transformers) 結合了雙向編碼器和自回歸解碼器，屬於
+    Encoder-Decoder 架構。
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1022
   chapter_title: 生成式 AI 模型架構與機制
   section_title: 模型參數與控制
@@ -329,6 +351,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1023
   chapter_title: 生成式 AI 模型架構與機制
   section_title: Transformer 架構變體
@@ -344,6 +367,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1024
   chapter_title: 生成式 AI 模型架構與機制
   section_title: 模型參數與控制
@@ -359,6 +383,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1025
   chapter_title: 生成式 AI 模型架構與機制
   section_title: 模型參數與控制
@@ -374,6 +399,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1026
   chapter_title: 生成式 AI 模型架構與機制
   section_title: Transformer 架構變體
@@ -389,6 +415,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1027
   chapter_title: 生成式 AI 模型架構與機制
   section_title: 模型參數與控制
@@ -404,6 +431,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1028
   chapter_title: 生成式 AI 模型架構與機制
   section_title: Transformer 架構變體
@@ -419,6 +447,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1029
   chapter_title: 生成式 AI 模型架構與機制
   section_title: 模型參數與控制
@@ -434,6 +463,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1030
   chapter_title: 生成式 AI 模型架構與機制
   section_title: Transformer 架構變體
@@ -449,6 +479,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1031
   chapter_title: 生成式 AI 模型架構與機制
   section_title: 模型參數與控制
@@ -464,6 +495,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1032
   chapter_title: 生成式 AI 模型架構與機制
   section_title: Transformer 架構變體
@@ -479,6 +511,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1033
   chapter_title: 生成式 AI 模型架構與機制
   section_title: 模型參數與控制
@@ -494,6 +527,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1034
   chapter_title: 生成式 AI 模型架構與機制
   section_title: Transformer 架構變體
@@ -509,6 +543,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1035
   chapter_title: 生成式 AI 模型架構與機制
   section_title: 模型參數與控制
@@ -524,6 +559,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1036
   chapter_title: 生成式 AI 模型架構與機制
   section_title: Transformer 架構變體
@@ -539,6 +575,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1037
   chapter_title: 生成式 AI 模型架構與機制
   section_title: 模型參數與控制
@@ -554,6 +591,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1038
   chapter_title: 生成式 AI 模型架構與機制
   section_title: 模型參數與控制
@@ -569,6 +607,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1039
   chapter_title: 生成式 AI 模型架構與機制
   section_title: Transformer 架構變體
@@ -584,6 +623,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1040
   chapter_title: 生成式 AI 模型架構與機制
   section_title: 模型參數與控制
@@ -599,6 +639,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-gen-ai-models
+  usage: both
 - id: 1041
   chapter_title: 生成式 AI 模型架構與機制
   section_title: Transformer 核心機制
@@ -614,6 +655,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-transformer-core
+  usage: both
 - id: 1042
   chapter_title: 生成式 AI 模型架構與機制
   section_title: Transformer 核心機制
@@ -629,6 +671,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-transformer-core
+  usage: both
 - id: 1043
   chapter_title: 生成式 AI 模型架構與機制
   section_title: LLM 訓練生命週期
@@ -644,6 +687,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-llm-lifecycle
+  usage: both
 - id: 1044
   chapter_title: 生成式 AI 模型架構與機制
   section_title: LLM 訓練生命週期
@@ -659,6 +703,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-llm-lifecycle
+  usage: both
 - id: 1045
   chapter_title: 生成式 AI 模型架構與機制
   section_title: 模型參數與控制
@@ -674,6 +719,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-model-params
+  usage: both
 - id: 1046
   chapter_title: 生成式 AI 模型架構與機制
   section_title: 模型參數與控制
@@ -689,6 +735,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-model-params
+  usage: both
 - id: 1047
   chapter_title: 生成式 AI 模型架構與機制
   section_title: LLM 訓練生命週期
@@ -704,6 +751,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-llm-lifecycle
+  usage: both
 - id: 1048
   chapter_title: 生成式 AI 模型架構與機制
   section_title: Transformer 架構變體
@@ -719,6 +767,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-transformer-variants
+  usage: both
 - id: 1049
   chapter_title: 生成式 AI 模型架構與機制
   section_title: 模型參數與控制
@@ -734,6 +783,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-model-params
+  usage: both
 - id: 1050
   chapter_title: 生成式 AI 模型架構與機制
   section_title: 模型參數與控制
@@ -749,6 +799,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-model-params
+  usage: both
 - id: 1061
   chapter_title: 生成式 AI 模型與核心機制
   section_title: Transformer 核心機制
@@ -764,6 +815,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-transformer-core
+  usage: both
 - id: 1062
   chapter_title: 生成式 AI 模型與核心機制
   section_title: Transformer 核心機制
@@ -779,6 +831,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-transformer-core
+  usage: both
 - id: 1063
   chapter_title: 生成式 AI 模型與核心機制
   section_title: Transformer 架構變體
@@ -794,6 +847,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-transformer-variants
+  usage: both
 - id: 1064
   chapter_title: 生成式 AI 模型與核心機制
   section_title: Transformer 架構變體
@@ -809,6 +863,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-transformer-variants
+  usage: both
 - id: 1065
   chapter_title: 生成式 AI 模型與核心機制
   section_title: LLM 訓練生命週期
@@ -824,6 +879,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-llm-lifecycle
+  usage: both
 - id: 1066
   chapter_title: 生成式 AI 模型與核心機制
   section_title: LLM 訓練生命週期
@@ -840,6 +896,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-llm-lifecycle
+  usage: both
 - id: 1067
   chapter_title: 生成式 AI 模型與核心機制
   section_title: 模型參數與控制
@@ -855,6 +912,7 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-model-parameters
+  usage: both
 - id: 1068
   chapter_title: 生成式 AI 模型與核心機制
   section_title: 模型參數與控制
@@ -870,10 +928,12 @@ questions:
   tags:
   - chap-gen-chapter1
   - sec-model-parameters
+  usage: both
 - id: 11429
   chapter_title: 生成式 AI 基礎與原理
   section_title: 生成式 AI 模型原理
-  text: 某投資公司導入生成式 AI，用於即時分析股市波動並提供市場背景資 訊。若希望AI 能兼顧「即時性」與「可靠性」 。下列哪一項設計最能有 效提升 AI 在即時股市分析上的表現？ (114年第四梯次)
+  text: 某投資公司導入生成式 AI，用於即時分析股市波動並提供市場背景資 訊。若希望AI 能兼顧「即時性」與「可靠性」 。下列哪一項設計最能有 效提升 AI
+    在即時股市分析上的表現？ (114年第四梯次)
   type: multiple_choice
   options:
   - 將 AI 系統連結至公司內部歷史交易資料庫，以便快速調用既有的案例參考
@@ -881,12 +941,13 @@ questions:
   - 建立與外部即時行情來源同步的查詢模組，確保 AI 能即時擷取最新金融數據
   - 增加訓練資料中模擬的金融危機與市場異常案例，以提升 AI 在特殊情境下的表現能力
   correct_index: 0
-  explanation: 此題涉及 某投資公司導入生成式... 的核心概念。正確答案為「將 AI 系統連結至公司內部歷史交易資料庫，以便快速調用既有的 案例參考；」。 
+  explanation: 此題涉及 某投資公司導入生成式... 的核心概念。正確答案為「將 AI 系統連結至公司內部歷史交易資料庫，以便快速調用既有的 案例參考；」。
   tags:
   - past-exam
   - 114-4
   - chap-gen-chapter1
   - sec-genai-principles
+  usage: both
 - id: 11426
   chapter_title: 生成式 AI 基礎與原理
   section_title: 生成式 AI 模型原理
@@ -898,9 +959,332 @@ questions:
   - 降低生成溫度，以減少隨機性並提升風格一致性
   - 使用全連接神經網路對生成結果後期篩選
   correct_index: 0
-  explanation: 此題涉及 某電商平台希望生成的... 的核心概念。正確答案為「擴充語料庫並微調模型，使風格統一；」。 
+  explanation: 此題涉及 某電商平台希望生成的... 的核心概念。正確答案為「擴充語料庫並微調模型，使風格統一；」。
   tags:
   - past-exam
   - 114-4
   - chap-gen-chapter1
   - sec-genai-principles
+  usage: both
+- chapter_title: 生成式 AI 模型架構與機制
+  section_title: Transformer 核心機制
+  text: 情境：在翻譯句子 "The animal didn't cross the street because it was too tired" 時，模型如何知道
+    "it" 指的是 "animal" 而不是 "street"？
+  type: multiple_choice
+  options:
+  - 透過位置編碼 (Positional Encoding)
+  - 透過自注意力機制 (Self-Attention) 計算詞與詞之間的關聯強度
+  - 透過卷積神經網路 (CNN)
+  - 透過隨機猜測
+  correct_index: 1
+  explanation: Self-Attention 機制會計算句子中每個字與其他字的關聯性，在此例中 "it" 與 "animal" 的 Attention
+    Score 最高。
+  tags:
+  - chap-gen-chapter1
+  - sec-transformer-core
+  id: 11430
+  usage: both
+- chapter_title: 生成式 AI 模型架構與機制
+  section_title: Transformer 架構變體
+  text: 情境：若你需要開發一個「情感分析」系統，判斷客戶評論是正面還是負面，最適合選用哪種架構的模型？
+  type: multiple_choice
+  options:
+  - Decoder-only (如 GPT)
+  - Encoder-only (如 BERT)
+  - Encoder-Decoder (如 T5)
+  - RNN
+  correct_index: 1
+  explanation: Encoder-only 模型（如 BERT）透過雙向注意力機制深入理解上下文語意，非常擅長分類與理解任務。
+  tags:
+  - chap-gen-chapter1
+  - sec-transformer-variants
+  id: 11431
+  usage: both
+- chapter_title: 生成式 AI 模型架構與機制
+  section_title: LLM 訓練生命週期
+  text: 情境：ChatGPT 能夠拒絕回答「如何製造炸彈」這類有害問題，主要是因為經過了哪個訓練階段？
+  type: multiple_choice
+  options:
+  - 預訓練 (Pre-training)
+  - 監督式微調 (SFT)
+  - 人類回饋強化學習 (RLHF)
+  - 資料清洗
+  correct_index: 2
+  explanation: RLHF 階段透過獎勵模型與 PPO 演算法，將人類的價值觀（如無害性）注入模型，使其學會拒絕有害指令。
+  tags:
+  - chap-gen-chapter1
+  - sec-llm-lifecycle
+  id: 11432
+  usage: both
+- chapter_title: 生成式 AI 模型架構與機制
+  section_title: 模型參數與控制
+  text: 情境：你正在開發一個「創意寫詩」的應用，希望 AI 每次生成的詩句都充滿驚喜且不重複。你應該如何調整 Temperature 參數？
+  type: multiple_choice
+  options:
+  - 調低 (接近 0)
+  - 調高 (接近 1 或更高)
+  - 保持預設
+  - Temperature 與創意無關
+  correct_index: 1
+  explanation: 高 Temperature 會增加隨機性，讓模型有機會選擇機率較低但具創意的詞彙，適合創作型任務。
+  tags:
+  - chap-gen-chapter1
+  - sec-model-params
+  id: 11433
+  usage: both
+- chapter_title: 生成式 AI 模型架構與機制
+  section_title: Transformer 核心機制
+  text: 情境：Transformer 模型之所以能進行平行運算，大幅提升訓練速度，是因為它摒棄了哪種傳統架構的依序處理方式？
+  type: multiple_choice
+  options:
+  - CNN
+  - RNN (循環神經網路)
+  - MLP
+  - GAN
+  correct_index: 1
+  explanation: RNN 必須等待前一個時間步計算完成才能處理下一個，而 Transformer 可以同時處理整個序列。
+  tags:
+  - chap-gen-chapter1
+  - sec-transformer-core
+  id: 11434
+  usage: both
+- chapter_title: 生成式 AI 模型架構與機制
+  section_title: Transformer 架構變體
+  text: 情境：GPT-4 主要屬於哪種 Transformer 架構？
+  type: multiple_choice
+  options:
+  - Encoder-only
+  - Decoder-only
+  - Encoder-Decoder
+  - Hybrid
+  correct_index: 1
+  explanation: GPT 系列是典型的 Decoder-only 架構，專注於預測下一個 Token (Next Token Prediction) 以生成文本。
+  tags:
+  - chap-gen-chapter1
+  - sec-transformer-variants
+  id: 11435
+  usage: both
+- chapter_title: 生成式 AI 模型架構與機制
+  section_title: LLM 訓練生命週期
+  text: 情境：預訓練 (Pre-training) 階段的主要目標是？
+  type: multiple_choice
+  options:
+  - 讓模型學會聽從指令
+  - 讓模型學會語言結構與廣泛的世界知識
+  - 讓模型符合人類價值觀
+  - 讓模型學會寫程式
+  correct_index: 1
+  explanation: 預訓練透過海量文本讓模型建立對語言與世界的基礎認知，產出 Base Model。
+  tags:
+  - chap-gen-chapter1
+  - sec-llm-lifecycle
+  id: 11436
+  usage: both
+- chapter_title: 生成式 AI 模型架構與機制
+  section_title: 模型參數與控制
+  text: 情境：Top-P (Nucleus Sampling) 參數設為 0.9 的意思是？
+  type: multiple_choice
+  options:
+  - 只從機率最高的 90 個詞中選擇
+  - 只從累積機率達到 90% 的前幾個候選詞中選擇
+  - 有 90% 的機率選擇機率最高的詞
+  - 隨機選擇
+  correct_index: 1
+  explanation: Top-P 採樣動態截斷機率分佈的尾端，保留累積機率達 P 的核心詞彙，確保生成品質。
+  tags:
+  - chap-gen-chapter1
+  - sec-model-params
+  id: 11437
+  usage: both
+- chapter_title: 生成式 AI 模型架構與機制
+  section_title: Transformer 核心機制
+  text: 情境：位置編碼 (Positional Encoding) 的作用是？
+  type: multiple_choice
+  options:
+  - 加密輸入資料
+  - 告訴模型每個字在句子中的順序
+  - 壓縮資料
+  - 標註詞性
+  correct_index: 1
+  explanation: 由於 Self-Attention 是平行處理，缺乏序列資訊，需透過位置編碼注入位置訊號。
+  tags:
+  - chap-gen-chapter1
+  - sec-transformer-core
+  id: 11438
+  usage: both
+- chapter_title: 生成式 AI 模型架構與機制
+  section_title: Transformer 架構變體
+  text: 情境：T5 (Text-to-Text Transfer Transformer) 模型最擅長哪類任務？
+  type: multiple_choice
+  options:
+  - 僅分類
+  - 僅生成
+  - 序列到序列 (Seq2Seq) 的轉換，如翻譯或摘要
+  - 圖像辨識
+  correct_index: 2
+  explanation: T5 採用 Encoder-Decoder 架構，將所有 NLP 任務都視為 Text-to-Text 轉換，特別適合翻譯與摘要。
+  tags:
+  - chap-gen-chapter1
+  - sec-transformer-variants
+  id: 11439
+  usage: both
+- chapter_title: 生成式 AI 模型架構與機制
+  section_title: LLM 訓練生命週期
+  text: 情境：SFT (監督式微調) 所使用的資料通常是？
+  type: multiple_choice
+  options:
+  - 無標註的網際網路文本
+  - 人類撰寫的高品質「指令-回答」對
+  - 隨機生成的文字
+  - 圖像資料
+  correct_index: 1
+  explanation: SFT 旨在教導模型如何回應指令，因此需要高品質的範例資料 (Demonstration Data)。
+  tags:
+  - chap-gen-chapter1
+  - sec-llm-lifecycle
+  id: 11440
+  usage: both
+- chapter_title: 生成式 AI 模型架構與機制
+  section_title: 模型參數與控制
+  text: 情境：若希望模型在回答數學問題時精確無誤，不隨意發揮，應將 Temperature 設為？
+  type: multiple_choice
+  options:
+  - 0 或極低值
+  - '0.7'
+  - '1.0'
+  - 任意值
+  correct_index: 0
+  explanation: 低溫會使機率分佈變尖銳，模型傾向選擇機率最高的詞，適合需要確定性的任務。
+  tags:
+  - chap-gen-chapter1
+  - sec-model-params
+  id: 11441
+  usage: both
+- chapter_title: 生成式 AI 模型架構與機制
+  section_title: 模型參數與控制
+  text: 情境：Frequency Penalty 的主要用途是？
+  type: multiple_choice
+  options:
+  - 增加生成長度
+  - 減少模型重複同一句話或跳針的情況
+  - 提高準確率
+  - 加快生成速度
+  correct_index: 1
+  explanation: 透過懲罰已出現過的詞彙（依次數加重），強迫模型選擇新詞，避免鬼打牆。
+  tags:
+  - chap-gen-chapter1
+  - sec-model-params
+  id: 11442
+  usage: both
+- chapter_title: 生成式 AI 模型架構與機制
+  section_title: 模型參數與控制
+  text: 情境：Context Window (上下文窗口) 的大小限制會直接影響？
+  type: multiple_choice
+  options:
+  - 模型的訓練速度
+  - 模型能記住的對話長度或處理的文件大小
+  - 模型的知識量
+  - 模型的創造力
+  correct_index: 1
+  explanation: Context Window 決定了模型一次能處理的 Token 總量，超過此限制的資訊會被截斷或遺忘。
+  tags:
+  - chap-gen-chapter1
+  - sec-model-params
+  id: 11443
+  usage: both
+- chapter_title: 生成式 AI 模型架構與機制
+  section_title: 模型參數與控制
+  text: 情境：Greedy Search (貪婪搜尋) 策略的特點是？
+  type: multiple_choice
+  options:
+  - 每次都選機率最高的字，速度快但可能缺乏創意
+  - 考慮多條路徑
+  - 隨機選擇
+  - 逆向生成
+  correct_index: 0
+  explanation: Greedy Search 每次只取局部最佳解，計算簡單但容易陷入局部最優，導致生成內容單調。
+  tags:
+  - chap-gen-chapter1
+  - sec-model-params
+  id: 11444
+  usage: both
+- chapter_title: 生成式 AI 模型架構與機制
+  section_title: Transformer 架構變體
+  text: 情境：BERT 模型的訓練任務之一是？
+  type: multiple_choice
+  options:
+  - 預測下一個字
+  - 遮罩語言模型 (Masked LM)，填補被遮住的字
+  - 翻譯
+  - 圖像分類
+  correct_index: 1
+  explanation: BERT 透過預測句子中被隨機 Mask 掉的單字來學習雙向語境。
+  tags:
+  - chap-gen-chapter1
+  - sec-transformer-variants
+  id: 11445
+  usage: both
+- chapter_title: 生成式 AI 模型架構與機制
+  section_title: LLM 訓練生命週期
+  text: 情境：Reward Model (獎勵模型) 在 RLHF 中的作用是？
+  type: multiple_choice
+  options:
+  - 生成回答
+  - 模擬人類喜好，為 LLM 的回答打分數
+  - 提供訓練資料
+  - 進行微調
+  correct_index: 1
+  explanation: Reward Model 學習人類的排序偏好，作為強化學習中的環境回饋信號。
+  tags:
+  - chap-gen-chapter1
+  - sec-llm-lifecycle
+  id: 11446
+  usage: both
+- chapter_title: 生成式 AI 模型架構與機制
+  section_title: 模型參數與控制
+  text: 情境：Beam Search (束搜尋) 相比 Greedy Search 的優勢在於？
+  type: multiple_choice
+  options:
+  - 速度更快
+  - 通常能生成品質更好、更通順的句子
+  - 隨機性更高
+  - 記憶體佔用更少
+  correct_index: 1
+  explanation: Beam Search 保留多條候選路徑，能避免 Greedy Search 因短視近利而錯過全局最佳解。
+  tags:
+  - chap-gen-chapter1
+  - sec-model-params
+  id: 11447
+  usage: both
+- chapter_title: 生成式 AI 模型架構與機制
+  section_title: Transformer 核心機制
+  text: 情境：Transformer 中的「多頭注意力 (Multi-Head Attention)」類似於？
+  type: multiple_choice
+  options:
+  - 一個人用多個角度看事情
+  - 多個人一起跑步
+  - 多個 CPU
+  - 多個硬碟
+  correct_index: 0
+  explanation: 多個 Head 關注不同的語意子空間（如文法、指涉、情緒），綜合起來能更全面理解文本。
+  tags:
+  - chap-gen-chapter1
+  - sec-transformer-core
+  id: 11448
+  usage: both
+- chapter_title: 生成式 AI 模型架構與機制
+  section_title: 模型參數與控制
+  text: 情境：Token 與單字的關係通常是？
+  type: multiple_choice
+  options:
+  - 1 Token = 1 單字
+  - 1 Token < 1 單字 (英文)
+  - 1 Token > 1 單字 (英文)
+  - 沒關係
+  correct_index: 1
+  explanation: 在英文中，一個單字常被拆成多個 Token (如 sub-word)，平均約 1000 Tokens = 750 Words。
+  tags:
+  - chap-gen-chapter1
+  - sec-model-params
+  id: 11449
+  usage: both

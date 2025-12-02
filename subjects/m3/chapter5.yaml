@@ -14,6 +14,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-data-quality
+  usage: quiz
 - id: 5502
   chapter_title: 大數據治理
   section_title: 隱私保護
@@ -29,6 +30,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-privacy
+  usage: quiz
 - id: 5503
   chapter_title: 大數據治理
   section_title: 隱私保護
@@ -44,6 +46,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-privacy
+  usage: quiz
 - id: 5504
   chapter_title: 大數據治理
   section_title: 隱私保護
@@ -59,6 +62,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-privacy
+  usage: quiz
 - id: 5505
   chapter_title: 大數據治理
   section_title: 合規與安全
@@ -74,6 +78,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-compliance
+  usage: quiz
 - id: 5506
   chapter_title: 大數據治理
   section_title: 資料與 AI 治理架構
@@ -89,6 +94,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-governance-framework
+  usage: quiz
 - id: 5507
   chapter_title: 大數據治理
   section_title: 隱私保護
@@ -104,6 +110,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-privacy
+  usage: quiz
 - id: 5508
   chapter_title: 大數據治理
   section_title: 資料品質管理
@@ -119,6 +126,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-data-quality
+  usage: quiz
 - id: 5509
   chapter_title: 大數據治理
   section_title: 合規與安全
@@ -134,6 +142,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-compliance
+  usage: quiz
 - id: 5510
   chapter_title: 大數據治理
   section_title: 資料與 AI 治理架構
@@ -149,6 +158,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-governance-framework
+  usage: quiz
 - id: 5511
   chapter_title: 大數據治理
   section_title: 隱私保護
@@ -164,6 +174,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-privacy
+  usage: both
 - id: 5512
   chapter_title: 大數據治理
   section_title: 合規與安全
@@ -179,6 +190,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-compliance
+  usage: both
 - id: 5513
   chapter_title: 大數據治理
   section_title: 隱私保護
@@ -194,6 +206,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-privacy
+  usage: both
 - id: 5514
   chapter_title: 大數據治理
   section_title: 合規與安全
@@ -209,6 +222,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-compliance
+  usage: both
 - id: 5515
   chapter_title: 大數據治理
   section_title: 資料品質管理
@@ -224,6 +238,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-data-quality
+  usage: both
 - id: 5516
   chapter_title: 大數據治理
   section_title: 隱私保護
@@ -239,6 +254,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-privacy
+  usage: both
 - id: 5517
   chapter_title: 大數據治理
   section_title: 資料與 AI 治理架構
@@ -254,6 +270,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-governance-framework
+  usage: both
 - id: 5518
   chapter_title: 大數據治理
   section_title: 合規與安全
@@ -269,6 +286,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-compliance
+  usage: both
 - id: 5519
   chapter_title: 大數據治理
   section_title: 隱私保護
@@ -284,6 +302,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-privacy
+  usage: both
 - id: 5520
   chapter_title: 大數據治理
   section_title: 資料品質管理
@@ -299,6 +318,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-data-quality
+  usage: both
 - id: 5521
   chapter_title: 大數據治理
   section_title: 隱私保護
@@ -314,6 +334,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-privacy
+  usage: both
 - id: 5522
   chapter_title: 大數據治理
   section_title: 合規與安全
@@ -329,6 +350,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-compliance
+  usage: both
 - id: 5523
   chapter_title: 大數據治理
   section_title: 資料與 AI 治理架構
@@ -344,6 +366,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-governance-framework
+  usage: both
 - id: 5524
   chapter_title: 大數據治理
   section_title: 隱私保護
@@ -359,6 +382,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-privacy
+  usage: both
 - id: 5525
   chapter_title: 大數據治理
   section_title: 合規與安全
@@ -374,6 +398,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-compliance
+  usage: both
 - id: 5526
   chapter_title: 大數據治理
   section_title: 資料品質管理
@@ -389,6 +414,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-data-quality
+  usage: both
 - id: 5527
   chapter_title: 大數據治理
   section_title: 隱私保護
@@ -404,6 +430,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-privacy
+  usage: both
 - id: 5528
   chapter_title: 大數據治理
   section_title: 合規與安全
@@ -419,6 +446,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-compliance
+  usage: both
 - id: 5529
   chapter_title: 大數據治理
   section_title: 資料與 AI 治理架構
@@ -434,6 +462,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-governance-framework
+  usage: both
 - id: 5530
   chapter_title: 大數據治理
   section_title: 隱私保護
@@ -449,6 +478,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-privacy
+  usage: both
 - id: 5531
   chapter_title: 大數據治理
   section_title: 合規與安全
@@ -464,6 +494,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-compliance
+  usage: both
 - id: 5532
   chapter_title: 大數據治理
   section_title: 隱私保護
@@ -479,6 +510,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-privacy
+  usage: both
 - id: 5533
   chapter_title: 大數據治理
   section_title: 資料品質管理
@@ -494,6 +526,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-data-quality
+  usage: both
 - id: 5534
   chapter_title: 大數據治理
   section_title: 合規與安全
@@ -509,6 +542,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-compliance
+  usage: both
 - id: 5535
   chapter_title: 大數據治理
   section_title: 資料與 AI 治理架構
@@ -524,6 +558,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-governance-framework
+  usage: both
 - id: 5536
   chapter_title: 大數據治理
   section_title: 隱私保護
@@ -539,6 +574,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-privacy
+  usage: both
 - id: 5537
   chapter_title: 大數據治理
   section_title: 合規與安全
@@ -554,6 +590,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-compliance
+  usage: both
 - id: 5538
   chapter_title: 大數據治理
   section_title: 資料品質管理
@@ -569,6 +606,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-data-quality
+  usage: both
 - id: 5539
   chapter_title: 大數據治理
   section_title: 隱私保護
@@ -584,6 +622,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-privacy
+  usage: both
 - id: 5540
   chapter_title: 大數據治理
   section_title: 合規與安全
@@ -599,6 +638,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-compliance
+  usage: both
 - id: 5541
   chapter_title: 大數據治理
   section_title: 深度思考情境題
@@ -614,6 +654,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-scenario
+  usage: mock
 - id: 5542
   chapter_title: 大數據治理
   section_title: 深度思考情境題
@@ -629,6 +670,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-scenario
+  usage: mock
 - id: 5543
   chapter_title: 大數據治理
   section_title: 深度思考情境題
@@ -644,6 +686,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-scenario
+  usage: mock
 - id: 5544
   chapter_title: 大數據治理
   section_title: 深度思考情境題
@@ -659,6 +702,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-scenario
+  usage: mock
 - id: 5545
   chapter_title: 大數據治理
   section_title: 深度思考情境題
@@ -674,3 +718,324 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-scenario
+  usage: mock
+- chapter_title: 大數據治理
+  section_title: 隱私保護
+  text: 情境：差分隱私 (Differential Privacy) 中的 Epsilon (隱私預算) 越小，代表？
+  type: multiple_choice
+  options:
+  - 隱私保護越弱
+  - 隱私保護越強，但數據可用性降低
+  - 數據越準確
+  - 沒影響
+  correct_index: 1
+  explanation: 小 Epsilon 意味著加入的雜訊越多，攻擊者越難分辨個體。
+  tags:
+  - chap-m3-ch5
+  - sec-privacy
+  id: 5546
+  usage: both
+- chapter_title: 大數據治理
+  section_title: 隱私保護
+  text: 情境：聯邦學習 (Federated Learning) 的最大優點是？
+  type: multiple_choice
+  options:
+  - 訓練速度快
+  - 數據不出本地，保護隱私
+  - 模型準確率最高
+  - 不需要網路
+  correct_index: 1
+  explanation: 僅交換模型參數而非原始數據，適合跨機構合作。
+  tags:
+  - chap-m3-ch5
+  - sec-privacy
+  id: 5547
+  usage: both
+- chapter_title: 大數據治理
+  section_title: 資料品質管理
+  text: 情境：資料剖析 (Data Profiling) 通常在什麼時候進行？
+  type: multiple_choice
+  options:
+  - 資料清理之前
+  - 資料清理之後
+  - 模型訓練後
+  - 不需要做
+  correct_index: 0
+  explanation: 先診斷資料健康狀況，才能對症下藥進行清理。
+  tags:
+  - chap-m3-ch5
+  - sec-data-quality
+  id: 5548
+  usage: both
+- chapter_title: 大數據治理
+  section_title: 隱私保護
+  text: 情境：k-匿名 (k-anonymity) 的目標是？
+  type: multiple_choice
+  options:
+  - 加密數據
+  - 確保每筆記錄至少與 k-1 筆其他記錄無法區分
+  - 刪除數據
+  - 備份數據
+  correct_index: 1
+  explanation: 透過泛化或隱藏準標識符，降低重識別風險。
+  tags:
+  - chap-m3-ch5
+  - sec-privacy
+  id: 5549
+  usage: both
+- chapter_title: 大數據治理
+  section_title: 合規與安全
+  text: 情境：GDPR 中的「資料最小化 (Data Minimization)」原則是指？
+  type: multiple_choice
+  options:
+  - 蒐集越多資料越好
+  - 僅蒐集完成目的所需的最少資料
+  - 不蒐集資料
+  - 隨便蒐集
+  correct_index: 1
+  explanation: 減少不必要的個資蒐集，降低風險。
+  tags:
+  - chap-m3-ch5
+  - sec-compliance
+  id: 5550
+  usage: both
+- chapter_title: 大數據治理
+  section_title: 隱私保護
+  text: 情境：同態加密 (Homomorphic Encryption) 允許？
+  type: multiple_choice
+  options:
+  - 在加密數據上直接進行運算，解密後結果正確
+  - 破解密碼
+  - 壓縮數據
+  - 加速運算
+  correct_index: 0
+  explanation: 實現了「數據可用不可見」，適合雲端外包計算。
+  tags:
+  - chap-m3-ch5
+  - sec-privacy
+  id: 5551
+  usage: both
+- chapter_title: 大數據治理
+  section_title: 資料與 AI 治理架構
+  text: 情境：模型卡片 (Model Card) 的作用是？
+  type: multiple_choice
+  options:
+  - 存錢
+  - 記錄模型的訓練數據、適用範圍、限制與偏誤測試結果
+  - 加速模型
+  - 加密模型
+  correct_index: 1
+  explanation: 類似食品營養標示，增加模型的透明度。
+  tags:
+  - chap-m3-ch5
+  - sec-governance-framework
+  id: 5552
+  usage: both
+- chapter_title: 大數據治理
+  section_title: 資料品質管理
+  text: 情境：資料品質中的「及時性 (Timeliness)」是指？
+  type: multiple_choice
+  options:
+  - 數據很準
+  - 數據即時更新，反映當前狀態
+  - 數據很多
+  - 數據不重複
+  correct_index: 1
+  explanation: 過時的數據可能導致錯誤的決策。
+  tags:
+  - chap-m3-ch5
+  - sec-data-quality
+  id: 5553
+  usage: both
+- chapter_title: 大數據治理
+  section_title: 合規與安全
+  text: 情境：靜態數據加密 (Encryption at Rest) 保護的是？
+  type: multiple_choice
+  options:
+  - 網路傳輸中的數據
+  - 儲存在磁碟或資料庫中的數據
+  - 記憶體中的數據
+  - 螢幕上的數據
+  correct_index: 1
+  explanation: 防止硬碟被竊或未授權存取。
+  tags:
+  - chap-m3-ch5
+  - sec-compliance
+  id: 5554
+  usage: both
+- chapter_title: 大數據治理
+  section_title: 隱私保護
+  text: 情境：l-多樣性 (l-diversity) 是為了改進 k-匿名的什麼缺點？
+  type: multiple_choice
+  options:
+  - 計算太慢
+  - 同質性攻擊 (敏感屬性值過於單一)
+  - 數據量太大
+  - 無法加密
+  correct_index: 1
+  explanation: 確保同一組內的敏感屬性具有足夠的多樣性。
+  tags:
+  - chap-m3-ch5
+  - sec-privacy
+  id: 5555
+  usage: both
+- chapter_title: 大數據治理
+  section_title: 資料與 AI 治理架構
+  text: 情境：資料目錄 (Data Catalog) 的主要功能是？
+  type: multiple_choice
+  options:
+  - 備份數據
+  - 幫助使用者發現和理解可用的數據資產
+  - 刪除數據
+  - 加密數據
+  correct_index: 1
+  explanation: 解決「不知道有哪些數據」與「不知道數據在哪」的問題。
+  tags:
+  - chap-m3-ch5
+  - sec-governance-framework
+  id: 5556
+  usage: both
+- chapter_title: 大數據治理
+  section_title: 合規與安全
+  text: 情境：目的限制 (Purpose Limitation) 原則要求？
+  type: multiple_choice
+  options:
+  - 數據可以用於任何目的
+  - 數據僅能用於蒐集時告知的特定目的
+  - 數據不能使用
+  - 數據只能用於學術
+  correct_index: 1
+  explanation: 防止數據被濫用或挪作他用。
+  tags:
+  - chap-m3-ch5
+  - sec-compliance
+  id: 5557
+  usage: both
+- chapter_title: 大數據治理
+  section_title: 隱私保護
+  text: 情境：全同態加密 (FHE) 目前的主要挑戰是？
+  type: multiple_choice
+  options:
+  - 安全性不足
+  - 計算成本極高，速度慢
+  - 無法實作
+  - 只能做加法
+  correct_index: 1
+  explanation: 比明文運算慢數千倍以上，限制了大規模應用。
+  tags:
+  - chap-m3-ch5
+  - sec-privacy
+  id: 5558
+  usage: both
+- chapter_title: 大數據治理
+  section_title: 資料品質管理
+  text: 情境：資料清洗 (Data Cleansing) 的工作包括？
+  type: multiple_choice
+  options:
+  - 備份
+  - 修正錯誤、填補缺失、刪除重複
+  - 加密
+  - 壓縮
+  correct_index: 1
+  explanation: 提升數據品質的關鍵步驟。
+  tags:
+  - chap-m3-ch5
+  - sec-data-quality
+  id: 5559
+  usage: both
+- chapter_title: 大數據治理
+  section_title: 資料與 AI 治理架構
+  text: 情境：敏感資料偵測工具的作用是？
+  type: multiple_choice
+  options:
+  - 自動掃描並標記 PII (個人識別資訊)
+  - 刪除所有資料
+  - 公開資料
+  - 加密硬碟
+  correct_index: 0
+  explanation: 自動化識別敏感個資，防止意外洩漏。
+  tags:
+  - chap-m3-ch5
+  - sec-governance-framework
+  id: 5560
+  usage: both
+- chapter_title: 大數據治理
+  section_title: 合規與安全
+  text: 情境：被遺忘權 (Right to be Forgotten) 賦予使用者什麼權利？
+  type: multiple_choice
+  options:
+  - 要求刪除其個人資料
+  - 要求備份資料
+  - 要求公開資料
+  - 要求修改資料
+  correct_index: 0
+  explanation: 使用者有權要求移除不再需要的個資。
+  tags:
+  - chap-m3-ch5
+  - sec-compliance
+  id: 5561
+  usage: both
+- chapter_title: 大數據治理
+  section_title: 隱私保護
+  text: 情境：Apple 使用差分隱私技術來收集 Emoji 使用頻率，目的是？
+  type: multiple_choice
+  options:
+  - 監控用戶
+  - 在不洩露單一用戶行為的前提下，了解整體趨勢
+  - 節省流量
+  - 加速手機
+  correct_index: 1
+  explanation: 平衡了數據分析需求與用戶隱私保護。
+  tags:
+  - chap-m3-ch5
+  - sec-privacy
+  id: 5562
+  usage: both
+- chapter_title: 大數據治理
+  section_title: 資料品質管理
+  text: 情境：資料唯一性 (Uniqueness) 檢查是為了防止？
+  type: multiple_choice
+  options:
+  - 缺失值
+  - 重複記錄 (Duplicates)
+  - 錯誤格式
+  - 過期數據
+  correct_index: 1
+  explanation: 重複數據會導致統計偏差。
+  tags:
+  - chap-m3-ch5
+  - sec-data-quality
+  id: 5563
+  usage: both
+- chapter_title: 大數據治理
+  section_title: 資料與 AI 治理架構
+  text: 情境：資料管理員 (Data Steward) 的職責通常包括？
+  type: multiple_choice
+  options:
+  - 修理電腦
+  - 監督數據品質與合規性
+  - 寫程式
+  - 銷售產品
+  correct_index: 1
+  explanation: 是連接 IT 與業務部門的橋樑，負責數據資產的日常管理。
+  tags:
+  - chap-m3-ch5
+  - sec-governance-framework
+  id: 5564
+  usage: both
+- chapter_title: 大數據治理
+  section_title: 合規與安全
+  text: 情境：傳輸中加密 (Encryption in Transit) 通常使用什麼協定？
+  type: multiple_choice
+  options:
+  - HTTP
+  - TLS/SSL (HTTPS)
+  - FTP
+  - Telnet
+  correct_index: 1
+  explanation: 防止數據在網路傳輸過程中被竊聽。
+  tags:
+  - chap-m3-ch5
+  - sec-compliance
+  id: 5565
+  usage: both

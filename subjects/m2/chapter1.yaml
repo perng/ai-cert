@@ -14,6 +14,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-feasibility
+  usage: quiz
 - id: 4102
   chapter_title: AI 專案生命週期
   section_title: AI 導入評估與可行性研究
@@ -29,6 +30,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-feasibility
+  usage: quiz
 - id: 4103
   chapter_title: AI 專案生命週期
   section_title: AI 導入評估與可行性研究
@@ -44,6 +46,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-feasibility
+  usage: quiz
 - id: 4104
   chapter_title: AI 專案生命週期
   section_title: AI 導入評估與可行性研究
@@ -59,6 +62,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-feasibility
+  usage: quiz
 - id: 4105
   chapter_title: AI 專案生命週期
   section_title: AI 導入評估與可行性研究
@@ -74,6 +78,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-feasibility
+  usage: quiz
 - id: 4106
   chapter_title: AI 專案生命週期
   section_title: 專案規劃
@@ -89,6 +94,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-project-planning
+  usage: quiz
 - id: 4107
   chapter_title: AI 專案生命週期
   section_title: 專案規劃
@@ -104,6 +110,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-project-planning
+  usage: quiz
 - id: 4108
   chapter_title: AI 專案生命週期
   section_title: 專案規劃
@@ -119,6 +126,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-project-planning
+  usage: quiz
 - id: 4109
   chapter_title: AI 專案生命週期
   section_title: 專案規劃
@@ -134,6 +142,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-project-planning
+  usage: quiz
 - id: 4110
   chapter_title: AI 專案生命週期
   section_title: 風險管理
@@ -149,6 +158,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-risk-management
+  usage: quiz
 - id: 4111
   chapter_title: AI 專案生命週期
   section_title: 風險管理
@@ -164,6 +174,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-risk-management
+  usage: both
 - id: 4112
   chapter_title: AI 專案生命週期
   section_title: 風險管理
@@ -179,6 +190,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-risk-management
+  usage: both
 - id: 4113
   chapter_title: AI 專案生命週期
   section_title: 風險管理
@@ -194,6 +206,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-risk-management
+  usage: both
 - id: 4114
   chapter_title: AI 專案生命週期
   section_title: 風險管理
@@ -209,6 +222,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-risk-management
+  usage: both
 - id: 4115
   chapter_title: AI 專案生命週期
   section_title: 專案規劃
@@ -224,6 +238,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-project-planning
+  usage: both
 - id: 4116
   chapter_title: AI 專案生命週期
   section_title: AI 導入評估與可行性研究
@@ -239,6 +254,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-feasibility
+  usage: both
 - id: 4117
   chapter_title: AI 專案生命週期
   section_title: 專案規劃
@@ -254,6 +270,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-project-planning
+  usage: both
 - id: 4118
   chapter_title: AI 專案生命週期
   section_title: 風險管理
@@ -269,6 +286,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-risk-management
+  usage: both
 - id: 4119
   chapter_title: AI 專案生命週期
   section_title: 專案規劃
@@ -284,6 +302,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-project-planning
+  usage: both
 - id: 4120
   chapter_title: AI 專案生命週期
   section_title: 風險管理
@@ -299,6 +318,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-risk-management
+  usage: both
 - id: 4121
   chapter_title: AI 專案生命週期
   section_title: AI 導入評估與可行性研究
@@ -314,6 +334,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-feasibility
+  usage: both
 - id: 4122
   chapter_title: AI 專案生命週期
   section_title: 專案規劃
@@ -329,6 +350,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-project-planning
+  usage: both
 - id: 4123
   chapter_title: AI 專案生命週期
   section_title: 風險管理
@@ -344,6 +366,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-risk-management
+  usage: both
 - id: 4124
   chapter_title: AI 專案生命週期
   section_title: 專案規劃
@@ -359,6 +382,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-project-planning
+  usage: both
 - id: 4125
   chapter_title: AI 專案生命週期
   section_title: 風險管理
@@ -374,6 +398,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-risk-management
+  usage: both
 - id: 4126
   chapter_title: AI 專案生命週期
   section_title: AI 導入評估與可行性研究
@@ -389,6 +414,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-feasibility
+  usage: both
 - id: 4127
   chapter_title: AI 專案生命週期
   section_title: 專案規劃
@@ -404,6 +430,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-project-planning
+  usage: both
 - id: 4128
   chapter_title: AI 專案生命週期
   section_title: 風險管理
@@ -419,6 +446,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-risk-management
+  usage: both
 - id: 4129
   chapter_title: AI 專案生命週期
   section_title: 專案規劃
@@ -434,6 +462,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-project-planning
+  usage: both
 - id: 4130
   chapter_title: AI 專案生命週期
   section_title: 風險管理
@@ -449,6 +478,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-risk-management
+  usage: both
 - id: 4131
   chapter_title: AI 專案生命週期
   section_title: AI 導入評估與可行性研究
@@ -464,6 +494,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-feasibility
+  usage: both
 - id: 4132
   chapter_title: AI 專案生命週期
   section_title: 專案規劃
@@ -479,6 +510,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-project-planning
+  usage: both
 - id: 4133
   chapter_title: AI 專案生命週期
   section_title: 風險管理
@@ -494,6 +526,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-risk-management
+  usage: both
 - id: 4134
   chapter_title: AI 專案生命週期
   section_title: 專案規劃
@@ -509,6 +542,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-project-planning
+  usage: both
 - id: 4135
   chapter_title: AI 專案生命週期
   section_title: 風險管理
@@ -524,6 +558,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-risk-management
+  usage: both
 - id: 4136
   chapter_title: AI 專案生命週期
   section_title: AI 導入評估與可行性研究
@@ -539,6 +574,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-feasibility
+  usage: both
 - id: 4137
   chapter_title: AI 專案生命週期
   section_title: 專案規劃
@@ -554,6 +590,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-project-planning
+  usage: both
 - id: 4138
   chapter_title: AI 專案生命週期
   section_title: 風險管理
@@ -569,6 +606,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-risk-management
+  usage: both
 - id: 4139
   chapter_title: AI 專案生命週期
   section_title: 專案規劃
@@ -584,6 +622,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-project-planning
+  usage: both
 - id: 4140
   chapter_title: AI 專案生命週期
   section_title: 風險管理
@@ -599,10 +638,12 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-risk-management
+  usage: both
 - id: 4141
   chapter_title: AI 專案生命週期
   section_title: 深度思考情境題
-  text: 情境：公司決定導入 AI 客服，POC 階段模型準確率達 95%。但上線一週後，客服投訴率反而上升。經調查發現，AI 對於憤怒客戶的語氣無法辨識，仍使用制式回答激怒客戶。這反映了 POC 設計時忽略了什麼？
+  text: 情境：公司決定導入 AI 客服，POC 階段模型準確率達 95%。但上線一週後，客服投訴率反而上升。經調查發現，AI 對於憤怒客戶的語氣無法辨識，仍使用制式回答激怒客戶。這反映了
+    POC 設計時忽略了什麼？
   type: multiple_choice
   options:
   - 技術指標 (Accuracy) 選擇錯誤。
@@ -614,6 +655,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-scenario
+  usage: mock
 - id: 4142
   chapter_title: AI 專案生命週期
   section_title: 深度思考情境題
@@ -629,6 +671,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-scenario
+  usage: mock
 - id: 4143
   chapter_title: AI 專案生命週期
   section_title: 深度思考情境題
@@ -644,6 +687,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-scenario
+  usage: mock
 - id: 4144
   chapter_title: AI 專案生命週期
   section_title: 深度思考情境題
@@ -659,6 +703,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-scenario
+  usage: mock
 - id: 4145
   chapter_title: AI 專案生命週期
   section_title: 深度思考情境題
@@ -674,3 +719,325 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-scenario
+  usage: mock
+- chapter_title: AI 專案生命週期
+  section_title: 風險管理
+  text: 情境：某醫院導入 AI 輔助診斷系統，模型準確率高達 98%，但醫生因無法理解 AI 的判斷依據而拒絕使用。為了改善此狀況，專案團隊應優先導入哪項技術？
+  type: multiple_choice
+  options:
+  - 強化學習 (Reinforcement Learning)
+  - 聯邦學習 (Federated Learning)
+  - 可解釋 AI (XAI)
+  - 生成對抗網路 (GAN)
+  correct_index: 2
+  explanation: XAI 能提供模型決策的解釋（如特徵重要性），解決「黑盒子」問題，提升領域專家（醫生）的信任度。
+  tags:
+  - chap-m2-ch1
+  - sec-risk-management
+  id: 4146
+  usage: both
+- chapter_title: AI 專案生命週期
+  section_title: 專案規劃
+  text: 情境：一家初創公司預算有限，急需在一個月內在其電商網站上線一個標準的「常見問題回覆」聊天機器人。最合適的開發模式是？
+  type: multiple_choice
+  options:
+  - 自行訓練大型語言模型
+  - 使用現成的 SaaS 聊天機器人服務
+  - 委外開發客製化模型
+  - 招聘 AI 團隊從頭開發
+  correct_index: 1
+  explanation: 對於標準化需求且預算/時間緊迫的場景，SaaS 服務能提供最快的上市時間 (Time-to-market) 與最低的初期成本。
+  tags:
+  - chap-m2-ch1
+  - sec-project-planning
+  id: 4147
+  usage: both
+- chapter_title: AI 專案生命週期
+  section_title: 專案規劃
+  text: 情境：某大型銀行計畫開發一套「反洗錢偵測系統」，涉及高度敏感的客戶交易資料且需符合嚴格法規。應選擇哪種開發與部署模式？
+  type: multiple_choice
+  options:
+  - 使用公有雲 SaaS API
+  - 內部團隊開發並採用地端部署 (On-premise)
+  - 將資料去識別化後委外開發
+  - 使用開源模型直接部署到公有雲
+  correct_index: 1
+  explanation: 核心業務且涉及高度隱私與法規要求的專案，內部開發配合地端部署能提供最高的資料掌控度與安全性。
+  tags:
+  - chap-m2-ch1
+  - sec-project-planning
+  id: 4148
+  usage: both
+- chapter_title: AI 專案生命週期
+  section_title: 專案規劃
+  text: 情境：在 Scrum 開發過程中，資料科學家表示因為等待 IT 部門開通資料庫權限而無法開始訓練模型，導致 Sprint 進度落後。這顯示了什麼問題？
+  type: multiple_choice
+  options:
+  - Scrum Master 未能有效移除障礙
+  - Product Owner 需求不明確
+  - 資料科學家能力不足
+  - Sprint 週期太短
+  correct_index: 0
+  explanation: Scrum Master 的核心職責之一是移除影響團隊開發的障礙 (Impediments)，包括跨部門的資源協調問題。
+  tags:
+  - chap-m2-ch1
+  - sec-project-planning
+  id: 4149
+  usage: both
+- chapter_title: AI 專案生命週期
+  section_title: AI 導入評估與可行性研究
+  text: 情境：某工廠的瑕疵檢測模型在 POC 階段（使用靜態圖片）表現完美，但部署到生產線（即時影像）後，因推論速度太慢導致產線塞車。這反映了 POC 階段忽略了哪項評估？
+  type: multiple_choice
+  options:
+  - 模型準確率
+  - 系統整合與推論延遲 (Latency)
+  - 商業價值
+  - 資料標註品質
+  correct_index: 1
+  explanation: POC 不應只看準確率，還必須驗證技術架構是否滿足實際場景的非功能性需求（如即時性、吞吐量）。
+  tags:
+  - chap-m2-ch1
+  - sec-feasibility
+  id: 4150
+  usage: both
+- chapter_title: AI 專案生命週期
+  section_title: 風險管理
+  text: 情境：根據 GDPR，若使用者行使「被遺忘權」要求刪除其資料，但該資料已被用於訓練 AI 模型。企業最嚴謹的合規做法是？
+  type: multiple_choice
+  options:
+  - 僅從資料庫刪除，保留模型
+  - 從資料庫刪除，並使用剔除該資料後的新數據集重新訓練模型
+  - 拒絕刪除，因為模型已訓練完成
+  - 對模型進行加密
+  correct_index: 1
+  explanation: 雖然技術上有挑戰，但為了完全合規，通常需要證明模型不再包含該使用者的特徵資訊，重新訓練是最保險的做法。
+  tags:
+  - chap-m2-ch1
+  - sec-risk-management
+  id: 4151
+  usage: both
+- chapter_title: AI 專案生命週期
+  section_title: AI 導入評估與可行性研究
+  text: 情境：為了趕在年底前上線，PM 決定跳過 POC 直接進行全面開發。這最可能導致什麼後果？
+  type: multiple_choice
+  options:
+  - 節省大量成本
+  - 專案提早成功
+  - 在投入大量資源後才發現技術不可行或不符需求
+  - 團隊士氣大增
+  correct_index: 2
+  explanation: POC 的目的就是「以小博大」，用最小成本驗證可行性。跳過 POC 等於在未經驗證的情況下進行豪賭，風險極高。
+  tags:
+  - chap-m2-ch1
+  - sec-feasibility
+  id: 4152
+  usage: both
+- chapter_title: AI 專案生命週期
+  section_title: 專案規劃
+  text: 情境：AI 專案中，資料科學家花費 80% 的時間在清理格式混亂的 CSV 檔案，導致模型優化時間不足。團隊應該增加哪個角色來改善此狀況？
+  type: multiple_choice
+  options:
+  - AI 研究員
+  - 資料工程師 (Data Engineer)
+  - 前端工程師
+  - 專案經理
+  correct_index: 1
+  explanation: 資料工程師負責建置自動化的資料管道 (Pipeline) 與 ETL 流程，能釋放資料科學家的時間，讓其專注於模型分析。
+  tags:
+  - chap-m2-ch1
+  - sec-project-planning
+  id: 4153
+  usage: both
+- chapter_title: AI 專案生命週期
+  section_title: AI 導入評估與可行性研究
+  text: 情境：兩個 AI 專案的預期 ROI 相同，但專案 A 需 3 年回本，專案 B 需 1 年回本。若公司現金流吃緊，應優先選擇哪個？
+  type: multiple_choice
+  options:
+  - 專案 A
+  - 專案 B
+  - 兩者皆可
+  - 都不選
+  correct_index: 1
+  explanation: 在現金流吃緊的情況下，回收期 (Payback Period) 越短越好，能更快回籠資金以降低風險。
+  tags:
+  - chap-m2-ch1
+  - sec-feasibility
+  id: 4154
+  usage: both
+- chapter_title: AI 專案生命週期
+  section_title: 風險管理
+  text: 情境：某招聘 AI 模型被發現對特定大學畢業的應徵者評分特別低，經查這些大學多為歷史上的少數族裔學校。這屬於哪種偏見來源？
+  type: multiple_choice
+  options:
+  - 演算法錯誤
+  - 歷史偏見 (Historical Bias)
+  - 標註者疲勞
+  - 硬體故障
+  correct_index: 1
+  explanation: 歷史數據反映了過去社會結構的不平等。AI 若直接學習這些數據，就會繼承並複製歷史上的偏見。
+  tags:
+  - chap-m2-ch1
+  - sec-risk-management
+  id: 4155
+  usage: both
+- chapter_title: AI 專案生命週期
+  section_title: 風險管理
+  text: 情境：一個電商推薦系統在平時表現良好，但在「雙11」大促銷期間準確率大幅下降。這最可能是發生了什麼？
+  type: multiple_choice
+  options:
+  - 資料漂移 (Data Drift)
+  - 程式碼 Bug
+  - 伺服器當機
+  - 模型過擬合
+  correct_index: 0
+  explanation: 促銷期間的使用者行為（瀏覽、購買模式）與平時顯著不同，導致輸入資料分佈改變，即資料漂移，影響模型效能。
+  tags:
+  - chap-m2-ch1
+  - sec-risk-management
+  id: 4156
+  usage: both
+- chapter_title: AI 專案生命週期
+  section_title: 專案規劃
+  text: 情境：在 Sprint 進行到一半時，業務部門突然要求增加一個全新的功能。Product Owner (PO) 應如何處理？
+  type: multiple_choice
+  options:
+  - 要求團隊立刻加班做完
+  - 放入 Product Backlog，在下個 Sprint 規劃
+  - 取消目前的 Sprint
+  - 責怪團隊動作太慢
+  correct_index: 1
+  explanation: 為了保障團隊專注與開發節奏，Sprint 期間不應隨意插入新需求。新需求應加入待辦清單 (Backlog)，經優先級排序後在後續 Sprint
+    執行。
+  tags:
+  - chap-m2-ch1
+  - sec-project-planning
+  id: 4157
+  usage: both
+- chapter_title: AI 專案生命週期
+  section_title: 專案規劃
+  text: 情境：某影音串流平台需要訓練一個推薦模型，流量在週末會暴增 10 倍。最符合成本效益的基礎設施選擇是？
+  type: multiple_choice
+  options:
+  - 自建大型機房
+  - 公有雲 (Public Cloud) 搭配自動擴展 (Auto-scaling)
+  - 購買超級電腦
+  - 使用邊緣運算
+  correct_index: 1
+  explanation: 公有雲的彈性擴展特性允許企業在流量高峰自動增加資源，低峰時釋放資源，避免自建機房的閒置浪費。
+  tags:
+  - chap-m2-ch1
+  - sec-project-planning
+  id: 4158
+  usage: both
+- chapter_title: AI 專案生命週期
+  section_title: 專案規劃
+  text: 情境：團隊計畫訓練一個千億參數的大型語言模型 (LLM)，預計訓練時間需數個月。應優先採購哪種硬體？
+  type: multiple_choice
+  options:
+  - 高時脈 CPU
+  - 大容量 SSD
+  - 高階 GPU (如 NVIDIA H100/A100) 叢集
+  - 大容量 RAM
+  correct_index: 2
+  explanation: 大型深度學習模型的訓練極度依賴 GPU 的並行運算能力與高頻寬記憶體 (HBM)，這是縮短訓練時間的關鍵。
+  tags:
+  - chap-m2-ch1
+  - sec-project-planning
+  id: 4159
+  usage: both
+- chapter_title: AI 專案生命週期
+  section_title: AI 導入評估與可行性研究
+  text: 情境：某公司想做「客戶流失預測」，但檢查資料庫發現 60% 的客戶資料缺乏「最後一次登入時間」欄位。這屬於哪種可行性問題？
+  type: multiple_choice
+  options:
+  - 資料完整性 (Completeness) 不足
+  - 資料標註錯誤
+  - 資料隱私問題
+  - 運算資源不足
+  correct_index: 0
+  explanation: 關鍵特徵的缺失屬於資料完整性問題，若缺失比例過高，將嚴重影響模型訓練的可行性。
+  tags:
+  - chap-m2-ch1
+  - sec-feasibility
+  id: 4160
+  usage: both
+- chapter_title: AI 專案生命週期
+  section_title: 風險管理
+  text: 情境：行銷部門希望收集使用者在 App 內的點擊行為來訓練推薦模型。根據個資法 (PDPA)，首要步驟是？
+  type: multiple_choice
+  options:
+  - 先收集再說
+  - 修改隱私權政策並取得使用者同意 (Consent)
+  - 加密資料
+  - 購買防火牆
+  correct_index: 1
+  explanation: 收集個資（包含數位足跡若可識別個人）前，必須履行告知義務並取得當事人的同意。
+  tags:
+  - chap-m2-ch1
+  - sec-risk-management
+  id: 4161
+  usage: both
+- chapter_title: AI 專案生命週期
+  section_title: 專案規劃
+  text: 情境：AI 模型預測準確，但前端介面設計複雜，導致一線員工操作錯誤頻發，最終拒絕使用。團隊缺乏哪個角色的投入？
+  type: multiple_choice
+  options:
+  - 資料科學家
+  - 後端工程師
+  - UI/UX 設計師
+  - 系統管理員
+  correct_index: 2
+  explanation: UI/UX 設計師負責優化人機互動體驗。忽略易用性是許多 AI 專案技術成功但落地失敗的主因。
+  tags:
+  - chap-m2-ch1
+  - sec-project-planning
+  id: 4162
+  usage: both
+- chapter_title: AI 專案生命週期
+  section_title: 風險管理
+  text: 情境：公司全面依賴某一家新創公司的 SaaS AI 服務，某天該新創公司突然倒閉，導致公司業務停擺。這屬於什麼風險？如何預防？
+  type: multiple_choice
+  options:
+  - 技術風險；應自建機房
+  - 供應商風險 (Vendor Lock-in)；應制定備援計畫或選擇標準化介面
+  - 法規風險；應控告對方
+  - 市場風險；應降價促銷
+  correct_index: 1
+  explanation: 過度依賴單一供應商會產生鎖定風險。應評估供應商穩定性，並預留遷移或替代方案（如多雲策略）。
+  tags:
+  - chap-m2-ch1
+  - sec-risk-management
+  id: 4163
+  usage: both
+- chapter_title: AI 專案生命週期
+  section_title: AI 導入評估與可行性研究
+  text: 情境：POC 結果顯示 AI 能將瑕疵檢測準確率從 95% 提升到 95.5%，但需投入數百萬硬體成本。專案經理應做出什麼建議？
+  type: multiple_choice
+  options:
+  - 立即導入，因為準確率提升了
+  - 終止或重新評估，因為 ROI 過低
+  - 更換所有硬體
+  - 解雇檢測員
+  correct_index: 1
+  explanation: 雖然技術指標提升，但若提升幅度微小且成本極高（邊際效益遞減），導致 ROI 不佳，則不具備商業可行性。
+  tags:
+  - chap-m2-ch1
+  - sec-feasibility
+  id: 4164
+  usage: both
+- chapter_title: AI 專案生命週期
+  section_title: 專案規劃
+  text: 情境：團隊發現三個月前的模型版本效果最好，但找不到當時的訓練參數與資料集版本。這顯示團隊缺乏哪種工具？
+  type: multiple_choice
+  options:
+  - JIRA
+  - Slack
+  - MLflow 或 DVC (實驗追蹤與版本控制)
+  - Kubernetes
+  correct_index: 2
+  explanation: MLflow、DVC 等工具專門用於記錄機器學習的實驗參數、指標與資料版本，確保實驗的可再現性 (Reproducibility)。
+  tags:
+  - chap-m2-ch1
+  - sec-project-planning
+  id: 4165
+  usage: both

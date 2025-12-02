@@ -14,6 +14,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: quiz
 - id: 6002
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 導入流程與策略
@@ -29,6 +30,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: quiz
 - id: 6003
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 導入流程與策略
@@ -44,6 +46,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: quiz
 - id: 6004
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 導入流程與策略
@@ -59,6 +62,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: quiz
 - id: 6005
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 導入流程與策略
@@ -74,6 +78,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: quiz
 - id: 6006
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 效能評估指標
@@ -89,6 +94,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: quiz
 - id: 6007
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 效能評估指標
@@ -104,6 +110,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: quiz
 - id: 6008
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 效能評估指標
@@ -119,6 +126,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: quiz
 - id: 6009
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 效能評估指標
@@ -134,6 +142,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: quiz
 - id: 6010
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 效能評估指標
@@ -149,6 +158,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: quiz
 - id: 6011
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 效能評估指標
@@ -164,6 +174,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6012
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 導入流程與策略
@@ -179,6 +190,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6013
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 效能評估指標
@@ -194,6 +206,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6014
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 導入流程與策略
@@ -209,6 +222,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6015
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 效能評估指標
@@ -224,6 +238,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6016
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 導入流程與策略
@@ -239,6 +254,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6017
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 導入流程與策略
@@ -254,6 +270,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6018
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 效能評估指標
@@ -269,6 +286,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6019
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 導入流程與策略
@@ -284,6 +302,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6020
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 效能評估指標
@@ -299,6 +318,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6021
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 導入流程與策略
@@ -314,6 +334,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6022
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 效能評估指標
@@ -329,6 +350,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6023
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 導入流程與策略
@@ -344,6 +366,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6024
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 效能評估指標
@@ -359,6 +382,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6025
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 導入流程與策略
@@ -374,6 +398,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6026
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 效能評估指標
@@ -389,6 +414,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6027
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 導入流程與策略
@@ -404,6 +430,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6028
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 效能評估指標
@@ -419,6 +446,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6029
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 導入流程與策略
@@ -434,6 +462,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6030
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 生成式 AI 專案管理與評估
@@ -449,6 +478,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6031
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 效能評估指標
@@ -464,6 +494,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6032
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 導入流程與策略
@@ -479,6 +510,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6033
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 效能評估指標
@@ -494,6 +526,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6034
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 導入流程與策略
@@ -509,6 +542,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6035
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 效能評估指標
@@ -524,6 +558,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6036
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 導入流程與策略
@@ -539,6 +574,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6037
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 效能評估指標
@@ -554,6 +590,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6038
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 導入流程與策略
@@ -569,6 +606,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6039
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 效能評估指標
@@ -584,6 +622,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6040
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 導入流程與策略
@@ -599,6 +638,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 6041
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 導入流程與策略
@@ -614,6 +654,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-implementation-strategy
+  usage: both
 - id: 6042
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 導入流程與策略
@@ -629,6 +670,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-implementation-strategy
+  usage: both
 - id: 6043
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 導入流程與策略
@@ -644,6 +686,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-implementation-strategy
+  usage: both
 - id: 6044
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 導入流程與策略
@@ -659,6 +702,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-implementation-strategy
+  usage: both
 - id: 6045
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 投資效益評估 (ROI Analysis)
@@ -674,6 +718,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-roi-analysis
+  usage: both
 - id: 6046
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 效能評估指標
@@ -689,6 +734,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-performance-metrics
+  usage: both
 - id: 6047
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 效能評估指標
@@ -704,6 +750,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-performance-metrics
+  usage: both
 - id: 6048
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 效能評估指標
@@ -719,6 +766,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-performance-metrics
+  usage: both
 - id: 6049
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 效能評估指標
@@ -734,6 +782,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-performance-metrics
+  usage: both
 - id: 6050
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 效能評估指標
@@ -749,6 +798,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-performance-metrics
+  usage: both
 - id: 6061
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 導入流程與策略
@@ -764,6 +814,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-implementation-strategy
+  usage: both
 - id: 6062
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 導入流程與策略
@@ -779,6 +830,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-implementation-strategy
+  usage: both
 - id: 6063
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 投資效益評估 (ROI Analysis)
@@ -794,6 +846,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-roi-analysis
+  usage: both
 - id: 6064
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 投資效益評估 (ROI Analysis)
@@ -809,6 +862,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-roi-analysis
+  usage: both
 - id: 6065
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 組織與人才策略
@@ -824,6 +878,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-org-talent
+  usage: both
 - id: 6066
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 效能評估指標
@@ -839,6 +894,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-performance-metrics
+  usage: both
 - id: 6067
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 效能評估指標
@@ -854,6 +910,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-performance-metrics
+  usage: both
 - id: 6068
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 組織與人才策略
@@ -869,6 +926,7 @@ questions:
   tags:
   - chap-gen-chapter6
   - sec-org-talent
+  usage: both
 - id: 11445
   chapter_title: 生成式 AI 的專案規劃與評估
   section_title: 效能評估指標
@@ -880,12 +938,13 @@ questions:
   - MATH；
   - C-Eval
   correct_index: 0
-  explanation: 此題涉及 下列哪一個資料集專門... 的核心概念。正確答案為「MMLU；」。 
+  explanation: 此題涉及 下列哪一個資料集專門... 的核心概念。正確答案為「MMLU；」。
   tags:
   - past-exam
   - 114-4
   - chap-gen-chapter6
   - sec-performance-metrics
+  usage: both
 - id: 11404
   chapter_title: 生成式 AI 的專案規劃與評估
   section_title: 效能評估指標
@@ -895,14 +954,16 @@ questions:
   - 1 → 2 → 4 → 3；
   - 2 → 1→ 3 → 4；
   - 1 → 3 → 2 → 4；
-  - 3 → 1 → 2 → 4 C 22.  一家顧問公司使用生成式 AI 協助撰寫數據分析報告。雖然模型在測試 中表現優異，但其生成的報告多半僅遵循固定段落結構，替換數值或關 鍵詞即可完成，卻未能展現針對不同專案的多樣化推理與分析。下列何 者為造成這種現象的最合理解釋？
+  - 3 → 1 → 2 → 4 C 22.  一家顧問公司使用生成式 AI 協助撰寫數據分析報告。雖然模型在測試 中表現優異，但其生成的報告多半僅遵循固定段落結構，替換數值或關
+    鍵詞即可完成，卻未能展現針對不同專案的多樣化推理與分析。下列何 者為造成這種現象的最合理解釋？
   correct_index: 0
-  explanation: 溫度 (Temperature) 參數控制生成結果的隨機性。較高的溫度（如 0.8）使輸出更多樣且具創意；較低的溫度（如 0.2）使輸出更確定且聚焦。 
+  explanation: 溫度 (Temperature) 參數控制生成結果的隨機性。較高的溫度（如 0.8）使輸出更多樣且具創意；較低的溫度（如 0.2）使輸出更確定且聚焦。
   tags:
   - past-exam
   - 114-4
   - chap-gen-chapter6
   - sec-performance-metrics
+  usage: both
 - id: 11404
   chapter_title: 生成式 AI 的專案規劃與評估
   section_title: 效能評估指標
@@ -912,18 +973,21 @@ questions:
   - 2 → 3 → 4 → 1；
   - 3 → 2 → 1 → 4；
   - 2 → 1 → 3 → 4；
-  - 1 → 4 → 3 → 2 B 31.  某跨國電商企業導入生成式 AI，協助處理顧客服務請求，並根據顧客 歷史訂單提供個人化建議。資安與法遵部門擔心AI 在回覆時可能洩漏 顧客個資，若要在導入初期優先避免觸法風險，下列哪一項措施最符合 要求？
+  - 1 → 4 → 3 → 2 B 31.  某跨國電商企業導入生成式 AI，協助處理顧客服務請求，並根據顧客 歷史訂單提供個人化建議。資安與法遵部門擔心AI
+    在回覆時可能洩漏 顧客個資，若要在導入初期優先避免觸法風險，下列哪一項措施最符合 要求？
   correct_index: 0
-  explanation: 此題涉及  評估並選擇合適的 ... 的核心概念。正確答案為「2 → 3 → 4 → 1；」。 
+  explanation: 此題涉及  評估並選擇合適的 ... 的核心概念。正確答案為「2 → 3 → 4 → 1；」。
   tags:
   - past-exam
   - 114-4
   - chap-gen-chapter6
   - sec-performance-metrics
+  usage: both
 - id: 11422
   chapter_title: 生成式 AI 的專案規劃與評估
   section_title: 生成式 AI 專案管理與評估
-  text: 一家顧問公司使用生成式 AI 協助撰寫數據分析報告。雖然模型在測試 中表現優異，但其生成的報告多半僅遵循固定段落結構，替換數值或關 鍵詞即可完成，卻未能展現針對不同專案的多樣化推理與分析。下列何 者為造成這種現象的最合理解釋？ (114年第四梯次)
+  text: 一家顧問公司使用生成式 AI 協助撰寫數據分析報告。雖然模型在測試 中表現優異，但其生成的報告多半僅遵循固定段落結構，替換數值或關 鍵詞即可完成，卻未能展現針對不同專案的多樣化推理與分析。下列何
+    者為造成這種現象的最合理解釋？ (114年第四梯次)
   type: multiple_choice
   options:
   - 模型在生成過程中缺乏對字體與排版的優化能力，因此無法展現分 析邏輯；
@@ -931,12 +995,13 @@ questions:
   - 模型過度依賴訓練語料中的常見報告範式，導致生成結果以樣板化 結構取代真正的推理；
   - 模型因無法正確辨識報告中的頁碼與標題層級，才出現樣板化的結 果
   correct_index: 0
-  explanation: 此題涉及 一家顧問公司使用生成... 的核心概念。正確答案為「模型在生成過程中缺乏對字體與排版的優化能力，因此無法展現分 析邏輯；」。 
+  explanation: 此題涉及 一家顧問公司使用生成... 的核心概念。正確答案為「模型在生成過程中缺乏對字體與排版的優化能力，因此無法展現分 析邏輯；」。
   tags:
   - past-exam
   - 114-4
   - chap-gen-chapter6
   - sec-project-planning
+  usage: both
 - id: 11443
   chapter_title: 生成式 AI 的專案規劃與評估
   section_title: 效能評估指標
@@ -948,12 +1013,14 @@ questions:
   - 模型規模與基準測試結果完全無關，影響主要來自測試設計；
   - 模型越大，Benchmark 結果可能提升，但幅度取決於訓練數據品質 與資源配置
   correct_index: 0
-  explanation: 此題涉及 在評估大型語言模型，... 的核心概念。正確答案為「小模型在正確調整下能超越大模型，因此模型大小並不重要； 第二科：生成式 AI 應用與規劃」。 
+  explanation: 此題涉及 在評估大型語言模型，... 的核心概念。正確答案為「小模型在正確調整下能超越大模型，因此模型大小並不重要； 第二科：生成式
+    AI 應用與規劃」。
   tags:
   - past-exam
   - 114-4
   - chap-gen-chapter6
   - sec-performance-metrics
+  usage: both
 - id: 11434
   chapter_title: 生成式 AI 的專案規劃與評估
   section_title: 效能評估指標
@@ -965,16 +1032,18 @@ questions:
   - 模型在不同病例語境下的泛化能力，確保不因個別樣本而偏差；
   - 系統回應時間的穩定性，以支援醫療場域中可能的即時需求
   correct_index: 0
-  explanation: 此題涉及 某醫療機構計畫導入生... 的核心概念。正確答案為「資料儲存與存取架構的完整性，確保長期運作過程中的數據可追溯 性；」。 
+  explanation: 此題涉及 某醫療機構計畫導入生... 的核心概念。正確答案為「資料儲存與存取架構的完整性，確保長期運作過程中的數據可追溯 性；」。
   tags:
   - past-exam
   - 114-4
   - chap-gen-chapter6
   - sec-performance-metrics
+  usage: both
 - id: 11403
   chapter_title: 生成式 AI 的專案規劃與評估
   section_title: 部署與營運 (LLMOps)
-  text: 某企業利用 No Code/Low Code平台開發內部營運系統。為確保系統在 跨部門流程與外部服務整合下仍具良好的可測試性 （Testability） ，下 列哪一項作法最為合適？ (114年第四梯次)
+  text: 某企業利用 No Code/Low Code平台開發內部營運系統。為確保系統在 跨部門流程與外部服務整合下仍具良好的可測試性 （Testability）
+    ，下 列哪一項作法最為合適？ (114年第四梯次)
   type: multiple_choice
   options:
   - 依賴 No Code/Low Code平台提供的即時預覽與基本單元測試功能， 快速驗證常見流程；
@@ -982,12 +1051,13 @@ questions:
   - 將測試聚焦於使用者介面互動與操作流程驗證，檢查系統表面功 能；
   - 依靠使用者回饋與正式上線後的監控資料，作為修正依據
   correct_index: 0
-  explanation: Low/No Code 平台降低了 AI 開發門檻，讓非技術人員也能透過圖形化介面快速構建與部署 AI 應用。 
+  explanation: Low/No Code 平台降低了 AI 開發門檻，讓非技術人員也能透過圖形化介面快速構建與部署 AI 應用。
   tags:
   - past-exam
   - 114-4
   - chap-gen-chapter6
   - sec-llmops
+  usage: both
 - id: 11412
   chapter_title: 生成式 AI 的專案規劃與評估
   section_title: 部署與營運 (LLMOps)
@@ -999,16 +1069,18 @@ questions:
   - 可確保輸入模型的敏感資料不會傳輸給第三方，提升資料隱私和自 主控制；
   - 以上皆是
   correct_index: 0
-  explanation: 此題涉及 某企業考慮將開源大型... 的核心概念。正確答案為「可以達到無運算成本，因為本地部署模型不會產生額外的資源消 耗；」。 
+  explanation: 此題涉及 某企業考慮將開源大型... 的核心概念。正確答案為「可以達到無運算成本，因為本地部署模型不會產生額外的資源消 耗；」。
   tags:
   - past-exam
   - 114-4
   - chap-gen-chapter6
   - sec-llmops
+  usage: both
 - id: 11433
   chapter_title: 生成式 AI 的專案規劃與評估
   section_title: 部署與營運 (LLMOps)
-  text: 在企業導入 MLOps（Machine Learning Operations）的過程中，除了 模型部署與維運挑戰外，仍可能面臨其他推動上的困難。下列何者為 No Code 平台最能有效解決的挑戰？ (114年第四梯次)
+  text: 在企業導入 MLOps（Machine Learning Operations）的過程中，除了 模型部署與維運挑戰外，仍可能面臨其他推動上的困難。下列何者為
+    No Code 平台最能有效解決的挑戰？ (114年第四梯次)
   type: multiple_choice
   options:
   - 自動化大量資料的標註與前處理，以降低數據準備成本；
@@ -1016,9 +1088,330 @@ questions:
   - 透過可視化建模介面，降低技術門檻並促進跨部門協作；
   - 提供進階特徵工程能力，優化高維度數據的處理效率
   correct_index: 0
-  explanation: Low/No Code 平台降低了 AI 開發門檻，讓非技術人員也能透過圖形化介面快速構建與部署 AI 應用。 
+  explanation: Low/No Code 平台降低了 AI 開發門檻，讓非技術人員也能透過圖形化介面快速構建與部署 AI 應用。
   tags:
   - past-exam
   - 114-4
   - chap-gen-chapter6
   - sec-llmops
+  usage: both
+- chapter_title: 生成式 AI 專案管理與評估
+  section_title: 導入流程與策略
+  text: 情境：金融業若要處理高度機密的客戶資料，最適合的部署策略是？
+  type: multiple_choice
+  options:
+  - 公有雲 API
+  - 本地部署 (Local Deployment / On-Premise)
+  - 混合雲
+  - 不使用 AI
+  correct_index: 1
+  explanation: 本地部署確保資料不出企業內網，符合最高等級的資安與合規要求。
+  tags:
+  - chap-gen-chapter6
+  - sec-implementation-strategy
+  id: 11446
+  usage: both
+- chapter_title: 生成式 AI 專案管理與評估
+  section_title: 效能評估指標
+  text: 情境：RAGAS 框架中的「Faithfulness (忠實度)」指標是用來評估？
+  type: multiple_choice
+  options:
+  - 檢索速度
+  - 生成的回答是否完全基於檢索到的內容 (有無幻覺)
+  - 回答是否相關
+  - 檢索到的內容是否正確
+  correct_index: 1
+  explanation: Faithfulness 衡量生成內容與檢索內容的一致性，檢測模型是否自行編造資訊。
+  tags:
+  - chap-gen-chapter6
+  - sec-performance-metrics
+  id: 11447
+  usage: both
+- chapter_title: 生成式 AI 專案管理與評估
+  section_title: 導入流程與策略
+  text: 情境：模型量化 (Quantization) 到 INT4 的主要好處是？
+  type: multiple_choice
+  options:
+  - 提升準確率
+  - 大幅降低 VRAM 需求，讓消費級顯卡也能跑大模型
+  - 增加訓練時間
+  - 增加模型大小
+  correct_index: 1
+  explanation: 量化顯著壓縮模型體積，降低硬體門檻，且對效能影響通常在可接受範圍內。
+  tags:
+  - chap-gen-chapter6
+  - sec-implementation-strategy
+  id: 11448
+  usage: both
+- chapter_title: 生成式 AI 專案管理與評估
+  section_title: 效能評估指標
+  text: 情境：TTFT (Time to First Token) 指標直接影響的是？
+  type: multiple_choice
+  options:
+  - 模型準確率
+  - 使用者體驗 (感知延遲)
+  - 吞吐量
+  - 訓練成本
+  correct_index: 1
+  explanation: 使用者看到第一個字跳出來的時間越短，感覺系統越流暢。
+  tags:
+  - chap-gen-chapter6
+  - sec-performance-metrics
+  id: 11449
+  usage: both
+- chapter_title: 生成式 AI 專案管理與評估
+  section_title: 投資效益評估 (ROI Analysis)
+  text: 情境：計算 ROI (投資回報率) 的公式是？
+  type: multiple_choice
+  options:
+  - (總效益 - 總成本) / 總成本
+  - 總成本 / 總效益
+  - 總效益 - 總成本
+  - 總效益 + 總成本
+  correct_index: 0
+  explanation: ROI 衡量每單位投資帶來的淨回報比例。
+  tags:
+  - chap-gen-chapter6
+  - sec-roi-analysis
+  id: 11450
+  usage: both
+- chapter_title: 生成式 AI 專案管理與評估
+  section_title: 效能評估指標
+  text: 情境：LLM-as-a-Judge 的評估方法通常比人類評估？
+  type: multiple_choice
+  options:
+  - 更慢且更貴
+  - 更快且更便宜，且與人類偏好高度相關
+  - 完全不準確
+  - 無法進行
+  correct_index: 1
+  explanation: 利用強大模型（如 GPT-4）評估小模型，能大幅縮短評估週期並降低成本。
+  tags:
+  - chap-gen-chapter6
+  - sec-performance-metrics
+  id: 11451
+  usage: both
+- chapter_title: 生成式 AI 專案管理與評估
+  section_title: 導入流程與策略
+  text: 情境：Flash Attention 技術的主要功能是？
+  type: multiple_choice
+  options:
+  - 增加參數量
+  - 加速 Attention 計算並降低記憶體存取，提升長文本處理效率
+  - 自動翻譯
+  - 生成圖片
+  correct_index: 1
+  explanation: Flash Attention 優化了 GPU 記憶體讀寫模式，顯著提升 Transformer 的運算效率。
+  tags:
+  - chap-gen-chapter6
+  - sec-implementation-strategy
+  id: 11452
+  usage: both
+- chapter_title: 生成式 AI 專案管理與評估
+  section_title: 效能評估指標
+  text: 情境：MMLU (Massive Multitask Language Understanding) 基準測試主要評估模型的？
+  type: multiple_choice
+  options:
+  - 寫程式能力
+  - 廣度知識與推理能力 (涵蓋 57 個學科)
+  - 翻譯能力
+  - 生成速度
+  correct_index: 1
+  explanation: MMLU 是目前評估 LLM 綜合知識能力最權威的指標之一。
+  tags:
+  - chap-gen-chapter6
+  - sec-performance-metrics
+  id: 11453
+  usage: both
+- chapter_title: 生成式 AI 專案管理與評估
+  section_title: 組織與人才策略
+  text: 情境：在 AI 專案中，鼓勵「快速試錯 (Fail Fast)」的原因是？
+  type: multiple_choice
+  options:
+  - 因為 AI 很便宜
+  - 因為 AI 專案具有不確定性，需透過實驗快速學習並修正
+  - 因為老闆喜歡失敗
+  - 因為不需要成功
+  correct_index: 1
+  explanation: GenAI 應用充滿未知，敏捷的迭代與試錯文化能加速找到最佳解。
+  tags:
+  - chap-gen-chapter6
+  - sec-org-talent
+  id: 11454
+  usage: both
+- chapter_title: 生成式 AI 專案管理與評估
+  section_title: 效能評估指標
+  text: 情境：紅隊演練 (Red Teaming) 的目的是？
+  type: multiple_choice
+  options:
+  - 攻擊競爭對手
+  - 聘請專家扮演攻擊者，找出模型的安全漏洞與有害輸出
+  - 慶祝專案成功
+  - 訓練模型
+  correct_index: 1
+  explanation: 透過模擬真實攻擊，提前發現並修補模型的弱點。
+  tags:
+  - chap-gen-chapter6
+  - sec-performance-metrics
+  id: 11455
+  usage: both
+- chapter_title: 生成式 AI 專案管理與評估
+  section_title: 導入流程與策略
+  text: 情境：POC (概念驗證) 階段的主要目標是？
+  type: multiple_choice
+  options:
+  - 完成最終產品
+  - 快速驗證技術可行性與潛在價值
+  - 花光預算
+  - 招聘員工
+  correct_index: 1
+  explanation: POC 用最小成本確認想法是否可行，避免大規模投入後的失敗。
+  tags:
+  - chap-gen-chapter6
+  - sec-implementation-strategy
+  id: 11456
+  usage: both
+- chapter_title: 生成式 AI 專案管理與評估
+  section_title: 效能評估指標
+  text: 情境：RAGAS 中的 Context Precision (精確度) 衡量的是？
+  type: multiple_choice
+  options:
+  - 檢索到的內容中有多少是真的相關的 (雜訊比例)
+  - 生成速度
+  - 回答長度
+  - 模型大小
+  correct_index: 0
+  explanation: 高 Precision 代表檢索結果精準，沒有混入太多無關資訊干擾 LLM。
+  tags:
+  - chap-gen-chapter6
+  - sec-performance-metrics
+  id: 11457
+  usage: both
+- chapter_title: 生成式 AI 專案管理與評估
+  section_title: 投資效益評估 (ROI Analysis)
+  text: 情境：隱性成本 (Hidden Costs) 在 AI 專案中常被忽略，例如？
+  type: multiple_choice
+  options:
+  - GPU 購買費
+  - API 訂閱費
+  - 資料清洗與標註的時間成本
+  - 員工薪資
+  correct_index: 2
+  explanation: 資料處理往往佔據專案大半時間，卻常在預算規劃時被低估。
+  tags:
+  - chap-gen-chapter6
+  - sec-roi-analysis
+  id: 11458
+  usage: both
+- chapter_title: 生成式 AI 專案管理與評估
+  section_title: 效能評估指標
+  text: 情境：GSM8K 基準測試主要用來測試模型的什麼能力？
+  type: multiple_choice
+  options:
+  - 寫詩
+  - 小學數學應用題 (多步驟推理)
+  - 翻譯
+  - 摘要
+  correct_index: 1
+  explanation: GSM8K 要求模型進行多步運算與邏輯推演，是評估推理能力的重要指標。
+  tags:
+  - chap-gen-chapter6
+  - sec-performance-metrics
+  id: 11459
+  usage: both
+- chapter_title: 生成式 AI 專案管理與評估
+  section_title: 組織與人才策略
+  text: 情境：打破穀倉效應 (Silo) 對 AI 專案的重要性在於？
+  type: multiple_choice
+  options:
+  - 增加辦公室空間
+  - 促進跨部門 (IT, 業務, 法務) 協作，確保 AI 落地符合實際需求與規範
+  - 減少溝通
+  - 獨立作業
+  correct_index: 1
+  explanation: AI 應用涉及多方領域知識與法規，單一部門閉門造車難以成功。
+  tags:
+  - chap-gen-chapter6
+  - sec-org-talent
+  id: 11460
+  usage: both
+- chapter_title: 生成式 AI 專案管理與評估
+  section_title: 導入流程與策略
+  text: 情境：雲端 API 的一個主要缺點是？
+  type: multiple_choice
+  options:
+  - 模型能力弱
+  - 資料需傳出企業，可能有隱私疑慮
+  - 建置速度慢
+  - 維護困難
+  correct_index: 1
+  explanation: 資料出境是許多企業（特別是金融、醫療）使用雲端服務的最大顧慮。
+  tags:
+  - chap-gen-chapter6
+  - sec-implementation-strategy
+  id: 11461
+  usage: both
+- chapter_title: 生成式 AI 專案管理與評估
+  section_title: 效能評估指標
+  text: 情境：TPS (Tokens Per Second) 代表？
+  type: multiple_choice
+  options:
+  - 總延遲
+  - 生成速度 (每秒生成的 Token 數)
+  - 模型準確率
+  - 使用者人數
+  correct_index: 1
+  explanation: TPS 直接反映了系統的生成效率與吞吐能力。
+  tags:
+  - chap-gen-chapter6
+  - sec-performance-metrics
+  id: 11462
+  usage: both
+- chapter_title: 生成式 AI 專案管理與評估
+  section_title: 效能評估指標
+  text: 情境：Pairwise Comparison (成對比較) 在 LLM 評估中是指？
+  type: multiple_choice
+  options:
+  - 給一個分數
+  - 讓評審比較兩個回答 (A vs B) 哪個更好
+  - 比較兩個模型的大小
+  - 比較兩台電腦
+  correct_index: 1
+  explanation: 相比於絕對打分，人類（或模型）通常更擅長判斷「哪一個比較好」，因此成對比較更準確。
+  tags:
+  - chap-gen-chapter6
+  - sec-performance-metrics
+  id: 11463
+  usage: both
+- chapter_title: 生成式 AI 專案管理與評估
+  section_title: 投資效益評估 (ROI Analysis)
+  text: 情境：回收期 (Payback Period) 是指？
+  type: multiple_choice
+  options:
+  - 專案結束的時間
+  - 投資成本完全回收所需的時間
+  - 模型訓練時間
+  - 資料收集時間
+  correct_index: 1
+  explanation: 回收期越短，代表資金風險越低，流動性越好。
+  tags:
+  - chap-gen-chapter6
+  - sec-roi-analysis
+  id: 11464
+  usage: both
+- chapter_title: 生成式 AI 專案管理與評估
+  section_title: 導入流程與策略
+  text: 情境：GPU 利用率低的一個常見原因是？
+  type: multiple_choice
+  options:
+  - 模型太小
+  - Batch Size 設太小或 I/O 瓶頸
+  - 電壓不穩
+  - 螢幕沒開
+  correct_index: 1
+  explanation: 若資料餵給 GPU 的速度跟不上計算速度，或批次太小，會導致 GPU 空轉等待。
+  tags:
+  - chap-gen-chapter6
+  - sec-implementation-strategy
+  id: 11465
+  usage: both

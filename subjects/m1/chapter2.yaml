@@ -14,21 +14,27 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-data-preprocessing
+  usage: quiz
 - id: 3202
   chapter_title: 資料處理基礎
   section_title: 資料預處理
   text: Min-Max Scaling 將數據縮放到哪個區間？
   type: multiple_choice
   options:
-  - [-1, 1]
-  - [0, 1]
-  - [0, 100]
-  - [-infinity, infinity]
+  - - -1
+    - 1
+  - - 0
+    - 1
+  - - 0
+    - 100
+  - - -infinity
+    - infinity
   correct_index: 1
   explanation: Min-Max Scaling 的公式為 $(x - min) / (max - min)$，結果必然落在 [0, 1] 之間。
   tags:
   - chap-m1-ch2
   - sec-data-preprocessing
+  usage: quiz
 - id: 3203
   chapter_title: 資料處理基礎
   section_title: 資料預處理
@@ -44,6 +50,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-data-preprocessing
+  usage: quiz
 - id: 3204
   chapter_title: 資料處理基礎
   section_title: 特徵工程
@@ -59,6 +66,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-feature-engineering
+  usage: quiz
 - id: 3205
   chapter_title: 資料處理基礎
   section_title: 特徵工程
@@ -74,6 +82,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-feature-engineering
+  usage: quiz
 - id: 3206
   chapter_title: 資料處理基礎
   section_title: 特徵工程
@@ -89,6 +98,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-feature-engineering
+  usage: quiz
 - id: 3207
   chapter_title: 資料處理基礎
   section_title: 特徵工程
@@ -104,6 +114,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-feature-engineering
+  usage: quiz
 - id: 3208
   chapter_title: 資料處理基礎
   section_title: 特徵工程
@@ -119,6 +130,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-feature-engineering
+  usage: quiz
 - id: 3209
   chapter_title: 資料處理基礎
   section_title: 資料預處理
@@ -134,6 +146,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-data-preprocessing
+  usage: quiz
 - id: 3210
   chapter_title: 資料處理基礎
   section_title: 特徵工程
@@ -149,6 +162,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-feature-engineering
+  usage: quiz
 - id: 3211
   chapter_title: 資料處理基礎
   section_title: 資料預處理
@@ -164,6 +178,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-data-preprocessing
+  usage: both
 - id: 3212
   chapter_title: 資料處理基礎
   section_title: 特徵工程
@@ -179,6 +194,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-feature-engineering
+  usage: both
 - id: 3213
   chapter_title: 資料處理基礎
   section_title: 特徵工程
@@ -194,6 +210,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-feature-engineering
+  usage: both
 - id: 3214
   chapter_title: 資料處理基礎
   section_title: 特徵工程
@@ -209,6 +226,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-feature-engineering
+  usage: both
 - id: 3215
   chapter_title: 資料處理基礎
   section_title: 資料預處理
@@ -224,6 +242,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-data-preprocessing
+  usage: both
 - id: 3216
   chapter_title: 資料處理基礎
   section_title: 特徵工程
@@ -239,6 +258,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-feature-engineering
+  usage: both
 - id: 3217
   chapter_title: 資料處理基礎
   section_title: 資料預處理
@@ -254,6 +274,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-data-preprocessing
+  usage: both
 - id: 3218
   chapter_title: 資料處理基礎
   section_title: 特徵工程
@@ -269,6 +290,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-feature-engineering
+  usage: both
 - id: 3219
   chapter_title: 資料處理基礎
   section_title: 特徵工程
@@ -284,6 +306,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-feature-engineering
+  usage: both
 - id: 3220
   chapter_title: 資料處理基礎
   section_title: 資料預處理
@@ -299,6 +322,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-data-preprocessing
+  usage: both
 - id: 3221
   chapter_title: 資料處理基礎
   section_title: 特徵工程
@@ -314,6 +338,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-feature-engineering
+  usage: both
 - id: 3222
   chapter_title: 資料處理基礎
   section_title: 資料預處理
@@ -329,6 +354,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-data-preprocessing
+  usage: both
 - id: 3223
   chapter_title: 資料處理基礎
   section_title: 特徵工程
@@ -344,6 +370,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-feature-engineering
+  usage: both
 - id: 3224
   chapter_title: 資料處理基礎
   section_title: 資料預處理
@@ -359,6 +386,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-data-preprocessing
+  usage: both
 - id: 3225
   chapter_title: 資料處理基礎
   section_title: 特徵工程
@@ -374,6 +402,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-feature-engineering
+  usage: both
 - id: 3226
   chapter_title: 資料處理基礎
   section_title: 資料預處理
@@ -389,6 +418,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-data-preprocessing
+  usage: both
 - id: 3227
   chapter_title: 資料處理基礎
   section_title: 特徵工程
@@ -404,6 +434,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-feature-engineering
+  usage: both
 - id: 3228
   chapter_title: 資料處理基礎
   section_title: 資料預處理
@@ -419,6 +450,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-data-preprocessing
+  usage: both
 - id: 3229
   chapter_title: 資料處理基礎
   section_title: 特徵工程
@@ -434,6 +466,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-feature-engineering
+  usage: both
 - id: 3230
   chapter_title: 資料處理基礎
   section_title: 資料預處理
@@ -449,6 +482,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-data-preprocessing
+  usage: both
 - id: 3231
   chapter_title: 資料處理基礎
   section_title: 特徵工程
@@ -464,6 +498,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-feature-engineering
+  usage: both
 - id: 3232
   chapter_title: 資料處理基礎
   section_title: 資料預處理
@@ -479,6 +514,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-data-preprocessing
+  usage: both
 - id: 3233
   chapter_title: 資料處理基礎
   section_title: 特徵工程
@@ -494,6 +530,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-feature-engineering
+  usage: both
 - id: 3234
   chapter_title: 資料處理基礎
   section_title: 資料預處理
@@ -509,6 +546,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-data-preprocessing
+  usage: both
 - id: 3235
   chapter_title: 資料處理基礎
   section_title: 特徵工程
@@ -524,6 +562,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-feature-engineering
+  usage: both
 - id: 3236
   chapter_title: 資料處理基礎
   section_title: 資料預處理
@@ -539,6 +578,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-data-preprocessing
+  usage: both
 - id: 3237
   chapter_title: 資料處理基礎
   section_title: 特徵工程
@@ -554,6 +594,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-feature-engineering
+  usage: both
 - id: 3238
   chapter_title: 資料處理基礎
   section_title: 資料預處理
@@ -569,6 +610,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-data-preprocessing
+  usage: both
 - id: 3239
   chapter_title: 資料處理基礎
   section_title: 特徵工程
@@ -584,6 +626,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-feature-engineering
+  usage: both
 - id: 3240
   chapter_title: 資料處理基礎
   section_title: 資料預處理
@@ -599,6 +642,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-data-preprocessing
+  usage: both
 - id: 3241
   chapter_title: 資料處理基礎
   section_title: 深度思考情境題
@@ -610,10 +654,12 @@ questions:
   - 直接使用準確率 (Accuracy) 作為特徵選擇的評估指標。
   - 構建反映用戶過去行為模式的聚合特徵。
   correct_index: 2
-  explanation: 在極度不平衡的數據中，準確率會產生誤導（盲猜「正常」就有 99.9% 準確率）。若基於準確率來選擇特徵，可能會選出對偵測詐欺毫無幫助的特徵，應改用 F1-score 或 AUC。
+  explanation: 在極度不平衡的數據中，準確率會產生誤導（盲猜「正常」就有 99.9% 準確率）。若基於準確率來選擇特徵，可能會選出對偵測詐欺毫無幫助的特徵，應改用
+    F1-score 或 AUC。
   tags:
   - chap-m1-ch2
   - sec-scenario
+  usage: mock
 - id: 3242
   chapter_title: 資料處理基礎
   section_title: 深度思考情境題
@@ -625,14 +671,17 @@ questions:
   - Label Encoding：按字母順序將國家編碼為 1~180 的整數。
   - 將低頻國家合併為 "Other" 類別，再進行 One-Hot Encoding。
   correct_index: 2
-  explanation: Label Encoding 會賦予國家一個無意義的順序（如阿富汗=1, 辛巴威=180），模型可能會錯誤地學習到「國家編號越大，銷售額越高」這種不存在的線性關係。Target Encoding 或合併低頻類別是更好的選擇。
+  explanation: Label Encoding 會賦予國家一個無意義的順序（如阿富汗=1, 辛巴威=180），模型可能會錯誤地學習到「國家編號越大，銷售額越高」這種不存在的線性關係。Target
+    Encoding 或合併低頻類別是更好的選擇。
   tags:
   - chap-m1-ch2
   - sec-scenario
+  usage: mock
 - id: 3243
   chapter_title: 資料處理基礎
   section_title: 深度思考情境題
-  text: 情境：在房價預測任務中，你發現訓練集和測試集的特徵分佈有顯著差異（Covariate Shift），例如訓練集多為市中心小豪宅，測試集多為郊區大別墅。這時進行標準化 (Standardization) 應注意什麼？
+  text: 情境：在房價預測任務中，你發現訓練集和測試集的特徵分佈有顯著差異（Covariate Shift），例如訓練集多為市中心小豪宅，測試集多為郊區大別墅。這時進行標準化
+    (Standardization) 應注意什麼？
   type: multiple_choice
   options:
   - 應將訓練集和測試集和併後一起計算均值和標準差。
@@ -640,10 +689,12 @@ questions:
   - 應僅使用訓練集的均值和標準差來轉換測試集。
   - 不應進行標準化。
   correct_index: 2
-  explanation: 嚴格來說，測試集代表未知的未來數據，我們不能預先知道其分佈。正確流程永遠是 `scaler.fit(train)` 然後 `scaler.transform(train)` 和 `scaler.transform(test)`。若分佈差異過大，應考慮重新收集數據或使用領域適應 (Domain Adaptation) 技術，而非錯誤地操作數據。
+  explanation: 嚴格來說，測試集代表未知的未來數據，我們不能預先知道其分佈。正確流程永遠是 `scaler.fit(train)` 然後 `scaler.transform(train)`
+    和 `scaler.transform(test)`。若分佈差異過大，應考慮重新收集數據或使用領域適應 (Domain Adaptation) 技術，而非錯誤地操作數據。
   tags:
   - chap-m1-ch2
   - sec-scenario
+  usage: mock
 - id: 3244
   chapter_title: 資料處理基礎
   section_title: 深度思考情境題
@@ -655,10 +706,12 @@ questions:
   - 是，說明數據品質太差。
   - 否，說明應該保留更多主成分。
   correct_index: 1
-  explanation: PCA 只能提取線性特徵。許多高維數據（如圖像、文字）的結構是非線性的（流形），在 PCA 的線性投影下會重疊。t-SNE 或 UMAP 等非線性方法更有機會將它們分開。
+  explanation: PCA 只能提取線性特徵。許多高維數據（如圖像、文字）的結構是非線性的（流形），在 PCA 的線性投影下會重疊。t-SNE 或 UMAP
+    等非線性方法更有機會將它們分開。
   tags:
   - chap-m1-ch2
   - sec-scenario
+  usage: mock
 - id: 3245
   chapter_title: 資料處理基礎
   section_title: 深度思考情境題
@@ -674,3 +727,324 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-scenario
+  usage: mock
+- chapter_title: 資料處理基礎
+  section_title: 資料預處理
+  text: 情境：在處理問卷資料時，發現「年齡」欄位有部分空白。若該欄位數值分佈均勻且無極端值，適合用什麼填補？
+  type: multiple_choice
+  options:
+  - 刪除該筆資料
+  - 平均值 (Mean)
+  - '0'
+  - 最大值
+  correct_index: 1
+  explanation: 對於數值型且分佈正常的資料，使用平均值填補是常見且合理的做法。
+  tags:
+  - chap-m1-ch2
+  - sec-data-preprocessing
+  id: 3246
+  usage: both
+- chapter_title: 資料處理基礎
+  section_title: 資料預處理
+  text: 情境：若要使用 KNN 演算法，為什麼通常需要先對資料進行正規化 (Normalization)？
+  type: multiple_choice
+  options:
+  - 為了節省空間
+  - 因為 KNN 基於距離計算，若特徵尺度差異過大 (如身高 vs 薪水)，大尺度的特徵會主導距離計算
+  - 為了加密
+  - KNN 不需要正規化
+  correct_index: 1
+  explanation: 正規化能將所有特徵縮放到相同範圍，避免特定特徵權重過大。
+  tags:
+  - chap-m1-ch2
+  - sec-data-preprocessing
+  id: 3247
+  usage: both
+- chapter_title: 資料處理基礎
+  section_title: 特徵工程
+  text: 情境：PCA (主成分分析) 的主要功能是？
+  type: multiple_choice
+  options:
+  - 增加特徵數量
+  - 線性降維，保留數據中變異數最大的方向
+  - 分類
+  - 填補缺失值
+  correct_index: 1
+  explanation: PCA 透過投影將高維數據壓縮到低維空間，同時盡可能保留原始資訊（變異數）。
+  tags:
+  - chap-m1-ch2
+  - sec-feature-engineering
+  id: 3248
+  usage: both
+- chapter_title: 資料處理基礎
+  section_title: 特徵工程
+  text: 情境：對於「顏色」這種沒有順序關係的類別特徵 (紅、藍、綠)，應使用哪種編碼？
+  type: multiple_choice
+  options:
+  - Label Encoding (1, 2, 3)
+  - One-Hot Encoding (獨熱編碼)
+  - 不處理
+  - 轉為文字
+  correct_index: 1
+  explanation: Label Encoding 會隱含順序關係（如 3 > 1），誤導模型；One-Hot Encoding 則將各類別視為獨立維度。
+  tags:
+  - chap-m1-ch2
+  - sec-feature-engineering
+  id: 3249
+  usage: both
+- chapter_title: 資料處理基礎
+  section_title: 特徵工程
+  text: 情境：t-SNE 相比於 PCA，更適合用於？
+  type: multiple_choice
+  options:
+  - 數據壓縮
+  - 高維數據的視覺化 (保留局部鄰域結構)
+  - 線性迴歸
+  - 特徵選擇
+  correct_index: 1
+  explanation: t-SNE 擅長將高維空間中的群聚結構映射到 2D 或 3D 進行觀察。
+  tags:
+  - chap-m1-ch2
+  - sec-feature-engineering
+  id: 3250
+  usage: both
+- chapter_title: 資料處理基礎
+  section_title: 資料預處理
+  text: 情境：Min-Max Scaling 會將數據縮放到哪個範圍？
+  type: multiple_choice
+  options:
+  - '[0, 1]'
+  - '[-1, 1]'
+  - '[0, 100]'
+  - 平均為 0，標準差為 1
+  correct_index: 0
+  explanation: Min-Max Scaling 的公式為 (x - min) / (max - min)，結果必在 0 到 1 之間。
+  tags:
+  - chap-m1-ch2
+  - sec-data-preprocessing
+  id: 3251
+  usage: both
+- chapter_title: 資料處理基礎
+  section_title: 特徵工程
+  text: 情境：特徵選擇中的「過濾法 (Filter Method)」是依據什麼來篩選特徵？
+  type: multiple_choice
+  options:
+  - 模型準確率
+  - 統計指標 (如相關係數、卡方檢定)
+  - 隨機選擇
+  - 人工挑選
+  correct_index: 1
+  explanation: 過濾法不依賴特定模型，而是計算特徵與目標變數間的統計關聯性。
+  tags:
+  - chap-m1-ch2
+  - sec-feature-engineering
+  id: 3252
+  usage: both
+- chapter_title: 資料處理基礎
+  section_title: 資料預處理
+  text: 情境：標準化 (Standardization / Z-score) 後的數據具有什麼特性？
+  type: multiple_choice
+  options:
+  - 範圍在 0 到 1
+  - 平均值為 0，標準差為 1
+  - 沒有負數
+  - 整數
+  correct_index: 1
+  explanation: Z-score 轉換將數據中心移至 0，並以標準差為單位進行縮放。
+  tags:
+  - chap-m1-ch2
+  - sec-data-preprocessing
+  id: 3253
+  usage: both
+- chapter_title: 資料處理基礎
+  section_title: 特徵工程
+  text: 情境：在 PCA 中，第一個主成分 (PC1) 代表？
+  type: multiple_choice
+  options:
+  - 數據變異數 (Variance) 最大的方向
+  - 數據變異數最小的方向
+  - 隨機方向
+  - 垂直方向
+  correct_index: 0
+  explanation: PC1 捕捉了數據分佈最廣、資訊量最大的軸向。
+  tags:
+  - chap-m1-ch2
+  - sec-feature-engineering
+  id: 3254
+  usage: both
+- chapter_title: 資料處理基礎
+  section_title: 資料預處理
+  text: 情境：若資料中存在極端值 (Outliers)，使用哪種填補方式較穩健？
+  type: multiple_choice
+  options:
+  - 平均值
+  - 中位數 (Median)
+  - 最大值
+  - 最小值
+  correct_index: 1
+  explanation: 平均值易受極端值拉扯，中位數則相對穩定。
+  tags:
+  - chap-m1-ch2
+  - sec-data-preprocessing
+  id: 3255
+  usage: both
+- chapter_title: 資料處理基礎
+  section_title: 特徵工程
+  text: 情境：特徵選擇中的「包裹法 (Wrapper Method)」通常比過濾法？
+  type: multiple_choice
+  options:
+  - 快
+  - 慢且計算成本高，但通常能找到對特定模型更好的特徵組合
+  - 不準確
+  - 簡單
+  correct_index: 1
+  explanation: 包裹法（如 RFE）需反覆訓練模型來評估特徵子集，因此計算量大但效果較佳。
+  tags:
+  - chap-m1-ch2
+  - sec-feature-engineering
+  id: 3256
+  usage: both
+- chapter_title: 資料處理基礎
+  section_title: 特徵工程
+  text: 情境：t-SNE 使用什麼指標來衡量兩個機率分佈的差異？
+  type: multiple_choice
+  options:
+  - 歐幾里得距離
+  - KL 散度 (Kullback-Leibler Divergence)
+  - 內積
+  - 相關係數
+  correct_index: 1
+  explanation: t-SNE 透過最小化高維與低維分佈間的 KL 散度來優化投影結果。
+  tags:
+  - chap-m1-ch2
+  - sec-feature-engineering
+  id: 3257
+  usage: both
+- chapter_title: 資料處理基礎
+  section_title: 資料預處理
+  text: 情境：資料清理 (Data Cleaning) 不包括以下哪項？
+  type: multiple_choice
+  options:
+  - 處理缺失值
+  - 處理雜訊
+  - 訓練模型
+  - 處理不一致資料
+  correct_index: 2
+  explanation: 訓練模型是建模階段的工作，而非預處理。
+  tags:
+  - chap-m1-ch2
+  - sec-data-preprocessing
+  id: 3258
+  usage: both
+- chapter_title: 資料處理基礎
+  section_title: 特徵工程
+  text: 情境：PCA 是一種什麼類型的機器學習方法？
+  type: multiple_choice
+  options:
+  - 監督式學習
+  - 非監督式學習 (Unsupervised Learning)
+  - 強化學習
+  - 半監督式學習
+  correct_index: 1
+  explanation: PCA 僅依賴輸入特徵 X 的結構，不需要標籤 y。
+  tags:
+  - chap-m1-ch2
+  - sec-feature-engineering
+  id: 3259
+  usage: both
+- chapter_title: 資料處理基礎
+  section_title: 特徵工程
+  text: 情境：One-Hot Encoding 的一個缺點是？
+  type: multiple_choice
+  options:
+  - 計算簡單
+  - 當類別數量很多時，會導致特徵維度暴增 (Curse of Dimensionality)
+  - 無法處理文字
+  - 準確率低
+  correct_index: 1
+  explanation: 若類別有 1000 種，One-Hot 會產生 1000 個新欄位，造成資料稀疏與運算負擔。
+  tags:
+  - chap-m1-ch2
+  - sec-feature-engineering
+  id: 3260
+  usage: both
+- chapter_title: 資料處理基礎
+  section_title: 資料預處理
+  text: 情境：如果缺失值比例過高（如超過 50%），通常建議？
+  type: multiple_choice
+  options:
+  - 用平均值填補
+  - 刪除該欄位 (Feature)
+  - 用 0 填補
+  - 保留
+  correct_index: 1
+  explanation: 過多缺失值的特徵通常缺乏資訊量，強行填補可能引入雜訊。
+  tags:
+  - chap-m1-ch2
+  - sec-data-preprocessing
+  id: 3261
+  usage: both
+- chapter_title: 資料處理基礎
+  section_title: 特徵工程
+  text: 情境：PCA 中的「正交性」意味著？
+  type: multiple_choice
+  options:
+  - 主成分之間互不相關 (線性獨立)
+  - 主成分平行
+  - 主成分相等
+  - 主成分為 0
+  correct_index: 0
+  explanation: PCA 確保每個主成分都捕捉了獨特、不重複的變異資訊。
+  tags:
+  - chap-m1-ch2
+  - sec-feature-engineering
+  id: 3262
+  usage: both
+- chapter_title: 資料處理基礎
+  section_title: 資料預處理
+  text: 情境：對於基於梯度下降的演算法（如神經網路），正規化的好處是？
+  type: multiple_choice
+  options:
+  - 防止過擬合
+  - 加速收斂 (讓損失函數的等高線更接近圓形)
+  - 增加模型複雜度
+  - 減少資料量
+  correct_index: 1
+  explanation: 正規化能讓不同方向的梯度更新幅度一致，避免在狹長的損失地形中震盪。
+  tags:
+  - chap-m1-ch2
+  - sec-data-preprocessing
+  id: 3263
+  usage: both
+- chapter_title: 資料處理基礎
+  section_title: 特徵工程
+  text: 情境：嵌入法 (Embedded Method) 的特徵選擇是如何進行的？
+  type: multiple_choice
+  options:
+  - 先篩選再訓練
+  - 特徵選擇與模型訓練同時進行 (如 Lasso 回歸的 L1 正則化)
+  - 隨機選擇
+  - 人工選擇
+  correct_index: 1
+  explanation: Lasso 等演算法在訓練過程中會自動將不重要特徵的係數壓縮為 0。
+  tags:
+  - chap-m1-ch2
+  - sec-feature-engineering
+  id: 3264
+  usage: both
+- chapter_title: 資料處理基礎
+  section_title: 特徵工程
+  text: 情境：t-SNE 的計算成本通常比 PCA？
+  type: multiple_choice
+  options:
+  - 低
+  - 高 (因為涉及複雜的機率計算與迭代優化)
+  - 一樣
+  - 無法比較
+  correct_index: 1
+  explanation: t-SNE 的複雜度較高，不適合處理極大規模數據。
+  tags:
+  - chap-m1-ch2
+  - sec-feature-engineering
+  id: 3265
+  usage: both

@@ -14,6 +14,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-hyperparameter-tuning
+  usage: quiz
 - id: 6302
   chapter_title: 模型最佳化與調校
   section_title: 正規化技術
@@ -29,6 +30,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-regularization
+  usage: quiz
 - id: 6303
   chapter_title: 模型最佳化與調校
   section_title: 正規化技術
@@ -44,6 +46,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-regularization
+  usage: quiz
 - id: 6304
   chapter_title: 模型最佳化與調校
   section_title: 模型壓縮
@@ -59,6 +62,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-model-compression
+  usage: quiz
 - id: 6305
   chapter_title: 模型最佳化與調校
   section_title: 模型壓縮
@@ -74,6 +78,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-model-compression
+  usage: quiz
 - id: 6306
   chapter_title: 模型最佳化與調校
   section_title: 超參數調校
@@ -89,6 +94,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-hyperparameter-tuning
+  usage: quiz
 - id: 6307
   chapter_title: 模型最佳化與調校
   section_title: 正規化技術
@@ -104,6 +110,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-regularization
+  usage: quiz
 - id: 6308
   chapter_title: 模型最佳化與調校
   section_title: 正規化技術
@@ -119,6 +126,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-regularization
+  usage: quiz
 - id: 6309
   chapter_title: 模型最佳化與調校
   section_title: 模型壓縮
@@ -134,6 +142,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-model-compression
+  usage: quiz
 - id: 6310
   chapter_title: 模型最佳化與調校
   section_title: 超參數調校
@@ -149,6 +158,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-hyperparameter-tuning
+  usage: quiz
 - id: 6311
   chapter_title: 模型最佳化與調校
   section_title: 正規化技術
@@ -164,6 +174,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-regularization
+  usage: both
 - id: 6312
   chapter_title: 模型最佳化與調校
   section_title: 超參數調校
@@ -179,6 +190,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-hyperparameter-tuning
+  usage: both
 - id: 6313
   chapter_title: 模型最佳化與調校
   section_title: 模型壓縮
@@ -194,6 +206,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-model-compression
+  usage: both
 - id: 6314
   chapter_title: 模型最佳化與調校
   section_title: 正規化技術
@@ -209,6 +222,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-regularization
+  usage: both
 - id: 6315
   chapter_title: 模型最佳化與調校
   section_title: 超參數調校
@@ -224,6 +238,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-hyperparameter-tuning
+  usage: both
 - id: 6316
   chapter_title: 模型最佳化與調校
   section_title: 正規化技術
@@ -239,6 +254,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-regularization
+  usage: both
 - id: 6317
   chapter_title: 模型最佳化與調校
   section_title: 模型壓縮
@@ -254,6 +270,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-model-compression
+  usage: both
 - id: 6318
   chapter_title: 模型最佳化與調校
   section_title: 正規化技術
@@ -269,6 +286,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-regularization
+  usage: both
 - id: 6319
   chapter_title: 模型最佳化與調校
   section_title: 超參數調校
@@ -284,6 +302,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-hyperparameter-tuning
+  usage: both
 - id: 6320
   chapter_title: 模型最佳化與調校
   section_title: 模型壓縮
@@ -299,6 +318,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-model-compression
+  usage: both
 - id: 6321
   chapter_title: 模型最佳化與調校
   section_title: 正規化技術
@@ -314,6 +334,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-regularization
+  usage: both
 - id: 6322
   chapter_title: 模型最佳化與調校
   section_title: 超參數調校
@@ -329,6 +350,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-hyperparameter-tuning
+  usage: both
 - id: 6323
   chapter_title: 模型最佳化與調校
   section_title: 模型壓縮
@@ -344,6 +366,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-model-compression
+  usage: both
 - id: 6324
   chapter_title: 模型最佳化與調校
   section_title: 正規化技術
@@ -359,6 +382,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-regularization
+  usage: both
 - id: 6325
   chapter_title: 模型最佳化與調校
   section_title: 超參數調校
@@ -374,6 +398,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-hyperparameter-tuning
+  usage: both
 - id: 6326
   chapter_title: 模型最佳化與調校
   section_title: 正規化技術
@@ -389,6 +414,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-regularization
+  usage: both
 - id: 6327
   chapter_title: 模型最佳化與調校
   section_title: 模型壓縮
@@ -404,6 +430,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-model-compression
+  usage: both
 - id: 6328
   chapter_title: 模型最佳化與調校
   section_title: 正規化技術
@@ -419,6 +446,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-regularization
+  usage: both
 - id: 6329
   chapter_title: 模型最佳化與調校
   section_title: 超參數調校
@@ -434,6 +462,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-hyperparameter-tuning
+  usage: both
 - id: 6330
   chapter_title: 模型最佳化與調校
   section_title: 模型壓縮
@@ -449,6 +478,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-model-compression
+  usage: both
 - id: 6331
   chapter_title: 模型最佳化與調校
   section_title: 正規化技術
@@ -464,6 +494,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-regularization
+  usage: both
 - id: 6332
   chapter_title: 模型最佳化與調校
   section_title: 超參數調校
@@ -479,6 +510,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-hyperparameter-tuning
+  usage: both
 - id: 6333
   chapter_title: 模型最佳化與調校
   section_title: 模型壓縮
@@ -494,6 +526,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-model-compression
+  usage: both
 - id: 6334
   chapter_title: 模型最佳化與調校
   section_title: 正規化技術
@@ -509,6 +542,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-regularization
+  usage: both
 - id: 6335
   chapter_title: 模型最佳化與調校
   section_title: 超參數調校
@@ -524,6 +558,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-hyperparameter-tuning
+  usage: both
 - id: 6336
   chapter_title: 模型最佳化與調校
   section_title: 模型壓縮
@@ -539,6 +574,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-model-compression
+  usage: both
 - id: 6337
   chapter_title: 模型最佳化與調校
   section_title: 正規化技術
@@ -554,6 +590,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-regularization
+  usage: both
 - id: 6338
   chapter_title: 模型最佳化與調校
   section_title: 超參數調校
@@ -569,6 +606,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-hyperparameter-tuning
+  usage: both
 - id: 6339
   chapter_title: 模型最佳化與調校
   section_title: 模型壓縮
@@ -584,6 +622,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-model-compression
+  usage: both
 - id: 6340
   chapter_title: 模型最佳化與調校
   section_title: 正規化技術
@@ -599,6 +638,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-regularization
+  usage: both
 - id: 6341
   chapter_title: 模型最佳化與調校
   section_title: 深度思考情境題
@@ -614,6 +654,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-scenario
+  usage: mock
 - id: 6342
   chapter_title: 模型最佳化與調校
   section_title: 深度思考情境題
@@ -625,10 +666,12 @@ questions:
   - 使用 L1 正規化。
   - 使用 Grid Search。
   correct_index: 1
-  explanation: 蒸餾能將大模型的知識轉移給小模型（如 DistilBERT），量化能進一步將權重從 FP32 轉為 INT8，兩者結合通常能達到 10 倍以上的壓縮率。
+  explanation: 蒸餾能將大模型的知識轉移給小模型（如 DistilBERT），量化能進一步將權重從 FP32 轉為 INT8，兩者結合通常能達到 10
+    倍以上的壓縮率。
   tags:
   - chap-m4-ch3
   - sec-scenario
+  usage: mock
 - id: 6343
   chapter_title: 模型最佳化與調校
   section_title: 深度思考情境題
@@ -644,6 +687,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-scenario
+  usage: mock
 - id: 6344
   chapter_title: 模型最佳化與調校
   section_title: 深度思考情境題
@@ -659,6 +703,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-scenario
+  usage: mock
 - id: 6345
   chapter_title: 模型最佳化與調校
   section_title: 深度思考情境題
@@ -674,3 +719,324 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-scenario
+  usage: mock
+- chapter_title: 模型最佳化與調校
+  section_title: 超參數調校
+  text: 情境：網格搜尋 (Grid Search) 的主要缺點是？
+  type: multiple_choice
+  options:
+  - 找不到最佳解
+  - 計算成本隨參數數量指數級增長 (維度災難)
+  - 實作困難
+  - 只能用於分類
+  correct_index: 1
+  explanation: 當參數很多時，窮舉所有組合是不切實際的。
+  tags:
+  - chap-m4-ch3
+  - sec-hyperparameter-tuning
+  id: 6346
+  usage: both
+- chapter_title: 模型最佳化與調校
+  section_title: 正規化技術
+  text: 情境：L1 正規化 (Lasso) 的一個獨特特性是？
+  type: multiple_choice
+  options:
+  - 使權重變小但不為 0
+  - 產生稀疏權重 (許多權重變為 0)，可用於特徵選擇
+  - 計算最快
+  - 防止欠擬合
+  correct_index: 1
+  explanation: L1 傾向於將不重要的特徵權重壓縮為 0。
+  tags:
+  - chap-m4-ch3
+  - sec-regularization
+  id: 6347
+  usage: both
+- chapter_title: 模型最佳化與調校
+  section_title: 模型壓縮
+  text: 情境：量化 (Quantization) 通常將模型權重從 FP32 轉換為？
+  type: multiple_choice
+  options:
+  - FP64
+  - INT8 (8 位整數)
+  - Binary
+  - String
+  correct_index: 1
+  explanation: 這能將模型大小減少約 4 倍並加速推論。
+  tags:
+  - chap-m4-ch3
+  - sec-model-compression
+  id: 6348
+  usage: both
+- chapter_title: 模型最佳化與調校
+  section_title: 正規化技術
+  text: 情境：Dropout 在訓練過程中做什麼？
+  type: multiple_choice
+  options:
+  - 刪除所有神經元
+  - 隨機丟棄 (歸零) 一部分神經元
+  - 增加神經元
+  - 修改學習率
+  correct_index: 1
+  explanation: 強迫網路學習更魯棒的特徵，防止過度依賴特定神經元。
+  tags:
+  - chap-m4-ch3
+  - sec-regularization
+  id: 6349
+  usage: both
+- chapter_title: 模型最佳化與調校
+  section_title: 超參數調校
+  text: 情境：貝葉斯最佳化 (Bayesian Optimization) 相比於隨機搜尋的優勢是？
+  type: multiple_choice
+  options:
+  - 更簡單
+  - 利用過去的評估結果建立概率模型，更聰明地選擇下一個參數組合
+  - 不需要計算
+  - 速度最快
+  correct_index: 1
+  explanation: 能以更少的迭代次數找到最佳解。
+  tags:
+  - chap-m4-ch3
+  - sec-hyperparameter-tuning
+  id: 6350
+  usage: both
+- chapter_title: 模型最佳化與調校
+  section_title: 正規化技術
+  text: 情境：提前停止 (Early Stopping) 的判斷依據是？
+  type: multiple_choice
+  options:
+  - 訓練誤差不再下降
+  - 驗證集誤差不再下降甚至開始上升
+  - 測試誤差為 0
+  - 訓練時間到了
+  correct_index: 1
+  explanation: 驗證誤差上升是過擬合的徵兆。
+  tags:
+  - chap-m4-ch3
+  - sec-regularization
+  id: 6351
+  usage: both
+- chapter_title: 模型最佳化與調校
+  section_title: 模型壓縮
+  text: 情境：知識蒸餾 (Knowledge Distillation) 中的「教師模型 (Teacher)」通常是？
+  type: multiple_choice
+  options:
+  - 一個小而快的模型
+  - 一個大而準確的模型
+  - 一個隨機模型
+  - 一個線性模型
+  correct_index: 1
+  explanation: 教師模型負責指導學生模型學習。
+  tags:
+  - chap-m4-ch3
+  - sec-model-compression
+  id: 6352
+  usage: both
+- chapter_title: 模型最佳化與調校
+  section_title: 正規化技術
+  text: 情境：批次正規化 (Batch Normalization) 的主要好處是？
+  type: multiple_choice
+  options:
+  - 減少參數量
+  - 加速訓練收斂，並允許使用更高的學習率
+  - 完全消除過擬合
+  - 不需要數據
+  correct_index: 1
+  explanation: 解決了內部協變量偏移 (Internal Covariate Shift) 問題。
+  tags:
+  - chap-m4-ch3
+  - sec-regularization
+  id: 6353
+  usage: both
+- chapter_title: 模型最佳化與調校
+  section_title: 超參數調校
+  text: 情境：Optuna 是一個什麼工具？
+  type: multiple_choice
+  options:
+  - 資料庫
+  - 自動超參數優化框架
+  - 繪圖庫
+  - 網頁框架
+  correct_index: 1
+  explanation: Optuna 提供了高效的搜尋演算法與剪枝策略。
+  tags:
+  - chap-m4-ch3
+  - sec-hyperparameter-tuning
+  id: 6354
+  usage: both
+- chapter_title: 模型最佳化與調校
+  section_title: 模型壓縮
+  text: 情境：剪枝 (Pruning) 的目的是？
+  type: multiple_choice
+  options:
+  - 增加模型複雜度
+  - 移除神經網路中不重要的連接或神經元，減小模型體積
+  - 增加訓練時間
+  - 增加數據量
+  correct_index: 1
+  explanation: 去除冗餘參數，實現模型瘦身。
+  tags:
+  - chap-m4-ch3
+  - sec-model-compression
+  id: 6355
+  usage: both
+- chapter_title: 模型最佳化與調校
+  section_title: 正規化技術
+  text: 情境：L2 正規化 (Ridge) 傾向於？
+  type: multiple_choice
+  options:
+  - 將權重變為 0
+  - 將權重變小但不為 0，平滑權重分佈
+  - 增加權重值
+  - 不改變權重
+  correct_index: 1
+  explanation: 防止單一特徵權重過大主導模型。
+  tags:
+  - chap-m4-ch3
+  - sec-regularization
+  id: 6356
+  usage: both
+- chapter_title: 模型最佳化與調校
+  section_title: 超參數調校
+  text: 情境：隨機搜尋 (Random Search) 相比於網格搜尋，通常？
+  type: multiple_choice
+  options:
+  - 效率更低
+  - 效率更高，因為能探索更多重要參數的取值
+  - 結果一樣
+  - 無法比較
+  correct_index: 1
+  explanation: 對於高維參數空間，隨機搜尋往往能更快找到不錯的解。
+  tags:
+  - chap-m4-ch3
+  - sec-hyperparameter-tuning
+  id: 6357
+  usage: both
+- chapter_title: 模型最佳化與調校
+  section_title: 模型壓縮
+  text: 情境：結構化剪枝 (Structured Pruning) 移除的是？
+  type: multiple_choice
+  options:
+  - 單個權重
+  - 整個通道 (Channel) 或卷積核 (Filter)
+  - 整個模型
+  - 訓練數據
+  correct_index: 1
+  explanation: 結構化剪枝後的模型能直接在通用硬體上加速。
+  tags:
+  - chap-m4-ch3
+  - sec-model-compression
+  id: 6358
+  usage: both
+- chapter_title: 模型最佳化與調校
+  section_title: 正規化技術
+  text: 情境：正規化 (Regularization) 的根本目的是？
+  type: multiple_choice
+  options:
+  - 提高訓練準確率
+  - 防止過擬合 (Overfitting)，提升泛化能力
+  - 加快訓練速度
+  - 減少數據量
+  correct_index: 1
+  explanation: 犧牲一點訓練準確率換取更好的測試準確率。
+  tags:
+  - chap-m4-ch3
+  - sec-regularization
+  id: 6359
+  usage: both
+- chapter_title: 模型最佳化與調校
+  section_title: 超參數調校
+  text: 情境：學習率 (Learning Rate) 屬於？
+  type: multiple_choice
+  options:
+  - 模型參數 (由數據學習)
+  - 超參數 (需人工設定)
+  - 常數
+  - 變數
+  correct_index: 1
+  explanation: 超參數控制訓練過程，無法通過梯度下降直接學習。
+  tags:
+  - chap-m4-ch3
+  - sec-hyperparameter-tuning
+  id: 6360
+  usage: both
+- chapter_title: 模型最佳化與調校
+  section_title: 模型壓縮
+  text: 情境：知識蒸餾中，學生模型學習的是教師模型的？
+  type: multiple_choice
+  options:
+  - 硬標籤 (Hard Labels)
+  - 軟目標 (Soft targets) / 輸出機率分佈
+  - 權重
+  - 架構
+  correct_index: 1
+  explanation: 軟目標包含了類別間的相似性資訊（暗知識）。
+  tags:
+  - chap-m4-ch3
+  - sec-model-compression
+  id: 6361
+  usage: both
+- chapter_title: 模型最佳化與調校
+  section_title: 正規化技術
+  text: 情境：Batch Normalization 通常放在哪裡？
+  type: multiple_choice
+  options:
+  - 輸入層之前
+  - 激活函數之前 (或之後)
+  - 輸出層之後
+  - 損失函數之後
+  correct_index: 1
+  explanation: 標準化層的輸入，使其分佈穩定。
+  tags:
+  - chap-m4-ch3
+  - sec-regularization
+  id: 6362
+  usage: both
+- chapter_title: 模型最佳化與調校
+  section_title: 超參數調校
+  text: 情境：TPE (Tree-structured Parzen Estimator) 是哪種優化方法的演算法？
+  type: multiple_choice
+  options:
+  - 網格搜尋
+  - 隨機搜尋
+  - 貝葉斯最佳化
+  - 梯度下降
+  correct_index: 2
+  explanation: Optuna 預設使用的演算法。
+  tags:
+  - chap-m4-ch3
+  - sec-hyperparameter-tuning
+  id: 6363
+  usage: both
+- chapter_title: 模型最佳化與調校
+  section_title: 模型壓縮
+  text: 情境：量化帶來的精度損失通常？
+  type: multiple_choice
+  options:
+  - 非常大，模型無法使用
+  - 輕微且可接受
+  - 沒有損失
+  - 反而提高精度
+  correct_index: 1
+  explanation: 透過校準 (Calibration) 或量化感知訓練 (QAT) 可將損失降至最低。
+  tags:
+  - chap-m4-ch3
+  - sec-model-compression
+  id: 6364
+  usage: both
+- chapter_title: 模型最佳化與調校
+  section_title: 正規化技術
+  text: 情境：權重衰減 (Weight Decay) 等價於哪種正規化？
+  type: multiple_choice
+  options:
+  - L1
+  - L2
+  - Dropout
+  - Batch Norm
+  correct_index: 1
+  explanation: 在隨機梯度下降中，L2 正規化項表現為權重衰減。
+  tags:
+  - chap-m4-ch3
+  - sec-regularization
+  id: 6365
+  usage: both

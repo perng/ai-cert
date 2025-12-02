@@ -14,6 +14,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-fat
+  usage: quiz
 - id: 6502
   chapter_title: 機器學習治理與倫理
   section_title: 解決偏見與確保可解釋性 (XAI)
@@ -29,6 +30,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-xai
+  usage: quiz
 - id: 6503
   chapter_title: 機器學習治理與倫理
   section_title: 解決偏見與確保可解釋性 (XAI)
@@ -44,6 +46,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-xai
+  usage: quiz
 - id: 6504
   chapter_title: 機器學習治理與倫理
   section_title: 模型監控與治理
@@ -59,6 +62,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-model-governance
+  usage: quiz
 - id: 6505
   chapter_title: 機器學習治理與倫理
   section_title: ML 中的公平性、當責性與透明度 (FAT)
@@ -74,6 +78,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-fat
+  usage: quiz
 - id: 6506
   chapter_title: 機器學習治理與倫理
   section_title: 解決偏見與確保可解釋性 (XAI)
@@ -89,6 +94,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-xai
+  usage: quiz
 - id: 6507
   chapter_title: 機器學習治理與倫理
   section_title: 模型監控與治理
@@ -104,6 +110,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-model-governance
+  usage: quiz
 - id: 6508
   chapter_title: 機器學習治理與倫理
   section_title: ML 中的公平性、當責性與透明度 (FAT)
@@ -119,6 +126,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-fat
+  usage: quiz
 - id: 6509
   chapter_title: 機器學習治理與倫理
   section_title: 解決偏見與確保可解釋性 (XAI)
@@ -134,6 +142,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-xai
+  usage: quiz
 - id: 6510
   chapter_title: 機器學習治理與倫理
   section_title: 模型監控與治理
@@ -149,6 +158,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-model-governance
+  usage: quiz
 - id: 6511
   chapter_title: 機器學習治理與倫理
   section_title: ML 中的公平性、當責性與透明度 (FAT)
@@ -164,6 +174,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-fat
+  usage: both
 - id: 6512
   chapter_title: 機器學習治理與倫理
   section_title: 解決偏見與確保可解釋性 (XAI)
@@ -179,6 +190,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-xai
+  usage: both
 - id: 6513
   chapter_title: 機器學習治理與倫理
   section_title: 解決偏見與確保可解釋性 (XAI)
@@ -194,6 +206,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-xai
+  usage: both
 - id: 6514
   chapter_title: 機器學習治理與倫理
   section_title: ML 中的公平性、當責性與透明度 (FAT)
@@ -209,6 +222,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-fat
+  usage: both
 - id: 6515
   chapter_title: 機器學習治理與倫理
   section_title: 模型監控與治理
@@ -224,6 +238,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-model-governance
+  usage: both
 - id: 6516
   chapter_title: 機器學習治理與倫理
   section_title: 解決偏見與確保可解釋性 (XAI)
@@ -239,6 +254,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-xai
+  usage: both
 - id: 6517
   chapter_title: 機器學習治理與倫理
   section_title: ML 中的公平性、當責性與透明度 (FAT)
@@ -254,6 +270,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-fat
+  usage: both
 - id: 6518
   chapter_title: 機器學習治理與倫理
   section_title: 解決偏見與確保可解釋性 (XAI)
@@ -269,6 +286,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-xai
+  usage: both
 - id: 6519
   chapter_title: 機器學習治理與倫理
   section_title: 模型監控與治理
@@ -284,6 +302,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-model-governance
+  usage: both
 - id: 6520
   chapter_title: 機器學習治理與倫理
   section_title: 解決偏見與確保可解釋性 (XAI)
@@ -299,6 +318,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-xai
+  usage: both
 - id: 6521
   chapter_title: 機器學習治理與倫理
   section_title: ML 中的公平性、當責性與透明度 (FAT)
@@ -314,6 +334,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-fat
+  usage: both
 - id: 6522
   chapter_title: 機器學習治理與倫理
   section_title: 解決偏見與確保可解釋性 (XAI)
@@ -329,6 +350,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-xai
+  usage: both
 - id: 6523
   chapter_title: 機器學習治理與倫理
   section_title: 模型監控與治理
@@ -344,6 +366,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-model-governance
+  usage: both
 - id: 6524
   chapter_title: 機器學習治理與倫理
   section_title: 解決偏見與確保可解釋性 (XAI)
@@ -359,6 +382,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-xai
+  usage: both
 - id: 6525
   chapter_title: 機器學習治理與倫理
   section_title: ML 中的公平性、當責性與透明度 (FAT)
@@ -374,6 +398,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-fat
+  usage: both
 - id: 6526
   chapter_title: 機器學習治理與倫理
   section_title: 解決偏見與確保可解釋性 (XAI)
@@ -389,6 +414,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-xai
+  usage: both
 - id: 6527
   chapter_title: 機器學習治理與倫理
   section_title: 模型監控與治理
@@ -404,6 +430,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-model-governance
+  usage: both
 - id: 6528
   chapter_title: 機器學習治理與倫理
   section_title: ML 中的公平性、當責性與透明度 (FAT)
@@ -419,6 +446,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-fat
+  usage: both
 - id: 6529
   chapter_title: 機器學習治理與倫理
   section_title: 解決偏見與確保可解釋性 (XAI)
@@ -434,6 +462,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-xai
+  usage: both
 - id: 6530
   chapter_title: 機器學習治理與倫理
   section_title: 模型監控與治理
@@ -449,6 +478,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-model-governance
+  usage: both
 - id: 6531
   chapter_title: 機器學習治理與倫理
   section_title: ML 中的公平性、當責性與透明度 (FAT)
@@ -464,6 +494,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-fat
+  usage: both
 - id: 6532
   chapter_title: 機器學習治理與倫理
   section_title: 解決偏見與確保可解釋性 (XAI)
@@ -479,6 +510,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-xai
+  usage: both
 - id: 6533
   chapter_title: 機器學習治理與倫理
   section_title: 模型監控與治理
@@ -494,6 +526,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-model-governance
+  usage: both
 - id: 6534
   chapter_title: 機器學習治理與倫理
   section_title: ML 中的公平性、當責性與透明度 (FAT)
@@ -509,6 +542,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-fat
+  usage: both
 - id: 6535
   chapter_title: 機器學習治理與倫理
   section_title: 解決偏見與確保可解釋性 (XAI)
@@ -524,6 +558,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-xai
+  usage: both
 - id: 6536
   chapter_title: 機器學習治理與倫理
   section_title: 模型監控與治理
@@ -539,6 +574,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-model-governance
+  usage: both
 - id: 6537
   chapter_title: 機器學習治理與倫理
   section_title: ML 中的公平性、當責性與透明度 (FAT)
@@ -554,6 +590,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-fat
+  usage: both
 - id: 6538
   chapter_title: 機器學習治理與倫理
   section_title: 解決偏見與確保可解釋性 (XAI)
@@ -569,6 +606,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-xai
+  usage: both
 - id: 6539
   chapter_title: 機器學習治理與倫理
   section_title: 模型監控與治理
@@ -584,6 +622,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-model-governance
+  usage: both
 - id: 6540
   chapter_title: 機器學習治理與倫理
   section_title: ML 中的公平性、當責性與透明度 (FAT)
@@ -599,6 +638,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-fat
+  usage: both
 - id: 6541
   chapter_title: 機器學習治理與倫理
   section_title: 深度思考情境題
@@ -614,6 +654,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-scenario
+  usage: mock
 - id: 6542
   chapter_title: 機器學習治理與倫理
   section_title: 深度思考情境題
@@ -629,6 +670,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-scenario
+  usage: mock
 - id: 6543
   chapter_title: 機器學習治理與倫理
   section_title: 深度思考情境題
@@ -644,6 +686,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-scenario
+  usage: mock
 - id: 6544
   chapter_title: 機器學習治理與倫理
   section_title: 深度思考情境題
@@ -659,6 +702,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-scenario
+  usage: mock
 - id: 6545
   chapter_title: 機器學習治理與倫理
   section_title: 深度思考情境題
@@ -674,3 +718,324 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-scenario
+  usage: mock
+- chapter_title: 機器學習治理與倫理
+  section_title: 解決偏見與確保可解釋性
+  text: 情境：SHAP (SHapley Additive exPlanations) 的核心概念源自？
+  type: multiple_choice
+  options:
+  - 微積分
+  - 博弈論 (Game Theory)
+  - 幾何學
+  - 物理學
+  correct_index: 1
+  explanation: 利用 Shapley Value 公平分配每個特徵對預測結果的貢獻。
+  tags:
+  - chap-m4-ch5
+  - sec-xai
+  id: 6546
+  usage: both
+- chapter_title: 機器學習治理與倫理
+  section_title: ML 中的公平性、當責性與透明度
+  text: 情境：選擇性偏見 (Selection Bias) 是指？
+  type: multiple_choice
+  options:
+  - 模型選擇錯誤
+  - 訓練數據不能代表真實世界 (樣本偏差)
+  - 特徵選擇錯誤
+  - 演算法偏見
+  correct_index: 1
+  explanation: 例如用白人數據訓練人臉辨識，導致對黑人辨識率低。
+  tags:
+  - chap-m4-ch5
+  - sec-fat
+  id: 6547
+  usage: both
+- chapter_title: 機器學習治理與倫理
+  section_title: 模型監控與治理
+  text: 情境：概念漂移 (Concept Drift) 發生時，意味著？
+  type: multiple_choice
+  options:
+  - 數據格式變了
+  - 輸入與輸出之間的關係發生了變化 (如詐欺模式改變)
+  - 模型壞了
+  - 硬體故障
+  correct_index: 1
+  explanation: 舊模型不再適用於新的規律，需重新訓練。
+  tags:
+  - chap-m4-ch5
+  - sec-model-governance
+  id: 6548
+  usage: both
+- chapter_title: 機器學習治理與倫理
+  section_title: 解決偏見與確保可解釋性
+  text: 情境：LIME 的主要作用是？
+  type: multiple_choice
+  options:
+  - 全域解釋
+  - 局部解釋 (Local Interpretability)，解釋單個預測
+  - 訓練模型
+  - 壓縮模型
+  correct_index: 1
+  explanation: 在局部擬合一個簡單模型來解釋複雜模型的決策。
+  tags:
+  - chap-m4-ch5
+  - sec-xai
+  id: 6549
+  usage: both
+- chapter_title: 機器學習治理與倫理
+  section_title: ML 中的公平性、當責性與透明度
+  text: 情境：FAT 原則中的「透明度 (Transparency)」要求？
+  type: multiple_choice
+  options:
+  - 模型程式碼公開
+  - 模型的決策過程應可見且可解釋
+  - 數據公開
+  - 硬體透明
+  correct_index: 1
+  explanation: 避免黑箱決策，建立使用者信任。
+  tags:
+  - chap-m4-ch5
+  - sec-fat
+  id: 6550
+  usage: both
+- chapter_title: 機器學習治理與倫理
+  section_title: 模型監控與治理
+  text: 情境：PSI (Population Stability Index) 用於衡量？
+  type: multiple_choice
+  options:
+  - 模型準確率
+  - 數據分佈的穩定性 (Data Drift)
+  - 訓練速度
+  - 記憶體使用量
+  correct_index: 1
+  explanation: PSI > 0.25 通常表示數據發生了顯著漂移。
+  tags:
+  - chap-m4-ch5
+  - sec-model-governance
+  id: 6551
+  usage: both
+- chapter_title: 機器學習治理與倫理
+  section_title: 解決偏見與確保可解釋性
+  text: 情境：全域解釋 (Global Interpretability) 關注的是？
+  type: multiple_choice
+  options:
+  - 單個樣本
+  - 模型整體的運作邏輯 (如特徵重要性排行)
+  - 模型誤差
+  - 訓練時間
+  correct_index: 1
+  explanation: 了解哪些特徵對模型整體來說最重要。
+  tags:
+  - chap-m4-ch5
+  - sec-xai
+  id: 6552
+  usage: both
+- chapter_title: 機器學習治理與倫理
+  section_title: ML 中的公平性、當責性與透明度
+  text: 情境：歷史偏見 (Historical Bias) 源於？
+  type: multiple_choice
+  options:
+  - 數據採集錯誤
+  - 數據反映了歷史上存在的社會不公與歧視
+  - 演算法錯誤
+  - 計算錯誤
+  correct_index: 1
+  explanation: AI 只是學到了人類社會過去的偏見（如性別刻板印象）。
+  tags:
+  - chap-m4-ch5
+  - sec-fat
+  id: 6553
+  usage: both
+- chapter_title: 機器學習治理與倫理
+  section_title: 模型監控與治理
+  text: 情境：當檢測到嚴重的數據漂移時，通常應該？
+  type: multiple_choice
+  options:
+  - 不理會
+  - 使用新數據重新訓練模型
+  - 刪除模型
+  - 關閉系統
+  correct_index: 1
+  explanation: 確保模型能適應新的數據分佈。
+  tags:
+  - chap-m4-ch5
+  - sec-model-governance
+  id: 6554
+  usage: both
+- chapter_title: 機器學習治理與倫理
+  section_title: 解決偏見與確保可解釋性
+  text: 情境：SHAP 值為正表示？
+  type: multiple_choice
+  options:
+  - 該特徵對預測結果有正向貢獻 (推高預測值)
+  - 該特徵無關
+  - 該特徵有負向貢獻
+  - 該特徵錯誤
+  correct_index: 0
+  explanation: 負值則表示推低預測值。
+  tags:
+  - chap-m4-ch5
+  - sec-xai
+  id: 6555
+  usage: both
+- chapter_title: 機器學習治理與倫理
+  section_title: ML 中的公平性、當責性與透明度
+  text: 情境：當責性 (Accountability) 強調？
+  type: multiple_choice
+  options:
+  - AI 永遠是對的
+  - 需要有明確的機制來釐清 AI 決策的責任歸屬
+  - AI 不需要負責
+  - 使用者負責
+  correct_index: 1
+  explanation: 當 AI 出錯時，必須有人（開發者、部署者）承擔責任。
+  tags:
+  - chap-m4-ch5
+  - sec-fat
+  id: 6556
+  usage: both
+- chapter_title: 機器學習治理與倫理
+  section_title: 模型監控與治理
+  text: 情境：數據漂移 (Data Drift) 指的是？
+  type: multiple_choice
+  options:
+  - 數據不見了
+  - 輸入數據的統計分佈隨時間發生變化
+  - 模型參數變了
+  - 標籤變了
+  correct_index: 1
+  explanation: 例如疫情期間消費者的購物習慣改變。
+  tags:
+  - chap-m4-ch5
+  - sec-model-governance
+  id: 6557
+  usage: both
+- chapter_title: 機器學習治理與倫理
+  section_title: 解決偏見與確保可解釋性
+  text: 情境：LIME 適用於哪種模型？
+  type: multiple_choice
+  options:
+  - 只有決策樹
+  - 只有神經網路
+  - 任何模型 (Model-agnostic)
+  - 只有線性模型
+  correct_index: 2
+  explanation: 它把原模型當作黑箱，只關注輸入輸出。
+  tags:
+  - chap-m4-ch5
+  - sec-xai
+  id: 6558
+  usage: both
+- chapter_title: 機器學習治理與倫理
+  section_title: ML 中的公平性、當責性與透明度
+  text: 情境：測量偏見 (Measurement Bias) 發生在？
+  type: multiple_choice
+  options:
+  - 特徵或標籤的測量方式有誤或不一致
+  - 數據量太少
+  - 模型太複雜
+  - 運算太慢
+  correct_index: 0
+  explanation: 例如用「逮捕率」來衡量「犯罪率」，可能會因執法偏差而引入偏見。
+  tags:
+  - chap-m4-ch5
+  - sec-fat
+  id: 6559
+  usage: both
+- chapter_title: 機器學習治理與倫理
+  section_title: 解決偏見與確保可解釋性
+  text: 情境：XAI (Explainable AI) 的主要目標是？
+  type: multiple_choice
+  options:
+  - 提高準確率
+  - 讓人類理解 AI 模型的決策邏輯，建立信任
+  - 加快運算
+  - 降低成本
+  correct_index: 1
+  explanation: 解決黑箱問題，特別是在醫療、金融等高風險領域。
+  tags:
+  - chap-m4-ch5
+  - sec-xai
+  id: 6560
+  usage: both
+- chapter_title: 機器學習治理與倫理
+  section_title: 模型監控與治理
+  text: 情境：模型監控應該在什麼時候進行？
+  type: multiple_choice
+  options:
+  - 訓練時
+  - 部署後持續進行
+  - 開發前
+  - 不需要
+  correct_index: 1
+  explanation: 環境是動態的，模型效能會隨時間衰退。
+  tags:
+  - chap-m4-ch5
+  - sec-model-governance
+  id: 6561
+  usage: both
+- chapter_title: 機器學習治理與倫理
+  section_title: ML 中的公平性、當責性與透明度
+  text: 情境：公平性 (Fairness) 要求模型？
+  type: multiple_choice
+  options:
+  - 對所有人都一樣準
+  - 不應對特定群體 (如性別、種族) 產生系統性的歧視
+  - 準確率 100%
+  - 免費使用
+  correct_index: 1
+  explanation: 確保 AI 的決策不違反平等原則。
+  tags:
+  - chap-m4-ch5
+  - sec-fat
+  id: 6562
+  usage: both
+- chapter_title: 機器學習治理與倫理
+  section_title: 解決偏見與確保可解釋性
+  text: 情境：SHAP 摘要圖 (Summary Plot) 可以展示？
+  type: multiple_choice
+  options:
+  - 特徵重要性與特徵值對預測的影響方向
+  - 模型結構
+  - 訓練時間
+  - 數據分佈
+  correct_index: 0
+  explanation: 同時提供了特徵重要性排序與特徵影響力的視覺化。
+  tags:
+  - chap-m4-ch5
+  - sec-xai
+  id: 6563
+  usage: both
+- chapter_title: 機器學習治理與倫理
+  section_title: 模型監控與治理
+  text: 情境：除了性能指標，還應監控模型的？
+  type: multiple_choice
+  options:
+  - 耗電量
+  - 公平性指標 (確保未產生偏見)
+  - 硬體溫度
+  - 網路速度
+  correct_index: 1
+  explanation: 確保模型在運作過程中持續符合倫理標準。
+  tags:
+  - chap-m4-ch5
+  - sec-model-governance
+  id: 6564
+  usage: both
+- chapter_title: 機器學習治理與倫理
+  section_title: ML 中的公平性、當責性與透明度
+  text: 情境：為了減少選擇性偏見，應該？
+  type: multiple_choice
+  options:
+  - 只收集方便的數據
+  - 確保訓練數據具有代表性，涵蓋各種群體
+  - 減少數據量
+  - 不使用數據
+  correct_index: 1
+  explanation: 改善採樣策略，確保數據多樣性。
+  tags:
+  - chap-m4-ch5
+  - sec-fat
+  id: 6565
+  usage: both

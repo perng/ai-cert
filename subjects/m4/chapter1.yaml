@@ -14,6 +14,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-ensemble-methods
+  usage: quiz
 - id: 6102
   chapter_title: 進階機器學習演算法
   section_title: 整合方法
@@ -29,6 +30,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-ensemble-methods
+  usage: quiz
 - id: 6103
   chapter_title: 進階機器學習演算法
   section_title: 進階非監督式學習
@@ -44,6 +46,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-adv-unsupervised
+  usage: quiz
 - id: 6104
   chapter_title: 進階機器學習演算法
   section_title: 進階非監督式學習
@@ -59,6 +62,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-adv-unsupervised
+  usage: quiz
 - id: 6105
   chapter_title: 進階機器學習演算法
   section_title: 整合方法
@@ -70,10 +74,12 @@ questions:
   - 類別特徵 (Categorical Features)
   - 時間序列特徵
   correct_index: 2
-  explanation: CatBoost (Categorical Boosting) 專為處理類別型特徵而設計，能自動處理編碼問題，無需預先進行 One-hot Encoding。
+  explanation: CatBoost (Categorical Boosting) 專為處理類別型特徵而設計，能自動處理編碼問題，無需預先進行 One-hot
+    Encoding。
   tags:
   - chap-m4-ch1
   - sec-ensemble-methods
+  usage: quiz
 - id: 6106
   chapter_title: 進階機器學習演算法
   section_title: 整合方法
@@ -89,6 +95,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-ensemble-methods
+  usage: quiz
 - id: 6107
   chapter_title: 進階機器學習演算法
   section_title: 進階非監督式學習
@@ -104,6 +111,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-adv-unsupervised
+  usage: quiz
 - id: 6108
   chapter_title: 進階機器學習演算法
   section_title: 整合方法
@@ -119,6 +127,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-ensemble-methods
+  usage: quiz
 - id: 6109
   chapter_title: 進階機器學習演算法
   section_title: 整合方法
@@ -134,6 +143,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-ensemble-methods
+  usage: quiz
 - id: 6110
   chapter_title: 進階機器學習演算法
   section_title: 進階非監督式學習
@@ -149,6 +159,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-adv-unsupervised
+  usage: quiz
 - id: 6111
   chapter_title: 進階機器學習演算法
   section_title: 整合方法
@@ -164,6 +175,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-ensemble-methods
+  usage: both
 - id: 6112
   chapter_title: 進階機器學習演算法
   section_title: 進階非監督式學習
@@ -179,6 +191,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-adv-unsupervised
+  usage: both
 - id: 6113
   chapter_title: 進階機器學習演算法
   section_title: 整合方法
@@ -194,6 +207,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-ensemble-methods
+  usage: both
 - id: 6114
   chapter_title: 進階機器學習演算法
   section_title: 進階非監督式學習
@@ -209,6 +223,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-adv-unsupervised
+  usage: both
 - id: 6115
   chapter_title: 進階機器學習演算法
   section_title: 整合方法
@@ -224,6 +239,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-ensemble-methods
+  usage: both
 - id: 6116
   chapter_title: 進階機器學習演算法
   section_title: 進階非監督式學習
@@ -239,6 +255,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-adv-unsupervised
+  usage: both
 - id: 6117
   chapter_title: 進階機器學習演算法
   section_title: 整合方法
@@ -254,6 +271,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-ensemble-methods
+  usage: both
 - id: 6118
   chapter_title: 進階機器學習演算法
   section_title: 進階非監督式學習
@@ -269,6 +287,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-adv-unsupervised
+  usage: both
 - id: 6119
   chapter_title: 進階機器學習演算法
   section_title: 整合方法
@@ -284,6 +303,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-ensemble-methods
+  usage: both
 - id: 6120
   chapter_title: 進階機器學習演算法
   section_title: 進階非監督式學習
@@ -299,6 +319,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-adv-unsupervised
+  usage: both
 - id: 6121
   chapter_title: 進階機器學習演算法
   section_title: 整合方法
@@ -314,6 +335,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-ensemble-methods
+  usage: both
 - id: 6122
   chapter_title: 進階機器學習演算法
   section_title: 進階非監督式學習
@@ -329,6 +351,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-adv-unsupervised
+  usage: both
 - id: 6123
   chapter_title: 進階機器學習演算法
   section_title: 整合方法
@@ -344,6 +367,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-ensemble-methods
+  usage: both
 - id: 6124
   chapter_title: 進階機器學習演算法
   section_title: 進階非監督式學習
@@ -359,6 +383,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-adv-unsupervised
+  usage: both
 - id: 6125
   chapter_title: 進階機器學習演算法
   section_title: 整合方法
@@ -374,6 +399,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-ensemble-methods
+  usage: both
 - id: 6126
   chapter_title: 進階機器學習演算法
   section_title: 整合方法
@@ -389,6 +415,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-ensemble-methods
+  usage: both
 - id: 6127
   chapter_title: 進階機器學習演算法
   section_title: 進階非監督式學習
@@ -404,6 +431,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-adv-unsupervised
+  usage: both
 - id: 6128
   chapter_title: 進階機器學習演算法
   section_title: 整合方法
@@ -419,6 +447,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-ensemble-methods
+  usage: both
 - id: 6129
   chapter_title: 進階機器學習演算法
   section_title: 進階非監督式學習
@@ -434,6 +463,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-adv-unsupervised
+  usage: both
 - id: 6130
   chapter_title: 進階機器學習演算法
   section_title: 整合方法
@@ -449,6 +479,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-ensemble-methods
+  usage: both
 - id: 6131
   chapter_title: 進階機器學習演算法
   section_title: 進階非監督式學習
@@ -464,6 +495,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-adv-unsupervised
+  usage: both
 - id: 6132
   chapter_title: 進階機器學習演算法
   section_title: 整合方法
@@ -479,6 +511,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-ensemble-methods
+  usage: both
 - id: 6133
   chapter_title: 進階機器學習演算法
   section_title: 進階非監督式學習
@@ -494,6 +527,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-adv-unsupervised
+  usage: both
 - id: 6134
   chapter_title: 進階機器學習演算法
   section_title: 整合方法
@@ -509,6 +543,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-ensemble-methods
+  usage: both
 - id: 6135
   chapter_title: 進階機器學習演算法
   section_title: 進階非監督式學習
@@ -524,6 +559,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-adv-unsupervised
+  usage: both
 - id: 6136
   chapter_title: 進階機器學習演算法
   section_title: 整合方法
@@ -539,6 +575,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-ensemble-methods
+  usage: both
 - id: 6137
   chapter_title: 進階機器學習演算法
   section_title: 進階非監督式學習
@@ -554,6 +591,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-adv-unsupervised
+  usage: both
 - id: 6138
   chapter_title: 進階機器學習演算法
   section_title: 整合方法
@@ -569,6 +607,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-ensemble-methods
+  usage: both
 - id: 6139
   chapter_title: 進階機器學習演算法
   section_title: 進階非監督式學習
@@ -584,6 +623,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-adv-unsupervised
+  usage: both
 - id: 6140
   chapter_title: 進階機器學習演算法
   section_title: 整合方法
@@ -599,6 +639,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-ensemble-methods
+  usage: both
 - id: 6141
   chapter_title: 進階機器學習演算法
   section_title: 深度思考情境題
@@ -614,6 +655,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-scenario
+  usage: mock
 - id: 6142
   chapter_title: 進階機器學習演算法
   section_title: 深度思考情境題
@@ -629,6 +671,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-scenario
+  usage: mock
 - id: 6143
   chapter_title: 進階機器學習演算法
   section_title: 深度思考情境題
@@ -644,6 +687,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-scenario
+  usage: mock
 - id: 6144
   chapter_title: 進階機器學習演算法
   section_title: 深度思考情境題
@@ -659,6 +703,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-scenario
+  usage: mock
 - id: 6145
   chapter_title: 進階機器學習演算法
   section_title: 深度思考情境題
@@ -670,7 +715,329 @@ questions:
   - Linear Regression。
   - K-Means。
   correct_index: 1
-  explanation: CatBoost 對類別特徵的處理非常強大且自動化，無需繁瑣的特徵工程（如 Target Encoding），非常適合這種場景作為強大的 Baseline。
+  explanation: CatBoost 對類別特徵的處理非常強大且自動化，無需繁瑣的特徵工程（如 Target Encoding），非常適合這種場景作為強大的
+    Baseline。
   tags:
   - chap-m4-ch1
   - sec-scenario
+  usage: mock
+- chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: 情境：隨機森林 (Random Forest) 透過什麼機制來減少過擬合 (Overfitting)？
+  type: multiple_choice
+  options:
+  - 增加樹的深度
+  - Bagging (Bootstrap Aggregating) 與特徵隨機採樣
+  - 減少樹的數量
+  - 使用所有特徵
+  correct_index: 1
+  explanation: 透過平均多棵差異化決策樹的預測結果，降低了模型的變異數 (Variance)。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+  id: 6146
+  usage: both
+- chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: 情境：XGBoost 相比於傳統 GBDT 的一個主要改進是？
+  type: multiple_choice
+  options:
+  - 只能處理迴歸問題
+  - 引入了正則化項 (Regularization) 並支援並行處理
+  - 不支援缺失值
+  - 速度更慢
+  correct_index: 1
+  explanation: 正則化項有效控制了模型複雜度，防止過擬合。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+  id: 6147
+  usage: both
+- chapter_title: 進階機器學習演算法
+  section_title: 進階非監督式學習
+  text: 情境：在關聯規則中，提升度 (Lift) > 1 代表？
+  type: multiple_choice
+  options:
+  - 兩個商品無關
+  - 兩個商品呈正相關 (買 A 會增加買 B 的機率)
+  - 兩個商品呈負相關
+  - 計算錯誤
+  correct_index: 1
+  explanation: Lift 衡量了 X 的出現對 Y 出現機率的提升程度。
+  tags:
+  - chap-m4-ch1
+  - sec-adv-unsupervised
+  id: 6148
+  usage: both
+- chapter_title: 進階機器學習演算法
+  section_title: 進階非監督式學習
+  text: 情境：孤立森林 (Isolation Forest) 檢測異常點的核心思想是？
+  type: multiple_choice
+  options:
+  - 異常點很難被隔離
+  - 異常點更容易被隨機分割隔離 (路徑較短)
+  - 異常點密度很高
+  - 異常點距離中心很近
+  correct_index: 1
+  explanation: 異常點通常「少而不同」，在隨機樹中會更快被切分到葉節點。
+  tags:
+  - chap-m4-ch1
+  - sec-adv-unsupervised
+  id: 6149
+  usage: both
+- chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: 情境：LightGBM 為了提升訓練速度，採用了什麼策略？
+  type: multiple_choice
+  options:
+  - Level-wise 生長
+  - Leaf-wise 生長與基於直方圖的演算法
+  - 隨機採樣
+  - 增加樹的數量
+  correct_index: 1
+  explanation: Leaf-wise 策略能更有效地降低損失，直方圖演算法則減少了記憶體消耗與計算量。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+  id: 6150
+  usage: both
+- chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: 情境：Stacking (堆疊法) 的核心架構是？
+  type: multiple_choice
+  options:
+  - 單一模型
+  - 多個基學習器並行預測
+  - 使用元學習器 (Meta-learner) 組合多個基學習器的預測結果
+  - 隨機猜測
+  correct_index: 2
+  explanation: Stacking 學習如何最佳地結合不同模型的優勢。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+  id: 6151
+  usage: both
+- chapter_title: 進階機器學習演算法
+  section_title: 進階非監督式學習
+  text: 情境：FP-Growth 演算法相比於 Apriori 的優勢在於？
+  type: multiple_choice
+  options:
+  - 只需掃描資料庫兩次，效率更高
+  - 更準確
+  - 支援更多數據類型
+  - 演算法更簡單
+  correct_index: 0
+  explanation: Apriori 需要多次掃描資料庫來生成候選集，FP-Growth 則透過構建 FP 樹解決此瓶頸。
+  tags:
+  - chap-m4-ch1
+  - sec-adv-unsupervised
+  id: 6152
+  usage: both
+- chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: 情境：CatBoost 特別擅長處理哪種類型的特徵？
+  type: multiple_choice
+  options:
+  - 影像特徵
+  - 類別特徵 (Categorical Features)
+  - 文字特徵
+  - 時間特徵
+  correct_index: 1
+  explanation: CatBoost 內建了處理類別特徵的機制，無需預先進行 One-hot Encoding。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+  id: 6153
+  usage: both
+- chapter_title: 進階機器學習演算法
+  section_title: 進階非監督式學習
+  text: 情境：One-Class SVM 適合用於？
+  type: multiple_choice
+  options:
+  - 多分類問題
+  - 異常檢測 (只有正常數據用於訓練)
+  - 迴歸問題
+  - 分群問題
+  correct_index: 1
+  explanation: 它學習一個包圍正常數據的邊界，邊界外的即視為異常。
+  tags:
+  - chap-m4-ch1
+  - sec-adv-unsupervised
+  id: 6154
+  usage: both
+- chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: 情境：吉尼不純度 (Gini Impurity) 越小，代表？
+  type: multiple_choice
+  options:
+  - 集合越混亂
+  - 集合純度越高 (樣本多屬於同一類)
+  - 集合為空
+  - 集合很大
+  correct_index: 1
+  explanation: 決策樹分裂的目標是降低子節點的不純度。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+  id: 6155
+  usage: both
+- chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: 情境：Boosting 類算法（如 AdaBoost, GBDT）的訓練方式是？
+  type: multiple_choice
+  options:
+  - 並行訓練
+  - 串行訓練 (Sequential)，後一個模型修正前一個模型的錯誤
+  - 隨機訓練
+  - 不訓練
+  correct_index: 1
+  explanation: 這使得 Boosting 能逐步提升模型的準確度，但也較難並行化。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+  id: 6156
+  usage: both
+- chapter_title: 進階機器學習演算法
+  section_title: 進階非監督式學習
+  text: 情境：支持度 (Support) 在關聯規則中表示？
+  type: multiple_choice
+  options:
+  - 規則的可信度
+  - 規則在數據集中出現的頻率
+  - 規則的提升度
+  - 規則的長度
+  correct_index: 1
+  explanation: 過濾掉出現頻率太低的規則。
+  tags:
+  - chap-m4-ch1
+  - sec-adv-unsupervised
+  id: 6157
+  usage: both
+- chapter_title: 進階機器學習演算法
+  section_title: 進階非監督式學習
+  text: 情境：LOF (Local Outlier Factor) 演算法是基於什麼來檢測異常？
+  type: multiple_choice
+  options:
+  - 距離
+  - 密度 (比較點與鄰居的密度)
+  - 角度
+  - 顏色
+  correct_index: 1
+  explanation: LOF 能有效發現局部異常點，即使該點所在的區域整體密度較低。
+  tags:
+  - chap-m4-ch1
+  - sec-adv-unsupervised
+  id: 6158
+  usage: both
+- chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: 情境：隨機森林中，若用於迴歸問題，最終預測結果通常是？
+  type: multiple_choice
+  options:
+  - 所有樹預測結果的平均值
+  - 所有樹預測結果的投票 (多數決)
+  - 第一棵樹的結果
+  - 最後一棵樹的結果
+  correct_index: 0
+  explanation: 分類用投票，迴歸用平均。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+  id: 6159
+  usage: both
+- chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: 情境：資訊熵 (Entropy) 用於衡量？
+  type: multiple_choice
+  options:
+  - 系統的混亂程度或不確定性
+  - 系統的溫度
+  - 系統的速度
+  - 系統的大小
+  correct_index: 0
+  explanation: 熵越高，代表資訊越混亂，分類難度越高。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+  id: 6160
+  usage: both
+- chapter_title: 進階機器學習演算法
+  section_title: 進階非監督式學習
+  text: 情境：信賴度 (Confidence) P(Y|X) 表示？
+  type: multiple_choice
+  options:
+  - X 出現的機率
+  - Y 出現的機率
+  - 若 X 出現，則 Y 出現的條件機率
+  - X 與 Y 同時出現的機率
+  correct_index: 2
+  explanation: 衡量規則「若 X 則 Y」的可靠程度。
+  tags:
+  - chap-m4-ch1
+  - sec-adv-unsupervised
+  id: 6161
+  usage: both
+- chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: 情境：Bagging 的全名是？
+  type: multiple_choice
+  options:
+  - Bootstrap Aggregating
+  - Bag Aggregating
+  - Boost Aggregating
+  - Best Aggregating
+  correct_index: 0
+  explanation: Bootstrap 指的是有放回的隨機採樣。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+  id: 6162
+  usage: both
+- chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: 情境：XGBoost 中的「梯度 (Gradient)」指的是？
+  type: multiple_choice
+  options:
+  - 圖片的梯度
+  - 損失函數對模型預測值的負梯度 (殘差的近似)
+  - 學習率
+  - 權重
+  correct_index: 1
+  explanation: 利用梯度下降法來最小化損失函數。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+  id: 6163
+  usage: both
+- chapter_title: 進階機器學習演算法
+  section_title: 進階非監督式學習
+  text: 情境：異常檢測在工業界的一個典型應用是？
+  type: multiple_choice
+  options:
+  - 推薦電影
+  - 設備故障預測 (Predictive Maintenance)
+  - 人臉辨識
+  - 語音合成
+  correct_index: 1
+  explanation: 透過監控感測器數據的異常波動，提前預警設備故障。
+  tags:
+  - chap-m4-ch1
+  - sec-adv-unsupervised
+  id: 6164
+  usage: both
+- chapter_title: 進階機器學習演算法
+  section_title: 整合方法
+  text: 情境：隨機森林的「隨機」體現在哪兩個方面？
+  type: multiple_choice
+  options:
+  - 隨機選擇模型和隨機選擇參數
+  - 隨機採樣數據 (Bootstrap) 和隨機選擇特徵
+  - 隨機選擇時間和地點
+  - 隨機輸出結果
+  correct_index: 1
+  explanation: 這兩個隨機性保證了基學習器的多樣性，從而提升整合效果。
+  tags:
+  - chap-m4-ch1
+  - sec-ensemble-methods
+  id: 6165
+  usage: both

@@ -14,6 +14,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-data-quality
+  usage: quiz
 - id: 5202
   chapter_title: 進階資料處理
   section_title: 資料品質與清理
@@ -29,6 +30,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-data-quality
+  usage: quiz
 - id: 5203
   chapter_title: 進階資料處理
   section_title: 資料轉換與特徵工程
@@ -44,21 +46,27 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-feature-engineering
+  usage: quiz
 - id: 5204
   chapter_title: 進階資料處理
   section_title: 資料轉換與特徵工程
   text: Min-Max Normalization 將數據縮放到哪個區間？
   type: multiple_choice
   options:
-  - [-1, 1]
-  - [0, 1]
-  - [0, 100]
-  - [-∞, +∞]
+  - - -1
+    - 1
+  - - 0
+    - 1
+  - - 0
+    - 100
+  - - -∞
+    - +∞
   correct_index: 1
   explanation: 公式 (X - min) / (max - min) 保證了結果必定落在 0 到 1 之間。
   tags:
   - chap-m3-ch2
   - sec-feature-engineering
+  usage: quiz
 - id: 5205
   chapter_title: 進階資料處理
   section_title: 資料攝取
@@ -74,6 +82,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-data-ingestion
+  usage: quiz
 - id: 5206
   chapter_title: 進階資料處理
   section_title: 資料攝取
@@ -89,6 +98,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-data-ingestion
+  usage: quiz
 - id: 5207
   chapter_title: 進階資料處理
   section_title: ETL 流程與工作流自動化
@@ -104,6 +114,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-etl-workflow
+  usage: quiz
 - id: 5208
   chapter_title: 進階資料處理
   section_title: 資料治理與安全
@@ -119,6 +130,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-data-governance
+  usage: quiz
 - id: 5209
   chapter_title: 進階資料處理
   section_title: 資料治理與安全
@@ -134,6 +146,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-data-governance
+  usage: quiz
 - id: 5210
   chapter_title: 進階資料處理
   section_title: 大數據在人工智慧之應用
@@ -149,6 +162,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-bigdata-ai-apps
+  usage: quiz
 - id: 5211
   chapter_title: 進階資料處理
   section_title: 資料品質與清理
@@ -164,6 +178,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-data-quality
+  usage: both
 - id: 5212
   chapter_title: 進階資料處理
   section_title: 資料轉換與特徵工程
@@ -179,6 +194,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-feature-engineering
+  usage: both
 - id: 5213
   chapter_title: 進階資料處理
   section_title: 資料攝取
@@ -194,6 +210,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-data-ingestion
+  usage: both
 - id: 5214
   chapter_title: 進階資料處理
   section_title: ETL 流程與工作流自動化
@@ -205,10 +222,12 @@ questions:
   - 速度較慢
   - 只能處理小數據
   correct_index: 1
-  explanation: 先把數據 Load 進 BigQuery/Snowflake，再用 SQL 進行 Transform，比在外部 ETL Server 處理更高效且靈活。
+  explanation: 先把數據 Load 進 BigQuery/Snowflake，再用 SQL 進行 Transform，比在外部 ETL Server
+    處理更高效且靈活。
   tags:
   - chap-m3-ch2
   - sec-etl-workflow
+  usage: both
 - id: 5215
   chapter_title: 進階資料處理
   section_title: 資料治理與安全
@@ -224,6 +243,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-data-governance
+  usage: both
 - id: 5216
   chapter_title: 進階資料處理
   section_title: 大數據在人工智慧之應用
@@ -239,6 +259,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-bigdata-ai-apps
+  usage: both
 - id: 5217
   chapter_title: 進階資料處理
   section_title: 資料轉換與特徵工程
@@ -254,6 +275,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-feature-engineering
+  usage: both
 - id: 5218
   chapter_title: 進階資料處理
   section_title: 資料攝取
@@ -269,6 +291,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-data-ingestion
+  usage: both
 - id: 5219
   chapter_title: 進階資料處理
   section_title: 資料治理與安全
@@ -284,6 +307,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-data-governance
+  usage: both
 - id: 5220
   chapter_title: 進階資料處理
   section_title: 大數據在人工智慧之應用
@@ -299,6 +323,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-bigdata-ai-apps
+  usage: both
 - id: 5221
   chapter_title: 進階資料處理
   section_title: 資料品質與清理
@@ -314,6 +339,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-data-quality
+  usage: both
 - id: 5222
   chapter_title: 進階資料處理
   section_title: 資料轉換與特徵工程
@@ -329,6 +355,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-feature-engineering
+  usage: both
 - id: 5223
   chapter_title: 進階資料處理
   section_title: 資料攝取
@@ -344,6 +371,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-data-ingestion
+  usage: both
 - id: 5224
   chapter_title: 進階資料處理
   section_title: ETL 流程與工作流自動化
@@ -359,6 +387,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-etl-workflow
+  usage: both
 - id: 5225
   chapter_title: 進階資料處理
   section_title: 大數據在人工智慧之應用
@@ -374,6 +403,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-bigdata-ai-apps
+  usage: both
 - id: 5226
   chapter_title: 進階資料處理
   section_title: 資料轉換與特徵工程
@@ -389,6 +419,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-feature-engineering
+  usage: both
 - id: 5227
   chapter_title: 進階資料處理
   section_title: 資料攝取
@@ -404,6 +435,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-data-ingestion
+  usage: both
 - id: 5228
   chapter_title: 進階資料處理
   section_title: 資料治理與安全
@@ -419,6 +451,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-data-governance
+  usage: both
 - id: 5229
   chapter_title: 進階資料處理
   section_title: 大數據在人工智慧之應用
@@ -434,6 +467,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-bigdata-ai-apps
+  usage: both
 - id: 5230
   chapter_title: 進階資料處理
   section_title: 資料品質與清理
@@ -449,6 +483,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-data-quality
+  usage: both
 - id: 5231
   chapter_title: 進階資料處理
   section_title: 資料轉換與特徵工程
@@ -464,6 +499,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-feature-engineering
+  usage: both
 - id: 5232
   chapter_title: 進階資料處理
   section_title: ETL 流程與工作流自動化
@@ -479,6 +515,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-etl-workflow
+  usage: both
 - id: 5233
   chapter_title: 進階資料處理
   section_title: 大數據在人工智慧之應用
@@ -494,6 +531,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-bigdata-ai-apps
+  usage: both
 - id: 5234
   chapter_title: 進階資料處理
   section_title: 資料轉換與特徵工程
@@ -509,6 +547,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-feature-engineering
+  usage: both
 - id: 5235
   chapter_title: 進階資料處理
   section_title: 大數據在人工智慧之應用
@@ -524,6 +563,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-bigdata-ai-apps
+  usage: both
 - id: 5236
   chapter_title: 進階資料處理
   section_title: 資料治理與安全
@@ -539,6 +579,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-data-governance
+  usage: both
 - id: 5237
   chapter_title: 進階資料處理
   section_title: 資料轉換與特徵工程
@@ -554,6 +595,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-feature-engineering
+  usage: both
 - id: 5238
   chapter_title: 進階資料處理
   section_title: 資料攝取
@@ -569,6 +611,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-data-ingestion
+  usage: both
 - id: 5239
   chapter_title: 進階資料處理
   section_title: 大數據在人工智慧之應用
@@ -584,6 +627,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-bigdata-ai-apps
+  usage: both
 - id: 5240
   chapter_title: 進階資料處理
   section_title: 資料品質與清理
@@ -599,6 +643,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-data-quality
+  usage: both
 - id: 5241
   chapter_title: 進階資料處理
   section_title: 深度思考情境題
@@ -614,6 +659,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-scenario
+  usage: mock
 - id: 5242
   chapter_title: 進階資料處理
   section_title: 深度思考情境題
@@ -629,6 +675,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-scenario
+  usage: mock
 - id: 5243
   chapter_title: 進階資料處理
   section_title: 深度思考情境題
@@ -644,6 +691,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-scenario
+  usage: mock
 - id: 5244
   chapter_title: 進階資料處理
   section_title: 深度思考情境題
@@ -659,6 +707,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-scenario
+  usage: mock
 - id: 5245
   chapter_title: 進階資料處理
   section_title: 深度思考情境題
@@ -674,3 +723,324 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-scenario
+  usage: mock
+- chapter_title: 進階資料處理
+  section_title: 資料攝取
+  text: 情境：Kafka 在大數據架構中扮演什麼角色？
+  type: multiple_choice
+  options:
+  - 長期儲存
+  - 分散式訊息緩衝區 (Message Queue)，解耦生產者與消費者
+  - 計算引擎
+  - 視覺化工具
+  correct_index: 1
+  explanation: Kafka 能高吞吐地接收數據流，讓下游系統依自己的速度消費，避免系統崩潰。
+  tags:
+  - chap-m3-ch2
+  - sec-data-ingestion
+  id: 5246
+  usage: both
+- chapter_title: 進階資料處理
+  section_title: ETL 流程與工作流自動化
+  text: 情境：ELT (Extract, Load, Transform) 相比於 ETL 的優勢是？
+  type: multiple_choice
+  options:
+  - 更省空間
+  - 利用雲端資料倉儲的強大算力進行轉換，且保留原始數據
+  - 更安全
+  - 更慢
+  correct_index: 1
+  explanation: ELT 先將數據原樣載入，需要時再轉換，靈活性更高。
+  tags:
+  - chap-m3-ch2
+  - sec-etl-workflow
+  id: 5247
+  usage: both
+- chapter_title: 進階資料處理
+  section_title: 資料品質與清理
+  text: 情境：資料品質維度中的「完整性 (Completeness)」是指？
+  type: multiple_choice
+  options:
+  - 數據是否準確
+  - 數據是否有缺失值
+  - 數據是否即時
+  - 數據是否重複
+  correct_index: 1
+  explanation: 檢查必填欄位是否都有值。
+  tags:
+  - chap-m3-ch2
+  - sec-data-quality
+  id: 5248
+  usage: both
+- chapter_title: 進階資料處理
+  section_title: 資料轉換與特徵工程
+  text: 情境：SMOTE 技術主要用於解決什麼問題？
+  type: multiple_choice
+  options:
+  - 缺失值
+  - 類別不平衡 (Imbalanced Data)
+  - 特徵過多
+  - 數據過大
+  correct_index: 1
+  explanation: SMOTE 透過合成少數類別的新樣本來平衡數據集。
+  tags:
+  - chap-m3-ch2
+  - sec-feature-engineering
+  id: 5249
+  usage: both
+- chapter_title: 進階資料處理
+  section_title: ETL 流程與工作流自動化
+  text: 情境：Apache Airflow 使用什麼來定義工作流？
+  type: multiple_choice
+  options:
+  - Excel 表格
+  - DAG (有向無環圖) Python 程式碼
+  - SQL 語句
+  - Word 文件
+  correct_index: 1
+  explanation: DAG 明確定義了任務間的依賴關係與執行順序。
+  tags:
+  - chap-m3-ch2
+  - sec-etl-workflow
+  id: 5250
+  usage: both
+- chapter_title: 進階資料處理
+  section_title: 資料治理與安全
+  text: 情境：零信任架構 (Zero Trust) 的核心原則是？
+  type: multiple_choice
+  options:
+  - 信任內部網路
+  - 從不信任，總是驗證 (Never Trust, Always Verify)
+  - 信任所有用戶
+  - 不設密碼
+  correct_index: 1
+  explanation: 不再區分內外網，所有存取請求都必須經過嚴格驗證。
+  tags:
+  - chap-m3-ch2
+  - sec-data-governance
+  id: 5251
+  usage: both
+- chapter_title: 進階資料處理
+  section_title: 資料轉換與特徵工程
+  text: 情境：One-hot Encoding 適合處理哪種資料？
+  type: multiple_choice
+  options:
+  - 數值資料
+  - 無序類別資料 (Nominal)
+  - 有序類別資料 (Ordinal)
+  - 時間資料
+  correct_index: 1
+  explanation: One-hot 避免了將無序類別編碼為數字時引入錯誤的順序關係。
+  tags:
+  - chap-m3-ch2
+  - sec-feature-engineering
+  id: 5252
+  usage: both
+- chapter_title: 進階資料處理
+  section_title: 資料攝取
+  text: 情境：串流處理中的「滑動視窗 (Sliding Window)」特點是？
+  type: multiple_choice
+  options:
+  - 視窗不重疊
+  - 視窗大小固定且可重疊
+  - 視窗大小不固定
+  - 不使用視窗
+  correct_index: 1
+  explanation: 滑動視窗允許數據被重複計算，提供更平滑的趨勢分析。
+  tags:
+  - chap-m3-ch2
+  - sec-data-ingestion
+  id: 5253
+  usage: both
+- chapter_title: 進階資料處理
+  section_title: 資料治理與安全
+  text: 情境：資料血緣 (Data Lineage) 的作用是？
+  type: multiple_choice
+  options:
+  - 加密數據
+  - 追蹤數據從源頭到終點的流向與變換過程
+  - 壓縮數據
+  - 刪除數據
+  correct_index: 1
+  explanation: 有助於問題排查、影響分析與合規審計。
+  tags:
+  - chap-m3-ch2
+  - sec-data-governance
+  id: 5254
+  usage: both
+- chapter_title: 進階資料處理
+  section_title: 資料轉換與特徵工程
+  text: 情境：Z-score Standardization 將數據轉換為？
+  type: multiple_choice
+  options:
+  - 0 到 1 之間
+  - 平均值為 0，標準差為 1
+  - 正整數
+  - 百分比
+  correct_index: 1
+  explanation: 標準化消除了不同特徵單位的影響，且保留了分佈形狀。
+  tags:
+  - chap-m3-ch2
+  - sec-feature-engineering
+  id: 5255
+  usage: both
+- chapter_title: 進階資料處理
+  section_title: 資料品質與清理
+  text: 情境：箱型圖 (Box Plot) 常用於識別？
+  type: multiple_choice
+  options:
+  - 缺失值
+  - 異常值 (Outliers)
+  - 重複值
+  - 錯誤格式
+  correct_index: 1
+  explanation: 超過上下四分位距 1.5 倍的點通常被視為異常值。
+  tags:
+  - chap-m3-ch2
+  - sec-data-quality
+  id: 5256
+  usage: both
+- chapter_title: 進階資料處理
+  section_title: 資料治理與安全
+  text: 情境：RBAC (Role-Based Access Control) 是基於什麼來分配權限？
+  type: multiple_choice
+  options:
+  - 用戶的屬性
+  - 用戶的角色 (如管理員、分析師)
+  - 用戶的心情
+  - 隨機分配
+  correct_index: 1
+  explanation: RBAC 簡化了權限管理，只需對角色授權。
+  tags:
+  - chap-m3-ch2
+  - sec-data-governance
+  id: 5257
+  usage: both
+- chapter_title: 進階資料處理
+  section_title: 資料轉換與特徵工程
+  text: 情境：特徵選擇中的 Wrapper 方法（如 RFE）通常比 Filter 方法？
+  type: multiple_choice
+  options:
+  - 快
+  - 慢且計算成本高，但效果較好
+  - 不準確
+  - 簡單
+  correct_index: 1
+  explanation: Wrapper 需反覆訓練模型，計算量大。
+  tags:
+  - chap-m3-ch2
+  - sec-feature-engineering
+  id: 5258
+  usage: both
+- chapter_title: 進階資料處理
+  section_title: 資料攝取
+  text: 情境：Sqoop 主要用於？
+  type: multiple_choice
+  options:
+  - 串流處理
+  - 在 Hadoop 與關聯式資料庫之間傳輸數據
+  - 機器學習
+  - 繪圖
+  correct_index: 1
+  explanation: Sqoop 是連結大數據平台與傳統資料庫的橋樑。
+  tags:
+  - chap-m3-ch2
+  - sec-data-ingestion
+  id: 5259
+  usage: both
+- chapter_title: 進階資料處理
+  section_title: 資料品質與清理
+  text: 情境：資料的一致性 (Consistency) 是指？
+  type: multiple_choice
+  options:
+  - 數據沒有缺失
+  - 數據在不同系統或表格中不矛盾
+  - 數據很準確
+  - 數據很多
+  correct_index: 1
+  explanation: 例如同一客戶在 CRM 與 ERP 中的地址應相同。
+  tags:
+  - chap-m3-ch2
+  - sec-data-quality
+  id: 5260
+  usage: both
+- chapter_title: 進階資料處理
+  section_title: ETL 流程與工作流自動化
+  text: 情境：Airflow 的 Scheduler 負責？
+  type: multiple_choice
+  options:
+  - 執行任務
+  - 監控 DAG 並觸發任務實例
+  - 顯示 UI
+  - 儲存數據
+  correct_index: 1
+  explanation: Scheduler 是 Airflow 的心臟，決定何時執行何任務。
+  tags:
+  - chap-m3-ch2
+  - sec-etl-workflow
+  id: 5261
+  usage: both
+- chapter_title: 進階資料處理
+  section_title: 資料轉換與特徵工程
+  text: 情境：Label Encoding 適合處理？
+  type: multiple_choice
+  options:
+  - 無序類別
+  - 有序類別 (Ordinal) 如 低/中/高
+  - 文本
+  - 影像
+  correct_index: 1
+  explanation: Label Encoding 保留了類別間的順序關係。
+  tags:
+  - chap-m3-ch2
+  - sec-feature-engineering
+  id: 5262
+  usage: both
+- chapter_title: 進階資料處理
+  section_title: 資料治理與安全
+  text: 情境：最小權限原則 (Least Privilege) 意味著？
+  type: multiple_choice
+  options:
+  - 給用戶最大的權限
+  - 只授予完成工作所需的最小權限
+  - 不給任何權限
+  - 隨機給權限
+  correct_index: 1
+  explanation: 這能將安全風險降至最低。
+  tags:
+  - chap-m3-ch2
+  - sec-data-governance
+  id: 5263
+  usage: both
+- chapter_title: 進階資料處理
+  section_title: 資料攝取
+  text: 情境：滾動視窗 (Tumbling Window) 與滑動視窗的區別是？
+  type: multiple_choice
+  options:
+  - 滾動視窗不重疊，滑動視窗可重疊
+  - 滾動視窗可重疊
+  - 沒區別
+  - 滾動視窗是圓的
+  correct_index: 0
+  explanation: 滾動視窗將時間切分為不重疊的區段。
+  tags:
+  - chap-m3-ch2
+  - sec-data-ingestion
+  id: 5264
+  usage: both
+- chapter_title: 進階資料處理
+  section_title: 資料品質與清理
+  text: 情境：資料剖析 (Data Profiling) 的目的是？
+  type: multiple_choice
+  options:
+  - 刪除數據
+  - 自動分析數據特徵以發現品質問題
+  - 加密數據
+  - 備份數據
+  correct_index: 1
+  explanation: 在清理前先了解數據的健康狀況。
+  tags:
+  - chap-m3-ch2
+  - sec-data-quality
+  id: 5265
+  usage: both

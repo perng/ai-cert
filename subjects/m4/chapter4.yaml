@@ -14,6 +14,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-concepts
+  usage: quiz
 - id: 6402
   chapter_title: 強化學習
   section_title: 基本概念
@@ -29,6 +30,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-concepts
+  usage: quiz
 - id: 6403
   chapter_title: 強化學習
   section_title: 貝爾曼方程式
@@ -44,6 +46,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-bellman
+  usage: quiz
 - id: 6404
   chapter_title: 強化學習
   section_title: 演算法
@@ -59,6 +62,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-algorithms
+  usage: quiz
 - id: 6405
   chapter_title: 強化學習
   section_title: 演算法
@@ -74,6 +78,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-algorithms
+  usage: quiz
 - id: 6406
   chapter_title: 強化學習
   section_title: 演算法
@@ -89,6 +94,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-algorithms
+  usage: quiz
 - id: 6407
   chapter_title: 強化學習
   section_title: 應用案例
@@ -104,6 +110,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-applications
+  usage: quiz
 - id: 6408
   chapter_title: 強化學習
   section_title: 基本概念
@@ -119,6 +126,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-concepts
+  usage: quiz
 - id: 6409
   chapter_title: 強化學習
   section_title: 演算法
@@ -134,6 +142,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-algorithms
+  usage: quiz
 - id: 6410
   chapter_title: 強化學習
   section_title: 應用案例
@@ -149,6 +158,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-applications
+  usage: quiz
 - id: 6411
   chapter_title: 強化學習
   section_title: 基本概念
@@ -164,6 +174,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-concepts
+  usage: both
 - id: 6412
   chapter_title: 強化學習
   section_title: 貝爾曼方程式
@@ -179,6 +190,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-bellman
+  usage: both
 - id: 6413
   chapter_title: 強化學習
   section_title: 演算法
@@ -194,6 +206,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-algorithms
+  usage: both
 - id: 6414
   chapter_title: 強化學習
   section_title: 演算法
@@ -209,6 +222,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-algorithms
+  usage: both
 - id: 6415
   chapter_title: 強化學習
   section_title: 應用案例
@@ -224,6 +238,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-applications
+  usage: both
 - id: 6416
   chapter_title: 強化學習
   section_title: 演算法
@@ -239,6 +254,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-algorithms
+  usage: both
 - id: 6417
   chapter_title: 強化學習
   section_title: 基本概念
@@ -254,6 +270,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-concepts
+  usage: both
 - id: 6418
   chapter_title: 強化學習
   section_title: 演算法
@@ -269,6 +286,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-algorithms
+  usage: both
 - id: 6419
   chapter_title: 強化學習
   section_title: 演算法
@@ -284,6 +302,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-algorithms
+  usage: both
 - id: 6420
   chapter_title: 強化學習
   section_title: 基本概念
@@ -299,6 +318,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-concepts
+  usage: both
 - id: 6421
   chapter_title: 強化學習
   section_title: 演算法
@@ -314,6 +334,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-algorithms
+  usage: both
 - id: 6422
   chapter_title: 強化學習
   section_title: 應用案例
@@ -329,6 +350,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-applications
+  usage: both
 - id: 6423
   chapter_title: 強化學習
   section_title: 貝爾曼方程式
@@ -344,6 +366,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-bellman
+  usage: both
 - id: 6424
   chapter_title: 強化學習
   section_title: 演算法
@@ -355,10 +378,12 @@ questions:
   - 兩者皆非
   - 兩者皆是
   correct_index: 1
-  explanation: Q-learning 更新時使用的是 max Q(s', a')（假設下一步做最好的動作），而實際行動可能因為 ε-Greedy 而選了別的。學習的策略與行動的策略不同，故為 Off-policy。
+  explanation: Q-learning 更新時使用的是 max Q(s', a')（假設下一步做最好的動作），而實際行動可能因為 ε-Greedy 而選了別的。學習的策略與行動的策略不同，故為
+    Off-policy。
   tags:
   - chap-m4-ch4
   - sec-rl-algorithms
+  usage: both
 - id: 6425
   chapter_title: 強化學習
   section_title: 演算法
@@ -374,6 +399,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-algorithms
+  usage: both
 - id: 6426
   chapter_title: 強化學習
   section_title: 基本概念
@@ -389,6 +415,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-concepts
+  usage: both
 - id: 6427
   chapter_title: 強化學習
   section_title: 演算法
@@ -404,6 +431,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-algorithms
+  usage: both
 - id: 6428
   chapter_title: 強化學習
   section_title: 貝爾曼方程式
@@ -419,6 +447,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-bellman
+  usage: both
 - id: 6429
   chapter_title: 強化學習
   section_title: 演算法
@@ -434,6 +463,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-algorithms
+  usage: both
 - id: 6430
   chapter_title: 強化學習
   section_title: 基本概念
@@ -449,6 +479,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-concepts
+  usage: both
 - id: 6431
   chapter_title: 強化學習
   section_title: 演算法
@@ -464,6 +495,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-algorithms
+  usage: both
 - id: 6432
   chapter_title: 強化學習
   section_title: 應用案例
@@ -479,6 +511,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-applications
+  usage: both
 - id: 6433
   chapter_title: 強化學習
   section_title: 演算法
@@ -494,6 +527,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-algorithms
+  usage: both
 - id: 6434
   chapter_title: 強化學習
   section_title: 基本概念
@@ -509,6 +543,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-concepts
+  usage: both
 - id: 6435
   chapter_title: 強化學習
   section_title: 演算法
@@ -524,6 +559,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-algorithms
+  usage: both
 - id: 6436
   chapter_title: 強化學習
   section_title: 演算法
@@ -539,6 +575,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-algorithms
+  usage: both
 - id: 6437
   chapter_title: 強化學習
   section_title: 應用案例
@@ -554,6 +591,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-applications
+  usage: both
 - id: 6438
   chapter_title: 強化學習
   section_title: 基本概念
@@ -569,6 +607,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-concepts
+  usage: both
 - id: 6439
   chapter_title: 強化學習
   section_title: 演算法
@@ -584,6 +623,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-rl-algorithms
+  usage: both
 - id: 6440
   chapter_title: 強化學習
   section_title: 貝爾曼方程式
@@ -599,10 +639,12 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-bellman
+  usage: both
 - id: 6441
   chapter_title: 強化學習
   section_title: 深度思考情境題
-  text: 情境：你訓練一個玩迷宮遊戲的 AI，但發現它一直在原地打轉，不肯去終點。檢查發現你設定每走一步扣 0.01 分（為了鼓勵走最短路徑），終點給 10 分。為什麼它會打轉？
+  text: 情境：你訓練一個玩迷宮遊戲的 AI，但發現它一直在原地打轉，不肯去終點。檢查發現你設定每走一步扣 0.01 分（為了鼓勵走最短路徑），終點給 10
+    分。為什麼它會打轉？
   type: multiple_choice
   options:
   - 扣分太少。
@@ -614,6 +656,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-scenario
+  usage: mock
 - id: 6442
   chapter_title: 強化學習
   section_title: 深度思考情境題
@@ -629,6 +672,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-scenario
+  usage: mock
 - id: 6443
   chapter_title: 強化學習
   section_title: 深度思考情境題
@@ -644,6 +688,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-scenario
+  usage: mock
 - id: 6444
   chapter_title: 強化學習
   section_title: 深度思考情境題
@@ -659,6 +704,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-scenario
+  usage: mock
 - id: 6445
   chapter_title: 強化學習
   section_title: 深度思考情境題
@@ -674,3 +720,324 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-scenario
+  usage: mock
+- chapter_title: 強化學習
+  section_title: 基本概念
+  text: 情境：強化學習 (RL) 的目標是最大化？
+  type: multiple_choice
+  options:
+  - 單次獎勵
+  - 累積獎勵 (Cumulative Reward)
+  - 損失函數
+  - 訓練時間
+  correct_index: 1
+  explanation: 代理關注的是長期的總回報，而非眼前的蠅頭小利。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-concepts
+  id: 6446
+  usage: both
+- chapter_title: 強化學習
+  section_title: 基本概念
+  text: 情境：探索 (Exploration) 與利用 (Exploitation) 的權衡是指？
+  type: multiple_choice
+  options:
+  - 要不要訓練模型
+  - 嘗試新行動以發現更好路徑 vs 堅持已知最佳行動以獲取獎勵
+  - 使用 CPU vs GPU
+  - 監督學習 vs 非監督學習
+  correct_index: 1
+  explanation: 這是 RL 中最核心的兩難問題。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-concepts
+  id: 6447
+  usage: both
+- chapter_title: 強化學習
+  section_title: 演算法
+  text: 情境：Q-learning 學習的是？
+  type: multiple_choice
+  options:
+  - 策略函數
+  - Q 表 (Q-table)，記錄狀態-行動對的價值
+  - 環境模型
+  - 獎勵函數
+  correct_index: 1
+  explanation: Q 值代表在某狀態下採取某行動的預期回報。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-algorithms
+  id: 6448
+  usage: both
+- chapter_title: 強化學習
+  section_title: 演算法
+  text: 情境：DQN (Deep Q-Network) 使用經驗重播 (Experience Replay) 的目的是？
+  type: multiple_choice
+  options:
+  - 節省記憶體
+  - 打破數據相關性，穩定訓練
+  - 加速採樣
+  - 增加獎勵
+  correct_index: 1
+  explanation: 隨機採樣過去的經驗，避免連續樣本間的高度相關性導致模型發散。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-algorithms
+  id: 6449
+  usage: both
+- chapter_title: 強化學習
+  section_title: 基本概念
+  text: 情境：策略 (Policy) 定義了？
+  type: multiple_choice
+  options:
+  - 環境的規則
+  - 代理在給定狀態下如何選擇行動
+  - 獎勵的計算方式
+  - 狀態的轉移機率
+  correct_index: 1
+  explanation: 策略是代理的行為準則。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-concepts
+  id: 6450
+  usage: both
+- chapter_title: 強化學習
+  section_title: 演算法
+  text: 情境：AlphaGo 結合了深度強化學習與什麼技術？
+  type: multiple_choice
+  options:
+  - 遺傳演算法
+  - 蒙地卡羅樹搜尋 (MCTS)
+  - 支持向量機
+  - 線性迴歸
+  correct_index: 1
+  explanation: MCTS 用於向前規劃，評估不同落子的勝率。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-applications
+  id: 6451
+  usage: both
+- chapter_title: 強化學習
+  section_title: 基本概念
+  text: 情境：折扣因子 (Discount Factor) Gamma 的作用是？
+  type: multiple_choice
+  options:
+  - 打折商品
+  - 平衡當前獎勵與未來獎勵的重要性
+  - 消除獎勵
+  - 增加懲罰
+  correct_index: 1
+  explanation: Gamma 越小，代理越短視；Gamma 越大，代理越重視長期回報。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-concepts
+  id: 6452
+  usage: both
+- chapter_title: 強化學習
+  section_title: 演算法
+  text: 情境：策略梯度 (Policy Gradients) 方法直接優化？
+  type: multiple_choice
+  options:
+  - 價值函數
+  - 策略函數
+  - 環境模型
+  - Q 表
+  correct_index: 1
+  explanation: 這使得它能處理連續動作空間。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-algorithms
+  id: 6453
+  usage: both
+- chapter_title: 強化學習
+  section_title: 演算法
+  text: 情境：DQN 解決了 Q-learning 的什麼限制？
+  type: multiple_choice
+  options:
+  - 無法處理負獎勵
+  - 狀態空間過大無法建立 Q 表 (如圖像輸入)
+  - 計算太慢
+  - 只能處理離散動作
+  correct_index: 1
+  explanation: 用神經網路近似 Q 函數，實現了從感知到行動的端到端學習。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-algorithms
+  id: 6454
+  usage: both
+- chapter_title: 強化學習
+  section_title: 基本概念
+  text: 情境：Epsilon-Greedy 策略中的 Epsilon 代表？
+  type: multiple_choice
+  options:
+  - 學習率
+  - 隨機探索 (Exploration) 的機率
+  - 獎勵值
+  - 折扣因子
+  correct_index: 1
+  explanation: 以 Epsilon 機率隨機亂走，以 1-Epsilon 機率走最佳路徑。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-concepts
+  id: 6455
+  usage: both
+- chapter_title: 強化學習
+  section_title: 應用案例
+  text: 情境：Sim2Real 技術主要用於？
+  type: multiple_choice
+  options:
+  - 遊戲 AI
+  - 機器人控制 (將模擬環境訓練的策略遷移到真實世界)
+  - 推薦系統
+  - 股票預測
+  correct_index: 1
+  explanation: 解決真實世界訓練成本高且危險的問題。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-applications
+  id: 6456
+  usage: both
+- chapter_title: 強化學習
+  section_title: 演算法
+  text: 情境：PPO (Proximal Policy Optimization) 的主要特點是？
+  type: multiple_choice
+  options:
+  - 訓練最快
+  - 限制策略更新幅度，保證訓練穩定性
+  - 不需要獎勵
+  - 只能用於離散動作
+  correct_index: 1
+  explanation: 避免了一次更新過大導致策略崩潰，是目前最常用的 RL 演算法之一。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-algorithms
+  id: 6457
+  usage: both
+- chapter_title: 強化學習
+  section_title: 貝爾曼方程式
+  text: 情境：貝爾曼方程式描述了？
+  type: multiple_choice
+  options:
+  - 物理運動規律
+  - 當前狀態價值與未來狀態價值之間的遞迴關係
+  - 神經網路結構
+  - 誤差反向傳播
+  correct_index: 1
+  explanation: 是動態規劃與強化學習的理論基石。
+  tags:
+  - chap-m4-ch4
+  - sec-bellman
+  id: 6458
+  usage: both
+- chapter_title: 強化學習
+  section_title: 基本概念
+  text: 情境：環境 (Environment) 對代理的行動會給予什麼反饋？
+  type: multiple_choice
+  options:
+  - 新的狀態與獎勵
+  - 懲罰
+  - 什麼都不給
+  - 新的代理
+  correct_index: 0
+  explanation: 這是 RL 迴圈的基礎：Action -> State', Reward。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-concepts
+  id: 6459
+  usage: both
+- chapter_title: 強化學習
+  section_title: 演算法
+  text: 情境：DQN 中的固定目標網路 (Fixed Target Network) 用於？
+  type: multiple_choice
+  options:
+  - 增加計算量
+  - 穩定目標 Q 值的計算，避免訓練震盪
+  - 探索環境
+  - 儲存經驗
+  correct_index: 1
+  explanation: 避免「追逐移動的目標」。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-algorithms
+  id: 6460
+  usage: both
+- chapter_title: 強化學習
+  section_title: 基本概念
+  text: 情境：價值函數 V(s) 代表？
+  type: multiple_choice
+  options:
+  - 狀態 s 的即時獎勵
+  - 從狀態 s 開始的預期累積獎勵
+  - 狀態 s 的機率
+  - 狀態 s 的特徵
+  correct_index: 1
+  explanation: 衡量處於某個狀態的「好壞」程度。
+  tags:
+  - chap-m4-ch4
+  - sec-bellman
+  id: 6461
+  usage: both
+- chapter_title: 強化學習
+  section_title: 應用案例
+  text: 情境：在推薦系統中，強化學習的「行動」通常是？
+  type: multiple_choice
+  options:
+  - 用戶點擊
+  - 推薦一系列商品給用戶
+  - 計算損失
+  - 更新模型
+  correct_index: 1
+  explanation: 代理（推薦引擎）選擇展示什麼內容。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-applications
+  id: 6462
+  usage: both
+- chapter_title: 強化學習
+  section_title: 演算法
+  text: 情境：Q-learning 屬於哪種學習方法？
+  type: multiple_choice
+  options:
+  - On-policy
+  - Off-policy
+  - Supervised
+  - Unsupervised
+  correct_index: 1
+  explanation: 它可以學習與當前行為策略不同的最佳策略。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-algorithms
+  id: 6463
+  usage: both
+- chapter_title: 強化學習
+  section_title: 基本概念
+  text: 情境：馬可夫決策過程 (MDP) 是強化學習的？
+  type: multiple_choice
+  options:
+  - 數學模型
+  - 程式語言
+  - 硬體架構
+  - 資料庫
+  correct_index: 0
+  explanation: RL 問題通常被建模為 MDP。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-concepts
+  id: 6464
+  usage: both
+- chapter_title: 強化學習
+  section_title: 演算法
+  text: 情境：OpenAI Gym 是一個？
+  type: multiple_choice
+  options:
+  - 健身房
+  - 強化學習演算法的測試與比較平台 (提供標準環境)
+  - 神經網路框架
+  - 雲端服務
+  correct_index: 1
+  explanation: 提供了 CartPole, Atari 等標準環境供開發者測試演算法。
+  tags:
+  - chap-m4-ch4
+  - sec-rl-applications
+  id: 6465
+  usage: both

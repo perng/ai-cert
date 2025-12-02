@@ -14,6 +14,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-data-split
+  usage: quiz
 - id: 9002
   chapter_title: 模型評估與效能優化
   section_title: 評估流程與指標
@@ -29,6 +30,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-data-split
+  usage: quiz
 - id: 9003
   chapter_title: 模型評估與效能優化
   section_title: 評估流程與指標
@@ -44,6 +46,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-cross-validation
+  usage: quiz
 - id: 9004
   chapter_title: 模型評估與效能優化
   section_title: 評估流程與指標
@@ -59,6 +62,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-classification-metrics
+  usage: quiz
 - id: 9005
   chapter_title: 模型評估與效能優化
   section_title: 評估流程與指標
@@ -74,6 +78,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-classification-metrics
+  usage: quiz
 - id: 9006
   chapter_title: 模型評估與效能優化
   section_title: 評估流程與指標
@@ -89,6 +94,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-classification-metrics
+  usage: quiz
 - id: 9007
   chapter_title: 模型評估與效能優化
   section_title: 評估流程與指標
@@ -104,6 +110,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-classification-metrics
+  usage: quiz
 - id: 9008
   chapter_title: 模型評估與效能優化
   section_title: 評估流程與指標
@@ -119,6 +126,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-classification-metrics
+  usage: quiz
 - id: 9009
   chapter_title: 模型評估與效能優化
   section_title: 評估流程與指標
@@ -134,6 +142,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-classification-metrics
+  usage: quiz
 - id: 9010
   chapter_title: 模型評估與效能優化
   section_title: 評估流程與指標
@@ -149,6 +158,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-classification-metrics
+  usage: quiz
 - id: 9011
   chapter_title: 模型評估與效能優化
   section_title: 評估流程與指標
@@ -164,6 +174,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-classification-metrics
+  usage: both
 - id: 9012
   chapter_title: 模型評估與效能優化
   section_title: 評估流程與指標
@@ -179,6 +190,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-regression-metrics
+  usage: both
 - id: 9013
   chapter_title: 模型評估與效能優化
   section_title: 評估流程與指標
@@ -194,6 +206,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-regression-metrics
+  usage: both
 - id: 9014
   chapter_title: 模型評估與效能優化
   section_title: 誤差分析與正則化
@@ -209,6 +222,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-bias-variance
+  usage: both
 - id: 9015
   chapter_title: 模型評估與效能優化
   section_title: 誤差分析與正則化
@@ -224,6 +238,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-bias-variance
+  usage: both
 - id: 9016
   chapter_title: 模型評估與效能優化
   section_title: 誤差分析與正則化
@@ -239,6 +254,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-prevent-overfitting
+  usage: both
 - id: 9017
   chapter_title: 模型評估與效能優化
   section_title: 誤差分析與正則化
@@ -254,6 +270,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-prevent-overfitting
+  usage: both
 - id: 9018
   chapter_title: 模型評估與效能優化
   section_title: 誤差分析與正則化
@@ -269,6 +286,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-prevent-overfitting
+  usage: both
 - id: 9019
   chapter_title: 模型評估與效能優化
   section_title: 誤差分析與正則化
@@ -284,6 +302,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-prevent-overfitting
+  usage: both
 - id: 9020
   chapter_title: 模型評估與效能優化
   section_title: 誤差分析與正則化
@@ -299,6 +318,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-prevent-overfitting
+  usage: both
 - id: 9021
   chapter_title: 模型評估與效能優化
   section_title: 評估流程與指標
@@ -314,6 +334,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-data-split
+  usage: both
 - id: 9022
   chapter_title: 模型評估與效能優化
   section_title: 評估流程與指標
@@ -329,6 +350,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-classification-metrics
+  usage: both
 - id: 9023
   chapter_title: 模型評估與效能優化
   section_title: 評估流程與指標
@@ -340,10 +362,12 @@ questions:
   - TP 和 TN
   - FPR (誤報率) 和 TPR (召回率)
   correct_index: 3
-  explanation: ROC 曲線描繪了在不同門檻下，FPR (False Positive Rate) 與 TPR (True Positive Rate) 的權衡關係。
+  explanation: ROC 曲線描繪了在不同門檻下，FPR (False Positive Rate) 與 TPR (True Positive Rate)
+    的權衡關係。
   tags:
   - chap-ai-foundation-chapter9
   - sec-classification-metrics
+  usage: both
 - id: 9024
   chapter_title: 模型評估與效能優化
   section_title: 評估流程與指標
@@ -359,6 +383,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-regression-metrics
+  usage: both
 - id: 9025
   chapter_title: 模型評估與效能優化
   section_title: 誤差分析與正則化
@@ -374,6 +399,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-bias-variance
+  usage: both
 - id: 9026
   chapter_title: 模型評估與效能優化
   section_title: 誤差分析與正則化
@@ -389,6 +415,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-prevent-overfitting
+  usage: both
 - id: 9027
   chapter_title: 模型評估與效能優化
   section_title: 誤差分析與正則化
@@ -404,6 +431,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-prevent-overfitting
+  usage: both
 - id: 9028
   chapter_title: 模型評估與效能優化
   section_title: 評估流程與指標
@@ -419,6 +447,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-bias-variance
+  usage: both
 - id: 9029
   chapter_title: 模型評估與效能優化
   section_title: 評估流程與指標
@@ -434,6 +463,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-regression-metrics
+  usage: both
 - id: 9030
   chapter_title: 模型評估與效能優化
   section_title: 誤差分析與正則化
@@ -449,6 +479,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-bias-variance
+  usage: both
 - id: 9031
   chapter_title: 模型評估與效能優化
   section_title: 評估流程與指標
@@ -464,6 +495,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-classification-metrics
+  usage: both
 - id: 9032
   chapter_title: 模型評估與效能優化
   section_title: 評估流程與指標
@@ -479,6 +511,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-classification-metrics
+  usage: both
 - id: 9033
   chapter_title: 模型評估與效能優化
   section_title: 評估流程與指標
@@ -494,6 +527,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-classification-metrics
+  usage: both
 - id: 9034
   chapter_title: 模型評估與效能優化
   section_title: 誤差分析與正則化
@@ -509,6 +543,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-prevent-overfitting
+  usage: both
 - id: 9035
   chapter_title: 模型評估與效能優化
   section_title: 誤差分析與正則化
@@ -524,6 +559,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-prevent-overfitting
+  usage: both
 - id: 9036
   chapter_title: 模型評估與效能優化
   section_title: 評估流程與指標
@@ -539,6 +575,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-classification-metrics
+  usage: both
 - id: 9037
   chapter_title: 模型評估與效能優化
   section_title: 評估流程與指標
@@ -554,6 +591,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-classification-metrics
+  usage: both
 - id: 9038
   chapter_title: 模型評估與效能優化
   section_title: 誤差分析與正則化
@@ -569,6 +607,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-bias-variance
+  usage: both
 - id: 9039
   chapter_title: 模型評估與效能優化
   section_title: 評估流程與指標
@@ -584,6 +623,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - sec-cross-validation
+  usage: both
 - id: 9040
   chapter_title: 模型評估與效能優化
   section_title: 模型評估與效能優化
@@ -599,6 +639,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter9
   - chap-ai-foundation-chapter9-summary
+  usage: both
 - id: 9051
   chapter_title: 模型評估與優化
   section_title: 評估指標
@@ -614,6 +655,7 @@ questions:
   tags:
   - sec-ai-chapter9
   - sec-evaluation-metrics
+  usage: both
 - id: 9052
   chapter_title: 模型評估與優化
   section_title: 評估指標
@@ -629,6 +671,7 @@ questions:
   tags:
   - sec-ai-chapter9
   - sec-evaluation-metrics
+  usage: both
 - id: 9053
   chapter_title: 模型評估與優化
   section_title: 誤差分析與優化
@@ -644,6 +687,7 @@ questions:
   tags:
   - sec-ai-chapter9
   - sec-error-analysis
+  usage: both
 - id: 9054
   chapter_title: 模型評估與優化
   section_title: 誤差分析與優化
@@ -659,10 +703,12 @@ questions:
   tags:
   - sec-ai-chapter9
   - sec-error-analysis
+  usage: both
 - id: 11439
   chapter_title: 模型評估與優化
   section_title: 評估指標
-  text: 某醫院計畫開發住院日數預測模型，以協助病房調度。多數病人的住院 日數集中在 3–7 天，但仍有少數重症患者因治療需求而住院日數明顯 偏長。醫院希望採用一種合適的評估方式，既能兼顧大部分病人的預測 準確度，也能確保對重症個案的預測維持穩健。下列哪一種方法最符合 此需求？  答案 題    目 (114年第四梯次)
+  text: 某醫院計畫開發住院日數預測模型，以協助病房調度。多數病人的住院 日數集中在 3–7 天，但仍有少數重症患者因治療需求而住院日數明顯 偏長。醫院希望採用一種合適的評估方式，既能兼顧大部分病人的預測
+    準確度，也能確保對重症個案的預測維持穩健。下列哪一種方法最符合 此需求？  答案 題    目 (114年第四梯次)
   type: multiple_choice
   options:
   - 在模型檢核時，同時呈現平均絕對誤差（MAE）與重症子群的誤差指 標
@@ -670,12 +716,13 @@ questions:
   - 將所有病人的住院日數進行標準化處理，以減少數值範圍差異的影 響
   - 只採用單一的整體決定係數 (R²) 作為模型優劣的判斷依據
   correct_index: 0
-  explanation: 此題涉及 評估指標 的核心概念。正確答案為「在模型檢核時，同時呈現平均絕對誤差（MAE）與重症子群的誤差指 標」。 
+  explanation: 此題涉及 評估指標 的核心概念。正確答案為「在模型檢核時，同時呈現平均絕對誤差（MAE）與重症子群的誤差指 標」。
   tags:
   - past-exam
   - 114-4
   - sec-ai-chapter9
   - sec-evaluation-metrics
+  usage: mock
 - id: 11406
   chapter_title: 模型評估與優化
   section_title: 誤差分析與優化
@@ -687,16 +734,19 @@ questions:
   - L1 對大係數懲罰較強，促使稀疏解；  答案 題    目
   - L1 會轉換損失函數為非凸形
   correct_index: 2
-  explanation: L1 正則化 (Lasso) 具有特徵選擇的功能，因為其幾何特性（菱形約束區域）傾向於讓不重要的特徵權重收斂為 0，從而產生稀疏模型。 
+  explanation: L1 正則化 (Lasso) 具有特徵選擇的功能，因為其幾何特性（菱形約束區域）傾向於讓不重要的特徵權重收斂為 0，從而產生稀疏模型。
   tags:
   - past-exam
   - 114-4
   - sec-ai-chapter9
   - sec-error-analysis
+  usage: both
 - id: 11443
   chapter_title: 模型評估與優化
   section_title: 評估指標
-  text: 某公司欲建立員工離職風險預測模型，資料集中包含 「年度績效分數」 、 「平均每月加班時數」 、 「年齡」等數值型特徵。由於各特徵的數值範圍 差異極大（例如績效分數1–5、加班時數0–80、年齡20–65） ，若直 接輸入至使用梯度下降的邏輯迴歸(Logistic Regression)模型，可能 導致模型收斂緩慢或權重偏斜。為提升模型訓練效率與準確度，下列哪 一種特徵工程方法最適合應用於這些數值特徵？ (114年第四梯次)
+  text: 某公司欲建立員工離職風險預測模型，資料集中包含 「年度績效分數」 、 「平均每月加班時數」 、 「年齡」等數值型特徵。由於各特徵的數值範圍 差異極大（例如績效分數1–5、加班時數0–80、年齡20–65）
+    ，若直 接輸入至使用梯度下降的邏輯迴歸(Logistic Regression)模型，可能 導致模型收斂緩慢或權重偏斜。為提升模型訓練效率與準確度，下列哪
+    一種特徵工程方法最適合應用於這些數值特徵？ (114年第四梯次)
   type: multiple_choice
   options:
   - 布林轉換（Boolean Conversion）
@@ -704,12 +754,13 @@ questions:
   - One-hot 編碼（One-hot Encoding）
   - 數值標準化（Numerical Standardization）
   correct_index: 3
-  explanation: 此題涉及 評估指標 的核心概念。正確答案為「數值標準化（Numerical Standardization）」。 
+  explanation: 此題涉及 評估指標 的核心概念。正確答案為「數值標準化（Numerical Standardization）」。
   tags:
   - past-exam
   - 114-4
   - sec-ai-chapter9
   - sec-evaluation-metrics
+  usage: mock
 - id: 11419
   chapter_title: 模型評估與優化
   section_title: 誤差分析與優化
@@ -721,9 +772,330 @@ questions:
   - Hinge 損失（Hinge Loss）
   - KL 散度（Kullback-Leibler Divergence）
   correct_index: 0
-  explanation: 此題涉及 誤差分析與優化 的核心概念。正確答案為「均方誤差（MSE）」。 
+  explanation: 此題涉及 誤差分析與優化 的核心概念。正確答案為「均方誤差（MSE）」。
   tags:
   - past-exam
   - 114-4
   - sec-ai-chapter9
   - sec-error-analysis
+  usage: both
+- chapter_title: 模型評估與效能優化
+  section_title: 評估流程與指標
+  text: 情境：在癌症篩檢中，我們最不希望漏掉任何一個病人（寧可誤判也要抓到）。應優先優化哪個指標？
+  type: multiple_choice
+  options:
+  - 準確率 (Accuracy)
+  - 精確率 (Precision)
+  - 召回率 (Recall)
+  - 特異度
+  correct_index: 2
+  explanation: Recall 衡量真的有病的人中有多少被抓出來。漏診代價極高，故需最大化 Recall。
+  tags:
+  - chap-ai-foundation-chapter9
+  - sec-classification-metrics
+  id: 11444
+  usage: both
+- chapter_title: 模型評估與效能優化
+  section_title: 誤差分析與正則化
+  text: 情境：模型在訓練集上表現極好 (99%)，但在測試集上表現很差 (60%)。這是什麼現象？
+  type: multiple_choice
+  options:
+  - 欠擬合 (Underfitting)
+  - 過度擬合 (Overfitting)
+  - 高偏差 (High Bias)
+  - 資料不足
+  correct_index: 1
+  explanation: 訓練集與測試集效能差距過大，代表模型死記了訓練資料（高變異），泛化能力差。
+  tags:
+  - chap-ai-foundation-chapter9
+  - sec-bias-variance
+  id: 11445
+  usage: both
+- chapter_title: 模型評估與效能優化
+  section_title: 評估流程與指標
+  text: 情境：K-fold 交叉驗證 (Cross-Validation) 的主要好處是？
+  type: multiple_choice
+  options:
+  - 計算速度快
+  - 每一筆資料都有機會被當作驗證集，評估結果更穩健
+  - 不需要測試集
+  - 模型更簡單
+  correct_index: 1
+  explanation: 透過輪流驗證，能避免因單次切分運氣不好而導致的評估偏差，充分利用有限資料。
+  tags:
+  - chap-ai-foundation-chapter9
+  - sec-cross-validation
+  id: 11446
+  usage: both
+- chapter_title: 模型評估與效能優化
+  section_title: 誤差分析與正則化
+  text: 情境：Dropout 技術是如何防止過度擬合的？
+  type: multiple_choice
+  options:
+  - 增加資料量
+  - 訓練時隨機關閉部分神經元，減少對特定路徑的依賴
+  - 刪除錯誤標籤
+  - 增加層數
+  correct_index: 1
+  explanation: Dropout 破壞了神經元間的共伴適應 (Co-adaptation)，達到類似集成學習的效果，增強強健性。
+  tags:
+  - chap-ai-foundation-chapter9
+  - sec-prevent-overfitting
+  id: 11447
+  usage: both
+- chapter_title: 模型評估與效能優化
+  section_title: 評估流程與指標
+  text: 情境：混淆矩陣中，TP=90, FP=10, FN=5, TN=895。準確率 (Accuracy) 是多少？
+  type: multiple_choice
+  options:
+  - 90%
+  - 98.5%
+  - 10%
+  - 50%
+  correct_index: 1
+  explanation: Accuracy = (TP+TN) / Total = (90+895) / 1000 = 98.5%。
+  tags:
+  - chap-ai-foundation-chapter9
+  - sec-classification-metrics
+  id: 11448
+  usage: both
+- chapter_title: 模型評估與效能優化
+  section_title: 評估流程與指標
+  text: 情境：對於垃圾郵件過濾器，我們希望盡量不要把重要信件誤判為垃圾信。應看重哪個指標？
+  type: multiple_choice
+  options:
+  - Recall
+  - Precision
+  - Accuracy
+  - MSE
+  correct_index: 1
+  explanation: Precision 衡量被判為垃圾信中真的是垃圾信的比例。高 Precision 代表誤判率 (FP) 低。
+  tags:
+  - chap-ai-foundation-chapter9
+  - sec-classification-metrics
+  id: 11449
+  usage: both
+- chapter_title: 模型評估與效能優化
+  section_title: 誤差分析與正則化
+  text: 情境：早停 (Early Stopping) 的運作機制是？
+  type: multiple_choice
+  options:
+  - 訓練固定次數後停止
+  - 當驗證集誤差開始上升時停止訓練
+  - 當訓練集誤差為 0 時停止
+  - 隨機停止
+  correct_index: 1
+  explanation: 監控驗證集誤差，一旦發現誤差不降反升（開始過擬合），即刻停止訓練。
+  tags:
+  - chap-ai-foundation-chapter9
+  - sec-prevent-overfitting
+  id: 11450
+  usage: both
+- chapter_title: 模型評估與效能優化
+  section_title: 評估流程與指標
+  text: 情境：F1-Score 是哪兩個指標的調和平均？
+  type: multiple_choice
+  options:
+  - Accuracy 與 Recall
+  - Precision 與 Recall
+  - TPR 與 FPR
+  - MSE 與 MAE
+  correct_index: 1
+  explanation: F1-Score 綜合考量 Precision 與 Recall，適用於兩者需兼顧的場景。
+  tags:
+  - chap-ai-foundation-chapter9
+  - sec-classification-metrics
+  id: 11451
+  usage: both
+- chapter_title: 模型評估與效能優化
+  section_title: 評估流程與指標
+  text: 情境：AUC-ROC 曲線中，AUC = 0.5 代表什麼？
+  type: multiple_choice
+  options:
+  - 模型完美
+  - 模型跟隨機亂猜一樣
+  - 模型還不錯
+  - 模型完全錯誤
+  correct_index: 1
+  explanation: AUC=0.5 代表對角線，意味著模型沒有鑑別力，效果等同丟銅板。
+  tags:
+  - chap-ai-foundation-chapter9
+  - sec-classification-metrics
+  id: 11452
+  usage: both
+- chapter_title: 模型評估與效能優化
+  section_title: 誤差分析與正則化
+  text: 情境：欠擬合 (Underfitting) 通常是因為？
+  type: multiple_choice
+  options:
+  - 模型太複雜
+  - 模型太簡單，無法捕捉資料規律
+  - 資料太多
+  - 訓練太久
+  correct_index: 1
+  explanation: 高偏差 (High Bias) 意味著模型能力不足，連訓練集的規律都學不會。
+  tags:
+  - chap-ai-foundation-chapter9
+  - sec-bias-variance
+  id: 11453
+  usage: both
+- chapter_title: 模型評估與效能優化
+  section_title: 評估流程與指標
+  text: 情境：資料集劃分中，測試集 (Test Set) 的用途是？
+  type: multiple_choice
+  options:
+  - 訓練模型
+  - 調整超參數
+  - 最終效能評估 (不可用於訓練或調整)
+  - 沒用
+  correct_index: 2
+  explanation: 測試集模擬真實上線環境，必須完全隔離，以確保評估的客觀性。
+  tags:
+  - chap-ai-foundation-chapter9
+  - sec-data-split
+  id: 11454
+  usage: both
+- chapter_title: 模型評估與效能優化
+  section_title: 誤差分析與正則化
+  text: 情境：資料增強 (Data Augmentation) 透過旋轉、裁切圖片來增加資料量，主要能解決什麼問題？
+  type: multiple_choice
+  options:
+  - 欠擬合
+  - 過度擬合
+  - 計算太慢
+  - 梯度消失
+  correct_index: 1
+  explanation: 增加資料的多樣性與數量是解決過度擬合最直接有效的方法。
+  tags:
+  - chap-ai-foundation-chapter9
+  - sec-prevent-overfitting
+  id: 11455
+  usage: both
+- chapter_title: 模型評估與效能優化
+  section_title: 評估流程與指標
+  text: 情境：迴歸問題中，MSE (均方誤差) 相比 MAE (平均絕對誤差) 的特點是？
+  type: multiple_choice
+  options:
+  - 對離群值更敏感 (會放大極端誤差)
+  - 對離群值不敏感
+  - 計算較慢
+  - 數值較小
+  correct_index: 0
+  explanation: 因為誤差被平方，大誤差的影響會被顯著放大，使模型更傾向於消除大誤差。
+  tags:
+  - chap-ai-foundation-chapter9
+  - sec-regression-metrics
+  id: 11456
+  usage: both
+- chapter_title: 模型評估與效能優化
+  section_title: 誤差分析與正則化
+  text: 情境：L2 正則化 (Ridge) 對權重的影響是？
+  type: multiple_choice
+  options:
+  - 讓權重變成 0
+  - 讓權重變小但不為 0
+  - 讓權重變大
+  - 沒影響
+  correct_index: 1
+  explanation: L2 懲罰權重的平方和，傾向於讓權重均勻變小，防止單一特徵獨大。
+  tags:
+  - chap-ai-foundation-chapter9
+  - sec-prevent-overfitting
+  id: 11457
+  usage: both
+- chapter_title: 模型評估與效能優化
+  section_title: 評估流程與指標
+  text: 情境：R-squared (R2) 值為 1 代表？
+  type: multiple_choice
+  options:
+  - 模型完全錯誤
+  - 模型完美擬合資料
+  - 模型跟猜平均值一樣
+  - 模型過擬合
+  correct_index: 1
+  explanation: R2=1 表示模型解釋了資料 100% 的變異，預測值與真實值完全一致。
+  tags:
+  - chap-ai-foundation-chapter9
+  - sec-regression-metrics
+  id: 11458
+  usage: both
+- chapter_title: 模型評估與效能優化
+  section_title: 誤差分析與正則化
+  text: 情境：高偏差 (High Bias) 對應的是哪種狀態？
+  type: multiple_choice
+  options:
+  - 過度擬合
+  - 欠擬合
+  - 完美擬合
+  - 隨機擬合
+  correct_index: 1
+  explanation: Bias 衡量模型預測值與真實值的偏離程度，高偏差代表模型沒學好（欠擬合）。
+  tags:
+  - chap-ai-foundation-chapter9
+  - sec-bias-variance
+  id: 11459
+  usage: both
+- chapter_title: 模型評估與效能優化
+  section_title: 評估流程與指標
+  text: 情境：驗證集 (Validation Set) 的主要用途是？
+  type: multiple_choice
+  options:
+  - 訓練權重
+  - 調整超參數 (Hyperparameters) 與模型選擇
+  - 最終評估
+  - 沒用
+  correct_index: 1
+  explanation: 驗證集用於在訓練過程中評估模型表現，以調整學習率、層數等超參數。
+  tags:
+  - chap-ai-foundation-chapter9
+  - sec-data-split
+  id: 11460
+  usage: both
+- chapter_title: 模型評估與效能優化
+  section_title: 誤差分析與正則化
+  text: 情境：L1 正則化 (Lasso) 的一個特殊功能是？
+  type: multiple_choice
+  options:
+  - 特徵選擇 (Feature Selection)
+  - 增加維度
+  - 平滑曲線
+  - 加速訓練
+  correct_index: 0
+  explanation: L1 傾向產生稀疏解，能將不重要特徵的權重降為 0，達到特徵篩選效果。
+  tags:
+  - chap-ai-foundation-chapter9
+  - sec-prevent-overfitting
+  id: 11461
+  usage: both
+- chapter_title: 模型評估與效能優化
+  section_title: 評估流程與指標
+  text: 情境：在不平衡資料集上，Accuracy 高達 99% 可能意味著？
+  type: multiple_choice
+  options:
+  - 模型非常棒
+  - 模型可能只是盲目猜測多數類別 (陷阱)
+  - 資料有誤
+  - 不需要改進
+  correct_index: 1
+  explanation: Accuracy 在類別不平衡時極具誤導性，模型只要全猜多數類別就能拿高分。
+  tags:
+  - chap-ai-foundation-chapter9
+  - sec-classification-metrics
+  id: 11462
+  usage: both
+- chapter_title: 模型評估與效能優化
+  section_title: 誤差分析與正則化
+  text: 情境：解決高變異 (High Variance) 問題的方法不包括？
+  type: multiple_choice
+  options:
+  - 增加資料量
+  - 使用正則化
+  - 簡化模型
+  - 增加模型複雜度
+  correct_index: 3
+  explanation: 高變異是因為模型太複雜而過擬合，增加複雜度只會讓問題更嚴重。
+  tags:
+  - chap-ai-foundation-chapter9
+  - sec-bias-variance
+  id: 11463
+  usage: both

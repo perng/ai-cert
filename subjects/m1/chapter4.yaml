@@ -14,6 +14,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-neural-networks
+  usage: quiz
 - id: 3402
   chapter_title: 深度學習簡介
   section_title: 神經網路
@@ -29,6 +30,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-neural-networks
+  usage: quiz
 - id: 3403
   chapter_title: 深度學習簡介
   section_title: 神經網路
@@ -44,6 +46,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-neural-networks
+  usage: quiz
 - id: 3404
   chapter_title: 深度學習簡介
   section_title: 神經網路
@@ -59,6 +62,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-neural-networks
+  usage: quiz
 - id: 3405
   chapter_title: 深度學習簡介
   section_title: 神經網路
@@ -74,6 +78,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-neural-networks
+  usage: quiz
 - id: 3406
   chapter_title: 深度學習簡介
   section_title: 最佳化
@@ -89,6 +94,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-optimization
+  usage: quiz
 - id: 3407
   chapter_title: 深度學習簡介
   section_title: 最佳化
@@ -104,6 +110,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-optimization
+  usage: quiz
 - id: 3408
   chapter_title: 深度學習簡介
   section_title: 最佳化
@@ -119,6 +126,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-optimization
+  usage: quiz
 - id: 3409
   chapter_title: 深度學習簡介
   section_title: 最佳化
@@ -134,6 +142,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-optimization
+  usage: quiz
 - id: 3410
   chapter_title: 深度學習簡介
   section_title: 神經網路
@@ -149,21 +158,27 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-neural-networks
+  usage: quiz
 - id: 3411
   chapter_title: 深度學習簡介
   section_title: 神經網路
   text: Sigmoid 函數的輸出範圍是？
   type: multiple_choice
   options:
-  - [-1, 1]
-  - [0, 1]
-  - [0, infinity]
-  - [-infinity, infinity]
+  - - -1
+    - 1
+  - - 0
+    - 1
+  - - 0
+    - infinity
+  - - -infinity
+    - infinity
   correct_index: 1
   explanation: Sigmoid 將輸入壓縮到 (0, 1) 區間，常用於二元分類的輸出層表示機率。
   tags:
   - chap-m1-ch4
   - sec-neural-networks
+  usage: both
 - id: 3412
   chapter_title: 深度學習簡介
   section_title: 最佳化
@@ -179,6 +194,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-optimization
+  usage: both
 - id: 3413
   chapter_title: 深度學習簡介
   section_title: 神經網路
@@ -194,6 +210,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-neural-networks
+  usage: both
 - id: 3414
   chapter_title: 深度學習簡介
   section_title: 神經網路
@@ -209,6 +226,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-neural-networks
+  usage: both
 - id: 3415
   chapter_title: 深度學習簡介
   section_title: 最佳化
@@ -224,6 +242,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-optimization
+  usage: both
 - id: 3416
   chapter_title: 深度學習簡介
   section_title: 神經網路
@@ -239,6 +258,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-neural-networks
+  usage: both
 - id: 3417
   chapter_title: 深度學習簡介
   section_title: 最佳化
@@ -254,6 +274,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-optimization
+  usage: both
 - id: 3418
   chapter_title: 深度學習簡介
   section_title: 神經網路
@@ -269,6 +290,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-neural-networks
+  usage: both
 - id: 3419
   chapter_title: 深度學習簡介
   section_title: 神經網路
@@ -284,6 +306,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-neural-networks
+  usage: both
 - id: 3420
   chapter_title: 深度學習簡介
   section_title: 最佳化
@@ -299,21 +322,27 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-optimization
+  usage: both
 - id: 3421
   chapter_title: 深度學習簡介
   section_title: 神經網路
   text: Tanh 活化函數的輸出範圍是？
   type: multiple_choice
   options:
-  - [0, 1]
-  - [-1, 1]
-  - [0, infinity]
-  - [-infinity, infinity]
+  - - 0
+    - 1
+  - - -1
+    - 1
+  - - 0
+    - infinity
+  - - -infinity
+    - infinity
   correct_index: 1
   explanation: Tanh (雙曲正切) 函數將輸入壓縮到 (-1, 1)，其中心為 0，通常比 Sigmoid 收斂更快。
   tags:
   - chap-m1-ch4
   - sec-neural-networks
+  usage: both
 - id: 3422
   chapter_title: 深度學習簡介
   section_title: 最佳化
@@ -329,6 +358,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-optimization
+  usage: both
 - id: 3423
   chapter_title: 深度學習簡介
   section_title: 神經網路
@@ -344,6 +374,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-neural-networks
+  usage: both
 - id: 3424
   chapter_title: 深度學習簡介
   section_title: 最佳化
@@ -359,6 +390,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-optimization
+  usage: both
 - id: 3425
   chapter_title: 深度學習簡介
   section_title: 神經網路
@@ -374,6 +406,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-neural-networks
+  usage: both
 - id: 3426
   chapter_title: 深度學習簡介
   section_title: 最佳化
@@ -389,6 +422,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-optimization
+  usage: both
 - id: 3427
   chapter_title: 深度學習簡介
   section_title: 神經網路
@@ -404,6 +438,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-neural-networks
+  usage: both
 - id: 3428
   chapter_title: 深度學習簡介
   section_title: 最佳化
@@ -419,6 +454,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-optimization
+  usage: both
 - id: 3429
   chapter_title: 深度學習簡介
   section_title: 神經網路
@@ -434,6 +470,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-neural-networks
+  usage: both
 - id: 3430
   chapter_title: 深度學習簡介
   section_title: 最佳化
@@ -449,6 +486,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-optimization
+  usage: both
 - id: 3431
   chapter_title: 深度學習簡介
   section_title: 神經網路
@@ -464,6 +502,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-neural-networks
+  usage: both
 - id: 3432
   chapter_title: 深度學習簡介
   section_title: 最佳化
@@ -479,6 +518,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-optimization
+  usage: both
 - id: 3433
   chapter_title: 深度學習簡介
   section_title: 神經網路
@@ -494,6 +534,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-neural-networks
+  usage: both
 - id: 3434
   chapter_title: 深度學習簡介
   section_title: 最佳化
@@ -509,6 +550,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-optimization
+  usage: both
 - id: 3435
   chapter_title: 深度學習簡介
   section_title: 神經網路
@@ -524,6 +566,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-neural-networks
+  usage: both
 - id: 3436
   chapter_title: 深度學習簡介
   section_title: 最佳化
@@ -539,6 +582,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-optimization
+  usage: both
 - id: 3437
   chapter_title: 深度學習簡介
   section_title: 神經網路
@@ -554,6 +598,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-neural-networks
+  usage: both
 - id: 3438
   chapter_title: 深度學習簡介
   section_title: 最佳化
@@ -569,6 +614,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-optimization
+  usage: both
 - id: 3439
   chapter_title: 深度學習簡介
   section_title: 神經網路
@@ -584,6 +630,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-neural-networks
+  usage: both
 - id: 3440
   chapter_title: 深度學習簡介
   section_title: 最佳化
@@ -599,6 +646,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-optimization
+  usage: both
 - id: 3441
   chapter_title: 深度學習簡介
   section_title: 深度思考情境題
@@ -610,10 +658,12 @@ questions:
   - 過擬合；應使用 Dropout。
   - 學習率過大；應降低學習率。
   correct_index: 1
-  explanation: Sigmoid 的導數最大值僅為 0.25，且在飽和區趨近於 0。在深層網路中，多個小於 1 的導數連乘會導致梯度迅速消失。改用 ReLU (導數為 1) 是標準解決方案。
+  explanation: Sigmoid 的導數最大值僅為 0.25，且在飽和區趨近於 0。在深層網路中，多個小於 1 的導數連乘會導致梯度迅速消失。改用 ReLU
+    (導數為 1) 是標準解決方案。
   tags:
   - chap-m1-ch4
   - sec-scenario
+  usage: mock
 - id: 3442
   chapter_title: 深度學習簡介
   section_title: 深度思考情境題
@@ -625,14 +675,17 @@ questions:
   - 更換成 SGD。
   - 增加模型層數。
   correct_index: 1
-  explanation: 雖然 Adam 有自適應學習率，但基礎學習率若設得太大，後期仍可能導致在最小值附近震盪。手動或自動降低學習率 (Learning Rate Schedule) 可以幫助模型在最後階段「沉澱」到更佳的極小值。
+  explanation: 雖然 Adam 有自適應學習率，但基礎學習率若設得太大，後期仍可能導致在最小值附近震盪。手動或自動降低學習率 (Learning Rate
+    Schedule) 可以幫助模型在最後階段「沉澱」到更佳的極小值。
   tags:
   - chap-m1-ch4
   - sec-scenario
+  usage: mock
 - id: 3443
   chapter_title: 深度學習簡介
   section_title: 深度思考情境題
-  text: 情境：你的模型在訓練集上表現極好 (Loss 接近 0)，但在測試集上表現很差。你決定使用 Dropout。請問 Dropout 應該加在哪裡？測試階段 (Inference) 需要保留 Dropout 嗎？
+  text: 情境：你的模型在訓練集上表現極好 (Loss 接近 0)，但在測試集上表現很差。你決定使用 Dropout。請問 Dropout 應該加在哪裡？測試階段
+    (Inference) 需要保留 Dropout 嗎？
   type: multiple_choice
   options:
   - 加在輸出層；測試時保留。
@@ -640,10 +693,12 @@ questions:
   - 加在輸入層；測試時保留。
   - 隨便加；測試時保留。
   correct_index: 1
-  explanation: Dropout 通常加在全連接層之後。在訓練時它隨機關閉神經元以防止過擬合；在測試時，我們希望利用整個網路的能力，因此不應關閉神經元，但需要對權重進行縮放 (Scaling) 以保持期望值一致。
+  explanation: Dropout 通常加在全連接層之後。在訓練時它隨機關閉神經元以防止過擬合；在測試時，我們希望利用整個網路的能力，因此不應關閉神經元，但需要對權重進行縮放
+    (Scaling) 以保持期望值一致。
   tags:
   - chap-m1-ch4
   - sec-scenario
+  usage: mock
 - id: 3444
   chapter_title: 深度學習簡介
   section_title: 深度思考情境題
@@ -655,10 +710,12 @@ questions:
   - N 個神經元 (N=類別數)；Sigmoid。
   - N 個神經元；ReLU。
   correct_index: 2
-  explanation: Softmax 強制所有類別機率和為 1，意味著類別互斥（單選）。對於多標籤問題（複選），每個類別是獨立的，應對每個輸出節點獨立使用 Sigmoid，使其輸出代表該類別存在的機率 (0~1)。
+  explanation: Softmax 強制所有類別機率和為 1，意味著類別互斥（單選）。對於多標籤問題（複選），每個類別是獨立的，應對每個輸出節點獨立使用
+    Sigmoid，使其輸出代表該類別存在的機率 (0~1)。
   tags:
   - chap-m1-ch4
   - sec-scenario
+  usage: mock
 - id: 3445
   chapter_title: 深度學習簡介
   section_title: 深度思考情境題
@@ -670,7 +727,329 @@ questions:
   - 模型太簡單。
   - 數據量太少。
   correct_index: 1
-  explanation: Loss 變 NaN 通常意味著數值計算溢出。常見原因包括學習率過大導致參數更新飛出邊界、梯度爆炸（特別是在 RNN 中），或在計算 Log 時輸入了 0 或負數。梯度剪裁和降低學習率是常見對策。
+  explanation: Loss 變 NaN 通常意味著數值計算溢出。常見原因包括學習率過大導致參數更新飛出邊界、梯度爆炸（特別是在 RNN 中），或在計算
+    Log 時輸入了 0 或負數。梯度剪裁和降低學習率是常見對策。
   tags:
   - chap-m1-ch4
   - sec-scenario
+  usage: mock
+- chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: 情境：感知器 (Perceptron) 包含哪兩個主要運算步驟？
+  type: multiple_choice
+  options:
+  - 加權求和與活化函數
+  - 積分與微分
+  - 排序與搜尋
+  - 加密與解密
+  correct_index: 0
+  explanation: 感知器先計算輸入的線性組合 (z = wx + b)，再通過非線性活化函數輸出。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+  id: 3446
+  usage: both
+- chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: 情境：ReLU (Rectified Linear Unit) 活化函數的主要優點是？
+  type: multiple_choice
+  options:
+  - 輸出在 (0, 1) 之間
+  - 解決了梯度消失問題，且計算簡單
+  - 可微分
+  - 平滑
+  correct_index: 1
+  explanation: ReLU 在正區間梯度恆為 1，有效緩解了深層網路中梯度隨層數遞減的問題。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+  id: 3447
+  usage: both
+- chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: 情境：Softmax 函數通常用於神經網路的哪一層？
+  type: multiple_choice
+  options:
+  - 輸入層
+  - 隱藏層
+  - 多分類問題的輸出層
+  - 卷積層
+  correct_index: 2
+  explanation: Softmax 將輸出轉換為機率分佈（總和為 1），適合多類別分類。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+  id: 3448
+  usage: both
+- chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: 情境：反向傳播 (Backpropagation) 演算法利用什麼數學原理來計算梯度？
+  type: multiple_choice
+  options:
+  - 畢氏定理
+  - 連鎖律 (Chain Rule)
+  - 泰勒展開
+  - 傅立葉變換
+  correct_index: 1
+  explanation: 連鎖律允許我們將複合函數的導數分解為各層導數的乘積，從而將誤差反向傳遞。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+  id: 3449
+  usage: both
+- chapter_title: 深度學習簡介
+  section_title: 最佳化
+  text: 情境：對於二元分類問題，最適合的損失函數是？
+  type: multiple_choice
+  options:
+  - 均方誤差 (MSE)
+  - 交叉熵損失 (Cross-Entropy Loss)
+  - 絕對誤差 (MAE)
+  - Hinge Loss
+  correct_index: 1
+  explanation: 交叉熵損失衡量兩個機率分佈的差異，特別適合分類任務。
+  tags:
+  - chap-m1-ch4
+  - sec-optimization
+  id: 3450
+  usage: both
+- chapter_title: 深度學習簡介
+  section_title: 最佳化
+  text: 情境：SGD (隨機梯度下降) 與傳統 GD (梯度下降) 的主要區別是？
+  type: multiple_choice
+  options:
+  - SGD 每次只用一個樣本 (或小批次) 更新參數，速度快但有雜訊
+  - SGD 用全部樣本
+  - SGD 不需要梯度
+  - SGD 只能用於線性模型
+  correct_index: 0
+  explanation: SGD 犧牲了更新方向的穩定性換取計算速度與跳出局部最佳解的能力。
+  tags:
+  - chap-m1-ch4
+  - sec-optimization
+  id: 3451
+  usage: both
+- chapter_title: 深度學習簡介
+  section_title: 最佳化
+  text: 情境：Adam 最佳化器結合了哪兩種技術的優點？
+  type: multiple_choice
+  options:
+  - Momentum 與 RMSprop
+  - SGD 與 GD
+  - L1 與 L2 正則化
+  - RNN 與 CNN
+  correct_index: 0
+  explanation: Adam 同時利用一階矩（動量）與二階矩（自適應學習率）來優化更新過程。
+  tags:
+  - chap-m1-ch4
+  - sec-optimization
+  id: 3452
+  usage: both
+- chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: 情境：若神經網路沒有使用活化函數，它將等價於？
+  type: multiple_choice
+  options:
+  - 深度神經網路
+  - 單層線性模型
+  - 決策樹
+  - SVM
+  correct_index: 1
+  explanation: 線性函數的組合仍然是線性的，無法擬合複雜的非線性邊界。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+  id: 3453
+  usage: both
+- chapter_title: 深度學習簡介
+  section_title: 最佳化
+  text: 情境：均方誤差 (MSE) 最常用於哪類問題？
+  type: multiple_choice
+  options:
+  - 分類
+  - 迴歸 (Regression)
+  - 分群
+  - 降維
+  correct_index: 1
+  explanation: MSE 衡量預測數值與真實數值的距離，適合連續值的預測。
+  tags:
+  - chap-m1-ch4
+  - sec-optimization
+  id: 3454
+  usage: both
+- chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: 情境：Sigmoid 函數的一個主要缺點是？
+  type: multiple_choice
+  options:
+  - 輸出範圍太大
+  - 容易導致梯度消失 (Vanishing Gradient)
+  - 計算太簡單
+  - 不連續
+  correct_index: 1
+  explanation: Sigmoid 在兩端飽和區的導數趨近於 0，導致深層網路無法有效更新權重。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+  id: 3455
+  usage: both
+- chapter_title: 深度學習簡介
+  section_title: 最佳化
+  text: 情境：學習率 (Learning Rate) 控制的是？
+  type: multiple_choice
+  options:
+  - 模型的大小
+  - 參數更新的步長
+  - 訓練資料的數量
+  - 神經元數量
+  correct_index: 1
+  explanation: 學習率決定了每次迭代向梯度反方向移動的距離。
+  tags:
+  - chap-m1-ch4
+  - sec-optimization
+  id: 3456
+  usage: both
+- chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: 情境：前向傳播 (Forward Propagation) 的主要目的是？
+  type: multiple_choice
+  options:
+  - 更新權重
+  - 計算預測值與損失
+  - 初始化參數
+  - 儲存資料
+  correct_index: 1
+  explanation: 前向傳播將輸入數據通過網路推導出預測結果，並計算目前的誤差。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+  id: 3457
+  usage: both
+- chapter_title: 深度學習簡介
+  section_title: 最佳化
+  text: 情境：帶動量的 SGD (SGD with Momentum) 模擬了物理中的什麼現象？
+  type: multiple_choice
+  options:
+  - 摩擦力
+  - 慣性 (Inertia)
+  - 重力
+  - 浮力
+  correct_index: 1
+  explanation: 動量項讓更新方向具有持續性，能加速收斂並抑制震盪。
+  tags:
+  - chap-m1-ch4
+  - sec-optimization
+  id: 3458
+  usage: both
+- chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: 情境：隱藏層 (Hidden Layer) 的作用是？
+  type: multiple_choice
+  options:
+  - 接收輸入
+  - 輸出結果
+  - 提取特徵與進行非線性變換
+  - 沒作用
+  correct_index: 2
+  explanation: 多層隱藏層使神經網路能學習數據的階層式特徵表示。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+  id: 3459
+  usage: both
+- chapter_title: 深度學習簡介
+  section_title: 最佳化
+  text: 情境：損失函數 (Loss Function) 的值越小代表？
+  type: multiple_choice
+  options:
+  - 模型表現越差
+  - 模型表現越好 (預測誤差越小)
+  - 模型過擬合
+  - 模型欠擬合
+  correct_index: 1
+  explanation: 損失函數定義了「錯誤」的程度，最小化損失即最大化準確度。
+  tags:
+  - chap-m1-ch4
+  - sec-optimization
+  id: 3460
+  usage: both
+- chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: 情境：ReLU 函數在 x < 0 時的輸出為？
+  type: multiple_choice
+  options:
+  - x
+  - '0'
+  - '1'
+  - '-1'
+  correct_index: 1
+  explanation: ReLU 定義為 max(0, x)，負值部分被截斷為 0。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+  id: 3461
+  usage: both
+- chapter_title: 深度學習簡介
+  section_title: 最佳化
+  text: 情境：Epoch 在深度學習訓練中代表？
+  type: multiple_choice
+  options:
+  - 一次迭代
+  - 所有訓練資料完整通過模型一次
+  - 一秒鐘
+  - 一層網路
+  correct_index: 1
+  explanation: 一個 Epoch 意味著模型已經看過所有的訓練樣本一遍。
+  tags:
+  - chap-m1-ch4
+  - sec-optimization
+  id: 3462
+  usage: both
+- chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: 情境：權重 (Weights) 在神經網路中代表？
+  type: multiple_choice
+  options:
+  - 神經元的連接強度
+  - 神經元的數量
+  - 輸入數據的大小
+  - 學習率
+  correct_index: 0
+  explanation: 權重決定了訊號在神經元間傳遞的放大或縮小倍率，是模型學習到的知識載體。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+  id: 3463
+  usage: both
+- chapter_title: 深度學習簡介
+  section_title: 最佳化
+  text: 情境：Mini-batch 的大小對訓練有何影響？
+  type: multiple_choice
+  options:
+  - 沒影響
+  - 影響梯度估計的準確度與記憶體使用量
+  - 只影響模型大小
+  - 只影響預測速度
+  correct_index: 1
+  explanation: 較大的 Batch 梯度較穩但吃記憶體，較小的 Batch 雜訊多但有助於泛化。
+  tags:
+  - chap-m1-ch4
+  - sec-optimization
+  id: 3464
+  usage: both
+- chapter_title: 深度學習簡介
+  section_title: 神經網路
+  text: 情境：偏權值 (Bias) 的作用類似於線性方程式中的？
+  type: multiple_choice
+  options:
+  - 斜率
+  - 截距
+  - 變數
+  - 誤差
+  correct_index: 1
+  explanation: Bias 允許活化函數左右平移，增加模型的擬合靈活性。
+  tags:
+  - chap-m1-ch4
+  - sec-neural-networks
+  id: 3465
+  usage: both

@@ -14,6 +14,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: quiz
 - id: 4002
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -29,6 +30,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: quiz
 - id: 4003
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -44,6 +46,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: quiz
 - id: 4004
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -59,6 +62,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: quiz
 - id: 4005
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -74,6 +78,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: quiz
 - id: 4006
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -89,6 +94,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: quiz
 - id: 4007
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -104,6 +110,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: quiz
 - id: 4008
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -119,6 +126,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: quiz
 - id: 4009
   chapter_title: AI 代理人與自動化
   section_title: 多代理系統 (MAS)
@@ -134,6 +142,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: quiz
 - id: 4010
   chapter_title: AI 代理人與自動化
   section_title: 多代理系統 (MAS)
@@ -149,6 +158,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: quiz
 - id: 4011
   chapter_title: AI 代理人與自動化
   section_title: 多代理系統 (MAS)
@@ -164,6 +174,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4012
   chapter_title: AI 代理人與自動化
   section_title: 多代理系統 (MAS)
@@ -179,6 +190,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4013
   chapter_title: AI 代理人與自動化
   section_title: 多代理系統 (MAS)
@@ -194,6 +206,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4014
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -209,6 +222,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4015
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -224,6 +238,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4016
   chapter_title: AI 代理人與自動化
   section_title: 多代理系統 (MAS)
@@ -239,6 +254,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4017
   chapter_title: AI 代理人與自動化
   section_title: 多代理系統 (MAS)
@@ -254,6 +270,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4018
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -269,6 +286,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4019
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -284,6 +302,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4020
   chapter_title: AI 代理人與自動化
   section_title: 多代理系統 (MAS)
@@ -299,6 +318,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4021
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -314,6 +334,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4022
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -329,6 +350,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4023
   chapter_title: AI 代理人與自動化
   section_title: 多代理系統 (MAS)
@@ -344,6 +366,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4024
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -359,6 +382,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4025
   chapter_title: AI 代理人與自動化
   section_title: 多代理系統 (MAS)
@@ -374,6 +398,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4026
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -389,6 +414,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4027
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -404,6 +430,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4028
   chapter_title: AI 代理人與自動化
   section_title: 多代理系統 (MAS)
@@ -419,6 +446,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4029
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -434,6 +462,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4030
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -449,6 +478,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4031
   chapter_title: AI 代理人與自動化
   section_title: 多代理系統 (MAS)
@@ -464,6 +494,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4032
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -479,6 +510,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4033
   chapter_title: AI 代理人與自動化
   section_title: 多代理系統 (MAS)
@@ -494,6 +526,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4034
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -509,6 +542,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4035
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -524,6 +558,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4036
   chapter_title: AI 代理人與自動化
   section_title: 多代理系統 (MAS)
@@ -539,6 +574,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4037
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -554,6 +590,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4038
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -569,6 +606,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4039
   chapter_title: AI 代理人與自動化
   section_title: 多代理系統 (MAS)
@@ -584,6 +622,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4040
   chapter_title: AI 代理人與自動化
   section_title: AI 代理人與自動化
@@ -599,6 +638,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agentic-ai
+  usage: both
 - id: 4041
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -614,6 +654,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agent-architecture
+  usage: both
 - id: 4042
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -629,6 +670,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agent-architecture
+  usage: both
 - id: 4043
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -644,6 +686,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agent-architecture
+  usage: both
 - id: 4044
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -659,6 +702,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agent-architecture
+  usage: both
 - id: 4045
   chapter_title: AI 代理人與自動化
   section_title: 多代理系統 (MAS)
@@ -674,6 +718,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-multi-agent-systems
+  usage: both
 - id: 4046
   chapter_title: AI 代理人與自動化
   section_title: 多代理系統 (MAS)
@@ -689,6 +734,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-multi-agent-systems
+  usage: both
 - id: 4047
   chapter_title: AI 代理人與自動化
   section_title: 多代理系統 (MAS)
@@ -704,6 +750,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-multi-agent-systems
+  usage: both
 - id: 4048
   chapter_title: AI 代理人與自動化
   section_title: 多代理系統 (MAS)
@@ -719,6 +766,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-multi-agent-systems
+  usage: both
 - id: 4049
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -734,6 +782,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agent-architecture
+  usage: both
 - id: 4050
   chapter_title: AI 代理人與自動化
   section_title: Agent 架構與組件
@@ -749,6 +798,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agent-architecture
+  usage: both
 - id: 4061
   chapter_title: AI Agent 與多代理系統
   section_title: Agent 架構與組件
@@ -764,6 +814,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agent-architecture
+  usage: both
 - id: 4062
   chapter_title: AI Agent 與多代理系統
   section_title: Agent 架構與組件
@@ -779,6 +830,7 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-agent-architecture
+  usage: both
 - id: 4063
   chapter_title: AI Agent 與多代理系統
   section_title: 多代理系統 (MAS)
@@ -794,10 +846,12 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-mas
+  usage: both
 - id: 4064
   chapter_title: AI Agent 與多代理系統
   section_title: 多代理系統 (MAS)
-  text: 當多個 Agent 意見不合時（例如 Developer 寫的程式被 Tester 認為有 Bug，但 Developer 認為是 Feature），MAS 通常如何解決？
+  text: 當多個 Agent 意見不合時（例如 Developer 寫的程式被 Tester 認為有 Bug，但 Developer 認為是 Feature），MAS
+    通常如何解決？
   type: multiple_choice
   options:
   - 隨機選擇一個 Agent 的意見作為最終結果
@@ -809,10 +863,12 @@ questions:
   tags:
   - chap-gen-chapter4
   - sec-mas
+  usage: both
 - id: 11408
   chapter_title: AI 代理人 (AI Agents)
   section_title: Agent 架構與組件
-  text: 在 Agent-to-Agent（A2A）架構中，不同代理人之間會分工合作。一般 而言，下列敘述何者最符合 Client Agent 與 Remote Agent 的互動流 程？ (114年第四梯次)
+  text: 在 Agent-to-Agent（A2A）架構中，不同代理人之間會分工合作。一般 而言，下列敘述何者最符合 Client Agent 與 Remote
+    Agent 的互動流 程？ (114年第四梯次)
   type: multiple_choice
   options:
   - Remote Agent 主動分派任務給Client Agent
@@ -820,12 +876,13 @@ questions:
   - Client Agent 發起任務，Remote Agent 執行並回傳結果
   - Client Agent 與 Remote Agent同時處理任務並同步處理結果
   correct_index: 0
-  explanation: AI Agent 具備感知、規劃、記憶與工具使用能力，能自主拆解目標並執行一連串行動以完成複雜任務。 
+  explanation: AI Agent 具備感知、規劃、記憶與工具使用能力，能自主拆解目標並執行一連串行動以完成複雜任務。
   tags:
   - past-exam
   - 114-4
   - chap-gen-chapter4
   - sec-agent-architecture
+  usage: both
 - id: 11411
   chapter_title: AI 代理人 (AI Agents)
   section_title: Agent 架構與組件
@@ -837,12 +894,13 @@ questions:
   - 只執行事先假定的一條路徑，失敗就停止
   - 完全依靠 LLM 一次性推斷最優完整路徑
   correct_index: 0
-  explanation: AI Agent 具備感知、規劃、記憶與工具使用能力，能自主拆解目標並執行一連串行動以完成複雜任務。 
+  explanation: AI Agent 具備感知、規劃、記憶與工具使用能力，能自主拆解目標並執行一連串行動以完成複雜任務。
   tags:
   - past-exam
   - 114-4
   - chap-gen-chapter4
   - sec-agent-architecture
+  usage: both
 - id: 11449
   chapter_title: AI 代理人 (AI Agents)
   section_title: Agent 架構與組件
@@ -854,16 +912,18 @@ questions:
   - 將代理限制在既定流程內，避免其產生偏離設計腳本的行為
   - 作為代理在執行過程中的參考框架，用於組織決策步驟並支援任務推理
   correct_index: 0
-  explanation: AI Agent 具備感知、規劃、記憶與工具使用能力，能自主拆解目標並執行一連串行動以完成複雜任務。 
+  explanation: AI Agent 具備感知、規劃、記憶與工具使用能力，能自主拆解目標並執行一連串行動以完成複雜任務。
   tags:
   - past-exam
   - 114-4
   - chap-gen-chapter4
   - sec-agent-architecture
+  usage: both
 - id: 11406
   chapter_title: AI 代理人 (AI Agents)
   section_title: Agent 架構與組件
-  text: 某設計團隊計畫在短時間內完成一款行動應用程式，必須同時達到高 度個人化體驗、快速生成介面與行銷內容自動產出等需求。若結合 No Code/Low Code平台與生成式AI 技術，以下哪一種整合策略最能符合 目標？ (114年第四梯次)
+  text: 某設計團隊計畫在短時間內完成一款行動應用程式，必須同時達到高 度個人化體驗、快速生成介面與行銷內容自動產出等需求。若結合 No Code/Low Code平台與生成式AI
+    技術，以下哪一種整合策略最能符合 目標？ (114年第四梯次)
   type: multiple_choice
   options:
   - 使用生成式 AI 自動產生 API 呼叫與元件配置，並由開發者手動整合至 No Code 平台流程
@@ -871,16 +931,18 @@ questions:
   - 在 No Code平台中導入生成式 AI，快速建立跨專案可重用的通用模組，專注於提升開發速度
   - 在 No Code 平台中完全依賴生成式 AI 自動產生所有應用功能與流程，不經人工設計或驗證
   correct_index: 0
-  explanation: Low/No Code 平台降低了 AI 開發門檻，讓非技術人員也能透過圖形化介面快速構建與部署 AI 應用。 
+  explanation: Low/No Code 平台降低了 AI 開發門檻，讓非技術人員也能透過圖形化介面快速構建與部署 AI 應用。
   tags:
   - past-exam
   - 114-4
   - chap-gen-chapter4
   - sec-agent-architecture
+  usage: both
 - id: 11414
   chapter_title: AI 代理人 (AI Agents)
   section_title: Agent 架構與組件
-  text: 某電商公司導入 Agentic AI 來處理客服工作。測試發現 Agent 在回答 產品 FAQ 時經常出錯，且無法幫客戶修改訂單。這種情況最可能是因 為缺少下列哪兩項工具或技術？ (114年第四梯次)
+  text: 某電商公司導入 Agentic AI 來處理客服工作。測試發現 Agent 在回答 產品 FAQ 時經常出錯，且無法幫客戶修改訂單。這種情況最可能是因
+    為缺少下列哪兩項工具或技術？ (114年第四梯次)
   type: multiple_choice
   options:
   - API 調用（API Calling）＋ 任務規劃器（Task Planner）
@@ -888,16 +950,18 @@ questions:
   - 向量資料庫檢索（ Vector Retrieval ）＋任務規劃器（ Task Planner）
   - 任務規劃器（Task Planner）＋溫度參數（Temperature）設定
   correct_index: 0
-  explanation: AI Agent 具備感知、規劃、記憶與工具使用能力，能自主拆解目標並執行一連串行動以完成複雜任務。 
+  explanation: AI Agent 具備感知、規劃、記憶與工具使用能力，能自主拆解目標並執行一連串行動以完成複雜任務。
   tags:
   - past-exam
   - 114-4
   - chap-gen-chapter4
   - sec-agent-architecture
+  usage: both
 - id: 11450
   chapter_title: AI 代理人 (AI Agents)
   section_title: Agent 架構與組件
-  text: 小明想開發一個部落格寫作工具，讓用戶輸入文章開頭後，系統自動幫 忙寫出後續內容，例如輸入「今天去了台北木柵動物園...」 ，系統就能 續寫。若要實現這樣的功能，最適合選擇下列哪一類任務？ (114年第四梯次)
+  text: 小明想開發一個部落格寫作工具，讓用戶輸入文章開頭後，系統自動幫 忙寫出後續內容，例如輸入「今天去了台北木柵動物園...」 ，系統就能 續寫。若要實現這樣的功能，最適合選擇下列哪一類任務？
+    (114年第四梯次)
   type: multiple_choice
   options:
   - 序列到序列建模（Sequence-to-Sequence Modeling） ，透過輸入序列產生新的輸出序列
@@ -905,16 +969,20 @@ questions:
   - 生成式語言建模（Text Generation） ，依據上下文持續產生新的內容
   - 文本分類（Text Classification） ，針對輸入文本判斷情感、主題或標籤
   correct_index: 0
-  explanation: 此題涉及 小明想開發一個部落格... 的核心概念。正確答案為「序列到序列建模（Sequence-to-Sequence Modeling） ，透過輸入序 列產生新的輸出序列；」。 
+  explanation: 此題涉及 小明想開發一個部落格... 的核心概念。正確答案為「序列到序列建模（Sequence-to-Sequence Modeling）
+    ，透過輸入序 列產生新的輸出序列；」。
   tags:
   - past-exam
   - 114-4
   - chap-gen-chapter4
   - sec-agent-architecture
+  usage: both
 - id: 11430
   chapter_title: AI 代理人 (AI Agents)
   section_title: Agent 架構與組件
-  text: 某大型物流公司計畫導入 AI 系統，以改善客服與配送作業的效率。專 案團隊規劃了以下四個步驟，請問正確的執行順序為何？ 1. 建立符合公司服務流程的 AI 對話邏輯與應答範本，確保顧客體驗 一致 2. 明確定義導入 AI 的目標並設定關鍵績效指標（KPI） 3. 蒐集與清理過往客服紀錄與配送相關資料，作為模型訓練素材 4. 評估並選擇合適的 AI 技術供應商或開源方案，確立技術方向與架 構 (114年第四梯次)
+  text: 某大型物流公司計畫導入 AI 系統，以改善客服與配送作業的效率。專 案團隊規劃了以下四個步驟，請問正確的執行順序為何？ 1. 建立符合公司服務流程的
+    AI 對話邏輯與應答範本，確保顧客體驗 一致 2. 明確定義導入 AI 的目標並設定關鍵績效指標（KPI） 3. 蒐集與清理過往客服紀錄與配送相關資料，作為模型訓練素材
+    4. 評估並選擇合適的 AI 技術供應商或開源方案，確立技術方向與架 構 (114年第四梯次)
   type: multiple_choice
   options:
   - 2 → 3 → 4 → 1
@@ -922,16 +990,18 @@ questions:
   - 2 → 1 → 3 → 4
   - 1 → 4 → 3 → 2
   correct_index: 0
-  explanation: 此題涉及 某大型物流公司計畫導... 的核心概念。正確答案為「2 → 3 → 4 → 1；」。 
+  explanation: 此題涉及 某大型物流公司計畫導... 的核心概念。正確答案為「2 → 3 → 4 → 1；」。
   tags:
   - past-exam
   - 114-4
   - chap-gen-chapter4
   - sec-agent-architecture
+  usage: mock
 - id: 11435
   chapter_title: AI 代理人 (AI Agents)
   section_title: Agent 架構與組件
-  text: 在即時客服系統的效能測試中，若針對延遲測試（Latency Testing） 進行評估，下列哪一項指標最能反映系統是否符合用戶即時互動需 求？ 第二科：生成式 AI 應用與規劃 (114年第四梯次)
+  text: 在即時客服系統的效能測試中，若針對延遲測試（Latency Testing） 進行評估，下列哪一項指標最能反映系統是否符合用戶即時互動需 求？ 第二科：生成式
+    AI 應用與規劃 (114年第四梯次)
   type: multiple_choice
   options:
   - AI 模型在同一分鐘內可完成的回覆訊息數量
@@ -939,16 +1009,18 @@ questions:
   - 客服系統能連續提供服務的運行時長
   - AI 產生回答時用詞的多樣性與表達創意程度
   correct_index: 0
-  explanation: 此題涉及 在即時客服系統的效能... 的核心概念。正確答案為「AI 模型在同一分鐘內可完成的回覆訊息數量；」。 
+  explanation: 此題涉及 在即時客服系統的效能... 的核心概念。正確答案為「AI 模型在同一分鐘內可完成的回覆訊息數量；」。
   tags:
   - past-exam
   - 114-4
   - chap-gen-chapter4
   - sec-agent-architecture
+  usage: both
 - id: 11420
   chapter_title: AI 代理人 (AI Agents)
   section_title: Agent 架構與組件
-  text: 某醫院正在規劃一個 AI專案，目的是協助醫師從胸腔X 光影像中判斷 是否存在肺炎徵兆，團隊卻誤將生成式 AI 模型運用於影像診斷。下列 哪一項最可能成為主要風險？ (114年第四梯次)
+  text: 某醫院正在規劃一個 AI專案，目的是協助醫師從胸腔X 光影像中判斷 是否存在肺炎徵兆，團隊卻誤將生成式 AI 模型運用於影像診斷。下列 哪一項最可能成為主要風險？
+    (114年第四梯次)
   type: multiple_choice
   options:
   - 模型在生成報告時語句流暢，但僅在文字表達上有差異，對診斷結果沒有重大影響
@@ -956,16 +1028,18 @@ questions:
   - 模型偏向生成內容而非分類，但此差異僅影響效率，不會造成誤診風險
   - 模型可能生成與實際影像不符的診斷結論，導致誤判並引發醫療與法律風險
   correct_index: 0
-  explanation: 此題涉及 某醫院正在規劃一個 ... 的核心概念。正確答案為「模型在生成報告時語句流暢，但僅在文字表達上有差異，對診斷結 果沒有重大影響；」。 
+  explanation: 此題涉及 某醫院正在規劃一個 ... 的核心概念。正確答案為「模型在生成報告時語句流暢，但僅在文字表達上有差異，對診斷結 果沒有重大影響；」。
   tags:
   - past-exam
   - 114-4
   - chap-gen-chapter4
   - sec-agent-architecture
+  usage: both
 - id: 11424
   chapter_title: AI 代理人 (AI Agents)
   section_title: Agent 架構與組件
-  text: 某保險公司計畫導入生成式 AI 的內部合約查詢系統，協助業務員與法 務部門快速解讀保單條款與理賠規範。高層特別強調客戶資料隱私與 合規風險控管，即使需要投入較多資源，也必須確保資料不會外洩。在 第二科：生成式 AI 應用與規劃 此情況下，下列哪一種策略最符合公司的資料安全與合規優先考量？ (114年第四梯次)
+  text: 某保險公司計畫導入生成式 AI 的內部合約查詢系統，協助業務員與法 務部門快速解讀保單條款與理賠規範。高層特別強調客戶資料隱私與 合規風險控管，即使需要投入較多資源，也必須確保資料不會外洩。在
+    第二科：生成式 AI 應用與規劃 此情況下，下列哪一種策略最符合公司的資料安全與合規優先考量？ (114年第四梯次)
   type: multiple_choice
   options:
   - 導入開源模型並由 IT 團隊自建，後續再逐步補強隱私與合規控管
@@ -973,9 +1047,330 @@ questions:
   - 優先使用雲端大型 API 模型快速部署，並根據使用數據持續調整
   - 投入資源自訓並私有化部署 LLM，並同步建立自動化風控機制
   correct_index: 0
-  explanation: 此題涉及 某保險公司計畫導入生... 的核心概念。正確答案為「導入開源模型並由 IT 團隊自建，後續再逐步補強隱私與合規控管；」。 
+  explanation: 此題涉及 某保險公司計畫導入生... 的核心概念。正確答案為「導入開源模型並由 IT 團隊自建，後續再逐步補強隱私與合規控管；」。
   tags:
   - past-exam
   - 114-4
   - chap-gen-chapter4
   - sec-agent-architecture
+  usage: mock
+- chapter_title: AI 代理人 (Agentic AI) 與自動化
+  section_title: Agent 架構與組件
+  text: 情境：Agent 與傳統 Chatbot 最大的區別在於？
+  type: multiple_choice
+  options:
+  - Agent 比較貴
+  - Agent 具備感知環境、規劃並執行行動 (Action) 的能力
+  - Agent 只能說英文
+  - Agent 不需要 LLM
+  correct_index: 1
+  explanation: Agent 不僅能對話，還能主動使用工具與環境互動以達成目標。
+  tags:
+  - chap-gen-chapter4
+  - sec-agent-architecture
+  id: 11451
+  usage: both
+- chapter_title: AI 代理人 (Agentic AI) 與自動化
+  section_title: Agent 架構與組件
+  text: 情境：在 Agent 架構中，「規劃 (Planning)」模組的一個重要功能是？
+  type: multiple_choice
+  options:
+  - 儲存資料
+  - 將大任務拆解為小步驟 (Task Decomposition)
+  - 生成圖片
+  - 連線網路
+  correct_index: 1
+  explanation: 面對複雜任務，Agent 需先將其拆解為可執行的子任務序列，這是規劃的核心。
+  tags:
+  - chap-gen-chapter4
+  - sec-agent-architecture
+  id: 11452
+  usage: both
+- chapter_title: AI 代理人 (Agentic AI) 與自動化
+  section_title: Agent 架構與組件
+  text: 情境：Agent 的「自我反思 (Self-Reflection)」能力是指？
+  type: multiple_choice
+  options:
+  - 照鏡子
+  - 在執行失敗後，分析原因並修正計畫
+  - 自我刪除
+  - 無限迴圈
+  correct_index: 1
+  explanation: 反思機制讓 Agent 能從錯誤中學習並動態調整策略，提高任務成功率。
+  tags:
+  - chap-gen-chapter4
+  - sec-agent-architecture
+  id: 11453
+  usage: both
+- chapter_title: AI 代理人 (Agentic AI) 與自動化
+  section_title: Agent 架構與組件
+  text: 情境：LLM 使用工具的標準機制通常稱為？
+  type: multiple_choice
+  options:
+  - Tool Calling / Function Calling
+  - API Calling
+  - Web Scraping
+  - Data Mining
+  correct_index: 0
+  explanation: Function Calling 允許 LLM 輸出結構化指令來調用外部函數或 API。
+  tags:
+  - chap-gen-chapter4
+  - sec-agent-architecture
+  id: 11454
+  usage: both
+- chapter_title: AI 代理人 (Agentic AI) 與自動化
+  section_title: 多代理系統 (MAS)
+  text: 情境：多代理系統 (Multi-Agent System) 的主要優勢是？
+  type: multiple_choice
+  options:
+  - 省錢
+  - 透過角色分工協作，解決單一 Agent 難以處理的複雜任務
+  - 速度最快
+  - 不需要人類介入
+  correct_index: 1
+  explanation: MAS 模擬人類團隊，透過專才分工（如 PM、工程師、測試員）提升解決複雜問題的能力。
+  tags:
+  - chap-gen-chapter4
+  - sec-multi-agent-systems
+  id: 11455
+  usage: both
+- chapter_title: AI 代理人 (Agentic AI) 與自動化
+  section_title: Agent 架構與組件
+  text: 情境：Solution Graph 中的「節點 (Node)」通常代表？
+  type: multiple_choice
+  options:
+  - 工具
+  - 狀態或中間結果
+  - 錯誤
+  - 使用者
+  correct_index: 1
+  explanation: Solution Graph 將解題過程圖論化，節點代表當下的狀態，邊代表行動。
+  tags:
+  - chap-gen-chapter4
+  - sec-agent-architecture
+  id: 11456
+  usage: both
+- chapter_title: AI 代理人 (Agentic AI) 與自動化
+  section_title: 多代理系統 (MAS)
+  text: 情境：多代理系統常見的挑戰「無限循環」可以如何解決？
+  type: multiple_choice
+  options:
+  - 拔掉電源
+  - 設定最大對話輪數或引入監督者 Agent
+  - 增加更多 Agent
+  - 刪除記憶
+  correct_index: 1
+  explanation: 限制互動次數或設有仲裁機制能防止 Agent 間陷入無止盡的踢皮球。
+  tags:
+  - chap-gen-chapter4
+  - sec-multi-agent-systems
+  id: 11457
+  usage: both
+- chapter_title: AI 代理人 (Agentic AI) 與自動化
+  section_title: Agent 架構與組件
+  text: 情境：Agent 的「長期記憶」通常依靠什麼技術實現？
+  type: multiple_choice
+  options:
+  - RAM
+  - 向量資料庫 (Vector DB)
+  - 硬碟
+  - 紙筆
+  correct_index: 1
+  explanation: Vector DB 能儲存大量歷史資訊並支援語意檢索，作為 Agent 的長期知識庫。
+  tags:
+  - chap-gen-chapter4
+  - sec-agent-architecture
+  id: 11458
+  usage: both
+- chapter_title: AI 代理人 (Agentic AI) 與自動化
+  section_title: 多代理系統 (MAS)
+  text: 情境：LangChain / LangGraph 框架的主要特色是？
+  type: multiple_choice
+  options:
+  - 只能做 Chatbot
+  - 高度靈活，適合建構複雜的單體或多體 Agent
+  - 只能用 Python
+  - 不支援 LLM
+  correct_index: 1
+  explanation: LangChain 提供豐富的抽象層與工具整合，是目前構建 Agent 應用的主流框架。
+  tags:
+  - chap-gen-chapter4
+  - sec-multi-agent-systems
+  id: 11459
+  usage: both
+- chapter_title: AI 代理人 (Agentic AI) 與自動化
+  section_title: 多代理系統 (MAS)
+  text: 情境：Microsoft AutoGen 框架的核心運作模式是？
+  type: multiple_choice
+  options:
+  - 透過「對話」讓多個 Agent 協作解決問題
+  - 透過流程圖
+  - 透過寫程式
+  - 透過投票
+  correct_index: 0
+  explanation: AutoGen 強調 Conversational Programming，Agent 間透過互相交談來推進任務。
+  tags:
+  - chap-gen-chapter4
+  - sec-multi-agent-systems
+  id: 11460
+  usage: both
+- chapter_title: AI 代理人 (Agentic AI) 與自動化
+  section_title: Agent 架構與組件
+  text: 情境：廣度優先搜尋 (BFS) 策略適合用於？
+  type: multiple_choice
+  options:
+  - 尋找最短路徑
+  - 深入挖掘單一解
+  - 隨機探索
+  - 不需要搜尋
+  correct_index: 0
+  explanation: BFS 層層推進，能確保找到起始點到目標點的最短路徑。
+  tags:
+  - chap-gen-chapter4
+  - sec-agent-architecture
+  id: 11461
+  usage: both
+- chapter_title: AI 代理人 (Agentic AI) 與自動化
+  section_title: 多代理系統 (MAS)
+  text: 情境：LlamaIndex 在 Agent 開發中的強項是？
+  type: multiple_choice
+  options:
+  - 處理圖像
+  - 處理資料密集型 (Data-Centric) 任務與 RAG
+  - 處理語音
+  - 處理影片
+  correct_index: 1
+  explanation: LlamaIndex 專精於資料索引與檢索，能將複雜的資料查詢轉化為 Agent 可用的工具。
+  tags:
+  - chap-gen-chapter4
+  - sec-multi-agent-systems
+  id: 11462
+  usage: both
+- chapter_title: AI 代理人 (Agentic AI) 與自動化
+  section_title: Agent 架構與組件
+  text: 情境：深度優先搜尋 (DFS) 策略的特點是？
+  type: multiple_choice
+  options:
+  - 同時探索所有路徑
+  - 選定一條路一直走到底，不通再回頭
+  - 隨機跳躍
+  - 只走一步
+  correct_index: 1
+  explanation: DFS 優先深入探索單一分支，適合解空間極大或目標深藏的場景。
+  tags:
+  - chap-gen-chapter4
+  - sec-agent-architecture
+  id: 11463
+  usage: both
+- chapter_title: AI 代理人 (Agentic AI) 與自動化
+  section_title: 多代理系統 (MAS)
+  text: 情境：CrewAI 框架強調的概念是？
+  type: multiple_choice
+  options:
+  - 角色扮演 (Role-Playing) 與任務指派
+  - 單一 Agent
+  - 無人值守
+  - 硬體加速
+  correct_index: 0
+  explanation: CrewAI 讓 Agent 扮演特定角色（如研究員、作家），組成團隊協作。
+  tags:
+  - chap-gen-chapter4
+  - sec-multi-agent-systems
+  id: 11464
+  usage: both
+- chapter_title: AI 代理人 (Agentic AI) 與自動化
+  section_title: Agent 架構與組件
+  text: 情境：Agent 的「大腦」通常由什麼擔任？
+  type: multiple_choice
+  options:
+  - CPU
+  - LLM (大型語言模型)
+  - 資料庫
+  - 網路卡
+  correct_index: 1
+  explanation: LLM 負責理解意圖、推理邏輯與決策，是 Agent 的智慧核心。
+  tags:
+  - chap-gen-chapter4
+  - sec-agent-architecture
+  id: 11465
+  usage: both
+- chapter_title: AI 代理人 (Agentic AI) 與自動化
+  section_title: 多代理系統 (MAS)
+  text: 情境：OpenAI Swarm 框架強調的機制是？
+  type: multiple_choice
+  options:
+  - Handoffs (交接)
+  - 競爭
+  - 投票
+  - 加密
+  correct_index: 0
+  explanation: Swarm 展示了輕量級的 Agent 編排，核心在於 Agent 能將控制權順暢地交接給另一個 Agent。
+  tags:
+  - chap-gen-chapter4
+  - sec-multi-agent-systems
+  id: 11466
+  usage: both
+- chapter_title: AI 代理人 (Agentic AI) 與自動化
+  section_title: Agent 架構與組件
+  text: 情境：最佳優先搜尋 (Best-First Search) 依據什麼來選擇路徑？
+  type: multiple_choice
+  options:
+  - 隨機
+  - 啟發式評估 (Heuristic)，看哪條路最有希望
+  - 距離最遠
+  - 時間最長
+  correct_index: 1
+  explanation: Best-First Search 利用啟發函數評估節點價值，優先探索看起來最可能通往目標的路徑。
+  tags:
+  - chap-gen-chapter4
+  - sec-agent-architecture
+  id: 11467
+  usage: both
+- chapter_title: AI 代理人 (Agentic AI) 與自動化
+  section_title: 多代理系統 (MAS)
+  text: 情境：在 MAS 中，若 Agent 間發生衝突（如對工具選擇有歧見），解法之一是？
+  type: multiple_choice
+  options:
+  - 停止運作
+  - 引入決策者 Agent 或投票機制
+  - 隨機選擇
+  - 全部重來
+  correct_index: 1
+  explanation: 透過仲裁者或民主機制能有效解決協作過程中的分歧。
+  tags:
+  - chap-gen-chapter4
+  - sec-multi-agent-systems
+  id: 11468
+  usage: both
+- chapter_title: AI 代理人 (Agentic AI) 與自動化
+  section_title: Agent 架構與組件
+  text: 情境：Agent 的短期記憶主要儲存？
+  type: multiple_choice
+  options:
+  - 訓練資料
+  - 當下的對話上下文
+  - 維基百科
+  - 所有歷史紀錄
+  correct_index: 1
+  explanation: 短期記憶負責維護當前對話的 Context，確保回應的連貫性。
+  tags:
+  - chap-gen-chapter4
+  - sec-agent-architecture
+  id: 11469
+  usage: both
+- chapter_title: AI 代理人 (Agentic AI) 與自動化
+  section_title: 多代理系統 (MAS)
+  text: 情境：Microsoft Semantic Kernel 特別適合哪種開發環境？
+  type: multiple_choice
+  options:
+  - 純 Python
+  - .NET 生態系與企業級整合
+  - 組合語言
+  - 網頁前端
+  correct_index: 1
+  explanation: Semantic Kernel 強調與現有程式碼 (C#, Python, Java) 的整合，特別受到 .NET 企業開發者歡迎。
+  tags:
+  - chap-gen-chapter4
+  - sec-multi-agent-systems
+  id: 11470
+  usage: both

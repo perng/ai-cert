@@ -14,6 +14,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: quiz
 - id: 5002
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 平台特性與選擇 (理論基礎)
@@ -29,6 +30,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: quiz
 - id: 5003
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
@@ -44,6 +46,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: quiz
 - id: 5004
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
@@ -59,6 +62,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: quiz
 - id: 5005
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
@@ -74,6 +78,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: quiz
 - id: 5006
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 整合策略與風險
@@ -89,6 +94,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: quiz
 - id: 5007
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
@@ -104,6 +110,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: quiz
 - id: 5008
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
@@ -119,6 +126,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: quiz
 - id: 5009
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 平台特性與選擇 (理論基礎)
@@ -134,6 +142,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: quiz
 - id: 5010
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
@@ -149,6 +158,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: quiz
 - id: 5011
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 整合策略與風險
@@ -164,6 +174,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5012
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
@@ -179,6 +190,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5013
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
@@ -194,6 +206,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5014
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 平台特性與選擇 (理論基礎)
@@ -209,6 +222,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5015
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
@@ -224,6 +238,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5016
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
@@ -239,6 +254,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5017
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 整合策略與風險
@@ -254,6 +270,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5018
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
@@ -269,6 +286,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5019
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 平台特性與選擇 (理論基礎)
@@ -284,6 +302,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5020
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
@@ -299,6 +318,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5021
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
@@ -314,6 +334,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5022
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
@@ -329,6 +350,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5023
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
@@ -344,6 +366,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5024
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 整合策略與風險
@@ -359,6 +382,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5025
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
@@ -374,6 +398,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5026
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
@@ -389,6 +414,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5027
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 平台特性與選擇 (理論基礎)
@@ -404,6 +430,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5028
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
@@ -419,6 +446,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5029
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
@@ -434,6 +462,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5030
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: No Code / Low Code 平台與 AI 開發工具
@@ -449,6 +478,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5031
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
@@ -464,6 +494,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5032
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 整合策略與風險
@@ -479,6 +510,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5033
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
@@ -494,6 +526,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5034
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
@@ -509,6 +542,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5035
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
@@ -524,6 +558,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5036
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 平台特性與選擇 (理論基礎)
@@ -539,6 +574,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5037
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
@@ -554,6 +590,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5038
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
@@ -569,6 +606,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5039
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
@@ -584,6 +622,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5040
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
@@ -599,6 +638,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
+  usage: both
 - id: 5041
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 平台特性與選擇
@@ -614,6 +654,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-platform-characteristics
+  usage: both
 - id: 5042
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具
@@ -629,6 +670,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-ai-tools
+  usage: both
 - id: 5043
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具
@@ -644,6 +686,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-ai-tools
+  usage: both
 - id: 5044
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具
@@ -659,6 +702,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-ai-tools
+  usage: both
 - id: 5045
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具
@@ -674,6 +718,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-ai-tools
+  usage: both
 - id: 5046
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具
@@ -689,6 +734,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-ai-tools
+  usage: both
 - id: 5047
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具
@@ -704,6 +750,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-ai-tools
+  usage: both
 - id: 5048
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具
@@ -719,6 +766,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-ai-tools
+  usage: both
 - id: 5049
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 整合策略與風險
@@ -734,6 +782,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-integration-risks
+  usage: both
 - id: 5050
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 整合策略與風險
@@ -749,6 +798,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-integration-risks
+  usage: both
 - id: 5061
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 平台特性與選擇
@@ -764,6 +814,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-platform-characteristics
+  usage: both
 - id: 5062
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具
@@ -779,6 +830,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-ai-tools
+  usage: both
 - id: 5063
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具
@@ -794,6 +846,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-ai-tools
+  usage: both
 - id: 5064
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 整合策略與風險
@@ -809,6 +862,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-integration-risks
+  usage: both
 - id: 5065
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 整合策略與風險
@@ -824,6 +878,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-integration-risks
+  usage: both
 - id: 5066
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 熱門 AI 開發與 No/Low Code 工具
@@ -839,6 +894,7 @@ questions:
   tags:
   - chap-gen-chapter5
   - sec-ai-tools
+  usage: both
 - id: 11425
   chapter_title: 生成式 AI 的開發工具與應用
   section_title: 常見生成式 AI 應用
@@ -850,12 +906,13 @@ questions:
   - 調整生成策略（如 Beam Search 或溫度參數） ，以提升輸出文字的合理性
   - 專注於文字序列上下文的建模，只提升文字間的連貫性
   correct_index: 0
-  explanation: 此題涉及 某新創公司開發一套圖... 的核心概念。正確答案為「強化語言模型的句法與流暢性，確保生成文字更自然易讀；」。 
+  explanation: 此題涉及 某新創公司開發一套圖... 的核心概念。正確答案為「強化語言模型的句法與流暢性，確保生成文字更自然易讀；」。
   tags:
   - past-exam
   - 114-4
   - chap-gen-chapter5
   - sec-genai-applications
+  usage: both
 - id: 11415
   chapter_title: 生成式 AI 的開發工具與應用
   section_title: 常見生成式 AI 應用
@@ -867,12 +924,13 @@ questions:
   - 利用生成對抗網路（GAN）生成不同風格文本，並透過人工篩選最終答案
   - 採用規則式替換方法，替換回覆詞彙以符合不同風格要求
   correct_index: 0
-  explanation: 此題涉及 某客服自動回應系統希... 的核心概念。正確答案為「直接微調預訓練模型針對每個客戶群體分別訓練不同風格模型；」。 
+  explanation: 此題涉及 某客服自動回應系統希... 的核心概念。正確答案為「直接微調預訓練模型針對每個客戶群體分別訓練不同風格模型；」。
   tags:
   - past-exam
   - 114-4
   - chap-gen-chapter5
   - sec-genai-applications
+  usage: both
 - id: 11427
   chapter_title: 生成式 AI 的開發工具與應用
   section_title: 常見生成式 AI 應用
@@ -884,12 +942,13 @@ questions:
   - 將語音轉文字後標註發言角色與主題邊界，結合語意分群進行動態摘要
   - 將所有語音內容儲存為完整紀錄，提供事後人工摘要比對用
   correct_index: 0
-  explanation: 此題涉及 某企業已建置 AI ... 的核心概念。正確答案為「使用語音轉文字模型即時輸出逐字稿並轉入 GPT 摘要；」。 
+  explanation: 此題涉及 某企業已建置 AI ... 的核心概念。正確答案為「使用語音轉文字模型即時輸出逐字稿並轉入 GPT 摘要；」。
   tags:
   - past-exam
   - 114-4
   - chap-gen-chapter5
   - sec-genai-applications
+  usage: both
 - id: 11401
   chapter_title: 生成式 AI 的開發工具與應用
   section_title: 低程式碼與無程式碼開發
@@ -901,12 +960,13 @@ questions:
   - 模型僅依循 UML（Unified Modeling Language）等傳統建模方式，缺乏針對 Low Code 環境的延展性
   - 模型在 Low Code 平台中已被自動程式碼生成全面取代，實際價值有限
   correct_index: 0
-  explanation: Low/No Code 平台降低了 AI 開發門檻，讓非技術人員也能透過圖形化介面快速構建與部署 AI 應用。 
+  explanation: Low/No Code 平台降低了 AI 開發門檻，讓非技術人員也能透過圖形化介面快速構建與部署 AI 應用。
   tags:
   - past-exam
   - 114-4
   - chap-gen-chapter5
   - sec-low-code-no-code
+  usage: both
 - id: 11413
   chapter_title: 生成式 AI 的開發工具與應用
   section_title: AI 輔助開發 (Copilot)
@@ -918,12 +978,14 @@ questions:
   - GitHub Copilot利用靜態分析技術分析程式碼，根據邏輯流程推導下一步應寫的程式碼
   - GitHub Copilot 由OpenAI 的 Codex 模型提供技術支援，可即時在開發者編輯程式碼時給出整行或整個函式建議
   correct_index: 0
-  explanation: 此題涉及 關於 GitHub ... 的核心概念。正確答案為「GitHub Copilot 基於程式碼片段查詢工具，透過後端搜尋大型程式 碼資料庫提供建議； 第二科：生成式 AI 應用與規劃」。 
+  explanation: 此題涉及 關於 GitHub ... 的核心概念。正確答案為「GitHub Copilot 基於程式碼片段查詢工具，透過後端搜尋大型程式
+    碼資料庫提供建議； 第二科：生成式 AI 應用與規劃」。
   tags:
   - past-exam
   - 114-4
   - chap-gen-chapter5
   - sec-ai-copilot
+  usage: both
 - id: 11437
   chapter_title: 生成式 AI 的開發工具與應用
   section_title: 常見生成式 AI 應用
@@ -935,9 +997,330 @@ questions:
   - 模型對訓練數據擬合過度，在未知數據上泛化能力不足
   - 後端資料庫因欄位定義或結構調整，導致特徵提取流程與原始設計不一致
   correct_index: 0
-  explanation: 此題涉及 在機器學習模型的實務... 的核心概念。正確答案為「訓練時使用的資料分佈，與部署後實際輸入資料的統計特徵隨時間 逐漸出現差異，導致模型表現衰退；」。 
+  explanation: 此題涉及 在機器學習模型的實務... 的核心概念。正確答案為「訓練時使用的資料分佈，與部署後實際輸入資料的統計特徵隨時間 逐漸出現差異，導致模型表現衰退；」。
   tags:
   - past-exam
   - 114-4
   - chap-gen-chapter5
   - sec-genai-applications
+  usage: both
+- chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 平台特性與選擇
+  text: 情境：行銷部門想要快速建立一個簡單的活動報名網頁，且沒有 IT 人員支援。最適合選用哪種工具？
+  type: multiple_choice
+  options:
+  - Low Code 平台
+  - No Code 平台
+  - Python Flask
+  - C++
+  correct_index: 1
+  explanation: No Code 平台專為非技術人員設計，透過拖拉元件即可快速完成簡單應用。
+  tags:
+  - chap-gen-chapter5
+  - sec-platform-characteristics
+  id: 11438
+  usage: both
+- chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 熱門 AI 開發與 No/Low Code 工具
+  text: 情境：Cursor 編輯器的 Codebase RAG 功能是指？
+  type: multiple_choice
+  options:
+  - 自動上傳程式碼到 GitHub
+  - 索引整個專案的程式碼，讓 AI 回答時能參考現有架構與風格
+  - 自動刪除程式碼
+  - 只能看當前檔案
+  correct_index: 1
+  explanation: Codebase RAG 讓 AI 具備全局視野，能給出符合專案上下文的建議。
+  tags:
+  - chap-gen-chapter5
+  - sec-ai-tools
+  id: 11439
+  usage: both
+- chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 整合策略與風險
+  text: 情境：影子 IT (Shadow IT) 的主要風險是？
+  type: multiple_choice
+  options:
+  - 開發速度太快
+  - 資安漏洞與資料孤島 (IT 部門無法管控)
+  - 成本太低
+  - 員工太閒
+  correct_index: 1
+  explanation: 未經核准的工具使用可能導致機密外洩，且缺乏統一維護。
+  tags:
+  - chap-gen-chapter5
+  - sec-integration-risks
+  id: 11440
+  usage: both
+- chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 熱門 AI 開發與 No/Low Code 工具
+  text: 情境：n8n 平台的主要功能是？
+  type: multiple_choice
+  options:
+  - 生成圖片
+  - 工作流自動化 (Workflow Automation)，串接 LLM 與外部服務
+  - 寫作業系統
+  - 防毒軟體
+  correct_index: 1
+  explanation: n8n 透過節點串接不同服務（如 Gmail, Slack, LLM），實現辦公流程自動化。
+  tags:
+  - chap-gen-chapter5
+  - sec-ai-tools
+  id: 11441
+  usage: both
+- chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 平台特性與選擇
+  text: 情境：Low Code 平台與 No Code 平台最大的區別在於？
+  type: multiple_choice
+  options:
+  - Low Code 比較便宜
+  - Low Code 允許或需要撰寫少量程式碼以處理複雜邏輯，適合專業開發者
+  - No Code 功能更強
+  - 兩者一樣
+  correct_index: 1
+  explanation: Low Code 保留了 Coding 的彈性，適合需要高度客製化或複雜邏輯的企業級應用。
+  tags:
+  - chap-gen-chapter5
+  - sec-platform-characteristics
+  id: 11442
+  usage: both
+- chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 熱門 AI 開發與 No/Low Code 工具
+  text: 情境：ComfyUI 是專為哪個模型設計的節點式介面？
+  type: multiple_choice
+  options:
+  - GPT-4
+  - Stable Diffusion
+  - Llama 3
+  - BERT
+  correct_index: 1
+  explanation: ComfyUI 讓使用者能精細控制 Stable Diffusion 的生成流程（如 VAE, Sampler）。
+  tags:
+  - chap-gen-chapter5
+  - sec-ai-tools
+  id: 11443
+  usage: both
+- chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 整合策略與風險
+  text: 情境：在使用 AI 輔助開發時，Zero Trust 原則是指？
+  type: multiple_choice
+  options:
+  - 完全信任 AI
+  - 預設 AI 生成的程式碼是不可信的，必須經過測試與審查
+  - 不使用 AI
+  - 只信任付費版 AI
+  correct_index: 1
+  explanation: AI 可能生成有 Bug 或安全漏洞的程式碼，必須由人類把關。
+  tags:
+  - chap-gen-chapter5
+  - sec-integration-risks
+  id: 11444
+  usage: both
+- chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 熱門 AI 開發與 No/Low Code 工具
+  text: 情境：Google Antigravity IDE 的核心特色是？
+  type: multiple_choice
+  options:
+  - Agent-first，允許使用者指揮多個 Agent 進行自主規劃與實作
+  - 只能寫 Python
+  - 沒有圖形介面
+  - 完全免費
+  correct_index: 0
+  explanation: Antigravity 強調 Agent 的自主性與協作，適合處理複雜的系統級任務。
+  tags:
+  - chap-gen-chapter5
+  - sec-ai-tools
+  id: 11445
+  usage: both
+- chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 熱門 AI 開發與 No/Low Code 工具
+  text: 情境：Replit Agent 允許使用者透過什麼方式開發 App？
+  type: multiple_choice
+  options:
+  - 寫組合語言
+  - 自然語言描述需求
+  - 畫流程圖
+  - 心電感應
+  correct_index: 1
+  explanation: 使用者只需用自然語言說出想法，Agent 會自動完成規劃、Coding 到部署的全過程。
+  tags:
+  - chap-gen-chapter5
+  - sec-ai-tools
+  id: 11446
+  usage: both
+- chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 整合策略與風險
+  text: 情境：Boilerplate Code (樣板程式碼) 是 AI 輔助開發的常見應用，例如？
+  type: multiple_choice
+  options:
+  - 核心演算法
+  - API 串接架構或單元測試框架
+  - 機密金鑰
+  - 使用者密碼
+  correct_index: 1
+  explanation: AI 非常擅長生成重複性高、結構固定的樣板程式碼，節省開發者時間。
+  tags:
+  - chap-gen-chapter5
+  - sec-integration-risks
+  id: 11447
+  usage: both
+- chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 熱門 AI 開發與 No/Low Code 工具
+  text: 情境：Windsurf IDE 強調的 "Flow" 範式是指？
+  type: multiple_choice
+  options:
+  - 水流冷卻
+  - Agent 持續監控開發行為，主動預測並協助下一步
+  - 強制休息
+  - 限制網速
+  correct_index: 1
+  explanation: Windsurf 透過預測使用者的意圖，提供無縫且主動的開發協助。
+  tags:
+  - chap-gen-chapter5
+  - sec-ai-tools
+  id: 11448
+  usage: both
+- chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 生成式 AI 產業應用案例
+  text: 情境：在製造業中，Generative Design (生成式設計) 的應用是？
+  type: multiple_choice
+  options:
+  - 生成維修報告
+  - 輸入需求與限制，AI 自動生成多種最佳化的產品結構
+  - 生成發票
+  - 生成員工證
+  correct_index: 1
+  explanation: AI 能探索人類難以想像的設計空間，產出輕量化且高強度的結構。
+  tags:
+  - chap-gen-chapter5
+  - sec-industry-applications
+  id: 11449
+  usage: both
+- chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 熱門 AI 開發與 No/Low Code 工具
+  text: 情境：GitHub Copilot 主要提供的功能是？
+  type: multiple_choice
+  options:
+  - 自動部署
+  - 程式碼補全 (Autocomplete) 與建議
+  - 專案管理
+  - 資料庫備份
+  correct_index: 1
+  explanation: Copilot 根據上下文即時提供程式碼片段建議，加速 Coding 過程。
+  tags:
+  - chap-gen-chapter5
+  - sec-ai-tools
+  id: 11450
+  usage: both
+- chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 整合策略與風險
+  text: 情境：Mock Data (測試數據) 生成是為了？
+  type: multiple_choice
+  options:
+  - 欺騙客戶
+  - 避免在測試環境使用真實個資，降低資安風險
+  - 增加資料庫負載
+  - 訓練模型
+  correct_index: 1
+  explanation: 使用 AI 生成逼真的假資料進行測試，可避免真實個資外洩。
+  tags:
+  - chap-gen-chapter5
+  - sec-integration-risks
+  id: 11451
+  usage: both
+- chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 熱門 AI 開發與 No/Low Code 工具
+  text: 情境：Lovable / v0 這類工具專注於？
+  type: multiple_choice
+  options:
+  - 後端邏輯
+  - UI 生成 (將草圖轉為前端程式碼)
+  - 資料庫優化
+  - 資安檢測
+  correct_index: 1
+  explanation: 這類工具能將視覺設計（圖片/草圖）直接轉換為可用的前端程式碼 (如 React)。
+  tags:
+  - chap-gen-chapter5
+  - sec-ai-tools
+  id: 11452
+  usage: both
+- chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 平台特性與選擇
+  text: 情境：在 Low Code 平台中，「Model」通常指的是？
+  type: multiple_choice
+  options:
+  - AI 模型
+  - 資料模型 (Data Model)，描述資料結構與業務流程
+  - 3D 模型
+  - 模特兒
+  correct_index: 1
+  explanation: Low Code 語境下的 Model 指的是業務資料的抽象定義，而非機器學習模型。
+  tags:
+  - chap-gen-chapter5
+  - sec-platform-characteristics
+  id: 11453
+  usage: both
+- chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 熱門 AI 開發與 No/Low Code 工具
+  text: 情境：LangFlow / Flowise 通常基於哪個框架構建？
+  type: multiple_choice
+  options:
+  - TensorFlow
+  - LangChain
+  - PyTorch
+  - Keras
+  correct_index: 1
+  explanation: 它們提供 LangChain 的視覺化介面，方便快速組裝 LLM 應用。
+  tags:
+  - chap-gen-chapter5
+  - sec-ai-tools
+  id: 11454
+  usage: both
+- chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 生成式 AI 產業應用案例
+  text: 情境：在金融業，AI 用於「合規監控」主要是為了？
+  type: multiple_choice
+  options:
+  - 推薦股票
+  - 自動監控交易紀錄，生成可疑活動報告 (SAR) 以防範洗錢
+  - 計算員工薪資
+  - 設計信用卡圖案
+  correct_index: 1
+  explanation: AI 能從海量交易中識別異常模式，協助銀行符合反洗錢法規。
+  tags:
+  - chap-gen-chapter5
+  - sec-industry-applications
+  id: 11455
+  usage: both
+- chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 熱門 AI 開發與 No/Low Code 工具
+  text: 情境：Claude Code 是一個什麼樣的工具？
+  type: multiple_choice
+  options:
+  - 網頁瀏覽器
+  - CLI 工具，能在終端機中操作檔案系統與執行指令
+  - 繪圖軟體
+  - 遊戲引擎
+  correct_index: 1
+  explanation: Claude Code 將 AI 能力帶入 Command Line，適合自動化腳本與系統操作。
+  tags:
+  - chap-gen-chapter5
+  - sec-ai-tools
+  id: 11456
+  usage: both
+- chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 整合策略與風險
+  text: 情境：Human-in-the-loop 原則強調？
+  type: multiple_choice
+  options:
+  - 人類必須一直工作
+  - AI 只是副駕駛，最終決定與責任在人類手上
+  - 人類不能使用 AI
+  - AI 取代人類
+  correct_index: 1
+  explanation: 確保人類對 AI 的產出保有監督與最終裁量權，是負責任 AI 的核心。
+  tags:
+  - chap-gen-chapter5
+  - sec-integration-risks
+  id: 11457
+  usage: both

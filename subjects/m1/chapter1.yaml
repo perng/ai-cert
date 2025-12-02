@@ -14,6 +14,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-prob-stats
+  usage: quiz
 - id: 3102
   chapter_title: 人工智慧數學基礎
   section_title: 敘述統計
@@ -29,6 +30,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-prob-stats
+  usage: quiz
 - id: 3103
   chapter_title: 人工智慧數學基礎
   section_title: 機率分佈
@@ -40,10 +42,12 @@ questions:
   - 99.7%
   - 50%
   correct_index: 1
-  explanation: 常態分佈的特性是：$\mu \pm 1\sigma$ 涵蓋約 68%，$\mu \pm 2\sigma$ 涵蓋約 95%，$\mu \pm 3\sigma$ 涵蓋約 99.7%。
+  explanation: 常態分佈的特性是：$\mu \pm 1\sigma$ 涵蓋約 68%，$\mu \pm 2\sigma$ 涵蓋約 95%，$\mu \pm
+    3\sigma$ 涵蓋約 99.7%。
   tags:
   - chap-m1-ch1
   - sec-prob-stats
+  usage: quiz
 - id: 3104
   chapter_title: 人工智慧數學基礎
   section_title: 機率分佈
@@ -59,6 +63,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-prob-stats
+  usage: quiz
 - id: 3105
   chapter_title: 人工智慧數學基礎
   section_title: 假設檢定
@@ -74,6 +79,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-prob-stats
+  usage: quiz
 - id: 3106
   chapter_title: 人工智慧數學基礎
   section_title: 線性代數
@@ -85,10 +91,12 @@ questions:
   - 相反方向
   - 長度相等
   correct_index: 1
-  explanation: 內積公式為 $a \cdot b = ||a|| ||b|| \cos \theta$。當內積為 0 時，$\cos \theta = 0$，即 $\theta = 90^\circ$，表示兩向量垂直（正交）。
+  explanation: 內積公式為 $a \cdot b = ||a|| ||b|| \cos \theta$。當內積為 0 時，$\cos \theta =
+    0$，即 $\theta = 90^\circ$，表示兩向量垂直（正交）。
   tags:
   - chap-m1-ch1
   - sec-linear-algebra
+  usage: quiz
 - id: 3107
   chapter_title: 人工智慧數學基礎
   section_title: 線性代數
@@ -104,6 +112,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-linear-algebra
+  usage: quiz
 - id: 3108
   chapter_title: 人工智慧數學基礎
   section_title: 微積分與最佳化
@@ -119,6 +128,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-calculus-optimization
+  usage: quiz
 - id: 3109
   chapter_title: 人工智慧數學基礎
   section_title: 微積分與最佳化
@@ -134,6 +144,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-calculus-optimization
+  usage: quiz
 - id: 3110
   chapter_title: 人工智慧數學基礎
   section_title: 微積分與最佳化
@@ -149,6 +160,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-calculus-optimization
+  usage: quiz
 - id: 3111
   chapter_title: 人工智慧數學基礎
   section_title: 機率分佈
@@ -164,6 +176,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-prob-stats
+  usage: both
 - id: 3112
   chapter_title: 人工智慧數學基礎
   section_title: 線性代數
@@ -179,6 +192,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-linear-algebra
+  usage: both
 - id: 3113
   chapter_title: 人工智慧數學基礎
   section_title: 線性代數
@@ -190,10 +204,12 @@ questions:
   - A 和 B 的維度完全相同
   - A 和 B 必須是方陣
   correct_index: 1
-  explanation: 若 A 是 $m \times n$ 矩陣，B 是 $p \times q$ 矩陣，則必須 $n = p$ (A 的行數等於 B 的列數) 才能相乘。
+  explanation: 若 A 是 $m \times n$ 矩陣，B 是 $p \times q$ 矩陣，則必須 $n = p$ (A 的行數等於 B 的列數)
+    才能相乘。
   tags:
   - chap-m1-ch1
   - sec-linear-algebra
+  usage: both
 - id: 3114
   chapter_title: 人工智慧數學基礎
   section_title: 微積分與最佳化
@@ -209,6 +225,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-calculus-optimization
+  usage: both
 - id: 3115
   chapter_title: 人工智慧數學基礎
   section_title: 微積分與最佳化
@@ -224,6 +241,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-calculus-optimization
+  usage: both
 - id: 3116
   chapter_title: 人工智慧數學基礎
   section_title: 機率分佈
@@ -239,6 +257,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-prob-stats
+  usage: both
 - id: 3117
   chapter_title: 人工智慧數學基礎
   section_title: 機率分佈
@@ -254,6 +273,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-prob-stats
+  usage: both
 - id: 3118
   chapter_title: 人工智慧數學基礎
   section_title: 線性代數
@@ -269,6 +289,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-linear-algebra
+  usage: both
 - id: 3119
   chapter_title: 人工智慧數學基礎
   section_title: 線性代數
@@ -284,6 +305,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-linear-algebra
+  usage: both
 - id: 3120
   chapter_title: 人工智慧數學基礎
   section_title: 假設檢定
@@ -299,6 +321,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-prob-stats
+  usage: both
 - id: 3121
   chapter_title: 人工智慧數學基礎
   section_title: 假設檢定
@@ -314,6 +337,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-prob-stats
+  usage: both
 - id: 3122
   chapter_title: 人工智慧數學基礎
   section_title: 微積分與最佳化
@@ -329,6 +353,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-calculus-optimization
+  usage: both
 - id: 3123
   chapter_title: 人工智慧數學基礎
   section_title: 機率分佈
@@ -344,6 +369,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-prob-stats
+  usage: both
 - id: 3124
   chapter_title: 人工智慧數學基礎
   section_title: 線性代數
@@ -359,6 +385,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-linear-algebra
+  usage: both
 - id: 3125
   chapter_title: 人工智慧數學基礎
   section_title: 線性代數
@@ -374,6 +401,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-linear-algebra
+  usage: both
 - id: 3126
   chapter_title: 人工智慧數學基礎
   section_title: 微積分與最佳化
@@ -389,6 +417,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-calculus-optimization
+  usage: both
 - id: 3127
   chapter_title: 人工智慧數學基礎
   section_title: 機率分佈
@@ -404,6 +433,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-prob-stats
+  usage: both
 - id: 3128
   chapter_title: 人工智慧數學基礎
   section_title: 假設檢定
@@ -419,6 +449,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-prob-stats
+  usage: both
 - id: 3129
   chapter_title: 人工智慧數學基礎
   section_title: 線性代數
@@ -434,6 +465,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-linear-algebra
+  usage: both
 - id: 3130
   chapter_title: 人工智慧數學基礎
   section_title: 微積分與最佳化
@@ -449,6 +481,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-calculus-optimization
+  usage: both
 - id: 3131
   chapter_title: 人工智慧數學基礎
   section_title: 機率分佈
@@ -464,6 +497,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-prob-stats
+  usage: both
 - id: 3132
   chapter_title: 人工智慧數學基礎
   section_title: 線性代數
@@ -479,6 +513,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-linear-algebra
+  usage: both
 - id: 3133
   chapter_title: 人工智慧數學基礎
   section_title: 微積分與最佳化
@@ -494,6 +529,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-calculus-optimization
+  usage: both
 - id: 3134
   chapter_title: 人工智慧數學基礎
   section_title: 假設檢定
@@ -509,6 +545,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-prob-stats
+  usage: both
 - id: 3135
   chapter_title: 人工智慧數學基礎
   section_title: 線性代數
@@ -524,6 +561,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-linear-algebra
+  usage: both
 - id: 3136
   chapter_title: 人工智慧數學基礎
   section_title: 微積分與最佳化
@@ -539,6 +577,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-calculus-optimization
+  usage: both
 - id: 3137
   chapter_title: 人工智慧數學基礎
   section_title: 機率分佈
@@ -554,6 +593,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-prob-stats
+  usage: both
 - id: 3138
   chapter_title: 人工智慧數學基礎
   section_title: 線性代數
@@ -569,6 +609,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-linear-algebra
+  usage: both
 - id: 3139
   chapter_title: 人工智慧數學基礎
   section_title: 假設檢定
@@ -584,6 +625,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-prob-stats
+  usage: both
 - id: 3140
   chapter_title: 人工智慧數學基礎
   section_title: 微積分與最佳化
@@ -599,10 +641,12 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-calculus-optimization
+  usage: both
 - id: 3141
   chapter_title: 人工智慧數學基礎
   section_title: 深度思考情境題
-  text: 情境：你正在開發一個用於檢測罕見疾病的 AI 模型。該疾病的發病率僅為 0.1%。如果你訓練的模型預測所有人都「沒病」，其準確率 (Accuracy) 將高達 99.9%。請問這個指標是否足以評估模型好壞？為什麼？
+  text: 情境：你正在開發一個用於檢測罕見疾病的 AI 模型。該疾病的發病率僅為 0.1%。如果你訓練的模型預測所有人都「沒病」，其準確率 (Accuracy)
+    將高達 99.9%。請問這個指標是否足以評估模型好壞？為什麼？
   type: multiple_choice
   options:
   - 足以，因為 99.9% 準確率非常高。
@@ -610,10 +654,12 @@ questions:
   - 不足以，應參考召回率 (Recall) 或 F1-score。
   - 足以，只要模型運算速度夠快。
   correct_index: 2
-  explanation: 在類別不平衡（Imbalanced Data）問題中，準確率 (Accuracy) 往往具有欺騙性。模型只需盲目猜測多數類別即可獲得高分，但對於我們真正關心的少數類別（罕見病）卻毫無偵測能力。因此需使用 Recall, Precision 或 F1-score 等指標。
+  explanation: 在類別不平衡（Imbalanced Data）問題中，準確率 (Accuracy) 往往具有欺騙性。模型只需盲目猜測多數類別即可獲得高分，但對於我們真正關心的少數類別（罕見病）卻毫無偵測能力。因此需使用
+    Recall, Precision 或 F1-score 等指標。
   tags:
   - chap-m1-ch1
   - sec-scenario
+  usage: mock
 - id: 3142
   chapter_title: 人工智慧數學基礎
   section_title: 深度思考情境題
@@ -625,14 +671,17 @@ questions:
   - 梯度消失；應更換活化函數。
   - 學習率過大；應降低學習率。
   correct_index: 1
-  explanation: 訓練集表現好但驗證集表現變差是典型的過擬合現象。數學上，這意味著模型擬合了訓練數據中的雜訊。解決方案包括在損失函數中加入正則化項（限制權重大小）或使用 Dropout 等技術。
+  explanation: 訓練集表現好但驗證集表現變差是典型的過擬合現象。數學上，這意味著模型擬合了訓練數據中的雜訊。解決方案包括在損失函數中加入正則化項（限制權重大小）或使用
+    Dropout 等技術。
   tags:
   - chap-m1-ch1
   - sec-scenario
+  usage: mock
 - id: 3143
   chapter_title: 人工智慧數學基礎
   section_title: 深度思考情境題
-  text: 情境：某電商平台希望透過 A/B 測試來評估新版網頁是否能提升購買率。經過一週測試，A 組購買率 5.0%，B 組 5.2%，p-value 為 0.03。若顯著水準設為 0.05，你應如何解讀並建議？
+  text: 情境：某電商平台希望透過 A/B 測試來評估新版網頁是否能提升購買率。經過一週測試，A 組購買率 5.0%，B 組 5.2%，p-value 為 0.03。若顯著水準設為
+    0.05，你應如何解讀並建議？
   type: multiple_choice
   options:
   - p-value < 0.05，差異顯著，建議採用 B 版網頁。
@@ -640,10 +689,12 @@ questions:
   - 雖然統計顯著，但 0.2% 的提升可能不具商業實質意義。
   - 數據不足，無法判斷。
   correct_index: 2
-  explanation: 雖然 p < 0.05 達到統計顯著性，但在商業決策中，還需考慮「實質顯著性」。0.2% 的微幅提升是否值得投入巨大的改版成本？這需要結合商業邏輯（如預期營收增加 vs 開發成本）進行綜合判斷，而非僅看 p-value。
+  explanation: 雖然 p < 0.05 達到統計顯著性，但在商業決策中，還需考慮「實質顯著性」。0.2% 的微幅提升是否值得投入巨大的改版成本？這需要結合商業邏輯（如預期營收增加
+    vs 開發成本）進行綜合判斷，而非僅看 p-value。
   tags:
   - chap-m1-ch1
   - sec-scenario
+  usage: mock
 - id: 3144
   chapter_title: 人工智慧數學基礎
   section_title: 深度思考情境題
@@ -655,14 +706,17 @@ questions:
   - 直接發散；應增加批次大小。
   - 陷入局部最小值；應使用隨機初始化。
   correct_index: 1
-  explanation: 在狹長峽谷狀的損失曲面上，SGD 容易在陡峭方向上大幅震盪，而在平緩方向上移動緩慢。動量法 (Momentum) 能累積過去的梯度方向，加速通過平緩區並抑制震盪；Adam 等自適應方法則能針對不同參數調整學習率，有效解決此問題。
+  explanation: 在狹長峽谷狀的損失曲面上，SGD 容易在陡峭方向上大幅震盪，而在平緩方向上移動緩慢。動量法 (Momentum) 能累積過去的梯度方向，加速通過平緩區並抑制震盪；Adam
+    等自適應方法則能針對不同參數調整學習率，有效解決此問題。
   tags:
   - chap-m1-ch1
   - sec-scenario
+  usage: mock
 - id: 3145
   chapter_title: 人工智慧數學基礎
   section_title: 深度思考情境題
-  text: 情境：你正在處理一個高維度的數據集（如 1000 個特徵），打算使用 PCA 進行降維。PCA 透過特徵值分解找到主成分。若前兩個主成分的特徵值總和佔所有特徵值總和的 95%，這代表什麼幾何意義？
+  text: 情境：你正在處理一個高維度的數據集（如 1000 個特徵），打算使用 PCA 進行降維。PCA 透過特徵值分解找到主成分。若前兩個主成分的特徵值總和佔所有特徵值總和的
+    95%，這代表什麼幾何意義？
   type: multiple_choice
   options:
   - 數據在二維空間中是線性不可分的。
@@ -670,7 +724,330 @@ questions:
   - 數據有 95% 是雜訊。
   - 剩下的 998 個維度完全沒有用。
   correct_index: 1
-  explanation: PCA 的特徵值代表了對應主成分方向上的變異量。若前兩個主成分解釋了 95% 的總變異，意味著數據的主要結構（資訊）幾乎都保留在這 2D 平面上，這為高維數據的視覺化和簡化提供了強有力的數學依據。
+  explanation: PCA 的特徵值代表了對應主成分方向上的變異量。若前兩個主成分解釋了 95% 的總變異，意味著數據的主要結構（資訊）幾乎都保留在這 2D
+    平面上，這為高維數據的視覺化和簡化提供了強有力的數學依據。
   tags:
   - chap-m1-ch1
   - sec-scenario
+  usage: mock
+- chapter_title: 人工智慧數學基礎
+  section_title: 機率與統計
+  text: 情境：在分析公司員工薪資時，發現有少數幾位高階主管的薪資極高，導致平均薪資被拉高。若想了解一般員工的薪資水準，應參考哪個統計量？
+  type: multiple_choice
+  options:
+  - 平均數 (Mean)
+  - 中位數 (Median)
+  - 變異數
+  - 標準差
+  correct_index: 1
+  explanation: 中位數不受極端值 (Outliers) 影響，更能代表偏態分佈數據的中心趨勢。
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+  id: 3146
+  usage: both
+- chapter_title: 人工智慧數學基礎
+  section_title: 機率與統計
+  text: 情境：某工廠生產的燈泡壽命呈現常態分佈，平均壽命 1000 小時，標準差 50 小時。根據 68-95-99.7 法則，約有多少比例的燈泡壽命在 900
+    到 1100 小時之間？
+  type: multiple_choice
+  options:
+  - 68%
+  - 95%
+  - 99.7%
+  - 50%
+  correct_index: 1
+  explanation: 900 到 1100 小時涵蓋了平均值正負 2 個標準差 (1000 ± 2*50) 的範圍，約佔 95%。
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+  id: 3147
+  usage: both
+- chapter_title: 人工智慧數學基礎
+  section_title: 機率與統計
+  text: 情境：在 A/B 測試中，若計算出的 p-value 為 0.03，且顯著水準 (alpha) 設為 0.05，決策應為？
+  type: multiple_choice
+  options:
+  - 接受虛無假設 (H0)
+  - 拒絕虛無假設 (H0)，認為結果具統計顯著性
+  - 無法判斷
+  - 重新測試
+  correct_index: 1
+  explanation: 當 p-value < alpha 時，表示在 H0 為真的前提下觀察到此結果的機率極低，因此拒絕 H0。
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+  id: 3148
+  usage: both
+- chapter_title: 人工智慧數學基礎
+  section_title: 線性代數
+  text: 情境：在推薦系統中，若想計算兩個使用者對電影喜好的相似程度，常計算其特徵向量的？
+  type: multiple_choice
+  options:
+  - 外積
+  - 內積 (Dot Product) 或 餘弦相似度
+  - 行列式值
+  - 特徵值
+  correct_index: 1
+  explanation: 內積與餘弦相似度能衡量兩個向量在方向上的一致性，即使用者的喜好是否相近。
+  tags:
+  - chap-m1-ch1
+  - sec-linear-algebra
+  id: 3149
+  usage: both
+- chapter_title: 人工智慧數學基礎
+  section_title: 微積分與最佳化
+  text: 情境：梯度下降法中，若「學習率 (Learning Rate)」設得太大，可能會發生什麼情況？
+  type: multiple_choice
+  options:
+  - 收斂速度變慢
+  - 在最小值附近震盪甚至發散，無法收斂
+  - 計算精度提高
+  - 模型變複雜
+  correct_index: 1
+  explanation: 過大的步長會導致更新幅度過猛，直接跨過最低點，甚至越跑越遠。
+  tags:
+  - chap-m1-ch1
+  - sec-calculus-optimization
+  id: 3150
+  usage: both
+- chapter_title: 人工智慧數學基礎
+  section_title: 機率與統計
+  text: 情境：伯努利分佈 (Bernoulli Distribution) 適用於描述哪種情況？
+  type: multiple_choice
+  options:
+  - 連續變數
+  - 只有兩種可能結果的單次試驗 (如投硬幣)
+  - 計數資料
+  - 多類別分類
+  correct_index: 1
+  explanation: 伯努利分佈描述單次二元試驗的機率分佈。
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+  id: 3151
+  usage: both
+- chapter_title: 人工智慧數學基礎
+  section_title: 線性代數
+  text: 情境：若兩個向量的內積為 0，代表它們在幾何上的關係是？
+  type: multiple_choice
+  options:
+  - 平行
+  - 正交 (垂直)
+  - 相等
+  - 相反
+  correct_index: 1
+  explanation: 內積為 0 意味著兩個向量之間沒有投影分量，即互相垂直。
+  tags:
+  - chap-m1-ch1
+  - sec-linear-algebra
+  id: 3152
+  usage: both
+- chapter_title: 人工智慧數學基礎
+  section_title: 微積分與最佳化
+  text: 情境：函數在某一點的「梯度 (Gradient)」指向？
+  type: multiple_choice
+  options:
+  - 函數值下降最快的方向
+  - 函數值增長最快的方向
+  - 切線方向
+  - 水平方向
+  correct_index: 1
+  explanation: 梯度向量指向函數值增加速率最大的方向。
+  tags:
+  - chap-m1-ch1
+  - sec-calculus-optimization
+  id: 3153
+  usage: both
+- chapter_title: 人工智慧數學基礎
+  section_title: 機率與統計
+  text: 情境：泊松分佈 (Poisson Distribution) 最適合用來預測？
+  type: multiple_choice
+  options:
+  - 身高體重
+  - 某段時間內客服中心接到的電話數量
+  - 考試成績
+  - 股票價格
+  correct_index: 1
+  explanation: 泊松分佈適用於描述固定時間或空間內稀有事件發生的次數。
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+  id: 3154
+  usage: both
+- chapter_title: 人工智慧數學基礎
+  section_title: 線性代數
+  text: 情境：矩陣 $A$ 的特徵值 $\lambda$ 和特徵向量 $v$ 滿足什麼關係？
+  type: multiple_choice
+  options:
+  - $Av = v$
+  - $Av = \lambda v$
+  - $Av = 0$
+  - $A = \lambda v$
+  correct_index: 1
+  explanation: 矩陣作用在特徵向量上，僅改變其長度（縮放 $\lambda$ 倍），不改變方向。
+  tags:
+  - chap-m1-ch1
+  - sec-linear-algebra
+  id: 3155
+  usage: both
+- chapter_title: 人工智慧數學基礎
+  section_title: 機率與統計
+  text: 情境：變異數 (Variance) 主要用來衡量數據的？
+  type: multiple_choice
+  options:
+  - 中心位置
+  - 離散程度 (分散狀況)
+  - 最大值
+  - 最小值
+  correct_index: 1
+  explanation: 變異數計算數據點與平均值的距離平方平均，反映數據的波動大小。
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+  id: 3156
+  usage: both
+- chapter_title: 人工智慧數學基礎
+  section_title: 微積分與最佳化
+  text: 情境：導數 (Derivative) 在幾何上的意義是？
+  type: multiple_choice
+  options:
+  - 曲線下面積
+  - 切線斜率 (變化率)
+  - 函數最大值
+  - 函數最小值
+  correct_index: 1
+  explanation: 導數描述函數在某一點的瞬時變化率，幾何上表現為切線斜率。
+  tags:
+  - chap-m1-ch1
+  - sec-calculus-optimization
+  id: 3157
+  usage: both
+- chapter_title: 人工智慧數學基礎
+  section_title: 機率與統計
+  text: 情境：中央極限定理 (CLT) 指出，當樣本數夠大時，樣本平均數的抽樣分佈會趨近於？
+  type: multiple_choice
+  options:
+  - 均勻分佈
+  - 常態分佈
+  - 泊松分佈
+  - 指數分佈
+  correct_index: 1
+  explanation: CLT 是統計推論的基礎，解釋了為何常態分佈在自然界中如此常見。
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+  id: 3158
+  usage: both
+- chapter_title: 人工智慧數學基礎
+  section_title: 線性代數
+  text: 情境：矩陣乘法 $C = AB$ 中，$C_{ij}$ 的值是？
+  type: multiple_choice
+  options:
+  - $A$ 的第 $i$ 列與 $B$ 的第 $j$ 行的內積
+  - $A$ 的第 $i$ 行與 $B$ 的第 $j$ 列的內積
+  - $A_{ij} * B_{ij}$
+  - $A_{ij} + B_{ij}$
+  correct_index: 0
+  explanation: 矩陣乘法的定義是左矩陣的列向量與右矩陣的行向量做內積。
+  tags:
+  - chap-m1-ch1
+  - sec-linear-algebra
+  id: 3159
+  usage: both
+- chapter_title: 人工智慧數學基礎
+  section_title: 微積分與最佳化
+  text: 情境：在訓練神經網路時，我們通常希望「最小化」哪個函數？
+  type: multiple_choice
+  options:
+  - 活化函數
+  - 損失函數 (Loss Function)
+  - 輸入函數
+  - 輸出函數
+  correct_index: 1
+  explanation: 損失函數衡量模型預測與真實值的誤差，訓練目標就是讓這個誤差越小越好。
+  tags:
+  - chap-m1-ch1
+  - sec-calculus-optimization
+  id: 3160
+  usage: both
+- chapter_title: 人工智慧數學基礎
+  section_title: 機率與統計
+  text: 情境：二項式分佈 (Binomial Distribution) 的期望值是？
+  type: multiple_choice
+  options:
+  - $p$
+  - $np$
+  - $np(1-p)$
+  - $n$
+  correct_index: 1
+  explanation: "二項式分佈是 $n$ 次獨立伯努利試驗的總和，故期望值為 $n \times p$。"
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+  id: 3161
+  usage: both
+- chapter_title: 人工智慧數學基礎
+  section_title: 機率與統計
+  text: 情境：Type I Error (型一錯誤) 是指？
+  type: multiple_choice
+  options:
+  - H0 為真卻拒絕 H0 (誤殺)
+  - H0 為假卻接受 H0 (縱放)
+  - 計算錯誤
+  - 數據錯誤
+  correct_index: 0
+  explanation: "顯著水準 $\alpha$ 就是在控制發生 Type I Error 的機率上限。"
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+  id: 3162
+  usage: both
+- chapter_title: 人工智慧數學基礎
+  section_title: 線性代數
+  text: 情境：PCA (主成分分析) 利用矩陣的什麼特性來找到數據變異最大的方向？
+  type: multiple_choice
+  options:
+  - 逆矩陣
+  - 特徵向量 (Eigenvectors)
+  - 轉置矩陣
+  - 對角矩陣
+  correct_index: 1
+  explanation: 共變異數矩陣的特徵向量指出了數據分佈的主軸方向。
+  tags:
+  - chap-m1-ch1
+  - sec-linear-algebra
+  id: 3163
+  usage: both
+- chapter_title: 人工智慧數學基礎
+  section_title: 微積分與最佳化
+  text: 情境：偏導數 (Partial Derivative) 是指？
+  type: multiple_choice
+  options:
+  - 對所有變數求導
+  - 多變數函數對其中一個變數求導，將其他變數視為常數
+  - 積分的相反
+  - 無法計算
+  correct_index: 1
+  explanation: 在多變數函數中，偏導數分析單一變數變化對函數值的影響。
+  tags:
+  - chap-m1-ch1
+  - sec-calculus-optimization
+  id: 3164
+  usage: both
+- chapter_title: 人工智慧數學基礎
+  section_title: 機率與統計
+  text: 情境：標準差 (Standard Deviation) 與變異數的關係是？
+  type: multiple_choice
+  options:
+  - 標準差 = 變異數
+  - 標準差 = 變異數的平方
+  - 標準差 = 變異數的平方根
+  - 沒關係
+  correct_index: 2
+  explanation: 標準差將變異數開根號，使其單位與原始數據一致，較易解讀。
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+  id: 3165
+  usage: both

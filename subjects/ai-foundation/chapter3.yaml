@@ -14,6 +14,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-data-types-storage
+  usage: quiz
 - id: 3002
   chapter_title: 數據處理生命週期與架構
   section_title: 資料類型與儲存
@@ -29,6 +30,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-data-types-storage
+  usage: quiz
 - id: 3003
   chapter_title: 數據處理生命週期與架構
   section_title: 資料類型與儲存
@@ -44,6 +46,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-data-types-storage
+  usage: quiz
 - id: 3004
   chapter_title: 數據處理生命週期與架構
   section_title: 資料管道 (Data Pipeline)
@@ -59,6 +62,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-etl
+  usage: quiz
 - id: 3005
   chapter_title: 數據處理生命週期與架構
   section_title: 資料管道 (Data Pipeline)
@@ -74,6 +78,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-elt
+  usage: quiz
 - id: 3006
   chapter_title: 數據處理生命週期與架構
   section_title: 資料管道 (Data Pipeline)
@@ -89,6 +94,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-elt
+  usage: quiz
 - id: 3007
   chapter_title: 數據處理生命週期與架構
   section_title: 批次處理 vs. 串流處理
@@ -104,6 +110,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-batch-vs-streaming
+  usage: quiz
 - id: 3008
   chapter_title: 數據處理生命週期與架構
   section_title: 批次處理 vs. 串流處理
@@ -119,6 +126,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-batch-vs-streaming
+  usage: quiz
 - id: 3009
   chapter_title: 數據處理生命週期與架構
   section_title: 探索性資料分析 (EDA)
@@ -134,6 +142,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-data-types
+  usage: quiz
 - id: 3010
   chapter_title: 數據處理生命週期與架構
   section_title: 探索性資料分析 (EDA)
@@ -149,6 +158,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-data-types
+  usage: quiz
 - id: 3011
   chapter_title: 數據處理生命週期與架構
   section_title: 統計摘要
@@ -164,6 +174,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-descriptive-statistics
+  usage: both
 - id: 3012
   chapter_title: 數據處理生命週期與架構
   section_title: 統計摘要
@@ -179,6 +190,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-descriptive-statistics
+  usage: both
 - id: 3013
   chapter_title: 數據處理生命週期與架構
   section_title: 統計摘要
@@ -194,6 +206,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-descriptive-statistics
+  usage: both
 - id: 3014
   chapter_title: 數據處理生命週期與架構
   section_title: 資料視覺化
@@ -209,6 +222,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-data-visualization
+  usage: both
 - id: 3015
   chapter_title: 數據處理生命週期與架構
   section_title: 資料視覺化
@@ -224,6 +238,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-data-visualization
+  usage: both
 - id: 3016
   chapter_title: 數據處理生命週期與架構
   section_title: 資料清理
@@ -239,6 +254,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-missing-values
+  usage: both
 - id: 3017
   chapter_title: 數據處理生命週期與架構
   section_title: 資料清理
@@ -254,6 +270,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-missing-values
+  usage: both
 - id: 3018
   chapter_title: 數據處理生命週期與架構
   section_title: 異常值處理
@@ -269,6 +286,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-outliers
+  usage: both
 - id: 3019
   chapter_title: 數據處理生命週期與架構
   section_title: 異常值處理
@@ -284,6 +302,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-outliers
+  usage: both
 - id: 3020
   chapter_title: 數據處理生命週期與架構
   section_title: 資料隱私
@@ -299,6 +318,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-anonymization
+  usage: both
 - id: 3021
   chapter_title: 數據處理生命週期與架構
   section_title: 資料隱私
@@ -314,6 +334,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-anonymization
+  usage: both
 - id: 3022
   chapter_title: 數據處理生命週期與架構
   section_title: 資料隱私
@@ -329,6 +350,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-anonymization
+  usage: both
 - id: 3023
   chapter_title: 數據處理生命週期與架構
   section_title: 資料一致性
@@ -344,6 +366,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-consistency
+  usage: both
 - id: 3024
   chapter_title: 數據處理生命週期與架構
   section_title: 資料管道
@@ -359,6 +382,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-etl
+  usage: both
 - id: 3025
   chapter_title: 數據處理生命週期與架構
   section_title: 資料分析層次
@@ -374,6 +398,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-descriptive-statistics
+  usage: both
 - id: 3026
   chapter_title: 數據處理生命週期與架構
   section_title: 資料類型
@@ -389,6 +414,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-data-types
+  usage: both
 - id: 3027
   chapter_title: 數據處理生命週期與架構
   section_title: 資料視覺化
@@ -404,6 +430,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-data-visualization
+  usage: both
 - id: 3028
   chapter_title: 數據處理生命週期與架構
   section_title: 資料清理
@@ -419,6 +446,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-anonymization
+  usage: both
 - id: 3029
   chapter_title: 數據處理生命週期與架構
   section_title: 資料管道
@@ -434,6 +462,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-data-types-storage
+  usage: both
 - id: 3030
   chapter_title: 數據處理生命週期與架構
   section_title: 資料管道
@@ -449,6 +478,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-data-types-storage
+  usage: both
 - id: 3031
   chapter_title: 數據處理生命週期與架構
   section_title: 統計摘要
@@ -464,6 +494,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-descriptive-statistics
+  usage: both
 - id: 3032
   chapter_title: 數據處理生命週期與架構
   section_title: 資料清理
@@ -479,6 +510,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-outliers
+  usage: both
 - id: 3033
   chapter_title: 數據處理生命週期與架構
   section_title: 資料視覺化
@@ -494,6 +526,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-data-visualization
+  usage: both
 - id: 3034
   chapter_title: 數據處理生命週期與架構
   section_title: 資料管道
@@ -509,6 +542,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-data-types-storage
+  usage: both
 - id: 3035
   chapter_title: 數據處理生命週期與架構
   section_title: 資料隱私
@@ -524,6 +558,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-anonymization
+  usage: both
 - id: 3036
   chapter_title: 數據處理生命週期與架構
   section_title: 資料清理
@@ -539,6 +574,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-missing-values
+  usage: both
 - id: 3037
   chapter_title: 數據處理生命週期與架構
   section_title: 資料管道
@@ -554,6 +590,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-data-types-storage
+  usage: both
 - id: 3038
   chapter_title: 數據處理生命週期與架構
   section_title: 統計摘要
@@ -569,6 +606,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-descriptive-statistics
+  usage: both
 - id: 3039
   chapter_title: 數據處理生命週期與架構
   section_title: 資料管道
@@ -584,6 +622,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-elt
+  usage: both
 - id: 3040
   chapter_title: 數據處理生命週期與架構
   section_title: 資料分析層次
@@ -599,6 +638,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-descriptive-statistics
+  usage: both
 - id: 3051
   chapter_title: 數據工程與資料處理
   section_title: 數據類型與儲存
@@ -614,6 +654,7 @@ questions:
   tags:
   - sec-ai-chapter3
   - sec-data-storage
+  usage: both
 - id: 3052
   chapter_title: 數據工程與資料處理
   section_title: 數據處理流程
@@ -629,6 +670,7 @@ questions:
   tags:
   - sec-ai-chapter3
   - sec-data-pipeline
+  usage: both
 - id: 3053
   chapter_title: 數據工程與資料處理
   section_title: 探索式資料分析 (EDA)
@@ -644,6 +686,7 @@ questions:
   tags:
   - sec-ai-chapter3
   - sec-eda
+  usage: both
 - id: 3054
   chapter_title: 數據工程與資料處理
   section_title: 數據清洗與品質
@@ -659,6 +702,7 @@ questions:
   tags:
   - sec-ai-chapter3
   - sec-data-cleaning
+  usage: both
 - id: 3055
   chapter_title: 數據工程與資料處理
   section_title: 數據清洗與品質
@@ -674,6 +718,7 @@ questions:
   tags:
   - sec-ai-chapter3
   - sec-data-cleaning
+  usage: both
 - id: 3056
   chapter_title: 數據工程與資料處理
   section_title: 數據處理流程
@@ -689,10 +734,12 @@ questions:
   tags:
   - sec-ai-chapter3
   - sec-data-pipeline
+  usage: both
 - id: 11448
   chapter_title: 數據工程與資料處理
   section_title: 探索式資料分析 (EDA)
-  text: 若希望檢視某一連續型數據的分布情形 （如集中程度、偏態或是否呈現 多峰） ，下列哪一種應用情境最適合使用直方圖（Histogram） 來進行 分析？ (114年第四梯次)
+  text: 若希望檢視某一連續型數據的分布情形 （如集中程度、偏態或是否呈現 多峰） ，下列哪一種應用情境最適合使用直方圖（Histogram） 來進行 分析？
+    (114年第四梯次)
   type: multiple_choice
   options:
   - 探討顧客年齡資料的整體分布特徵，並檢視是否存在異常集中或分 散現象
@@ -700,16 +747,18 @@ questions:
   - 追蹤公司近一年營收的時間序列變化，以了解整體成長趨勢
   - 檢視產品價格與月銷售量之間的關聯性，以評估是否具線性相關
   correct_index: 0
-  explanation: 直方圖 (Histogram) 是觀察連續型數值資料分布（如年齡、收入）的最佳工具，能直觀呈現數據的集中趨勢、偏態與峰度。 
+  explanation: 直方圖 (Histogram) 是觀察連續型數值資料分布（如年齡、收入）的最佳工具，能直觀呈現數據的集中趨勢、偏態與峰度。
   tags:
   - past-exam
   - 114-4
   - sec-ai-chapter3
   - sec-eda
+  usage: mock
 - id: 11437
   chapter_title: 數據工程與資料處理
   section_title: 探索式資料分析 (EDA)
-  text: 某金融科技公司在利用歷史交易資料建立風險控管模型時，嘗試推估 整體詐騙交易比例。近期發現，樣本間存在明顯的時間序列相關性，導 致模型在實際偵測新交易時誤判率升高。若希望同時改善詐騙比例推 估的準確性並提升模型的穩健性，下列哪一種做法最為合適？ (114年第四梯次)
+  text: 某金融科技公司在利用歷史交易資料建立風險控管模型時，嘗試推估 整體詐騙交易比例。近期發現，樣本間存在明顯的時間序列相關性，導 致模型在實際偵測新交易時誤判率升高。若希望同時改善詐騙比例推
+    估的準確性並提升模型的穩健性，下列哪一種做法最為合適？ (114年第四梯次)
   type: multiple_choice
   options:
   - 擴充樣本數量，以涵蓋更多潛在的詐騙型態，但維持既有的隨機抽 樣方式不變
@@ -717,12 +766,13 @@ questions:
   - 將資料完全隨機打散，以降低序列相關性對模型訓練造成的影響
   - 在模型評估時，針對相鄰時間區段進行誤差合併，以便用整體估計 方式修正詐騙比例
   correct_index: 1
-  explanation: 此題涉及 探索式資料分析 (EDA) 的核心概念。正確答案為「採取時間序列敏感的抽樣策略，例如依據交易時間區間進行分層， 以保存原始的時間結構特性」。 
+  explanation: 此題涉及 探索式資料分析 (EDA) 的核心概念。正確答案為「採取時間序列敏感的抽樣策略，例如依據交易時間區間進行分層， 以保存原始的時間結構特性」。
   tags:
   - past-exam
   - 114-4
   - sec-ai-chapter3
   - sec-eda
+  usage: both
 - id: 11403
   chapter_title: 數據工程與資料處理
   section_title: 數據類型與儲存
@@ -734,16 +784,18 @@ questions:
   - 直方圖（Histogram）
   - 長條圖（Bar Chart）
   correct_index: 0
-  explanation: 此題涉及 數據類型與儲存 的核心概念。正確答案為「散佈圖（Scatter Plot）」。 
+  explanation: 此題涉及 數據類型與儲存 的核心概念。正確答案為「散佈圖（Scatter Plot）」。
   tags:
   - past-exam
   - 114-4
   - sec-ai-chapter3
   - sec-data-storage
+  usage: both
 - id: 11445
   chapter_title: 數據工程與資料處理
   section_title: 探索式資料分析 (EDA)
-  text: 某醫院研究團隊蒐集了大量病患的「收縮壓」數據，經檢驗後顯示此數 值大致呈現常態分布。在進行後續模型分析前，研究人員希望妥善處理 可能存在的極端血壓數值。下列哪一種做法最為合適？ (114年第四梯次)
+  text: 某醫院研究團隊蒐集了大量病患的「收縮壓」數據，經檢驗後顯示此數 值大致呈現常態分布。在進行後續模型分析前，研究人員希望妥善處理 可能存在的極端血壓數值。下列哪一種做法最為合適？
+    (114年第四梯次)
   type: multiple_choice
   options:
   - 將所有極端偏高或偏低的血壓數據直接刪除，以保留最具代表性的 病患樣本
@@ -751,9 +803,331 @@ questions:
   - 透過 Z 分數（Z-score）或標準差範圍檢測異常值，並依研究需求決 定是否調整或移除；  答案 題    目
   - 將檢測到的離群值以 Label Encoding 編碼，轉換為序號標籤以避 免影響原始分布
   correct_index: 2
-  explanation: 此題涉及 探索式資料分析 (EDA) 的核心概念。正確答案為「透過 Z 分數（Z-score）或標準差範圍檢測異常值，並依研究需求決 定是否調整或移除；  答案 題    目」。 
+  explanation: 此題涉及 探索式資料分析 (EDA) 的核心概念。正確答案為「透過 Z 分數（Z-score）或標準差範圍檢測異常值，並依研究需求決
+    定是否調整或移除；  答案 題    目」。
   tags:
   - past-exam
   - 114-4
   - sec-ai-chapter3
   - sec-eda
+  usage: both
+- chapter_title: 數據處理生命週期與架構
+  section_title: 資料類型與儲存
+  text: 情境：你需要儲存大量的社群媒體貼文（包含文字、圖片、影片），且資料量增長極快。最合適的儲存方案是？
+  type: multiple_choice
+  options:
+  - 關聯式資料庫 (MySQL)
+  - 物件儲存 (Object Storage, 如 S3) 或 NoSQL
+  - Excel
+  - 紙本歸檔
+  correct_index: 1
+  explanation: 非結構化資料（圖片、影片）與海量文字適合具備高擴展性的物件儲存或 NoSQL，傳統 RDB 難以負荷。
+  tags:
+  - chap-ai-foundation-chapter3
+  - sec-data-types-storage
+  id: 11449
+  usage: both
+- chapter_title: 數據處理生命週期與架構
+  section_title: 資料管道
+  text: 情境：某公司採用「資料湖 (Data Lake)」架構，先把所有原始資料存進去，要分析時再處理。這屬於哪種流程？
+  type: multiple_choice
+  options:
+  - ETL (Extract-Transform-Load)
+  - ELT (Extract-Load-Transform)
+  - CDC
+  - API
+  correct_index: 1
+  explanation: ELT 先載入 (Load) 後轉換 (Transform)，保留了原始資料的靈活性，是資料湖的標準作業模式。
+  tags:
+  - chap-ai-foundation-chapter3
+  - sec-elt
+  id: 11450
+  usage: both
+- chapter_title: 數據處理生命週期與架構
+  section_title: 資料管道
+  text: 情境：為了即時偵測信用卡盜刷，系統必須在交易發生的毫秒內完成分析。應採用哪種處理模式？
+  type: multiple_choice
+  options:
+  - 批次處理 (Batch Processing)
+  - 串流處理 (Streaming Processing)
+  - 人工審核
+  - 離線處理
+  correct_index: 1
+  explanation: 串流處理能對即時流入的數據進行低延遲分析，適合詐欺偵測等時效性要求極高的場景。
+  tags:
+  - chap-ai-foundation-chapter3
+  - sec-batch-vs-streaming
+  id: 11451
+  usage: both
+- chapter_title: 數據處理生命週期與架構
+  section_title: 探索性資料分析
+  text: 情境：某公司的薪資分佈呈現嚴重的「右偏 (Right Skewed)」，代表有少數高薪主管拉高了平均。此時哪個指標更能代表一般員工的薪資？
+  type: multiple_choice
+  options:
+  - 平均數 (Mean)
+  - 中位數 (Median)
+  - 最大值
+  - 標準差
+  correct_index: 1
+  explanation: 中位數不受極端值影響，在偏態分佈中比平均數更具代表性。
+  tags:
+  - chap-ai-foundation-chapter3
+  - sec-descriptive-statistics
+  id: 11452
+  usage: both
+- chapter_title: 數據處理生命週期與架構
+  section_title: 資料清理與品質管理
+  text: 情境：在處理問卷資料時，發現「年齡」欄位有 5% 的缺失值。若直接刪除這些資料會損失太多資訊，最佳的插補策略是？
+  type: multiple_choice
+  options:
+  - 全部填 0
+  - 用平均數或中位數填補
+  - 刪除該欄位
+  - 不處理
+  correct_index: 1
+  explanation: 使用統計值（如中位數）填補是常見且穩健的做法，能保留資料筆數並維持分佈的大致樣貌。
+  tags:
+  - chap-ai-foundation-chapter3
+  - sec-missing-values
+  id: 11453
+  usage: both
+- chapter_title: 數據處理生命週期與架構
+  section_title: 資料清理與品質管理
+  text: 情境：根據 GDPR，當不再需要某個使用者的資料時，必須將其刪除。若資料庫設計使用「假名化 (Pseudonymization)」，應如何刪除？
+  type: multiple_choice
+  options:
+  - 刪除原始資料與對照表 (Token Map)
+  - 只刪除原始資料
+  - 只刪除對照表
+  - 加密資料
+  correct_index: 0
+  explanation: 假名化是可逆的。要徹底「遺忘」使用者，必須同時銷毀資料本身以及能還原身分的對照表。
+  tags:
+  - chap-ai-foundation-chapter3
+  - sec-anonymization
+  id: 11454
+  usage: both
+- chapter_title: 數據處理生命週期與架構
+  section_title: 資料清理與品質管理
+  text: 情境：使用 Z-score 偵測異常值時，通常將超過幾個標準差的數值視為異常？
+  type: multiple_choice
+  options:
+  - 1 個
+  - 2 個
+  - 3 個
+  - 10 個
+  correct_index: 2
+  explanation: 在常態分佈下，約 99.7% 的資料會落在平均數正負 3 個標準差之內。超過 3 個標準差的機率極低，故視為異常。
+  tags:
+  - chap-ai-foundation-chapter3
+  - sec-outliers
+  id: 11455
+  usage: both
+- chapter_title: 數據處理生命週期與架構
+  section_title: 探索性資料分析
+  text: 情境：想比較不同部門的「業績分佈」情形（包含中位數、四分位數及是否有離群值）。最適合的圖表是？
+  type: multiple_choice
+  options:
+  - 圓餅圖
+  - 折線圖
+  - 盒鬚圖 (Box Plot)
+  - 散佈圖
+  correct_index: 2
+  explanation: 盒鬚圖能同時展示多組資料的分佈特徵與離群值，非常適合並列比較。
+  tags:
+  - chap-ai-foundation-chapter3
+  - sec-data-visualization
+  id: 11456
+  usage: both
+- chapter_title: 數據處理生命週期與架構
+  section_title: 資料類型與儲存
+  text: 情境：JSON 格式的資料屬於哪種類型？
+  type: multiple_choice
+  options:
+  - 結構化資料
+  - 半結構化資料 (Semi-structured)
+  - 非結構化資料
+  - 二進位資料
+  correct_index: 1
+  explanation: JSON 有標籤 (Key) 和層次結構，但沒有嚴格的表格 Schema，屬於半結構化資料。
+  tags:
+  - chap-ai-foundation-chapter3
+  - sec-data-types-storage
+  id: 11457
+  usage: both
+- chapter_title: 數據處理生命週期與架構
+  section_title: 資料管道
+  text: 情境：ETL 流程中的「轉換 (Transform)」步驟不包含下列何者？
+  type: multiple_choice
+  options:
+  - 資料清洗
+  - 格式轉換
+  - 資料儲存
+  - 計算衍生欄位
+  correct_index: 2
+  explanation: 資料儲存屬於 Load (載入) 階段。Transform 專注於資料的修改與加工。
+  tags:
+  - chap-ai-foundation-chapter3
+  - sec-etl
+  id: 11458
+  usage: both
+- chapter_title: 數據處理生命週期與架構
+  section_title: 探索性資料分析
+  text: 情境：將「衣服尺寸 (S, M, L, XL)」轉換為數值 (1, 2, 3, 4) 是合理的，因為？
+  type: multiple_choice
+  options:
+  - 它們是名目型資料
+  - 它們是順序型資料 (Ordinal Data)，有大小關係
+  - 電腦喜歡數字
+  - 這樣比較省空間
+  correct_index: 1
+  explanation: 順序型資料具有內在的等級關係，轉換為數值可以保留這種順序資訊供模型學習。
+  tags:
+  - chap-ai-foundation-chapter3
+  - sec-data-types
+  id: 11459
+  usage: both
+- chapter_title: 數據處理生命週期與架構
+  section_title: 資料清理與品質管理
+  text: 情境：為了保護隱私，將「王小明」改為「王O明」。這屬於？
+  type: multiple_choice
+  options:
+  - 遮罩 (Masking)
+  - 加密
+  - 刪除
+  - 雜湊
+  correct_index: 0
+  explanation: 遮罩是將部分資訊隱藏，使其無法直接識別，但仍保留部分可讀性。
+  tags:
+  - chap-ai-foundation-chapter3
+  - sec-anonymization
+  id: 11460
+  usage: both
+- chapter_title: 數據處理生命週期與架構
+  section_title: 探索性資料分析
+  text: 情境：標準差 (Standard Deviation) 越大，代表資料？
+  type: multiple_choice
+  options:
+  - 越集中
+  - 越分散 (波動越大)
+  - 平均數越大
+  - 錯誤越多
+  correct_index: 1
+  explanation: 標準差衡量資料點與平均數的平均距離，數值越大代表資料分佈越廣、波動越大。
+  tags:
+  - chap-ai-foundation-chapter3
+  - sec-descriptive-statistics
+  id: 11461
+  usage: both
+- chapter_title: 數據處理生命週期與架構
+  section_title: 資料清理與品質管理
+  text: 情境：資料一致性處理中，「去重 (Deduplication)」的目的是？
+  type: multiple_choice
+  options:
+  - 刪除錯誤資料
+  - 確保沒有重複的資料紀錄，避免統計偏差
+  - 刪除舊資料
+  - 壓縮資料
+  correct_index: 1
+  explanation: 重複資料會導致統計結果（如總銷售額）被高估，也會影響模型訓練，必須移除。
+  tags:
+  - chap-ai-foundation-chapter3
+  - sec-consistency
+  id: 11462
+  usage: both
+- chapter_title: 數據處理生命週期與架構
+  section_title: 資料類型與儲存
+  text: 情境：關聯式資料庫 (RDB) 強調 ACID 特性，其中 A 代表？
+  type: multiple_choice
+  options:
+  - Availability (可用性)
+  - Atomicity (原子性)
+  - Accuracy (準確性)
+  - Automation (自動化)
+  correct_index: 1
+  explanation: Atomicity 確保交易是不可分割的，要麼全做，要麼全不做。
+  tags:
+  - chap-ai-foundation-chapter3
+  - sec-data-types-storage
+  id: 11463
+  usage: both
+- chapter_title: 數據處理生命週期與架構
+  section_title: 探索性資料分析
+  text: 情境：若要觀察兩個連續變數（如廣告費 vs 營收）之間的相關性，應繪製？
+  type: multiple_choice
+  options:
+  - 直方圖
+  - 散佈圖 (Scatter Plot)
+  - 圓餅圖
+  - 長條圖
+  correct_index: 1
+  explanation: 散佈圖是觀察兩個變數間線性或非線性關係的最佳工具。
+  tags:
+  - chap-ai-foundation-chapter3
+  - sec-data-visualization
+  id: 11464
+  usage: both
+- chapter_title: 數據處理生命週期與架構
+  section_title: 資料清理與品質管理
+  text: 情境：對於「顏色 (紅, 綠, 藍)」這種名目型資料，應使用什麼編碼方式？
+  type: multiple_choice
+  options:
+  - 標籤編碼 (1, 2, 3)
+  - 獨熱編碼 (One-Hot Encoding)
+  - 數值編碼
+  - 不編碼
+  correct_index: 1
+  explanation: 名目型資料沒有順序關係，若用 1, 2, 3 編碼會讓模型誤以為有大小關係。獨熱編碼能避免此問題。
+  tags:
+  - chap-ai-foundation-chapter3
+  - sec-data-types
+  id: 11465
+  usage: both
+- chapter_title: 數據處理生命週期與架構
+  section_title: 資料管道
+  text: 情境：資料湖 (Data Lake) 的缺點之一是容易變成「資料沼澤 (Data Swamp)」，這是指？
+  type: multiple_choice
+  options:
+  - 水太多
+  - 缺乏管理與治理，導致資料雜亂無章、無法使用
+  - 儲存成本太高
+  - 速度太慢
+  correct_index: 1
+  explanation: 因為 ELT 允許先存再說，若缺乏後續的目錄管理與品質控管，資料湖就會變成堆滿垃圾資料的沼澤。
+  tags:
+  - chap-ai-foundation-chapter3
+  - sec-elt
+  id: 11466
+  usage: both
+- chapter_title: 數據處理生命週期與架構
+  section_title: 資料清理與品質管理
+  text: 情境：四分位距 (IQR) 是用來衡量？
+  type: multiple_choice
+  options:
+  - 資料的平均值
+  - 資料中間 50% 的分散程度
+  - 資料的最大值
+  - 資料的最小值
+  correct_index: 1
+  explanation: IQR = Q3 - Q1，涵蓋了資料中間 50% 的範圍，是判斷離群值的重要依據。
+  tags:
+  - chap-ai-foundation-chapter3
+  - sec-descriptive-statistics
+  id: 11467
+  usage: both
+- chapter_title: 數據處理生命週期與架構
+  section_title: 資料清理與品質管理
+  text: 情境：蓋帽法 (Winsorizing) 處理離群值的方式是？
+  type: multiple_choice
+  options:
+  - 直接刪除
+  - 將超過特定百分位數的值，強制設定為該百分位數的值
+  - 取對數
+  - 填補平均數
+  correct_index: 1
+  explanation: 蓋帽法限制了極端值的範圍（例如將所有 >99分位數的值設為 99分位數），既保留了資料點，又減少了極端值的影響。
+  tags:
+  - chap-ai-foundation-chapter3
+  - sec-outliers
+  id: 11468
+  usage: both

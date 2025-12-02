@@ -14,6 +14,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-mlops-core
+  usage: quiz
 - id: 4502
   chapter_title: 系統部署與 MLOps
   section_title: 模型部署策略
@@ -29,6 +30,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-deployment-strategies
+  usage: quiz
 - id: 4503
   chapter_title: 系統部署與 MLOps
   section_title: 模型部署策略
@@ -44,6 +46,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-deployment-strategies
+  usage: quiz
 - id: 4504
   chapter_title: 系統部署與 MLOps
   section_title: 微服務架構
@@ -59,6 +62,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-microservices
+  usage: quiz
 - id: 4505
   chapter_title: 系統部署與 MLOps
   section_title: AI 系統整合
@@ -74,6 +78,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-system-integration
+  usage: quiz
 - id: 4506
   chapter_title: 系統部署與 MLOps
   section_title: AI 的持續整合/持續部署 (CI/CD)
@@ -89,6 +94,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-cicd4ai
+  usage: quiz
 - id: 4507
   chapter_title: 系統部署與 MLOps
   section_title: AI 的持續整合/持續部署 (CI/CD)
@@ -104,6 +110,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-cicd4ai
+  usage: quiz
 - id: 4508
   chapter_title: 系統部署與 MLOps
   section_title: 監控與維護
@@ -119,6 +126,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-monitoring
+  usage: quiz
 - id: 4509
   chapter_title: 系統部署與 MLOps
   section_title: 監控與維護
@@ -134,6 +142,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-monitoring
+  usage: quiz
 - id: 4510
   chapter_title: 系統部署與 MLOps
   section_title: 部署後優化與績效指標
@@ -149,6 +158,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-post-deployment
+  usage: quiz
 - id: 4511
   chapter_title: 系統部署與 MLOps
   section_title: 微服務架構
@@ -164,6 +174,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-microservices
+  usage: both
 - id: 4512
   chapter_title: 系統部署與 MLOps
   section_title: AI 系統整合
@@ -179,6 +190,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-system-integration
+  usage: both
 - id: 4513
   chapter_title: 系統部署與 MLOps
   section_title: AI 的持續整合/持續部署 (CI/CD)
@@ -194,6 +206,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-cicd4ai
+  usage: both
 - id: 4514
   chapter_title: 系統部署與 MLOps
   section_title: 監控與維護
@@ -209,6 +222,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-monitoring
+  usage: both
 - id: 4515
   chapter_title: 系統部署與 MLOps
   section_title: 部署後優化與績效指標
@@ -224,6 +238,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-post-deployment
+  usage: both
 - id: 4516
   chapter_title: 系統部署與 MLOps
   section_title: AI 系統整合
@@ -239,6 +254,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-system-integration
+  usage: both
 - id: 4517
   chapter_title: 系統部署與 MLOps
   section_title: 模型部署策略
@@ -254,6 +270,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-deployment-strategies
+  usage: both
 - id: 4518
   chapter_title: 系統部署與 MLOps
   section_title: AI 的持續整合/持續部署 (CI/CD)
@@ -269,6 +286,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-cicd4ai
+  usage: both
 - id: 4519
   chapter_title: 系統部署與 MLOps
   section_title: 監控與維護
@@ -284,6 +302,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-monitoring
+  usage: both
 - id: 4520
   chapter_title: 系統部署與 MLOps
   section_title: 微服務架構
@@ -299,6 +318,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-microservices
+  usage: both
 - id: 4521
   chapter_title: 系統部署與 MLOps
   section_title: AI 系統整合
@@ -314,6 +334,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-system-integration
+  usage: both
 - id: 4522
   chapter_title: 系統部署與 MLOps
   section_title: AI 的持續整合/持續部署 (CI/CD)
@@ -329,6 +350,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-cicd4ai
+  usage: both
 - id: 4523
   chapter_title: 系統部署與 MLOps
   section_title: 監控與維護
@@ -344,6 +366,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-monitoring
+  usage: both
 - id: 4524
   chapter_title: 系統部署與 MLOps
   section_title: 部署後優化與績效指標
@@ -359,6 +382,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-post-deployment
+  usage: both
 - id: 4525
   chapter_title: 系統部署與 MLOps
   section_title: AI 系統整合
@@ -374,6 +398,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-system-integration
+  usage: both
 - id: 4526
   chapter_title: 系統部署與 MLOps
   section_title: 模型部署策略
@@ -389,6 +414,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-deployment-strategies
+  usage: both
 - id: 4527
   chapter_title: 系統部署與 MLOps
   section_title: AI 的持續整合/持續部署 (CI/CD)
@@ -404,6 +430,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-cicd4ai
+  usage: both
 - id: 4528
   chapter_title: 系統部署與 MLOps
   section_title: 微服務架構
@@ -419,6 +446,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-microservices
+  usage: both
 - id: 4529
   chapter_title: 系統部署與 MLOps
   section_title: 監控與維護
@@ -434,6 +462,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-monitoring
+  usage: both
 - id: 4530
   chapter_title: 系統部署與 MLOps
   section_title: 部署後優化與績效指標
@@ -449,6 +478,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-post-deployment
+  usage: both
 - id: 4531
   chapter_title: 系統部署與 MLOps
   section_title: AI 系統整合
@@ -464,6 +494,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-system-integration
+  usage: both
 - id: 4532
   chapter_title: 系統部署與 MLOps
   section_title: 模型部署策略
@@ -479,6 +510,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-deployment-strategies
+  usage: both
 - id: 4533
   chapter_title: 系統部署與 MLOps
   section_title: AI 的持續整合/持續部署 (CI/CD)
@@ -494,6 +526,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-cicd4ai
+  usage: both
 - id: 4534
   chapter_title: 系統部署與 MLOps
   section_title: 監控與維護
@@ -509,6 +542,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-monitoring
+  usage: both
 - id: 4535
   chapter_title: 系統部署與 MLOps
   section_title: AI 系統整合
@@ -524,6 +558,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-system-integration
+  usage: both
 - id: 4536
   chapter_title: 系統部署與 MLOps
   section_title: 微服務架構
@@ -539,6 +574,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-microservices
+  usage: both
 - id: 4537
   chapter_title: 系統部署與 MLOps
   section_title: 部署後優化與績效指標
@@ -554,6 +590,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-post-deployment
+  usage: both
 - id: 4538
   chapter_title: 系統部署與 MLOps
   section_title: AI 系統整合
@@ -569,6 +606,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-system-integration
+  usage: both
 - id: 4539
   chapter_title: 系統部署與 MLOps
   section_title: AI 的持續整合/持續部署 (CI/CD)
@@ -584,6 +622,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-cicd4ai
+  usage: both
 - id: 4540
   chapter_title: 系統部署與 MLOps
   section_title: 監控與維護
@@ -599,6 +638,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-monitoring
+  usage: both
 - id: 4541
   chapter_title: 系統部署與 MLOps
   section_title: 深度思考情境題
@@ -614,6 +654,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-scenario
+  usage: mock
 - id: 4542
   chapter_title: 系統部署與 MLOps
   section_title: 深度思考情境題
@@ -629,6 +670,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-scenario
+  usage: mock
 - id: 4543
   chapter_title: 系統部署與 MLOps
   section_title: 深度思考情境題
@@ -644,6 +686,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-scenario
+  usage: mock
 - id: 4544
   chapter_title: 系統部署與 MLOps
   section_title: 深度思考情境題
@@ -659,6 +702,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-scenario
+  usage: mock
 - id: 4545
   chapter_title: 系統部署與 MLOps
   section_title: 深度思考情境題
@@ -674,3 +718,325 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-scenario
+  usage: mock
+- chapter_title: 系統部署與 MLOps
+  section_title: MLOps 核心概念
+  text: 情境：團隊發現模型在開發環境表現良好，但部署到生產環境後經常因為套件版本衝突而崩潰。引入哪項技術最能解決此問題？
+  type: multiple_choice
+  options:
+  - Docker 容器化
+  - 更強的 CPU
+  - 負載平衡器
+  - 防火牆
+  correct_index: 0
+  explanation: Docker 能將程式碼與其依賴的環境（OS、函式庫）打包在一起，確保「開發環境」與「生產環境」的一致性，消除「在我機器上可以跑」的問題。
+  tags:
+  - chap-m2-ch5
+  - sec-mlops-core
+  id: 4546
+  usage: both
+- chapter_title: 系統部署與 MLOps
+  section_title: 模型部署策略
+  text: 情境：某智慧工廠需要在斷網環境下，即時偵測產線上的危險動作（延遲需 < 50ms）。最合適的部署策略是？
+  type: multiple_choice
+  options:
+  - 公有雲 API
+  - 邊緣運算 (Edge Computing)
+  - 混合雲
+  - 離線批次處理
+  correct_index: 1
+  explanation: 極低延遲且斷網的環境需求，排除了雲端方案。邊緣運算將模型直接部署在產線設備上，能滿足即時性與可用性要求。
+  tags:
+  - chap-m2-ch5
+  - sec-deployment-strategies
+  id: 4547
+  usage: both
+- chapter_title: 系統部署與 MLOps
+  section_title: 微服務架構
+  text: 情境：將單體式 AI 應用拆解為微服務後，發現服務間通訊延遲顯著增加，影響了整體效能。最可能的架構瓶頸是？
+  type: multiple_choice
+  options:
+  - 微服務拆分過細，導致過多的網路跳躍 (Network Hops)
+  - Docker 啟動太慢
+  - 硬碟速度太慢
+  - 記憶體不足
+  correct_index: 0
+  explanation: 微服務雖然靈活，但過度拆分會導致服務間頻繁透過網路呼叫，累積的網路延遲會嚴重拖慢系統。
+  tags:
+  - chap-m2-ch5
+  - sec-microservices
+  id: 4548
+  usage: both
+- chapter_title: 系統部署與 MLOps
+  section_title: AI 系統整合
+  text: 情境：資料科學家訓練好模型後，發現生產環境的資料庫欄位格式與訓練資料完全不同，導致模型無法上線。這顯示缺乏了什麼？
+  type: multiple_choice
+  options:
+  - 更快的電腦
+  - 統一的資料管線 (Data Pipeline) 與 Schema 管理
+  - 更好的演算法
+  - 更多的資料
+  correct_index: 1
+  explanation: 訓練與推論資料的一致性至關重要。缺乏統一的資料治理與管線管理，會導致嚴重的 Training-Serving Skew。
+  tags:
+  - chap-m2-ch5
+  - sec-system-integration
+  id: 4549
+  usage: both
+- chapter_title: 系統部署與 MLOps
+  section_title: 監控與維護
+  text: 情境：運維團隊每天收到上百封「模型準確率微幅下降」的警報郵件，久而久之便不再理會，直到某天發生嚴重故障才發現。這現象稱為？
+  type: multiple_choice
+  options:
+  - 警報疲勞 (Alert Fatigue)
+  - 系統優化
+  - 自動化運維
+  - 容錯機制
+  correct_index: 0
+  explanation: 警報閾值設定不當或缺乏分級，會導致「狼來了」效應，使運維人員對警報麻痺，錯失真正重要的訊息。
+  tags:
+  - chap-m2-ch5
+  - sec-monitoring
+  id: 4550
+  usage: both
+- chapter_title: 系統部署與 MLOps
+  section_title: 部署後優化與績效指標
+  text: 情境：A/B 測試結果顯示，新模型 B 的點擊率比舊模型 A 高 5%，但伺服器 CPU 使用率卻高出 200%，導致回應變慢。作為 PM，你應如何決策？
+  type: multiple_choice
+  options:
+  - 直接上線模型 B
+  - 拒絕模型 B，或要求團隊優化其效能 (Latency/Throughput) 後再測試
+  - 購買更多伺服器
+  - 忽略 CPU 問題
+  correct_index: 1
+  explanation: 模型上線不能只看業務指標（點擊率），必須同時考量系統指標（成本、延遲）。若成本暴增遠大於收益，則不是成功的優化。
+  tags:
+  - chap-m2-ch5
+  - sec-post-deployment
+  id: 4551
+  usage: both
+- chapter_title: 系統部署與 MLOps
+  section_title: AI 系統整合
+  text: 情境：為了讓外部合作夥伴能呼叫公司的 AI 模型，但又不希望暴露內部網路結構。應配置哪個元件？
+  type: multiple_choice
+  options:
+  - API Gateway
+  - 資料庫
+  - 交換器
+  - 負載平衡器
+  correct_index: 0
+  explanation: API Gateway 作為對外統一窗口，能隱藏後端微服務架構，並提供身份驗證、流量限制等安全保護。
+  tags:
+  - chap-m2-ch5
+  - sec-system-integration
+  id: 4552
+  usage: both
+- chapter_title: 系統部署與 MLOps
+  section_title: 模型部署策略
+  text: 情境：某跨國銀行需在多個國家部署 AI 信用評分系統，但各國法規要求資料不得出境。最合適的架構是？
+  type: multiple_choice
+  options:
+  - 全球單一公有雲
+  - 分散式私有雲或混合雲，資料在地化處理
+  - 將資料全部傳回總部
+  - 不做 AI
+  correct_index: 1
+  explanation: 針對資料主權 (Data Sovereignty) 要求，必須採用分散式架構，讓資料在當地運算，僅將模型參數或聚合結果傳輸。
+  tags:
+  - chap-m2-ch5
+  - sec-deployment-strategies
+  id: 4553
+  usage: both
+- chapter_title: 系統部署與 MLOps
+  section_title: AI 的持續整合/持續部署 (CI/CD)
+  text: 情境：新模型上線後發現嚴重 Bug，導致所有預測失效。最快速的恢復手段是？
+  type: multiple_choice
+  options:
+  - 立即重新訓練模型
+  - 修復 Bug 後重新打包上線
+  - 執行版本回滾 (Rollback)，切換回上一個穩定版本
+  - 發公告道歉
+  correct_index: 2
+  explanation: 在生產環境事故中，止血是第一要務。回滾到舊版能立即恢復服務，爭取時間讓團隊在線下修復問題。
+  tags:
+  - chap-m2-ch5
+  - sec-cicd4ai
+  id: 4554
+  usage: both
+- chapter_title: 系統部署與 MLOps
+  section_title: 監控與維護
+  text: 情境：一個房價預測模型在 2020 年訓練，2023 年預測準確率大跌。經查發現是因為通膨導致整體房價上漲。這屬於？
+  type: multiple_choice
+  options:
+  - 程式錯誤
+  - 概念漂移 (Concept Drift)
+  - 資料遺失
+  - 過擬合
+  correct_index: 1
+  explanation: 輸入（房屋特徵）與輸出（價格）之間的關係因經濟環境改變而發生了根本變化，這就是概念漂移。
+  tags:
+  - chap-m2-ch5
+  - sec-monitoring
+  id: 4555
+  usage: both
+- chapter_title: 系統部署與 MLOps
+  section_title: MLOps 核心概念
+  text: 情境：公司有強大的 DevOps 團隊，但在接手 AI 專案時卻頻頻受挫，主要原因是忽略了 AI 專案的哪個特殊性？
+  type: multiple_choice
+  options:
+  - 程式碼版本控制
+  - 數據與模型的版本控制及實驗追蹤
+  - 伺服器管理
+  - 網路設定
+  correct_index: 1
+  explanation: 傳統 DevOps 關注程式碼 (Code)，而 MLOps 必須同時關注程式碼、數據 (Data) 與模型 (Model)。數據的變動性是
+    MLOps 最大的挑戰。
+  tags:
+  - chap-m2-ch5
+  - sec-mlops-core
+  id: 4556
+  usage: both
+- chapter_title: 系統部署與 MLOps
+  section_title: 微服務架構
+  text: 情境：Kubernetes 叢集中的某個推論服務 Pod 因為記憶體洩漏而掛掉。K8s 會如何處理？
+  type: multiple_choice
+  options:
+  - 整個系統停機
+  - 自動重啟該 Pod (Self-healing)
+  - 發送 Email 給執行長
+  - 刪除該服務
+  correct_index: 1
+  explanation: K8s 的自我修復 (Self-healing) 機制會監控 Pod 狀態，一旦發現異常終止，會自動重啟新的 Pod 以維持服務可用性。
+  tags:
+  - chap-m2-ch5
+  - sec-microservices
+  id: 4557
+  usage: both
+- chapter_title: 系統部署與 MLOps
+  section_title: AI 系統整合
+  text: 情境：內部微服務之間需要進行每秒數萬次的高頻通訊，目前使用 RESTful API 發現 CPU 消耗過高。建議改用？
+  type: multiple_choice
+  options:
+  - SOAP
+  - gRPC
+  - FTP
+  - Email
+  correct_index: 1
+  explanation: gRPC 基於 Protobuf (二進位格式) 與 HTTP/2，序列化與傳輸效率遠高於文字格式的 REST/JSON，適合高頻內部通訊。
+  tags:
+  - chap-m2-ch5
+  - sec-system-integration
+  id: 4558
+  usage: both
+- chapter_title: 系統部署與 MLOps
+  section_title: AI 系統整合
+  text: 情境：需要儲存大量的非結構化資料（如客戶客服錄音、產品圖片）供未來訓練模型使用。最具成本效益的儲存方案是？
+  type: multiple_choice
+  options:
+  - 關聯式資料庫 (RDBMS)
+  - 資料倉儲 (Data Warehouse)
+  - 資料湖 (Data Lake)
+  - 記憶體快取 (Redis)
+  correct_index: 2
+  explanation: 資料湖 (如 AWS S3) 專為低成本儲存海量異質資料而設計，適合 AI 專案的原始資料積累。
+  tags:
+  - chap-m2-ch5
+  - sec-system-integration
+  id: 4559
+  usage: both
+- chapter_title: 系統部署與 MLOps
+  section_title: AI 的持續整合/持續部署 (CI/CD)
+  text: 情境：為了在不影響用戶的情況下測試新模型的效能，決定將線上流量複製一份給新模型跑，但不採用其結果。這稱為？
+  type: multiple_choice
+  options:
+  - 金絲雀部署
+  - 藍綠部署
+  - 影子模式 (Shadow Mode)
+  - A/B 測試
+  correct_index: 2
+  explanation: 影子模式是風險最低的測試方式，因為新模型的任何錯誤都不會傳遞給用戶，純粹用於後台驗證。
+  tags:
+  - chap-m2-ch5
+  - sec-cicd4ai
+  id: 4560
+  usage: both
+- chapter_title: 系統部署與 MLOps
+  section_title: AI 的持續整合/持續部署 (CI/CD)
+  text: 情境：希望逐步將流量從舊模型切換到新模型（如 10% -> 50% -> 100%），以便在出現問題時能控制影響範圍。應採用？
+  type: multiple_choice
+  options:
+  - 藍綠部署
+  - 金絲雀部署 (Canary Deployment)
+  - 影子模式
+  - 直接部署
+  correct_index: 1
+  explanation: 金絲雀部署的核心就是「漸進式流量切換」，能有效控制風險。
+  tags:
+  - chap-m2-ch5
+  - sec-cicd4ai
+  id: 4561
+  usage: both
+- chapter_title: 系統部署與 MLOps
+  section_title: 部署後優化與績效指標
+  text: 情境：在資源有限的邊緣設備上，模型推論速度太慢。為了提升吞吐量 (Throughput)，可以犧牲一點點準確率來換取速度。應採用哪種技術？
+  type: multiple_choice
+  options:
+  - 增加層數
+  - 模型量化 (Quantization)
+  - 使用更高精度的浮點數
+  - 增加輸入圖片解析度
+  correct_index: 1
+  explanation: 量化將模型參數從 32-bit 浮點數轉為 8-bit 整數，雖然會損失微小精度，但能大幅提升運算速度並減少記憶體佔用。
+  tags:
+  - chap-m2-ch5
+  - sec-post-deployment
+  id: 4562
+  usage: both
+- chapter_title: 系統部署與 MLOps
+  section_title: AI 的持續整合/持續部署 (CI/CD)
+  text: 情境：團隊發現無法重現上個月發布的模型的訓練結果，因為當時的數據集已經被覆蓋了。這顯示缺乏？
+  type: multiple_choice
+  options:
+  - DVC (Data Version Control)
+  - Git
+  - Docker
+  - Jenkins
+  correct_index: 0
+  explanation: 數據版本控制是 MLOps 的基石。DVC 允許我們像管理程式碼一樣管理數據集，確保任何歷史版本的模型都能被精確重現。
+  tags:
+  - chap-m2-ch5
+  - sec-cicd4ai
+  id: 4563
+  usage: both
+- chapter_title: 系統部署與 MLOps
+  section_title: 部署後優化與績效指標
+  text: 情境：模型上線後，團隊定期收集用戶修正後的錯誤預測結果，並將其加入訓練集。這個機制的目的是？
+  type: multiple_choice
+  options:
+  - 建立回饋迴圈 (Feedback Loop) 以持續優化模型
+  - 增加資料庫負擔
+  - 證明模型很爛
+  - 浪費時間
+  correct_index: 0
+  explanation: 這是「數據飛輪 (Data Flywheel)」效應。利用錯誤樣本進行針對性訓練，是提升模型效能最有效的方法。
+  tags:
+  - chap-m2-ch5
+  - sec-post-deployment
+  id: 4564
+  usage: both
+- chapter_title: 系統部署與 MLOps
+  section_title: 模型部署策略
+  text: 情境：某 App 的人臉辨識功能原本在雲端執行，但用戶抱怨在地下室無訊號時無法解鎖。解決方案是？
+  type: multiple_choice
+  options:
+  - 加強雲端伺服器
+  - 改為邊緣運算 (Edge Computing)，在手機端執行模型
+  - 要求用戶去有訊號的地方
+  - 使用 5G
+  correct_index: 1
+  explanation: 將模型部署到邊緣（手機），不僅消除了網路延遲，更實現了離線可用性，提升用戶體驗。
+  tags:
+  - chap-m2-ch5
+  - sec-deployment-strategies
+  id: 4565
+  usage: both

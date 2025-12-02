@@ -14,6 +14,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - chap-ai-foundation-chapter6-summary
+  usage: quiz
 - id: 6002
   chapter_title: 非監督式學習與強化學習
   section_title: 分群演算法
@@ -29,6 +30,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-clustering
+  usage: quiz
 - id: 6003
   chapter_title: 非監督式學習與強化學習
   section_title: 分群演算法
@@ -44,6 +46,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-kmeans
+  usage: quiz
 - id: 6004
   chapter_title: 非監督式學習與強化學習
   section_title: 分群演算法
@@ -59,6 +62,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-kmeans
+  usage: quiz
 - id: 6005
   chapter_title: 非監督式學習與強化學習
   section_title: 分群演算法
@@ -74,6 +78,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-dbscan
+  usage: quiz
 - id: 6006
   chapter_title: 非監督式學習與強化學習
   section_title: 分群演算法
@@ -89,6 +94,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-dbscan
+  usage: quiz
 - id: 6007
   chapter_title: 非監督式學習與強化學習
   section_title: 分群演算法
@@ -104,6 +110,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-hierarchical-clustering
+  usage: quiz
 - id: 6008
   chapter_title: 非監督式學習與強化學習
   section_title: 關聯規則
@@ -119,6 +126,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-apriori
+  usage: quiz
 - id: 6009
   chapter_title: 非監督式學習與強化學習
   section_title: 關聯規則
@@ -134,6 +142,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-apriori
+  usage: quiz
 - id: 6010
   chapter_title: 非監督式學習與強化學習
   section_title: 關聯規則
@@ -149,6 +158,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-apriori
+  usage: quiz
 - id: 6011
   chapter_title: 非監督式學習與強化學習
   section_title: 降維技術
@@ -164,6 +174,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-association-rules
+  usage: both
 - id: 6012
   chapter_title: 非監督式學習與強化學習
   section_title: 降維技術
@@ -179,6 +190,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-association-rules
+  usage: both
 - id: 6013
   chapter_title: 非監督式學習與強化學習
   section_title: 降維技術
@@ -194,6 +206,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-association-rules
+  usage: both
 - id: 6014
   chapter_title: 非監督式學習與強化學習
   section_title: 降維技術
@@ -209,6 +222,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-association-rules
+  usage: both
 - id: 6015
   chapter_title: 非監督式學習與強化學習
   section_title: 強化學習
@@ -224,6 +238,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-reinforcement-learning-detail
+  usage: both
 - id: 6016
   chapter_title: 非監督式學習與強化學習
   section_title: 強化學習
@@ -239,6 +254,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-reinforcement-learning-detail
+  usage: both
 - id: 6017
   chapter_title: 非監督式學習與強化學習
   section_title: 強化學習
@@ -254,6 +270,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-rl-algorithms
+  usage: both
 - id: 6018
   chapter_title: 非監督式學習與強化學習
   section_title: 強化學習
@@ -269,6 +286,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-rl-algorithms
+  usage: both
 - id: 6019
   chapter_title: 非監督式學習與強化學習
   section_title: 強化學習
@@ -284,6 +302,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-rl-algorithms
+  usage: both
 - id: 6020
   chapter_title: 非監督式學習與強化學習
   section_title: 強化學習
@@ -299,6 +318,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-rl-algorithms
+  usage: both
 - id: 6021
   chapter_title: 非監督式學習與強化學習
   section_title: 分群演算法
@@ -314,6 +334,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-kmeans
+  usage: both
 - id: 6022
   chapter_title: 非監督式學習與強化學習
   section_title: 分群演算法
@@ -329,6 +350,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-dbscan
+  usage: both
 - id: 6023
   chapter_title: 非監督式學習與強化學習
   section_title: 關聯規則
@@ -344,6 +366,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-apriori
+  usage: both
 - id: 6024
   chapter_title: 非監督式學習與強化學習
   section_title: 降維技術
@@ -359,6 +382,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-association-rules
+  usage: both
 - id: 6025
   chapter_title: 非監督式學習與強化學習
   section_title: 強化學習
@@ -374,6 +398,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-rl-elements
+  usage: both
 - id: 6026
   chapter_title: 非監督式學習與強化學習
   section_title: 強化學習
@@ -389,6 +414,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-reinforcement-learning-detail
+  usage: both
 - id: 6027
   chapter_title: 非監督式學習與強化學習
   section_title: 分群演算法
@@ -404,6 +430,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-hierarchical-clustering
+  usage: both
 - id: 6028
   chapter_title: 非監督式學習與強化學習
   section_title: 非監督式學習概述
@@ -419,6 +446,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-clustering
+  usage: both
 - id: 6029
   chapter_title: 非監督式學習與強化學習
   section_title: 降維技術
@@ -434,6 +462,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-association-rules
+  usage: both
 - id: 6030
   chapter_title: 非監督式學習與強化學習
   section_title: 強化學習
@@ -449,6 +478,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-reinforcement-learning-detail
+  usage: both
 - id: 6031
   chapter_title: 非監督式學習與強化學習
   section_title: 分群演算法
@@ -464,6 +494,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-kmeans
+  usage: both
 - id: 6032
   chapter_title: 非監督式學習與強化學習
   section_title: 關聯規則
@@ -479,6 +510,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-apriori
+  usage: both
 - id: 6033
   chapter_title: 非監督式學習與強化學習
   section_title: 降維技術
@@ -494,6 +526,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-association-rules
+  usage: both
 - id: 6034
   chapter_title: 非監督式學習與強化學習
   section_title: 強化學習
@@ -509,6 +542,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-reinforcement-learning-detail
+  usage: both
 - id: 6035
   chapter_title: 非監督式學習與強化學習
   section_title: 分群演算法
@@ -524,6 +558,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-clustering
+  usage: both
 - id: 6036
   chapter_title: 非監督式學習與強化學習
   section_title: 降維技術
@@ -539,6 +574,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-association-rules
+  usage: both
 - id: 6037
   chapter_title: 非監督式學習與強化學習
   section_title: 強化學習
@@ -554,6 +590,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-reinforcement-learning-detail
+  usage: both
 - id: 6038
   chapter_title: 非監督式學習與強化學習
   section_title: 分群演算法
@@ -569,6 +606,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-dbscan
+  usage: both
 - id: 6039
   chapter_title: 非監督式學習與強化學習
   section_title: 關聯規則
@@ -584,6 +622,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-apriori
+  usage: both
 - id: 6040
   chapter_title: 非監督式學習與強化學習
   section_title: 強化學習
@@ -599,6 +638,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter6
   - sec-rl-elements
+  usage: both
 - id: 6051
   chapter_title: 非監督式與強化學習
   section_title: 分群演算法
@@ -614,6 +654,7 @@ questions:
   tags:
   - sec-ai-chapter6
   - sec-clustering
+  usage: both
 - id: 6052
   chapter_title: 非監督式與強化學習
   section_title: 關聯規則
@@ -629,6 +670,7 @@ questions:
   tags:
   - sec-ai-chapter6
   - sec-association-rules
+  usage: both
 - id: 6053
   chapter_title: 非監督式與強化學習
   section_title: 強化學習
@@ -644,6 +686,7 @@ questions:
   tags:
   - sec-ai-chapter6
   - sec-reinforcement-learning
+  usage: both
 - id: 6054
   chapter_title: 非監督式與強化學習
   section_title: 分群演算法
@@ -659,6 +702,7 @@ questions:
   tags:
   - sec-ai-chapter6
   - sec-clustering
+  usage: both
 - id: 6055
   chapter_title: 非監督式與強化學習
   section_title: 降維技術
@@ -674,6 +718,7 @@ questions:
   tags:
   - sec-ai-chapter6
   - sec-dimensionality-reduction
+  usage: both
 - id: 6056
   chapter_title: 非監督式與強化學習
   section_title: 強化學習
@@ -689,6 +734,7 @@ questions:
   tags:
   - sec-ai-chapter6
   - sec-reinforcement-learning
+  usage: both
 - id: 11432
   chapter_title: 非監督式與強化學習
   section_title: 強化學習
@@ -700,16 +746,18 @@ questions:
   - 將樣本隨機重新排列後，多次計算平均值以消除偏態影響
   - 完全依賴樣本標準差來估計母體參數，忽略分布形態  答案 題    目
   correct_index: 1
-  explanation: 此題涉及 強化學習 的核心概念。正確答案為「增加樣本數並考慮使用分位數或中位數作為中心趨勢估計」。 
+  explanation: 此題涉及 強化學習 的核心概念。正確答案為「增加樣本數並考慮使用分位數或中位數作為中心趨勢估計」。
   tags:
   - past-exam
   - 114-4
   - sec-ai-chapter6
   - sec-reinforcement-learning
+  usage: both
 - id: 11436
   chapter_title: 非監督式與強化學習
   section_title: 強化學習
-  text: 某電商資料團隊要協助行銷部門規劃再行銷策略。目前取得資料包含 使用者點擊、購買紀錄、流量來源與轉換率。若資料團隊希望先進行探 索性資料分析（EDA） ，下列哪一項最符合EDA 的做法？ (114年第四梯次)
+  text: 某電商資料團隊要協助行銷部門規劃再行銷策略。目前取得資料包含 使用者點擊、購買紀錄、流量來源與轉換率。若資料團隊希望先進行探 索性資料分析（EDA）
+    ，下列哪一項最符合EDA 的做法？ (114年第四梯次)
   type: multiple_choice
   options:
   - 建立隨機森林模型，預測使用者是否會完成購買
@@ -717,16 +765,21 @@ questions:
   - 繪製各類流量來源對轉換率的關聯圖，尋找潛在關係
   - 對不同購物路徑設定統計假設並進行雙樣本 t 檢定
   correct_index: 2
-  explanation: 此題涉及 強化學習 的核心概念。正確答案為「繪製各類流量來源對轉換率的關聯圖，尋找潛在關係」。 
+  explanation: 此題涉及 強化學習 的核心概念。正確答案為「繪製各類流量來源對轉換率的關聯圖，尋找潛在關係」。
   tags:
   - past-exam
   - 114-4
   - sec-ai-chapter6
   - sec-reinforcement-learning
+  usage: both
 - id: 11440
   chapter_title: 非監督式與強化學習
   section_title: 關聯規則
-  text: 關 於 監 督 式 學 習 （Supervised Learning ） 與 非 監 督 式 學 習 （Unsupervised Learning）的目標，下列敘述何者錯誤？ 1.非監督式學習的核心在於發掘資料內在結構，例如分群、關聯規則與 降維，而不依賴外部標籤。 2.監督式學習的典型應用為分類與迴歸，通常不適合應用於異常偵測 任務。 3.非監督式學習若搭配少量標註資料，即會完全轉化為監督式學習。 4.監督式學習仰賴已標註的資料集，透過最小化輸出與真實標籤之間 的差距，學習輸入與目標之間的對應函數。 5.所有監督式學習任務都必須要有大量完整標註資料，否則無法進行 任何有效的模型訓練。 6.非監督式學習不需要目標變數，僅透過輸入資料本身的特徵分布進 行模式學習。 (114年第四梯次)
+  text: 關 於 監 督 式 學 習 （Supervised Learning ） 與 非 監 督 式 學 習 （Unsupervised Learning）的目標，下列敘述何者錯誤？
+    1.非監督式學習的核心在於發掘資料內在結構，例如分群、關聯規則與 降維，而不依賴外部標籤。 2.監督式學習的典型應用為分類與迴歸，通常不適合應用於異常偵測
+    任務。 3.非監督式學習若搭配少量標註資料，即會完全轉化為監督式學習。 4.監督式學習仰賴已標註的資料集，透過最小化輸出與真實標籤之間 的差距，學習輸入與目標之間的對應函數。
+    5.所有監督式學習任務都必須要有大量完整標註資料，否則無法進行 任何有效的模型訓練。 6.非監督式學習不需要目標變數，僅透過輸入資料本身的特徵分布進 行模式學習。
+    (114年第四梯次)
   type: multiple_choice
   options:
   - 3、5、6
@@ -734,16 +787,18 @@ questions:
   - 2、4、6
   - 2、3、5
   correct_index: 3
-  explanation: 此題涉及 關聯規則 的核心概念。正確答案為「2、3、5」。 
+  explanation: 此題涉及 關聯規則 的核心概念。正確答案為「2、3、5」。
   tags:
   - past-exam
   - 114-4
   - sec-ai-chapter6
   - sec-association-rules
+  usage: mock
 - id: 11417
   chapter_title: 非監督式與強化學習
   section_title: 強化學習
-  text: 一間金融科技公司設計一款智慧投資系統，該系統會根據市場變化自 動決定「買進」 、 「持有」或「賣出」的行動，並根據每次交易後的盈虧 結果，逐步優化下一次的投資策略。整個過程中，系統不依賴事先標記 的資料，而是根據歷次行動獲得的獎勵進行調整。請問此系統最可能採 用哪一種學習方法？ (114年第四梯次)
+  text: 一間金融科技公司設計一款智慧投資系統，該系統會根據市場變化自 動決定「買進」 、 「持有」或「賣出」的行動，並根據每次交易後的盈虧 結果，逐步優化下一次的投資策略。整個過程中，系統不依賴事先標記
+    的資料，而是根據歷次行動獲得的獎勵進行調整。請問此系統最可能採 用哪一種學習方法？ (114年第四梯次)
   type: multiple_choice
   options:
   - 強化式學習（Reinforcement Learning）
@@ -751,12 +806,13 @@ questions:
   - 非監督式學習（Unsupervised Learning）
   - 遷移學習（Transfer Learning）
   correct_index: 0
-  explanation: 此題涉及 強化學習 的核心概念。正確答案為「強化式學習（Reinforcement Learning）」。 
+  explanation: 此題涉及 強化學習 的核心概念。正確答案為「強化式學習（Reinforcement Learning）」。
   tags:
   - past-exam
   - 114-4
   - sec-ai-chapter6
   - sec-reinforcement-learning
+  usage: both
 - id: 11444
   chapter_title: 非監督式與強化學習
   section_title: 分群演算法
@@ -768,12 +824,13 @@ questions:
   - 根據顧客的消費行為與特徵，將顧客自動劃分為數個群組，以便進 行差異化行銷
   - 透過大量已標註影像，訓練深度學習模型來辨識照片中的物件種類
   correct_index: 2
-  explanation: 此題涉及 分群演算法 的核心概念。正確答案為「根據顧客的消費行為與特徵，將顧客自動劃分為數個群組，以便進 行差異化行銷」。 
+  explanation: 此題涉及 分群演算法 的核心概念。正確答案為「根據顧客的消費行為與特徵，將顧客自動劃分為數個群組，以便進 行差異化行銷」。
   tags:
   - past-exam
   - 114-4
   - sec-ai-chapter6
   - sec-clustering
+  usage: mock
 - id: 11418
   chapter_title: 非監督式與強化學習
   section_title: 強化學習
@@ -785,9 +842,330 @@ questions:
   - Deep Q-Learning 透過深度神經網路近似 Q 值，避免了 Q 表在高維 空間中難以擴展的問題
   - Deep Q-Learning 無法搭配經驗回放（Experience Replay） ，因為 會導致樣本順序被打亂
   correct_index: 2
-  explanation: 此題涉及 強化學習 的核心概念。正確答案為「Deep Q-Learning 透過深度神經網路近似 Q 值，避免了 Q 表在高維 空間中難以擴展的問題」。 
+  explanation: 此題涉及 強化學習 的核心概念。正確答案為「Deep Q-Learning 透過深度神經網路近似 Q 值，避免了 Q 表在高維 空間中難以擴展的問題」。
   tags:
   - past-exam
   - 114-4
   - sec-ai-chapter6
   - sec-reinforcement-learning
+  usage: both
+- chapter_title: 非監督式學習與強化學習
+  section_title: 分群演算法
+  text: 情境：你想要將客戶分群，但不知道應該分成幾群，且希望了解群體之間的層次關係（大群包小群）。應使用？
+  type: multiple_choice
+  options:
+  - K-means
+  - 階層式分群 (Hierarchical Clustering)
+  - DBSCAN
+  - PCA
+  correct_index: 1
+  explanation: 階層式分群能產生樹狀圖 (Dendrogram)，完整呈現資料的層次結構，且無需預先指定 K 值。
+  tags:
+  - chap-ai-foundation-chapter6
+  - sec-hierarchical-clustering
+  id: 11445
+  usage: both
+- chapter_title: 非監督式學習與強化學習
+  section_title: 分群演算法
+  text: 情境：資料分佈呈現不規則形狀（如彎月形），且包含許多雜訊點。K-means 效果不佳，應改用？
+  type: multiple_choice
+  options:
+  - 階層式分群
+  - DBSCAN (Density-Based Spatial Clustering)
+  - PCA
+  - Apriori
+  correct_index: 1
+  explanation: DBSCAN 基於密度分群，能識別任意形狀的群聚並自動排除離群值（雜訊）。
+  tags:
+  - chap-ai-foundation-chapter6
+  - sec-dbscan
+  id: 11446
+  usage: both
+- chapter_title: 非監督式學習與強化學習
+  section_title: 關聯規則與降維
+  text: 情境：在購物籃分析中，若 Lift(啤酒 -> 尿布) = 1.5，代表？
+  type: multiple_choice
+  options:
+  - 買啤酒的人有 1.5% 會買尿布
+  - 兩者無關
+  - 正相關，買啤酒會提升買尿布的機率
+  - 負相關
+  correct_index: 2
+  explanation: Lift > 1 表示正相關。1.5 代表買啤酒的情況下，買尿布的機率是平常的 1.5 倍。
+  tags:
+  - chap-ai-foundation-chapter6
+  - sec-apriori
+  id: 11447
+  usage: both
+- chapter_title: 非監督式學習與強化學習
+  section_title: 強化學習
+  text: 情境：訓練 AI 玩遊戲時，它為了拿高分而一直重複同樣的安全動作，不願意嘗試新策略。這是什麼問題？
+  type: multiple_choice
+  options:
+  - 過度探索 (Exploration)
+  - 過度利用 (Exploitation)
+  - 獎勵太少
+  - 環境太簡單
+  correct_index: 1
+  explanation: 過度利用 (Exploitation) 會導致 Agent 陷入局部最佳解，錯失發現更好策略的機會。
+  tags:
+  - chap-ai-foundation-chapter6
+  - sec-reinforcement-learning-detail
+  id: 11448
+  usage: both
+- chapter_title: 非監督式學習與強化學習
+  section_title: 關聯規則與降維
+  text: 情境：PCA (主成分分析) 的主要目標是？
+  type: multiple_choice
+  options:
+  - 將資料分類
+  - 找到變異量 (Variance) 最大的投影方向以進行降維
+  - 預測未來
+  - 分群
+  correct_index: 1
+  explanation: PCA 透過線性投影，試圖在低維空間中保留原始資料最大的資訊量（變異量）。
+  tags:
+  - chap-ai-foundation-chapter6
+  - sec-association-rules
+  id: 11449
+  usage: both
+- chapter_title: 非監督式學習與強化學習
+  section_title: 分群演算法
+  text: 情境：K-means 演算法中的 K 值通常如何決定？
+  type: multiple_choice
+  options:
+  - 隨機決定
+  - 手肘法 (Elbow Method)
+  - 看心情
+  - 永遠設為 3
+  correct_index: 1
+  explanation: 手肘法觀察誤差平方和隨 K 增加的下降趨勢，選擇下降幅度變緩的轉折點。
+  tags:
+  - chap-ai-foundation-chapter6
+  - sec-kmeans
+  id: 11450
+  usage: both
+- chapter_title: 非監督式學習與強化學習
+  section_title: 強化學習
+  text: 情境：DQN (Deep Q-Network) 使用「經驗重播 (Experience Replay)」的主要目的是？
+  type: multiple_choice
+  options:
+  - 節省記憶體
+  - 打破資料的時間相關性，讓訓練更穩定
+  - 加快運算速度
+  - 增加獎勵
+  correct_index: 1
+  explanation: 隨機抽取過去的經驗進行訓練，能避免模型受連續樣本的相關性影響而鑽牛角尖。
+  tags:
+  - chap-ai-foundation-chapter6
+  - sec-rl-algorithms
+  id: 11451
+  usage: both
+- chapter_title: 非監督式學習與強化學習
+  section_title: 關聯規則與降維
+  text: 情境：Autoencoder 的「去噪 (Denoising)」應用原理是？
+  type: multiple_choice
+  options:
+  - 直接刪除雜訊
+  - 強迫模型學習資料的精髓結構，從而忽略隨機雜訊
+  - 增加雜訊
+  - 使用濾波器
+  correct_index: 1
+  explanation: Autoencoder 透過壓縮再還原的過程，學會保留主要特徵，隨機雜訊因無法被壓縮而被過濾掉。
+  tags:
+  - chap-ai-foundation-chapter6
+  - sec-association-rules
+  id: 11452
+  usage: both
+- chapter_title: 非監督式學習與強化學習
+  section_title: 強化學習
+  text: 情境：在強化學習中，Agent 根據什麼來更新策略？
+  type: multiple_choice
+  options:
+  - 標籤
+  - 環境給予的獎勵 (Reward) 與懲罰
+  - 老師的指導
+  - 隨機更新
+  correct_index: 1
+  explanation: RL 是基於回饋 (Reward) 的學習，目標是最大化長期累積獎勵。
+  tags:
+  - chap-ai-foundation-chapter6
+  - sec-rl-elements
+  id: 11453
+  usage: both
+- chapter_title: 非監督式學習與強化學習
+  section_title: 分群演算法
+  text: 情境：K-means 的一個主要缺點是？
+  type: multiple_choice
+  options:
+  - 計算太慢
+  - 必須事先指定 K 值且對離群值敏感
+  - 只能處理文字
+  - 無法處理數值
+  correct_index: 1
+  explanation: K-means 需要人工設定 K，且平均數容易被離群值拉偏。
+  tags:
+  - chap-ai-foundation-chapter6
+  - sec-kmeans
+  id: 11454
+  usage: both
+- chapter_title: 非監督式學習與強化學習
+  section_title: 關聯規則與降維
+  text: 情境：Apriori 演算法中的「信心度 (Confidence)」是指？
+  type: multiple_choice
+  options:
+  - A 出現的機率
+  - A 出現的情況下，B 也出現的條件機率 P(B|A)
+  - A 和 B 同時出現的機率
+  - A 對 B 的提升程度
+  correct_index: 1
+  explanation: Confidence 衡量關聯的強度，即買了 A 的人有多大比例會買 B。
+  tags:
+  - chap-ai-foundation-chapter6
+  - sec-apriori
+  id: 11455
+  usage: both
+- chapter_title: 非監督式學習與強化學習
+  section_title: 強化學習
+  text: 情境：Q-Learning 在狀態空間過大（如圍棋）時會遇到什麼問題？
+  type: multiple_choice
+  options:
+  - 維度災難，表格存不下
+  - 計算太快
+  - 過度擬合
+  - 欠擬合
+  correct_index: 0
+  explanation: Q-Learning 使用表格儲存狀態價值，當狀態無限多時，表格法失效，需改用 DQN。
+  tags:
+  - chap-ai-foundation-chapter6
+  - sec-rl-algorithms
+  id: 11456
+  usage: both
+- chapter_title: 非監督式學習與強化學習
+  section_title: 關聯規則與降維
+  text: 情境：t-SNE 主要用於？
+  type: multiple_choice
+  options:
+  - 資料壓縮
+  - 高維資料的視覺化 (2D/3D)
+  - 特徵選擇
+  - 迴歸預測
+  correct_index: 1
+  explanation: t-SNE 能將高維資料映射到低維，並保留局部結構，非常適合視覺化。
+  tags:
+  - chap-ai-foundation-chapter6
+  - sec-association-rules
+  id: 11457
+  usage: both
+- chapter_title: 非監督式學習與強化學習
+  section_title: 分群演算法
+  text: 情境：DBSCAN 中的 $\epsilon$ (epsilon) 參數代表？
+  type: multiple_choice
+  options:
+  - 最小點數
+  - 鄰域半徑
+  - 群數
+  - 迭代次數
+  correct_index: 1
+  explanation: $\epsilon$ 定義了「鄰居」的距離範圍，在此半徑內的點被視為密度相連。
+  tags:
+  - chap-ai-foundation-chapter6
+  - sec-dbscan
+  id: 11458
+  usage: both
+- chapter_title: 非監督式學習與強化學習
+  section_title: 強化學習
+  text: 情境：$\epsilon$-Greedy 策略中的 $\epsilon$ 用於控制？
+  type: multiple_choice
+  options:
+  - 學習率
+  - 探索 (Exploration) 的機率
+  - 折扣因子
+  - 獎勵大小
+  correct_index: 1
+  explanation: 設定 $\epsilon$ 機率進行隨機探索，其餘時間進行利用，以平衡探索與利用。
+  tags:
+  - chap-ai-foundation-chapter6
+  - sec-reinforcement-learning-detail
+  id: 11459
+  usage: both
+- chapter_title: 非監督式學習與強化學習
+  section_title: 關聯規則與降維
+  text: 情境：Autoencoder 中的「瓶頸層 (Bottleneck)」作用是？
+  type: multiple_choice
+  options:
+  - 加速運算
+  - 強迫資料壓縮，提取關鍵特徵
+  - 增加維度
+  - 防止過擬合
+  correct_index: 1
+  explanation: 瓶頸層維度最低，迫使模型學會用最精簡的資訊來代表原始資料。
+  tags:
+  - chap-ai-foundation-chapter6
+  - sec-association-rules
+  id: 11460
+  usage: both
+- chapter_title: 非監督式學習與強化學習
+  section_title: 強化學習
+  text: 情境：DQN 中的「目標網路 (Target Network)」為何要固定一段時間才更新？
+  type: multiple_choice
+  options:
+  - 為了省電
+  - 為了穩定訓練目標，避免「球員兼裁判」導致發散
+  - 為了增加隨機性
+  - 沒有特殊原因
+  correct_index: 1
+  explanation: 固定目標值能讓 Loss 計算更穩定，避免訓練震盪。
+  tags:
+  - chap-ai-foundation-chapter6
+  - sec-rl-algorithms
+  id: 11461
+  usage: both
+- chapter_title: 非監督式學習與強化學習
+  section_title: 分群演算法
+  text: 情境：分群結果通常用於？
+  type: multiple_choice
+  options:
+  - 直接預測未來
+  - 探索資料結構、異常偵測或作為前處理
+  - 取代監督式學習
+  - 產生標籤
+  correct_index: 1
+  explanation: 分群是非監督式學習，主要用於 EDA、發現模式或輔助後續的監督式任務。
+  tags:
+  - chap-ai-foundation-chapter6
+  - sec-clustering
+  id: 11462
+  usage: both
+- chapter_title: 非監督式學習與強化學習
+  section_title: 關聯規則與降維
+  text: 情境：PCA 是一種什麼類型的降維技術？
+  type: multiple_choice
+  options:
+  - 線性降維
+  - 非線性降維
+  - 基於樹的降維
+  - 隨機降維
+  correct_index: 0
+  explanation: PCA 透過線性變換（旋轉座標軸）來尋找主成分，無法處理非線性流形。
+  tags:
+  - chap-ai-foundation-chapter6
+  - sec-association-rules
+  id: 11463
+  usage: both
+- chapter_title: 非監督式學習與強化學習
+  section_title: 強化學習
+  text: 情境：Q-Table 中的值代表什麼？
+  type: multiple_choice
+  options:
+  - 狀態的機率
+  - 在特定狀態下採取特定行動的預期累積獎勵
+  - 動作的次數
+  - 環境的複雜度
+  correct_index: 1
+  explanation: Q(s, a) 代表在狀態 s 採取行動 a 所能獲得的長期回報期望值。
+  tags:
+  - chap-ai-foundation-chapter6
+  - sec-rl-algorithms
+  id: 11464
+  usage: both

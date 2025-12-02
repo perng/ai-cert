@@ -14,6 +14,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-mlp
+  usage: quiz
 - id: 7002
   chapter_title: 神經網路架構演進
   section_title: 基礎神經網路
@@ -29,6 +30,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-mlp
+  usage: quiz
 - id: 7003
   chapter_title: 神經網路架構演進
   section_title: 基礎神經網路
@@ -44,6 +46,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-activation-functions
+  usage: quiz
 - id: 7004
   chapter_title: 神經網路架構演進
   section_title: 基礎神經網路
@@ -59,6 +62,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-activation-functions
+  usage: quiz
 - id: 7005
   chapter_title: 神經網路架構演進
   section_title: 基礎神經網路
@@ -74,6 +78,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-activation-functions
+  usage: quiz
 - id: 7006
   chapter_title: 神經網路架構演進
   section_title: 基礎神經網路
@@ -89,6 +94,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-activation-functions
+  usage: quiz
 - id: 7007
   chapter_title: 神經網路架構演進
   section_title: 基礎神經網路
@@ -104,6 +110,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-backpropagation
+  usage: quiz
 - id: 7008
   chapter_title: 神經網路架構演進
   section_title: 基礎神經網路
@@ -119,6 +126,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-backpropagation
+  usage: quiz
 - id: 7009
   chapter_title: 神經網路架構演進
   section_title: 經典深度架構
@@ -134,6 +142,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-cnn
+  usage: quiz
 - id: 7010
   chapter_title: 神經網路架構演進
   section_title: 經典深度架構
@@ -149,6 +158,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-cnn
+  usage: quiz
 - id: 7011
   chapter_title: 神經網路架構演進
   section_title: 經典深度架構
@@ -164,6 +174,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-cnn
+  usage: both
 - id: 7012
   chapter_title: 神經網路架構演進
   section_title: 經典深度架構
@@ -179,6 +190,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-rnn
+  usage: both
 - id: 7013
   chapter_title: 神經網路架構演進
   section_title: 經典深度架構
@@ -194,6 +206,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-rnn
+  usage: both
 - id: 7014
   chapter_title: 神經網路架構演進
   section_title: 經典深度架構
@@ -209,6 +222,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-rnn
+  usage: both
 - id: 7015
   chapter_title: 神經網路架構演進
   section_title: Transformer 與注意力機制
@@ -224,6 +238,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-transformer
+  usage: both
 - id: 7016
   chapter_title: 神經網路架構演進
   section_title: Transformer 與注意力機制
@@ -239,6 +254,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-self-attention
+  usage: both
 - id: 7017
   chapter_title: 神經網路架構演進
   section_title: Transformer 與注意力機制
@@ -254,6 +270,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-self-attention
+  usage: both
 - id: 7018
   chapter_title: 神經網路架構演進
   section_title: Transformer 與注意力機制
@@ -269,6 +286,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-transformer-arch
+  usage: both
 - id: 7019
   chapter_title: 神經網路架構演進
   section_title: Transformer 與注意力機制
@@ -284,6 +302,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-transformer-arch
+  usage: both
 - id: 7020
   chapter_title: 神經網路架構演進
   section_title: Transformer 與注意力機制
@@ -299,6 +318,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-transformer-arch
+  usage: both
 - id: 7021
   chapter_title: 神經網路架構演進
   section_title: 基礎神經網路
@@ -314,6 +334,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-activation-functions
+  usage: both
 - id: 7022
   chapter_title: 神經網路架構演進
   section_title: 基礎神經網路
@@ -329,6 +350,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-backpropagation
+  usage: both
 - id: 7023
   chapter_title: 神經網路架構演進
   section_title: 經典深度架構
@@ -344,6 +366,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-cnn
+  usage: both
 - id: 7024
   chapter_title: 神經網路架構演進
   section_title: 經典深度架構
@@ -359,6 +382,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-rnn
+  usage: both
 - id: 7025
   chapter_title: 神經網路架構演進
   section_title: Transformer 與注意力機制
@@ -374,6 +398,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-self-attention
+  usage: both
 - id: 7026
   chapter_title: 神經網路架構演進
   section_title: Transformer 與注意力機制
@@ -389,6 +414,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-transformer-arch
+  usage: both
 - id: 7027
   chapter_title: 神經網路架構演進
   section_title: 基礎神經網路
@@ -404,6 +430,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-backpropagation
+  usage: both
 - id: 7028
   chapter_title: 神經網路架構演進
   section_title: 經典深度架構
@@ -419,6 +446,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-cnn
+  usage: both
 - id: 7029
   chapter_title: 神經網路架構演進
   section_title: 經典深度架構
@@ -434,6 +462,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-rnn
+  usage: both
 - id: 7030
   chapter_title: 神經網路架構演進
   section_title: Transformer 與注意力機制
@@ -449,6 +478,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-transformer-arch
+  usage: both
 - id: 7031
   chapter_title: 神經網路架構演進
   section_title: 基礎神經網路
@@ -464,6 +494,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-mlp
+  usage: both
 - id: 7032
   chapter_title: 神經網路架構演進
   section_title: 經典深度架構
@@ -479,6 +510,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-cnn
+  usage: both
 - id: 7033
   chapter_title: 神經網路架構演進
   section_title: 經典深度架構
@@ -494,6 +526,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-rnn
+  usage: both
 - id: 7034
   chapter_title: 神經網路架構演進
   section_title: Transformer 與注意力機制
@@ -509,6 +542,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-transformer
+  usage: both
 - id: 7035
   chapter_title: 神經網路架構演進
   section_title: 基礎神經網路
@@ -524,6 +558,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-mlp
+  usage: both
 - id: 7036
   chapter_title: 神經網路架構演進
   section_title: 經典深度架構
@@ -539,6 +574,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-cnn
+  usage: both
 - id: 7037
   chapter_title: 神經網路架構演進
   section_title: 經典深度架構
@@ -554,6 +590,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-rnn
+  usage: both
 - id: 7038
   chapter_title: 神經網路架構演進
   section_title: Transformer 與注意力機制
@@ -569,6 +606,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-self-attention
+  usage: both
 - id: 7039
   chapter_title: 神經網路架構演進
   section_title: Transformer 與注意力機制
@@ -584,6 +622,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - sec-transformer-arch
+  usage: both
 - id: 7040
   chapter_title: 神經網路架構演進
   section_title: 神經網路架構演進
@@ -599,6 +638,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter7
   - chap-ai-foundation-chapter7-summary
+  usage: both
 - id: 7051
   chapter_title: 神經網路與深度學習
   section_title: 神經網路基礎
@@ -614,6 +654,7 @@ questions:
   tags:
   - sec-ai-chapter7
   - sec-neural-network-basics
+  usage: both
 - id: 7052
   chapter_title: 神經網路與深度學習
   section_title: 經典深度學習架構
@@ -629,6 +670,7 @@ questions:
   tags:
   - sec-ai-chapter7
   - sec-deep-architectures
+  usage: both
 - id: 7053
   chapter_title: 神經網路與深度學習
   section_title: 經典深度學習架構
@@ -644,6 +686,7 @@ questions:
   tags:
   - sec-ai-chapter7
   - sec-deep-architectures
+  usage: both
 - id: 7054
   chapter_title: 神經網路與深度學習
   section_title: Transformer 與自注意力機制
@@ -659,6 +702,7 @@ questions:
   tags:
   - sec-ai-chapter7
   - sec-transformer
+  usage: both
 - id: 7055
   chapter_title: 神經網路與深度學習
   section_title: 神經網路基礎
@@ -674,6 +718,7 @@ questions:
   tags:
   - sec-ai-chapter7
   - sec-neural-network-basics
+  usage: both
 - id: 7056
   chapter_title: 神經網路與深度學習
   section_title: 經典深度學習架構
@@ -689,10 +734,12 @@ questions:
   tags:
   - sec-ai-chapter7
   - sec-deep-architectures
+  usage: both
 - id: 11416
   chapter_title: 神經網路與深度學習
   section_title: 經典深度學習架構
-  text: 某團隊想採用循環神經網路（Recurrent Neural Network, RNN）建構 長期氣候數據的預測模型，以下哪一項敘述最符合使用 RNN 可能會遇 到的挑戰？ (114年第四梯次)
+  text: 某團隊想採用循環神經網路（Recurrent Neural Network, RNN）建構 長期氣候數據的預測模型，以下哪一項敘述最符合使用 RNN
+    可能會遇 到的挑戰？ (114年第四梯次)
   type: multiple_choice
   options:
   - RNN 無法處理可變長度的序列輸入，因此在實務上限制極大
@@ -700,12 +747,13 @@ questions:
   - RNN 無法捕捉時間上的依賴關係，因此預測準確度低
   - RNN 只能用於分類任務，不能應用於時間序列預測
   correct_index: 1
-  explanation: RNN 適合處理時間序列數據，但存在梯度消失問題。LSTM 透過門控機制（遺忘門、輸入門、輸出門）有效解決了此問題，能記憶長期資訊。 
+  explanation: RNN 適合處理時間序列數據，但存在梯度消失問題。LSTM 透過門控機制（遺忘門、輸入門、輸出門）有效解決了此問題，能記憶長期資訊。
   tags:
   - past-exam
   - 114-4
   - sec-ai-chapter7
   - sec-deep-architectures
+  usage: both
 - id: 11447
   chapter_title: 神經網路與深度學習
   section_title: 神經網路基礎
@@ -717,12 +765,13 @@ questions:
   - 減少樣本量提升訓練速度
   - 對目標變數或特徵進行標準化
   correct_index: 1
-  explanation: 此題涉及 神經網路基礎 的核心概念。正確答案為「選用 ReLU 或其變體作為隱藏層的啟動函數，以改善梯度傳播」。 
+  explanation: 此題涉及 神經網路基礎 的核心概念。正確答案為「選用 ReLU 或其變體作為隱藏層的啟動函數，以改善梯度傳播」。
   tags:
   - past-exam
   - 114-4
   - sec-ai-chapter7
   - sec-neural-network-basics
+  usage: both
 - id: 11424
   chapter_title: 神經網路與深度學習
   section_title: Transformer 與自注意力機制
@@ -734,12 +783,14 @@ questions:
   - 較大的參數量能提升模型的表達能力與預測效能，但需足夠訓練資 料支持
   - 增加參數量不影響記憶體使用，只會影響計算速度
   correct_index: 2
-  explanation: 此題涉及 Transformer 與自注意力機制 的核心概念。正確答案為「較大的參數量能提升模型的表達能力與預測效能，但需足夠訓練資 料支持」。 
+  explanation: 此題涉及 Transformer 與自注意力機制 的核心概念。正確答案為「較大的參數量能提升模型的表達能力與預測效能，但需足夠訓練資
+    料支持」。
   tags:
   - past-exam
   - 114-4
   - sec-ai-chapter7
   - sec-transformer
+  usage: both
 - id: 11427
   chapter_title: 神經網路與深度學習
   section_title: Transformer 與自注意力機制
@@ -751,12 +802,13 @@ questions:
   - 在訓練時僅更新部分權重而將其他權重凍結，從而減少需要調整的 參數數量
   - 根據注意力分數動態跳過處理部分輸入 Token，以減少每次前向傳 播的計算
   correct_index: 1
-  explanation: Transformer 架構的核心是 Self-Attention 機制，它能平行處理序列數據並捕捉長距離依賴，解決了 RNN 無法平行化且易遺忘的問題。 
+  explanation: Transformer 架構的核心是 Self-Attention 機制，它能平行處理序列數據並捕捉長距離依賴，解決了 RNN 無法平行化且易遺忘的問題。
   tags:
   - past-exam
   - 114-4
   - sec-ai-chapter7
   - sec-transformer
+  usage: both
 - id: 11428
   chapter_title: 神經網路與深度學習
   section_title: Transformer 與自注意力機制
@@ -768,9 +820,332 @@ questions:
   - Softmax 函數的計算，因為對每個 Token 都需要執行繁重的運算
   - 自注意力層的計算和其記憶體使用，因為注意力矩陣的大小隨序列 長度呈平方級增長  答案 題    目
   correct_index: 3
-  explanation: Transformer 架構的核心是 Self-Attention 機制，它能平行處理序列數據並捕捉長距離依賴，解決了 RNN 無法平行化且易遺忘的問題。 
+  explanation: Transformer 架構的核心是 Self-Attention 機制，它能平行處理序列數據並捕捉長距離依賴，解決了 RNN 無法平行化且易遺忘的問題。
   tags:
   - past-exam
   - 114-4
   - sec-ai-chapter7
   - sec-transformer
+  usage: both
+- chapter_title: 神經網路架構演進
+  section_title: 基礎神經網路
+  text: 情境：在訓練深層神經網路時，發現隨著層數增加，前面幾層的參數幾乎沒有更新，導致模型無法收斂。這最可能是什麼問題？
+  type: multiple_choice
+  options:
+  - 過度擬合
+  - 梯度消失 (Vanishing Gradient)
+  - 學習率太大
+  - 資料不足
+  correct_index: 1
+  explanation: 使用 Sigmoid 等啟動函數時，導數小於 1，連乘多次後梯度趨近於 0，導致前層參數無法有效更新。
+  tags:
+  - chap-ai-foundation-chapter7
+  - sec-activation-functions
+  id: 11448
+  usage: both
+- chapter_title: 神經網路架構演進
+  section_title: 經典深度架構
+  text: 情境：卷積神經網路 (CNN) 中的「池化層 (Pooling Layer)」主要功能是什麼？
+  type: multiple_choice
+  options:
+  - 增加特徵數量
+  - 降低維度並保留重要特徵 (降維與抗雜訊)
+  - 進行分類
+  - 反向傳播
+  correct_index: 1
+  explanation: 池化層透過取最大值或平均值來縮小特徵圖尺寸，減少運算量並提高對平移的容忍度。
+  tags:
+  - chap-ai-foundation-chapter7
+  - sec-cnn
+  id: 11449
+  usage: both
+- chapter_title: 神經網路架構演進
+  section_title: Transformer 與注意力機制
+  text: 情境：Transformer 架構相比於 RNN，最大的優勢在於？
+  type: multiple_choice
+  options:
+  - 參數量較少
+  - 可以並行計算 (Parallelization)，大幅縮短訓練時間
+  - 只能處理短文本
+  - 不需要 GPU
+  correct_index: 1
+  explanation: Transformer 透過 Self-Attention 機制一次處理整個序列，擺脫了 RNN 必須依序計算的時間依賴。
+  tags:
+  - chap-ai-foundation-chapter7
+  - sec-transformer-arch
+  id: 11450
+  usage: both
+- chapter_title: 神經網路架構演進
+  section_title: 經典深度架構
+  text: 情境：LSTM (長短期記憶網路) 被設計出來主要是為了解決 RNN 的什麼缺陷？
+  type: multiple_choice
+  options:
+  - 計算速度慢
+  - 梯度消失導致無法學習長距離依賴
+  - 無法處理影像
+  - 參數太多
+  correct_index: 1
+  explanation: LSTM 引入了「閘門」機制與 Cell State，能有效傳遞長期記憶，解決長序列遺忘問題。
+  tags:
+  - chap-ai-foundation-chapter7
+  - sec-rnn
+  id: 11451
+  usage: both
+- chapter_title: 神經網路架構演進
+  section_title: 基礎神經網路
+  text: 情境：ReLU (Rectified Linear Unit) 啟動函數的主要優點是？
+  type: multiple_choice
+  options:
+  - 輸出範圍在 0 到 1 之間
+  - 計算簡單且有效緩解梯度消失問題
+  - 能處理負數輸出
+  - 曲線平滑
+  correct_index: 1
+  explanation: ReLU 在 x>0 時導數為 1，避免了梯度連乘後的衰減，且計算僅需判斷正負，非常高效。
+  tags:
+  - chap-ai-foundation-chapter7
+  - sec-activation-functions
+  id: 11452
+  usage: both
+- chapter_title: 神經網路架構演進
+  section_title: Transformer 與注意力機制
+  text: 情境：在句子 "The animal didn't cross the street because it was too tired." 中，Self-Attention
+    機制能幫助模型理解 "it" 指的是 "animal" 而不是 "street"。這是透過計算什麼得出的？
+  type: multiple_choice
+  options:
+  - 卷積核
+  - 注意力分數 (Attention Score)，即 Q 與 K 的相似度
+  - 遞歸神經網路
+  - 池化操作
+  correct_index: 1
+  explanation: Self-Attention 計算單詞間的關聯強度，"it" 與 "animal" 的語意關聯度最高，因此獲得最高的 Attention
+    Score。
+  tags:
+  - chap-ai-foundation-chapter7
+  - sec-self-attention
+  id: 11453
+  usage: both
+- chapter_title: 神經網路架構演進
+  section_title: 基礎神經網路
+  text: 情境：Softmax 函數通常用於神經網路的哪一層？
+  type: multiple_choice
+  options:
+  - 輸入層
+  - 卷積層
+  - 輸出層 (處理多類別分類)
+  - 池化層
+  correct_index: 2
+  explanation: Softmax 將輸出數值轉換為總和為 1 的機率分佈，適合用於多類別分類問題的最終輸出。
+  tags:
+  - chap-ai-foundation-chapter7
+  - sec-activation-functions
+  id: 11454
+  usage: both
+- chapter_title: 神經網路架構演進
+  section_title: 經典深度架構
+  text: 情境：若要開發一個「即時語音翻譯」系統，最適合的基礎架構是？
+  type: multiple_choice
+  options:
+  - CNN
+  - RNN / LSTM / Transformer (Seq2Seq 模型)
+  - MLP
+  - GAN
+  correct_index: 1
+  explanation: 語音與文字都是序列資料，Seq2Seq 架構（基於 RNN 或 Transformer）專門處理序列到序列的轉換。
+  tags:
+  - chap-ai-foundation-chapter7
+  - sec-rnn
+  id: 11455
+  usage: both
+- chapter_title: 神經網路架構演進
+  section_title: 基礎神經網路
+  text: 情境：優化器 ADAM 的特點是結合了哪兩個概念？
+  type: multiple_choice
+  options:
+  - 動量 (Momentum) 與自適應學習率
+  - 隨機採樣與正則化
+  - 卷積與池化
+  - 編碼與解碼
+  correct_index: 0
+  explanation: ADAM 結合了 Momentum (慣性) 與 RMSprop (自適應調整步長)，是目前最常用的優化器。
+  tags:
+  - chap-ai-foundation-chapter7
+  - sec-backpropagation
+  id: 11456
+  usage: both
+- chapter_title: 神經網路架構演進
+  section_title: Transformer 與注意力機制
+  text: 情境：BERT 模型屬於 Transformer 的哪一部分？
+  type: multiple_choice
+  options:
+  - Encoder-only (編碼器)
+  - Decoder-only (解碼器)
+  - Encoder-Decoder
+  - CNN
+  correct_index: 0
+  explanation: BERT 使用雙向 Encoder 來深入理解文本的上下文語意，擅長分類與問答。
+  tags:
+  - chap-ai-foundation-chapter7
+  - sec-transformer-arch
+  id: 11457
+  usage: both
+- chapter_title: 神經網路架構演進
+  section_title: 經典深度架構
+  text: 情境：CNN 中的「卷積層」主要負責？
+  type: multiple_choice
+  options:
+  - 降低圖片解析度
+  - 提取局部特徵 (如邊緣、紋理)
+  - 將圖片轉為一維
+  - 輸出機率
+  correct_index: 1
+  explanation: 卷積層透過濾鏡 (Filter) 滑動掃描，捕捉影像中的局部特徵。
+  tags:
+  - chap-ai-foundation-chapter7
+  - sec-cnn
+  id: 11458
+  usage: both
+- chapter_title: 神經網路架構演進
+  section_title: Transformer 與注意力機制
+  text: 情境：GPT 系列模型屬於 Transformer 的哪一部分？
+  type: multiple_choice
+  options:
+  - Encoder-only
+  - Decoder-only (解碼器)
+  - Encoder-Decoder
+  - RNN
+  correct_index: 1
+  explanation: GPT (Generative Pre-trained Transformer) 使用 Decoder 架構進行單向的文字生成（預測下一個字）。
+  tags:
+  - chap-ai-foundation-chapter7
+  - sec-transformer-arch
+  id: 11459
+  usage: both
+- chapter_title: 神經網路架構演進
+  section_title: 基礎神經網路
+  text: 情境：反向傳播 (Backpropagation) 演算法的核心數學原理是？
+  type: multiple_choice
+  options:
+  - 畢氏定理
+  - 微積分的連鎖律 (Chain Rule)
+  - 傅立葉變換
+  - 貝氏定理
+  correct_index: 1
+  explanation: 反向傳播利用連鎖律計算複合函數的導數，將誤差梯度從輸出層一層層傳回輸入層。
+  tags:
+  - chap-ai-foundation-chapter7
+  - sec-backpropagation
+  id: 11460
+  usage: both
+- chapter_title: 神經網路架構演進
+  section_title: 經典深度架構
+  text: 情境：RNN 處理長序列時，前面的資訊傳到後面會消失，這稱為？
+  type: multiple_choice
+  options:
+  - 過度擬合
+  - 梯度爆炸
+  - 梯度消失 (Vanishing Gradient)
+  - 模式崩潰
+  correct_index: 2
+  explanation: 隨著時間步長增加，梯度在反向傳播過程中不斷相乘而趨近於零，導致無法學習長距離依賴。
+  tags:
+  - chap-ai-foundation-chapter7
+  - sec-rnn
+  id: 11461
+  usage: both
+- chapter_title: 神經網路架構演進
+  section_title: Transformer 與注意力機制
+  text: 情境：多頭注意力 (Multi-Head Attention) 的作用是？
+  type: multiple_choice
+  options:
+  - 增加計算速度
+  - 讓模型能從多個不同角度（子空間）捕捉特徵關係
+  - 減少參數量
+  - 防止過擬合
+  correct_index: 1
+  explanation: 多個 Head 就像多組濾鏡，分別關注語法、語意、指涉等不同面向，豐富模型的理解力。
+  tags:
+  - chap-ai-foundation-chapter7
+  - sec-self-attention
+  id: 11462
+  usage: both
+- chapter_title: 神經網路架構演進
+  section_title: 基礎神經網路
+  text: 情境：隨機梯度下降 (SGD) 與全批次梯度下降 (Batch GD) 相比，主要優點是？
+  type: multiple_choice
+  options:
+  - 收斂路徑更平滑
+  - 計算速度快，且隨機性有助於跳出局部最佳解
+  - 準確率更高
+  - 不需要調整學習率
+  correct_index: 1
+  explanation: SGD 每次只用一筆或一小批資料更新，計算量小且更新頻繁，隨機震盪有助於逃離 Local Minima。
+  tags:
+  - chap-ai-foundation-chapter7
+  - sec-backpropagation
+  id: 11463
+  usage: both
+- chapter_title: 神經網路架構演進
+  section_title: 經典深度架構
+  text: 情境：CNN 具有「平移不變性 (Translation Invariance)」，這意味著？
+  type: multiple_choice
+  options:
+  - 圖片旋轉後無法辨識
+  - 無論物體在圖片的哪個位置，都能被辨識出來
+  - 圖片必須是黑白的
+  - 只能辨識正方形物體
+  correct_index: 1
+  explanation: 透過卷積與池化，CNN 關注特徵本身而非其絕對位置，因此物體移動後仍能被識別。
+  tags:
+  - chap-ai-foundation-chapter7
+  - sec-cnn
+  id: 11464
+  usage: both
+- chapter_title: 神經網路架構演進
+  section_title: Transformer 與注意力機制
+  text: 情境：Transformer 中的 Q, K, V 分別代表？
+  type: multiple_choice
+  options:
+  - Question, Knowledge, Value
+  - Query, Key, Value
+  - Queue, Key, Vector
+  - Quality, Kind, Volume
+  correct_index: 1
+  explanation: Query (查詢), Key (索引), Value (內容) 是 Self-Attention 機制的三個核心向量。
+  tags:
+  - chap-ai-foundation-chapter7
+  - sec-self-attention
+  id: 11465
+  usage: both
+- chapter_title: 神經網路架構演進
+  section_title: 基礎神經網路
+  text: 情境：MLP (多層感知機) 的每一層神經元與下一層神經元之間是如何連接的？
+  type: multiple_choice
+  options:
+  - 部分連接
+  - 全連接 (Fully Connected)
+  - 隨機連接
+  - 不連接
+  correct_index: 1
+  explanation: MLP 中，上一層的每個神經元都與下一層的所有神經元相連。
+  tags:
+  - chap-ai-foundation-chapter7
+  - sec-mlp
+  id: 11466
+  usage: both
+- chapter_title: 神經網路架構演進
+  section_title: 經典深度架構
+  text: 情境：LSTM 的三個閘門不包括？
+  type: multiple_choice
+  options:
+  - 遺忘門 (Forget Gate)
+  - 輸入門 (Input Gate)
+  - 輸出門 (Output Gate)
+  - 邏輯門 (Logic Gate)
+  correct_index: 3
+  explanation: LSTM 透過 Forget, Input, Output 三個 Gate 來控制記憶的保留與更新。
+  tags:
+  - chap-ai-foundation-chapter7
+  - sec-rnn
+  id: 11467
+  usage: both

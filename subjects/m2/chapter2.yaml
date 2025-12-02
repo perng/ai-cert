@@ -14,6 +14,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-definition
+  usage: quiz
 - id: 4202
   chapter_title: 自然語言處理 (NLP)
   section_title: 技術演進脈絡
@@ -29,6 +30,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-evolution
+  usage: quiz
 - id: 4203
   chapter_title: 自然語言處理 (NLP)
   section_title: 核心技術與模型
@@ -44,6 +46,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-core-tech
+  usage: quiz
 - id: 4204
   chapter_title: 自然語言處理 (NLP)
   section_title: 核心技術與模型
@@ -59,6 +62,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-core-tech
+  usage: quiz
 - id: 4205
   chapter_title: 自然語言處理 (NLP)
   section_title: 核心技術與模型
@@ -74,6 +78,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-core-tech
+  usage: quiz
 - id: 4206
   chapter_title: 自然語言處理 (NLP)
   section_title: 核心技術與模型
@@ -89,6 +94,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-core-tech
+  usage: quiz
 - id: 4207
   chapter_title: 自然語言處理 (NLP)
   section_title: 核心技術與模型
@@ -104,6 +110,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-core-tech
+  usage: quiz
 - id: 4208
   chapter_title: 自然語言處理 (NLP)
   section_title: 核心技術與模型
@@ -119,6 +126,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-core-tech
+  usage: quiz
 - id: 4209
   chapter_title: 自然語言處理 (NLP)
   section_title: 進階技術：大語言模型時代
@@ -134,6 +142,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-advanced
+  usage: quiz
 - id: 4210
   chapter_title: 自然語言處理 (NLP)
   section_title: 進階技術：大語言模型時代
@@ -149,6 +158,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-advanced
+  usage: quiz
 - id: 4211
   chapter_title: 自然語言處理 (NLP)
   section_title: 應用情境
@@ -164,6 +174,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-applications
+  usage: both
 - id: 4212
   chapter_title: 自然語言處理 (NLP)
   section_title: 風險與治理
@@ -179,6 +190,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-risks
+  usage: both
 - id: 4213
   chapter_title: 自然語言處理 (NLP)
   section_title: 核心技術與模型
@@ -194,6 +206,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-core-tech
+  usage: both
 - id: 4214
   chapter_title: 自然語言處理 (NLP)
   section_title: 核心技術與模型
@@ -209,6 +222,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-core-tech
+  usage: both
 - id: 4215
   chapter_title: 自然語言處理 (NLP)
   section_title: 進階技術：大語言模型時代
@@ -224,6 +238,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-advanced
+  usage: both
 - id: 4216
   chapter_title: 自然語言處理 (NLP)
   section_title: 風險與治理
@@ -239,6 +254,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-risks
+  usage: both
 - id: 4217
   chapter_title: 自然語言處理 (NLP)
   section_title: 核心技術與模型
@@ -254,6 +270,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-core-tech
+  usage: both
 - id: 4218
   chapter_title: 自然語言處理 (NLP)
   section_title: 核心技術與模型
@@ -269,6 +286,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-core-tech
+  usage: both
 - id: 4219
   chapter_title: 自然語言處理 (NLP)
   section_title: 應用情境
@@ -284,6 +302,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-applications
+  usage: both
 - id: 4220
   chapter_title: 自然語言處理 (NLP)
   section_title: 風險與治理
@@ -299,6 +318,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-risks
+  usage: both
 - id: 4221
   chapter_title: 自然語言處理 (NLP)
   section_title: 技術演進脈絡
@@ -314,6 +334,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-evolution
+  usage: both
 - id: 4222
   chapter_title: 自然語言處理 (NLP)
   section_title: 核心技術與模型
@@ -329,6 +350,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-core-tech
+  usage: both
 - id: 4223
   chapter_title: 自然語言處理 (NLP)
   section_title: 風險與治理
@@ -344,6 +366,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-risks
+  usage: both
 - id: 4224
   chapter_title: 自然語言處理 (NLP)
   section_title: 核心技術與模型
@@ -359,6 +382,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-core-tech
+  usage: both
 - id: 4225
   chapter_title: 自然語言處理 (NLP)
   section_title: 應用情境
@@ -374,6 +398,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-applications
+  usage: both
 - id: 4226
   chapter_title: 自然語言處理 (NLP)
   section_title: 風險與治理
@@ -389,6 +414,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-risks
+  usage: both
 - id: 4227
   chapter_title: 自然語言處理 (NLP)
   section_title: 核心技術與模型
@@ -404,6 +430,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-core-tech
+  usage: both
 - id: 4228
   chapter_title: 自然語言處理 (NLP)
   section_title: 進階技術：大語言模型時代
@@ -419,6 +446,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-advanced
+  usage: both
 - id: 4229
   chapter_title: 自然語言處理 (NLP)
   section_title: 風險與治理
@@ -434,6 +462,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-risks
+  usage: both
 - id: 4230
   chapter_title: 自然語言處理 (NLP)
   section_title: 核心技術與模型
@@ -449,6 +478,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-core-tech
+  usage: both
 - id: 4231
   chapter_title: 自然語言處理 (NLP)
   section_title: 核心技術與模型
@@ -464,6 +494,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-core-tech
+  usage: both
 - id: 4232
   chapter_title: 自然語言處理 (NLP)
   section_title: 風險與治理
@@ -479,6 +510,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-risks
+  usage: both
 - id: 4233
   chapter_title: 自然語言處理 (NLP)
   section_title: 核心技術與模型
@@ -494,6 +526,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-core-tech
+  usage: both
 - id: 4234
   chapter_title: 自然語言處理 (NLP)
   section_title: 核心技術與模型
@@ -509,6 +542,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-core-tech
+  usage: both
 - id: 4235
   chapter_title: 自然語言處理 (NLP)
   section_title: 應用情境
@@ -524,6 +558,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-applications
+  usage: both
 - id: 4236
   chapter_title: 自然語言處理 (NLP)
   section_title: 風險與治理
@@ -539,6 +574,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-risks
+  usage: both
 - id: 4237
   chapter_title: 自然語言處理 (NLP)
   section_title: 核心技術與模型
@@ -554,6 +590,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-core-tech
+  usage: both
 - id: 4238
   chapter_title: 自然語言處理 (NLP)
   section_title: 核心技術與模型
@@ -569,6 +606,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-core-tech
+  usage: both
 - id: 4239
   chapter_title: 自然語言處理 (NLP)
   section_title: 進階技術：大語言模型時代
@@ -584,6 +622,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-advanced
+  usage: both
 - id: 4240
   chapter_title: 自然語言處理 (NLP)
   section_title: 風險與治理
@@ -599,6 +638,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-nlp-risks
+  usage: both
 - id: 4241
   chapter_title: 自然語言處理 (NLP)
   section_title: 深度思考情境題
@@ -610,18 +650,22 @@ questions:
   - Prompt 寫得不好。
   - 使用者問錯問題。
   correct_index: 1
-  explanation: RAG 的準確性高度依賴於檢索到的文件品質。如果知識庫本身包含過時資訊且未被標記或過濾，LLM 就會基於錯誤資訊生成回答。資料庫的維護與更新是 RAG 成功的關鍵。
+  explanation: RAG 的準確性高度依賴於檢索到的文件品質。如果知識庫本身包含過時資訊且未被標記或過濾，LLM 就會基於錯誤資訊生成回答。資料庫的維護與更新是
+    RAG 成功的關鍵。
   tags:
   - chap-m2-ch2
   - sec-scenario
+  usage: mock
 - id: 4242
   chapter_title: 自然語言處理 (NLP)
   section_title: 深度思考情境題
-  text: 情境：你的公司想微調一個 LLM 來撰寫專業的醫療報告，但只有 100 份高品質的醫生手寫報告範例。直接進行全參數微調 (Full Fine-tuning) 容易導致什麼問題？應改用什麼策略？
+  text: 情境：你的公司想微調一個 LLM 來撰寫專業的醫療報告，但只有 100 份高品質的醫生手寫報告範例。直接進行全參數微調 (Full Fine-tuning)
+    容易導致什麼問題？應改用什麼策略？
   type: multiple_choice
   options:
   - 欠擬合；應增加模型層數。
-  - 過擬合 (Overfitting) 或災難性遺忘 (Catastrophic Forgetting)；應採用 Parameter-Efficient Fine-Tuning (PEFT) 技術。
+  - 過擬合 (Overfitting) 或災難性遺忘 (Catastrophic Forgetting)；應採用 Parameter-Efficient Fine-Tuning
+    (PEFT) 技術。
   - 計算資源不足；應購買更多 GPU。
   - 模型變笨；應從頭訓練。
   correct_index: 1
@@ -629,6 +673,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-scenario
+  usage: mock
 - id: 4243
   chapter_title: 自然語言處理 (NLP)
   section_title: 深度思考情境題
@@ -644,6 +689,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-scenario
+  usage: mock
 - id: 4244
   chapter_title: 自然語言處理 (NLP)
   section_title: 深度思考情境題
@@ -659,6 +705,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-scenario
+  usage: mock
 - id: 4245
   chapter_title: 自然語言處理 (NLP)
   section_title: 深度思考情境題
@@ -670,7 +717,329 @@ questions:
   - Word2Vec 演算法有 Bug。
   - 向量維度不足。
   correct_index: 1
-  explanation: 這是 NLP 領域著名的偏見案例。因為歷史文本中女性常與護士連結，男性與醫生連結，模型學到了這種相關性。這提醒我們必須對詞向量進行去偏見 (Debiasing) 處理，例如將性別方向從職業詞彙中移除。
+  explanation: 這是 NLP 領域著名的偏見案例。因為歷史文本中女性常與護士連結，男性與醫生連結，模型學到了這種相關性。這提醒我們必須對詞向量進行去偏見
+    (Debiasing) 處理，例如將性別方向從職業詞彙中移除。
   tags:
   - chap-m2-ch2
   - sec-scenario
+  usage: mock
+- chapter_title: 自然語言處理 (NLP)
+  section_title: 定義與範疇
+  text: 情境：當你對 Siri 說「設定明天早上七點的鬧鐘」時，負責理解你的意圖是「設定鬧鐘」的技術屬於？
+  type: multiple_choice
+  options:
+  - NLG (自然語言生成)
+  - NLU (自然語言理解)
+  - OCR
+  - 語音合成
+  correct_index: 1
+  explanation: NLU 專注於解析輸入文本的結構與語意，識別使用者的意圖 (Intent) 與實體 (Entity)。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-definition
+  id: 4246
+  usage: both
+- chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: 情境：在 TF-IDF 計算中，若一個詞在某篇文章出現次數很高，但在所有文章中也都很常見（如「的」），其 TF-IDF 值會？
+  type: multiple_choice
+  options:
+  - 很高
+  - 很低
+  - 不變
+  - 無法計算
+  correct_index: 1
+  explanation: IDF (逆文件頻率) 會懲罰那些在所有文件中都出現的常見詞，降低其權重。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+  id: 4247
+  usage: both
+- chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: 情境：RNN (循環神經網路) 在處理長文本時容易遇到的主要問題是？
+  type: multiple_choice
+  options:
+  - 計算太快
+  - 梯度消失 (Vanishing Gradient)，導致遺忘前面的資訊
+  - 記憶力太好
+  - 無法處理中文
+  correct_index: 1
+  explanation: 隨著序列長度增加，RNN 的梯度在反向傳播時會指數級衰減，難以捕捉長距離依賴。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+  id: 4248
+  usage: both
+- chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: 情境：Transformer 模型中的「自注意力機制 (Self-Attention)」主要解決了什麼問題？
+  type: multiple_choice
+  options:
+  - 圖片分類
+  - 讓模型能同時關注句子中不同位置的詞，捕捉長距離關聯
+  - 語音辨識
+  - 壓縮模型
+  correct_index: 1
+  explanation: Self-Attention 允許模型直接計算句子中任意兩個詞的關聯強度，突破了 RNN 的序列限制。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+  id: 4249
+  usage: both
+- chapter_title: 自然語言處理 (NLP)
+  section_title: 進階技術：大語言模型時代
+  text: 情境：Zero-shot Learning (零樣本學習) 是指？
+  type: multiple_choice
+  options:
+  - 給模型看很多範例
+  - 不給任何範例，直接下指令要求模型完成任務
+  - 模型壞了
+  - 訓練時間為零
+  correct_index: 1
+  explanation: 利用 LLM 強大的泛化能力，在未見過特定任務範例的情況下直接進行推理。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-advanced
+  id: 4250
+  usage: both
+- chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: 情境：BERT 模型的主要架構是？
+  type: multiple_choice
+  options:
+  - Transformer Decoder
+  - Transformer Encoder
+  - RNN
+  - CNN
+  correct_index: 1
+  explanation: BERT 使用雙向 Encoder 架構，擅長理解上下文語意，適合分類與問答任務。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+  id: 4251
+  usage: both
+- chapter_title: 自然語言處理 (NLP)
+  section_title: 風險與治理
+  text: 情境：為了防止 LLM 洩漏訓練資料中的個資，企業應採取的措施不包括？
+  type: multiple_choice
+  options:
+  - 去識別化 (De-identification)
+  - 差分隱私 (Differential Privacy)
+  - 公開所有資料
+  - 限制存取權限
+  correct_index: 2
+  explanation: 公開資料會加劇隱私洩漏風險，應嚴格控管。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-risks
+  id: 4252
+  usage: both
+- chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: 情境：LSTM (長短期記憶網路) 透過什麼機制來改善 RNN 的記憶問題？
+  type: multiple_choice
+  options:
+  - 增加層數
+  - 引入閘門機制 (遺忘閘、輸入閘、輸出閘)
+  - 使用更快的 CPU
+  - 刪除資料
+  correct_index: 1
+  explanation: 閘門機制讓 LSTM 能主動選擇保留或遺忘資訊，有效維護長期狀態。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+  id: 4253
+  usage: both
+- chapter_title: 自然語言處理 (NLP)
+  section_title: 進階技術：大語言模型時代
+  text: 情境：RAG (檢索增強生成) 的主要優勢是？
+  type: multiple_choice
+  options:
+  - 生成速度最快
+  - 減少幻覺並能利用最新的外部知識
+  - 不需要資料庫
+  - 模型最小
+  correct_index: 1
+  explanation: RAG 結合了檢索系統的準確性與生成模型的流暢性，解決了知識過時與瞎掰問題。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-advanced
+  id: 4254
+  usage: both
+- chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: 情境：GPT 系列模型主要採用哪種架構？
+  type: multiple_choice
+  options:
+  - Transformer Encoder
+  - Transformer Decoder
+  - LSTM
+  - GAN
+  correct_index: 1
+  explanation: GPT 是單向 Decoder 架構，專注於預測下一個字 (Next Token Prediction)，擅長生成任務。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+  id: 4255
+  usage: both
+- chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: 情境：斷詞 (Tokenization) 在中文處理中比英文困難，因為？
+  type: multiple_choice
+  options:
+  - 中文沒有空格分隔詞彙
+  - 中文單字太少
+  - 中文文法太簡單
+  - 電腦看不懂中文
+  correct_index: 0
+  explanation: 英文詞與詞之間有空格，中文則是連續字串，需依賴上下文判斷斷詞邊界。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+  id: 4256
+  usage: both
+- chapter_title: 自然語言處理 (NLP)
+  section_title: 進階技術：大語言模型時代
+  text: 情境：LoRA (低秩自適應) 技術的主要目的是？
+  type: multiple_choice
+  options:
+  - 增加模型參數量
+  - 高效微調大模型 (只訓練少量外掛參數)
+  - 加速預訓練
+  - 壓縮圖片
+  correct_index: 1
+  explanation: LoRA 透過凍結主模型、只訓練低秩矩陣，大幅降低了微調 LLM 所需的算力與儲存。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-advanced
+  id: 4257
+  usage: both
+- chapter_title: 自然語言處理 (NLP)
+  section_title: 風險與治理
+  text: 情境：提示注入 (Prompt Injection) 攻擊的目標是？
+  type: multiple_choice
+  options:
+  - 竊取密碼
+  - 繞過模型的安全機制或指令限制
+  - 加速模型
+  - 備份資料
+  correct_index: 1
+  explanation: 攻擊者透過特殊指令誘導模型執行原本被禁止的行為。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-risks
+  id: 4258
+  usage: both
+- chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: 情境：Positional Encoding (位置編碼) 在 Transformer 中的作用是？
+  type: multiple_choice
+  options:
+  - 加密
+  - 提供詞彙在句子中的順序資訊
+  - 壓縮
+  - 翻譯
+  correct_index: 1
+  explanation: 由於 Self-Attention 是平行運算，缺乏序列概念，需額外注入位置資訊。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+  id: 4259
+  usage: both
+- chapter_title: 自然語言處理 (NLP)
+  section_title: 應用情境
+  text: 情境：情感分析 (Sentiment Analysis) 最常用於？
+  type: multiple_choice
+  options:
+  - 天氣預報
+  - 監控社群媒體上的品牌聲譽
+  - 股票交易
+  - 人臉辨識
+  correct_index: 1
+  explanation: 分析消費者評論的情緒傾向（正/負面）是行銷與公關的重要工具。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-applications
+  id: 4260
+  usage: both
+- chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: 情境：Word Embeddings (如 Word2Vec) 的突破在於？
+  type: multiple_choice
+  options:
+  - 將詞彙轉換為具有語意關係的向量 (如 國王-男人+女人=皇后)
+  - 將詞彙轉為圖片
+  - 將詞彙轉為聲音
+  - 將詞彙刪除
+  correct_index: 0
+  explanation: Word Embeddings 讓電腦能透過向量運算理解詞彙間的類比與語意關係。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+  id: 4261
+  usage: both
+- chapter_title: 自然語言處理 (NLP)
+  section_title: 風險與治理
+  text: 情境：XAI (可解釋 AI) 旨在解決深度學習模型的什麼問題？
+  type: multiple_choice
+  options:
+  - 黑箱問題 (Black Box)，難以解釋決策理由
+  - 運算太慢
+  - 準確率太低
+  - 太貴
+  correct_index: 0
+  explanation: XAI 試圖揭示模型內部的決策邏輯，增加人類對 AI 的信任。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-risks
+  id: 4262
+  usage: both
+- chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: 情境：Multi-Head Attention (多頭注意力) 的「多頭」意味著？
+  type: multiple_choice
+  options:
+  - 模型有多個頭
+  - 模型能從多個不同的角度 (子空間) 關注詞彙間的關係
+  - 模型有多個輸出
+  - 模型有多個輸入
+  correct_index: 1
+  explanation: 不同的 Head 可以分別關注語法、語意、指代等不同層面的資訊。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+  id: 4263
+  usage: both
+- chapter_title: 自然語言處理 (NLP)
+  section_title: 風險與治理
+  text: 情境：Human-in-the-loop (人機協作) 原則強調？
+  type: multiple_choice
+  options:
+  - 完全自動化
+  - 關鍵決策應由人類最終把關
+  - 人類不應介入
+  - AI 取代人類
+  correct_index: 1
+  explanation: 在高風險領域，保留人類的裁量權是確保安全與倫理的最後防線。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-risks
+  id: 4264
+  usage: both
+- chapter_title: 自然語言處理 (NLP)
+  section_title: 核心技術與模型
+  text: 情境：詞幹提取 (Stemming) 的作用是？
+  type: multiple_choice
+  options:
+  - 將詞彙還原為原型 (如 running -> run)
+  - 刪除詞彙
+  - 翻譯詞彙
+  - 加密詞彙
+  correct_index: 0
+  explanation: 標準化詞形能減少詞彙表大小，讓模型聚焦於詞彙的核心意義。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-core-tech
+  id: 4265
+  usage: both
