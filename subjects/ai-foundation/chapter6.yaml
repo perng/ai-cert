@@ -12,8 +12,8 @@ questions:
   correct_index: 1
   explanation: 非監督式學習就像自修，資料沒有標籤，模型必須自己找出資料中的規律或結構。
   tags:
-  - chap-chapter6
-  - chap-chapter6-summary
+  - chap-ai-foundation-chapter6
+  - chap-ai-foundation-chapter6-summary
 - id: 6002
   chapter_title: 非監督式學習與強化學習
   section_title: 分群演算法
@@ -27,7 +27,7 @@ questions:
   correct_index: 2
   explanation: 分群旨在實現「物以類聚」，讓同一群內的資料越像越好，不同群之間的差異越大越好。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-clustering
 - id: 6003
   chapter_title: 非監督式學習與強化學習
@@ -42,7 +42,7 @@ questions:
   correct_index: 2
   explanation: K-means 需要使用者預先設定 K 值，若設錯 K 值（如將 3 群硬分成 2 群），效果會很差。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-kmeans
 - id: 6004
   chapter_title: 非監督式學習與強化學習
@@ -57,7 +57,7 @@ questions:
   correct_index: 2
   explanation: 手肘法透過觀察誤差平方和 (SSE) 隨 K 值增加的下降趨勢，找出下降幅度變緩的轉折點（手肘處）。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-kmeans
 - id: 6005
   chapter_title: 非監督式學習與強化學習
@@ -72,7 +72,7 @@ questions:
   correct_index: 1
   explanation: DBSCAN 透過尋找高密度區域來形成群聚，能找出任意形狀的群，並排除低密度的雜訊。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-dbscan
 - id: 6006
   chapter_title: 非監督式學習與強化學習
@@ -87,7 +87,7 @@ questions:
   correct_index: 2
   explanation: K-means 假設群聚是球形的，難以處理不規則形狀；DBSCAN 則能順著密度連通性找出任意形狀。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-dbscan
 - id: 6007
   chapter_title: 非監督式學習與強化學習
@@ -102,7 +102,7 @@ questions:
   correct_index: 2
   explanation: 樹狀圖能完整呈現資料如何一步步合併或分裂的層次結構。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-hierarchical-clustering
 - id: 6008
   chapter_title: 非監督式學習與強化學習
@@ -117,7 +117,7 @@ questions:
   correct_index: 2
   explanation: 這是購物籃分析的經典案例，利用 Apriori 演算法找出商品間的關聯性。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-apriori
 - id: 6009
   chapter_title: 非監督式學習與強化學習
@@ -132,7 +132,7 @@ questions:
   correct_index: 2
   explanation: Support 衡量一個組合（如同時買 A 和 B）在資料庫中出現的普遍程度。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-apriori
 - id: 6010
   chapter_title: 非監督式學習與強化學習
@@ -147,7 +147,7 @@ questions:
   correct_index: 3
   explanation: Lift > 1 表示 A 的出現會增加 B 出現的機率，兩者有正向關聯。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-apriori
 - id: 6011
   chapter_title: 非監督式學習與強化學習
@@ -162,7 +162,7 @@ questions:
   correct_index: 0
   explanation: PCA 試圖找到一個新的視角（主成分），讓資料投影後分得最開（變異最大），從而保留最多資訊。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-association-rules
 - id: 6012
   chapter_title: 非監督式學習與強化學習
@@ -177,7 +177,7 @@ questions:
   correct_index: 2
   explanation: PCA 透過線性變換（矩陣運算）進行投影，無法處理非線性的流形結構（如捲曲的瑞士捲）。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-association-rules
 - id: 6013
   chapter_title: 非監督式學習與強化學習
@@ -192,7 +192,7 @@ questions:
   correct_index: 0
   explanation: Autoencoder 試圖將輸入壓縮後再還原，目標是讓還原後的輸出盡可能接近原始輸入。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-association-rules
 - id: 6014
   chapter_title: 非監督式學習與強化學習
@@ -207,7 +207,7 @@ questions:
   correct_index: 1
   explanation: 透過學習資料的核心特徵，Autoencoder 能學會忽略輸入圖片中的隨機雜訊，還原出乾淨的圖片。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-association-rules
 - id: 6015
   chapter_title: 非監督式學習與強化學習
@@ -222,7 +222,7 @@ questions:
   correct_index: 0
   explanation: Agent 的目標是透過一連串的行動，獲得長期下來最多的總獎勵。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-reinforcement-learning-detail
 - id: 6016
   chapter_title: 非監督式學習與強化學習
@@ -237,7 +237,7 @@ questions:
   correct_index: 3
   explanation: 探索是為了跳出局部最佳解，嘗試新的可能性，雖然有風險但可能發現更好的策略。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-reinforcement-learning-detail
 - id: 6017
   chapter_title: 非監督式學習與強化學習
@@ -252,7 +252,7 @@ questions:
   correct_index: 2
   explanation: Q-Learning 使用一個表格 (Q-Table) 來記錄每個狀態下採取每個行動的預期獎勵 (Q-Value)。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-rl-algorithms
 - id: 6018
   chapter_title: 非監督式學習與強化學習
@@ -267,7 +267,7 @@ questions:
   correct_index: 3
   explanation: DQN 用深度神經網路取代龐大的 Q-Table，能處理像圍棋或電玩畫面這種狀態無限多的問題。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-rl-algorithms
 - id: 6019
   chapter_title: 非監督式學習與強化學習
@@ -282,7 +282,7 @@ questions:
   correct_index: 0
   explanation: 透過隨機抽取過去的經驗來訓練，避免模型因為資料的高度連續性而鑽牛角尖（過擬合於近期經驗）。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-rl-algorithms
 - id: 6020
   chapter_title: 非監督式學習與強化學習
@@ -297,7 +297,7 @@ questions:
   correct_index: 3
   explanation: 固定目標網路一段時間，就像固定射箭的靶心，讓主網路能穩定地學習更新。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-rl-algorithms
 - id: 6021
   chapter_title: 非監督式學習與強化學習
@@ -312,7 +312,7 @@ questions:
   correct_index: 0
   explanation: K-means 使用迭代更新中心點的方式，而非梯度下降法。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-kmeans
 - id: 6022
   chapter_title: 非監督式學習與強化學習
@@ -327,7 +327,7 @@ questions:
   correct_index: 3
   explanation: DBSCAN 能自動識別低密度區域的點為雜訊，不會強迫將其歸類。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-dbscan
 - id: 6023
   chapter_title: 非監督式學習與強化學習
@@ -342,7 +342,7 @@ questions:
   correct_index: 2
   explanation: 信心度 100% 代表在包含 A 的所有交易中，B 也都出現了。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-apriori
 - id: 6024
   chapter_title: 非監督式學習與強化學習
@@ -357,7 +357,7 @@ questions:
   correct_index: 2
   explanation: t-SNE 擅長將高維數據映射到低維空間並保留局部結構，非常適合用於視覺化。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-association-rules
 - id: 6025
   chapter_title: 非監督式學習與強化學習
@@ -372,7 +372,7 @@ questions:
   correct_index: 0
   explanation: 狀態描述了 Agent 在特定時間點所觀察到的環境資訊。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-rl-elements
 - id: 6026
   chapter_title: 非監督式學習與強化學習
@@ -387,7 +387,7 @@ questions:
   correct_index: 1
   explanation: "$\epsilon$ 是設定用來進行隨機探索的機率，例如 10% 的時間亂走，90% 的時間選最好的。"
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-reinforcement-learning-detail
 - id: 6027
   chapter_title: 非監督式學習與強化學習
@@ -402,7 +402,7 @@ questions:
   correct_index: 3
   explanation: 聚合式策略一開始將每個點視為一群，然後逐步合併最近的群，直到剩下一大群。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-hierarchical-clustering
 - id: 6028
   chapter_title: 非監督式學習與強化學習
@@ -417,7 +417,7 @@ questions:
   correct_index: 1
   explanation: 新聞分組（分群）通常沒有預定義的標籤，屬於非監督式學習。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-clustering
 - id: 6029
   chapter_title: 非監督式學習與強化學習
@@ -432,7 +432,7 @@ questions:
   correct_index: 1
   explanation: PC1 是資料投影後變異量最大的方向，保留了最多的資訊。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-association-rules
 - id: 6030
   chapter_title: 非監督式學習與強化學習
@@ -447,7 +447,7 @@ questions:
   correct_index: 1
   explanation: AlphaGo Zero 證明了強化學習可以不依賴人類知識，僅憑規則和自我對弈就能達到超人類水準。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-reinforcement-learning-detail
 - id: 6031
   chapter_title: 非監督式學習與強化學習
@@ -462,7 +462,7 @@ questions:
   correct_index: 3
   explanation: 平均數容易受極端值影響，導致 K-means 的群中心偏移。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-kmeans
 - id: 6032
   chapter_title: 非監督式學習與強化學習
@@ -477,7 +477,7 @@ questions:
   correct_index: 3
   explanation: Support 太低代表該組合極少出現，統計意義不足，通常會設定門檻過濾掉。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-apriori
 - id: 6033
   chapter_title: 非監督式學習與強化學習
@@ -492,7 +492,7 @@ questions:
   correct_index: 0
   explanation: 瓶頸層強迫模型將資訊壓縮到最低維度，提取出資料的最重要特徵。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-association-rules
 - id: 6034
   chapter_title: 非監督式學習與強化學習
@@ -507,7 +507,7 @@ questions:
   correct_index: 1
   explanation: 如果只利用已知策略而不探索，AI 可能永遠不知道還有更好的走法。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-reinforcement-learning-detail
 - id: 6035
   chapter_title: 非監督式學習與強化學習
@@ -522,7 +522,7 @@ questions:
   correct_index: 2
   explanation: 透過分群了解不同客戶群體的特性，能針對性地設計行銷活動。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-clustering
 - id: 6036
   chapter_title: 非監督式學習與強化學習
@@ -537,7 +537,7 @@ questions:
   correct_index: 3
   explanation: PCA 是線性投影，對於非線性結構（如彎曲的流形）效果不佳。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-association-rules
 - id: 6037
   chapter_title: 非監督式學習與強化學習
@@ -552,7 +552,7 @@ questions:
   correct_index: 1
   explanation: 機器人控制和遊戲涉及連續的決策與環境互動，是 RL 的強項。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-reinforcement-learning-detail
 - id: 6038
   chapter_title: 非監督式學習與強化學習
@@ -567,7 +567,7 @@ questions:
   correct_index: 2
   explanation: Epsilon 定義了掃描密度的半徑範圍。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-dbscan
 - id: 6039
   chapter_title: 非監督式學習與強化學習
@@ -582,7 +582,7 @@ questions:
   correct_index: 2
   explanation: Lift < 1 代表負相關，即 A 出現時，B 出現的機率反而降低。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-apriori
 - id: 6040
   chapter_title: 非監督式學習與強化學習
@@ -597,7 +597,7 @@ questions:
   correct_index: 2
   explanation: 這是 RL 的基本循環：Action -> Environment -> Next State + Reward。
   tags:
-  - chap-chapter6
+  - chap-ai-foundation-chapter6
   - sec-rl-elements
 - id: 6051
   chapter_title: 非監督式與強化學習

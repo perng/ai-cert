@@ -12,7 +12,7 @@ questions:
   correct_index: 2
   explanation: AI 模型是從歷史數據中學習，若數據本身包含人類社會的偏見（如性別歧視），模型就會學到並放大這些偏見。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-bias-fairness
 - id: 11002
   chapter_title: AI 治理、法規與倫理
@@ -27,7 +27,7 @@ questions:
   correct_index: 0
   explanation: 因為過去科技業多為男性，AI 學習歷史數據後誤以為「男性」是好員工的特徵，導致歧視女性。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-bias-fairness
 - id: 11003
   chapter_title: AI 治理、法規與倫理
@@ -42,7 +42,7 @@ questions:
   correct_index: 3
   explanation: 差分隱私透過加入雜訊，使得攻擊者無法分辨特定個人的資訊，但仍能保持整體統計數據的準確性。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-privacy
 - id: 11004
   chapter_title: AI 治理、法規與倫理
@@ -57,7 +57,7 @@ questions:
   correct_index: 1
   explanation: 聯邦學習讓模型在本地裝置訓練，只回傳參數更新給伺服器，原始私密資料保留在用戶端。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-privacy
 - id: 11005
   chapter_title: AI 治理、法規與倫理
@@ -72,7 +72,7 @@ questions:
   correct_index: 0
   explanation: 高風險決策不能全交給 AI，必須有人類專家審核 AI 的建議並做出最終決定。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-accountability
 - id: 11006
   chapter_title: AI 治理、法規與倫理
@@ -87,7 +87,7 @@ questions:
   correct_index: 0
   explanation: 監理沙盒提供一個實驗場域，讓創新技術能在法規尚未完備前先行測試，促進產業發展。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-taiwan-ai-law
 - id: 11007
   chapter_title: AI 治理、法規與倫理
@@ -102,7 +102,7 @@ questions:
   correct_index: 1
   explanation: 金管會強調 AI 治理是董事會層級的責任，不能僅視為技術操作層面的問題。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-financial-ai
 - id: 11008
   chapter_title: AI 治理、法規與倫理
@@ -117,7 +117,7 @@ questions:
   correct_index: 3
   explanation: EU AI Act 根據 AI 應用的風險等級（不可接受、高、有限、最小）實施不同強度的監管。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-eu-ai-act
 - id: 11009
   chapter_title: AI 治理、法規與倫理
@@ -132,7 +132,7 @@ questions:
   correct_index: 3
   explanation: 社會信用評分被認為嚴重侵犯人權，在歐盟是完全禁止的。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-eu-ai-act
 - id: 11010
   chapter_title: AI 治理、法規與倫理
@@ -147,7 +147,7 @@ questions:
   correct_index: 3
   explanation: 這些應用直接影響人們的生計與健康，被列為高風險，需通過嚴格的合規評估。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-eu-ai-act
 - id: 11011
   chapter_title: AI 治理、法規與倫理
@@ -162,7 +162,7 @@ questions:
   correct_index: 0
   explanation: 使用者有權知道自己正在與機器互動，因此必須揭露 AI 身分。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-eu-ai-act
 - id: 11012
   chapter_title: AI 治理、法規與倫理
@@ -177,7 +177,7 @@ questions:
   correct_index: 3
   explanation: 評測中心主要評估模型本身的性能與安全，資料品質通常被視為廠商的責任，不在直接評測範圍內。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-moda-eval
 - id: 11013
   chapter_title: AI 治理、法規與倫理
@@ -192,7 +192,7 @@ questions:
   correct_index: 0
   explanation: 透過調整資料分佈或演算法約束，減少模型因歷史數據而產生的歧視行為。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-bias-fairness
 - id: 11014
   chapter_title: AI 治理、法規與倫理
@@ -207,7 +207,7 @@ questions:
   correct_index: 0
   explanation: 聯邦學習是解決跨機構資料隱私共享問題的最佳方案。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-privacy
 - id: 11015
   chapter_title: AI 治理、法規與倫理
@@ -222,7 +222,7 @@ questions:
   correct_index: 0
   explanation: 客戶有權知道為何被拒絕，金融機構不能以「黑箱」為由拒絕解釋。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-financial-ai
 - id: 11016
   chapter_title: AI 治理、法規與倫理
@@ -237,7 +237,7 @@ questions:
   correct_index: 1
   explanation: Deepfake 屬於有限風險，必須明確標示以避免誤導大眾。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-eu-ai-act
 - id: 11017
   chapter_title: AI 治理、法規與倫理
@@ -252,7 +252,7 @@ questions:
   correct_index: 2
   explanation: Prompt Injection 試圖誘導模型輸出有害內容，測試其安全性防護是否足夠。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-moda-eval
 - id: 11018
   chapter_title: AI 治理、法規與倫理
@@ -267,7 +267,7 @@ questions:
   correct_index: 3
   explanation: 無論技術如何發展，法律與道德責任最終必須歸屬於人類（開發者或使用者）。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-accountability
 - id: 11019
   chapter_title: AI 治理、法規與倫理
@@ -282,7 +282,7 @@ questions:
   correct_index: 1
   explanation: 垃圾郵件過濾器對人權影響極微，屬於最小風險，幾乎不需監管。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-eu-ai-act
 - id: 11020
   chapter_title: AI 治理、法規與倫理
@@ -297,7 +297,7 @@ questions:
   correct_index: 3
   explanation: 透代表透明度與可解釋性，要求決策過程需對客戶透明。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-financial-ai
 - id: 11021
   chapter_title: AI 治理、法規與倫理
@@ -312,7 +312,7 @@ questions:
   correct_index: 3
   explanation: 若訓練資料集中缺乏某特定族群（如深色人種）的數據，模型在該族群上的準確率就會偏低。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-bias-fairness
 - id: 11022
   chapter_title: AI 治理、法規與倫理
@@ -327,7 +327,7 @@ questions:
   correct_index: 2
   explanation: Gboard 利用聯邦學習在手機端改進預測模型，無需上傳用戶的打字內容。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-privacy
 - id: 11023
   chapter_title: AI 治理、法規與倫理
@@ -342,7 +342,7 @@ questions:
   correct_index: 1
   explanation: 利用 AI 操控人類潛意識被視為嚴重侵犯自主權，屬於絕對禁止的項目。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-eu-ai-act
 - id: 11024
   chapter_title: AI 治理、法規與倫理
@@ -357,7 +357,7 @@ questions:
   correct_index: 1
   explanation: 金融系統必須具備強健性，能抵禦惡意攻擊並確保服務不中斷。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-financial-ai
 - id: 11025
   chapter_title: AI 治理、法規與倫理
@@ -372,7 +372,7 @@ questions:
   correct_index: 0
   explanation: 彈性測試系統在面對壓力或惡意輸入時的穩定性與恢復能力。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-moda-eval
 - id: 11026
   chapter_title: AI 治理、法規與倫理
@@ -387,7 +387,7 @@ questions:
   correct_index: 1
   explanation: 基本法作為指導性法律，為 AI 發展與監管提供大方向與原則。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-taiwan-ai-law
 - id: 11027
   chapter_title: AI 治理、法規與倫理
@@ -402,7 +402,7 @@ questions:
   correct_index: 3
   explanation: 這是典型的歷史偏見，AI 忠實地學到了人類社會過去存在的不平等。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-bias-fairness
 - id: 11028
   chapter_title: AI 治理、法規與倫理
@@ -417,7 +417,7 @@ questions:
   correct_index: 3
   explanation: 為了保障隱私與自由，原則上禁止，除非是為了追捕重犯等重大公共利益。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-eu-ai-act
 - id: 11029
   chapter_title: AI 治理、法規與倫理
@@ -432,7 +432,7 @@ questions:
   correct_index: 1
   explanation: 只蒐集業務所需的必要資料，避免過度蒐集個資，降低隱私風險。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-financial-ai
 - id: 11030
   chapter_title: AI 治理、法規與倫理
@@ -447,8 +447,8 @@ questions:
   correct_index: 2
   explanation: AI 治理旨在平衡創新與風險，確保技術發展造福人類而非造成傷害。
   tags:
-  - chap-chapter11
-  - chap-chapter11-summary
+  - chap-ai-foundation-chapter11
+  - chap-ai-foundation-chapter11-summary
 - id: 11031
   chapter_title: AI 治理、法規與倫理
   section_title: 倫理原則與風險管理
@@ -462,7 +462,7 @@ questions:
   correct_index: 0
   explanation: 差分隱私專為此目的設計，能在保護個體的同時提供準確的群體統計。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-privacy
 - id: 11032
   chapter_title: AI 治理、法規與倫理
@@ -477,7 +477,7 @@ questions:
   correct_index: 1
   explanation: 如同 GDPR 成為全球隱私標竿，EU AI Act 預計將成為全球 AI 監管的黃金標準。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-eu-ai-act
 - id: 11033
   chapter_title: AI 治理、法規與倫理
@@ -492,7 +492,7 @@ questions:
   correct_index: 1
   explanation: 幻覺代表模型生成錯誤資訊，直接影響輸出的準確性。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-moda-eval
 - id: 11034
   chapter_title: AI 治理、法規與倫理
@@ -507,7 +507,7 @@ questions:
   correct_index: 1
   explanation: 風險分級能兼顧安全與創新，避免對低風險應用造成不必要的法規負擔。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-taiwan-ai-law
 - id: 11035
   chapter_title: AI 治理、法規與倫理
@@ -522,7 +522,7 @@ questions:
   correct_index: 0
   explanation: 這正是聯邦學習的核心隱私保護機制。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-privacy
 - id: 11036
   chapter_title: AI 治理、法規與倫理
@@ -537,7 +537,7 @@ questions:
   correct_index: 2
   explanation: 高風險系統上市前必須經過嚴格的第三方或自我評估，確保符合法規要求。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-eu-ai-act
 - id: 11037
   chapter_title: AI 治理、法規與倫理
@@ -552,7 +552,7 @@ questions:
   correct_index: 1
   explanation: 當責性意味著機構必須為 AI 的決策負責，提供客戶救濟的途徑。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-financial-ai
 - id: 11038
   chapter_title: AI 治理、法規與倫理
@@ -567,7 +567,7 @@ questions:
   correct_index: 1
   explanation: 評測中心目前的重點在於評估 LLM 等核心模型的安全性與性能。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-moda-eval
 - id: 11039
   chapter_title: AI 治理、法規與倫理
@@ -582,7 +582,7 @@ questions:
   correct_index: 3
   explanation: 主動檢測並修正訓練資料中的偏差，是解決 AI 偏見最根本的方法。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-bias-fairness
 - id: 11040
   chapter_title: AI 治理、法規與倫理
@@ -597,7 +597,7 @@ questions:
   correct_index: 0
   explanation: 沙盒機制允許新創在受控環境下測試法規未明的新業務，降低法律風險。
   tags:
-  - chap-chapter11
+  - chap-ai-foundation-chapter11
   - sec-taiwan-ai-law
 - id: 11051
   chapter_title: AI 治理、法規與倫理

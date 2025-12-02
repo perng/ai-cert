@@ -1,7 +1,7 @@
 ---
 title: "大數據治理"
 order: 5
-label: sec-m3-ch5
+label: chap-m3-ch5
 ---
 
 

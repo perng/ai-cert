@@ -1,7 +1,7 @@
 ---
 title: "第五章：No Code / Low Code 平台與 AI 開發工具"
 order: 5
-label: sec-gen-chapter5
+label: chap-gen-chapter5
 ---
 
 <!-- # 第五章：No Code / Low Code 平台與 AI 開發工具 {#sec-no-code-low-code} -->

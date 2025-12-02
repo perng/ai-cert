@@ -1,7 +1,7 @@
 ---
 title: "人工智慧的本質與層次架構"
 order: 1
-label: chap-chapter1
+label: chap-ai-foundation-chapter1
 ---
 
 <!-- # 人工智慧的本質與層次架構 -->
@@ -135,7 +135,7 @@ AI 並非要完全取代人類，更多時候是與人類協作。根據人類�
 
 ![Human-AI Collaboration Models](images/human-ai-collaboration.webp)
 
-## 本章總結與考點提示 {#chap-chapter1-summary}
+## 本章總結與考點提示 {#chap-ai-foundation-chapter1-summary}
 
 ### 核心概念回顧
 

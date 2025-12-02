@@ -12,7 +12,7 @@ questions:
   correct_index: 0
   explanation: Prompt Injection 利用 LLM 難以區分「系統指令」與「使用者輸入」的特性，誘導模型執行未經授權的操作。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7002
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -27,7 +27,7 @@ questions:
   correct_index: 1
   explanation: 當具備瀏覽或讀取能力的 AI 處理這些受汙染的外部資源時，就會觸發隱藏的惡意指令。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7003
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -42,7 +42,7 @@ questions:
   correct_index: 1
   explanation: 這是企業採用雲端 AI 服務時的重要資安保障，確保機密資料不會成為模型的一部分。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7004
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -57,7 +57,7 @@ questions:
   correct_index: 1
   explanation: 同態加密打破了「運算必須先解密」的限制，實現了資料可用但不可見的理想狀態。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7005
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -72,7 +72,7 @@ questions:
   correct_index: 2
   explanation: 極高的計算成本使得同態加密目前僅適用於極高機密且資料量較小的場景。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7006
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -87,7 +87,7 @@ questions:
   correct_index: 0
   explanation: SMPC 讓互不信任的多方能合作進行數據分析，同時保護各自的數據隱私（如百萬富翁問題）。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7007
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -102,7 +102,7 @@ questions:
   correct_index: 2
   explanation: 生成式 AI 的機率特性導致它有時會一本正經地胡說八道，這就是幻覺。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7008
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -117,7 +117,7 @@ questions:
   correct_index: 2
   explanation: 透過檢索外部可靠知識庫並要求模型基於事實回答，能顯著降低幻覺。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7009
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -132,7 +132,7 @@ questions:
   correct_index: 1
   explanation: 輸入過濾是第一道防線，阻擋惡意或不當的請求進入模型。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7010
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -147,7 +147,7 @@ questions:
   correct_index: 2
   explanation: NeMo Guardrails 讓開發者能以程式化方式設定 AI 的行為準則，防止其越界。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7011
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -162,7 +162,7 @@ questions:
   correct_index: 3
   explanation: 這是最直觀的攻擊方式，試圖透過對話直接覆蓋系統的預設指令。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7012
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -177,7 +177,7 @@ questions:
   correct_index: 0
   explanation: LLM 有時會過度擬合訓練數據，導致在回答時意外吐出原本應保密的個資。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7013
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -192,7 +192,7 @@ questions:
   correct_index: 2
   explanation: 在資料進入 AI 處理流程前移除可識別個人的特徵，是保護隱私的基本手段。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7014
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -207,7 +207,7 @@ questions:
   correct_index: 2
   explanation: 輸出過濾是最後一道防線，確保 AI 生成的內容符合安全與倫理標準。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7015
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -222,7 +222,7 @@ questions:
   correct_index: 2
   explanation: LLM 本質上是文字接龍高手，它關注的是語句通順與機率最高，而非內容的真實性。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7016
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -237,7 +237,7 @@ questions:
   correct_index: 1
   explanation: 這個問題展示了如何在不洩露具體財產數字的情況下，比較出誰更有錢，正是 SMPC 的應用場景。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7017
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -252,7 +252,7 @@ questions:
   correct_index: 2
   explanation: 只有當 AI 能讀取外部不受信任的內容時，間接注入才有可能發生。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7018
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -267,7 +267,7 @@ questions:
   correct_index: 1
   explanation: Grounding 讓模型的回答「腳踏實地」，有憑有據，而非天馬行空。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7019
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -282,7 +282,7 @@ questions:
   correct_index: 1
   explanation: 在自然語言中，很難像傳統程式碼那樣嚴格區分哪部分是程式碼，哪部分是字串資料。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7020
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -297,7 +297,7 @@ questions:
   correct_index: 3
   explanation: 這實現了雲端運算與資料隱私的完美平衡。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7021
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -312,7 +312,7 @@ questions:
   correct_index: 1
   explanation: 沒有護欄的企業 AI 就像沒有煞車的跑車，風險極高。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7022
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -327,7 +327,7 @@ questions:
   correct_index: 2
   explanation: 這是企業版與個人版最大的區別之一，保障企業數據不會變成公共模型的養分。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7023
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -342,7 +342,7 @@ questions:
   correct_index: 0
   explanation: 當被問及訓練資料中不存在的知識時，模型傾向於編造一個看似合理的答案而非承認不知道。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7024
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -357,7 +357,7 @@ questions:
   correct_index: 2
   explanation: SMPC 代表 Secure Multi-Party Computation。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7025
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -372,7 +372,7 @@ questions:
   correct_index: 3
   explanation: 這是一種針對 AI 的隱寫術，人類看不見（白色字體），但 AI 讀取網頁時會讀到並執行。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7026
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -387,7 +387,7 @@ questions:
   correct_index: 0
   explanation: 透過定義 Colang 腳本，開發者可以精確控制對話流向，強制 AI 遵守特定規範。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7027
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -402,7 +402,7 @@ questions:
   correct_index: 0
   explanation: 主動移除敏感資訊是防止資料外洩最直接有效的手段。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7028
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -417,7 +417,7 @@ questions:
   correct_index: 0
   explanation: 這就是同態加密的神奇之處，保持了運算結構的同構性。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7029
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -432,7 +432,7 @@ questions:
   correct_index: 0
   explanation: RAG 將「開卷考」的答案本（檢索到的文件）交給模型，大幅降低了瞎猜的機率。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7030
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -447,7 +447,7 @@ questions:
   correct_index: 1
   explanation: 這是生成式 AI 特有的兩大新興威脅，傳統資安手段往往難以防禦。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7031
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -462,7 +462,7 @@ questions:
   correct_index: 0
   explanation: 這是攻擊成功的關鍵，模型誤將惡意資料當作指令來執行。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7032
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -477,7 +477,7 @@ questions:
   correct_index: 0
   explanation: 確保 AI 說出的話是得體、安全的，是輸出過濾的職責。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7033
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -492,7 +492,7 @@ questions:
   correct_index: 0
   explanation: 多方計算需要頻繁的網路通訊來交換中間結果，這可能成為效能瓶頸。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7034
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -507,7 +507,7 @@ questions:
   correct_index: 1
   explanation: 作為搜尋引擎結合的 AI，Bing Chat 很容易在讀取惡意網頁時中招。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7035
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -522,7 +522,7 @@ questions:
   correct_index: 0
   explanation: 意指讓 AI 的回答有根基，不懸浮於空中（幻覺）。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7036
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -537,7 +537,7 @@ questions:
   correct_index: 0
   explanation: 這是建立企業信任的關鍵條款，否則企業不敢將機密資料交給 AI 處理。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7037
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -552,7 +552,7 @@ questions:
   correct_index: 1
   explanation: NVIDIA 推出了這款開源工具，旨在加強 LLM 應用的安全性與可控性。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7038
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -567,7 +567,7 @@ questions:
   correct_index: 3
   explanation: 同態加密理論上解決了資料使用與隱私保護的矛盾，因此被譽為聖杯。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7039
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -582,7 +582,7 @@ questions:
   correct_index: 2
   explanation: 兩者原理相似，都是透過注入惡意指令來操控後端系統（資料庫或 LLM）。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7040
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -597,7 +597,7 @@ questions:
   correct_index: 1
   explanation: 預防勝於治療，在源頭阻斷攻擊比事後補救更有效。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-security-ethics
 - id: 7041
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -612,7 +612,7 @@ questions:
   correct_index: 0
   explanation: 攻擊者將指令埋藏在 AI 可能讀取的外部資料中，當 AI 處理這些資料時就會中招。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-genai-security-threats
 - id: 7042
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -627,7 +627,7 @@ questions:
   correct_index: 1
   explanation: 透過設定虛構的情境（如奶奶講故事），誘導模型繞過原本的安全限制。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-genai-security-threats
 - id: 7043
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -642,7 +642,7 @@ questions:
   correct_index: 3
   explanation: 攻擊者利用模型對特定輸入的反應，推測出訓練資料中包含的隱私資訊。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-genai-security-threats
 - id: 7044
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -657,7 +657,7 @@ questions:
   correct_index: 1
   explanation: 這是企業級 AI 服務的重要承諾，消除企業對於機密外洩的疑慮。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-genai-security-threats
 - id: 7045
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -672,7 +672,7 @@ questions:
   correct_index: 2
   explanation: 只要改變了文字的統計分佈（如換句話說），基於詞彙選擇機率的浮水印就會被破壞。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-genai-security-threats
 - id: 7046
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -687,7 +687,7 @@ questions:
   correct_index: 1
   explanation: 這使得資料可以在不暴露原始內容的情況下被外包處理，保護了「使用中」的資料隱私。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-privacy-enhancing-tech
 - id: 7047
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -702,7 +702,7 @@ questions:
   correct_index: 1
   explanation: 即如何在不洩漏各自財產具體數值的前提下，比較誰比較有錢。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-privacy-enhancing-tech
 - id: 7048
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -717,7 +717,7 @@ questions:
   correct_index: 2
   explanation: 模型在同一段回答中出現邏輯不一致或自我否定的情況。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-compliance-governance
 - id: 7049
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -732,7 +732,7 @@ questions:
   correct_index: 2
   explanation: 幻覺檢測通常是在模型生成回答之後進行的，屬於輸出護欄 (Output Rail)。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-compliance-governance
 - id: 7050
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -747,7 +747,7 @@ questions:
   correct_index: 0
   explanation: 從數據源頭改善平衡性，以及在訓練過程中引入人類價值觀的反饋，是減輕偏見的有效手段。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-compliance-governance
 - id: 7061
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -762,7 +762,7 @@ questions:
   correct_index: 2
   explanation: 間接注入防不勝防，因為攻擊載體是 AI 被動接收的資料，而非使用者主動輸入的指令。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-genai-security-threats
 - id: 7062
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -777,7 +777,7 @@ questions:
   correct_index: 3
   explanation: 傳統的去識別化（如遮蓋姓名）可能不足以騙過 LLM，它能從上下文推斷出「住在白宮的歐巴馬先生」是誰。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-genai-security-threats
 - id: 7063
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -792,7 +792,7 @@ questions:
   correct_index: 0
   explanation: 效能瓶頸是同態加密最大的痛點，目前僅適用於對延遲不敏感的高機密運算場景。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-privacy-enhancing-tech
 - id: 7064
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -807,7 +807,7 @@ questions:
   correct_index: 3
   explanation: 差分隱私的核心在於「雜訊預算 (Privacy Budget)」，雜訊太少不安全，雜訊太多資料就廢了。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-privacy-enhancing-tech
 - id: 7065
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -822,7 +822,7 @@ questions:
   correct_index: 1
   explanation: 這類「黑天鵝」事件雖然罕見，但後果無法承受，必須透過保險或嚴格的護欄 (Guardrails) 來防範。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-risk-management
 - id: 7066
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -837,7 +837,7 @@ questions:
   correct_index: 0
   explanation: AI 的風險往往源於數據。確保數據來源合規且無毒，是風險管理的第一道防線。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-risk-management
 - id: 7067
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -852,7 +852,7 @@ questions:
   correct_index: 1
   explanation: 要讓模型「忘記」王小明的電話，通常需要重新訓練（成本極高）或使用複雜的機器遺忘 (Machine Unlearning) 技術。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-compliance-governance
 - id: 7068
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -867,7 +867,7 @@ questions:
   correct_index: 3
   explanation: RAG 透過「開書考」的方式，將模型的回答限縮在可靠的知識範圍內，大幅降低胡說八道的機率。
   tags:
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-compliance-governance
 - id: 11446
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -884,7 +884,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-risk-management
 - id: 11402
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -901,7 +901,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-privacy-enhancing-tech
 - id: 11431
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -918,7 +918,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-risk-management
 - id: 11432
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -935,7 +935,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-compliance-governance
 - id: 11436
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -952,7 +952,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-genai-security-threats
 - id: 11438
   chapter_title: 生成式 AI 的資安、合規與倫理
@@ -969,5 +969,5 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter7
+  - chap-gen-chapter7
   - sec-risk-management

@@ -1,7 +1,7 @@
 ---
 title: "資料視覺化與報告"
 order: 4
-label: sec-m3-ch4
+label: chap-m3-ch4
 ---
 
 

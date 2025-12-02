@@ -12,7 +12,7 @@ questions:
   correct_index: 2
   explanation: AI 的目標是模擬人類認知功能（如學習、推理）並增強人類智慧，不一定需要自我意識或模仿外觀。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - sec-ai-def
 - id: 1002
   chapter_title: 人工智慧的本質與層次架構
@@ -27,7 +27,7 @@ questions:
   correct_index: 0
   explanation: AlphaGo 專精於單一任務（圍棋），無法跨領域學習或具備自我意識，因此屬於弱 AI (ANI)。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - def-ani
 - id: 1003
   chapter_title: 人工智慧的本質與層次架構
@@ -42,7 +42,7 @@ questions:
   correct_index: 1
   explanation: 強人工智慧 (AGI) 具備人類般的通用智慧，能跨領域遷移學習。目前的 Siri 屬於弱 AI，超越人類智慧的是超 AI。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - def-agi
 - id: 1004
   chapter_title: 人工智慧的本質與層次架構
@@ -57,7 +57,7 @@ questions:
   correct_index: 3
   explanation: 超人工智慧 (Super AI) 定義為在所有領域的智慧都遠遠超越最聰明的人類。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - sec-super-ai
 - id: 1005
   chapter_title: 人工智慧的本質與層次架構
@@ -72,7 +72,7 @@ questions:
   correct_index: 3
   explanation: 符號式 AI 依賴人工規則，難以處理模糊問題（缺乏彈性），且將專家知識轉化為規則非常耗時（知識擷取瓶頸）。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - sec-symbolic-ai
 - id: 1006
   chapter_title: 人工智慧的本質與層次架構
@@ -87,7 +87,7 @@ questions:
   correct_index: 3
   explanation: 專家系統是符號式 AI 的代表技術，由人類專家定義明確的邏輯規則進行推論。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - def-expert-systems
 - id: 1007
   chapter_title: 人工智慧的本質與層次架構
@@ -102,7 +102,7 @@ questions:
   correct_index: 3
   explanation: 統計式 AI (機器學習) 的核心是不再由人類手寫規則，而是讓電腦從數據中利用統計方法找出規律。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - sec-statistical-ai
 - id: 1008
   chapter_title: 人工智慧的本質與層次架構
@@ -117,7 +117,7 @@ questions:
   correct_index: 0
   explanation: 深度學習是機器學習的子集，而機器學習是人工智慧的子集。關係為 AI > ML > DL。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - sec-ai-ml-dl
 - id: 1009
   chapter_title: 人工智慧的本質與層次架構
@@ -132,7 +132,7 @@ questions:
   correct_index: 2
   explanation: 機器學習是「資料驅動」的，電腦從輸入數據和對應的輸出答案中，自己學習出規則（模型）。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - def-data-driven
 - id: 1010
   chapter_title: 人工智慧的本質與層次架構
@@ -147,7 +147,7 @@ questions:
   correct_index: 0
   explanation: 傳統機器學習高度依賴人工特徵工程 (Feature Engineering)，而深度學習具備自動特徵提取能力。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - sec-ml-vs-dl-cost
 - id: 1011
   chapter_title: 人工智慧的本質與層次架構
@@ -162,7 +162,7 @@ questions:
   correct_index: 3
   explanation: HITL (Human-in-the-loop) 指人類是系統運作不可或缺的一部分，如資料標註或醫療最終診斷。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - sec-hitl
 - id: 1012
   chapter_title: 人工智慧的本質與層次架構
@@ -177,7 +177,7 @@ questions:
   correct_index: 2
   explanation: HOTL (Human-over-the-loop) 指 AI 可獨立完成大部分任務，人類扮演監督者，僅在異常時介入。Level 3 自駕車符合此定義。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - sec-hotl
 - id: 1013
   chapter_title: 人工智慧的本質與層次架構
@@ -192,7 +192,7 @@ questions:
   correct_index: 2
   explanation: 高頻交易需要在毫秒級內做出決策，人類無法即時反應，因此適合全自動化的 HOOTL 模式。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - sec-hootl
 - id: 1014
   chapter_title: 人工智慧的本質與層次架構
@@ -207,8 +207,8 @@ questions:
   correct_index: 2
   explanation: 1956 年的達特茅斯會議 (Dartmouth Conference) 被公認為 AI 的誕生地，正式確立了人工智慧這個學科。
   tags:
-  - chap-chapter1
-  - chap-chapter1-summary
+  - chap-ai-foundation-chapter1
+  - chap-ai-foundation-chapter1-summary
 - id: 1015
   chapter_title: 人工智慧的本質與層次架構
   section_title: AI 發展歷史
@@ -222,8 +222,8 @@ questions:
   correct_index: 1
   explanation: 圖靈測試由艾倫·圖靈提出，旨在測試機器是否能展現出與人類無異的智慧行為，若人類評審無法區分機器與真人，則通過測試。
   tags:
-  - chap-chapter1
-  - chap-chapter1-summary
+  - chap-ai-foundation-chapter1
+  - chap-ai-foundation-chapter1-summary
 - id: 1016
   chapter_title: 人工智慧的本質與層次架構
   section_title: AI 發展歷史
@@ -237,8 +237,8 @@ questions:
   correct_index: 2
   explanation: 2012 年 AlexNet 在 ImageNet 競賽中大幅降低錯誤率，證明了深度學習在影像辨識的強大能力，開啟了深度學習的爆發期。
   tags:
-  - chap-chapter1
-  - chap-chapter1-summary
+  - chap-ai-foundation-chapter1
+  - chap-ai-foundation-chapter1-summary
 - id: 1017
   chapter_title: 人工智慧的本質與層次架構
   section_title: AI 的定義與範疇
@@ -252,7 +252,7 @@ questions:
   correct_index: 0
   explanation: AI 的目標是增強人類智慧與解決問題，而非完全取代人類，特別是在涉及情感、道德與創造力的領域。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - sec-ai-def
 - id: 1018
   chapter_title: 人工智慧的本質與層次架構
@@ -267,7 +267,7 @@ questions:
   correct_index: 3
   explanation: 弱 AI (ANI) 不具備自我意識，這是強 AI (AGI) 的特徵。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - def-ani
 - id: 1019
   chapter_title: 人工智慧的本質與層次架構
@@ -282,7 +282,7 @@ questions:
   correct_index: 1
   explanation: 弱 AI 缺乏通用智慧和情感理解能力，只能執行被設計好的特定任務（如辨識像素特徵）。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - def-ani
 - id: 1020
   chapter_title: 人工智慧的本質與層次架構
@@ -297,7 +297,7 @@ questions:
   correct_index: 3
   explanation: AGI 的核心特徵是具備像人類一樣的通用智慧，能夠將在一個領域學到的知識遷移應用到另一個未知的領域。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - def-agi
 - id: 1021
   chapter_title: 人工智慧的本質與層次架構
@@ -312,7 +312,7 @@ questions:
   correct_index: 2
   explanation: 當 AI 智慧超越人類時，如何確保其目標與人類利益一致（AI Alignment）以及如何控制它，是倫理與安全領域的重大議題。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - sec-super-ai
 - id: 1022
   chapter_title: 人工智慧的本質與層次架構
@@ -327,7 +327,7 @@ questions:
   correct_index: 2
   explanation: 符號式 AI 是早期的 AI 範式，常被稱為 GOFAI (Good Old-Fashioned AI)。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - sec-symbolic-ai
 - id: 1023
   chapter_title: 人工智慧的本質與層次架構
@@ -342,7 +342,7 @@ questions:
   correct_index: 0
   explanation: 邏輯程式設計依賴明確的邏輯規則與符號推論，屬於符號式 AI。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - sec-symbolic-ai
 - id: 1024
   chapter_title: 人工智慧的本質與層次架構
@@ -357,7 +357,7 @@ questions:
   correct_index: 2
   explanation: 知識擷取瓶頸是指將人類專家腦中那些「只可意會不可言傳」的隱性知識，轉化為電腦能執行的 If-Then 規則是非常困難且耗時的。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - def-knowledge-bottleneck
 - id: 1025
   chapter_title: 人工智慧的本質與層次架構
@@ -372,7 +372,7 @@ questions:
   correct_index: 0
   explanation: 統計式 AI (機器學習) 擅長從模糊、複雜的非結構化數據中找出模式，而符號式 AI 難以定義規則來處理這些數據。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - sec-statistical-ai
 - id: 1026
   chapter_title: 人工智慧的本質與層次架構
@@ -387,7 +387,7 @@ questions:
   correct_index: 3
   explanation: 統計式 AI 的模型是從數據中學習而來的，如果訓練數據品質低劣或有錯誤，模型的表現也會很差。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - sec-statistical-ai
 - id: 1027
   chapter_title: 人工智慧的本質與層次架構
@@ -402,7 +402,7 @@ questions:
   correct_index: 3
   explanation: 機器學習模型會忠實地反映訓練數據中的統計規律，因此若數據有偏見，模型也會產生有偏見的結果。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - sec-statistical-ai
 - id: 1028
   chapter_title: 人工智慧的本質與層次架構
@@ -417,7 +417,7 @@ questions:
   correct_index: 1
   explanation: 機器學習的核心定義是讓電腦具備「從數據中學習」的能力，而不需要人類明確編寫每一條規則指令。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - def-ml
 - id: 1029
   chapter_title: 人工智慧的本質與層次架構
@@ -432,7 +432,7 @@ questions:
   correct_index: 3
   explanation: 深度學習特指使用多層（深層）的類神經網路來進行學習的技術。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - def-dl
 - id: 1030
   chapter_title: 人工智慧的本質與層次架構
@@ -447,7 +447,7 @@ questions:
   correct_index: 1
   explanation: 規則驅動系統嚴格遵循預定義的規則，就像廚師嚴格照著食譜做菜，食譜沒寫的就不會做。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - def-rule-based
 - id: 1031
   chapter_title: 人工智慧的本質與層次架構
@@ -462,7 +462,7 @@ questions:
   correct_index: 3
   explanation: 資料驅動系統透過觀察大量的數據（師傅做菜），自己歸納出模式（領悟訣竅），而非死記規則。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - def-data-driven
 - id: 1032
   chapter_title: 人工智慧的本質與層次架構
@@ -477,7 +477,7 @@ questions:
   correct_index: 2
   explanation: 深度學習的神經網路訓練涉及海量的矩陣乘法運算，GPU 的平行運算架構比 CPU 更適合處理這類任務。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - sec-ml-vs-dl-cost
 - id: 1033
   chapter_title: 人工智慧的本質與層次架構
@@ -492,7 +492,7 @@ questions:
   correct_index: 1
   explanation: 深度學習依賴海量數據，若數據量不足，傳統機器學習（如 SVM, Random Forest）往往能有更好或相當的表現。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - sec-ml-vs-dl-cost
 - id: 1034
   chapter_title: 人工智慧的本質與層次架構
@@ -507,7 +507,7 @@ questions:
   correct_index: 1
   explanation: 律師必須介入進行最終判斷，AI 無法獨立完成合約審查的法律責任，因此屬於 HITL。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - sec-hitl
 - id: 1035
   chapter_title: 人工智慧的本質與層次架構
@@ -522,7 +522,7 @@ questions:
   correct_index: 2
   explanation: AI 獨立運作，人類僅在異常時介入監督，屬於 HOTL。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - sec-hotl
 - id: 1036
   chapter_title: 人工智慧的本質與層次架構
@@ -537,7 +537,7 @@ questions:
   correct_index: 1
   explanation: 推薦系統全自動運作，人類不介入每一次的推薦決策，屬於 HOOTL。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - sec-hootl
 - id: 1037
   chapter_title: 人工智慧的本質與層次架構
@@ -552,7 +552,7 @@ questions:
   correct_index: 0
   explanation: 由於人類無法即時監控，HOOTL 系統必須內建嚴格的安全護欄 (Guardrails) 以防止失控（如股市熔斷機制）。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - sec-hootl
 - id: 1038
   chapter_title: 人工智慧的本質與層次架構
@@ -567,8 +567,8 @@ questions:
   correct_index: 0
   explanation: AI 寒冬的主因是當時的硬體算力不足、數據量不夠，以及大眾對 AI 的期望過高導致失望，而非電力問題。
   tags:
-  - chap-chapter1
-  - chap-chapter1-summary
+  - chap-ai-foundation-chapter1
+  - chap-ai-foundation-chapter1-summary
 - id: 1039
   chapter_title: 人工智慧的本質與層次架構
   section_title: AI 發展歷史
@@ -582,8 +582,8 @@ questions:
   correct_index: 1
   explanation: IBM 的 Deep Blue 在 1997 年擊敗了西洋棋棋王卡斯帕洛夫，是 AI 歷史上的重要里程碑。
   tags:
-  - chap-chapter1
-  - chap-chapter1-summary
+  - chap-ai-foundation-chapter1
+  - chap-ai-foundation-chapter1-summary
 - id: 1040
   chapter_title: 人工智慧的本質與層次架構
   section_title: 技術層次關係
@@ -597,7 +597,7 @@ questions:
   correct_index: 2
   explanation: 弱 AI (ANI) 的定義就是專精於單一或特定任務，無法跨領域遷移。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - def-ani
 - id: 1041
   chapter_title: 人工智慧的本質與層次架構
@@ -612,7 +612,7 @@ questions:
   correct_index: 2
   explanation: 該系統專精於影像判讀（弱 AI），且必須由人類確認才能完成任務（人在迴圈中 HITL）。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - sec-hitl
 - id: 1042
   chapter_title: 人工智慧的本質與層次架構
@@ -627,7 +627,7 @@ questions:
   correct_index: 1
   explanation: 規則驅動面對無限變化的模式時會遇到瓶頸（需人工不斷新增規則），而機器學習（資料驅動）能自動適應數據分佈的改變。
   tags:
-  - chap-chapter1
+  - chap-ai-foundation-chapter1
   - sec-data-vs-rule
 - id: 11401
   chapter_title: 人工智慧的本質與層次架構

@@ -1,7 +1,7 @@
 ---
 title: "模型最佳化與調校"
 order: 3
-label: sec-m4-ch3
+label: chap-m4-ch3
 ---
 
 

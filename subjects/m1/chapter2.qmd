@@ -1,7 +1,7 @@
 ---
 title: "資料處理基礎"
 order: 2
-label: sec-m1-ch2
+label: chap-m1-ch2
 ---
 
 

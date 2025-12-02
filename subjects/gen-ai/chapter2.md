@@ -3,7 +3,7 @@
 ---
 title: "第二章：進階提示工程 (Advanced Prompt Engineering)"
 order: 2
-label: sec-gen-chapter2
+label: chap-gen-chapter2
 ---
 
 <!-- # 第二章：進階提示工程 (Advanced Prompt Engineering) {#sec-advanced-prompt} -->

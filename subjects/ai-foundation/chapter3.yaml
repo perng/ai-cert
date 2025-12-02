@@ -12,7 +12,7 @@ questions:
   correct_index: 0
   explanation: 結構化資料具有固定的格式與長度，通常以表格形式呈現，如資料庫中的資料表。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-data-types-storage
 - id: 3002
   chapter_title: 數據處理生命週期與架構
@@ -27,7 +27,7 @@ questions:
   correct_index: 2
   explanation: 非結構化資料（如圖片、影片、文字）佔據了全世界資料的絕大多數，約 80% 以上。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-data-types-storage
 - id: 3003
   chapter_title: 數據處理生命週期與架構
@@ -42,7 +42,7 @@ questions:
   correct_index: 1
   explanation: JSON 具有標籤或鍵值結構，但沒有嚴格的表格架構，屬於半結構化資料。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-data-types-storage
 - id: 3004
   chapter_title: 數據處理生命週期與架構
@@ -57,7 +57,7 @@ questions:
   correct_index: 3
   explanation: ETL 代表 Extract (擷取), Transform (轉換), Load (載入)。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-etl
 - id: 3005
   chapter_title: 數據處理生命週期與架構
@@ -72,7 +72,7 @@ questions:
   correct_index: 0
   explanation: ELT 先將資料載入資料湖，需要時再轉換，因此載入速度快且能保留原始資料供不同分析使用。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-elt
 - id: 3006
   chapter_title: 數據處理生命週期與架構
@@ -87,7 +87,7 @@ questions:
   correct_index: 0
   explanation: ELT 架構通常將原始資料直接載入資料湖 (Data Lake) 中。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-elt
 - id: 3007
   chapter_title: 數據處理生命週期與架構
@@ -102,7 +102,7 @@ questions:
   correct_index: 3
   explanation: 盜刷偵測需要即時反應，不能等待批次處理的延遲，因此適合串流處理。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-batch-vs-streaming
 - id: 3008
   chapter_title: 數據處理生命週期與架構
@@ -117,7 +117,7 @@ questions:
   correct_index: 2
   explanation: 批次處理需要累積一段時間的資料才執行，因此無法提供即時數據，會有時間落差。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-batch-vs-streaming
 - id: 3009
   chapter_title: 數據處理生命週期與架構
@@ -132,7 +132,7 @@ questions:
   correct_index: 3
   explanation: 身高可以取任意小數點的值，屬於連續型資料；小孩人數是離散型；血型和尺寸是類別型。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-data-types
 - id: 3010
   chapter_title: 數據處理生命週期與架構
@@ -147,7 +147,7 @@ questions:
   correct_index: 2
   explanation: 獨熱編碼將每個類別轉換為獨立的二元欄位，避免模型誤以為類別之間有大小順序關係。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-data-types
 - id: 3011
   chapter_title: 數據處理生命週期與架構
@@ -162,7 +162,7 @@ questions:
   correct_index: 0
   explanation: 中位數是排序後位於中間的數值，不受極大或極小值的影響，因此比平均數更穩健。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-descriptive-statistics
 - id: 3012
   chapter_title: 數據處理生命週期與架構
@@ -177,7 +177,7 @@ questions:
   correct_index: 1
   explanation: 標準差衡量數值與平均數的平均距離，反映資料分佈的離散程度或波動性。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-descriptive-statistics
 - id: 3013
   chapter_title: 數據處理生命週期與架構
@@ -192,7 +192,7 @@ questions:
   correct_index: 3
   explanation: 右偏分佈代表長尾巴在右邊（大數值方向），少數極大值會拉高平均數，使其大於中位數。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-descriptive-statistics
 - id: 3014
   chapter_title: 數據處理生命週期與架構
@@ -207,7 +207,7 @@ questions:
   correct_index: 3
   explanation: 散佈圖透過點的分佈位置，能直觀呈現兩個變數之間的相關程度與模式。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-data-visualization
 - id: 3015
   chapter_title: 數據處理生命週期與架構
@@ -222,7 +222,7 @@ questions:
   correct_index: 0
   explanation: 直方圖將數值分組並顯示各組的頻率，適合觀察資料的分佈形狀。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-data-visualization
 - id: 3016
   chapter_title: 數據處理生命週期與架構
@@ -237,7 +237,7 @@ questions:
   correct_index: 0
   explanation: 直接刪除會導致寶貴的資料流失，特別是在資料量本來就不多的情況下，應優先考慮插補。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-missing-values
 - id: 3017
   chapter_title: 數據處理生命週期與架構
@@ -252,7 +252,7 @@ questions:
   correct_index: 2
   explanation: KNN 插補法透過尋找特徵最相似的 K 個樣本（鄰居），參考它們的數值來填補缺失值，通常比單純平均更精準。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-missing-values
 - id: 3018
   chapter_title: 數據處理生命週期與架構
@@ -267,7 +267,7 @@ questions:
   correct_index: 1
   explanation: 在常態分佈下，約 99.7% 的資料會落在平均數正負 3 個標準差內，因此超過 3 個標準差通常被視為異常。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-outliers
 - id: 3019
   chapter_title: 數據處理生命週期與架構
@@ -282,7 +282,7 @@ questions:
   correct_index: 1
   explanation: 蓋帽法將極端值限制在某個範圍內（如第 99 百分位數），減少其對模型的影響，但保留了部分資訊。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-outliers
 - id: 3020
   chapter_title: 數據處理生命週期與架構
@@ -297,7 +297,7 @@ questions:
   correct_index: 3
   explanation: 去識別化透過遮罩、泛化等技術移除或模糊化個資，確保分析過程中無法回溯到特定個人。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-anonymization
 - id: 3021
   chapter_title: 數據處理生命週期與架構
@@ -312,7 +312,7 @@ questions:
   correct_index: 3
   explanation: 遮罩技術透過隱藏部分字元來保護隱私，如將名字中間字隱藏。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-anonymization
 - id: 3022
   chapter_title: 數據處理生命週期與架構
@@ -327,7 +327,7 @@ questions:
   correct_index: 3
   explanation: 目的拘束原則要求資料的利用必須限制在蒐集時所告知的特定目的範圍內，不得任意挪作他用。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-anonymization
 - id: 3023
   chapter_title: 數據處理生命週期與架構
@@ -342,7 +342,7 @@ questions:
   correct_index: 0
   explanation: 這是將資料格式統一的過程，稱為格式標準化。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-consistency
 - id: 3024
   chapter_title: 數據處理生命週期與架構
@@ -357,7 +357,7 @@ questions:
   correct_index: 2
   explanation: 資料倉儲主要用於存放經過 ETL 流程處理後、乾淨且結構化的歷史資料，供分析使用。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-etl
 - id: 3025
   chapter_title: 數據處理生命週期與架構
@@ -372,7 +372,7 @@ questions:
   correct_index: 1
   explanation: IQR 是計算 Q3 與 Q1 的差距，常用於定義異常值的上下界限（Box Plot 法）。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-descriptive-statistics
 - id: 3026
   chapter_title: 數據處理生命週期與架構
@@ -387,7 +387,7 @@ questions:
   correct_index: 2
   explanation: 滿意度有等級順序關係，但間距不一定相等，屬於順序型類別資料。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-data-types
 - id: 3027
   chapter_title: 數據處理生命週期與架構
@@ -402,7 +402,7 @@ questions:
   correct_index: 3
   explanation: 標準的盒鬚圖顯示的是中位數、四分位數和極值/離群值，平均數通常需要額外標記才看得到。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-data-visualization
 - id: 3028
   chapter_title: 數據處理生命週期與架構
@@ -417,7 +417,7 @@ questions:
   correct_index: 1
   explanation: 為了降低隱私風險，應只蒐集業務執行上真正需要的資料，避免過度蒐集。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-anonymization
 - id: 3029
   chapter_title: 數據處理生命週期與架構
@@ -432,7 +432,7 @@ questions:
   correct_index: 1
   explanation: NoSQL 通常遵循 BASE 模型，犧牲強一致性 (ACID) 以換取高可用性與擴充性。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-data-types-storage
 - id: 3030
   chapter_title: 數據處理生命週期與架構
@@ -447,7 +447,7 @@ questions:
   correct_index: 2
   explanation: Redis 是基於記憶體的鍵值資料庫，讀寫速度極快，常被用作快取系統。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-data-types-storage
 - id: 3031
   chapter_title: 數據處理生命週期與架構
@@ -462,7 +462,7 @@ questions:
   correct_index: 0
   explanation: 平均數被極大值拉高，導致大於中位數，這是右偏分佈的特徵。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-descriptive-statistics
 - id: 3032
   chapter_title: 數據處理生命週期與架構
@@ -477,7 +477,7 @@ questions:
   correct_index: 3
   explanation: 對數轉換可以壓縮數值範圍，讓右偏分佈（長尾）變得更接近常態分佈，並減輕極端值的影響。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-outliers
 - id: 3033
   chapter_title: 數據處理生命週期與架構
@@ -492,7 +492,7 @@ questions:
   correct_index: 2
   explanation: 熱圖利用顏色深淺來表示數值大小，非常適合展示多變數之間的相關係數矩陣。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-data-visualization
 - id: 3034
   chapter_title: 數據處理生命週期與架構
@@ -507,7 +507,7 @@ questions:
   correct_index: 1
   explanation: SQL (Structured Query Language) 是專門設計用來管理與查詢關聯式資料庫的語言。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-data-types-storage
 - id: 3035
   chapter_title: 數據處理生命週期與架構
@@ -522,7 +522,7 @@ questions:
   correct_index: 3
   explanation: 假名化使用代碼取代個資，但保留了對照表（金鑰），特定權限下可還原；匿名化則是永久去除連結，無法還原。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-anonymization
 - id: 3036
   chapter_title: 數據處理生命週期與架構
@@ -537,7 +537,7 @@ questions:
   correct_index: 3
   explanation: 將缺失值填為無限大通常會導致模型運算錯誤或發散，不是合理的處理方式。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-missing-values
 - id: 3037
   chapter_title: 數據處理生命週期與架構
@@ -552,7 +552,7 @@ questions:
   correct_index: 2
   explanation: 這些服務專門用於儲存大量的非結構化檔案（物件），屬於物件儲存服務。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-data-types-storage
 - id: 3038
   chapter_title: 數據處理生命週期與架構
@@ -567,7 +567,7 @@ questions:
   correct_index: 3
   explanation: 對於類別型資料（如最受歡迎的顏色、最熱賣的商品），平均數和中位數沒有意義，只能看眾數。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-descriptive-statistics
 - id: 3039
   chapter_title: 數據處理生命週期與架構
@@ -582,7 +582,7 @@ questions:
   correct_index: 3
   explanation: 當資料湖缺乏適當的 metadata 管理、品質控管和生命週期管理時，就會變成難以使用的資料沼澤。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-elt
 - id: 3040
   chapter_title: 數據處理生命週期與架構
@@ -597,7 +597,7 @@ questions:
   correct_index: 1
   explanation: 使用 n-1 可以修正樣本變異數傾向於低估母體變異數的偏差，提供不偏估計。
   tags:
-  - chap-chapter3
+  - chap-ai-foundation-chapter3
   - sec-descriptive-statistics
 - id: 3051
   chapter_title: 數據工程與資料處理

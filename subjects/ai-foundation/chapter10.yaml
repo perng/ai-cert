@@ -12,7 +12,7 @@ questions:
   correct_index: 1
   explanation: 黑箱模型（如深度神經網路）內部運作複雜，雖然能給出準確結果，但難以解釋其推論邏輯。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-black-white-box
 - id: 10002
   chapter_title: 可解釋 AI (XAI)
@@ -27,7 +27,7 @@ questions:
   correct_index: 2
   explanation: 決策樹的規則（如 If A > 5 Then B）清晰易懂，人類可以直接理解其決策路徑。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-black-white-box
 - id: 10003
   chapter_title: 可解釋 AI (XAI)
@@ -42,7 +42,7 @@ questions:
   correct_index: 3
   explanation: 全局解釋關注模型整體的行為模式，例如哪些特徵對預測結果普遍具有最大的影響力。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-global-local
 - id: 10004
   chapter_title: 可解釋 AI (XAI)
@@ -57,7 +57,7 @@ questions:
   correct_index: 3
   explanation: 局部解釋聚焦於單一預測實例，解釋為何模型對該特定輸入給出該輸出。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-global-local
 - id: 10005
   chapter_title: 可解釋 AI (XAI)
@@ -72,7 +72,7 @@ questions:
   correct_index: 0
   explanation: LIME 假設即使模型整體是非線性的，但在局部小範圍內通常是線性的，因此可以用簡單模型來近似解釋。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-lime
 - id: 10006
   chapter_title: 可解釋 AI (XAI)
@@ -87,7 +87,7 @@ questions:
   correct_index: 3
   explanation: Model-agnostic 代表該技術不依賴特定模型的內部結構，可以應用於 SVM、隨機森林、神經網路等任何模型。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-lime
 - id: 10007
   chapter_title: 可解釋 AI (XAI)
@@ -102,7 +102,7 @@ questions:
   correct_index: 1
   explanation: SHAP 基於合作賽局理論中的 Shapley Value，計算每個特徵（玩家）對最終預測（總收益）的邊際貢獻。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-shap
 - id: 10008
   chapter_title: 可解釋 AI (XAI)
@@ -117,7 +117,7 @@ questions:
   correct_index: 2
   explanation: SHAP 提供了理論上唯一滿足公平性與一致性公理的解釋方法，能精確量化特徵貢獻。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-shap
 - id: 10009
   chapter_title: 可解釋 AI (XAI)
@@ -132,7 +132,7 @@ questions:
   correct_index: 2
   explanation: 反事實解釋提供「如果...就會...」的假設性情境，告訴使用者如何改變輸入以獲得想要的結果。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-counterfactual
 - id: 10010
   chapter_title: 可解釋 AI (XAI)
@@ -147,7 +147,7 @@ questions:
   correct_index: 2
   explanation: 好的反事實解釋應該簡單易懂（稀疏性），而不是複雜；且建議必須是使用者能做到的（可操作性）。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-counterfactual
 - id: 10011
   chapter_title: 可解釋 AI (XAI)
@@ -162,7 +162,7 @@ questions:
   correct_index: 0
   explanation: 建議使用者改變無法改變的特徵（如年齡、出生地）是沒有建設性的，違反了可操作性原則。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-counterfactual
 - id: 10012
   chapter_title: 可解釋 AI (XAI)
@@ -177,7 +177,7 @@ questions:
   correct_index: 0
   explanation: 傳統的特徵重要度（如隨機森林的 Gini Importance）是全局指標，無法解釋為何「某個特定案例」被判斷為正或負。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-feature-importance
 - id: 10013
   chapter_title: 可解釋 AI (XAI)
@@ -192,7 +192,7 @@ questions:
   correct_index: 3
   explanation: 線性迴歸的方程式 y = wx + b 中，w 的大小和正負號直接告訴我們 x 對 y 的影響，非常直觀。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-black-white-box
 - id: 10014
   chapter_title: 可解釋 AI (XAI)
@@ -207,7 +207,7 @@ questions:
   correct_index: 1
   explanation: 深度神經網路的複雜結構使得輸入與輸出之間的映射關係變得極度抽象且難以解析。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-black-white-box
 - id: 10015
   chapter_title: 可解釋 AI (XAI)
@@ -222,7 +222,7 @@ questions:
   correct_index: 1
   explanation: LIME 透過在原始資料點附近隨機撒點（擾動），探測模型在該區域的行為邊界。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-lime
 - id: 10016
   chapter_title: 可解釋 AI (XAI)
@@ -237,7 +237,7 @@ questions:
   correct_index: 3
   explanation: SHAP Summary Plot 結合了特徵重要性與特徵效應，能顯示出「數值高的特徵 A 會導致預測值增加還是減少」。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-shap
 - id: 10017
   chapter_title: 可解釋 AI (XAI)
@@ -252,7 +252,7 @@ questions:
   correct_index: 1
   explanation: 這是一個尋求「行動建議」的問題，反事實解釋能直接提供達成目標所需的改變條件。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-counterfactual
 - id: 10018
   chapter_title: 可解釋 AI (XAI)
@@ -267,8 +267,8 @@ questions:
   correct_index: 0
   explanation: 通常模型越複雜（如深度學習），效能越好但可解釋性越差；模型越簡單（如線性迴歸），可解釋性越好但效能可能受限。
   tags:
-  - chap-chapter10
-  - chap-chapter10-summary
+  - chap-ai-foundation-chapter10
+  - chap-ai-foundation-chapter10-summary
 - id: 10019
   chapter_title: 可解釋 AI (XAI)
   section_title: 解釋技術與工具
@@ -282,7 +282,7 @@ questions:
   correct_index: 2
   explanation: 為了讓使用者容易執行，建議的改變應該集中在少數幾個關鍵特徵上，而不是要求使用者改頭換面。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-counterfactual
 - id: 10020
   chapter_title: 可解釋 AI (XAI)
@@ -297,7 +297,7 @@ questions:
   correct_index: 0
   explanation: SHAP 值代表相對於基準值，該特徵將預測結果推高（正值）或拉低（負值）的程度。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-shap
 - id: 10021
   chapter_title: 可解釋 AI (XAI)
@@ -312,8 +312,8 @@ questions:
   correct_index: 0
   explanation: 醫療與金融涉及人身安全與財產權益，法規與倫理要求決策必須透明可解釋。
   tags:
-  - chap-chapter10
-  - chap-chapter10-summary
+  - chap-ai-foundation-chapter10
+  - chap-ai-foundation-chapter10-summary
 - id: 10022
   chapter_title: 可解釋 AI (XAI)
   section_title: 解釋技術與工具
@@ -327,7 +327,7 @@ questions:
   correct_index: 2
   explanation: LIME 訓練的解釋模型只在被解釋樣本的局部鄰域內有效，不能推廣到整個資料空間。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-lime
 - id: 10023
   chapter_title: 可解釋 AI (XAI)
@@ -342,7 +342,7 @@ questions:
   correct_index: 0
   explanation: 精確計算 Shapley Value 需要遍歷所有可能的特徵組合，計算量隨特徵數指數成長，通常需使用近似演算法。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-shap
 - id: 10024
   chapter_title: 可解釋 AI (XAI)
@@ -357,7 +357,7 @@ questions:
   correct_index: 0
   explanation: 如果使用者照著建議做了改變，結果卻沒變（例如貸款還是被拒），那這個解釋就是無效的。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-counterfactual
 - id: 10025
   chapter_title: 可解釋 AI (XAI)
@@ -372,7 +372,7 @@ questions:
   correct_index: 3
   explanation: 當決策樹過深（例如幾百層），規則變得極度繁瑣，人類也難以追蹤其邏輯，可解釋性隨之降低。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-black-white-box
 - id: 10026
   chapter_title: 可解釋 AI (XAI)
@@ -387,7 +387,7 @@ questions:
   correct_index: 0
   explanation: LIME 是通用的解釋框架，可以透過不同的擾動方式處理各種資料類型。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-lime
 - id: 10027
   chapter_title: 可解釋 AI (XAI)
@@ -402,7 +402,7 @@ questions:
   correct_index: 3
   explanation: SHAP 解釋的是「為什麼這個預測值偏離了平均」，基準值通常是訓練集預測結果的平均值。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-shap
 - id: 10028
   chapter_title: 可解釋 AI (XAI)
@@ -417,7 +417,7 @@ questions:
   correct_index: 2
   explanation: 隨機森林雖然由白箱（決策樹）組成，但因數量龐大且隨機，整體行為難以直觀理解，常被視為灰箱或偏黑箱。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-black-white-box
 - id: 10029
   chapter_title: 可解釋 AI (XAI)
@@ -432,7 +432,7 @@ questions:
   correct_index: 3
   explanation: 反事實解釋探討「如果輸入改變，輸出會如何變化」，是一種面向未來的假設性分析。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-counterfactual
 - id: 10030
   chapter_title: 可解釋 AI (XAI)
@@ -447,8 +447,8 @@ questions:
   correct_index: 2
   explanation: XAI 旨在打破黑箱，讓人類能理解、信任並有效管理 AI 系統。
   tags:
-  - chap-chapter10
-  - chap-chapter10-summary
+  - chap-ai-foundation-chapter10
+  - chap-ai-foundation-chapter10-summary
 - id: 10031
   chapter_title: 可解釋 AI (XAI)
   section_title: 解釋技術與工具
@@ -462,7 +462,7 @@ questions:
   correct_index: 3
   explanation: LIME 代表 Local Interpretable Model-agnostic Explanations。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-lime
 - id: 10032
   chapter_title: 可解釋 AI (XAI)
@@ -477,7 +477,7 @@ questions:
   correct_index: 1
   explanation: 這是 SHAP 的核心性質：預測值 = 基準值 + sum(各特徵 SHAP 值)。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-shap
 - id: 10033
   chapter_title: 可解釋 AI (XAI)
@@ -492,7 +492,7 @@ questions:
   correct_index: 1
   explanation: 性別通常被視為不可變特徵（在貸款審核情境下），建議改變它不具備可操作性。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-counterfactual
 - id: 10034
   chapter_title: 可解釋 AI (XAI)
@@ -507,7 +507,7 @@ questions:
   correct_index: 3
   explanation: 客戶關心的是「自己」的案子為何被這樣判斷，這是典型的局部解釋需求。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-global-local
 - id: 10035
   chapter_title: 可解釋 AI (XAI)
@@ -522,7 +522,7 @@ questions:
   correct_index: 0
   explanation: LIME 會將圖片分割成多個語意區塊（超像素），並透過隨機遮蔽這些區塊來觀察預測變化。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-lime
 - id: 10036
   chapter_title: 可解釋 AI (XAI)
@@ -537,7 +537,7 @@ questions:
   correct_index: 2
   explanation: 由於涉及複雜的組合計算，SHAP 的運算速度通常比 LIME 慢很多。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-shap
 - id: 10037
   chapter_title: 可解釋 AI (XAI)
@@ -552,7 +552,7 @@ questions:
   correct_index: 3
   explanation: 反事實解釋能指出達成目標（如通過貸款）所需付出的最小努力（如只需增加一點收入）。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-counterfactual
 - id: 10038
   chapter_title: 可解釋 AI (XAI)
@@ -567,8 +567,8 @@ questions:
   correct_index: 2
   explanation: GDPR 保障歐盟公民有權要求解釋對其產生重大影響的自動化決策。
   tags:
-  - chap-chapter10
-  - chap-chapter10-summary
+  - chap-ai-foundation-chapter10
+  - chap-ai-foundation-chapter10-summary
 - id: 10039
   chapter_title: 可解釋 AI (XAI)
   section_title: 解釋技術與工具
@@ -582,7 +582,7 @@ questions:
   correct_index: 3
   explanation: LIME 通常會列出對該預測貢獻最大的幾個特徵及其權重（正向或負向影響）。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-lime
 - id: 10040
   chapter_title: 可解釋 AI (XAI)
@@ -597,7 +597,7 @@ questions:
   correct_index: 0
   explanation: 黑箱模型是指輸入與輸出之間的運作機制對人類來說是不透明的。
   tags:
-  - chap-chapter10
+  - chap-ai-foundation-chapter10
   - sec-black-white-box
 - id: 10051
   chapter_title: 可解釋 AI (XAI)

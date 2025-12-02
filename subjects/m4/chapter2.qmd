@@ -1,7 +1,7 @@
 ---
 title: "深度學習框架與架構"
 order: 2
-label: sec-m4-ch2
+label: chap-m4-ch2
 ---
 
 

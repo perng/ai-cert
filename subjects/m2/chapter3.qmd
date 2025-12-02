@@ -1,7 +1,7 @@
 ---
 title: "電腦視覺 (CV)"
 order: 3
-label: sec-m2-ch3
+label: chap-m2-ch3
 ---
 
 

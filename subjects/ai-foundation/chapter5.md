@@ -1,7 +1,7 @@
 ---
 title: "監督式學習演算法 (Supervised Learning Algorithms)"
 order: 5
-label: chap-chapter5
+label: chap-ai-foundation-chapter5
 ---
 
 <!-- # 監督式學習演算法 (Supervised Learning Algorithms) -->
@@ -231,7 +231,7 @@ label: chap-chapter5
 | **Random Forest** | 分類/迴歸 | 多棵樹投票 (Bagging) | 高準確率需求，大數據 | 黑箱，訓練預測慢 |
 | **Linear Regression** | 迴歸 | 擬合直線 | 預測數值，趨勢分析 | 只能處理線性關係 |
 
-## 本章總結與考點提示 {#chap-chapter5-summary}
+## 本章總結與考點提示 {#chap-ai-foundation-chapter5-summary}
 
 ### 核心概念回顧
 

@@ -12,7 +12,7 @@ questions:
   correct_index: 1
   explanation: 資料是 AI 的糧食，清洗、去個資與格式轉換往往佔據專案大部分的時間與精力。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6002
   chapter_title: 生成式 AI 專案管理與評估
@@ -27,7 +27,7 @@ questions:
   correct_index: 0
   explanation: 資料隱私與累積的使用成本是企業採用雲端 API 時最主要的考量點。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6003
   chapter_title: 生成式 AI 專案管理與評估
@@ -42,7 +42,7 @@ questions:
   correct_index: 1
   explanation: 本地部署能確保資料完全不出企業內網，符合最嚴格的資安與法規要求。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6004
   chapter_title: 生成式 AI 專案管理與評估
@@ -57,7 +57,7 @@ questions:
   correct_index: 3
   explanation: POC 旨在以最小成本快速試錯，確認方向正確後再投入大量資源。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6005
   chapter_title: 生成式 AI 專案管理與評估
@@ -72,7 +72,7 @@ questions:
   correct_index: 1
   explanation: 模型參數量大通常會讓 GPU 滿載而非利用率低；利用率低通常是因為資料餵得不夠快或批次太小。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6006
   chapter_title: 生成式 AI 專案管理與評估
@@ -87,7 +87,7 @@ questions:
   correct_index: 1
   explanation: MMLU 涵蓋 57 個學科，是目前評估 LLM 綜合知識水平最權威的基準之一。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6007
   chapter_title: 生成式 AI 專案管理與評估
@@ -102,7 +102,7 @@ questions:
   correct_index: 1
   explanation: GSM8K 透過數學應用題，測試模型是否具備邏輯推理與步驟拆解的能力。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6008
   chapter_title: 生成式 AI 專案管理與評估
@@ -117,7 +117,7 @@ questions:
   correct_index: 3
   explanation: 使用者最在意的是「多久看到第一個字」，TTFT 越短，使用者感覺系統越流暢。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6009
   chapter_title: 生成式 AI 專案管理與評估
@@ -132,7 +132,7 @@ questions:
   correct_index: 3
   explanation: TPS 衡量模型生成文字的快慢，數值越高代表生成速度越快。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6010
   chapter_title: 生成式 AI 專案管理與評估
@@ -147,7 +147,7 @@ questions:
   correct_index: 0
   explanation: 利用強大模型的判斷力來自動化評估過程，解決人工評估成本高昂的問題。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6011
   chapter_title: 生成式 AI 專案管理與評估
@@ -162,7 +162,7 @@ questions:
   correct_index: 2
   explanation: 透過主動攻擊測試，提前發現並修補模型可能被濫用的弱點。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6012
   chapter_title: 生成式 AI 專案管理與評估
@@ -177,7 +177,7 @@ questions:
   correct_index: 0
   explanation: 量化降低了模型參數的精度（如從 FP16 降到 INT4），從而大幅減少記憶體佔用。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6013
   chapter_title: 生成式 AI 專案管理與評估
@@ -192,7 +192,7 @@ questions:
   correct_index: 2
   explanation: HumanEval 包含一系列程式設計題目，測試模型能否寫出功能正確的程式碼。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6014
   chapter_title: 生成式 AI 專案管理與評估
@@ -207,7 +207,7 @@ questions:
   correct_index: 2
   explanation: 不同的技術架構有不同的成本與效益，需根據具體需求（如知識時效性、準確度）進行權衡。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6015
   chapter_title: 生成式 AI 專案管理與評估
@@ -222,7 +222,7 @@ questions:
   correct_index: 2
   explanation: TTQA 填補了通用基準測試在在地化知識方面的空白，確保模型懂台灣。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6016
   chapter_title: 生成式 AI 專案管理與評估
@@ -237,7 +237,7 @@ questions:
   correct_index: 2
   explanation: 資料需上傳至雲端供應商，隱私性通常不如本地部署。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6017
   chapter_title: 生成式 AI 專案管理與評估
@@ -252,7 +252,7 @@ questions:
   correct_index: 3
   explanation: 7B * 2 bytes (FP16) ≈ 14GB。這是估算顯卡需求的基本公式。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6018
   chapter_title: 生成式 AI 專案管理與評估
@@ -267,7 +267,7 @@ questions:
   correct_index: 2
   explanation: 吞吐量衡量系統的負載能力，是評估伺服器效能的關鍵指標。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6019
   chapter_title: 生成式 AI 專案管理與評估
@@ -282,7 +282,7 @@ questions:
   correct_index: 2
   explanation: 明確的目標與量化指標是專案成功的導航燈，避免迷失方向。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6020
   chapter_title: 生成式 AI 專案管理與評估
@@ -297,7 +297,7 @@ questions:
   correct_index: 1
   explanation: 透過輸入精心設計的擾動樣本，檢驗模型是否容易被愚弄或失效。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6021
   chapter_title: 生成式 AI 專案管理與評估
@@ -312,7 +312,7 @@ questions:
   correct_index: 1
   explanation: 自建基礎設施需要昂貴的硬體採購與專業的人力維護成本。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6022
   chapter_title: 生成式 AI 專案管理與評估
@@ -327,7 +327,7 @@ questions:
   correct_index: 0
   explanation: 總延遲是用戶從發出請求到接收完所有內容的總等待時間。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6023
   chapter_title: 生成式 AI 專案管理與評估
@@ -342,7 +342,7 @@ questions:
   correct_index: 0
   explanation: 上線後的持續監控能確保模型行為符合預期，並及時發現品質下降問題。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6024
   chapter_title: 生成式 AI 專案管理與評估
@@ -357,7 +357,7 @@ questions:
   correct_index: 0
   explanation: MBPP 專注於基礎程式邏輯測試，常與 HumanEval 一起使用。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6025
   chapter_title: 生成式 AI 專案管理與評估
@@ -372,7 +372,7 @@ questions:
   correct_index: 1
   explanation: POC 強調速度與低成本，雲端 API 即開即用的特性非常符合此需求。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6026
   chapter_title: 生成式 AI 專案管理與評估
@@ -387,7 +387,7 @@ questions:
   correct_index: 3
   explanation: 生成內容的主觀性強，缺乏像準確率那樣單一且客觀的標準答案。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6027
   chapter_title: 生成式 AI 專案管理與評估
@@ -402,7 +402,7 @@ questions:
   correct_index: 3
   explanation: 確保訓練或檢索用的資料不包含敏感個人資訊，是合規的基本要求。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6028
   chapter_title: 生成式 AI 專案管理與評估
@@ -417,7 +417,7 @@ questions:
   correct_index: 1
   explanation: 雖然不如人類專家完美，但在大規模評估時，它提供了極佳的成本效益比。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6029
   chapter_title: 生成式 AI 專案管理與評估
@@ -432,7 +432,7 @@ questions:
   correct_index: 1
   explanation: 如果資料讀取速度跟不上 GPU 的運算速度，GPU 就會被迫閒置等待。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6030
   chapter_title: 生成式 AI 專案管理與評估
@@ -447,7 +447,7 @@ questions:
   correct_index: 1
   explanation: 成功的 AI 專案需要全方位的規劃與管理，而非僅僅是技術實作。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6031
   chapter_title: 生成式 AI 專案管理與評估
@@ -462,7 +462,7 @@ questions:
   correct_index: 0
   explanation: 透過統一的考卷，我們才能客觀比較不同模型之間的優劣。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6032
   chapter_title: 生成式 AI 專案管理與評估
@@ -477,7 +477,7 @@ questions:
   correct_index: 0
   explanation: 量化能將記憶體需求壓縮至原本的 1/3 到 1/4 左右，讓消費級顯卡也能跑模型。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6033
   chapter_title: 生成式 AI 專案管理與評估
@@ -492,7 +492,7 @@ questions:
   correct_index: 1
   explanation: 這些指標反映了系統在實際運作時的效能表現，直接關係到服務品質。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6034
   chapter_title: 生成式 AI 專案管理與評估
@@ -507,7 +507,7 @@ questions:
   correct_index: 0
   explanation: 雲端服務商通常會限制每分鐘的請求次數，可能影響高併發場景的穩定性。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6035
   chapter_title: 生成式 AI 專案管理與評估
@@ -522,7 +522,7 @@ questions:
   correct_index: 3
   explanation: 需要具備攻擊思維與專業知識的專家，才能有效挖掘深層的安全漏洞。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6036
   chapter_title: 生成式 AI 專案管理與評估
@@ -537,7 +537,7 @@ questions:
   correct_index: 0
   explanation: GPU 擅長平行運算，Batch Size 太小無法充分發揮其平行處理能力。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6037
   chapter_title: 生成式 AI 專案管理與評估
@@ -552,7 +552,7 @@ questions:
   correct_index: 1
   explanation: 避免模型出現「水土不服」，例如不知道台灣的法律或習俗。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6038
   chapter_title: 生成式 AI 專案管理與評估
@@ -567,7 +567,7 @@ questions:
   correct_index: 0
   explanation: 混合模式兼顧了雲端的強大能力與本地的隱私安全，是企業常見的折衷方案。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6039
   chapter_title: 生成式 AI 專案管理與評估
@@ -582,7 +582,7 @@ questions:
   correct_index: 0
   explanation: 這類題目無法一步到位，考驗模型拆解問題與維持邏輯鏈的能力。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6040
   chapter_title: 生成式 AI 專案管理與評估
@@ -597,7 +597,7 @@ questions:
   correct_index: 3
   explanation: 高品質的資料是模型效能的基礎，Garbage In Garbage Out。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 6041
   chapter_title: 生成式 AI 專案管理與評估
@@ -612,7 +612,7 @@ questions:
   correct_index: 0
   explanation: 雲端 API 涉及資料傳輸與按量計費，對於高隱私或高用量的場景可能不適用。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-implementation-strategy
 - id: 6042
   chapter_title: 生成式 AI 專案管理與評估
@@ -627,7 +627,7 @@ questions:
   correct_index: 1
   explanation: 資料完全保留在企業內部網路，消除了外洩給第三方的風險。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-implementation-strategy
 - id: 6043
   chapter_title: 生成式 AI 專案管理與評估
@@ -642,7 +642,7 @@ questions:
   correct_index: 0
   explanation: 量化透過降低數值精度來大幅減少資源需求，是本地部署的關鍵技術。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-implementation-strategy
 - id: 6044
   chapter_title: 生成式 AI 專案管理與評估
@@ -657,7 +657,7 @@ questions:
   correct_index: 0
   explanation: Flash Attention 優化了 GPU 記憶體讀寫模式，大幅加速了 Attention 機制的計算。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-implementation-strategy
 - id: 6045
   chapter_title: 生成式 AI 專案管理與評估
@@ -672,7 +672,7 @@ questions:
   correct_index: 3
   explanation: 這是評估投資效益最基本的財務指標。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-roi-analysis
 - id: 6046
   chapter_title: 生成式 AI 專案管理與評估
@@ -687,7 +687,7 @@ questions:
   correct_index: 2
   explanation: 召回率關注的是「有沒有漏掉」重要資訊。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-performance-metrics
 - id: 6047
   chapter_title: 生成式 AI 專案管理與評估
@@ -702,7 +702,7 @@ questions:
   correct_index: 3
   explanation: 忠實度檢查模型是否「看圖說故事」，沒有憑空捏造檢索內容中不存在的資訊。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-performance-metrics
 - id: 6048
   chapter_title: 生成式 AI 專案管理與評估
@@ -717,7 +717,7 @@ questions:
   correct_index: 1
   explanation: 使用者越快看到第一個字，感覺系統越流暢，等待的焦慮感越低。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-performance-metrics
 - id: 6049
   chapter_title: 生成式 AI 專案管理與評估
@@ -732,7 +732,7 @@ questions:
   correct_index: 3
   explanation: 利用強大模型的判斷力來自動化評估過程，比人工評估更高效且具備一定的一致性。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-performance-metrics
 - id: 6050
   chapter_title: 生成式 AI 專案管理與評估
@@ -747,7 +747,7 @@ questions:
   correct_index: 0
   explanation: 透過主動攻擊測試，提前發現並修補潛在的安全風險。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-performance-metrics
 - id: 6061
   chapter_title: 生成式 AI 專案管理與評估
@@ -762,7 +762,7 @@ questions:
   correct_index: 3
   explanation: 對於金融、國防等高敏產業，物理隔離的本地部署是確保資料隱私的唯一 100% 安全方案。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-implementation-strategy
 - id: 6062
   chapter_title: 生成式 AI 專案管理與評估
@@ -777,7 +777,7 @@ questions:
   correct_index: 3
   explanation: POC 是為了「試錯」與「評估」，避免在大規模投入前走錯方向。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-implementation-strategy
 - id: 6063
   chapter_title: 生成式 AI 專案管理與評估
@@ -792,7 +792,7 @@ questions:
   correct_index: 3
   explanation: AI 帶來的價值往往不只體現在帳面數字，更在於組織效率與文化的轉型。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-roi-analysis
 - id: 6064
   chapter_title: 生成式 AI 專案管理與評估
@@ -807,7 +807,7 @@ questions:
   correct_index: 2
   explanation: 許多企業低估了模型上線後，每次對話產生的推論成本 (Token 費用或電費)，這往往是長期支出的主要部分。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-roi-analysis
 - id: 6065
   chapter_title: 生成式 AI 專案管理與評估
@@ -822,7 +822,7 @@ questions:
   correct_index: 3
   explanation: 成功的 AI 專案需要 Domain Know-how (業務)、技術能力 (IT) 與合規把關 (法務) 的緊密配合。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-org-talent
 - id: 6066
   chapter_title: 生成式 AI 專案管理與評估
@@ -837,7 +837,7 @@ questions:
   correct_index: 1
   explanation: Faithfulness 低代表模型「不忠實」於參考資料，即使回答看起來很切題 (Relevance 高)，也可能是錯誤資訊。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-performance-metrics
 - id: 6067
   chapter_title: 生成式 AI 專案管理與評估
@@ -852,7 +852,7 @@ questions:
   correct_index: 3
   explanation: TTFT 越短，使用者越快看到字跳出來，心理上會覺得系統反應很快，即使完整回答需要一點時間也沒關係。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-performance-metrics
 - id: 6068
   chapter_title: 生成式 AI 專案管理與評估
@@ -867,7 +867,7 @@ questions:
   correct_index: 3
   explanation: GenAI 本質上是機率模型，一定會有幻覺或錯誤。快速試錯能加速學習曲線，找到最佳應用場景。
   tags:
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-org-talent
 - id: 11445
   chapter_title: 生成式 AI 的專案規劃與評估
@@ -884,7 +884,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-performance-metrics
 - id: 11404
   chapter_title: 生成式 AI 的專案規劃與評估
@@ -901,7 +901,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-performance-metrics
 - id: 11404
   chapter_title: 生成式 AI 的專案規劃與評估
@@ -918,7 +918,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-performance-metrics
 - id: 11422
   chapter_title: 生成式 AI 的專案規劃與評估
@@ -935,7 +935,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-project-planning
 - id: 11443
   chapter_title: 生成式 AI 的專案規劃與評估
@@ -952,7 +952,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-performance-metrics
 - id: 11434
   chapter_title: 生成式 AI 的專案規劃與評估
@@ -969,7 +969,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-performance-metrics
 - id: 11403
   chapter_title: 生成式 AI 的專案規劃與評估
@@ -986,7 +986,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-llmops
 - id: 11412
   chapter_title: 生成式 AI 的專案規劃與評估
@@ -1003,7 +1003,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-llmops
 - id: 11433
   chapter_title: 生成式 AI 的專案規劃與評估
@@ -1020,5 +1020,5 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter6
+  - chap-gen-chapter6
   - sec-llmops

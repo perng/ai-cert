@@ -1,7 +1,7 @@
 ---
 title: "第六章：生成式 AI 專案管理與評估 (Project Planning & Eval)"
 order: 6
-label: sec-gen-chapter6
+label: chap-gen-chapter6
 ---
 
 <!-- # 第六章：生成式 AI 專案管理與評估 (Project Planning & Eval) {#sec-project-planning} -->

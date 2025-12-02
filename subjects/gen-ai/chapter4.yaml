@@ -12,7 +12,7 @@ questions:
   correct_index: 2
   explanation: Chatbot 僅限於對話，而 Agent 擁有「手腳」，能透過工具與外部世界互動並執行任務。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4002
   chapter_title: AI 代理人與自動化
@@ -27,7 +27,7 @@ questions:
   correct_index: 2
   explanation: LLM 負責理解指令、邏輯推理與規劃，是 Agent 的智慧核心。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4003
   chapter_title: AI 代理人與自動化
@@ -42,7 +42,7 @@ questions:
   correct_index: 0
   explanation: 規劃模組將複雜目標拆解為可執行的步驟，並在執行過程中反思修正。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4004
   chapter_title: AI 代理人與自動化
@@ -57,7 +57,7 @@ questions:
   correct_index: 3
   explanation: 向量資料庫能高效儲存與檢索大量非結構化資料，作為 Agent 的長期知識庫。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4005
   chapter_title: AI 代理人與自動化
@@ -72,7 +72,7 @@ questions:
   correct_index: 0
   explanation: 透過 API 調用，Agent 能夠執行實際操作，如獲取資訊或控制軟體。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4006
   chapter_title: AI 代理人與自動化
@@ -87,7 +87,7 @@ questions:
   correct_index: 3
   explanation: 圖結構能表達非線性的決策路徑與狀態轉換，比線性思考更靈活。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4007
   chapter_title: AI 代理人與自動化
@@ -102,7 +102,7 @@ questions:
   correct_index: 2
   explanation: BFS 層層推進，能確保找到步數最少的解，適合路徑搜尋。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4008
   chapter_title: AI 代理人與自動化
@@ -117,7 +117,7 @@ questions:
   correct_index: 2
   explanation: DFS 優先探索深層節點，適合需要連續推理或鑽研到底的場景。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4009
   chapter_title: AI 代理人與自動化
@@ -132,7 +132,7 @@ questions:
   correct_index: 2
   explanation: 透過專業分工（如 PM、工程師、測試員），多個 Agent 能協作完成大型專案。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4010
   chapter_title: AI 代理人與自動化
@@ -147,7 +147,7 @@ questions:
   correct_index: 2
   explanation: PM Agent 負責統籌規劃，將大目標轉化為可執行的子任務並指派給專責 Agent。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4011
   chapter_title: AI 代理人與自動化
@@ -162,7 +162,7 @@ questions:
   correct_index: 1
   explanation: 當 Agent A 等待 Agent B，而 Agent B 又等待 Agent A 時，就會陷入死結或無窮迴圈。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4012
   chapter_title: AI 代理人與自動化
@@ -177,7 +177,7 @@ questions:
   correct_index: 3
   explanation: 強制限制互動次數或由上層監督者介入中斷，能有效防止系統空轉。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4013
   chapter_title: AI 代理人與自動化
@@ -192,7 +192,7 @@ questions:
   correct_index: 2
   explanation: 透過仲裁機制或多數決，可以從衝突的意見中整合出最終決策。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4014
   chapter_title: AI 代理人與自動化
@@ -207,7 +207,7 @@ questions:
   correct_index: 1
   explanation: 反思能力讓 Agent 能從錯誤中學習並調整策略，而非盲目執行錯誤的計畫。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4015
   chapter_title: AI 代理人與自動化
@@ -222,7 +222,7 @@ questions:
   correct_index: 2
   explanation: 利用啟發式函數評估節點價值，優先探索最可能通往目標的路徑，效率通常比盲目搜尋高。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4016
   chapter_title: AI 代理人與自動化
@@ -237,7 +237,7 @@ questions:
   correct_index: 2
   explanation: Client Agent 作為人類與 Agent 系統的介面，負責接收需求與回報結果。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4017
   chapter_title: AI 代理人與自動化
@@ -252,7 +252,7 @@ questions:
   correct_index: 1
   explanation: 明確的職責定義能避免責任重疊或推卸，確保協作順暢。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4018
   chapter_title: AI 代理人與自動化
@@ -267,7 +267,7 @@ questions:
   correct_index: 0
   explanation: 短期記憶維持對當前對話狀態的認知，受限於 Context Window 大小。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4019
   chapter_title: AI 代理人與自動化
@@ -282,7 +282,7 @@ questions:
   correct_index: 0
   explanation: 邊連接了不同的狀態節點，代表導致狀態改變的動作或決策。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4020
   chapter_title: AI 代理人與自動化
@@ -297,7 +297,7 @@ questions:
   correct_index: 3
   explanation: Remote Agent 是實際的執行者，負責完成 Client Agent 指派的具體工作。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4021
   chapter_title: AI 代理人與自動化
@@ -312,7 +312,7 @@ questions:
   correct_index: 3
   explanation: 感知是指接收並理解外部資訊的能力，這是做出正確決策的前提。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4022
   chapter_title: AI 代理人與自動化
@@ -327,7 +327,7 @@ questions:
   correct_index: 3
   explanation: 任何能擴展 Agent 能力、與外部互動的介面或軟體都可視為工具。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4023
   chapter_title: AI 代理人與自動化
@@ -342,7 +342,7 @@ questions:
   correct_index: 0
   explanation: MAS 常借鑑人類社會的組織架構，透過專業分工提升效率。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4024
   chapter_title: AI 代理人與自動化
@@ -357,7 +357,7 @@ questions:
   correct_index: 1
   explanation: 它提供了決策空間的結構化視圖，指引 Agent 如何從起點到達目標狀態。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4025
   chapter_title: AI 代理人與自動化
@@ -372,7 +372,7 @@ questions:
   correct_index: 2
   explanation: 監督者負責維持系統秩序，確保各 Agent 依循規則協作，並在異常時介入。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4026
   chapter_title: AI 代理人與自動化
@@ -387,7 +387,7 @@ questions:
   correct_index: 0
   explanation: 將大目標（如旅遊規劃）拆解為小步驟（如訂票），能降低單一步驟的難度與出錯率。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4027
   chapter_title: AI 代理人與自動化
@@ -402,7 +402,7 @@ questions:
   correct_index: 0
   explanation: 這兩者是圖論與演算法中遍歷圖形結構的經典方法。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4028
   chapter_title: AI 代理人與自動化
@@ -417,7 +417,7 @@ questions:
   correct_index: 0
   explanation: 這模擬了軟體開發中的迭代流程，透過回饋循環不斷提升程式碼品質。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4029
   chapter_title: AI 代理人與自動化
@@ -432,7 +432,7 @@ questions:
   correct_index: 0
   explanation: 目前的 Agent 架構主要關注功能性組件（腦、記憶、規劃、工具），情感模組並非標準配備。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4030
   chapter_title: AI 代理人與自動化
@@ -447,7 +447,7 @@ questions:
   correct_index: 3
   explanation: 節點儲存了任務執行過程中的快照或暫存結果。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4031
   chapter_title: AI 代理人與自動化
@@ -462,7 +462,7 @@ questions:
   correct_index: 3
   explanation: MAS 突破了單一模型的限制，透過擴展性架構處理更複雜、更多元的任務。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4032
   chapter_title: AI 代理人與自動化
@@ -477,7 +477,7 @@ questions:
   correct_index: 1
   explanation: Python 直譯器是 Agent 用來執行計算或處理資料的外部工具。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4033
   chapter_title: AI 代理人與自動化
@@ -492,7 +492,7 @@ questions:
   correct_index: 2
   explanation: LLM Agent 之間主要透過自然語言進行對話與協調，這也是其靈活性的來源。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4034
   chapter_title: AI 代理人與自動化
@@ -507,7 +507,7 @@ questions:
   correct_index: 2
   explanation: 透過及時檢查與修正，Agent 能防止錯誤擴大，提高任務成功率。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4035
   chapter_title: AI 代理人與自動化
@@ -522,7 +522,7 @@ questions:
   correct_index: 1
   explanation: 啟發式函數提供了一種估計方法，幫助演算法判斷哪個方向更接近目標。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4036
   chapter_title: AI 代理人與自動化
@@ -537,7 +537,7 @@ questions:
   correct_index: 0
   explanation: 當多個 Agent 意見不一致時，投票是一種簡單有效的決策整合方式。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4037
   chapter_title: AI 代理人與自動化
@@ -552,7 +552,7 @@ questions:
   correct_index: 2
   explanation: 長期記憶的存取機制本質上就是 RAG，透過檢索向量資料庫來回憶過去的資訊。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4038
   chapter_title: AI 代理人與自動化
@@ -567,7 +567,7 @@ questions:
   correct_index: 2
   explanation: 執行力是 Agent 與 Chatbot 的分水嶺，使其能對現實世界產生影響。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4039
   chapter_title: AI 代理人與自動化
@@ -582,7 +582,7 @@ questions:
   correct_index: 0
   explanation: System Prompt 是 Agent 的「人設」與「規則書」，決定了它在團隊中的行為模式。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4040
   chapter_title: AI 代理人與自動化
@@ -597,7 +597,7 @@ questions:
   correct_index: 0
   explanation: Agentic AI 代表 AI 不再只是被動的聊天機器人，而是能主動解決問題的數位勞動力。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agentic-ai
 - id: 4041
   chapter_title: AI 代理人與自動化
@@ -612,7 +612,7 @@ questions:
   correct_index: 3
   explanation: 這是 Agent 架構的標準模型，涵蓋了思考、決策、記憶與行動的能力。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agent-architecture
 - id: 4042
   chapter_title: AI 代理人與自動化
@@ -627,7 +627,7 @@ questions:
   correct_index: 3
   explanation: Function Calling 允許 LLM 輸出結構化的 JSON 來請求執行特定函數。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agent-architecture
 - id: 4043
   chapter_title: AI 代理人與自動化
@@ -642,7 +642,7 @@ questions:
   correct_index: 0
   explanation: 反思能力讓 Agent 具備從錯誤中學習並自我修正的韌性。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agent-architecture
 - id: 4044
   chapter_title: AI 代理人與自動化
@@ -657,7 +657,7 @@ questions:
   correct_index: 0
   explanation: BFS 層層推進，能保證找到起始點到目標點的最短路徑。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agent-architecture
 - id: 4045
   chapter_title: AI 代理人與自動化
@@ -672,7 +672,7 @@ questions:
   correct_index: 0
   explanation: 若缺乏明確的終止條件或職責劃分，Agent 容易陷入無窮的對話迴圈。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-multi-agent-systems
 - id: 4046
   chapter_title: AI 代理人與自動化
@@ -687,7 +687,7 @@ questions:
   correct_index: 2
   explanation: AutoGen 強調 Conversational Programming，讓 Agent 像人類團隊一樣溝通協作。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-multi-agent-systems
 - id: 4047
   chapter_title: AI 代理人與自動化
@@ -702,7 +702,7 @@ questions:
   correct_index: 0
   explanation: CrewAI 將 Agent 視為擁有特定角色、目標與背景故事的團隊成員 (Crew)。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-multi-agent-systems
 - id: 4048
   chapter_title: AI 代理人與自動化
@@ -717,7 +717,7 @@ questions:
   correct_index: 0
   explanation: Semantic Kernel 提供了強大的 SDK，方便將 LLM 整合進現有的企業應用程式中。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-multi-agent-systems
 - id: 4049
   chapter_title: AI 代理人與自動化
@@ -732,7 +732,7 @@ questions:
   correct_index: 1
   explanation: Chatbot 止於對話，Agent 始於行動。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agent-architecture
 - id: 4050
   chapter_title: AI 代理人與自動化
@@ -747,7 +747,7 @@ questions:
   correct_index: 3
   explanation: 向量資料庫能高效儲存與檢索大量的非結構化經驗數據，作為 Agent 的長期記憶。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agent-architecture
 - id: 4061
   chapter_title: AI Agent 與多代理系統
@@ -762,7 +762,7 @@ questions:
   correct_index: 3
   explanation: 短期記憶讓 Agent 能理解當下的對話情境，但受限於 Context Window 大小，對話結束後通常會消失。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agent-architecture
 - id: 4062
   chapter_title: AI Agent 與多代理系統
@@ -777,7 +777,7 @@ questions:
   correct_index: 1
   explanation: 面對複雜任務（如寫一個遊戲），直接生成往往會失敗；拆解成「寫劇本、寫程式、測試」等小步驟能顯著提升成功率。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agent-architecture
 - id: 4063
   chapter_title: AI Agent 與多代理系統
@@ -792,7 +792,7 @@ questions:
   correct_index: 3
   explanation: 階層式架構（如 ChatDev）模擬了人類公司的組織結構，能有效管理複雜流程，避免 Agent 之間互相推託或混亂。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-mas
 - id: 4064
   chapter_title: AI Agent 與多代理系統
@@ -807,7 +807,7 @@ questions:
   correct_index: 1
   explanation: MAS 的強大之處在於 Agent 間的自主協商與修正，這模擬了人類團隊的 Code Review 流程。
   tags:
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-mas
 - id: 11408
   chapter_title: AI 代理人 (AI Agents)
@@ -824,7 +824,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agent-architecture
 - id: 11411
   chapter_title: AI 代理人 (AI Agents)
@@ -841,7 +841,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agent-architecture
 - id: 11449
   chapter_title: AI 代理人 (AI Agents)
@@ -858,7 +858,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agent-architecture
 - id: 11406
   chapter_title: AI 代理人 (AI Agents)
@@ -875,7 +875,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agent-architecture
 - id: 11414
   chapter_title: AI 代理人 (AI Agents)
@@ -892,7 +892,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agent-architecture
 - id: 11450
   chapter_title: AI 代理人 (AI Agents)
@@ -909,7 +909,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agent-architecture
 - id: 11430
   chapter_title: AI 代理人 (AI Agents)
@@ -926,7 +926,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agent-architecture
 - id: 11435
   chapter_title: AI 代理人 (AI Agents)
@@ -943,7 +943,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agent-architecture
 - id: 11420
   chapter_title: AI 代理人 (AI Agents)
@@ -960,7 +960,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agent-architecture
 - id: 11424
   chapter_title: AI 代理人 (AI Agents)
@@ -977,5 +977,5 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter4
+  - chap-gen-chapter4
   - sec-agent-architecture

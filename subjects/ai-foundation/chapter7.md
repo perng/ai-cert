@@ -1,7 +1,7 @@
 ---
 title: "神經網路架構演進 (Neural Network Architecture Evolution)"
 order: 7
-label: chap-chapter7
+label: chap-ai-foundation-chapter7
 ---
 
 <!-- # 神經網路架構演進 (Neural Network Architecture Evolution) -->
@@ -190,7 +190,7 @@ Transformer 由 Encoder（編碼器）和 Decoder（解碼器）組成，後來�
     *   同時具備理解與生成能力。
     *   *應用*：機器翻譯（英文入 $\to$ 理解 $\to$ 生成 $\to$ 中文出）、摘要生成。
 
-## 本章總結與考點提示 {#chap-chapter7-summary}
+## 本章總結與考點提示 {#chap-ai-foundation-chapter7-summary}
 
 ### 核心概念回顧
 

@@ -1,7 +1,7 @@
 ---
 title: "數據處理生命週期與架構"
 order: 3
-label: chap-chapter3
+label: chap-ai-foundation-chapter3
 ---
 
 <!-- # 數據處理生命週期與架構 -->
@@ -308,7 +308,7 @@ label: chap-chapter3
 
 ![PII 處理](images/pii.webp)
 
-## 本章總結與考點提示 {#chap-chapter3-summary}
+## 本章總結與考點提示 {#chap-ai-foundation-chapter3-summary}
 
 ### 核心概念回顧
 

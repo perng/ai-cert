@@ -1,7 +1,7 @@
 ---
 title: "特徵工程 (Feature Engineering)"
 order: 4
-label: chap-chapter4
+label: chap-ai-foundation-chapter4
 ---
 
 <!-- # 特徵工程 (Feature Engineering) -->
@@ -188,7 +188,7 @@ label: chap-chapter4
 *   **效果**：強迫模型重視少數類別，即使犧牲一點整體的準確率，也要把詐欺抓出來。
 
 
-## 本章總結與考點提示 {#chap-chapter4-summary}
+## 本章總結與考點提示 {#chap-ai-foundation-chapter4-summary}
 
 ### 核心概念回顧
 

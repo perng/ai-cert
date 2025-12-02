@@ -1,7 +1,7 @@
 ---
 title: "第四章：AI 代理人 (Agentic AI) 與自動化"
 order: 4
-label: sec-gen-chapter4
+label: chap-gen-chapter4
 ---
 
 <!-- # 第四章：AI 代理人 (Agentic AI) 與自動化 {#sec-agentic-ai} -->

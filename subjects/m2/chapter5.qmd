@@ -1,7 +1,7 @@
 ---
 title: "系統部署與 MLOps"
 order: 5
-label: sec-m2-ch5
+label: chap-m2-ch5
 ---
 
 

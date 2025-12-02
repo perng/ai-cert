@@ -12,7 +12,7 @@ questions:
   correct_index: 1
   explanation: 透過劃分資料集，確保模型在未見過的資料上進行測試，以評估其真實的泛化能力。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-data-split
 - id: 9002
   chapter_title: 模型評估與效能優化
@@ -27,7 +27,7 @@ questions:
   correct_index: 2
   explanation: 驗證集就像模擬考，用來在訓練過程中評估模型表現，以調整學習率、樹的深度等超參數。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-data-split
 - id: 9003
   chapter_title: 模型評估與效能優化
@@ -42,7 +42,7 @@ questions:
   correct_index: 2
   explanation: K-fold 輪流使用不同部分的資料當驗證集，能避免因資料切分運氣好壞而導致的評估偏差。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-cross-validation
 - id: 9004
   chapter_title: 模型評估與效能優化
@@ -57,7 +57,7 @@ questions:
   correct_index: 0
   explanation: True Positive (真陽性) 代表模型正確地預測了正類別（如成功抓到病人）。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-classification-metrics
 - id: 9005
   chapter_title: 模型評估與效能優化
@@ -72,7 +72,7 @@ questions:
   correct_index: 2
   explanation: 如果詐欺只佔 1%，模型全部猜「正常」也有 99% 準確率，但完全沒用，因此 Accuracy 會騙人。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-classification-metrics
 - id: 9006
   chapter_title: 模型評估與效能優化
@@ -87,7 +87,7 @@ questions:
   correct_index: 0
   explanation: Precision 關注的是「預測為正」的樣本中，有多少是真的正樣本（寧缺勿濫）。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-classification-metrics
 - id: 9007
   chapter_title: 模型評估與效能優化
@@ -102,7 +102,7 @@ questions:
   correct_index: 3
   explanation: Recall 關注的是「真實為正」的樣本中，有多少被模型成功找出來（寧濫勿缺）。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-classification-metrics
 - id: 9008
   chapter_title: 模型評估與效能優化
@@ -117,7 +117,7 @@ questions:
   correct_index: 1
   explanation: 癌症篩檢漏診後果嚴重（人命關天），因此希望盡可能抓出所有病人，即最大化 Recall。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-classification-metrics
 - id: 9009
   chapter_title: 模型評估與效能優化
@@ -132,7 +132,7 @@ questions:
   correct_index: 2
   explanation: 使用者很討厭重要信件被誤判為垃圾信（False Positive），因此希望預測為垃圾信的準度要高，即最大化 Precision。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-classification-metrics
 - id: 9010
   chapter_title: 模型評估與效能優化
@@ -147,7 +147,7 @@ questions:
   correct_index: 3
   explanation: F1-Score 綜合考量了 Precision 和 Recall，適用於需要平衡兩者的場景。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-classification-metrics
 - id: 9011
   chapter_title: 模型評估與效能優化
@@ -162,7 +162,7 @@ questions:
   correct_index: 2
   explanation: AUC = 0.5 代表 ROC 曲線是對角線，意味著模型沒有鑑別力，跟丟銅板亂猜一樣。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-classification-metrics
 - id: 9012
   chapter_title: 模型評估與效能優化
@@ -177,7 +177,7 @@ questions:
   correct_index: 2
   explanation: MSE 計算誤差的平方和，因此大誤差的影響會被顯著放大，適合用於懲罰大錯的模型。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-regression-metrics
 - id: 9013
   chapter_title: 模型評估與效能優化
@@ -192,7 +192,7 @@ questions:
   correct_index: 1
   explanation: R-squared = 1 表示預測值與真實值完全一致，沒有任何殘差。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-regression-metrics
 - id: 9014
   chapter_title: 模型評估與效能優化
@@ -207,7 +207,7 @@ questions:
   correct_index: 1
   explanation: 高偏差代表模型太簡單，連訓練集的規律都學不會，即欠擬合。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-bias-variance
 - id: 9015
   chapter_title: 模型評估與效能優化
@@ -222,7 +222,7 @@ questions:
   correct_index: 0
   explanation: 高變異代表模型在訓練集表現很好，但在驗證集表現很差，即過度擬合。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-bias-variance
 - id: 9016
   chapter_title: 模型評估與效能優化
@@ -237,7 +237,7 @@ questions:
   correct_index: 3
   explanation: 增加模型複雜度會讓模型更容易死記硬背，反而會加重過度擬合。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-prevent-overfitting
 - id: 9017
   chapter_title: 模型評估與效能優化
@@ -252,7 +252,7 @@ questions:
   correct_index: 0
   explanation: L1 正則化傾向於產生稀疏解，即將不重要的特徵係數壓縮為 0。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-prevent-overfitting
 - id: 9018
   chapter_title: 模型評估與效能優化
@@ -267,7 +267,7 @@ questions:
   correct_index: 2
   explanation: Dropout 在每次迭代中隨機讓部分神經元失活，強迫網路學習分散特徵，避免依賴特定路徑。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-prevent-overfitting
 - id: 9019
   chapter_title: 模型評估與效能優化
@@ -282,7 +282,7 @@ questions:
   correct_index: 2
   explanation: 當訓練集誤差下降但驗證集誤差開始上升時，代表過擬合開始，此時應停止訓練。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-prevent-overfitting
 - id: 9020
   chapter_title: 模型評估與效能優化
@@ -297,7 +297,7 @@ questions:
   correct_index: 0
   explanation: 資料增強透過旋轉、裁切等方式擴充訓練資料，讓模型看過更多變體，提升泛化能力。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-prevent-overfitting
 - id: 9021
   chapter_title: 模型評估與效能優化
@@ -312,7 +312,7 @@ questions:
   correct_index: 1
   explanation: 測試集必須保持純淨，若用於訓練或調參（偷看答案），評估結果將失去公信力（資料洩漏）。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-data-split
 - id: 9022
   chapter_title: 模型評估與效能優化
@@ -327,7 +327,7 @@ questions:
   correct_index: 1
   explanation: False Negative (假陰性) 代表實際是正樣本（有病），但模型錯誤預測為負樣本（沒病），即漏報。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-classification-metrics
 - id: 9023
   chapter_title: 模型評估與效能優化
@@ -342,7 +342,7 @@ questions:
   correct_index: 3
   explanation: ROC 曲線描繪了在不同門檻下，FPR (False Positive Rate) 與 TPR (True Positive Rate) 的權衡關係。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-classification-metrics
 - id: 9024
   chapter_title: 模型評估與效能優化
@@ -357,7 +357,7 @@ questions:
   correct_index: 3
   explanation: MAE 計算誤差絕對值的平均，不像 MSE 會平方放大，因此受極端值影響較小，且單位與原資料相同。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-regression-metrics
 - id: 9025
   chapter_title: 模型評估與效能優化
@@ -372,7 +372,7 @@ questions:
   correct_index: 0
   explanation: 訓練集誤差高代表模型沒學好，驗證集自然也差，這是典型的高偏差（欠擬合）症狀。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-bias-variance
 - id: 9026
   chapter_title: 模型評估與效能優化
@@ -387,7 +387,7 @@ questions:
   correct_index: 1
   explanation: L2 正則化透過平方懲罰項限制權重大小，防止單一特徵對模型影響過大，使模型更平滑。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-prevent-overfitting
 - id: 9027
   chapter_title: 模型評估與效能優化
@@ -402,7 +402,7 @@ questions:
   correct_index: 1
   explanation: 水平翻轉是創造新影像樣本的常用手段，屬於資料增強。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-prevent-overfitting
 - id: 9028
   chapter_title: 模型評估與效能優化
@@ -417,7 +417,7 @@ questions:
   correct_index: 2
   explanation: 訓練集表現極佳但測試集慘不忍睹，代表模型死記硬背了訓練資料，沒有泛化能力。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-bias-variance
 - id: 9029
   chapter_title: 模型評估與效能優化
@@ -432,7 +432,7 @@ questions:
   correct_index: 2
   explanation: R-squared 為負值表示模型的預測誤差比僅使用平均值預測的誤差還大，模型完全失效。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-regression-metrics
 - id: 9030
   chapter_title: 模型評估與效能優化
@@ -447,7 +447,7 @@ questions:
   correct_index: 0
   explanation: 欠擬合是因為模型太簡單學不會，所以需要給它更強的學習能力（更複雜的模型）。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-bias-variance
 - id: 9031
   chapter_title: 模型評估與效能優化
@@ -462,7 +462,7 @@ questions:
   correct_index: 1
   explanation: False Positive (誤報) 在統計學上稱為型一錯誤。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-classification-metrics
 - id: 9032
   chapter_title: 模型評估與效能優化
@@ -477,7 +477,7 @@ questions:
   correct_index: 2
   explanation: False Negative (漏報) 在統計學上稱為型二錯誤。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-classification-metrics
 - id: 9033
   chapter_title: 模型評估與效能優化
@@ -492,7 +492,7 @@ questions:
   correct_index: 2
   explanation: 現實世界中幾乎不可能有完美的模型，AUC=1 通常暗示測試資料被混入訓練集，或標籤直接洩漏給了特徵。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-classification-metrics
 - id: 9034
   chapter_title: 模型評估與效能優化
@@ -507,7 +507,7 @@ questions:
   correct_index: 1
   explanation: Dropout 每次訓練不同的子網路，預測時等同於多個子網路的平均，具有集成學習的效果。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-prevent-overfitting
 - id: 9035
   chapter_title: 模型評估與效能優化
@@ -522,7 +522,7 @@ questions:
   correct_index: 2
   explanation: 回譯能產生多樣化的句型，是 NLP 常用的資料增強技巧。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-prevent-overfitting
 - id: 9036
   chapter_title: 模型評估與效能優化
@@ -537,7 +537,7 @@ questions:
   correct_index: 2
   explanation: 這句話意味著要極大化抓到正樣本的能力，即使誤報也沒關係，即最大化 Recall。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-classification-metrics
 - id: 9037
   chapter_title: 模型評估與效能優化
@@ -552,7 +552,7 @@ questions:
   correct_index: 1
   explanation: 這句話意味著只有非常確定才報警，希望報警的都是真的，即最大化 Precision。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-classification-metrics
 - id: 9038
   chapter_title: 模型評估與效能優化
@@ -567,7 +567,7 @@ questions:
   correct_index: 3
   explanation: 降低 Bias 通常會增加 Variance（模型變複雜），反之亦然，需要找到最佳平衡點。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-bias-variance
 - id: 9039
   chapter_title: 模型評估與效能優化
@@ -582,7 +582,7 @@ questions:
   correct_index: 3
   explanation: K=5 或 K=10 是經驗上最常用的數值，能在計算成本與評估穩健性間取得平衡。
   tags:
-  - chap-chapter9
+  - chap-ai-foundation-chapter9
   - sec-cross-validation
 - id: 9040
   chapter_title: 模型評估與效能優化
@@ -597,8 +597,8 @@ questions:
   correct_index: 3
   explanation: 沒有經過評估的模型就像沒改過的考卷，無法得知其效能與可靠性。
   tags:
-  - chap-chapter9
-  - chap-chapter9-summary
+  - chap-ai-foundation-chapter9
+  - chap-ai-foundation-chapter9-summary
 - id: 9051
   chapter_title: 模型評估與優化
   section_title: 評估指標

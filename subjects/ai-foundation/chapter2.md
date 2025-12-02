@@ -1,7 +1,7 @@
 ---
 title: "AI 應用問題類型"
 order: 2
-label: chap-chapter2
+label: chap-ai-foundation-chapter2
 ---
 
 <!-- # AI 應用問題類型 -->
@@ -124,7 +124,7 @@ AI 與資料科學不僅僅是預測未來，它在商業應用上通常被分�
 
 ![處方性分析](images/prescriptive-analysis.webp)
 
-## 本章總結與考點提示 {#chap-chapter2-summary}
+## 本章總結與考點提示 {#chap-ai-foundation-chapter2-summary}
 
 ### 核心概念回顧
 

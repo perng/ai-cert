@@ -1,7 +1,7 @@
 ---
 title: "第三章：進階 RAG 與系統架構 (Advanced RAG & Architecture)"
 order: 3
-label: sec-gen-chapter3
+label: chap-gen-chapter3
 ---
 
 <!-- # 第三章：進階 RAG 與系統架構 (Advanced RAG & Architecture) {#sec-advanced-rag} -->

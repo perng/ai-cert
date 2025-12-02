@@ -1,7 +1,7 @@
 ---
 title: "第七章：生成式 AI 的資安、合規與倫理 (Security, Compliance & Ethics)"
 order: 7
-label: sec-gen-chapter7
+label: chap-gen-chapter7
 ---
 
 <!-- # 第七章：生成式 AI 的資安、合規與倫理 (Security, Compliance & Ethics) {#sec-security-ethics} -->

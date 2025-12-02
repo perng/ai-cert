@@ -1,7 +1,7 @@
 ---
 title: "生成式 AI 模型架構與機制 (Generative Models & Mechanisms)"
 order: 1
-label: sec-gen-chapter1
+label: chap-gen-chapter1
 ---
 
 <!-- # 生成式 AI 模型架構與機制 (Generative Models & Mechanisms) {#sec-gen-ai-models} -->

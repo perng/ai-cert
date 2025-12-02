@@ -1,7 +1,7 @@
 ---
 title: "強化學習"
 order: 4
-label: sec-m4-ch4
+label: chap-m4-ch4
 ---
 
 

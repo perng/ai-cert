@@ -12,7 +12,7 @@ questions:
   correct_index: 0
   explanation: RAG 透過檢索外部資料庫，只要資料庫更新，AI 就能立即獲取新知識，無需重新訓練。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3002
   chapter_title: 進階 RAG 與系統架構
@@ -27,7 +27,7 @@ questions:
   correct_index: 1
   explanation: RAG 允許模型在回答問題時翻閱參考資料（向量資料庫），就像開書考一樣。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3003
   chapter_title: 進階 RAG 與系統架構
@@ -42,7 +42,7 @@ questions:
   correct_index: 2
   explanation: Fine-tuning 透過大量訓練將知識內化到模型的權重中，就像考前死背硬記。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3004
   chapter_title: 進階 RAG 與系統架構
@@ -57,7 +57,7 @@ questions:
   correct_index: 0
   explanation: RAG 要求模型根據檢索到的事實回答，並可附上引用來源，顯著降低胡說八道的機率。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3005
   chapter_title: 進階 RAG 與系統架構
@@ -72,7 +72,7 @@ questions:
   correct_index: 3
   explanation: RAG 的檢索階段可以整合現有的企業權限系統，確保使用者只能看到自己有權限的資料。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3006
   chapter_title: 進階 RAG 與系統架構
@@ -87,7 +87,7 @@ questions:
   correct_index: 1
   explanation: Fine-tuning 能有效調整模型的行為模式，使其模仿特定的說話風格或理解特定領域的術語。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3007
   chapter_title: 進階 RAG 與系統架構
@@ -102,7 +102,7 @@ questions:
   correct_index: 3
   explanation: 知識蒸餾旨在將大模型的智慧轉移到輕量化的小模型上，以利在邊緣裝置運行。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3008
   chapter_title: 進階 RAG 與系統架構
@@ -117,7 +117,7 @@ questions:
   correct_index: 2
   explanation: Teacher 輸出的機率分佈包含了類別間的相似性資訊（如狗有點像貓），這對 Student 的學習至關重要。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3009
   chapter_title: 進階 RAG 與系統架構
@@ -132,7 +132,7 @@ questions:
   correct_index: 2
   explanation: MCP 旨在解決 AI 連接外部工具時的碎片化問題，提供統一的介面標準。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3010
   chapter_title: 進階 RAG 與系統架構
@@ -147,7 +147,7 @@ questions:
   correct_index: 3
   explanation: MCP Server 扮演服務提供者的角色，如 Google Drive Server 提供檔案存取功能。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3011
   chapter_title: 進階 RAG 與系統架構
@@ -162,7 +162,7 @@ questions:
   correct_index: 3
   explanation: RAG 側重於資訊檢索，而 MCP 則賦予 AI 執行操作（如發送訊息、寫入資料庫）的能力。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3012
   chapter_title: 進階 RAG 與系統架構
@@ -177,7 +177,7 @@ questions:
   correct_index: 0
   explanation: 先用 RAG 解決知識問題成本較低且見效快，若效果不足再考慮成本較高的 Fine-tuning。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3013
   chapter_title: 進階 RAG 與系統架構
@@ -192,7 +192,7 @@ questions:
   correct_index: 0
   explanation: 每次知識更新都需要重新準備資料並進行訓練，維護成本高且缺乏時效性。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3014
   chapter_title: 進階 RAG 與系統架構
@@ -207,7 +207,7 @@ questions:
   correct_index: 2
   explanation: 向量資料庫用於儲存與檢索文本的語意向量，是 RAG 的核心組件。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3015
   chapter_title: 進階 RAG 與系統架構
@@ -222,7 +222,7 @@ questions:
   correct_index: 1
   explanation: MCP Client 是 AI 運行的前端，負責理解使用者需求並向 Server 發送請求。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3016
   chapter_title: 進階 RAG 與系統架構
@@ -237,7 +237,7 @@ questions:
   correct_index: 1
   explanation: 小模型運算量小，能顯著降低硬體需求與回應時間。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3017
   chapter_title: 進階 RAG 與系統架構
@@ -252,7 +252,7 @@ questions:
   correct_index: 1
   explanation: 模型權重是黑箱，無法像資料庫那樣針對不同使用者設定精細的存取權限。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3018
   chapter_title: 進階 RAG 與系統架構
@@ -267,7 +267,7 @@ questions:
   correct_index: 3
   explanation: 就像 USB 讓各種周邊設備能隨插即用於電腦，MCP 讓各種資料源能標準化地連接 AI。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3019
   chapter_title: 進階 RAG 與系統架構
@@ -282,7 +282,7 @@ questions:
   correct_index: 0
   explanation: Fine-tuning 非常適合讓模型學習固定的輸出格式或語法結構。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3020
   chapter_title: 進階 RAG 與系統架構
@@ -297,7 +297,7 @@ questions:
   correct_index: 1
   explanation: MCP 是一個連接協議，可以將向量資料庫視為一個 Server 來連接，從而實現 RAG 功能。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3021
   chapter_title: 進階 RAG 與系統架構
@@ -312,7 +312,7 @@ questions:
   correct_index: 2
   explanation: Groundedness 指的是生成的內容有明確的來源依據，而非模型憑空捏造。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3022
   chapter_title: 進階 RAG 與系統架構
@@ -327,7 +327,7 @@ questions:
   correct_index: 0
   explanation: Teacher 必須是能力強的專家，才能指導 Student。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3023
   chapter_title: 進階 RAG 與系統架構
@@ -342,7 +342,7 @@ questions:
   correct_index: 3
   explanation: 開發者不再需要為每個模型-資料源組合重複開發連接器，只需遵循 MCP 標準即可。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3024
   chapter_title: 進階 RAG 與系統架構
@@ -357,7 +357,7 @@ questions:
   correct_index: 3
   explanation: 改變語氣或風格是 Fine-tuning 的強項，RAG 主要負責提供知識內容。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3025
   chapter_title: 進階 RAG 與系統架構
@@ -372,7 +372,7 @@ questions:
   correct_index: 2
   explanation: 暗知識隱藏在 Soft Label 中，揭示了類別間的細微關係，對 Student 的學習很有幫助。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3026
   chapter_title: 進階 RAG 與系統架構
@@ -387,7 +387,7 @@ questions:
   correct_index: 1
   explanation: MCP Server 具備執行能力，能代表 AI 與外部系統進行完整的互動。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3027
   chapter_title: 進階 RAG 與系統架構
@@ -402,7 +402,7 @@ questions:
   correct_index: 3
   explanation: 對於特定領域的語言模式與術語理解，Fine-tuning (領域適應) 的效果通常優於僅提供上下文的 RAG。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3028
   chapter_title: 進階 RAG 與系統架構
@@ -417,7 +417,7 @@ questions:
   correct_index: 2
   explanation: RAG 不需訓練模型，成本集中在檢索系統的維運與 API 呼叫。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3029
   chapter_title: 進階 RAG 與系統架構
@@ -432,7 +432,7 @@ questions:
   correct_index: 0
   explanation: MCP Host 提供 Client 運作所需的 runtime 環境。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3030
   chapter_title: 進階 RAG 與系統架構
@@ -447,7 +447,7 @@ questions:
   correct_index: 3
   explanation: 強調透過針對性的訓練數據，強化模型在特定任務上的表現。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3031
   chapter_title: 進階 RAG 與系統架構
@@ -462,7 +462,7 @@ questions:
   correct_index: 2
   explanation: 法規查詢要求高度準確性與時效性，且需引用條文依據，這正是 RAG 的強項。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3032
   chapter_title: 進階 RAG 與系統架構
@@ -477,7 +477,7 @@ questions:
   correct_index: 3
   explanation: 知識蒸餾的目的就是獲得一個輕量級但效能接近 Teacher 的模型。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3033
   chapter_title: 進階 RAG 與系統架構
@@ -492,7 +492,7 @@ questions:
   correct_index: 1
   explanation: MCP 旨在建立一個開源、通用的標準，促進生態系發展。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3034
   chapter_title: 進階 RAG 與系統架構
@@ -507,7 +507,7 @@ questions:
   correct_index: 2
   explanation: Soft Label 提供了比 Hard Label 更豐富的資訊，顯示了模型對各類別的信心程度。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3035
   chapter_title: 進階 RAG 與系統架構
@@ -522,7 +522,7 @@ questions:
   correct_index: 2
   explanation: 訓練過程需要昂貴的 GPU 資源以及經過清洗標註的高品質資料集。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3036
   chapter_title: 進階 RAG 與系統架構
@@ -537,7 +537,7 @@ questions:
   correct_index: 2
   explanation: 隨著 Agentic AI 發展，AI 需要與外部世界進行更廣泛的互動，MCP 提供了標準化的連接基礎。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3037
   chapter_title: 進階 RAG 與系統架構
@@ -552,7 +552,7 @@ questions:
   correct_index: 1
   explanation: 強調模型在推論時動態獲取資訊的能力，而非依賴訓練時記住的參數。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3038
   chapter_title: 進階 RAG 與系統架構
@@ -567,7 +567,7 @@ questions:
   correct_index: 0
   explanation: 在資源受限的邊緣裝置上部署 AI 模型是知識蒸餾最主要的應用場景。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3039
   chapter_title: 進階 RAG 與系統架構
@@ -582,7 +582,7 @@ questions:
   correct_index: 1
   explanation: Client 是大腦，負責決策何時以及如何調用 Server 的功能。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3040
   chapter_title: 進階 RAG 與系統架構
@@ -597,7 +597,7 @@ questions:
   correct_index: 2
   explanation: 本章探討了如何透過不同的系統架構與優化技術，提升生成式 AI 的實用性與可靠性。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-advanced-rag
 - id: 3041
   chapter_title: 進階 RAG 與系統架構
@@ -612,7 +612,7 @@ questions:
   correct_index: 0
   explanation: RAG 讓模型在回答時翻閱資料庫（開書考），Fine-tuning 則是透過訓練將知識內化（考前衝刺）。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-fine-tuning-optimization
 - id: 3042
   chapter_title: 進階 RAG 與系統架構
@@ -627,7 +627,7 @@ questions:
   correct_index: 1
   explanation: 向量資料庫計算向量間的距離，能找出語意相近的內容，即使關鍵字完全不同。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-rag-architecture
 - id: 3043
   chapter_title: 進階 RAG 與系統架構
@@ -642,7 +642,7 @@ questions:
   correct_index: 3
   explanation: 混合搜尋兼具關鍵字的精準匹配與向量的語意理解優勢。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-fine-tuning-optimization
 - id: 3044
   chapter_title: 進階 RAG 與系統架構
@@ -657,7 +657,7 @@ questions:
   correct_index: 0
   explanation: Re-ranking 使用更精準的模型（如 Cross-Encoder）從候選名單中挑出最相關的片段給 LLM。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-fine-tuning-optimization
 - id: 3045
   chapter_title: 進階 RAG 與系統架構
@@ -672,7 +672,7 @@ questions:
   correct_index: 1
   explanation: 透過蒸餾，可以將大模型的智慧轉移到輕量級模型上，適合在邊緣裝置運行。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-fine-tuning-optimization
 - id: 3046
   chapter_title: 進階 RAG 與系統架構
@@ -687,7 +687,7 @@ questions:
   correct_index: 3
   explanation: MCP 旨在標準化 AI 與外部資料源的連接，就像 USB-C 統一了各種裝置的連接介面。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-mcp
 - id: 3047
   chapter_title: 進階 RAG 與系統架構
@@ -702,7 +702,7 @@ questions:
   correct_index: 3
   explanation: MCP 的核心原語是 Resources (讀取資料)、Prompts (預設指令) 和 Tools (執行動作)。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-mcp
 - id: 3048
   chapter_title: 進階 RAG 與系統架構
@@ -717,7 +717,7 @@ questions:
   correct_index: 3
   explanation: 切塊能確保檢索到的內容精確且不超過模型的處理上限。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-rag-architecture
 - id: 3049
   chapter_title: 進階 RAG 與系統架構
@@ -732,7 +732,7 @@ questions:
   correct_index: 2
   explanation: Fine-tuning 需要重新訓練才能學到新知識，不如 RAG 更新資料庫那樣即時且低成本。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-fine-tuning-optimization
 - id: 3050
   chapter_title: 進階 RAG 與系統架構
@@ -747,7 +747,7 @@ questions:
   correct_index: 3
   explanation: 使用者的提問往往模糊或不完整，透過 LLM 改寫可以產生更適合檢索的關鍵字或語句。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-fine-tuning-optimization
 - id: 3061
   chapter_title: 檢索增強生成 (RAG) 與模型微調
@@ -762,7 +762,7 @@ questions:
   correct_index: 0
   explanation: 向量資料庫支援語意檢索，是 RAG 系統準確找到參考資料的關鍵基礎設施。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-rag-architecture
 - id: 3062
   chapter_title: 檢索增強生成 (RAG) 與模型微調
@@ -777,7 +777,7 @@ questions:
   correct_index: 0
   explanation: Fine-tuning 的知識截止於訓練當下，RAG 則能動態存取最新資料，解決時效性問題。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-rag-architecture
 - id: 3063
   chapter_title: 檢索增強生成 (RAG) 與模型微調
@@ -792,7 +792,7 @@ questions:
   correct_index: 1
   explanation: 當大幅調整權重以適應新資料時，原有的知識結構可能被破壞，導致舊任務表現下降。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-finetuning
 - id: 3064
   chapter_title: 檢索增強生成 (RAG) 與模型微調
@@ -807,7 +807,7 @@ questions:
   correct_index: 0
   explanation: LoRA 凍結原模型權重，僅訓練低秩矩陣，是目前最高效的 PEFT (參數高效微調) 技術之一。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-finetuning
 - id: 3065
   chapter_title: 檢索增強生成 (RAG) 與模型微調
@@ -822,7 +822,7 @@ questions:
   correct_index: 0
   explanation: MCP 提供了一套標準化的協定，讓 AI Client 能以統一的方式存取各種 Server 的資料，無需重複開發轉接器。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-mcp
 - id: 3066
   chapter_title: 檢索增強生成 (RAG) 與模型微調
@@ -837,7 +837,7 @@ questions:
   correct_index: 3
   explanation: Client 是 MCP 架構的前端，負責將使用者的需求轉化為 MCP 指令，向 Server 請求資料或資源。
   tags:
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-mcp
 - id: 11418
   chapter_title: 檢索增強生成 (RAG) 與模型微調
@@ -854,7 +854,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-rag-architecture
 - id: 11444
   chapter_title: 檢索增強生成 (RAG) 與模型微調
@@ -871,7 +871,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-rag-architecture
 - id: 11448
   chapter_title: 檢索增強生成 (RAG) 與模型微調
@@ -888,7 +888,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-rag-architecture
 - id: 11417
   chapter_title: 檢索增強生成 (RAG) 與模型微調
@@ -905,7 +905,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-rag-architecture
 - id: 11419
   chapter_title: 檢索增強生成 (RAG) 與模型微調
@@ -922,7 +922,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-rag-architecture
 - id: 11421
   chapter_title: 檢索增強生成 (RAG) 與模型微調
@@ -939,7 +939,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-rag-architecture
 - id: 11442
   chapter_title: 檢索增強生成 (RAG) 與模型微調
@@ -956,7 +956,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-rag-architecture
 - id: 11447
   chapter_title: 檢索增強生成 (RAG) 與模型微調
@@ -973,5 +973,5 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter3
+  - chap-gen-chapter3
   - sec-rag-architecture

@@ -12,7 +12,7 @@ questions:
   correct_index: 0
   explanation: No Code 旨在賦能不懂程式語言的業務人員，讓他們能透過拖拉介面自行構建簡單應用。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5002
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -27,7 +27,7 @@ questions:
   correct_index: 1
   explanation: Low Code 保留了 Coding 的彈性，適合需要高度客製化或串接複雜系統的企業級應用。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5003
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -42,7 +42,7 @@ questions:
   correct_index: 3
   explanation: 這讓 AI 不再是瞎猜，而是能根據專案上下文提供精準的建議，如同熟悉專案的同事。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5004
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -57,7 +57,7 @@ questions:
   correct_index: 0
   explanation: Replit Agent 實現了從自然語言直接到可運行 App 的自動化流程，大幅降低開發門檻。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5005
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -72,7 +72,7 @@ questions:
   correct_index: 2
   explanation: 這些工具能將草圖或文字描述轉換為 React/Tailwind 等前端程式碼，加速 UI 原型開發。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5006
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -87,7 +87,7 @@ questions:
   correct_index: 2
   explanation: 影子 IT 雖然能提升個別員工效率，但往往帶來資安風險與資料孤島問題。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5007
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -102,7 +102,7 @@ questions:
   correct_index: 1
   explanation: n8n 提供節點式介面，讓使用者能輕鬆串接 LLM 與各種 API，實現辦公流程自動化。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5008
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -117,7 +117,7 @@ questions:
   correct_index: 0
   explanation: ComfyUI 將 Stable Diffusion 的生成流程拆解為節點，提供高度可控的圖像生成體驗。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5009
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -132,7 +132,7 @@ questions:
   correct_index: 1
   explanation: 在軟體開發語境下，Model 通常指資料庫綱要或業務物件的抽象定義。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5010
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -147,7 +147,7 @@ questions:
   correct_index: 1
   explanation: Antigravity 透過雙視圖與 Agent 協作，專注於解決複雜的系統級開發任務。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5011
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -162,7 +162,7 @@ questions:
   correct_index: 1
   explanation: AI 生成的程式碼可能包含錯誤或安全隱患，人工審查是不可或缺的防線。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5012
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -177,7 +177,7 @@ questions:
   correct_index: 1
   explanation: Claude Code 將 AI 的能力帶入終端機，適合進行腳本自動化與系統管理任務。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5013
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -192,7 +192,7 @@ questions:
   correct_index: 3
   explanation: LangFlow 提供視覺化介面來組裝 LangChain 元件，加速 LLM 應用的原型開發。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5014
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -207,7 +207,7 @@ questions:
   correct_index: 3
   explanation: No Code 為了易用性犧牲了靈活性，使用者通常受限於平台預設的功能模組。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5015
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -222,7 +222,7 @@ questions:
   correct_index: 0
   explanation: Windsurf 試圖讓 AI 融入開發者的心流 (Flow)，而非被動等待指令。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5016
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -237,7 +237,7 @@ questions:
   correct_index: 3
   explanation: Codex 是 OpenAI 專為程式碼生成訓練的模型，早期驅動了 GitHub Copilot。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5017
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -252,7 +252,7 @@ questions:
   correct_index: 2
   explanation: 各部門各自為政使用不同工具，導致企業數據無法流通，形成資訊壁壘。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5018
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -267,7 +267,7 @@ questions:
   correct_index: 2
   explanation: Composer 突破了單一檔案編輯的限制，能理解並修改整個專案的相關檔案。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5019
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -282,7 +282,7 @@ questions:
   correct_index: 2
   explanation: Low Code 雖然簡化了開發，但仍涉及邏輯設計與少量編碼，需要一定的技術背景。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5020
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -297,7 +297,7 @@ questions:
   correct_index: 1
   explanation: 自託管特性讓企業能完全掌控數據隱私，避免敏感資料外流。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5021
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -312,7 +312,7 @@ questions:
   correct_index: 2
   explanation: 透過連接不同的功能節點，使用者可以客製化極其複雜的圖像生成工作流。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5022
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -327,7 +327,7 @@ questions:
   correct_index: 0
   explanation: Copilot 就像隨身的結對程式設計師，隨時預測並補完你正在寫的程式碼。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5023
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -342,7 +342,7 @@ questions:
   correct_index: 1
   explanation: Codex 經過大量程式碼數據訓練，對程式語言的語法與邏輯有深刻理解。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5024
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -357,7 +357,7 @@ questions:
   correct_index: 0
   explanation: 非正規開發的系統通常缺乏文件與交接機制，一旦原作者離開，往往難以為繼。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5025
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -372,7 +372,7 @@ questions:
   correct_index: 0
   explanation: Replit 提供基於瀏覽器的開發環境，讓使用者隨時隨地都能寫程式。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5026
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -387,7 +387,7 @@ questions:
   correct_index: 1
   explanation: 在複雜任務中，讓使用者能追蹤並驗證 Agent 的決策過程與執行結果至關重要。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5027
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -402,7 +402,7 @@ questions:
   correct_index: 1
   explanation: 直觀的拖拉介面是 No Code 降低門檻的關鍵。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5028
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -417,7 +417,7 @@ questions:
   correct_index: 3
   explanation: LangFlow 是 LangChain 生態系的一部分，將 LangChain 的程式碼元件視覺化。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5029
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -432,7 +432,7 @@ questions:
   correct_index: 3
   explanation: Claude Code 具備 Agent 能力，能直接對開發環境進行讀寫操作。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5030
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -447,7 +447,7 @@ questions:
   correct_index: 2
   explanation: AI 讓寫程式變得像說話一樣自然，同時讓 No Code 工具具備了處理複雜邏輯的能力。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5031
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -462,7 +462,7 @@ questions:
   correct_index: 2
   explanation: v0 利用多模態模型理解視覺設計，並生成對應的前端程式碼。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5032
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -477,7 +477,7 @@ questions:
   correct_index: 2
   explanation: AI 能處理繁瑣重複的編碼工作，釋放開發者的創造力。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5033
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -492,7 +492,7 @@ questions:
   correct_index: 0
   explanation: n8n 的強大之處在於其廣泛的整合能力，能將 AI 智慧注入各種第三方服務。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5034
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -507,7 +507,7 @@ questions:
   correct_index: 0
   explanation: ComfyUI 的學習曲線較陡，但提供了無與倫比的控制力，適合專業創作者。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5035
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -522,7 +522,7 @@ questions:
   correct_index: 2
   explanation: Cursor 繼承了 VS Code 的生態系與操作習慣，讓開發者能無痛轉移。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5036
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -537,7 +537,7 @@ questions:
   correct_index: 2
   explanation: Low Code 在提升效率的同時，保留了透過程式碼擴充功能的空間，避免被平台限制鎖死。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5037
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -552,7 +552,7 @@ questions:
   correct_index: 0
   explanation: 雙視圖設計讓使用者能同時關注程式碼細節與 Agent 的高層規劃。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5038
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -567,7 +567,7 @@ questions:
   correct_index: 3
   explanation: 沙箱環境確保 AI 執行的程式碼不會對外部系統造成危害，提供安全的測試空間。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5039
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -582,7 +582,7 @@ questions:
   correct_index: 2
   explanation: Windsurf 的主動性是其一大特色，試圖減少開發者手動下指令的頻率。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5040
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -597,7 +597,7 @@ questions:
   correct_index: 2
   explanation: Replit Agent 能快速將想法轉化為可運行的原型，非常適合驗證創意或構建小型應用。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-no-code-low-code
 - id: 5041
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -612,7 +612,7 @@ questions:
   correct_index: 3
   explanation: No Code 旨在賦能不懂程式碼的人員，透過圖形化介面也能構建應用程式。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-platform-characteristics
 - id: 5042
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -627,7 +627,7 @@ questions:
   correct_index: 3
   explanation: AI-Native IDE 從底層整合 AI，能跨檔案理解專案結構，而非僅限於當前編輯的檔案。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-ai-tools
 - id: 5043
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -642,7 +642,7 @@ questions:
   correct_index: 0
   explanation: 透過索引整個專案，Cursor 能給出符合現有架構與規範的建議，而非通用的範例代碼。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-ai-tools
 - id: 5044
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -657,7 +657,7 @@ questions:
   correct_index: 1
   explanation: Flow 範式強調 AI 與開發者的無縫協作，AI 不再被動等待指令，而是主動預判需求。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-ai-tools
 - id: 5045
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -672,7 +672,7 @@ questions:
   correct_index: 0
   explanation: Antigravity 讓使用者指揮多個 Agent 進行自主規劃與實作，並提供 Artifacts 供驗證。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-ai-tools
 - id: 5046
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -687,7 +687,7 @@ questions:
   correct_index: 1
   explanation: Replit Agent 降低了開發門檻，讓使用者只需描述想法，AI 就能完成從開發到部署的全流程。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-ai-tools
 - id: 5047
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -702,7 +702,7 @@ questions:
   correct_index: 0
   explanation: n8n 透過節點串接不同服務 (如 Gmail, Slack, LLM)，實現辦公流程自動化。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-ai-tools
 - id: 5048
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -717,7 +717,7 @@ questions:
   correct_index: 2
   explanation: ComfyUI 讓使用者能以節點方式精細控制 Stable Diffusion 的圖像生成流程。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-ai-tools
 - id: 5049
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -732,7 +732,7 @@ questions:
   correct_index: 1
   explanation: 影子 IT 通常發生在 IT 部門管轄之外，削弱了 IT 的管控能力，而非提升。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-integration-risks
 - id: 5050
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -747,7 +747,7 @@ questions:
   correct_index: 2
   explanation: AI 非常擅長生成標準化、重複性的代碼，讓開發者能專注於核心邏輯。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-integration-risks
 - id: 5061
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -762,7 +762,7 @@ questions:
   correct_index: 3
   explanation: No Code 靈活性太低，無法滿足大型企業的複雜邏輯需求；Low Code 提供了必要的擴展性。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-platform-characteristics
 - id: 5062
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -777,7 +777,7 @@ questions:
   correct_index: 3
   explanation: n8n 解決了「API 串接」的繁瑣工作，讓開發者專注於業務邏輯的編排。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-ai-tools
 - id: 5063
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -792,7 +792,7 @@ questions:
   correct_index: 2
   explanation: UI 生成工具專注於「皮」，「骨肉」（後端邏輯）通常仍需開發者自行補完。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-ai-tools
 - id: 5064
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -807,7 +807,7 @@ questions:
   correct_index: 1
   explanation: 影子 IT 源於員工想提高效率的需求。疏導（提供安全工具）通常比圍堵（全面禁止）更有效。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-integration-risks
 - id: 5065
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -822,7 +822,7 @@ questions:
   correct_index: 2
   explanation: AI 是強大的副駕駛，但它會犯錯（幻覺）。人類必須對最終產品的品質與安全性負責。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-integration-risks
 - id: 5066
   chapter_title: No Code / Low Code 平台與 AI 開發工具
@@ -837,7 +837,7 @@ questions:
   correct_index: 0
   explanation: Composer 突破了單一檔案的限制，讓 AI 能像資深工程師一樣進行系統級的重構或功能開發。
   tags:
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-ai-tools
 - id: 11425
   chapter_title: 生成式 AI 的開發工具與應用
@@ -854,7 +854,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-genai-applications
 - id: 11415
   chapter_title: 生成式 AI 的開發工具與應用
@@ -871,7 +871,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-genai-applications
 - id: 11427
   chapter_title: 生成式 AI 的開發工具與應用
@@ -888,7 +888,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-genai-applications
 - id: 11401
   chapter_title: 生成式 AI 的開發工具與應用
@@ -905,7 +905,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-low-code-no-code
 - id: 11413
   chapter_title: 生成式 AI 的開發工具與應用
@@ -922,7 +922,7 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-ai-copilot
 - id: 11437
   chapter_title: 生成式 AI 的開發工具與應用
@@ -939,5 +939,5 @@ questions:
   tags:
   - past-exam
   - 114-4
-  - sec-gen-chapter5
+  - chap-gen-chapter5
   - sec-genai-applications

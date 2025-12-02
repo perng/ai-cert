@@ -1,7 +1,7 @@
 ---
 title: "機器學習治理與倫理"
 order: 5
-label: sec-m4-ch5
+label: chap-m4-ch5
 ---
 
 

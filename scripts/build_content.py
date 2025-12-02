@@ -211,12 +211,51 @@ def process_chapter(md_file, questions_map, image_output_dir=None,
             sec_content = str(sec)
             
             # Find questions for this section
-            # questions_map is a list of questions for this chapter
-            # We filter by section_title matching
-            sec_questions = [
-                q for q in questions_map 
-                if q.get('section_title') == sec_title
-            ]
+            # We filter by section_title matching (fuzzy) or tag matching
+            
+            # 1. Get all header texts in this section for title matching
+            headers = sec.find_all(['h2', 'h3', 'h4', 'h5', 'h6'])
+            candidate_titles = [h.get_text() for h in headers]
+            if sec_title not in candidate_titles:
+                candidate_titles.append(sec_title)
+                
+            sec_questions = []
+            for q in questions_map:
+                is_match = False
+                q_title = q.get('section_title', '').strip()
+                q_tags = q.get('tags', [])
+                
+                # A. Tag Matching
+                if sec_id and sec_id in q_tags:
+                    is_match = True
+                
+                # B. Title Matching
+                if not is_match and q_title:
+                    for cand in candidate_titles:
+                        # Clean candidate: remove numbering "1.1 " and parens "(English)"
+                        # 1. Remove numbering
+                        cand_clean = re.sub(r'^\d+(\.\d+)*\s+', '', cand)
+                        # 2. Remove parens content
+                        cand_clean = re.sub(r'\s*\([^)]*\)', '', cand_clean).strip()
+                        
+                        # Check exact match of cleaned title
+                        if q_title == cand_clean:
+                            is_match = True
+                            break
+                        
+                        # Check if q_title is in cand (fallback)
+                        if q_title in cand:
+                            is_match = True
+                            break
+                            
+                        # Special case for "A vs B" where parens might break simple substring
+                        cand_no_parens = re.sub(r'\([^)]*\)', '', cand)
+                        if q_title.replace(" ", "") == cand_no_parens.replace(" ", ""):
+                            is_match = True
+                            break
+                
+                if is_match:
+                    sec_questions.append(q)
             
             sections.append({
                 "id": current_section_id,

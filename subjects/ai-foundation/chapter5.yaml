@@ -12,8 +12,8 @@ questions:
   correct_index: 3
   explanation: 監督式學習需要輸入資料 (題目) 和對應的標籤 (答案)，就像老師教學生一樣。
   tags:
-  - chap-chapter5
-  - chap-chapter5-summary
+  - chap-ai-foundation-chapter5
+  - chap-ai-foundation-chapter5-summary
 - id: 5002
   chapter_title: 監督式學習演算法
   section_title: 監督式學習概述
@@ -27,7 +27,7 @@ questions:
   correct_index: 2
   explanation: 預測離散的類別（是/否）屬於分類任務。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-classification
 - id: 5003
   chapter_title: 監督式學習演算法
@@ -42,7 +42,7 @@ questions:
   correct_index: 0
   explanation: 預測連續的數值（氣溫）屬於迴歸任務。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-regression
 - id: 5004
   chapter_title: 監督式學習演算法
@@ -57,7 +57,7 @@ questions:
   correct_index: 0
   explanation: KNN 透過觀察最近的鄰居來決定類別，即「近朱者赤」。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-knn
 - id: 5005
   chapter_title: 監督式學習演算法
@@ -72,7 +72,7 @@ questions:
   correct_index: 2
   explanation: K=1 代表只看最近的一個鄰居，容易受雜訊干擾，導致過度擬合。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-knn
 - id: 5006
   chapter_title: 監督式學習演算法
@@ -87,7 +87,7 @@ questions:
   correct_index: 3
   explanation: Naive Bayes 假設特徵之間互不影響（獨立），雖然這在現實中很少見，但簡化了計算。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-naive-bayes
 - id: 5007
   chapter_title: 監督式學習演算法
@@ -102,7 +102,7 @@ questions:
   correct_index: 0
   explanation: Naive Bayes 計算速度快且擅長處理高維度文本特徵，是垃圾郵件過濾的經典選擇。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-naive-bayes
 - id: 5008
   chapter_title: 監督式學習演算法
@@ -117,7 +117,7 @@ questions:
   correct_index: 2
   explanation: 邏輯迴歸透過 Sigmoid 函數輸出機率，通常用於二元分類（如是/否）。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-logistic-regression
 - id: 5009
   chapter_title: 監督式學習演算法
@@ -132,7 +132,7 @@ questions:
   correct_index: 2
   explanation: Sigmoid 函數呈 S 型曲線，能將任意實數映射到 (0, 1) 區間，代表機率。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-logistic-regression
 - id: 5010
   chapter_title: 監督式學習演算法
@@ -147,7 +147,7 @@ questions:
   correct_index: 0
   explanation: SVM 試圖在類別之間畫出一條最寬的「馬路」，即最大化邊界。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-svm
 - id: 5011
   chapter_title: 監督式學習演算法
@@ -162,7 +162,7 @@ questions:
   correct_index: 0
   explanation: Kernel Trick 將資料投影到高維空間，使其變得線性可分。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-svm
 - id: 5012
   chapter_title: 監督式學習演算法
@@ -177,7 +177,7 @@ questions:
   correct_index: 0
   explanation: 決策樹的規則（如年齡 > 30）清晰易懂，非專業人士也能理解，屬於白箱模型。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-decision-tree
 - id: 5013
   chapter_title: 監督式學習演算法
@@ -192,7 +192,7 @@ questions:
   correct_index: 1
   explanation: 決策樹如果長得太深，會死記硬背訓練資料的細節（包含雜訊），導致過度擬合。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-decision-tree
 - id: 5014
   chapter_title: 監督式學習演算法
@@ -207,7 +207,7 @@ questions:
   correct_index: 1
   explanation: 隨機森林由許多棵決策樹組成，透過投票來決定最終結果。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-random-forest
 - id: 5015
   chapter_title: 監督式學習演算法
@@ -222,7 +222,7 @@ questions:
   correct_index: 2
   explanation: Bagging 透過平均多個模型的結果，能有效降低變異，減少過度擬合。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-bagging
 - id: 5016
   chapter_title: 監督式學習演算法
@@ -237,7 +237,7 @@ questions:
   correct_index: 3
   explanation: Boosting 透過循序修正前一個模型的錯誤，能有效降低偏差，提升準確度。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-boosting
 - id: 5017
   chapter_title: 監督式學習演算法
@@ -252,7 +252,7 @@ questions:
   correct_index: 2
   explanation: Bagging (隨機森林) 的樹互不影響可同時訓練 (並行)；Boosting 的樹依賴前一棵樹的結果 (序列)。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-bagging-vs-boosting
 - id: 5018
   chapter_title: 監督式學習演算法
@@ -267,7 +267,7 @@ questions:
   correct_index: 1
   explanation: 線性迴歸通常使用 MSE (預測值與真實值的距離平方和) 來評估誤差。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-linear-regression
 - id: 5019
   chapter_title: 監督式學習演算法
@@ -282,7 +282,7 @@ questions:
   correct_index: 3
   explanation: Lasso 加入絕對值懲罰項，傾向於將不重要的特徵權重壓縮至 0，達到特徵選擇的效果。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-regularized-regression
 - id: 5020
   chapter_title: 監督式學習演算法
@@ -297,7 +297,7 @@ questions:
   correct_index: 0
   explanation: Ridge 加入平方懲罰項，能限制權重大小，防止共線性導致的參數不穩定。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-regularized-regression
 - id: 5021
   chapter_title: 監督式學習演算法
@@ -312,7 +312,7 @@ questions:
   correct_index: 1
   explanation: 決策樹提供清晰的規則路徑，解釋性最強，適合需要合規解釋的場景。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-algo-comparison
 - id: 5022
   chapter_title: 監督式學習演算法
@@ -327,7 +327,7 @@ questions:
   correct_index: 0
   explanation: 基於 Gradient Boosting 的演算法 (如 XGBoost) 因其極高的準確率，是競賽中的常勝軍。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-algo-comparison
 - id: 5023
   chapter_title: 監督式學習演算法
@@ -342,7 +342,7 @@ questions:
   correct_index: 0
   explanation: KNN 在訓練階段只是把資料存起來，直到預測時才計算距離，因此稱為 Lazy Learning。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-knn
 - id: 5024
   chapter_title: 監督式學習演算法
@@ -357,7 +357,7 @@ questions:
   correct_index: 1
   explanation: 只有落在 Margin 邊緣的點（支援向量）會影響 SVM 的決策邊界，其他點都不重要。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-svm
 - id: 5025
   chapter_title: 監督式學習演算法
@@ -372,7 +372,7 @@ questions:
   correct_index: 3
   explanation: 決策樹透過計算熵或吉尼係數來衡量資料的純度，決定如何切割。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-decision-tree
 - id: 5026
   chapter_title: 監督式學習演算法
@@ -387,7 +387,7 @@ questions:
   correct_index: 2
   explanation: 隨機森林對資料進行 Bootstrap 採樣，且在分裂節點時隨機選取部分特徵，以增加多樣性。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-random-forest
 - id: 5027
   chapter_title: 監督式學習演算法
@@ -402,7 +402,7 @@ questions:
   correct_index: 2
   explanation: OOB 資料是那些未被該棵樹採樣到的資料，可直接用來測試該樹的準確度。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-random-forest
 - id: 5028
   chapter_title: 監督式學習演算法
@@ -417,7 +417,7 @@ questions:
   correct_index: 3
   explanation: AdaBoost 會給予前一個模型預測錯誤的樣本更高的權重，讓下一個模型專注學習這些難題。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-boosting
 - id: 5029
   chapter_title: 監督式學習演算法
@@ -432,7 +432,7 @@ questions:
   correct_index: 0
   explanation: 在高維度情況下，一般線性迴歸容易過擬合，正規化迴歸 (Lasso/Ridge) 能透過懲罰項限制模型複雜度。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-regularized-regression
 - id: 5030
   chapter_title: 監督式學習演算法
@@ -447,7 +447,7 @@ questions:
   correct_index: 0
   explanation: 通常以 0.5 為界，大於 0.5 判為正類別，小於 0.5 判為負類別。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-logistic-regression
 - id: 5031
   chapter_title: 監督式學習演算法
@@ -462,7 +462,7 @@ questions:
   correct_index: 0
   explanation: SVM 在小樣本和高維度資料上表現出色，但因計算複雜度高，不適合海量數據。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-svm
 - id: 5032
   chapter_title: 監督式學習演算法
@@ -477,7 +477,7 @@ questions:
   correct_index: 1
   explanation: 決策樹的決策過程完全透明，每一步規則都清晰可見，故稱白箱。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-decision-tree
 - id: 5033
   chapter_title: 監督式學習演算法
@@ -492,7 +492,7 @@ questions:
   correct_index: 1
   explanation: 隨機森林是 Bagging (Bootstrap Aggregating) 的代表性演算法。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-bagging
 - id: 5034
   chapter_title: 監督式學習演算法
@@ -507,7 +507,7 @@ questions:
   correct_index: 3
   explanation: L1 正則化的等高線是菱形，容易與坐標軸相交，導致係數變為 0。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-regularized-regression
 - id: 5035
   chapter_title: 監督式學習演算法
@@ -522,7 +522,7 @@ questions:
   correct_index: 3
   explanation: L2 正則化的等高線是圓形，傾向於讓係數變小但不易為 0。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-regularized-regression
 - id: 5036
   chapter_title: 監督式學習演算法
@@ -537,8 +537,8 @@ questions:
   correct_index: 0
   explanation: 客戶分群若無預先定義的標籤，屬於非監督式學習。
   tags:
-  - chap-chapter5
-  - chap-chapter5-summary
+  - chap-ai-foundation-chapter5
+  - chap-ai-foundation-chapter5-summary
 - id: 5037
   chapter_title: 監督式學習演算法
   section_title: 集成學習
@@ -552,7 +552,7 @@ questions:
   correct_index: 0
   explanation: 因為 Boosting 會拼命修正錯誤，如果錯誤來自雜訊，它也會強行去擬合，導致過擬合。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-bagging-vs-boosting
 - id: 5038
   chapter_title: 監督式學習演算法
@@ -567,7 +567,7 @@ questions:
   correct_index: 3
   explanation: 先驗機率是基於歷史數據統計出的類別原始分佈機率（如垃圾信佔 40%）。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-naive-bayes
 - id: 5039
   chapter_title: 監督式學習演算法
@@ -582,7 +582,7 @@ questions:
   correct_index: 0
   explanation: 葉節點是決策樹的末端，代表最終的預測輸出。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-decision-tree
 - id: 5040
   chapter_title: 監督式學習演算法
@@ -597,7 +597,7 @@ questions:
   correct_index: 0
   explanation: 經過 Sigmoid 函數轉換，輸出值被限制在 0 到 1 之間，代表機率。
   tags:
-  - chap-chapter5
+  - chap-ai-foundation-chapter5
   - sec-logistic-regression
 - id: 5051
   chapter_title: 監督式學習演算法

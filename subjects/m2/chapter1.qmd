@@ -1,7 +1,7 @@
 ---
 title: "AI 專案生命週期"
 order: 1
-label: sec-m2-ch1
+label: chap-m2-ch1
 ---
 
 

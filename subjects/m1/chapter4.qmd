@@ -1,7 +1,7 @@
 ---
 title: "深度學習簡介"
 order: 4
-label: sec-m1-ch4
+label: chap-m1-ch4
 ---
 
 

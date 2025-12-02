@@ -1,7 +1,7 @@
 ---
 title: "可解釋 AI (XAI)"
 order: 10
-label: chap-chapter10
+label: chap-ai-foundation-chapter10
 ---
 
 <!-- # 可解釋 AI (XAI) -->
@@ -86,7 +86,7 @@ label: chap-chapter10
 
 ![反事實解釋](images/counterfactual.webp)
 
-## 本章總結與考點提示 {#chap-chapter10-summary}
+## 本章總結與考點提示 {#chap-ai-foundation-chapter10-summary}
 
 ### 核心概念回顧
 

@@ -1,7 +1,7 @@
 ---
 title: "人工智慧數學基礎"
 order: 1
-label: sec-m1-ch1
+label: chap-m1-ch1
 ---
 
 

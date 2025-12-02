@@ -1,7 +1,7 @@
 ---
 title: "進階機器學習演算法"
 order: 1
-label: sec-m4-ch1
+label: chap-m4-ch1
 ---
 
 

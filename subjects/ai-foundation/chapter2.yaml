@@ -12,7 +12,7 @@ questions:
   correct_index: 2
   explanation: 監督式學習就像老師教學生，必須提供題目（輸入）和標準答案（標籤），讓模型學習兩者之間的關聯。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-supervised-learning
 - id: 2002
   chapter_title: AI 應用問題類型
@@ -27,7 +27,7 @@ questions:
   correct_index: 3
   explanation: 房價預測有明確的歷史數據（輸入）和成交價（標籤），屬於典型的監督式學習（迴歸問題）。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-supervised-learning
 - id: 2003
   chapter_title: AI 應用問題類型
@@ -42,7 +42,7 @@ questions:
   correct_index: 0
   explanation: 系統透過學習已標記為「垃圾信」或「正常信」的郵件特徵來判斷新郵件，這是監督式學習中的分類任務。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-supervised-learning
 - id: 2004
   chapter_title: AI 應用問題類型
@@ -57,7 +57,7 @@ questions:
   correct_index: 1
   explanation: 非監督式學習就像自修，模型必須在沒有標準答案的情況下，自己從數據中尋找隱藏的結構。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-unsupervised-learning
 - id: 2005
   chapter_title: AI 應用問題類型
@@ -72,7 +72,7 @@ questions:
   correct_index: 3
   explanation: 顧客分群通常事先不知道有哪些群體，需要模型自動根據消費行為將相似的客戶聚在一起，屬於非監督式學習。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-unsupervised-learning
 - id: 2006
   chapter_title: AI 應用問題類型
@@ -87,7 +87,7 @@ questions:
   correct_index: 1
   explanation: 異常偵測常使用非監督式學習來找出與正常模式差異極大的數據點（異常值）。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-unsupervised-learning
 - id: 2007
   chapter_title: AI 應用問題類型
@@ -102,7 +102,7 @@ questions:
   correct_index: 2
   explanation: 半監督式學習是為了解決標註成本高昂的問題，利用少量有標籤數據搭配大量無標籤數據來提升學習效果。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-semi-supervised-learning
 - id: 2008
   chapter_title: AI 應用問題類型
@@ -117,7 +117,7 @@ questions:
   correct_index: 2
   explanation: 專業醫生標註 X 光片需要高度專業且耗時，因此利用少量標註資料配合大量未標註資料是較經濟的做法。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-semi-supervised-learning
 - id: 2009
   chapter_title: AI 應用問題類型
@@ -132,7 +132,7 @@ questions:
   correct_index: 2
   explanation: 強化學習透過試誤 (Trial and Error) 以及環境給予的獎勵或懲罰來調整行為，就像訓練寵物一樣。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-reinforcement-learning
 - id: 2010
   chapter_title: AI 應用問題類型
@@ -147,7 +147,7 @@ questions:
   correct_index: 1
   explanation: 代理人 (Agent) 是強化學習中採取行動並進行學習的主體，例如掃地機器人或圍棋程式。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-reinforcement-learning
 - id: 2011
   chapter_title: AI 應用問題類型
@@ -162,7 +162,7 @@ questions:
   correct_index: 2
   explanation: 探索是指嘗試未曾做過的行動，雖然有風險，但有機會發現比目前策略更好的方法。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-reinforcement-learning
 - id: 2012
   chapter_title: AI 應用問題類型
@@ -177,7 +177,7 @@ questions:
   correct_index: 1
   explanation: AlphaGo 透過強化學習進行自我對弈，從數百萬盤棋局中探索出人類未曾發現的致勝策略。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-reinforcement-learning
 - id: 2013
   chapter_title: AI 應用問題類型
@@ -192,7 +192,7 @@ questions:
   correct_index: 1
   explanation: 遷移學習利用預訓練好的強大模型（巨人）來解決新的任務，避免從頭開始訓練，即「站在巨人的肩膀上」。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-transfer-learning
 - id: 2014
   chapter_title: AI 應用問題類型
@@ -207,7 +207,7 @@ questions:
   correct_index: 2
   explanation: 這正是遷移學習的標準流程：先在大數據上預訓練，再於特定任務數據上進行微調。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-transfer-learning
 - id: 2015
   chapter_title: AI 應用問題類型
@@ -222,7 +222,7 @@ questions:
   correct_index: 0
   explanation: 遷移學習通常仍需要少量的特定領域資料進行微調，並非完全不需要新資料。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-transfer-learning
 - id: 2016
   chapter_title: AI 應用問題類型
@@ -237,7 +237,7 @@ questions:
   correct_index: 3
   explanation: 描述性分析 (Descriptive Analysis) 是最基礎的層次，重點在於總結過去發生的事情（如報表）。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-descriptive-analysis
 - id: 2017
   chapter_title: AI 應用問題類型
@@ -252,7 +252,7 @@ questions:
   correct_index: 0
   explanation: 這是在詢問過去發生的事實，屬於描述性分析。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-descriptive-analysis
 - id: 2018
   chapter_title: AI 應用問題類型
@@ -267,7 +267,7 @@ questions:
   correct_index: 1
   explanation: 診斷性分析試圖回答「為什麼發生？」，透過鑽取數據找出成因。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-diagnostic-analysis
 - id: 2019
   chapter_title: AI 應用問題類型
@@ -282,7 +282,7 @@ questions:
   correct_index: 0
   explanation: 這是在探討問題背後的原因，屬於診斷性分析。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-diagnostic-analysis
 - id: 2020
   chapter_title: AI 應用問題類型
@@ -297,7 +297,7 @@ questions:
   correct_index: 2
   explanation: 預測性分析利用歷史數據模型來推估未來的趨勢或事件機率。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-predictive-analysis
 - id: 2021
   chapter_title: AI 應用問題類型
@@ -312,7 +312,7 @@ questions:
   correct_index: 2
   explanation: 這是在預測未來事件（故障）的機率，屬於預測性分析。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-predictive-analysis
 - id: 2022
   chapter_title: AI 應用問題類型
@@ -327,7 +327,7 @@ questions:
   correct_index: 2
   explanation: 處方性分析不僅預測未來，還進一步建議「應該怎麼做」才能達到最佳結果。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-prescriptive-analysis
 - id: 2023
   chapter_title: AI 應用問題類型
@@ -342,7 +342,7 @@ questions:
   correct_index: 2
   explanation: 系統給出了具體的行動建議（改走 B 路線）來優化結果（節省時間），屬於處方性分析。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-prescriptive-analysis
 - id: 2024
   chapter_title: AI 應用問題類型
@@ -357,8 +357,8 @@ questions:
   correct_index: 2
   explanation: 為了驗證模型的泛化能力，通常將資料分為訓練集（學習用）和測試集（考試用）。
   tags:
-  - chap-chapter2
-  - chap-chapter2-summary
+  - chap-ai-foundation-chapter2
+  - chap-ai-foundation-chapter2-summary
 - id: 2025
   chapter_title: AI 應用問題類型
   section_title: 學習範式
@@ -372,7 +372,7 @@ questions:
   correct_index: 2
   explanation: 非監督式學習完全依賴無標籤數據，不需要人類進行標註。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-unsupervised-learning
 - id: 2026
   chapter_title: AI 應用問題類型
@@ -387,7 +387,7 @@ questions:
   correct_index: 3
   explanation: 利用是指根據目前的經驗，選擇預期獎勵最高的行動，以確保穩定的收益。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-reinforcement-learning
 - id: 2027
   chapter_title: AI 應用問題類型
@@ -402,7 +402,7 @@ questions:
   correct_index: 0
   explanation: 這是將從梵谷畫作中學到的「風格特徵」遷移到另一張圖片上，屬於遷移學習的應用。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-transfer-learning
 - id: 2028
   chapter_title: AI 應用問題類型
@@ -417,7 +417,7 @@ questions:
   correct_index: 1
   explanation: 儀表板通常用於監控現狀和回顧歷史數據，屬於描述性分析。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-descriptive-analysis
 - id: 2029
   chapter_title: AI 應用問題類型
@@ -432,7 +432,7 @@ questions:
   correct_index: 1
   explanation: 系統給出了具體的訂貨建議以優化庫存，屬於處方性分析。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-prescriptive-analysis
 - id: 2030
   chapter_title: AI 應用問題類型
@@ -447,7 +447,7 @@ questions:
   correct_index: 0
   explanation: 在不知道群體定義的情況下進行分組，屬於非監督式學習中的分群 (Clustering) 任務。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-unsupervised-learning
 - id: 2031
   chapter_title: AI 應用問題類型
@@ -462,7 +462,7 @@ questions:
   correct_index: 3
   explanation: 預測連續數值（如氣溫）屬於監督式學習中的迴歸 (Regression) 任務。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-supervised-learning
 - id: 2032
   chapter_title: AI 應用問題類型
@@ -477,7 +477,7 @@ questions:
   correct_index: 3
   explanation: 判斷類別（貓或狗）屬於監督式學習中的分類 (Classification) 任務。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-supervised-learning
 - id: 2033
   chapter_title: AI 應用問題類型
@@ -492,7 +492,7 @@ questions:
   correct_index: 3
   explanation: 環境根據代理人的行動給予獎勵 (Reward) 或懲罰，作為學習的依據。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-reinforcement-learning
 - id: 2034
   chapter_title: AI 應用問題類型
@@ -507,7 +507,7 @@ questions:
   correct_index: 3
   explanation: BERT 的「預訓練 + 微調」模式是自然語言處理中遷移學習的經典應用。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-transfer-learning
 - id: 2035
   chapter_title: AI 應用問題類型
@@ -522,7 +522,7 @@ questions:
   correct_index: 2
   explanation: 尋找根本原因 (Root Cause Analysis) 是診斷性分析的核心。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-diagnostic-analysis
 - id: 2036
   chapter_title: AI 應用問題類型
@@ -537,7 +537,7 @@ questions:
   correct_index: 2
   explanation: 半監督式學習的特徵就是結合少量有標籤和大量無標籤資料。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-semi-supervised-learning
 - id: 2037
   chapter_title: AI 應用問題類型
@@ -552,7 +552,7 @@ questions:
   correct_index: 0
   explanation: 機器人透過與環境互動（碰撞）並調整策略（路徑），屬於強化學習。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-reinforcement-learning
 - id: 2038
   chapter_title: AI 應用問題類型
@@ -567,7 +567,7 @@ questions:
   correct_index: 1
   explanation: 預測未來的違約機率，屬於預測性分析。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-predictive-analysis
 - id: 2039
   chapter_title: AI 應用問題類型
@@ -582,7 +582,7 @@ questions:
   correct_index: 0
   explanation: 當目標任務數據稀缺時，利用預訓練模型進行遷移學習是最有效的策略。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-transfer-learning
 - id: 2040
   chapter_title: AI 應用問題類型
@@ -597,7 +597,7 @@ questions:
   correct_index: 0
   explanation: 在監督式學習中，標籤就是我們希望模型學會預測的「正確答案」（如房價、類別）。
   tags:
-  - chap-chapter2
+  - chap-ai-foundation-chapter2
   - sec-supervised-learning
 - id: 2051
   chapter_title: AI 應用與問題類型
