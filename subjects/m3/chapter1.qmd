@@ -1,4 +1,9 @@
-# 大數據生態系統 {#sec-m3-ch1}
+---
+title: "大數據生態系統"
+order: 1
+label: sec-m3-ch1
+---
+
 
 大數據生態系統 (Big Data Ecosystem) 包含了一系列用於處理海量數據的工具和技術。這些技術旨在解決傳統資料庫無法處理的 "3V" 問題：Volume (大量)、Velocity (高速)、Variety (多樣)。
 

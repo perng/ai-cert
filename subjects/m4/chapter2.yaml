@@ -215,10 +215,10 @@ questions:
   text: ImageNet 預訓練模型通常包含多少類的分類能力？
   type: multiple_choice
   options:
-  - 10
-  - 100
-  - 1000
-  - 10000
+  - 10類
+  - 100類
+  - 1000類
+  - 10000類
   correct_index: 2
   explanation: 標準的 ImageNet (ILSVRC) 競賽數據集包含 1000 個類別。
   tags:

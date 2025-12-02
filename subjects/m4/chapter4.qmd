@@ -1,4 +1,9 @@
-# 強化學習 {#sec-m4-ch4}
+---
+title: "強化學習"
+order: 4
+label: sec-m4-ch4
+---
+
 
 強化學習 (Reinforcement Learning, RL) 讓代理透過與環境互動來學習策略，目標是最大化累積獎勵。
 

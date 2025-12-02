@@ -1,4 +1,9 @@
-# 進階分析方法 {#sec-m3-ch3}
+---
+title: "進階分析方法"
+order: 3
+label: sec-m3-ch3
+---
+
 
 進階分析方法 (Advanced Analytics Methods) 幫助我們從數據中挖掘更深層次的價值。
 

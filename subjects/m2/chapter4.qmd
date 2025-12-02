@@ -1,4 +1,9 @@
-# 生成式 AI 與多模態 AI {#sec-m2-ch4}
+---
+title: "生成式 AI 與多模態 AI"
+order: 4
+label: sec-m2-ch4
+---
+
 
 生成式 AI (Generative AI) 與多模態 AI (Multimodal AI) 是當前 AI 發展的熱點，能夠創造全新的內容。
 

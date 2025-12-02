@@ -1,4 +1,9 @@
-# 資料視覺化與報告 {#sec-m3-ch4}
+---
+title: "資料視覺化與報告"
+order: 4
+label: sec-m3-ch4
+---
+
 
 資料視覺化與報告 (Data Visualization & Reporting) 是溝通分析結果的有效手段。一張好的圖表勝過千言萬語。
 

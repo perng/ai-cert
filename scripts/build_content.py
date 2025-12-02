@@ -66,6 +66,10 @@ def render_quarto(file_path):
         except Exception as e:
             print(f"Warning: Failed to parse _quarto.yml: {e}")
 
+    # Check if quarto is installed
+    if shutil.which("quarto") is None:
+        raise RuntimeError("Quarto CLI is not found in PATH.")
+
     cmd = [
         "quarto", "render", str(file_path),
         "--to", "html"
@@ -139,11 +143,16 @@ def process_chapter(md_file, questions_map, image_output_dir=None,
         for img in soup.find_all('img'):
             src = img.get('src')
             if src and not src.startswith(('http', 'https', 'data:')):
-                # Resolve source path (relative to the markdown file)
-                # Quarto usually keeps relative paths. 
-                # e.g. src="images/fig1.webp" -> md_file.parent / "images" / "fig1.webp"
-                img_source_path = (md_file.parent / src).resolve()
+                # Resolve source path (relative to the generated HTML file)
+                # Quarto places generated images relative to the output HTML.
+                img_source_path = (html_path.parent / src).resolve()
                 
+                # Fallback: Check relative to source markdown if not found in output
+                if not img_source_path.exists():
+                    img_source_path_md = (md_file.parent / src).resolve()
+                    if img_source_path_md.exists():
+                        img_source_path = img_source_path_md
+                        
                 if img_source_path.exists():
                     # Destination: flat structure in assets/images/
                     # To avoid collisions, we could prefix, but for now we'll just use the filename
@@ -202,57 +211,13 @@ def process_chapter(md_file, questions_map, image_output_dir=None,
             sec_content = str(sec)
             
             # Find questions for this section
-            # We filter by section_title matching (fuzzy) or tag matching
+            # questions_map is a list of questions for this chapter
+            # We filter by section_title matching
+            sec_questions = [
+                q for q in questions_map 
+                if q.get('section_title') == sec_title
+            ]
             
-            # 1. Get all header texts in this section for title matching
-            headers = sec.find_all(['h2', 'h3', 'h4', 'h5', 'h6'])
-            candidate_titles = [h.get_text() for h in headers]
-            if sec_title not in candidate_titles:
-                candidate_titles.append(sec_title)
-                
-            sec_questions = []
-            for q in questions_map:
-                # Check if question is already assigned? (Optional, but let's allow multiple placement if relevant)
-                
-                is_match = False
-                q_title = q.get('section_title', '').strip()
-                q_tags = q.get('tags', [])
-                
-                # A. Tag Matching
-                if sec_id and sec_id in q_tags:
-                    is_match = True
-                
-                # B. Title Matching
-                if not is_match and q_title:
-                    for cand in candidate_titles:
-                        # Clean candidate: remove numbering "1.1 " and parens "(English)"
-                        # 1. Remove numbering
-                        cand_clean = re.sub(r'^\d+(\.\d+)*\s+', '', cand)
-                        # 2. Remove parens content
-                        cand_clean = re.sub(r'\s*\([^)]*\)', '', cand_clean).strip()
-                        
-                        # Check exact match of cleaned title
-                        if q_title == cand_clean:
-                            is_match = True
-                            break
-                        
-                        # Check if q_title is in cand (fallback)
-                        # e.g. "AI 的定義與範疇" in "1.1 AI 的定義與範疇"
-                        if q_title in cand:
-                            is_match = True
-                            break
-                            
-                        # Special case for "A vs B" where parens might break simple substring
-                        # e.g. "弱 AI vs. 強 AI" vs "弱 AI (Narrow AI) vs. 強 AI (General AI/AGI)"
-                        # Remove all parens from cand
-                        cand_no_parens = re.sub(r'\([^)]*\)', '', cand)
-                        if q_title.replace(" ", "") == cand_no_parens.replace(" ", ""):
-                            is_match = True
-                            break
-                
-                if is_match:
-                    sec_questions.append(q)
-
             sections.append({
                 "id": current_section_id,
                 "order": section_order,
@@ -327,6 +292,7 @@ def main():
         # Process Chapters
         # Find .md and .qmd files
         md_files = sorted(list(sub_dir.glob("*.md")) + list(sub_dir.glob("*.qmd")))
+        print(f"    Found {len(md_files)} files in {sub_dir.name}: {[f.name for f in md_files]}")
         
         for md_file in md_files:
             if md_file.name == "index.md" or md_file.name == "index.qmd":
@@ -348,16 +314,24 @@ def main():
                         q['textContent'] = q.pop('text')
                     if 'correct_index' in q:
                         q['correctIndex'] = q.pop('correct_index')
+                    
+                    # Ensure options are strings
+                    if 'options' in q and isinstance(q['options'], list):
+                        q['options'] = [str(opt) for opt in q['options']]
                 print(f"    Loaded {len(questions)} questions")
             else:
                 print(f"    No questions file found (looked for {yaml_name})")
             
             # Pass counters
-            chapter_obj, global_chapter_id, global_section_id = process_chapter(
-                md_file, questions, image_output_dir, 
-                global_chapter_id, global_section_id
-            )
-            subject_obj['chapters'].append(chapter_obj)
+            try:
+                chapter_obj, global_chapter_id, global_section_id = process_chapter(
+                    md_file, questions, image_output_dir, 
+                    global_chapter_id, global_section_id
+                )
+                subject_obj['chapters'].append(chapter_obj)
+            except Exception as e:
+                print(f"    Error processing chapter {md_file.name}: {e}")
+                continue
             
         final_json['subjects'].append(subject_obj)
         

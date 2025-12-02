@@ -1,4 +1,9 @@
-# 大數據治理 {#sec-m3-ch5}
+---
+title: "大數據治理"
+order: 5
+label: sec-m3-ch5
+---
+
 
 大數據治理 (Big Data Governance) 確保數據的可用性、完整性和安全性。它是一套策略、流程和技術的組合。
 

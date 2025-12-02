@@ -425,10 +425,10 @@ questions:
   text: 留一法交叉驗證 (Leave-One-Out CV) 是 K-Fold 的一種特例，其中 K 等於？
   type: multiple_choice
   options:
-  - 1
-  - 5
-  - 10
-  - 樣本總數 N
+  - K=1
+  - K=5
+  - K=10
+  - K=N (N 為樣本總數)
   correct_index: 3
   explanation: LOOCV 每次只留 1 個樣本驗證，其餘 N-1 個訓練，重複 N 次。計算成本高但評估偏差小。
   tags:
