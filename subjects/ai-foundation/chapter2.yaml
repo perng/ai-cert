@@ -677,10 +677,10 @@ questions:
   text: 從「預測性分析 (Predictive)」進階到「處方性分析 (Prescriptive)」，主要的差異在於？
   type: multiple_choice
   options:
-  - 預測性分析處理過去的數據，處方性分析處理未來的數據 (Predictive Handles Past Data, Prescriptive Handles Future Data)
-  - 預測性分析準確度較低，處方性分析準確度較高 (Predictive Has Lower Accuracy, Prescriptive Has Higher Accuracy)
-  - 預測性分析告訴你「未來會發生什麼」，處方性分析告訴你「該做什麼才能達成最佳結果」(Predictive: What Will Happen, Prescriptive: What to Do for Best Results)
-  - 預測性分析使用 AI，處方性分析使用人工直覺 (Predictive Uses AI, Prescriptive Uses Human Intuition)
+  - "預測性分析處理過去的數據，處方性分析處理未來的數據 (Predictive Handles Past Data, Prescriptive Handles Future Data)"
+  - "預測性分析準確度較低，處方性分析準確度較高 (Predictive Has Lower Accuracy, Prescriptive Has Higher Accuracy)"
+  - "預測性分析告訴你「未來會發生什麼」，處方性分析告訴你「該做什麼才能達成最佳結果」(Predictive: What Will Happen, Prescriptive: What to Do for Best Results)"
+  - "預測性分析使用 AI，處方性分析使用人工直覺 (Predictive Uses AI, Prescriptive Uses Human Intuition)"
   correct_index: 2
   explanation: 處方性分析不僅預測未來，還進一步提供行動建議與決策優化，是數據分析的最高層次。
   tags:

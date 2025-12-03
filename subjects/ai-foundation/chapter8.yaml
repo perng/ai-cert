@@ -648,8 +648,7 @@ questions:
   - 合作關係，互相幫助 (Cooperative Relationship, Mutual Assistance)，共同合作的關係。
   - 主從關係，Generator 聽命於 Discriminator (Master-Slave Relationship: Generator Obeys Discriminator)，上下級關係。
   - 毫無關係，各自訓練 (No Relationship, Training Separately)，完全獨立的訓練。
-  - 零和賽局 (Zero-Sum Game)，Generator 試圖騙過 Discriminator，Discriminator 試圖抓出 Generator (Zero-Sum Game: Generator Tries to Fool Discriminator, Discriminator Tries to Catch Generator)
-    的假貨
+  - "零和賽局 (Zero-Sum Game)，Generator 試圖騙過 Discriminator，Discriminator 試圖抓出 Generator (Zero-Sum Game: Generator Tries to Fool Discriminator, Discriminator Tries to Catch Generator) 的假貨"
   correct_index: 3
   explanation: GAN 的強大來自於這種「道高一尺，魔高一丈」的對抗過程，迫使 Generator 生成越來越逼真的數據。
   tags:
@@ -803,7 +802,7 @@ questions:
   type: multiple_choice
   options:
   - 老師教學生 (Teacher Teaching Students)，屬於監督式學習的比喻。
-  - 偽鈔集團與警察的攻防 (零和賽局) (Counterfeit Gang vs. Police: Zero-Sum Game)
+  - "偽鈔集團與警察的攻防 (零和賽局) (Counterfeit Gang vs. Police: Zero-Sum Game)"
   - 尋找寶藏 (Finding Treasure)，探索未知的過程。
   - 堆積木 (Stacking Blocks)，逐步建構的過程。
   correct_index: 1

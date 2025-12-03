@@ -614,10 +614,10 @@ questions:
   text: Transformer 模型最早是在哪一年提出的？
   type: multiple_choice
   options:
-  - '2020' (2020)
-  - '2017' (2017)
-  - '2015' (2015)
-  - '2010' (2010)
+  - "'2020' (2020)"
+  - "'2017' (2017)"
+  - "'2015' (2015)"
+  - "'2010' (2010)"
   correct_index: 1
   explanation: Google 於 2017 年發表《Attention Is All You Need》論文，提出了 Transformer 架構。
   tags:
@@ -1149,8 +1149,8 @@ questions:
   type: multiple_choice
   options:
   - 0 或極低值 (0 or Very Low)
-  - '0.7' (0.7)
-  - '1.0' (1.0)
+  - "'0.7' (0.7)"
+  - "'1.0' (1.0)"
   - 任意值 (Any Value)
   correct_index: 0
   explanation: 低溫會使機率分佈變尖銳，模型傾向選擇機率最高的詞，適合需要確定性的任務。

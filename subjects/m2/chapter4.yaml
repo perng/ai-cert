@@ -790,10 +790,10 @@ questions:
   text: 情境：GAN 訓練達到「納什均衡」時，判別器的輸出機率通常接近？
   type: multiple_choice
   options:
-  - '0' (Fake)
-  - '1' (Real)
-  - 0.5 (無法區分真假) (Indistinguishable)
-  - '0.9' (High Confidence)
+  - "'0' (Fake)"
+  - "'1' (Real)"
+  - "0.5 (無法區分真假) (Indistinguishable)"
+  - "'0.9' (High Confidence)"
   correct_index: 2
   explanation: 此時生成器生成的數據已完美擬合真實分佈，判別器只能隨機猜測。
   tags:

@@ -6,7 +6,7 @@ questions:
   type: multiple_choice
   options:
   - 增加資料量 (Increasing Data Volume)，擴充訓練資料集。
-  - 公平評估模型效能，避免作弊（偷看答案）(Fairly Evaluating Model Performance, Avoiding Cheating: Peeking at Answers)
+  - "公平評估模型效能，避免作弊（偷看答案）(Fairly Evaluating Model Performance, Avoiding Cheating: Peeking at Answers)"
   - 減少計算時間 (Reducing Computation Time)，縮短處理時間。
   - 方便儲存 (Convenient Storage)，簡化資料管理。
   correct_index: 1
@@ -248,7 +248,7 @@ questions:
   - 使用 Dropout (Using Dropout)，隨機關閉部分神經元防止過擬合。
   - 使用 L2 正則化 (Using L2 Regularization)，限制權重大小防止過擬合。
   - 增加資料量 (Increasing Data Volume)，擴充訓練資料集。
-  - 增加模型複雜度（如加深網路）(Increasing Model Complexity: e.g., Deepening Network)，會加劇過擬合。
+  - "增加模型複雜度（如加深網路）(Increasing Model Complexity: e.g., Deepening Network)，會加劇過擬合。"
   correct_index: 3
   explanation: 增加模型複雜度會讓模型更容易死記硬背，反而會加重過度擬合。
   tags:
@@ -261,7 +261,7 @@ questions:
   text: L1 正則化 (Lasso) 的特殊效果是？
   type: multiple_choice
   options:
-  - 讓不重要的特徵權重變成 0 (特徵選擇) (Making Unimportant Feature Weights Zero: Feature Selection)
+  - "讓不重要的特徵權重變成 0 (特徵選擇) (Making Unimportant Feature Weights Zero: Feature Selection)"
   - 讓權重變大 (Making Weights Larger)，放大模型參數。
   - 讓所有權重相等 (Making All Weights Equal)，統一參數數值。
   - 增加計算時間 (Increasing Computation Time)，延長處理時間。
@@ -360,7 +360,7 @@ questions:
   - Precision 和 Recall (Precision and Recall)，精確率與召回率。
   - Accuracy 和 Loss (Accuracy and Loss)，準確率與損失函數。
   - TP 和 TN (TP and TN)，真陽性與真陰性。
-  - FPR (誤報率) 和 TPR (召回率) (FPR: False Positive Rate and TPR: Recall)，假陽性率與真陽性率。
+  - "FPR (誤報率) 和 TPR (召回率) (FPR: False Positive Rate and TPR: Recall)，假陽性率與真陽性率。"
   correct_index: 3
   explanation: ROC 曲線描繪了在不同門檻下，FPR (False Positive Rate) 與 TPR (True Positive Rate)
     的權衡關係。
@@ -407,7 +407,7 @@ questions:
   type: multiple_choice
   options:
   - 讓權重變成 0 (Making Weights Zero)，屬於 L1 正則化的效果。
-  - 讓權重變小（趨近於 0 但不為 0）(Making Weights Smaller: Approaching Zero But Not Zero)
+  - "讓權重變小（趨近於 0 但不為 0）(Making Weights Smaller: Approaching Zero But Not Zero)"
   - 隨機改變權重 (Randomly Changing Weights)，無系統性的參數調整。
   - 讓權重變大 (Making Weights Larger)，放大模型參數。
   correct_index: 1
@@ -470,7 +470,7 @@ questions:
   text: 解決欠擬合 (Underfitting) 的有效方法是？
   type: multiple_choice
   options:
-  - 增加模型複雜度（如增加層數、特徵）(Increasing Model Complexity: e.g., Adding Layers, Features)，會加劇過擬合。
+  - "增加模型複雜度（如增加層數、特徵）(Increasing Model Complexity: e.g., Adding Layers, Features)，會加劇過擬合。"
   - 增加正則化強度 (Increasing Regularization Strength)，限制模型複雜度防止過擬合。
   - 減少特徵 (Reducing Features)，降低模型複雜度。
   - 減少訓練時間 (Reducing Training Time)，縮短訓練週期。
@@ -614,9 +614,9 @@ questions:
   text: K-fold 中的 K 通常設為多少？
   type: multiple_choice
   options:
-  - '100'，將資料分為 100 個子集進行交叉驗證。
-  - '1'，僅進行單次驗證。
-  - '1000'，將資料分為 1000 個子集進行交叉驗證。
+  - "'100'，將資料分為 100 個子集進行交叉驗證。"
+  - "'1'，僅進行單次驗證。"
+  - "'1000'，將資料分為 1000 個子集進行交叉驗證。"
   - 5 或 10 (5 or 10)，常用的 K 值選擇。
   correct_index: 3
   explanation: K=5 或 K=10 是經驗上最常用的數值，能在計算成本與評估穩健性間取得平衡。

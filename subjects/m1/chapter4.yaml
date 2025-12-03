@@ -971,9 +971,9 @@ questions:
   type: multiple_choice
   options:
   - x
-  - '0' (Zero)
-  - '1' (One)
-  - '-1' (Negative One)
+  - "'0' (Zero)"
+  - "'1' (One)"
+  - "'-1' (Negative One)"
   correct_index: 1
   explanation: ReLU 定義為 max(0, x)，負值部分被截斷為 0。
   tags:

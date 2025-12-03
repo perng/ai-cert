@@ -1091,8 +1091,8 @@ questions:
     協助規劃多場跨部門行銷活動，需要同 時考量預算、場地、時程與人力資源，並比較不同方案的可行性。 (114年第四梯次)
   type: multiple_choice
   options:
-  - 情境一採用 CoT，情境二採用ToT (Scenario 1: CoT, Scenario 2: ToT)
-  - 情境一採用 ToT，情境二採用CoT (Scenario 1: ToT, Scenario 2: CoT)
+  - "情境一採用 CoT，情境二採用ToT (Scenario 1: CoT, Scenario 2: ToT)"
+  - "情境一採用 ToT，情境二採用CoT (Scenario 1: ToT, Scenario 2: CoT)"
   - 情境一與情境二都適合 CoT (Both CoT)
   - 情境一與情境二都適合 ToT (Both ToT)
   correct_index: 0

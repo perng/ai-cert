@@ -1127,6 +1127,16 @@ questions:
 - chapter_title: 大數據生態系統
   section_title: 儲存解決方案
   text: 情境：資料湖 (Data Lake) 與資料倉儲 (Data Warehouse) 的主要區別在於？
+  type: multiple_choice
+  options:
+  - 資料倉儲儲存原始數據，資料湖儲存結構化數據
+  - 資料倉儲是 Schema-on-Write (寫入時定義)，資料湖是 Schema-on-Read (讀取時定義)
+  - 資料倉儲不支援 SQL，資料湖支援 SQL
+  - 資料倉儲成本較低，資料湖成本較高
+  correct_index: 1
+  explanation: 資料倉儲需預先定義 Schema (ETL)，資料湖則可儲存任意格式原始數據，讀取時再解析。
+  tags:
+  - chap-m3-ch1
   - sec-storage-solutions
   id: 5171
   usage: both

@@ -8,7 +8,7 @@ questions:
   - 訓練寵物（獎勵與懲罰）(Training Pets with Rewards and Punishments)，屬於強化學習的模式。
   - 隨機猜測 (Random Guessing)，無學習過程的隨機預測。
   - 嬰兒自我探索 (Infant Self-Exploration)，屬於非監督式學習的模式。
-  - 人類的正規教育（老師給題目和答案）(Formal Human Education: Teacher Provides Questions and Answers)
+  - "人類的正規教育（老師給題目和答案）(Formal Human Education: Teacher Provides Questions and Answers)"
   correct_index: 3
   explanation: 監督式學習需要輸入資料 (題目) 和對應的標籤 (答案)，就像老師教學生一樣。
   tags:
@@ -261,10 +261,10 @@ questions:
   text: 下列關於 Bagging 和 Boosting 的比較，何者正確？
   type: multiple_choice
   options:
-  - Bagging 是序列訓練，Boosting 是並行訓練 (Bagging: Sequential, Boosting: Parallel)，訓練順序相反。
-  - 兩者都是序列訓練 (Both Are Sequential Training)，都需要依序訓練模型。
-  - Bagging 是並行訓練，Boosting 是序列訓練 (Bagging: Parallel, Boosting: Sequential)
-  - 兩者都是並行訓練 (Both Are Parallel Training)，都可以同時訓練多個模型。
+  - "Bagging 是序列訓練，Boosting 是並行訓練 (Bagging: Sequential, Boosting: Parallel)，訓練順序相反。"
+  - "兩者都是序列訓練 (Both Are Sequential Training)，都需要依序訓練模型。"
+  - "Bagging 是並行訓練，Boosting 是序列訓練 (Bagging: Parallel, Boosting: Sequential)"
+  - "兩者都是並行訓練 (Both Are Parallel Training)，都可以同時訓練多個模型。"
   correct_index: 2
   explanation: Bagging (隨機森林) 的樹互不影響可同時訓練 (並行)；Boosting 的樹依賴前一棵樹的結果 (序列)。
   tags:
@@ -296,7 +296,7 @@ questions:
   - 處理共線性 (Handling Multicollinearity)，解決特徵間高度相關的問題。
   - 將權重變大 (Increasing Weights)，放大模型參數的數值。
   - 增加模型複雜度 (Increasing Model Complexity)，讓模型更複雜以學習更多模式。
-  - 特徵選擇 (將不重要特徵權重變為 0) (Feature Selection: Setting Unimportant Feature Weights to Zero)
+  - "特徵選擇 (將不重要特徵權重變為 0) (Feature Selection: Setting Unimportant Feature Weights to Zero)"
   correct_index: 3
   explanation: Lasso 加入絕對值懲罰項，傾向於將不重要的特徵權重壓縮至 0，達到特徵選擇的效果。
   tags:
@@ -453,7 +453,7 @@ questions:
   text: 如果資料特徵比資料筆數還多 (High Dimensionality)，哪種迴歸模型較適合？
   type: multiple_choice
   options:
-  - Lasso 或 Ridge 回歸 (正規化迴歸) (Lasso or Ridge Regression: Regularized Regression)，透過正則化防止過擬合。
+  - "Lasso 或 Ridge 回歸 (正規化迴歸) (Lasso or Ridge Regression: Regularized Regression)，透過正則化防止過擬合。"
   - 一般線性迴歸 (Ordinary Linear Regression)，無正則化的標準線性迴歸。
   - KNN (K-Nearest Neighbors)，基於距離計算的分類演算法。
   - Naive Bayes，基於機率的分類演算法。
@@ -469,10 +469,10 @@ questions:
   text: 邏輯迴歸的決策邊界通常預設為多少機率？
   type: multiple_choice
   options:
-  - '0.5'，邏輯迴歸的標準決策閾值。
-  - '0.9'，較高的決策閾值，更保守的預測。
-  - '0.1'，較低的決策閾值，更積極的預測。
-  - '0.0'，極端的決策閾值，幾乎所有樣本都被預測為正類別。
+  - "'0.5'，邏輯迴歸的標準決策閾值。"
+  - "'0.9'，較高的決策閾值，更保守的預測。"
+  - "'0.1'，較低的決策閾值，更積極的預測。"
+  - "'0.0'，極端的決策閾值，幾乎所有樣本都被預測為正類別。"
   correct_index: 0
   explanation: 通常以 0.5 為界，大於 0.5 判為正類別，小於 0.5 判為負類別。
   tags:
@@ -661,8 +661,8 @@ questions:
   text: Bagging (如 Random Forest) 與 Boosting (如 XGBoost) 的主要區別在於？
   type: multiple_choice
   options:
-  - Bagging 是串列訓練，Boosting 是平行訓練 (Bagging: Sequential, Boosting: Parallel)，訓練順序相反。
-  - Bagging 透過並行訓練多個獨立模型來降低變異數 (Variance)，Boosting 透過循序修正前一個模型的錯誤來降低偏差 (Bias) (Bagging: Parallel Training to Reduce Variance, Boosting: Sequential Error Correction to Reduce Bias)
+  - "Bagging 是串列訓練，Boosting 是平行訓練 (Bagging: Sequential, Boosting: Parallel)，訓練順序相反。"
+  - "Bagging 透過並行訓練多個獨立模型來降低變異數 (Variance)，Boosting 透過循序修正前一個模型的錯誤來降低偏差 (Bias) (Bagging: Parallel Training to Reduce Variance, Boosting: Sequential Error Correction to Reduce Bias)"
   - Bagging 只能用於分類，Boosting 只能用於回歸 (Bagging Only for Classification, Boosting Only for Regression)，任務類型限制。
   - Bagging 容易過擬合，Boosting 不容易過擬合 (Bagging Prone to Overfitting, Boosting Not Prone to Overfitting)，過擬合傾向相反。
   correct_index: 1

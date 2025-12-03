@@ -142,40 +142,6 @@ questions:
   tags:
   - chap-ai-foundation-chapter11
   - sec-eu-ai-act
-  usage: quiz
-- id: 11010
-  chapter_title: AI 治理、法規與倫理
-  section_title: 台灣與國際法規架構
-  text: 根據 EU AI Act，招聘系統或醫療器材 AI 屬於哪一級風險？
-  type: multiple_choice
-  options:
-  - 有限風險 (Limited Risk)，風險程度有限。
-  - 最小風險 (Minimal Risk)，風險程度極低。
-  - 不可接受風險 (Unacceptable Risk)，完全禁止的風險等級。
-  - 高風險 (High Risk) - 嚴格監管 (High Risk: Strict Regulation)
-  correct_index: 3
-  explanation: 這些應用直接影響人們的生計與健康，被列為高風險，需通過嚴格的合規評估。
-  tags:
-  - chap-ai-foundation-chapter11
-  - sec-eu-ai-act
-  usage: quiz
-- id: 11011
-  chapter_title: AI 治理、法規與倫理
-  section_title: 台灣與國際法規架構
-  text: 根據 EU AI Act，聊天機器人 (Chatbot) 屬於哪一級風險，需履行什麼義務？
-  type: multiple_choice
-  options:
-  - 有限風險 (Limited Risk)，需履行透明度義務（告知是 AI）(Limited Risk: Must Fulfill Transparency Obligation: Inform That It Is AI)
-  - 不可接受風險，需禁止 (Unacceptable Risk: Must Be Prohibited)，完全禁止使用。
-  - 高風險，需審查 (High Risk: Must Be Reviewed)，需要嚴格審查。
-  - 最小風險，不需監管 (Minimal Risk: No Regulation Required)，幾乎不需要監管。
-  correct_index: 0
-  explanation: 使用者有權知道自己正在與機器互動，因此必須揭露 AI 身分。
-  tags:
-  - chap-ai-foundation-chapter11
-  - sec-eu-ai-act
-  usage: both
-- id: 11012
   chapter_title: AI 治理、法規與倫理
   section_title: AI 產品評測標準
   text: 數位發展部 AI 產品評測中心的評測指標不包含下列何者？

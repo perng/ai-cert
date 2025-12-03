@@ -731,7 +731,7 @@ questions:
   options:
   - 刪除該筆資料 (Delete Row)
   - 平均值 (Mean)，適用於分佈均勻的數值
-  - '0' (Zero Imputation)
+  - "'0' (Zero Imputation)"
   - 最大值 (Maximum Value)
   correct_index: 1
   explanation: 對於數值型且分佈正常的資料，使用平均值填補是常見且合理的做法。

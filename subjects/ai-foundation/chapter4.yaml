@@ -37,10 +37,10 @@ questions:
   text: 標準化 (Standardization / Z-score) 的轉換公式為何？
   type: multiple_choice
   options:
-  - (x - min) / (max - min)，正規化 (Normalization) 的轉換公式。
-  - (x - mean) / standard_deviation，標準化 (Standardization) 的轉換公式。
-  - log(x)，對數轉換 (Log Transformation) 的轉換公式。
-  - x * 2，線性縮放的轉換公式。
+  - "(x - min) / (max - min)，正規化 (Normalization) 的轉換公式。"
+  - "(x - mean) / standard_deviation，標準化 (Standardization) 的轉換公式。"
+  - "log(x)，對數轉換 (Log Transformation) 的轉換公式。"
+  - "x * 2，線性縮放的轉換公式。"
   correct_index: 1
   explanation: 標準化是將數值減去平均數後，再除以標準差，使資料呈現平均為 0、標準差為 1 的分佈。
   tags:
@@ -53,10 +53,10 @@ questions:
   text: 正規化 (Normalization / Min-Max Scaling) 通常將資料壓縮到哪個範圍？
   type: multiple_choice
   options:
-  - '[0, 100]'，將資料壓縮到 0 到 100 的範圍。
-  - '[0, 1]'，正規化 (Min-Max Scaling) 的標準範圍。
-  - '[-1, 1]'，將資料壓縮到 -1 到 1 的範圍。
-  - '[-infinity, infinity]'，無限制的數值範圍。
+  - "'[0, 100]'，將資料壓縮到 0 到 100 的範圍。"
+  - "'[0, 1]'，正規化 (Min-Max Scaling) 的標準範圍。"
+  - "'[-1, 1]'，將資料壓縮到 -1 到 1 的範圍。"
+  - "'[-infinity, infinity]'，無限制的數值範圍。"
   correct_index: 1
   explanation: Min-Max Scaling 將資料線性轉換到 [0, 1] 之間，適用於對範圍敏感的演算法或影像處理。
   tags:
