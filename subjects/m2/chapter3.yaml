@@ -5,10 +5,10 @@ questions:
   text: 在電腦中，一張 RGB 彩色影像通常如何表示？
   type: multiple_choice
   options:
-  - 一維陣列
-  - 二維矩陣 (高度 x 寬度)
-  - 三維矩陣 (高度 x 寬度 x 3)
-  - 四維張量
+  - 一維陣列 (1D Array)
+  - 二維矩陣 (高度 x 寬度) (2D Matrix)
+  - 三維矩陣 (高度 x 寬度 x 3) (3D Matrix - HxWx3)
+  - 四維張量 (4D Tensor)
   correct_index: 2
   explanation: 彩色影像由紅、綠、藍 (RGB) 三個顏色通道組成，因此每個像素點有 3 個數值，形成三維結構。
   tags:
@@ -21,10 +21,10 @@ questions:
   text: 卷積神經網路 (CNN) 中的「卷積層 (Convolutional Layer)」主要功能是？
   type: multiple_choice
   options:
-  - 降低影像維度
-  - 提取影像的局部特徵 (如邊緣、紋理)
-  - 進行分類
-  - 增加影像亮度
+  - 降低影像維度 (Reduce Dimension)
+  - 提取影像的局部特徵 (如邊緣、紋理) (Extract Local Features)
+  - 進行分類 (Classification)
+  - 增加影像亮度 (Increase Brightness)
   correct_index: 1
   explanation: 卷積層利用濾鏡 (Filter/Kernel) 在影像上滑動，捕捉影像中的局部模式，這是 CNN 識別物體的基礎。
   tags:
@@ -38,9 +38,9 @@ questions:
   type: multiple_choice
   options:
   - 降低特徵圖的維度 (Downsampling)
-  - 減少參數量與計算量
-  - 增加模型的平移不變性
-  - 增加特徵圖的解析度
+  - 減少參數量與計算量 (Reduce Parameters & Computation)
+  - 增加模型的平移不變性 (Translation Invariance)
+  - 增加特徵圖的解析度 (Increase Resolution)
   correct_index: 3
   explanation: 池化層透過選取區域最大值 (Max Pooling) 或平均值，會縮小特徵圖的尺寸（解析度），而非增加。
   tags:
@@ -53,10 +53,10 @@ questions:
   text: VGG 模型的一個顯著特點是？
   type: multiple_choice
   options:
-  - 使用 7x7 大卷積核
-  - 全面使用 3x3 小卷積核來堆疊深層網路
-  - 引入殘差連接
-  - 參數量極少
+  - 使用 7x7 大卷積核 (Large Kernels)
+  - 全面使用 3x3 小卷積核來堆疊深層網路 (Stacking Small 3x3 Kernels)
+  - 引入殘差連接 (Residual Connections)
+  - 參數量極少 (Few Parameters)
   correct_index: 1
   explanation: VGG 證明了堆疊多個小尺寸 (3x3) 卷積層可以達到與大尺寸卷積層相同的感受野，但參數更少且非線性更強。
   tags:
@@ -69,10 +69,10 @@ questions:
   text: ResNet (殘差網路) 解決了深層神經網路訓練中的什麼關鍵問題？
   type: multiple_choice
   options:
-  - 過擬合
+  - 過擬合 (Overfitting)
   - 梯度消失 (Vanishing Gradient)
-  - 計算速度慢
-  - 資料不足
+  - 計算速度慢 (Slow Computation)
+  - 資料不足 (Insufficient Data)
   correct_index: 1
   explanation: 透過「捷徑 (Shortcut)」連接，梯度可以直接傳回前面的層，使得訓練上百層甚至上千層的網路成為可能。
   tags:
@@ -85,10 +85,10 @@ questions:
   text: 物件偵測 (Object Detection) 與影像分類的主要區別在於？
   type: multiple_choice
   options:
-  - 物件偵測不需要分類
-  - 物件偵測不僅要分類，還要定位出物體的位置
-  - 影像分類比較難
-  - 物件偵測只能處理黑白影像
+  - 物件偵測不需要分類 (No Classification)
+  - 物件偵測不僅要分類，還要定位出物體的位置 (Classify & Localize)
+  - 影像分類比較難 (Classification is Harder)
+  - 物件偵測只能處理黑白影像 (Grayscale Only)
   correct_index: 1
   explanation: 分類回答「是什麼」，偵測回答「是什麼」以及「在哪裡」。
   tags:
@@ -101,10 +101,10 @@ questions:
   text: YOLO (You Only Look Once) 演算法的核心優勢是？
   type: multiple_choice
   options:
-  - 準確率最高
-  - 速度極快，能實現即時偵測
-  - 參數量最少
-  - 不需要訓練
+  - 準確率最高 (Highest Accuracy)
+  - 速度極快，能實現即時偵測 (Real-time Detection)
+  - 參數量最少 (Fewest Parameters)
+  - 不需要訓練 (No Training Needed)
   correct_index: 1
   explanation: YOLO 將偵測視為單一回歸問題，一次掃描即可完成定位與分類，速度遠快於兩階段的 R-CNN 系列。
   tags:
@@ -117,10 +117,10 @@ questions:
   text: 評估物件偵測模型準確度的指標 IoU (Intersection over Union) 是指？
   type: multiple_choice
   options:
-  - 預測框與真實框的重疊面積 / 聯集面積
-  - 預測框面積 / 真實框面積
-  - 真實框面積 / 預測框面積
-  - 重疊面積 x 聯集面積
+  - 預測框與真實框的重疊面積 / 聯集面積 (Intersection / Union)
+  - 預測框面積 / 真實框面積 (Pred / GT)
+  - 真實框面積 / 預測框面積 (GT / Pred)
+  - 重疊面積 x 聯集面積 (Intersection x Union)
   correct_index: 0
   explanation: IoU 衡量預測位置與真實位置的吻合程度，值越接近 1 代表定位越精準。
   tags:
@@ -133,10 +133,10 @@ questions:
   text: 語義分割 (Semantic Segmentation) 與實例分割 (Instance Segmentation) 的區別是？
   type: multiple_choice
   options:
-  - 語義分割區分個體，實例分割不區分
-  - 實例分割區分同一類別中的不同個體，語義分割只區分不同類別
-  - 兩者完全相同
-  - 語義分割用於影片，實例分割用於圖片
+  - 語義分割區分個體，實例分割不區分 (Semantic Distinguishes Instances)
+  - 實例分割區分同一類別中的不同個體，語義分割只區分不同類別 (Instance Distinguishes Individuals)
+  - 兩者完全相同 (Identical)
+  - 語義分割用於影片，實例分割用於圖片 (Video vs Image)
   correct_index: 1
   explanation: 語義分割將所有「人」視為同一類（紅色）；實例分割則會區分出「這個人」和「那個人」（不同顏色）。
   tags:
@@ -149,10 +149,10 @@ questions:
   text: U-Net 模型最常應用於哪個領域？
   type: multiple_choice
   options:
-  - 自駕車
-  - 醫療影像分割
-  - 人臉辨識
-  - 風景分類
+  - 自駕車 (Autonomous Driving)
+  - 醫療影像分割 (Medical Image Segmentation)
+  - 人臉辨識 (Face Recognition)
+  - 風景分類 (Scene Classification)
   correct_index: 1
   explanation: U-Net 的跳躍連接結構能精準還原邊緣細節，非常適合需要高精度的醫療影像（如細胞、腫瘤）分割任務。
   tags:
@@ -165,10 +165,10 @@ questions:
   text: 為了保護隱私，在儲存監控影像前應採取的措施是？
   type: multiple_choice
   options:
-  - 提高解析度
-  - 去識別化 (如人臉模糊化、遮罩)
-  - 公開上網
-  - 備份多份
+  - 提高解析度 (Increase Resolution)
+  - 去識別化 (如人臉模糊化、遮罩) (De-identification)
+  - 公開上網 (Publish Online)
+  - 備份多份 (Multiple Backups)
   correct_index: 1
   explanation: 去識別化能移除或模糊化可識別個人身分的特徵 (PII)，降低隱私洩漏風險。
   tags:
@@ -181,10 +181,10 @@ questions:
   text: 模型量化 (Quantization) 的主要目的是？
   type: multiple_choice
   options:
-  - 提高模型準確率
-  - 將參數從浮點數轉為整數，減少模型大小與運算需求
-  - 增加模型層數
-  - 增加訓練時間
+  - 提高模型準確率 (Increase Accuracy)
+  - 將參數從浮點數轉為整數，減少模型大小與運算需求 (Reduce Size & Compute)
+  - 增加模型層數 (Increase Layers)
+  - 增加訓練時間 (Increase Training Time)
   correct_index: 1
   explanation: 量化是模型壓縮的關鍵技術，讓龐大的 CV 模型能跑在手機或 IoT 設備上。
   tags:
@@ -197,10 +197,10 @@ questions:
   text: 在 CNN 中，全連接層 (Dense Layer) 通常位於？
   type: multiple_choice
   options:
-  - 最前端，用於提取特徵
-  - 中間，用於降維
-  - 最後端，用於整合特徵並輸出分類結果
-  - 不使用全連接層
+  - 最前端，用於提取特徵 (Front - Feature Extraction)
+  - 中間，用於降維 (Middle - Dim Reduction)
+  - 最後端，用於整合特徵並輸出分類結果 (End - Classification)
+  - 不使用全連接層 (No Dense Layer)
   correct_index: 2
   explanation: 卷積層負責提取特徵，全連接層負責根據這些特徵進行最終的邏輯判斷（分類）。
   tags:
@@ -213,10 +213,10 @@ questions:
   text: 非極大值抑制 (NMS) 在物件偵測中的作用是？
   type: multiple_choice
   options:
-  - 增加預測框的數量
-  - 去除重疊度高且信心分數較低的冗餘預測框
-  - 調整圖片亮度
-  - 計算 IoU
+  - 增加預測框的數量 (Increase Boxes)
+  - 去除重疊度高且信心分數較低的冗餘預測框 (Remove Redundant Boxes)
+  - 調整圖片亮度 (Adjust Brightness)
+  - 計算 IoU (Calculate IoU)
   correct_index: 1
   explanation: 模型可能會對同一個物體預測出多個框，NMS 用於過濾掉多餘的框，確保每個物體只被偵測一次。
   tags:
@@ -229,10 +229,10 @@ questions:
   text: 工業瑕疵偵測 (AOI) 取代人工目檢的主要好處是？
   type: multiple_choice
   options:
-  - 成本更高
-  - 速度慢但準確
-  - 提升檢測速度、一致性與良率，避免人眼疲勞
-  - 增加就業機會
+  - 成本更高 (Higher Cost)
+  - 速度慢但準確 (Slow but Accurate)
+  - 提升檢測速度、一致性與良率，避免人眼疲勞 (Improve Speed, Consistency & Yield)
+  - 增加就業機會 (Increase Jobs)
   correct_index: 2
   explanation: 機器視覺不知疲倦，標準一致，能大幅提升生產線的品管效率。
   tags:
@@ -245,10 +245,10 @@ questions:
   text: 資料漂移 (Data Drift) 在 CV 領域的常見例子是？
   type: multiple_choice
   options:
-  - 訓練時用白天的圖片，實際應用時遇到晚上的圖片
-  - 硬碟損壞
-  - 網路斷線
-  - 電壓不穩
+  - 訓練時用白天的圖片，實際應用時遇到晚上的圖片 (Day vs Night)
+  - 硬碟損壞 (Disk Failure)
+  - 網路斷線 (Network Disconnect)
+  - 電壓不穩 (Unstable Voltage)
   correct_index: 0
   explanation: 光照、天氣、角度等環境因素的變化都會導致輸入資料分佈改變，使模型失效。
   tags:
@@ -261,10 +261,10 @@ questions:
   text: FCN (全卷積網路) 的主要創新在於？
   type: multiple_choice
   options:
-  - 使用了 RNN
-  - 將全連接層替換為卷積層，使其能處理任意尺寸的輸入
-  - 移除了所有卷積層
-  - 只能處理固定尺寸圖片
+  - 使用了 RNN (Used RNN)
+  - 將全連接層替換為卷積層，使其能處理任意尺寸的輸入 (Fully Convolutional)
+  - 移除了所有卷積層 (Removed Conv Layers)
+  - 只能處理固定尺寸圖片 (Fixed Size Only)
   correct_index: 1
   explanation: 這項改變讓神經網路能進行像素級的預測（分割），保留了空間資訊。
   tags:
@@ -277,10 +277,10 @@ questions:
   text: ResNet 中的 $F(x) = H(x) - x$ 代表模型實際上是在學習？
   type: multiple_choice
   options:
-  - 輸入本身
-  - 殘差 (Residual)，即輸入與理想輸出之間的差異
-  - 雜訊
-  - 權重
+  - 輸入本身 (Input Itself)
+  - 殘差 (Residual)，即輸入與理想輸出之間的差異 (Difference between Input & Output)
+  - 雜訊 (Noise)
+  - 權重 (Weights)
   correct_index: 1
   explanation: 學習「差異」（修補草圖）比從頭學習完整映射（畫新圖）更容易，這是 ResNet 成功的關鍵直覺。
   tags:
@@ -293,10 +293,10 @@ questions:
   text: 自駕車中的多模態融合 (Sensor Fusion) 通常結合哪些感測器？
   type: multiple_choice
   options:
-  - 只有攝影機
-  - 攝影機、LiDAR (光達)、雷達
-  - 麥克風與喇叭
-  - 溫度計與濕度計
+  - 只有攝影機 (Camera Only)
+  - 攝影機、LiDAR (光達)、雷達 (Camera, LiDAR, Radar)
+  - 麥克風與喇叭 (Mic & Speaker)
+  - 溫度計與濕度計 (Thermometer & Hygrometer)
   correct_index: 1
   explanation: 攝影機提供視覺色彩，LiDAR 提供精確 3D 深度，雷達提供速度資訊。融合三者能提供最可靠的環境感知。
   tags:
@@ -309,10 +309,10 @@ questions:
   text: 邊緣運算 (Edge Computing) 如何幫助保護隱私？
   type: multiple_choice
   options:
-  - 加密所有數據
-  - 數據在本地端處理完畢，只上傳統計結果
-  - 刪除所有數據
-  - 將數據傳送到國外
+  - 加密所有數據 (Encrypt All Data)
+  - 數據在本地端處理完畢，只上傳統計結果 (Process Locally)
+  - 刪除所有數據 (Delete All Data)
+  - 將數據傳送到國外 (Send Abroad)
   correct_index: 1
   explanation: 「資料不動程式動」。不在雲端處理敏感影像，從源頭阻斷了外洩風險。
   tags:
@@ -325,10 +325,10 @@ questions:
   text: Canny 演算法主要用於？
   type: multiple_choice
   options:
-  - 影像模糊化
-  - 邊緣檢測 (Edge Detection)
-  - 色彩校正
-  - 影像縮放
+  - 影像模糊化 (Blurring)
+  - 邊緣檢測 (Edge Detection) (Detect Edges)
+  - 色彩校正 (Color Correction)
+  - 影像縮放 (Resizing)
   correct_index: 1
   explanation: Canny 是一種經典且強大的邊緣檢測演算法，能找出影像中物體的輪廓。
   tags:
@@ -341,10 +341,10 @@ questions:
   text: 在 CNN 中，ReLU 活化函數的作用是？
   type: multiple_choice
   options:
-  - 降維
-  - 引入非線性，增強模型特徵學習能力
-  - 歸一化
-  - 分類
+  - 降維 (Dimensionality Reduction)
+  - 引入非線性，增強模型特徵學習能力 (Introduce Non-linearity)
+  - 歸一化 (Normalization)
+  - 分類 (Classification)
   correct_index: 1
   explanation: 線性疊加只是線性變換。ReLU 引入非線性，讓 CNN 能擬合複雜的圖像特徵。
   tags:
@@ -357,10 +357,10 @@ questions:
   text: Mask R-CNN 在 Faster R-CNN 的基礎上增加了什麼？
   type: multiple_choice
   options:
-  - 另一個分類分支
-  - 一個預測二值遮罩 (Mask) 的全卷積分支
-  - 聲音識別功能
-  - 文字生成功能
+  - 另一個分類分支 (Another Classification Branch)
+  - 一個預測二值遮罩 (Mask) 的全卷積分支 (Mask Branch)
+  - 聲音識別功能 (Voice Recognition)
+  - 文字生成功能 (Text Generation)
   correct_index: 1
   explanation: 這使得 Mask R-CNN 不僅能框出物體（偵測），還能精確描繪出物體的形狀（分割）。
   tags:
@@ -373,10 +373,10 @@ questions:
   text: U-Net 中的「跳躍連接 (Skip Connections)」連接了哪兩個部分？
   type: multiple_choice
   options:
-  - 輸入層與輸出層
-  - 編碼器 (Encoder) 的特徵圖與解碼器 (Decoder) 對應層的特徵圖
-  - 卷積層與池化層
-  - 兩個不同的模型
+  - 輸入層與輸出層 (Input & Output)
+  - 編碼器 (Encoder) 的特徵圖與解碼器 (Decoder) 對應層的特徵圖 (Encoder-Decoder Features)
+  - 卷積層與池化層 (Conv & Pooling)
+  - 兩個不同的模型 (Two Models)
   correct_index: 1
   explanation: 這種連接將淺層的高解析度特徵直接傳遞給深層，幫助解碼器更好地還原影像細節。
   tags:
@@ -389,10 +389,10 @@ questions:
   text: 為了避免人臉辨識系統對特定族群產生偏見，應採取什麼策略？
   type: multiple_choice
   options:
-  - 只使用白人男性的照片訓練
-  - 多樣性採樣 (Diverse Sampling)
-  - 停止使用人臉辨識
-  - 降低準確率要求
+  - 只使用白人男性的照片訓練 (White Males Only)
+  - 多樣性採樣 (Diverse Sampling) (Sample Diversity)
+  - 停止使用人臉辨識 (Stop Using Face ID)
+  - 降低準確率要求 (Lower Accuracy)
   correct_index: 1
   explanation: 數據的多樣性決定了模型的公平性。必須主動收集各類群體的數據以消除偏差。
   tags:
@@ -405,10 +405,10 @@ questions:
   text: MobileNet 是一種什麼樣的模型架構？
   type: multiple_choice
   options:
-  - 參數量巨大的大型模型
-  - 專為行動裝置設計的輕量化模型
-  - 專用於醫療影像
-  - 只能處理文字
+  - 參數量巨大的大型模型 (Large Model)
+  - 專為行動裝置設計的輕量化模型 (Lightweight Model for Mobile)
+  - 專用於醫療影像 (Medical Imaging)
+  - 只能處理文字 (Text Only)
   correct_index: 1
   explanation: MobileNet 使用深度可分離卷積 (Depthwise Separable Convolution) 大幅減少運算量，適合在手機端運行。
   tags:
@@ -421,10 +421,10 @@ questions:
   text: 車牌辨識 (ANPR) 系統通常包含哪三個步驟？
   type: multiple_choice
   options:
-  - 拍照、上傳、下載
-  - 定位、分割、OCR 識別
-  - 分類、回歸、分群
-  - 偵測、追蹤、預測
+  - 拍照、上傳、下載 (Photo, Upload, Download)
+  - 定位、分割、OCR 識別 (Detection, Segmentation, OCR)
+  - 分類、回歸、分群 (Classification, Regression, Clustering)
+  - 偵測、追蹤、預測 (Detection, Tracking, Prediction)
   correct_index: 1
   explanation: 先找到車牌位置，將字符切開，最後用光學字符識別 (OCR) 讀出文字。
   tags:
@@ -437,10 +437,10 @@ questions:
   text: 剪枝 (Pruning) 技術是指？
   type: multiple_choice
   options:
-  - 刪除訓練資料
-  - 移除神經網路中不重要的連接或神經元
-  - 減少圖片解析度
-  - 縮短訓練時間
+  - 刪除訓練資料 (Delete Training Data)
+  - 移除神經網路中不重要的連接或神經元 (Remove Unimportant Connections/Neurons)
+  - 減少圖片解析度 (Reduce Resolution)
+  - 縮短訓練時間 (Shorten Training Time)
   correct_index: 1
   explanation: 許多神經元的貢獻微乎其微。剪枝就像修剪樹木，去除冗餘部分，讓模型更精簡高效。
   tags:
@@ -453,10 +453,10 @@ questions:
   text: 感受野 (Receptive Field) 是指？
   type: multiple_choice
   options:
-  - 圖片的大小
-  - 卷積神經網路中某一層的一個神經元能「看到」原始輸入影像的區域範圍
-  - 濾鏡的大小
-  - 輸出的類別數
+  - 圖片的大小 (Image Size)
+  - 卷積神經網路中某一層的一個神經元能「看到」原始輸入影像的區域範圍 (Area Seen by Neuron)
+  - 濾鏡的大小 (Filter Size)
+  - 輸出的類別數 (Number of Classes)
   correct_index: 1
   explanation: 感受野越大，神經元能捕捉到的上下文資訊就越多，對理解整體結構越重要。
   tags:
@@ -469,10 +469,10 @@ questions:
   text: 在 YOLO 中，網格 (Grid) 的作用是？
   type: multiple_choice
   options:
-  - 分割圖片以便顯示
-  - 負責偵測中心點落在該網格內的物件
-  - 降低解析度
-  - 增加雜訊
+  - 分割圖片以便顯示 (Display Split)
+  - 負責偵測中心點落在該網格內的物件 (Detect Object in Grid)
+  - 降低解析度 (Reduce Resolution)
+  - 增加雜訊 (Add Noise)
   correct_index: 1
   explanation: YOLO 將圖片劃分為網格，每個網格負責預測該區域是否有物體及其類別，實現了端到端的偵測。
   tags:
@@ -485,10 +485,10 @@ questions:
   text: 灰階影像 (Grayscale) 的像素值範圍通常是？
   type: multiple_choice
   options:
-  - 0-1
-  - 0-255
-  - -1 到 1
-  - 0-100
+  - 0-1 (Normalized)
+  - 0-255 (8-bit Integer)
+  - -1 到 1 (Normalized Tanh)
+  - 0-100 (Percentage)
   correct_index: 1
   explanation: 在 8-bit 影像中，0 代表全黑，255 代表全白，中間值代表不同深淺的灰色。
   tags:
@@ -501,10 +501,10 @@ questions:
   text: 卷積層中的「步長 (Stride)」設定為 2 會導致？
   type: multiple_choice
   options:
-  - 輸出特徵圖尺寸變大
-  - 輸出特徵圖尺寸減半 (下採樣)
-  - 輸出特徵圖尺寸不變
-  - 卷積核變大
+  - 輸出特徵圖尺寸變大 (Upsampling)
+  - 輸出特徵圖尺寸減半 (下採樣) (Downsampling)
+  - 輸出特徵圖尺寸不變 (Same Padding)
+  - 卷積核變大 (Larger Kernel)
   correct_index: 1
   explanation: 步長是濾鏡滑動的間隔。步長越大，滑動次數越少，輸出的特徵圖尺寸就越小。
   tags:
@@ -517,10 +517,10 @@ questions:
   text: RoI Align 技術主要解決了什麼問題？
   type: multiple_choice
   options:
-  - 計算速度慢
-  - RoI Pooling 在座標量化時產生的誤差
-  - 過擬合
-  - 類別不平衡
+  - 計算速度慢 (Slow Computation)
+  - RoI Pooling 在座標量化時產生的誤差 (Quantization Error)
+  - 過擬合 (Overfitting)
+  - 類別不平衡 (Class Imbalance)
   correct_index: 1
   explanation: 傳統 RoI Pooling 會將浮點數座標四捨五入，導致位置偏差。RoI Align 使用雙線性插值保留精確位置，對分割任務至關重要。
   tags:
@@ -533,10 +533,10 @@ questions:
   text: 偏見審計 (Bias Audit) 要求檢查模型在不同子群體上的？
   type: multiple_choice
   options:
-  - 訓練時間
-  - 假陽性率 (FPR) 與假陰性率 (FNR) 是否均衡
-  - 參數數量
-  - 記憶體佔用
+  - 訓練時間 (Training Time)
+  - 假陽性率 (FPR) 與假陰性率 (FNR) 是否均衡 (Balanced Error Rates)
+  - 參數數量 (Parameter Count)
+  - 記憶體佔用 (Memory Usage)
   correct_index: 1
   explanation: 僅看整體準確率是不夠的。必須確認模型沒有對特定群體（如女性）有特別高的誤判率。
   tags:
@@ -549,10 +549,10 @@ questions:
   text: 零售業使用熱點圖 (Heatmap) 的主要目的是？
   type: multiple_choice
   options:
-  - 監控員工
-  - 分析顧客在店內的移動路徑與熱門區域
-  - 檢測火災
-  - 裝飾店面
+  - 監控員工 (Monitor Employees)
+  - 分析顧客在店內的移動路徑與熱門區域 (Analyze Customer Traffic)
+  - 檢測火災 (Detect Fire)
+  - 裝飾店面 (Decorate Store)
   correct_index: 1
   explanation: 熱點圖直觀顯示了人流密集的區域，幫助商家將高利潤商品放在最顯眼的位置。
   tags:
@@ -565,10 +565,10 @@ questions:
   text: 卷積核 (Kernel) 的數值在訓練過程中是？
   type: multiple_choice
   options:
-  - 固定不變的
-  - 隨機變化的
-  - 透過反向傳播學習更新的參數
-  - 由人工設定的
+  - 固定不變的 (Fixed)
+  - 隨機變化的 (Randomly Changing)
+  - 透過反向傳播學習更新的參數 (Learnable Parameters)
+  - 由人工設定的 (Manually Set)
   correct_index: 2
   explanation: 卷積核就是 CNN 的「權重」。模型透過訓練自動學習出能提取有效特徵（如邊緣、眼睛）的卷積核數值。
   tags:
@@ -581,10 +581,10 @@ questions:
   text: 攤平層 (Flatten Layer) 通常接在？
   type: multiple_choice
   options:
-  - 輸入層之後
-  - 卷積/池化層之後，全連接層之前
-  - 輸出層之後
-  - 任意位置
+  - 輸入層之後 (After Input)
+  - 卷積/池化層之後，全連接層之前 (Between Conv/Pool & Dense)
+  - 輸出層之後 (After Output)
+  - 任意位置 (Anywhere)
   correct_index: 1
   explanation: 卷積層輸出的是 3D 特徵圖，全連接層需要 1D 向量輸入，因此需要攤平層進行轉換。
   tags:
@@ -597,10 +597,10 @@ questions:
   text: 資料最小化 (Data Minimization) 原則建議？
   type: multiple_choice
   options:
-  - 收集越多資料越好
-  - 只收集達成特定目的所需的最小數據量
-  - 不收集任何數據
-  - 壓縮數據
+  - 收集越多資料越好 (More Data is Better)
+  - 只收集達成特定目的所需的最小數據量 (Collect Minimum Necessary Data)
+  - 不收集任何數據 (No Data Collection)
+  - 壓縮數據 (Compress Data)
   correct_index: 1
   explanation: 這是隱私保護的核心原則。例如，若目的只是統計人數，就不應收集或儲存清晰的人臉影像。
   tags:
@@ -613,10 +613,10 @@ questions:
   text: 為什麼 VGG 使用兩個 3x3 卷積層比一個 5x5 卷積層好？
   type: multiple_choice
   options:
-  - 計算更快
-  - 參數更少且非線性更強
-  - 感受野更大
-  - 結構更簡單
+  - 計算更快 (Faster Computation)
+  - 參數更少且非線性更強 (Fewer Parameters & More Non-linearity)
+  - 感受野更大 (Larger Receptive Field)
+  - 結構更簡單 (Simpler Structure)
   correct_index: 1
   explanation: 參數減少了 (18 vs 25)，且多了一層 ReLU，增加了模型擬合複雜函數的能力。
   tags:
@@ -629,10 +629,10 @@ questions:
   text: Softmax 函數在 CNN 分類任務中通常用於？
   type: multiple_choice
   options:
-  - 卷積層
-  - 池化層
-  - 輸出層，將輸出轉換為類別機率
-  - 輸入層
+  - 卷積層 (Convolutional Layer)
+  - 池化層 (Pooling Layer)
+  - 輸出層，將輸出轉換為類別機率 (Output Layer - Probability)
+  - 輸入層 (Input Layer)
   correct_index: 2
   explanation: Softmax 將神經網路的原始輸出 (Logits) 歸一化為總和為 1 的機率分佈，便於判斷屬於各類別的可能性。
   tags:
@@ -645,10 +645,10 @@ questions:
   text: 情境：你訓練了一個安全帽偵測模型，在測試集上 IoU 高達 0.9。但部署到工地現場後，發現工人只要「側著頭」或「低頭」，模型就偵測不到安全帽。這顯示訓練資料缺乏什麼？應如何改善？
   type: multiple_choice
   options:
-  - 解析度不足。
-  - 缺乏多樣性 (Diversity) 與資料增強 (Data Augmentation)。
-  - 模型層數不夠。
-  - IoU 閾值設太高。
+  - 解析度不足 (Insufficient Resolution)
+  - 缺乏多樣性 (Diversity) 與資料增強 (Data Augmentation) (Lack of Diversity)
+  - 模型層數不夠 (Insufficient Layers)
+  - IoU 閾值設太高 (IoU Threshold too High)
   correct_index: 1
   explanation: 模型在特定視角失效，通常是因為訓練資料的視角太單一。透過資料增強（模擬不同角度）或收集更多樣化的現場數據是標準解法。
   tags:
@@ -661,10 +661,10 @@ questions:
   text: 情境：你的自駕車模型在白天表現完美，但在下雨的夜晚經常誤判路況。這屬於什麼現象？在不重新收集大量夜間數據的情況下，可以嘗試什麼技術來緩解？
   type: multiple_choice
   options:
-  - 過擬合；使用 Dropout。
-  - 資料漂移 (Data Drift)；使用領域適應 (Domain Adaptation) 或生成對抗網路 (GAN)。
-  - 梯度消失；使用 ResNet。
-  - 欠擬合；增加模型寬度。
+  - 過擬合；使用 Dropout (Overfitting)
+  - 資料漂移 (Data Drift)；使用領域適應 (Domain Adaptation) 或生成對抗網路 (GAN) (Domain Adaptation/GAN)
+  - 梯度消失；使用 ResNet (Vanishing Gradient)
+  - 欠擬合；增加模型寬度 (Underfitting)
   correct_index: 1
   explanation: 這是典型的 Domain Shift 問題。GAN 可以用來進行風格遷移 (Style Transfer)，生成逼真的夜間/雨天數據來擴充訓練集，提升模型對惡劣環境的適應力。
   tags:
@@ -677,10 +677,10 @@ questions:
   text: 情境：你正在開發一個手機端的即時手勢識別 App。你發現使用 ResNet-50 雖然準確，但每秒只能跑 5 幀 (5 FPS)，導致體驗卡頓。你應該優先考慮什麼優化策略？
   type: multiple_choice
   options:
-  - 購買更貴的手機。
-  - 將模型更換為輕量化架構 (如 MobileNet, YOLO-Nano) 並進行模型量化 (Quantization)。
-  - 增加輸入圖片解析度。
-  - 使用更深的 ResNet-101。
+  - 購買更貴的手機 (Buy Expensive Phone)
+  - 將模型更換為輕量化架構 (如 MobileNet, YOLO-Nano) 並進行模型量化 (Quantization) (Lightweight Model & Quantization)
+  - 增加輸入圖片解析度 (Increase Resolution)
+  - 使用更深的 ResNet-101 (Use Deeper Model)
   correct_index: 1
   explanation: 在邊緣裝置上，速度與資源是瓶頸。輕量化模型與量化技術能在犧牲極小準確率的前提下，大幅提升推論速度與降低能耗。
   tags:
@@ -693,10 +693,10 @@ questions:
   text: 情境：醫療團隊請你開發一個 AI 模型來自動圈選 X 光片中的微小腫瘤。你選擇了 YOLO 模型，但醫生回饋說「位置大概對，但輪廓不夠精確，無法用於手術規劃」。你應該改用什麼模型？
   type: multiple_choice
   options:
-  - ResNet (分類模型)。
-  - U-Net (分割模型)。
-  - VGG。
-  - MobileNet。
+  - ResNet (分類模型) (Classification Model)
+  - U-Net (分割模型) (Segmentation Model)
+  - VGG (VGGNet)
+  - MobileNet (MobileNet)
   correct_index: 1
   explanation: YOLO 是偵測模型，只能給出矩形框 (Bounding Box)。手術規劃需要像素級的精確輪廓，這是語義分割/實例分割的任務，U-Net
     是此領域的標竿模型。
@@ -711,10 +711,10 @@ questions:
     by Design)」措施？
   type: multiple_choice
   options:
-  - 將所有影像上傳雲端備份。
-  - 採用邊緣運算 (Edge Computing)，在攝影機端即時提取特徵並統計。
-  - 降低影像解析度。
-  - 只在晚上運作。
+  - 將所有影像上傳雲端備份 (Upload to Cloud)
+  - 採用邊緣運算 (Edge Computing)，在攝影機端即時提取特徵並統計 (Edge Computing)
+  - 降低影像解析度 (Reduce Resolution)
+  - 只在晚上運作 (Operate at Night)
   correct_index: 1
   explanation: 這是最徹底的隱私保護架構。不傳輸、不儲存原始人臉影像，只保留無法還原個資的統計標籤，能最大程度降低合規風險。
   tags:
@@ -726,10 +726,10 @@ questions:
   text: 情境：CNN (卷積神經網路) 中的「池化層 (Pooling Layer)」主要功能是？
   type: multiple_choice
   options:
-  - 增加維度
-  - 降低維度並保留顯著特徵，減少運算量
-  - 分類
-  - 生成圖片
+  - 增加維度 (Increase Dimension)
+  - 降低維度並保留顯著特徵，減少運算量 (Downsampling & Feature Retention)
+  - 分類 (Classification)
+  - 生成圖片 (Image Generation)
   correct_index: 1
   explanation: Pooling 透過降採樣 (Downsampling) 壓縮特徵圖，同時保持特徵的空間不變性。
   tags:
@@ -742,10 +742,10 @@ questions:
   text: 情境：YOLO (You Only Look Once) 演算法的最大特色是？
   type: multiple_choice
   options:
-  - 準確率最高但速度慢
-  - 速度極快，能實現即時物件偵測
-  - 只能偵測一種物體
-  - 需要兩階段處理
+  - 準確率最高但速度慢 (High Accuracy, Slow Speed)
+  - 速度極快，能實現即時物件偵測 (Real-time Object Detection)
+  - 只能偵測一種物體 (Single Object Only)
+  - 需要兩階段處理 (Two-stage Processing)
   correct_index: 1
   explanation: YOLO 將偵測視為單一回歸問題，一次掃描即可完成定位與分類。
   tags:
@@ -758,10 +758,10 @@ questions:
   text: 情境：ResNet (殘差網路) 透過什麼機制解決了深層網路的梯度消失問題？
   type: multiple_choice
   options:
-  - 殘差連接 (Residual Connection) / Shortcut
-  - 增加學習率
-  - 減少層數
-  - 使用 Sigmoid
+  - 殘差連接 (Residual Connection) / Shortcut (Shortcut Connection)
+  - 增加學習率 (Increase Learning Rate)
+  - 減少層數 (Reduce Layers)
+  - 使用 Sigmoid (Use Sigmoid)
   correct_index: 0
   explanation: Shortcut 創造了一條梯度高速公路，讓梯度能直接傳回淺層。
   tags:
@@ -774,10 +774,10 @@ questions:
   text: 情境：語義分割 (Semantic Segmentation) 與實例分割 (Instance Segmentation) 的區別在於？
   type: multiple_choice
   options:
-  - 沒區別
-  - 語義分割只分顏色，實例分割分形狀
-  - 語義分割區分類別但不區分個體；實例分割既區分類別也區分個體
-  - 實例分割比較簡單
+  - 沒區別 (No Difference)
+  - 語義分割只分顏色，實例分割分形狀 (Color vs Shape)
+  - 語義分割區分類別但不區分個體；實例分割既區分類別也區分個體 (Class vs Instance)
+  - 實例分割比較簡單 (Instance is Simpler)
   correct_index: 2
   explanation: 語義分割將所有「人」視為同一類，實例分割則能區分「張三」與「李四」。
   tags:
@@ -790,10 +790,10 @@ questions:
   text: 情境：VGG 模型的一個重要設計理念是？
   type: multiple_choice
   options:
-  - 使用大卷積核
-  - 全面使用小尺寸 (3x3) 卷積核堆疊
-  - 不使用卷積
-  - 只用全連接層
+  - 使用大卷積核 (Large Kernels)
+  - 全面使用小尺寸 (3x3) 卷積核堆疊 (Stacking Small 3x3 Kernels)
+  - 不使用卷積 (No Convolution)
+  - 只用全連接層 (Dense Layers Only)
   correct_index: 1
   explanation: 堆疊小卷積核能在減少參數的同時增加網路深度與非線性。
   tags:
@@ -806,10 +806,10 @@ questions:
   text: 情境：IoU (Intersection over Union) 指標用於評估？
   type: multiple_choice
   options:
-  - 分類準確率
-  - 物件偵測中預測框與真實框的重疊程度
-  - 圖片清晰度
-  - 生成速度
+  - 分類準確率 (Classification Accuracy)
+  - 物件偵測中預測框與真實框的重疊程度 (Intersection over Union)
+  - 圖片清晰度 (Image Clarity)
+  - 生成速度 (Generation Speed)
   correct_index: 1
   explanation: IoU 衡量定位的精準度，值越高代表框得越準。
   tags:
@@ -822,10 +822,10 @@ questions:
   text: 情境：U-Net 模型最常用於哪個領域？
   type: multiple_choice
   options:
-  - 人臉辨識
-  - 醫療影像分割 (如細胞、腫瘤)
-  - 車牌辨識
-  - 風格轉換
+  - 人臉辨識 (Face Recognition)
+  - 醫療影像分割 (如細胞、腫瘤) (Medical Image Segmentation)
+  - 車牌辨識 (License Plate Recognition)
+  - 風格轉換 (Style Transfer)
   correct_index: 1
   explanation: U-Net 的 Skip Connection 設計能精準保留邊緣細節，非常適合醫療影像。
   tags:
@@ -838,10 +838,10 @@ questions:
   text: 情境：在人臉辨識應用中，若訓練資料缺乏深色膚色樣本，可能導致？
   type: multiple_choice
   options:
-  - 模型更公平
-  - 模型對深色膚色人群的辨識率下降 (偏見)
-  - 模型速度變快
-  - 沒影響
+  - 模型更公平 (Fairer Model)
+  - 模型對深色膚色人群的辨識率下降 (偏見) (Bias against Darker Skin)
+  - 模型速度變快 (Faster Model)
+  - 沒影響 (No Effect)
   correct_index: 1
   explanation: 資料偏差是導致 AI 歧視的主要原因之一。
   tags:
@@ -854,10 +854,10 @@ questions:
   text: 情境：非極大值抑制 (NMS) 在物件偵測中的作用是？
   type: multiple_choice
   options:
-  - 增加框的數量
-  - 去除重疊且信心分數較低的框，只保留最佳結果
-  - 放大圖片
-  - 縮小圖片
+  - 增加框的數量 (Increase Boxes)
+  - 去除重疊且信心分數較低的框，只保留最佳結果 (Remove Redundant Boxes)
+  - 放大圖片 (Enlarge Image)
+  - 縮小圖片 (Shrink Image)
   correct_index: 1
   explanation: NMS 確保每個物件只被一個最佳的邊界框標記。
   tags:
@@ -870,10 +870,10 @@ questions:
   text: 情境：AOI (自動光學檢測) 在製造業的主要用途是？
   type: multiple_choice
   options:
-  - 設計產品
-  - 檢測產品表面瑕疵 (如刮痕、裂紋)
-  - 包裝產品
-  - 運送產品
+  - 設計產品 (Product Design)
+  - 檢測產品表面瑕疵 (如刮痕、裂紋) (Defect Detection)
+  - 包裝產品 (Packaging)
+  - 運送產品 (Shipping)
   correct_index: 1
   explanation: AOI 利用 CV 技術取代人工目檢，提升檢測速度與一致性。
   tags:
@@ -886,10 +886,10 @@ questions:
   text: 情境：FCN (全卷積網路) 將傳統 CNN 的全連接層替換為卷積層，是為了？
   type: multiple_choice
   options:
-  - 減少參數
-  - 接受任意尺寸輸入並輸出像素級預測 (熱點圖)
-  - 加速訓練
-  - 防止過擬合
+  - 減少參數 (Reduce Parameters)
+  - 接受任意尺寸輸入並輸出像素級預測 (熱點圖) (Pixel-level Prediction)
+  - 加速訓練 (Accelerate Training)
+  - 防止過擬合 (Prevent Overfitting)
   correct_index: 1
   explanation: 這使得 FCN 能進行像素級的語義分割。
   tags:
@@ -902,10 +902,10 @@ questions:
   text: 情境：為了保護隱私，在儲存監控影像前應進行？
   type: multiple_choice
   options:
-  - 加密
-  - 去識別化 (如人臉模糊化)
-  - 壓縮
-  - 備份
+  - 加密 (Encryption)
+  - 去識別化 (如人臉模糊化) (De-identification)
+  - 壓縮 (Compression)
+  - 備份 (Backup)
   correct_index: 1
   explanation: 去識別化能降低個資外洩的風險。
   tags:
@@ -918,10 +918,10 @@ questions:
   text: 情境：Mask R-CNN 在 Faster R-CNN 的基礎上增加了什麼？
   type: multiple_choice
   options:
-  - 更快的速度
-  - 一個預測二值遮罩 (Mask) 的分支，用於實例分割
-  - 更多的卷積層
-  - 更小的輸入
+  - 更快的速度 (Faster Speed)
+  - 一個預測二值遮罩 (Mask) 的分支，用於實例分割 (Mask Branch for Instance Segmentation)
+  - 更多的卷積層 (More Conv Layers)
+  - 更小的輸入 (Smaller Input)
   correct_index: 1
   explanation: 這讓 Mask R-CNN 能同時完成物件偵測與實例分割。
   tags:
@@ -934,10 +934,10 @@ questions:
   text: 情境：卷積層 (Convolutional Layer) 的主要功能是？
   type: multiple_choice
   options:
-  - 分類
-  - 提取局部特徵 (如邊緣、紋理)
-  - 降維
-  - 正規化
+  - 分類 (Classification)
+  - 提取局部特徵 (如邊緣、紋理) (Extract Local Features)
+  - 降維 (Dimensionality Reduction)
+  - 正規化 (Normalization)
   correct_index: 1
   explanation: 卷積核透過滑動視窗運算，捕捉影像的局部特徵。
   tags:
@@ -950,10 +950,10 @@ questions:
   text: 情境：邊緣運算 (Edge Computing) 在 CV 應用中的優勢是？
   type: multiple_choice
   options:
-  - 算力最強
-  - 降低延遲並保護隱私 (資料不需全部上傳雲端)
-  - 儲存空間最大
-  - 成本最低
+  - 算力最強 (Highest Compute Power)
+  - 降低延遲並保護隱私 (資料不需全部上傳雲端) (Low Latency & Privacy)
+  - 儲存空間最大 (Largest Storage)
+  - 成本最低 (Lowest Cost)
   correct_index: 1
   explanation: 在地端處理數據能減少傳輸延遲與資安風險。
   tags:
@@ -966,10 +966,10 @@ questions:
   text: 情境：U-Net 中的「跳躍連接 (Skip Connection)」作用是？
   type: multiple_choice
   options:
-  - 跳過訓練
-  - 將編碼器的特徵複製到解碼器，協助還原細節
-  - 刪除特徵
-  - 加速計算
+  - 跳過訓練 (Skip Training)
+  - 將編碼器的特徵複製到解碼器，協助還原細節 (Restore Details)
+  - 刪除特徵 (Delete Features)
+  - 加速計算 (Accelerate Computation)
   correct_index: 1
   explanation: Skip Connection 彌補了上採樣過程中丟失的空間資訊。
   tags:
@@ -982,10 +982,10 @@ questions:
   text: 情境：影像分類 (Image Classification) 的目標是？
   type: multiple_choice
   options:
-  - 找出所有物體位置
-  - 判斷整張影像的主要類別
-  - 分割每個像素
-  - 生成新影像
+  - 找出所有物體位置 (Locate Objects)
+  - 判斷整張影像的主要類別 (Identify Main Category)
+  - 分割每個像素 (Segment Pixels)
+  - 生成新影像 (Generate Image)
   correct_index: 1
   explanation: 分類任務關注的是「這張圖是什麼」，而非「它在哪裡」。
   tags:
@@ -998,10 +998,10 @@ questions:
   text: 情境：模型量化 (Quantization) 的主要目的是？
   type: multiple_choice
   options:
-  - 提高準確率
-  - 減少模型大小與運算量，利於邊緣部署
-  - 增加訓練時間
-  - 增加參數量
+  - 提高準確率 (Increase Accuracy)
+  - 減少模型大小與運算量，利於邊緣部署 (Reduce Size & Compute)
+  - 增加訓練時間 (Increase Training Time)
+  - 增加參數量 (Increase Parameters)
   correct_index: 1
   explanation: 量化將浮點數轉為整數，大幅降低硬體需求。
   tags:
@@ -1014,10 +1014,10 @@ questions:
   text: 情境：RoI Align 技術主要解決了什麼問題？
   type: multiple_choice
   options:
-  - 過擬合
-  - RoI Pooling 的量化誤差，實現像素級對齊
-  - 梯度消失
-  - 計算過慢
+  - 過擬合 (Overfitting)
+  - RoI Pooling 的量化誤差，實現像素級對齊 (Quantization Error)
+  - 梯度消失 (Vanishing Gradient)
+  - 計算過慢 (Too Slow)
   correct_index: 1
   explanation: RoI Align 透過雙線性插值，避免了特徵圖座標取整帶來的精度損失。
   tags:
@@ -1030,10 +1030,10 @@ questions:
   text: 情境：車牌辨識系統通常包含哪三個步驟？
   type: multiple_choice
   options:
-  - 拍照、存檔、上傳
-  - 定位、分割、識別 (OCR)
-  - 分類、回歸、分群
-  - 編碼、解碼、生成
+  - 拍照、存檔、上傳 (Photo, Save, Upload)
+  - 定位、分割、識別 (OCR) (Detection, Segmentation, OCR)
+  - 分類、回歸、分群 (Classification, Regression, Clustering)
+  - 編碼、解碼、生成 (Encode, Decode, Generate)
   correct_index: 1
   explanation: 先找到車牌，切分出字元，最後識別字元內容。
   tags:

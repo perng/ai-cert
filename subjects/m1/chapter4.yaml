@@ -5,10 +5,10 @@ questions:
   text: 感知器 (Perceptron) 的基本運算過程是？
   type: multiple_choice
   options:
-  - 僅進行加權求和
-  - 僅進行活化函數運算
-  - 先進行加權求和，再通過活化函數
-  - 先通過活化函數，再進行加權求和
+  - 僅進行加權求和 (Weighted Sum Only)
+  - 僅進行活化函數運算 (Activation Function Only)
+  - 先進行加權求和，再通過活化函數 (Weighted Sum then Activation)
+  - 先通過活化函數，再進行加權求和 (Activation then Weighted Sum)
   correct_index: 2
   explanation: 感知器接收輸入 $x$，計算加權和 $z = w^T x + b$，然後將 $z$ 輸入活化函數 $\phi(z)$ 得到輸出。
   tags:
@@ -21,10 +21,10 @@ questions:
   text: 為什麼神經網路需要活化函數 (Activation Function)？
   type: multiple_choice
   options:
-  - 為了增加計算速度
-  - 為了引入非線性，使模型能學習複雜的模式
-  - 為了將輸出限制在 0 和 1 之間
-  - 為了減少參數數量
+  - 為了增加計算速度 (Increase Speed)
+  - 為了引入非線性，使模型能學習複雜的模式 (Introduce Non-linearity)
+  - 為了將輸出限制在 0 和 1 之間 (Range Constraint)
+  - 為了減少參數數量 (Reduce Parameters)
   correct_index: 1
   explanation: 若沒有非線性活化函數，多層神經網路在數學上僅等價於單層線性模型，無法解決 XOR 等非線性問題。
   tags:
@@ -37,10 +37,10 @@ questions:
   text: ReLU (Rectified Linear Unit) 活化函數的公式是？
   type: multiple_choice
   options:
-  - $f(x) = 1 / (1 + e^{-x})$
-  - $f(x) = \tanh(x)$
-  - $f(x) = \max(0, x)$
-  - $f(x) = x$
+  - $f(x) = 1 / (1 + e^{-x})$ (Sigmoid)
+  - $f(x) = \tanh(x)$ (Tanh)
+  - $f(x) = \max(0, x)$ (ReLU)
+  - $f(x) = x$ (Linear)
   correct_index: 2
   explanation: ReLU 函數在 $x > 0$ 時輸出 $x$，在 $x \le 0$ 時輸出 0。它計算簡單且有效緩解了梯度消失問題。
   tags:
@@ -53,10 +53,10 @@ questions:
   text: Softmax 函數通常用於神經網路的哪一層？
   type: multiple_choice
   options:
-  - 輸入層
-  - 隱藏層
-  - 卷積層
-  - 多分類問題的輸出層
+  - 輸入層 (Input Layer)
+  - 隱藏層 (Hidden Layer)
+  - 卷積層 (Convolutional Layer)
+  - 多分類問題的輸出層 (Output Layer for Multi-class Classification)
   correct_index: 3
   explanation: Softmax 將輸出向量轉換為機率分佈（所有元素總和為 1），因此非常適合用於多分類任務的最終輸出。
   tags:
@@ -69,10 +69,10 @@ questions:
   text: 反向傳播 (Backpropagation) 演算法的核心數學原理是？
   type: multiple_choice
   options:
-  - 積分
+  - 積分 (Integration)
   - 微積分中的連鎖律 (Chain Rule)
-  - 傅立葉變換
-  - 矩陣分解
+  - 傅立葉變換 (Fourier Transform)
+  - 矩陣分解 (Matrix Factorization)
   correct_index: 1
   explanation: 反向傳播利用連鎖律，將損失函數對輸出層的梯度一層層反向傳遞回輸入層，以計算每個權重的梯度。
   tags:
@@ -85,10 +85,10 @@ questions:
   text: 損失函數 (Loss Function) 的作用是？
   type: multiple_choice
   options:
-  - 衡量模型預測值與真實值之間的誤差
-  - 增加模型的準確率
-  - 減少模型的參數量
-  - 決定模型的架構
+  - 衡量模型預測值與真實值之間的誤差 (Measure Error)
+  - 增加模型的準確率 (Increase Accuracy)
+  - 減少模型的參數量 (Reduce Parameters)
+  - 決定模型的架構 (Determine Architecture)
   correct_index: 0
   explanation: 損失函數量化了模型預測的好壞，最佳化的目標就是最小化這個函數值。
   tags:
@@ -117,10 +117,10 @@ questions:
   text: SGD (Stochastic Gradient Descent) 與傳統梯度下降的主要區別是？
   type: multiple_choice
   options:
-  - SGD 使用所有數據計算梯度
-  - SGD 每次隨機抽取一個樣本（或小批次）計算梯度
-  - SGD 不需要計算梯度
-  - SGD 只能用於線性模型
+  - SGD 使用所有數據計算梯度 (Batch Gradient Descent)
+  - SGD 每次隨機抽取一個樣本（或小批次）計算梯度 (Random Sampling)
+  - SGD 不需要計算梯度 (No Gradient)
+  - SGD 只能用於線性模型 (Linear Models Only)
   correct_index: 1
   explanation: 傳統梯度下降每次更新都要遍歷整個數據集，計算量大；SGD 透過隨機採樣估計梯度，速度快且能跳出局部最佳解。
   tags:
@@ -133,8 +133,8 @@ questions:
   text: Adam 最佳化器結合了哪兩種技術的優點？
   type: multiple_choice
   options:
-  - L1 和 L2 正則化
-  - Momentum 和 RMSprop
+  - L1 和 L2 正則化 (Regularization)
+  - Momentum 和 RMSprop (Momentum & Adaptive Learning Rate)
   - SGD 和 Adagrad
   - Dropout 和 Batch Normalization
   correct_index: 1
@@ -149,10 +149,10 @@ questions:
   text: 梯度消失 (Vanishing Gradient) 問題會導致什麼後果？
   type: multiple_choice
   options:
-  - 模型訓練速度變快
-  - 深層網路的前面幾層參數幾乎無法更新
-  - 模型過擬合
-  - 損失函數變成負數
+  - 模型訓練速度變快 (Faster Training)
+  - 深層網路的前面幾層參數幾乎無法更新 (Parameters Not Updating)
+  - 模型過擬合 (Overfitting)
+  - 損失函數變成負數 (Negative Loss)
   correct_index: 1
   explanation: 當梯度趨近於 0 時，權重更新量 $\Delta w = -\eta \cdot \text{gradient}$ 也趨近於 0，使得深層網路的前端層「學不動」。
   tags:
@@ -165,14 +165,10 @@ questions:
   text: Sigmoid 函數的輸出範圍是？
   type: multiple_choice
   options:
-  - - -1
-    - 1
-  - - 0
-    - 1
-  - - 0
-    - infinity
-  - - -infinity
-    - infinity
+  - -1 到 1 之間 (Range [-1, 1])
+  - 0 到 1 之間 (Range [0, 1])
+  - 0 到 無窮大 (Range [0, infinity])
+  - 負無窮大 到 正無窮大 (Range [-infinity, infinity])
   correct_index: 1
   explanation: Sigmoid 將輸入壓縮到 (0, 1) 區間，常用於二元分類的輸出層表示機率。
   tags:
@@ -185,10 +181,10 @@ questions:
   text: 均方誤差 (MSE) 最適合用於哪類問題？
   type: multiple_choice
   options:
-  - 二元分類
-  - 多元分類
-  - 迴歸 (Regression)
-  - 分群
+  - 二元分類 (Binary Classification)
+  - 多元分類 (Multi-class Classification)
+  - 迴歸 (Regression)，預測連續數值
+  - 分群 (Clustering)
   correct_index: 2
   explanation: MSE 衡量預測數值與真實數值之差的平方平均，是迴歸問題的標準損失函數。
   tags:
@@ -201,10 +197,10 @@ questions:
   text: 在神經網路中，「權重 (Weights)」的作用是？
   type: multiple_choice
   options:
-  - 儲存輸入數據
-  - 調節信號的強度，決定輸入特徵的重要性
-  - 引入非線性
-  - 計算損失
+  - 儲存輸入數據 (Store Input Data)
+  - 調節信號的強度，決定輸入特徵的重要性 (Adjust Signal Strength)
+  - 引入非線性 (Introduce Non-linearity)
+  - 計算損失 (Calculate Loss)
   correct_index: 1
   explanation: 權重 $w$ 決定了輸入 $x$ 對下一層神經元輸出的影響程度，是模型需要學習的主要參數。
   tags:
@@ -233,10 +229,10 @@ questions:
   text: 學習率 (Learning Rate) 過大會導致？
   type: multiple_choice
   options:
-  - 收斂速度極慢
-  - 在最小值附近震盪甚至發散，無法收斂
-  - 模型準確率提高
-  - 梯度消失
+  - 收斂速度極慢 (Slow Convergence)
+  - 在最小值附近震盪甚至發散，無法收斂 (Oscillation or Divergence)
+  - 模型準確率提高 (Improved Accuracy)
+  - 梯度消失 (Vanishing Gradient)
   correct_index: 1
   explanation: 學習率決定步長。步長太大可能直接跨過山谷底部的最低點，甚至衝到對面更高的位置，導致無法收斂。
   tags:
@@ -249,10 +245,10 @@ questions:
   text: 前向傳播 (Forward Propagation) 的主要目的是？
   type: multiple_choice
   options:
-  - 更新權重
-  - 計算梯度
-  - 根據當前參數計算預測輸出
-  - 初始化參數
+  - 更新權重 (Update Weights)
+  - 計算梯度 (Calculate Gradients)
+  - 根據當前參數計算預測輸出 (Calculate Output)
+  - 初始化參數 (Initialize Parameters)
   correct_index: 2
   explanation: 前向傳播是數據從輸入層流向輸出層的過程，最終產生預測結果。
   tags:
@@ -265,10 +261,10 @@ questions:
   text: Momentum (動量) 技術的主要目的是？
   type: multiple_choice
   options:
-  - 減少參數量
-  - 加速收斂並抑制震盪
-  - 防止過擬合
-  - 自動調整學習率
+  - 減少參數量 (Reduce Parameters)
+  - 加速收斂並抑制震盪 (Accelerate Convergence & Dampen Oscillations)
+  - 防止過擬合 (Prevent Overfitting)
+  - 自動調整學習率 (Auto Adjust Learning Rate)
   correct_index: 1
   explanation: 動量模擬物理慣性，讓參數更新方向保持一致，能加速通過平緩區域並減少在峽谷中的震盪。
   tags:
@@ -281,9 +277,9 @@ questions:
   text: 哪種活化函數在輸入為負時輸出為 0，輸入為正時輸出為輸入值本身？
   type: multiple_choice
   options:
-  - Sigmoid
-  - Tanh
-  - ReLU
+  - Sigmoid (S-shaped)
+  - Tanh (Hyperbolic Tangent)
+  - ReLU (Rectified Linear Unit)
   - Leaky ReLU
   correct_index: 2
   explanation: 這是 ReLU (Rectified Linear Unit) 的定義：$\max(0, x)$。
@@ -297,10 +293,10 @@ questions:
   text: 全連接層 (Fully Connected Layer) 的特點是？
   type: multiple_choice
   options:
-  - 每個神經元只連接到上一層的部分神經元
-  - 每個神經元都與上一層的所有神經元相連
-  - 神經元之間沒有連接
-  - 權重是共享的
+  - 每個神經元只連接到上一層的部分神經元 (Sparse Connection)
+  - 每個神經元都與上一層的所有神經元相連 (Dense Connection)
+  - 神經元之間沒有連接 (No Connection)
+  - 權重是共享的 (Shared Weights)
   correct_index: 1
   explanation: 全連接層（Dense Layer）中，上一層的每個輸出都連接到下一層的每個輸入，參數數量最多。
   tags:
@@ -313,10 +309,10 @@ questions:
   text: Epoch 在深度學習訓練中代表什麼？
   type: multiple_choice
   options:
-  - 一次參數更新
+  - 一次參數更新 (One Update Step)
   - 一個批次 (Batch) 的數據通過模型
-  - 整個訓練數據集完整通過模型一次 (前向+反向)
-  - 訓練結束
+  - 整個訓練數據集完整通過模型一次 (前向+反向) (Full Dataset Pass)
+  - 訓練結束 (Training End)
   correct_index: 2
   explanation: 一個 Epoch 意味著模型已經看過所有的訓練數據一次。通常需要多個 Epoch 才能訓練收斂。
   tags:
@@ -329,14 +325,10 @@ questions:
   text: Tanh 活化函數的輸出範圍是？
   type: multiple_choice
   options:
-  - - 0
-    - 1
-  - - -1
-    - 1
-  - - 0
-    - infinity
-  - - -infinity
-    - infinity
+  - 0 到 1 之間 (Range [0, 1])
+  - -1 到 1 之間 (Range [-1, 1])
+  - 0 到 無窮大 (Range [0, infinity])
+  - 負無窮大 到 正無窮大 (Range [-infinity, infinity])
   correct_index: 1
   explanation: Tanh (雙曲正切) 函數將輸入壓縮到 (-1, 1)，其中心為 0，通常比 Sigmoid 收斂更快。
   tags:
@@ -349,10 +341,10 @@ questions:
   text: 批次大小 (Batch Size) 對訓練有什麼影響？
   type: multiple_choice
   options:
-  - 批次越大，訓練越快，但記憶體需求越高
-  - 批次越小，梯度估計越準確
-  - 批次大小不影響訓練
-  - 批次越大，泛化能力越好
+  - 批次越大，訓練越快，但記憶體需求越高 (Faster but High Memory)
+  - 批次越小，梯度估計越準確 (Smaller Batch, More Accurate Gradient)
+  - 批次大小不影響訓練 (No Effect)
+  - 批次越大，泛化能力越好 (Larger Batch, Better Generalization)
   correct_index: 0
   explanation: 大批次能利用矩陣運算的並行性加速訓練，但需要更多 GPU 記憶體；小批次引入更多雜訊，有時有助於泛化。
   tags:
@@ -365,10 +357,10 @@ questions:
   text: 深度神經網路 (DNN) 中的「深度」指的是？
   type: multiple_choice
   options:
-  - 每一層神經元的數量
-  - 隱藏層的數量
-  - 數據的維度
-  - 訓練的時間
+  - 每一層神經元的數量 (Neurons per Layer)
+  - 隱藏層的數量 (Number of Hidden Layers)
+  - 數據的維度 (Data Dimensions)
+  - 訓練的時間 (Training Time)
   correct_index: 1
   explanation: 深度學習之所以「深」，是因為它堆疊了多個隱藏層，使其能學習分層次的特徵表示。
   tags:
@@ -381,10 +373,10 @@ questions:
   text: 權重初始化 (Weight Initialization) 若將所有權重設為 0，會發生什麼？
   type: multiple_choice
   options:
-  - 模型訓練非常快
-  - 喪失對稱性 (Symmetry Breaking) 失敗
-  - 模型準確率最高
-  - 不會有影響
+  - 模型訓練非常快 (Fast Training)
+  - 喪失對稱性 (Symmetry Breaking) 失敗，導致所有神經元學到相同特徵
+  - 模型準確率最高 (Highest Accuracy)
+  - 不會有影響 (No Effect)
   correct_index: 1
   explanation: 若所有權重初始化為 0，則同一層的所有神經元在反向傳播時獲得的梯度都相同，導致它們永遠同步更新，無法學習不同的特徵。
   tags:
@@ -397,10 +389,10 @@ questions:
   text: 為什麼 ReLU 比 Sigmoid 更受歡迎？
   type: multiple_choice
   options:
-  - ReLU 輸出範圍是 (-1, 1)
-  - ReLU 計算複雜
-  - ReLU 在正區間梯度恆為 1，有效解決梯度消失問題
-  - ReLU 是線性的
+  - ReLU 輸出範圍是 (-1, 1) (Range [-1, 1])
+  - ReLU 計算複雜 (Complex Calculation)
+  - ReLU 在正區間梯度恆為 1，有效解決梯度消失問題 (Solves Vanishing Gradient)
+  - ReLU 是線性的 (Linear)
   correct_index: 2
   explanation: Sigmoid 在兩端飽和區梯度趨近 0，導致梯度消失。ReLU 簡單且在正區間無此問題，加速了深層網路的收斂。
   tags:
@@ -413,10 +405,10 @@ questions:
   text: RMSprop 最佳化器的主要特點是？
   type: multiple_choice
   options:
-  - 使用動量
-  - 自適應調整學習率
-  - 隨機梯度下降
-  - 不更新權重
+  - 使用動量 (Use Momentum)
+  - 自適應調整學習率 (Adaptive Learning Rate)
+  - 隨機梯度下降 (Stochastic Gradient Descent)
+  - 不更新權重 (No Weight Update)
   correct_index: 1
   explanation: RMSprop 通過除以梯度的滑動平均平方根來調整每個參數的學習率，解決了 Adagrad 學習率單調遞減過快的問題。
   tags:
@@ -429,10 +421,10 @@ questions:
   text: 多層感知器 (MLP) 至少包含幾層？
   type: multiple_choice
   options:
-  - 1 層 (輸入層)
-  - 2 層 (輸入、輸出)
-  - 3 層 (輸入、隱藏、輸出)
-  - 無限層
+  - 1 層 (輸入層) (1 Layer: Input)
+  - 2 層 (輸入、輸出) (2 Layers: Input, Output)
+  - 3 層 (輸入、隱藏、輸出) (3 Layers: Input, Hidden, Output)
+  - 無限層 (Infinite Layers)
   correct_index: 2
   explanation: MLP 至少包含一個隱藏層，才能處理非線性問題。結構為：輸入層 -> 隱藏層 -> 輸出層。
   tags:
@@ -445,10 +437,10 @@ questions:
   text: 什麼是「早停 (Early Stopping)」？
   type: multiple_choice
   options:
-  - 在訓練開始前停止
-  - 當驗證集誤差不再下降（甚至開始上升）時停止訓練
-  - 當訓練集誤差為 0 時停止
-  - 固定訓練 10 個 Epoch
+  - 在訓練開始前停止 (Stop Before Training)
+  - 當驗證集誤差不再下降（甚至開始上升）時停止訓練 (Stop when Validation Error Plateaus/Increases)
+  - 當訓練集誤差為 0 時停止 (Stop when Training Error is 0)
+  - 固定訓練 10 個 Epoch (Fixed Epochs)
   correct_index: 1
   explanation: 早停是一種正則化技術，通過監控驗證集表現來決定何時停止訓練，避免模型過度擬合訓練數據。
   tags:
@@ -461,10 +453,10 @@ questions:
   text: 輸入層 (Input Layer) 的神經元數量取決於？
   type: multiple_choice
   options:
-  - 輸出類別數量
-  - 輸入數據的特徵維度
-  - 隱藏層數量
-  - 隨機決定
+  - 輸出類別數量 (Number of Output Classes)
+  - 輸入數據的特徵維度 (Input Feature Dimensions)
+  - 隱藏層數量 (Number of Hidden Layers)
+  - 隨機決定 (Randomly Determined)
   correct_index: 1
   explanation: 輸入層負責接收原始數據，其神經元數量必須等於輸入向量的維度（特徵數）。
   tags:
@@ -477,10 +469,10 @@ questions:
   text: 學習率衰減 (Learning Rate Decay) 的目的是？
   type: multiple_choice
   options:
-  - 隨著訓練進行逐漸減小學習率
-  - 增加學習率以加速訓練
-  - 保持學習率不變
-  - 隨機改變學習率
+  - 隨著訓練進行逐漸減小學習率 (Decay Learning Rate over Time)
+  - 增加學習率以加速訓練 (Increase Learning Rate)
+  - 保持學習率不變 (Constant Learning Rate)
+  - 隨機改變學習率 (Random Learning Rate)
   correct_index: 0
   explanation: 初期使用大機率快速接近最佳解，後期減小學習率可以避免在最小值附近震盪，從而收斂得更精確。
   tags:
@@ -493,10 +485,10 @@ questions:
   text: Leaky ReLU 解決了 ReLU 的什麼問題？
   type: multiple_choice
   options:
-  - 梯度爆炸
-  - Dead ReLU 問題（神經元死亡）
-  - 計算過慢
-  - 輸出範圍太大
+  - 梯度爆炸 (Exploding Gradient)
+  - Dead ReLU 問題（神經元死亡） (Dead ReLU Problem)
+  - 計算過慢 (Slow Computation)
+  - 輸出範圍太大 (Output Range too Large)
   correct_index: 1
   explanation: 標準 ReLU 在負區間梯度為 0，可能導致神經元永遠不再激活（死亡）。Leaky ReLU 在負區間給予一個很小的斜率（如 0.01），保留了梯度流動。
   tags:
@@ -509,10 +501,10 @@ questions:
   text: 梯度爆炸 (Exploding Gradient) 通常發生在？
   type: multiple_choice
   options:
-  - 淺層網路
-  - 使用 ReLU 時
-  - 循環神經網路 (RNN) 處理長序列時
-  - 學習率過小
+  - 淺層網路 (Shallow Networks)
+  - 使用 ReLU 時 (Using ReLU)
+  - 循環神經網路 (RNN) 處理長序列時 (RNN with Long Sequences)
+  - 學習率過小 (Small Learning Rate)
   correct_index: 2
   explanation: 在 RNN 中，梯度隨時間步長反向傳播，若權重矩陣特徵值大於 1，梯度會指數級增長，導致數值溢出 (NaN)。
   tags:
@@ -525,10 +517,10 @@ questions:
   text: 輸出層使用線性活化函數 (Linear Activation) 通常適用於？
   type: multiple_choice
   options:
-  - 二元分類
-  - 多元分類
-  - 迴歸問題 (預測任意實數)
-  - 圖像生成
+  - 二元分類 (Binary Classification)
+  - 多元分類 (Multi-class Classification)
+  - 迴歸問題 (預測任意實數) (Regression)
+  - 圖像生成 (Image Generation)
   correct_index: 2
   explanation: 迴歸問題的目標值通常是無界的實數，因此輸出層不應使用限制範圍的活化函數（如 Sigmoid），直接輸出線性結果即可。
   tags:
@@ -541,10 +533,10 @@ questions:
   text: 梯度剪裁 (Gradient Clipping) 用於解決什麼問題？
   type: multiple_choice
   options:
-  - 梯度消失
-  - 梯度爆炸
-  - 過擬合
-  - 欠擬合
+  - 梯度消失 (Vanishing Gradient)
+  - 梯度爆炸 (Exploding Gradient)
+  - 過擬合 (Overfitting)
+  - 欠擬合 (Underfitting)
   correct_index: 1
   explanation: 當檢測到梯度範數超過閾值時，強制將其縮放（剪裁）到該閾值內，防止梯度爆炸導致權重更新過大。
   tags:
@@ -557,10 +549,10 @@ questions:
   text: 萬能近似定理 (Universal Approximation Theorem) 指出？
   type: multiple_choice
   options:
-  - 神經網路可以解決所有問題
-  - 只要有足夠多的神經元，一個單隱藏層的前饋網路可以以任意精度近似任何連續函數
-  - 神經網路永遠比決策樹好
-  - 深度越深越好
+  - 神經網路可以解決所有問題 (Solves All Problems)
+  - 只要有足夠多的神經元，一個單隱藏層的前饋網路可以以任意精度近似任何連續函數 (Approximates Any Continuous Function)
+  - 神經網路永遠比決策樹好 (Always Better than Decision Trees)
+  - 深度越深越好 (Deeper is Better)
   correct_index: 1
   explanation: 這是神經網路強大能力的理論基礎，證明了其擬合複雜函數的潛力（雖然實務上通常用多層網路更有效率）。
   tags:
@@ -573,10 +565,10 @@ questions:
   text: 局部最小值 (Local Minima) 在高維空間中常見嗎？
   type: multiple_choice
   options:
-  - 非常常見，是最佳化的主要障礙
+  - 非常常見，是最佳化的主要障礙 (Very Common)
   - 不常見，更常見的是鞍點 (Saddle Points)
-  - 不存在
-  - 只有一個
+  - 不存在 (Non-existent)
+  - 只有一個 (Only One)
   correct_index: 1
   explanation: 研究表明，在高維非凸優化中，真正的局部極小值很少見，大部分梯度為 0 的點其實是鞍點（一個方向上升，一個方向下降）。
   tags:
@@ -589,10 +581,10 @@ questions:
   text: Dropout 層在訓練時的作用是？
   type: multiple_choice
   options:
-  - 隨機將部分神經元的輸出設為 0
-  - 刪除神經元
-  - 增加神經元
-  - 歸一化輸出
+  - 隨機將部分神經元的輸出設為 0 (Randomly Zero Out Outputs)
+  - 刪除神經元 (Delete Neurons)
+  - 增加神經元 (Add Neurons)
+  - 歸一化輸出 (Normalize Outputs)
   correct_index: 0
   explanation: Dropout 透過在每次迭代中隨機「關閉」部分神經元，強迫網路學習更魯棒的特徵，是一種強大的正則化技術，防止過擬合。
   tags:
@@ -605,10 +597,10 @@ questions:
   text: 為什麼要對輸入數據進行標準化 (Normalization)？
   type: multiple_choice
   options:
-  - 為了美觀
-  - 為了加速梯度下降收斂，使損失曲面更圓滑
-  - 為了增加數據量
-  - 為了減少特徵
+  - 為了美觀 (Aesthetics)
+  - 為了加速梯度下降收斂，使損失曲面更圓滑 (Accelerate Convergence)
+  - 為了增加數據量 (Increase Data)
+  - 為了減少特徵 (Reduce Features)
   correct_index: 1
   explanation: 若特徵尺度不一，損失曲面會呈現狹長的橢圓形，導致梯度下降路徑曲折且收斂慢。標準化後曲面接近圓形，梯度直指圓心，收斂更快。
   tags:
@@ -621,10 +613,10 @@ questions:
   text: 卷積神經網路 (CNN) 最適合處理什麼類型的數據？
   type: multiple_choice
   options:
-  - 表格數據
-  - 網格狀數據 (如圖像)
-  - 時間序列
-  - 文字
+  - 表格數據 (Tabular Data)
+  - 網格狀數據 (如圖像) (Grid-like Data / Images)
+  - 時間序列 (Time Series)
+  - 文字 (Text)
   correct_index: 1
   explanation: CNN 利用卷積核提取局部特徵，並透過權重共享適應平移不變性，是處理圖像數據的標準架構。
   tags:
@@ -637,10 +629,10 @@ questions:
   text: 哪種損失函數對於異常值 (Outliers) 較為魯棒 (Robust)？
   type: multiple_choice
   options:
-  - MSE (均方誤差)
-  - MAE (平均絕對誤差)
-  - Cross-Entropy
-  - Exponential Loss
+  - MSE (均方誤差) (Mean Squared Error)
+  - MAE (平均絕對誤差) (Mean Absolute Error)
+  - Cross-Entropy (交叉熵)
+  - Exponential Loss (指數損失)
   correct_index: 1
   explanation: MSE 會將誤差平方，導致異常值的巨大誤差主導損失函數。MAE 僅計算絕對差值，對異常值較不敏感。
   tags:
@@ -653,10 +645,10 @@ questions:
   text: 情境：你正在訓練一個深層神經網路，發現前幾層的權重幾乎不更新，導致模型無法學習。檢查後發現你使用了 Sigmoid 活化函數。這是什麼問題？應如何解決？
   type: multiple_choice
   options:
-  - 梯度爆炸；應使用梯度剪裁。
-  - 梯度消失；應改用 ReLU 活化函數。
-  - 過擬合；應使用 Dropout。
-  - 學習率過大；應降低學習率。
+  - 梯度爆炸；應使用梯度剪裁 (Exploding Gradient / Gradient Clipping)
+  - 梯度消失；應改用 ReLU 活化函數 (Vanishing Gradient / Use ReLU)
+  - 過擬合；應使用 Dropout (Overfitting / Use Dropout)
+  - 學習率過大；應降低學習率 (High Learning Rate / Decrease Rate)
   correct_index: 1
   explanation: Sigmoid 的導數最大值僅為 0.25，且在飽和區趨近於 0。在深層網路中，多個小於 1 的導數連乘會導致梯度迅速消失。改用 ReLU
     (導數為 1) 是標準解決方案。
@@ -670,10 +662,10 @@ questions:
   text: 情境：你使用 Adam 最佳化器訓練模型，初期損失下降很快，但到後期損失在一個較高值附近震盪，無法進一步下降。你應該嘗試調整什麼？
   type: multiple_choice
   options:
-  - 增加批次大小。
-  - 降低學習率 (Learning Rate Decay)。
-  - 更換成 SGD。
-  - 增加模型層數。
+  - 增加批次大小 (Increase Batch Size)
+  - 降低學習率 (Learning Rate Decay)
+  - 更換成 SGD (Switch to SGD)
+  - 增加模型層數 (Increase Layers)
   correct_index: 1
   explanation: 雖然 Adam 有自適應學習率，但基礎學習率若設得太大，後期仍可能導致在最小值附近震盪。手動或自動降低學習率 (Learning Rate
     Schedule) 可以幫助模型在最後階段「沉澱」到更佳的極小值。
@@ -688,10 +680,10 @@ questions:
     (Inference) 需要保留 Dropout 嗎？
   type: multiple_choice
   options:
-  - 加在輸出層；測試時保留。
-  - 加在隱藏層後；測試時應移除 (或將權重乘以保留率)。
-  - 加在輸入層；測試時保留。
-  - 隨便加；測試時保留。
+  - 加在輸出層；測試時保留 (Output Layer / Keep)
+  - 加在隱藏層後；測試時應移除 (或將權重乘以保留率) (Hidden Layer / Remove or Scale)
+  - 加在輸入層；測試時保留 (Input Layer / Keep)
+  - 隨便加；測試時保留 (Random / Keep)
   correct_index: 1
   explanation: Dropout 通常加在全連接層之後。在訓練時它隨機關閉神經元以防止過擬合；在測試時，我們希望利用整個網路的能力，因此不應關閉神經元，但需要對權重進行縮放
     (Scaling) 以保持期望值一致。
@@ -705,10 +697,10 @@ questions:
   text: 情境：你正在處理一個多標籤分類問題 (Multi-label Classification)，即一張圖片可能同時包含「貓」和「狗」。你的輸出層應該有多少個神經元？使用什麼活化函數？
   type: multiple_choice
   options:
-  - 1 個神經元；Sigmoid。
-  - N 個神經元 (N=類別數)；Softmax。
-  - N 個神經元 (N=類別數)；Sigmoid。
-  - N 個神經元；ReLU。
+  - 1 個神經元；Sigmoid (1 Neuron / Sigmoid)
+  - N 個神經元 (N=類別數)；Softmax (N Neurons / Softmax)
+  - N 個神經元 (N=類別數)；Sigmoid (N Neurons / Sigmoid)
+  - N 個神經元；ReLU (N Neurons / ReLU)
   correct_index: 2
   explanation: Softmax 強制所有類別機率和為 1，意味著類別互斥（單選）。對於多標籤問題（複選），每個類別是獨立的，應對每個輸出節點獨立使用
     Sigmoid，使其輸出代表該類別存在的機率 (0~1)。
@@ -722,10 +714,10 @@ questions:
   text: 情境：在訓練過程中，Loss 突然變成 NaN (Not a Number)。這最可能是什麼原因造成的？應如何排查？
   type: multiple_choice
   options:
-  - 學習率過小。
-  - 梯度爆炸 (Exploding Gradient) 或除以零錯誤。
-  - 模型太簡單。
-  - 數據量太少。
+  - 學習率過小 (Learning Rate too Small)
+  - 梯度爆炸 (Exploding Gradient) 或除以零錯誤 (Division by Zero)
+  - 模型太簡單 (Model too Simple)
+  - 數據量太少 (Insufficient Data)
   correct_index: 1
   explanation: Loss 變 NaN 通常意味著數值計算溢出。常見原因包括學習率過大導致參數更新飛出邊界、梯度爆炸（特別是在 RNN 中），或在計算
     Log 時輸入了 0 或負數。梯度剪裁和降低學習率是常見對策。
@@ -738,10 +730,10 @@ questions:
   text: 情境：感知器 (Perceptron) 包含哪兩個主要運算步驟？
   type: multiple_choice
   options:
-  - 加權求和與活化函數
-  - 積分與微分
-  - 排序與搜尋
-  - 加密與解密
+  - 加權求和與活化函數 (Weighted Sum & Activation)
+  - 積分與微分 (Integration & Differentiation)
+  - 排序與搜尋 (Sorting & Searching)
+  - 加密與解密 (Encryption & Decryption)
   correct_index: 0
   explanation: 感知器先計算輸入的線性組合 (z = wx + b)，再通過非線性活化函數輸出。
   tags:
@@ -754,10 +746,10 @@ questions:
   text: 情境：ReLU (Rectified Linear Unit) 活化函數的主要優點是？
   type: multiple_choice
   options:
-  - 輸出在 (0, 1) 之間
-  - 解決了梯度消失問題，且計算簡單
-  - 可微分
-  - 平滑
+  - 輸出在 (0, 1) 之間 (Output Range [0, 1])
+  - 解決了梯度消失問題，且計算簡單 (Solves Vanishing Gradient & Simple)
+  - 可微分 (Differentiable)
+  - 平滑 (Smooth)
   correct_index: 1
   explanation: ReLU 在正區間梯度恆為 1，有效緩解了深層網路中梯度隨層數遞減的問題。
   tags:
@@ -770,10 +762,10 @@ questions:
   text: 情境：Softmax 函數通常用於神經網路的哪一層？
   type: multiple_choice
   options:
-  - 輸入層
-  - 隱藏層
-  - 多分類問題的輸出層
-  - 卷積層
+  - 輸入層 (Input Layer)
+  - 隱藏層 (Hidden Layer)
+  - 多分類問題的輸出層 (Output Layer for Multi-class)
+  - 卷積層 (Convolutional Layer)
   correct_index: 2
   explanation: Softmax 將輸出轉換為機率分佈（總和為 1），適合多類別分類。
   tags:
@@ -786,10 +778,10 @@ questions:
   text: 情境：反向傳播 (Backpropagation) 演算法利用什麼數學原理來計算梯度？
   type: multiple_choice
   options:
-  - 畢氏定理
+  - 畢氏定理 (Pythagorean Theorem)
   - 連鎖律 (Chain Rule)
-  - 泰勒展開
-  - 傅立葉變換
+  - 泰勒展開 (Taylor Expansion)
+  - 傅立葉變換 (Fourier Transform)
   correct_index: 1
   explanation: 連鎖律允許我們將複合函數的導數分解為各層導數的乘積，從而將誤差反向傳遞。
   tags:
@@ -818,10 +810,10 @@ questions:
   text: 情境：SGD (隨機梯度下降) 與傳統 GD (梯度下降) 的主要區別是？
   type: multiple_choice
   options:
-  - SGD 每次只用一個樣本 (或小批次) 更新參數，速度快但有雜訊
-  - SGD 用全部樣本
-  - SGD 不需要梯度
-  - SGD 只能用於線性模型
+  - SGD 每次只用一個樣本 (或小批次) 更新參數，速度快但有雜訊 (Single Sample / Mini-batch)
+  - SGD 用全部樣本 (Full Batch)
+  - SGD 不需要梯度 (No Gradient)
+  - SGD 只能用於線性模型 (Linear Models Only)
   correct_index: 0
   explanation: SGD 犧牲了更新方向的穩定性換取計算速度與跳出局部最佳解的能力。
   tags:
@@ -834,10 +826,10 @@ questions:
   text: 情境：Adam 最佳化器結合了哪兩種技術的優點？
   type: multiple_choice
   options:
-  - Momentum 與 RMSprop
-  - SGD 與 GD
-  - L1 與 L2 正則化
-  - RNN 與 CNN
+  - Momentum 與 RMSprop (Momentum & RMSprop)
+  - SGD 與 GD (SGD & GD)
+  - L1 與 L2 正則化 (L1 & L2 Regularization)
+  - RNN 與 CNN (RNN & CNN)
   correct_index: 0
   explanation: Adam 同時利用一階矩（動量）與二階矩（自適應學習率）來優化更新過程。
   tags:
@@ -850,10 +842,10 @@ questions:
   text: 情境：若神經網路沒有使用活化函數，它將等價於？
   type: multiple_choice
   options:
-  - 深度神經網路
-  - 單層線性模型
-  - 決策樹
-  - SVM
+  - 深度神經網路 (Deep Neural Network)
+  - 單層線性模型 (Single Layer Linear Model)
+  - 決策樹 (Decision Tree)
+  - SVM (Support Vector Machine)
   correct_index: 1
   explanation: 線性函數的組合仍然是線性的，無法擬合複雜的非線性邊界。
   tags:
@@ -866,10 +858,10 @@ questions:
   text: 情境：均方誤差 (MSE) 最常用於哪類問題？
   type: multiple_choice
   options:
-  - 分類
+  - 分類 (Classification)
   - 迴歸 (Regression)
-  - 分群
-  - 降維
+  - 分群 (Clustering)
+  - 降維 (Dimensionality Reduction)
   correct_index: 1
   explanation: MSE 衡量預測數值與真實數值的距離，適合連續值的預測。
   tags:
@@ -882,10 +874,10 @@ questions:
   text: 情境：Sigmoid 函數的一個主要缺點是？
   type: multiple_choice
   options:
-  - 輸出範圍太大
+  - 輸出範圍太大 (Output Range too Large)
   - 容易導致梯度消失 (Vanishing Gradient)
-  - 計算太簡單
-  - 不連續
+  - 計算太簡單 (Too Simple)
+  - 不連續 (Discontinuous)
   correct_index: 1
   explanation: Sigmoid 在兩端飽和區的導數趨近於 0，導致深層網路無法有效更新權重。
   tags:
@@ -898,10 +890,10 @@ questions:
   text: 情境：學習率 (Learning Rate) 控制的是？
   type: multiple_choice
   options:
-  - 模型的大小
-  - 參數更新的步長
-  - 訓練資料的數量
-  - 神經元數量
+  - 模型的大小 (Model Size)
+  - 參數更新的步長 (Step Size of Parameter Update)
+  - 訓練資料的數量 (Amount of Training Data)
+  - 神經元數量 (Number of Neurons)
   correct_index: 1
   explanation: 學習率決定了每次迭代向梯度反方向移動的距離。
   tags:
@@ -914,10 +906,10 @@ questions:
   text: 情境：前向傳播 (Forward Propagation) 的主要目的是？
   type: multiple_choice
   options:
-  - 更新權重
-  - 計算預測值與損失
-  - 初始化參數
-  - 儲存資料
+  - 更新權重 (Update Weights)
+  - 計算預測值與損失 (Calculate Predictions & Loss)
+  - 初始化參數 (Initialize Parameters)
+  - 儲存資料 (Store Data)
   correct_index: 1
   explanation: 前向傳播將輸入數據通過網路推導出預測結果，並計算目前的誤差。
   tags:
@@ -930,10 +922,10 @@ questions:
   text: 情境：帶動量的 SGD (SGD with Momentum) 模擬了物理中的什麼現象？
   type: multiple_choice
   options:
-  - 摩擦力
+  - 摩擦力 (Friction)
   - 慣性 (Inertia)
-  - 重力
-  - 浮力
+  - 重力 (Gravity)
+  - 浮力 (Buoyancy)
   correct_index: 1
   explanation: 動量項讓更新方向具有持續性，能加速收斂並抑制震盪。
   tags:
@@ -946,10 +938,10 @@ questions:
   text: 情境：隱藏層 (Hidden Layer) 的作用是？
   type: multiple_choice
   options:
-  - 接收輸入
-  - 輸出結果
-  - 提取特徵與進行非線性變換
-  - 沒作用
+  - 接收輸入 (Receive Input)
+  - 輸出結果 (Output Result)
+  - 提取特徵與進行非線性變換 (Feature Extraction & Non-linear Transformation)
+  - 沒作用 (No Effect)
   correct_index: 2
   explanation: 多層隱藏層使神經網路能學習數據的階層式特徵表示。
   tags:
@@ -962,10 +954,10 @@ questions:
   text: 情境：損失函數 (Loss Function) 的值越小代表？
   type: multiple_choice
   options:
-  - 模型表現越差
-  - 模型表現越好 (預測誤差越小)
-  - 模型過擬合
-  - 模型欠擬合
+  - 模型表現越差 (Worse Performance)
+  - 模型表現越好 (預測誤差越小) (Better Performance / Smaller Error)
+  - 模型過擬合 (Overfitting)
+  - 模型欠擬合 (Underfitting)
   correct_index: 1
   explanation: 損失函數定義了「錯誤」的程度，最小化損失即最大化準確度。
   tags:
@@ -979,9 +971,9 @@ questions:
   type: multiple_choice
   options:
   - x
-  - '0'
-  - '1'
-  - '-1'
+  - '0' (Zero)
+  - '1' (One)
+  - '-1' (Negative One)
   correct_index: 1
   explanation: ReLU 定義為 max(0, x)，負值部分被截斷為 0。
   tags:
@@ -994,10 +986,10 @@ questions:
   text: 情境：Epoch 在深度學習訓練中代表？
   type: multiple_choice
   options:
-  - 一次迭代
-  - 所有訓練資料完整通過模型一次
-  - 一秒鐘
-  - 一層網路
+  - 一次迭代 (One Iteration)
+  - 所有訓練資料完整通過模型一次 (Full Dataset Pass)
+  - 一秒鐘 (One Second)
+  - 一層網路 (One Network Layer)
   correct_index: 1
   explanation: 一個 Epoch 意味著模型已經看過所有的訓練樣本一遍。
   tags:
@@ -1010,10 +1002,10 @@ questions:
   text: 情境：權重 (Weights) 在神經網路中代表？
   type: multiple_choice
   options:
-  - 神經元的連接強度
-  - 神經元的數量
-  - 輸入數據的大小
-  - 學習率
+  - 神經元的連接強度 (Connection Strength)
+  - 神經元的數量 (Number of Neurons)
+  - 輸入數據的大小 (Input Data Size)
+  - 學習率 (Learning Rate)
   correct_index: 0
   explanation: 權重決定了訊號在神經元間傳遞的放大或縮小倍率，是模型學習到的知識載體。
   tags:
@@ -1026,10 +1018,10 @@ questions:
   text: 情境：Mini-batch 的大小對訓練有何影響？
   type: multiple_choice
   options:
-  - 沒影響
-  - 影響梯度估計的準確度與記憶體使用量
-  - 只影響模型大小
-  - 只影響預測速度
+  - 沒影響 (No Effect)
+  - 影響梯度估計的準確度與記憶體使用量 (Affects Gradient Accuracy & Memory Usage)
+  - 只影響模型大小 (Only Affects Model Size)
+  - 只影響預測速度 (Only Affects Prediction Speed)
   correct_index: 1
   explanation: 較大的 Batch 梯度較穩但吃記憶體，較小的 Batch 雜訊多但有助於泛化。
   tags:

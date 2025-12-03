@@ -5,10 +5,10 @@ questions:
   text: AI 模型產生偏見 (Bias) 的主要原因通常是？
   type: multiple_choice
   options:
-  - 演算法本身的數學錯誤
-  - 電腦硬體故障
-  - 訓練資料反映了歷史上的社會偏見或抽樣不均
-  - 程式碼寫太長
+  - 演算法本身的數學錯誤 (Mathematical Errors in Algorithm Itself)，計算公式有誤。
+  - 電腦硬體故障 (Computer Hardware Malfunction)，硬體設備損壞。
+  - 訓練資料反映了歷史上的社會偏見或抽樣不均 (Training Data Reflects Historical Social Bias or Sampling Imbalance)
+  - 程式碼寫太長 (Code Written Too Long)，程式碼長度過長。
   correct_index: 2
   explanation: AI 模型是從歷史數據中學習，若數據本身包含人類社會的偏見（如性別歧視），模型就會學到並放大這些偏見。
   tags:
@@ -21,10 +21,10 @@ questions:
   text: Amazon 的 AI 招聘系統曾發生什麼倫理問題？
   type: multiple_choice
   options:
-  - 歧視女性求職者（對包含女性詞彙的履歷扣分）
-  - 洩漏個資
-  - 錄取太多人
-  - 系統當機
+  - 歧視女性求職者（對包含女性詞彙的履歷扣分）(Discriminating Against Female Job Applicants: Deducting Points from Resumes Containing Female Terms)
+  - 洩漏個資 (Leaking Personal Data)，個人資料外洩。
+  - 錄取太多人 (Hiring Too Many People)，錄取人數過多。
+  - 系統當機 (System Crash)，系統無法運作。
   correct_index: 0
   explanation: 因為過去科技業多為男性，AI 學習歷史數據後誤以為「男性」是好員工的特徵，導致歧視女性。
   tags:
@@ -37,10 +37,10 @@ questions:
   text: 差分隱私 (Differential Privacy) 的核心技術是？
   type: multiple_choice
   options:
-  - 資料加密
-  - 使用區塊鏈
-  - 刪除資料
-  - 在資料中加入適量的數學雜訊 (Noise)
+  - 資料加密 (Data Encryption)，將資料轉換為密文。
+  - 使用區塊鏈 (Using Blockchain)，採用分散式帳本技術。
+  - 刪除資料 (Deleting Data)，移除所有資料。
+  - 在資料中加入適量的數學雜訊 (Noise) (Adding Appropriate Amount of Mathematical Noise to Data)
   correct_index: 3
   explanation: 差分隱私透過加入雜訊，使得攻擊者無法分辨特定個人的資訊，但仍能保持整體統計數據的準確性。
   tags:
@@ -53,10 +53,10 @@ questions:
   text: 聯邦學習 (Federated Learning) 的最大特色是？
   type: multiple_choice
   options:
-  - 不需要模型
-  - 數據不離地 (Data stays local)，只交換模型參數
-  - 只能由政府使用
-  - 所有資料都上傳到雲端
+  - 不需要模型 (No Model Required)，完全不需要模型。
+  - 數據不離地 (Data stays local)，只交換模型參數 (Data Stays Local, Only Exchanging Model Parameters)
+  - 只能由政府使用 (Can Only Be Used by Government)，僅限政府機構。
+  - 所有資料都上傳到雲端 (All Data Uploaded to Cloud)，資料集中儲存。
   correct_index: 1
   explanation: 聯邦學習讓模型在本地裝置訓練，只回傳參數更新給伺服器，原始私密資料保留在用戶端。
   tags:
@@ -69,10 +69,10 @@ questions:
   text: 在 AI 輔助決策（如醫療診斷）中，「人機協作 (Human-in-the-loop)」意味著？
   type: multiple_choice
   options:
-  - 最終決策權與責任仍在人類專家身上
-  - AI 全權負責
-  - 人類完全不介入
-  - AI 取代人類
+  - 最終決策權與責任仍在人類專家身上 (Final Decision-Making Authority and Responsibility Remain with Human Experts)
+  - AI 全權負責 (AI Fully Responsible)，完全由 AI 決定。
+  - 人類完全不介入 (Humans Do Not Intervene at All)，無人為參與。
+  - AI 取代人類 (AI Replaces Humans)，AI 完全取代人類角色。
   correct_index: 0
   explanation: 高風險決策不能全交給 AI，必須有人類專家審核 AI 的建議並做出最終決定。
   tags:
@@ -85,10 +85,10 @@ questions:
   text: 台灣《人工智慧基本法》草案中提到的「監理沙盒 (Regulatory Sandbox)」目的是？
   type: multiple_choice
   options:
-  - 允許企業在風險可控範圍內測試創新技術，暫時豁免部分法規
-  - 建立兒童遊樂場
-  - 禁止 AI 發展
-  - 處罰違規企業
+  - 允許企業在風險可控範圍內測試創新技術，暫時豁免部分法規 (Allowing Enterprises to Test Innovative Technologies Within Controllable Risk Range, Temporarily Exempting Some Regulations)
+  - 建立兒童遊樂場 (Building Children's Playground)，設置遊樂設施。
+  - 禁止 AI 發展 (Prohibiting AI Development)，完全禁止 AI 技術。
+  - 處罰違規企業 (Penalizing Non-Compliant Enterprises)，對違規者進行處罰。
   correct_index: 0
   explanation: 監理沙盒提供一個實驗場域，讓創新技術能在法規尚未完備前先行測試，促進產業發展。
   tags:
@@ -101,10 +101,10 @@ questions:
   text: 台灣金融業運用 AI 的核心原則中，關於「治理 (Governance)」的重點是？
   type: multiple_choice
   options:
-  - 外包給廠商負責
-  - 董事會與高層管理階層應負起監督責任
-  - 由 IT 部門全權負責
-  - 不需要治理
+  - 外包給廠商負責 (Outsourcing to Vendors)，委外處理。
+  - 董事會與高層管理階層應負起監督責任 (Board of Directors and Senior Management Should Bear Supervisory Responsibility)
+  - 由 IT 部門全權負責 (Fully Handled by IT Department)，僅由技術部門處理。
+  - 不需要治理 (No Governance Required)，完全不需要管理。
   correct_index: 1
   explanation: 金管會強調 AI 治理是董事會層級的責任，不能僅視為技術操作層面的問題。
   tags:
@@ -117,10 +117,10 @@ questions:
   text: 歐盟《人工智慧法案》(EU AI Act) 採取什麼樣的監管模式？
   type: multiple_choice
   options:
-  - 技術導向
-  - 全面禁止
-  - 完全放任
-  - 風險導向 (Risk-based approach)
+  - 技術導向 (Technology-Oriented)，以技術為核心考量。
+  - 全面禁止 (Complete Prohibition)，完全禁止所有 AI 應用。
+  - 完全放任 (Complete Laissez-Faire)，完全不進行監管。
+  - 風險導向 (Risk-based approach)，根據風險等級進行分級管理。
   correct_index: 3
   explanation: EU AI Act 根據 AI 應用的風險等級（不可接受、高、有限、最小）實施不同強度的監管。
   tags:
@@ -133,10 +133,10 @@ questions:
   text: 根據 EU AI Act，「社會信用評分 (Social Scoring)」屬於哪一級風險？
   type: multiple_choice
   options:
-  - 有限風險
-  - 高風險
-  - 最小風險
-  - 不可接受風險 (Unacceptable Risk) - 禁止
+  - 有限風險 (Limited Risk)，風險程度有限。
+  - 高風險 (High Risk)，風險程度較高。
+  - 最小風險 (Minimal Risk)，風險程度極低。
+  - 不可接受風險 (Unacceptable Risk) - 禁止 (Unacceptable Risk: Prohibited)
   correct_index: 3
   explanation: 社會信用評分被認為嚴重侵犯人權，在歐盟是完全禁止的。
   tags:
@@ -149,10 +149,10 @@ questions:
   text: 根據 EU AI Act，招聘系統或醫療器材 AI 屬於哪一級風險？
   type: multiple_choice
   options:
-  - 有限風險
-  - 最小風險
-  - 不可接受風險
-  - 高風險 (High Risk) - 嚴格監管
+  - 有限風險 (Limited Risk)，風險程度有限。
+  - 最小風險 (Minimal Risk)，風險程度極低。
+  - 不可接受風險 (Unacceptable Risk)，完全禁止的風險等級。
+  - 高風險 (High Risk) - 嚴格監管 (High Risk: Strict Regulation)
   correct_index: 3
   explanation: 這些應用直接影響人們的生計與健康，被列為高風險，需通過嚴格的合規評估。
   tags:
@@ -165,10 +165,10 @@ questions:
   text: 根據 EU AI Act，聊天機器人 (Chatbot) 屬於哪一級風險，需履行什麼義務？
   type: multiple_choice
   options:
-  - 有限風險 (Limited Risk)，需履行透明度義務（告知是 AI）
-  - 不可接受風險，需禁止
-  - 高風險，需審查
-  - 最小風險，不需監管
+  - 有限風險 (Limited Risk)，需履行透明度義務（告知是 AI）(Limited Risk: Must Fulfill Transparency Obligation: Inform That It Is AI)
+  - 不可接受風險，需禁止 (Unacceptable Risk: Must Be Prohibited)，完全禁止使用。
+  - 高風險，需審查 (High Risk: Must Be Reviewed)，需要嚴格審查。
+  - 最小風險，不需監管 (Minimal Risk: No Regulation Required)，幾乎不需要監管。
   correct_index: 0
   explanation: 使用者有權知道自己正在與機器互動，因此必須揭露 AI 身分。
   tags:
@@ -181,10 +181,10 @@ questions:
   text: 數位發展部 AI 產品評測中心的評測指標不包含下列何者？
   type: multiple_choice
   options:
-  - 可解釋性 (Explainability)
-  - 安全性 (Safety)
-  - 公平性 (Fairness)
-  - 資料複雜性 (Data Complexity)
+  - 可解釋性 (Explainability)，模型決策過程的可理解程度。
+  - 安全性 (Safety)，系統的安全性與穩定性。
+  - 公平性 (Fairness)，模型對不同群體的公平程度。
+  - 資料複雜性 (Data Complexity)，資料本身的複雜程度。
   correct_index: 3
   explanation: 評測中心主要評估模型本身的性能與安全，資料品質通常被視為廠商的責任，不在直接評測範圍內。
   tags:
@@ -197,10 +197,10 @@ questions:
   text: 「資料去偏 (Data Debiasing)」的主要目的是？
   type: multiple_choice
   options:
-  - 消除訓練資料中的不公平偏見，確保模型公平性
-  - 加密資料
-  - 減少資料量
-  - 加快訓練速度
+  - 消除訓練資料中的不公平偏見，確保模型公平性 (Eliminating Unfair Bias in Training Data, Ensuring Model Fairness)
+  - 加密資料 (Encrypting Data)，將資料轉換為密文。
+  - 減少資料量 (Reducing Data Volume)，降低資料集大小。
+  - 加快訓練速度 (Accelerating Training Speed)，提升訓練效率。
   correct_index: 0
   explanation: 透過調整資料分佈或演算法約束，減少模型因歷史數據而產生的歧視行為。
   tags:
@@ -213,10 +213,10 @@ questions:
   text: 聯邦學習適合應用於哪個場景？
   type: multiple_choice
   options:
-  - 多家醫院聯合研究，但病歷個資不能出院
-  - 單機遊戲
-  - 天氣預報
-  - 公開數據集的訓練
+  - 多家醫院聯合研究，但病歷個資不能出院 (Multiple Hospitals Joint Research, But Medical Records Cannot Leave Hospital)
+  - 單機遊戲 (Single-Player Games)，不需要資料共享的應用。
+  - 天氣預報 (Weather Forecasting)，公開資料的應用場景。
+  - 公開數據集的訓練 (Training on Public Datasets)，使用公開資料集。
   correct_index: 0
   explanation: 聯邦學習是解決跨機構資料隱私共享問題的最佳方案。
   tags:
@@ -229,10 +229,10 @@ questions:
   text: 金融業 AI 規範中的「透明度與可解釋性」要求什麼？
   type: multiple_choice
   options:
-  - 當 AI 做出重大決策（如拒貸）時，必須能解釋原因
-  - 使用透明的機殼
-  - 完全不使用 AI
-  - 公開所有程式碼
+  - 當 AI 做出重大決策（如拒貸）時，必須能解釋原因 (When AI Makes Major Decisions (Such as Loan Rejection), Must Be Able to Explain Reasons)
+  - 使用透明的機殼 (Using Transparent Casing)，硬體外觀透明。
+  - 完全不使用 AI (Completely Not Using AI)，禁止使用 AI 技術。
+  - 公開所有程式碼 (Open Sourcing All Code)，完全公開原始碼。
   correct_index: 0
   explanation: 客戶有權知道為何被拒絕，金融機構不能以「黑箱」為由拒絕解釋。
   tags:
@@ -245,10 +245,10 @@ questions:
   text: EU AI Act 對於 Deepfake 的規範是？
   type: multiple_choice
   options:
-  - 不需管制
-  - 必須標示為生成內容（透明度義務）
-  - 完全禁止
-  - 只能用於娛樂
+  - 不需管制 (No Regulation Required)，完全不需要監管。
+  - 必須標示為生成內容（透明度義務）(Must Label as Generated Content: Transparency Obligation)
+  - 完全禁止 (Completely Prohibited)，禁止所有使用。
+  - 只能用於娛樂 (Can Only Be Used for Entertainment)，僅限娛樂用途。
   correct_index: 1
   explanation: Deepfake 屬於有限風險，必須明確標示以避免誤導大眾。
   tags:
@@ -261,10 +261,10 @@ questions:
   text: Prompt Injection 攻擊是針對 AI 的哪項指標進行測試？
   type: multiple_choice
   options:
-  - 準確性
-  - 效率
-  - 安全性 (Safety)
-  - 公平性
+  - 準確性 (Accuracy)，預測結果的正確程度。
+  - 效率 (Efficiency)，系統的運算效率。
+  - 安全性 (Safety)，系統的安全性防護能力。
+  - 公平性 (Fairness)，對不同群體的公平程度。
   correct_index: 2
   explanation: Prompt Injection 試圖誘導模型輸出有害內容，測試其安全性防護是否足夠。
   tags:
@@ -277,10 +277,10 @@ questions:
   text: 當責性 (Accountability) 強調的是？
   type: multiple_choice
   options:
-  - AI 必須有自我意識
-  - 使用者要負責修好 AI
-  - AI 永遠不會犯錯
-  - AI 犯錯時，必須有人類負責
+  - AI 必須有自我意識 (AI Must Have Self-Consciousness)，AI 需要具備自我認知。
+  - 使用者要負責修好 AI (Users Must Be Responsible for Fixing AI)，使用者需負責修復。
+  - AI 永遠不會犯錯 (AI Never Makes Mistakes)，AI 完全不會出錯。
+  - AI 犯錯時，必須有人類負責 (When AI Makes Mistakes, Humans Must Be Responsible)
   correct_index: 3
   explanation: 無論技術如何發展，法律與道德責任最終必須歸屬於人類（開發者或使用者）。
   tags:
@@ -293,10 +293,10 @@ questions:
   text: 下列何者屬於 EU AI Act 定義的「最小風險」？
   type: multiple_choice
   options:
-  - 邊境管制系統
-  - 垃圾郵件過濾器
-  - 自駕車
-  - 招聘系統
+  - 邊境管制系統 (Border Control Systems)，屬於高風險應用。
+  - 垃圾郵件過濾器 (Spam Email Filters)，對人權影響極微的應用。
+  - 自駕車 (Autonomous Vehicles)，屬於高風險應用。
+  - 招聘系統 (Recruitment Systems)，屬於高風險應用。
   correct_index: 1
   explanation: 垃圾郵件過濾器對人權影響極微，屬於最小風險，幾乎不需監管。
   tags:
@@ -309,10 +309,10 @@ questions:
   text: 台灣金融業 AI 規範的口訣「治平隱安透責」中，「透」代表？
   type: multiple_choice
   options:
-  - 透露個資
-  - 透視
-  - 透支
-  - 透明度與可解釋性
+  - 透露個資 (Disclosing Personal Data)，洩漏個人資料。
+  - 透視 (Perspective)，視覺上的透視效果。
+  - 透支 (Overdraft)，財務上的透支行為。
+  - 透明度與可解釋性 (Transparency and Explainability)，決策過程的透明與可理解。
   correct_index: 3
   explanation: 透代表透明度與可解釋性，要求決策過程需對客戶透明。
   tags:
@@ -325,10 +325,10 @@ questions:
   text: 抽樣偏見 (Sampling Bias) 是指？
   type: multiple_choice
   options:
-  - 模型參數錯誤
-  - 隨機抽樣
-  - 訓練資料太少
-  - 訓練資料中某些族群的樣本數過少，導致模型對該族群表現不佳
+  - 模型參數錯誤 (Model Parameter Errors)，參數設定不正確。
+  - 隨機抽樣 (Random Sampling)，隨機選擇樣本的方法。
+  - 訓練資料太少 (Insufficient Training Data)，資料量不足。
+  - 訓練資料中某些族群的樣本數過少，導致模型對該族群表現不佳 (Some Groups Have Too Few Samples in Training Data, Causing Poor Model Performance on Those Groups)
   correct_index: 3
   explanation: 若訓練資料集中缺乏某特定族群（如深色人種）的數據，模型在該族群上的準確率就會偏低。
   tags:
@@ -341,10 +341,10 @@ questions:
   text: Google Gboard 使用什麼技術來保護用戶輸入隱私？
   type: multiple_choice
   options:
-  - 防火牆
-  - 區塊鏈
-  - 聯邦學習 (Federated Learning)
-  - 生物辨識
+  - 防火牆 (Firewall)，網路安全防護機制。
+  - 區塊鏈 (Blockchain)，分散式帳本技術。
+  - 聯邦學習 (Federated Learning)，在本地端訓練的隱私保護技術。
+  - 生物辨識 (Biometric Identification)，使用生物特徵進行身份識別。
   correct_index: 2
   explanation: Gboard 利用聯邦學習在手機端改進預測模型，無需上傳用戶的打字內容。
   tags:
@@ -357,10 +357,10 @@ questions:
   text: EU AI Act 對於「潛意識操縱」的規範是？
   type: multiple_choice
   options:
-  - 高風險
-  - 禁止 (不可接受風險)
-  - 有限風險
-  - 最小風險
+  - 高風險 (High Risk)，需要嚴格監管的風險等級。
+  - 禁止 (不可接受風險) (Prohibited: Unacceptable Risk)，完全禁止的應用。
+  - 有限風險 (Limited Risk)，風險程度有限。
+  - 最小風險 (Minimal Risk)，風險程度極低。
   correct_index: 1
   explanation: 利用 AI 操控人類潛意識被視為嚴重侵犯自主權，屬於絕對禁止的項目。
   tags:
@@ -373,10 +373,10 @@ questions:
   text: 金融業 AI 規範中，「系統安全性」要求防止什麼？
   type: multiple_choice
   options:
-  - 防止員工偷懶
-  - 防止對抗式攻擊與駭客入侵
-  - 防止斷電
-  - 防止客戶投訴
+  - 防止員工偷懶 (Preventing Employee Laziness)，避免員工怠工。
+  - 防止對抗式攻擊與駭客入侵 (Preventing Adversarial Attacks and Hacker Intrusions)
+  - 防止斷電 (Preventing Power Outages)，避免電力中斷。
+  - 防止客戶投訴 (Preventing Customer Complaints)，避免客戶不滿。
   correct_index: 1
   explanation: 金融系統必須具備強健性，能抵禦惡意攻擊並確保服務不中斷。
   tags:
@@ -389,10 +389,10 @@ questions:
   text: AI 產品評測中的「彈性 (Resilience)」是指？
   type: multiple_choice
   options:
-  - 遇到異常輸入或攻擊時，系統仍能維持運作的能力
-  - 模型可以隨意變形
-  - 回應速度
-  - 價格彈性
+  - 遇到異常輸入或攻擊時，系統仍能維持運作的能力 (System's Ability to Maintain Operation When Facing Abnormal Inputs or Attacks)
+  - 模型可以隨意變形 (Model Can Deform Randomly)，模型結構可以任意改變。
+  - 回應速度 (Response Speed)，系統回應的快速程度。
+  - 價格彈性 (Price Elasticity)，價格變動的敏感程度。
   correct_index: 0
   explanation: 彈性測試系統在面對壓力或惡意輸入時的穩定性與恢復能力。
   tags:
@@ -405,10 +405,10 @@ questions:
   text: 台灣 AI 基本法草案的定位是？
   type: multiple_choice
   options:
-  - 技術手冊
-  - 上位法，確立基本原則
-  - 僅適用於公部門
-  - 處罰條例
+  - 技術手冊 (Technical Manual)，技術操作指南。
+  - 上位法，確立基本原則 (Upper-Level Law, Establishing Basic Principles)
+  - 僅適用於公部門 (Only Applicable to Public Sector)，僅限政府機關。
+  - 處罰條例 (Penalty Regulations)，處罰相關法規。
   correct_index: 1
   explanation: 基本法作為指導性法律，為 AI 發展與監管提供大方向與原則。
   tags:
@@ -421,10 +421,10 @@ questions:
   text: 歷史偏見 (Historical Bias) 的例子是？
   type: multiple_choice
   options:
-  - 硬碟損壞
-  - 相機畫素不足
-  - 資料標註錯誤
-  - 因為過去主管多為男性，AI 認為男性較適合當主管
+  - 硬碟損壞 (Hard Disk Damage)，儲存設備故障。
+  - 相機畫素不足 (Insufficient Camera Pixels)，影像品質不佳。
+  - 資料標註錯誤 (Data Labeling Errors)，標註資料不正確。
+  - 因為過去主管多為男性，AI 認為男性較適合當主管 (Because Past Managers Were Mostly Male, AI Thinks Males Are More Suitable as Managers)
   correct_index: 3
   explanation: 這是典型的歷史偏見，AI 忠實地學到了人類社會過去存在的不平等。
   tags:
@@ -437,10 +437,10 @@ questions:
   text: EU AI Act 中，公共場所的即時遠端生物辨識原則上是？
   type: multiple_choice
   options:
-  - 僅限商業使用
-  - 完全開放
-  - 鼓勵使用
-  - 禁止 (除特定執法例外)
+  - 僅限商業使用 (Limited to Commercial Use)，僅限商業用途。
+  - 完全開放 (Completely Open)，完全不受限制。
+  - 鼓勵使用 (Encouraging Use)，積極推廣使用。
+  - 禁止 (除特定執法例外) (Prohibited: Except for Specific Law Enforcement Exceptions)
   correct_index: 3
   explanation: 為了保障隱私與自由，原則上禁止，除非是為了追捕重犯等重大公共利益。
   tags:
@@ -453,10 +453,10 @@ questions:
   text: 金融業 AI 規範中，「保護隱私」強調什麼原則？
   type: multiple_choice
   options:
-  - 公開所有資料
-  - 最小化蒐集 (Data Minimization)
-  - 最大化蒐集
-  - 隨意分享
+  - 公開所有資料 (Publishing All Data)，完全公開資料。
+  - 最小化蒐集 (Data Minimization)，只蒐集必要的資料。
+  - 最大化蒐集 (Maximizing Collection)，盡可能蒐集更多資料。
+  - 隨意分享 (Sharing Randomly)，任意分享資料。
   correct_index: 1
   explanation: 只蒐集業務所需的必要資料，避免過度蒐集個資，降低隱私風險。
   tags:
@@ -469,10 +469,10 @@ questions:
   text: AI 治理 (AI Governance) 的核心目標是？
   type: multiple_choice
   options:
-  - 取代人類政府
-  - 提高 AI 價格
-  - 確保 AI 向善 (AI for Good)，降低風險並符合法規
-  - 限制 AI 發展
+  - 取代人類政府 (Replacing Human Government)，AI 取代政府職能。
+  - 提高 AI 價格 (Increasing AI Prices)，提升 AI 產品價格。
+  - 確保 AI 向善 (AI for Good)，降低風險並符合法規 (Ensuring AI for Good, Reducing Risks and Complying with Regulations)
+  - 限制 AI 發展 (Limiting AI Development)，阻礙 AI 技術進步。
   correct_index: 2
   explanation: AI 治理旨在平衡創新與風險，確保技術發展造福人類而非造成傷害。
   tags:
@@ -485,10 +485,10 @@ questions:
   text: 下列哪項技術可以在不洩漏個資的情況下進行數據統計？
   type: multiple_choice
   options:
-  - 差分隱私
-  - 公開數據
-  - 備份數據
-  - 數據清洗
+  - 差分隱私 (Differential Privacy)，保護個資的隱私技術。
+  - 公開數據 (Public Data)，完全公開的資料。
+  - 備份數據 (Backup Data)，資料備份機制。
+  - 數據清洗 (Data Cleaning)，資料清理過程。
   correct_index: 0
   explanation: 差分隱私專為此目的設計，能在保護個體的同時提供準確的群體統計。
   tags:
@@ -501,10 +501,10 @@ questions:
   text: EU AI Act 的影響力常被比喻為？
   type: multiple_choice
   options:
-  - ISO 9001
-  - GDPR (一般資料保護規則)
-  - 憲法
-  - 交通規則
+  - ISO 9001，品質管理系統標準。
+  - GDPR (一般資料保護規則) (GDPR: General Data Protection Regulation)
+  - 憲法 (Constitution)，國家根本大法。
+  - 交通規則 (Traffic Rules)，道路交通法規。
   correct_index: 1
   explanation: 如同 GDPR 成為全球隱私標竿，EU AI Act 預計將成為全球 AI 監管的黃金標準。
   tags:
@@ -517,10 +517,10 @@ questions:
   text: AI 產品評測中的「幻覺 (Hallucination)」檢測屬於哪項指標？
   type: multiple_choice
   options:
-  - 效率
-  - 準確性 (Accuracy)
-  - 相容性
-  - 易用性
+  - 效率 (Efficiency)，系統的運算效率。
+  - 準確性 (Accuracy)，預測結果的正確程度。
+  - 相容性 (Compatibility)，系統間的相容程度。
+  - 易用性 (Usability)，使用者操作的便利性。
   correct_index: 1
   explanation: 幻覺代表模型生成錯誤資訊，直接影響輸出的準確性。
   tags:
@@ -533,10 +533,10 @@ questions:
   text: 風險分級管理的好處是？
   type: multiple_choice
   options:
-  - 讓所有 AI 都被禁止
-  - 避免一竿子打翻一船人，針對不同風險採取適當強度的管理
-  - 讓所有 AI 都不受管
-  - 增加管理成本
+  - 讓所有 AI 都被禁止 (Prohibiting All AI)，完全禁止所有 AI 應用。
+  - 避免一竿子打翻一船人，針對不同風險採取適當強度的管理 (Avoiding One-Size-Fits-All Approach, Applying Appropriate Management Intensity Based on Different Risks)
+  - 讓所有 AI 都不受管 (Allowing All AI to Be Unregulated)，完全不進行監管。
+  - 增加管理成本 (Increasing Management Costs)，提升監管成本。
   correct_index: 1
   explanation: 風險分級能兼顧安全與創新，避免對低風險應用造成不必要的法規負擔。
   tags:
@@ -549,10 +549,10 @@ questions:
   text: 「數據不離地」是哪種技術的口號？
   type: multiple_choice
   options:
-  - 聯邦學習
-  - 雲端運算
-  - 區塊鏈
-  - 邊緣運算
+  - 聯邦學習 (Federated Learning)，資料不離地的隱私保護技術。
+  - 雲端運算 (Cloud Computing)，集中式運算架構。
+  - 區塊鏈 (Blockchain)，分散式帳本技術。
+  - 邊緣運算 (Edge Computing)，在邊緣設備進行運算。
   correct_index: 0
   explanation: 這正是聯邦學習的核心隱私保護機制。
   tags:
@@ -565,10 +565,10 @@ questions:
   text: 對於高風險 AI 系統，EU AI Act 要求必須？
   type: multiple_choice
   options:
-  - 自我宣告即可
-  - 免費提供
-  - 通過合規評估 (Conformity Assessment) 並有人類監督
-  - 完全開源
+  - 自我宣告即可 (Self-Declaration Sufficient)，自行聲明即可。
+  - 免費提供 (Free Provision)，免費提供服務。
+  - 通過合規評估 (Conformity Assessment) 並有人類監督 (Passing Conformity Assessment with Human Supervision)
+  - 完全開源 (Completely Open Source)，程式碼完全公開。
   correct_index: 2
   explanation: 高風險系統上市前必須經過嚴格的第三方或自我評估，確保符合法規要求。
   tags:
@@ -581,10 +581,10 @@ questions:
   text: 金融業 AI 規範中，關於「當責性」的要求包括？
   type: multiple_choice
   options:
-  - 客戶要自己負責
-  - 必須建立申訴管道與補救機制
-  - AI 必須有身分證
-  - AI 必須買保險
+  - 客戶要自己負責 (Customers Must Be Responsible Themselves)，客戶需自行承擔責任。
+  - 必須建立申訴管道與補救機制 (Must Establish Complaint Channels and Remediation Mechanisms)
+  - AI 必須有身分證 (AI Must Have ID Card)，AI 需要身份證明。
+  - AI 必須買保險 (AI Must Buy Insurance)，AI 需要購買保險。
   correct_index: 1
   explanation: 當責性意味著機構必須為 AI 的決策負責，提供客戶救濟的途徑。
   tags:
@@ -597,10 +597,10 @@ questions:
   text: 目前的 AI 產品評測主要針對？
   type: multiple_choice
   options:
-  - 硬體效能
-  - 語言模型本身
-  - 使用者介面
-  - 網路速度
+  - 硬體效能 (Hardware Performance)，硬體設備的運算能力。
+  - 語言模型本身 (Language Models Themselves)，核心模型的評估。
+  - 使用者介面 (User Interface)，使用者操作介面。
+  - 網路速度 (Network Speed)，網路連線速度。
   correct_index: 1
   explanation: 評測中心目前的重點在於評估 LLM 等核心模型的安全性與性能。
   tags:
@@ -613,10 +613,10 @@ questions:
   text: 為了避免 AI 偏見，我們應該？
   type: multiple_choice
   options:
-  - 只使用男性資料
-  - 停止使用 AI
-  - 只使用女性資料
-  - 在訓練前檢查資料分佈，進行去偏處理
+  - 只使用男性資料 (Using Only Male Data)，僅使用單一性別資料。
+  - 停止使用 AI (Stopping Use of AI)，完全停止使用 AI。
+  - 只使用女性資料 (Using Only Female Data)，僅使用單一性別資料。
+  - 在訓練前檢查資料分佈，進行去偏處理 (Checking Data Distribution Before Training, Performing Debiasing)
   correct_index: 3
   explanation: 主動檢測並修正訓練資料中的偏差，是解決 AI 偏見最根本的方法。
   tags:
@@ -629,10 +629,10 @@ questions:
   text: 監理沙盒對新創企業的重要性在於？
   type: multiple_choice
   options:
-  - 提供合法的試錯空間，避免創新被舊法規扼殺
-  - 提供辦公室
-  - 提供免費人力
-  - 提供資金
+  - 提供合法的試錯空間，避免創新被舊法規扼殺 (Providing Legal Trial-and-Error Space, Preventing Innovation from Being Stifled by Old Regulations)
+  - 提供辦公室 (Providing Office Space)，提供工作場所。
+  - 提供免費人力 (Providing Free Labor)，提供免費人力資源。
+  - 提供資金 (Providing Funding)，提供財務支援。
   correct_index: 0
   explanation: 沙盒機制允許新創在受控環境下測試法規未明的新業務，降低法律風險。
   tags:
@@ -645,10 +645,10 @@ questions:
   text: 演算法偏見 (Algorithmic Bias) 最常見的來源是？
   type: multiple_choice
   options:
-  - 電腦硬體故障
-  - 駭客攻擊
-  - 訓練數據本身就反映了人類社會既有的偏見與不平等（如性別、種族歧視）
-  - 程式碼寫錯了
+  - 電腦硬體故障 (Computer Hardware Malfunction)，硬體設備損壞。
+  - 駭客攻擊 (Hacker Attacks)，惡意網路攻擊。
+  - 訓練數據本身就反映了人類社會既有的偏見與不平等（如性別、種族歧視）(Training Data Itself Reflects Existing Bias and Inequality in Human Society: Gender, Racial Discrimination)
+  - 程式碼寫錯了 (Code Written Incorrectly)，程式碼有錯誤。
   correct_index: 2
   explanation: Garbage In, Garbage Out。如果歷史招聘數據都偏好男性，AI 就會學會「男性比較適合工作」這個偏見。
   tags:
@@ -661,10 +661,10 @@ questions:
   text: 歐盟《人工智慧法案》(EU AI Act) 採用「基於風險 (Risk-based)」的分級管理，其中「社會信用評分 (Social Scoring)」屬於哪一級？
   type: multiple_choice
   options:
-  - 高風險 (High Risk)
-  - 最小風險 (Minimal Risk)
-  - 有限風險 (Limited Risk)
-  - 不可接受的風險 (Unacceptable Risk)，完全禁止使用
+  - 高風險 (High Risk)，需要嚴格監管的風險等級。
+  - 最小風險 (Minimal Risk)，風險程度極低。
+  - 有限風險 (Limited Risk)，風險程度有限。
+  - 不可接受的風險 (Unacceptable Risk)，完全禁止使用 (Unacceptable Risk: Completely Prohibited)
   correct_index: 3
   explanation: 歐盟認為利用 AI 進行大規模社會監控與評分嚴重侵犯人權，因此將其列為禁區。
   tags:
@@ -677,10 +677,10 @@ questions:
   text: 在評估 AI 系統的「強健性 (Robustness)」時，我們主要關注什麼？
   type: multiple_choice
   options:
-  - 系統介面是否美觀
-  - 系統的價格是否便宜
-  - 系統在面對雜訊、惡意攻擊或異常輸入時，能否維持穩定的表現而不崩潰或輸出離譜結果
-  - 系統是否支援多國語言
+  - 系統介面是否美觀 (Whether System Interface Is Aesthetic)，使用者介面的視覺設計。
+  - 系統的價格是否便宜 (Whether System Price Is Cheap)，系統的成本考量。
+  - 系統在面對雜訊、惡意攻擊或異常輸入時，能否維持穩定的表現而不崩潰或輸出離譜結果 (Whether System Can Maintain Stable Performance Without Crashing or Outputting Absurd Results When Facing Noise, Malicious Attacks, or Abnormal Inputs)
+  - 系統是否支援多國語言 (Whether System Supports Multiple Languages)，多語言支援能力。
   correct_index: 2
   explanation: 強健性是 AI 安全的基石。一個稍微改個像素就認錯圖的模型，是不具備強健性的。
   tags:
@@ -693,10 +693,10 @@ questions:
   text: 「問責制 (Accountability)」在 AI 治理中意味著？
   type: multiple_choice
   options:
-  - 必須有明確的人類主體（開發者、部署者或使用者）對 AI 的決策與後果負責
-  - 不需要任何人負責，因為是電腦做的
-  - 發生事故時，大家互相指責
-  - AI 做錯事要自己坐牢
+  - 必須有明確的人類主體（開發者、部署者或使用者）對 AI 的決策與後果負責 (Must Have Clear Human Subject (Developer, Deployer, or User) Responsible for AI Decisions and Consequences)
+  - 不需要任何人負責，因為是電腦做的 (No One Needs to Be Responsible Because It's Done by Computer)，無人需承擔責任。
+  - 發生事故時，大家互相指責 (When Accidents Occur, Everyone Blames Each Other)，互相推卸責任。
+  - AI 做錯事要自己坐牢 (AI Must Go to Jail When It Makes Mistakes)，AI 需自行承擔法律責任。
   correct_index: 0
   explanation: AI 只是工具，不具備法律人格。確保「有人負責」是避免 AI 濫用與推卸責任的關鍵。
   tags:
@@ -709,10 +709,10 @@ questions:
   text: GDPR 第 22 條規定使用者有權「不受制於完全自動化的決策」，這意味著？
   type: multiple_choice
   options:
-  - 對於產生重大法律效力或類似影響的決策（如拒絕貸款），使用者有權要求人工介入審查 (Human Intervention)
-  - 所有決策都必須由人工完成
-  - 使用者可以隨意更改決策結果
-  - 禁止使用電腦進行計算
+  - 對於產生重大法律效力或類似影響的決策（如拒絕貸款），使用者有權要求人工介入審查 (Human Intervention) (For Decisions with Significant Legal Effect or Similar Impact (Such as Loan Rejection), Users Have Right to Request Human Intervention Review)
+  - 所有決策都必須由人工完成 (All Decisions Must Be Made by Humans)，完全禁止自動化。
+  - 使用者可以隨意更改決策結果 (Users Can Arbitrarily Change Decision Results)，使用者可任意修改。
+  - 禁止使用電腦進行計算 (Prohibiting Use of Computers for Calculation)，完全禁止電腦運算。
   correct_index: 0
   explanation: 這是為了防止「演算法獨裁」，確保在關鍵時刻，人類仍保有最終的申訴與審查權利。
   tags:
@@ -725,10 +725,10 @@ questions:
   text: 「公平性 (Fairness)」指標通常用來檢測模型是否存在什麼問題？
   type: multiple_choice
   options:
-  - 模型是否過擬合
-  - 運算速度太慢
-  - 模型是否使用了盜版軟體
-  - 對不同群體（如性別、種族）的預測表現是否存在顯著差異（例如對女性的貸款核准率異常低）
+  - 模型是否過擬合 (Whether Model Is Overfitting)，模型是否過度學習訓練資料。
+  - 運算速度太慢 (Computation Speed Too Slow)，處理速度不足。
+  - 模型是否使用了盜版軟體 (Whether Model Uses Pirated Software)，是否使用非法軟體。
+  - 對不同群體（如性別、種族）的預測表現是否存在顯著差異（例如對女性的貸款核准率異常低）(Whether Significant Differences Exist in Prediction Performance Across Different Groups: Gender, Race, e.g., Abnormally Low Loan Approval Rate for Females)
   correct_index: 3
   explanation: 公平性測試旨在揭露模型潛藏的歧視，確保 AI 不會加劇社會的不平等。
   tags:
@@ -742,10 +742,10 @@ questions:
     (114年第四梯次)
   type: multiple_choice
   options:
-  - 辦理人工智慧人才培育
-  - 清楚了解生成式 AI 技術之運作模式
-  - 每日公布人工智慧系統運作狀況
-  - 指派高階主管或委員會進行監督管理
+  - 辦理人工智慧人才培育 (Conducting AI Talent Training)，培養 AI 專業人才。
+  - 清楚了解生成式 AI 技術之運作模式 (Clearly Understanding Operation Mode of Generative AI Technology)，理解技術運作原理。
+  - 每日公布人工智慧系統運作狀況 (Daily Publication of AI System Operation Status)，每日公開系統狀態。
+  - 指派高階主管或委員會進行監督管理 (Assigning Senior Executives or Committee for Supervision and Management)，建立監督機制。
   correct_index: 2
   explanation: 金融機構運用 AI 需遵循嚴格的治理規範，包括建立專責單位、風險評估、模型監控與消費者權益保護。
   tags:
@@ -760,10 +760,10 @@ questions:
   text: 根據 2025 年 9 月行政院通過之《人工智慧基本法》草案，政府推動人 工智慧之「創新實驗環境」制度，主要參考歐盟的何種制度？ (114年第四梯次)
   type: multiple_choice
   options:
-  - Data Protection Impact Assessment
-  - Regulatory Sandbox
-  - AI Trust Label
-  - AI Ethics Review Board
+  - Data Protection Impact Assessment (資料保護影響評估)，評估資料保護的影響。
+  - Regulatory Sandbox (監理沙盒)，提供創新實驗環境的制度。
+  - AI Trust Label (AI 信任標章)，AI 產品的認證標章。
+  - AI Ethics Review Board (AI 倫理審查委員會)，倫理審查的組織。
   correct_index: 1
   explanation: 此題涉及 AI 法規與標準 的核心概念。正確答案為「Regulatory Sandbox」。
   tags:
@@ -779,10 +779,10 @@ questions:
     」做法？ (114年第四梯次)
   type: multiple_choice
   options:
-  - 讓模型在訓練時隨機替換輸出，以抵消資料中存在的系統性偏差
-  - 增加模型的參數量，依賴更大的模型自動消除原始資料中的偏見
-  - 調整或擴充訓練語料，使不同群體或類型資料的比例更加平衡，避 免模型過度偏向出現頻率高的類別
-  - 對訓練資料施加額外正則化或噪音，使模型在學習過程中對偏見敏 感度降低
+  - 讓模型在訓練時隨機替換輸出，以抵消資料中存在的系統性偏差 (Randomly Replacing Outputs During Training to Offset Systematic Bias in Data)，隨機替換輸出。
+  - 增加模型的參數量，依賴更大的模型自動消除原始資料中的偏見 (Increasing Model Parameters, Relying on Larger Models to Automatically Eliminate Bias in Original Data)，擴大模型規模。
+  - 調整或擴充訓練語料，使不同群體或類型資料的比例更加平衡，避 免模型過度偏向出現頻率高的類別 (Adjusting or Expanding Training Corpus to Balance Proportions of Different Groups or Types, Avoiding Model Over-Biasing Toward High-Frequency Categories)
+  - 對訓練資料施加額外正則化或噪音，使模型在學習過程中對偏見敏 感度降低 (Applying Additional Regularization or Noise to Training Data, Reducing Model Sensitivity to Bias During Learning)，加入正則化或噪音。
   correct_index: 2
   explanation: 演算法偏見通常源自訓練數據的偏差。若數據本身包含歷史歧視，模型便會學習並放大這些偏見。
   tags:
@@ -798,10 +798,10 @@ questions:
     料無法集中到單一伺服器。在此情境下，下列哪一種方法最能同時滿足 「各醫院保留資料不外流」與「模型仍能跨院學習」的需求？ (114年第四梯次)
   type: multiple_choice
   options:
-  - 資料匿名化（Data Anonymization）
-  - 差分隱私（Differential Privacy）
-  - 聯邦學習（Federated Learning）
-  - 交叉驗證（Cross-validation）
+  - 資料匿名化（Data Anonymization）(Data Anonymization)，移除個人識別資訊。
+  - 差分隱私（Differential Privacy）(Differential Privacy)，加入雜訊保護隱私。
+  - 聯邦學習（Federated Learning）(Federated Learning)，資料不離地的分散式學習。
+  - 交叉驗證（Cross-validation）(Cross-Validation)，模型驗證的方法。
   correct_index: 2
   explanation: 此題涉及 AI 法規與標準 的核心概念。正確答案為「聯邦學習（Federated Learning）」。
   tags:
@@ -816,10 +816,10 @@ questions:
   text: 下列何者不是我國數位發展部 AI 產品與系統評測中心對生成式 AI 的 評測項目? (114年第四梯次)
   type: multiple_choice
   options:
-  - 當責性
-  - 可靠性
-  - 隱私及資安
-  - 互動性
+  - 當責性 (Accountability)，責任歸屬的明確性。
+  - 可靠性 (Reliability)，系統的可靠程度。
+  - 隱私及資安 (Privacy and Information Security)，隱私與資訊安全。
+  - 互動性 (Interactivity)，使用者互動的能力。
   correct_index: 3
   explanation: 此題涉及 AI 產品評估標準 的核心概念。正確答案為「互動性」。
   tags:
@@ -834,10 +834,10 @@ questions:
   text: 在機器學習中， 「偏差與變異權衡（Bias-Variance Tradeoff） 」主要用 來解決下列哪一類型的問題？ (114年第四梯次)
   type: multiple_choice
   options:
-  - 因資料來源或收集方式限制，導致模型學習到的資訊不足
-  - 測試資料樣本與訓練資料高度重複，造成模型泛化能力評估失準
-  - 訓練資料中類別分布不均，使模型在少數類別上表現不佳
-  - 如何在模型偏差與變異之間取得平衡，以避免過度擬合或欠擬合
+  - 因資料來源或收集方式限制，導致模型學習到的資訊不足 (Insufficient Information Learned Due to Data Source or Collection Method Limitations)，資料不足的問題。
+  - 測試資料樣本與訓練資料高度重複，造成模型泛化能力評估失準 (High Overlap Between Test and Training Data, Causing Inaccurate Generalization Assessment)，資料重複的問題。
+  - 訓練資料中類別分布不均，使模型在少數類別上表現不佳 (Uneven Class Distribution in Training Data, Causing Poor Performance on Minority Classes)，類別不平衡的問題。
+  - 如何在模型偏差與變異之間取得平衡，以避免過度擬合或欠擬合 (How to Balance Model Bias and Variance to Avoid Overfitting or Underfitting)
   correct_index: 3
   explanation: 演算法偏見通常源自訓練數據的偏差。若數據本身包含歷史歧視，模型便會學習並放大這些偏見。
   tags:
@@ -852,10 +852,10 @@ questions:
   text: 下列何者並非我國數位發展部 AI 產品與評測中心在評估大型語言模 型安全性時，所指出的常見使用指標？ (114年第四梯次)
   type: multiple_choice
   options:
-  - 資料複雜性
-  - 事實正確性
-  - 偏見與歧視
-  - 惡意與濫用可能性
+  - 資料複雜性 (Data Complexity)，資料本身的複雜程度。
+  - 事實正確性 (Factual Correctness)，輸出內容的正確性。
+  - 偏見與歧視 (Bias and Discrimination)，模型中的偏見問題。
+  - 惡意與濫用可能性 (Malicious Use and Abuse Potential)，被惡意使用的風險。
   correct_index: 0
   explanation: 此題涉及 AI 產品評估標準 的核心概念。正確答案為「資料複雜性」。
   tags:

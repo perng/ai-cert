@@ -5,10 +5,10 @@ questions:
   text: 下列何者屬於「結構化資料 (Structured Data)」？
   type: multiple_choice
   options:
-  - 關聯式資料庫中的客戶資料表
-  - 電子郵件內容
-  - 社群媒體貼文
-  - YouTube 影片
+  - 關聯式資料庫中的客戶資料表 (Customer Data Table in Relational Database)，具有固定格式的表格結構。
+  - 電子郵件內容 (Email Content)，無固定格式的文字內容。
+  - 社群媒體貼文 (Social Media Posts)，無固定格式的文字與多媒體內容。
+  - YouTube 影片 (YouTube Videos)，無固定格式的影音內容。
   correct_index: 0
   explanation: 結構化資料具有固定的格式與長度，通常以表格形式呈現，如資料庫中的資料表。
   tags:
@@ -21,10 +21,10 @@ questions:
   text: 非結構化資料 (Unstructured Data) 通常佔據全世界資料的比例約為多少？
   type: multiple_choice
   options:
-  - 不到 10%
-  - 100%
-  - 80% 以上
-  - 約 50%
+  - 不到 10% (Less Than 10%)，僅佔全球資料的極小部分。
+  - 100% (One Hundred Percent)，所有資料都是非結構化。
+  - 80% 以上 (More Than 80%)，佔據全球資料的絕大多數。
+  - 約 50% (Approximately 50%)，與結構化資料各佔一半。
   correct_index: 2
   explanation: 非結構化資料（如圖片、影片、文字）佔據了全世界資料的絕大多數，約 80% 以上。
   tags:
@@ -37,10 +37,10 @@ questions:
   text: JSON 格式通常被歸類為哪種資料類型？
   type: multiple_choice
   options:
-  - 結構化資料
-  - 半結構化資料 (Semi-structured Data)
-  - 非結構化資料
-  - 二進位資料
+  - 結構化資料 (Structured Data)，具有嚴格表格架構的資料。
+  - 半結構化資料 (Semi-structured Data)，具有標籤結構但無嚴格架構。
+  - 非結構化資料 (Unstructured Data)，無固定格式的資料。
+  - 二進位資料 (Binary Data)，以二進位格式儲存的資料。
   correct_index: 1
   explanation: JSON 具有標籤或鍵值結構，但沒有嚴格的表格架構，屬於半結構化資料。
   tags:
@@ -53,10 +53,10 @@ questions:
   text: ETL 架構中的 'T' 代表什麼？
   type: multiple_choice
   options:
-  - Transfer (傳輸)
-  - Table (表格)
-  - Test (測試)
-  - Transform (轉換)
+  - Transfer (傳輸) (Transfer)，資料在不同系統間傳輸的過程。
+  - Table (表格) (Table)，資料儲存的表格結構。
+  - Test (測試) (Test)，資料品質測試的階段。
+  - Transform (轉換) (Transform)，資料格式轉換與清洗的過程。
   correct_index: 3
   explanation: ETL 代表 Extract (擷取), Transform (轉換), Load (載入)。
   tags:
@@ -69,10 +69,10 @@ questions:
   text: 相較於 ETL，ELT 架構的主要優勢是什麼？
   type: multiple_choice
   options:
-  - 載入速度快且保留原始資料靈活性
-  - 適合小規模資料
-  - 資料品質較高
-  - 節省儲存空間
+  - 載入速度快且保留原始資料靈活性 (Fast Loading Speed and Preserving Raw Data Flexibility)
+  - 適合小規模資料 (Suitable for Small-Scale Data)，僅能處理少量資料。
+  - 資料品質較高 (Higher Data Quality)，資料準確性與完整性更好。
+  - 節省儲存空間 (Saving Storage Space)，減少資料儲存成本。
   correct_index: 0
   explanation: ELT 先將資料載入資料湖，需要時再轉換，因此載入速度快且能保留原始資料供不同分析使用。
   tags:
@@ -85,10 +85,10 @@ questions:
   text: 「資料湖 (Data Lake)」通常與哪種資料處理架構相關聯？
   type: multiple_choice
   options:
-  - ELT
-  - RDB
-  - ETL
-  - Data Warehouse
+  - ELT (Extract, Load, Transform)，先載入再轉換的架構。
+  - RDB (Relational Database)，關聯式資料庫系統。
+  - ETL (Extract, Transform, Load)，先轉換再載入的架構。
+  - Data Warehouse (資料倉儲)，用於儲存與分析歷史資料的系統。
   correct_index: 0
   explanation: ELT 架構通常將原始資料直接載入資料湖 (Data Lake) 中。
   tags:
@@ -101,10 +101,10 @@ questions:
   text: 下列哪個場景最適合使用「串流處理 (Streaming Processing)」？
   type: multiple_choice
   options:
-  - 歷史資料備份
-  - 年度庫存盤點
-  - 月度銷售報表
-  - 即時信用卡盜刷偵測
+  - 歷史資料備份 (Historical Data Backup)，定期儲存過往資料。
+  - 年度庫存盤點 (Annual Inventory Count)，定期盤點庫存狀況。
+  - 月度銷售報表 (Monthly Sales Reports)，定期產生統計報表。
+  - 即時信用卡盜刷偵測 (Real-Time Credit Card Fraud Detection)，需要即時處理與反應。
   correct_index: 3
   explanation: 盜刷偵測需要即時反應，不能等待批次處理的延遲，因此適合串流處理。
   tags:
@@ -117,10 +117,10 @@ questions:
   text: 批次處理 (Batch Processing) 的主要缺點是什麼？
   type: multiple_choice
   options:
-  - 無法處理大量資料
-  - 計算成本高
-  - 資料有延遲 (Latency)
-  - 技術太複雜
+  - 無法處理大量資料 (Cannot Handle Large Volumes of Data)，僅限於小規模資料處理。
+  - 計算成本高 (High Computational Cost)，運算資源需求較大。
+  - 資料有延遲 (Latency)，無法提供即時數據。
+  - 技術太複雜 (Technology Too Complex)，實作與維護困難度高。
   correct_index: 2
   explanation: 批次處理需要累積一段時間的資料才執行，因此無法提供即時數據，會有時間落差。
   tags:
@@ -133,10 +133,10 @@ questions:
   text: 下列何者屬於「連續型數值資料」？
   type: multiple_choice
   options:
-  - 小孩人數 (1, 2, 3)
-  - 衣服尺寸 (S, M, L)
-  - 血型 (A, B, O)
-  - 身高 (175.5 cm)
+  - 小孩人數 (1, 2, 3) (Number of Children)，離散型數值資料。
+  - 衣服尺寸 (S, M, L) (Clothing Size)，類別型資料。
+  - 血型 (A, B, O) (Blood Type)，類別型資料。
+  - 身高 (175.5 cm) (Height)，連續型數值資料。
   correct_index: 3
   explanation: 身高可以取任意小數點的值，屬於連續型資料；小孩人數是離散型；血型和尺寸是類別型。
   tags:
@@ -149,10 +149,10 @@ questions:
   text: 對於類別型資料（如顏色：紅、綠、藍），應使用哪種編碼方式避免模型誤解？
   type: multiple_choice
   options:
-  - 數值編碼 (1, 2, 3)
-  - 平均數編碼
-  - 獨熱編碼 (One-Hot Encoding)
-  - 刪除該欄位
+  - 數值編碼 (1, 2, 3) (Numeric Encoding)，會讓模型誤以為類別有大小順序。
+  - 平均數編碼 (Mean Encoding)，使用類別的平均值進行編碼。
+  - 獨熱編碼 (One-Hot Encoding)，將每個類別轉換為獨立的二元欄位。
+  - 刪除該欄位 (Deleting the Column)，完全移除該特徵。
   correct_index: 2
   explanation: 獨熱編碼將每個類別轉換為獨立的二元欄位，避免模型誤以為類別之間有大小順序關係。
   tags:
@@ -165,10 +165,10 @@ questions:
   text: 當資料中存在極端值 (Outliers) 時，哪種集中趨勢指標較為穩健？
   type: multiple_choice
   options:
-  - 中位數 (Median)
-  - 標準差 (SD)
-  - 最大值 (Max)
-  - 平均數 (Mean)
+  - 中位數 (Median)，排序後位於中間的數值，不受極端值影響。
+  - 標準差 (SD) (Standard Deviation)，衡量資料離散程度的指標。
+  - 最大值 (Max) (Maximum Value)，資料中的最大數值。
+  - 平均數 (Mean)，所有數值的平均值，易受極端值影響。
   correct_index: 0
   explanation: 中位數是排序後位於中間的數值，不受極大或極小值的影響，因此比平均數更穩健。
   tags:
@@ -181,10 +181,10 @@ questions:
   text: 標準差 (Standard Deviation) 主要用來衡量資料的什麼特性？
   type: multiple_choice
   options:
-  - 偏態
-  - 離散程度 (Dispersion)
-  - 峰度
-  - 集中趨勢
+  - 偏態 (Skewness)，衡量資料分佈不對稱程度的指標。
+  - 離散程度 (Dispersion)，衡量數值分散或集中程度的指標。
+  - 峰度 (Kurtosis)，衡量資料分佈尖峭程度的指標。
+  - 集中趨勢 (Central Tendency)，衡量資料中心位置的指標。
   correct_index: 1
   explanation: 標準差衡量數值與平均數的平均距離，反映資料分佈的離散程度或波動性。
   tags:
@@ -197,10 +197,10 @@ questions:
   text: 如果一組資料呈現「右偏 (Right Skewed)」，通常意味著什麼？
   type: multiple_choice
   options:
-  - 沒有極端值
-  - 平均數 = 中位數
-  - 平均數 < 中位數
-  - 平均數 > 中位數
+  - 沒有極端值 (No Outliers)，資料分佈正常無異常值。
+  - 平均數 = 中位數 (Mean = Median)，資料分佈對稱。
+  - 平均數 < 中位數 (Mean < Median)，左偏分佈的特徵。
+  - 平均數 > 中位數 (Mean > Median)，右偏分佈的特徵。
   correct_index: 3
   explanation: 右偏分佈代表長尾巴在右邊（大數值方向），少數極大值會拉高平均數，使其大於中位數。
   tags:
@@ -213,10 +213,10 @@ questions:
   text: 若要觀察兩個變數之間的「關聯性」（如身高 vs. 體重），最適合使用哪種圖表？
   type: multiple_choice
   options:
-  - 折線圖
-  - 長條圖
-  - 圓餅圖
-  - 散佈圖 (Scatter Plot)
+  - 折線圖 (Line Chart)，適合顯示時間序列的趨勢變化。
+  - 長條圖 (Bar Chart)，適合比較不同類別的數值。
+  - 圓餅圖 (Pie Chart)，適合顯示類別資料的比例分佈。
+  - 散佈圖 (Scatter Plot)，適合觀察兩個變數之間的關聯性。
   correct_index: 3
   explanation: 散佈圖透過點的分佈位置，能直觀呈現兩個變數之間的相關程度與模式。
   tags:
@@ -229,10 +229,10 @@ questions:
   text: 若要觀察單一變數的「分佈情況」（如全校成績分佈），最適合使用哪種圖表？
   type: multiple_choice
   options:
-  - 直方圖 (Histogram)
-  - 散佈圖
-  - 圓餅圖
-  - 熱圖
+  - 直方圖 (Histogram)，適合觀察單一變數的分佈情況。
+  - 散佈圖 (Scatter Plot)，適合觀察兩個變數之間的關聯性。
+  - 圓餅圖 (Pie Chart)，適合顯示類別資料的比例分佈。
+  - 熱圖 (Heatmap)，適合顯示多個變數之間的相關性矩陣。
   correct_index: 0
   explanation: 直方圖將數值分組並顯示各組的頻率，適合觀察資料的分佈形狀。
   tags:
@@ -245,10 +245,10 @@ questions:
   text: 處理缺失值 (Missing Values) 時，若該欄位對預測很重要且資料量不大，應避免使用哪種方法？
   type: multiple_choice
   options:
-  - 直接刪除該列 (Listwise Deletion)
-  - 使用模型預測填補
-  - 插補法 (Imputation)
-  - 使用中位數填補
+  - 直接刪除該列 (Listwise Deletion)，會導致資料流失。
+  - 使用模型預測填補 (Model-Based Imputation)，使用機器學習模型預測缺失值。
+  - 插補法 (Imputation)，使用統計方法填補缺失值。
+  - 使用中位數填補 (Median Imputation)，使用中位數填補缺失值。
   correct_index: 0
   explanation: 直接刪除會導致寶貴的資料流失，特別是在資料量本來就不多的情況下，應優先考慮插補。
   tags:
@@ -261,10 +261,10 @@ questions:
   text: KNN (K-近鄰) 插補法的原理是什麼？
   type: multiple_choice
   options:
-  - 用全體眾數填補
-  - 用全體平均數填補
-  - 找特徵最相似的鄰居資料來推估缺失值
-  - 隨機填補
+  - 用全體眾數填補 (Filling with Overall Mode)，使用最常出現的值填補。
+  - 用全體平均數填補 (Filling with Overall Mean)，使用平均值填補。
+  - 找特徵最相似的鄰居資料來推估缺失值 (Finding Most Similar Neighbors to Estimate Missing Values)
+  - 隨機填補 (Random Filling)，使用隨機值填補缺失值。
   correct_index: 2
   explanation: KNN 插補法透過尋找特徵最相似的 K 個樣本（鄰居），參考它們的數值來填補缺失值，通常比單純平均更精準。
   tags:
@@ -277,10 +277,10 @@ questions:
   text: 利用 Z-score 偵測異常值時，通常將超過多少個標準差的數值視為異常？
   type: multiple_choice
   options:
-  - 1 個
-  - 3 個
-  - 10 個
-  - 2 個
+  - 1 個標準差 (1 Standard Deviation)，約 68% 的資料會在此範圍內。
+  - 3 個標準差 (3 Standard Deviations)，約 99.7% 的資料會在此範圍內。
+  - 10 個標準差 (10 Standard Deviations)，幾乎所有資料都會在此範圍內。
+  - 2 個標準差 (2 Standard Deviations)，約 95% 的資料會在此範圍內。
   correct_index: 1
   explanation: 在常態分佈下，約 99.7% 的資料會落在平均數正負 3 個標準差內，因此超過 3 個標準差通常被視為異常。
   tags:
@@ -293,10 +293,10 @@ questions:
   text: 「蓋帽法 (Winsorizing)」是如何處理異常值的？
   type: multiple_choice
   options:
-  - 取對數轉換
-  - 將超過特定百分位數的值強制設定為該百分位數的值
-  - 直接刪除
-  - 不處理
+  - 取對數轉換 (Log Transformation)，使用對數函數轉換數值以減少極端值影響。
+  - 將超過特定百分位數的值強制設定為該百分位數的值 (Capping Values at Specific Percentiles)
+  - 直接刪除 (Direct Deletion)，完全移除異常值資料。
+  - 不處理 (No Processing)，保留原始異常值不進行任何處理。
   correct_index: 1
   explanation: 蓋帽法將極端值限制在某個範圍內（如第 99 百分位數），減少其對模型的影響，但保留了部分資訊。
   tags:
@@ -309,10 +309,10 @@ questions:
   text: 在處理個資 (PII) 時，「去識別化 (De-identification)」的主要目的是什麼？
   type: multiple_choice
   options:
-  - 節省儲存空間
-  - 增加資料的精確度
-  - 提高運算速度
-  - 使資料無法識別特定個人，以保護隱私
+  - 節省儲存空間 (Saving Storage Space)，減少資料儲存成本。
+  - 增加資料的精確度 (Increasing Data Precision)，提高資料準確性。
+  - 提高運算速度 (Improving Computational Speed)，加快資料處理效率。
+  - 使資料無法識別特定個人，以保護隱私 (Making Data Unidentifiable to Protect Privacy)
   correct_index: 3
   explanation: 去識別化透過遮罩、泛化等技術移除或模糊化個資，確保分析過程中無法回溯到特定個人。
   tags:
@@ -325,10 +325,10 @@ questions:
   text: 將「王大明」轉換為「王O明」，屬於哪種隱私保護技術？
   type: multiple_choice
   options:
-  - 加密 (Encryption)
-  - 泛化 (Generalization)
-  - 假名化 (Pseudonymization)
-  - 遮罩 (Masking)
+  - 加密 (Encryption)，使用密碼學方法保護資料。
+  - 泛化 (Generalization)，將具體值轉換為更廣泛的類別。
+  - 假名化 (Pseudonymization)，使用假名取代真實識別資訊。
+  - 遮罩 (Masking)，隱藏部分字元以保護隱私。
   correct_index: 3
   explanation: 遮罩技術透過隱藏部分字元來保護隱私，如將名字中間字隱藏。
   tags:

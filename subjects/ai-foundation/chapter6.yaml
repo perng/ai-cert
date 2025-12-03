@@ -5,10 +5,10 @@ questions:
   text: 非監督式學習 (Unsupervised Learning) 的核心特徵是什麼？
   type: multiple_choice
   options:
-  - 透過獎勵與懲罰學習
-  - 沒有標準答案，模型需自行尋找隱藏結構
-  - 有老師教導標準答案
-  - 需要預訓練模型
+  - 透過獎勵與懲罰學習 (Learning Through Rewards and Punishments)，屬於強化學習的特徵。
+  - 沒有標準答案，模型需自行尋找隱藏結構 (No Standard Answers, Model Must Find Hidden Structure on Its Own)
+  - 有老師教導標準答案 (Teacher Provides Standard Answers)，屬於監督式學習的特徵。
+  - 需要預訓練模型 (Requiring Pre-trained Models)，屬於遷移學習的特徵。
   correct_index: 1
   explanation: 非監督式學習就像自修，資料沒有標籤，模型必須自己找出資料中的規律或結構。
   tags:
@@ -21,10 +21,10 @@ questions:
   text: 分群 (Clustering) 的主要目標是什麼？
   type: multiple_choice
   options:
-  - 將資料壓縮到低維度
-  - 找出變數間的因果關係
-  - 將相似的資料歸為同一群，群間差異最大化
-  - 預測未來的數值
+  - 將資料壓縮到低維度 (Compressing Data to Low Dimensions)，屬於降維的目標。
+  - 找出變數間的因果關係 (Finding Causal Relationships Between Variables)，屬於因果推論的目標。
+  - 將相似的資料歸為同一群，群間差異最大化 (Grouping Similar Data Together, Maximizing Differences Between Groups)
+  - 預測未來的數值 (Predicting Future Values)，屬於迴歸的目標。
   correct_index: 2
   explanation: 分群旨在實現「物以類聚」，讓同一群內的資料越像越好，不同群之間的差異越大越好。
   tags:
@@ -37,10 +37,10 @@ questions:
   text: K-means 演算法的一個主要缺點是什麼？
   type: multiple_choice
   options:
-  - 計算速度太慢
-  - 只能處理文字資料
-  - 必須事先指定 K 值（群數）
-  - 無法處理數值資料
+  - 計算速度太慢 (Computation Speed Too Slow)，演算法執行效率低。
+  - 只能處理文字資料 (Can Only Process Text Data)，僅限於特定資料類型。
+  - 必須事先指定 K 值（群數）(Must Specify K Value (Number of Clusters) in Advance)
+  - 無法處理數值資料 (Cannot Process Numeric Data)，僅能處理類別資料。
   correct_index: 2
   explanation: K-means 需要使用者預先設定 K 值，若設錯 K 值（如將 3 群硬分成 2 群），效果會很差。
   tags:
@@ -53,10 +53,10 @@ questions:
   text: 決定 K-means 最佳 K 值的常用方法是？
   type: multiple_choice
   options:
-  - 看心情
-  - 使用梯度下降
-  - 手肘法 (Elbow Method)
-  - 隨機猜測
+  - 看心情 (Based on Mood)，主觀隨意決定。
+  - 使用梯度下降 (Using Gradient Descent)，優化演算法的參數。
+  - 手肘法 (Elbow Method)，觀察誤差下降趨勢找出轉折點。
+  - 隨機猜測 (Random Guessing)，無系統性的隨機選擇。
   correct_index: 2
   explanation: 手肘法透過觀察誤差平方和 (SSE) 隨 K 值增加的下降趨勢，找出下降幅度變緩的轉折點（手肘處）。
   tags:
@@ -69,10 +69,10 @@ questions:
   text: DBSCAN 演算法是基於什麼概念進行分群的？
   type: multiple_choice
   options:
-  - 距離平均值
-  - 資料密度 (Density)
-  - 機率分佈
-  - 樹狀結構
+  - 距離平均值 (Distance from Mean)，計算資料點與平均值的距離。
+  - 資料密度 (Density)，尋找高密度區域形成群聚。
+  - 機率分佈 (Probability Distribution)，基於統計分佈的模型。
+  - 樹狀結構 (Tree Structure)，階層式的組織方式。
   correct_index: 1
   explanation: DBSCAN 透過尋找高密度區域來形成群聚，能找出任意形狀的群，並排除低密度的雜訊。
   tags:
@@ -85,10 +85,10 @@ questions:
   text: 如果資料形狀是不規則的（如彎月形），應優先選擇哪種分群演算法？
   type: multiple_choice
   options:
-  - PCA
-  - 線性迴歸
-  - DBSCAN
-  - K-means
+  - PCA (Principal Component Analysis)，用於降維的技術。
+  - 線性迴歸 (Linear Regression)，用於預測連續數值的模型。
+  - DBSCAN，基於密度能處理任意形狀的分群演算法。
+  - K-means，假設群聚為球形的分群演算法。
   correct_index: 2
   explanation: K-means 假設群聚是球形的，難以處理不規則形狀；DBSCAN 則能順著密度連通性找出任意形狀。
   tags:
@@ -101,10 +101,10 @@ questions:
   text: 階層式分群 (Hierarchical Clustering) 的結果通常用什麼圖表呈現？
   type: multiple_choice
   options:
-  - 散佈圖
-  - 長條圖
-  - 樹狀圖 (Dendrogram)
-  - 圓餅圖
+  - 散佈圖 (Scatter Plot)，用於觀察兩個變數的關聯性。
+  - 長條圖 (Bar Chart)，用於比較不同類別的數值。
+  - 樹狀圖 (Dendrogram)，呈現階層式分群的層次結構。
+  - 圓餅圖 (Pie Chart)，用於顯示類別資料的比例分佈。
   correct_index: 2
   explanation: 樹狀圖能完整呈現資料如何一步步合併或分裂的層次結構。
   tags:
@@ -117,10 +117,10 @@ questions:
   text: 「啤酒與尿布」的故事是哪種演算法的經典案例？
   type: multiple_choice
   options:
-  - K-means
-  - Random Forest
-  - Apriori (關聯規則)
-  - DBSCAN
+  - K-means，用於分群的演算法。
+  - Random Forest，用於分類與迴歸的集成學習模型。
+  - Apriori (關聯規則) (Apriori: Association Rules)，用於發現商品間關聯性的演算法。
+  - DBSCAN，用於基於密度的分群演算法。
   correct_index: 2
   explanation: 這是購物籃分析的經典案例，利用 Apriori 演算法找出商品間的關聯性。
   tags:
@@ -133,10 +133,10 @@ questions:
   text: 在關聯規則中，「支持度 (Support)」代表什麼？
   type: multiple_choice
   options:
-  - 兩個商品之間的相關係數
-  - 商品的價格
-  - 某個商品組合在所有交易中出現的頻率
-  - 規則的可信度
+  - 兩個商品之間的相關係數 (Correlation Coefficient Between Two Products)，衡量線性相關性。
+  - 商品的價格 (Product Price)，商品的定價資訊。
+  - 某個商品組合在所有交易中出現的頻率 (Frequency of a Product Combination Appearing in All Transactions)
+  - 規則的可信度 (Rule Confidence)，規則預測的準確程度。
   correct_index: 2
   explanation: Support 衡量一個組合（如同時買 A 和 B）在資料庫中出現的普遍程度。
   tags:
@@ -149,10 +149,10 @@ questions:
   text: 在關聯規則中，「提升度 (Lift)」大於 1 代表什麼？
   type: multiple_choice
   options:
-  - 兩者呈負相關
-  - 計算錯誤
-  - 兩者無關
-  - 兩者呈正相關（買 A 會提升買 B 的機率）
+  - 兩者呈負相關 (Negative Correlation)，買 A 會降低買 B 的機率。
+  - 計算錯誤 (Calculation Error)，演算法計算過程有誤。
+  - 兩者無關 (No Relationship)，A 與 B 之間沒有關聯性。
+  - 兩者呈正相關（買 A 會提升買 B 的機率）(Positive Correlation: Buying A Increases Probability of Buying B)
   correct_index: 3
   explanation: Lift > 1 表示 A 的出現會增加 B 出現的機率，兩者有正向關聯。
   tags:
@@ -165,10 +165,10 @@ questions:
   text: 主成分分析 (PCA) 的核心目標是什麼？
   type: multiple_choice
   options:
-  - 找出變異量 (Variance) 最大的投影方向以保留最多資訊
-  - 消除所有雜訊
-  - 將資料分類
-  - 增加資料維度
+  - 找出變異量 (Variance) 最大的投影方向以保留最多資訊 (Finding Projection Direction with Maximum Variance to Retain Most Information)
+  - 消除所有雜訊 (Eliminating All Noise)，移除資料中的隨機誤差。
+  - 將資料分類 (Classifying Data)，將資料分為不同類別。
+  - 增加資料維度 (Increasing Data Dimensionality)，擴充特徵的數量。
   correct_index: 0
   explanation: PCA 試圖找到一個新的視角（主成分），讓資料投影後分得最開（變異最大），從而保留最多資訊。
   tags:
@@ -181,10 +181,10 @@ questions:
   text: PCA 是一種什麼類型的降維技術？
   type: multiple_choice
   options:
-  - 非線性降維
-  - 基於密度的降維
-  - 線性降維
-  - 基於樹的降維
+  - 非線性降維 (Non-Linear Dimensionality Reduction)，處理非線性流形結構的降維方法。
+  - 基於密度的降維 (Density-Based Dimensionality Reduction)，根據資料密度進行降維。
+  - 線性降維 (Linear Dimensionality Reduction)，透過線性變換進行降維。
+  - 基於樹的降維 (Tree-Based Dimensionality Reduction)，使用樹狀結構進行降維。
   correct_index: 2
   explanation: PCA 透過線性變換（矩陣運算）進行投影，無法處理非線性的流形結構（如捲曲的瑞士捲）。
   tags:
@@ -197,10 +197,10 @@ questions:
   text: 自動編碼器 (Autoencoder) 的訓練目標是什麼？
   type: multiple_choice
   options:
-  - 最小化輸入與輸出之間的還原誤差
-  - 最大化分類準確率
-  - 預測標籤
-  - 最大化獎勵
+  - 最小化輸入與輸出之間的還原誤差 (Minimizing Reconstruction Error Between Input and Output)
+  - 最大化分類準確率 (Maximizing Classification Accuracy)，提高分類任務的正確率。
+  - 預測標籤 (Predicting Labels)，預測資料的類別標籤。
+  - 最大化獎勵 (Maximizing Reward)，屬於強化學習的目標。
   correct_index: 0
   explanation: Autoencoder 試圖將輸入壓縮後再還原，目標是讓還原後的輸出盡可能接近原始輸入。
   tags:
@@ -213,10 +213,10 @@ questions:
   text: Autoencoder 可以用於什麼應用？
   type: multiple_choice
   options:
-  - 路徑規劃
-  - 圖像去噪 (Denoising)
-  - 股價預測
-  - 垃圾郵件分類
+  - 路徑規劃 (Path Planning)，尋找最短路徑的優化問題。
+  - 圖像去噪 (Denoising)，移除影像中的隨機雜訊。
+  - 股價預測 (Stock Price Prediction)，預測未來股價的迴歸任務。
+  - 垃圾郵件分類 (Spam Email Classification)，將郵件分類為垃圾或正常的任務。
   correct_index: 1
   explanation: 透過學習資料的核心特徵，Autoencoder 能學會忽略輸入圖片中的隨機雜訊，還原出乾淨的圖片。
   tags:
@@ -229,10 +229,10 @@ questions:
   text: 強化學習 (Reinforcement Learning) 的核心目標是什麼？
   type: multiple_choice
   options:
-  - 最大化累積獎勵 (Cumulative Reward)
-  - 預測下一個狀態
-  - 分類正確率最高
-  - 最小化誤差
+  - 最大化累積獎勵 (Cumulative Reward)，透過一系列行動獲得長期總獎勵。
+  - 預測下一個狀態 (Predicting Next State)，預測環境的未來狀態。
+  - 分類正確率最高 (Highest Classification Accuracy)，屬於監督式學習的目標。
+  - 最小化誤差 (Minimizing Error)，減少預測與真實值的差距。
   correct_index: 0
   explanation: Agent 的目標是透過一連串的行動，獲得長期下來最多的總獎勵。
   tags:
@@ -245,10 +245,10 @@ questions:
   text: 在強化學習中，「探索 (Exploration)」是指？
   type: multiple_choice
   options:
-  - 選擇目前已知最好的行動
-  - 停止行動
-  - 分析歷史數據
-  - 嘗試未知的行動以尋找潛在更好的策略
+  - 選擇目前已知最好的行動 (Choosing Currently Known Best Action)，屬於利用 (Exploitation) 的行為。
+  - 停止行動 (Stopping Actions)，不採取任何行動。
+  - 分析歷史數據 (Analyzing Historical Data)，回顧過往經驗。
+  - 嘗試未知的行動以尋找潛在更好的策略 (Trying Unknown Actions to Find Potentially Better Strategies)
   correct_index: 3
   explanation: 探索是為了跳出局部最佳解，嘗試新的可能性，雖然有風險但可能發現更好的策略。
   tags:
@@ -261,10 +261,10 @@ questions:
   text: Q-Learning 演算法使用什麼來儲存學習到的知識？
   type: multiple_choice
   options:
-  - 決策樹
-  - 神經網路
-  - Q-Table (查閱表)
-  - 線性方程式
+  - 決策樹 (Decision Tree)，用於分類與迴歸的樹狀模型。
+  - 神經網路 (Neural Networks)，用於深度學習的多層網路。
+  - Q-Table (查閱表) (Q-Table: Lookup Table)，記錄狀態-行動對應的預期獎勵。
+  - 線性方程式 (Linear Equations)，用於線性迴歸的數學模型。
   correct_index: 2
   explanation: Q-Learning 使用一個表格 (Q-Table) 來記錄每個狀態下採取每個行動的預期獎勵 (Q-Value)。
   tags:
@@ -277,10 +277,10 @@ questions:
   text: Deep Q-Network (DQN) 解決了 Q-Learning 的什麼問題？
   type: multiple_choice
   options:
-  - 計算速度慢
-  - 無法處理負獎勵
-  - 只能處理離散動作
-  - 維度災難 (狀態過多導致表格存不下)
+  - 計算速度慢 (Slow Computation Speed)，演算法執行效率低。
+  - 無法處理負獎勵 (Cannot Handle Negative Rewards)，僅能處理正向獎勵。
+  - 只能處理離散動作 (Can Only Handle Discrete Actions)，無法處理連續動作空間。
+  - 維度災難 (狀態過多導致表格存不下) (Curse of Dimensionality: Too Many States to Store in Table)
   correct_index: 3
   explanation: DQN 用深度神經網路取代龐大的 Q-Table，能處理像圍棋或電玩畫面這種狀態無限多的問題。
   tags:

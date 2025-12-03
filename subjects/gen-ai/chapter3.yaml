@@ -5,10 +5,10 @@ questions:
   text: 在 RAG 與 Fine-tuning 的比較中，若企業需要 AI 具備「即時更新的知識」，應選擇？
   type: multiple_choice
   options:
-  - RAG (檢索增強生成)
-  - 兩者皆不可
-  - 兩者皆可
-  - Fine-tuning (微調)
+  - RAG (檢索增強生成) (RAG)
+  - 兩者皆不可 (Neither)
+  - 兩者皆可 (Both)
+  - Fine-tuning (微調) (Fine-tuning)
   correct_index: 0
   explanation: RAG 透過檢索外部資料庫，只要資料庫更新，AI 就能立即獲取新知識，無需重新訓練。
   tags:
@@ -21,10 +21,10 @@ questions:
   text: RAG 被比喻為哪種考試方式？
   type: multiple_choice
   options:
-  - 口試
-  - 開書考 (Open Book Exam)
-  - 體育測驗
-  - 默寫
+  - 口試 (Oral Exam)
+  - 開書考 (Open Book Exam) (Open Book Exam)
+  - 體育測驗 (PE Exam)
+  - 默寫 (Dictation)
   correct_index: 1
   explanation: RAG 允許模型在回答問題時翻閱參考資料（向量資料庫），就像開書考一樣。
   tags:
@@ -37,10 +37,10 @@ questions:
   text: Fine-tuning 被比喻為哪種學習方式？
   type: multiple_choice
   options:
-  - 校外教學
-  - 小組討論
-  - 考前衝刺班 (內化知識)
-  - 開書考
+  - 校外教學 (Field Trip)
+  - 小組討論 (Group Discussion)
+  - 考前衝刺班 (內化知識) (Cram School)
+  - 開書考 (Open Book Exam)
   correct_index: 2
   explanation: Fine-tuning 透過大量訓練將知識內化到模型的權重中，就像考前死背硬記。
   tags:
@@ -53,10 +53,10 @@ questions:
   text: 若要降低 AI 的「幻覺 (Hallucination)」風險，RAG 與 Fine-tuning 何者較佳？
   type: multiple_choice
   options:
-  - RAG
-  - 無法比較
-  - Fine-tuning
-  - 兩者一樣差
+  - RAG (RAG)
+  - 無法比較 (Incomparable)
+  - Fine-tuning (Fine-tuning)
+  - 兩者一樣差 (Both Bad)
   correct_index: 0
   explanation: RAG 要求模型根據檢索到的事實回答，並可附上引用來源，顯著降低胡說八道的機率。
   tags:
@@ -69,10 +69,10 @@ questions:
   text: 在資料隱私控管方面，RAG 的優勢在於？
   type: multiple_choice
   options:
-  - 資料完全公開
-  - 資料被加密在模型權重中
-  - 不需要資料庫
-  - 可透過權限控管 (ACL) 決定誰能檢索到什麼文件
+  - 資料完全公開 (Public Data)
+  - 資料被加密在模型權重中 (Encrypted in Weights)
+  - 不需要資料庫 (No Database)
+  - 可透過權限控管 (ACL) 決定誰能檢索到什麼文件 (Access Control)
   correct_index: 3
   explanation: RAG 的檢索階段可以整合現有的企業權限系統，確保使用者只能看到自己有權限的資料。
   tags:
@@ -85,10 +85,10 @@ questions:
   text: Fine-tuning 最適合的應用場景是？
   type: multiple_choice
   options:
-  - 避免幻覺
-  - 學習特定的語氣、風格或專有名詞理解
-  - 查詢即時股價
-  - 查詢公司內部規章
+  - 避免幻覺 (Avoid Hallucination)
+  - 學習特定的語氣、風格或專有名詞理解 (Learn Tone, Style, Jargon)
+  - 查詢即時股價 (Query Stock Price)
+  - 查詢公司內部規章 (Query Internal Rules)
   correct_index: 1
   explanation: Fine-tuning 能有效調整模型的行為模式，使其模仿特定的說話風格或理解特定領域的術語。
   tags:
@@ -101,10 +101,10 @@ questions:
   text: 知識蒸餾 (Knowledge Distillation) 的核心概念是？
   type: multiple_choice
   options:
-  - 刪除模型參數
-  - 增加模型層數
-  - 讓大模型模仿小模型
-  - 讓小模型 (Student) 模仿大模型 (Teacher) 的行為
+  - 刪除模型參數 (Delete Parameters)
+  - 增加模型層數 (Increase Layers)
+  - 讓大模型模仿小模型 (Big Mimics Small)
+  - 讓小模型 (Student) 模仿大模型 (Teacher) 的行為 (Student Mimics Teacher)
   correct_index: 3
   explanation: 知識蒸餾旨在將大模型的智慧轉移到輕量化的小模型上，以利在邊緣裝置運行。
   tags:
@@ -117,10 +117,10 @@ questions:
   text: 在知識蒸餾中，Student 模型除了學習正確答案 (Hard Label)，還要學習什麼？
   type: multiple_choice
   options:
-  - 錯誤答案
-  - 使用者的個資
-  - Teacher 的機率分佈 (Soft Label / Dark Knowledge)
-  - 訓練資料的雜訊
+  - 錯誤答案 (Wrong Answers)
+  - 使用者的個資 (User PII)
+  - Teacher 的機率分佈 (Soft Label / Dark Knowledge) (Soft Label)
+  - 訓練資料的雜訊 (Training Noise)
   correct_index: 2
   explanation: Teacher 輸出的機率分佈包含了類別間的相似性資訊（如狗有點像貓），這對 Student 的學習至關重要。
   tags:
@@ -133,10 +133,10 @@ questions:
   text: MCP (Model Context Protocol) 的主要目的是？
   type: multiple_choice
   options:
-  - 加密 AI 模型
-  - 取代 HTTP 協定
-  - 標準化 AI 模型與外部數據/工具之間的連接方式
-  - 加速 GPU 運算
+  - 加密 AI 模型 (Encrypt Model)
+  - 取代 HTTP 協定 (Replace HTTP)
+  - 標準化 AI 模型與外部數據/工具之間的連接方式 (Standardize Connection)
+  - 加速 GPU 運算 (Accelerate GPU)
   correct_index: 2
   explanation: MCP 旨在解決 AI 連接外部工具時的碎片化問題，提供統一的介面標準。
   tags:
@@ -149,10 +149,10 @@ questions:
   text: MCP 架構中，負責提供數據或功能的是？
   type: multiple_choice
   options:
-  - MCP User
-  - MCP Host
-  - MCP Client
-  - MCP Server
+  - MCP User (MCP User)
+  - MCP Host (MCP Host)
+  - MCP Client (MCP Client)
+  - MCP Server (MCP Server)
   correct_index: 3
   explanation: MCP Server 扮演服務提供者的角色，如 Google Drive Server 提供檔案存取功能。
   tags:
@@ -165,10 +165,10 @@ questions:
   text: MCP 與 RAG 的主要差異在於？
   type: multiple_choice
   options:
-  - 兩者完全相同
-  - RAG 比較快
-  - MCP 只關注靜態知識
-  - MCP 更關注動態工具的使用與雙向互動 (讀寫/執行)
+  - 兩者完全相同 (Identical)
+  - RAG 比較快 (RAG is Faster)
+  - MCP 只關注靜態知識 (MCP Static Knowledge)
+  - MCP 更關注動態工具的使用與雙向互動 (讀寫/執行) (MCP Dynamic Tools & Interaction)
   correct_index: 3
   explanation: RAG 側重於資訊檢索，而 MCP 則賦予 AI 執行操作（如發送訊息、寫入資料庫）的能力。
   tags:
@@ -181,10 +181,10 @@ questions:
   text: 企業導入 AI 的最佳實務通常建議？
   type: multiple_choice
   options:
-  - 先 RAG，後 Fine-tuning
-  - 只用 Prompt Engineering
-  - 直接 Fine-tuning
-  - 自己從頭訓練大模型
+  - 先 RAG，後 Fine-tuning (RAG First, then Fine-tuning)
+  - 只用 Prompt Engineering (Prompt Engineering Only)
+  - 直接 Fine-tuning (Fine-tuning Directly)
+  - 自己從頭訓練大模型 (Train from Scratch)
   correct_index: 0
   explanation: 先用 RAG 解決知識問題成本較低且見效快，若效果不足再考慮成本較高的 Fine-tuning。
   tags:
@@ -197,10 +197,10 @@ questions:
   text: Fine-tuning 的主要缺點是？
   type: multiple_choice
   options:
-  - 知識更新慢且成本高 (需重新訓練)
-  - 只能在手機上跑
-  - 模型會變笨
-  - 無法理解中文
+  - 知識更新慢且成本高 (需重新訓練) (Slow Update & High Cost)
+  - 只能在手機上跑 (Mobile Only)
+  - 模型會變笨 (Model Degrades)
+  - 無法理解中文 (No Chinese Support)
   correct_index: 0
   explanation: 每次知識更新都需要重新準備資料並進行訓練，維護成本高且缺乏時效性。
   tags:
@@ -213,10 +213,10 @@ questions:
   text: RAG 的運作依賴於哪種資料庫技術？
   type: multiple_choice
   options:
-  - 區塊鏈
-  - 關聯式資料庫 (SQL)
-  - 向量資料庫 (Vector Database)
-  - 圖資料庫
+  - 區塊鏈 (Blockchain)
+  - 關聯式資料庫 (SQL) (Relational Database)
+  - 向量資料庫 (Vector Database) (Vector Database)
+  - 圖資料庫 (Graph Database)
   correct_index: 2
   explanation: 向量資料庫用於儲存與檢索文本的語意向量，是 RAG 的核心組件。
   tags:
@@ -229,10 +229,10 @@ questions:
   text: MCP Client (如 Claude Desktop) 的角色是？
   type: multiple_choice
   options:
-  - 儲存資料
-  - 發起請求的主體 (AI Host)
-  - 執行 SQL 查詢
-  - 提供 API
+  - 儲存資料 (Store Data)
+  - 發起請求的主體 (AI Host) (AI Host)
+  - 執行 SQL 查詢 (Execute SQL)
+  - 提供 API (Provide API)
   correct_index: 1
   explanation: MCP Client 是 AI 運行的前端，負責理解使用者需求並向 Server 發送請求。
   tags:
@@ -245,10 +245,10 @@ questions:
   text: 知識蒸餾可以降低模型的？
   type: multiple_choice
   options:
-  - 創造力
-  - 推論成本與延遲
-  - 安全性
-  - 準確率
+  - 創造力 (Creativity)
+  - 推論成本與延遲 (Inference Cost & Latency)
+  - 安全性 (Security)
+  - 準確率 (Accuracy)
   correct_index: 1
   explanation: 小模型運算量小，能顯著降低硬體需求與回應時間。
   tags:
@@ -261,10 +261,10 @@ questions:
   text: Fine-tuning 在資料隱私方面的風險是？
   type: multiple_choice
   options:
-  - 資料會自動刪除
-  - 一旦知識寫入權重，很難限制特定人存取 (難以實作 ACL)
-  - 模型會拒絕回答
-  - 資料容易被駭客竊取
+  - 資料會自動刪除 (Data Auto-delete)
+  - 一旦知識寫入權重，很難限制特定人存取 (難以實作 ACL) (Hard to Access Control)
+  - 模型會拒絕回答 (Refuse to Answer)
+  - 資料容易被駭客竊取 (Data Theft Risk)
   correct_index: 1
   explanation: 模型權重是黑箱，無法像資料庫那樣針對不同使用者設定精細的存取權限。
   tags:
@@ -277,10 +277,10 @@ questions:
   text: MCP 被比喻為電腦界的什麼標準？
   type: multiple_choice
   options:
-  - HDMI
-  - Bluetooth
-  - Wi-Fi
-  - USB
+  - HDMI (HDMI)
+  - Bluetooth (Bluetooth)
+  - Wi-Fi (Wi-Fi)
+  - USB (USB)
   correct_index: 3
   explanation: 就像 USB 讓各種周邊設備能隨插即用於電腦，MCP 讓各種資料源能標準化地連接 AI。
   tags:
@@ -293,10 +293,10 @@ questions:
   text: 若要讓 AI 學習輸出特定的 JSON 格式，最有效的方法是？
   type: multiple_choice
   options:
-  - Fine-tuning
-  - 知識蒸餾
-  - RAG
-  - 增加溫度
+  - Fine-tuning (Fine-tuning)
+  - 知識蒸餾 (Knowledge Distillation)
+  - RAG (RAG)
+  - 增加溫度 (Increase Temperature)
   correct_index: 0
   explanation: Fine-tuning 非常適合讓模型學習固定的輸出格式或語法結構。
   tags:
@@ -309,10 +309,10 @@ questions:
   text: MCP 是否可以包含 RAG 的功能？
   type: multiple_choice
   options:
-  - 不行，兩者互斥
-  - 可以，MCP 可以連接向量資料庫來實現 RAG
-  - RAG 包含 MCP
-  - 不一定
+  - 不行，兩者互斥 (Mutually Exclusive)
+  - 可以，MCP 可以連接向量資料庫來實現 RAG (MCP Connects Vector DB)
+  - RAG 包含 MCP (RAG Includes MCP)
+  - 不一定 (Not Sure)
   correct_index: 1
   explanation: MCP 是一個連接協議，可以將向量資料庫視為一個 Server 來連接，從而實現 RAG 功能。
   tags:
@@ -325,10 +325,10 @@ questions:
   text: RAG 的「Grounded」特性是指？
   type: multiple_choice
   options:
-  - 模型被禁足
-  - 模型在本地運行
-  - 回答有憑有據，基於檢索到的事實
-  - 模型接地氣
+  - 模型被禁足 (Model Grounded)
+  - 模型在本地運行 (Local Execution)
+  - 回答有憑有據，基於檢索到的事實 (Fact-based Response)
+  - 模型接地氣 (Down to Earth)
   correct_index: 2
   explanation: Groundedness 指的是生成的內容有明確的來源依據，而非模型憑空捏造。
   tags:
@@ -341,10 +341,10 @@ questions:
   text: 知識蒸餾中的 Teacher 模型通常是？
   type: multiple_choice
   options:
-  - 參數多、效能強的大模型
-  - 參數少的小模型
-  - 隨機初始化的模型
-  - 線性迴歸模型
+  - 參數多、效能強的大模型 (Large & Powerful Model)
+  - 參數少的小模型 (Small Model)
+  - 隨機初始化的模型 (Random Initialized Model)
+  - 線性迴歸模型 (Linear Regression Model)
   correct_index: 0
   explanation: Teacher 必須是能力強的專家，才能指導 Student。
   tags:
@@ -357,10 +357,10 @@ questions:
   text: MCP 解決了 AI 開發中的什麼痛點？
   type: multiple_choice
   options:
-  - 硬體太貴
-  - 模型訓練太慢
-  - 資料不足
-  - 連接器 (Connector) 的碎片化問題
+  - 硬體太貴 (Hardware Expensive)
+  - 模型訓練太慢 (Training Slow)
+  - 資料不足 (Insufficient Data)
+  - 連接器 (Connector) 的碎片化問題 (Connector Fragmentation)
   correct_index: 3
   explanation: 開發者不再需要為每個模型-資料源組合重複開發連接器，只需遵循 MCP 標準即可。
   tags:
@@ -373,10 +373,10 @@ questions:
   text: 下列何者不是 RAG 的優點？
   type: multiple_choice
   options:
-  - 資料隱私可控
-  - 知識時效性高
-  - 幻覺風險低
-  - 能改變模型的說話語氣
+  - 資料隱私可控 (Controllable Privacy)
+  - 知識時效性高 (High Timeliness)
+  - 幻覺風險低 (Low Hallucination Risk)
+  - 能改變模型的說話語氣 (Change Tone)
   correct_index: 3
   explanation: 改變語氣或風格是 Fine-tuning 的強項，RAG 主要負責提供知識內容。
   tags:
@@ -389,10 +389,10 @@ questions:
   text: Dark Knowledge (暗知識) 在知識蒸餾中指的是？
   type: multiple_choice
   options:
-  - 加密的知識
-  - 錯誤的知識
-  - Teacher 模型輸出的非最高機率類別資訊
-  - 黑市交易的知識
+  - 加密的知識 (Encrypted Knowledge)
+  - 錯誤的知識 (Wrong Knowledge)
+  - Teacher 模型輸出的非最高機率類別資訊 (Non-top Probability Info)
+  - 黑市交易的知識 (Black Market Knowledge)
   correct_index: 2
   explanation: 暗知識隱藏在 Soft Label 中，揭示了類別間的細微關係，對 Student 的學習很有幫助。
   tags:
@@ -405,10 +405,10 @@ questions:
   text: MCP Server 可以執行哪些操作？
   type: multiple_choice
   options:
-  - 只能顯示圖片
-  - 讀取資料與執行功能 (如 API 呼叫)
-  - 只能讀取資料
-  - 只能寫入資料
+  - 只能顯示圖片 (Display Images Only)
+  - 讀取資料與執行功能 (如 API 呼叫) (Read Data & Execute Functions)
+  - 只能讀取資料 (Read Data Only)
+  - 只能寫入資料 (Write Data Only)
   correct_index: 1
   explanation: MCP Server 具備執行能力，能代表 AI 與外部系統進行完整的互動。
   tags:
@@ -421,10 +421,10 @@ questions:
   text: 如果需要 AI 理解醫療領域的艱深術語，建議使用？
   type: multiple_choice
   options:
-  - Prompt Engineering
-  - 降低溫度
-  - RAG
-  - Fine-tuning (Domain Adaptation)
+  - Prompt Engineering (Prompt Engineering)
+  - 降低溫度 (Lower Temperature)
+  - RAG (RAG)
+  - Fine-tuning (Domain Adaptation) (Fine-tuning)
   correct_index: 3
   explanation: 對於特定領域的語言模式與術語理解，Fine-tuning (領域適應) 的效果通常優於僅提供上下文的 RAG。
   tags:
@@ -437,10 +437,10 @@ questions:
   text: RAG 的成本主要來自？
   type: multiple_choice
   options:
-  - 資料標註
-  - 模型訓練
-  - 向量資料庫建置與檢索運算
-  - 購買 GPU
+  - 資料標註 (Data Labeling)
+  - 模型訓練 (Model Training)
+  - 向量資料庫建置與檢索運算 (Vector DB Setup & Retrieval)
+  - 購買 GPU (Buy GPU)
   correct_index: 2
   explanation: RAG 不需訓練模型，成本集中在檢索系統的維運與 API 呼叫。
   tags:
@@ -453,10 +453,10 @@ questions:
   text: MCP Host 的功能是？
   type: multiple_choice
   options:
-  - 執行 MCP Client 的環境
-  - 提供數據
-  - 訓練模型
-  - 發送請求
+  - 執行 MCP Client 的環境 (Execution Environment)
+  - 提供數據 (Provide Data)
+  - 訓練模型 (Train Model)
+  - 發送請求 (Send Request)
   correct_index: 0
   explanation: MCP Host 提供 Client 運作所需的 runtime 環境。
   tags:
@@ -469,10 +469,10 @@ questions:
   text: Fine-tuning 的「考前衝刺班」比喻意指？
   type: multiple_choice
   options:
-  - 放鬆心情
-  - 作弊
-  - 臨時抱佛腳
-  - 透過密集訓練將特定知識內化
+  - 放鬆心情 (Relax)
+  - 作弊 (Cheating)
+  - 臨時抱佛腳 (Last Minute Cramming)
+  - 透過密集訓練將特定知識內化 (Internalize Knowledge)
   correct_index: 3
   explanation: 強調透過針對性的訓練數據，強化模型在特定任務上的表現。
   tags:
@@ -485,10 +485,10 @@ questions:
   text: RAG 適合用於查詢法規的原因是？
   type: multiple_choice
   options:
-  - 法規不需要準確
-  - 法規很有趣
-  - 法規需要精確引用且會隨時間更新
-  - 模型天生懂法規
+  - 法規不需要準確 (Regulations Don't Need Accuracy)
+  - 法規很有趣 (Regulations Are Fun)
+  - 法規需要精確引用且會隨時間更新 (Precise Citation & Updates)
+  - 模型天生懂法規 (Model Knows Regulations)
   correct_index: 2
   explanation: 法規查詢要求高度準確性與時效性，且需引用條文依據，這正是 RAG 的強項。
   tags:
@@ -501,10 +501,10 @@ questions:
   text: 知識蒸餾的 Student 模型通常比 Teacher 模型？
   type: multiple_choice
   options:
-  - 更大更慢
-  - 更笨重
-  - 一樣大
-  - 更小更快
+  - 更大更慢 (Larger & Slower)
+  - 更笨重 (Heavier)
+  - 一樣大 (Same Size)
+  - 更小更快 (Smaller & Faster)
   correct_index: 3
   explanation: 知識蒸餾的目的就是獲得一個輕量級但效能接近 Teacher 的模型。
   tags:
@@ -517,10 +517,10 @@ questions:
   text: MCP 是一個？
   type: multiple_choice
   options:
-  - 硬體裝置
-  - 開放標準協議
-  - 付費軟體
-  - 封閉系統
+  - 硬體裝置 (Hardware Device)
+  - 開放標準協議 (Open Standard Protocol)
+  - 付費軟體 (Paid Software)
+  - 封閉系統 (Closed System)
   correct_index: 1
   explanation: MCP 旨在建立一個開源、通用的標準，促進生態系發展。
   tags:
@@ -533,10 +533,10 @@ questions:
   text: Soft Label (軟標籤) 包含了什麼資訊？
   type: multiple_choice
   options:
-  - 只有正確答案
-  - 圖片特徵
-  - 各類別的機率分佈
-  - 文字描述
+  - 只有正確答案 (Correct Answer Only)
+  - 圖片特徵 (Image Features)
+  - 各類別的機率分佈 (Probability Distribution)
+  - 文字描述 (Text Description)
   correct_index: 2
   explanation: Soft Label 提供了比 Hard Label 更豐富的資訊，顯示了模型對各類別的信心程度。
   tags:
@@ -549,10 +549,10 @@ questions:
   text: Fine-tuning 的成本主要來自？
   type: multiple_choice
   options:
-  - 檢索運算
-  - 硬碟空間
-  - 算力 (GPU) 與高品質資料準備
-  - 網路頻寬
+  - 檢索運算 (Retrieval Computation)
+  - 硬碟空間 (Disk Space)
+  - 算力 (GPU) 與高品質資料準備 (GPU & Data Prep)
+  - 網路頻寬 (Network Bandwidth)
   correct_index: 2
   explanation: 訓練過程需要昂貴的 GPU 資源以及經過清洗標註的高品質資料集。
   tags:
@@ -565,10 +565,10 @@ questions:
   text: MCP 的出現是為了應對 AI 應用的什麼趨勢？
   type: multiple_choice
   options:
-  - 使用者越來越少
-  - 資料越來越少
-  - 需要連接更多樣化的工具與資料源
-  - 模型越來越小
+  - 使用者越來越少 (Fewer Users)
+  - 資料越來越少 (Less Data)
+  - 需要連接更多樣化的工具與資料源 (Connect Diverse Tools & Data)
+  - 模型越來越小 (Smaller Models)
   correct_index: 2
   explanation: 隨著 Agentic AI 發展，AI 需要與外部世界進行更廣泛的互動，MCP 提供了標準化的連接基礎。
   tags:
@@ -581,10 +581,10 @@ questions:
   text: RAG 的「開書考」比喻強調了？
   type: multiple_choice
   options:
-  - 考試很簡單
-  - 模型依賴外部資料源而非內部記憶
-  - 模型記憶力很好
-  - 可以作弊
+  - 考試很簡單 (Exam is Easy)
+  - 模型依賴外部資料源而非內部記憶 (Rely on External Data)
+  - 模型記憶力很好 (Good Memory)
+  - 可以作弊 (Can Cheat)
   correct_index: 1
   explanation: 強調模型在推論時動態獲取資訊的能力，而非依賴訓練時記住的參數。
   tags:
@@ -597,10 +597,10 @@ questions:
   text: 知識蒸餾適合用於？
   type: multiple_choice
   options:
-  - 邊緣運算 (Edge Computing) 與行動裝置
-  - 網路爬蟲
-  - 資料庫管理
-  - 雲端超級電腦
+  - 邊緣運算 (Edge Computing) 與行動裝置 (Edge Computing & Mobile)
+  - 網路爬蟲 (Web Crawler)
+  - 資料庫管理 (DB Management)
+  - 雲端超級電腦 (Cloud Supercomputer)
   correct_index: 0
   explanation: 在資源受限的邊緣裝置上部署 AI 模型是知識蒸餾最主要的應用場景。
   tags:
@@ -613,10 +613,10 @@ questions:
   text: MCP Client 在流程中負責？
   type: multiple_choice
   options:
-  - 執行 SQL
-  - 判斷需求並發送請求
-  - 顯示廣告
-  - 提供數據
+  - 執行 SQL (Execute SQL)
+  - 判斷需求並發送請求 (Determine Needs & Send Request)
+  - 顯示廣告 (Show Ads)
+  - 提供數據 (Provide Data)
   correct_index: 1
   explanation: Client 是大腦，負責決策何時以及如何調用 Server 的功能。
   tags:
@@ -629,10 +629,10 @@ questions:
   text: 本章的核心主題是？
   type: multiple_choice
   options:
-  - 歷史故事
-  - 基礎 Python 程式設計
-  - 解決 AI 幻覺與時效性問題的架構 (RAG, Fine-tuning, MCP)
-  - 電腦硬體組裝
+  - 歷史故事 (History Stories)
+  - 基礎 Python 程式設計 (Basic Python)
+  - 解決 AI 幻覺與時效性問題的架構 (RAG, Fine-tuning, MCP) (AI Architecture)
+  - 電腦硬體組裝 (Hardware Assembly)
   correct_index: 2
   explanation: 本章探討了如何透過不同的系統架構與優化技術，提升生成式 AI 的實用性與可靠性。
   tags:
@@ -640,84 +640,6 @@ questions:
   - sec-advanced-rag
   usage: both
 - id: 3041
-  chapter_title: 進階 RAG 與系統架構
-  section_title: 模型微調 (Fine-tuning) 與優化
-  text: RAG (檢索增強生成) 與 Fine-tuning (微調) 的關係最像下列哪種比喻？
-  type: multiple_choice
-  options:
-  - RAG 是開書考，Fine-tuning 是考前衝刺班
-  - 兩者都是體育課
-  - RAG 是考前衝刺班，Fine-tuning 是開書考
-  - 兩者都是作弊
-  correct_index: 0
-  explanation: RAG 讓模型在回答時翻閱資料庫（開書考），Fine-tuning 則是透過訓練將知識內化（考前衝刺）。
-  tags:
-  - chap-gen-chapter3
-  - sec-fine-tuning-optimization
-  usage: both
-- id: 3042
-  chapter_title: 進階 RAG 與系統架構
-  section_title: RAG 運作原理與架構
-  text: 向量資料庫 (Vector Database) 與傳統關聯式資料庫最大的不同在於？
-  type: multiple_choice
-  options:
-  - 只能存數字
-  - 透過「語意相似度」進行模糊搜尋，而非關鍵字精確比對
-  - 容量比較小
-  - 速度比較慢
-  correct_index: 1
-  explanation: 向量資料庫計算向量間的距離，能找出語意相近的內容，即使關鍵字完全不同。
-  tags:
-  - chap-gen-chapter3
-  - sec-rag-architecture
-  usage: both
-- id: 3043
-  chapter_title: 進階 RAG 與系統架構
-  section_title: 模型微調 (Fine-tuning) 與優化
-  text: 混合搜尋 (Hybrid Search) 通常結合了哪兩種搜尋方式？
-  type: multiple_choice
-  options:
-  - 線性搜尋與二元搜尋
-  - Google 搜尋與 Bing 搜尋
-  - 圖片搜尋與文字搜尋
-  - 關鍵字搜尋 (Keyword Search) 與 向量搜尋 (Vector Search)
-  correct_index: 3
-  explanation: 混合搜尋兼具關鍵字的精準匹配與向量的語意理解優勢。
-  tags:
-  - chap-gen-chapter3
-  - sec-fine-tuning-optimization
-  usage: both
-- id: 3044
-  chapter_title: 進階 RAG 與系統架構
-  section_title: 模型微調 (Fine-tuning) 與優化
-  text: 重排序 (Re-ranking) 在 RAG 流程中的作用是？
-  type: multiple_choice
-  options:
-  - 對初步檢索出的候選片段進行更精細的評分與排序
-  - 重新排列資料庫索引
-  - 刪除重複資料
-  - 隨機打亂結果
-  correct_index: 0
-  explanation: Re-ranking 使用更精準的模型（如 Cross-Encoder）從候選名單中挑出最相關的片段給 LLM。
-  tags:
-  - chap-gen-chapter3
-  - sec-fine-tuning-optimization
-  usage: both
-- id: 3045
-  chapter_title: 進階 RAG 與系統架構
-  section_title: 模型微調 (Fine-tuning) 與優化
-  text: 知識蒸餾 (Knowledge Distillation) 的主要目的是？
-  type: multiple_choice
-  options:
-  - 提煉石油
-  - 讓小模型 (Student) 模仿大模型 (Teacher) 的行為，以降低運算成本
-  - 加密模型
-  - 讓大模型變更大
-  correct_index: 1
-  explanation: 透過蒸餾，可以將大模型的智慧轉移到輕量級模型上，適合在邊緣裝置運行。
-  tags:
-  - chap-gen-chapter3
-  - sec-fine-tuning-optimization
   usage: both
 - id: 3046
   chapter_title: 進階 RAG 與系統架構

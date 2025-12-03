@@ -5,10 +5,10 @@ questions:
   text: No Code (無程式碼) 平台的主要目標客群是？
   type: multiple_choice
   options:
-  - 非技術人員 (Citizen Developers)、行銷、PM
-  - 駭客
-  - 系統管理員
-  - 資深後端工程師
+  - 非技術人員 (Citizen Developers)、行銷、PM – 目標客群是沒有程式背景的使用者，能透過拖拉介面快速建置應用。
+  - 駭客 (Hackers) – 雖具技術能力，但非 No Code 主要使用者。
+  - 系統管理員 (System Administrators) – 需要深度設定與維護，較少使用 No Code 平台。
+  - 資深後端工程師 (Senior Backend Engineers) – 通常偏好傳統程式開發，不是主要目標。
   correct_index: 0
   explanation: No Code 旨在賦能不懂程式語言的業務人員，讓他們能透過拖拉介面自行構建簡單應用。
   tags:
@@ -21,10 +21,10 @@ questions:
   text: Low Code (低程式碼) 平台與 No Code 的主要區別在於？
   type: multiple_choice
   options:
-  - Low Code 比較便宜
-  - Low Code 允許或需要撰寫少量程式碼來處理複雜邏輯，適合專業開發者加速開發
-  - Low Code 只能在手機上用
-  - Low Code 沒有圖形介面
+  - Low Code 比較便宜 (Lower Cost) – 相較於全自訂開發，成本較低。
+  - Low Code 允許或需要撰寫少量程式碼來處理複雜邏輯，適合專業開發者加速開發 (Allows Minimal Coding for Complex Logic) – 提供彈性與速度。
+  - Low Code 只能在手機上用 (Mobile‑Only) – 不正確，平台通常支援多設備。
+  - Low Code 沒有圖形介面 (No GUI) – 錯誤，Low Code 仍提供視覺化介面。
   correct_index: 1
   explanation: Low Code 保留了 Coding 的彈性，適合需要高度客製化或串接複雜系統的企業級應用。
   tags:
@@ -37,10 +37,10 @@ questions:
   text: Cursor 編輯器的 Codebase RAG 功能是指？
   type: multiple_choice
   options:
-  - 將程式碼上傳到 Facebook
-  - 自動刪除程式碼
-  - 隨機生成程式碼
-  - 索引整個專案的程式碼，讓 AI 回答時能參考現有的風格與架構
+  - 將程式碼上傳到 Facebook (Upload to Facebook) – 與功能無關。
+  - 自動刪除程式碼 (Auto‑Delete Code) – 不正確的描述。
+  - 隨機生成程式碼 (Random Code Generation) – 缺乏上下文。
+  - 索引整個專案的程式碼，讓 AI 回答時能參考現有的風格與架構 (Index Project Code for Contextual AI Assistance) – 正確描述 RAG 功能。
   correct_index: 3
   explanation: 這讓 AI 不再是瞎猜，而是能根據專案上下文提供精準的建議，如同熟悉專案的同事。
   tags:
@@ -53,31 +53,16 @@ questions:
   text: Replit Agent 的主要特色是？
   type: multiple_choice
   options:
-  - 允許使用者用自然語言描述需求，Agent 自動規劃、寫碼並部署應用
-  - 需要使用者自己架設伺服器
-  - 只能做靜態網頁
-  - 只能寫 Python
+  - 允許使用者用自然語言描述需求，Agent 自動規劃、寫碼並部署應用 (Natural‑Language Driven App Generation) – 核心特色。
+  - 需要使用者自己架設伺服器 (Self‑Hosted Server Required) – 非主要特點。
+  - 只能做靜態網頁 (Static‑Only) – 功能受限。
+  - 只能寫 Python (Python‑Only) – 支援多語言。
   correct_index: 0
   explanation: Replit Agent 實現了從自然語言直接到可運行 App 的自動化流程，大幅降低開發門檻。
   tags:
   - chap-gen-chapter5
   - sec-no-code-low-code
   usage: quiz
-- id: 5005
-  chapter_title: No Code / Low Code 平台與 AI 開發工具
-  section_title: 熱門 AI 開發與 No/Low Code 工具 (實務趨勢)
-  text: v0 或 Lovable 這類工具專注於生成什麼？
-  type: multiple_choice
-  options:
-  - 後端資料庫
-  - 作業系統
-  - 前端使用者介面 (UI) 程式碼
-  - 防毒軟體
-  correct_index: 2
-  explanation: 這些工具能將草圖或文字描述轉換為 React/Tailwind 等前端程式碼，加速 UI 原型開發。
-  tags:
-  - chap-gen-chapter5
-  - sec-no-code-low-code
   usage: quiz
 - id: 5006
   chapter_title: No Code / Low Code 平台與 AI 開發工具

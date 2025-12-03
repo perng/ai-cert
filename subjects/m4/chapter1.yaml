@@ -5,10 +5,10 @@ questions:
   text: 隨機森林 (Random Forest) 是基於哪種整合學習技術？
   type: multiple_choice
   options:
-  - Boosting
-  - Bagging
-  - Stacking
-  - Clustering
+  - Boosting (提升法)，如 AdaBoost
+  - Bagging (Bootstrap Aggregating)，如隨機森林
+  - Stacking (堆疊法)，結合多個模型的預測
+  - Clustering (分群法)，如 K-Means
   correct_index: 1
   explanation: 隨機森林透過 Bagging 技術並行訓練多棵決策樹，每棵樹使用隨機採樣的數據與特徵，最後透過投票或平均來整合結果。
   tags:
@@ -21,10 +21,10 @@ questions:
   text: 梯度提升 (Gradient Boosting) 的核心思想是？
   type: multiple_choice
   options:
-  - 並行訓練多個獨立模型
-  - 串行訓練模型，每一個新模型都試圖修正前一個模型的錯誤
-  - 使用元學習器組合預測結果
-  - 隨機選擇特徵進行分割
+  - 並行訓練多個獨立的弱學習器
+  - 串行訓練模型，每一個新模型都試圖修正前一個模型的殘差 (Residuals)
+  - 使用元學習器 (Meta-learner) 組合多個基學習器的預測結果
+  - 隨機選擇特徵進行分割以增加多樣性
   correct_index: 1
   explanation: Gradient Boosting 是一種迭代式的 Boosting 方法，每一輪新的弱學習器都是為了減少上一輪模型的殘差 (Residual)。
   tags:
@@ -37,10 +37,10 @@ questions:
   text: 在關聯規則學習中，「支持度 (Support)」指標代表什麼？
   type: multiple_choice
   options:
-  - 規則的可信程度
-  - 規則在數據集中出現的頻率
-  - 規則的提升效果
-  - 規則的複雜度
+  - 規則的可信程度 (Confidence)
+  - 規則在數據集中出現的頻率或機率 (Frequency)
+  - 規則的提升效果 (Lift)
+  - 規則的複雜度或長度
   correct_index: 1
   explanation: 支持度衡量一個項目集（如「啤酒與尿布」）在所有交易中出現的機率或頻率。
   tags:
@@ -53,10 +53,10 @@ questions:
   text: 孤立森林 (Isolation Forest) 檢測異常點的核心原理是？
   type: multiple_choice
   options:
-  - 異常點密度較高
-  - 異常點距離群集中心較遠
-  - 異常點更容易被隨機分割隔離
-  - 異常點的重構誤差較大
+  - 異常點周圍的數據密度較高
+  - 異常點距離群集中心的歐氏距離較遠
+  - 異常點更容易被隨機分割隔離，因此在樹中的路徑長度較短
+  - 異常點的重構誤差 (Reconstruction Error) 較大
   correct_index: 2
   explanation: 孤立森林利用異常點「少且不同」的特性，在隨機構建的樹中，異常點通常會比正常點更快被隔離到葉節點（即路徑更短）。
   tags:
@@ -69,10 +69,10 @@ questions:
   text: CatBoost 演算法最大的特色在於擅長處理哪種類型的特徵？
   type: multiple_choice
   options:
-  - 圖像特徵
-  - 文本特徵
-  - 類別特徵 (Categorical Features)
-  - 時間序列特徵
+  - 高維度的圖像特徵 (Image Features)
+  - 非結構化的文本特徵 (Text Features)
+  - 類別特徵 (Categorical Features)，無需預先進行 One-hot Encoding
+  - 具有時間依賴性的時間序列特徵 (Time-series Features)
   correct_index: 2
   explanation: CatBoost (Categorical Boosting) 專為處理類別型特徵而設計，能自動處理編碼問題，無需預先進行 One-hot
     Encoding。
@@ -86,10 +86,10 @@ questions:
   text: 在決策樹中，若「吉尼不純度 (Gini Impurity)」越小，代表該節點的純度如何？
   type: multiple_choice
   options:
-  - 越低
-  - 越高
-  - 不變
-  - 無法判斷
+  - 越低，表示樣本越混雜
+  - 越高，表示樣本越純 (Pure)
+  - 不變，與純度無關
+  - 無法判斷，取決於數據量
   correct_index: 1
   explanation: Gini 不純度衡量樣本集合的混雜程度。數值為 0 代表所有樣本屬於同一類（最純），數值越大代表越混雜。
   tags:
@@ -102,9 +102,9 @@ questions:
   text: 若關聯規則 A -> B 的「提升度 (Lift)」大於 1，代表什麼意義？
   type: multiple_choice
   options:
-  - A 與 B 是負相關
-  - A 與 B 是獨立的
-  - A 的出現會提高 B 出現的機率
+  - A 與 B 呈現負相關 (Negative Correlation)
+  - A 與 B 是相互獨立的 (Independent)
+  - A 的出現會提高 B 出現的機率 (Positive Correlation)
   - A 的出現會降低 B 出現的機率
   correct_index: 2
   explanation: Lift > 1 表示 A 的發生對 B 的發生有正向影響；Lift = 1 表示獨立；Lift < 1 表示負相關。
@@ -118,10 +118,10 @@ questions:
   text: Stacking (堆疊法) 通常使用什麼來組合多個基學習器的預測結果？
   type: multiple_choice
   options:
-  - 簡單平均
-  - 投票
-  - 元學習器 (Meta-learner)
-  - 隨機選擇
+  - 簡單平均法 (Simple Averaging)
+  - 多數決投票 (Majority Voting)
+  - 元學習器 (Meta-learner)，如 Logistic Regression
+  - 隨機選擇一個基學習器的結果
   correct_index: 2
   explanation: Stacking 訓練一個第二層模型（元學習器），將第一層多個基學習器的輸出作為輸入特徵，學習如何最佳地組合它們。
   tags:
@@ -134,10 +134,10 @@ questions:
   text: LightGBM 相比於 XGBoost 的一個主要優勢是？
   type: multiple_choice
   options:
-  - 準確率更高
-  - 訓練速度更快，記憶體佔用更低
-  - 支援更多演算法
-  - 程式碼更簡單
+  - 預測的準確率顯著更高
+  - 訓練速度更快，且記憶體佔用更低 (Efficiency)
+  - 支援更多種類的機器學習演算法
+  - 程式碼實作更為簡單直觀
   correct_index: 1
   explanation: LightGBM 使用基於直方圖的演算法和 Leaf-wise 生長策略，大幅減少了計算量和記憶體消耗。
   tags:
@@ -150,10 +150,10 @@ questions:
   text: Apriori 演算法的主要缺點是？
   type: multiple_choice
   options:
-  - 準確率低
-  - 需要多次掃描資料庫，效率較低
-  - 只能處理數值數據
-  - 無法發現關聯規則
+  - 挖掘出的規則準確率較低
+  - 需要多次掃描資料庫以生成候選集，導致效率較低
+  - 只能處理連續型的數值數據
+  - 無法發現任何有意義的關聯規則
   correct_index: 1
   explanation: Apriori 每次生成候選集都需要掃描一次資料庫，當數據量大時，I/O 開銷非常大。
   tags:
@@ -166,10 +166,10 @@ questions:
   text: 隨機森林中的「隨機」體現在哪兩個方面？
   type: multiple_choice
   options:
-  - 隨機選擇模型和隨機選擇參數
-  - 隨機採樣數據 (Bootstrap) 和隨機選擇特徵
+  - 隨機選擇模型架構和隨機選擇超參數
+  - 隨機採樣數據 (Bootstrap Sampling) 和隨機選擇特徵子集 (Feature Subsampling)
   - 隨機選擇標籤和隨機選擇損失函數
-  - 隨機初始化權重和隨機停止訓練
+  - 隨機初始化權重和隨機停止訓練過程
   correct_index: 1
   explanation: 這種雙重隨機性增加了樹之間的多樣性 (Diversity)，從而降低了整合模型的變異數 (Variance)，防止過擬合。
   tags:
@@ -182,10 +182,10 @@ questions:
   text: FP-Growth 演算法如何改進 Apriori 的效率？
   type: multiple_choice
   options:
-  - 使用 GPU 加速
-  - 構建 FP 樹，只需掃描兩次資料庫
-  - 減少數據量
-  - 忽略低頻項目
+  - 使用 GPU 進行平行運算加速
+  - 構建 FP 樹 (FP-Tree) 結構，只需掃描兩次資料庫
+  - 隨機減少數據量以加快處理速度
+  - 忽略所有低頻項目以簡化計算
   correct_index: 1
   explanation: FP-Growth 將數據壓縮成一棵樹結構，避免了多次掃描資料庫，大大提高了頻繁項集挖掘的效率。
   tags:
@@ -198,10 +198,10 @@ questions:
   text: 資訊熵 (Entropy) 越大，代表系統？
   type: multiple_choice
   options:
-  - 越有序
-  - 越混亂 (不確定性越高)
-  - 越簡單
-  - 越穩定
+  - 越有序，資訊量越少
+  - 越混亂，不確定性 (Uncertainty) 越高
+  - 越簡單，結構越單一
+  - 越穩定，變化越少
   correct_index: 1
   explanation: 熵是衡量混亂程度的指標。如果一個集合裡各類別樣本數量相等，熵最大（最難猜）；如果只有一類，熵為 0。
   tags:
@@ -214,10 +214,10 @@ questions:
   text: Local Outlier Factor (LOF) 適合檢測哪種異常？
   type: multiple_choice
   options:
-  - 全域異常
-  - 局部異常
-  - 時間序列異常
-  - 圖像異常
+  - 全域異常 (Global Outliers)，即相對於整體數據的異常
+  - 局部異常 (Local Outliers)，即相對於其鄰近區域的異常
+  - 時間序列中的異常波動
+  - 圖像中的噪點異常
   correct_index: 1
   explanation: 有些點雖然在全域看來不稀疏，但相對於它周圍密集的鄰居來說，它顯得孤立，這就是局部異常。
   tags:
@@ -230,10 +230,10 @@ questions:
   text: XGBoost 中的「正則化項」有什麼作用？
   type: multiple_choice
   options:
-  - 加速訓練
-  - 控制模型複雜度，防止過擬合
-  - 增加特徵
-  - 減少數據
+  - 加速模型的訓練過程
+  - 控制模型複雜度，防止過擬合 (Overfitting)
+  - 增加特徵的數量
+  - 減少訓練數據的數量
   correct_index: 1
   explanation: XGBoost 在目標函數中加入了對葉節點數量和權重的懲罰項，這使得它比傳統的 GBDT 更不容易過擬合。
   tags:
@@ -246,10 +246,10 @@ questions:
   text: One-Class SVM 是一種什麼類型的演算法？
   type: multiple_choice
   options:
-  - 監督式分類
-  - 非監督式異常檢測
-  - 迴歸分析
-  - 聚類分析
+  - 監督式分類 (Supervised Classification)
+  - 非監督式異常檢測 (Unsupervised Anomaly Detection)
+  - 迴歸分析 (Regression Analysis)
+  - 聚類分析 (Clustering Analysis)
   correct_index: 1
   explanation: 它只需要「正常」數據進行訓練，學習一個包圍正常數據的邊界。落在邊界外的就被視為異常。
   tags:
@@ -262,10 +262,10 @@ questions:
   text: Bagging 的主要目的是降低模型的？
   type: multiple_choice
   options:
-  - 偏差 (Bias)
-  - 變異數 (Variance)
-  - 訓練誤差
-  - 計算成本
+  - 偏差 (Bias)，即模型的準確度
+  - 變異數 (Variance)，即模型的穩定性
+  - 訓練誤差 (Training Error)
+  - 計算成本 (Computational Cost)
   correct_index: 1
   explanation: 通過平均多個模型的預測，Bagging 能有效平滑單個模型的隨機誤差，從而降低整體變異數。
   tags:
@@ -278,10 +278,10 @@ questions:
   text: 信賴度 (Confidence) P(Y|X) 衡量的是？
   type: multiple_choice
   options:
-  - X 和 Y 同時出現的機率
-  - 在包含 X 的交易中，同時包含 Y 的條件機率
-  - Y 出現的機率
-  - X 出現的機率
+  - X 和 Y 同時出現的聯合機率 P(X, Y)
+  - 在包含 X 的交易中，同時包含 Y 的條件機率 P(Y|X)
+  - Y 出現的邊際機率 P(Y)
+  - X 出現的邊際機率 P(X)
   correct_index: 1
   explanation: 即「買了 X 的人，有多大比例也會買 Y」。這是衡量規則強度的重要指標。
   tags:
@@ -294,10 +294,10 @@ questions:
   text: Boosting 的主要目的是降低模型的？
   type: multiple_choice
   options:
-  - 偏差 (Bias)
-  - 變異數 (Variance)
-  - 噪音
-  - 數據量
+  - 偏差 (Bias)，提高模型的擬合能力
+  - 變異數 (Variance)，提高模型的穩定性
+  - 數據中的噪音 (Noise)
+  - 訓練所需的數據量 (Data Volume)
   correct_index: 0
   explanation: Boosting 透過不斷修正前一個模型的錯誤（擬合殘差），逐步逼近真實函數，從而降低偏差。
   tags:
@@ -310,10 +310,10 @@ questions:
   text: 孤立森林 (Isolation Forest) 對於高維數據的表現通常？
   type: multiple_choice
   options:
-  - 很差
-  - 很好，因為它不需要計算距離
-  - 無法處理
-  - 與維度無關
+  - 表現很差，受維度詛咒影響
+  - 表現很好，因為它不需要計算距離，避免了維度詛咒
+  - 無法處理高維數據
+  - 表現與維度無關，效果一般
   correct_index: 1
   explanation: 許多基於距離的演算法在高維空間會失效（維度詛咒），而孤立森林基於隨機分割，對高維數據有較好的魯棒性。
   tags:
@@ -326,10 +326,10 @@ questions:
   text: 資訊增益 (Information Gain) 是指？
   type: multiple_choice
   options:
-  - 分裂前後資訊熵的差值
-  - 分裂後的資訊熵
-  - 分裂前的資訊熵
-  - 資訊熵的和
+  - 分裂前後資訊熵的差值 (Entropy Difference)，即不確定性的減少量
+  - 分裂後的資訊熵 (Entropy after Split)
+  - 分裂前的資訊熵 (Entropy before Split)
+  - 所有節點資訊熵的總和
   correct_index: 0
   explanation: 決策樹選擇特徵的標準是：哪個特徵能讓系統的混亂程度（熵）下降最多，即資訊增益最大。
   tags:
@@ -342,10 +342,10 @@ questions:
   text: 關聯規則學習中，如果 Lift = 1，表示？
   type: multiple_choice
   options:
-  - 正相關
-  - 負相關
-  - 兩個項目相互獨立
-  - 規則無效
+  - 兩個項目呈現正相關 (Positive Correlation)
+  - 兩個項目呈現負相關 (Negative Correlation)
+  - 兩個項目是統計獨立的 (Statistically Independent)，無關聯
+  - 該關聯規則無效
   correct_index: 2
   explanation: Lift = P(XY) / (P(X)P(Y))。如果等於 1，說明 P(XY) = P(X)P(Y)，即統計獨立。
   tags:
@@ -358,10 +358,10 @@ questions:
   text: 隨機森林處理迴歸問題時，通常採用什麼方式整合結果？
   type: multiple_choice
   options:
-  - 多數決 (Voting)
-  - 平均值 (Averaging)
-  - 最小值
-  - 最大值
+  - 多數決投票 (Majority Voting)
+  - 計算所有樹預測值的平均值 (Averaging)
+  - 取所有樹預測值的最小值
+  - 取所有樹預測值的最大值
   correct_index: 1
   explanation: 對於數值預測，平均所有樹的預測值是最直觀且有效的整合方式。
   tags:
@@ -374,10 +374,10 @@ questions:
   text: 異常檢測在工業界的一個常見應用是？
   type: multiple_choice
   options:
-  - 推薦系統
-  - 預測性維護
-  - 圖像分類
-  - 語音識別
+  - 電商平台的商品推薦系統
+  - 工業設備的預測性維護 (Predictive Maintenance)，如偵測異常震動
+  - 圖像分類與識別
+  - 語音識別與合成
   correct_index: 1
   explanation: 機器壞掉前通常會有異常的震動或溫度，異常檢測能捕捉這些訊號，提前預警。
   tags:
@@ -390,10 +390,10 @@ questions:
   text: 哪種 Boosting 演算法使用了 Leaf-wise (按葉子生長) 策略？
   type: multiple_choice
   options:
-  - AdaBoost
-  - XGBoost
-  - LightGBM
-  - Random Forest
+  - AdaBoost (Adaptive Boosting)
+  - XGBoost (eXtreme Gradient Boosting)
+  - LightGBM (Light Gradient Boosting Machine)
+  - Random Forest (隨機森林)
   correct_index: 2
   explanation: Leaf-wise 策略每次選擇分裂增益最大的葉子進行分裂，而不是像 Level-wise 那樣一層層長。這通常能得到更深的樹和更高的精度，但也更容易過擬合。
   tags:
@@ -407,9 +407,9 @@ questions:
   type: multiple_choice
   options:
   - 元學習器 (Meta-learner)
-  - 基學習器 (Base Learners)
-  - 弱學習器
-  - 強學習器
+  - 基學習器 (Base Learners)，如 SVM, RF, KNN 等
+  - 弱學習器 (Weak Learners)
+  - 強學習器 (Strong Learners)
   correct_index: 1
   explanation: 第一層由多個不同的模型（如 SVM, RF, KNN）組成，它們的輸出被當作第二層模型的輸入特徵。
   tags:
@@ -422,10 +422,10 @@ questions:
   text: 在 Apriori 演算法中，如果一個項目集是頻繁的，那麼它的所有子集？
   type: multiple_choice
   options:
-  - 必須也是頻繁的
-  - 必須是不頻繁的
-  - 可能是頻繁的
-  - 無法確定
+  - 必須也是頻繁的 (Frequent)
+  - 必須是不頻繁的 (Infrequent)
+  - 可能是頻繁的，也可能是不頻繁的
+  - 無法確定，取決於數據分佈
   correct_index: 0
   explanation: 這是 Apriori 原理：如果 {啤酒, 尿布} 常出現，那 {啤酒} 和 {尿布} 單獨出現的次數一定更多（或相等），所以也一定是頻繁的。
   tags:
@@ -438,10 +438,10 @@ questions:
   text: 隨機森林能否計算特徵重要性？
   type: multiple_choice
   options:
-  - 不能
-  - 能，根據特徵在樹分裂中帶來的平均不純度減少量來評估
-  - 只能計算線性特徵
-  - 只能計算類別特徵
+  - 不能，隨機森林是黑盒模型
+  - 能，根據特徵在樹分裂中帶來的平均不純度減少量 (Mean Decrease Impurity) 來評估
+  - 只能計算線性特徵的重要性
+  - 只能計算類別特徵的重要性
   correct_index: 1
   explanation: 某個特徵被選為分裂點的次數越多，且帶來的純度提升越大，該特徵就越重要。
   tags:
@@ -454,10 +454,10 @@ questions:
   text: 異常檢測中的「污染率 (Contamination)」參數是指？
   type: multiple_choice
   options:
-  - 數據中的雜訊比例
-  - 預期數據中異常點的比例
-  - 模型的錯誤率
-  - 訓練時間
+  - 數據中的隨機雜訊比例
+  - 預期數據集中異常點所佔的比例 (Proportion of Outliers)
+  - 模型的分類錯誤率
+  - 模型的訓練時間限制
   correct_index: 1
   explanation: 這是 Isolation Forest 等演算法的重要超參數，告訴模型「大概有多少比例的數據是壞人」，用來決定切分異常的閾值。
   tags:
@@ -470,10 +470,10 @@ questions:
   text: XGBoost 支援並行處理 (Parallel Processing)，是指？
   type: multiple_choice
   options:
-  - 並行訓練多棵樹
-  - 在特徵粒度上並行
-  - 並行預測
-  - 並行下載數據
+  - 並行訓練多棵決策樹
+  - 在特徵粒度上進行並行計算 (Feature-level Parallelism)，如計算分裂增益
+  - 並行對多個樣本進行預測
+  - 並行從網路下載數據
   correct_index: 1
   explanation: Boosting 本質是串行的（樹要一棵棵長），但 XGBoost 優化了建樹過程，能同時在多個 CPU 核心上計算不同特徵的分裂增益，從而加速訓練。
   tags:
@@ -486,9 +486,10 @@ questions:
   text: 為什麼 One-Class SVM 適合處理不平衡數據的異常檢測？
   type: multiple_choice
   options:
-  - 因為它需要大量異常樣本
-  - 因為它只需要正常樣本進行訓練
-  - 因為它會自動平衡數據
+  - 因為它需要大量的異常樣本進行訓練
+  - 因為它只需要正常樣本進行訓練 (Training with Normal Data only)，無需異常樣本
+  - 因為它會自動對數據進行平衡處理
+  - 因為它會忽略所有的正常樣本
   - 因為它忽略正常樣本
   correct_index: 1
   explanation: 在很多場景（如飛機引擎故障），異常樣本極難取得。One-Class SVM 只要學會「什麼是正常」，凡是不像正常的都當作異常，完美解決了負樣本缺乏的問題。
@@ -502,10 +503,10 @@ questions:
   text: 決策樹容易發生什麼問題？
   type: multiple_choice
   options:
-  - 欠擬合
-  - 過擬合 (Overfitting)
-  - 計算太慢
-  - 無法處理類別特徵
+  - 欠擬合 (Underfitting)
+  - 過擬合 (Overfitting)，即對訓練數據記憶過深
+  - 計算速度太慢
+  - 無法處理類別型特徵
   correct_index: 1
   explanation: 單棵決策樹如果沒有限制深度，會傾向於死記硬背訓練數據的每一個細節（包括雜訊），導致泛化能力差。隨機森林通過整合多棵樹解決了這個問題。
   tags:
@@ -518,10 +519,10 @@ questions:
   text: 關聯規則 {麵包, 牛奶} -> {雞蛋} 的 Confidence = 0.8 意味著？
   type: multiple_choice
   options:
-  - 80% 的交易包含雞蛋
-  - 同時買了麵包和牛奶的人中，有 80% 也買了雞蛋
-  - 80% 的交易包含麵包和牛奶
-  - 雞蛋的銷量是麵包牛奶的 80%
+  - 80% 的所有交易中都包含雞蛋
+  - 在同時購買了麵包和牛奶的交易中，有 80% 也購買了雞蛋
+  - 80% 的交易同時包含麵包和牛奶
+  - 雞蛋的總銷量是麵包和牛奶總銷量的 80%
   correct_index: 1
   explanation: 這是條件機率 P(雞蛋 | 麵包, 牛奶) = 0.8。
   tags:
@@ -534,10 +535,10 @@ questions:
   text: 弱學習器 (Weak Learner) 通常是指？
   type: multiple_choice
   options:
-  - 準確率很低的模型
-  - 表現僅比隨機猜測好一點點的簡單模型
-  - 參數量很大的模型
-  - 訓練時間很長的模型
+  - 準確率非常低的模型
+  - 表現僅比隨機猜測好一點點的簡單模型 (Slightly better than random guessing)
+  - 參數量非常龐大的深度學習模型
+  - 訓練時間非常長的複雜模型
   correct_index: 1
   explanation: Boosting 的魔力就在於能將許多個「臭皮匠」（弱學習器）組合成一個「諸葛亮」（強學習器）。
   tags:
@@ -550,10 +551,10 @@ questions:
   text: 孤立森林中，異常點的路徑長度通常？
   type: multiple_choice
   options:
-  - 較長
-  - 較短
-  - 與正常點一樣
-  - 為 0
+  - 較長，因為異常點難以被隔離
+  - 較短，因為異常點容易被隨機分割隔離
+  - 與正常點的路徑長度一樣
+  - 路徑長度為 0
   correct_index: 1
   explanation: 異常點因為「格格不入」，在隨機切分空間時，很容易一兩刀就被切出來（隔離），所以位於樹的淺層，路徑短。
   tags:
@@ -566,9 +567,10 @@ questions:
   text: 隨機森林的 OOB (Out-of-Bag) 誤差可以用來？
   type: multiple_choice
   options:
-  - 訓練模型
-  - 評估模型泛化能力
-  - 增加數據量
+  - 用於訓練模型參數
+  - 用於評估模型的泛化能力 (Generalization Ability)，無需額外的驗證集
+  - 用於增加訓練數據量
+  - 用於計算梯度下降
   - 計算梯度
   correct_index: 1
   explanation: 由於 Bootstrap 採樣，每棵樹大約有 1/3 的數據沒看過（OOB 數據）。用這些數據來測試這棵樹，平均後就是 OOB 誤差，近似於交叉驗證誤差。
@@ -585,7 +587,7 @@ questions:
   - 價格最高的商品組合
   - 支持度 (Support) 大於等於最小支持度閾值的項目集
   - 利潤最高的商品組合
-  - 隨機組合
+  - 隨機組合的項目集
   correct_index: 1
   explanation: 只有出現頻率夠高的組合，才值得我們去分析它們之間的關聯規則。
   tags:
@@ -598,10 +600,10 @@ questions:
   text: 為什麼 CatBoost 不需要對類別特徵做 One-hot Encoding？
   type: multiple_choice
   options:
-  - 它忽略類別特徵
-  - 它使用 Ordered Target Statistics 等技術將類別轉換為數值
-  - 它只處理數值特徵
-  - 它使用文字嵌入
+  - 它完全忽略類別特徵
+  - 它使用 Ordered Target Statistics 等技術將類別特徵轉換為數值
+  - 它只能處理數值特徵
+  - 它使用文字嵌入技術 (Word Embeddings)
   correct_index: 1
   explanation: CatBoost 內部有一套聰明的機制，利用目標變數的統計值來編碼類別特徵，既保留了資訊又避免了維度爆炸。
   tags:
@@ -614,10 +616,10 @@ questions:
   text: 異常檢測中的「偽陽性 (False Positive)」是指？
   type: multiple_choice
   options:
-  - 漏報異常
-  - 將正常數據誤判為異常
-  - 正確檢測到異常
-  - 正確判斷正常
+  - 漏報異常 (False Negative)
+  - 將正常數據誤判為異常 (False Alarm)
+  - 正確檢測到異常 (True Positive)
+  - 正確判斷正常 (True Negative)
   correct_index: 1
   explanation: 狼來了（但狼沒來）。在工業檢測中，偽陽性太高會導致不必要的停機檢查，增加成本。
   tags:
@@ -630,10 +632,10 @@ questions:
   text: Stacking 的主要風險是？
   type: multiple_choice
   options:
-  - 欠擬合
-  - 過擬合 (Overfitting)
-  - 準確率低
-  - 無法解釋
+  - 欠擬合 (Underfitting)
+  - 過擬合 (Overfitting)，特別是當沒有正確使用交叉驗證時
+  - 預測準確率過低
+  - 模型無法解釋
   correct_index: 1
   explanation: 疊了兩層模型，複雜度大增。如果沒有做好交叉驗證（如使用 Out-of-fold 預測），很容易發生數據洩漏導致過擬合。
   tags:
@@ -646,10 +648,10 @@ questions:
   text: 情境：你正在參加一個預測房價的 Kaggle 比賽。你已經訓練了 XGBoost, LightGBM, 和 Random Forest 三個模型，它們的表現都差不多，但預測結果的相關性不高。為了進一步提升排名，你應該怎麼做？
   type: multiple_choice
   options:
-  - 只選表現最好的一個。
-  - 使用 Stacking 或簡單平均 (Blending) 將這三個模型整合起來。
-  - 放棄比賽。
-  - 重新收集數據。
+  - 只選擇表現最好的一個模型提交
+  - 使用 Stacking 或簡單平均 (Blending) 將這三個模型整合起來
+  - 放棄比賽，因為模型表現不佳
+  - 重新收集數據以訓練新模型
   correct_index: 1
   explanation: 這是競賽拿分的標準操作。模型間的相關性低意味著它們犯錯的地方不同，整合它們可以互補長短，通常能帶來顯著的性能提升。
   tags:
@@ -662,10 +664,10 @@ questions:
   text: 情境：你負責一家超市的銷售分析，發現「尿布 -> 啤酒」的 Lift 值高達 3.5。這對行銷策略有什麼啟示？
   type: multiple_choice
   options:
-  - 應該把尿布和啤酒分開擺放。
-  - 應該把尿布和啤酒擺在一起，或進行交叉銷售。
-  - 這是巧合，忽略它。
-  - 停止銷售啤酒。
+  - 應該把尿布和啤酒分開擺放在不同的區域
+  - 應該把尿布和啤酒擺在一起，或進行交叉銷售 (Cross-selling)
+  - 這是巧合，忽略這個發現
+  - 停止銷售啤酒以專注於尿布銷售
   correct_index: 1
   explanation: Lift > 1 且很高，表示強關聯。這是經典的交叉銷售 (Cross-selling) 機會，利用這種關聯性可以顯著提升客單價。
   tags:
@@ -678,10 +680,10 @@ questions:
   text: 情境：你使用孤立森林檢測信用卡詐欺，發現檢測出的異常點中有很多是 VIP 客戶的大額消費（偽陽性）。你該如何改進？
   type: multiple_choice
   options:
-  - 降低污染率 (Contamination)，或增加特徵。
-  - 刪除 VIP 客戶數據。
-  - 停止使用孤立森林。
-  - 接受這個結果。
+  - 降低污染率 (Contamination) 參數，或增加更多上下文特徵
+  - 刪除所有 VIP 客戶的數據
+  - 停止使用孤立森林演算法
+  - 接受這個結果，不做任何調整
   correct_index: 0
   explanation: 異常不等於詐欺。VIP 的行為模式本身就與普通人不同（異常）。需要引入更多上下文特徵，讓模型理解「對這個人來說，這筆交易是正常的」。
   tags:
@@ -694,10 +696,10 @@ questions:
   text: 情境：你的 XGBoost 模型在訓練集上準確率 99%，但在測試集上只有 70%。你應該調整哪些參數來解決這個問題？
   type: multiple_choice
   options:
-  - 增加樹的深度 (max_depth)。
-  - 降低樹的深度 (max_depth)，增加正則化參數。
-  - 增加迭代次數 (n_estimators)。
-  - 減少數據量。
+  - 增加樹的深度 (max_depth) 以提高擬合能力
+  - 降低樹的深度 (max_depth)，並增加正則化參數 (Regularization)
+  - 增加迭代次數 (n_estimators)
+  - 減少訓練數據量
   correct_index: 1
   explanation: 這是過擬合。需要限制模型複雜度（樹淺一點、正則化強一點）或增加隨機性（子採樣），讓模型不要學得太死。
   tags:
@@ -710,10 +712,10 @@ questions:
   text: 情境：你正在處理一個包含大量類別特徵（如用戶 ID、商品 ID）的推薦系統數據集。為了快速建立基準模型，你會優先選擇哪個演算法？
   type: multiple_choice
   options:
-  - SVM。
-  - CatBoost。
-  - Linear Regression。
-  - K-Means。
+  - SVM (Support Vector Machine)
+  - CatBoost (Categorical Boosting)
+  - Linear Regression (線性迴歸)
+  - K-Means Clustering (K-Means 分群)
   correct_index: 1
   explanation: CatBoost 對類別特徵的處理非常強大且自動化，無需繁瑣的特徵工程（如 Target Encoding），非常適合這種場景作為強大的
     Baseline。
@@ -726,10 +728,10 @@ questions:
   text: 情境：隨機森林 (Random Forest) 透過什麼機制來減少過擬合 (Overfitting)？
   type: multiple_choice
   options:
-  - 增加樹的深度
-  - Bagging (Bootstrap Aggregating) 與特徵隨機採樣
-  - 減少樹的數量
-  - 使用所有特徵
+  - 增加決策樹的最大深度 (Max Depth)
+  - Bagging (Bootstrap Aggregating) 與特徵隨機採樣 (Feature Subsampling)
+  - 減少決策樹的數量 (Number of Trees)
+  - 使用所有的特徵進行訓練
   correct_index: 1
   explanation: 透過平均多棵差異化決策樹的預測結果，降低了模型的變異數 (Variance)。
   tags:
@@ -742,10 +744,10 @@ questions:
   text: 情境：XGBoost 相比於傳統 GBDT 的一個主要改進是？
   type: multiple_choice
   options:
-  - 只能處理迴歸問題
-  - 引入了正則化項 (Regularization) 並支援並行處理
-  - 不支援缺失值
-  - 速度更慢
+  - 只能處理簡單的線性迴歸問題
+  - 引入了正則化項 (Regularization) 並支援並行處理 (Parallel Processing)
+  - 不支援處理數據中的缺失值
+  - 訓練速度比傳統 GBDT 更慢
   correct_index: 1
   explanation: 正則化項有效控制了模型複雜度，防止過擬合。
   tags:
@@ -758,10 +760,10 @@ questions:
   text: 情境：在關聯規則中，提升度 (Lift) > 1 代表？
   type: multiple_choice
   options:
-  - 兩個商品無關
-  - 兩個商品呈正相關 (買 A 會增加買 B 的機率)
-  - 兩個商品呈負相關
-  - 計算錯誤
+  - 兩個商品之間完全無關
+  - 兩個商品呈正相關 (Positive Correlation)，即買 A 會增加買 B 的機率
+  - 兩個商品呈負相關 (Negative Correlation)
+  - 計算過程中發生錯誤
   correct_index: 1
   explanation: Lift 衡量了 X 的出現對 Y 出現機率的提升程度。
   tags:
@@ -774,10 +776,10 @@ questions:
   text: 情境：孤立森林 (Isolation Forest) 檢測異常點的核心思想是？
   type: multiple_choice
   options:
-  - 異常點很難被隔離
-  - 異常點更容易被隨機分割隔離 (路徑較短)
-  - 異常點密度很高
-  - 異常點距離中心很近
+  - 異常點很難被隨機分割隔離
+  - 異常點更容易被隨機分割隔離，因此在樹中的路徑較短 (Shorter Path Length)
+  - 異常點周圍的數據密度很高
+  - 異常點距離群集中心很近
   correct_index: 1
   explanation: 異常點通常「少而不同」，在隨機樹中會更快被切分到葉節點。
   tags:
@@ -790,10 +792,10 @@ questions:
   text: 情境：LightGBM 為了提升訓練速度，採用了什麼策略？
   type: multiple_choice
   options:
-  - Level-wise 生長
-  - Leaf-wise 生長與基於直方圖的演算法
-  - 隨機採樣
-  - 增加樹的數量
+  - Level-wise (按層生長) 策略
+  - Leaf-wise (按葉子生長) 策略與基於直方圖的演算法 (Histogram-based Algorithm)
+  - 隨機採樣數據策略
+  - 增加決策樹的數量
   correct_index: 1
   explanation: Leaf-wise 策略能更有效地降低損失，直方圖演算法則減少了記憶體消耗與計算量。
   tags:
@@ -806,10 +808,10 @@ questions:
   text: 情境：Stacking (堆疊法) 的核心架構是？
   type: multiple_choice
   options:
-  - 單一模型
-  - 多個基學習器並行預測
+  - 僅使用單一模型進行預測
+  - 多個基學習器並行進行預測
   - 使用元學習器 (Meta-learner) 組合多個基學習器的預測結果
-  - 隨機猜測
+  - 完全隨機猜測結果
   correct_index: 2
   explanation: Stacking 學習如何最佳地結合不同模型的優勢。
   tags:
@@ -822,10 +824,10 @@ questions:
   text: 情境：FP-Growth 演算法相比於 Apriori 的優勢在於？
   type: multiple_choice
   options:
-  - 只需掃描資料庫兩次，效率更高
-  - 更準確
-  - 支援更多數據類型
-  - 演算法更簡單
+  - 只需掃描資料庫兩次，效率更高 (Higher Efficiency)
+  - 預測結果更準確
+  - 支援更多種類的數據類型
+  - 演算法邏輯更簡單
   correct_index: 0
   explanation: Apriori 需要多次掃描資料庫來生成候選集，FP-Growth 則透過構建 FP 樹解決此瓶頸。
   tags:
@@ -838,10 +840,10 @@ questions:
   text: 情境：CatBoost 特別擅長處理哪種類型的特徵？
   type: multiple_choice
   options:
-  - 影像特徵
-  - 類別特徵 (Categorical Features)
-  - 文字特徵
-  - 時間特徵
+  - 高維度的影像特徵 (Image Features)
+  - 類別特徵 (Categorical Features)，無需預先處理
+  - 非結構化的文字特徵 (Text Features)
+  - 具有時間依賴性的時間特徵 (Time Features)
   correct_index: 1
   explanation: CatBoost 內建了處理類別特徵的機制，無需預先進行 One-hot Encoding。
   tags:
@@ -854,10 +856,10 @@ questions:
   text: 情境：One-Class SVM 適合用於？
   type: multiple_choice
   options:
-  - 多分類問題
-  - 異常檢測 (只有正常數據用於訓練)
-  - 迴歸問題
-  - 分群問題
+  - 多分類問題 (Multi-class Classification)
+  - 異常檢測 (Anomaly Detection)，特別是當只有正常數據可用時
+  - 迴歸問題 (Regression)
+  - 分群問題 (Clustering)
   correct_index: 1
   explanation: 它學習一個包圍正常數據的邊界，邊界外的即視為異常。
   tags:
@@ -870,10 +872,10 @@ questions:
   text: 情境：吉尼不純度 (Gini Impurity) 越小，代表？
   type: multiple_choice
   options:
-  - 集合越混亂
-  - 集合純度越高 (樣本多屬於同一類)
-  - 集合為空
-  - 集合很大
+  - 集合內的樣本非常混亂
+  - 集合純度越高 (High Purity)，即樣本多屬於同一類
+  - 集合為空集合
+  - 集合的樣本數量很大
   correct_index: 1
   explanation: 決策樹分裂的目標是降低子節點的不純度。
   tags:
@@ -886,10 +888,10 @@ questions:
   text: 情境：Boosting 類算法（如 AdaBoost, GBDT）的訓練方式是？
   type: multiple_choice
   options:
-  - 並行訓練
+  - 並行訓練多個獨立模型
   - 串行訓練 (Sequential)，後一個模型修正前一個模型的錯誤
-  - 隨機訓練
-  - 不訓練
+  - 隨機選擇模型進行訓練
+  - 完全不進行訓練
   correct_index: 1
   explanation: 這使得 Boosting 能逐步提升模型的準確度，但也較難並行化。
   tags:
@@ -902,10 +904,10 @@ questions:
   text: 情境：支持度 (Support) 在關聯規則中表示？
   type: multiple_choice
   options:
-  - 規則的可信度
-  - 規則在數據集中出現的頻率
-  - 規則的提升度
-  - 規則的長度
+  - 規則的可信度 (Confidence)
+  - 規則在數據集中出現的頻率 (Frequency)
+  - 規則的提升度 (Lift)
+  - 規則的長度 (Length)
   correct_index: 1
   explanation: 過濾掉出現頻率太低的規則。
   tags:
@@ -918,10 +920,10 @@ questions:
   text: 情境：LOF (Local Outlier Factor) 演算法是基於什麼來檢測異常？
   type: multiple_choice
   options:
-  - 距離
-  - 密度 (比較點與鄰居的密度)
-  - 角度
-  - 顏色
+  - 歐氏距離 (Euclidean Distance)
+  - 密度 (Density)，比較點與鄰居的密度
+  - 角度 (Angle)
+  - 顏色 (Color)
   correct_index: 1
   explanation: LOF 能有效發現局部異常點，即使該點所在的區域整體密度較低。
   tags:
@@ -934,10 +936,10 @@ questions:
   text: 情境：隨機森林中，若用於迴歸問題，最終預測結果通常是？
   type: multiple_choice
   options:
-  - 所有樹預測結果的平均值
-  - 所有樹預測結果的投票 (多數決)
-  - 第一棵樹的結果
-  - 最後一棵樹的結果
+  - 所有樹預測結果的平均值 (Average)
+  - 所有樹預測結果的投票 (Majority Vote)
+  - 第一棵樹的預測結果
+  - 最後一棵樹的預測結果
   correct_index: 0
   explanation: 分類用投票，迴歸用平均。
   tags:
@@ -950,10 +952,10 @@ questions:
   text: 情境：資訊熵 (Entropy) 用於衡量？
   type: multiple_choice
   options:
-  - 系統的混亂程度或不確定性
-  - 系統的溫度
-  - 系統的速度
-  - 系統的大小
+  - 系統的混亂程度或不確定性 (Uncertainty)
+  - 系統的溫度 (Temperature)
+  - 系統的運算速度 (Speed)
+  - 系統的大小 (Size)
   correct_index: 0
   explanation: 熵越高，代表資訊越混亂，分類難度越高。
   tags:
@@ -966,10 +968,10 @@ questions:
   text: 情境：信賴度 (Confidence) P(Y|X) 表示？
   type: multiple_choice
   options:
-  - X 出現的機率
-  - Y 出現的機率
-  - 若 X 出現，則 Y 出現的條件機率
-  - X 與 Y 同時出現的機率
+  - X 出現的邊際機率 P(X)
+  - Y 出現的邊際機率 P(Y)
+  - 若 X 出現，則 Y 出現的條件機率 P(Y|X)
+  - X 與 Y 同時出現的聯合機率 P(X, Y)
   correct_index: 2
   explanation: 衡量規則「若 X 則 Y」的可靠程度。
   tags:
@@ -982,7 +984,7 @@ questions:
   text: 情境：Bagging 的全名是？
   type: multiple_choice
   options:
-  - Bootstrap Aggregating
+  - Bootstrap Aggregating (自助聚合)
   - Bag Aggregating
   - Boost Aggregating
   - Best Aggregating
@@ -998,10 +1000,10 @@ questions:
   text: 情境：XGBoost 中的「梯度 (Gradient)」指的是？
   type: multiple_choice
   options:
-  - 圖片的梯度
-  - 損失函數對模型預測值的負梯度 (殘差的近似)
-  - 學習率
-  - 權重
+  - 圖片的梯度 (Image Gradient)
+  - 損失函數對模型預測值的負梯度 (Negative Gradient)，即殘差的近似
+  - 模型的學習率 (Learning Rate)
+  - 模型的權重參數 (Weights)
   correct_index: 1
   explanation: 利用梯度下降法來最小化損失函數。
   tags:
@@ -1014,10 +1016,10 @@ questions:
   text: 情境：異常檢測在工業界的一個典型應用是？
   type: multiple_choice
   options:
-  - 推薦電影
-  - 設備故障預測 (Predictive Maintenance)
-  - 人臉辨識
-  - 語音合成
+  - 根據用戶喜好推薦電影
+  - 設備故障預測 (Predictive Maintenance)，如偵測異常震動
+  - 人臉辨識與驗證
+  - 語音合成與生成
   correct_index: 1
   explanation: 透過監控感測器數據的異常波動，提前預警設備故障。
   tags:
@@ -1030,10 +1032,10 @@ questions:
   text: 情境：隨機森林的「隨機」體現在哪兩個方面？
   type: multiple_choice
   options:
-  - 隨機選擇模型和隨機選擇參數
-  - 隨機採樣數據 (Bootstrap) 和隨機選擇特徵
+  - 隨機選擇模型架構和隨機選擇超參數
+  - 隨機採樣數據 (Bootstrap) 和隨機選擇特徵子集
   - 隨機選擇時間和地點
-  - 隨機輸出結果
+  - 隨機輸出預測結果
   correct_index: 1
   explanation: 這兩個隨機性保證了基學習器的多樣性，從而提升整合效果。
   tags:

@@ -5,10 +5,10 @@ questions:
   text: Hadoop 的核心組件中，負責資源管理和調度的是？
   type: multiple_choice
   options:
-  - HDFS
-  - MapReduce
-  - YARN (Yet Another Resource Negotiator)
-  - Spark
+  - HDFS (Hadoop Distributed File System)，主要負責分散式檔案儲存
+  - MapReduce，主要負責分散式平行運算處理
+  - YARN (Yet Another Resource Negotiator)，負責叢集資源管理與任務調度
+  - Apache Spark，新一代記憶體內運算框架，非 Hadoop 核心組件
   correct_index: 2
   explanation: YARN 是 Hadoop 2.0 引入的資源管理層，負責將叢集資源（CPU, Memory）分配給各種應用程式。
   tags:
@@ -21,10 +21,10 @@ questions:
   text: HDFS (Hadoop Distributed File System) 如何保證數據的可靠性？
   type: multiple_choice
   options:
-  - 使用 RAID 磁碟陣列
-  - 將數據塊 (Blocks) 複製多份 (預設 3 份) 並存儲在不同的節點上
-  - 定期備份到磁帶
-  - 使用加密技術
+  - 使用硬體級別的 RAID 磁碟陣列技術來防止單顆硬碟損壞
+  - 將數據塊 (Blocks) 複製多份 (預設 3 份) 並存儲在不同的節點上，以容忍節點故障
+  - 定期將所有數據備份到外部磁帶庫 (Tape Library) 進行冷儲存
+  - 使用高強度的 AES-256 加密技術來保護數據不被竊取
   correct_index: 1
   explanation: HDFS 的設計初衷是在廉價硬體上運行，因此透過軟體層面的多副本機制來容忍硬體故障。
   tags:
@@ -37,10 +37,10 @@ questions:
   text: Spark 相比於 Hadoop MapReduce 的主要優勢是？
   type: multiple_choice
   options:
-  - 儲存容量更大
-  - 記憶體內運算 (In-Memory Computing)，速度快 100 倍
-  - 更便宜
-  - 支援更多語言
+  - 擁有比 Hadoop HDFS 更大的單一叢集儲存容量上限
+  - 採用記憶體內運算 (In-Memory Computing) 架構，運算速度可比 MapReduce 快 100 倍
+  - 建置與維護成本比 Hadoop MapReduce 更低廉且開源免費
+  - 原生支援超過 50 種以上的程式語言進行開發
   correct_index: 1
   explanation: MapReduce 每次運算都要讀寫磁碟，而 Spark 將中間結果存在記憶體中，大幅減少了 I/O 開銷。
   tags:
@@ -53,10 +53,10 @@ questions:
   text: Spark 中的 RDD (Resilient Distributed Dataset) 特性不包括？
   type: multiple_choice
   options:
-  - 不可變性 (Immutable)
-  - 彈性 (Resilient)，可從錯誤中恢復
-  - 分散式 (Distributed)
-  - 總是儲存在磁碟上
+  - 具備不可變性 (Immutable)，一旦創建就不能被修改，只能轉換
+  - 具備彈性 (Resilient)，可透過 Lineage 機制從節點錯誤中自動恢復
+  - 具備分散式 (Distributed) 特性，數據被分割並散佈在叢集節點上
+  - 數據總是強制儲存在硬碟 (Disk) 上以確保持久性，無法使用記憶體
   correct_index: 3
   explanation: RDD 優先儲存在記憶體中，只有在記憶體不足時才會溢寫到磁碟。
   tags:
@@ -69,10 +69,10 @@ questions:
   text: ACID 原則中的 "A" 代表？
   type: multiple_choice
   options:
-  - Availability (可用性)
-  - Atomicity (原子性)
-  - Accuracy (準確性)
-  - Authentication (認證)
+  - Availability (可用性)，保證系統隨時可用
+  - Atomicity (原子性)，保證交易是不可分割的最小單位
+  - Accuracy (準確性)，保證數據計算無誤
+  - Authentication (認證)，保證使用者身分合法
   correct_index: 1
   explanation: 原子性保證交易是不可分割的最小單位，要麼全部成功，要麼全部失敗回滾。
   tags:
@@ -86,9 +86,9 @@ questions:
   type: multiple_choice
   options:
   - 一致性 (Consistency)、可用性 (Availability)、分區容錯性 (Partition Tolerance)
-  - 速度、成本、品質
-  - 安全性、隱私性、便利性
-  - 原子性、一致性、隔離性
+  - 系統運算速度 (Speed)、建置維護成本 (Cost)、服務品質 (Quality)
+  - 資訊安全性 (Security)、用戶隱私性 (Privacy)、使用便利性 (Convenience)
+  - 交易原子性 (Atomicity)、數據一致性 (Consistency)、交易隔離性 (Isolation)
   correct_index: 0
   explanation: CAP 定理是分散式系統設計的基石，指出在網路分區 (P) 發生時，必須在一致性 (C) 和可用性 (A) 之間做出選擇。
   tags:
@@ -101,10 +101,10 @@ questions:
   text: MongoDB 屬於哪種類型的 NoSQL 資料庫？
   type: multiple_choice
   options:
-  - 鍵值對 (Key-Value)
-  - 文件型 (Document)
-  - 列式 (Column-family)
-  - 圖形 (Graph)
+  - 鍵值對 (Key-Value) 資料庫，如 Redis
+  - 文件型 (Document) 資料庫，儲存 JSON/BSON 格式
+  - 列式 (Column-family) 資料庫，如 HBase
+  - 圖形 (Graph) 資料庫，如 Neo4j
   correct_index: 1
   explanation: MongoDB 儲存 BSON (Binary JSON) 格式的文件，結構靈活，適合內容管理與快速開發。
   tags:
@@ -117,10 +117,10 @@ questions:
   text: Redis 最適合的應用場景是？
   type: multiple_choice
   options:
-  - 複雜的關聯查詢
-  - 快取 (Caching) 與 Session 管理
-  - 儲存海量日誌
-  - 圖形分析
+  - 涉及多張資料表 Join 的複雜關聯查詢 (Complex Relational Queries)
+  - 高速快取 (Caching) 與使用者 Session 狀態管理
+  - 長期儲存 PB 等級的海量系統日誌 (Massive Log Storage)
+  - 社交網絡關係鏈的深度圖形分析 (Graph Analysis)
   correct_index: 1
   explanation: Redis 是基於記憶體的 Key-Value 資料庫，讀寫速度極快，是快取系統的首選。
   tags:
@@ -133,10 +133,10 @@ questions:
   text: 資料湖 (Data Lake) 的 "Schema-on-Read" 特性意味著？
   type: multiple_choice
   options:
-  - 寫入數據時必須定義 Schema
-  - 數據必須是結構化的
-  - 寫入時不限制格式，讀取時再根據需求定義 Schema
-  - 數據只能讀取不能寫入
+  - 在寫入數據之前，必須先嚴格定義好資料表結構 (Schema-on-Write)
+  - 存入的數據必須是經過清洗的結構化數據 (Structured Data)
+  - 寫入時不限制格式，讀取時再根據分析需求定義 Schema (Schema-on-Read)
+  - 數據寫入後即被鎖定，只能進行讀取操作，不允許任何寫入或修改
   correct_index: 2
   explanation: 這賦予了資料湖極大的靈活性，可以先存下所有原始數據 (Raw Data)，日後再決定如何分析。
   tags:
@@ -149,10 +149,10 @@ questions:
   text: Parquet 檔案格式的主要優點是？
   type: multiple_choice
   options:
-  - 易於人類閱讀
-  - 列式儲存 (Columnar)，支援高效壓縮與查詢優化 (只讀取需要的列)
-  - 寫入速度最快
-  - 支援事務處理
+  - 採用純文字格式，易於人類直接閱讀與編輯 (Human-Readable)
+  - 採用列式儲存 (Columnar)，支援高效壓縮與查詢優化 (只讀取需要的列)
+  - 擁有所有檔案格式中最快的寫入速度 (Fastest Write Speed)
+  - 原生支援完整的資料庫事務處理 (ACID Transactions)
   correct_index: 1
   explanation: 對於 OLAP 分析查詢（通常只查少數幾個欄位但涉及大量行），列式儲存能大幅減少 I/O，提升效能。
   tags:
@@ -165,10 +165,10 @@ questions:
   text: Spark 的「惰性求值 (Lazy Evaluation)」是指？
   type: multiple_choice
   options:
-  - 系統運作很慢
+  - 系統運算效能低落，導致程式執行速度非常緩慢
   - Transformation 操作不會立即執行，直到遇到 Action 操作才觸發計算
-  - 隨機執行操作
-  - 只執行一半的操作
+  - 系統會隨機選擇部分程式碼進行執行，不保證順序
+  - 為了節省資源，系統只會執行程式碼的一半步驟
   correct_index: 1
   explanation: 這種機制允許 Spark 優化整個執行計畫（例如合併多個 map 操作），減少不必要的數據傳輸與計算。
   tags:
@@ -181,10 +181,10 @@ questions:
   text: ACID 中的 "I" 代表？
   type: multiple_choice
   options:
-  - Integrity (完整性)
-  - Isolation (隔離性)
-  - Identity (身份)
-  - Intelligence (智慧)
+  - Integrity (完整性)，確保數據符合所有約束條件
+  - Isolation (隔離性)，確保並發交易互不干擾
+  - Identity (身份)，確保交易發起人的身分正確
+  - Intelligence (智慧)，確保系統具備自動修復能力
   correct_index: 1
   explanation: 隔離性確保並發執行的交易互不干擾，防止髒讀 (Dirty Read) 等問題。
   tags:
@@ -197,10 +197,10 @@ questions:
   text: 圖形資料庫 (Graph Database) 如 Neo4j 最擅長處理？
   type: multiple_choice
   options:
-  - 簡單的鍵值存取
-  - 複雜的關係網絡分析 (如社交網絡、推薦引擎)
-  - 時間序列數據
-  - 文件儲存
+  - 簡單快速的鍵值對 (Key-Value) 存取操作
+  - 複雜的關係網絡分析 (Complex Relationship Analysis)，如社交網絡
+  - 按時間順序排列的感測器數據或股市行情 (Time-Series Data)
+  - 儲存大量的 JSON 或 XML 格式文件 (Document Storage)
   correct_index: 1
   explanation: 圖形資料庫直接儲存節點與邊的關係，查詢深度關聯（朋友的朋友的朋友）時效率遠高於關聯式資料庫。
   tags:
@@ -213,10 +213,10 @@ questions:
   text: 資料倉儲 (Data Warehouse) 通常採用什麼 Schema 策略？
   type: multiple_choice
   options:
-  - Schema-on-Read
-  - Schema-on-Write
-  - No Schema
-  - Dynamic Schema
+  - 讀取時定義模式 (Schema-on-Read)，靈活適應各種數據
+  - 寫入時定義模式 (Schema-on-Write)，確保數據品質與一致性
+  - 無模式 (No Schema)，完全不限制數據結構
+  - 動態模式 (Dynamic Schema)，隨數據內容自動調整
   correct_index: 1
   explanation: 資料倉儲要求數據在寫入前必須經過清洗與轉換 (ETL)，符合預定義的嚴格 Schema，以確保報表品質。
   tags:
@@ -229,10 +229,10 @@ questions:
   text: Hadoop MapReduce 的兩個主要階段是？
   type: multiple_choice
   options:
-  - Input 和 Output
-  - Map (映射) 和 Reduce (歸約)
-  - Read 和 Write
-  - Shuffle 和 Sort
+  - 資料輸入 (Input) 與結果輸出 (Output) 階段
+  - 映射 (Map) 處理與歸約 (Reduce) 匯總階段
+  - 磁碟讀取 (Read) 與磁碟寫入 (Write) 階段
+  - 數據洗牌 (Shuffle) 與數據排序 (Sort) 階段
   correct_index: 1
   explanation: Map 階段並行處理數據片段，Reduce 階段匯總 Map 的結果。
   tags:
@@ -245,10 +245,10 @@ questions:
   text: BASE 模型中的 "Soft state" 意味著？
   type: multiple_choice
   options:
-  - 系統狀態是固定的
+  - 系統狀態是永久固定不變的 (Hard State)
   - 系統狀態可能會隨時間改變，即使沒有輸入（因為數據正在同步中）
-  - 軟體狀態
-  - 硬體狀態
+  - 指的是應用程式層面的軟體狀態 (Software State)
+  - 指的是伺服器層面的硬體狀態 (Hardware State)
   correct_index: 1
   explanation: 這是最終一致性過程中的中間狀態，允許不同節點的數據在短時間內不一致。
   tags:
@@ -261,10 +261,10 @@ questions:
   text: Cassandra 屬於哪種類型的 NoSQL 資料庫？
   type: multiple_choice
   options:
-  - 鍵值對
-  - 文件型
-  - 列式 (Column-family)
-  - 圖形
+  - 鍵值對 (Key-Value) 資料庫
+  - 文件型 (Document) 資料庫
+  - 列式 (Column-family) 資料庫
+  - 圖形 (Graph) 資料庫
   correct_index: 2
   explanation: Cassandra 採用寬列儲存 (Wide Column Store)，具有極高的寫入吞吐量，適合儲存大量日誌或物聯網數據。
   tags:
@@ -277,10 +277,10 @@ questions:
   text: Avro 格式通常適用於？
   type: multiple_choice
   options:
-  - 頻繁讀取的分析場景
-  - 大量寫入操作與數據序列化 (如 Kafka 消息)
-  - 網頁顯示
-  - 圖片儲存
+  - 需要頻繁進行複雜查詢與分析的 OLAP 場景
+  - 大量寫入操作與數據序列化 (Data Serialization)，如 Kafka 消息
+  - 前端網頁的直接顯示與排版 (Web Display)
+  - 高解析度圖片與多媒體檔案的儲存 (Image Storage)
   correct_index: 1
   explanation: Avro 是行式儲存，寫入效率高，且 Schema 隨數據一起存儲，支援 Schema Evolution，非常適合串流數據。
   tags:
@@ -293,10 +293,10 @@ questions:
   text: Spark SQL 的主要功能是？
   type: multiple_choice
   options:
-  - 繪圖
-  - 使用 SQL 語法查詢結構化數據
-  - 機器學習
-  - 串流處理
+  - 產生各種統計圖表與資料視覺化 (Data Visualization)
+  - 使用標準 SQL 語法來查詢與操作結構化數據 (Structured Data)
+  - 訓練與部署複雜的機器學習模型 (Machine Learning)
+  - 處理即時的數據串流 (Real-time Streaming)
   correct_index: 1
   explanation: Spark SQL 讓熟悉 SQL 的分析師能輕鬆操作大數據，並透過 DataFrame API 與 Spark 其他組件整合。
   tags:
@@ -309,10 +309,10 @@ questions:
   text: 在 CAP 定理中，CP 系統選擇犧牲什麼？
   type: multiple_choice
   options:
-  - 一致性
-  - 可用性 (Availability)
-  - 分區容錯性
-  - 安全性
+  - 犧牲數據的一致性 (Consistency)，允許讀到舊數據
+  - 犧牲系統的可用性 (Availability)，暫停服務以確保數據正確
+  - 犧牲分區容錯性 (Partition Tolerance)，不允許網路分區
+  - 犧牲系統的安全性 (Security)，降低防護等級
   correct_index: 1
   explanation: 當網路分區發生時，為了保證數據絕對一致，CP 系統會拒絕部分請求（犧牲可用性），直到數據同步完成。
   tags:
@@ -325,10 +325,10 @@ questions:
   text: HDFS 中的 NameNode 負責管理？
   type: multiple_choice
   options:
-  - 實際數據塊
-  - 文件系統的元數據 (Metadata)
-  - 資源調度
-  - 計算任務
+  - 儲存實際的檔案數據塊 (Data Blocks)
+  - 管理文件系統的元數據 (Metadata)，如檔名與目錄結構
+  - 負責叢集資源的分配與調度 (Resource Scheduling)
+  - 執行具體的 MapReduce 計算任務 (Computation Tasks)
   correct_index: 1
   explanation: NameNode 是 HDFS 的大腦，記錄文件名稱、目錄結構以及每個文件對應的數據塊位置。
   tags:
@@ -341,10 +341,10 @@ questions:
   text: 關聯式資料庫 (RDBMS) 最適合處理？
   type: multiple_choice
   options:
-  - 非結構化數據 (如影片)
-  - 高度結構化且需要嚴格一致性的交易數據 (如銀行轉帳)
-  - 社群網絡關係
-  - 海量日誌
+  - 影片、音訊等非結構化數據 (Unstructured Data)
+  - 高度結構化且需要嚴格一致性的交易數據 (Transactional Data)
+  - 複雜的社群網絡關係圖 (Social Network Graphs)
+  - 數 PB 等級的海量伺服器日誌 (Massive Server Logs)
   correct_index: 1
   explanation: RDBMS 的強項在於 ACID 事務保證與複雜的 SQL 關聯查詢，是核心業務系統的基石。
   tags:
@@ -357,10 +357,10 @@ questions:
   text: 最終一致性 (Eventual Consistency) 是指？
   type: multiple_choice
   options:
-  - 數據永遠不一致
-  - 經過一段時間後，所有節點的數據最終會達到一致
-  - 數據在寫入時立即一致
-  - 只有主節點一致
+  - 系統中的數據永遠無法達到一致狀態
+  - 經過一段時間後，所有節點的數據最終會達到一致狀態
+  - 數據在寫入的瞬間，所有節點立即達到一致 (Strong Consistency)
+  - 只有主節點 (Master Node) 保持一致，從節點不保證
   correct_index: 1
   explanation: 這是 AP 系統常見的特性。允許短暫的不一致以換取高可用性，系統會透過背景同步機制最終讓數據同步。
   tags:
@@ -373,10 +373,10 @@ questions:
   text: Spark Streaming 用於？
   type: multiple_choice
   options:
-  - 批次處理
-  - 即時數據流處理
-  - 圖形計算
-  - 機器學習
+  - 處理大規模的離線批次數據 (Batch Processing)
+  - 處理即時進入的數據流 (Real-time Data Streaming)
+  - 進行複雜的圖形結構計算 (Graph Computing)
+  - 訓練人工智慧機器學習模型 (Machine Learning)
   correct_index: 1
   explanation: 處理來自 Kafka, Flume 等來源的即時數據流。
   tags:
@@ -389,10 +389,10 @@ questions:
   text: 資料湖通常基於哪種儲存技術？
   type: multiple_choice
   options:
-  - 磁帶
-  - 物件儲存 (Object Storage，如 AWS S3)
-  - 關聯式資料庫
-  - 記憶體
+  - 傳統的磁帶備份系統 (Tape Backup System)
+  - 可擴展的物件儲存技術 (Object Storage)，如 AWS S3
+  - 傳統的關聯式資料庫系統 (RDBMS)
+  - 高速的隨機存取記憶體 (RAM)
   correct_index: 1
   explanation: 物件儲存具有極高的擴展性與低廉的成本，非常適合存放海量的非結構化數據。
   tags:
@@ -405,10 +405,10 @@ questions:
   text: YARN 中的 ResourceManager 負責？
   type: multiple_choice
   options:
-  - 單個節點的資源管理
-  - 全局資源管理與調度
-  - 儲存數據
-  - 執行 MapReduce 任務
+  - 負責單個工作節點 (Node) 的資源監控與管理
+  - 負責整個叢集的全局資源管理與任務調度 (Global Scheduling)
+  - 負責將數據持久化儲存到硬碟中
+  - 負責實際執行 MapReduce 的運算邏輯
   correct_index: 1
   explanation: 它是叢集的總管，決定哪個應用程式能獲得多少資源。
   tags:
@@ -421,10 +421,10 @@ questions:
   text: CSV 格式的主要缺點是？
   type: multiple_choice
   options:
-  - 難以閱讀
-  - 佔用空間大，解析速度慢，缺乏類型資訊
-  - 不支援 Excel
-  - 只能存數字
+  - 格式複雜，人類難以直接閱讀與理解
+  - 檔案體積大，解析效能差，且缺乏數據類型 (Type) 資訊
+  - 完全不支援 Microsoft Excel 軟體開啟
+  - 只能儲存純數字資料，無法儲存文字
   correct_index: 1
   explanation: 雖然通用，但文字格式效率低，且沒有 Schema 約束，容易出現數據品質問題。
   tags:
@@ -437,10 +437,10 @@ questions:
   text: 哪種 NoSQL 資料庫適合用於「購物車」功能？
   type: multiple_choice
   options:
-  - 圖形資料庫
-  - 鍵值對 (Key-Value) 資料庫 (如 Redis)
-  - 列式資料庫
-  - 關聯式資料庫
+  - 專門處理關係網絡的圖形資料庫 (Graph Database)
+  - 讀寫極快的鍵值對 (Key-Value) 資料庫，如 Redis
+  - 適合海量數據的列式資料庫 (Column-family Database)
+  - 強調一致性的關聯式資料庫 (Relational Database)
   correct_index: 1
   explanation: 購物車數據結構簡單，讀寫頻繁且需要極低延遲，Redis 是最佳選擇。
   tags:
@@ -453,10 +453,10 @@ questions:
   text: Spark MLlib 是什麼？
   type: multiple_choice
   options:
-  - 資料庫
-  - 機器學習庫
-  - 繪圖工具
-  - 網頁伺服器
+  - 一種分散式資料庫管理系統
+  - Spark 內建的可擴展機器學習函式庫 (Machine Learning Library)
+  - 一種用於繪製統計圖表的工具
+  - 一種用於託管網站的網頁伺服器
   correct_index: 1
   explanation: Spark 內建的可擴展機器學習庫，提供分類、回歸、分群等演算法。
   tags:
@@ -469,10 +469,10 @@ questions:
   text: ACID 中的 "D" 代表？
   type: multiple_choice
   options:
-  - Distribution (分佈)
-  - Durability (持久性)
-  - Data (數據)
-  - Delete (刪除)
+  - Distribution (分佈)，支援分散式架構
+  - Durability (持久性)，交易提交後數據永久保存
+  - Data (數據)，強調數據的重要性
+  - Delete (刪除)，支援數據刪除操作
   correct_index: 1
   explanation: 持久性保證一旦交易提交，數據就永久寫入磁碟，即使斷電也不會丟失。
   tags:
@@ -485,10 +485,10 @@ questions:
   text: ORC (Optimized Row Columnar) 格式通常與哪個工具配合使用效果最佳？
   type: multiple_choice
   options:
-  - Spark
-  - Hive
-  - Kafka
-  - Redis
+  - Apache Spark 運算框架
+  - Apache Hive 資料倉儲工具
+  - Apache Kafka 訊息佇列系統
+  - Redis 記憶體資料庫
   correct_index: 1
   explanation: ORC 是專為 Hive 優化的列式儲存格式，能顯著提升 Hive 查詢效能。
   tags:
@@ -501,10 +501,10 @@ questions:
   text: Spark DataFrame 經過哪個優化器優化？
   type: multiple_choice
   options:
-  - Cost-based Optimizer
-  - Catalyst Optimizer
-  - Rule-based Optimizer
-  - Gradient Descent
+  - 傳統資料庫的成本導向優化器 (Cost-based Optimizer)
+  - Spark 專屬的 Catalyst 查詢優化器 (Catalyst Optimizer)
+  - 簡單的規則導向優化器 (Rule-based Optimizer)
+  - 機器學習中的梯度下降法 (Gradient Descent)
   correct_index: 1
   explanation: Catalyst 是 Spark SQL 的核心優化引擎，能自動優化查詢計畫，提升執行效率。
   tags:
@@ -517,10 +517,10 @@ questions:
   text: 資料倉儲的主要使用者通常是？
   type: multiple_choice
   options:
-  - 系統管理員
-  - 商業分析師 (BI)
-  - 一般用戶
-  - 駭客
+  - 負責維護伺服器的系統管理員 (System Administrators)
+  - 負責製作報表的商業分析師 (Business Intelligence Analysts)
+  - 瀏覽網站的一般終端用戶 (End Users)
+  - 試圖竊取數據的網路駭客 (Hackers)
   correct_index: 1
   explanation: 資料倉儲提供清洗過的高品質數據，供 BI 分析師製作報表與儀表板，支援商業決策。
   tags:
@@ -533,10 +533,10 @@ questions:
   text: 3V 問題中的 "Velocity" 指的是？
   type: multiple_choice
   options:
-  - 數據量大
-  - 數據生成與處理的高速度
-  - 數據類型多樣
-  - 數據價值高
+  - 數據的總量非常龐大 (Volume)
+  - 數據生成與流動的高速度 (Velocity)
+  - 數據來源與格式的多樣性 (Variety)
+  - 數據所蘊含的商業價值 (Value)
   correct_index: 1
   explanation: 大數據不僅量大，生成速度也極快（如感測器數據、點擊流），需要即時或近即時的處理能力。
   tags:
@@ -549,10 +549,10 @@ questions:
   text: HBase 是一個基於什麼的資料庫？
   type: multiple_choice
   options:
-  - 記憶體
-  - HDFS
-  - MySQL
-  - S3
+  - 基於高速記憶體 (RAM) 的資料庫
+  - 基於 Hadoop HDFS 分散式檔案系統的資料庫
+  - 基於 MySQL 關聯式資料庫引擎
+  - 基於 AWS S3 物件儲存服務
   correct_index: 1
   explanation: HBase 是建立在 HDFS 之上的分散式列式資料庫，提供對大數據的隨機讀寫能力。
   tags:
@@ -565,10 +565,10 @@ questions:
   text: HDFS 的預設區塊大小 (Block Size) 通常是？
   type: multiple_choice
   options:
-  - 4KB
-  - 128MB
-  - 1GB
-  - 1TB
+  - 傳統檔案系統常見的 4KB
+  - HDFS 預設的 128MB (Hadoop 2.x/3.x)
+  - 較大的 1GB 大小
+  - 極大的 1TB 大小
   correct_index: 1
   explanation: 較大的區塊大小是為了最小化尋道時間 (Seek Time)，提高大文件傳輸的吞吐量。
   tags:
@@ -581,10 +581,10 @@ questions:
   text: 為什麼 NoSQL 資料庫具有高擴展性 (Scalability)？
   type: multiple_choice
   options:
-  - 因為它們不使用 SQL
-  - 因為它們通常採用水平擴展 (Scale-out) 架構，易於透過增加節點來提升容量
-  - 因為它們只存小數據
-  - 因為它們比較便宜
+  - 因為它們完全不使用 SQL 查詢語言
+  - 因為它們採用水平擴展 (Scale-out) 架構，可輕易增加節點
+  - 因為它們只能儲存少量的數據
+  - 因為它們的授權費用比較便宜
   correct_index: 1
   explanation: RDBMS 通常依賴垂直擴展 (Scale-up，買更強的機器)，而 NoSQL 設計上就支援分散式叢集，能線性擴展。
   tags:
@@ -597,10 +597,10 @@ questions:
   text: JSON 格式屬於哪種 NoSQL 類型的特點？
   type: multiple_choice
   options:
-  - 鍵值對
-  - 文件型 (Document)
-  - 列式
-  - 圖形
+  - 鍵值對 (Key-Value) 資料庫
+  - 文件型 (Document) 資料庫
+  - 列式 (Column-family) 資料庫
+  - 圖形 (Graph) 資料庫
   correct_index: 1
   explanation: 文件型資料庫（如 MongoDB）直接儲存 JSON 物件，這使得數據結構非常靈活，能對應程式中的物件。
   tags:
@@ -613,10 +613,10 @@ questions:
   text: Spark GraphX 用於處理？
   type: multiple_choice
   options:
-  - 圖片
-  - 圖形與圖形並行計算 (Graph Processing)
-  - 文字
-  - 音訊
+  - 點陣圖或向量圖等圖片檔案
+  - 圖形結構與圖形並行計算 (Graph Processing)
+  - 純文字文件或日誌檔案
+  - 音訊或語音訊號數據
   correct_index: 1
   explanation: 用於社交網絡分析、路徑規劃等圖演算法。
   tags:
@@ -629,10 +629,10 @@ questions:
   text: 3V 問題中的 "Variety" 指的是？
   type: multiple_choice
   options:
-  - 數據量大
-  - 數據速度快
-  - 數據來源與格式的多樣性 (結構化、半結構化、非結構化)
-  - 數據變異性
+  - 數據的總體積非常龐大 (Volume)
+  - 數據產生與處理的速度極快 (Velocity)
+  - 數據來源與格式的多樣性 (Variety)，包含結構化與非結構化
+  - 數據隨時間變化的不確定性 (Veracity)
   correct_index: 2
   explanation: 傳統資料庫難以處理影片、日誌、圖片等多樣化的非結構化數據。
   tags:
@@ -645,10 +645,10 @@ questions:
   text: 情境：你的公司需要建立一個即時戰情室，顯示全台 1000 家門市的即時銷售額。數據源是 Kafka 串流。你會選擇哪種儲存與查詢方案？
   type: multiple_choice
   options:
-  - 將數據寫入 HDFS，用 Hive 查詢。
-  - 將數據寫入 Redis 或 HBase，並結合 Spark Streaming 進行即時聚合。
-  - 將數據寫入 MySQL。
-  - 將數據寫入 CSV 文件。
+  - 將數據寫入 HDFS 分散式檔案系統，並使用 Hive 進行離線查詢分析
+  - 將數據寫入 Redis 或 HBase，並結合 Spark Streaming 進行即時聚合與展示
+  - 將數據寫入 MySQL 關聯式資料庫，並使用 SQL 進行查詢
+  - 將數據寫入 CSV 文字文件，並使用 Excel 進行分析
   correct_index: 1
   explanation: HDFS/Hive 延遲太高，不適合即時戰情室。MySQL 難以承受高併發寫入。Redis/HBase 具備高吞吐與低延遲特性，配合
     Spark Streaming 可實現秒級的即時分析與展示。
@@ -662,10 +662,10 @@ questions:
   text: 情境：你需要分析過去 10 年的銷售數據（約 100TB），主要進行依據地區和產品類別的聚合查詢 (Group By)。你會選擇哪種檔案格式存儲這些數據？
   type: multiple_choice
   options:
-  - CSV；因為通用。
-  - JSON；因為靈活。
-  - Parquet；因為它是列式儲存，非常適合 OLAP 聚合查詢，且壓縮率高。
-  - Avro；因為寫入快。
+  - 選擇 CSV 格式；因為它最通用且易於閱讀
+  - 選擇 JSON 格式；因為它結構靈活且易於解析
+  - 選擇 Parquet 格式；因為它是列式儲存，非常適合 OLAP 聚合查詢，且壓縮率高
+  - 選擇 Avro 格式；因為它寫入速度快且支援 Schema Evolution
   correct_index: 2
   explanation: 對於分析型查詢（讀取少數欄位，掃描大量行），列式儲存 (Parquet) 遠優於行式儲存 (CSV, JSON, Avro)。它能跳過不相關的欄位，大幅減少
     I/O。
@@ -679,10 +679,10 @@ questions:
   text: 情境：你的銀行核心交易系統需要升級資料庫。業務要求絕對的數據一致性，不能有任何差錯。你應該選擇？
   type: multiple_choice
   options:
-  - MongoDB (NoSQL)。
-  - Cassandra (AP 系統)。
-  - 支援 ACID 的關聯式資料庫 (RDBMS) 或 CP 型的分散式資料庫。
-  - Redis。
+  - 選擇 MongoDB (NoSQL)；因為它開發速度快
+  - 選擇 Cassandra (AP 系統)；因為它可用性高
+  - 選擇支援 ACID 的關聯式資料庫 (RDBMS) 或 CP 型的分散式資料庫，以確保數據一致性
+  - 選擇 Redis；因為它讀寫速度最快
   correct_index: 2
   explanation: 金融交易對一致性要求極高（錢不能憑空消失）。必須選擇支援 ACID 事務的資料庫，AP 系統的最終一致性在此場景下是不可接受的。
   tags:
@@ -695,10 +695,10 @@ questions:
   text: 情境：資料科學團隊抱怨從資料倉儲取數據太慢且格式受限，無法進行探索性分析。作為資料架構師，你建議引入什麼架構？
   type: multiple_choice
   options:
-  - 刪除資料倉儲。
-  - 建立資料湖 (Data Lake)，讓他們能直接存取原始數據 (Raw Data)，並使用 Spark 等工具進行靈活分析。
-  - 限制他們的使用權限。
-  - 叫他們用 Excel。
+  - 建議刪除現有的資料倉儲，改用手動報表
+  - 建立資料湖 (Data Lake)，讓他們能直接存取原始數據 (Raw Data)，並使用 Spark 等工具進行靈活分析
+  - 限制他們的使用權限，禁止進行探索性分析
+  - 要求他們使用 Excel 進行小規模數據分析
   correct_index: 1
   explanation: 資料湖補足了資料倉儲的靈活性不足。它保留了數據的原始細節，適合資料科學家進行特徵工程、機器學習等探索性工作。
   tags:
@@ -711,10 +711,10 @@ questions:
   text: 情境：你的 Spark 任務執行非常慢，檢查後發現大量時間花在 Shuffle 階段。這通常意味著什麼？
   type: multiple_choice
   options:
-  - 數據量太小。
-  - 寬依賴 (Wide Dependency) 操作 (如 groupByKey, reduceByKey) 導致了大量的跨節點數據傳輸。應嘗試優化算法或增加分區。
-  - CPU 太快。
-  - 記憶體太大。
+  - 可能是因為數據量太小，導致系統空轉
+  - 寬依賴 (Wide Dependency) 操作 (如 groupByKey) 導致大量跨節點數據傳輸 (Shuffle)，應優化算法
+  - 可能是因為 CPU 運算速度太快，導致 I/O 跟不上
+  - 可能是因為分配的記憶體太大，導致 GC 頻繁
   correct_index: 1
   explanation: Shuffle 是分散式運算的效能瓶頸，涉及網路傳輸與磁碟 I/O。優化 Spark 任務的關鍵往往在於減少 Shuffle 的數據量（例如使用
     map-side combine）。
@@ -727,10 +727,10 @@ questions:
   text: 情境：某電商平台需要在「雙11」期間即時分析每秒數百萬筆的交易數據，以動態調整促銷策略。應優先選擇哪個運算框架？
   type: multiple_choice
   options:
-  - Hadoop MapReduce
-  - Apache Spark
-  - Excel
-  - MySQL
+  - 傳統的 Hadoop MapReduce 批次處理框架
+  - 具備記憶體內運算與串流處理能力的 Apache Spark
+  - 適合小規模數據分析的 Microsoft Excel
+  - 傳統的 MySQL 關聯式資料庫
   correct_index: 1
   explanation: Spark 具備記憶體內運算 (In-Memory Computing) 與 Streaming 功能，處理速度比 MapReduce
     快百倍，且適合即時串流分析。
@@ -744,10 +744,10 @@ questions:
   text: 情境：你需要設計一個全球分散式資料庫系統，要求在任何網路分區故障時，系統仍能回應客戶請求（高可用性），但允許短暫的數據不一致。根據 CAP 定理，你應選擇哪類資料庫？
   type: multiple_choice
   options:
-  - CP (Consistency + Partition Tolerance)
-  - AP (Availability + Partition Tolerance)
-  - CA (Consistency + Availability)
-  - ACID
+  - 選擇 CP 系統，優先保證一致性與分區容錯性
+  - 選擇 AP 系統，優先保證可用性與分區容錯性，接受最終一致性
+  - 選擇 CA 系統，優先保證一致性與可用性，但不容忍分區
+  - 選擇 ACID 事務系統，保證嚴格的交易特性
   correct_index: 1
   explanation: AP 系統（如 Cassandra）優先保證可用性與分區容錯性，接受最終一致性 (Eventual Consistency)，適合對即時性要求高但對一致性要求稍低的場景。
   tags:
@@ -760,10 +760,10 @@ questions:
   text: 情境：HDFS 中的 NameNode 突然故障，導致整個叢集無法讀寫文件。這顯示了 HDFS 架構的什麼弱點？
   type: multiple_choice
   options:
-  - 單點故障 (Single Point of Failure)
-  - 數據冗餘過多
-  - 計算速度太慢
-  - 存儲空間不足
+  - 單點故障 (Single Point of Failure)，缺乏高可用性設計
+  - 數據冗餘過多，導致儲存空間浪費
+  - 計算速度太慢，無法滿足即時需求
+  - 存儲空間不足，無法寫入新數據
   correct_index: 0
   explanation: NameNode 是 HDFS 的大腦，管理所有元數據。若無高可用 (HA) 配置，NameNode 宕機將導致整個文件系統癱瘓。
   tags:
@@ -776,10 +776,10 @@ questions:
   text: 情境：你需要儲存海量的物聯網 (IoT) 感測器日誌，這些數據寫入頻繁且通常按時間順序查詢。最合適的 NoSQL 類型是？
   type: multiple_choice
   options:
-  - 文件型 (Document)
-  - 圖形 (Graph)
-  - 列式 (Column-family)
-  - 鍵值對 (Key-Value)
+  - 文件型 (Document) 資料庫，如 MongoDB
+  - 圖形 (Graph) 資料庫，如 Neo4j
+  - 列式 (Column-family) 資料庫，如 HBase，適合寫入密集型負載
+  - 鍵值對 (Key-Value) 資料庫，如 Redis
   correct_index: 2
   explanation: 列式資料庫（如 HBase, Cassandra）在寫入密集型與時間序列數據查詢上表現優異，非常適合 IoT 場景。
   tags:
@@ -792,10 +792,10 @@ questions:
   text: 情境：資料科學團隊希望對儲存在 S3 上的 1PB 原始日誌進行探索性分析，且不想預先定義 Schema。他們應該使用？
   type: multiple_choice
   options:
-  - 資料倉儲 (Data Warehouse)
-  - 資料湖 (Data Lake)
-  - 關聯式資料庫
-  - Excel
+  - 結構化的資料倉儲 (Data Warehouse)
+  - 支援原始數據存儲的資料湖 (Data Lake)
+  - 傳統的關聯式資料庫 (RDBMS)
+  - 試算表軟體 Excel
   correct_index: 1
   explanation: 資料湖支援 Schema-on-Read，允許存儲任意格式的原始數據，非常適合資料科學家的探索性分析需求。
   tags:
@@ -808,10 +808,10 @@ questions:
   text: 情境：Spark 程式執行時，發現某個 Transformation 操作（如 map）遲遲沒有執行。這可能是因為？
   type: multiple_choice
   options:
-  - 系統當機
-  - 惰性求值 (Lazy Evaluation) 機制
-  - 記憶體不足
-  - 程式寫錯
+  - 可能是系統當機，導致無法回應
+  - 這是 Spark 的惰性求值 (Lazy Evaluation) 機制，等待 Action 觸發
+  - 可能是記憶體不足，導致無法執行
+  - 可能是程式邏輯寫錯，導致無限迴圈
   correct_index: 1
   explanation: Spark 的 Transformation 是惰性的，只有遇到 Action 操作（如 count, collect）時才會真正觸發計算。
   tags:
@@ -824,10 +824,10 @@ questions:
   text: 情境：為了優化大數據查詢效能，你決定將 CSV 格式的數據轉換為 Parquet。Parquet 的主要優勢在於？
   type: multiple_choice
   options:
-  - 列式儲存，支援高效壓縮與只讀取需要的欄位
-  - 行式儲存，寫入速度快
-  - 人類可讀
-  - 不支援 Schema
+  - 採用列式儲存 (Columnar)，支援高效壓縮與只讀取需要的欄位 (Column Pruning)
+  - 採用行式儲存 (Row-based)，寫入速度快但查詢較慢
+  - 採用純文字格式，人類可直接閱讀
+  - 完全不支援 Schema 定義
   correct_index: 0
   explanation: Parquet 是列式儲存格式，對於 OLAP 查詢（通常只查特定幾欄）能大幅減少 I/O，且壓縮率高。
   tags:
@@ -840,10 +840,10 @@ questions:
   text: 情境：YARN 在 Hadoop 生態系中的角色類似於作業系統的什麼功能？
   type: multiple_choice
   options:
-  - 檔案系統
-  - 核心 (Kernel) 的資源調度器
-  - 圖形介面
-  - 瀏覽器
+  - 類似於作業系統中的檔案系統 (File System)
+  - 類似於作業系統核心 (Kernel) 的資源調度器，管理 CPU 與記憶體
+  - 類似於作業系統的圖形使用者介面 (GUI)
+  - 類似於作業系統中的網頁瀏覽器 (Browser)
   correct_index: 1
   explanation: YARN (Yet Another Resource Negotiator) 負責管理叢集的 CPU 與記憶體資源，並將其分配給不同的應用程式，就像
     OS 的資源調度。
@@ -857,10 +857,10 @@ questions:
   text: 情境：銀行轉帳系統要求絕對的數據準確性，A 轉帳給 B，A 扣款與 B 入帳必須同時成功或同時失敗。這依賴於資料庫的什麼特性？
   type: multiple_choice
   options:
-  - BASE
-  - CAP
-  - ACID
-  - NoSQL
+  - 依賴 BASE 模型的最終一致性
+  - 依賴 CAP 定理的可用性優先
+  - 依賴 ACID 事務原則，特別是原子性 (Atomicity)
+  - 依賴 NoSQL 資料庫的高擴展性
   correct_index: 2
   explanation: ACID 中的 Atomicity (原子性) 確保交易是不可分割的最小單位，保障了金融交易的安全性。
   tags:
@@ -873,10 +873,10 @@ questions:
   text: 情境：你需要構建一個社交網絡應用，功能包含「查詢某人的朋友的朋友」。哪種資料庫最能高效處理這種查詢？
   type: multiple_choice
   options:
-  - 關聯式資料庫
-  - 圖形資料庫 (Graph Database)
-  - 鍵值對資料庫
-  - 文件型資料庫
+  - 傳統的關聯式資料庫 (RDBMS)，使用 Join 查詢
+  - 專門處理關係網絡的圖形資料庫 (Graph Database)，如 Neo4j
+  - 簡單的鍵值對資料庫 (Key-Value Store)
+  - 儲存 JSON 的文件型資料庫 (Document Store)
   correct_index: 1
   explanation: 圖形資料庫（如 Neo4j）專為處理節點間的複雜關係而設計，查詢多層次關係（朋友的朋友）的效率遠高於關聯式資料庫的 Join 操作。
   tags:
@@ -889,10 +889,10 @@ questions:
   text: 情境：MapReduce 任務執行緩慢，經分析發現是因為大量的磁碟 I/O 讀寫。若要改善此問題，應遷移到哪個框架？
   type: multiple_choice
   options:
-  - Spark
-  - Hive
-  - HBase
-  - MySQL
+  - 遷移到 Apache Spark，利用記憶體內運算減少 I/O
+  - 遷移到 Apache Hive，利用 SQL 簡化開發
+  - 遷移到 Apache HBase，利用隨機讀寫能力
+  - 遷移到 MySQL，利用關聯式資料庫的穩定性
   correct_index: 0
   explanation: Spark 利用記憶體內運算 (In-Memory Computing) 減少了中間結果寫入磁碟的次數，從而大幅提升效能。
   tags:
@@ -905,10 +905,10 @@ questions:
   text: 情境：Avro 格式通常用於 Kafka 消息傳輸，主要原因是？
   type: multiple_choice
   options:
-  - 它是列式儲存
-  - 它是行式儲存且 Schema 隨數據發送，支援 Schema Evolution
-  - 它是純文字格式
-  - 它不支援壓縮
+  - 因為它是列式儲存，適合分析查詢
+  - 因為它是行式儲存且 Schema 隨數據發送，支援 Schema Evolution (模式演化)
+  - 因為它是純文字格式，易於除錯
+  - 因為它不支援壓縮，傳輸速度快
   correct_index: 1
   explanation: Avro 是行式二進位格式，且支援 Schema Evolution（模式演化），這對於長期運行的數據流系統（如 Kafka）至關重要，允許生產者和消費者獨立升級。
   tags:
@@ -921,10 +921,10 @@ questions:
   text: 情境：Redis 常被用於購物車或 Session 管理，是因為它具備什麼特性？
   type: multiple_choice
   options:
-  - 支援複雜 SQL
-  - 基於記憶體的鍵值對存儲，讀寫極快
-  - 支援 ACID
-  - 儲存成本最低
+  - 因為它支援複雜的 SQL 查詢語法
+  - 因為它是基於記憶體的鍵值對存儲，讀寫速度極快 (Microseconds Latency)
+  - 因為它完整支援 ACID 事務特性
+  - 因為它的儲存成本是所有資料庫中最低的
   correct_index: 1
   explanation: Redis 將數據存在記憶體中，提供微秒級的讀寫速度，非常適合需要高頻存取的臨時性數據（如 Session）。
   tags:
@@ -937,10 +937,10 @@ questions:
   text: 情境：HDFS 將檔案切分為 Block 並複製 3 份，這主要是為了？
   type: multiple_choice
   options:
-  - 提高運算速度
-  - 容錯 (Fault Tolerance) 與可靠性
-  - 節省空間
-  - 方便加密
+  - 為了提高並行運算的速度
+  - 為了提供容錯 (Fault Tolerance) 與數據可靠性，防止節點故障導致數據丟失
+  - 為了節省硬碟儲存空間
+  - 為了方便進行數據加密與解密
   correct_index: 1
   explanation: 複製機制確保即使某個節點硬體損壞，數據仍可從其他節點讀取，保證了系統的高可靠性。
   tags:
@@ -969,10 +969,10 @@ questions:
   text: 情境：Spark SQL 的 Catalyst 優化器的作用是？
   type: multiple_choice
   options:
-  - 自動寫 SQL
-  - 優化查詢計畫 (Query Plan) 以提升執行效率
-  - 壓縮數據
-  - 管理記憶體
+  - 自動生成複雜的 SQL 查詢語句
+  - 優化查詢計畫 (Query Plan) 以提升執行效率，如謂詞下推 (Predicate Pushdown)
+  - 自動壓縮數據以節省儲存空間
+  - 自動管理記憶體分配與回收
   correct_index: 1
   explanation: Catalyst 會自動分析 SQL 語句，生成最佳化的邏輯與物理執行計畫，例如謂詞下推 (Predicate Pushdown) 等。
   tags:
@@ -985,10 +985,10 @@ questions:
   text: 情境：MongoDB 屬於哪種類型的 NoSQL 資料庫？
   type: multiple_choice
   options:
-  - 鍵值對
-  - 列式
-  - 文件型 (Document)
-  - 圖形
+  - 鍵值對 (Key-Value) 資料庫
+  - 列式 (Column-family) 資料庫
+  - 文件型 (Document) 資料庫，如 MongoDB
+  - 圖形 (Graph) 資料庫
   correct_index: 2
   explanation: MongoDB 儲存 BSON (Binary JSON) 格式的文件，結構靈活，適合內容管理等欄位變動頻繁的應用。
   tags:
@@ -1001,10 +1001,10 @@ questions:
   text: 情境：在分散式系統中，若要保證強一致性 (CP)，當網路分區發生時，系統必須？
   type: multiple_choice
   options:
-  - 繼續服務所有請求
-  - 暫停部分服務以避免數據不一致
-  - 隨機回應
-  - 刪除數據
+  - 繼續服務所有讀寫請求，即使數據可能不一致
+  - 暫停部分服務 (犧牲可用性) 以避免數據不一致，確保強一致性
+  - 隨機回應客戶端的請求
+  - 自動刪除所有不一致的數據
   correct_index: 1
   explanation: 為了保證一致性，當無法同步數據時，系統必須拒絕寫入請求（犧牲可用性），直到網路恢復。
   tags:
@@ -1017,10 +1017,10 @@ questions:
   text: 情境：RDD 的「彈性 (Resilient)」是指？
   type: multiple_choice
   options:
-  - 可以隨意伸縮大小
-  - 透過 Lineage (血統) 機制，在節點故障時能自動重新計算丟失的分區
-  - 彈性付費
-  - 支援多種語言
+  - RDD 的大小可以隨意動態伸縮
+  - 透過 Lineage (血統) 機制，在節點故障時能自動重新計算丟失的分區，實現容錯
+  - 支援雲端彈性付費模式
+  - 支援多種程式語言開發
   correct_index: 1
   explanation: RDD 記錄了數據是如何轉換而來的 (Lineage)。若某部分數據丟失，Spark 可根據 Lineage 重新計算該部分，而無需從頭開始。
   tags:
@@ -1033,10 +1033,10 @@ questions:
   text: 情境：企業希望整合結構化報表數據與非結構化日誌數據，並提供統一的查詢介面。這種架構趨勢稱為？
   type: multiple_choice
   options:
-  - 資料庫
-  - 資料湖倉 (Data Lakehouse)
-  - 檔案系統
-  - 區塊鏈
+  - 傳統的關聯式資料庫 (Database)
+  - 結合資料湖與資料倉儲優點的資料湖倉 (Data Lakehouse)
+  - 分散式檔案系統 (File System)
+  - 去中心化的區塊鏈技術 (Blockchain)
   correct_index: 1
   explanation: Data Lakehouse 結合了資料湖的靈活性（存儲原始數據）與資料倉儲的管理性（ACID、Schema），是新一代的數據架構。
   tags:
@@ -1049,10 +1049,10 @@ questions:
   text: 情境：Spark 相比於 Hadoop MapReduce 的最大優勢在於？
   type: multiple_choice
   options:
-  - 完全免費
-  - 記憶體內運算 (In-Memory Computing)，速度快上百倍
-  - 不需要寫程式
-  - 只能處理小數據
+  - 因為它是完全免費的開源軟體，沒有任何商業支援成本
+  - 採用記憶體內運算 (In-Memory Computing) 架構，運算速度可比 MapReduce 快上百倍
+  - 提供了圖形化介面，使用者完全不需要撰寫任何程式碼
+  - 只能處理 GB 等級的小數據，不適合 PB 級大數據
   correct_index: 1
   explanation: Spark 減少了中間結果寫入磁碟的 I/O 開銷，大幅提升迭代運算效率。
   tags:
@@ -1065,10 +1065,10 @@ questions:
   text: 情境：根據 CAP 定理，分散式系統在發生網路分區 (Partition) 時，必須在哪兩者之間做取捨？
   type: multiple_choice
   options:
-  - 一致性 (Consistency) 與 可用性 (Availability)
-  - 速度與成本
-  - 安全性與隱私
-  - 硬體與軟體
+  - 必須在數據的一致性 (Consistency) 與系統的可用性 (Availability) 之間做出取捨
+  - 必須在系統的運算速度 (Speed) 與建置成本 (Cost) 之間做出取捨
+  - 必須在資訊安全性 (Security) 與用戶隱私 (Privacy) 之間做出取捨
+  - 必須在硬體設備 (Hardware) 與軟體授權 (Software) 之間做出取捨
   correct_index: 0
   explanation: 當 P 發生時，系統無法同時保證所有節點數據即時一致 (C) 且所有請求都能成功回應 (A)。
   tags:
@@ -1081,10 +1081,10 @@ questions:
   text: 情境：若你需要儲存大量的社交網絡關係圖（如誰追蹤誰），最適合使用哪種 NoSQL 資料庫？
   type: multiple_choice
   options:
-  - 文件型 (如 MongoDB)
-  - 鍵值對 (如 Redis)
-  - 圖形資料庫 (如 Neo4j)
-  - 列式資料庫 (如 HBase)
+  - 適合儲存 JSON 文件資料的文件型資料庫 (如 MongoDB)
+  - 適合高速快取的鍵值對資料庫 (如 Redis)
+  - 專門處理複雜關係網絡的圖形資料庫 (如 Neo4j)
+  - 適合海量數據寫入的列式資料庫 (如 HBase)
   correct_index: 2
   explanation: 圖形資料庫專為處理節點與邊的複雜關係而設計，查詢效率遠高於關聯式資料庫。
   tags:
@@ -1097,10 +1097,10 @@ questions:
   text: 情境：Hadoop 的 HDFS 透過什麼機制來確保資料可靠性？
   type: multiple_choice
   options:
-  - 加密
-  - 資料複製 (Replication)，預設存 3 份
-  - 壓縮
-  - 備份到磁帶
+  - 使用高強度的加密演算法來保護數據安全
+  - 透過資料複製 (Replication) 機制，預設將每個區塊存 3 份在不同節點
+  - 使用高效能的壓縮演算法來減少儲存空間
+  - 定期將所有數據備份到外部磁帶庫
   correct_index: 1
   explanation: 將資料區塊複製到不同節點，即使某節點故障，資料仍可從其他節點讀取。
   tags:
@@ -1113,10 +1113,10 @@ questions:
   text: 情境：Parquet 格式相比於 CSV，在大數據分析中的主要優勢是？
   type: multiple_choice
   options:
-  - 人眼可讀
-  - 列式儲存 (Columnar Storage)，支援高效壓縮與只讀取需要的欄位
-  - 支援 Excel 開啟
-  - 沒有優勢
+  - 採用純文字格式，人眼可直接閱讀內容
+  - 採用列式儲存 (Columnar Storage)，支援高效壓縮與只讀取需要的欄位 (Column Pruning)
+  - 檔案可以直接使用 Microsoft Excel 軟體開啟編輯
+  - 相比於 CSV 格式，Parquet 並沒有顯著的效能優勢
   correct_index: 1
   explanation: 列式儲存讓分析查詢（通常只涉及少數欄位）能跳過大量無關數據，顯著提升 I/O 效率。
   tags:
@@ -1127,16 +1127,6 @@ questions:
 - chapter_title: 大數據生態系統
   section_title: 儲存解決方案
   text: 情境：資料湖 (Data Lake) 與資料倉儲 (Data Warehouse) 的主要區別在於？
-  type: multiple_choice
-  options:
-  - 資料湖只存結構化數據
-  - 資料湖儲存原始數據 (Raw Data)，Schema-on-Read；資料倉儲儲存處理過的數據，Schema-on-Write
-  - 資料倉儲比較便宜
-  - 沒區別
-  correct_index: 1
-  explanation: 資料湖保留了數據的原生格式，提供更高的靈活性供資料科學家探索。
-  tags:
-  - chap-m3-ch1
   - sec-storage-solutions
   id: 5171
   usage: both
@@ -1145,10 +1135,10 @@ questions:
   text: 情境：Spark 的惰性求值 (Lazy Evaluation) 指的是？
   type: multiple_choice
   options:
-  - Spark 很懶，不想工作
-  - Transformation 操作不會立即執行，直到遇到 Action 操作才觸發計算
-  - 計算速度很慢
-  - 只能在晚上執行
+  - 意味著 Spark 系統運作緩慢，效率不彰
+  - Transformation 操作不會立即執行，直到遇到 Action 操作才觸發計算 (Lazy Evaluation)
+  - 意味著計算速度很慢，需要長時間等待
+  - 意味著系統只能在離峰時間 (如晚上) 執行任務
   correct_index: 1
   explanation: 這允許 Spark 優化整個執行計畫 (DAG)，合併操作以減少不必要的計算。
   tags:
@@ -1161,10 +1151,10 @@ questions:
   text: 情境：Redis 通常被用作什麼用途？
   type: multiple_choice
   options:
-  - 長期封存
-  - 快取 (Caching) 與 Session 管理
-  - 複雜 SQL 查詢
-  - 圖形分析
+  - 用於企業數據的長期冷儲存與封存 (Archiving)
+  - 用於高速快取 (Caching) 與使用者 Session 狀態管理
+  - 用於執行複雜的 SQL 關聯查詢與分析
+  - 用於社交網絡的圖形結構分析 (Graph Analysis)
   correct_index: 1
   explanation: Redis 是基於記憶體的鍵值對資料庫，讀寫速度極快，適合高頻存取的熱數據。
   tags:
@@ -1177,10 +1167,10 @@ questions:
   text: 情境：YARN 在 Hadoop 生態系中的角色是？
   type: multiple_choice
   options:
-  - 檔案系統
-  - 資源調度與管理器 (Resource Negotiator)
-  - 資料庫
-  - 瀏覽器
+  - 作為分散式檔案系統，負責數據儲存
+  - 作為資源調度與管理器 (Resource Negotiator)，負責叢集資源分配
+  - 作為關聯式資料庫，負責數據查詢
+  - 作為網頁瀏覽器，負責顯示介面
   correct_index: 1
   explanation: YARN 負責管理叢集的 CPU 與記憶體資源，並分配給不同的應用程式（如 MapReduce, Spark）。
   tags:
@@ -1193,10 +1183,10 @@ questions:
   text: 情境：ACID 原則中的「原子性 (Atomicity)」保證了？
   type: multiple_choice
   options:
-  - 交易速度很快
-  - 交易中的操作要麼全做，要麼全不做 (All-or-Nothing)
-  - 數據永遠不丟失
-  - 多人同時操作
+  - 保證交易執行的速度非常快 (High Speed)
+  - 保證交易中的操作要麼全做，要麼全不做 (All-or-Nothing)
+  - 保證數據在任何情況下都永遠不會丟失 (No Data Loss)
+  - 保證支援多人同時操作同一筆數據 (Concurrency)
   correct_index: 1
   explanation: 原子性防止了交易只執行一半導致數據狀態不一致的問題。
   tags:
@@ -1209,10 +1199,10 @@ questions:
   text: 情境：MongoDB 屬於哪種類型的 NoSQL 資料庫？
   type: multiple_choice
   options:
-  - 鍵值對
-  - 文件型 (Document)
-  - 列式
-  - 圖形
+  - 鍵值對 (Key-Value) 資料庫
+  - 文件型 (Document) 資料庫，如 MongoDB
+  - 列式 (Column-family) 資料庫
+  - 圖形 (Graph) 資料庫
   correct_index: 1
   explanation: MongoDB 儲存 BSON (Binary JSON) 格式的文件，Schema 靈活。
   tags:
@@ -1225,10 +1215,10 @@ questions:
   text: 情境：Spark SQL 的主要功能是？
   type: multiple_choice
   options:
-  - 畫圖
-  - 使用 SQL 語法查詢結構化數據
-  - 管理硬體
-  - 安裝軟體
+  - 用於繪製各種統計圖表 (Plotting)
+  - 使用標準 SQL 語法來查詢與操作結構化數據 (Structured Data)
+  - 負責管理伺服器的硬體資源 (Hardware Management)
+  - 負責自動安裝與更新軟體套件 (Software Installation)
   correct_index: 1
   explanation: Spark SQL 讓熟悉 SQL 的分析師能輕鬆操作大數據，並透過 Catalyst 優化器提升效能。
   tags:
@@ -1241,10 +1231,10 @@ questions:
   text: 情境：在物聯網 (IoT) 應用中，需要寫入海量的感測器數據，適合使用哪種資料庫？
   type: multiple_choice
   options:
-  - 關聯式資料庫
-  - 列式資料庫 (如 Cassandra, HBase)
-  - 圖形資料庫
-  - Excel
+  - 傳統的關聯式資料庫 (RDBMS)
+  - 適合寫入密集型負載的列式資料庫 (Column-family Database)，如 Cassandra, HBase
+  - 專門處理關係網絡的圖形資料庫 (Graph Database)
+  - 試算表軟體 Microsoft Excel
   correct_index: 1
   explanation: 列式資料庫針對寫入密集型 (Write-intensive) 場景進行了優化，能吞吐大量數據。
   tags:
@@ -1257,10 +1247,10 @@ questions:
   text: 情境：MapReduce 的兩個主要階段是？
   type: multiple_choice
   options:
-  - Input 與 Output
-  - Map (映射) 與 Reduce (歸約)
-  - Start 與 End
-  - Read 與 Write
+  - 資料輸入 (Input) 與結果輸出 (Output) 階段
+  - 映射 (Map) 處理與歸約 (Reduce) 匯總階段
+  - 程式開始 (Start) 與結束 (End) 階段
+  - 磁碟讀取 (Read) 與磁碟寫入 (Write) 階段
   correct_index: 1
   explanation: Map 負責分發處理，Reduce 負責匯總結果。
   tags:
@@ -1273,10 +1263,10 @@ questions:
   text: 情境：Avro 格式的一個特點是？
   type: multiple_choice
   options:
-  - 純文字
-  - Schema 隨數據一起儲存，適合資料序列化與演化
-  - 不支援壓縮
-  - 只能在 Windows 用
+  - 採用純文字格式，不支援二進位
+  - Schema 隨數據一起儲存，支援 Schema Evolution，適合資料序列化
+  - 完全不支援任何壓縮演算法
+  - 只能在 Windows 作業系統上使用
   correct_index: 1
   explanation: Avro 的自描述特性使其非常適合用於數據交換與長期儲存。
   tags:
@@ -1289,10 +1279,10 @@ questions:
   text: 情境：BASE 模型中的「最終一致性 (Eventual Consistency)」是指？
   type: multiple_choice
   options:
-  - 數據永遠不一致
-  - 經過一段時間後，所有節點的數據最終會達到一致
-  - 數據必須即時一致
-  - 數據隨機一致
+  - 系統中的數據永遠無法達到一致狀態
+  - 經過一段時間後，所有節點的數據最終會達到一致狀態 (Eventual Consistency)
+  - 數據在寫入的瞬間，所有節點必須立即達到一致 (Strong Consistency)
+  - 數據的一致性是隨機發生的，無法預測
   correct_index: 1
   explanation: 這是為了換取高可用性而對強一致性做出的妥協。
   tags:
@@ -1305,10 +1295,10 @@ questions:
   text: 情境：HDFS 的 NameNode 負責管理？
   type: multiple_choice
   options:
-  - 實際數據塊
-  - 元數據 (Metadata)，如檔名與目錄結構
-  - 運算資源
-  - 網路流量
+  - 儲存實際的檔案數據塊 (Data Blocks)
+  - 管理文件系統的元數據 (Metadata)，如檔名與目錄結構
+  - 負責叢集資源的分配與調度 (Resource Scheduling)
+  - 負責監控網路流量與頻寬使用 (Network Monitoring)
   correct_index: 1
   explanation: NameNode 是 HDFS 的大腦，記錄檔案系統的目錄樹。
   tags:
@@ -1321,10 +1311,10 @@ questions:
   text: 情境：CP 類型的分散式系統（如 HBase）在發生分區時會？
   type: multiple_choice
   options:
-  - 犧牲一致性
-  - 犧牲可用性 (拒絕部分請求以確保數據正確)
-  - 兩者都保留
-  - 系統崩潰
+  - 犧牲數據的一致性 (Consistency)，允許讀到舊數據
+  - 犧牲系統的可用性 (Availability)，拒絕部分請求以確保數據絕對正確
+  - 同時保留一致性與可用性，違反 CAP 定理
+  - 系統會直接崩潰並停止運作
   correct_index: 1
   explanation: 為了確保讀到的數據絕對正確，系統可能會暫時停止服務。
   tags:
@@ -1337,10 +1327,10 @@ questions:
   text: 情境：Spark Streaming 處理數據的方式是？
   type: multiple_choice
   options:
-  - 逐筆處理
-  - 微批次 (Micro-batches)
-  - 完全不處理
-  - 手動處理
+  - 採用逐筆處理 (Record-at-a-time) 的方式
+  - 採用微批次 (Micro-batches) 架構，將流數據切成小批次處理
+  - 系統完全不處理數據，直接丟棄
+  - 需要人工手動介入進行數據處理
   correct_index: 1
   explanation: 將流數據切成很小的批次，利用 Spark 引擎進行處理，兼顧吞吐量與延遲。
   tags:
@@ -1353,10 +1343,10 @@ questions:
   text: 情境：RDBMS 適合處理哪種數據？
   type: multiple_choice
   options:
-  - 高度結構化且需要強一致性的數據 (如銀行交易)
-  - 非結構化文本
-  - 社群網絡圖
-  - 海量日誌
+  - 高度結構化且需要強一致性的數據 (Structured Data)，如銀行交易
+  - 非結構化的純文本數據 (Unstructured Text)
+  - 複雜的社群網絡關係圖 (Social Network Graphs)
+  - 數 PB 等級的海量伺服器日誌 (Massive Server Logs)
   correct_index: 0
   explanation: RDBMS 的嚴格 Schema 與 ACID 特性是金融交易的首選。
   tags:

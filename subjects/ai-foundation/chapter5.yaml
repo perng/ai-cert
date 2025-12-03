@@ -5,10 +5,10 @@ questions:
   text: 監督式學習 (Supervised Learning) 的核心運作模式最像什麼？
   type: multiple_choice
   options:
-  - 訓練寵物（獎勵與懲罰）
-  - 隨機猜測
-  - 嬰兒自我探索
-  - 人類的正規教育（老師給題目和答案）
+  - 訓練寵物（獎勵與懲罰）(Training Pets with Rewards and Punishments)，屬於強化學習的模式。
+  - 隨機猜測 (Random Guessing)，無學習過程的隨機預測。
+  - 嬰兒自我探索 (Infant Self-Exploration)，屬於非監督式學習的模式。
+  - 人類的正規教育（老師給題目和答案）(Formal Human Education: Teacher Provides Questions and Answers)
   correct_index: 3
   explanation: 監督式學習需要輸入資料 (題目) 和對應的標籤 (答案)，就像老師教學生一樣。
   tags:
@@ -21,10 +21,10 @@ questions:
   text: 如果目標變數是「明天會不會下雨（是/否）」，這是哪種任務？
   type: multiple_choice
   options:
-  - 降維 (Dimensionality Reduction)
-  - 迴歸 (Regression)
-  - 分類 (Classification)
-  - 分群 (Clustering)
+  - 降維 (Dimensionality Reduction)，減少特徵維度的技術。
+  - 迴歸 (Regression)，預測連續數值的任務。
+  - 分類 (Classification)，預測離散類別的任務。
+  - 分群 (Clustering)，從無標籤數據中發現群體。
   correct_index: 2
   explanation: 預測離散的類別（是/否）屬於分類任務。
   tags:
@@ -37,10 +37,10 @@ questions:
   text: 如果目標變數是「明天的氣溫（攝氏度）」，這是哪種任務？
   type: multiple_choice
   options:
-  - 迴歸 (Regression)
-  - 強化學習
-  - 分群 (Clustering)
-  - 分類 (Classification)
+  - 迴歸 (Regression)，預測連續數值的任務。
+  - 強化學習 (Reinforcement Learning)，透過獎勵與懲罰機制學習。
+  - 分群 (Clustering)，從無標籤數據中發現群體。
+  - 分類 (Classification)，預測離散類別的任務。
   correct_index: 0
   explanation: 預測連續的數值（氣溫）屬於迴歸任務。
   tags:
@@ -53,10 +53,10 @@ questions:
   text: K-近鄰演算法 (KNN) 的核心概念可以用哪句成語形容？
   type: multiple_choice
   options:
-  - 近朱者赤，近墨者黑
-  - 知錯能改
-  - 瞎子摸象
-  - 三個臭皮匠，勝過諸葛亮
+  - 近朱者赤，近墨者黑 (Near Vermillion, One Becomes Red; Near Ink, One Becomes Black)，根據鄰居決定類別。
+  - 知錯能改 (Knowing Mistakes and Correcting Them)，從錯誤中學習的過程。
+  - 瞎子摸象 (Blind Men Touching an Elephant)，缺乏全面理解僅看到局部。
+  - 三個臭皮匠，勝過諸葛亮 (Three Cobblers Surpass Zhuge Liang)，集體智慧優於個人。
   correct_index: 0
   explanation: KNN 透過觀察最近的鄰居來決定類別，即「近朱者赤」。
   tags:
@@ -69,10 +69,10 @@ questions:
   text: KNN 演算法中，如果 K 值設得太小（如 K=1），容易發生什麼問題？
   type: multiple_choice
   options:
-  - 欠擬合 (Underfitting)
-  - 模型過於簡單
-  - 過度擬合 (Overfitting)
-  - 計算速度變慢
+  - 欠擬合 (Underfitting)，模型過於簡單無法學習複雜模式。
+  - 模型過於簡單 (Model Too Simple)，無法捕捉資料中的複雜關係。
+  - 過度擬合 (Overfitting)，模型過於複雜無法泛化到新資料。
+  - 計算速度變慢 (Slower Computation Speed)，需要更多時間進行預測。
   correct_index: 2
   explanation: K=1 代表只看最近的一個鄰居，容易受雜訊干擾，導致過度擬合。
   tags:
@@ -85,10 +85,10 @@ questions:
   text: 貝氏分類器 (Naive Bayes) 的「樸素/天真 (Naive)」假設是指什麼？
   type: multiple_choice
   options:
-  - 假設資料呈常態分佈
-  - 假設沒有雜訊
-  - 假設類別數量很少
-  - 假設所有特徵之間互相獨立
+  - 假設資料呈常態分佈 (Assuming Data Follows Normal Distribution)，某些版本的假設。
+  - 假設沒有雜訊 (Assuming No Noise)，資料完全乾淨無錯誤。
+  - 假設類別數量很少 (Assuming Few Categories)，僅適用於少量類別。
+  - 假設所有特徵之間互相獨立 (Assuming All Features Are Mutually Independent)
   correct_index: 3
   explanation: Naive Bayes 假設特徵之間互不影響（獨立），雖然這在現實中很少見，但簡化了計算。
   tags:
@@ -101,10 +101,10 @@ questions:
   text: 垃圾郵件過濾系統最常使用哪種演算法？
   type: multiple_choice
   options:
-  - 貝氏分類器 (Naive Bayes)
-  - 線性迴歸
-  - K-Means
-  - PCA
+  - 貝氏分類器 (Naive Bayes)，計算速度快且擅長處理高維度文本特徵。
+  - 線性迴歸 (Linear Regression)，用於預測連續數值的演算法。
+  - K-Means，用於非監督式分群的演算法。
+  - PCA (Principal Component Analysis)，用於降維的技術。
   correct_index: 0
   explanation: Naive Bayes 計算速度快且擅長處理高維度文本特徵，是垃圾郵件過濾的經典選擇。
   tags:
@@ -117,10 +117,10 @@ questions:
   text: 邏輯迴歸 (Logistic Regression) 雖然名字有迴歸，但它主要用於解決什麼問題？
   type: multiple_choice
   options:
-  - 路徑規劃
-  - 圖片生成
-  - 二元分類
-  - 數值預測
+  - 路徑規劃 (Path Planning)，尋找最短路徑的優化問題。
+  - 圖片生成 (Image Generation)，創造新影像的生成任務。
+  - 二元分類 (Binary Classification)，預測兩個類別之一的任務。
+  - 數值預測 (Numeric Prediction)，預測連續數值的迴歸任務。
   correct_index: 2
   explanation: 邏輯迴歸透過 Sigmoid 函數輸出機率，通常用於二元分類（如是/否）。
   tags:
@@ -133,10 +133,10 @@ questions:
   text: 邏輯迴歸使用哪個函數將數值壓縮到 0 到 1 之間？
   type: multiple_choice
   options:
-  - Tanh
-  - ReLU
-  - Sigmoid
-  - Softmax
+  - Tanh (Hyperbolic Tangent)，將數值壓縮到 -1 到 1 之間的函數。
+  - ReLU (Rectified Linear Unit)，將負數轉為 0 的激活函數。
+  - Sigmoid，將數值壓縮到 0 到 1 之間的 S 型函數。
+  - Softmax，將多個數值轉換為機率分佈的函數。
   correct_index: 2
   explanation: Sigmoid 函數呈 S 型曲線，能將任意實數映射到 (0, 1) 區間，代表機率。
   tags:
@@ -149,10 +149,10 @@ questions:
   text: 支援向量機 (SVM) 的核心目標是什麼？
   type: multiple_choice
   options:
-  - 最大化決策邊界 (Margin)
-  - 最大化樹的深度
-  - 最小化誤差平方和
-  - 最小化特徵數量
+  - 最大化決策邊界 (Margin)，在類別之間畫出最寬的分隔線。
+  - 最大化樹的深度 (Maximizing Tree Depth)，增加決策樹的層數。
+  - 最小化誤差平方和 (Minimizing Sum of Squared Errors)，減少預測誤差。
+  - 最小化特徵數量 (Minimizing Feature Count)，減少使用的特徵數。
   correct_index: 0
   explanation: SVM 試圖在類別之間畫出一條最寬的「馬路」，即最大化邊界。
   tags:
@@ -165,10 +165,10 @@ questions:
   text: 當資料在低維空間無法線性分割時，SVM 使用什麼技巧解決？
   type: multiple_choice
   options:
-  - 核函數技巧 (Kernel Trick)
-  - 降維
-  - 特徵選擇
-  - 隨機採樣
+  - 核函數技巧 (Kernel Trick)，將資料投影到高維空間使其線性可分。
+  - 降維 (Dimensionality Reduction)，減少特徵維度的技術。
+  - 特徵選擇 (Feature Selection)，選擇重要特徵的方法。
+  - 隨機採樣 (Random Sampling)，隨機選擇資料樣本的方法。
   correct_index: 0
   explanation: Kernel Trick 將資料投影到高維空間，使其變得線性可分。
   tags:
@@ -181,10 +181,10 @@ questions:
   text: 決策樹 (Decision Tree) 的最大優點是什麼？
   type: multiple_choice
   options:
-  - 可解釋性強 (White Box)
-  - 不易過度擬合
-  - 計算速度最快
-  - 預測準確率最高
+  - 可解釋性強 (White Box)，決策規則清晰易懂。
+  - 不易過度擬合 (Less Prone to Overfitting)，模型較為穩健。
+  - 計算速度最快 (Fastest Computation Speed)，預測速度極快。
+  - 預測準確率最高 (Highest Prediction Accuracy)，在所有演算法中表現最佳。
   correct_index: 0
   explanation: 決策樹的規則（如年齡 > 30）清晰易懂，非專業人士也能理解，屬於白箱模型。
   tags:
@@ -197,10 +197,10 @@ questions:
   text: 決策樹容易發生什麼問題，導致在訓練集表現很好但在測試集很差？
   type: multiple_choice
   options:
-  - 梯度消失
-  - 過度擬合 (Overfitting)
-  - 欠擬合
-  - 無法收斂
+  - 梯度消失 (Gradient Vanishing)，神經網路訓練中的梯度問題。
+  - 過度擬合 (Overfitting)，模型過於複雜無法泛化到新資料。
+  - 欠擬合 (Underfitting)，模型過於簡單無法學習複雜模式。
+  - 無法收斂 (Cannot Converge)，模型無法達到穩定狀態。
   correct_index: 1
   explanation: 決策樹如果長得太深，會死記硬背訓練資料的細節（包含雜訊），導致過度擬合。
   tags:
@@ -213,10 +213,10 @@ questions:
   text: 隨機森林 (Random Forest) 是由許多什麼模型組成的？
   type: multiple_choice
   options:
-  - 邏輯迴歸
-  - 決策樹
-  - 類神經網路
-  - SVM
+  - 邏輯迴歸 (Logistic Regression)，用於二元分類的線性模型。
+  - 決策樹 (Decision Tree)，透過樹狀結構進行決策的模型。
+  - 類神經網路 (Neural Networks)，模擬生物神經元的深度學習模型。
+  - SVM (Support Vector Machine)，使用最大邊界原理的分類模型。
   correct_index: 1
   explanation: 隨機森林由許多棵決策樹組成，透過投票來決定最終結果。
   tags:
@@ -229,10 +229,10 @@ questions:
   text: Bagging (如隨機森林) 的主要目的是降低模型的什麼？
   type: multiple_choice
   options:
-  - 雜訊
-  - 維度
-  - 變異 (Variance)
-  - 偏差 (Bias)
+  - 雜訊 (Noise)，資料中的隨機誤差。
+  - 維度 (Dimensionality)，特徵的數量。
+  - 變異 (Variance)，模型對資料變化的敏感度。
+  - 偏差 (Bias)，模型預測的系統性誤差。
   correct_index: 2
   explanation: Bagging 透過平均多個模型的結果，能有效降低變異，減少過度擬合。
   tags:
@@ -245,10 +245,10 @@ questions:
   text: Boosting (如 XGBoost) 的主要目的是降低模型的什麼？
   type: multiple_choice
   options:
-  - 特徵數
-  - 資料量
-  - 變異 (Variance)
-  - 偏差 (Bias)
+  - 特徵數 (Feature Count)，使用的特徵數量。
+  - 資料量 (Data Volume)，訓練資料的數量。
+  - 變異 (Variance)，模型對資料變化的敏感度。
+  - 偏差 (Bias)，模型預測的系統性誤差。
   correct_index: 3
   explanation: Boosting 透過循序修正前一個模型的錯誤，能有效降低偏差，提升準確度。
   tags:
@@ -261,10 +261,10 @@ questions:
   text: 下列關於 Bagging 和 Boosting 的比較，何者正確？
   type: multiple_choice
   options:
-  - Bagging 是序列訓練，Boosting 是並行訓練
-  - 兩者都是序列訓練
-  - Bagging 是並行訓練，Boosting 是序列訓練
-  - 兩者都是並行訓練
+  - Bagging 是序列訓練，Boosting 是並行訓練 (Bagging: Sequential, Boosting: Parallel)，訓練順序相反。
+  - 兩者都是序列訓練 (Both Are Sequential Training)，都需要依序訓練模型。
+  - Bagging 是並行訓練，Boosting 是序列訓練 (Bagging: Parallel, Boosting: Sequential)
+  - 兩者都是並行訓練 (Both Are Parallel Training)，都可以同時訓練多個模型。
   correct_index: 2
   explanation: Bagging (隨機森林) 的樹互不影響可同時訓練 (並行)；Boosting 的樹依賴前一棵樹的結果 (序列)。
   tags:
@@ -277,10 +277,10 @@ questions:
   text: 線性迴歸 (Linear Regression) 使用什麼作為損失函數？
   type: multiple_choice
   options:
-  - 交叉熵 (Cross Entropy)
-  - 均方誤差 (MSE)
-  - F1-Score
-  - 準確率 (Accuracy)
+  - 交叉熵 (Cross Entropy)，用於分類任務的損失函數。
+  - 均方誤差 (MSE) (Mean Squared Error)，用於迴歸任務的損失函數。
+  - F1-Score，用於評估分類模型效能的指標。
+  - 準確率 (Accuracy)，用於評估分類模型正確率的指標。
   correct_index: 1
   explanation: 線性迴歸通常使用 MSE (預測值與真實值的距離平方和) 來評估誤差。
   tags:
@@ -293,10 +293,10 @@ questions:
   text: Lasso 回歸 (L1 正則化) 的主要功能是什麼？
   type: multiple_choice
   options:
-  - 處理共線性
-  - 將權重變大
-  - 增加模型複雜度
-  - 特徵選擇 (將不重要特徵權重變為 0)
+  - 處理共線性 (Handling Multicollinearity)，解決特徵間高度相關的問題。
+  - 將權重變大 (Increasing Weights)，放大模型參數的數值。
+  - 增加模型複雜度 (Increasing Model Complexity)，讓模型更複雜以學習更多模式。
+  - 特徵選擇 (將不重要特徵權重變為 0) (Feature Selection: Setting Unimportant Feature Weights to Zero)
   correct_index: 3
   explanation: Lasso 加入絕對值懲罰項，傾向於將不重要的特徵權重壓縮至 0，達到特徵選擇的效果。
   tags:
@@ -309,10 +309,10 @@ questions:
   text: Ridge 回歸 (L2 正則化) 主要用於解決什麼問題？
   type: multiple_choice
   options:
-  - 共線性 (Multicollinearity) 與過度擬合
-  - 資料缺失
-  - 特徵選擇
-  - 欠擬合
+  - 共線性 (Multicollinearity) 與過度擬合 (Multicollinearity and Overfitting)
+  - 資料缺失 (Missing Data)，處理缺失值的問題。
+  - 特徵選擇 (Feature Selection)，選擇重要特徵的方法。
+  - 欠擬合 (Underfitting)，模型過於簡單無法學習複雜模式。
   correct_index: 0
   explanation: Ridge 加入平方懲罰項，能限制權重大小，防止共線性導致的參數不穩定。
   tags:
@@ -325,10 +325,10 @@ questions:
   text: 如果需要向監管單位解釋拒絕貸款的原因，應優先選擇哪種模型？
   type: multiple_choice
   options:
-  - 深度神經網路
-  - 決策樹 (Decision Tree)
-  - SVM
-  - 隨機森林
+  - 深度神經網路 (Deep Neural Networks)，複雜的黑箱模型難以解釋。
+  - 決策樹 (Decision Tree)，提供清晰規則路徑的白箱模型。
+  - SVM (Support Vector Machine)，使用最大邊界原理的分類模型。
+  - 隨機森林 (Random Forest)，由多棵決策樹組成的集成模型。
   correct_index: 1
   explanation: 決策樹提供清晰的規則路徑，解釋性最強，適合需要合規解釋的場景。
   tags:
@@ -341,10 +341,10 @@ questions:
   text: 在 Kaggle 比賽中，哪種演算法常因其強大的效能而獲勝？
   type: multiple_choice
   options:
-  - XGBoost / LightGBM (Boosting)
-  - KNN
-  - 線性迴歸
-  - Naive Bayes
+  - XGBoost / LightGBM (Boosting)，基於梯度提升的強大集成學習演算法。
+  - KNN (K-Nearest Neighbors)，基於距離計算的簡單分類演算法。
+  - 線性迴歸 (Linear Regression)，用於預測連續數值的基礎模型。
+  - Naive Bayes，基於機率的快速分類演算法。
   correct_index: 0
   explanation: 基於 Gradient Boosting 的演算法 (如 XGBoost) 因其極高的準確率，是競賽中的常勝軍。
   tags:
@@ -357,10 +357,10 @@ questions:
   text: KNN 是一種 Lazy Learning，這意味著什麼？
   type: multiple_choice
   options:
-  - 它沒有顯式的訓練過程，預測時才進行計算
-  - 它只能處理簡單問題
-  - 它需要訓練很久
-  - 它很懶，不想學習
+  - 它沒有顯式的訓練過程，預測時才進行計算 (No Explicit Training Process, Computation Only During Prediction)
+  - 它只能處理簡單問題 (Can Only Handle Simple Problems)，適用範圍有限。
+  - 它需要訓練很久 (Requires Long Training Time)，訓練過程耗時。
+  - 它很懶，不想學習 (Too Lazy to Learn)，不願意進行學習過程。
   correct_index: 0
   explanation: KNN 在訓練階段只是把資料存起來，直到預測時才計算距離，因此稱為 Lazy Learning。
   tags:
@@ -373,10 +373,10 @@ questions:
   text: SVM 中的「支援向量」指的是？
   type: multiple_choice
   options:
-  - 異常值
-  - 落在決策邊界邊緣、決定邊界位置的關鍵資料點
-  - 所有的資料點
-  - 中心點
+  - 異常值 (Outliers)，與正常資料差異極大的資料點。
+  - 落在決策邊界邊緣、決定邊界位置的關鍵資料點 (Key Data Points on Decision Boundary Edges That Determine Boundary Position)
+  - 所有的資料點 (All Data Points)，資料集中的每一個樣本。
+  - 中心點 (Center Point)，資料分佈的中心位置。
   correct_index: 1
   explanation: 只有落在 Margin 邊緣的點（支援向量）會影響 SVM 的決策邊界，其他點都不重要。
   tags:
@@ -389,10 +389,10 @@ questions:
   text: 決策樹的分裂準則通常基於什麼指標？
   type: multiple_choice
   options:
-  - 距離
-  - 權重
-  - 梯度
-  - 熵 (Entropy) 或吉尼係數 (Gini Impurity)
+  - 距離 (Distance)，衡量資料點之間相似度的指標。
+  - 權重 (Weights)，模型參數的數值。
+  - 梯度 (Gradient)，損失函數的斜率。
+  - 熵 (Entropy) 或吉尼係數 (Gini Impurity)，衡量資料純度的指標。
   correct_index: 3
   explanation: 決策樹透過計算熵或吉尼係數來衡量資料的純度，決定如何切割。
   tags:
@@ -405,10 +405,10 @@ questions:
   text: 隨機森林中的「隨機」體現在哪兩個方面？
   type: multiple_choice
   options:
-  - 隨機時間與隨機地點
-  - 隨機分類與隨機迴歸
-  - 隨機採樣資料 (Bootstrap) 與隨機選取特徵
-  - 隨機參數與隨機權重
+  - 隨機時間與隨機地點 (Random Time and Random Location)，根據時間與空間進行隨機化。
+  - 隨機分類與隨機迴歸 (Random Classification and Random Regression)，隨機選擇任務類型。
+  - 隨機採樣資料 (Bootstrap) 與隨機選取特徵 (Random Data Sampling (Bootstrap) and Random Feature Selection)
+  - 隨機參數與隨機權重 (Random Parameters and Random Weights)，隨機初始化模型參數。
   correct_index: 2
   explanation: 隨機森林對資料進行 Bootstrap 採樣，且在分裂節點時隨機選取部分特徵，以增加多樣性。
   tags:
@@ -421,10 +421,10 @@ questions:
   text: OOB (Out-of-Bag) 誤差可以用來做什麼？
   type: multiple_choice
   options:
-  - 增加訓練資料
-  - 計算特徵重要性
-  - 驗證隨機森林模型的效能，無需額外切分驗證集
-  - 調整學習率
+  - 增加訓練資料 (Increasing Training Data)，擴充資料集的大小。
+  - 計算特徵重要性 (Calculating Feature Importance)，評估特徵對模型的貢獻。
+  - 驗證隨機森林模型的效能，無需額外切分驗證集 (Validating Random Forest Model Performance Without Additional Validation Set Split)
+  - 調整學習率 (Adjusting Learning Rate)，控制模型學習速度的參數。
   correct_index: 2
   explanation: OOB 資料是那些未被該棵樹採樣到的資料，可直接用來測試該樹的準確度。
   tags:
@@ -437,10 +437,10 @@ questions:
   text: AdaBoost 的核心機制是？
   type: multiple_choice
   options:
-  - 使用深度神經網路
-  - 並行訓練
-  - 隨機採樣
-  - 調整資料權重，放大錯誤樣本的權重
+  - 使用深度神經網路 (Using Deep Neural Networks)，採用多層神經網路架構。
+  - 並行訓練 (Parallel Training)，同時訓練多個模型。
+  - 隨機採樣 (Random Sampling)，隨機選擇資料樣本。
+  - 調整資料權重，放大錯誤樣本的權重 (Adjusting Data Weights, Amplifying Weight of Misclassified Samples)
   correct_index: 3
   explanation: AdaBoost 會給予前一個模型預測錯誤的樣本更高的權重，讓下一個模型專注學習這些難題。
   tags:
@@ -453,10 +453,10 @@ questions:
   text: 如果資料特徵比資料筆數還多 (High Dimensionality)，哪種迴歸模型較適合？
   type: multiple_choice
   options:
-  - Lasso 或 Ridge 回歸 (正規化迴歸)
-  - 一般線性迴歸
-  - KNN
-  - Naive Bayes
+  - Lasso 或 Ridge 回歸 (正規化迴歸) (Lasso or Ridge Regression: Regularized Regression)，透過正則化防止過擬合。
+  - 一般線性迴歸 (Ordinary Linear Regression)，無正則化的標準線性迴歸。
+  - KNN (K-Nearest Neighbors)，基於距離計算的分類演算法。
+  - Naive Bayes，基於機率的分類演算法。
   correct_index: 0
   explanation: 在高維度情況下，一般線性迴歸容易過擬合，正規化迴歸 (Lasso/Ridge) 能透過懲罰項限制模型複雜度。
   tags:
@@ -469,10 +469,10 @@ questions:
   text: 邏輯迴歸的決策邊界通常預設為多少機率？
   type: multiple_choice
   options:
-  - '0.5'
-  - '0.9'
-  - '0.1'
-  - '0.0'
+  - '0.5'，邏輯迴歸的標準決策閾值。
+  - '0.9'，較高的決策閾值，更保守的預測。
+  - '0.1'，較低的決策閾值，更積極的預測。
+  - '0.0'，極端的決策閾值，幾乎所有樣本都被預測為正類別。
   correct_index: 0
   explanation: 通常以 0.5 為界，大於 0.5 判為正類別，小於 0.5 判為負類別。
   tags:
@@ -485,10 +485,10 @@ questions:
   text: SVM 適合處理哪種規模的資料？
   type: multiple_choice
   options:
-  - 小樣本、高維度資料
-  - 非結構化影片資料
-  - 只有一個特徵的資料
-  - 海量大數據
+  - 小樣本、高維度資料 (Small Sample, High-Dimensional Data)，SVM 的優勢場景。
+  - 非結構化影片資料 (Unstructured Video Data)，需要特殊處理的多媒體資料。
+  - 只有一個特徵的資料 (Data with Only One Feature)，特徵數量極少的資料。
+  - 海量大數據 (Massive Big Data)，資料量極大的場景。
   correct_index: 0
   explanation: SVM 在小樣本和高維度資料上表現出色，但因計算複雜度高，不適合海量數據。
   tags:
@@ -501,10 +501,10 @@ questions:
   text: 哪種演算法被稱為「白箱 (White Box)」模型？
   type: multiple_choice
   options:
-  - 隨機森林
-  - 決策樹
-  - SVM (使用核函數)
-  - 深度神經網路
+  - 隨機森林 (Random Forest)，由多棵決策樹組成的黑箱集成模型。
+  - 決策樹 (Decision Tree)，決策過程完全透明的白箱模型。
+  - SVM (使用核函數) (SVM with Kernel Functions)，使用核技巧的黑箱模型。
+  - 深度神經網路 (Deep Neural Networks)，複雜的黑箱深度學習模型。
   correct_index: 1
   explanation: 決策樹的決策過程完全透明，每一步規則都清晰可見，故稱白箱。
   tags:
@@ -517,10 +517,10 @@ questions:
   text: 隨機森林屬於哪種集成學習方法？
   type: multiple_choice
   options:
-  - Boosting
-  - Bagging
-  - Clustering
-  - Stacking
+  - Boosting，序列訓練的集成學習方法。
+  - Bagging，並行訓練的集成學習方法。
+  - Clustering，非監督式學習的分群方法。
+  - Stacking，堆疊多層模型的集成學習方法。
   correct_index: 1
   explanation: 隨機森林是 Bagging (Bootstrap Aggregating) 的代表性演算法。
   tags:
@@ -533,10 +533,10 @@ questions:
   text: Lasso 回歸的解空間幾何形狀是？
   type: multiple_choice
   options:
-  - 拋物線
-  - 橢圓形
-  - 圓形
-  - 菱形
+  - 拋物線 (Parabola)，二次函數的幾何形狀。
+  - 橢圓形 (Ellipse)，長軸與短軸不同的圓形。
+  - 圓形 (Circle)，L2 正則化的幾何形狀。
+  - 菱形 (Diamond)，L1 正則化的幾何形狀。
   correct_index: 3
   explanation: L1 正則化的等高線是菱形，容易與坐標軸相交，導致係數變為 0。
   tags:
@@ -549,10 +549,10 @@ questions:
   text: Ridge 回歸的解空間幾何形狀是？
   type: multiple_choice
   options:
-  - 方形
-  - 三角形
-  - 菱形
-  - 圓形
+  - 方形 (Square)，四邊等長的矩形。
+  - 三角形 (Triangle)，三邊構成的幾何形狀。
+  - 菱形 (Diamond)，L1 正則化的幾何形狀。
+  - 圓形 (Circle)，L2 正則化的幾何形狀。
   correct_index: 3
   explanation: L2 正則化的等高線是圓形，傾向於讓係數變小但不易為 0。
   tags:
@@ -565,10 +565,10 @@ questions:
   text: 下列何者不是監督式學習的應用？
   type: multiple_choice
   options:
-  - 客戶分群 (無標籤)
-  - 房價預測
-  - 垃圾郵件分類
-  - 手寫數字辨識
+  - 客戶分群 (無標籤) (Customer Clustering: No Labels)，屬於非監督式學習。
+  - 房價預測 (House Price Prediction)，使用已標籤資料的迴歸任務。
+  - 垃圾郵件分類 (Spam Email Classification)，使用已標籤資料的分類任務。
+  - 手寫數字辨識 (Handwritten Digit Recognition)，使用已標籤資料的分類任務。
   correct_index: 0
   explanation: 客戶分群若無預先定義的標籤，屬於非監督式學習。
   tags:
@@ -581,10 +581,10 @@ questions:
   text: Boosting 演算法對雜訊的敏感度如何？
   type: multiple_choice
   options:
-  - 較高，容易對雜訊過度擬合
-  - 非常低
-  - 與 Bagging 一樣
-  - 完全免疫
+  - 較高，容易對雜訊過度擬合 (Higher, Prone to Overfitting on Noise)
+  - 非常低 (Very Low)，對雜訊幾乎不敏感。
+  - 與 Bagging 一樣 (Same as Bagging)，敏感度與 Bagging 相同。
+  - 完全免疫 (Completely Immune)，完全不受雜訊影響。
   correct_index: 0
   explanation: 因為 Boosting 會拼命修正錯誤，如果錯誤來自雜訊，它也會強行去擬合，導致過擬合。
   tags:
@@ -597,10 +597,10 @@ questions:
   text: 在貝氏分類器中，先驗機率 (Prior) 是指？
   type: multiple_choice
   options:
-  - 看到特徵後，某類別的機率
-  - 預測錯誤的機率
-  - 特徵出現的機率
-  - 在還沒看特徵前，某類別出現的機率
+  - 看到特徵後，某類別的機率 (Probability of a Category After Seeing Features)，屬於後驗機率。
+  - 預測錯誤的機率 (Probability of Prediction Error)，模型預測失敗的機率。
+  - 特徵出現的機率 (Probability of Feature Occurrence)，特徵在資料中出現的頻率。
+  - 在還沒看特徵前，某類別出現的機率 (Probability of a Category Before Seeing Features)
   correct_index: 3
   explanation: 先驗機率是基於歷史數據統計出的類別原始分佈機率（如垃圾信佔 40%）。
   tags:
@@ -613,10 +613,10 @@ questions:
   text: 決策樹中的「葉節點 (Leaf)」代表什麼？
   type: multiple_choice
   options:
-  - 最終的分類結果
-  - 中間的決策過程
-  - 特徵名稱
-  - 第一個問題
+  - 最終的分類結果 (Final Classification Result)，決策樹的輸出。
+  - 中間的決策過程 (Intermediate Decision Process)，決策樹的分支節點。
+  - 特徵名稱 (Feature Names)，用於決策的特徵變數。
+  - 第一個問題 (First Question)，決策樹的根節點。
   correct_index: 0
   explanation: 葉節點是決策樹的末端，代表最終的預測輸出。
   tags:
@@ -629,10 +629,10 @@ questions:
   text: 邏輯迴歸的輸出值範圍是？
   type: multiple_choice
   options:
-  - 0 到 1
-  - 0 到 100
-  - -1 到 1
-  - 負無限大到正無限大
+  - 0 到 1 (0 to 1)，經過 Sigmoid 函數轉換後的機率範圍。
+  - 0 到 100 (0 to 100)，百分比形式的數值範圍。
+  - -1 到 1 (-1 to 1)，經過 Tanh 函數轉換後的數值範圍。
+  - 負無限大到正無限大 (-Infinity to +Infinity)，無限制的數值範圍。
   correct_index: 0
   explanation: 經過 Sigmoid 函數轉換，輸出值被限制在 0 到 1 之間，代表機率。
   tags:
@@ -645,10 +645,10 @@ questions:
   text: 在癌症篩檢模型中，我們通常更看重 Recall (召回率) 而非 Precision (精確率)，原因是？
   type: multiple_choice
   options:
-  - 因為醫院希望找出越少病人越好
-  - 因為漏掉一個真正有病的患者 (False Negative) 可能導致延誤治療甚至死亡，代價遠高於虛驚一場
-  - 因為誤判一個健康人有病 (False Positive) 後果很嚴重
-  - 因為 Recall 計算比較簡單
+  - 因為醫院希望找出越少病人越好 (Hospitals Want to Find Fewer Patients)，減少醫療負擔。
+  - 因為漏掉一個真正有病的患者 (False Negative) 可能導致延誤治療甚至死亡，代價遠高於虛驚一場 (Missing a Truly Sick Patient May Lead to Delayed Treatment or Death, Cost Far Exceeds False Alarm)
+  - 因為誤判一個健康人有病 (False Positive) 後果很嚴重 (Misdiagnosing a Healthy Person Has Serious Consequences)，會造成不必要的恐慌。
+  - 因為 Recall 計算比較簡單 (Recall Calculation is Simpler)，計算過程較為容易。
   correct_index: 1
   explanation: 在攸關性命的篩檢中，寧可錯殺一百（誤判有病再複檢），不可放過一個（漏判導致病情惡化）。
   tags:
@@ -661,10 +661,10 @@ questions:
   text: Bagging (如 Random Forest) 與 Boosting (如 XGBoost) 的主要區別在於？
   type: multiple_choice
   options:
-  - Bagging 是串列訓練，Boosting 是平行訓練
-  - Bagging 透過並行訓練多個獨立模型來降低變異數 (Variance)，Boosting 透過循序修正前一個模型的錯誤來降低偏差 (Bias)
-  - Bagging 只能用於分類，Boosting 只能用於回歸
-  - Bagging 容易過擬合，Boosting 不容易過擬合
+  - Bagging 是串列訓練，Boosting 是平行訓練 (Bagging: Sequential, Boosting: Parallel)，訓練順序相反。
+  - Bagging 透過並行訓練多個獨立模型來降低變異數 (Variance)，Boosting 透過循序修正前一個模型的錯誤來降低偏差 (Bias) (Bagging: Parallel Training to Reduce Variance, Boosting: Sequential Error Correction to Reduce Bias)
+  - Bagging 只能用於分類，Boosting 只能用於回歸 (Bagging Only for Classification, Boosting Only for Regression)，任務類型限制。
+  - Bagging 容易過擬合，Boosting 不容易過擬合 (Bagging Prone to Overfitting, Boosting Not Prone to Overfitting)，過擬合傾向相反。
   correct_index: 1
   explanation: Bagging 是「三個臭皮匠勝過諸葛亮」（多樣性投票），Boosting 是「知錯能改，善莫大焉」（專注改進錯誤）。
   tags:

@@ -5,10 +5,10 @@ questions:
   text: Agent (代理人) 與傳統 Chatbot 最大的區別在於？
   type: multiple_choice
   options:
-  - Agent 只能說英文
-  - Agent 比較貴
-  - Agent 具備感知環境、決策並執行行動 (Action) 的能力，而不僅是說話
-  - Chatbot 比較聰明
+  - Agent 只能說英文 (Agent Only Speaks English) – limited multilingual support.
+  - Agent 比較貴 (Agent Is More Expensive) – higher compute and infrastructure costs.
+  - Agent 具備感知環境、決策並執行行動 (Action) 的能力，而不僅是說話 (Agent Has Perception, Decision-Making, and Action Capabilities Beyond Conversation) – core distinction from chatbots.
+  - Chatbot 比較聰明 (Chatbot Is Smarter) – may excel in language fluency but lacks actionable abilities.
   correct_index: 2
   explanation: Chatbot 僅限於對話，而 Agent 擁有「手腳」，能透過工具與外部世界互動並執行任務。
   tags:
@@ -21,10 +21,10 @@ questions:
   text: Agent 的「大腦 (Brain)」通常由什麼擔任？
   type: multiple_choice
   options:
-  - 網路卡
-  - CPU
-  - 大型語言模型 (LLM)
-  - 硬碟
+  - 網路卡 (Network Card) – hardware for connectivity, not cognition.
+  - CPU (Central Processing Unit) – general-purpose processor, insufficient alone for reasoning.
+  - 大型語言模型 (LLM) (Large Language Model) – provides the brain for understanding and planning.
+  - 硬碟 (Hard Disk) – storage component, not computational brain.
   correct_index: 2
   explanation: LLM 負責理解指令、邏輯推理與規劃，是 Agent 的智慧核心。
   tags:
@@ -37,10 +37,10 @@ questions:
   text: Agent 的「規劃 (Planning)」模組負責什麼？
   type: multiple_choice
   options:
-  - 任務拆解與自我反思
-  - 儲存資料
-  - 顯示畫面
-  - 執行 API
+  - 任務拆解與自我反思 (Task Decomposition & Self-Reflection) – breaks goals into steps and evaluates progress.
+  - 儲存資料 (Data Storage) – passive record keeping, not planning.
+  - 顯示畫面 (Display UI) – presentation layer, not core planning.
+  - 執行 API (Execute API Calls) – action execution, separate from planning logic.
   correct_index: 0
   explanation: 規劃模組將複雜目標拆解為可執行的步驟，並在執行過程中反思修正。
   tags:
@@ -53,10 +53,10 @@ questions:
   text: Agent 的「長期記憶」通常儲存在哪裡？
   type: multiple_choice
   options:
-  - RAM
-  - CPU 快取
-  - 紙本筆記
-  - 向量資料庫 (Vector DB)
+  - RAM (Random Access Memory) – volatile memory, unsuitable for long-term storage.
+  - CPU 快取 (CPU Cache) – very short-term, limited capacity.
+  - 紙本筆記 (Paper Notebook) – impractical for digital agents.
+  - 向量資料庫 (Vector DB) (Vector Database) – scalable, searchable long-term memory for agents.
   correct_index: 3
   explanation: 向量資料庫能高效儲存與檢索大量非結構化資料，作為 Agent 的長期知識庫。
   tags:
@@ -69,10 +69,10 @@ questions:
   text: Agent 使用工具 (Tool Use) 的例子包括？
   type: multiple_choice
   options:
-  - 調用 API (如搜尋 Google、發送 Email)
-  - 睡覺
-  - 思考人生
-  - 做夢
+  - 調用 API (如搜尋 Google、發送 Email) (API Calls such as Google Search or Email) – concrete tool use for tasks.
+  - 睡覺 (Sleep) – irrelevant biological function.
+  - 思考人生 (Contemplate Life) – abstract, not actionable.
+  - 做夢 (Dream) – not a functional capability for agents.
   correct_index: 0
   explanation: 透過 API 調用，Agent 能夠執行實際操作，如獲取資訊或控制軟體。
   tags:
@@ -85,10 +85,11 @@ questions:
   text: 解決方案圖譜 (Solution Graph) 將解決問題的過程建模為？
   type: multiple_choice
   options:
-  - 一個點
-  - 一個圓圈
-  - 一條直線
-  - 一個圖 (Graph)，包含節點與邊
+  options:
+  - 一個點 (A Single Node) – overly simplistic representation.
+  - 一個圓圈 (A Circle) – does not capture relationships.
+  - 一條直線 (A Straight Line) – insufficient for complex decision paths.
+  - 一個圖 (Graph) 包含節點與邊 (A Graph with Nodes and Edges) – captures complex problem-solving structures.
   correct_index: 3
   explanation: 圖結構能表達非線性的決策路徑與狀態轉換，比線性思考更靈活。
   tags:
@@ -101,10 +102,11 @@ questions:
   text: 在 Solution Graph 中，廣度優先搜尋 (BFS) 適合？
   type: multiple_choice
   options:
-  - 什麼都不做
-  - 深入挖掘單一路徑
-  - 尋找最短路徑或探索所有可能的下一步
-  - 隨機亂走
+  options:
+  - 什麼都不做 (Do Nothing) – no exploration.
+  - 深入挖掘單一路徑 (Deep Dive Single Path) – may miss broader solutions.
+  - 尋找最短路徑或探索所有可能的下一步 (Find Shortest Path or Explore All Next Steps) – BFS appropriate for breadth-first search.
+  - 隨機亂走 (Random Walk) – inefficient and non-deterministic.
   correct_index: 2
   explanation: BFS 層層推進，能確保找到步數最少的解，適合路徑搜尋。
   tags:
@@ -117,10 +119,12 @@ questions:
   text: 在 Solution Graph 中，深度優先搜尋 (DFS) 適合？
   type: multiple_choice
   options:
-  - 廣泛探索
-  - 快速瀏覽
-  - 需要深入挖掘的任務 (一條路走到底)
-  - 尋找最短路徑
+  options:
+  - 廣泛探索 (Broad Exploration) – akin to BFS, covers many branches.
+  - 快速瀏覽 (Quick Scan) – shallow, may miss depth.
+  - 需要深入挖掘的任務 (Task Requiring Deep Exploration) – aligns with DFS.
+  - 尋找最短路徑 (Find Shortest Path) – more BFS-oriented.
+
   correct_index: 2
   explanation: DFS 優先探索深層節點，適合需要連續推理或鑽研到底的場景。
   tags:
@@ -133,10 +137,12 @@ questions:
   text: 多代理系統 (Multi-Agent Systems) 的主要優勢是？
   type: multiple_choice
   options:
-  - 省電
-  - 減少程式碼量
-  - 透過角色分工協作，解決單一 Agent 無法處理的複雜任務
-  - 不需要 LLM
+  options:
+  - 省電 (Energy Saving) – not a primary advantage.
+  - 減少程式碼量 (Reduced Code Size) – minor benefit.
+  - 透過角色分工協作，解決單一 Agent 無法處理的複雜任務 (Collaborative Role Division to Solve Complex Tasks) – core advantage.
+  - 不需要 LLM (No Need for LLM) – inaccurate.
+
   correct_index: 2
   explanation: 透過專業分工（如 PM、工程師、測試員），多個 Agent 能協作完成大型專案。
   tags:
@@ -149,10 +155,12 @@ questions:
   text: 在多代理協作中，負責拆解需求並分派任務的角色通常是？
   type: multiple_choice
   options:
-  - 工程師 Agent
-  - 實習生 Agent
-  - 產品經理 (PM) Agent
-  - 測試 Agent
+  options:
+  - 工程師 Agent (Engineer Agent) – typically handles implementation.
+  - 實習生 Agent (Intern Agent) – unlikely to lead task allocation.
+  - 產品經理 (PM) Agent – responsible for task decomposition and assignment.
+  - 測試 Agent (Tester Agent) – focuses on validation.
+
   correct_index: 2
   explanation: PM Agent 負責統籌規劃，將大目標轉化為可執行的子任務並指派給專責 Agent。
   tags:

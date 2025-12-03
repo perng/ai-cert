@@ -5,10 +5,10 @@ questions:
   text: 資料品質維度中的「唯一性 (Uniqueness)」是指？
   type: multiple_choice
   options:
-  - 數據沒有缺失值
-  - 數據沒有重複記錄
-  - 數據格式正確
-  - 數據是即時的
+  - 數據中沒有任何缺失值 (Missing Values)
+  - 數據中沒有重複的記錄 (Duplicate Records)
+  - 數據的格式完全正確且一致
+  - 數據是即時更新的 (Real-time)
   correct_index: 1
   explanation: 唯一性確保資料庫中沒有重複的實體（如同一位客戶出現兩次），避免統計錯誤。
   tags:
@@ -21,10 +21,10 @@ questions:
   text: k-匿名 (k-anonymity) 的主要目標是？
   type: multiple_choice
   options:
-  - 加密所有數據
-  - 確保每個記錄至少與 k-1 個其他記錄在準標識符上無法區分
-  - 刪除所有數據
-  - 增加數據量
+  - 對所有敏感數據進行高強度加密
+  - 確保每個記錄至少與 k-1 個其他記錄在準標識符 (Quasi-identifiers) 上無法區分
+  - 永久刪除所有敏感數據
+  - 透過數據增強 (Data Augmentation) 增加數據量
   correct_index: 1
   explanation: 透過泛化（如將年齡改為區間）或隱藏，使得攻擊者無法從一群人中精確指認出特定個體。
   tags:
@@ -37,10 +37,10 @@ questions:
   text: 差分隱私 (Differential Privacy) 中的隱私預算 ε (Epsilon) 越小，代表？
   type: multiple_choice
   options:
-  - 隱私保護越弱，數據可用性越高
+  - 隱私保護越弱，數據可用性 (Utility) 越高
   - 隱私保護越強，但數據可用性 (Utility) 越低
-  - 計算速度越快
-  - 數據量越大
+  - 隱私計算的速度越快
+  - 需要的數據樣本量越大
   correct_index: 1
   explanation: ε 控制了允許洩漏的隱私量。ε 越小，加入的雜訊越大，隱私越安全，但數據分析的精確度也會下降。
   tags:
@@ -53,10 +53,10 @@ questions:
   text: 同態加密 (Homomorphic Encryption) 的核心特性是？
   type: multiple_choice
   options:
-  - 加密速度最快
-  - 允許在加密數據上直接進行運算，且解密結果與明文運算一致
-  - 不需要金鑰
-  - 只能加密文字
+  - 加密與解密的速度最快
+  - 允許在加密數據上直接進行運算，且解密後的結果與在明文上運算的結果一致
+  - 不需要使用任何金鑰即可加密
+  - 僅支援文字數據的加密
   correct_index: 1
   explanation: 這被視為隱私計算的聖杯，因為雲端服務商可以在完全「看不懂」數據的情況下幫你算完模型。
   tags:
@@ -69,10 +69,10 @@ questions:
   text: GDPR 中的「資料最小化 (Data Minimization)」原則是指？
   type: multiple_choice
   options:
-  - 蒐集越多數據越好
-  - 僅蒐集完成特定目的所需的最少數據
-  - 不蒐集任何數據
-  - 壓縮數據以節省空間
+  - 盡可能蒐集越多數據越好，以備不時之需
+  - 僅蒐集完成特定目的所需的最少數據 (Minimum Necessary Data)
+  - 完全不蒐集任何個人數據
+  - 使用壓縮演算法以節省儲存空間
   correct_index: 1
   explanation: 企業不應抱著「先存再說」的心態。只拿該拿的，能降低資安風險並符合隱私倫理。
   tags:
@@ -85,10 +85,10 @@ questions:
   text: 「模型卡片 (Model Card)」的主要用途是？
   type: multiple_choice
   options:
-  - 儲存模型權重
+  - 儲存模型的權重參數 (Weights)
   - 作為模型的「說明書」，記錄訓練數據、適用範圍、限制與偏誤測試結果
-  - 加速模型訓練
-  - 視覺化模型結構
+  - 使用專用硬體加速模型訓練
+  - 將模型結構進行視覺化展示
   correct_index: 1
   explanation: 這是 AI 透明化的重要實踐，讓使用者清楚知道這個模型的能與不能，以及潛在的偏見。
   tags:
@@ -101,10 +101,10 @@ questions:
   text: 聯邦學習 (Federated Learning) 如何保護隱私？
   type: multiple_choice
   options:
-  - 將所有數據上傳到雲端加密儲存
-  - 數據不出本地 (如手機)，僅上傳加密的模型參數更新
-  - 使用區塊鏈
-  - 刪除所有數據
+  - 將所有原始數據上傳到雲端進行加密儲存
+  - 數據不出本地 (如手機)，僅上傳加密的模型參數更新 (Model Updates)
+  - 使用區塊鏈技術記錄數據交易
+  - 訓練完成後刪除所有原始數據
   correct_index: 1
   explanation: 數據保留在用戶設備上，只有數學參數在網路上跑，從物理上隔離了隱私風險。
   tags:
@@ -117,10 +117,10 @@ questions:
   text: 資料剖析 (Data Profiling) 的作用是？
   type: multiple_choice
   options:
-  - 繪製圖表
-  - 自動分析數據的統計特徵 (如分佈、空值率)，以發現潛在品質問題
-  - 刪除數據
-  - 備份數據
+  - 繪製數據分佈的圖表
+  - 自動分析數據的統計特徵 (如分佈、空值率)，以發現潛在的品質問題
+  - 永久刪除有問題的數據
+  - 定期備份所有數據
   correct_index: 1
   explanation: 在開始分析前，先對數據做「健康檢查」，了解數據的樣貌與缺陷。
   tags:
@@ -133,10 +133,10 @@ questions:
   text: 靜態數據加密 (Encryption at Rest) 保護的是？
   type: multiple_choice
   options:
-  - 正在網路上傳輸的數據
-  - 存儲在磁碟或資料庫中的數據
-  - 正在記憶體中運算的數據
-  - 螢幕上顯示的數據
+  - 正在網路上傳輸的數據 (Data in Transit)
+  - 存儲在磁碟、資料庫或備份媒體中的靜態數據 (Data at Rest)
+  - 正在記憶體中進行運算的數據 (Data in Use)
+  - 顯示在螢幕上的數據 (Data on Screen)
   correct_index: 1
   explanation: 防止硬碟被竊取或資料庫文件被非法複製時導致的數據外洩。
   tags:
@@ -149,10 +149,10 @@ questions:
   text: 資料目錄 (Data Catalog) 的功能是？
   type: multiple_choice
   options:
-  - 銷售數據
-  - 盤點數據資產，記錄來源、用途與敏感度，幫助使用者發現數據
-  - 清洗數據
-  - 訓練模型
+  - 用於銷售企業數據資產
+  - 盤點數據資產，記錄來源、用途與敏感度，幫助使用者發現與理解數據
+  - 自動清洗髒數據
+  - 用於訓練機器學習模型
   correct_index: 1
   explanation: 就像圖書館的目錄系統，讓企業內部的數據資產可被搜尋、理解與管理。
   tags:
@@ -165,10 +165,10 @@ questions:
   text: l-多樣性 (l-diversity) 是為了改進 k-匿名的什麼缺點？
   type: multiple_choice
   options:
-  - 計算太慢
-  - 容易受到同質性攻擊 (即同一組內的敏感屬性值都一樣)
-  - 數據量太大
-  - 無法處理文字
+  - k-匿名演算法的計算速度太慢
+  - 容易受到同質性攻擊 (Homogeneity Attack)，即同一組內的敏感屬性值都相同
+  - 處理的數據量太大導致記憶體不足
+  - 無法處理非結構化的文字數據
   correct_index: 1
   explanation: 如果一個 k-匿名組裡的 3 個人都患有「癌症」，那攻擊者只要知道目標在這一組，就能確定他有癌症。l-多樣性要求組內敏感屬性必須多樣化。
   tags:
@@ -181,10 +181,10 @@ questions:
   text: TLS 1.3 協議主要用於？
   type: multiple_choice
   options:
-  - 靜態數據加密
-  - 傳輸中加密 (Encryption in Transit)，保護網路通訊安全
-  - 資料庫加密
-  - 檔案壓縮
+  - 對儲存在硬碟中的靜態數據進行加密
+  - 傳輸中加密 (Encryption in Transit)，保護網路通訊過程中的數據安全
+  - 對資料庫中的特定欄位進行加密
+  - 對傳輸的檔案進行壓縮以節省頻寬
   correct_index: 1
   explanation: 這是 HTTPS 背後的安全協定，防止數據在網路上傳輸時被竊聽或篡改。
   tags:
@@ -197,10 +197,10 @@ questions:
   text: 全同態加密 (FHE) 目前面臨的主要挑戰是？
   type: multiple_choice
   options:
-  - 安全性不足
-  - 計算成本極高，速度極慢
-  - 無法加密數字
-  - 只能在本地運行
+  - 加密演算法的安全性不足
+  - 計算成本極高，運算速度極慢 (High Computational Overhead)
+  - 無法對數字類型的數據進行加密
+  - 只能在本地端運行，無法支援雲端環境
   correct_index: 1
   explanation: 雖然理論完美，但 FHE 的運算速度比明文慢數千倍甚至百萬倍，限制了其在大規模 AI 訓練中的應用。
   tags:
@@ -213,10 +213,10 @@ questions:
   text: 「目的限制 (Purpose Limitation)」原則要求？
   type: multiple_choice
   options:
-  - 數據可以用於任何目的
-  - 數據僅能用於蒐集時告知的特定目的，不得隨意二次利用
-  - 數據必須永久保存
-  - 數據必須公開
+  - 蒐集到的數據可以用於任何商業目的
+  - 數據僅能用於蒐集時告知的特定目的，不得隨意進行二次利用 (Secondary Use)
+  - 數據必須被永久保存以備查核
+  - 所有蒐集到的數據必須對外公開
   correct_index: 1
   explanation: 你為了「送貨」蒐集的地址，不能拿去「寄廣告信」，除非重新取得用戶同意。
   tags:
@@ -229,10 +229,10 @@ questions:
   text: 資料一致性 (Consistency) 檢查是為了？
   type: multiple_choice
   options:
-  - 確保數據格式正確
-  - 確保不同系統或資料表中的數據不矛盾
-  - 確保數據沒有缺失
-  - 確保數據是唯一的
+  - 確保數據的儲存格式正確無誤
+  - 確保不同系統或資料表中的數據邏輯一致，沒有矛盾 (No Contradictions)
+  - 確保數據中沒有任何缺失值
+  - 確保每筆數據在資料庫中都是唯一的
   correct_index: 1
   explanation: 避免出現「A 系統說庫存剩 10 個，B 系統說剩 0 個」的情況。
   tags:
@@ -245,10 +245,10 @@ questions:
   text: 差分隱私透過什麼機制來保護隱私？
   type: multiple_choice
   options:
-  - 刪除數據
-  - 在查詢結果中加入隨機雜訊 (如拉普拉斯雜訊)
-  - 加密數據
-  - 隱藏 IP
+  - 永久刪除所有原始數據
+  - 在查詢結果中加入隨機雜訊 (如拉普拉斯雜訊)，以模糊化個體貢獻
+  - 使用高強度的加密演算法加密數據
+  - 隱藏使用者的 IP 位址
   correct_index: 1
   explanation: 加入雜訊讓查詢結果變得模糊，使得攻擊者無法區分結果的變化是由於某個特定個體的存在還是隨機波動。
   tags:
@@ -261,10 +261,10 @@ questions:
   text: 資料治理委員會通常由哪些成員組成？
   type: multiple_choice
   options:
-  - 只有 IT 人員
-  - 只有法務人員
-  - 跨部門成員，包括法務、資安、IT 與業務主管
-  - 外部顧問
+  - 僅由 IT 部門的技術人員組成
+  - 僅由法務部門的律師組成
+  - 跨部門成員，包括法務、資安、IT 與業務主管 (Cross-functional Team)
+  - 僅由外部聘請的顧問組成
   correct_index: 2
   explanation: 資料治理涉及法律、技術與業務等多個層面，必須跨部門協作才能制定有效的政策。
   tags:
@@ -277,10 +277,10 @@ questions:
   text: 「被遺忘權 (Right to be Forgotten)」賦予使用者什麼權利？
   type: multiple_choice
   options:
-  - 要求企業備份其數據
-  - 要求企業刪除其個人數據
-  - 要求企業公開其數據
-  - 要求企業修改其數據
+  - 要求企業完整備份其所有個人數據
+  - 要求企業刪除其不再需要的個人數據 (Right to Erasure)
+  - 要求企業公開其所有個人數據
+  - 要求企業修改其錯誤的個人數據
   correct_index: 1
   explanation: 當數據不再需要或使用者撤回同意時，使用者有權要求企業徹底刪除其個資。
   tags:
@@ -293,10 +293,10 @@ questions:
   text: 部分同態加密 (PHE) 通常支持哪種運算？
   type: multiple_choice
   options:
-  - 任意運算
-  - 單一類型的運算 (僅加法或僅乘法)
-  - 邏輯運算
-  - 比較運算
+  - 支援任意類型的數學運算
+  - 僅支援單一類型的運算 (如僅加法或僅乘法)
+  - 僅支援邏輯運算 (如 AND, OR)
+  - 僅支援數值比較運算
   correct_index: 1
   explanation: 例如 Paillier 算法支持加法同態，雖然功能有限，但效率比全同態加密高很多，適合特定場景（如電子投票計票）。
   tags:
@@ -309,10 +309,10 @@ questions:
   text: 資料及時性 (Timeliness) 是指？
   type: multiple_choice
   options:
-  - 數據量很大
-  - 數據是否即時更新，反映當前狀態
-  - 數據格式正確
-  - 數據沒有錯誤
+  - 數據的儲存量非常大
+  - 數據是否即時更新，能夠反映當前最新的狀態 (Up-to-date)
+  - 數據的格式是否正確無誤
+  - 數據中是否完全沒有錯誤
   correct_index: 1
   explanation: 過期的數據（如昨天的股價）對於即時決策（如高頻交易）是沒有價值的。
   tags:
@@ -325,10 +325,10 @@ questions:
   text: t-接近性 (t-closeness) 要求？
   type: multiple_choice
   options:
-  - 每個組內有 t 個記錄
+  - 每個匿名組內必須包含至少 t 個記錄
   - 每個等價類中敏感屬性的分佈與整體數據集的分佈之間的距離小於閾值 t
-  - 數據加密 t 次
-  - 數據保留 t 年
+  - 對數據進行 t 次加密運算
+  - 數據必須保留至少 t 年
   correct_index: 1
   explanation: 這是比 l-多樣性更嚴格的標準，防止攻擊者透過分佈差異（如某組人患病率高達 90%，遠高於平均）推斷隱私。
   tags:
@@ -341,9 +341,9 @@ questions:
   text: AI 訓練資料的合法取得依據不包括？
   type: multiple_choice
   options:
-  - 使用者明確同意
-  - 契約履行必要
-  - 網路上隨意抓取且未經授權的個資
+  - 取得使用者的明確同意 (Consent)
+  - 履行契約所必要 (Contractual Necessity)
+  - 網路上隨意抓取且未經授權的個人資料
   - 符合公共利益且經去識別化的學術研究
   correct_index: 2
   explanation: 網路公開不代表可以隨意使用。未經同意抓取個資用於商業模型訓練可能違反個資法。
@@ -357,10 +357,10 @@ questions:
   text: 敏感資料偵測工具的主要功能是？
   type: multiple_choice
   options:
-  - 加密數據
-  - 自動掃描並標記 PII (個人識別資訊)
-  - 刪除數據
-  - 壓縮數據
+  - 對所有數據進行加密處理
+  - 自動掃描並標記 PII (個人識別資訊)，如身分證號、信用卡號
+  - 永久刪除所有敏感數據
+  - 使用壓縮演算法壓縮數據
   correct_index: 1
   explanation: 防止敏感數據（如身分證號、信用卡號）意外洩漏或未經加密存儲。
   tags:
@@ -373,10 +373,10 @@ questions:
   text: 差分隱私中的「相鄰資料集」是指？
   type: multiple_choice
   options:
-  - 兩個完全不同的資料集
-  - 兩個資料集之間只差一筆資料
-  - 兩個大小相同的資料集
-  - 兩個來源相同的資料集
+  - 兩個完全不相關的資料集
+  - 兩個資料集之間只差一筆資料 (One Record Difference)
+  - 兩個大小完全相同的資料集
+  - 兩個來源完全相同的資料集
   correct_index: 1
   explanation: 差分隱私的定義基礎：即使你的資料被加入（或移除），查詢結果的機率分佈幾乎不變。
   tags:
@@ -389,10 +389,10 @@ questions:
   text: 資料血緣 (Data Lineage) 在合規中的作用是？
   type: multiple_choice
   options:
-  - 加速查詢
-  - 追蹤數據來源與流向，確保可追溯性與合規性
-  - 節省儲存空間
-  - 提高數據品質
+  - 加速資料庫的查詢速度
+  - 追蹤數據來源與流向，確保可追溯性與合規性 (Traceability)
+  - 節省資料庫的儲存空間
+  - 自動提高數據的品質
   correct_index: 1
   explanation: 當監管機構查核時，能證明數據是從合法來源取得，並經過了正確的處理流程。
   tags:
@@ -405,10 +405,10 @@ questions:
   text: 資料清洗 (Data Cleansing) 通常不包括？
   type: multiple_choice
   options:
-  - 修正錯誤數據
-  - 填補缺失值
-  - 刪除重複記錄
-  - 隨意修改數據以符合預期
+  - 修正錯誤的數據格式或數值
+  - 填補缺失值 (Missing Values)
+  - 刪除重複的記錄 (Duplicate Records)
+  - 隨意修改數據以符合預期結果
   correct_index: 3
   explanation: 清洗是為了還原真實，而不是造假。隨意修改會破壞數據的真實性。
   tags:
@@ -421,10 +421,10 @@ questions:
   text: 安全多方計算 (MPC) 允許？
   type: multiple_choice
   options:
-  - 多個機構聯合分析數據，而不洩露各自的原始數據
-  - 數據公開共享
-  - 數據集中存儲
-  - 不進行計算
+  - 多個機構聯合分析數據，而不洩露各自的原始數據 (Privacy-Preserving Computation)
+  - 將所有數據公開共享給所有人
+  - 將所有數據集中存儲在單一伺服器
+  - 停止進行任何數據計算
   correct_index: 0
   explanation: MPC 讓多方（如多家銀行）能共同計算一個結果（如聯防詐欺黑名單），但誰也看不到對方的具體客戶資料。
   tags:
@@ -437,10 +437,10 @@ questions:
   text: AES-256 是一種？
   type: multiple_choice
   options:
-  - 非對稱加密演算法
-  - 對稱加密演算法，常用於靜態數據加密
-  - 雜湊演算法
-  - 壓縮演算法
+  - 非對稱加密演算法 (Asymmetric Encryption)
+  - 對稱加密演算法 (Symmetric Encryption)，常用於靜態數據加密
+  - 雜湊演算法 (Hashing Algorithm)
+  - 數據壓縮演算法 (Compression Algorithm)
   correct_index: 1
   explanation: AES 是目前最通用的高強度加密標準，廣泛用於硬碟加密、資料庫加密。
   tags:
@@ -453,10 +453,10 @@ questions:
   text: 首席 AI 官 (CAIO) 的職責通常包括？
   type: multiple_choice
   options:
-  - 維修電腦
-  - 監督 AI 策略、模型合規性與數據品質
-  - 銷售產品
-  - 撰寫前端程式碼
+  - 負責維修公司的電腦設備
+  - 監督 AI 策略、模型合規性與數據品質 (AI Strategy and Governance)
+  - 負責銷售公司的 AI 產品
+  - 撰寫前端網頁程式碼
   correct_index: 1
   explanation: CAIO 是企業 AI 轉型的掌舵者，確保 AI 落地過程中既能創造價值，又能守住風險底線。
   tags:
@@ -469,10 +469,10 @@ questions:
   text: 去識別化中的「準標識符 (Quasi-identifier)」是指？
   type: multiple_choice
   options:
-  - 直接能識別個人的欄位 (如身分證號)
+  - 直接能識別個人的欄位 (如身分證號、姓名)
   - 本身不能直接識別，但結合外部資訊可能識別出個人的欄位 (如性別、生日、郵遞區號)
-  - 無關緊要的欄位
-  - 加密後的欄位
+  - 與個人隱私無關緊要的欄位
+  - 經過加密處理後的欄位
   correct_index: 1
   explanation: 雖然「生日」本身不能鎖定你，但「生日+性別+郵遞區號」的組合可能在一個小區域內是唯一的。
   tags:
@@ -485,10 +485,10 @@ questions:
   text: 「保存期限限制 (Storage Limitation)」原則建議？
   type: multiple_choice
   options:
-  - 數據應永久保存
-  - 設定保留期限，逾期應刪除或匿名化
-  - 數據應每天刪除
-  - 數據應備份無限次
+  - 數據應被永久保存，不可刪除
+  - 設定保留期限，逾期應刪除或進行匿名化處理 (Anonymization)
+  - 數據應在蒐集後的 24 小時內刪除
+  - 數據應備份無限次以確保安全
   correct_index: 1
   explanation: 數據不是資產就是負債。過期數據不僅沒用，還增加被駭客竊取的風險與合規成本。
   tags:
@@ -501,10 +501,10 @@ questions:
   text: 差分隱私主要應用於？
   type: multiple_choice
   options:
-  - 數據加密
-  - 統計查詢結果的發布 (如人口普查、使用習慣統計)
-  - 身份驗證
-  - 存取控制
+  - 對單一用戶的數據進行加密
+  - 統計查詢結果的發布 (如人口普查、使用習慣統計)，保護個體隱私
+  - 使用者的身份驗證 (Authentication)
+  - 資料庫的存取控制 (Access Control)
   correct_index: 1
   explanation: 它解決了「如何發布總體統計數據，又不洩露個體隱私」的難題。
   tags:
@@ -517,10 +517,10 @@ questions:
   text: 資料準確性 (Accuracy) 是指？
   type: multiple_choice
   options:
-  - 數據格式正確
-  - 數據真實反映了現實世界的情況
-  - 數據沒有缺失
-  - 數據是唯一的
+  - 數據的格式完全正確
+  - 數據真實反映了現實世界的情況 (Reality)
+  - 數據中沒有任何缺失值
+  - 數據在資料庫中是唯一的
   correct_index: 1
   explanation: 例如客戶的年齡是 30 歲，資料庫裡存的也是 30 歲，這就是準確。如果存成 300 歲就不準確（也不合理）。
   tags:
@@ -535,8 +535,8 @@ questions:
   options:
   - 雜湊是可逆的，加密是不可逆的
   - 雜湊是不可逆的 (單向)，加密是可逆的 (雙向，可解密)
-  - 兩者一樣
-  - 雜湊比較慢
+  - 兩者的功能與原理完全相同
+  - 雜湊的運算速度比加密慢很多
   correct_index: 1
   explanation: 雜湊（如 SHA-256）通常用於驗證數據完整性或儲存密碼（不存明文）；加密則是為了傳輸或儲存後能再還原。
   tags:
@@ -549,10 +549,10 @@ questions:
   text: 模型監控 (Model Monitoring) 的重點之一是？
   type: multiple_choice
   options:
-  - 監控 CPU 溫度
-  - 監控模型飄移 (Model Drift) 與公平性
-  - 監控網路速度
-  - 監控硬碟空間
+  - 監控伺服器的 CPU 溫度
+  - 監控模型飄移 (Model Drift) 與公平性 (Fairness)
+  - 監控網路的傳輸速度
+  - 監控硬碟的剩餘空間
   correct_index: 1
   explanation: 確保模型上線後表現穩定，且沒有因為數據變化而產生對特定群體的歧視。
   tags:
@@ -565,10 +565,10 @@ questions:
   text: 聯邦學習中的「聚合 (Aggregation)」通常發生在？
   type: multiple_choice
   options:
-  - 客戶端
-  - 中央伺服器
-  - 區塊鏈
-  - 第三方
+  - 在每個用戶的客戶端設備上
+  - 在中央伺服器 (Central Server) 上進行參數平均
+  - 在區塊鏈網路上
+  - 由第三方審計機構進行
   correct_index: 1
   explanation: 中央伺服器收集各端傳來的參數更新（梯度），計算平均值後更新全局模型，再發回給各端。
   tags:
@@ -581,10 +581,10 @@ questions:
   text: 根據 GDPR，若發生資料外洩，企業通常需要在多久內通報？
   type: multiple_choice
   options:
-  - 72 小時內
-  - 1 個月內
-  - 不需通報
-  - 1 年內
+  - 發現外洩後的 72 小時內
+  - 發現外洩後的 1 個月內
+  - 完全不需通報
+  - 發現外洩後的 1 年內
   correct_index: 0
   explanation: 黃金 72 小時原則。快速通報能讓監管機構與受害者及時採取應對措施，降低損害。
   tags:
@@ -597,10 +597,10 @@ questions:
   text: 資料完整性 (Completeness) 的常見問題是？
   type: multiple_choice
   options:
-  - 數據重複
-  - 數據缺失 (Null Values)
-  - 數據格式錯誤
-  - 數據過期
+  - 數據中存在重複的記錄
+  - 數據中存在缺失值 (Null Values)，即欄位空白
+  - 數據的格式不符合規範
+  - 數據已經過期
   correct_index: 1
   explanation: 欄位空白或缺漏會影響分析結果的代表性。
   tags:
@@ -613,10 +613,10 @@ questions:
   text: 同質性攻擊 (Homogeneity Attack) 是針對哪種隱私技術的攻擊？
   type: multiple_choice
   options:
-  - 差分隱私
-  - k-匿名
-  - 同態加密
-  - 聯邦學習
+  - 差分隱私 (Differential Privacy)
+  - k-匿名 (k-anonymity)
+  - 同態加密 (Homomorphic Encryption)
+  - 聯邦學習 (Federated Learning)
   correct_index: 1
   explanation: 當一個 k-匿名組內的所有人敏感屬性都相同時，k-匿名就失效了。
   tags:
@@ -629,10 +629,10 @@ questions:
   text: 「合法性、正當性與透明性」原則要求企業？
   type: multiple_choice
   options:
-  - 隱瞞數據用途
-  - 必須告知使用者蒐集目的與使用範圍
-  - 隨意使用數據
-  - 不需取得同意
+  - 盡可能隱瞞數據的真實用途
+  - 必須告知使用者蒐集目的與使用範圍，並保持透明 (Transparency)
+  - 隨意使用數據進行任何分析
+  - 不需取得使用者的同意
   correct_index: 1
   explanation: 誠實是上策。使用者有權知道自己的資料被拿去做什麼。
   tags:
@@ -645,10 +645,10 @@ questions:
   text: 情境：你是一家醫院的資料科學家，想與另一家醫院合作訓練疾病預測模型，但雙方都受限於法規不能交換病歷資料。你應該建議採用什麼技術？
   type: multiple_choice
   options:
-  - 差分隱私。
-  - 聯邦學習 (Federated Learning)。
-  - k-匿名。
-  - 放棄合作。
+  - 差分隱私 (Differential Privacy)
+  - 聯邦學習 (Federated Learning)，讓數據留在本地訓練
+  - k-匿名 (k-anonymity)
+  - 放棄合作計畫
   correct_index: 1
   explanation: 這是聯邦學習最經典的應用場景。資料不動模型動，雙方既能合作提升模型準確度，又能確保病歷不出自家大門。
   tags:
@@ -661,10 +661,10 @@ questions:
   text: 情境：公司決定發布一份匿名的用戶行為數據集供學術研究。你使用了 k-匿名技術，但發現某個分組裡的所有用戶都購買了同一種敏感商品。這存在什麼風險？應如何改進？
   type: multiple_choice
   options:
-  - 同質性攻擊風險；應進一步採用 l-多樣性 (l-diversity) 或 t-接近性 (t-closeness)。
-  - 背景知識攻擊；應刪除數據。
-  - 重識別風險；應增加 k 值。
-  - 沒有風險。
+  - 同質性攻擊風險 (Homogeneity Attack)；應進一步採用 l-多樣性 (l-diversity) 或 t-接近性 (t-closeness)
+  - 背景知識攻擊風險；應立即刪除數據
+  - 重識別風險；應增加 k 值
+  - 沒有任何風險，數據是安全的
   correct_index: 0
   explanation: k-匿名無法防止屬性洩漏。如果某個 k=3 的組裡三個人都買了「威而鋼」，那攻擊者只要知道目標在這一組，就知道他買了什麼。l-多樣性強制組內敏感屬性必須多樣化。
   tags:
@@ -677,10 +677,10 @@ questions:
   text: 情境：行銷部門要求你提供客戶名單進行精準行銷，但該名單當初蒐集時的使用條款僅註明「用於改善服務品質」。你應該如何處理？
   type: multiple_choice
   options:
-  - 直接提供。
-  - 拒絕提供，因為違反「目的限制 (Purpose Limitation)」原則。需重新取得用戶同意或進行去識別化處理（若法規允許）。
-  - 加密後提供。
-  - 匿名發布。
+  - 直接提供名單給行銷部門
+  - 拒絕提供，因為違反「目的限制 (Purpose Limitation)」原則。需重新取得用戶同意或進行去識別化處理
+  - 將名單加密後提供
+  - 將名單匿名發布到網路上
   correct_index: 1
   explanation: 目的不符是常見的合規地雷。當初說做 A，現在拿去做 B，必須重新獲得授權，否則就是違法。
   tags:
@@ -693,10 +693,10 @@ questions:
   text: 情境：你正在設計一個需要高隱私保護的統計查詢系統。為了防止差分攻擊，你決定引入差分隱私。當你將隱私預算 (epsilon) 設定得非常小時，會發生什麼事？
   type: multiple_choice
   options:
-  - 查詢結果非常精確，但隱私保護弱。
-  - 查詢結果充滿雜訊，可用性 (Utility) 大幅降低，但隱私保護極強。
-  - 系統崩潰。
-  - 計算速度變快。
+  - 查詢結果非常精確，但隱私保護較弱
+  - 查詢結果充滿雜訊，可用性 (Utility) 大幅降低，但隱私保護極強
+  - 系統崩潰無法運作
+  - 計算速度顯著變快
   correct_index: 1
   explanation: 隱私與可用性是蹺蹺板。epsilon 小意味著雜訊大，雖然保護了隱私，但統計結果可能歪到無法使用（例如統計人數是負的）。需要尋找平衡點。
   tags:
@@ -709,10 +709,10 @@ questions:
   text: 情境：公司計畫將核心業務數據上傳至公有雲進行 AI 分析，但資安長擔心雲端供應商會偷看數據。哪種技術能從根本上消除這個疑慮？
   type: multiple_choice
   options:
-  - 傳輸中加密 (TLS)。
-  - 靜態數據加密 (AES)。
-  - 全同態加密 (FHE)。
-  - 簽署保密協定 (NDA)。
+  - 傳輸中加密 (TLS/SSL)
+  - 靜態數據加密 (AES)
+  - 全同態加密 (FHE)，允許在密文上直接運算
+  - 簽署保密協定 (NDA)
   correct_index: 2
   explanation: 傳統加密在運算時必須解密（明文暴露在記憶體中）。全同態加密允許雲端直接對密文進行運算，雲端供應商從頭到尾都看不到明文，實現了「可用不可見」。
   tags:
@@ -724,10 +724,10 @@ questions:
   text: 情境：差分隱私 (Differential Privacy) 中的 Epsilon (隱私預算) 越小，代表？
   type: multiple_choice
   options:
-  - 隱私保護越弱
-  - 隱私保護越強，但數據可用性降低
+  - 隱私保護越弱，數據可用性越高
+  - 隱私保護越強，但數據可用性 (Utility) 降低
   - 數據越準確
-  - 沒影響
+  - 對隱私保護沒有影響
   correct_index: 1
   explanation: 小 Epsilon 意味著加入的雜訊越多，攻擊者越難分辨個體。
   tags:
@@ -740,10 +740,10 @@ questions:
   text: 情境：聯邦學習 (Federated Learning) 的最大優點是？
   type: multiple_choice
   options:
-  - 訓練速度快
-  - 數據不出本地，保護隱私
-  - 模型準確率最高
-  - 不需要網路
+  - 模型的訓練速度最快
+  - 數據不出本地 (Data stays local)，有效保護隱私
+  - 模型的準確率最高
+  - 不需要網路連線即可訓練
   correct_index: 1
   explanation: 僅交換模型參數而非原始數據，適合跨機構合作。
   tags:
@@ -756,10 +756,10 @@ questions:
   text: 情境：資料剖析 (Data Profiling) 通常在什麼時候進行？
   type: multiple_choice
   options:
-  - 資料清理之前
-  - 資料清理之後
-  - 模型訓練後
-  - 不需要做
+  - 在資料清理之前 (Before Data Cleaning)
+  - 在資料清理之後
+  - 在模型訓練完成後
+  - 不需要進行資料剖析
   correct_index: 0
   explanation: 先診斷資料健康狀況，才能對症下藥進行清理。
   tags:
@@ -772,10 +772,10 @@ questions:
   text: 情境：k-匿名 (k-anonymity) 的目標是？
   type: multiple_choice
   options:
-  - 加密數據
-  - 確保每筆記錄至少與 k-1 筆其他記錄無法區分
-  - 刪除數據
-  - 備份數據
+  - 對所有數據進行加密
+  - 確保每筆記錄至少與 k-1 筆其他記錄在準標識符上無法區分
+  - 永久刪除所有數據
+  - 定期備份所有數據
   correct_index: 1
   explanation: 透過泛化或隱藏準標識符，降低重識別風險。
   tags:
@@ -788,10 +788,10 @@ questions:
   text: 情境：GDPR 中的「資料最小化 (Data Minimization)」原則是指？
   type: multiple_choice
   options:
-  - 蒐集越多資料越好
-  - 僅蒐集完成目的所需的最少資料
-  - 不蒐集資料
-  - 隨便蒐集
+  - 盡可能蒐集越多資料越好
+  - 僅蒐集完成特定目的所需的最少資料 (Minimum Necessary Data)
+  - 完全不蒐集任何資料
+  - 隨意蒐集任何感興趣的資料
   correct_index: 1
   explanation: 減少不必要的個資蒐集，降低風險。
   tags:
@@ -804,10 +804,10 @@ questions:
   text: 情境：同態加密 (Homomorphic Encryption) 允許？
   type: multiple_choice
   options:
-  - 在加密數據上直接進行運算，解密後結果正確
-  - 破解密碼
-  - 壓縮數據
-  - 加速運算
+  - 在加密數據上直接進行運算，且解密後的結果與在明文上運算的結果一致
+  - 輕易地破解高強度的密碼
+  - 使用無損壓縮演算法壓縮數據
+  - 利用 GPU 加速數據運算
   correct_index: 0
   explanation: 實現了「數據可用不可見」，適合雲端外包計算。
   tags:
@@ -820,10 +820,10 @@ questions:
   text: 情境：模型卡片 (Model Card) 的作用是？
   type: multiple_choice
   options:
-  - 存錢
-  - 記錄模型的訓練數據、適用範圍、限制與偏誤測試結果
-  - 加速模型
-  - 加密模型
+  - 儲存公司的營運資金
+  - 作為模型的「說明書」，記錄訓練數據、適用範圍、限制與偏誤測試結果
+  - 使用專用硬體加速模型推論
+  - 對模型參數進行加密保護
   correct_index: 1
   explanation: 類似食品營養標示，增加模型的透明度。
   tags:
@@ -836,10 +836,10 @@ questions:
   text: 情境：資料品質中的「及時性 (Timeliness)」是指？
   type: multiple_choice
   options:
-  - 數據很準
-  - 數據即時更新，反映當前狀態
-  - 數據很多
-  - 數據不重複
+  - 數據的預測準確度非常高
+  - 數據是否即時更新，能夠反映當前最新的狀態 (Up-to-date)
+  - 數據的儲存量非常大
+  - 數據中沒有重複的記錄
   correct_index: 1
   explanation: 過時的數據可能導致錯誤的決策。
   tags:
@@ -852,10 +852,10 @@ questions:
   text: 情境：靜態數據加密 (Encryption at Rest) 保護的是？
   type: multiple_choice
   options:
-  - 網路傳輸中的數據
-  - 儲存在磁碟或資料庫中的數據
-  - 記憶體中的數據
-  - 螢幕上的數據
+  - 正在網路上傳輸的數據 (Data in Transit)
+  - 存儲在磁碟、資料庫或備份媒體中的靜態數據 (Data at Rest)
+  - 正在記憶體中進行運算的數據 (Data in Use)
+  - 顯示在螢幕上的數據 (Data on Screen)
   correct_index: 1
   explanation: 防止硬碟被竊或未授權存取。
   tags:
@@ -868,10 +868,10 @@ questions:
   text: 情境：l-多樣性 (l-diversity) 是為了改進 k-匿名的什麼缺點？
   type: multiple_choice
   options:
-  - 計算太慢
-  - 同質性攻擊 (敏感屬性值過於單一)
-  - 數據量太大
-  - 無法加密
+  - k-匿名演算法的計算速度太慢
+  - 容易受到同質性攻擊 (Homogeneity Attack)，即同一組內的敏感屬性值都相同
+  - 處理的數據量太大導致記憶體不足
+  - 無法對數據進行加密處理
   correct_index: 1
   explanation: 確保同一組內的敏感屬性具有足夠的多樣性。
   tags:
@@ -884,10 +884,10 @@ questions:
   text: 情境：資料目錄 (Data Catalog) 的主要功能是？
   type: multiple_choice
   options:
-  - 備份數據
-  - 幫助使用者發現和理解可用的數據資產
-  - 刪除數據
-  - 加密數據
+  - 定期備份所有重要數據
+  - 幫助使用者發現、理解和管理企業內部的數據資產
+  - 永久刪除不再需要的數據
+  - 對敏感數據進行加密保護
   correct_index: 1
   explanation: 解決「不知道有哪些數據」與「不知道數據在哪」的問題。
   tags:
@@ -900,10 +900,10 @@ questions:
   text: 情境：目的限制 (Purpose Limitation) 原則要求？
   type: multiple_choice
   options:
-  - 數據可以用於任何目的
-  - 數據僅能用於蒐集時告知的特定目的
-  - 數據不能使用
-  - 數據只能用於學術
+  - 蒐集到的數據可以用於任何商業目的
+  - 數據僅能用於蒐集時告知的特定目的，不得隨意挪作他用
+  - 數據不能被使用於任何分析
+  - 數據只能用於非營利的學術研究
   correct_index: 1
   explanation: 防止數據被濫用或挪作他用。
   tags:
@@ -916,10 +916,10 @@ questions:
   text: 情境：全同態加密 (FHE) 目前的主要挑戰是？
   type: multiple_choice
   options:
-  - 安全性不足
-  - 計算成本極高，速度慢
-  - 無法實作
-  - 只能做加法
+  - 加密演算法的安全性不足
+  - 計算成本極高，運算速度比明文運算慢數千倍以上
+  - 無法在現有的電腦上實作
+  - 只能支援簡單的加法運算
   correct_index: 1
   explanation: 比明文運算慢數千倍以上，限制了大規模應用。
   tags:
@@ -932,10 +932,10 @@ questions:
   text: 情境：資料清洗 (Data Cleansing) 的工作包括？
   type: multiple_choice
   options:
-  - 備份
-  - 修正錯誤、填補缺失、刪除重複
-  - 加密
-  - 壓縮
+  - 定期備份資料庫
+  - 修正錯誤數據、填補缺失值、刪除重複記錄
+  - 對敏感數據進行加密
+  - 使用壓縮演算法壓縮數據
   correct_index: 1
   explanation: 提升數據品質的關鍵步驟。
   tags:
@@ -948,10 +948,10 @@ questions:
   text: 情境：敏感資料偵測工具的作用是？
   type: multiple_choice
   options:
-  - 自動掃描並標記 PII (個人識別資訊)
-  - 刪除所有資料
-  - 公開資料
-  - 加密硬碟
+  - 自動掃描並標記 PII (個人識別資訊)，如身分證號
+  - 永久刪除所有敏感資料
+  - 將所有資料公開發布
+  - 對硬碟進行全碟加密
   correct_index: 0
   explanation: 自動化識別敏感個資，防止意外洩漏。
   tags:
@@ -964,10 +964,10 @@ questions:
   text: 情境：被遺忘權 (Right to be Forgotten) 賦予使用者什麼權利？
   type: multiple_choice
   options:
-  - 要求刪除其個人資料
-  - 要求備份資料
-  - 要求公開資料
-  - 要求修改資料
+  - 要求企業刪除其不再需要的個人資料 (Right to Erasure)
+  - 要求企業完整備份其所有個人資料
+  - 要求企業公開其所有個人資料
+  - 要求企業修改其錯誤的個人資料
   correct_index: 0
   explanation: 使用者有權要求移除不再需要的個資。
   tags:
@@ -980,10 +980,10 @@ questions:
   text: 情境：Apple 使用差分隱私技術來收集 Emoji 使用頻率，目的是？
   type: multiple_choice
   options:
-  - 監控用戶
-  - 在不洩露單一用戶行為的前提下，了解整體趨勢
-  - 節省流量
-  - 加速手機
+  - 監控個別用戶的詳細行為
+  - 在不洩露單一用戶行為的前提下，了解整體的 Emoji 使用趨勢
+  - 節省網路傳輸流量
+  - 加速手機的運算速度
   correct_index: 1
   explanation: 平衡了數據分析需求與用戶隱私保護。
   tags:
@@ -996,10 +996,10 @@ questions:
   text: 情境：資料唯一性 (Uniqueness) 檢查是為了防止？
   type: multiple_choice
   options:
-  - 缺失值
-  - 重複記錄 (Duplicates)
-  - 錯誤格式
-  - 過期數據
+  - 數據中的缺失值 (Missing Values)
+  - 數據中的重複記錄 (Duplicate Records)，避免統計偏差
+  - 數據的格式錯誤
+  - 數據過期無效
   correct_index: 1
   explanation: 重複數據會導致統計偏差。
   tags:
@@ -1012,10 +1012,10 @@ questions:
   text: 情境：資料管理員 (Data Steward) 的職責通常包括？
   type: multiple_choice
   options:
-  - 修理電腦
-  - 監督數據品質與合規性
-  - 寫程式
-  - 銷售產品
+  - 負責修理公司的電腦硬體設備
+  - 監督數據品質、合規性與數據資產的日常管理
+  - 負責編寫應用程式碼
+  - 負責銷售公司的數據產品
   correct_index: 1
   explanation: 是連接 IT 與業務部門的橋樑，負責數據資產的日常管理。
   tags:
@@ -1028,10 +1028,10 @@ questions:
   text: 情境：傳輸中加密 (Encryption in Transit) 通常使用什麼協定？
   type: multiple_choice
   options:
-  - HTTP
-  - TLS/SSL (HTTPS)
-  - FTP
-  - Telnet
+  - HTTP (Hypertext Transfer Protocol)
+  - TLS/SSL (Transport Layer Security)，即 HTTPS
+  - FTP (File Transfer Protocol)
+  - Telnet 協定
   correct_index: 1
   explanation: 防止數據在網路傳輸過程中被竊聽。
   tags:

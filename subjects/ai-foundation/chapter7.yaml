@@ -5,10 +5,10 @@ questions:
   text: 多層感知機 (MLP) 又被稱為什麼？
   type: multiple_choice
   options:
-  - 全連接網路 (Fully Connected Network)
-  - 卷積神經網路 (CNN)
-  - 循環神經網路 (RNN)
-  - Transformer
+  - 全連接網路 (Fully Connected Network)，所有神經元都與下一層相連的基礎架構。
+  - 卷積神經網路 (CNN) (Convolutional Neural Network)，用於處理影像的深度學習架構。
+  - 循環神經網路 (RNN) (Recurrent Neural Network)，用於處理序列資料的架構。
+  - Transformer，用於自然語言處理的注意力機制架構。
   correct_index: 0
   explanation: MLP 是最基礎的神經網路，所有神經元都與下一層的所有神經元相連，故稱全連接網路。
   tags:
@@ -21,10 +21,10 @@ questions:
   text: 神經網路中「隱藏層 (Hidden Layers)」的主要功能是什麼？
   type: multiple_choice
   options:
-  - 提取特徵與進行非線性轉換
-  - 接收原始輸入
-  - 輸出最終結果
-  - 儲存資料
+  - 提取特徵與進行非線性轉換 (Extracting Features and Performing Non-Linear Transformations)
+  - 接收原始輸入 (Receiving Raw Input)，屬於輸入層的功能。
+  - 輸出最終結果 (Outputting Final Results)，屬於輸出層的功能。
+  - 儲存資料 (Storing Data)，用於資料持久化的功能。
   correct_index: 0
   explanation: 隱藏層負責從輸入中提取複雜的特徵，層數越多，能學到的特徵越抽象。
   tags:
@@ -37,10 +37,10 @@ questions:
   text: 若沒有啟動函數 (Activation Function)，神經網路會變成什麼？
   type: multiple_choice
   options:
-  - 隨機森林
-  - 線性模型 (Linear Model)
-  - 深度學習模型
-  - 決策樹
+  - 隨機森林 (Random Forest)，由多棵決策樹組成的集成模型。
+  - 線性模型 (Linear Model)，僅能進行線性變換的模型。
+  - 深度學習模型 (Deep Learning Model)，多層非線性轉換的複雜模型。
+  - 決策樹 (Decision Tree)，基於樹狀結構的分類模型。
   correct_index: 1
   explanation: 沒有非線性的啟動函數，多層神經網路的運算僅是矩陣相乘，等同於單層的線性變換。
   tags:
@@ -53,10 +53,10 @@ questions:
   text: Sigmoid 啟動函數的主要缺點是什麼？
   type: multiple_choice
   options:
-  - 計算太快
-  - 無法微分
-  - 容易導致梯度消失 (Vanishing Gradient)
-  - 輸出範圍太大
+  - 計算太快 (Computation Too Fast)，執行速度過快導致不穩定。
+  - 無法微分 (Cannot Differentiate)，無法計算梯度進行反向傳播。
+  - 容易導致梯度消失 (Vanishing Gradient)，梯度趨近於零導致深層網路無法訓練。
+  - 輸出範圍太大 (Output Range Too Large)，數值超出合理範圍。
   correct_index: 2
   explanation: Sigmoid 在輸入值很大或很小時，梯度趨近於 0，導致反向傳播時誤差訊號消失，深層網路無法訓練。
   tags:
@@ -69,10 +69,10 @@ questions:
   text: 目前最常用的隱藏層啟動函數是哪一個？
   type: multiple_choice
   options:
-  - Linear
-  - ReLU (Rectified Linear Unit)
-  - Tanh
-  - Sigmoid
+  - Linear，線性函數無非線性轉換能力。
+  - ReLU (Rectified Linear Unit)，目前最常用的隱藏層啟動函數。
+  - Tanh，雙曲正切函數，輸出範圍為 -1 到 1。
+  - Sigmoid，S 型函數，輸出範圍為 0 到 1。
   correct_index: 1
   explanation: ReLU 計算簡單且有效解決了梯度消失問題，是目前深度學習的預設選擇。
   tags:
@@ -85,10 +85,10 @@ questions:
   text: Softmax 函數通常用於神經網路的哪一層？
   type: multiple_choice
   options:
-  - 隱藏層
-  - 輸出層 (Output Layer)
-  - 輸入層
-  - 卷積層
+  - 隱藏層 (Hidden Layers)，用於特徵提取的中間層。
+  - 輸出層 (Output Layer)，用於產生最終預測結果的層。
+  - 輸入層 (Input Layer)，接收原始資料的層。
+  - 卷積層 (Convolution Layer)，用於提取空間特徵的層。
   correct_index: 1
   explanation: Softmax 能將輸出數值轉換為機率分佈（總和為 1），常用於多類別分類的輸出層。
   tags:
@@ -101,10 +101,10 @@ questions:
   text: 反向傳播 (Backpropagation) 的主要目的是什麼？
   type: multiple_choice
   options:
-  - 計算預測結果
-  - 計算梯度並更新權重
-  - 壓縮資料
-  - 增加神經元數量
+  - 計算預測結果 (Computing Prediction Results)，屬於前向傳播的功能。
+  - 計算梯度並更新權重 (Computing Gradients and Updating Weights)
+  - 壓縮資料 (Compressing Data)，屬於降維技術的功能。
+  - 增加神經元數量 (Increasing Number of Neurons)，屬於網路架構調整。
   correct_index: 1
   explanation: 反向傳播利用連鎖律計算誤差對每個權重的梯度，讓優化器知道如何調整權重以降低誤差。
   tags:
@@ -117,10 +117,10 @@ questions:
   text: SGD (隨機梯度下降) 優化器的特點是？
   type: multiple_choice
   options:
-  - 不更新權重
-  - 每次使用全部資料更新，路徑平滑
-  - 每次使用一小批資料更新，路徑震盪但計算快
-  - 只能用於線性模型
+  - 不更新權重 (Not Updating Weights)，模型參數保持不變。
+  - 每次使用全部資料更新，路徑平滑 (Using All Data Each Update, Smooth Path)，屬於批次梯度下降。
+  - 每次使用一小批資料更新，路徑震盪但計算快 (Using Small Batch Each Update, Oscillating Path But Fast Computation)
+  - 只能用於線性模型 (Only for Linear Models)，僅適用於線性迴歸。
   correct_index: 2
   explanation: SGD 每次只看部分資料就調整方向，雖然路徑較曲折，但能在大數據下快速迭代。
   tags:
@@ -133,10 +133,10 @@ questions:
   text: 卷積神經網路 (CNN) 最擅長處理哪種資料？
   type: multiple_choice
   options:
-  - 文字
-  - 時間序列
-  - 影像 (Image)
-  - 表格數據
+  - 文字 (Text)，屬於序列資料，適合用 RNN 處理。
+  - 時間序列 (Time Series)，屬於序列資料，適合用 RNN 處理。
+  - 影像 (Image)，具有空間結構的資料，適合用 CNN 處理。
+  - 表格數據 (Tabular Data)，結構化資料，適合用傳統機器學習處理。
   correct_index: 2
   explanation: CNN 的卷積層能有效提取影像的空間特徵（如邊緣、紋理），是電腦視覺的首選架構。
   tags:
@@ -149,10 +149,10 @@ questions:
   text: CNN 中「卷積層 (Convolution Layer)」的功能是？
   type: multiple_choice
   options:
-  - 提取特徵 (Feature Extraction)
-  - 降低維度
-  - 生成影像
-  - 分類
+  - 提取特徵 (Feature Extraction)，利用濾鏡掃描提取視覺特徵。
+  - 降低維度 (Reducing Dimensionality)，屬於池化層的功能。
+  - 生成影像 (Generating Images)，屬於生成式模型的任務。
+  - 分類 (Classification)，屬於全連接層的功能。
   correct_index: 0
   explanation: 卷積層利用濾鏡 (Filter) 在影像上滑動掃描，提取出各種視覺特徵。
   tags:
@@ -165,10 +165,10 @@ questions:
   text: CNN 中「池化層 (Pooling Layer)」的主要功能是？
   type: multiple_choice
   options:
-  - 降低維度與抗雜訊 (Downsampling)
-  - 增加維度
-  - 反向傳播
-  - 提取特徵
+  - 降低維度與抗雜訊 (Downsampling) (Reducing Dimensionality and Noise Resistance)
+  - 增加維度 (Increasing Dimensionality)，擴充特徵的數量。
+  - 反向傳播 (Backpropagation)，計算梯度更新權重的過程。
+  - 提取特徵 (Feature Extraction)，屬於卷積層的功能。
   correct_index: 0
   explanation: 池化層（如 Max Pooling）透過保留區域最大值來縮小特徵圖，減少運算量並保留重要特徵。
   tags:
@@ -181,10 +181,10 @@ questions:
   text: 循環神經網路 (RNN) 最擅長處理哪種資料？
   type: multiple_choice
   options:
-  - 靜態影像
-  - 序列數據 (Sequential Data)
-  - 隨機雜訊
-  - 高維度表格
+  - 靜態影像 (Static Images)，適合用 CNN 處理。
+  - 序列數據 (Sequential Data)，具有時間順序的資料。
+  - 隨機雜訊 (Random Noise)，無意義的隨機資料。
+  - 高維度表格 (High-Dimensional Tables)，結構化資料。
   correct_index: 1
   explanation: RNN 具有記憶功能，能處理前後相關的序列數據，如文字、語音、股票走勢。
   tags:
@@ -197,10 +197,10 @@ questions:
   text: 傳統 RNN 面臨的最大挑戰是什麼？
   type: multiple_choice
   options:
-  - 梯度消失 (Vanishing Gradient) 導致無法記憶長序列
-  - 無法處理數值
-  - 過度擬合
-  - 計算量太小
+  - 梯度消失 (Vanishing Gradient) 導致無法記憶長序列 (Vanishing Gradient Prevents Memory of Long Sequences)
+  - 無法處理數值 (Cannot Process Numeric Values)，僅能處理類別資料。
+  - 過度擬合 (Overfitting)，模型過於複雜無法泛化。
+  - 計算量太小 (Insufficient Computation)，運算資源不足。
   correct_index: 0
   explanation: 在長序列中，RNN 的梯度會隨時間步長指數衰減，導致模型「忘記」前面的資訊。
   tags:
@@ -213,10 +213,10 @@ questions:
   text: LSTM (長短期記憶網路) 如何解決 RNN 的梯度消失問題？
   type: multiple_choice
   options:
-  - 使用更深的網路
-  - 刪除記憶功能
-  - 使用 ReLU
-  - 引入「閘門 (Gates)」機制控制資訊流
+  - 使用更深的網路 (Using Deeper Networks)，增加網路層數。
+  - 刪除記憶功能 (Removing Memory Function)，移除記憶機制。
+  - 使用 ReLU (Using ReLU)，更換啟動函數。
+  - 引入「閘門 (Gates)」機制控制資訊流 (Introducing Gate Mechanisms to Control Information Flow)
   correct_index: 3
   explanation: LSTM 透過遺忘門、輸入門和輸出門來精確控制記憶的保留與更新，建立了一條傳遞長期記憶的高速公路。
   tags:
@@ -229,10 +229,10 @@ questions:
   text: Transformer 架構的核心機制是什麼？
   type: multiple_choice
   options:
-  - 自注意力機制 (Self-Attention)
-  - 池化 (Pooling)
-  - 卷積 (Convolution)
-  - 遞歸 (Recurrence)
+  - 自注意力機制 (Self-Attention)，捕捉序列中字與字之間的關聯。
+  - 池化 (Pooling)，用於降低維度的技術。
+  - 卷積 (Convolution)，用於提取空間特徵的技術。
+  - 遞歸 (Recurrence)，用於處理序列資料的循環結構。
   correct_index: 0
   explanation: Transformer 拋棄了循環與卷積，完全依賴 Self-Attention 來捕捉序列中字與字的關聯。
   tags:
@@ -245,10 +245,10 @@ questions:
   text: 自注意力機制 (Self-Attention) 的運作常被比喻為？
   type: multiple_choice
   options:
-  - 蝴蝶效應
-  - 雞尾酒會效應 (Cocktail Party Effect)
-  - 瞎子摸象
-  - 溫水煮青蛙
+  - 蝴蝶效應 (Butterfly Effect)，小變化導致大影響的現象。
+  - 雞尾酒會效應 (Cocktail Party Effect)，在吵雜環境中聚焦特定聲音的能力。
+  - 瞎子摸象 (Blind Men Touching an Elephant)，缺乏全面理解僅看到局部。
+  - 溫水煮青蛙 (Boiling Frog)，逐漸適應危險的現象。
   correct_index: 1
   explanation: 就像在吵雜派對中聚焦於某人的聲音，Self-Attention 讓模型能聚焦於句子中相關的字詞。
   tags:
@@ -261,10 +261,10 @@ questions:
   text: 在 Self-Attention 的 Q, K, V 中，Q 代表什麼？
   type: multiple_choice
   options:
-  - Query (查詢)
-  - Quality (品質)
-  - Value (內容)
-  - Key (索引)
+  - Query (查詢) (Query)，用來查詢相關資訊的向量。
+  - Quality (品質) (Quality)，衡量品質的指標。
+  - Value (內容) (Value)，實際的內容資訊。
+  - Key (索引) (Key)，用來匹配查詢的索引。
   correct_index: 0
   explanation: Q 代表 Query，即「我想找什麼？」，用來與其他字的 Key 進行匹配。
   tags:
@@ -277,10 +277,10 @@ questions:
   text: 相較於 RNN，Transformer 最大的架構優勢是什麼？
   type: multiple_choice
   options:
-  - 可以平行計算 (Parallelization)，訓練速度快
-  - 參數量更少
-  - 不需要 GPU
-  - 只能處理短文本
+  - 可以平行計算 (Parallelization)，訓練速度快 (Can Parallelize Computation, Fast Training Speed)
+  - 參數量更少 (Fewer Parameters)，模型規模較小。
+  - 不需要 GPU (No GPU Required)，可以在 CPU 上運行。
+  - 只能處理短文本 (Can Only Process Short Text)，處理長度受限。
   correct_index: 0
   explanation: Transformer 可以一次讀入整篇文章進行矩陣運算，不像 RNN 必須按順序一個字一個字讀，因此能充分利用 GPU 平行運算。
   tags:
@@ -293,10 +293,10 @@ questions:
   text: BERT 模型屬於 Transformer 的哪一部分？
   type: multiple_choice
   options:
-  - Encoder-only
-  - RNN
-  - Encoder-Decoder
-  - Decoder-only
+  - Encoder-only，僅使用編碼器部分，擅長理解文本。
+  - RNN (Recurrent Neural Network)，循環神經網路架構。
+  - Encoder-Decoder，同時使用編碼器與解碼器，適合生成任務。
+  - Decoder-only，僅使用解碼器部分，適合生成任務。
   correct_index: 0
   explanation: BERT 使用 Transformer 的 Encoder 部分，擅長理解文本內容（如分類、情感分析）。
   tags:
@@ -309,10 +309,10 @@ questions:
   text: GPT 系列模型屬於 Transformer 的哪一部分？
   type: multiple_choice
   options:
-  - Decoder-only
-  - Encoder-only
-  - Encoder-Decoder
-  - CNN
+  - Decoder-only，僅使用解碼器部分，擅長生成文本。
+  - Encoder-only，僅使用編碼器部分，擅長理解文本。
+  - Encoder-Decoder，同時使用編碼器與解碼器，適合翻譯任務。
+  - CNN (Convolutional Neural Network)，用於處理影像的架構。
   correct_index: 0
   explanation: GPT (Generative Pre-trained Transformer) 使用 Decoder 部分，擅長生成文本（預測下一個字）。
   tags:
@@ -325,10 +325,10 @@ questions:
   text: ReLU 函數的公式是？
   type: multiple_choice
   options:
-  - f(x) = 1 / (1 + e^-x)
-  - f(x) = x^2
-  - f(x) = max(0, x)
-  - f(x) = sin(x)
+  - f(x) = 1 / (1 + e^-x)，Sigmoid 函數的公式。
+  - f(x) = x^2，平方函數的公式。
+  - f(x) = max(0, x)，ReLU 函數的公式。
+  - f(x) = sin(x)，正弦函數的公式。
   correct_index: 2
   explanation: ReLU 將負數轉為 0，正數保持不變。
   tags:
@@ -341,10 +341,10 @@ questions:
   text: ADAM 優化器結合了哪兩個概念？
   type: multiple_choice
   options:
-  - 卷積與池化
-  - 遞歸與注意力
-  - 動量 (Momentum) 與 自適應學習率
-  - 隨機與確定
+  - 卷積與池化 (Convolution and Pooling)，CNN 的核心技術。
+  - 遞歸與注意力 (Recurrence and Attention)，RNN 與 Transformer 的技術。
+  - 動量 (Momentum) 與 自適應學習率 (Momentum and Adaptive Learning Rate)
+  - 隨機與確定 (Random and Deterministic)，隨機性與確定性的概念。
   correct_index: 2
   explanation: ADAM 結合了 Momentum（慣性）和 RMSprop（自適應學習率），是目前最常用的優化器。
   tags:
@@ -357,10 +357,10 @@ questions:
   text: CNN 的「平移不變性 (Translation Invariance)」是指？
   type: multiple_choice
   options:
-  - 只能辨識固定大小的物體
-  - 圖片旋轉後無法辨識
-  - 圖片顏色改變後無法辨識
-  - 物體在圖片中移動位置後，仍能被辨識出來
+  - 只能辨識固定大小的物體 (Can Only Recognize Fixed-Size Objects)，物體大小必須一致。
+  - 圖片旋轉後無法辨識 (Cannot Recognize After Image Rotation)，對旋轉敏感。
+  - 圖片顏色改變後無法辨識 (Cannot Recognize After Color Change)，對顏色變化敏感。
+  - 物體在圖片中移動位置後，仍能被辨識出來 (Object Can Still Be Recognized After Moving Position in Image)
   correct_index: 3
   explanation: 透過卷積和池化，CNN 能夠辨識出物體，無論它出現在圖片的哪個位置。
   tags:
@@ -373,10 +373,10 @@ questions:
   text: LSTM 中的「遺忘門 (Forget Gate)」負責做什麼？
   type: multiple_choice
   options:
-  - 決定輸出什麼
-  - 決定要存入哪些新資訊
-  - 決定權重大小
-  - 決定要丟棄哪些舊資訊
+  - 決定輸出什麼 (Deciding What to Output)，屬於輸出門的功能。
+  - 決定要存入哪些新資訊 (Deciding What New Information to Store)，屬於輸入門的功能。
+  - 決定權重大小 (Deciding Weight Size)，調整模型參數。
+  - 決定要丟棄哪些舊資訊 (Deciding What Old Information to Discard)
   correct_index: 3
   explanation: 遺忘門透過 Sigmoid 函數決定哪些舊的記憶（如舊主詞）應該被遺忘。
   tags:
@@ -389,10 +389,10 @@ questions:
   text: 多頭注意力 (Multi-Head Attention) 的好處是？
   type: multiple_choice
   options:
-  - 讓模型能從多個不同角度（如文法、語意）關注資訊
-  - 減少運算量
-  - 不需要訓練
-  - 只能處理單一語言
+  - 讓模型能從多個不同角度（如文法、語意）關注資訊 (Allowing Model to Focus on Information from Multiple Perspectives Like Grammar and Semantics)
+  - 減少運算量 (Reducing Computation)，降低計算成本。
+  - 不需要訓練 (No Training Required)，可以直接使用。
+  - 只能處理單一語言 (Can Only Process Single Language)，語言適用範圍受限。
   correct_index: 0
   explanation: 多個 Head 就像多個濾鏡，能同時捕捉句子中不同層次的特徵與關聯。
   tags:

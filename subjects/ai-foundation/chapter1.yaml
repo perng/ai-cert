@@ -5,10 +5,10 @@ questions:
   text: 下列關於人工智慧 (AI) 的定義，何者最為準確？
   type: multiple_choice
   options:
-  - AI 必須具備自我意識才能稱為 AI。
-  - AI 只能處理邏輯運算，無法處理感知任務。
+  - AI 必須具備自我意識 (Self-Consciousness) 才能稱為 AI，這是判斷 AI 是否真正智慧的關鍵標準。
+  - AI 只能處理邏輯運算 (Logical Operations)，無法處理感知任務 (Perceptual Tasks) 或理解複雜情境。
   - AI 旨在創造能夠展現智慧行為的機器，增強人類解決問題的能力。
-  - AI 的目標僅僅是模仿人類的外觀。
+  - AI 的目標僅僅是模仿人類的外觀 (Human Appearance)，追求視覺上的相似性而非功能性。
   correct_index: 2
   explanation: AI 的目標是模擬人類認知功能（如學習、推理）並增強人類智慧，不一定需要自我意識或模仿外觀。
   tags:
@@ -21,10 +21,10 @@ questions:
   text: AlphaGo 圍棋程式屬於下列哪一種類型的 AI？
   type: multiple_choice
   options:
-  - 弱人工智慧 (ANI)
-  - 超人工智慧 (Super AI)
-  - 強人工智慧 (AGI)
-  - 符號式 AI
+  - 弱人工智慧 (ANI)，專精於單一任務的 AI 系統。
+  - 超人工智慧 (Super AI)，在所有領域都超越人類智慧的 AI。
+  - 強人工智慧 (AGI)，具備通用智慧的 AI 系統。
+  - 符號式 AI (Symbolic AI)，基於規則與符號推論的 AI 方法。
   correct_index: 0
   explanation: AlphaGo 專精於單一任務（圍棋），無法跨領域學習或具備自我意識，因此屬於弱 AI (ANI)。
   tags:
@@ -37,10 +37,10 @@ questions:
   text: 關於強人工智慧 (AGI)，下列描述何者正確？
   type: multiple_choice
   options:
-  - 只能處理單一領域的任務。
+  - 只能處理單一領域的任務 (Single-Domain Tasks)，缺乏跨領域遷移學習的能力。
   - 具備像人類一樣的通用智慧，能跨領域學習與推理。
-  - 目前已經廣泛應用於日常生活中（如 Siri）。
-  - 其智慧程度遠遠超越人類最聰明的水平。
+  - 目前已經廣泛應用於日常生活中（如 Siri），是現今最成熟的 AI 技術。
+  - 其智慧程度遠遠超越人類最聰明的水平 (Surpassing Human Intelligence)，在所有認知領域都優於人類。
   correct_index: 1
   explanation: 強人工智慧 (AGI) 具備人類般的通用智慧，能跨領域遷移學習。目前的 Siri 屬於弱 AI，超越人類智慧的是超 AI。
   tags:
@@ -53,10 +53,10 @@ questions:
   text: 當 AI 在科學創新、藝術創作等所有領域的智慧都遠超越人類時，稱之為？
   type: multiple_choice
   options:
-  - 弱人工智慧 (ANI)
-  - 符號式 AI
-  - 強人工智慧 (AGI)
-  - 超人工智慧 (Super AI)
+  - 弱人工智慧 (ANI)，專精於特定任務但無法跨領域的 AI。
+  - 符號式 AI (Symbolic AI)，基於明確規則進行邏輯推論的 AI。
+  - 強人工智慧 (AGI)，具備人類般通用智慧的 AI。
+  - 超人工智慧 (Super AI)，在所有領域都遠超越人類智慧的 AI。
   correct_index: 3
   explanation: 超人工智慧 (Super AI) 定義為在所有領域的智慧都遠遠超越最聰明的人類。
   tags:
@@ -69,10 +69,10 @@ questions:
   text: 下列何者是「符號式 AI (Symbolic AI)」的主要缺點？
   type: multiple_choice
   options:
-  - 需要大量的運算資源 (GPU)
-  - 無法處理邏輯推論問題
-  - 缺乏可解釋性 (Black Box)
-  - 知識擷取瓶頸與缺乏彈性
+  - 需要大量的運算資源 (GPU)，訓練成本高昂且耗時。
+  - 無法處理邏輯推論問題 (Logical Reasoning)，在需要明確推理的場景中表現不佳。
+  - 缺乏可解釋性 (Black Box)，難以理解模型的內部決策過程。
+  - 知識擷取瓶頸與缺乏彈性 (Knowledge Acquisition Bottleneck & Lack of Flexibility)
   correct_index: 3
   explanation: 符號式 AI 依賴人工規則，難以處理模糊問題（缺乏彈性），且將專家知識轉化為規則非常耗時（知識擷取瓶頸）。
   tags:
@@ -85,9 +85,9 @@ questions:
   text: 「專家系統 (Expert Systems)」屬於哪一種 AI 技術範疇？
   type: multiple_choice
   options:
-  - 統計式 AI (Statistical AI)
-  - 深度學習 (Deep Learning)
-  - 非監督式學習
+  - 統計式 AI (Statistical AI)，依賴數據驅動的學習方法。
+  - 深度學習 (Deep Learning)，使用多層神經網路進行特徵提取。
+  - 非監督式學習 (Unsupervised Learning)，從無標籤數據中發現模式。
   - 符號式 AI (Symbolic AI)
   correct_index: 3
   explanation: 專家系統是符號式 AI 的代表技術，由人類專家定義明確的邏輯規則進行推論。
@@ -101,10 +101,10 @@ questions:
   text: 統計式 AI (Statistical AI) 與符號式 AI 最大的不同在於？
   type: multiple_choice
   options:
-  - 統計式 AI 具有高度可解釋性。
-  - 統計式 AI 無法處理影像或語音。
-  - 統計式 AI 依賴人工手寫規則。
-  - 統計式 AI 從大量數據中自動找出規律。
+  - 統計式 AI 具有高度可解釋性 (High Interpretability)，決策過程清晰透明。
+  - 統計式 AI 無法處理影像或語音 (Images or Speech)，僅限於結構化數據。
+  - 統計式 AI 依賴人工手寫規則 (Manually Written Rules)，需要專家定義邏輯。
+  - 統計式 AI 從大量數據中自動找出規律 (Automatically Finding Patterns from Large Data)
   correct_index: 3
   explanation: 統計式 AI (機器學習) 的核心是不再由人類手寫規則，而是讓電腦從數據中利用統計方法找出規律。
   tags:
@@ -117,10 +117,10 @@ questions:
   text: 關於 AI、機器學習 (ML) 與深度學習 (DL) 的包含關係，下列何者正確？
   type: multiple_choice
   options:
-  - AI > ML > DL
-  - AI > DL > ML
-  - ML > AI > DL
-  - DL > ML > AI
+  - AI > ML > DL，人工智慧包含機器學習，機器學習包含深度學習。
+  - AI > DL > ML，人工智慧包含深度學習，深度學習包含機器學習。
+  - ML > AI > DL，機器學習包含人工智慧，人工智慧包含深度學習。
+  - DL > ML > AI，深度學習包含機器學習，機器學習包含人工智慧。
   correct_index: 0
   explanation: 深度學習是機器學習的子集，而機器學習是人工智慧的子集。關係為 AI > ML > DL。
   tags:
@@ -133,10 +133,10 @@ questions:
   text: 機器學習 (Machine Learning) 的核心邏輯可以用下列哪個公式表示？
   type: multiple_choice
   options:
-  - 輸入 + 運算 = 儲存
-  - 輸入 + 規則 = 輸出
-  - 輸入 + 輸出 = 規則 (模型)
-  - 規則 + 輸出 = 輸入
+  - 輸入 + 運算 = 儲存 (Input + Computation = Storage)，數據處理後儲存結果。
+  - 輸入 + 規則 = 輸出 (Input + Rules = Output)，傳統規則驅動的方法。
+  - 輸入 + 輸出 = 規則 (模型) (Input + Output = Rules/Model)，機器學習的核心邏輯。
+  - 規則 + 輸出 = 輸入 (Rules + Output = Input)，反向推導的過程。
   correct_index: 2
   explanation: 機器學習是「資料驅動」的，電腦從輸入數據和對應的輸出答案中，自己學習出規則（模型）。
   tags:
@@ -149,10 +149,10 @@ questions:
   text: 相較於深度學習，下列何者是「傳統機器學習」的特徵？
   type: multiple_choice
   options:
-  - 特徵工程通常由人工專家手動提取
-  - 模型通常是無法解釋的黑盒子
-  - 需要大量數據才能運作良好
-  - 主要依賴 GPU 進行加速運算
+  - 特徵工程通常由人工專家手動提取 (Manual Feature Engineering by Experts)
+  - 模型通常是無法解釋的黑盒子 (Black Box Models)，決策過程難以理解。
+  - 需要大量數據才能運作良好 (Requiring Large Datasets)，對數據量需求極高。
+  - 主要依賴 GPU 進行加速運算 (GPU-Accelerated Computing)，需要高效能硬體支援。
   correct_index: 0
   explanation: 傳統機器學習高度依賴人工特徵工程 (Feature Engineering)，而深度學習具備自動特徵提取能力。
   tags:
@@ -165,10 +165,10 @@ questions:
   text: 在「資料標註 (Data Labeling)」的工作中，人類必須教導 AI 什麼是正確答案，這屬於哪種協作模式？
   type: multiple_choice
   options:
-  - 人在迴圈上 (HOTL)
-  - 人在迴圈外 (HOOTL)
-  - 全自動化模式
-  - 人在迴圈中 (HITL)
+  - 人在迴圈上 (HOTL)，人類監督 AI 運作，僅在異常時介入。
+  - 人在迴圈外 (HOOTL)，完全自動化，人類不介入決策流程。
+  - 全自動化模式 (Fully Automated Mode)，無需任何人類介入或監督。
+  - 人在迴圈中 (HITL)，人類是決策流程中不可或缺的環節。
   correct_index: 3
   explanation: HITL (Human-in-the-loop) 指人類是系統運作不可或缺的一部分，如資料標註或醫療最終診斷。
   tags:
@@ -181,10 +181,10 @@ questions:
   text: 在「自駕車 (Level 3)」的應用中，人類駕駛必須隨時準備接手，這屬於哪種協作模式？
   type: multiple_choice
   options:
-  - 全自動無人監控
-  - 人在迴圈中 (HITL)
-  - 人在迴圈上 (HOTL)
-  - 人在迴圈外 (HOOTL)
+  - 全自動無人監控 (Fully Automated Without Monitoring)，完全由 AI 自主運作。
+  - 人在迴圈中 (HITL)，人類必須參與每個決策步驟。
+  - 人在迴圈上 (HOTL)，AI 獨立運作，人類僅在異常時介入監督。
+  - 人在迴圈外 (HOOTL)，完全自動化無需人類監控。
   correct_index: 2
   explanation: HOTL (Human-over-the-loop) 指 AI 可獨立完成大部分任務，人類扮演監督者，僅在異常時介入。Level 3
     自駕車符合此定義。
@@ -198,10 +198,10 @@ questions:
   text: 下列哪個場景最適合採用「人在迴圈外 (HOOTL)」模式？
   type: multiple_choice
   options:
-  - 法律判決
-  - 醫療診斷與手術
-  - 高頻交易 (High-Frequency Trading)
-  - 招聘面試
+  - 法律判決 (Legal Judgments)，需要人類法官進行最終裁決。
+  - 醫療診斷與手術 (Medical Diagnosis and Surgery)，需要醫生進行專業判斷。
+  - 高頻交易 (High-Frequency Trading)，需要在毫秒級內完成決策。
+  - 招聘面試 (Job Interviews)，需要人類評估候選人的綜合能力。
   correct_index: 2
   explanation: 高頻交易需要在毫秒級內做出決策，人類無法即時反應，因此適合全自動化的 HOOTL 模式。
   tags:
@@ -214,10 +214,10 @@ questions:
   text: 人工智慧 (AI) 這個術語是在哪一場會議中正式誕生的？
   type: multiple_choice
   options:
-  - 1997 深藍電腦對弈
-  - 1950 圖靈測試
-  - 1956 達特茅斯會議 (Dartmouth Conference)
-  - 2012 ImageNet 競賽
+  - 1997 深藍電腦對弈 (1997 Deep Blue Chess Match)，IBM 電腦擊敗棋王的重要事件。
+  - 1950 圖靈測試 (1950 Turing Test)，艾倫·圖靈提出的智慧測試方法。
+  - 1956 達特茅斯會議 (Dartmouth Conference)，正式確立人工智慧學科的歷史會議。
+  - 2012 ImageNet 競賽 (2012 ImageNet Competition)，深度學習在影像辨識的突破。
   correct_index: 2
   explanation: 1956 年的達特茅斯會議 (Dartmouth Conference) 被公認為 AI 的誕生地，正式確立了人工智慧這個學科。
   tags:
@@ -230,10 +230,10 @@ questions:
   text: 圖靈測試 (Turing Test) 的主要目的是什麼？
   type: multiple_choice
   options:
-  - 測試機器能否辨識圖像
-  - 測試機器是否具備人類智慧（能否騙過人類評審）
-  - 測試電腦的運算速度
-  - 測試機器能否下贏圍棋
+  - 測試機器能否辨識圖像 (Testing Image Recognition)，評估視覺處理能力。
+  - 測試機器是否具備人類智慧（能否騙過人類評審）(Testing if Machine Can Fool Human Judges)
+  - 測試電腦的運算速度 (Testing Computational Speed)，評估硬體效能。
+  - 測試機器能否下贏圍棋 (Testing Go Playing Ability)，評估策略遊戲能力。
   correct_index: 1
   explanation: 圖靈測試由艾倫·圖靈提出，旨在測試機器是否能展現出與人類無異的智慧行為，若人類評審無法區分機器與真人，則通過測試。
   tags:
@@ -246,10 +246,10 @@ questions:
   text: 2012 年哪一個模型的出現標誌著深度學習 (Deep Learning) 的爆發？
   type: multiple_choice
   options:
-  - ChatGPT
-  - Deep Blue
-  - AlexNet
-  - AlphaGo
+  - ChatGPT，OpenAI 開發的大型語言模型，擅長對話與文本生成。
+  - Deep Blue，IBM 開發的西洋棋 AI，1997 年擊敗世界冠軍。
+  - AlexNet，2012 年 ImageNet 競賽冠軍，開啟深度學習時代。
+  - AlphaGo，DeepMind 開發的圍棋 AI，2016 年擊敗世界冠軍。
   correct_index: 2
   explanation: 2012 年 AlexNet 在 ImageNet 競賽中大幅降低錯誤率，證明了深度學習在影像辨識的強大能力，開啟了深度學習的爆發期。
   tags:
@@ -262,10 +262,10 @@ questions:
   text: 下列哪一項不是 AI 的主要目標？
   type: multiple_choice
   options:
-  - 完全取代人類所有工作
-  - 模擬人類認知功能
-  - 解決複雜問題
-  - 增強人類智慧
+  - 完全取代人類所有工作 (Replacing All Human Jobs)，消除人類在職場的角色。
+  - 模擬人類認知功能 (Simulating Human Cognitive Functions)，如學習、推理、感知等。
+  - 解決複雜問題 (Solving Complex Problems)，處理超出人類能力的計算任務。
+  - 增強人類智慧 (Enhancing Human Intelligence)，協助人類做出更好的決策。
   correct_index: 0
   explanation: AI 的目標是增強人類智慧與解決問題，而非完全取代人類，特別是在涉及情感、道德與創造力的領域。
   tags:
@@ -278,10 +278,10 @@ questions:
   text: 下列關於弱人工智慧 (ANI) 的敘述，何者錯誤？
   type: multiple_choice
   options:
-  - 它是目前唯一實現的 AI 類型
-  - Siri 和 Google Assistant 都是弱 AI
-  - 它專精於特定任務
-  - 它具備自我意識
+  - 它是目前唯一實現的 AI 類型 (The Only Currently Implemented AI Type)，是現今唯一存在的 AI。
+  - Siri 和 Google Assistant 都是弱 AI (Siri and Google Assistant are ANI)，屬於專精型 AI 系統。
+  - 它專精於特定任務 (Specialized in Specific Tasks)，在單一領域表現優異。
+  - 它具備自我意識 (Self-Awareness)，能夠認知自身的存在與思考。
   correct_index: 3
   explanation: 弱 AI (ANI) 不具備自我意識，這是強 AI (AGI) 的特徵。
   tags:
@@ -294,10 +294,10 @@ questions:
   text: 人臉辨識系統雖然能精準辨識身分，卻無法欣賞照片的美感，這說明了弱 AI 的什麼特性？
   type: multiple_choice
   options:
-  - 缺乏邏輯推理能力
-  - 缺乏通用智慧與情感理解
-  - 缺乏數據支持
-  - 缺乏運算能力
+  - 缺乏邏輯推理能力 (Lack of Logical Reasoning)，無法進行複雜的邏輯推導。
+  - 缺乏通用智慧與情感理解 (Lack of General Intelligence and Emotional Understanding)
+  - 缺乏數據支持 (Lack of Data Support)，訓練數據不足導致表現不佳。
+  - 缺乏運算能力 (Lack of Computational Power)，硬體效能不足以執行任務。
   correct_index: 1
   explanation: 弱 AI 缺乏通用智慧和情感理解能力，只能執行被設計好的特定任務（如辨識像素特徵）。
   tags:
@@ -310,10 +310,10 @@ questions:
   text: 強人工智慧 (AGI) 的關鍵特徵之一是什麼？
   type: multiple_choice
   options:
-  - 運算速度必須達到光速
-  - 只能處理影像數據
-  - 必須使用生物神經元
-  - 具備跨領域遷移學習的能力
+  - 運算速度必須達到光速 (Computational Speed Must Reach Light Speed)，需要極高的處理速度。
+  - 只能處理影像數據 (Only Processing Image Data)，僅限於視覺資訊處理。
+  - 必須使用生物神經元 (Must Use Biological Neurons)，需要真實的神經細胞。
+  - 具備跨領域遷移學習的能力 (Cross-Domain Transfer Learning Capability)
   correct_index: 3
   explanation: AGI 的核心特徵是具備像人類一樣的通用智慧，能夠將在一個領域學到的知識遷移應用到另一個未知的領域。
   tags:
@@ -326,10 +326,10 @@ questions:
   text: 超人工智慧 (Super AI) 的出現引發了哪方面的深刻討論？
   type: multiple_choice
   options:
-  - 網路頻寬不足
-  - 硬體散熱問題
-  - AI 安全與控制的倫理問題
-  - 數據儲存成本
+  - 網路頻寬不足 (Insufficient Network Bandwidth)，無法傳輸大量數據。
+  - 硬體散熱問題 (Hardware Cooling Issues)，運算產生的熱量難以有效散發。
+  - AI 安全與控制的倫理問題 (AI Safety and Control Ethical Issues)，如何確保 AI 目標與人類利益一致。
+  - 數據儲存成本 (Data Storage Costs)，儲存大量訓練數據的費用過高。
   correct_index: 2
   explanation: 當 AI 智慧超越人類時，如何確保其目標與人類利益一致（AI Alignment）以及如何控制它，是倫理與安全領域的重大議題。
   tags:
@@ -342,10 +342,10 @@ questions:
   text: 符號式 AI 又被稱為什麼？
   type: multiple_choice
   options:
-  - Generative AI
-  - Neural Networks
-  - GOFAI (Good Old-Fashioned AI)
-  - Deep Learning
+  - Generative AI，能夠生成新內容的 AI 技術。
+  - Neural Networks，模擬生物神經元運作的計算模型。
+  - GOFAI (Good Old-Fashioned AI)，傳統符號式 AI 的別稱。
+  - Deep Learning，使用多層神經網路的機器學習方法。
   correct_index: 2
   explanation: 符號式 AI 是早期的 AI 範式，常被稱為 GOFAI (Good Old-Fashioned AI)。
   tags:
@@ -358,10 +358,10 @@ questions:
   text: 邏輯程式設計 (Logic Programming) 是哪一種 AI 的代表技術？
   type: multiple_choice
   options:
-  - 符號式 AI
-  - 統計式 AI
-  - 演化式 AI
-  - 連接主義 AI
+  - 符號式 AI (Symbolic AI)，基於符號與規則進行邏輯推論。
+  - 統計式 AI (Statistical AI)，從數據中學習統計規律。
+  - 演化式 AI (Evolutionary AI)，使用遺傳演算法等演化計算方法。
+  - 連接主義 AI (Connectionist AI)，基於神經網路進行分散式處理。
   correct_index: 0
   explanation: 邏輯程式設計依賴明確的邏輯規則與符號推論，屬於符號式 AI。
   tags:
@@ -374,10 +374,10 @@ questions:
   text: 「知識擷取瓶頸 (Knowledge Acquisition Bottleneck)」指的是什麼困難？
   type: multiple_choice
   options:
-  - 電腦運算速度太慢無法處理知識
-  - 網路速度太慢無法下載知識
-  - 將人類專家的隱性知識轉化為明確規則耗時費力
-  - 硬碟容量不足以儲存知識
+  - 電腦運算速度太慢無法處理知識 (Insufficient Processing Speed)，硬體效能不足以執行知識處理。
+  - 網路速度太慢無法下載知識 (Slow Network Speed)，無法快速獲取外部知識資源。
+  - 將人類專家的隱性知識轉化為明確規則耗時費力 (Converting Tacit Knowledge to Explicit Rules is Time-Consuming)
+  - 硬碟容量不足以儲存知識 (Insufficient Storage Capacity)，無法容納大量知識資料。
   correct_index: 2
   explanation: 知識擷取瓶頸是指將人類專家腦中那些「只可意會不可言傳」的隱性知識，轉化為電腦能執行的 If-Then 規則是非常困難且耗時的。
   tags:
@@ -390,10 +390,10 @@ questions:
   text: 統計式 AI 能夠處理哪種類型的數據，這是符號式 AI 難以做到的？
   type: multiple_choice
   options:
-  - 非結構化數據（如影像、語音、自然語言）
-  - 數學公式
-  - 明確的邏輯規則
-  - 結構化資料庫
+  - 非結構化數據（如影像、語音、自然語言）(Unstructured Data: Images, Speech, Natural Language)
+  - 數學公式 (Mathematical Formulas)，需要精確的符號運算與邏輯推導。
+  - 明確的邏輯規則 (Explicit Logical Rules)，基於 If-Then 條件判斷的規則系統。
+  - 結構化資料庫 (Structured Databases)，具有固定格式與架構的表格數據。
   correct_index: 0
   explanation: 統計式 AI (機器學習) 擅長從模糊、複雜的非結構化數據中找出模式，而符號式 AI 難以定義規則來處理這些數據。
   tags:
@@ -406,10 +406,10 @@ questions:
   text: 「垃圾進，垃圾出 (Garbage In, Garbage Out)」主要描述統計式 AI 的什麼缺點？
   type: multiple_choice
   options:
-  - 缺乏彈性
-  - 可解釋性低
-  - 運算成本過高
-  - 高度依賴數據品質
+  - 缺乏彈性 (Lack of Flexibility)，難以適應新的問題情境或數據分佈變化。
+  - 可解釋性低 (Low Interpretability)，模型決策過程難以理解與解釋。
+  - 運算成本過高 (High Computational Cost)，訓練與推論需要大量計算資源。
+  - 高度依賴數據品質 (Highly Dependent on Data Quality)，訓練數據的品質直接影響模型表現。
   correct_index: 3
   explanation: 統計式 AI 的模型是從數據中學習而來的，如果訓練數據品質低劣或有錯誤，模型的表現也會很差。
   tags:
@@ -422,10 +422,10 @@ questions:
   text: 如果訓練數據包含偏見 (Bias)，統計式 AI 模型會如何？
   type: multiple_choice
   options:
-  - 拒絕學習
-  - 自動修正偏見
-  - 崩潰無法運作
-  - 學到並複製這些偏見
+  - 拒絕學習 (Refusing to Learn)，模型會停止訓練過程以避免學習偏見。
+  - 自動修正偏見 (Automatically Correcting Bias)，模型會識別並消除數據中的偏見。
+  - 崩潰無法運作 (System Crash)，模型會因為偏見而完全失效。
+  - 學到並複製這些偏見 (Learning and Replicating Bias)，模型會反映訓練數據中的統計偏見。
   correct_index: 3
   explanation: 機器學習模型會忠實地反映訓練數據中的統計規律，因此若數據有偏見，模型也會產生有偏見的結果。
   tags:
@@ -438,10 +438,10 @@ questions:
   text: 機器學習 (Machine Learning) 的定義特徵是什麼？
   type: multiple_choice
   options:
-  - 必須具備自我意識
-  - 不需明確編寫指令，讓電腦從數據中學習
-  - 完全不依賴數據
-  - 必須使用類神經網路
+  - 必須具備自我意識 (Self-Awareness)，能夠認知自身的存在與狀態。
+  - 不需明確編寫指令，讓電腦從數據中學習 (Learning from Data Without Explicit Instructions)
+  - 完全不依賴數據 (No Data Dependency)，僅透過邏輯推理即可運作。
+  - 必須使用類神經網路 (Neural Networks)，這是機器學習的唯一架構。
   correct_index: 1
   explanation: 機器學習的核心定義是讓電腦具備「從數據中學習」的能力，而不需要人類明確編寫每一條規則指令。
   tags:
@@ -454,9 +454,9 @@ questions:
   text: 深度學習 (Deep Learning) 是使用什麼架構來模擬人類大腦運作？
   type: multiple_choice
   options:
-  - 決策樹 (Decision Tree)
-  - 支援向量機 (SVM)
-  - 專家系統 (Expert Systems)
+  - 決策樹 (Decision Tree)，透過樹狀結構進行分類與決策。
+  - 支援向量機 (SVM)，使用超平面進行數據分類。
+  - 專家系統 (Expert Systems)，基於規則庫進行知識推論。
   - 多層類神經網路 (Deep Neural Networks)
   correct_index: 3
   explanation: 深度學習特指使用多層（深層）的類神經網路來進行學習的技術。
@@ -470,10 +470,10 @@ questions:
   text: 將「規則驅動 (Rule-Based)」比喻為廚師，那他是什麼樣的廚師？
   type: multiple_choice
   options:
-  - 完全不會做菜的廚師
-  - 只會照著食譜做菜的廚師
-  - 會看客人臉色調整口味的廚師
-  - 會自己發明新菜色的廚師
+  - 完全不會做菜的廚師，缺乏基本的烹飪知識與技能。
+  - 只會照著食譜做菜的廚師 (Following Recipes Strictly)，無法應對食譜外的情況。
+  - 會看客人臉色調整口味的廚師 (Adapting to Customer Preferences)，具備靈活應變能力。
+  - 會自己發明新菜色的廚師 (Creating New Dishes)，能夠創新與實驗。
   correct_index: 1
   explanation: 規則驅動系統嚴格遵循預定義的規則，就像廚師嚴格照著食譜做菜，食譜沒寫的就不會做。
   tags:
@@ -486,10 +486,10 @@ questions:
   text: 將「資料驅動 (Data-Driven)」比喻為學徒，他是如何學會做菜的？
   type: multiple_choice
   options:
-  - 看電視節目學習
-  - 請師傅手把手教學
-  - 背誦食譜
-  - 觀察師傅做菜一萬次，自己領悟訣竅
+  - 看電視節目學習 (Learning from TV Shows)，被動接收資訊但缺乏實作經驗。
+  - 請師傅手把手教學 (One-on-One Teaching)，直接獲得明確的指導與規則。
+  - 背誦食譜 (Memorizing Recipes)，死記硬背固定的步驟與配方。
+  - 觀察師傅做菜一萬次，自己領悟訣竅 (Observing and Learning Patterns Through Experience)
   correct_index: 3
   explanation: 資料驅動系統透過觀察大量的數據（師傅做菜），自己歸納出模式（領悟訣竅），而非死記規則。
   tags:
@@ -502,10 +502,10 @@ questions:
   text: 為什麼深度學習通常需要高階 GPU？
   type: multiple_choice
   options:
-  - 因為 GPU 比較便宜
-  - 因為 GPU 耗電量較低
-  - 因為深度學習涉及大量的矩陣運算，GPU 擅長平行處理
-  - 因為 CPU 無法執行數學運算
+  - 因為 GPU 比較便宜 (More Cost-Effective)，能夠降低整體運算成本。
+  - 因為 GPU 耗電量較低 (Lower Power Consumption)，更節能環保。
+  - 因為深度學習涉及大量的矩陣運算，GPU 擅長平行處理 (Parallel Processing of Matrix Operations)
+  - 因為 CPU 無法執行數學運算 (Cannot Perform Mathematical Operations)，必須使用 GPU。
   correct_index: 2
   explanation: 深度學習的神經網路訓練涉及海量的矩陣乘法運算，GPU 的平行運算架構比 CPU 更適合處理這類任務。
   tags:
@@ -518,10 +518,10 @@ questions:
   text: 傳統機器學習在小數據集上的表現通常如何？
   type: multiple_choice
   options:
-  - 需要將數據量擴增一萬倍才能運作
-  - 也能運作良好，有時甚至優於深度學習
-  - 完全無法運作
-  - 表現通常比深度學習差
+  - 需要將數據量擴增一萬倍才能運作 (Requiring 10,000x More Data)，對數據需求極高。
+  - 也能運作良好，有時甚至優於深度學習 (Performing Well, Sometimes Better Than Deep Learning)
+  - 完全無法運作 (Completely Non-Functional)，在小數據集上會失敗。
+  - 表現通常比深度學習差 (Generally Worse Performance)，準確率明顯較低。
   correct_index: 1
   explanation: 深度學習依賴海量數據，若數據量不足，傳統機器學習（如 SVM, Random Forest）往往能有更好或相當的表現。
   tags:
@@ -534,10 +534,10 @@ questions:
   text: 法律合約審查中，AI 標記風險條款，律師進行最終判斷，這是哪種協作模式？
   type: multiple_choice
   options:
-  - HOOTL (Human-out-of-the-loop)
-  - HITL (Human-in-the-loop)
-  - HOTL (Human-over-the-loop)
-  - AI 取代人類
+  - HOOTL (Human-out-of-the-loop)，完全自動化無需人類介入。
+  - HITL (Human-in-the-loop)，人類是決策流程中不可或缺的環節。
+  - HOTL (Human-over-the-loop)，人類監督 AI 運作，僅在異常時介入。
+  - AI 取代人類 (AI Replacing Humans)，完全由 AI 主導所有決策。
   correct_index: 1
   explanation: 律師必須介入進行最終判斷，AI 無法獨立完成合約審查的法律責任，因此屬於 HITL。
   tags:
@@ -550,10 +550,10 @@ questions:
   text: 智慧工廠中，工程師只在警報響起時才介入控制，這是哪種協作模式？
   type: multiple_choice
   options:
-  - HOOTL (Human-out-of-the-loop)
-  - 手動控制模式
-  - HOTL (Human-over-the-loop)
-  - HITL (Human-in-the-loop)
+  - HOOTL (Human-out-of-the-loop)，完全自動化無需人類監控。
+  - 手動控制模式 (Manual Control Mode)，完全由人類操作，AI 不參與。
+  - HOTL (Human-over-the-loop)，AI 獨立運作，人類僅在異常時介入監督。
+  - HITL (Human-in-the-loop)，人類必須參與每個決策步驟。
   correct_index: 2
   explanation: AI 獨立運作，人類僅在異常時介入監督，屬於 HOTL。
   tags:
@@ -566,10 +566,10 @@ questions:
   text: Netflix 的影片推薦系統屬於哪種協作模式？
   type: multiple_choice
   options:
-  - 隨機推薦模式
-  - HOOTL (Human-out-of-the-loop)
-  - HOTL (Human-over-the-loop)
-  - HITL (Human-in-the-loop)
+  - 隨機推薦模式 (Random Recommendation Mode)，不基於任何演算法或數據分析。
+  - HOOTL (Human-out-of-the-loop)，全自動運作，人類不介入推薦決策。
+  - HOTL (Human-over-the-loop)，AI 自動推薦，人類僅在異常時審核。
+  - HITL (Human-in-the-loop)，每個推薦都需要人類審核與批准。
   correct_index: 1
   explanation: 推薦系統全自動運作，人類不介入每一次的推薦決策，屬於 HOOTL。
   tags:
@@ -582,10 +582,10 @@ questions:
   text: HOOTL (Human-out-of-the-loop) 系統必須具備什麼機制以防止災難？
   type: multiple_choice
   options:
-  - 嚴格的安全機制 (Safety Guardrails)
-  - 人工審核機制
-  - 自我毀滅機制
-  - 隨機暫停機制
+  - 嚴格的安全機制 (Safety Guardrails)，內建防護措施以防止系統失控。
+  - 人工審核機制 (Human Review Process)，定期由人類檢查系統運作狀況。
+  - 自我毀滅機制 (Self-Destruction Mechanism)，在異常時自動關閉系統。
+  - 隨機暫停機制 (Random Pause Mechanism)，定期暫停運作以進行檢查。
   correct_index: 0
   explanation: 由於人類無法即時監控，HOOTL 系統必須內建嚴格的安全護欄 (Guardrails) 以防止失控（如股市熔斷機制）。
   tags:
@@ -598,10 +598,10 @@ questions:
   text: AI 發展經歷了兩次「寒冬」，主要原因不包括下列何者？
   type: multiple_choice
   options:
-  - 電力不足
-  - 演算法過度承諾但無法兌現
-  - 算力不足
-  - 資料缺乏
+  - 電力不足 (Insufficient Power Supply)，無法提供足夠的能源支援運算。
+  - 演算法過度承諾但無法兌現 (Overpromising Algorithms)，技術無法達到預期效果。
+  - 算力不足 (Insufficient Computing Power)，硬體無法支援複雜的 AI 運算。
+  - 資料缺乏 (Lack of Data)，訓練數據不足導致模型無法有效學習。
   correct_index: 0
   explanation: AI 寒冬的主因是當時的硬體算力不足、數據量不夠，以及大眾對 AI 的期望過高導致失望，而非電力問題。
   tags:
@@ -614,10 +614,10 @@ questions:
   text: 1997 年擊敗西洋棋世界冠軍的 AI 是？
   type: multiple_choice
   options:
-  - ChatGPT
-  - Deep Blue (深藍)
-  - Watson
-  - AlphaGo
+  - ChatGPT，OpenAI 開發的大型語言模型。
+  - Deep Blue (深藍)，IBM 開發的西洋棋 AI 系統。
+  - Watson，IBM 開發的問答系統，曾贏得 Jeopardy! 競賽。
+  - AlphaGo，DeepMind 開發的圍棋 AI 程式。
   correct_index: 1
   explanation: IBM 的 Deep Blue 在 1997 年擊敗了西洋棋棋王卡斯帕洛夫，是 AI 歷史上的重要里程碑。
   tags:
@@ -630,10 +630,10 @@ questions:
   text: 下列哪一個是「弱 AI (ANI)」的特徵？
   type: multiple_choice
   options:
-  - 能解決跨領域的通用問題
-  - 比人類更聰明
-  - 專注於解決特定領域的單一問題
-  - 具有自我意識
+  - 能解決跨領域的通用問題 (Solving Cross-Domain General Problems)，具備通用智慧。
+  - 比人類更聰明 (Smarter Than Humans)，在所有認知任務上都超越人類。
+  - 專注於解決特定領域的單一問題 (Focusing on Single-Domain Specific Problems)
+  - 具有自我意識 (Self-Awareness)，能夠認知自身的存在與思考過程。
   correct_index: 2
   explanation: 弱 AI (ANI) 的定義就是專精於單一或特定任務，無法跨領域遷移。
   tags:
@@ -647,10 +647,10 @@ questions:
     AI 類型與協作模式？
   type: multiple_choice
   options:
-  - 強 AI (AGI) 搭配 人在迴圈外 (HOOTL)
-  - 弱 AI (ANI) 搭配 人在迴圈上 (HOTL)
-  - 弱 AI (ANI) 搭配 人在迴圈中 (HITL)
-  - 符號式 AI 搭配 人在迴圈外 (HOOTL)
+  - 強 AI (AGI) 搭配 人在迴圈外 (HOOTL)，通用 AI 完全自動化運作。
+  - 弱 AI (ANI) 搭配 人在迴圈上 (HOTL)，專精 AI 由人類監督運作。
+  - 弱 AI (ANI) 搭配 人在迴圈中 (HITL)，專精 AI 需要人類確認決策。
+  - 符號式 AI 搭配 人在迴圈外 (HOOTL)，規則式 AI 完全自動化運作。
   correct_index: 2
   explanation: 該系統專精於影像判讀（弱 AI），且必須由人類確認才能完成任務（人在迴圈中 HITL）。
   tags:
@@ -664,10 +664,10 @@ questions:
     (Data-Driven)」的方法通常優於「規則驅動 (Rule-Based)」？
   type: multiple_choice
   options:
-  - 因為資料驅動的模型不需要任何運算資源
-  - 因為資料驅動能自動從新數據中學習變異模式，解決了規則驅動難以窮舉所有變化的「知識擷取瓶頸」
-  - 因為規則驅動的系統完全無法處理文字
-  - 因為資料驅動的模型具有最高的可解釋性
+  - 因為資料驅動的模型不需要任何運算資源 (No Computational Resources Needed)，運算成本為零。
+  - 因為資料驅動能自動從新數據中學習變異模式，解決了規則驅動難以窮舉所有變化的「知識擷取瓶頸」(Automatically Learning Variant Patterns, Solving Knowledge Acquisition Bottleneck)
+  - 因為規則驅動的系統完全無法處理文字 (Cannot Process Text at All)，僅限於數值運算。
+  - 因為資料驅動的模型具有最高的可解釋性 (Highest Interpretability)，決策過程完全透明。
   correct_index: 1
   explanation: 規則驅動面對無限變化的模式時會遇到瓶頸（需人工不斷新增規則），而機器學習（資料驅動）能自動適應數據分佈的改變。
   tags:
@@ -680,10 +680,10 @@ questions:
   text: 在人工智慧系統的決策流程中，下列哪一種情境最符合「人在迴圈上 （Human-over-the-loop）」所強調的監督機制？ (114年第四梯次)
   type: multiple_choice
   options:
-  - AI 系統只能提供建議，人類需主動下達命令才能進行決策
-  - 人類對 AI 的運行進行日常監督，必要時可立即介入修正或干預
-  - 人類平時不參與 AI 的運作，僅在發生異常或重大錯誤時才接手控 制
-  - AI 的所有判斷與行動在執行前，皆須經過人類逐一審核與批准
+  - AI 系統只能提供建議，人類需主動下達命令才能進行決策 (AI Only Provides Suggestions, Human Must Actively Command)，AI 僅為輔助工具。
+  - 人類對 AI 的運行進行日常監督，必要時可立即介入修正或干預 (Daily Supervision with Immediate Intervention Capability)
+  - 人類平時不參與 AI 的運作，僅在發生異常或重大錯誤時才接手控制 (No Regular Participation, Only Intervening in Anomalies)，屬於被動監控模式。
+  - AI 的所有判斷與行動在執行前，皆須經過人類逐一審核與批准 (All Decisions Require Human Review and Approval)，屬於嚴格審核模式。
   correct_index: 1
   explanation: Human-in-the-loop (HITL) 強調在 AI 系統中保留人類的監督與介入，特別是在高風險決策或模型信心不足時。
   tags:
@@ -696,10 +696,10 @@ questions:
   text: 情境：某科技公司宣稱開發出「通用人工智慧 (AGI)」，能像人類一樣處理任何未見過的任務。但經測試發現，該系統在下圍棋時表現完美，卻無法回答簡單的數學題。這說明該系統實際上屬於？
   type: multiple_choice
   options:
-  - 強人工智慧 (AGI)
-  - 弱人工智慧 (ANI)
-  - 超人工智慧 (ASI)
-  - 符號式 AI
+  - 強人工智慧 (AGI)，具備通用智慧能處理各種任務的 AI。
+  - 弱人工智慧 (ANI)，專精於單一領域但無法跨領域的 AI。
+  - 超人工智慧 (ASI)，在所有領域都超越人類智慧的 AI。
+  - 符號式 AI (Symbolic AI)，基於規則與符號進行邏輯推論的 AI。
   correct_index: 1
   explanation: 弱 AI (ANI) 的特徵是專精於單一領域（如下棋），無法跨領域遷移學習。真正的 AGI 應具備通用性。
   tags:
@@ -712,10 +712,10 @@ questions:
   text: 情境：早期的醫療診斷系統是透過醫生手寫數千條「如果...則...」的規則來運作。這類系統遇到新型病毒時往往束手無策。這反映了哪種 AI 的侷限性？
   type: multiple_choice
   options:
-  - 統計式 AI
-  - 符號式 AI (Symbolic AI)
-  - 深度學習
-  - 生成式 AI
+  - 統計式 AI (Statistical AI)，從數據中學習統計規律的 AI 方法。
+  - 符號式 AI (Symbolic AI)，依賴人類定義規則的 AI 方法。
+  - 深度學習 (Deep Learning)，使用多層神經網路的機器學習方法。
+  - 生成式 AI (Generative AI)，能夠生成新內容的 AI 技術。
   correct_index: 1
   explanation: 符號式 AI 依賴人類定義的規則，缺乏彈性，難以處理規則庫以外的未知情況（知識擷取瓶頸）。
   tags:
@@ -728,10 +728,10 @@ questions:
   text: 情境：客戶要求開發一個能自動從海量圖片中識別「瑕疵品」的系統，且不想人工定義瑕疵的特徵（如裂痕長度）。應選擇哪種技術？
   type: multiple_choice
   options:
-  - 專家系統
-  - 傳統機器學習 (SVM)
-  - 深度學習 (Deep Learning)
-  - 邏輯迴歸
+  - 專家系統 (Expert Systems)，基於規則庫進行知識推論的系統。
+  - 傳統機器學習 (SVM)，需要人工定義特徵的機器學習方法。
+  - 深度學習 (Deep Learning)，具備自動特徵提取能力的機器學習方法。
+  - 邏輯迴歸 (Logistic Regression)，用於分類問題的統計學習方法。
   correct_index: 2
   explanation: 深度學習具備「自動特徵提取 (End-to-End Learning)」的能力，無需人工定義特徵，特別適合複雜的影像識別任務。
   tags:
@@ -744,10 +744,10 @@ questions:
   text: 情境：在自駕車的 Level 3 等級中，車輛主要由 AI 駕駛，但駕駛人必須坐在駕駛座上，隨時準備在系統發出警示時接手。這屬於哪種協作模式？
   type: multiple_choice
   options:
-  - 人在迴圈中 (HITL)
-  - 人在迴圈上 (HOTL)
-  - 人在迴圈外 (HOOTL)
-  - 完全自動化
+  - 人在迴圈中 (HITL)，人類必須參與每個決策步驟。
+  - 人在迴圈上 (HOTL)，AI 獨立運作，人類僅在異常時介入監督。
+  - 人在迴圈外 (HOOTL)，完全自動化無需人類介入。
+  - 完全自動化 (Fully Automated)，無需任何人類監督或介入。
   correct_index: 1
   explanation: HOTL (Human-on-the-loop) 模式下，AI 執行主要任務，人類扮演監督者，僅在例外狀況發生時介入。
   tags:
@@ -760,10 +760,10 @@ questions:
   text: 情境：高頻交易系統在毫秒間自動完成數萬筆交易，人類根本來不及反應。這種模式稱為？
   type: multiple_choice
   options:
-  - HITL
-  - HOTL
-  - HOOTL (Human-out-of-the-loop)
-  - 混合模式
+  - HITL (Human-in-the-loop)，人類參與決策流程。
+  - HOTL (Human-over-the-loop)，人類監督 AI 運作。
+  - HOOTL (Human-out-of-the-loop)，完全自動化無需人類介入。
+  - 混合模式 (Hybrid Mode)，結合多種協作模式的混合架構。
   correct_index: 2
   explanation: HOOTL 模式下，人類完全不介入決策迴圈，適用於超出人類反應速度的場景，但需有嚴格的安全機制。
   tags:
@@ -776,10 +776,10 @@ questions:
   text: 情境：某新創公司想做「貓狗分類器」，但手上只有 100 張照片。技術長建議不要用深度學習，改用傳統機器學習（如 SVM）。理由可能是？
   type: multiple_choice
   options:
-  - 深度學習準確率太低
-  - 深度學習需要海量數據才能收斂，小數據集下傳統 ML 效果可能更好且不易過擬合
-  - SVM 運算更慢
-  - SVM 是最新的技術
+  - 深度學習準確率太低 (Low Accuracy)，在分類任務上表現不佳。
+  - 深度學習需要海量數據才能收斂，小數據集下傳統 ML 效果可能更好且不易過擬合 (Requiring Massive Data, Traditional ML Better on Small Datasets)
+  - SVM 運算更慢 (Slower Computation)，處理速度不如深度學習。
+  - SVM 是最新的技術 (Latest Technology)，代表最先進的機器學習方法。
   correct_index: 1
   explanation: 深度學習是「數據飢渴」的，在小數據集上往往不如傳統機器學習演算法有效率且穩健。
   tags:
@@ -792,10 +792,10 @@ questions:
   text: 情境：AlphaGo 在圍棋上擊敗人類，但它不懂圍棋的歷史，也不會感到開心或難過。這顯示目前的 AI 缺乏？
   type: multiple_choice
   options:
-  - 計算能力
-  - 自我意識與通用性 (Consciousness & Generalization)
-  - 數據
-  - 演算法
+  - 計算能力 (Computational Power)，硬體運算效能不足。
+  - 自我意識與通用性 (Consciousness & Generalization)，缺乏意識與跨領域能力。
+  - 數據 (Data)，訓練數據不足或品質不佳。
+  - 演算法 (Algorithms)，使用的演算法不夠先進或有效。
   correct_index: 1
   explanation: 這是弱 AI (ANI) 的典型特徵：在特定任務表現優異，但缺乏像人類一樣的意識、情感與跨領域理解力。
   tags:
@@ -808,10 +808,10 @@ questions:
   text: 情境：關於「資料驅動 (Data-Driven)」與「規則驅動 (Rule-Based)」的比較，下列何者描述正確？
   type: multiple_choice
   options:
-  - 規則驅動需要大量數據
-  - 資料驅動是「輸入 + 輸出 = 規則」
-  - 規則驅動適合模糊的問題
-  - 資料驅動不需要運算資源
+  - 規則驅動需要大量數據 (Requiring Large Datasets)，對數據量需求極高。
+  - 資料驅動是「輸入 + 輸出 = 規則」(Data-Driven: Input + Output = Rules)，從數據中學習模式。
+  - 規則驅動適合模糊的問題 (Suitable for Ambiguous Problems)，能處理不確定性。
+  - 資料驅動不需要運算資源 (No Computational Resources Needed)，運算成本為零。
   correct_index: 1
   explanation: 資料驅動（機器學習）的核心是讓電腦從「輸入」與「輸出（答案）」中自動歸納出「規則（模型）」。
   tags:
@@ -824,10 +824,10 @@ questions:
   text: 情境：在醫療影像診斷中，AI 負責標記出 X 光片上的可疑病灶，但最終診斷報告必須由醫生簽名確認。這是為了？
   type: multiple_choice
   options:
-  - 節省醫生時間
-  - 確保責任歸屬與診斷正確性 (HITL)
-  - 訓練 AI
-  - 讓 AI 取代醫生
+  - 節省醫生時間 (Saving Doctor's Time)，提高醫療效率與產能。
+  - 確保責任歸屬與診斷正確性 (HITL) (Ensuring Accountability and Diagnostic Accuracy)
+  - 訓練 AI (Training AI)，收集數據以改進模型表現。
+  - 讓 AI 取代醫生 (Replacing Doctors)，完全由 AI 進行醫療決策。
   correct_index: 1
   explanation: HITL (Human-in-the-loop) 模式確保了關鍵決策（如醫療診斷）的最終責任在人，AI 僅作為輔助。
   tags:
@@ -840,10 +840,10 @@ questions:
   text: 情境：符號式 AI (Symbolic AI) 在 1980 年代沒落的主要原因之一是？
   type: multiple_choice
   options:
-  - 電腦跑太快
-  - 知識擷取瓶頸 (Knowledge Acquisition Bottleneck)
-  - 數據太多
-  - 規則太簡單
+  - 電腦跑太快 (Computers Too Fast)，運算速度超出需求導致效率問題。
+  - 知識擷取瓶頸 (Knowledge Acquisition Bottleneck)，難以將專家知識轉化為規則。
+  - 數據太多 (Too Much Data)，數據量過大導致處理困難。
+  - 規則太簡單 (Rules Too Simple)，規則庫不足以處理複雜問題。
   correct_index: 1
   explanation: 將人類專家的隱性知識轉化為明確的邏輯規則非常困難且耗時，限制了符號式 AI 的擴展性。
   tags:
@@ -856,10 +856,10 @@ questions:
   text: 情境：深度學習 (DL) 相比於傳統機器學習 (ML)，最大的突破在於？
   type: multiple_choice
   options:
-  - 運算速度更快
-  - 不再需要人工特徵工程 (Feature Engineering)
-  - 模型更小
-  - 不需要數據
+  - 運算速度更快 (Faster Computation)，訓練與推論速度明顯提升。
+  - 不再需要人工特徵工程 (Feature Engineering)，自動從原始數據中提取特徵。
+  - 模型更小 (Smaller Models)，參數數量大幅減少。
+  - 不需要數據 (No Data Needed)，可以在無數據情況下運作。
   correct_index: 1
   explanation: 傳統 ML 高度依賴專家定義特徵（如定義鳥有翅膀），DL 則能直接從原始像素中學習特徵，實現了端到端學習。
   tags:
@@ -872,10 +872,10 @@ questions:
   text: 情境：統計式 AI (Statistical AI) 的一個主要缺點是「黑盒子 (Black Box)」問題，這意味著？
   type: multiple_choice
   options:
-  - 模型外殼是黑色的
-  - 難以解釋模型內部的決策邏輯
-  - 模型只能在晚上運作
-  - 模型不準確
+  - 模型外殼是黑色的 (Black Exterior)，硬體外觀為黑色設計。
+  - 難以解釋模型內部的決策邏輯 (Difficult to Explain Internal Decision Logic)
+  - 模型只能在晚上運作 (Only Works at Night)，需要特定時間條件。
+  - 模型不準確 (Model Inaccuracy)，預測結果錯誤率極高。
   correct_index: 1
   explanation: 統計模型（特別是深度學習）內部有數以億計的參數，人類難以直觀理解它是如何得出某個結論的。
   tags:
@@ -888,10 +888,10 @@ questions:
   text: 情境：為了訓練一個能辨識「紅綠燈」的 AI，需要大量人力在圖片上框出紅綠燈的位置。這個過程屬於？
   type: multiple_choice
   options:
-  - 資料標註 (Data Labeling)，屬於 HITL
-  - 非監督式學習
-  - 強化學習
-  - 規則引擎
+  - 資料標註 (Data Labeling)，屬於 HITL (Human-in-the-loop)，人類提供標準答案。
+  - 非監督式學習 (Unsupervised Learning)，從無標籤數據中發現模式。
+  - 強化學習 (Reinforcement Learning)，透過獎勵與懲罰機制進行學習。
+  - 規則引擎 (Rule Engine)，基於預定義規則進行邏輯推論。
   correct_index: 0
   explanation: 資料標註是典型的人在迴圈中 (HITL)，人類提供標準答案讓 AI 學習。
   tags:
@@ -904,10 +904,10 @@ questions:
   text: 情境：若要解決的問題是「預測鐵達尼號乘客的生存率」，且資料是結構化的表格（年齡、票價、艙等）。最經濟實惠的選擇是？
   type: multiple_choice
   options:
-  - 訓練一個 100 層的深度神經網路
-  - 使用傳統機器學習模型（如決策樹或隨機森林）
-  - 手寫規則
-  - 使用生成式 AI
+  - 訓練一個 100 層的深度神經網路 (Training a 100-Layer Deep Neural Network)，使用複雜的深度學習架構。
+  - 使用傳統機器學習模型（如決策樹或隨機森林）(Using Traditional ML Models: Decision Trees or Random Forests)
+  - 手寫規則 (Hand-Written Rules)，人工定義 If-Then 邏輯規則。
+  - 使用生成式 AI (Using Generative AI)，利用生成模型進行預測。
   correct_index: 1
   explanation: 對於結構化表格數據 (Tabular Data)，傳統 ML 模型通常能以較低的運算成本達到與 DL 相當甚至更好的效果。
   tags:
@@ -920,10 +920,10 @@ questions:
   text: 情境：圖靈測試 (Turing Test) 的主要目的是？
   type: multiple_choice
   options:
-  - 測試電腦的運算速度
-  - 判斷機器是否具備展現出與人類無法區分的智慧行為的能力
-  - 測試網路連線
-  - 測試硬體耐用度
+  - 測試電腦的運算速度 (Testing Computational Speed)，評估硬體處理效能。
+  - 判斷機器是否具備展現出與人類無法區分的智慧行為的能力 (Testing if Machine Can Exhibit Indistinguishable Intelligence from Humans)
+  - 測試網路連線 (Testing Network Connectivity)，檢查網路連線品質。
+  - 測試硬體耐用度 (Testing Hardware Durability)，評估設備使用壽命。
   correct_index: 1
   explanation: 圖靈測試由艾倫·圖靈提出，如果人類評審無法區分對話對象是人還是機器，則該機器通過測試。
   tags:
@@ -936,10 +936,10 @@ questions:
   text: 情境：AIOps 系統自動監控伺服器，發現硬碟快滿了，於是自動清理暫存檔。這屬於？
   type: multiple_choice
   options:
-  - HITL
-  - HOTL
-  - HOOTL
-  - 手動維運
+  - HITL (Human-in-the-loop)，人類參與決策流程。
+  - HOTL (Human-over-the-loop)，人類監督 AI 運作。
+  - HOOTL (Human-out-of-the-loop)，完全自動化無需人類介入。
+  - 手動維運 (Manual Operations)，完全由人類手動執行所有任務。
   correct_index: 2
   explanation: 如果清理過程完全自動化且無需人類批准，則屬於 HOOTL。若需人類批准則為 HOTL。通常 AIOps 的自動修復傾向於 HOOTL
     以求時效。
@@ -953,10 +953,10 @@ questions:
   text: 情境：下列哪種技術不屬於「機器學習」的範疇？
   type: multiple_choice
   options:
-  - 深度學習
-  - 支援向量機 (SVM)
-  - 專家系統 (Expert Systems)
-  - 決策樹
+  - 深度學習 (Deep Learning)，使用多層神經網路的機器學習方法。
+  - 支援向量機 (SVM)，使用超平面進行分類的機器學習方法。
+  - 專家系統 (Expert Systems)，基於規則庫的符號式 AI，不屬於機器學習。
+  - 決策樹 (Decision Tree)，透過樹狀結構進行分類的機器學習方法。
   correct_index: 2
   explanation: 專家系統屬於「符號式 AI」或「規則驅動 AI」，不具備從數據中學習的能力，因此不屬於機器學習。
   tags:
@@ -969,10 +969,10 @@ questions:
   text: 情境：超人工智慧 (Super AI) 的定義是？
   type: multiple_choice
   options:
-  - 會下圍棋的 AI
-  - 在所有領域（包括創造力、社交）都超越人類智慧的 AI
-  - 能自動駕駛的 AI
-  - 能聊天的 AI
+  - 會下圍棋的 AI (Go-Playing AI)，專精於圍棋對弈的弱 AI。
+  - 在所有領域（包括創造力、社交）都超越人類智慧的 AI (Surpassing Human Intelligence in All Domains)
+  - 能自動駕駛的 AI (Self-Driving AI)，專精於自動駕駛任務的弱 AI。
+  - 能聊天的 AI (Chatbot AI)，專精於對話任務的弱 AI。
   correct_index: 1
   explanation: Super AI 指的是在智力、創造力等各方面都全面碾壓人類的假設性存在。
   tags:
@@ -985,10 +985,10 @@ questions:
   text: 情境：為什麼深度學習需要 GPU？
   type: multiple_choice
   options:
-  - GPU 比較貴
-  - GPU 擅長處理大量的平行矩陣運算
-  - CPU 不能跑 Python
-  - GPU 記憶體比較大
+  - GPU 比較貴 (More Expensive)，硬體成本較高。
+  - GPU 擅長處理大量的平行矩陣運算 (Excellent at Parallel Matrix Operations)
+  - CPU 不能跑 Python (Cannot Run Python)，僅 GPU 支援 Python 程式語言。
+  - GPU 記憶體比較大 (Larger Memory)，儲存容量明顯優於 CPU。
   correct_index: 1
   explanation: 神經網路的訓練涉及海量的矩陣乘法，GPU 的平行運算架構能顯著加速這一過程。
   tags:
@@ -1001,10 +1001,10 @@ questions:
   text: 情境：Netflix 的影片推薦系統屬於哪種協作模式？
   type: multiple_choice
   options:
-  - HITL
-  - HOTL
-  - HOOTL
-  - 人工推薦
+  - HITL (Human-in-the-loop)，人類參與每個推薦決策。
+  - HOTL (Human-over-the-loop)，人類監督推薦系統運作。
+  - HOOTL (Human-out-of-the-loop)，全自動推薦無需人類介入。
+  - 人工推薦 (Manual Recommendation)，完全由人類手動選擇推薦內容。
   correct_index: 2
   explanation: 推薦過程是全自動的，根據演算法直接向用戶展示結果，人類員工不會介入每一次的推薦決策。
   tags:

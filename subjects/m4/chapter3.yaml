@@ -5,10 +5,10 @@ questions:
   text: 網格搜尋 (Grid Search) 的主要缺點是？
   type: multiple_choice
   options:
-  - 容易陷入局部最佳解
-  - 計算成本極高
-  - 無法找到最佳解
-  - 實作困難
+  - 容易陷入局部最佳解 (Local Optima)
+  - 計算成本極高，隨著參數數量增加呈指數級增長 (Curse of Dimensionality)
+  - 無法找到全域最佳解
+  - 實作非常困難且複雜
   correct_index: 1
   explanation: 網格搜尋窮舉所有組合，雖然保證找到範圍內的最佳解，但對於高維度參數空間來說，計算量是不可接受的。
   tags:
@@ -21,10 +21,10 @@ questions:
   text: L1 正規化 (Lasso) 的一個重要特性是？
   type: multiple_choice
   options:
-  - 使權重平滑
-  - 傾向於產生稀疏權重 (Sparse Weights)
-  - 增加模型複雜度
-  - 加速訓練
+  - 使權重變得平滑 (Smooth Weights)
+  - 傾向於產生稀疏權重 (Sparse Weights)，可用於特徵選擇
+  - 顯著增加模型的複雜度
+  - 加速模型的訓練收斂速度
   correct_index: 1
   explanation: L1 懲罰項的幾何形狀（菱形）使得最佳解容易落在座標軸上，從而將不重要的特徵權重壓縮為 0。
   tags:
@@ -37,10 +37,10 @@ questions:
   text: Dropout 技術在訓練過程中如何運作？
   type: multiple_choice
   options:
-  - 隨機增加神經元
-  - 隨機丟棄 (歸零) 一部分神經元
-  - 移除所有神經元
-  - 固定神經元權重
+  - 隨機增加額外的神經元以擴展網路
+  - 隨機丟棄 (歸零) 一部分神經元，防止過度依賴特定特徵
+  - 移除所有神經元並重新初始化
+  - 固定神經元權重不進行更新
   correct_index: 1
   explanation: Dropout 就像讓神經元「輪流休息」，防止它們過度依賴彼此（Co-adaptation），從而減少過擬合。
   tags:
@@ -53,10 +53,10 @@ questions:
   text: 量化 (Quantization) 通常將權重從 FP32 轉換為？
   type: multiple_choice
   options:
-  - FP64
-  - INT8 (8 位整數)
-  - FP16
-  - Binary
+  - FP64 (64 位雙精度浮點數)
+  - INT8 (8 位整數)，以減少模型大小並加速推論
+  - FP16 (16 位半精度浮點數)
+  - Binary (二進位制)
   correct_index: 1
   explanation: 將 32 位浮點數轉為 8 位整數，模型體積直接縮小 4 倍，且整數運算在硬體上通常更快。
   tags:
@@ -69,10 +69,10 @@ questions:
   text: 知識蒸餾 (Knowledge Distillation) 的核心思想是？
   type: multiple_choice
   options:
-  - 訓練一個更大的模型
-  - 讓小的學生模型模仿大的教師模型的輸出
-  - 壓縮圖片
-  - 刪除數據
+  - 訓練一個參數量更大的模型以提高準確率
+  - 讓小的學生模型 (Student) 模仿大的教師模型 (Teacher) 的輸出與行為
+  - 使用壓縮演算法壓縮圖片數據
+  - 刪除部分訓練數據以減少計算量
   correct_index: 1
   explanation: 學生模型不僅學習正確答案，還學習教師模型的「猶豫」（例如這張圖有 90% 像貓，10% 像狗），這些額外資訊有助於小模型達到接近大模型的效能。
   tags:
@@ -85,10 +85,10 @@ questions:
   text: 貝葉斯最佳化 (Bayesian Optimization) 相比於隨機搜尋的優勢是？
   type: multiple_choice
   options:
-  - 更簡單
-  - 利用過去的評估結果建立概率模型
-  - 速度最快
-  - 不需要定義搜尋空間
+  - 實作更簡單，不需要額外的庫
+  - 利用過去的評估結果建立概率模型，更聰明地選擇下一個參數組合
+  - 運算速度最快，因為不涉及複雜計算
+  - 不需要定義搜尋空間 (Search Space)
   correct_index: 1
   explanation: 隨機搜尋是盲目的，而貝葉斯優化是「有記憶」的，它會根據之前的嘗試結果來修正搜尋方向，效率更高。
   tags:
@@ -101,10 +101,10 @@ questions:
   text: 提前停止 (Early Stopping) 的判斷依據是？
   type: multiple_choice
   options:
-  - 訓練集誤差不再下降
+  - 訓練集誤差 (Training Loss) 不再下降
   - 驗證集誤差 (Validation Loss) 不再下降甚至開始上升
-  - 測試集誤差不再下降
-  - 訓練時間到達上限
+  - 測試集誤差 (Test Loss) 不再下降
+  - 訓練時間到達預設的上限
   correct_index: 1
   explanation: 當訓練誤差持續下降但驗證誤差開始上升時，表示模型開始過擬合了，這時應該立即停止訓練。
   tags:
@@ -117,10 +117,10 @@ questions:
   text: 批次正規化 (Batch Normalization) 的主要優點不包括？
   type: multiple_choice
   options:
-  - 加速訓練收斂
-  - 允許使用更高的學習率
-  - 減少模型參數數量
-  - 具有輕微的正規化效果
+  - 加速訓練收斂 (Faster Convergence)
+  - 允許使用更高的學習率 (Higher Learning Rate)
+  - 顯著減少模型參數數量 (Parameter Reduction)
+  - 具有輕微的正規化效果 (Regularization Effect)
   correct_index: 2
   explanation: BN 層本身包含可學習的參數（scale 和 shift），因此實際上增加了少量的參數量，而不是減少。
   tags:
@@ -133,10 +133,10 @@ questions:
   text: 結構化剪枝 (Structured Pruning) 相比於非結構化剪枝的優勢是？
   type: multiple_choice
   options:
-  - 精度損失更小
-  - 移除整個通道或卷積核，通用硬體即可加速
-  - 壓縮率更高
-  - 實作更簡單
+  - 精度損失比非結構化剪枝更小
+  - 移除整個通道或卷積核，通用硬體即可加速 (Hardware Acceleration)
+  - 壓縮率比非結構化剪枝更高
+  - 實作邏輯更簡單
   correct_index: 1
   explanation: 非結構化剪枝會把權重矩陣挖得像蜂窩一樣（稀疏矩陣），一般 CPU/GPU 難以加速；結構化剪枝直接把矩陣變小，加速效果立竿見影。
   tags:
@@ -152,7 +152,7 @@ questions:
   - 神經網路的權重 (Weights)
   - 神經網路的偏差 (Biases)
   - 學習率 (Learning Rate)
-  - 模型的輸出
+  - 模型的輸出結果 (Output)
   correct_index: 2
   explanation: 權重和偏差是模型在訓練過程中自己學出來的參數；學習率是人為設定的，控制學習的速度，屬於超參數。
   tags:
@@ -165,10 +165,10 @@ questions:
   text: L2 正規化 (Ridge) 傾向於讓權重？
   type: multiple_choice
   options:
-  - 變為 0
-  - 變為無限大
-  - 變小但不為 0 (平滑化)
-  - 保持不變
+  - 變為 0 (Sparsity)
+  - 變為無限大 (Explosion)
+  - 變小但不為 0 (平滑化)，抑制權重過大
+  - 保持不變 (Constant)
   correct_index: 2
   explanation: L2 懲罰項是權重的平方和，它會抑制過大的權重值，使模型對單一特徵不那麼敏感，從而減少過擬合。
   tags:
@@ -181,10 +181,10 @@ questions:
   text: Optuna 是一個什麼框架？
   type: multiple_choice
   options:
-  - 深度學習框架
-  - 自動超參數優化框架
-  - 數據清洗框架
-  - 網頁框架
+  - 深度學習模型訓練框架
+  - 自動超參數優化框架 (Auto Hyperparameter Optimization Framework)
+  - 數據清洗與預處理框架
+  - 網頁前端開發框架
   correct_index: 1
   explanation: Optuna 是目前最流行的超參數調優工具，支援高效的 TPE 演算法和自動剪枝功能。
   tags:
@@ -197,10 +197,10 @@ questions:
   text: 剪枝 (Pruning) 的基本原理是？
   type: multiple_choice
   options:
-  - 增加神經元
-  - 移除神經網路中不重要的連接
-  - 改變激活函數
-  - 增加層數
+  - 增加神經元的數量
+  - 移除神經網路中不重要的連接或神經元 (Removing Unimportant Connections)
+  - 改變激活函數的類型
+  - 增加網路的層數
   correct_index: 1
   explanation: 就像修剪樹木一樣，剪掉那些對輸出貢獻微乎其微的連接，可以讓模型變小變快。
   tags:
@@ -213,10 +213,10 @@ questions:
   text: 正規化 (Regularization) 的主要目的是？
   type: multiple_choice
   options:
-  - 增加訓練誤差
-  - 防止過擬合 (Overfitting)
-  - 加速訓練
-  - 減少數據量
+  - 增加訓練誤差以避免過擬合
+  - 防止過擬合 (Overfitting)，提升模型的泛化能力
+  - 加速模型訓練過程
+  - 減少訓練數據的使用量
   correct_index: 1
   explanation: 透過限制模型的複雜度（懲罰大權重），強迫模型學習更簡單、更通用的規律，而不是死記硬背訓練數據。
   tags:
@@ -229,10 +229,10 @@ questions:
   text: 隨機搜尋 (Random Search) 相比於網格搜尋的一個優點是？
   type: multiple_choice
   options:
-  - 保證找到全域最佳解
-  - 在相同的計算預算下，通常能探索更多重要參數的取值
-  - 實作更複雜
-  - 只能搜尋整數參數
+  - 保證一定能找到全域最佳解
+  - 在相同的計算預算下，通常能探索更多重要參數的取值 (Better Coverage)
+  - 實作邏輯更複雜
+  - 只能搜尋整數類型的參數
   correct_index: 1
   explanation: 對於某些參數對模型影響不大而某些影響很大的情況，網格搜尋可能會浪費時間在不重要的參數上，而隨機搜尋能更均勻地覆蓋重要參數的空間。
   tags:
@@ -245,10 +245,10 @@ questions:
   text: Batch Normalization 通常放在哪裡？
   type: multiple_choice
   options:
-  - 輸入層之前
-  - 每一層的激活函數之前 (或之後)
-  - 輸出層之後
-  - 損失函數之後
+  - 在輸入層之前 (Before Input Layer)
+  - 在每一層的激活函數之前 (Before Activation) 或之後 (After Activation)
+  - 在輸出層之後 (After Output Layer)
+  - 在損失函數之後 (After Loss Function)
   correct_index: 1
   explanation: BN 層對每一層的輸入進行標準化，解決了內部協變量偏移 (Internal Covariate Shift) 問題，讓每一層都能在穩定的分佈下學習。
   tags:
@@ -261,10 +261,10 @@ questions:
   text: 知識蒸餾中的 Soft targets 是指？
   type: multiple_choice
   options:
-  - 真實標籤 (One-hot)
-  - 教師模型輸出層經過 Softmax 後的機率分佈
-  - 隨機標籤
-  - 錯誤標籤
+  - 真實的標籤 (One-hot Encoded Labels)
+  - 教師模型輸出層經過 Softmax 後的機率分佈 (Probability Distribution)
+  - 隨機生成的標籤
+  - 錯誤的標籤
   correct_index: 1
   explanation: Soft targets 包含了比 Hard targets (0 或 1) 豐富得多的資訊，例如類別之間的相似性關係。
   tags:
@@ -277,10 +277,10 @@ questions:
   text: 權重衰減 (Weight Decay) 通常等同於哪種正規化？
   type: multiple_choice
   options:
-  - L1 正規化
-  - L2 正規化
-  - Dropout
-  - Batch Normalization
+  - L1 正規化 (Lasso Regularization)
+  - L2 正規化 (Ridge Regularization)
+  - Dropout 技術
+  - Batch Normalization 技術
   correct_index: 1
   explanation: 在隨機梯度下降 (SGD) 中，L2 正規化的效果就是在每次更新時讓權重衰減一點點。
   tags:
@@ -293,10 +293,10 @@ questions:
   text: 學習率 (Learning Rate) 過大會導致？
   type: multiple_choice
   options:
-  - 收斂速度變慢
-  - 模型無法收斂，在最佳解附近震盪甚至發散
-  - 過擬合
-  - 欠擬合
+  - 模型收斂速度變慢
+  - 模型無法收斂，在最佳解附近震盪甚至發散 (Oscillation or Divergence)
+  - 模型發生過擬合 (Overfitting)
+  - 模型發生欠擬合 (Underfitting)
   correct_index: 1
   explanation: 步伐太大，容易跨過最低點，甚至越跑越遠。
   tags:
@@ -309,10 +309,10 @@ questions:
   text: Post-Training Quantization (PTQ) 是指？
   type: multiple_choice
   options:
-  - 訓練時進行量化
-  - 訓練完成後再進行量化
-  - 不進行量化
-  - 隨機量化
+  - 在訓練過程中進行量化
+  - 在模型訓練完成後再進行量化 (Quantization after Training)
+  - 完全不進行量化
+  - 隨機進行量化
   correct_index: 1
   explanation: PTQ 不需要重新訓練模型，只需少量校準數據即可完成量化，是最簡單快速的壓縮方法。
   tags:
@@ -325,10 +325,10 @@ questions:
   text: Dropout 在測試 (Inference) 階段通常如何處理？
   type: multiple_choice
   options:
-  - 繼續隨機丟棄神經元
-  - 停止丟棄，並將權重乘以 (1 - dropout_rate)
-  - 移除所有神經元
-  - 重新訓練
+  - 繼續隨機丟棄神經元，以保持一致性
+  - 停止丟棄神經元，並將權重乘以 (1 - dropout_rate) 進行縮放
+  - 移除所有神經元，只保留輸出層
+  - 重新訓練一個沒有 Dropout 的模型
   correct_index: 1
   explanation: 測試時我們希望模型火力全開，使用所有神經元。為了保持輸出數值的尺度與訓練時（只有部分神經元工作）一致，需要進行縮放。
   tags:
@@ -341,10 +341,10 @@ questions:
   text: Batch Size 過小通常會導致？
   type: multiple_choice
   options:
-  - 記憶體溢出
+  - 記憶體溢出 (Out of Memory)
   - 訓練速度變快
-  - 梯度估計雜訊大，訓練過程震盪
-  - 泛化能力下降
+  - 梯度估計雜訊大，導致訓練過程震盪 (Unstable Training)
+  - 模型的泛化能力下降
   correct_index: 2
   explanation: 小 Batch 的梯度方向隨機性大，雖然有助於跳出局部最佳解，但也可能導致訓練不穩定。
   tags:
@@ -357,10 +357,10 @@ questions:
   text: 稀疏矩陣 (Sparse Matrix) 是指？
   type: multiple_choice
   options:
-  - 矩陣中大部分元素為 0
+  - 矩陣中大部分元素為 0 (Mostly Zeros)
   - 矩陣中大部分元素為 1
-  - 矩陣很小
-  - 矩陣很大
+  - 矩陣的維度很小
+  - 矩陣的維度很大
   correct_index: 0
   explanation: 非結構化剪枝會產生稀疏矩陣。儲存和計算稀疏矩陣需要特殊的格式（如 CSR）和硬體支援才能發揮優勢。
   tags:
@@ -373,10 +373,10 @@ questions:
   text: 欠擬合 (Underfitting) 發生時，通常表現為？
   type: multiple_choice
   options:
-  - 訓練誤差低，測試誤差高
-  - 訓練誤差高，測試誤差也高
+  - 訓練誤差低，測試誤差高 (High Variance)
+  - 訓練誤差高，測試誤差也高 (High Bias)
   - 訓練誤差低，測試誤差低
-  - 模型太複雜
+  - 模型結構太複雜
   correct_index: 1
   explanation: 模型太笨了，連訓練數據的規律都學不會，更別說舉一反三了。通常是因為模型複雜度不足或特徵不足。
   tags:
@@ -389,10 +389,10 @@ questions:
   text: 哪種搜尋策略最適合並行化 (Parallelization)？
   type: multiple_choice
   options:
-  - 貝葉斯最佳化
+  - 貝葉斯最佳化 (Bayesian Optimization)
   - 網格搜尋 (Grid Search) 和隨機搜尋 (Random Search)
-  - 梯度下降
-  - 模擬退火
+  - 梯度下降法 (Gradient Descent)
+  - 模擬退火演算法 (Simulated Annealing)
   correct_index: 1
   explanation: 網格搜尋和隨機搜尋的每一次嘗試都是獨立的，互不影響，因此可以同時在多台機器上跑。貝葉斯優化則依賴上一次的結果，較難並行。
   tags:
@@ -405,10 +405,10 @@ questions:
   text: L1 正規化常用於特徵選擇的原因是？
   type: multiple_choice
   options:
-  - 它讓權重變小
-  - 它讓權重變大
-  - 它傾向於將不重要的特徵權重壓縮為 0
-  - 它計算簡單
+  - 它讓權重變小但不為 0
+  - 它讓權重變大以增加模型複雜度
+  - 它傾向於將不重要的特徵權重壓縮為 0 (Sparsity)，從而實現特徵選擇
+  - 它計算簡單且收斂速度快
   correct_index: 2
   explanation: 權重為 0 意味著該特徵被模型「拋棄」了，這就是自動特徵選擇的過程。
   tags:
@@ -421,10 +421,10 @@ questions:
   text: 量化感知訓練 (Quantization-Aware Training, QAT) 是指？
   type: multiple_choice
   options:
-  - 訓練後量化
-  - 在訓練過程中模擬量化誤差
-  - 只量化權重
-  - 只量化激活值
+  - 訓練後量化 (Post-Training Quantization)
+  - 在訓練過程中模擬量化誤差 (Simulate Quantization Error)，使模型適應低精度
+  - 只量化權重參數
+  - 只量化激活值 (Activations)
   correct_index: 1
   explanation: QAT 讓模型在訓練時就「預習」量化後的世界，因此能比 PTQ 獲得更高的精度，適合對精度要求高的場景。
   tags:
@@ -437,10 +437,10 @@ questions:
   text: 驗證集 (Validation Set) 的主要用途是？
   type: multiple_choice
   options:
-  - 訓練模型參數
-  - 調整超參數與監控過擬合
-  - 最終評估模型效能
-  - 增加數據量
+  - 用於訓練模型參數 (Weights)
+  - 用於調整超參數 (Hyperparameters) 與監控過擬合 (Overfitting)
+  - 用於最終評估模型的泛化效能
+  - 用於增加訓練數據量
   correct_index: 1
   explanation: 驗證集是模型的「模擬考」，用來調整學習策略（超參數），避免在正式考試（測試集）時作弊。
   tags:
@@ -453,10 +453,10 @@ questions:
   text: 樹模型 (如 Random Forest) 的重要超參數通常包括？
   type: multiple_choice
   options:
-  - 學習率
+  - 學習率 (Learning Rate)
   - 樹的數量 (n_estimators) 與最大深度 (max_depth)
-  - 卷積核大小
-  - 隱藏層層數
+  - 卷積核大小 (Kernel Size)
+  - 隱藏層層數 (Number of Hidden Layers)
   correct_index: 1
   explanation: 樹越多、越深，模型越複雜，但也越容易過擬合。
   tags:
@@ -469,10 +469,10 @@ questions:
   text: 混合精度訓練 (Mixed Precision Training) 通常結合使用哪兩種數據類型？
   type: multiple_choice
   options:
-  - FP32 和 FP64
-  - FP32 和 FP16 (或 BF16)
-  - INT8 和 INT4
-  - String 和 Boolean
+  - FP32 (單精度) 和 FP64 (雙精度)
+  - FP32 (單精度) 和 FP16 (半精度) 或 BF16 (Brain Floating Point)
+  - INT8 (8 位整數) 和 INT4 (4 位整數)
+  - String (字串) 和 Boolean (布林值)
   correct_index: 1
   explanation: 在保持 FP32 的數值穩定性的同時，利用 FP16 的速度優勢，大幅加速訓練並減少記憶體佔用。
   tags:
@@ -485,10 +485,10 @@ questions:
   text: 數據增強 (Data Augmentation) 也可以被視為一種？
   type: multiple_choice
   options:
-  - 模型壓縮技術
-  - 正規化技術
-  - 超參數調校技術
-  - 損失函數
+  - 模型壓縮技術 (Model Compression)
+  - 正規化技術 (Regularization Technique)，提升泛化能力
+  - 超參數調校技術 (Hyperparameter Tuning)
+  - 損失函數 (Loss Function) 的一種
   correct_index: 1
   explanation: 透過增加數據的多樣性（旋轉、雜訊），讓模型看過更多「世面」，從而提升泛化能力，效果等同於正規化。
   tags:
@@ -501,10 +501,10 @@ questions:
   text: K-fold 交叉驗證 (Cross-Validation) 的主要目的是？
   type: multiple_choice
   options:
-  - 加速訓練
-  - 更可靠地評估模型效能
-  - 減少數據量
-  - 增加模型複雜度
+  - 加速模型訓練過程
+  - 更可靠地評估模型效能，減少因數據分割帶來的偏差 (Bias)
+  - 減少訓練數據量
+  - 增加模型的複雜度
   correct_index: 1
   explanation: 將數據切成 K 份輪流當驗證集，確保評估結果不是運氣好（剛好切到簡單的驗證集）造成的。
   tags:
@@ -517,10 +517,10 @@ questions:
   text: 蒸餾溫度 (Temperature) 參數在知識蒸餾中的作用是？
   type: multiple_choice
   options:
-  - 控制模型過熱
-  - 軟化 (Soften) 機率分佈
-  - 加速訓練
-  - 增加雜訊
+  - 控制模型過熱以防止當機
+  - 軟化 (Soften) 機率分佈，使類別間的關係更明顯
+  - 加速模型訓練收斂
+  - 增加訓練數據的雜訊
   correct_index: 1
   explanation: 溫度越高，Softmax 輸出的機率分佈越平滑，類別間的細微差異（暗知識）就越明顯。
   tags:
@@ -533,10 +533,10 @@ questions:
   text: 權重初始化 (Weight Initialization) 不當（如全為 0）會導致？
   type: multiple_choice
   options:
-  - 模型訓練更快
-  - 對稱性破壞失敗，導致模型無法學習
-  - 過擬合
-  - 欠擬合
+  - 模型訓練速度變快
+  - 對稱性破壞失敗 (Symmetry Breaking Failure)，導致模型無法學習
+  - 模型發生過擬合 (Overfitting)
+  - 模型發生欠擬合 (Underfitting)
   correct_index: 1
   explanation: 如果所有權重都一樣，那所有神經元的梯度更新也一樣，整個網路就退化成一個神經元了。
   tags:
@@ -549,9 +549,9 @@ questions:
   text: 學習率衰減 (Learning Rate Decay) 策略是指？
   type: multiple_choice
   options:
-  - 學習率隨時間增加
-  - 學習率隨訓練進行逐漸減小
-  - 學習率保持不變
+  - 學習率隨時間逐漸增加
+  - 學習率隨訓練進行逐漸減小 (Decay)，以利於精細收斂
+  - 學習率在整個訓練過程中保持不變
   - 學習率隨機變化
   correct_index: 1
   explanation: 訓練初期用大步伐快速接近最佳解，後期用小步伐精細調整，避免震盪。
@@ -565,10 +565,10 @@ questions:
   text: 邊緣運算 (Edge Computing) 對模型的主要限制通常是？
   type: multiple_choice
   options:
-  - 網路頻寬
-  - 計算資源 (算力)、記憶體與功耗
-  - 數據量
-  - 螢幕大小
+  - 網路頻寬 (Network Bandwidth)
+  - 計算資源 (Compute Power)、記憶體 (Memory) 與功耗 (Power Consumption)
+  - 數據量的多寡
+  - 設備的螢幕大小
   correct_index: 1
   explanation: 手機或 IoT 設備的 CPU/GPU 遠不如雲端伺服器，且電池有限，因此模型必須輕量化。
   tags:
@@ -581,10 +581,10 @@ questions:
   text: 過擬合 (Overfitting) 的典型特徵是？
   type: multiple_choice
   options:
-  - 訓練誤差高，測試誤差高
-  - 訓練誤差低，測試誤差高
-  - 訓練誤差低，測試誤差低
-  - 訓練誤差高，測試誤差低
+  - 訓練誤差高，測試誤差高 (High Bias)
+  - 訓練誤差低，測試誤差高 (High Variance)，泛化能力差
+  - 訓練誤差低，測試誤差低 (Good Fit)
+  - 訓練誤差高，測試誤差低 (Unusual)
   correct_index: 1
   explanation: 模型在訓練集上考 100 分（死記硬背），但在沒看過的測試集上不及格。
   tags:
@@ -597,10 +597,10 @@ questions:
   text: SVM 的 C 參數代表什麼？
   type: multiple_choice
   options:
-  - 核函數類型
-  - 懲罰係數，控制對錯誤分類的容忍度
-  - 樹的深度
-  - 學習率
+  - 核函數的類型 (Kernel Type)
+  - 懲罰係數 (Penalty Parameter)，控制對錯誤分類的容忍度
+  - 決策樹的深度 (Tree Depth)
+  - 模型的學習率 (Learning Rate)
   correct_index: 1
   explanation: C 越大，模型越不想犯錯，決策邊界會扭曲以迎合異常點；C 越小，模型越寬容，邊界越平滑。
   tags:
@@ -613,10 +613,10 @@ questions:
   text: MobileNet 的核心設計是使用了？
   type: multiple_choice
   options:
-  - 標準卷積
-  - 深度可分離卷積 (Depthwise Separable Convolution)
-  - 全連接層
-  - RNN
+  - 標準卷積 (Standard Convolution)
+  - 深度可分離卷積 (Depthwise Separable Convolution)，大幅減少參數量
+  - 全連接層 (Fully Connected Layers)
+  - 循環神經網路 (RNN) 結構
   correct_index: 1
   explanation: 這種卷積將計算量大幅降低，是輕量化 CNN 的經典設計。
   tags:
@@ -629,10 +629,10 @@ questions:
   text: 殘差連接 (Residual Connection) 在 ResNet 中的作用是？
   type: multiple_choice
   options:
-  - 壓縮模型
-  - 解決梯度消失問題
-  - 增加過擬合
-  - 減少參數量
+  - 壓縮模型大小
+  - 解決深層網路的梯度消失問題 (Gradient Vanishing Problem)
+  - 增加模型的過擬合風險
+  - 減少模型的參數量
   correct_index: 1
   explanation: 透過「捷徑」讓梯度能無損地傳回前面的層，使得訓練數百層的網路成為可能。
   tags:
@@ -645,10 +645,10 @@ questions:
   text: 情境：你正在訓練一個圖像分類模型，發現訓練準確率一直卡在 99%，但驗證準確率只有 70%。你嘗試了增加數據但效果有限。你應該優先嘗試什麼？
   type: multiple_choice
   options:
-  - 增加模型層數。
-  - 使用正規化技術或簡化模型結構。
-  - 減少 Batch Size。
-  - 增加學習率。
+  - 增加模型的層數以提高學習能力
+  - 使用正規化技術 (Regularization) 或簡化模型結構以減少過擬合
+  - 減少 Batch Size 以增加隨機性
+  - 增加學習率以加快收斂
   correct_index: 1
   explanation: 這是典型的嚴重過擬合。模型太強了，把雜訊都學進去了。需要透過正規化或「降智」（簡化模型）來限制它的能力，強迫它學通用特徵。
   tags:
@@ -661,10 +661,10 @@ questions:
   text: 情境：你需要將一個 BERT 模型部署到手機 App 上，要求模型大小小於 50MB，且推論時間小於 100ms。目前的模型大小是 400MB。你應該採取什麼策略？
   type: multiple_choice
   options:
-  - 購買更貴的手機。
-  - 結合知識蒸餾 (DistilBERT) 與量化 (Quantization) 技術。
-  - 使用 L1 正規化。
-  - 使用 Grid Search。
+  - 購買更昂貴的高階手機以提升算力
+  - 結合知識蒸餾 (Knowledge Distillation) 與量化 (Quantization) 技術進行模型壓縮
+  - 使用 L1 正規化進行特徵選擇
+  - 使用 Grid Search 尋找更小的模型架構
   correct_index: 1
   explanation: 蒸餾能將大模型的知識轉移給小模型（如 DistilBERT），量化能進一步將權重從 FP32 轉為 INT8，兩者結合通常能達到 10
     倍以上的壓縮率。
@@ -678,10 +678,10 @@ questions:
   text: 情境：你使用網格搜尋 (Grid Search) 調優 XGBoost 的 5 個超參數，每個參數設 5 個候選值。發現預計需要跑 1 個月才能跑完。你該怎麼辦？
   type: multiple_choice
   options:
-  - 等一個月。
-  - 改用隨機搜尋 (Random Search) 或貝葉斯最佳化 (Optuna)。
-  - 放棄調優。
-  - 減少訓練數據。
+  - 繼續等待一個月直到搜尋完成
+  - 改用隨機搜尋 (Random Search) 或貝葉斯最佳化 (Bayesian Optimization) 以提高效率
+  - 放棄超參數調優，使用預設參數
+  - 減少訓練數據量以加快每回合訓練速度
   correct_index: 1
   explanation: 5^5 = 3125 次組合，太慢了。隨機搜尋或貝葉斯優化能在更少的嘗試次數內找到不錯的解，是高維參數空間調優的首選。
   tags:
@@ -694,10 +694,10 @@ questions:
   text: 情境：你的模型在訓練初期 Loss 下降非常慢，甚至不動。檢查數據沒問題。最可能的原因是什麼？
   type: multiple_choice
   options:
-  - 學習率太小或權重初始化不當。
-  - 學習率太大。
-  - 過擬合。
-  - Batch Size 太小。
+  - 學習率太小導致收斂緩慢，或權重初始化不當導致梯度消失
+  - 學習率太大導致模型震盪無法收斂
+  - 模型發生了嚴重的過擬合
+  - Batch Size 太小導致梯度估計不穩定
   correct_index: 0
   explanation: 學習率太小就像螞蟻搬家，走不動。權重初始化不好可能導致一開始梯度就是 0，模型根本沒在學。
   tags:
@@ -710,10 +710,10 @@ questions:
   text: 情境：你使用了 Dropout (rate=0.5)，發現訓練時的 Loss 比驗證時的 Loss 還要高。這正常嗎？
   type: multiple_choice
   options:
-  - 不正常，程式寫錯了。
-  - 正常。因為訓練時有一半的神經元被關閉了，模型能力受限。
-  - 正常，因為驗證集比較簡單。
-  - 不正常，過擬合了。
+  - 不正常，這表示程式碼有錯誤
+  - 正常，因為訓練時有一半的神經元被 Dropout 關閉，模型能力受限
+  - 正常，因為驗證集的數據比較簡單
+  - 不正常，這表示模型發生了過擬合
   correct_index: 1
   explanation: 這是 Dropout 的特性。訓練時模型是「殘廢」的，考試（驗證）時是健全的，所以考試成績比平時練習好是正常的。
   tags:
@@ -725,10 +725,10 @@ questions:
   text: 情境：網格搜尋 (Grid Search) 的主要缺點是？
   type: multiple_choice
   options:
-  - 找不到最佳解
-  - 計算成本隨參數數量指數級增長 (維度災難)
-  - 實作困難
-  - 只能用於分類
+  - 無法保證找到最佳解
+  - 計算成本隨參數數量呈指數級增長 (Exponential Growth)，即維度災難 (Curse of Dimensionality)
+  - 實作非常困難且複雜
+  - 只能用於分類問題，無法用於迴歸問題
   correct_index: 1
   explanation: 當參數很多時，窮舉所有組合是不切實際的。
   tags:
@@ -741,10 +741,10 @@ questions:
   text: 情境：L1 正規化 (Lasso) 的一個獨特特性是？
   type: multiple_choice
   options:
-  - 使權重變小但不為 0
-  - 產生稀疏權重 (許多權重變為 0)，可用於特徵選擇
-  - 計算最快
-  - 防止欠擬合
+  - 使權重變小但不為 0 (Smooth Weights)
+  - 產生稀疏權重 (Sparse Weights)，即許多權重變為 0，可用於特徵選擇
+  - 計算速度最快
+  - 防止模型欠擬合 (Underfitting)
   correct_index: 1
   explanation: L1 傾向於將不重要的特徵權重壓縮為 0。
   tags:
@@ -757,10 +757,10 @@ questions:
   text: 情境：量化 (Quantization) 通常將模型權重從 FP32 轉換為？
   type: multiple_choice
   options:
-  - FP64
-  - INT8 (8 位整數)
-  - Binary
-  - String
+  - FP64 (64 位雙精度浮點數)
+  - INT8 (8 位整數)，以減少模型大小並加速推論
+  - Binary (二進位制)
+  - String (字串格式)
   correct_index: 1
   explanation: 這能將模型大小減少約 4 倍並加速推論。
   tags:
@@ -773,10 +773,10 @@ questions:
   text: 情境：Dropout 在訓練過程中做什麼？
   type: multiple_choice
   options:
-  - 刪除所有神經元
-  - 隨機丟棄 (歸零) 一部分神經元
-  - 增加神經元
-  - 修改學習率
+  - 刪除所有神經元以簡化模型
+  - 隨機丟棄 (歸零) 一部分神經元，防止過度依賴特定特徵
+  - 增加額外的神經元以擴展網路
+  - 修改學習率以加速收斂
   correct_index: 1
   explanation: 強迫網路學習更魯棒的特徵，防止過度依賴特定神經元。
   tags:
@@ -789,10 +789,10 @@ questions:
   text: 情境：貝葉斯最佳化 (Bayesian Optimization) 相比於隨機搜尋的優勢是？
   type: multiple_choice
   options:
-  - 更簡單
-  - 利用過去的評估結果建立概率模型，更聰明地選擇下一個參數組合
-  - 不需要計算
-  - 速度最快
+  - 實作更簡單，不需要額外的庫
+  - 利用過去的評估結果建立概率模型，更聰明地選擇下一個參數組合 (Intelligent Sampling)
+  - 不需要進行任何計算
+  - 運算速度最快，因為不涉及複雜計算
   correct_index: 1
   explanation: 能以更少的迭代次數找到最佳解。
   tags:
@@ -805,10 +805,10 @@ questions:
   text: 情境：提前停止 (Early Stopping) 的判斷依據是？
   type: multiple_choice
   options:
-  - 訓練誤差不再下降
-  - 驗證集誤差不再下降甚至開始上升
-  - 測試誤差為 0
-  - 訓練時間到了
+  - 訓練誤差 (Training Loss) 不再下降
+  - 驗證集誤差 (Validation Loss) 不再下降甚至開始上升
+  - 測試誤差 (Test Loss) 為 0
+  - 訓練時間到達預設的上限
   correct_index: 1
   explanation: 驗證誤差上升是過擬合的徵兆。
   tags:
@@ -821,10 +821,10 @@ questions:
   text: 情境：知識蒸餾 (Knowledge Distillation) 中的「教師模型 (Teacher)」通常是？
   type: multiple_choice
   options:
-  - 一個小而快的模型
-  - 一個大而準確的模型
-  - 一個隨機模型
-  - 一個線性模型
+  - 一個參數量小而推論速度快的模型
+  - 一個參數量大而準確率高的模型 (Large and Accurate Model)
+  - 一個隨機初始化的模型
+  - 一個簡單的線性模型
   correct_index: 1
   explanation: 教師模型負責指導學生模型學習。
   tags:
@@ -837,10 +837,10 @@ questions:
   text: 情境：批次正規化 (Batch Normalization) 的主要好處是？
   type: multiple_choice
   options:
-  - 減少參數量
-  - 加速訓練收斂，並允許使用更高的學習率
-  - 完全消除過擬合
-  - 不需要數據
+  - 顯著減少模型的參數量
+  - 加速訓練收斂 (Faster Convergence)，並允許使用更高的學習率
+  - 完全消除模型的過擬合現象
+  - 不需要任何訓練數據
   correct_index: 1
   explanation: 解決了內部協變量偏移 (Internal Covariate Shift) 問題。
   tags:
@@ -853,10 +853,10 @@ questions:
   text: 情境：Optuna 是一個什麼工具？
   type: multiple_choice
   options:
-  - 資料庫
-  - 自動超參數優化框架
-  - 繪圖庫
-  - 網頁框架
+  - 關聯式資料庫管理系統
+  - 自動超參數優化框架 (Auto Hyperparameter Optimization Framework)
+  - 專業的繪圖函式庫
+  - 網頁前端開發框架
   correct_index: 1
   explanation: Optuna 提供了高效的搜尋演算法與剪枝策略。
   tags:
@@ -869,10 +869,10 @@ questions:
   text: 情境：剪枝 (Pruning) 的目的是？
   type: multiple_choice
   options:
-  - 增加模型複雜度
-  - 移除神經網路中不重要的連接或神經元，減小模型體積
-  - 增加訓練時間
-  - 增加數據量
+  - 增加模型的複雜度以提高準確率
+  - 移除神經網路中不重要的連接或神經元，減小模型體積 (Model Size Reduction)
+  - 增加模型訓練所需的時間
+  - 增加訓練數據的數量
   correct_index: 1
   explanation: 去除冗餘參數，實現模型瘦身。
   tags:
@@ -885,10 +885,10 @@ questions:
   text: 情境：L2 正規化 (Ridge) 傾向於？
   type: multiple_choice
   options:
-  - 將權重變為 0
-  - 將權重變小但不為 0，平滑權重分佈
-  - 增加權重值
-  - 不改變權重
+  - 將所有權重變為 0
+  - 將權重變小但不為 0，平滑權重分佈 (Weight Smoothing)
+  - 增加權重的數值
+  - 不改變權重的數值
   correct_index: 1
   explanation: 防止單一特徵權重過大主導模型。
   tags:
@@ -901,10 +901,10 @@ questions:
   text: 情境：隨機搜尋 (Random Search) 相比於網格搜尋，通常？
   type: multiple_choice
   options:
-  - 效率更低
-  - 效率更高，因為能探索更多重要參數的取值
-  - 結果一樣
-  - 無法比較
+  - 搜尋效率更低
+  - 效率更高，因為能探索更多重要參數的取值 (Better Coverage of Important Parameters)
+  - 搜尋結果完全一樣
+  - 無法進行比較
   correct_index: 1
   explanation: 對於高維參數空間，隨機搜尋往往能更快找到不錯的解。
   tags:
@@ -917,10 +917,10 @@ questions:
   text: 情境：結構化剪枝 (Structured Pruning) 移除的是？
   type: multiple_choice
   options:
-  - 單個權重
+  - 單個權重參數 (Individual Weights)
   - 整個通道 (Channel) 或卷積核 (Filter)
-  - 整個模型
-  - 訓練數據
+  - 整個模型架構
+  - 所有的訓練數據
   correct_index: 1
   explanation: 結構化剪枝後的模型能直接在通用硬體上加速。
   tags:
@@ -933,10 +933,10 @@ questions:
   text: 情境：正規化 (Regularization) 的根本目的是？
   type: multiple_choice
   options:
-  - 提高訓練準確率
-  - 防止過擬合 (Overfitting)，提升泛化能力
-  - 加快訓練速度
-  - 減少數據量
+  - 提高模型在訓練集上的準確率
+  - 防止過擬合 (Overfitting)，提升模型在未見數據上的泛化能力
+  - 加快模型的訓練速度
+  - 減少訓練數據的使用量
   correct_index: 1
   explanation: 犧牲一點訓練準確率換取更好的測試準確率。
   tags:
@@ -949,10 +949,10 @@ questions:
   text: 情境：學習率 (Learning Rate) 屬於？
   type: multiple_choice
   options:
-  - 模型參數 (由數據學習)
-  - 超參數 (需人工設定)
-  - 常數
-  - 變數
+  - 模型參數 (Model Parameters)，由數據學習而來
+  - 超參數 (Hyperparameters)，需人工設定
+  - 數學常數 (Constants)
+  - 隨機變數 (Random Variables)
   correct_index: 1
   explanation: 超參數控制訓練過程，無法通過梯度下降直接學習。
   tags:
@@ -965,10 +965,10 @@ questions:
   text: 情境：知識蒸餾中，學生模型學習的是教師模型的？
   type: multiple_choice
   options:
-  - 硬標籤 (Hard Labels)
-  - 軟目標 (Soft targets) / 輸出機率分佈
-  - 權重
-  - 架構
+  - 硬標籤 (Hard Labels)，即 One-hot 編碼
+  - 軟目標 (Soft targets) / 輸出機率分佈，包含類別間的相似性資訊
+  - 模型的權重參數 (Weights)
+  - 模型的網路架構 (Network Architecture)
   correct_index: 1
   explanation: 軟目標包含了類別間的相似性資訊（暗知識）。
   tags:
@@ -981,10 +981,10 @@ questions:
   text: 情境：Batch Normalization 通常放在哪裡？
   type: multiple_choice
   options:
-  - 輸入層之前
-  - 激活函數之前 (或之後)
-  - 輸出層之後
-  - 損失函數之後
+  - 在輸入層之前 (Before Input Layer)
+  - 在每一層的激活函數之前 (Before Activation) 或之後 (After Activation)
+  - 在輸出層之後 (After Output Layer)
+  - 在損失函數之後 (After Loss Function)
   correct_index: 1
   explanation: 標準化層的輸入，使其分佈穩定。
   tags:
@@ -997,10 +997,10 @@ questions:
   text: 情境：TPE (Tree-structured Parzen Estimator) 是哪種優化方法的演算法？
   type: multiple_choice
   options:
-  - 網格搜尋
-  - 隨機搜尋
-  - 貝葉斯最佳化
-  - 梯度下降
+  - 網格搜尋 (Grid Search)
+  - 隨機搜尋 (Random Search)
+  - 貝葉斯最佳化 (Bayesian Optimization)
+  - 梯度下降法 (Gradient Descent)
   correct_index: 2
   explanation: Optuna 預設使用的演算法。
   tags:
@@ -1013,10 +1013,10 @@ questions:
   text: 情境：量化帶來的精度損失通常？
   type: multiple_choice
   options:
-  - 非常大，模型無法使用
-  - 輕微且可接受
-  - 沒有損失
-  - 反而提高精度
+  - 精度損失非常大，導致模型無法使用
+  - 精度損失輕微且通常可接受 (Negligible Loss)
+  - 完全沒有任何精度損失
+  - 反而會提高模型的精度
   correct_index: 1
   explanation: 透過校準 (Calibration) 或量化感知訓練 (QAT) 可將損失降至最低。
   tags:
@@ -1029,10 +1029,10 @@ questions:
   text: 情境：權重衰減 (Weight Decay) 等價於哪種正規化？
   type: multiple_choice
   options:
-  - L1
-  - L2
-  - Dropout
-  - Batch Norm
+  - L1 正規化 (Lasso)
+  - L2 正規化 (Ridge)
+  - Dropout 技術
+  - Batch Normalization 技術
   correct_index: 1
   explanation: 在隨機梯度下降中，L2 正規化項表現為權重衰減。
   tags:

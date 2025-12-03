@@ -5,10 +5,10 @@ questions:
   text: 根據 NVIDIA 的觀點，AI 發展的第二階段「生成式 AI」的主要特徵是？
   type: multiple_choice
   options:
-  - 只能辨識圖像
-  - 能夠主動創造文本、圖像、影片等多模態內容
-  - 具備物理互動能力
-  - 只能進行邏輯推理
+  - 只能辨識圖像 (Image Recognition Only)
+  - 能夠主動創造文本、圖像、影片等多模態內容 (Create Multimodal Content)
+  - 具備物理互動能力 (Physical Interaction)
+  - 只能進行邏輯推理 (Logical Reasoning Only)
   correct_index: 1
   explanation: 生成式 AI 超越了單純的感知與分類，具備了「創造」新內容的能力，如 ChatGPT 和 Midjourney。
   tags:
@@ -21,10 +21,10 @@ questions:
   text: 生成式 AI (Generative AI) 與鑑別式 AI (Discriminative AI) 的主要區別在於？
   type: multiple_choice
   options:
-  - 生成式 AI 學習決策邊界，鑑別式 AI 學習數據分佈
-  - 生成式 AI 學習數據分佈以生成新樣本，鑑別式 AI 學習決策邊界以進行分類
-  - 兩者沒有區別
-  - 鑑別式 AI 比較先進
+  - 生成式 AI 學習決策邊界，鑑別式 AI 學習數據分佈 (Gen learns Boundary, Disc learns Dist)
+  - 生成式 AI 學習數據分佈以生成新樣本，鑑別式 AI 學習決策邊界以進行分類 (Gen learns Dist, Disc learns Boundary)
+  - 兩者沒有區別 (No Difference)
+  - 鑑別式 AI 比較先進 (Discriminative is More Advanced)
   correct_index: 1
   explanation: 鑑別式 AI 專注於區分 A 和 B（找邊界），生成式 AI 專注於理解 A 長什麼樣子（學分佈）以便畫出新的 A。
   tags:
@@ -37,10 +37,10 @@ questions:
   text: GAN (生成對抗網路) 中的「生成器 (Generator)」的目標是？
   type: multiple_choice
   options:
-  - 區分真假數據
-  - 生成逼真的假數據來欺騙判別器
-  - 最小化訓練時間
-  - 壓縮數據
+  - 區分真假數據 (Distinguish Real/Fake)
+  - 生成逼真的假數據來欺騙判別器 (Generate Fake Data to Fool Discriminator)
+  - 最小化訓練時間 (Minimize Training Time)
+  - 壓縮數據 (Compress Data)
   correct_index: 1
   explanation: 生成器扮演「偽鈔製造者」的角色，不斷精進技術以騙過扮演「警察」的判別器。
   tags:
@@ -53,10 +53,10 @@ questions:
   text: 在 GAN 的訓練過程中，當達到「納什均衡 (Nash Equilibrium)」時，判別器的輸出機率通常接近？
   type: multiple_choice
   options:
-  - 0 (完全認為是假的)
-  - 1 (完全認為是真的)
-  - 0.5 (無法區分真假，像猜硬幣一樣)
-  - 0.9
+  - 0 (完全認為是假的) (Fake)
+  - 1 (完全認為是真的) (Real)
+  - 0.5 (無法區分真假，像猜硬幣一樣) (Indistinguishable)
+  - 0.9 (High Probability)
   correct_index: 2
   explanation: 當生成器完美擬合真實數據分佈時，判別器已無法分辨輸入是來自真實數據還是生成器，因此判斷為真的機率為 50%。
   tags:
@@ -69,10 +69,10 @@ questions:
   text: VAE (變分自動編碼器) 的損失函數包含哪兩部分？
   type: multiple_choice
   options:
-  - 生成損失與判別損失
-  - 重建誤差 (Reconstruction Loss) 與 KL 散度 (KL Divergence)
-  - 均方誤差與交叉熵
-  - L1 與 L2 正則化
+  - 生成損失與判別損失 (Gen & Disc Loss)
+  - 重建誤差 (Reconstruction Loss) 與 KL 散度 (KL Divergence) (Recon Loss & KL Div)
+  - 均方誤差與交叉熵 (MSE & Cross Entropy)
+  - L1 與 L2 正則化 (L1 & L2 Regularization)
   correct_index: 1
   explanation: 重建誤差確保生成圖像像原圖，KL 散度確保潛在空間的分佈符合標準常態分佈，便於採樣生成。
   tags:
@@ -85,10 +85,10 @@ questions:
   text: 擴散模型 (Diffusion Models) 的「前向過程 (Forward Process)」是指？
   type: multiple_choice
   options:
-  - 從雜訊生成圖像
-  - 逐步向真實圖像添加高斯雜訊，直到變成純雜訊
-  - 訓練神經網路
-  - 壓縮圖像
+  - 從雜訊生成圖像 (Generate from Noise)
+  - 逐步向真實圖像添加高斯雜訊，直到變成純雜訊 (Add Gaussian Noise Step-by-Step)
+  - 訓練神經網路 (Train Neural Network)
+  - 壓縮圖像 (Compress Image)
   correct_index: 1
   explanation: 前向過程是一個固定的「破壞」過程，將清晰圖像一步步變成無法辨識的隨機雜訊。
   tags:
@@ -101,10 +101,10 @@ questions:
   text: 擴散模型中的「反向過程 (Reverse Process)」通常使用什麼模型來預測雜訊？
   type: multiple_choice
   options:
-  - CNN
-  - U-Net
-  - RNN
-  - LSTM
+  - CNN (Convolutional Neural Network)
+  - U-Net (U-Net Architecture)
+  - RNN (Recurrent Neural Network)
+  - LSTM (Long Short-Term Memory)
   correct_index: 1
   explanation: U-Net 因其強大的特徵提取與還原能力，被廣泛用於預測每一步需要減去的雜訊。
   tags:
@@ -117,10 +117,10 @@ questions:
   text: CLIP 模型的核心訓練目標是？
   type: multiple_choice
   options:
-  - 生成圖像
-  - 將圖像和文本映射到同一個向量空間，最大化配對圖文的相似度
-  - 翻譯文本
-  - 語音識別
+  - 生成圖像 (Generate Image)
+  - 將圖像和文本映射到同一個向量空間，最大化配對圖文的相似度 (Maximize Image-Text Similarity)
+  - 翻譯文本 (Translate Text)
+  - 語音識別 (Speech Recognition)
   correct_index: 1
   explanation: CLIP 透過對比學習 (Contrastive Learning)，學會了圖像與文字之間的語意對應關係，是多模態 AI 的基石。
   tags:
@@ -133,10 +133,10 @@ questions:
   text: 在文字轉圖像 (Text-to-Image) 生成中，CLIP 的作用通常是？
   type: multiple_choice
   options:
-  - 生成最終圖像
-  - 將用戶輸入的 Prompt 轉換為語意向量，引導擴散模型生成
-  - 壓縮圖像
-  - 增加雜訊
+  - 生成最終圖像 (Generate Final Image)
+  - 將用戶輸入的 Prompt 轉換為語意向量，引導擴散模型生成 (Convert Prompt to Vector)
+  - 壓縮圖像 (Compress Image)
+  - 增加雜訊 (Add Noise)
   correct_index: 1
   explanation: CLIP 充當「翻譯官」，將人類的文字指令翻譯成擴散模型能理解的數學向量，指引生成方向。
   tags:
@@ -149,10 +149,10 @@ questions:
   text: 相比於 GAN，擴散模型 (Diffusion Models) 的主要優勢是？
   type: multiple_choice
   options:
-  - 訓練速度極快
-  - 生成多樣性高且訓練過程穩定，不易發生模式崩潰
-  - 參數量極少
-  - 不需要數據
+  - 訓練速度極快 (Fast Training)
+  - 生成多樣性高且訓練過程穩定，不易發生模式崩潰 (High Diversity & Stable Training)
+  - 參數量極少 (Few Parameters)
+  - 不需要數據 (No Data Needed)
   correct_index: 1
   explanation: GAN 訓練不穩定且容易只生成單一類型的樣本（模式崩潰）。擴散模型雖然生成慢，但生成品質與多樣性通常更優。
   tags:
@@ -165,10 +165,10 @@ questions:
   text: 代理式 AI (Agentic AI) 的核心能力是？
   type: multiple_choice
   options:
-  - 畫圖
-  - 推理 (Reasoning) 與計畫 (Planning)，能自動拆解並完成複雜任務
-  - 語音合成
-  - 玩遊戲
+  - 畫圖 (Drawing)
+  - 推理 (Reasoning) 與計畫 (Planning)，能自動拆解並完成複雜任務 (Reasoning & Planning)
+  - 語音合成 (Speech Synthesis)
+  - 玩遊戲 (Playing Games)
   correct_index: 1
   explanation: Agentic AI 不僅是被動回答問題，還能主動思考如何達成目標，例如「幫我訂機票並安排行程」。
   tags:
@@ -181,10 +181,10 @@ questions:
   text: VAE 中的「重參數化技巧 (Reparameterization Trick)」是為了解決什麼問題？
   type: multiple_choice
   options:
-  - 梯度消失
-  - 取樣操作 (Sampling) 不可微分，無法進行反向傳播
-  - 計算速度慢
-  - 記憶體不足
+  - 梯度消失 (Vanishing Gradient)
+  - 取樣操作 (Sampling) 不可微分，無法進行反向傳播 (Non-differentiable Sampling)
+  - 計算速度慢 (Slow Computation)
+  - 記憶體不足 (Insufficient Memory)
   correct_index: 1
   explanation: 直接從分佈採樣會切斷梯度流。重參數化將隨機性轉移到外部變數 $\epsilon$，使得模型參數 $\mu, \sigma$ 可被微分訓練。
   tags:
@@ -197,10 +197,10 @@ questions:
   text: GAN 的損失函數通常被描述為一種什麼博弈？
   type: multiple_choice
   options:
-  - 合作博弈
-  - 極小極大博弈 (Min-Max Game)
-  - 零和博弈
-  - 順序博弈
+  - 合作博弈 (Cooperative Game)
+  - 極小極大博弈 (Min-Max Game) (Minimax Game)
+  - 零和博弈 (Zero-sum Game)
+  - 順序博弈 (Sequential Game)
   correct_index: 1
   explanation: 生成器試圖最小化判別器的成功率，判別器試圖最大化自己的成功率，兩者目標相反。
   tags:
@@ -213,10 +213,10 @@ questions:
   text: CLIP 的圖像編碼器通常使用哪種架構？
   type: multiple_choice
   options:
-  - RNN
-  - ResNet 或 Vision Transformer (ViT)
-  - GAN
-  - LSTM
+  - RNN (Recurrent Neural Network)
+  - ResNet 或 Vision Transformer (ViT) (ResNet or ViT)
+  - GAN (Generative Adversarial Network)
+  - LSTM (Long Short-Term Memory)
   correct_index: 1
   explanation: 為了提取高品質的圖像特徵，CLIP 使用了強大的視覺模型架構如 ResNet 或 ViT。
   tags:
@@ -229,10 +229,10 @@ questions:
   text: 擴散模型的生成過程可以被視為？
   type: multiple_choice
   options:
-  - 加噪過程
-  - 去噪過程 (Denoising)
-  - 分類過程
-  - 壓縮過程
+  - 加噪過程 (Adding Noise)
+  - 去噪過程 (Denoising) (Reverse Process)
+  - 分類過程 (Classification)
+  - 壓縮過程 (Compression)
   correct_index: 1
   explanation: 生成就是從純雜訊中，一步步去除雜訊，還原出有意義的圖像結構。
   tags:
@@ -245,10 +245,10 @@ questions:
   text: 在 GAN 中，若判別器太強，會導致什麼問題？
   type: multiple_choice
   options:
-  - 生成器學得更快
-  - 梯度消失，生成器無法獲得有效的梯度回饋來改進
-  - 判別器崩潰
-  - 模型過擬合
+  - 生成器學得更快 (Generator Learns Faster)
+  - 梯度消失，生成器無法獲得有效的梯度回饋來改進 (Vanishing Gradient)
+  - 判別器崩潰 (Discriminator Collapse)
+  - 模型過擬合 (Overfitting)
   correct_index: 1
   explanation: 如果警察太厲害，一眼識破所有假鈔且給出極低分數，偽鈔製造者會感到絕望（梯度趨近 0），不知道該往哪個方向改進。
   tags:
@@ -261,10 +261,10 @@ questions:
   text: 多模態 AI (Multimodal AI) 的定義是？
   type: multiple_choice
   options:
-  - 只能處理文字
-  - 能夠同時處理並結合多種數據類型（如文本、圖像、音頻）
-  - 有多個模型
-  - 速度很快
+  - 只能處理文字 (Text Only)
+  - 能夠同時處理並結合多種數據類型（如文本、圖像、音頻） (Process Multiple Data Types)
+  - 有多個模型 (Multiple Models)
+  - 速度很快 (Fast Speed)
   correct_index: 1
   explanation: 多模態 AI 打破了單一感官的限制，能像人類一樣綜合視覺、聽覺和語言資訊來理解世界。
   tags:
@@ -277,10 +277,10 @@ questions:
   text: VAE 的解碼器 (Decoder) 負責？
   type: multiple_choice
   options:
-  - 將輸入壓縮為潛在變量
-  - 從潛在變量 (Latent Variable) 重建原始數據
-  - 判別真假
-  - 加入雜訊
+  - 將輸入壓縮為潛在變量 (Compress to Latent)
+  - 從潛在變量 (Latent Variable) 重建原始數據 (Reconstruct from Latent)
+  - 判別真假 (Distinguish Real/Fake)
+  - 加入雜訊 (Add Noise)
   correct_index: 1
   explanation: Decoder 的任務是將抽象的潛在特徵還原回具體的圖像或數據。
   tags:
@@ -293,10 +293,10 @@ questions:
   text: 擴散模型中的「雜訊調度參數 (Noise Schedule)」控制什麼？
   type: multiple_choice
   options:
-  - 模型的學習率
-  - 每一步添加或去除雜訊的量
-  - 圖像的大小
-  - 訓練的時間
+  - 模型的學習率 (Learning Rate)
+  - 每一步添加或去除雜訊的量 (Noise Amount per Step)
+  - 圖像的大小 (Image Size)
+  - 訓練的時間 (Training Time)
   correct_index: 1
   explanation: Noise Schedule 決定了加噪過程的快慢節奏，對生成品質有重要影響。
   tags:
@@ -309,10 +309,10 @@ questions:
   text: CLIP 的訓練數據來源主要是？
   type: multiple_choice
   options:
-  - 人工標註的 ImageNet
-  - 網路上爬取的海量「圖像-文本對」
-  - 醫療影像
-  - 監視器畫面
+  - 人工標註的 ImageNet (Labeled ImageNet)
+  - 網路上爬取的海量「圖像-文本對」 (Web-scraped Image-Text Pairs)
+  - 醫療影像 (Medical Images)
+  - 監視器畫面 (Surveillance Footage)
   correct_index: 1
   explanation: CLIP 利用了網路上現成的圖文配對數據（如圖片與其 Alt 文字），無需昂貴的人工標註，實現了大規模預訓練。
   tags:
@@ -325,10 +325,10 @@ questions:
   text: 模式崩潰 (Mode Collapse) 是 GAN 常見的問題，指的是？
   type: multiple_choice
   options:
-  - 模型無法收斂
-  - 生成器只能生成極少數種類的樣本，缺乏多樣性
-  - 判別器失效
-  - 訓練速度太慢
+  - 模型無法收斂 (Convergence Failure)
+  - 生成器只能生成極少數種類的樣本，缺乏多樣性 (Lack of Diversity)
+  - 判別器失效 (Discriminator Failure)
+  - 訓練速度太慢 (Slow Training)
   correct_index: 1
   explanation: 生成器發現某種特定的假數據能輕易騙過判別器，於是就一直重複生成該數據，放棄了探索其他可能性。
   tags:
@@ -341,10 +341,10 @@ questions:
   text: VAE 中的 KL 散度項作為正則化，強制潛在分佈接近？
   type: multiple_choice
   options:
-  - 均勻分佈
-  - 標準常態分佈 (Standard Normal Distribution)
-  - 泊松分佈
-  - 二項分佈
+  - 均勻分佈 (Uniform Distribution)
+  - 標準常態分佈 (Standard Normal Distribution) (Standard Normal)
+  - 泊松分佈 (Poisson Distribution)
+  - 二項分佈 (Binomial Distribution)
   correct_index: 1
   explanation: 強制潛在空間符合常態分佈，保證了空間的連續性與完備性，讓我們能透過隨機採樣生成有意義的新數據。
   tags:
@@ -357,10 +357,10 @@ questions:
   text: 擴散模型通常需要多少步才能生成一張高品質圖像？
   type: multiple_choice
   options:
-  - 1 步
-  - 10 步左右
-  - 數百到上千步
-  - 無限步
+  - 1 步 (1 Step)
+  - 10 步左右 (Around 10 Steps)
+  - 數百到上千步 (Hundreds to Thousands of Steps)
+  - 無限步 (Infinite Steps)
   correct_index: 2
   explanation: 擴散模型是一個漸進式的去噪過程，步數越多效果通常越好，但也越慢。現代技術（如 DDIM）試圖減少步數。
   tags:
@@ -373,10 +373,10 @@ questions:
   text: Prompt Engineering 在文字轉圖像生成中的作用是？
   type: multiple_choice
   options:
-  - 寫程式碼
-  - 設計精確的文字描述，引導模型生成符合預期的圖像風格與內容
-  - 調整模型參數
-  - 標註數據
+  - 寫程式碼 (Writing Code)
+  - 設計精確的文字描述，引導模型生成符合預期的圖像風格與內容 (Crafting Text Prompts)
+  - 調整模型參數 (Tuning Parameters)
+  - 標註數據 (Labeling Data)
   correct_index: 1
   explanation: 好的 Prompt（如加入 "cyberpunk style", "8k"）能激發模型潛力，產出高品質結果。
   tags:
@@ -389,10 +389,10 @@ questions:
   text: 物理 AI (Physical AI) 的典型例子是？
   type: multiple_choice
   options:
-  - ChatGPT
-  - Midjourney
-  - 人形機器人
-  - 推薦系統
+  - ChatGPT (Chatbot)
+  - Midjourney (Image Generator)
+  - 人形機器人 (Humanoid Robot)
+  - 推薦系統 (Recommender System)
   correct_index: 2
   explanation: 物理 AI 走出螢幕，擁有實體軀幹，能在真實世界中移動和操作物體。
   tags:
@@ -405,10 +405,10 @@ questions:
   text: GAN 中的判別器 (Discriminator) 本質上是一個？
   type: multiple_choice
   options:
-  - 生成模型
-  - 二元分類器 (Binary Classifier)
-  - 回歸模型
-  - 分群模型
+  - 生成模型 (Generative Model)
+  - 二元分類器 (Binary Classifier) (True/False Classifier)
+  - 回歸模型 (Regression Model)
+  - 分群模型 (Clustering Model)
   correct_index: 1
   explanation: 判別器的任務很單純：判斷輸入圖片是「真 (1)」還是「假 (0)」。
   tags:
@@ -421,10 +421,10 @@ questions:
   text: VAE 的編碼器 (Encoder) 輸出的是？
   type: multiple_choice
   options:
-  - 一個固定的向量
-  - 潛在分佈的參數 (均值 Mean 和變異數 Variance)
-  - 重建的圖像
-  - 類別標籤
+  - 一個固定的向量 (Fixed Vector)
+  - 潛在分佈的參數 (均值 Mean 和變異數 Variance) (Distribution Parameters)
+  - 重建的圖像 (Reconstructed Image)
+  - 類別標籤 (Class Label)
   correct_index: 1
   explanation: VAE 不直接輸出編碼，而是輸出一個機率分佈的參數，這使得它具有生成能力（可以從分佈中採樣）。
   tags:
@@ -437,10 +437,10 @@ questions:
   text: 擴散模型的前向過程是否需要訓練？
   type: multiple_choice
   options:
-  - 需要
-  - 不需要，是固定的加噪規則
-  - 視情況而定
-  - 只有第一步需要
+  - 需要 (Yes)
+  - 不需要，是固定的加噪規則 (No, Fixed Rule)
+  - 視情況而定 (Depends)
+  - 只有第一步需要 (Only First Step)
   correct_index: 1
   explanation: 前向過程是預先定義好的數學過程（逐步加高斯雜訊），沒有參數需要學習。
   tags:
@@ -453,10 +453,10 @@ questions:
   text: CLIP 的「雙塔架構」指的是？
   type: multiple_choice
   options:
-  - 兩個生成器
-  - 兩個判別器
-  - 獨立的圖像編碼器與文本編碼器
-  - 兩個擴散模型
+  - 兩個生成器 (Two Generators)
+  - 兩個判別器 (Two Discriminators)
+  - 獨立的圖像編碼器與文本編碼器 (Image & Text Encoders)
+  - 兩個擴散模型 (Two Diffusion Models)
   correct_index: 2
   explanation: 圖像和文本分別通過各自的「塔」（編碼器）處理，最後在頂端進行向量對齊。
   tags:
@@ -469,10 +469,10 @@ questions:
   text: 鑑別式 AI (Discriminative AI) 的典型應用是？
   type: multiple_choice
   options:
-  - 寫詩
-  - 畫圖
-  - 垃圾郵件分類
-  - 作曲
+  - 寫詩 (Writing Poems)
+  - 畫圖 (Drawing)
+  - 垃圾郵件分類 (Spam Classification)
+  - 作曲 (Composing Music)
   correct_index: 2
   explanation: 分類（區分垃圾/非垃圾）是鑑別式模型的拿手好戲。
   tags:
@@ -485,10 +485,10 @@ questions:
   text: GAN 訓練困難的一個主要原因是？
   type: multiple_choice
   options:
-  - 數據太少
-  - 生成器與判別器之間的訓練不平衡，難以達到納什均衡
-  - 計算量太小
-  - 結構太簡單
+  - 數據太少 (Insufficient Data)
+  - 生成器與判別器之間的訓練不平衡，難以達到納什均衡 (Training Imbalance)
+  - 計算量太小 (Low Computation)
+  - 結構太簡單 (Simple Structure)
   correct_index: 1
   explanation: 訓練 GAN 就像同時訓練兩個對手，如果一方進步太快，另一方就會學不到東西，導致訓練發散。
   tags:
@@ -501,10 +501,10 @@ questions:
   text: VAE 相比於 GAN 的一個優點是？
   type: multiple_choice
   options:
-  - 生成圖像更清晰
-  - 訓練過程更穩定，且具有明確的機率解釋
-  - 訓練速度更快
-  - 結構更複雜
+  - 生成圖像更清晰 (Sharper Images)
+  - 訓練過程更穩定，且具有明確的機率解釋 (Stable Training & Probabilistic)
+  - 訓練速度更快 (Faster Training)
+  - 結構更複雜 (Complex Structure)
   correct_index: 1
   explanation: VAE 基於堅實的機率理論，優化目標明確 (ELBO)，不像 GAN 那樣是動態博弈，因此訓練不容易崩潰。
   tags:
@@ -517,10 +517,10 @@ questions:
   text: 擴散模型在去噪過程中，實際上是在預測？
   type: multiple_choice
   options:
-  - 原始圖像
-  - 下一步的圖像
-  - 該步驟加入的雜訊
-  - 類別標籤
+  - 原始圖像 (Original Image)
+  - 下一步的圖像 (Next Step Image)
+  - 該步驟加入的雜訊 (Added Noise)
+  - 類別標籤 (Class Label)
   correct_index: 2
   explanation: 雖然目標是還原圖像，但數學上預測「雜訊」比直接預測圖像更穩定且效果更好。
   tags:
@@ -533,10 +533,10 @@ questions:
   text: CLIP 的訓練方法稱為？
   type: multiple_choice
   options:
-  - 監督式學習
-  - 對比學習 (Contrastive Learning)
-  - 強化學習
-  - 生成對抗學習
+  - 監督式學習 (Supervised Learning)
+  - 對比學習 (Contrastive Learning) (Contrastive Learning)
+  - 強化學習 (Reinforcement Learning)
+  - 生成對抗學習 (Adversarial Learning)
   correct_index: 1
   explanation: 通過拉近正樣本對（匹配的圖文）距離，推開負樣本對（不匹配的圖文）距離，來學習共同的語意空間。
   tags:
@@ -549,10 +549,10 @@ questions:
   text: 潛在空間 (Latent Space) 是指？
   type: multiple_choice
   options:
-  - 物理空間
-  - 數據被壓縮後的高維特徵空間，其中相似的數據點距離較近
-  - 硬碟空間
-  - 記憶體空間
+  - 物理空間 (Physical Space)
+  - 數據被壓縮後的高維特徵空間，其中相似的數據點距離較近 (Compressed Feature Space)
+  - 硬碟空間 (Disk Space)
+  - 記憶體空間 (Memory Space)
   correct_index: 1
   explanation: 潛在空間是數據的「精華」表示。在這個空間遊走（插值），可以生成連續變化的新數據。
   tags:
@@ -565,10 +565,10 @@ questions:
   text: GAN 中的 $z$ 通常代表？
   type: multiple_choice
   options:
-  - 真實圖像
-  - 隨機雜訊向量
-  - 判別器的輸出
-  - 損失函數
+  - 真實圖像 (Real Image)
+  - 隨機雜訊向量 (Random Noise Vector)
+  - 判別器的輸出 (Discriminator Output)
+  - 損失函數 (Loss Function)
   correct_index: 1
   explanation: $z$ 是生成器的種子（靈感來源），通常從高斯分佈中隨機採樣。
   tags:
@@ -581,10 +581,10 @@ questions:
   text: VAE 的重建誤差通常使用什麼函數計算？
   type: multiple_choice
   options:
-  - 準確率
-  - 均方誤差 (MSE) 或二元交叉熵 (BCE)
-  - 對比損失
-  - Hinge Loss
+  - 準確率 (Accuracy)
+  - 均方誤差 (MSE) 或二元交叉熵 (BCE) (MSE or BCE)
+  - 對比損失 (Contrastive Loss)
+  - Hinge Loss (Hinge Loss)
   correct_index: 1
   explanation: 衡量輸入圖像與重建圖像之間的像素差異。
   tags:
@@ -597,10 +597,10 @@ questions:
   text: 擴散模型之所以生成慢，是因為？
   type: multiple_choice
   options:
-  - 模型太大
-  - 需要進行數百上千次的迭代去噪過程
-  - 數據太多
-  - 硬體太差
+  - 模型太大 (Model too Large)
+  - 需要進行數百上千次的迭代去噪過程 (Iterative Denoising Process)
+  - 數據太多 (Too Much Data)
+  - 硬體太差 (Poor Hardware)
   correct_index: 1
   explanation: 必須一步步逆轉擴散過程，無法像 GAN 那樣一次前向傳播就生成結果。
   tags:
@@ -613,10 +613,10 @@ questions:
   text: Stable Diffusion 結合了哪兩種技術？
   type: multiple_choice
   options:
-  - GAN 和 VAE
-  - 擴散模型 (Diffusion) 和 CLIP (語意引導)
-  - RNN 和 CNN
-  - SVM 和 KNN
+  - GAN 和 VAE (GAN & VAE)
+  - 擴散模型 (Diffusion) 和 CLIP (語意引導) (Diffusion & CLIP)
+  - RNN 和 CNN (RNN & CNN)
+  - SVM 和 KNN (SVM & KNN)
   correct_index: 1
   explanation: 擴散模型負責生成高品質圖像，CLIP 負責讓圖像內容符合文字描述。
   tags:
@@ -629,10 +629,10 @@ questions:
   text: 納什均衡 (Nash Equilibrium) 的概念源自？
   type: multiple_choice
   options:
-  - 物理學
-  - 博弈論 (Game Theory)
-  - 生物學
-  - 化學
+  - 物理學 (Physics)
+  - 博弈論 (Game Theory) (Game Theory)
+  - 生物學 (Biology)
+  - 化學 (Chemistry)
   correct_index: 1
   explanation: 描述非合作博弈中，每個參與者都選定策略後，沒有人能透過單獨改變策略而獲益的狀態。
   tags:
@@ -645,10 +645,10 @@ questions:
   text: 情境：你使用 GAN 生成人臉，發現生成的臉雖然逼真，但永遠都是同一張臉（或非常相似）。這是什麼問題？應如何解決？
   type: multiple_choice
   options:
-  - 梯度消失；使用 ReLU。
-  - 模式崩潰 (Mode Collapse)；可嘗試使用 Wasserstein GAN (WGAN)。
-  - 過擬合；使用 Dropout。
-  - 學習率太低。
+  - 梯度消失；使用 ReLU (Vanishing Gradient)
+  - 模式崩潰 (Mode Collapse)；可嘗試使用 Wasserstein GAN (WGAN) (Mode Collapse & WGAN)
+  - 過擬合；使用 Dropout (Overfitting)
+  - 學習率太低 (Low Learning Rate)
   correct_index: 1
   explanation: 模式崩潰是 GAN 的頑疾。WGAN 引入了 Wasserstein 距離（推土機距離），提供了更平滑的梯度，有效緩解了模式崩潰和訓練不穩定的問題。
   tags:
@@ -661,10 +661,10 @@ questions:
   text: 情境：你正在訓練一個擴散模型，發現生成的圖像充滿雜訊，完全看不出內容。檢查程式碼發現前向過程 (Forward Process) 沒問題。最可能的問題出在哪裡？
   type: multiple_choice
   options:
-  - 訓練步數太少，模型還沒收斂。
-  - 雜訊調度 (Noise Schedule) 設置不當，導致最後一步的圖像還殘留過多原始資訊。
-  - 模型架構太小。
-  - 學習率太高。
+  - 訓練步數太少，模型還沒收斂 (Underfitting)
+  - 雜訊調度 (Noise Schedule) 設置不當，導致最後一步的圖像還殘留過多原始資訊 (Improper Noise Schedule)
+  - 模型架構太小 (Model too Small)
+  - 學習率太高 (High Learning Rate)
   correct_index: 1
   explanation: 擴散模型依賴精確的 Noise Schedule。如果前向加噪不夠徹底（沒變成純雜訊）或節奏不對，反向去噪過程的假設就會失效，導致生成失敗。
   tags:
@@ -677,10 +677,10 @@ questions:
   text: 情境：你的公司想開發一個「以圖搜圖」的電商應用。你會優先選擇哪種模型架構？為什麼？
   type: multiple_choice
   options:
-  - GAN；因為它能生成圖像。
-  - CLIP；因為它能將圖像映射到向量空間，計算圖像之間的相似度非常方便且準確。
-  - Diffusion Model；因為它很紅。
-  - RNN；因為它能處理序列。
+  - GAN；因為它能生成圖像 (GAN)
+  - CLIP；因為它能將圖像映射到向量空間，計算圖像之間的相似度非常方便且準確 (CLIP)
+  - Diffusion Model；因為它很紅 (Diffusion)
+  - RNN；因為它能處理序列 (RNN)
   correct_index: 1
   explanation: 以圖搜圖本質上是計算圖像特徵向量的相似度。CLIP 的圖像編碼器經過大規模對比學習，能提取出語意豐富的特徵向量，非常適合此類檢索任務。
   tags:
@@ -693,10 +693,10 @@ questions:
   text: 情境：你使用 VAE 生成手寫數字，發現生成的數字雖然結構正確，但邊緣總是模糊不清。這是 VAE 的什麼特性造成的？
   type: multiple_choice
   options:
-  - VAE 的損失函數包含均方誤差 (MSE)，傾向於生成平均化的結果，導致模糊。
-  - VAE 模型太小。
-  - VAE 訓練時間不夠。
-  - VAE 不適合生成圖像。
+  - VAE 的損失函數包含均方誤差 (MSE)，傾向於生成平均化的結果，導致模糊 (MSE causes Blurring)
+  - VAE 模型太小 (Model too Small)
+  - VAE 訓練時間不夠 (Insufficient Training)
+  - VAE 不適合生成圖像 (Not Suitable)
   correct_index: 0
   explanation: VAE 的重建損失（通常是 MSE）假設數據服從高斯分佈，這會導致模型傾向於輸出像素的平均值，從而造成圖像邊緣模糊。相比之下，GAN
     和 Diffusion 能生成更銳利的細節。
@@ -711,10 +711,10 @@ questions:
     AI 的什麼局限？
   type: multiple_choice
   options:
-  - 模型不懂物理常識與解剖學結構，只是在像素層面進行統計擬合。
-  - 模型沒看過貓。
-  - Prompt 寫得太短。
-  - 顯卡壞了。
+  - 模型不懂物理常識與解剖學結構，只是在像素層面進行統計擬合 (Lack of Physical Understanding)
+  - 模型沒看過貓 (Unseen Data)
+  - Prompt 寫得太短 (Short Prompt)
+  - 顯卡壞了 (Hardware Failure)
   correct_index: 0
   explanation: 儘管生成式 AI 能畫出逼真的質感，但它並不真正理解現實世界的物理規律或生物結構，因此常出現違反常識的幾何變形或結構錯誤。
   tags:
@@ -726,10 +726,10 @@ questions:
   text: 情境：GAN (生成對抗網路) 中的生成器 (Generator) 的目標是？
   type: multiple_choice
   options:
-  - 區分真假
-  - 生成逼真的假數據以欺騙判別器
-  - 分類數據
-  - 壓縮數據
+  - 區分真假 (Distinguish Real/Fake)
+  - 生成逼真的假數據以欺騙判別器 (Generate Fake Data)
+  - 分類數據 (Classify Data)
+  - 壓縮數據 (Compress Data)
   correct_index: 1
   explanation: 生成器試圖模仿真實數據分佈，讓判別器無法分辨真偽。
   tags:
@@ -742,10 +742,10 @@ questions:
   text: 情境：擴散模型 (Diffusion Models) 的「反向過程」是做什麼？
   type: multiple_choice
   options:
-  - 加雜訊
-  - 逐步去除雜訊，從純雜訊還原出清晰圖像
-  - 分類圖像
-  - 壓縮圖像
+  - 加雜訊 (Add Noise)
+  - 逐步去除雜訊，從純雜訊還原出清晰圖像 (Denoising)
+  - 分類圖像 (Classify Image)
+  - 壓縮圖像 (Compress Image)
   correct_index: 1
   explanation: 反向過程是生成的關鍵，模型學習預測並減去雜訊。
   tags:
@@ -758,10 +758,10 @@ questions:
   text: 情境：CLIP 模型的核心訓練目標是？
   type: multiple_choice
   options:
-  - 生成圖像
-  - 最大化配對的圖像與文本向量的相似度 (對比學習)
-  - 翻譯文本
-  - 語音辨識
+  - 生成圖像 (Generate Image)
+  - 最大化配對的圖像與文本向量的相似度 (對比學習) (Maximize Similarity)
+  - 翻譯文本 (Translate Text)
+  - 語音辨識 (Speech Recognition)
   correct_index: 1
   explanation: CLIP 透過對比學習將視覺與語言映射到同一語意空間。
   tags:
@@ -774,10 +774,10 @@ questions:
   text: 情境：VAE (變分自動編碼器) 的損失函數包含哪兩部分？
   type: multiple_choice
   options:
-  - MSE 與 MAE
-  - 重建誤差與 KL 散度
-  - Cross Entropy 與 Accuracy
-  - Generator Loss 與 Discriminator Loss
+  - MSE 與 MAE (MSE & MAE)
+  - 重建誤差與 KL 散度 (Recon Loss & KL Div)
+  - Cross Entropy 與 Accuracy (CE & Accuracy)
+  - Generator Loss 與 Discriminator Loss (Gen & Disc Loss)
   correct_index: 1
   explanation: 重建誤差確保還原度，KL 散度確保潛在空間的規則性。
   tags:
@@ -790,10 +790,10 @@ questions:
   text: 情境：GAN 訓練達到「納什均衡」時，判別器的輸出機率通常接近？
   type: multiple_choice
   options:
-  - '0'
-  - '1'
-  - 0.5 (無法區分真假)
-  - '0.9'
+  - '0' (Fake)
+  - '1' (Real)
+  - 0.5 (無法區分真假) (Indistinguishable)
+  - '0.9' (High Confidence)
   correct_index: 2
   explanation: 此時生成器生成的數據已完美擬合真實分佈，判別器只能隨機猜測。
   tags:
@@ -806,10 +806,10 @@ questions:
   text: 情境：Text-to-Image 生成 (如 Stable Diffusion) 通常結合了哪兩種技術？
   type: multiple_choice
   options:
-  - RNN 與 CNN
-  - CLIP (語意理解) 與 Diffusion Model (生成)
-  - GAN 與 VAE
-  - SVM 與 KNN
+  - RNN 與 CNN (RNN & CNN)
+  - CLIP (語意理解) 與 Diffusion Model (生成) (CLIP & Diffusion)
+  - GAN 與 VAE (GAN & VAE)
+  - SVM 與 KNN (SVM & KNN)
   correct_index: 1
   explanation: CLIP 提供文字指引，Diffusion Model 負責畫出符合指引的圖。
   tags:
@@ -822,10 +822,10 @@ questions:
   text: 情境：生成式 AI 與鑑別式 AI 的最大區別是？
   type: multiple_choice
   options:
-  - 生成式 AI 比較貴
-  - 生成式 AI 學習資料分佈以創造新樣本，鑑別式 AI 學習決策邊界以分類
-  - 鑑別式 AI 比較聰明
-  - 沒區別
+  - 生成式 AI 比較貴 (More Expensive)
+  - 生成式 AI 學習資料分佈以創造新樣本，鑑別式 AI 學習決策邊界以分類 (Gen learns Dist, Disc learns Boundary)
+  - 鑑別式 AI 比較聰明 (Smarter)
+  - 沒區別 (No Difference)
   correct_index: 1
   explanation: 一個是「創造者」，一個是「分類者」。
   tags:
@@ -838,10 +838,10 @@ questions:
   text: 情境：擴散模型的前向過程 (Forward Process) 是？
   type: multiple_choice
   options:
-  - 去噪
-  - 逐步加入高斯雜訊，直到圖像變成純雜訊
-  - 訓練模型
-  - 生成圖像
+  - 去噪 (Denoising)
+  - 逐步加入高斯雜訊，直到圖像變成純雜訊 (Add Gaussian Noise)
+  - 訓練模型 (Train Model)
+  - 生成圖像 (Generate Image)
   correct_index: 1
   explanation: 前向過程是一個固定的物理擴散過程，將訊號破壞為雜訊。
   tags:
@@ -854,10 +854,10 @@ questions:
   text: 情境：CLIP 的雙塔架構包含哪兩個編碼器？
   type: multiple_choice
   options:
-  - 圖像編碼器與文本編碼器
-  - 語音編碼器與視訊編碼器
-  - 編碼器與解碼器
-  - 生成器與判別器
+  - 圖像編碼器與文本編碼器 (Image & Text Encoders)
+  - 語音編碼器與視訊編碼器 (Audio & Video Encoders)
+  - 編碼器與解碼器 (Encoder & Decoder)
+  - 生成器與判別器 (Generator & Discriminator)
   correct_index: 0
   explanation: 分別處理視覺與語言輸入，將其轉換為向量。
   tags:
@@ -870,10 +870,10 @@ questions:
   text: 情境：VAE 中的「重參數化技巧 (Reparameterization Trick)」是為了解決什麼問題？
   type: multiple_choice
   options:
-  - 梯度消失
-  - 採樣過程不可微分，無法進行反向傳播
-  - 過擬合
-  - 計算太慢
+  - 梯度消失 (Vanishing Gradient)
+  - 採樣過程不可微分，無法進行反向傳播 (Non-differentiable Sampling)
+  - 過擬合 (Overfitting)
+  - 計算太慢 (Too Slow)
   correct_index: 1
   explanation: 將隨機性轉移到外部雜訊變數 epsilon，使模型參數可微分。
   tags:
@@ -886,10 +886,10 @@ questions:
   text: 情境：GAN 的判別器 (Discriminator) 的目標是？
   type: multiple_choice
   options:
-  - 生成假數據
-  - 正確區分真實數據與生成數據
-  - 混淆視聽
-  - 協助生成器
+  - 生成假數據 (Generate Fake Data)
+  - 正確區分真實數據與生成數據 (Distinguish Real vs Fake)
+  - 混淆視聽 (Confuse)
+  - 協助生成器 (Assist Generator)
   correct_index: 1
   explanation: 判別器扮演警察的角色，努力識破偽鈔。
   tags:
@@ -902,10 +902,10 @@ questions:
   text: 情境：在 Text-to-Image 中，Prompt Engineering 的作用是？
   type: multiple_choice
   options:
-  - 寫程式
-  - 透過精確的文字描述引導模型生成期望的圖像
-  - 訓練模型
-  - 測試模型
+  - 寫程式 (Writing Code)
+  - 透過精確的文字描述引導模型生成期望的圖像 (Guide Generation with Text)
+  - 訓練模型 (Train Model)
+  - 測試模型 (Test Model)
   correct_index: 1
   explanation: 好的 Prompt 能提供準確的語意向量，指引擴散模型的去噪方向。
   tags:
@@ -918,10 +918,10 @@ questions:
   text: 情境：擴散模型相比於 GAN 的一個優勢是？
   type: multiple_choice
   options:
-  - 生成速度快
-  - 訓練過程更穩定，不易發生模式崩潰 (Mode Collapse)
-  - 參數量少
-  - 不需要數據
+  - 生成速度快 (Fast Generation)
+  - 訓練過程更穩定，不易發生模式崩潰 (Mode Collapse) (Stable Training)
+  - 參數量少 (Few Parameters)
+  - 不需要數據 (No Data Needed)
   correct_index: 1
   explanation: GAN 的對抗訓練不穩定，而擴散模型的訓練目標（預測雜訊）相對單純且穩定。
   tags:
@@ -934,10 +934,10 @@ questions:
   text: 情境：根據 NVIDIA 黃仁勳的分類，具備推理與計畫能力的 AI 屬於？
   type: multiple_choice
   options:
-  - 感知 AI
-  - 生成式 AI
-  - 代理式 AI (Agentic AI)
-  - 物理 AI
+  - 感知 AI (Perceptive AI)
+  - 生成式 AI (Generative AI)
+  - 代理式 AI (Agentic AI) (Agentic AI)
+  - 物理 AI (Physical AI)
   correct_index: 2
   explanation: Agentic AI 能自主拆解任務並採取行動，超越了單純的生成。
   tags:
@@ -950,10 +950,10 @@ questions:
   text: 情境：KL 散度在 VAE 中的作用是？
   type: multiple_choice
   options:
-  - 計算距離
-  - 作為正則化項，強制潛在分佈接近標準常態分佈
-  - 增加誤差
-  - 減少運算
+  - 計算距離 (Calculate Distance)
+  - 作為正則化項，強制潛在分佈接近標準常態分佈 (Regularization Term)
+  - 增加誤差 (Increase Error)
+  - 減少運算 (Reduce Computation)
   correct_index: 1
   explanation: 這確保了潛在空間的連續性與完整性，利於生成新樣本。
   tags:
@@ -966,10 +966,10 @@ questions:
   text: 情境：CLIP 的訓練數據來源是？
   type: multiple_choice
   options:
-  - 人工標註
-  - 網路上爬取的大規模「圖像-文本對」
-  - 單純的圖片
-  - 單純的文字
+  - 人工標註 (Manual Labeling)
+  - 網路上爬取的大規模「圖像-文本對」 (Web-scraped Image-Text Pairs)
+  - 單純的圖片 (Images Only)
+  - 單純的文字 (Text Only)
   correct_index: 1
   explanation: 利用網路上現成的海量圖文資料進行自監督學習。
   tags:
@@ -982,10 +982,10 @@ questions:
   text: 情境：GAN 的損失函數本質上是一個？
   type: multiple_choice
   options:
-  - 極小極大博弈 (Min-Max Game)
-  - 最小二乘法
-  - 最大似然估計
-  - 梯度下降
+  - 極小極大博弈 (Min-Max Game) (Minimax Game)
+  - 最小二乘法 (Least Squares)
+  - 最大似然估計 (Maximum Likelihood)
+  - 梯度下降 (Gradient Descent)
   correct_index: 0
   explanation: G 試圖最小化 V，D 試圖最大化 V。
   tags:
@@ -998,10 +998,10 @@ questions:
   text: 情境：擴散模型的雜訊調度參數 (Noise Schedule) 控制的是？
   type: multiple_choice
   options:
-  - 模型大小
-  - 每一步添加雜訊的量
-  - 訓練時間
-  - 圖片尺寸
+  - 模型大小 (Model Size)
+  - 每一步添加雜訊的量 (Noise Amount per Step)
+  - 訓練時間 (Training Time)
+  - 圖片尺寸 (Image Size)
   correct_index: 1
   explanation: 決定了前向過程中訊號被破壞的速度。
   tags:
@@ -1014,10 +1014,10 @@ questions:
   text: 情境：物理 AI (Physical AI) 的特徵是？
   type: multiple_choice
   options:
-  - 只能在電腦裡運作
-  - 能與實體世界互動 (如機器人、自駕車)
-  - 只能處理文字
-  - 只能處理圖片
+  - 只能在電腦裡運作 (Computer Only)
+  - 能與實體世界互動 (如機器人、自駕車) (Interact with Physical World)
+  - 只能處理文字 (Text Only)
+  - 只能處理圖片 (Image Only)
   correct_index: 1
   explanation: 物理 AI 將智慧延伸到實體軀幹，具備感知與操控物理世界的能力。
   tags:
@@ -1030,10 +1030,10 @@ questions:
   text: 情境：VAE 的編碼器 (Encoder) 輸出的是？
   type: multiple_choice
   options:
-  - 一張圖片
-  - 潛在分佈的參數 (平均值與變異數)
-  - 一個類別
-  - 一段文字
+  - 一張圖片 (An Image)
+  - 潛在分佈的參數 (平均值與變異數) (Distribution Parameters)
+  - 一個類別 (A Class)
+  - 一段文字 (A Text)
   correct_index: 1
   explanation: VAE 不直接輸出潛在向量，而是輸出分佈參數，再從中採樣。
   tags:

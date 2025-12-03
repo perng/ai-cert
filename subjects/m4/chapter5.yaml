@@ -5,10 +5,10 @@ questions:
   text: FAT 原則中的 "F" 代表？
   type: multiple_choice
   options:
-  - Fast (快速)
-  - Fairness (公平性)
-  - Feature (特徵)
-  - Future (未來)
+  - Fast (快速)：模型推論速度要快
+  - Fairness (公平性)：確保模型對不同群體一視同仁，無歧視
+  - Feature (特徵)：特徵工程的重要性
+  - Future (未來)：關注 AI 的未來發展
   correct_index: 1
   explanation: 公平性確保 AI 不會因為性別、種族等敏感屬性而歧視特定群體。
   tags:
@@ -21,10 +21,10 @@ questions:
   text: SHAP (SHapley Additive exPlanations) 基於什麼理論？
   type: multiple_choice
   options:
-  - 深度學習
-  - 博弈論 (Game Theory)
-  - 遺傳演算法
-  - 統計學
+  - 深度學習 (Deep Learning)
+  - 博弈論 (Game Theory) 中的 Shapley Value
+  - 遺傳演算法 (Genetic Algorithm)
+  - 傳統統計學 (Statistics)
   correct_index: 1
   explanation: SHAP 利用 Shapley value 的概念，公平地分配每個特徵對預測結果的「貢獻度」。
   tags:
@@ -37,10 +37,10 @@ questions:
   text: LIME 的主要特點是？
   type: multiple_choice
   options:
-  - 只能解釋線性模型
-  - 模型無關 (Model-agnostic)
-  - 基於博弈論
-  - 全域解釋
+  - 只能解釋線性回歸模型
+  - 模型無關 (Model-agnostic)，適用於任何機器學習模型
+  - 基於博弈論的 Shapley Value
+  - 專注於全域解釋 (Global Interpretability)
   correct_index: 1
   explanation: LIME 不管你是神經網路還是隨機森林，它只看輸入和輸出，透過在局部做實驗（擾動）來推測你的邏輯。
   tags:
@@ -53,10 +53,10 @@ questions:
   text: 數據漂移 (Data Drift) 是指？
   type: multiple_choice
   options:
-  - 模型參數改變
-  - 輸入數據的統計分佈隨時間發生變化
-  - 程式碼改變
-  - 硬體故障
+  - 模型內部的權重參數發生改變
+  - 輸入數據的統計分佈隨時間發生變化 (Distribution Shift)
+  - 程式碼邏輯發生改變
+  - 伺服器硬體發生故障
   correct_index: 1
   explanation: 例如訓練時用戶平均 20 歲，上線後變成 50 歲，這就是數據漂移，可能導致模型失效。
   tags:
@@ -69,10 +69,10 @@ questions:
   text: 選擇性偏見 (Selection Bias) 發生在？
   type: multiple_choice
   options:
-  - 訓練數據無法代表真實世界的母體
-  - 測量工具不準
-  - 歷史數據本身不公
-  - 模型太簡單
+  - 訓練數據無法代表真實世界的母體 (Sampling Bias)
+  - 測量工具本身不準確
+  - 歷史數據本身反映了社會偏見
+  - 模型架構設計太過簡單
   correct_index: 0
   explanation: 例如只用大學生的照片訓練人臉識別，結果模型認不出老年人。
   tags:
@@ -85,10 +85,10 @@ questions:
   text: 全域解釋 (Global Interpretability) 旨在理解？
   type: multiple_choice
   options:
-  - 單個樣本的預測原因
-  - 模型整體的運作邏輯
-  - 模型的訓練時間
-  - 模型的準確率
+  - 單個樣本的具體預測原因
+  - 模型整體的運作邏輯與特徵重要性 (Overall Model Logic)
+  - 模型的訓練時間與資源消耗
+  - 模型的準確率與召回率
   correct_index: 1
   explanation: 全域解釋告訴我們「一般來說，這個模型最看重什麼」，例如「信用評分模型最看重還款紀錄」。
   tags:
@@ -101,10 +101,10 @@ questions:
   text: PSI (Population Stability Index) 用於衡量？
   type: multiple_choice
   options:
-  - 模型準確率
-  - 數據分佈的穩定性
-  - 計算速度
-  - 記憶體使用量
+  - 模型的預測準確率 (Accuracy)
+  - 兩個數據分佈之間的差異穩定性 (Population Stability)，用於檢測漂移
+  - 模型的推論計算速度
+  - 模型的記憶體使用量
   correct_index: 1
   explanation: PSI < 0.1 通常表示分佈穩定；PSI > 0.25 表示分佈發生顯著變化（漂移），需要警惕。
   tags:
@@ -117,10 +117,10 @@ questions:
   text: 當責性 (Accountability) 強調？
   type: multiple_choice
   options:
-  - 模型必須準確
-  - 必須有明確的責任歸屬機制
-  - 模型必須開源
-  - 數據必須免費
+  - 模型必須達到 100% 的準確率
+  - 必須有明確的責任歸屬機制 (Responsibility)，當 AI 出錯時有人負責
+  - 模型的原始碼必須完全開源
+  - 訓練數據必須免費公開
   correct_index: 1
   explanation: 當自駕車撞人，是車廠、軟體商還是駕駛的錯？當責性要求在 AI 系統設計之初就釐清這些問題。
   tags:
@@ -133,10 +133,10 @@ questions:
   text: 局部解釋 (Local Interpretability) 旨在理解？
   type: multiple_choice
   options:
-  - 模型整體的邏輯
-  - 模型對單個特定樣本的預測原因
-  - 訓練數據的分佈
-  - 模型的架構
+  - 模型整體的運作邏輯
+  - 模型對單個特定樣本的預測原因 (Individual Prediction Explanation)
+  - 訓練數據的整體分佈情況
+  - 模型的網路架構設計
   correct_index: 1
   explanation: 局部解釋回答「為什麼拒絕『張三』的貸款？」，而不是「為什麼拒絕貸款」。
   tags:
@@ -149,10 +149,10 @@ questions:
   text: 概念漂移 (Concept Drift) 是指？
   type: multiple_choice
   options:
-  - 輸入數據分佈改變
-  - 輸入與輸出之間的映射關係發生變化
-  - 模型過擬合
-  - 數據缺失
+  - 輸入數據的統計分佈發生改變
+  - 輸入特徵與目標變數之間的映射關係發生變化 (Relationship Change)
+  - 模型發生過擬合現象
+  - 訓練數據出現大量缺失值
   correct_index: 1
   explanation: 例如「垃圾郵件」的定義變了，或者消費者對商品的喜好變了。即使輸入特徵沒變，舊的預測邏輯也失效了。
   tags:
@@ -165,10 +165,10 @@ questions:
   text: 歷史偏見 (Historical Bias) 源於？
   type: multiple_choice
   options:
-  - 數據採樣錯誤
-  - 數據反映了現實世界中既有的社會偏見或不公
-  - 測量儀器故障
-  - 演算法錯誤
+  - 數據採樣過程中的隨機誤差
+  - 數據反映了現實世界中既有的社會偏見或不公 (Existing Social Bias)
+  - 測量儀器的故障或誤差
+  - 演算法本身的設計錯誤
   correct_index: 1
   explanation: 如果歷史數據顯示「CEO 多為男性」，模型可能會學到「男性更適合當 CEO」的偏見，這就是歷史偏見的複製。
   tags:
@@ -181,10 +181,10 @@ questions:
   text: SHAP 值為正表示該特徵？
   type: multiple_choice
   options:
-  - 降低了預測值
-  - 提升了預測值 (正向貢獻)
-  - 與預測值無關
-  - 是錯誤的
+  - 降低了預測值 (負向貢獻)
+  - 提升了預測值 (正向貢獻)，使結果高於平均值
+  - 與預測值無關，沒有影響
+  - 是一個錯誤的計算結果
   correct_index: 1
   explanation: SHAP 值量化了特徵將預測結果從「平均值」推向「當前預測值」的推力。正值代表推高，負值代表拉低。
   tags:
@@ -197,10 +197,10 @@ questions:
   text: LIME 通過什麼方式來解釋複雜模型？
   type: multiple_choice
   options:
-  - 訓練一個更複雜的模型
-  - 在局部訓練一個簡單的可解釋模型來近似
-  - 刪除模型
-  - 增加特徵
+  - 訓練一個更複雜的深度學習模型
+  - 在局部訓練一個簡單的可解釋模型 (如線性回歸) 來近似複雜模型的決策邊界
+  - 刪除原始模型並重新訓練
+  - 增加更多的特徵輸入
   correct_index: 1
   explanation: 雖然整個模型是非線性的，但在極小的局部範圍內，決策邊界通常是線性的。LIME 就是在找這條局部切線。
   tags:
@@ -213,10 +213,10 @@ questions:
   text: 透明度 (Transparency) 要求？
   type: multiple_choice
   options:
-  - 公開所有程式碼
-  - 模型的決策過程應該是可理解、可解釋的
-  - 數據必須公開
-  - 模型必須簡單
+  - 公開所有的原始程式碼
+  - 模型的決策過程應該是可理解、可解釋且可追溯的 (Explainable and Traceable)
+  - 所有的訓練數據必須公開
+  - 模型架構必須非常簡單
   correct_index: 1
   explanation: 黑盒子模型（如深度學習）雖然準，但若無法解釋，在醫療、金融等高風險領域難以被信任。
   tags:
@@ -229,10 +229,10 @@ questions:
   text: 為了應對模型漂移，最直接的解決方案是？
   type: multiple_choice
   options:
-  - 停止服務
-  - 使用新數據重新訓練模型 (Retraining)
-  - 修改程式碼
-  - 增加硬體
+  - 立即停止模型服務
+  - 使用新數據重新訓練模型 (Retraining) 以適應新的分佈
+  - 修改模型的程式碼邏輯
+  - 增加伺服器的硬體資源
   correct_index: 1
   explanation: 當世界變了，模型也要跟著變。定期或觸發式地用新數據更新模型，是維持效能的關鍵。
   tags:
@@ -245,10 +245,10 @@ questions:
   text: XAI 的主要目標是？
   type: multiple_choice
   options:
-  - 提高模型準確率
-  - 讓人類理解 AI 模型的決策邏輯，建立信任
-  - 加速訓練
-  - 減少數據量
+  - 提高模型的預測準確率
+  - 讓人類理解 AI 模型的決策邏輯，建立信任 (Trust and Understanding)
+  - 加速模型的訓練過程
+  - 減少訓練所需的數據量
   correct_index: 1
   explanation: 信任源於理解。XAI 試圖打開黑盒子，讓人知道 AI 是根據什麼做決定的。
   tags:
@@ -261,10 +261,10 @@ questions:
   text: 測量偏見 (Measurement Bias) 發生在？
   type: multiple_choice
   options:
-  - 樣本太少
-  - 特徵或標籤的測量方式有誤
-  - 歷史數據不公
-  - 演算法太複雜
+  - 訓練樣本數量太少
+  - 特徵或標籤的測量方式有誤或存在系統性誤差 (Systematic Error)
+  - 歷史數據本身存在不公
+  - 演算法設計太過複雜
   correct_index: 1
   explanation: 例如用「逮捕率」作為「犯罪率」的代理變數。因為某些區域警察巡邏多，逮捕率自然高，這不代表該區人更愛犯罪，這就是測量偏見。
   tags:
@@ -277,10 +277,10 @@ questions:
   text: SHAP Summary Plot (摘要圖) 可以展示？
   type: multiple_choice
   options:
-  - 模型的架構圖
-  - 特徵的重要性排序及其對預測值的影響方向
-  - 訓練過程的 Loss 曲線
-  - 混淆矩陣
+  - 模型的詳細網路架構圖
+  - 特徵的重要性排序及其對預測值的影響方向 (Feature Importance and Direction)
+  - 訓練過程中的 Loss 下降曲線
+  - 分類任務的混淆矩陣
   correct_index: 1
   explanation: 一張圖看懂所有特徵：誰最重要？數值大是加分還是扣分？
   tags:
@@ -293,10 +293,10 @@ questions:
   text: 模型治理 (Model Governance) 包含？
   type: multiple_choice
   options:
-  - 只包含模型訓練
-  - 涵蓋模型全生命週期的管理
-  - 只包含模型部署
-  - 只包含數據清洗
+  - 只包含模型訓練階段的管理
+  - 涵蓋模型全生命週期的管理 (Full Lifecycle Management)，包括開發、部署、監控與退役
+  - 只包含模型部署階段的管理
+  - 只包含數據清洗與預處理階段
   correct_index: 1
   explanation: 治理不是一次性的活動，而是一套完整的流程，確保模型在任何時候都是合規、有效且可控的。
   tags:
@@ -309,10 +309,10 @@ questions:
   text: Model-agnostic (模型無關) 的意思是？
   type: multiple_choice
   options:
-  - 該方法只能用於特定模型
-  - 該方法不依賴於模型的內部結構，適用於任何機器學習模型
-  - 該方法不需要模型
-  - 該方法不需要數據
+  - 該方法只能用於特定的模型架構
+  - 該方法不依賴於模型的內部結構，適用於任何機器學習模型 (Any ML Model)
+  - 該方法不需要任何模型即可運作
+  - 該方法不需要任何數據即可運作
   correct_index: 1
   explanation: 像 LIME 和 SHAP (Kernel Explainer) 這種方法，把它們當成黑盒子測試工具，不管裡面是神經網路還是決策樹，都能解釋。
   tags:
@@ -325,10 +325,10 @@ questions:
   text: 演算法歧視 (Algorithmic Discrimination) 通常是由什麼引起的？
   type: multiple_choice
   options:
-  - 電腦有惡意
-  - 訓練數據中的偏見被模型學習並放大
-  - 硬體故障
-  - 網路延遲
+  - 電腦程式具有惡意意圖
+  - 訓練數據中的偏見被模型學習並放大 (Bias Amplification)
+  - 硬體設備發生故障
+  - 網路傳輸延遲導致數據錯誤
   correct_index: 1
   explanation: AI 是一面鏡子，反映了數據中的偏見。如果數據有毒，模型就有毒。
   tags:
@@ -341,10 +341,10 @@ questions:
   text: 特徵重要性 (Feature Importance) 屬於哪種解釋？
   type: multiple_choice
   options:
-  - 局部解釋
-  - 全域解釋
-  - 隨機解釋
-  - 錯誤解釋
+  - 局部解釋 (Local Interpretability)
+  - 全域解釋 (Global Interpretability)，描述整體特徵影響力
+  - 隨機解釋 (Random Explanation)
+  - 錯誤的解釋方式
   correct_index: 1
   explanation: 它概括了整個模型對各個特徵的依賴程度，是對整體邏輯的描述。
   tags:
@@ -357,10 +357,10 @@ questions:
   text: 監控 AUC 或準確率的變化趨勢是為了？
   type: multiple_choice
   options:
-  - 增加計算量
-  - 及時發現模型性能衰退 (Model Decay)
-  - 備份模型
-  - 展示圖表
+  - 增加模型的計算負載
+  - 及時發現模型性能衰退 (Model Decay) 或漂移
+  - 定期備份模型權重
+  - 為了在儀表板上展示漂亮的圖表
   correct_index: 1
   explanation: 模型像汽車一樣會折舊。定期健檢（監控指標）才能知道何時該進廠維修（重新訓練）。
   tags:
@@ -373,10 +373,10 @@ questions:
   text: SHAP 值具有可加性 (Additivity)，這意味著？
   type: multiple_choice
   options:
-  - 所有特徵的 SHAP 值相加等於預測值
-  - SHAP 值可以隨意相加
-  - SHAP 值都是正的
-  - SHAP 值都是負的
+  - 所有特徵的 SHAP 值相加等於預測值與基準值的差 (Sum of SHAP values equals Prediction minus Base Value)
+  - SHAP 值可以隨意相加而無意義
+  - 所有 SHAP 值都必須是正數
+  - 所有 SHAP 值都必須是負數
   correct_index: 0
   explanation: 這是 SHAP 最強大的數學特性。Prediction = Base Value + sum(SHAP values)。這讓解釋變得非常精確且直觀。
   tags:
@@ -389,10 +389,10 @@ questions:
   text: 代理變數 (Proxy Variable) 在公平性問題中是指？
   type: multiple_choice
   options:
-  - 代理伺服器
-  - 表面上看似中立，但實際上與敏感屬性高度相關的變數
-  - 隨機變數
-  - 目標變數
+  - 網路代理伺服器 (Proxy Server)
+  - 表面上看似中立，但實際上與敏感屬性高度相關的變數 (Correlated Variable)
+  - 隨機生成的變數
+  - 模型的預測目標變數
   correct_index: 1
   explanation: 即使刪除了「種族」欄位，模型仍可能透過「郵遞區號」（因為種族居住隔離）學會歧視。這就是代理變數的陷阱。
   tags:
@@ -405,10 +405,10 @@ questions:
   text: 反事實解釋 (Counterfactual Explanation) 是指？
   type: multiple_choice
   options:
-  - 解釋為什麼發生
-  - 解釋「如果輸入改變了什麼，輸出就會改變」
-  - 解釋模型的錯誤
-  - 解釋數據來源
+  - 解釋為什麼事件發生了
+  - 解釋「如果輸入改變了什麼，輸出就會改變」 (What-if Analysis)
+  - 解釋模型的錯誤原因
+  - 解釋數據的來源與背景
   correct_index: 1
   explanation: 這種解釋方式對用戶最有用，因為它提供了具體的行動建議（Actionable Insight）。
   tags:
@@ -421,10 +421,10 @@ questions:
   text: A/B 測試在模型監控中的作用是？
   type: multiple_choice
   options:
-  - 比較兩個模型在真實環境中的表現
-  - 測試硬體效能
-  - 檢查數據格式
-  - 備份數據
+  - 比較兩個模型在真實環境中的表現 (Live Comparison)
+  - 測試伺服器的硬體效能
+  - 檢查數據格式是否正確
+  - 備份訓練數據
   correct_index: 0
   explanation: 這是驗證新模型是否真的比舊模型好的黃金標準。
   tags:
@@ -437,10 +437,10 @@ questions:
   text: 為了減少偏見，在數據收集階段應該？
   type: multiple_choice
   options:
-  - 只收集方便取得的數據
-  - 確保數據的多樣性與代表性，覆蓋各個群體
-  - 刪除所有敏感數據
-  - 不收集數據
+  - 只收集最方便取得的數據
+  - 確保數據的多樣性與代表性 (Diversity and Representation)，覆蓋各個群體
+  - 刪除所有敏感屬性的數據
+  - 停止收集任何數據
   correct_index: 1
   explanation: 源頭管理最重要。如果數據本身就是偏頗的，後續再怎麼調模型都事倍功半。
   tags:
@@ -453,10 +453,10 @@ questions:
   text: 決策樹 (Decision Tree) 通常被認為是？
   type: multiple_choice
   options:
-  - 黑盒子模型
-  - 白盒子 (White-box) 或本身具備可解釋性的模型
-  - 不準確的模型
-  - 複雜模型
+  - 黑盒子 (Black-box) 模型
+  - 白盒子 (White-box) 或本身具備可解釋性的模型 (Interpretable Model)
+  - 預測不準確的模型
+  - 計算複雜的模型
   correct_index: 1
   explanation: 決策樹的規則（如果 A>5 且 B<3 則...）符合人類邏輯，直接看樹圖就能理解，不需要額外的 XAI 工具。
   tags:
@@ -469,10 +469,10 @@ questions:
   text: 模型退役 (Model Retirement) 是指？
   type: multiple_choice
   options:
-  - 模型壞了
-  - 當模型不再有效或被新模型取代時，將其從生產環境中移除的過程
-  - 模型去度假
-  - 刪除訓練數據
+  - 模型發生故障
+  - 當模型不再有效或被新模型取代時，將其從生產環境中移除的過程 (Decommissioning)
+  - 模型暫時停止服務
+  - 刪除所有訓練數據
   correct_index: 1
   explanation: 殭屍模型（沒人用還在跑）會浪費資源並增加維護風險，必須有秩序地退場。
   tags:
@@ -485,10 +485,10 @@ questions:
   text: 隱私保護與模型公平性之間？
   type: multiple_choice
   options:
-  - 完全無關
-  - 可能存在衝突
-  - 是一樣的
-  - 總是互相促進
+  - 兩者完全無關
+  - 可能存在衝突 (Trade-off)，因為檢測公平性需要敏感數據
+  - 兩者是一樣的概念
+  - 總是互相促進，沒有衝突
   correct_index: 1
   explanation: 這是一個兩難。為了知道模型有沒有歧視女性，我必須知道誰是女性（收集隱私）；但為了保護隱私，我不該收集性別。
   tags:
@@ -501,10 +501,10 @@ questions:
   text: 深度神經網路 (DNN) 通常被認為是？
   type: multiple_choice
   options:
-  - 白盒子模型
-  - 黑盒子 (Black-box) 模型
-  - 線性模型
-  - 規則模型
+  - 白盒子 (White-box) 模型
+  - 黑盒子 (Black-box) 模型，難以直接解釋其內部決策邏輯
+  - 簡單的線性模型
+  - 基於規則的專家系統
   correct_index: 1
   explanation: 幾百萬個參數的非線性運算，人類大腦無法直接解析，必須依賴 XAI 工具。
   tags:
@@ -517,10 +517,10 @@ questions:
   text: 影子模式 (Shadow Mode) 部署是指？
   type: multiple_choice
   options:
-  - 在暗網部署
-  - 新模型與舊模型並行運行，但新模型的輸出僅用於記錄與分析
-  - 隱藏模型
-  - 刪除模型
+  - 在暗網 (Dark Web) 進行部署
+  - 新模型與舊模型並行運行，但新模型的輸出僅用於記錄與分析 (Parallel Run without Impact)
+  - 將模型隱藏起來不讓用戶發現
+  - 刪除舊模型並直接替換為新模型
   correct_index: 1
   explanation: 這是最安全的上線測試。讓新模型「假裝」在工作，評估它在真實流量下的表現，確認沒問題再扶正。
   tags:
@@ -533,10 +533,10 @@ questions:
   text: 機器學習倫理的核心目標是？
   type: multiple_choice
   options:
-  - 阻止 AI 發展
-  - 確保 AI 技術的開發與應用符合人類價值觀，造福社會並減少傷害
-  - 賺更多錢
-  - 取代人類
+  - 阻止 AI 技術的發展
+  - 確保 AI 技術的開發與應用符合人類價值觀，造福社會並減少傷害 (Beneficial AI)
+  - 幫助企業賺取更多利潤
+  - 用 AI 完全取代人類的工作
   correct_index: 1
   explanation: 技術是中性的，但用技術的人要有良知。倫理確保 AI 是人類的助手而非敵人。
   tags:
@@ -549,10 +549,10 @@ questions:
   text: 依賴圖 (Dependence Plot) 在 SHAP 中用於展示？
   type: multiple_choice
   options:
-  - 兩個特徵之間的交互作用 (Interaction)
-  - 模型的結構
-  - 數據的分佈
-  - 訓練時間
+  - 兩個特徵之間的交互作用 (Feature Interaction)
+  - 模型的整體架構
+  - 訓練數據的統計分佈
+  - 模型的訓練時間
   correct_index: 0
   explanation: 它能揭示非線性關係（如年齡越大風險越高，但超過 60 歲風險反而降低）和交互作用（如年齡對風險的影響取決於性別）。
   tags:
@@ -565,10 +565,10 @@ questions:
   text: 迴圈中的人 (Human-in-the-loop) 機制是指？
   type: multiple_choice
   options:
-  - 人類被 AI 控制
-  - 在 AI 決策過程中保留人類的介入與審核
-  - 人類與 AI 比賽
-  - 完全自動化
+  - 人類被 AI 完全控制
+  - 在 AI 決策過程中保留人類的介入與審核 (Human Intervention)
+  - 人類與 AI 進行比賽
+  - 系統完全自動化運作，無需人類參與
   correct_index: 1
   explanation: AI 只是輔助。在醫療診斷、司法判決等關鍵時刻，最終決定權應保留在人類專家手中，以防 AI 犯錯。
   tags:
@@ -581,10 +581,10 @@ questions:
   text: 為了確保公平性，我們可以在模型訓練時加入？
   type: multiple_choice
   options:
-  - 更多雜訊
-  - 公平性約束 (Fairness Constraints) 或正規化項
-  - 更多特徵
-  - 更大的權重
+  - 更多的隨機雜訊
+  - 公平性約束 (Fairness Constraints) 或正規化項，強制模型滿足公平性指標
+  - 更多的特徵輸入
+  - 更大的權重參數
   correct_index: 1
   explanation: 強制模型在優化準確率的同時，也要滿足公平性指標（如各群體的通過率要一致）。
   tags:
@@ -597,10 +597,10 @@ questions:
   text: 為什麼線性回歸 (Linear Regression) 具有高可解釋性？
   type: multiple_choice
   options:
-  - 因為它很簡單
-  - 因為每個特徵的權重 (係數) 直接反映了該特徵對結果的影響方向與大小
-  - 因為它準確率高
-  - 因為它不需要訓練
+  - 因為它的模型結構很簡單
+  - 因為每個特徵的權重 (係數) 直接反映了該特徵對結果的影響方向與大小 (Direct Interpretation)
+  - 因為它的預測準確率很高
+  - 因為它不需要進行訓練
   correct_index: 1
   explanation: y = 2x + 3。看到係數是 2，就知道 x 每增加 1，y 就增加 2。這種直接的對應關係就是可解釋性。
   tags:
@@ -613,10 +613,10 @@ questions:
   text: 基準 (Baseline) 在模型監控中的作用是？
   type: multiple_choice
   options:
-  - 無作用
-  - 作為比較的參考點，判斷當前模型表現是否正常
-  - 增加複雜度
-  - 減少數據
+  - 完全沒有作用
+  - 作為比較的參考點 (Reference Point)，判斷當前模型表現是否正常
+  - 增加模型的複雜度
+  - 減少訓練數據量
   correct_index: 1
   explanation: 沒有比較就沒有傷害（也沒有監控）。基準通常是模型上線初期的表現，或者是簡單規則模型的表現。
   tags:
@@ -629,10 +629,10 @@ questions:
   text: 偏見審計 (Bias Audit) 是指？
   type: multiple_choice
   options:
-  - 檢查程式碼錯誤
-  - 系統性地評估模型對不同群體的表現差異，以發現潛在歧視
-  - 審計財務報表
-  - 檢查硬體
+  - 檢查程式碼中的語法錯誤
+  - 系統性地評估模型對不同群體的表現差異，以發現潛在歧視 (Discrimination Detection)
+  - 審計公司的財務報表
+  - 檢查伺服器硬體狀態
   correct_index: 1
   explanation: 定期對模型進行「體檢」，看看它是否對某些人特別嚴苛或寬容。
   tags:
@@ -645,10 +645,10 @@ questions:
   text: 情境：你的銀行信用評分模型被投訴對女性申請者不公。你檢查了特徵，發現已經刪除了「性別」欄位。這時你應該懷疑什麼？如何驗證？
   type: multiple_choice
   options:
-  - 模型有自我意識。
-  - 存在代理變數 (Proxy Variables)。應檢查其他特徵是否與性別高度相關。
-  - 數據量太少。
-  - 投訴者亂說。
+  - 模型產生了自我意識，故意歧視
+  - 存在代理變數 (Proxy Variables)。應檢查其他特徵是否與性別高度相關
+  - 訓練數據量太少，導致模型不穩定
+  - 投訴者在說謊，模型不可能出錯
   correct_index: 1
   explanation: 這是最常見的隱形歧視。即使不給性別，模型也能從「購買化妝品頻率」猜出性別。必須進行相關性分析和公平性指標檢測。
   tags:
@@ -661,10 +661,10 @@ questions:
   text: 情境：你使用深度學習模型預測房價，準確率很高，但客戶要求解釋為什麼他的房子被估這麼低。你應該使用什麼工具？
   type: multiple_choice
   options:
-  - 告訴他這是 AI 的決定，無法解釋。
-  - 使用 SHAP 或 LIME 進行局部解釋，指出具體是哪些特徵拉低了預測值。
-  - 畫出神經網路架構圖給他看。
-  - 重新訓練一個線性模型。
+  - 告訴他這是 AI 的決定，屬於商業機密無法解釋
+  - 使用 SHAP 或 LIME 進行局部解釋 (Local Explanation)，指出具體是哪些特徵拉低了預測值
+  - 畫出複雜的神經網路架構圖給他看
+  - 重新訓練一個簡單的線性模型來解釋
   correct_index: 1
   explanation: 客戶不關心神經網路有幾層，他只關心「為什麼」。SHAP/LIME 能給出「屋齡 -50 萬」、「捷運 +20 萬」這種人類聽得懂的理由。
   tags:
@@ -677,10 +677,10 @@ questions:
   text: 情境：你的模型上線一個月後，準確率從 90% 掉到 70%。檢查發現輸入數據的分佈與訓練時有很大差異。這是什麼現象？應如何處理？
   type: multiple_choice
   options:
-  - 程式 Bug。
-  - 數據漂移 (Data Drift)。應收集新數據重新訓練模型，並建立定期監控與自動更新機制。
-  - 過擬合。
-  - 欠擬合。
+  - 程式碼出現了 Bug
+  - 數據漂移 (Data Drift)。應收集新數據重新訓練模型，並建立定期監控與自動更新機制
+  - 模型發生了過擬合 (Overfitting)
+  - 模型發生了欠擬合 (Underfitting)
   correct_index: 1
   explanation: 環境變了，模型沒變，自然會水土不服。這是 MLOps 的核心問題，解法就是持續監控、持續訓練 (CT)。
   tags:
@@ -693,10 +693,10 @@ questions:
   text: 情境：在醫療影像診斷中，你發現模型過度依賴圖片邊緣的標記（醫院浮水印）來判斷疾病，而不是看病灶。這屬於什麼問題？如何發現的？
   type: multiple_choice
   options:
-  - 聰明的漢斯 (Clever Hans) 現象 / 捷徑學習。透過 XAI 工具觀察模型的關注區域發現的。
-  - 模型太強。
-  - 數據太乾淨。
-  - 標註錯誤。
+  - 聰明的漢斯 (Clever Hans) 現象 / 捷徑學習 (Shortcut Learning)。透過 XAI 工具觀察模型的關注區域發現的
+  - 模型能力太強，發現了人類未知的規律
+  - 數據太乾淨，沒有雜訊
+  - 數據標註出現了錯誤
   correct_index: 0
   explanation: 模型很懶，它發現「有 A 醫院浮水印的通常是重症」，就直接看浮水印猜答案，完全沒學會看病。XAI 熱力圖能揭示這種荒謬的邏輯。
   tags:
@@ -709,10 +709,10 @@ questions:
   text: 情境：為了保護隱私，你決定在發布數據前加入雜訊。但業務部門抱怨數據變得不可用。這反映了什麼權衡？
   type: multiple_choice
   options:
-  - 隱私 (Privacy) vs. 效用 (Utility)。
-  - 速度 vs. 成本。
-  - 準確 vs. 召回。
-  - 訓練 vs. 推論。
+  - 隱私 (Privacy) vs. 效用 (Utility) 的權衡
+  - 速度 (Speed) vs. 成本 (Cost) 的權衡
+  - 準確率 (Accuracy) vs. 召回率 (Recall) 的權衡
+  - 訓練 (Training) vs. 推論 (Inference) 的權衡
   correct_index: 0
   explanation: 這是差分隱私的核心難題。雜訊加多了，隱私安全但數據廢了；雜訊加少了，數據好用但隱私不保。需要在兩者間尋找可接受的平衡點。
   tags:
@@ -724,10 +724,10 @@ questions:
   text: 情境：SHAP (SHapley Additive exPlanations) 的核心概念源自？
   type: multiple_choice
   options:
-  - 微積分
-  - 博弈論 (Game Theory)
-  - 幾何學
-  - 物理學
+  - 微積分 (Calculus)
+  - 博弈論 (Game Theory) 中的 Shapley Value
+  - 幾何學 (Geometry)
+  - 物理學 (Physics)
   correct_index: 1
   explanation: 利用 Shapley Value 公平分配每個特徵對預測結果的貢獻。
   tags:
@@ -740,10 +740,10 @@ questions:
   text: 情境：選擇性偏見 (Selection Bias) 是指？
   type: multiple_choice
   options:
-  - 模型選擇錯誤
-  - 訓練數據不能代表真實世界 (樣本偏差)
-  - 特徵選擇錯誤
-  - 演算法偏見
+  - 模型選擇了錯誤的演算法
+  - 訓練數據不能代表真實世界的母體 (Sampling Bias)
+  - 特徵選擇過程出現錯誤
+  - 演算法本身存在偏見
   correct_index: 1
   explanation: 例如用白人數據訓練人臉辨識，導致對黑人辨識率低。
   tags:
@@ -756,10 +756,10 @@ questions:
   text: 情境：概念漂移 (Concept Drift) 發生時，意味著？
   type: multiple_choice
   options:
-  - 數據格式變了
-  - 輸入與輸出之間的關係發生了變化 (如詐欺模式改變)
-  - 模型壞了
-  - 硬體故障
+  - 數據的儲存格式發生了變化
+  - 輸入特徵與目標變數之間的映射關係發生了變化 (Relationship Change)，如詐欺模式改變
+  - 模型本身發生了故障
+  - 伺服器硬體發生故障
   correct_index: 1
   explanation: 舊模型不再適用於新的規律，需重新訓練。
   tags:
@@ -772,10 +772,10 @@ questions:
   text: 情境：LIME 的主要作用是？
   type: multiple_choice
   options:
-  - 全域解釋
-  - 局部解釋 (Local Interpretability)，解釋單個預測
-  - 訓練模型
-  - 壓縮模型
+  - 提供模型的全域解釋 (Global Interpretability)
+  - 提供局部解釋 (Local Interpretability)，解釋單個預測的決策依據
+  - 用於訓練新的機器學習模型
+  - 用於壓縮模型以減少體積
   correct_index: 1
   explanation: 在局部擬合一個簡單模型來解釋複雜模型的決策。
   tags:
@@ -788,10 +788,10 @@ questions:
   text: 情境：FAT 原則中的「透明度 (Transparency)」要求？
   type: multiple_choice
   options:
-  - 模型程式碼公開
-  - 模型的決策過程應可見且可解釋
-  - 數據公開
-  - 硬體透明
+  - 模型的原始程式碼必須完全公開
+  - 模型的決策過程應該是可見、可理解且可解釋的 (Explainable Decision Process)
+  - 所有的訓練數據必須公開
+  - 伺服器硬體架構必須透明
   correct_index: 1
   explanation: 避免黑箱決策，建立使用者信任。
   tags:
@@ -804,10 +804,10 @@ questions:
   text: 情境：PSI (Population Stability Index) 用於衡量？
   type: multiple_choice
   options:
-  - 模型準確率
-  - 數據分佈的穩定性 (Data Drift)
-  - 訓練速度
-  - 記憶體使用量
+  - 模型的預測準確率 (Accuracy)
+  - 數據分佈的穩定性 (Data Drift)，用於檢測輸入數據是否發生顯著變化
+  - 模型的訓練速度
+  - 模型的記憶體使用量
   correct_index: 1
   explanation: PSI > 0.25 通常表示數據發生了顯著漂移。
   tags:
@@ -820,10 +820,10 @@ questions:
   text: 情境：全域解釋 (Global Interpretability) 關注的是？
   type: multiple_choice
   options:
-  - 單個樣本
-  - 模型整體的運作邏輯 (如特徵重要性排行)
-  - 模型誤差
-  - 訓練時間
+  - 單個樣本的具體預測原因
+  - 模型整體的運作邏輯 (Global Model Logic)，如特徵重要性排行
+  - 模型的預測誤差
+  - 模型的訓練時間
   correct_index: 1
   explanation: 了解哪些特徵對模型整體來說最重要。
   tags:
@@ -836,10 +836,10 @@ questions:
   text: 情境：歷史偏見 (Historical Bias) 源於？
   type: multiple_choice
   options:
-  - 數據採集錯誤
-  - 數據反映了歷史上存在的社會不公與歧視
-  - 演算法錯誤
-  - 計算錯誤
+  - 數據採集過程中的隨機錯誤
+  - 數據反映了歷史上存在的社會不公與歧視 (Historical Injustice)
+  - 演算法本身的邏輯錯誤
+  - 計算過程中的數值誤差
   correct_index: 1
   explanation: AI 只是學到了人類社會過去的偏見（如性別刻板印象）。
   tags:
@@ -852,10 +852,10 @@ questions:
   text: 情境：當檢測到嚴重的數據漂移時，通常應該？
   type: multiple_choice
   options:
-  - 不理會
-  - 使用新數據重新訓練模型
-  - 刪除模型
-  - 關閉系統
+  - 完全不理會，繼續使用舊模型
+  - 使用新數據重新訓練模型 (Retraining) 以適應新的分佈
+  - 直接刪除模型並停止服務
+  - 關閉整個系統進行維護
   correct_index: 1
   explanation: 確保模型能適應新的數據分佈。
   tags:
@@ -868,10 +868,10 @@ questions:
   text: 情境：SHAP 值為正表示？
   type: multiple_choice
   options:
-  - 該特徵對預測結果有正向貢獻 (推高預測值)
-  - 該特徵無關
-  - 該特徵有負向貢獻
-  - 該特徵錯誤
+  - 該特徵對預測結果有正向貢獻 (Positive Contribution)，推高預測值
+  - 該特徵與預測結果無關
+  - 該特徵對預測結果有負向貢獻 (Negative Contribution)
+  - 該特徵是錯誤的數據
   correct_index: 0
   explanation: 負值則表示推低預測值。
   tags:
@@ -884,10 +884,10 @@ questions:
   text: 情境：當責性 (Accountability) 強調？
   type: multiple_choice
   options:
-  - AI 永遠是對的
-  - 需要有明確的機制來釐清 AI 決策的責任歸屬
-  - AI 不需要負責
-  - 使用者負責
+  - AI 永遠是正確的，不需要負責
+  - 需要有明確的機制來釐清 AI 決策的責任歸屬 (Responsibility Attribution)
+  - AI 不需要對其決策負責
+  - 只有使用者需要負責，開發者無關
   correct_index: 1
   explanation: 當 AI 出錯時，必須有人（開發者、部署者）承擔責任。
   tags:
@@ -900,10 +900,10 @@ questions:
   text: 情境：數據漂移 (Data Drift) 指的是？
   type: multiple_choice
   options:
-  - 數據不見了
-  - 輸入數據的統計分佈隨時間發生變化
-  - 模型參數變了
-  - 標籤變了
+  - 數據完全遺失了
+  - 輸入數據的統計分佈隨時間發生變化 (Statistical Distribution Change)
+  - 模型的權重參數發生了變化
+  - 數據的標籤定義發生了變化
   correct_index: 1
   explanation: 例如疫情期間消費者的購物習慣改變。
   tags:
@@ -916,10 +916,10 @@ questions:
   text: 情境：LIME 適用於哪種模型？
   type: multiple_choice
   options:
-  - 只有決策樹
-  - 只有神經網路
-  - 任何模型 (Model-agnostic)
-  - 只有線性模型
+  - 只有決策樹模型
+  - 只有神經網路模型
+  - 任何機器學習模型 (Model-agnostic)，不依賴於模型內部結構
+  - 只有線性回歸模型
   correct_index: 2
   explanation: 它把原模型當作黑箱，只關注輸入輸出。
   tags:
@@ -932,10 +932,10 @@ questions:
   text: 情境：測量偏見 (Measurement Bias) 發生在？
   type: multiple_choice
   options:
-  - 特徵或標籤的測量方式有誤或不一致
-  - 數據量太少
-  - 模型太複雜
-  - 運算太慢
+  - 特徵或標籤的測量方式有誤或不一致 (Measurement Error)
+  - 訓練數據量太少
+  - 模型架構太過複雜
+  - 模型的運算速度太慢
   correct_index: 0
   explanation: 例如用「逮捕率」來衡量「犯罪率」，可能會因執法偏差而引入偏見。
   tags:
@@ -948,10 +948,10 @@ questions:
   text: 情境：XAI (Explainable AI) 的主要目標是？
   type: multiple_choice
   options:
-  - 提高準確率
-  - 讓人類理解 AI 模型的決策邏輯，建立信任
-  - 加快運算
-  - 降低成本
+  - 提高模型的預測準確率
+  - 讓人類理解 AI 模型的決策邏輯，建立信任 (Trust)
+  - 加快模型的運算速度
+  - 降低模型的開發成本
   correct_index: 1
   explanation: 解決黑箱問題，特別是在醫療、金融等高風險領域。
   tags:
@@ -964,10 +964,10 @@ questions:
   text: 情境：模型監控應該在什麼時候進行？
   type: multiple_choice
   options:
-  - 訓練時
-  - 部署後持續進行
-  - 開發前
-  - 不需要
+  - 僅在模型訓練時進行
+  - 在模型部署後持續進行 (Continuous Monitoring)
+  - 僅在模型開發前進行
+  - 不需要進行監控
   correct_index: 1
   explanation: 環境是動態的，模型效能會隨時間衰退。
   tags:
@@ -980,10 +980,10 @@ questions:
   text: 情境：公平性 (Fairness) 要求模型？
   type: multiple_choice
   options:
-  - 對所有人都一樣準
-  - 不應對特定群體 (如性別、種族) 產生系統性的歧視
-  - 準確率 100%
-  - 免費使用
+  - 對所有人的預測準確率都一樣
+  - 不應對特定群體 (如性別、種族) 產生系統性的歧視 (Systematic Discrimination)
+  - 模型的預測準確率達到 100%
+  - 模型可以免費供所有人使用
   correct_index: 1
   explanation: 確保 AI 的決策不違反平等原則。
   tags:
@@ -996,10 +996,10 @@ questions:
   text: 情境：SHAP 摘要圖 (Summary Plot) 可以展示？
   type: multiple_choice
   options:
-  - 特徵重要性與特徵值對預測的影響方向
-  - 模型結構
-  - 訓練時間
-  - 數據分佈
+  - 特徵的重要性排序與特徵值對預測的影響方向 (Feature Importance and Impact)
+  - 模型的詳細網路結構
+  - 模型的訓練時間長短
+  - 訓練數據的統計分佈
   correct_index: 0
   explanation: 同時提供了特徵重要性排序與特徵影響力的視覺化。
   tags:
@@ -1012,10 +1012,10 @@ questions:
   text: 情境：除了性能指標，還應監控模型的？
   type: multiple_choice
   options:
-  - 耗電量
-  - 公平性指標 (確保未產生偏見)
-  - 硬體溫度
-  - 網路速度
+  - 模型的耗電量
+  - 公平性指標 (Fairness Metrics)，確保模型未產生偏見
+  - 伺服器硬體的溫度
+  - 網路傳輸的速度
   correct_index: 1
   explanation: 確保模型在運作過程中持續符合倫理標準。
   tags:
@@ -1028,10 +1028,10 @@ questions:
   text: 情境：為了減少選擇性偏見，應該？
   type: multiple_choice
   options:
-  - 只收集方便的數據
-  - 確保訓練數據具有代表性，涵蓋各種群體
-  - 減少數據量
-  - 不使用數據
+  - 只收集最方便取得的數據
+  - 確保訓練數據具有代表性 (Representativeness)，涵蓋各種群體
+  - 減少訓練數據的數量
+  - 完全不使用任何數據
   correct_index: 1
   explanation: 改善採樣策略，確保數據多樣性。
   tags:

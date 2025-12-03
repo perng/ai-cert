@@ -5,10 +5,10 @@ questions:
   text: 在強化學習中，代理 (Agent) 的目標是？
   type: multiple_choice
   options:
-  - 預測未來
-  - 最大化累積獎勵 (Cumulative Reward)
-  - 最小化行動次數
-  - 模仿人類
+  - 預測未來的環境狀態
+  - 最大化累積獎勵 (Cumulative Reward) 或長期回報 (Return)
+  - 最小化行動次數以節省能量
+  - 模仿人類專家的行為 (Imitation Learning)
   correct_index: 1
   explanation: 強化學習的核心就是透過試錯，學會一套策略，讓長期獲得的總獎勵（回報）最大化。
   tags:
@@ -21,10 +21,10 @@ questions:
   text: 探索 (Exploration) 與利用 (Exploitation) 的權衡是指？
   type: multiple_choice
   options:
-  - 選擇最貴的硬體
-  - 選擇嘗試未知行動還是選擇當前已知最佳行動
-  - 選擇訓練資料
-  - 選擇演算法
+  - 選擇最昂貴的高效能硬體設備
+  - 選擇嘗試未知行動 (Exploration) 還是選擇當前已知最佳行動 (Exploitation)
+  - 選擇最佳的訓練資料集
+  - 選擇最適合的機器學習演算法
   correct_index: 1
   explanation: 只利用不探索會陷入局部最佳解（井底之蛙）；只探索不利用則無法累積高分。必須在兩者間取得平衡。
   tags:
@@ -37,10 +37,10 @@ questions:
   text: 折扣因子 (Discount Factor) γ 的作用是？
   type: multiple_choice
   options:
-  - 加速訓練
-  - 平衡當前獎勵與未來獎勵的重要性
-  - 減少雜訊
-  - 增加隨機性
+  - 加速模型的訓練速度
+  - 平衡當前即時獎勵與未來長期獎勵的重要性 (Future Reward Weighting)
+  - 減少環境中的隨機雜訊
+  - 增加代理行動的隨機性
   correct_index: 1
   explanation: γ=0 代表只看眼前利益；γ 接近 1 代表非常重視長遠利益。
   tags:
@@ -53,10 +53,10 @@ questions:
   text: Q-learning 是一種什麼類型的演算法？
   type: multiple_choice
   options:
-  - 基於策略的 (Policy-based)
-  - 基於值的 (Value-based)
-  - 基於模型的 (Model-based)
-  - 監督式學習
+  - 基於策略的 (Policy-based) 演算法
+  - 基於值的 (Value-based) 演算法，學習動作價值函數 Q(s, a)
+  - 基於模型的 (Model-based) 演算法，學習環境模型
+  - 監督式學習 (Supervised Learning) 演算法
   correct_index: 1
   explanation: Q-learning 不直接學策略，而是學每個動作「值多少分」(Q值)，然後選分最高的動作做。
   tags:
@@ -69,10 +69,10 @@ questions:
   text: DQN (Deep Q-Network) 引入了什麼技術來解決數據相關性問題？
   type: multiple_choice
   options:
-  - 卷積神經網路
-  - 經驗重播 (Experience Replay)
-  - 遞歸神經網路
-  - 隨機森林
+  - 卷積神經網路 (CNN) 用於提取特徵
+  - 經驗重播 (Experience Replay)，打破數據的時間相關性
+  - 遞歸神經網路 (RNN) 用於處理序列數據
+  - 隨機森林 (Random Forest) 用於決策
   correct_index: 1
   explanation: RL 的數據是序列產生的，前後高度相關。經驗重播將數據存入緩衝區並隨機打散採樣，讓神經網路訓練更穩定。
   tags:
@@ -85,10 +85,10 @@ questions:
   text: 策略梯度 (Policy Gradients) 方法的主要優勢是？
   type: multiple_choice
   options:
-  - 只能處理離散動作
-  - 能直接處理連續動作空間 (Continuous Action Space)
-  - 不需要神經網路
-  - 計算最簡單
+  - 只能處理離散動作空間 (Discrete Action Space)
+  - 能直接處理連續動作空間 (Continuous Action Space)，如機器人控制
+  - 不需要使用神經網路進行近似
+  - 計算邏輯最簡單且收斂最快
   correct_index: 1
   explanation: 對於機器人手臂控制等需要輸出連續數值（如角度、力度）的任務，策略梯度比 Q-learning 更自然且有效。
   tags:
@@ -101,10 +101,10 @@ questions:
   text: AlphaGo 結合了深度強化學習與什麼技術？
   type: multiple_choice
   options:
-  - 遺傳演算法
-  - 蒙地卡羅樹搜尋 (MCTS)
-  - 支援向量機
-  - 隨機森林
+  - 遺傳演算法 (Genetic Algorithm)
+  - 蒙地卡羅樹搜尋 (Monte Carlo Tree Search, MCTS)
+  - 支援向量機 (Support Vector Machine)
+  - 隨機森林 (Random Forest)
   correct_index: 1
   explanation: 深度學習負責直覺判斷（這步棋好不好），MCTS 負責邏輯推演（往後多看幾步），兩者結合戰勝了人類。
   tags:
@@ -117,10 +117,10 @@ questions:
   text: ε-Greedy 策略中的 ε 代表？
   type: multiple_choice
   options:
-  - 學習率
-  - 隨機探索的機率
-  - 折扣因子
-  - 獎勵值
+  - 模型的學習率 (Learning Rate)
+  - 隨機探索的機率 (Exploration Probability)
+  - 未來獎勵的折扣因子 (Discount Factor)
+  - 環境給予的獎勵值 (Reward Value)
   correct_index: 1
   explanation: 以 ε 的機率亂走（探索），以 1-ε 的機率走已知的最佳路徑（利用）。
   tags:
@@ -133,10 +133,10 @@ questions:
   text: PPO (Proximal Policy Optimization) 如何保證訓練穩定性？
   type: multiple_choice
   options:
-  - 增加學習率
-  - 限制策略更新的幅度 (Clip 操作)
-  - 使用更深的神經網路
-  - 減少獎勵
+  - 增加學習率以加快收斂
+  - 限制策略更新的幅度 (Clip 操作)，避免策略崩潰
+  - 使用更深層的神經網路架構
+  - 減少環境給予的獎勵數值
   correct_index: 1
   explanation: 策略梯度對步長非常敏感。PPO 透過限制新舊策略的差異，確保每次更新都是安全且有效的。
   tags:
@@ -149,10 +149,10 @@ questions:
   text: Sim2Real 技術主要用於解決什麼問題？
   type: multiple_choice
   options:
-  - 遊戲通關
-  - 先在模擬環境訓練再遷移到真實世界
-  - 推薦系統冷啟動
-  - 圖像識別
+  - 遊戲關卡的自動生成與通關
+  - 先在模擬環境訓練再遷移到真實世界 (Simulation to Reality Transfer)
+  - 推薦系統的冷啟動問題
+  - 圖像識別與分類任務
   correct_index: 1
   explanation: 讓機器人在真實世界摔倒幾萬次是不現實的。Sim2Real 讓它在虛擬世界摔夠了，學會走路後再放到現實中微調。
   tags:
@@ -165,10 +165,10 @@ questions:
   text: 強化學習中的「狀態 (State)」是指？
   type: multiple_choice
   options:
-  - 代理的心理狀態
-  - 環境當前的狀況描述
-  - 遊戲的得分
-  - 訓練的進度
+  - 代理 (Agent) 的心理狀態或內部記憶
+  - 環境當前的狀況描述 (Observation)，包含決策所需資訊
+  - 遊戲目前的得分或獎勵總和
+  - 模型訓練的進度百分比
   correct_index: 1
   explanation: 狀態是代理做決策的依據，包含了環境的所有相關資訊（如棋盤局面、機器人關節角度）。
   tags:
@@ -181,10 +181,10 @@ questions:
   text: 價值函數 V(s) 代表？
   type: multiple_choice
   options:
-  - 當前獲得的即時獎勵
-  - 從狀態 s 開始的預期累積獎勵
-  - 狀態 s 的複雜度
-  - 狀態 s 的發生機率
+  - 當前獲得的即時獎勵 (Immediate Reward)
+  - 從狀態 s 開始的預期累積獎勵 (Expected Cumulative Reward)
+  - 狀態 s 的計算複雜度
+  - 狀態 s 發生的機率
   correct_index: 1
   explanation: 價值函數評估的是「長遠來看，處於這個狀態有多好」，而不僅僅是當下拿到的糖果。
   tags:
@@ -197,10 +197,10 @@ questions:
   text: DQN 使用神經網路是為了近似？
   type: multiple_choice
   options:
-  - 策略函數
-  - Q 函數 (Q-function)
-  - 獎勵函數
-  - 狀態轉移函數
+  - 策略函數 (Policy Function)
+  - Q 函數 (Q-function)，即動作價值函數
+  - 獎勵函數 (Reward Function)
+  - 狀態轉移函數 (Transition Function)
   correct_index: 1
   explanation: 當狀態空間太大（如螢幕像素）無法用表格 (Q-table) 存下時，用神經網路來擬合 Q 值函數。
   tags:
@@ -213,10 +213,10 @@ questions:
   text: 時序差分 (Temporal Difference, TD) 誤差是用來？
   type: multiple_choice
   options:
-  - 計算梯度
-  - 更新 Q 值，利用對未來的估計來修正當前的估計
-  - 預測未來
-  - 評估模型
+  - 計算反向傳播的梯度 (Gradient Calculation)
+  - 更新 Q 值，利用對未來的估計來修正當前的估計 (Bootstrapping)
+  - 預測未來的環境狀態
+  - 評估模型的準確率
   correct_index: 1
   explanation: TD 是 RL 的精髓：不用等到遊戲結束，根據「下一步的估計值」就能更新「這一步的價值」。
   tags:
@@ -229,10 +229,10 @@ questions:
   text: 在推薦系統中，強化學習將用戶的點擊或購買視為？
   type: multiple_choice
   options:
-  - 狀態
-  - 行動
-  - 獎勵 (Reward)
-  - 懲罰
+  - 系統的狀態 (State)
+  - 系統採取的行動 (Action)
+  - 環境給予的獎勵 (Reward)，用於評估推薦的好壞
+  - 環境給予的懲罰 (Penalty)
   correct_index: 2
   explanation: 推薦系統是代理，推薦內容是行動，用戶點擊就是環境給的獎勵。目標是最大化長期點擊率（累積獎勵）。
   tags:
@@ -245,10 +245,10 @@ questions:
   text: 固定目標網路 (Fixed Target Network) 在 DQN 中的作用是？
   type: multiple_choice
   options:
-  - 加速計算
-  - 穩定訓練目標，避免 Q 值估計發散
-  - 增加探索
-  - 減少記憶體
+  - 加速神經網路的計算速度
+  - 穩定訓練目標，避免 Q 值估計發散 (Target Instability)
+  - 增加代理的探索能力
+  - 減少記憶體的使用量
   correct_index: 1
   explanation: 如果射箭的靶子（目標值）一直動，很難射準。固定目標網路讓靶子暫時不動一段時間，讓訓練更穩定。
   tags:
@@ -261,10 +261,10 @@ questions:
   text: 策略 (Policy) π(a|s) 定義了？
   type: multiple_choice
   options:
-  - 環境的規則
-  - 代理在給定狀態 s 下選擇行動 a 的機率或規則
-  - 獎勵的計算方式
-  - 狀態的價值
+  - 環境運作的物理規則
+  - 代理在給定狀態 s 下選擇行動 a 的機率或規則 (Behavior Rule)
+  - 獎勵函數的計算公式
+  - 狀態的價值評估方式
   correct_index: 1
   explanation: 策略就是代理的「大腦」，決定了在什麼情況下該做什麼事。
   tags:
@@ -277,10 +277,10 @@ questions:
   text: Q-learning 的 Q 表 (Q-table) 儲存的是？
   type: multiple_choice
   options:
-  - 狀態轉移機率
-  - 狀態-行動對 (State-Action pair) 的預期累積獎勵
-  - 策略
-  - 歷史記錄
+  - 狀態之間的轉移機率矩陣
+  - 狀態-行動對 (State-Action pair) 的預期累積獎勵值
+  - 代理採取的策略分佈
+  - 過去所有回合的歷史記錄
   correct_index: 1
   explanation: Q(s, a) 告訴代理：在狀態 s 做動作 a，預期能拿多少分。
   tags:
@@ -293,10 +293,10 @@ questions:
   text: 策略梯度方法直接優化的是？
   type: multiple_choice
   options:
-  - 價值函數
-  - 策略函數 π(θ)
-  - 環境模型
-  - 獎勵函數
+  - 狀態價值函數 V(s)
+  - 策略函數 π(θ)，即直接調整網路參數以優化策略
+  - 環境的動力學模型
+  - 獎勵函數 R(s, a)
   correct_index: 1
   explanation: 它不透過 Q 值間接推導，而是直接調整策略網路的參數，讓好動作的機率變大，壞動作的機率變小。
   tags:
@@ -309,10 +309,10 @@ questions:
   text: 環境 (Environment) 對代理的行動做出的反饋包括？
   type: multiple_choice
   options:
-  - 只有獎勵
-  - 新的狀態 (Next State) 和獎勵 (Reward)
-  - 只有新的狀態
-  - 策略更新
+  - 只有獎勵信號
+  - 新的狀態 (Next State) 和獎勵 (Reward) 信號
+  - 只有新的狀態資訊
+  - 策略更新的指令
   correct_index: 1
   explanation: 代理做了一個動作後，環境會變（轉移到新狀態），並告訴代理這個動作好不好（給獎勵）。
   tags:
@@ -325,10 +325,10 @@ questions:
   text: 經驗重播 (Experience Replay) 的緩衝區儲存的是？
   type: multiple_choice
   options:
-  - 模型參數
-  - 轉移樣本 (s, a, r, s')
-  - 只有獎勵
-  - 只有圖像
+  - 神經網路的模型參數
+  - 過去的轉移樣本 (s, a, r, s')，用於後續的隨機採樣訓練
+  - 只有環境給予的獎勵值
+  - 只有環境的圖像數據
   correct_index: 1
   explanation: 這些四元組記錄了代理的歷史經驗，是 DQN 訓練的素材。
   tags:
@@ -341,10 +341,10 @@ questions:
   text: OpenAI Gym 是一個？
   type: multiple_choice
   options:
-  - 強化學習演算法庫
-  - 提供標準化環境以測試 RL 演算法的工具包
-  - 健身房
-  - 深度學習框架
+  - 一個特定的強化學習演算法庫
+  - 提供標準化環境 (Standardized Environments) 以測試和比較 RL 演算法的工具包
+  - 一個虛擬的健身房應用程式
+  - 一個深度學習模型訓練框架
   correct_index: 1
   explanation: Gym 提供了統一的介面（reset, step），讓開發者能專注於演算法設計，而不用自己寫遊戲環境。
   tags:
@@ -357,10 +357,10 @@ questions:
   text: 貝爾曼方程式中的 max 操作意味著？
   type: multiple_choice
   options:
-  - 代理總是選擇最差的行動
-  - 代理假設自己會選擇能帶來最大價值的最佳行動
-  - 環境是隨機的
-  - 獎勵是固定的
+  - 代理總是選擇最差的行動以進行探索
+  - 代理假設自己會選擇能帶來最大價值的最佳行動 (Optimal Action)
+  - 環境的反應是隨機不可預測的
+  - 獎勵值是固定不變的
   correct_index: 1
   explanation: 這是最佳化控制的基礎：當前狀態的價值，取決於我接下來能做的「最好」選擇。
   tags:
@@ -373,8 +373,8 @@ questions:
   text: Q-learning 是 On-policy 還是 Off-policy？
   type: multiple_choice
   options:
-  - On-policy
-  - Off-policy
+  - On-policy (同策略)
+  - Off-policy (異策略)，因為學習的策略與行動的策略不同
   - 兩者皆非
   - 兩者皆是
   correct_index: 1
@@ -390,10 +390,10 @@ questions:
   text: 在連續動作空間 (如駕駛方向盤角度) 中，哪種方法通常更適用？
   type: multiple_choice
   options:
-  - Q-learning
-  - DQN
-  - 策略梯度 (Policy Gradients) / PPO
-  - 查表法
+  - Q-learning 演算法
+  - DQN (Deep Q-Network) 演算法
+  - 策略梯度 (Policy Gradients) / PPO 等策略類方法
+  - 傳統的查表法 (Tabular Method)
   correct_index: 2
   explanation: Q-learning/DQN 需要對動作取 max，在連續空間中很難做（無限多個動作）。策略梯度直接輸出動作分佈，天然支持連續動作。
   tags:
@@ -406,10 +406,10 @@ questions:
   text: 稀疏獎勵 (Sparse Reward) 問題是指？
   type: multiple_choice
   options:
-  - 獎勵太多
-  - 代理很難獲得獎勵，導致難以學習
-  - 獎勵是負的
-  - 獎勵隨機出現
+  - 環境給予的獎勵太多，導致代理不知所措
+  - 代理很難獲得獎勵，導致難以學習有效策略 (Difficulty in Learning)
+  - 環境給予的獎勵是負值
+  - 獎勵隨機出現，沒有規律
   correct_index: 1
   explanation: 就像在大海撈針。如果做了幾萬步操作都沒有任何反饋，代理根本不知道自己做得對不對，這是 RL 的一大難題。
   tags:
@@ -422,10 +422,10 @@ questions:
   text: Actor-Critic 架構結合了哪兩種方法？
   type: multiple_choice
   options:
-  - Q-learning 和 SARSA
-  - 策略梯度 (Actor) 和 價值函數 (Critic)
-  - DQN 和 CNN
-  - 隨機森林和 SVM
+  - Q-learning 和 SARSA 演算法
+  - 策略梯度 (Actor) 和 價值函數 (Critic) 方法
+  - DQN 和 CNN 架構
+  - 隨機森林和 SVM 模型
   correct_index: 1
   explanation: Actor 負責做動作（策略），Critic 負責打分數（價值）。兩者互補，訓練更穩定且效率更高。
   tags:
@@ -438,10 +438,10 @@ questions:
   text: 如果折扣因子 γ = 0，代理會？
   type: multiple_choice
   options:
-  - 變得極度遠視
-  - 變得極度短視，只在乎當下的即時獎勵
-  - 隨機行動
-  - 停止行動
+  - 變得極度遠視，只在乎未來的獎勵
+  - 變得極度短視，只在乎當下的即時獎勵 (Immediate Reward)
+  - 隨機採取行動，不考慮獎勵
+  - 停止所有行動
   correct_index: 1
   explanation: 未來的價值都被乘上 0 了，所以代理只在乎 R(s, a)，完全不管後面的 V(s')。
   tags:
@@ -454,10 +454,10 @@ questions:
   text: DQN 中的 Loss Function 通常計算什麼之間的差異？
   type: multiple_choice
   options:
-  - 預測的 Q 值與目標 Q 值 (Target Q)
-  - 策略與價值
-  - 狀態與行動
-  - 獎勵與懲罰
+  - 預測的 Q 值與目標 Q 值 (Target Q) 之間的均方誤差 (MSE)
+  - 策略函數與價值函數之間的差異
+  - 狀態與行動之間的差異
+  - 獎勵與懲罰之間的差異
   correct_index: 0
   explanation: 目標是讓神經網路預測的 Q 值，盡可能接近由貝爾曼方程式算出來的目標 Q 值。
   tags:
@@ -470,10 +470,10 @@ questions:
   text: 馬可夫決策過程 (MDP) 的核心假設是？
   type: multiple_choice
   options:
-  - 歷史很重要
-  - 未來只取決於當前狀態，與過去無關
-  - 環境是靜態的
-  - 代理全知全能
+  - 歷史記錄對未來非常重要
+  - 未來狀態只取決於當前狀態，與過去的歷史無關 (Memoryless Property)
+  - 環境是靜態不變的
+  - 代理擁有全知全能的視角
   correct_index: 1
   explanation: 只要知道現在的狀態 (State)，就擁有了做決策所需的所有資訊，過去怎麼走到這一步的不重要。
   tags:
@@ -486,10 +486,10 @@ questions:
   text: 蒙地卡羅方法 (Monte Carlo) 在 RL 中通常用於？
   type: multiple_choice
   options:
-  - 計算梯度
-  - 透過完整的 Episode 採樣來估計價值函數
-  - 更新 Q 表
-  - 選擇動作
+  - 計算反向傳播的梯度
+  - 透過完整的 Episode 採樣來估計價值函數 (Value Estimation)
+  - 更新 Q 表中的 Q 值
+  - 選擇代理的下一個動作
   correct_index: 1
   explanation: MC 方法要等到遊戲結束（Episode 結束），算出總分，再回頭更新每個狀態的價值。
   tags:
@@ -502,10 +502,10 @@ questions:
   text: 在自駕車訓練中，撞車通常會給予什麼樣的獎勵？
   type: multiple_choice
   options:
-  - 正獎勵
-  - 巨大的負獎勵 (懲罰)
-  - 零獎勵
-  - 隨機獎勵
+  - 正獎勵 (Positive Reward)
+  - 巨大的負獎勵 (Negative Reward/Penalty)，以懲罰錯誤行為
+  - 零獎勵 (Zero Reward)
+  - 隨機給予獎勵
   correct_index: 1
   explanation: 透過重罰，讓代理學會極力避免這種情況發生。
   tags:
@@ -518,10 +518,10 @@ questions:
   text: SARSA 演算法與 Q-learning 的主要區別是？
   type: multiple_choice
   options:
-  - SARSA 是 On-policy，Q-learning 是 Off-policy
-  - SARSA 使用神經網路
-  - SARSA 不需要獎勵
-  - SARSA 只能處理連續動作
+  - SARSA 是 On-policy (同策略)，Q-learning 是 Off-policy (異策略)
+  - SARSA 使用深度神經網路，而 Q-learning 不使用
+  - SARSA 不需要環境給予獎勵
+  - SARSA 只能處理連續動作空間
   correct_index: 0
   explanation: SARSA 更新時用的是實際採取的下一個動作 (State-Action-Reward-State-Action)，言行一致，比較保守。
   tags:
@@ -534,10 +534,10 @@ questions:
   text: Episode (回合) 是指？
   type: multiple_choice
   options:
-  - 一次行動
-  - 從初始狀態到終止狀態的完整互動序列
-  - 訓練的一個 Batch
-  - 一個神經元
+  - 代理的一次單一行動
+  - 從初始狀態到終止狀態的完整互動序列 (Complete Sequence of Interactions)
+  - 訓練過程中的一個 Batch
+  - 神經網路中的一個神經元
   correct_index: 1
   explanation: 像玩一局遊戲，從開始到 Game Over，這就是一個 Episode。
   tags:
@@ -550,10 +550,10 @@ questions:
   text: 為什麼 DQN 不能直接用標準的監督式學習訓練？
   type: multiple_choice
   options:
-  - 因為沒有標籤
-  - 因為數據不是獨立同分佈 (i.i.d.) 且目標值不穩定
-  - 因為模型太簡單
-  - 因為速度太慢
+  - 因為強化學習沒有標籤數據
+  - 因為數據不是獨立同分佈 (Non-i.i.d.) 且目標值不穩定 (Non-stationary Targets)
+  - 因為模型架構太簡單
+  - 因為訓練速度太慢
   correct_index: 1
   explanation: RL 的數據是序列相關的，且「正確答案」（目標 Q 值）自己也在變。這違反了監督式學習的基本假設，所以需要經驗重播和固定目標網路來修正。
   tags:
@@ -566,10 +566,10 @@ questions:
   text: PPO 中的 Clip 操作是為了防止？
   type: multiple_choice
   options:
-  - 過擬合
-  - 策略更新步伐過大，導致性能崩潰
-  - 梯度消失
-  - 數據洩漏
+  - 模型發生過擬合 (Overfitting)
+  - 策略更新步伐過大，導致性能崩潰 (Performance Collapse)
+  - 梯度消失問題 (Gradient Vanishing)
+  - 訓練數據洩漏 (Data Leakage)
   correct_index: 1
   explanation: 限制新舊策略的比率在 [1-ε, 1+ε] 之間，確保每次只跨出一小步，穩步前進。
   tags:
@@ -582,10 +582,10 @@ questions:
   text: 強化學習在股票交易中的目標通常是？
   type: multiple_choice
   options:
-  - 預測股價
-  - 最大化投資組合的長期收益 (如夏普比率)
-  - 減少交易次數
-  - 增加手續費
+  - 準確預測未來的股價走勢
+  - 最大化投資組合的長期收益 (Long-term Returns)，如夏普比率 (Sharpe Ratio)
+  - 盡可能減少交易次數
+  - 增加交易手續費的支出
   correct_index: 1
   explanation: 不只是預測漲跌，而是要學會「買、賣、持有」的決策策略，最終目的是賺錢。
   tags:
@@ -598,10 +598,10 @@ questions:
   text: 獎勵函數設計 (Reward Shaping) 的目的是？
   type: multiple_choice
   options:
-  - 讓獎勵變大
-  - 引導代理更有效地學習，解決稀疏獎勵問題
-  - 欺騙代理
-  - 減少計算量
+  - 讓環境給予的獎勵數值變大
+  - 引導代理更有效地學習，解決稀疏獎勵 (Sparse Reward) 問題
+  - 欺騙代理以獲得錯誤的策略
+  - 減少計算量以加速訓練
   correct_index: 1
   explanation: 如果只在終點給獎勵太難學，我們可以設計一些「中間獎勵」（如靠近終點就給分），像麵包屑一樣引導代理。
   tags:
@@ -614,10 +614,10 @@ questions:
   text: A3C (Asynchronous Advantage Actor-Critic) 的特點是？
   type: multiple_choice
   options:
-  - 單執行緒
-  - 多執行緒非同步並行訓練
-  - 使用 GPU
-  - 不需要神經網路
+  - 只能使用單執行緒進行訓練
+  - 支援多執行緒非同步並行訓練 (Asynchronous Parallel Training)
+  - 必須使用 GPU 進行加速
+  - 不需要使用任何神經網路
   correct_index: 1
   explanation: 多個分身同時在不同的環境副本中探索，匯總經驗給主網路，大幅加速訓練並打破數據相關性。
   tags:
@@ -630,10 +630,10 @@ questions:
   text: 貝爾曼最佳方程式 (Bellman Optimality Equation) 描述的是？
   type: multiple_choice
   options:
-  - 任意策略的價值
+  - 任意策略下的價值函數
   - 最佳策略 (Optimal Policy) 下的價值函數關係
-  - 隨機策略的價值
-  - 錯誤的價值
+  - 隨機策略下的價值函數
+  - 錯誤的價值函數計算方式
   correct_index: 1
   explanation: $V^*(s) = \max_a (R + \gamma \sum P V^*(s'))$，這是 RL 求解的終極目標。
   tags:
@@ -647,10 +647,10 @@ questions:
     分。為什麼它會打轉？
   type: multiple_choice
   options:
-  - 扣分太少。
-  - 可能是折扣因子 γ 太小，或探索率 ε 太低。
-  - AI 太笨。
-  - 迷宮太難。
+  - 扣分太少，AI 不在乎
+  - 可能是折扣因子 γ 太小，或探索率 ε 太低，導致 AI 變得短視
+  - AI 太笨，無法學會走迷宮
+  - 迷宮設計太難，沒有解
   correct_index: 1
   explanation: 這是常見的獎勵設計陷阱。如果遠處的大獎勵被 γ 折扣到微乎其微，代理就會為了避免眼前的微小懲罰而選擇消極策略。需要調整 γ 或獎勵結構。
   tags:
@@ -663,10 +663,10 @@ questions:
   text: 情境：在訓練機械手臂抓取物體時，你發現模擬環境中訓練完美的模型，在真實世界完全無法工作。這叫什麼問題？該如何解決？
   type: multiple_choice
   options:
-  - 過擬合。
-  - Reality Gap (現實差距)。應使用域隨機化 (Domain Randomization)。
-  - 欠擬合。
-  - 硬體故障。
+  - 過擬合 (Overfitting)
+  - Reality Gap (現實差距)。應使用域隨機化 (Domain Randomization) 技術
+  - 欠擬合 (Underfitting)
+  - 硬體故障或傳感器誤差
   correct_index: 1
   explanation: 模擬永遠無法完美複製現實。透過在模擬中引入大量隨機擾動，讓模型「見多識廣」，它在面對真實世界的複雜性時就能視為另一種擾動而從容應對。
   tags:
@@ -679,10 +679,10 @@ questions:
   text: 情境：使用 DQN 玩 Atari 遊戲時，訓練初期 Loss 波動非常大且不收斂。你檢查了程式碼沒錯。最可能忽略了什麼機制？
   type: multiple_choice
   options:
-  - 忘記加 Dropout。
-  - 忘記使用固定目標網路或經驗重播容量太小。
-  - 學習率太低。
-  - 遊戲太難。
+  - 忘記加 Dropout 層
+  - 忘記使用固定目標網路 (Fixed Target Network) 或經驗重播緩衝區 (Experience Replay Buffer) 容量太小
+  - 學習率 (Learning Rate) 設定太低
+  - 遊戲難度太高，無法收斂
   correct_index: 1
   explanation: 沒有固定目標網路，DQN 的訓練就像「追著自己的尾巴跑」，目標值一直在變，導致震盪。經驗重播不足則會導致數據相關性過高。
   tags:
@@ -695,10 +695,10 @@ questions:
   text: 情境：你的代理在訓練過程中表現極不穩定，有時候很高分，有時候很低分。你使用的是策略梯度方法。這可能是什麼原因？
   type: multiple_choice
   options:
-  - 學習率太大。應改用 PPO 或 TRPO。
-  - 獎勵太少。
-  - 環境太簡單。
-  - 代理太聰明。
+  - 學習率太大導致更新幅度過猛。應改用 PPO 或 TRPO 等限制步長的演算法
+  - 環境給予的獎勵太少
+  - 環境太簡單，不需要複雜策略
+  - 代理太聰明，嘗試欺騙環境
   correct_index: 0
   explanation: 策略梯度方法對步長（學習率）極度敏感。一步走錯可能導致策略崩潰，且很難救回來。PPO 透過 Clip 機制限制了這一步的大小，保證了單調不減的改進。
   tags:
@@ -711,10 +711,10 @@ questions:
   text: 情境：你希望訓練一個 AI 控制數據中心的冷卻系統以節省電費。這是一個連續控制問題（調節風扇轉速、溫度設定）。你應該首選哪種演算法？
   type: multiple_choice
   options:
-  - Q-learning。
-  - DQN。
-  - PPO 或 DDPG。
-  - 隨機搜尋。
+  - Q-learning 演算法
+  - DQN (Deep Q-Network) 演算法
+  - PPO (Proximal Policy Optimization) 或 DDPG (Deep Deterministic Policy Gradient)
+  - 隨機搜尋 (Random Search)
   correct_index: 2
   explanation: Q-learning 和 DQN 處理連續動作需要離散化（如將轉速分為 10 檔），這會丟失精度並導致維度災難。PPO/DDPG 專為連續動作空間設計，能輸出精確的控制數值。
   tags:
@@ -726,10 +726,10 @@ questions:
   text: 情境：強化學習 (RL) 的目標是最大化？
   type: multiple_choice
   options:
-  - 單次獎勵
-  - 累積獎勵 (Cumulative Reward)
-  - 損失函數
-  - 訓練時間
+  - 單次行動獲得的即時獎勵 (Immediate Reward)
+  - 長期累積獎勵 (Cumulative Reward) 或預期回報 (Return)
+  - 訓練過程中的損失函數 (Loss Function)
+  - 代理訓練所需的總時間
   correct_index: 1
   explanation: 代理關注的是長期的總回報，而非眼前的蠅頭小利。
   tags:
@@ -742,10 +742,10 @@ questions:
   text: 情境：探索 (Exploration) 與利用 (Exploitation) 的權衡是指？
   type: multiple_choice
   options:
-  - 要不要訓練模型
-  - 嘗試新行動以發現更好路徑 vs 堅持已知最佳行動以獲取獎勵
-  - 使用 CPU vs GPU
-  - 監督學習 vs 非監督學習
+  - 決定是否要開始訓練模型
+  - 嘗試新行動以發現潛在的更好策略 (Exploration) vs 堅持當前已知最佳策略以獲取穩定獎勵 (Exploitation)
+  - 選擇使用 CPU 還是 GPU 進行運算
+  - 選擇監督式學習還是非監督式學習方法
   correct_index: 1
   explanation: 這是 RL 中最核心的兩難問題。
   tags:
@@ -758,10 +758,10 @@ questions:
   text: 情境：Q-learning 學習的是？
   type: multiple_choice
   options:
-  - 策略函數
-  - Q 表 (Q-table)，記錄狀態-行動對的價值
-  - 環境模型
-  - 獎勵函數
+  - 代理的策略函數 (Policy Function)
+  - Q 表 (Q-table)，記錄每個狀態-行動對 (State-Action Pair) 的預期價值
+  - 環境的動力學模型 (Environment Model)
+  - 環境給予的獎勵函數 (Reward Function)
   correct_index: 1
   explanation: Q 值代表在某狀態下採取某行動的預期回報。
   tags:
@@ -774,10 +774,10 @@ questions:
   text: 情境：DQN (Deep Q-Network) 使用經驗重播 (Experience Replay) 的目的是？
   type: multiple_choice
   options:
-  - 節省記憶體
-  - 打破數據相關性，穩定訓練
-  - 加速採樣
-  - 增加獎勵
+  - 節省電腦記憶體空間
+  - 打破數據的時間相關性 (Temporal Correlation)，穩定神經網路訓練
+  - 加速從環境中採樣的速度
+  - 增加環境給予的獎勵數值
   correct_index: 1
   explanation: 隨機採樣過去的經驗，避免連續樣本間的高度相關性導致模型發散。
   tags:
@@ -790,10 +790,10 @@ questions:
   text: 情境：策略 (Policy) 定義了？
   type: multiple_choice
   options:
-  - 環境的規則
-  - 代理在給定狀態下如何選擇行動
-  - 獎勵的計算方式
-  - 狀態的轉移機率
+  - 環境運作的物理規則
+  - 代理在給定狀態下選擇行動的機率分佈或規則 (Action Selection Rule)
+  - 獎勵函數的計算方式
+  - 狀態之間的轉移機率
   correct_index: 1
   explanation: 策略是代理的行為準則。
   tags:
@@ -806,10 +806,10 @@ questions:
   text: 情境：AlphaGo 結合了深度強化學習與什麼技術？
   type: multiple_choice
   options:
-  - 遺傳演算法
-  - 蒙地卡羅樹搜尋 (MCTS)
-  - 支持向量機
-  - 線性迴歸
+  - 遺傳演算法 (Genetic Algorithm)
+  - 蒙地卡羅樹搜尋 (Monte Carlo Tree Search, MCTS)
+  - 支援向量機 (Support Vector Machine)
+  - 線性迴歸 (Linear Regression)
   correct_index: 1
   explanation: MCTS 用於向前規劃，評估不同落子的勝率。
   tags:
@@ -822,10 +822,10 @@ questions:
   text: 情境：折扣因子 (Discount Factor) Gamma 的作用是？
   type: multiple_choice
   options:
-  - 打折商品
-  - 平衡當前獎勵與未來獎勵的重要性
-  - 消除獎勵
-  - 增加懲罰
+  - 對商品進行打折促銷
+  - 平衡當前即時獎勵與未來長期獎勵的重要性 (Future Reward Weighting)
+  - 消除環境給予的獎勵
+  - 增加環境給予的懲罰
   correct_index: 1
   explanation: Gamma 越小，代理越短視；Gamma 越大，代理越重視長期回報。
   tags:
@@ -838,10 +838,10 @@ questions:
   text: 情境：策略梯度 (Policy Gradients) 方法直接優化？
   type: multiple_choice
   options:
-  - 價值函數
-  - 策略函數
-  - 環境模型
-  - Q 表
+  - 狀態價值函數 V(s)
+  - 策略函數 π(θ)，即直接調整網路參數以優化策略
+  - 環境的動力學模型
+  - Q 表 (Q-table)
   correct_index: 1
   explanation: 這使得它能處理連續動作空間。
   tags:
@@ -854,10 +854,10 @@ questions:
   text: 情境：DQN 解決了 Q-learning 的什麼限制？
   type: multiple_choice
   options:
-  - 無法處理負獎勵
-  - 狀態空間過大無法建立 Q 表 (如圖像輸入)
-  - 計算太慢
-  - 只能處理離散動作
+  - 無法處理負獎勵信號
+  - 狀態空間過大無法建立 Q 表 (如圖像輸入)，即維度災難
+  - 計算速度太慢
+  - 只能處理離散動作空間
   correct_index: 1
   explanation: 用神經網路近似 Q 函數，實現了從感知到行動的端到端學習。
   tags:
@@ -870,10 +870,10 @@ questions:
   text: 情境：Epsilon-Greedy 策略中的 Epsilon 代表？
   type: multiple_choice
   options:
-  - 學習率
+  - 模型的學習率 (Learning Rate)
   - 隨機探索 (Exploration) 的機率
-  - 獎勵值
-  - 折扣因子
+  - 環境給予的獎勵值 (Reward Value)
+  - 未來獎勵的折扣因子 (Discount Factor)
   correct_index: 1
   explanation: 以 Epsilon 機率隨機亂走，以 1-Epsilon 機率走最佳路徑。
   tags:
@@ -886,10 +886,10 @@ questions:
   text: 情境：Sim2Real 技術主要用於？
   type: multiple_choice
   options:
-  - 遊戲 AI
-  - 機器人控制 (將模擬環境訓練的策略遷移到真實世界)
-  - 推薦系統
-  - 股票預測
+  - 遊戲 AI 的開發與測試
+  - 機器人控制 (Robotics Control)，將模擬環境訓練的策略遷移到真實世界
+  - 推薦系統的冷啟動問題
+  - 股票價格的預測
   correct_index: 1
   explanation: 解決真實世界訓練成本高且危險的問題。
   tags:
@@ -902,10 +902,10 @@ questions:
   text: 情境：PPO (Proximal Policy Optimization) 的主要特點是？
   type: multiple_choice
   options:
-  - 訓練最快
-  - 限制策略更新幅度，保證訓練穩定性
-  - 不需要獎勵
-  - 只能用於離散動作
+  - 訓練速度最快
+  - 限制策略更新的幅度 (Clip 操作)，以保證訓練的穩定性
+  - 不需要環境給予獎勵
+  - 只能用於離散動作空間
   correct_index: 1
   explanation: 避免了一次更新過大導致策略崩潰，是目前最常用的 RL 演算法之一。
   tags:
@@ -918,10 +918,10 @@ questions:
   text: 情境：貝爾曼方程式描述了？
   type: multiple_choice
   options:
-  - 物理運動規律
-  - 當前狀態價值與未來狀態價值之間的遞迴關係
-  - 神經網路結構
-  - 誤差反向傳播
+  - 物理運動的規律
+  - 當前狀態價值與未來狀態價值之間的遞迴關係 (Recursive Relationship)
+  - 神經網路的結構設計
+  - 誤差反向傳播的計算過程
   correct_index: 1
   explanation: 是動態規劃與強化學習的理論基石。
   tags:
@@ -934,10 +934,10 @@ questions:
   text: 情境：環境 (Environment) 對代理的行動會給予什麼反饋？
   type: multiple_choice
   options:
-  - 新的狀態與獎勵
-  - 懲罰
+  - 新的狀態 (Next State) 與獎勵 (Reward)
+  - 只有懲罰信號
   - 什麼都不給
-  - 新的代理
+  - 一個新的代理模型
   correct_index: 0
   explanation: 這是 RL 迴圈的基礎：Action -> State', Reward。
   tags:
@@ -950,10 +950,10 @@ questions:
   text: 情境：DQN 中的固定目標網路 (Fixed Target Network) 用於？
   type: multiple_choice
   options:
-  - 增加計算量
-  - 穩定目標 Q 值的計算，避免訓練震盪
-  - 探索環境
-  - 儲存經驗
+  - 增加模型的計算量
+  - 穩定目標 Q 值的計算，避免訓練過程震盪 (Training Instability)
+  - 增加對環境的探索
+  - 儲存過去的經驗數據
   correct_index: 1
   explanation: 避免「追逐移動的目標」。
   tags:
@@ -966,10 +966,10 @@ questions:
   text: 情境：價值函數 V(s) 代表？
   type: multiple_choice
   options:
-  - 狀態 s 的即時獎勵
-  - 從狀態 s 開始的預期累積獎勵
-  - 狀態 s 的機率
-  - 狀態 s 的特徵
+  - 狀態 s 的即時獎勵 (Immediate Reward)
+  - 從狀態 s 開始的預期累積獎勵 (Expected Cumulative Reward)
+  - 狀態 s 發生的機率
+  - 狀態 s 的特徵向量
   correct_index: 1
   explanation: 衡量處於某個狀態的「好壞」程度。
   tags:
@@ -982,10 +982,10 @@ questions:
   text: 情境：在推薦系統中，強化學習的「行動」通常是？
   type: multiple_choice
   options:
-  - 用戶點擊
-  - 推薦一系列商品給用戶
-  - 計算損失
-  - 更新模型
+  - 用戶的點擊行為
+  - 推薦一系列商品給用戶 (Recommendation List)
+  - 計算損失函數
+  - 更新模型參數
   correct_index: 1
   explanation: 代理（推薦引擎）選擇展示什麼內容。
   tags:
@@ -998,10 +998,10 @@ questions:
   text: 情境：Q-learning 屬於哪種學習方法？
   type: multiple_choice
   options:
-  - On-policy
-  - Off-policy
-  - Supervised
-  - Unsupervised
+  - On-policy (同策略)
+  - Off-policy (異策略)，因為學習策略與行為策略不同
+  - Supervised Learning (監督式學習)
+  - Unsupervised Learning (非監督式學習)
   correct_index: 1
   explanation: 它可以學習與當前行為策略不同的最佳策略。
   tags:
@@ -1014,10 +1014,10 @@ questions:
   text: 情境：馬可夫決策過程 (MDP) 是強化學習的？
   type: multiple_choice
   options:
-  - 數學模型
-  - 程式語言
-  - 硬體架構
-  - 資料庫
+  - 數學模型 (Mathematical Model)，用於描述決策過程
+  - 程式語言 (Programming Language)
+  - 硬體架構 (Hardware Architecture)
+  - 資料庫系統 (Database System)
   correct_index: 0
   explanation: RL 問題通常被建模為 MDP。
   tags:
@@ -1030,10 +1030,10 @@ questions:
   text: 情境：OpenAI Gym 是一個？
   type: multiple_choice
   options:
-  - 健身房
-  - 強化學習演算法的測試與比較平台 (提供標準環境)
-  - 神經網路框架
-  - 雲端服務
+  - 一個虛擬的健身房
+  - 強化學習演算法的測試與比較平台 (Testbed)，提供標準化環境
+  - 一個神經網路框架
+  - 一個雲端運算服務
   correct_index: 1
   explanation: 提供了 CartPole, Atari 等標準環境供開發者測試演算法。
   tags:

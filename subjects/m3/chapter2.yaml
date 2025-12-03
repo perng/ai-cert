@@ -5,10 +5,10 @@ questions:
   text: 資料品質維度中的「一致性 (Consistency)」是指？
   type: multiple_choice
   options:
-  - 數據沒有缺失值
-  - 數據在不同來源或系統中不矛盾 (如地址相同)
-  - 數據格式正確
-  - 數據是即時的
+  - 數據中沒有任何缺失值 (Missing Values)
+  - 數據在不同來源或系統中不矛盾，保持邏輯上的一致 (Consistency)
+  - 數據的格式符合預定義的標準 (Format Validity)
+  - 數據是即時更新的 (Timeliness)
   correct_index: 1
   explanation: 一致性確保同一實體在不同資料庫中的資訊是吻合的，避免出現「張三在 A 系統住台北，在 B 系統住高雄」的矛盾。
   tags:
@@ -21,10 +21,10 @@ questions:
   text: 處理缺失值 (Missing Values) 的「填補 (Imputation)」方法不包括？
   type: multiple_choice
   options:
-  - 使用平均值填補
-  - 使用 KNN 預測填補
-  - 直接刪除該行
-  - 使用眾數填補
+  - 使用該欄位的平均值 (Mean) 進行填補
+  - 使用 K-近鄰演算法 (KNN) 預測缺失值進行填補
+  - 直接刪除包含缺失值的整行數據 (Deletion)
+  - 使用該欄位的眾數 (Mode) 進行填補
   correct_index: 2
   explanation: 直接刪除是「刪除法」，不是「填補法」。填補旨在保留數據行，用估計值替代缺失部分。
   tags:
@@ -37,10 +37,10 @@ questions:
   text: One-hot Encoding 的主要缺點是？
   type: multiple_choice
   options:
-  - 計算速度慢
-  - 當類別數量很多時，會導致維度災難 (Curse of Dimensionality)
-  - 無法處理文字
-  - 容易過擬合
+  - 編碼過程的計算速度非常緩慢
+  - 當類別數量很多時，會導致特徵空間過大，引發維度災難 (Curse of Dimensionality)
+  - 完全無法處理任何形式的文字數據
+  - 容易導致模型在訓練集上過擬合 (Overfitting)
   correct_index: 1
   explanation: 如果一個特徵有 1000 個類別，One-hot 會產生 1000 個新欄位，導致資料變得極度稀疏且維度過高。
   tags:
@@ -53,14 +53,10 @@ questions:
   text: Min-Max Normalization 將數據縮放到哪個區間？
   type: multiple_choice
   options:
-  - - -1
-    - 1
-  - - 0
-    - 1
-  - - 0
-    - 100
-  - - -∞
-    - +∞
+  - 將數據縮放到 -1 到 1 之間
+  - 將數據線性縮放到 0 到 1 的區間內
+  - 將數據縮放到 0 到 100 之間
+  - 將數據擴展到負無限大到正無限大
   correct_index: 1
   explanation: 公式 (X - min) / (max - min) 保證了結果必定落在 0 到 1 之間。
   tags:
@@ -73,10 +69,10 @@ questions:
   text: Kafka 在串流處理架構中的角色是？
   type: multiple_choice
   options:
-  - 資料庫
-  - 緩衝區與解耦生產者/消費者的高吞吐量消息系統
-  - 網頁伺服器
-  - 機器學習模型
+  - 傳統的關聯式資料庫管理系統
+  - 作為緩衝區與解耦生產者/消費者的高吞吐量分散式消息系統 (Message Queue)
+  - 用於託管網站的網頁伺服器
+  - 用於進行預測的機器學習模型
   correct_index: 1
   explanation: Kafka 作為中間件，能暫存海量數據，讓生產者（如 Log 收集器）與消費者（如 Spark）不必同步等待，實現解耦。
   tags:
@@ -89,10 +85,11 @@ questions:
   text: 滾動視窗 (Tumbling Window) 的特點是？
   type: multiple_choice
   options:
-  - 視窗大小固定且不重疊
-  - 視窗大小固定且重疊
-  - 視窗大小動態變化
-  - 視窗永不結束
+  - 視窗大小固定且時間區間互不重疊 (Non-overlapping)
+  - 視窗大小固定但時間區間允許重疊 (Overlapping)
+  - 視窗大小會隨數據量動態變化
+  - 視窗一旦開啟就永不結束
+
   correct_index: 0
   explanation: 滾動視窗像翻頁一樣，每 5 分鐘一頁，頁與頁之間沒有交集。
   tags:
@@ -105,10 +102,10 @@ questions:
   text: Apache Airflow 使用什麼來定義工作流？
   type: multiple_choice
   options:
-  - XML
-  - DAG (有向無環圖) 與 Python 程式碼
-  - SQL
-  - Excel
+  - 使用 XML 標記語言
+  - 使用 Python 程式碼定義 DAG (有向無環圖) 來描述任務依賴
+  - 使用 SQL 查詢語言
+  - 使用 Excel 試算表
   correct_index: 1
   explanation: Airflow 的核心理念是 "Workflow as Code"，開發者用 Python 編寫 DAG 來描述任務間的依賴關係。
   tags:
@@ -121,10 +118,10 @@ questions:
   text: Data Lineage (血緣分析) 的主要用途是？
   type: multiple_choice
   options:
-  - 加密數據
-  - 追蹤數據從源頭到最終報表的流向，協助問題排查
-  - 壓縮數據
-  - 備份數據
+  - 對敏感數據進行加密保護
+  - 追蹤數據從源頭到最終報表的完整流向 (Data Flow)，協助問題排查與影響分析
+  - 使用壓縮演算法減少數據儲存空間
+  - 定期將數據備份到異地
   correct_index: 1
   explanation: 當報表數據出錯時，血緣分析能幫我們往回追溯，找出是哪個上游環節（如 ETL 任務）出了問題。
   tags:
@@ -137,10 +134,10 @@ questions:
   text: 零信任架構 (Zero Trust) 的核心原則是？
   type: multiple_choice
   options:
-  - 信任內部網路
-  - Never Trust, Always Verify (從不信任，總是驗證)
-  - 只驗證一次
-  - 不使用密碼
+  - 預設信任內部網路中的所有設備與使用者
+  - Never Trust, Always Verify (從不信任，總是驗證)，對所有請求進行嚴格驗證
+  - 只需要在登入時驗證一次即可
+  - 為了方便，不強制使用密碼驗證
   correct_index: 1
   explanation: 零信任假設內網也不安全，因此對任何資源的存取請求（無論來自內部或外部）都必須經過嚴格的身份驗證。
   tags:
@@ -153,10 +150,10 @@ questions:
   text: 在分散式訓練中，資料平行 (Data Parallelism) 是指？
   type: multiple_choice
   options:
-  - 將模型切分到不同節點
-  - 將數據切分到多個節點，每個節點擁有完整的模型副本並同步梯度
-  - 只使用一個節點訓練
-  - 不使用 GPU
+  - 將模型的不同層切分到不同節點上訓練 (Model Parallelism)
+  - 將數據切分到多個節點，每個節點擁有完整的模型副本並同步梯度 (Gradient Synchronization)
+  - 限制只使用單一個節點進行訓練
+  - 訓練過程中完全不使用 GPU 加速
   correct_index: 1
   explanation: 這是最常見的分散式訓練方式。每個 GPU 算一部分數據的梯度，然後大家平均一下梯度來更新模型。
   tags:
@@ -169,10 +166,10 @@ questions:
   text: 識別異常值 (Outliers) 的常用統計方法是？
   type: multiple_choice
   options:
-  - 圓餅圖
-  - 箱形圖 (Box Plot) 或 Z-score
-  - 散佈圖
-  - 長條圖
+  - 顯示各類別比例的圓餅圖 (Pie Chart)
+  - 利用四分位距 (IQR) 的箱形圖 (Box Plot) 或 Z-score 方法
+  - 顯示變數間關係的散佈圖 (Scatter Plot)
+  - 顯示頻率分佈的長條圖 (Bar Chart)
   correct_index: 1
   explanation: 箱形圖利用四分位距 (IQR) 定義上下界，超出範圍的點即視為異常值。
   tags:
@@ -185,10 +182,10 @@ questions:
   text: Label Encoding 適合用於哪種變數？
   type: multiple_choice
   options:
-  - 無序類別 (如顏色：紅、藍、綠)
-  - 有序類別 (如尺寸：S, M, L)
-  - 連續數值
-  - 圖片
+  - 無序的類別變數 (Nominal Variables)，如顏色：紅、藍、綠
+  - 有序的類別變數 (Ordinal Variables)，如尺寸：S, M, L
+  - 連續的數值變數 (Continuous Variables)
+  - 非結構化的圖片數據 (Image Data)
   correct_index: 1
   explanation: Label Encoding 將類別轉為 0, 1, 2...，這隱含了大小關係 (0 < 1 < 2)，因此適合有序類別。若用於無序類別會誤導模型。
   tags:
@@ -201,10 +198,10 @@ questions:
   text: Sqoop 的主要功能是？
   type: multiple_choice
   options:
-  - 串流處理
-  - 在 Hadoop 與關聯式資料庫 (RDBMS) 之間傳輸數據
-  - 機器學習
-  - 繪圖
+  - 處理即時數據流 (Streaming Processing)
+  - 在 Hadoop 生態系與關聯式資料庫 (RDBMS) 之間進行高效的數據傳輸
+  - 訓練機器學習模型 (Machine Learning)
+  - 繪製數據視覺化圖表 (Data Visualization)
   correct_index: 1
   explanation: Sqoop 是 "SQL to Hadoop" 的縮寫，專門用於將傳統資料庫的數據匯入大數據平台，或反向匯出。
   tags:
@@ -217,10 +214,10 @@ questions:
   text: ELT (Extract, Load, Transform) 相比於 ETL 的優勢在於？
   type: multiple_choice
   options:
-  - 節省硬碟空間
-  - 利用現代雲端資料倉儲的強大算力進行轉換，且保留了原始數據
-  - 速度較慢
-  - 只能處理小數據
+  - 能夠節省大量的硬碟儲存空間
+  - 利用現代雲端資料倉儲的強大算力進行轉換，且完整保留了原始數據 (Raw Data)
+  - 數據處理速度通常較慢
+  - 只能處理小規模的數據集
   correct_index: 1
   explanation: 先把數據 Load 進 BigQuery/Snowflake，再用 SQL 進行 Transform，比在外部 ETL Server
     處理更高效且靈活。
@@ -234,10 +231,10 @@ questions:
   text: RBAC (Role-Based Access Control) 是基於什麼來分配權限？
   type: multiple_choice
   options:
-  - 用戶的屬性 (如部門、時間)
-  - 用戶的角色 (如管理員、分析師)
-  - 用戶的 IP
-  - 用戶的密碼
+  - 根據用戶的屬性 (Attribute-Based)，如部門、時間
+  - 根據用戶的角色 (Role-Based)，如管理員、分析師
+  - 根據用戶的 IP 位址
+  - 根據用戶的密碼強度
   correct_index: 1
   explanation: RBAC 將權限綁定在「角色」上，再將角色分配給用戶，簡化了權限管理。
   tags:
@@ -250,10 +247,10 @@ questions:
   text: 主動式學習 (Active Learning) 的核心思想是？
   type: multiple_choice
   options:
-  - 標註所有數據
-  - 模型主動挑選「最不確定」的樣本交由專家標註，以節省標註成本
-  - 隨機挑選樣本
-  - 不進行標註
+  - 標註所有的訓練數據
+  - 模型主動挑選「最不確定 (Most Uncertain)」的樣本交由專家標註，以節省標註成本
+  - 隨機挑選樣本進行標註
+  - 完全不進行任何數據標註
   correct_index: 1
   explanation: 既然標註很貴，就只標註那些模型「看不懂」的難題，這樣能用最少的數據達到最好的訓練效果。
   tags:
@@ -266,10 +263,10 @@ questions:
   text: SMOTE 技術主要用於解決什麼問題？
   type: multiple_choice
   options:
-  - 缺失值
-  - 類別不平衡 (Imbalanced Data)
-  - 異常值
-  - 維度過高
+  - 數據中的缺失值 (Missing Values)
+  - 數據集中的類別不平衡 (Imbalanced Data) 問題
+  - 數據中的異常值 (Outliers)
+  - 數據特徵維度過高 (High Dimensionality)
   correct_index: 1
   explanation: SMOTE 透過插值合成少數類別的新樣本，讓數據集變得平衡，避免模型偏向多數類別。
   tags:
@@ -282,10 +279,10 @@ questions:
   text: 滑動視窗 (Sliding Window) 與滾動視窗的主要區別是？
   type: multiple_choice
   options:
-  - 滑動視窗大小可變
-  - 滑動視窗允許重疊 (Overlapping)，滾動視窗不重疊
-  - 滑動視窗只處理過去的數據
-  - 滑動視窗不使用時間
+  - 滑動視窗的大小可以隨意變化
+  - 滑動視窗允許時間區間重疊 (Overlapping)，而滾動視窗不重疊
+  - 滑動視窗只處理過去的歷史數據
+  - 滑動視窗不使用時間作為基準
   correct_index: 1
   explanation: 滑動視窗（如每 1 分鐘統計過去 5 分鐘）會有重疊部分，能提供更平滑的趨勢分析。
   tags:
@@ -298,10 +295,10 @@ questions:
   text: 差分隱私 (Differential Privacy) 如何保護隱私？
   type: multiple_choice
   options:
-  - 刪除所有數據
-  - 在數據中加入統計雜訊，使得單一特定樣本的存在與否不影響整體統計結果
-  - 加密硬碟
-  - 限制存取 IP
+  - 刪除所有的敏感數據
+  - 在數據中加入統計雜訊 (Statistical Noise)，使得單一特定樣本的存在與否不影響整體統計結果
+  - 對硬碟進行全碟加密
+  - 限制特定 IP 位址的存取
   correct_index: 1
   explanation: 這是目前最強的隱私保護數學定義，保證攻擊者無法從查詢結果反推特定個人的資訊。
   tags:
@@ -314,10 +311,10 @@ questions:
   text: 聯邦學習 (Federated Learning) 的特點是？
   type: multiple_choice
   options:
-  - 數據集中到雲端訓練
-  - 數據不出本地 (如手機)，僅上傳加密的模型參數更新
-  - 不使用模型
-  - 只在伺服器訓練
+  - 將所有數據集中到雲端伺服器進行訓練
+  - 數據不出本地 (如手機端)，僅上傳加密後的模型參數更新 (Model Updates)
+  - 訓練過程中不使用任何模型
+  - 只在中央伺服器上進行訓練
   correct_index: 1
   explanation: 這種去中心化的訓練方式徹底解決了數據隱私問題，適合醫療、金融等敏感領域。
   tags:
@@ -330,10 +327,10 @@ questions:
   text: 資料完整性 (Completeness) 關注的是？
   type: multiple_choice
   options:
-  - 數據是否準確
-  - 數據是否有缺失值 (Missing Values)
-  - 數據是否重複
-  - 數據是否即時
+  - 數據是否準確無誤
+  - 數據是否有缺失值 (Missing Values)，如必填欄位是否為空
+  - 數據是否有重複記錄
+  - 數據是否即時更新
   correct_index: 1
   explanation: 完整性檢查欄位是否為空 (Null)，例如客戶資料是否都有填寫電話號碼。
   tags:
@@ -347,9 +344,9 @@ questions:
   type: multiple_choice
   options:
   - 均值為 1，標準差為 0
-  - 均值為 0，標準差為 1
+  - 均值為 0，標準差為 1 (Standard Normal Distribution)
   - 最小值為 0，最大值為 1
-  - 均值為 100
+  - 均值固定為 100
   correct_index: 1
   explanation: Z-score 將數據轉換為標準常態分佈，消除了不同量綱的影響。
   tags:
@@ -362,10 +359,10 @@ questions:
   text: Flume 主要用於收集哪種類型的數據？
   type: multiple_choice
   options:
-  - 結構化交易數據
-  - 大量日誌數據 (Logs)
-  - 圖片
-  - 影片
+  - 結構化的交易數據 (Structured Transaction Data)
+  - 大量分散式伺服器的日誌數據 (Logs)
+  - 非結構化的圖片數據
+  - 串流影片數據
   correct_index: 1
   explanation: Flume 專為高效收集分散式伺服器上的 Log 文件而設計。
   tags:
@@ -378,10 +375,10 @@ questions:
   text: Airflow 中的 Operator 代表？
   type: multiple_choice
   options:
-  - 一個工作流
-  - 一個具體的任務單元 (如執行 Python 函數或 SQL 查詢)
-  - 一個排程器
-  - 一個變數
+  - 代表一個完整的工作流 (Workflow)
+  - 代表一個具體的任務單元 (Task)，如執行 Python 函數或 SQL 查詢
+  - 代表一個負責排程的排程器 (Scheduler)
+  - 代表一個全域變數 (Variable)
   correct_index: 1
   explanation: Operator 是 DAG 中的節點，定義了實際要執行的動作。
   tags:
@@ -394,10 +391,10 @@ questions:
   text: 弱監督 (Weak Supervision) 標註通常使用什麼方法？
   type: multiple_choice
   options:
-  - 專家逐一標註
-  - 利用規則、關鍵字或外部知識庫自動生成標籤
-  - 隨機標註
-  - 不標註
+  - 由領域專家逐一進行人工標註
+  - 利用啟發式規則、關鍵字或外部知識庫自動生成標籤 (Programmatic Labeling)
+  - 完全隨機生成標籤
+  - 不進行任何標註
   correct_index: 1
   explanation: 雖然準確率不如人工，但能快速生成海量標註數據，適合大數據場景。
   tags:
@@ -410,10 +407,10 @@ questions:
   text: 特徵選擇 (Feature Selection) 中的 Filter 方法是基於什麼來篩選特徵？
   type: multiple_choice
   options:
-  - 模型的預測結果
-  - 統計測試 (如相關係數、卡方檢定)
-  - 隨機選擇
-  - 人工主觀判斷
+  - 根據模型的預測結果準確度
+  - 根據特徵與目標變數之間的統計關聯性 (如相關係數、卡方檢定)
+  - 完全隨機選擇特徵
+  - 根據人工的主觀判斷
   correct_index: 1
   explanation: Filter 方法不依賴特定模型，而是根據特徵與目標變數之間的統計關聯性進行初步篩選。
   tags:
@@ -426,10 +423,10 @@ questions:
   text: 會話視窗 (Session Window) 的結束條件通常是？
   type: multiple_choice
   options:
-  - 固定時間到達
-  - 超過一段時間無活動 (Inactivity Gap)
-  - 數據量達到上限
-  - 手動結束
+  - 當固定的時間間隔到達時
+  - 當超過一段時間沒有新的數據進入時 (Inactivity Gap)
+  - 當數據量達到預設的上限時
+  - 必須由人工手動結束視窗
   correct_index: 1
   explanation: 適合分析用戶行為（如網頁瀏覽），當用戶停止操作一段時間後，視為一次 Session 結束。
   tags:
@@ -442,10 +439,10 @@ questions:
   text: 最小權限原則 (Least Privilege) 是指？
   type: multiple_choice
   options:
-  - 給予所有用戶管理員權限
-  - 只授予完成工作所需的最小權限
-  - 不給予任何權限
-  - 權限隨機分配
+  - 給予所有用戶最高級別的管理員權限
+  - 只授予用戶完成工作所需的最小權限範圍 (Minimum Necessary Access)
+  - 不給予用戶任何權限
+  - 隨機分配權限給用戶
   correct_index: 1
   explanation: 這是資安的基本原則，能將帳號被盜用時的損害降到最低。
   tags:
@@ -458,10 +455,10 @@ questions:
   text: Horovod 是一個什麼框架？
   type: multiple_choice
   options:
-  - 資料庫框架
-  - 分散式深度學習訓練框架
-  - 網頁框架
-  - 繪圖框架
+  - 關聯式資料庫管理框架
+  - 支援 TensorFlow, PyTorch 的分散式深度學習訓練框架
+  - 前端網頁開發框架
+  - 數據視覺化繪圖框架
   correct_index: 1
   explanation: Horovod 讓 TensorFlow/PyTorch 程式碼能輕易擴展到多 GPU/多機環境進行高效訓練。
   tags:
@@ -474,10 +471,10 @@ questions:
   text: 資料有效性 (Validity) 檢查的是？
   type: multiple_choice
   options:
-  - 數據是否重複
-  - 數據是否符合定義的格式、類型或範圍 (如 Email 格式)
-  - 數據是否缺失
-  - 數據是否一致
+  - 數據是否有重複記錄
+  - 數據是否符合定義的格式、類型或範圍 (如 Email 格式是否正確)
+  - 數據是否有缺失值
+  - 數據是否保持一致性
   correct_index: 1
   explanation: 例如檢查年齡是否在 0-120 之間，Email 是否包含 @ 符號。
   tags:
@@ -490,10 +487,10 @@ questions:
   text: Robust Scaling 使用什麼統計量進行縮放？
   type: multiple_choice
   options:
-  - 均值與標準差
-  - 最大值與最小值
-  - 中位數與四分位距 (IQR)
-  - 眾數
+  - 使用平均值 (Mean) 與標準差 (Standard Deviation)
+  - 使用最大值 (Max) 與最小值 (Min)
+  - 使用中位數 (Median) 與四分位距 (IQR)
+  - 使用眾數 (Mode)
   correct_index: 2
   explanation: 因為中位數和 IQR 不受極端值影響，所以 Robust Scaling 對異常值具有魯棒性。
   tags:
@@ -506,10 +503,10 @@ questions:
   text: Airflow 的 Scheduler 負責？
   type: multiple_choice
   options:
-  - 執行任務
-  - 監控 DAG 並觸發任務實例
-  - 顯示 UI
-  - 儲存日誌
+  - 負責實際執行具體的任務
+  - 負責監控 DAG 狀態並觸發任務實例 (Task Instances) 的執行
+  - 負責顯示使用者介面 (UI)
+  - 負責儲存系統日誌 (Logs)
   correct_index: 1
   explanation: Scheduler 是 Airflow 的心臟，決定何時該執行哪個任務。
   tags:
@@ -522,10 +519,10 @@ questions:
   text: 生成式 AI 對訓練數據的一個關鍵需求是？
   type: multiple_choice
   options:
-  - 數據量越少越好
-  - 多樣性 (Diversity) 與代表性，避免生成單調或有偏見的內容
-  - 只需要結構化數據
-  - 只需要文字數據
+  - 數據量越少越好，以加快訓練速度
+  - 數據需具備多樣性 (Diversity) 與代表性，避免生成單調或有偏見的內容
+  - 只需要高度結構化的數據
+  - 只需要純文字數據
   correct_index: 1
   explanation: 如果訓練數據都是貓，模型就畫不出狗。多樣性是生成豐富內容的前提。
   tags:
@@ -538,9 +535,9 @@ questions:
   text: Target Encoding 的主要風險是？
   type: multiple_choice
   options:
-  - 維度災難
-  - 資料洩漏 (Data Leakage) 與過擬合
-  - 計算太慢
+  - 會導致特徵維度過高
+  - 容易導致資料洩漏 (Data Leakage) 與過擬合 (Overfitting)
+  - 計算速度太慢
   - 無法處理類別變數
   correct_index: 1
   explanation: 因為使用了目標變數（答案）的資訊來編碼特徵，如果處理不當（如未進行交叉驗證），模型會「偷看答案」。
@@ -554,10 +551,10 @@ questions:
   text: Streaming Confusion Matrix 用於？
   type: multiple_choice
   options:
-  - 靜態評估
-  - 即時監控模型在數據流上的分類表現
-  - 訓練模型
-  - 壓縮數據
+  - 用於對歷史數據進行靜態評估
+  - 用於即時監控模型在數據流上的分類表現 (Real-time Evaluation)
+  - 用於訓練模型
+  - 用於壓縮數據
   correct_index: 1
   explanation: 傳統混淆矩陣是靜態的，Streaming 版本會隨時間動態更新，反映模型當下的準確度。
   tags:
@@ -570,10 +567,10 @@ questions:
   text: 去識別化中的「遮罩 (Masking)」是指？
   type: multiple_choice
   options:
-  - 刪除數據
-  - 將敏感資訊部分隱藏 (如顯示為 A12****89)
-  - 加密數據
-  - 壓縮數據
+  - 直接刪除所有數據
+  - 將敏感資訊部分隱藏 (如顯示為 A12****89)，保留部分可讀性
+  - 對數據進行加密處理
+  - 對數據進行壓縮處理
   correct_index: 1
   explanation: 讓數據在保留部分可讀性的同時，隱藏關鍵隱私資訊。
   tags:
@@ -586,10 +583,10 @@ questions:
   text: 特徵衍生 (Feature Generation) 的目的是？
   type: multiple_choice
   options:
-  - 減少特徵數量
-  - 利用領域知識創造新特徵，以提升模型預測能力
-  - 刪除異常值
-  - 填補缺失值
+  - 減少特徵的總數量
+  - 利用領域知識 (Domain Knowledge) 創造新特徵，以提升模型預測能力
+  - 刪除數據中的異常值
+  - 填補數據中的缺失值
   correct_index: 1
   explanation: 例如將「長」和「寬」組合成「面積」，可能對房價預測更有幫助。
   tags:
@@ -602,10 +599,10 @@ questions:
   text: 批次處理 (Batch Processing) 通常在何時運行？
   type: multiple_choice
   options:
-  - 隨時
-  - 夜間或離峰時間，處理大量歷史數據
-  - 用戶點擊時
-  - 系統崩潰時
+  - 隨時即時運行
+  - 通常在夜間或離峰時間運行，處理大量歷史數據
+  - 當用戶點擊時觸發
+  - 當系統崩潰時運行
   correct_index: 1
   explanation: 批次處理吞吐量大但延遲高，適合處理非即時性的報表或模型訓練任務。
   tags:
@@ -618,10 +615,10 @@ questions:
   text: 模型平行 (Model Parallelism) 適用於什麼情況？
   type: multiple_choice
   options:
-  - 數據量很大
-  - 模型過大 (如 LLM)，無法放入單張 GPU 的記憶體
-  - 網路很慢
-  - CPU 很強
+  - 當數據量非常大時
+  - 當模型參數過多 (如 LLM)，無法放入單張 GPU 的記憶體時
+  - 當網路速度很慢時
+  - 當 CPU 運算能力很強時
   correct_index: 1
   explanation: 當模型本身大到一張卡裝不下，就必須把模型的不同層切分到不同 GPU 上執行。
   tags:
@@ -634,10 +631,10 @@ questions:
   text: 資料唯一性 (Uniqueness) 檢查是為了？
   type: multiple_choice
   options:
-  - 確保沒有重複記錄 (Duplicates)
-  - 確保數據格式正確
-  - 確保數據完整
-  - 確保數據準確
+  - 確保數據中沒有重複的記錄 (Duplicates)
+  - 確保數據格式正確無誤
+  - 確保數據完整無缺失
+  - 確保數據準確反映真實情況
   correct_index: 0
   explanation: 重複數據會導致統計偏差（如銷售額被重複計算），必須去除。
   tags:
@@ -650,10 +647,10 @@ questions:
   text: 情境：你正在處理一個房價預測的數據集，發現「房屋面積」這個特徵有一些極端大的豪宅數據（異常值），導致模型預測失準。你應該優先考慮哪種標準化方法？
   type: multiple_choice
   options:
-  - Min-Max Normalization。
-  - Z-score Standardization。
-  - Robust Scaling。
-  - 不做處理。
+  - 使用 Min-Max Normalization 進行縮放
+  - 使用 Z-score Standardization 進行標準化
+  - 使用 Robust Scaling，利用中位數與 IQR 抵抗異常值影響
+  - 不對數據進行任何處理
   correct_index: 2
   explanation: Min-Max 和 Z-score 都會受到極端值的嚴重影響（拉扯均值或範圍）。Robust Scaling 使用中位數和 IQR，能有效抵抗異常值的干擾。
   tags:
@@ -666,10 +663,10 @@ questions:
   text: 情境：你的電商推薦系統需要即時處理用戶的點擊流數據，並在 1 秒內更新推薦清單。你應該選擇哪種資料處理架構？
   type: multiple_choice
   options:
-  - 批次處理 (Batch Processing)；使用 Sqoop。
-  - 串流處理 (Streaming Processing)；使用 Kafka + Flink/Spark Streaming。
-  - 手動處理。
-  - 使用 Excel。
+  - 採用批次處理 (Batch Processing) 架構；使用 Sqoop
+  - 採用串流處理 (Streaming Processing) 架構；使用 Kafka 搭配 Flink 或 Spark Streaming
+  - 採用人工手動處理
+  - 使用 Excel 試算表進行處理
   correct_index: 1
   explanation: 批次處理延遲太高（通常數小時）。即時推薦需要低延遲的串流架構，Kafka 負責接收點擊流，Flink 負責即時計算特徵。
   tags:
@@ -682,10 +679,10 @@ questions:
   text: 情境：你正在訓練一個醫療影像診斷模型，但標註好的 X 光片非常少。為了提升模型效能，你應該優先嘗試哪種特徵工程技術？
   type: multiple_choice
   options:
-  - 特徵選擇。
-  - 資料增強 (Data Augmentation)；如旋轉、翻轉、縮放圖片。
-  - 降維。
-  - 分箱。
+  - 使用特徵選擇 (Feature Selection) 減少特徵
+  - 使用資料增強 (Data Augmentation) 技術；如旋轉、翻轉、縮放圖片以增加樣本
+  - 使用降維 (Dimensionality Reduction) 技術
+  - 使用分箱 (Binning) 技術
   correct_index: 1
   explanation: 在影像領域，資料增強是擴充數據集最有效的方法。透過幾何變換產生新樣本，能讓模型學到更魯棒的特徵，減輕過擬合。
   tags:
@@ -698,10 +695,10 @@ questions:
   text: 情境：你的 ETL 流程經常因為網路波動而失敗，導致下游報表空白。在 Airflow 中，你應該如何改進 DAG 定義？
   type: multiple_choice
   options:
-  - 刪除失敗的任務。
-  - 設定 `retries` (重試次數) 和 `retry_delay` (重試間隔) 參數。
-  - 手動重跑。
-  - 忽略錯誤。
+  - 直接刪除失敗的任務
+  - 設定 `retries` (重試次數) 和 `retry_delay` (重試間隔) 參數，啟用自動重試機制
+  - 每次失敗都由人工手動重跑
+  - 忽略錯誤，繼續執行後續任務
   correct_index: 1
   explanation: 自動重試機制是強健 ETL 流程的關鍵。網路波動通常是暫時的，稍後重試往往就能成功，無需人工介入。
   tags:
@@ -714,10 +711,10 @@ questions:
   text: 情境：公司計畫將客戶數據用於訓練行銷模型，但擔心違反個資法。作為資料工程師，你建議採用什麼技術來平衡數據利用與隱私保護？
   type: multiple_choice
   options:
-  - 直接使用原始數據。
-  - 僅刪除姓名。
-  - 實施去識別化 (De-identification) 與差分隱私 (Differential Privacy)，或採用聯邦學習 (Federated Learning)。
-  - 放棄專案。
+  - 直接使用原始數據進行訓練
+  - 僅刪除姓名欄位
+  - 實施去識別化 (De-identification) 與差分隱私 (Differential Privacy)，或採用聯邦學習 (Federated Learning)
+  - 放棄該專案，不使用數據
   correct_index: 2
   explanation: 單純刪除姓名不夠（可能透過其他欄位反推）。差分隱私和聯邦學習提供了更高級別的數學保證，能在不洩漏個資的前提下訓練模型。
   tags:
@@ -729,10 +726,10 @@ questions:
   text: 情境：Kafka 在大數據架構中扮演什麼角色？
   type: multiple_choice
   options:
-  - 長期儲存
-  - 分散式訊息緩衝區 (Message Queue)，解耦生產者與消費者
-  - 計算引擎
-  - 視覺化工具
+  - 用於數據的長期冷儲存 (Cold Storage)
+  - 作為分散式訊息緩衝區 (Message Queue)，負責解耦生產者與消費者，處理高吞吐量數據流
+  - 作為分散式計算引擎 (Computing Engine)
+  - 作為數據視覺化工具 (Visualization Tool)
   correct_index: 1
   explanation: Kafka 能高吞吐地接收數據流，讓下游系統依自己的速度消費，避免系統崩潰。
   tags:
@@ -745,10 +742,10 @@ questions:
   text: 情境：ELT (Extract, Load, Transform) 相比於 ETL 的優勢是？
   type: multiple_choice
   options:
-  - 更省空間
-  - 利用雲端資料倉儲的強大算力進行轉換，且保留原始數據
-  - 更安全
-  - 更慢
+  - 能夠節省更多的硬碟儲存空間
+  - 利用現代雲端資料倉儲的強大算力進行轉換，且完整保留了原始數據 (Raw Data)
+  - 具有更高的數據安全性
+  - 數據處理速度通常較慢
   correct_index: 1
   explanation: ELT 先將數據原樣載入，需要時再轉換，靈活性更高。
   tags:
@@ -761,10 +758,10 @@ questions:
   text: 情境：資料品質維度中的「完整性 (Completeness)」是指？
   type: multiple_choice
   options:
-  - 數據是否準確
-  - 數據是否有缺失值
-  - 數據是否即時
-  - 數據是否重複
+  - 數據是否準確無誤
+  - 數據是否有缺失值 (Missing Values)，如必填欄位是否為空
+  - 數據是否即時更新
+  - 數據是否有重複記錄
   correct_index: 1
   explanation: 檢查必填欄位是否都有值。
   tags:
@@ -777,10 +774,10 @@ questions:
   text: 情境：SMOTE 技術主要用於解決什麼問題？
   type: multiple_choice
   options:
-  - 缺失值
-  - 類別不平衡 (Imbalanced Data)
-  - 特徵過多
-  - 數據過大
+  - 數據中的缺失值 (Missing Values)
+  - 數據集中的類別不平衡 (Imbalanced Data) 問題
+  - 數據特徵數量過多
+  - 數據總量過大
   correct_index: 1
   explanation: SMOTE 透過合成少數類別的新樣本來平衡數據集。
   tags:
@@ -793,10 +790,10 @@ questions:
   text: 情境：Apache Airflow 使用什麼來定義工作流？
   type: multiple_choice
   options:
-  - Excel 表格
-  - DAG (有向無環圖) Python 程式碼
-  - SQL 語句
-  - Word 文件
+  - 使用 Excel 試算表
+  - 使用 Python 程式碼定義 DAG (有向無環圖) 來描述任務依賴
+  - 使用 SQL 查詢語句
+  - 使用 Microsoft Word 文件
   correct_index: 1
   explanation: DAG 明確定義了任務間的依賴關係與執行順序。
   tags:
@@ -809,10 +806,10 @@ questions:
   text: 情境：零信任架構 (Zero Trust) 的核心原則是？
   type: multiple_choice
   options:
-  - 信任內部網路
-  - 從不信任，總是驗證 (Never Trust, Always Verify)
-  - 信任所有用戶
-  - 不設密碼
+  - 預設信任內部網路中的所有設備與使用者
+  - Never Trust, Always Verify (從不信任，總是驗證)，對所有請求進行嚴格驗證
+  - 無條件信任所有通過驗證的用戶
+  - 為了方便，不強制設置密碼
   correct_index: 1
   explanation: 不再區分內外網，所有存取請求都必須經過嚴格驗證。
   tags:
@@ -825,10 +822,10 @@ questions:
   text: 情境：One-hot Encoding 適合處理哪種資料？
   type: multiple_choice
   options:
-  - 數值資料
-  - 無序類別資料 (Nominal)
-  - 有序類別資料 (Ordinal)
-  - 時間資料
+  - 連續的數值資料 (Numerical Data)
+  - 無序的類別資料 (Nominal Data)，如顏色、性別
+  - 有序的類別資料 (Ordinal Data)，如尺寸大小
+  - 時間序列資料 (Time Series Data)
   correct_index: 1
   explanation: One-hot 避免了將無序類別編碼為數字時引入錯誤的順序關係。
   tags:
@@ -841,10 +838,10 @@ questions:
   text: 情境：串流處理中的「滑動視窗 (Sliding Window)」特點是？
   type: multiple_choice
   options:
-  - 視窗不重疊
-  - 視窗大小固定且可重疊
-  - 視窗大小不固定
-  - 不使用視窗
+  - 視窗之間的時間區間互不重疊 (Non-overlapping)
+  - 視窗大小固定但時間區間允許重疊 (Overlapping)
+  - 視窗的大小不固定，隨數據量變化
+  - 完全不使用視窗機制
   correct_index: 1
   explanation: 滑動視窗允許數據被重複計算，提供更平滑的趨勢分析。
   tags:
@@ -857,10 +854,10 @@ questions:
   text: 情境：資料血緣 (Data Lineage) 的作用是？
   type: multiple_choice
   options:
-  - 加密數據
-  - 追蹤數據從源頭到終點的流向與變換過程
-  - 壓縮數據
-  - 刪除數據
+  - 對敏感數據進行加密保護
+  - 追蹤數據從源頭到最終報表的完整流向與變換過程 (Data Flow)
+  - 使用壓縮演算法減少數據儲存空間
+  - 直接刪除不再使用的數據
   correct_index: 1
   explanation: 有助於問題排查、影響分析與合規審計。
   tags:
@@ -873,10 +870,10 @@ questions:
   text: 情境：Z-score Standardization 將數據轉換為？
   type: multiple_choice
   options:
-  - 0 到 1 之間
-  - 平均值為 0，標準差為 1
-  - 正整數
-  - 百分比
+  - 將數據縮放到 0 到 1 之間
+  - 將數據轉換為平均值為 0，標準差為 1 的標準常態分佈 (Standard Normal Distribution)
+  - 將數據轉換為正整數
+  - 將數據轉換為百分比形式
   correct_index: 1
   explanation: 標準化消除了不同特徵單位的影響，且保留了分佈形狀。
   tags:
@@ -889,10 +886,10 @@ questions:
   text: 情境：箱型圖 (Box Plot) 常用於識別？
   type: multiple_choice
   options:
-  - 缺失值
-  - 異常值 (Outliers)
-  - 重複值
-  - 錯誤格式
+  - 數據中的缺失值 (Missing Values)
+  - 數據中的異常值 (Outliers)，即超出四分位距範圍的點
+  - 數據中的重複值 (Duplicates)
+  - 數據的格式錯誤
   correct_index: 1
   explanation: 超過上下四分位距 1.5 倍的點通常被視為異常值。
   tags:
@@ -905,10 +902,10 @@ questions:
   text: 情境：RBAC (Role-Based Access Control) 是基於什麼來分配權限？
   type: multiple_choice
   options:
-  - 用戶的屬性
-  - 用戶的角色 (如管理員、分析師)
-  - 用戶的心情
-  - 隨機分配
+  - 根據用戶的個人屬性 (如部門、職稱)
+  - 根據用戶的角色 (Role-Based)，如管理員、分析師
+  - 根據用戶當下的心情
+  - 完全隨機分配權限
   correct_index: 1
   explanation: RBAC 簡化了權限管理，只需對角色授權。
   tags:
@@ -921,10 +918,10 @@ questions:
   text: 情境：特徵選擇中的 Wrapper 方法（如 RFE）通常比 Filter 方法？
   type: multiple_choice
   options:
-  - 快
-  - 慢且計算成本高，但效果較好
-  - 不準確
-  - 簡單
+  - 計算速度更快
+  - 計算速度較慢且成本高，但通常能找到表現更好的特徵子集
+  - 預測結果較不準確
+  - 實作上更為簡單
   correct_index: 1
   explanation: Wrapper 需反覆訓練模型，計算量大。
   tags:
@@ -937,10 +934,10 @@ questions:
   text: 情境：Sqoop 主要用於？
   type: multiple_choice
   options:
-  - 串流處理
-  - 在 Hadoop 與關聯式資料庫之間傳輸數據
-  - 機器學習
-  - 繪圖
+  - 處理即時數據流 (Streaming Processing)
+  - 在 Hadoop 生態系與關聯式資料庫 (RDBMS) 之間進行高效的數據傳輸
+  - 訓練機器學習模型
+  - 繪製數據視覺化圖表
   correct_index: 1
   explanation: Sqoop 是連結大數據平台與傳統資料庫的橋樑。
   tags:
@@ -953,10 +950,10 @@ questions:
   text: 情境：資料的一致性 (Consistency) 是指？
   type: multiple_choice
   options:
-  - 數據沒有缺失
-  - 數據在不同系統或表格中不矛盾
-  - 數據很準確
-  - 數據很多
+  - 數據中沒有任何缺失值
+  - 數據在不同來源、系統或表格中不矛盾，保持邏輯上的一致性
+  - 數據非常準確無誤
+  - 數據量非常龐大
   correct_index: 1
   explanation: 例如同一客戶在 CRM 與 ERP 中的地址應相同。
   tags:
@@ -969,10 +966,10 @@ questions:
   text: 情境：Airflow 的 Scheduler 負責？
   type: multiple_choice
   options:
-  - 執行任務
-  - 監控 DAG 並觸發任務實例
-  - 顯示 UI
-  - 儲存數據
+  - 負責實際執行具體的任務
+  - 負責監控 DAG 狀態並觸發任務實例 (Task Instances) 的執行
+  - 負責顯示使用者介面 (UI)
+  - 負責儲存系統數據
   correct_index: 1
   explanation: Scheduler 是 Airflow 的心臟，決定何時執行何任務。
   tags:
@@ -985,10 +982,10 @@ questions:
   text: 情境：Label Encoding 適合處理？
   type: multiple_choice
   options:
-  - 無序類別
-  - 有序類別 (Ordinal) 如 低/中/高
-  - 文本
-  - 影像
+  - 無序的類別變數 (Nominal)
+  - 有序的類別變數 (Ordinal Variables)，如 低/中/高
+  - 純文本數據
+  - 影像數據
   correct_index: 1
   explanation: Label Encoding 保留了類別間的順序關係。
   tags:
@@ -1001,10 +998,10 @@ questions:
   text: 情境：最小權限原則 (Least Privilege) 意味著？
   type: multiple_choice
   options:
-  - 給用戶最大的權限
-  - 只授予完成工作所需的最小權限
-  - 不給任何權限
-  - 隨機給權限
+  - 給予用戶系統中最大的權限
+  - 只授予用戶完成工作所需的最小權限範圍 (Minimum Necessary Access)
+  - 不給予用戶任何權限
+  - 隨機分配權限給用戶
   correct_index: 1
   explanation: 這能將安全風險降至最低。
   tags:
@@ -1017,10 +1014,10 @@ questions:
   text: 情境：滾動視窗 (Tumbling Window) 與滑動視窗的區別是？
   type: multiple_choice
   options:
-  - 滾動視窗不重疊，滑動視窗可重疊
-  - 滾動視窗可重疊
-  - 沒區別
-  - 滾動視窗是圓的
+  - 滾動視窗的時間區間互不重疊，而滑動視窗允許重疊
+  - 滾動視窗的時間區間可以重疊
+  - 兩者在功能上沒有任何區別
+  - 滾動視窗的形狀是圓形的
   correct_index: 0
   explanation: 滾動視窗將時間切分為不重疊的區段。
   tags:
@@ -1033,10 +1030,10 @@ questions:
   text: 情境：資料剖析 (Data Profiling) 的目的是？
   type: multiple_choice
   options:
-  - 刪除數據
-  - 自動分析數據特徵以發現品質問題
-  - 加密數據
-  - 備份數據
+  - 直接刪除有問題的數據
+  - 自動分析數據的統計特徵與結構，以發現潛在的品質問題
+  - 對數據進行加密保護
+  - 將數據備份到異地
   correct_index: 1
   explanation: 在清理前先了解數據的健康狀況。
   tags:
