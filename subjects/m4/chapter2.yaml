@@ -6,10 +6,10 @@ questions:
   type: multiple_choice
   options:
   - 靜態計算圖 (Static Computation Graph)，需先定義後執行
-  - 動態計算圖 (Dynamic Computation Graph)，支援 Define-by-Run
   - 只能在 CPU 上運行，不支援 GPU 加速
+  - 動態計算圖 (Dynamic Computation Graph)，支援 Define-by-Run
   - 不支援 Python 語言，僅支援 C++
-  correct_index: 1
+  correct_index: 2
   explanation: PyTorch 採用動態圖機制 (Define-by-Run)，允許在執行過程中改變網路結構，使得除錯和實驗新想法變得非常直觀和容易。
   tags:
   - chap-m4-ch2
@@ -22,10 +22,10 @@ questions:
   type: multiple_choice
   options:
   - 殘差連接 (Residual Connection)，解決梯度消失問題
-  - 深度可分離卷積 (Depthwise Separable Convolution)，大幅降低運算量
-  - 注意力機制 (Attention Mechanism)，提升特徵提取能力
   - 膠囊網路 (Capsule Network)，增強空間關係理解
-  correct_index: 1
+  - 注意力機制 (Attention Mechanism)，提升特徵提取能力
+  - 深度可分離卷積 (Depthwise Separable Convolution)，大幅降低運算量
+  correct_index: 3
   explanation: 深度可分離卷積將標準卷積分解為 Depthwise 和 Pointwise 兩個步驟，大幅降低了運算成本。
   tags:
   - chap-m4-ch2
@@ -37,11 +37,11 @@ questions:
   text: 當新任務的數據量很小，且與預訓練模型的原任務非常相似時，應採用哪種遷移學習策略？
   type: multiple_choice
   options:
-  - 從頭訓練 (Train from Scratch)，隨機初始化所有權重
-  - 微調整個模型 (Fine-tuning all layers)，更新所有層的權重
   - 特徵提取 (Feature Extraction)，凍結卷積層只訓練分類層
+  - 微調整個模型 (Fine-tuning all layers)，更新所有層的權重
   - 隨機初始化權重，並使用較大的學習率
-  correct_index: 2
+  - 從頭訓練 (Train from Scratch)，隨機初始化所有權重
+  correct_index: 0
   explanation: 數據量少時容易過擬合，且任務相似意味著底層特徵通用，因此凍結預訓練好的特徵提取層，僅訓練最後的分類層是最安全有效的策略。
   tags:
   - chap-m4-ch2
@@ -53,11 +53,11 @@ questions:
   text: EfficientNet 提出的「複合縮放 (Compound Scaling)」方法，主張同時調整哪三個維度以獲得最佳效能？
   type: multiple_choice
   options:
-  - 學習率 (Learning Rate)、批次大小 (Batch Size)、迭代次數 (Epochs)
-  - 深度 (Depth)、寬度 (Width)、解析度 (Resolution)
   - 卷積核大小 (Kernel Size)、步長 (Stride)、填充 (Padding)
   - 訓練集大小、驗證集大小、測試集大小
-  correct_index: 1
+  - 學習率 (Learning Rate)、批次大小 (Batch Size)、迭代次數 (Epochs)
+  - 深度 (Depth)、寬度 (Width)、解析度 (Resolution)
+  correct_index: 3
   explanation: EfficientNet 發現單純增加深度、寬度或解析度都有邊際效應遞減的問題，因此提出透過固定比例同時縮放這三者來達到最佳平衡。
   tags:
   - chap-m4-ch2
@@ -69,11 +69,11 @@ questions:
   text: 雙向 RNN (Bidirectional RNN) 的主要優勢在於？
   type: multiple_choice
   options:
-  - 計算速度比單向 RNN 快，因為可以並行處理
   - 能同時利用過去 (Past) 和未來 (Future) 的上下文信息
-  - 不需要反向傳播演算法進行訓練
   - 只能處理靜態的圖像數據，無法處理序列
-  correct_index: 1
+  - 不需要反向傳播演算法進行訓練
+  - 計算速度比單向 RNN 快，因為可以並行處理
+  correct_index: 0
   explanation: 雙向 RNN 包含兩個方向的隱藏層，一個從前向後讀，一個從後向前讀，因此在每個時間點都能看到完整的上下文（如整句翻譯）。
   tags:
   - chap-m4-ch2
@@ -85,11 +85,11 @@ questions:
   text: 由 Google Research 開發，結合 Autograd 和 XLA，以極快速度著稱的框架是？
   type: multiple_choice
   options:
-  - TensorFlow，由 Google 開發的深度學習框架
   - PyTorch，由 Facebook 開發的深度學習框架
-  - JAX，支援高效能數值計算與自動微分
+  - TensorFlow，由 Google 開發的深度學習框架
   - Caffe，早期的深度學習框架
-  correct_index: 2
+  - JAX，支援高效能數值計算與自動微分
+  correct_index: 3
   explanation: JAX 是 Google 推出的新一代高效能數值計算庫，特別適合需要大規模並行加速的前沿研究。
   tags:
   - chap-m4-ch2
@@ -101,11 +101,11 @@ questions:
   text: Inception (GoogLeNet) 模組的核心設計理念是？
   type: multiple_choice
   options:
-  - 網路層數越深越好，以提取更高階特徵
   - 並行使用不同大小的卷積核 (1x1, 3x3, 5x5) 以捕捉多尺度特徵
-  - 使用全連接層替代卷積層以減少參數
   - 移除所有活化函數以簡化計算
-  correct_index: 1
+  - 使用全連接層替代卷積層以減少參數
+  - 網路層數越深越好，以提取更高階特徵
+  correct_index: 0
   explanation: Inception 模組透過並行路徑讓網路自動選擇最適合的卷積核大小，從而能同時捕捉局部和全局特徵。
   tags:
   - chap-m4-ch2
@@ -117,10 +117,10 @@ questions:
   text: TensorFlow 的高階 API，以易用性著稱的是？
   type: multiple_choice
   options:
-  - Slim，TensorFlow 的輕量級庫
-  - Keras，提供簡潔直觀的模型構建介面
   - Sonnet，DeepMind 開發的庫
+  - Keras，提供簡潔直觀的模型構建介面
   - Estimator，用於大規模分佈式訓練
+  - Slim，TensorFlow 的輕量級庫
   correct_index: 1
   explanation: Keras 被整合進 TensorFlow (tf.keras) 作為官方的高階 API，提供了簡潔直觀的介面來構建和訓練模型。
   tags:
@@ -133,10 +133,10 @@ questions:
   text: TensorFlow 1.x 版本主要採用哪種計算圖機制？
   type: multiple_choice
   options:
-  - 動態計算圖 (Dynamic Computation Graph)，即 Define-by-Run
+  - 無計算圖 (No Computation Graph)
   - 靜態計算圖 (Static Computation Graph)，即 Define-and-Run
   - 混合計算圖 (Hybrid Computation Graph)
-  - 無計算圖 (No Computation Graph)
+  - 動態計算圖 (Dynamic Computation Graph)，即 Define-by-Run
   correct_index: 1
   explanation: TF 1.x 採用 "Define-and-Run" 模式，先定義好整個圖結構再執行。雖然優化容易，但除錯困難。TF 2.x 預設改為
     Eager Execution (類似 PyTorch)。
@@ -150,11 +150,11 @@ questions:
   text: LSTM 中的「遺忘閘 (Forget Gate)」負責？
   type: multiple_choice
   options:
-  - 決定哪些新的資訊需要存入細胞狀態 (Cell State)
   - 決定哪些舊的資訊需要從細胞狀態中丟棄 (Forget)
   - 決定當前的隱藏狀態 (Hidden State) 應該輸出什麼
+  - 決定哪些新的資訊需要存入細胞狀態 (Cell State)
   - 初始化網路的權重參數
-  correct_index: 1
+  correct_index: 0
   explanation: 這是 LSTM 解決長期依賴問題的關鍵。如果某些舊資訊（如上一章的主題）不再重要，遺忘閘會將其清除，騰出空間給新資訊。
   tags:
   - chap-m4-ch2
@@ -166,11 +166,11 @@ questions:
   text: 微調 (Fine-tuning) 時，通常建議使用什麼樣的學習率？
   type: multiple_choice
   options:
-  - 比從頭訓練時更大的學習率，以加快收斂
   - 比從頭訓練時更小的學習率 (Smaller Learning Rate)，以避免破壞預訓練權重
   - 使用與從頭訓練相同的學習率
+  - 比從頭訓練時更大的學習率，以加快收斂
   - 隨機選擇學習率
-  correct_index: 1
+  correct_index: 0
   explanation: 預訓練模型的權重已經很好了，我們只想做微小的調整。如果學習率太大，會破壞原本學到的特徵（災難性遺忘）。
   tags:
   - chap-m4-ch2
@@ -182,9 +182,9 @@ questions:
   text: Attention 機制最初是為了解決什麼問題而提出的？
   type: multiple_choice
   options:
-  - 圖像分類任務的準確率過低
-  - 機器翻譯中長序列的資訊丟失問題 (Information Loss in Long Sequences)
   - 模型訓練的計算速度太慢
+  - 機器翻譯中長序列的資訊丟失問題 (Information Loss in Long Sequences)
+  - 圖像分類任務的準確率過低
   - 模型容易發生過擬合現象
   correct_index: 1
   explanation: 傳統 Seq2Seq 將整句壓縮成一個固定長度的向量，長句資訊會丟失。Attention 允許解碼器在生成每個字時，回頭去「看」源句中最相關的部分。
@@ -198,11 +198,11 @@ questions:
   text: TFLite (TensorFlow Lite) 的主要用途是？
   type: multiple_choice
   options:
+  - 用於網頁前端開發
   - 在雲端伺服器上進行大規模模型訓練
   - 在行動裝置和嵌入式設備上進行高效的模型推論 (On-device Inference)
   - 進行數據清洗與預處理
-  - 用於網頁前端開發
-  correct_index: 1
+  correct_index: 2
   explanation: TFLite 是 TF 的輕量化版本，專為手機、IoT 設備設計，支援量化等優化技術。
   tags:
   - chap-m4-ch2
@@ -216,8 +216,8 @@ questions:
   options:
   - 標準卷積 (Convolution) 和最大池化 (Max Pooling)
   - 深度卷積 (Depthwise Convolution) 和逐點卷積 (Pointwise Convolution)
-  - 前向傳播 (Forward Propagation) 和反向傳播 (Backward Propagation)
   - 卷積層 (Convolutional Layer) 和全連接層 (Fully Connected Layer)
+  - 前向傳播 (Forward Propagation) 和反向傳播 (Backward Propagation)
   correct_index: 1
   explanation: 先對每個通道獨立卷積 (Depthwise)，再用 1x1 卷積 (Pointwise) 組合通道資訊。這比標準卷積少了很多乘法運算。
   tags:
@@ -230,11 +230,11 @@ questions:
   text: ImageNet 預訓練模型通常包含多少類的分類能力？
   type: multiple_choice
   options:
-  - 10 類常見物體
-  - 100 類常見物體
   - 1000 類常見物體 (1000 Classes)
+  - 100 類常見物體
   - 10000 類常見物體
-  correct_index: 2
+  - 10 類常見物體
+  correct_index: 0
   explanation: 標準的 ImageNet (ILSVRC) 競賽數據集包含 1000 個類別。
   tags:
   - chap-m4-ch2
@@ -247,10 +247,10 @@ questions:
   type: multiple_choice
   options:
   - 結構更複雜，參數更多，訓練更慢
-  - 結構更簡單，參數更少 (Fewer Parameters)，計算效率更高
-  - 準確率總是比 LSTM 更高
   - 不能處理時間序列數據
-  correct_index: 1
+  - 準確率總是比 LSTM 更高
+  - 結構更簡單，參數更少 (Fewer Parameters)，計算效率更高
+  correct_index: 3
   explanation: GRU 將 LSTM 的遺忘閘和輸入閘合併為更新閘，移除了 Cell State，效果通常與 LSTM 相當但更輕量。
   tags:
   - chap-m4-ch2
@@ -262,11 +262,11 @@ questions:
   text: 自動微分 (Automatic Differentiation) 的作用是？
   type: multiple_choice
   options:
-  - 自動調整模型的超參數 (Hyperparameters)
-  - 自動計算反向傳播所需的梯度 (Gradients)
   - 自動清洗和預處理數據
   - 自動生成模型訓練程式碼
-  correct_index: 1
+  - 自動計算反向傳播所需的梯度 (Gradients)
+  - 自動調整模型的超參數 (Hyperparameters)
+  correct_index: 2
   explanation: 這是深度學習框架的核心功能。你只要寫前向傳播 (Forward)，框架會自動幫你算好反向傳播 (Backward) 的梯度。
   tags:
   - chap-m4-ch2
@@ -278,11 +278,11 @@ questions:
   text: Transformer 架構完全基於哪種機制？
   type: multiple_choice
   options:
+  - 多層感知機 (MLP)
+  - 自注意力機制 (Self-Attention Mechanism)
   - 循環神經網路 (RNN)
   - 卷積神經網路 (CNN)
-  - 自注意力機制 (Self-Attention Mechanism)
-  - 多層感知機 (MLP)
-  correct_index: 2
+  correct_index: 1
   explanation: '"Attention Is All You Need"。Transformer 拋棄了 RNN 的循環結構，完全依賴注意力機制來捕捉序列依賴，實現了高度並行化。'
   tags:
   - chap-m4-ch2
@@ -295,10 +295,10 @@ questions:
   type: multiple_choice
   options:
   - 將該層從網路中刪除
-  - 將該層的所有權重參數設為 0
   - 在反向傳播時不更新該層的參數 (Disable Gradient Update)
+  - 將該層的所有權重參數設為 0
   - 降低該層的 Softmax 溫度參數
-  correct_index: 2
+  correct_index: 1
   explanation: 保持預訓練學到的特徵不變，只訓練我們新加的層。
   tags:
   - chap-m4-ch2
@@ -310,11 +310,11 @@ questions:
   text: 1x1 卷積 (Pointwise Convolution) 的主要作用之一是？
   type: multiple_choice
   options:
-  - 提取圖像的空間特徵 (Spatial Features)
-  - 改變特徵圖的通道數 (Channel Reduction/Expansion)，即升維或降維
   - 對圖像進行模糊處理
+  - 提取圖像的空間特徵 (Spatial Features)
   - 對圖像進行放大處理
-  correct_index: 1
+  - 改變特徵圖的通道數 (Channel Reduction/Expansion)，即升維或降維
+  correct_index: 3
   explanation: 1x1 卷積不改變圖像長寬，只改變深度（通道數）。常用於 Inception 和 ResNet 中進行降維以減少計算量。
   tags:
   - chap-m4-ch2
@@ -327,10 +327,10 @@ questions:
   type: multiple_choice
   options:
   - 完全取代 Python 程式語言
+  - 使用無損演算法壓縮模型大小
   - 提供一種開放的模型交換格式 (Open Format)，促進不同框架間的互操作性
   - 對模型參數進行加密保護
-  - 使用無損演算法壓縮模型大小
-  correct_index: 1
+  correct_index: 2
   explanation: 它是 AI 模型的「通用語言」，解決了框架碎片化的問題，方便模型部署。
   tags:
   - chap-m4-ch2
@@ -359,10 +359,10 @@ questions:
   type: multiple_choice
   options:
   - 目標任務的數據量極小
-  - 目標任務的數據量較大，且新任務與原任務有一定差異
-  - 計算資源極其有限，無法訓練大模型
   - 只要模型參數量很大就可以
-  correct_index: 1
+  - 計算資源極其有限，無法訓練大模型
+  - 目標任務的數據量較大，且新任務與原任務有一定差異
+  correct_index: 3
   explanation: 數據夠多，我們就有本錢去調整整個網路的權重，讓它更適應新任務，而不用擔心過擬合。
   tags:
   - chap-m4-ch2
@@ -374,11 +374,11 @@ questions:
   text: RNN 的主要缺點是？
   type: multiple_choice
   options:
-  - 模型的參數量太多，導致過擬合
   - 無法並行計算 (Sequential Computation)，且存在梯度消失問題
   - 只能處理文字數據，無法處理圖像
   - 網路結構太簡單，無法提取特徵
-  correct_index: 1
+  - 模型的參數量太多，導致過擬合
+  correct_index: 0
   explanation: 必須等 t-1 算完才能算 t，這限制了訓練速度。且梯度在長序列中傳遞會逐漸衰減（遺忘）。
   tags:
   - chap-m4-ch2
@@ -390,11 +390,11 @@ questions:
   text: XLA (Accelerated Linear Algebra) 是什麼？
   type: multiple_choice
   options:
+  - 一種新的神經網路模型架構
   - 一種新的深度學習程式語言
   - 一種針對線性代數運算的編譯器優化技術 (Compiler Optimization)
   - 一種新的 GPU 硬體架構
-  - 一種新的神經網路模型架構
-  correct_index: 1
+  correct_index: 2
   explanation: XLA 會將多個運算融合 (Fusion) 成一個 kernel，減少記憶體存取次數，大幅提升執行效率。
   tags:
   - chap-m4-ch2
@@ -407,10 +407,10 @@ questions:
   type: multiple_choice
   options:
   - 增加模型的參數量 (Parameters)
-  - 降維 (Dimensionality Reduction)，減少特徵圖的通道數以降低計算量
-  - 升維 (Dimensionality Expansion)，增加特徵圖的通道數
   - 沒有特別目的，只是為了增加網路深度
-  correct_index: 1
+  - 升維 (Dimensionality Expansion)，增加特徵圖的通道數
+  - 降維 (Dimensionality Reduction)，減少特徵圖的通道數以降低計算量
+  correct_index: 3
   explanation: 這是 Inception 的精髓。先用 1x1 把厚度（通道）壓扁，再做昂貴的 5x5 卷積，既保留了特徵又節省了算力。
   tags:
   - chap-m4-ch2
@@ -424,8 +424,8 @@ questions:
   options:
   - 電腦系統發生嚴重錯誤導致當機
   - 模型在學習新任務時，遺忘了舊任務所學到的知識 (Forgetting Old Knowledge)
-  - 訓練數據意外遺失
   - 模型訓練速度過慢導致超時
+  - 訓練數據意外遺失
   correct_index: 1
   explanation: 如果微調時學習率太大或數據分佈差異太大，模型會為了迎合新數據而破壞原本通用的特徵提取能力。
   tags:
@@ -438,11 +438,11 @@ questions:
   text: LSTM 的 Cell State (細胞狀態) 類似於？
   type: multiple_choice
   options:
+  - 輸出層 (Output Layer)
+  - 遺忘機制 (Forgetting Mechanism)
   - 短期記憶 (Short-term Memory)
   - 長期記憶的高速公路 (Highway for Long-term Memory)，允許梯度無損傳遞
-  - 遺忘機制 (Forgetting Mechanism)
-  - 輸出層 (Output Layer)
-  correct_index: 1
+  correct_index: 3
   explanation: Cell State 貫穿整個序列，資訊只經過少量的線性操作，這讓梯度能流得更遠，保留了長期記憶。
   tags:
   - chap-m4-ch2
@@ -454,10 +454,10 @@ questions:
   text: PyTorch Lightning 是一個？
   type: multiple_choice
   options:
-  - 一個全新的深度學習框架
-  - PyTorch 的輕量級封裝庫 (Wrapper)，簡化了訓練流程
   - 一個用於模型視覺化的工具
+  - PyTorch 的輕量級封裝庫 (Wrapper)，簡化了訓練流程
   - 一個用於存儲數據的資料庫系統
+  - 一個全新的深度學習框架
   correct_index: 1
   explanation: 它幫你把工程代碼（如 GPU 切換、Checkpoint 保存）和研究代碼（模型定義）分開，讓程式碼更整潔易讀。
   tags:
@@ -487,10 +487,10 @@ questions:
   type: multiple_choice
   options:
   - MNIST 手寫數字數據集
-  - ImageNet (對於視覺任務) 或大型文本語料庫 (對於 NLP)
-  - CIFAR-10 圖像數據集
   - 鐵達尼號生存預測數據集
-  correct_index: 1
+  - CIFAR-10 圖像數據集
+  - ImageNet (對於視覺任務) 或大型文本語料庫 (對於 NLP)
+  correct_index: 3
   explanation: ImageNet 擁有 1400 萬張圖片，模型在上面學到了豐富的視覺特徵（邊緣、紋理、物體），這些特徵對大多數視覺任務都是通用的。
   tags:
   - chap-m4-ch2
@@ -519,11 +519,11 @@ questions:
   text: TensorFlow Serving 的主要功能是？
   type: multiple_choice
   options:
-  - 用於訓練深度學習模型
   - 在生產環境中部署和管理模型服務 (Model Serving)
+  - 用於訓練深度學習模型
   - 用於數據標註與清洗
   - 用於程式碼版本控制與協作
-  correct_index: 1
+  correct_index: 0
   explanation: 它提供了高性能的 gRPC/REST API，支援模型熱更新、版本管理，是工業界部署 TF 模型的標準。
   tags:
   - chap-m4-ch2
@@ -535,9 +535,9 @@ questions:
   text: MobileNetV2 引入了什麼新結構？
   type: multiple_choice
   options:
-  - Inception 模組
-  - Inverted Residuals (倒殘差結構) 和 Linear Bottlenecks (線性瓶頸)
   - Attention 機制
+  - Inverted Residuals (倒殘差結構) 和 Linear Bottlenecks (線性瓶頸)
+  - Inception 模組
   - DenseNet 密集連接結構
   correct_index: 1
   explanation: 傳統 ResNet 是「肥-瘦-肥」，MobileNetV2 是「瘦-肥-瘦」（中間層通道多），並移除了最後的 ReLU 以保留特徵，進一步提升了效率。
@@ -551,11 +551,11 @@ questions:
   text: 領域適應 (Domain Adaptation) 是遷移學習的一種，旨在解決什麼問題？
   type: multiple_choice
   options:
-  - 訓練數據和測試數據的分佈不同 (Distribution Shift)
   - 模型參數量太小
   - 模型計算速度太慢
   - 數據標籤錯誤率太高
-  correct_index: 1
+  - 訓練數據和測試數據的分佈不同 (Distribution Shift)
+  correct_index: 0
   explanation: 例如在白天圖片上訓練的自駕車模型，要遷移到晚上場景。雖然任務一樣（開車），但數據分佈（光照）變了。
   tags:
   - chap-m4-ch2
@@ -567,10 +567,10 @@ questions:
   text: Seq2Seq 模型通常由哪兩部分組成？
   type: multiple_choice
   options:
-  - Generator (生成器) 和 Discriminator (判別器)
-  - Encoder (編碼器) 和 Decoder (解碼器)
-  - Actor (行動者) 和 Critic (評論家)
   - Teacher (教師模型) 和 Student (學生模型)
+  - Encoder (編碼器) 和 Decoder (解碼器)
+  - Generator (生成器) 和 Discriminator (判別器)
+  - Actor (行動者) 和 Critic (評論家)
   correct_index: 1
   explanation: 編碼器將輸入序列壓縮成向量，解碼器將向量展開成輸出序列。這是機器翻譯、摘要生成的基礎架構。
   tags:
@@ -584,10 +584,10 @@ questions:
   type: multiple_choice
   options:
   - 僅支援 PyTorch 框架
-  - 僅支援 TensorFlow 框架
   - 同時支援 PyTorch, TensorFlow 和 JAX 三大主流框架
+  - 僅支援 TensorFlow 框架
   - 僅支援 JAX 框架
-  correct_index: 2
+  correct_index: 1
   explanation: Hugging Face 致力於兼容性，讓開發者可以自由選擇喜歡的後端框架來使用最先進的 NLP 模型。
   tags:
   - chap-m4-ch2
@@ -599,11 +599,11 @@ questions:
   text: Self-Attention (自注意力) 機制計算的是？
   type: multiple_choice
   options:
-  - 輸入與輸出之間的映射關係
-  - 輸入序列中每個元素與其他所有元素之間的相關性 (Correlation)
-  - 圖像像素與文字描述之間的關係
   - 過去時間點與未來時間點的關係
-  correct_index: 1
+  - 輸入與輸出之間的映射關係
+  - 圖像像素與文字描述之間的關係
+  - 輸入序列中每個元素與其他所有元素之間的相關性 (Correlation)
+  correct_index: 3
   explanation: 每個字都去「關注」句子裡的其他字，計算出相關性權重，從而理解上下文（如 "it" 到底指代什麼）。
   tags:
   - chap-m4-ch2
@@ -615,11 +615,11 @@ questions:
   text: 負遷移 (Negative Transfer) 是指？
   type: multiple_choice
   options:
+  - 模型訓練過程完全失敗
   - 遷移學習的效果非常顯著
   - 遷移學習導致新任務的性能反而下降 (Performance Degradation)
-  - 模型訓練過程完全失敗
   - 模型參數量變小
-  correct_index: 1
+  correct_index: 2
   explanation: 如果源任務和目標任務差異太大（如用貓狗模型去預測股市），強行遷移反而會引入雜訊，干擾學習。
   tags:
   - chap-m4-ch2
@@ -632,10 +632,10 @@ questions:
   type: multiple_choice
   options:
   - 因為使用了高效能的 GPU 進行訓練
+  - 因為使用了 Dropout 技術防止過擬合
   - 因為使用了殘差連接 (Residual Connection)，解決了梯度消失問題
   - 因為使用了海量的訓練數據
-  - 因為使用了 Dropout 技術防止過擬合
-  correct_index: 1
+  correct_index: 2
   explanation: $H(x) = F(x) + x$。學習「殘差」比學習原始映射容易，且恆等映射 ($F(x)=0$) 保證了深層網路至少不會比淺層差。
   tags:
   - chap-m4-ch2
@@ -647,11 +647,11 @@ questions:
   text: 情境：你需要開發一個即時的手機端人臉識別 App。你會選擇哪個模型架構？
   type: multiple_choice
   options:
-  - VGG16，因為其結構簡單
-  - MobileNetV2 或 EfficientNet-Lite，因為它們專為行動裝置優化
   - ResNet-152，因為其準確率最高
   - Transformer-XL，因為其處理序列能力強
-  correct_index: 1
+  - VGG16，因為其結構簡單
+  - MobileNetV2 或 EfficientNet-Lite，因為它們專為行動裝置優化
+  correct_index: 3
   explanation: 手機端對延遲和功耗要求極高。MobileNet 專為此設計，犧牲極小的精度換取極快的速度。
   tags:
   - chap-m4-ch2
@@ -664,10 +664,10 @@ questions:
   type: multiple_choice
   options:
   - 放棄這個專案，因為數據量太少
-  - 使用遷移學習 (Transfer Learning) 和數據增強 (Data Augmentation)
   - 人工標註 100 萬張類似的醫學影像
   - 使用 GAN 生成大量的合成數據
-  correct_index: 1
+  - 使用遷移學習 (Transfer Learning) 和數據增強 (Data Augmentation)
+  correct_index: 3
   explanation: 這是遷移學習的殺手級應用。雖然醫學影像和自然圖像不同，但底層的邊緣、紋理特徵是通用的。預訓練模型提供了很好的初始化，數據增強則擴充了樣本。
   tags:
   - chap-m4-ch2
@@ -681,8 +681,8 @@ questions:
   options:
   - 增加學習率 (Learning Rate) 以跳過局部最小值
   - 應用梯度裁剪 (Gradient Clipping) 以限制梯度的最大範數
-  - 增加網路的層數以提高模型容量
   - 移除所有的激活函數以簡化網路
+  - 增加網路的層數以提高模型容量
   correct_index: 1
   explanation: 梯度裁剪設定一個閾值（如 5），如果梯度超過這個值就強行切斷，防止它無限膨脹摧毀權重。
   tags:
@@ -695,11 +695,11 @@ questions:
   text: 情境：你正在做一個學術研究，需要頻繁修改網路結構並查看中間層的梯度變化。你會首選哪個框架？
   type: multiple_choice
   options:
+  - ONNX，因為其跨平台兼容性好
   - TensorFlow 1.x，因為其靜態圖優化好
   - PyTorch，因為其動態圖機制方便除錯與實驗
   - Caffe，因為其模型部署方便
-  - ONNX，因為其跨平台兼容性好
-  correct_index: 1
+  correct_index: 2
   explanation: PyTorch 的 "Define-by-Run" 讓你可以隨時 print 變數，隨時改邏輯，是研究人員的最愛。
   tags:
   - chap-m4-ch2
@@ -712,10 +712,10 @@ questions:
   type: multiple_choice
   options:
   - 模型發生了過擬合 (Overfitting)
+  - 深度學習框架本身有 bug
   - 訓練數據缺乏多樣性 (Lack of Diversity)，導致模型魯棒性不足
   - 模型發生了欠擬合 (Underfitting)
-  - 深度學習框架本身有 bug
-  correct_index: 1
+  correct_index: 2
   explanation: 模型沒看過模糊圖片，自然不會認。數據增強能模擬真實世界的各種惡劣情況，提升模型的魯棒性。
   tags:
   - chap-m4-ch2
@@ -726,11 +726,11 @@ questions:
   text: 情境：PyTorch 相比於 TensorFlow 1.x 的主要特點是？
   type: multiple_choice
   options:
+  - 不支援 GPU 加速運算
   - 靜態計算圖 (Static Computation Graph)，需先定義後執行
   - 動態計算圖 (Dynamic Computation Graph)，支援 Define-by-Run，除錯方便且靈活
-  - 不支援 GPU 加速運算
   - 只能使用 C++ 語言進行開發
-  correct_index: 1
+  correct_index: 2
   explanation: 動態圖允許在執行時改變網路結構，非常適合研究與實驗。
   tags:
   - chap-m4-ch2
@@ -742,11 +742,11 @@ questions:
   text: 情境：MobileNet 使用什麼技術來大幅減少運算量？
   type: multiple_choice
   options:
+  - 最大池化 (Max Pooling)，減少特徵圖尺寸
   - 深度可分離卷積 (Depthwise Separable Convolution)，將標準卷積分解為兩步
   - 全連接層 (Fully Connected Layer)，增加模型複雜度
-  - 最大池化 (Max Pooling)，減少特徵圖尺寸
   - 增加網路的層數 (Depth)，以提取更深層特徵
-  correct_index: 0
+  correct_index: 1
   explanation: 將標準卷積分解為 Depthwise 和 Pointwise 卷積，顯著降低參數與計算量。
   tags:
   - chap-m4-ch2
@@ -758,11 +758,11 @@ questions:
   text: 情境：當新任務的資料量很小且與預訓練任務相似時，應採用哪種遷移學習策略？
   type: multiple_choice
   options:
-  - 從頭開始訓練整個模型 (Train from Scratch)
   - 特徵提取 (Feature Extraction)，凍結卷積層只訓練最後的分類層
   - 微調所有層 (Fine-tuning All Layers)
+  - 從頭開始訓練整個模型 (Train from Scratch)
   - 隨機猜測結果
-  correct_index: 1
+  correct_index: 0
   explanation: 避免在小數據上過擬合，同時利用預訓練模型強大的特徵提取能力。
   tags:
   - chap-m4-ch2
@@ -774,10 +774,10 @@ questions:
   text: 情境：Attention 機制的主要作用是？
   type: multiple_choice
   options:
-  - 加速模型訓練過程
-  - 讓模型在生成輸出時能「關注」輸入序列中相關的部分 (Focus on Relevant Parts)
-  - 壓縮模型大小以利部署
   - 防止模型過擬合 (Overfitting)
+  - 讓模型在生成輸出時能「關注」輸入序列中相關的部分 (Focus on Relevant Parts)
+  - 加速模型訓練過程
+  - 壓縮模型大小以利部署
   correct_index: 1
   explanation: 解決了長序列資訊遺忘的問題，是 Transformer 的核心。
   tags:
@@ -791,10 +791,10 @@ questions:
   type: multiple_choice
   options:
   - 使用者介面設計最漂亮
-  - 結合 Autograd 與 XLA，支援高效能數值計算與自動微分 (Automatic Differentiation)
   - 預訓練模型庫最豐富
+  - 結合 Autograd 與 XLA，支援高效能數值計算與自動微分 (Automatic Differentiation)
   - 對新手最容易上手
-  correct_index: 1
+  correct_index: 2
   explanation: JAX 專為高效能運算設計，特別適合前沿研究。
   tags:
   - chap-m4-ch2
@@ -806,10 +806,10 @@ questions:
   text: 情境：EfficientNet 提出的複合縮放 (Compound Scaling) 是指？
   type: multiple_choice
   options:
-  - 只增加網路的深度 (Depth)
   - 只增加網路的寬度 (Width)
-  - 同時調整網路的深度、寬度與解析度 (Resolution) 以達到最佳平衡
   - 只增加輸入圖片的解析度
+  - 同時調整網路的深度、寬度與解析度 (Resolution) 以達到最佳平衡
+  - 只增加網路的深度 (Depth)
   correct_index: 2
   explanation: 這能以最少的資源消耗獲得最大的性能提升。
   tags:
@@ -822,9 +822,9 @@ questions:
   text: 情境：微調 (Fine-tuning) 通常使用的學習率 (Learning Rate) 應該？
   type: multiple_choice
   options:
-  - 比從頭訓練時更大
-  - 比從頭訓練時更小 (Smaller Learning Rate)，以微調權重
   - 與從頭訓練時一樣大
+  - 比從頭訓練時更小 (Smaller Learning Rate)，以微調權重
+  - 比從頭訓練時更大
   - 隨機設定學習率
   correct_index: 1
   explanation: 使用較小的學習率是為了避免破壞預訓練模型已學到的特徵。
@@ -855,10 +855,10 @@ questions:
   type: multiple_choice
   options:
   - 一個電腦作業系統
-  - TensorFlow 的高階 API，提供易用的模型構建介面 (High-level API)
   - 一種新的程式語言
+  - TensorFlow 的高階 API，提供易用的模型構建介面 (High-level API)
   - 一個關聯式資料庫
-  correct_index: 1
+  correct_index: 2
   explanation: Keras 極大地降低了深度學習的入門門檻。
   tags:
   - chap-m4-ch2
@@ -870,11 +870,11 @@ questions:
   text: 情境：Inception (GoogLeNet) 模組的設計理念是？
   type: multiple_choice
   options:
-  - 使用單一尺寸的卷積核
   - 並行使用不同尺寸的卷積核 (1x1, 3x3, 5x5)，以捕捉多尺度特徵 (Multi-scale Features)
   - 只使用全連接層進行特徵提取
   - 去除所有卷積層，只保留池化層
-  correct_index: 1
+  - 使用單一尺寸的卷積核
+  correct_index: 0
   explanation: 讓網路自己決定哪種尺度的特徵最重要。
   tags:
   - chap-m4-ch2
@@ -887,9 +887,9 @@ questions:
   type: multiple_choice
   options:
   - 10 類常見物體
-  - 100 類常見物體
-  - 1000 類常見物體 (1000 Classes)
   - 10000 類常見物體
+  - 1000 類常見物體 (1000 Classes)
+  - 100 類常見物體
   correct_index: 2
   explanation: 標準 ImageNet 競賽包含 1000 個類別。
   tags:
@@ -902,10 +902,10 @@ questions:
   text: 情境：LSTM 中的「遺忘閘 (Forget Gate)」決定了？
   type: multiple_choice
   options:
-  - 決定當前的隱藏狀態應該輸出什麼
-  - 決定要保留多少舊的細胞狀態 (Cell State)，即遺忘多少資訊
   - 決定有哪些新資訊需要輸入
+  - 決定要保留多少舊的細胞狀態 (Cell State)，即遺忘多少資訊
   - 決定是否要刪除整個模型結構
+  - 決定當前的隱藏狀態應該輸出什麼
   correct_index: 1
   explanation: 控制資訊遺忘的程度，是 LSTM 處理長期依賴的關鍵。
   tags:
@@ -918,11 +918,11 @@ questions:
   text: 情境：自動微分 (Automatic Differentiation) 的作用是？
   type: multiple_choice
   options:
-  - 自動編寫神經網路程式碼
-  - 自動計算反向傳播所需的梯度 (Gradients)，省去手動推導公式的麻煩
-  - 自動從網路下載訓練數據
   - 自動安裝 GPU 驅動程式
-  correct_index: 1
+  - 自動編寫神經網路程式碼
+  - 自動從網路下載訓練數據
+  - 自動計算反向傳播所需的梯度 (Gradients)，省去手動推導公式的麻煩
+  correct_index: 3
   explanation: 這是所有現代深度學習框架的核心功能。
   tags:
   - chap-m4-ch2
@@ -934,10 +934,10 @@ questions:
   text: 情境：Transformer 架構完全拋棄了？
   type: multiple_choice
   options:
-  - 全連接層 (Fully Connected Layers)
-  - 循環神經網路 (RNN) 與卷積神經網路 (CNN) 的結構
   - 自注意力機制 (Self-Attention Mechanism)
+  - 循環神經網路 (RNN) 與卷積神經網路 (CNN) 的結構
   - 輸入層 (Input Layer)
+  - 全連接層 (Fully Connected Layers)
   correct_index: 1
   explanation: Transformer 證明了「Attention is All You Need」。
   tags:
@@ -950,10 +950,10 @@ questions:
   text: 情境：當新任務的資料量很大時，遷移學習通常建議？
   type: multiple_choice
   options:
-  - 只訓練模型的最後一層 (Output Layer)
-  - 微調整個模型 (Fine-tuning)，更新所有層的權重
   - 不使用遷移學習，直接從頭訓練
+  - 微調整個模型 (Fine-tuning)，更新所有層的權重
   - 只訓練模型的第一層 (Input Layer)
+  - 只訓練模型的最後一層 (Output Layer)
   correct_index: 1
   explanation: 大數據允許我們調整整個模型的權重，使其更適應新任務。
   tags:
@@ -966,11 +966,11 @@ questions:
   text: 情境：1x1 卷積 (Pointwise Convolution) 的主要作用是？
   type: multiple_choice
   options:
-  - 對圖片進行模糊處理
-  - 改變特徵圖的通道數 (Channel Reduction/Expansion)，即降維或升維，並增加非線性
   - 對圖片進行放大處理
   - 對圖片進行旋轉處理
-  correct_index: 1
+  - 改變特徵圖的通道數 (Channel Reduction/Expansion)，即降維或升維，並增加非線性
+  - 對圖片進行模糊處理
+  correct_index: 2
   explanation: 在 Inception 和 MobileNet 中都扮演了關鍵角色。
   tags:
   - chap-m4-ch2
@@ -983,10 +983,10 @@ questions:
   type: multiple_choice
   options:
   - 用於超級電腦上的大規模模型訓練
-  - 用於行動裝置與邊緣設備 (Mobile and Edge Devices) 上的模型部署與推論
   - 用於網頁前端開發
   - 用於資料庫管理系統
-  correct_index: 1
+  - 用於行動裝置與邊緣設備 (Mobile and Edge Devices) 上的模型部署與推論
+  correct_index: 3
   explanation: 提供輕量化的推論引擎。
   tags:
   - chap-m4-ch2
@@ -998,11 +998,11 @@ questions:
   text: 情境：GRU (Gated Recurrent Unit) 相比於 LSTM？
   type: multiple_choice
   options:
-  - 結構更複雜，參數量更多
-  - 結構更簡單 (Simpler Structure)，只有兩個閘門，參數更少，訓練更快
-  - 準確率一定比 LSTM 更低
   - 不能處理時間序列數據
-  correct_index: 1
+  - 結構更複雜，參數量更多
+  - 準確率一定比 LSTM 更低
+  - 結構更簡單 (Simpler Structure)，只有兩個閘門，參數更少，訓練更快
+  correct_index: 3
   explanation: GRU 合併了遺忘閘與輸入閘，是 LSTM 的高效變體。
   tags:
   - chap-m4-ch2
@@ -1014,11 +1014,11 @@ questions:
   text: 情境：預訓練模型 (Pre-trained Model) 的優勢不包括？
   type: multiple_choice
   options:
-  - 加快模型訓練的收斂速度
   - 提升模型在小數據集上的表現
-  - 完全消除模型的過擬合 (Overfitting) 現象
   - 節省訓練所需的運算資源
-  correct_index: 2
+  - 加快模型訓練的收斂速度
+  - 完全消除模型的過擬合 (Overfitting) 現象
+  correct_index: 3
   explanation: 遷移學習能減輕但不能完全消除過擬合。
   tags:
   - chap-m4-ch2
@@ -1030,10 +1030,10 @@ questions:
   text: 情境：ResNet 的殘差連接 (Residual Connection) 解決了什麼問題？
   type: multiple_choice
   options:
-  - 模型的過擬合問題
+  - 訓練時記憶體不足的問題
   - 深層網路的梯度消失 (Gradient Vanishing) 與退化問題 (Degradation Problem)
   - 模型計算速度過慢的問題
-  - 訓練時記憶體不足的問題
+  - 模型的過擬合問題
   correct_index: 1
   explanation: 讓梯度能順暢地傳遞到淺層。
   tags:

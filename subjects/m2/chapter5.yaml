@@ -5,11 +5,11 @@ questions:
   text: MLOps 的主要目標是？
   type: multiple_choice
   options:
-  - 增加模型複雜度 (Increase Model Complexity)
-  - 整合開發 (Development) 與營運 (Operations) (Integrate Dev & Ops)
   - 減少數據量 (Reduce Data Volume)
   - 降低硬體成本 (Reduce Hardware Cost)
-  correct_index: 1
+  - 增加模型複雜度 (Increase Model Complexity)
+  - 整合開發 (Development) 與營運 (Operations) (Integrate Dev & Ops)
+  correct_index: 3
   explanation: MLOps 借鑑 DevOps 理念，旨在解決 AI 模型從實驗室到生產環境的「最後一哩路」問題，確保高效、穩定的交付。
   tags:
   - chap-m2-ch5
@@ -22,10 +22,10 @@ questions:
   type: multiple_choice
   options:
   - 運算能力最強 (Highest Compute Power)
+  - 維護最簡單 (Simplest Maintenance)
   - 低延遲、保護隱私 (數據不出設備)、節省頻寬 (Low Latency, Privacy, Bandwidth Saving)
   - 儲存空間無限 (Infinite Storage)
-  - 維護最簡單 (Simplest Maintenance)
-  correct_index: 1
+  correct_index: 2
   explanation: 將計算移至數據源頭（如手機、IoT），避免了將數據傳回雲端的延遲與隱私風險。
   tags:
   - chap-m2-ch5
@@ -37,11 +37,11 @@ questions:
   text: 哪種部署策略最適合對資料隱私高度敏感的金融或醫療機構？
   type: multiple_choice
   options:
+  - 混合部署 (Hybrid Deployment)
   - 公有雲部署 (Public Cloud) (Public Cloud)
   - 私有雲部署 (Private Cloud) (Private Cloud)
-  - 混合部署 (Hybrid Deployment)
   - 邊緣部署 (Edge Deployment)
-  correct_index: 1
+  correct_index: 2
   explanation: 私有雲提供專屬的基礎設施，企業能完全掌控資料流向與安全政策，符合嚴格的合規要求。
   tags:
   - chap-m2-ch5
@@ -53,11 +53,11 @@ questions:
   text: 微服務架構 (Microservices) 的核心特點是？
   type: multiple_choice
   options:
+  - 不使用 API (No API)
+  - 只能使用 Python 開發 (Python Only)
   - 所有功能打包在一個巨大程式中 (Monolithic) (Monolithic Architecture)
   - 將應用程式拆解為一組小型、獨立部署且單一職責的服務 (Decoupled Microservices)
-  - 只能使用 Python 開發 (Python Only)
-  - 不使用 API (No API)
-  correct_index: 1
+  correct_index: 3
   explanation: 微服務強調解耦，每個服務獨立運行、獨立擴展，提升了系統的靈活性與容錯能力。
   tags:
   - chap-m2-ch5
@@ -69,11 +69,11 @@ questions:
   text: API Gateway 在 AI 系統中的作用是？
   type: multiple_choice
   options:
-  - 訓練模型 (Train Model)
   - 統一管理外部請求，負責流量控管、身份驗證與日誌記錄 (Traffic Control, Auth, Logging)
+  - 訓練模型 (Train Model)
   - 儲存數據 (Store Data)
   - 清洗數據 (Clean Data)
-  correct_index: 1
+  correct_index: 0
   explanation: API Gateway 是系統的大門，保護後端微服務不直接暴露，並提供統一的接入點與安全管理。
   tags:
   - chap-m2-ch5
@@ -85,11 +85,11 @@ questions:
   text: 持續整合 (CI) 中的「自動化測試」通常不包括？
   type: multiple_choice
   options:
-  - 單元測試 (Unit Test) (Unit Test)
-  - 數據驗證 (Data Validation) (Data Validation)
   - 人工手動測試 (Manual Testing)
   - 模型評估 (Model Evaluation) (Model Evaluation)
-  correct_index: 2
+  - 數據驗證 (Data Validation) (Data Validation)
+  - 單元測試 (Unit Test) (Unit Test)
+  correct_index: 0
   explanation: CI 強調「自動化」。凡是需要人工介入的測試都不屬於自動化測試範疇，會拖慢整合速度。
   tags:
   - chap-m2-ch5
@@ -101,11 +101,11 @@ questions:
   text: 藍綠部署 (Blue-Green Deployment) 的運作方式是？
   type: multiple_choice
   options:
-  - 直接覆蓋舊版本 (Overwrite Old Version)
   - 同時運行新舊兩個版本，確認新版無誤後瞬間切換流量 (Parallel Versions & Switch)
+  - 直接覆蓋舊版本 (Overwrite Old Version)
   - 只讓 5% 用戶使用新版 (Canary Deployment)
   - 隨機部署 (Random Deployment)
-  correct_index: 1
+  correct_index: 0
   explanation: 藍綠部署透過並行環境實現零停機 (Zero Downtime) 更新，且若新版有問題可隨時切回舊版。
   tags:
   - chap-m2-ch5
@@ -117,11 +117,11 @@ questions:
   text: 概念漂移 (Concept Drift) 是指？
   type: multiple_choice
   options:
-  - 輸入數據的分佈改變 (Data Drift)
-  - 輸入與輸出之間的映射關係發生根本性變化 (Concept Drift)
   - 模型參數改變 (Parameter Change)
   - 硬體老化 (Hardware Aging)
-  correct_index: 1
+  - 輸入與輸出之間的映射關係發生根本性變化 (Concept Drift)
+  - 輸入數據的分佈改變 (Data Drift)
+  correct_index: 2
   explanation: 例如，「垃圾郵件」的定義隨時間改變（駭客換手法），即使輸入數據特徵沒變，舊模型的判斷邏輯也失效了。
   tags:
   - chap-m2-ch5
@@ -135,8 +135,8 @@ questions:
   options:
   - Word + Excel (Office Tools)
   - Prometheus + Grafana (Monitoring & Visualization)
-  - Photoshop + Illustrator (Design Tools)
   - Notepad + Paint (Basic Tools)
+  - Photoshop + Illustrator (Design Tools)
   correct_index: 1
   explanation: Prometheus 負責收集時間序列數據（指標），Grafana 負責將這些數據繪製成漂亮的儀表板。
   tags:
@@ -149,10 +149,10 @@ questions:
   text: 系統層級的關鍵效能指標 (KPI) 包括？
   type: multiple_choice
   options:
-  - 準確率 (Accuracy) (Accuracy)
-  - 投資報酬率 (ROI) (ROI)
-  - 推論延遲 (Latency) 與吞吐量 (Throughput) (Latency & Throughput)
   - 召回率 (Recall) (Recall)
+  - 準確率 (Accuracy) (Accuracy)
+  - 推論延遲 (Latency) 與吞吐量 (Throughput) (Latency & Throughput)
+  - 投資報酬率 (ROI) (ROI)
   correct_index: 2
   explanation: 系統層級關注「跑得快不快、穩不穩」，而非模型「準不準」（那是應用層級）。
   tags:
@@ -181,11 +181,11 @@ questions:
   text: RESTful API 通常使用哪種格式傳輸數據？
   type: multiple_choice
   options:
-  - XML (Extensible Markup Language)
-  - JSON (JavaScript Object Notation)
   - Binary (Binary Format)
   - CSV (Comma-Separated Values)
-  correct_index: 1
+  - JSON (JavaScript Object Notation)
+  - XML (Extensible Markup Language)
+  correct_index: 2
   explanation: JSON (JavaScript Object Notation) 輕量且易讀，是現代 Web API 最通用的資料交換格式。
   tags:
   - chap-m2-ch5
@@ -197,11 +197,11 @@ questions:
   text: 金絲雀部署 (Canary Deployment) 的名稱由來是？
   type: multiple_choice
   options:
-  - 礦工帶金絲雀下礦坑偵測瓦斯 (Canary in Coal Mine)
-  - 金絲雀很漂亮 (Pretty Bird)
   - 金絲雀飛得快 (Fast Bird)
   - 金絲雀喜歡唱歌 (Singing Bird)
-  correct_index: 0
+  - 礦工帶金絲雀下礦坑偵測瓦斯 (Canary in Coal Mine)
+  - 金絲雀很漂亮 (Pretty Bird)
+  correct_index: 2
   explanation: 就像礦工用金絲雀偵測危險，軟體部署先讓小部分用戶試用新版（當白老鼠），若無問題才全面開放。
   tags:
   - chap-m2-ch5
@@ -213,11 +213,11 @@ questions:
   text: 自動重新訓練 (Auto-retraining) 通常在什麼情況下觸發？
   type: multiple_choice
   options:
+  - 手動觸發 (Manual Trigger)
   - 每天固定時間 (Scheduled Time)
   - 偵測到顯著的模型漂移或數據漂移時 (Drift Detection)
   - 隨機觸發 (Random Trigger)
-  - 手動觸發 (Manual Trigger)
-  correct_index: 1
+  correct_index: 2
   explanation: 這是 MLOps 的閉環關鍵。當監控指標顯示模型「過期」了，系統自動啟動再訓練以維持效能。
   tags:
   - chap-m2-ch5
@@ -229,11 +229,11 @@ questions:
   text: 回饋迴圈 (Feedback Loop) 的作用是？
   type: multiple_choice
   options:
-  - 讓用戶投訴 (User Complaints)
-  - 收集實際運行數據與錯誤樣本，作為下一次模型迭代的養分 (Data Collection for Iteration)
-  - 增加系統負載 (Increase Load)
   - 減少數據量 (Reduce Data)
-  correct_index: 1
+  - 增加系統負載 (Increase Load)
+  - 收集實際運行數據與錯誤樣本，作為下一次模型迭代的養分 (Data Collection for Iteration)
+  - 讓用戶投訴 (User Complaints)
+  correct_index: 2
   explanation: AI 系統不是靜態的。透過收集真實世界的反饋（特別是模型做錯的案例），持續訓練，模型才會越來越聰明。
   tags:
   - chap-m2-ch5
@@ -245,10 +245,10 @@ questions:
   text: JWT (JSON Web Token) 主要用於？
   type: multiple_choice
   options:
-  - 數據加密 (Data Encryption)
+  - 模型訓練 (Model Training)
   - 身份驗證與授權 (Authentication & Authorization) (Auth & Auth)
   - 數據壓縮 (Data Compression)
-  - 模型訓練 (Model Training)
+  - 數據加密 (Data Encryption)
   correct_index: 1
   explanation: JWT 是一種無狀態的認證機制，廣泛用於 API 的身份驗證，確保只有合法用戶能存取服務。
   tags:
@@ -261,11 +261,11 @@ questions:
   text: 混合部署 (Hybrid Deployment) 通常結合了？
   type: multiple_choice
   options:
-  - Windows 和 Linux (OS Mix)
   - 公有雲、私有雲或邊緣架構 (Cloud & Edge Mix)
   - 手機和電腦 (Device Mix)
   - 軟體和硬體 (Soft & Hard Mix)
-  correct_index: 1
+  - Windows 和 Linux (OS Mix)
+  correct_index: 0
   explanation: 混合架構能靈活運用各方優勢，例如在雲端訓練（算力強），在邊緣推論（速度快）。
   tags:
   - chap-m2-ch5
@@ -309,11 +309,11 @@ questions:
   text: Kubernetes (K8s) 的主要功能是？
   type: multiple_choice
   options:
+  - 編輯圖片 (Editing Images)
+  - 寫程式 (Writing Code)
   - 訓練模型 (Train Model)
   - 容器編排與管理 (Orchestration)，負責自動部署、擴展與管理容器化應用 (Container Orchestration)
-  - 寫程式 (Writing Code)
-  - 編輯圖片 (Editing Images)
-  correct_index: 1
+  correct_index: 3
   explanation: K8s 是管理大規模 Docker 容器叢集的標準工具，確保服務的高可用性與自動擴展。
   tags:
   - chap-m2-ch5
@@ -325,11 +325,11 @@ questions:
   text: Service Mesh 的作用是？
   type: multiple_choice
   options:
-  - 繪製 3D 網格 (3D Mesh)
   - 作為微服務間的通訊基礎設施，管理服務發現、負載均衡與安全 (Service Communication Infrastructure)
-  - 清洗數據 (Clean Data)
   - 訓練神經網路 (Train Neural Network)
-  correct_index: 1
+  - 清洗數據 (Clean Data)
+  - 繪製 3D 網格 (3D Mesh)
+  correct_index: 0
   explanation: 在複雜的微服務架構中，Service Mesh（如 Istio）接管了服務間的通訊邏輯，讓開發者專注於業務邏輯。
   tags:
   - chap-m2-ch5
@@ -341,11 +341,11 @@ questions:
   text: DVC (Data Version Control) 用於管理？
   type: multiple_choice
   options:
+  - 作業系統版本 (OS Version)
+  - 文件版本 (Doc Version)
   - 程式碼版本 (Code Version)
   - 數據與模型的版本 (Data & Model Version)
-  - 文件版本 (Doc Version)
-  - 作業系統版本 (OS Version)
-  correct_index: 1
+  correct_index: 3
   explanation: Git 不適合管理大檔案。DVC 專為機器學習設計，能追蹤數據集與模型檔案的變更歷史。
   tags:
   - chap-m2-ch5
@@ -357,11 +357,11 @@ questions:
   text: 為了檢測模型是否過時，我們主要監控？
   type: multiple_choice
   options:
-  - CPU 溫度 (CPU Temperature)
   - 模型效能指標 (如準確率、F1-Score) 的變化趨勢 (Performance Metrics Trend)
-  - 記憶體使用量 (Memory Usage)
   - 硬碟剩餘空間 (Disk Space)
-  correct_index: 1
+  - CPU 溫度 (CPU Temperature)
+  - 記憶體使用量 (Memory Usage)
+  correct_index: 0
   explanation: 當準確率隨時間顯著下降，就是模型漂移的警訊，提示需要重新訓練。
   tags:
   - chap-m2-ch5
@@ -373,11 +373,11 @@ questions:
   text: A/B 測試在模型部署中的目的是？
   type: multiple_choice
   options:
+  - 隨機選擇 (Random Choice)
   - 測試 A 和 B 兩個工程師的能力 (Test Engineers)
   - 比較兩個模型版本在真實環境中的業務表現，以決定哪個更好 (Compare Business Performance)
-  - 隨機選擇 (Random Choice)
   - 節省流量 (Save Bandwidth)
-  correct_index: 1
+  correct_index: 2
   explanation: A/B 測試是驗證模型商業價值的黃金標準，讓數據說話。
   tags:
   - chap-m2-ch5
@@ -390,10 +390,10 @@ questions:
   type: multiple_choice
   options:
   - 更容易閱讀 (Easier to Read)
-  - 基於 HTTP/2 和 Protobuf，傳輸效率更高，延遲更低 (High Efficiency & Low Latency)
   - 支援瀏覽器 (Browser Support)
+  - 基於 HTTP/2 和 Protobuf，傳輸效率更高，延遲更低 (High Efficiency & Low Latency)
   - 不需要定義介面 (No Interface Definition)
-  correct_index: 1
+  correct_index: 2
   explanation: gRPC 使用二進位傳輸，效率遠高於文字格式的 JSON，適合內部微服務間的高頻通訊。
   tags:
   - chap-m2-ch5
@@ -406,10 +406,10 @@ questions:
   type: multiple_choice
   options:
   - 算力不足 (Insufficient Compute)
-  - 長期營運成本可能較高，且存在資料傳輸延遲 (High Cost & Latency)
   - 無法擴展 (Not Scalable)
+  - 長期營運成本可能較高，且存在資料傳輸延遲 (High Cost & Latency)
   - 維護困難 (Hard to Maintain)
-  correct_index: 1
+  correct_index: 2
   explanation: 雖然雲端彈性好，但持續的租賃費用與頻寬費用可能很驚人，且受限於網路速度。
   tags:
   - chap-m2-ch5
@@ -421,11 +421,11 @@ questions:
   text: GitHub Actions 的設定檔通常使用什麼格式？
   type: multiple_choice
   options:
-  - XML (XML)
-  - JSON (JSON)
-  - YAML (YAML)
   - INI (INI)
-  correct_index: 2
+  - JSON (JSON)
+  - XML (XML)
+  - YAML (YAML)
+  correct_index: 3
   explanation: YAML 格式簡潔易讀，是現代 CI/CD 工具（如 GitHub Actions, GitLab CI）設定檔的主流格式。
   tags:
   - chap-m2-ch5
@@ -437,11 +437,11 @@ questions:
   text: 微服務架構的一個缺點是？
   type: multiple_choice
   options:
-  - 系統太簡單 (Too Simple)
-  - 分散式系統的複雜性增加 (如網路延遲、數據一致性問題) (Increased Complexity)
-  - 無法擴展 (Not Scalable)
   - 只能用一種語言 (Single Language)
-  correct_index: 1
+  - 系統太簡單 (Too Simple)
+  - 無法擴展 (Not Scalable)
+  - 分散式系統的複雜性增加 (如網路延遲、數據一致性問題) (Increased Complexity)
+  correct_index: 3
   explanation: 服務拆分後，服務間的通訊、除錯、交易管理都變得比單體架構更複雜。
   tags:
   - chap-m2-ch5
@@ -453,11 +453,11 @@ questions:
   text: 持續訓練 (Continuous Training, CT) 是指？
   type: multiple_choice
   options:
-  - 模型 24 小時不停訓練 (Non-stop Training)
   - 建立自動化機制，當數據更新或模型效能下降時，自動觸發重新訓練流程 (Automated Retraining)
-  - 人工手動訓練 (Manual Training)
   - 只訓練一次 (Train Once)
-  correct_index: 1
+  - 模型 24 小時不停訓練 (Non-stop Training)
+  - 人工手動訓練 (Manual Training)
+  correct_index: 0
   explanation: CT 確保模型能適應環境變化，保持「新鮮」。
   tags:
   - chap-m2-ch5
@@ -485,11 +485,11 @@ questions:
   text: Webhooks 主要用於？
   type: multiple_choice
   options:
-  - 同步通訊 (Synchronous Communication)
-  - 非同步事件通知 (如模型訓練完成後通知前端) (Asynchronous Event Notification)
-  - 數據加密 (Data Encryption)
   - 身份驗證 (Authentication)
-  correct_index: 1
+  - 數據加密 (Data Encryption)
+  - 非同步事件通知 (如模型訓練完成後通知前端) (Asynchronous Event Notification)
+  - 同步通訊 (Synchronous Communication)
+  correct_index: 2
   explanation: Webhooks 是一種「反向 API」，當事件發生時，伺服器主動呼叫客戶端的 URL，避免客戶端頻繁輪詢 (Polling)。
   tags:
   - chap-m2-ch5
@@ -502,10 +502,10 @@ questions:
   type: multiple_choice
   options:
   - 雲端部署 (Cloud Deployment)
-  - 邊緣運算部署 (Edge Deployment)
   - 私有雲部署 (Private Cloud Deployment)
+  - 邊緣運算部署 (Edge Deployment)
   - 混合部署 (Hybrid Deployment)
-  correct_index: 1
+  correct_index: 2
   explanation: 邊緣設備資源有限，必須縮小模型體積與運算量才能跑得動。
   tags:
   - chap-m2-ch5
@@ -517,11 +517,11 @@ questions:
   text: 在 CI 流程中，若新模型的評估結果低於基準 (Baseline)，系統應該？
   type: multiple_choice
   options:
-  - 強制部署 (Force Deploy)
-  - 忽略警告 (Ignore Warning)
   - 中止流程並通知開發者 (Abort & Notify)
   - 自動修正模型 (Auto Fix)
-  correct_index: 2
+  - 強制部署 (Force Deploy)
+  - 忽略警告 (Ignore Warning)
+  correct_index: 0
   explanation: CI 的目的就是把關品質。表現變差的模型不應進入下一階段。
   tags:
   - chap-m2-ch5
@@ -533,11 +533,11 @@ questions:
   text: 異常警報 (Anomaly Alerting) 的閾值設定過低會導致？
   type: multiple_choice
   options:
-  - 漏報 (False Negative)
-  - 警報疲勞 (Alert Fatigue)，工程師被大量假警報淹沒 (Alert Fatigue)
   - 系統崩潰 (System Crash)
+  - 漏報 (False Negative)
   - 模型變準 (Model Improvement)
-  correct_index: 1
+  - 警報疲勞 (Alert Fatigue)，工程師被大量假警報淹沒 (Alert Fatigue)
+  correct_index: 3
   explanation: 狼來了的故事。太多不重要的警報會讓運維人員麻痺，反而忽略了真正的危機。
   tags:
   - chap-m2-ch5
@@ -549,11 +549,11 @@ questions:
   text: 資料湖 (Data Lake) 與資料倉儲 (Data Warehouse) 的主要區別是？
   type: multiple_choice
   options:
-  - 資料湖儲存原始、非結構化資料；資料倉儲儲存經過處理的結構化資料 (Raw vs Structured)
   - 資料湖比較小 (Lake is Smaller)
-  - 資料倉儲比較便宜 (Warehouse is Cheaper)
   - 兩者一樣 (Same)
-  correct_index: 0
+  - 資料湖儲存原始、非結構化資料；資料倉儲儲存經過處理的結構化資料 (Raw vs Structured)
+  - 資料倉儲比較便宜 (Warehouse is Cheaper)
+  correct_index: 2
   explanation: 資料湖像一個大水池，什麼水（數據）都先流進去再說；資料倉儲像瓶裝水工廠，只存處理好、規格化的水。
   tags:
   - chap-m2-ch5
@@ -565,11 +565,11 @@ questions:
   text: 單一職責原則 (Single Responsibility Principle) 在微服務中意味著？
   type: multiple_choice
   options:
-  - 一個服務只做一件事 (One Service, One Task)
   - 一個工程師只寫一行程式 (One Line per Engineer)
-  - 一個伺服器只跑一個程式 (One Program per Server)
   - 一個資料庫只存一筆資料 (One Record per DB)
-  correct_index: 0
+  - 一個伺服器只跑一個程式 (One Program per Server)
+  - 一個服務只做一件事 (One Service, One Task)
+  correct_index: 3
   explanation: 每個微服務應專注於解決單一業務問題，保持小巧、聚焦且易於維護。
   tags:
   - chap-m2-ch5
@@ -581,10 +581,10 @@ questions:
   text: 吞吐量 (Throughput) 是指？
   type: multiple_choice
   options:
-  - 單次請求的處理時間 (Processing Time)
+  - 硬碟讀寫速度 (Disk Speed)
   - 單位時間內系統能處理的請求總數 (如 RPS) (Requests Per Second)
   - 網路速度 (Network Speed)
-  - 硬碟讀寫速度 (Disk Speed)
+  - 單次請求的處理時間 (Processing Time)
   correct_index: 1
   explanation: 吞吐量衡量系統的負載能力，越高代表能同時服務越多用戶。
   tags:
@@ -614,10 +614,10 @@ questions:
   type: multiple_choice
   options:
   - 在黑暗中部署 (Deploy in Dark)
+  - 刪除模型 (Delete Model)
   - 新模型與舊模型並行接收流量，但新模型的輸出不回傳給用戶 (Parallel Traffic, No Output)
   - 隱藏模型 (Hide Model)
-  - 刪除模型 (Delete Model)
-  correct_index: 1
+  correct_index: 2
   explanation: 這是最安全的測試方式。新模型在真實流量下「假裝」工作，讓我們能安全地評估其表現，完全不影響用戶。
   tags:
   - chap-m2-ch5
@@ -630,10 +630,10 @@ questions:
   type: multiple_choice
   options:
   - 關閉系統 (Shutdown System)
+  - 增加硬體 (Add Hardware)
   - 線上學習 (Online Learning)，讓模型根據新數據即時微調參數 (Online Learning)
   - 刪除數據 (Delete Data)
-  - 增加硬體 (Add Hardware)
-  correct_index: 1
+  correct_index: 2
   explanation: 對於變化極快的場景（如推薦系統），線上學習能讓模型像人類一樣「邊做邊學」，即時適應變化。
   tags:
   - chap-m2-ch5
@@ -645,11 +645,11 @@ questions:
   text: 情境：你的團隊開發了一個推薦系統，線下測試準確率很高，但上線後用戶點擊率卻沒有提升。這可能是什麼原因？應如何調查？
   type: multiple_choice
   options:
-  - 模型過擬合 (Overfitting)
   - 訓練數據與線上真實數據分佈不一致 (Training-Serving Skew) (Training-Serving Skew)
-  - 伺服器太慢 (Server too Slow)
   - 前端介面太醜 (Bad UI)
-  correct_index: 1
+  - 模型過擬合 (Overfitting)
+  - 伺服器太慢 (Server too Slow)
+  correct_index: 0
   explanation: 這是經典的「實驗室與現實的差距」。離線指標好不代表業務效果好。可能訓練數據經過了不當的過濾，或者模型優化的目標（如點擊預測）與實際業務目標（如購買轉化）有落差。
   tags:
   - chap-m2-ch5
@@ -661,10 +661,10 @@ questions:
   text: 情境：公司要求將一個巨大的 LLM 部署到工廠的邊緣設備上，且不能連網。設備記憶體只有 4GB。你該採取什麼策略？
   type: multiple_choice
   options:
-  - 告訴老闆做不到 (Say Impossible)
   - 購買更貴的設備 (Buy Expensive Hardware)
-  - 使用模型蒸餾 (Distillation) 訓練一個小學生模型，並結合 4-bit 量化 (Quantization) 技術 (Distillation & Quantization)
   - 使用雲端 API (Use Cloud API)
+  - 使用模型蒸餾 (Distillation) 訓練一個小學生模型，並結合 4-bit 量化 (Quantization) 技術 (Distillation & Quantization)
+  - 告訴老闆做不到 (Say Impossible)
   correct_index: 2
   explanation: 在資源極度受限且無網路的環境下，模型壓縮是唯一出路。蒸餾能將大模型的知識轉移給小模型，量化則能大幅減少記憶體佔用。
   tags:
@@ -677,11 +677,11 @@ questions:
   text: 情境：你的模型 API 偶爾會因為流量暴衝而崩潰 (OOM)。在不修改程式碼的前提下，最快的架構級解決方案是？
   type: multiple_choice
   options:
-  - 重啟伺服器 (Restart Server)
-  - 在 API Gateway 層實施限流 (Rate Limiting) 與佇列 (Queuing) 機制 (Rate Limiting & Queuing)
   - 升級 GPU (Upgrade GPU)
   - 優化模型 (Optimize Model)
-  correct_index: 1
+  - 重啟伺服器 (Restart Server)
+  - 在 API Gateway 層實施限流 (Rate Limiting) 與佇列 (Queuing) 機制 (Rate Limiting & Queuing)
+  correct_index: 3
   explanation: 流量控制是保護系統的防波堤。透過限流拒絕過多請求，或透過佇列暫存請求慢慢處理，能防止系統被瞬間流量沖垮。
   tags:
   - chap-m2-ch5
@@ -693,11 +693,11 @@ questions:
   text: 情境：你發現每當促銷活動開始，詐欺偵測模型的誤判率就飆升。這屬於哪種漂移？應如何建立自動化機制應對？
   type: multiple_choice
   options:
-  - 模型漂移 (Model Drift)
   - 數據漂移 (Data Drift)；促銷期間用戶行為模式改變 (Data Drift)
-  - 概念漂移 (Concept Drift)
+  - 模型漂移 (Model Drift)
   - 系統故障 (System Failure)
-  correct_index: 1
+  - 概念漂移 (Concept Drift)
+  correct_index: 0
   explanation: 促銷期間的用戶行為（如瘋狂下單）與平時截然不同，導致輸入數據分佈劇烈變化。這需要專門的監控與應對策略，例如切換到較寬鬆的規則或專用模型。
   tags:
   - chap-m2-ch5
@@ -710,10 +710,10 @@ questions:
   type: multiple_choice
   options:
   - 安裝 Jenkins (Install Jenkins)
-  - 撰寫自動化測試腳本 (單元測試、整合測試)，並將建置與測試流程腳本化 (Scripting Tests & Build)
   - 購買雲端服務 (Buy Cloud Service)
   - 開會討論 (Meeting)
-  correct_index: 1
+  - 撰寫自動化測試腳本 (單元測試、整合測試)，並將建置與測試流程腳本化 (Scripting Tests & Build)
+  correct_index: 3
   explanation: 自動化的基礎是「可腳本化」。在引入複雜工具前，先確保測試和建置過程可以用指令自動執行，是 CI/CD 的第一步。
   tags:
   - chap-m2-ch5
@@ -724,11 +724,11 @@ questions:
   text: 情境：團隊發現模型在開發環境表現良好，但部署到生產環境後經常因為套件版本衝突而崩潰。引入哪項技術最能解決此問題？
   type: multiple_choice
   options:
-  - Docker 容器化 (Docker Containerization)
   - 更強的 CPU (Stronger CPU)
+  - Docker 容器化 (Docker Containerization)
   - 負載平衡器 (Load Balancer)
   - 防火牆 (Firewall)
-  correct_index: 0
+  correct_index: 1
   explanation: Docker 能將程式碼與其依賴的環境（OS、函式庫）打包在一起，確保「開發環境」與「生產環境」的一致性，消除「在我機器上可以跑」的問題。
   tags:
   - chap-m2-ch5
@@ -740,11 +740,11 @@ questions:
   text: 情境：某智慧工廠需要在斷網環境下，即時偵測產線上的危險動作（延遲需 < 50ms）。最合適的部署策略是？
   type: multiple_choice
   options:
-  - 公有雲 API (Public Cloud API)
   - 邊緣運算 (Edge Computing) (Edge Computing)
   - 混合雲 (Hybrid Cloud)
   - 離線批次處理 (Offline Batch Processing)
-  correct_index: 1
+  - 公有雲 API (Public Cloud API)
+  correct_index: 0
   explanation: 極低延遲且斷網的環境需求，排除了雲端方案。邊緣運算將模型直接部署在產線設備上，能滿足即時性與可用性要求。
   tags:
   - chap-m2-ch5
@@ -756,11 +756,11 @@ questions:
   text: 情境：將單體式 AI 應用拆解為微服務後，發現服務間通訊延遲顯著增加，影響了整體效能。最可能的架構瓶頸是？
   type: multiple_choice
   options:
-  - 微服務拆分過細，導致過多的網路跳躍 (Network Hops) (Too Many Network Hops)
-  - Docker 啟動太慢 (Slow Docker Start)
   - 硬碟速度太慢 (Slow Disk)
   - 記憶體不足 (Insufficient Memory)
-  correct_index: 0
+  - 微服務拆分過細，導致過多的網路跳躍 (Network Hops) (Too Many Network Hops)
+  - Docker 啟動太慢 (Slow Docker Start)
+  correct_index: 2
   explanation: 微服務雖然靈活，但過度拆分會導致服務間頻繁透過網路呼叫，累積的網路延遲會嚴重拖慢系統。
   tags:
   - chap-m2-ch5
@@ -773,10 +773,10 @@ questions:
   type: multiple_choice
   options:
   - 更快的電腦 (Faster Computer)
-  - 統一的資料管線 (Data Pipeline) 與 Schema 管理 (Unified Pipeline & Schema)
   - 更好的演算法 (Better Algorithm)
+  - 統一的資料管線 (Data Pipeline) 與 Schema 管理 (Unified Pipeline & Schema)
   - 更多的資料 (More Data)
-  correct_index: 1
+  correct_index: 2
   explanation: 訓練與推論資料的一致性至關重要。缺乏統一的資料治理與管線管理，會導致嚴重的 Training-Serving Skew。
   tags:
   - chap-m2-ch5
@@ -788,11 +788,11 @@ questions:
   text: 情境：運維團隊每天收到上百封「模型準確率微幅下降」的警報郵件，久而久之便不再理會，直到某天發生嚴重故障才發現。這現象稱為？
   type: multiple_choice
   options:
-  - 警報疲勞 (Alert Fatigue) (Alert Fatigue)
-  - 系統優化 (System Optimization)
   - 自動化運維 (Automated Ops)
+  - 系統優化 (System Optimization)
+  - 警報疲勞 (Alert Fatigue) (Alert Fatigue)
   - 容錯機制 (Fault Tolerance)
-  correct_index: 0
+  correct_index: 2
   explanation: 警報閾值設定不當或缺乏分級，會導致「狼來了」效應，使運維人員對警報麻痺，錯失真正重要的訊息。
   tags:
   - chap-m2-ch5
@@ -804,10 +804,10 @@ questions:
   text: 情境：A/B 測試結果顯示，新模型 B 的點擊率比舊模型 A 高 5%，但伺服器 CPU 使用率卻高出 200%，導致回應變慢。作為 PM，你應如何決策？
   type: multiple_choice
   options:
-  - 直接上線模型 B (Deploy B)
+  - 忽略 CPU 問題 (Ignore CPU)
   - 拒絕模型 B，或要求團隊優化其效能 (Latency/Throughput) 後再測試 (Reject & Optimize)
   - 購買更多伺服器 (Buy Servers)
-  - 忽略 CPU 問題 (Ignore CPU)
+  - 直接上線模型 B (Deploy B)
   correct_index: 1
   explanation: 模型上線不能只看業務指標（點擊率），必須同時考量系統指標（成本、延遲）。若成本暴增遠大於收益，則不是成功的優化。
   tags:
@@ -821,9 +821,9 @@ questions:
   type: multiple_choice
   options:
   - API Gateway (API Gateway)
-  - 資料庫 (Database)
   - 交換器 (Switch)
   - 負載平衡器 (Load Balancer)
+  - 資料庫 (Database)
   correct_index: 0
   explanation: API Gateway 作為對外統一窗口，能隱藏後端微服務架構，並提供身份驗證、流量限制等安全保護。
   tags:
@@ -836,10 +836,10 @@ questions:
   text: 情境：某跨國銀行需在多個國家部署 AI 信用評分系統，但各國法規要求資料不得出境。最合適的架構是？
   type: multiple_choice
   options:
-  - 全球單一公有雲 (Single Public Cloud)
-  - 分散式私有雲或混合雲，資料在地化處理 (Distributed Private/Hybrid Cloud)
-  - 將資料全部傳回總部 (Send Data to HQ)
   - 不做 AI (No AI)
+  - 分散式私有雲或混合雲，資料在地化處理 (Distributed Private/Hybrid Cloud)
+  - 全球單一公有雲 (Single Public Cloud)
+  - 將資料全部傳回總部 (Send Data to HQ)
   correct_index: 1
   explanation: 針對資料主權 (Data Sovereignty) 要求，必須採用分散式架構，讓資料在當地運算，僅將模型參數或聚合結果傳輸。
   tags:
@@ -852,11 +852,11 @@ questions:
   text: 情境：新模型上線後發現嚴重 Bug，導致所有預測失效。最快速的恢復手段是？
   type: multiple_choice
   options:
+  - 發公告道歉 (Apologize)
+  - 執行版本回滾 (Rollback)，切換回上一個穩定版本 (Rollback)
   - 立即重新訓練模型 (Retrain Immediately)
   - 修復 Bug 後重新打包上線 (Fix & Redeploy)
-  - 執行版本回滾 (Rollback)，切換回上一個穩定版本 (Rollback)
-  - 發公告道歉 (Apologize)
-  correct_index: 2
+  correct_index: 1
   explanation: 在生產環境事故中，止血是第一要務。回滾到舊版能立即恢復服務，爭取時間讓團隊在線下修復問題。
   tags:
   - chap-m2-ch5
@@ -868,11 +868,11 @@ questions:
   text: 情境：一個房價預測模型在 2020 年訓練，2023 年預測準確率大跌。經查發現是因為通膨導致整體房價上漲。這屬於？
   type: multiple_choice
   options:
-  - 程式錯誤 (Bug)
   - 概念漂移 (Concept Drift) (Concept Drift)
-  - 資料遺失 (Data Loss)
   - 過擬合 (Overfitting)
-  correct_index: 1
+  - 資料遺失 (Data Loss)
+  - 程式錯誤 (Bug)
+  correct_index: 0
   explanation: 輸入（房屋特徵）與輸出（價格）之間的關係因經濟環境改變而發生了根本變化，這就是概念漂移。
   tags:
   - chap-m2-ch5
@@ -885,10 +885,10 @@ questions:
   type: multiple_choice
   options:
   - 程式碼版本控制 (Code Version Control)
-  - 數據與模型的版本控制及實驗追蹤 (Data & Model Versioning)
   - 伺服器管理 (Server Management)
   - 網路設定 (Network Config)
-  correct_index: 1
+  - 數據與模型的版本控制及實驗追蹤 (Data & Model Versioning)
+  correct_index: 3
   explanation: 傳統 DevOps 關注程式碼 (Code)，而 MLOps 必須同時關注程式碼、數據 (Data) 與模型 (Model)。數據的變動性是
     MLOps 最大的挑戰。
   tags:
@@ -901,11 +901,11 @@ questions:
   text: 情境：Kubernetes 叢集中的某個推論服務 Pod 因為記憶體洩漏而掛掉。K8s 會如何處理？
   type: multiple_choice
   options:
-  - 整個系統停機 (System Shutdown)
-  - 自動重啟該 Pod (Self-healing) (Self-healing)
   - 發送 Email 給執行長 (Email CEO)
+  - 整個系統停機 (System Shutdown)
   - 刪除該服務 (Delete Service)
-  correct_index: 1
+  - 自動重啟該 Pod (Self-healing) (Self-healing)
+  correct_index: 3
   explanation: K8s 的自我修復 (Self-healing) 機制會監控 Pod 狀態，一旦發現異常終止，會自動重啟新的 Pod 以維持服務可用性。
   tags:
   - chap-m2-ch5
@@ -917,11 +917,11 @@ questions:
   text: 情境：內部微服務之間需要進行每秒數萬次的高頻通訊，目前使用 RESTful API 發現 CPU 消耗過高。建議改用？
   type: multiple_choice
   options:
-  - SOAP (SOAP)
-  - gRPC (gRPC)
-  - FTP (FTP)
   - Email (Email)
-  correct_index: 1
+  - FTP (FTP)
+  - gRPC (gRPC)
+  - SOAP (SOAP)
+  correct_index: 2
   explanation: gRPC 基於 Protobuf (二進位格式) 與 HTTP/2，序列化與傳輸效率遠高於文字格式的 REST/JSON，適合高頻內部通訊。
   tags:
   - chap-m2-ch5
@@ -934,10 +934,10 @@ questions:
   type: multiple_choice
   options:
   - 關聯式資料庫 (RDBMS) (RDBMS)
-  - 資料倉儲 (Data Warehouse) (Data Warehouse)
   - 資料湖 (Data Lake) (Data Lake)
   - 記憶體快取 (Redis) (Redis)
-  correct_index: 2
+  - 資料倉儲 (Data Warehouse) (Data Warehouse)
+  correct_index: 1
   explanation: 資料湖 (如 AWS S3) 專為低成本儲存海量異質資料而設計，適合 AI 專案的原始資料積累。
   tags:
   - chap-m2-ch5
@@ -965,11 +965,11 @@ questions:
   text: 情境：希望逐步將流量從舊模型切換到新模型（如 10% -> 50% -> 100%），以便在出現問題時能控制影響範圍。應採用？
   type: multiple_choice
   options:
-  - 藍綠部署 (Blue-Green Deployment)
-  - 金絲雀部署 (Canary Deployment) (Canary Deployment)
   - 影子模式 (Shadow Mode)
   - 直接部署 (Direct Deployment)
-  correct_index: 1
+  - 金絲雀部署 (Canary Deployment) (Canary Deployment)
+  - 藍綠部署 (Blue-Green Deployment)
+  correct_index: 2
   explanation: 金絲雀部署的核心就是「漸進式流量切換」，能有效控制風險。
   tags:
   - chap-m2-ch5
@@ -981,11 +981,11 @@ questions:
   text: 情境：在資源有限的邊緣設備上，模型推論速度太慢。為了提升吞吐量 (Throughput)，可以犧牲一點點準確率來換取速度。應採用哪種技術？
   type: multiple_choice
   options:
+  - 增加輸入圖片解析度 (Higher Resolution)
+  - 使用更高精度的浮點數 (Higher Precision)
   - 增加層數 (Add Layers)
   - 模型量化 (Quantization) (Quantization)
-  - 使用更高精度的浮點數 (Higher Precision)
-  - 增加輸入圖片解析度 (Higher Resolution)
-  correct_index: 1
+  correct_index: 3
   explanation: 量化將模型參數從 32-bit 浮點數轉為 8-bit 整數，雖然會損失微小精度，但能大幅提升運算速度並減少記憶體佔用。
   tags:
   - chap-m2-ch5
@@ -997,11 +997,11 @@ questions:
   text: 情境：團隊發現無法重現上個月發布的模型的訓練結果，因為當時的數據集已經被覆蓋了。這顯示缺乏？
   type: multiple_choice
   options:
-  - DVC (Data Version Control) (DVC)
-  - Git (Git)
   - Docker (Docker)
   - Jenkins (Jenkins)
-  correct_index: 0
+  - Git (Git)
+  - DVC (Data Version Control) (DVC)
+  correct_index: 3
   explanation: 數據版本控制是 MLOps 的基石。DVC 允許我們像管理程式碼一樣管理數據集，確保任何歷史版本的模型都能被精確重現。
   tags:
   - chap-m2-ch5
@@ -1013,11 +1013,11 @@ questions:
   text: 情境：模型上線後，團隊定期收集用戶修正後的錯誤預測結果，並將其加入訓練集。這個機制的目的是？
   type: multiple_choice
   options:
-  - 建立回饋迴圈 (Feedback Loop) 以持續優化模型 (Feedback Loop)
-  - 增加資料庫負擔 (Burden Database)
   - 證明模型很爛 (Prove Model Bad)
+  - 增加資料庫負擔 (Burden Database)
   - 浪費時間 (Waste Time)
-  correct_index: 0
+  - 建立回饋迴圈 (Feedback Loop) 以持續優化模型 (Feedback Loop)
+  correct_index: 3
   explanation: 這是「數據飛輪 (Data Flywheel)」效應。利用錯誤樣本進行針對性訓練，是提升模型效能最有效的方法。
   tags:
   - chap-m2-ch5
@@ -1029,10 +1029,10 @@ questions:
   text: 情境：某 App 的人臉辨識功能原本在雲端執行，但用戶抱怨在地下室無訊號時無法解鎖。解決方案是？
   type: multiple_choice
   options:
-  - 加強雲端伺服器 (Enhance Cloud Server)
-  - 改為邊緣運算 (Edge Computing)，在手機端執行模型 (Edge Computing)
   - 要求用戶去有訊號的地方 (Move User)
+  - 改為邊緣運算 (Edge Computing)，在手機端執行模型 (Edge Computing)
   - 使用 5G (Use 5G)
+  - 加強雲端伺服器 (Enhance Cloud Server)
   correct_index: 1
   explanation: 將模型部署到邊緣（手機），不僅消除了網路延遲，更實現了離線可用性，提升用戶體驗。
   tags:

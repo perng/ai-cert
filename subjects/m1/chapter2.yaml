@@ -5,8 +5,8 @@ questions:
   text: 在處理缺失值時，若某個特徵的缺失比例極高（例如超過 80%），通常建議採取什麼策略？
   type: multiple_choice
   options:
-  - 使用平均值填補 (Mean Imputation)
   - 使用眾數填補 (Mode Imputation)
+  - 使用平均值填補 (Mean Imputation)
   - 直接刪除該特徵 (Drop Column)
   - 使用機器學習模型預測填補 (Model-based Imputation)
   correct_index: 2
@@ -21,10 +21,10 @@ questions:
   text: Min-Max Scaling 將數據縮放到哪個區間？
   type: multiple_choice
   options:
-  - -1 到 1 之間 (Range [-1, 1])
-  - 0 到 1 之間 (Range [0, 1])
   - 0 到 100 之間 (Range [0, 100])
+  - 0 到 1 之間 (Range [0, 1])
   - 負無窮大到正無窮大 (Range [-infinity, infinity])
+  - -1 到 1 之間 (Range [-1, 1])
   correct_index: 1
   explanation: Min-Max Scaling 的公式為 $(x - min) / (max - min)$，結果必然落在 [0, 1] 之間。
   tags:
@@ -37,11 +37,11 @@ questions:
   text: Z-score 標準化 (Standardization) 後的數據，其平均值 (Mean) 和標準差 (Std) 分別為？
   type: multiple_choice
   options:
-  - 平均值=1, 標準差=0 (Mean=1, Std=0)
-  - 平均值=0, 標準差=1 (Mean=0, Std=1)
   - 平均值=0, 標準差=0 (Mean=0, Std=0)
+  - 平均值=1, 標準差=0 (Mean=1, Std=0)
   - 平均值=1, 標準差=1 (Mean=1, Std=1)
-  correct_index: 1
+  - 平均值=0, 標準差=1 (Mean=0, Std=1)
+  correct_index: 3
   explanation: Z-score 標準化將數據轉換為標準常態分佈，其中心為 0，標準差為 1。
   tags:
   - chap-m1-ch2
@@ -53,11 +53,11 @@ questions:
   text: 獨熱編碼 (One-Hot Encoding) 主要用於處理哪種類型的數據？
   type: multiple_choice
   options:
-  - 連續型數值 (Continuous Numerical Data)
   - 無序的類別型特徵 (Nominal Categorical Features)，如顏色或城市
   - 時間序列數據 (Time Series Data)
+  - 連續型數值 (Continuous Numerical Data)
   - 圖像像素數據 (Image Pixel Data)
-  correct_index: 1
+  correct_index: 0
   explanation: One-Hot Encoding 將無序類別（如顏色：紅、藍、綠）轉換為二進位向量，避免模型誤以為類別之間存在順序或大小關係。
   tags:
   - chap-m1-ch2
@@ -85,11 +85,11 @@ questions:
   text: PCA 的第一個主成分 (PC1) 具有什麼特性？
   type: multiple_choice
   options:
-  - 解釋了數據中最小的變異數 (Least Variance)
   - 解釋了數據中最大的變異數 (Most Variance)，即資訊量最大的方向
   - 與原始特徵完全無關 (Unrelated to Original Features)
   - 總是垂直於 PC2 (Orthogonal to PC2)，這是 PC2 的特性而非 PC1 的定義
-  correct_index: 1
+  - 解釋了數據中最小的變異數 (Least Variance)
+  correct_index: 0
   explanation: PCA 尋找投影方向時，PC1 是數據變異量（資訊量）最大的方向。
   tags:
   - chap-m1-ch2
@@ -102,10 +102,10 @@ questions:
   type: multiple_choice
   options:
   - 計算速度極快 (Fast Computation)
-  - 能保留數據的全局結構 (Global Structure)，如 PCA
   - 能保留數據的局部結構 (Local Structure)，適合視覺化群聚
   - 可以處理缺失值 (Handle Missing Values)
-  correct_index: 2
+  - 能保留數據的全局結構 (Global Structure)，如 PCA
+  correct_index: 1
   explanation: t-SNE 擅長將高維空間中距離相近的點在低維空間中保持靠近，因此非常適合將高維數據降維到 2D/3D 進行視覺化以觀察群聚。
   tags:
   - chap-m1-ch2
@@ -117,11 +117,11 @@ questions:
   text: 下列哪種特徵選擇方法是「使用模型來評估特徵子集的效果」，例如遞歸特徵消除 (RFE)？
   type: multiple_choice
   options:
-  - 過濾法 (Filter Method)，使用統計指標
   - 包裹法 (Wrapper Method)，如 RFE
   - 嵌入法 (Embedded Method)，如 Lasso
   - 隨機法 (Random Method)
-  correct_index: 1
+  - 過濾法 (Filter Method)，使用統計指標
+  correct_index: 0
   explanation: Wrapper 方法將特徵選擇視為一個搜尋問題，反覆訓練模型來評估不同特徵組合的效能，RFE 即為典型代表。
   tags:
   - chap-m1-ch2
@@ -133,11 +133,11 @@ questions:
   text: 為什麼在使用基於距離的演算法（如 KNN, K-Means）前，必須進行特徵正規化？
   type: multiple_choice
   options:
-  - 為了消除缺失值 (Eliminate Missing Values)
-  - 為了將類別轉為數值 (Convert Categories to Numbers)
-  - 避免數值範圍較大的特徵主導了距離計算 (Prevent Dominance by Large Scale Features)
   - 為了增加特徵維度 (Increase Dimensionality)
-  correct_index: 2
+  - 避免數值範圍較大的特徵主導了距離計算 (Prevent Dominance by Large Scale Features)
+  - 為了將類別轉為數值 (Convert Categories to Numbers)
+  - 為了消除缺失值 (Eliminate Missing Values)
+  correct_index: 1
   explanation: 若特徵 A 範圍是 0-1，特徵 B 範圍是 0-1000，計算歐幾里得距離時，特徵 B 的影響力會遠大於 A。正規化可確保所有特徵權重相等。
   tags:
   - chap-m1-ch2
@@ -149,11 +149,11 @@ questions:
   text: Lasso 回歸 (L1 Regularization) 具有什麼特殊功能，常被用作嵌入法 (Embedded) 的特徵選擇？
   type: multiple_choice
   options:
-  - 將所有係數變大 (Increase Coefficients)
   - 將不重要的特徵係數壓縮為 0 (Shrink Coefficients to Zero)，實現稀疏性
   - 增加模型複雜度 (Increase Complexity)
   - 消除共線性 (Eliminate Multicollinearity)
-  correct_index: 1
+  - 將所有係數變大 (Increase Coefficients)
+  correct_index: 0
   explanation: L1 正則化傾向於產生稀疏解，即將不重要的特徵權重降為 0，從而實現自動特徵選擇。
   tags:
   - chap-m1-ch2
@@ -165,8 +165,8 @@ questions:
   text: 下列哪種缺失值填補方法最能保持數據的原始分佈形狀，且不會減少變異數？
   type: multiple_choice
   options:
-  - 平均值填補 (Mean Imputation)
   - 眾數填補 (Mode Imputation)
+  - 平均值填補 (Mean Imputation)
   - 隨機抽樣填補 (Random Sample Imputation)，從現有值中隨機抽取
   - 刪除法 (Deletion)
   correct_index: 2
@@ -181,11 +181,11 @@ questions:
   text: PCA 降維過程中，我們通常通過觀察什麼來決定保留多少個主成分？
   type: multiple_choice
   options:
-  - 特徵向量的長度 (Length of Eigenvectors)
-  - 解釋變異數比率 (Explained Variance Ratio) 的累積和，例如達到 95%
   - 數據的維度 (Dimensions of Data)
+  - 特徵向量的長度 (Length of Eigenvectors)
   - 樣本數量 (Number of Samples)
-  correct_index: 1
+  - 解釋變異數比率 (Explained Variance Ratio) 的累積和，例如達到 95%
+  correct_index: 3
   explanation: 我們通常希望保留的主成分能解釋大部分的原始數據變異（如 95%），因此會觀察累積解釋變異數比率曲線。
   tags:
   - chap-m1-ch2
@@ -197,10 +197,10 @@ questions:
   text: t-SNE 中的 "t" 代表什麼？
   type: multiple_choice
   options:
-  - 時間 (Time)
+  - Tensor (張量)
   - 溫度 (Temperature)
   - Student's t-distribution (學生 t 分佈)，用於計算相似度
-  - Tensor (張量)
+  - 時間 (Time)
   correct_index: 2
   explanation: t-SNE 在低維空間使用 t 分佈（長尾分佈）來計算點之間的相似度，這有助於緩解「擁擠問題」，讓群聚分得更開。
   tags:
@@ -214,10 +214,10 @@ questions:
   type: multiple_choice
   options:
   - One-Hot Encoding (獨熱編碼)
+  - 雜湊編碼 (Hash Encoding)
   - Label Encoding (整數編碼)，保留順序關係
   - 頻率編碼 (Frequency Encoding)
-  - 雜湊編碼 (Hash Encoding)
-  correct_index: 1
+  correct_index: 2
   explanation: 因為類別間存在順序關係 (S < M < L < XL)，將其映射為整數 (0, 1, 2, 3) 可以保留這種順序資訊供模型學習。
   tags:
   - chap-m1-ch2
@@ -231,8 +231,8 @@ questions:
   options:
   - 超過平均值 3 個標準差 (3-Sigma Rule)
   - 小於 Q1 - 1.5*IQR 或 大於 Q3 + 1.5*IQR (Boxplot Rule)
-  - 數值最大的前 1% (Top 1 Percentile)
   - 數值為負數 (Negative Values)
+  - 數值最大的前 1% (Top 1 Percentile)
   correct_index: 1
   explanation: 箱型圖法則定義異常值為落在 [Q1 - 1.5*IQR, Q3 + 1.5*IQR] 範圍之外的點。
   tags:
@@ -245,11 +245,11 @@ questions:
   text: 共線性 (Multicollinearity) 指的是？
   type: multiple_choice
   options:
+  - 模型過擬合 (Model Overfitting)
+  - 數據缺失太多 (Excessive Missing Data)
   - 特徵與目標變數高度相關 (High Correlation with Target)
   - 特徵之間存在高度線性相關 (High Linear Correlation between Features)
-  - 數據缺失太多 (Excessive Missing Data)
-  - 模型過擬合 (Model Overfitting)
-  correct_index: 1
+  correct_index: 3
   explanation: 共線性是指自變數（特徵）之間存在高度相關性，這會導致線性回歸模型的係數估計不穩定，難以解釋特徵重要性。
   tags:
   - chap-m1-ch2
@@ -261,11 +261,11 @@ questions:
   text: 下列哪種情況下，資料洩漏 (Data Leakage) 最容易發生？
   type: multiple_choice
   options:
-  - 在分割訓練集和測試集之前進行標準化 (Normalization before Split)
   - 在訓練集上訓練模型 (Training on Training Set)
-  - 使用交叉驗證 (Cross-Validation)
   - 刪除缺失值 (Dropping Missing Values)
-  correct_index: 0
+  - 在分割訓練集和測試集之前進行標準化 (Normalization before Split)
+  - 使用交叉驗證 (Cross-Validation)
+  correct_index: 2
   explanation: 若在分割前對全體數據進行標準化，測試集的資訊（如平均值、標準差）會洩漏到訓練集中，導致評估結果過於樂觀。正確做法是先分割，再用訓練集的參數去轉換測試集。
   tags:
   - chap-m1-ch2
@@ -277,11 +277,11 @@ questions:
   text: 過濾法 (Filter Method) 進行特徵選擇的主要缺點是？
   type: multiple_choice
   options:
+  - 需要大量標籤 (Requires Large Labels)
   - 計算量太大 (Computationally Expensive)
   - 忽略了特徵之間的交互作用 (Ignores Feature Interactions)
   - 容易過擬合 (Prone to Overfitting)
-  - 需要大量標籤 (Requires Large Labels)
-  correct_index: 1
+  correct_index: 2
   explanation: 過濾法通常單獨評估每個特徵與目標的相關性，可能選出冗餘特徵，且無法發現只有組合起來才有效的特徵。
   tags:
   - chap-m1-ch2
@@ -293,11 +293,11 @@ questions:
   text: PCA 數學推導中，我們計算共變異數矩陣的特徵向量，這些特徵向量代表了？
   type: multiple_choice
   options:
-  - 數據的主成分方向 (Principal Component Directions)
-  - 數據的平均值 (Mean of Data)
   - 數據的類別中心 (Class Centroids)
+  - 數據的平均值 (Mean of Data)
   - 雜訊的大小 (Magnitude of Noise)
-  correct_index: 0
+  - 數據的主成分方向 (Principal Component Directions)
+  correct_index: 3
   explanation: 共變異數矩陣的特徵向量指向數據變異量最大的方向，即主成分方向。
   tags:
   - chap-m1-ch2
@@ -309,11 +309,11 @@ questions:
   text: 在處理偏態分佈 (Skewed Distribution) 的數據（如長尾分佈）時，常用的轉換方法是？
   type: multiple_choice
   options:
-  - 平方轉換 (Square Transformation)
-  - 對數轉換 (Log Transformation)，如 log(x+1)
   - 絕對值轉換 (Absolute Value Transformation)
   - 倒數轉換 (Reciprocal Transformation)
-  correct_index: 1
+  - 對數轉換 (Log Transformation)，如 log(x+1)
+  - 平方轉換 (Square Transformation)
+  correct_index: 2
   explanation: 對數轉換可以壓縮大數值、拉伸小數值，有效地將右偏（長尾）分佈轉換為接近常態分佈，利於模型學習。
   tags:
   - chap-m1-ch2
@@ -325,10 +325,10 @@ questions:
   text: 目標編碼 (Target Encoding) 是用什麼來替換類別特徵？
   type: multiple_choice
   options:
-  - 類別的頻率 (Category Frequency)
-  - 該類別對應的目標變數 (Target) 的平均值 (Mean Target Value)
-  - 隨機數 (Random Number)
   - 類別的排名 (Category Rank)
+  - 該類別對應的目標變數 (Target) 的平均值 (Mean Target Value)
+  - 類別的頻率 (Category Frequency)
+  - 隨機數 (Random Number)
   correct_index: 1
   explanation: Target Encoding 直接利用標籤資訊，將類別替換為該類別樣本的目標均值。這對高基數特徵很有效，但需小心資料洩漏。
   tags:
@@ -341,11 +341,11 @@ questions:
   text: SMOTE (Synthetic Minority Over-sampling Technique) 用於解決什麼問題？
   type: multiple_choice
   options:
-  - 缺失值 (Missing Values)
-  - 類別不平衡 (Class Imbalance)，特別是少數類別樣本過少
-  - 過擬合 (Overfitting)
   - 維度災難 (Curse of Dimensionality)
-  correct_index: 1
+  - 缺失值 (Missing Values)
+  - 過擬合 (Overfitting)
+  - 類別不平衡 (Class Imbalance)，特別是少數類別樣本過少
+  correct_index: 3
   explanation: SMOTE 透過在少數類別樣本之間插值生成合成樣本，以平衡數據集，避免模型偏向多數類別。
   tags:
   - chap-m1-ch2
@@ -357,11 +357,11 @@ questions:
   text: 哪種降維方法是線性的？
   type: multiple_choice
   options:
-  - t-SNE (t-Distributed Stochastic Neighbor Embedding)
-  - PCA (Principal Component Analysis)
   - Autoencoder (自編碼器)
+  - t-SNE (t-Distributed Stochastic Neighbor Embedding)
   - Isomap (等距映射)
-  correct_index: 1
+  - PCA (Principal Component Analysis)
+  correct_index: 3
   explanation: PCA 透過線性投影尋找主成分，是線性降維。t-SNE 和 Autoencoder 則是非線性的。
   tags:
   - chap-m1-ch2
@@ -373,11 +373,11 @@ questions:
   text: 數據清洗中的「去重 (Deduplication)」是指？
   type: multiple_choice
   options:
-  - 刪除重複的特徵 (Duplicate Features)
-  - 刪除重複的記錄 (Duplicate Rows/Records)
-  - 刪除重複的模型 (Duplicate Models)
   - 刪除重複的標籤 (Duplicate Labels)
-  correct_index: 1
+  - 刪除重複的特徵 (Duplicate Features)
+  - 刪除重複的模型 (Duplicate Models)
+  - 刪除重複的記錄 (Duplicate Rows/Records)
+  correct_index: 3
   explanation: 去重是指識別並移除數據集中完全相同或重複的樣本行，以免影響統計結果或模型訓練。
   tags:
   - chap-m1-ch2
@@ -389,11 +389,11 @@ questions:
   text: 遞歸特徵消除 (RFE) 的工作原理是？
   type: multiple_choice
   options:
+  - 使用 PCA 轉換 (PCA Transformation)
   - 隨機選擇特徵 (Random Selection)
   - 訓練模型，剔除權重最小的特徵 (Recursive Elimination based on Weights)
   - 計算所有特徵的相關係數 (Correlation Coefficient)
-  - 使用 PCA 轉換 (PCA Transformation)
-  correct_index: 1
+  correct_index: 2
   explanation: RFE 是一種貪婪算法，反覆訓練模型並移除最不重要的特徵，直到達到預定的特徵數量。
   tags:
   - chap-m1-ch2
@@ -405,11 +405,11 @@ questions:
   text: 離散化 (Discretization) 或分箱 (Binning) 的主要目的是？
   type: multiple_choice
   options:
-  - 將類別轉為數值 (Category to Number)
   - 將連續數值轉為區間或類別 (Continuous to Categorical/Bins)
-  - 填補缺失值 (Impute Missing Values)
   - 增加數據量 (Increase Data Volume)
-  correct_index: 1
+  - 填補缺失值 (Impute Missing Values)
+  - 將類別轉為數值 (Category to Number)
+  correct_index: 0
   explanation: 分箱將連續變數（如年齡）切分為區間（如少年、青年、老年），可以平滑雜訊並讓線性模型能處理非線性關係。
   tags:
   - chap-m1-ch2
@@ -421,11 +421,11 @@ questions:
   text: 在 PCA 中，若特徵值 (Eigenvalue) 為 0，代表什麼？
   type: multiple_choice
   options:
-  - 該方向上的變異數為 0，無資訊量 (Zero Variance / No Information)
   - 該方向最重要 (Most Important Direction)
   - 計算錯誤 (Calculation Error)
   - 數據是常態分佈 (Normal Distribution)
-  correct_index: 0
+  - 該方向上的變異數為 0，無資訊量 (Zero Variance / No Information)
+  correct_index: 3
   explanation: 特徵值代表對應特徵向量方向上的變異數。若為 0，表示數據在該方向上沒有變化（退化），可以捨棄。
   tags:
   - chap-m1-ch2
@@ -437,10 +437,10 @@ questions:
   text: 為什麼在進行 PCA 之前通常需要先對數據進行標準化 (Standardization)？
   type: multiple_choice
   options:
-  - PCA 只能處理正數 (Positive Numbers Only)
+  - 為了處理缺失值 (Handle Missing Values)
   - PCA 對變異數敏感，若特徵尺度不同，大尺度的特徵會主導主成分 (Sensitive to Scale)
   - 為了加速計算 (Speed up Computation)
-  - 為了處理缺失值 (Handle Missing Values)
+  - PCA 只能處理正數 (Positive Numbers Only)
   correct_index: 1
   explanation: PCA 尋找最大變異數方向。若未標準化，數值範圍大的特徵（變異數大）會被誤認為最重要，導致分析失真。
   tags:
@@ -453,11 +453,11 @@ questions:
   text: 下列何者不是特徵工程的目的？
   type: multiple_choice
   options:
+  - 增加數據的雜訊 (Increase Noise)
   - 提高模型預測準確度 (Improve Accuracy)
   - 減少過擬合 (Reduce Overfitting)
-  - 增加數據的雜訊 (Increase Noise)
   - 提高計算效率 (Improve Computational Efficiency)
-  correct_index: 2
+  correct_index: 0
   explanation: 特徵工程旨在提取有用資訊、去除雜訊，而非增加雜訊。
   tags:
   - chap-m1-ch2
@@ -470,10 +470,10 @@ questions:
   type: multiple_choice
   options:
   - Label Encoding (標籤編碼)
-  - One-Hot Encoding (獨熱編碼)
   - Target Encoding (目標編碼)
   - Binary Encoding (二進位編碼)
-  correct_index: 1
+  - One-Hot Encoding (獨熱編碼)
+  correct_index: 3
   explanation: One-Hot Encoding 為每個類別創建一個新欄位。若類別數量龐大（如郵遞區號），特徵空間會變得非常稀疏且巨大。
   tags:
   - chap-m1-ch2
@@ -485,10 +485,10 @@ questions:
   text: 交互作用特徵 (Interaction Features) 是指？
   type: multiple_choice
   options:
-  - 兩個特徵相加 (Addition of Features)
+  - 隨機生成的特徵 (Randomly Generated Features)
   - 兩個或多個特徵的組合（如乘積）(Combination/Product of Features)
   - 刪除相關特徵 (Removing Correlated Features)
-  - 隨機生成的特徵 (Randomly Generated Features)
+  - 兩個特徵相加 (Addition of Features)
   correct_index: 1
   explanation: 例如「房價」可能與「寬度」和「深度」單獨的關係不大，但與「面積」（寬度 x 深度）高度相關。這就是交互作用。
   tags:
@@ -501,11 +501,11 @@ questions:
   text: 數據不一致 (Inconsistency) 的例子是？
   type: multiple_choice
   options:
-  - 某欄位有缺失值 (Missing Values)
-  - 同一地址在不同記錄中寫法不同 (Inconsistent Representation)，如 "St." vs "Street"
-  - 數據量太少 (Insufficient Data)
   - 存在異常值 (Outliers)
-  correct_index: 1
+  - 數據量太少 (Insufficient Data)
+  - 同一地址在不同記錄中寫法不同 (Inconsistent Representation)，如 "St." vs "Street"
+  - 某欄位有缺失值 (Missing Values)
+  correct_index: 2
   explanation: 數據不一致指同一實體的表示方式不統一，這會阻礙正確的統計與分析，需透過標準化清洗解決。
   tags:
   - chap-m1-ch2
@@ -517,11 +517,11 @@ questions:
   text: 嵌入法 (Embedded Method) 與包裹法 (Wrapper Method) 的主要區別是？
   type: multiple_choice
   options:
+  - 嵌入法隨機選擇特徵 (Embedded selects randomly)
   - 嵌入法不使用模型 (Embedded uses no model)
   - 嵌入法在模型訓練過程中同時進行特徵選擇 (Feature selection during training)
   - 包裹法只適用於回歸 (Wrapper only for regression)
-  - 嵌入法隨機選擇特徵 (Embedded selects randomly)
-  correct_index: 1
+  correct_index: 2
   explanation: 包裹法需反覆訓練模型多次；嵌入法（如 Lasso, 決策樹）則是在單次訓練過程中，利用算法本身的機制（如權重懲罰、資訊增益）完成特徵選擇。
   tags:
   - chap-m1-ch2
@@ -534,10 +534,10 @@ questions:
   type: multiple_choice
   options:
   - 實體識別 (Entity Resolution)，識別不同來源的同一實體
-  - 數據冗餘 (Data Redundancy)，處理重複資訊
-  - 數據值衝突 (Data Value Conflict)，解決不同來源的數值差異
   - 模型選擇 (Model Selection)，這屬於建模階段
-  correct_index: 3
+  - 數據值衝突 (Data Value Conflict)，解決不同來源的數值差異
+  - 數據冗餘 (Data Redundancy)，處理重複資訊
+  correct_index: 1
   explanation: 數據整合關注的是合併不同來源的數據，挑戰在於識別同一實體、處理重複和衝突。模型選擇屬於建模階段。
   tags:
   - chap-m1-ch2
@@ -550,10 +550,10 @@ questions:
   type: multiple_choice
   options:
   - 減少特徵數量 (Reduce Feature Count)
-  - 讓線性模型能夠擬合非線性關係 (Enable Linear Models to fit Non-linear Relationships)
   - 消除雜訊 (Eliminate Noise)
   - 處理缺失值 (Handle Missing Values)
-  correct_index: 1
+  - 讓線性模型能夠擬合非線性關係 (Enable Linear Models to fit Non-linear Relationships)
+  correct_index: 3
   explanation: 通過增加特徵的高次項（如 $x^2, x^3$），可以將原本的非線性問題映射到高維空間，使其變為線性可分。
   tags:
   - chap-m1-ch2
@@ -565,11 +565,11 @@ questions:
   text: 數據縮減 (Data Reduction) 的策略不包括？
   type: multiple_choice
   options:
-  - 降維 (Dimensionality Reduction)，如 PCA
-  - 數據壓縮 (Data Compression)，如小波轉換
   - 數值歸約 (Numerosity Reduction)，如抽樣
+  - 數據壓縮 (Data Compression)，如小波轉換
   - 數據增強 (Data Augmentation)，這會增加數據量
-  correct_index: 3
+  - 降維 (Dimensionality Reduction)，如 PCA
+  correct_index: 2
   explanation: 數據縮減旨在減少數據量但保留資訊（如 PCA, 抽樣）。數據增強則是增加數據量。
   tags:
   - chap-m1-ch2
@@ -581,9 +581,9 @@ questions:
   text: 在時間序列特徵工程中，「滯後特徵 (Lag Features)」是指？
   type: multiple_choice
   options:
-  - 未來的數據 (Future Data)
-  - 過去時間點的觀測值 (Past Observations)，如 $t-1, t-2$
   - 時間戳記 (Timestamp)
+  - 過去時間點的觀測值 (Past Observations)，如 $t-1, t-2$
+  - 未來的數據 (Future Data)
   - 季節性指標 (Seasonality Index)
   correct_index: 1
   explanation: 滯後特徵將過去的值作為預測當前的特徵，是時間序列預測中最基礎且有效的特徵。
@@ -597,11 +597,11 @@ questions:
   text: 雜訊 (Noise) 與異常值 (Outlier) 的區別是？
   type: multiple_choice
   options:
-  - 雜訊是隨機誤差，異常值是偏離整體的極端觀測值 (Noise vs Outlier)
   - 兩者完全相同 (Identical)
   - 雜訊是有用的資訊 (Noise is useful)
+  - 雜訊是隨機誤差，異常值是偏離整體的極端觀測值 (Noise vs Outlier)
   - 異常值總是錯誤的 (Outliers are always errors)
-  correct_index: 0
+  correct_index: 2
   explanation: 雜訊通常是測量誤差或隨機波動；異常值則是真實存在但極端的數據，可能包含重要資訊（如詐欺）或僅是錯誤。
   tags:
   - chap-m1-ch2
@@ -613,11 +613,11 @@ questions:
   text: 領域知識 (Domain Knowledge) 在特徵工程中的作用是？
   type: multiple_choice
   options:
-  - 不重要，讓 AI 自己學就好 (Not Important)
-  - 至關重要，能指導我們構建有意義的特徵 (Crucial for Feature Construction)
   - 僅用於資料清洗 (Only for Cleaning)
   - 僅用於結果解釋 (Only for Interpretation)
-  correct_index: 1
+  - 不重要，讓 AI 自己學就好 (Not Important)
+  - 至關重要，能指導我們構建有意義的特徵 (Crucial for Feature Construction)
+  correct_index: 3
   explanation: 機器學習不是魔法。領域知識能幫助我們理解數據背後的機制，創造出模型容易學習的特徵（如金融中的負債比率）。
   tags:
   - chap-m1-ch2
@@ -629,10 +629,10 @@ questions:
   text: 數據轉換 (Data Transformation) 中的「平滑化 (Smoothing)」常用於？
   type: multiple_choice
   options:
-  - 增加雜訊 (Add Noise)
+  - 降維 (Dimensionality Reduction)
   - 去除雜訊，揭示數據趨勢 (Remove Noise / Reveal Trends)
   - 增加異常值 (Add Outliers)
-  - 降維 (Dimensionality Reduction)
+  - 增加雜訊 (Add Noise)
   correct_index: 1
   explanation: 平滑化（如移動平均）可以過濾掉短期的隨機波動（雜訊），讓長期趨勢更明顯。
   tags:
@@ -645,10 +645,10 @@ questions:
   text: 情境：你正在為一個即時詐欺偵測系統建立模型。數據集包含數百萬筆交易，但其中只有 0.1% 是詐欺（嚴重類別不平衡）。在進行特徵工程與預處理時，你應避免下列哪種操作？
   type: multiple_choice
   options:
-  - 使用 SMOTE 進行過採樣 (Oversampling)，增加詐欺樣本
-  - 使用欠採樣 (Undersampling) 減少正常交易數量，平衡數據集
-  - 直接使用準確率 (Accuracy) 作為特徵選擇的評估指標，因為這會產生誤導
   - 構建反映用戶過去行為模式的聚合特徵 (Aggregated Features)
+  - 使用 SMOTE 進行過採樣 (Oversampling)，增加詐欺樣本
+  - 直接使用準確率 (Accuracy) 作為特徵選擇的評估指標，因為這會產生誤導
+  - 使用欠採樣 (Undersampling) 減少正常交易數量，平衡數據集
   correct_index: 2
   explanation: 在極度不平衡的數據中，準確率會產生誤導（盲猜「正常」就有 99.9% 準確率）。若基於準確率來選擇特徵，可能會選出對偵測詐欺毫無幫助的特徵，應改用
     F1-score 或 AUC。
@@ -663,10 +663,10 @@ questions:
   type: multiple_choice
   options:
   - Target Encoding：用各國的平均銷售額代替國家名稱
-  - Frequency Encoding：用各國在數據中出現的頻率代替
   - Label Encoding：按字母順序將國家編碼為 1~180 的整數，這會引入無意義的順序關係
+  - Frequency Encoding：用各國在數據中出現的頻率代替
   - 將低頻國家合併為 "Other" 類別，再進行 One-Hot Encoding
-  correct_index: 2
+  correct_index: 1
   explanation: Label Encoding 會賦予國家一個無意義的順序（如阿富汗=1, 辛巴威=180），模型可能會錯誤地學習到「國家編號越大，銷售額越高」這種不存在的線性關係。Target
     Encoding 或合併低頻類別是更好的選擇。
   tags:
@@ -697,11 +697,11 @@ questions:
   text: 情境：你使用 PCA 將數據降維到 2D 進行視覺化，發現不同類別的點混雜在一起，無法區分。這是否代表這些數據在本質上無法分類？
   type: multiple_choice
   options:
-  - 是，PCA 證明了它們線性不可分 (Linearly Inseparable)
   - 否，PCA 是一種線性降維，可能無法捕捉複雜的非線性流形結構 (Non-linear Manifold)
-  - 是，說明數據品質太差 (Poor Data Quality)
   - 否，說明應該保留更多主成分 (More Components)
-  correct_index: 1
+  - 是，PCA 證明了它們線性不可分 (Linearly Inseparable)
+  - 是，說明數據品質太差 (Poor Data Quality)
+  correct_index: 0
   explanation: PCA 只能提取線性特徵。許多高維數據（如圖像、文字）的結構是非線性的（流形），在 PCA 的線性投影下會重疊。t-SNE 或 UMAP
     等非線性方法更有機會將它們分開。
   tags:
@@ -715,10 +715,10 @@ questions:
   type: multiple_choice
   options:
   - 刪除異常值；因為 KNN 對異常值不敏感
-  - 資料正規化 (Normalization)；因為 KNN 基於距離計算，避免特徵尺度影響
   - PCA 降維；為了加速計算
+  - 資料正規化 (Normalization)；因為 KNN 基於距離計算，避免特徵尺度影響
   - One-Hot Encoding；因為 KNN 只能處理類別特徵
-  correct_index: 1
+  correct_index: 2
   explanation: KNN 依賴歐幾里得距離尋找最近鄰居。若未正規化，數值範圍大的特徵（如薪水 50000）會掩蓋數值範圍小的特徵（如年齡 30），使得「鄰居」的定義失真，填補結果不準確。
   tags:
   - chap-m1-ch2
@@ -730,10 +730,10 @@ questions:
   type: multiple_choice
   options:
   - 刪除該筆資料 (Delete Row)
-  - 平均值 (Mean)，適用於分佈均勻的數值
-  - "'0' (Zero Imputation)"
   - 最大值 (Maximum Value)
-  correct_index: 1
+  - "'0' (Zero Imputation)"
+  - 平均值 (Mean)，適用於分佈均勻的數值
+  correct_index: 3
   explanation: 對於數值型且分佈正常的資料，使用平均值填補是常見且合理的做法。
   tags:
   - chap-m1-ch2
@@ -745,11 +745,11 @@ questions:
   text: 情境：若要使用 KNN 演算法，為什麼通常需要先對資料進行正規化 (Normalization)？
   type: multiple_choice
   options:
+  - 為了加密 (Encryption)
   - 為了節省空間 (Save Space)
   - 因為 KNN 基於距離計算，若特徵尺度差異過大 (如身高 vs 薪水)，大尺度的特徵會主導距離計算 (Dominance by Scale)
-  - 為了加密 (Encryption)
   - KNN 不需要正規化 (Not Required)
-  correct_index: 1
+  correct_index: 2
   explanation: 正規化能將所有特徵縮放到相同範圍，避免特定特徵權重過大。
   tags:
   - chap-m1-ch2
@@ -761,11 +761,11 @@ questions:
   text: 情境：PCA (主成分分析) 的主要功能是？
   type: multiple_choice
   options:
-  - 增加特徵數量 (Increase Features)
-  - 線性降維，保留數據中變異數最大的方向 (Linear Dimensionality Reduction)
   - 分類 (Classification)
   - 填補缺失值 (Impute Missing Values)
-  correct_index: 1
+  - 增加特徵數量 (Increase Features)
+  - 線性降維，保留數據中變異數最大的方向 (Linear Dimensionality Reduction)
+  correct_index: 3
   explanation: PCA 透過投影將高維數據壓縮到低維空間，同時盡可能保留原始資訊（變異數）。
   tags:
   - chap-m1-ch2
@@ -777,11 +777,11 @@ questions:
   text: 情境：對於「顏色」這種沒有順序關係的類別特徵 (紅、藍、綠)，應使用哪種編碼？
   type: multiple_choice
   options:
-  - Label Encoding (1, 2, 3)，會引入錯誤的順序關係
   - One-Hot Encoding (獨熱編碼)，將每個類別視為獨立維度
-  - 不處理 (No Processing)
+  - Label Encoding (1, 2, 3)，會引入錯誤的順序關係
   - 轉為文字 (Convert to Text)
-  correct_index: 1
+  - 不處理 (No Processing)
+  correct_index: 0
   explanation: Label Encoding 會隱含順序關係（如 3 > 1），誤導模型；One-Hot Encoding 則將各類別視為獨立維度。
   tags:
   - chap-m1-ch2
@@ -810,8 +810,8 @@ questions:
   type: multiple_choice
   options:
   - '[0, 1] 之間 (Range [0, 1])'
-  - '[-1, 1] 之間 (Range [-1, 1])'
   - '[0, 100] 之間 (Range [0, 100])'
+  - '[-1, 1] 之間 (Range [-1, 1])'
   - 平均為 0，標準差為 1 (Mean 0, Std 1)
   correct_index: 0
   explanation: Min-Max Scaling 的公式為 (x - min) / (max - min)，結果必在 0 到 1 之間。
@@ -825,11 +825,11 @@ questions:
   text: 情境：特徵選擇中的「過濾法 (Filter Method)」是依據什麼來篩選特徵？
   type: multiple_choice
   options:
-  - 模型準確率 (Model Accuracy)
   - 統計指標 (Statistical Metrics)，如相關係數、卡方檢定
+  - 模型準確率 (Model Accuracy)
   - 隨機選擇 (Random Selection)
   - 人工挑選 (Manual Selection)
-  correct_index: 1
+  correct_index: 0
   explanation: 過濾法不依賴特定模型，而是計算特徵與目標變數間的統計關聯性。
   tags:
   - chap-m1-ch2
@@ -841,10 +841,10 @@ questions:
   text: 情境：標準化 (Standardization / Z-score) 後的數據具有什麼特性？
   type: multiple_choice
   options:
-  - 範圍在 0 到 1 (Range [0, 1])
+  - 整數 (Integers)
   - 平均值為 0，標準差為 1 (Mean=0, Std=1)
   - 沒有負數 (No Negative Values)
-  - 整數 (Integers)
+  - 範圍在 0 到 1 (Range [0, 1])
   correct_index: 1
   explanation: Z-score 轉換將數據中心移至 0，並以標準差為單位進行縮放。
   tags:
@@ -857,11 +857,11 @@ questions:
   text: 情境：在 PCA 中，第一個主成分 (PC1) 代表？
   type: multiple_choice
   options:
-  - 數據變異數 (Variance) 最大的方向 (Direction of Maximum Variance)
   - 數據變異數最小的方向 (Direction of Minimum Variance)
   - 隨機方向 (Random Direction)
+  - 數據變異數 (Variance) 最大的方向 (Direction of Maximum Variance)
   - 垂直方向 (Vertical Direction)
-  correct_index: 0
+  correct_index: 2
   explanation: PC1 捕捉了數據分佈最廣、資訊量最大的軸向。
   tags:
   - chap-m1-ch2
@@ -889,11 +889,11 @@ questions:
   text: 情境：特徵選擇中的「包裹法 (Wrapper Method)」通常比過濾法？
   type: multiple_choice
   options:
-  - 快 (Faster)
   - 慢且計算成本高，但通常能找到對特定模型更好的特徵組合 (Slower but Better Performance)
   - 不準確 (Inaccurate)
+  - 快 (Faster)
   - 簡單 (Simple)
-  correct_index: 1
+  correct_index: 0
   explanation: 包裹法（如 RFE）需反覆訓練模型來評估特徵子集，因此計算量大但效果較佳。
   tags:
   - chap-m1-ch2
@@ -905,9 +905,9 @@ questions:
   text: 情境：t-SNE 使用什麼指標來衡量兩個機率分佈的差異？
   type: multiple_choice
   options:
-  - 歐幾里得距離 (Euclidean Distance)
-  - KL 散度 (Kullback-Leibler Divergence)，衡量兩個機率分佈的相似度
   - 內積 (Dot Product)
+  - KL 散度 (Kullback-Leibler Divergence)，衡量兩個機率分佈的相似度
+  - 歐幾里得距離 (Euclidean Distance)
   - 相關係數 (Correlation Coefficient)
   correct_index: 1
   explanation: t-SNE 透過最小化高維與低維分佈間的 KL 散度來優化投影結果。
@@ -921,11 +921,11 @@ questions:
   text: 情境：資料清理 (Data Cleaning) 不包括以下哪項？
   type: multiple_choice
   options:
-  - 處理缺失值 (Handling Missing Values)
-  - 處理雜訊 (Handling Noise)
   - 訓練模型 (Training Model)，這是建模階段
   - 處理不一致資料 (Handling Inconsistent Data)
-  correct_index: 2
+  - 處理雜訊 (Handling Noise)
+  - 處理缺失值 (Handling Missing Values)
+  correct_index: 0
   explanation: 訓練模型是建模階段的工作，而非預處理。
   tags:
   - chap-m1-ch2
@@ -953,11 +953,11 @@ questions:
   text: 情境：One-Hot Encoding 的一個缺點是？
   type: multiple_choice
   options:
-  - 計算簡單 (Simple Calculation)
   - 當類別數量很多時，會導致特徵維度暴增 (Curse of Dimensionality)
-  - 無法處理文字 (Cannot Handle Text)
   - 準確率低 (Low Accuracy)
-  correct_index: 1
+  - 無法處理文字 (Cannot Handle Text)
+  - 計算簡單 (Simple Calculation)
+  correct_index: 0
   explanation: 若類別有 1000 種，One-Hot 會產生 1000 個新欄位，造成資料稀疏與運算負擔。
   tags:
   - chap-m1-ch2
@@ -969,11 +969,11 @@ questions:
   text: 情境：如果缺失值比例過高（如超過 50%），通常建議？
   type: multiple_choice
   options:
-  - 用平均值填補 (Mean Imputation)
   - 刪除該欄位 (Drop Feature)，因為資訊量太少
   - 用 0 填補 (Zero Imputation)
   - 保留 (Keep as is)
-  correct_index: 1
+  - 用平均值填補 (Mean Imputation)
+  correct_index: 0
   explanation: 過多缺失值的特徵通常缺乏資訊量，強行填補可能引入雜訊。
   tags:
   - chap-m1-ch2
@@ -985,11 +985,11 @@ questions:
   text: 情境：PCA 中的「正交性」意味著？
   type: multiple_choice
   options:
-  - 主成分之間互不相關 (Uncorrelated / Linearly Independent)
   - 主成分平行 (Parallel)
   - 主成分相等 (Equal)
   - 主成分為 0 (Zero)
-  correct_index: 0
+  - 主成分之間互不相關 (Uncorrelated / Linearly Independent)
+  correct_index: 3
   explanation: PCA 確保每個主成分都捕捉了獨特、不重複的變異資訊。
   tags:
   - chap-m1-ch2
@@ -1001,11 +1001,11 @@ questions:
   text: 情境：對於基於梯度下降的演算法（如神經網路），正規化的好處是？
   type: multiple_choice
   options:
-  - 防止過擬合 (Prevent Overfitting)
-  - 加速收斂 (Accelerate Convergence)，讓損失函數的等高線更接近圓形
-  - 增加模型複雜度 (Increase Complexity)
   - 減少資料量 (Reduce Data Size)
-  correct_index: 1
+  - 防止過擬合 (Prevent Overfitting)
+  - 增加模型複雜度 (Increase Complexity)
+  - 加速收斂 (Accelerate Convergence)，讓損失函數的等高線更接近圓形
+  correct_index: 3
   explanation: 正規化能讓不同方向的梯度更新幅度一致，避免在狹長的損失地形中震盪。
   tags:
   - chap-m1-ch2
@@ -1017,10 +1017,10 @@ questions:
   text: 情境：嵌入法 (Embedded Method) 的特徵選擇是如何進行的？
   type: multiple_choice
   options:
-  - 先篩選再訓練 (Filter then Train)
-  - 特徵選擇與模型訓練同時進行 (Feature Selection during Training)，如 Lasso 回歸
   - 隨機選擇 (Random Selection)
+  - 特徵選擇與模型訓練同時進行 (Feature Selection during Training)，如 Lasso 回歸
   - 人工選擇 (Manual Selection)
+  - 先篩選再訓練 (Filter then Train)
   correct_index: 1
   explanation: Lasso 等演算法在訓練過程中會自動將不重要特徵的係數壓縮為 0。
   tags:
@@ -1033,9 +1033,9 @@ questions:
   text: 情境：t-SNE 的計算成本通常比 PCA？
   type: multiple_choice
   options:
-  - 低 (Lower)
-  - 高 (Higher)，因為涉及複雜的機率計算與迭代優化
   - 一樣 (Same)
+  - 高 (Higher)，因為涉及複雜的機率計算與迭代優化
+  - 低 (Lower)
   - 無法比較 (Incomparable)
   correct_index: 1
   explanation: t-SNE 的複雜度較高，不適合處理極大規模數據。

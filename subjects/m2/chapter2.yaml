@@ -7,8 +7,8 @@ questions:
   options:
   - 讓機器「說出」人類語言 (NLG - Natural Language Generation)
   - 讓機器「讀懂」輸入的語言，解析其結構與意圖 (NLU - Natural Language Understanding)
-  - 將文字轉為語音 (Text-to-Speech)
   - 將語音轉為文字 (Speech-to-Text)
+  - 將文字轉為語音 (Text-to-Speech)
   correct_index: 1
   explanation: NLU 側重於理解輸入內容的含義（如意圖識別、實體提取），就像是做閱讀測驗。
   tags:
@@ -21,11 +21,11 @@ questions:
   text: Word2Vec 技術的主要貢獻是？
   type: multiple_choice
   options:
+  - 發明了 Transformer (Invented Transformer)
   - 建立了大量人工規則 (Manual Rules)
   - 將詞彙轉換為具有語意關係的數學向量 (Word Embeddings)
-  - 發明了 Transformer (Invented Transformer)
   - 解決了梯度消失問題 (Solved Vanishing Gradient)
-  correct_index: 1
+  correct_index: 2
   explanation: Word2Vec 讓電腦能透過向量運算理解詞彙間的關係（如國王 - 男人 + 女人 = 皇后），開啟了深度學習 NLP 的新時代。
   tags:
   - chap-m2-ch2
@@ -38,10 +38,10 @@ questions:
   type: multiple_choice
   options:
   - 計算詞彙在文章中出現的次數 (Term Frequency)
+  - 計算詞彙的向量 (Calculate Word Vector)
   - 降低那些在所有文章中都頻繁出現的常見詞的權重 (Inverse Document Frequency)
   - 增加長文章的權重 (Increase Weight for Long Docs)
-  - 計算詞彙的向量 (Calculate Word Vector)
-  correct_index: 1
+  correct_index: 2
   explanation: IDF 懲罰那些隨處可見的通用詞，獎勵那些只在少數文章中出現的獨特詞，從而凸顯關鍵詞。
   tags:
   - chap-m2-ch2
@@ -53,11 +53,11 @@ questions:
   text: 斷詞 (Tokenization) 在中文處理中比英文困難的原因是？
   type: multiple_choice
   options:
-  - 中文字太多 (Too Many Characters)
-  - 中文沒有空格來分隔詞彙，需要演算法判斷詞的邊界 (No Space Delimiter)
-  - 中文文法太複雜 (Complex Grammar)
   - 中文沒有時態 (No Tense)
-  correct_index: 1
+  - 中文字太多 (Too Many Characters)
+  - 中文文法太複雜 (Complex Grammar)
+  - 中文沒有空格來分隔詞彙，需要演算法判斷詞的邊界 (No Space Delimiter)
+  correct_index: 3
   explanation: 英文單字間有天然的空格分隔，而中文是連續的字串，必須透過 Jieba 等工具進行分詞才能進行後續處理。
   tags:
   - chap-m2-ch2
@@ -69,11 +69,11 @@ questions:
   text: RNN (循環神經網路) 處理長序列時面臨的主要問題是？
   type: multiple_choice
   options:
-  - 計算量太小 (Computation too Small)
-  - 梯度消失 (Vanishing Gradient)，導致遺忘前面的資訊 (Forgetting Early Info)
-  - 無法處理數字 (Cannot Process Numbers)
   - 只能處理圖像 (Only Process Images)
-  correct_index: 1
+  - 無法處理數字 (Cannot Process Numbers)
+  - 梯度消失 (Vanishing Gradient)，導致遺忘前面的資訊 (Forgetting Early Info)
+  - 計算量太小 (Computation too Small)
+  correct_index: 2
   explanation: RNN 的短期記憶使其難以捕捉長距離的依賴關係（例如文章開頭的主詞影響結尾的動詞），因為梯度在反向傳播中會逐漸消失。
   tags:
   - chap-m2-ch2
@@ -85,11 +85,11 @@ questions:
   text: LSTM (長短期記憶網路) 如何解決 RNN 的遺忘問題？
   type: multiple_choice
   options:
-  - 增加更多層數 (Add More Layers)
   - 引入「閘門」機制 (遺忘閘、輸入閘、輸出閘) (Gating Mechanism)
   - 使用 ReLU 活化函數 (Use ReLU)
   - 移除循環結構 (Remove Recurrence)
-  correct_index: 1
+  - 增加更多層數 (Add More Layers)
+  correct_index: 0
   explanation: LSTM 的閘門機制允許模型主動選擇記住重要的長期資訊並忽略無關的雜訊，有效解決了長依賴問題。
   tags:
   - chap-m2-ch2
@@ -101,11 +101,11 @@ questions:
   text: Transformer 架構的核心機制是？
   type: multiple_choice
   options:
+  - 遺傳演算法 (Genetic Algorithm)
   - 卷積神經網路 (CNN)
   - 自注意力機制 (Self-Attention)
   - 遞歸神經網路 (RNN)
-  - 遺傳演算法 (Genetic Algorithm)
-  correct_index: 1
+  correct_index: 2
   explanation: Self-Attention 讓模型能同時關注序列中的所有位置，計算詞與詞之間的關聯性，實現了並行計算與全域理解。
   tags:
   - chap-m2-ch2
@@ -118,10 +118,10 @@ questions:
   type: multiple_choice
   options:
   - 單向生成 (只能看前面) (Unidirectional Generation)
-  - 雙向理解 (Bidirectional)，能同時利用上下文資訊 (Bidirectional Context)
-  - 專門用於圖像生成 (Image Generation)
   - 結構簡單 (Simple Structure)
-  correct_index: 1
+  - 專門用於圖像生成 (Image Generation)
+  - 雙向理解 (Bidirectional)，能同時利用上下文資訊 (Bidirectional Context)
+  correct_index: 3
   explanation: BERT 使用 Transformer Encoder，透過遮罩語言模型 (MLM) 訓練，能同時看到前後文，因此在理解任務（如分類、問答）上表現優異。
   tags:
   - chap-m2-ch2
@@ -134,10 +134,10 @@ questions:
   type: multiple_choice
   options:
   - 運算速度慢 (Slow Computation)
-  - 幻覺 (Hallucination) 與知識過時 (Outdated Knowledge)
   - 無法理解中文 (Cannot Understand Chinese)
+  - 幻覺 (Hallucination) 與知識過時 (Outdated Knowledge)
   - 參數量太大 (Too Many Parameters)
-  correct_index: 1
+  correct_index: 2
   explanation: RAG 結合了檢索系統與生成模型，讓 LLM 能參考最新的外部知識庫來回答問題，減少胡說八道並更新知識。
   tags:
   - chap-m2-ch2
@@ -149,11 +149,11 @@ questions:
   text: LoRA (低秩自適應) 的主要優勢是？
   type: multiple_choice
   options:
+  - 加速模型推論 (Accelerate Inference)
   - 提高模型準確率 (Improve Accuracy)
   - 大幅降低微調大型模型所需的算力與儲存空間 (Reduce Compute & Storage for Fine-tuning)
   - 增加模型參數量 (Increase Parameters)
-  - 加速模型推論 (Accelerate Inference)
-  correct_index: 1
+  correct_index: 2
   explanation: LoRA 凍結原模型參數，只訓練外掛的小型低秩矩陣，使得在消費級 GPU 上微調大模型成為可能。
   tags:
   - chap-m2-ch2
@@ -181,11 +181,11 @@ questions:
   text: 「提示注入 (Prompt Injection)」是一種什麼樣的攻擊？
   type: multiple_choice
   options:
-  - 修改模型權重 (Modify Weights)
-  - 透過惡意指令繞過模型的安全機制，誘導其輸出有害內容 (Bypass Safety Mechanisms)
   - 竊取訓練資料 (Steal Training Data)
   - 癱瘓伺服器 (Crash Server)
-  correct_index: 1
+  - 修改模型權重 (Modify Weights)
+  - 透過惡意指令繞過模型的安全機制，誘導其輸出有害內容 (Bypass Safety Mechanisms)
+  correct_index: 3
   explanation: 攻擊者利用 LLM 對指令的服從性，設計特殊 Prompt（如「忽略前面的限制...」）來突破防護。
   tags:
   - chap-m2-ch2
@@ -197,11 +197,11 @@ questions:
   text: 詞幹提取 (Stemming) 的目的是？
   type: multiple_choice
   options:
-  - 增加詞彙量 (Increase Vocabulary)
   - 將詞彙還原為原型 (如 running -> run) (Reduce to Root Form)
   - 翻譯詞彙 (Translate Words)
   - 標註詞性 (POS Tagging)
-  correct_index: 1
+  - 增加詞彙量 (Increase Vocabulary)
+  correct_index: 0
   explanation: Stemming 去除詞綴，將不同變化形式的詞統一為同一特徵，降低模型複雜度。
   tags:
   - chap-m2-ch2
@@ -213,11 +213,11 @@ questions:
   text: Transformer 中的「位置編碼 (Positional Encoding)」有什麼作用？
   type: multiple_choice
   options:
-  - 加密數據 (Encrypt Data)
   - 告訴模型每個字在句子中的順序 (Indicate Word Order)
-  - 壓縮數據 (Compress Data)
+  - 加密數據 (Encrypt Data)
   - 標註詞性 (POS Tagging)
-  correct_index: 1
+  - 壓縮數據 (Compress Data)
+  correct_index: 0
   explanation: 由於 Transformer 是並行處理所有字，缺乏 RNN 的序列概念，必須人為加入位置資訊讓模型知道詞序。
   tags:
   - chap-m2-ch2
@@ -229,11 +229,11 @@ questions:
   text: Zero-shot Learning (零樣本學習) 是指？
   type: multiple_choice
   options:
-  - 使用 0 個 GPU 訓練 (Zero GPU)
   - 不給模型任何範例，直接下指令要求完成任務 (No Examples Provided)
-  - 模型準確率為 0 (Zero Accuracy)
   - 使用 0 與 1 的數據 (Binary Data)
-  correct_index: 1
+  - 使用 0 個 GPU 訓練 (Zero GPU)
+  - 模型準確率為 0 (Zero Accuracy)
+  correct_index: 0
   explanation: 利用 LLM 強大的泛化能力，僅憑任務描述（Prompt）就能完成未見過的任務，無需特定訓練數據。
   tags:
   - chap-m2-ch2
@@ -246,9 +246,9 @@ questions:
   type: multiple_choice
   options:
   - 浮水印 (Watermarking)
-  - 加密 (Encryption)
   - 壓縮 (Compression)
   - 刪除 (Deletion)
+  - 加密 (Encryption)
   correct_index: 0
   explanation: 數位浮水印可以在生成的文字或圖像中嵌入不可見的標記，幫助識別內容是否由 AI 產生。
   tags:
@@ -262,10 +262,10 @@ questions:
   type: multiple_choice
   options:
   - Transformer Encoder (BERT-like)
-  - Transformer Decoder (GPT-like)
   - RNN (Recurrent Neural Network)
   - CNN (Convolutional Neural Network)
-  correct_index: 1
+  - Transformer Decoder (GPT-like)
+  correct_index: 3
   explanation: GPT (Generative Pre-trained Transformer) 使用 Decoder 架構，專注於單向的下一個字預測（生成任務）。
   tags:
   - chap-m2-ch2
@@ -293,11 +293,11 @@ questions:
   text: 情感分析 (Sentiment Analysis) 通常屬於哪種 NLP 任務？
   type: multiple_choice
   options:
-  - 文字生成 (Text Generation)
-  - 文字分類 (Text Classification)
   - 機器翻譯 (Machine Translation)
   - 語音識別 (Speech Recognition)
-  correct_index: 1
+  - 文字分類 (Text Classification)
+  - 文字生成 (Text Generation)
+  correct_index: 2
   explanation: 情感分析將文本分類為「正面」、「負面」或「中立」，本質上是一個分類問題。
   tags:
   - chap-m2-ch2
@@ -309,11 +309,11 @@ questions:
   text: 「紅隊演練 (Red Teaming)」在 AI 治理中的作用是？
   type: multiple_choice
   options:
-  - 慶祝專案成功 (Celebrate Success)
-  - 模擬攻擊者的角度，主動尋找模型的漏洞與有害輸出 (Simulate Adversarial Attacks)
-  - 增加訓練數據 (Increase Training Data)
   - 提高運算速度 (Increase Speed)
-  correct_index: 1
+  - 慶祝專案成功 (Celebrate Success)
+  - 增加訓練數據 (Increase Training Data)
+  - 模擬攻擊者的角度，主動尋找模型的漏洞與有害輸出 (Simulate Adversarial Attacks)
+  correct_index: 3
   explanation: 紅隊演練是一種壓力測試，透過攻擊性測試來發現潛在風險，以便在產品發布前進行修補。
   tags:
   - chap-m2-ch2
@@ -325,11 +325,11 @@ questions:
   text: 統計導向時期 (Statistical NLP) 的主要特點是？
   type: multiple_choice
   options:
-  - 依賴人工編寫的規則 (Rule-based)
   - 利用機器學習算法從海量文本中尋找機率規律 (Probabilistic Patterns)
-  - 使用深度神經網路 (Deep Neural Networks)
+  - 依賴人工編寫的規則 (Rule-based)
   - 能夠完美理解語意 (Perfect Understanding)
-  correct_index: 1
+  - 使用深度神經網路 (Deep Neural Networks)
+  correct_index: 0
   explanation: 統計方法（如 N-gram）放棄了死板的規則，轉而利用數據中的統計規律，但對長距離語意的理解仍有限。
   tags:
   - chap-m2-ch2
@@ -341,11 +341,11 @@ questions:
   text: 多頭注意力 (Multi-Head Attention) 的好處是？
   type: multiple_choice
   options:
-  - 減少計算量 (Reduce Computation)
-  - 讓模型能從多個不同的角度捕捉詞與詞之間的關係 (Capture Diverse Relationships)
   - 只能關注語法 (Syntax Only)
   - 只能關注語意 (Semantics Only)
-  correct_index: 1
+  - 讓模型能從多個不同的角度捕捉詞與詞之間的關係 (Capture Diverse Relationships)
+  - 減少計算量 (Reduce Computation)
+  correct_index: 2
   explanation: 多頭機制就像請了多個專家，分別關注語法、指代、語意等不同層面，最後綜合起來得到更全面的理解。
   tags:
   - chap-m2-ch2
@@ -373,10 +373,10 @@ questions:
   text: 為什麼 TF-IDF 中的 IDF 需要取對數 (log)？
   type: multiple_choice
   options:
-  - 為了讓數值變負 (Make Negative)
-  - 為了避免數值過大，並平滑頻率分佈 (Scale Down & Smooth)
-  - 為了增加計算難度 (Increase Complexity)
   - 為了配合神經網路 (Fit Neural Network)
+  - 為了避免數值過大，並平滑頻率分佈 (Scale Down & Smooth)
+  - 為了讓數值變負 (Make Negative)
+  - 為了增加計算難度 (Increase Complexity)
   correct_index: 1
   explanation: 文件總數 N 可能很大，取 log 可以將數值範圍壓縮，避免 IDF 權重過大而壓倒 TF。
   tags:
@@ -389,11 +389,11 @@ questions:
   text: 機器翻譯從「單字拼湊」進化到「通順句子」，主要歸功於哪項技術？
   type: multiple_choice
   options:
-  - 字典查詢 (Dictionary Lookup)
-  - 神經機器翻譯 (NMT) 與 Seq2Seq 模型 (Neural Machine Translation)
   - 規則庫 (Rule Base)
+  - 字典查詢 (Dictionary Lookup)
   - 關鍵字替換 (Keyword Replacement)
-  correct_index: 1
+  - 神經機器翻譯 (NMT) 與 Seq2Seq 模型 (Neural Machine Translation)
+  correct_index: 3
   explanation: NMT 模型（尤其是 Transformer）能考慮整句的上下文進行翻譯，而非逐字翻譯，因此結果更流暢自然。
   tags:
   - chap-m2-ch2
@@ -406,10 +406,10 @@ questions:
   type: multiple_choice
   options:
   - 加密數據 (Encrypt Data)
-  - 量化每個特徵對模型預測結果的貢獻程度 (Quantify Feature Contribution)
   - 壓縮模型 (Compress Model)
   - 生成圖像 (Generate Image)
-  correct_index: 1
+  - 量化每個特徵對模型預測結果的貢獻程度 (Quantify Feature Contribution)
+  correct_index: 3
   explanation: SHAP 基於博弈論，能計算出每個輸入特徵（如某個關鍵字）對最終預測結果的影響力大小，提供解釋性。
   tags:
   - chap-m2-ch2
@@ -421,11 +421,11 @@ questions:
   text: 在 NLP 預處理中，去除「停用詞 (Stop Words)」是指？
   type: multiple_choice
   options:
-  - 刪除所有動詞 (Remove Verbs)
-  - 刪除對語意貢獻極低的高頻詞 (Remove Low-Information High-Frequency Words)
   - 刪除標點符號 (Remove Punctuation)
   - 刪除數字 (Remove Numbers)
-  correct_index: 1
+  - 刪除對語意貢獻極低的高頻詞 (Remove Low-Information High-Frequency Words)
+  - 刪除所有動詞 (Remove Verbs)
+  correct_index: 2
   explanation: 停用詞通常是語法功能詞，攜帶的資訊量很少，去除它們可以減少雜訊並提高處理效率。
   tags:
   - chap-m2-ch2
@@ -438,10 +438,10 @@ questions:
   type: multiple_choice
   options:
   - 0 個 (Zero)
-  - 少量 (如 1-5 個) (Few, e.g., 1-5)
-  - 數千個 (Thousands)
   - 數百萬個 (Millions)
-  correct_index: 1
+  - 數千個 (Thousands)
+  - 少量 (如 1-5 個) (Few, e.g., 1-5)
+  correct_index: 3
   explanation: Few-shot 介於 Zero-shot 和 Fine-tuning 之間，透過提供少數幾個範例讓模型「類比」學習，效果通常顯著提升。
   tags:
   - chap-m2-ch2
@@ -453,11 +453,11 @@ questions:
   text: 對抗式訓練 (Adversarial Training) 的目的是？
   type: multiple_choice
   options:
-  - 攻擊對手 (Attack Opponent)
-  - 增強模型對抗惡意擾動樣本的魯棒性 (Enhance Robustness against Adversarial Examples)
-  - 減少訓練時間 (Reduce Training Time)
   - 增加模型偏見 (Increase Bias)
-  correct_index: 1
+  - 減少訓練時間 (Reduce Training Time)
+  - 增強模型對抗惡意擾動樣本的魯棒性 (Enhance Robustness against Adversarial Examples)
+  - 攻擊對手 (Attack Opponent)
+  correct_index: 2
   explanation: 透過在訓練過程中主動加入被擾動的「攻擊樣本」，讓模型學會識別並防禦這些攻擊，提高安全性。
   tags:
   - chap-m2-ch2
@@ -471,8 +471,8 @@ questions:
   options:
   - 維度更高 (Higher Dimension)
   - 能夠捕捉詞彙之間的語意相似度，且維度較低 (Capture Semantic Similarity & Lower Dimension)
-  - 計算更簡單 (Simpler Calculation)
   - 不需要訓練 (No Training Needed)
+  - 計算更簡單 (Simpler Calculation)
   correct_index: 1
   explanation: One-Hot 向量是正交的（無關聯），而 Word Embeddings 將語意相近的詞映射到距離相近的向量空間，且通常是低維稠密向量。
   tags:
@@ -486,10 +486,10 @@ questions:
   type: multiple_choice
   options:
   - 預測下一個字 (Predict Next Word)
-  - 隨機遮蓋句子中的部分詞彙，讓模型利用上下文去猜測被遮蓋的詞 (Masked Word Prediction)
   - 翻譯句子 (Translate Sentence)
   - 判斷句子情感 (Sentiment Analysis)
-  correct_index: 1
+  - 隨機遮蓋句子中的部分詞彙，讓模型利用上下文去猜測被遮蓋的詞 (Masked Word Prediction)
+  correct_index: 3
   explanation: MLM 類似於「克漏字填空」，迫使模型必須同時理解前後文才能填出正確的詞，從而學會雙向語境。
   tags:
   - chap-m2-ch2
@@ -501,11 +501,11 @@ questions:
   text: 「Human-in-the-loop (人機協作)」在 AI 治理中意味著？
   type: multiple_choice
   options:
-  - 人類完全取代 AI (Humans Replace AI)
-  - AI 完全取代人類 (AI Replaces Humans)
-  - 在關鍵決策環節保留人類的介入與最終決定權 (Human Oversight & Decision)
   - 人類只負責標註數據 (Humans Only Label Data)
-  correct_index: 2
+  - AI 完全取代人類 (AI Replaces Humans)
+  - 人類完全取代 AI (Humans Replace AI)
+  - 在關鍵決策環節保留人類的介入與最終決定權 (Human Oversight & Decision)
+  correct_index: 3
   explanation: 對於高風險應用，完全自動化是危險的。HITL 確保 AI 僅作為輔助，由人類把關最終結果，兼顧效率與安全。
   tags:
   - chap-m2-ch2
@@ -517,11 +517,11 @@ questions:
   text: N-gram 模型中的 "N" 代表？
   type: multiple_choice
   options:
-  - 神經網路層數 (Number of Layers)
   - 連續出現的 N 個詞彙的組合 (Sequence of N Words)
   - 訓練數據量 (Data Volume)
+  - 神經網路層數 (Number of Layers)
   - 詞彙維度 (Vocabulary Dimension)
-  correct_index: 1
+  correct_index: 0
   explanation: N-gram 是一種統計語言模型，考慮連續 N 個詞的出現機率。例如 2-gram (Bigram) 考慮相鄰的兩個詞。
   tags:
   - chap-m2-ch2
@@ -533,11 +533,11 @@ questions:
   text: Transformer 中的 Encoder 和 Decoder 分別負責？
   type: multiple_choice
   options:
-  - Encoder 生成，Decoder 理解 (Encoder Generates, Decoder Understands)
-  - Encoder 理解 (編碼)，Decoder 生成 (解碼) (Encoder Understands, Decoder Generates)
   - 兩者功能相同 (Same Function)
+  - Encoder 生成，Decoder 理解 (Encoder Generates, Decoder Understands)
   - Encoder 處理圖片，Decoder 處理文字 (Image vs Text)
-  correct_index: 1
+  - Encoder 理解 (編碼)，Decoder 生成 (解碼) (Encoder Understands, Decoder Generates)
+  correct_index: 3
   explanation: Encoder 將輸入序列轉換為語意向量（理解），Decoder 根據這些向量生成目標序列（生成）。
   tags:
   - chap-m2-ch2
@@ -549,11 +549,11 @@ questions:
   text: 聊天機器人從關鍵字匹配進化到生成式 AI，主要提升了？
   type: multiple_choice
   options:
-  - 回應速度 (Response Speed)
-  - 對話的流暢度、邏輯性與上下文理解能力 (Fluency, Logic & Context)
   - 系統穩定性 (System Stability)
   - 硬體需求 (Hardware Requirements)
-  correct_index: 1
+  - 對話的流暢度、邏輯性與上下文理解能力 (Fluency, Logic & Context)
+  - 回應速度 (Response Speed)
+  correct_index: 2
   explanation: 舊式機器人只能針對特定關鍵字給出死板回覆；生成式 AI 能理解複雜語意並生成像人類一樣自然的回應。
   tags:
   - chap-m2-ch2
@@ -565,11 +565,11 @@ questions:
   text: 差分隱私 (Differential Privacy) 技術如何在訓練中保護隱私？
   type: multiple_choice
   options:
-  - 刪除所有數據 (Delete All Data)
-  - 在數據或梯度中加入精心設計的雜訊 (Add Noise to Data/Gradients)
   - 加密模型權重 (Encrypt Weights)
   - 限制存取權限 (Restrict Access)
-  correct_index: 1
+  - 在數據或梯度中加入精心設計的雜訊 (Add Noise to Data/Gradients)
+  - 刪除所有數據 (Delete All Data)
+  correct_index: 2
   explanation: 差分隱私從數學上保證了攻擊者無法從模型輸出反推特定個體的資訊，是目前最強的隱私保護技術之一。
   tags:
   - chap-m2-ch2
@@ -581,10 +581,10 @@ questions:
   text: Bag of Words (詞袋模型) 的主要缺點是？
   type: multiple_choice
   options:
-  - 計算太慢 (Too Slow)
-  - 忽略了詞彙的順序與語法結構 (Ignore Word Order & Syntax)
-  - 詞彙量太少 (Vocabulary too Small)
   - 無法處理英文 (Cannot Process English)
+  - 忽略了詞彙的順序與語法結構 (Ignore Word Order & Syntax)
+  - 計算太慢 (Too Slow)
+  - 詞彙量太少 (Vocabulary too Small)
   correct_index: 1
   explanation: BoW 只統計詞頻，將句子視為一袋散亂的詞，丟失了「貓咬狗」與「狗咬貓」之間的語意差異。
   tags:
@@ -597,9 +597,9 @@ questions:
   text: 為什麼 LSTM 需要「遺忘閘 (Forget Gate)」？
   type: multiple_choice
   options:
-  - 為了節省記憶體 (Save Memory)
-  - 為了主動丟棄不再重要的舊資訊，騰出空間給新資訊 (Discard Irrelevant Info)
   - 為了隨機遺忘 (Random Forgetting)
+  - 為了主動丟棄不再重要的舊資訊，騰出空間給新資訊 (Discard Irrelevant Info)
+  - 為了節省記憶體 (Save Memory)
   - 為了加速計算 (Accelerate Calculation)
   correct_index: 1
   explanation: 在處理長序列時，並非所有歷史資訊都有用。遺忘閘讓模型能動態更新記憶狀態，適應上下文的轉換。
@@ -614,10 +614,10 @@ questions:
   type: multiple_choice
   options:
   - 讓使用者輸入問題 (User Input)
-  - 設定 AI 的角色、行為準則與安全邊界 (Set Role, Guidelines & Boundaries)
   - 顯示錯誤訊息 (Show Error)
+  - 設定 AI 的角色、行為準則與安全邊界 (Set Role, Guidelines & Boundaries)
   - 儲存對話紀錄 (Save Logs)
-  correct_index: 1
+  correct_index: 2
   explanation: System Prompt 是開發者寫給模型的「最高指令」，定義了「你是誰」、「你該怎麼回答」、「你不該回答什麼」。
   tags:
   - chap-m2-ch2
@@ -631,8 +631,8 @@ questions:
   options:
   - 模型無法訓練 (Training Failure)
   - 模型內化並放大社會既有的刻板印象與歧視 (Amplify Stereotypes & Discrimination)
-  - 模型準確率變高 (Higher Accuracy)
   - 模型運算變慢 (Slower Computation)
+  - 模型準確率變高 (Higher Accuracy)
   correct_index: 1
   explanation: 如果訓練數據本身有偏見（如性別歧視），模型不僅會學到，甚至會因為統計規律而放大這種偏見。
   tags:
@@ -645,10 +645,10 @@ questions:
   text: 情境：你正在開發一個法律諮詢 AI，使用 RAG 技術。然而，使用者回報 AI 引用了已經廢除的舊法條。這最可能是 RAG 系統的哪個環節出了問題？應如何改善？
   type: multiple_choice
   options:
-  - 生成模型 (LLM) 太笨 (LLM Incompetence)
+  - 使用者問錯問題 (Wrong Question)
   - 檢索資料庫 (Knowledge Base) 未及時更新或缺乏版本控制 (Outdated Knowledge Base)
   - Prompt 寫得不好 (Poor Prompt)
-  - 使用者問錯問題 (Wrong Question)
+  - 生成模型 (LLM) 太笨 (LLM Incompetence)
   correct_index: 1
   explanation: RAG 的準確性高度依賴於檢索到的文件品質。如果知識庫本身包含過時資訊且未被標記或過濾，LLM 就會基於錯誤資訊生成回答。資料庫的維護與更新是
     RAG 成功的關鍵。
@@ -663,11 +663,11 @@ questions:
     容易導致什麼問題？應改用什麼策略？
   type: multiple_choice
   options:
-  - 欠擬合；應增加模型層數 (Underfitting)
-  - 過擬合 (Overfitting) 或災難性遺忘 (Catastrophic Forgetting)；應採用 Parameter-Efficient Fine-Tuning (PEFT) 技術 (Use PEFT)
-  - 計算資源不足；應購買更多 GPU (Insufficient Compute)
   - 模型變笨；應從頭訓練 (Model Degradation)
-  correct_index: 1
+  - 欠擬合；應增加模型層數 (Underfitting)
+  - 計算資源不足；應購買更多 GPU (Insufficient Compute)
+  - 過擬合 (Overfitting) 或災難性遺忘 (Catastrophic Forgetting)；應採用 Parameter-Efficient Fine-Tuning (PEFT) 技術 (Use PEFT)
+  correct_index: 3
   explanation: 在極少數據下對巨大模型進行全量微調，極易導致模型死記硬背這 100 份報告（過擬合），並忘記原本通用的語言能力。LoRA 等技術凍結大部分參數，只微調少量參數，能有效避免此問題。
   tags:
   - chap-m2-ch2
@@ -679,11 +679,11 @@ questions:
   text: 情境：在情感分析任務中，你發現模型對於「這部電影不算太差」這句話判斷錯誤，認為是負面評價（因為看到「差」字）。這顯示模型可能過度依賴什麼？應如何改進？
   type: multiple_choice
   options:
-  - 過度依賴關鍵字 (Keyword-based) 而非語意理解 (Keyword Reliance)
-  - 過度依賴語法 (Syntax Reliance)
   - 數據量太少 (Insufficient Data)
   - 斷詞錯誤 (Tokenization Error)
-  correct_index: 1
+  - 過度依賴語法 (Syntax Reliance)
+  - 過度依賴關鍵字 (Keyword-based) 而非語意理解 (Keyword Reliance)
+  correct_index: 2
   explanation: 傳統詞袋模型或簡單模型容易忽略「不」、「太」等修飾詞對語氣的反轉。BERT 等模型透過 Self-Attention 能理解「不...差」的雙重否定結構，從而正確判斷語意。
   tags:
   - chap-m2-ch2
@@ -695,11 +695,11 @@ questions:
   text: 情境：攻擊者發現你的公開聊天機器人會洩漏訓練數據中的個資。他最可能使用了什麼攻擊手法？你該如何防禦？
   type: multiple_choice
   options:
-  - SQL Injection；應修補資料庫漏洞 (SQL Injection)
   - Prompt Injection 或成員推論攻擊；應加強輸入過濾、實施差分隱私訓練 (Prompt Injection / Membership Inference)
   - DDoS 攻擊；應增加頻寬 (DDoS)
+  - SQL Injection；應修補資料庫漏洞 (SQL Injection)
   - 暴力破解；應加強密碼 (Brute Force)
-  correct_index: 1
+  correct_index: 0
   explanation: 針對 LLM 的攻擊通常針對其生成特性。透過誘導式 Prompt 讓模型「吐真言」是常見手法。防禦需從訓練端（差分隱私）和應用端（輸入輸出過濾）雙管齊下。
   tags:
   - chap-m2-ch2
@@ -713,8 +713,8 @@ questions:
   options:
   - 模型訓練失敗 (Training Failed)
   - 訓練數據中存在性別刻板印象 (Gender Bias)，模型忠實地學到了這些偏見 (Learned Bias)
-  - Word2Vec 演算法有 Bug (Algorithm Bug)
   - 向量維度不足 (Insufficient Dimension)
+  - Word2Vec 演算法有 Bug (Algorithm Bug)
   correct_index: 1
   explanation: 這是 NLP 領域著名的偏見案例。因為歷史文本中女性常與護士連結，男性與醫生連結，模型學到了這種相關性。這提醒我們必須對詞向量進行去偏見
     (Debiasing) 處理，例如將性別方向從職業詞彙中移除。
@@ -727,11 +727,11 @@ questions:
   text: 情境：當你對 Siri 說「設定明天早上七點的鬧鐘」時，負責理解你的意圖是「設定鬧鐘」的技術屬於？
   type: multiple_choice
   options:
+  - 語音合成 (Speech Synthesis)
+  - OCR (Optical Character Recognition)
   - NLG (自然語言生成) (Natural Language Generation)
   - NLU (自然語言理解) (Natural Language Understanding)
-  - OCR (Optical Character Recognition)
-  - 語音合成 (Speech Synthesis)
-  correct_index: 1
+  correct_index: 3
   explanation: NLU 專注於解析輸入文本的結構與語意，識別使用者的意圖 (Intent) 與實體 (Entity)。
   tags:
   - chap-m2-ch2
@@ -743,11 +743,11 @@ questions:
   text: 情境：在 TF-IDF 計算中，若一個詞在某篇文章出現次數很高，但在所有文章中也都很常見（如「的」），其 TF-IDF 值會？
   type: multiple_choice
   options:
-  - 很高 (Very High)
   - 很低 (Very Low)
   - 不變 (Unchanged)
+  - 很高 (Very High)
   - 無法計算 (Cannot Calculate)
-  correct_index: 1
+  correct_index: 0
   explanation: IDF (逆文件頻率) 會懲罰那些在所有文件中都出現的常見詞，降低其權重。
   tags:
   - chap-m2-ch2
@@ -759,11 +759,11 @@ questions:
   text: 情境：RNN (循環神經網路) 在處理長文本時容易遇到的主要問題是？
   type: multiple_choice
   options:
-  - 計算太快 (Too Fast)
-  - 梯度消失 (Vanishing Gradient)，導致遺忘前面的資訊 (Forget Early Info)
-  - 記憶力太好 (Too Good Memory)
   - 無法處理中文 (Cannot Process Chinese)
-  correct_index: 1
+  - 記憶力太好 (Too Good Memory)
+  - 梯度消失 (Vanishing Gradient)，導致遺忘前面的資訊 (Forget Early Info)
+  - 計算太快 (Too Fast)
+  correct_index: 2
   explanation: 隨著序列長度增加，RNN 的梯度在反向傳播時會指數級衰減，難以捕捉長距離依賴。
   tags:
   - chap-m2-ch2
@@ -775,10 +775,10 @@ questions:
   text: 情境：Transformer 模型中的「自注意力機制 (Self-Attention)」主要解決了什麼問題？
   type: multiple_choice
   options:
-  - 圖片分類 (Image Classification)
+  - 壓縮模型 (Model Compression)
   - 讓模型能同時關注句子中不同位置的詞，捕捉長距離關聯 (Capture Long-range Dependencies)
   - 語音辨識 (Speech Recognition)
-  - 壓縮模型 (Model Compression)
+  - 圖片分類 (Image Classification)
   correct_index: 1
   explanation: Self-Attention 允許模型直接計算句子中任意兩個詞的關聯強度，突破了 RNN 的序列限制。
   tags:
@@ -807,10 +807,10 @@ questions:
   text: 情境：BERT 模型的主要架構是？
   type: multiple_choice
   options:
-  - Transformer Decoder (GPT-like)
-  - Transformer Encoder (BERT-like)
-  - RNN (Recurrent Neural Network)
   - CNN (Convolutional Neural Network)
+  - Transformer Encoder (BERT-like)
+  - Transformer Decoder (GPT-like)
+  - RNN (Recurrent Neural Network)
   correct_index: 1
   explanation: BERT 使用雙向 Encoder 架構，擅長理解上下文語意，適合分類與問答任務。
   tags:
@@ -824,10 +824,10 @@ questions:
   type: multiple_choice
   options:
   - 去識別化 (De-identification)
+  - 限制存取權限 (Restrict Access)
   - 差分隱私 (Differential Privacy)
   - 公開所有資料 (Publish All Data)
-  - 限制存取權限 (Restrict Access)
-  correct_index: 2
+  correct_index: 3
   explanation: 公開資料會加劇隱私洩漏風險，應嚴格控管。
   tags:
   - chap-m2-ch2
@@ -839,11 +839,11 @@ questions:
   text: 情境：LSTM (長短期記憶網路) 透過什麼機制來改善 RNN 的記憶問題？
   type: multiple_choice
   options:
+  - 刪除資料 (Delete Data)
+  - 使用更快的 CPU (Faster CPU)
   - 增加層數 (Add Layers)
   - 引入閘門機制 (遺忘閘、輸入閘、輸出閘) (Gating Mechanism)
-  - 使用更快的 CPU (Faster CPU)
-  - 刪除資料 (Delete Data)
-  correct_index: 1
+  correct_index: 3
   explanation: 閘門機制讓 LSTM 能主動選擇保留或遺忘資訊，有效維護長期狀態。
   tags:
   - chap-m2-ch2
@@ -855,10 +855,10 @@ questions:
   text: 情境：RAG (檢索增強生成) 的主要優勢是？
   type: multiple_choice
   options:
-  - 生成速度最快 (Fastest Generation)
+  - 模型最小 (Smallest Model)
   - 減少幻覺並能利用最新的外部知識 (Reduce Hallucination & Use External Knowledge)
   - 不需要資料庫 (No Database Needed)
-  - 模型最小 (Smallest Model)
+  - 生成速度最快 (Fastest Generation)
   correct_index: 1
   explanation: RAG 結合了檢索系統的準確性與生成模型的流暢性，解決了知識過時與瞎掰問題。
   tags:
@@ -871,11 +871,11 @@ questions:
   text: 情境：GPT 系列模型主要採用哪種架構？
   type: multiple_choice
   options:
+  - GAN (Generative Adversarial Network)
   - Transformer Encoder (BERT-like)
   - Transformer Decoder (GPT-like)
   - LSTM (Long Short-Term Memory)
-  - GAN (Generative Adversarial Network)
-  correct_index: 1
+  correct_index: 2
   explanation: GPT 是單向 Decoder 架構，專注於預測下一個字 (Next Token Prediction)，擅長生成任務。
   tags:
   - chap-m2-ch2
@@ -887,11 +887,11 @@ questions:
   text: 情境：斷詞 (Tokenization) 在中文處理中比英文困難，因為？
   type: multiple_choice
   options:
-  - 中文沒有空格分隔詞彙 (No Space Delimiter)
-  - 中文單字太少 (Too Few Words)
   - 中文文法太簡單 (Too Simple Grammar)
+  - 中文單字太少 (Too Few Words)
+  - 中文沒有空格分隔詞彙 (No Space Delimiter)
   - 電腦看不懂中文 (Computer Cannot Read Chinese)
-  correct_index: 0
+  correct_index: 2
   explanation: 英文詞與詞之間有空格，中文則是連續字串，需依賴上下文判斷斷詞邊界。
   tags:
   - chap-m2-ch2
@@ -903,10 +903,10 @@ questions:
   text: 情境：LoRA (低秩自適應) 技術的主要目的是？
   type: multiple_choice
   options:
-  - 增加模型參數量 (Increase Parameters)
-  - 高效微調大模型 (只訓練少量外掛參數) (Efficient Fine-tuning)
   - 加速預訓練 (Accelerate Pre-training)
+  - 高效微調大模型 (只訓練少量外掛參數) (Efficient Fine-tuning)
   - 壓縮圖片 (Compress Image)
+  - 增加模型參數量 (Increase Parameters)
   correct_index: 1
   explanation: LoRA 透過凍結主模型、只訓練低秩矩陣，大幅降低了微調 LLM 所需的算力與儲存。
   tags:
@@ -919,11 +919,11 @@ questions:
   text: 情境：提示注入 (Prompt Injection) 攻擊的目標是？
   type: multiple_choice
   options:
+  - 加速模型 (Accelerate Model)
   - 竊取密碼 (Steal Password)
   - 繞過模型的安全機制或指令限制 (Bypass Safety Mechanisms)
-  - 加速模型 (Accelerate Model)
   - 備份資料 (Backup Data)
-  correct_index: 1
+  correct_index: 2
   explanation: 攻擊者透過特殊指令誘導模型執行原本被禁止的行為。
   tags:
   - chap-m2-ch2
@@ -935,11 +935,11 @@ questions:
   text: 情境：Positional Encoding (位置編碼) 在 Transformer 中的作用是？
   type: multiple_choice
   options:
-  - 加密 (Encryption)
   - 提供詞彙在句子中的順序資訊 (Provide Sequence Information)
+  - 加密 (Encryption)
   - 壓縮 (Compression)
   - 翻譯 (Translation)
-  correct_index: 1
+  correct_index: 0
   explanation: 由於 Self-Attention 是平行運算，缺乏序列概念，需額外注入位置資訊。
   tags:
   - chap-m2-ch2
@@ -951,11 +951,11 @@ questions:
   text: 情境：情感分析 (Sentiment Analysis) 最常用於？
   type: multiple_choice
   options:
-  - 天氣預報 (Weather Forecast)
   - 監控社群媒體上的品牌聲譽 (Brand Reputation Monitoring)
-  - 股票交易 (Stock Trading)
   - 人臉辨識 (Face Recognition)
-  correct_index: 1
+  - 天氣預報 (Weather Forecast)
+  - 股票交易 (Stock Trading)
+  correct_index: 0
   explanation: 分析消費者評論的情緒傾向（正/負面）是行銷與公關的重要工具。
   tags:
   - chap-m2-ch2
@@ -967,11 +967,11 @@ questions:
   text: 情境：Word Embeddings (如 Word2Vec) 的突破在於？
   type: multiple_choice
   options:
-  - 將詞彙轉換為具有語意關係的向量 (如 國王-男人+女人=皇后) (Semantic Vectors)
-  - 將詞彙轉為圖片 (Word to Image)
-  - 將詞彙轉為聲音 (Word to Sound)
   - 將詞彙刪除 (Delete Word)
-  correct_index: 0
+  - 將詞彙轉為圖片 (Word to Image)
+  - 將詞彙轉換為具有語意關係的向量 (如 國王-男人+女人=皇后) (Semantic Vectors)
+  - 將詞彙轉為聲音 (Word to Sound)
+  correct_index: 2
   explanation: Word Embeddings 讓電腦能透過向量運算理解詞彙間的類比與語意關係。
   tags:
   - chap-m2-ch2
@@ -984,9 +984,9 @@ questions:
   type: multiple_choice
   options:
   - 黑箱問題 (Black Box)，難以解釋決策理由 (Unexplainable Decisions)
-  - 運算太慢 (Too Slow)
-  - 準確率太低 (Too Low Accuracy)
   - 太貴 (Too Expensive)
+  - 準確率太低 (Too Low Accuracy)
+  - 運算太慢 (Too Slow)
   correct_index: 0
   explanation: XAI 試圖揭示模型內部的決策邏輯，增加人類對 AI 的信任。
   tags:
@@ -1000,10 +1000,10 @@ questions:
   type: multiple_choice
   options:
   - 模型有多個頭 (Multiple Heads)
-  - 模型能從多個不同的角度 (子空間) 關注詞彙間的關係 (Diverse Attention Subspaces)
   - 模型有多個輸出 (Multiple Outputs)
+  - 模型能從多個不同的角度 (子空間) 關注詞彙間的關係 (Diverse Attention Subspaces)
   - 模型有多個輸入 (Multiple Inputs)
-  correct_index: 1
+  correct_index: 2
   explanation: 不同的 Head 可以分別關注語法、語意、指代等不同層面的資訊。
   tags:
   - chap-m2-ch2
@@ -1016,10 +1016,10 @@ questions:
   type: multiple_choice
   options:
   - 完全自動化 (Full Automation)
+  - AI 取代人類 (AI Replaces Human)
   - 關鍵決策應由人類最終把關 (Human Final Decision)
   - 人類不應介入 (No Human Intervention)
-  - AI 取代人類 (AI Replaces Human)
-  correct_index: 1
+  correct_index: 2
   explanation: 在高風險領域，保留人類的裁量權是確保安全與倫理的最後防線。
   tags:
   - chap-m2-ch2
@@ -1031,11 +1031,11 @@ questions:
   text: 情境：詞幹提取 (Stemming) 的作用是？
   type: multiple_choice
   options:
-  - 將詞彙還原為原型 (如 running -> run) (Restore to Root)
-  - 刪除詞彙 (Delete Words)
-  - 翻譯詞彙 (Translate Words)
   - 加密詞彙 (Encrypt Words)
-  correct_index: 0
+  - 刪除詞彙 (Delete Words)
+  - 將詞彙還原為原型 (如 running -> run) (Restore to Root)
+  - 翻譯詞彙 (Translate Words)
+  correct_index: 2
   explanation: 標準化詞形能減少詞彙表大小，讓模型聚焦於詞彙的核心意義。
   tags:
   - chap-m2-ch2

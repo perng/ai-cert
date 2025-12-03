@@ -5,10 +5,10 @@ questions:
   text: 在敘述統計中，哪一個指標最容易受到極端值 (Outliers) 的影響？
   type: multiple_choice
   options:
-  - 中位數 (Median)，將數據排序後位於中間的數值
   - 眾數 (Mode)，數據中出現次數最多的數值
-  - 平均數 (Mean)，所有數據的總和除以數據個數
   - 四分位距 (IQR)，第三四分位數與第一四分位數的差
+  - 平均數 (Mean)，所有數據的總和除以數據個數
+  - 中位數 (Median)，將數據排序後位於中間的數值
   correct_index: 2
   explanation: 平均數涉及所有數值的總和，因此極端值會顯著拉高或拉低平均數。中位數和眾數則相對穩健。
   tags:
@@ -22,10 +22,10 @@ questions:
   type: multiple_choice
   options:
   - 標準差是變異數的平方 (Variance Squared)
-  - 變異數是標準差的平方根 (Square Root of Standard Deviation)
   - 標準差是變異數的平方根 (Square Root of Variance)
   - 兩者在數學上完全無關
-  correct_index: 2
+  - 變異數是標準差的平方根 (Square Root of Standard Deviation)
+  correct_index: 1
   explanation: 標準差是變異數的平方根 ($\sigma = \sqrt{\sigma^2}$)，這使得標準差的單位與原始數據一致，更直觀。
   tags:
   - chap-m1-ch1
@@ -37,11 +37,11 @@ questions:
   text: 根據「68-95-99.7 法則」，在常態分佈中，約有多少比例的數據落在平均值正負兩個標準差 ($\mu \pm 2\sigma$) 範圍內？
   type: multiple_choice
   options:
-  - 約 68% 的數據
-  - 約 95% 的數據
-  - 約 99.7% 的數據
   - 約 50% 的數據
-  correct_index: 1
+  - 約 68% 的數據
+  - 約 99.7% 的數據
+  - 約 95% 的數據
+  correct_index: 3
   explanation: 常態分佈的特性是：$\mu \pm 1\sigma$ 涵蓋約 68%，$\mu \pm 2\sigma$ 涵蓋約 95%，$\mu \pm
     3\sigma$ 涵蓋約 99.7%。
   tags:
@@ -55,9 +55,9 @@ questions:
   type: multiple_choice
   options:
   - 泊松分佈 (Poisson Distribution)，描述單位時間內事件發生的次數
-  - 常態分佈 (Normal Distribution)，描述許多自然現象的連續機率分佈
-  - 二項式分佈 (Binomial Distribution)，描述 n 次獨立伯努利試驗中成功的次數
   - 指數分佈 (Exponential Distribution)，描述事件發生的時間間隔
+  - 二項式分佈 (Binomial Distribution)，描述 n 次獨立伯努利試驗中成功的次數
+  - 常態分佈 (Normal Distribution)，描述許多自然現象的連續機率分佈
   correct_index: 2
   explanation: 二項式分佈描述的是在 $n$ 次獨立的伯努利試驗（只有成功/失敗兩種結果）中，成功 $k$ 次的機率。
   tags:
@@ -70,11 +70,11 @@ questions:
   text: 在假設檢定中，p-value 代表什麼意義？
   type: multiple_choice
   options:
-  - 虛無假設 ($H_0$) 為真的機率
   - 對立假設 ($H_1$) 為真的機率
-  - 在虛無假設 ($H_0$) 為真的前提下，觀察到當前數據或更極端情況的機率
   - 實驗完全失敗的機率
-  correct_index: 2
+  - 虛無假設 ($H_0$) 為真的機率
+  - 在虛無假設 ($H_0$) 為真的前提下，觀察到當前數據或更極端情況的機率
+  correct_index: 3
   explanation: p-value 是在虛無假設成立的條件下，出現目前觀測結果或更極端結果的機率。p 值越小，拒絕 $H_0$ 的證據越強。
   tags:
   - chap-m1-ch1
@@ -87,10 +87,10 @@ questions:
   type: multiple_choice
   options:
   - 兩向量平行 (Parallel)
+  - 兩向量長度相等 (Equal Length)
   - 兩向量垂直 (Orthogonal)
   - 兩向量方向相反 (Opposite Direction)
-  - 兩向量長度相等 (Equal Length)
-  correct_index: 1
+  correct_index: 2
   explanation: 內積公式為 $a \cdot b = ||a|| ||b|| \cos \theta$。當內積為 0 時，$\cos \theta =
     0$，即 $\theta = 90^\circ$，表示兩向量垂直（正交）。
   tags:
@@ -103,10 +103,10 @@ questions:
   text: 對於矩陣 $A$，若 $Av = \lambda v$ (其中 $v \neq 0$)，則 $\lambda$ 稱為 $A$ 的什麼？
   type: multiple_choice
   options:
-  - 特徵向量 (Eigenvector)，代表變換的方向
-  - 特徵值 (Eigenvalue)，代表變換的縮放倍率
-  - 行列式 (Determinant)，代表變換的面積縮放率
   - 逆矩陣 (Inverse Matrix)，代表變換的逆運算
+  - 特徵值 (Eigenvalue)，代表變換的縮放倍率
+  - 特徵向量 (Eigenvector)，代表變換的方向
+  - 行列式 (Determinant)，代表變換的面積縮放率
   correct_index: 1
   explanation: 滿足 $Av = \lambda v$ 的純量 $\lambda$ 稱為矩陣 $A$ 的特徵值，向量 $v$ 稱為對應的特徵向量。
   tags:
@@ -119,11 +119,11 @@ questions:
   text: 函數 $f(x)$ 在某一點的導數 (Derivative) 代表什麼幾何意義？
   type: multiple_choice
   options:
+  - 曲線下的面積 (Area under Curve)
+  - 曲線在該點的切線斜率 (Slope of Tangent Line)，代表瞬時變化率
   - 曲線在該點的高度 (Function Value)
   - 曲線與 x 軸的交點 (Root)
-  - 曲線在該點的切線斜率 (Slope of Tangent Line)，代表瞬時變化率
-  - 曲線下的面積 (Area under Curve)
-  correct_index: 2
+  correct_index: 1
   explanation: 導數定義為函數在某一點的切線斜率，反映了函數在該點的瞬時變化率。
   tags:
   - chap-m1-ch1
@@ -135,10 +135,10 @@ questions:
   text: 梯度下降 (Gradient Descent) 演算法中，為了最小化損失函數，我們應該沿著梯度的哪個方向更新參數？
   type: multiple_choice
   options:
-  - 沿著梯度的方向 (Gradient Direction)，即函數上升最快的方向
+  - 隨機選擇一個方向 (Random Direction)
   - 沿著梯度的反方向 (Opposite to Gradient)，即函數下降最快的方向
   - 與梯度垂直的方向 (Orthogonal Direction)
-  - 隨機選擇一個方向 (Random Direction)
+  - 沿著梯度的方向 (Gradient Direction)，即函數上升最快的方向
   correct_index: 1
   explanation: 梯度指向函數增長最快的方向，因此為了尋找最小值（最小化損失），我們應沿著梯度的反方向（下降最快的方向）移動。
   tags:
@@ -152,10 +152,10 @@ questions:
   type: multiple_choice
   options:
   - 收斂速度過慢 (Slow Convergence)
-  - 陷入局部最小值 (Local Minimum)
   - 在最小值附近震盪或發散 (Oscillation or Divergence)，無法收斂
+  - 陷入局部最小值 (Local Minimum)
   - 計算精度顯著提高
-  correct_index: 2
+  correct_index: 1
   explanation: 學習率控制每次參數更新的步長。若太大，步長過大可能會跨過最低點，導致在最小值附近震盪甚至發散。
   tags:
   - chap-m1-ch1
@@ -168,9 +168,9 @@ questions:
   type: multiple_choice
   options:
   - $P(A|B) = P(B|A)P(A) / P(B)$
-  - $P(A|B) = P(A)P(B)$，這是獨立事件的機率公式
-  - $P(A|B) = P(A) + P(B)$，這是互斥事件的機率公式
   - $P(A|B) = P(B|A)$，這通常是不成立的
+  - $P(A|B) = P(A) + P(B)$，這是互斥事件的機率公式
+  - $P(A|B) = P(A)P(B)$，這是獨立事件的機率公式
   correct_index: 0
   explanation: 貝氏定理描述了在已知 B 發生的條件下 A 發生的機率，公式為 $P(A|B) = \frac{P(B|A)P(A)}{P(B)}$。
   tags:
@@ -183,10 +183,10 @@ questions:
   text: 單位矩陣 (Identity Matrix) $I$ 的特性是？
   type: multiple_choice
   options:
-  - 所有元素皆為 1 (All Ones Matrix)
+  - 行列式為 0 (Singular Matrix)
   - 對角線元素為 1，其餘為 0 (Diagonal Matrix with 1s)
   - 對角線元素為 0，其餘為 1
-  - 行列式為 0 (Singular Matrix)
+  - 所有元素皆為 1 (All Ones Matrix)
   correct_index: 1
   explanation: 單位矩陣是對角線上元素為 1，其餘元素為 0 的方陣。任何矩陣與其相乘都等於原矩陣。
   tags:
@@ -201,8 +201,8 @@ questions:
   options:
   - A 的列數 (Rows) 等於 B 的行數 (Columns)
   - A 的行數 (Columns) 等於 B 的列數 (Rows)
-  - A 和 B 的維度完全相同 (Same Dimensions)
   - A 和 B 必須是方陣 (Square Matrices)
+  - A 和 B 的維度完全相同 (Same Dimensions)
   correct_index: 1
   explanation: 若 A 是 $m \times n$ 矩陣，B 是 $p \times q$ 矩陣，則必須 $n = p$ (A 的行數等於 B 的列數)
     才能相乘。
@@ -216,11 +216,11 @@ questions:
   text: 偏導數 (Partial Derivative) 是針對多變數函數的哪種運算？
   type: multiple_choice
   options:
-  - 對所有變數同時進行微分 (Total Derivative)
-  - 對其中一個變數進行微分，將其他變數視為常數 (Treat others as constants)
   - 對函數進行積分 (Integration)
   - 計算函數在某點的極限 (Limit)
-  correct_index: 1
+  - 對所有變數同時進行微分 (Total Derivative)
+  - 對其中一個變數進行微分，將其他變數視為常數 (Treat others as constants)
+  correct_index: 3
   explanation: 偏導數 $\frac{\partial f}{\partial x}$ 表示在保持其他變數不變的情況下，函數隨 $x$ 的變化率。
   tags:
   - chap-m1-ch1
@@ -233,10 +233,10 @@ questions:
   type: multiple_choice
   options:
   - 多項式函數 (Polynomial Function)
-  - 複合函數 (Composite Function)，即函數的函數
   - 指數函數 (Exponential Function)
   - 對數函數 (Logarithmic Function)
-  correct_index: 1
+  - 複合函數 (Composite Function)，即函數的函數
+  correct_index: 3
   explanation: 連鎖律是用於計算複合函數導數的法則，即 $\frac{d}{dx}f(g(x)) = f'(g(x))g'(x)$。
   tags:
   - chap-m1-ch1
@@ -248,11 +248,11 @@ questions:
   text: 兩個事件 A 和 B 獨立 (Independent) 意味著？
   type: multiple_choice
   options:
-  - $P(A \cap B) = 0$，這是互斥事件
-  - $P(A \cap B) = P(A) + P(B)$，這是錯誤的公式
   - $P(A \cap B) = P(A)P(B)$，即兩者同時發生的機率等於各自機率的乘積
+  - $P(A \cap B) = P(A) + P(B)$，這是錯誤的公式
+  - $P(A \cap B) = 0$，這是互斥事件
   - $P(A|B) = 0$，表示 B 發生時 A 不可能發生
-  correct_index: 2
+  correct_index: 0
   explanation: 若 A 與 B 獨立，則 A 的發生不影響 B，且兩者同時發生的機率等於各自發生機率的乘積。
   tags:
   - chap-m1-ch1
@@ -265,9 +265,9 @@ questions:
   type: multiple_choice
   options:
   - 重心 (Center of Mass) 或平均位置，代表分佈的平衡點
+  - 面積 (Area)，機率密度函數下的總面積恆為 1
   - 最高點 (Peak)，即眾數
   - 寬度 (Width)，即變異數或標準差
-  - 面積 (Area)，機率密度函數下的總面積恆為 1
   correct_index: 0
   explanation: 期望值是隨機變數的加權平均，幾何上對應於機率密度函數圖形的重心。
   tags:
@@ -280,11 +280,11 @@ questions:
   text: 轉置矩陣 (Transpose Matrix) $A^T$ 是如何從 $A$ 得到的？
   type: multiple_choice
   options:
-  - 將所有元素取倒數 (Reciprocal)
   - 將所有元素變號 (Negation)
-  - 將列與行互換 (Swap Rows and Columns)
   - 將矩陣旋轉 90 度 (Rotate 90 degrees)
-  correct_index: 2
+  - 將所有元素取倒數 (Reciprocal)
+  - 將列與行互換 (Swap Rows and Columns)
+  correct_index: 3
   explanation: 轉置矩陣是將原矩陣的第 $i$ 列變成第 $i$ 行，即 $A^T_{ij} = A_{ji}$。
   tags:
   - chap-m1-ch1
@@ -296,11 +296,11 @@ questions:
   text: 向量的 L2 範數 (Norm) 通常用來表示向量的？
   type: multiple_choice
   options:
+  - 向量所有元素的總和 (Sum of Elements)
+  - 向量的維度 (Dimension)
   - 向量的方向 (Direction)
   - 向量的長度 (Length) 或歐幾里得距離 (Euclidean Distance)
-  - 向量的維度 (Dimension)
-  - 向量所有元素的總和 (Sum of Elements)
-  correct_index: 1
+  correct_index: 3
   explanation: L2 範數 $||x||_2 = \sqrt{\sum x_i^2}$ 代表向量在歐幾里得空間中的長度。
   tags:
   - chap-m1-ch1
@@ -312,11 +312,11 @@ questions:
   text: 型一錯誤 (Type I Error) 又稱為？
   type: multiple_choice
   options:
-  - 偽陰性 (False Negative)，即有病判沒病
-  - 偽陽性 (False Positive)，即沒病判有病
   - 系統誤差 (Systematic Error)
   - 隨機誤差 (Random Error)
-  correct_index: 1
+  - 偽陽性 (False Positive)，即沒病判有病
+  - 偽陰性 (False Negative)，即有病判沒病
+  correct_index: 2
   explanation: 型一錯誤是指虛無假設為真卻被拒絕，即「無中生有」，稱為偽陽性。
   tags:
   - chap-m1-ch1
@@ -344,9 +344,9 @@ questions:
   text: 凸函數 (Convex Function) 的一個重要特性是？
   type: multiple_choice
   options:
-  - 有多個局部最小值 (Multiple Local Minima)
-  - 任何局部最小值即為全域最小值 (Local Minimum is Global Minimum)
   - 沒有最小值 (No Minimum)
+  - 任何局部最小值即為全域最小值 (Local Minimum is Global Minimum)
+  - 有多個局部最小值 (Multiple Local Minima)
   - 導數恆為正 (Derivative is always positive)
   correct_index: 1
   explanation: 凸函數的幾何形狀像一個碗，保證了梯度下降法能找到全域最小值，不會陷入局部最佳解。
@@ -360,10 +360,10 @@ questions:
   text: 中央極限定理 (Central Limit Theorem) 指出，當樣本數夠大時，樣本平均數的抽樣分佈會趨近於？
   type: multiple_choice
   options:
-  - 均勻分佈 (Uniform Distribution)
-  - 常態分佈 (Normal Distribution)
-  - 泊松分佈 (Poisson Distribution)
   - 指數分佈 (Exponential Distribution)
+  - 常態分佈 (Normal Distribution)
+  - 均勻分佈 (Uniform Distribution)
+  - 泊松分佈 (Poisson Distribution)
   correct_index: 1
   explanation: 中央極限定理是統計學的基石，指出無論母體分佈為何，只要樣本數夠大，樣本平均數的分佈都會近似常態分佈。
   tags:
@@ -377,10 +377,10 @@ questions:
   type: multiple_choice
   options:
   - 0 度 (平行)
+  - 180 度 (反向)
   - 45 度
   - 90 度 (垂直)
-  - 180 度 (反向)
-  correct_index: 2
+  correct_index: 3
   explanation: 正交即垂直，夾角為 90 度 ($\pi/2$)。
   tags:
   - chap-m1-ch1
@@ -392,9 +392,9 @@ questions:
   text: 矩陣的秩 (Rank) 代表什麼？
   type: multiple_choice
   options:
-  - 矩陣中所有元素的總和 (Sum of Elements)
-  - 矩陣中線性獨立的列 (或行) 的最大數量 (Number of Linearly Independent Rows/Cols)
   - 矩陣的行數 (Number of Columns)
+  - 矩陣中線性獨立的列 (或行) 的最大數量 (Number of Linearly Independent Rows/Cols)
+  - 矩陣中所有元素的總和 (Sum of Elements)
   - 矩陣的列數 (Number of Rows)
   correct_index: 1
   explanation: 秩反映了矩陣所包含的資訊量或維度，即線性獨立向量的個數。
@@ -408,11 +408,11 @@ questions:
   text: 在反向傳播中，我們計算損失函數對權重的梯度是為了？
   type: multiple_choice
   options:
+  - 評估模型的複雜度 (Evaluate Complexity)
+  - 計算模型的準確率 (Calculate Accuracy)
   - 增加損失函數的值 (Increase Loss)
   - 更新權重以減少損失 (Update Weights to Minimize Loss)
-  - 計算模型的準確率 (Calculate Accuracy)
-  - 評估模型的複雜度 (Evaluate Complexity)
-  correct_index: 1
+  correct_index: 3
   explanation: 計算梯度的目的是為了知道如何調整權重（沿梯度反方向），使損失函數值下降。
   tags:
   - chap-m1-ch1
@@ -425,10 +425,10 @@ questions:
   type: multiple_choice
   options:
   - 在 A 發生的條件下 B 發生的機率 (Probability of B given A)
-  - 在 B 發生的條件下 A 發生的機率 (Probability of A given B)
   - A 和 B 同時發生的機率 (Joint Probability)
   - A 或 B 發生的機率 (Union Probability)
-  correct_index: 1
+  - 在 B 發生的條件下 A 發生的機率 (Probability of A given B)
+  correct_index: 3
   explanation: $P(A|B)$ 讀作「在 B 給定下 A 的機率」，即已知 B 發生後 A 發生的可能性。
   tags:
   - chap-m1-ch1
@@ -440,11 +440,11 @@ questions:
   text: 對立假設 (Alternative Hypothesis, $H_1$) 通常代表？
   type: multiple_choice
   options:
-  - 現狀或無效應 (Status Quo or No Effect)
   - 研究者想要證明的效應或差異 (Effect or Difference to be Proven)
+  - 現狀或無效應 (Status Quo or No Effect)
   - 實驗過程失敗 (Experiment Failure)
   - 數據收集錯誤 (Data Error)
-  correct_index: 1
+  correct_index: 0
   explanation: 虛無假設 $H_0$ 通常代表「無差異」，而對立假設 $H_1$ 是研究者希望收集證據支持的假設（有差異、有效應）。
   tags:
   - chap-m1-ch1
@@ -457,10 +457,10 @@ questions:
   type: multiple_choice
   options:
   - $AA^{-1} = A$
-  - $AA^{-1} = I$ (單位矩陣 Identity Matrix)
-  - $AA^{-1} = 0$ (零矩陣 Zero Matrix)
   - $A^{-1} = A^T$ (正交矩陣 Orthogonal Matrix)
-  correct_index: 1
+  - $AA^{-1} = 0$ (零矩陣 Zero Matrix)
+  - $AA^{-1} = I$ (單位矩陣 Identity Matrix)
+  correct_index: 3
   explanation: 矩陣與其逆矩陣相乘等於單位矩陣 $I$。
   tags:
   - chap-m1-ch1
@@ -472,11 +472,11 @@ questions:
   text: 隨機梯度下降 (SGD) 中的「隨機」指的是？
   type: multiple_choice
   options:
+  - 隨機選擇損失函數 (Random Loss Function)
+  - 隨機調整學習率 (Random Learning Rate)
   - 隨機初始化模型的權重 (Random Initialization)
   - 每次更新只隨機選取一個（或一批）樣本來計算梯度 (Random Sample Selection)
-  - 隨機調整學習率 (Random Learning Rate)
-  - 隨機選擇損失函數 (Random Loss Function)
-  correct_index: 1
+  correct_index: 3
   explanation: SGD 不使用全體數據計算梯度，而是隨機抽取樣本，這引入了隨機性但加快了計算。
   tags:
   - chap-m1-ch1
@@ -488,11 +488,11 @@ questions:
   text: 伯努利試驗 (Bernoulli Trial) 的特點是？
   type: multiple_choice
   options:
+  - 每次試驗結果互相影響 (Dependent Trials)
   - 有無限多種可能的結果 (Infinite Outcomes)
   - 只有兩種可能的結果（成功/失敗）(Binary Outcome)
   - 結果是連續的數值 (Continuous Value)
-  - 每次試驗結果互相影響 (Dependent Trials)
-  correct_index: 1
+  correct_index: 2
   explanation: 伯努利試驗是最簡單的隨機試驗，只有兩種互斥結果，如投硬幣。
   tags:
   - chap-m1-ch1
@@ -504,11 +504,11 @@ questions:
   text: 兩個向量線性相依 (Linearly Dependent) 表示？
   type: multiple_choice
   options:
+  - 它們的內積為 0 (Dot Product is Zero)
   - 它們互相垂直 (Orthogonal)
   - 它們長度相等 (Equal Length)
   - 其中一個向量可以表示為另一個向量的純量倍數 (Scalar Multiple)
-  - 它們的內積為 0 (Dot Product is Zero)
-  correct_index: 2
+  correct_index: 3
   explanation: 線性相依意味著向量之間存在冗餘，一個向量可以由其他向量線性組合而成（在二維中即平行）。
   tags:
   - chap-m1-ch1
@@ -521,10 +521,10 @@ questions:
   type: multiple_choice
   options:
   - 梯度不為 0 (Gradient is non-zero)
-  - 梯度為 0，但不是極大值也不是極小值 (Gradient is zero, but not extremum)
-  - 是全域最小值 (Global Minimum)
   - 是全域最大值 (Global Maximum)
-  correct_index: 1
+  - 是全域最小值 (Global Minimum)
+  - 梯度為 0，但不是極大值也不是極小值 (Gradient is zero, but not extremum)
+  correct_index: 3
   explanation: 鞍點處的梯度為 0，但在某些方向上是極小值，在另一些方向上是極大值（形狀像馬鞍），會阻礙梯度下降。
   tags:
   - chap-m1-ch1
@@ -537,9 +537,9 @@ questions:
   type: multiple_choice
   options:
   - 參數是否大於某個特定值 (Greater than)
-  - 參數是否小於某個特定值 (Less than)
-  - 參數是否不等於某個值（差異可能在任何方向）(Not equal to)
   - 樣本數是否足夠大 (Sample Size Sufficiency)
+  - 參數是否不等於某個值（差異可能在任何方向）(Not equal to)
+  - 參數是否小於某個特定值 (Less than)
   correct_index: 2
   explanation: 雙尾檢定關注的是「有無差異」，而不論差異的方向（大於或小於）。
   tags:
@@ -552,11 +552,11 @@ questions:
   text: 張量 (Tensor) 是什麼的推廣？
   type: multiple_choice
   options:
-  - 僅限於二維矩陣 (Matrix Only)
   - 純量、向量和矩陣到更高維度的推廣 (Generalization to Higher Dimensions)
+  - 僅限於二維矩陣 (Matrix Only)
   - 僅限於一維向量 (Vector Only)
   - 複數系統 (Complex Numbers)
-  correct_index: 1
+  correct_index: 0
   explanation: 張量是多維陣列的通稱。0 階張量是純量，1 階是向量，2 階是矩陣，3 階以上稱為高階張量。
   tags:
   - chap-m1-ch1
@@ -568,11 +568,11 @@ questions:
   text: 在深度學習中，Hessian 矩陣包含函數的？
   type: multiple_choice
   options:
+  - 函數的積分值 (Integral Values)
   - 函數的一階導數 (First Derivatives)
   - 函數的所有二階偏導數 (Second Partial Derivatives)
-  - 函數的積分值 (Integral Values)
   - 函數的預測值 (Predicted Values)
-  correct_index: 1
+  correct_index: 2
   explanation: Hessian 矩陣由多變數函數的所有二階偏導數組成，描述了函數的曲率。
   tags:
   - chap-m1-ch1
@@ -585,10 +585,10 @@ questions:
   type: multiple_choice
   options:
   - A 或 B 發生的機率 (Union Probability)
-  - A 和 B 同時發生的機率 (Intersection Probability)
-  - A 發生且 B 不發生的機率 (Difference Probability)
   - A 發生的機率 (Marginal Probability)
-  correct_index: 1
+  - A 發生且 B 不發生的機率 (Difference Probability)
+  - A 和 B 同時發生的機率 (Intersection Probability)
+  correct_index: 3
   explanation: 聯合機率描述兩個事件同時發生的可能性。
   tags:
   - chap-m1-ch1
@@ -600,11 +600,11 @@ questions:
   text: 矩陣的跡 (Trace) 是指？
   type: multiple_choice
   options:
+  - 矩陣最後一行元素的總和 (Sum of Last Column)
+  - 矩陣第一列元素的總和 (Sum of First Row)
   - 矩陣所有元素的乘積 (Product of Elements)
   - 矩陣主對角線元素的總和 (Sum of Diagonal Elements)
-  - 矩陣第一列元素的總和 (Sum of First Row)
-  - 矩陣最後一行元素的總和 (Sum of Last Column)
-  correct_index: 1
+  correct_index: 3
   explanation: Trace 是方陣主對角線上所有元素的和，具有基底變換不變性等重要性質。
   tags:
   - chap-m1-ch1
@@ -617,9 +617,9 @@ questions:
   type: multiple_choice
   options:
   - 樣本數 (Sample Size)
-  - 變數的測量單位 (Unit of Measurement)
   - 顯著水準 (Significance Level)
   - 母體的大小 (Population Size)
+  - 變數的測量單位 (Unit of Measurement)
   correct_index: 0
   explanation: 自由度通常取決於樣本數（如 $n-1$），影響 t 分佈或卡方分佈的形狀。
   tags:
@@ -632,10 +632,10 @@ questions:
   text: 泰勒展開式 (Taylor Series) 的主要用途是？
   type: multiple_choice
   options:
-  - 計算矩陣的逆 (Matrix Inversion)
-  - 用多項式近似複雜函數 (Polynomial Approximation)
-  - 解決線性方程組 (Solving Linear Systems)
   - 進行數據分類 (Data Classification)
+  - 用多項式近似複雜函數 (Polynomial Approximation)
+  - 計算矩陣的逆 (Matrix Inversion)
+  - 解決線性方程組 (Solving Linear Systems)
   correct_index: 1
   explanation: 泰勒展開式利用函數在某點的導數值，將複雜函數表示為無窮級數（多項式），便於分析和近似計算。
   tags:
@@ -666,10 +666,10 @@ questions:
   text: 情境：在訓練神經網路時，你發現損失函數 (Loss) 在訓練集上持續下降，但在驗證集 (Validation Set) 上卻開始上升。這代表發生了什麼現象？應採取什麼數學上的策略來解決？
   type: multiple_choice
   options:
-  - 欠擬合 (Underfitting)；應增加模型複雜度或訓練時間
-  - 過擬合 (Overfitting)；應使用正則化 (Regularization) 或 Dropout
   - 梯度消失 (Gradient Vanishing)；應更換活化函數
+  - 過擬合 (Overfitting)；應使用正則化 (Regularization) 或 Dropout
   - 學習率過大 (High Learning Rate)；應降低學習率
+  - 欠擬合 (Underfitting)；應增加模型複雜度或訓練時間
   correct_index: 1
   explanation: 訓練集表現好但驗證集表現變差是典型的過擬合現象。數學上，這意味著模型擬合了訓練數據中的雜訊。解決方案包括在損失函數中加入正則化項（限制權重大小）或使用
     Dropout 等技術。
@@ -684,11 +684,11 @@ questions:
     0.05，你應如何解讀並建議？
   type: multiple_choice
   options:
-  - p-value < 0.05，差異顯著，建議立即採用 B 版網頁
   - p-value < 0.05，差異不顯著，建議維持 A 版網頁
   - 雖然統計顯著，但 0.2% 的提升可能不具商業實質意義 (Practical Significance)
   - 數據不足，無法判斷，建議延長測試時間
-  correct_index: 2
+  - p-value < 0.05，差異顯著，建議立即採用 B 版網頁
+  correct_index: 1
   explanation: 雖然 p < 0.05 達到統計顯著性，但在商業決策中，還需考慮「實質顯著性」。0.2% 的微幅提升是否值得投入巨大的改版成本？這需要結合商業邏輯（如預期營收增加
     vs 開發成本）進行綜合判斷，而非僅看 p-value。
   tags:
@@ -701,11 +701,11 @@ questions:
   text: 情境：在使用梯度下降法訓練模型時，若損失函數的曲面呈現狹長的峽谷狀（在一個方向坡度陡，另一個方向坡度緩），標準 SGD 容易發生什麼問題？應如何改善？
   type: multiple_choice
   options:
-  - 收斂過快；應減少學習率 (Decrease Learning Rate)
   - 在峽谷壁間來回震盪，收斂緩慢；應使用動量 (Momentum) 或自適應學習率優化器
-  - 直接發散；應增加批次大小 (Increase Batch Size)
+  - 收斂過快；應減少學習率 (Decrease Learning Rate)
   - 陷入局部最小值；應使用隨機初始化 (Random Initialization)
-  correct_index: 1
+  - 直接發散；應增加批次大小 (Increase Batch Size)
+  correct_index: 0
   explanation: 在狹長峽谷狀的損失曲面上，SGD 容易在陡峭方向上大幅震盪，而在平緩方向上移動緩慢。動量法 (Momentum) 能累積過去的梯度方向，加速通過平緩區並抑制震盪；Adam
     等自適應方法則能針對不同參數調整學習率，有效解決此問題。
   tags:
@@ -719,11 +719,11 @@ questions:
     95%，這代表什麼幾何意義？
   type: multiple_choice
   options:
+  - 剩下的 998 個維度完全沒有用，可以刪除
   - 數據在二維空間中是線性不可分的 (Linearly Inseparable)
   - 數據 95% 的變異量 (Variance) 集中在由這兩個主成分構成的二維平面上
   - 數據有 95% 是雜訊 (Noise)
-  - 剩下的 998 個維度完全沒有用，可以刪除
-  correct_index: 1
+  correct_index: 2
   explanation: PCA 的特徵值代表了對應主成分方向上的變異量。若前兩個主成分解釋了 95% 的總變異，意味著數據的主要結構（資訊）幾乎都保留在這 2D
     平面上，這為高維數據的視覺化和簡化提供了強有力的數學依據。
   tags:
@@ -735,10 +735,10 @@ questions:
   text: 情境：在分析公司員工薪資時，發現有少數幾位高階主管的薪資極高，導致平均薪資被拉高。若想了解一般員工的薪資水準，應參考哪個統計量？
   type: multiple_choice
   options:
-  - 平均數 (Mean)，容易受極端值影響
+  - 標準差 (Standard Deviation)，衡量薪資的波動幅度
   - 中位數 (Median)，將薪資排序後取中間值，不受極端高薪影響
   - 變異數 (Variance)，衡量薪資的離散程度
-  - 標準差 (Standard Deviation)，衡量薪資的波動幅度
+  - 平均數 (Mean)，容易受極端值影響
   correct_index: 1
   explanation: 中位數不受極端值 (Outliers) 影響，更能代表偏態分佈數據的中心趨勢。
   tags:
@@ -752,11 +752,11 @@ questions:
     到 1100 小時之間？
   type: multiple_choice
   options:
-  - 約 68% 的燈泡
   - 約 95% 的燈泡
   - 約 99.7% 的燈泡
+  - 約 68% 的燈泡
   - 約 50% 的燈泡
-  correct_index: 1
+  correct_index: 0
   explanation: 900 到 1100 小時涵蓋了平均值正負 2 個標準差 (1000 ± 2*50) 的範圍，約佔 95%。
   tags:
   - chap-m1-ch1
@@ -768,10 +768,10 @@ questions:
   text: 情境：在 A/B 測試中，若計算出的 p-value 為 0.03，且顯著水準 (alpha) 設為 0.05，決策應為？
   type: multiple_choice
   options:
-  - 接受虛無假設 (H0)，認為無顯著差異
-  - 拒絕虛無假設 (H0)，認為結果具統計顯著性 (Statistically Significant)
-  - 無法判斷，需要更多數據
   - 重新測試，因為 p-value 太接近 0.05
+  - 拒絕虛無假設 (H0)，認為結果具統計顯著性 (Statistically Significant)
+  - 接受虛無假設 (H0)，認為無顯著差異
+  - 無法判斷，需要更多數據
   correct_index: 1
   explanation: 當 p-value < alpha 時，表示在 H0 為真的前提下觀察到此結果的機率極低，因此拒絕 H0。
   tags:
@@ -784,11 +784,11 @@ questions:
   text: 情境：在推薦系統中，若想計算兩個使用者對電影喜好的相似程度，常計算其特徵向量的？
   type: multiple_choice
   options:
-  - 外積 (Outer Product)
   - 內積 (Dot Product) 或 餘弦相似度 (Cosine Similarity)
+  - 外積 (Outer Product)
   - 行列式值 (Determinant)
   - 特徵值 (Eigenvalue)
-  correct_index: 1
+  correct_index: 0
   explanation: 內積與餘弦相似度能衡量兩個向量在方向上的一致性，即使用者的喜好是否相近。
   tags:
   - chap-m1-ch1
@@ -800,11 +800,11 @@ questions:
   text: 情境：梯度下降法中，若「學習率 (Learning Rate)」設得太大，可能會發生什麼情況？
   type: multiple_choice
   options:
-  - 收斂速度變慢
   - 在最小值附近震盪甚至發散，無法收斂
   - 計算精度提高
+  - 收斂速度變慢
   - 模型變複雜
-  correct_index: 1
+  correct_index: 0
   explanation: 過大的步長會導致更新幅度過猛，直接跨過最低點，甚至越跑越遠。
   tags:
   - chap-m1-ch1
@@ -816,11 +816,11 @@ questions:
   text: 情境：伯努利分佈 (Bernoulli Distribution) 適用於描述哪種情況？
   type: multiple_choice
   options:
-  - 連續變數 (Continuous Variables)
   - 只有兩種可能結果的單次試驗 (Single Trial with Binary Outcome)，如投硬幣
+  - 連續變數 (Continuous Variables)
   - 計數資料 (Count Data)
   - 多類別分類 (Multi-class Classification)
-  correct_index: 1
+  correct_index: 0
   explanation: 伯努利分佈描述單次二元試驗的機率分佈。
   tags:
   - chap-m1-ch1
@@ -832,9 +832,9 @@ questions:
   text: 情境：若兩個向量的內積為 0，代表它們在幾何上的關係是？
   type: multiple_choice
   options:
-  - 兩向量平行 (Parallel)
-  - 兩向量正交或垂直 (Orthogonal / Perpendicular)
   - 兩向量相等 (Equal)
+  - 兩向量正交或垂直 (Orthogonal / Perpendicular)
+  - 兩向量平行 (Parallel)
   - 兩向量方向相反 (Opposite)
   correct_index: 1
   explanation: 內積為 0 意味著兩個向量之間沒有投影分量，即互相垂直。
@@ -848,11 +848,11 @@ questions:
   text: 情境：函數在某一點的「梯度 (Gradient)」指向？
   type: multiple_choice
   options:
-  - 函數值下降最快的方向 (Direction of Steepest Descent)
   - 函數值增長最快的方向 (Direction of Steepest Ascent)
   - 切線方向 (Tangent Direction)
+  - 函數值下降最快的方向 (Direction of Steepest Descent)
   - 水平方向 (Horizontal Direction)
-  correct_index: 1
+  correct_index: 0
   explanation: 梯度向量指向函數值增加速率最大的方向。
   tags:
   - chap-m1-ch1
@@ -864,11 +864,11 @@ questions:
   text: 情境：泊松分佈 (Poisson Distribution) 最適合用來預測？
   type: multiple_choice
   options:
-  - 身高體重 (Height and Weight)
-  - 某段時間內客服中心接到的電話數量 (Number of Calls in a Time Interval)
-  - 考試成績 (Exam Scores)
   - 股票價格 (Stock Prices)
-  correct_index: 1
+  - 考試成績 (Exam Scores)
+  - 某段時間內客服中心接到的電話數量 (Number of Calls in a Time Interval)
+  - 身高體重 (Height and Weight)
+  correct_index: 2
   explanation: 泊松分佈適用於描述固定時間或空間內稀有事件發生的次數。
   tags:
   - chap-m1-ch1
@@ -881,10 +881,10 @@ questions:
   type: multiple_choice
   options:
   - $Av = v$
-  - $Av = \lambda v$，即矩陣作用於特徵向量等於縮放該向量
   - $Av = 0$
+  - $Av = \lambda v$，即矩陣作用於特徵向量等於縮放該向量
   - $A = \lambda v$
-  correct_index: 1
+  correct_index: 2
   explanation: 矩陣作用在特徵向量上，僅改變其長度（縮放 $\lambda$ 倍），不改變方向。
   tags:
   - chap-m1-ch1
@@ -897,10 +897,10 @@ questions:
   type: multiple_choice
   options:
   - 數據的中心位置 (Central Tendency)
-  - 數據的離散程度或分散狀況 (Dispersion / Spread)
   - 數據的最大值 (Maximum Value)
+  - 數據的離散程度或分散狀況 (Dispersion / Spread)
   - 數據的最小值 (Minimum Value)
-  correct_index: 1
+  correct_index: 2
   explanation: 變異數計算數據點與平均值的距離平方平均，反映數據的波動大小。
   tags:
   - chap-m1-ch1
@@ -912,11 +912,11 @@ questions:
   text: 情境：導數 (Derivative) 在幾何上的意義是？
   type: multiple_choice
   options:
-  - 曲線下的面積 (Area Under Curve)
-  - 曲線在該點的切線斜率 (Slope of Tangent)，代表瞬時變化率
   - 函數的最大值 (Maximum Value)
+  - 曲線下的面積 (Area Under Curve)
   - 函數的最小值 (Minimum Value)
-  correct_index: 1
+  - 曲線在該點的切線斜率 (Slope of Tangent)，代表瞬時變化率
+  correct_index: 3
   explanation: 導數描述函數在某一點的瞬時變化率，幾何上表現為切線斜率。
   tags:
   - chap-m1-ch1
@@ -929,10 +929,10 @@ questions:
   type: multiple_choice
   options:
   - 均勻分佈 (Uniform Distribution)
+  - 指數分佈 (Exponential Distribution)
   - 常態分佈 (Normal Distribution)
   - 泊松分佈 (Poisson Distribution)
-  - 指數分佈 (Exponential Distribution)
-  correct_index: 1
+  correct_index: 2
   explanation: CLT 是統計推論的基礎，解釋了為何常態分佈在自然界中如此常見。
   tags:
   - chap-m1-ch1
@@ -945,9 +945,9 @@ questions:
   type: multiple_choice
   options:
   - $A$ 的第 $i$ 列與 $B$ 的第 $j$ 行的內積 (Dot Product of Row i of A and Column j of B)
+  - $A_{ij} + B_{ij}$ (Element-wise Addition)
   - $A$ 的第 $i$ 行與 $B$ 的第 $j$ 列的內積
   - $A_{ij} * B_{ij}$ (Element-wise Multiplication)
-  - $A_{ij} + B_{ij}$ (Element-wise Addition)
   correct_index: 0
   explanation: 矩陣乘法的定義是左矩陣的列向量與右矩陣的行向量做內積。
   tags:
@@ -961,10 +961,10 @@ questions:
   type: multiple_choice
   options:
   - 活化函數 (Activation Function)
-  - 損失函數 (Loss Function)，衡量預測值與真實值的誤差
   - 輸入函數 (Input Function)
+  - 損失函數 (Loss Function)，衡量預測值與真實值的誤差
   - 輸出函數 (Output Function)
-  correct_index: 1
+  correct_index: 2
   explanation: 損失函數衡量模型預測與真實值的誤差，訓練目標就是讓這個誤差越小越好。
   tags:
   - chap-m1-ch1
@@ -978,8 +978,8 @@ questions:
   options:
   - $p$
   - $np$，即試驗次數乘以成功機率
-  - $np(1-p)$，這是變異數
   - $n$
+  - $np(1-p)$，這是變異數
   correct_index: 1
   explanation: "二項式分佈是 $n$ 次獨立伯努利試驗的總和，故期望值為 $n \times p$。"
   tags:
@@ -992,11 +992,11 @@ questions:
   text: 情境：Type I Error (型一錯誤) 是指？
   type: multiple_choice
   options:
+  - 數據收集過程中的錯誤 (Data Collection Error)
+  - 計算過程中的數值錯誤 (Calculation Error)
   - H0 為真卻拒絕 H0 (False Positive / Type I Error)
   - H0 為假卻接受 H0 (False Negative / Type II Error)
-  - 計算過程中的數值錯誤 (Calculation Error)
-  - 數據收集過程中的錯誤 (Data Collection Error)
-  correct_index: 0
+  correct_index: 2
   explanation: "顯著水準 $\alpha$ 就是在控制發生 Type I Error 的機率上限。"
   tags:
   - chap-m1-ch1
@@ -1008,11 +1008,11 @@ questions:
   text: 情境：PCA (主成分分析) 利用矩陣的什麼特性來找到數據變異最大的方向？
   type: multiple_choice
   options:
+  - 轉置矩陣 (Transpose Matrix)
   - 逆矩陣 (Inverse Matrix)
   - 特徵向量 (Eigenvectors)，代表數據分佈的主軸方向
-  - 轉置矩陣 (Transpose Matrix)
   - 對角矩陣 (Diagonal Matrix)
-  correct_index: 1
+  correct_index: 2
   explanation: 共變異數矩陣的特徵向量指出了數據分佈的主軸方向。
   tags:
   - chap-m1-ch1
@@ -1024,11 +1024,11 @@ questions:
   text: 情境：偏導數 (Partial Derivative) 是指？
   type: multiple_choice
   options:
-  - 對所有變數同時求導 (Total Derivative)
   - 多變數函數對其中一個變數求導，將其他變數視為常數 (Partial Derivative)
-  - 積分的相反運算 (Anti-derivative)
+  - 對所有變數同時求導 (Total Derivative)
   - 無法計算 (Undefined)
-  correct_index: 1
+  - 積分的相反運算 (Anti-derivative)
+  correct_index: 0
   explanation: 在多變數函數中，偏導數分析單一變數變化對函數值的影響。
   tags:
   - chap-m1-ch1
@@ -1041,10 +1041,10 @@ questions:
   type: multiple_choice
   options:
   - 標準差 = 變異數 (Standard Deviation = Variance)
-  - 標準差 = 變異數的平方 (Standard Deviation = Variance Squared)
   - 標準差 = 變異數的平方根 (Standard Deviation = Square Root of Variance)
   - 兩者沒有數學關係 (No Relationship)
-  correct_index: 2
+  - 標準差 = 變異數的平方 (Standard Deviation = Variance Squared)
+  correct_index: 1
   explanation: 標準差將變異數開根號，使其單位與原始數據一致，較易解讀。
   tags:
   - chap-m1-ch1

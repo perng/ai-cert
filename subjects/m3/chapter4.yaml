@@ -5,10 +5,10 @@ questions:
   text: 在視覺化設計中，完形心理學 (Gestalt Principles) 的「鄰近性 (Proximity)」原則是指？
   type: multiple_choice
   options:
-  - 顏色相似的物體會被大腦自動歸類為同一組
+  - 體積最大的物體會被視為最重要的元素
   - 距離相近的物體會被大腦自動歸類為同一組 (Perceived as a group)
   - 形狀相同的物體會被大腦自動歸類為同一組
-  - 體積最大的物體會被視為最重要的元素
+  - 顏色相似的物體會被大腦自動歸類為同一組
   correct_index: 1
   explanation: 利用鄰近性，我們可以透過調整元素間的空白，不需加框線就能讓讀者感知到哪些圖表或數據是相關的。
   tags:
@@ -22,10 +22,10 @@ questions:
   type: multiple_choice
   options:
   - 數據中的最大值 (Max) 與最小值 (Min)
+  - 數據的中位數 (Median) 與眾數 (Mode)
   - 第一四分位數 (Q1, 25th Percentile) 與第三四分位數 (Q3, 75th Percentile)
   - 數據的平均值 (Mean) 與標準差 (Standard Deviation)
-  - 數據的中位數 (Median) 與眾數 (Mode)
-  correct_index: 1
+  correct_index: 2
   explanation: 箱子包含了數據中間 50% 的部分 (IQR)，箱子的高度反映了數據的分散程度。
   tags:
   - chap-m3-ch4
@@ -37,11 +37,11 @@ questions:
   text: 核密度估計圖 (KDE) 相比於直方圖 (Histogram) 的優點是？
   type: multiple_choice
   options:
+  - 特別適合用於展示離散變數 (Discrete Variables)
+  - 能夠顯示更多的原始數據點
   - 繪製過程更為簡單快速
   - 提供平滑的機率密度曲線 (Probability Density Curve)，能更直觀地觀察分佈形狀 (如雙峰)
-  - 能夠顯示更多的原始數據點
-  - 特別適合用於展示離散變數 (Discrete Variables)
-  correct_index: 1
+  correct_index: 3
   explanation: 直方圖受分箱 (Bin) 數量影響大，KDE 則提供連續的曲線，更容易看出數據潛在的分佈模式。
   tags:
   - chap-m3-ch4
@@ -53,11 +53,11 @@ questions:
   text: 熱力圖 (Heatmap) 最適合用於展示什麼類型的數據？
   type: multiple_choice
   options:
-  - 單一變數隨時間的變化趨勢
-  - 二維矩陣數據 (如相關係數矩陣、時間-類別數據) 的模式或聚類
   - 地理位置的分佈情況
   - 非結構化的文字內容
-  correct_index: 1
+  - 二維矩陣數據 (如相關係數矩陣、時間-類別數據) 的模式或聚類
+  - 單一變數隨時間的變化趨勢
+  correct_index: 2
   explanation: 透過顏色的深淺，熱力圖能讓矩陣中的高值（熱區）與低值（冷區）一目了然。
   tags:
   - chap-m3-ch4
@@ -71,8 +71,8 @@ questions:
   options:
   - 順序色 (Sequential)，如淺藍到深藍
   - 發散色 (Diverging)，如紅-白-藍，用於強調中間值兩側的極端值
-  - 分類色 (Categorical)，如紅、綠、藍，用於區分不同類別
   - 單色 (Monochrome)，僅使用單一顏色
+  - 分類色 (Categorical)，如紅、綠、藍，用於區分不同類別
   correct_index: 1
   explanation: 發散色通常由兩種對比色組成（如紅-藍），中間為白色或中性色，非常適合強調兩極化的數值。
   tags:
@@ -85,9 +85,9 @@ questions:
   text: Plotly 相比於 Matplotlib 的主要優勢是？
   type: multiple_choice
   options:
-  - 語法更為簡單直觀
-  - 支援高度的互動性 (Interactivity)，如縮放、懸停提示 (Hover)、平移
   - 運算速度比 Matplotlib 更快
+  - 支援高度的互動性 (Interactivity)，如縮放、懸停提示 (Hover)、平移
+  - 語法更為簡單直觀
   - 專注於支援 3D 繪圖功能
   correct_index: 1
   explanation: Plotly 生成的是網頁元素 (HTML/JS)，使用者可以直接在圖表上操作，非常適合網頁展示與儀表板。
@@ -101,11 +101,11 @@ questions:
   text: 根據 F 型瀏覽模式 (F-Pattern)，儀表板中最重要的 KPI 應放置在？
   type: multiple_choice
   options:
-  - 畫面的右下角區域
   - 畫面的左上角或頂部區域 (Top-Left Corner)
-  - 畫面的正中間區域
   - 隨機分佈在畫面各處
-  correct_index: 1
+  - 畫面的右下角區域
+  - 畫面的正中間區域
+  correct_index: 0
   explanation: 這是使用者的視覺起點，放置核心指標能確保它們第一時間被看到。
   tags:
   - chap-m3-ch4
@@ -117,11 +117,11 @@ questions:
   text: BAN (Big Angry Number) 在儀表板設計中指的是？
   type: multiple_choice
   options:
-  - 一個生氣的表情符號
-  - 以大字體、醒目顏色顯示的關鍵績效指標 (KPI) 數字，強調數據本身
   - 系統顯示的錯誤訊息
+  - 一個生氣的表情符號
   - 報告的頁碼編號
-  correct_index: 1
+  - 以大字體、醒目顏色顯示的關鍵績效指標 (KPI) 數字，強調數據本身
+  correct_index: 3
   explanation: BAN 強調「數字本身」就是視覺主體，讓決策者一眼就能掌握當前的核心狀況（如總營收）。
   tags:
   - chap-m3-ch4
@@ -133,10 +133,10 @@ questions:
   text: 「鑽取 (Drill-down)」功能允許使用者？
   type: multiple_choice
   options:
-  - 刪除不需要的數據
-  - 從總覽層級深入查看更細節的數據 (如從「年」點擊進入「月」)
   - 修改原始數據的數值
+  - 從總覽層級深入查看更細節的數據 (如從「年」點擊進入「月」)
   - 將圖表匯出為圖片格式
+  - 刪除不需要的數據
   correct_index: 1
   explanation: 鑽取是互動式儀表板的核心，滿足了「先看全貌，再查細節」的分析需求。
   tags:
@@ -149,11 +149,11 @@ questions:
   text: 在製造業中，儀表圖 (Gauge) 通常用於顯示？
   type: multiple_choice
   options:
-  - 長期的銷售趨勢分析
   - 設備健康度或產能達成率 (類似汽車儀表板)，顯示當前狀態是否正常
   - 員工的出勤記錄統計
   - 倉庫的庫存總量
-  correct_index: 1
+  - 長期的銷售趨勢分析
+  correct_index: 0
   explanation: 儀表圖直觀地顯示當前數值是否在安全範圍（綠區）或危險範圍（紅區）。
   tags:
   - chap-m3-ch4
@@ -165,10 +165,10 @@ questions:
   text: Tableau 的主要優勢在於？
   type: multiple_choice
   options:
-  - 完全免費且開源的軟體
+  - 只能處理 Excel 檔案格式
   - 強大的拖拉式介面 (Drag-and-Drop) 與跨資料源整合能力，適合快速建立互動式儀表板
   - 專注於透過編寫程式碼來繪圖
-  - 只能處理 Excel 檔案格式
+  - 完全免費且開源的軟體
   correct_index: 1
   explanation: Tableau 降低了視覺化門檻，讓非技術人員也能透過拖拉 (Drag-and-Drop) 輕鬆探索數據。
   tags:
@@ -181,11 +181,11 @@ questions:
   text: 相關係數矩陣 (Correlation Matrix) 通常搭配哪種圖表呈現最直觀？
   type: multiple_choice
   options:
-  - 長條圖 (Bar Chart)
   - 熱力圖 (Heatmap)，利用顏色深淺表示相關係數的大小
   - 圓餅圖 (Pie Chart)
   - 散佈圖 (Scatter Plot)
-  correct_index: 1
+  - 長條圖 (Bar Chart)
+  correct_index: 0
   explanation: 熱力圖用顏色深淺代表相關係數大小（如深紅代表強正相關），能快速識別變數間的關係模式。
   tags:
   - chap-m3-ch4
@@ -197,10 +197,10 @@ questions:
   text: Grafana 最常搭配哪個資料庫使用？
   type: multiple_choice
   options:
-  - MySQL 關聯式資料庫
-  - Prometheus 或 InfluxDB 等時序資料庫 (Time Series Database)
   - MongoDB 文件資料庫
+  - Prometheus 或 InfluxDB 等時序資料庫 (Time Series Database)
   - Redis 記憶體快取資料庫
+  - MySQL 關聯式資料庫
   correct_index: 1
   explanation: Grafana 專精於時序監控，Prometheus 是其在雲原生監控領域的最佳拍檔。
   tags:
@@ -213,11 +213,11 @@ questions:
   text: 為了讓 KPI 數字更有意義，通常需要提供？
   type: multiple_choice
   options:
-  - 更多樣化的顏色裝飾
   - 情境 (Context)，如與目標比較或與歷史同期比較 (YoY, MoM)
   - 更大的字體顯示
   - 背景音樂效果
-  correct_index: 1
+  - 更多樣化的顏色裝飾
+  correct_index: 0
   explanation: 孤立的數字（如 "100萬"）沒有意義。知道 "比去年成長 20%" 或 "達成率 50%" 才能判斷好壞。
   tags:
   - chap-m3-ch4
@@ -229,11 +229,11 @@ questions:
   text: 散佈圖 (Scatter Plot) 主要用於展示？
   type: multiple_choice
   options:
-  - 單一變數的數據分佈
-  - 兩個連續變數之間的關係 (如相關性、聚類)
   - 隨時間變化的趨勢
+  - 單一變數的數據分佈
   - 各部分佔整體的組成比例
-  correct_index: 1
+  - 兩個連續變數之間的關係 (如相關性、聚類)
+  correct_index: 3
   explanation: 散佈圖是觀察變數關聯性（如身高 vs 體重）最直接的工具。
   tags:
   - chap-m3-ch4
@@ -246,10 +246,10 @@ questions:
   type: multiple_choice
   options:
   - D3.js (JavaScript Library)
-  - Matplotlib (Python Plotting Library)
-  - Plotly (Interactive Graphing Library)
   - Bokeh (Interactive Visualization Library)
-  correct_index: 1
+  - Plotly (Interactive Graphing Library)
+  - Matplotlib (Python Plotting Library)
+  correct_index: 3
   explanation: Seaborn 封裝了 Matplotlib，提供了更美觀的預設樣式和更高級的統計繪圖 API。
   tags:
   - chap-m3-ch4
@@ -261,11 +261,11 @@ questions:
   text: 在金融詐欺偵測中，散佈圖常用於？
   type: multiple_choice
   options:
-  - 顯示總交易額的變化趨勢
-  - 識別離群點 (Outliers)，即潛在的異常交易行為
   - 顯示客戶的地理分佈
+  - 顯示總交易額的變化趨勢
   - 顯示股價的波動趨勢
-  correct_index: 1
+  - 識別離群點 (Outliers)，即潛在的異常交易行為
+  correct_index: 3
   explanation: 詐欺交易通常在金額或頻率上與正常交易顯著不同，在散佈圖上會表現為遠離群體的孤立點。
   tags:
   - chap-m3-ch4
@@ -277,9 +277,9 @@ questions:
   text: 「前注意屬性 (Preattentive Attributes)」是指？
   type: multiple_choice
   options:
-  - 需要經過仔細思考才能理解的屬性
-  - 人腦能在此意識下瞬間處理的視覺特徵 (如顏色、大小、位置)，可用於引導注意力
   - 文字內容的屬性
+  - 人腦能在此意識下瞬間處理的視覺特徵 (如顏色、大小、位置)，可用於引導注意力
+  - 需要經過仔細思考才能理解的屬性
   - 聲音訊號的屬性
   correct_index: 1
   explanation: 利用紅色標註異常值，讀者不需閱讀數值就能瞬間注意到，這就是前注意屬性的應用。
@@ -293,11 +293,11 @@ questions:
   text: 圓餅圖 (Pie Chart) 在視覺化中通常被建議？
   type: multiple_choice
   options:
-  - 在所有場合大量使用
   - 謹慎使用，因為人類對面積和角度的比較能力不如長度 (長條圖)
-  - 用於展示時間趨勢
+  - 在所有場合大量使用
   - 用於展示變數間的關係
-  correct_index: 1
+  - 用於展示時間趨勢
+  correct_index: 0
   explanation: 除非類別很少且差異明顯，否則長條圖通常比圓餅圖更能精確傳達比例差異。
   tags:
   - chap-m3-ch4
@@ -310,10 +310,10 @@ questions:
   type: multiple_choice
   options:
   - 3D 模型數據
-  - 地理空間數據 (Geospatial Data)，如 Shapefile 或 GeoJSON
   - 時間序列數據
+  - 地理空間數據 (Geospatial Data)，如 Shapefile 或 GeoJSON
   - 純文字數據
-  correct_index: 1
+  correct_index: 2
   explanation: GeoPandas 擴展了 Pandas，增加了對幾何圖形 (Geometry) 的支援，是 Python 空間分析的標準工具。
   tags:
   - chap-m3-ch4
@@ -325,11 +325,11 @@ questions:
   text: 簡潔原則 (Simplicity) 建議去除圖表中的 "Chart Junk"，例如？
   type: multiple_choice
   options:
+  - 不必要的 3D 效果、過多的網格線或裝飾性圖片
   - 圖表的標題 (Title)
   - 座標軸的標籤 (Axis Labels)
-  - 不必要的 3D 效果、過多的網格線或裝飾性圖片
   - 關鍵的數據點 (Data Points)
-  correct_index: 2
+  correct_index: 0
   explanation: 任何不增加資訊量但增加認知負擔的元素都應移除，讓數據本身說話。
   tags:
   - chap-m3-ch4
@@ -341,10 +341,10 @@ questions:
   text: 智慧城市中，地理熱力圖常用於展示？
   type: multiple_choice
   options:
-  - 建築物的高度分佈
+  - 人口年齡結構的分佈
   - 交通擁堵或空氣污染的空間分佈密度
   - 地下管線的走向
-  - 人口年齡結構的分佈
+  - 建築物的高度分佈
   correct_index: 1
   explanation: 熱力圖能直觀呈現「哪裡最塞」或「哪裡最髒」，輔助城市治理決策。
   tags:
@@ -357,11 +357,11 @@ questions:
   text: 順序色 (Sequential Colors) 適合用於？
   type: multiple_choice
   options:
-  - 區分不同類別 (如蘋果、香蕉)
-  - 表示數值的大小或密度 (如人口密度、銷售額)
   - 表示正負偏差 (如盈虧)
   - 用於隨機裝飾圖表
-  correct_index: 1
+  - 區分不同類別 (如蘋果、香蕉)
+  - 表示數值的大小或密度 (如人口密度、銷售額)
+  correct_index: 3
   explanation: 單一色相的深淺變化（如淺藍到深藍）自然地對應數值的小到大。
   tags:
   - chap-m3-ch4
@@ -373,11 +373,11 @@ questions:
   text: Kibana 是專為哪個資料庫設計的視覺化工具？
   type: multiple_choice
   options:
-  - MySQL 關聯式資料庫
   - Elasticsearch 搜尋引擎與資料庫
+  - MySQL 關聯式資料庫
   - MongoDB 文件資料庫
   - PostgreSQL 關聯式資料庫
-  correct_index: 1
+  correct_index: 0
   explanation: ELK Stack (Elasticsearch, Logstash, Kibana) 是日誌分析的黃金組合，Kibana 負責前端展示。
   tags:
   - chap-m3-ch4
@@ -389,11 +389,11 @@ questions:
   text: 懸停提示 (Tooltips) 的作用是？
   type: multiple_choice
   options:
-  - 隱藏敏感數據
-  - 當滑鼠移過數據點時，顯示精確的數值或額外資訊
   - 播放背景音效
   - 放大整個圖表區域
-  correct_index: 1
+  - 隱藏敏感數據
+  - 當滑鼠移過數據點時，顯示精確的數值或額外資訊
+  correct_index: 3
   explanation: Tooltips 解決了「圖表看趨勢，滑鼠看細節」的需求，保持介面整潔的同時提供詳細資訊。
   tags:
   - chap-m3-ch4
@@ -405,12 +405,12 @@ questions:
   text: 堆疊長條圖 (Stacked Bar Chart) 適合用於？
   type: multiple_choice
   options:
-  - 比較總量以及各組成的比例 (Part-to-Whole Comparison)
   - 觀察單一變數的數據分佈
   - 分析兩個變數之間的相關性
   - 監控即時的數據趨勢
+  - 比較總量以及各組成的比例 (Part-to-Whole Comparison)
 
-  correct_index: 0
+  correct_index: 3
   explanation: 例如展示各分店的總銷售額，同時在柱子內區分不同產品線的貢獻。
   tags:
   - chap-m3-ch4
@@ -422,11 +422,11 @@ questions:
   text: Power BI 最適合的應用環境是？
   type: multiple_choice
   options:
-  - Linux 伺服器環境
   - 深度整合 Microsoft 生態系 (Excel, Azure) 的企業環境
   - 純開源專案開發環境
   - Mac 用戶環境
-  correct_index: 1
+  - Linux 伺服器環境
+  correct_index: 0
   explanation: Power BI 與 Office 365 無縫整合，是許多使用 Windows 的企業首選 BI 工具。
   tags:
   - chap-m3-ch4
@@ -438,11 +438,11 @@ questions:
   text: 分類色 (Categorical Colors) 應具備什麼特性？
   type: multiple_choice
   options:
-  - 顏色要有明顯的深淺順序
-  - 顏色之間應有明顯區別，且不隱含順序關係 (Distinct and Unordered)
-  - 只能使用黑白兩色
   - 必須使用漸層色
-  correct_index: 1
+  - 顏色要有明顯的深淺順序
+  - 只能使用黑白兩色
+  - 顏色之間應有明顯區別，且不隱含順序關係 (Distinct and Unordered)
+  correct_index: 3
   explanation: 用於區分「男/女」或「北/中/南」等類別，顏色應容易辨識且地位平等。
   tags:
   - chap-m3-ch4
@@ -454,11 +454,11 @@ questions:
   text: 在零售業中，折線圖常用於分析？
   type: multiple_choice
   options:
-  - 產品庫存的總量
   - 銷售額隨時間的趨勢與週期性 (如週末效應)
-  - 顧客的性別比例分佈
   - 員工滿意度的調查結果
-  correct_index: 1
+  - 顧客的性別比例分佈
+  - 產品庫存的總量
+  correct_index: 0
   explanation: 時間序列分析是零售業預測需求、安排庫存的基礎。
   tags:
   - chap-m3-ch4
@@ -470,11 +470,11 @@ questions:
   text: Apache Superset 的特點是？
   type: multiple_choice
   options:
-  - 只能繪製簡單的靜態圖表
-  - 支援 SQL 查詢，適合處理大規模數據，且為開源軟體 (Open Source)
   - 收費昂貴的商業軟體
+  - 只能繪製簡單的靜態圖表
   - 不支援儀表板功能
-  correct_index: 1
+  - 支援 SQL 查詢，適合處理大規模數據，且為開源軟體 (Open Source)
+  correct_index: 3
   explanation: Superset 是 Airbnb 開源的企業級 BI 工具，對 SQL 支援極佳，適合數據工程師與分析師。
   tags:
   - chap-m3-ch4
@@ -486,11 +486,11 @@ questions:
   text: 「用數據說故事 (Storytelling with Data)」強調？
   type: multiple_choice
   options:
+  - 使用大量文字描述，不使用圖表
+  - 只展示原始數據，不提供任何解釋
   - 編造虛假的數據以吸引注意力
   - 結合情境 (Context)、視覺引導與行動建議，讓數據產生影響力
-  - 只展示原始數據，不提供任何解釋
-  - 使用大量文字描述，不使用圖表
-  correct_index: 1
+  correct_index: 3
   explanation: 好的分析報告不僅呈現 "What"（數據），更要解釋 "So What"（意義）和 "Now What"（行動）。
   tags:
   - chap-m3-ch4
@@ -502,10 +502,10 @@ questions:
   text: 箱型圖中的「中位數」是哪一條線？
   type: multiple_choice
   options:
-  - 箱子的頂部邊緣
   - 箱子的底部邊緣
-  - 箱子內部的橫線
   - 延伸線 (Whiskers) 的端點
+  - 箱子內部的橫線
+  - 箱子的頂部邊緣
   correct_index: 2
   explanation: 箱子內部的橫線代表數據的中位數 (Q2)，將數據分為上下各 50%。
   tags:
@@ -519,10 +519,10 @@ questions:
   type: multiple_choice
   options:
   - 靜態地圖圖片庫
-  - 客製化互動地圖平台，提供 API 供開發者使用
-  - 車用導航軟體
   - 衛星發射與製造公司
-  correct_index: 1
+  - 車用導航軟體
+  - 客製化互動地圖平台，提供 API 供開發者使用
+  correct_index: 3
   explanation: Mapbox 提供了高度可客製化的地圖底圖與強大的視覺化 API，廣泛用於 App 與網頁開發。
   tags:
   - chap-m3-ch4
@@ -534,11 +534,11 @@ questions:
   text: R 語言中的 Shiny 套件用於？
   type: multiple_choice
   options:
-  - 繪製靜態的統計圖表
-  - 建構互動式網頁應用程式 (Web Apps)
-  - 訓練機器學習模型
   - 進行數據清洗與預處理
-  correct_index: 1
+  - 繪製靜態的統計圖表
+  - 訓練機器學習模型
+  - 建構互動式網頁應用程式 (Web Apps)
+  correct_index: 3
   explanation: Shiny 讓 R 使用者無需學習 HTML/JS 就能將分析結果轉化為互動式網頁應用。
   tags:
   - chap-m3-ch4
@@ -550,11 +550,11 @@ questions:
   text: 完形心理學的「相似性 (Similarity)」原則是指？
   type: multiple_choice
   options:
-  - 顏色、形狀相似的物體會被大腦自動歸類為同一組
-  - 距離相近的物體會被大腦自動歸類為同一組
   - 連續的線條會被視為一組
+  - 距離相近的物體會被大腦自動歸類為同一組
+  - 顏色、形狀相似的物體會被大腦自動歸類為同一組
   - 封閉的圖形會被視為一組
-  correct_index: 0
+  correct_index: 2
   explanation: 利用顏色或形狀的一致性，可以幫助讀者快速識別出屬於同一類別的數據點（如散佈圖中的不同群聚）。
   tags:
   - chap-m3-ch4
@@ -566,11 +566,11 @@ questions:
   text: 面積圖 (Area Chart) 通常用於展示？
   type: multiple_choice
   options:
-  - 離散的類別數據
-  - 累積總量隨時間的變化趨勢 (Cumulative Trend)
   - 變數之間的相關性
+  - 離散的類別數據
   - 數據的頻率分佈
-  correct_index: 1
+  - 累積總量隨時間的變化趨勢 (Cumulative Trend)
+  correct_index: 3
   explanation: 面積圖強調「量」的累積感，適合展示如總營收、總流量等隨時間累積的變化。
   tags:
   - chap-m3-ch4
@@ -582,11 +582,11 @@ questions:
   text: Metabase 的主要優點是？
   type: multiple_choice
   options:
-  - 功能最為強大複雜
-  - 開源、輕量、易於架設，適合快速建立內部儀表板
-  - 專為地理空間分析設計
   - 只能在單機環境下使用
-  correct_index: 1
+  - 功能最為強大複雜
+  - 專為地理空間分析設計
+  - 開源、輕量、易於架設，適合快速建立內部儀表板
+  correct_index: 3
   explanation: Metabase 以其簡單友善的介面著稱，讓非技術人員也能輕鬆「問數據問題」。
   tags:
   - chap-m3-ch4
@@ -598,11 +598,11 @@ questions:
   text: 醫療領域的時間軸圖 (Timeline) 用於？
   type: multiple_choice
   options:
+  - 比較不同藥物的價格
   - 顯示醫院的年度營收
   - 呈現病患的診療事件順序與病程發展 (Patient Journey)
-  - 比較不同藥物的價格
   - 統計各科室的醫生人數
-  correct_index: 1
+  correct_index: 2
   explanation: 醫療數據具有強烈的時序性，時間軸能清晰呈現病患的就醫歷程。
   tags:
   - chap-m3-ch4
@@ -614,11 +614,11 @@ questions:
   text: 直方圖 (Histogram) 用於展示？
   type: multiple_choice
   options:
-  - 類別數據的比較
-  - 連續變數的頻率分佈 (Frequency Distribution)
-  - 隨時間變化的趨勢
   - 變數之間的相關性
-  correct_index: 1
+  - 類別數據的比較
+  - 隨時間變化的趨勢
+  - 連續變數的頻率分佈 (Frequency Distribution)
+  correct_index: 3
   explanation: 直方圖將連續數據分箱，顯示數據在各區間的集中程度。
   tags:
   - chap-m3-ch4
@@ -630,11 +630,11 @@ questions:
   text: 儀表板中的「篩選器 (Filters)」功能屬於？
   type: multiple_choice
   options:
-  - 靜態的視覺展示
   - 互動性設計，允許使用者自定義查看範圍 (如時間、地區)
   - 純粹的視覺裝飾
+  - 靜態的視覺展示
   - 數據清洗工具
-  correct_index: 1
+  correct_index: 0
   explanation: 篩選器賦予使用者主動探索數據的權力，能針對特定問題（如「上個月台北的銷售」）尋找答案。
   tags:
   - chap-m3-ch4
@@ -646,11 +646,11 @@ questions:
   text: 情境：你製作了一張展示全公司 50 個部門業績的圓餅圖，結果被老闆批評「看不懂」。為什麼？你應該改用什麼圖表？
   type: multiple_choice
   options:
-  - 顏色不夠鮮豔；應加強配色以吸引注意力
-  - 類別過多導致圓餅圖切片太細，難以比較大小。應改用長條圖 (Bar Chart) 並排序
-  - 應該改用 3D 圓餅圖以增加立體感
   - 應該改用散佈圖來展示數據分佈
-  correct_index: 1
+  - 顏色不夠鮮豔；應加強配色以吸引注意力
+  - 應該改用 3D 圓餅圖以增加立體感
+  - 類別過多導致圓餅圖切片太細，難以比較大小。應改用長條圖 (Bar Chart) 並排序
+  correct_index: 3
   explanation: 圓餅圖不適合展示超過 5-7 個類別的數據。當類別眾多時，長條圖能提供更清晰的線性比較與排序，閱讀效率遠高於圓餅圖。
   tags:
   - chap-m3-ch4
@@ -662,11 +662,11 @@ questions:
   text: 情境：你需要設計一個戰情室儀表板，供 CEO 每天早上花 30 秒快速掌握公司營運狀況。你應該採用哪種佈局策略？
   type: multiple_choice
   options:
-  - 將所有詳細報表塞進去，確保資訊完整
-  - 採用 F 型佈局，將最關鍵的 KPI (如營收、利潤) 以 BAN (大數字卡片) 形式放在頂部或左上角，並加上趨勢指標
   - 將最重要的資訊放在右下角，因為那是視線的終點
   - 使用大量裝飾性圖片以美化版面
-  correct_index: 1
+  - 採用 F 型佈局，將最關鍵的 KPI (如營收、利潤) 以 BAN (大數字卡片) 形式放在頂部或左上角，並加上趨勢指標
+  - 將所有詳細報表塞進去，確保資訊完整
+  correct_index: 2
   explanation: 高階主管時間寶貴。F 型佈局符合人類視覺動線，BAN 能瞬間傳遞核心訊息，趨勢指標則提供必要的上下文（變好還是變壞）。
   tags:
   - chap-m3-ch4
@@ -678,11 +678,11 @@ questions:
   text: 情境：你發現某個異常值在箱型圖中被標示出來，但在直方圖中卻看不清楚。這是為什麼？
   type: multiple_choice
   options:
-  - 直方圖的分箱 (Bin) 可能太寬，將異常值與正常值合併了；而箱型圖明確定義了離群點 (1.5 * IQR)
-  - 箱型圖的繪製演算法可能有誤
-  - 直方圖根本不適合用於展示數據分佈
   - 數據量太少導致圖表顯示異常
-  correct_index: 0
+  - 直方圖的分箱 (Bin) 可能太寬，將異常值與正常值合併了；而箱型圖明確定義了離群點 (1.5 * IQR)
+  - 直方圖根本不適合用於展示數據分佈
+  - 箱型圖的繪製演算法可能有誤
+  correct_index: 1
   explanation: 箱型圖對異常值非常敏感且有明確定義。直方圖的形狀高度依賴於分箱寬度，不當的分箱可能會掩蓋細節或異常。
   tags:
   - chap-m3-ch4
@@ -694,11 +694,11 @@ questions:
   text: 情境：你的團隊需要一個能即時監控數千台伺服器 CPU 溫度的儀表板，且需要設定警報。你會推薦哪個工具組合？
   type: multiple_choice
   options:
-  - 使用 Excel 記錄數據並用 PowerPoint 製作報告
   - Prometheus (收集指標) + Grafana (視覺化與警報)
+  - 使用 Excel 記錄數據並用 PowerPoint 製作報告
   - 使用 Tableau 進行視覺化分析
   - 使用 Python 的 Matplotlib 庫繪製靜態圖表
-  correct_index: 1
+  correct_index: 0
   explanation: 對於 IT 基礎設施監控，Prometheus + Grafana 是業界標準。Grafana 專為時序數據設計，更新頻率高，且內建強大的警報系統。
   tags:
   - chap-m3-ch4
@@ -710,11 +710,11 @@ questions:
   text: 情境：你想展示兩個變數之間的相關性，但數據點高達一千萬個，直接畫散佈圖會變成一團黑（Overplotting）。你該怎麼辦？
   type: multiple_choice
   options:
-  - 只隨機抽取前 100 個點進行繪製
   - 使用熱力圖 (Heatmap) 或六角形分箱圖 (Hexbin Plot) 來展示數據密度，或者進行降採樣 (Downsampling)
-  - 堅持畫散佈圖，忽略重疊問題
+  - 只隨機抽取前 100 個點進行繪製
   - 放棄繪製圖表，直接展示原始數據表格
-  correct_index: 1
+  - 堅持畫散佈圖，忽略重疊問題
+  correct_index: 0
   explanation: 當數據量過大時，點會重疊在一起無法辨識。將空間劃分為網格（熱力圖/Hexbin）並用顏色表示每個網格內的點數量，能有效解決 Overplotting
     問題並展示密度分佈。
   tags:
@@ -726,11 +726,11 @@ questions:
   text: 情境：你需要向高階主管報告公司各部門的年度營收佔比。為了讓主管一眼看出哪個部門貢獻最大，最不建議使用哪種圖表？
   type: multiple_choice
   options:
-  - 圓餅圖 (Pie Chart)
-  - 堆疊長條圖 (Stacked Bar Chart)
   - 雷達圖 (Radar Chart)
   - 樹狀圖 (Treemap)
-  correct_index: 2
+  - 圓餅圖 (Pie Chart)
+  - 堆疊長條圖 (Stacked Bar Chart)
+  correct_index: 0
   explanation: 雷達圖主要用於多變數指標的比較（如能力分析），不適合用於展示「部分佔整體」的組成關係，且在比較面積大小時容易造成視覺誤判。
   tags:
   - chap-m3-ch4
@@ -742,11 +742,11 @@ questions:
   text: 情境：你發現資料中存在極端值 (Outliers)，想向團隊展示這些異常值對整體分佈的影響。最合適的圖表是？
   type: multiple_choice
   options:
-  - 折線圖 (Line Chart)
-  - 箱型圖 (Box Plot)
-  - 圓餅圖 (Pie Chart)
   - 面積圖 (Area Chart)
-  correct_index: 1
+  - 折線圖 (Line Chart)
+  - 圓餅圖 (Pie Chart)
+  - 箱型圖 (Box Plot)
+  correct_index: 3
   explanation: 箱型圖能清晰地顯示數據的四分位數與極端值（超出鬚鬚範圍的點），是檢測與展示異常值的最佳工具。
   tags:
   - chap-m3-ch4
@@ -758,11 +758,11 @@ questions:
   text: 情境：設計儀表板時，為了符合使用者的 F 型瀏覽模式，你應該將最重要的 KPI（如總營收）放在哪裡？
   type: multiple_choice
   options:
+  - 隨機分佈在畫面各處
+  - 畫面的正中間區域
   - 畫面的右下角區域
   - 畫面的左上角或頂部區域 (Top-Left Corner)
-  - 畫面的正中間區域
-  - 隨機分佈在畫面各處
-  correct_index: 1
+  correct_index: 3
   explanation: 根據 F-Pattern 研究，使用者的視線通常從左上角開始掃描。因此，核心指標應置於此處以確保第一時間被看到。
   tags:
   - chap-m3-ch4
@@ -774,11 +774,11 @@ questions:
   text: 情境：你需要分析兩個變數（如「廣告投入」與「銷售額」）之間是否存在正相關。應選擇哪種圖表？
   type: multiple_choice
   options:
-  - 散點圖 (Scatter Plot)
   - 直方圖 (Histogram)
-  - 圓餅圖 (Pie Chart)
   - 甘特圖 (Gantt Chart)
-  correct_index: 0
+  - 圓餅圖 (Pie Chart)
+  - 散點圖 (Scatter Plot)
+  correct_index: 3
   explanation: 散點圖是展示兩個連續變數之間關係（相關性、群聚）的標準圖表。
   tags:
   - chap-m3-ch4
@@ -791,10 +791,10 @@ questions:
   type: multiple_choice
   options:
   - 分類色 (Categorical Colors)
+  - 單一黑色
   - 順序色 (Sequential Colors) 或發散色 (Diverging Colors)
   - 隨機生成的顏色
-  - 單一黑色
-  correct_index: 1
+  correct_index: 2
   explanation: 氣溫是數值資料，適合用順序色（淺紅到深紅）表示高低，或用發散色（藍到紅）表示冷熱偏差。
   tags:
   - chap-m3-ch4
@@ -822,11 +822,11 @@ questions:
   text: 情境：為了避免「圖表垃圾 (Chart Junk)」干擾閱讀，你應該移除下列何者？
   type: multiple_choice
   options:
-  - 必要的座標軸標籤 (Axis Labels)
-  - 幫助理解數據的圖例 (Legend)
   - 過多的裝飾性 3D 效果、陰影與網格線 (Chart Junk)
+  - 必要的座標軸標籤 (Axis Labels)
   - 圖表的標題 (Title)
-  correct_index: 2
+  - 幫助理解數據的圖例 (Legend)
+  correct_index: 0
   explanation: 簡潔原則強調去除不增加資訊量的裝飾。3D 效果常導致透視扭曲，影響數值判讀，應盡量避免。
   tags:
   - chap-m3-ch4
@@ -838,11 +838,11 @@ questions:
   text: 情境：使用者抱怨儀表板資訊太多，找不到重點。為了改善體驗，你引入了「鑽取 (Drill-down)」功能。這意味著？
   type: multiple_choice
   options:
-  - 隨機刪除一半的數據以簡化顯示
-  - 提供從總覽層級 (Overview) 點擊進入細節層級 (Details) 的互動能力
-  - 單純把字體放大以利閱讀
   - 無限制地增加更多圖表到頁面上
-  correct_index: 1
+  - 隨機刪除一半的數據以簡化顯示
+  - 單純把字體放大以利閱讀
+  - 提供從總覽層級 (Overview) 點擊進入細節層級 (Details) 的互動能力
+  correct_index: 3
   explanation: 鑽取功能允許使用者先看宏觀總覽，有需要時再點擊深入查看微觀細節，有效解決資訊過載問題。
   tags:
   - chap-m3-ch4
@@ -854,11 +854,11 @@ questions:
   text: 情境：你需要比較 5 個不同產品線在過去 12 個月的銷售趨勢。最清晰的圖表選擇是？
   type: multiple_choice
   options:
+  - 堆疊面積圖 (Stacked Area Chart)
   - 多條線的折線圖 (Line Chart)，可同時比較不同產品的趨勢
   - 5 個獨立的圓餅圖 (Pie Charts)
-  - 堆疊面積圖 (Stacked Area Chart)
   - 雷達圖 (Radar Chart)
-  correct_index: 0
+  correct_index: 1
   explanation: 折線圖最適合展示隨時間變化的趨勢。多條線可以同時比較不同類別的趨勢差異。
   tags:
   - chap-m3-ch4
@@ -870,11 +870,11 @@ questions:
   text: 情境：Seaborn 函式庫相比於 Matplotlib 的主要優勢在於？
   type: multiple_choice
   options:
-  - 程式碼執行速度比 Matplotlib 更快
   - 預設樣式更美觀且語法更簡潔，特別適合繪製統計圖表 (Statistical Graphics)
-  - 支援 3D 遊戲開發引擎
   - 完全不需寫程式，提供拖拉式介面
-  correct_index: 1
+  - 程式碼執行速度比 Matplotlib 更快
+  - 支援 3D 遊戲開發引擎
+  correct_index: 0
   explanation: Seaborn 建立在 Matplotlib 之上，提供了更高級的 API 和更現代的預設配色，大幅簡化了統計圖表（如箱型圖、熱力圖）的繪製。
   tags:
   - chap-m3-ch4
@@ -886,9 +886,9 @@ questions:
   text: 情境：在金融詐欺偵測中，分析師使用散點圖觀察交易金額與頻次，發現遠離主要群聚點的孤立點。這些點通常代表？
   type: multiple_choice
   options:
-  - 正常的合法交易行為
-  - 異常值 (Outliers) 或潛在的詐欺交易行為
   - 系統數據傳輸錯誤
+  - 異常值 (Outliers) 或潛在的詐欺交易行為
+  - 正常的合法交易行為
   - 高價值的 VIP 客戶交易
   correct_index: 1
   explanation: 在散點圖中，離群點往往代表行為模式與大眾顯著不同的異常案例，是詐欺偵測的重點關注對象。
@@ -902,11 +902,11 @@ questions:
   text: 情境：BAN (Big Angry Number) 在儀表板設計中通常用於展示什麼？
   type: multiple_choice
   options:
-  - 詳細的文字說明與背景介紹
   - 核心 KPI 數字 (如總銷售額)，以大字體醒目顯示
-  - 複雜的數學公式推導過程
+  - 詳細的文字說明與背景介紹
   - 公司的 Logo 與品牌形象圖片
-  correct_index: 1
+  - 複雜的數學公式推導過程
+  correct_index: 0
   explanation: BAN 強調用大字體直接展示最關鍵的單一數字，讓使用者在 3 秒內掌握核心績效。
   tags:
   - chap-m3-ch4
@@ -918,11 +918,11 @@ questions:
   text: 情境：Grafana 最常被用於哪種場景？
   type: multiple_choice
   options:
-  - 繪製靜態的宣傳海報
   - IT 基礎設施與時序數據 (Time-series Data) 的即時監控與儀表板
   - 編輯與修飾數位相片
   - 進行一般的文書處理工作
-  correct_index: 1
+  - 繪製靜態的宣傳海報
+  correct_index: 0
   explanation: Grafana 是監控領域的標準工具，特別擅長連接 Prometheus、InfluxDB 等時序資料庫，展示伺服器負載、IoT 數據等即時變化。
   tags:
   - chap-m3-ch4
@@ -935,10 +935,10 @@ questions:
   type: multiple_choice
   options:
   - 長條圖 (Bar Chart)
-  - 核密度估計圖 (KDE)，提供平滑的機率密度曲線
   - 圓餅圖 (Pie Chart)
   - 樹狀圖 (Treemap)
-  correct_index: 1
+  - 核密度估計圖 (KDE)，提供平滑的機率密度曲線
+  correct_index: 3
   explanation: KDE (Kernel Density Estimation) 透過平滑化技術估計機率密度函數，能比受限於 bin 寬度的直方圖更精確地描述數據分佈。
   tags:
   - chap-m3-ch4
@@ -950,11 +950,11 @@ questions:
   text: 情境：在展示 KPI 時，單純顯示「營收 100 萬」是不夠的。為了提供情境 (Context)，你應該加上？
   type: multiple_choice
   options:
-  - 增加驚嘆號以示強調
   - 提供比較基準 (Context)，如與上月比較 (MoM)、與去年同期比較 (YoY) 或目標達成率
-  - 播放背景音樂以吸引注意力
+  - 增加驚嘆號以示強調
   - 使用更多樣化的顏色裝飾
-  correct_index: 1
+  - 播放背景音樂以吸引注意力
+  correct_index: 0
   explanation: 沒有比較的數字沒有意義。加上與上月 (MoM) 或去年同期 (YoY) 的比較，才能判斷 100 萬是好是壞。
   tags:
   - chap-m3-ch4
@@ -966,11 +966,11 @@ questions:
   text: 情境：Tableau 與 Python (Matplotlib) 的主要區別在於？
   type: multiple_choice
   options:
-  - Tableau 是完全免費的軟體
-  - Tableau 是拖拉式 BI 工具，適合快速探索與互動；Python 是程式語言，適合高度客製化與自動化
-  - Python 完全無法用於繪製圖表
   - Tableau 的功能僅限於繪製圓餅圖
-  correct_index: 1
+  - Python 完全無法用於繪製圖表
+  - Tableau 是拖拉式 BI 工具，適合快速探索與互動；Python 是程式語言，適合高度客製化與自動化
+  - Tableau 是完全免費的軟體
+  correct_index: 2
   explanation: Tableau 強調無程式碼 (No-code) 的互動式分析，適合商業分析師；Python 則提供程式碼級別的控制，適合資料科學家整合分析流程。
   tags:
   - chap-m3-ch4
@@ -982,11 +982,11 @@ questions:
   text: 情境：智慧城市專案需要展示市區交通擁堵的即時狀況。最直觀的圖表是？
   type: multiple_choice
   options:
-  - 長條圖 (Bar Chart)
-  - 疊加在地圖上的地理熱力圖 (Geo Heatmap)，顯示擁堵密度
   - 箱型圖 (Box Plot)
   - 純文字的數據列表
-  correct_index: 1
+  - 疊加在地圖上的地理熱力圖 (Geo Heatmap)，顯示擁堵密度
+  - 長條圖 (Bar Chart)
+  correct_index: 2
   explanation: 地理空間數據（交通擁堵）必須結合地圖展示才具意義，熱力圖能清楚顯示擁堵路段（紅區）。
   tags:
   - chap-m3-ch4
@@ -998,11 +998,11 @@ questions:
   text: 情境：相關係數矩陣 (Correlation Matrix) 通常搭配哪種圖表來視覺化，以便快速識別高相關性的變數對？
   type: multiple_choice
   options:
-  - 折線圖 (Line Chart)
-  - 熱力圖 (Heatmap)，利用顏色深淺表示相關係數的大小
   - 圓餅圖 (Pie Chart)
+  - 折線圖 (Line Chart)
   - 雷達圖 (Radar Chart)
-  correct_index: 1
+  - 熱力圖 (Heatmap)，利用顏色深淺表示相關係數的大小
+  correct_index: 3
   explanation: 熱力圖利用顏色深淺表示相關係數的大小（如深紅代表高度正相關），讓分析師能快速從矩陣中識別出關鍵變數。
   tags:
   - chap-m3-ch4
@@ -1014,11 +1014,11 @@ questions:
   text: 情境：根據完形心理學 (Gestalt Principles) 的「鄰近性」原則，在設計儀表板時應該？
   type: multiple_choice
   options:
-  - 將相關的圖表或指標靠在一起擺放，形成群組感 (Grouping)
-  - 將所有圖表隨機打散在版面上
   - 使用五顏六色的背景來區分
+  - 將所有圖表隨機打散在版面上
+  - 將相關的圖表或指標靠在一起擺放，形成群組感 (Grouping)
   - 把字體縮小以節省空間
-  correct_index: 0
+  correct_index: 2
   explanation: 鄰近性原則指出，人類傾向將距離相近的物體視為一組。利用此原則可以有效地組織資訊區塊。
   tags:
   - chap-m3-ch4
@@ -1030,11 +1030,11 @@ questions:
   text: 情境：Kibana 是專門為了配合哪個資料庫而設計的視覺化工具？
   type: multiple_choice
   options:
-  - MySQL 關聯式資料庫
-  - Elasticsearch 搜尋引擎與資料庫
   - MongoDB 文件資料庫
   - Redis 記憶體快取資料庫
-  correct_index: 1
+  - Elasticsearch 搜尋引擎與資料庫
+  - MySQL 關聯式資料庫
+  correct_index: 2
   explanation: Kibana 是 ELK Stack (Elasticsearch, Logstash, Kibana) 的一部分，專門用於搜尋、檢視與分析存儲在
     Elasticsearch 中的數據。
   tags:
@@ -1047,11 +1047,11 @@ questions:
   text: 情境：若要展示數據的分佈情況與異常值，最適合的圖表是？
   type: multiple_choice
   options:
-  - 圓餅圖 (Pie Chart)
-  - 箱型圖 (Box Plot)，顯示四分位數與離群點
   - 折線圖 (Line Chart)
+  - 圓餅圖 (Pie Chart)
   - 雷達圖 (Radar Chart)
-  correct_index: 1
+  - 箱型圖 (Box Plot)，顯示四分位數與離群點
+  correct_index: 3
   explanation: 箱型圖清楚呈現了四分位數與極端值。
   tags:
   - chap-m3-ch4
@@ -1065,8 +1065,8 @@ questions:
   options:
   - 畫面的右下角區域
   - 畫面的左上角或頂部區域 (Top-Left Corner)
-  - 畫面的正中間區域
   - 隨機分佈在畫面各處
+  - 畫面的正中間區域
   correct_index: 1
   explanation: 符合使用者的自然閱讀動線。
   tags:
@@ -1079,10 +1079,10 @@ questions:
   text: 情境：熱力圖 (Heatmap) 最適合用於？
   type: multiple_choice
   options:
-  - 比較不同類別的長度差異
-  - 展示二維矩陣數據的數值大小 (如相關係數矩陣)，利用顏色深淺表示
-  - 顯示隨時間變化的趨勢
   - 顯示各部分佔整體的比例
+  - 展示二維矩陣數據的數值大小 (如相關係數矩陣)，利用顏色深淺表示
+  - 比較不同類別的長度差異
+  - 顯示隨時間變化的趨勢
   correct_index: 1
   explanation: 顏色深淺能直觀反映數值高低。
   tags:
@@ -1095,11 +1095,11 @@ questions:
   text: 情境：完形心理學中的「鄰近性原則」指出？
   type: multiple_choice
   options:
-  - 距離相近的物體會被大腦自動歸類為同一組
   - 顏色相似的物體會被大腦自動歸類為同一組
   - 形狀相似的物體會被大腦自動歸類為同一組
   - 體積較大的物體會被大腦自動歸類為同一組
-  correct_index: 0
+  - 距離相近的物體會被大腦自動歸類為同一組
+  correct_index: 3
   explanation: 利用空間佈局來暗示資料的關聯性。
   tags:
   - chap-m3-ch4
@@ -1112,10 +1112,10 @@ questions:
   type: multiple_choice
   options:
   - 一個生氣的紅色數字
-  - 以大字體醒目顯示的關鍵績效指標 (KPI)，強調數據本身
   - 系統顯示的錯誤數字
+  - 以大字體醒目顯示的關鍵績效指標 (KPI)，強調數據本身
   - 代表虧損的負數
-  correct_index: 1
+  correct_index: 2
   explanation: 讓使用者一眼就能看到最重要的核心數據。
   tags:
   - chap-m3-ch4
@@ -1127,11 +1127,11 @@ questions:
   text: 情境：若要比較多個類別的佔比，但不希望使用圓餅圖（因難以比較面積），可改用？
   type: multiple_choice
   options:
-  - 散點圖 (Scatter Plot)
   - 長條圖 (Bar Chart) 或堆疊長條圖 (Stacked Bar Chart)
-  - 折線圖 (Line Chart)
   - 地理地圖 (Map)
-  correct_index: 1
+  - 折線圖 (Line Chart)
+  - 散點圖 (Scatter Plot)
+  correct_index: 0
   explanation: 人眼對長度比較的敏感度高於面積或角度。
   tags:
   - chap-m3-ch4
@@ -1143,11 +1143,11 @@ questions:
   text: 情境：Tableau 的主要優勢是？
   type: multiple_choice
   options:
-  - 完全免費且開源
-  - 強大的拖拉式介面 (Drag-and-Drop) 與互動分析能力
   - 專門用於編寫程式碼
   - 只能繪製靜態圖表
-  correct_index: 1
+  - 完全免費且開源
+  - 強大的拖拉式介面 (Drag-and-Drop) 與互動分析能力
+  correct_index: 3
   explanation: Tableau 降低了視覺化分析的門檻。
   tags:
   - chap-m3-ch4
@@ -1159,11 +1159,11 @@ questions:
   text: 情境：在製造業中，儀表圖 (Gauge) 常用於顯示？
   type: multiple_choice
   options:
+  - 員工的薪資水平
   - 總銷售額
   - 產能達成率或設備健康度 (類似汽車儀表板)
   - 客戶滿意度調查結果
-  - 員工的薪資水平
-  correct_index: 1
+  correct_index: 2
   explanation: 直觀顯示當前狀態是否在正常範圍內。
   tags:
   - chap-m3-ch4
@@ -1175,10 +1175,10 @@ questions:
   text: 情境：鑽取 (Drill-down) 功能允許使用者？
   type: multiple_choice
   options:
-  - 永久刪除數據
-  - 從總覽數據深入查看細節數據 (Drill-down)
-  - 修改原始數據
   - 匯出數據為 Excel 檔案
+  - 從總覽數據深入查看細節數據 (Drill-down)
+  - 永久刪除數據
+  - 修改原始數據
   correct_index: 1
   explanation: 提供從宏觀到微觀的探索路徑。
   tags:
@@ -1192,10 +1192,10 @@ questions:
   type: multiple_choice
   options:
   - 圓餅圖 (Pie Chart)
-  - 直方圖 (Histogram)
-  - 散點圖 (Scatter Plot)
   - 長條圖 (Bar Chart)
-  correct_index: 1
+  - 散點圖 (Scatter Plot)
+  - 直方圖 (Histogram)
+  correct_index: 3
   explanation: KDE 估計機率密度函數，能更平滑地展示分佈形狀。
   tags:
   - chap-m3-ch4
@@ -1207,11 +1207,11 @@ questions:
   text: 情境：Grafana 最常搭配哪個資料庫用於監控時序數據？
   type: multiple_choice
   options:
-  - MySQL 關聯式資料庫
   - InfluxDB 或 Prometheus 等時序資料庫 (Time Series Database)
-  - MongoDB 文件資料庫
   - Redis 記憶體快取資料庫
-  correct_index: 1
+  - MySQL 關聯式資料庫
+  - MongoDB 文件資料庫
+  correct_index: 0
   explanation: Grafana + InfluxDB/Prometheus 是 IT 監控的黃金組合。
   tags:
   - chap-m3-ch4
@@ -1224,10 +1224,10 @@ questions:
   type: multiple_choice
   options:
   - 折線圖 (Line Chart)
-  - 熱力圖 (Heatmap)，利用顏色深淺表示相關係數的大小
-  - 圓餅圖 (Pie Chart)
   - 地理地圖 (Map)
-  correct_index: 1
+  - 圓餅圖 (Pie Chart)
+  - 熱力圖 (Heatmap)，利用顏色深淺表示相關係數的大小
+  correct_index: 3
   explanation: 熱力圖能快速凸顯高相關性的變數對。
   tags:
   - chap-m3-ch4
@@ -1239,11 +1239,11 @@ questions:
   text: 情境：用數據說故事 (Storytelling) 的核心三要素是？
   type: multiple_choice
   options:
-  - 數據 (Data)、圖表 (Chart)、顏色 (Color)
   - 情境 (Context)、注意力 (Attention)、行動 (Action)
-  - 標題 (Title)、內文 (Body)、結尾 (Conclusion)
   - 電腦 (Computer)、螢幕 (Screen)、滑鼠 (Mouse)
-  correct_index: 1
+  - 標題 (Title)、內文 (Body)、結尾 (Conclusion)
+  - 數據 (Data)、圖表 (Chart)、顏色 (Color)
+  correct_index: 0
   explanation: 明確目標、引導視線、並提出行動建議。
   tags:
   - chap-m3-ch4
@@ -1255,11 +1255,11 @@ questions:
   text: 情境：發散色 (Diverging Color) 適合用於？
   type: multiple_choice
   options:
-  - 單一數值的大小
   - 正負值或偏差 (如盈虧、溫度偏差)
-  - 不同類別的區分
   - 時間序列的趨勢
-  correct_index: 1
+  - 不同類別的區分
+  - 單一數值的大小
+  correct_index: 0
   explanation: 利用兩種對比色強調正負差異。
   tags:
   - chap-m3-ch4
@@ -1271,11 +1271,11 @@ questions:
   text: 情境：在零售業，RFM 模型分析常用什麼圖表來展示顧客分群？
   type: multiple_choice
   options:
-  - 散點圖 (Scatter Plot) 或氣泡圖 (Bubble Chart)
-  - 折線圖 (Line Chart)
   - 圓餅圖 (Pie Chart)
+  - 散點圖 (Scatter Plot) 或氣泡圖 (Bubble Chart)
   - 儀表圖 (Gauge Chart)
-  correct_index: 0
+  - 折線圖 (Line Chart)
+  correct_index: 1
   explanation: 展示 Recency 與 Frequency 的關係。
   tags:
   - chap-m3-ch4
@@ -1287,11 +1287,11 @@ questions:
   text: 情境：Seaborn 是基於哪個 Python 庫構建的？
   type: multiple_choice
   options:
+  - Scikit-learn (Machine Learning Library)
+  - Pandas (Python Data Analysis Library)
   - NumPy (Numerical Python)
   - Matplotlib (Python Plotting Library)
-  - Pandas (Python Data Analysis Library)
-  - Scikit-learn (Machine Learning Library)
-  correct_index: 1
+  correct_index: 3
   explanation: Seaborn 封裝了 Matplotlib，提供更美觀的高級介面。
   tags:
   - chap-m3-ch4
@@ -1303,11 +1303,11 @@ questions:
   text: 情境：Chart Junk (圖表垃圾) 是指？
   type: multiple_choice
   options:
+  - 報告中包含太少的圖表
   - 數據中的錯誤數值
   - 不必要的裝飾 (如 3D 效果、過多網格線)，會干擾閱讀
   - 報告中包含太多的圖表
-  - 報告中包含太少的圖表
-  correct_index: 1
+  correct_index: 2
   explanation: 應移除干擾閱讀的視覺元素，保持簡潔。
   tags:
   - chap-m3-ch4
@@ -1319,10 +1319,10 @@ questions:
   text: 情境：懸停提示 (Tooltips) 的作用是？
   type: multiple_choice
   options:
-  - 隱藏敏感數據以保護隱私
-  - 當滑鼠移過數據點時，顯示詳細的數值或資訊
   - 永久刪除圖表
+  - 當滑鼠移過數據點時，顯示詳細的數值或資訊
   - 放大整個圖表區域
+  - 隱藏敏感數據以保護隱私
   correct_index: 1
   explanation: 在不佔用版面的情況下提供細節資訊。
   tags:
@@ -1335,11 +1335,11 @@ questions:
   text: 情境：若要展示時間序列數據的趨勢，首選圖表是？
   type: multiple_choice
   options:
-  - 圓餅圖 (Pie Chart)
   - 折線圖 (Line Chart)，能清晰呈現隨時間變化的連續性
-  - 散點圖 (Scatter Plot)
   - 雷達圖 (Radar Chart)
-  correct_index: 1
+  - 圓餅圖 (Pie Chart)
+  - 散點圖 (Scatter Plot)
+  correct_index: 0
   explanation: 折線圖能清晰呈現隨時間變化的連續性。
   tags:
   - chap-m3-ch4
@@ -1351,11 +1351,11 @@ questions:
   text: 情境：地理熱力圖常用於智慧城市的哪個場景？
   type: multiple_choice
   options:
-  - 員工的每日考勤記錄
-  - 交通擁堵或空氣污染的空間分佈密度
   - 倉庫的庫存管理
+  - 員工的每日考勤記錄
   - 公司的年度財務報表
-  correct_index: 1
+  - 交通擁堵或空氣污染的空間分佈密度
+  correct_index: 3
   explanation: 直觀展示空間上的密度分佈。
   tags:
   - chap-m3-ch4

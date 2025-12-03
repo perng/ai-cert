@@ -5,11 +5,11 @@ questions:
   text: 時間序列的平穩性 (Stationarity) 是指？
   type: multiple_choice
   options:
-  - 數據隨時間呈現線性遞增的趨勢
-  - 數據的統計特性 (如平均值、變異數) 不隨時間變化
   - 數據在時間軸上是完全靜止不動的
   - 數據中沒有任何缺失值 (Missing Values)
-  correct_index: 1
+  - 數據隨時間呈現線性遞增的趨勢
+  - 數據的統計特性 (如平均值、變異數) 不隨時間變化
+  correct_index: 3
   explanation: 許多時間序列模型（如 ARIMA）假設數據是平穩的，這意味著過去的統計規律在未來依然適用。
   tags:
   - chap-m3-ch3
@@ -21,10 +21,10 @@ questions:
   text: ARIMA 模型中的 "I" (Integrated) 代表什麼操作？
   type: multiple_choice
   options:
-  - 積分 (Integration)，用於計算面積
+  - 迭代 (Iteration)，用於重複計算
   - 差分 (Differencing)，用於消除非平穩性 (Non-stationarity)
   - 插值 (Interpolation)，用於填補缺失值
-  - 迭代 (Iteration)，用於重複計算
+  - 積分 (Integration)，用於計算面積
   correct_index: 1
   explanation: 差分（當前值減去前一值）能去除數據中的趨勢，將非平穩序列轉換為平穩序列。
   tags:
@@ -37,10 +37,10 @@ questions:
   text: Prophet 模型特別擅長處理哪類數據？
   type: multiple_choice
   options:
-  - 完全隨機的白雜訊 (White Noise)
-  - 具有強烈季節性 (Seasonality) 和假期效應 (Holiday Effects) 的商業數據
   - 非結構化的圖像數據 (Image Data)
+  - 具有強烈季節性 (Seasonality) 和假期效應 (Holiday Effects) 的商業數據
   - 非結構化的文字數據 (Text Data)
+  - 完全隨機的白雜訊 (White Noise)
   correct_index: 1
   explanation: Prophet 專為商業預測設計，能自動捕捉日、週、年的週期性變化以及特定節日的影響。
   tags:
@@ -53,11 +53,11 @@ questions:
   text: PageRank 演算法的核心思想是？
   type: multiple_choice
   options:
-  - 網頁包含的文字內容越多越重要
   - 一個網頁的重要性取決於指向它的其他網頁的重要性 (Recursive Definition)
+  - 網頁包含的文字內容越多越重要
   - 網頁更新頻率越快越重要
   - 網頁包含的圖片數量越多越重要
-  correct_index: 1
+  correct_index: 0
   explanation: 這是 Google 搜尋的基石。被高品質網頁連結的網頁，其品質通常也較高。
   tags:
   - chap-m3-ch3
@@ -69,11 +69,11 @@ questions:
   text: 中介中心性 (Betweenness Centrality) 衡量的是節點的什麼能力？
   type: multiple_choice
   options:
-  - 節點擁有的直接連接數多寡 (Degree)
   - 作為網路中「橋樑」或「最短路徑必經之地」的重要性
   - 節點傳播訊息的速度 (Speed)
   - 節點自身的權重 (Weight)
-  correct_index: 1
+  - 節點擁有的直接連接數多寡 (Degree)
+  correct_index: 0
   explanation: 中介中心性高的節點控制著資訊在網路中的流動，移除它們會導致網路斷裂。
   tags:
   - chap-m3-ch3
@@ -85,11 +85,11 @@ questions:
   text: WGS84 (EPSG:4326) 座標系統使用什麼單位？
   type: multiple_choice
   options:
-  - 公尺 (Meters)
-  - 經緯度 (Degrees)，如經度 121.5 度
-  - 英里 (Miles)
   - 像素 (Pixels)
-  correct_index: 1
+  - 公尺 (Meters)
+  - 英里 (Miles)
+  - 經緯度 (Degrees)，如經度 121.5 度
+  correct_index: 3
   explanation: WGS84 是 GPS 全球定位系統使用的標準座標系，以經度和緯度表示位置。
   tags:
   - chap-m3-ch3
@@ -101,11 +101,11 @@ questions:
   text: 獨立樣本 t 檢定 (Independent two-sample t-test) 用於比較？
   type: multiple_choice
   options:
-  - 同一組樣本在不同時間點的前後差異 (Paired Samples)
-  - 兩個獨立樣本群體的平均值是否存在顯著差異
   - 三組以上獨立樣本的平均值差異
+  - 同一組樣本在不同時間點的前後差異 (Paired Samples)
   - 兩個類別變數之間的關聯性
-  correct_index: 1
+  - 兩個獨立樣本群體的平均值是否存在顯著差異
+  correct_index: 3
   explanation: 例如比較實驗組（吃藥）和對照組（吃安慰劑）的平均康復時間是否不同。
   tags:
   - chap-m3-ch3
@@ -117,11 +117,11 @@ questions:
   text: 當需要比較三組或以上樣本的平均值時，應使用？
   type: multiple_choice
   options:
-  - 獨立樣本 t 檢定 (Independent t-test)
   - 變異數分析 (ANOVA)，如 One-way ANOVA
+  - 獨立樣本 t 檢定 (Independent t-test)
   - 卡方檢定 (Chi-square Test)
   - 相關分析 (Correlation Analysis)
-  correct_index: 1
+  correct_index: 0
   explanation: 多次進行 t 檢定會增加型一錯誤的機率，ANOVA 能一次性檢驗多組均值是否相等。
   tags:
   - chap-m3-ch3
@@ -133,10 +133,10 @@ questions:
   text: 卡方獨立性檢定 (Chi-square Test of Independence) 用於檢驗？
   type: multiple_choice
   options:
-  - 兩個連續變數之間的線性相關性
-  - 兩個類別變數之間是否獨立 (Independence)，即是否有關聯
   - 兩組樣本平均值之間的差異
+  - 兩個類別變數之間是否獨立 (Independence)，即是否有關聯
   - 兩組樣本變異數之間的差異
+  - 兩個連續變數之間的線性相關性
   correct_index: 1
   explanation: 例如檢驗「性別」與「購買意願」是否有關。若 p 值小，表示兩者有關聯（不獨立）。
   tags:
@@ -149,11 +149,11 @@ questions:
   text: 型一錯誤 (Type I Error) 是指？
   type: multiple_choice
   options:
-  - 偽陰性 (False Negative)，即有病判沒病
-  - 偽陽性 (False Positive)，即虛無假設為真卻被拒絕 (沒病判有病)
-  - 計算過程中的數值錯誤
   - 數據收集過程中的錯誤
-  correct_index: 1
+  - 偽陰性 (False Negative)，即有病判沒病
+  - 計算過程中的數值錯誤
+  - 偽陽性 (False Positive)，即虛無假設為真卻被拒絕 (沒病判有病)
+  correct_index: 3
   explanation: 就像法庭判決無罪的人有罪（冤獄）。在統計上，是錯誤地宣稱發現了效應（拒絕 H0），但實際上並沒有效應。
   tags:
   - chap-m3-ch3
@@ -165,11 +165,11 @@ questions:
   text: ADF (Augmented Dickey-Fuller) 檢定的目的是？
   type: multiple_choice
   options:
+  - 計算兩個時間序列的相關係數
   - 預測時間序列的未來值
   - 檢驗時間序列是否平穩 (Stationary)，即是否有單位根 (Unit Root)
-  - 計算兩個時間序列的相關係數
   - 分解時間序列的季節性成分
-  correct_index: 1
+  correct_index: 2
   explanation: 若 ADF 檢定的 p-value < 0.05，我們拒絕非平穩假設，認為數據是平穩的。
   tags:
   - chap-m3-ch3
@@ -182,8 +182,8 @@ questions:
   type: multiple_choice
   options:
   - 節點擁有的直接連接數 (Degree)，代表其活躍程度
-  - 節點到所有其他節點的平均距離
   - 節點在網路中的重要性排名
+  - 節點到所有其他節點的平均距離
   - 節點在視覺化圖形中的顏色深淺
   correct_index: 0
   explanation: 最直觀的指標。連接數越多，代表該節點越活躍或越受歡迎（如社交網絡中的名人）。
@@ -198,10 +198,10 @@ questions:
   type: multiple_choice
   options:
   - 兩個變數呈現完全正相關 (Perfect Positive Correlation)
-  - 兩個變數呈現完全負相關 (Perfect Negative Correlation)
   - 兩個變數之間無相關性 (No Correlation)
+  - 兩個變數呈現完全負相關 (Perfect Negative Correlation)
   - 兩個變數之間呈現弱相關 (Weak Correlation)
-  correct_index: 1
+  correct_index: 2
   explanation: 兩個變數呈現完美的負線性關係，一個增加，另一個就按比例減少。
   tags:
   - chap-m3-ch3
@@ -213,11 +213,11 @@ questions:
   text: 當數據不符合常態分佈假設時，比較兩組獨立樣本應使用哪種非參數檢定？
   type: multiple_choice
   options:
-  - 獨立樣本 t 檢定 (Independent t-test)
   - Mann-Whitney U 檢定 (非參數檢定)
-  - 變異數分析 (ANOVA)
   - 卡方檢定 (Chi-square Test)
-  correct_index: 1
+  - 變異數分析 (ANOVA)
+  - 獨立樣本 t 檢定 (Independent t-test)
+  correct_index: 0
   explanation: Mann-Whitney U 檢定比較的是中位數而非平均值，不依賴常態分佈假設，是 t 檢定的非參數替代方案。
   tags:
   - chap-m3-ch3
@@ -229,11 +229,11 @@ questions:
   text: 檢定力 (Statistical Power) 是指？
   type: multiple_choice
   options:
-  - 犯型一錯誤 (Type I Error) 的機率
   - 正確拒絕錯誤的虛無假設的機率 (1 - β)，即偵測到真實效應的能力
+  - 犯型一錯誤 (Type I Error) 的機率
   - 接受虛無假設 (H0) 的機率
   - 樣本數的大小 (Sample Size)
-  correct_index: 1
+  correct_index: 0
   explanation: 檢定力越高，代表我們越有能力偵測到真實存在的效應（不犯型二錯誤的能力）。
   tags:
   - chap-m3-ch3
@@ -245,9 +245,9 @@ questions:
   text: 空間操作 "Buffer" 的作用是？
   type: multiple_choice
   options:
-  - 計算兩個幾何圖形的交集
-  - 在幾何圖形周圍建立指定距離的緩衝區域 (Buffer Zone)
   - 計算幾何圖形的面積
+  - 在幾何圖形周圍建立指定距離的緩衝區域 (Buffer Zone)
+  - 計算兩個幾何圖形的交集
   - 測量兩點之間的距離
   correct_index: 1
   explanation: 例如找出距離河流 100 公尺內的所有建築物。
@@ -261,11 +261,11 @@ questions:
   text: 時間序列分解 (Decomposition) 通常將序列分為哪三個部分？
   type: multiple_choice
   options:
-  - 過去 (Past)、現在 (Present)、未來 (Future)
   - 趨勢 (Trend)、季節性 (Seasonality)、殘差 (Residual)
-  - 輸入 (Input)、輸出 (Output)、隱藏層 (Hidden Layer)
+  - 過去 (Past)、現在 (Present)、未來 (Future)
   - 平均值 (Mean)、變異數 (Variance)、標準差 (Standard Deviation)
-  correct_index: 1
+  - 輸入 (Input)、輸出 (Output)、隱藏層 (Hidden Layer)
+  correct_index: 0
   explanation: 這種分解幫助我們理解數據的構成：長期走向、週期性波動以及隨機雜訊。
   tags:
   - chap-m3-ch3
@@ -278,10 +278,10 @@ questions:
   type: multiple_choice
   options:
   - 計算圖中兩點之間的最短路徑
-  - 社群偵測 (Community Detection)，透過優化模組度找出緊密連接的群體
-  - 對網頁進行重要性排序
   - 預測圖中缺失的連結
-  correct_index: 1
+  - 對網頁進行重要性排序
+  - 社群偵測 (Community Detection)，透過優化模組度找出緊密連接的群體
+  correct_index: 3
   explanation: Louvain 演算法透過優化模組度 (Modularity)，快速找出網路中連接緊密的群體（社群）。
   tags:
   - chap-m3-ch3
@@ -295,8 +295,8 @@ questions:
   options:
   - 所有組別的平均值都相等 (No difference between groups)
   - 至少有一組的平均值與其他組不同
-  - 所有組別的變異數都相等 (Homogeneity of Variance)
   - 樣本之間不獨立 (Dependent Samples)
+  - 所有組別的變異數都相等 (Homogeneity of Variance)
   correct_index: 0
   explanation: ANOVA 檢驗的是「組間差異」是否顯著大於「組內差異」。若拒絕 H0，表示至少有一組的平均值與其他組不同。
   tags:
@@ -309,11 +309,11 @@ questions:
   text: 斯皮爾曼等級相關係數 (Spearman Rank Correlation) 適用於？
   type: multiple_choice
   options:
-  - 僅限於呈現線性關係的連續變數
   - 非常態分佈或順序尺度 (Ordinal) 的變數，評估其單調關係 (Monotonic Relationship)
-  - 僅限於類別變數 (Categorical Variables)
   - 僅限於時間序列數據 (Time Series Data)
-  correct_index: 1
+  - 僅限於類別變數 (Categorical Variables)
+  - 僅限於呈現線性關係的連續變數
+  correct_index: 0
   explanation: Spearman 不看數值本身，而是看數值的排名 (Rank)，因此能捕捉非線性的單調關係且對異常值較不敏感。
   tags:
   - chap-m3-ch3
@@ -325,11 +325,11 @@ questions:
   text: 型二錯誤 (Type II Error) 是指？
   type: multiple_choice
   options:
-  - 偽陽性 (False Positive)
-  - 偽陰性 (False Negative)，即虛無假設為假卻未被拒絕 (有病判沒病)
-  - 抽樣過程中的錯誤
   - 計算過程中的錯誤
-  correct_index: 1
+  - 偽陽性 (False Positive)
+  - 抽樣過程中的錯誤
+  - 偽陰性 (False Negative)，即虛無假設為假卻未被拒絕 (有病判沒病)
+  correct_index: 3
   explanation: 就像有病的人被診斷為沒病（縱放）。實際上有效應，但檢定結果說沒有。
   tags:
   - chap-m3-ch3
@@ -342,10 +342,10 @@ questions:
   type: multiple_choice
   options:
   - 自迴歸 (AR) 階數 p
+  - 季節性週期的長度
   - 移動平均 (MA) 階數 q
   - 差分次數 d
-  - 季節性週期的長度
-  correct_index: 1
+  correct_index: 2
   explanation: ACF 衡量序列與其自身滯後版本的相關性，有助於識別移動平均 (MA) 過程的階數。
   tags:
   - chap-m3-ch3
@@ -358,10 +358,10 @@ questions:
   type: multiple_choice
   options:
   - 節點在網路中的權力大小
-  - 節點到所有其他節點的最短路徑長度總和的倒數 (傳播速度)
   - 節點擁有的直接連接數
   - 節點周圍的群聚程度
-  correct_index: 1
+  - 節點到所有其他節點的最短路徑長度總和的倒數 (傳播速度)
+  correct_index: 3
   explanation: 接近中心性高的節點位於網路的幾何中心，能最快將訊息傳播給所有其他節點。
   tags:
   - chap-m3-ch3
@@ -373,11 +373,11 @@ questions:
   text: 成對樣本 t 檢定 (Paired samples t-test) 適用於？
   type: multiple_choice
   options:
-  - 比較兩組完全無關的獨立樣本
   - 比較同一組樣本在不同時間點 (如前後測) 的平均值差異
-  - 比較三個或更多時間點的平均值差異
   - 比較兩個類別變數的比例差異
-  correct_index: 1
+  - 比較三個或更多時間點的平均值差異
+  - 比較兩組完全無關的獨立樣本
+  correct_index: 0
   explanation: 因為是同一群人測兩次，樣本間存在依賴關係，成對 t 檢定能消除個體差異的干擾，更精確地檢測變化。
   tags:
   - chap-m3-ch3
@@ -389,10 +389,10 @@ questions:
   text: Kruskal-Wallis 檢定是哪種參數檢定的非參數版本？
   type: multiple_choice
   options:
-  - 獨立樣本 t 檢定 (Independent t-test)
+  - 線性回歸分析 (Linear Regression)
   - 單因子變異數分析 (One-way ANOVA)
   - 卡方檢定 (Chi-square Test)
-  - 線性回歸分析 (Linear Regression)
+  - 獨立樣本 t 檢定 (Independent t-test)
   correct_index: 1
   explanation: 當多組數據不符合常態分佈時，不能用 ANOVA，應改用 Kruskal-Wallis 檢定來比較其中位數差異。
   tags:
@@ -405,9 +405,9 @@ questions:
   text: Web Mercator (EPSG:3857) 座標系統常用于？
   type: multiple_choice
   options:
-  - 專業的 GPS 測量設備
-  - Google Maps, OpenStreetMap 等網路地圖服務
   - 測量地形的海拔高度
+  - Google Maps, OpenStreetMap 等網路地圖服務
+  - 專業的 GPS 測量設備
   - 氣象預報系統
   correct_index: 1
   explanation: Web Mercator 是一種投影座標，將地球表面投影到平面上，便於在電腦螢幕上顯示地圖。
@@ -421,11 +421,11 @@ questions:
   text: 比例檢定 (Proportion Test) 用於？
   type: multiple_choice
   options:
-  - 比較兩組樣本的平均值差異
   - 檢驗比例 (如成功率、支持率) 是否符合預期或兩組間是否有差異
   - 檢驗兩組樣本的變異數差異
+  - 比較兩組樣本的平均值差異
   - 檢驗兩個變數之間的相關性
-  correct_index: 1
+  correct_index: 0
   explanation: 例如 A/B 測試中比較兩個網頁版本的點擊率 (CTR) 差異。
   tags:
   - chap-m3-ch3
@@ -437,11 +437,11 @@ questions:
   text: Prophet 模型中的 $g(t)$ 代表？
   type: multiple_choice
   options:
-  - 週期性的季節性 (Seasonality)
-  - 非週期性的趨勢 (Trend)
-  - 特定日期的假期效應 (Holiday Effects)
   - 隨機誤差項 (Error Term)
-  correct_index: 1
+  - 週期性的季節性 (Seasonality)
+  - 特定日期的假期效應 (Holiday Effects)
+  - 非週期性的趨勢 (Trend)
+  correct_index: 3
   explanation: Prophet 是一個加法模型，由趨勢、季節性、假期效應組成。$g(t)$ 模擬非週期性的變化趨勢。
   tags:
   - chap-m3-ch3
@@ -454,10 +454,10 @@ questions:
   type: multiple_choice
   options:
   - 虛無假設為真的機率大於 95%
-  - 實驗結果不具有統計顯著性
   - 在顯著水準 0.05 下，拒絕虛無假設 (結果具有統計顯著性)
   - 實驗設計失敗
-  correct_index: 2
+  - 實驗結果不具有統計顯著性
+  correct_index: 1
   explanation: p 值代表在虛無假設為真的前提下，觀察到當前數據（或更極端數據）的機率。p 值很小表示虛無假設不太可能為真。
   tags:
   - chap-m3-ch3
@@ -469,11 +469,11 @@ questions:
   text: 卡方適合度檢定 (Goodness of Fit Test) 用於？
   type: multiple_choice
   options:
+  - 比較兩組樣本的平均值差異
   - 檢驗兩個類別變數是否獨立
   - 檢驗一個類別變數的觀察分佈是否符合預期分佈 (如均勻分佈)
-  - 比較兩組樣本的平均值差異
   - 預測時間序列的未來值
-  correct_index: 1
+  correct_index: 2
   explanation: 例如檢驗骰子是否公正（每面出現機率是否均為 1/6）。
   tags:
   - chap-m3-ch3
@@ -485,11 +485,11 @@ questions:
   text: PACF (Partial Autocorrelation Function) 用於決定 ARIMA 模型的哪個參數？
   type: multiple_choice
   options:
-  - 自迴歸 (AR) 階數 p
-  - 移動平均 (MA) 階數 q
-  - 差分次數 d
   - 隨機誤差項
-  correct_index: 0
+  - 差分次數 d
+  - 移動平均 (MA) 階數 q
+  - 自迴歸 (AR) 階數 p
+  correct_index: 3
   explanation: PACF 衡量序列與滯後版本在排除中間滯後影響後的直接相關性，有助於識別自迴歸 (AR) 過程的階數。
   tags:
   - chap-m3-ch3
@@ -501,11 +501,11 @@ questions:
   text: 網路分析中的「模組度 (Modularity)」是用來衡量？
   type: multiple_choice
   options:
-  - 網路中節點的總數量
   - 社群結構的強度 (社群內連接緊密，社群間連接稀疏)
+  - 網路中節點的總數量
   - 網路中節點的數量
   - 網路中邊的數量
-  correct_index: 1
+  correct_index: 0
   explanation: 模組度越高，代表網路劃分出的社群結構越明顯，社群內部凝聚力越強。
   tags:
   - chap-m3-ch3
@@ -517,11 +517,11 @@ questions:
   text: 雙樣本比例檢定 (Two-sample proportion test) 的虛無假設通常是？
   type: multiple_choice
   options:
-  - 兩個母體比例相等 (p1 = p2)
-  - 兩個母體比例不相等 (p1 ≠ p2)
   - 比例大於 0.5
+  - 兩個母體比例相等 (p1 = p2)
   - 比例小於 0
-  correct_index: 0
+  - 兩個母體比例不相等 (p1 ≠ p2)
+  correct_index: 1
   explanation: 我們假設兩組沒有差異，然後看數據是否提供足夠證據推翻這個假設。
   tags:
   - chap-m3-ch3
@@ -549,11 +549,11 @@ questions:
   text: Intersection 操作用於？
   type: multiple_choice
   options:
-  - 合併兩個幾何圖形 (Union)
   - 計算兩個幾何圖形的交集區域 (Intersection)
-  - 刪除幾何圖形
   - 移動幾何圖形的位置
-  correct_index: 1
+  - 合併兩個幾何圖形 (Union)
+  - 刪除幾何圖形
+  correct_index: 0
   explanation: 例如找出「淹水潛勢區」與「住宅區」重疊的部分，評估受災範圍。
   tags:
   - chap-m3-ch3
@@ -565,9 +565,9 @@ questions:
   text: 皮爾森相關係數 (r) 為 0 表示？
   type: multiple_choice
   options:
-  - 兩個變數完全無關 (No Relationship)
-  - 兩個變數之間沒有「線性」相關 (No Linear Correlation)，但可能存在非線性關係
   - 數據收集過程中出現錯誤
+  - 兩個變數之間沒有「線性」相關 (No Linear Correlation)，但可能存在非線性關係
+  - 兩個變數完全無關 (No Relationship)
   - 兩個變數的值完全相等
   correct_index: 1
   explanation: 皮爾森只能捕捉線性關係。如果兩者呈現 U 型關係（二次函數），r 可能為 0，但實際上是有強烈關聯的。
@@ -581,11 +581,11 @@ questions:
   text: ARIMA 模型假設數據是？
   type: multiple_choice
   options:
+  - 具有強烈季節性的 (Seasonal)
+  - 完全隨機的 (Random)
   - 非平穩的 (Non-stationary)
   - 平穩的 (Stationary)，即統計特性不隨時間改變
-  - 完全隨機的 (Random)
-  - 具有強烈季節性的 (Seasonal)
-  correct_index: 1
+  correct_index: 3
   explanation: 如果數據不平穩，必須先進行差分 (Differencing) 處理，使其平穩後才能套用 AR 和 MA 模型。
   tags:
   - chap-m3-ch3
@@ -597,11 +597,11 @@ questions:
   text: 單樣本 t 檢定 (One-sample t-test) 的自由度 (df) 是？
   type: multiple_choice
   options:
-  - 樣本數 n
   - 樣本數減一 (n - 1)
-  - 樣本數減二 (n - 2)
   - 樣本數加一 (n + 1)
-  correct_index: 1
+  - 樣本數 n
+  - 樣本數減二 (n - 2)
+  correct_index: 0
   explanation: 自由度通常與樣本數有關。對於單樣本均值檢定，自由度為樣本數減 1。
   tags:
   - chap-m3-ch3
@@ -629,11 +629,11 @@ questions:
   text: 當我們說「結果具有統計顯著性」時，通常是指？
   type: multiple_choice
   options:
-  - 效應量 (Effect Size) 非常大
-  - 實驗結果非常重要
   - 觀察到的差異不太可能是由隨機機率造成的 (p < α)，即拒絕虛無假設
+  - 實驗結果非常重要
+  - 效應量 (Effect Size) 非常大
   - 實驗設計完美無缺
-  correct_index: 2
+  correct_index: 0
   explanation: 統計顯著性只告訴我們「有差異」，不代表差異很大或很有實務價值（那是效應量 Effect Size 的事）。
   tags:
   - chap-m3-ch3
@@ -661,11 +661,11 @@ questions:
   text: 情境：你使用 ARIMA 預測下個月的銷售額，但預測結果是一條水平直線，完全沒有捕捉到過去幾年的明顯增長趨勢。最可能的原因是什麼？
   type: multiple_choice
   options:
-  - 差分次數 (d) 不足，數據未達到平穩，或者模型參數 (p, q) 選擇不當
   - 數據量太多，導致模型無法處理
   - 應該改用 Prophet 模型
   - 電腦硬體故障
-  correct_index: 0
+  - 差分次數 (d) 不足，數據未達到平穩，或者模型參數 (p, q) 選擇不當
+  correct_index: 3
   explanation: 如果原始序列有趨勢但未進行差分 (d=0)，ARIMA 可能無法捕捉趨勢。或者模型退化成了簡單的平均值模型。
   tags:
   - chap-m3-ch3
@@ -677,11 +677,11 @@ questions:
   text: 情境：你想找出社交網絡中的「關鍵意見領袖 (KOL)」，希望找到那些能最快將訊息傳播給所有人的人。你應該參考哪個中心性指標？
   type: multiple_choice
   options:
-  - 度中心性 (Degree Centrality)
   - 接近中心性 (Closeness Centrality)，因為它衡量到所有其他節點的平均距離
-  - 中介中心性 (Betweenness Centrality)
   - PageRank 演算法
-  correct_index: 1
+  - 中介中心性 (Betweenness Centrality)
+  - 度中心性 (Degree Centrality)
+  correct_index: 0
   explanation: 雖然度中心性高的人朋友多，但接近中心性高的人位於網路幾何中心，到所有人的平均距離最短，傳播訊息效率最高。
   tags:
   - chap-m3-ch3
@@ -693,11 +693,11 @@ questions:
   text: 情境：你正在比較三個不同廣告活動的轉換率。ANOVA 檢定結果顯著 (p < 0.05)。接下來你應該做什麼？
   type: multiple_choice
   options:
-  - 直接宣布三個活動都有效
   - 進行事後檢定 (Post-hoc Test)，如 Tukey's HSD，以確認具體是哪兩組之間有差異
+  - 直接宣布三個活動都有效
   - 重新做實驗以驗證結果
   - 直接選擇平均值最高的那組作為最佳方案
-  correct_index: 1
+  correct_index: 0
   explanation: ANOVA 只告訴我們「至少有一組不同」，但沒說是哪一組。事後檢定能進行兩兩比較，找出差異來源，並控制多重比較帶來的型一錯誤膨脹。
   tags:
   - chap-m3-ch3
@@ -709,11 +709,11 @@ questions:
   text: 情境：你發現某個變數與目標變數的皮爾森相關係數接近 0，但畫出散佈圖卻發現兩者呈現明顯的 U 型關係。這時你應該？
   type: multiple_choice
   options:
+  - 檢查數據是否存在錯誤
   - 直接放棄該變數，不予使用
   - 嘗試非線性轉換 (如平方項) 或使用非參數相關檢定 (如 Spearman)，並將該變數納入模型
   - 認為兩者完全無關
-  - 檢查數據是否存在錯誤
-  correct_index: 1
+  correct_index: 2
   explanation: 皮爾森係數只能衡量線性關係。面對非線性關係，應透過特徵工程（如加入 $x^2$）讓線性模型能捕捉到，或使用能處理非線性的樹模型。
   tags:
   - chap-m3-ch3
@@ -724,11 +724,11 @@ questions:
   text: 情境：若 p-value < 0.05，我們通常會？
   type: multiple_choice
   options:
-  - 接受虛無假設 (Fail to reject H0)
   - 拒絕虛無假設 (Reject H0)，認為結果具統計顯著性
-  - 認為實驗徹底失敗
   - 重新進行實驗以獲取更多數據
-  correct_index: 1
+  - 接受虛無假設 (Fail to reject H0)
+  - 認為實驗徹底失敗
+  correct_index: 0
   explanation: 小 p 值意味著在 H0 為真時觀察到此結果的機率極低。
   tags:
   - chap-m3-ch3
@@ -740,11 +740,11 @@ questions:
   text: 情境：ARIMA 模型中的 'I' (Integrated) 代表？
   type: multiple_choice
   options:
-  - 積分 (Integration)
   - 差分 (Differencing)，用於消除非平穩性，使數據平穩
-  - 智慧 (Intelligence)
+  - 積分 (Integration)
   - 獨立 (Independence)
-  correct_index: 1
+  - 智慧 (Intelligence)
+  correct_index: 0
   explanation: 差分能消除趨勢，使非平穩序列變為平穩序列。
   tags:
   - chap-m3-ch3
@@ -756,11 +756,11 @@ questions:
   text: 情境：PageRank 演算法的核心思想是？
   type: multiple_choice
   options:
+  - 網頁包含的圖片數量越多越重要
+  - 網頁發布時間越新越重要
   - 網頁包含的文字內容越多越重要
   - 一個網頁的重要性取決於指向它的其他網頁的重要性 (Recursive Definition)
-  - 網頁發布時間越新越重要
-  - 網頁包含的圖片數量越多越重要
-  correct_index: 1
+  correct_index: 3
   explanation: PageRank 透過連結結構評估網頁權威性。
   tags:
   - chap-m3-ch3
@@ -772,11 +772,11 @@ questions:
   text: 情境：型一錯誤 (Type I Error) 是指？
   type: multiple_choice
   options:
-  - 偽陽性 (False Positive)，即虛無假設為真卻被拒絕 (沒病判有病)
   - 偽陰性 (False Negative)，即虛無假設為假卻未被拒絕
   - 計算過程中的數值錯誤
   - 操作過程中的人為錯誤
-  correct_index: 0
+  - 偽陽性 (False Positive)，即虛無假設為真卻被拒絕 (沒病判有病)
+  correct_index: 3
   explanation: 例如沒病誤診為有病。
   tags:
   - chap-m3-ch3
@@ -788,11 +788,11 @@ questions:
   text: 情境：Prophet 模型特別擅長處理？
   type: multiple_choice
   options:
+  - 非結構化的文字數據 (Text Data)
+  - 靜態不變的數據 (Static Data)
   - 完全隨機的數據 (Random Data)
   - 具有強烈季節性 (Seasonality) 與假期效應 (Holiday Effects) 的商業數據
-  - 靜態不變的數據 (Static Data)
-  - 非結構化的文字數據 (Text Data)
-  correct_index: 1
+  correct_index: 3
   explanation: Prophet 內建了處理週期性變化與假日影響的機制。
   tags:
   - chap-m3-ch3
@@ -804,10 +804,10 @@ questions:
   text: 情境：若要比較三組學生的平均成績是否有顯著差異，應使用？
   type: multiple_choice
   options:
-  - 獨立樣本 t 檢定 (Independent t-test)
+  - 相關分析 (Correlation Analysis)
   - 變異數分析 (ANOVA)，如 One-way ANOVA
   - 卡方檢定 (Chi-square Test)
-  - 相關分析 (Correlation Analysis)
+  - 獨立樣本 t 檢定 (Independent t-test)
   correct_index: 1
   explanation: ANOVA 專用於比較多組平均值的差異。
   tags:
@@ -820,11 +820,11 @@ questions:
   text: 情境：中介中心性 (Betweenness Centrality) 衡量節點的什麼特性？
   type: multiple_choice
   options:
-  - 節點擁有的直接連接數量 (Degree)
-  - 作為網路中「橋樑」或「最短路徑必經之地」的重要性
-  - 節點傳播訊息的速度 (Speed)
   - 節點周圍的群聚程度 (Clustering Coefficient)
-  correct_index: 1
+  - 節點擁有的直接連接數量 (Degree)
+  - 節點傳播訊息的速度 (Speed)
+  - 作為網路中「橋樑」或「最短路徑必經之地」的重要性
+  correct_index: 3
   explanation: 中介中心性高的節點控制著網路中的資訊流動。
   tags:
   - chap-m3-ch3
@@ -836,11 +836,11 @@ questions:
   text: 情境：卡方檢定 (Chi-square Test) 主要用於分析？
   type: multiple_choice
   options:
-  - 連續數值變數 (Continuous Variables) 之間的關係
   - 類別資料 (Categorical Data) 之間的獨立性或適合度
   - 時間序列數據 (Time Series Data) 的趨勢
+  - 連續數值變數 (Continuous Variables) 之間的關係
   - 地理空間資料 (Geospatial Data) 的分佈
-  correct_index: 1
+  correct_index: 0
   explanation: 例如檢驗性別與購買意願是否關聯。
   tags:
   - chap-m3-ch3
@@ -852,11 +852,11 @@ questions:
   text: 情境：EPSG:4326 代表哪種座標系統？
   type: multiple_choice
   options:
-  - Web Mercator 投影座標系統 (EPSG:3857)
   - WGS84 經緯度座標系統 (EPSG:4326)
+  - Web Mercator 投影座標系統 (EPSG:3857)
   - TWD97 台灣二度分帶座標系統
   - 火星座標系統 (GCJ-02)
-  correct_index: 1
+  correct_index: 0
   explanation: WGS84 是 GPS 使用的全球標準座標系統。
   tags:
   - chap-m3-ch3
@@ -869,10 +869,10 @@ questions:
   type: multiple_choice
   options:
   - 兩個變數呈現完全正相關 (Perfect Positive Correlation)
-  - 兩個變數呈現完全負相關 (Perfect Negative Correlation)
   - 兩個變數之間不存在線性相關 (No Linear Correlation)
   - 兩個變數之間呈現強烈相關 (Strong Correlation)
-  correct_index: 2
+  - 兩個變數呈現完全負相關 (Perfect Negative Correlation)
+  correct_index: 1
   explanation: r=0 表示兩變數間不存在線性關係。
   tags:
   - chap-m3-ch3
@@ -884,11 +884,11 @@ questions:
   text: 情境：時間序列的「平穩性 (Stationarity)」是指？
   type: multiple_choice
   options:
-  - 數據隨時間保持完全不變
-  - 數據的統計特性 (如平均值、變異數) 不隨時間變化
   - 數據呈現完美的直線趨勢
+  - 數據隨時間保持完全不變
   - 數據是完全隨機的白雜訊
-  correct_index: 1
+  - 數據的統計特性 (如平均值、變異數) 不隨時間變化
+  correct_index: 3
   explanation: 許多預測模型（如 ARIMA）假設數據是平穩的。
   tags:
   - chap-m3-ch3
@@ -900,11 +900,11 @@ questions:
   text: 情境：型二錯誤 (Type II Error) 是指？
   type: multiple_choice
   options:
-  - 偽陽性 (False Positive)
   - 偽陰性 (False Negative)，即虛無假設為假卻未被拒絕 (有病判沒病)
   - 計算過程中的數值錯誤
+  - 偽陽性 (False Positive)
   - 操作過程中的人為錯誤
-  correct_index: 1
+  correct_index: 0
   explanation: 例如有病誤診為沒病。
   tags:
   - chap-m3-ch3
@@ -916,11 +916,11 @@ questions:
   text: 情境：Louvain 演算法用於？
   type: multiple_choice
   options:
-  - 網路中的路徑規劃 (Path Planning)
-  - 社群偵測 (Community Detection)，找出緊密連接的群體
-  - 對網頁進行重要性排序 (Ranking)
   - 對數據進行加密 (Encryption)
-  correct_index: 1
+  - 網路中的路徑規劃 (Path Planning)
+  - 對網頁進行重要性排序 (Ranking)
+  - 社群偵測 (Community Detection)，找出緊密連接的群體
+  correct_index: 3
   explanation: Louvain 能快速找出網路中緊密連結的群體。
   tags:
   - chap-m3-ch3
@@ -932,11 +932,11 @@ questions:
   text: 情境：當數據不符合常態分佈時，應使用？
   type: multiple_choice
   options:
-  - 獨立樣本 t 檢定 (Independent t-test)
   - 非參數檢定 (Non-parametric Tests)，如 Mann-Whitney U 檢定
-  - 變異數分析 (ANOVA)
   - 線性迴歸分析 (Linear Regression)
-  correct_index: 1
+  - 獨立樣本 t 檢定 (Independent t-test)
+  - 變異數分析 (ANOVA)
+  correct_index: 0
   explanation: 非參數檢定不依賴母體分佈假設，適用性更廣。
   tags:
   - chap-m3-ch3
@@ -948,11 +948,11 @@ questions:
   text: 情境：Buffer 操作的作用是？
   type: multiple_choice
   options:
-  - 直接刪除選定的數據
-  - 在幾何圖形周圍建立指定距離的緩衝區域 (Buffer Zone)，如距離某點 500m 內的區域
-  - 使用壓縮演算法減少數據大小
   - 對地圖進行旋轉操作
-  correct_index: 1
+  - 使用壓縮演算法減少數據大小
+  - 在幾何圖形周圍建立指定距離的緩衝區域 (Buffer Zone)，如距離某點 500m 內的區域
+  - 直接刪除選定的數據
+  correct_index: 2
   explanation: 常用於鄰近分析。
   tags:
   - chap-m3-ch3
@@ -964,11 +964,11 @@ questions:
   text: 情境：檢定力 (Statistical Power) 是指？
   type: multiple_choice
   options:
-  - 檢定過程的計算速度
   - 正確拒絕錯誤虛無假設 (H0) 的機率 (1 - β)，即偵測真實效應的能力
   - 犯型一錯誤 (Type I Error) 的機率
   - 犯型二錯誤 (Type II Error) 的機率
-  correct_index: 1
+  - 檢定過程的計算速度
+  correct_index: 0
   explanation: 檢定力越高，越能偵測到真實存在的效應。
   tags:
   - chap-m3-ch3
@@ -980,9 +980,9 @@ questions:
   text: 情境：ADF 檢定用於檢驗時間序列的？
   type: multiple_choice
   options:
-  - 時間序列的長度
-  - 時間序列的平穩性 (Stationarity)，即是否存在單位根
   - 時間序列的季節性週期
+  - 時間序列的平穩性 (Stationarity)，即是否存在單位根
+  - 時間序列的長度
   - 時間序列中的缺失值數量
   correct_index: 1
   explanation: ADF 檢定是否存在單位根，若拒絕 H0 則為平穩。
@@ -996,11 +996,11 @@ questions:
   text: 情境：度中心性 (Degree Centrality) 衡量的是？
   type: multiple_choice
   options:
+  - 節點在幾何空間中的位置座標
   - 節點擁有的直接連接數量 (Degree)，代表其活躍程度
   - 節點在網路中的重要性排名
-  - 節點在幾何空間中的位置座標
   - 節點在視覺化圖形中的顏色深淺
-  correct_index: 0
+  correct_index: 1
   explanation: 連接數越多，度中心性越高，通常代表該節點越活躍。
   tags:
   - chap-m3-ch3
@@ -1012,10 +1012,10 @@ questions:
   text: 情境：斯皮爾曼等級相關 (Spearman rho) 適用於？
   type: multiple_choice
   options:
-  - 僅限於呈現線性關係的變數
+  - 僅限於時間序列數據 (Time Series Data)
   - 非線性單調關係 (Non-linear Monotonic Relationship) 或順序資料 (Ordinal Data)
   - 僅限於類別資料 (Categorical Data)
-  - 僅限於時間序列數據 (Time Series Data)
+  - 僅限於呈現線性關係的變數
   correct_index: 1
   explanation: Spearman 基於等級而非數值，對異常值較不敏感且能捕捉非線性關係。
   tags:
@@ -1028,11 +1028,11 @@ questions:
   text: 情境：時間序列分解通常將序列分為哪三部分？
   type: multiple_choice
   options:
+  - 輸入 (Input)、輸出 (Output)、雜訊 (Noise)
   - 過去 (Past)、現在 (Present)、未來 (Future)
   - 趨勢 (Trend)、季節性 (Seasonality)、殘差 (Residual)
-  - 輸入 (Input)、輸出 (Output)、雜訊 (Noise)
   - 訓練集 (Training)、驗證集 (Validation)、測試集 (Test)
-  correct_index: 1
+  correct_index: 2
   explanation: 這有助於理解數據的組成成分。
   tags:
   - chap-m3-ch3

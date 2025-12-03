@@ -6,10 +6,10 @@ questions:
   type: multiple_choice
   options:
   - 為了趕上科技潮流 (Follow Trends)
-  - 確保專案能解決實際問題並具備技術與經濟可行性 (Ensure Feasibility & Problem Solving)
   - 為了消耗預算 (Spend Budget)
+  - 確保專案能解決實際問題並具備技術與經濟可行性 (Ensure Feasibility & Problem Solving)
   - 為了招聘更多員工 (Hire More Staff)
-  correct_index: 1
+  correct_index: 2
   explanation: 盲目導入 AI 往往導致失敗。可行性研究能確認需求、技術能力與成本效益，是「謀定而後動」的關鍵。
   tags:
   - chap-m2-ch1
@@ -21,11 +21,11 @@ questions:
   text: 在需求分析中，「痛點 (Pain Points)」通常指什麼？
   type: multiple_choice
   options:
-  - 員工的身體疼痛 (Physical Pain)
   - 組織流程中的瓶頸、重複性工作或決策困難 (Process Bottlenecks & Repetitive Work)
   - 硬體設備的故障 (Hardware Failure)
   - 軟體的 Bug (Software Bugs)
-  correct_index: 1
+  - 員工的身體疼痛 (Physical Pain)
+  correct_index: 0
   explanation: 痛點是指組織運作中效率低落、成本高昂或無法滿足客戶需求的地方，正是 AI 可以發揮價值之處。
   tags:
   - chap-m2-ch1
@@ -37,11 +37,11 @@ questions:
   text: 評估「技術可行性」時，關於資料品質的考量不包括？
   type: multiple_choice
   options:
-  - 資料的完整性 (Completeness)
-  - 資料的標註品質 (Labeling Quality)
   - 資料的儲存成本 (Storage Cost)
   - 資料的代表性 (Representativeness)
-  correct_index: 2
+  - 資料的標註品質 (Labeling Quality)
+  - 資料的完整性 (Completeness)
+  correct_index: 0
   explanation: 儲存成本屬於「成本效益評估」，而非資料本身的品質或技術可行性問題。
   tags:
   - chap-m2-ch1
@@ -53,11 +53,11 @@ questions:
   text: 投資報酬率 (ROI) 的計算公式是？
   type: multiple_choice
   options:
-  - (投資回報 - 投資成本) / 投資成本 (Net Return / Cost)
-  - 投資成本 / 投資回報 (Cost / Return)
   - 投資回報 / 投資成本 (Return / Cost)
+  - 投資成本 / 投資回報 (Cost / Return)
+  - (投資回報 - 投資成本) / 投資成本 (Net Return / Cost)
   - (投資回報 + 投資成本) / 投資成本 (Total Return / Cost)
-  correct_index: 0
+  correct_index: 2
   explanation: ROI 衡量每單位投資帶來的淨利潤，公式為 (淨回報 / 成本) * 100%。
   tags:
   - chap-m2-ch1
@@ -69,10 +69,10 @@ questions:
   text: 概念驗證 (POC) 的主要目的是？
   type: multiple_choice
   options:
-  - 完成最終產品開發 (Complete Product Development)
-  - 在最小風險下驗證技術可行性與商業價值 (Validate Feasibility & Value with Min Risk)
-  - 進行大規模推廣 (Large-scale Rollout)
   - 訓練所有員工 (Train All Staff)
+  - 在最小風險下驗證技術可行性與商業價值 (Validate Feasibility & Value with Min Risk)
+  - 完成最終產品開發 (Complete Product Development)
+  - 進行大規模推廣 (Large-scale Rollout)
   correct_index: 1
   explanation: POC 是小規模的實驗，旨在快速驗證想法是否可行，以決定是否值得投入更多資源進行全面開發。
   tags:
@@ -85,11 +85,11 @@ questions:
   text: 在 AI 專案中，哪種硬體資源最適合用於大規模深度學習模型的訓練？
   type: multiple_choice
   options:
+  - 硬碟 (Hard Disk Drive)
   - CPU (Central Processing Unit)
   - GPU (如 NVIDIA A100) (Graphics Processing Unit)
-  - 硬碟 (Hard Disk Drive)
   - 記憶體 (Memory / RAM)
-  correct_index: 1
+  correct_index: 2
   explanation: GPU 具有強大的並行計算能力，能顯著加速深度學習中大量的矩陣運算。
   tags:
   - chap-m2-ch1
@@ -101,11 +101,11 @@ questions:
   text: 敏捷開發 (Agile) 中的 Sprint (短衝) 通常持續多久？
   type: multiple_choice
   options:
-  - 1-4 週 (1-4 Weeks)
-  - 3-6 個月 (3-6 Months)
   - 1 年 (1 Year)
+  - 1-4 週 (1-4 Weeks)
   - 1 天 (1 Day)
-  correct_index: 0
+  - 3-6 個月 (3-6 Months)
+  correct_index: 1
   explanation: Sprint 是敏捷開發的基本週期，通常為期 1 到 4 週，旨在快速迭代並產出可交付的成果。
   tags:
   - chap-m2-ch1
@@ -117,11 +117,11 @@ questions:
   text: 負責建置資料管道 (Pipeline) 與 ETL 流程的角色是？
   type: multiple_choice
   options:
+  - UI 設計師 (UI Designer)，負責介面設計
+  - 專案經理 (PM)，負責進度管理
   - 資料科學家 (Data Scientist)，負責模型分析
   - 資料工程師 (Data Engineer)，負責資料管道與架構
-  - 專案經理 (PM)，負責進度管理
-  - UI 設計師 (UI Designer)，負責介面設計
-  correct_index: 1
+  correct_index: 3
   explanation: 資料工程師專注於資料的基礎建設，確保資料能穩定、乾淨地流向分析端。
   tags:
   - chap-m2-ch1
@@ -133,11 +133,11 @@ questions:
   text: 哪種開發模式適合「核心業務、需高度客製化且資料隱私要求高」的專案？
   type: multiple_choice
   options:
-  - 購買現成 SaaS 服務 (Buy SaaS)
-  - 內部團隊開發 (In-house Development)
   - 完全委外開發 (Outsourcing)
+  - 購買現成 SaaS 服務 (Buy SaaS)
   - 使用開源軟體不修改 (Use Open Source As-Is)
-  correct_index: 1
+  - 內部團隊開發 (In-house Development)
+  correct_index: 3
   explanation: 內部開發能完全掌控技術與資料，雖成本高但最適合核心競爭力相關且敏感的專案。
   tags:
   - chap-m2-ch1
@@ -149,11 +149,11 @@ questions:
   text: 「垃圾進，垃圾出 (Garbage In, Garbage Out)」是指哪種風險？
   type: multiple_choice
   options:
-  - 模型過擬合 (Overfitting)
-  - 資料品質不足 (Poor Data Quality)
   - 運算資源不足 (Insufficient Compute Power)
   - 法規風險 (Regulatory Risk)
-  correct_index: 1
+  - 模型過擬合 (Overfitting)
+  - 資料品質不足 (Poor Data Quality)
+  correct_index: 3
   explanation: 若輸入模型的訓練資料品質差（含錯誤、雜訊），無論模型多先進，輸出的結果必然也是無效的。
   tags:
   - chap-m2-ch1
@@ -165,10 +165,10 @@ questions:
   text: 針對高風險項目採取「暫緩執行」的策略，屬於哪種風險控管手段？
   type: multiple_choice
   options:
-  - 轉移 (Transfer)，如購買保險
-  - 緩解 (Mitigation)，降低發生機率或衝擊
-  - 迴避 (Avoidance)，不執行高風險項目
   - 接受 (Acceptance)，承擔風險後果
+  - 轉移 (Transfer)，如購買保險
+  - 迴避 (Avoidance)，不執行高風險項目
+  - 緩解 (Mitigation)，降低發生機率或衝擊
   correct_index: 2
   explanation: 迴避策略是指主動避開會引發風險的活動，例如因無法承擔法律風險而決定不做某個專案。
   tags:
@@ -182,10 +182,10 @@ questions:
   type: multiple_choice
   options:
   - 模型運算太慢 (Slow Computation)
-  - 模型對特定群體產生歧視性結果 (Discriminatory Results)
   - 模型過擬合 (Overfitting)
   - 資料洩漏 (Data Leakage)
-  correct_index: 1
+  - 模型對特定群體產生歧視性結果 (Discriminatory Results)
+  correct_index: 3
   explanation: 公平性要求 AI 系統在決策時不應因受保護特徵（如種族、性別）而產生系統性的偏差或歧視。
   tags:
   - chap-m2-ch1
@@ -197,11 +197,11 @@ questions:
   text: 歐盟 GDPR 賦予使用者的權利不包括？
   type: multiple_choice
   options:
-  - 被遺忘權 (Right to be Forgotten)
-  - 資料可攜權 (Right to Data Portability)
   - 反對自動化決策權 (Right to Object to Automated Decision-making)
   - 無限索賠權 (Unlimited Compensation)
-  correct_index: 3
+  - 資料可攜權 (Right to Data Portability)
+  - 被遺忘權 (Right to be Forgotten)
+  correct_index: 1
   explanation: GDPR 雖有罰則，但並未賦予使用者「無限索賠權」。其他三項均為 GDPR 核心權利。
   tags:
   - chap-m2-ch1
@@ -213,11 +213,11 @@ questions:
   text: MLOps 中的「持續監控」主要在偵測什麼？
   type: multiple_choice
   options:
-  - 硬體溫度 (Hardware Temperature)
   - 模型漂移 (Model Drift) 與資料漂移 (Data Drift)
   - 員工出勤 (Employee Attendance)
+  - 硬體溫度 (Hardware Temperature)
   - 程式碼行數 (Lines of Code)
-  correct_index: 1
+  correct_index: 0
   explanation: AI 模型上線後，環境與資料分佈可能隨時間改變，導致模型失效。持續監控漂移是維護模型效能的關鍵。
   tags:
   - chap-m2-ch1
@@ -229,11 +229,11 @@ questions:
   text: 在 Scrum 團隊中，負責「移除開發障礙，確保流程順暢」的角色是？
   type: multiple_choice
   options:
-  - Product Owner (產品負責人)，定義需求
-  - Scrum Master (敏捷教練)，移除障礙
-  - Dev Team (開發團隊)，執行開發
   - Stakeholder (利害關係人)，提供回饋
-  correct_index: 1
+  - Product Owner (產品負責人)，定義需求
+  - Dev Team (開發團隊)，執行開發
+  - Scrum Master (敏捷教練)，移除障礙
+  correct_index: 3
   explanation: Scrum Master 是流程的守護者，負責排除干擾、促進溝通，讓開發團隊能專注於工作。
   tags:
   - chap-m2-ch1
@@ -245,11 +245,11 @@ questions:
   text: 淨現值 (NPV) 為正代表什麼？
   type: multiple_choice
   options:
+  - 專案不需要資金 (No Funding Needed)
+  - 專案風險很高 (High Risk)
   - 專案會虧損 (Project Loss)
   - 專案具投資價值，預期回報高於成本 (Positive Investment Value)
-  - 專案風險很高 (High Risk)
-  - 專案不需要資金 (No Funding Needed)
-  correct_index: 1
+  correct_index: 3
   explanation: NPV 將未來現金流折現回當前價值。NPV > 0 表示考慮時間價值後，專案仍能獲利。
   tags:
   - chap-m2-ch1
@@ -261,11 +261,11 @@ questions:
   text: 哪種雲端服務模式提供「彈性擴展的運算與儲存」，適合初期投入？
   type: multiple_choice
   options:
-  - 地端部署 (On-premise Deployment)
   - 公有雲 (Public Cloud)
   - 邊緣運算 (Edge Computing)
   - 大型主機 (Mainframe)
-  correct_index: 1
+  - 地端部署 (On-premise Deployment)
+  correct_index: 0
   explanation: 公有雲提供按需付費 (Pay-as-you-go) 和彈性伸縮 (Scalability)，降低了初期硬體購置成本。
   tags:
   - chap-m2-ch1
@@ -277,11 +277,11 @@ questions:
   text: XAI (Explainable AI) 技術的主要目的是提升 AI 的？
   type: multiple_choice
   options:
-  - 準確率 (Accuracy)
   - 運算速度 (Computation Speed)
-  - 可解釋性與透明度 (Explainability & Transparency)
+  - 準確率 (Accuracy)
   - 資料量 (Data Volume)
-  correct_index: 2
+  - 可解釋性與透明度 (Explainability & Transparency)
+  correct_index: 3
   explanation: XAI 試圖打開 AI 的「黑盒子」，讓人類理解模型做出特定決策的原因，從而建立信任。
   tags:
   - chap-m2-ch1
@@ -293,11 +293,11 @@ questions:
   text: 領域專家 (Domain Expert) 在 AI 專案中的主要貢獻是？
   type: multiple_choice
   options:
-  - 寫程式碼 (Coding)
-  - 提供業務知識，協助定義問題與驗收成果 (Provide Domain Knowledge)
-  - 維護伺服器 (Maintain Servers)
   - 設計 UI (Design UI)
-  correct_index: 1
+  - 寫程式碼 (Coding)
+  - 維護伺服器 (Maintain Servers)
+  - 提供業務知識，協助定義問題與驗收成果 (Provide Domain Knowledge)
+  correct_index: 3
   explanation: 領域專家（如醫生、金融分析師）懂業務不懂 AI，但他們的知識對於定義正確的問題和評估模型是否實用至關重要。
   tags:
   - chap-m2-ch1
@@ -309,11 +309,11 @@ questions:
   text: 透過購買保險來處理風險，屬於哪種策略？
   type: multiple_choice
   options:
-  - 迴避 (Avoidance)
-  - 轉移 (Transfer)，如購買保險
   - 緩解 (Mitigation)
+  - 迴避 (Avoidance)
   - 接受 (Acceptance)
-  correct_index: 1
+  - 轉移 (Transfer)，如購買保險
+  correct_index: 3
   explanation: 風險轉移是指將風險造成的財務後果轉嫁給第三方（如保險公司）。
   tags:
   - chap-m2-ch1
@@ -325,9 +325,9 @@ questions:
   text: 「回收期 (Payback Period)」越短，通常代表？
   type: multiple_choice
   options:
-  - 投資風險越高 (Higher Investment Risk)
-  - 資金流動性越好，投資回收越快 (Better Liquidity & Faster Return)
   - 專案越複雜 (More Complex Project)
+  - 資金流動性越好，投資回收越快 (Better Liquidity & Faster Return)
+  - 投資風險越高 (Higher Investment Risk)
   - 效益越低 (Lower Benefit)
   correct_index: 1
   explanation: 回收期短意味著企業能更快拿回本金，降低了資金被長期佔用的風險。
@@ -341,11 +341,11 @@ questions:
   text: Git 主要用於什麼管理？
   type: multiple_choice
   options:
+  - 資料庫備份 (Database Backup)
+  - 伺服器監控 (Server Monitoring)
   - 專案時程 (Project Schedule)
   - 程式碼版本控制 (Version Control)
-  - 伺服器監控 (Server Monitoring)
-  - 資料庫備份 (Database Backup)
-  correct_index: 1
+  correct_index: 3
   explanation: Git 是目前最流行的分散式版本控制系統，用於追蹤程式碼的變更歷史。
   tags:
   - chap-m2-ch1
@@ -358,10 +358,10 @@ questions:
   type: multiple_choice
   options:
   - GDPR (General Data Protection Regulation)
+  - PDPA (Personal Data Protection Act)
   - HIPAA (Health Insurance Portability and Accountability Act)
   - PCI-DSS (Payment Card Industry Data Security Standard)
-  - PDPA (Personal Data Protection Act)
-  correct_index: 1
+  correct_index: 2
   explanation: HIPAA (Health Insurance Portability and Accountability Act) 是美國保護病患健康資訊隱私的聯邦法律。
   tags:
   - chap-m2-ch1
@@ -373,11 +373,11 @@ questions:
   text: 工作分解結構 (WBS) 的作用是？
   type: multiple_choice
   options:
-  - 增加工作量 (Increase Workload)
-  - 將複雜的大專案拆解為可管理的小任務 (Break Down Project into Tasks)
-  - 計算成本 (Calculate Cost)
   - 評估風險 (Assess Risk)
-  correct_index: 1
+  - 計算成本 (Calculate Cost)
+  - 將複雜的大專案拆解為可管理的小任務 (Break Down Project into Tasks)
+  - 增加工作量 (Increase Workload)
+  correct_index: 2
   explanation: WBS 將專案層層拆解，直到變成可分配、可監控的具體工作包 (Work Packages)。
   tags:
   - chap-m2-ch1
@@ -390,10 +390,10 @@ questions:
   type: multiple_choice
   options:
   - 程式碼錯誤 (Code Error)
-  - 硬體故障 (Hardware Failure)
   - 真實世界的資料分佈隨時間發生變化 (Data Distribution Shift)
+  - 硬體故障 (Hardware Failure)
   - 學習率設定錯誤 (Wrong Learning Rate)
-  correct_index: 2
+  correct_index: 1
   explanation: 模型是基於歷史數據訓練的。當現實環境改變（如消費者喜好改變），舊模型就不再適用，這就是漂移。
   tags:
   - chap-m2-ch1
@@ -407,8 +407,8 @@ questions:
   options:
   - 人臉辨識 (Face Recognition)
   - 銷售量預測 (基於歷史報表) (Sales Prediction)
-  - 語音轉文字 (Speech to Text)
   - 文章摘要生成 (Text Summarization)
+  - 語音轉文字 (Speech to Text)
   correct_index: 1
   explanation: 銷售報表是典型的表格數據（結構化數據），適合用機器學習模型進行回歸預測。其他選項多為非結構化數據。
   tags:
@@ -421,10 +421,10 @@ questions:
   text: Docker 的主要功能是？
   type: multiple_choice
   options:
-  - 版本控制 (Version Control)
+  - 資料清洗 (Data Cleaning)
   - 環境容器化，確保開發與生產環境一致 (Containerization)
   - 模型訓練 (Model Training)
-  - 資料清洗 (Data Cleaning)
+  - 版本控制 (Version Control)
   correct_index: 1
   explanation: Docker 將應用程式及其依賴打包成容器，解決了「在我的機器上可以跑，在伺服器上不行」的環境不一致問題。
   tags:
@@ -437,11 +437,11 @@ questions:
   text: 台灣個資法 (PDPA) 要求收集個資時必須履行什麼義務？
   type: multiple_choice
   options:
-  - 付費義務 (Payment Obligation)
   - 告知義務 (告知目的、類別、利用期間等) (Notification Obligation)
-  - 賠償義務 (Compensation Obligation)
+  - 付費義務 (Payment Obligation)
   - 沉默義務 (Confidentiality Obligation)
-  correct_index: 1
+  - 賠償義務 (Compensation Obligation)
+  correct_index: 0
   explanation: 根據個資法，收集個資前必須明確告知當事人收集目的、利用範圍等資訊，並取得同意。
   tags:
   - chap-m2-ch1
@@ -470,10 +470,10 @@ questions:
   type: multiple_choice
   options:
   - 強制裁員 (Forced Layoffs)
-  - 進行 AI 轉型培訓與溝通，強調 AI 是輔助而非取代 (Training & Communication)
   - 隱瞞 AI 導入計畫 (Hide Plans)
+  - 進行 AI 轉型培訓與溝通，強調 AI 是輔助而非取代 (Training & Communication)
   - 忽視員工意見 (Ignore Feedback)
-  correct_index: 1
+  correct_index: 2
   explanation: 變革管理 (Change Management) 是關鍵。透過溝通與賦能 (Upskilling)，讓員工看到 AI 對工作的幫助，能降低抵觸情緒。
   tags:
   - chap-m2-ch1
@@ -485,10 +485,10 @@ questions:
   text: 「現況流程 (As-Is)」與「理想流程 (To-Be)」的差距分析屬於哪個階段的工作？
   type: multiple_choice
   options:
-  - 模型訓練 (Model Training)
-  - 需求分析 (Requirement Analysis)
   - 系統部署 (System Deployment)
+  - 需求分析 (Requirement Analysis)
   - 維運監控 (Operation Monitoring)
+  - 模型訓練 (Model Training)
   correct_index: 1
   explanation: 需求分析階段需釐清現狀問題與未來目標，兩者之間的差距就是專案要解決的範圍。
   tags:
@@ -503,8 +503,8 @@ questions:
   options:
   - Git (Version Control)
   - MLflow (Experiment Tracking)
-  - Docker (Containerization)
   - Jenkins (CI/CD)
+  - Docker (Containerization)
   correct_index: 1
   explanation: MLflow 是一個開源平台，專門用於管理機器學習生命週期，包括實驗追蹤、模型註冊與部署。
   tags:
@@ -517,10 +517,10 @@ questions:
   text: PCI-DSS 規範主要針對哪類資料的安全？
   type: multiple_choice
   options:
-  - 醫療病歷 (Medical Records)
-  - 信用卡支付資料 (Credit Card Payment Data)
-  - 學生學籍資料 (Student Records)
   - 政府機密 (Government Secrets)
+  - 信用卡支付資料 (Credit Card Payment Data)
+  - 醫療病歷 (Medical Records)
+  - 學生學籍資料 (Student Records)
   correct_index: 1
   explanation: PCI-DSS (Payment Card Industry Data Security Standard) 是保護持卡人資料安全的全球統一規範。
   tags:
@@ -533,11 +533,11 @@ questions:
   text: 資料科學家 (Data Scientist) 與資料工程師 (Data Engineer) 的主要分工差異在於？
   type: multiple_choice
   options:
+  - 工程師只負責修電腦 (Fixing Computers)
+  - 兩者工作完全相同 (Same Role)
   - 科學家負責硬體，工程師負責軟體 (Hardware vs Software)
   - 科學家負責模型分析與優化，工程師負責資料管道與架構 (Analysis vs Pipeline)
-  - 兩者工作完全相同 (Same Role)
-  - 工程師只負責修電腦 (Fixing Computers)
-  correct_index: 1
+  correct_index: 3
   explanation: 工程師負責「把水管接好」（資料流），科學家負責「分析水質」（數據價值）。兩者相輔相成。
   tags:
   - chap-m2-ch1
@@ -550,10 +550,10 @@ questions:
   type: multiple_choice
   options:
   - 每天固定時間 (Daily Schedule)
+  - 隨機觸發 (Random Trigger)
   - 當監控系統偵測到模型漂移或效能低於閾值時 (Drift or Performance Drop Detected)
   - 專案結束時 (End of Project)
-  - 隨機觸發 (Random Trigger)
-  correct_index: 1
+  correct_index: 2
   explanation: MLOps 的核心就是自動化。當監控指標顯示模型「過期」了，系統應自動啟動再訓練流程以維持效能。
   tags:
   - chap-m2-ch1
@@ -565,11 +565,11 @@ questions:
   text: 評估資料「代表性 (Representativeness)」是為了避免？
   type: multiple_choice
   options:
-  - 取樣偏差 (Sampling Bias)
-  - 資料過多 (Too Much Data)
   - 儲存空間不足 (Insufficient Storage)
   - 計算速度太慢 (Slow Computation)
-  correct_index: 0
+  - 取樣偏差 (Sampling Bias)
+  - 資料過多 (Too Much Data)
+  correct_index: 2
   explanation: 若訓練資料無法代表真實世界的狀況（例如只用夏天的數據訓練銷量預測模型），模型在實際應用（冬天）時就會失效。
   tags:
   - chap-m2-ch1
@@ -582,9 +582,9 @@ questions:
   type: multiple_choice
   options:
   - 內部團隊開發 (In-house Development)
-  - 委外開發 (Outsourcing)
-  - 現有商業服務 (SaaS)
   - 混合模式 (Hybrid Model)
+  - 現有商業服務 (SaaS)
+  - 委外開發 (Outsourcing)
   correct_index: 2
   explanation: SaaS 產品通常是標準化的，雖然好用但難以針對特定企業的特殊需求進行深度修改。
   tags:
@@ -598,10 +598,10 @@ questions:
   type: multiple_choice
   options:
   - 合法、公平、透明 (Lawfulness, Fairness, Transparency)
-  - 目的限制 (Purpose Limitation)
   - 資料極大化 (Data Maximization)
+  - 目的限制 (Purpose Limitation)
   - 資料最小化 (Data Minimization)
-  correct_index: 2
+  correct_index: 1
   explanation: GDPR 強調「資料最小化」，即只收集達成目的所需的最小量資料，而非越多越好。
   tags:
   - chap-m2-ch1
@@ -614,10 +614,10 @@ questions:
   type: multiple_choice
   options:
   - 提高模型準確率 (Improve Accuracy)
-  - 降低使用者的學習門檻，提升系統易用性 (Enhance Usability)
   - 加速資料清洗 (Accelerate Data Cleaning)
   - 管理伺服器 (Manage Servers)
-  correct_index: 1
+  - 降低使用者的學習門檻，提升系統易用性 (Enhance Usability)
+  correct_index: 3
   explanation: 再好的模型若介面難用，使用者也不會買單。良好的 UI/UX 能促進 AI 落地應用。
   tags:
   - chap-m2-ch1
@@ -629,11 +629,11 @@ questions:
   text: 為了防止「侵權」風險，在使用網路爬蟲收集資料時應注意？
   type: multiple_choice
   options:
-  - 爬取速度越快越好 (Faster is Better)
-  - 遵守 robots.txt 協議與著作權法，確認資料授權條款 (Compliance with Robots.txt & Copyright)
-  - 只爬取文字不爬圖片 (Text Only)
   - 隱藏 IP 位址 (Hide IP)
-  correct_index: 1
+  - 爬取速度越快越好 (Faster is Better)
+  - 只爬取文字不爬圖片 (Text Only)
+  - 遵守 robots.txt 協議與著作權法，確認資料授權條款 (Compliance with Robots.txt & Copyright)
+  correct_index: 3
   explanation: 網路公開資料不代表可以隨意商用。必須尊重網站的爬蟲協議與資料的智慧財產權。
   tags:
   - chap-m2-ch1
@@ -648,8 +648,8 @@ questions:
   options:
   - 技術指標 (Accuracy) 選擇錯誤 (Wrong Metric)
   - 樣本代表性不足，未包含極端情緒案例 (Edge Cases) (Insufficient Representation)
-  - 運算資源不足 (Insufficient Resources)
   - 模型訓練時間太短 (Training Time too Short)
+  - 運算資源不足 (Insufficient Resources)
   correct_index: 1
   explanation: POC 往往在理想或受控的環境下進行。若測試數據未包含真實世界中複雜、極端的情況（如憤怒客戶），模型上線後就會遇到「水土不服」。這強調了測試數據必須具備高度代表性和覆蓋率。
   tags:
@@ -662,11 +662,11 @@ questions:
   text: 情境：你是 PM，開發團隊表示模型準確率已達 99%，建議立即上線。但你發現該模型是用於預測生產線機台故障（故障率極低）。你應該問團隊什麼問題來確認模型真的可用？
   type: multiple_choice
   options:
-  - 「你們是用什麼 GPU 訓練的？」 (GPU Type)
   - 「你們的 Recall 和 Precision 是多少？混淆矩陣長怎樣？」 (Recall & Precision)
-  - 「模型檔案有多大？」 (Model Size)
+  - 「你們是用什麼 GPU 訓練的？」 (GPU Type)
   - 「訓練花了多少時間？」 (Training Time)
-  correct_index: 1
+  - 「模型檔案有多大？」 (Model Size)
+  correct_index: 0
   explanation: 在類別不平衡（故障率低）的場景下，99% Accuracy 可能毫無意義（全部預測正常就有 99%）。PM 必須確認模型是否真的抓得到故障（Recall）以及誤報率（Precision）是否在可接受範圍。
   tags:
   - chap-m2-ch1
@@ -678,11 +678,11 @@ questions:
   text: 情境：公司計畫將客戶資料送往雲端 AI 平台進行分析。法務部門擔心違反 GDPR。作為技術負責人，你可以提出什麼技術方案來緩解這個風險？
   type: multiple_choice
   options:
-  - 簽署免責聲明 (Disclaimer)
-  - 使用資料去識別化 (De-identification) 技術，如遮罩、雜湊或差分隱私 (De-identification)
-  - 告訴法務雲端很安全 (Claim Safety)
   - 只傳送一半的資料 (Send Half Data)
-  correct_index: 1
+  - 簽署免責聲明 (Disclaimer)
+  - 告訴法務雲端很安全 (Claim Safety)
+  - 使用資料去識別化 (De-identification) 技術，如遮罩、雜湊或差分隱私 (De-identification)
+  correct_index: 3
   explanation: 技術上，透過對敏感欄位進行去識別化處理（如將姓名加密、模糊化），使資料不再屬於「個資」，是合規上雲的常見做法。
   tags:
   - chap-m2-ch1
@@ -694,10 +694,10 @@ questions:
   text: 情境：一個用於招聘篩選的 AI 模型被發現傾向於錄取男性。經檢查，訓練資料反映了過去 10 年公司多錄取男性的歷史事實。這屬於哪種偏見？應如何修正？
   type: multiple_choice
   options:
-  - 標註偏見；應重新標註 (Labeling Bias)
-  - 歷史偏見 (Historical Bias)；應使用重採樣 (Resampling) 平衡性別比例 (Resampling)
-  - 演算法偏見；應更換模型 (Algorithmic Bias)
   - 隨機誤差；無需修正 (Random Error)
+  - 歷史偏見 (Historical Bias)；應使用重採樣 (Resampling) 平衡性別比例 (Resampling)
+  - 標註偏見；應重新標註 (Labeling Bias)
+  - 演算法偏見；應更換模型 (Algorithmic Bias)
   correct_index: 1
   explanation: 這是典型的歷史偏見，AI 忠實地學到了人類過去的偏見。修正方法包括在數據層面平衡樣本，或在算法層面加入懲罰項，強迫模型忽略性別特徵的影響。
   tags:
@@ -710,10 +710,10 @@ questions:
   text: 情境：專案進入開發階段，但資料標註進度嚴重落後，導致模型無法訓練。作為 PM，你發現標註品質也參差不齊。下列哪個應對措施最有效？
   type: multiple_choice
   options:
-  - 催促標註人員加快速度 (Rush Labeling)
+  - 刪除難標註的資料 (Delete Difficult Data)
   - 暫停標註，先制定明確的標註準則 (Guideline) 並進行試標註與校準 (Standardize Guidelines)
   - 直接使用未標註資料訓練 (Use Unlabeled Data)
-  - 刪除難標註的資料 (Delete Difficult Data)
+  - 催促標註人員加快速度 (Rush Labeling)
   correct_index: 1
   explanation: 標註品質決定模型上限。單純求快只會得到垃圾數據。正確做法是「磨刀不誤砍柴工」，先統一標準，並利用技術手段（如主動學習）優先標註對模型最有幫助的樣本，提升效率與品質。
   tags:
@@ -725,11 +725,11 @@ questions:
   text: 情境：某醫院導入 AI 輔助診斷系統，模型準確率高達 98%，但醫生因無法理解 AI 的判斷依據而拒絕使用。為了改善此狀況，專案團隊應優先導入哪項技術？
   type: multiple_choice
   options:
-  - 強化學習 (Reinforcement Learning)
   - 聯邦學習 (Federated Learning)
   - 可解釋 AI (XAI) (Explainable AI)
   - 生成對抗網路 (GAN) (Generative Adversarial Network)
-  correct_index: 2
+  - 強化學習 (Reinforcement Learning)
+  correct_index: 1
   explanation: XAI 能提供模型決策的解釋（如特徵重要性），解決「黑盒子」問題，提升領域專家（醫生）的信任度。
   tags:
   - chap-m2-ch1
@@ -741,11 +741,11 @@ questions:
   text: 情境：一家初創公司預算有限，急需在一個月內在其電商網站上線一個標準的「常見問題回覆」聊天機器人。最合適的開發模式是？
   type: multiple_choice
   options:
-  - 自行訓練大型語言模型 (Train LLM from Scratch)
   - 使用現成的 SaaS 聊天機器人服務 (Use SaaS Chatbot)
+  - 自行訓練大型語言模型 (Train LLM from Scratch)
   - 委外開發客製化模型 (Outsource Development)
   - 招聘 AI 團隊從頭開發 (Hire Team & Build)
-  correct_index: 1
+  correct_index: 0
   explanation: 對於標準化需求且預算/時間緊迫的場景，SaaS 服務能提供最快的上市時間 (Time-to-market) 與最低的初期成本。
   tags:
   - chap-m2-ch1
@@ -757,11 +757,11 @@ questions:
   text: 情境：某大型銀行計畫開發一套「反洗錢偵測系統」，涉及高度敏感的客戶交易資料且需符合嚴格法規。應選擇哪種開發與部署模式？
   type: multiple_choice
   options:
+  - 將資料去識別化後委外開發 (De-identify & Outsource)
   - 使用公有雲 SaaS API (Public Cloud SaaS)
   - 內部團隊開發並採用地端部署 (In-house & On-premise)
-  - 將資料去識別化後委外開發 (De-identify & Outsource)
   - 使用開源模型直接部署到公有雲 (Open Source on Public Cloud)
-  correct_index: 1
+  correct_index: 2
   explanation: 核心業務且涉及高度隱私與法規要求的專案，內部開發配合地端部署能提供最高的資料掌控度與安全性。
   tags:
   - chap-m2-ch1
@@ -773,11 +773,11 @@ questions:
   text: 情境：在 Scrum 開發過程中，資料科學家表示因為等待 IT 部門開通資料庫權限而無法開始訓練模型，導致 Sprint 進度落後。這顯示了什麼問題？
   type: multiple_choice
   options:
-  - Scrum Master 未能有效移除障礙 (Scrum Master Failed)
   - Product Owner 需求不明確 (Unclear Requirements)
-  - 資料科學家能力不足 (Incompetent Scientist)
+  - Scrum Master 未能有效移除障礙 (Scrum Master Failed)
   - Sprint 週期太短 (Sprint too Short)
-  correct_index: 0
+  - 資料科學家能力不足 (Incompetent Scientist)
+  correct_index: 1
   explanation: Scrum Master 的核心職責之一是移除影響團隊開發的障礙 (Impediments)，包括跨部門的資源協調問題。
   tags:
   - chap-m2-ch1
@@ -789,9 +789,9 @@ questions:
   text: 情境：某工廠的瑕疵檢測模型在 POC 階段（使用靜態圖片）表現完美，但部署到生產線（即時影像）後，因推論速度太慢導致產線塞車。這反映了 POC 階段忽略了哪項評估？
   type: multiple_choice
   options:
-  - 模型準確率 (Model Accuracy)
-  - 系統整合與推論延遲 (Latency) (System Integration & Latency)
   - 商業價值 (Business Value)
+  - 系統整合與推論延遲 (Latency) (System Integration & Latency)
+  - 模型準確率 (Model Accuracy)
   - 資料標註品質 (Data Labeling Quality)
   correct_index: 1
   explanation: POC 不應只看準確率，還必須驗證技術架構是否滿足實際場景的非功能性需求（如即時性、吞吐量）。
@@ -805,11 +805,11 @@ questions:
   text: 情境：根據 GDPR，若使用者行使「被遺忘權」要求刪除其資料，但該資料已被用於訓練 AI 模型。企業最嚴謹的合規做法是？
   type: multiple_choice
   options:
+  - 對模型進行加密 (Encrypt Model)
   - 僅從資料庫刪除，保留模型 (Delete from DB, Keep Model)
   - 從資料庫刪除，並使用剔除該資料後的新數據集重新訓練模型 (Retrain Model without Data)
   - 拒絕刪除，因為模型已訓練完成 (Refuse Deletion)
-  - 對模型進行加密 (Encrypt Model)
-  correct_index: 1
+  correct_index: 2
   explanation: 雖然技術上有挑戰，但為了完全合規，通常需要證明模型不再包含該使用者的特徵資訊，重新訓練是最保險的做法。
   tags:
   - chap-m2-ch1
@@ -821,11 +821,11 @@ questions:
   text: 情境：為了趕在年底前上線，PM 決定跳過 POC 直接進行全面開發。這最可能導致什麼後果？
   type: multiple_choice
   options:
-  - 節省大量成本 (Save Cost)
-  - 專案提早成功 (Early Success)
   - 在投入大量資源後才發現技術不可行或不符需求 (High Risk of Failure)
   - 團隊士氣大增 (Boost Morale)
-  correct_index: 2
+  - 節省大量成本 (Save Cost)
+  - 專案提早成功 (Early Success)
+  correct_index: 0
   explanation: POC 的目的就是「以小博大」，用最小成本驗證可行性。跳過 POC 等於在未經驗證的情況下進行豪賭，風險極高。
   tags:
   - chap-m2-ch1
@@ -838,10 +838,10 @@ questions:
   type: multiple_choice
   options:
   - AI 研究員 (AI Researcher)
-  - 資料工程師 (Data Engineer)
   - 前端工程師 (Frontend Engineer)
+  - 資料工程師 (Data Engineer)
   - 專案經理 (Project Manager)
-  correct_index: 1
+  correct_index: 2
   explanation: 資料工程師負責建置自動化的資料管道 (Pipeline) 與 ETL 流程，能釋放資料科學家的時間，讓其專注於模型分析。
   tags:
   - chap-m2-ch1
@@ -854,10 +854,10 @@ questions:
   type: multiple_choice
   options:
   - 專案 A (Project A)
-  - 專案 B (Project B)
   - 兩者皆可 (Both)
   - 都不選 (Neither)
-  correct_index: 1
+  - 專案 B (Project B)
+  correct_index: 3
   explanation: 在現金流吃緊的情況下，回收期 (Payback Period) 越短越好，能更快回籠資金以降低風險。
   tags:
   - chap-m2-ch1
@@ -870,10 +870,10 @@ questions:
   type: multiple_choice
   options:
   - 演算法錯誤 (Algorithm Error)
-  - 歷史偏見 (Historical Bias)
-  - 標註者疲勞 (Labeler Fatigue)
   - 硬體故障 (Hardware Failure)
-  correct_index: 1
+  - 標註者疲勞 (Labeler Fatigue)
+  - 歷史偏見 (Historical Bias)
+  correct_index: 3
   explanation: 歷史數據反映了過去社會結構的不平等。AI 若直接學習這些數據，就會繼承並複製歷史上的偏見。
   tags:
   - chap-m2-ch1
@@ -885,11 +885,11 @@ questions:
   text: 情境：一個電商推薦系統在平時表現良好，但在「雙11」大促銷期間準確率大幅下降。這最可能是發生了什麼？
   type: multiple_choice
   options:
+  - 伺服器當機 (Server Crash)
   - 資料漂移 (Data Drift)
   - 程式碼 Bug (Code Bug)
-  - 伺服器當機 (Server Crash)
   - 模型過擬合 (Overfitting)
-  correct_index: 0
+  correct_index: 1
   explanation: 促銷期間的使用者行為（瀏覽、購買模式）與平時顯著不同，導致輸入資料分佈改變，即資料漂移，影響模型效能。
   tags:
   - chap-m2-ch1
@@ -901,11 +901,11 @@ questions:
   text: 情境：在 Sprint 進行到一半時，業務部門突然要求增加一個全新的功能。Product Owner (PO) 應如何處理？
   type: multiple_choice
   options:
-  - 要求團隊立刻加班做完 (Overtime)
-  - 放入 Product Backlog，在下個 Sprint 規劃 (Add to Backlog)
   - 取消目前的 Sprint (Cancel Sprint)
   - 責怪團隊動作太慢 (Blame Team)
-  correct_index: 1
+  - 放入 Product Backlog，在下個 Sprint 規劃 (Add to Backlog)
+  - 要求團隊立刻加班做完 (Overtime)
+  correct_index: 2
   explanation: 為了保障團隊專注與開發節奏，Sprint 期間不應隨意插入新需求。新需求應加入待辦清單 (Backlog)，經優先級排序後在後續 Sprint
     執行。
   tags:
@@ -918,10 +918,10 @@ questions:
   text: 情境：某影音串流平台需要訓練一個推薦模型，流量在週末會暴增 10 倍。最符合成本效益的基礎設施選擇是？
   type: multiple_choice
   options:
-  - 自建大型機房 (Build Data Center)
-  - 公有雲 (Public Cloud) 搭配自動擴展 (Auto-scaling)
-  - 購買超級電腦 (Buy Supercomputer)
   - 使用邊緣運算 (Edge Computing)
+  - 公有雲 (Public Cloud) 搭配自動擴展 (Auto-scaling)
+  - 自建大型機房 (Build Data Center)
+  - 購買超級電腦 (Buy Supercomputer)
   correct_index: 1
   explanation: 公有雲的彈性擴展特性允許企業在流量高峰自動增加資源，低峰時釋放資源，避免自建機房的閒置浪費。
   tags:
@@ -950,11 +950,11 @@ questions:
   text: 情境：某公司想做「客戶流失預測」，但檢查資料庫發現 60% 的客戶資料缺乏「最後一次登入時間」欄位。這屬於哪種可行性問題？
   type: multiple_choice
   options:
-  - 資料完整性 (Completeness) 不足 (Insufficient Completeness)
   - 資料標註錯誤 (Labeling Error)
   - 資料隱私問題 (Privacy Issue)
+  - 資料完整性 (Completeness) 不足 (Insufficient Completeness)
   - 運算資源不足 (Insufficient Compute)
-  correct_index: 0
+  correct_index: 2
   explanation: 關鍵特徵的缺失屬於資料完整性問題，若缺失比例過高，將嚴重影響模型訓練的可行性。
   tags:
   - chap-m2-ch1
@@ -966,11 +966,11 @@ questions:
   text: 情境：行銷部門希望收集使用者在 App 內的點擊行為來訓練推薦模型。根據個資法 (PDPA)，首要步驟是？
   type: multiple_choice
   options:
-  - 先收集再說 (Collect First)
-  - 修改隱私權政策並取得使用者同意 (Consent) (Update Privacy Policy & Get Consent)
-  - 加密資料 (Encrypt Data)
   - 購買防火牆 (Buy Firewall)
-  correct_index: 1
+  - 先收集再說 (Collect First)
+  - 加密資料 (Encrypt Data)
+  - 修改隱私權政策並取得使用者同意 (Consent) (Update Privacy Policy & Get Consent)
+  correct_index: 3
   explanation: 收集個資（包含數位足跡若可識別個人）前，必須履行告知義務並取得當事人的同意。
   tags:
   - chap-m2-ch1
@@ -982,11 +982,11 @@ questions:
   text: 情境：AI 模型預測準確，但前端介面設計複雜，導致一線員工操作錯誤頻發，最終拒絕使用。團隊缺乏哪個角色的投入？
   type: multiple_choice
   options:
-  - 資料科學家 (Data Scientist)
   - 後端工程師 (Backend Engineer)
-  - UI/UX 設計師 (UI/UX Designer)
   - 系統管理員 (System Administrator)
-  correct_index: 2
+  - 資料科學家 (Data Scientist)
+  - UI/UX 設計師 (UI/UX Designer)
+  correct_index: 3
   explanation: UI/UX 設計師負責優化人機互動體驗。忽略易用性是許多 AI 專案技術成功但落地失敗的主因。
   tags:
   - chap-m2-ch1
@@ -999,10 +999,10 @@ questions:
   type: multiple_choice
   options:
   - 技術風險；應自建機房 (Technical Risk)
+  - 市場風險；應降價促銷 (Market Risk)
   - 供應商風險 (Vendor Lock-in)；應制定備援計畫或選擇標準化介面 (Vendor Risk)
   - 法規風險；應控告對方 (Legal Risk)
-  - 市場風險；應降價促銷 (Market Risk)
-  correct_index: 1
+  correct_index: 2
   explanation: 過度依賴單一供應商會產生鎖定風險。應評估供應商穩定性，並預留遷移或替代方案（如多雲策略）。
   tags:
   - chap-m2-ch1
@@ -1014,11 +1014,11 @@ questions:
   text: 情境：POC 結果顯示 AI 能將瑕疵檢測準確率從 95% 提升到 95.5%，但需投入數百萬硬體成本。專案經理應做出什麼建議？
   type: multiple_choice
   options:
-  - 立即導入，因為準確率提升了 (Deploy Immediately)
   - 終止或重新評估，因為 ROI 過低 (Terminate or Re-evaluate)
-  - 更換所有硬體 (Replace Hardware)
   - 解雇檢測員 (Fire Inspectors)
-  correct_index: 1
+  - 更換所有硬體 (Replace Hardware)
+  - 立即導入，因為準確率提升了 (Deploy Immediately)
+  correct_index: 0
   explanation: 雖然技術指標提升，但若提升幅度微小且成本極高（邊際效益遞減），導致 ROI 不佳，則不具備商業可行性。
   tags:
   - chap-m2-ch1
@@ -1030,11 +1030,11 @@ questions:
   text: 情境：團隊發現三個月前的模型版本效果最好，但找不到當時的訓練參數與資料集版本。這顯示團隊缺乏哪種工具？
   type: multiple_choice
   options:
+  - Kubernetes (Container Orchestration)
+  - MLflow 或 DVC (實驗追蹤與版本控制) (Experiment Tracking)
   - JIRA (Project Management)
   - Slack (Communication)
-  - MLflow 或 DVC (實驗追蹤與版本控制) (Experiment Tracking)
-  - Kubernetes (Container Orchestration)
-  correct_index: 2
+  correct_index: 1
   explanation: MLflow、DVC 等工具專門用於記錄機器學習的實驗參數、指標與資料版本，確保實驗的可再現性 (Reproducibility)。
   tags:
   - chap-m2-ch1
