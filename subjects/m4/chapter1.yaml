@@ -661,7 +661,7 @@ questions:
 - id: 6142
   chapter_title: 進階機器學習演算法
   section_title: 深度思考情境題
-  text: 情境：你負責一家超市的銷售分析，發現「尿布 -> 啤酒」的 Lift 值高達 3.5。這對行銷策略有什麼啟示？
+  text: "情境：你負責一家超市的銷售分析，發現「尿布 -> 啤酒」的 Lift 值高達 3.5。這對行銷策略有什麼啟示？"
   type: multiple_choice
   options:
   - 停止銷售啤酒以專注於尿布銷售
@@ -1043,3 +1043,521 @@ questions:
   - sec-ensemble-methods
   id: 6165
   usage: both
+- id: 6165
+  chapter_title: 進階機器學習演算法
+  text: 某零售企業建立一個銷售預測模型，希望評估該模型在不同月份的新資料上，是否仍能維持穩定的預測表現。資料科學團隊計畫利用統計方法檢驗模型對未觀察資料的適應能力與泛化效果。下列哪一種方法最適合用於此目的？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - F 檢定 (F-test)
+  - 交叉驗證 (Cross-Validation)
+  - 配對樣本 t 檢定 (Paired-sample t-test)
+  - 卡方檢定 (Chi-square Test)
+  correct_index: 1
+  explanation: 交叉驗證 (Cross-Validation) 是評估模型泛化能力與穩定性的標準方法。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6166
+  chapter_title: 進階機器學習演算法
+  text: 在建立迴歸或分類模型時，若希望避免模型過度擬合 (Overfitting)，可透過加入正則化項以限制模型的複雜度。其中，L1 正則化 (Lasso) 的主要效果為何？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 增加模型參數的數量，以提升表現靈活度
+  - 強化梯度穩定性，避免參數更新過度震盪
+  - 產生稀疏模型 (Sparse Model)，使部分參數權重收斂為零
+  - 提高學習率 (Learning Rate)，加速模型收斂速度
+  correct_index: 2
+  explanation: L1 正則化 (Lasso) 傾向於產生稀疏解 (Sparse Solution)，即將不重要的特徵權重降為 0。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6167
+  chapter_title: 進階機器學習演算法
+  text: 在訓練非線性模型時，若目標函數為非凸函數 (Non-convex Function)，演算法在參數更新過程中可能出現多個極值點，導致最佳化結果不穩定。請問此時最可能發生下列哪一種情況？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 梯度消失
+  - 資料過少
+  - 局部最優解
+  - 過擬合
+  correct_index: 2
+  explanation: 非凸函數 (Non-convex Function) 擁有多個局部極小值，梯度下降法容易陷入局部最優解 (Local Optima)。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6168
+  chapter_title: 進階機器學習演算法
+  text: 在執行 DBSCAN (Density-Based Spatial Clustering of Applications with Noise) 群集分析時，若某資料點鄰域內的樣本數不足以形成核心點 (Core Point)，且該點未被任何核心點的鄰域所包含，也未與其他群集形成密度可達關係 (Density Reachability)，此資料點最終將被歸類為哪一種類型？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 鄰近點 (Neighbor Point)
+  - 雜訊點 (Noise Point)
+  - 邊界點 (Border Point)
+  - 潛在點 (Potential Point)
+  correct_index: 1
+  explanation: 在 DBSCAN 中，未達核心點條件且不在核心點鄰域內的點被視為雜訊點 (Noise Point)。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6169
+  chapter_title: 進階機器學習演算法
+  text: 某智慧製造公司開發一套影像辨識系統，用於自動檢測生產線上的瑕疵產品。系統採用卷積神經網路 (Convolutional Neural Network, CNN) 作為主要模型架構，其中第一層卷積層 (Convolutional Layer) 主要負責的功能為下列何者？  (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 自動提取輸入影像中的局部特徵
+  - 降低影像維度以加速運算效率
+  - 增加神經元與參數數量以提升模型容量
+  - 整合所有特徵並輸出最終分類結果
+  correct_index: 0
+  explanation: 卷積層 (Convolutional Layer) 的主要功能是透過濾波器滑動提取影像的局部特徵 (如邊緣、紋理)。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6170
+  chapter_title: 進階機器學習演算法
+  text: 某智慧城市團隊開發一套交通監控系統，用於即時辨識路口監視器影像中的車輛與行人。團隊比較後發現，卷積神經網路 (Convolutional Neural Network, CNN) 在訓練與推論效率上，明顯優於傳統的全連接神經網路 (Fully Connected Neural Network, FCNN)。請問下列何者為主要原因？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - CNN 能自動學習影像的旋轉與比例不變性
+  - CNN 可直接跳過人工特徵提取步驟進行分類
+  - CNN 透過區域感知 (Local Receptive Field) 與參數共享 (Parameter Sharing) 機制，降低模型參數量與運算複雜度
+  - CNN 捨棄激勵函數 (Activation Function)，以加快運算速度
+  correct_index: 2
+  explanation: CNN 透過參數共享 (Parameter Sharing) 與局部感知，大幅減少了參數量，比全連接網路更高效。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6171
+  chapter_title: 進階機器學習演算法
+  text: 下列哪一種應用最適合採用長短期記憶網路 (Long Short-Term Memory, LSTM) 模型？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 預測未來七天的電力需求變化趨勢
+  - 辨識監視影像中不同類別的物件
+  - 將大量顧客資料依相似特徵自動分群
+  - 將高維度的感測器資料壓縮成低維表示
+  correct_index: 0
+  explanation: LSTM 專為處理序列資料設計，適合時間序列預測 (如電力需求)。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6172
+  chapter_title: 進階機器學習演算法
+  text: 資訊增益 (Information Gain) 常用於衡量特徵對分類結果的不確定性貢獻程度，並據以進行特徵選擇。此方法主要應用於下列哪一類模型架構中？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 使用 L1 正則化進行特徵篩選的線性模型
+  - 利用激活函數 (Activation Function) 進行特徵擷取的深度神經網路
+  - 透過核函數 (Kernel Function) 將特徵映射至高維空間的分類模型
+  - 透過遞迴分裂方式建立分類規則的決策樹模型
+  correct_index: 3
+  explanation: 資訊增益 (Information Gain) 是決策樹 (Decision Tree) 用於選擇分裂特徵的指標。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6173
+  chapter_title: 進階機器學習演算法
+  text: 在建構以距離為基礎的機器學習模型 (如 KNN、SVM) 時，下列哪一項資料前處理方式最為關鍵？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 進行特徵縮放 (Feature Scaling)，使各特徵變數具有相似的數值範圍
+  - 將連續型特徵變數轉換為類別型變數
+  - 以平均值或中位數進行缺失值補齊
+  - 進行隨機抽樣以平衡資料筆數
+  correct_index: 0
+  explanation: 距離型演算法 (KNN, SVM, K-means) 對特徵尺度非常敏感，必須進行特徵縮放 (Feature Scaling)。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6174
+  chapter_title: 進階機器學習演算法
+  text: 下列哪一種應用情境最適合導入 AutoML, 以提升模型開發效率？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 公司已有完整的 MLOps 平台與資深資料科學團隊，模型更新採固定流程
+  - 製造部門的生產良率模型已長期穩定運作，只需定期調整參數
+  - 行銷部門希望在短時間內比較多種顧客流失預測模型，缺乏專職工程師與時間進行手動建模
+  - 財務部門正在開發高度客製化的信用風險評估模型，需要精細控制特徵工程與演算法細節
+  correct_index: 2
+  explanation: AutoML 適合資源有限或需快速驗證多種模型的場景 (如行銷部門快速建模)。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6175
+  chapter_title: 進階機器學習演算法
+  text: 相較於 Grid Search, Random Search 在超參數調整上具備哪一項主要優勢？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 可自動產生模型架構
+  - 可使用更大的訓練集
+  - 避免模型過擬合
+  - 能更有效率搜尋高維參數空間
+  correct_index: 3
+  explanation: Random Search 在高維參數空間中，比 Grid Search 更能有效率地找到較佳的超參數組合。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6176
+  chapter_title: 進階機器學習演算法
+  text: 某智慧製造公司開發一套設備故障預測系統，利用感測器資料訓練深度神經網路 (Deep Neural Network, DNN) 模型，以提前偵測異常運作跡象。在訓練過程中，團隊發現模型收斂速度不穩定：有時過快導致過擬合，有時又遲遲無法達到最佳準確率。開發團隊可以藉由調整下列哪一項超參數 (Hyperparameter) 以改善此問題？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 每個神經元的輸出結果
+  - 損失函數 (Loss Function) 在訓練過程中的梯度變化值 (Gradient)
+  - 學習率 (Learning Rate)，控制模型權重更新的速度
+  - 模型在訓練後產生的權重值
+  correct_index: 2
+  explanation: 學習率 (Learning Rate) 控制權重更新的步長，過大導致震盪，過小導致收斂緩慢。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6177
+  chapter_title: 進階機器學習演算法
+  text: 標籤偏差 (Label Bias) 通常是因為什麼原因造成？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 訓練資料量過大
+  - 標記資料本身帶有主觀偏見
+  - 模型結構設計不當
+  - 特徵數量設定過多
+  correct_index: 1
+  explanation: 標籤偏差 (Label Bias) 常源自標註者主觀判斷不一致或系統性錯誤。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6178
+  chapter_title: 進階機器學習演算法
+  text: 下列哪一種 AI 應用情境中，模型的可解釋性 (Explainability) 最為關鍵？  (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 電商平台利用深度學習模型預測用戶的下一次購買時間，以優化推播行銷策略
+  - 新創公司使用機器學習演算法自動調整廣告出價策略，以提升點擊轉換率
+  - 醫院導入 AI 模型分析病患影像並給出腫瘤惡性可能性，作為臨床醫師診斷依據
+  - 銀行導入 AI 模型預測客戶流失率，並自動推薦留客優惠方案
+  correct_index: 2
+  explanation: 醫療診斷涉及生命安全，模型的可解釋性 (為何判斷為惡性) 至關重要。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6179
+  chapter_title: 進階機器學習演算法
+  text: 在線性迴歸模型中，若 $R^2$ 值為 0.85，其意義為何？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 模型準確率為 85%
+  - 85% 的變異可被模型解釋
+  - 預測誤差為 15%
+  - 模型有 85% 的信心水準
+  correct_index: 1
+  explanation: R-squared = 0.85 表示模型能解釋目標變數 85% 的變異量。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6180
+  chapter_title: 進階機器學習演算法
+  text: 在二元分類問題中，若精確率 (Precision) 為 0.8，召回率 (Recall) 為 0.6，則 F1 分數 (F1 Score) 為何？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 0.686
+  - 0.700
+  - 0.720
+  - 0.750
+  correct_index: 0
+  explanation: F1 = 2 * (0.8 * 0.6) / (0.8 + 0.6) = 0.96 / 1.4 ≈ 0.686。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6181
+  chapter_title: 進階機器學習演算法
+  text: 下列哪一種優化演算法內建動量 (Momentum) 的設計機制？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - SGD + Momentum
+  - Adam
+  - RMSProp:
+  - Adagrad
+  correct_index: 1
+  explanation: Adam 優化器結合了動量 (Momentum) 與 RMSProp 的概念。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6182
+  chapter_title: 進階機器學習演算法
+  text: 下列何者最能同時反映 XGBoost (eXtreme Gradient Boosting) 相較於傳統梯度提升決策樹 (Gradient Boosting Decision Tree, GBDT) 的主要技術改進？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 引入正則化項 (Regularization) 以抑制過擬合，並支援缺失值自動處理與並行化訓練
+  - 改以隨機森林 (Random Forest) 架構取代樹模型以提升準確率
+  - 以類神經網路 (Neural Network) 取代弱分類器 (Weak Learners)
+  - 採用批次正規化 (Batch Normalization) 技術提升模型穩定性
+  correct_index: 0
+  explanation: XGBoost 引入了正則化項 (L1/L2) 來控制模型複雜度，這是其優於傳統 GBDT 的關鍵之一。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6183
+  chapter_title: 進階機器學習演算法
+  text: 某醫療機構開發疾病早期偵測模型，正樣本 (確診病例) 僅佔 3%。在模型訓練與評估過程中，下列哪一種作法最不適合用於提升對少數類病例的預測能力？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 使用 SMOTE 過採樣
+  - 調整類別權重
+  - 使用準確率 (Accuracy) 作為評估指標
+  - 欠採樣多數類 (Undersampling the majority class)
+  correct_index: 2
+  explanation: 使用準確率 (Accuracy) 評估不平衡資料會產生誤導 (如全猜多數類也有高準確率)。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6184
+  chapter_title: 進階機器學習演算法
+  text: 某電子商務公司為開發商品評論情感分析模型，希望模型能捕捉評論中不同特徵之間的關聯影響，例如「商品價格」與「顧客滿意度」的互動效果。下列哪一種特徵工程設計方式最適合用於建立互動特徵 (Interaction Features)？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 將單一特徵取平方
+  - 對所有特徵進行對數轉換
+  - 將兩個或多個特徵進行乘積或交互組合
+  - 對特徵進行標準化
+  correct_index: 2
+  explanation: 建立互動特徵 (Interaction Features) 最直接的方式是將特徵相乘。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6185
+  chapter_title: 進階機器學習演算法
+  text: 某語音辨識系統開發團隊採用 Transformer 架構，為了讓模型能同時理解語音片段中的發音特徵、語速變化與語意脈絡等多層次資訊，團隊在設計中導入了多頭注意力 (Multi-head Attention) 機制。請問下列何者為此機制的主要優點？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 減少模型參數量以降低訓練成本
+  - 加速整體注意力計算過程
+  - 從不同表示子空間 (Representation Subspaces) 同時捕捉多樣化關聯資訊
+  - 避免梯度消失 (Gradient Vanishing) 問題
+  correct_index: 2
+  explanation: 多頭注意力 (Multi-head Attention) 允許模型同時關注來自不同表示子空間的資訊。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6186
+  chapter_title: 進階機器學習演算法
+  text: 某電商平台希望預測顧客是否會購買特定商品。系統蒐集顧客的瀏覽紀錄、停留時間、商品類別偏好與過去購買行為，並以此推估「在觀察到這些行為特徵的情況下，該顧客會購買的機率」。若模型採用貝氏定理 (Bayes' Theorem) 進行推論，下列敘述何者最符合其核心運作機制？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 根據歷史樣本自動分群，找出行為相似的顧客群
+  - 以條件機率方式計算顧客屬於「會購買」或「不會購買」的分類機率
+  - 以最小平方誤差 (Mean Squared Error) 為損失函數，預測顧客的購買金額
+  - 依據回饋信號 (Feedback Signal) 透過強化學習 (Reinforcement Learning) 動態調整推薦策略
+  correct_index: 1
+  explanation: 貝氏分類器基於貝氏定理，計算給定特徵下的條件機率 P(Y|X)。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6187
+  chapter_title: 進階機器學習演算法
+  text: 一家再生能源公司希望預測未來三個月太陽能發電量的波動範圍。由於氣候條件具有高度隨機性，且輸入變數 (如日照時數、雲量、溫度) 之間存在不確定關係，工程團隊決定以隨機抽樣方式模擬多種可能情境，以估算整體發電量的機率分佈與風險區間。請問此時所採用的技術最符合下列哪一種方法？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 蒙地卡羅方法 (Monte Carlo Method)
+  - K-means 聚類 (K-means Clustering)
+  - 支持向量迴歸 (Support Vector Regression, SVR)
+  - 特徵選取 (Feature Selection)
+  correct_index: 0
+  explanation: 蒙地卡羅方法 (Monte Carlo) 透過大量隨機抽樣來模擬系統的機率分佈與風險。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6188
+  chapter_title: 進階機器學習演算法
+  text: 某房地產公司利用多元迴歸模型 (Multiple Regression Model) 預測房價，並繪製殘差圖 (Residual Plot) 檢查模型品質。結果顯示部分資料點的殘差極大，且在高價區樣本中出現系統性彎曲分佈現象。根據此觀察，下列何者為最可能的正確解釋？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 模型過度擬合 (Overfitting)，導致在訓練資料上表現過好、泛化能力不足
+  - 模型特徵數量不足，導致欠擬合 (Underfitting)
+  - 模型存在異常值 (Outlier) 或非線性關係，違反迴歸假設
+  - 殘差圖呈現隨機分佈，表示模型已完全符合所有假設
+  correct_index: 2
+  explanation: 殘差圖呈現系統性彎曲 (非隨機分佈) 通常暗示模型未捕捉到非線性關係或遺漏了重要變數。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6189
+  chapter_title: 進階機器學習演算法
+  text: 某金融機構正在建立傳統信用評分卡模型，採用邏輯迴歸 (Logistic Regression) 作為建模方法，並依循監理機關建議的標準化流程進行模型開發。下列哪一項不是傳統信用評分卡模型開發流程中的常見步驟？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 使用生成式模型進行特徵學習
+  - 進行特徵選擇與多重共線性 (Multicollinearity) 分析
+  - 進行分箱 (Binning) 與資訊值 (Information Value, IV) 檢定
+  - 使用樣本穩定性指標 (Population Stability Index, PSI) 檢驗模型穩定性
+  correct_index: 0
+  explanation: 傳統信用評分卡 (Scorecard) 通常不使用生成式模型，而是基於 WOE/IV 的邏輯迴歸。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6190
+  chapter_title: 進階機器學習演算法
+  text: 在防止監督式學習模型過擬合 (Overfitting) 時，下列哪一種策略不屬於降低模型複雜度或限制學習能力的作法？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 採用 L1 或 L2 正則化
+  - 在訓練過程中使用 Dropout 技術
+  - 採取早期停止 (Early Stopping) 機制
+  - 擴增輸入特徵變數以提升模型表達能力
+  correct_index: 3
+  explanation: 擴增輸入特徵通常會增加模型複雜度，若無適當篩選反而容易導致過擬合。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6191
+  chapter_title: 進階機器學習演算法
+  text: "某智慧製造團隊在開發瑕疵影像檢測模型時，發現使用線性激活函數 (Activation Function) 後，模型的訓練準確率長期停滯，懷疑模型無法學習到足夠複雜的特徵表達。若要改善此問題，下列哪一項調整方案最為合適？ (114年第二梯次)"
+  type: multiple_choice
+  options:
+  - 增加卷積層 (Convolutional Layer) 數量，使網路更深以強化特徵提取
+  - 將輸入影像先進行灰階化處理，降低運算量
+  - 使用 Sigmoid 激活函數，以將輸出壓縮至 [0, 1] 範圍
+  - 改用 ReLU (Rectified Linear Unit) 激活函數，以引入非線性並提升模型表達能力
+  correct_index: 3
+  explanation: ReLU (Rectified Linear Unit) 解決了梯度消失問題並引入非線性，能提升深度網路的表達能力。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6192
+  chapter_title: 進階機器學習演算法
+  text: "一家零售電商公司希望建立顧客流失預測模型，用以判斷哪些會員可能在三個月內不再消費。團隊以去年會員資料進行訓練，並僅採用「曾經購買三次以上」的活躍顧客紀錄作為樣本。模型上線後，對整體會員進行預測時，發現模型對於新註冊會員與低消費會員的預測準確率明顯偏低。下列何者為造成此現象最可能的原因？ (114年第二梯次)"
+  type: multiple_choice
+  options:
+  - 特徵設計未排除與會員忠誠度高度相關的變數，導致特徵偏差 (Feature Bias)
+  - 標記 (Label) 由人工標註，導致標籤偏差 (Label Bias)
+  - 訓練樣本僅涵蓋高活躍顧客，造成取樣偏差 (Sampling Bias)
+  - 模型未進行超參數調整，導致過擬合 (Overfitting)
+  correct_index: 2
+  explanation: 訓練樣本僅包含活躍顧客，導致模型無法泛化至新會員或低消費族群，屬於取樣偏差 (Sampling Bias)。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6193
+  chapter_title: 進階機器學習演算法
+  text: "在工業設備故障預測專案中，模型訓練與超參數調整均依賴於一段歷史數據作為驗證集。然而，隨著設備運行環境與工況條件的變化，原有驗證集已無法充分反映現況，導致模型在實際部署後的預測準確率逐漸下降。下列哪一種策略最能有效提升模型在長期運行環境中的穩健性與泛化能力？ (114年第二梯次)"
+  type: multiple_choice
+  options:
+  - 固定驗證集內容，並透過模型正則化技巧 (如 L2 正則化) 強化模型泛化
+  - 將全部歷史資料納入訓練，不使用驗證集，依靠早期停止 (Early Stopping) 控制訓練
+  - 簡化模型架構，減少模型參數數量以降低過擬合風險
+  - 採用時間序列交叉驗證 (Time Series Cross Validation) 或滑動視窗驗證 (Rolling Window Validation) 方法，動態更新驗證資料以適應時間演進
+  correct_index: 3
+  explanation: 時間序列交叉驗證 (Time Series CV) 能模擬真實的時間演進，避免使用未來資訊預測過去。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6194
+  chapter_title: 進階機器學習演算法
+  text: "某情感分析模型在英文資料集上取得 macro Fl-score = 0.91。當該模型部署於西班牙文資料集時, Fl-score 驟降至 0.58。下列哪一項解釋最合理，且與 Fl-score 變化相關？ (114年第二梯次)"
+  type: multiple_choice
+  options:
+  - macro Fl-score 本身波動性高，建議改用 micro-average Fl-score 評估
+  - 模型在西班牙文語料上過度擬合，導致評估結果偏高
+  - 語言轉移造成召回率 (Recall) 下降，模型無法正確辨識關鍵情緒詞彙
+  - 以均方誤差 (MSE) 取代 Fl-score 評估可獲得更準確的結果
+  correct_index: 2
+  explanation: 語言轉移 (Language Transfer) 常因詞彙或語法差異導致模型無法識別關鍵特徵，造成召回率下降。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6195
+  chapter_title: 進階機器學習演算法
+  text: "某能源公司利用歷史氣象與用電資料，開發長期電力需求預測模型，採用深度神經網路架構進行訓練。在訓練過程中，模型在訓練集上的損失值持續下降，但在驗證集上，損失在第 80 輪後開始波動，呈現週期性上升與下降。團隊懷疑模型受到季節性資料波動與隨機噪音影響，導致驗證損失難以穩定收斂。若要在此情境下合理運用早期停止法 (Early Stopping) 以確保模型具最佳泛化能力，下列哪一項策略最為適當？ (114年第二梯次)"
+  type: multiple_choice
+  options:
+  - 直接根據訓練集損失最低點停止訓練，以確保模型充分擬合所有樣本
+  - 監控驗證集損失並設定適度的耐心值 (Patience)，在連續多輪未改善後再停止訓練
+  - 改以測試集損失作為早停依據，以提升模型最終評估一致性
+  - 將所有資料重新合併後訓練至收斂，避免因資料分割導致評估波動
+  correct_index: 1
+  explanation: 監控驗證集損失並設定耐心值 (Patience) 是早停法 (Early Stopping) 的標準實作，能避免過早或過晚停止。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6196
+  chapter_title: 進階機器學習演算法
+  text: "某電信公司開發客戶流失預測模型，使用大量顧客行為特徵，例如通話時長、上網頻率、帳單金額、客服聯絡次數等。在訓練過程中，團隊發現部分特徵彼此高度相關，但同時也懷疑有些特徵對流失預測的貢獻度有限。若希望模型在避免過擬合 (Overfitting) 的同時，能自動篩選出較具代表性的特徵，採用下列哪一種方法最為合適？ (114年第二梯次)"
+  type: multiple_choice
+  options:
+  - 使用早期停止法 (Early Stopping) 控制訓練回合數，避免過擬合 (Overfitting)
+  - 同時移除多重共線性特徵並採用 L2 正則化 (Ridge)，以確保模型穩定收斂
+  - 僅使用 L2 正則化 (Ridge)，抑制所有權重幅度但保留全部特徵
+  - 採用 L1 正則化 (Lasso)，透過懲罰項使部分特徵係數縮為 0
+  correct_index: 3
+  explanation: L1 正則化 (Lasso) 能將係數壓縮為 0，具備特徵選擇的功能。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6197
+  chapter_title: 進階機器學習演算法
+  text: "某資料科學團隊正在開發一個客戶相似度比對系統，用於計算所有客戶之間的相似度分數。若系統需逐一比對每一位客戶與其他所有客戶的資料組合，此時演算法的時間複雜度最可能為哪一種？其代表意義為何？ (114年第二梯次)"
+  type: multiple_choice
+  options:
+  - O(n) - 執行時間與資料量成線性關係
+  - $O(n^2)$ - 執行時間與資料量平方成正比
+  - O(1) - 執行時間固定不變
+  - O($\log n$) - 執行時間與資料量呈對數成長關係
+  correct_index: 1
+  explanation: 逐一比對所有組合 (Pairwise Comparison) 的次數為 n*(n-1)/2，時間複雜度為 O(n^2)。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6198
+  chapter_title: 進階機器學習演算法
+  text: "某醫療人工智慧團隊正在開發心臟病風險預測模型，資料量僅有 150 筆，其中陽性個案不到 8%。由於樣本數稀少且類別分布極不平衡，團隊希望在有限資料下，仍能準確評估模型在不同資料上的表現穩定性，同時避免訓練資料被過度切分而影響模型效能。若團隊希望在有限樣本下，同時兼顧資料的利用率與各類別在驗證折中的比例一致性，最適合採用下列哪一種交叉驗證方法？ (114年第二梯次)"
+  type: multiple_choice
+  options:
+  - 5-Fold 交叉驗證 (5-Fold Cross Validation)
+  - 留一法交叉驗證 (Leave-One-Out Cross Validation)
+  - 隨機交叉驗證 (Random Cross Validation)
+  - 分層留一法交叉驗證 (Stratified Leave-One-Out Cross Validation)
+  correct_index: 3
+  explanation: 分層留一法 (Stratified LOOCV) 或分層 K-Fold 在小樣本且不平衡資料中能確保驗證的穩定性與代表性。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6199
+  chapter_title: 進階機器學習演算法
+  text: "某公司針對製程感測器資料進行主成分分析 (PCA)，經標準化與協方差矩陣分解後，得到三個主成分的特徵值如下：$\\lambda_1=6.0, \\lambda_2=3.0, \\lambda_3=1.0$。若團隊決定僅保留能解釋至少 80% 總變異量的主成分，以進行後續模型建構，下列哪一項敘述最合理且數據解讀正確？ \n**💡 總變異量 = $6.0 + 3.0 + 1.0 = 10.0$**\n**💡 前兩個主成分解釋的變異量百分比 = $\\frac{6.0 + 3.0}{10.0} = 0.9 = 90\\%$** (114年第二梯次)"
+  type: multiple_choice
+  options:
+  - 前兩個主成分合計解釋 90% 的總變異量，因此可安全降維至二維，且仍保留大部分資訊
+  - 第一主成分解釋 60% 的變異量，表示資料結構呈現明顯線性關係，僅保留一維即可避免過擬合
+  - 雖然前兩個主成分可解釋超過 80% 變異量，但第二主成分貢獻仍高達 30%，不宜捨棄第三主成分
+  - 三個特徵值相差不大，顯示各主成分變異均衡，降維可能導致資訊損失
+  correct_index: 0
+  explanation: 前兩個主成分解釋變異量 = (6+3)/10 = 90% > 80%，保留前兩個即可。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6200
+  chapter_title: 進階機器學習演算法
+  text: "某銀行計畫與多家合作機構共同訓練一個 AI 信用風險預測模型，為避免客戶交易資料在傳輸與運算過程中外洩，技術團隊評估使用同態加密 (Homomorphic Encryption) 技術。下列何者最能正確描述同態加密在此應用中的關鍵特性？ (114年第二梯次)"
+  type: multiple_choice
+  options:
+  - 系統以隨機雜訊 (Noise) 干擾輸出，確保統計結果不洩漏個資
+  - 各參與銀行透過安全通道交換私鑰，確保模型參數一致
+  - 將原始資料壓縮並同時加密，以減少加密後資料量與運算時間
+  - 資料在加密狀態下仍可進行數值運算，模型訓練可於未解密資料上完成
+  correct_index: 3
+  explanation: 同態加密允許在密文上進行運算，結果解密後等於在明文上運算的結果，適合隱私保護機器學習。
+  tags:
+  - chap-m4-ch1
+  usage: mock
+- id: 6201
+  chapter_title: 進階機器學習演算法
+  text: "某跨銀行風控平台希望整合多家銀行的用戶行為資料，用於訓練信用風險預測模型。由於競爭與法規限制，各銀行僅願意提供加密後資料，且資料在任何時間不得被平台解密。同時，平台需建立安全通訊協議以確保資料在傳輸過程未被竄改或重放。下列哪一組技術最能完整對應上述需求？ (114年第二梯次)"
+  type: multiple_choice
+  options:
+  - 對稱加密 (Symmetric Encryption) + 單向雜湊 (Hash Function) + 非對稱加密 (Asymmetric Encryption) + 差分隱私 (Differential Privacy)
+  - 同態加密 (Homomorphic Encryption) + 非對稱加密 (Asymmetric Encryption) + 單向雜湊 (One-way Hash Function) + 對稱加密 (Symmetric Encryption) 
+  - 差分隱私 (Differential Privacy) + 對稱加密 (Symmetric Encryption) + 同態加密 (Homomorphic Encryption) + 數位簽章 (Digital Signature)
+  - 同態加密 (Homomorphic Encryption) + 安全多方計算 (Secure Multi-party Computation, MPC) + 雜湊函數 (Hash Function) + 對稱加密 (Symmetric Encryption)
+  correct_index: 1
+  explanation: 結合同態加密 (運算)、非對稱加密 (傳輸/金鑰交換)、雜湊 (完整性) 等技術能滿足高規格安全需求。
+  tags:
+  - chap-m4-ch1
+  usage: mock
