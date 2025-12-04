@@ -1,10 +1,10 @@
 ---
-title: "第四章：AI 代理人 (Agentic AI) 與自動化"
+title: "AI 代理人 (Agentic AI) 與自動化"
 order: 4
 label: chap-gen-chapter4
 ---
 
-<!-- # 第四章：AI 代理人 (Agentic AI) 與自動化 {#sec-agentic-ai} -->
+<!-- # AI 代理人 (Agentic AI) 與自動化 {#sec-agentic-ai} -->
 
 > **考點摘要**：從對話走向行動，Agent 的規劃、工具使用與多代理協作是進階考點。
 

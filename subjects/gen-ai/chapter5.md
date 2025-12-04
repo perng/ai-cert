@@ -1,10 +1,10 @@
 ---
-title: "第五章：No Code / Low Code 平台與 AI 開發工具"
+title: "No Code / Low Code 平台與 AI 開發工具"
 order: 5
 label: chap-gen-chapter5
 ---
 
-<!-- # 第五章：No Code / Low Code 平台與 AI 開發工具 {#sec-no-code-low-code} -->
+<!-- # No Code / Low Code 平台與 AI 開發工具 {#sec-no-code-low-code} -->
 
 > **考點摘要**：結合傳統 Low Code 概念與新一代 AI Native 開發工具，強調非技術人員的賦能與開發效率。
 
