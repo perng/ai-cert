@@ -2,4 +2,4 @@ id: 2
 title: "生成式 AI 應用與規劃"
 description: "(初級)生成式 AI 應用與規劃"
 order: 2
-is_locked: false  # Set to true for paid subjects
+is_locked: true  # Set to true for paid subjects

@@ -2,4 +2,4 @@ id: 5
 title: "大數據處理與分析"
 description: "(中級)大數據處理與分析-第二科必修"
 order: 5
-is_locked: false
+is_locked: true

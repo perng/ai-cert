@@ -1040,3 +1040,51 @@ questions:
   - sec-regularization
   id: 6365
   usage: both
+- id: 6366
+  chapter_title: 模型最佳化與調校
+  section_title: 模型壓縮
+  text: 在深度神經網路中，不同層的參數量（parameter count）差異極大。有些層雖然數量少但計算量大，有些則相反。了解參數分佈情形，有助於模型壓縮與遷移學習設計。請問在 VGG16 中，下列何者的參數量最多？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 卷積層(Conv2d)
+  - 全連接層(Linear)
+  - ReLU 激活函數
+  - 池化層(MaxPool2d, AdaptiveAvgPool2d)
+  correct_index: 1
+  explanation: 在 VGG16 中，全連接層（尤其是第一個全連接層）佔據了絕大多數的參數（約 89%）。卷積層雖然計算量大，但參數共享機制使其參數量相對較少。
+  tags:
+  - chap-m4-ch3
+  - sec-model-compression
+  usage: mock
+- id: 6367
+  chapter_title: 模型最佳化與調校
+  section_title: 模型壓縮
+  text: 在神經網路中，了解各層的運算量分佈，有助於模型壓縮與硬體加速的策略設計。請問在 VGG16 中，下列何者運算量(FLOPs)最多？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 卷積層(Conv2d)
+  - 全連接層(Linear)
+  - ReLU 激活函數
+  - 池化層(MaxPool2d, AdaptiveAvgPool2d)
+  correct_index: 0
+  explanation: 卷積層需要對特徵圖的每個像素進行滑動視窗運算，因此貢獻了絕大部分的 FLOPs（浮點運算量），儘管其參數量較少。全連接層雖然參數多，但只進行一次矩陣乘法，運算量相對較小。
+  tags:
+  - chap-m4-ch3
+  - sec-model-compression
+  usage: mock
+- id: 6368
+  chapter_title: 模型最佳化與調校
+  section_title: 模型壓縮
+  text: VGG16 層數深且結構規則，由多層卷積、池化及全連接層組成。了解各層的輸入/輸出維度、參數量及記憶體需求，有助於掌握 CNN 模型的組成邏輯與實作技巧。根據 VGG16 的模型架構，下列敘述何者正確？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - AdaptiveAvgPool2d 的輸出會被攤平後傳入第一個全連接層；由於前一層池化輸出空間為 4×4，所以第一個線性層的輸入維度是 512×4×4 = 8192
+  - Linear-33（第一個全連接層）報出的 102,764,544 參數只包含權重，偏差（bias）沒有算在內
+  - 根據列出的「Estimated Total Size (MB) = 624.98」 ，表示訓練此模型只需大約 625MB 的 GPU 記憶體（包含所有 optimizer state 與梯度） ，所以一張 1 GB 的 GPU 就足夠訓練
+  - VGG16 包含 13 層卷積層（conv）與 3 層全連接層（FC） ，總參數數目約為 138,357,544（約 138.36M）
+  correct_index: 3
+  explanation: VGG16 由 13 個卷積層和 3 個全連接層組成，總參數量約為 1.38 億。選項 A 錯誤，VGG16 最後池化層通常是 7x7 (512*7*7=25088)。選項 B 錯誤，PyTorch 等框架報告的參數通常包含 bias。選項 C 錯誤，訓練時需要儲存梯度、優化器狀態和中間激活值，所需記憶體遠大於模型權重本身大小。
+  tags:
+  - chap-m4-ch3
+  - sec-model-compression
+  usage: mock
