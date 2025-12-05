@@ -390,7 +390,7 @@ questions:
   text: 統計式 AI 能夠處理哪種類型的數據，這是符號式 AI 難以做到的？
   type: multiple_choice
   options:
-  - 非結構化數據（如影像、語音、自然語言）(Unstructured Data: Images, Speech, Natural Language)
+  - "非結構化數據（如影像、語音、自然語言）(Unstructured Data: Images, Speech, Natural Language)"
   - 數學公式 (Mathematical Formulas)，需要精確的符號運算與邏輯推導。
   - 明確的邏輯規則 (Explicit Logical Rules)，基於 If-Then 條件判斷的規則系統。
   - 結構化資料庫 (Structured Databases)，具有固定格式與架構的表格數據。
@@ -809,7 +809,7 @@ questions:
   type: multiple_choice
   options:
   - 規則驅動需要大量數據 (Requiring Large Datasets)，對數據量需求極高。
-  - 資料驅動是「輸入 + 輸出 = 規則」(Data-Driven: Input + Output = Rules)，從數據中學習模式。
+  - "資料驅動是「輸入 + 輸出 = 規則」(Data-Driven: Input + Output = Rules)，從數據中學習模式。"
   - 規則驅動適合模糊的問題 (Suitable for Ambiguous Problems)，能處理不確定性。
   - 資料驅動不需要運算資源 (No Computational Resources Needed)，運算成本為零。
   correct_index: 1
@@ -905,7 +905,7 @@ questions:
   type: multiple_choice
   options:
   - 訓練一個 100 層的深度神經網路 (Training a 100-Layer Deep Neural Network)，使用複雜的深度學習架構。
-  - 使用傳統機器學習模型（如決策樹或隨機森林）(Using Traditional ML Models: Decision Trees or Random Forests)
+  - "使用傳統機器學習模型（如決策樹或隨機森林）(Using Traditional ML Models: Decision Trees or Random Forests)"
   - 手寫規則 (Hand-Written Rules)，人工定義 If-Then 邏輯規則。
   - 使用生成式 AI (Using Generative AI)，利用生成模型進行預測。
   correct_index: 1

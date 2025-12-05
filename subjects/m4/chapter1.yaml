@@ -1274,10 +1274,10 @@ questions:
   options:
   - SGD + Momentum
   - Adam
-  - RMSProp:
+  - RMSProp
   - Adagrad
   correct_index: 1
-  explanation: Adam 優化器結合了動量 (Momentum) 與 RMSProp 的概念。
+  explanation: 官方答案是Adam，因為Adam 優化器結合了動量 (Momentum) 與 RMSProp 的概念。 但是SGD + Momentum 看起來也是正確答案，都寫明了 (+ Momentum)。這題目有點問題。 
   tags:
   - chap-m4-ch1
   usage: mock

@@ -119,7 +119,7 @@ questions:
   options:
   - 加快訓練速度 (Accelerating Training Speed)，提升訓練效率。
   - 讓模型學會寫程式 (Teaching Model to Write Code)，提升程式生成能力。
-  - 讓模型的回答符合人類價值觀（有用、誠實、無害）(Making Model Responses Align with Human Values: Helpful, Honest, Harmless)
+  - "讓模型的回答符合人類價值觀（有用、誠實、無害）(Making Model Responses Align with Human Values: Helpful, Honest, Harmless)"
   - 增加模型的參數量 (Increasing Model Parameter Count)，擴大模型規模。
   correct_index: 2
   explanation: RLHF 引入人類回饋來微調模型，使其產出更符合人類偏好與道德標準的內容。
@@ -358,7 +358,7 @@ questions:
   type: multiple_choice
   options:
   - 無法生成彩色圖 (Cannot Generate Color Images)，僅能產生黑白影像。
-  - 生成速度慢 (需要多步去噪) (Slow Generation Speed: Requires Multiple Denoising Steps)
+  - "生成速度慢 (需要多步去噪) (Slow Generation Speed: Requires Multiple Denoising Steps)"
   - 生成品質差 (Poor Generation Quality)，影像品質不佳。
   - 容易模式崩潰 (Prone to Mode Collapse)，生成樣本缺乏多樣性。
   correct_index: 1
@@ -389,7 +389,7 @@ questions:
   text: Tree of Thoughts (ToT) 提示法類似於？
   type: multiple_choice
   options:
-  - 下棋時的推演（考慮多種分支與回溯）(Chess Reasoning: Considering Multiple Branches and Backtracking)
+  - "下棋時的推演（考慮多種分支與回溯）(Chess Reasoning: Considering Multiple Branches and Backtracking)"
   - 隨機亂想 (Random Thinking)，無系統性的隨機思考。
   - 直覺反應 (Intuitive Reaction)，基於直覺的快速反應。
   - 直線思考 (Linear Thinking)，單一路徑的思考方式。
@@ -406,7 +406,7 @@ questions:
   type: multiple_choice
   options:
   - 關鍵字匹配次數 (Keyword Match Count)，文字匹配的頻率。
-  - 語意相似度 (向量距離) (Semantic Similarity: Vector Distance)
+  - "語意相似度 (向量距離) (Semantic Similarity: Vector Distance)"
   - 閱讀時間 (Reading Time)，使用者閱讀的時長。
   - 文章字數 (Article Word Count)，文本的長度。
   correct_index: 1
@@ -488,7 +488,7 @@ questions:
   - 詞彙量 (Vocabulary Size)，模型認識的詞彙數量。
   - 運算速度 (Computation Speed)，模型處理的速度。
   - 語言種類 (Language Types)，支援的語言數量。
-  - 單次能處理的資訊量 (記憶長度) (Amount of Information Processable at Once: Memory Length)
+  - "單次能處理的資訊量 (記憶長度) (Amount of Information Processable at Once: Memory Length)"
   correct_index: 3
   explanation: Context Window 決定了模型一次能「讀」多少字，超過這個長度的資訊會被截斷或遺忘。
   tags:
@@ -631,7 +631,7 @@ questions:
   options:
   - 需要人工標註大量標籤 (Requiring Manual Annotation of Large Amounts of Labels)，屬於監督式學習。
   - 只用圖片訓練 (Only Using Images for Training)，僅限於影像資料。
-  - 不需要人工標籤，從資料本身產生標籤（如遮蓋字詞讓模型猜）(No Manual Labels Required, Generating Labels from Data Itself: e.g., Masking Words for Model to Guess)
+  - "不需要人工標籤，從資料本身產生標籤（如遮蓋字詞讓模型猜）(No Manual Labels Required, Generating Labels from Data Itself: e.g., Masking Words for Model to Guess)"
   - 完全不學習 (No Learning at All)，不進行任何訓練。
   correct_index: 2
   explanation: 預訓練階段利用文本本身的上下文關係（如 Next Token Prediction）作為監督訊號，無需人工標註。
@@ -646,7 +646,7 @@ questions:
   type: multiple_choice
   options:
   - 合作關係，互相幫助 (Cooperative Relationship, Mutual Assistance)，共同合作的關係。
-  - 主從關係，Generator 聽命於 Discriminator (Master-Slave Relationship: Generator Obeys Discriminator)，上下級關係。
+  - "主從關係，Generator 聽命於 Discriminator (Master-Slave Relationship: Generator Obeys Discriminator)，上下級關係。"
   - 毫無關係，各自訓練 (No Relationship, Training Separately)，完全獨立的訓練。
   - "零和賽局 (Zero-Sum Game)，Generator 試圖騙過 Discriminator，Discriminator 試圖抓出 Generator (Zero-Sum Game: Generator Tries to Fool Discriminator, Discriminator Tries to Catch Generator) 的假貨"
   correct_index: 3
@@ -664,7 +664,7 @@ questions:
   - 直接使用公有的 ChatGPT (Directly Using Public ChatGPT)，使用公開的模型服務。
   - 重新訓練一個從頭開始的 LLM (Pre-training from scratch) (Retraining LLM from Scratch)，完全重新訓練模型。
   - RAG (檢索增強生成) 或 Fine-tuning (微調) 私有模型 (RAG or Fine-tuning Private Model)
-  - Prompt Engineering (提示工程)，把所有資料貼在 Prompt 裡 (Prompt Engineering: Pasting All Data in Prompt)，將所有資訊放入提示詞。
+  - "Prompt Engineering (提示工程)，把所有資料貼在 Prompt 裡 (Prompt Engineering: Pasting All Data in Prompt)，將所有資訊放入提示詞。"
   correct_index: 2
   explanation: Prompt 長度有限且不安全；Pre-training 成本天價。RAG 或 Fine-tuning 是兼顧效果、成本與隱私的實務選擇。
   tags:
@@ -696,7 +696,7 @@ questions:
   - 訓練資料太少 (Insufficient Training Data)，資料量不足。
   - 網際網路連線中斷 (Internet Connection Interrupted)，網路連線問題。
   - 模型故意說謊 (Model Intentionally Lies)，模型有意識地產生錯誤資訊。
-  - 模型本質上是「機率預測器」，它只是選擇機率最高的下一個字，而非查證事實 (Model Is Essentially a Probability Predictor: It Only Chooses the Most Probable Next Token, Not Verifying Facts)
+  - "模型本質上是「機率預測器」，它只是選擇機率最高的下一個字，而非查證事實 (Model Is Essentially a Probability Predictor: It Only Chooses the Most Probable Next Token, Not Verifying Facts)"
   correct_index: 3
   explanation: LLM 像是一個讀過很多書但沒有求證能力的鸚鵡，它會一本正經地胡說八道，因為那樣說起來很「順」。
   tags:
@@ -850,7 +850,7 @@ questions:
   type: multiple_choice
   options:
   - 重新訓練一個大模型 (Retraining a Large Model)，完全重新訓練。
-  - RAG (檢索增強生成) (RAG: Retrieval-Augmented Generation)
+  - "RAG (檢索增強生成) (RAG: Retrieval-Augmented Generation)"
   - 增加 Prompt 長度 (Increasing Prompt Length)，延長輸入提示詞。
   - 調高 Temperature (Increasing Temperature)，增加生成隨機性。
   correct_index: 1

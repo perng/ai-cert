@@ -53,7 +53,7 @@ questions:
   text: 混淆矩陣 (Confusion Matrix) 中的 TP (True Positive) 代表什麼？
   type: multiple_choice
   options:
-  - 實際有病，預測有病（抓到了）(Actually Sick, Predicted Sick: Caught)，真陽性 (True Positive)。
+  - "實際有病，預測有病（抓到了）(Actually Sick, Predicted Sick: Caught)，真陽性 (True Positive)。"
   - 實際沒病，預測有病 (Actually Not Sick, Predicted Sick)，假陽性 (False Positive)。
   - 實際有病，預測沒病 (Actually Sick, Predicted Not Sick)，假陰性 (False Negative)。
   - 實際沒病，預測沒病 (Actually Not Sick, Predicted Not Sick)，真陰性 (True Negative)。
@@ -341,8 +341,8 @@ questions:
   text: 混淆矩陣中，FN (False Negative) 代表？
   type: multiple_choice
   options:
-  - 誤報 (沒病判有病) (False Alarm: Not Sick But Predicted Sick)，假陽性 (False Positive)。
-  - 漏報 (有病判沒病) (Missed Case: Sick But Predicted Not Sick)，假陰性 (False Negative)。
+  - "誤報 (沒病判有病) (False Alarm: Not Sick But Predicted Sick)，假陽性 (False Positive)。"
+  - "漏報 (有病判沒病) (Missed Case: Sick But Predicted Not Sick)，假陰性 (False Negative)。"
   - 正確排除 (Correctly Excluded)，真陰性 (True Negative)。
   - 正確抓到 (Correctly Caught)，真陽性 (True Positive)。
   correct_index: 1
@@ -946,7 +946,7 @@ questions:
   options:
   - 訓練模型 (Training Model)，屬於訓練集的用途。
   - 調整超參數 (Adjusting Hyperparameters)，屬於驗證集的用途。
-  - 最終效能評估 (不可用於訓練或調整) (Final Performance Evaluation: Cannot Be Used for Training or Adjustment)
+  - "最終效能評估 (不可用於訓練或調整) (Final Performance Evaluation: Cannot Be Used for Training or Adjustment)"
   - 沒用 (No Use)，完全沒有用途。
   correct_index: 2
   explanation: 測試集模擬真實上線環境，必須完全隔離，以確保評估的客觀性。
@@ -976,7 +976,7 @@ questions:
   text: 情境：迴歸問題中，MSE (均方誤差) 相比 MAE (平均絕對誤差) 的特點是？
   type: multiple_choice
   options:
-  - 對離群值更敏感 (會放大極端誤差) (More Sensitive to Outliers: Amplifies Extreme Errors)
+  - "對離群值更敏感 (會放大極端誤差) (More Sensitive to Outliers: Amplifies Extreme Errors)"
   - 對離群值不敏感 (Not Sensitive to Outliers)，不受極端值影響。
   - 計算較慢 (Slower Computation)，運算過程較為困難。
   - 數值較小 (Smaller Values)，誤差數值較小。
@@ -1073,7 +1073,7 @@ questions:
   type: multiple_choice
   options:
   - 模型非常棒 (Model Is Excellent)，預測能力極佳。
-  - 模型可能只是盲目猜測多數類別 (陷阱) (Model May Just Be Blindly Guessing Majority Class: Trap)
+  - "模型可能只是盲目猜測多數類別 (陷阱) (Model May Just Be Blindly Guessing Majority Class: Trap)"
   - 資料有誤 (Data Has Errors)，訓練資料不正確。
   - 不需要改進 (No Improvement Needed)，模型已達最佳狀態。
   correct_index: 1

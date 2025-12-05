@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: ../../_book/gen-ai
 
 book:
   title: "生成式 AI 應用與規劃"

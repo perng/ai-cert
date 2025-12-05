@@ -469,9 +469,9 @@ questions:
   text: 如果我有一堆客戶資料，想知道他們自然形成了哪些群體，該用什麼方法？
   type: multiple_choice
   options:
-  - 非監督式學習 (分群) (Unsupervised Learning: Clustering)，從無標籤數據中發現群體。
+  - "非監督式學習 (分群) (Unsupervised Learning: Clustering)，從無標籤數據中發現群體。"
   - 強化學習 (Reinforcement Learning)，透過獎勵與懲罰機制學習。
-  - 監督式學習 (分類) (Supervised Learning: Classification)，使用已標籤數據進行分類。
+  - "監督式學習 (分類) (Supervised Learning: Classification)，使用已標籤數據進行分類。"
   - 迴歸分析 (Regression Analysis)，預測連續數值的監督式學習方法。
   correct_index: 0
   explanation: 在不知道群體定義的情況下進行分組，屬於非監督式學習中的分群 (Clustering) 任務。
@@ -485,10 +485,10 @@ questions:
   text: 如果我想預測明天的氣溫（數值），該用什麼方法？
   type: multiple_choice
   options:
-  - 非監督式學習 (分群) (Unsupervised Learning: Clustering)，從無標籤數據中發現群體。
+  - "非監督式學習 (分群) (Unsupervised Learning: Clustering)，從無標籤數據中發現群體。"
   - 強化學習 (Reinforcement Learning)，透過獎勵與懲罰機制學習。
-  - 監督式學習 (分類) (Supervised Learning: Classification)，預測類別標籤。
-  - 監督式學習 (迴歸) (Supervised Learning: Regression)，預測連續數值。
+  - "監督式學習 (分類) (Supervised Learning: Classification)，預測類別標籤。"
+  - "監督式學習 (迴歸) (Supervised Learning: Regression)，預測連續數值。"
   correct_index: 3
   explanation: 預測連續數值（如氣溫）屬於監督式學習中的迴歸 (Regression) 任務。
   tags:
@@ -501,10 +501,10 @@ questions:
   text: 如果我想判斷這張照片是貓還是狗，該用什麼方法？
   type: multiple_choice
   options:
-  - 非監督式學習 (分群) (Unsupervised Learning: Clustering)，從無標籤數據中發現群體。
-  - 監督式學習 (迴歸) (Supervised Learning: Regression)，預測連續數值。
+  - "非監督式學習 (分群) (Unsupervised Learning: Clustering)，從無標籤數據中發現群體。"
+  - "監督式學習 (迴歸) (Supervised Learning: Regression)，預測連續數值。"
   - 強化學習 (Reinforcement Learning)，透過獎勵與懲罰機制學習。
-  - 監督式學習 (分類) (Supervised Learning: Classification)，預測類別標籤。
+  - "監督式學習 (分類) (Supervised Learning: Classification)，預測類別標籤。"
   correct_index: 3
   explanation: 判斷類別（貓或狗）屬於監督式學習中的分類 (Classification) 任務。
   tags:

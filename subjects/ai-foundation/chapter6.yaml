@@ -119,7 +119,7 @@ questions:
   options:
   - K-means，用於分群的演算法。
   - Random Forest，用於分類與迴歸的集成學習模型。
-  - Apriori (關聯規則) (Apriori: Association Rules)，用於發現商品間關聯性的演算法。
+  - "Apriori (關聯規則) (Apriori: Association Rules)，用於發現商品間關聯性的演算法。"
   - DBSCAN，用於基於密度的分群演算法。
   correct_index: 2
   explanation: 這是購物籃分析的經典案例，利用 Apriori 演算法找出商品間的關聯性。
@@ -152,7 +152,7 @@ questions:
   - 兩者呈負相關 (Negative Correlation)，買 A 會降低買 B 的機率。
   - 計算錯誤 (Calculation Error)，演算法計算過程有誤。
   - 兩者無關 (No Relationship)，A 與 B 之間沒有關聯性。
-  - 兩者呈正相關（買 A 會提升買 B 的機率）(Positive Correlation: Buying A Increases Probability of Buying B)
+  - "兩者呈正相關（買 A 會提升買 B 的機率）(Positive Correlation: Buying A Increases Probability of Buying B)"
   correct_index: 3
   explanation: Lift > 1 表示 A 的出現會增加 B 出現的機率，兩者有正向關聯。
   tags:
@@ -263,7 +263,7 @@ questions:
   options:
   - 決策樹 (Decision Tree)，用於分類與迴歸的樹狀模型。
   - 神經網路 (Neural Networks)，用於深度學習的多層網路。
-  - Q-Table (查閱表) (Q-Table: Lookup Table)，記錄狀態-行動對應的預期獎勵。
+  - "Q-Table (查閱表) (Q-Table: Lookup Table)，記錄狀態-行動對應的預期獎勵。"
   - 線性方程式 (Linear Equations)，用於線性迴歸的數學模型。
   correct_index: 2
   explanation: Q-Learning 使用一個表格 (Q-Table) 來記錄每個狀態下採取每個行動的預期獎勵 (Q-Value)。
@@ -280,7 +280,7 @@ questions:
   - 計算速度慢 (Slow Computation Speed)，演算法執行效率低。
   - 無法處理負獎勵 (Cannot Handle Negative Rewards)，僅能處理正向獎勵。
   - 只能處理離散動作 (Can Only Handle Discrete Actions)，無法處理連續動作空間。
-  - 維度災難 (狀態過多導致表格存不下) (Curse of Dimensionality: Too Many States to Store in Table)
+  - "維度災難 (狀態過多導致表格存不下) (Curse of Dimensionality: Too Many States to Store in Table)"
   correct_index: 3
   explanation: DQN 用深度神經網路取代龐大的 Q-Table，能處理像圍棋或電玩畫面這種狀態無限多的問題。
   tags:

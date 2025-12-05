@@ -421,10 +421,10 @@ questions:
   text: 多層感知器 (MLP) 至少包含幾層？
   type: multiple_choice
   options:
-  - 2 層 (輸入、輸出) (2 Layers: Input, Output)
-  - 3 層 (輸入、隱藏、輸出) (3 Layers: Input, Hidden, Output)
+  - "2 層 (輸入、輸出) (2 Layers: Input, Output)"
+  - "3 層 (輸入、隱藏、輸出) (3 Layers: Input, Hidden, Output)"
   - 無限層 (Infinite Layers)
-  - 1 層 (輸入層) (1 Layer: Input)
+  - "1 層 (輸入層) (1 Layer: Input)"
   correct_index: 1
   explanation: MLP 至少包含一個隱藏層，才能處理非線性問題。結構為：輸入層 -> 隱藏層 -> 輸出層。
   tags:
