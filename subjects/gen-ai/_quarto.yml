@@ -19,7 +19,7 @@ book:
 format:
   html:
     theme: cosmo
-    number-sections: true
+    number-sections: false
   # pdf:
   #   documentclass: scrreprt
   #   pdf-engine: xelatex
