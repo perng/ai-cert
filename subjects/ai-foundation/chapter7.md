@@ -23,7 +23,7 @@ label: chap-ai-foundation-chapter7
         *   $x_i$: 輸入訊號
         *   $w_i$: 權重 (Weight)，代表該輸入的重要性
         *   **b**: 偏差 (Bias)，調整啟動門檻
-        *   $\sigma$: 啟動函數 (Activation Function)
+        *   **𝛔**: 啟動函數 (Activation Function)
 
 ![MLP](images/mlp.webp)
 
@@ -33,7 +33,7 @@ label: chap-ai-foundation-chapter7
 
 *   **Sigmoid**：
     *   **公式**：$$ f(x) = \frac{1}{1 + e^{-x}} $$
-    *   **特性**：將數值壓縮到 $(0, 1)$ 之間。
+    *   **特性**：將數值壓縮到 **(0, 1)** 之間。
     *   **缺點**：容易導致**梯度消失 (Vanishing Gradient)**，即在深層網路中，誤差訊號傳不回去，導致前面的層學不到東西。
 *   **ReLU (Rectified Linear Unit)**：
     *   **公式**：$$ f(x) = \max(0, x) $$
@@ -107,7 +107,7 @@ label: chap-ai-foundation-chapter7
 
 *   **專長**：**序列數據**（文字、語音、股票走勢）。
 *   **運作機制**：
-    *   具有**記憶 (Memory)** 功能。神經元會有一個「迴圈」，把上一步的輸出 ($h_{t-1}$) 傳給自己，跟這一步的輸入 ($x_t$) 一起處理。
+    *   具有**記憶 (Memory)** 功能。神經元會有一個「迴圈」，把上一步的輸出 $h_{t-1}$ 傳給自己，跟這一步的輸入 $x_t$ 一起處理。
     *   *類比*：像**閱讀文章**。你讀到第五個字時，腦中還記得前四個字的含義，這樣才能理解整句話的意思。
 *   **致命傷：梯度消失 (Vanishing Gradient)**：
     *   **問題**：對於太長的序列（如長篇小說），前面的資訊傳到後面會越來越弱，最後完全消失。

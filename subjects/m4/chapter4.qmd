@@ -11,25 +11,25 @@ label: chap-m4-ch4
 
 *   **代理 (Agent)**：做出決策的主體。
 *   **環境 (Environment)**：代理所在的外部世界。
-*   **狀態 (State, **S**)**：環境當前的狀況。
-*   **行動 (Action, **A**)**：代理採取的動作。
-*   **獎勵 (Reward, **R**)**：環境對代理行動的反饋。
-*   **策略 (Policy, $\pi$)**：代理在給定狀態下選擇行動的規則。$\pi(a|s)$。
+*   **狀態 (State, S)**：環境當前的狀況。
+*   **行動 (Action, A)**：代理採取的動作。
+*   **獎勵 (Reward, R)**：環境對代理行動的反饋。
+*   **策略 (Policy, 𝛑)**：代理在給定狀態下選擇行動的規則。$\pi(a|s)$。
 
 **探索與利用 (Exploration vs Exploitation)**：
 RL 的核心挑戰。
 *   **探索 (Exploration)**：嘗試未知的行動，以發現可能獲得更高獎勵的路徑。
 *   **利用 (Exploitation)**：選擇當前已知最好的行動，以獲得最大獎勵。
-*   **$\epsilon$-Greedy 策略**：以 $1-\epsilon$ 的機率選擇最佳行動（利用），以 $\epsilon$ 的機率隨機選擇行動（探索）。
+*   **𝞮**-Greedy 策略**：以 $1-\epsilon$ 的機率選擇最佳行動（利用），以 **𝞮** 的機率隨機選擇行動（探索）。
 
 ## 貝爾曼方程式 {#sec-bellman}
 
-**價值函數 (Value Function, $V(s)$)**：從狀態 **s** 開始，遵循策略 $\pi$ 所能獲得的預期累積獎勵。
+**價值函數 (Value Function, $V(s)$)**：從狀態 **s** 開始，遵循策略 **𝛑** 所能獲得的預期累積獎勵。
 **貝爾曼方程式 (Bellman Equation)** 描述了當前狀態價值與未來狀態價值之間的關係：
 
 $$ V(s) = \max_a \left( R(s,a) + \gamma \sum_{s'} P(s'|s,a) V(s') \right) $$
 
-其中 $\gamma$ 是**折扣因子 (Discount Factor)**，用於平衡當前獎勵與未來獎勵的重要性。
+其中 **𝝺** 是**折扣因子 (Discount Factor)**，用於平衡當前獎勵與未來獎勵的重要性。
 
 ## 演算法 {#sec-rl-algorithms}
 

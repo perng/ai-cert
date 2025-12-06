@@ -45,7 +45,7 @@ $$ P(M(D) \in S) \le e^\epsilon P(M(D') \in S) $$
 *   ****M****：隨機演算法 (Mechanism)，例如一個查詢函數加上隨機雜訊。
 *   ****S****：演算法輸出的任何可能結果集合。
 *   ****P****：機率 (Probability)。
-*   **$\epsilon$ (Epsilon)**：隱私預算 (Privacy Budget)。
+*   ****𝞮** (Epsilon)**：隱私預算 (Privacy Budget)。
 
 **直觀意義**：
 
@@ -56,10 +56,10 @@ $$ P(M(D) \in S) \le e^\epsilon P(M(D') \in S) $$
 *   **科技巨頭**：Apple、Google 使用差分隱私來收集用戶使用習慣（如 Emoji 使用頻率、Chrome 首頁訪問統計），而不會洩露單一用戶的行為。
 *   **人口普查**：美國人口普查局使用此技術發布統計數據，防止對特定家庭的重識別攻擊。
 
-**$\epsilon$ 的權衡**：
+****𝞮** 的權衡**：
 
-*   **$\epsilon$ 越小**：$e^\epsilon$ 越接近 1，隱私保護越強，但加入的雜訊越大，數據可用性 (Utility) 越低。
-*   **$\epsilon$ 越大**：隱私保護越弱，但數據精確度越高。
+*   ****𝞮** 越小**：$e^\epsilon$ 越接近 1，隱私保護越強，但加入的雜訊越大，數據可用性 (Utility) 越低。
+*   ****𝞮** 越大**：隱私保護越弱，但數據精確度越高。
 
 ### 進階隱私強化技術 (Advanced PETs) {.unnumbered}
 

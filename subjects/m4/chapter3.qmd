@@ -39,7 +39,7 @@ print("Best parameters:", clf.best_params_)
 正規化技術 (Regularization Techniques) 用於防止過擬合 (Overfitting)，通過在損失函數中加入懲罰項來限制模型複雜度。
 
 $$ L_{total} = L_{original} + \lambda \cdot R(w) $$
-其中 $\lambda$ 是正規化強度。
+其中 **𝝺** 是正規化強度。
 
 ### 常見技術 {.unnumbered}
 

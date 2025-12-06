@@ -37,11 +37,11 @@ label: chap-ai-foundation-chapter5
 *   **應用實例：垃圾郵件過濾計算**
     *   假設我們有 100 封信，其中 40 封是垃圾信 (Spam)，60 封是正常信 (Ham)。
     *   **先驗機率 (Prior)**：
-        *   $P(Spam) = 40/100 = 0.4$
-        *   $P(Ham) = 60/100 = 0.6$
+        *   **P(Spam) = 40/100 = 0.4**
+        *   **P(Ham) = 60/100 = 0.6**
     *   **似然機率 (Likelihood)**：統計發現，垃圾信中有 50% 包含 "Free" 這個字，正常信中只有 5% 包含 "Free"。
-        *   $P("Free" | Spam) = 0.5$
-        *   $P("Free" | Ham) = 0.05$
+        *   **P("Free" | Spam) = 0.5**
+        *   **P("Free" | Ham) = 0.05**
     *   **情境**：現在收到一封新信，裡面有 "Free"，它是垃圾信的機率是多少？
     *   **計算 (Bayes' Theorem)**：
         $$ P(Spam | "Free") = \frac{P("Free" | Spam) \times P(Spam)}{P("Free")} $$
@@ -49,7 +49,7 @@ label: chap-ai-foundation-chapter5
         2.  分母 (所有有 Free 的信)：
             *   來自垃圾信：$0.5 \times 0.4 = 0.2$
             *   來自正常信：$0.05 \times 0.6 = 0.03$
-            *   總和：$0.2 + 0.03 = 0.23$
+            *   總和：0.2 + 0.03 = 0.23
         3.  結果：$0.2 / 0.23 \approx \mathbf{87\%}$
     *   **結論**：看到 "Free"，這封信有 87% 的機率是垃圾信。
 *   **優缺點**：
@@ -170,9 +170,9 @@ label: chap-ai-foundation-chapter5
 目標是預測一個連續的數值（如房價、銷量）。
 
 ### 線性迴歸 (Linear Regression) {#sec-linear-regression}
-*   **核心概念**：試圖畫出一條直線 ($y = wx + b$)，讓這條線盡可能靠近所有的資料點。
+*   **核心概念**：試圖畫出一條直線 **y = wx + b**，讓這條線盡可能靠近所有的資料點。
 *   **損失函數 (Loss Function)**：**均方誤差 (MSE, Mean Squared Error)**。即計算所有點到線的距離平方和，找出讓這個誤差最小的參數 **w** 和 **b**。
-*   **多項式迴歸**：如果資料不是直線分佈，可以用曲線（$x^2, x^3$）來擬合。
+*   **多項式迴歸**：如果資料不是直線分佈，可以用曲線（二次方、三次方等）來擬合。
 
 ![線性迴歸](images/linear-regression.webp)
 
@@ -187,7 +187,7 @@ label: chap-ai-foundation-chapter5
 *   **數學公式**：
     $$ J(w) = \underbrace{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}_{\text{原始誤差 (MSE)}} + \underbrace{\lambda \sum_{j=1}^{m} |w_j|}_{\text{L1 懲罰項}} $$
 *   **機制**：在損失函數加入權重**絕對值**的總和。
-    *   $\lambda$ (Lambda) 是**正則化強度**。$\lambda$ 越大，懲罰越重，越多權重會變成 0。
+    *   **𝝺** (Lambda) 是**正則化強度**。**𝝺** 越大，懲罰越重，越多權重會變成 0。
 *   **特性**：傾向於讓不重要的特徵權重**變成 0**。
 *   **應用場景：特徵選擇**
     *   假設我們要預測房價，手上有 100 個特徵。
