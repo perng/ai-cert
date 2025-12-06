@@ -91,6 +91,7 @@ CAP 定理指出，對於一個分散式計算系統，不可能同時滿足以�
 *   **Partition Tolerance (分區容錯性)**：系統在任意訊息丟失或失敗的情況下仍能繼續運行。
 
 在分散式系統中，**P (分區容錯性)** 通常是必須的，因此我們只能在 **C (一致性)** 和 **A (可用性)** 之間做權衡：
+
 *   **CP (Consistency + Partition Tolerance)**：如 HBase, MongoDB。犧牲可用性，確保數據一致。
 *   **AP (Availability + Partition Tolerance)**：如 Cassandra, DynamoDB。犧牲一致性（接受最終一致性），確保高可用。
 

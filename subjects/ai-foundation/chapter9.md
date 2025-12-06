@@ -86,12 +86,12 @@ label: chap-ai-foundation-chapter9
 *   **平均絕對誤差 (MAE, Mean Absolute Error)**：
     *   $$ MAE = \frac{1}{n} \sum |y_{true} - y_{pred}| $$
     *   **特點**：對離群值較不敏感，解釋直觀（平均差幾分）。
-*   **R-squared ($R^2$, 決定係數)**：
+*   **R-squared (R<sup>2</sup>, 決定係數)**：
     *   $$ R^2 = 1 - \frac{SS_{res}}{SS_{tot}} = 1 - \frac{\sum (y_{true} - y_{pred})^2}{\sum (y_{true} - y_{mean})^2} $$
     *   **意義**：衡量模型解釋了資料多少變異。
-        *   $R^2 = 1$：完美擬合（誤差為 0）。
-        *   $R^2 = 0$：跟「直接猜平均值」一樣爛。
-        *   $R^2 < 0$：比亂猜還爛（模型完全錯了）。
+        *   R<sup>2</sup> = 1：完美擬合（誤差為 0）。
+        *   R<sup>2</sup> = 0：跟「直接猜平均值」一樣爛。
+        *   R<sup>2</sup> < 0：比亂猜還爛（模型完全錯了）。
 
 ![迴歸指標](images/regression-metrics.webp)
 

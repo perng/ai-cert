@@ -186,7 +186,7 @@ label: chap-ai-foundation-chapter3
     *   **偏態 (Skewness)**：資料分佈是否對稱。
         *   **公式**：$$ Skewness = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^3}{n \times s^3} $$
         *   **變數說明**：
-            *   $x_i$：第 **i** 個資料點。
+            *   x<sub>i</sub>：第 **i** 個資料點。
             *   $\bar{x}$：平均數。
             *   **n**：資料總數。
             *   **s**：標準差。

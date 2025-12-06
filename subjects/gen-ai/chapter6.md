@@ -12,6 +12,7 @@ label: chap-gen-chapter6
 
 ### 1. 階段規劃 {.unnumbered}
 導入 GenAI 專案通常遵循以下步驟：
+
 1.  **目標設定 (Goal Setting)**：明確定義要解決什麼問題（如：減少客服 30% 工作量）。設定 KPI。
 2.  **資料準備 (Data Preparation)**：清洗企業內部資料，去個資，轉換格式。這是最耗時但也最重要的步驟。
 3.  **技術選型 (Model Selection)**：決定用雲端 API (GPT-4) 還是自建模型 (Llama 3)？決定用 RAG 還是 Fine-tuning？
@@ -83,6 +84,7 @@ label: chap-gen-chapter6
 
 ### 1. 基準測試 (Benchmarks) {.unnumbered}
 學術界常用的標準考卷：
+
 *   **MMLU (Massive Multitask Language Understanding)**：包含數學、歷史、法律、醫學等 57 個學科，測試模型的**廣度知識**與推理能力。
 *   **GSM8K**：小學數學應用題。測試模型的**多步驟推理**能力。
 *   **HumanEval / MBPP**：測試**寫程式**的能力。
@@ -103,6 +105,7 @@ RAG 系統涉及「檢索」與「生成」兩個階段，必須分別評估。�
 
 ### 3. 服務指標 (Service Metrics) {.unnumbered}
 上線後要看的指標：
+
 *   **TTFT (Time to First Token)**：從使用者送出請求，到看到第一個字跳出來的時間。這直接影響**使用者體驗 (感知延遲)**。
 *   **TPS (Tokens Per Second)**：生成速度。越快越好。
 *   **Latency (總延遲)**：生成完整回應所需的時間。

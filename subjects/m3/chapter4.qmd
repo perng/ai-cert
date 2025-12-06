@@ -197,6 +197,7 @@ plt.show()
 ### 1. 佈局策略：F 型瀏覽模式 (F-Pattern Layout) {.unnumbered}
 
 研究顯示，使用者瀏覽網頁或儀表板時，視線通常呈現 "F" 型軌跡：
+
 1.  **頂部水平掃描**：閱讀標題和關鍵指標 (KPIs)。
 2.  **中間水平掃描**：閱讀主要圖表或內容。
 3.  **左側垂直掃描**：尋找導航或次要資訊。
@@ -219,7 +220,7 @@ def draw_dashboard_mockup():
     # KPI Cards (Top Row - F Pattern start)
     kpi_colors = ['#FFD700', '#87CEEB', '#90EE90']
     labels = ['KPI 1 (Revenue)', 'KPI 2 (Growth)', 'KPI 3 (Cost)']
-    values = ['$1.2M', '+15%', '$800K']
+    values = ['1.2M', '+15%', '800K']
     
     for i in range(3):
         rect = patches.Rectangle((5 + i*32, 75), 28, 15, linewidth=1, edgecolor='grey', facecolor=kpi_colors[i], alpha=0.3)
@@ -249,8 +250,8 @@ draw_dashboard_mockup()
 ```
 
 ### 2. 關鍵績效指標 (KPIs) 設計 {.unnumbered}
-
 KPI 卡片通常採用 **BAN (Big Angry Number)** 的形式，即以大字體顯示核心數字。
+
 *   **清晰性**：數字要大且易讀。
 *   **情境 (Context)**：單看數字沒有意義，需提供比較基準。
     *   *與目標比較*：達成率 85%。
@@ -275,8 +276,8 @@ flowchart LR
 ```
 
 ### 4. 用數據說故事 (Storytelling with Data) {.unnumbered}
-
 儀表板不只是數據的陳列，更是一個故事的敘述。
+
 *   **情境 (Context)**：了解聽眾是誰（Who），他們關心什麼（What），以及你希望他們做什麼（How）。
 *   **注意力 (Attention)**：利用「前注意屬性」(Preattentive Attributes) 如顏色、大小、位置，引導聽眾視線聚焦在異常或重要趨勢上。
 *   **行動 (Action)**：每個圖表都應隱含一個行動建議（如：「庫存過低，需補貨」）。

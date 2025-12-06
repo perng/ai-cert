@@ -46,10 +46,8 @@ label: chap-m3-ch2
 
 ### 數值標準化 (Normalization & Standardization) {.unnumbered}
 
-*   **Min-Max Normalization**：將數據縮放到 [0, 1] 區間。對異常值敏感。
-    $$X_{new} = \frac{X - X_{min}}{X_{max} - X_{min}}$$
-*   **Z-score Standardization**：將數據轉換為均值為 0，標準差為 1 的分佈。
-    $$X_{new} = \frac{X - \mu}{\sigma}$$
+*   **Min-Max Normalization**：將數據縮放到 [0, 1] 區間。對異常值敏感。    $$X_{new} = \frac{X - X_{min}}{X_{max} - X_{min}}$$
+*   **Z-score Standardization**：將數據轉換為均值為 0，標準差為 1 的分佈。    $$X_{new} = \frac{X - \mu}{\sigma}$$
 *   **Robust Scaling**：使用中位數和四分位距 (IQR) 進行縮放。對異常值魯棒。
 
 ### 特徵工程 (Feature Engineering) {.unnumbered}
@@ -71,6 +69,7 @@ label: chap-m3-ch2
 ### 批次處理 {.unnumbered}
 
 批次處理 (Batch Processing) 適用於處理大量歷史數據，通常在夜間或離峰時間運行。
+
 *   **適用場景**：日結報表、歷史數據分析、模型訓練。
 *   **工具**：
     *   **Sqoop**：用於在 Hadoop 和關聯式資料庫 (RDBMS) 之間傳輸數據。
@@ -86,6 +85,7 @@ label: chap-m3-ch2
 
 **視窗操作 (Windowing)**：
 串流處理中常需對一段時間內的數據進行聚合，這稱為視窗。
+
 *   **滾動視窗 (Tumbling Window)**：固定大小，不重疊（例如：每 5 分鐘統計一次）。
 *   **滑動視窗 (Sliding Window)**：固定大小，可重疊（例如：每 1 分鐘統計過去 5 分鐘的數據）。
 *   **會話視窗 (Session Window)**：基於活動間隔動態定義（例如：用戶超過 30 分鐘無操作則視窗結束）。
@@ -105,6 +105,7 @@ graph LR
 ETL (Extract, Transform, Load) 流程與工作流自動化 (Workflow Automation) 確保數據處理的效率和可靠性。
 
 **ETL vs ELT**：
+
 *   **ETL**：先轉換再載入。適合傳統資料倉儲，減輕倉儲負擔。
 *   **ELT**：先載入再轉換。隨著雲端資料倉儲（如 Snowflake, BigQuery）計算能力增強，ELT 越來越流行，因為它保留了原始數據且轉換更靈活。
 
@@ -147,12 +148,11 @@ with DAG('simple_etl', start_date=datetime(2023, 1, 1), schedule_interval='@dail
 ```
 
 ## 資料治理與安全 (Data Governance & Security) {#sec-data-governance}
-
 有效的資料治理確保數據的可用性、完整性和安全性。
 
 ### 元資料管理 (Metadata Management) {.unnumbered}
-
 元資料 (Metadata) 是「關於數據的數據」，如數據來源、創建時間、欄位定義等。
+
 *   **Data Lineage (血緣分析)**：追蹤數據從源頭到最終報表的流向，有助於問題排查和影響分析。
 *   **Data Catalog (數據目錄)**：幫助使用者發現和理解可用的數據資產。
 
@@ -162,8 +162,8 @@ with DAG('simple_etl', start_date=datetime(2023, 1, 1), schedule_interval='@dail
 *   **ABAC (Attribute-Based Access Control)**：基於屬性（如用戶部門、數據敏感度、時間）分配權限。更靈活細緻。
 
 ### 零信任架構 (Zero Trust Architecture) {.unnumbered}
-
 "Never Trust, Always Verify" (從不信任，總是驗證)。
+
 *   **最小權限原則 (Least Privilege)**：只授予完成工作所需的最小權限。
 *   **持續驗證**：不僅在登錄時驗證，在訪問資源時也持續驗證身份和設備狀態。
 
@@ -180,8 +180,8 @@ with DAG('simple_etl', start_date=datetime(2023, 1, 1), schedule_interval='@dail
 *   **Variety (多樣)**：多模態數據（文字、影像、聲音）的融合促進了更強大的 AI 應用。
 
 #### 1. 分散式訓練策略 (Distributed Training Strategies) {.unnumbered}
-
 當數據量超過單機記憶體負荷時，需採用分散式架構：
+
 *   **資料平行 (Data Parallelism)**：將數據切分到多個節點，每個節點有完整的模型副本。
     *   **Horovod**：Uber 開源的分散式訓練框架，支援 TensorFlow, PyTorch，利用 Ring-AllReduce 演算法高效同步梯度。
     *   **TensorFlow MultiWorker Strategy**：TensorFlow 原生的多機訓練策略。
@@ -195,6 +195,7 @@ with DAG('simple_etl', start_date=datetime(2023, 1, 1), schedule_interval='@dail
 
 #### 3. 串流評估指標 (Streaming Evaluation Metrics) {.unnumbered}
 對於不斷流入的數據，傳統的靜態評估不再適用，需使用累積或滑動視窗指標：
+
 *   **Streaming Confusion Matrix**：動態更新的混淆矩陣，即時反映模型在當前數據流上的表現。
 *   **Streaming AUC**：隨著數據累積動態計算 AUC 值，監控模型效能的長期趨勢。
 

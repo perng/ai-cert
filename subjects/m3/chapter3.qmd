@@ -26,6 +26,7 @@ ARIMA (AutoRegressive Integrated Moving Average) 是經典的時間序列預測�
     $$ Y_t = \mu + \epsilon_t + \theta_1 \epsilon_{t-1} + \dots + \theta_q \epsilon_{t-q} $$
 
 **參數選擇**：
+
 *   **ACF (Autocorrelation Function)**：決定 MA 的階數 **q**。
 *   **PACF (Partial Autocorrelation Function)**：決定 AR 的階數 **p**。
 
@@ -33,7 +34,7 @@ ARIMA (AutoRegressive Integrated Moving Average) 是經典的時間序列預測�
 
 Prophet 是由 Facebook 開發的時間序列預測工具，特別擅長處理具有強烈季節性和假期效應的數據。它基於加法模型：
 $$ y(t) = g(t) + s(t) + h(t) + \epsilon_t $$
-其中 $g(t)$ 是趨勢，$s(t)$ 是季節性，$h(t)$ 是假期效應。
+其中 g(t) 是趨勢，s(t) 是季節性，h(t) 是假期效應。
 
 *   **優點**：
     *   自動處理缺失值和異常值。
@@ -84,8 +85,8 @@ fig1 = m.plot(forecast)
     $$ PR(u) = \sum_{v \in B_u} \frac{PR(v)}{L(v)} $$
 
 ### 社群偵測 (Community Detection) {.unnumbered}
-
 用於發現網路中緊密連接的節點群體。
+
 *   **Louvain 演算法**：基於模組度 (Modularity) 最佳化的快速演算法。
 *   **Girvan-Newman 演算法**：基於邊介數 (Edge Betweenness) 的分裂演算法。
 
@@ -300,19 +301,19 @@ print(f"Kruskal-Wallis p-value: {p_h:.4f}")
 在假設檢定中，我們可能會犯兩種錯誤：
 
 *   **型一錯誤 (Type I Error, **𝝰**)**：**偽陽性 (False Positive)**。
-    *   **定義**：當虛無假設 $H_0$ 為真時，我們卻拒絕了它。
+    *   **定義**：當虛無假設 H<sub>0</sub> 為真時，我們卻拒絕了它。
     *   **機率**：顯著水準 **𝝰** (通常為 0.05)。
     *   **例子**：法庭判決無罪的人有罪（冤獄）；沒病的人被診斷為有病。
 *   **型二錯誤 (Type II Error, 𝝱)**：**偽陰性 (False Negative)**。
-    *   **定義**：當虛無假設 $H_0$ 為假（即對立假設 $H_1$ 為真）時，我們卻沒有拒絕 $H_0$。
+    *   **定義**：當虛無假設 H<sub>0</sub> 為假（即對立假設 H<sub>1</sub> 為真）時，我們卻沒有拒絕 H<sub>0</sub>。
     *   **機率**：**𝝱**。
     *   **例子**：法庭判決有罪的人無罪（縱放）；有病的人被診斷為沒病。
 
 **檢定力 (Statistical Power)**：
-*   **定義**：正確拒絕錯誤的 $H_0$ 的機率，即 **1 - 𝜷**。
+*   **定義**：正確拒絕錯誤的 H<sub>0</sub> 的機率，即 **1 - 𝜷**。
 *   **目標**：在固定 **𝝰** 的情況下，盡量提高檢定力（例如增加樣本數）。
 
-| | $H_0$ 為真 (無效應) | $H_0$ 為假 (有效應) |
+| | H<sub>0</sub> 為真 (無效應) | H<sub>0</sub> 為假 (有效應) |
 | :--- | :--- | :--- |
-| **拒絕 $H_0$** | **型一錯誤 (𝝰)** <br> (偽陽性) | **正確決策 (1-𝜷)** <br> (檢定力) |
-| **不拒絕 $H_0$** | **正確決策 (1-𝝰)** | **型二錯誤 (𝜷)** <br> (偽陰性) |
+| **拒絕 H<sub>0</sub>** | **型一錯誤 (𝝰)** <br> (偽陽性) | **正確決策 (1-𝜷)** <br> (檢定力) |
+| **不拒絕 H<sub>0</sub>** | **正確決策 (1-𝝰)** | **型二錯誤 (𝜷)** <br> (偽陰性) |

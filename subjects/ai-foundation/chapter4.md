@@ -88,7 +88,7 @@ label: chap-ai-foundation-chapter4
 
 *   **做法**：將每個類別映射到一個低維度的向量空間（Vector Space）。
 *   **效果**：讓意義相近的類別在空間中距離較近。
-    *   例如在 Word2Vec 中：$Vector(國王) - Vector(男人) + Vector(女人) \approx Vector(皇后)$。
+    *   例如在 Word2Vec 中：Vector(國王) - Vector(男人) + Vector(女人) ≈ Vector(皇后)。
     *   這不僅解決了維度問題，還捕捉了類別之間的**語意關係**。
 
 ![特徵嵌入](images/feature_embedding.webp)

@@ -73,7 +73,8 @@ def render_quarto(file_path):
     cmd = [
         "quarto", "render", str(file_path),
         "--to", "html",
-        "-M", "mermaid-format:png"
+        "-M", "mermaid-format:png",
+        "-M", "html-math-method:plain"
         # Removed --embed-resources to allow image copying (src will be paths, not base64)
     ]
     
@@ -123,6 +124,11 @@ def process_chapter(md_file, questions_map, image_output_dir=None,
     
     with open(html_path, 'r', encoding='utf-8') as f:
         html_content = f.read()
+
+    # Remove warning lines containing python filenames and line numbers
+    # which can leak host information. e.g. "base_conv.py:113"
+    html_content = re.sub(r'(?m)^.*\.py:\d+.*$\n?', '', html_content)
+
         
     # Clean up the generated HTML file
     # os.remove(html_path) # Uncomment to clean up
@@ -209,7 +215,8 @@ def process_chapter(md_file, questions_map, image_output_dir=None,
             
             # Get content of the section
             # We might want to remove the h2 tag from the content if the app displays the title separately
-            # sec_title_tag.decompose() 
+            if sec_title_tag:
+                sec_title_tag.decompose() 
             
             sec_content = str(sec)
             

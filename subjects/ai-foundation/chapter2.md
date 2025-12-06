@@ -58,6 +58,7 @@ label: chap-ai-foundation-chapter2
 **探索與利用 (Exploration vs. Exploitation)**
 
 強化學習中有一個經典的難題：
+
 *   **探索 (Exploration)**：嘗試新的、未知的行動，希望能發現更好的策略（但也可能失敗）。
 *   **利用 (Exploitation)**：堅持目前已知最好的策略，確保獲得穩定的獎勵。
 AI 必須在這兩者之間取得平衡，才能不斷進步。

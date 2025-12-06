@@ -14,24 +14,24 @@ label: chap-m4-ch1
 ### 隨機森林 {.unnumbered}
 
 隨機森林 (Random Forest) 是基於**Bagging (Bootstrap Aggregating)** 的整合模型。它並行訓練多棵決策樹，每棵樹使用隨機採樣的數據和特徵。
+
 *   **分類**：多數決 (Voting)。
 *   **迴歸**：平均值 (Averaging)。
 *   **優點**：不易過擬合，能處理高維數據，提供特徵重要性。
 
 **決策樹的分裂準則**：
-*   **吉尼不純度 (Gini Impurity)**：衡量集合中隨機選取兩個樣本屬於不同類別的機率。
-    $$ Gini = 1 - \sum_{i=1}^{C} p_i^2 $$
-    其中 $p_i$ 是第 **i** 類樣本的比例。Gini 越小，純度越高。
-*   **資訊熵 (Entropy)**：衡量系統的混亂程度。
-    $$ Entropy = - \sum_{i=1}^{C} p_i \log_2(p_i) $$
+
+*   **吉尼不純度 (Gini Impurity)**：衡量集合中隨機選取兩個樣本屬於不同類別的機率。 $$ Gini = 1 - \sum_{i=1}^{C} p_i^2 $$   其中 p<sub>i</sub> 是第 **i** 類樣本的比例。Gini 越小，純度越高。    
+*   **資訊熵 (Entropy)**：衡量系統的混亂程度。 $$ Entropy = - \sum_{i=1}^{C} p_i \log_2(p_i) $$
     資訊增益 (Information Gain) = 父節點熵 - 子節點加權熵。
 
 ### 梯度提升 {.unnumbered}
 
 梯度提升 (Gradient Boosting) 是基於**Boosting** 的整合模型。它串行訓練模型，每一個新模型都試圖修正前一個模型的錯誤（擬合殘差）。
-    *   **XGBoost (eXtreme Gradient Boosting)**：以其高效、靈活和可移植性著稱。它引入了正則化項來控制過擬合，並支持並行處理。
-    *   **LightGBM**：微軟開發，使用基於直方圖的演算法和 Leaf-wise 生長策略，速度更快，記憶體佔用更低。
-    *   **CatBoost**：Yandex 開發，特別擅長處理**類別特徵 (Categorical Features)**，無需預先進行 One-hot Encoding。
+
+*   **XGBoost (eXtreme Gradient Boosting)**：以其高效、靈活和可移植性著稱。它引入了正則化項來控制過擬合，並支持並行處理。
+*   **LightGBM**：微軟開發，使用基於直方圖的演算法和 Leaf-wise 生長策略，速度更快，記憶體佔用更低。
+*   **CatBoost**：Yandex 開發，特別擅長處理**類別特徵 (Categorical Features)**，無需預先進行 One-hot Encoding。
 
 ### 堆疊法 (Stacking) {.unnumbered}
 
@@ -42,7 +42,7 @@ Stacking 使用一個元學習器 (Meta-learner) 來組合多個基學習器的�
 
 **Python 範例：使用 XGBoost 進行分類**
 
-```{python}
+```python
 import xgboost as xgb
 from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
@@ -70,10 +70,8 @@ print(f"Accuracy: {accuracy_score(y_test, y_pred):.4f}")
 關聯規則學習 (Association Rule Learning) 用於發現變數之間的有趣關係，最經典的例子是「啤酒與尿布」。
 
 *   **指標**：
-    *   **支持度 (Support)**：規則在數據集中出現的頻率。
-        $$ Support(X \to Y) = P(X \cup Y) $$
-    *   **信賴度 (Confidence)**：若 X 出現，則 Y 出現的機率。
-        $$ Confidence(X \to Y) = P(Y|X) = \frac{Support(X \cup Y)}{Support(X)} $$
+    *   **支持度 (Support)**：規則在數據集中出現的頻率。        $$ Support(X \to Y) = P(X \cup Y) $$
+    *   **信賴度 (Confidence)**：若 X 出現，則 Y 出現的機率。        $$ Confidence(X \to Y) = P(Y|X) = \frac{Support(X \cup Y)}{Support(X)} $$
     *   **提升度 (Lift)**：X 的出現對 Y 出現機率的提升程度。
         $$ Lift(X \to Y) = \frac{Confidence(X \to Y)}{P(Y)} $$
         Lift > 1 表示正相關，Lift < 1 表示負相關。
