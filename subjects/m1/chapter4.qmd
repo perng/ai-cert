@@ -13,7 +13,7 @@ label: chap-m1-ch4
 
 ### 感知器 {.unnumbered}
 
-感知器 (Perceptron) 是最簡單的神經網路單元。它接收輸入向量 $\mathbf{x}$，計算加權和 $z$，然後通過活化函數 $\phi$ 輸出。
+感知器 (Perceptron) 是最簡單的神經網路單元。它接收輸入向量 $\mathbf{x}$，計算加權和 **z**，然後通過活化函數 $\phi$ 輸出。
 $$ z = \sum_{i=1}^{n} w_i x_i + b = \mathbf{w}^T \mathbf{x} + b $$
 $$ y = \phi(z) $$
 
@@ -134,7 +134,7 @@ plt.show()
     *   計算**損失函數** $L(\hat{y}, y)$，衡量預測值與真實值的誤差。
 
 2.  **反向傳播 (Backward Propagation)**：
-    *   這是訓練的核心。目標是計算損失函數對每個權重 $w$ 的梯度 $\frac{\partial L}{\partial w}$。
+    *   這是訓練的核心。目標是計算損失函數對每個權重 **w** 的梯度 $\frac{\partial L}{\partial w}$。
     *   利用微積分中的**連鎖律 (Chain Rule)**，將誤差從輸出層**反向**傳遞回輸入層。
     *   **連鎖律範例**：假設 $L = f(y), y = g(x)$，則 $\frac{\partial L}{\partial x} = \frac{\partial L}{\partial y} \cdot \frac{\partial y}{\partial x}$。
     *   計算出的梯度將用於更新權重，以減少下一次的預測誤差。

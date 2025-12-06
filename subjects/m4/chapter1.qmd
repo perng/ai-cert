@@ -21,7 +21,7 @@ label: chap-m4-ch1
 **決策樹的分裂準則**：
 *   **吉尼不純度 (Gini Impurity)**：衡量集合中隨機選取兩個樣本屬於不同類別的機率。
     $$ Gini = 1 - \sum_{i=1}^{C} p_i^2 $$
-    其中 $p_i$ 是第 $i$ 類樣本的比例。Gini 越小，純度越高。
+    其中 $p_i$ 是第 **i** 類樣本的比例。Gini 越小，純度越高。
 *   **資訊熵 (Entropy)**：衡量系統的混亂程度。
     $$ Entropy = - \sum_{i=1}^{C} p_i \log_2(p_i) $$
     資訊增益 (Information Gain) = 父節點熵 - 子節點加權熵。

@@ -22,7 +22,7 @@ label: chap-ai-foundation-chapter7
     *   **公式**：$$ y = \sigma(\sum_{i=1}^{n} w_i x_i + b) $$
         *   $x_i$: 輸入訊號
         *   $w_i$: 權重 (Weight)，代表該輸入的重要性
-        *   $b$: 偏差 (Bias)，調整啟動門檻
+        *   **b**: 偏差 (Bias)，調整啟動門檻
         *   $\sigma$: 啟動函數 (Activation Function)
 
 ![MLP](images/mlp.webp)
@@ -188,7 +188,7 @@ Transformer 由 Encoder（編碼器）和 Decoder（解碼器）組成，後來�
     *   *應用*：聊天機器人、文章寫作、程式碼生成。
 3.  **Encoder-Decoder (如 T5, Bart)**：
     *   同時具備理解與生成能力。
-    *   *應用*：機器翻譯（英文入 $\to$ 理解 $\to$ 生成 $\to$ 中文出）、摘要生成。
+    *   *應用*：機器翻譯（英文入  →  理解  →  生成  →  中文出）、摘要生成。
 
 ## 本章總結與考點提示 {#chap-ai-foundation-chapter7-summary}
 

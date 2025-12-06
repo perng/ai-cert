@@ -19,15 +19,15 @@ label: chap-m3-ch3
 ### ARIMA {.unnumbered}
 
 ARIMA (AutoRegressive Integrated Moving Average) 是經典的時間序列預測方法，包含三個部分 $(p, d, q)$：
-1.  **AR (AutoRegressive, p)**：自迴歸。當前值與過去 $p$ 個值的線性組合有關。
+1.  **AR (AutoRegressive, p)**：自迴歸。當前值與過去 **p** 個值的線性組合有關。
     $$ Y_t = c + \phi_1 Y_{t-1} + \dots + \phi_p Y_{t-p} + \epsilon_t $$
-2.  **I (Integrated, d)**：差分。將非平穩數據轉換為平穩數據所需的差分次數 $d$。
-3.  **MA (Moving Average, q)**：移動平均。當前值與過去 $q$ 個預測誤差的線性組合有關。
+2.  **I (Integrated, d)**：差分。將非平穩數據轉換為平穩數據所需的差分次數 **d**。
+3.  **MA (Moving Average, q)**：移動平均。當前值與過去 **q** 個預測誤差的線性組合有關。
     $$ Y_t = \mu + \epsilon_t + \theta_1 \epsilon_{t-1} + \dots + \theta_q \epsilon_{t-q} $$
 
 **參數選擇**：
-*   **ACF (Autocorrelation Function)**：決定 MA 的階數 $q$。
-*   **PACF (Partial Autocorrelation Function)**：決定 AR 的階數 $p$。
+*   **ACF (Autocorrelation Function)**：決定 MA 的階數 **q**。
+*   **PACF (Partial Autocorrelation Function)**：決定 AR 的階數 **p**。
 
 ### Prophet {.unnumbered}
 
@@ -233,7 +233,7 @@ else:
 
 *   **皮爾森相關檢定 (Pearson correlation test)**：
     *   **適用條件**：兩個變數皆為連續變數，且呈常態分佈，存在線性關係。
-    *   **指標**：皮爾森相關係數 ($r$)，範圍從 -1 到 1。
+    *   **指標**：皮爾森相關係數 (**r**)，範圍從 -1 到 1。
         *   $r=1$：完全正相關。
         *   $r=-1$：完全負相關。
         *   $r=0$：無線性相關。

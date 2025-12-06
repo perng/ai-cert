@@ -11,9 +11,9 @@ label: chap-m4-ch4
 
 *   **代理 (Agent)**：做出決策的主體。
 *   **環境 (Environment)**：代理所在的外部世界。
-*   **狀態 (State, $S$)**：環境當前的狀況。
-*   **行動 (Action, $A$)**：代理採取的動作。
-*   **獎勵 (Reward, $R$)**：環境對代理行動的反饋。
+*   **狀態 (State, **S**)**：環境當前的狀況。
+*   **行動 (Action, **A**)**：代理採取的動作。
+*   **獎勵 (Reward, **R**)**：環境對代理行動的反饋。
 *   **策略 (Policy, $\pi$)**：代理在給定狀態下選擇行動的規則。$\pi(a|s)$。
 
 **探索與利用 (Exploration vs Exploitation)**：
@@ -24,7 +24,7 @@ RL 的核心挑戰。
 
 ## 貝爾曼方程式 {#sec-bellman}
 
-**價值函數 (Value Function, $V(s)$)**：從狀態 $s$ 開始，遵循策略 $\pi$ 所能獲得的預期累積獎勵。
+**價值函數 (Value Function, $V(s)$)**：從狀態 **s** 開始，遵循策略 $\pi$ 所能獲得的預期累積獎勵。
 **貝爾曼方程式 (Bellman Equation)** 描述了當前狀態價值與未來狀態價值之間的關係：
 
 $$ V(s) = \max_a \left( R(s,a) + \gamma \sum_{s'} P(s'|s,a) V(s') \right) $$
@@ -35,7 +35,7 @@ $$ V(s) = \max_a \left( R(s,a) + \gamma \sum_{s'} P(s'|s,a) V(s') \right) $$
 
 ### Q-learning {.unnumbered}
 
-Q-learning 是一種基於值的 (Value-based) 演算法，學習一個 Q 表 (Q-table)，記錄在狀態 $s$ 採取行動 $a$ 的預期獎勵 $Q(s, a)$。
+Q-learning 是一種基於值的 (Value-based) 演算法，學習一個 Q 表 (Q-table)，記錄在狀態 **s** 採取行動 **a** 的預期獎勵 $Q(s, a)$。
 
 **更新規則**：
 $$ Q(s, a) \leftarrow Q(s, a) + \alpha [R + \gamma \max_{a'} Q(s', a') - Q(s, a)] $$

@@ -9,7 +9,7 @@ label: chap-m1-ch3
 
 ## 監督式學習 {#sec-supervised-learning}
 
-監督式學習 (Supervised Learning) 使用標記好的數據 (Labeled Data) 來訓練模型，即每個輸入 $x$ 都有對應的正確輸出 $y$。目標是學習一個函數 $f: X \to Y$。
+監督式學習 (Supervised Learning) 使用標記好的數據 (Labeled Data) 來訓練模型，即每個輸入 **x** 都有對應的正確輸出 **y**。目標是學習一個函數 $f: X \to Y$。
 
 ### 線性迴歸 {.unnumbered}
 
@@ -224,13 +224,13 @@ plt.show()
 ### K-近鄰演算法 {.unnumbered}
 
 K-近鄰演算法 (KNN, K-Nearest Neighbors) 是一種簡單直觀的監督式學習演算法。
-*   **原理**：對於一個新的數據點，查看其在特徵空間中最近的 $K$ 個鄰居。
-    *   **分類**：由這 $K$ 個鄰居中出現次數最多的類別決定（多數決）。
-    *   **迴歸**：由這 $K$ 個鄰居的平均值決定。
+*   **原理**：對於一個新的數據點，查看其在特徵空間中最近的 **K** 個鄰居。
+    *   **分類**：由這 **K** 個鄰居中出現次數最多的類別決定（多數決）。
+    *   **迴歸**：由這 **K** 個鄰居的平均值決定。
 *   **距離度量**：最常用的是歐幾里得距離 (Euclidean Distance)。
 *   **K 的選擇**：
-    *   $K$ 太小：模型容易受雜訊影響，導致過擬合 (Overfitting)。
-    *   $K$ 太大：模型過於平滑，導致欠擬合 (Underfitting)。
+    *   **K** 太小：模型容易受雜訊影響，導致過擬合 (Overfitting)。
+    *   **K** 太大：模型過於平滑，導致欠擬合 (Underfitting)。
 
 **Python 範例：KNN 分類**
 
@@ -311,9 +311,9 @@ Output: Cluster assignments for each point
 
 **如何決定 K 值？**
 
-決定最佳的群集數量 $K$ 是一個常見的問題。最常用的方法是**手肘法 (Elbow Method)**。
-*   **原理**：計算不同 $K$ 值下的 WCSS (Within-Cluster Sum of Squares)。隨著 $K$ 增加，WCSS 會逐漸減小。
-*   **選擇**：選擇 WCSS 下降幅度開始變緩的那個點（看起來像手肘的彎曲處），作為最佳的 $K$。
+決定最佳的群集數量 **K** 是一個常見的問題。最常用的方法是**手肘法 (Elbow Method)**。
+*   **原理**：計算不同 **K** 值下的 WCSS (Within-Cluster Sum of Squares)。隨著 **K** 增加，WCSS 會逐漸減小。
+*   **選擇**：選擇 WCSS 下降幅度開始變緩的那個點（看起來像手肘的彎曲處），作為最佳的 **K**。
 
 ::: {.callout-note}
 ## WCSS (Within-Cluster Sum of Squares)
@@ -442,9 +442,9 @@ plt.show()
 
 交叉驗證 (Cross-validation) 是一種評估模型泛化能力的技術，能有效減少因數據劃分不同而帶來的評估誤差。
 *   **K-Fold 交叉驗證**：最常用的方法。
-    1.  將數據隨機分為 $K$ 份 (Folds)。
+    1.  將數據隨機分為 **K** 份 (Folds)。
     2.  輪流使用其中 $K-1$ 份作為訓練集，剩餘 1 份作為驗證集。
-    3.  重複 $K$ 次，計算 $K$ 次評估指標的平均值作為最終性能指標。
+    3.  重複 **K** 次，計算 **K** 次評估指標的平均值作為最終性能指標。
 
 **Python 範例：K-Fold 交叉驗證**
 
