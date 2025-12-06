@@ -27,7 +27,7 @@ label: chap-ai-foundation-chapter4
 
 *   **常見方法**：
     1.  **標準化 (Standardization / Z-score Normalization)**：
-        *   將資料轉換為平均值 ($\mu$) 為 0，標準差 ($\sigma$) 為 1 的分佈。
+        *   將資料轉換為平均值 $\mu$ 為 0，標準差 $\sigma$ 為 1 的分佈。
         *   **公式**：$$ z = \frac{x - \mu}{\sigma} $$
         *   **適用**：大部分機器學習演算法（如 SVM, Logistic Regression, Neural Networks），特別是假設資料呈常態分佈時。
     2.  **正規化 (Normalization / Min-Max Scaling)**：
@@ -65,10 +65,12 @@ label: chap-ai-foundation-chapter4
 
 ### 常見編碼方式
 
+::: {.column-page style="overflow-x: auto;"}
 | 編碼方式 | 說明 | 適用情境 | 範例 (T-shirt 尺寸) |
 | :--- | :--- | :--- | :--- |
-| **序數編碼**<br>(Ordinal Encoding) | 依據類別的**順序**或**大小**賦予整數值。 | 類別間**有**順序關係 (Size, Rating)。 | S $\to$ 1<br>M $\to$ 2<br>L $\to$ 3<br>XL $\to$ 4 |
-| **獨熱編碼**<br>(One-hot Encoding) | 為每個類別建立一個獨立的欄位 (Dummy Variable)，是該類別則標為 1，否則為 0。 | 類別間**無**順序關係 (Color, City)。 | **紅色** $\to$ [1, 0, 0]<br>**綠色** $\to$ [0, 1, 0]<br>**藍色** $\to$ [0, 0, 1] |
+| **序數編碼**<br>(Ordinal Encoding) | 依據類別的**順序**或**大小**賦予整數值。 | 類別間**有**順序關係 (Size, Rating)。 | S → 1<br>M → 2<br>L → 3<br>XL → 4 |
+| **獨熱編碼**<br>(One-hot Encoding) | 為每個類別建立一個獨立的欄位 (Dummy Variable)，是該類別則標為 1，否則為 0。 | 類別間**無**順序關係 (Color, City)。 | **紅色** → [1, 0, 0]<br>**綠色** → [0, 1, 0]<br>**藍色** → [0, 0, 1] |
+:::
 
 ![獨熱編碼](images/one_hot_encoding.webp)
 

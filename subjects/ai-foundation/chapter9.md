@@ -124,7 +124,7 @@ label: chap-ai-foundation-chapter9
 4.  **資料增強 (Data Augmentation)**：
     *   **概念**：如果資料不夠，就自己造！
     *   **影像**：旋轉、裁切、調亮、水平翻轉、加雜訊。
-    *   **文字**：同義詞替換、隨機刪除、回譯 (Back Translation, 中->英->中)。
+    *   **文字**：同義詞替換、隨機刪除、回譯 (Back Translation, 中→英→中)。
     *   **聲音**：調整音調、改變速度、加入背景噪音。
 
 ![防止過擬合技術](images/prevent-overfitting.webp)

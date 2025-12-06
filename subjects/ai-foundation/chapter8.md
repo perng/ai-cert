@@ -94,7 +94,7 @@ LLM (Large Language Model) 如 GPT 系列，本質上是一個超巨大的「文
 1.  **預訓練 (Pre-training) - 通識教育**：
     *   **做什麼**：讓模型閱讀網際網路上數兆字的文本（Wikipedia, 書籍, 新聞, 程式碼）。
     *   **訓練方式**：**自我監督學習 (Self-Supervised Learning)**。
-        *   *任務*：**預測下一個字 (Next Token Prediction)**。例如：「床前明月__」-> 模型要猜出「光」。
+        *   *任務*：**預測下一個字 (Next Token Prediction)**。例如：「床前明月__」→ 模型要猜出「光」。
     *   **成果**：**基底模型 (Base Model)**。
         *   它博學多聞，懂文法、懂邏輯、懂世界知識。
         *   *缺點*：它不懂人類的指令。你問它「如何做蛋糕？」，它可能會接著寫「...的歷史淵源」，而不是給你食譜。它只是一個「文字接龍高手」。
@@ -154,10 +154,10 @@ LLM (Large Language Model) 如 GPT 系列，本質上是一個超巨大的「文
     *   *範例*：
         > **Prompt**:
         > 將英文翻譯成法文：
-        > Hello -> Bonjour
-        > Good morning -> Bonjour
-        > Good night -> Bonne nuit
-        > See you later ->
+        > Hello → Bonjour
+        > Good morning → Bonjour
+        > Good night → Bonne nuit
+        > See you later →
         > **Output**: À plus tard
 
 *   **Chain-of-Thought (CoT, 思維鏈)**：

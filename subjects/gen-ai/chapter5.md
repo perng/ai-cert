@@ -75,7 +75,7 @@ label: chap-gen-chapter5
 *   **n8n**：
     *   **定位**：強大的工作流自動化工具 (Workflow Automation Tool)，強調可自託管與高度客製化。
     *   **AI 整合**：內建 AI Agent 節點，可以輕鬆將 LLM (如 GPT-4, Claude) 與超過 400 種外部服務 (如 Google Sheets, Slack, Email) 串接。
-    *   **應用場景**：自動化辦公流程，例如「收到客戶 Email -> 用 AI 分析情緒與摘要 -> 寫入 Notion 資料庫 -> 自動草擬回信」。
+    *   **應用場景**：自動化辦公流程，例如「收到客戶 Email → 用 AI 分析情緒與摘要 → 寫入 Notion 資料庫 → 自動草擬回信」。
     ![n8n](images/n8n.webp)
 *   **ComfyUI**：
     *   **定位**：專為 [Stable Diffusion](https://en.wikipedia.org/wiki/Stable_Diffusion) 設計的節點式圖形介面 (Node-based GUI)。
