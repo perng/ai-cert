@@ -47,6 +47,7 @@ $ Q(s, a) \leftarrow Q(s, a) + \alpha [R + \gamma \max_{a'} Q(s', a') - Q(s, a)]
 深度 Q 網路 (DQN, Deep Q-Network) 使用神經網路來近似 Q 函數 Q(s, a; θ) ≈ Q^*(s, a)，解決了狀態空間過大無法建立 Q 表的問題（如 Atari 遊戲的像素輸入）。
 
 DQN 的兩個關鍵技術：
+
 1.  **經驗重播 (Experience Replay)**：將轉移樣本 (s, a, r, s') 存入緩衝區，訓練時隨機採樣，打破數據相關性。
 2.  **固定目標網路 (Fixed Target Network)**：計算目標值時使用一個參數凍結的網路，提高訓練穩定性。
 

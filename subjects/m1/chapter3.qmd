@@ -15,7 +15,7 @@ label: chap-m1-ch3
 
 線性迴歸 (Linear Regression) 用於預測連續數值。它試圖找到一條直線（或超平面）來擬合數據，使得預測值與真實值之間的均方誤差 (MSE) 最小。
 
-$$ y = w_0 + w_1 x_1 + \dots + w_n x_n = \mathbf{w}^T \mathbf{x} $$
+$$y = w_0 + w_1 x_1 + \dots + w_n x_n = \mathbf{w}^T \mathbf{x}$$
 
 其中 **w** 是權重向量，**x** 是特徵向量。
 
