@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>進階 RAG 與系統架構 (Advanced RAG &amp; Architecture) – 生成式 AI 應用與規劃</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./chapter4.html" rel="next">
+<link href="./chapter2.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter3.html"><span class="chapter-title">進階 RAG 與系統架構 (Advanced RAG &amp; Architecture)</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">生成式 AI 應用與規劃</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">前言</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">生成式 AI 模型架構與機制 (Generative Models &amp; Mechanisms)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">進階提示工程 (Advanced Prompt Engineering)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter3.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">進階 RAG 與系統架構 (Advanced RAG &amp; Architecture)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI 代理人 (Agentic AI) 與自動化</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">No Code / Low Code 平台與 AI 開發工具</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">生成式 AI 專案管理與評估 (Project Planning &amp; Eval)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">生成式 AI 的資安、合規與倫理 (Security, Compliance &amp; Ethics)</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-rag-architecture" id="toc-sec-rag-architecture" class="nav-link active" data-scroll-target="#sec-rag-architecture">RAG 運作原理與架構</a>
+  <ul class="collapse">
+  <li><a href="#標準-rag-流程" id="toc-標準-rag-流程" class="nav-link" data-scroll-target="#標準-rag-流程">1. 標準 RAG 流程</a></li>
+  <li><a href="#向量資料庫-vector-database" id="toc-向量資料庫-vector-database" class="nav-link" data-scroll-target="#向量資料庫-vector-database">2. 向量資料庫 (Vector Database)</a></li>
+  </ul></li>
+  <li><a href="#sec-fine-tuning-optimization" id="toc-sec-fine-tuning-optimization" class="nav-link" data-scroll-target="#sec-fine-tuning-optimization">模型微調 (Fine-tuning) 與優化</a>
+  <ul class="collapse">
+  <li><a href="#rag-vs.-fine-tuning-決策矩陣" id="toc-rag-vs.-fine-tuning-決策矩陣" class="nav-link" data-scroll-target="#rag-vs.-fine-tuning-決策矩陣">1. RAG vs.&nbsp;Fine-tuning 決策矩陣</a></li>
+  <li><a href="#進階-rag-技術-advanced-rag" id="toc-進階-rag-技術-advanced-rag" class="nav-link" data-scroll-target="#進階-rag-技術-advanced-rag">2. 進階 RAG 技術 (Advanced RAG)</a></li>
+  <li><a href="#知識蒸餾-knowledge-distillation" id="toc-知識蒸餾-knowledge-distillation" class="nav-link" data-scroll-target="#知識蒸餾-knowledge-distillation">3. 知識蒸餾 (Knowledge Distillation)</a></li>
+  </ul></li>
+  <li><a href="#sec-mcp" id="toc-sec-mcp" class="nav-link" data-scroll-target="#sec-mcp">Model Context Protocol (MCP)</a>
+  <ul class="collapse">
+  <li><a href="#定義與目的" id="toc-定義與目的" class="nav-link" data-scroll-target="#定義與目的">1. 定義與目的</a></li>
+  <li><a href="#核心架構-architecture" id="toc-核心架構-architecture" class="nav-link" data-scroll-target="#核心架構-architecture">2. 核心架構 (Architecture)</a></li>
+  <li><a href="#三大核心原語-primitives" id="toc-三大核心原語-primitives" class="nav-link" data-scroll-target="#三大核心原語-primitives">3. 三大核心原語 (Primitives)</a></li>
+  <li><a href="#mcp-與-rag-的差異" id="toc-mcp-與-rag-的差異" class="nav-link" data-scroll-target="#mcp-與-rag-的差異">4. MCP 與 RAG 的差異</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">進階 RAG 與系統架構 (Advanced RAG &amp; Architecture)</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- # 進階 RAG 與系統架構 (Advanced RAG & Architecture) {#sec-advanced-rag} -->
+<blockquote class="blockquote">
+<p><strong>考點摘要</strong>：解決 AI 幻覺與時效性問題的主流架構，考題常涉及 RAG 與 Fine-tuning 的選擇決策。</p>
+</blockquote>
+<section id="sec-rag-architecture" class="level2">
+<h2 class="anchored" data-anchor-id="sec-rag-architecture">RAG 運作原理與架構</h2>
+<p>檢索增強生成 (Retrieval-Augmented Generation, RAG) 是目前企業落地生成式 AI 最關鍵的技術架構。</p>
+<section id="標準-rag-流程" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="標準-rag-流程">1. 標準 RAG 流程</h3>
+<p>RAG 的運作可以分為五個標準步驟：</p>
+<ol type="1">
+<li><strong>文件切塊 (Chunking)</strong>：將長文件（PDF, Word）切成小的段落 (Chunks)。
+<ul>
+<li><em>原因</em>：LLM 的 Context Window 有限，且切分太長會稀釋語意。</li>
+</ul></li>
+<li><strong>向量化 (Embedding)</strong>：使用 Embedding Model 將文字轉換為數值向量 (Vectors)。
+<ul>
+<li><em>意義</em>：將語意轉化為數學空間中的座標。意思相近的句子，座標會靠得很近。</li>
+</ul></li>
+<li><strong>儲存 (Indexing)</strong>：將向量存入向量資料庫 (Vector Database)。</li>
+<li><strong>檢索 (Retrieval)</strong>：
+<ul>
+<li>當使用者提問時，將問題也轉換為向量。</li>
+<li>在資料庫中搜尋與問題向量「距離最近」的片段 (Cosine Similarity)。</li>
+</ul></li>
+<li><strong>生成 (Generation)</strong>：將檢索到的片段 (Context) 與原始問題 (Prompt) 一起餵給 LLM，生成最終回答。</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/rag_workflow.webp" class="img-fluid figure-img"></p>
+<figcaption>RAG Workflow</figcaption>
+</figure>
+</div>
+</section>
+<section id="向量資料庫-vector-database" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="向量資料庫-vector-database">2. 向量資料庫 (Vector Database)</h3>
+<p>不同於傳統關聯式資料庫 (SQL) 透過關鍵字精確比對，向量資料庫透過「語意相似度」進行模糊搜尋。</p>
+<ul>
+<li><strong>核心功能</strong>：高維度向量的儲存與快速相似度搜尋 (ANN Search)。</li>
+<li><strong>常見工具</strong>：Pinecone, Milvus, Chroma, Weaviate, pgvector。</li>
+<li><strong>類比</strong>：
+<ul>
+<li><strong>SQL</strong>：圖書館的索引卡系統。你要找《哈利波特》，必須輸入精確書名。</li>
+<li><strong>Vector DB</strong>：圖書館的資深管理員。你說「我想找一本關於魔法學校和巫師男孩的書」，他就能帶你找到《哈利波特》，即使你沒提到書名。</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/vector_db.webp" class="img-fluid figure-img"></p>
+<figcaption>Vector DB</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="sec-fine-tuning-optimization" class="level2">
+<h2 class="anchored" data-anchor-id="sec-fine-tuning-optimization">模型微調 (Fine-tuning) 與優化</h2>
+<p>在企業導入生成式 AI 時，最常面臨的抉擇就是：<strong>該用 RAG 還是 Fine-tuning？</strong></p>
+<section id="rag-vs.-fine-tuning-決策矩陣" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="rag-vs.-fine-tuning-決策矩陣">1. RAG vs.&nbsp;Fine-tuning 決策矩陣</h3>
+<p>這兩者並非互斥，而是互補。我們可以將它們比喻為：</p>
+<ul>
+<li><strong>RAG (檢索增強生成)</strong>：像是<strong>開書考</strong>。模型本身不需要背誦知識，考試時翻閱教科書（向量資料庫）即可。</li>
+<li><strong>Fine-tuning (微調)</strong>：像是<strong>考前衝刺班</strong>。透過大量練習，將知識內化到大腦（權重）中，並學習特定的答題技巧。</li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">比較項目</th>
+<th style="text-align: left;">RAG (檢索增強生成)</th>
+<th style="text-align: left;">Fine-tuning (模型微調)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>知識時效性</strong></td>
+<td style="text-align: left;"><strong>高</strong>。資料庫更新，AI 就知道新知識（即時）。</td>
+<td style="text-align: left;"><strong>低</strong>。需要重新訓練才能學到新知識（週期長）。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>幻覺風險</strong></td>
+<td style="text-align: left;"><strong>低</strong>。回答有憑有據 (Grounded)，可附上引用來源。</td>
+<td style="text-align: left;"><strong>中</strong>。模型仍可能一本正經胡說八道，且難以查證來源。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>資料隱私</strong></td>
+<td style="text-align: left;"><strong>高</strong>。可透過權限控管 (ACL) 決定誰能檢索到什麼文件。</td>
+<td style="text-align: left;"><strong>低</strong>。一旦寫入模型權重，就很難限制特定人存取特定知識。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>適用場景</strong></td>
+<td style="text-align: left;">企業知識庫、法規查詢、即時新聞分析。</td>
+<td style="text-align: left;">學習特定語氣/風格、醫療/法律專有名詞理解、固定格式輸出 (JSON/SQL)。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>成本</strong></td>
+<td style="text-align: left;">建置向量資料庫、檢索運算成本。</td>
+<td style="text-align: left;">訓練算力成本、資料標註成本。</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p><strong>最佳實務</strong>：通常建議<strong>先 RAG，後 Fine-tuning</strong>。先用 RAG 解決知識獲取問題，如果發現模型聽不懂專業術語或語氣不對，再考慮 Fine-tuning。</p>
+</blockquote>
+</section>
+<section id="進階-rag-技術-advanced-rag" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="進階-rag-技術-advanced-rag">2. 進階 RAG 技術 (Advanced RAG)</h3>
+<p>為了提升檢索的準確度，除了標準流程外，還有許多優化技巧：</p>
+<ul>
+<li><strong>混合搜尋 (Hybrid Search)</strong>：
+<ul>
+<li>同時使用 <strong>關鍵字搜尋 (Keyword Search/BM25)</strong> 與 <strong>向量搜尋 (Vector Search)</strong>。</li>
+<li><em>優點</em>：結合了關鍵字的精準度（如專有名詞、型號）與向量的語意理解能力。</li>
+</ul></li>
+<li><strong>重排序 (Re-ranking)</strong>：
+<ul>
+<li>先檢索出較多候選片段 (Top-50)，再用一個精準的 Cross-Encoder 模型對這 50 個片段進行詳細評分與排序，最後只取 Top-5 給 LLM。</li>
+<li><em>類比</em>：海選 (Retrieval) 先撈一堆人，決賽 (Re-ranking) 再由評審仔細打分。</li>
+</ul></li>
+<li><strong>查詢轉換 (Query Transformation)</strong>：
+<ul>
+<li>LLM 在檢索前先改寫使用者的問題。</li>
+<li><em>例子</em>：使用者問「它好用嗎？」，LLM 改寫為「iPhone 15 Pro 的電池續航力與相機效能評價如何？」，再進行檢索。</li>
+</ul></li>
+</ul>
+</section>
+<section id="知識蒸餾-knowledge-distillation" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="知識蒸餾-knowledge-distillation">3. 知識蒸餾 (Knowledge Distillation)</h3>
+<p>當我們希望在邊緣裝置（手機、IoT）上執行 AI，但大模型 (Teacher) 太大跑不動時，就需要用到知識蒸餾。</p>
+<ul>
+<li><p><strong>核心概念</strong>：讓一個參數少、運算快的小模型 (<strong>Student</strong>)，去模仿大模型 (<strong>Teacher</strong>) 的行為。</p></li>
+<li><p><strong>運作方式</strong>：</p>
+<ul>
+<li>Student 不只是學習「正確答案」(Hard Label)，更要學習 Teacher 的「機率分佈」(Soft Label)。</li>
+<li><em>例子</em>：分辨一張模糊的狗照片。
+<ul>
+<li>標準答案：狗 (100%)。</li>
+<li>Teacher 看法：狗 (90%)、貓 (9%)、車子 (1%)。</li>
+<li>Teacher 傳遞出的「這張圖有點像貓」的資訊 (Dark Knowledge)，能幫助 Student 學得更好。</li>
+</ul></li>
+</ul></li>
+<li><p><strong>應用</strong>：將 GPT-4 的能力蒸餾到 LLaMA-7B 或更小的模型中，以降低推論成本並提升速度。</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/knowledge_distillation.webp" class="img-fluid figure-img"></p>
+<figcaption>Knowledge Distillation</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="sec-mcp" class="level2">
+<h2 class="anchored" data-anchor-id="sec-mcp">Model Context Protocol (MCP)</h2>
+<p>隨著 AI 應用越來越複雜，我們需要讓 AI 連接更多的工具與資料源。MCP 應運而生。</p>
+<section id="定義與目的" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="定義與目的">1. 定義與目的</h3>
+<ul>
+<li><strong>定義</strong>：MCP 是一個開放標準協議，旨在標準化 AI 模型 (Client) 與外部數據/工具 (Server) 之間的連接方式。</li>
+<li><strong>目的</strong>：解決「每個 AI 模型都要為每個資料源寫一個專屬 Connector」的碎片化問題。</li>
+<li><strong>類比</strong>：
+<ul>
+<li><strong>USB-C</strong>：以前手機、電腦、相機各有各的充電線。現在一條 USB-C 線就能連接所有裝置。MCP 就是 AI 界的 USB-C。</li>
+<li><strong>驅動程式 (Driver)</strong>：作業系統不需要知道每台印表機的硬體細節，只要安裝對應的驅動程式即可溝通。MCP Server 就是資料源的驅動程式。</li>
+</ul></li>
+</ul>
+</section>
+<section id="核心架構-architecture" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="核心架構-architecture">2. 核心架構 (Architecture)</h3>
+<p>MCP 採用 <strong>Client-Host-Server</strong> 架構：</p>
+<ul>
+<li><strong>MCP Host (主機)</strong>：執行 AI 模型的應用程式，例如 Claude Desktop App, IDE (VS Code, Cursor), 或 AI Agent 平台。它負責管理連線與權限。</li>
+<li><strong>MCP Client (客戶端)</strong>：在 Host 內部運作的元件，負責與 Server 溝通（通常是一對一或一對多）。</li>
+<li><strong>MCP Server (伺服器)</strong>：提供特定功能的輕量級服務。它不執行 LLM，而是專注於提供<strong>上下文 (Context)</strong> 或 <strong>能力 (Capabilities)</strong>。
+<ul>
+<li><em>例子</em>：Google Drive Server (讀取檔案)、PostgreSQL Server (查詢資料)、Slack Server (發送訊息)。</li>
+</ul></li>
+</ul>
+</section>
+<section id="三大核心原語-primitives" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="三大核心原語-primitives">3. 三大核心原語 (Primitives)</h3>
+<p>MCP 定義了三種主要的互動模式：</p>
+<ol type="1">
+<li><strong>資源 (Resources)</strong>：
+<ul>
+<li><strong>概念</strong>：類似檔案讀取。Server 提供被動的數據供 Client 讀取。</li>
+<li><em>例子</em>：讀取日誌檔 (Logs)、查看資料庫 Schema、獲取 API 文件。</li>
+<li><em>特性</em>：唯讀 (Read-only)、可訂閱 (Subscribable)（當資源更新時通知 Client）。</li>
+</ul></li>
+<li><strong>提示 (Prompts)</strong>：
+<ul>
+<li><strong>概念</strong>：Server 提供預先寫好的 Prompt Template，讓使用者或 Client 直接調用。</li>
+<li><em>例子</em>：<code>git-commit-prompt</code> (自動生成 commit message)、<code>explain-code-prompt</code> (解釋程式碼)。</li>
+<li><em>優點</em>：將 Prompt Engineering 的專業知識封裝在 Server 中，使用者無需從頭下指令。</li>
+</ul></li>
+<li><strong>工具 (Tools)</strong>：
+<ul>
+<li><strong>概念</strong>：類似函數呼叫 (Function Calling)。Client 可以要求 Server 執行某個動作。</li>
+<li><em>例子</em>：<code>execute_sql_query</code> (執行 SQL)、<code>send_email</code> (寄信)、<code>create_jira_ticket</code> (開票)。</li>
+<li><em>特性</em>：可執行 (Executable)、通常需要使用者授權 (Human-in-the-loop)。</li>
+</ul></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mcp.webp" class="img-fluid figure-img"></p>
+<figcaption>Model Context Protocol Architecture</figcaption>
+</figure>
+</div>
+</section>
+<section id="mcp-與-rag-的差異" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="mcp-與-rag-的差異">4. MCP 與 RAG 的差異</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">特性</th>
+<th style="text-align: left;">RAG (檢索增強生成)</th>
+<th style="text-align: left;">MCP (模型上下文協議)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>主要目標</strong></td>
+<td style="text-align: left;"><strong>獲取知識</strong>。解決 AI 知識不足與幻覺問題。</td>
+<td style="text-align: left;"><strong>連接萬物</strong>。解決 AI 與外部系統整合的標準化問題。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>運作方式</strong></td>
+<td style="text-align: left;">切塊 → 向量化 → 檢索 → 生成。</td>
+<td style="text-align: left;">Client &lt;→ Server 透過標準協議溝通 (JSON-RPC)。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>資料型態</strong></td>
+<td style="text-align: left;">主要是<strong>非結構化文字</strong> (PDF, Wiki)。</td>
+<td style="text-align: left;">包含<strong>結構化資料</strong> (DB)、<strong>即時狀態</strong> (Logs)、<strong>操作能力</strong> (Tools)。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>關係</strong></td>
+<td style="text-align: left;">RAG 是 AI 的一種<strong>能力</strong>。</td>
+<td style="text-align: left;">MCP 是實現 RAG 的一種<strong>管道</strong> (例如透過 MCP 連接向量資料庫)。</td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./chapter2.html" class="pagination-link" aria-label="進階提示工程 (Advanced Prompt Engineering)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">進階提示工程 (Advanced Prompt Engineering)</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./chapter4.html" class="pagination-link" aria-label="AI 代理人 (Agentic AI) 與自動化">
+        <span class="nav-page-text"><span class="chapter-title">AI 代理人 (Agentic AI) 與自動化</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

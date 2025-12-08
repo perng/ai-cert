@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>神經網路架構演進 (Neural Network Architecture Evolution) – AI 應用規劃師全攻略</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./chapter8.html" rel="next">
+<link href="./chapter6.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter7.html">第四部：深度學習與生成式 AI 前沿</a></li><li class="breadcrumb-item"><a href="./chapter7.html"><span class="chapter-title">神經網路架構演進 (Neural Network Architecture Evolution)</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">AI 應用規劃師全攻略</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">人工智慧基礎理論</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">第一部：人工智慧基礎與戰略定位</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">人工智慧的本質與層次架構</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI 應用問題類型</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">第二部：數據工程——AI 的堅實地基</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">數據處理生命週期與架構</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">特徵工程 (Feature Engineering)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">第三部：機器學習演算法核心</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">監督式學習演算法 (Supervised Learning Algorithms)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">非監督式學習與強化學習 (Unsupervised &amp; Reinforcement Learning)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">第四部：深度學習與生成式 AI 前沿</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter7.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">神經網路架構演進 (Neural Network Architecture Evolution)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter8.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">生成式 AI 與大型語言模型 (Generative AI &amp; LLM)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">第五部：模型評估、可解釋性與治理</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter9.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">模型評估與效能優化 (Model Evaluation &amp; Optimization)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter10.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">可解釋 AI (XAI)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter11.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI 治理、法規與倫理 (AI Governance, Regulations &amp; Ethics)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-basic-nn" id="toc-sec-basic-nn" class="nav-link active" data-scroll-target="#sec-basic-nn">基礎神經網路</a>
+  <ul class="collapse">
+  <li><a href="#sec-mlp" id="toc-sec-mlp" class="nav-link" data-scroll-target="#sec-mlp">多層感知機 (MLP, Multi-Layer Perceptron)</a></li>
+  <li><a href="#sec-activation-functions" id="toc-sec-activation-functions" class="nav-link" data-scroll-target="#sec-activation-functions">啟動函數 (Activation Functions)</a></li>
+  <li><a href="#sec-backpropagation" id="toc-sec-backpropagation" class="nav-link" data-scroll-target="#sec-backpropagation">反向傳播 (Backpropagation) 與優化器(Optimizer)</a></li>
+  </ul></li>
+  <li><a href="#sec-deep-architectures" id="toc-sec-deep-architectures" class="nav-link" data-scroll-target="#sec-deep-architectures">經典深度架構</a>
+  <ul class="collapse">
+  <li><a href="#sec-cnn" id="toc-sec-cnn" class="nav-link" data-scroll-target="#sec-cnn">卷積神經網路 (CNN, Convolutional Neural Networks)</a></li>
+  <li><a href="#sec-rnn" id="toc-sec-rnn" class="nav-link" data-scroll-target="#sec-rnn">循環神經網路 (RNN, Recurrent Neural Networks)</a></li>
+  </ul></li>
+  <li><a href="#sec-transformer" id="toc-sec-transformer" class="nav-link" data-scroll-target="#sec-transformer">Transformer 與注意力機制</a>
+  <ul class="collapse">
+  <li><a href="#sec-self-attention" id="toc-sec-self-attention" class="nav-link" data-scroll-target="#sec-self-attention">自注意力機制 (Self-Attention)</a></li>
+  <li><a href="#sec-transformer-arch" id="toc-sec-transformer-arch" class="nav-link" data-scroll-target="#sec-transformer-arch">Transformer 架構優勢</a></li>
+  <li><a href="#encoder-與-decoder-家族" id="toc-encoder-與-decoder-家族" class="nav-link" data-scroll-target="#encoder-與-decoder-家族">Encoder 與 Decoder 家族</a></li>
+  </ul></li>
+  <li><a href="#chap-ai-foundation-chapter7-summary" id="toc-chap-ai-foundation-chapter7-summary" class="nav-link" data-scroll-target="#chap-ai-foundation-chapter7-summary">本章總結與考點提示</a>
+  <ul class="collapse">
+  <li><a href="#核心概念回顧" id="toc-核心概念回顧" class="nav-link" data-scroll-target="#核心概念回顧">核心概念回顧</a></li>
+  <li><a href="#ai-應用規劃師認證考點" id="toc-ai-應用規劃師認證考點" class="nav-link" data-scroll-target="#ai-應用規劃師認證考點">AI 應用規劃師認證考點</a></li>
+  <li><a href="#記憶口訣" id="toc-記憶口訣" class="nav-link" data-scroll-target="#記憶口訣">記憶口訣</a></li>
+  <li><a href="#延伸思考" id="toc-延伸思考" class="nav-link" data-scroll-target="#延伸思考">延伸思考</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter7.html">第四部：深度學習與生成式 AI 前沿</a></li><li class="breadcrumb-item"><a href="./chapter7.html"><span class="chapter-title">神經網路架構演進 (Neural Network Architecture Evolution)</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">神經網路架構演進 (Neural Network Architecture Evolution)</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- # 神經網路架構演進 (Neural Network Architecture Evolution) -->
+<p>深度學習 (Deep Learning) 是機器學習的一個分支，靈感來自人類大腦的神經元運作方式。從簡單的感知機到如今強大的 Transformer，神經網路架構經歷了數十年的演進，每一次的突破都帶來了 AI 能力的飛躍。</p>
+<section id="sec-basic-nn" class="level2">
+<h2 class="anchored" data-anchor-id="sec-basic-nn">基礎神經網路</h2>
+<section id="sec-mlp" class="level3">
+<h3 class="anchored" data-anchor-id="sec-mlp">多層感知機 (MLP, Multi-Layer Perceptron)</h3>
+<p>這是最基礎的深度學習架構，也稱為全連接網路 (Fully Connected Network)。</p>
+<ul>
+<li><strong>結構</strong>：
+<ol type="1">
+<li><strong>輸入層 (Input Layer)</strong>：接收原始資料（如圖片的像素值）。</li>
+<li><strong>隱藏層 (Hidden Layers)</strong>：中間的黑盒子，負責提取特徵。層數越多，能學到的特徵越抽象、越複雜。</li>
+<li><strong>輸出層 (Output Layer)</strong>：給出最終預測（如分類機率）。</li>
+</ol></li>
+<li><strong>運作原理</strong>：每個神經元接收上一層的訊號，乘上<strong>權重 (Weight)</strong>，加上<strong>偏差 (Bias)</strong>，最後通過<strong>啟動函數</strong>輸出給下一層。
+<ul>
+<li><strong>公式</strong>：<span class="math display">$$ y = \sigma(\sum_{i=1}^{n} w_i x_i + b) $$</span>
+<ul>
+<li>x<sub>i</sub>: 輸入訊號</li>
+<li>w<sub>i</sub>: 權重 (Weight)，代表該輸入的重要性</li>
+<li><strong>b</strong>: 偏差 (Bias)，調整啟動門檻</li>
+<li><strong>𝛔</strong>: 啟動函數 (Activation Function)</li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mlp.webp" class="img-fluid figure-img"></p>
+<figcaption>MLP</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-activation-functions" class="level3">
+<h3 class="anchored" data-anchor-id="sec-activation-functions">啟動函數 (Activation Functions)</h3>
+<p>如果沒有啟動函數，神經網路不管有幾層，本質上都只是線性變換（矩陣相乘），無法解決複雜的非線性問題（如分類貓和狗）。啟動函數引入了<strong>非線性</strong>。</p>
+<ul>
+<li><strong>Sigmoid</strong>：
+<ul>
+<li><strong>公式</strong>：<span class="math display">$$ f(x) = \frac{1}{1 + e^{-x}} $$</span></li>
+<li><strong>特性</strong>：將數值壓縮到 <strong>(0, 1)</strong> 之間。</li>
+<li><strong>缺點</strong>：容易導致<strong>梯度消失 (Vanishing Gradient)</strong>，即在深層網路中，誤差訊號傳不回去，導致前面的層學不到東西。</li>
+</ul></li>
+<li><strong>ReLU (Rectified Linear Unit)</strong>：
+<ul>
+<li><strong>公式</strong>：<span class="math display"><em>f</em>(<em>x</em>) = max (0, <em>x</em>)</span></li>
+<li><strong>特性</strong>：負數變 0，正數不變。</li>
+<li><strong>優點</strong>：計算極快，且有效解決了梯度消失問題。是目前最常用的啟動函數。</li>
+</ul></li>
+<li><strong>Softmax</strong>：
+<ul>
+<li><strong>公式</strong>：<span class="math display">$$ P(y=j) = \frac{e^{z_j}}{\sum_{k=1}^{K} e^{z_k}} $$</span></li>
+<li><strong>特性</strong>：通常用於<strong>輸出層</strong>。將一組數值轉換為<strong>機率分佈</strong>（總和為 1）。例如：[貓: 0.8, 狗: 0.1, 鳥: 0.1]。</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/activation-functions.webp" class="img-fluid figure-img"></p>
+<figcaption>Activation Functions</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-backpropagation" class="level3">
+<h3 class="anchored" data-anchor-id="sec-backpropagation">反向傳播 (Backpropagation) 與優化器(Optimizer)</h3>
+<p>神經網路是如何「學習」的？這是一個<strong>試誤 (Trial and Error)</strong> 的過程。</p>
+<ol type="1">
+<li><strong>前向傳播 (Forward Propagation)</strong>：
+<ul>
+<li><strong>作答</strong>：資料從輸入層進入，經過層層神經元運算，最後輸出一個預測結果。</li>
+<li><em>類比</em>：學生寫考卷，算出答案。</li>
+</ul></li>
+<li><strong>計算損失 (Loss Calculation)</strong>：
+<ul>
+<li><strong>對答案</strong>：使用<strong>損失函數 (Loss Function)</strong>（如 MSE 或 Cross-Entropy）比較「預測值」與「真實答案」的差距。</li>
+<li><em>類比</em>：老師改考卷，算出考了幾分（誤差有多大）。</li>
+</ul></li>
+<li><strong>反向傳播 (Backpropagation)</strong>：
+<ul>
+<li><strong>找戰犯</strong>：利用微積分的<strong>連鎖律 (Chain Rule)</strong>，將誤差<strong>從後往前</strong>傳遞，計算每個神經元的權重對這個誤差「貢獻」了多少（計算梯度 Gradient）。</li>
+<li><em>類比</em>：老師檢討考卷，指出是哪一個步驟算錯導致最後答案錯誤。</li>
+</ul></li>
+<li><strong>更新權重 (Weight Update)</strong>：
+<ul>
+<li><strong>修正</strong>：利用<strong>優化器 (Optimizer)</strong> 根據梯度調整權重，讓下次誤差變小。</li>
+<li><em>類比</em>：學生修正錯誤觀念，下次考試就能拿高分。</li>
+</ul></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/backpropagation.webp" class="img-fluid figure-img"></p>
+<figcaption>神經網路如何「學習」</figcaption>
+</figure>
+</div>
+<p><strong>常見優化器 (Optimizer)</strong>： 負責決定「如何調整權重」的演算法。</p>
+<ul>
+<li><strong>SGD (Stochastic Gradient Descent, 隨機梯度下降)</strong>：
+<ul>
+<li><strong>機制</strong>：每次只看一小批資料就調整方向。</li>
+<li><em>類比</em>：<strong>盲人下山</strong>。他看不見全貌，只能用腳探測四周，哪邊最陡就往哪邊走一步。路徑可能會彎彎曲曲，震盪較大。</li>
+</ul></li>
+<li><strong>ADAM (Adaptive Moment Estimation)</strong>：
+<ul>
+<li><strong>機制</strong>：結合了<strong>動量 (Momentum)</strong> 與<strong>自適應學習率</strong>。</li>
+<li><em>類比</em>：<strong>滾下山的重球</strong>。
+<ul>
+<li><strong>動量</strong>：球有慣性，如果之前一直往某個方向滾，即使遇到小坑洞（局部最佳解）也會衝過去，不會卡住。</li>
+<li><strong>自適應</strong>：在平坦的地方滾快一點，在陡峭的地方滾慢一點。</li>
+</ul></li>
+<li><strong>地位</strong>：目前最常用的預設優化器。</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/optimizer.webp" class="img-fluid figure-img"></p>
+<figcaption>優化器</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="sec-deep-architectures" class="level2">
+<h2 class="anchored" data-anchor-id="sec-deep-architectures">經典深度架構</h2>
+<section id="sec-cnn" class="level3">
+<h3 class="anchored" data-anchor-id="sec-cnn">卷積神經網路 (CNN, Convolutional Neural Networks)</h3>
+<ul>
+<li><strong>專長</strong>：<strong>影像辨識</strong>、電腦視覺 (CV)。</li>
+<li><strong>靈感</strong>：人類視覺皮層對邊緣、形狀的反應。我們看東西不是一個像素一個像素看，而是看特徵（線條、圓圈、眼睛、鼻子）。</li>
+<li><strong>關鍵元件與運作流程</strong>：
+<ol type="1">
+<li><strong>卷積層 (Convolution Layer) - 提取特徵</strong>：
+<ul>
+<li><strong>運作</strong>：使用一個小的<strong>濾鏡 (Filter/Kernel)</strong>（例如 3x3 的矩陣）在圖片上滑動掃描。</li>
+<li><strong>功能</strong>：每個濾鏡負責抓一種特徵（如垂直線、水平線、圓弧）。掃描後的結果稱為<strong>特徵圖 (Feature Map)</strong>。</li>
+<li><em>類比</em>：拿著<strong>手電筒</strong>在黑暗的房間掃描，照到的地方才看得到細節。或者像用「篩子」，把符合特定形狀的特徵篩出來。</li>
+</ul></li>
+<li><strong>池化層 (Pooling Layer) - 重點濃縮</strong>：
+<ul>
+<li><strong>運作</strong>：將圖片分區（例如 2x2），只保留區內最重要的數值（<strong>Max Pooling</strong> 取最大值）。</li>
+<li><strong>功能</strong>：
+<ul>
+<li><strong>降維</strong>：讓圖片變小，減少運算量。</li>
+<li><strong>抗雜訊</strong>：保留最顯著的特徵，忽略不重要的細節（平移不變性）。</li>
+</ul></li>
+<li><em>類比</em>：把高畫質照片轉成<strong>馬賽克</strong>風格，雖然模糊了，但還是看得出是貓還是狗（只看大輪廓）。</li>
+</ul></li>
+<li><strong>攤平 (Flatten) 與 全連接層 (Fully Connected Layer)</strong>：
+<ul>
+<li><strong>運作</strong>：將處理好的二維特徵圖「拉直」成一維向量，丟進傳統的神經網路 (MLP) 進行最終分類。</li>
+<li><em>類比</em>：把拼圖的碎片（特徵）全部蒐集起來，拼出最後的結論。</li>
+</ul></li>
+</ol></li>
+<li><strong>應用</strong>：人臉辨識、醫療影像分析 (X光/MRI)、自駕車視覺系統。</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/cnn.webp" class="img-fluid figure-img"></p>
+<figcaption>CNN</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-rnn" class="level3">
+<h3 class="anchored" data-anchor-id="sec-rnn">循環神經網路 (RNN, Recurrent Neural Networks)</h3>
+<ul>
+<li><strong>專長</strong>：<strong>序列數據</strong>（文字、語音、股票走勢）。</li>
+<li><strong>運作機制</strong>：
+<ul>
+<li>具有<strong>記憶 (Memory)</strong> 功能。神經元會有一個「迴圈」，把上一步的輸出 h<sub>t-1</sub> 傳給自己，跟這一步的輸入 x<sub>t</sub> 一起處理。</li>
+<li><em>類比</em>：像<strong>閱讀文章</strong>。你讀到第五個字時，腦中還記得前四個字的含義，這樣才能理解整句話的意思。</li>
+</ul></li>
+<li><strong>致命傷：梯度消失 (Vanishing Gradient)</strong>：
+<ul>
+<li><strong>問題</strong>：對於太長的序列（如長篇小說），前面的資訊傳到後面會越來越弱，最後完全消失。</li>
+<li><em>例子</em>：「我出生在<strong>法國</strong>……（過了 500 字）……所以我會說流利的<strong>法語</strong>。」傳統 RNN 讀到最後時，早就忘了前面的「法國」，填不出「法語」。</li>
+</ul></li>
+<li><strong>救星：LSTM (Long Short-Term Memory, 長短期記憶網路)</strong>：
+<ul>
+<li><strong>核心概念</strong>：設計了一條專屬的「高速公路」（Cell State）來傳遞長期記憶，並透過三個「閘門」來控制資訊流。</li>
+<li><strong>三大閘門 (Gates)</strong>：
+<ol type="1">
+<li><strong>遺忘門 (Forget Gate)</strong>：決定要<strong>丟掉</strong>什麼舊資訊。
+<ul>
+<li><em>例子</em>：看到新的主詞「她」，就把舊主詞「他」的性別資訊忘掉。</li>
+</ul></li>
+<li><strong>輸入門 (Input Gate)</strong>：決定要<strong>存入</strong>什麼新資訊。
+<ul>
+<li><em>例子</em>：把「她」的性別資訊存進記憶。</li>
+</ul></li>
+<li><strong>輸出門 (Output Gate)</strong>：決定當下要<strong>輸出</strong>什麼。
+<ul>
+<li><em>例子</em>：因為主詞是單數「她」，所以動詞要輸出單數型態 (is)。</li>
+</ul></li>
+</ol></li>
+<li><em>類比</em>：像一位<strong>精明的秘書</strong>管理老闆的行程表。
+<ul>
+<li>(遺忘) 刪除已取消的會議。</li>
+<li>(輸入) 寫入新的預約。</li>
+<li>(輸出) 在適當的時間提醒老闆該開會了。</li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/rnn.webp" class="img-fluid figure-img"></p>
+<figcaption>RNN</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="sec-transformer" class="level2">
+<h2 class="anchored" data-anchor-id="sec-transformer">Transformer 與注意力機制</h2>
+<p>2017 年 Google 發表論文《Attention Is All You Need》，徹底改變了 NLP 領域，也開啟了大型語言模型 (LLM) 的時代。</p>
+<section id="sec-self-attention" class="level3">
+<h3 class="anchored" data-anchor-id="sec-self-attention">自注意力機制 (Self-Attention)</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/self-attention.webp" class="img-fluid figure-img"></p>
+<figcaption>自注意力機制</figcaption>
+</figure>
+</div>
+<p>這是 Transformer 的靈魂，讓模型能理解字與字之間的關係。</p>
+<ul>
+<li><strong>核心概念</strong>：<strong>雞尾酒會效應 (Cocktail Party Effect)</strong>。
+<ul>
+<li>在吵雜的派對中，你的耳朵會自動過濾背景雜音，<strong>聚焦 (Attend)</strong> 在你想聽的那個人說話。</li>
+<li>同樣地，當模型讀到一個字時，它會去「關注」句子中其他相關的字，而忽略不相關的字。</li>
+</ul></li>
+<li><strong>運作機制 (Q, K, V)</strong>： 每個字都會被轉換成三個向量：
+<ul>
+<li><strong>Query (Q, 查詢)</strong>：我想找什麼？（像拿著麥克風問問題）</li>
+<li><strong>Key (Key, 索引)</strong>：你是什麼？（像每個人身上掛的名牌）</li>
+<li><strong>Value (Value, 內容)</strong>：你的實質內容是什麼？（像這個人腦中的知識）</li>
+<li><strong>流程</strong>：
+<ol type="1">
+<li>拿我的 <strong>Q</strong> 去跟所有人的 <strong>K</strong> 算相似度（點積 Dot Product）。</li>
+<li>相似度越高，代表我們關係越密切（Attention Score 越高）。</li>
+<li>根據相似度，把對方的 <strong>V</strong> 加權總合起來，變成我對這個字的理解。</li>
+</ol></li>
+<li><em>類比</em>：<strong>圖書館找書</strong>。
+<ul>
+<li><strong>Q</strong>：你想找的主題（如「人工智慧」）。</li>
+<li><strong>K</strong>：書背上的分類標籤。</li>
+<li><strong>V</strong>：書裡的內容。</li>
+<li>你會把 K 跟 Q 符合的書挑出來，閱讀裡面的 V。</li>
+</ul></li>
+</ul></li>
+<li><strong>多頭注意力 (Multi-Head Attention)</strong>：
+<ul>
+<li><strong>概念</strong>：不只用一種觀點看事情，而是用多個「頭」（濾鏡）同時看。</li>
+<li><em>例子</em>：讀一句話時，Head 1 關注「文法結構」，Head 2 關注「代名詞指涉」，Head 3 關注「情緒」。最後把大家的看法綜合起來，理解就更全面。</li>
+</ul></li>
+<li><strong>實例</strong>：“The animal didn’t cross the street because <strong>it</strong> was too tired.”
+<ul>
+<li>當模型讀到 “<strong>it</strong>” 時，Attention 機制會算出它跟 “<strong>animal</strong>” 的關聯度最高（因為 tired 通常形容動物），而不是 “street”。這讓模型真正「讀懂」了代名詞。</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/transformer.webp" class="img-fluid figure-img"></p>
+<figcaption>Transformer</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-transformer-arch" class="level3">
+<h3 class="anchored" data-anchor-id="sec-transformer-arch">Transformer 架構優勢</h3>
+<ol type="1">
+<li><strong>並行計算 (Parallelization)</strong>：
+<ul>
+<li>RNN 必須一個字一個字讀（讀完第一個字才能讀第二個），無法平行化。</li>
+<li>Transformer 可以<strong>一次讀入整篇文章</strong>，利用 GPU 的強大平行運算能力，訓練速度大幅提升。這使得訓練像 GPT-4 這種超巨大模型成為可能。</li>
+</ul></li>
+<li><strong>長距離依賴 (Long-range Dependency)</strong>：
+<ul>
+<li>透過 Attention，無論兩個字距離多遠，都能直接建立關聯，不再有 LSTM 的記憶長度限制。</li>
+</ul></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/transformer-advantages.webp" class="img-fluid figure-img"></p>
+<figcaption>Transformer 架構優勢</figcaption>
+</figure>
+</div>
+</section>
+<section id="encoder-與-decoder-家族" class="level3">
+<h3 class="anchored" data-anchor-id="encoder-與-decoder-家族">Encoder 與 Decoder 家族</h3>
+<p>Transformer 由 Encoder（編碼器）和 Decoder（解碼器）組成，後來衍生出三大流派：</p>
+<ol type="1">
+<li><strong>Encoder-only (如 BERT)</strong>：
+<ul>
+<li>擅長「理解」文本。</li>
+<li><em>應用</em>：情感分析、分類、問答系統。</li>
+</ul></li>
+<li><strong>Decoder-only (如 GPT 系列)</strong>：
+<ul>
+<li>擅長「生成」文本。像接龍一樣，預測下一個字。</li>
+<li><em>應用</em>：聊天機器人、文章寫作、程式碼生成。</li>
+</ul></li>
+<li><strong>Encoder-Decoder (如 T5, Bart)</strong>：
+<ul>
+<li>同時具備理解與生成能力。</li>
+<li><em>應用</em>：機器翻譯（英文入 → 理解 → 生成 → 中文出）、摘要生成。</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="chap-ai-foundation-chapter7-summary" class="level2">
+<h2 class="anchored" data-anchor-id="chap-ai-foundation-chapter7-summary">本章總結與考點提示</h2>
+<section id="核心概念回顧" class="level3">
+<h3 class="anchored" data-anchor-id="核心概念回顧">核心概念回顧</h3>
+<p>深度學習是 AI 的核心引擎。</p>
+<ul>
+<li><strong>基礎元件</strong>：
+<ul>
+<li><strong>MLP</strong>：全連接，基礎結構。</li>
+<li><strong>Activation</strong>：ReLU (防梯度消失)、Sigmoid (二元分類)、Softmax (多類別)。</li>
+<li><strong>Backpropagation</strong>：誤差反向傳播，更新權重。</li>
+</ul></li>
+<li><strong>三大架構</strong>：
+<ul>
+<li><strong>CNN</strong>：影像霸主。卷積 (特徵) + 池化 (降維)。</li>
+<li><strong>RNN/LSTM</strong>：序列專家。有記憶，但怕長序列 (梯度消失)。</li>
+<li><strong>Transformer</strong>：NLP 新皇。Self-Attention (平行運算、長距離依賴)。</li>
+</ul></li>
+</ul>
+</section>
+<section id="ai-應用規劃師認證考點" class="level3">
+<h3 class="anchored" data-anchor-id="ai-應用規劃師認證考點">AI 應用規劃師認證考點</h3>
+<p><strong>常考題型與解題策略</strong>：</p>
+<ol type="1">
+<li><strong>架構對應題</strong>：
+<ul>
+<li><em>例題</em>：「人臉辨識系統通常使用哪種架構？」</li>
+<li><strong>解答</strong>：CNN。</li>
+<li><em>例題</em>：「股價預測或語音辨識通常使用哪種架構？」</li>
+<li><strong>解答</strong>：RNN 或 LSTM。</li>
+<li><em>例題</em>：「ChatGPT 是基於哪種架構？」</li>
+<li><strong>解答</strong>：Transformer。</li>
+</ul></li>
+<li><strong>功能題</strong>：
+<ul>
+<li><em>例題</em>：「CNN 中池化層 (Pooling) 的主要功能是什麼？」</li>
+<li><strong>解答</strong>：降低維度（減少運算量）並保留重要特徵。</li>
+<li><em>例題</em>：「為什麼 LSTM 比傳統 RNN 好？」</li>
+<li><strong>解答</strong>：解決了梯度消失問題，能記住更長的序列。</li>
+</ul></li>
+<li><strong>啟動函數題</strong>：
+<ul>
+<li><em>例題</em>：「目前最常用的隱藏層啟動函數是什麼？」</li>
+<li><strong>解答</strong>：ReLU。因為計算快且無梯度消失問題。</li>
+</ul></li>
+</ol>
+</section>
+<section id="記憶口訣" class="level3">
+<h3 class="anchored" data-anchor-id="記憶口訣">記憶口訣</h3>
+<ul>
+<li><strong>CNN</strong>：「看圖」（卷積）。</li>
+<li><strong>RNN</strong>：「讀書」（序列）。</li>
+<li><strong>Transformer</strong>：「劃重點」（Attention）。</li>
+</ul>
+</section>
+<section id="延伸思考" class="level3">
+<h3 class="anchored" data-anchor-id="延伸思考">延伸思考</h3>
+<ul>
+<li>為什麼 Transformer 可以取代 RNN？（因為它可以平行運算，速度快很多，且 Attention 機制解決了長距離記憶問題）。</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./chapter6.html" class="pagination-link" aria-label="非監督式學習與強化學習 (Unsupervised &amp; Reinforcement Learning)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">非監督式學習與強化學習 (Unsupervised &amp; Reinforcement Learning)</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./chapter8.html" class="pagination-link" aria-label="生成式 AI 與大型語言模型 (Generative AI &amp; LLM)">
+        <span class="nav-page-text"><span class="chapter-title">生成式 AI 與大型語言模型 (Generative AI &amp; LLM)</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

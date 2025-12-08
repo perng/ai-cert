@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>chapter1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-1d4f84655f446305ac42a8f1abcf7405.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="第一章進階自然語言處理技術" class="level1">
+<h1>第一章：進階自然語言處理技術</h1>
+<p>本章將深入探討自然語言處理（NLP）的核心技術，包括詞向量模型的差異、Transformer 架構的細節，以及 BERT 等預訓練模型的運作機制。這些技術是現代 AI 理解與生成語言的基石。</p>
+<section id="詞向量模型-word-embeddings" class="level2">
+<h2 class="anchored" data-anchor-id="詞向量模型-word-embeddings">1. 詞向量模型 (Word Embeddings)</h2>
+<p>詞向量 (Word Embeddings) 是將詞彙轉換為數值向量的技術，讓電腦能夠理解詞彙之間的語意關係。在向量空間中，語意相近的詞（如「國王」與「皇后」）距離會比較近。</p>
+<blockquote class="blockquote">
+<p><strong>數學直覺：詞向量運算</strong></p>
+<p>經典的例子是： <span class="math display">\[ \vec{King} - \vec{Man} + \vec{Woman} \approx \vec{Queen} \]</span></p>
+<p>這代表如果把「國王」的向量減去「男人」的特徵，再加上「女人」的特徵，結果會非常接近「皇后」的向量。這證明了向量空間成功捕捉了「性別」與「皇室」的語意維度。</p>
+</blockquote>
+<!-- IMAGE_PROMPT: 
+title: 詞向量空間示意圖
+style: stick figure style, colorful
+content: 畫一個三維座標空間，裡面漂浮著幾個詞彙球體。
+- "國王" (King) 和 "皇后" (Queen) 的球體靠得很近。
+- "男人" (Man) 和 "女人" (Woman) 的球體靠得很近。
+- 畫一個箭頭從 "國王" 指向 "皇后"，另一個平行的箭頭從 "男人" 指向 "女人"，標示 "語意關係向量"。
+- 一個火柴人戴著眼鏡，指著這些球體說：「電腦透過這些距離來理解詞義喔！」。
+-->
+<section id="word2vec-vs.-glove" class="level3">
+<h3 class="anchored" data-anchor-id="word2vec-vs.-glove">Word2Vec vs.&nbsp;GloVe</h3>
+<p>雖然 Word2Vec 與 GloVe 都能產生高品質的詞向量，但它們的訓練原理有所不同，這也是考試中常見的比較題型：</p>
+<ul>
+<li><strong>Word2Vec</strong>：
+<ul>
+<li><strong>核心概念</strong>：屬於<strong>基於預測 (Prediction-based)</strong> 的模型。它像是一個神經網路學生，不斷做填空題來學習。</li>
+<li><strong>運作方式</strong>：透過一個淺層神經網路，利用滑動視窗 (Sliding Window) 掃描文本。</li>
+<li><strong>兩種架構</strong>：
+<ul>
+<li><strong>CBOW (Continuous Bag of Words)</strong>：
+<ul>
+<li><strong>原理</strong>：利用<strong>周圍詞 (Context)</strong> 來預測 <strong>中心詞 (Target)</strong>。例如句子是 “The cat sits on the mat”，CBOW 會嘗試用 “The”, “cat”, “on”, “the”, “mat” 來預測 “sits”。</li>
+<li><strong>特性</strong>：訓練速度快，對頻繁出現的詞效果好，因為它將上下文平均化了。</li>
+</ul></li>
+<li><strong>Skip-gram</strong>：
+<ul>
+<li><strong>原理</strong>：利用 <strong>中心詞 (Target)</strong> 來預測 <strong>周圍詞 (Context)</strong>。例如用 “sits” 來預測 “The”, “cat”, “on” 等。</li>
+<li><strong>特性</strong>：對於<strong>罕見詞 (Rare Words)</strong> 的處理效果較好。因為在 Skip-gram 中，即使是罕見詞作為中心詞，它也會產生多個預測任務（一對多），讓模型有更多機會學習它的特徵。</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><strong>GloVe (Global Vectors)</strong>：
+<ul>
+<li><strong>核心概念</strong>：屬於<strong>基於計數 (Count-based)</strong> 的模型。它像是一個統計學家，先看完所有書，統計完所有詞的關係後才下結論。</li>
+<li><strong>運作方式</strong>：利用全域的<strong>共現矩陣 (Co-occurrence Matrix)</strong> 進行統計分析。它計算兩個詞在整個語料庫中一起出現的機率。</li>
+<li><strong>數學意義</strong>：它明確地將詞義向量化為共現機率的對數比，結合了矩陣分解（全域統計）與局部視窗（上下文關係）的優點。</li>
+</ul></li>
+</ul>
+<!-- IMAGE_PROMPT: 
+title: Word2Vec vs GloVe
+style: stick figure style, colorful
+content: 分左右兩邊。
+- 左邊 (Word2Vec): 一個火柴人學生正在做填空題試卷，題目是 "The cat ___ on the mat"，他在格子裡填寫 "sits"。標籤寫：「基於預測 (Prediction)」。
+- 右邊 (GloVe): 一個火柴人教授戴著眼鏡，拿著巨大的計算機和厚厚的統計報表，報表上寫著 "共現矩陣 (Co-occurrence Matrix)"。標籤寫：「基於統計 (Count-based)」。
+-->
+</section>
+<section id="其他重要詞向量技術-fasttext-elmo" class="level3">
+<h3 class="anchored" data-anchor-id="其他重要詞向量技術-fasttext-elmo">其他重要詞向量技術 (FastText, ELMo)</h3>
+<p>除了 Word2Vec 和 GloVe，還有兩個在 NLP 發展史上承先啟後的重要技術：</p>
+<ul>
+<li><strong>FastText</strong>：
+<ul>
+<li><strong>核心改進</strong>：解決了 Word2Vec <strong>無法處理未登錄詞 (OOV, Out-Of-Vocabulary)</strong> 的問題。</li>
+<li><strong>原理</strong>：它不把整個詞當作最小單位，而是將詞拆解成 <strong>Character n-grams (字元級 n-gram)</strong>。
+<ul>
+<li>例如 “apple” 會被拆成 <code>&lt;ap</code>, <code>app</code>, <code>ppl</code>, <code>ple</code>, <code>le&gt;</code> 等。</li>
+</ul></li>
+<li><strong>優勢</strong>：即使遇到沒見過的詞（如 “applelike”），只要看過其組成部分（“apple”, “like”），就能推算出它的向量。這對<strong>構詞變化豐富</strong>的語言（如德文、俄文）特別有效。</li>
+</ul></li>
+<li><strong>ELMo (Embeddings from Language Models)</strong>：
+<ul>
+<li><strong>核心改進</strong>：解決了 Word2Vec <strong>一詞多義 (Polysemy)</strong> 的問題。</li>
+<li><strong>靜態 vs.&nbsp;動態</strong>：Word2Vec 是<strong>靜態 (Static)</strong> 的，“Bank” 在「銀行」和「河岸」這兩個意思下，向量是一樣的。ELMo 是<strong>動態 (Contextualized)</strong> 的。</li>
+<li><strong>原理</strong>：使用雙向 LSTM (Bi-LSTM) 根據上下文動態生成詞向量。</li>
+<li><strong>優勢</strong>：在 “I went to the <strong>bank</strong> to deposit money” 和 “I sat by the river <strong>bank</strong>” 兩句話中，ELMo 會賦予 “bank” 兩個完全不同的向量，精準捕捉語境意義。</li>
+</ul></li>
+</ul>
+<!-- IMAGE_PROMPT: 
+title: ELMo 的一詞多義
+style: stick figure style, colorful
+content: 
+- 畫兩個句子。
+- 句子 A: "Deposit money at the **bank**." -> "bank" 變成一個金幣形狀的向量。
+- 句子 B: "Fishing by the **bank**." -> "bank" 變成一個河流形狀的向量。
+- 旁邊一個火柴人驚訝地說：「同一個字，形狀竟然會變！」。
+- 標籤：「動態詞向量 (Contextualized Embedding)」。
+-->
+</section>
+<section id="tf-idf-的限制" class="level3">
+<h3 class="anchored" data-anchor-id="tf-idf-的限制">TF-IDF 的限制</h3>
+<p>TF-IDF (Term Frequency-Inverse Document Frequency) 是一種傳統的關鍵詞提取技術，但在處理現代複雜文本時有其侷限。</p>
+<blockquote class="blockquote">
+<p><strong>範例：TF-IDF 計算</strong></p>
+<p>假設文件 A 只有一句話：“Cat loves cat food.” * <strong>TF (“cat”)</strong> = 2 (出現兩次) / 4 (總詞數) = 0.5 * <strong>IDF (“cat”)</strong> = log(總文件數 / 有 “cat” 的文件數) * 如果 “cat” 在每份文件都出現，IDF = log(1) = 0。 * 這代表 “cat” 雖然在文件 A 很常出現，但因為它太普遍了，所以 TF-IDF 分數會被拉低，顯示它不是關鍵字。</p>
+</blockquote>
+<ul>
+<li><strong>原理回顧</strong>：
+<ul>
+<li><strong>TF (詞頻)</strong>：詞出現越多次越重要。</li>
+<li><strong>IDF (逆文件頻率)</strong>：詞在越少文件中出現越獨特（重要）。</li>
+<li><strong>公式概念</strong>：權重 = TF × IDF。</li>
+</ul></li>
+<li><strong>長文本問題</strong>：在處理<strong>篇幅較長</strong>的文本時，TF-IDF 往往無法準確反映關鍵詞重要性。
+<ul>
+<li><strong>原因</strong>：長文本中，某些普通詞彙（非停用詞，但也非關鍵詞）的<strong>詞頻 (Term Frequency)</strong> 可能會因為文章長度而自然偏高。這導致它們的權重被過度放大，掩蓋了真正具區別力的關鍵詞。</li>
+<li><strong>解決</strong>：通常需要對 TF 進行正規化（如除以文章總詞數），或使用 BM25 等改進演算法。</li>
+</ul></li>
+</ul>
+</section>
+<section id="n-gram-語言模型的限制" class="level3">
+<h3 class="anchored" data-anchor-id="n-gram-語言模型的限制">N-gram 語言模型的限制</h3>
+<p>N-gram 模型是一種機率語言模型，透過計算前 N-1 個詞來預測下一個詞。</p>
+<ul>
+<li><strong>運作</strong>：例如 3-gram (Trigram) 只看前兩個詞來預測第三個詞。</li>
+<li><strong>主要限制</strong>：<strong>無法捕捉長距離依賴關係 (Long-range Dependencies)</strong>。
+<ul>
+<li><strong>例子</strong>：句子 “The <strong>boy</strong> who was wearing a red shirt and playing with a ball in the park …… <strong>is</strong> my brother.”</li>
+<li><strong>問題</strong>：要決定最後是用 “is” 還是 “are”，必須看開頭的 “boy”。但如果中間隔了 20 個詞，N-gram (若 N 小於 20) 根本「看」不到開頭的 “boy”，因此無法正確預測單複數。它假設詞與詞之間的關係僅限於固定的視窗大小。</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="transformer-架構深入解析" class="level2">
+<h2 class="anchored" data-anchor-id="transformer-架構深入解析">2. Transformer 架構深入解析</h2>
+<p>Transformer 模型徹底改變了 NLP 領域，其核心在於<strong>自注意力機制 (Self-Attention Mechanism)</strong>，解決了 RNN 無法平行運算且難以捕捉長距離依賴的問題。</p>
+<section id="自注意力機制-self-attention" class="level3">
+<h3 class="anchored" data-anchor-id="自注意力機制-self-attention">自注意力機制 (Self-Attention)</h3>
+<ul>
+<li><strong>功能</strong>：允許模型在處理序列中的每個詞時，同時關注序列中的其他所有詞，並計算它們之間的關聯強度（注意力權重）。</li>
+<li><strong>核心公式</strong>： <span class="math display">\[ Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V \]</span>
+<ul>
+<li><strong>Q (Query)</strong>：查詢向量（我想找什麼？）</li>
+<li><strong>K (Key)</strong>：鍵值向量（我有什麼特徵？）</li>
+<li><strong>V (Value)</strong>：數值向量（我的內容是什麼？）</li>
+<li><strong>直觀理解</strong>：拿 Q 去跟所有的 K 做匹配（點積），匹配度越高的，對應的 V 就越重要（加權平均）。</li>
+</ul></li>
+<li><strong>優勢</strong>：
+<ol type="1">
+<li><strong>捕捉長距離依賴</strong>：無論兩個詞在句子中相距多遠，Self-Attention 都能直接計算它們的關係，距離為 1。這顯著提升了長篇文件的翻譯與理解品質。</li>
+<li><strong>平行運算</strong>：不像 RNN 需要按順序讀取，Transformer 可以同時處理整個句子的所有詞。</li>
+</ol></li>
+</ul>
+<!-- IMAGE_PROMPT: 
+title: 自注意力機制運作
+style: stick figure style, colorful
+content: 畫一個句子 "The animal didn't cross the street because it was too tired."
+- 畫出 "it" 這個詞發出多條光線連接到句子其他詞。
+- 連接到 "animal" 的光線特別粗、特別亮（代表注意力權重高）。
+- 連接到 "street" 的光線很細（代表注意力權重低）。
+- 一個火柴人拿著放大鏡看著 "it" 和 "animal" 的連線，說：「原來 'it' 是指 'animal' 啊！」。
+-->
+</section>
+<section id="注意力崩塌-attention-collapse" class="level3">
+<h3 class="anchored" data-anchor-id="注意力崩塌-attention-collapse">注意力崩塌 (Attention Collapse)</h3>
+<ul>
+<li><strong>現象</strong>：在非常深層的 Transformer 模型中（例如堆疊了幾十層），有時會發生注意力分佈過於平均或趨同的現象。這意味著模型對所有詞的關注度都差不多，導致無法有效聚焦於關鍵資訊，特徵表達能力下降。</li>
+<li><strong>解決策略</strong>：
+<ul>
+<li><strong>稀疏化約束 (Sparsity Constraint)</strong>：這是一種有效的改善方法。透過在損失函數中加入正則化項，或改變 Attention 的計算方式，強迫模型只關注最重要的少數詞彙（將不重要的權重推向 0），避免權重過度分散。這有點像強迫學生畫重點時「只能畫最重要的三個字」，而不是整頁塗滿螢光筆。</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="bert-模型" class="level2">
+<h2 class="anchored" data-anchor-id="bert-模型">3. BERT 模型</h2>
+<p>BERT (Bidirectional Encoder Representations from Transformers) 是 Google 開發的預訓練模型，它只使用了 Transformer 的 <strong>Encoder</strong> 部分。</p>
+<section id="遮罩語言模型-masked-language-model-mlm" class="level3">
+<h3 class="anchored" data-anchor-id="遮罩語言模型-masked-language-model-mlm">遮罩語言模型 (Masked Language Model, MLM)</h3>
+<p>這是 BERT 最具創新性的訓練策略，也是它能理解上下文的關鍵。</p>
+<ul>
+<li><strong>傳統限制</strong>：過去的語言模型（如 GPT 的前身）通常是單向的（從左到右），因為如果同時看左右，模型會「偷看」到答案。</li>
+<li><strong>BERT 的突破</strong>：
+<ul>
+<li><strong>作法</strong>：隨機<strong>遮罩 (Mask)</strong> 輸入序列中約 15% 的詞彙（例如將詞換成 <code>[MASK]</code> 符號）。</li>
+<li><strong>任務</strong>：強迫模型根據<strong>雙向上下文 (Bidirectional Context)</strong>（即被遮罩詞的前面和後面所有詞）來預測被遮罩的詞是什麼。</li>
+<li><strong>例子</strong>：句子 “我喜歡吃 [MASK] 裡的蘋果”。模型必須同時看前面的 “吃” 和後面的 “蘋果”，才能推斷出 [MASK] 可能是 “籃子” 或 “冰箱”。</li>
+</ul></li>
+<li><strong>目的</strong>：這使得 BERT 能建立深度的雙向語意理解能力。</li>
+</ul>
+<!-- IMAGE_PROMPT: 
+title: BERT 的遮罩訓練
+style: stick figure style, colorful
+content: 畫一個機器人 BERT 正在看一張紙條。
+- 紙條上寫著："今天天氣真 [MASK]，我們去公園玩吧！"
+- 機器人左眼看著 "今天天氣真"，右眼看著 "，我們去公園玩吧！"。
+- 機器人腦袋浮現燈泡，顯示答案："好 (Good)"。
+- 旁邊一個火柴人老師打勾，說：「正確！你同時看了前後文！」。
+-->
+</section>
+<section id="應用場景" class="level3">
+<h3 class="anchored" data-anchor-id="應用場景">應用場景</h3>
+<p>由於 BERT 是雙向理解專家，它特別適合需要理解整句或整段語意之間關係的任務： * <strong>情感分析</strong>：判斷整句評論是褒是貶。 * <strong>問答系統 (QA)</strong>：判斷這段文章是否包含問題的答案，以及答案在哪裡。 * <strong>命名實體識別 (NER)</strong>：判斷每個詞的詞性（人名、地名等），這需要上下文資訊。 * <strong>自然語言推理 (NLI)</strong>：判斷兩個句子是否矛盾或蘊含。</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/perng\.github\.io\/ai-cert\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

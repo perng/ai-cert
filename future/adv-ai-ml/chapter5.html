@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>第 5 章：深度學習進階架構</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-1d4f84655f446305ac42a8f1abcf7405.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">第 5 章：深度學習進階架構</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- # 第 5 章：深度學習進階架構 -->
+<p>本章從基礎架構延伸，探討深度學習模型在視覺、序列與複雜任務中的結構細節與選型策略。</p>
+<section id="sec-nn-basics" class="level2">
+<h2 class="anchored" data-anchor-id="sec-nn-basics">神經網路基礎</h2>
+<section id="感知器與多層感知機" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="感知器與多層感知機">感知器與多層感知機</h3>
+<ul>
+<li><strong>感知器 (Perceptron)</strong>：最簡單的神經網路單元，模擬神經元運作。只能解決線性可分問題 (如 AND/OR)。</li>
+<li><strong>多層感知機 (MLP)</strong>：
+<ul>
+<li>堆疊多個隱藏層 (Hidden Layers)。</li>
+<li><strong>萬能逼近定理</strong>：只要神經元夠多，MLP 能逼近任何連續函數 (解決 XOR 非線性問題)。</li>
+</ul></li>
+</ul>
+</section>
+<section id="激活函數詳解" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="激活函數詳解">激活函數詳解</h3>
+<p>激活函數引入非線性，是神經網路強大的關鍵。 * <strong>Sigmoid</strong>：<span class="math inline">\(\frac{1}{1+e^{-x}}\)</span>。輸出 (0, 1)。缺點：易<strong>梯度消失 (Vanishing Gradient)</strong>，非零中心。 * <strong>Tanh</strong>：輸出 (-1, 1)。解決了非零中心，但梯度消失仍存在。 * <strong>ReLU (Rectified Linear Unit)</strong>：<span class="math inline">\(max(0, x)\)</span>。計算快，有效緩解梯度消失。目前最主流。 * <strong>Softmax</strong>：將輸出轉為機率分佈 (<span class="math inline">\(\sum p_i = 1\)</span>)。常用於多分類輸出層。</p>
+</section>
+<section id="反向傳播-backpropagation" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="反向傳播-backpropagation">反向傳播 (Backpropagation)</h3>
+<ul>
+<li><strong>核心原理</strong>：利用<strong>連鎖律 (Chain Rule)</strong> <span class="math inline">\(\frac{\partial L}{\partial w} = \frac{\partial L}{\partial y} \frac{\partial y}{\partial w}\)</span>。</li>
+<li><strong>運作</strong>：計算損失函數對每個參數的梯度，再透過梯度下降更新權重。</li>
+</ul>
+</section>
+</section>
+<section id="sec-cv-tech" class="level2">
+<h2 class="anchored" data-anchor-id="sec-cv-tech">電腦視覺 (CV) 技術</h2>
+<section id="cnn-核心運算" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="cnn-核心運算">CNN 核心運算</h3>
+<ul>
+<li><strong>卷積 (Convolution)</strong>：提取局部特徵 (邊緣、紋理)。</li>
+<li><strong>池化 (Pooling)</strong>：Max/Average Pooling。降維、抗噪、提供平移不變性。</li>
+<li><strong>感受野 (Receptive Field)</strong>：神經元能「看」到的原始圖像範圍。層數越深，感受野越大，能捕捉全域特徵。</li>
+</ul>
+</section>
+<section id="經典架構設計思維" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="經典架構設計思維">經典架構設計思維</h3>
+<ul>
+<li><strong>VGG</strong>：使用連續的 3x3 小卷積核取代大卷積核，在相同感受野下減少參數量並增加非線性。</li>
+<li><strong>ResNet (殘差網路)</strong>：
+<ul>
+<li><strong>殘差連接 (Residual Connection)</strong>：<span class="math inline">\(y = F(x) + x\)</span>。</li>
+<li><strong>意義</strong>：讓梯度能直接傳導到淺層，解決深層網路退化問題，使網路能訓練到上百層。</li>
+</ul></li>
+</ul>
+</section>
+<section id="進階視覺任務" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="進階視覺任務">進階視覺任務</h3>
+<ul>
+<li><strong>物件偵測 (Object Detection)</strong>：
+<ul>
+<li><strong>YOLO (You Only Look Once)</strong>：將偵測視為回歸問題，速度極快，適合即時應用。</li>
+</ul></li>
+<li><strong>影像分割 (Segmentation)</strong>：
+<ul>
+<li><strong>語義分割 (Semantic)</strong>：<strong>U-Net</strong> (Encoder-Decoder + Skip Connection)，常用於醫療影像。</li>
+<li><strong>實例分割 (Instance)</strong>：<strong>Mask R-CNN</strong> (Faster R-CNN + Mask Branch)，能區分同一類別的不同個體。</li>
+</ul></li>
+</ul>
+<!-- Figure Generation Prompt:
+Title: CNN Architectures Comparison
+Description: Three panels. 1. VGG (stack of blocks). 2. ResNet (block with curved arrow skipping layers). 3. U-Net (U-shaped architecture with horizontal connections).
+Style: Technical schematic.
+Colors: Blue, Orange, Green.
+-->
+</section>
+</section>
+<section id="sec-seq-models" class="level2">
+<h2 class="anchored" data-anchor-id="sec-seq-models">序列與時序模型</h2>
+<section id="rnn-家族比較" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="rnn-家族比較">RNN 家族比較</h3>
+<ul>
+<li><strong>RNN</strong>：短期記憶，易梯度消失。</li>
+<li><strong>LSTM (Long Short-Term Memory)</strong>：
+<ul>
+<li><strong>三閘門</strong>：遺忘閘 (Forget)、輸入閘 (Input)、輸出閘 (Output)。</li>
+<li><strong>Cell State</strong>：資訊的高速公路，貫穿整個序列。</li>
+</ul></li>
+<li><strong>GRU (Gated Recurrent Unit)</strong>：LSTM 的簡化版 (兩閘門)，運算較快。</li>
+</ul>
+</section>
+<section id="適用場景" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="適用場景">適用場景</h3>
+<ul>
+<li><strong>LSTM/GRU</strong>：時間序列預測 (股價、氣溫)、語音識別、短文本生成。</li>
+<li><strong>Transformer</strong>：長文本翻譯、文件摘要、大規模預訓練。</li>
+</ul>
+</section>
+</section>
+<section id="sec-transformer-ml" class="level2">
+<h2 class="anchored" data-anchor-id="sec-transformer-ml">Transformer 在 ML 中的進階應用</h2>
+<section id="self-attention-數學回顧" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="self-attention-數學回顧">Self-Attention 數學回顧</h3>
+<ul>
+<li><span class="math inline">\(Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V\)</span></li>
+<li><strong>長距離依賴</strong>：無論序列多長，任意兩個 token 之間的距離都是 1 (直接關注)，優於 RNN 的序列傳遞。</li>
+</ul>
+</section>
+<section id="架構選型" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="架構選型">架構選型</h3>
+<ul>
+<li><strong>Encoder-only (BERT)</strong>：雙向理解。適合分類、NER、QA。</li>
+<li><strong>Decoder-only (GPT)</strong>：單向生成。適合文字接龍、創意寫作。</li>
+<li><strong>Encoder-Decoder (T5, BART)</strong>：理解後生成。適合翻譯、摘要。</li>
+</ul>
+</section>
+</section>
+<section id="sec-multitask-transfer" class="level2">
+<h2 class="anchored" data-anchor-id="sec-multitask-transfer">多任務學習與遷移學習</h2>
+<section id="多任務學習-multi-task-learning" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="多任務學習-multi-task-learning">多任務學習 (Multi-task Learning)</h3>
+<ul>
+<li><strong>概念</strong>：一個模型同時學習多個相關任務 (如：同時預測房價與房間數)。</li>
+<li><strong>架構</strong>：共享底層參數 (Shared Layers)，上層分岔出不同的 Head (Multi-head output)。</li>
+<li><strong>Loss Weighting</strong>：<span class="math inline">\(L_{total} = w_1 L_1 + w_2 L_2\)</span>。需平衡不同任務的 Loss 大小。</li>
+</ul>
+</section>
+<section id="遷移學習-transfer-learning" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="遷移學習-transfer-learning">遷移學習 (Transfer Learning)</h3>
+<ul>
+<li><strong>Pre-training</strong>：在大數據集 (ImageNet) 上訓練通用特徵。</li>
+<li><strong>Fine-tuning</strong>：凍結底層參數，只訓練頂層以適應新任務。</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/perng\.github\.io\/ai-cert\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

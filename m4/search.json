@@ -1,0 +1,222 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "機器學習技術與應用",
+    "section": "",
+    "text": "前言\n歡迎來到《機器學習技術與應用》。本書深入探討進階機器學習演算法、深度學習架構、模型最佳化、強化學習以及 AI 治理與倫理。",
+    "crumbs": [
+      "前言"
+    ]
+  },
+  {
+    "objectID": "index.html#本書架構",
+    "href": "index.html#本書架構",
+    "title": "機器學習技術與應用",
+    "section": "本書架構",
+    "text": "本書架構\n本書共分為五章：\n\n進階機器學習演算法：介紹整合方法與進階非監督式學習技術。\n深度學習框架與架構：探討 TensorFlow、PyTorch 及各類進階神經網路架構。\n模型最佳化與調校：涵蓋超參數調校、正規化及模型壓縮技術。\n強化學習：講解強化學習的基本概念與核心演算法。\n機器學習治理與倫理：關注 AI 的公平性、當責性、透明度及可解釋性。",
+    "crumbs": [
+      "前言"
+    ]
+  },
+  {
+    "objectID": "chapter1.html",
+    "href": "chapter1.html",
+    "title": "進階機器學習演算法",
+    "section": "",
+    "text": "整合方法\n本章將介紹一些功能強大的進階機器學習演算法，這些演算法在 Kaggle 競賽和實際工業應用中非常流行。\n整合方法 (Ensemble Methods) 通過結合多個模型（稱為基學習器）來提高預測性能。其核心思想是「三個臭皮匠，勝過一個諸葛亮」。",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>進階機器學習演算法</span>"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#sec-ensemble-methods",
+    "href": "chapter1.html#sec-ensemble-methods",
+    "title": "進階機器學習演算法",
+    "section": "",
+    "text": "隨機森林\n隨機森林 (Random Forest) 是基於Bagging (Bootstrap Aggregating) 的整合模型。它並行訓練多棵決策樹，每棵樹使用隨機採樣的數據和特徵。\n\n分類：多數決 (Voting)。\n迴歸：平均值 (Averaging)。\n優點：不易過擬合，能處理高維數據，提供特徵重要性。\n\n決策樹的分裂準則：\n\n吉尼不純度 (Gini Impurity)：衡量集合中隨機選取兩個樣本屬於不同類別的機率。 $$ Gini = 1 - \\sum_{i=1}^{C} p_i^2 $$ 其中 pi 是第 i 類樣本的比例。Gini 越小，純度越高。\n\n資訊熵 (Entropy)：衡量系統的混亂程度。 $$ Entropy = - \\sum_{i=1}^{C} p_i \\log_2(p_i) $$ 資訊增益 (Information Gain) = 父節點熵 - 子節點加權熵。\n\n\n\n梯度提升\n梯度提升 (Gradient Boosting) 是基於Boosting 的整合模型。它串行訓練模型，每一個新模型都試圖修正前一個模型的錯誤（擬合殘差）。\n\nXGBoost (eXtreme Gradient Boosting)：以其高效、靈活和可移植性著稱。它引入了正則化項來控制過擬合，並支持並行處理。\nLightGBM：微軟開發，使用基於直方圖的演算法和 Leaf-wise 生長策略，速度更快，記憶體佔用更低。\nCatBoost：Yandex 開發，特別擅長處理類別特徵 (Categorical Features)，無需預先進行 One-hot Encoding。\n\n\n\n堆疊法 (Stacking)\nStacking 使用一個元學習器 (Meta-learner) 來組合多個基學習器的預測結果。 1. 將訓練集分為兩部分。 2. 基學習器在第一部分訓練，在第二部分預測。 3. 元學習器使用基學習器的預測結果作為特徵進行訓練。\nPython 範例：使用 XGBoost 進行分類\nimport xgboost as xgb\nfrom sklearn.datasets import load_breast_cancer\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.metrics import accuracy_score\n\n# 載入數據\ndata = load_breast_cancer()\nX_train, X_test, y_train, y_test = train_test_split(data.data, data.target, test_size=0.2)\n\n# 訓練模型\nmodel = xgb.XGBClassifier(use_label_encoder=False, eval_metric='logloss')\nmodel.fit(X_train, y_train)\n\n# 預測\ny_pred = model.predict(X_test)\nprint(f\"Accuracy: {accuracy_score(y_test, y_pred):.4f}\")",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>進階機器學習演算法</span>"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#sec-adv-unsupervised",
+    "href": "chapter1.html#sec-adv-unsupervised",
+    "title": "進階機器學習演算法",
+    "section": "進階非監督式學習",
+    "text": "進階非監督式學習\n進階非監督式學習 (Advanced Unsupervised Learning) 技術用於發現數據中的複雜模式。\n\n關聯規則學習\n關聯規則學習 (Association Rule Learning) 用於發現變數之間的有趣關係，最經典的例子是「啤酒與尿布」。\n\n指標：\n\n支持度 (Support)：規則在數據集中出現的頻率。 Support(X → Y) = P(X ∪ Y)\n信賴度 (Confidence)：若 X 出現，則 Y 出現的機率。 $$ Confidence(X \\to Y) = P(Y|X) = \\frac{Support(X \\cup Y)}{Support(X)} $$\n提升度 (Lift)：X 的出現對 Y 出現機率的提升程度。 $$ Lift(X \\to Y) = \\frac{Confidence(X \\to Y)}{P(Y)} $$ Lift &gt; 1 表示正相關，Lift &lt; 1 表示負相關。\n\n演算法：\n\nApriori：迭代地生成候選項目集。缺點是需要多次掃描資料庫。\nFP-Growth (Frequent Pattern Growth)：構建 FP 樹，只需掃描兩次資料庫，效率更高。\n\n\n\n\n異常檢測\n異常檢測 (Anomaly Detection) 用於識別不符合預期模式的數據點，常用於詐欺檢測、設備故障預測。\n\n孤立森林 (Isolation Forest)：通過隨機分割數據來隔離異常點。異常點通常更容易被隔離（路徑更短）。\nOne-Class SVM：學習一個決策邊界，將正常數據包圍起來。適合高維數據。\nLocal Outlier Factor (LOF)：基於密度的演算法，比較一個點與其鄰居的密度。適合發現局部異常。\n\nPython 範例：使用 Isolation Forest 檢測異常\n\nfrom sklearn.ensemble import IsolationForest\nimport numpy as np\n\n# 產生數據 (包含一些異常點)\nX = 0.3 * np.random.randn(100, 2)\nX_outliers = np.random.uniform(low=-4, high=4, size=(20, 2))\nX = np.r_[X + 2, X - 2, X_outliers]\n\n# 訓練模型\nclf = IsolationForest(contamination=0.1)\ny_pred = clf.fit_predict(X)\n\n# -1 表示異常點，1 表示正常點\nprint(\"Anomaly counts:\", np.sum(y_pred == -1))\n\nAnomaly counts: 22",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>進階機器學習演算法</span>"
+    ]
+  },
+  {
+    "objectID": "chapter2.html",
+    "href": "chapter2.html",
+    "title": "深度學習框架與架構",
+    "section": "",
+    "text": "深度學習框架\n深度學習的快速發展離不開強大的框架與架構。\n深度學習框架 (Deep Learning Frameworks) 簡化了模型的開發與訓練，提供了自動微分 (Automatic Differentiation) 和 GPU 加速功能。",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>深度學習框架與架構</span>"
+    ]
+  },
+  {
+    "objectID": "chapter2.html#sec-dl-frameworks",
+    "href": "chapter2.html#sec-dl-frameworks",
+    "title": "深度學習框架與架構",
+    "section": "",
+    "text": "TensorFlow vs PyTorch vs JAX\n\nTensorFlow：由 Google 開發，工業界部署廣泛。Keras 是其高階 API，非常易用。\n\n優點：部署生態完善 (TFLite, TF.js, TFX)。\n\nPyTorch：由 Meta (Facebook) 開發，採用動態計算圖 (Dynamic Computation Graph)，除錯方便，學術界研究首選。\n\n優點：Pythonic 風格，靈活易學。\n\nJAX：由 Google Research 開發，結合了 Autograd 和 XLA，支持高性能數值計算。\n\n優點：速度極快，適合前沿研究。\n\n\nPython 範例：PyTorch 與 TensorFlow 定義簡單層的比較\n# PyTorch\nimport torch.nn as nn\nlinear_layer = nn.Linear(in_features=10, out_features=5)\n\n# TensorFlow (Keras)\nimport tensorflow as tf\nlinear_layer = tf.keras.layers.Dense(units=5, input_shape=(10,))",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>深度學習框架與架構</span>"
+    ]
+  },
+  {
+    "objectID": "chapter2.html#sec-adv-architectures",
+    "href": "chapter2.html#sec-adv-architectures",
+    "title": "深度學習框架與架構",
+    "section": "進階架構",
+    "text": "進階架構\n進階架構 (Advanced Architectures) 解決了更複雜的任務。\n\n卷積神經網路變體\n\nInception (GoogLeNet)：引入 Inception 模組，並行使用不同大小的卷積核 1×1, 3×3, 5×5，讓網路自己學習最佳的特徵尺度。\nMobileNet：使用深度可分離卷積 (Depthwise Separable Convolution)，大幅減少參數和計算量，專為行動裝置設計。\nEfficientNet：提出複合縮放 (Compound Scaling) 方法，同時調整網路的深度、寬度和解析度，以達到最佳的性能/資源平衡。\n\n\n\n循環神經網路深入\n深入探討 RNN、LSTM 和 GRU 的內部機制。\n\n雙向 RNN (Bidirectional RNN)：同時從前向後和從後向前處理序列，能捕捉上下文信息（例如：翻譯時需要看完整個句子）。\nAttention 機制：解決了長序列依賴問題，允許模型在生成輸出時「關注」輸入序列的不同部分。這是 Transformer 架構的基礎。\n\nMermaid 流程圖：LSTM 單元結構",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>深度學習框架與架構</span>"
+    ]
+  },
+  {
+    "objectID": "chapter2.html#sec-transfer-learning",
+    "href": "chapter2.html#sec-transfer-learning",
+    "title": "深度學習框架與架構",
+    "section": "遷移學習與微調策略",
+    "text": "遷移學習與微調策略\n遷移學習與微調策略 (Transfer Learning and Fine-tuning Strategies) 允許利用預訓練模型（如 ImageNet 上訓練的 ResNet）來解決新問題，只需少量數據。\n\n特徵提取 (Feature Extraction)：凍結預訓練模型的卷積層，只訓練最後的全連接分類層。適合數據量小且與原任務相似的情況。\n微調 (Fine-tuning)：解凍預訓練模型的部分或全部層，以較小的學習率進行訓練。適合數據量較大或與原任務差異較大的情況。\n\nPython 範例：PyTorch 遷移學習\n\nimport torchvision.models as models\nimport torch.nn as nn\n\n# 載入預訓練的 ResNet18\nmodel = models.resnet18(pretrained=True)\n\n# 凍結所有參數 (Feature Extraction)\nfor param in model.parameters():\n    param.requires_grad = False\n\n# 替換最後一層全連接層 (假設新任務有 10 類)\nnum_ftrs = model.fc.in_features\nmodel.fc = nn.Linear(num_ftrs, 10)\n\n# 現在只會訓練最後一層\nprint(model)\n\nC:\\Users\\charl\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python310\\site-packages\\torchvision\\models\\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.\n  warnings.warn(\nC:\\Users\\charl\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python310\\site-packages\\torchvision\\models\\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.\n  warnings.warn(msg)\n\n\nResNet(\n  (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)\n  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n  (relu): ReLU(inplace=True)\n  (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)\n  (layer1): Sequential(\n    (0): BasicBlock(\n      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    )\n    (1): BasicBlock(\n      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    )\n  )\n  (layer2): Sequential(\n    (0): BasicBlock(\n      (conv1): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (downsample): Sequential(\n        (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)\n        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      )\n    )\n    (1): BasicBlock(\n      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    )\n  )\n  (layer3): Sequential(\n    (0): BasicBlock(\n      (conv1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (downsample): Sequential(\n        (0): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)\n        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      )\n    )\n    (1): BasicBlock(\n      (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    )\n  )\n  (layer4): Sequential(\n    (0): BasicBlock(\n      (conv1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (downsample): Sequential(\n        (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)\n        (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      )\n    )\n    (1): BasicBlock(\n      (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    )\n  )\n  (avgpool): AdaptiveAvgPool2d(output_size=(1, 1))\n  (fc): Linear(in_features=512, out_features=10, bias=True)\n)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>深度學習框架與架構</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html",
+    "href": "chapter3.html",
+    "title": "模型最佳化與調校",
+    "section": "",
+    "text": "超參數調校\n模型最佳化與調校 (Model Optimization & Tuning) 是提升模型性能的關鍵步驟。\n超參數 (Hyperparameters) 是在訓練前設定的參數（如學習率、樹的深度、Batch size），模型無法從數據中學習它們。",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>模型最佳化與調校</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#sec-hyperparameter-tuning",
+    "href": "chapter3.html#sec-hyperparameter-tuning",
+    "title": "模型最佳化與調校",
+    "section": "",
+    "text": "搜尋策略\n\n網格搜尋 (Grid Search)：窮舉所有可能的參數組合。保證找到搜尋空間內的最佳解，但計算成本極高。\n隨機搜尋 (Random Search)：在參數空間中隨機採樣。通常比網格搜尋更高效，因為它能探索更多重要參數的取值。\n貝葉斯最佳化 (Bayesian Optimization)：建立一個概率模型來估計目標函數，並利用該模型選擇下一個最有希望的參數組合。\n\nOptuna：目前最流行的自動超參數優化框架，支持高效的採樣算法（如 TPE）和剪枝策略。\n\n\nPython 範例：使用 Scikit-learn 進行網格搜尋\n\nfrom sklearn.model_selection import GridSearchCV\nfrom sklearn.svm import SVC\nfrom sklearn.datasets import load_iris\n\niris = load_iris()\nparameters = {'kernel':('linear', 'rbf'), 'C':[1, 10]}\nsvc = SVC()\nclf = GridSearchCV(svc, parameters)\nclf.fit(iris.data, iris.target)\n\nprint(\"Best parameters:\", clf.best_params_)\n\nBest parameters: {'C': 1, 'kernel': 'linear'}",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>模型最佳化與調校</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#sec-regularization",
+    "href": "chapter3.html#sec-regularization",
+    "title": "模型最佳化與調校",
+    "section": "正規化技術",
+    "text": "正規化技術\n正規化技術 (Regularization Techniques) 用於防止過擬合 (Overfitting)，通過在損失函數中加入懲罰項來限制模型複雜度。\nLtotal = Loriginal + λ ⋅ R(w) 其中 𝝺 是正規化強度。\n\n常見技術\n\nL1 正規化 (Lasso)：懲罰權重的絕對值總和。 R(w) = ∑|wi| L1 傾向於產生稀疏權重（許多權重變為 0），因此也可用於特徵選擇。\nL2 正規化 (Ridge)：懲罰權重的平方和。 R(w) = ∑wi2 L2 傾向於使權重變小但不為 0，能有效防止單一特徵對模型影響過大。\nDropout：在訓練過程中隨機丟棄（歸零）一部分神經元（例如 50%）。這強迫網路學習更魯棒的特徵，因為它不能依賴任何特定的神經元。\n批次正規化 (Batch Normalization)：在每一層的激活函數之前，對輸入進行標準化（減去均值，除以標準差）。\n\n優點：加速訓練收斂，允許使用更高的學習率，並具有輕微的正規化效果。\n\n\n\n\n提前停止\n提前停止 (Early Stopping) 監控驗證集誤差。當驗證誤差不再下降甚至開始上升時，停止訓練。這是一種簡單而有效的防止過擬合方法。",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>模型最佳化與調校</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#sec-model-compression",
+    "href": "chapter3.html#sec-model-compression",
+    "title": "模型最佳化與調校",
+    "section": "模型壓縮",
+    "text": "模型壓縮\n模型壓縮 (Model Compression) 技術減小模型體積，加速推論，使其能在邊緣設備上運行。\n\n量化\n量化 (Quantization) 將權重從 32 位浮點數 (FP32) 轉換為 8 位整數 (INT8)。\n\n優點：模型大小減少 4 倍，計算速度顯著提升。\n缺點：可能會造成輕微的精度損失。\n\n\n\n剪枝 (Pruning)\n剪枝 (Pruning) 移除神經網路中不重要的連接（權重接近 0 的連接）。\n\n非結構化剪枝 (Unstructured Pruning)：隨機移除單個權重，導致稀疏矩陣，需要專門的硬體或庫加速。\n結構化剪枝 (Structured Pruning)：移除整個通道 (Channel) 或卷積核 (Filter)，直接減少模型結構，通用硬體即可加速。\n\n\n\n知識蒸餾\n知識蒸餾 (Knowledge Distillation) 訓練一個小的學生模型 (Student) 來模仿大的教師模型 (Teacher) 的輸出（Soft targets）。 $ L = L_{CE}(y, {student}) + (1-) L{KL}({teacher}, {student})$ 學生模型不僅學習真實標籤，還學習教師模型的「暗知識」（例如，這張圖雖然是貓，但也有一點像狗）。",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>模型最佳化與調校</span>"
+    ]
+  },
+  {
+    "objectID": "chapter4.html",
+    "href": "chapter4.html",
+    "title": "強化學習",
+    "section": "",
+    "text": "基本概念\n強化學習 (Reinforcement Learning, RL) 讓代理透過與環境互動來學習策略，目標是最大化累積獎勵。\n探索與利用 (Exploration vs Exploitation)： RL 的核心挑戰。",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>強化學習</span>"
+    ]
+  },
+  {
+    "objectID": "chapter4.html#sec-rl-concepts",
+    "href": "chapter4.html#sec-rl-concepts",
+    "title": "強化學習",
+    "section": "",
+    "text": "代理 (Agent)：做出決策的主體。\n環境 (Environment)：代理所在的外部世界。\n狀態 (State, S)：環境當前的狀況。\n行動 (Action, A)：代理採取的動作。\n獎勵 (Reward, R)：環境對代理行動的反饋。\n策略 (Policy, 𝛑)：代理在給定狀態下選擇行動的規則。π(a|s)。\n\n\n\n探索 (Exploration)：嘗試未知的行動，以發現可能獲得更高獎勵的路徑。\n利用 (Exploitation)：選擇當前已知最好的行動，以獲得最大獎勵。\n𝞮-Greedy 策略：以 1-ε 的機率選擇最佳行動（利用），以 𝞮 的機率隨機選擇行動（探索）。",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>強化學習</span>"
+    ]
+  },
+  {
+    "objectID": "chapter4.html#sec-bellman",
+    "href": "chapter4.html#sec-bellman",
+    "title": "強化學習",
+    "section": "貝爾曼方程式",
+    "text": "貝爾曼方程式\n價值函數 (Value Function, V(s))：從狀態 s 開始，遵循策略 𝛑 所能獲得的預期累積獎勵。 貝爾曼方程式 (Bellman Equation) 描述了當前狀態價值與未來狀態價值之間的關係：\n$ V(s) = a ( R(s,a) + {s’} P(s’|s,a) V(s’) ) $\n其中 𝝺 是折扣因子 (Discount Factor)，用於平衡當前獎勵與未來獎勵的重要性。",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>強化學習</span>"
+    ]
+  },
+  {
+    "objectID": "chapter4.html#sec-rl-algorithms",
+    "href": "chapter4.html#sec-rl-algorithms",
+    "title": "強化學習",
+    "section": "演算法",
+    "text": "演算法\n\nQ-learning\nQ-learning 是一種基於值的 (Value-based) 演算法，學習一個 Q 表 (Q-table)，記錄在狀態 s 採取行動 a 的預期獎勵 Q(s, a)。\n更新規則： $ Q(s, a) Q(s, a) + $ 這利用了時序差分 (Temporal Difference, TD) 誤差來更新 Q 值。\n\n\n深度 Q 網路 (DQN)\n深度 Q 網路 (DQN, Deep Q-Network) 使用神經網路來近似 Q 函數 Q(s, a; θ) ≈ Q^*(s, a)，解決了狀態空間過大無法建立 Q 表的問題（如 Atari 遊戲的像素輸入）。\nDQN 的兩個關鍵技術：\n\n經驗重播 (Experience Replay)：將轉移樣本 (s, a, r, s’) 存入緩衝區，訓練時隨機採樣，打破數據相關性。\n固定目標網路 (Fixed Target Network)：計算目標值時使用一個參數凍結的網路，提高訓練穩定性。\n\n\n\n策略梯度 (Policy Gradients)\n策略梯度 (Policy Gradients) 直接最佳化策略函數 π(a|s; θ)。 ∇θJ(θ) = 𝔼[∇θlog π(a|s; θ) ⋅ R] 這使得它能處理連續動作空間。\n\nPPO (Proximal Policy Optimization)：目前最流行的策略梯度方法。它通過限制策略更新的幅度（Clip 操作）來保證訓練的穩定性，避免了一次更新過大導致模型崩潰。",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>強化學習</span>"
+    ]
+  },
+  {
+    "objectID": "chapter4.html#sec-rl-applications",
+    "href": "chapter4.html#sec-rl-applications",
+    "title": "強化學習",
+    "section": "應用案例",
+    "text": "應用案例\n\n遊戲：DeepMind 的 AlphaGo 結合了蒙地卡羅樹搜尋 (MCTS) 和深度強化學習，擊敗了人類圍棋冠軍。\n機器人控制：讓機器人學習走路、抓取物體。通常使用 Sim2Real 技術，先在模擬環境中訓練，再遷移到真實世界。\n推薦系統：將用戶互動視為環境反饋，動態調整推薦策略以最大化長期參與度。\n\nPython 範例：OpenAI Gym 環境\n\nimport gym\n\n# 創建 CartPole 環境\nenv = gym.make('CartPole-v1')\nobservation = env.reset()\n\nfor _ in range(100):\n    env.render()\n    action = env.action_space.sample() # 隨機採取行動\n    observation, reward, done, info = env.step(action)\n\n    if done:\n        observation = env.reset()\n\nenv.close()",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>強化學習</span>"
+    ]
+  },
+  {
+    "objectID": "chapter5.html",
+    "href": "chapter5.html",
+    "title": "機器學習治理與倫理",
+    "section": "",
+    "text": "ML 中的公平性、當責性與透明度 (FAT)\n隨著 AI 的普及，機器學習治理與倫理 (ML Governance & Ethics) 變得越來越重要。我們不能只關注模型準不準，還要關注它是否公平、透明。",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>機器學習治理與倫理</span>"
+    ]
+  },
+  {
+    "objectID": "chapter5.html#sec-fat",
+    "href": "chapter5.html#sec-fat",
+    "title": "機器學習治理與倫理",
+    "section": "",
+    "text": "公平性 (Fairness)：模型不應對特定群體（如種族、性別）產生歧視。\n\n偏見類型：\n\n選擇性偏見 (Selection Bias)：訓練數據不能代表真實世界。\n歷史偏見 (Historical Bias)：數據反映了歷史上的社會不公。\n測量偏見 (Measurement Bias)：特徵或標籤的測量方式有誤。\n\n\n當責性 (Accountability)：誰應對 AI 的決策負責？需要明確的責任歸屬機制。\n透明度 (Transparency)：模型的決策過程應該是可見的，並能向使用者解釋。",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>機器學習治理與倫理</span>"
+    ]
+  },
+  {
+    "objectID": "chapter5.html#sec-xai",
+    "href": "chapter5.html#sec-xai",
+    "title": "機器學習治理與倫理",
+    "section": "解決偏見與確保可解釋性 (XAI)",
+    "text": "解決偏見與確保可解釋性 (XAI)\n可解釋 AI (XAI, Explainable AI) 旨在讓人類理解 AI 模型的決策邏輯。\n\n全域解釋 (Global Interpretability)：理解模型整體的運作邏輯（例如：特徵重要性）。\n局部解釋 (Local Interpretability)：理解模型對單個樣本的預測原因（例如：為什麼拒絕這筆貸款？）。\n\n\nSHAP (SHapley Additive exPlanations)\nSHAP 基於博弈論，為每個特徵分配一個重要性值，解釋其對預測結果的貢獻。它具有堅實的數學理論基礎，能提供一致的解釋。\nPython 範例：使用 SHAP 解釋模型\n\nimport shap\nimport xgboost\n# 訓練模型\nX, y = shap.datasets.california()\nmodel = xgboost.XGBRegressor().fit(X, y)\n\n# 計算 SHAP 值\nexplainer = shap.Explainer(model)\nshap_values = explainer(X)\n\n# 繪製摘要圖\n# shap.summary_plot(shap_values, X)\n\n\n\nLIME (Local Interpretable Model-agnostic Explanations)\nLIME 通過在局部擾動數據，訓練一個簡單的線性模型來近似複雜模型的決策邊界。它適用於任何模型 (Model-agnostic)。",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>機器學習治理與倫理</span>"
+    ]
+  },
+  {
+    "objectID": "chapter5.html#sec-model-governance",
+    "href": "chapter5.html#sec-model-governance",
+    "title": "機器學習治理與倫理",
+    "section": "模型監控與治理",
+    "text": "模型監控與治理\n模型部署後，必須持續監控以確保其性能。\n\n數據漂移 (Data Drift)：輸入數據的分佈隨時間發生變化（例如：用戶行為改變）。\n概念漂移 (Concept Drift)：輸入與輸出之間的關係發生變化（例如：詐欺手法翻新）。\n監控指標：\n\nPSI (Population Stability Index)：衡量數據分佈的穩定性。\n模型性能指標：準確率、AUC 等的變化趨勢。",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>機器學習治理與倫理</span>"
+    ]
+  }
+]

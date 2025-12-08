@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>特徵工程 (Feature Engineering) – AI 應用規劃師全攻略</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./chapter5.html" rel="next">
+<link href="./chapter3.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter3.html">第二部：數據工程——AI 的堅實地基</a></li><li class="breadcrumb-item"><a href="./chapter4.html"><span class="chapter-title">特徵工程 (Feature Engineering)</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">AI 應用規劃師全攻略</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">人工智慧基礎理論</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">第一部：人工智慧基礎與戰略定位</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">人工智慧的本質與層次架構</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI 應用問題類型</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">第二部：數據工程——AI 的堅實地基</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">數據處理生命週期與架構</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter4.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">特徵工程 (Feature Engineering)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">第三部：機器學習演算法核心</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">監督式學習演算法 (Supervised Learning Algorithms)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">非監督式學習與強化學習 (Unsupervised &amp; Reinforcement Learning)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">第四部：深度學習與生成式 AI 前沿</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">神經網路架構演進 (Neural Network Architecture Evolution)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter8.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">生成式 AI 與大型語言模型 (Generative AI &amp; LLM)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">第五部：模型評估、可解釋性與治理</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter9.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">模型評估與效能優化 (Model Evaluation &amp; Optimization)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter10.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">可解釋 AI (XAI)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter11.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI 治理、法規與倫理 (AI Governance, Regulations &amp; Ethics)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-numerical-features" id="toc-sec-numerical-features" class="nav-link active" data-scroll-target="#sec-numerical-features">數值特徵處理</a>
+  <ul class="collapse">
+  <li><a href="#sec-feature-scaling" id="toc-sec-feature-scaling" class="nav-link" data-scroll-target="#sec-feature-scaling">特徵縮放 (Feature Scaling)</a></li>
+  <li><a href="#sec-feature-transformation" id="toc-sec-feature-transformation" class="nav-link" data-scroll-target="#sec-feature-transformation">特徵轉換</a></li>
+  <li><a href="#常見編碼方式" id="toc-常見編碼方式" class="nav-link" data-scroll-target="#常見編碼方式">常見編碼方式</a></li>
+  <li><a href="#獨熱編碼的潛在問題" id="toc-獨熱編碼的潛在問題" class="nav-link" data-scroll-target="#獨熱編碼的潛在問題">獨熱編碼的潛在問題</a></li>
+  <li><a href="#特徵嵌入-feature-embedding" id="toc-特徵嵌入-feature-embedding" class="nav-link" data-scroll-target="#特徵嵌入-feature-embedding">特徵嵌入 (Feature Embedding)</a></li>
+  </ul></li>
+  <li><a href="#sec-advanced-features" id="toc-sec-advanced-features" class="nav-link" data-scroll-target="#sec-advanced-features">進階特徵技巧</a>
+  <ul class="collapse">
+  <li><a href="#特徵交叉-feature-cross" id="toc-特徵交叉-feature-cross" class="nav-link" data-scroll-target="#特徵交叉-feature-cross">特徵交叉 (Feature Cross)</a></li>
+  <li><a href="#特徵選擇-feature-selection" id="toc-特徵選擇-feature-selection" class="nav-link" data-scroll-target="#特徵選擇-feature-selection">特徵選擇 (Feature Selection)</a></li>
+  </ul></li>
+  <li><a href="#sec-imbalanced-data" id="toc-sec-imbalanced-data" class="nav-link" data-scroll-target="#sec-imbalanced-data">不平衡資料處理 (Imbalanced Data)</a>
+  <ul class="collapse">
+  <li><a href="#重採樣-resampling" id="toc-重採樣-resampling" class="nav-link" data-scroll-target="#重採樣-resampling">1. 重採樣 (Resampling)</a></li>
+  <li><a href="#類別權重調整-class-weights" id="toc-類別權重調整-class-weights" class="nav-link" data-scroll-target="#類別權重調整-class-weights">2. 類別權重調整 (Class Weights)</a></li>
+  </ul></li>
+  <li><a href="#chap-ai-foundation-chapter4-summary" id="toc-chap-ai-foundation-chapter4-summary" class="nav-link" data-scroll-target="#chap-ai-foundation-chapter4-summary">本章總結與考點提示</a>
+  <ul class="collapse">
+  <li><a href="#核心概念回顧" id="toc-核心概念回顧" class="nav-link" data-scroll-target="#核心概念回顧">核心概念回顧</a></li>
+  <li><a href="#ai-應用規劃師認證考點" id="toc-ai-應用規劃師認證考點" class="nav-link" data-scroll-target="#ai-應用規劃師認證考點">AI 應用規劃師認證考點</a></li>
+  <li><a href="#記憶口訣" id="toc-記憶口訣" class="nav-link" data-scroll-target="#記憶口訣">記憶口訣</a></li>
+  <li><a href="#延伸思考" id="toc-延伸思考" class="nav-link" data-scroll-target="#延伸思考">延伸思考</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter3.html">第二部：數據工程——AI 的堅實地基</a></li><li class="breadcrumb-item"><a href="./chapter4.html"><span class="chapter-title">特徵工程 (Feature Engineering)</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">特徵工程 (Feature Engineering)</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- # 特徵工程 (Feature Engineering) -->
+<p>特徵工程被認為是機器學習中「最像藝術」的部分。吳恩達 (Andrew Ng) 曾說：「數據就像原油，而特徵工程就是煉油的過程。」好的特徵工程能讓普通的模型表現出色，而糟糕的特徵工程則會讓頂尖的模型無用武之地。</p>
+<p>簡單來說，特徵工程就是<strong>將原始資料轉換為更能代表問題本質的特徵</strong>，讓演算法更容易理解和學習。</p>
+<section id="sec-numerical-features" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="sec-numerical-features">數值特徵處理</h2>
+<p>數值資料（如身高、價格、次數）看似可以直接使用，但往往需要經過轉換才能發揮最大效用。</p>
+<section id="sec-feature-scaling" class="level3">
+<h3 class="anchored" data-anchor-id="sec-feature-scaling">特徵縮放 (Feature Scaling)</h3>
+<p>當不同特徵的單位或範圍差異很大時，模型可能會被數值大的特徵主導，導致學習效果不佳。這在計算「距離」的演算法（如 KNN, K-Means）中尤為嚴重。</p>
+<ul>
+<li><strong>為什麼需要縮放？</strong>
+<ul>
+<li>假設我們有兩個特徵：
+<ol type="1">
+<li><strong>年齡</strong>：範圍 0-100。</li>
+<li><strong>年薪</strong>：範圍 22,000 - 10,000,000。</li>
+</ol></li>
+<li>如果不縮放，年薪差 1 萬元（數值差 10000）對距離的影響，會遠大於年齡差 50 歲（數值差 50）。模型會誤以為「年薪」才是唯一重要的因素。</li>
+</ul></li>
+<li><strong>常見方法</strong>：
+<ol type="1">
+<li><strong>標準化 (Standardization / Z-score Normalization)</strong>：
+<ul>
+<li>將資料轉換為平均值 𝝁 為 0，標準差 <strong>𝛔</strong> 為 1 的分佈。</li>
+<li><strong>公式</strong>：<span class="math display">$$ z = \frac{x - \mu}{\sigma} $$</span></li>
+<li><strong>適用</strong>：大部分機器學習演算法（如 SVM, Logistic Regression, Neural Networks），特別是假設資料呈常態分佈時。</li>
+</ul></li>
+<li><strong>正規化 (Normalization / Min-Max Scaling)</strong>：
+<ul>
+<li>將資料壓縮到固定範圍（通常是 [0, 1]）。</li>
+<li><strong>公式</strong>：<span class="math display">$$ x_{new} = \frac{x - x_{min}}{x_{max} - x_{min}} $$</span></li>
+<li><strong>適用</strong>：對範圍敏感的演算法，或影像處理（像素值 0-255）。缺點是容易受極端值 (Outlier) 影響。</li>
+</ul></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/feature_scaling.webp" class="img-fluid figure-img"></p>
+<figcaption>特徵縮放</figcaption>
+</figure>
+</div></li>
+</ul>
+</section>
+<section id="sec-feature-transformation" class="level3">
+<h3 class="anchored" data-anchor-id="sec-feature-transformation">特徵轉換</h3>
+<p>有時候，原始數值的分布形狀不利於模型學習，我們需要改變它的形狀。</p>
+<ul>
+<li><strong>對數轉換 (Log Transformation)</strong>：
+<ul>
+<li><strong>目的</strong>：處理<strong>長尾分佈</strong>或<strong>右偏</strong>資料（如收入、房價、網頁點擊數）。</li>
+<li><strong>原理</strong>：取 Log 可以將原本擠在一起的較小數值拉開，並壓縮極端大的數值，使分佈更接近<strong>常態分佈 (Normal Distribution)</strong>。</li>
+<li><strong>例子</strong>：
+<ul>
+<li>原始：[10, 100, 1000, 10000, 100000] (級距很大)</li>
+<li>Log10 後：[1, 2, 3, 4, 5] (變成等距，線性關係更明顯)</li>
+</ul></li>
+</ul></li>
+<li><strong>特徵分箱 (Binning / Discretization)</strong>：
+<ul>
+<li><strong>目的</strong>：將連續數值轉為區間類別，過濾掉微小的雜訊。</li>
+<li><strong>例子</strong>：將「年齡」轉為「年齡層」。
+<ul>
+<li>原始：18, 19, 20, 21, …, 65, 66…</li>
+<li>分箱後：
+<ul>
+<li>0-18: 未成年</li>
+<li>19-35: 青年</li>
+<li>36-60: 中年</li>
+<li>60+: 老年</li>
+</ul></li>
+</ul></li>
+<li><strong>效果</strong>：增加模型的<strong>魯棒性 (Robustness)</strong>，防止模型過度關注「25 歲和 26 歲有什麼不同」。 <img src="images/feature_transformation.webp" class="img-fluid" alt="特徵轉換"> ## 類別特徵編碼 {#sec-categorical-encoding}</li>
+</ul></li>
+</ul>
+<p>機器學習模型通常是數學公式，只看得懂數字，看不懂文字。我們需要將類別資料（如顏色、城市）轉換為數字。</p>
+</section>
+<section id="常見編碼方式" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="常見編碼方式">常見編碼方式</h3>
+<div class="column-page" style="overflow-x: auto;">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">編碼方式</th>
+<th style="text-align: left;">說明</th>
+<th style="text-align: left;">適用情境</th>
+<th style="text-align: left;">範例 (T-shirt 尺寸)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>序數編碼</strong><br>(Ordinal Encoding)</td>
+<td style="text-align: left;">依據類別的<strong>順序</strong>或<strong>大小</strong>賦予整數值。</td>
+<td style="text-align: left;">類別間<strong>有</strong>順序關係 (Size, Rating)。</td>
+<td style="text-align: left;">S → 1<br>M → 2<br>L → 3<br>XL → 4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>獨熱編碼</strong><br>(One-hot Encoding)</td>
+<td style="text-align: left;">為每個類別建立一個獨立的欄位 (Dummy Variable)，是該類別則標為 1，否則為 0。</td>
+<td style="text-align: left;">類別間<strong>無</strong>順序關係 (Color, City)。</td>
+<td style="text-align: left;"><strong>紅色</strong> → [1, 0, 0]<br><strong>綠色</strong> → [0, 1, 0]<br><strong>藍色</strong> → [0, 0, 1]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/one_hot_encoding.webp" class="img-fluid figure-img"></p>
+<figcaption>獨熱編碼</figcaption>
+</figure>
+</div>
+</section>
+<section id="獨熱編碼的潛在問題" class="level3">
+<h3 class="anchored" data-anchor-id="獨熱編碼的潛在問題">獨熱編碼的潛在問題</h3>
+<ul>
+<li><strong>維度災難 (Curse of Dimensionality)</strong>：如果類別數量非常多（例如：台灣的「路名」有成千上萬個），使用 One-hot Encoding 會產生數萬個新欄位，導致資料變得極度稀疏，計算量爆炸，模型也容易過擬合。</li>
+<li><strong>解決方案</strong>：
+<ul>
+<li><strong>特徵雜湊 (Feature Hashing)</strong>：將類別映射到固定數量的桶 (Bucket) 中。</li>
+<li><strong>目標編碼 (Target Encoding)</strong>：用該類別在目標變數 (Target) 的平均值來取代類別（例如：用「台北市的平均房價」來代表「台北市」這個特徵）。</li>
+<li><strong>特徵嵌入 (Feature Embedding)</strong>：(見下文)</li>
+</ul></li>
+</ul>
+</section>
+<section id="特徵嵌入-feature-embedding" class="level3">
+<h3 class="anchored" data-anchor-id="特徵嵌入-feature-embedding">特徵嵌入 (Feature Embedding)</h3>
+<p>這是在深度學習中處理高基數類別（High Cardinality）或文本資料的神器。</p>
+<ul>
+<li><strong>做法</strong>：將每個類別映射到一個低維度的向量空間（Vector Space）。</li>
+<li><strong>效果</strong>：讓意義相近的類別在空間中距離較近。
+<ul>
+<li>例如在 Word2Vec 中：Vector(國王) - Vector(男人) + Vector(女人) ≈ Vector(皇后)。</li>
+<li>這不僅解決了維度問題，還捕捉了類別之間的<strong>語意關係</strong>。</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/feature_embedding.webp" class="img-fluid figure-img"></p>
+<figcaption>特徵嵌入</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="sec-advanced-features" class="level2">
+<h2 class="anchored" data-anchor-id="sec-advanced-features">進階特徵技巧</h2>
+<section id="特徵交叉-feature-cross" class="level3">
+<h3 class="anchored" data-anchor-id="特徵交叉-feature-cross">特徵交叉 (Feature Cross)</h3>
+<p>有時候，單一特徵不足以解釋結果，特徵之間的<strong>組合</strong>才是關鍵。</p>
+<ul>
+<li><strong>定義</strong>：將兩個或多個特徵組合起來，捕捉非線性的交互作用。</li>
+<li><strong>例子</strong>：<strong>房地產價格預測</strong>
+<ul>
+<li>特徵 A：<strong>經度</strong> (Longitude)</li>
+<li>特徵 B：<strong>緯度</strong> (Latitude)</li>
+<li>單看經度或緯度，很難判斷房價（同一經度有精華區也有郊區）。</li>
+<li><strong>交叉特徵</strong>：將地圖切成網格，<code>經度 x 緯度</code> 代表一個具體的<strong>區塊 (Block)</strong>。信義區的某個區塊房價顯然比山區的某個區塊高。這就是特徵交叉的威力。</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/feature_cross.webp" class="img-fluid figure-img"></p>
+<figcaption>特徵交叉</figcaption>
+</figure>
+</div>
+</section>
+<section id="特徵選擇-feature-selection" class="level3">
+<h3 class="anchored" data-anchor-id="特徵選擇-feature-selection">特徵選擇 (Feature Selection)</h3>
+<p>「特徵越多越好」是新手的迷思。事實上，<strong>垃圾進，垃圾出 (Garbage In, Garbage Out)</strong>。過多的特徵（包含無關特徵或雜訊）會帶來三大災難：</p>
+<ol type="1">
+<li><strong>過度擬合 (Overfitting)</strong>：
+<ul>
+<li>模型會試圖去學習「雜訊」中的規律，而不是真正的訊號。</li>
+<li><em>例子</em>：預測房價時，如果把「屋主的幸運數字」也加進去，模型可能會剛好發現「幸運數字 7 的房子比較貴」，這顯然是巧合，但在新資料上就會預測錯誤。</li>
+</ul></li>
+<li><strong>計算量大增 (Computational Cost)</strong>：
+<ul>
+<li>特徵數量加倍，訓練時間可能呈指數級增長。這對於即時應用（如高頻交易、自駕車）是致命傷。</li>
+</ul></li>
+<li><strong>維度災難 (Curse of Dimensionality)</strong>：
+<ul>
+<li>隨著特徵維度增加，資料在空間中會變得極度<strong>稀疏 (Sparse)</strong>。</li>
+<li>為了維持同樣的資料密度，所需的訓練資料量需要呈指數級增加。如果資料量不夠，模型就無法有效學習。</li>
+</ul></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/feature_selection.webp" class="img-fluid figure-img"></p>
+<figcaption>特徵選擇</figcaption>
+</figure>
+</div>
+<p><strong>常見篩選方法</strong>：</p>
+<ol type="1">
+<li><strong>過濾法 (Filter)</strong>：
+<ul>
+<li>在進模型之前，先用統計方法篩選。</li>
+<li>例如：計算每個特徵與目標變數的<strong>相關係數 (Correlation)</strong>，太低的直接丟掉。</li>
+<li><em>優點</em>：快。 <em>缺點</em>：忽略了特徵之間的組合效果。</li>
+</ul></li>
+<li><strong>包裝法 (Wrapper)</strong>：
+<ul>
+<li>直接把特徵丟進模型試跑，看效果好不好。</li>
+<li>例如：<strong>遞迴特徵消除 (RFE)</strong>，先用所有特徵訓練，把最沒用的特徵踢掉，再訓練，重複直到剩 N 個特徵。</li>
+<li><em>優點</em>：準。 <em>缺點</em>：慢（要訓練很多次模型）。</li>
+</ul></li>
+<li><strong>嵌入法 (Embedded)</strong>：
+<ul>
+<li>模型在訓練過程中自動決定特徵重要性。</li>
+<li>例如：<strong>Lasso 回歸 (L1 Regularization)</strong> 會自動將不重要特徵的係數變成 0；<strong>決策樹/隨機森林</strong> 會計算 Feature Importance。</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="sec-imbalanced-data" class="level2">
+<h2 class="anchored" data-anchor-id="sec-imbalanced-data">不平衡資料處理 (Imbalanced Data)</h2>
+<p>在現實應用中（如詐欺偵測、罕見疾病篩檢、工廠瑕疵檢測），正樣本（異常）通常極少，負樣本（正常）極多。</p>
+<ul>
+<li><strong>問題</strong>：如果詐欺只有 1%，模型只要全部猜「正常」，準確率 (Accuracy) 就高達 99%。但這個模型對抓詐欺完全沒用。</li>
+<li><strong>解法</strong>：</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/imbalanced_data.webp" class="img-fluid figure-img"></p>
+<figcaption>不平衡資料</figcaption>
+</figure>
+</div>
+<section id="重採樣-resampling" class="level3">
+<h3 class="anchored" data-anchor-id="重採樣-resampling">1. 重採樣 (Resampling)</h3>
+<p>改變資料的分佈，讓正負樣本平衡一點。</p>
+<section id="上過採樣-oversampling" class="level4">
+<h4 class="anchored" data-anchor-id="上過採樣-oversampling">上(過)採樣 (Oversampling)</h4>
+<p>增加少數類別（如詐欺樣本）的數量。</p>
+<ul>
+<li><strong>隨機上(過)採樣 (Random Oversampling)</strong>：
+<ul>
+<li><strong>做法</strong>：簡單粗暴地複製少數類別的樣本。</li>
+<li><strong>缺點</strong>：容易造成<strong>過度擬合 (Overfitting)</strong>，因為模型會反覆看到一模一樣的資料，把它們背下來。</li>
+<li><strong>例子</strong>：原本有 10 筆詐欺資料，直接複製 9 次，變成 100 筆一模一樣的詐欺資料。</li>
+</ul></li>
+<li><strong>SMOTE (Synthetic Minority Over-sampling Technique)</strong>：
+<ul>
+<li><strong>做法</strong>：不是單純複製，而是「無中生有」。
+<ol type="1">
+<li>選定一個少數類別樣本 A。</li>
+<li>找出它的鄰居樣本 B。</li>
+<li>在 A 和 B 的連線上，隨機產生一個新的人工樣本 C。</li>
+</ol></li>
+<li><strong>優點</strong>：增加了樣本的多樣性，減少過度擬合風險。</li>
+<li><strong>例子</strong>：樣本 A 是 (1, 2)，鄰居 B 是 (2, 4)。連線中間點可能是 (1.5, 3)，這就是產生出來的新樣本 C。</li>
+</ul></li>
+<li><strong>ADASYN (Adaptive Synthetic Sampling)</strong>：
+<ul>
+<li><strong>做法</strong>：SMOTE 的改良版。它會根據樣本的學習難度（周圍有多少多數類別）來決定要生成多少新樣本。</li>
+<li><strong>特點</strong>：在「邊界模糊」或「難以分類」的區域生成更多樣本，強迫模型學習這些困難案例。</li>
+<li><strong>例子</strong>：如果樣本 A 旁邊都是正常人（很難分），ADASYN 會在它旁邊生 10 個新樣本；樣本 B 旁邊都是自己人（很好分），只生 1 個。</li>
+</ul>
+<blockquote class="blockquote">
+<strong>注意：類別型資料怎麼辦？</strong> 標準的 SMOTE 和 ADASYN 是基於歐氏距離計算的，<strong>不能直接處理類別型資料</strong>（你不能計算「紅色」和「藍色」的平均值）。
+<ul>
+<li>若有類別特徵，應使用 <strong>SMOTE-NC (Nominal Continuous)</strong> 或 <strong>SMOTE-N</strong> 等變體，有興趣請自行研究。</li>
+</ul>
+</blockquote></li>
+</ul>
+</section>
+<section id="下欠採樣-undersampling" class="level4">
+<h4 class="anchored" data-anchor-id="下欠採樣-undersampling">下(欠)採樣 (Undersampling)</h4>
+<p>減少多數類別（如正常樣本）的數量。</p>
+<ul>
+<li><strong>隨機下(欠)採樣 (Random Undersampling)</strong>：
+<ul>
+<li><strong>做法</strong>：隨機刪除多數類別的樣本。</li>
+<li><strong>缺點</strong>：可能會丟掉重要的資訊（把有用的正常樣本刪掉了）。</li>
+<li><strong>例子</strong>：原本有 1000 筆正常資料，隨機丟掉 900 筆，只剩 100 筆。</li>
+</ul></li>
+<li><strong>Tomek Links</strong>：
+<ul>
+<li><strong>做法</strong>：找出那些「靠得很近」但「類別不同」的樣本對（Tomek Links）。通常這些點是雜訊或邊界模糊點。刪除其中的多數類別樣本。</li>
+<li><strong>優點</strong>：能讓類別邊界更清晰。</li>
+<li><strong>例子</strong>：一個「正常人」和一個「詐欺犯」長得超像（特徵很近），把那個「正常人」刪掉，讓那區變成詐欺犯的地盤。</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="類別權重調整-class-weights" class="level3">
+<h3 class="anchored" data-anchor-id="類別權重調整-class-weights">2. 類別權重調整 (Class Weights)</h3>
+<p>不改變資料，而是改變模型的<strong>計分方式</strong>。</p>
+<ul>
+<li><strong>做法</strong>：在訓練模型時，告訴模型：「答錯一筆少數類別（詐欺）的懲罰，是答錯一筆多數類別（正常）的 <strong>100 倍</strong>。」</li>
+<li><strong>效果</strong>：強迫模型重視少數類別，即使犧牲一點整體的準確率，也要把詐欺抓出來。</li>
+<li><strong>例子</strong>：
+<ul>
+<li>預測「正常」錯了：罰 1 元。</li>
+<li>預測「詐欺」錯了：罰 100 元。</li>
+<li>模型為了少賠錢，會寧可把「有點像詐欺的」都猜成詐欺。</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="chap-ai-foundation-chapter4-summary" class="level2">
+<h2 class="anchored" data-anchor-id="chap-ai-foundation-chapter4-summary">本章總結與考點提示</h2>
+<section id="核心概念回顧" class="level3">
+<h3 class="anchored" data-anchor-id="核心概念回顧">核心概念回顧</h3>
+<p>特徵工程是提升模型效能最有效的方法。</p>
+<ul>
+<li><strong>數值處理</strong>：
+<ul>
+<li><strong>縮放</strong>：標準化 (Z-score)、正規化 (Min-Max)。<strong>算距離的演算法必做</strong>。</li>
+<li><strong>轉換</strong>：Log 轉換（處理長尾/右偏）、分箱（抗雜訊）。</li>
+</ul></li>
+<li><strong>類別處理</strong>：
+<ul>
+<li><strong>有序</strong>：序數編碼 (Label Encoding)。</li>
+<li><strong>無序</strong>：獨熱編碼 (One-Hot Encoding)。小心維度災難。</li>
+</ul></li>
+<li><strong>特徵選擇</strong>：
+<ul>
+<li><strong>風險</strong>：特徵過多導致過度擬合、維度災難。</li>
+<li><strong>方法</strong>：過濾法 (Filter)、包裝法 (Wrapper)、嵌入法 (Embedded)。</li>
+</ul></li>
+<li><strong>不平衡資料</strong>：
+<ul>
+<li><strong>過採樣</strong>：SMOTE (連線造點)、ADASYN (專攻難點)。</li>
+<li><strong>欠採樣</strong>：隨機刪除、Tomek Links (清邊界)。</li>
+<li><strong>權重調整</strong>：增加少數類別懲罰。</li>
+</ul></li>
+</ul>
+</section>
+<section id="ai-應用規劃師認證考點" class="level3">
+<h3 class="anchored" data-anchor-id="ai-應用規劃師認證考點">AI 應用規劃師認證考點</h3>
+<p><strong>常考題型與解題策略</strong>：</p>
+<ol type="1">
+<li><strong>編碼選擇題</strong>：
+<ul>
+<li><em>例題</em>：「處理『衣服尺寸 (S, M, L)』應使用何種編碼？」</li>
+<li><strong>解答</strong>：序數編碼 (Ordinal Encoding)。</li>
+<li><em>例題</em>：「處理『居住城市』應使用何種編碼？若城市有 1000 個怎麼辦？」</li>
+<li><strong>解答</strong>：獨熱編碼 (One-Hot Encoding)；若類別太多則考慮 Embedding 或 Target Encoding。</li>
+</ul></li>
+<li><strong>不平衡資料處理題</strong>：
+<ul>
+<li><em>例題</em>：「SMOTE 的原理是什麼？」</li>
+<li><strong>解答</strong>：在少數類別樣本及其鄰居的連線上生成新樣本（非單純複製）。</li>
+<li><em>例題</em>：「資料中有大量類別型特徵，能直接用 SMOTE 嗎？」</li>
+<li><strong>解答</strong>：不能，需使用 SMOTE-NC。</li>
+</ul></li>
+<li><strong>特徵選擇題</strong>：
+<ul>
+<li><em>例題</em>：「為什麼特徵不是越多越好？」</li>
+<li><strong>解答</strong>：會導致過度擬合 (Overfitting) 和維度災難 (Curse of Dimensionality)。</li>
+</ul></li>
+</ol>
+</section>
+<section id="記憶口訣" class="level3">
+<h3 class="anchored" data-anchor-id="記憶口訣">記憶口訣</h3>
+<ul>
+<li><strong>有順序</strong>用序數，<strong>沒順序</strong>用獨熱。</li>
+<li><strong>算距離</strong>（KNN, SVM）要縮放，<strong>切規則</strong>（決策樹）免縮放。</li>
+<li><strong>SMOTE</strong>：「無中生有」（連線造點）。</li>
+<li><strong>Tomek Links</strong>：「劃清界線」（刪除邊界模糊點）。</li>
+</ul>
+</section>
+<section id="延伸思考" class="level3">
+<h3 class="anchored" data-anchor-id="延伸思考">延伸思考</h3>
+<ul>
+<li>為什麼 One-Hot Encoding 在類別太多時會失效？（維度災難，導致計算量大且模型難以收斂。解法：Target Encoding 或 Embedding）。</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./chapter3.html" class="pagination-link" aria-label="數據處理生命週期與架構">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">數據處理生命週期與架構</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./chapter5.html" class="pagination-link" aria-label="監督式學習演算法 (Supervised Learning Algorithms)">
+        <span class="nav-page-text"><span class="chapter-title">監督式學習演算法 (Supervised Learning Algorithms)</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
