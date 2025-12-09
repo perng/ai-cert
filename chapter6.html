@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="AI仁波切">
-<meta name="dcterms.date" content="2025-11-20">
 
-<title>AI 應用規劃師全攻略</title>
+<title>非監督式學習與強化學習 (Unsupervised &amp; Reinforcement Learning) – AI 應用規劃師全攻略</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./chapter1.html" rel="next">
+<link href="./chapter7.html" rel="next">
+<link href="./chapter5.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -72,6 +71,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -84,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">人工智慧基礎理論</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter5.html">第三部：機器學習演算法核心</a></li><li class="breadcrumb-item"><a href="./chapter6.html"><span class="chapter-title">非監督式學習與強化學習 (Unsupervised &amp; Reinforcement Learning)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -111,7 +139,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">人工智慧基礎理論</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">人工智慧基礎理論</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -172,7 +200,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">非監督式學習與強化學習 (Unsupervised &amp; Reinforcement Learning)</span></a>
+  <a href="./chapter6.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">非監督式學習與強化學習 (Unsupervised &amp; Reinforcement Learning)</span></a>
   </div>
 </li>
       </ul>
@@ -234,35 +262,46 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#前言" id="toc-前言" class="nav-link active" data-scroll-target="#前言">前言</a></li>
+  <li><a href="#sec-clustering" id="toc-sec-clustering" class="nav-link active" data-scroll-target="#sec-clustering">分群演算法 (Clustering)</a>
+  <ul class="collapse">
+  <li><a href="#sec-kmeans" id="toc-sec-kmeans" class="nav-link" data-scroll-target="#sec-kmeans">K-means 演算法</a></li>
+  <li><a href="#sec-hierarchical-clustering" id="toc-sec-hierarchical-clustering" class="nav-link" data-scroll-target="#sec-hierarchical-clustering">階層式分群 (Hierarchical Clustering)</a></li>
+  <li><a href="#sec-dbscan" id="toc-sec-dbscan" class="nav-link" data-scroll-target="#sec-dbscan">DBSCAN (Density-Based Spatial Clustering)</a></li>
+  </ul></li>
+  <li><a href="#sec-association-rules" id="toc-sec-association-rules" class="nav-link" data-scroll-target="#sec-association-rules">關聯規則與降維</a>
+  <ul class="collapse">
+  <li><a href="#sec-apriori" id="toc-sec-apriori" class="nav-link" data-scroll-target="#sec-apriori">Apriori 演算法 (購物籃分析)</a></li>
+  <li><a href="#降維技術-dimensionality-reduction" id="toc-降維技術-dimensionality-reduction" class="nav-link" data-scroll-target="#降維技術-dimensionality-reduction">降維技術 (Dimensionality Reduction)</a></li>
+  </ul></li>
+  <li><a href="#sec-reinforcement-learning-detail" id="toc-sec-reinforcement-learning-detail" class="nav-link" data-scroll-target="#sec-reinforcement-learning-detail">強化學習 (Reinforcement Learning)</a>
+  <ul class="collapse">
+  <li><a href="#sec-rl-elements" id="toc-sec-rl-elements" class="nav-link" data-scroll-target="#sec-rl-elements">核心要素 (RL Elements)</a></li>
+  <li><a href="#關鍵挑戰探索與利用-exploration-vs.-exploitation" id="toc-關鍵挑戰探索與利用-exploration-vs.-exploitation" class="nav-link" data-scroll-target="#關鍵挑戰探索與利用-exploration-vs.-exploitation">關鍵挑戰：探索與利用 (Exploration vs.&nbsp;Exploitation)</a></li>
+  <li><a href="#sec-rl-algorithms" id="toc-sec-rl-algorithms" class="nav-link" data-scroll-target="#sec-rl-algorithms">常見演算法</a></li>
+  </ul></li>
+  <li><a href="#chap-ai-foundation-chapter6-summary" id="toc-chap-ai-foundation-chapter6-summary" class="nav-link" data-scroll-target="#chap-ai-foundation-chapter6-summary">本章總結與考點提示</a>
+  <ul class="collapse">
+  <li><a href="#核心概念回顧" id="toc-核心概念回顧" class="nav-link" data-scroll-target="#核心概念回顧">核心概念回顧</a></li>
+  <li><a href="#ai-應用規劃師認證考點" id="toc-ai-應用規劃師認證考點" class="nav-link" data-scroll-target="#ai-應用規劃師認證考點">AI 應用規劃師認證考點</a></li>
+  <li><a href="#記憶口訣" id="toc-記憶口訣" class="nav-link" data-scroll-target="#記憶口訣">記憶口訣</a></li>
+  <li><a href="#延伸思考" id="toc-延伸思考" class="nav-link" data-scroll-target="#延伸思考">延伸思考</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter5.html">第三部：機器學習演算法核心</a></li><li class="breadcrumb-item"><a href="./chapter6.html"><span class="chapter-title">非監督式學習與強化學習 (Unsupervised &amp; Reinforcement Learning)</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">AI 應用規劃師全攻略</h1>
+<h1 class="title"><span class="chapter-title">非監督式學習與強化學習 (Unsupervised &amp; Reinforcement Learning)</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>AI仁波切 </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">November 20, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -272,12 +311,381 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="前言" class="level1 unnumbered">
-<h1 class="unnumbered">前言</h1>
-<p><strong>適用對象：</strong> 準備經濟部 iPAS AI 應用規劃師（初/中級）之考生。</p>
-<p>本攻略旨在協助考生掌握 AI 應用規劃師之核心知識， 內容涵蓋人工智慧基礎、 機器學習、 深度學習、 生成式 AI、 大數據分析、 AI 倫理與法規， 以及 Python 程式語言基礎。</p>
+<!-- # 非監督式學習與強化學習 (Unsupervised & Reinforcement Learning) -->
+<p>如果說監督式學習是「有老師教」，那麼<strong>非監督式學習 (Unsupervised Learning)</strong> 就是「自修」，讓 AI 在沒有標準答案的情況下，自己從資料中尋找隱藏的結構。而<strong>強化學習 (Reinforcement Learning)</strong> 則是「從做中學」，像生物一樣透過與環境互動、嘗試錯誤來學習生存策略。</p>
+<section id="sec-clustering" class="level2">
+<h2 class="anchored" data-anchor-id="sec-clustering">分群演算法 (Clustering)</h2>
+<p>分群的目標是「物以類聚」，將相似的資料點歸為同一群，而群與群之間差異越大越好。</p>
+<section id="為什麼要做分群-why-clustering" class="level4">
+<h4 class="anchored" data-anchor-id="為什麼要做分群-why-clustering">為什麼要做分群？ (Why Clustering?)</h4>
+<p>在沒有標籤的情況下，分群能幫助我們： 1. <strong>發現隱藏結構</strong>：找出資料中自然的群聚現象。 2. <strong>簡化數據</strong>：用少數幾個「群代表」來概括大量數據。 3. <strong>作為前處理</strong>：分群結果可以作為監督式學習的新特徵。</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/why_clustering.webp" class="img-fluid figure-img"></p>
+<figcaption>為什麼要做分群？</figcaption>
+</figure>
+</div>
+</section>
+<section id="常見應用場景-applications" class="level4">
+<h4 class="anchored" data-anchor-id="常見應用場景-applications">常見應用場景 (Applications)</h4>
+<ul>
+<li><strong>客戶分群 (Customer Segmentation)</strong>：
+<ul>
+<li>根據消費行為（如 RFM 模型）將客戶分為「高價值」、「沈睡」、「新客」等群體，進行精準行銷。</li>
+</ul></li>
+<li><strong>圖像分割 (Image Segmentation)</strong>：
+<ul>
+<li>將顏色相似的像素歸為一群，用於物體識別或影像壓縮。</li>
+</ul></li>
+<li><strong>異常偵測 (Anomaly Detection)</strong>：
+<ul>
+<li>那些「不屬於任何一群」或「距離群中心很遠」的點，往往就是異常（如信用卡盜刷、產線瑕疵）。</li>
+</ul></li>
+<li><strong>文件分群 (Document Clustering)</strong>：
+<ul>
+<li>將大量新聞或文章自動歸類為「體育」、「財經」、「政治」等主題。</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clustering_applications.webp" class="img-fluid figure-img"></p>
+<figcaption>分群常見應用場景</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-kmeans" class="level3">
+<h3 class="anchored" data-anchor-id="sec-kmeans">K-means 演算法</h3>
+<p>這是最簡單也最常用的分群方法。</p>
+<ul>
+<li><strong>運作步驟</strong>：
+<ol type="1">
+<li><strong>初始化</strong>：隨機選定 <strong>K</strong> 個點作為初始中心（質心）。</li>
+<li><strong>分配</strong>：將每個資料點分配給距離最近的中心。</li>
+<li><strong>更新</strong>：計算每一群的新平均位置，移動中心點到新位置。</li>
+<li><strong>重複</strong>：重複步驟 2-3，直到中心點不再移動或收斂。</li>
+</ol></li>
+<li><strong>如何決定 K 值？</strong>
+<ul>
+<li><strong>手肘法 (Elbow Method)</strong>：畫出 K 值與誤差平方和 (SSE) 的圖。當 K 增加時，誤差會下降，但在某個點下降幅度會變緩（像手肘彎曲處），那個點通常就是最佳的 K。</li>
+</ul></li>
+<li><strong>優缺點</strong>：
+<ul>
+<li><em>優點</em>：速度快，適合大數據。</li>
+<li><em>缺點</em>：必須事先指定 K；對<strong>離群值</strong>敏感；只能分出圓形/球形的群聚。</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/kmeans.webp" class="img-fluid figure-img"></p>
+<figcaption>K-means</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-hierarchical-clustering" class="level3">
+<h3 class="anchored" data-anchor-id="sec-hierarchical-clustering">階層式分群 (Hierarchical Clustering)</h3>
+<ul>
+<li><strong>核心概念</strong>：建立一個樹狀結構（樹狀圖 Dendrogram），不需要事先決定 K 值。</li>
+<li><strong>做法</strong>：
+<ul>
+<li><strong>聚合式 (Agglomerative)</strong>：由下而上。一開始每個點都是一群，然後慢慢把最近的兩群合併，直到剩下一大群。</li>
+<li><strong>分裂式 (Divisive)</strong>：由上而下。一開始所有點是一大群，然後慢慢切分。</li>
+</ul></li>
+<li><strong>優缺點</strong>：
+<ul>
+<li><em>優點</em>：不需要指定 K，樹狀圖能完整呈現資料的層次結構。</li>
+<li><em>缺點</em>：計算量大，不適合大數據。</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/hierarchical_clustering.webp" class="img-fluid figure-img"></p>
+<figcaption>階層式分群</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-dbscan" class="level3">
+<h3 class="anchored" data-anchor-id="sec-dbscan">DBSCAN (Density-Based Spatial Clustering)</h3>
+<ul>
+<li><strong>核心概念</strong>：基於<strong>密度</strong>的分群。只要點夠密集（在半徑 <strong>𝞮</strong> 內有超過 MinPts 個點）就算同一群，如果不夠密集就被視為雜訊。</li>
+<li><strong>優勢</strong>：
+<ol type="1">
+<li>可以找出<strong>任意形狀</strong>的群聚（如彎月形、包圍形），不像 K-means 只能找圓形。</li>
+<li>能自動識別並排除<strong>離群值 (Outliers)</strong>，不會硬要把雜訊歸類。</li>
+</ol></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/dbscan.webp" class="img-fluid figure-img"></p>
+<figcaption>DBSCAN</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="sec-association-rules" class="level2">
+<h2 class="anchored" data-anchor-id="sec-association-rules">關聯規則與降維</h2>
+<section id="sec-apriori" class="level3">
+<h3 class="anchored" data-anchor-id="sec-apriori">Apriori 演算法 (購物籃分析)</h3>
+<ul>
+<li><p><strong>經典案例</strong>：「啤酒與尿布」。沃爾瑪透過分析發現，週五晚上買尿布的爸爸，通常也會順便買啤酒。</p></li>
+<li><p><strong>目的 (What is this for?)</strong>：</p>
+<ul>
+<li>找出資料庫中隱藏的<strong>關聯模式</strong> (Pattern Discovery)。</li>
+<li>回答「如果發生 X，是否通常也會發生 Y？」的問題。</li>
+<li><strong>應用</strong>：商品陳列優化（把相關商品擺一起）、推薦系統（買了這本書的人也買了…）、醫療診斷（症狀 A 通常伴隨症狀 B）。</li>
+</ul></li>
+<li><p><strong>三大指標與計算範例</strong>： 假設總共有 100 筆訂單。</p>
+<ul>
+<li>買牛奶 (A) 的有 50 筆。 (<strong>P(A) = 0.5</strong>)</li>
+<li>買麵包 (B) 的有 40 筆。 (<strong>P(B) = 0.4</strong>)</li>
+<li><strong>同時買</strong>牛奶與麵包 的有 30 筆。 P(A ∩ B) = 0.3</li>
+</ul>
+<ol type="1">
+<li><strong>支持度 (Support)</strong>：組合出現的頻率。
+<ul>
+<li><span class="math inline">\(Support(A, B) = P(A \cap B) = \mathbf{0.3}\)</span> (30%)</li>
+<li><em>意義</em>：這個組合夠不夠普遍？如果太低（如 0.001%），可能只是偶然，不值得分析。</li>
+</ul></li>
+<li><strong>信心度 (Confidence)</strong>：買了 A 的人，有多大概率也會買 B。
+<ul>
+<li><span class="math inline">\(Confidence(A \to B) = P(B|A) = \frac{0.3}{0.5} = \mathbf{0.6}\)</span> (60%)</li>
+<li><em>意義</em>：關聯夠不夠強？買牛奶的人有 60% 會順便買麵包。</li>
+</ul></li>
+<li><strong>提升度 (Lift)</strong>：A 的出現是否有助於 B 的出現（比較基準是 B 的自然發生率）。
+<ul>
+<li><span class="math inline">\(Lift(A \to B) = \frac{Confidence(A \to B)}{P(B)} = \frac{0.6}{0.4} = \mathbf{1.5}\)</span></li>
+<li><em>判讀</em>：
+<ul>
+<li><strong>Lift &gt; 1</strong>：<strong>正相關</strong> (1.5)。買牛奶會<strong>提升</strong>買麵包的機率（提升了 1.5 倍）。</li>
+<li><strong>Lift = 1</strong>：無關。</li>
+<li><strong>Lift &lt; 1</strong>：負相關。</li>
+</ul></li>
+</ul></li>
+</ol></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/apriori.webp" class="img-fluid figure-img"></p>
+<figcaption>Apriori</figcaption>
+</figure>
+</div>
+</section>
+<section id="降維技術-dimensionality-reduction" class="level3">
+<h3 class="anchored" data-anchor-id="降維技術-dimensionality-reduction">降維技術 (Dimensionality Reduction)</h3>
+<p>當特徵太多時，我們需要「降維」來簡化問題。</p>
+<ul>
+<li><strong>主成分分析 (PCA, Principal Component Analysis)</strong>：
+<ul>
+<li><strong>核心概念</strong>：這是一種<strong>線性降維</strong>技術。它的目標是找到一個新的視角（投影方向），讓資料在這個方向上的<strong>變異量 (Variance)</strong> 最大。</li>
+<li><strong>類比</strong>：想像一個懸浮在空中的茶壺。
+<ul>
+<li>如果你從上方看（投影），可能只看到一個圓圈（資訊遺失多）。</li>
+<li>如果你從側面看，能清楚看到壺嘴和把手（資訊保留多）。</li>
+<li>PCA 就是要找出這個「資訊保留最多」的最佳視角。</li>
+</ul></li>
+<li><strong>缺點</strong>：只能處理線性關係，無法展開捲曲的結構（如瑞士捲資料）。</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/pca.webp" class="img-fluid figure-img"></p>
+<figcaption>PCA</figcaption>
+</figure>
+</div>
+<ul>
+<li><strong>t-SNE 與 UMAP</strong>：
+<ul>
+<li><strong>用途</strong>：專門用於<strong>資料視覺化</strong>（將高維資料壓到 2D 或 3D）。</li>
+<li><strong>特點</strong>：非線性降維，能很好地保留資料的<strong>局部結構</strong>（相似的點在低維空間依然靠很近）。</li>
+</ul></li>
+<li><strong>自動編碼器 (Autoencoder)</strong>：
+<ul>
+<li><strong>核心概念</strong>：一種基於神經網路的非線性降維。利用「壓縮」強迫模型學會資料的精髓。</li>
+<li><strong>架構</strong>：
+<ol type="1">
+<li><strong>編碼器 (Encoder)</strong>：將輸入 <strong>X</strong> 壓縮成低維度的向量 <strong>Z</strong>（稱為瓶頸層 Bottleneck）。</li>
+<li><strong>解碼器 (Decoder)</strong>：嘗試從 <strong>Z</strong> 還原回原始輸入 <span class="math inline">\(\hat{X}\)</span>。</li>
+</ol></li>
+<li><strong>關鍵</strong>：訓練目標是讓還原誤差 <span class="math inline">\(X - \hat{X}\)</span> 越小越好。</li>
+<li><strong>應用</strong>：
+<ul>
+<li><strong>去噪 (Denoising)</strong>：輸入雜訊圖，要求輸出乾淨圖。AI 會學會忽略雜訊，只還原物體結構。</li>
+<li><strong>異常偵測 (Anomaly Detection)</strong>：只用「正常資料」訓練。當遇到「異常資料」時，模型會因為沒看過而無法還原，導致<strong>還原誤差極大</strong>，藉此抓出異常。</li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/autoencoder.webp" class="img-fluid figure-img"></p>
+<figcaption>Autoencoder</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="sec-reinforcement-learning-detail" class="level2">
+<h2 class="anchored" data-anchor-id="sec-reinforcement-learning-detail">強化學習 (Reinforcement Learning)</h2>
+<p>強化學習是 AI 邁向自主決策的關鍵，目標是訓練一個 Agent 在環境中採取行動，以最大化累積獎勵。</p>
+<section id="sec-rl-elements" class="level3">
+<h3 class="anchored" data-anchor-id="sec-rl-elements">核心要素 (RL Elements)</h3>
+<p>以「超級瑪利歐」遊戲為例：</p>
+<ol type="1">
+<li><strong>代理人 (Agent)</strong>：瑪利歐（學習的主角）。</li>
+<li><strong>環境 (Environment)</strong>：遊戲關卡（充滿水管、磚塊、敵人）。</li>
+<li><strong>狀態 (State)</strong>：當前的畫面（瑪利歐的位置、敵人的位置）。</li>
+<li><strong>行動 (Action)</strong>：手把的操作（左、右、跳、發射火球）。</li>
+<li><strong>獎勵 (Reward)</strong>：環境給的回饋。
+<ul>
+<li>正獎勵：吃到金幣 (+10)、過關 (+100)。</li>
+<li>負獎勵 (Penalty)：碰到烏龜 (-10)、掉進洞裡 (-100)、時間流逝 (-1)。</li>
+</ul></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/rl.webp" class="img-fluid figure-img"></p>
+<figcaption>RL</figcaption>
+</figure>
+</div>
+</section>
+<section id="關鍵挑戰探索與利用-exploration-vs.-exploitation" class="level3">
+<h3 class="anchored" data-anchor-id="關鍵挑戰探索與利用-exploration-vs.-exploitation">關鍵挑戰：探索與利用 (Exploration vs.&nbsp;Exploitation)</h3>
+<ul>
+<li><strong>探索 (Exploration)</strong>：嘗試新的、未知的路徑。
+<ul>
+<li><em>目的</em>：尋找潛在的更好策略（但也可能踩雷）。</li>
+</ul></li>
+<li><strong>利用 (Exploitation)</strong>：堅持目前已知最好的策略。
+<ul>
+<li><em>目的</em>：確保獲得穩定的高分。</li>
+</ul></li>
+<li><strong>𝞮-Greedy 策略</strong>：
+<ul>
+<li>設定一個機率 <strong>𝞮</strong>（例如 10%）。</li>
+<li>10% 的時間隨機亂試（探索）。</li>
+<li>90% 的時間選擇目前認為最好的動作（利用）。</li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-rl-algorithms" class="level3">
+<h3 class="anchored" data-anchor-id="sec-rl-algorithms">常見演算法</h3>
+<ul>
+<li><strong>Q-Learning (基於表格的方法)</strong>：
+<ul>
+<li><strong>核心概念</strong>：建立一張巨大的查閱表 <strong>(Q-Table)</strong>。
+<ul>
+<li><strong>列 (Row)</strong>：代表所有的「狀態」(State)。</li>
+<li><strong>行 (Column)</strong>：代表所有的「動作」(Action)。</li>
+<li><strong>值 (Q-Value)</strong>：代表在該狀態下，採取該動作後，預期未來能拿到的總獎勵。</li>
+</ul></li>
+<li><strong>運作</strong>：AI 查表找 Q 值最大的動作去做。做完後，根據拿到的獎勵更新表格。</li>
+<li><strong>缺點</strong>：<strong>維度災難</strong>。當狀態太多（如圍棋棋盤有 10<sup>170</sup> 種狀態，比宇宙原子還多）時，表格根本存不下，也查不完。</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/q-learning.webp" class="img-fluid figure-img"></p>
+<figcaption>Q-Learning</figcaption>
+</figure>
+</div>
+<ul>
+<li><strong>Deep Q-Network (DQN, 深度強化學習)</strong>：
+<ul>
+<li><strong>核心概念</strong>：結合深度學習。用一個<strong>神經網路 (Brain)</strong> 來取代 Q-Table (Cheat Sheet)。</li>
+<li><strong>運作</strong>：輸入「畫面 (State)」，神經網路直接輸出每個動作的 Q 值。</li>
+<li><strong>兩大創新 (讓訓練穩定的關鍵)</strong>：
+<ol type="1">
+<li><strong>經驗重播 (Experience Replay)</strong>：
+<ul>
+<li><strong>問題</strong>：玩遊戲是連續的，前後畫面高度相關。如果 AI 只學剛發生的事，容易「鑽牛角尖」忘記以前的經驗。</li>
+<li><strong>解法</strong>：將玩過的過程存進「記憶庫」。訓練時<strong>隨機抽取</strong>片段來學習。</li>
+<li><em>類比</em>：就像準備考試不能只看最後一章，要<strong>隨機抽背</strong>整本書的單字卡，才能學得全面。</li>
+</ul></li>
+<li><strong>目標網路 (Target Network)</strong>：
+<ul>
+<li><strong>問題</strong>：DQN 在更新時，目標值 (Target) 是由同一個網路算出來的。這就像「球員兼裁判」，導致目標一直變動，訓練很難收斂。</li>
+<li><strong>解法</strong>：複製一個<strong>固定不動</strong>的網路專門算目標值，每隔一段時間（如 1000 步）才更新一次。</li>
+<li><em>類比</em>：就像射箭練習。如果靶心一直亂動（目標變動），很難射準。Target Network 就是把<strong>靶心固定住</strong>，讓你練一陣子後，再把靶心移到新位置。</li>
+</ul></li>
+</ol></li>
+<li><em>成就</em>：DeepMind 用 DQN 讓 AI 學會玩 Atari 遊戲（如打磚塊），表現超越人類。</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/dqn.webp" class="img-fluid figure-img"></p>
+<figcaption>DQN</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="chap-ai-foundation-chapter6-summary" class="level2">
+<h2 class="anchored" data-anchor-id="chap-ai-foundation-chapter6-summary">本章總結與考點提示</h2>
+<section id="核心概念回顧" class="level3">
+<h3 class="anchored" data-anchor-id="核心概念回顧">核心概念回顧</h3>
+<p>本章涵蓋了沒有標準答案的學習方式。</p>
+<ul>
+<li><strong>分群 (Clustering)</strong>：
+<ul>
+<li><strong>K-means</strong>：找圓形群聚，需指定 K。</li>
+<li><strong>DBSCAN</strong>：找高密度群聚，能抗雜訊，免指定 K。</li>
+<li><strong>階層式</strong>：畫樹狀圖，層次分明。</li>
+</ul></li>
+<li><strong>關聯規則</strong>：
+<ul>
+<li><strong>Apriori</strong>：啤酒與尿布。指標：Support, Confidence, Lift。</li>
+</ul></li>
+<li><strong>降維</strong>：
+<ul>
+<li><strong>PCA</strong>：找變異最大的投影方向。</li>
+<li><strong>Autoencoder</strong>：壓縮再還原。</li>
+</ul></li>
+<li><strong>強化學習 (RL)</strong>：
+<ul>
+<li><strong>要素</strong>：Agent, Environment, Reward, Action, State.</li>
+<li><strong>核心</strong>：最大化累積獎勵。探索 vs 利用。</li>
+</ul></li>
+</ul>
+</section>
+<section id="ai-應用規劃師認證考點" class="level3">
+<h3 class="anchored" data-anchor-id="ai-應用規劃師認證考點">AI 應用規劃師認證考點</h3>
+<p><strong>常考題型與解題策略</strong>：</p>
+<ol type="1">
+<li><strong>分群演算法比較</strong>：
+<ul>
+<li><em>例題</em>：「資料形狀不規則（如彎月形），且有許多雜訊，應選哪個分群法？」</li>
+<li><strong>解答</strong>：DBSCAN。K-means 做不到。</li>
+<li><em>例題</em>：「不知道要分幾群，想看資料的層次結構？」</li>
+<li><strong>解答</strong>：階層式分群。</li>
+</ul></li>
+<li><strong>關聯規則指標</strong>：
+<ul>
+<li><em>例題</em>：「Lift &gt; 1 代表什麼？」</li>
+<li><strong>解答</strong>：正相關（買 A 會促進買 B）。</li>
+<li><em>例題</em>：「Lift &lt; 1 代表什麼？」</li>
+<li><strong>解答</strong>：負相關（買 A 的人反而不買 B）。</li>
+</ul></li>
+<li><strong>強化學習應用</strong>：
+<ul>
+<li><em>例題</em>：「訓練 AI 玩瑪利歐賽車，屬於哪種學習範式？」</li>
+<li><strong>解答</strong>：強化學習。因為有明確的獎勵（名次、金幣）與懲罰（撞牆）。</li>
+</ul></li>
+</ol>
+</section>
+<section id="記憶口訣" class="level3">
+<h3 class="anchored" data-anchor-id="記憶口訣">記憶口訣</h3>
+<ul>
+<li><strong>K-means</strong>：「物以類聚，人以群分」（算距離）。</li>
+<li><strong>DBSCAN</strong>：「人多的地方不要去」（算密度）。</li>
+<li><strong>Apriori</strong>：「啤酒尿布」（關聯）。</li>
+<li><strong>RL</strong>：「糖果與鞭子」（獎勵與懲罰）。</li>
+</ul>
+</section>
+<section id="延伸思考" class="level3">
+<h3 class="anchored" data-anchor-id="延伸思考">延伸思考</h3>
+<ul>
+<li>為什麼 K-means 對離群值很敏感？（因為平均數會被拉走，導致中心點偏移）。</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -683,10 +1091,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./chapter5.html" class="pagination-link" aria-label="監督式學習演算法 (Supervised Learning Algorithms)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">監督式學習演算法 (Supervised Learning Algorithms)</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter1.html" class="pagination-link" aria-label="人工智慧的本質與層次架構">
-        <span class="nav-page-text"><span class="chapter-title">人工智慧的本質與層次架構</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter7.html" class="pagination-link" aria-label="神經網路架構演進 (Neural Network Architecture Evolution)">
+        <span class="nav-page-text"><span class="chapter-title">神經網路架構演進 (Neural Network Architecture Evolution)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

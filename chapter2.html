@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="AI仁波切">
-<meta name="dcterms.date" content="2025-11-20">
 
-<title>AI 應用規劃師全攻略</title>
+<title>AI 應用問題類型 – AI 應用規劃師全攻略</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./chapter1.html" rel="next">
+<link href="./chapter3.html" rel="next">
+<link href="./chapter1.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -84,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">人工智慧基礎理論</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter1.html">第一部：人工智慧基礎與戰略定位</a></li><li class="breadcrumb-item"><a href="./chapter2.html"><span class="chapter-title">AI 應用問題類型</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -111,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">人工智慧基礎理論</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">人工智慧基礎理論</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -130,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI 應用問題類型</span></a>
+  <a href="./chapter2.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">AI 應用問題類型</span></a>
   </div>
 </li>
       </ul>
@@ -234,35 +233,44 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#前言" id="toc-前言" class="nav-link active" data-scroll-target="#前言">前言</a></li>
+  <li><a href="#sec-learning-paradigms" id="toc-sec-learning-paradigms" class="nav-link active" data-scroll-target="#sec-learning-paradigms">學習範式</a>
+  <ul class="collapse">
+  <li><a href="#sec-supervised-learning" id="toc-sec-supervised-learning" class="nav-link" data-scroll-target="#sec-supervised-learning">監督式學習 (Supervised Learning)</a></li>
+  <li><a href="#sec-unsupervised-learning" id="toc-sec-unsupervised-learning" class="nav-link" data-scroll-target="#sec-unsupervised-learning">非監督式學習 (Unsupervised Learning)</a></li>
+  <li><a href="#sec-semi-supervised-learning" id="toc-sec-semi-supervised-learning" class="nav-link" data-scroll-target="#sec-semi-supervised-learning">半監督式學習 (Semi-supervised Learning)</a></li>
+  <li><a href="#sec-reinforcement-learning" id="toc-sec-reinforcement-learning" class="nav-link" data-scroll-target="#sec-reinforcement-learning">強化學習 (Reinforcement Learning)</a></li>
+  <li><a href="#sec-transfer-learning" id="toc-sec-transfer-learning" class="nav-link" data-scroll-target="#sec-transfer-learning">遷移學習 (Transfer Learning)</a></li>
+  </ul></li>
+  <li><a href="#sec-data-analysis-levels" id="toc-sec-data-analysis-levels" class="nav-link" data-scroll-target="#sec-data-analysis-levels">資料分析層次</a>
+  <ul class="collapse">
+  <li><a href="#sec-descriptive-analysis" id="toc-sec-descriptive-analysis" class="nav-link" data-scroll-target="#sec-descriptive-analysis">1. 描述性分析 (Descriptive Analysis): 發生了什麼？</a></li>
+  <li><a href="#sec-diagnostic-analysis" id="toc-sec-diagnostic-analysis" class="nav-link" data-scroll-target="#sec-diagnostic-analysis">2. 診斷性分析 (Diagnostic Analysis): 為什麼發生？</a></li>
+  <li><a href="#sec-predictive-analysis" id="toc-sec-predictive-analysis" class="nav-link" data-scroll-target="#sec-predictive-analysis">3. 預測性分析 (Predictive Analysis): 將會發生什麼？</a></li>
+  <li><a href="#sec-prescriptive-analysis" id="toc-sec-prescriptive-analysis" class="nav-link" data-scroll-target="#sec-prescriptive-analysis">4. 處方性分析 (Prescriptive Analysis): 應該怎麼做？</a></li>
+  </ul></li>
+  <li><a href="#chap-ai-foundation-chapter2-summary" id="toc-chap-ai-foundation-chapter2-summary" class="nav-link" data-scroll-target="#chap-ai-foundation-chapter2-summary">本章總結與考點提示</a>
+  <ul class="collapse">
+  <li><a href="#核心概念回顧" id="toc-核心概念回顧" class="nav-link" data-scroll-target="#核心概念回顧">核心概念回顧</a></li>
+  <li><a href="#ai-應用規劃師認證考點" id="toc-ai-應用規劃師認證考點" class="nav-link" data-scroll-target="#ai-應用規劃師認證考點">AI 應用規劃師認證考點</a></li>
+  <li><a href="#記憶口訣" id="toc-記憶口訣" class="nav-link" data-scroll-target="#記憶口訣">記憶口訣</a></li>
+  <li><a href="#延伸思考" id="toc-延伸思考" class="nav-link" data-scroll-target="#延伸思考">延伸思考</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter1.html">第一部：人工智慧基礎與戰略定位</a></li><li class="breadcrumb-item"><a href="./chapter2.html"><span class="chapter-title">AI 應用問題類型</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">AI 應用規劃師全攻略</h1>
+<h1 class="title"><span class="chapter-title">AI 應用問題類型</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>AI仁波切 </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">November 20, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -272,12 +280,300 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="前言" class="level1 unnumbered">
-<h1 class="unnumbered">前言</h1>
-<p><strong>適用對象：</strong> 準備經濟部 iPAS AI 應用規劃師（初/中級）之考生。</p>
-<p>本攻略旨在協助考生掌握 AI 應用規劃師之核心知識， 內容涵蓋人工智慧基礎、 機器學習、 深度學習、 生成式 AI、 大數據分析、 AI 倫理與法規， 以及 Python 程式語言基礎。</p>
+<!-- # AI 應用問題類型 -->
+<p>在開始深入各種技術細節之前，我們需要先了解 AI 究竟能解決什麼樣的問題。這就像在學習使用工具箱之前，先了解有哪些類型的釘子和螺絲一樣。本章將介紹 AI 的學習範式（它是如何學習的）以及資料分析的層次（它能提供多深的見解）。</p>
+<section id="sec-learning-paradigms" class="level2">
+<h2 class="anchored" data-anchor-id="sec-learning-paradigms">學習範式</h2>
+<p>機器學習的核心在於「從資料中學習」。根據資料的型態以及學習的方式，我們可以將其分為幾種主要的範式。</p>
+<section id="sec-supervised-learning" class="level3">
+<h3 class="anchored" data-anchor-id="sec-supervised-learning">監督式學習 (Supervised Learning)</h3>
+<p>這是目前應用最廣泛的 AI 學習方式。想像一位<strong>老師</strong>在教導學生，老師會提供題目（輸入資料）以及標準答案（標籤）。學生的目標是找出題目與答案之間的關聯規則，以便將來遇到沒有答案的新題目時，也能答對。</p>
+<ul>
+<li><strong>關鍵要素</strong>：需要有標籤的資料 (Labeled Data)。</li>
+<li><strong>生活案例</strong>：
+<ul>
+<li><strong>垃圾郵件過濾</strong>：系統看過成千上萬封標示為「垃圾信」或「正常信」的郵件後，學會分辨新郵件。</li>
+<li><strong>房價預測</strong>：根據過去房屋的坪數、地點、屋齡（輸入）以及最終成交價（答案），預測新房子的價格。</li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-unsupervised-learning" class="level3">
+<h3 class="anchored" data-anchor-id="sec-unsupervised-learning">非監督式學習 (Unsupervised Learning)</h3>
+<p>這種方式就像是<strong>自修</strong>，或者是一個嬰兒在探索世界。沒有老師告訴它什麼是對的、什麼是錯的，也沒有標準答案。模型必須自己從資料中尋找隱藏的結構或規律。</p>
+<ul>
+<li><strong>關鍵要素</strong>：只有輸入資料，沒有標籤。</li>
+<li><strong>生活案例</strong>：
+<ul>
+<li><strong>顧客分群 (Customer Segmentation)</strong>：電商平台分析消費者的購買紀錄，自動將顧客分成「精打細算型」、「衝動購物型」等群體，但系統事先並不知道這些群體的定義。</li>
+<li><strong>異常偵測</strong>：信用卡公司分析刷卡行為，發現某筆交易與平常的模式差異過大，判定為潛在盜刷。</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/supervised.webp" class="img-fluid figure-img"></p>
+<figcaption>監督式學習與非監督式學習</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-semi-supervised-learning" class="level3">
+<h3 class="anchored" data-anchor-id="sec-semi-supervised-learning">半監督式學習 (Semi-supervised Learning)</h3>
+<p>這是一種折衷方案。在現實世界中，取得有標籤的資料往往很昂貴（需要人工標註），但沒標籤的資料卻隨處可見。半監督式學習結合了少量的標籤資料和大量的無標籤資料。</p>
+<ul>
+<li><strong>類比</strong>：老師只教了幾個核心概念（少量標籤），剩下的要學生舉一反三，從大量練習題中自己摸索（大量無標籤）。</li>
+<li><strong>應用</strong>：醫療影像分析（醫生標註幾張 X 光片很花時間，但醫院有大量未標註的片子）。</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/semi-supervised.webp" class="img-fluid figure-img"></p>
+<figcaption>半監督式學習</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-reinforcement-learning" class="level3">
+<h3 class="anchored" data-anchor-id="sec-reinforcement-learning">強化學習 (Reinforcement Learning)</h3>
+<p>這就像是<strong>訓練寵物</strong>。我們不會直接告訴 AI 每一步該怎麼走，而是讓它在一個環境中嘗試。做對了就給予獎勵（Reward），做錯了就給予懲罰（Penalty）。AI 的目標是透過不斷嘗試錯誤（Trial and Error），找出能獲得最大累積獎勵的策略。</p>
+<p>強化學習的過程可以拆解為以下幾個關鍵要素的互動：</p>
+<ol type="1">
+<li><strong>代理人 (Agent)</strong>：也就是正在學習的 AI 模型（例如：掃地機器人）。</li>
+<li><strong>環境 (Environment)</strong>：代理人所處的世界（例如：充滿家具的客廳）。</li>
+<li><strong>狀態 (State)</strong>：代理人當前的情況（例如：前方 10 公分有障礙物）。</li>
+<li><strong>行動 (Action)</strong>：代理人採取的動作（例如：向左轉）。</li>
+<li><strong>獎勵 (Reward)</strong>：環境給予的回饋（例如：成功避開障礙物得 +1 分，撞到桌腳得 -10 分）。</li>
+</ol>
+<p><strong>探索與利用 (Exploration vs.&nbsp;Exploitation)</strong></p>
+<p>強化學習中有一個經典的難題：</p>
+<ul>
+<li><p><strong>探索 (Exploration)</strong>：嘗試新的、未知的行動，希望能發現更好的策略（但也可能失敗）。</p></li>
+<li><p><strong>利用 (Exploitation)</strong>：堅持目前已知最好的策略，確保獲得穩定的獎勵。 AI 必須在這兩者之間取得平衡，才能不斷進步。</p></li>
+<li><p><strong>生活案例</strong>：</p>
+<ul>
+<li><strong>AlphaGo</strong>：圍棋程式透過無數次的自我對弈，學習如何贏得比賽。它不僅學習人類棋譜，更透過自我探索發現了人類未曾想過的下法。</li>
+<li><strong>掃地機器人</strong>：在房間裡碰撞學習，慢慢規劃出最有效率的清掃路徑，同時避開障礙物。</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/reinforcement-learning.webp" class="img-fluid figure-img"></p>
+<figcaption>強化學習</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-transfer-learning" class="level3">
+<h3 class="anchored" data-anchor-id="sec-transfer-learning">遷移學習 (Transfer Learning)</h3>
+<p>這就是所謂的「站在巨人的肩膀上」。人類在學習新技能時，通常會運用舊有的經驗。例如學會騎腳踏車的人，學騎機車會比較快。遷移學習就是將一個已經訓練好的強大模型（預訓練模型），微調後應用到新的、類似的任務上。</p>
+<ul>
+<li><strong>優勢</strong>：不需要從頭開始訓練，大幅節省時間與資料需求。</li>
+<li><strong>生活案例</strong>：
+<ul>
+<li><strong>醫療影像診斷</strong>：使用一個已經看過數百萬張日常照片（如貓、狗、車）的模型，因為它已經學會了如何辨識邊緣、形狀和紋理，只需要再給它少量的 X 光片或 MRI 影像，它就能快速學會判讀病灶。</li>
+<li><strong>特定領域的語言模型</strong>：使用像 GPT 這樣已經讀過整個網際網路的通用模型，針對「法律文件」或「醫療報告」進行微調，讓它變成該領域的專家助手。</li>
+<li><strong>風格轉換</strong>：將一位畫家（如梵谷）的畫風「遷移」到一張普通的風景照上，讓照片瞬間變成名畫風格。</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/transfer-learning.webp" class="img-fluid figure-img"></p>
+<figcaption>遷移學習</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="sec-data-analysis-levels" class="level2">
+<h2 class="anchored" data-anchor-id="sec-data-analysis-levels">資料分析層次</h2>
+<p>AI 與資料科學不僅僅是預測未來，它在商業應用上通常被分為四個價值層次，由淺入深：</p>
+<section id="sec-descriptive-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="sec-descriptive-analysis">1. 描述性分析 (Descriptive Analysis): 發生了什麼？</h3>
+<p>這是最基礎的層次，重點在於<strong>總結過去</strong>。透過報表、儀表板 (Dashboard) 來呈現歷史數據。</p>
+<ul>
+<li><strong>例子</strong>：
+<ul>
+<li><strong>銷售報表</strong>：上個月的總銷售額是多少？哪個產品賣得最好？</li>
+<li><strong>網站分析</strong>：昨天有多少人造訪網站？平均停留時間多久？</li>
+<li><strong>人資盤點</strong>：目前公司有多少員工？各部門的人數分佈為何？</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/descriptive-analysis.webp" class="img-fluid figure-img"></p>
+<figcaption>描述性分析</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-diagnostic-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="sec-diagnostic-analysis">2. 診斷性分析 (Diagnostic Analysis): 為什麼發生？</h3>
+<p>這層次試圖找出<strong>原因</strong>。透過資料鑽取 (Drill-down) 或相關性分析，解釋過去事件的成因。</p>
+<ul>
+<li><strong>例子</strong>：
+<ul>
+<li><strong>銷售檢討</strong>：為什麼上個月銷售額下降？是因為季節性因素，還是競爭對手降價？</li>
+<li><strong>設備故障</strong>：為什麼這台機器突然停機？是因為過熱還是零件磨損？</li>
+<li><strong>客戶流失</strong>：為什麼這群客戶不再續約？是因為價格太高還是服務滿意度下降？</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/diagnostic-analysis.webp" class="img-fluid figure-img"></p>
+<figcaption>診斷性分析</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-predictive-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="sec-predictive-analysis">3. 預測性分析 (Predictive Analysis): 將會發生什麼？</h3>
+<p>這正是 AI 與機器學習大顯身手的地方。利用過去的模式來<strong>預測未來</strong>的趨勢或事件。</p>
+<ul>
+<li><strong>例子</strong>：
+<ul>
+<li><strong>銷售預測</strong>：根據目前的趨勢，下個月的銷售額預計會是多少？</li>
+<li><strong>預防性維護</strong>：這台機器在未來一週內故障的機率有多高？</li>
+<li><strong>信用評分</strong>：這位申請人未來違約的機率是多少？</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/predictive-analysis.webp" class="img-fluid figure-img"></p>
+<figcaption>預測性分析</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-prescriptive-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="sec-prescriptive-analysis">4. 處方性分析 (Prescriptive Analysis): 應該怎麼做？</h3>
+<p>這是分析的最高境界。不僅預測未來，還能提供<strong>最佳行動建議</strong>，告訴決策者如何優化結果。</p>
+<ul>
+<li><strong>例子</strong>：
+<ul>
+<li><strong>庫存優化</strong>：既然預測下個月庫存會不足，系統建議現在應該向供應商 A 訂購 500 個零件，並向供應商 B 訂購 300 個，以達到成本最低且到貨最快。</li>
+<li><strong>路徑規劃</strong>：考量到預測的塞車狀況，導航系統建議司機改走 B 路線以節省 10 分鐘。</li>
+<li><strong>行銷配置</strong>：為了最大化轉換率，系統建議將 60% 的預算投入 Instagram 廣告，40% 投入 Google 關鍵字。</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/prescriptive-analysis.webp" class="img-fluid figure-img"></p>
+<figcaption>處方性分析</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="chap-ai-foundation-chapter2-summary" class="level2">
+<h2 class="anchored" data-anchor-id="chap-ai-foundation-chapter2-summary">本章總結與考點提示</h2>
+<section id="核心概念回顧" class="level3">
+<h3 class="anchored" data-anchor-id="核心概念回顧">核心概念回顧</h3>
+<p>本章介紹了 AI 應用的兩大基礎框架：<strong>學習範式</strong>（AI 如何學習）與<strong>資料分析層次</strong>（AI 能提供什麼價值）。</p>
+<p><strong>學習範式比較表</strong>：</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>學習範式</th>
+<th>資料特性</th>
+<th>典型應用</th>
+<th>關鍵概念</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>監督式學習</strong></td>
+<td>有標籤資料</td>
+<td>分類、迴歸</td>
+<td>訓練集、測試集</td>
+</tr>
+<tr class="even">
+<td><strong>非監督式學習</strong></td>
+<td>無標籤資料</td>
+<td>分群、降維</td>
+<td>隱藏結構、模式發現</td>
+</tr>
+<tr class="odd">
+<td><strong>半監督式學習</strong></td>
+<td>少量標籤 + 大量無標籤</td>
+<td>醫療影像</td>
+<td>標註成本</td>
+</tr>
+<tr class="even">
+<td><strong>強化學習</strong></td>
+<td>獎勵/懲罰訊號</td>
+<td>遊戲、機器人</td>
+<td>Agent、Environment、Policy</td>
+</tr>
+<tr class="odd">
+<td><strong>遷移學習</strong></td>
+<td>預訓練模型</td>
+<td>微調應用</td>
+<td>Pre-training、Fine-tuning</td>
+</tr>
+</tbody>
+</table>
+<p><strong>資料分析層次</strong>：</p>
+<ol type="1">
+<li><strong>描述性</strong> → 發生了什麼？（報表、儀表板）</li>
+<li><strong>診斷性</strong> → 為什麼發生？（根因分析）</li>
+<li><strong>預測性</strong> → 將會發生什麼？（機器學習預測）</li>
+<li><strong>處方性</strong> → 應該怎麼做？（最佳化建議）</li>
+</ol>
+</section>
+<section id="ai-應用規劃師認證考點" class="level3">
+<h3 class="anchored" data-anchor-id="ai-應用規劃師認證考點">AI 應用規劃師認證考點</h3>
+<p><strong>常考題型與解題策略</strong>：</p>
+<ol type="1">
+<li><strong>情境判斷題</strong>：給定商業問題，選擇最適合的學習範式
+<ul>
+<li><em>例題</em>：「公司想根據客戶過去的購買紀錄預測流失率」
+<ul>
+<li><strong>解答</strong>：監督式學習（分類問題）</li>
+<li><strong>關鍵字</strong>：「過去紀錄」= 有標籤資料；「預測」= 監督式學習</li>
+</ul></li>
+<li><em>例題</em>：「想將客戶分成不同群組進行精準行銷，但不知道該分幾群」
+<ul>
+<li><strong>解答</strong>：非監督式學習（分群）</li>
+<li><strong>關鍵字</strong>：「不知道分幾群」= 無預設標籤；「分群」= 非監督式學習</li>
+</ul></li>
+</ul></li>
+<li><strong>分析層次判斷題</strong>：識別問題屬於哪個分析層次
+<ul>
+<li><em>例題</em>：「為什麼上個月銷售下降？」→ <strong>診斷性分析</strong>（找原因）</li>
+<li><em>例題</em>：「下個月銷售會是多少？」→ <strong>預測性分析</strong>（預測未來）</li>
+<li><em>例題</em>：「應該如何調整行銷策略以提升銷售？」→ <strong>處方性分析</strong>（給建議）</li>
+</ul></li>
+<li><strong>概念辨析題</strong>：
+<ul>
+<li><strong>監督 vs.&nbsp;非監督</strong>：關鍵在於「是否有標籤」</li>
+<li><strong>強化學習的特點</strong>：透過「試錯」學習，需要「獎勵機制」</li>
+<li><strong>遷移學習的優勢</strong>：「站在巨人肩膀上」，減少訓練時間與資料需求</li>
+<li><strong>探索 vs.&nbsp;利用</strong>：新嘗試（可能更好但有風險）vs.&nbsp;已知最佳（穩定但不會進步）</li>
+</ul></li>
+<li><strong>應用場景配對題</strong>：
+<ul>
+<li>垃圾郵件過濾 → 監督式學習（分類）</li>
+<li>客戶分群 → 非監督式學習</li>
+<li>AlphaGo 圍棋 → 強化學習</li>
+<li>醫療影像診斷（資料少）→ 遷移學習</li>
+<li>異常交易偵測 → 非監督式學習（異常偵測）</li>
+</ul></li>
+</ol>
+</section>
+<section id="記憶口訣" class="level3">
+<h3 class="anchored" data-anchor-id="記憶口訣">記憶口訣</h3>
+<ul>
+<li><strong>學習範式</strong>：「監非半強遷」（監督、非監督、半監督、強化、遷移）</li>
+<li><strong>分析層次</strong>：「描診預處」（描述、診斷、預測、處方）</li>
+<li><strong>強化學習</strong>：「代環狀動獎」（代理人、環境、狀態、行動、獎勵）</li>
+</ul>
+</section>
+<section id="延伸思考" class="level3">
+<h3 class="anchored" data-anchor-id="延伸思考">延伸思考</h3>
+<ul>
+<li>為什麼 AlphaGo 使用強化學習而不是監督式學習？</li>
+<li>在什麼情況下，描述性分析就足夠了，不需要預測性分析？</li>
+<li>遷移學習為何能讓小公司也能使用 AI？</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -683,10 +979,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./chapter1.html" class="pagination-link" aria-label="人工智慧的本質與層次架構">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">人工智慧的本質與層次架構</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter1.html" class="pagination-link" aria-label="人工智慧的本質與層次架構">
-        <span class="nav-page-text"><span class="chapter-title">人工智慧的本質與層次架構</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter3.html" class="pagination-link" aria-label="數據處理生命週期與架構">
+        <span class="nav-page-text"><span class="chapter-title">數據處理生命週期與架構</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

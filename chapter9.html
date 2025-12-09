@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="AI仁波切">
-<meta name="dcterms.date" content="2025-11-20">
 
-<title>AI 應用規劃師全攻略</title>
+<title>模型評估與效能優化 (Model Evaluation &amp; Optimization) – AI 應用規劃師全攻略</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./chapter1.html" rel="next">
+<link href="./chapter10.html" rel="next">
+<link href="./chapter8.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -72,6 +71,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -84,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">人工智慧基礎理論</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter9.html">第五部：模型評估、可解釋性與治理</a></li><li class="breadcrumb-item"><a href="./chapter9.html"><span class="chapter-title">模型評估與效能優化 (Model Evaluation &amp; Optimization)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -111,7 +139,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">人工智慧基礎理論</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">人工智慧基礎理論</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -209,7 +237,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter9.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">模型評估與效能優化 (Model Evaluation &amp; Optimization)</span></a>
+  <a href="./chapter9.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">模型評估與效能優化 (Model Evaluation &amp; Optimization)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -234,35 +262,41 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#前言" id="toc-前言" class="nav-link active" data-scroll-target="#前言">前言</a></li>
+  <li><a href="#sec-evaluation-metrics" id="toc-sec-evaluation-metrics" class="nav-link active" data-scroll-target="#sec-evaluation-metrics">評估流程與指標</a>
+  <ul class="collapse">
+  <li><a href="#sec-data-split" id="toc-sec-data-split" class="nav-link" data-scroll-target="#sec-data-split">資料集劃分 (Data Splitting)</a></li>
+  <li><a href="#sec-cross-validation" id="toc-sec-cross-validation" class="nav-link" data-scroll-target="#sec-cross-validation">K-fold 交叉驗證 (Cross-Validation)</a></li>
+  <li><a href="#sec-classification-metrics" id="toc-sec-classification-metrics" class="nav-link" data-scroll-target="#sec-classification-metrics">分類指標 (Classification Metrics)</a></li>
+  <li><a href="#sec-regression-metrics" id="toc-sec-regression-metrics" class="nav-link" data-scroll-target="#sec-regression-metrics">迴歸指標 (Regression Metrics)</a></li>
+  </ul></li>
+  <li><a href="#sec-error-analysis" id="toc-sec-error-analysis" class="nav-link" data-scroll-target="#sec-error-analysis">誤差分析與正則化</a>
+  <ul class="collapse">
+  <li><a href="#sec-bias-variance" id="toc-sec-bias-variance" class="nav-link" data-scroll-target="#sec-bias-variance">偏差-變異權衡 (Bias-Variance Tradeoff)</a></li>
+  <li><a href="#sec-prevent-overfitting" id="toc-sec-prevent-overfitting" class="nav-link" data-scroll-target="#sec-prevent-overfitting">防止過擬合技術 (Regularization)</a></li>
+  </ul></li>
+  <li><a href="#chap-ai-foundation-chapter9-summary" id="toc-chap-ai-foundation-chapter9-summary" class="nav-link" data-scroll-target="#chap-ai-foundation-chapter9-summary">本章總結與考點提示</a>
+  <ul class="collapse">
+  <li><a href="#核心概念回顧" id="toc-核心概念回顧" class="nav-link" data-scroll-target="#核心概念回顧">核心概念回顧</a></li>
+  <li><a href="#ai-應用規劃師認證考點" id="toc-ai-應用規劃師認證考點" class="nav-link" data-scroll-target="#ai-應用規劃師認證考點">AI 應用規劃師認證考點</a></li>
+  <li><a href="#記憶口訣" id="toc-記憶口訣" class="nav-link" data-scroll-target="#記憶口訣">記憶口訣</a></li>
+  <li><a href="#延伸思考" id="toc-延伸思考" class="nav-link" data-scroll-target="#延伸思考">延伸思考</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter9.html">第五部：模型評估、可解釋性與治理</a></li><li class="breadcrumb-item"><a href="./chapter9.html"><span class="chapter-title">模型評估與效能優化 (Model Evaluation &amp; Optimization)</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">AI 應用規劃師全攻略</h1>
+<h1 class="title"><span class="chapter-title">模型評估與效能優化 (Model Evaluation &amp; Optimization)</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>AI仁波切 </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">November 20, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -272,12 +306,297 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="前言" class="level1 unnumbered">
-<h1 class="unnumbered">前言</h1>
-<p><strong>適用對象：</strong> 準備經濟部 iPAS AI 應用規劃師（初/中級）之考生。</p>
-<p>本攻略旨在協助考生掌握 AI 應用規劃師之核心知識， 內容涵蓋人工智慧基礎、 機器學習、 深度學習、 生成式 AI、 大數據分析、 AI 倫理與法規， 以及 Python 程式語言基礎。</p>
+<!-- # 模型評估與效能優化 (Model Evaluation & Optimization) -->
+<p>訓練完模型只是第一步，更重要的是知道它「好不好用」。如果沒有正確的評估，你可能會把一個只會死記硬背的模型誤認為天才。</p>
+<section id="sec-evaluation-metrics" class="level2">
+<h2 class="anchored" data-anchor-id="sec-evaluation-metrics">評估流程與指標</h2>
+<section id="sec-data-split" class="level3">
+<h3 class="anchored" data-anchor-id="sec-data-split">資料集劃分 (Data Splitting)</h3>
+<p>為了考試公平，我們不能拿「練習題」來當「期末考題」。</p>
+<ol type="1">
+<li><strong>訓練集 (Training Set)</strong>：<strong>課本</strong>。用來訓練模型，調整權重。通常佔 60-80%。</li>
+<li><strong>驗證集 (Validation Set)</strong>：<strong>模擬考</strong>。用來調整<strong>超參數 (Hyperparameters)</strong>（如學習率、樹的深度），挑選最佳模型。</li>
+<li><strong>測試集 (Test Set)</strong>：<strong>期末考</strong>。考完就定案了，用來評估最終效能。<strong>絕對不能偷看</strong>（不能用於訓練或調整參數）！</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/data-split.webp" class="img-fluid figure-img"></p>
+<figcaption>資料集劃分</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-cross-validation" class="level3">
+<h3 class="anchored" data-anchor-id="sec-cross-validation">K-fold 交叉驗證 (Cross-Validation)</h3>
+<p>如果資料很少，切成三份（訓練/驗證/測試）太浪費怎麼辦？或者我們擔心切出來的驗證集剛好特別簡單或特別難？</p>
+<ul>
+<li><strong>核心概念</strong>：<strong>輪流當驗證集</strong>。</li>
+<li><strong>運作流程 (</strong>K=5** 為例)**：
+<ol type="1">
+<li><strong>切分</strong>：將全部資料隨機切成 5 等份 (Fold 1 ~ Fold 5)。</li>
+<li><strong>輪替訓練</strong>：進行 5 輪實驗。
+<ul>
+<li><strong>第 1 輪</strong>：拿 Fold 1 當驗證集，Fold 2-5 當訓練集。</li>
+<li><strong>第 2 輪</strong>：拿 Fold 2 當驗證集，Fold 1, 3, 4, 5 當訓練集。</li>
+<li>…以此類推，直到每一份都當過一次驗證集。</li>
+</ul></li>
+<li><strong>平均</strong>：將 5 次的評估分數加起來除以 5，得到最終成績。</li>
+</ol></li>
+<li><strong>類比</strong>：<strong>輪流模擬考</strong>。
+<ul>
+<li>為了客觀評估實力，不能只考一張考卷（可能剛好都會寫）。</li>
+<li>要考 5 張不同的考卷，然後算平均分，這樣才能反映真實水平。</li>
+</ul></li>
+<li><strong>優點</strong>：
+<ul>
+<li><strong>不浪費資料</strong>：每一筆資料都有機會被用來訓練，也有機會被用來驗證。</li>
+<li><strong>穩健 (Robust)</strong>：評估結果更客觀，不會因為運氣好切到簡單的資料就以為模型很強。</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/cross-validation.webp" class="img-fluid figure-img"></p>
+<figcaption>K-fold 交叉驗證</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-classification-metrics" class="level3">
+<h3 class="anchored" data-anchor-id="sec-classification-metrics">分類指標 (Classification Metrics)</h3>
+<p>對於二元分類問題（如：有病/沒病），我們使用<strong>混淆矩陣 (Confusion Matrix)</strong>：</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>預測：有病 (Positive)</th>
+<th>預測：沒病 (Negative)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>實際：有病 (True)</strong></td>
+<td><strong>TP</strong> (True Positive) <br> 抓到了！(真陽性)</td>
+<td><strong>FN</strong> (False Negative) <br> 漏報！(假陰性)</td>
+</tr>
+<tr class="even">
+<td><strong>實際：沒病 (False)</strong></td>
+<td><strong>FP</strong> (False Positive) <br> 誤報！(假陽性)</td>
+<td><strong>TN</strong> (True Negative) <br> 沒事！(真陰性)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>準確率 (Accuracy)</strong>：答對的比例。
+<ul>
+<li><span class="math display">\[ Accuracy = \frac{TP + TN}{TP + TN + FP + FN} \]</span></li>
+<li><strong>陷阱</strong>：如果 99% 的人沒病，模型全部猜「沒病」，準確率也有 99%，但完全沒用（抓不到病人）。<strong>資料不平衡時別用 Accuracy</strong>。</li>
+</ul></li>
+<li><strong>精確率 (Precision)</strong>：在所有<strong>被判斷為有病</strong>的人中，真的有病的比例。
+<ul>
+<li><span class="math display">\[ Precision = \frac{TP}{TP + FP} \]</span></li>
+<li><strong>應用</strong>：垃圾郵件過濾（寧可漏抓，也不要誤把重要信件當垃圾信）。希望 FP 越低越好。</li>
+</ul></li>
+<li><strong>召回率 (Recall)</strong>：在所有<strong>真的有病</strong>的人中，被成功抓出來的比例。
+<ul>
+<li><span class="math display">\[ Recall = \frac{TP}{TP + FN} \]</span></li>
+<li><strong>應用</strong>：癌症篩檢、地震預警（寧可誤判複檢，也不能漏掉任何一個病人）。希望 FN 越低越好。</li>
+</ul></li>
+<li><strong>F1-Score</strong>：Precision 和 Recall 的調和平均數。
+<ul>
+<li><span class="math display">\[ F1 = 2 \times \frac{Precision \times Recall}{Precision + Recall} \]</span></li>
+<li>當需要兼顧兩者時使用。</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/classification-metrics.webp" class="img-fluid figure-img"></p>
+<figcaption>分類指標</figcaption>
+</figure>
+</div>
+<ul>
+<li><strong>AUC-ROC 曲線</strong>：
+<ul>
+<li><strong>概念</strong>：評估模型在<strong>所有可能的分類門檻 (Threshold)</strong> 下的表現。
+<ul>
+<li>模型輸出的通常是機率（如 0.8）。我們可以設定門檻為 0.5（大於 0.5 算有病），也可以設為 0.9（非常確定才算有病）。</li>
+</ul></li>
+<li><strong>ROC 曲線</strong>：X 軸是 FPR (誤報率)，Y 軸是 TPR (召回率)。我們希望 FPR 越低越好，TPR 越高越好（曲線越往左上角靠越好）。</li>
+<li><strong>AUC (Area Under Curve)</strong>：曲線下的面積，用來量化模型的好壞。
+<ul>
+<li><strong>AUC = 0.5</strong>：跟丟銅板一樣（亂猜）。</li>
+<li><strong>AUC = 0.7~0.8</strong>：還不錯。</li>
+<li><strong>AUC &gt; 0.9</strong>：非常準確。</li>
+<li><strong>AUC = 1.0</strong>：完美神人（但通常是資料洩漏）。</li>
+</ul></li>
+<li><em>類比</em>：<strong>排隊能力</strong>。AUC 越高，代表模型越能把「有病的人」排在「沒病的人」前面（機率值較高）。</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/auc-roc.webp" class="img-fluid figure-img"></p>
+<figcaption>AUC-ROC 曲線</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-regression-metrics" class="level3">
+<h3 class="anchored" data-anchor-id="sec-regression-metrics">迴歸指標 (Regression Metrics)</h3>
+<ul>
+<li><strong>均方誤差 (MSE, Mean Squared Error)</strong>：
+<ul>
+<li><span class="math display">\[ MSE = \frac{1}{n} \sum (y_{true} - y_{pred})^2 \]</span></li>
+<li><strong>特點</strong>：會放大極端誤差（因為平方）。如果很在意大錯，就看這個。</li>
+</ul></li>
+<li><strong>平均絕對誤差 (MAE, Mean Absolute Error)</strong>：
+<ul>
+<li><span class="math display">\[ MAE = \frac{1}{n} \sum |y_{true} - y_{pred}| \]</span></li>
+<li><strong>特點</strong>：對離群值較不敏感，解釋直觀（平均差幾分）。</li>
+</ul></li>
+<li><strong>R-squared (R<sup>2</sup>, 決定係數)</strong>：
+<ul>
+<li><span class="math display">\[ R^2 = 1 - \frac{SS_{res}}{SS_{tot}} = 1 - \frac{\sum (y_{true} - y_{pred})^2}{\sum (y_{true} - y_{mean})^2} \]</span></li>
+<li><strong>意義</strong>：衡量模型解釋了資料多少變異。
+<ul>
+<li>R<sup>2</sup> = 1：完美擬合（誤差為 0）。</li>
+<li>R<sup>2</sup> = 0：跟「直接猜平均值」一樣爛。</li>
+<li>R<sup>2</sup> &lt; 0：比亂猜還爛（模型完全錯了）。</li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/regression-metrics.webp" class="img-fluid figure-img"></p>
+<figcaption>迴歸指標</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="sec-error-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="sec-error-analysis">誤差分析與正則化</h2>
+<section id="sec-bias-variance" class="level3">
+<h3 class="anchored" data-anchor-id="sec-bias-variance">偏差-變異權衡 (Bias-Variance Tradeoff)</h3>
+<ul>
+<li><strong>偏差 (Bias)</strong>：模型準不準？（訓練集誤差）
+<ul>
+<li><strong>高偏差 (High Bias)</strong>：模型太簡單，學不會資料的規律。稱為<strong>欠擬合 (Underfitting)</strong>。</li>
+<li><em>解法</em>：增加模型複雜度（加層數、加特徵）、減少正則化。</li>
+</ul></li>
+<li><strong>變異 (Variance)</strong>：模型穩不穩？（訓練集 vs 驗證集誤差差距）
+<ul>
+<li><strong>高變異 (High Variance)</strong>：模型太複雜，把雜訊也學進去了，導致在訓練集考 100 分，驗證集不及格。稱為<strong>過擬合 (Overfitting)</strong>。</li>
+<li><em>解法</em>：增加資料量、正則化、簡化模型。</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/bias-variance.webp" class="img-fluid figure-img"></p>
+<figcaption>偏差-變異權衡</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-prevent-overfitting" class="level3">
+<h3 class="anchored" data-anchor-id="sec-prevent-overfitting">防止過擬合技術 (Regularization)</h3>
+<ol type="1">
+<li><strong>L1/L2 正則化 (Regularization)</strong>：
+<ul>
+<li><strong>概念</strong>：在損失函數後面加一個「懲罰項」，如果權重太複雜（數值太大），就罰分。</li>
+<li><strong>L1 (Lasso)</strong>：會讓不重要的權重變成 0（具有<strong>特徵選擇</strong>的效果）。</li>
+<li><strong>L2 (Ridge)</strong>：會讓權重變得很小但不為 0（防止單一特徵獨大）。</li>
+</ul></li>
+<li><strong>Dropout (隨機拋棄)</strong>：
+<ul>
+<li><strong>運作</strong>：在訓練時，隨機「關掉」一部分神經元（例如 50%）。</li>
+<li><em>類比</em>：<strong>軍隊演習</strong>。隨機抽走指揮官，強迫部隊不能依賴特定的人，必須每個人都學會作戰。</li>
+<li><em>效果</em>：每次訓練的網路結構都不一樣，最後預測時等於是多個網路的<strong>集成 (Ensemble)</strong>，效果更穩健。</li>
+</ul></li>
+<li><strong>早停 (Early Stopping)</strong>：
+<ul>
+<li><strong>運作</strong>：在訓練過程中監控驗證集 (Validation Set) 的誤差。</li>
+<li><strong>機制</strong>：如果訓練集的誤差還在降（還在背答案），但驗證集的誤差開始上升（考試考不好），代表開始過擬合了。此時啟動<strong>耐心機制 (Patience)</strong>（例如再觀察 5 輪），如果沒改善就立刻停止訓練，並回溯到表現最好的那個時間點。</li>
+</ul></li>
+<li><strong>資料增強 (Data Augmentation)</strong>：
+<ul>
+<li><strong>概念</strong>：如果資料不夠，就自己造！</li>
+<li><strong>影像</strong>：旋轉、裁切、調亮、水平翻轉、加雜訊。</li>
+<li><strong>文字</strong>：同義詞替換、隨機刪除、回譯 (Back Translation, 中→英→中)。</li>
+<li><strong>聲音</strong>：調整音調、改變速度、加入背景噪音。</li>
+</ul></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/prevent-overfitting.webp" class="img-fluid figure-img"></p>
+<figcaption>防止過擬合技術</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="chap-ai-foundation-chapter9-summary" class="level2">
+<h2 class="anchored" data-anchor-id="chap-ai-foundation-chapter9-summary">本章總結與考點提示</h2>
+<section id="核心概念回顧" class="level3">
+<h3 class="anchored" data-anchor-id="核心概念回顧">核心概念回顧</h3>
+<p>評估是優化的基礎。</p>
+<ul>
+<li><strong>資料劃分</strong>：Train (課本) / Validation (模擬考) / Test (期末考)。</li>
+<li><strong>分類指標</strong>：
+<ul>
+<li><strong>Accuracy</strong>：整體答對率 (小心不平衡資料)。</li>
+<li><strong>Precision</strong>：抓到的有多少是真的 (寧缺勿濫)。</li>
+<li><strong>Recall</strong>：真的有多少被抓到 (寧濫勿缺)。</li>
+<li><strong>F1-Score</strong>：P 和 R 的平衡。</li>
+</ul></li>
+<li><strong>迴歸指標</strong>：MSE (怕大錯)、MAE (直觀)。</li>
+<li><strong>誤差分析</strong>：
+<ul>
+<li><strong>Bias</strong>：準不準 (Underfitting)。</li>
+<li><strong>Variance</strong>：穩不穩 (Overfitting)。</li>
+</ul></li>
+<li><strong>抗過擬合</strong>：L1/L2 正則化、Dropout、Early Stopping、Data Augmentation。</li>
+</ul>
+</section>
+<section id="ai-應用規劃師認證考點" class="level3">
+<h3 class="anchored" data-anchor-id="ai-應用規劃師認證考點">AI 應用規劃師認證考點</h3>
+<p><strong>常考題型與解題策略</strong>：</p>
+<ol type="1">
+<li><strong>指標選擇題</strong>：
+<ul>
+<li><em>例題</em>：「癌症篩檢模型應最重視哪個指標？」</li>
+<li><strong>解答</strong>：Recall (召回率)。因為漏診後果嚴重。</li>
+<li><em>例題</em>：「垃圾郵件過濾應最重視哪個指標？」</li>
+<li><strong>解答</strong>：Precision (精確率)。因為不想把重要信件誤判為垃圾信。</li>
+</ul></li>
+<li><strong>過擬合判斷題</strong>：
+<ul>
+<li><em>例題</em>：「訓練集準確率 99%，測試集準確率 60%，這是什麼情況？」</li>
+<li><strong>解答</strong>：過度擬合 (Overfitting) / 高變異 (High Variance)。</li>
+<li><em>例題</em>：「訓練集準確率 60%，測試集準確率 59%，這是什麼情況？」</li>
+<li><strong>解答</strong>：欠擬合 (Underfitting) / 高偏差 (High Bias)。</li>
+</ul></li>
+<li><strong>解決方案題</strong>：
+<ul>
+<li><em>例題</em>：「遇到過度擬合該怎麼辦？」</li>
+<li><strong>解答</strong>：增加資料、使用 Dropout、L2 正則化、早停。</li>
+</ul></li>
+</ol>
+</section>
+<section id="記憶口訣" class="level3">
+<h3 class="anchored" data-anchor-id="記憶口訣">記憶口訣</h3>
+<ul>
+<li><strong>Precision</strong>：「貴精不貴多」（抓得準）。</li>
+<li><strong>Recall</strong>：「一網打盡」（抓得全）。</li>
+<li><strong>Overfitting</strong>：「死讀書」（只會考題，不會應用）。</li>
+<li><strong>Underfitting</strong>：「書沒讀好」（連考題都不會）。</li>
+</ul>
+</section>
+<section id="延伸思考" class="level3">
+<h3 class="anchored" data-anchor-id="延伸思考">延伸思考</h3>
+<ul>
+<li>為什麼 Accuracy 在資料不平衡時會騙人？（因為模型只要全部猜多數類別，分數就會很高，但完全沒有鑑別力）。</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -683,10 +1002,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./chapter8.html" class="pagination-link" aria-label="生成式 AI 與大型語言模型 (Generative AI &amp; LLM)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">生成式 AI 與大型語言模型 (Generative AI &amp; LLM)</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter1.html" class="pagination-link" aria-label="人工智慧的本質與層次架構">
-        <span class="nav-page-text"><span class="chapter-title">人工智慧的本質與層次架構</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter10.html" class="pagination-link" aria-label="可解釋 AI (XAI)">
+        <span class="nav-page-text"><span class="chapter-title">可解釋 AI (XAI)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

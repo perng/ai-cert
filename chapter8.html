@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>生成式 AI 與大型語言模型 (Generative AI &amp; LLM) – AI 應用規劃師全攻略</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./chapter9.html" rel="next">
+<link href="./chapter7.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter7.html">第四部：深度學習與生成式 AI 前沿</a></li><li class="breadcrumb-item"><a href="./chapter8.html"><span class="chapter-title">生成式 AI 與大型語言模型 (Generative AI &amp; LLM)</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">AI 應用規劃師全攻略</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">人工智慧基礎理論</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">第一部：人工智慧基礎與戰略定位</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">人工智慧的本質與層次架構</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI 應用問題類型</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">第二部：數據工程——AI 的堅實地基</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">數據處理生命週期與架構</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">特徵工程 (Feature Engineering)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">第三部：機器學習演算法核心</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">監督式學習演算法 (Supervised Learning Algorithms)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">非監督式學習與強化學習 (Unsupervised &amp; Reinforcement Learning)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">第四部：深度學習與生成式 AI 前沿</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">神經網路架構演進 (Neural Network Architecture Evolution)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter8.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">生成式 AI 與大型語言模型 (Generative AI &amp; LLM)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">第五部：模型評估、可解釋性與治理</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter9.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">模型評估與效能優化 (Model Evaluation &amp; Optimization)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter10.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">可解釋 AI (XAI)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter11.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">AI 治理、法規與倫理 (AI Governance, Regulations &amp; Ethics)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#鑑別式-ai-vs.-生成式-ai-discriminative-vs.-generative-ai" id="toc-鑑別式-ai-vs.-生成式-ai-discriminative-vs.-generative-ai" class="nav-link active" data-scroll-target="#鑑別式-ai-vs.-生成式-ai-discriminative-vs.-generative-ai">鑑別式 AI vs.&nbsp;生成式 AI (Discriminative vs.&nbsp;Generative AI)</a></li>
+  <li><a href="#sec-generative-models" id="toc-sec-generative-models" class="nav-link" data-scroll-target="#sec-generative-models">生成式模型原理</a>
+  <ul class="collapse">
+  <li><a href="#sec-vae" id="toc-sec-vae" class="nav-link" data-scroll-target="#sec-vae">變分自編碼器 (VAE, Variational Autoencoder)</a></li>
+  <li><a href="#sec-gan" id="toc-sec-gan" class="nav-link" data-scroll-target="#sec-gan">生成對抗網路 (GAN, Generative Adversarial Network)</a></li>
+  <li><a href="#sec-diffusion" id="toc-sec-diffusion" class="nav-link" data-scroll-target="#sec-diffusion">擴散模型 (Diffusion Models)</a></li>
+  </ul></li>
+  <li><a href="#sec-llm-tech" id="toc-sec-llm-tech" class="nav-link" data-scroll-target="#sec-llm-tech">大型語言模型 (LLM) 技術</a>
+  <ul class="collapse">
+  <li><a href="#sec-pretrain-finetune" id="toc-sec-pretrain-finetune" class="nav-link" data-scroll-target="#sec-pretrain-finetune">預訓練與微調 (Pre-training &amp; Fine-tuning)</a></li>
+  <li><a href="#sec-scaling-laws" id="toc-sec-scaling-laws" class="nav-link" data-scroll-target="#sec-scaling-laws">Scaling Laws (擴展定律)</a></li>
+  <li><a href="#sec-prompt-engineering" id="toc-sec-prompt-engineering" class="nav-link" data-scroll-target="#sec-prompt-engineering">提示工程 (Prompt Engineering)</a></li>
+  </ul></li>
+  <li><a href="#sec-llm-optimization" id="toc-sec-llm-optimization" class="nav-link" data-scroll-target="#sec-llm-optimization">LLM 優化與應用架構</a>
+  <ul class="collapse">
+  <li><a href="#sec-rag" id="toc-sec-rag" class="nav-link" data-scroll-target="#sec-rag">檢索增強生成 (RAG, Retrieval-Augmented Generation)</a></li>
+  <li><a href="#sec-model-compression" id="toc-sec-model-compression" class="nav-link" data-scroll-target="#sec-model-compression">模型壓縮 (Model Compression)</a></li>
+  </ul></li>
+  <li><a href="#chap-ai-foundation-chapter8-summary" id="toc-chap-ai-foundation-chapter8-summary" class="nav-link" data-scroll-target="#chap-ai-foundation-chapter8-summary">本章總結與考點提示</a>
+  <ul class="collapse">
+  <li><a href="#核心概念回顧" id="toc-核心概念回顧" class="nav-link" data-scroll-target="#核心概念回顧">核心概念回顧</a></li>
+  <li><a href="#ai-應用規劃師認證考點" id="toc-ai-應用規劃師認證考點" class="nav-link" data-scroll-target="#ai-應用規劃師認證考點">AI 應用規劃師認證考點</a></li>
+  <li><a href="#記憶口訣" id="toc-記憶口訣" class="nav-link" data-scroll-target="#記憶口訣">記憶口訣</a></li>
+  <li><a href="#延伸思考" id="toc-延伸思考" class="nav-link" data-scroll-target="#延伸思考">延伸思考</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter7.html">第四部：深度學習與生成式 AI 前沿</a></li><li class="breadcrumb-item"><a href="./chapter8.html"><span class="chapter-title">生成式 AI 與大型語言模型 (Generative AI &amp; LLM)</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">生成式 AI 與大型語言模型 (Generative AI &amp; LLM)</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- # 生成式 AI 與大型語言模型 (Generative AI & LLM) -->
+<p>生成式 AI (Generative AI) 不再只是分析既有資料（如分類貓狗），而是能<strong>創造</strong>出全新的內容。從寫詩、繪畫到寫程式，它正在重塑創意產業。</p>
+<section id="鑑別式-ai-vs.-生成式-ai-discriminative-vs.-generative-ai" class="level3">
+<h3 class="anchored" data-anchor-id="鑑別式-ai-vs.-生成式-ai-discriminative-vs.-generative-ai">鑑別式 AI vs.&nbsp;生成式 AI (Discriminative vs.&nbsp;Generative AI)</h3>
+<p>在進入生成式 AI 之前，我們先來比較一下它與傳統 AI 的區別。</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">特性</th>
+<th style="text-align: left;">鑑別式 AI (Discriminative AI)</th>
+<th style="text-align: left;">生成式 AI (Generative AI)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>核心任務</strong></td>
+<td style="text-align: left;"><strong>分類</strong>或<strong>預測數值</strong> (Classify / Predict)</td>
+<td style="text-align: left;"><strong>創造</strong>新資料 (Create / Generate)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>學習目標</strong></td>
+<td style="text-align: left;">學習資料的<strong>邊界</strong> (Decision Boundary) <br> P(Y</td>
+<td style="text-align: left;">X)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>類比</strong></td>
+<td style="text-align: left;"><strong>鑑賞家</strong>。能分辨這幅畫是不是梵谷畫的，但自己畫不出來。</td>
+<td style="text-align: left;"><strong>畫家</strong>。能模仿梵谷的風格，畫出一幅全新的畫。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>典型應用</strong></td>
+<td style="text-align: left;">垃圾郵件過濾、人臉辨識、房價預測</td>
+<td style="text-align: left;">寫作、繪圖、作曲、寫程式</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>代表模型</strong></td>
+<td style="text-align: left;">Logistic Regression, SVM, CNN (分類用)</td>
+<td style="text-align: left;">VAE, GAN, Diffusion, Transformer (GPT)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="sec-generative-models" class="level2">
+<h2 class="anchored" data-anchor-id="sec-generative-models">生成式模型原理</h2>
+<section id="sec-vae" class="level3">
+<h3 class="anchored" data-anchor-id="sec-vae">變分自編碼器 (VAE, Variational Autoencoder)</h3>
+<ul>
+<li><strong>核心概念</strong>：將資料壓縮到一個機率分佈（潛在空間 Latent Space），然後從這個分佈中隨機採樣，解碼出新的資料。</li>
+<li><strong>運作機制</strong>：
+<ol type="1">
+<li><strong>Encoder (編碼器)</strong>：將圖片壓縮成兩個向量：平均值 𝝁 和標準差 <strong>𝛔</strong>。
+<ul>
+<li><em>類比</em>：把一張複雜的「披薩照片」壓縮成一張簡短的「食譜」（DNA）。</li>
+</ul></li>
+<li><strong>Sampling (採樣)</strong>：從常態分佈 N(μ, σ) 中抽樣出一個點 <strong>z</strong>。
+<ul>
+<li><em>類比</em>：根據食譜，稍微隨意地調整一點點佐料（隨機性）。</li>
+</ul></li>
+<li><strong>Decoder (解碼器)</strong>：將 <strong>z</strong> 還原成圖片。
+<ul>
+<li><em>類比</em>：廚師根據調整後的食譜，烤出一張新的披薩。</li>
+</ul></li>
+</ol></li>
+<li><strong>特點與應用</strong>：
+<ul>
+<li><strong>模糊感</strong>：由於 VAE 的損失函數通常包含 <strong>MSE (均方誤差)</strong>，模型傾向於輸出「平均」的結果以降低誤差，導致生成的圖像邊緣較模糊。</li>
+<li><strong>連續性</strong>：潛在空間是連續的。
+<ul>
+<li><em>應用</em>：<strong>插值 (Interpolation)</strong>。你可以從「笑臉」慢慢變形到「哭臉」，中間的每一張圖都是合理的過渡（不會出現斷裂或雜訊）。</li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/vae.webp" class="img-fluid figure-img"></p>
+<figcaption>VAE</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-gan" class="level3">
+<h3 class="anchored" data-anchor-id="sec-gan">生成對抗網路 (GAN, Generative Adversarial Network)</h3>
+<ul>
+<li><strong>核心概念</strong>：兩個神經網路在互相競爭（零和賽局）。
+<ul>
+<li><strong>生成器 (Generator, G)</strong>：負責<strong>偽造</strong>。
+<ul>
+<li><em>類比</em>：偽鈔印製集團。</li>
+<li><em>目標</em>：畫出逼真的假圖，騙過判別器。</li>
+</ul></li>
+<li><strong>判別器 (Discriminator, D)</strong>：負責<strong>鑑識</strong>。
+<ul>
+<li><em>類比</em>：警察或驗鈔機。</li>
+<li><em>目標</em>：準確分辨出哪張是真圖（來自資料集），哪張是假圖（來自 G）。</li>
+</ul></li>
+</ul></li>
+<li><strong>訓練過程 (The Game)</strong>： 這是一個「道高一尺，魔高一丈」的過程。
+<ol type="1">
+<li><strong>訓練 D</strong>：給 D 看真圖和 G 畫的假圖，教 D 分辨真偽。（此時固定 G 不動）。</li>
+<li><strong>訓練 G</strong>：固定 D 不動，調整 G 的參數，讓 G 畫出來的圖能被 D 誤判為「真」。</li>
+<li><strong>重複</strong>：不斷交替訓練，直到兩者都變得很強。</li>
+<li><strong>終局 (Nash Equilibrium)</strong>：G 生成的圖完美無缺，D 再也分不出來，只能瞎猜（判斷為真的機率 = 0.5）。</li>
+</ol></li>
+<li><strong>特點與挑戰</strong>：
+<ul>
+<li><strong>優點</strong>：生成的圖像<strong>清晰度極高</strong>，細節豐富（比 VAE 清晰）。</li>
+<li><strong>缺點</strong>：
+<ul>
+<li><strong>訓練不穩定</strong>：很難平衡 G 和 D 的實力。如果 D 太強，G 會因為一直失敗而學不到東西（梯度消失）；如果 G 太強，D 就沒用了。</li>
+<li><strong>模式崩潰 (Mode Collapse)</strong>：G 發現某個特定的圖（例如某張臉）很容易騙過 D，就開始<strong>只生成這張圖</strong>，失去了多樣性。</li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/gan.webp" class="img-fluid figure-img"></p>
+<figcaption>GAN</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-diffusion" class="level3">
+<h3 class="anchored" data-anchor-id="sec-diffusion">擴散模型 (Diffusion Models)</h3>
+<ul>
+<li><strong>核心概念</strong>：學習如何「有系統地破壞」一張圖，然後反過來學習如何「一步步修復」它。</li>
+<li><strong>運作流程</strong>：
+<ol type="1">
+<li><strong>前向擴散 (Forward Diffusion - 加噪)</strong>：
+<ul>
+<li><strong>過程</strong>：在一張清晰的圖片上，慢慢地、一步步加入高斯雜訊。經過 <strong>T</strong> 步（例如 1000 步）後，圖片會變成一張完全隨機的雜訊圖（雪花屏）。</li>
+<li><em>類比</em>：像是一滴墨水滴入清水中，慢慢擴散直到整杯水變黑；或是大霧慢慢籠罩城市，直到什麼都看不見。</li>
+</ul></li>
+<li><strong>逆向擴散 (Reverse Diffusion - 去噪)</strong>：
+<ul>
+<li><strong>過程</strong>：訓練一個神經網路（通常是 U-Net），它的任務是<strong>預測雜訊長什麼樣子</strong>，然後從目前的圖片中<strong>減去</strong>這層雜訊，還原出一點點細節。重複這個過程 1000 次，就能從純雜訊中「變」出一張清晰的圖。</li>
+<li><em>類比</em>：像是把墨水擴散的影片<strong>倒著播放</strong>，讓墨水神奇地聚回成一滴；或是像米開朗基羅雕刻：「大衛像已經在石頭裡了，我只是把多餘的石頭（雜訊）去掉而已。」</li>
+</ul></li>
+</ol></li>
+<li><strong>代表作</strong>：Stable Diffusion, Midjourney, DALL-E。</li>
+<li><strong>特點與比較</strong>：
+<ul>
+<li><strong>優點</strong>：
+<ul>
+<li><strong>品質極高</strong>：生成的細節比 GAN 更豐富、更細膩。</li>
+<li><strong>多樣性好</strong>：不會像 GAN 那樣發生 Mode Collapse。</li>
+<li><strong>訓練穩定</strong>：數學推導嚴謹，不像 GAN 那樣難以收斂。</li>
+</ul></li>
+<li><strong>缺點</strong>：
+<ul>
+<li><strong>速度慢</strong>：生成一張圖需要跑幾十到幾百步的去噪過程（GAN 只要跑一步）。</li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/diffusion.webp" class="img-fluid figure-img"></p>
+<figcaption>Diffusion</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="sec-llm-tech" class="level2">
+<h2 class="anchored" data-anchor-id="sec-llm-tech">大型語言模型 (LLM) 技術</h2>
+<p>LLM (Large Language Model) 如 GPT 系列，本質上是一個超巨大的「文字接龍」機器。</p>
+<section id="sec-pretrain-finetune" class="level3">
+<h3 class="anchored" data-anchor-id="sec-pretrain-finetune">預訓練與微調 (Pre-training &amp; Fine-tuning)</h3>
+<p>訓練一個 LLM 就像培養一個人類專家，分為兩個階段：</p>
+<ol type="1">
+<li><strong>預訓練 (Pre-training) - 通識教育</strong>：
+<ul>
+<li><strong>做什麼</strong>：讓模型閱讀網際網路上數兆字的文本（Wikipedia, 書籍, 新聞, 程式碼）。</li>
+<li><strong>訓練方式</strong>：<strong>自我監督學習 (Self-Supervised Learning)</strong>。
+<ul>
+<li><em>任務</em>：<strong>預測下一個字 (Next Token Prediction)</strong>。例如：「床前明月__」→ 模型要猜出「光」。</li>
+</ul></li>
+<li><strong>成果</strong>：<strong>基底模型 (Base Model)</strong>。
+<ul>
+<li>它博學多聞，懂文法、懂邏輯、懂世界知識。</li>
+<li><em>缺點</em>：它不懂人類的指令。你問它「如何做蛋糕？」，它可能會接著寫「…的歷史淵源」，而不是給你食譜。它只是一個「文字接龍高手」。</li>
+</ul></li>
+<li><strong>成本</strong>：極高（數百萬美金，數千張 GPU 跑好幾個月）。</li>
+</ul></li>
+<li><strong>微調 (Fine-tuning) - 職前訓練</strong>： 讓「博學的怪人」變成「有用的助手」。
+<ul>
+<li><strong>指令微調 (Instruction Tuning / SFT)</strong>：
+<ul>
+<li><strong>做什麼</strong>：使用人工撰寫的高品質「問題-答案」對（如 10 萬筆）來訓練。</li>
+<li><em>類比</em>：<strong>寫參考書/考卷</strong>。教模型看到「請翻譯」就要做翻譯，看到「請總結」就要做總結。</li>
+</ul></li>
+<li><strong>RLHF (Reinforcement Learning from Human Feedback)</strong>：
+<ul>
+<li><strong>做什麼</strong>：讓人類對模型的回答評分（選出比較好的一個），訓練一個「獎勵模型 (Reward Model)」，再用強化學習 (PPO) 調整 LLM。</li>
+<li><em>類比</em>：<strong>家教/社會化</strong>。教導模型什麼是「好的回答」（有禮貌、不說謊、不帶偏見）。</li>
+<li><strong>目標</strong>：<strong>3H 原則</strong> (Helpful 有用, Honest 誠實, Harmless 無害)。</li>
+</ul></li>
+</ul></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/llm-training.webp" class="img-fluid figure-img"></p>
+<figcaption>LLM</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-scaling-laws" class="level3">
+<h3 class="anchored" data-anchor-id="sec-scaling-laws">Scaling Laws (擴展定律)</h3>
+<ul>
+<li><p><strong>核心發現</strong>：OpenAI 在 2020 年的論文指出，LLM 的性能（Loss 越低越好）與以下三個因素呈<strong>冪律 (Power Law)</strong> 關係，且幾乎沒有極限：</p>
+<blockquote class="blockquote">
+<p><strong>什麼是冪律 (Power Law)？</strong> 簡單說就是「一分耕耘，不一定有一分收穫」。在 Scaling Laws 中，這意味著<strong>邊際效應遞減</strong>： 如果你想讓模型的誤差 (Loss) <strong>線性下降</strong>（例如從 10% 降到 5%），你需要投入的資源（參數、資料、算力）必須是<strong>指數級上升</strong>（例如增加 10 倍甚至 100 倍）。雖然代價高昂，但重點是<strong>它依然有效</strong>，沒有遇到瓶頸。</p>
+</blockquote>
+<ol type="1">
+<li><strong>參數量 (Parameters, N)</strong>：模型的腦神經元數量（腦容量）。</li>
+<li><strong>資料量 (Data Size, D)</strong>：訓練資料的 Token 數量（讀書量）。</li>
+<li><strong>計算量 (Compute, C)</strong>：訓練所花費的 FLOPs（讀書時間/算力）。</li>
+</ol></li>
+<li><p><strong>結論</strong>：<strong>大力出奇蹟</strong>。只要單純地把模型變大、資料變多、算力增強，AI 就會變聰明。這引發了全球科技巨頭的 GPU 軍備競賽。</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/scaling-laws.webp" class="img-fluid figure-img"></p>
+<figcaption>Scaling Laws</figcaption>
+</figure>
+</div>
+<section id="能力湧現-emergent-abilities" class="level4">
+<h4 class="anchored" data-anchor-id="能力湧現-emergent-abilities">能力湧現 (Emergent Abilities)</h4>
+<p>這是 Scaling Laws 最迷人也最神秘的地方。</p>
+<ul>
+<li><strong>定義</strong>：當模型規模超過某個<strong>臨界點 (Critical Threshold)</strong> 時，某些能力會<strong>突然出現</strong>，而這些能力在小模型中是完全不存在的（接近隨機猜測）。</li>
+<li><strong>類比</strong>：<strong>相變 (Phase Transition)</strong>。
+<ul>
+<li>水在 99°C 時還是水，但一到 100°C 就突然變成水蒸氣。</li>
+<li>量變產生質變。</li>
+</ul></li>
+<li><strong>範例</strong>：
+<ul>
+<li><strong>算術能力</strong>：小模型完全不會加減乘除，大模型突然學會了。</li>
+<li><strong>寫程式 (Coding)</strong>：小模型只會寫亂碼，大模型突然能寫出可執行的 Python 程式碼。</li>
+<li><strong>邏輯推理</strong>：大模型開始展現出推論能力。</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/emergent-abilities.webp" class="img-fluid figure-img"></p>
+<figcaption>Emergent Abilities</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="sec-prompt-engineering" class="level3">
+<h3 class="anchored" data-anchor-id="sec-prompt-engineering">提示工程 (Prompt Engineering)</h3>
+<p>既然我們無法輕易重新訓練模型，那就改變我們問問題的方式。</p>
+<ul>
+<li><strong>Zero-shot Prompting (零樣本提示)</strong>：
+<ul>
+<li><strong>概念</strong>：直接問，不給任何範例。</li>
+<li><em>範例</em>：
+<ul>
+<li><strong>Prompt</strong>: 將以下句子翻譯成法文：「你好，世界。」</li>
+<li><strong>Output</strong>: Bonjour le monde.</li>
+</ul></li>
+</ul></li>
+<li><strong>Few-shot Prompting (少樣本提示)</strong>：
+<ul>
+<li><strong>概念</strong>：給幾個範例 (Example)，讓模型模仿格式和邏輯。</li>
+<li><em>範例</em>：
+<ul>
+<li><strong>Prompt</strong>:
+<ul>
+<li>將英文翻譯成法文：</li>
+<li>Hello → Bonjour</li>
+<li>Good morning → Bonjour</li>
+<li>Good night → Bonne nuit</li>
+<li>See you later →</li>
+</ul></li>
+<li><strong>Output</strong>: À plus tard</li>
+</ul></li>
+</ul></li>
+<li><strong>Chain-of-Thought (CoT, 思維鏈)</strong>：
+<ul>
+<li><strong>概念</strong>：要求模型「一步步思考 (Let’s think step by step)」，把中間的推理過程寫出來。這能顯著提升數學或邏輯問題的準確率。</li>
+<li><em>範例</em>：
+<ul>
+<li><strong>Prompt</strong>:
+<ul>
+<li>題目：小明有 5 顆蘋果，他又買了 2 袋，每袋有 3 顆。請問他現在有幾顆蘋果？</li>
+<li>請一步步思考。</li>
+</ul></li>
+<li><strong>Output</strong>:
+<ul>
+<li><ol type="1">
+<li>小明原本有 5 顆。</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>他買了 2 袋，每袋 3 顆，所以買了 2 * 3 = 6 顆。</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>總共是 5 + 6 = 11 顆。</li>
+</ol></li>
+<li>答案是 11 顆。</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><strong>Tree of Thoughts (ToT, 思維樹)</strong>：
+<ul>
+<li><strong>概念</strong>：CoT 的進階版。不只是一條直線思考，而是像<strong>下棋</strong>一樣，同時考慮多種可能的下一步（分支），並評估哪一條路最好，如果走不通就退回重來（回溯）。</li>
+<li><em>範例情境</em>：玩「24點」遊戲（用 4 個數字加減乘除湊出 24）。
+<ul>
+<li><strong>Prompt</strong>: 用 4, 9, 10, 13 湊出 24。請列出多種可能的算式，評估哪一個能成功。</li>
+<li><strong>Output (模擬)</strong>:
+<ul>
+<li>思考路徑 A: (13 - 9) * (10 - 4) = 4 * 6 = 24 (成功)</li>
+<li>思考路徑 B: 4 * 9 - 10… (失敗)</li>
+<li>最佳解是路徑 A。</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><strong>Context Engineering (上下文工程)</strong>：
+<ul>
+<li><strong>概念</strong>：隨著模型能處理的文字量（Context Window）越來越大（如 128k, 1M tokens），如何「餵資料」變成一門學問。</li>
+<li><strong>關鍵現象：Lost in the Middle (迷失在中間)</strong>。
+<ul>
+<li>研究發現，LLM 對於放在<strong>開頭</strong>和<strong>結尾</strong>的資訊印象最深刻，放在<strong>中間</strong>的資訊容易被忽略。</li>
+</ul></li>
+<li><strong>策略</strong>：將最重要的指令或關鍵資料放在 Prompt 的最前面或最後面，避免埋沒在中間。</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/prompt-engineering.webp" class="img-fluid figure-img"></p>
+<figcaption>提示工程</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="sec-llm-optimization" class="level2">
+<h2 class="anchored" data-anchor-id="sec-llm-optimization">LLM 優化與應用架構</h2>
+<section id="sec-rag" class="level3">
+<h3 class="anchored" data-anchor-id="sec-rag">檢索增強生成 (RAG, Retrieval-Augmented Generation)</h3>
+<ul>
+<li><strong>痛點</strong>：LLM 有<strong>幻覺 (Hallucination)</strong>（一本正經胡說八道），且知識截止於訓練時間（不知道昨天發生的新聞）。</li>
+<li><strong>解法</strong>：考試時允許「開書考」。
+<ol type="1">
+<li><strong>檢索 (Retrieve)</strong>：
+<ul>
+<li><strong>技術核心</strong>：<strong>向量資料庫 (Vector Database)</strong>。</li>
+<li><strong>預處理</strong>：先將公司的文件（PDF, Word）切成小塊，透過 Embedding 模型轉換成<strong>向量 (Vectors)</strong>（一串數字，代表語意），存入向量資料庫（如 Pinecone, Chroma, Milvus）。</li>
+<li><strong>搜尋</strong>：當使用者問問題時，系統將問題也轉成向量，在資料庫中比對<strong>語意相似度</strong>（計算距離），找出最相關的片段。這比傳統的關鍵字搜尋更精準（例如搜尋「蘋果手機」，能找到「iPhone」的資料）。</li>
+</ul></li>
+<li><strong>增強 (Augment)</strong>：將找到的資料連同使用者的問題，組合成一個 Prompt：「請根據以下資料回答問題…」。</li>
+<li><strong>生成 (Generate)</strong>：LLM 根據參考資料回答問題。</li>
+</ol></li>
+<li><strong>優勢</strong>：資料即時更新，回答有憑有據，且不需要重新訓練模型。</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/rag.webp" class="img-fluid figure-img"></p>
+<figcaption>檢索增強生成</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-model-compression" class="level3">
+<h3 class="anchored" data-anchor-id="sec-model-compression">模型壓縮 (Model Compression)</h3>
+<p>為了讓 LLM 能在手機或較小的伺服器上跑，我們需要把模型「變小」：</p>
+<ul>
+<li><strong>量化 (Quantization)</strong>：
+<ul>
+<li><strong>概念</strong>：降低數值的精確度，用較少的位元 (Bits) 來儲存權重。</li>
+<li><strong>運作</strong>：將 32-bit 浮點數 (FP32, 如 3.1415926) 簡化為 8-bit 整數 (INT8, 如 3) 甚至 4-bit。</li>
+<li><em>類比</em>：像把一張 <strong>4K 高畫質照片</strong> 壓縮成 <strong>JPEG</strong> 格式。雖然細節（精確度）稍微犧牲了一點，但檔案大小（模型體積）縮小了 4-8 倍，而且肉眼（使用體驗）幾乎看不出差別。</li>
+<li><em>優勢</em>：大幅降低記憶體需求 (VRAM)，讓消費級顯卡甚至手機也能跑大模型。</li>
+</ul></li>
+<li><strong>知識蒸餾 (Knowledge Distillation)</strong>：
+<ul>
+<li><strong>概念</strong>：讓一個已訓練好的大模型（<strong>老師 Teacher</strong>）來教導一個小模型（<strong>學生 Student</strong>）。</li>
+<li><strong>運作</strong>：學生不只是學「標準答案」，還要學老師的「思考方式」（機率分佈）。
+<ul>
+<li>例如分辨一張模糊的狗的照片，標準答案是「狗」。但老師會告訴學生：「這張圖 90% 像狗，但也有 10% 像貓」。這 10% 的資訊（暗知識 Dark Knowledge）對學生很有幫助。</li>
+</ul></li>
+<li><em>類比</em>：<strong>名師出高徒</strong>。老師把畢生功力濃縮成精華（軟標籤 Soft Targets）傳授給徒弟，讓徒弟用較少的腦容量就能達到接近老師的水平。</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/model-compression.webp" class="img-fluid figure-img"></p>
+<figcaption>模型壓縮</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="chap-ai-foundation-chapter8-summary" class="level2">
+<h2 class="anchored" data-anchor-id="chap-ai-foundation-chapter8-summary">本章總結與考點提示</h2>
+<section id="核心概念回顧" class="level3">
+<h3 class="anchored" data-anchor-id="核心概念回顧">核心概念回顧</h3>
+<p>生成式 AI 是當前最熱門的技術。</p>
+<ul>
+<li><strong>生成模型</strong>：
+<ul>
+<li><strong>VAE</strong>：潛在空間採樣 (模糊)。</li>
+<li><strong>GAN</strong>：生成器 vs 判別器 (逼真但難訓練)。</li>
+<li><strong>Diffusion</strong>：加噪再去噪 (高品質、慢)。</li>
+</ul></li>
+<li><strong>LLM 技術</strong>：
+<ul>
+<li><strong>預訓練</strong>：Next Token Prediction (通識)。</li>
+<li><strong>微調</strong>：Instruction Tuning (聽話)、RLHF (價值觀)。</li>
+<li><strong>Scaling Laws</strong>：參數、資料、算力越大越強。</li>
+</ul></li>
+<li><strong>優化技術</strong>：
+<ul>
+<li><strong>RAG</strong>：外掛知識庫 (解幻覺、時效性)。</li>
+<li><strong>Prompt Engineering</strong>：Few-shot, CoT (激發潛能)。</li>
+<li><strong>量化</strong>：降低精度 (省資源)。</li>
+</ul></li>
+</ul>
+</section>
+<section id="ai-應用規劃師認證考點" class="level3">
+<h3 class="anchored" data-anchor-id="ai-應用規劃師認證考點">AI 應用規劃師認證考點</h3>
+<p><strong>常考題型與解題策略</strong>：</p>
+<ol type="1">
+<li><strong>模型原理題</strong>：
+<ul>
+<li><em>例題</em>：「Stable Diffusion 是基於哪種技術？」</li>
+<li><strong>解答</strong>：擴散模型 (Diffusion Model)。</li>
+<li><em>例題</em>：「GAN 的核心機制是什麼？」</li>
+<li><strong>解答</strong>：零和賽局 (Zero-Sum Game)，生成器與判別器對抗。</li>
+</ul></li>
+<li><strong>LLM 應用題</strong>：
+<ul>
+<li><em>例題</em>：「企業想用 LLM 客服，但擔心它亂回答公司政策，該怎麼辦？」</li>
+<li><strong>解答</strong>：使用 RAG (檢索增強生成)，限制它只能根據檢索到的公司文件回答。</li>
+<li><em>例題</em>：「如何讓 LLM 數學變好？」</li>
+<li><strong>解答</strong>：使用 Chain-of-Thought (CoT) 提示技巧。</li>
+</ul></li>
+<li><strong>名詞解釋題</strong>：
+<ul>
+<li><em>關鍵字</em>：RLHF (讓 AI 符合人類價值觀)、幻覺 (一本正經胡說八道)、量化 (模型壓縮)。</li>
+</ul></li>
+</ol>
+</section>
+<section id="記憶口訣" class="level3">
+<h3 class="anchored" data-anchor-id="記憶口訣">記憶口訣</h3>
+<ul>
+<li><strong>GAN</strong>：「左右互搏」。</li>
+<li><strong>Diffusion</strong>：「覆水難收，但我收得回來」。</li>
+<li><strong>RAG</strong>：「開書考」。</li>
+<li><strong>CoT</strong>：「一步步來」。</li>
+</ul>
+</section>
+<section id="延伸思考" class="level3">
+<h3 class="anchored" data-anchor-id="延伸思考">延伸思考</h3>
+<ul>
+<li>為什麼 RAG 比微調 (Fine-tuning) 更適合處理企業內部知識？（因為微調成本高、更新慢，且容易有災難性遺忘；RAG 只要更新資料庫即可，即時又準確）。</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./chapter7.html" class="pagination-link" aria-label="神經網路架構演進 (Neural Network Architecture Evolution)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">神經網路架構演進 (Neural Network Architecture Evolution)</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./chapter9.html" class="pagination-link" aria-label="模型評估與效能優化 (Model Evaluation &amp; Optimization)">
+        <span class="nav-page-text"><span class="chapter-title">模型評估與效能優化 (Model Evaluation &amp; Optimization)</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
