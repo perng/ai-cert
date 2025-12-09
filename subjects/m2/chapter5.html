@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>系統部署與 MLOps</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-1d4f84655f446305ac42a8f1abcf7405.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">系統部署與 MLOps</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>將模型轉化為實際應用需要系統部署與 MLOps 的支持。模型訓練完成只是第一步，如何讓模型穩定、高效地服務用戶，並隨著時間推移持續優化，才是 AI 專案成功的關鍵。</p>
+<section id="sec-mlops-core" class="level2">
+<h2 class="anchored" data-anchor-id="sec-mlops-core">MLOps 核心概念</h2>
+<p><strong>MLOps (Machine Learning Operations)</strong> 是 DevOps 在 AI 領域的延伸，旨在將機器學習模型的開發 (Development) 與營運 (Operations) 整合。它強調將模型的訓練、測試、部署與監控進行<strong>持續整合 (Continuous Integration)</strong> 與<strong>自動化 (Automation)</strong>，確保模型在全生命週期中的一致性、效率與可追蹤性。</p>
+<p>MLOps 的主要目標包括：</p>
+<ul>
+<li><strong>縮短開發週期</strong>：自動化重複性工作。</li>
+<li><strong>提升模型品質</strong>：透過自動化測試與驗證。</li>
+<li><strong>降低風險</strong>：透過版本控制與監控機制。</li>
+</ul>
+</section>
+<section id="sec-deployment-strategies" class="level2">
+<h2 class="anchored" data-anchor-id="sec-deployment-strategies">模型部署策略</h2>
+<p>模型部署策略 (Model Deployment Strategies) 決定了模型如何服務用戶。根據應用場景與資源需求，可選擇不同的部署方式。</p>
+<section id="雲端部署-cloud-deployment" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="雲端部署-cloud-deployment">雲端部署 (Cloud Deployment)</h3>
+<p>利用公有雲 (如 AWS, GCP, Azure) 的強大計算資源與可擴展性。</p>
+<ul>
+<li><strong>優勢</strong>：彈性擴充、無需維護硬體。</li>
+<li><strong>適用</strong>：處理複雜模型、大規模請求、需要高算力的應用。</li>
+</ul>
+</section>
+<section id="私有雲部署-private-cloud" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="私有雲部署-private-cloud">私有雲部署 (Private Cloud)</h3>
+<p>企業自建或專屬的雲端環境 (如 OpenStack, VMware)。</p>
+<ul>
+<li><strong>優勢</strong>：資安風險可控、資料不外流、符合法規要求。</li>
+<li><strong>適用</strong>：金融、醫療、政府等對資料隱私高度敏感的領域。</li>
+</ul>
+</section>
+<section id="邊緣運算-edge-computing" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="邊緣運算-edge-computing">邊緣運算 (Edge Computing)</h3>
+<p>將模型部署在靠近數據源的設備上 (如手機、IoT 設備、車載系統)。</p>
+<ul>
+<li><strong>優勢</strong>：低延遲、保護隱私 (數據不出設備)、節省頻寬。</li>
+<li><strong>挑戰</strong>：運算資源受限，通常需要模型壓縮 (Quantization, Pruning)。</li>
+</ul>
+</section>
+<section id="混合部署-hybrid-deployment" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="混合部署-hybrid-deployment">混合部署 (Hybrid Deployment)</h3>
+<p>結合公有雲、私有雲與邊緣架構。例如：雲端進行模型訓練，邊緣進行即時推論。</p>
+<ul>
+<li><strong>優勢</strong>：兼顧計算能力與即時性。</li>
+</ul>
+<p><strong>Python 範例：使用 FastAPI 建立模型 API</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastapi <span class="im">import</span> FastAPI</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pydantic <span class="im">import</span> BaseModel</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 假設我們有一個預先訓練好的模型</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># model = load_model(...)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>app <span class="op">=</span> FastAPI()</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> InputData(BaseModel):</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    feature1: <span class="bu">float</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    feature2: <span class="bu">float</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">@app.post</span>(<span class="st">"/predict"</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> predict(data: InputData):</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 實際應用中，這裡會呼叫模型進行預測</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># prediction = model.predict([[data.feature1, data.feature2]])</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    prediction <span class="op">=</span> <span class="fl">0.8</span> <span class="co"># 模擬預測結果</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"prediction"</span>: prediction}</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 啟動指令: uvicorn main:app --reload</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="sec-microservices" class="level2">
+<h2 class="anchored" data-anchor-id="sec-microservices">微服務架構 (Microservices Architecture)</h2>
+<p>微服務架構是一種將應用程式開發為一組小型服務的方法，每個服務都在自己的程序中運行，並透過輕量級機制（通常是 HTTP 資源 API）進行通訊。</p>
+<ul>
+<li><strong>核心特點</strong>：
+<ul>
+<li><strong>單一職責</strong>：每個服務專注於做一件事（例如：一個服務負責影像辨識，另一個負責自然語言處理）。</li>
+<li><strong>獨立部署</strong>：可以獨立更新、部署和擴展特定服務，而不會影響整個系統。</li>
+<li><strong>技術異質性</strong>：不同的服務可以使用最適合該任務的程式語言或框架（例如：數據處理用 Python，Web 介面用 Node.js）。</li>
+</ul></li>
+<li><strong>在 AI 中的應用</strong>：
+<ul>
+<li>將不同的 AI 模型封裝為獨立的微服務。</li>
+<li>利用容器化技術 (Docker) 和編排工具 (Kubernetes) 管理這些服務。</li>
+<li>透過 API Gateway 統一管理外部請求。</li>
+</ul></li>
+<li><strong>優點</strong>：
+<ul>
+<li><strong>高可用性</strong>：單一服務故障不會導致整個系統崩潰。</li>
+<li><strong>彈性擴展</strong>：可以針對高負載的服務（如推論服務）單獨增加資源。</li>
+</ul></li>
+<li><strong>缺點</strong>：
+<ul>
+<li><strong>複雜性增加</strong>：需要處理分散式系統的複雜性（如網路延遲、數據一致性）。</li>
+<li><strong>運維成本</strong>：需要更強大的監控和日誌聚合機制。</li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-system-integration" class="level2">
+<h2 class="anchored" data-anchor-id="sec-system-integration">AI 系統整合</h2>
+<p>AI 系統不應是獨立存在的模組，而是應該能與企業現有資訊架構無縫整合。系統集成的重點在於將 AI 模型與資料來源、應用服務、企業內部系統等資源互通互連。</p>
+<section id="資料來源與資料管線整合" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="資料來源與資料管線整合">資料來源與資料管線整合</h3>
+<p>現代 AI 系統須從多種來源取得資料，包括企業內部<strong>資料倉儲 (Data Warehouse)</strong>、大規模非結構化資料的<strong>資料湖 (Data Lake)</strong>、以及 IoT 裝置即時回傳的感測資料。</p>
+<ul>
+<li><strong>資料管線 (Data Pipeline)</strong>：需建立涵蓋資料擷取、格式轉換、清理與入庫的完整流程，確保資料持續穩定流入。</li>
+</ul>
+</section>
+<section id="企業內部系統整合" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="企業內部系統整合">企業內部系統整合</h3>
+<p>AI 模型預測結果必須整合回企業核心系統，才能產生商業價值。</p>
+<ul>
+<li><strong>ERP (企業資源規劃)</strong>：根據需求預測動態調整採購。</li>
+<li><strong>CRM (客戶關係管理)</strong>：自動根據模型推薦寄送促銷信件。</li>
+<li><strong>MES (製造執行系統)</strong>：即時調整生產參數以優化良率。</li>
+</ul>
+</section>
+<section id="api-與平台接軌" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="api-與平台接軌">API 與平台接軌</h3>
+<p>為了讓前端應用（如網站、App、BI 工具）即時取得推論結果，需封裝為可存取的服務介面。</p>
+<ul>
+<li><strong>RESTful API</strong>：最常見的實作方式，通用性高。</li>
+<li><strong>gRPC</strong>：適用於高效能、低延遲的內部微服務通訊。</li>
+<li><strong>Webhooks</strong>：適用於非同步事件通知。</li>
+</ul>
+</section>
+<section id="安全與權限控管" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="安全與權限控管">安全與權限控管</h3>
+<p>AI 系統的存取必須納入資訊安全考量，特別是在涉及個資或商業機密時。</p>
+<ul>
+<li><strong>身份驗證與授權</strong>：使用 <strong>OAuth2</strong> 或 <strong>JWT (JSON Web Token)</strong>。</li>
+<li><strong>API Gateway</strong>：進行存取日誌記錄、流量控管與統一的入口管理。</li>
+<li><strong>角色權限 (RBAC)</strong>：對不同角色設定不同的存取權限。</li>
+</ul>
+</section>
+<section id="跨雲與異質系統整合" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="跨雲與異質系統整合">跨雲與異質系統整合</h3>
+<p>AI 模型可能橫跨本地資料中心、邊緣裝置與雲端平台。</p>
+<ul>
+<li><strong>Service Mesh</strong>：作為中介整合層，統一管理資料同步、服務調用與狀態追蹤，避免平台間的資訊孤島。</li>
+</ul>
+</section>
+</section>
+<section id="sec-cicd4ai" class="level2">
+<h2 class="anchored" data-anchor-id="sec-cicd4ai">AI 的持續整合/持續部署 (CI/CD)</h2>
+<p>CI/CD (Continuous Integration / Continuous Deployment) 是現代軟體工程的核心實踐，應用於 AI 領域時 (MLOps)，它確保了模型從開發到部署的快速迭代、高品質與自動化。</p>
+<section id="持續整合-continuous-integration-ci" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="持續整合-continuous-integration-ci">持續整合 (Continuous Integration, CI)</h3>
+<p>CI 強調開發人員頻繁地將程式碼合併到主分支 (Main Branch)。</p>
+<ul>
+<li><strong>核心活動</strong>：
+<ul>
+<li><strong>版本控制</strong>：程式碼 (Git) 與數據 (DVC) 的版本管理。</li>
+<li><strong>自動化建置</strong>：自動編譯程式碼、建置 Docker 映像檔。</li>
+<li><strong>自動化測試</strong>：
+<ul>
+<li><strong>單元測試 (Unit Test)</strong>：測試個別函數的功能。</li>
+<li><strong>數據驗證 (Data Validation)</strong>：檢查輸入數據的格式與分佈 (Schema validation)。</li>
+<li><strong>模型評估 (Model Evaluation)</strong>：確保新訓練的模型準確率未低於基準 (Baseline)。</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="持續交付與部署-continuous-delivery-deployment-cd" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="持續交付與部署-continuous-delivery-deployment-cd">持續交付與部署 (Continuous Delivery &amp; Deployment, CD)</h3>
+<p>CD 關注將經過測試的軟體自動發布到生產環境。</p>
+<ul>
+<li><strong>持續交付 (Continuous Delivery)</strong>：自動部署到測試環境 (Staging)，但部署到生產環境 (Production) 需要<strong>人工審核</strong>。</li>
+<li><strong>持續部署 (Continuous Deployment)</strong>：通過所有測試後，<strong>自動</strong>部署到生產環境，無需人工干預。</li>
+<li><strong>部署策略</strong>：
+<ul>
+<li><strong>藍綠部署 (Blue-Green Deployment)</strong>：同時運行新舊版本 (Blue/Green)，確認新版無誤後切換流量。</li>
+<li><strong>金絲雀部署 (Canary Deployment)</strong>：將小部分流量 (如 5%) 導向新版本，觀察無誤後逐步擴大流量。</li>
+<li><strong>A/B 測試</strong>：將部分流量導向新模型，比較實際業務成效 (如點擊率)。</li>
+</ul></li>
+</ul>
+</section>
+<section id="常用工具" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="常用工具">常用工具</h3>
+<ul>
+<li><strong>Jenkins</strong>：老牌開源 CI/CD 工具，插件豐富。</li>
+<li><strong>GitHub Actions / GitLab CI</strong>：與程式碼倉庫緊密整合，設定檔 (YAML) 簡單易用。</li>
+<li><strong>CircleCI / Travis CI</strong>：雲端託管的 CI/CD 服務。</li>
+</ul>
+</section>
+</section>
+<section id="sec-monitoring" class="level2">
+<h2 class="anchored" data-anchor-id="sec-monitoring">監控與維護</h2>
+<p>模型上線後，需持續監控以確保性能不隨時間衰退。</p>
+<section id="漂移監控-drift-monitoring" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="漂移監控-drift-monitoring">漂移監控 (Drift Monitoring)</h3>
+<ul>
+<li><strong>數據漂移 (Data Drift)</strong>：輸入數據的統計分佈發生變化 (例如：用戶年齡層改變)。</li>
+<li><strong>模型漂移 (Model Drift)</strong>：模型預測能力下降 (例如：詐欺手法翻新，舊模型無法偵測)。</li>
+<li><strong>概念漂移 (Concept Drift)</strong>：輸入與輸出之間的關係發生根本性變化。</li>
+</ul>
+</section>
+<section id="自動化維運" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="自動化維運">自動化維運</h3>
+<ul>
+<li><strong>異常警報</strong>：當錯誤率或延遲超過閾值，自動通知工程人員。</li>
+<li><strong>自動重新訓練 (Auto-retraining)</strong>：偵測到顯著漂移時，自動觸發訓練流程 (CT, Continuous Training)。</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>監控工具
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>常用的監控組合包括 <strong>Prometheus</strong> (收集指標) 與 <strong>Grafana</strong> (視覺化儀表板)。</p>
+</div>
+</div>
+</section>
+</section>
+<section id="sec-post-deployment" class="level2">
+<h2 class="anchored" data-anchor-id="sec-post-deployment">部署後優化與績效指標</h2>
+<p>進入生產環境後，需透過「持續觀測、效能追蹤與模型優化」來確保 AI 持續產生價值。</p>
+<section id="關鍵效能指標-kpi" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="關鍵效能指標-kpi">關鍵效能指標 (KPI)</h3>
+<ul>
+<li><strong>系統層級</strong>：推論延遲 (Latency)、吞吐量 (Throughput)、服務可用率 (Uptime)。</li>
+<li><strong>應用層級</strong>：準確率 (Accuracy)、F1-Score、推薦點擊率 (CTR)。</li>
+<li><strong>業務層級</strong>：投資報酬率 (ROI)、轉換率提升、成本節省。</li>
+</ul>
+</section>
+<section id="回饋迴圈-feedback-loop" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="回饋迴圈-feedback-loop">回饋迴圈 (Feedback Loop)</h3>
+<p>建立定期的資料回收與監測週期 (每日/每週/每月)，收集錯誤樣本與業務回饋，作為下一次模型迭代的依據。</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+    A[數據採集] --&gt; B[模型訓練]
+    B --&gt; C[模型評估]
+    C --&gt; D{通過門檻?}
+    D -- Yes --&gt; E[模型部署]
+    D -- No --&gt; B
+    E --&gt; F[線上監控]
+    F --&gt; G{偵測到漂移?}
+    G -- Yes --&gt; H[觸發重新訓練]
+    H --&gt; A
+    G -- No --&gt; F
+    style H fill:#f9f,stroke:#333,stroke-width:2px
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/perng\.github\.io\/ai-cert\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

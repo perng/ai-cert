@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>大數據治理 – 大數據處理與分析</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./chapter4.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter5.html"><span class="chapter-title">大數據治理</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">大數據處理與分析</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">前言</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">大數據生態系統</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">進階資料處理</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">進階分析方法</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">資料視覺化與報告</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter5.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">大數據治理</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-data-quality" id="toc-sec-data-quality" class="nav-link active" data-scroll-target="#sec-data-quality">資料品質管理</a></li>
+  <li><a href="#sec-privacy" id="toc-sec-privacy" class="nav-link" data-scroll-target="#sec-privacy">隱私保護</a>
+  <ul class="collapse">
+  <li><a href="#去識別化" id="toc-去識別化" class="nav-link" data-scroll-target="#去識別化">去識別化</a></li>
+  <li><a href="#差分隱私" id="toc-差分隱私" class="nav-link" data-scroll-target="#差分隱私">差分隱私</a></li>
+  <li><a href="#進階隱私強化技術-advanced-pets" id="toc-進階隱私強化技術-advanced-pets" class="nav-link" data-scroll-target="#進階隱私強化技術-advanced-pets">進階隱私強化技術 (Advanced PETs)</a></li>
+  </ul></li>
+  <li><a href="#sec-compliance" id="toc-sec-compliance" class="nav-link" data-scroll-target="#sec-compliance">合規與安全 (Compliance &amp; Security)</a>
+  <ul class="collapse">
+  <li><a href="#合規處理原則-compliance-principles" id="toc-合規處理原則-compliance-principles" class="nav-link" data-scroll-target="#合規處理原則-compliance-principles">合規處理原則 (Compliance Principles)</a></li>
+  <li><a href="#合法取得依據-legal-basis" id="toc-合法取得依據-legal-basis" class="nav-link" data-scroll-target="#合法取得依據-legal-basis">合法取得依據 (Legal Basis)</a></li>
+  <li><a href="#資料安全技術" id="toc-資料安全技術" class="nav-link" data-scroll-target="#資料安全技術">資料安全技術</a></li>
+  </ul></li>
+  <li><a href="#sec-governance-framework" id="toc-sec-governance-framework" class="nav-link" data-scroll-target="#sec-governance-framework">資料與 AI 治理架構 (Data &amp; AI Governance Framework)</a>
+  <ul class="collapse">
+  <li><a href="#組織與角色-organization" id="toc-組織與角色-organization" class="nav-link" data-scroll-target="#組織與角色-organization">組織與角色 (Organization)</a></li>
+  <li><a href="#流程與管理-process" id="toc-流程與管理-process" class="nav-link" data-scroll-target="#流程與管理-process">流程與管理 (Process)</a></li>
+  <li><a href="#自動化工具-tools" id="toc-自動化工具-tools" class="nav-link" data-scroll-target="#自動化工具-tools">自動化工具 (Tools)</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">大數據治理</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>大數據治理 (Big Data Governance) 確保數據的可用性、完整性和安全性。它是一套策略、流程和技術的組合。</p>
+<section id="sec-data-quality" class="level2">
+<h2 class="anchored" data-anchor-id="sec-data-quality">資料品質管理</h2>
+<p>資料品質管理 (Data Quality Management) 致力於維護數據的高準確性和一致性。</p>
+<ul>
+<li><strong>品質維度 (Dimensions)</strong>：
+<ul>
+<li><strong>準確性 (Accuracy)</strong>：數據是否真實反映了現實世界？</li>
+<li><strong>完整性 (Completeness)</strong>：數據是否有缺失？</li>
+<li><strong>一致性 (Consistency)</strong>：不同系統中的數據是否矛盾？</li>
+<li><strong>及時性 (Timeliness)</strong>：數據是否即時更新？</li>
+<li><strong>唯一性 (Uniqueness)</strong>：是否有重複記錄？</li>
+</ul></li>
+<li><strong>資料剖析 (Data Profiling)</strong>：自動分析數據的統計特徵（如分佈、空值率），以發現潛在的品質問題。</li>
+<li><strong>資料清洗 (Data Cleansing)</strong>：修正或刪除錯誤、不完整或重複的數據。</li>
+</ul>
+</section>
+<section id="sec-privacy" class="level2">
+<h2 class="anchored" data-anchor-id="sec-privacy">隱私保護</h2>
+<p>隱私保護 (Privacy Preservation) 在大數據時代尤為重要。</p>
+<section id="去識別化" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="去識別化">去識別化</h3>
+<p>去識別化 (Anonymization) 技術用於保護個人隱私。</p>
+<ul>
+<li><strong>k-匿名 (k-anonymity)</strong>：確保每個記錄至少與 k-1 個其他記錄在準標識符（如年齡、郵遞區號）上無法區分。
+<ul>
+<li><em>缺點</em>：容易受到同質性攻擊 (Homogeneity Attack) 和背景知識攻擊。</li>
+</ul></li>
+<li><strong>l-多樣性 (l-diversity)</strong>：要求在每個 k-匿名組中，敏感屬性（如疾病）至少有 l 個不同的值。</li>
+<li><strong>t-接近性 (t-closeness)</strong>：要求每個等價類中敏感屬性的分佈與整體數據集的分佈之間的距離小於閾值 t。</li>
+</ul>
+</section>
+<section id="差分隱私" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="差分隱私">差分隱私</h3>
+<p>差分隱私 (Differential Privacy) 提供了一種數學上嚴格的隱私保護定義。它通過在查詢結果中加入雜訊（如拉普拉斯雜訊），使得攻擊者無法判斷特定個體是否在數據集中。</p>
+<p><span class="math display"><em>P</em>(<em>M</em>(<em>D</em>) ∈ <em>S</em>) ≤ <em>e</em><sup><em>ϵ</em></sup><em>P</em>(<em>M</em>(<em>D</em>′) ∈ <em>S</em>)</span></p>
+<p><strong>公式詳解</strong>：</p>
+<ul>
+<li><strong>D</strong> 與 D’：互為「相鄰資料集」(Neighboring Datasets)，即兩個資料集之間<strong>只差一筆資料</strong>（例如：有你 vs 沒你的資料集）。</li>
+<li><strong>M</strong>：隨機演算法 (Mechanism)，例如一個查詢函數加上隨機雜訊。</li>
+<li><strong>S</strong>：演算法輸出的任何可能結果集合。</li>
+<li><strong>P</strong>：機率 (Probability)。</li>
+<li><strong>𝞮</strong> (Epsilon)：隱私預算 (Privacy Budget)。</li>
+</ul>
+<p><strong>直觀意義</strong>：</p>
+<p>這個不等式保證了：無論特定個體是否在資料集中（<strong>D</strong> 或 D’），演算法 <strong>M</strong> 輸出結果為 <strong>S</strong> 的機率是非常接近的（由 e^ε 控制）。這意味著攻擊者無法通過觀察輸出結果來反推某人是否在資料集中，從而保護了個體隱私。</p>
+<p><strong>應用場景</strong>：</p>
+<ul>
+<li><strong>科技巨頭</strong>：Apple、Google 使用差分隱私來收集用戶使用習慣（如 Emoji 使用頻率、Chrome 首頁訪問統計），而不會洩露單一用戶的行為。</li>
+<li><strong>人口普查</strong>：美國人口普查局使用此技術發布統計數據，防止對特定家庭的重識別攻擊。</li>
+</ul>
+<p><strong>𝞮</strong> 的權衡**：</p>
+<ul>
+<li><strong>𝞮</strong> 越小**：e^ε 越接近 1，隱私保護越強，但加入的雜訊越大，數據可用性 (Utility) 越低。</li>
+<li><strong>𝞮</strong> 越大**：隱私保護越弱，但數據精確度越高。</li>
+</ul>
+</section>
+<section id="進階隱私強化技術-advanced-pets" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="進階隱私強化技術-advanced-pets">進階隱私強化技術 (Advanced PETs)</h3>
+<p>除了去識別化與差分隱私，還有更多技術用於保護數據在使用過程中的安全：</p>
+<ul>
+<li><strong>聯邦學習 (Federated Learning)</strong>：
+<ul>
+<li><strong>原理</strong>：數據不出本地（如手機端），僅將模型參數加密上傳至伺服器聚合。</li>
+<li><strong>優點</strong>：從根本上解決數據外洩風險，適合跨機構合作（如多醫院聯合建模）。</li>
+</ul></li>
+</ul>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<p><img src="chapter5_files\figure-html\mermaid-figure-1.png" style="width:8.98in;height:4.22in" class="figure-img"></p>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>同態加密 (Homomorphic Encryption, HE)</strong>：
+<ul>
+<li><p><strong>原理</strong>：允許在加密數據 (Ciphertext) 上直接進行數學運算，解密後的結果與在明文 (Plaintext) 上運算一致。即滿足： <span class="math display"><em>D</em><em>e</em><em>c</em>(<em>E</em><em>n</em><em>c</em>(<em>a</em>) ⊕ <em>E</em><em>n</em><em>c</em>(<em>b</em>)) = <em>a</em> + <em>b</em></span> 這意味著數據擁有者可以將加密數據發送給雲端進行複雜計算（如 AI 模型推論），雲端在完全不知道數據內容的情況下完成計算並返回加密結果。</p></li>
+<li><p><strong>分類</strong>：</p>
+<ul>
+<li><strong>部分同態加密 (PHE)</strong>：僅支持單一運算（如僅加法或僅乘法）。效率較高。例如：Paillier (加法同態), RSA (乘法同態)。</li>
+<li><strong>全同態加密 (FHE)</strong>：支持任意次數的加法和乘法運算，理論上可計算任何函數。但計算成本極高（比明文慢 10<sup>3</sup> ~ 10<sup>6</sup> 倍）。</li>
+</ul></li>
+<li><p><strong>應用場景</strong>：</p>
+<ul>
+<li><strong>隱私保護外包計算</strong>：醫療機構將加密病歷上傳雲端進行疾病預測模型運算。</li>
+<li><strong>安全多方計算 (MPC)</strong>：多個機構聯合分析數據而不洩露各自的原始數據。</li>
+</ul></li>
+<li><p><strong>挑戰</strong>：計算速度慢、密文膨脹（加密後數據體積變大）。</p></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="sec-compliance" class="level2">
+<h2 class="anchored" data-anchor-id="sec-compliance">合規與安全 (Compliance &amp; Security)</h2>
+<p>合規與安全是大數據專案必須遵守的底線，特別是在 AI 訓練階段。</p>
+<section id="合規處理原則-compliance-principles" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="合規處理原則-compliance-principles">合規處理原則 (Compliance Principles)</h3>
+<p>根據 GDPR 與台灣個資法，數據處理應遵循以下核心原則：</p>
+<ul>
+<li><strong>合法性、正當性與透明性</strong>：必須告知使用者蒐集目的與使用範圍。</li>
+<li><strong>目的限制 (Purpose Limitation)</strong>：數據僅能用於特定目的，不得二次利用（如客服數據轉作廣告）。</li>
+<li><strong>資料最小化 (Data Minimization)</strong>：僅蒐集完成任務所需的最少數據。</li>
+<li><strong>保存期限限制 (Storage Limitation)</strong>：設定保留期限，逾期應刪除或匿名化。</li>
+<li><strong>可追蹤與可刪除性</strong>：落實使用者的「被遺忘權」與「更正權」。</li>
+</ul>
+</section>
+<section id="合法取得依據-legal-basis" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="合法取得依據-legal-basis">合法取得依據 (Legal Basis)</h3>
+<p>AI 訓練資料的取得需具備合法依據：</p>
+<ul>
+<li><strong>明確同意 (Explicit Consent)</strong>：使用者主動勾選同意。</li>
+<li><strong>契約履行必要</strong>：如信用卡風險評估是服務的一部分。</li>
+<li><strong>公共利益或學術研究</strong>：經去識別化且通過倫理審查 (IRB) 的數據。</li>
+</ul>
+</section>
+<section id="資料安全技術" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="資料安全技術">資料安全技術</h3>
+<ul>
+<li><strong>資料加密</strong>：
+<ul>
+<li><strong>靜態數據加密 (Encryption at Rest)</strong>：保護存儲在磁碟上的數據 (AES-256)。</li>
+<li><strong>傳輸中加密 (Encryption in Transit)</strong>：保護在網路上傳輸的數據 (TLS 1.3)。</li>
+</ul></li>
+<li><strong>資料血緣 (Data Lineage)</strong>：追蹤數據從源頭到目的地的完整路徑，確保可追溯性。</li>
+</ul>
+</section>
+</section>
+<section id="sec-governance-framework" class="level2">
+<h2 class="anchored" data-anchor-id="sec-governance-framework">資料與 AI 治理架構 (Data &amp; AI Governance Framework)</h2>
+<p>建立跨部門的治理架構是落實合規的關鍵。</p>
+<section id="組織與角色-organization" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="組織與角色-organization">組織與角色 (Organization)</h3>
+<ul>
+<li><strong>資料治理委員會</strong>：由法務、資安、IT 與業務主管組成，制定政策。</li>
+<li><strong>首席 AI 官 (CAIO)</strong> 或 <strong>資料管理員 (Data Steward)</strong>：監督模型合規性與數據品質。</li>
+</ul>
+</section>
+<section id="流程與管理-process" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="流程與管理-process">流程與管理 (Process)</h3>
+<ul>
+<li><strong>資料目錄 (Data Catalog)</strong>：盤點數據資產，記錄來源、用途與敏感度。</li>
+<li><strong>模型卡片 (Model Card)</strong>：為每個 AI 模型建立「說明書」，記錄訓練數據、適用範圍、限制與偏誤測試結果。</li>
+<li><strong>生命週期管理</strong>：從數據生成、使用到銷毀的全程控管。</li>
+</ul>
+</section>
+<section id="自動化工具-tools" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="自動化工具-tools">自動化工具 (Tools)</h3>
+<ul>
+<li><strong>敏感資料偵測</strong>：自動掃描並標記 PII (個人識別資訊)。</li>
+<li><strong>模型監控</strong>：監控模型飄移 (Model Drift) 與公平性。</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./chapter4.html" class="pagination-link" aria-label="資料視覺化與報告">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">資料視覺化與報告</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

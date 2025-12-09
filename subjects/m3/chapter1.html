@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>大數據生態系統</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-1d4f84655f446305ac42a8f1abcf7405.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">大數據生態系統</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>大數據生態系統 (Big Data Ecosystem) 包含了一系列用於處理海量數據的工具和技術。這些技術旨在解決傳統資料庫無法處理的 “3V” 問題：Volume (大量)、Velocity (高速)、Variety (多樣)。</p>
+<section id="sec-distributed-computing" class="level2">
+<h2 class="anchored" data-anchor-id="sec-distributed-computing">分散式運算框架</h2>
+<p>分散式運算框架 (Distributed Computing Frameworks) 是大數據處理的核心，解決了單機無法處理大規模數據的問題。</p>
+<section id="hadoop" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="hadoop">Hadoop</h3>
+<p>Hadoop 是一個開源框架，允許使用簡單的程式設計模型跨計算機叢集分散式處理大數據。它主要由三個核心組件組成：</p>
+<ol type="1">
+<li><strong>HDFS (Hadoop Distributed File System)</strong>：
+<ul>
+<li><strong>NameNode</strong>：主節點，負責管理文件系統的元數據 (Metadata)，如文件名、目錄結構、文件屬性等。</li>
+<li><strong>DataNode</strong>：工作節點，負責實際存儲數據塊 (Blocks)。</li>
+</ul></li>
+<li><strong>YARN (Yet Another Resource Negotiator)</strong>：
+<ul>
+<li>負責叢集資源的管理和調度。</li>
+<li><strong>ResourceManager</strong>：全局資源管理器。</li>
+<li><strong>NodeManager</strong>：單個節點的資源管理器。</li>
+</ul></li>
+<li><strong>MapReduce</strong>：
+<ul>
+<li>Hadoop 的核心運算模型，分為 Map（映射）和 Reduce（歸約）兩個階段。</li>
+<li>適合批次處理，但磁碟 I/O 頻繁，速度較慢。</li>
+</ul></li>
+</ol>
+</section>
+<section id="spark" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="spark">Spark</h3>
+<p>Spark 提供了更快速的記憶體內運算 (In-Memory Computing) 能力，比 Hadoop MapReduce 快 100 倍。</p>
+<ul>
+<li><strong>核心概念</strong>：
+<ul>
+<li><strong>RDD (Resilient Distributed Dataset)</strong>：Spark 的基本數據結構，具有彈性（可恢復）和分散式特性。</li>
+<li><strong>惰性求值 (Lazy Evaluation)</strong>：Transformation 操作（如 map, filter）不會立即執行，只有遇到 Action 操作（如 count, collect）時才會真正觸發計算。</li>
+</ul></li>
+<li><strong>Spark 生態系統</strong>：
+<ul>
+<li><strong>Spark SQL</strong>：用於處理結構化數據，支持 SQL 查詢。</li>
+<li><strong>Spark Streaming</strong>：用於即時數據流處理。</li>
+<li><strong>MLlib</strong>：機器學習庫。</li>
+<li><strong>GraphX</strong>：圖形計算庫。</li>
+</ul></li>
+<li><strong>DataFrame</strong>：類似於關聯式資料庫的表格，提供了更高級的 API，並經過 Catalyst 優化器優化。</li>
+</ul>
+<p><strong>Python 範例：使用 PySpark 進行字數統計</strong></p>
+<div id="ac871053" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 假設已安裝 pyspark</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.sql <span class="im">import</span> SparkSession</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>spark <span class="op">=</span> SparkSession.builder.appName(<span class="st">"WordCount"</span>).getOrCreate()</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 創建一個簡單的 DataFrame</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [(<span class="st">"Hello world"</span>,), (<span class="st">"Hello Spark"</span>,), (<span class="st">"Big Data"</span>,)]</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> spark.createDataFrame(data, [<span class="st">"text"</span>])</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 拆分單詞並計數</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> explode, split, col</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> df.select(explode(split(col(<span class="st">"text"</span>), <span class="st">" "</span>)).alias(<span class="st">"word"</span>))</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>word_counts <span class="op">=</span> words.groupBy(<span class="st">"word"</span>).count()</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>word_counts.show()</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>spark.stop()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="sec-storage-solutions" class="level2">
+<h2 class="anchored" data-anchor-id="sec-storage-solutions">儲存解決方案</h2>
+<p>有效的儲存解決方案 (Storage Solutions) 是管理大數據的基礎。</p>
+<section id="hdfs" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="hdfs">HDFS</h3>
+<p>Hadoop 分散式檔案系統 (HDFS, Hadoop Distributed File System) 將大文件分割成區塊 (Blocks, 預設 128MB)，並複製到多個節點上（預設 3 份）以確保可靠性。這使得 HDFS 能夠在廉價的硬體上運行並容忍硬體故障。</p>
+</section>
+<section id="關聯式資料庫與-acid-rdbms-acid" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="關聯式資料庫與-acid-rdbms-acid">關聯式資料庫與 ACID (RDBMS &amp; ACID)</h3>
+<p>傳統的關聯式資料庫 (RDBMS) 如 MySQL, PostgreSQL 強調數據的一致性與可靠性，這主要通過 <strong>ACID</strong> 原則來保證：</p>
+<ul>
+<li><strong>Atomicity (原子性)</strong>：交易 (Transaction) 中的所有操作要麼全部成功，要麼全部失敗 (All-or-Nothing)。</li>
+<li><strong>Consistency (一致性)</strong>：交易完成後，數據必須從一個有效狀態轉變為另一個有效狀態，符合所有定義的規則（如約束）。</li>
+<li><strong>Isolation (隔離性)</strong>：多個並發交易之間互不干擾，一個交易的中間狀態對其他交易不可見。</li>
+<li><strong>Durability (持久性)</strong>：一旦交易提交 (Commit)，其結果就是永久性的，即使系統崩潰也不會丟失。</li>
+</ul>
+<p>雖然 ACID 保證了數據的高度可靠性，但在大規模分散式環境下，為了追求高可用性 (Availability) 和分區容錯性 (Partition Tolerance)，NoSQL 資料庫往往會犧牲部分一致性 (Consistency)，遵循 <strong>BASE</strong> 模型 (Basically Available, Soft state, Eventual consistency)。</p>
+<section id="cap-定理-cap-theorem" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="cap-定理-cap-theorem">CAP 定理 (CAP Theorem)</h4>
+<p>CAP 定理指出，對於一個分散式計算系統，不可能同時滿足以下三點：</p>
+<ul>
+<li><strong>Consistency (一致性)</strong>：所有節點在同一時間具有相同的數據。</li>
+<li><strong>Availability (可用性)</strong>：保證每個請求都能得到響應（無論成功或失敗）。</li>
+<li><strong>Partition Tolerance (分區容錯性)</strong>：系統在任意訊息丟失或失敗的情況下仍能繼續運行。</li>
+</ul>
+<p>在分散式系統中，<strong>P (分區容錯性)</strong> 通常是必須的，因此我們只能在 <strong>C (一致性)</strong> 和 <strong>A (可用性)</strong> 之間做權衡：</p>
+<ul>
+<li><strong>CP (Consistency + Partition Tolerance)</strong>：如 HBase, MongoDB。犧牲可用性，確保數據一致。</li>
+<li><strong>AP (Availability + Partition Tolerance)</strong>：如 Cassandra, DynamoDB。犧牲一致性（接受最終一致性），確保高可用。</li>
+</ul>
+</section>
+</section>
+<section id="nosql-資料庫" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="nosql-資料庫">NoSQL 資料庫</h3>
+<p>NoSQL (Not Only SQL) 資料庫適應了非結構化數據的儲存需求，具有高擴展性 (Scalability) 和高性能 (Performance)。</p>
+<ul>
+<li><strong>文件型 (Document)</strong>：
+<ul>
+<li><strong>例子</strong>：MongoDB。</li>
+<li><strong>特點</strong>：儲存 JSON/BSON 格式數據，Schema-free。</li>
+<li><strong>適用場景</strong>：內容管理系統、目錄、使用者資料。</li>
+</ul></li>
+<li><strong>鍵值對 (Key-Value)</strong>：
+<ul>
+<li><strong>例子</strong>：Redis, DynamoDB。</li>
+<li><strong>特點</strong>：通過 Key 快速存取 Value，速度極快。</li>
+<li><strong>適用場景</strong>：快取 (Caching)、Session 管理、購物車。</li>
+</ul></li>
+<li><strong>列式 (Column-family)</strong>：
+<ul>
+<li><strong>例子</strong>：Cassandra, HBase。</li>
+<li><strong>特點</strong>：按列存儲，適合寫入密集型和大規模數據查詢。</li>
+<li><strong>適用場景</strong>：日誌記錄、時間序列數據、物聯網 (IoT)。</li>
+</ul></li>
+<li><strong>圖形 (Graph)</strong>：
+<ul>
+<li><strong>例子</strong>：Neo4j。</li>
+<li><strong>特點</strong>：存儲節點和邊，擅長處理複雜關係。</li>
+<li><strong>適用場景</strong>：社交網絡、推薦引擎、詐欺檢測。</li>
+</ul></li>
+</ul>
+</section>
+<section id="大數據儲存格式-big-data-storage-formats" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="大數據儲存格式-big-data-storage-formats">大數據儲存格式 (Big Data Storage Formats)</h3>
+<p>選擇合適的檔案格式對大數據處理的效能至關重要。</p>
+<ul>
+<li><strong>行式儲存 (Row-based)</strong>：
+<ul>
+<li><strong>CSV/JSON</strong>：文字格式，易讀但佔用空間大，解析慢。</li>
+<li><strong>Avro</strong>：二進位格式，Schema 隨數據存儲。適合大量寫入操作（如 Kafka 消息）。</li>
+</ul></li>
+<li><strong>列式儲存 (Columnar)</strong>：
+<ul>
+<li><strong>Parquet</strong>：二進位列式儲存，支持高效壓縮和編碼。適合 OLAP 分析查詢（只讀取需要的列）。</li>
+<li><strong>ORC (Optimized Row Columnar)</strong>：高度優化的列式儲存，通常與 Hive 配合使用，壓縮比極高。</li>
+</ul></li>
+</ul>
+</section>
+<section id="資料湖" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="資料湖">資料湖</h3>
+<p>資料湖 (Data Lakes) 允許以原生格式儲存大量結構化和非結構化數據，通常基於物件儲存（如 AWS S3, Azure Blob Storage）。</p>
+<p><strong>資料湖 vs 資料倉儲 (Data Warehouse)</strong>：</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">特性</th>
+<th style="text-align: left;">資料湖 (Data Lake)</th>
+<th style="text-align: left;">資料倉儲 (Data Warehouse)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>數據類型</strong></td>
+<td style="text-align: left;">結構化、半結構化、非結構化 (Raw Data)</td>
+<td style="text-align: left;">結構化 (Processed Data)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Schema</strong></td>
+<td style="text-align: left;">Schema-on-Read (讀取時定義)</td>
+<td style="text-align: left;">Schema-on-Write (寫入時定義)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>成本</strong></td>
+<td style="text-align: left;">低 (廉價存儲)</td>
+<td style="text-align: left;">高 (高性能存儲)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>使用者</strong></td>
+<td style="text-align: left;">資料科學家、資料工程師</td>
+<td style="text-align: left;">商業分析師 (BI)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>靈活性</strong></td>
+<td style="text-align: left;">高，適合探索性分析</td>
+<td style="text-align: left;">低，適合固定報表</td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/perng\.github\.io\/ai-cert\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,606 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "AI 應用規劃師全攻略",
+    "section": "",
+    "text": "前言\n適用對象： 準備經濟部 iPAS AI 應用規劃師（初/中級）之考生。\n本攻略旨在協助考生掌握 AI 應用規劃師之核心知識， 內容涵蓋人工智慧基礎、 機器學習、 深度學習、 生成式 AI、 大數據分析、 AI 倫理與法規， 以及 Python 程式語言基礎。",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>人工智慧基礎理論</span>"
+    ]
+  },
+  {
+    "objectID": "chapter1.html",
+    "href": "chapter1.html",
+    "title": "人工智慧的本質與層次架構",
+    "section": "",
+    "text": "AI 的定義與範疇\n人工智慧 (Artificial Intelligence, AI) 已經成為當今科技發展的核心驅動力，深刻地改變著我們的生活與工作方式。本章將帶領讀者深入探討 AI 的定義、技術層次架構，以及人類與 AI 之間多樣化的協作模式，為後續的學習奠定堅實的基礎。",
+    "crumbs": [
+      "第一部：人工智慧基礎與戰略定位",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>人工智慧的本質與層次架構</span>"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#ai-的定義與範疇",
+    "href": "chapter1.html#ai-的定義與範疇",
+    "title": "人工智慧的本質與層次架構",
+    "section": "",
+    "text": "人工智慧 (Artificial Intelligence, AI) 定義\n人工智慧 (AI) 是一個廣泛的學科，旨在創造能夠展現「智慧」行為的機器或軟體。簡單來說，AI 就是讓電腦具備模擬人類認知功能的能力，例如學習、推理、解決問題、感知環境、理解語言等。\nAI 的目標並非僅僅是模仿人類，更在於透過計算能力來增強人類的智慧，解決複雜的問題。從早期的邏輯推理程式到現在的生成式 AI，AI 的定義隨著技術的演進而不斷擴展。\n\n\n弱 AI (Narrow AI) vs. 強 AI (General AI/AGI)\n根據 AI 的能力範圍，我們可以將其分為兩大類：\n\n弱人工智慧 (Artificial Narrow Intelligence, ANI) ：\n\n定義：又稱為「專用 AI」。這類 AI 專精於執行「單一」或「特定」的任務，且在該領域的表現可能超越人類。目前我們生活中所見到的 AI 幾乎都屬於此類。\n特徵：不具備自我意識，無法跨領域學習。它的智慧是「被設計」出來解決特定問題的。\n例子：\n\nAlphaGo：雖然圍棋下得比世界冠軍好，但它不會開車，也不會聊天。\nSiri / Google Assistant：能聽懂語音指令，但無法理解複雜的情感或進行深度的哲學思考。\n人臉辨識系統：能精準辨識身分，但無法欣賞照片的美感。\n\n\n強人工智慧 (Artificial General Intelligence, AGI) ：\n\n定義：又稱為「通用 AI」。這類 AI 具備像人類一樣的「通用智慧」，能夠像人類一樣學習任何智力任務。它具備常識、推理能力、情感理解，甚至自我意識。\n特徵：能夠跨領域遷移學習，面對未曾見過的問題也能嘗試解決。\n現狀：目前仍處於理論和研發階段，尚未真正實現。電影《雲端情人 (Her)》中的薩曼莎或《鋼鐵人》中的賈維斯 (Jarvis) 就是 AGI 的想像。\n\n\n\n\n超人工智慧 (Super AI)\n\n定義：當 AI 在所有領域（包括科學創新、藝術創作、社交技巧）的智慧都遠遠超越最聰明的人類時，我們稱之為「超人工智慧」。\n展望：這是一個充滿未知與想像的領域，也是許多科幻作品探討的主題，同時引發了關於 AI 安全與控制的深刻倫理討論。\n\n\n\n\n人工智慧的層級\n\n\n\n\n符號式 AI (Symbolic AI)\n早期的 AI 發展（約 1950-1980 年代）主要集中在「符號式 AI」，又稱為「邏輯式 AI」或「老派 AI (Good Old-Fashioned AI, GOFAI)」。\n\n核心概念：由人類專家將知識轉化為明確的邏輯規則 (If-Then Rules) 和符號，輸入電腦進行邏輯推論。\n代表技術：專家系統 (Expert Systems) {#def-expert-systems}、邏輯程式設計 (Logic Programming)。\n優勢：邏輯清晰，推論過程透明且具備高度可解釋性 (Explainability)。\n缺點：\n\n缺乏彈性：無法處理模糊、不確定或規則難以窮舉的問題（例如：如何定義「貓」的長相？）。一旦遇到規則庫以外的情況，系統就會崩潰。\n知識擷取瓶頸 (Knowledge Acquisition Bottleneck) {#def-knowledge-bottleneck}：將人類專家的隱性知識轉化為明確的規則，需要耗費大量的人力與時間。\n\n\n\n\n統計式 AI (Statistical AI)\n隨著電腦算力的提升和大數據的出現，AI 的發展重心轉向了「統計式 AI」，也就是現在主流的機器學習。\n\n核心概念：不再由人類手寫規則，而是讓電腦從大量的「數據」中，利用統計學方法自己找出規律和模式。\n代表技術：決策樹 (Decision Tree)、支援向量機 (SVM)、類神經網路 (Neural Networks) 等。\n優勢：能夠處理複雜、模糊的非結構化數據（如影像、語音、自然語言），並且具備從經驗中學習的能力。\n缺點：\n\n可解釋性低 (Black Box)：統計模型內部的運作複雜，基本上是無法理解的黑盒子，難以解釋為何做出某個判斷。\n依賴數據 (Data Dependency)：模型的好壞取決於數據的品質與數量（Garbage In, Garbage Out）。\n偏差風險 (Bias)：如果訓練數據包含偏見，模型也會學到這些偏見。",
+    "crumbs": [
+      "第一部：人工智慧基礎與戰略定位",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>人工智慧的本質與層次架構</span>"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#技術層次關係",
+    "href": "chapter1.html#技術層次關係",
+    "title": "人工智慧的本質與層次架構",
+    "section": "技術層次關係",
+    "text": "技術層次關係\n要釐清 AI 領域的各種名詞，最簡單的方法是理解它們之間的「包含關係」。\n\nAI、機器學習 (ML)、深度學習 (DL) 的包含關係\n這三者就像是俄羅斯娃娃一樣，一層包著一層：\n\n人工智慧 (Artificial Intelligence) ：最外層的大圈圈。包含了所有讓機器展現智慧的技術，包括早期的符號式 AI 和現代的機器學習。\n機器學習 (Machine Learning, ML) ：AI 的子集。專指那些「不需明確編寫指令，就能讓電腦從數據中學習」的演算法。它包含了傳統的統計學習方法（如決策樹、SVM）和深度學習。\n深度學習 (Deep Learning, DL) ：機器學習的子集。特指使用「多層類神經網路 (Deep Neural Networks)」來模擬人類大腦運作的技術。它是目前推動 AI 爆發性成長（如 AlphaGo, ChatGPT）的核心技術。\n\n\n\n\nAI、機器學習、深度學習的包含關係\n\n\n\n\n資料驅動 (Data-Driven) vs. 規則驅動 (Rule-Based)\n\n規則驅動 (Rule-Based) {#def-rule-based}：\n\n代表：符號式 AI、專家系統。\n邏輯：輸入 + 規則 = 輸出。\n比喻：像是一個只會照著食譜做菜的廚師，食譜沒寫的就不會做。\n\n資料驅動 (Data-Driven) {#def-data-driven}：\n\n代表：機器學習、深度學習。\n邏輯：輸入 + 輸出 = 規則（模型）。\n比喻：像是一個聰明的學徒，看了一萬次師傅做菜（數據），自己領悟出了做菜的訣竅（模型）。\n\n\n\n\n傳統機器學習 vs. 深度學習的適用場景與成本效益分析\n\n\n\n\n\n\n\n\n特性\n傳統機器學習 (Traditional ML)\n深度學習 (Deep Learning)\n\n\n\n\n數據需求量\n較少，小數據集也能運作良好。\n極大，需要海量數據才能發揮優勢。\n\n\n硬體需求\n較低，一般 CPU 即可訓練。\n極高，通常需要高階 GPU 加速運算。\n\n\n特徵工程\n關鍵。需要人類專家手工提取特徵（如定義貓有尖耳朵）。\n自動化。模型能自動從數據中提取特徵（End-to-End Learning）。\n\n\n可解釋性\n較高（如決策樹），容易理解判斷依據。\n較低（黑盒子），難以解釋神經網路內部的運作。\n\n\n適用場景\n表格數據 (Tabular Data)、簡單分類、資源受限的環境。\n影像辨識、自然語言處理 (NLP)、語音生成、複雜決策。",
+    "crumbs": [
+      "第一部：人工智慧基礎與戰略定位",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>人工智慧的本質與層次架構</span>"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#sec-human-ai-collab",
+    "href": "chapter1.html#sec-human-ai-collab",
+    "title": "人工智慧的本質與層次架構",
+    "section": "人類與 AI 的協作模式 (Human-AI Collaboration)",
+    "text": "人類與 AI 的協作模式 (Human-AI Collaboration)\nAI 並非要完全取代人類，更多時候是與人類協作。根據人類介入的程度，我們可以將協作模式分為三種：\n\n1. 人在迴圈中 (Human-in-the-loop, HITL)\n\n定義：人類是 AI 系統運作流程中不可或缺的一部分。AI 無法獨立完成任務，必須由人類進行確認、修正或提供回饋，系統才能繼續運作或改進。\n應用場景：\n\n資料標註 (Data Labeling)：AI 需要人類教它什麼是「貓」。人類負責標記圖片，AI 才能學習。\n醫療診斷輔助：AI 分析 X 光片並標記出可疑病灶，但最終診斷必須由醫生確認並簽名。AI 只是醫生的助手，決策權在人。\nAI 輔助寫作/翻譯：AI 產生初稿，人類進行潤飾與確認。\n法律合約審查：AI 標記潛在風險條款，律師進行最終判斷。\n\n\n\n\n2. 人在迴圈上 / 人監督迴路 (Human-over-the-loop / Human-on-the-loop, HOTL)\n\n定義：AI 可以獨立完成大部分的任務，人類扮演監督者 (Supervisor) 的角色。人類不直接參與每一個決策，但會監控系統運作，並在發生異常或信心不足時介入。\n應用場景：\n\n智慧工廠監控：AI 自動控制生產線的溫度與速度。人類工程師在控制室監控儀表板，只有在警報響起或數值異常時，才手動接管控制。\n自駕車 (Level 3)：車輛在高速公路上自動駕駛，但駕駛人必須隨時準備好在系統請求時接手方向盤。\nIT 維運監控 (AIOps)：AI 自動偵測並修復常見故障，遇到未知問題才通知工程師。\n智慧交通號誌控制：AI 根據車流自動調整紅綠燈，交警僅在特殊狀況（如事故）時介入。\n\n\n\n\n3. 人在迴圈外 (Human-out-of-the-loop, HOOTL)\n\n定義：AI 系統完全全自動化運作，人類不介入其決策過程，甚至無法即時干預。這通常用於需要極快反應速度或人類無法處理的場景。\n應用場景：\n\n高頻交易 (High-Frequency Trading)：AI 在毫秒等級內分析股市並自動下單。人類根本來不及反應，只能事後檢討演算法。\n全自動化網路防禦：面對大規模 DDoS 攻擊，AI 必須即時自動阻擋惡意流量，等待人類批准會造成系統癱瘓。\n個人化推薦系統：Netflix 或 YouTube 根據你的觀看紀錄自動推薦影片，人類完全不介入。\n動態定價 (Dynamic Pricing)：Uber 或機票網站根據供需自動調整價格。\n\n風險：由於人類無法即時監控，HOOTL 系統必須具備極高的可靠性，並內建嚴格的安全機制 (Safety Guardrails) 以防止災難性的錯誤（如股市閃崩）。\n\n\n\n\nHuman-AI Collaboration Models",
+    "crumbs": [
+      "第一部：人工智慧基礎與戰略定位",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>人工智慧的本質與層次架構</span>"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#chap-ai-foundation-chapter1-summary",
+    "href": "chapter1.html#chap-ai-foundation-chapter1-summary",
+    "title": "人工智慧的本質與層次架構",
+    "section": "本章總結與考點提示",
+    "text": "本章總結與考點提示\n\n核心概念回顧\n本章建立了 AI 的基礎世界觀，釐清了 AI、機器學習與深度學習的層級關係，並介紹了 AI 的發展歷史與分類。\n\nAI 層級關係：同心圓結構。\n\nAI (人工智慧)：最外層，模擬人類智慧的總稱。\nML (機器學習)：AI 的子集，讓機器從資料中學習規則，而非人工撰寫規則。\nDL (深度學習)：ML 的子集，使用多層神經網路，具備自動特徵提取能力。\n\nAI 發展史：\n\n1956 達特茅斯會議：AI 誕生。\n寒冬與復甦：經歷兩次寒冬，因算力不足與資料缺乏。\n2012 AlexNet：深度學習爆發。\n2022 ChatGPT：生成式 AI 普及。\n\nAI 類型：\n\n弱 AI (ANI)：專精單一任務（如下棋、導航）。目前所有的 AI 都是弱 AI。\n強 AI (AGI)：具備人類般的通用智慧。尚未實現。\n超 AI (ASI)：超越人類智慧。\n\n\n\n\nAI 應用規劃師認證考點\n常考題型與解題策略：\n\n層級關係題：\n\n例題：「下列關於 AI、ML、DL 的關係何者正確？」\n解答：AI &gt; ML &gt; DL。深度學習是機器學習的一種，機器學習是人工智慧的一種。\n\n定義辨析題：\n\n例題：「AlphaGo 是屬於哪一種 AI？」\n解答：弱 AI (ANI)。因為它只會下圍棋，不會開車或聊天。\n例題：「圖靈測試 (Turing Test) 的目的是什麼？」\n解答：測試機器是否具備人類智慧（能否騙過人類評審）。\n\n歷史里程碑題：\n\n關鍵字：達特茅斯會議 (AI 誕生)、AlexNet (深度學習爆發)、Deep Blue (擊敗西洋棋王)、AlphaGo (擊敗圍棋王)。\n\n\n\n\n記憶口訣\n\n層級：「大中細」（AI 大、ML 中、DL 細）。\n類型：「弱強超」（現在是弱、未來是強、科幻是超）。\n\n\n\n延伸思考\n\n為什麼深度學習直到 2010 年代才爆發？（關鍵：大數據 + GPU 算力）\n目前的生成式 AI (如 ChatGPT) 是強 AI 嗎？為什麼？（它看起來很全能，但本質上還是基於機率預測，且缺乏真正的理解與意識，仍處於弱 AI 邁向強 AI 的過渡期）。",
+    "crumbs": [
+      "第一部：人工智慧基礎與戰略定位",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>人工智慧的本質與層次架構</span>"
+    ]
+  },
+  {
+    "objectID": "chapter2.html",
+    "href": "chapter2.html",
+    "title": "AI 應用問題類型",
+    "section": "",
+    "text": "學習範式\n在開始深入各種技術細節之前，我們需要先了解 AI 究竟能解決什麼樣的問題。這就像在學習使用工具箱之前，先了解有哪些類型的釘子和螺絲一樣。本章將介紹 AI 的學習範式（它是如何學習的）以及資料分析的層次（它能提供多深的見解）。\n機器學習的核心在於「從資料中學習」。根據資料的型態以及學習的方式，我們可以將其分為幾種主要的範式。",
+    "crumbs": [
+      "第一部：人工智慧基礎與戰略定位",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>AI 應用問題類型</span>"
+    ]
+  },
+  {
+    "objectID": "chapter2.html#sec-learning-paradigms",
+    "href": "chapter2.html#sec-learning-paradigms",
+    "title": "AI 應用問題類型",
+    "section": "",
+    "text": "監督式學習 (Supervised Learning)\n這是目前應用最廣泛的 AI 學習方式。想像一位老師在教導學生，老師會提供題目（輸入資料）以及標準答案（標籤）。學生的目標是找出題目與答案之間的關聯規則，以便將來遇到沒有答案的新題目時，也能答對。\n\n關鍵要素：需要有標籤的資料 (Labeled Data)。\n生活案例：\n\n垃圾郵件過濾：系統看過成千上萬封標示為「垃圾信」或「正常信」的郵件後，學會分辨新郵件。\n房價預測：根據過去房屋的坪數、地點、屋齡（輸入）以及最終成交價（答案），預測新房子的價格。\n\n\n\n\n非監督式學習 (Unsupervised Learning)\n這種方式就像是自修，或者是一個嬰兒在探索世界。沒有老師告訴它什麼是對的、什麼是錯的，也沒有標準答案。模型必須自己從資料中尋找隱藏的結構或規律。\n\n關鍵要素：只有輸入資料，沒有標籤。\n生活案例：\n\n顧客分群 (Customer Segmentation)：電商平台分析消費者的購買紀錄，自動將顧客分成「精打細算型」、「衝動購物型」等群體，但系統事先並不知道這些群體的定義。\n異常偵測：信用卡公司分析刷卡行為，發現某筆交易與平常的模式差異過大，判定為潛在盜刷。\n\n\n\n\n\n監督式學習與非監督式學習\n\n\n\n\n半監督式學習 (Semi-supervised Learning)\n這是一種折衷方案。在現實世界中，取得有標籤的資料往往很昂貴（需要人工標註），但沒標籤的資料卻隨處可見。半監督式學習結合了少量的標籤資料和大量的無標籤資料。\n\n類比：老師只教了幾個核心概念（少量標籤），剩下的要學生舉一反三，從大量練習題中自己摸索（大量無標籤）。\n應用：醫療影像分析（醫生標註幾張 X 光片很花時間，但醫院有大量未標註的片子）。\n\n\n\n\n半監督式學習\n\n\n\n\n強化學習 (Reinforcement Learning)\n這就像是訓練寵物。我們不會直接告訴 AI 每一步該怎麼走，而是讓它在一個環境中嘗試。做對了就給予獎勵（Reward），做錯了就給予懲罰（Penalty）。AI 的目標是透過不斷嘗試錯誤（Trial and Error），找出能獲得最大累積獎勵的策略。\n強化學習的過程可以拆解為以下幾個關鍵要素的互動：\n\n代理人 (Agent)：也就是正在學習的 AI 模型（例如：掃地機器人）。\n環境 (Environment)：代理人所處的世界（例如：充滿家具的客廳）。\n狀態 (State)：代理人當前的情況（例如：前方 10 公分有障礙物）。\n行動 (Action)：代理人採取的動作（例如：向左轉）。\n獎勵 (Reward)：環境給予的回饋（例如：成功避開障礙物得 +1 分，撞到桌腳得 -10 分）。\n\n探索與利用 (Exploration vs. Exploitation)\n強化學習中有一個經典的難題：\n\n探索 (Exploration)：嘗試新的、未知的行動，希望能發現更好的策略（但也可能失敗）。\n利用 (Exploitation)：堅持目前已知最好的策略，確保獲得穩定的獎勵。 AI 必須在這兩者之間取得平衡，才能不斷進步。\n生活案例：\n\nAlphaGo：圍棋程式透過無數次的自我對弈，學習如何贏得比賽。它不僅學習人類棋譜，更透過自我探索發現了人類未曾想過的下法。\n掃地機器人：在房間裡碰撞學習，慢慢規劃出最有效率的清掃路徑，同時避開障礙物。\n\n\n\n\n\n強化學習\n\n\n\n\n遷移學習 (Transfer Learning)\n這就是所謂的「站在巨人的肩膀上」。人類在學習新技能時，通常會運用舊有的經驗。例如學會騎腳踏車的人，學騎機車會比較快。遷移學習就是將一個已經訓練好的強大模型（預訓練模型），微調後應用到新的、類似的任務上。\n\n優勢：不需要從頭開始訓練，大幅節省時間與資料需求。\n生活案例：\n\n醫療影像診斷：使用一個已經看過數百萬張日常照片（如貓、狗、車）的模型，因為它已經學會了如何辨識邊緣、形狀和紋理，只需要再給它少量的 X 光片或 MRI 影像，它就能快速學會判讀病灶。\n特定領域的語言模型：使用像 GPT 這樣已經讀過整個網際網路的通用模型，針對「法律文件」或「醫療報告」進行微調，讓它變成該領域的專家助手。\n風格轉換：將一位畫家（如梵谷）的畫風「遷移」到一張普通的風景照上，讓照片瞬間變成名畫風格。\n\n\n\n\n\n遷移學習",
+    "crumbs": [
+      "第一部：人工智慧基礎與戰略定位",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>AI 應用問題類型</span>"
+    ]
+  },
+  {
+    "objectID": "chapter2.html#sec-data-analysis-levels",
+    "href": "chapter2.html#sec-data-analysis-levels",
+    "title": "AI 應用問題類型",
+    "section": "資料分析層次",
+    "text": "資料分析層次\nAI 與資料科學不僅僅是預測未來，它在商業應用上通常被分為四個價值層次，由淺入深：\n\n1. 描述性分析 (Descriptive Analysis): 發生了什麼？\n這是最基礎的層次，重點在於總結過去。透過報表、儀表板 (Dashboard) 來呈現歷史數據。\n\n例子：\n\n銷售報表：上個月的總銷售額是多少？哪個產品賣得最好？\n網站分析：昨天有多少人造訪網站？平均停留時間多久？\n人資盤點：目前公司有多少員工？各部門的人數分佈為何？\n\n\n\n\n\n描述性分析\n\n\n\n\n2. 診斷性分析 (Diagnostic Analysis): 為什麼發生？\n這層次試圖找出原因。透過資料鑽取 (Drill-down) 或相關性分析，解釋過去事件的成因。\n\n例子：\n\n銷售檢討：為什麼上個月銷售額下降？是因為季節性因素，還是競爭對手降價？\n設備故障：為什麼這台機器突然停機？是因為過熱還是零件磨損？\n客戶流失：為什麼這群客戶不再續約？是因為價格太高還是服務滿意度下降？\n\n\n\n\n\n診斷性分析\n\n\n\n\n3. 預測性分析 (Predictive Analysis): 將會發生什麼？\n這正是 AI 與機器學習大顯身手的地方。利用過去的模式來預測未來的趨勢或事件。\n\n例子：\n\n銷售預測：根據目前的趨勢，下個月的銷售額預計會是多少？\n預防性維護：這台機器在未來一週內故障的機率有多高？\n信用評分：這位申請人未來違約的機率是多少？\n\n\n\n\n\n預測性分析\n\n\n\n\n4. 處方性分析 (Prescriptive Analysis): 應該怎麼做？\n這是分析的最高境界。不僅預測未來，還能提供最佳行動建議，告訴決策者如何優化結果。\n\n例子：\n\n庫存優化：既然預測下個月庫存會不足，系統建議現在應該向供應商 A 訂購 500 個零件，並向供應商 B 訂購 300 個，以達到成本最低且到貨最快。\n路徑規劃：考量到預測的塞車狀況，導航系統建議司機改走 B 路線以節省 10 分鐘。\n行銷配置：為了最大化轉換率，系統建議將 60% 的預算投入 Instagram 廣告，40% 投入 Google 關鍵字。\n\n\n\n\n\n處方性分析",
+    "crumbs": [
+      "第一部：人工智慧基礎與戰略定位",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>AI 應用問題類型</span>"
+    ]
+  },
+  {
+    "objectID": "chapter2.html#chap-ai-foundation-chapter2-summary",
+    "href": "chapter2.html#chap-ai-foundation-chapter2-summary",
+    "title": "AI 應用問題類型",
+    "section": "本章總結與考點提示",
+    "text": "本章總結與考點提示\n\n核心概念回顧\n本章介紹了 AI 應用的兩大基礎框架：學習範式（AI 如何學習）與資料分析層次（AI 能提供什麼價值）。\n學習範式比較表：\n\n\n\n\n\n\n\n\n\n學習範式\n資料特性\n典型應用\n關鍵概念\n\n\n\n\n監督式學習\n有標籤資料\n分類、迴歸\n訓練集、測試集\n\n\n非監督式學習\n無標籤資料\n分群、降維\n隱藏結構、模式發現\n\n\n半監督式學習\n少量標籤 + 大量無標籤\n醫療影像\n標註成本\n\n\n強化學習\n獎勵/懲罰訊號\n遊戲、機器人\nAgent、Environment、Policy\n\n\n遷移學習\n預訓練模型\n微調應用\nPre-training、Fine-tuning\n\n\n\n資料分析層次：\n\n描述性 → 發生了什麼？（報表、儀表板）\n診斷性 → 為什麼發生？（根因分析）\n預測性 → 將會發生什麼？（機器學習預測）\n處方性 → 應該怎麼做？（最佳化建議）\n\n\n\nAI 應用規劃師認證考點\n常考題型與解題策略：\n\n情境判斷題：給定商業問題，選擇最適合的學習範式\n\n例題：「公司想根據客戶過去的購買紀錄預測流失率」\n\n解答：監督式學習（分類問題）\n關鍵字：「過去紀錄」= 有標籤資料；「預測」= 監督式學習\n\n例題：「想將客戶分成不同群組進行精準行銷，但不知道該分幾群」\n\n解答：非監督式學習（分群）\n關鍵字：「不知道分幾群」= 無預設標籤；「分群」= 非監督式學習\n\n\n分析層次判斷題：識別問題屬於哪個分析層次\n\n例題：「為什麼上個月銷售下降？」→ 診斷性分析（找原因）\n例題：「下個月銷售會是多少？」→ 預測性分析（預測未來）\n例題：「應該如何調整行銷策略以提升銷售？」→ 處方性分析（給建議）\n\n概念辨析題：\n\n監督 vs. 非監督：關鍵在於「是否有標籤」\n強化學習的特點：透過「試錯」學習，需要「獎勵機制」\n遷移學習的優勢：「站在巨人肩膀上」，減少訓練時間與資料需求\n探索 vs. 利用：新嘗試（可能更好但有風險）vs. 已知最佳（穩定但不會進步）\n\n應用場景配對題：\n\n垃圾郵件過濾 → 監督式學習（分類）\n客戶分群 → 非監督式學習\nAlphaGo 圍棋 → 強化學習\n醫療影像診斷（資料少）→ 遷移學習\n異常交易偵測 → 非監督式學習（異常偵測）\n\n\n\n\n記憶口訣\n\n學習範式：「監非半強遷」（監督、非監督、半監督、強化、遷移）\n分析層次：「描診預處」（描述、診斷、預測、處方）\n強化學習：「代環狀動獎」（代理人、環境、狀態、行動、獎勵）\n\n\n\n延伸思考\n\n為什麼 AlphaGo 使用強化學習而不是監督式學習？\n在什麼情況下，描述性分析就足夠了，不需要預測性分析？\n遷移學習為何能讓小公司也能使用 AI？",
+    "crumbs": [
+      "第一部：人工智慧基礎與戰略定位",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>AI 應用問題類型</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html",
+    "href": "chapter3.html",
+    "title": "數據處理生命週期與架構",
+    "section": "",
+    "text": "資料類型與儲存 (Data Types & Storage)\n在 AI 的世界裡，有一句名言：「垃圾進，垃圾出 (Garbage In, Garbage Out, GIGO)」。無論你的模型多麼先進，如果餵給它的資料品質低劣，結果也將毫無價值。本章將探討資料如何從原始狀態，經過層層處理，最終變成模型可用的燃料。\n在建立資料管道之前，我們必須先了解手上有什麼樣的資料，以及該把它存在哪裡。",
+    "crumbs": [
+      "第二部：數據工程——AI 的堅實地基",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>數據處理生命週期與架構</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#sec-data-types-storage",
+    "href": "chapter3.html#sec-data-types-storage",
+    "title": "數據處理生命週期與架構",
+    "section": "",
+    "text": "結構化資料 vs 非結構化資料\n\n\n\n結構化資料 (Structured Data)\n\n定義：高度組織化，有固定的格式與長度。通常以「表格」形式呈現（行與列）。\n例子：Excel 報表、銀行交易紀錄、客戶資料表 (Name, Age, Phone)。\n儲存方式：關聯式資料庫 (RDB, Relational Database)。\n\nSQL (Structured Query Language)：用於查詢和管理資料的標準語言。\n特性：強調 ACID（原子性、一致性、隔離性、持久性），確保交易絕對準確。\n常見工具：MySQL, PostgreSQL, Oracle, Microsoft SQL Server。\n\n\n\n\n非結構化資料 (Unstructured Data)\n\n定義：沒有固定格式，電腦難以直接解析。佔了全世界資料的 80% 以上。\n例子：圖片、影片、音訊、PDF 文件、社群貼文、電子郵件內容。\n儲存方式：NoSQL 資料庫 或 物件儲存 (Object Storage)。\n\n特性：靈活、擴充性強 (Scalable)，通常不保證強一致性 (BASE)。\n常見工具：\n\n物件儲存：Amazon S3, Google Cloud Storage (存圖片、影片)。\nNoSQL：MongoDB (存文件), Redis (存快取), Cassandra (存大量日誌)。\n\n\n\n\n\n半結構化資料 (Semi-structured Data)\n\n定義：介於兩者之間。沒有嚴格的表格架構，但有標籤 (Tags) 或鍵值 (Keys) 來描述資料層次。\n例子：JSON (API 回傳格式), XML, HTML, Log 檔。\n儲存方式：通常存於 NoSQL (Document DB) 如 MongoDB，或現代 RDB 的 JSON 欄位中。\n\n\n\n\nSQL vs NoSQL",
+    "crumbs": [
+      "第二部：數據工程——AI 的堅實地基",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>數據處理生命週期與架構</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#sec-data-pipeline",
+    "href": "chapter3.html#sec-data-pipeline",
+    "title": "數據處理生命週期與架構",
+    "section": "資料管道 (Data Pipeline)",
+    "text": "資料管道 (Data Pipeline)\n資料管道就像是城市的供水系統。水源（原始資料）可能來自水庫、河流或地下水，必須經過過濾、消毒、輸送（處理過程），最後才能從家裡的水龍頭流出乾淨的自來水（可用資料）。\n\nETL (Extract-Transform-Load) 架構\n這是最傳統也最常見的資料處理流程，特別適用於結構化資料（如資料庫表格）。\n\n資料擷取 (Extract)：從各種來源（資料庫、API、檔案）收集資料。就像去市場買菜。\n資料轉換 (Transform)：清洗、格式化、計算衍生欄位。就像在廚房備料（洗菜、切肉、醃製）。這是最耗時的步驟。\n資料載入 (Load)：將處理好的資料存入目標系統（通常是資料倉儲 Data Warehouse）。就像將煮好的菜端上桌。\n\n優缺點分析：\n\n優點 (Pros)：\n\n資料品質高：進入倉儲的資料都經過清洗和驗證，乾淨且格式統一。\n查詢效能好：資料倉儲通常針對讀取優化，分析速度快。\n節省儲存空間：只儲存需要的、處理過的資料。\n\n缺點 (Cons)：\n\n靈活性低：如果分析需求改變（例如想看原始資料），需要重新設計轉換流程。\n延遲較高：必須等所有轉換步驟完成才能使用資料，不適合即時分析。\n\n\n\n\n\nETL 架構\n\n\n\n\nELT (Extract-Load-Transform) 架構與資料湖 (Data Lake)\n隨著大數據 (Big Data) 的興起，資料量大到無法先處理再儲存，或者資料是非結構化的（如日誌、圖片、影片），ELT 架構應運而生。\n\n流程：先把所有資料（不管髒不髒）全部抓進來（Extract & Load），存放在一個巨大的儲存庫中，稱為資料湖 (Data Lake)。等到需要分析時，再進行轉換 (Transform)。\n類比：這就像搬家。先把舊家的東西全部裝箱搬到新家（Load），等到要用某個東西時，再打開箱子整理（Transform）。\n\n優缺點分析：\n\n優點 (Pros)：\n\n極高靈活性：保留了所有原始資料，隨時可以根據新需求進行不同的轉換分析。\n載入速度快：不需要等待繁重的轉換過程，資料能快速進入系統。\n支援非結構化資料：圖片、影片、日誌都可以先丟進去再說。\n\n缺點 (Cons)：\n\n資料治理困難：如果沒有妥善管理，資料湖很容易變成「資料沼澤 (Data Swamp)」，充滿垃圾資料。\n查詢效能較差：因為資料未經優化，查詢時可能需要即時處理大量原始數據。\n\n\n\n\n\nELT 架構\n\n\n\n\n批次處理 vs. 串流處理\n\n批次處理 (Batch Processing)：累積一段時間的資料後，一次性處理。\n\n類比：公車。要等到時刻表到了或人坐滿了才發車。\n優點 (Pros)：\n\n技術成熟：工具多，容易實作與維護。\n計算效率高：一次處理大量資料，平均成本低。\n\n缺點 (Cons)：\n\n資料延遲：無法看到最新的數據，通常有數小時到數天的落差。\n\n適用：日報表、月結算、不需要即時性的分析。\n\n串流處理 (Streaming Processing)：資料一產生就立刻處理。\n\n類比：計程車。隨叫隨走，來一個載一個。\n優點 (Pros)：\n\n即時性：能立刻對新事件做出反應（如阻擋盜刷）。\n平滑負載：資料持續流入處理，不會像批次處理那樣在特定時間出現巨大的運算高峰。\n\n缺點 (Cons)：\n\n技術複雜：需要處理資料亂序、遺失、重複等問題，開發難度高。\n成本較高：需要 24 小時運行的基礎設施。\n\n適用：即時詐欺偵測、股市交易監控、即時推薦系統。\n\n\n\n\n\n批次處理 vs. 串流處理",
+    "crumbs": [
+      "第二部：數據工程——AI 的堅實地基",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>數據處理生命週期與架構</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#sec-eda",
+    "href": "chapter3.html#sec-eda",
+    "title": "數據處理生命週期與架構",
+    "section": "探索性資料分析 (Exploratory Data Analysis, EDA)",
+    "text": "探索性資料分析 (Exploratory Data Analysis, EDA)\n在正式建模之前，我們必須先「認識」資料。探索性資料分析 (Exploratory Data Analysis, EDA) 就像是相親，你需要透過各種方式了解對方的個性、習慣和背景。\n\n數值型 vs. 類別型資料 (Numerical vs. Categorical Data)\n在資料科學中，區分資料的類型至關重要，因為不同的演算法適用於不同類型的資料。\n\n1. 數值型資料 (Numerical Data)\n代表數量或大小的資料，可以進行數學運算（加減乘除）。\n\n連續型 (Continuous)：可以取任意小數點的值。例如：身高 (175.5 cm)、溫度 (26.8°C)、股價。\n離散型 (Discrete)：只能取整數值。例如：小孩的人數 (1, 2, 3)、網頁點擊次數。\n\n\n\n2. 類別型資料 (Categorical Data)\n代表特徵或群組的資料，通常是文字或代碼，無法直接進行數學運算。\n\n名目型 (Nominal)：沒有順序關係。例如：血型 (A, B, O, AB)、顏色 (紅, 藍, 綠)、城市 (台北, 東京, 紐約)。\n順序型 (Ordinal)：有順序或等級關係，但間距不一定相等。例如：滿意度 (非常滿意 &gt; 滿意 &gt; 普通 &gt; 不滿意)、衣服尺寸 (S &lt; M &lt; L &lt; XL)。\n\n\n\n\n類別型 vs. 數值型資料\n\n\n\n\n為什麼不能輕易轉換？\n雖然電腦最終只看得懂數字，但我們不能隨意將類別轉為數字，或將數字轉為類別，這會造成模型誤解：\n\n類別轉數值的陷阱：\n\n如果將「顏色」編碼為：紅=1, 綠=2, 藍=3。\n誤解：模型會以為「藍色 (3) 大於 紅色 (1)」，或者「紅色 (1) + 綠色 (2) = 藍色 (3)」。這在數學上是荒謬的。\n解法：對於類別型資料，應使用獨熱編碼 (One-Hot Encoding)，將每個顏色變成獨立的欄位（是紅色嗎？是綠色嗎？）。\n\n數值轉類別的代價：\n\n如果將「年齡」轉為「年齡層」（0-18歲, 19-35歲…）。\n資訊流失：19 歲和 35 歲被視為完全一樣，失去了細微的差異。這稱為離散化 (Discretization)，雖然有助於簡化問題，但會犧牲精確度。\n\n\n\n\n\n統計摘要 (Descriptive Statistics)\n用數字來描述資料的整體樣貌，這是了解資料的第一步。\n\n集中趨勢 (Central Tendency)：尋找資料的「中心」，代表大多數資料落在哪裡。\n\n平均數 (Mean)：所有數值加總除以個數。\n\n缺點：非常容易受極端值 (Outliers) 影響。\n\n中位數 (Median)：將資料由小到大排列，位於正中間的那個數（第 50 百分位數）。\n\n優點：不受極端值影響，更能代表「一般人」的水準。在房價或薪資統計中，中位數通常比平均數更有參考價值。\n\n眾數 (Mode)：出現次數最多的數值。適用於類別資料（如「最熱賣的飲料」）。\n\n\n實例演練：薪資統計\n假設一間新創公司有 5 位員工，月薪（萬元）分別為：3, 3, 4, 5, 100（最後一位是老闆）。\n\n平均數：(3+3+4+5+100) / 5 = 23 萬。\n\n解讀：平均薪資 23 萬，聽起來這家公司待遇超好？但其實 4 個人都領不到 6 萬。這就是平均數被極端值（老闆的 100 萬）拉高的假象。\n\n中位數：排序後是 3, 3, [4], 5, 100。中位數是 4 萬。\n\n解讀：4 萬比較接近大多數員工的真實感受。\n\n眾數：3 萬（出現 2 次，最多）。\n\n解讀：領 3 萬的人最多。\n\n\n\n離散程度 (Dispersion)：資料分佈得有多「散」，代表資料的波動性或不確定性。\n\n標準差 (Standard Deviation, SD)：數值與平均數的平均距離。\n\n公式：\\[ s = \\sqrt{\\frac{\\sum_{i=1}^{n} (x_i - \\bar{x})^2}{n-1}} \\]\n注意 (貝塞爾校正)：為什麼除以 n-1 而不是 n？\n\n當我們只擁有樣本 (Sample) 資料時，用 n-1 能提供對母體標準差更準確的不偏估計 (Unbiased Estimate)。\n如果是計算母體 (Population) 標準差（擁有全部資料），則除以 n。\n\n意義：SD 越小，代表資料越集中（品質穩定）；SD 越大，代表資料越參差不齊（風險高）。\n例子：兩個班級平均分都是 80 分。A 班大家都在 75-85 分之間（SD 小）；B 班有人考 100 也有人考 60（SD 大）。 \n\n四分位數 (Quartiles)：將資料由小到大切成四等份的切點。\n\nQ1 (第 1 四分位數)：贏過 25% 的人。\nQ2 (第 2 四分位數)：即中位數，贏過 50% 的人。\nQ3 (第 3 四分位數)：贏過 75% 的人。\n四分位距 (IQR)：代表中間 50% 資料的範圍，常用於偵測離群值。\n公式：IQR = Q_3 - Q_1\n\n\n分佈形狀 (Distribution Shape)：\n\n偏態 (Skewness)：資料分佈是否對稱。\n\n公式：\\[ Skewness = \\frac{\\sum_{i=1}^{n} (x_i - \\bar{x})^3}{n \\times s^3} \\]\n變數說明：\n\nxi：第 i 個資料點。\n\\(\\bar{x}\\)：平均數。\nn：資料總數。\ns：標準差。\n\n右偏 (Right Skewed / Positive Skew)：長尾巴在右邊（大數值方向）。代表少數極大值拉高了平均數。例如：所得分佈（少數富人）、房價。此時 平均數 &gt; 中位數。\n左偏 (Left Skewed / Negative Skew)：長尾巴在左邊（小數值方向）。例如：考試成績（題目很簡單，大多數人考高分，少數人考低分）。此時 平均數 &lt; 中位數。 \n\n峰度 (Kurtosis)：資料分佈的「尖銳」程度。峰度高代表資料集中在中心，且有較厚的尾部（容易出現極端值）。\n\n公式：\\[ Kurtosis = \\frac{\\sum_{i=1}^{n} (x_i - \\bar{x})^4}{n \\times s^4} - 3 \\] (超額峰度)\n\n\n\n\n\n\n峰度\n\n\n\n\n資料視覺化決策邏輯\n一張圖勝過千言萬語，但選錯圖表會造成誤導。\n\n散佈圖 (Scatter Plot)：看兩個變數之間的關聯（例如：身高 vs. 體重）。 \n圓餅圖 (Pie Chart)：顯示各類別佔整體的比例（例如：市佔率）。 \n折線圖 (Line Chart)：看時間趨勢（例如：股價走勢、氣溫變化）。 \n直方圖 (Histogram)：看單一變數的分佈情況（例如：全校學生的成績分佈）。 \n長條圖 (Bar Chart)：比較不同類別的大小（例如：各部門的業績比較）。 \n熱圖 (Heatmap)：用顏色深淺表示數值大小，常用於顯示相關係數矩陣（哪些變數連動性高）。 \n盒鬚圖 (Box Plot)：快速看出資料的分佈範圍、中位數以及離群值。",
+    "crumbs": [
+      "第二部：數據工程——AI 的堅實地基",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>數據處理生命週期與架構</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#sec-data-cleaning",
+    "href": "chapter3.html#sec-data-cleaning",
+    "title": "數據處理生命週期與架構",
+    "section": "資料清理與品質管理",
+    "text": "資料清理與品質管理\n現實世界的資料往往是髒亂的。資料清理 (Data Cleaning) 通常佔據資料科學家 80% 的時間。\n\n缺失值處理 (Missing Values)\n資料中有空格（Null 或 NaN）是常態。這就像拼圖缺了幾片，我們必須決定怎麼處理。\n\n刪除法 (Deletion)：\n\n列刪除 (Listwise Deletion)：只要這一列資料有缺，整列丟掉。\n\n優點：簡單快速。\n缺點：如果資料量本來就不多，會浪費寶貴的資訊。\n\n欄刪除 (Dropping Features)：如果某個欄位（如「備註」）缺損率高達 90%，這個欄位可能就沒有參考價值，直接移除。\n\n插補法 (Imputation)：用「猜」的來填補空格。\n\n統計值填補：\n\n數值型：用平均數 (Mean)（容易受極端值影響）或中位數 (Median)（較穩健）填補。\n類別型：用眾數 (Mode)（出現最多次的類別）填補。\n\n模型預測填補：將缺失的欄位當作「目標」，其他欄位當作「特徵」，訓練一個模型（如 KNN 或迴歸）來預測缺失值。這是最精準但也最耗算力的方法。\n\n插補效果比較表： 假設我們有以下員工資料，其中 Bob 的薪資缺失：\n\n\n\n員工\n部門\n年資\n薪資 (萬元)\n\n\n\n\nAlice\nSales\n2\n40\n\n\nBob\nSales\n3\n?\n\n\nCharlie\nSales\n5\n60\n\n\nDavid\nIT\n2\n80\n\n\nEve\nIT\n3\n90\n\n\n\n\n\n\n\n\n\n\n\n\n插補方法\n填補值\n計算邏輯\n優缺點\n\n\n\n\n平均數 (Mean)\n67.5\n(40+60+80+90)/4\n簡單，但被 IT 部門的高薪拉高，不符合 Bob 的 Sales 身分。\n\n\n中位數 (Median)\n70\n40, 60, 80, 90 的中間值\n比平均數穩健，但仍未考慮部門差異。\n\n\n分群平均 (Group Mean)\n50\n只算 Sales 部門的平均 (40+60)/2\n考慮了部門特徵，比全體平均更準確。\n\n\nKNN (K-近鄰)\n45-55\n找跟 Bob 最像的人（Sales, 年資 3）。Alice (2年) 和 Charlie (5年) 是鄰居。\n最精準，利用了「年資」與「部門」的綜合資訊。\n\n\n\n\n\n\n異常值/離群值處理 (Outliers Handling)\n有些資料點明顯與眾不同，例如身高 300 公分的人，或是年齡 200 歲。這些點可能是錯誤，也可能是極具價值的特殊案例（如詐欺交易）。 \n\n偵測方法：\n\nZ-score 檢測：假設資料呈常態分佈，超過平均數 ±3 個標準差 (3𝛔) 的數值通常被視為異常。\n四分位距 (IQR) 檢測：利用盒鬚圖的概念。計算 IQR = Q3 - Q1。\n\n上限：Q3 + 1.5 * IQR\n下限：Q1 - 1.5 * IQR\n超過上下限的點即為離群值。\n\n\n處理方式：\n\n修正或刪除：如果是明顯的輸入錯誤（如年齡 -5 歲），應直接修正或刪除。\n轉換 (Transformation)：使用對數轉換 (Log Transformation)（例如取 log(x)）來壓縮數值範圍，讓極端值不再那麼突兀，減少對模型的干擾。\n蓋帽法 (Winsorizing)：將超過特定百分位數（如 99%）的值，強制設定為該百分位數的值（例如所有超過 1000 的數都設為 1000）。\n\n\n\n\n\n離群值處理\n\n\n\n\n數據一致性處理 (Data Consistency)\n資料來源不同，格式往往五花八門。這就像聯合國開會，大家得先講好用同一種語言。\n\n格式標準化：\n\n日期：統一將 “2023/1/1”, “01-01-2023”, “Jan 1st, 23” 轉換為 YYYY-MM-DD 格式。\n大小寫：將 “Apple”, “apple”, “APPLE” 統一轉為小寫 “apple”。\n單位：將不同欄位或來源的計量單位（如「公尺」vs「英呎」、「台斤」vs「公斤」、「美金」vs「台幣」）統一換算為同一標準，避免數值比較失準。\n\n語意合併：\n\n將 “Taipei”, “Taipei City”, “TP”, “台北市” 統一映射為 “Taipei”。\n\n去重 (Deduplication)：\n\n檢查是否有完全重複的資料列，或者「ID 相同但內容略有不同」的衝突資料，並依據時間戳記保留最新的一筆。\n\n\n\n\n資料匿名化與隱私保護 (PII 處理)\n在處理涉及個人識別資訊 (PII, Personally Identifiable Information)（如姓名、身分證號、電話、地址）的資料時，必須嚴格遵守法規（如歐盟 GDPR、台灣《個人資料保護法》）。\n個資法合規關鍵 (Compliance Requirements)：\n\n告知與同意 (Notice & Consent)：蒐集資料前，必須明確告知使用者蒐集目的、類別及利用期間，並取得當事人同意。\n目的拘束 (Purpose Limitation)：資料只能用於當初聲明的特定目的，不得隨意挪作他用（例如：為了「配送商品」蒐集的地址，不能拿去「寄送廣告」）。\n資料最小化 (Data Minimization)：只蒐集「必要」的資料。如果分析不需要身分證號，就不要蒐集。\n安全維護措施 (Security Measures)：企業有義務採取適當的技術與組織措施（如加密、存取控制）來防止資料外洩。\n當事人權利 (Data Subject Rights)：使用者有權要求查詢、更正、或刪除其個人資料（被遺忘權）。\n\n為了符合上述要求，常見的技術手段包括：\n\n遮罩 (Masking)：隱藏部分資訊。\n\n姓名：“王大明” → “王O明”\n電話：“0912-345-678” → “0912--”\n\n泛化 (Generalization)：降低資料的精確度，使其無法識別特定個人，但仍保有統計意義。\n\n年齡：“25 歲” → “20-30 歲區間”\n地址：“台北市信義區信義路五段 7 號” → “台北市信義區”\n\n假名化 (Pseudonymization)：用隨機生成的代碼（Token）取代真實 ID。只有擁有對照表的人才能還原，比單純刪除更具可追溯性。\n\n\n\n\nPII 處理",
+    "crumbs": [
+      "第二部：數據工程——AI 的堅實地基",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>數據處理生命週期與架構</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#chap-ai-foundation-chapter3-summary",
+    "href": "chapter3.html#chap-ai-foundation-chapter3-summary",
+    "title": "數據處理生命週期與架構",
+    "section": "本章總結與考點提示",
+    "text": "本章總結與考點提示\n\n核心概念回顧\n本章重點在於資料進入模型前的準備工作，這是 AI 專案成敗的關鍵。\n\n資料架構：\n\nETL：先處理再存（傳統，結構化資料）。\nELT：先存再處理（大數據，資料湖）。\n\n資料分析 (EDA)：\n\n集中趨勢：平均數（怕極端值）、中位數（穩健）、眾數。\n離散程度：標準差（波動大小）、IQR（四分位距）。\n分佈形狀：偏態（左偏/右偏）、峰度。\n\n資料清理：\n\n缺失值：刪除、插補（平均數/中位數/KNN）。\n離群值：Z-score (&gt;3)、IQR (1.5倍)。\n隱私：去識別化、差分隱私。\n\n\n\n\nAI 應用規劃師認證考點\n常考題型與解題策略：\n\n統計指標選擇題：\n\n例題：「某公司薪資分佈極不平均，老闆想用哪個指標來『美化』薪資水準？」\n解答：平均數 (Mean)。因為會被高薪者拉高。\n例題：「想了解大多數員工的真實薪資，應看哪個指標？」\n解答：中位數 (Median)。\n\n資料處理方法題：\n\n例題：「資料中有大量缺失值，且該欄位對預測很重要，該怎麼辦？」\n解答：插補法 (Imputation)。不能直接刪除（會掉資料），也不能刪欄位（會掉特徵）。\n例題：「如何處理年齡欄位中的 ‘200歲’？」\n解答：視為異常值，進行修正或刪除。\n\n架構比較題：\n\n關鍵字：結構化資料/資料倉儲 → ETL；非結構化/大數據/資料湖 → ELT。\n\n圖表選擇題：\n\n比例 → 圓餅圖。\n趨勢 → 折線圖。\n分佈 → 直方圖。\n關聯 → 散佈圖。\n\n\n\n\n記憶口訣\n\n右偏分佈：「貧富差距大」，平均數 &gt; 中位數（被富人拉高）。\n左偏分佈：「考試簡單」，平均數 &lt; 中位數（被低分拉低）。\nETL vs ELT：看「T」(Transform) 的位置。T 在中間是傳統，T 在最後是大數據。\n\n\n\n延伸思考\n\n為什麼在醫療數據中，我們通常不隨意刪除有缺失值的資料？（因為每一筆病歷都很珍貴，且缺失本身可能帶有資訊，例如病人太嚴重無法測量）。",
+    "crumbs": [
+      "第二部：數據工程——AI 的堅實地基",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>數據處理生命週期與架構</span>"
+    ]
+  },
+  {
+    "objectID": "chapter4.html",
+    "href": "chapter4.html",
+    "title": "特徵工程 (Feature Engineering)",
+    "section": "",
+    "text": "數值特徵處理\n特徵工程被認為是機器學習中「最像藝術」的部分。吳恩達 (Andrew Ng) 曾說：「數據就像原油，而特徵工程就是煉油的過程。」好的特徵工程能讓普通的模型表現出色，而糟糕的特徵工程則會讓頂尖的模型無用武之地。\n簡單來說，特徵工程就是將原始資料轉換為更能代表問題本質的特徵，讓演算法更容易理解和學習。\n數值資料（如身高、價格、次數）看似可以直接使用，但往往需要經過轉換才能發揮最大效用。",
+    "crumbs": [
+      "第二部：數據工程——AI 的堅實地基",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>特徵工程 (Feature Engineering)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter4.html#sec-numerical-features",
+    "href": "chapter4.html#sec-numerical-features",
+    "title": "特徵工程 (Feature Engineering)",
+    "section": "",
+    "text": "特徵縮放 (Feature Scaling)\n當不同特徵的單位或範圍差異很大時，模型可能會被數值大的特徵主導，導致學習效果不佳。這在計算「距離」的演算法（如 KNN, K-Means）中尤為嚴重。\n\n為什麼需要縮放？\n\n假設我們有兩個特徵：\n\n年齡：範圍 0-100。\n年薪：範圍 22,000 - 10,000,000。\n\n如果不縮放，年薪差 1 萬元（數值差 10000）對距離的影響，會遠大於年齡差 50 歲（數值差 50）。模型會誤以為「年薪」才是唯一重要的因素。\n\n常見方法：\n\n標準化 (Standardization / Z-score Normalization)：\n\n將資料轉換為平均值 𝝁 為 0，標準差 𝛔 為 1 的分佈。\n公式：\\[ z = \\frac{x - \\mu}{\\sigma} \\]\n適用：大部分機器學習演算法（如 SVM, Logistic Regression, Neural Networks），特別是假設資料呈常態分佈時。\n\n正規化 (Normalization / Min-Max Scaling)：\n\n將資料壓縮到固定範圍（通常是 [0, 1]）。\n公式：\\[ x_{new} = \\frac{x - x_{min}}{x_{max} - x_{min}} \\]\n適用：對範圍敏感的演算法，或影像處理（像素值 0-255）。缺點是容易受極端值 (Outlier) 影響。\n\n\n\n\n\n特徵縮放\n\n\n\n\n\n特徵轉換\n有時候，原始數值的分布形狀不利於模型學習，我們需要改變它的形狀。\n\n對數轉換 (Log Transformation)：\n\n目的：處理長尾分佈或右偏資料（如收入、房價、網頁點擊數）。\n原理：取 Log 可以將原本擠在一起的較小數值拉開，並壓縮極端大的數值，使分佈更接近常態分佈 (Normal Distribution)。\n例子：\n\n原始：[10, 100, 1000, 10000, 100000] (級距很大)\nLog10 後：[1, 2, 3, 4, 5] (變成等距，線性關係更明顯)\n\n\n特徵分箱 (Binning / Discretization)：\n\n目的：將連續數值轉為區間類別，過濾掉微小的雜訊。\n例子：將「年齡」轉為「年齡層」。\n\n原始：18, 19, 20, 21, …, 65, 66…\n分箱後：\n\n0-18: 未成年\n19-35: 青年\n36-60: 中年\n60+: 老年\n\n\n效果：增加模型的魯棒性 (Robustness)，防止模型過度關注「25 歲和 26 歲有什麼不同」。  ## 類別特徵編碼 {#sec-categorical-encoding}\n\n\n機器學習模型通常是數學公式，只看得懂數字，看不懂文字。我們需要將類別資料（如顏色、城市）轉換為數字。\n\n\n常見編碼方式\n\n\n\n\n\n\n\n\n\n\n編碼方式\n說明\n適用情境\n範例 (T-shirt 尺寸)\n\n\n\n\n序數編碼(Ordinal Encoding)\n依據類別的順序或大小賦予整數值。\n類別間有順序關係 (Size, Rating)。\nS → 1M → 2L → 3XL → 4\n\n\n獨熱編碼(One-hot Encoding)\n為每個類別建立一個獨立的欄位 (Dummy Variable)，是該類別則標為 1，否則為 0。\n類別間無順序關係 (Color, City)。\n紅色 → [1, 0, 0]綠色 → [0, 1, 0]藍色 → [0, 0, 1]\n\n\n\n\n\n\n\n獨熱編碼\n\n\n\n\n獨熱編碼的潛在問題\n\n維度災難 (Curse of Dimensionality)：如果類別數量非常多（例如：台灣的「路名」有成千上萬個），使用 One-hot Encoding 會產生數萬個新欄位，導致資料變得極度稀疏，計算量爆炸，模型也容易過擬合。\n解決方案：\n\n特徵雜湊 (Feature Hashing)：將類別映射到固定數量的桶 (Bucket) 中。\n目標編碼 (Target Encoding)：用該類別在目標變數 (Target) 的平均值來取代類別（例如：用「台北市的平均房價」來代表「台北市」這個特徵）。\n特徵嵌入 (Feature Embedding)：(見下文)\n\n\n\n\n特徵嵌入 (Feature Embedding)\n這是在深度學習中處理高基數類別（High Cardinality）或文本資料的神器。\n\n做法：將每個類別映射到一個低維度的向量空間（Vector Space）。\n效果：讓意義相近的類別在空間中距離較近。\n\n例如在 Word2Vec 中：Vector(國王) - Vector(男人) + Vector(女人) ≈ Vector(皇后)。\n這不僅解決了維度問題，還捕捉了類別之間的語意關係。\n\n\n\n\n\n特徵嵌入",
+    "crumbs": [
+      "第二部：數據工程——AI 的堅實地基",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>特徵工程 (Feature Engineering)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter4.html#sec-advanced-features",
+    "href": "chapter4.html#sec-advanced-features",
+    "title": "特徵工程 (Feature Engineering)",
+    "section": "進階特徵技巧",
+    "text": "進階特徵技巧\n\n特徵交叉 (Feature Cross)\n有時候，單一特徵不足以解釋結果，特徵之間的組合才是關鍵。\n\n定義：將兩個或多個特徵組合起來，捕捉非線性的交互作用。\n例子：房地產價格預測\n\n特徵 A：經度 (Longitude)\n特徵 B：緯度 (Latitude)\n單看經度或緯度，很難判斷房價（同一經度有精華區也有郊區）。\n交叉特徵：將地圖切成網格，經度 x 緯度 代表一個具體的區塊 (Block)。信義區的某個區塊房價顯然比山區的某個區塊高。這就是特徵交叉的威力。\n\n\n\n\n\n特徵交叉\n\n\n\n\n特徵選擇 (Feature Selection)\n「特徵越多越好」是新手的迷思。事實上，垃圾進，垃圾出 (Garbage In, Garbage Out)。過多的特徵（包含無關特徵或雜訊）會帶來三大災難：\n\n過度擬合 (Overfitting)：\n\n模型會試圖去學習「雜訊」中的規律，而不是真正的訊號。\n例子：預測房價時，如果把「屋主的幸運數字」也加進去，模型可能會剛好發現「幸運數字 7 的房子比較貴」，這顯然是巧合，但在新資料上就會預測錯誤。\n\n計算量大增 (Computational Cost)：\n\n特徵數量加倍，訓練時間可能呈指數級增長。這對於即時應用（如高頻交易、自駕車）是致命傷。\n\n維度災難 (Curse of Dimensionality)：\n\n隨著特徵維度增加，資料在空間中會變得極度稀疏 (Sparse)。\n為了維持同樣的資料密度，所需的訓練資料量需要呈指數級增加。如果資料量不夠，模型就無法有效學習。\n\n\n\n\n\n特徵選擇\n\n\n常見篩選方法：\n\n過濾法 (Filter)：\n\n在進模型之前，先用統計方法篩選。\n例如：計算每個特徵與目標變數的相關係數 (Correlation)，太低的直接丟掉。\n優點：快。 缺點：忽略了特徵之間的組合效果。\n\n包裝法 (Wrapper)：\n\n直接把特徵丟進模型試跑，看效果好不好。\n例如：遞迴特徵消除 (RFE)，先用所有特徵訓練，把最沒用的特徵踢掉，再訓練，重複直到剩 N 個特徵。\n優點：準。 缺點：慢（要訓練很多次模型）。\n\n嵌入法 (Embedded)：\n\n模型在訓練過程中自動決定特徵重要性。\n例如：Lasso 回歸 (L1 Regularization) 會自動將不重要特徵的係數變成 0；決策樹/隨機森林 會計算 Feature Importance。",
+    "crumbs": [
+      "第二部：數據工程——AI 的堅實地基",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>特徵工程 (Feature Engineering)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter4.html#sec-imbalanced-data",
+    "href": "chapter4.html#sec-imbalanced-data",
+    "title": "特徵工程 (Feature Engineering)",
+    "section": "不平衡資料處理 (Imbalanced Data)",
+    "text": "不平衡資料處理 (Imbalanced Data)\n在現實應用中（如詐欺偵測、罕見疾病篩檢、工廠瑕疵檢測），正樣本（異常）通常極少，負樣本（正常）極多。\n\n問題：如果詐欺只有 1%，模型只要全部猜「正常」，準確率 (Accuracy) 就高達 99%。但這個模型對抓詐欺完全沒用。\n解法：\n\n\n\n\n不平衡資料\n\n\n\n1. 重採樣 (Resampling)\n改變資料的分佈，讓正負樣本平衡一點。\n\n上(過)採樣 (Oversampling)\n增加少數類別（如詐欺樣本）的數量。\n\n隨機上(過)採樣 (Random Oversampling)：\n\n做法：簡單粗暴地複製少數類別的樣本。\n缺點：容易造成過度擬合 (Overfitting)，因為模型會反覆看到一模一樣的資料，把它們背下來。\n例子：原本有 10 筆詐欺資料，直接複製 9 次，變成 100 筆一模一樣的詐欺資料。\n\nSMOTE (Synthetic Minority Over-sampling Technique)：\n\n做法：不是單純複製，而是「無中生有」。\n\n選定一個少數類別樣本 A。\n找出它的鄰居樣本 B。\n在 A 和 B 的連線上，隨機產生一個新的人工樣本 C。\n\n優點：增加了樣本的多樣性，減少過度擬合風險。\n例子：樣本 A 是 (1, 2)，鄰居 B 是 (2, 4)。連線中間點可能是 (1.5, 3)，這就是產生出來的新樣本 C。\n\nADASYN (Adaptive Synthetic Sampling)：\n\n做法：SMOTE 的改良版。它會根據樣本的學習難度（周圍有多少多數類別）來決定要生成多少新樣本。\n特點：在「邊界模糊」或「難以分類」的區域生成更多樣本，強迫模型學習這些困難案例。\n例子：如果樣本 A 旁邊都是正常人（很難分），ADASYN 會在它旁邊生 10 個新樣本；樣本 B 旁邊都是自己人（很好分），只生 1 個。\n\n\n注意：類別型資料怎麼辦？ 標準的 SMOTE 和 ADASYN 是基於歐氏距離計算的，不能直接處理類別型資料（你不能計算「紅色」和「藍色」的平均值）。\n\n若有類別特徵，應使用 SMOTE-NC (Nominal Continuous) 或 SMOTE-N 等變體，有興趣請自行研究。\n\n\n\n\n\n下(欠)採樣 (Undersampling)\n減少多數類別（如正常樣本）的數量。\n\n隨機下(欠)採樣 (Random Undersampling)：\n\n做法：隨機刪除多數類別的樣本。\n缺點：可能會丟掉重要的資訊（把有用的正常樣本刪掉了）。\n例子：原本有 1000 筆正常資料，隨機丟掉 900 筆，只剩 100 筆。\n\nTomek Links：\n\n做法：找出那些「靠得很近」但「類別不同」的樣本對（Tomek Links）。通常這些點是雜訊或邊界模糊點。刪除其中的多數類別樣本。\n優點：能讓類別邊界更清晰。\n例子：一個「正常人」和一個「詐欺犯」長得超像（特徵很近），把那個「正常人」刪掉，讓那區變成詐欺犯的地盤。\n\n\n\n\n\n2. 類別權重調整 (Class Weights)\n不改變資料，而是改變模型的計分方式。\n\n做法：在訓練模型時，告訴模型：「答錯一筆少數類別（詐欺）的懲罰，是答錯一筆多數類別（正常）的 100 倍。」\n效果：強迫模型重視少數類別，即使犧牲一點整體的準確率，也要把詐欺抓出來。\n例子：\n\n預測「正常」錯了：罰 1 元。\n預測「詐欺」錯了：罰 100 元。\n模型為了少賠錢，會寧可把「有點像詐欺的」都猜成詐欺。",
+    "crumbs": [
+      "第二部：數據工程——AI 的堅實地基",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>特徵工程 (Feature Engineering)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter4.html#chap-ai-foundation-chapter4-summary",
+    "href": "chapter4.html#chap-ai-foundation-chapter4-summary",
+    "title": "特徵工程 (Feature Engineering)",
+    "section": "本章總結與考點提示",
+    "text": "本章總結與考點提示\n\n核心概念回顧\n特徵工程是提升模型效能最有效的方法。\n\n數值處理：\n\n縮放：標準化 (Z-score)、正規化 (Min-Max)。算距離的演算法必做。\n轉換：Log 轉換（處理長尾/右偏）、分箱（抗雜訊）。\n\n類別處理：\n\n有序：序數編碼 (Label Encoding)。\n無序：獨熱編碼 (One-Hot Encoding)。小心維度災難。\n\n特徵選擇：\n\n風險：特徵過多導致過度擬合、維度災難。\n方法：過濾法 (Filter)、包裝法 (Wrapper)、嵌入法 (Embedded)。\n\n不平衡資料：\n\n過採樣：SMOTE (連線造點)、ADASYN (專攻難點)。\n欠採樣：隨機刪除、Tomek Links (清邊界)。\n權重調整：增加少數類別懲罰。\n\n\n\n\nAI 應用規劃師認證考點\n常考題型與解題策略：\n\n編碼選擇題：\n\n例題：「處理『衣服尺寸 (S, M, L)』應使用何種編碼？」\n解答：序數編碼 (Ordinal Encoding)。\n例題：「處理『居住城市』應使用何種編碼？若城市有 1000 個怎麼辦？」\n解答：獨熱編碼 (One-Hot Encoding)；若類別太多則考慮 Embedding 或 Target Encoding。\n\n不平衡資料處理題：\n\n例題：「SMOTE 的原理是什麼？」\n解答：在少數類別樣本及其鄰居的連線上生成新樣本（非單純複製）。\n例題：「資料中有大量類別型特徵，能直接用 SMOTE 嗎？」\n解答：不能，需使用 SMOTE-NC。\n\n特徵選擇題：\n\n例題：「為什麼特徵不是越多越好？」\n解答：會導致過度擬合 (Overfitting) 和維度災難 (Curse of Dimensionality)。\n\n\n\n\n記憶口訣\n\n有順序用序數，沒順序用獨熱。\n算距離（KNN, SVM）要縮放，切規則（決策樹）免縮放。\nSMOTE：「無中生有」（連線造點）。\nTomek Links：「劃清界線」（刪除邊界模糊點）。\n\n\n\n延伸思考\n\n為什麼 One-Hot Encoding 在類別太多時會失效？（維度災難，導致計算量大且模型難以收斂。解法：Target Encoding 或 Embedding）。",
+    "crumbs": [
+      "第二部：數據工程——AI 的堅實地基",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>特徵工程 (Feature Engineering)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter5.html",
+    "href": "chapter5.html",
+    "title": "監督式學習演算法 (Supervised Learning Algorithms)",
+    "section": "",
+    "text": "分類演算法 (Classification)\n監督式學習 (Supervised Learning) 是目前 AI 應用最成熟、商業價值最高的領域。它的核心運作模式就像是人類的正規教育：老師（系統）提供大量的題目（輸入 X）和標準答案（標籤 Y），學生（模型）透過不斷練習，學會找出題目與答案之間的關聯函數 f，使得 f(X) ≈ Y。\n根據目標變數 Y 的型態，監督式學習主要分為兩大類： 1. 分類 (Classification)：預測的是類別（離散值）。例如：這封信是垃圾郵件嗎？（是/否）、這張照片是貓還是狗？ 2. 迴歸 (Regression)：預測的是數值（連續值）。例如：明天的氣溫是幾度？這間房子的房價是多少？",
+    "crumbs": [
+      "第三部：機器學習演算法核心",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>監督式學習演算法 (Supervised Learning Algorithms)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter5.html#sec-classification",
+    "href": "chapter5.html#sec-classification",
+    "title": "監督式學習演算法 (Supervised Learning Algorithms)",
+    "section": "",
+    "text": "K-近鄰演算法 (KNN, K-Nearest Neighbors)\n\n核心概念：「近朱者赤，近墨者黑」。\n運作方式：\n\n當一個新的資料點出現時，算出它與現有所有資料點的距離。\n找出距離最近的 K 個鄰居。\n投票表決：如果這 K 個鄰居中，大多數是紅色，那這個新點就被歸類為紅色。\n\n關鍵參數 K：\n\nK 太小（如 K=1）：容易受雜訊影響（過度擬合）。\nK 太大：容易被多數類別主導（欠擬合）。\n\n優缺點：\n\n優點：簡單直觀，不需要訓練過程（Lazy Learning），新資料進來直接算。\n缺點：資料量大時，計算距離非常耗時（計算成本高）。\n\n\n\n\n\nK-近鄰演算法\n\n\n\n\n貝氏分類器 (Naive Bayes)\n\n核心概念：基於機率統計的預測。利用貝氏定理 (Bayes’ Theorem) 計算在已知特徵下，屬於某類別的機率。\n「樸素/天真」(Naive) 的假設：假設所有特徵之間是互相獨立的。雖然這在現實中很少見（例如「下雨」和「潮濕」通常相關），但這個假設讓計算變得非常簡單且快速。\n應用實例：垃圾郵件過濾計算\n\n假設我們有 100 封信，其中 40 封是垃圾信 (Spam)，60 封是正常信 (Ham)。\n先驗機率 (Prior)：\n\nP(Spam) = 40/100 = 0.4\nP(Ham) = 60/100 = 0.6\n\n似然機率 (Likelihood)：統計發現，垃圾信中有 50% 包含 “Free” 這個字，正常信中只有 5% 包含 “Free”。\n\nP(“Free” | Spam) = 0.5\nP(“Free” | Ham) = 0.05\n\n情境：現在收到一封新信，裡面有 “Free”，它是垃圾信的機率是多少？\n計算 (Bayes’ Theorem)： \\[ P(Spam | \"Free\") = \\frac{P(\"Free\" | Spam) \\times P(Spam)}{P(\"Free\")} \\]\n\n分子 (是垃圾信且有 Free)：0.5 × 0.4 = 0.2\n分母 (所有有 Free 的信)：\n\n來自垃圾信：0.5 × 0.4 = 0.2\n來自正常信：0.05 × 0.6 = 0.03\n總和：0.2 + 0.03 = 0.23\n\n結果：\\(0.2 / 0.23 \\approx \\mathbf{87\\%}\\)\n\n結論：看到 “Free”，這封信有 87% 的機率是垃圾信。\n\n優缺點：\n\n優點：速度極快，適合處理高維度文本資料（如 NLP）。\n缺點：如果特徵之間高度相關，預測效果會變差。\n\n\n\n\n\n貝氏分類器\n\n\n\n\n邏輯迴歸 (Logistic Regression)\n\n注意：雖然名字裡有「迴歸」，但它是經典的二元分類演算法！\n核心概念：\n\n先計算一個線性方程式 z = wX + b。\n將 z 通過一個 Sigmoid 函數（S 型曲線），將數值壓縮到 0 到 1 之間。\n輸出值代表「屬於正類別的機率」。\n\n決策邊界：通常設定閾值為 0.5。\n\n機率 &gt; 0.5 → 判為 1 (Positive)\n機率 &lt; 0.5 → 判為 0 (Negative)\n\n優缺點：\n\n優點：可解釋性高（可以看到每個特徵的權重），計算快。\n缺點：只能處理線性可分的問題（除非人工轉換特徵）。\n\n\n\n\n\n邏輯迴歸\n\n\n\n\n支援向量機 (SVM, Support Vector Machine)\n\n核心概念：試圖在不同類別的資料之間，畫出一條最寬的「馬路」（決策邊界）。\n\n邊界 (Margin)：馬路兩側到最近資料點的距離。SVM 的目標是最大化邊界。\n支援向量 (Support Vectors)：那些落在馬路邊緣、真正決定馬路怎麼畫的關鍵資料點。\n\n核函數技巧 (Kernel Trick)：\n\n當資料在二維平面上無法用直線分開時（例如同心圓分佈），SVM 可以利用核函數將資料投影到高維空間（例如三維）。\n類比：桌上有紅豆和綠豆混在一起，無法用一根筷子分開。但如果你用力拍桌子，豆子彈到空中（三維），你就可以用一張紙（平面）在空中把它們切開。\n\n優缺點：\n\n優點：在小樣本、高維度資料上表現極佳，泛化能力強。\n缺點：在大數據集上訓練慢，且對參數設定敏感。\n\n\n\n\n\n支持向量機\n\n\n\n\n決策樹 (Decision Tree)\n\n核心概念：就像玩「20 個問題」遊戲。透過一系列的是非問句來對資料進行切割。\n結構：\n\n根節點 (Root)：第一個問題（例如：年齡 &gt; 30？）。\n內部節點 (Node)：後續的問題（例如：收入 &gt; 5萬？）。\n葉節點 (Leaf)：最終的分類結果（例如：會買 / 不會買）。\n\n分裂準則：如何決定問什麼問題？目標是讓分出來的子群組越「純」越好。\n\n熵 (Entropy) / 吉尼係數 (Gini Impurity)：衡量混亂程度的指標。\n\n優缺點：\n\n優點：可解釋性最強（白箱模型），畫出來的樹狀圖非專業人士也能懂。\n缺點：容易過度擬合 (Overfitting)，變成死記硬背的學生。\n\n\n\n\n\n決策樹\n\n\n\n\n隨機森林 (Random Forest)\n\n核心概念：集成學習 (Ensemble Learning) 的經典代表。既然一棵決策樹容易犯錯（過度擬合），那就種一片森林，讓大家一起投票！\n運作機制：\n\n隨機採樣 (Bootstrap)：從原始資料中「有放回」地抽取 N 份樣本，每份樣本建立一棵樹。\n特徵隨機 (Feature Randomness)：每棵樹在分裂節點時，不看所有特徵，而是隨機選取一部分特徵（例如從總共 M 個特徵中選 √M 個）來挑選最佳分裂點。這讓每棵樹長得不一樣（去關聯化）。\n多數決 (Voting)：\n\n分類：所有樹投票，票數最多的類別勝出。\n迴歸：計算所有樹預測值的平均。\n\n\nOOB (Out-of-Bag) 誤差：由於採樣是有放回的，約有 1/3 的資料不會被某棵樹用到，這些資料可以用來驗證該樹的效能，無需另外切分驗證集。\n優缺點：\n\n優點：準確率極高，非常穩健，不易過度擬合（因為有隨機性），能處理高維度資料。\n缺點：模型龐大（幾百棵樹），預測速度較慢，且失去了單一決策樹的可解釋性（變成了黑箱模型）。\n\n\n\n\n\n隨機森林",
+    "crumbs": [
+      "第三部：機器學習演算法核心",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>監督式學習演算法 (Supervised Learning Algorithms)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter5.html#sec-ensemble",
+    "href": "chapter5.html#sec-ensemble",
+    "title": "監督式學習演算法 (Supervised Learning Algorithms)",
+    "section": "集成學習 (Ensemble Learning)",
+    "text": "集成學習 (Ensemble Learning)\n三個臭皮匠，勝過諸葛亮。集成學習的核心思想是結合多個弱學習器 (Weak Learners) 來構建一個強學習器 (Strong Learner)。主要分為兩大流派：Bagging 與 Boosting。\n\nBagging (Bootstrap Aggregating)\n\n口訣：「並行合作，各做各的」。\n原理：\n\nBootstrap (自助法)：從訓練資料中有放回地隨機抽取多組樣本。\nAggregating (聚合)：每一組樣本訓練一個模型（通常是決策樹），最後透過投票（分類）或平均（迴歸）來決定結果。\n\n目的：降低變異 (Variance)，解決過度擬合問題。\n代表演算法：\n\n隨機森林 (Random Forest)：\n\n除了對資料取樣 (Row Subsampling)，還對特徵取樣 (Feature Subsampling)。\n優點：準確、抗過擬合、可平行運算（速度快）。\n缺點：模型大、黑箱。\n\n\n\n\n\n\nBagging\n\n\n\n\nBoosting (提升法)\n\n口訣：「循序漸進，知錯能改」。\n原理：\n\n訓練第一個模型，找出它預測錯誤的資料。\n訓練第二個模型，專注於修正第一個模型犯錯的資料（加大權重）。\n不斷重複，將所有模型加權組合起來。\n\n目的：降低偏差 (Bias)，提升預測準確度。\n代表演算法：\n\nAdaBoost：早期代表，調整資料權重。\nXGBoost / LightGBM / CatBoost：現代 Kaggle 比賽常勝軍。基於梯度提升 (Gradient Boosting)，效能極強，但參數多難調。\n\n\n\n\n\nBoosting\n\n\n\n\nBagging 與 Boosting 的關鍵差異\n\n\n\n\n\n\n\n\n特性\nBagging (如隨機森林)\nBoosting (如 XGBoost)\n\n\n\n\n訓練方式\n並行 (Parallel)：各棵樹獨立訓練，互不影響。\n序列 (Sequential)：後面的樹依賴前面的樹（修正錯誤）。\n\n\n核心目標\n降低變異 (Variance)：透過平均多個模型來減少過度擬合。\n降低偏差 (Bias)：透過不斷修正錯誤來提升準確度。\n\n\n樣本權重\n所有樣本權重相同。\n錯誤樣本的權重會被放大。\n\n\n對雜訊敏感度\n較低（抗雜訊能力強）。\n較高（容易對雜訊過度擬合）。\n\n\n運算速度\n快（可平行運算）。\n慢（必須依序訓練）。",
+    "crumbs": [
+      "第三部：機器學習演算法核心",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>監督式學習演算法 (Supervised Learning Algorithms)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter5.html#sec-regression",
+    "href": "chapter5.html#sec-regression",
+    "title": "監督式學習演算法 (Supervised Learning Algorithms)",
+    "section": "迴歸演算法 (Regression)",
+    "text": "迴歸演算法 (Regression)\n目標是預測一個連續的數值（如房價、銷量）。\n\n線性迴歸 (Linear Regression)\n\n核心概念：試圖畫出一條直線 y = wx + b，讓這條線盡可能靠近所有的資料點。\n損失函數 (Loss Function)：均方誤差 (MSE, Mean Squared Error)。即計算所有點到線的距離平方和，找出讓這個誤差最小的參數 w 和 b。\n多項式迴歸：如果資料不是直線分佈，可以用曲線（二次方、三次方等）來擬合。\n\n\n\n\n線性迴歸\n\n\n\n\n正規化迴歸 (Regularized Regression)\n為了防止模型過度擬合（例如用了太高次方的多項式，導致線條扭曲），我們在損失函數中加入一個「懲罰項」，強迫模型的權重 w 不要太大，保持簡單。這就像是給模型戴上「緊箍咒」，不讓它太狂野。\n\n1. L1 正則化 (Lasso Regression)\n\n全名：Least Absolute Shrinkage and Selection Operator。\n數學公式： \\[ J(w) = \\underbrace{\\sum_{i=1}^{n} (y_i - \\hat{y}_i)^2}_{\\text{原始誤差 (MSE)}} + \\underbrace{\\lambda \\sum_{j=1}^{m} |w_j|}_{\\text{L1 懲罰項}} \\]\n機制：在損失函數加入權重絕對值的總和。\n\n𝝺 (Lambda) 是正則化強度。𝝺 越大，懲罰越重，越多權重會變成 0。\n\n特性：傾向於讓不重要的特徵權重變成 0。\n應用場景：特徵選擇\n\n假設我們要預測房價，手上有 100 個特徵。\n有用特徵：坪數、地點、屋齡。\n無用特徵：屋主的星座、門牌號碼的奇偶數、當天的天氣。\nLasso 的效果：它會發現「星座」對房價沒影響，直接把「星座」的權重砍成 0。最後模型只剩下真正重要的幾個特徵。這就是稀疏模型 (Sparse Model)。\n\n\n\n\n2. L2 正則化 (Ridge Regression)\n\n全名：Ridge Regression (脊迴歸)。\n數學公式： \\[ J(w) = \\underbrace{\\sum_{i=1}^{n} (y_i - \\hat{y}_i)^2}_{\\text{原始誤差 (MSE)}} + \\underbrace{\\lambda \\sum_{j=1}^{m} w_j^2}_{\\text{L2 懲罰項}} \\]\n機制：在損失函數加入權重平方的總和。\n特性：傾向於讓所有特徵權重變小，但不會變成 0。\n應用場景：處理共線性 (Multicollinearity)\n\n假設特徵中有「坪數 (平方公尺)」和「坪數 (坪)」。這兩個特徵高度相關（幾乎一樣）。\n一般迴歸的問題：模型可能會困惑，給其中一個巨大的正權重，另一個巨大的負權重，導致模型不穩定。\nRidge 的效果：它會把這兩個特徵的權重都壓得很小且接近，讓模型更穩健，不會因為數據的一點小雜訊就劇烈波動。\n\n\n\n\n\n正規化迴歸\n\n\n\n\n總結比較\n\n\n\n\n\n\n\n\n特性\nLasso (L1)\nRidge (L2)\n\n\n\n\n數學懲罰\n絕對值\nw\n\n\n對權重的影響\n變成 0\n變小 (趨近於 0)\n\n\n主要功能\n特徵選擇 (排除無用特徵)\n防止過擬合 (處理共線性)\n\n\n幾何解釋\n解空間是菱形 (容易切到軸上)\n解空間是圓形",
+    "crumbs": [
+      "第三部：機器學習演算法核心",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>監督式學習演算法 (Supervised Learning Algorithms)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter5.html#sec-algo-comparison",
+    "href": "chapter5.html#sec-algo-comparison",
+    "title": "監督式學習演算法 (Supervised Learning Algorithms)",
+    "section": "演算法比較總結",
+    "text": "演算法比較總結\n\n\n\n\n\n\n\n\n\n\n演算法\n類型\n核心特點\n適用情境\n缺點\n\n\n\n\nKNN\n分類/迴歸\n找鄰居，近朱者赤\n簡單問題，資料量小\n計算慢，對雜訊敏感\n\n\nNaive Bayes\n分類\n基於機率，假設特徵獨立\n文本分類 (NLP)，垃圾郵件\n假設過於理想化\n\n\nLogistic Regression\n分類\n線性邊界，輸出機率\n二元分類，需要解釋權重\n只能處理線性問題\n\n\nSVM\n分類/迴歸\n最大化邊界，核函數技巧\n小樣本，高維度，非線性\n大數據訓練慢\n\n\nDecision Tree\n分類/迴歸\n樹狀規則，若 P 則 Q\n需要解釋規則，非線性\n容易過度擬合\n\n\nRandom Forest\n分類/迴歸\n多棵樹投票 (Bagging)\n高準確率需求，大數據\n黑箱，訓練預測慢\n\n\nLinear Regression\n迴歸\n擬合直線\n預測數值，趨勢分析\n只能處理線性關係",
+    "crumbs": [
+      "第三部：機器學習演算法核心",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>監督式學習演算法 (Supervised Learning Algorithms)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter5.html#chap-ai-foundation-chapter5-summary",
+    "href": "chapter5.html#chap-ai-foundation-chapter5-summary",
+    "title": "監督式學習演算法 (Supervised Learning Algorithms)",
+    "section": "本章總結與考點提示",
+    "text": "本章總結與考點提示\n\n核心概念回顧\n監督式學習是目前應用最廣泛的 AI 技術。\n\n分類 (Classification)：預測類別（離散）。\n\nKNN：看鄰居（懶惰學習）。\nNaive Bayes：算機率（假設獨立）。\nLogistic Regression：畫線分兩邊（輸出機率）。\nSVM：畫最寬的馬路（最大化邊界）。\nDecision Tree：問問題（可解釋性高）。\n\n集成學習 (Ensemble)：結合多個弱學習器。\n\nBagging (如 Random Forest)：並行訓練 → 投票 → 降低變異 (Variance) → 抗過擬合。\nBoosting (如 XGBoost)：循序修正 → 加權 → 降低偏差 (Bias) → 提升準確度。\n\n迴歸 (Regression)：預測數值（連續）。\n\nLinear Regression：畫一條線擬合。\nLasso (L1)：特徵選擇 (權重變 0)。\nRidge (L2)：處理共線性 (權重變小)。\n\n\n\n\nAI 應用規劃師認證考點\n常考題型與解題策略：\n\n演算法選擇題：\n\n例題：「需要向銀行監管單位解釋為何拒絕客戶貸款，應選哪個模型？」\n解答：決策樹 (Decision Tree)。因為可解釋性最高（白箱）。避免選神經網路或隨機森林（黑箱）。\n例題：「垃圾郵件過濾通常使用哪個演算法？」\n解答：貝氏分類器 (Naive Bayes)。擅長處理文本特徵。\n\n集成學習比較題 (Bagging vs Boosting)：\n\n例題：「隨機森林屬於哪種集成技術？主要解決什麼問題？」\n解答：Bagging；解決過度擬合 (降低 Variance)。\n例題：「XGBoost 屬於哪種集成技術？主要解決什麼問題？」\n解答：Boosting；解決欠擬合 (降低 Bias)。\n\nLasso vs Ridge：\n\n關鍵字：Lasso (L1) → 特徵選擇 (變 0)；Ridge (L2) → 處理共線性 (變小)。\n\n\n\n\n記憶口訣\n\nKNN：「近朱者赤」。\nSVM：「楚河漢界」（畫最寬的界線）。\n決策樹：「打破砂鍋問到底」。\nBagging：「三個臭皮匠」（大家一起投票）。\nBoosting：「知錯能改」（修正前人的錯誤）。\n\n\n\n延伸思考\n\n為什麼邏輯迴歸 (Logistic Regression) 叫「迴歸」卻是用來做「分類」？（因為它底層是預測一個 0~1 的機率數值，只是我們設了門檻把它變成分類）。",
+    "crumbs": [
+      "第三部：機器學習演算法核心",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>監督式學習演算法 (Supervised Learning Algorithms)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter6.html",
+    "href": "chapter6.html",
+    "title": "非監督式學習與強化學習 (Unsupervised & Reinforcement Learning)",
+    "section": "",
+    "text": "分群演算法 (Clustering)\n如果說監督式學習是「有老師教」，那麼非監督式學習 (Unsupervised Learning) 就是「自修」，讓 AI 在沒有標準答案的情況下，自己從資料中尋找隱藏的結構。而強化學習 (Reinforcement Learning) 則是「從做中學」，像生物一樣透過與環境互動、嘗試錯誤來學習生存策略。\n分群的目標是「物以類聚」，將相似的資料點歸為同一群，而群與群之間差異越大越好。",
+    "crumbs": [
+      "第三部：機器學習演算法核心",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>非監督式學習與強化學習 (Unsupervised & Reinforcement Learning)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter6.html#sec-clustering",
+    "href": "chapter6.html#sec-clustering",
+    "title": "非監督式學習與強化學習 (Unsupervised & Reinforcement Learning)",
+    "section": "",
+    "text": "為什麼要做分群？ (Why Clustering?)\n在沒有標籤的情況下，分群能幫助我們： 1. 發現隱藏結構：找出資料中自然的群聚現象。 2. 簡化數據：用少數幾個「群代表」來概括大量數據。 3. 作為前處理：分群結果可以作為監督式學習的新特徵。\n\n\n\n為什麼要做分群？\n\n\n\n\n常見應用場景 (Applications)\n\n客戶分群 (Customer Segmentation)：\n\n根據消費行為（如 RFM 模型）將客戶分為「高價值」、「沈睡」、「新客」等群體，進行精準行銷。\n\n圖像分割 (Image Segmentation)：\n\n將顏色相似的像素歸為一群，用於物體識別或影像壓縮。\n\n異常偵測 (Anomaly Detection)：\n\n那些「不屬於任何一群」或「距離群中心很遠」的點，往往就是異常（如信用卡盜刷、產線瑕疵）。\n\n文件分群 (Document Clustering)：\n\n將大量新聞或文章自動歸類為「體育」、「財經」、「政治」等主題。\n\n\n\n\n\n分群常見應用場景\n\n\n\n\nK-means 演算法\n這是最簡單也最常用的分群方法。\n\n運作步驟：\n\n初始化：隨機選定 K 個點作為初始中心（質心）。\n分配：將每個資料點分配給距離最近的中心。\n更新：計算每一群的新平均位置，移動中心點到新位置。\n重複：重複步驟 2-3，直到中心點不再移動或收斂。\n\n如何決定 K 值？\n\n手肘法 (Elbow Method)：畫出 K 值與誤差平方和 (SSE) 的圖。當 K 增加時，誤差會下降，但在某個點下降幅度會變緩（像手肘彎曲處），那個點通常就是最佳的 K。\n\n優缺點：\n\n優點：速度快，適合大數據。\n缺點：必須事先指定 K；對離群值敏感；只能分出圓形/球形的群聚。\n\n\n\n\n\nK-means\n\n\n\n\n階層式分群 (Hierarchical Clustering)\n\n核心概念：建立一個樹狀結構（樹狀圖 Dendrogram），不需要事先決定 K 值。\n做法：\n\n聚合式 (Agglomerative)：由下而上。一開始每個點都是一群，然後慢慢把最近的兩群合併，直到剩下一大群。\n分裂式 (Divisive)：由上而下。一開始所有點是一大群，然後慢慢切分。\n\n優缺點：\n\n優點：不需要指定 K，樹狀圖能完整呈現資料的層次結構。\n缺點：計算量大，不適合大數據。\n\n\n\n\n\n階層式分群\n\n\n\n\nDBSCAN (Density-Based Spatial Clustering)\n\n核心概念：基於密度的分群。只要點夠密集（在半徑 𝞮 內有超過 MinPts 個點）就算同一群，如果不夠密集就被視為雜訊。\n優勢：\n\n可以找出任意形狀的群聚（如彎月形、包圍形），不像 K-means 只能找圓形。\n能自動識別並排除離群值 (Outliers)，不會硬要把雜訊歸類。\n\n\n\n\n\nDBSCAN",
+    "crumbs": [
+      "第三部：機器學習演算法核心",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>非監督式學習與強化學習 (Unsupervised & Reinforcement Learning)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter6.html#sec-association-rules",
+    "href": "chapter6.html#sec-association-rules",
+    "title": "非監督式學習與強化學習 (Unsupervised & Reinforcement Learning)",
+    "section": "關聯規則與降維",
+    "text": "關聯規則與降維\n\nApriori 演算法 (購物籃分析)\n\n經典案例：「啤酒與尿布」。沃爾瑪透過分析發現，週五晚上買尿布的爸爸，通常也會順便買啤酒。\n目的 (What is this for?)：\n\n找出資料庫中隱藏的關聯模式 (Pattern Discovery)。\n回答「如果發生 X，是否通常也會發生 Y？」的問題。\n應用：商品陳列優化（把相關商品擺一起）、推薦系統（買了這本書的人也買了…）、醫療診斷（症狀 A 通常伴隨症狀 B）。\n\n三大指標與計算範例： 假設總共有 100 筆訂單。\n\n買牛奶 (A) 的有 50 筆。 (P(A) = 0.5)\n買麵包 (B) 的有 40 筆。 (P(B) = 0.4)\n同時買牛奶與麵包 的有 30 筆。 P(A ∩ B) = 0.3\n\n\n支持度 (Support)：組合出現的頻率。\n\n\\(Support(A, B) = P(A \\cap B) = \\mathbf{0.3}\\) (30%)\n意義：這個組合夠不夠普遍？如果太低（如 0.001%），可能只是偶然，不值得分析。\n\n信心度 (Confidence)：買了 A 的人，有多大概率也會買 B。\n\n\\(Confidence(A \\to B) = P(B|A) = \\frac{0.3}{0.5} = \\mathbf{0.6}\\) (60%)\n意義：關聯夠不夠強？買牛奶的人有 60% 會順便買麵包。\n\n提升度 (Lift)：A 的出現是否有助於 B 的出現（比較基準是 B 的自然發生率）。\n\n\\(Lift(A \\to B) = \\frac{Confidence(A \\to B)}{P(B)} = \\frac{0.6}{0.4} = \\mathbf{1.5}\\)\n判讀：\n\nLift &gt; 1：正相關 (1.5)。買牛奶會提升買麵包的機率（提升了 1.5 倍）。\nLift = 1：無關。\nLift &lt; 1：負相關。\n\n\n\n\n\n\n\nApriori\n\n\n\n\n降維技術 (Dimensionality Reduction)\n當特徵太多時，我們需要「降維」來簡化問題。\n\n主成分分析 (PCA, Principal Component Analysis)：\n\n核心概念：這是一種線性降維技術。它的目標是找到一個新的視角（投影方向），讓資料在這個方向上的變異量 (Variance) 最大。\n類比：想像一個懸浮在空中的茶壺。\n\n如果你從上方看（投影），可能只看到一個圓圈（資訊遺失多）。\n如果你從側面看，能清楚看到壺嘴和把手（資訊保留多）。\nPCA 就是要找出這個「資訊保留最多」的最佳視角。\n\n缺點：只能處理線性關係，無法展開捲曲的結構（如瑞士捲資料）。\n\n\n\n\n\nPCA\n\n\n\nt-SNE 與 UMAP：\n\n用途：專門用於資料視覺化（將高維資料壓到 2D 或 3D）。\n特點：非線性降維，能很好地保留資料的局部結構（相似的點在低維空間依然靠很近）。\n\n自動編碼器 (Autoencoder)：\n\n核心概念：一種基於神經網路的非線性降維。利用「壓縮」強迫模型學會資料的精髓。\n架構：\n\n編碼器 (Encoder)：將輸入 X 壓縮成低維度的向量 Z（稱為瓶頸層 Bottleneck）。\n解碼器 (Decoder)：嘗試從 Z 還原回原始輸入 \\(\\hat{X}\\)。\n\n關鍵：訓練目標是讓還原誤差 \\(X - \\hat{X}\\) 越小越好。\n應用：\n\n去噪 (Denoising)：輸入雜訊圖，要求輸出乾淨圖。AI 會學會忽略雜訊，只還原物體結構。\n異常偵測 (Anomaly Detection)：只用「正常資料」訓練。當遇到「異常資料」時，模型會因為沒看過而無法還原，導致還原誤差極大，藉此抓出異常。\n\n\n\n\n\n\nAutoencoder",
+    "crumbs": [
+      "第三部：機器學習演算法核心",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>非監督式學習與強化學習 (Unsupervised & Reinforcement Learning)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter6.html#sec-reinforcement-learning-detail",
+    "href": "chapter6.html#sec-reinforcement-learning-detail",
+    "title": "非監督式學習與強化學習 (Unsupervised & Reinforcement Learning)",
+    "section": "強化學習 (Reinforcement Learning)",
+    "text": "強化學習 (Reinforcement Learning)\n強化學習是 AI 邁向自主決策的關鍵，目標是訓練一個 Agent 在環境中採取行動，以最大化累積獎勵。\n\n核心要素 (RL Elements)\n以「超級瑪利歐」遊戲為例：\n\n代理人 (Agent)：瑪利歐（學習的主角）。\n環境 (Environment)：遊戲關卡（充滿水管、磚塊、敵人）。\n狀態 (State)：當前的畫面（瑪利歐的位置、敵人的位置）。\n行動 (Action)：手把的操作（左、右、跳、發射火球）。\n獎勵 (Reward)：環境給的回饋。\n\n正獎勵：吃到金幣 (+10)、過關 (+100)。\n負獎勵 (Penalty)：碰到烏龜 (-10)、掉進洞裡 (-100)、時間流逝 (-1)。\n\n\n\n\n\nRL\n\n\n\n\n關鍵挑戰：探索與利用 (Exploration vs. Exploitation)\n\n探索 (Exploration)：嘗試新的、未知的路徑。\n\n目的：尋找潛在的更好策略（但也可能踩雷）。\n\n利用 (Exploitation)：堅持目前已知最好的策略。\n\n目的：確保獲得穩定的高分。\n\n𝞮-Greedy 策略：\n\n設定一個機率 𝞮（例如 10%）。\n10% 的時間隨機亂試（探索）。\n90% 的時間選擇目前認為最好的動作（利用）。\n\n\n\n\n常見演算法\n\nQ-Learning (基於表格的方法)：\n\n核心概念：建立一張巨大的查閱表 (Q-Table)。\n\n列 (Row)：代表所有的「狀態」(State)。\n行 (Column)：代表所有的「動作」(Action)。\n值 (Q-Value)：代表在該狀態下，採取該動作後，預期未來能拿到的總獎勵。\n\n運作：AI 查表找 Q 值最大的動作去做。做完後，根據拿到的獎勵更新表格。\n缺點：維度災難。當狀態太多（如圍棋棋盤有 10170 種狀態，比宇宙原子還多）時，表格根本存不下，也查不完。\n\n\n\n\n\nQ-Learning\n\n\n\nDeep Q-Network (DQN, 深度強化學習)：\n\n核心概念：結合深度學習。用一個神經網路 (Brain) 來取代 Q-Table (Cheat Sheet)。\n運作：輸入「畫面 (State)」，神經網路直接輸出每個動作的 Q 值。\n兩大創新 (讓訓練穩定的關鍵)：\n\n經驗重播 (Experience Replay)：\n\n問題：玩遊戲是連續的，前後畫面高度相關。如果 AI 只學剛發生的事，容易「鑽牛角尖」忘記以前的經驗。\n解法：將玩過的過程存進「記憶庫」。訓練時隨機抽取片段來學習。\n類比：就像準備考試不能只看最後一章，要隨機抽背整本書的單字卡，才能學得全面。\n\n目標網路 (Target Network)：\n\n問題：DQN 在更新時，目標值 (Target) 是由同一個網路算出來的。這就像「球員兼裁判」，導致目標一直變動，訓練很難收斂。\n解法：複製一個固定不動的網路專門算目標值，每隔一段時間（如 1000 步）才更新一次。\n類比：就像射箭練習。如果靶心一直亂動（目標變動），很難射準。Target Network 就是把靶心固定住，讓你練一陣子後，再把靶心移到新位置。\n\n\n成就：DeepMind 用 DQN 讓 AI 學會玩 Atari 遊戲（如打磚塊），表現超越人類。\n\n\n\n\n\nDQN",
+    "crumbs": [
+      "第三部：機器學習演算法核心",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>非監督式學習與強化學習 (Unsupervised & Reinforcement Learning)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter6.html#chap-ai-foundation-chapter6-summary",
+    "href": "chapter6.html#chap-ai-foundation-chapter6-summary",
+    "title": "非監督式學習與強化學習 (Unsupervised & Reinforcement Learning)",
+    "section": "本章總結與考點提示",
+    "text": "本章總結與考點提示\n\n核心概念回顧\n本章涵蓋了沒有標準答案的學習方式。\n\n分群 (Clustering)：\n\nK-means：找圓形群聚，需指定 K。\nDBSCAN：找高密度群聚，能抗雜訊，免指定 K。\n階層式：畫樹狀圖，層次分明。\n\n關聯規則：\n\nApriori：啤酒與尿布。指標：Support, Confidence, Lift。\n\n降維：\n\nPCA：找變異最大的投影方向。\nAutoencoder：壓縮再還原。\n\n強化學習 (RL)：\n\n要素：Agent, Environment, Reward, Action, State.\n核心：最大化累積獎勵。探索 vs 利用。\n\n\n\n\nAI 應用規劃師認證考點\n常考題型與解題策略：\n\n分群演算法比較：\n\n例題：「資料形狀不規則（如彎月形），且有許多雜訊，應選哪個分群法？」\n解答：DBSCAN。K-means 做不到。\n例題：「不知道要分幾群，想看資料的層次結構？」\n解答：階層式分群。\n\n關聯規則指標：\n\n例題：「Lift &gt; 1 代表什麼？」\n解答：正相關（買 A 會促進買 B）。\n例題：「Lift &lt; 1 代表什麼？」\n解答：負相關（買 A 的人反而不買 B）。\n\n強化學習應用：\n\n例題：「訓練 AI 玩瑪利歐賽車，屬於哪種學習範式？」\n解答：強化學習。因為有明確的獎勵（名次、金幣）與懲罰（撞牆）。\n\n\n\n\n記憶口訣\n\nK-means：「物以類聚，人以群分」（算距離）。\nDBSCAN：「人多的地方不要去」（算密度）。\nApriori：「啤酒尿布」（關聯）。\nRL：「糖果與鞭子」（獎勵與懲罰）。\n\n\n\n延伸思考\n\n為什麼 K-means 對離群值很敏感？（因為平均數會被拉走，導致中心點偏移）。",
+    "crumbs": [
+      "第三部：機器學習演算法核心",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>非監督式學習與強化學習 (Unsupervised & Reinforcement Learning)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter7.html",
+    "href": "chapter7.html",
+    "title": "神經網路架構演進 (Neural Network Architecture Evolution)",
+    "section": "",
+    "text": "基礎神經網路\n深度學習 (Deep Learning) 是機器學習的一個分支，靈感來自人類大腦的神經元運作方式。從簡單的感知機到如今強大的 Transformer，神經網路架構經歷了數十年的演進，每一次的突破都帶來了 AI 能力的飛躍。",
+    "crumbs": [
+      "第四部：深度學習與生成式 AI 前沿",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>神經網路架構演進 (Neural Network Architecture Evolution)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter7.html#sec-basic-nn",
+    "href": "chapter7.html#sec-basic-nn",
+    "title": "神經網路架構演進 (Neural Network Architecture Evolution)",
+    "section": "",
+    "text": "多層感知機 (MLP, Multi-Layer Perceptron)\n這是最基礎的深度學習架構，也稱為全連接網路 (Fully Connected Network)。\n\n結構：\n\n輸入層 (Input Layer)：接收原始資料（如圖片的像素值）。\n隱藏層 (Hidden Layers)：中間的黑盒子，負責提取特徵。層數越多，能學到的特徵越抽象、越複雜。\n輸出層 (Output Layer)：給出最終預測（如分類機率）。\n\n運作原理：每個神經元接收上一層的訊號，乘上權重 (Weight)，加上偏差 (Bias)，最後通過啟動函數輸出給下一層。\n\n公式：\\[ y = \\sigma(\\sum_{i=1}^{n} w_i x_i + b) \\]\n\nxi: 輸入訊號\nwi: 權重 (Weight)，代表該輸入的重要性\nb: 偏差 (Bias)，調整啟動門檻\n𝛔: 啟動函數 (Activation Function)\n\n\n\n\n\n\nMLP\n\n\n\n\n啟動函數 (Activation Functions)\n如果沒有啟動函數，神經網路不管有幾層，本質上都只是線性變換（矩陣相乘），無法解決複雜的非線性問題（如分類貓和狗）。啟動函數引入了非線性。\n\nSigmoid：\n\n公式：\\[ f(x) = \\frac{1}{1 + e^{-x}} \\]\n特性：將數值壓縮到 (0, 1) 之間。\n缺點：容易導致梯度消失 (Vanishing Gradient)，即在深層網路中，誤差訊號傳不回去，導致前面的層學不到東西。\n\nReLU (Rectified Linear Unit)：\n\n公式：\\[ f(x) = \\max(0, x) \\]\n特性：負數變 0，正數不變。\n優點：計算極快，且有效解決了梯度消失問題。是目前最常用的啟動函數。\n\nSoftmax：\n\n公式：\\[ P(y=j) = \\frac{e^{z_j}}{\\sum_{k=1}^{K} e^{z_k}} \\]\n特性：通常用於輸出層。將一組數值轉換為機率分佈（總和為 1）。例如：[貓: 0.8, 狗: 0.1, 鳥: 0.1]。\n\n\n\n\n\nActivation Functions\n\n\n\n\n反向傳播 (Backpropagation) 與優化器(Optimizer)\n神經網路是如何「學習」的？這是一個試誤 (Trial and Error) 的過程。\n\n前向傳播 (Forward Propagation)：\n\n作答：資料從輸入層進入，經過層層神經元運算，最後輸出一個預測結果。\n類比：學生寫考卷，算出答案。\n\n計算損失 (Loss Calculation)：\n\n對答案：使用損失函數 (Loss Function)（如 MSE 或 Cross-Entropy）比較「預測值」與「真實答案」的差距。\n類比：老師改考卷，算出考了幾分（誤差有多大）。\n\n反向傳播 (Backpropagation)：\n\n找戰犯：利用微積分的連鎖律 (Chain Rule)，將誤差從後往前傳遞，計算每個神經元的權重對這個誤差「貢獻」了多少（計算梯度 Gradient）。\n類比：老師檢討考卷，指出是哪一個步驟算錯導致最後答案錯誤。\n\n更新權重 (Weight Update)：\n\n修正：利用優化器 (Optimizer) 根據梯度調整權重，讓下次誤差變小。\n類比：學生修正錯誤觀念，下次考試就能拿高分。\n\n\n\n\n\n神經網路如何「學習」\n\n\n常見優化器 (Optimizer)： 負責決定「如何調整權重」的演算法。\n\nSGD (Stochastic Gradient Descent, 隨機梯度下降)：\n\n機制：每次只看一小批資料就調整方向。\n類比：盲人下山。他看不見全貌，只能用腳探測四周，哪邊最陡就往哪邊走一步。路徑可能會彎彎曲曲，震盪較大。\n\nADAM (Adaptive Moment Estimation)：\n\n機制：結合了動量 (Momentum) 與自適應學習率。\n類比：滾下山的重球。\n\n動量：球有慣性，如果之前一直往某個方向滾，即使遇到小坑洞（局部最佳解）也會衝過去，不會卡住。\n自適應：在平坦的地方滾快一點，在陡峭的地方滾慢一點。\n\n地位：目前最常用的預設優化器。\n\n\n\n\n\n優化器",
+    "crumbs": [
+      "第四部：深度學習與生成式 AI 前沿",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>神經網路架構演進 (Neural Network Architecture Evolution)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter7.html#sec-deep-architectures",
+    "href": "chapter7.html#sec-deep-architectures",
+    "title": "神經網路架構演進 (Neural Network Architecture Evolution)",
+    "section": "經典深度架構",
+    "text": "經典深度架構\n\n卷積神經網路 (CNN, Convolutional Neural Networks)\n\n專長：影像辨識、電腦視覺 (CV)。\n靈感：人類視覺皮層對邊緣、形狀的反應。我們看東西不是一個像素一個像素看，而是看特徵（線條、圓圈、眼睛、鼻子）。\n關鍵元件與運作流程：\n\n卷積層 (Convolution Layer) - 提取特徵：\n\n運作：使用一個小的濾鏡 (Filter/Kernel)（例如 3x3 的矩陣）在圖片上滑動掃描。\n功能：每個濾鏡負責抓一種特徵（如垂直線、水平線、圓弧）。掃描後的結果稱為特徵圖 (Feature Map)。\n類比：拿著手電筒在黑暗的房間掃描，照到的地方才看得到細節。或者像用「篩子」，把符合特定形狀的特徵篩出來。\n\n池化層 (Pooling Layer) - 重點濃縮：\n\n運作：將圖片分區（例如 2x2），只保留區內最重要的數值（Max Pooling 取最大值）。\n功能：\n\n降維：讓圖片變小，減少運算量。\n抗雜訊：保留最顯著的特徵，忽略不重要的細節（平移不變性）。\n\n類比：把高畫質照片轉成馬賽克風格，雖然模糊了，但還是看得出是貓還是狗（只看大輪廓）。\n\n攤平 (Flatten) 與 全連接層 (Fully Connected Layer)：\n\n運作：將處理好的二維特徵圖「拉直」成一維向量，丟進傳統的神經網路 (MLP) 進行最終分類。\n類比：把拼圖的碎片（特徵）全部蒐集起來，拼出最後的結論。\n\n\n應用：人臉辨識、醫療影像分析 (X光/MRI)、自駕車視覺系統。\n\n\n\n\nCNN\n\n\n\n\n循環神經網路 (RNN, Recurrent Neural Networks)\n\n專長：序列數據（文字、語音、股票走勢）。\n運作機制：\n\n具有記憶 (Memory) 功能。神經元會有一個「迴圈」，把上一步的輸出 ht-1 傳給自己，跟這一步的輸入 xt 一起處理。\n類比：像閱讀文章。你讀到第五個字時，腦中還記得前四個字的含義，這樣才能理解整句話的意思。\n\n致命傷：梯度消失 (Vanishing Gradient)：\n\n問題：對於太長的序列（如長篇小說），前面的資訊傳到後面會越來越弱，最後完全消失。\n例子：「我出生在法國……（過了 500 字）……所以我會說流利的法語。」傳統 RNN 讀到最後時，早就忘了前面的「法國」，填不出「法語」。\n\n救星：LSTM (Long Short-Term Memory, 長短期記憶網路)：\n\n核心概念：設計了一條專屬的「高速公路」（Cell State）來傳遞長期記憶，並透過三個「閘門」來控制資訊流。\n三大閘門 (Gates)：\n\n遺忘門 (Forget Gate)：決定要丟掉什麼舊資訊。\n\n例子：看到新的主詞「她」，就把舊主詞「他」的性別資訊忘掉。\n\n輸入門 (Input Gate)：決定要存入什麼新資訊。\n\n例子：把「她」的性別資訊存進記憶。\n\n輸出門 (Output Gate)：決定當下要輸出什麼。\n\n例子：因為主詞是單數「她」，所以動詞要輸出單數型態 (is)。\n\n\n類比：像一位精明的秘書管理老闆的行程表。\n\n(遺忘) 刪除已取消的會議。\n(輸入) 寫入新的預約。\n(輸出) 在適當的時間提醒老闆該開會了。\n\n\n\n\n\n\nRNN",
+    "crumbs": [
+      "第四部：深度學習與生成式 AI 前沿",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>神經網路架構演進 (Neural Network Architecture Evolution)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter7.html#sec-transformer",
+    "href": "chapter7.html#sec-transformer",
+    "title": "神經網路架構演進 (Neural Network Architecture Evolution)",
+    "section": "Transformer 與注意力機制",
+    "text": "Transformer 與注意力機制\n2017 年 Google 發表論文《Attention Is All You Need》，徹底改變了 NLP 領域，也開啟了大型語言模型 (LLM) 的時代。\n\n自注意力機制 (Self-Attention)\n\n\n\n自注意力機制\n\n\n這是 Transformer 的靈魂，讓模型能理解字與字之間的關係。\n\n核心概念：雞尾酒會效應 (Cocktail Party Effect)。\n\n在吵雜的派對中，你的耳朵會自動過濾背景雜音，聚焦 (Attend) 在你想聽的那個人說話。\n同樣地，當模型讀到一個字時，它會去「關注」句子中其他相關的字，而忽略不相關的字。\n\n運作機制 (Q, K, V)： 每個字都會被轉換成三個向量：\n\nQuery (Q, 查詢)：我想找什麼？（像拿著麥克風問問題）\nKey (Key, 索引)：你是什麼？（像每個人身上掛的名牌）\nValue (Value, 內容)：你的實質內容是什麼？（像這個人腦中的知識）\n流程：\n\n拿我的 Q 去跟所有人的 K 算相似度（點積 Dot Product）。\n相似度越高，代表我們關係越密切（Attention Score 越高）。\n根據相似度，把對方的 V 加權總合起來，變成我對這個字的理解。\n\n類比：圖書館找書。\n\nQ：你想找的主題（如「人工智慧」）。\nK：書背上的分類標籤。\nV：書裡的內容。\n你會把 K 跟 Q 符合的書挑出來，閱讀裡面的 V。\n\n\n多頭注意力 (Multi-Head Attention)：\n\n概念：不只用一種觀點看事情，而是用多個「頭」（濾鏡）同時看。\n例子：讀一句話時，Head 1 關注「文法結構」，Head 2 關注「代名詞指涉」，Head 3 關注「情緒」。最後把大家的看法綜合起來，理解就更全面。\n\n實例：“The animal didn’t cross the street because it was too tired.”\n\n當模型讀到 “it” 時，Attention 機制會算出它跟 “animal” 的關聯度最高（因為 tired 通常形容動物），而不是 “street”。這讓模型真正「讀懂」了代名詞。\n\n\n\n\n\nTransformer\n\n\n\n\nTransformer 架構優勢\n\n並行計算 (Parallelization)：\n\nRNN 必須一個字一個字讀（讀完第一個字才能讀第二個），無法平行化。\nTransformer 可以一次讀入整篇文章，利用 GPU 的強大平行運算能力，訓練速度大幅提升。這使得訓練像 GPT-4 這種超巨大模型成為可能。\n\n長距離依賴 (Long-range Dependency)：\n\n透過 Attention，無論兩個字距離多遠，都能直接建立關聯，不再有 LSTM 的記憶長度限制。\n\n\n\n\n\nTransformer 架構優勢\n\n\n\n\nEncoder 與 Decoder 家族\nTransformer 由 Encoder（編碼器）和 Decoder（解碼器）組成，後來衍生出三大流派：\n\nEncoder-only (如 BERT)：\n\n擅長「理解」文本。\n應用：情感分析、分類、問答系統。\n\nDecoder-only (如 GPT 系列)：\n\n擅長「生成」文本。像接龍一樣，預測下一個字。\n應用：聊天機器人、文章寫作、程式碼生成。\n\nEncoder-Decoder (如 T5, Bart)：\n\n同時具備理解與生成能力。\n應用：機器翻譯（英文入 → 理解 → 生成 → 中文出）、摘要生成。",
+    "crumbs": [
+      "第四部：深度學習與生成式 AI 前沿",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>神經網路架構演進 (Neural Network Architecture Evolution)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter7.html#chap-ai-foundation-chapter7-summary",
+    "href": "chapter7.html#chap-ai-foundation-chapter7-summary",
+    "title": "神經網路架構演進 (Neural Network Architecture Evolution)",
+    "section": "本章總結與考點提示",
+    "text": "本章總結與考點提示\n\n核心概念回顧\n深度學習是 AI 的核心引擎。\n\n基礎元件：\n\nMLP：全連接，基礎結構。\nActivation：ReLU (防梯度消失)、Sigmoid (二元分類)、Softmax (多類別)。\nBackpropagation：誤差反向傳播，更新權重。\n\n三大架構：\n\nCNN：影像霸主。卷積 (特徵) + 池化 (降維)。\nRNN/LSTM：序列專家。有記憶，但怕長序列 (梯度消失)。\nTransformer：NLP 新皇。Self-Attention (平行運算、長距離依賴)。\n\n\n\n\nAI 應用規劃師認證考點\n常考題型與解題策略：\n\n架構對應題：\n\n例題：「人臉辨識系統通常使用哪種架構？」\n解答：CNN。\n例題：「股價預測或語音辨識通常使用哪種架構？」\n解答：RNN 或 LSTM。\n例題：「ChatGPT 是基於哪種架構？」\n解答：Transformer。\n\n功能題：\n\n例題：「CNN 中池化層 (Pooling) 的主要功能是什麼？」\n解答：降低維度（減少運算量）並保留重要特徵。\n例題：「為什麼 LSTM 比傳統 RNN 好？」\n解答：解決了梯度消失問題，能記住更長的序列。\n\n啟動函數題：\n\n例題：「目前最常用的隱藏層啟動函數是什麼？」\n解答：ReLU。因為計算快且無梯度消失問題。\n\n\n\n\n記憶口訣\n\nCNN：「看圖」（卷積）。\nRNN：「讀書」（序列）。\nTransformer：「劃重點」（Attention）。\n\n\n\n延伸思考\n\n為什麼 Transformer 可以取代 RNN？（因為它可以平行運算，速度快很多，且 Attention 機制解決了長距離記憶問題）。",
+    "crumbs": [
+      "第四部：深度學習與生成式 AI 前沿",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>神經網路架構演進 (Neural Network Architecture Evolution)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter8.html",
+    "href": "chapter8.html",
+    "title": "生成式 AI 與大型語言模型 (Generative AI & LLM)",
+    "section": "",
+    "text": "鑑別式 AI vs. 生成式 AI (Discriminative vs. Generative AI)\n生成式 AI (Generative AI) 不再只是分析既有資料（如分類貓狗），而是能創造出全新的內容。從寫詩、繪畫到寫程式，它正在重塑創意產業。\n在進入生成式 AI 之前，我們先來比較一下它與傳統 AI 的區別。",
+    "crumbs": [
+      "第四部：深度學習與生成式 AI 前沿",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>生成式 AI 與大型語言模型 (Generative AI & LLM)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter8.html#sec-generative-models",
+    "href": "chapter8.html#sec-generative-models",
+    "title": "生成式 AI 與大型語言模型 (Generative AI & LLM)",
+    "section": "生成式模型原理",
+    "text": "生成式模型原理\n\n變分自編碼器 (VAE, Variational Autoencoder)\n\n核心概念：將資料壓縮到一個機率分佈（潛在空間 Latent Space），然後從這個分佈中隨機採樣，解碼出新的資料。\n運作機制：\n\nEncoder (編碼器)：將圖片壓縮成兩個向量：平均值 𝝁 和標準差 𝛔。\n\n類比：把一張複雜的「披薩照片」壓縮成一張簡短的「食譜」（DNA）。\n\nSampling (採樣)：從常態分佈 N(μ, σ) 中抽樣出一個點 z。\n\n類比：根據食譜，稍微隨意地調整一點點佐料（隨機性）。\n\nDecoder (解碼器)：將 z 還原成圖片。\n\n類比：廚師根據調整後的食譜，烤出一張新的披薩。\n\n\n特點與應用：\n\n模糊感：由於 VAE 的損失函數通常包含 MSE (均方誤差)，模型傾向於輸出「平均」的結果以降低誤差，導致生成的圖像邊緣較模糊。\n連續性：潛在空間是連續的。\n\n應用：插值 (Interpolation)。你可以從「笑臉」慢慢變形到「哭臉」，中間的每一張圖都是合理的過渡（不會出現斷裂或雜訊）。\n\n\n\n\n\n\nVAE\n\n\n\n\n生成對抗網路 (GAN, Generative Adversarial Network)\n\n核心概念：兩個神經網路在互相競爭（零和賽局）。\n\n生成器 (Generator, G)：負責偽造。\n\n類比：偽鈔印製集團。\n目標：畫出逼真的假圖，騙過判別器。\n\n判別器 (Discriminator, D)：負責鑑識。\n\n類比：警察或驗鈔機。\n目標：準確分辨出哪張是真圖（來自資料集），哪張是假圖（來自 G）。\n\n\n訓練過程 (The Game)： 這是一個「道高一尺，魔高一丈」的過程。\n\n訓練 D：給 D 看真圖和 G 畫的假圖，教 D 分辨真偽。（此時固定 G 不動）。\n訓練 G：固定 D 不動，調整 G 的參數，讓 G 畫出來的圖能被 D 誤判為「真」。\n重複：不斷交替訓練，直到兩者都變得很強。\n終局 (Nash Equilibrium)：G 生成的圖完美無缺，D 再也分不出來，只能瞎猜（判斷為真的機率 = 0.5）。\n\n特點與挑戰：\n\n優點：生成的圖像清晰度極高，細節豐富（比 VAE 清晰）。\n缺點：\n\n訓練不穩定：很難平衡 G 和 D 的實力。如果 D 太強，G 會因為一直失敗而學不到東西（梯度消失）；如果 G 太強，D 就沒用了。\n模式崩潰 (Mode Collapse)：G 發現某個特定的圖（例如某張臉）很容易騙過 D，就開始只生成這張圖，失去了多樣性。\n\n\n\n\n\n\nGAN\n\n\n\n\n擴散模型 (Diffusion Models)\n\n核心概念：學習如何「有系統地破壞」一張圖，然後反過來學習如何「一步步修復」它。\n運作流程：\n\n前向擴散 (Forward Diffusion - 加噪)：\n\n過程：在一張清晰的圖片上，慢慢地、一步步加入高斯雜訊。經過 T 步（例如 1000 步）後，圖片會變成一張完全隨機的雜訊圖（雪花屏）。\n類比：像是一滴墨水滴入清水中，慢慢擴散直到整杯水變黑；或是大霧慢慢籠罩城市，直到什麼都看不見。\n\n逆向擴散 (Reverse Diffusion - 去噪)：\n\n過程：訓練一個神經網路（通常是 U-Net），它的任務是預測雜訊長什麼樣子，然後從目前的圖片中減去這層雜訊，還原出一點點細節。重複這個過程 1000 次，就能從純雜訊中「變」出一張清晰的圖。\n類比：像是把墨水擴散的影片倒著播放，讓墨水神奇地聚回成一滴；或是像米開朗基羅雕刻：「大衛像已經在石頭裡了，我只是把多餘的石頭（雜訊）去掉而已。」\n\n\n代表作：Stable Diffusion, Midjourney, DALL-E。\n特點與比較：\n\n優點：\n\n品質極高：生成的細節比 GAN 更豐富、更細膩。\n多樣性好：不會像 GAN 那樣發生 Mode Collapse。\n訓練穩定：數學推導嚴謹，不像 GAN 那樣難以收斂。\n\n缺點：\n\n速度慢：生成一張圖需要跑幾十到幾百步的去噪過程（GAN 只要跑一步）。\n\n\n\n\n\n\nDiffusion",
+    "crumbs": [
+      "第四部：深度學習與生成式 AI 前沿",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>生成式 AI 與大型語言模型 (Generative AI & LLM)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter8.html#sec-llm-tech",
+    "href": "chapter8.html#sec-llm-tech",
+    "title": "生成式 AI 與大型語言模型 (Generative AI & LLM)",
+    "section": "大型語言模型 (LLM) 技術",
+    "text": "大型語言模型 (LLM) 技術\nLLM (Large Language Model) 如 GPT 系列，本質上是一個超巨大的「文字接龍」機器。\n\n預訓練與微調 (Pre-training & Fine-tuning)\n訓練一個 LLM 就像培養一個人類專家，分為兩個階段：\n\n預訓練 (Pre-training) - 通識教育：\n\n做什麼：讓模型閱讀網際網路上數兆字的文本（Wikipedia, 書籍, 新聞, 程式碼）。\n訓練方式：自我監督學習 (Self-Supervised Learning)。\n\n任務：預測下一個字 (Next Token Prediction)。例如：「床前明月__」→ 模型要猜出「光」。\n\n成果：基底模型 (Base Model)。\n\n它博學多聞，懂文法、懂邏輯、懂世界知識。\n缺點：它不懂人類的指令。你問它「如何做蛋糕？」，它可能會接著寫「…的歷史淵源」，而不是給你食譜。它只是一個「文字接龍高手」。\n\n成本：極高（數百萬美金，數千張 GPU 跑好幾個月）。\n\n微調 (Fine-tuning) - 職前訓練： 讓「博學的怪人」變成「有用的助手」。\n\n指令微調 (Instruction Tuning / SFT)：\n\n做什麼：使用人工撰寫的高品質「問題-答案」對（如 10 萬筆）來訓練。\n類比：寫參考書/考卷。教模型看到「請翻譯」就要做翻譯，看到「請總結」就要做總結。\n\nRLHF (Reinforcement Learning from Human Feedback)：\n\n做什麼：讓人類對模型的回答評分（選出比較好的一個），訓練一個「獎勵模型 (Reward Model)」，再用強化學習 (PPO) 調整 LLM。\n類比：家教/社會化。教導模型什麼是「好的回答」（有禮貌、不說謊、不帶偏見）。\n目標：3H 原則 (Helpful 有用, Honest 誠實, Harmless 無害)。\n\n\n\n\n\n\nLLM\n\n\n\n\nScaling Laws (擴展定律)\n\n核心發現：OpenAI 在 2020 年的論文指出，LLM 的性能（Loss 越低越好）與以下三個因素呈冪律 (Power Law) 關係，且幾乎沒有極限：\n\n什麼是冪律 (Power Law)？ 簡單說就是「一分耕耘，不一定有一分收穫」。在 Scaling Laws 中，這意味著邊際效應遞減： 如果你想讓模型的誤差 (Loss) 線性下降（例如從 10% 降到 5%），你需要投入的資源（參數、資料、算力）必須是指數級上升（例如增加 10 倍甚至 100 倍）。雖然代價高昂，但重點是它依然有效，沒有遇到瓶頸。\n\n\n參數量 (Parameters, N)：模型的腦神經元數量（腦容量）。\n資料量 (Data Size, D)：訓練資料的 Token 數量（讀書量）。\n計算量 (Compute, C)：訓練所花費的 FLOPs（讀書時間/算力）。\n\n結論：大力出奇蹟。只要單純地把模型變大、資料變多、算力增強，AI 就會變聰明。這引發了全球科技巨頭的 GPU 軍備競賽。\n\n\n\n\nScaling Laws\n\n\n\n能力湧現 (Emergent Abilities)\n這是 Scaling Laws 最迷人也最神秘的地方。\n\n定義：當模型規模超過某個臨界點 (Critical Threshold) 時，某些能力會突然出現，而這些能力在小模型中是完全不存在的（接近隨機猜測）。\n類比：相變 (Phase Transition)。\n\n水在 99°C 時還是水，但一到 100°C 就突然變成水蒸氣。\n量變產生質變。\n\n範例：\n\n算術能力：小模型完全不會加減乘除，大模型突然學會了。\n寫程式 (Coding)：小模型只會寫亂碼，大模型突然能寫出可執行的 Python 程式碼。\n邏輯推理：大模型開始展現出推論能力。\n\n\n\n\n\nEmergent Abilities\n\n\n\n\n\n提示工程 (Prompt Engineering)\n既然我們無法輕易重新訓練模型，那就改變我們問問題的方式。\n\nZero-shot Prompting (零樣本提示)：\n\n概念：直接問，不給任何範例。\n範例：\n\nPrompt: 將以下句子翻譯成法文：「你好，世界。」\nOutput: Bonjour le monde.\n\n\nFew-shot Prompting (少樣本提示)：\n\n概念：給幾個範例 (Example)，讓模型模仿格式和邏輯。\n範例：\n\nPrompt:\n\n將英文翻譯成法文：\nHello → Bonjour\nGood morning → Bonjour\nGood night → Bonne nuit\nSee you later →\n\nOutput: À plus tard\n\n\nChain-of-Thought (CoT, 思維鏈)：\n\n概念：要求模型「一步步思考 (Let’s think step by step)」，把中間的推理過程寫出來。這能顯著提升數學或邏輯問題的準確率。\n範例：\n\nPrompt:\n\n題目：小明有 5 顆蘋果，他又買了 2 袋，每袋有 3 顆。請問他現在有幾顆蘋果？\n請一步步思考。\n\nOutput:\n\n\n小明原本有 5 顆。\n\n\n他買了 2 袋，每袋 3 顆，所以買了 2 * 3 = 6 顆。\n\n\n總共是 5 + 6 = 11 顆。\n\n答案是 11 顆。\n\n\n\nTree of Thoughts (ToT, 思維樹)：\n\n概念：CoT 的進階版。不只是一條直線思考，而是像下棋一樣，同時考慮多種可能的下一步（分支），並評估哪一條路最好，如果走不通就退回重來（回溯）。\n範例情境：玩「24點」遊戲（用 4 個數字加減乘除湊出 24）。\n\nPrompt: 用 4, 9, 10, 13 湊出 24。請列出多種可能的算式，評估哪一個能成功。\nOutput (模擬):\n\n思考路徑 A: (13 - 9) * (10 - 4) = 4 * 6 = 24 (成功)\n思考路徑 B: 4 * 9 - 10… (失敗)\n最佳解是路徑 A。\n\n\n\nContext Engineering (上下文工程)：\n\n概念：隨著模型能處理的文字量（Context Window）越來越大（如 128k, 1M tokens），如何「餵資料」變成一門學問。\n關鍵現象：Lost in the Middle (迷失在中間)。\n\n研究發現，LLM 對於放在開頭和結尾的資訊印象最深刻，放在中間的資訊容易被忽略。\n\n策略：將最重要的指令或關鍵資料放在 Prompt 的最前面或最後面，避免埋沒在中間。\n\n\n\n\n\n提示工程",
+    "crumbs": [
+      "第四部：深度學習與生成式 AI 前沿",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>生成式 AI 與大型語言模型 (Generative AI & LLM)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter8.html#sec-llm-optimization",
+    "href": "chapter8.html#sec-llm-optimization",
+    "title": "生成式 AI 與大型語言模型 (Generative AI & LLM)",
+    "section": "LLM 優化與應用架構",
+    "text": "LLM 優化與應用架構\n\n檢索增強生成 (RAG, Retrieval-Augmented Generation)\n\n痛點：LLM 有幻覺 (Hallucination)（一本正經胡說八道），且知識截止於訓練時間（不知道昨天發生的新聞）。\n解法：考試時允許「開書考」。\n\n檢索 (Retrieve)：\n\n技術核心：向量資料庫 (Vector Database)。\n預處理：先將公司的文件（PDF, Word）切成小塊，透過 Embedding 模型轉換成向量 (Vectors)（一串數字，代表語意），存入向量資料庫（如 Pinecone, Chroma, Milvus）。\n搜尋：當使用者問問題時，系統將問題也轉成向量，在資料庫中比對語意相似度（計算距離），找出最相關的片段。這比傳統的關鍵字搜尋更精準（例如搜尋「蘋果手機」，能找到「iPhone」的資料）。\n\n增強 (Augment)：將找到的資料連同使用者的問題，組合成一個 Prompt：「請根據以下資料回答問題…」。\n生成 (Generate)：LLM 根據參考資料回答問題。\n\n優勢：資料即時更新，回答有憑有據，且不需要重新訓練模型。\n\n\n\n\n檢索增強生成\n\n\n\n\n模型壓縮 (Model Compression)\n為了讓 LLM 能在手機或較小的伺服器上跑，我們需要把模型「變小」：\n\n量化 (Quantization)：\n\n概念：降低數值的精確度，用較少的位元 (Bits) 來儲存權重。\n運作：將 32-bit 浮點數 (FP32, 如 3.1415926) 簡化為 8-bit 整數 (INT8, 如 3) 甚至 4-bit。\n類比：像把一張 4K 高畫質照片 壓縮成 JPEG 格式。雖然細節（精確度）稍微犧牲了一點，但檔案大小（模型體積）縮小了 4-8 倍，而且肉眼（使用體驗）幾乎看不出差別。\n優勢：大幅降低記憶體需求 (VRAM)，讓消費級顯卡甚至手機也能跑大模型。\n\n知識蒸餾 (Knowledge Distillation)：\n\n概念：讓一個已訓練好的大模型（老師 Teacher）來教導一個小模型（學生 Student）。\n運作：學生不只是學「標準答案」，還要學老師的「思考方式」（機率分佈）。\n\n例如分辨一張模糊的狗的照片，標準答案是「狗」。但老師會告訴學生：「這張圖 90% 像狗，但也有 10% 像貓」。這 10% 的資訊（暗知識 Dark Knowledge）對學生很有幫助。\n\n類比：名師出高徒。老師把畢生功力濃縮成精華（軟標籤 Soft Targets）傳授給徒弟，讓徒弟用較少的腦容量就能達到接近老師的水平。\n\n\n\n\n\n模型壓縮",
+    "crumbs": [
+      "第四部：深度學習與生成式 AI 前沿",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>生成式 AI 與大型語言模型 (Generative AI & LLM)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter8.html#chap-ai-foundation-chapter8-summary",
+    "href": "chapter8.html#chap-ai-foundation-chapter8-summary",
+    "title": "生成式 AI 與大型語言模型 (Generative AI & LLM)",
+    "section": "本章總結與考點提示",
+    "text": "本章總結與考點提示\n\n核心概念回顧\n生成式 AI 是當前最熱門的技術。\n\n生成模型：\n\nVAE：潛在空間採樣 (模糊)。\nGAN：生成器 vs 判別器 (逼真但難訓練)。\nDiffusion：加噪再去噪 (高品質、慢)。\n\nLLM 技術：\n\n預訓練：Next Token Prediction (通識)。\n微調：Instruction Tuning (聽話)、RLHF (價值觀)。\nScaling Laws：參數、資料、算力越大越強。\n\n優化技術：\n\nRAG：外掛知識庫 (解幻覺、時效性)。\nPrompt Engineering：Few-shot, CoT (激發潛能)。\n量化：降低精度 (省資源)。\n\n\n\n\nAI 應用規劃師認證考點\n常考題型與解題策略：\n\n模型原理題：\n\n例題：「Stable Diffusion 是基於哪種技術？」\n解答：擴散模型 (Diffusion Model)。\n例題：「GAN 的核心機制是什麼？」\n解答：零和賽局 (Zero-Sum Game)，生成器與判別器對抗。\n\nLLM 應用題：\n\n例題：「企業想用 LLM 客服，但擔心它亂回答公司政策，該怎麼辦？」\n解答：使用 RAG (檢索增強生成)，限制它只能根據檢索到的公司文件回答。\n例題：「如何讓 LLM 數學變好？」\n解答：使用 Chain-of-Thought (CoT) 提示技巧。\n\n名詞解釋題：\n\n關鍵字：RLHF (讓 AI 符合人類價值觀)、幻覺 (一本正經胡說八道)、量化 (模型壓縮)。\n\n\n\n\n記憶口訣\n\nGAN：「左右互搏」。\nDiffusion：「覆水難收，但我收得回來」。\nRAG：「開書考」。\nCoT：「一步步來」。\n\n\n\n延伸思考\n\n為什麼 RAG 比微調 (Fine-tuning) 更適合處理企業內部知識？（因為微調成本高、更新慢，且容易有災難性遺忘；RAG 只要更新資料庫即可，即時又準確）。",
+    "crumbs": [
+      "第四部：深度學習與生成式 AI 前沿",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>生成式 AI 與大型語言模型 (Generative AI & LLM)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter9.html",
+    "href": "chapter9.html",
+    "title": "模型評估與效能優化 (Model Evaluation & Optimization)",
+    "section": "",
+    "text": "評估流程與指標\n訓練完模型只是第一步，更重要的是知道它「好不好用」。如果沒有正確的評估，你可能會把一個只會死記硬背的模型誤認為天才。",
+    "crumbs": [
+      "第五部：模型評估、可解釋性與治理",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>模型評估與效能優化 (Model Evaluation & Optimization)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter9.html#sec-evaluation-metrics",
+    "href": "chapter9.html#sec-evaluation-metrics",
+    "title": "模型評估與效能優化 (Model Evaluation & Optimization)",
+    "section": "",
+    "text": "資料集劃分 (Data Splitting)\n為了考試公平，我們不能拿「練習題」來當「期末考題」。\n\n訓練集 (Training Set)：課本。用來訓練模型，調整權重。通常佔 60-80%。\n驗證集 (Validation Set)：模擬考。用來調整超參數 (Hyperparameters)（如學習率、樹的深度），挑選最佳模型。\n測試集 (Test Set)：期末考。考完就定案了，用來評估最終效能。絕對不能偷看（不能用於訓練或調整參數）！\n\n\n\n\n資料集劃分\n\n\n\n\nK-fold 交叉驗證 (Cross-Validation)\n如果資料很少，切成三份（訓練/驗證/測試）太浪費怎麼辦？或者我們擔心切出來的驗證集剛好特別簡單或特別難？\n\n核心概念：輪流當驗證集。\n運作流程 (K=5** 為例)**：\n\n切分：將全部資料隨機切成 5 等份 (Fold 1 ~ Fold 5)。\n輪替訓練：進行 5 輪實驗。\n\n第 1 輪：拿 Fold 1 當驗證集，Fold 2-5 當訓練集。\n第 2 輪：拿 Fold 2 當驗證集，Fold 1, 3, 4, 5 當訓練集。\n…以此類推，直到每一份都當過一次驗證集。\n\n平均：將 5 次的評估分數加起來除以 5，得到最終成績。\n\n類比：輪流模擬考。\n\n為了客觀評估實力，不能只考一張考卷（可能剛好都會寫）。\n要考 5 張不同的考卷，然後算平均分，這樣才能反映真實水平。\n\n優點：\n\n不浪費資料：每一筆資料都有機會被用來訓練，也有機會被用來驗證。\n穩健 (Robust)：評估結果更客觀，不會因為運氣好切到簡單的資料就以為模型很強。\n\n\n\n\n\nK-fold 交叉驗證\n\n\n\n\n分類指標 (Classification Metrics)\n對於二元分類問題（如：有病/沒病），我們使用混淆矩陣 (Confusion Matrix)：\n\n\n\n\n\n\n\n\n\n預測：有病 (Positive)\n預測：沒病 (Negative)\n\n\n\n\n實際：有病 (True)\nTP (True Positive)  抓到了！(真陽性)\nFN (False Negative)  漏報！(假陰性)\n\n\n實際：沒病 (False)\nFP (False Positive)  誤報！(假陽性)\nTN (True Negative)  沒事！(真陰性)\n\n\n\n\n準確率 (Accuracy)：答對的比例。\n\n\\[ Accuracy = \\frac{TP + TN}{TP + TN + FP + FN} \\]\n陷阱：如果 99% 的人沒病，模型全部猜「沒病」，準確率也有 99%，但完全沒用（抓不到病人）。資料不平衡時別用 Accuracy。\n\n精確率 (Precision)：在所有被判斷為有病的人中，真的有病的比例。\n\n\\[ Precision = \\frac{TP}{TP + FP} \\]\n應用：垃圾郵件過濾（寧可漏抓，也不要誤把重要信件當垃圾信）。希望 FP 越低越好。\n\n召回率 (Recall)：在所有真的有病的人中，被成功抓出來的比例。\n\n\\[ Recall = \\frac{TP}{TP + FN} \\]\n應用：癌症篩檢、地震預警（寧可誤判複檢，也不能漏掉任何一個病人）。希望 FN 越低越好。\n\nF1-Score：Precision 和 Recall 的調和平均數。\n\n\\[ F1 = 2 \\times \\frac{Precision \\times Recall}{Precision + Recall} \\]\n當需要兼顧兩者時使用。\n\n\n\n\n\n分類指標\n\n\n\nAUC-ROC 曲線：\n\n概念：評估模型在所有可能的分類門檻 (Threshold) 下的表現。\n\n模型輸出的通常是機率（如 0.8）。我們可以設定門檻為 0.5（大於 0.5 算有病），也可以設為 0.9（非常確定才算有病）。\n\nROC 曲線：X 軸是 FPR (誤報率)，Y 軸是 TPR (召回率)。我們希望 FPR 越低越好，TPR 越高越好（曲線越往左上角靠越好）。\nAUC (Area Under Curve)：曲線下的面積，用來量化模型的好壞。\n\nAUC = 0.5：跟丟銅板一樣（亂猜）。\nAUC = 0.7~0.8：還不錯。\nAUC &gt; 0.9：非常準確。\nAUC = 1.0：完美神人（但通常是資料洩漏）。\n\n類比：排隊能力。AUC 越高，代表模型越能把「有病的人」排在「沒病的人」前面（機率值較高）。\n\n\n\n\n\nAUC-ROC 曲線\n\n\n\n\n迴歸指標 (Regression Metrics)\n\n均方誤差 (MSE, Mean Squared Error)：\n\n\\[ MSE = \\frac{1}{n} \\sum (y_{true} - y_{pred})^2 \\]\n特點：會放大極端誤差（因為平方）。如果很在意大錯，就看這個。\n\n平均絕對誤差 (MAE, Mean Absolute Error)：\n\n\\[ MAE = \\frac{1}{n} \\sum |y_{true} - y_{pred}| \\]\n特點：對離群值較不敏感，解釋直觀（平均差幾分）。\n\nR-squared (R2, 決定係數)：\n\n\\[ R^2 = 1 - \\frac{SS_{res}}{SS_{tot}} = 1 - \\frac{\\sum (y_{true} - y_{pred})^2}{\\sum (y_{true} - y_{mean})^2} \\]\n意義：衡量模型解釋了資料多少變異。\n\nR2 = 1：完美擬合（誤差為 0）。\nR2 = 0：跟「直接猜平均值」一樣爛。\nR2 &lt; 0：比亂猜還爛（模型完全錯了）。\n\n\n\n\n\n\n迴歸指標",
+    "crumbs": [
+      "第五部：模型評估、可解釋性與治理",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>模型評估與效能優化 (Model Evaluation & Optimization)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter9.html#sec-error-analysis",
+    "href": "chapter9.html#sec-error-analysis",
+    "title": "模型評估與效能優化 (Model Evaluation & Optimization)",
+    "section": "誤差分析與正則化",
+    "text": "誤差分析與正則化\n\n偏差-變異權衡 (Bias-Variance Tradeoff)\n\n偏差 (Bias)：模型準不準？（訓練集誤差）\n\n高偏差 (High Bias)：模型太簡單，學不會資料的規律。稱為欠擬合 (Underfitting)。\n解法：增加模型複雜度（加層數、加特徵）、減少正則化。\n\n變異 (Variance)：模型穩不穩？（訓練集 vs 驗證集誤差差距）\n\n高變異 (High Variance)：模型太複雜，把雜訊也學進去了，導致在訓練集考 100 分，驗證集不及格。稱為過擬合 (Overfitting)。\n解法：增加資料量、正則化、簡化模型。\n\n\n\n\n\n偏差-變異權衡\n\n\n\n\n防止過擬合技術 (Regularization)\n\nL1/L2 正則化 (Regularization)：\n\n概念：在損失函數後面加一個「懲罰項」，如果權重太複雜（數值太大），就罰分。\nL1 (Lasso)：會讓不重要的權重變成 0（具有特徵選擇的效果）。\nL2 (Ridge)：會讓權重變得很小但不為 0（防止單一特徵獨大）。\n\nDropout (隨機拋棄)：\n\n運作：在訓練時，隨機「關掉」一部分神經元（例如 50%）。\n類比：軍隊演習。隨機抽走指揮官，強迫部隊不能依賴特定的人，必須每個人都學會作戰。\n效果：每次訓練的網路結構都不一樣，最後預測時等於是多個網路的集成 (Ensemble)，效果更穩健。\n\n早停 (Early Stopping)：\n\n運作：在訓練過程中監控驗證集 (Validation Set) 的誤差。\n機制：如果訓練集的誤差還在降（還在背答案），但驗證集的誤差開始上升（考試考不好），代表開始過擬合了。此時啟動耐心機制 (Patience)（例如再觀察 5 輪），如果沒改善就立刻停止訓練，並回溯到表現最好的那個時間點。\n\n資料增強 (Data Augmentation)：\n\n概念：如果資料不夠，就自己造！\n影像：旋轉、裁切、調亮、水平翻轉、加雜訊。\n文字：同義詞替換、隨機刪除、回譯 (Back Translation, 中→英→中)。\n聲音：調整音調、改變速度、加入背景噪音。\n\n\n\n\n\n防止過擬合技術",
+    "crumbs": [
+      "第五部：模型評估、可解釋性與治理",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>模型評估與效能優化 (Model Evaluation & Optimization)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter9.html#chap-ai-foundation-chapter9-summary",
+    "href": "chapter9.html#chap-ai-foundation-chapter9-summary",
+    "title": "模型評估與效能優化 (Model Evaluation & Optimization)",
+    "section": "本章總結與考點提示",
+    "text": "本章總結與考點提示\n\n核心概念回顧\n評估是優化的基礎。\n\n資料劃分：Train (課本) / Validation (模擬考) / Test (期末考)。\n分類指標：\n\nAccuracy：整體答對率 (小心不平衡資料)。\nPrecision：抓到的有多少是真的 (寧缺勿濫)。\nRecall：真的有多少被抓到 (寧濫勿缺)。\nF1-Score：P 和 R 的平衡。\n\n迴歸指標：MSE (怕大錯)、MAE (直觀)。\n誤差分析：\n\nBias：準不準 (Underfitting)。\nVariance：穩不穩 (Overfitting)。\n\n抗過擬合：L1/L2 正則化、Dropout、Early Stopping、Data Augmentation。\n\n\n\nAI 應用規劃師認證考點\n常考題型與解題策略：\n\n指標選擇題：\n\n例題：「癌症篩檢模型應最重視哪個指標？」\n解答：Recall (召回率)。因為漏診後果嚴重。\n例題：「垃圾郵件過濾應最重視哪個指標？」\n解答：Precision (精確率)。因為不想把重要信件誤判為垃圾信。\n\n過擬合判斷題：\n\n例題：「訓練集準確率 99%，測試集準確率 60%，這是什麼情況？」\n解答：過度擬合 (Overfitting) / 高變異 (High Variance)。\n例題：「訓練集準確率 60%，測試集準確率 59%，這是什麼情況？」\n解答：欠擬合 (Underfitting) / 高偏差 (High Bias)。\n\n解決方案題：\n\n例題：「遇到過度擬合該怎麼辦？」\n解答：增加資料、使用 Dropout、L2 正則化、早停。\n\n\n\n\n記憶口訣\n\nPrecision：「貴精不貴多」（抓得準）。\nRecall：「一網打盡」（抓得全）。\nOverfitting：「死讀書」（只會考題，不會應用）。\nUnderfitting：「書沒讀好」（連考題都不會）。\n\n\n\n延伸思考\n\n為什麼 Accuracy 在資料不平衡時會騙人？（因為模型只要全部猜多數類別，分數就會很高，但完全沒有鑑別力）。",
+    "crumbs": [
+      "第五部：模型評估、可解釋性與治理",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>模型評估與效能優化 (Model Evaluation & Optimization)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter10.html",
+    "href": "chapter10.html",
+    "title": "可解釋 AI (XAI)",
+    "section": "",
+    "text": "XAI 的層次\n隨著 AI 模型越來越複雜（尤其是深度學習），它們變成了「黑箱 (Black Box)」。我們把資料丟進去，答案跑出來，但沒人知道中間發生了什麼。在醫療、金融、法律等高風險領域，我們不能只知道「結果」，必須知道「原因」。這就是可解釋 AI (Explainable AI, XAI) 的使命。",
+    "crumbs": [
+      "第五部：模型評估、可解釋性與治理",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>可解釋 AI (XAI)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter10.html#sec-xai-levels",
+    "href": "chapter10.html#sec-xai-levels",
+    "title": "可解釋 AI (XAI)",
+    "section": "",
+    "text": "黑箱模型 vs. 白箱模型\n\n白箱模型 (White Box)：結構簡單，人類可以直接看懂。\n\n線性迴歸：係數 w 直接代表特徵的影響力（正/負相關、大小）。\n決策樹：規則清楚（如果年齡 &gt; 20 且 收入 &gt; 3萬，則…）。\n\n黑箱模型 (Black Box)：結構複雜，人類無法直觀理解。\n\n深度神經網路：幾百萬個參數，看不出意義。\n隨機森林：幾百棵樹的投票結果，難以追蹤。\n\n\n\n\n\n黑箱模型 vs. 白箱模型\n\n\n\n\n全局解釋 vs. 局部解釋\n\n全局解釋 (Global Explanation)：\n\n問題：這個模型整體來說是怎麼運作的？哪些特徵最重要？\n例子：在預測房價時，模型認為「坪數」和「地點」是最重要的因素，「油漆顏色」不重要。\n\n局部解釋 (Local Explanation)：\n\n問題：為什麼這一筆特定的貸款申請被拒絕了？\n例子：雖然這人收入高（正向因素），但因為「信用紀錄太短」（負向因素）且「近期查詢次數過多」（負向因素），綜合起來導致被拒絕。\n\n\n\n\n\n全局解釋 vs. 局部解釋",
+    "crumbs": [
+      "第五部：模型評估、可解釋性與治理",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>可解釋 AI (XAI)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter10.html#sec-xai-techniques",
+    "href": "chapter10.html#sec-xai-techniques",
+    "title": "可解釋 AI (XAI)",
+    "section": "解釋技術與工具",
+    "text": "解釋技術與工具\n\nLIME (Local Interpretable Model-agnostic Explanations)\n\n核心概念：雖然整個黑箱模型很複雜（像彎彎曲曲的曲線），但在「局部」範圍內，它通常是簡單的（像直線）。\n運作方式：\n\n選定想解釋的那個資料點 x。\n在 x 附近隨機撒一些擾動過的資料點，並觀察黑箱模型對這些點的預測。\n用這些點訓練一個簡單的線性模型（白箱）來模擬黑箱模型在這一小塊區域的行為。\n解釋這個線性模型。\n\n優點：與模型無關 (Model-agnostic)，任何模型（神經網路、SVM、隨機森林）都能用。\n\n\n\n\nLIME\n\n\n\n\nSHAP (Shapley Values)\n\n核心概念：源自賽局理論 (Game Theory)。假設所有特徵是合作玩遊戲的玩家，最後贏得的分數（預測結果）該如何公平分配給每個玩家（特徵）？\n運作方式：計算某個特徵「有它」跟「沒它」時，預測結果的差異平均值。\n\n例如：預測房價 1000 萬。基準值是 800 萬。\n「靠近捷運」貢獻了 +150 萬。\n「屋齡老」貢獻了 -50 萬。\n「有車位」貢獻了 +100 萬。\n\n優點：數學理論最紮實，能提供一致性 (Consistency) 的解釋，且同時支援全局與局部解釋。\n\n\n\n\nSHAP\n\n\n\n\n特徵重要度 (Feature Importance)\n\n概念：直接列出哪些特徵對模型的貢獻最大。\n應用：隨機森林 (Random Forest) 和 XGBoost 內建特徵重要度排序（基於分裂時帶來的資訊增益）。\n限制：只能看全局，不能解釋單一筆預測。\n\n\n\n反事實解釋 (Counterfactual Explanation)\n\n核心概念：告訴使用者「如果做什麼改變，結果就會不同」。\n\n大多數 XAI 技術（如 SHAP）是在解釋「為什麼你會被拒絕」（回顧過去）。\n反事實解釋是在告訴你「怎麼做才能被接受」（展望未來）。\n\n類比：醫生的處方。\n\n解釋 (SHAP)：「你生病是因為血壓高和缺乏運動。」（分析原因）\n反事實 (Counterfactual)：「如果你每天運動 30 分鐘並少吃鹽，你就會恢復健康。」（提供行動指南）\n\n例子：\n\n現況：小明的貸款申請被 AI 拒絕了。\n解釋：「如果你的年收入從 50 萬增加到 55 萬，或者你的信用卡負債減少 2 萬元，你的貸款就會通過。」\n\n三大原則：\n\n可操作性 (Actionability)：建議必須是使用者能改變的。\n\n好建議：增加收入、減少負債、考取證照。\n壞建議：如果你年輕 10 歲、如果你是女生、如果你出生在美國（這些都改不了，講了只會讓人生氣）。\n\n稀疏性 (Sparsity)：改變的特徵越少越好。\n\n不要叫使用者同時改 10 件事（如：收入加倍、換工作、搬家、結婚…），這太難做到了。通常建議 1-2 個最有效的改變。\n\n有效性 (Validity)：這個改變必須真的能讓 AI 的預測結果翻盤（從 Reject 變 Accept）。\n\n\n\n\n\n反事實解釋",
+    "crumbs": [
+      "第五部：模型評估、可解釋性與治理",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>可解釋 AI (XAI)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter10.html#chap-ai-foundation-chapter10-summary",
+    "href": "chapter10.html#chap-ai-foundation-chapter10-summary",
+    "title": "可解釋 AI (XAI)",
+    "section": "本章總結與考點提示",
+    "text": "本章總結與考點提示\n\n核心概念回顧\nXAI 是建立 AI 信任的關鍵。\n\n模型類型：\n\n白箱：線性迴歸、決策樹 (簡單、可解釋)。\n黑箱：深度學習、隨機森林 (複雜、難解釋)。\n\n解釋範圍：\n\n全局：整體特徵重要性。\n局部：單一案例的判斷依據。\n\n技術工具：\n\nLIME：局部線性近似 (Model-agnostic)。\nSHAP：賽局理論 (公平分配貢獻)。\nCounterfactual：如果…就會… (行動建議)。\n\n\n\n\nAI 應用規劃師認證考點\n常考題型與解題策略：\n\n情境選擇題：\n\n例題：「銀行拒絕貸款，客戶要求解釋，哪種方法最適合？」\n解答：反事實解釋 (Counterfactual)。因為客戶想知道「怎麼做才能通過」。\n例題：「想知道模型整體最看重哪些特徵？」\n解答：全局特徵重要性 (Global Feature Importance) 或 SHAP Summary Plot。\n\n黑白箱辨析：\n\n例題：「下列哪個模型的可解釋性最高？」\n解答：決策樹 &gt; 線性迴歸 &gt; 隨機森林 &gt; 神經網路。\n\n工具特性題：\n\n例題：「LIME 的核心思想是什麼？」\n解答：在局部範圍內，用簡單的線性模型來模擬複雜的黑箱模型。\n\n\n\n\n記憶口訣\n\nLIME：「以管窺天」（局部近似）。\nSHAP：「分錢分得平」（賽局理論）。\nCounterfactual：「早知如此，何必當初」（如果…就會…）。\n\n\n\n延伸思考\n\n可解釋性與準確率通常存在什麼關係？（Trade-off。通常模型越複雜準確率越高，但可解釋性越低。XAI 的目標就是打破這個權衡）。",
+    "crumbs": [
+      "第五部：模型評估、可解釋性與治理",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>可解釋 AI (XAI)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter11.html",
+    "href": "chapter11.html",
+    "title": "AI 治理、法規與倫理 (AI Governance, Regulations & Ethics)",
+    "section": "",
+    "text": "倫理原則與風險管理\nAI 的強大能力伴隨著巨大的風險。如何確保 AI 是向善的 (AI for Good)，而不是帶來歧視、侵犯隱私或失控，是當前各國政府與企業最關注的議題。這不僅是道德問題，更是法律合規問題。",
+    "crumbs": [
+      "第五部：模型評估、可解釋性與治理",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>AI 治理、法規與倫理 (AI Governance, Regulations & Ethics)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter11.html#sec-ethics-risk",
+    "href": "chapter11.html#sec-ethics-risk",
+    "title": "AI 治理、法規與倫理 (AI Governance, Regulations & Ethics)",
+    "section": "",
+    "text": "公平性與偏見 (Bias & Fairness)\nAI 模型是從歷史數據中學習的，如果歷史數據包含人類的偏見，AI 就會放大這些偏見。\n\n偏見來源：\n\n歷史偏見：例如過去主管多為男性，AI 學習後可能會認為「男性」是好主管的特徵。\n抽樣偏見：訓練資料中某些族群樣本太少（例如人臉辨識對深色人種準確率較低）。\n\n案例：Amazon 的 AI 招聘系統因為過去 10 年都錄取男性，學會了歧視女性履歷（看到 “Women’s Chess Club” 就扣分）。\n解法：資料去偏 (Data Debiasing)。在訓練前檢查資料分佈，或在訓練中加入公平性約束 (Fairness Constraints)。\n\n\n\n\n公平性\n\n\n\n\n隱私保護技術 (Privacy-Preserving AI)\n\n差分隱私 (Differential Privacy)：\n\n概念：在資料中加入適量的數學雜訊 (Noise)，使得攻擊者無法反推出特定個人的資訊，但整體的統計特性（如平均值）仍然準確。\n應用：Apple/Google 收集用戶使用習慣時，會加入雜訊，確保無法追蹤到單一用戶。\n\n聯邦學習 (Federated Learning)：\n\n核心概念：數據不離地 (Data stays local)。\n運作流程：\n\n下發模型：伺服器將通用的 AI 模型傳送到你的裝置（如手機）。\n在地訓練：手機利用你的私密資料（如打字習慣、照片）在本地訓練模型，讓模型變聰明一點點。\n上傳參數：手機只回傳訓練心得 (參數更新/梯度) 給伺服器，絕對不回傳原始資料。\n整合更新：伺服器將成千上萬人的「心得」融合起來，更新成一個更強大的通用模型，再發送給大家。\n\n類比：連鎖餐廳的新菜研發。\n\n總部（伺服器）不把客人的食材（私密資料）收回來。\n而是把食譜（模型）發給各地分店（手機）。\n分店廚師試做後，回報「鹽要多加一點」（參數更新）。\n總部修改食譜，發布新版本。\n\n應用：Google Gboard 輸入法預測（不會上傳你打的字）、醫療跨院研究（醫院不能共享病患個資，但可以共享模型參數）。\n\n\n\n\n\n聯邦學習\n\n\n\n\n責任歸屬與問責性 (Accountability)\n\n當 AI 犯錯（如自駕車撞人、醫療 AI 誤診）時，誰該負責？是開發者、使用者，還是 AI 本身？\n人機協作 (Human-in-the-loop)：目前的共識是，高風險決策（如醫療、司法）不能全交給 AI，必須有人類專家介入審核。最終決策權與責任仍在人類身上。",
+    "crumbs": [
+      "第五部：模型評估、可解釋性與治理",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>AI 治理、法規與倫理 (AI Governance, Regulations & Ethics)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter11.html#sec-regulations",
+    "href": "chapter11.html#sec-regulations",
+    "title": "AI 治理、法規與倫理 (AI Governance, Regulations & Ethics)",
+    "section": "台灣與國際法規架構",
+    "text": "台灣與國際法規架構\n\n台灣《人工智慧基本法》草案\n\n定位：作為上位法，確立 AI 發展的基本原則（如以人為本、永續發展）。\n重點機制：\n\n監理沙盒 (Regulatory Sandbox)：為了鼓勵創新，允許企業在風險可控的範圍內測試新技術，暫時豁免部分法規限制。\n風險分級管理：不一竿子打翻一船人，依據 AI 應用的風險程度，採取不同強度的管理。\n\n\n\n\n\n台灣《人工智慧基本法》草案\n\n\n\n\n台灣金融業 AI 規範\n金融業因涉及金錢與個資，監管最嚴格。金管會發布了「金融業運用人工智慧之核心原則」。\n金管會發布了「金融業運用人工智慧之核心原則」，共六大項。\n記憶口訣：治平隱安透責 (治平專案隱藏透徹責任)\n\n建立治理架構 (Governance)：\n\n重點：董事會要負責。不能把 AI 當成單純的技術問題丟給 IT 部門，高層必須監督 AI 的使用策略與風險。\n\n公平性 (Fairness)：\n\n重點：不歧視。模型不能因為性別、種族等特徵而給予差別待遇（例如無故拒絕女性貸款）。需定期檢測模型偏見。\n\n保護隱私及客戶權益 (Privacy)：\n\n重點：最小化蒐集。只蒐集必要的資料，且必須妥善保管，不能未經同意就拿去訓練模型或賣給第三方。\n\n系統安全性與強健性 (System Security)：\n\n重點：防駭客。要防止對抗式攻擊（騙過 AI），並確保系統在突發狀況下（如資料異常）仍能穩定運作。\n\n透明度與可解釋性 (Transparency & Explainability)：\n\n重點：給理由。當 AI 做出對客戶有重大影響的決策（如拒保、拒貸）時，必須能解釋原因，不能只說「電腦算出來的」。\n\n當責性 (Accountability)：\n\n重點：有人扛。無論 AI 多聰明，最終的決策責任還是在人類身上。必須確保有申訴管道與補救機制。\n\n\n\n\n\n金融業 AI 規範\n\n\n\n\n歐盟《人工智慧法案》(EU AI Act)\n全球第一部綜合性 AI 法規，採風險導向 (Risk-based approach)，影響力如同 GDPR：\n\n不可接受風險 (Unacceptable Risk)：完全禁止。\n\n社會信用評分 (Social Scoring)。\n公共場所的即時遠端生物辨識（警察抓重犯除外）。\n潛意識操縱（如用 AI 誘導兒童）。\n\n高風險 (High Risk)：嚴格監管。\n\n醫療器材、招聘系統、信用評分、關鍵基礎設施、邊境管制。\n義務：必須通過合規評估 (Conformity Assessment)、使用高品質資料、保留紀錄、有人類監督。\n\n有限風險 (Limited Risk)：透明度義務。\n\nChatbot、Deepfake。\n義務：必須明確告知使用者「你正在跟 AI 說話」或「這是生成的影像」。\n\n最小風險 (Minimal Risk)：不監管。\n\n垃圾郵件過濾器、電玩遊戲 AI。\n\n\n\n\n\nEU AI Act",
+    "crumbs": [
+      "第五部：模型評估、可解釋性與治理",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>AI 治理、法規與倫理 (AI Governance, Regulations & Ethics)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter11.html#sec-ai-evaluation",
+    "href": "chapter11.html#sec-ai-evaluation",
+    "title": "AI 治理、法規與倫理 (AI Governance, Regulations & Ethics)",
+    "section": "AI 產品評測標準",
+    "text": "AI 產品評測標準\n\n數位發展部 AI 產品與系統評測中心\n為了建立 AI 產品的信賴度，台灣成立了評測中心，參考國際標準（如 NIST）制定評測規範。\n\n主要評測指標：\n\n安全性 (Safety)：系統是否穩定？是否容易被攻擊（如 Prompt Injection）？\n可解釋性 (Explainability)：能否解釋輸出結果？\n彈性 (Resilience)：遇到異常輸入時，是否能維持運作？\n公平性 (Fairness)：是否存在偏見？\n準確性 (Accuracy)：答案是否正確？有無幻覺？\n\n排除項目：目前的評測主要針對語言模型本身，不包含「資料複雜性」（資料好不好是廠商的事）或單純的「互動性」（好不好聊）。\n\n\n\n\n數位發展部 AI 產品評測",
+    "crumbs": [
+      "第五部：模型評估、可解釋性與治理",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>AI 治理、法規與倫理 (AI Governance, Regulations & Ethics)</span>"
+    ]
+  },
+  {
+    "objectID": "chapter11.html#chap-ai-foundation-chapter11-summary",
+    "href": "chapter11.html#chap-ai-foundation-chapter11-summary",
+    "title": "AI 治理、法規與倫理 (AI Governance, Regulations & Ethics)",
+    "section": "本章總結與考點提示",
+    "text": "本章總結與考點提示\n\n核心概念回顧\nAI 治理是確保 AI 永續發展的基石。\n\n倫理風險：\n\n偏見：歷史數據、抽樣偏差。解法：去偏。\n隱私：差分隱私 (加雜訊)、聯邦學習 (數據不離地)。\n當責：Human-in-the-loop (人機協作)。\n\n法規架構：\n\n歐盟 AI Act：風險導向 (禁止、高風險、有限、最小)。\n台灣 AI 基本法：監理沙盒、風險分級。\n金融業規範：公平、隱私、透明、當責。\n\n\n\n\nAI 應用規劃師認證考點\n常考題型與解題策略：\n\n法規分級題 (EU AI Act)：\n\n例題：「社會信用評分屬於哪一級風險？」\n解答：不可接受風險 (禁止)。\n例題：「招聘系統或醫療器材屬於哪一級？」\n解答：高風險 (嚴格監管)。\n例題：「聊天機器人屬於哪一級？」\n解答：有限風險 (需揭露是 AI)。\n\n隱私技術題：\n\n例題：「希望多家醫院聯合訓練模型，但病歷不能出醫院，該用什麼技術？」\n解答：聯邦學習 (Federated Learning)。\n例題：「Apple 收集用戶數據時加入雜訊以保護隱私，這是什麼技術？」\n解答：差分隱私 (Differential Privacy)。\n\n倫理情境題：\n\n例題：「AI 判斷履歷時，對女性分數較低，這是什麼問題？」\n解答：偏見 (Bias)。\n例題：「醫生使用 AI 輔助診斷，最後簽名負責的是誰？」\n解答：醫生 (Human-in-the-loop)。\n\n\n\n\n記憶口訣\n\nEU AI Act：「禁高限微」（禁止、高、有限、微小）。\n聯邦學習：「資料不動模型動」。\n差分隱私：「加點雜訊更安全」。\n\n\n\n延伸思考\n\n為什麼「監理沙盒」對 AI 新創很重要？（因為法規通常落後於科技，沙盒提供了一個合法的試錯空間，避免創新被舊法規扼殺）。",
+    "crumbs": [
+      "第五部：模型評估、可解釋性與治理",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>AI 治理、法規與倫理 (AI Governance, Regulations & Ethics)</span>"
+    ]
+  }
+]
