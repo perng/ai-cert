@@ -1,0 +1,20 @@
+/* Force light background on all mermaid diagrams */
+.mermaid svg {
+  background-color: #ffffff !important;
+}
+
+.mermaid {
+  background-color: #ffffff !important;
+}
+
+/* Quarto wraps mermaid in cell-output-display */
+.cell-output-display .mermaid {
+  background-color: #ffffff !important;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+div.quarto-figure .mermaid,
+div.quarto-figure .mermaid svg {
+  background-color: #ffffff !important;
+}

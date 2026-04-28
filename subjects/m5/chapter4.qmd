@@ -48,7 +48,6 @@ OpenClaw 有一個特別的設計叫做「心跳（Heartbeat）」——它會�
 ## Hermes Agent：會自我學習的多平台代理 {#sec-hermes}
 
 ```{mermaid}
-%%{init: {'theme': 'neutral'}}%%
 flowchart TD
     Task(收到新任務) --> Eval{有現成的技能嗎？}
     Eval --> |Yes| Exec[直接套用執行]
@@ -126,18 +125,17 @@ Hermes 內建 cron 排程功能，讓你用**自然語言**定義自動化任務
 除了 OpenClaw 和 Hermes 這類「個人代理」之外，業界還有一系列專注於**讓多個代理人協同工作**的框架。這些框架擅長管理多個互相交互的代理來完成複雜任務。
 
 ```{mermaid}
-%%{init: {'theme': 'neutral'}}%%
 graph LR
-    subgraph "多代理協作框架"
+    subgraph S1["多代理協作框架"]
         CrewAI["CrewAI<br/>角色扮演協作"]
         AutoGen["AutoGen<br/>對話式任務解決"]
         LangGraph["LangGraph<br/>圖狀態機"]
     end
-    subgraph "技術導向框架"
+    subgraph S2["技術導向框架"]
         LlamaIndex["LlamaIndex<br/>資料檢索代理"]
         Haystack["Haystack<br/>模組化管線"]
     end
-    subgraph "生態系統 SDK"
+    subgraph S3["生態系統 SDK"]
         OpenAISDK["OpenAI Agents SDK"]
         SemanticKernel["Semantic Kernel"]
     end

@@ -109,7 +109,7 @@ graph TD
 ## 代理人之間如何「說話」：通訊協議 {#sec-agent-communication}
 
 ```{mermaid}
-graph LR
+graph TD
     AgentA[代理人 A] --> |發送代理名片與請求| Router{事件佇列 Event Queue}
     Router --> |分配與轉交對話上下文| AgentB[代理人 B]
     AgentB -.-> |回傳工作產物 Artifact| Router
