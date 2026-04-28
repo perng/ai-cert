@@ -4,7 +4,7 @@ project:
 
 book:
   title: "AI 代理人技術與應用"
-  author: "AI 認證課程"
+  author: "AI仁波切"
   chapters:
     - index.qmd
     - chapter1.qmd
@@ -13,11 +13,10 @@ book:
     - chapter4.qmd
     - chapter5.qmd
 
+
 format:
   html:
     theme: cosmo
     toc: true
-    number-sections: true
-    mermaid:
-      theme: default
-    css: custom.css
+    number-sections: false
+

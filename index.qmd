@@ -5,9 +5,11 @@ format: html
 
 # 複習用書
 
-*   [（初級）人工智慧基礎概念](ai-foundation/index.html)
-*   [（初級）生成式AI應用與規劃](gen-ai/index.html)
-*   [（中級）基礎AI知識](m1/index.html)
-*   [（中級）人工智慧技術應用與規劃](m2/index.html)
-*   [（中級）大數據處理分析與應用](m3/index.html)
-*   [（中級）機器學習技術與應用](m4/index.html)
+*   [（初級）人工智慧基礎概念](subjects/ai-foundation/index.html)
+*   [（初級）生成式AI應用與規劃](subjects/gen-ai/index.html)
+*   [（中級）基礎AI知識](subjects/m1/index.html)
+*   [（中級）人工智慧技術應用與規劃](subjects/m2/index.html)
+*   [（中級）大數據處理分析與應用](subjects/m3/index.html)
+*   [（中級）機器學習技術與應用](subjects/m4/index.html)
+*   [（補充教材）AI 代理人技術與應用](subjects/m5/index.html)
+

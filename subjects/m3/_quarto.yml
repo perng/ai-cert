@@ -4,7 +4,7 @@ project:
 
 book:
   title: "大數據處理與分析"
-  author: "AI 認證課程"
+  author: "AI仁波切"
   chapters:
     - index.qmd
     - chapter1.qmd

@@ -4,7 +4,7 @@ project:
 
 book:
   title: "AI 技術應用與規劃"
-  author: "AI 認證課程"
+  author: "AI仁波切"
   chapters:
     - index.qmd
     - chapter1.qmd
