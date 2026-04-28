@@ -51,7 +51,6 @@ label: chap-m5-ch5
 ## 常見的多代理協作模式 {#sec-mas-patterns}
 
 ```{mermaid}
-%%{init: {'theme': 'neutral'}}%%
 graph TD
     Coord(協調者 Coordinator) --> Exec1(資料搜集代理)
     Coord --> Exec2(邏輯分析代理)

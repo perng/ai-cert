@@ -1,0 +1,4662 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人工智慧數學基礎 — 題庫審閱 — 題庫審閱</title>
+<style>
+  :root {
+    --bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --correct: #d4edda;
+    --correct-border: #28a745;
+    --wrong: #ffffff;
+    --accent: #2563eb;
+    --text: #1a1a2e;
+    --muted: #6c757d;
+    --border: #dee2e6;
+    --section-bg: #e9ecef;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 900px; margin: 0 auto; }
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+    color: var(--accent);
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border);
+  }
+  .stats {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  .stat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+  }
+  .stat-card strong { color: var(--accent); font-size: 1.3rem; }
+  .toc {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .toc h2 { font-size: 1.1rem; margin-bottom: 0.75rem; }
+  .toc ul { list-style: none; padding-left: 0; }
+  .toc li { margin-bottom: 0.3rem; }
+  .toc a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  .toc a:hover { text-decoration: underline; }
+  .toc .toc-section { padding-left: 1.25rem; color: var(--muted); font-size: 0.85rem; }
+
+  .chapter-heading {
+    font-size: 1.4rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    color: var(--accent);
+  }
+  .section-heading {
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0.75rem;
+    background: var(--section-bg);
+    border-radius: 6px;
+    color: var(--text);
+  }
+
+  .question-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    transition: box-shadow 0.15s;
+  }
+  .question-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+  .q-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.6rem;
+  }
+  .q-id {
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-family: monospace;
+    background: var(--bg);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+  }
+  .q-text {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  .options { list-style: none; padding: 0; }
+  .options li {
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.35rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    font-size: 0.92rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  .options li.correct {
+    background: var(--correct);
+    border-color: var(--correct-border);
+    font-weight: 600;
+  }
+  .options li.correct::before { content: "✅"; }
+  .options li:not(.correct)::before {
+    content: attr(data-label);
+    color: var(--muted);
+    font-weight: 600;
+    min-width: 1.5em;
+  }
+  .explanation {
+    margin-top: 0.6rem;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.88rem;
+    color: #155724;
+    background: #f0fff4;
+    border-left: 3px solid var(--correct-border);
+    border-radius: 0 6px 6px 0;
+  }
+  .tags {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+  .tag {
+    font-size: 0.75rem;
+    background: var(--bg);
+    color: var(--muted);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+  }
+
+  /* Correct-answer index distribution warning */
+  .warning {
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+  }
+  .warning strong { color: #856404; }
+
+  @media print {
+    body { padding: 0.5rem; }
+    .question-card { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>📋 人工智慧數學基礎 — 題庫審閱</h1>
+<div class="subtitle">模組：m1 ｜ 來源：chapter1.yaml, chapter2.yaml, chapter3.yaml, chapter4.yaml</div>
+<div class="stats">
+<div class="stat-card">題目總數 <strong>260</strong></div>
+<div class="stat-card">章節數 <strong>4</strong></div>
+<div class="stat-card">檔案數 <strong>4</strong></div>
+</div>
+<div class="toc"><h2>目錄</h2><ul>
+<li><a href="#ch-1">人工智慧數學基礎</a> (65 題)</li>
+<li class="toc-section">— 敘述統計</li>
+<li class="toc-section">— 機率分佈</li>
+<li class="toc-section">— 假設檢定</li>
+<li class="toc-section">— 線性代數</li>
+<li class="toc-section">— 微積分與最佳化</li>
+<li class="toc-section">— 深度思考情境題</li>
+<li class="toc-section">— 機率與統計</li>
+<li><a href="#ch-2">資料處理基礎</a> (65 題)</li>
+<li class="toc-section">— 資料預處理</li>
+<li class="toc-section">— 特徵工程</li>
+<li class="toc-section">— 深度思考情境題</li>
+<li><a href="#ch-3">機器學習基礎概念</a> (65 題)</li>
+<li class="toc-section">— 監督式學習</li>
+<li class="toc-section">— 非監督式學習</li>
+<li class="toc-section">— 模型評估</li>
+<li class="toc-section">— 深度思考情境題</li>
+<li class="toc-section">— 交叉驗證</li>
+<li class="toc-section">— 偏差-變異數權衡</li>
+<li><a href="#ch-4">深度學習簡介</a> (65 題)</li>
+<li class="toc-section">— 神經網路</li>
+<li class="toc-section">— 最佳化</li>
+<li class="toc-section">— 深度思考情境題</li>
+</ul></div>
+<h2 class="chapter-heading" id="ch-1">人工智慧數學基礎</h2>
+<h3 class="section-heading">敘述統計</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在敘述統計中，哪一個指標最容易受到極端值 (Outliers) 的影響？</div>
+<span class="q-id">#3101</span>
+</div>
+<ol class="options">
+<li data-label="A.">眾數 (Mode)，數據中出現次數最多的數值</li>
+<li data-label="B.">四分位距 (IQR)，第三四分位數與第一四分位數的差</li>
+<li class="correct" data-label="C.">平均數 (Mean)，所有數據的總和除以數據個數</li>
+<li data-label="D.">中位數 (Median)，將數據排序後位於中間的數值</li>
+</ol>
+<div class="explanation">💡 平均數涉及所有數值的總和，因此極端值會顯著拉高或拉低平均數。中位數和眾數則相對穩健。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-prob-stats</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">變異數 (Variance) 與標準差 (Standard Deviation) 的關係為何？</div>
+<span class="q-id">#3102</span>
+</div>
+<ol class="options">
+<li data-label="A.">標準差是變異數的平方 (Variance Squared)</li>
+<li class="correct" data-label="B.">標準差是變異數的平方根 (Square Root of Variance)</li>
+<li data-label="C.">兩者在數學上完全無關</li>
+<li data-label="D.">變異數是標準差的平方根 (Square Root of Standard Deviation)</li>
+</ol>
+<div class="explanation">💡 標準差是變異數的平方根 ($\sigma = \sqrt{\sigma^2}$)，這使得標準差的單位與原始數據一致，更直觀。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-prob-stats</span>
+</div>
+</div>
+<h3 class="section-heading">機率分佈</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">根據「68-95-99.7 法則」，在常態分佈中，約有多少比例的數據落在平均值正負兩個標準差 ($\mu \pm 2\sigma$) 範圍內？</div>
+<span class="q-id">#3103</span>
+</div>
+<ol class="options">
+<li data-label="A.">約 50% 的數據</li>
+<li data-label="B.">約 68% 的數據</li>
+<li data-label="C.">約 99.7% 的數據</li>
+<li class="correct" data-label="D.">約 95% 的數據</li>
+</ol>
+<div class="explanation">💡 常態分佈的特性是：$\mu \pm 1\sigma$ 涵蓋約 68%，$\mu \pm 2\sigma$ 涵蓋約 95%，$\mu \pm 3\sigma$ 涵蓋約 99.7%。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-prob-stats</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">哪一種機率分佈最適合用來描述「投擲一枚硬幣 10 次，出現正面 5 次的機率」？</div>
+<span class="q-id">#3104</span>
+</div>
+<ol class="options">
+<li data-label="A.">泊松分佈 (Poisson Distribution)，描述單位時間內事件發生的次數</li>
+<li data-label="B.">指數分佈 (Exponential Distribution)，描述事件發生的時間間隔</li>
+<li class="correct" data-label="C.">二項式分佈 (Binomial Distribution)，描述 n 次獨立伯努利試驗中成功的次數</li>
+<li data-label="D.">常態分佈 (Normal Distribution)，描述許多自然現象的連續機率分佈</li>
+</ol>
+<div class="explanation">💡 二項式分佈描述的是在 $n$ 次獨立的伯努利試驗（只有成功/失敗兩種結果）中，成功 $k$ 次的機率。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-prob-stats</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">貝氏定理 (Bayes' Theorem) 的核心公式是？</div>
+<span class="q-id">#3111</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">$P(A|B) = P(B|A)P(A) / P(B)$</li>
+<li data-label="B.">$P(A|B) = P(B|A)$，這通常是不成立的</li>
+<li data-label="C.">$P(A|B) = P(A) + P(B)$，這是互斥事件的機率公式</li>
+<li data-label="D.">$P(A|B) = P(A)P(B)$，這是獨立事件的機率公式</li>
+</ol>
+<div class="explanation">💡 貝氏定理描述了在已知 B 發生的條件下 A 發生的機率，公式為 $P(A|B) = \frac{P(B|A)P(A)}{P(B)}$。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-prob-stats</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">兩個事件 A 和 B 獨立 (Independent) 意味著？</div>
+<span class="q-id">#3116</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">$P(A \cap B) = P(A)P(B)$，即兩者同時發生的機率等於各自機率的乘積</li>
+<li data-label="B.">$P(A \cap B) = P(A) + P(B)$，這是錯誤的公式</li>
+<li data-label="C.">$P(A \cap B) = 0$，這是互斥事件</li>
+<li data-label="D.">$P(A|B) = 0$，表示 B 發生時 A 不可能發生</li>
+</ol>
+<div class="explanation">💡 若 A 與 B 獨立，則 A 的發生不影響 B，且兩者同時發生的機率等於各自發生機率的乘積。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-prob-stats</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">期望值 (Expectation) $E[X]$ 在幾何上對應於機率分佈的？</div>
+<span class="q-id">#3117</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">重心 (Center of Mass) 或平均位置，代表分佈的平衡點</li>
+<li data-label="B.">面積 (Area)，機率密度函數下的總面積恆為 1</li>
+<li data-label="C.">最高點 (Peak)，即眾數</li>
+<li data-label="D.">寬度 (Width)，即變異數或標準差</li>
+</ol>
+<div class="explanation">💡 期望值是隨機變數的加權平均，幾何上對應於機率密度函數圖形的重心。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-prob-stats</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">中央極限定理 (Central Limit Theorem) 指出，當樣本數夠大時，樣本平均數的抽樣分佈會趨近於？</div>
+<span class="q-id">#3123</span>
+</div>
+<ol class="options">
+<li data-label="A.">指數分佈 (Exponential Distribution)</li>
+<li class="correct" data-label="B.">常態分佈 (Normal Distribution)</li>
+<li data-label="C.">均勻分佈 (Uniform Distribution)</li>
+<li data-label="D.">泊松分佈 (Poisson Distribution)</li>
+</ol>
+<div class="explanation">💡 中央極限定理是統計學的基石，指出無論母體分佈為何，只要樣本數夠大，樣本平均數的分佈都會近似常態分佈。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-prob-stats</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">條件機率 $P(A|B)$ 的定義是？</div>
+<span class="q-id">#3127</span>
+</div>
+<ol class="options">
+<li data-label="A.">在 A 發生的條件下 B 發生的機率 (Probability of B given A)</li>
+<li data-label="B.">A 和 B 同時發生的機率 (Joint Probability)</li>
+<li data-label="C.">A 或 B 發生的機率 (Union Probability)</li>
+<li class="correct" data-label="D.">在 B 發生的條件下 A 發生的機率 (Probability of A given B)</li>
+</ol>
+<div class="explanation">💡 $P(A|B)$ 讀作「在 B 給定下 A 的機率」，即已知 B 發生後 A 發生的可能性。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-prob-stats</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">伯努利試驗 (Bernoulli Trial) 的特點是？</div>
+<span class="q-id">#3131</span>
+</div>
+<ol class="options">
+<li data-label="A.">每次試驗結果互相影響 (Dependent Trials)</li>
+<li data-label="B.">有無限多種可能的結果 (Infinite Outcomes)</li>
+<li class="correct" data-label="C.">只有兩種可能的結果（成功/失敗）(Binary Outcome)</li>
+<li data-label="D.">結果是連續的數值 (Continuous Value)</li>
+</ol>
+<div class="explanation">💡 伯努利試驗是最簡單的隨機試驗，只有兩種互斥結果，如投硬幣。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-prob-stats</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">聯合機率 (Joint Probability) $P(A, B)$ 表示？</div>
+<span class="q-id">#3137</span>
+</div>
+<ol class="options">
+<li data-label="A.">A 或 B 發生的機率 (Union Probability)</li>
+<li data-label="B.">A 發生的機率 (Marginal Probability)</li>
+<li data-label="C.">A 發生且 B 不發生的機率 (Difference Probability)</li>
+<li class="correct" data-label="D.">A 和 B 同時發生的機率 (Intersection Probability)</li>
+</ol>
+<div class="explanation">💡 聯合機率描述兩個事件同時發生的可能性。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-prob-stats</span>
+</div>
+</div>
+<h3 class="section-heading">假設檢定</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在假設檢定中，p-value 代表什麼意義？</div>
+<span class="q-id">#3105</span>
+</div>
+<ol class="options">
+<li data-label="A.">對立假設 ($H_1$) 為真的機率</li>
+<li data-label="B.">實驗完全失敗的機率</li>
+<li data-label="C.">虛無假設 ($H_0$) 為真的機率</li>
+<li class="correct" data-label="D.">在虛無假設 ($H_0$) 為真的前提下，觀察到當前數據或更極端情況的機率</li>
+</ol>
+<div class="explanation">💡 p-value 是在虛無假設成立的條件下，出現目前觀測結果或更極端結果的機率。p 值越小，拒絕 $H_0$ 的證據越強。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-prob-stats</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">型一錯誤 (Type I Error) 又稱為？</div>
+<span class="q-id">#3120</span>
+</div>
+<ol class="options">
+<li data-label="A.">系統誤差 (Systematic Error)</li>
+<li data-label="B.">隨機誤差 (Random Error)</li>
+<li class="correct" data-label="C.">偽陽性 (False Positive)，即沒病判有病</li>
+<li data-label="D.">偽陰性 (False Negative)，即有病判沒病</li>
+</ol>
+<div class="explanation">💡 型一錯誤是指虛無假設為真卻被拒絕，即「無中生有」，稱為偽陽性。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-prob-stats</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">顯著水準 (Significance Level) $\alpha$ 通常設定為？</div>
+<span class="q-id">#3121</span>
+</div>
+<ol class="options">
+<li data-label="A.">0.5 (50%)</li>
+<li class="correct" data-label="B.">0.05 (5%)，這是最常用的標準</li>
+<li data-label="C.">0.001 (0.1%)</li>
+<li data-label="D.">0.95 (95%)</li>
+</ol>
+<div class="explanation">💡 統計學中常用的顯著水準是 0.05 (5%)，表示我們願意承擔 5% 的機率犯型一錯誤。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-prob-stats</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">對立假設 (Alternative Hypothesis, $H_1$) 通常代表？</div>
+<span class="q-id">#3128</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">研究者想要證明的效應或差異 (Effect or Difference to be Proven)</li>
+<li data-label="B.">現狀或無效應 (Status Quo or No Effect)</li>
+<li data-label="C.">實驗過程失敗 (Experiment Failure)</li>
+<li data-label="D.">數據收集錯誤 (Data Error)</li>
+</ol>
+<div class="explanation">💡 虛無假設 $H_0$ 通常代表「無差異」，而對立假設 $H_1$ 是研究者希望收集證據支持的假設（有差異、有效應）。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-prob-stats</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">雙尾檢定 (Two-tailed Test) 用於檢驗？</div>
+<span class="q-id">#3134</span>
+</div>
+<ol class="options">
+<li data-label="A.">參數是否大於某個特定值 (Greater than)</li>
+<li data-label="B.">樣本數是否足夠大 (Sample Size Sufficiency)</li>
+<li class="correct" data-label="C.">參數是否不等於某個值（差異可能在任何方向）(Not equal to)</li>
+<li data-label="D.">參數是否小於某個特定值 (Less than)</li>
+</ol>
+<div class="explanation">💡 雙尾檢定關注的是「有無差異」，而不論差異的方向（大於或小於）。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-prob-stats</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">自由度 (Degrees of Freedom) 通常與什麼有關？</div>
+<span class="q-id">#3139</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">樣本數 (Sample Size)</li>
+<li data-label="B.">顯著水準 (Significance Level)</li>
+<li data-label="C.">母體的大小 (Population Size)</li>
+<li data-label="D.">變數的測量單位 (Unit of Measurement)</li>
+</ol>
+<div class="explanation">💡 自由度通常取決於樣本數（如 $n-1$），影響 t 分佈或卡方分佈的形狀。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-prob-stats</span>
+</div>
+</div>
+<h3 class="section-heading">線性代數</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">若兩個向量的內積 (Dot Product) 為 0，代表這兩個向量的幾何關係為何？</div>
+<span class="q-id">#3106</span>
+</div>
+<ol class="options">
+<li data-label="A.">兩向量平行 (Parallel)</li>
+<li data-label="B.">兩向量長度相等 (Equal Length)</li>
+<li class="correct" data-label="C.">兩向量垂直 (Orthogonal)</li>
+<li data-label="D.">兩向量方向相反 (Opposite Direction)</li>
+</ol>
+<div class="explanation">💡 內積公式為 $a \cdot b = ||a|| ||b|| \cos \theta$。當內積為 0 時，$\cos \theta = 0$，即 $\theta = 90^\circ$，表示兩向量垂直（正交）。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-linear-algebra</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">對於矩陣 $A$，若 $Av = \lambda v$ (其中 $v \neq 0$)，則 $\lambda$ 稱為 $A$ 的什麼？</div>
+<span class="q-id">#3107</span>
+</div>
+<ol class="options">
+<li data-label="A.">逆矩陣 (Inverse Matrix)，代表變換的逆運算</li>
+<li class="correct" data-label="B.">特徵值 (Eigenvalue)，代表變換的縮放倍率</li>
+<li data-label="C.">特徵向量 (Eigenvector)，代表變換的方向</li>
+<li data-label="D.">行列式 (Determinant)，代表變換的面積縮放率</li>
+</ol>
+<div class="explanation">💡 滿足 $Av = \lambda v$ 的純量 $\lambda$ 稱為矩陣 $A$ 的特徵值，向量 $v$ 稱為對應的特徵向量。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-linear-algebra</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">單位矩陣 (Identity Matrix) $I$ 的特性是？</div>
+<span class="q-id">#3112</span>
+</div>
+<ol class="options">
+<li data-label="A.">行列式為 0 (Singular Matrix)</li>
+<li class="correct" data-label="B.">對角線元素為 1，其餘為 0 (Diagonal Matrix with 1s)</li>
+<li data-label="C.">對角線元素為 0，其餘為 1</li>
+<li data-label="D.">所有元素皆為 1 (All Ones Matrix)</li>
+</ol>
+<div class="explanation">💡 單位矩陣是對角線上元素為 1，其餘元素為 0 的方陣。任何矩陣與其相乘都等於原矩陣。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-linear-algebra</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">矩陣乘法 $AB$ 成立的條件是？</div>
+<span class="q-id">#3113</span>
+</div>
+<ol class="options">
+<li data-label="A.">A 的列數 (Rows) 等於 B 的行數 (Columns)</li>
+<li class="correct" data-label="B.">A 的行數 (Columns) 等於 B 的列數 (Rows)</li>
+<li data-label="C.">A 和 B 必須是方陣 (Square Matrices)</li>
+<li data-label="D.">A 和 B 的維度完全相同 (Same Dimensions)</li>
+</ol>
+<div class="explanation">💡 若 A 是 $m \times n$ 矩陣，B 是 $p \times q$ 矩陣，則必須 $n = p$ (A 的行數等於 B 的列數) 才能相乘。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-linear-algebra</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">轉置矩陣 (Transpose Matrix) $A^T$ 是如何從 $A$ 得到的？</div>
+<span class="q-id">#3118</span>
+</div>
+<ol class="options">
+<li data-label="A.">將所有元素變號 (Negation)</li>
+<li data-label="B.">將矩陣旋轉 90 度 (Rotate 90 degrees)</li>
+<li data-label="C.">將所有元素取倒數 (Reciprocal)</li>
+<li class="correct" data-label="D.">將列與行互換 (Swap Rows and Columns)</li>
+</ol>
+<div class="explanation">💡 轉置矩陣是將原矩陣的第 $i$ 列變成第 $i$ 行，即 $A^T_{ij} = A_{ji}$。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-linear-algebra</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">向量的 L2 範數 (Norm) 通常用來表示向量的？</div>
+<span class="q-id">#3119</span>
+</div>
+<ol class="options">
+<li data-label="A.">向量所有元素的總和 (Sum of Elements)</li>
+<li data-label="B.">向量的維度 (Dimension)</li>
+<li data-label="C.">向量的方向 (Direction)</li>
+<li class="correct" data-label="D.">向量的長度 (Length) 或歐幾里得距離 (Euclidean Distance)</li>
+</ol>
+<div class="explanation">💡 L2 範數 $||x||_2 = \sqrt{\sum x_i^2}$ 代表向量在歐幾里得空間中的長度。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-linear-algebra</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">兩個非零向量正交 (Orthogonal) 時，它們的夾角是？</div>
+<span class="q-id">#3124</span>
+</div>
+<ol class="options">
+<li data-label="A.">0 度 (平行)</li>
+<li data-label="B.">180 度 (反向)</li>
+<li data-label="C.">45 度</li>
+<li class="correct" data-label="D.">90 度 (垂直)</li>
+</ol>
+<div class="explanation">💡 正交即垂直，夾角為 90 度 ($\pi/2$)。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-linear-algebra</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">矩陣的秩 (Rank) 代表什麼？</div>
+<span class="q-id">#3125</span>
+</div>
+<ol class="options">
+<li data-label="A.">矩陣的行數 (Number of Columns)</li>
+<li class="correct" data-label="B.">矩陣中線性獨立的列 (或行) 的最大數量 (Number of Linearly Independent Rows/Cols)</li>
+<li data-label="C.">矩陣中所有元素的總和 (Sum of Elements)</li>
+<li data-label="D.">矩陣的列數 (Number of Rows)</li>
+</ol>
+<div class="explanation">💡 秩反映了矩陣所包含的資訊量或維度，即線性獨立向量的個數。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-linear-algebra</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">逆矩陣 (Inverse Matrix) $A^{-1}$ 滿足什麼性質？</div>
+<span class="q-id">#3129</span>
+</div>
+<ol class="options">
+<li data-label="A.">$AA^{-1} = A$</li>
+<li data-label="B.">$A^{-1} = A^T$ (正交矩陣 Orthogonal Matrix)</li>
+<li data-label="C.">$AA^{-1} = 0$ (零矩陣 Zero Matrix)</li>
+<li class="correct" data-label="D.">$AA^{-1} = I$ (單位矩陣 Identity Matrix)</li>
+</ol>
+<div class="explanation">💡 矩陣與其逆矩陣相乘等於單位矩陣 $I$。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-linear-algebra</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">兩個向量線性相依 (Linearly Dependent) 表示？</div>
+<span class="q-id">#3132</span>
+</div>
+<ol class="options">
+<li data-label="A.">它們的內積為 0 (Dot Product is Zero)</li>
+<li data-label="B.">它們互相垂直 (Orthogonal)</li>
+<li data-label="C.">它們長度相等 (Equal Length)</li>
+<li class="correct" data-label="D.">其中一個向量可以表示為另一個向量的純量倍數 (Scalar Multiple)</li>
+</ol>
+<div class="explanation">💡 線性相依意味著向量之間存在冗餘，一個向量可以由其他向量線性組合而成（在二維中即平行）。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-linear-algebra</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">張量 (Tensor) 是什麼的推廣？</div>
+<span class="q-id">#3135</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">純量、向量和矩陣到更高維度的推廣 (Generalization to Higher Dimensions)</li>
+<li data-label="B.">僅限於二維矩陣 (Matrix Only)</li>
+<li data-label="C.">僅限於一維向量 (Vector Only)</li>
+<li data-label="D.">複數系統 (Complex Numbers)</li>
+</ol>
+<div class="explanation">💡 張量是多維陣列的通稱。0 階張量是純量，1 階是向量，2 階是矩陣，3 階以上稱為高階張量。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-linear-algebra</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">矩陣的跡 (Trace) 是指？</div>
+<span class="q-id">#3138</span>
+</div>
+<ol class="options">
+<li data-label="A.">矩陣最後一行元素的總和 (Sum of Last Column)</li>
+<li data-label="B.">矩陣第一列元素的總和 (Sum of First Row)</li>
+<li data-label="C.">矩陣所有元素的乘積 (Product of Elements)</li>
+<li class="correct" data-label="D.">矩陣主對角線元素的總和 (Sum of Diagonal Elements)</li>
+</ol>
+<div class="explanation">💡 Trace 是方陣主對角線上所有元素的和，具有基底變換不變性等重要性質。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-linear-algebra</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：在推薦系統中，若想計算兩個使用者對電影喜好的相似程度，常計算其特徵向量的？</div>
+<span class="q-id">#3149</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">內積 (Dot Product) 或 餘弦相似度 (Cosine Similarity)</li>
+<li data-label="B.">外積 (Outer Product)</li>
+<li data-label="C.">行列式值 (Determinant)</li>
+<li data-label="D.">特徵值 (Eigenvalue)</li>
+</ol>
+<div class="explanation">💡 內積與餘弦相似度能衡量兩個向量在方向上的一致性，即使用者的喜好是否相近。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-linear-algebra</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：若兩個向量的內積為 0，代表它們在幾何上的關係是？</div>
+<span class="q-id">#3152</span>
+</div>
+<ol class="options">
+<li data-label="A.">兩向量相等 (Equal)</li>
+<li class="correct" data-label="B.">兩向量正交或垂直 (Orthogonal / Perpendicular)</li>
+<li data-label="C.">兩向量平行 (Parallel)</li>
+<li data-label="D.">兩向量方向相反 (Opposite)</li>
+</ol>
+<div class="explanation">💡 內積為 0 意味著兩個向量之間沒有投影分量，即互相垂直。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-linear-algebra</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：矩陣 $A$ 的特徵值 $\lambda$ 和特徵向量 $v$ 滿足什麼關係？</div>
+<span class="q-id">#3155</span>
+</div>
+<ol class="options">
+<li data-label="A.">$Av = v$</li>
+<li data-label="B.">$Av = 0$</li>
+<li class="correct" data-label="C.">$Av = \lambda v$，即矩陣作用於特徵向量等於縮放該向量</li>
+<li data-label="D.">$A = \lambda v$</li>
+</ol>
+<div class="explanation">💡 矩陣作用在特徵向量上，僅改變其長度（縮放 $\lambda$ 倍），不改變方向。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-linear-algebra</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：矩陣乘法 $C = AB$ 中，$C_{ij}$ 的值是？</div>
+<span class="q-id">#3159</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">$A$ 的第 $i$ 列與 $B$ 的第 $j$ 行的內積 (Dot Product of Row i of A and Column j of B)</li>
+<li data-label="B.">$A_{ij} + B_{ij}$ (Element-wise Addition)</li>
+<li data-label="C.">$A$ 的第 $i$ 行與 $B$ 的第 $j$ 列的內積</li>
+<li data-label="D.">$A_{ij} * B_{ij}$ (Element-wise Multiplication)</li>
+</ol>
+<div class="explanation">💡 矩陣乘法的定義是左矩陣的列向量與右矩陣的行向量做內積。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-linear-algebra</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：PCA (主成分分析) 利用矩陣的什麼特性來找到數據變異最大的方向？</div>
+<span class="q-id">#3163</span>
+</div>
+<ol class="options">
+<li data-label="A.">轉置矩陣 (Transpose Matrix)</li>
+<li data-label="B.">逆矩陣 (Inverse Matrix)</li>
+<li class="correct" data-label="C.">特徵向量 (Eigenvectors)，代表數據分佈的主軸方向</li>
+<li data-label="D.">對角矩陣 (Diagonal Matrix)</li>
+</ol>
+<div class="explanation">💡 共變異數矩陣的特徵向量指出了數據分佈的主軸方向。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-linear-algebra</span>
+</div>
+</div>
+<h3 class="section-heading">微積分與最佳化</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">函數 $f(x)$ 在某一點的導數 (Derivative) 代表什麼幾何意義？</div>
+<span class="q-id">#3108</span>
+</div>
+<ol class="options">
+<li data-label="A.">曲線下的面積 (Area under Curve)</li>
+<li class="correct" data-label="B.">曲線在該點的切線斜率 (Slope of Tangent Line)，代表瞬時變化率</li>
+<li data-label="C.">曲線在該點的高度 (Function Value)</li>
+<li data-label="D.">曲線與 x 軸的交點 (Root)</li>
+</ol>
+<div class="explanation">💡 導數定義為函數在某一點的切線斜率，反映了函數在該點的瞬時變化率。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-calculus-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">梯度下降 (Gradient Descent) 演算法中，為了最小化損失函數，我們應該沿著梯度的哪個方向更新參數？</div>
+<span class="q-id">#3109</span>
+</div>
+<ol class="options">
+<li data-label="A.">隨機選擇一個方向 (Random Direction)</li>
+<li class="correct" data-label="B.">沿著梯度的反方向 (Opposite to Gradient)，即函數下降最快的方向</li>
+<li data-label="C.">與梯度垂直的方向 (Orthogonal Direction)</li>
+<li data-label="D.">沿著梯度的方向 (Gradient Direction)，即函數上升最快的方向</li>
+</ol>
+<div class="explanation">💡 梯度指向函數增長最快的方向，因此為了尋找最小值（最小化損失），我們應沿著梯度的反方向（下降最快的方向）移動。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-calculus-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在梯度下降中，若「學習率 (Learning Rate)」設定過大，可能會發生什麼後果？</div>
+<span class="q-id">#3110</span>
+</div>
+<ol class="options">
+<li data-label="A.">收斂速度過慢 (Slow Convergence)</li>
+<li class="correct" data-label="B.">在最小值附近震盪或發散 (Oscillation or Divergence)，無法收斂</li>
+<li data-label="C.">陷入局部最小值 (Local Minimum)</li>
+<li data-label="D.">計算精度顯著提高</li>
+</ol>
+<div class="explanation">💡 學習率控制每次參數更新的步長。若太大，步長過大可能會跨過最低點，導致在最小值附近震盪甚至發散。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-calculus-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">偏導數 (Partial Derivative) 是針對多變數函數的哪種運算？</div>
+<span class="q-id">#3114</span>
+</div>
+<ol class="options">
+<li data-label="A.">對函數進行積分 (Integration)</li>
+<li data-label="B.">計算函數在某點的極限 (Limit)</li>
+<li data-label="C.">對所有變數同時進行微分 (Total Derivative)</li>
+<li class="correct" data-label="D.">對其中一個變數進行微分，將其他變數視為常數 (Treat others as constants)</li>
+</ol>
+<div class="explanation">💡 偏導數 $\frac{\partial f}{\partial x}$ 表示在保持其他變數不變的情況下，函數隨 $x$ 的變化率。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-calculus-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">連鎖律 (Chain Rule) 用於計算什麼函數的導數？</div>
+<span class="q-id">#3115</span>
+</div>
+<ol class="options">
+<li data-label="A.">多項式函數 (Polynomial Function)</li>
+<li data-label="B.">指數函數 (Exponential Function)</li>
+<li data-label="C.">對數函數 (Logarithmic Function)</li>
+<li class="correct" data-label="D.">複合函數 (Composite Function)，即函數的函數</li>
+</ol>
+<div class="explanation">💡 連鎖律是用於計算複合函數導數的法則，即 $\frac{d}{dx}f(g(x)) = f'(g(x))g'(x)$。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-calculus-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">凸函數 (Convex Function) 的一個重要特性是？</div>
+<span class="q-id">#3122</span>
+</div>
+<ol class="options">
+<li data-label="A.">沒有最小值 (No Minimum)</li>
+<li class="correct" data-label="B.">任何局部最小值即為全域最小值 (Local Minimum is Global Minimum)</li>
+<li data-label="C.">有多個局部最小值 (Multiple Local Minima)</li>
+<li data-label="D.">導數恆為正 (Derivative is always positive)</li>
+</ol>
+<div class="explanation">💡 凸函數的幾何形狀像一個碗，保證了梯度下降法能找到全域最小值，不會陷入局部最佳解。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-calculus-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在反向傳播中，我們計算損失函數對權重的梯度是為了？</div>
+<span class="q-id">#3126</span>
+</div>
+<ol class="options">
+<li data-label="A.">評估模型的複雜度 (Evaluate Complexity)</li>
+<li data-label="B.">計算模型的準確率 (Calculate Accuracy)</li>
+<li data-label="C.">增加損失函數的值 (Increase Loss)</li>
+<li class="correct" data-label="D.">更新權重以減少損失 (Update Weights to Minimize Loss)</li>
+</ol>
+<div class="explanation">💡 計算梯度的目的是為了知道如何調整權重（沿梯度反方向），使損失函數值下降。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-calculus-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">隨機梯度下降 (SGD) 中的「隨機」指的是？</div>
+<span class="q-id">#3130</span>
+</div>
+<ol class="options">
+<li data-label="A.">隨機選擇損失函數 (Random Loss Function)</li>
+<li data-label="B.">隨機調整學習率 (Random Learning Rate)</li>
+<li data-label="C.">隨機初始化模型的權重 (Random Initialization)</li>
+<li class="correct" data-label="D.">每次更新只隨機選取一個（或一批）樣本來計算梯度 (Random Sample Selection)</li>
+</ol>
+<div class="explanation">💡 SGD 不使用全體數據計算梯度，而是隨機抽取樣本，這引入了隨機性但加快了計算。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-calculus-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">鞍點 (Saddle Point) 在最佳化中的特徵是？</div>
+<span class="q-id">#3133</span>
+</div>
+<ol class="options">
+<li data-label="A.">梯度不為 0 (Gradient is non-zero)</li>
+<li data-label="B.">是全域最大值 (Global Maximum)</li>
+<li data-label="C.">是全域最小值 (Global Minimum)</li>
+<li class="correct" data-label="D.">梯度為 0，但不是極大值也不是極小值 (Gradient is zero, but not extremum)</li>
+</ol>
+<div class="explanation">💡 鞍點處的梯度為 0，但在某些方向上是極小值，在另一些方向上是極大值（形狀像馬鞍），會阻礙梯度下降。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-calculus-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在深度學習中，Hessian 矩陣包含函數的？</div>
+<span class="q-id">#3136</span>
+</div>
+<ol class="options">
+<li data-label="A.">函數的積分值 (Integral Values)</li>
+<li data-label="B.">函數的一階導數 (First Derivatives)</li>
+<li class="correct" data-label="C.">函數的所有二階偏導數 (Second Partial Derivatives)</li>
+<li data-label="D.">函數的預測值 (Predicted Values)</li>
+</ol>
+<div class="explanation">💡 Hessian 矩陣由多變數函數的所有二階偏導數組成，描述了函數的曲率。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-calculus-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">泰勒展開式 (Taylor Series) 的主要用途是？</div>
+<span class="q-id">#3140</span>
+</div>
+<ol class="options">
+<li data-label="A.">進行數據分類 (Data Classification)</li>
+<li class="correct" data-label="B.">用多項式近似複雜函數 (Polynomial Approximation)</li>
+<li data-label="C.">計算矩陣的逆 (Matrix Inversion)</li>
+<li data-label="D.">解決線性方程組 (Solving Linear Systems)</li>
+</ol>
+<div class="explanation">💡 泰勒展開式利用函數在某點的導數值，將複雜函數表示為無窮級數（多項式），便於分析和近似計算。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-calculus-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：梯度下降法中，若「學習率 (Learning Rate)」設得太大，可能會發生什麼情況？</div>
+<span class="q-id">#3150</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">在最小值附近震盪甚至發散，無法收斂</li>
+<li data-label="B.">計算精度提高</li>
+<li data-label="C.">收斂速度變慢</li>
+<li data-label="D.">模型變複雜</li>
+</ol>
+<div class="explanation">💡 過大的步長會導致更新幅度過猛，直接跨過最低點，甚至越跑越遠。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-calculus-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：函數在某一點的「梯度 (Gradient)」指向？</div>
+<span class="q-id">#3153</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">函數值增長最快的方向 (Direction of Steepest Ascent)</li>
+<li data-label="B.">切線方向 (Tangent Direction)</li>
+<li data-label="C.">函數值下降最快的方向 (Direction of Steepest Descent)</li>
+<li data-label="D.">水平方向 (Horizontal Direction)</li>
+</ol>
+<div class="explanation">💡 梯度向量指向函數值增加速率最大的方向。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-calculus-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：導數 (Derivative) 在幾何上的意義是？</div>
+<span class="q-id">#3157</span>
+</div>
+<ol class="options">
+<li data-label="A.">函數的最大值 (Maximum Value)</li>
+<li data-label="B.">曲線下的面積 (Area Under Curve)</li>
+<li data-label="C.">函數的最小值 (Minimum Value)</li>
+<li class="correct" data-label="D.">曲線在該點的切線斜率 (Slope of Tangent)，代表瞬時變化率</li>
+</ol>
+<div class="explanation">💡 導數描述函數在某一點的瞬時變化率，幾何上表現為切線斜率。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-calculus-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：在訓練神經網路時，我們通常希望「最小化」哪個函數？</div>
+<span class="q-id">#3160</span>
+</div>
+<ol class="options">
+<li data-label="A.">活化函數 (Activation Function)</li>
+<li data-label="B.">輸入函數 (Input Function)</li>
+<li class="correct" data-label="C.">損失函數 (Loss Function)，衡量預測值與真實值的誤差</li>
+<li data-label="D.">輸出函數 (Output Function)</li>
+</ol>
+<div class="explanation">💡 損失函數衡量模型預測與真實值的誤差，訓練目標就是讓這個誤差越小越好。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-calculus-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：偏導數 (Partial Derivative) 是指？</div>
+<span class="q-id">#3164</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">多變數函數對其中一個變數求導，將其他變數視為常數 (Partial Derivative)</li>
+<li data-label="B.">對所有變數同時求導 (Total Derivative)</li>
+<li data-label="C.">無法計算 (Undefined)</li>
+<li data-label="D.">積分的相反運算 (Anti-derivative)</li>
+</ol>
+<div class="explanation">💡 在多變數函數中，偏導數分析單一變數變化對函數值的影響。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-calculus-optimization</span>
+</div>
+</div>
+<h3 class="section-heading">深度思考情境題</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：你正在開發一個用於檢測罕見疾病的 AI 模型。該疾病的發病率僅為 0.1%。如果你訓練的模型預測所有人都「沒病」，其準確率 (Accuracy) 將高達 99.9%。請問這個指標是否足以評估模型好壞？為什麼？</div>
+<span class="q-id">#3141</span>
+</div>
+<ol class="options">
+<li data-label="A.">足以，因為 99.9% 準確率非常高，代表模型性能極佳</li>
+<li data-label="B.">不足以，因為這忽略了偽陽性 (False Positives) 的影響</li>
+<li class="correct" data-label="C.">不足以，應參考召回率 (Recall) 或 F1-score 等指標，特別是在類別不平衡的情況下</li>
+<li data-label="D.">足以，只要模型運算速度夠快，準確率不是唯一標準</li>
+</ol>
+<div class="explanation">💡 在類別不平衡（Imbalanced Data）問題中，準確率 (Accuracy) 往往具有欺騙性。模型只需盲目猜測多數類別即可獲得高分，但對於我們真正關心的少數類別（罕見病）卻毫無偵測能力。因此需使用 Recall, Precision 或 F1-score 等指標。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-scenario</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：在訓練神經網路時，你發現損失函數 (Loss) 在訓練集上持續下降，但在驗證集 (Validation Set) 上卻開始上升。這代表發生了什麼現象？應採取什麼數學上的策略來解決？</div>
+<span class="q-id">#3142</span>
+</div>
+<ol class="options">
+<li data-label="A.">梯度消失 (Gradient Vanishing)；應更換活化函數</li>
+<li class="correct" data-label="B.">過擬合 (Overfitting)；應使用正則化 (Regularization) 或 Dropout</li>
+<li data-label="C.">學習率過大 (High Learning Rate)；應降低學習率</li>
+<li data-label="D.">欠擬合 (Underfitting)；應增加模型複雜度或訓練時間</li>
+</ol>
+<div class="explanation">💡 訓練集表現好但驗證集表現變差是典型的過擬合現象。數學上，這意味著模型擬合了訓練數據中的雜訊。解決方案包括在損失函數中加入正則化項（限制權重大小）或使用 Dropout 等技術。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-scenario</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：某電商平台希望透過 A/B 測試來評估新版網頁是否能提升購買率。經過一週測試，A 組購買率 5.0%，B 組 5.2%，p-value 為 0.03。若顯著水準設為 0.05，你應如何解讀並建議？</div>
+<span class="q-id">#3143</span>
+</div>
+<ol class="options">
+<li data-label="A.">p-value &lt; 0.05，差異不顯著，建議維持 A 版網頁</li>
+<li class="correct" data-label="B.">雖然統計顯著，但 0.2% 的提升可能不具商業實質意義 (Practical Significance)</li>
+<li data-label="C.">數據不足，無法判斷，建議延長測試時間</li>
+<li data-label="D.">p-value &lt; 0.05，差異顯著，建議立即採用 B 版網頁</li>
+</ol>
+<div class="explanation">💡 雖然 p &lt; 0.05 達到統計顯著性，但在商業決策中，還需考慮「實質顯著性」。0.2% 的微幅提升是否值得投入巨大的改版成本？這需要結合商業邏輯（如預期營收增加 vs 開發成本）進行綜合判斷，而非僅看 p-value。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-scenario</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：在使用梯度下降法訓練模型時，若損失函數的曲面呈現狹長的峽谷狀（在一個方向坡度陡，另一個方向坡度緩），標準 SGD 容易發生什麼問題？應如何改善？</div>
+<span class="q-id">#3144</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">在峽谷壁間來回震盪，收斂緩慢；應使用動量 (Momentum) 或自適應學習率優化器</li>
+<li data-label="B.">收斂過快；應減少學習率 (Decrease Learning Rate)</li>
+<li data-label="C.">陷入局部最小值；應使用隨機初始化 (Random Initialization)</li>
+<li data-label="D.">直接發散；應增加批次大小 (Increase Batch Size)</li>
+</ol>
+<div class="explanation">💡 在狹長峽谷狀的損失曲面上，SGD 容易在陡峭方向上大幅震盪，而在平緩方向上移動緩慢。動量法 (Momentum) 能累積過去的梯度方向，加速通過平緩區並抑制震盪；Adam 等自適應方法則能針對不同參數調整學習率，有效解決此問題。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-scenario</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：你正在處理一個高維度的數據集（如 1000 個特徵），打算使用 PCA 進行降維。PCA 透過特徵值分解找到主成分。若前兩個主成分的特徵值總和佔所有特徵值總和的 95%，這代表什麼幾何意義？</div>
+<span class="q-id">#3145</span>
+</div>
+<ol class="options">
+<li data-label="A.">剩下的 998 個維度完全沒有用，可以刪除</li>
+<li data-label="B.">數據在二維空間中是線性不可分的 (Linearly Inseparable)</li>
+<li class="correct" data-label="C.">數據 95% 的變異量 (Variance) 集中在由這兩個主成分構成的二維平面上</li>
+<li data-label="D.">數據有 95% 是雜訊 (Noise)</li>
+</ol>
+<div class="explanation">💡 PCA 的特徵值代表了對應主成分方向上的變異量。若前兩個主成分解釋了 95% 的總變異，意味著數據的主要結構（資訊）幾乎都保留在這 2D 平面上，這為高維數據的視覺化和簡化提供了強有力的數學依據。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-scenario</span>
+</div>
+</div>
+<h3 class="section-heading">機率與統計</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：在分析公司員工薪資時，發現有少數幾位高階主管的薪資極高，導致平均薪資被拉高。若想了解一般員工的薪資水準，應參考哪個統計量？</div>
+<span class="q-id">#3146</span>
+</div>
+<ol class="options">
+<li data-label="A.">標準差 (Standard Deviation)，衡量薪資的波動幅度</li>
+<li class="correct" data-label="B.">中位數 (Median)，將薪資排序後取中間值，不受極端高薪影響</li>
+<li data-label="C.">變異數 (Variance)，衡量薪資的離散程度</li>
+<li data-label="D.">平均數 (Mean)，容易受極端值影響</li>
+</ol>
+<div class="explanation">💡 中位數不受極端值 (Outliers) 影響，更能代表偏態分佈數據的中心趨勢。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-prob-stats</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：某工廠生產的燈泡壽命呈現常態分佈，平均壽命 1000 小時，標準差 50 小時。根據 68-95-99.7 法則，約有多少比例的燈泡壽命在 900 到 1100 小時之間？</div>
+<span class="q-id">#3147</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">約 95% 的燈泡</li>
+<li data-label="B.">約 99.7% 的燈泡</li>
+<li data-label="C.">約 68% 的燈泡</li>
+<li data-label="D.">約 50% 的燈泡</li>
+</ol>
+<div class="explanation">💡 900 到 1100 小時涵蓋了平均值正負 2 個標準差 (1000 ± 2*50) 的範圍，約佔 95%。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-prob-stats</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：在 A/B 測試中，若計算出的 p-value 為 0.03，且顯著水準 (alpha) 設為 0.05，決策應為？</div>
+<span class="q-id">#3148</span>
+</div>
+<ol class="options">
+<li data-label="A.">重新測試，因為 p-value 太接近 0.05</li>
+<li class="correct" data-label="B.">拒絕虛無假設 (H0)，認為結果具統計顯著性 (Statistically Significant)</li>
+<li data-label="C.">接受虛無假設 (H0)，認為無顯著差異</li>
+<li data-label="D.">無法判斷，需要更多數據</li>
+</ol>
+<div class="explanation">💡 當 p-value &lt; alpha 時，表示在 H0 為真的前提下觀察到此結果的機率極低，因此拒絕 H0。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-prob-stats</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：伯努利分佈 (Bernoulli Distribution) 適用於描述哪種情況？</div>
+<span class="q-id">#3151</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">只有兩種可能結果的單次試驗 (Single Trial with Binary Outcome)，如投硬幣</li>
+<li data-label="B.">連續變數 (Continuous Variables)</li>
+<li data-label="C.">計數資料 (Count Data)</li>
+<li data-label="D.">多類別分類 (Multi-class Classification)</li>
+</ol>
+<div class="explanation">💡 伯努利分佈描述單次二元試驗的機率分佈。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-prob-stats</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：泊松分佈 (Poisson Distribution) 最適合用來預測？</div>
+<span class="q-id">#3154</span>
+</div>
+<ol class="options">
+<li data-label="A.">股票價格 (Stock Prices)</li>
+<li data-label="B.">考試成績 (Exam Scores)</li>
+<li class="correct" data-label="C.">某段時間內客服中心接到的電話數量 (Number of Calls in a Time Interval)</li>
+<li data-label="D.">身高體重 (Height and Weight)</li>
+</ol>
+<div class="explanation">💡 泊松分佈適用於描述固定時間或空間內稀有事件發生的次數。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-prob-stats</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：變異數 (Variance) 主要用來衡量數據的？</div>
+<span class="q-id">#3156</span>
+</div>
+<ol class="options">
+<li data-label="A.">數據的中心位置 (Central Tendency)</li>
+<li data-label="B.">數據的最大值 (Maximum Value)</li>
+<li class="correct" data-label="C.">數據的離散程度或分散狀況 (Dispersion / Spread)</li>
+<li data-label="D.">數據的最小值 (Minimum Value)</li>
+</ol>
+<div class="explanation">💡 變異數計算數據點與平均值的距離平方平均，反映數據的波動大小。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-prob-stats</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：中央極限定理 (CLT) 指出，當樣本數夠大時，樣本平均數的抽樣分佈會趨近於？</div>
+<span class="q-id">#3158</span>
+</div>
+<ol class="options">
+<li data-label="A.">均勻分佈 (Uniform Distribution)</li>
+<li data-label="B.">指數分佈 (Exponential Distribution)</li>
+<li class="correct" data-label="C.">常態分佈 (Normal Distribution)</li>
+<li data-label="D.">泊松分佈 (Poisson Distribution)</li>
+</ol>
+<div class="explanation">💡 CLT 是統計推論的基礎，解釋了為何常態分佈在自然界中如此常見。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-prob-stats</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：二項式分佈 (Binomial Distribution) 的期望值是？</div>
+<span class="q-id">#3161</span>
+</div>
+<ol class="options">
+<li data-label="A.">$p$</li>
+<li class="correct" data-label="B.">$np$，即試驗次數乘以成功機率</li>
+<li data-label="C.">$n$</li>
+<li data-label="D.">$np(1-p)$，這是變異數</li>
+</ol>
+<div class="explanation">💡 二項式分佈是 $n$ 次獨立伯努利試驗的總和，故期望值為 $n 	imes p$。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-prob-stats</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：Type I Error (型一錯誤) 是指？</div>
+<span class="q-id">#3162</span>
+</div>
+<ol class="options">
+<li data-label="A.">數據收集過程中的錯誤 (Data Collection Error)</li>
+<li data-label="B.">計算過程中的數值錯誤 (Calculation Error)</li>
+<li class="correct" data-label="C.">H0 為真卻拒絕 H0 (False Positive / Type I Error)</li>
+<li data-label="D.">H0 為假卻接受 H0 (False Negative / Type II Error)</li>
+</ol>
+<div class="explanation">💡 顯著水準 $lpha$ 就是在控制發生 Type I Error 的機率上限。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-prob-stats</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：標準差 (Standard Deviation) 與變異數的關係是？</div>
+<span class="q-id">#3165</span>
+</div>
+<ol class="options">
+<li data-label="A.">標準差 = 變異數 (Standard Deviation = Variance)</li>
+<li class="correct" data-label="B.">標準差 = 變異數的平方根 (Standard Deviation = Square Root of Variance)</li>
+<li data-label="C.">兩者沒有數學關係 (No Relationship)</li>
+<li data-label="D.">標準差 = 變異數的平方 (Standard Deviation = Variance Squared)</li>
+</ol>
+<div class="explanation">💡 標準差將變異數開根號，使其單位與原始數據一致，較易解讀。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch1</span>
+<span class="tag">sec-prob-stats</span>
+</div>
+</div>
+<h2 class="chapter-heading" id="ch-2">資料處理基礎</h2>
+<h3 class="section-heading">資料預處理</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在處理缺失值時，若某個特徵的缺失比例極高（例如超過 80%），通常建議採取什麼策略？</div>
+<span class="q-id">#3201</span>
+</div>
+<ol class="options">
+<li data-label="A.">使用眾數填補 (Mode Imputation)</li>
+<li data-label="B.">使用平均值填補 (Mean Imputation)</li>
+<li class="correct" data-label="C.">直接刪除該特徵 (Drop Column)</li>
+<li data-label="D.">使用機器學習模型預測填補 (Model-based Imputation)</li>
+</ol>
+<div class="explanation">💡 當缺失比例過高時，該特徵所含的有效資訊極少，填補反而可能引入大量雜訊，因此直接刪除通常是較佳選擇。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-data-preprocessing</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Min-Max Scaling 將數據縮放到哪個區間？</div>
+<span class="q-id">#3202</span>
+</div>
+<ol class="options">
+<li data-label="A.">0 到 100 之間 (Range [0, 100])</li>
+<li class="correct" data-label="B.">0 到 1 之間 (Range [0, 1])</li>
+<li data-label="C.">負無窮大到正無窮大 (Range [-infinity, infinity])</li>
+<li data-label="D.">-1 到 1 之間 (Range [-1, 1])</li>
+</ol>
+<div class="explanation">💡 Min-Max Scaling 的公式為 $(x - min) / (max - min)$，結果必然落在 [0, 1] 之間。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-data-preprocessing</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Z-score 標準化 (Standardization) 後的數據，其平均值 (Mean) 和標準差 (Std) 分別為？</div>
+<span class="q-id">#3203</span>
+</div>
+<ol class="options">
+<li data-label="A.">平均值=0, 標準差=0 (Mean=0, Std=0)</li>
+<li data-label="B.">平均值=1, 標準差=0 (Mean=1, Std=0)</li>
+<li data-label="C.">平均值=1, 標準差=1 (Mean=1, Std=1)</li>
+<li class="correct" data-label="D.">平均值=0, 標準差=1 (Mean=0, Std=1)</li>
+</ol>
+<div class="explanation">💡 Z-score 標準化將數據轉換為標準常態分佈，其中心為 0，標準差為 1。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-data-preprocessing</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">為什麼在使用基於距離的演算法（如 KNN, K-Means）前，必須進行特徵正規化？</div>
+<span class="q-id">#3209</span>
+</div>
+<ol class="options">
+<li data-label="A.">為了增加特徵維度 (Increase Dimensionality)</li>
+<li class="correct" data-label="B.">避免數值範圍較大的特徵主導了距離計算 (Prevent Dominance by Large Scale Features)</li>
+<li data-label="C.">為了將類別轉為數值 (Convert Categories to Numbers)</li>
+<li data-label="D.">為了消除缺失值 (Eliminate Missing Values)</li>
+</ol>
+<div class="explanation">💡 若特徵 A 範圍是 0-1，特徵 B 範圍是 0-1000，計算歐幾里得距離時，特徵 B 的影響力會遠大於 A。正規化可確保所有特徵權重相等。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-data-preprocessing</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪種缺失值填補方法最能保持數據的原始分佈形狀，且不會減少變異數？</div>
+<span class="q-id">#3211</span>
+</div>
+<ol class="options">
+<li data-label="A.">眾數填補 (Mode Imputation)</li>
+<li data-label="B.">平均值填補 (Mean Imputation)</li>
+<li class="correct" data-label="C.">隨機抽樣填補 (Random Sample Imputation)，從現有值中隨機抽取</li>
+<li data-label="D.">刪除法 (Deletion)</li>
+</ol>
+<div class="explanation">💡 平均值填補會人為減少變異數（數據變集中）。隨機抽樣填補從現有數據中隨機抽取值來填補，較能維持原始分佈特性。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-data-preprocessing</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">異常值 (Outliers) 檢測中，常用的 IQR (Interquartile Range) 方法是如何定義異常值的？</div>
+<span class="q-id">#3215</span>
+</div>
+<ol class="options">
+<li data-label="A.">超過平均值 3 個標準差 (3-Sigma Rule)</li>
+<li class="correct" data-label="B.">小於 Q1 - 1.5*IQR 或 大於 Q3 + 1.5*IQR (Boxplot Rule)</li>
+<li data-label="C.">數值為負數 (Negative Values)</li>
+<li data-label="D.">數值最大的前 1% (Top 1 Percentile)</li>
+</ol>
+<div class="explanation">💡 箱型圖法則定義異常值為落在 [Q1 - 1.5*IQR, Q3 + 1.5*IQR] 範圍之外的點。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-data-preprocessing</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪種情況下，資料洩漏 (Data Leakage) 最容易發生？</div>
+<span class="q-id">#3217</span>
+</div>
+<ol class="options">
+<li data-label="A.">在訓練集上訓練模型 (Training on Training Set)</li>
+<li data-label="B.">刪除缺失值 (Dropping Missing Values)</li>
+<li class="correct" data-label="C.">在分割訓練集和測試集之前進行標準化 (Normalization before Split)</li>
+<li data-label="D.">使用交叉驗證 (Cross-Validation)</li>
+</ol>
+<div class="explanation">💡 若在分割前對全體數據進行標準化，測試集的資訊（如平均值、標準差）會洩漏到訓練集中，導致評估結果過於樂觀。正確做法是先分割，再用訓練集的參數去轉換測試集。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-data-preprocessing</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在處理偏態分佈 (Skewed Distribution) 的數據（如長尾分佈）時，常用的轉換方法是？</div>
+<span class="q-id">#3220</span>
+</div>
+<ol class="options">
+<li data-label="A.">絕對值轉換 (Absolute Value Transformation)</li>
+<li data-label="B.">倒數轉換 (Reciprocal Transformation)</li>
+<li class="correct" data-label="C.">對數轉換 (Log Transformation)，如 log(x+1)</li>
+<li data-label="D.">平方轉換 (Square Transformation)</li>
+</ol>
+<div class="explanation">💡 對數轉換可以壓縮大數值、拉伸小數值，有效地將右偏（長尾）分佈轉換為接近常態分佈，利於模型學習。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-data-preprocessing</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">SMOTE (Synthetic Minority Over-sampling Technique) 用於解決什麼問題？</div>
+<span class="q-id">#3222</span>
+</div>
+<ol class="options">
+<li data-label="A.">維度災難 (Curse of Dimensionality)</li>
+<li data-label="B.">缺失值 (Missing Values)</li>
+<li data-label="C.">過擬合 (Overfitting)</li>
+<li class="correct" data-label="D.">類別不平衡 (Class Imbalance)，特別是少數類別樣本過少</li>
+</ol>
+<div class="explanation">💡 SMOTE 透過在少數類別樣本之間插值生成合成樣本，以平衡數據集，避免模型偏向多數類別。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-data-preprocessing</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">數據清洗中的「去重 (Deduplication)」是指？</div>
+<span class="q-id">#3224</span>
+</div>
+<ol class="options">
+<li data-label="A.">刪除重複的標籤 (Duplicate Labels)</li>
+<li data-label="B.">刪除重複的特徵 (Duplicate Features)</li>
+<li data-label="C.">刪除重複的模型 (Duplicate Models)</li>
+<li class="correct" data-label="D.">刪除重複的記錄 (Duplicate Rows/Records)</li>
+</ol>
+<div class="explanation">💡 去重是指識別並移除數據集中完全相同或重複的樣本行，以免影響統計結果或模型訓練。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-data-preprocessing</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">離散化 (Discretization) 或分箱 (Binning) 的主要目的是？</div>
+<span class="q-id">#3226</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">將連續數值轉為區間或類別 (Continuous to Categorical/Bins)</li>
+<li data-label="B.">增加數據量 (Increase Data Volume)</li>
+<li data-label="C.">填補缺失值 (Impute Missing Values)</li>
+<li data-label="D.">將類別轉為數值 (Category to Number)</li>
+</ol>
+<div class="explanation">💡 分箱將連續變數（如年齡）切分為區間（如少年、青年、老年），可以平滑雜訊並讓線性模型能處理非線性關係。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-data-preprocessing</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">為什麼在進行 PCA 之前通常需要先對數據進行標準化 (Standardization)？</div>
+<span class="q-id">#3228</span>
+</div>
+<ol class="options">
+<li data-label="A.">為了處理缺失值 (Handle Missing Values)</li>
+<li class="correct" data-label="B.">PCA 對變異數敏感，若特徵尺度不同，大尺度的特徵會主導主成分 (Sensitive to Scale)</li>
+<li data-label="C.">為了加速計算 (Speed up Computation)</li>
+<li data-label="D.">PCA 只能處理正數 (Positive Numbers Only)</li>
+</ol>
+<div class="explanation">💡 PCA 尋找最大變異數方向。若未標準化，數值範圍大的特徵（變異數大）會被誤認為最重要，導致分析失真。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-data-preprocessing</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">哪種編碼方式會導致特徵維度急劇增加（維度災難）？</div>
+<span class="q-id">#3230</span>
+</div>
+<ol class="options">
+<li data-label="A.">Label Encoding (標籤編碼)</li>
+<li data-label="B.">Target Encoding (目標編碼)</li>
+<li data-label="C.">Binary Encoding (二進位編碼)</li>
+<li class="correct" data-label="D.">One-Hot Encoding (獨熱編碼)</li>
+</ol>
+<div class="explanation">💡 One-Hot Encoding 為每個類別創建一個新欄位。若類別數量龐大（如郵遞區號），特徵空間會變得非常稀疏且巨大。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-data-preprocessing</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">數據不一致 (Inconsistency) 的例子是？</div>
+<span class="q-id">#3232</span>
+</div>
+<ol class="options">
+<li data-label="A.">存在異常值 (Outliers)</li>
+<li data-label="B.">數據量太少 (Insufficient Data)</li>
+<li class="correct" data-label="C.">同一地址在不同記錄中寫法不同 (Inconsistent Representation)，如 &quot;St.&quot; vs &quot;Street&quot;</li>
+<li data-label="D.">某欄位有缺失值 (Missing Values)</li>
+</ol>
+<div class="explanation">💡 數據不一致指同一實體的表示方式不統一，這會阻礙正確的統計與分析，需透過標準化清洗解決。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-data-preprocessing</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">數據整合 (Data Integration) 的主要挑戰不包括？</div>
+<span class="q-id">#3234</span>
+</div>
+<ol class="options">
+<li data-label="A.">實體識別 (Entity Resolution)，識別不同來源的同一實體</li>
+<li class="correct" data-label="B.">模型選擇 (Model Selection)，這屬於建模階段</li>
+<li data-label="C.">數據值衝突 (Data Value Conflict)，解決不同來源的數值差異</li>
+<li data-label="D.">數據冗餘 (Data Redundancy)，處理重複資訊</li>
+</ol>
+<div class="explanation">💡 數據整合關注的是合併不同來源的數據，挑戰在於識別同一實體、處理重複和衝突。模型選擇屬於建模階段。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-data-preprocessing</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">數據縮減 (Data Reduction) 的策略不包括？</div>
+<span class="q-id">#3236</span>
+</div>
+<ol class="options">
+<li data-label="A.">數值歸約 (Numerosity Reduction)，如抽樣</li>
+<li data-label="B.">數據壓縮 (Data Compression)，如小波轉換</li>
+<li class="correct" data-label="C.">數據增強 (Data Augmentation)，這會增加數據量</li>
+<li data-label="D.">降維 (Dimensionality Reduction)，如 PCA</li>
+</ol>
+<div class="explanation">💡 數據縮減旨在減少數據量但保留資訊（如 PCA, 抽樣）。數據增強則是增加數據量。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-data-preprocessing</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">雜訊 (Noise) 與異常值 (Outlier) 的區別是？</div>
+<span class="q-id">#3238</span>
+</div>
+<ol class="options">
+<li data-label="A.">兩者完全相同 (Identical)</li>
+<li data-label="B.">雜訊是有用的資訊 (Noise is useful)</li>
+<li class="correct" data-label="C.">雜訊是隨機誤差，異常值是偏離整體的極端觀測值 (Noise vs Outlier)</li>
+<li data-label="D.">異常值總是錯誤的 (Outliers are always errors)</li>
+</ol>
+<div class="explanation">💡 雜訊通常是測量誤差或隨機波動；異常值則是真實存在但極端的數據，可能包含重要資訊（如詐欺）或僅是錯誤。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-data-preprocessing</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">數據轉換 (Data Transformation) 中的「平滑化 (Smoothing)」常用於？</div>
+<span class="q-id">#3240</span>
+</div>
+<ol class="options">
+<li data-label="A.">降維 (Dimensionality Reduction)</li>
+<li class="correct" data-label="B.">去除雜訊，揭示數據趨勢 (Remove Noise / Reveal Trends)</li>
+<li data-label="C.">增加異常值 (Add Outliers)</li>
+<li data-label="D.">增加雜訊 (Add Noise)</li>
+</ol>
+<div class="explanation">💡 平滑化（如移動平均）可以過濾掉短期的隨機波動（雜訊），讓長期趨勢更明顯。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-data-preprocessing</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：在處理問卷資料時，發現「年齡」欄位有部分空白。若該欄位數值分佈均勻且無極端值，適合用什麼填補？</div>
+<span class="q-id">#3246</span>
+</div>
+<ol class="options">
+<li data-label="A.">刪除該筆資料 (Delete Row)</li>
+<li data-label="B.">最大值 (Maximum Value)</li>
+<li data-label="C.">'0' (Zero Imputation)</li>
+<li class="correct" data-label="D.">平均值 (Mean)，適用於分佈均勻的數值</li>
+</ol>
+<div class="explanation">💡 對於數值型且分佈正常的資料，使用平均值填補是常見且合理的做法。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-data-preprocessing</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：若要使用 KNN 演算法，為什麼通常需要先對資料進行正規化 (Normalization)？</div>
+<span class="q-id">#3247</span>
+</div>
+<ol class="options">
+<li data-label="A.">為了加密 (Encryption)</li>
+<li data-label="B.">為了節省空間 (Save Space)</li>
+<li class="correct" data-label="C.">因為 KNN 基於距離計算，若特徵尺度差異過大 (如身高 vs 薪水)，大尺度的特徵會主導距離計算 (Dominance by Scale)</li>
+<li data-label="D.">KNN 不需要正規化 (Not Required)</li>
+</ol>
+<div class="explanation">💡 正規化能將所有特徵縮放到相同範圍，避免特定特徵權重過大。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-data-preprocessing</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：Min-Max Scaling 會將數據縮放到哪個範圍？</div>
+<span class="q-id">#3251</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">[0, 1] 之間 (Range [0, 1])</li>
+<li data-label="B.">[0, 100] 之間 (Range [0, 100])</li>
+<li data-label="C.">[-1, 1] 之間 (Range [-1, 1])</li>
+<li data-label="D.">平均為 0，標準差為 1 (Mean 0, Std 1)</li>
+</ol>
+<div class="explanation">💡 Min-Max Scaling 的公式為 (x - min) / (max - min)，結果必在 0 到 1 之間。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-data-preprocessing</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：標準化 (Standardization / Z-score) 後的數據具有什麼特性？</div>
+<span class="q-id">#3253</span>
+</div>
+<ol class="options">
+<li data-label="A.">整數 (Integers)</li>
+<li class="correct" data-label="B.">平均值為 0，標準差為 1 (Mean=0, Std=1)</li>
+<li data-label="C.">沒有負數 (No Negative Values)</li>
+<li data-label="D.">範圍在 0 到 1 (Range [0, 1])</li>
+</ol>
+<div class="explanation">💡 Z-score 轉換將數據中心移至 0，並以標準差為單位進行縮放。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-data-preprocessing</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：若資料中存在極端值 (Outliers)，使用哪種填補方式較穩健？</div>
+<span class="q-id">#3255</span>
+</div>
+<ol class="options">
+<li data-label="A.">平均值 (Mean)，容易受極端值影響</li>
+<li class="correct" data-label="B.">中位數 (Median)，不受極端值影響</li>
+<li data-label="C.">最大值 (Maximum Value)</li>
+<li data-label="D.">最小值 (Minimum Value)</li>
+</ol>
+<div class="explanation">💡 平均值易受極端值拉扯，中位數則相對穩定。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-data-preprocessing</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：資料清理 (Data Cleaning) 不包括以下哪項？</div>
+<span class="q-id">#3258</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">訓練模型 (Training Model)，這是建模階段</li>
+<li data-label="B.">處理不一致資料 (Handling Inconsistent Data)</li>
+<li data-label="C.">處理雜訊 (Handling Noise)</li>
+<li data-label="D.">處理缺失值 (Handling Missing Values)</li>
+</ol>
+<div class="explanation">💡 訓練模型是建模階段的工作，而非預處理。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-data-preprocessing</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：如果缺失值比例過高（如超過 50%），通常建議？</div>
+<span class="q-id">#3261</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">刪除該欄位 (Drop Feature)，因為資訊量太少</li>
+<li data-label="B.">用 0 填補 (Zero Imputation)</li>
+<li data-label="C.">保留 (Keep as is)</li>
+<li data-label="D.">用平均值填補 (Mean Imputation)</li>
+</ol>
+<div class="explanation">💡 過多缺失值的特徵通常缺乏資訊量，強行填補可能引入雜訊。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-data-preprocessing</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：對於基於梯度下降的演算法（如神經網路），正規化的好處是？</div>
+<span class="q-id">#3263</span>
+</div>
+<ol class="options">
+<li data-label="A.">減少資料量 (Reduce Data Size)</li>
+<li data-label="B.">防止過擬合 (Prevent Overfitting)</li>
+<li data-label="C.">增加模型複雜度 (Increase Complexity)</li>
+<li class="correct" data-label="D.">加速收斂 (Accelerate Convergence)，讓損失函數的等高線更接近圓形</li>
+</ol>
+<div class="explanation">💡 正規化能讓不同方向的梯度更新幅度一致，避免在狹長的損失地形中震盪。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-data-preprocessing</span>
+</div>
+</div>
+<h3 class="section-heading">特徵工程</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">獨熱編碼 (One-Hot Encoding) 主要用於處理哪種類型的數據？</div>
+<span class="q-id">#3204</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">無序的類別型特徵 (Nominal Categorical Features)，如顏色或城市</li>
+<li data-label="B.">時間序列數據 (Time Series Data)</li>
+<li data-label="C.">連續型數值 (Continuous Numerical Data)</li>
+<li data-label="D.">圖像像素數據 (Image Pixel Data)</li>
+</ol>
+<div class="explanation">💡 One-Hot Encoding 將無序類別（如顏色：紅、藍、綠）轉換為二進位向量，避免模型誤以為類別之間存在順序或大小關係。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">主成分分析 (PCA) 是一種什麼類型的機器學習技術？</div>
+<span class="q-id">#3205</span>
+</div>
+<ol class="options">
+<li data-label="A.">監督式學習 (Supervised Learning)，需要標籤</li>
+<li class="correct" data-label="B.">非監督式降維 (Unsupervised Dimensionality Reduction)，不需要標籤</li>
+<li data-label="C.">強化學習 (Reinforcement Learning)，透過獎勵學習</li>
+<li data-label="D.">深度學習 (Deep Learning)，使用神經網路</li>
+</ol>
+<div class="explanation">💡 PCA 不需要標籤 (Labels)，它僅根據特徵間的共變異數結構來尋找主成分，屬於非監督式學習。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">PCA 的第一個主成分 (PC1) 具有什麼特性？</div>
+<span class="q-id">#3206</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">解釋了數據中最大的變異數 (Most Variance)，即資訊量最大的方向</li>
+<li data-label="B.">與原始特徵完全無關 (Unrelated to Original Features)</li>
+<li data-label="C.">總是垂直於 PC2 (Orthogonal to PC2)，這是 PC2 的特性而非 PC1 的定義</li>
+<li data-label="D.">解釋了數據中最小的變異數 (Least Variance)</li>
+</ol>
+<div class="explanation">💡 PCA 尋找投影方向時，PC1 是數據變異量（資訊量）最大的方向。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">t-SNE 演算法的主要優勢在於？</div>
+<span class="q-id">#3207</span>
+</div>
+<ol class="options">
+<li data-label="A.">計算速度極快 (Fast Computation)</li>
+<li class="correct" data-label="B.">能保留數據的局部結構 (Local Structure)，適合視覺化群聚</li>
+<li data-label="C.">可以處理缺失值 (Handle Missing Values)</li>
+<li data-label="D.">能保留數據的全局結構 (Global Structure)，如 PCA</li>
+</ol>
+<div class="explanation">💡 t-SNE 擅長將高維空間中距離相近的點在低維空間中保持靠近，因此非常適合將高維數據降維到 2D/3D 進行視覺化以觀察群聚。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪種特徵選擇方法是「使用模型來評估特徵子集的效果」，例如遞歸特徵消除 (RFE)？</div>
+<span class="q-id">#3208</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">包裹法 (Wrapper Method)，如 RFE</li>
+<li data-label="B.">嵌入法 (Embedded Method)，如 Lasso</li>
+<li data-label="C.">隨機法 (Random Method)</li>
+<li data-label="D.">過濾法 (Filter Method)，使用統計指標</li>
+</ol>
+<div class="explanation">💡 Wrapper 方法將特徵選擇視為一個搜尋問題，反覆訓練模型來評估不同特徵組合的效能，RFE 即為典型代表。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Lasso 回歸 (L1 Regularization) 具有什麼特殊功能，常被用作嵌入法 (Embedded) 的特徵選擇？</div>
+<span class="q-id">#3210</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">將不重要的特徵係數壓縮為 0 (Shrink Coefficients to Zero)，實現稀疏性</li>
+<li data-label="B.">增加模型複雜度 (Increase Complexity)</li>
+<li data-label="C.">消除共線性 (Eliminate Multicollinearity)</li>
+<li data-label="D.">將所有係數變大 (Increase Coefficients)</li>
+</ol>
+<div class="explanation">💡 L1 正則化傾向於產生稀疏解，即將不重要的特徵權重降為 0，從而實現自動特徵選擇。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">PCA 降維過程中，我們通常通過觀察什麼來決定保留多少個主成分？</div>
+<span class="q-id">#3212</span>
+</div>
+<ol class="options">
+<li data-label="A.">數據的維度 (Dimensions of Data)</li>
+<li data-label="B.">特徵向量的長度 (Length of Eigenvectors)</li>
+<li data-label="C.">樣本數量 (Number of Samples)</li>
+<li class="correct" data-label="D.">解釋變異數比率 (Explained Variance Ratio) 的累積和，例如達到 95%</li>
+</ol>
+<div class="explanation">💡 我們通常希望保留的主成分能解釋大部分的原始數據變異（如 95%），因此會觀察累積解釋變異數比率曲線。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">t-SNE 中的 &quot;t&quot; 代表什麼？</div>
+<span class="q-id">#3213</span>
+</div>
+<ol class="options">
+<li data-label="A.">Tensor (張量)</li>
+<li data-label="B.">溫度 (Temperature)</li>
+<li class="correct" data-label="C.">Student's t-distribution (學生 t 分佈)，用於計算相似度</li>
+<li data-label="D.">時間 (Time)</li>
+</ol>
+<div class="explanation">💡 t-SNE 在低維空間使用 t 分佈（長尾分佈）來計算點之間的相似度，這有助於緩解「擁擠問題」，讓群聚分得更開。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">對於有序類別特徵 (Ordinal Features)，如「尺寸：S, M, L, XL」，最適合的編碼方式是？</div>
+<span class="q-id">#3214</span>
+</div>
+<ol class="options">
+<li data-label="A.">One-Hot Encoding (獨熱編碼)</li>
+<li data-label="B.">雜湊編碼 (Hash Encoding)</li>
+<li class="correct" data-label="C.">Label Encoding (整數編碼)，保留順序關係</li>
+<li data-label="D.">頻率編碼 (Frequency Encoding)</li>
+</ol>
+<div class="explanation">💡 因為類別間存在順序關係 (S &lt; M &lt; L &lt; XL)，將其映射為整數 (0, 1, 2, 3) 可以保留這種順序資訊供模型學習。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">共線性 (Multicollinearity) 指的是？</div>
+<span class="q-id">#3216</span>
+</div>
+<ol class="options">
+<li data-label="A.">模型過擬合 (Model Overfitting)</li>
+<li data-label="B.">數據缺失太多 (Excessive Missing Data)</li>
+<li data-label="C.">特徵與目標變數高度相關 (High Correlation with Target)</li>
+<li class="correct" data-label="D.">特徵之間存在高度線性相關 (High Linear Correlation between Features)</li>
+</ol>
+<div class="explanation">💡 共線性是指自變數（特徵）之間存在高度相關性，這會導致線性回歸模型的係數估計不穩定，難以解釋特徵重要性。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">過濾法 (Filter Method) 進行特徵選擇的主要缺點是？</div>
+<span class="q-id">#3218</span>
+</div>
+<ol class="options">
+<li data-label="A.">需要大量標籤 (Requires Large Labels)</li>
+<li data-label="B.">計算量太大 (Computationally Expensive)</li>
+<li class="correct" data-label="C.">忽略了特徵之間的交互作用 (Ignores Feature Interactions)</li>
+<li data-label="D.">容易過擬合 (Prone to Overfitting)</li>
+</ol>
+<div class="explanation">💡 過濾法通常單獨評估每個特徵與目標的相關性，可能選出冗餘特徵，且無法發現只有組合起來才有效的特徵。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">PCA 數學推導中，我們計算共變異數矩陣的特徵向量，這些特徵向量代表了？</div>
+<span class="q-id">#3219</span>
+</div>
+<ol class="options">
+<li data-label="A.">數據的類別中心 (Class Centroids)</li>
+<li data-label="B.">數據的平均值 (Mean of Data)</li>
+<li data-label="C.">雜訊的大小 (Magnitude of Noise)</li>
+<li class="correct" data-label="D.">數據的主成分方向 (Principal Component Directions)</li>
+</ol>
+<div class="explanation">💡 共變異數矩陣的特徵向量指向數據變異量最大的方向，即主成分方向。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">目標編碼 (Target Encoding) 是用什麼來替換類別特徵？</div>
+<span class="q-id">#3221</span>
+</div>
+<ol class="options">
+<li data-label="A.">類別的排名 (Category Rank)</li>
+<li class="correct" data-label="B.">該類別對應的目標變數 (Target) 的平均值 (Mean Target Value)</li>
+<li data-label="C.">類別的頻率 (Category Frequency)</li>
+<li data-label="D.">隨機數 (Random Number)</li>
+</ol>
+<div class="explanation">💡 Target Encoding 直接利用標籤資訊，將類別替換為該類別樣本的目標均值。這對高基數特徵很有效，但需小心資料洩漏。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">哪種降維方法是線性的？</div>
+<span class="q-id">#3223</span>
+</div>
+<ol class="options">
+<li data-label="A.">Autoencoder (自編碼器)</li>
+<li data-label="B.">t-SNE (t-Distributed Stochastic Neighbor Embedding)</li>
+<li data-label="C.">Isomap (等距映射)</li>
+<li class="correct" data-label="D.">PCA (Principal Component Analysis)</li>
+</ol>
+<div class="explanation">💡 PCA 透過線性投影尋找主成分，是線性降維。t-SNE 和 Autoencoder 則是非線性的。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">遞歸特徵消除 (RFE) 的工作原理是？</div>
+<span class="q-id">#3225</span>
+</div>
+<ol class="options">
+<li data-label="A.">使用 PCA 轉換 (PCA Transformation)</li>
+<li data-label="B.">隨機選擇特徵 (Random Selection)</li>
+<li class="correct" data-label="C.">訓練模型，剔除權重最小的特徵 (Recursive Elimination based on Weights)</li>
+<li data-label="D.">計算所有特徵的相關係數 (Correlation Coefficient)</li>
+</ol>
+<div class="explanation">💡 RFE 是一種貪婪算法，反覆訓練模型並移除最不重要的特徵，直到達到預定的特徵數量。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 PCA 中，若特徵值 (Eigenvalue) 為 0，代表什麼？</div>
+<span class="q-id">#3227</span>
+</div>
+<ol class="options">
+<li data-label="A.">該方向最重要 (Most Important Direction)</li>
+<li data-label="B.">計算錯誤 (Calculation Error)</li>
+<li data-label="C.">數據是常態分佈 (Normal Distribution)</li>
+<li class="correct" data-label="D.">該方向上的變異數為 0，無資訊量 (Zero Variance / No Information)</li>
+</ol>
+<div class="explanation">💡 特徵值代表對應特徵向量方向上的變異數。若為 0，表示數據在該方向上沒有變化（退化），可以捨棄。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列何者不是特徵工程的目的？</div>
+<span class="q-id">#3229</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">增加數據的雜訊 (Increase Noise)</li>
+<li data-label="B.">提高模型預測準確度 (Improve Accuracy)</li>
+<li data-label="C.">減少過擬合 (Reduce Overfitting)</li>
+<li data-label="D.">提高計算效率 (Improve Computational Efficiency)</li>
+</ol>
+<div class="explanation">💡 特徵工程旨在提取有用資訊、去除雜訊，而非增加雜訊。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">交互作用特徵 (Interaction Features) 是指？</div>
+<span class="q-id">#3231</span>
+</div>
+<ol class="options">
+<li data-label="A.">隨機生成的特徵 (Randomly Generated Features)</li>
+<li class="correct" data-label="B.">兩個或多個特徵的組合（如乘積）(Combination/Product of Features)</li>
+<li data-label="C.">刪除相關特徵 (Removing Correlated Features)</li>
+<li data-label="D.">兩個特徵相加 (Addition of Features)</li>
+</ol>
+<div class="explanation">💡 例如「房價」可能與「寬度」和「深度」單獨的關係不大，但與「面積」（寬度 x 深度）高度相關。這就是交互作用。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">嵌入法 (Embedded Method) 與包裹法 (Wrapper Method) 的主要區別是？</div>
+<span class="q-id">#3233</span>
+</div>
+<ol class="options">
+<li data-label="A.">嵌入法隨機選擇特徵 (Embedded selects randomly)</li>
+<li data-label="B.">嵌入法不使用模型 (Embedded uses no model)</li>
+<li class="correct" data-label="C.">嵌入法在模型訓練過程中同時進行特徵選擇 (Feature selection during training)</li>
+<li data-label="D.">包裹法只適用於回歸 (Wrapper only for regression)</li>
+</ol>
+<div class="explanation">💡 包裹法需反覆訓練模型多次；嵌入法（如 Lasso, 決策樹）則是在單次訓練過程中，利用算法本身的機制（如權重懲罰、資訊增益）完成特徵選擇。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">多項式特徵 (Polynomial Features) 擴展的主要用途是？</div>
+<span class="q-id">#3235</span>
+</div>
+<ol class="options">
+<li data-label="A.">減少特徵數量 (Reduce Feature Count)</li>
+<li data-label="B.">消除雜訊 (Eliminate Noise)</li>
+<li data-label="C.">處理缺失值 (Handle Missing Values)</li>
+<li class="correct" data-label="D.">讓線性模型能夠擬合非線性關係 (Enable Linear Models to fit Non-linear Relationships)</li>
+</ol>
+<div class="explanation">💡 通過增加特徵的高次項（如 $x^2, x^3$），可以將原本的非線性問題映射到高維空間，使其變為線性可分。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在時間序列特徵工程中，「滯後特徵 (Lag Features)」是指？</div>
+<span class="q-id">#3237</span>
+</div>
+<ol class="options">
+<li data-label="A.">時間戳記 (Timestamp)</li>
+<li class="correct" data-label="B.">過去時間點的觀測值 (Past Observations)，如 $t-1, t-2$</li>
+<li data-label="C.">未來的數據 (Future Data)</li>
+<li data-label="D.">季節性指標 (Seasonality Index)</li>
+</ol>
+<div class="explanation">💡 滯後特徵將過去的值作為預測當前的特徵，是時間序列預測中最基礎且有效的特徵。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">領域知識 (Domain Knowledge) 在特徵工程中的作用是？</div>
+<span class="q-id">#3239</span>
+</div>
+<ol class="options">
+<li data-label="A.">僅用於資料清洗 (Only for Cleaning)</li>
+<li data-label="B.">僅用於結果解釋 (Only for Interpretation)</li>
+<li data-label="C.">不重要，讓 AI 自己學就好 (Not Important)</li>
+<li class="correct" data-label="D.">至關重要，能指導我們構建有意義的特徵 (Crucial for Feature Construction)</li>
+</ol>
+<div class="explanation">💡 機器學習不是魔法。領域知識能幫助我們理解數據背後的機制，創造出模型容易學習的特徵（如金融中的負債比率）。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：PCA (主成分分析) 的主要功能是？</div>
+<span class="q-id">#3248</span>
+</div>
+<ol class="options">
+<li data-label="A.">分類 (Classification)</li>
+<li data-label="B.">填補缺失值 (Impute Missing Values)</li>
+<li data-label="C.">增加特徵數量 (Increase Features)</li>
+<li class="correct" data-label="D.">線性降維，保留數據中變異數最大的方向 (Linear Dimensionality Reduction)</li>
+</ol>
+<div class="explanation">💡 PCA 透過投影將高維數據壓縮到低維空間，同時盡可能保留原始資訊（變異數）。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：對於「顏色」這種沒有順序關係的類別特徵 (紅、藍、綠)，應使用哪種編碼？</div>
+<span class="q-id">#3249</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">One-Hot Encoding (獨熱編碼)，將每個類別視為獨立維度</li>
+<li data-label="B.">Label Encoding (1, 2, 3)，會引入錯誤的順序關係</li>
+<li data-label="C.">轉為文字 (Convert to Text)</li>
+<li data-label="D.">不處理 (No Processing)</li>
+</ol>
+<div class="explanation">💡 Label Encoding 會隱含順序關係（如 3 &gt; 1），誤導模型；One-Hot Encoding 則將各類別視為獨立維度。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：t-SNE 相比於 PCA，更適合用於？</div>
+<span class="q-id">#3250</span>
+</div>
+<ol class="options">
+<li data-label="A.">數據壓縮</li>
+<li class="correct" data-label="B.">高維數據的視覺化 (保留局部鄰域結構)</li>
+<li data-label="C.">線性迴歸</li>
+<li data-label="D.">特徵選擇</li>
+</ol>
+<div class="explanation">💡 t-SNE 擅長將高維空間中的群聚結構映射到 2D 或 3D 進行觀察。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：特徵選擇中的「過濾法 (Filter Method)」是依據什麼來篩選特徵？</div>
+<span class="q-id">#3252</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">統計指標 (Statistical Metrics)，如相關係數、卡方檢定</li>
+<li data-label="B.">模型準確率 (Model Accuracy)</li>
+<li data-label="C.">隨機選擇 (Random Selection)</li>
+<li data-label="D.">人工挑選 (Manual Selection)</li>
+</ol>
+<div class="explanation">💡 過濾法不依賴特定模型，而是計算特徵與目標變數間的統計關聯性。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：在 PCA 中，第一個主成分 (PC1) 代表？</div>
+<span class="q-id">#3254</span>
+</div>
+<ol class="options">
+<li data-label="A.">數據變異數最小的方向 (Direction of Minimum Variance)</li>
+<li data-label="B.">隨機方向 (Random Direction)</li>
+<li class="correct" data-label="C.">數據變異數 (Variance) 最大的方向 (Direction of Maximum Variance)</li>
+<li data-label="D.">垂直方向 (Vertical Direction)</li>
+</ol>
+<div class="explanation">💡 PC1 捕捉了數據分佈最廣、資訊量最大的軸向。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：特徵選擇中的「包裹法 (Wrapper Method)」通常比過濾法？</div>
+<span class="q-id">#3256</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">慢且計算成本高，但通常能找到對特定模型更好的特徵組合 (Slower but Better Performance)</li>
+<li data-label="B.">不準確 (Inaccurate)</li>
+<li data-label="C.">快 (Faster)</li>
+<li data-label="D.">簡單 (Simple)</li>
+</ol>
+<div class="explanation">💡 包裹法（如 RFE）需反覆訓練模型來評估特徵子集，因此計算量大但效果較佳。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：t-SNE 使用什麼指標來衡量兩個機率分佈的差異？</div>
+<span class="q-id">#3257</span>
+</div>
+<ol class="options">
+<li data-label="A.">內積 (Dot Product)</li>
+<li class="correct" data-label="B.">KL 散度 (Kullback-Leibler Divergence)，衡量兩個機率分佈的相似度</li>
+<li data-label="C.">歐幾里得距離 (Euclidean Distance)</li>
+<li data-label="D.">相關係數 (Correlation Coefficient)</li>
+</ol>
+<div class="explanation">💡 t-SNE 透過最小化高維與低維分佈間的 KL 散度來優化投影結果。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：PCA 是一種什麼類型的機器學習方法？</div>
+<span class="q-id">#3259</span>
+</div>
+<ol class="options">
+<li data-label="A.">監督式學習 (Supervised Learning)</li>
+<li class="correct" data-label="B.">非監督式學習 (Unsupervised Learning)，不需要標籤</li>
+<li data-label="C.">強化學習 (Reinforcement Learning)</li>
+<li data-label="D.">半監督式學習 (Semi-supervised Learning)</li>
+</ol>
+<div class="explanation">💡 PCA 僅依賴輸入特徵 X 的結構，不需要標籤 y。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：One-Hot Encoding 的一個缺點是？</div>
+<span class="q-id">#3260</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">當類別數量很多時，會導致特徵維度暴增 (Curse of Dimensionality)</li>
+<li data-label="B.">準確率低 (Low Accuracy)</li>
+<li data-label="C.">無法處理文字 (Cannot Handle Text)</li>
+<li data-label="D.">計算簡單 (Simple Calculation)</li>
+</ol>
+<div class="explanation">💡 若類別有 1000 種，One-Hot 會產生 1000 個新欄位，造成資料稀疏與運算負擔。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：PCA 中的「正交性」意味著？</div>
+<span class="q-id">#3262</span>
+</div>
+<ol class="options">
+<li data-label="A.">主成分平行 (Parallel)</li>
+<li data-label="B.">主成分相等 (Equal)</li>
+<li data-label="C.">主成分為 0 (Zero)</li>
+<li class="correct" data-label="D.">主成分之間互不相關 (Uncorrelated / Linearly Independent)</li>
+</ol>
+<div class="explanation">💡 PCA 確保每個主成分都捕捉了獨特、不重複的變異資訊。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：嵌入法 (Embedded Method) 的特徵選擇是如何進行的？</div>
+<span class="q-id">#3264</span>
+</div>
+<ol class="options">
+<li data-label="A.">隨機選擇 (Random Selection)</li>
+<li class="correct" data-label="B.">特徵選擇與模型訓練同時進行 (Feature Selection during Training)，如 Lasso 回歸</li>
+<li data-label="C.">人工選擇 (Manual Selection)</li>
+<li data-label="D.">先篩選再訓練 (Filter then Train)</li>
+</ol>
+<div class="explanation">💡 Lasso 等演算法在訓練過程中會自動將不重要特徵的係數壓縮為 0。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：t-SNE 的計算成本通常比 PCA？</div>
+<span class="q-id">#3265</span>
+</div>
+<ol class="options">
+<li data-label="A.">一樣 (Same)</li>
+<li class="correct" data-label="B.">高 (Higher)，因為涉及複雜的機率計算與迭代優化</li>
+<li data-label="C.">低 (Lower)</li>
+<li data-label="D.">無法比較 (Incomparable)</li>
+</ol>
+<div class="explanation">💡 t-SNE 的複雜度較高，不適合處理極大規模數據。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-feature-engineering</span>
+</div>
+</div>
+<h3 class="section-heading">深度思考情境題</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：你正在為一個即時詐欺偵測系統建立模型。數據集包含數百萬筆交易，但其中只有 0.1% 是詐欺（嚴重類別不平衡）。在進行特徵工程與預處理時，你應避免下列哪種操作？</div>
+<span class="q-id">#3241</span>
+</div>
+<ol class="options">
+<li data-label="A.">構建反映用戶過去行為模式的聚合特徵 (Aggregated Features)</li>
+<li data-label="B.">使用 SMOTE 進行過採樣 (Oversampling)，增加詐欺樣本</li>
+<li class="correct" data-label="C.">直接使用準確率 (Accuracy) 作為特徵選擇的評估指標，因為這會產生誤導</li>
+<li data-label="D.">使用欠採樣 (Undersampling) 減少正常交易數量，平衡數據集</li>
+</ol>
+<div class="explanation">💡 在極度不平衡的數據中，準確率會產生誤導（盲猜「正常」就有 99.9% 準確率）。若基於準確率來選擇特徵，可能會選出對偵測詐欺毫無幫助的特徵，應改用 F1-score 或 AUC。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-scenario</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：你正在處理一個包含「國家」特徵的全球銷售數據集，共有 180 個不同的國家。若直接使用 One-Hot Encoding，會產生 180 個新欄位，導致維度災難。下列哪種替代方案最不合適？</div>
+<span class="q-id">#3242</span>
+</div>
+<ol class="options">
+<li data-label="A.">Target Encoding：用各國的平均銷售額代替國家名稱</li>
+<li class="correct" data-label="B.">Label Encoding：按字母順序將國家編碼為 1~180 的整數，這會引入無意義的順序關係</li>
+<li data-label="C.">Frequency Encoding：用各國在數據中出現的頻率代替</li>
+<li data-label="D.">將低頻國家合併為 &quot;Other&quot; 類別，再進行 One-Hot Encoding</li>
+</ol>
+<div class="explanation">💡 Label Encoding 會賦予國家一個無意義的順序（如阿富汗=1, 辛巴威=180），模型可能會錯誤地學習到「國家編號越大，銷售額越高」這種不存在的線性關係。Target Encoding 或合併低頻類別是更好的選擇。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-scenario</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：在房價預測任務中，你發現訓練集和測試集的特徵分佈有顯著差異（Covariate Shift），例如訓練集多為市中心小豪宅，測試集多為郊區大別墅。這時進行標準化 (Standardization) 應注意什麼？</div>
+<span class="q-id">#3243</span>
+</div>
+<ol class="options">
+<li data-label="A.">應將訓練集和測試集和併後一起計算均值和標準差 (Data Leakage)</li>
+<li data-label="B.">應分別對訓練集和測試集獨立計算均值和標準差進行轉換 (Inconsistent Scaling)</li>
+<li class="correct" data-label="C.">應僅使用訓練集的均值和標準差來轉換測試集 (Correct Approach)</li>
+<li data-label="D.">不應進行標準化 (No Standardization)</li>
+</ol>
+<div class="explanation">💡 嚴格來說，測試集代表未知的未來數據，我們不能預先知道其分佈。正確流程永遠是 `scaler.fit(train)` 然後 `scaler.transform(train)` 和 `scaler.transform(test)`。若分佈差異過大，應考慮重新收集數據或使用領域適應 (Domain Adaptation) 技術，而非錯誤地操作數據。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-scenario</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：你使用 PCA 將數據降維到 2D 進行視覺化，發現不同類別的點混雜在一起，無法區分。這是否代表這些數據在本質上無法分類？</div>
+<span class="q-id">#3244</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">否，PCA 是一種線性降維，可能無法捕捉複雜的非線性流形結構 (Non-linear Manifold)</li>
+<li data-label="B.">否，說明應該保留更多主成分 (More Components)</li>
+<li data-label="C.">是，PCA 證明了它們線性不可分 (Linearly Inseparable)</li>
+<li data-label="D.">是，說明數據品質太差 (Poor Data Quality)</li>
+</ol>
+<div class="explanation">💡 PCA 只能提取線性特徵。許多高維數據（如圖像、文字）的結構是非線性的（流形），在 PCA 的線性投影下會重疊。t-SNE 或 UMAP 等非線性方法更有機會將它們分開。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-scenario</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：某特徵存在大量缺失值，你決定使用 KNN (K-Nearest Neighbors) 進行填補。在執行 KNN 填補之前，必須先執行哪項預處理步驟？為什麼？</div>
+<span class="q-id">#3245</span>
+</div>
+<ol class="options">
+<li data-label="A.">刪除異常值；因為 KNN 對異常值不敏感</li>
+<li data-label="B.">PCA 降維；為了加速計算</li>
+<li class="correct" data-label="C.">資料正規化 (Normalization)；因為 KNN 基於距離計算，避免特徵尺度影響</li>
+<li data-label="D.">One-Hot Encoding；因為 KNN 只能處理類別特徵</li>
+</ol>
+<div class="explanation">💡 KNN 依賴歐幾里得距離尋找最近鄰居。若未正規化，數值範圍大的特徵（如薪水 50000）會掩蓋數值範圍小的特徵（如年齡 30），使得「鄰居」的定義失真，填補結果不準確。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch2</span>
+<span class="tag">sec-scenario</span>
+</div>
+</div>
+<h2 class="chapter-heading" id="ch-3">機器學習基礎概念</h2>
+<h3 class="section-heading">監督式學習</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">監督式學習 (Supervised Learning) 的主要特徵是什麼？</div>
+<span class="q-id">#3301</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">數據有標籤 (Labeled Data)，包含輸入與正確輸出</li>
+<li data-label="B.">不需要訓練過程 (No Training Required)</li>
+<li data-label="C.">機器透過試錯來學習 (Trial and Error)</li>
+<li data-label="D.">數據沒有標籤 (Unlabeled Data)</li>
+</ol>
+<div class="explanation">💡 監督式學習的核心在於使用成對的 $(x, y)$ 數據進行訓練，讓模型學習從 $x$ 預測 $y$ 的映射關係。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">線性迴歸 (Linear Regression) 的目標是最小化什麼函數？</div>
+<span class="q-id">#3302</span>
+</div>
+<ol class="options">
+<li data-label="A.">絕對誤差 (MAE)，衡量預測值與真實值的絕對差距</li>
+<li data-label="B.">準確率 (Accuracy)，用於分類問題</li>
+<li data-label="C.">交叉熵 (Cross-Entropy)，用於分類問題</li>
+<li class="correct" data-label="D.">均方誤差 (MSE, Mean Squared Error)，衡量預測值與真實值的差距</li>
+</ol>
+<div class="explanation">💡 線性迴歸試圖找到一條直線，使得所有數據點到直線的垂直距離平方和（即 MSE）最小。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">邏輯迴歸 (Logistic Regression) 雖然名為迴歸，但實際上主要用於解決什麼問題？</div>
+<span class="q-id">#3303</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">分類問題 (Classification)，特別是二元分類</li>
+<li data-label="B.">降維問題 (Dimensionality Reduction)</li>
+<li data-label="C.">分群問題 (Clustering)</li>
+<li data-label="D.">連續數值預測 (Continuous Prediction)</li>
+</ol>
+<div class="explanation">💡 邏輯迴歸使用 Sigmoid 函數將輸出壓縮到 (0, 1) 之間，代表屬於某類別的機率，因此是用於二元分類。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">決策樹 (Decision Tree) 在選擇最佳分割特徵時，通常使用什麼指標？</div>
+<span class="q-id">#3304</span>
+</div>
+<ol class="options">
+<li data-label="A.">均方誤差 (MSE)，用於迴歸樹</li>
+<li data-label="B.">學習率 (Learning Rate)</li>
+<li class="correct" data-label="C.">資訊獲利 (Information Gain) 或 Gini 不純度 (Gini Impurity)</li>
+<li data-label="D.">梯度下降 (Gradient Descent)，用於優化參數</li>
+</ol>
+<div class="explanation">💡 決策樹透過最大化資訊獲利或最小化 Gini 不純度，來選擇能將數據分得最「純」的特徵進行分割。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">支援向量機 (SVM) 的核心目標是尋找一個超平面，使得什麼最大化？</div>
+<span class="q-id">#3305</span>
+</div>
+<ol class="options">
+<li data-label="A.">分類錯誤率 (Classification Error Rate)</li>
+<li data-label="B.">特徵的維度 (Feature Dimensions)</li>
+<li data-label="C.">支援向量的數量 (Number of Support Vectors)</li>
+<li class="correct" data-label="D.">邊界 (Margin)，即決策邊界到最近數據點的距離</li>
+</ol>
+<div class="explanation">💡 SVM 試圖找到一個決策邊界，使得兩類數據點距離該邊界的最小距離（即 Margin）最大化，以提高模型的泛化能力。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">KNN (K-Nearest Neighbors) 演算法中，若 K 值設定過小（例如 K=1），容易導致什麼問題？</div>
+<span class="q-id">#3306</span>
+</div>
+<ol class="options">
+<li data-label="A.">無法分類 (Unable to Classify)</li>
+<li data-label="B.">欠擬合 (Underfitting)，模型太簡單</li>
+<li class="correct" data-label="C.">過擬合 (Overfitting)，對雜訊過於敏感</li>
+<li data-label="D.">計算速度變慢 (Slower Computation)</li>
+</ol>
+<div class="explanation">💡 K=1 時，模型會受到單一最近鄰居的強烈影響，容易捕捉到數據中的雜訊，導致決策邊界破碎且過擬合。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Sigmoid 函數的輸出範圍是？</div>
+<span class="q-id">#3315</span>
+</div>
+<ol class="options">
+<li data-label="A.">0 到 無窮大 (Range [0, infinity])</li>
+<li data-label="B.">-1 到 1 之間 (Range [-1, 1])</li>
+<li class="correct" data-label="C.">0 到 1 之間 (Range [0, 1])</li>
+<li data-label="D.">負無窮大 到 正無窮大 (Range [-infinity, infinity])</li>
+</ol>
+<div class="explanation">💡 Sigmoid 函數 $\sigma(z) = 1 / (1 + e^{-z})$ 將任意實數映射到 (0, 1) 區間，適合表示機率。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 SVM 中，核函數 (Kernel Trick) 的作用是？</div>
+<span class="q-id">#3316</span>
+</div>
+<ol class="options">
+<li data-label="A.">增加樣本數 (Increase Samples)</li>
+<li data-label="B.">降維 (Dimensionality Reduction)</li>
+<li data-label="C.">計算距離 (Calculate Distance)</li>
+<li class="correct" data-label="D.">將數據映射到高維空間，使其線性可分 (Map to High-dimensional Space)</li>
+</ol>
+<div class="explanation">💡 核函數允許 SVM 在不顯式計算高維座標的情況下，隱式地在高維特徵空間中尋找線性決策邊界，解決低維不可分問題。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">決策樹中的「熵 (Entropy)」是用來衡量什麼？</div>
+<span class="q-id">#3317</span>
+</div>
+<ol class="options">
+<li data-label="A.">數據的相關性 (Correlation)</li>
+<li data-label="B.">數據的大小 (Size)</li>
+<li class="correct" data-label="C.">數據的混亂程度或不確定性 (Impurity / Uncertainty)</li>
+<li data-label="D.">數據的距離 (Distance)</li>
+</ol>
+<div class="explanation">💡 熵越高，代表數據越混亂（各類別混合）；熵越低，代表數據越純（主要屬於同一類）。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">邏輯迴歸的決策邊界通常是？</div>
+<span class="q-id">#3320</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">線性的 (Linear)，即超平面</li>
+<li data-label="B.">圓形的 (Circular)</li>
+<li data-label="C.">多項式的 (Polynomial)</li>
+<li data-label="D.">不規則的 (Irregular)</li>
+</ol>
+<div class="explanation">💡 標準邏輯迴歸是一個線性分類器，其決策邊界由 $\mathbf{w}^T \mathbf{x} + b = 0$ 定義，是一個超平面（直線）。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">決策樹容易發生的主要問題是？</div>
+<span class="q-id">#3322</span>
+</div>
+<ol class="options">
+<li data-label="A.">欠擬合 (Underfitting)</li>
+<li data-label="B.">計算量過大 (High Computational Cost)</li>
+<li data-label="C.">無法處理類別特徵 (Cannot Handle Categorical Features)</li>
+<li class="correct" data-label="D.">過擬合 (Overfitting)，若不限制深度</li>
+</ol>
+<div class="explanation">💡 決策樹若不限制深度，傾向於生長得非常複雜以完美擬合訓練數據，導致泛化能力差（過擬合）。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 KNN 中，距離度量除了歐幾里得距離，對於文本數據常用哪種距離？</div>
+<span class="q-id">#3324</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">餘弦相似度 (Cosine Similarity)，衡量方向相似性</li>
+<li data-label="B.">漢明距離 (Hamming Distance)</li>
+<li data-label="C.">曼哈頓距離 (Manhattan Distance)</li>
+<li data-label="D.">切比雪夫距離 (Chebyshev Distance)</li>
+</ol>
+<div class="explanation">💡 在高維稀疏的文本向量空間中，餘弦相似度（衡量向量夾角）通常比歐幾里得距離更能反映語意相似性。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">隨機森林 (Random Forest) 如何改進決策樹？</div>
+<span class="q-id">#3325</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">結合多棵樹的預測結果 (Bagging)，降低變異數</li>
+<li data-label="B.">使用更複雜的分裂準則 (Complex Criteria)</li>
+<li data-label="C.">只使用部分數據訓練 (Partial Data)</li>
+<li data-label="D.">減少樹的深度 (Reduce Depth)</li>
+</ol>
+<div class="explanation">💡 隨機森林透過集成學習 (Ensemble Learning)，平均多棵樹的預測，有效平滑了單棵樹的過擬合傾向。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">梯度下降法中的「學習率 (Learning Rate)」控制什麼？</div>
+<span class="q-id">#3327</span>
+</div>
+<ol class="options">
+<li data-label="A.">模型的複雜度 (Model Complexity)</li>
+<li data-label="B.">迭代次數 (Number of Iterations)</li>
+<li class="correct" data-label="C.">每次參數更新的步長大小 (Step Size)</li>
+<li data-label="D.">損失函數的大小 (Loss Magnitude)</li>
+</ol>
+<div class="explanation">💡 學習率決定了我們沿梯度方向移動的幅度。太大會震盪，太小會收斂過慢。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在線性迴歸中，若特徵之間高度相關，會導致什麼問題？</div>
+<span class="q-id">#3330</span>
+</div>
+<ol class="options">
+<li data-label="A.">過擬合 (Overfitting)</li>
+<li data-label="B.">欠擬合 (Underfitting)</li>
+<li data-label="C.">無法計算梯度 (Gradient Calculation Failure)</li>
+<li class="correct" data-label="D.">多重共線性 (Multicollinearity)，導致係數不穩定</li>
+</ol>
+<div class="explanation">💡 共線性使得模型難以區分不同特徵的個別貢獻，導致係數變異數大，對數據微小變動敏感。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">決策樹的剪枝 (Pruning) 是為了？</div>
+<span class="q-id">#3331</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">減少樹的複雜度，防止過擬合 (Reduce Complexity / Prevent Overfitting)</li>
+<li data-label="B.">增加樹的深度 (Increase Depth)</li>
+<li data-label="C.">提高訓練準確率 (Increase Training Accuracy)，但可能降低測試準確率</li>
+<li data-label="D.">增加計算量 (Increase Computation)</li>
+</ol>
+<div class="explanation">💡 剪枝移除對預測貢獻不大或只擬合雜訊的分支，簡化模型以提升泛化能力。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">SVM 中的 C 參數 (正則化參數) 如何影響模型？</div>
+<span class="q-id">#3332</span>
+</div>
+<ol class="options">
+<li data-label="A.">C 不影響模型 (No Effect)</li>
+<li data-label="B.">C 越大，容錯率越高，邊界越寬 (Soft Margin)</li>
+<li class="correct" data-label="C.">C 越大，容錯率越低，邊界越窄 (Hard Margin)</li>
+<li data-label="D.">C 控制核函數類型 (Kernel Type)</li>
+</ol>
+<div class="explanation">💡 C 參數權衡了「最大化邊界」與「最小化分類錯誤」。C 大表示對錯誤零容忍，導致硬邊界；C 小表示允許部分錯誤，追求更寬的軟邊界。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">樸素貝氏分類器 (Naive Bayes) 的「樸素」假設是指？</div>
+<span class="q-id">#3335</span>
+</div>
+<ol class="options">
+<li data-label="A.">假設沒有雜訊 (No Noise)</li>
+<li data-label="B.">假設模型很簡單 (Simple Model)</li>
+<li class="correct" data-label="C.">假設所有特徵之間相互獨立 (Feature Independence)</li>
+<li data-label="D.">假設數據是常態分佈 (Normal Distribution)</li>
+</ol>
+<div class="explanation">💡 為了簡化計算，Naive Bayes 假設給定類別下，各特徵是條件獨立的。雖然這在現實中很少成立，但模型效果通常出奇地好。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">隨機森林中的「Bootstrap」採樣是指？</div>
+<span class="q-id">#3337</span>
+</div>
+<ol class="options">
+<li data-label="A.">系統抽樣 (Systematic Sampling)</li>
+<li data-label="B.">不放回抽樣 (Sampling without Replacement)</li>
+<li class="correct" data-label="C.">取後放回抽樣 (Sampling with Replacement)</li>
+<li data-label="D.">分層抽樣 (Stratified Sampling)</li>
+</ol>
+<div class="explanation">💡 每棵樹使用從原始數據中取後放回抽樣產生的子集進行訓練，這增加了數據的多樣性。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">梯度消失 (Vanishing Gradient) 問題最容易發生在？</div>
+<span class="q-id">#3338</span>
+</div>
+<ol class="options">
+<li data-label="A.">淺層神經網路 (Shallow Neural Networks)</li>
+<li data-label="B.">決策樹 (Decision Tree)</li>
+<li data-label="C.">線性迴歸 (Linear Regression)</li>
+<li class="correct" data-label="D.">深層神經網路 (Deep Neural Networks)</li>
+</ol>
+<div class="explanation">💡 在深層網路中，梯度在反向傳播過程中經過多次連乘，若數值小於 1，梯度會指數級衰減趨近於 0，導致前層參數無法更新。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">哪種演算法被稱為「懶惰學習 (Lazy Learning)」？</div>
+<span class="q-id">#3340</span>
+</div>
+<ol class="options">
+<li data-label="A.">決策樹 (Decision Tree)</li>
+<li class="correct" data-label="B.">KNN (K-Nearest Neighbors)</li>
+<li data-label="C.">SVM</li>
+<li data-label="D.">邏輯迴歸 (Logistic Regression)</li>
+</ol>
+<div class="explanation">💡 KNN 在訓練階段不建立模型，只是單純儲存數據。直到預測時才進行計算（找鄰居），因此稱為懶惰學習。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：若你想預測明天的房價（連續數值），應使用哪種模型？</div>
+<span class="q-id">#3346</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">線性迴歸 (Linear Regression)，用於預測連續數值</li>
+<li data-label="B.">PCA，用於降維</li>
+<li data-label="C.">邏輯迴歸 (Logistic Regression)，用於分類</li>
+<li data-label="D.">K-Means，用於分群</li>
+</ol>
+<div class="explanation">💡 線性迴歸專門用於處理輸出為連續數值的預測問題。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：邏輯迴歸 (Logistic Regression) 使用哪個函數將輸出壓縮到 (0, 1) 之間？</div>
+<span class="q-id">#3348</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">Sigmoid，將輸出壓縮至 (0, 1)</li>
+<li data-label="B.">ReLU (Rectified Linear Unit)</li>
+<li data-label="C.">Linear (Identity)</li>
+<li data-label="D.">Tanh (Hyperbolic Tangent)</li>
+</ol>
+<div class="explanation">💡 Sigmoid 函數能將任意實數映射為機率值，適合二元分類。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：決策樹使用什麼指標來決定如何分割節點？</div>
+<span class="q-id">#3351</span>
+</div>
+<ol class="options">
+<li data-label="A.">距離 (Distance)</li>
+<li class="correct" data-label="B.">資訊獲利 (Information Gain) 或 Gini 不純度 (Gini Impurity)</li>
+<li data-label="C.">梯度 (Gradient)</li>
+<li data-label="D.">變異數 (Variance)</li>
+</ol>
+<div class="explanation">💡 這些指標衡量分割後資料純度的提升程度，純度越高越好。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：SVM 的「核函數 (Kernel Trick)」主要用途是？</div>
+<span class="q-id">#3352</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">將低維線性不可分的數據映射到高維空間，使其線性可分 (Map to High-dimensional Space)</li>
+<li data-label="B.">壓縮數據 (Compress Data)</li>
+<li data-label="C.">降維 (Dimensionality Reduction)</li>
+<li data-label="D.">加速計算 (Accelerate Calculation)</li>
+</ol>
+<div class="explanation">💡 Kernel Trick 讓 SVM 能有效處理非線性分類問題。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：KNN 演算法中的 K 值若設得太小（例如 K=1），容易導致？</div>
+<span class="q-id">#3354</span>
+</div>
+<ol class="options">
+<li data-label="A.">無法分類 (Unable to Classify)</li>
+<li data-label="B.">計算太慢 (Slow Computation)</li>
+<li data-label="C.">欠擬合 (Underfitting)</li>
+<li class="correct" data-label="D.">過擬合 (Overfitting)，對雜訊敏感</li>
+</ol>
+<div class="explanation">💡 K=1 代表模型只看最近的一個點，極易受異常值干擾，形成破碎的決策邊界。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：SVM 尋找的最佳超平面具有什麼特性？</div>
+<span class="q-id">#3359</span>
+</div>
+<ol class="options">
+<li data-label="A.">通過原點 (Passes through Origin)</li>
+<li data-label="B.">隨機選取 (Random Selection)</li>
+<li class="correct" data-label="C.">最大化邊界 (Maximize Margin)</li>
+<li data-label="D.">最小化邊界 (Minimize Margin)</li>
+</ol>
+<div class="explanation">💡 最大化邊界能提高模型的泛化能力與抗雜訊能力。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：決策樹的一個優點是？</div>
+<span class="q-id">#3362</span>
+</div>
+<ol class="options">
+<li data-label="A.">不需要訓練 (No Training Needed)</li>
+<li data-label="B.">不易過擬合 (Resistant to Overfitting)</li>
+<li data-label="C.">準確率最高 (Highest Accuracy)</li>
+<li class="correct" data-label="D.">可解釋性高 (High Interpretability)，易於理解規則</li>
+</ol>
+<div class="explanation">💡 決策樹的規則（如「若年齡&gt;30且收入&gt;5萬」）符合人類邏輯，易於解釋。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：KNN 是一種「懶惰學習 (Lazy Learning)」演算法，因為？</div>
+<span class="q-id">#3363</span>
+</div>
+<ol class="options">
+<li data-label="A.">它計算很快 (Fast Calculation)</li>
+<li class="correct" data-label="B.">它在訓練階段不建立模型，直到預測時才進行計算 (No Training Phase)</li>
+<li data-label="C.">它不需要數據 (No Data Needed)</li>
+<li data-label="D.">它很懶 (It is lazy)</li>
+</ol>
+<div class="explanation">💡 KNN 只是把訓練資料存起來，預測時才計算距離，因此訓練時間極短但預測時間長。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-supervised-learning</span>
+</div>
+</div>
+<h3 class="section-heading">非監督式學習</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">K-Means 分群演算法的目標函數是最小化什麼？</div>
+<span class="q-id">#3307</span>
+</div>
+<ol class="options">
+<li data-label="A.">群集的數量 (Number of Clusters)</li>
+<li data-label="B.">群集間的距離 (Inter-cluster Distance)</li>
+<li data-label="C.">異常值的數量 (Number of Outliers)</li>
+<li class="correct" data-label="D.">群集內變異數總和 (WCSS, Within-Cluster Sum of Squares)</li>
+</ol>
+<div class="explanation">💡 K-Means 試圖讓每個點到其所屬群集中心的距離平方和最小，即讓群集內部越緊密越好。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-unsupervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">決定 K-Means 最佳群集數量 K 的常用方法是？</div>
+<span class="q-id">#3308</span>
+</div>
+<ol class="options">
+<li data-label="A.">交叉驗證 (Cross-Validation)</li>
+<li data-label="B.">梯度下降法 (Gradient Descent)</li>
+<li data-label="C.">隨機猜測 (Random Guess)</li>
+<li class="correct" data-label="D.">手肘法 (Elbow Method)，觀察 WCSS 的下降趨勢</li>
+</ol>
+<div class="explanation">💡 手肘法觀察 WCSS 隨 K 增加的下降趨勢，選擇下降幅度開始變緩的轉折點（手肘處）作為最佳 K 值。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-unsupervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">K-Means++ 初始化方法的主要改進是？</div>
+<span class="q-id">#3321</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">選擇彼此距離較遠的點作為初始中心 (Distance-based Initialization)</li>
+<li data-label="B.">減少 K 值 (Reduce K)</li>
+<li data-label="C.">固定初始中心位置 (Fixed Initialization)</li>
+<li data-label="D.">隨機選擇初始中心 (Random Initialization)</li>
+</ol>
+<div class="explanation">💡 傳統 K-Means 隨機初始化可能導致收斂慢或結果差。K-Means++ 透過機率性地選擇距離已選中心較遠的點作為新中心，優化了起始狀態。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-unsupervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">層次分群 (Hierarchical Clustering) 的結果通常用什麼圖形表示？</div>
+<span class="q-id">#3328</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">樹狀圖 (Dendrogram)，顯示合併過程</li>
+<li data-label="B.">直方圖 (Histogram)</li>
+<li data-label="C.">熱力圖 (Heatmap)</li>
+<li data-label="D.">散點圖 (Scatter Plot)</li>
+</ol>
+<div class="explanation">💡 樹狀圖展示了數據點如何一步步合併成群集的過程，可以直觀地選擇分群數量。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-unsupervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">DBSCAN 分群演算法相較於 K-Means 的一個主要優勢是？</div>
+<span class="q-id">#3334</span>
+</div>
+<ol class="options">
+<li data-label="A.">速度更快 (Faster Speed)</li>
+<li data-label="B.">總是將所有點分群 (Cluster All Points)</li>
+<li class="correct" data-label="C.">不需要預先指定群集數量，且能識別任意形狀的群集和雜訊 (Arbitrary Shapes &amp; Noise)</li>
+<li data-label="D.">只能處理圓形群集 (Circular Clusters Only)</li>
+</ol>
+<div class="explanation">💡 DBSCAN 基於密度分群，能自動發現群集數量，適應不規則形狀，並能將稀疏區域的點標記為雜訊。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-unsupervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：K-Means 分群中，如何決定最佳的 K 值？</div>
+<span class="q-id">#3349</span>
+</div>
+<ol class="options">
+<li data-label="A.">看心情 (Intuition)</li>
+<li data-label="B.">K 越大越好 (Larger K is Better)</li>
+<li data-label="C.">隨機猜測 (Random Guess)</li>
+<li class="correct" data-label="D.">手肘法 (Elbow Method)，觀察 WCSS 的轉折點</li>
+</ol>
+<div class="explanation">💡 手肘法觀察 WCSS 隨 K 增加的下降幅度，尋找邊際效益遞減的轉折點。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-unsupervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：K-Means 的目標函數是最小化？</div>
+<span class="q-id">#3358</span>
+</div>
+<ol class="options">
+<li data-label="A.">群集數量 (Number of Clusters)</li>
+<li data-label="B.">計算時間 (Computation Time)</li>
+<li class="correct" data-label="C.">群集內變異數總和 (WCSS, Within-Cluster Sum of Squares)</li>
+<li data-label="D.">群集間距離 (Inter-cluster Distance)</li>
+</ol>
+<div class="explanation">💡 WCSS 越小，代表群集內的點越緊密集中。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-unsupervised-learning</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：非監督式學習與監督式學習最大的差別在於？</div>
+<span class="q-id">#3365</span>
+</div>
+<ol class="options">
+<li data-label="A.">運算速度 (Computation Speed)</li>
+<li data-label="B.">應用領域 (Application Domain)</li>
+<li data-label="C.">數據量 (Data Volume)</li>
+<li class="correct" data-label="D.">是否有標籤 (Labels)，監督式有標籤，非監督式無標籤</li>
+</ol>
+<div class="explanation">💡 非監督式學習處理無標籤數據，目標是發現數據本身的結構。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-unsupervised-learning</span>
+</div>
+</div>
+<h3 class="section-heading">模型評估</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在混淆矩陣中，TP (True Positive) 代表什麼？</div>
+<span class="q-id">#3309</span>
+</div>
+<ol class="options">
+<li data-label="A.">真實為正，預測為負 (False Negative)</li>
+<li class="correct" data-label="B.">真實為正，預測為正 (True Positive)</li>
+<li data-label="C.">真實為負，預測為負 (True Negative)</li>
+<li data-label="D.">真實為負，預測為正 (False Positive)</li>
+</ol>
+<div class="explanation">💡 TP 表示模型正確地將正例預測為正例。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-model-evaluation</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">哪一個指標同時考慮了精確率 (Precision) 和召回率 (Recall)，是兩者的調和平均數？</div>
+<span class="q-id">#3310</span>
+</div>
+<ol class="options">
+<li data-label="A.">Accuracy (準確率)</li>
+<li data-label="B.">AUC (曲線下面積)</li>
+<li data-label="C.">Specificity (特異度)</li>
+<li class="correct" data-label="D.">F1 Score (F1 分數)</li>
+</ol>
+<div class="explanation">💡 F1 Score = 2 * (Precision * Recall) / (Precision + Recall)，用於平衡 Precision 和 Recall，特別適用於類別不平衡的情況。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-model-evaluation</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">ROC 曲線下的面積 (AUC) 為 0.5 代表模型的表現如何？</div>
+<span class="q-id">#3311</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">與隨機猜測無異 (No Discrimination)，無鑑別力</li>
+<li data-label="B.">表現極差 (Worse than Random)</li>
+<li data-label="C.">表現良好 (Good Performance)</li>
+<li data-label="D.">完美分類 (Perfect Classification)</li>
+</ol>
+<div class="explanation">💡 AUC=0.5 表示 ROC 曲線是一條對角線，意味著模型的預測能力等同於擲硬幣猜測。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-model-evaluation</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">K-Fold 交叉驗證 (Cross-Validation) 的主要目的是？</div>
+<span class="q-id">#3312</span>
+</div>
+<ol class="options">
+<li data-label="A.">增加訓練數據量 (Increase Data Size)</li>
+<li data-label="B.">加速模型訓練 (Accelerate Training)</li>
+<li class="correct" data-label="C.">減少因數據劃分不同帶來的評估誤差 (Reduce Evaluation Variance)</li>
+<li data-label="D.">自動調整超參數 (Auto Hyperparameter Tuning)</li>
+</ol>
+<div class="explanation">💡 透過多次隨機劃分訓練/驗證集並取平均，K-Fold 能提供比單次劃分更穩定、更可靠的模型性能評估。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-model-evaluation</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">當模型出現「高偏差 (High Bias)」時，通常意味著什麼？</div>
+<span class="q-id">#3313</span>
+</div>
+<ol class="options">
+<li data-label="A.">模型太複雜 (Model too Complex)</li>
+<li class="correct" data-label="B.">欠擬合 (Underfitting)，模型太簡單</li>
+<li data-label="C.">數據量太少 (Insufficient Data)</li>
+<li data-label="D.">過擬合 (Overfitting)，模型太複雜</li>
+</ol>
+<div class="explanation">💡 高偏差表示模型太簡單（如用直線擬合曲線），無法捕捉數據的規律，導致在訓練集和測試集上表現都差（欠擬合）。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-model-evaluation</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">解決過擬合 (Overfitting) 的策略不包括下列何者？</div>
+<span class="q-id">#3314</span>
+</div>
+<ol class="options">
+<li data-label="A.">使用正則化 (Regularization)，如 L1/L2</li>
+<li class="correct" data-label="B.">增加模型複雜度 (Increase Complexity)，如增加層數</li>
+<li data-label="C.">增加訓練數據 (Increase Training Data)</li>
+<li data-label="D.">特徵選擇 (Feature Selection)，減少特徵</li>
+</ol>
+<div class="explanation">💡 過擬合是因為模型太複雜，記住了雜訊。增加模型複雜度會加劇過擬合。應簡化模型或增加數據。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-model-evaluation</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">召回率 (Recall) 的公式是？</div>
+<span class="q-id">#3318</span>
+</div>
+<ol class="options">
+<li data-label="A.">(TP + TN) / Total (Accuracy)</li>
+<li class="correct" data-label="B.">TP / (TP + FN) (Recall)</li>
+<li data-label="C.">TP / (TP + FP) (Precision)</li>
+<li data-label="D.">FP / (FP + TN) (FPR)</li>
+</ol>
+<div class="explanation">💡 Recall 衡量的是「所有真正的正例中，有多少被模型成功抓出來」。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-model-evaluation</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">偽陽性率 (False Positive Rate, FPR) 是 ROC 曲線的 X 軸，其意義是？</div>
+<span class="q-id">#3319</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">所有負例被錯誤預測為正例的比例 (False Positive Rate)</li>
+<li data-label="B.">所有預測為正例中錯誤的比例 (False Discovery Rate)</li>
+<li data-label="C.">所有正例被預測錯誤的比例 (False Negative Rate)</li>
+<li data-label="D.">準確率的倒數 (Inverse Accuracy)</li>
+</ol>
+<div class="explanation">💡 FPR = FP / (FP + TN)，即在所有真實的負例中，有多少比例被誤判為正例。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-model-evaluation</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">偏差-變異數權衡 (Bias-Variance Tradeoff) 指出，隨著模型複雜度增加，通常會發生什麼？</div>
+<span class="q-id">#3323</span>
+</div>
+<ol class="options">
+<li data-label="A.">偏差減少，變異數減少 (Both Decrease)</li>
+<li data-label="B.">偏差增加，變異數減少 (Bias Increase, Variance Decrease)</li>
+<li data-label="C.">偏差增加，變異數增加 (Both Increase)</li>
+<li class="correct" data-label="D.">偏差減少，變異數增加 (Bias Decrease, Variance Increase)</li>
+</ol>
+<div class="explanation">💡 複雜模型能更好地擬合訓練數據（低偏差），但也更容易受到數據微小變動的影響（高變異數）。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-model-evaluation</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">什麼是「不可約誤差 (Irreducible Error)」？</div>
+<span class="q-id">#3326</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">數據本身固有的雜訊 (Inherent Noise)，無法透過改進模型消除</li>
+<li data-label="B.">計算精度誤差 (Computational Error)</li>
+<li data-label="C.">模型偏差造成的誤差 (Bias Error)</li>
+<li data-label="D.">模型變異數造成的誤差 (Variance Error)</li>
+</ol>
+<div class="explanation">💡 總誤差 = Bias^2 + Variance + Irreducible Error。前兩者可控，但後者源於數據本身的隨機性或測量誤差，是性能的上限。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-model-evaluation</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">留一法交叉驗證 (Leave-One-Out CV) 是 K-Fold 的一種特例，其中 K 等於？</div>
+<span class="q-id">#3329</span>
+</div>
+<ol class="options">
+<li data-label="A.">K=10</li>
+<li class="correct" data-label="B.">K=N (N 為樣本總數)，每次留一個樣本驗證</li>
+<li data-label="C.">K=5</li>
+<li data-label="D.">K=1</li>
+</ol>
+<div class="explanation">💡 LOOCV 每次只留 1 個樣本驗證，其餘 N-1 個訓練，重複 N 次。計算成本高但評估偏差小。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-model-evaluation</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">哪種評估指標對於「垃圾郵件偵測」（寧可漏抓，不可誤殺正常郵件）最為重要？</div>
+<span class="q-id">#3333</span>
+</div>
+<ol class="options">
+<li data-label="A.">MSE (均方誤差)</li>
+<li data-label="B.">Accuracy (準確率)</li>
+<li data-label="C.">Recall (召回率)</li>
+<li class="correct" data-label="D.">Precision (精確率)，確保被標記為垃圾的郵件真的是垃圾</li>
+</ol>
+<div class="explanation">💡 我們希望被預測為垃圾郵件的信件中，真正是垃圾郵件的比例很高（Precision 高），以免使用者錯過重要信件（誤殺）。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-model-evaluation</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">學習曲線 (Learning Curve) 顯示訓練誤差和驗證誤差隨什麼變化的趨勢？</div>
+<span class="q-id">#3336</span>
+</div>
+<ol class="options">
+<li data-label="A.">時間 (Time)</li>
+<li data-label="B.">特徵數量 (Number of Features)</li>
+<li class="correct" data-label="C.">訓練樣本數量 (Training Set Size)</li>
+<li data-label="D.">學習率 (Learning Rate)</li>
+</ol>
+<div class="explanation">💡 學習曲線幫助我們判斷模型是過擬合（兩條線分開）還是欠擬合（兩條線收斂但誤差高），以及增加數據是否有幫助。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-model-evaluation</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">網格搜尋 (Grid Search) 用於？</div>
+<span class="q-id">#3339</span>
+</div>
+<ol class="options">
+<li data-label="A.">模型訓練 (Model Training)</li>
+<li class="correct" data-label="B.">超參數調整 (Hyperparameter Tuning)</li>
+<li data-label="C.">數據清洗 (Data Cleaning)</li>
+<li data-label="D.">特徵選擇 (Feature Selection)</li>
+</ol>
+<div class="explanation">💡 Grid Search 透過窮舉預定義的超參數組合（如 C, kernel, gamma），尋找驗證集表現最佳的配置。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-model-evaluation</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：在癌症篩檢中，我們最不希望漏掉任何一個病人（寧濫毋缺），應優先優化哪個指標？</div>
+<span class="q-id">#3347</span>
+</div>
+<ol class="options">
+<li data-label="A.">準確率 (Accuracy)</li>
+<li data-label="B.">精確率 (Precision)</li>
+<li data-label="C.">F1 Score</li>
+<li class="correct" data-label="D.">召回率 (Recall)，確保盡可能抓出所有正例</li>
+</ol>
+<div class="explanation">💡 高召回率代表能盡可能抓出所有正例 (TP)，降低偽陰性 (FN) 的風險。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-model-evaluation</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：若模型在訓練集表現極好，但在測試集表現很差，這通常是什麼現象？</div>
+<span class="q-id">#3350</span>
+</div>
+<ol class="options">
+<li data-label="A.">欠擬合 (Underfitting)，模型太簡單</li>
+<li data-label="B.">資料太少 (Insufficient Data)</li>
+<li class="correct" data-label="C.">過擬合 (Overfitting)，模型在訓練集表現好但在測試集表現差</li>
+<li data-label="D.">模型太簡單 (Model too Simple)</li>
+</ol>
+<div class="explanation">💡 過擬合代表模型死記了訓練資料的雜訊，導致泛化能力低落。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-model-evaluation</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：F1 Score 是哪兩個指標的調和平均數？</div>
+<span class="q-id">#3353</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">Precision 與 Recall</li>
+<li data-label="B.">TPR 與 FPR</li>
+<li data-label="C.">Bias 與 Variance</li>
+<li data-label="D.">Accuracy 與 Recall</li>
+</ol>
+<div class="explanation">💡 F1 Score 綜合考量了精確率與召回率，適合評估類別不平衡的資料。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-model-evaluation</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：ROC 曲線下的面積 (AUC) 若為 0.5，代表模型？</div>
+<span class="q-id">#3355</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">無鑑別力 (No Discrimination)，跟隨機猜測一樣</li>
+<li data-label="B.">過擬合 (Overfitting)</li>
+<li data-label="C.">表現良好 (Good Performance)</li>
+<li data-label="D.">完美分類 (Perfect Classification)</li>
+</ol>
+<div class="explanation">💡 AUC=0.5 意味著模型無法區分正負樣本。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-model-evaluation</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：混淆矩陣中，FP (False Positive) 代表？</div>
+<span class="q-id">#3360</span>
+</div>
+<ol class="options">
+<li data-label="A.">真實為正，預測為正 (True Positive)</li>
+<li data-label="B.">真實為負，預測為負 (True Negative)</li>
+<li data-label="C.">真實為正，預測為負 (False Negative)</li>
+<li class="correct" data-label="D.">真實為負，預測為正 (False Positive)，即誤報</li>
+</ol>
+<div class="explanation">💡 FP 是將負例錯誤地判斷為正例，例如沒病誤診為有病。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-model-evaluation</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：在垃圾郵件偵測中，我們希望盡量減少將正常郵件誤判為垃圾郵件（寧缺毋濫），應看重？</div>
+<span class="q-id">#3364</span>
+</div>
+<ol class="options">
+<li data-label="A.">Recall</li>
+<li class="correct" data-label="B.">Precision</li>
+<li data-label="C.">Accuracy</li>
+<li data-label="D.">AUC</li>
+</ol>
+<div class="explanation">💡 高 Precision 代表預測為垃圾郵件的樣本中，真的垃圾郵件比例很高，誤殺率低。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-model-evaluation</span>
+</div>
+</div>
+<h3 class="section-heading">深度思考情境題</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：你正在訓練一個癌症預測模型，數據集中 99% 是健康樣本，1% 是癌症樣本。你發現模型的 Accuracy 為 99%，但 Recall 為 0%。這意味著什麼？你該如何向非技術背景的主管解釋這個問題的嚴重性？</div>
+<span class="q-id">#3341</span>
+</div>
+<ol class="options">
+<li data-label="A.">模型表現完美，無需解釋 (Perfect Performance)</li>
+<li data-label="B.">應該改用線性迴歸 (Switch to Linear Regression)</li>
+<li class="correct" data-label="C.">模型學會了「偷懶」，它只要預測所有人都是健康的，就能拿高分 (Lazy Model / Accuracy Paradox)</li>
+<li data-label="D.">數據有問題，應該刪除健康樣本 (Data Issue)</li>
+</ol>
+<div class="explanation">💡 這是類別不平衡的典型陷阱。向主管解釋時，應強調模型雖然「考試分數高」，但對於「抓出病患」這個核心任務完全失敗，因此需要更換評估指標（如 Recall）並調整訓練策略。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-scenario</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：在房價預測比賽中，你使用決策樹模型，發現訓練誤差幾乎為 0，但測試誤差很高。你嘗試增加樹的深度，結果測試誤差更高了。這是什麼現象？你應該採取什麼反向操作？</div>
+<span class="q-id">#3342</span>
+</div>
+<ol class="options">
+<li data-label="A.">學習率太高；應降低學習率 (High Learning Rate)</li>
+<li data-label="B.">欠擬合；應增加特徵 (Underfitting)</li>
+<li class="correct" data-label="C.">過擬合；應限制樹的深度 (max_depth) 或進行剪枝 (Pruning)</li>
+<li data-label="D.">數據雜訊太大；應刪除一半數據 (Noise Issue)</li>
+</ol>
+<div class="explanation">💡 訓練好但測試差是過擬合的特徵。增加深度只會讓模型記住更多訓練細節（雜訊），加劇過擬合。正確做法是限制模型複雜度，如限制深度、增加葉節點最小樣本數限制。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-scenario</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：你正在使用 K-Means 對客戶進行分群。你發現無論怎麼調整 K 值，分群結果都不太合理，且可視化發現數據呈現「甜甜圈」狀（一圈包一圈）。為什麼 K-Means 失效了？應改用什麼演算法？</div>
+<span class="q-id">#3343</span>
+</div>
+<ol class="options">
+<li data-label="A.">應該用監督式學習 (Use Supervised Learning)</li>
+<li data-label="B.">K 值選錯了，應該選 K=100 (Wrong K)</li>
+<li class="correct" data-label="C.">K-Means 假設群集是凸形 (Convex) 或球狀的，無法處理非凸形結構 (Non-convex Structure)</li>
+<li data-label="D.">數據沒有標準化 (Unnormalized Data)</li>
+</ol>
+<div class="explanation">💡 K-Means 基於中心點和歐氏距離，傾向於發現球狀群集。對於環狀、新月形等複雜幾何結構，K-Means 無能為力。DBSCAN 基於密度連通性，能有效識別這些形狀。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-scenario</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：你的模型在訓練集和測試集上的表現都很差（高偏差）。你的同事建議「增加更多數據」來解決問題。你認為這個建議有效嗎？為什麼？</div>
+<span class="q-id">#3344</span>
+</div>
+<ol class="options">
+<li data-label="A.">無效，應該減少特徵 (Reduce Features)</li>
+<li class="correct" data-label="B.">無效。高偏差意味著模型太簡單（欠擬合），無法捕捉數據規律 (High Bias / Underfitting)</li>
+<li data-label="C.">有效，數據能降低偏差 (Data Reduces Bias)</li>
+<li data-label="D.">有效，更多數據總是好的 (More Data is Better)</li>
+</ol>
+<div class="explanation">💡 學習曲線理論告訴我們，當模型處於高偏差（欠擬合）狀態時，增加訓練數據通常無助於提升性能，因為瓶頸在於模型本身的表達能力不足。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-scenario</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：你正在構建一個推薦系統，使用矩陣分解 (Matrix Factorization)。你發現模型傾向於推薦熱門商品給所有人。為了增加推薦的「多樣性」和「驚喜度」，你可以在損失函數中加入什麼項？</div>
+<span class="q-id">#3345</span>
+</div>
+<ol class="options">
+<li data-label="A.">準確率項 (Accuracy Term)</li>
+<li class="correct" data-label="B.">覆蓋率 (Coverage) 懲罰或多樣性 (Diversity) 懲罰項</li>
+<li data-label="C.">增加學習率 (Increase Learning Rate)</li>
+<li data-label="D.">正則化項 (Regularization)</li>
+</ol>
+<div class="explanation">💡 僅優化準確率（如 RMSE）往往導致「大者恆大」的馬太效應。為了兼顧多樣性，需在目標函數中引入相關約束，或在模型輸出後加入多樣性過濾機制，犧牲一點準確率換取更好的使用者體驗。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-scenario</span>
+</div>
+</div>
+<h3 class="section-heading">交叉驗證</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：K-Fold 交叉驗證的主要目的是？</div>
+<span class="q-id">#3356</span>
+</div>
+<ol class="options">
+<li data-label="A.">減少特徵 (Reduce Features)</li>
+<li data-label="B.">加速訓練 (Accelerate Training)</li>
+<li data-label="C.">增加訓練資料 (Increase Training Data)</li>
+<li class="correct" data-label="D.">更穩健地評估模型泛化能力，減少因資料劃分不同帶來的誤差 (Robust Evaluation)</li>
+</ol>
+<div class="explanation">💡 透過多次輪替驗證，能獲得更客觀的性能評估結果。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-model-evaluation</span>
+</div>
+</div>
+<h3 class="section-heading">偏差-變異數權衡</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：高偏差 (High Bias) 通常對應於？</div>
+<span class="q-id">#3357</span>
+</div>
+<ol class="options">
+<li data-label="A.">過擬合 (Overfitting)</li>
+<li class="correct" data-label="B.">欠擬合 (Underfitting)，模型太簡單</li>
+<li data-label="C.">模型太複雜 (Model too Complex)</li>
+<li data-label="D.">資料太多 (Too much Data)</li>
+</ol>
+<div class="explanation">💡 高偏差意味著模型太簡單（如用直線擬合拋物線），無法捕捉數據規律。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-model-evaluation</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：解決過擬合 (High Variance) 的方法不包括？</div>
+<span class="q-id">#3361</span>
+</div>
+<ol class="options">
+<li data-label="A.">特徵選擇 (Feature Selection)</li>
+<li class="correct" data-label="B.">增加模型複雜度 (Increase Model Complexity)</li>
+<li data-label="C.">增加訓練數據 (Increase Training Data)</li>
+<li data-label="D.">使用正則化 (Regularization)，如 L1/L2</li>
+</ol>
+<div class="explanation">💡 增加模型複雜度會加劇過擬合，應該要簡化模型。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch3</span>
+<span class="tag">sec-model-evaluation</span>
+</div>
+</div>
+<h2 class="chapter-heading" id="ch-4">深度學習簡介</h2>
+<h3 class="section-heading">神經網路</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">感知器 (Perceptron) 的基本運算過程是？</div>
+<span class="q-id">#3401</span>
+</div>
+<ol class="options">
+<li data-label="A.">先通過活化函數，再進行加權求和 (Activation then Weighted Sum)</li>
+<li class="correct" data-label="B.">先進行加權求和，再通過活化函數 (Weighted Sum then Activation)</li>
+<li data-label="C.">僅進行加權求和 (Weighted Sum Only)</li>
+<li data-label="D.">僅進行活化函數運算 (Activation Function Only)</li>
+</ol>
+<div class="explanation">💡 感知器接收輸入 $x$，計算加權和 $z = w^T x + b$，然後將 $z$ 輸入活化函數 $\phi(z)$ 得到輸出。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">為什麼神經網路需要活化函數 (Activation Function)？</div>
+<span class="q-id">#3402</span>
+</div>
+<ol class="options">
+<li data-label="A.">為了將輸出限制在 0 和 1 之間 (Range Constraint)</li>
+<li class="correct" data-label="B.">為了引入非線性，使模型能學習複雜的模式 (Introduce Non-linearity)</li>
+<li data-label="C.">為了減少參數數量 (Reduce Parameters)</li>
+<li data-label="D.">為了增加計算速度 (Increase Speed)</li>
+</ol>
+<div class="explanation">💡 若沒有非線性活化函數，多層神經網路在數學上僅等價於單層線性模型，無法解決 XOR 等非線性問題。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">ReLU (Rectified Linear Unit) 活化函數的公式是？</div>
+<span class="q-id">#3403</span>
+</div>
+<ol class="options">
+<li data-label="A.">$f(x) = x$ (Linear)</li>
+<li data-label="B.">$f(x) = \tanh(x)$ (Tanh)</li>
+<li data-label="C.">$f(x) = 1 / (1 + e^{-x})$ (Sigmoid)</li>
+<li class="correct" data-label="D.">$f(x) = \max(0, x)$ (ReLU)</li>
+</ol>
+<div class="explanation">💡 ReLU 函數在 $x &gt; 0$ 時輸出 $x$，在 $x \le 0$ 時輸出 0。它計算簡單且有效緩解了梯度消失問題。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Softmax 函數通常用於神經網路的哪一層？</div>
+<span class="q-id">#3404</span>
+</div>
+<ol class="options">
+<li data-label="A.">隱藏層 (Hidden Layer)</li>
+<li data-label="B.">輸入層 (Input Layer)</li>
+<li class="correct" data-label="C.">多分類問題的輸出層 (Output Layer for Multi-class Classification)</li>
+<li data-label="D.">卷積層 (Convolutional Layer)</li>
+</ol>
+<div class="explanation">💡 Softmax 將輸出向量轉換為機率分佈（所有元素總和為 1），因此非常適合用於多分類任務的最終輸出。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">反向傳播 (Backpropagation) 演算法的核心數學原理是？</div>
+<span class="q-id">#3405</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">微積分中的連鎖律 (Chain Rule)</li>
+<li data-label="B.">矩陣分解 (Matrix Factorization)</li>
+<li data-label="C.">積分 (Integration)</li>
+<li data-label="D.">傅立葉變換 (Fourier Transform)</li>
+</ol>
+<div class="explanation">💡 反向傳播利用連鎖律，將損失函數對輸出層的梯度一層層反向傳遞回輸入層，以計算每個權重的梯度。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">梯度消失 (Vanishing Gradient) 問題會導致什麼後果？</div>
+<span class="q-id">#3410</span>
+</div>
+<ol class="options">
+<li data-label="A.">模型過擬合 (Overfitting)</li>
+<li class="correct" data-label="B.">深層網路的前面幾層參數幾乎無法更新 (Parameters Not Updating)</li>
+<li data-label="C.">模型訓練速度變快 (Faster Training)</li>
+<li data-label="D.">損失函數變成負數 (Negative Loss)</li>
+</ol>
+<div class="explanation">💡 當梯度趨近於 0 時，權重更新量 $\Delta w = -\eta \cdot \text{gradient}$ 也趨近於 0，使得深層網路的前端層「學不動」。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Sigmoid 函數的輸出範圍是？</div>
+<span class="q-id">#3411</span>
+</div>
+<ol class="options">
+<li data-label="A.">-1 到 1 之間 (Range [-1, 1])</li>
+<li data-label="B.">0 到 無窮大 (Range [0, infinity])</li>
+<li data-label="C.">負無窮大 到 正無窮大 (Range [-infinity, infinity])</li>
+<li class="correct" data-label="D.">0 到 1 之間 (Range [0, 1])</li>
+</ol>
+<div class="explanation">💡 Sigmoid 將輸入壓縮到 (0, 1) 區間，常用於二元分類的輸出層表示機率。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在神經網路中，「權重 (Weights)」的作用是？</div>
+<span class="q-id">#3413</span>
+</div>
+<ol class="options">
+<li data-label="A.">引入非線性 (Introduce Non-linearity)</li>
+<li data-label="B.">儲存輸入數據 (Store Input Data)</li>
+<li data-label="C.">計算損失 (Calculate Loss)</li>
+<li class="correct" data-label="D.">調節信號的強度，決定輸入特徵的重要性 (Adjust Signal Strength)</li>
+</ol>
+<div class="explanation">💡 權重 $w$ 決定了輸入 $x$ 對下一層神經元輸出的影響程度，是模型需要學習的主要參數。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">「偏差 (Bias)」在神經元 $z = wx + b$ 中的作用類似於直線方程式中的？</div>
+<span class="q-id">#3414</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">截距</li>
+<li data-label="B.">斜率</li>
+<li data-label="C.">變數</li>
+<li data-label="D.">誤差</li>
+</ol>
+<div class="explanation">💡 偏差 $b$ 允許活化函數向左或向右平移，這對於擬合數據至關重要（就像直線 $y=ax+b$ 中的截距 $b$）。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">前向傳播 (Forward Propagation) 的主要目的是？</div>
+<span class="q-id">#3416</span>
+</div>
+<ol class="options">
+<li data-label="A.">更新權重 (Update Weights)</li>
+<li class="correct" data-label="B.">根據當前參數計算預測輸出 (Calculate Output)</li>
+<li data-label="C.">計算梯度 (Calculate Gradients)</li>
+<li data-label="D.">初始化參數 (Initialize Parameters)</li>
+</ol>
+<div class="explanation">💡 前向傳播是數據從輸入層流向輸出層的過程，最終產生預測結果。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">哪種活化函數在輸入為負時輸出為 0，輸入為正時輸出為輸入值本身？</div>
+<span class="q-id">#3418</span>
+</div>
+<ol class="options">
+<li data-label="A.">Tanh (Hyperbolic Tangent)</li>
+<li class="correct" data-label="B.">ReLU (Rectified Linear Unit)</li>
+<li data-label="C.">Leaky ReLU</li>
+<li data-label="D.">Sigmoid (S-shaped)</li>
+</ol>
+<div class="explanation">💡 這是 ReLU (Rectified Linear Unit) 的定義：$\max(0, x)$。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">全連接層 (Fully Connected Layer) 的特點是？</div>
+<span class="q-id">#3419</span>
+</div>
+<ol class="options">
+<li data-label="A.">每個神經元只連接到上一層的部分神經元 (Sparse Connection)</li>
+<li data-label="B.">權重是共享的 (Shared Weights)</li>
+<li data-label="C.">神經元之間沒有連接 (No Connection)</li>
+<li class="correct" data-label="D.">每個神經元都與上一層的所有神經元相連 (Dense Connection)</li>
+</ol>
+<div class="explanation">💡 全連接層（Dense Layer）中，上一層的每個輸出都連接到下一層的每個輸入，參數數量最多。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Tanh 活化函數的輸出範圍是？</div>
+<span class="q-id">#3421</span>
+</div>
+<ol class="options">
+<li data-label="A.">0 到 無窮大 (Range [0, infinity])</li>
+<li data-label="B.">負無窮大 到 正無窮大 (Range [-infinity, infinity])</li>
+<li class="correct" data-label="C.">-1 到 1 之間 (Range [-1, 1])</li>
+<li data-label="D.">0 到 1 之間 (Range [0, 1])</li>
+</ol>
+<div class="explanation">💡 Tanh (雙曲正切) 函數將輸入壓縮到 (-1, 1)，其中心為 0，通常比 Sigmoid 收斂更快。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">深度神經網路 (DNN) 中的「深度」指的是？</div>
+<span class="q-id">#3423</span>
+</div>
+<ol class="options">
+<li data-label="A.">訓練的時間 (Training Time)</li>
+<li data-label="B.">每一層神經元的數量 (Neurons per Layer)</li>
+<li data-label="C.">數據的維度 (Data Dimensions)</li>
+<li class="correct" data-label="D.">隱藏層的數量 (Number of Hidden Layers)</li>
+</ol>
+<div class="explanation">💡 深度學習之所以「深」，是因為它堆疊了多個隱藏層，使其能學習分層次的特徵表示。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">為什麼 ReLU 比 Sigmoid 更受歡迎？</div>
+<span class="q-id">#3425</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">ReLU 在正區間梯度恆為 1，有效解決梯度消失問題 (Solves Vanishing Gradient)</li>
+<li data-label="B.">ReLU 是線性的 (Linear)</li>
+<li data-label="C.">ReLU 輸出範圍是 (-1, 1) (Range [-1, 1])</li>
+<li data-label="D.">ReLU 計算複雜 (Complex Calculation)</li>
+</ol>
+<div class="explanation">💡 Sigmoid 在兩端飽和區梯度趨近 0，導致梯度消失。ReLU 簡單且在正區間無此問題，加速了深層網路的收斂。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">多層感知器 (MLP) 至少包含幾層？</div>
+<span class="q-id">#3427</span>
+</div>
+<ol class="options">
+<li data-label="A.">2 層 (輸入、輸出) (2 Layers: Input, Output)</li>
+<li class="correct" data-label="B.">3 層 (輸入、隱藏、輸出) (3 Layers: Input, Hidden, Output)</li>
+<li data-label="C.">無限層 (Infinite Layers)</li>
+<li data-label="D.">1 層 (輸入層) (1 Layer: Input)</li>
+</ol>
+<div class="explanation">💡 MLP 至少包含一個隱藏層，才能處理非線性問題。結構為：輸入層 -&gt; 隱藏層 -&gt; 輸出層。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">輸入層 (Input Layer) 的神經元數量取決於？</div>
+<span class="q-id">#3429</span>
+</div>
+<ol class="options">
+<li data-label="A.">輸出類別數量 (Number of Output Classes)</li>
+<li class="correct" data-label="B.">輸入數據的特徵維度 (Input Feature Dimensions)</li>
+<li data-label="C.">隨機決定 (Randomly Determined)</li>
+<li data-label="D.">隱藏層數量 (Number of Hidden Layers)</li>
+</ol>
+<div class="explanation">💡 輸入層負責接收原始數據，其神經元數量必須等於輸入向量的維度（特徵數）。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Leaky ReLU 解決了 ReLU 的什麼問題？</div>
+<span class="q-id">#3431</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">Dead ReLU 問題（神經元死亡） (Dead ReLU Problem)</li>
+<li data-label="B.">計算過慢 (Slow Computation)</li>
+<li data-label="C.">梯度爆炸 (Exploding Gradient)</li>
+<li data-label="D.">輸出範圍太大 (Output Range too Large)</li>
+</ol>
+<div class="explanation">💡 標準 ReLU 在負區間梯度為 0，可能導致神經元永遠不再激活（死亡）。Leaky ReLU 在負區間給予一個很小的斜率（如 0.01），保留了梯度流動。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">輸出層使用線性活化函數 (Linear Activation) 通常適用於？</div>
+<span class="q-id">#3433</span>
+</div>
+<ol class="options">
+<li data-label="A.">圖像生成 (Image Generation)</li>
+<li data-label="B.">多元分類 (Multi-class Classification)</li>
+<li class="correct" data-label="C.">迴歸問題 (預測任意實數) (Regression)</li>
+<li data-label="D.">二元分類 (Binary Classification)</li>
+</ol>
+<div class="explanation">💡 迴歸問題的目標值通常是無界的實數，因此輸出層不應使用限制範圍的活化函數（如 Sigmoid），直接輸出線性結果即可。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">萬能近似定理 (Universal Approximation Theorem) 指出？</div>
+<span class="q-id">#3435</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">只要有足夠多的神經元，一個單隱藏層的前饋網路可以以任意精度近似任何連續函數 (Approximates Any Continuous Function)</li>
+<li data-label="B.">神經網路永遠比決策樹好 (Always Better than Decision Trees)</li>
+<li data-label="C.">神經網路可以解決所有問題 (Solves All Problems)</li>
+<li data-label="D.">深度越深越好 (Deeper is Better)</li>
+</ol>
+<div class="explanation">💡 這是神經網路強大能力的理論基礎，證明了其擬合複雜函數的潛力（雖然實務上通常用多層網路更有效率）。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Dropout 層在訓練時的作用是？</div>
+<span class="q-id">#3437</span>
+</div>
+<ol class="options">
+<li data-label="A.">增加神經元 (Add Neurons)</li>
+<li class="correct" data-label="B.">隨機將部分神經元的輸出設為 0 (Randomly Zero Out Outputs)</li>
+<li data-label="C.">刪除神經元 (Delete Neurons)</li>
+<li data-label="D.">歸一化輸出 (Normalize Outputs)</li>
+</ol>
+<div class="explanation">💡 Dropout 透過在每次迭代中隨機「關閉」部分神經元，強迫網路學習更魯棒的特徵，是一種強大的正則化技術，防止過擬合。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">卷積神經網路 (CNN) 最適合處理什麼類型的數據？</div>
+<span class="q-id">#3439</span>
+</div>
+<ol class="options">
+<li data-label="A.">文字 (Text)</li>
+<li data-label="B.">表格數據 (Tabular Data)</li>
+<li data-label="C.">時間序列 (Time Series)</li>
+<li class="correct" data-label="D.">網格狀數據 (如圖像) (Grid-like Data / Images)</li>
+</ol>
+<div class="explanation">💡 CNN 利用卷積核提取局部特徵，並透過權重共享適應平移不變性，是處理圖像數據的標準架構。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：感知器 (Perceptron) 包含哪兩個主要運算步驟？</div>
+<span class="q-id">#3446</span>
+</div>
+<ol class="options">
+<li data-label="A.">加密與解密 (Encryption &amp; Decryption)</li>
+<li data-label="B.">積分與微分 (Integration &amp; Differentiation)</li>
+<li data-label="C.">排序與搜尋 (Sorting &amp; Searching)</li>
+<li class="correct" data-label="D.">加權求和與活化函數 (Weighted Sum &amp; Activation)</li>
+</ol>
+<div class="explanation">💡 感知器先計算輸入的線性組合 (z = wx + b)，再通過非線性活化函數輸出。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：ReLU (Rectified Linear Unit) 活化函數的主要優點是？</div>
+<span class="q-id">#3447</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">解決了梯度消失問題，且計算簡單 (Solves Vanishing Gradient &amp; Simple)</li>
+<li data-label="B.">可微分 (Differentiable)</li>
+<li data-label="C.">平滑 (Smooth)</li>
+<li data-label="D.">輸出在 (0, 1) 之間 (Output Range [0, 1])</li>
+</ol>
+<div class="explanation">💡 ReLU 在正區間梯度恆為 1，有效緩解了深層網路中梯度隨層數遞減的問題。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：Softmax 函數通常用於神經網路的哪一層？</div>
+<span class="q-id">#3448</span>
+</div>
+<ol class="options">
+<li data-label="A.">輸入層 (Input Layer)</li>
+<li class="correct" data-label="B.">多分類問題的輸出層 (Output Layer for Multi-class)</li>
+<li data-label="C.">隱藏層 (Hidden Layer)</li>
+<li data-label="D.">卷積層 (Convolutional Layer)</li>
+</ol>
+<div class="explanation">💡 Softmax 將輸出轉換為機率分佈（總和為 1），適合多類別分類。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：反向傳播 (Backpropagation) 演算法利用什麼數學原理來計算梯度？</div>
+<span class="q-id">#3449</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">連鎖律 (Chain Rule)</li>
+<li data-label="B.">泰勒展開 (Taylor Expansion)</li>
+<li data-label="C.">畢氏定理 (Pythagorean Theorem)</li>
+<li data-label="D.">傅立葉變換 (Fourier Transform)</li>
+</ol>
+<div class="explanation">💡 連鎖律允許我們將複合函數的導數分解為各層導數的乘積，從而將誤差反向傳遞。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：若神經網路沒有使用活化函數，它將等價於？</div>
+<span class="q-id">#3453</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">單層線性模型 (Single Layer Linear Model)</li>
+<li data-label="B.">SVM (Support Vector Machine)</li>
+<li data-label="C.">深度神經網路 (Deep Neural Network)</li>
+<li data-label="D.">決策樹 (Decision Tree)</li>
+</ol>
+<div class="explanation">💡 線性函數的組合仍然是線性的，無法擬合複雜的非線性邊界。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：Sigmoid 函數的一個主要缺點是？</div>
+<span class="q-id">#3455</span>
+</div>
+<ol class="options">
+<li data-label="A.">計算太簡單 (Too Simple)</li>
+<li class="correct" data-label="B.">容易導致梯度消失 (Vanishing Gradient)</li>
+<li data-label="C.">輸出範圍太大 (Output Range too Large)</li>
+<li data-label="D.">不連續 (Discontinuous)</li>
+</ol>
+<div class="explanation">💡 Sigmoid 在兩端飽和區的導數趨近於 0，導致深層網路無法有效更新權重。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：前向傳播 (Forward Propagation) 的主要目的是？</div>
+<span class="q-id">#3457</span>
+</div>
+<ol class="options">
+<li data-label="A.">更新權重 (Update Weights)</li>
+<li data-label="B.">儲存資料 (Store Data)</li>
+<li data-label="C.">初始化參數 (Initialize Parameters)</li>
+<li class="correct" data-label="D.">計算預測值與損失 (Calculate Predictions &amp; Loss)</li>
+</ol>
+<div class="explanation">💡 前向傳播將輸入數據通過網路推導出預測結果，並計算目前的誤差。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：隱藏層 (Hidden Layer) 的作用是？</div>
+<span class="q-id">#3459</span>
+</div>
+<ol class="options">
+<li data-label="A.">沒作用 (No Effect)</li>
+<li data-label="B.">輸出結果 (Output Result)</li>
+<li class="correct" data-label="C.">提取特徵與進行非線性變換 (Feature Extraction &amp; Non-linear Transformation)</li>
+<li data-label="D.">接收輸入 (Receive Input)</li>
+</ol>
+<div class="explanation">💡 多層隱藏層使神經網路能學習數據的階層式特徵表示。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：ReLU 函數在 x &lt; 0 時的輸出為？</div>
+<span class="q-id">#3461</span>
+</div>
+<ol class="options">
+<li data-label="A.">'1' (One)</li>
+<li data-label="B.">x</li>
+<li class="correct" data-label="C.">'0' (Zero)</li>
+<li data-label="D.">'-1' (Negative One)</li>
+</ol>
+<div class="explanation">💡 ReLU 定義為 max(0, x)，負值部分被截斷為 0。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：權重 (Weights) 在神經網路中代表？</div>
+<span class="q-id">#3463</span>
+</div>
+<ol class="options">
+<li data-label="A.">學習率 (Learning Rate)</li>
+<li data-label="B.">輸入數據的大小 (Input Data Size)</li>
+<li data-label="C.">神經元的數量 (Number of Neurons)</li>
+<li class="correct" data-label="D.">神經元的連接強度 (Connection Strength)</li>
+</ol>
+<div class="explanation">💡 權重決定了訊號在神經元間傳遞的放大或縮小倍率，是模型學習到的知識載體。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：偏權值 (Bias) 的作用類似於線性方程式中的？</div>
+<span class="q-id">#3465</span>
+</div>
+<ol class="options">
+<li data-label="A.">誤差</li>
+<li data-label="B.">變數</li>
+<li data-label="C.">斜率</li>
+<li class="correct" data-label="D.">截距</li>
+</ol>
+<div class="explanation">💡 Bias 允許活化函數左右平移，增加模型的擬合靈活性。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-neural-networks</span>
+</div>
+</div>
+<h3 class="section-heading">最佳化</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">損失函數 (Loss Function) 的作用是？</div>
+<span class="q-id">#3406</span>
+</div>
+<ol class="options">
+<li data-label="A.">減少模型的參數量 (Reduce Parameters)</li>
+<li data-label="B.">決定模型的架構 (Determine Architecture)</li>
+<li class="correct" data-label="C.">衡量模型預測值與真實值之間的誤差 (Measure Error)</li>
+<li data-label="D.">增加模型的準確率 (Increase Accuracy)</li>
+</ol>
+<div class="explanation">💡 損失函數量化了模型預測的好壞，最佳化的目標就是最小化這個函數值。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">對於二元分類問題，最常用的損失函數是？</div>
+<span class="q-id">#3407</span>
+</div>
+<ol class="options">
+<li data-label="A.">均方誤差 (MSE)</li>
+<li data-label="B.">Hinge Loss</li>
+<li class="correct" data-label="C.">交叉熵損失 (Cross-Entropy Loss)</li>
+<li data-label="D.">絕對誤差 (MAE)</li>
+</ol>
+<div class="explanation">💡 交叉熵損失能有效衡量兩個機率分佈（預測機率 vs 真實標籤）之間的差異，特別適合分類問題。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">SGD (Stochastic Gradient Descent) 與傳統梯度下降的主要區別是？</div>
+<span class="q-id">#3408</span>
+</div>
+<ol class="options">
+<li data-label="A.">SGD 不需要計算梯度 (No Gradient)</li>
+<li data-label="B.">SGD 只能用於線性模型 (Linear Models Only)</li>
+<li class="correct" data-label="C.">SGD 每次隨機抽取一個樣本（或小批次）計算梯度 (Random Sampling)</li>
+<li data-label="D.">SGD 使用所有數據計算梯度 (Batch Gradient Descent)</li>
+</ol>
+<div class="explanation">💡 傳統梯度下降每次更新都要遍歷整個數據集，計算量大；SGD 透過隨機採樣估計梯度，速度快且能跳出局部最佳解。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Adam 最佳化器結合了哪兩種技術的優點？</div>
+<span class="q-id">#3409</span>
+</div>
+<ol class="options">
+<li data-label="A.">L1 和 L2 正則化 (Regularization)</li>
+<li data-label="B.">SGD 和 Adagrad</li>
+<li class="correct" data-label="C.">Momentum 和 RMSprop (Momentum &amp; Adaptive Learning Rate)</li>
+<li data-label="D.">Dropout 和 Batch Normalization</li>
+</ol>
+<div class="explanation">💡 Adam 同時利用了一階矩估計（Momentum，慣性）和二階矩估計（RMSprop，自適應學習率），是目前最常用的最佳化器。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">均方誤差 (MSE) 最適合用於哪類問題？</div>
+<span class="q-id">#3412</span>
+</div>
+<ol class="options">
+<li data-label="A.">多元分類 (Multi-class Classification)</li>
+<li data-label="B.">二元分類 (Binary Classification)</li>
+<li class="correct" data-label="C.">迴歸 (Regression)，預測連續數值</li>
+<li data-label="D.">分群 (Clustering)</li>
+</ol>
+<div class="explanation">💡 MSE 衡量預測數值與真實數值之差的平方平均，是迴歸問題的標準損失函數。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">學習率 (Learning Rate) 過大會導致？</div>
+<span class="q-id">#3415</span>
+</div>
+<ol class="options">
+<li data-label="A.">模型準確率提高 (Improved Accuracy)</li>
+<li class="correct" data-label="B.">在最小值附近震盪甚至發散，無法收斂 (Oscillation or Divergence)</li>
+<li data-label="C.">梯度消失 (Vanishing Gradient)</li>
+<li data-label="D.">收斂速度極慢 (Slow Convergence)</li>
+</ol>
+<div class="explanation">💡 學習率決定步長。步長太大可能直接跨過山谷底部的最低點，甚至衝到對面更高的位置，導致無法收斂。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Momentum (動量) 技術的主要目的是？</div>
+<span class="q-id">#3417</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">加速收斂並抑制震盪 (Accelerate Convergence &amp; Dampen Oscillations)</li>
+<li data-label="B.">自動調整學習率 (Auto Adjust Learning Rate)</li>
+<li data-label="C.">減少參數量 (Reduce Parameters)</li>
+<li data-label="D.">防止過擬合 (Prevent Overfitting)</li>
+</ol>
+<div class="explanation">💡 動量模擬物理慣性，讓參數更新方向保持一致，能加速通過平緩區域並減少在峽谷中的震盪。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Epoch 在深度學習訓練中代表什麼？</div>
+<span class="q-id">#3420</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">整個訓練數據集完整通過模型一次 (前向+反向) (Full Dataset Pass)</li>
+<li data-label="B.">一個批次 (Batch) 的數據通過模型</li>
+<li data-label="C.">一次參數更新 (One Update Step)</li>
+<li data-label="D.">訓練結束 (Training End)</li>
+</ol>
+<div class="explanation">💡 一個 Epoch 意味著模型已經看過所有的訓練數據一次。通常需要多個 Epoch 才能訓練收斂。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">批次大小 (Batch Size) 對訓練有什麼影響？</div>
+<span class="q-id">#3422</span>
+</div>
+<ol class="options">
+<li data-label="A.">批次越小，梯度估計越準確 (Smaller Batch, More Accurate Gradient)</li>
+<li data-label="B.">批次越大，泛化能力越好 (Larger Batch, Better Generalization)</li>
+<li class="correct" data-label="C.">批次越大，訓練越快，但記憶體需求越高 (Faster but High Memory)</li>
+<li data-label="D.">批次大小不影響訓練 (No Effect)</li>
+</ol>
+<div class="explanation">💡 大批次能利用矩陣運算的並行性加速訓練，但需要更多 GPU 記憶體；小批次引入更多雜訊，有時有助於泛化。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">權重初始化 (Weight Initialization) 若將所有權重設為 0，會發生什麼？</div>
+<span class="q-id">#3424</span>
+</div>
+<ol class="options">
+<li data-label="A.">模型訓練非常快 (Fast Training)</li>
+<li class="correct" data-label="B.">喪失對稱性 (Symmetry Breaking) 失敗，導致所有神經元學到相同特徵</li>
+<li data-label="C.">模型準確率最高 (Highest Accuracy)</li>
+<li data-label="D.">不會有影響 (No Effect)</li>
+</ol>
+<div class="explanation">💡 若所有權重初始化為 0，則同一層的所有神經元在反向傳播時獲得的梯度都相同，導致它們永遠同步更新，無法學習不同的特徵。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">RMSprop 最佳化器的主要特點是？</div>
+<span class="q-id">#3426</span>
+</div>
+<ol class="options">
+<li data-label="A.">不更新權重 (No Weight Update)</li>
+<li class="correct" data-label="B.">自適應調整學習率 (Adaptive Learning Rate)</li>
+<li data-label="C.">使用動量 (Use Momentum)</li>
+<li data-label="D.">隨機梯度下降 (Stochastic Gradient Descent)</li>
+</ol>
+<div class="explanation">💡 RMSprop 通過除以梯度的滑動平均平方根來調整每個參數的學習率，解決了 Adagrad 學習率單調遞減過快的問題。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">什麼是「早停 (Early Stopping)」？</div>
+<span class="q-id">#3428</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">當驗證集誤差不再下降（甚至開始上升）時停止訓練 (Stop when Validation Error Plateaus/Increases)</li>
+<li data-label="B.">在訓練開始前停止 (Stop Before Training)</li>
+<li data-label="C.">當訓練集誤差為 0 時停止 (Stop when Training Error is 0)</li>
+<li data-label="D.">固定訓練 10 個 Epoch (Fixed Epochs)</li>
+</ol>
+<div class="explanation">💡 早停是一種正則化技術，通過監控驗證集表現來決定何時停止訓練，避免模型過度擬合訓練數據。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">學習率衰減 (Learning Rate Decay) 的目的是？</div>
+<span class="q-id">#3430</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">隨著訓練進行逐漸減小學習率 (Decay Learning Rate over Time)</li>
+<li data-label="B.">隨機改變學習率 (Random Learning Rate)</li>
+<li data-label="C.">增加學習率以加速訓練 (Increase Learning Rate)</li>
+<li data-label="D.">保持學習率不變 (Constant Learning Rate)</li>
+</ol>
+<div class="explanation">💡 初期使用大機率快速接近最佳解，後期減小學習率可以避免在最小值附近震盪，從而收斂得更精確。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">梯度爆炸 (Exploding Gradient) 通常發生在？</div>
+<span class="q-id">#3432</span>
+</div>
+<ol class="options">
+<li data-label="A.">淺層網路 (Shallow Networks)</li>
+<li data-label="B.">學習率過小 (Small Learning Rate)</li>
+<li class="correct" data-label="C.">循環神經網路 (RNN) 處理長序列時 (RNN with Long Sequences)</li>
+<li data-label="D.">使用 ReLU 時 (Using ReLU)</li>
+</ol>
+<div class="explanation">💡 在 RNN 中，梯度隨時間步長反向傳播，若權重矩陣特徵值大於 1，梯度會指數級增長，導致數值溢出 (NaN)。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">梯度剪裁 (Gradient Clipping) 用於解決什麼問題？</div>
+<span class="q-id">#3434</span>
+</div>
+<ol class="options">
+<li data-label="A.">過擬合 (Overfitting)</li>
+<li data-label="B.">欠擬合 (Underfitting)</li>
+<li class="correct" data-label="C.">梯度爆炸 (Exploding Gradient)</li>
+<li data-label="D.">梯度消失 (Vanishing Gradient)</li>
+</ol>
+<div class="explanation">💡 當檢測到梯度範數超過閾值時，強制將其縮放（剪裁）到該閾值內，防止梯度爆炸導致權重更新過大。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">局部最小值 (Local Minima) 在高維空間中常見嗎？</div>
+<span class="q-id">#3436</span>
+</div>
+<ol class="options">
+<li data-label="A.">不存在 (Non-existent)</li>
+<li data-label="B.">只有一個 (Only One)</li>
+<li class="correct" data-label="C.">不常見，更常見的是鞍點 (Saddle Points)</li>
+<li data-label="D.">非常常見，是最佳化的主要障礙 (Very Common)</li>
+</ol>
+<div class="explanation">💡 研究表明，在高維非凸優化中，真正的局部極小值很少見，大部分梯度為 0 的點其實是鞍點（一個方向上升，一個方向下降）。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">為什麼要對輸入數據進行標準化 (Normalization)？</div>
+<span class="q-id">#3438</span>
+</div>
+<ol class="options">
+<li data-label="A.">為了美觀 (Aesthetics)</li>
+<li data-label="B.">為了增加數據量 (Increase Data)</li>
+<li class="correct" data-label="C.">為了加速梯度下降收斂，使損失曲面更圓滑 (Accelerate Convergence)</li>
+<li data-label="D.">為了減少特徵 (Reduce Features)</li>
+</ol>
+<div class="explanation">💡 若特徵尺度不一，損失曲面會呈現狹長的橢圓形，導致梯度下降路徑曲折且收斂慢。標準化後曲面接近圓形，梯度直指圓心，收斂更快。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">哪種損失函數對於異常值 (Outliers) 較為魯棒 (Robust)？</div>
+<span class="q-id">#3440</span>
+</div>
+<ol class="options">
+<li data-label="A.">Cross-Entropy (交叉熵)</li>
+<li data-label="B.">MSE (均方誤差) (Mean Squared Error)</li>
+<li data-label="C.">Exponential Loss (指數損失)</li>
+<li class="correct" data-label="D.">MAE (平均絕對誤差) (Mean Absolute Error)</li>
+</ol>
+<div class="explanation">💡 MSE 會將誤差平方，導致異常值的巨大誤差主導損失函數。MAE 僅計算絕對差值，對異常值較不敏感。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：對於二元分類問題，最適合的損失函數是？</div>
+<span class="q-id">#3450</span>
+</div>
+<ol class="options">
+<li data-label="A.">Hinge Loss</li>
+<li class="correct" data-label="B.">交叉熵損失 (Cross-Entropy Loss)</li>
+<li data-label="C.">絕對誤差 (MAE)</li>
+<li data-label="D.">均方誤差 (MSE)</li>
+</ol>
+<div class="explanation">💡 交叉熵損失衡量兩個機率分佈的差異，特別適合分類任務。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：SGD (隨機梯度下降) 與傳統 GD (梯度下降) 的主要區別是？</div>
+<span class="q-id">#3451</span>
+</div>
+<ol class="options">
+<li data-label="A.">SGD 不需要梯度 (No Gradient)</li>
+<li class="correct" data-label="B.">SGD 每次只用一個樣本 (或小批次) 更新參數，速度快但有雜訊 (Single Sample / Mini-batch)</li>
+<li data-label="C.">SGD 用全部樣本 (Full Batch)</li>
+<li data-label="D.">SGD 只能用於線性模型 (Linear Models Only)</li>
+</ol>
+<div class="explanation">💡 SGD 犧牲了更新方向的穩定性換取計算速度與跳出局部最佳解的能力。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：Adam 最佳化器結合了哪兩種技術的優點？</div>
+<span class="q-id">#3452</span>
+</div>
+<ol class="options">
+<li data-label="A.">RNN 與 CNN (RNN &amp; CNN)</li>
+<li data-label="B.">SGD 與 GD (SGD &amp; GD)</li>
+<li data-label="C.">L1 與 L2 正則化 (L1 &amp; L2 Regularization)</li>
+<li class="correct" data-label="D.">Momentum 與 RMSprop (Momentum &amp; RMSprop)</li>
+</ol>
+<div class="explanation">💡 Adam 同時利用一階矩（動量）與二階矩（自適應學習率）來優化更新過程。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：均方誤差 (MSE) 最常用於哪類問題？</div>
+<span class="q-id">#3454</span>
+</div>
+<ol class="options">
+<li data-label="A.">分類 (Classification)</li>
+<li class="correct" data-label="B.">迴歸 (Regression)</li>
+<li data-label="C.">分群 (Clustering)</li>
+<li data-label="D.">降維 (Dimensionality Reduction)</li>
+</ol>
+<div class="explanation">💡 MSE 衡量預測數值與真實數值的距離，適合連續值的預測。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：學習率 (Learning Rate) 控制的是？</div>
+<span class="q-id">#3456</span>
+</div>
+<ol class="options">
+<li data-label="A.">訓練資料的數量 (Amount of Training Data)</li>
+<li data-label="B.">神經元數量 (Number of Neurons)</li>
+<li data-label="C.">模型的大小 (Model Size)</li>
+<li class="correct" data-label="D.">參數更新的步長 (Step Size of Parameter Update)</li>
+</ol>
+<div class="explanation">💡 學習率決定了每次迭代向梯度反方向移動的距離。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：帶動量的 SGD (SGD with Momentum) 模擬了物理中的什麼現象？</div>
+<span class="q-id">#3458</span>
+</div>
+<ol class="options">
+<li data-label="A.">浮力 (Buoyancy)</li>
+<li data-label="B.">重力 (Gravity)</li>
+<li class="correct" data-label="C.">慣性 (Inertia)</li>
+<li data-label="D.">摩擦力 (Friction)</li>
+</ol>
+<div class="explanation">💡 動量項讓更新方向具有持續性，能加速收斂並抑制震盪。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：損失函數 (Loss Function) 的值越小代表？</div>
+<span class="q-id">#3460</span>
+</div>
+<ol class="options">
+<li data-label="A.">模型欠擬合 (Underfitting)</li>
+<li class="correct" data-label="B.">模型表現越好 (預測誤差越小) (Better Performance / Smaller Error)</li>
+<li data-label="C.">模型表現越差 (Worse Performance)</li>
+<li data-label="D.">模型過擬合 (Overfitting)</li>
+</ol>
+<div class="explanation">💡 損失函數定義了「錯誤」的程度，最小化損失即最大化準確度。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：Epoch 在深度學習訓練中代表？</div>
+<span class="q-id">#3462</span>
+</div>
+<ol class="options">
+<li data-label="A.">一次迭代 (One Iteration)</li>
+<li data-label="B.">一秒鐘 (One Second)</li>
+<li class="correct" data-label="C.">所有訓練資料完整通過模型一次 (Full Dataset Pass)</li>
+<li data-label="D.">一層網路 (One Network Layer)</li>
+</ol>
+<div class="explanation">💡 一個 Epoch 意味著模型已經看過所有的訓練樣本一遍。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-optimization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：Mini-batch 的大小對訓練有何影響？</div>
+<span class="q-id">#3464</span>
+</div>
+<ol class="options">
+<li data-label="A.">只影響預測速度 (Only Affects Prediction Speed)</li>
+<li data-label="B.">只影響模型大小 (Only Affects Model Size)</li>
+<li class="correct" data-label="C.">影響梯度估計的準確度與記憶體使用量 (Affects Gradient Accuracy &amp; Memory Usage)</li>
+<li data-label="D.">沒影響 (No Effect)</li>
+</ol>
+<div class="explanation">💡 較大的 Batch 梯度較穩但吃記憶體，較小的 Batch 雜訊多但有助於泛化。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-optimization</span>
+</div>
+</div>
+<h3 class="section-heading">深度思考情境題</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：你正在訓練一個深層神經網路，發現前幾層的權重幾乎不更新，導致模型無法學習。檢查後發現你使用了 Sigmoid 活化函數。這是什麼問題？應如何解決？</div>
+<span class="q-id">#3441</span>
+</div>
+<ol class="options">
+<li data-label="A.">梯度爆炸；應使用梯度剪裁 (Exploding Gradient / Gradient Clipping)</li>
+<li class="correct" data-label="B.">梯度消失；應改用 ReLU 活化函數 (Vanishing Gradient / Use ReLU)</li>
+<li data-label="C.">學習率過大；應降低學習率 (High Learning Rate / Decrease Rate)</li>
+<li data-label="D.">過擬合；應使用 Dropout (Overfitting / Use Dropout)</li>
+</ol>
+<div class="explanation">💡 Sigmoid 的導數最大值僅為 0.25，且在飽和區趨近於 0。在深層網路中，多個小於 1 的導數連乘會導致梯度迅速消失。改用 ReLU (導數為 1) 是標準解決方案。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-scenario</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：你使用 Adam 最佳化器訓練模型，初期損失下降很快，但到後期損失在一個較高值附近震盪，無法進一步下降。你應該嘗試調整什麼？</div>
+<span class="q-id">#3442</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">降低學習率 (Learning Rate Decay)</li>
+<li data-label="B.">增加批次大小 (Increase Batch Size)</li>
+<li data-label="C.">增加模型層數 (Increase Layers)</li>
+<li data-label="D.">更換成 SGD (Switch to SGD)</li>
+</ol>
+<div class="explanation">💡 雖然 Adam 有自適應學習率，但基礎學習率若設得太大，後期仍可能導致在最小值附近震盪。手動或自動降低學習率 (Learning Rate Schedule) 可以幫助模型在最後階段「沉澱」到更佳的極小值。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-scenario</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：你的模型在訓練集上表現極好 (Loss 接近 0)，但在測試集上表現很差。你決定使用 Dropout。請問 Dropout 應該加在哪裡？測試階段 (Inference) 需要保留 Dropout 嗎？</div>
+<span class="q-id">#3443</span>
+</div>
+<ol class="options">
+<li data-label="A.">隨便加；測試時保留 (Random / Keep)</li>
+<li data-label="B.">加在輸出層；測試時保留 (Output Layer / Keep)</li>
+<li class="correct" data-label="C.">加在隱藏層後；測試時應移除 (或將權重乘以保留率) (Hidden Layer / Remove or Scale)</li>
+<li data-label="D.">加在輸入層；測試時保留 (Input Layer / Keep)</li>
+</ol>
+<div class="explanation">💡 Dropout 通常加在全連接層之後。在訓練時它隨機關閉神經元以防止過擬合；在測試時，我們希望利用整個網路的能力，因此不應關閉神經元，但需要對權重進行縮放 (Scaling) 以保持期望值一致。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-scenario</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：你正在處理一個多標籤分類問題 (Multi-label Classification)，即一張圖片可能同時包含「貓」和「狗」。你的輸出層應該有多少個神經元？使用什麼活化函數？</div>
+<span class="q-id">#3444</span>
+</div>
+<ol class="options">
+<li data-label="A.">N 個神經元 (N=類別數)；Softmax (N Neurons / Softmax)</li>
+<li data-label="B.">1 個神經元；Sigmoid (1 Neuron / Sigmoid)</li>
+<li data-label="C.">N 個神經元；ReLU (N Neurons / ReLU)</li>
+<li class="correct" data-label="D.">N 個神經元 (N=類別數)；Sigmoid (N Neurons / Sigmoid)</li>
+</ol>
+<div class="explanation">💡 Softmax 強制所有類別機率和為 1，意味著類別互斥（單選）。對於多標籤問題（複選），每個類別是獨立的，應對每個輸出節點獨立使用 Sigmoid，使其輸出代表該類別存在的機率 (0~1)。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-scenario</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">情境：在訓練過程中，Loss 突然變成 NaN (Not a Number)。這最可能是什麼原因造成的？應如何排查？</div>
+<span class="q-id">#3445</span>
+</div>
+<ol class="options">
+<li data-label="A.">數據量太少 (Insufficient Data)</li>
+<li class="correct" data-label="B.">梯度爆炸 (Exploding Gradient) 或除以零錯誤 (Division by Zero)</li>
+<li data-label="C.">模型太簡單 (Model too Simple)</li>
+<li data-label="D.">學習率過小 (Learning Rate too Small)</li>
+</ol>
+<div class="explanation">💡 Loss 變 NaN 通常意味著數值計算溢出。常見原因包括學習率過大導致參數更新飛出邊界、梯度爆炸（特別是在 RNN 中），或在計算 Log 時輸入了 0 或負數。梯度剪裁和降低學習率是常見對策。</div>
+<div class="tags">
+<span class="tag">chap-m1-ch4</span>
+<span class="tag">sec-scenario</span>
+</div>
+</div>
+</div>
+</body>
+</html>

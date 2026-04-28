@@ -1,447 +1,447 @@
 questions:
-- id: 7201
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 簡介與設計動機
-  text: MCP (Model Context Protocol) 主要解決什麼問題？
-  type: multiple_choice
-  options:
-  - 提升大型語言模型的推理速度
-  - 解決 AI 模型與外部工具整合的碎片化問題，提供標準化協議
-  - 改善 LLM 的訓練效率
-  - 降低 AI 模型的幻覺（Hallucination）問題
-  correct_index: 1
-  explanation: MCP 提供統一標準，讓 AI 系統與工具的整合從 M×N 個客製化整合簡化為 M+N 個標準實作，解決碎片化問題。
-  tags:
-  - chap-m5-ch2
-  - sec-mcp-intro
-  usage: quiz
-- id: 7202
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 系統架構
-  text: 在 MCP 架構中，「主機 (Host)」的主要職責是什麼？
-  type: multiple_choice
-  options:
-  - 直接儲存和管理工具的程式碼邏輯
-  - 管理 MCP 客戶端生命週期、協調 LLM 與伺服器通訊，並執行授權決策
-  - 只負責將使用者輸入轉換為 JSON 格式
-  - 充當 LLM 和使用者之間的翻譯層
-  correct_index: 1
-  explanation: 主機是整個 MCP 系統的協調中心，負責管理客戶端、執行安全策略，以及在 LLM 和 MCP 伺服器之間傳遞訊息。
-  tags:
-  - chap-m5-ch2
-  - sec-mcp-architecture
-  usage: quiz
-- id: 7203
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 系統架構
-  text: 在 MCP 架構中，一個「客戶端 (Client)」維護的連線關係是？
-  type: multiple_choice
-  options:
-  - 一個客戶端可同時連線多個 MCP 伺服器
-  - 每個客戶端維護與單一 MCP 伺服器的一對一連線
-  - 客戶端直接與使用者連線，不與伺服器通訊
-  - 多個客戶端共享同一個 MCP 伺服器連線
-  correct_index: 1
-  explanation: MCP 架構設計為每個客戶端維護與單一 MCP 伺服器的連線，主機可以建立多個客戶端以同時連線不同的伺服器。
-  tags:
-  - chap-m5-ch2
-  - sec-mcp-architecture
-  usage: quiz
-- id: 7204
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 核心元件
-  text: MCP 中的「資源 (Resources)」與「工具 (Tools)」的主要差異是什麼？
-  type: multiple_choice
-  options:
-  - 資源是 LLM 可讀取的資料，工具是 LLM 可執行的操作
-  - 資源比工具更安全，不需要使用者授權
-  - 工具只能回傳文字，資源可回傳二進位資料
-  - 資源和工具功能完全相同，只是命名不同
-  correct_index: 0
-  explanation: 資源（Resources）代表可讀取的資料（如檔案、資料庫記錄），透過 URI 定位；工具（Tools）代表可執行的操作（如搜尋、計算），由
-    LLM 主動呼叫。
-  tags:
-  - chap-m5-ch2
-  - sec-mcp-components
-  usage: quiz
-- id: 7205
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 傳輸機制
-  text: MCP 的「stdio 傳輸」與「HTTP + SSE 傳輸」最主要的適用場景差異是什麼？
-  type: multiple_choice
-  options:
-  - stdio 適合遠端伺服器，HTTP + SSE 適合本地程式
-  - stdio 適合本地部署（透過子程序），HTTP + SSE 適合遠端/雲端部署
-  - stdio 速度更快但不安全，HTTP + SSE 較慢但安全
-  - 兩者完全相同，只是語法不同
-  correct_index: 1
-  explanation: stdio 傳輸透過標準輸入/輸出管道與本地子程序通訊，適合本地安全部署；HTTP + SSE 支援跨網路存取，適合雲端或遠端 MCP
-    伺服器。
-  tags:
-  - chap-m5-ch2
-  - sec-mcp-transport
-  usage: quiz
-- id: 7206
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: 開發 MCP 伺服器
-  text: 使用 Python MCP SDK (FastMCP) 定義工具時，工具的「description」欄位最重要的用途是什麼？
-  type: multiple_choice
-  options:
-  - 用於顯示給最終使用者看的說明文字
-  - LLM 根據此描述決定何時以及如何呼叫此工具
-  - 用於產生 API 文件
-  - 定義工具的輸入參數類型
-  correct_index: 1
-  explanation: 工具的描述 (description) 是 LLM 判斷在什麼情況下應呼叫此工具的關鍵依據，清晰的描述能顯著提升工具被正確選用的機率。
-  tags:
-  - chap-m5-ch2
-  - sec-mcp-server-dev
-  usage: quiz
-- id: 7207
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 安全考量
-  text: 依照 MCP 安全設計，什麼是防範「提示注入攻擊 (Prompt Injection)」的最佳實踐？
-  type: multiple_choice
-  options:
-  - 禁止 LLM 呼叫任何外部工具
-  - MCP 伺服器應對所有來自 LLM 的輸入進行驗證，不信任任何未經驗證的內容
-  - 只使用官方提供的 MCP 伺服器
-  - 將所有工具呼叫結果加密後再回傳
-  correct_index: 1
-  explanation: 提示注入攻擊可能透過惡意資料偽裝成合法指令。MCP 伺服器應對輸入進行嚴格驗證，避免將未受信任的資料直接用於執行系統命令或資料庫查詢。
-  tags:
-  - chap-m5-ch2
-  - sec-mcp-security
-  usage: quiz
-- id: 7208
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: AI 代理人基礎概念
-  text: 在 AI 代理人的運作中，「思考-行動-觀察循環 (Thought-Action-Observation Cycle)」又被稱為什麼？
-  type: multiple_choice
-  options:
-  - MCP 模式
-  - Reflexion 模式
-  - ReAct 模式
-  - RAG 模式
-  correct_index: 2
-  explanation: 思考-行動-觀察循環也被稱為 ReAct (Reason + Act) 模式，是代理人進行內部推理並透過工具與環境互動的核心運作方式。
-  tags:
-  - chap-m5-ch2
-  - sec-agent-fundamentals
-  usage: quiz
-- id: 7209
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: 代理人可觀測性與評估
-  text: 在監控 AI 代理人的可觀測性時，通常會透過何種技術來捕獲運作時的追蹤 (Traces)、日誌與指標？
-  type: multiple_choice
-  options:
-  - 提示詞工程 (Prompt Engineering)
-  - 儀器化 (Instrumentation)
-  - 向量資料庫檢索
-  - 記憶壓縮 (Memory Compression)
-  correct_index: 1
-  explanation: 儀器化 (Instrumentation) 是使用系統（例如 OpenTelemetry）來捕獲代理人運作時的追蹤、日誌與指標，藉此擺脫「黑箱」行為。
-  tags:
-  - chap-m5-ch2
-  - sec-agent-observability
-  usage: quiz
-- id: 7210
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 簡介與設計動機
-  text: MCP (Model Context Protocol) 旨在解決 AI 生態系統中的哪一個痛點？
-  type: multiple_choice
-  options:
-  - 訓練最新大型語言模型的整體運算成本過於高昂
-  - AI 系統與各種外部資料源整合時的嚴重碎片化問題
-  - 本地端執行伺服器時的記憶體管理與分配效率太低
-  - 開發者在設計提示詞工程時面臨的語法難度過於複雜
-  correct_index: 1
-  explanation: 隨著工具與資料源激增，MCP 提供標準化協議來消弭 M×N 的客製化整合噩夢。
-  tags:
-  - chap-m5-ch2
-  usage: quiz
-- id: 7211
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 系統架構
-  text: 在 MCP 架構中，主要負責管理安全策略與使用者授權決策的元件是？
-  type: multiple_choice
-  options:
-  - 直接與伺服器溝通的 MCP 客戶端應用程式
-  - 統籌管理與協調的 MCP 主機 (Host) 系統
-  - 提供具體工具與資源的外部 MCP 伺服器
-  - 負責執行所有推論工作的大型語言模型本身
-  correct_index: 1
-  explanation: MCP 主機 (Host) 控制整個系統的生命週期，並確保使用者在呼叫高風險工具時能進行審核。
-  tags:
-  - chap-m5-ch2
-  usage: quiz
-- id: 7212
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 核心元件
-  text: 一個標準的 MCP 伺服器可以同時對外提供哪些核心功能元件？
-  type: multiple_choice
-  options:
-  - 工具 (Tools)、資源 (Resources) 與提示範本 (Prompts)
-  - 模型本身的神經網路權重與大量的歷史訓練資料
-  - 針對終端使用者設計的圖形介面與豐富的前端佈景
-  - 底層運作所需的網路伺服器與高效能關聯式資料庫
-  correct_index: 0
-  explanation: MCP 伺服器主要透過暴露工具、資源和提示範本來為代理人擴展能力。
-  tags:
-  - chap-m5-ch2
-  usage: quiz
-- id: 7213
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 核心元件
-  text: MCP 中的「Prompts (提示範本)」所扮演的主要角色是什麼？
-  type: multiple_choice
-  options:
-  - 強制模型遵守所有內建的安全規範與禁止事項
-  - 提供標準化的任務起始上下文與可重用的對話模板
-  - 自動記錄使用者過去所輸入過的所有指令與日誌
-  - 在使用者輸入過慢時自動幫忙補齊尚未打完的文字
-  correct_index: 1
-  explanation: 提示範本允許伺服器提供預先定義好的工作流程起點，幫助代理人快速進入狀況。
-  tags:
-  - chap-m5-ch2
-  usage: quiz
-- id: 7214
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 傳輸機制
-  text: 當我們在本地電腦開發與部署 MCP 伺服器時，最常使用的傳輸機制是？
-  type: multiple_choice
-  options:
-  - 適合跨網路存取的 HTTP + SSE 遠端連線傳輸機制
-  - 透過本地子程序建立的 stdio (標準輸入輸出) 管道
-  - 用於即時通訊服務的 WebSockets 雙向資料傳輸協定
-  - 專為微服務架構設計的 gRPC 遠端程序高速呼叫協定
-  correct_index: 1
-  explanation: stdio 傳輸方式安全性高且非常適合本地環境，因為它依賴本機程序的執行權限。
-  tags:
-  - chap-m5-ch2
-  usage: quiz
-- id: 7215
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 簡介與設計動機
-  text: MCP 架構如何顯著提升 AI 代理人的「工具發現」能力？
-  type: multiple_choice
-  options:
-  - 讓代理人透過自動爬蟲不斷搜尋網路上的可用 API 工具
-  - 讓伺服器能動態提供可用工具清單與詳細的使用參數說明
-  - 預先將全球所有的工具特徵寫死在大型語言模型的權重中
-  - 強迫使用者在使用前手動輸入所有工具的底層實作原始碼
-  correct_index: 1
-  explanation: MCP 客戶端能直接向伺服器查詢可用清單，代理人因此能動態發掘並使用新工具。
-  tags:
-  - chap-m5-ch2
-  usage: quiz
-- id: 7216
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 系統架構
-  text: 為什麼開發者在設計 MCP 伺服器時，應該盡可能保持「輕量級」？
-  type: multiple_choice
-  options:
-  - 為了節省使用者電腦上寶貴的硬碟與記憶體儲存空間
-  - 為了專注暴露特定領域的能力並遵循單一職責原則
-  - 為了讓大型語言模型可以直接下載並分析其內部架構
-  - 為了避免被作業系統內建的防毒軟體誤判為惡意程式
-  correct_index: 1
-  explanation: 輕量級的伺服器專注於做好一件事情，能提升系統整體的穩定度與易維護性。
-  tags:
-  - chap-m5-ch2
-  usage: quiz
-- id: 7217
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: 代理人可觀測性與評估
-  text: 在系統可觀測性 (Observability) 領域中，「Span」代表什麼意義？
-  type: multiple_choice
-  options:
-  - 代理人處理完整個使用者對話任務的總計花費時間
-  - 系統內單一操作或函數執行的具體起始與結束時間區間
-  - 大型語言模型在一次生成過程中所輸出的總字數統計
-  - 系統伺服器在執行複雜推論時記憶體使用的最高峰值
-  correct_index: 1
-  explanation: Span 用來標記與測量特定操作的持續時間，幫助開發者定位效能瓶頸。
-  tags:
-  - chap-m5-ch2
-  usage: quiz
-- id: 7218
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: 代理人可觀測性與評估
-  text: 為 AI 代理人實施儀器化 (Instrumentation) 的最主要好處是什麼？
-  type: multiple_choice
-  options:
-  - 能大幅度降低呼叫各大雲端模型 API 的整體使用成本
-  - 讓代理人的內部決策過程與工具呼叫狀況變得完全透明化
-  - 能夠自動偵測並完全修正大型語言模型產生的所有錯誤
-  - 直接取代傳統的軟體單元測試與人工驗收測試標準流程
-  correct_index: 1
-  explanation: 透過追蹤系統運作，開發者能洞察代理人的思考邏輯，使「黑箱」模型具備可解釋性。
-  tags:
-  - chap-m5-ch2
-  usage: quiz
-- id: 7219
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: 代理人可觀測性與評估
-  text: 在處理多個工具呼叫時，系統日誌常常變得難以閱讀，引入可觀測性工具可以如何解決？
-  type: multiple_choice
-  options:
-  - 將所有的系統日誌全數刪除以節省開發人員的閱讀時間
-  - 透過結構化的追蹤 (Traces) 將日誌與特定的操作上下文綁定
-  - 自動把所有日誌翻譯成更易讀的另一種人類自然語言
-  - 強迫模型在每次操作後都必須用語音播報執行結果
-  correct_index: 1
-  explanation: 結構化追蹤可以將錯綜複雜的系統日誌關聯到特定的請求上，大幅簡化除錯難度。
-  tags:
-  - chap-m5-ch2
-  usage: quiz
-- id: 7220
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: 代理人可觀測性與評估
-  text: 當代理人發生非預期行為時，哪一種觀測工具最能有效幫助開發者除錯？
-  type: multiple_choice
-  options:
-  - 直接匯出並分析大型語言模型的內部神經網路權重分佈圖
-  - 透過代理人的追蹤日誌 (Traces) 還原當時的決策與環境上下文
-  - 檢查使用者的瀏覽器搜尋記錄以推測其真實的問題意圖
-  - 監控伺服器作業系統的 CPU 佔用率與網路頻寬使用情況
-  correct_index: 1
-  explanation: 追蹤日誌能清晰重現代理人收到的提示詞、工具回傳結果與其當時的決策過程。
-  tags:
-  - chap-m5-ch2
-  usage: quiz
-- id: 7221
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 系統架構
-  text: 在標準的 MCP 系統架構設計中，Client 和 Server 之間的連線關係是？
-  type: multiple_choice
-  options:
-  - 客戶端將訊息向所有伺服器廣播的一對多廣播模式
-  - 每個客戶端應用程式維護與單一伺服器的一對一綁定連線
-  - 多個客戶端共享同一個伺服器狀態的多對多無狀態連線
-  - 多個伺服器輪流服務一個客戶端的多對一輪詢連線模式
-  correct_index: 1
-  explanation: 一對一的連線設計簡化了狀態管理，讓客戶端與伺服器間的溝通更加清晰可靠。
-  tags:
-  - chap-m5-ch2
-  usage: quiz
-- id: 7222
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 安全考量
-  text: 面對來自大型語言模型 (LLM) 的工具呼叫請求，MCP 伺服器應當採取什麼安全態度？
-  type: multiple_choice
-  options:
-  - 百分之百信任所有來自知名 LLM 提供商的工具呼叫參數
-  - 伺服器端必須對所有傳入的參數進行嚴格的驗證與邊界檢查
-  - 將所有可能被呼叫的工具設為公開存取以確保最高相容性
-  - 為了節省運算效能，盡量停用伺服器端所有的日誌記錄功能
-  correct_index: 1
-  explanation: 為了防止提示詞注入與幻覺帶來的危害，伺服器絕不可盲目信任 LLM 傳來的資料。
-  tags:
-  - chap-m5-ch2
-  usage: quiz
-- id: 7223
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 簡介與設計動機
-  text: MCP 架構本身是如何促進各種不同的 AI 模型之間的互操作性 (Interoperability) 的？
-  type: multiple_choice
-  options:
-  - 透過強制要求世界上所有的模型都必須使用完全相同的內部權重
-  - 透過提供一套標準化的通用介面來描述與呼叫外部工具與資源
-  - 透過將所有競爭對手的模型統一部署在同一台巨大的實體伺服器
-  - 透過設計一個專屬的私有通訊協定讓模型之間可以直接互相通訊
-  correct_index: 1
-  explanation: 標準化的介面讓開發者不需修改整合程式碼，就能無痛切換底層使用的語言模型。
-  tags:
-  - chap-m5-ch2
-  usage: quiz
-- id: 7224
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 核心元件
-  text: 資源 (Resources) 與工具 (Tools) 最大的本質差異在於？
-  type: multiple_choice
-  options:
-  - 資源具備改變外部環境副作用的能力，工具僅能用於靜態讀取
-  - 資源是被動讀取的靜態資料，工具則是由模型主動呼叫的動態操作
-  - 資源需要複雜的非對稱加密傳輸，工具則可以直接使用明文傳輸
-  - 資源只能在本地端電腦上運作，工具則只能部署於雲端伺服器上
-  correct_index: 1
-  explanation: 資源是被動讀取的上下文資料，而工具是模型主動決定執行的動態操作。
-  tags:
-  - chap-m5-ch2
-  usage: quiz
-- id: 7225
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: 代理人可觀測性與評估
-  text: 在系統可觀測性資料中的「Event (事件)」，通常被用來記錄什麼樣的資訊？
-  type: multiple_choice
-  options:
-  - 整個應用程式啟動到結束所持續數分鐘的長時間運作週期
-  - 系統在某個特定時間點所發生的重要動作、警告或狀態變化
-  - 代理人模型在完成訓練後的完整神經網路權重與參數清單
-  - 執行該次對話任務時伺服器硬碟剩餘可用空間的動態變化
-  correct_index: 1
-  explanation: 事件代表瞬間發生的狀態標記，例如「使用者點擊同意」、「API 連線失敗」等。
-  tags:
-  - chap-m5-ch2
-  usage: quiz
-- id: 7226
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 簡介與設計動機
-  text: MCP 作為一個完全開源的協議，為整個 AI 生態圈帶來什麼樣的主要優勢？
-  type: multiple_choice
-  options:
-  - 保證使用該協議的所有系統絕對不會被任何惡意駭客入侵
-  - 促進全球開發者社群共同建立豐富且相容的工具伺服器生態
-  - 讓各大企業開發的高階模型可以完全免費且無限制地被使用
-  - 完全免除軟體開發者在維護與更新伺服器程式碼上的任何責任
-  correct_index: 1
-  explanation: 開源標準打破了廠商鎖定，吸引更多開發者貢獻相容於 MCP 的通用工具與服務。
-  tags:
-  - chap-m5-ch2
-  usage: quiz
-- id: 7227
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 核心元件
-  text: 如果你的 MCP 伺服器需要提供一個「讓代理人讀取本地設定檔」的功能，這個功能應該被定義為？
-  type: multiple_choice
-  options:
-  - MCP Tool (工具)
-  - MCP Resource (資源)
-  - MCP Prompt (提示範本)
-  - MCP Client (客戶端)
-  correct_index: 1
-  explanation: 讀取靜態檔案且不改變系統狀態的操作，最適合使用 MCP Resource 來實作。
-  tags:
-  - chap-m5-ch2
-  usage: quiz
-- id: 7228
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 核心元件
-  text: 如果你的 MCP 伺服器需要提供一個「幫使用者自動發送電子郵件」的功能，這個功能應該被定義為？
-  type: multiple_choice
-  options:
-  - MCP Tool (工具)
-  - MCP Resource (資源)
-  - MCP Prompt (提示範本)
-  - MCP Client (客戶端)
-  correct_index: 0
-  explanation: 發送電子郵件會改變外部環境的狀態（產生副作用），必須實作為 MCP Tool。
-  tags:
-  - chap-m5-ch2
-  usage: quiz
-- id: 7229
-  chapter_title: 模型上下文協議 (MCP)
-  section_title: AI 代理人基礎概念
-  text: 在代理人的「思考-行動-觀察循環」中，讓「行動」階段得以具體落實的關鍵技術通常是？
-  type: multiple_choice
-  options:
-  - 依賴大型語言模型內部的自我反思與情緒模擬機制
-  - 呼叫由 MCP 或其他類似協議所定義的標準化外部工具
-  - 讀取並重新分析使用者過去數個月來的所有對話歷史
-  - 深入分析本地作業系統內部的 CPU 與記憶體效能瓶頸
-  correct_index: 1
-  explanation: 行動階段需要透過工具呼叫的機制，將模型的決策轉化為具體的外部系統操作。
-  tags:
-  - chap-m5-ch2
-  usage: quiz
+  - id: 7201
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 簡介與設計動機
+    text: MCP (Model Context Protocol) 主要解決什麼問題？
+    type: multiple_choice
+    options:
+      - 提升大型語言模型的推理速度
+      - 解決 AI 模型與外部工具整合的碎片化問題，提供標準化協議
+      - 改善 LLM 的訓練效率
+      - 降低 AI 模型的幻覺（Hallucination）問題
+    correct_index: 1
+    explanation: MCP 提供統一標準，讓 AI 系統與工具的整合從 M×N 個客製化整合簡化為 M+N 個標準實作，解決碎片化問題。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-intro
+    usage: quiz
+  - id: 7202
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 系統架構
+    text: 在 MCP 架構中，「主機 (Host)」的主要職責是什麼？
+    type: multiple_choice
+    options:
+      - 直接儲存和管理工具的程式碼邏輯
+      - 管理 MCP 客戶端生命週期、協調 LLM 與伺服器通訊，並執行授權決策
+      - 只負責將使用者輸入轉換為 JSON 格式
+      - 充當 LLM 和使用者之間的翻譯層
+    correct_index: 1
+    explanation: 主機是整個 MCP 系統的協調中心，負責管理客戶端、執行安全策略，以及在 LLM 和 MCP 伺服器之間傳遞訊息。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-architecture
+    usage: quiz
+  - id: 7203
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 系統架構
+    text: 在 MCP 架構中，一個「客戶端 (Client)」維護的連線關係是？
+    type: multiple_choice
+    options:
+      - 一個客戶端可同時連線多個 MCP 伺服器
+      - 每個客戶端維護與單一 MCP 伺服器的一對一連線
+      - 客戶端直接與使用者連線，不與伺服器通訊
+      - 多個客戶端共享同一個 MCP 伺服器連線
+    correct_index: 1
+    explanation: MCP 架構設計為每個客戶端維護與單一 MCP 伺服器的連線，主機可以建立多個客戶端以同時連線不同的伺服器。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-architecture
+    usage: quiz
+  - id: 7204
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 核心元件
+    text: MCP 中的「資源 (Resources)」與「工具 (Tools)」的主要差異是什麼？
+    type: multiple_choice
+    options:
+      - 資源是 LLM 可讀取的資料，工具是 LLM 可執行的操作
+      - 資源比工具更安全，不需要使用者授權
+      - 工具只能回傳文字，資源可回傳二進位資料
+      - 資源和工具功能完全相同，只是命名不同
+    correct_index: 0
+    explanation: 資源（Resources）代表可讀取的資料（如檔案、資料庫記錄），透過 URI 定位；工具（Tools）代表可執行的操作（如搜尋、計算），由
+      LLM 主動呼叫。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-components
+    usage: quiz
+  - id: 7205
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 傳輸機制
+    text: MCP 的「stdio 傳輸」與「HTTP + SSE 傳輸」最主要的適用場景差異是什麼？
+    type: multiple_choice
+    options:
+      - stdio 適合遠端伺服器，HTTP + SSE 適合本地程式
+      - stdio 適合本地部署（透過子程序），HTTP + SSE 適合遠端/雲端部署
+      - stdio 速度更快但不安全，HTTP + SSE 較慢但安全
+      - 兩者完全相同，只是語法不同
+    correct_index: 1
+    explanation: stdio 傳輸透過標準輸入/輸出管道與本地子程序通訊，適合本地安全部署；HTTP + SSE 支援跨網路存取，適合雲端或遠端 MCP
+      伺服器。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-transport
+    usage: quiz
+  - id: 7206
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: 開發 MCP 伺服器
+    text: 使用 Python MCP SDK (FastMCP) 定義工具時，工具的「description」欄位最重要的用途是什麼？
+    type: multiple_choice
+    options:
+      - 用於顯示給最終使用者看的說明文字
+      - LLM 根據此描述決定何時以及如何呼叫此工具
+      - 用於產生 API 文件
+      - 定義工具的輸入參數類型
+    correct_index: 1
+    explanation: 工具的描述 (description) 是 LLM 判斷在什麼情況下應呼叫此工具的關鍵依據，清晰的描述能顯著提升工具被正確選用的機率。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-server-dev
+    usage: quiz
+  - id: 7207
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 安全考量
+    text: 依照 MCP 安全設計，什麼是防範「提示注入攻擊 (Prompt Injection)」的最佳實踐？
+    type: multiple_choice
+    options:
+      - 禁止 LLM 呼叫任何外部工具
+      - MCP 伺服器應對所有來自 LLM 的輸入進行驗證，不信任任何未經驗證的內容
+      - 只使用官方提供的 MCP 伺服器
+      - 將所有工具呼叫結果加密後再回傳
+    correct_index: 1
+    explanation: 提示注入攻擊可能透過惡意資料偽裝成合法指令。MCP 伺服器應對輸入進行嚴格驗證，避免將未受信任的資料直接用於執行系統命令或資料庫查詢。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-security
+    usage: quiz
+  - id: 7208
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: AI 代理人基礎概念
+    text: 在 AI 代理人的運作中，「思考-行動-觀察循環 (Thought-Action-Observation Cycle)」又被稱為什麼？
+    type: multiple_choice
+    options:
+      - MCP 模式
+      - Reflexion 模式
+      - ReAct 模式
+      - RAG 模式
+    correct_index: 2
+    explanation: 思考-行動-觀察循環也被稱為 ReAct (Reason + Act) 模式，是代理人進行內部推理並透過工具與環境互動的核心運作方式。
+    tags:
+      - chap-m5-ch2
+      - sec-agent-fundamentals
+    usage: quiz
+  - id: 7209
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: 代理人可觀測性與評估
+    text: 在監控 AI 代理人的可觀測性時，通常會透過何種技術來捕獲運作時的追蹤 (Traces)、日誌與指標？
+    type: multiple_choice
+    options:
+      - 提示詞工程 (Prompt Engineering)
+      - 儀器化 (Instrumentation)
+      - 向量資料庫檢索
+      - 記憶壓縮 (Memory Compression)
+    correct_index: 1
+    explanation: 儀器化 (Instrumentation) 是使用系統（例如 OpenTelemetry）來捕獲代理人運作時的追蹤、日誌與指標，藉此擺脫「黑箱」行為。
+    tags:
+      - chap-m5-ch2
+      - sec-agent-observability
+    usage: quiz
+  - id: 7210
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 簡介與設計動機
+    text: MCP (Model Context Protocol) 旨在解決 AI 生態系統中的哪一個痛點？
+    type: multiple_choice
+    options:
+      - 訓練最新大型語言模型的整體運算成本過於高昂
+      - AI 系統與各種外部資料源整合時的嚴重碎片化問題
+      - 本地端執行伺服器時的記憶體管理與分配效率太低
+      - 開發者在設計提示詞工程時面臨的語法難度過於複雜
+    correct_index: 1
+    explanation: 隨著工具與資料源激增，MCP 提供標準化協議來消弭 M×N 的客製化整合噩夢。
+    tags:
+      - chap-m5-ch2
+    usage: quiz
+  - id: 7211
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 系統架構
+    text: 在 MCP 架構中，主要負責管理安全策略與使用者授權決策的元件是？
+    type: multiple_choice
+    options:
+      - 直接與伺服器溝通的 MCP 客戶端應用程式
+      - 統籌管理與協調的 MCP 主機 (Host) 系統
+      - 提供具體工具與資源的外部 MCP 伺服器
+      - 負責執行所有推論工作的大型語言模型本身
+    correct_index: 1
+    explanation: MCP 主機 (Host) 控制整個系統的生命週期，並確保使用者在呼叫高風險工具時能進行審核。
+    tags:
+      - chap-m5-ch2
+    usage: quiz
+  - id: 7212
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 核心元件
+    text: 一個標準的 MCP 伺服器可以同時對外提供哪些核心功能元件？
+    type: multiple_choice
+    options:
+      - 提供模型動態上下文的工具、資源與提示範本
+      - 模型本身的神經網路權重與大量的歷史訓練資料
+      - 針對終端使用者設計的圖形介面與豐富的前端佈景
+      - 底層運作所需的網路伺服器與高效能關聯式資料庫
+    correct_index: 0
+    explanation: MCP 伺服器主要透過暴露工具、資源和提示範本來為代理人擴展能力。
+    tags:
+      - chap-m5-ch2
+    usage: quiz
+  - id: 7213
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 核心元件
+    text: MCP 中的「Prompts (提示範本)」所扮演的主要角色是什麼？
+    type: multiple_choice
+    options:
+      - 強制模型遵守所有內建的安全規範與禁止事項
+      - 提供標準化的任務起始上下文與可重用的對話模板
+      - 自動記錄使用者過去所輸入過的所有指令與日誌
+      - 在使用者輸入過慢時自動幫忙補齊尚未打完的文字
+    correct_index: 1
+    explanation: 提示範本允許伺服器提供預先定義好的工作流程起點，幫助代理人快速進入狀況。
+    tags:
+      - chap-m5-ch2
+    usage: quiz
+  - id: 7214
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 傳輸機制
+    text: 當我們在本地電腦開發與部署 MCP 伺服器時，最常使用的傳輸機制是？
+    type: multiple_choice
+    options:
+      - 適合跨網路存取的 HTTP + SSE 遠端連線傳輸機制
+      - 透過本地子程序建立的 stdio (標準輸入輸出) 管道
+      - 用於即時通訊服務的 WebSockets 雙向資料傳輸協定
+      - 專為微服務架構設計的 gRPC 遠端程序高速呼叫協定
+    correct_index: 1
+    explanation: stdio 傳輸方式安全性高且非常適合本地環境，因為它依賴本機程序的執行權限。
+    tags:
+      - chap-m5-ch2
+    usage: quiz
+  - id: 7215
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 簡介與設計動機
+    text: MCP 架構如何顯著提升 AI 代理人的「工具發現」能力？
+    type: multiple_choice
+    options:
+      - 讓代理人透過自動爬蟲不斷搜尋網路上的可用 API 工具
+      - 讓伺服器能動態提供可用工具清單與詳細的使用參數說明
+      - 預先將全球所有的工具特徵寫死在大型語言模型的權重中
+      - 強迫使用者在使用前手動輸入所有工具的底層實作原始碼
+    correct_index: 1
+    explanation: MCP 客戶端能直接向伺服器查詢可用清單，代理人因此能動態發掘並使用新工具。
+    tags:
+      - chap-m5-ch2
+    usage: quiz
+  - id: 7216
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 系統架構
+    text: 為什麼開發者在設計 MCP 伺服器時，應該盡可能保持「輕量級」？
+    type: multiple_choice
+    options:
+      - 為了節省使用者電腦上寶貴的硬碟與記憶體儲存空間
+      - 為了專注暴露特定領域的能力並遵循單一職責原則
+      - 為了讓大型語言模型可以直接下載並分析其內部架構
+      - 為了避免被作業系統內建的防毒軟體誤判為惡意程式
+    correct_index: 1
+    explanation: 輕量級的伺服器專注於做好一件事情，能提升系統整體的穩定度與易維護性。
+    tags:
+      - chap-m5-ch2
+    usage: quiz
+  - id: 7217
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: 代理人可觀測性與評估
+    text: 在系統可觀測性 (Observability) 領域中，「Span」代表什麼意義？
+    type: multiple_choice
+    options:
+      - 代理人處理完整個使用者對話任務的總計花費時間
+      - 系統內單一操作或函數執行的具體起始與結束時間區間
+      - 大型語言模型在一次生成過程中所輸出的總字數統計
+      - 系統伺服器在執行複雜推論時記憶體使用的最高峰值
+    correct_index: 1
+    explanation: Span 用來標記與測量特定操作的持續時間，幫助開發者定位效能瓶頸。
+    tags:
+      - chap-m5-ch2
+    usage: quiz
+  - id: 7218
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: 代理人可觀測性與評估
+    text: 為 AI 代理人實施儀器化 (Instrumentation) 的最主要好處是什麼？
+    type: multiple_choice
+    options:
+      - 能大幅度降低呼叫各大雲端模型 API 的整體使用成本
+      - 讓代理人的內部決策過程與工具呼叫狀況變得完全透明化
+      - 能夠自動偵測並完全修正大型語言模型產生的所有錯誤
+      - 直接取代傳統的軟體單元測試與人工驗收測試標準流程
+    correct_index: 1
+    explanation: 透過追蹤系統運作，開發者能洞察代理人的思考邏輯，使「黑箱」模型具備可解釋性。
+    tags:
+      - chap-m5-ch2
+    usage: quiz
+  - id: 7219
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: 代理人可觀測性與評估
+    text: 在處理多個工具呼叫時，系統日誌常常變得難以閱讀，引入可觀測性工具可以如何解決？
+    type: multiple_choice
+    options:
+      - 將所有的系統日誌全數刪除以節省開發人員的閱讀時間
+      - 透過結構化的追蹤 (Traces) 將日誌與特定的操作上下文綁定
+      - 自動把所有日誌翻譯成更易讀的另一種人類自然語言
+      - 強迫模型在每次操作後都必須用語音播報執行結果
+    correct_index: 1
+    explanation: 結構化追蹤可以將錯綜複雜的系統日誌關聯到特定的請求上，大幅簡化除錯難度。
+    tags:
+      - chap-m5-ch2
+    usage: quiz
+  - id: 7220
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: 代理人可觀測性與評估
+    text: 當代理人發生非預期行為時，哪一種觀測工具最能有效幫助開發者除錯？
+    type: multiple_choice
+    options:
+      - 直接匯出並分析大型語言模型的內部神經網路權重分佈圖
+      - 透過代理人的追蹤日誌 (Traces) 還原當時的決策與環境上下文
+      - 檢查使用者的瀏覽器搜尋記錄以推測其真實的問題意圖
+      - 監控伺服器作業系統的 CPU 佔用率與網路頻寬使用情況
+    correct_index: 1
+    explanation: 追蹤日誌能清晰重現代理人收到的提示詞、工具回傳結果與其當時的決策過程。
+    tags:
+      - chap-m5-ch2
+    usage: quiz
+  - id: 7221
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 系統架構
+    text: 在標準的 MCP 系統架構設計中，Client 和 Server 之間的連線關係是？
+    type: multiple_choice
+    options:
+      - 客戶端將訊息向所有伺服器廣播的一對多廣播模式
+      - 每個客戶端應用程式維護與單一伺服器的一對一綁定連線
+      - 多個客戶端共享同一個伺服器狀態的多對多無狀態連線
+      - 多個伺服器輪流服務一個客戶端的多對一輪詢連線模式
+    correct_index: 1
+    explanation: 一對一的連線設計簡化了狀態管理，讓客戶端與伺服器間的溝通更加清晰可靠。
+    tags:
+      - chap-m5-ch2
+    usage: quiz
+  - id: 7222
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 安全考量
+    text: 面對來自大型語言模型 (LLM) 的工具呼叫請求，MCP 伺服器應當採取什麼安全態度？
+    type: multiple_choice
+    options:
+      - 百分之百信任所有來自知名 LLM 提供商的工具呼叫參數
+      - 伺服器端必須對所有傳入的參數進行嚴格的驗證與邊界檢查
+      - 將所有可能被呼叫的工具設為公開存取以確保最高相容性
+      - 為了節省運算效能，盡量停用伺服器端所有的日誌記錄功能
+    correct_index: 1
+    explanation: 為了防止提示詞注入與幻覺帶來的危害，伺服器絕不可盲目信任 LLM 傳來的資料。
+    tags:
+      - chap-m5-ch2
+    usage: quiz
+  - id: 7223
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 簡介與設計動機
+    text: MCP 架構本身是如何促進各種不同的 AI 模型之間的互操作性 (Interoperability) 的？
+    type: multiple_choice
+    options:
+      - 透過強制要求世界上所有的模型都必須使用完全相同的內部權重
+      - 透過提供一套標準化的通用介面來描述與呼叫外部工具與資源
+      - 透過將所有競爭對手的模型統一部署在同一台巨大的實體伺服器
+      - 透過設計一個專屬的私有通訊協定讓模型之間可以直接互相通訊
+    correct_index: 1
+    explanation: 標準化的介面讓開發者不需修改整合程式碼，就能無痛切換底層使用的語言模型。
+    tags:
+      - chap-m5-ch2
+    usage: quiz
+  - id: 7224
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 核心元件
+    text: 資源 (Resources) 與工具 (Tools) 最大的本質差異在於？
+    type: multiple_choice
+    options:
+      - 資源具備改變外部環境副作用的能力，工具僅能用於靜態讀取
+      - 資源是被動讀取的靜態資料，工具則是由模型主動呼叫的動態操作
+      - 資源需要複雜的非對稱加密傳輸，工具則可以直接使用明文傳輸
+      - 資源只能在本地端電腦上運作，工具則只能部署於雲端伺服器上
+    correct_index: 1
+    explanation: 資源是被動讀取的上下文資料，而工具是模型主動決定執行的動態操作。
+    tags:
+      - chap-m5-ch2
+    usage: quiz
+  - id: 7225
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: 代理人可觀測性與評估
+    text: 在系統可觀測性資料中的「Event (事件)」，通常被用來記錄什麼樣的資訊？
+    type: multiple_choice
+    options:
+      - 整個應用程式啟動到結束所持續數分鐘的長時間運作週期
+      - 系統在某個特定時間點所發生的重要動作、警告或狀態變化
+      - 代理人模型在完成訓練後的完整神經網路權重與參數清單
+      - 執行該次對話任務時伺服器硬碟剩餘可用空間的動態變化
+    correct_index: 1
+    explanation: 事件代表瞬間發生的狀態標記，例如「使用者點擊同意」、「API 連線失敗」等。
+    tags:
+      - chap-m5-ch2
+    usage: quiz
+  - id: 7226
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 簡介與設計動機
+    text: MCP 作為一個完全開源的協議，為整個 AI 生態圈帶來什麼樣的主要優勢？
+    type: multiple_choice
+    options:
+      - 保證使用該協議的所有系統絕對不會被任何惡意駭客入侵
+      - 促進全球開發者社群共同建立豐富且相容的工具伺服器生態
+      - 讓各大企業開發的高階模型可以完全免費且無限制地被使用
+      - 完全免除軟體開發者在維護與更新伺服器程式碼上的任何責任
+    correct_index: 1
+    explanation: 開源標準打破了廠商鎖定，吸引更多開發者貢獻相容於 MCP 的通用工具與服務。
+    tags:
+      - chap-m5-ch2
+    usage: quiz
+  - id: 7227
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 核心元件
+    text: 如果你的 MCP 伺服器需要提供一個「讓代理人讀取本地設定檔」的功能，這個功能應該被定義為？
+    type: multiple_choice
+    options:
+      - MCP Tool (工具)
+      - MCP Resource (資源)
+      - MCP Prompt (提示範本)
+      - MCP Client (客戶端)
+    correct_index: 1
+    explanation: 讀取靜態檔案且不改變系統狀態的操作，最適合使用 MCP Resource 來實作。
+    tags:
+      - chap-m5-ch2
+    usage: quiz
+  - id: 7228
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 核心元件
+    text: 如果你的 MCP 伺服器需要提供一個「幫使用者自動發送電子郵件」的功能，這個功能應該被定義為？
+    type: multiple_choice
+    options:
+      - MCP Tool (工具)
+      - MCP Resource (資源)
+      - MCP Prompt (提示範本)
+      - MCP Client (客戶端)
+    correct_index: 0
+    explanation: 發送電子郵件會改變外部環境的狀態（產生副作用），必須實作為 MCP Tool。
+    tags:
+      - chap-m5-ch2
+    usage: quiz
+  - id: 7229
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: AI 代理人基礎概念
+    text: 在代理人的「思考-行動-觀察循環」中，讓「行動」階段得以具體落實的關鍵技術通常是？
+    type: multiple_choice
+    options:
+      - 依賴大型語言模型內部的自我反思與情緒模擬機制
+      - 呼叫由 MCP 或其他類似協議所定義的標準化外部工具
+      - 讀取並重新分析使用者過去數個月來的所有對話歷史
+      - 深入分析本地作業系統內部的 CPU 與記憶體效能瓶頸
+    correct_index: 1
+    explanation: 行動階段需要透過工具呼叫的機制，將模型的決策轉化為具體的外部系統操作。
+    tags:
+      - chap-m5-ch2
+    usage: quiz

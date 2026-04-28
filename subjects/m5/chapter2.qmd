@@ -58,7 +58,7 @@ MCP 不是 Anthropic 的私有技術——它是一個**開放標準**，任何 
 ## MCP 的三個角色 {#sec-mcp-architecture}
 
 ```{mermaid}
-graph LR
+graph TD
     Host[MCP 主機 Host<br/>例如 Claude Desktop] --> Client[MCP 客戶端 Client]
     Client <--> |標準化協議 MCP| Server[MCP 伺服器 Server]
     Server --> ToolA[[檔案讀寫工具]]

@@ -125,7 +125,7 @@ Hermes 內建 cron 排程功能，讓你用**自然語言**定義自動化任務
 除了 OpenClaw 和 Hermes 這類「個人代理」之外，業界還有一系列專注於**讓多個代理人協同工作**的框架。這些框架擅長管理多個互相交互的代理來完成複雜任務。
 
 ```{mermaid}
-graph LR
+graph TD
     subgraph S1["多代理協作框架"]
         CrewAI["CrewAI<br/>角色扮演協作"]
         AutoGen["AutoGen<br/>對話式任務解決"]
@@ -139,6 +139,7 @@ graph LR
         OpenAISDK["OpenAI Agents SDK"]
         SemanticKernel["Semantic Kernel"]
     end
+    S1 ~~~ S2 ~~~ S3
 ```
 
 ### CrewAI：角色扮演式的團隊協作 {.unnumbered}
