@@ -1,5 +1,7 @@
 project:
   type: book
+  output-dir: ../../_book/ai-foundation
+
 
 book:
   title: "AI 應用規劃師全攻略"

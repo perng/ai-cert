@@ -13,7 +13,7 @@ label: chap-m1-ch4
 
 ### 感知器 {.unnumbered}
 
-感知器 (Perceptron) 是最簡單的神經網路單元。它接收輸入向量 $\mathbf{x}$，計算加權和 $z$，然後通過活化函數 $\phi$ 輸出。
+感知器 (Perceptron) 是最簡單的神經網路單元。它接收輸入向量 $\mathbf{x}$，計算加權和 **z**，然後通過活化函數 **𝜑** 輸出。
 $$ z = \sum_{i=1}^{n} w_i x_i + b = \mathbf{w}^T \mathbf{x} + b $$
 $$ y = \phi(z) $$
 
@@ -129,14 +129,14 @@ plt.show()
 
 1.  **前向傳播 (Forward Propagation)**：
     *   數據從**輸入層**進入網絡。
-    *   經過每一層的**加權求和** ($z = w^T x + b$) 和**活化函數** ($a = \sigma(z)$) 處理。
+    *   經過每一層的**加權求和** z = w<sup>T</sup> x + b 和**活化函數** a = σ(z) 處理。
     *   最終在**輸出層**產生預測值 $\hat{y}$。
     *   計算**損失函數** $L(\hat{y}, y)$，衡量預測值與真實值的誤差。
 
 2.  **反向傳播 (Backward Propagation)**：
-    *   這是訓練的核心。目標是計算損失函數對每個權重 $w$ 的梯度 $\frac{\partial L}{\partial w}$。
+    *   這是訓練的核心。目標是計算損失函數對每個權重 **w** 的梯度 $\frac{\partial L}{\partial w}$。
     *   利用微積分中的**連鎖律 (Chain Rule)**，將誤差從輸出層**反向**傳遞回輸入層。
-    *   **連鎖律範例**：假設 $L = f(y), y = g(x)$，則 $\frac{\partial L}{\partial x} = \frac{\partial L}{\partial y} \cdot \frac{\partial y}{\partial x}$。
+    *   **連鎖律範例**：假設 L = f(y), y = g(x)，則 $\frac{\partial L}{\partial x} = \frac{\partial L}{\partial y} \cdot \frac{\partial y}{\partial x}$。
     *   計算出的梯度將用於更新權重，以減少下一次的預測誤差。
 
 ## 最佳化 {#sec-optimization}
@@ -165,19 +165,16 @@ plt.show()
 *   **SGD (Stochastic Gradient Descent)**：
     *   **原理**：每次隨機抽取一個樣本（或小批次 Mini-batch）來計算梯度並更新參數。
     *   **更新公式**：$$ \theta_{t+1} = \theta_t - \eta \nabla L(\theta_t) $$
-    *   **帶動量的 SGD (SGD with Momentum)**：引入速度變數 $v_t$，模擬物理慣性。
-        $$ v_{t+1} = \beta v_t + (1-\beta) \nabla L(\theta_t) $$
-        $$ \theta_{t+1} = \theta_t - \eta v_{t+1} $$
+    *   **帶動量的 SGD (SGD with Momentum)**：引入速度變數 v<sub>t</sub>，模擬物理慣性。  $$ v_{t+1} = \beta v_t + (1-\beta) \nabla L(\theta_t) $$   $$ \theta_{t+1} = \theta_t - \eta v_{t+1} $$
     *   **優點**：計算速度快，隨機性有助於跳出局部最佳解。
 
 *   **Adam (Adaptive Moment Estimation)**：
-    *   **原理**：結合了 **Momentum** (一階矩估計 $m_t$) 和 **RMSprop** (二階矩估計 $v_t$) 的優點。
+    *   **原理**：結合了 **Momentum** (一階矩估計 m<sub>t</sub>) 和 **RMSprop** (二階矩估計 v<sub>t</sub>) 的優點。
     *   **簡化公式**：
-        1.  計算梯度 $g_t$。
-        2.  更新一階矩（動量）：$m_t = \beta_1 m_{t-1} + (1-\beta_1) g_t$。
-        3.  更新二階矩（梯度平方）：$v_t = \beta_2 v_{t-1} + (1-\beta_2) g_t^2$。
-        4.  參數更新：$$ \theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{\hat{v}_t} + \epsilon} \hat{m}_t $$
-        (其中 $\hat{m}_t, \hat{v}_t$ 是偏差修正後的值)
+        1.  計算梯度 g<sub>t</sub>。
+        2.  更新一階矩（動量）：m<sub>t</sub> = β<sub>1</sub> m<sub>t-1</sub> + (1-β<sub>1</sub>) g<sub>t</sub>。
+        3.  更新二階矩（梯度平方）：v<sub>t</sub> = β<sub>2</sub> v<sub>t-1</sub> + (1-β<sub>2</sub>) g<sub>t</sub><sup>2</sup>。
+        4.  參數更新：$$ \theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{\hat{v}_t} + \epsilon} \hat{m}_t $$  (其中 $\hat{m}_t, \hat{v}_t$ 是偏差修正後的值)
     *   **地位**：目前深度學習中最常用、效果最穩定的最佳化器之一。
 
 **Python 範例：使用 PyTorch 建立簡單神經網路**

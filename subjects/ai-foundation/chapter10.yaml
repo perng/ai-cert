@@ -88,7 +88,7 @@ questions:
   - 它不需要模型 (It Does Not Require Model)，可以在無模型情況下使用。
   - 它只能解釋神經網路 (It Can Only Explain Neural Networks)，僅限於特定模型類型。
   - 它只能解釋線性模型 (It Can Only Explain Linear Models)，僅限於線性架構。
-  - 它適用於任何類型的模型（與模型無關）(It Applies to Any Type of Model: Model-Agnostic)
+  - "它適用於任何類型的模型（與模型無關）(It Applies to Any Type of Model: Model-Agnostic)"
   correct_index: 3
   explanation: Model-agnostic 代表該技術不依賴特定模型的內部結構，可以應用於 SVM、隨機森林、神經網路等任何模型。
   tags:
@@ -165,7 +165,7 @@ questions:
   text: 「如果你年輕 10 歲，貸款就會通過」這是一個好的反事實解釋嗎？
   type: multiple_choice
   options:
-  - 否，因為它違反了「可操作性」原則（使用者無法改變年齡）(No, Because It Violates Actionability Principle: Users Cannot Change Age)
+  - "否，因為它違反了「可操作性」原則（使用者無法改變年齡）(No, Because It Violates Actionability Principle: Users Cannot Change Age)"
   - 否，因為它不夠精確 (No, Because It Is Not Precise Enough)，建議不夠準確。
   - 是，因為它很誠實 (Yes, Because It Is Honest)，建議真實可靠。
   - 是，因為它很簡單 (Yes, Because It Is Simple)，建議容易理解。
@@ -309,10 +309,10 @@ questions:
   text: SHAP 值為正數代表該特徵？
   type: multiple_choice
   options:
-  - 對預測結果有正向影響（推高分數）(Positive Impact on Prediction Results: Raising Score)
+  - "對預測結果有正向影響（推高分數）(Positive Impact on Prediction Results: Raising Score)"
   - 對預測結果無影響 (No Impact on Prediction Results)，特徵不影響預測。
   - 特徵值是正數 (Feature Value Is Positive)，數值為正。
-  - 對預測結果有負向影響（拉低分數）(Negative Impact on Prediction Results: Lowering Score)
+  - "對預測結果有負向影響（拉低分數）(Negative Impact on Prediction Results: Lowering Score)"
   correct_index: 0
   explanation: SHAP 值代表相對於基準值，該特徵將預測結果推高（正值）或拉低（負值）的程度。
   tags:
@@ -357,7 +357,7 @@ questions:
   text: SHAP 的計算複雜度通常？
   type: multiple_choice
   options:
-  - 非常高（因為要考慮所有特徵組合）(Very High: Because Need to Consider All Feature Combinations)
+  - "非常高（因為要考慮所有特徵組合）(Very High: Because Need to Consider All Feature Combinations)"
   - 非常低 (Very Low)，計算成本極低。
   - 為零 (Zero)，完全不需要計算。
   - 是常數 (Is Constant)，計算量固定不變。
@@ -406,7 +406,7 @@ questions:
   - 過去的原因 (Past Causes)，歷史事件的成因。
   - 模型的參數 (Model Parameters)，模型內部的權重值。
   - 現在的狀態 (Current Status)，目前的狀況。
-  - 未來的改變 (What-if) (Future Changes: What-if)，假設性的未來情境。
+  - "未來的改變 (What-if) (Future Changes: What-if)，假設性的未來情境。"
   correct_index: 3
   explanation: 反事實解釋探討「如果輸入改變，輸出會如何變化」，是一種面向未來的假設性分析。
   tags:
@@ -595,8 +595,8 @@ questions:
   text: LIME (Local Interpretable Model-agnostic Explanations) 的主要特點是？
   type: multiple_choice
   options:
-  - 它能解釋整個模型的運作邏輯 (Global Explanation) (It Can Explain Overall Model Operation Logic: Global Explanation)
-  - 它透過擾動單一樣本的特徵，觀察預測變化，來解釋「為什麼模型對這個特定樣本做出這種判斷」 (Local Explanation) (It Perturbs Single Sample's Features, Observes Prediction Changes to Explain Why Model Made This Judgment for This Specific Sample: Local Explanation)
+  - "它能解釋整個模型的運作邏輯 (Global Explanation) (It Can Explain Overall Model Operation Logic: Global Explanation)"
+  - "它透過擾動單一樣本的特徵，觀察預測變化，來解釋「為什麼模型對這個特定樣本做出這種判斷」 (Local Explanation) (It Perturbs Single Sample's Features, Observes Prediction Changes to Explain Why Model Made This Judgment for This Specific Sample: Local Explanation)"
   - 它只能用於線性模型 (It Can Only Be Used for Linear Models)，僅限於特定模型類型。
   - 它需要重新訓練模型 (It Requires Retraining Model)，必須重新訓練。
   correct_index: 1
@@ -627,7 +627,7 @@ questions:
   text: 「反事實解釋 (Counterfactual Explanation)」通常是如何呈現的？
   type: multiple_choice
   options:
-  - 告訴使用者：「如果你的年收入增加 5 萬，貸款申請就會通過」 (Telling User: If Your Annual Income Increases by 50,000, Loan Application Will Be Approved)
+  - "告訴使用者：「如果你的年收入增加 5 萬，貸款申請就會通過」 (Telling User: If Your Annual Income Increases by 50,000, Loan Application Will Be Approved)"
   - 顯示模型的決策樹結構 (Displaying Model's Decision Tree Structure)，屬於全局解釋。
   - 列出所有特徵的權重 (Listing All Features' Weights)，屬於全局解釋。
   - 顯示一張熱力圖 (Displaying a Heatmap)，視覺化特徵重要性。

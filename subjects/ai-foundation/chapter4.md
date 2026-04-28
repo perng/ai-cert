@@ -27,7 +27,7 @@ label: chap-ai-foundation-chapter4
 
 *   **常見方法**：
     1.  **標準化 (Standardization / Z-score Normalization)**：
-        *   將資料轉換為平均值 ($\mu$) 為 0，標準差 ($\sigma$) 為 1 的分佈。
+        *   將資料轉換為平均值  𝝁 為 0，標準差 **𝛔** 為 1 的分佈。
         *   **公式**：$$ z = \frac{x - \mu}{\sigma} $$
         *   **適用**：大部分機器學習演算法（如 SVM, Logistic Regression, Neural Networks），特別是假設資料呈常態分佈時。
     2.  **正規化 (Normalization / Min-Max Scaling)**：
@@ -65,10 +65,12 @@ label: chap-ai-foundation-chapter4
 
 ### 常見編碼方式
 
+::: {.column-page style="overflow-x: auto;"}
 | 編碼方式 | 說明 | 適用情境 | 範例 (T-shirt 尺寸) |
 | :--- | :--- | :--- | :--- |
-| **序數編碼**<br>(Ordinal Encoding) | 依據類別的**順序**或**大小**賦予整數值。 | 類別間**有**順序關係 (Size, Rating)。 | S $\to$ 1<br>M $\to$ 2<br>L $\to$ 3<br>XL $\to$ 4 |
-| **獨熱編碼**<br>(One-hot Encoding) | 為每個類別建立一個獨立的欄位 (Dummy Variable)，是該類別則標為 1，否則為 0。 | 類別間**無**順序關係 (Color, City)。 | **紅色** $\to$ [1, 0, 0]<br>**綠色** $\to$ [0, 1, 0]<br>**藍色** $\to$ [0, 0, 1] |
+| **序數編碼**<br>(Ordinal Encoding) | 依據類別的**順序**或**大小**賦予整數值。 | 類別間**有**順序關係 (Size, Rating)。 | S → 1<br>M → 2<br>L → 3<br>XL → 4 |
+| **獨熱編碼**<br>(One-hot Encoding) | 為每個類別建立一個獨立的欄位 (Dummy Variable)，是該類別則標為 1，否則為 0。 | 類別間**無**順序關係 (Color, City)。 | **紅色** → [1, 0, 0]<br>**綠色** → [0, 1, 0]<br>**藍色** → [0, 0, 1] |
+:::
 
 ![獨熱編碼](images/one_hot_encoding.webp)
 
@@ -86,7 +88,7 @@ label: chap-ai-foundation-chapter4
 
 *   **做法**：將每個類別映射到一個低維度的向量空間（Vector Space）。
 *   **效果**：讓意義相近的類別在空間中距離較近。
-    *   例如在 Word2Vec 中：$Vector(國王) - Vector(男人) + Vector(女人) \approx Vector(皇后)$。
+    *   例如在 Word2Vec 中：Vector(國王) - Vector(男人) + Vector(女人) ≈ Vector(皇后)。
     *   這不僅解決了維度問題，還捕捉了類別之間的**語意關係**。
 
 ![特徵嵌入](images/feature_embedding.webp)
@@ -155,15 +157,18 @@ label: chap-ai-foundation-chapter4
 *   **隨機上(過)採樣 (Random Oversampling)**：
     *   **做法**：簡單粗暴地複製少數類別的樣本。
     *   **缺點**：容易造成**過度擬合 (Overfitting)**，因為模型會反覆看到一模一樣的資料，把它們背下來。
+    *   **例子**：原本有 10 筆詐欺資料，直接複製 9 次，變成 100 筆一模一樣的詐欺資料。
 *   **SMOTE (Synthetic Minority Over-sampling Technique)**：
     *   **做法**：不是單純複製，而是「無中生有」。
         1.  選定一個少數類別樣本 A。
         2.  找出它的鄰居樣本 B。
         3.  在 A 和 B 的連線上，隨機產生一個新的人工樣本 C。
     *   **優點**：增加了樣本的多樣性，減少過度擬合風險。
+    *   **例子**：樣本 A 是 (1, 2)，鄰居 B 是 (2, 4)。連線中間點可能是 (1.5, 3)，這就是產生出來的新樣本 C。
 *   **ADASYN (Adaptive Synthetic Sampling)**：
     *   **做法**：SMOTE 的改良版。它會根據樣本的學習難度（周圍有多少多數類別）來決定要生成多少新樣本。
     *   **特點**：在「邊界模糊」或「難以分類」的區域生成更多樣本，強迫模型學習這些困難案例。
+    *   **例子**：如果樣本 A 旁邊都是正常人（很難分），ADASYN 會在它旁邊生 10 個新樣本；樣本 B 旁邊都是自己人（很好分），只生 1 個。
 
     > **注意：類別型資料怎麼辦？**
     > 標準的 SMOTE 和 ADASYN 是基於歐氏距離計算的，**不能直接處理類別型資料**（你不能計算「紅色」和「藍色」的平均值）。
@@ -176,9 +181,11 @@ label: chap-ai-foundation-chapter4
 *   **隨機下(欠)採樣 (Random Undersampling)**：
     *   **做法**：隨機刪除多數類別的樣本。
     *   **缺點**：可能會丟掉重要的資訊（把有用的正常樣本刪掉了）。
+    *   **例子**：原本有 1000 筆正常資料，隨機丟掉 900 筆，只剩 100 筆。
 *   **Tomek Links**：
     *   **做法**：找出那些「靠得很近」但「類別不同」的樣本對（Tomek Links）。通常這些點是雜訊或邊界模糊點。刪除其中的多數類別樣本。
     *   **優點**：能讓類別邊界更清晰。
+    *   **例子**：一個「正常人」和一個「詐欺犯」長得超像（特徵很近），把那個「正常人」刪掉，讓那區變成詐欺犯的地盤。
 
 ### 2. 類別權重調整 (Class Weights)
 
@@ -186,6 +193,10 @@ label: chap-ai-foundation-chapter4
 
 *   **做法**：在訓練模型時，告訴模型：「答錯一筆少數類別（詐欺）的懲罰，是答錯一筆多數類別（正常）的 **100 倍**。」
 *   **效果**：強迫模型重視少數類別，即使犧牲一點整體的準確率，也要把詐欺抓出來。
+*   **例子**：
+    *   預測「正常」錯了：罰 1 元。
+    *   預測「詐欺」錯了：罰 100 元。
+    *   模型為了少賠錢，會寧可把「有點像詐欺的」都猜成詐欺。
 
 
 ## 本章總結與考點提示 {#chap-ai-foundation-chapter4-summary}

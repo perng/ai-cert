@@ -72,7 +72,9 @@ def render_quarto(file_path):
 
     cmd = [
         "quarto", "render", str(file_path),
-        "--to", "html"
+        "--to", "html",
+        "-M", "mermaid-format:png",
+        "-M", "html-math-method:plain"
         # Removed --embed-resources to allow image copying (src will be paths, not base64)
     ]
     
@@ -122,6 +124,11 @@ def process_chapter(md_file, questions_map, image_output_dir=None,
     
     with open(html_path, 'r', encoding='utf-8') as f:
         html_content = f.read()
+
+    # Remove warning lines containing python filenames and line numbers
+    # which can leak host information. e.g. "base_conv.py:113"
+    html_content = re.sub(r'(?m)^.*\.py:\d+.*$\n?', '', html_content)
+
         
     # Clean up the generated HTML file
     # os.remove(html_path) # Uncomment to clean up
@@ -155,16 +162,18 @@ def process_chapter(md_file, questions_map, image_output_dir=None,
                         
                 if img_source_path.exists():
                     # Destination: flat structure in assets/images/
-                    # To avoid collisions, we could prefix, but for now we'll just use the filename
-                    # or use the subject name as prefix if needed.
-                    filename = img_source_path.name
-                    dest_path = image_out_path / filename
+                    # To avoid collisions, we use subject and chapter as prefix.
+                    subject_name = md_file.parent.name
+                    chapter_name = md_file.stem
+                    unique_filename = f"{subject_name}_{chapter_name}_{img_source_path.name}"
+                    
+                    dest_path = image_out_path / unique_filename
                     
                     try:
                         shutil.copy2(img_source_path, dest_path)
                         # Update src to be relative to Flutter assets root
                         # Assuming the app loads from 'assets/images/'
-                        img['src'] = f"assets/images/{filename}"
+                        img['src'] = f"assets/images/{unique_filename}"
                     except Exception as e:
                         print(f"Warning: Failed to copy image {img_source_path}: {e}")
                 else:
@@ -206,7 +215,8 @@ def process_chapter(md_file, questions_map, image_output_dir=None,
             
             # Get content of the section
             # We might want to remove the h2 tag from the content if the app displays the title separately
-            # sec_title_tag.decompose() 
+            if sec_title_tag:
+                sec_title_tag.decompose() 
             
             sec_content = str(sec)
             

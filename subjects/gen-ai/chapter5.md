@@ -26,6 +26,7 @@ label: chap-gen-chapter5
 
 ### 2. 模型 (Model) 的定義 {.unnumbered}
 在 Low Code 平台的語境中，「Model」通常**不是**指 AI 模型，而是指**資料模型 (Data Model)**。
+
 *   它抽象地描述了資料結構（如客戶資料表包含姓名、電話）、業務流程（訂單審核流程）與介面邏輯。
 *   這讓開發者可以專注於業務邏輯，而不用管底層的資料庫語法。
 
@@ -75,7 +76,7 @@ label: chap-gen-chapter5
 *   **n8n**：
     *   **定位**：強大的工作流自動化工具 (Workflow Automation Tool)，強調可自託管與高度客製化。
     *   **AI 整合**：內建 AI Agent 節點，可以輕鬆將 LLM (如 GPT-4, Claude) 與超過 400 種外部服務 (如 Google Sheets, Slack, Email) 串接。
-    *   **應用場景**：自動化辦公流程，例如「收到客戶 Email -> 用 AI 分析情緒與摘要 -> 寫入 Notion 資料庫 -> 自動草擬回信」。
+    *   **應用場景**：自動化辦公流程，例如「收到客戶 Email → 用 AI 分析情緒與摘要 → 寫入 Notion 資料庫 → 自動草擬回信」。
     ![n8n](images/n8n.webp)
 *   **ComfyUI**：
     *   **定位**：專為 [Stable Diffusion](https://en.wikipedia.org/wiki/Stable_Diffusion) 設計的節點式圖形介面 (Node-based GUI)。

@@ -565,7 +565,7 @@ questions:
   text: 下列何者不是監督式學習的應用？
   type: multiple_choice
   options:
-  - 客戶分群 (無標籤) (Customer Clustering: No Labels)，屬於非監督式學習。
+  - "客戶分群 (無標籤) (Customer Clustering: No Labels)，屬於非監督式學習。"
   - 房價預測 (House Price Prediction)，使用已標籤資料的迴歸任務。
   - 垃圾郵件分類 (Spam Email Classification)，使用已標籤資料的分類任務。
   - 手寫數字辨識 (Handwritten Digit Recognition)，使用已標籤資料的分類任務。

@@ -38,7 +38,7 @@ linear_layer = tf.keras.layers.Dense(units=5, input_shape=(10,))
 
 ### 卷積神經網路變體 {.unnumbered}
 
-*   **Inception (GoogLeNet)**：引入 Inception 模組，並行使用不同大小的卷積核 ($1\times1, 3\times3, 5\times5$)，讓網路自己學習最佳的特徵尺度。
+*   **Inception (GoogLeNet)**：引入 Inception 模組，並行使用不同大小的卷積核 1×1, 3×3, 5×5，讓網路自己學習最佳的特徵尺度。
 *   **MobileNet**：使用深度可分離卷積 (Depthwise Separable Convolution)，大幅減少參數和計算量，專為行動裝置設計。
 *   **EfficientNet**：提出複合縮放 (Compound Scaling) 方法，同時調整網路的深度、寬度和解析度，以達到最佳的性能/資源平衡。
 

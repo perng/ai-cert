@@ -25,7 +25,7 @@ label: chap-ai-foundation-chapter9
 如果資料很少，切成三份（訓練/驗證/測試）太浪費怎麼辦？或者我們擔心切出來的驗證集剛好特別簡單或特別難？
 
 *   **核心概念**：**輪流當驗證集**。
-*   **運作流程 ($K=5$ 為例)**：
+*   **運作流程 (**K=5** 為例)**：
     1.  **切分**：將全部資料隨機切成 5 等份 (Fold 1 ~ Fold 5)。
     2.  **輪替訓練**：進行 5 輪實驗。
         *   **第 1 輪**：拿 Fold 1 當驗證集，Fold 2-5 當訓練集。
@@ -86,12 +86,12 @@ label: chap-ai-foundation-chapter9
 *   **平均絕對誤差 (MAE, Mean Absolute Error)**：
     *   $$ MAE = \frac{1}{n} \sum |y_{true} - y_{pred}| $$
     *   **特點**：對離群值較不敏感，解釋直觀（平均差幾分）。
-*   **R-squared ($R^2$, 決定係數)**：
+*   **R-squared (R<sup>2</sup>, 決定係數)**：
     *   $$ R^2 = 1 - \frac{SS_{res}}{SS_{tot}} = 1 - \frac{\sum (y_{true} - y_{pred})^2}{\sum (y_{true} - y_{mean})^2} $$
     *   **意義**：衡量模型解釋了資料多少變異。
-        *   $R^2 = 1$：完美擬合（誤差為 0）。
-        *   $R^2 = 0$：跟「直接猜平均值」一樣爛。
-        *   $R^2 < 0$：比亂猜還爛（模型完全錯了）。
+        *   R<sup>2</sup> = 1：完美擬合（誤差為 0）。
+        *   R<sup>2</sup> = 0：跟「直接猜平均值」一樣爛。
+        *   R<sup>2</sup> < 0：比亂猜還爛（模型完全錯了）。
 
 ![迴歸指標](images/regression-metrics.webp)
 
@@ -124,7 +124,7 @@ label: chap-ai-foundation-chapter9
 4.  **資料增強 (Data Augmentation)**：
     *   **概念**：如果資料不夠，就自己造！
     *   **影像**：旋轉、裁切、調亮、水平翻轉、加雜訊。
-    *   **文字**：同義詞替換、隨機刪除、回譯 (Back Translation, 中->英->中)。
+    *   **文字**：同義詞替換、隨機刪除、回譯 (Back Translation, 中→英→中)。
     *   **聲音**：調整音調、改變速度、加入背景噪音。
 
 ![防止過擬合技術](images/prevent-overfitting.webp)

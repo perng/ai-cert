@@ -852,8 +852,8 @@ questions:
   text: 情境：EPSG:4326 代表哪種座標系統？
   type: multiple_choice
   options:
-  - WGS84 經緯度座標系統 (EPSG:4326)
-  - Web Mercator 投影座標系統 (EPSG:3857)
+  - "WGS84 經緯度座標系統 (EPSG:4326)"
+  - "Web Mercator 投影座標系統 (EPSG:3857)"
   - TWD97 台灣二度分帶座標系統
   - 火星座標系統 (GCJ-02)
   correct_index: 0

@@ -48,8 +48,7 @@ print("Dropped DataFrame:\n", df_dropped)
 
 正規化 (Normalization) 將數據縮放到特定的範圍，這對於基於距離的演算法（如 KNN、SVM）和使用梯度下降的演算法非常重要。
 
-*   **Min-Max Scaling**：將數據縮放到 [0, 1] 區間。
-    $$ x' = \frac{x - \min(x)}{\max(x) - \min(x)} $$
+*   **Min-Max Scaling**：將數據縮放到 [0, 1] 區間。  $$ x' = \frac{x - \min(x)}{\max(x) - \min(x)} $$
 *   **標準化 (Standardization / Z-score Normalization)**：將數據轉換為平均值為 0，標準差為 1 的分佈。
     $$ x' = \frac{x - \mu}{\sigma} $$
 
@@ -104,6 +103,7 @@ plt.show()
 ### 特徵選擇 {.unnumbered}
 
 特徵選擇 (Feature Selection) 旨在選出對模型預測最有幫助的特徵子集，以減少過擬合、提高訓練速度並增強模型可解釋性。
+
 *   **過濾法 (Filter)**：基於統計指標（如相關係數、卡方檢定）。
 *   **包裹法 (Wrapper)**：使用模型來評估特徵子集（如遞歸特徵消除 RFE）。
 *   **嵌入法 (Embedded)**：特徵選擇是模型訓練的一部分（如 Lasso 回歸）。
@@ -120,8 +120,8 @@ plt.show()
     *   **數學步驟**：
         1.  **中心化 (Centering)**：將數據減去平均值，使中心移至原點。
         2.  **計算共變異數矩陣 (Covariance Matrix)**：$C = \frac{1}{n-1} X^T X$。這描述了特徵之間的相關性。
-        3.  **特徵分解 (Eigendecomposition)**：計算 $C$ 的特徵值 ($\lambda$) 和特徵向量 ($v$)。
-        4.  **排序與投影**：將特徵值由大到小排序，選擇前 $k$ 個特徵值對應的特徵向量，將數據投影到這些向量構成的子空間。
+        3.  **特徵分解 (Eigendecomposition)**：計算 **C** 的特徵值 (**𝝺**) 和特徵向量 (**v**)。
+        4.  **排序與投影**：將特徵值由大到小排序，選擇前 **k** 個特徵值對應的特徵向量，將數據投影到這些向量構成的子空間。
 
 *   **t-SNE (t-Distributed Stochastic Neighbor Embedding)**：
     *   **原理**：一種非線性降維技術，特別適合用於高維數據的視覺化（通常降至 2D 或 3D）。

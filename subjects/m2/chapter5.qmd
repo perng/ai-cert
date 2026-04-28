@@ -12,6 +12,7 @@ label: chap-m2-ch5
 **MLOps (Machine Learning Operations)** 是 DevOps 在 AI 領域的延伸，旨在將機器學習模型的開發 (Development) 與營運 (Operations) 整合。它強調將模型的訓練、測試、部署與監控進行**持續整合 (Continuous Integration)** 與**自動化 (Automation)**，確保模型在全生命週期中的一致性、效率與可追蹤性。
 
 MLOps 的主要目標包括：
+
 *   **縮短開發週期**：自動化重複性工作。
 *   **提升模型品質**：透過自動化測試與驗證。
 *   **降低風險**：透過版本控制與監控機制。
@@ -22,21 +23,25 @@ MLOps 的主要目標包括：
 
 ### 雲端部署 (Cloud Deployment) {.unnumbered}
 利用公有雲 (如 AWS, GCP, Azure) 的強大計算資源與可擴展性。
+
 *   **優勢**：彈性擴充、無需維護硬體。
 *   **適用**：處理複雜模型、大規模請求、需要高算力的應用。
 
 ### 私有雲部署 (Private Cloud) {.unnumbered}
 企業自建或專屬的雲端環境 (如 OpenStack, VMware)。
+
 *   **優勢**：資安風險可控、資料不外流、符合法規要求。
 *   **適用**：金融、醫療、政府等對資料隱私高度敏感的領域。
 
 ### 邊緣運算 (Edge Computing) {.unnumbered}
 將模型部署在靠近數據源的設備上 (如手機、IoT 設備、車載系統)。
+
 *   **優勢**：低延遲、保護隱私 (數據不出設備)、節省頻寬。
 *   **挑戰**：運算資源受限，通常需要模型壓縮 (Quantization, Pruning)。
 
 ### 混合部署 (Hybrid Deployment) {.unnumbered}
 結合公有雲、私有雲與邊緣架構。例如：雲端進行模型訓練，邊緣進行即時推論。
+
 *   **優勢**：兼顧計算能力與即時性。
 
 **Python 範例：使用 FastAPI 建立模型 API**
@@ -92,28 +97,33 @@ AI 系統不應是獨立存在的模組，而是應該能與企業現有資訊�
 
 ### 資料來源與資料管線整合 {.unnumbered}
 現代 AI 系統須從多種來源取得資料，包括企業內部**資料倉儲 (Data Warehouse)**、大規模非結構化資料的**資料湖 (Data Lake)**、以及 IoT 裝置即時回傳的感測資料。
+
 *   **資料管線 (Data Pipeline)**：需建立涵蓋資料擷取、格式轉換、清理與入庫的完整流程，確保資料持續穩定流入。
 
 ### 企業內部系統整合 {.unnumbered}
 AI 模型預測結果必須整合回企業核心系統，才能產生商業價值。
+
 *   **ERP (企業資源規劃)**：根據需求預測動態調整採購。
 *   **CRM (客戶關係管理)**：自動根據模型推薦寄送促銷信件。
 *   **MES (製造執行系統)**：即時調整生產參數以優化良率。
 
 ### API 與平台接軌 {.unnumbered}
 為了讓前端應用（如網站、App、BI 工具）即時取得推論結果，需封裝為可存取的服務介面。
+
 *   **RESTful API**：最常見的實作方式，通用性高。
 *   **gRPC**：適用於高效能、低延遲的內部微服務通訊。
 *   **Webhooks**：適用於非同步事件通知。
 
 ### 安全與權限控管 {.unnumbered}
 AI 系統的存取必須納入資訊安全考量，特別是在涉及個資或商業機密時。
+
 *   **身份驗證與授權**：使用 **OAuth2** 或 **JWT (JSON Web Token)**。
 *   **API Gateway**：進行存取日誌記錄、流量控管與統一的入口管理。
 *   **角色權限 (RBAC)**：對不同角色設定不同的存取權限。
 
 ### 跨雲與異質系統整合 {.unnumbered}
 AI 模型可能橫跨本地資料中心、邊緣裝置與雲端平台。
+
 *   **Service Mesh**：作為中介整合層，統一管理資料同步、服務調用與狀態追蹤，避免平台間的資訊孤島。
 
 ## AI 的持續整合/持續部署 (CI/CD) {#sec-cicd4ai}
@@ -123,6 +133,7 @@ CI/CD (Continuous Integration / Continuous Deployment) 是現代軟體工程的�
 ### 持續整合 (Continuous Integration, CI) {.unnumbered}
 
 CI 強調開發人員頻繁地將程式碼合併到主分支 (Main Branch)。
+
 *   **核心活動**：
     *   **版本控制**：程式碼 (Git) 與數據 (DVC) 的版本管理。
     *   **自動化建置**：自動編譯程式碼、建置 Docker 映像檔。
@@ -134,6 +145,7 @@ CI 強調開發人員頻繁地將程式碼合併到主分支 (Main Branch)。
 ### 持續交付與部署 (Continuous Delivery & Deployment, CD) {.unnumbered}
 
 CD 關注將經過測試的軟體自動發布到生產環境。
+
 *   **持續交付 (Continuous Delivery)**：自動部署到測試環境 (Staging)，但部署到生產環境 (Production) 需要**人工審核**。
 *   **持續部署 (Continuous Deployment)**：通過所有測試後，**自動**部署到生產環境，無需人工干預。
 *   **部署策略**：

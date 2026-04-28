@@ -336,3 +336,5 @@ assets/
 future/
 
 **/.DS_Store
+/.quarto/
+**/*_files/

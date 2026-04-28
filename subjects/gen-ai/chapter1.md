@@ -14,18 +14,19 @@ Transformer 的強大來自於其獨特的設計，摒棄了傳統 RNN 的循環
 
 ### 1. 自注意力機制 (Self-Attention) {.unnumbered}
 這是 Transformer 的靈魂。它讓模型在處理一個字時，能同時「關注」句子中的其他字，從而理解上下文關係。
+
 *   **例子**：「**蘋果**因為太貴了，所以我沒買**它**。」
     *   當模型處理「它」這個字時，Self-Attention 機制會告訴模型，「它」指代的是前面的「蘋果」，而不是「我」。
 *   **優勢**：解決了長距離依賴問題 (Long-term Dependency)，即使句子很長，開頭和結尾的關係也能被捕捉。
 
-<!-- Image Prompt: Title: "Self-Attention Mechanism". Style: Stick figures with color. Content: A sentence "The animal didn't cross the street because it was too tired." The word "it" has glowing lines connecting it strongly to "animal" and weakly to "street". A stick figure is holding a magnifying glass looking at the connections. Label: "Understanding Context". Note: dialogs and all texts/labels should be in Traditional Chinese. -->
+
 
 ### 2. 位置編碼 (Positional Encoding) {.unnumbered}
 由於 Transformer 是並行處理所有字（不像 RNN 一個字一個字讀），它本身不知道「順序」。
+
 *   **功能**：給每個字加上一個「位置標籤」，讓模型知道哪個字在前面，哪個字在後面。
 *   **意義**：確保「貓追狗」和「狗追貓」能被區分為不同的語意。
 
-<!-- Image Prompt: Title: "Positional Encoding". Style: Stick figures with color. Content: Two identical twin stick figures (representing the word "Dog"). One is wearing a shirt with number "1", the other with number "3". A sentence "Dog(1) chases Cat(2) chases Dog(3)". The numbers show that position matters. Label: "Order Matters". Note: dialogs and all texts/labels should be in Traditional Chinese. -->
 
 ## Transformer 架構變體 {#sec-transformer-variants}
 
@@ -128,9 +129,10 @@ Transformer 模型自 2017 年問世以來，已成為自然語言處理 (NLP) �
 *   **Token (詞元)**：
     *   LLM 看不懂中文字或英文字母，它看的是 Token。
     *   **計算方式**：
-        *   英文：通常 1 個單字 $\approx$ 1.3 個 Token (或是 1000 Tokens $\approx$ 750 單字)。
-        *   中文：通常 1 個中文字 $\approx$ 1.5 ~ 2 個 Token (取決於分詞器)。
+        *   英文：通常 1 個單字約等於 1.3 個 Token (或是 1000 Tokens 約等於 750 單字)。
+        *   中文：通常 1 個中文字約等於 1.5 ~ 2 個 Token (取決於分詞器)。
     *   *考點*：API 計費通常是以 Token 數計算，包含輸入 (Prompt) 和輸出 (Completion)。
+    *   **注意**：新型的「推論模型」(Reasoning Models, 如 OpenAI o1)，其內部的「思考過程」(Reasoning Tokens) 雖不可見，但**通常會被計入輸出 Token (Output Tokens)** 收費。
 
 ![Context Window](images/context_window.webp)
 

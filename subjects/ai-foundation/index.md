@@ -1,7 +1,6 @@
 ---
 title: "人工智慧基礎理論"
 author: "AI仁波切"
-date: "2025-11-24"
 format:
   html:
     toc: true

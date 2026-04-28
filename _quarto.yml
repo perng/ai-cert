@@ -1,0 +1,10 @@
+project:
+  type: website
+  output-dir: _book
+
+website:
+  navbar: 
+    background: primary
+    left:
+      - href: index.html
+        text: Home

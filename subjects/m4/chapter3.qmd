@@ -38,17 +38,13 @@ print("Best parameters:", clf.best_params_)
 
 正規化技術 (Regularization Techniques) 用於防止過擬合 (Overfitting)，通過在損失函數中加入懲罰項來限制模型複雜度。
 
-$$ L_{total} = L_{original} + \lambda \cdot R(w) $$
-其中 $\lambda$ 是正規化強度。
+$L_{total} = L_{original} + \lambda \cdot R(w)$
+其中 **𝝺** 是正規化強度。
 
 ### 常見技術 {.unnumbered}
 
-*   **L1 正規化 (Lasso)**：懲罰權重的絕對值總和。
-    $$ R(w) = \sum |w_i| $$
-    L1 傾向於產生**稀疏權重**（許多權重變為 0），因此也可用於**特徵選擇**。
-*   **L2 正規化 (Ridge)**：懲罰權重的平方和。
-    $$ R(w) = \sum w_i^2 $$
-    L2 傾向於使權重變小但不為 0，能有效防止單一特徵對模型影響過大。
+*   **L1 正規化 (Lasso)**：懲罰權重的絕對值總和。    $$ R(w) = \sum |w_i| $$     L1 傾向於產生**稀疏權重**（許多權重變為 0），因此也可用於**特徵選擇**。
+*   **L2 正規化 (Ridge)**：懲罰權重的平方和。    $$ R(w) = \sum w_i^2 $$    L2 傾向於使權重變小但不為 0，能有效防止單一特徵對模型影響過大。
 *   **Dropout**：在訓練過程中隨機丟棄（歸零）一部分神經元（例如 50%）。這強迫網路學習更魯棒的特徵，因為它不能依賴任何特定的神經元。
 *   **批次正規化 (Batch Normalization)**：在每一層的激活函數之前，對輸入進行標準化（減去均值，除以標準差）。
     *   *優點*：加速訓練收斂，允許使用更高的學習率，並具有輕微的正規化效果。
@@ -62,19 +58,19 @@ $$ L_{total} = L_{original} + \lambda \cdot R(w) $$
 模型壓縮 (Model Compression) 技術減小模型體積，加速推論，使其能在邊緣設備上運行。
 
 ### 量化 {.unnumbered}
-
 量化 (Quantization) 將權重從 32 位浮點數 (FP32) 轉換為 8 位整數 (INT8)。
+
 *   **優點**：模型大小減少 4 倍，計算速度顯著提升。
 *   **缺點**：可能會造成輕微的精度損失。
 
 ### 剪枝 (Pruning) {.unnumbered}
-
 剪枝 (Pruning) 移除神經網路中不重要的連接（權重接近 0 的連接）。
+
 *   **非結構化剪枝 (Unstructured Pruning)**：隨機移除單個權重，導致稀疏矩陣，需要專門的硬體或庫加速。
 *   **結構化剪枝 (Structured Pruning)**：移除整個通道 (Channel) 或卷積核 (Filter)，直接減少模型結構，通用硬體即可加速。
 
 ### 知識蒸餾 {.unnumbered}
 
 知識蒸餾 (Knowledge Distillation) 訓練一個小的學生模型 (Student) 來模仿大的教師模型 (Teacher) 的輸出（Soft targets）。
-$$ L = \alpha L_{CE}(y, \hat{y}_{student}) + (1-\alpha) L_{KL}(\hat{y}_{teacher}, \hat{y}_{student}) $$
+$ L = \alpha L_{CE}(y, \hat{y}_{student}) + (1-\alpha) L_{KL}(\hat{y}_{teacher}, \hat{y}_{student})$
 學生模型不僅學習真實標籤，還學習教師模型的「暗知識」（例如，這張圖雖然是貓，但也有一點像狗）。

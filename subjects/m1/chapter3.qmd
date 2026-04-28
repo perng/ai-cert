@@ -9,15 +9,15 @@ label: chap-m1-ch3
 
 ## 監督式學習 {#sec-supervised-learning}
 
-監督式學習 (Supervised Learning) 使用標記好的數據 (Labeled Data) 來訓練模型，即每個輸入 $x$ 都有對應的正確輸出 $y$。目標是學習一個函數 $f: X \to Y$。
+監督式學習 (Supervised Learning) 使用標記好的數據 (Labeled Data) 來訓練模型，即每個輸入 **x** 都有對應的正確輸出 **y**。目標是學習一個函數 $f: X \to Y$。
 
 ### 線性迴歸 {.unnumbered}
 
 線性迴歸 (Linear Regression) 用於預測連續數值。它試圖找到一條直線（或超平面）來擬合數據，使得預測值與真實值之間的均方誤差 (MSE) 最小。
 
-$$ y = w_0 + w_1 x_1 + \dots + w_n x_n = \mathbf{w}^T \mathbf{x} $$
+$$y = w_0 + w_1 x_1 + \dots + w_n x_n = \mathbf{w}^T \mathbf{x}$$
 
-其中 $\mathbf{w}$ 是權重向量，$\mathbf{x}$ 是特徵向量。
+其中 **w** 是權重向量，**x** 是特徵向量。
 
 **演算法偽代碼 (Pseudo-code)：**
 
@@ -73,7 +73,7 @@ $$ P(y=1|x) = \sigma(\mathbf{w}^T \mathbf{x} + b) = \frac{1}{1 + e^{-(\mathbf{w}
 
 *   當 $z \to \infty$，$\sigma(z) \to 1$。
 *   當 $z \to -\infty$，$\sigma(z) \to 0$。
-*   當 $z = 0$，$\sigma(z) = 0.5$（決策邊界）。
+*   當 z = 0，σ(z) = 0.5（決策邊界）。
 
 **Python 範例：繪製 Sigmoid 函數**
 
@@ -139,6 +139,7 @@ plt.show()
 ### 決策樹 {.unnumbered}
 
 決策樹 (Decision Trees) 通過一系列規則對數據進行分類或回歸。它模擬人類的決策過程，易於理解和解釋。
+
 *   **節點 (Node)**：代表一個特徵的測試。
 *   **分支 (Branch)**：代表測試的結果。
 *   **葉節點 (Leaf)**：代表最終的類別或數值。
@@ -146,8 +147,8 @@ plt.show()
 **如何建構決策樹？**
 
 決策樹的建構過程就是不斷選擇「最佳特徵」來分割數據，直到滿足停止條件（如葉節點純度夠高或達到最大深度）。
-*   **資訊獲利 (Information Gain)**：基於**熵 (Entropy)** 的概念。熵衡量數據的混亂程度。我們希望分割後的子集熵越小越好（越純）。
-    $$ Entropy(S) = - \sum p_i \log_2 p_i $$
+
+*   **資訊獲利 (Information Gain)**：基於**熵 (Entropy)** 的概念。熵衡量數據的混亂程度。我們希望分割後的子集熵越小越好（越純）。  $$ Entropy(S) = - \sum p_i \log_2 p_i $$
 *   **Gini 不純度 (Gini Impurity)**：衡量從集合中隨機選取一個元素被錯誤標記的機率。CART 演算法使用 Gini 不純度。
     $$ Gini(S) = 1 - \sum p_i^2 $$
 
@@ -177,6 +178,7 @@ plt.show()
 ### 支援向量機 {.unnumbered}
 
 支援向量機 (SVM, Support Vector Machine) 是一種強大的監督式學習演算法，用於分類和迴歸。
+
 *   **核心概念**：尋找一個最佳超平面 (Hyperplane)，使得不同類別之間的**邊界 (Margin)** 最大化。邊界是超平面到最近的數據點（稱為**支援向量 Support Vectors**）的距離。
 *   **數學目標**：最大化 $\frac{2}{||\mathbf{w}||}$，等同於最小化 $\frac{1}{2}||\mathbf{w}||^2$。
 *   **核函數 (Kernel Trick)**：當數據在低維空間線性不可分時，SVM 使用核函數（如 RBF, Polynomial）將數據映射到高維空間，使其變得線性可分。
@@ -224,13 +226,14 @@ plt.show()
 ### K-近鄰演算法 {.unnumbered}
 
 K-近鄰演算法 (KNN, K-Nearest Neighbors) 是一種簡單直觀的監督式學習演算法。
-*   **原理**：對於一個新的數據點，查看其在特徵空間中最近的 $K$ 個鄰居。
-    *   **分類**：由這 $K$ 個鄰居中出現次數最多的類別決定（多數決）。
-    *   **迴歸**：由這 $K$ 個鄰居的平均值決定。
+
+*   **原理**：對於一個新的數據點，查看其在特徵空間中最近的 **K** 個鄰居。
+    *   **分類**：由這 **K** 個鄰居中出現次數最多的類別決定（多數決）。
+    *   **迴歸**：由這 **K** 個鄰居的平均值決定。
 *   **距離度量**：最常用的是歐幾里得距離 (Euclidean Distance)。
 *   **K 的選擇**：
-    *   $K$ 太小：模型容易受雜訊影響，導致過擬合 (Overfitting)。
-    *   $K$ 太大：模型過於平滑，導致欠擬合 (Underfitting)。
+    *   **K** 太小：模型容易受雜訊影響，導致過擬合 (Overfitting)。
+    *   **K** 太大：模型過於平滑，導致欠擬合 (Underfitting)。
 
 **Python 範例：KNN 分類**
 
@@ -286,9 +289,10 @@ plt.show()
 ### K-平均分群 {.unnumbered}
 
 K-平均分群 (K-means Clustering) 將數據劃分為 K 個群集 (Clusters)。
+
 *   **目標函數**：最小化群集內變異數總和 (Within-Cluster Sum of Squares, WCSS)。
     $$ J = \sum_{i=1}^{K} \sum_{x \in C_i} ||x - \mu_i||^2 $$
-    其中 $\mu_i$ 是群集 $C_i$ 的中心。
+    其中 μ<sub>i</sub> 是群集 C<sub>i</sub> 的中心。
 
 **演算法偽代碼 (Pseudo-code)：**
 
@@ -311,9 +315,10 @@ Output: Cluster assignments for each point
 
 **如何決定 K 值？**
 
-決定最佳的群集數量 $K$ 是一個常見的問題。最常用的方法是**手肘法 (Elbow Method)**。
-*   **原理**：計算不同 $K$ 值下的 WCSS (Within-Cluster Sum of Squares)。隨著 $K$ 增加，WCSS 會逐漸減小。
-*   **選擇**：選擇 WCSS 下降幅度開始變緩的那個點（看起來像手肘的彎曲處），作為最佳的 $K$。
+決定最佳的群集數量 **K** 是一個常見的問題。最常用的方法是**手肘法 (Elbow Method)**。
+
+*   **原理**：計算不同 **K** 值下的 WCSS (Within-Cluster Sum of Squares)。隨著 **K** 增加，WCSS 會逐漸減小。
+*   **選擇**：選擇 WCSS 下降幅度開始變緩的那個點（看起來像手肘的彎曲處），作為最佳的 **K**。
 
 ::: {.callout-note}
 ## WCSS (Within-Cluster Sum of Squares)
@@ -380,14 +385,10 @@ plt.show()
 | **真實 Positive** | TP (True Positive) | FN (False Negative) |
 | **真實 Negative** | FP (False Positive) | TN (True Negative) |
 
-*   **準確率 (Accuracy)**：預測正確的比例。
-    $$ Accuracy = \frac{TP + TN}{TP + TN + FP + FN} $$
-*   **精確率 (Precision)**：預測為正例中真正為正例的比例（寧缺毋濫）。
-    $$ Precision = \frac{TP}{TP + FP} $$
-*   **召回率 (Recall)**：真正為正例中被預測為正例的比例（寧濫毋缺）。
-    $$ Recall = \frac{TP}{TP + FN} $$
-*   **F1 分數 (F1 Score)**：精確率和召回率的調和平均數，用於平衡兩者。
-    $$ F1 = 2 \cdot \frac{Precision \cdot Recall}{Precision + Recall} $$
+*   **準確率 (Accuracy)**：預測正確的比例。  $$ Accuracy = \frac{TP + TN}{TP + TN + FP + FN} $$
+*   **精確率 (Precision)**：預測為正例中真正為正例的比例（寧缺毋濫）。  $$ Precision = \frac{TP}{TP + FP} $$
+*   **召回率 (Recall)**：真正為正例中被預測為正例的比例（寧濫毋缺）。  $$ Recall = \frac{TP}{TP + FN} $$
+*   **F1 分數 (F1 Score)**：精確率和召回率的調和平均數，用於平衡兩者。  $$ F1 = 2 \cdot \frac{Precision \cdot Recall}{Precision + Recall} $$
 *   **ROC 曲線 (Receiver Operating Characteristic Curve)**：
     *   描述分類器在不同**閾值 (Threshold)** 下的表現。
     *   **X 軸**：偽陽性率 (FPR, False Positive Rate) = $\frac{FP}{FP + TN}$ (1 - Specificity)。
@@ -441,10 +442,11 @@ plt.show()
 ### 交叉驗證 {.unnumbered}
 
 交叉驗證 (Cross-validation) 是一種評估模型泛化能力的技術，能有效減少因數據劃分不同而帶來的評估誤差。
+
 *   **K-Fold 交叉驗證**：最常用的方法。
-    1.  將數據隨機分為 $K$ 份 (Folds)。
-    2.  輪流使用其中 $K-1$ 份作為訓練集，剩餘 1 份作為驗證集。
-    3.  重複 $K$ 次，計算 $K$ 次評估指標的平均值作為最終性能指標。
+    1.  將數據隨機分為 **K** 份 (Folds)。
+    2.  輪流使用其中 K-1 份作為訓練集，剩餘 1 份作為驗證集。
+    3.  重複 **K** 次，計算 **K** 次評估指標的平均值作為最終性能指標。
 
 **Python 範例：K-Fold 交叉驗證**
 
@@ -472,7 +474,7 @@ print(f"Average score: {scores.mean():.2f}")
 *   **變異數 (Variance)**：模型預測值對於訓練數據變動的敏感度。
     *   **高變異數**：通常發生在模型太複雜時（如高階多項式擬合），導致**過擬合 (Overfitting)**。模型記住了訓練數據中的雜訊，導致泛化能力差。
 
-*   **總誤差** = $Bias^2 + Variance + Irreducible Error$。
+*   **總誤差** = Bias<sup>2</sup> + Variance + Irreducible Error。
     *   隨著模型複雜度增加，偏差下降，但變異數上升。
     *   **目標**：找到兩者之間的平衡點（Sweet Spot），使得總誤差最小。
 
