@@ -93,7 +93,7 @@ from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
 
 # 確保已下載必要的 NLTK 數據
-# nltk.download('punkt')
+nltk.download('punkt_tab')
 
 text = "AI is transforming the world with amazing technologies."
 # 1. 斷詞

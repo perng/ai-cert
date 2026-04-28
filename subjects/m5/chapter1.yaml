@@ -5,10 +5,10 @@ questions:
   text: AI 代理人（AI Agent）與傳統聊天機器人最主要的差異是什麼？
   type: multiple_choice
   options:
-  - 代理人只能回答問題，不能執行動作
+  - 代理人只能被動回答問題，無法執行動作
   - 代理人能夠自主進行多步驟規劃與工具呼叫，而聊天機器人主要進行單輪問答
-  - 代理人不需要大型語言模型作為核心
-  - 代理人無法理解自然語言指令
+  - 代理人不需要大型語言模型作為其核心運作引擎
+  - 代理人無法理解使用者輸入的自然語言指令
   correct_index: 1
   explanation: AI 代理人的核心特徵是自主性、多步驟執行與工具使用能力，能主動規劃並執行任務，而非僅被動回應。
   tags:
@@ -21,8 +21,8 @@ questions:
   text: 下列哪一項「不是」AI 代理人的核心特徵？
   type: multiple_choice
   options:
-  - 自主性 (Autonomy)：無需持續人工干預即可運作
-  - 目標導向 (Goal-directed)：圍繞明確目標組織行為
+  - 自主性 (Autonomy)：無需持續人工干預即可獨立運作
+  - 目標導向 (Goal-directed)：圍繞明確目標組織其行為
   - 固定性 (Fixedness)：行為模式在部署後不會改變
   - 持續性 (Persistence)：能跨多個步驟維持狀態與記憶
   correct_index: 2
@@ -37,10 +37,10 @@ questions:
   text: 在 AI 代理人的記憶系統中，「向量資料庫（如 Chroma、Pinecone）」屬於哪種記憶類型？
   type: multiple_choice
   options:
-  - 短期記憶 (Short-term Memory)，儲存當前對話上下文
+  - 短期記憶 (Short-term Memory)，儲存當前對話的上下文
   - 工作記憶 (Working Memory)，儲存當前任務的中間狀態
   - 長期記憶 (Long-term Memory)，儲存跨任務的知識與經驗
-  - 感知記憶 (Sensory Memory)，暫存外部環境輸入
+  - 感知記憶 (Sensory Memory)，暫存外部環境的輸入
   correct_index: 2
   explanation: 向量資料庫用於儲存長期記憶，能跨任務保存知識與過往經驗，透過語義相似度搜尋進行召回。
   tags:
@@ -53,8 +53,8 @@ questions:
   text: ReAct (Reasoning + Acting) 框架的核心思想是什麼？
   type: multiple_choice
   options:
-  - 先生成完整計劃再一次性執行所有步驟
-  - 透過自我反思記錄失敗原因以改進下次嘗試
+  - 先產生完整計畫再一次性執行所有規劃的步驟
+  - 透過自我反思記錄失敗原因以改進下次的嘗試
   - 交替進行推理（Thought）和行動（Action），並根據觀察結果動態調整
   - 使用多個代理人並行執行任務後投票決定結果
   correct_index: 2
@@ -69,10 +69,10 @@ questions:
   text: Reflexion 框架與 ReAct 框架的主要區別是什麼？
   type: multiple_choice
   options:
-  - Reflexion 不使用工具呼叫
+  - Reflexion 框架在運作時完全不使用工具呼叫
   - Reflexion 引入自我反思機制，將失敗經驗以文字形式儲存為記憶以改進後續嘗試
-  - Reflexion 只適用於數學計算任務
-  - Reflexion 需要多個 LLM 模型協同工作
+  - Reflexion 框架只能夠適用於數學計算類型的任務
+  - Reflexion 在運作時需要多個 LLM 模型來協同工作
   correct_index: 1
   explanation: Reflexion 的創新在於讓代理人在任務失敗後生成文字形式的自我反思，並將其作為長期記憶，在後續嘗試中避免重複犯同樣的錯誤。
   tags:
@@ -85,10 +85,10 @@ questions:
   text: 「Agentic RAG」與「Naive RAG」的主要差異是什麼？
   type: multiple_choice
   options:
-  - Agentic RAG 不使用向量資料庫
+  - Agentic RAG 的系統完全不使用向量資料庫
   - Agentic RAG 只能處理文字資料，而 Naive RAG 可處理多模態資料
   - Agentic RAG 讓代理人主動決定何時和如何進行檢索，可進行多輪查詢
-  - Agentic RAG 的回應速度比 Naive RAG 更快
+  - Agentic RAG 的整體回應速度比 Naive RAG 更快
   correct_index: 2
   explanation: Agentic RAG 將 RAG 融入代理迴圈，代理人能自主判斷何時需要檢索、使用哪種查詢策略，並可多輪迭代查詢以獲得更完整的資訊。
   tags:
@@ -101,9 +101,9 @@ questions:
   text: 評估 AI 代理人效能時，「步驟效率 (Step Efficiency)」指的是什麼？
   type: multiple_choice
   options:
-  - 代理人每秒能處理的請求數量
+  - 代理人每秒鐘能夠處理的請求總數量
   - 代理人完成任務所需的最少步驟數，步驟越少效率越高
-  - 代理人正確選擇工具的比例
+  - 代理人在任務中正確選擇工具的比例
   - 代理人在給定時間內完成任務的比例
   correct_index: 1
   explanation: 步驟效率衡量代理人解決問題的簡潔程度，不必要的冗餘步驟會降低效率並增加成本和延遲。
@@ -117,10 +117,10 @@ questions:
   text: 在 AI 代理人的框架中，「後設認知 (Metacognition)」的主要作用是什麼？
   type: multiple_choice
   options:
-  - 加速大型語言模型的推理速度
+  - 用來加速大型語言模型的整體推理速度
   - 讓代理人意識到自身的決策過程，並根據經驗進行自我反省與錯誤修正
-  - 強制代理人按照固定腳本執行任務
-  - 自動為代理人生成新的工具函數
+  - 強制代理人按照預先設定的固定腳本執行任務
+  - 自動為系統中的代理人生成新的工具函數
   correct_index: 1
   explanation: 後設認知也就是「對思考過程的反思」，讓 AI 代理人能評估自身表現、適應環境並修正錯誤。
   tags:
@@ -149,7 +149,7 @@ questions:
   text: 代理人架構中「長期記憶」最常依賴的儲存技術是？
   type: multiple_choice
   options:
-  - 電腦處理器內建的高速快取記憶體
+  - 電腦處理器內建的高速快取記憶體裝置
   - 透過嵌入模型轉換的向量資料庫系統
   - 傳統的關聯式資料庫與表格結構儲存
   - 系統環境變數與暫存檔案的動態讀寫
@@ -165,10 +165,10 @@ questions:
   text: Plan-and-Execute 模式在處理任務時的主要優勢是什麼？
   type: multiple_choice
   options:
-  - 反應速度極快且無延遲
-  - 適合處理步驟明確的任務
-  - 不需依賴外部工具的輔助
-  - 能夠完全避免模型產生幻覺
+  - 系統的反應速度快且幾乎沒有任何延遲
+  - 非常適合處理步驟已經明確的固定任務
+  - 整個過程中不需依賴任何外部工具的輔助
+  - 能夠完全避免模型產生幻覺的錯誤情況
   correct_index: 1
   explanation: 該模式將任務一次性拆解為多個步驟，非常適合邏輯清晰且明確的工作。
   tags:
@@ -180,10 +180,10 @@ questions:
   text: Plan-and-Execute 模式在面對何種情況時最容易發生失敗？
   type: multiple_choice
   options:
-  - 任務內容過於簡單且缺乏挑戰
-  - 執行過程中環境發生突發的變化
-  - 系統需要進行多次的工具函數呼叫
-  - 本地電腦的可用記憶體空間不足時
+  - 當任務的內容本身過於簡單且缺乏挑戰時
+  - 執行過程中環境發生非預期的突發變化時
+  - 系統需要進行多次的工具函數呼叫步驟時
+  - 本地電腦的可用記憶體空間不足夠使用時
   correct_index: 1
   explanation: 由於一開始就制定好所有計畫，一旦執行環境有變，系統往往無法彈性調整。
   tags:
@@ -195,9 +195,9 @@ questions:
   text: 下列哪一項操作屬於代理人的「感知能力 (Perception)」範疇？
   type: multiple_choice
   options:
-  - 規劃出完成任務的詳細後續步驟
-  - 讀取使用者的文字輸入與系統日誌
-  - 呼叫外部 API 執行實際的網路請求
+  - 規劃出完成任務所需的詳細後續執行步驟
+  - 讀取使用者的文字輸入與系統的運作日誌
+  - 呼叫外部 API 來執行實際的網路請求操作
   - 根據執行結果進行自我反省與修正錯誤
   correct_index: 1
   explanation: 感知能力指的是代理人接收並理解來自外部環境的輸入資訊。
@@ -210,7 +210,7 @@ questions:
   text: AI 代理人設定中的「Persona (角色設定)」主要目的是什麼？
   type: multiple_choice
   options:
-  - 強制限制模型執行的最高運算速度
+  - 強制限制模型所能執行的最高運算速度
   - 賦予模型特定的行為邊界與互動風格
   - 決定系統預設需要掛載多少工具數量
   - 自動減少每次對話的上下文視窗大小
@@ -225,9 +225,9 @@ questions:
   text: Reflexion 框架相對於一般迴圈，加入了什麼關鍵機制？
   type: multiple_choice
   options:
-  - 任務開始前的詳細步驟規劃
-  - 任務失敗後的自我反省與改進
-  - 將複雜任務分配給其他協作代理
+  - 任務開始之前先進行詳細的步驟規劃
+  - 任務失敗之後進行自我反省與改進
+  - 將複雜任務分配給其他的協作代理
   - 完全隨機地嘗試各種可用的新方法
   correct_index: 1
   explanation: Reflexion 的核心在於遇到失敗時能進行反思，並將經驗保留給後續嘗試。
@@ -240,7 +240,7 @@ questions:
   text: 在 Reflexion 框架中，代理人自我反省的結果通常會如何被儲存？
   type: multiple_choice
   options:
-  - 作為短期記憶區塊中的一次性變數
+  - 作為短期記憶區塊中的一次性使用變數
   - 轉化為長期記憶庫中的歷史經驗紀錄
   - 直接寫入系統的底層錯誤日誌檔案中
   - 備份到使用者個人的雲端硬碟儲存空間
@@ -255,10 +255,10 @@ questions:
   text: 「後設認知 (Metacognition)」賦予代理人哪一種關鍵能力？
   type: multiple_choice
   options:
-  - 產生出更快的文字串流生成速度
-  - 自主偵測行為缺陷並主動修正錯誤
-  - 能夠自動產生出全新的後端程式碼
-  - 繞過底層安全機制以獲取最高權限
+  - 產生出更快的文字串流生成速度與效率
+  - 自主偵測行為缺陷並主動修正執行錯誤
+  - 能夠自動產生出全新的後端應用程式碼
+  - 繞過底層安全機制以獲取系統最高權限
   correct_index: 1
   explanation: 後設認知讓代理人能「思考自己的思考過程」，進而達到修正錯誤與適應環境。
   tags:
@@ -270,9 +270,9 @@ questions:
   text: Agentic RAG 與傳統的 Naive RAG 最大的區別在於什麼？
   type: multiple_choice
   options:
-  - 向量資料庫能容納的整體資料容量大小
+  - 向量資料庫所能容納的整體資料容量大小
   - 代理人是否能主動決定何時進行資料檢索
-  - 伺服器回傳檢索結果的速度快慢差異
+  - 伺服器回傳檢索結果時的速度快慢差異
   - 系統底層是否依賴強大的向量嵌入模型
   correct_index: 1
   explanation: Agentic RAG 允許代理人根據當下需求，自主判斷是否需要呼叫檢索工具。
@@ -285,7 +285,7 @@ questions:
   text: 在評估代理人表現時，「任務成功率」指的是什麼？
   type: multiple_choice
   options:
-  - 系統成功呼叫所有外部工具的總次數
+  - 系統成功呼叫所有外部工具的總次數統計
   - 代理人最終能順利完成給定目標的比例
   - 代理人生成回覆時所使用的總文字數量
   - 代理人運行單一任務所耗費的整體時間
@@ -300,7 +300,7 @@ questions:
   text: 評估代理人時，「工具準確度」主要是用來衡量什麼？
   type: multiple_choice
   options:
-  - 工具伺服器回應 API 請求的延遲時間
+  - 工具伺服器回應 API 請求時的網路延遲時間
   - 代理人在各種情境下選擇正確工具的比例
   - 每個外部工具執行時消耗的雲端運算資源
   - 外部系統所能支援處理的多國語言數量
@@ -330,10 +330,10 @@ questions:
   text: 相較於寫死的傳統自動化腳本，AI 代理人的核心優勢是什麼？
   type: multiple_choice
   options:
-  - 執行過程中絕對不會產生任何系統錯誤
+  - 在執行過程中絕對不會產生任何系統錯誤
   - 能夠彈性適應高度不可預測的動態環境
-  - 程式執行的總耗時必定比傳統腳本更快
-  - 系統在運作時完全不需要任何人類監督
+  - 程式的執行總耗時必定比傳統腳本更快
+  - 系統在運作時完全不需要任何人類的監督
   correct_index: 1
   explanation: 傳統腳本只能處理預先定義好的狀況，而代理人能根據上下文彈性處理未知變化。
   tags:
@@ -345,7 +345,7 @@ questions:
   text: 在代理人的推理迴圈中，「Action (行動)」階段的主要作用是？
   type: multiple_choice
   options:
-  - 分析使用者輸入文字背後隱藏的真實意圖
+  - 分析使用者輸入文字背後所隱藏的真實意圖
   - 實際呼叫外部工具或 API 來改變環境狀態
   - 觀察並記錄環境在指令執行後的回傳結果
   - 評估自身表現的優劣並將其寫入錯誤日誌
@@ -375,7 +375,7 @@ questions:
   text: 下列何者最符合「工作記憶 (Working Memory)」的典型應用場景？
   type: multiple_choice
   options:
-  - 永遠記住使用者的名字與偏好語言設定
+  - 永遠記住使用者的名字與偏好的語言設定
   - 暫存多步驟計算過程中產生的中間變數
   - 永久保存過去所有專案任務的歷史經驗
   - 記錄系統啟動時載入的預設系統提示詞
