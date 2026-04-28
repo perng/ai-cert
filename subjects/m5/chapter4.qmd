@@ -1,10 +1,10 @@
 ---
-title: "OpenClaw 與 Hermes Agent"
+title: "主流 AI 代理框架總覽"
 order: 4
 label: chap-m5-ch4
 ---
 
-本章介紹兩個真實存在的開源 AI 代理應用：**OpenClaw**（以隱私優先為核心的本地個人助理）與 **Hermes Agent**（具備自我學習能力的多平台代理框架）。兩者都體現了 AI 代理的不同設計哲學，是了解現代代理系統的重要案例。
+自 2025 年以來，AI 代理框架（AI Agent Framework）的發展已從簡單的「包裝函式庫」進化為成熟的協調引擎。本章先介紹兩個真實運作的開源代理應用——OpenClaw 與 Hermes Agent，接著全面盤點目前主流的多代理協作框架、技術導向框架，以及 2026 年的新興競爭者。
 
 ## OpenClaw：在你的電腦上運行的個人 AI 助理 {#sec-openclaw}
 
@@ -48,6 +48,7 @@ OpenClaw 有一個特別的設計叫做「心跳（Heartbeat）」——它會�
 ## Hermes Agent：會自我學習的多平台代理 {#sec-hermes}
 
 ```{mermaid}
+%%{init: {'theme': 'neutral'}}%%
 flowchart TD
     Task(收到新任務) --> Eval{有現成的技能嗎？}
     Eval --> |Yes| Exec[直接套用執行]
@@ -120,26 +121,162 @@ Hermes 內建 cron 排程功能，讓你用**自然語言**定義自動化任務
 
 設定好之後，任務會在背景無人值守地自動執行。
 
-## 兩者的比較 {#sec-comparison}
+## 多代理協作框架 {#sec-multi-agent-frameworks}
 
-雖然 OpenClaw 和 Hermes Agent 都是本地運行、支援多平台、可與多種 AI 模型搭配的開源代理，但它們的設計重點有所不同：
+除了 OpenClaw 和 Hermes 這類「個人代理」之外，業界還有一系列專注於**讓多個代理人協同工作**的框架。這些框架擅長管理多個互相交互的代理來完成複雜任務。
 
-| 面向 | OpenClaw | Hermes Agent |
-|------|---------|--------------|
-| 核心訴求 | 隱私優先的個人生活助理 | 自我學習、越用越聰明的代理 |
-| 技能來源 | 社群共享 + 自動生成 | 從使用經驗自動生成 + agentskills.io 標準 |
-| 記憶設計 | 持久記憶、學習使用者偏好 | 三層記憶（使用者建模、跨會話、主動管理） |
-| 主動性 | Heartbeat 心跳機制 | 排程自動化 + 定期記憶強化 |
-| 擴展方式 | MCP 工具 + 社群技能 | MCP 工具 + agentskills.io 開放技能標準 |
-| 安裝方式 | npm 一行指令或 git clone | Python 環境 + 設定檔 |
-| 適合對象 | 重視隱私、想用自己熟悉的通訊 App 操作 AI 的使用者 | 希望 AI 能從工作中學習並持續改進的進階使用者 |
+```{mermaid}
+%%{init: {'theme': 'neutral'}}%%
+graph LR
+    subgraph "多代理協作框架"
+        CrewAI["CrewAI<br/>角色扮演協作"]
+        AutoGen["AutoGen<br/>對話式任務解決"]
+        LangGraph["LangGraph<br/>圖狀態機"]
+    end
+    subgraph "技術導向框架"
+        LlamaIndex["LlamaIndex<br/>資料檢索代理"]
+        Haystack["Haystack<br/>模組化管線"]
+    end
+    subgraph "生態系統 SDK"
+        OpenAISDK["OpenAI Agents SDK"]
+        SemanticKernel["Semantic Kernel"]
+    end
+```
 
-## 從這兩個案例看 AI 代理設計趨勢 {#sec-lessons}
+### CrewAI：角色扮演式的團隊協作 {.unnumbered}
 
-OpenClaw 和 Hermes Agent 雖然是兩個獨立的開源專案，但它們共同指向了 AI 代理發展的幾個重要方向：
+[CrewAI]{#def-crewai} 是一個專注於**角色導向多代理協作 (Role-based Multi-Agent Collaboration)** 的框架。它的核心概念是讓你像組建一個「團隊」一樣配置代理人：
+
+*   **角色設定**：每個代理人有明確的角色（Role）、背景故事（Backstory）和目標（Goal），就像是為團隊成員撰寫職位說明書。
+*   **流程驅動**：支援順序執行（Sequential）和階層式（Hierarchical）兩種工作流程。
+*   **自動委派**：代理人可以在執行過程中自動將子任務委派給更適合的隊友。
+
+例如，你可以組建一個「市場調查團隊」：
+
+```
+研究員代理：負責搜集網路資料，擅長使用搜尋工具
+分析師代理：負責整理與比較資料，擅長邏輯推理
+報告撰寫代理：負責將分析結果寫成簡報，擅長文字表達
+```
+
+CrewAI 會按照設定的流程，讓三位代理依次或協作完成任務。
+
+### Microsoft AutoGen：對話式多代理協作 {.unnumbered}
+
+[Microsoft AutoGen]{#def-autogen} 是由 Microsoft Research 開發的高度靈活框架，核心理念是透過**代理間的對話 (Agent-to-Agent Conversation)** 來解決任務。
+
+*   **對話驅動**：代理之間透過多輪對話互相交流、討論並達成共識，解決問題的過程就像一場會議。
+*   **自動程式執行**：AutoGen 內建安全的程式碼執行環境，代理可以撰寫程式碼並立即執行驗證。
+*   **企業級規模**：特別適合需要大規模部署的企業環境，支援複雜的對話管理和多代理工作流。
+*   **人機協作**：支援 Human-in-the-Loop 模式，讓人類在關鍵環節加入代理的對話中進行指導。
+
+### LangGraph：圖結構的狀態機代理 {.unnumbered}
+
+[LangGraph]{#def-langgraph} 是由 LangChain 團隊開發的框架，它將代理的工作流視為一個**狀態機 (State Machine)**，用有向圖（Graph）來表達。
+
+*   **圖結構**：每個節點代表一個操作（例如呼叫工具、呼叫 LLM），邊代表流程控制（條件跳轉、迴圈）。
+*   **支援迴圈**：與簡單的鏈式（Chain）執行不同，LangGraph 原生支援迴圈邏輯——代理可以根據結果反覆執行某段流程，直到達成條件。
+*   **精細控制**：開發者對狀態和記憶有完全的控制權，適合需要高度客製化的複雜代理。
+
+LangGraph 特別適合那些工作流程**非線性、需要條件分支和迴圈**的場景，例如：「反覆搜尋直到找到滿意的答案」或「多輪驗證直到程式碼通過所有測試」。
+
+## 技術與專業框架 {#sec-technical-frameworks}
+
+這些框架在特定的技術領域或生態系統中具有獨特優勢。
+
+### 資料導向框架 {.unnumbered}
+
+#### LlamaIndex：知識密集型代理的首選 {.unnumbered}
+
+[LlamaIndex]{#def-llamaindex} 最初以 RAG（Retrieval-Augmented Generation，檢索增強生成）聞名，現已發展為功能完善的代理框架。它最適合**需要從大量異質資料來源中進行複雜查詢**的代理應用。
+
+*   **查詢引擎導向**：擅長連接多種資料來源（PDF、資料庫、API、網頁），讓代理人對龐大的知識庫進行智慧查詢。
+*   **結構化輸出**：能將非結構化資料轉為結構化格式，方便後續分析。
+*   **適合場景**：企業知識管理、法律文件分析、學術研究助手等需要「深度理解資料」的應用。
+
+#### Haystack：透明可靠的模組化管線 {.unnumbered}
+
+[Haystack]{#def-haystack} 是由 Deepset 開發的開源框架，採用**模組化管線（Modular Pipeline）**架構。
+
+*   **管線導向**：所有功能（檢索、生成、工具呼叫等）都是獨立的管線元件，可以自由組裝。
+*   **高透明度**：每個元件的輸入輸出清楚可見，方便除錯和優化，這在生產環境中非常重要。
+*   **適合場景**：需要高可靠性和可解釋性的搜尋與代理應用。
+
+### 生態系統專屬 SDK {.unnumbered}
+
+#### OpenAI Agents SDK：OpenAI 生態的原生框架 {.unnumbered}
+
+[OpenAI Agents SDK]{#def-openai-agents-sdk} 是 OpenAI 官方提供的代理開發框架，專為深度使用 OpenAI 生態系統的開發者設計。
+
+*   **原生整合**：與最新的 GPT 模型無縫銜接，內建工具呼叫（Tool Calling）能力。
+*   **簡化開發**：提供精簡的 API 介面，降低建立代理的門檻。
+*   **適合場景**：已投入 OpenAI 生態系統的團隊，需要快速開發原型或產品。
+
+#### Microsoft Semantic Kernel：企業級 AI 整合 {.unnumbered}
+
+[Microsoft Semantic Kernel]{#def-semantic-kernel} 是一個企業級 SDK，讓開發者將 AI「外掛（Plugin）」整合到傳統程式語言（C#、Python、Java）中。
+
+*   **企業整合**：專為將代理能力加入現有企業軟體堆疊而設計，不需要重寫整個應用程式。
+*   **多語言支援**：不限於 Python，C# 和 Java 開發者也能使用。
+*   **適合場景**：大型企業需要在現有的商業系統中逐步導入 AI 代理功能。
+
+## 框架比較總覽 {#sec-framework-comparison}
+
+下表整理了各主流框架的定位與適用場景：
+
+| 框架 | 最適合的用途 | 架構風格 |
+|------|------------|---------|
+| **OpenClaw** | 隱私優先的本地個人助理 | 個人代理 / 技能生態系統 |
+| **Hermes Agent** | 自我學習、越用越聰明的代理 | 學習迴圈 / 技能封裝 |
+| **CrewAI** | 角色扮演式的多代理團隊協作 | 流程驅動 / 順序或階層式 |
+| **LangGraph** | 複雜的迴圈邏輯與自定義狀態管理 | 圖結構 / 狀態機 |
+| **AutoGen** | 對話式任務解決與自動程式執行 | 代理間對話 |
+| **LlamaIndex** | 知識密集型、需要深度資料查詢的代理 | 查詢引擎導向 |
+| **Haystack** | 需要高透明度的生產環境搜尋與代理 | 模組化管線 |
+| **OpenAI Agents SDK** | 快速開發 OpenAI 生態系統內的代理 | 原生 API 整合 |
+| **Semantic Kernel** | 企業級 AI 外掛整合（C#/Python/Java） | 外掛架構 |
+
+::: {.callout-tip}
+### 如何選擇框架？
+*   需要讓多個代理人「組隊」合作 → **CrewAI** 或 **AutoGen**
+*   需要複雜的迴圈和條件判斷邏輯 → **LangGraph**
+*   代理的核心任務是從大量資料中找答案 → **LlamaIndex** 或 **Haystack**
+*   團隊已深度使用 OpenAI 模型 → **OpenAI Agents SDK**
+*   需要在現有企業系統中加入 AI → **Semantic Kernel**
+*   注重本地隱私與個人助理體驗 → **OpenClaw**
+*   希望代理能從使用中持續學習 → **Hermes Agent**
+:::
+
+## 2026 年新興框架 {#sec-emerging-frameworks}
+
+除了上述成熟框架，以下是 2026 年正在快速崛起的新星：
+
+### OpenHands（前身為 OpenDevin） {.unnumbered}
+
+[OpenHands]{#def-openhands} 專注於**自主軟體工程代理 (Autonomous Software Engineering Agent)**——讓 AI 代理像真正的軟體工程師一樣，獨立完成從需求分析、撰寫程式碼、執行測試到部署的完整開發流程。對於希望用 AI 加速軟體開發的團隊，OpenHands 是值得關注的專案。
+
+### Mastra {.unnumbered}
+
+[Mastra]{#def-mastra} 是一個以 **TypeScript** 為核心的高效能代理開發框架，正在快速獲得開發者社群的關注。它的優勢在於：
+
+*   **TypeScript 原生**：對於前端和全端開發者來說更加親切。
+*   **高效能**：架構設計注重執行速度和低延遲。
+*   **快速部署**：從開發到部署的流程非常簡化。
+
+### Google Agent Development Kit (ADK) {.unnumbered}
+
+[Google Agent Development Kit (ADK)]{#def-google-adk} 是 Google 推出的代理開發工具包，特點是與 **Gemini 模型**和 **Vertex AI 基礎設施**深度整合。
+
+*   **Gemini 原生**：充分發揮 Google 最新模型的多模態和長上下文能力。
+*   **雲端基礎設施**：與 Google Cloud 的安全、擴展和部署服務無縫銜接。
+*   **適合場景**：已使用 Google Cloud 的企業，或需要利用 Gemini 獨特能力的應用。
+
+## AI 代理框架的發展趨勢 {#sec-lessons}
+
+從以上框架的共同特徵，可以歸納出 AI 代理技術發展的幾個重要方向：
 
 **趨勢一：AI 要在你的環境裡工作，不是你去 AI 的環境**
-兩者都強調讓代理接入使用者已有的工具（通訊 App、本地檔案系統），而不是要求使用者改變習慣使用新介面。
+OpenClaw、Hermes 等框架強調讓代理接入使用者已有的工具（通訊 App、本地檔案系統），而不是要求使用者改變習慣使用新介面。
 
 **趨勢二：記憶是代理的核心競爭力**
 一個「沒有記憶」的代理，每次都要從頭開始，無法真正成為個人助理。持久記憶讓代理從「工具」進化為「夥伴」。
@@ -148,4 +285,7 @@ OpenClaw 和 Hermes Agent 雖然是兩個獨立的開源專案，但它們共同
 Hermes 的學習迴圈、OpenClaw 的自動技能生成，都代表代理不只是執行人類設計好的功能，而是能從實際使用中創造新能力。
 
 **趨勢四：開放標準讓能力可移植**
-agentskills.io、MCP 等開放標準正在形成，讓技能和工具可以跨代理框架共享，避免每個框架都閉門造車。
+agentskills.io、MCP、A2A 等開放標準正在形成，讓技能和工具可以跨代理框架共享，避免每個框架都閉門造車。
+
+**趨勢五：框架走向專業分工**
+不再追求「一個框架打天下」。CrewAI 專精多代理協作、LlamaIndex 專精知識檢索、LangGraph 專精複雜流程控制——開發者根據需求選擇最合適的工具，甚至組合多個框架使用。

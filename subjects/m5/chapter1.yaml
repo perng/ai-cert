@@ -141,6 +141,7 @@ questions:
   explanation: 短期記憶受限於模型的上下文視窗，保存近期的對話互動。
   tags:
   - chap-m5-ch1
+  - sec-agent-architecture
   usage: quiz
 - id: 7110
   chapter_title: AI 代理人基礎概念
@@ -156,6 +157,7 @@ questions:
   explanation: 向量資料庫能將過往知識轉換為向量，實現跨任務的語意檢索。
   tags:
   - chap-m5-ch1
+  - sec-agent-architecture
   usage: quiz
 - id: 7111
   chapter_title: AI 代理人基礎概念

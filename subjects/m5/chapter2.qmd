@@ -4,43 +4,42 @@ order: 2
 label: chap-m5-ch2
 ---
 
-本章將首先探討 [AI 代理人 (AI Agent)](#def-ai-agent) 的基礎概念與評估方法，接著介紹 MCP（Model Context Protocol，模型上下文協議）——一個讓 [AI 代理人 (AI Agent)](#def-ai-agent) 能夠輕鬆連接各種 [工具 (Tools)](#def-tools) 和資料來源的開放標準。
+本章介紹 MCP（Model Context Protocol，模型上下文協議）——一個讓 AI 代理人能夠輕鬆連接各種工具和資料來源的開放標準。在進入 MCP 之前，我們先簡要回顧代理人的核心運作概念與評估方法。
 
-## AI 代理人基礎概念 {#sec-agent-fundamentals}
+## AI 代理人基礎概念回顧 {#sec-agent-fundamentals}
 
-[AI 代理人 (AI Agent)]{#def-ai-agent} 是一個系統，它將 [大型語言模型 (Large Language Models, LLMs)](#def-llm) 作為「大腦」，使其能夠透過 [推理與規劃 (Reasoning and Planning)](#def-reasoning-planning) 來做出決策，並使用外部 [工具 (Tools)](#def-tools) 與環境互動。
+[AI 代理人 (AI Agent)]{#def-ai-agent} 是一個系統，它將 [大型語言模型 (Large Language Models, LLMs)]{#def-llm} 作為「大腦」，使其能夠透過 [推理與規劃 (Reasoning and Planning)]{#def-reasoning-planning} 來做出決策，並使用外部 [工具 (Tools)]{#def-tools} 與環境互動。
 
-[大型語言模型 (Large Language Models, LLMs)]{#def-llm} 是一種基於龐大資料訓練出來的 AI 模型，在 [AI 代理人 (AI Agent)](#def-ai-agent) 系統中負責處理對話（透過 [訊息與特殊標記 (Messages and Special Tokens)](#def-messages-tokens)）並提供邏輯思考能力。
+大型語言模型是一種基於龐大資料訓練出來的 AI 模型，在代理人系統中負責處理對話（透過 [訊息與特殊標記 (Messages and Special Tokens)]{#def-messages-tokens}）並提供邏輯思考能力。
 
-[訊息與特殊標記 (Messages and Special Tokens)]{#def-messages-tokens} 是 [大型語言模型 (Large Language Models, LLMs)](#def-llm) 結構化對話與理解指令的方式。
+推理與規劃是指代理人在採取行動前，分析問題並拆解成多個步驟的能力。
 
-[推理與規劃 (Reasoning and Planning)]{#def-reasoning-planning} 是指 [AI 代理人 (AI Agent)](#def-ai-agent) 在採取行動前，分析問題並拆解成多個步驟的能力。
-
-[工具 (Tools)]{#def-tools} 讓 [AI 代理人 (AI Agent)](#def-ai-agent) 得以執行具體操作（[動作 (Actions)](#def-actions)）。在 MCP 章節中我們將深入探討工具的標準化定義。透過 [工具 (Tools)](#def-tools)，代理人可以查詢資料庫、搜尋網頁或執行程式碼。
+工具讓代理人得以執行具體操作（[動作 (Actions)]{#def-actions}）。在 MCP 章節中我們將深入探討工具的標準化定義。透過工具，代理人可以查詢資料庫、搜尋網頁或執行程式碼。
 
 #### 代理人工作流程：思考、行動、觀察
 
-[AI 代理人 (AI Agent)](#def-ai-agent) 的核心運作方式是基於 [思考-行動-觀察循環 (Thought-Action-Observation Cycle)](#def-tao-cycle)。
-[思考-行動-觀察循環 (Thought-Action-Observation Cycle)]{#def-tao-cycle} 也被稱為 [ReAct (Reason + Act) 模式]{#def-react}。
-- **思考 (Thought)**：[AI 代理人 (AI Agent)](#def-ai-agent) 利用 [大型語言模型 (Large Language Models, LLMs)](#def-llm) 進行內部推理，決定下一步該怎麼做。
-- **行動 (Act/Actions)**：[AI 代理人 (AI Agent)](#def-ai-agent) 呼叫 [工具 (Tools)](#def-tools) 與外部環境互動。[動作 (Actions)]{#def-actions} 是 [工具 (Tools)](#def-tools) 執行的具體過程。
-- **觀察 (Observe/Observations)**：[AI 代理人 (AI Agent)](#def-ai-agent) 獲取 [工具 (Tools)](#def-tools) 執行的結果，並將此 [觀察 (Observations)]{#def-observations} 整合回下一步的思考中。
+代理人的核心運作方式是基於 [思考-行動-觀察循環 (Thought-Action-Observation Cycle)]{#def-tao-cycle}，也被稱為 [ReAct (Reason + Act) 模式]{#def-react}：
+
+- **思考 (Thought)**：代理人利用大型語言模型進行內部推理，決定下一步該怎麼做。
+- **行動 (Act/Actions)**：代理人呼叫工具與外部環境互動。動作是工具執行的具體過程。
+- **觀察 (Observe/Observations)**：代理人獲取工具執行的結果，並將此 [觀察 (Observations)]{#def-observations} 整合回下一步的思考中。
 
 ## 代理人可觀測性與評估 {#sec-agent-observability}
 
-當 [AI 代理人 (AI Agent)](#def-ai-agent) 系統變得複雜時，我們需要確保其穩定性與效能。
+當代理人系統變得複雜時，我們需要確保其穩定性與效能。
 
-[可觀測性 (Observability)]{#def-observability} 讓我們能夠擺脫「黑箱」行為，監控 [AI 代理人 (AI Agent)](#def-ai-agent) 的延遲、成本與安全性。這通常透過 [儀器化 (Instrumentation)](#def-instrumentation) 來達成。
+[可觀測性 (Observability)]{#def-observability} 讓我們能夠擺脫「黑箱」行為，監控代理人的延遲、成本與安全性。這通常透過 [儀器化 (Instrumentation)]{#def-instrumentation} 來達成。
 
-[儀器化 (Instrumentation)]{#def-instrumentation} 指的是使用系統（例如 OpenTelemetry）來捕獲 [AI 代理人 (AI Agent)](#def-ai-agent) 運作時的 [追蹤 (Traces)](#def-traces)、日誌與指標。
+儀器化指的是使用系統（例如 OpenTelemetry）來捕獲代理人運作時的 [追蹤 (Traces)]{#def-traces}、日誌與指標。
 
-[追蹤 (Traces)]{#def-traces} 可以記錄 [AI 代理人 (AI Agent)](#def-ai-agent) 每一次的思考與行動過程。為了實現這些監控，開發者常會使用各種開源的 [可觀測性工具 (Observability Tools)](#def-observability-tools)（如 Langfuse 或 Arize Phoenix）來視覺化效能。
+追蹤可以記錄代理人每一次的思考與行動過程。為了實現這些監控，開發者常會使用各種開源的 [可觀測性工具 (Observability Tools)]{#def-observability-tools}（如 Langfuse 或 Arize Phoenix）來視覺化效能。
 
-[評估 (Evaluation)]{#def-evaluation} 則是衡量 [AI 代理人 (AI Agent)](#def-ai-agent) 表現的機制，主要包含：
-- **即時/線上評估 (Real-time/Online Evaluation)**：收集使用者回饋，或使用「LLM 作為裁判 (LLM-as-a-judge)」動態評估 [AI 代理人 (AI Agent)](#def-ai-agent) 的輸出。
-- **離線評估 (Offline Evaluation)**：使用基準資料集 (Benchmark datasets) 來測試與比較 [AI 代理人 (AI Agent)](#def-ai-agent) 的效能。
+[評估 (Evaluation)]{#def-evaluation} 則是衡量代理人表現的機制，主要包含：
 
-了解這些基礎後，我們將深入探討如何運用標準化協議來增強 [AI 代理人 (AI Agent)](#def-ai-agent) 的工具能力。
+- **即時/線上評估 (Real-time/Online Evaluation)**：收集使用者回饋，或使用「LLM 作為裁判 (LLM-as-a-judge)」動態評估代理人的輸出。
+- **離線評估 (Offline Evaluation)**：使用基準資料集 (Benchmark datasets) 來測試與比較代理人的效能。
+
+了解這些基礎後，我們將深入探討如何運用標準化協議來增強代理人的工具能力。
 
 ## 問題的起源：為什麼需要 MCP？ {#sec-mcp-intro}
 

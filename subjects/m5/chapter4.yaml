@@ -1,6 +1,6 @@
 questions:
 - id: 7401
-  chapter_title: OpenClaw 與 Hermes Agent
+  chapter_title: 主流 AI 代理框架總覽
   section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
   text: OpenClaw 最核心的設計特點是什麼？
   type: multiple_choice
@@ -16,7 +16,7 @@ questions:
   - sec-openclaw
   usage: quiz
 - id: 7402
-  chapter_title: OpenClaw 與 Hermes Agent
+  chapter_title: 主流 AI 代理框架總覽
   section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
   text: OpenClaw 讓使用者透過哪種方式與 AI 互動？
   type: multiple_choice
@@ -33,7 +33,7 @@ questions:
   - sec-openclaw
   usage: quiz
 - id: 7403
-  chapter_title: OpenClaw 與 Hermes Agent
+  chapter_title: 主流 AI 代理框架總覽
   section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
   text: OpenClaw 的「心跳（Heartbeat）」機制指的是什麼？
   type: multiple_choice
@@ -49,7 +49,7 @@ questions:
   - sec-openclaw
   usage: quiz
 - id: 7404
-  chapter_title: OpenClaw 與 Hermes Agent
+  chapter_title: 主流 AI 代理框架總覽
   section_title: Hermes Agent：會自我學習的多平台代理
   text: Hermes Agent 宣稱自己是「唯一內建學習迴圈的代理」，這個學習迴圈的核心機制是什麼？
   type: multiple_choice
@@ -65,7 +65,7 @@ questions:
   - sec-hermes
   usage: quiz
 - id: 7405
-  chapter_title: OpenClaw 與 Hermes Agent
+  chapter_title: 主流 AI 代理框架總覽
   section_title: Hermes Agent：會自我學習的多平台代理
   text: Hermes Agent 的技能系統與哪個開放標準相容，讓技能可以跨框架共享？
   type: multiple_choice
@@ -81,7 +81,7 @@ questions:
   - sec-hermes
   usage: quiz
 - id: 7406
-  chapter_title: OpenClaw 與 Hermes Agent
+  chapter_title: 主流 AI 代理框架總覽
   section_title: Hermes Agent：會自我學習的多平台代理
   text: Hermes Agent 的「模型無關（Model Agnostic）」設計帶來什麼實際好處？
   type: multiple_choice
@@ -97,8 +97,8 @@ questions:
   - sec-hermes
   usage: quiz
 - id: 7407
-  chapter_title: OpenClaw 與 Hermes Agent
-  section_title: 從這兩個案例看 AI 代理設計趨勢
+  chapter_title: 主流 AI 代理框架總覽
+  section_title: AI 代理框架的發展趨勢
   text: 從 OpenClaw 和 Hermes Agent 的設計可以觀察到，現代 AI 代理的共同發展趨勢是？
   type: multiple_choice
   options:
@@ -114,8 +114,8 @@ questions:
   - sec-lessons
   usage: quiz
 - id: 7408
-  chapter_title: OpenClaw 與 Hermes
-  section_title: Hermes Agent
+  chapter_title: 主流 AI 代理框架總覽
+  section_title: Hermes Agent：會自我學習的多平台代理
   text: 對於複雜任務，Hermes 會如何處理？
   type: multiple_choice
   options:
@@ -129,8 +129,8 @@ questions:
   - chap-m5-ch4
   usage: quiz
 - id: 7409
-  chapter_title: OpenClaw 與 Hermes
-  section_title: 兩者的比較
+  chapter_title: 主流 AI 代理框架總覽
+  section_title: 框架比較總覽
   text: 在模型選擇上，Hermes 和 OpenClaw 的共通點是？
   type: multiple_choice
   options:
@@ -144,8 +144,8 @@ questions:
   - chap-m5-ch4
   usage: quiz
 - id: 7410
-  chapter_title: OpenClaw 與 Hermes
-  section_title: 設計趨勢
+  chapter_title: 主流 AI 代理框架總覽
+  section_title: AI 代理框架的發展趨勢
   text: 從 OpenClaw 與 Hermes 可以觀察到 AI 代理的哪一種發展趨勢？
   type: multiple_choice
   options:
@@ -159,8 +159,8 @@ questions:
   - chap-m5-ch4
   usage: quiz
 - id: 7411
-  chapter_title: OpenClaw 與 Hermes
-  section_title: Hermes Agent
+  chapter_title: 主流 AI 代理框架總覽
+  section_title: Hermes Agent：會自我學習的多平台代理
   text: Hermes 內建的排程功能支援什麼樣的操作方式？
   type: multiple_choice
   options:
@@ -174,8 +174,8 @@ questions:
   - chap-m5-ch4
   usage: quiz
 - id: 7412
-  chapter_title: OpenClaw 與 Hermes
-  section_title: OpenClaw
+  chapter_title: 主流 AI 代理框架總覽
+  section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
   text: OpenClaw 在處理本地檔案時最大的優勢是？
   type: multiple_choice
   options:
@@ -189,8 +189,8 @@ questions:
   - chap-m5-ch4
   usage: quiz
 - id: 7413
-  chapter_title: OpenClaw 與 Hermes
-  section_title: 兩者的比較
+  chapter_title: 主流 AI 代理框架總覽
+  section_title: 框架比較總覽
   text: 這兩個專案對於「記憶」的態度為何？
   type: multiple_choice
   options:
@@ -204,8 +204,8 @@ questions:
   - chap-m5-ch4
   usage: quiz
 - id: 7414
-  chapter_title: OpenClaw 與 Hermes
-  section_title: Hermes Agent
+  chapter_title: 主流 AI 代理框架總覽
+  section_title: Hermes Agent：會自我學習的多平台代理
   text: Hermes 的「主動記憶管理」是指什麼？
   type: multiple_choice
   options:
@@ -219,8 +219,8 @@ questions:
   - chap-m5-ch4
   usage: quiz
 - id: 7415
-  chapter_title: OpenClaw 與 Hermes
-  section_title: OpenClaw
+  chapter_title: 主流 AI 代理框架總覽
+  section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
   text: OpenClaw 如何應對反覆出現的相同任務？
   type: multiple_choice
   options:
@@ -234,8 +234,8 @@ questions:
   - chap-m5-ch4
   usage: quiz
 - id: 7416
-  chapter_title: OpenClaw 與 Hermes
-  section_title: 兩者的比較
+  chapter_title: 主流 AI 代理框架總覽
+  section_title: 框架比較總覽
   text: 在擴展方式上，OpenClaw 和 Hermes 有何不同？
   type: multiple_choice
   options:
@@ -249,8 +249,8 @@ questions:
   - chap-m5-ch4
   usage: quiz
 - id: 7417
-  chapter_title: OpenClaw 與 Hermes
-  section_title: Hermes Agent
+  chapter_title: 主流 AI 代理框架總覽
+  section_title: Hermes Agent：會自我學習的多平台代理
   text: Hermes 的跨會話記憶是透過什麼技術實現的？
   type: multiple_choice
   options:
@@ -264,8 +264,8 @@ questions:
   - chap-m5-ch4
   usage: quiz
 - id: 7418
-  chapter_title: OpenClaw 與 Hermes
-  section_title: OpenClaw
+  chapter_title: 主流 AI 代理框架總覽
+  section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
   text: OpenClaw 可以透過什麼方式執行電腦上的命令列操作？
   type: multiple_choice
   options:
@@ -279,8 +279,8 @@ questions:
   - chap-m5-ch4
   usage: quiz
 - id: 7419
-  chapter_title: OpenClaw 與 Hermes
-  section_title: 設計趨勢
+  chapter_title: 主流 AI 代理框架總覽
+  section_title: AI 代理框架的發展趨勢
   text: 開放標準（如 agentskills.io）為 AI 代理帶來了什麼好處？
   type: multiple_choice
   options:
@@ -294,8 +294,8 @@ questions:
   - chap-m5-ch4
   usage: quiz
 - id: 7420
-  chapter_title: OpenClaw 與 Hermes
-  section_title: 兩者的比較
+  chapter_title: 主流 AI 代理框架總覽
+  section_title: 框架比較總覽
   text: 相較於 OpenClaw，Hermes 更適合哪一種使用者？
   type: multiple_choice
   options:
