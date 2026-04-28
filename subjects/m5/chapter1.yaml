@@ -111,3 +111,319 @@ questions:
   - chap-m5-ch1
   - sec-agent-eval
   usage: quiz
+- id: 7108
+  chapter_title: AI 代理人基礎概念
+  section_title: 代理推理迴圈
+  text: 在 AI 代理人的框架中，「後設認知 (Metacognition)」的主要作用是什麼？
+  type: multiple_choice
+  options:
+  - 加速大型語言模型的推理速度
+  - 讓代理人意識到自身的決策過程，並根據經驗進行自我反省與錯誤修正
+  - 強制代理人按照固定腳本執行任務
+  - 自動為代理人生成新的工具函數
+  correct_index: 1
+  explanation: 後設認知也就是「對思考過程的反思」，讓 AI 代理人能評估自身表現、適應環境並修正錯誤。
+  tags:
+  - chap-m5-ch1
+  - sec-agent-loop
+  usage: quiz
+- id: 7109
+  chapter_title: AI 代理人基礎概念
+  section_title: 代理人的組成架構
+  text: 代理人架構中「短期記憶」主要對應於什麼？
+  type: multiple_choice
+  options:
+  - 外部獨立部署的專屬向量資料庫系統
+  - 大型語言模型的當前對話上下文視窗
+  - 代理人執行腳本中的固定區域變數表
+  - 用來指導代理人行為的核心系統提示詞
+  correct_index: 1
+  explanation: 短期記憶受限於模型的上下文視窗，保存近期的對話互動。
+  tags:
+  - chap-m5-ch1
+  usage: quiz
+- id: 7110
+  chapter_title: AI 代理人基礎概念
+  section_title: 代理人的組成架構
+  text: 代理人架構中「長期記憶」最常依賴的儲存技術是？
+  type: multiple_choice
+  options:
+  - 電腦處理器內建的高速快取記憶體
+  - 透過嵌入模型轉換的向量資料庫系統
+  - 傳統的關聯式資料庫與表格結構儲存
+  - 系統環境變數與暫存檔案的動態讀寫
+  correct_index: 1
+  explanation: 向量資料庫能將過往知識轉換為向量，實現跨任務的語意檢索。
+  tags:
+  - chap-m5-ch1
+  usage: quiz
+- id: 7111
+  chapter_title: AI 代理人基礎概念
+  section_title: 代理推理迴圈
+  text: Plan-and-Execute 模式在處理任務時的主要優勢是什麼？
+  type: multiple_choice
+  options:
+  - 反應速度極快且無延遲
+  - 適合處理步驟明確的任務
+  - 不需依賴外部工具的輔助
+  - 能夠完全避免模型產生幻覺
+  correct_index: 1
+  explanation: 該模式將任務一次性拆解為多個步驟，非常適合邏輯清晰且明確的工作。
+  tags:
+  - chap-m5-ch1
+  usage: quiz
+- id: 7112
+  chapter_title: AI 代理人基礎概念
+  section_title: 代理推理迴圈
+  text: Plan-and-Execute 模式在面對何種情況時最容易發生失敗？
+  type: multiple_choice
+  options:
+  - 任務內容過於簡單且缺乏挑戰
+  - 執行過程中環境發生突發的變化
+  - 系統需要進行多次的工具函數呼叫
+  - 本地電腦的可用記憶體空間不足時
+  correct_index: 1
+  explanation: 由於一開始就制定好所有計畫，一旦執行環境有變，系統往往無法彈性調整。
+  tags:
+  - chap-m5-ch1
+  usage: quiz
+- id: 7113
+  chapter_title: AI 代理人基礎概念
+  section_title: 什麼是 AI 代理人
+  text: 下列哪一項操作屬於代理人的「感知能力 (Perception)」範疇？
+  type: multiple_choice
+  options:
+  - 規劃出完成任務的詳細後續步驟
+  - 讀取使用者的文字輸入與系統日誌
+  - 呼叫外部 API 執行實際的網路請求
+  - 根據執行結果進行自我反省與修正錯誤
+  correct_index: 1
+  explanation: 感知能力指的是代理人接收並理解來自外部環境的輸入資訊。
+  tags:
+  - chap-m5-ch1
+  usage: quiz
+- id: 7114
+  chapter_title: AI 代理人基礎概念
+  section_title: 代理人的組成架構
+  text: AI 代理人設定中的「Persona (角色設定)」主要目的是什麼？
+  type: multiple_choice
+  options:
+  - 強制限制模型執行的最高運算速度
+  - 賦予模型特定的行為邊界與互動風格
+  - 決定系統預設需要掛載多少工具數量
+  - 自動減少每次對話的上下文視窗大小
+  correct_index: 1
+  explanation: 角色設定能指導代理人該以何種語氣和態度回應，確保行為符合預期。
+  tags:
+  - chap-m5-ch1
+  usage: quiz
+- id: 7115
+  chapter_title: AI 代理人基礎概念
+  section_title: 代理推理迴圈
+  text: Reflexion 框架相對於一般迴圈，加入了什麼關鍵機制？
+  type: multiple_choice
+  options:
+  - 任務開始前的詳細步驟規劃
+  - 任務失敗後的自我反省與改進
+  - 將複雜任務分配給其他協作代理
+  - 完全隨機地嘗試各種可用的新方法
+  correct_index: 1
+  explanation: Reflexion 的核心在於遇到失敗時能進行反思，並將經驗保留給後續嘗試。
+  tags:
+  - chap-m5-ch1
+  usage: quiz
+- id: 7116
+  chapter_title: AI 代理人基礎概念
+  section_title: 代理推理迴圈
+  text: 在 Reflexion 框架中，代理人自我反省的結果通常會如何被儲存？
+  type: multiple_choice
+  options:
+  - 作為短期記憶區塊中的一次性變數
+  - 轉化為長期記憶庫中的歷史經驗紀錄
+  - 直接寫入系統的底層錯誤日誌檔案中
+  - 備份到使用者個人的雲端硬碟儲存空間
+  correct_index: 1
+  explanation: 反省結果會被存入記憶體中，讓代理人未來面對類似任務時能避開錯誤。
+  tags:
+  - chap-m5-ch1
+  usage: quiz
+- id: 7117
+  chapter_title: AI 代理人基礎概念
+  section_title: 代理推理迴圈
+  text: 「後設認知 (Metacognition)」賦予代理人哪一種關鍵能力？
+  type: multiple_choice
+  options:
+  - 產生出更快的文字串流生成速度
+  - 自主偵測行為缺陷並主動修正錯誤
+  - 能夠自動產生出全新的後端程式碼
+  - 繞過底層安全機制以獲取最高權限
+  correct_index: 1
+  explanation: 後設認知讓代理人能「思考自己的思考過程」，進而達到修正錯誤與適應環境。
+  tags:
+  - chap-m5-ch1
+  usage: quiz
+- id: 7118
+  chapter_title: AI 代理人基礎概念
+  section_title: 代理人類型
+  text: Agentic RAG 與傳統的 Naive RAG 最大的區別在於什麼？
+  type: multiple_choice
+  options:
+  - 向量資料庫能容納的整體資料容量大小
+  - 代理人是否能主動決定何時進行資料檢索
+  - 伺服器回傳檢索結果的速度快慢差異
+  - 系統底層是否依賴強大的向量嵌入模型
+  correct_index: 1
+  explanation: Agentic RAG 允許代理人根據當下需求，自主判斷是否需要呼叫檢索工具。
+  tags:
+  - chap-m5-ch1
+  usage: quiz
+- id: 7119
+  chapter_title: AI 代理人基礎概念
+  section_title: Agent 的評估指標
+  text: 在評估代理人表現時，「任務成功率」指的是什麼？
+  type: multiple_choice
+  options:
+  - 系統成功呼叫所有外部工具的總次數
+  - 代理人最終能順利完成給定目標的比例
+  - 代理人生成回覆時所使用的總文字數量
+  - 代理人運行單一任務所耗費的整體時間
+  correct_index: 1
+  explanation: 任務成功率是最直觀的指標，衡量代理人是否能實際解決使用者交付的問題。
+  tags:
+  - chap-m5-ch1
+  usage: quiz
+- id: 7120
+  chapter_title: AI 代理人基礎概念
+  section_title: Agent 的評估指標
+  text: 評估代理人時，「工具準確度」主要是用來衡量什麼？
+  type: multiple_choice
+  options:
+  - 工具伺服器回應 API 請求的延遲時間
+  - 代理人在各種情境下選擇正確工具的比例
+  - 每個外部工具執行時消耗的雲端運算資源
+  - 外部系統所能支援處理的多國語言數量
+  correct_index: 1
+  explanation: 工具準確度關注代理人是否能在對的時機挑選並正確呼叫合適的工具。
+  tags:
+  - chap-m5-ch1
+  usage: quiz
+- id: 7121
+  chapter_title: AI 代理人基礎概念
+  section_title: 什麼是 AI 代理人
+  text: 當代理人遇到未曾見過的突發情況時，最重要的展現能力是？
+  type: multiple_choice
+  options:
+  - 直接中斷執行並回報任務失敗給終端使用者
+  - 基於環境回饋來動態調整策略並尋找替代方案
+  - 隨機挑選系統中任何一個可用的工具進行測試
+  - 忽略所有出現的錯誤訊息並繼續執行既定步驟
+  correct_index: 1
+  explanation: 自主性與適應力是代理人的核心，面對變化時能動態調整是其最大價值。
+  tags:
+  - chap-m5-ch1
+  usage: quiz
+- id: 7122
+  chapter_title: AI 代理人基礎概念
+  section_title: 什麼是 AI 代理人
+  text: 相較於寫死的傳統自動化腳本，AI 代理人的核心優勢是什麼？
+  type: multiple_choice
+  options:
+  - 執行過程中絕對不會產生任何系統錯誤
+  - 能夠彈性適應高度不可預測的動態環境
+  - 程式執行的總耗時必定比傳統腳本更快
+  - 系統在運作時完全不需要任何人類監督
+  correct_index: 1
+  explanation: 傳統腳本只能處理預先定義好的狀況，而代理人能根據上下文彈性處理未知變化。
+  tags:
+  - chap-m5-ch1
+  usage: quiz
+- id: 7123
+  chapter_title: AI 代理人基礎概念
+  section_title: 代理推理迴圈
+  text: 在代理人的推理迴圈中，「Action (行動)」階段的主要作用是？
+  type: multiple_choice
+  options:
+  - 分析使用者輸入文字背後隱藏的真實意圖
+  - 實際呼叫外部工具或 API 來改變環境狀態
+  - 觀察並記錄環境在指令執行後的回傳結果
+  - 評估自身表現的優劣並將其寫入錯誤日誌
+  correct_index: 1
+  explanation: 行動階段是指模型決定好策略後，具體執行工具呼叫來影響外部世界。
+  tags:
+  - chap-m5-ch1
+  usage: quiz
+- id: 7124
+  chapter_title: AI 代理人基礎概念
+  section_title: 代理推理迴圈
+  text: 在代理人的推理迴圈中，「Observation (觀察)」階段的主要作用是？
+  type: multiple_choice
+  options:
+  - 獲取並解析外部工具執行後所回傳的具體結果
+  - 決定下一步應該要呼叫哪一個外部系統的工具
+  - 生成給使用者的最終自然語言對話回覆內容
+  - 將整次對話的完整歷史記錄壓縮備份到雲端
+  correct_index: 0
+  explanation: 觀察階段讓代理人能看到剛才行動的結果，作為後續判斷與推理的依據。
+  tags:
+  - chap-m5-ch1
+  usage: quiz
+- id: 7125
+  chapter_title: AI 代理人基礎概念
+  section_title: 代理人的組成架構
+  text: 下列何者最符合「工作記憶 (Working Memory)」的典型應用場景？
+  type: multiple_choice
+  options:
+  - 永遠記住使用者的名字與偏好語言設定
+  - 暫存多步驟計算過程中產生的中間變數
+  - 永久保存過去所有專案任務的歷史經驗
+  - 記錄系統啟動時載入的預設系統提示詞
+  correct_index: 1
+  explanation: 工作記憶就像系統的草稿紙，專門用來暫存執行中任務的各種中間狀態。
+  tags:
+  - chap-m5-ch1
+  usage: quiz
+- id: 7126
+  chapter_title: AI 代理人基礎概念
+  section_title: 代理人類型
+  text: 在多代理 (Multi-Agent) 系統中，不同的代理人通常是如何進行協作的？
+  type: multiple_choice
+  options:
+  - 所有代理人共用同一個神經網路模型與內部權重
+  - 代理人透過標準化協議交換訊息以分配並完成任務
+  - 代理人之間互相競爭搶奪系統中有限的運算資源
+  - 代理人會透過直接覆寫對方的短期記憶來傳遞資訊
+  correct_index: 1
+  explanation: 多代理系統透過定義明確的通訊協議，讓各自專業的代理人能分工協作。
+  tags:
+  - chap-m5-ch1
+  usage: quiz
+- id: 7127
+  chapter_title: AI 代理人基礎概念
+  section_title: 代理人的組成架構
+  text: 下列哪一個選項「不屬於」現代 AI 代理人的核心組成要素？
+  type: multiple_choice
+  options:
+  - 具備自然語言理解能力的大型語言模型
+  - 只能按照單一路徑執行的固定不變決策樹
+  - 能夠用來影響外部環境的可呼叫外部工具
+  - 用來儲存任務狀態與歷史經驗的記憶系統
+  correct_index: 1
+  explanation: 代理人依賴 LLM 動態推理，而非傳統自動化系統所使用的固定決策樹。
+  tags:
+  - chap-m5-ch1
+  usage: quiz
+- id: 7128
+  chapter_title: AI 代理人基礎概念
+  section_title: 代理人的組成架構
+  text: 為什麼功能完善的 AI 代理人系統不可或缺「長期記憶」？
+  type: multiple_choice
+  options:
+  - 為了讓模型能以更快的速度生成文字對話串流
+  - 為了在跨越多個獨立對話時仍能保留過往經驗
+  - 為了大幅度減少系統呼叫外部 API 的整體次數
+  - 為了能直接取代大型語言模型本身的內部權重
+  correct_index: 1
+  explanation: 長期記憶讓代理人能記住使用者的偏好與過往互動，提供更個人化的服務。
+  tags:
+  - chap-m5-ch1
+  usage: quiz

@@ -50,6 +50,14 @@ label: chap-m5-ch5
 
 ## 常見的多代理協作模式 {#sec-mas-patterns}
 
+```{mermaid}
+%%{init: {'theme': 'neutral'}}%%
+graph TD
+    Coord(協調者 Coordinator) --> Exec1(資料搜集代理)
+    Coord --> Exec2(邏輯分析代理)
+    Coord --> Exec3(報告撰寫代理)
+```
+
 ### 模式一：協調者—執行者（Orchestrator-Worker） {.unnumbered}
 
 這是最常見的多代理架構，結構清晰、容易理解：
@@ -99,6 +107,13 @@ label: chap-m5-ch5
 **適用場景**：需要多方視角的決策問題、風險評估、研究分析。
 
 ## 代理人之間如何「說話」：通訊協議 {#sec-agent-communication}
+
+```{mermaid}
+graph LR
+    AgentA[代理人 A] --> |發送代理名片與請求| Router{事件佇列 Event Queue}
+    Router --> |分配與轉交對話上下文| AgentB[代理人 B]
+    AgentB -.-> |回傳工作產物 Artifact| Router
+```
 
 ### 為什麼需要標準化的通訊格式？ {.unnumbered}
 

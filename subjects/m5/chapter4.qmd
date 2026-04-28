@@ -47,6 +47,16 @@ OpenClaw 有一個特別的設計叫做「心跳（Heartbeat）」——它會�
 
 ## Hermes Agent：會自我學習的多平台代理 {#sec-hermes}
 
+```{mermaid}
+flowchart TD
+    Task(收到新任務) --> Eval{有現成的技能嗎？}
+    Eval --> |Yes| Exec[直接套用執行]
+    Eval --> |No| LLM[啟動推理迴圈嘗試解決]
+    LLM --> Success{成功完成嗎？}
+    Success --> |Yes| Pack[自我學習並封裝為新技能]
+    Pack --> Exec
+```
+
 ### Hermes Agent 是什麼？ {.unnumbered}
 
 **Hermes Agent**（由 Nous Research 開發，GitHub：nousresearch/hermes-agent）是一個具備**自我改進能力**的 AI 代理框架。它的核心理念是：代理不應該只是執行任務，它應該能從每次任務中**學習**，並把學到的能力保存下來，讓自己越來越好用。

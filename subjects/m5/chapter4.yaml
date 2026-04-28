@@ -26,7 +26,8 @@ questions:
   - 透過使用者已習慣的通訊 App（如 WhatsApp、Telegram、Discord）操作
   - 只能透過語音輸入
   correct_index: 2
-  explanation: OpenClaw 的設計理念是不要求使用者改變習慣，讓他們用已在使用的通訊工具（WhatsApp、Telegram、Discord、Slack、iMessage 等）直接和 AI 對話。
+  explanation: OpenClaw 的設計理念是不要求使用者改變習慣，讓他們用已在使用的通訊工具（WhatsApp、Telegram、Discord、Slack、iMessage
+    等）直接和 AI 對話。
   tags:
   - chap-m5-ch4
   - sec-openclaw
@@ -106,8 +107,204 @@ questions:
   - 代理功能越來越集中到單一大型雲端平台，減少本地端部署
   - 代理越來越專注於單一任務，減少通用性以提升準確度
   correct_index: 1
-  explanation: 兩個框架都展示了相同的趨勢：讓代理融入使用者的既有環境（不要求換工具）、強化持久記憶讓代理越來越「認識你」、並透過 agentskills.io 或 MCP 等開放標準讓能力可移植共享。
+  explanation: 兩個框架都展示了相同的趨勢：讓代理融入使用者的既有環境（不要求換工具）、強化持久記憶讓代理越來越「認識你」、並透過 agentskills.io
+    或 MCP 等開放標準讓能力可移植共享。
   tags:
   - chap-m5-ch4
   - sec-lessons
+  usage: quiz
+- id: 7408
+  chapter_title: OpenClaw 與 Hermes
+  section_title: Hermes Agent
+  text: 對於複雜任務，Hermes 會如何處理？
+  type: multiple_choice
+  options:
+  - 直接回報任務失敗以節省資源
+  - 要求使用者自行手動將任務拆解
+  - 派生多個子代理 (Subagents) 並行處理
+  - 交給其他競爭對手的 AI 模型處理
+  correct_index: 2
+  explanation: Hermes 支援並行派生子代理來高效率解決複雜多步驟任務。
+  tags:
+  - chap-m5-ch4
+  usage: quiz
+- id: 7409
+  chapter_title: OpenClaw 與 Hermes
+  section_title: 兩者的比較
+  text: 在模型選擇上，Hermes 和 OpenClaw 的共通點是？
+  type: multiple_choice
+  options:
+  - 只能使用 OpenAI 提供的模型
+  - 都是模型無關 (Model Agnostic) 的
+  - 只能在離線環境下使用開源模型
+  - 必須依賴特定的硬體加速晶片
+  correct_index: 1
+  explanation: 兩者都設計為可自由切換不同的底層語言模型。
+  tags:
+  - chap-m5-ch4
+  usage: quiz
+- id: 7410
+  chapter_title: OpenClaw 與 Hermes
+  section_title: 設計趨勢
+  text: 從 OpenClaw 與 Hermes 可以觀察到 AI 代理的哪一種發展趨勢？
+  type: multiple_choice
+  options:
+  - 完全取代傳統圖形使用者介面
+  - 讓 AI 主動接入使用者已有的環境
+  - 強制使用者學習全新的程式語言
+  - 放棄使用任何形式的長期記憶
+  correct_index: 1
+  explanation: 代理正逐漸融入人們常用的通訊軟體與工作環境中。
+  tags:
+  - chap-m5-ch4
+  usage: quiz
+- id: 7411
+  chapter_title: OpenClaw 與 Hermes
+  section_title: Hermes Agent
+  text: Hermes 內建的排程功能支援什麼樣的操作方式？
+  type: multiple_choice
+  options:
+  - 必須撰寫複雜的 Python 腳本
+  - 只能使用滑鼠點擊圖形化選單
+  - 支援使用自然語言直接定義排程
+  - 必須手動修改作業系統的登錄檔
+  correct_index: 2
+  explanation: 使用者可以直接用自然語言設定任務排程（如每天早上八點...）。
+  tags:
+  - chap-m5-ch4
+  usage: quiz
+- id: 7412
+  chapter_title: OpenClaw 與 Hermes
+  section_title: OpenClaw
+  text: OpenClaw 在處理本地檔案時最大的優勢是？
+  type: multiple_choice
+  options:
+  - 能把檔案快速備份到公有雲
+  - 不須上傳資料即可在本地整理文件
+  - 能自動破解受密碼保護的檔案
+  - 能自動將所有文件翻譯成英文
+  correct_index: 1
+  explanation: OpenClaw 在本地運行，能在不暴露隱私的情況下處理本地檔案。
+  tags:
+  - chap-m5-ch4
+  usage: quiz
+- id: 7413
+  chapter_title: OpenClaw 與 Hermes
+  section_title: 兩者的比較
+  text: 這兩個專案對於「記憶」的態度為何？
+  type: multiple_choice
+  options:
+  - 認為記憶只會降低系統的效能
+  - 將持久記憶視為代理的核心競爭力
+  - 建議只使用系統預設的短期記憶
+  - 認為只有人類才需要擁有記憶
+  correct_index: 1
+  explanation: 沒有記憶的代理無法成為稱職助理，持久記憶是未來發展關鍵。
+  tags:
+  - chap-m5-ch4
+  usage: quiz
+- id: 7414
+  chapter_title: OpenClaw 與 Hermes
+  section_title: Hermes Agent
+  text: Hermes 的「主動記憶管理」是指什麼？
+  type: multiple_choice
+  options:
+  - 自動幫電腦增加虛擬記憶體空間
+  - 代理會主動把重要知識寫入記憶
+  - 強制使用者每小時覆誦一次重點
+  - 自動刪除超過三天的所有對話
+  correct_index: 1
+  explanation: Hermes 不需要使用者特別指示，也能主動分辨並保存關鍵資訊。
+  tags:
+  - chap-m5-ch4
+  usage: quiz
+- id: 7415
+  chapter_title: OpenClaw 與 Hermes
+  section_title: OpenClaw
+  text: OpenClaw 如何應對反覆出現的相同任務？
+  type: multiple_choice
+  options:
+  - 每次都從頭開始重新推理一次
+  - 自動將解法封裝成新技能以重用
+  - 直接拒絕執行並要求使用者自己做
+  - 將任務外包給網路上的其他代理
+  correct_index: 1
+  explanation: OpenClaw 能自己寫技能，將反覆任務的解法固定下來。
+  tags:
+  - chap-m5-ch4
+  usage: quiz
+- id: 7416
+  chapter_title: OpenClaw 與 Hermes
+  section_title: 兩者的比較
+  text: 在擴展方式上，OpenClaw 和 Hermes 有何不同？
+  type: multiple_choice
+  options:
+  - 前者無法擴展，後者支援無限擴展
+  - 兩者都僅依賴原廠提供的官方外掛
+  - 兩者皆擁抱社群與開放的擴展標準
+  - 前者需要付費，後者完全免費
+  correct_index: 2
+  explanation: 兩者都非常重視開源社群，並支援 MCP 或 agentskills 擴展。
+  tags:
+  - chap-m5-ch4
+  usage: quiz
+- id: 7417
+  chapter_title: OpenClaw 與 Hermes
+  section_title: Hermes Agent
+  text: Hermes 的跨會話記憶是透過什麼技術實現的？
+  type: multiple_choice
+  options:
+  - 全文搜尋結合大型語言模型的摘要
+  - 依賴使用者手動為對話加上標籤
+  - 將所有對話無限制地塞入上下文
+  - 使用外部的付費商業搜尋引擎
+  correct_index: 0
+  explanation: 透過搜尋與摘要技術，Hermes 能在海量歷史中找到相關脈絡。
+  tags:
+  - chap-m5-ch4
+  usage: quiz
+- id: 7418
+  chapter_title: OpenClaw 與 Hermes
+  section_title: OpenClaw
+  text: OpenClaw 可以透過什麼方式執行電腦上的命令列操作？
+  type: multiple_choice
+  options:
+  - 只能透過虛擬機器沙盒進行
+  - 直接替使用者跑 shell 指令或腳本
+  - 必須要有管理員的圖形介面授權
+  - 只能執行經過官方數位簽章的指令
+  correct_index: 1
+  explanation: OpenClaw 具備底層操作能力，能代為執行本地終端機指令。
+  tags:
+  - chap-m5-ch4
+  usage: quiz
+- id: 7419
+  chapter_title: OpenClaw 與 Hermes
+  section_title: 設計趨勢
+  text: 開放標準（如 agentskills.io）為 AI 代理帶來了什麼好處？
+  type: multiple_choice
+  options:
+  - 讓所有的代理都長得一模一樣
+  - 讓技能可以跨代理框架互相共享
+  - 強制所有開發者使用相同的程式語言
+  - 讓代理的執行速度獲得十倍提升
+  correct_index: 1
+  explanation: 標準化讓不同框架開發出來的工具可以互相移植與重用。
+  tags:
+  - chap-m5-ch4
+  usage: quiz
+- id: 7420
+  chapter_title: OpenClaw 與 Hermes
+  section_title: 兩者的比較
+  text: 相較於 OpenClaw，Hermes 更適合哪一種使用者？
+  type: multiple_choice
+  options:
+  - 只在乎隱私且從不連上網路的人
+  - 希望 AI 能從工作中持續學習改進的人
+  - 電腦硬體配備極度老舊與低階的人
+  - 只想要一個簡單的氣象播報機器人
+  correct_index: 1
+  explanation: Hermes 的核心優勢在於自我學習與進化，適合進階的生產力使用者。
+  tags:
+  - chap-m5-ch4
   usage: quiz

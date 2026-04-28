@@ -58,6 +58,14 @@ MCP 不是 Anthropic 的私有技術——它是一個**開放標準**，任何 
 
 ## MCP 的三個角色 {#sec-mcp-architecture}
 
+```{mermaid}
+graph LR
+    Host[MCP 主機 Host<br/>例如 Claude Desktop] --> Client[MCP 客戶端 Client]
+    Client <--> |標準化協議 MCP| Server[MCP 伺服器 Server]
+    Server --> ToolA[[檔案讀寫工具]]
+    Server --> ToolB[[資料庫資源]]
+```
+
 MCP 系統由三個角色組成，用一個生活比喻來理解：想像你用手機 App 叫外送。
 
 ### 主機（Host）— 手機 App {.unnumbered}
@@ -67,7 +75,7 @@ MCP 系統由三個角色組成，用一個生活比喻來理解：想像你用�
 - 決定要連接哪些工具（MCP 伺服器）
 - 執行安全控管，確保只做允許的事情
 
-常見的 MCP 主機有：Claude Desktop（桌面版 Claude）、Claude Code（程式開發工具）、各種 IDE 外掛。
+常見的 MCP 主機有：Claude Desktop（桌面版 Claude）、Claude Code（程式開發工具）、各種 IDE 外掛與新型 AI 編輯器（如 Cursor 或 OpenAI Codex），以及部分高階代理助理（如 Antigravity）。
 
 ### 客戶端（Client）— App 的網路模組 {.unnumbered}
 
@@ -153,6 +161,14 @@ MCP 定義了兩種主機和伺服器之間傳遞訊息的方式：
 ```
 
 設定完成後，Claude 就能直接使用這些工具，無需任何額外的程式整合。
+
+::: {.callout-note}
+### 其他 AI 助理的支援狀況：Antigravity 與 OpenAI Codex
+雖然 MCP 最初由 Anthropic (Claude) 發表與推廣，但作為開放標準，其他強大的 AI 助理也陸續支援或具備類似能力：
+
+- **Antigravity**：這類進階的代理式 AI 助理（Agentic Assistant）本身即內建強大的本地環境操作能力（如終端機操作、檔案讀寫等）。隨著 MCP 成為標準，Antigravity 等工具也開始支援或相容於 MCP 伺服器，讓代理人能直接調用社群豐富的資源。
+- **OpenAI Codex 與新型 AI IDEs**：像 OpenAI Codex 或 Cursor 等新一代 AI 程式開發環境，也正陸續將 MCP 支援整合進編輯器生態中。這讓開發者可以設定 MCP 伺服器，讓 AI 助理直接在開發環境內部連線到 PostgreSQL 或 GitHub 進行操作。
+:::
 
 ## MCP 的安全設計 {#sec-mcp-security}
 

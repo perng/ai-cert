@@ -113,6 +113,14 @@ label: chap-m5-ch3
 
 ## 上下文工程 (Context Engineering) {#sec-context-engineering}
 
+```{mermaid}
+graph TD
+    BasePrompt[靜態基礎提示詞] --> ContextManager{上下文工程}
+    Memory[記憶與歷史對話] --> ContextManager
+    ToolFeedback[工具回傳結果] --> ContextManager
+    ContextManager --> |動態修剪、防混淆過濾| LLM[LLM 產生決策]
+```
+
 如果 [提示詞工程 (Prompt Engineering)](#def-prompt-engineering) 專注於提供單一、靜態的指令集，那麼 [上下文工程 (Context Engineering)]{#def-context-engineering} 就是管理一段動態資訊集（包含初始提示詞）的實踐，確保代理人隨時擁有完成下一步任務所需的正確資訊。
 
 ### 常見的上下文失效模式與解決方案 {.unnumbered}
@@ -138,6 +146,13 @@ label: chap-m5-ch3
 理解這些問題後，我們來看看代理人是如何具體管理記憶與上下文的。
 
 ## 記憶管理：讓代理人「記得事情」 {#sec-memory-management}
+
+```{mermaid}
+graph TD
+    Short[短期記憶 Short-Term<br/>受限於上下文視窗] --> |向量化與摘要化| Long[(長期記憶 Long-Term<br/>向量資料庫)]
+    Long --> |相似性語意檢索| Short
+    Working((工作記憶 Working<br/>執行任務時的暫存變數)) -.輔助.-> Short
+```
 
 AI 的「記憶」不像人腦，它有明確的技術限制。理解這些限制，才能設計出更可靠的代理人。
 

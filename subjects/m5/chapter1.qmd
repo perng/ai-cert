@@ -34,6 +34,17 @@ label: chap-m5-ch1
 
 ## 代理人的組成：它由哪些部分構成？ {#sec-agent-architecture}
 
+```{mermaid}
+graph TD
+    User([使用者]) --> |自然語言輸入| LLM
+    LLM[大型語言模型 LLM]
+    Profile[(Profile 角色設定)] -.-> LLM
+    Memory[(Memory 記憶系統)] <--> LLM
+    Tools[[外部工具 Tools]] <--> LLM
+    Planning((規劃能力 Planning)) <--> LLM
+    LLM --> |執行行動| Env[外部環境]
+```
+
 可以把 AI 代理人想像成一位**有工具箱的助理**。這位助理有以下幾個核心部分：
 
 ### 大腦：語言模型（LLM） {.unnumbered}
@@ -64,6 +75,13 @@ label: chap-m5-ch1
 *   **工作記憶**：任務執行中的中間狀態，例如「我已經查完第一步了，下一步要做……」
 
 ## 代理人如何思考和行動：推理迴圈 {#sec-agent-loop}
+
+```{mermaid}
+flowchart LR
+    A(思考 Thought) --> B(行動 Action)
+    B --> C(觀察 Observation)
+    C -. 回饋 .-> A
+```
 
 代理人的核心運作方式是一個不斷循環的過程：**思考 → 行動 → 觀察 → 再思考**。
 
