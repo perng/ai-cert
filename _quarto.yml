@@ -3,8 +3,88 @@ project:
   output-dir: _book
 
 website:
+  page-navigation: true
   navbar: 
     background: primary
     left:
       - href: index.html
         text: Home
+  sidebar:
+    - title: "初級"
+      style: "docked"
+      contents:
+        - section: "人工智慧基礎概念"
+          contents:
+            - subjects/ai-foundation/index.md
+            - subjects/ai-foundation/chapter1.md
+            - subjects/ai-foundation/chapter2.md
+            - subjects/ai-foundation/chapter3.md
+            - subjects/ai-foundation/chapter4.md
+            - subjects/ai-foundation/chapter5.md
+            - subjects/ai-foundation/chapter6.md
+            - subjects/ai-foundation/chapter7.md
+            - subjects/ai-foundation/chapter8.md
+            - subjects/ai-foundation/chapter9.md
+            - subjects/ai-foundation/chapter10.md
+            - subjects/ai-foundation/chapter11.md
+        - section: "生成式AI應用與規劃"
+          contents:
+            - subjects/gen-ai/index.md
+            - subjects/gen-ai/chapter1.md
+            - subjects/gen-ai/chapter2.md
+            - subjects/gen-ai/chapter3.md
+            - subjects/gen-ai/chapter4.md
+            - subjects/gen-ai/chapter5.md
+            - subjects/gen-ai/chapter6.md
+            - subjects/gen-ai/chapter7.md
+    - title: "中級"
+      style: "docked"
+      contents:
+        - section: "基礎AI知識"
+          contents:
+            - subjects/m1/index.qmd
+            - subjects/m1/chapter1.qmd
+            - subjects/m1/chapter2.qmd
+            - subjects/m1/chapter3.qmd
+            - subjects/m1/chapter4.qmd
+        - section: "人工智慧技術應用與規劃"
+          contents:
+            - subjects/m2/index.qmd
+            - subjects/m2/chapter1.qmd
+            - subjects/m2/chapter2.qmd
+            - subjects/m2/chapter3.qmd
+            - subjects/m2/chapter4.qmd
+            - subjects/m2/chapter5.qmd
+        - section: "大數據處理分析與應用"
+          contents:
+            - subjects/m3/index.qmd
+            - subjects/m3/chapter1.qmd
+            - subjects/m3/chapter2.qmd
+            - subjects/m3/chapter3.qmd
+            - subjects/m3/chapter4.qmd
+            - subjects/m3/chapter5.qmd
+        - section: "機器學習技術與應用"
+          contents:
+            - subjects/m4/index.qmd
+            - subjects/m4/chapter1.qmd
+            - subjects/m4/chapter2.qmd
+            - subjects/m4/chapter3.qmd
+            - subjects/m4/chapter4.qmd
+            - subjects/m4/chapter5.qmd
+    - title: "補充教材"
+      style: "docked"
+      contents:
+        - section: "AI 代理人技術與應用"
+          contents:
+            - subjects/m5/index.qmd
+            - subjects/m5/chapter1.qmd
+            - subjects/m5/chapter2.qmd
+            - subjects/m5/chapter3.qmd
+            - subjects/m5/chapter4.qmd
+            - subjects/m5/chapter5.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    number-sections: false

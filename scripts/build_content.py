@@ -301,7 +301,7 @@ def main():
         return
 
     final_json = {
-        "version": 1,
+        "version": 2,
         "subjects": []
     }
     
