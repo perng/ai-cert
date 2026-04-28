@@ -1,0 +1,113 @@
+questions:
+- id: 7301
+  chapter_title: Agentic Skills 設計
+  section_title: 什麼是 Agentic Skills
+  text: 下列哪個選項最能描述「技能 (Skill)」與「工具 (Tool)」的差異？
+  type: multiple_choice
+  options:
+  - 工具可以有內部狀態，技能則是無狀態的底層函數
+  - 技能是較高層的能力封裝，可含多步驟邏輯；工具是底層的單一操作函數呼叫
+  - 技能只能用於文字處理，工具可處理任何類型的資料
+  - 兩者完全相同，只是不同框架的命名習慣
+  correct_index: 1
+  explanation: 技能是對能力的高層封裝，可包含複雜邏輯與多個步驟；工具則更接近底層的單一函數呼叫。不過在許多現代框架中兩者常被混用。
+  tags:
+  - chap-m5-ch3
+  - sec-skills-intro
+  usage: quiz
+- id: 7302
+  chapter_title: Agentic Skills 設計
+  section_title: 工具呼叫機制
+  text: 在 Claude API 的工具呼叫流程中，當模型決定使用工具時，它實際上做了什麼？
+  type: multiple_choice
+  options:
+  - 模型直接在內部執行工具函數並回傳結果
+  - 模型輸出包含工具名稱和參數的結構化 JSON，由應用程式解析後執行
+  - 模型透過網路請求直接呼叫工具的 API 端點
+  - 模型等待使用者手動執行工具後再繼續
+  correct_index: 1
+  explanation: LLM 本身無法直接執行外部函數。它輸出格式化的工具呼叫請求（tool_use block），由外部應用程式解析、執行對應函數，再將結果透過 tool_result 回傳給模型。
+  tags:
+  - chap-m5-ch3
+  - sec-tool-calling
+  usage: quiz
+- id: 7303
+  chapter_title: Agentic Skills 設計
+  section_title: 工具呼叫機制
+  text: 「並行工具呼叫 (Parallel Tool Calling)」的主要優點是什麼？
+  type: multiple_choice
+  options:
+  - 減少模型產生錯誤的機率
+  - 在單次回應中同時請求多個工具，減少來回次數並提升執行效率
+  - 確保工具按照特定順序執行
+  - 降低 API 呼叫的成本
+  correct_index: 1
+  explanation: 並行工具呼叫允許模型在一次回應中請求多個獨立工具，應用程式可並行執行這些工具，避免不必要的序列等待，顯著縮短多工具任務的執行時間。
+  tags:
+  - chap-m5-ch3
+  - sec-tool-calling
+  usage: quiz
+- id: 7304
+  chapter_title: Agentic Skills 設計
+  section_title: 記憶管理設計
+  text: 在處理長期對話的記憶管理中，「摘要壓縮 (Summarization)」策略的主要目的是什麼？
+  type: multiple_choice
+  options:
+  - 加密對話內容以保護隱私
+  - 週期性將舊對話歷史壓縮為摘要，以在有限的上下文視窗內保留更多有效資訊
+  - 刪除所有非關鍵的對話紀錄
+  - 將對話轉換為向量形式儲存
+  correct_index: 1
+  explanation: 上下文視窗大小有限，摘要壓縮策略透過將舊對話歷史濃縮為精簡摘要，保留關鍵資訊的同時騰出空間給近期的對話內容。
+  tags:
+  - chap-m5-ch3
+  - sec-memory-management
+  usage: quiz
+- id: 7305
+  chapter_title: Agentic Skills 設計
+  section_title: 規劃策略設計
+  text: 「動態重規劃 (Dynamic Replanning)」在代理人設計中解決了什麼問題？
+  type: multiple_choice
+  options:
+  - 讓代理人能在任務執行中途遇到意外情況時調整計劃，而不是強制執行可能已失效的原始計劃
+  - 確保代理人永遠按照最短路徑完成任務
+  - 防止代理人重複執行相同的步驟
+  - 自動優化工具選擇策略
+  correct_index: 0
+  explanation: 現實任務往往充滿不確定性。動態重規劃讓代理人在步驟失敗或環境變化時，能根據已執行步驟和失敗原因重新生成後續計劃，而非固執地繼續執行已過時的計劃。
+  tags:
+  - chap-m5-ch3
+  - sec-planning-strategies
+  usage: quiz
+- id: 7306
+  chapter_title: Agentic Skills 設計
+  section_title: Skill 設計最佳實踐
+  text: 撰寫高品質技能描述時，下列哪個原則「最不重要」？
+  type: multiple_choice
+  options:
+  - 說明技能的用途而非實作細節
+  - 包含使用時機的說明
+  - 詳細描述技能的內部演算法邏輯
+  - 列舉技能的限制條件（如格式限制、數量上限）
+  correct_index: 2
+  explanation: 技能描述的目的是幫助 LLM 決定何時以及如何使用技能，因此應著重描述「能做什麼」和「何時使用」，而非內部實作細節，後者對 LLM 的使用決策沒有幫助。
+  tags:
+  - chap-m5-ch3
+  - sec-skill-best-practices
+  usage: quiz
+- id: 7307
+  chapter_title: Agentic Skills 設計
+  section_title: Skill 設計最佳實踐
+  text: 技能實作中採用「指數退避 (Exponential Backoff)」重試策略的主要原因是什麼？
+  type: multiple_choice
+  options:
+  - 提高技能的執行速度
+  - 避免在服務不穩定時頻繁重試導致雪崩效應，逐漸增加等待時間讓服務有恢復機會
+  - 降低技能的程式碼複雜度
+  - 確保每次重試都使用不同的工具
+  correct_index: 1
+  explanation: 指數退避（每次重試等待時間倍增）是避免對不穩定服務造成過多壓力的標準做法，能在給服務足夠恢復時間的同時，仍然在最終嘗試成功。
+  tags:
+  - chap-m5-ch3
+  - sec-skill-best-practices
+  usage: quiz

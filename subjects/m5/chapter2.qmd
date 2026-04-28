@@ -1,0 +1,175 @@
+---
+title: "模型上下文協議 (MCP)"
+order: 2
+label: chap-m5-ch2
+---
+
+本章將首先探討 [AI 代理人 (AI Agent)](#def-ai-agent) 的基礎概念與評估方法，接著介紹 MCP（Model Context Protocol，模型上下文協議）——一個讓 [AI 代理人 (AI Agent)](#def-ai-agent) 能夠輕鬆連接各種 [工具 (Tools)](#def-tools) 和資料來源的開放標準。
+
+## AI 代理人基礎概念 {#sec-agent-fundamentals}
+
+[AI 代理人 (AI Agent)]{#def-ai-agent} 是一個系統，它將 [大型語言模型 (Large Language Models, LLMs)](#def-llm) 作為「大腦」，使其能夠透過 [推理與規劃 (Reasoning and Planning)](#def-reasoning-planning) 來做出決策，並使用外部 [工具 (Tools)](#def-tools) 與環境互動。
+
+[大型語言模型 (Large Language Models, LLMs)]{#def-llm} 是一種基於龐大資料訓練出來的 AI 模型，在 [AI 代理人 (AI Agent)](#def-ai-agent) 系統中負責處理對話（透過 [訊息與特殊標記 (Messages and Special Tokens)](#def-messages-tokens)）並提供邏輯思考能力。
+
+[訊息與特殊標記 (Messages and Special Tokens)]{#def-messages-tokens} 是 [大型語言模型 (Large Language Models, LLMs)](#def-llm) 結構化對話與理解指令的方式。
+
+[推理與規劃 (Reasoning and Planning)]{#def-reasoning-planning} 是指 [AI 代理人 (AI Agent)](#def-ai-agent) 在採取行動前，分析問題並拆解成多個步驟的能力。
+
+[工具 (Tools)]{#def-tools} 讓 [AI 代理人 (AI Agent)](#def-ai-agent) 得以執行具體操作（[動作 (Actions)](#def-actions)）。在 MCP 章節中我們將深入探討工具的標準化定義。透過 [工具 (Tools)](#def-tools)，代理人可以查詢資料庫、搜尋網頁或執行程式碼。
+
+#### 代理人工作流程：思考、行動、觀察
+
+[AI 代理人 (AI Agent)](#def-ai-agent) 的核心運作方式是基於 [思考-行動-觀察循環 (Thought-Action-Observation Cycle)](#def-tao-cycle)。
+[思考-行動-觀察循環 (Thought-Action-Observation Cycle)]{#def-tao-cycle} 也被稱為 [ReAct (Reason + Act) 模式]{#def-react}。
+- **思考 (Thought)**：[AI 代理人 (AI Agent)](#def-ai-agent) 利用 [大型語言模型 (Large Language Models, LLMs)](#def-llm) 進行內部推理，決定下一步該怎麼做。
+- **行動 (Act/Actions)**：[AI 代理人 (AI Agent)](#def-ai-agent) 呼叫 [工具 (Tools)](#def-tools) 與外部環境互動。[動作 (Actions)]{#def-actions} 是 [工具 (Tools)](#def-tools) 執行的具體過程。
+- **觀察 (Observe/Observations)**：[AI 代理人 (AI Agent)](#def-ai-agent) 獲取 [工具 (Tools)](#def-tools) 執行的結果，並將此 [觀察 (Observations)]{#def-observations} 整合回下一步的思考中。
+
+## 代理人可觀測性與評估 {#sec-agent-observability}
+
+當 [AI 代理人 (AI Agent)](#def-ai-agent) 系統變得複雜時，我們需要確保其穩定性與效能。
+
+[可觀測性 (Observability)]{#def-observability} 讓我們能夠擺脫「黑箱」行為，監控 [AI 代理人 (AI Agent)](#def-ai-agent) 的延遲、成本與安全性。這通常透過 [儀器化 (Instrumentation)](#def-instrumentation) 來達成。
+
+[儀器化 (Instrumentation)]{#def-instrumentation} 指的是使用系統（例如 OpenTelemetry）來捕獲 [AI 代理人 (AI Agent)](#def-ai-agent) 運作時的 [追蹤 (Traces)](#def-traces)、日誌與指標。
+
+[追蹤 (Traces)]{#def-traces} 可以記錄 [AI 代理人 (AI Agent)](#def-ai-agent) 每一次的思考與行動過程。為了實現這些監控，開發者常會使用各種開源的 [可觀測性工具 (Observability Tools)](#def-observability-tools)（如 Langfuse 或 Arize Phoenix）來視覺化效能。
+
+[評估 (Evaluation)]{#def-evaluation} 則是衡量 [AI 代理人 (AI Agent)](#def-ai-agent) 表現的機制，主要包含：
+- **即時/線上評估 (Real-time/Online Evaluation)**：收集使用者回饋，或使用「LLM 作為裁判 (LLM-as-a-judge)」動態評估 [AI 代理人 (AI Agent)](#def-ai-agent) 的輸出。
+- **離線評估 (Offline Evaluation)**：使用基準資料集 (Benchmark datasets) 來測試與比較 [AI 代理人 (AI Agent)](#def-ai-agent) 的效能。
+
+了解這些基礎後，我們將深入探討如何運用標準化協議來增強 [AI 代理人 (AI Agent)](#def-ai-agent) 的工具能力。
+
+## 問題的起源：為什麼需要 MCP？ {#sec-mcp-intro}
+
+想像一個場景：你的公司有三個 AI 助手（分別用了不同廠商的模型），還有十個內部系統（資料庫、行事曆、郵件、檔案伺服器……）。
+
+如果每個 AI 助手都要和每個系統「手工整合」，你需要建立 3 × 10 = **30 個客製化連線**。每個連線的寫法都不一樣、維護方式也不一樣，而且每次換了新的 AI 模型或新增了一個系統，就要重新開始。
+
+這正是 MCP 出現之前 AI 整合工具的現實困境。
+
+**MCP（Model Context Protocol）** 是 Anthropic 在 2024 年底提出的開放標準協議。它的核心思想很簡單：**定義一個統一的「插頭和插座」規格**，讓所有 AI 系統和所有工具都說同一種語言。
+
+有了 MCP，上面的例子就變成了：3 個 AI 系統各實作一次 MCP 客戶端，10 個工具各實作一次 MCP 伺服器，總共只需要 3 + 10 = **13 個標準實作**，大幅降低整合成本。
+
+MCP 不是 Anthropic 的私有技術——它是一個**開放標準**，任何 AI 系統或工具都可以採用。
+
+## MCP 的三個角色 {#sec-mcp-architecture}
+
+MCP 系統由三個角色組成，用一個生活比喻來理解：想像你用手機 App 叫外送。
+
+### 主機（Host）— 手機 App {.unnumbered}
+
+主機是使用者直接互動的應用程式，就像外送 App。它負責：
+- 管理整個對話和任務流程
+- 決定要連接哪些工具（MCP 伺服器）
+- 執行安全控管，確保只做允許的事情
+
+常見的 MCP 主機有：Claude Desktop（桌面版 Claude）、Claude Code（程式開發工具）、各種 IDE 外掛。
+
+### 客戶端（Client）— App 的網路模組 {.unnumbered}
+
+客戶端是主機內部的通訊模組，負責和單一 MCP 伺服器建立連線。一個主機可以同時管理多個客戶端，就像一個手機 App 可以同時連接多個後端服務。
+
+客戶端的工作是：
+- 向伺服器詢問「你提供哪些功能？」
+- 把 AI 的工具呼叫請求轉發給伺服器
+- 把伺服器的回應傳回給 AI
+
+### 伺服器（Server）— 外送平台的後端 {.unnumbered}
+
+MCP 伺服器是真正「做事」的地方，就像外送平台的後端系統，處理訂單、查詢餐廳、追蹤配送。
+
+每個 MCP 伺服器專注於一個特定的能力，例如：
+- 檔案系統伺服器：讀寫電腦上的檔案
+- 資料庫伺服器：查詢公司資料庫
+- 天氣伺服器：查詢即時天氣資訊
+- GitHub 伺服器：管理程式碼版本
+
+這個架構的美妙之處在於：**AI 模型不需要知道工具怎麼實作的**，只需要說「我要查天氣」，客戶端會找到天氣伺服器並取得結果。
+
+## MCP 提供的三種能力 {#sec-mcp-components}
+
+MCP 伺服器可以對外提供三種類型的能力：
+
+### 工具（Tools）— 可以執行的動作 {.unnumbered}
+
+工具就是 AI 可以「呼叫」的函數，用來執行具體操作。
+
+每個工具有三個關鍵要素：
+- **名稱**：工具的識別名稱，例如 `search_web`、`send_email`
+- **描述**：說明這個工具能做什麼、什麼時候該用它（AI 靠這個描述決定要不要用這個工具）
+- **參數定義**：呼叫工具時需要提供哪些資訊，例如搜尋工具需要「關鍵字」參數
+
+一個好的工具描述應該讓 AI 一看就知道「啊，遇到這種情況我就用這個工具」。
+
+### 資源（Resources）— 可以讀取的資料 {.unnumbered}
+
+資源是 AI 可以「閱讀」的資料，不執行操作，只是取得資訊。每個資源有一個位址（URI），例如：
+
+- `file:///documents/report.pdf` — 電腦上的一個 PDF 文件
+- `database://customers/id/1234` — 資料庫中某位客戶的資料
+- `screen://current` — 當前螢幕截圖
+
+資源和工具的差別：工具會改變某些東西（發送郵件、寫入資料），資源只是讀取資訊。
+
+### 提示詞範本（Prompts）— 預先設計的互動模板 {.unnumbered}
+
+提示詞範本是預先設計好的對話模板，幫助使用者用一致且有效的方式完成特定任務。例如「程式碼審查模板」、「報告撰寫模板」。
+
+## MCP 的通訊方式 {#sec-mcp-transport}
+
+MCP 定義了兩種主機和伺服器之間傳遞訊息的方式：
+
+### 本地通訊（stdio） {.unnumbered}
+
+主機直接在自己的電腦上啟動 MCP 伺服器程式，透過**標準輸入輸出（stdin/stdout）**傳遞訊息。
+
+就像是老闆（主機）直接叫助理（伺服器）過來當面溝通——速度快、完全不需要網路、資料不會離開你的電腦。這是最常見的個人使用方式。
+
+### 遠端通訊（HTTP + SSE） {.unnumbered}
+
+透過網際網路連接部署在雲端的 MCP 伺服器。
+
+就像透過電話溝通——不需要對方在同一個地點，適合團隊共享的工具或企業級服務。
+
+## 在 Claude Desktop 設定 MCP 工具 {#sec-mcp-server-dev}
+
+使用 MCP 不需要自己寫程式。社群已經建立了數百個現成的 MCP 伺服器，例如：
+
+- `@modelcontextprotocol/server-filesystem`：讓 Claude 讀寫你電腦上的檔案
+- `@modelcontextprotocol/server-github`：讓 Claude 管理 GitHub 程式碼
+- `@modelcontextprotocol/server-postgres`：讓 Claude 查詢 PostgreSQL 資料庫
+
+要啟用這些工具，只需在 Claude Desktop 的設定檔中描述你要連接哪個伺服器：
+
+```
+設定格式（概念說明）：
+- 工具名稱：你給這個工具取的暱稱
+- 啟動方式：如何執行這個伺服器程式
+- 存取範圍：允許這個工具存取哪些資料夾或資源
+```
+
+設定完成後，Claude 就能直接使用這些工具，無需任何額外的程式整合。
+
+## MCP 的安全設計 {#sec-mcp-security}
+
+給 AI 連接工具，最讓人擔心的就是安全問題。MCP 在設計時特別考慮了這點：
+
+**使用者始終掌控一切**
+
+- 每次 AI 要呼叫工具，使用者都會收到通知甚至需要手動批准
+- 你可以預先設定「這些操作自動允許」的白名單，減少頻繁確認的麻煩
+- 你隨時可以拔掉某個 MCP 伺服器的連線
+
+**最小授權原則**
+
+每個 MCP 伺服器只應該擁有完成自己任務所需的最小權限。例如：
+- 天氣查詢伺服器不應該有讀取你個人文件的權限
+- 唯讀報表工具不應該有刪除資料的能力
+
+**防範提示注入攻擊**
+
+提示注入是一種風險：惡意的網頁或文件可能在內容中藏入「指令」，試圖操縱 AI 執行非預期的操作。優良的 MCP 伺服器實作應該把所有外部資料視為「不可信任的內容」，嚴格區分資料和指令。

@@ -1,0 +1,20 @@
+project:
+  type: book
+  output-dir: ../../_book/m5
+
+book:
+  title: "AI 代理人技術與應用"
+  author: "AI 認證課程"
+  chapters:
+    - index.qmd
+    - chapter1.qmd
+    - chapter2.qmd
+    - chapter3.qmd
+    - chapter4.qmd
+    - chapter5.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    number-sections: true

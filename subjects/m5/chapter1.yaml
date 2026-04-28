@@ -1,0 +1,113 @@
+questions:
+- id: 7101
+  chapter_title: AI 代理人基礎概念
+  section_title: 什麼是 AI 代理人
+  text: AI 代理人（AI Agent）與傳統聊天機器人最主要的差異是什麼？
+  type: multiple_choice
+  options:
+  - 代理人只能回答問題，不能執行動作
+  - 代理人能夠自主進行多步驟規劃與工具呼叫，而聊天機器人主要進行單輪問答
+  - 代理人不需要大型語言模型作為核心
+  - 代理人無法理解自然語言指令
+  correct_index: 1
+  explanation: AI 代理人的核心特徵是自主性、多步驟執行與工具使用能力，能主動規劃並執行任務，而非僅被動回應。
+  tags:
+  - chap-m5-ch1
+  - sec-agent-definition
+  usage: quiz
+- id: 7102
+  chapter_title: AI 代理人基礎概念
+  section_title: 什麼是 AI 代理人
+  text: 下列哪一項「不是」AI 代理人的核心特徵？
+  type: multiple_choice
+  options:
+  - 自主性 (Autonomy)：無需持續人工干預即可運作
+  - 目標導向 (Goal-directed)：圍繞明確目標組織行為
+  - 固定性 (Fixedness)：行為模式在部署後不會改變
+  - 持續性 (Persistence)：能跨多個步驟維持狀態與記憶
+  correct_index: 2
+  explanation: AI 代理人的特徵包括自主性、感知能力、行動能力、目標導向與持續性。「固定性」並非代理人特徵，代理人能夠動態調整策略。
+  tags:
+  - chap-m5-ch1
+  - sec-agent-definition
+  usage: quiz
+- id: 7103
+  chapter_title: AI 代理人基礎概念
+  section_title: 代理人的組成架構
+  text: 在 AI 代理人的記憶系統中，「向量資料庫（如 Chroma、Pinecone）」屬於哪種記憶類型？
+  type: multiple_choice
+  options:
+  - 短期記憶 (Short-term Memory)，儲存當前對話上下文
+  - 工作記憶 (Working Memory)，儲存當前任務的中間狀態
+  - 長期記憶 (Long-term Memory)，儲存跨任務的知識與經驗
+  - 感知記憶 (Sensory Memory)，暫存外部環境輸入
+  correct_index: 2
+  explanation: 向量資料庫用於儲存長期記憶，能跨任務保存知識與過往經驗，透過語義相似度搜尋進行召回。
+  tags:
+  - chap-m5-ch1
+  - sec-agent-architecture
+  usage: quiz
+- id: 7104
+  chapter_title: AI 代理人基礎概念
+  section_title: 代理推理迴圈
+  text: ReAct (Reasoning + Acting) 框架的核心思想是什麼？
+  type: multiple_choice
+  options:
+  - 先生成完整計劃再一次性執行所有步驟
+  - 透過自我反思記錄失敗原因以改進下次嘗試
+  - 交替進行推理（Thought）和行動（Action），並根據觀察結果動態調整
+  - 使用多個代理人並行執行任務後投票決定結果
+  correct_index: 2
+  explanation: ReAct 框架的精髓在於「思考-行動-觀察」的交替循環，讓代理人能基於真實的工具回傳結果進行推理，減少幻覺並提高可靠性。
+  tags:
+  - chap-m5-ch1
+  - sec-agent-loop
+  usage: quiz
+- id: 7105
+  chapter_title: AI 代理人基礎概念
+  section_title: 代理推理迴圈
+  text: Reflexion 框架與 ReAct 框架的主要區別是什麼？
+  type: multiple_choice
+  options:
+  - Reflexion 不使用工具呼叫
+  - Reflexion 引入自我反思機制，將失敗經驗以文字形式儲存為記憶以改進後續嘗試
+  - Reflexion 只適用於數學計算任務
+  - Reflexion 需要多個 LLM 模型協同工作
+  correct_index: 1
+  explanation: Reflexion 的創新在於讓代理人在任務失敗後生成文字形式的自我反思，並將其作為長期記憶，在後續嘗試中避免重複犯同樣的錯誤。
+  tags:
+  - chap-m5-ch1
+  - sec-agent-loop
+  usage: quiz
+- id: 7106
+  chapter_title: AI 代理人基礎概念
+  section_title: 代理人類型
+  text: 「Agentic RAG」與「Naive RAG」的主要差異是什麼？
+  type: multiple_choice
+  options:
+  - Agentic RAG 不使用向量資料庫
+  - Agentic RAG 只能處理文字資料，而 Naive RAG 可處理多模態資料
+  - Agentic RAG 讓代理人主動決定何時和如何進行檢索，可進行多輪查詢
+  - Agentic RAG 的回應速度比 Naive RAG 更快
+  correct_index: 2
+  explanation: Agentic RAG 將 RAG 融入代理迴圈，代理人能自主判斷何時需要檢索、使用哪種查詢策略，並可多輪迭代查詢以獲得更完整的資訊。
+  tags:
+  - chap-m5-ch1
+  - sec-agent-types
+  usage: quiz
+- id: 7107
+  chapter_title: AI 代理人基礎概念
+  section_title: Agent 的評估指標
+  text: 評估 AI 代理人效能時，「步驟效率 (Step Efficiency)」指的是什麼？
+  type: multiple_choice
+  options:
+  - 代理人每秒能處理的請求數量
+  - 代理人完成任務所需的最少步驟數，步驟越少效率越高
+  - 代理人正確選擇工具的比例
+  - 代理人在給定時間內完成任務的比例
+  correct_index: 1
+  explanation: 步驟效率衡量代理人解決問題的簡潔程度，不必要的冗餘步驟會降低效率並增加成本和延遲。
+  tags:
+  - chap-m5-ch1
+  - sec-agent-eval
+  usage: quiz

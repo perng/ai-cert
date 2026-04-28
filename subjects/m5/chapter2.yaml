@@ -1,0 +1,113 @@
+questions:
+- id: 7201
+  chapter_title: 模型上下文協議 (MCP)
+  section_title: MCP 簡介與設計動機
+  text: MCP (Model Context Protocol) 主要解決什麼問題？
+  type: multiple_choice
+  options:
+  - 提升大型語言模型的推理速度
+  - 解決 AI 模型與外部工具整合的碎片化問題，提供標準化協議
+  - 改善 LLM 的訓練效率
+  - 降低 AI 模型的幻覺（Hallucination）問題
+  correct_index: 1
+  explanation: MCP 提供統一標準，讓 AI 系統與工具的整合從 M×N 個客製化整合簡化為 M+N 個標準實作，解決碎片化問題。
+  tags:
+  - chap-m5-ch2
+  - sec-mcp-intro
+  usage: quiz
+- id: 7202
+  chapter_title: 模型上下文協議 (MCP)
+  section_title: MCP 系統架構
+  text: 在 MCP 架構中，「主機 (Host)」的主要職責是什麼？
+  type: multiple_choice
+  options:
+  - 直接儲存和管理工具的程式碼邏輯
+  - 管理 MCP 客戶端生命週期、協調 LLM 與伺服器通訊，並執行授權決策
+  - 只負責將使用者輸入轉換為 JSON 格式
+  - 充當 LLM 和使用者之間的翻譯層
+  correct_index: 1
+  explanation: 主機是整個 MCP 系統的協調中心，負責管理客戶端、執行安全策略，以及在 LLM 和 MCP 伺服器之間傳遞訊息。
+  tags:
+  - chap-m5-ch2
+  - sec-mcp-architecture
+  usage: quiz
+- id: 7203
+  chapter_title: 模型上下文協議 (MCP)
+  section_title: MCP 系統架構
+  text: 在 MCP 架構中，一個「客戶端 (Client)」維護的連線關係是？
+  type: multiple_choice
+  options:
+  - 一個客戶端可同時連線多個 MCP 伺服器
+  - 每個客戶端維護與單一 MCP 伺服器的一對一連線
+  - 客戶端直接與使用者連線，不與伺服器通訊
+  - 多個客戶端共享同一個 MCP 伺服器連線
+  correct_index: 1
+  explanation: MCP 架構設計為每個客戶端維護與單一 MCP 伺服器的連線，主機可以建立多個客戶端以同時連線不同的伺服器。
+  tags:
+  - chap-m5-ch2
+  - sec-mcp-architecture
+  usage: quiz
+- id: 7204
+  chapter_title: 模型上下文協議 (MCP)
+  section_title: MCP 核心元件
+  text: MCP 中的「資源 (Resources)」與「工具 (Tools)」的主要差異是什麼？
+  type: multiple_choice
+  options:
+  - 資源是 LLM 可讀取的資料，工具是 LLM 可執行的操作
+  - 資源比工具更安全，不需要使用者授權
+  - 工具只能回傳文字，資源可回傳二進位資料
+  - 資源和工具功能完全相同，只是命名不同
+  correct_index: 0
+  explanation: 資源（Resources）代表可讀取的資料（如檔案、資料庫記錄），透過 URI 定位；工具（Tools）代表可執行的操作（如搜尋、計算），由 LLM 主動呼叫。
+  tags:
+  - chap-m5-ch2
+  - sec-mcp-components
+  usage: quiz
+- id: 7205
+  chapter_title: 模型上下文協議 (MCP)
+  section_title: MCP 傳輸機制
+  text: MCP 的「stdio 傳輸」與「HTTP + SSE 傳輸」最主要的適用場景差異是什麼？
+  type: multiple_choice
+  options:
+  - stdio 適合遠端伺服器，HTTP + SSE 適合本地程式
+  - stdio 適合本地部署（透過子程序），HTTP + SSE 適合遠端/雲端部署
+  - stdio 速度更快但不安全，HTTP + SSE 較慢但安全
+  - 兩者完全相同，只是語法不同
+  correct_index: 1
+  explanation: stdio 傳輸透過標準輸入/輸出管道與本地子程序通訊，適合本地安全部署；HTTP + SSE 支援跨網路存取，適合雲端或遠端 MCP 伺服器。
+  tags:
+  - chap-m5-ch2
+  - sec-mcp-transport
+  usage: quiz
+- id: 7206
+  chapter_title: 模型上下文協議 (MCP)
+  section_title: 開發 MCP 伺服器
+  text: 使用 Python MCP SDK (FastMCP) 定義工具時，工具的「description」欄位最重要的用途是什麼？
+  type: multiple_choice
+  options:
+  - 用於顯示給最終使用者看的說明文字
+  - LLM 根據此描述決定何時以及如何呼叫此工具
+  - 用於產生 API 文件
+  - 定義工具的輸入參數類型
+  correct_index: 1
+  explanation: 工具的描述 (description) 是 LLM 判斷在什麼情況下應呼叫此工具的關鍵依據，清晰的描述能顯著提升工具被正確選用的機率。
+  tags:
+  - chap-m5-ch2
+  - sec-mcp-server-dev
+  usage: quiz
+- id: 7207
+  chapter_title: 模型上下文協議 (MCP)
+  section_title: MCP 安全考量
+  text: 依照 MCP 安全設計，什麼是防範「提示注入攻擊 (Prompt Injection)」的最佳實踐？
+  type: multiple_choice
+  options:
+  - 禁止 LLM 呼叫任何外部工具
+  - MCP 伺服器應對所有來自 LLM 的輸入進行驗證，不信任任何未經驗證的內容
+  - 只使用官方提供的 MCP 伺服器
+  - 將所有工具呼叫結果加密後再回傳
+  correct_index: 1
+  explanation: 提示注入攻擊可能透過惡意資料偽裝成合法指令。MCP 伺服器應對輸入進行嚴格驗證，避免將未受信任的資料直接用於執行系統命令或資料庫查詢。
+  tags:
+  - chap-m5-ch2
+  - sec-mcp-security
+  usage: quiz

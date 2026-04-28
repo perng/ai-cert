@@ -1,0 +1,113 @@
+questions:
+- id: 7401
+  chapter_title: OpenClaw 與 Hermes Agent
+  section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
+  text: OpenClaw 最核心的設計特點是什麼？
+  type: multiple_choice
+  options:
+  - 只能在雲端伺服器上運行，需要訂閱付費服務
+  - 在使用者自己的電腦上本地執行，資料不上傳雲端，強調隱私優先
+  - 只支援 Claude 模型，不相容其他 AI 模型
+  - 需要安裝獨立的操作介面才能使用
+  correct_index: 1
+  explanation: OpenClaw 的核心設計哲學是「隱私優先」——整個系統在本地電腦執行，資料不離開使用者的裝置，並且支援 Claude、GPT 或本地模型等多種選擇。
+  tags:
+  - chap-m5-ch4
+  - sec-openclaw
+  usage: quiz
+- id: 7402
+  chapter_title: OpenClaw 與 Hermes Agent
+  section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
+  text: OpenClaw 讓使用者透過哪種方式與 AI 互動？
+  type: multiple_choice
+  options:
+  - 需要在 OpenClaw 官網上的專屬聊天介面操作
+  - 只能透過命令列（Terminal）輸入指令
+  - 透過使用者已習慣的通訊 App（如 WhatsApp、Telegram、Discord）操作
+  - 只能透過語音輸入
+  correct_index: 2
+  explanation: OpenClaw 的設計理念是不要求使用者改變習慣，讓他們用已在使用的通訊工具（WhatsApp、Telegram、Discord、Slack、iMessage 等）直接和 AI 對話。
+  tags:
+  - chap-m5-ch4
+  - sec-openclaw
+  usage: quiz
+- id: 7403
+  chapter_title: OpenClaw 與 Hermes Agent
+  section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
+  text: OpenClaw 的「心跳（Heartbeat）」機制指的是什麼？
+  type: multiple_choice
+  options:
+  - 定期偵測系統效能的監控功能
+  - 代理在背景主動執行排程任務並在適當時候通知使用者，不只等待使用者發問
+  - 兩個代理之間互相確認對方是否存活的訊號
+  - 衡量 AI 回應速度的效能指標
+  correct_index: 1
+  explanation: 心跳機制讓 OpenClaw 從被動轉為主動——它在背景持續運行，自動完成排程任務（如整理每日郵件）並主動通知使用者，而不只是等待指令。
+  tags:
+  - chap-m5-ch4
+  - sec-openclaw
+  usage: quiz
+- id: 7404
+  chapter_title: OpenClaw 與 Hermes Agent
+  section_title: Hermes Agent：會自我學習的多平台代理
+  text: Hermes Agent 宣稱自己是「唯一內建學習迴圈的代理」，這個學習迴圈的核心機制是什麼？
+  type: multiple_choice
+  options:
+  - 每隔一段時間自動重新訓練底層語言模型
+  - 任務完成後，評估解法是否值得保存，若是則封裝為技能供未來重複使用，並在使用中持續優化
+  - 透過讓多個代理相互競爭來選出最佳解法
+  - 定期從網路上抓取新資料來更新知識庫
+  correct_index: 1
+  explanation: Hermes 的學習迴圈讓代理能從每次任務中提煉經驗，自動封裝成可重用的技能。就像新員工把工作步驟記錄成 SOP，下次同樣任務就能更快完成。
+  tags:
+  - chap-m5-ch4
+  - sec-hermes
+  usage: quiz
+- id: 7405
+  chapter_title: OpenClaw 與 Hermes Agent
+  section_title: Hermes Agent：會自我學習的多平台代理
+  text: Hermes Agent 的技能系統與哪個開放標準相容，讓技能可以跨框架共享？
+  type: multiple_choice
+  options:
+  - OpenAPI 規範（用於描述 REST API）
+  - agentskills.io 開放技能標準
+  - ISO 42001（AI 管理系統標準）
+  - MCP（模型上下文協議）
+  correct_index: 1
+  explanation: Hermes 的技能與 agentskills.io 開放標準相容，這讓 Hermes 建立的技能可以分享給其他相容框架，也能安裝社群共享的技能，避免重複造輪子。
+  tags:
+  - chap-m5-ch4
+  - sec-hermes
+  usage: quiz
+- id: 7406
+  chapter_title: OpenClaw 與 Hermes Agent
+  section_title: Hermes Agent：會自我學習的多平台代理
+  text: Hermes Agent 的「模型無關（Model Agnostic）」設計帶來什麼實際好處？
+  type: multiple_choice
+  options:
+  - 代理可以同時用多個模型回答同一個問題
+  - 使用者可以切換不同的 LLM 提供商（如 OpenAI、Anthropic、本地模型）而不需要修改程式碼
+  - 讓 Hermes 不需要任何 LLM 就能運作
+  - 降低每次 API 呼叫的費用
+  correct_index: 1
+  explanation: 模型無關設計讓使用者不被綁定在單一 AI 廠商，可以根據費用、速度或能力需求自由切換模型，同時保持整個代理系統的其他設定不變。
+  tags:
+  - chap-m5-ch4
+  - sec-hermes
+  usage: quiz
+- id: 7407
+  chapter_title: OpenClaw 與 Hermes Agent
+  section_title: 從這兩個案例看 AI 代理設計趨勢
+  text: 從 OpenClaw 和 Hermes Agent 的設計可以觀察到，現代 AI 代理的共同發展趨勢是？
+  type: multiple_choice
+  options:
+  - AI 代理正在從需要人類持續監控轉向完全自主運作，不需要任何人類介入
+  - 強調持久記憶、融入既有工具環境、以及透過開放標準讓能力可跨框架共享
+  - 代理功能越來越集中到單一大型雲端平台，減少本地端部署
+  - 代理越來越專注於單一任務，減少通用性以提升準確度
+  correct_index: 1
+  explanation: 兩個框架都展示了相同的趨勢：讓代理融入使用者的既有環境（不要求換工具）、強化持久記憶讓代理越來越「認識你」、並透過 agentskills.io 或 MCP 等開放標準讓能力可移植共享。
+  tags:
+  - chap-m5-ch4
+  - sec-lessons
+  usage: quiz

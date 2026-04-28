@@ -885,8 +885,8 @@ questions:
   - 完全依靠基礎模型與 RAG，不進行 Fine-tune，僅透過提示設計控制語氣
   - 每日進行增量 Fine-tune，讓模型即時學習新文件內容，避免依賴檢索
   - 保留語氣相關 Fine-tuning，僅透過檢索系統更新文件內容，不頻繁改動模型
-  correct_index: 0
-  explanation: RAG (Retrieval-Augmented Generation) 結合檢索系統與生成模型，能引入外部即時資訊，有效減少幻覺並提升回答的準確性。
+  correct_index: 3
+  explanation: RAG 能引入外部即時知識以確保查詢每日新增文件，而 Fine-tuning 則適合用來調整固定語氣且不需要頻繁更新。因此在此情境下，保留語氣相關的 Fine-tuning 並透過 RAG 來更新文件內容是最合適用於長期維護的策略。
   tags:
   - past-exam
   - 114-4
