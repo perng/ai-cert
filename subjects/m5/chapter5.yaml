@@ -445,3 +445,483 @@ questions:
     tags:
       - chap-m5-ch5
     usage: quiz
+  - id: 7530
+    chapter_title: 多代理系統與未來發展
+    section_title: 多代理系統概述
+    text: 在單一代理人系統中，若處理一個大型任務導致上下文視窗溢出，哪一種方法可以解決？
+    type: multiple_choice
+    options:
+      - 直接終止任務並回報失敗
+      - 將任務切分給多個代理人各自處理，分散上下文負擔
+      - 升級到更大的語言模型
+      - 降低任務的品質要求
+    correct_index: 1
+    explanation: 多代理系統將大任務拆解成子任務分配給不同代理人，每個代理人只需要處理自己的部分。
+    tags:
+      - chap-m5-ch5
+      - sec-mas-overview
+    usage: quiz
+  - id: 7531
+    chapter_title: 多代理系統與未來發展
+    section_title: 多代理系統概述
+    text: 多代理系統中「相互驗證」的優勢是如何實現的？
+    type: multiple_choice
+    options:
+      - 讓所有代理人各自完成任務後取平均值
+      - 一個代理人的產出交由另一個代理人審查，互相把關
+      - 要求所有代理人輸出完全相同的結果
+      - 只有一個代理人有最終決定權
+    correct_index: 1
+    explanation: 相互驗證類似於重要文件需雙人簽署，透過多代理人交叉檢查提升可靠性。
+    tags:
+      - chap-m5-ch5
+      - sec-mas-overview
+    usage: quiz
+  - id: 7532
+    chapter_title: 多代理系統與未來發展
+    section_title: 多代理協作模式
+    text: 在協調者-執行者（Orchestrator-Worker）模式中，協調者的主要職責是什麼？
+    type: multiple_choice
+    options:
+      - 執行所有具體的工作任務
+      - 拆解任務、分配任務並整合結果
+      - 監督所有執行者的安全權限
+      - 對執行結果進行最終簽核
+    correct_index: 1
+    explanation: 協調者負責管理全局，不親自執行具體工作，而是拆解任務並分配給執行者。
+    tags:
+      - chap-m5-ch5
+      - sec-mas-patterns
+    usage: quiz
+  - id: 7533
+    chapter_title: 多代理系統與未來發展
+    section_title: 代理通訊協議
+    text: A2A 協議中的「代理名片（Agent Card）」主要包含什麼資訊？
+    type: multiple_choice
+    options:
+      - 代理人的個人聯絡電話與地址
+      - 代理人的名稱、能力清單與 API 端點
+      - 代理人的開發原始碼與版本歷史
+      - 代理人的硬體設備規格
+    correct_index: 1
+    explanation: 代理名片用標準格式描述代理人的名稱、能力與聯絡方式，方便其他代理人發現與呼叫。
+    tags:
+      - chap-m5-ch5
+      - sec-agent-communication
+    usage: quiz
+  - id: 7534
+    chapter_title: 多代理系統與未來發展
+    section_title: 代理安全與信任
+    text: 提示注入攻擊中，攻擊者常用的手法是什麼？
+    type: multiple_choice
+    options:
+      - 直接入侵 MCP 伺服器的作業系統
+      - 將惡意指令藏在網頁或文件內容中，讓代理人讀取後被操控
+      - 透過 DDoS 攻擊讓代理人無法回應
+      - 偽造使用者的生物特徵驗證
+    correct_index: 1
+    explanation: 提示注入將惡意指令偽裝成正常內容，當代理人讀取這些資料時，惡意指令混入思維中被執行。
+    tags:
+      - chap-m5-ch5
+      - sec-agent-safety
+    usage: quiz
+  - id: 7535
+    chapter_title: 多代理系統與未來發展
+    section_title: AI 代理技術未來趨勢
+    text: 「電腦使用代理（Computer Use Agent）」與傳統 API 代理人的核心差異是什麼？
+    type: multiple_choice
+    options:
+      - 電腦使用代理不需要任何 AI 模型
+      - 電腦使用代理能像人類一樣操作圖形使用者介面
+      - 電腦使用代理只能使用文字命令列介面
+      - 電腦使用代理只能執行預先寫死的腳本
+    correct_index: 1
+    explanation: 電腦使用代理能看螢幕、移動滑鼠、打字，直接操作任何桌面應用程式。
+    tags:
+      - chap-m5-ch5
+      - sec-future-trends
+    usage: quiz
+  - id: 7536
+    chapter_title: 多代理系統與未來發展
+    section_title: 多代理系統概述
+    text: 下列哪一項「不是」多代理系統的固有挑戰？
+    type: multiple_choice
+    options:
+      - 代理人之間的協調溝通成本
+      - 多個代理人可能得出不一致的結論
+      - 代理人越多，API 費用越高
+      - 所有代理人的執行速度一定比單一代理人快
+    correct_index: 3
+    explanation: 多代理系統因溝通與協調成本，總執行速度不一定比單一代理人快。
+    tags:
+      - chap-m5-ch5
+      - sec-mas-overview
+    usage: quiz
+  - id: 7537
+    chapter_title: 多代理系統與未來發展
+    section_title: 多代理協作模式
+    text: 在「辯論模式（Debate）」的多代理架構中，最終結論通常由誰做出？
+    type: multiple_choice
+    options:
+      - 由正方代理人決定
+      - 由反方代理人決定
+      - 由中立的裁判代理人綜合雙方論點後決定
+      - 由使用者自行判斷
+    correct_index: 2
+    explanation: 辯論模式中雙方提出正反論點，由裁判代理人綜合評估後給出平衡結論。
+    tags:
+      - chap-m5-ch5
+      - sec-mas-patterns
+    usage: quiz
+  - id: 7538
+    chapter_title: 多代理系統與未來發展
+    section_title: 代理通訊協議
+    text: 在 A2A 通訊中，「工作產物（Artifact）」指的是什麼？
+    type: multiple_choice
+    options:
+      - 代理人執行任務時的除錯日誌
+      - 遠端代理人完成任務後回傳的結果封裝
+      - 使用者對代理人服務的評價與回饋
+      - 代理人開發過程中的程式碼版本
+    correct_index: 1
+    explanation: Artifact 是代理人執行任務後回傳的結果，包含完成工作的具體成果。
+    tags:
+      - chap-m5-ch5
+      - sec-agent-communication
+    usage: quiz
+  - id: 7539
+    chapter_title: 多代理系統與未來發展
+    section_title: 代理安全與信任
+    text: 在安全設計中，「最小授權原則」在多代理系統中如何應用？
+    type: multiple_choice
+    options:
+      - 給所有代理人完全相同的完整權限
+      - 每個代理人只擁有完成自身任務所需的最小權限
+      - 不授予任何代理人任何權限
+      - 所有操作都需要全域管理員權限
+    correct_index: 1
+    explanation: 最小授權原則讓研究代理只有讀取權限、通知代理只有發送郵件權限，降低風險。
+    tags:
+      - chap-m5-ch5
+      - sec-agent-safety
+    usage: quiz
+  - id: 7540
+    chapter_title: 多代理系統與未來發展
+    section_title: AI 代理技術未來趨勢
+    text: 「代理市場生態系統」最類似於現有的哪一種商業模式？
+    type: multiple_choice
+    options:
+      - 傳統的軟體即服務（SaaS）
+      - App Store 應用程式商店
+      - 實體零售商店
+      - 拍賣網站
+    correct_index: 1
+    explanation: 代理市場類似 App Store，讓開發者上架專業代理人，使用者可購買組合使用。
+    tags:
+      - chap-m5-ch5
+      - sec-future-trends
+    usage: quiz
+  - id: 7541
+    chapter_title: 多代理系統與未來發展
+    section_title: 多代理系統概述
+    text: 多代理系統的「容錯能力」是如何實現的？
+    type: multiple_choice
+    options:
+      - 所有代理人共用同一個備援伺服器
+      - 單一代理人失敗時不影響其他代理人繼續工作
+      - 每次執行任務都會建立全新的代理人實例
+      - 所有代理人定時互相備份對方的記憶
+    correct_index: 1
+    explanation: 多代理系統的分散式設計讓故障被隔離，一個代理人的失敗不會導致整個系統停擺。
+    tags:
+      - chap-m5-ch5
+      - sec-mas-overview
+    usage: quiz
+  - id: 7542
+    chapter_title: 多代理系統與未來發展
+    section_title: 多代理協作模式
+    text: 「流水線（Pipeline）」模式與「協調者-執行者」模式最大的區別是什麼？
+    type: multiple_choice
+    options:
+      - 流水線模式沒有中央協調者，任務依序在各代理人間傳遞
+      - 流水線模式比協調者模式快十倍
+      - 協調者模式不需要執行者
+      - 流水線模式只能處理文字資料
+    correct_index: 0
+    explanation: 流水線模式中任務像生產線一樣依序通過各代理人，沒有中央協調者統籌分配。
+    tags:
+      - chap-m5-ch5
+      - sec-mas-patterns
+    usage: quiz
+  - id: 7543
+    chapter_title: 多代理系統與未來發展
+    section_title: 代理通訊協議
+    text: 在 A2A 通訊中，「事件佇列（Event Queue）」主要解決什麼問題？
+    type: multiple_choice
+    options:
+      - 代理人之間的認證與授權問題
+      - 長時間運行的任務中連線過早中斷的問題
+      - 代理人記憶體不足的問題
+      - 代理人無法並行執行任務的問題
+    correct_index: 1
+    explanation: 事件佇列用於處理長時間任務的更新，確保在任務完成前連線不會被中斷。
+    tags:
+      - chap-m5-ch5
+      - sec-agent-communication
+    usage: quiz
+  - id: 7544
+    chapter_title: 多代理系統與未來發展
+    section_title: 代理安全與信任
+    text: 代理人設定「執行預算」的主要目的是什麼？
+    type: multiple_choice
+    options:
+      - 確保代理人的執行速度夠快
+      - 作為防止代理人失控的保險絲，限制最大步驟數或費用
+      - 用來估算專案的總開發成本
+      - 用來比較不同代理人的效能
+    correct_index: 1
+    explanation: 執行預算限制代理人最多執行的步驟或花費，超過就自動停止，防止無限迴圈耗盡資源。
+    tags:
+      - chap-m5-ch5
+      - sec-agent-safety
+    usage: quiz
+  - id: 7545
+    chapter_title: 多代理系統與未來發展
+    section_title: AI 代理技術未來趨勢
+    text: 「多模態代理」相較於純文字代理人的主要優勢是什麼？
+    type: multiple_choice
+    options:
+      - 多模態代理不需要大型語言模型
+      - 多模態代理能同時處理文字、圖片、音訊、影片等不同形式
+      - 多模態代理的執行速度一定更快
+      - 多模態代理的成本一定更低
+    correct_index: 1
+    explanation: 多模態代理能整合多種感知管道，實現更全面的環境感知與決策。
+    tags:
+      - chap-m5-ch5
+      - sec-future-trends
+    usage: quiz
+  - id: 7546
+    chapter_title: 多代理系統與未來發展
+    section_title: 多代理系統概述
+    text: 若企業需要同時讓多個 AI 代理人協作完成一份市場分析報告，下列哪個架構最適合？
+    type: multiple_choice
+    options:
+      - 單一代理人從頭到尾獨立完成
+      - 多代理系統：研究代理收集資料，分析代理處理資料，寫作代理生成報告
+      - 人類手動處理所有步驟
+      - 隨機選取一個代理人執行所有步驟
+    correct_index: 1
+    explanation: 多代理系統能讓專業分工的研究、分析、寫作代理人協作，效率與品質更高。
+    tags:
+      - chap-m5-ch5
+      - sec-mas-overview
+    usage: quiz
+  - id: 7547
+    chapter_title: 多代理系統與未來發展
+    section_title: 多代理協作模式
+    text: 在協調者-執行者模式中，哪個代理人需要了解任務的整體全貌？
+    type: multiple_choice
+    options:
+      - 所有執行者都需要了解整體全貌
+      - 只有協調者需要了解整體全貌，執行者只需專注自身任務
+      - 沒有任何代理人需要了解整體全貌
+      - 只有最高權限的執行者需要了解
+    correct_index: 1
+    explanation: 協調者負責全局規劃，而執行者只需專注完成自己被分配到的工作。
+    tags:
+      - chap-m5-ch5
+      - sec-mas-patterns
+    usage: quiz
+  - id: 7548
+    chapter_title: 多代理系統與未來發展
+    section_title: 代理通訊協議
+    text: NLWeb（自然語言網路）的核心目標是什麼？
+    type: multiple_choice
+    options:
+      - 取代現有的全球資訊網
+      - 為網站提供自然語言介面，讓 AI 代理人可以探索與互動
+      - 讓所有網站的內容變成純文字格式
+      - 強制所有網站使用同一種程式語言
+    correct_index: 1
+    explanation: NLWeb 的目標是讓網站具備自然語言介面，使 AI 代理人能像人類一樣瀏覽網站。
+    tags:
+      - chap-m5-ch5
+      - sec-agent-communication
+    usage: quiz
+  - id: 7549
+    chapter_title: 多代理系統與未來發展
+    section_title: 代理安全與信任
+    text: 人機協作（Human-in-the-Loop）在哪些操作中最應該被強制執行？
+    type: multiple_choice
+    options:
+      - 所有的工具呼叫都需要人類確認
+      - 高風險操作如刪除檔案、發送郵件、金融交易
+      - 只需要在系統初始化時確認一次
+      - 人類不需要介入任何操作
+    correct_index: 1
+    explanation: 高風險操作應要求人類手動確認，在效率與安全之間取得平衡。
+    tags:
+      - chap-m5-ch5
+      - sec-agent-safety
+    usage: quiz
+  - id: 7550
+    chapter_title: 多代理系統與未來發展
+    section_title: AI 代理技術未來趨勢
+    text: 未來「可信任代理」發展的核心需求是什麼？
+    type: multiple_choice
+    options:
+      - 讓代理人變得更便宜
+      - 可解釋決策、完整審計日誌、行為對齊
+      - 讓代理人的執行速度更快
+      - 減少代理人的記憶使用量
+    correct_index: 1
+    explanation: 隨著代理人自主性增強，使用者需要清楚知道代理人的行為理由與記錄。
+    tags:
+      - chap-m5-ch5
+      - sec-future-trends
+    usage: quiz
+  - id: 7551
+    chapter_title: 多代理系統與未來發展
+    section_title: 多代理系統概述
+    text: 多代理系統中「並行執行」最主要的商業效益是什麼？
+    type: multiple_choice
+    options:
+      - 減少開發者的程式碼撰寫量
+      - 縮短整體任務的完成時間
+      - 減少需要的 LLM 授權數量
+      - 讓代理人不需要網路連線
+    correct_index: 1
+    explanation: 並行執行讓多個獨立的子任務同時進行，大幅縮短任務完成所需的時間。
+    tags:
+      - chap-m5-ch5
+      - sec-mas-overview
+    usage: quiz
+  - id: 7552
+    chapter_title: 多代理系統與未來發展
+    section_title: 多代理協作模式
+    text: 當需要讓 AI 從多個角度審視一個商業計劃的可行性時，最適合採用哪種模式？
+    type: multiple_choice
+    options:
+      - 協調者-執行者模式
+      - 流水線模式
+      - 辯論模式
+      - 迴圈模式
+    correct_index: 2
+    explanation: 辯論模式讓不同立場的代理人從不同角度分析，適合需要多方視角的評估。
+    tags:
+      - chap-m5-ch5
+      - sec-mas-patterns
+    usage: quiz
+  - id: 7553
+    chapter_title: 多代理系統與未來發展
+    section_title: 代理通訊協議
+    text: 代理名片（Agent Card）在設計時為什麼需要包含版本資訊？
+    type: multiple_choice
+    options:
+      - 為了讓開發者獲得成就感
+      - 為了讓協調者知道代理人的能力是否過時，以及向後相容性
+      - 為了符合軟體版權法的要求
+      - 為了讓系統能自動更新驅動程式
+    correct_index: 1
+    explanation: 版本資訊幫助協調者判斷代理人的能力可靠程度與相容性。
+    tags:
+      - chap-m5-ch5
+      - sec-agent-communication
+    usage: quiz
+  - id: 7554
+    chapter_title: 多代理系統與未來發展
+    section_title: 代理安全與信任
+    text: 下列哪項措施能最有效地防止代理人陷入「無限迴圈」？
+    type: multiple_choice
+    options:
+      - 提供更大的上下文視窗
+      - 限制代理人最多執行的步驟數或總費用
+      - 使用更快的語言模型
+      - 減少代理人的工具數量
+    correct_index: 1
+    explanation: 設定明確的上限限制是防止無限迴圈最直接有效的方法。
+    tags:
+      - chap-m5-ch5
+      - sec-agent-safety
+    usage: quiz
+  - id: 7555
+    chapter_title: 多代理系統與未來發展
+    section_title: AI 代理技術未來趨勢
+    text: 「長期自主代理」需要克服的最大技術挑戰是什麼？
+    type: multiple_choice
+    options:
+      - 需要更快的網路連線速度
+      - 需要更強大的長期記憶與自我管理能力
+      - 需要更多的 CPU 核心數
+      - 需要更昂貴的硬體設備
+    correct_index: 1
+    explanation: 長期任務需要代理人能夠管理數天到數週的記憶，並持續追蹤任務進度。
+    tags:
+      - chap-m5-ch5
+      - sec-future-trends
+    usage: quiz
+  - id: 7556
+    chapter_title: 多代理系統與未來發展
+    section_title: 多代理系統概述
+    text: 若兩個代理人在多代理系統中對同一問題得出不同結論，應如何處理？
+    type: multiple_choice
+    options:
+      - 忽略其中一個代理人的結論
+      - 需要有分歧處理機制，如引入第三個中立代理人仲裁
+      - 直接採納第一個完成的代理人的結論
+      - 不斷重複執行直到結果一致
+    correct_index: 1
+    explanation: 多代理系統需要設計共識或仲裁機制來處理分歧。
+    tags:
+      - chap-m5-ch5
+      - sec-mas-overview
+    usage: quiz
+  - id: 7557
+    chapter_title: 多代理系統與未來發展
+    section_title: 多代理協作模式
+    text: 在流水線模式中，如果中間的某個代理人失敗，系統應如何處理？
+    type: multiple_choice
+    options:
+      - 整個流程從頭重新開始
+      - 僅重試失敗的那個代理人，成功後繼續後續流程
+      - 忽略失敗並繼續執行後續步驟
+      - 將失敗的代理人直接從流程中移除
+    correct_index: 1
+    explanation: 流水線模式中可針對失敗節點進行重試，避免整個流程重新執行。
+    tags:
+      - chap-m5-ch5
+      - sec-mas-patterns
+    usage: quiz
+  - id: 7558
+    chapter_title: 多代理系統與未來發展
+    section_title: 代理通訊協議
+    text: 在 NLWeb 中，每個實例同時也是一個 MCP 伺服器端點，這代表什麼？
+    type: multiple_choice
+    options:
+      - NLWeb 不支援 MCP 協議的通訊
+      - 外部代理人可以透過 MCP 標準向網站發起結構化查詢
+      - NLWeb 只能與 Claude 模型連線
+      - NLWeb 的資料無法被其他代理人存取
+    correct_index: 1
+    explanation: NLWeb 實例作為 MCP 伺服器，讓外部代理人能透過標準 MCP 協議對網站進行查詢。
+    tags:
+      - chap-m5-ch5
+      - sec-agent-communication
+    usage: quiz
+  - id: 7559
+    chapter_title: 多代理系統與未來發展
+    section_title: AI 代理技術未來趨勢
+    text: 去中心化信任技術在代理系統中的應用場景是什麼？
+    type: multiple_choice
+    options:
+      - 用來加速代理人間的資料傳輸
+      - 透過區塊鏈等技術驗證代理人身份與操作記錄
+      - 用來取代大型語言模型
+      - 用來減少 API 呼叫的成本
+    correct_index: 1
+    explanation: 去中心化信任讓多方協作的代理系統能建立可驗證的信任基礎，確保操作記錄不可竄改。
+    tags:
+      - chap-m5-ch5
+      - sec-future-trends
+    usage: quiz

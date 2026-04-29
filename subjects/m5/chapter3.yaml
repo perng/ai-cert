@@ -445,3 +445,483 @@ questions:
     tags:
       - chap-m5-ch3
     usage: quiz
+  - id: 7330
+    chapter_title: Agentic Skills 設計
+    section_title: 什麼是 Agentic Skills
+    text: 下列哪一項最能描述提示詞（Prompt）與技能（Skill）的關係？
+    type: multiple_choice
+    options:
+      - 提示詞可以完全取代技能，兩者功能相同
+      - 提示詞決定如何思考與規劃，技能決定能真正做到什麼
+      - 技能比提示詞更不重要
+      - 提示詞僅用於除錯，技能用於正式部署
+    correct_index: 1
+    explanation: 提示詞影響 LLM 的推理方式，技能提供實際的行動能力，兩者相輔相成。
+    tags:
+      - chap-m5-ch3
+      - sec-skills-intro
+    usage: quiz
+  - id: 7331
+    chapter_title: Agentic Skills 設計
+    section_title: 工具呼叫機制
+    text: 當 LLM 決定呼叫工具時，誰負責實際執行該工具？
+    type: multiple_choice
+    options:
+      - LLM 本身會在內部直接執行工具
+      - 主機端的應用程式（非 LLM）負責解析請求並執行
+      - 使用者必須手動執行工具並回傳結果
+      - 工具會自動執行，不需要任何中介
+    correct_index: 1
+    explanation: LLM 只輸出格式化的工具呼叫請求，由應用程式層解析請求、執行工具、並回傳結果給 LLM。
+    tags:
+      - chap-m5-ch3
+      - sec-tool-calling
+    usage: quiz
+  - id: 7332
+    chapter_title: Agentic Skills 設計
+    section_title: 記憶管理設計
+    text: 「滑動視窗（Sliding Window）」記憶策略的主要限制是什麼？
+    type: multiple_choice
+    options:
+      - 需要大量的向量資料庫支援
+      - 可能丟失窗口之外的早期重要資訊
+      - 只能儲存影像資料，無法儲存文字
+      - 實作難度是所有策略中最高的
+    correct_index: 1
+    explanation: 滑動視窗只保留最近 N 輪對話，超出視窗的資訊會被直接丟棄，可能遺失關鍵的早期上下文。
+    tags:
+      - chap-m5-ch3
+      - sec-memory-management
+    usage: quiz
+  - id: 7333
+    chapter_title: Agentic Skills 設計
+    section_title: 規劃策略設計
+    text: 哪一種規劃策略最適合處理結果不確定、需要反覆嘗試的任務？
+    type: multiple_choice
+    options:
+      - 固定計畫模式（一次規劃到底）
+      - 動態重規劃（根據中間結果調整後續步驟）
+      - 隨機嘗試模式（完全隨機選擇步驟）
+      - 跳躍模式（跳過困難步驟直接結束）
+    correct_index: 1
+    explanation: 動態重規劃能根據實際執行結果靈活調整，非常適合結果不確定的任務。
+    tags:
+      - chap-m5-ch3
+      - sec-planning-strategies
+    usage: quiz
+  - id: 7334
+    chapter_title: Agentic Skills 設計
+    section_title: Skill 設計最佳實踐
+    text: 為什麼技能的錯誤訊息應該盡量提供詳細的上下文資訊？
+    type: multiple_choice
+    options:
+      - 為了符合程式碼規範的字數要求
+      - 為了讓 LLM 能診斷問題並嘗試其他方法
+      - 為了讓使用者能自行修復系統
+      - 為了記錄開發者的個人資訊
+    correct_index: 1
+    explanation: 詳細的錯誤訊息是 LLM 重新規劃的重要輸入，讓代理人能理解為何失敗並嘗試替代方案。
+    tags:
+      - chap-m5-ch3
+      - sec-skill-best-practices
+    usage: quiz
+  - id: 7335
+    chapter_title: Agentic Skills 設計
+    section_title: 上下文工程 (Context Engineering)
+    text: 相較於提示詞工程，上下文工程最核心的差異是什麼？
+    type: multiple_choice
+    options:
+      - 上下文工程管理的是動態變化的資訊，提示詞是靜態的
+      - 上下文工程比提示詞工程更簡單
+      - 上下文工程不需要考慮 LLM 的行為
+      - 上下文工程只能在特定模型上使用
+    correct_index: 0
+    explanation: 上下文工程管理動態資訊集，包含即時工具回傳結果與記憶，而提示詞工程主要處理靜態指令。
+    tags:
+      - chap-m5-ch3
+      - sec-context-engineering
+    usage: quiz
+  - id: 7336
+    chapter_title: Agentic Skills 設計
+    section_title: 什麼是 Agentic Skills
+    text: 提示詞工程的三個主要限制之一是 AI 的知識有截止日期，這代表什麼？
+    type: multiple_choice
+    options:
+      - AI 在訓練完成後就無法知道訓練後發生的事件
+      - AI 的所有知識在三天後會自動過期
+      - AI 無法理解任何 2020 年之前的歷史事件
+      - AI 只能回答關於未來的問題
+    correct_index: 0
+    explanation: 語言模型的知識凍結在訓練截止日期，無法透過提示詞讓它知道訓練後發生的事件。
+    tags:
+      - chap-m5-ch3
+      - sec-skills-intro
+    usage: quiz
+  - id: 7337
+    chapter_title: Agentic Skills 設計
+    section_title: 工具呼叫機制
+    text: 在工具呼叫流程中，tool_use block 包含哪些必要資訊？
+    type: multiple_choice
+    options:
+      - 工具的名稱與傳入的參數
+      - 工具的完整原始碼
+      - 工具的作者姓名與版本歷史
+      - 工具的使用者評價與評分
+    correct_index: 0
+    explanation: tool_use block 包含工具名稱和參數，由應用程式解析後執行對應函數。
+    tags:
+      - chap-m5-ch3
+      - sec-tool-calling
+    usage: quiz
+  - id: 7338
+    chapter_title: Agentic Skills 設計
+    section_title: 記憶管理設計
+    text: 「外部記憶庫」策略相較於「摘要壓縮」的主要優勢是什麼？
+    type: multiple_choice
+    options:
+      - 外部記憶庫不需要任何資料庫系統
+      - 外部記憶庫的容量幾乎無限，且支援語意搜尋
+      - 外部記憶庫的實作比摘要壓縮簡單十倍
+      - 外部記憶庫不需要嵌入模型
+    correct_index: 1
+    explanation: 外部記憶庫（向量資料庫）能儲存大量資訊，並透過語意相似度搜尋精確召回相關內容。
+    tags:
+      - chap-m5-ch3
+      - sec-memory-management
+    usage: quiz
+  - id: 7339
+    chapter_title: Agentic Skills 設計
+    section_title: 規劃策略設計
+    text: 任務分解（Task Decomposition）通常使用哪種資料結構來表達？
+    type: multiple_choice
+    options:
+      - 鏈結串列（Linked List）
+      - 樹狀結構（Tree Structure）
+      - 雜湊表（Hash Table）
+      - 堆疊（Stack）
+    correct_index: 1
+    explanation: 任務分解常以樹狀結構呈現，根節點是總目標，子節點是逐步拆解的細項任務。
+    tags:
+      - chap-m5-ch3
+      - sec-planning-strategies
+    usage: quiz
+  - id: 7340
+    chapter_title: Agentic Skills 設計
+    section_title: Skill 設計最佳實踐
+    text: 「原子技能」設計原則的核心思想是什麼？
+    type: multiple_choice
+    options:
+      - 每個技能應該越複雜越好，一次完成所有事情
+      - 每個技能只做一件事並做好這件事
+      - 技能之間不應該有任何關聯
+      - 技能的名稱應該使用隨機字串
+    correct_index: 1
+    explanation: 原子技能保持單一職責，便於組合測試和除錯。
+    tags:
+      - chap-m5-ch3
+      - sec-skill-best-practices
+    usage: quiz
+  - id: 7341
+    chapter_title: Agentic Skills 設計
+    section_title: 上下文工程 (Context Engineering)
+    text: 下列哪一項是「上下文中毒」的正確解法？
+    type: multiple_choice
+    options:
+      - 增加更多的工具讓模型有更多選擇
+      - 實施上下文驗證，確保資訊正確後才寫入記憶
+      - 定期清除所有記憶，從零開始
+      - 提供更大的上下文視窗
+    correct_index: 1
+    explanation: 上下文驗證能在資訊被當作事實存入記憶前確認其正確性，防止錯誤資訊擴散。
+    tags:
+      - chap-m5-ch3
+      - sec-context-engineering
+    usage: quiz
+  - id: 7342
+    chapter_title: Agentic Skills 設計
+    section_title: 什麼是 Agentic Skills
+    text: 提示詞無法解決「AI 無法執行真實操作」的限制，這是因為？
+    type: multiple_choice
+    options:
+      - 提示詞的語法不支援描述操作
+      - 語言模型本身不具備直接執行外部操作的能力
+      - 提示詞的長度限制無法容納操作說明
+      - 作業系統不允許提示詞存取外部資源
+    correct_index: 1
+    explanation: 無論提示詞寫得多好，LLM 本身無法直接操作外部系統，必須依賴工具呼叫機制。
+    tags:
+      - chap-m5-ch3
+      - sec-skills-intro
+    usage: quiz
+  - id: 7343
+    chapter_title: Agentic Skills 設計
+    section_title: 工具呼叫機制
+    text: 並行工具呼叫在什麼情況下「不適合」使用？
+    type: multiple_choice
+    options:
+      - 當多個工具之間沒有依賴關係時
+      - 當某個工具的輸出是另一個工具的輸入時
+      - 當所有工具可以同時執行時
+      - 當需要減少 API 來回次數時
+    correct_index: 1
+    explanation: 工具間存在依賴關係時，必須序列執行，不能並行。
+    tags:
+      - chap-m5-ch3
+      - sec-tool-calling
+    usage: quiz
+  - id: 7344
+    chapter_title: Agentic Skills 設計
+    section_title: 記憶管理設計
+    text: 在長期記憶的設計中，「衰減機制（Fading）」主要的實作方式是什麼？
+    type: multiple_choice
+    options:
+      - 根據時間遠近調整記憶的檢索權重，越舊的權重越低
+      - 每隔固定時間就刪除所有舊記憶
+      - 將舊記憶轉換為圖片儲存
+      - 將舊記憶移動到離線備份裝置
+    correct_index: 0
+    explanation: 衰減機制讓較新的記憶在檢索時有更高的優先權，確保代理人關注使用者最近的狀態。
+    tags:
+      - chap-m5-ch3
+      - sec-memory-management
+    usage: quiz
+  - id: 7345
+    chapter_title: Agentic Skills 設計
+    section_title: 規劃策略設計
+    text: 在「管線模式（Pipeline）」的技能組合中，資料的流動方式是？
+    type: multiple_choice
+    options:
+      - 多個技能同時執行，結果合併
+      - 一個技能的輸出自動成為下一個技能的輸入
+      - 技能之間完全獨立，不需要交換資料
+      - 技能隨機選取執行順序
+    correct_index: 1
+    explanation: 管線模式中，技能依序執行，前者的輸出作為後者的輸入，形成處理鏈。
+    tags:
+      - chap-m5-ch3
+      - sec-skill-best-practices
+    usage: quiz
+  - id: 7346
+    chapter_title: Agentic Skills 設計
+    section_title: 上下文工程 (Context Engineering)
+    text: 上下文修剪（Context Pruning）與上下文摘要（Context Summarization）的主要差別是什麼？
+    type: multiple_choice
+    options:
+      - 修剪移除衝突資訊，摘要壓縮冗長資訊
+      - 兩者完全相同
+      - 修剪只用在多代理系統，摘要只用在單代理
+      - 修剪是自動的，摘要是手動的
+    correct_index: 0
+    explanation: 上下文修剪用於移除矛盾或過時的資訊，摘要用於將冗長資訊濃縮為精簡版本。
+    tags:
+      - chap-m5-ch3
+      - sec-context-engineering
+    usage: quiz
+  - id: 7347
+    chapter_title: Agentic Skills 設計
+    section_title: 什麼是 Agentic Skills
+    text: 提示詞無法完成「多步驟複雜任務」，主要原因為何？
+    type: multiple_choice
+    options:
+      - 提示詞的長度上限太短
+      - 多步驟任務的後續步驟依賴前面步驟的真實結果，提示詞無法提供即時回饋
+      - 提示詞不支援中文字元
+      - 多步驟任務只能由人類完成
+    correct_index: 1
+    explanation: 多步驟任務需要基於真實的執行結果來決定後續步驟，靜態提示詞無法模擬這種動態過程。
+    tags:
+      - chap-m5-ch3
+      - sec-skills-intro
+    usage: quiz
+  - id: 7348
+    chapter_title: Agentic Skills 設計
+    section_title: 工具呼叫機制
+    text: 工具的描述（Description）應該避免包含什麼內容？
+    type: multiple_choice
+    options:
+      - 工具的使用時機說明
+      - 工具的限制與注意事項
+      - 工具的內部程式碼實作細節
+      - 工具的參數格式與型別
+    correct_index: 2
+    explanation: 內部實作細節對 LLM 的使用決策沒有幫助，描述應聚焦在「能做什麼」和「何時使用」。
+    tags:
+      - chap-m5-ch3
+      - sec-tool-calling
+    usage: quiz
+  - id: 7349
+    chapter_title: Agentic Skills 設計
+    section_title: 記憶管理設計
+    text: 當代理人的任務需要在數天的時間跨度內持續進行時，應該優先採用哪一種記憶策略？
+    type: multiple_choice
+    options:
+      - 滑動視窗（保留最近幾輪）
+      - 外部記憶庫（向量資料庫）
+      - 不使用任何記憶
+      - 僅使用短期記憶
+    correct_index: 1
+    explanation: 跨日任務需要可靠的長期記憶支援，外部記憶庫能持久保存資訊並支援語意檢索。
+    tags:
+      - chap-m5-ch3
+      - sec-memory-management
+    usage: quiz
+  - id: 7350
+    chapter_title: Agentic Skills 設計
+    section_title: 規劃策略設計
+    text: 「扇出模式（Fan-out）」的技能組合最適合下列哪一種情境？
+    type: multiple_choice
+    options:
+      - 需要依序執行 A→B→C 的資料處理管線
+      - 需要同時向三家供應商查詢報價後比較
+      - 根據檔案類型選擇不同的解析器
+      - 持續搜尋直到找到足夠的參考資料
+    correct_index: 1
+    explanation: 扇出模式並行執行多個獨立技能，適合同時查詢多個來源再合併結果的場景。
+    tags:
+      - chap-m5-ch3
+      - sec-planning-strategies
+    usage: quiz
+  - id: 7351
+    chapter_title: Agentic Skills 設計
+    section_title: Skill 設計最佳實踐
+    text: 為什麼工具的參數定義中應該提供明確的邊界限制（如最大字數）？
+    type: multiple_choice
+    options:
+      - 為了符合資料庫的欄位長度限制
+      - 為了避免 LLM 給出極端值導致系統錯誤
+      - 為了減少 API 呼叫的費用
+      - 為了加快 LLM 的推理速度
+    correct_index: 1
+    explanation: 明確的邊界限制能防止 LLM 生成不合理的大參數，確保工具執行的穩定性。
+    tags:
+      - chap-m5-ch3
+      - sec-skill-best-practices
+    usage: quiz
+  - id: 7352
+    chapter_title: Agentic Skills 設計
+    section_title: 上下文工程 (Context Engineering)
+    text: 實施「工具掛載管理」時，通常使用什麼技術來動態選擇相關工具？
+    type: multiple_choice
+    options:
+      - 隨機選擇工具
+      - RAG（檢索增強生成）技術
+      - 按照工具名稱的字母順序排列
+      - 由使用者手動指定每次需要哪些工具
+    correct_index: 1
+    explanation: RAG 技術能根據任務內容檢索最相關的工具描述，減少不相關工具的干擾。
+    tags:
+      - chap-m5-ch3
+      - sec-context-engineering
+    usage: quiz
+  - id: 7353
+    chapter_title: Agentic Skills 設計
+    section_title: 什麼是 Agentic Skills
+    text: Agentic Skills 與傳統 API 的主要差異是什麼？
+    type: multiple_choice
+    options:
+      - Skills 是為 LLM 設計的，包含自然語言描述讓 LLM 理解用途
+      - Skills 不需要參數，API 一定需要參數
+      - Skills 只能在本機執行，API 只能在雲端執行
+      - Skills 比 API 慢很多
+    correct_index: 0
+    explanation: Agentic Skills 的設計考量了 LLM 的使用方式，透過自然語言描述讓 LLM 知道何時該用。
+    tags:
+      - chap-m5-ch3
+      - sec-skills-intro
+    usage: quiz
+  - id: 7354
+    chapter_title: Agentic Skills 設計
+    section_title: 工具呼叫機制
+    text: 語言模型無法直接執行外部函數，這個設計的主要安全考量是什麼？
+    type: multiple_choice
+    options:
+      - 為了減少模型的運算負擔
+      - 確保所有操作都經過應用程式層的控制與驗證
+      - 因為語言模型沒有足夠的記憶體來執行程式
+      - 因為工具函數只能由人類操作
+    correct_index: 1
+    explanation: 透過應用程式層中介，可以對每個工具呼叫進行安全檢查與權限驗證，防止惡意執行。
+    tags:
+      - chap-m5-ch3
+      - sec-tool-calling
+    usage: quiz
+  - id: 7355
+    chapter_title: Agentic Skills 設計
+    section_title: 記憶管理設計
+    text: 如果一個代理人需要同時記住「使用者喜歡簡短回答」和「使用者喜歡繁體中文」，這屬於哪種記憶類型？
+    type: multiple_choice
+    options:
+      - 工作記憶
+      - 長期記憶（使用者建模）
+      - 短期記憶
+      - 語義記憶
+    correct_index: 1
+    explanation: 使用者的長期偏好應儲存在長期記憶中，跨任務持續使用。
+    tags:
+      - chap-m5-ch3
+      - sec-memory-management
+    usage: quiz
+  - id: 7356
+    chapter_title: Agentic Skills 設計
+    section_title: 規劃策略設計
+    text: 在「迴圈模式（Loop）」的技能組合中，決定何時停止重複的關鍵條件是什麼？
+    type: multiple_choice
+    options:
+      - 固定執行十次後自動停止
+      - 達到預先設定的終止條件（如收集到足夠資料）
+      - 由使用者手動發出停止指令
+      - 系統記憶體耗盡時自動停止
+    correct_index: 1
+    explanation: 迴圈模式需要明確定義終止條件，避免代理人陷入無限循環。
+    tags:
+      - chap-m5-ch3
+      - sec-planning-strategies
+    usage: quiz
+  - id: 7357
+    chapter_title: Agentic Skills 設計
+    section_title: Skill 設計最佳實踐
+    text: 為什麼技能的冪等性（Idempotency）對代理人系統特別重要？
+    type: multiple_choice
+    options:
+      - 因為代理人經常需要重試失敗的步驟，冪等性確保重試安全
+      - 因為冪等性能讓工具執行的速度變快
+      - 因為冪等性是資料庫的標準要求
+      - 因為冪等性能減少程式碼的行數
+    correct_index: 0
+    explanation: 代理人可能在執行失敗後重試相同操作，冪等性確保重試不會產生非預期的副作用。
+    tags:
+      - chap-m5-ch3
+      - sec-skill-best-practices
+    usage: quiz
+  - id: 7358
+    chapter_title: Agentic Skills 設計
+    section_title: 上下文工程 (Context Engineering)
+    text: 當代理人同時接收到「幫我省錢」和「幫我訂頭等艙」兩個矛盾指令時，屬於哪一種上下文失效？
+    type: multiple_choice
+    options:
+      - 上下文中毒
+      - 上下文衝突
+      - 上下文分心
+      - 上下文混淆
+    correct_index: 1
+    explanation: 兩個矛盾的指令同時存在於上下文中，導致代理人無法判斷真實意圖，屬於上下文衝突。
+    tags:
+      - chap-m5-ch3
+      - sec-context-engineering
+    usage: quiz
+  - id: 7359
+    chapter_title: Agentic Skills 設計
+    section_title: 上下文工程 (Context Engineering)
+    text: 在處理上下文衝突時，提供「暫存區（Scratchpad）」的具體做法是什麼？
+    type: multiple_choice
+    options:
+      - 在系統提示詞中加入一段空白文字區域
+      - 讓模型先在不受使用者看見的區域中分析矛盾並得出結論
+      - 建立一個實體的記事本檔案供模型寫入
+      - 使用外部 API 來解決衝突
+    correct_index: 1
+    explanation: 暫存區是模型內部的一段「思考空間」，讓模型有機會先協調衝突資訊再給出最終答案。
+    tags:
+      - chap-m5-ch3
+      - sec-context-engineering
+    usage: quiz

@@ -309,3 +309,483 @@ questions:
     tags:
       - chap-m5-ch4
     usage: quiz
+  - id: 7421
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
+    text: OpenClaw 主要支援透過哪些通訊軟體與使用者互動？
+    type: multiple_choice
+    options:
+      - 只能透過 OpenClaw 官方網站上的專屬聊天介面
+      - WhatsApp、Telegram、Discord、Slack 等
+      - 只能透過電子郵件往返通訊
+      - 僅支援語音通話方式互動
+    correct_index: 1
+    explanation: OpenClaw 設計讓使用者可以透過常用的通訊 App 直接與 AI 對話，不需學習新工具。
+    tags:
+      - chap-m5-ch4
+      - sec-openclaw
+    usage: quiz
+  - id: 7422
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
+    text: OpenClaw 的「心跳（Heartbeat）」機制如何改變使用者與 AI 的互動模式？
+    type: multiple_choice
+    options:
+      - 讓 AI 從被動等待指令轉變為主動在背景執行任務
+      - 讓 AI 每隔五分鐘就發送一次問候訊息給使用者
+      - 讓 AI 在使用者離線時自動關機節省電力
+      - 讓 AI 定期更換對話的主題以避免無聊
+    correct_index: 0
+    explanation: 心跳機制讓 OpenClaw 能在背景主動執行排程任務，而非被動等待使用者下指令。
+    tags:
+      - chap-m5-ch4
+      - sec-openclaw
+    usage: quiz
+  - id: 7423
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: Hermes Agent：會自我學習的多平台代理
+    text: Hermes Agent 將成功解決任務的方法封裝成什麼？
+    type: multiple_choice
+    options:
+      - 新的語言模型
+      - 可重用的技能（Skill）
+      - 靜態的程式碼片段
+      - 使用者的操作指南
+    correct_index: 1
+    explanation: Hermes 會將成功解法自動封裝為可重用的技能，類似於把工作流程記錄成 SOP。
+    tags:
+      - chap-m5-ch4
+      - sec-hermes
+    usage: quiz
+  - id: 7424
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: Hermes Agent：會自我學習的多平台代理
+    text: Hermes Agent 的「主動記憶管理」與一般代理人的被動記憶有何不同？
+    type: multiple_choice
+    options:
+      - Hermes 不使用任何記憶系統
+      - Hermes 會主動判斷哪些資訊重要並自動存入記憶
+      - Hermes 的記憶只能由人類手動寫入
+      - Hermes 的記憶在每次對話後自動清空
+    correct_index: 1
+    explanation: Hermes 不需要使用者特別指示，能自動分辨並保存關鍵資訊到長期記憶中。
+    tags:
+      - chap-m5-ch4
+      - sec-hermes
+    usage: quiz
+  - id: 7425
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: 框架比較總覽
+    text: OpenClaw 和 Hermes 都支援哪一種讓代理能力擴展的機制？
+    type: multiple_choice
+    options:
+      - 兩者都只依賴內建的功能，不支援擴展
+      - 兩者都支援 MCP 或 agentskills.io 等開放標準
+      - 兩者都只能透過官方付費市集擴展
+      - 兩者都不允許第三方開發者擴展功能
+    correct_index: 1
+    explanation: 兩個專案都很重視開放標準與社群生態，支援透過 MCP 或 agentskills.io 擴展能力。
+    tags:
+      - chap-m5-ch4
+      - sec-comparison
+    usage: quiz
+  - id: 7426
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: AI 代理框架的發展趨勢
+    text: 從 OpenClaw 和 Hermes 可以觀察到，現代 AI 代理對「記憶」的看法是什麼？
+    type: multiple_choice
+    options:
+      - 記憶只會拖慢系統速度，應該盡量避免
+      - 持久記憶是代理能否成為稱職助理的關鍵能力
+      - 記憶僅用於暫存當前對話，不需要長期保存
+      - 記憶功能應交由第三方的雲端服務處理
+    correct_index: 1
+    explanation: 兩個框架都將持久記憶視為核心競爭力，沒有記憶的代理無法提供連貫的個人化服務。
+    tags:
+      - chap-m5-ch4
+      - sec-lessons
+    usage: quiz
+  - id: 7427
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
+    text: OpenClaw 如何在處理敏感資料時保護使用者隱私？
+    type: multiple_choice
+    options:
+      - 所有資料即時上傳到雲端進行加密儲存
+      - 整個系統在使用者自己的電腦上本地執行，資料不離開裝置
+      - 所有資料在處理完後自動永久刪除
+      - 每次存取資料都需要人臉辨識驗證
+    correct_index: 1
+    explanation: OpenClaw 的設計哲學是隱私優先，所有運算在本地完成，資料不離開使用者電腦。
+    tags:
+      - chap-m5-ch4
+      - sec-openclaw
+    usage: quiz
+  - id: 7428
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: Hermes Agent：會自我學習的多平台代理
+    text: Hermes 的「模型無關」設計讓使用者可以如何切換 LLM？
+    type: multiple_choice
+    options:
+      - 每次切換模型都需要重新安裝整個系統
+      - 不需修改任何程式碼就可以自由更換不同的 LLM
+      - 只能從兩個預設的模型中選擇
+      - 切換模型後所有技能都會失效
+    correct_index: 1
+    explanation: 模型無關設計讓使用者在切換 LLM 提供商時，整個代理系統不需做任何其他修改。
+    tags:
+      - chap-m5-ch4
+      - sec-hermes
+    usage: quiz
+  - id: 7429
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: 框架比較總覽
+    text: 如果一個使用者非常重視資料隱私，要求所有資料不能離開自己的電腦，應該選擇哪個框架？
+    type: multiple_choice
+    options:
+      - Hermes Agent
+      - OpenClaw
+      - CrewAI
+      - AutoGen
+    correct_index: 1
+    explanation: OpenClaw 的核心理念是隱私優先，所有運算在使用者自己的電腦上本地執行。
+    tags:
+      - chap-m5-ch4
+      - sec-comparison
+    usage: quiz
+  - id: 7430
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: AI 代理框架的發展趨勢
+    text: 下列哪一項不是現代 AI 代理的共同發展趨勢？
+    type: multiple_choice
+    options:
+      - 強化持久記憶讓代理越來越了解使用者
+      - 融入使用者的既有工具環境（如通訊軟體）
+      - 透過開放標準讓能力可跨框架共享
+      - 要求使用者學習全新的操作介面
+    correct_index: 3
+    explanation: 現代 AI 代理的趨勢是融入使用者現有環境，而非要求使用者改變習慣。
+    tags:
+      - chap-m5-ch4
+      - sec-lessons
+    usage: quiz
+  - id: 7431
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
+    text: OpenClaw 如何處理檔案系統中的文件？
+    type: multiple_choice
+    options:
+      - 需要先將檔案上傳到 OpenClaw 雲端伺服器
+      - 直接在本地讀取和處理使用者的檔案
+      - 只能處理特定格式的文件（如純文字檔）
+      - 不具備任何檔案處理能力
+    correct_index: 1
+    explanation: OpenClaw 在本地執行，可以直接存取使用者的檔案系統來讀取與處理文件。
+    tags:
+      - chap-m5-ch4
+      - sec-openclaw
+    usage: quiz
+  - id: 7432
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: Hermes Agent：會自我學習的多平台代理
+    text: Hermes Agent 的跨會話記憶主要透過哪兩種技術實現？
+    type: multiple_choice
+    options:
+      - 全文搜尋與大型語言模型的摘要
+      - 區塊鏈與去中心化儲存
+      - 圖形資料庫與雲端備份
+      - 電子郵件與即時通訊
+    correct_index: 0
+    explanation: Hermes 結合全文搜尋和 LLM 摘要技術，能在大量歷史對話中找到相關脈絡。
+    tags:
+      - chap-m5-ch4
+      - sec-hermes
+    usage: quiz
+  - id: 7433
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: 框架比較總覽
+    text: OpenClaw 和 Hermes 在處理反覆出現的任務時，共同的策略是什麼？
+    type: multiple_choice
+    options:
+      - 每次都從零開始重新執行
+      - 將解法自動封裝成可重用的技能
+      - 忽略重複的任務請求
+      - 將任務外包給人類助理
+    correct_index: 1
+    explanation: 兩者都能將反覆任務的解法固定為技能，未來遇到相同任務時就能直接套用。
+    tags:
+      - chap-m5-ch4
+      - sec-comparison
+    usage: quiz
+  - id: 7434
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: Hermes Agent：會自我學習的多平台代理
+    text: Hermes 的「學習迴圈」最類似於人類的哪一種學習方式？
+    type: multiple_choice
+    options:
+      - 從考試題庫中背誦答案
+      - 從工作經驗中總結 SOP（標準作業程序）
+      - 觀看教學影片後模仿操作
+      - 閱讀教科書後參加測驗
+    correct_index: 1
+    explanation: Hermes 從每次任務中提煉經驗並封裝為可重用的技能，類似人們總結工作流程成 SOP。
+    tags:
+      - chap-m5-ch4
+      - sec-hermes
+    usage: quiz
+  - id: 7435
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
+    text: OpenClaw 的「底層操作能力」讓它可以執行什麼類型的任務？
+    type: multiple_choice
+    options:
+      - 只能進行文字對話與問答
+      - 執行本機終端機的 shell 指令或腳本
+      - 直接修改硬體韌體設定
+      - 控制其他電腦的遠端桌面
+    correct_index: 1
+    explanation: OpenClaw 具備執行本地終端機指令的能力，可以進行系統層級的操作。
+    tags:
+      - chap-m5-ch4
+      - sec-openclaw
+    usage: quiz
+  - id: 7436
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: AI 代理框架的發展趨勢
+    text: agentskills.io 開放標準對 AI 代理生態的最大貢獻是什麼？
+    type: multiple_choice
+    options:
+      - 讓所有代理人的執行速度提升一倍
+      - 讓不同框架開發的技能可以互相共享與移植
+      - 強制所有開發者使用同一種程式語言
+      - 讓代理人不再需要大型語言模型
+    correct_index: 1
+    explanation: 開放標準打破了框架之間的壁壘，讓技能可以跨框架共享，避免重複開發。
+    tags:
+      - chap-m5-ch4
+      - sec-lessons
+    usage: quiz
+  - id: 7437
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: Hermes Agent：會自我學習的多平台代理
+    text: Hermes 如何處理需要大量計算的複雜任務？
+    type: multiple_choice
+    options:
+      - 直接回報任務無法完成
+      - 派生子代理（Subagents）並行處理
+      - 將任務上傳到雲端超級電腦執行
+      - 要求使用者自行手動完成
+    correct_index: 1
+    explanation: Hermes 支援動態派生子代理，將複雜任務拆解並交由多個子代理並行處理。
+    tags:
+      - chap-m5-ch4
+      - sec-hermes
+    usage: quiz
+  - id: 7438
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: 框架比較總覽
+    text: 下列哪個框架最強調「從任務經驗中自動學習並進化」的能力？
+    type: multiple_choice
+    options:
+      - OpenClaw
+      - Hermes Agent
+      - CrewAI
+      - AutoGen
+    correct_index: 1
+    explanation: Hermes 的核心特色是內建學習迴圈，能從每次任務中提煉經驗並持續優化。
+    tags:
+      - chap-m5-ch4
+      - sec-comparison
+    usage: quiz
+  - id: 7439
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
+    text: OpenClaw 使用者的對話記錄儲存在什麼地方？
+    type: multiple_choice
+    options:
+      - 儲存在 OpenClaw 公司的雲端伺服器
+      - 儲存在使用者自己的電腦上
+      - 對話記錄不會被儲存
+      - 儲存在區塊鏈網路上
+    correct_index: 1
+    explanation: 為保護隱私，所有對話記錄都儲存在使用者的本地電腦，不會上傳到雲端。
+    tags:
+      - chap-m5-ch4
+      - sec-openclaw
+    usage: quiz
+  - id: 7440
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: AI 代理框架的發展趨勢
+    text: 從 OpenClaw 和 Hermes 的設計可以看出，未來的 AI 代理將會如何與人類的工作流程整合？
+    type: multiple_choice
+    options:
+      - 取代人類成為完全自主的系統
+      - 被動融入人類已有的溝通工具與工作環境
+      - 要求人類學習全新的操作模式
+      - 只在特定時段提供服務
+    correct_index: 1
+    explanation: 兩個框架都不要求使用者改變習慣，而是讓代理融入既有的溝通工具與工作流程。
+    tags:
+      - chap-m5-ch4
+      - sec-lessons
+    usage: quiz
+  - id: 7441
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
+    text: OpenClaw 支援哪幾種 AI 模型的選擇？
+    type: multiple_choice
+    options:
+      - 只支援 Claude 模型
+      - Claude、GPT 或本地模型都可以
+      - 只支援 OpenAI 的模型
+      - 只能使用離線的輕量模型
+    correct_index: 1
+    explanation: OpenClaw 具備模型彈性，支援 Claude、GPT 甚至本地模型等多種選擇。
+    tags:
+      - chap-m5-ch4
+      - sec-openclaw
+    usage: quiz
+  - id: 7442
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: Hermes Agent：會自我學習的多平台代理
+    text: Hermes 的自然語言排程功能可以讓使用者怎麼做？
+    type: multiple_choice
+    options:
+      - 用自然語言設定定時任務，如「每天早上八點整理郵件」
+      - 只能用 cron 表達式設定排程
+      - 無法設定任何排程任務
+      - 排程只能由開發者在程式碼中寫死
+    correct_index: 0
+    explanation: Hermes 支援用自然語言直接定義排程，讓非技術使用者也能輕鬆設定自動化任務。
+    tags:
+      - chap-m5-ch4
+      - sec-hermes
+    usage: quiz
+  - id: 7443
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: 框架比較總覽
+    text: 在擴展性方面，OpenClaw 和 Hermes 有何共通策略？
+    type: multiple_choice
+    options:
+      - 兩者都只提供封閉的官方功能
+      - 兩者都擁抱社群貢獻與開放標準
+      - 兩者都只能透過付費擴展功能
+      - 兩者都不允許使用者自訂功能
+    correct_index: 1
+    explanation: 兩個框架都非常重視開源社群，透過 MCP 或 agentskills.io 等開放標準擴展生態。
+    tags:
+      - chap-m5-ch4
+      - sec-comparison
+    usage: quiz
+  - id: 7444
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: AI 代理框架的發展趨勢
+    text: 開放標準（如 MCP 和 agentskills.io）如何促進 AI 代理的發展？
+    type: multiple_choice
+    options:
+      - 讓所有代理人的速度變得一樣快
+      - 讓不同框架之間的工具與能力可以互通
+      - 讓 AI 不再需要訓練資料
+      - 讓所有開發者使用相同的程式語言
+    correct_index: 1
+    explanation: 開放標準打破框架壁壘，促進工具與能力在不同系統間互通，加速生態發展。
+    tags:
+      - chap-m5-ch4
+      - sec-lessons
+    usage: quiz
+  - id: 7445
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
+    text: OpenClaw 能夠自動將解決反覆任務的方法封裝為什麼？
+    type: multiple_choice
+    options:
+      - 新的大型語言模型
+      - 可重用的技能
+      - 使用者手冊
+      - 系統設定檔
+    correct_index: 1
+    explanation: OpenClaw 會將經常執行的任務解法封裝成技能，方便未來直接重複使用。
+    tags:
+      - chap-m5-ch4
+      - sec-openclaw
+    usage: quiz
+  - id: 7446
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: Hermes Agent：會自我學習的多平台代理
+    text: Hermes 的「模型無關」設計對開發者的實質好處是什麼？
+    type: multiple_choice
+    options:
+      - 開發者不需為不同 LLM 重寫代理系統
+      - 開發者只能用一個固定的模型
+      - 開發者需要為每個 LLM 維護不同的程式碼分支
+      - 開發者不能使用付費的 LLM
+    correct_index: 0
+    explanation: 模型無關設計讓開發者只需維護一套代理系統，即可自由切換不同的底層 LLM。
+    tags:
+      - chap-m5-ch4
+      - sec-hermes
+    usage: quiz
+  - id: 7447
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: 框架比較總覽
+    text: 下列哪個框架的設計最適合需要高度隱私保護且希望資料留在本地的使用者？
+    type: multiple_choice
+    options:
+      - Hermes Agent
+      - OpenClaw
+      - LangGraph
+      - AutoGen
+    correct_index: 1
+    explanation: OpenClaw 專門為隱私優先設計，所有運算和資料都在使用者的本地電腦上處理。
+    tags:
+      - chap-m5-ch4
+      - sec-comparison
+    usage: quiz
+  - id: 7448
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
+    text: OpenClaw 如何確保使用者不需要改變既有的溝通習慣？
+    type: multiple_choice
+    options:
+      - 提供全新的專屬聊天應用程式
+      - 讓使用者透過已在使用的通訊軟體操作
+      - 要求使用者每天登入官網使用
+      - 只提供 API 給開發者整合
+    correct_index: 1
+    explanation: OpenClaw 設計成與使用者已在使用的通訊工具整合，無需學習新介面。
+    tags:
+      - chap-m5-ch4
+      - sec-openclaw
+    usage: quiz
+  - id: 7449
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: Hermes Agent：會自我學習的多平台代理
+    text: Hermes 與 agentskills.io 標準相容，這帶來什麼具體好處？
+    type: multiple_choice
+    options:
+      - 使用者可以安裝社群共享的技能，也能分享自己的技能
+      - 使用者只能使用 Hermes 官方提供的技能
+      - 使用者無法自訂或擴展任何技能
+      - 技能只能在 Hermes 內部使用，無法匯出
+    correct_index: 0
+    explanation: 與開放標準相容讓技能可以在不同框架間共享，避免重複開發。
+    tags:
+      - chap-m5-ch4
+      - sec-hermes
+    usage: quiz
+  - id: 7450
+    chapter_title: 主流 AI 代理框架總覽
+    section_title: AI 代理框架的發展趨勢
+    text: 下列哪一項最能總結 OpenClaw 和 Hermes 代表的 AI 代理發展方向？
+    type: multiple_choice
+    options:
+      - 集中化與封閉生態
+      - 隱私優先、融入既有環境、開放標準共享
+      - 全面取代人類工作
+      - 完全依賴雲端運算
+    correct_index: 1
+    explanation: 兩個框架共同展示了「隱私保護、融入既有工具、開放標準」的現代代理發展方向。
+    tags:
+      - chap-m5-ch4
+      - sec-lessons
+    usage: quiz

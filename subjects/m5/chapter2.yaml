@@ -445,3 +445,483 @@ questions:
     tags:
       - chap-m5-ch2
     usage: quiz
+  - id: 7230
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 簡介與設計動機
+    text: MCP 與傳統的客製化 API 整合相比，最大的優勢是什麼？
+    type: multiple_choice
+    options:
+      - MCP 的執行速度永遠比客製化 API 更快
+      - MCP 提供標準化介面，讓整合從 M×N 簡化為 M+N
+      - MCP 不需要任何程式碼即可完成工具整合
+      - MCP 只能用於 Claude 模型
+    correct_index: 1
+    explanation: MCP 的標準化設計大幅降低了整合複雜度，從乘法級的客製化整合變為加法級的標準實作。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-intro
+    usage: quiz
+  - id: 7231
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 系統架構
+    text: 在 MCP 架構中，如果一個應用程式需要同時連接資料庫和檔案系統，它需要建立多少個客戶端？
+    type: multiple_choice
+    options:
+      - 1 個客戶端同時連線兩個伺服器
+      - 2 個客戶端，各連線一個伺服器
+      - 不需要客戶端，直接由主機連線
+      - 取決於 LLM 模型的種類
+    correct_index: 1
+    explanation: 每個 MCP 客戶端僅維護與單一伺服器的一對一連線，因此需要為每個伺服器建立獨立的客戶端。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-architecture
+    usage: quiz
+  - id: 7232
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 核心元件
+    text: 下列哪一項是 MCP 中「工具（Tools）」的典型範例？
+    type: multiple_choice
+    options:
+      - 讀取伺服器上的設定檔內容
+      - 發送電子郵件的函數
+      - 顯示系統版本的靜態資訊
+      - 預先定義的對話起始模板
+    correct_index: 1
+    explanation: 工具是可由 LLM 主動呼叫的操作，會產生副作用（如發送郵件），而非單純讀取資料。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-components
+    usage: quiz
+  - id: 7233
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 傳輸機制
+    text: 下列哪種情況最適合選擇 HTTP + SSE 而非 stdio 傳輸？
+    type: multiple_choice
+    options:
+      - 開發者在本機筆電上測試 MCP 伺服器
+      - MCP 伺服器部署在雲端需要跨網路存取
+      - 使用者的電腦完全沒有網路連線
+      - 伺服器需要直接讀取本機檔案系統
+    correct_index: 1
+    explanation: HTTP + SSE 支援跨網路遠端通訊，適合部署在雲端的伺服器。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-transport
+    usage: quiz
+  - id: 7234
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 安全考量
+    text: 在 MCP 的安全設計中，使用者何時會被要求授權工具操作？
+    type: multiple_choice
+    options:
+      - 每次工具呼叫都需要使用者手動授權
+      - 只有高風險操作才需要使用者授權，一般操作可自動執行
+      - 使用者永遠不需要授權，完全信任 LLM
+      - 授權與否完全由 MCP 伺服器自行決定
+    correct_index: 1
+    explanation: MCP 設計讓使用者掌握控制權，高風險操作需要授權，一般操作可設為自動允許。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-security
+    usage: quiz
+  - id: 7235
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: 代理人可觀測性與評估
+    text: 在可觀測性架構中，一個「Trace（追蹤）」通常由哪些基本單位組成？
+    type: multiple_choice
+    options:
+      - 多個 Spans 組合成一個 Trace
+      - 多個 Events 組合成一個 Span
+      - 多個 Metrics 組合成一個 Trace
+      - 多個 Traces 組合成一個 Span
+    correct_index: 0
+    explanation: Trace 由多個 Span 組成，每個 Span 代表系統中的一個操作區間。
+    tags:
+      - chap-m5-ch2
+      - sec-agent-observability
+    usage: quiz
+  - id: 7236
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: 開發 MCP 伺服器
+    text: 使用 FastMCP 定義工具時，為什麼參數的型別註記（type hint）很重要？
+    type: multiple_choice
+    options:
+      - 型別註記會影響 LLM 選擇工具的意願
+      - 型別註記會自動轉換為 JSON Schema，幫助 LLM 理解參數格式
+      - 型別註記只對人類閱讀有幫助，對 LLM 沒有影響
+      - 型別註記會決定工具呼叫的網路傳輸協定
+    correct_index: 1
+    explanation: FastMCP 會根據型別註記自動生成 JSON Schema 描述，讓 LLM 知道參數的格式與限制。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-server-dev
+    usage: quiz
+  - id: 7237
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 簡介與設計動機
+    text: MCP 協議中的「M」代表什麼？
+    type: multiple_choice
+    options:
+      - Model（模型）
+      - Message（訊息）
+      - Machine（機器）
+      - Multi（多重）
+    correct_index: 0
+    explanation: MCP 全稱為 Model Context Protocol（模型上下文協議），M 代表 Model。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-intro
+    usage: quiz
+  - id: 7238
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 系統架構
+    text: 如果一個 MCP 伺服器崩潰了，對整個系統的影響為何？
+    type: multiple_choice
+    options:
+      - 整個主機都會跟著崩潰
+      - 只有連線到該伺服器的那個客戶端受影響，其他正常運作
+      - 所有已連線的伺服器都會一起崩潰
+      - 系統會自動重新啟動整個主機
+    correct_index: 1
+    explanation: 一對一的客戶端-伺服器設計確保了故障隔離，一個伺服器崩潰不會影響其他連線。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-architecture
+    usage: quiz
+  - id: 7239
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 核心元件
+    text: MCP 的「Prompts（提示範本）」與一般的系統提示詞有何不同？
+    type: multiple_choice
+    options:
+      - Prompts 是由伺服器動態提供的模板，而非主機預先設定的靜態提示
+      - 兩者完全相同，只是 MCP 重新命名
+      - Prompts 只能用於除錯目的，不能用在正式環境
+      - Prompts 只能由使用者手動撰寫，不能由伺服器提供
+    correct_index: 0
+    explanation: MCP Prompts 是伺服器端提供的動態模板，讓主機能根據任務需求載入不同的起始設定。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-components
+    usage: quiz
+  - id: 7240
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 傳輸機制
+    text: stdio 傳輸方式的主要安全優勢是什麼？
+    type: multiple_choice
+    options:
+      - stdio 會自動加密所有傳輸的資料
+      - stdio 只在本機子程序間通訊，不暴露網路埠
+      - stdio 傳輸速度比網路傳輸快十倍
+      - stdio 支援任何程式語言開發的伺服器
+    correct_index: 1
+    explanation: stdio 透過標準輸入輸出與本地子程序通訊，不需要開放任何網路埠，減少攻擊面。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-transport
+    usage: quiz
+  - id: 7241
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: 開發 MCP 伺服器
+    text: 在 MCP 伺服器中，為什麼工具的描述（description）比工具的名稱更重要？
+    type: multiple_choice
+    options:
+      - 因為 LLM 主要根據 description 判斷何時使用工具，名稱只是識別
+      - 因為 description 的長度會影響工具呼叫的優先權
+      - 因為名稱對 LLM 完全沒有意義
+      - 因為 description 決定了工具的回傳格式
+    correct_index: 0
+    explanation: LLM 透過自然語言理解來決定工具使用時機，清晰描述能大幅提升工具的選用準確率。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-server-dev
+    usage: quiz
+  - id: 7242
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: AI 代理人基礎概念
+    text: 一個完整的「思考-行動-觀察」循環中，若觀察結果顯示工具呼叫失敗，代理人應如何應對？
+    type: multiple_choice
+    options:
+      - 忽略失敗並繼續下一步行動
+      - 根據失敗原因重新思考並嘗試替代方案
+      - 直接終止整個任務並回報錯誤
+      - 重複相同的行動直到成功
+    correct_index: 1
+    explanation: 良好的代理人在工具失敗後，會根據錯誤訊息調整策略並嘗試替代方法。
+    tags:
+      - chap-m5-ch2
+      - sec-agent-fundamentals
+    usage: quiz
+  - id: 7243
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 簡介與設計動機
+    text: MCP 如何幫助 AI 系統「發現」新的工具？
+    type: multiple_choice
+    options:
+      - MCP 客戶端會定期掃描網路上的所有可用服務
+      - MCP 伺服器可動態提供可用工具清單與參數定義
+      - LLM 會自動從訓練資料中學習新工具的使用方式
+      - 使用者必須手動在設定檔中描述每個工具的細節
+    correct_index: 1
+    explanation: MCP 伺服器會向客戶端揭露可用工具清單與 JSON Schema 參數定義。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-intro
+    usage: quiz
+  - id: 7244
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: 代理人可觀測性與評估
+    text: 在使用 Langfuse 或 Arize Phoenix 等可觀測性工具時，主要獲得的幫助是什麼？
+    type: multiple_choice
+    options:
+      - 自動修正代理人的錯誤決策
+      - 視覺化代理人的效能指標與決策過程
+      - 直接降低 LLM API 的呼叫費用
+      - 自動生成代理人的程式碼
+    correct_index: 1
+    explanation: 可觀測性工具將代理人的運作過程視覺化，讓開發者能直觀地了解其行為與效能。
+    tags:
+      - chap-m5-ch2
+      - sec-agent-observability
+    usage: quiz
+  - id: 7245
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 安全考量
+    text: 一個天氣查詢用的 MCP 伺服器應該擁有什麼權限？
+    type: multiple_choice
+    options:
+      - 擁有完整的檔案系統讀寫權限
+      - 只需要呼叫天氣 API 與回傳結果的權限
+      - 擁有管理員權限以確保穩定性
+      - 可以存取所有使用者的個人資料
+    correct_index: 1
+    explanation: 遵循最小授權原則，天氣伺服器只需要呼叫天氣 API 的能力，不應擁有其他權限。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-security
+    usage: quiz
+  - id: 7246
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 系統架構
+    text: 在 MCP 術語中，「主機（Host）」與「客戶端（Client）」的關係類似於什麼？
+    type: multiple_choice
+    options:
+      - 主機是作業系統，客戶端是應用程式
+      - 主機是整體應用程式，客戶端是內部的通訊模組
+      - 主機是硬體，客戶端是軟體
+      - 主機是伺服器，客戶端是使用者
+    correct_index: 1
+    explanation: 主機是使用者直接互動的應用程式（如 Claude Desktop），客戶端是主機內部負責與單一伺服器通訊的模組。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-architecture
+    usage: quiz
+  - id: 7247
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 核心元件
+    text: 下列哪個選項屬於 MCP 的「資源（Resources）」？
+    type: multiple_choice
+    options:
+      - 一個負責發送 Slack 通知的函數
+      - 一個位於 file:///reports/summary.pdf 的檔案
+      - 一個用於程式碼審查的對話範本
+      - 一個計算匯率的數學運算
+    correct_index: 1
+    explanation: 資源是可讀取的靜態資料，以 URI 定位。檔案屬於典型的資源。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-components
+    usage: quiz
+  - id: 7248
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 傳輸機制
+    text: stdio 傳輸方式在何種情況下可能不適合使用？
+    type: multiple_choice
+    options:
+      - 當開發者在本地開發與測試時
+      - 當 MCP 伺服器需要被多個遠端使用者共享時
+      - 當伺服器需要讀取本地檔案時
+      - 當主機和伺服器在同一台電腦上時
+    correct_index: 1
+    explanation: stdio 僅限本機通訊，當伺服器需要被遠端存取時應改用 HTTP + SSE。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-transport
+    usage: quiz
+  - id: 7249
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: 開發 MCP 伺服器
+    text: 在 Claude Desktop 中設定 MCP 伺服器時，使用者需要提供哪些資訊？
+    type: multiple_choice
+    options:
+      - 工具的名稱、啟動方式、以及存取範圍
+      - LLM 模型的 API 金鑰
+      - MCP 協議的版本號與原始碼
+      - 使用者的電子郵件與密碼
+    correct_index: 0
+    explanation: 設定 MCP 伺服器需要指定工具名稱、如何啟動該伺服器程式，以及允許存取的資源範圍。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-server-dev
+    usage: quiz
+  - id: 7250
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 簡介與設計動機
+    text: MCP 誕生之前，開發者整合 AI 與工具的典型困境為何？
+    type: multiple_choice
+    options:
+      - 工具數量太少，無法滿足需求
+      - 每個 AI 與每個工具都需要客製化整合，維護成本極高
+      - 所有工具都需要收費，開源方案很少
+      - 語言模型完全無法理解任何工具的用途
+    correct_index: 1
+    explanation: 在 MCP 之前，每對 AI-工具都需要單獨整合，形成難以維護的 M×N 整合矩陣。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-intro
+    usage: quiz
+  - id: 7251
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: 代理人可觀測性與評估
+    text: 「離線評估（Offline Evaluation）」與「線上評估（Online Evaluation）」的主要差別為何？
+    type: multiple_choice
+    options:
+      - 離線評估使用測試資料集，線上評估收集真實使用者回饋
+      - 離線評估只能在夜間執行，線上評估在白天執行
+      - 離線評估不需要 LLM，線上評估需要 LLM
+      - 離線評估由 AI 執行，線上評估由人類執行
+    correct_index: 0
+    explanation: 離線評估使用固定基準測試代理人，線上評估則從真實使用者互動中收集效能資料。
+    tags:
+      - chap-m5-ch2
+      - sec-agent-observability
+    usage: quiz
+  - id: 7252
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 安全考量
+    text: 提示注入攻擊（Prompt Injection）如何影響 MCP 系統的安全性？
+    type: multiple_choice
+    options:
+      - 攻擊者透過修改 MCP 協議的原始碼入侵系統
+      - 惡意資料偽裝成正常內容混入上下文，誘導 LLM 呼叫非預期工具
+      - 攻擊者直接刪除伺服器上的工具定義檔
+      - 攻擊者透過阻塞網路連線來阻止 MCP 通訊
+    correct_index: 1
+    explanation: 提示注入攻擊將惡意指令藏在看似正常的資料中，讓 LLM 誤以為是合法指令而執行。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-security
+    usage: quiz
+  - id: 7253
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 系統架構
+    text: 一個設計良好的 MCP 伺服器應該遵循什麼原則？
+    type: multiple_choice
+    options:
+      - 一個伺服器提供所有可能的功能以最大化便利性
+      - 專注單一職責，只提供特定領域的能力
+      - 伺服器應該包含完整的 LLM 推理能力
+      - 伺服器不應該對外暴露任何功能描述
+    correct_index: 1
+    explanation: 遵循單一職責原則，每個 MCP 伺服器專注於一個特定領域（如天氣、資料庫），便於維護與組合。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-architecture
+    usage: quiz
+  - id: 7254
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 核心元件
+    text: 當 LLM 需要執行一個有副作用的操作（如刪除檔案）時，MCP 中應該使用哪一種元件？
+    type: multiple_choice
+    options:
+      - Resource（資源）
+      - Tool（工具）
+      - Prompt（提示範本）
+      - Client（客戶端）
+    correct_index: 1
+    explanation: 有副作用的操作應使用 Tool，因為 Tool 代表可由 LLM 主動呼叫的執行操作。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-components
+    usage: quiz
+  - id: 7255
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 傳輸機制
+    text: 在 MCP 的 HTTP + SSE 傳輸模式中，SSE（Server-Sent Events）主要用於傳遞什麼類型的資料？
+    type: multiple_choice
+    options:
+      - 客戶端向伺服器發送的工具呼叫請求
+      - 伺服器向客戶端的單向即時事件推送
+      - 使用者與主機之間的自然語言對話
+      - LLM 模型的神經網路權重更新
+    correct_index: 1
+    explanation: SSE 是伺服器向客戶端的單向推送機制，適合傳遞即時的事件與狀態更新。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-transport
+    usage: quiz
+  - id: 7256
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: 開發 MCP 伺服器
+    text: 使用社群提供的現成 MCP 伺服器（如 server-filesystem）時，開發者還需要做什麼？
+    type: multiple_choice
+    options:
+      - 必須從頭閱讀所有原始碼才能使用
+      - 只需在設定檔中描述要連接的伺服器與存取範圍
+      - 必須自行將伺服器重新編譯成可執行檔
+      - 需要向原始作者支付授權費用
+    correct_index: 1
+    explanation: 使用現成 MCP 伺服器時，只需在設定中指定伺服器名稱與存取範圍即可使用。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-server-dev
+    usage: quiz
+  - id: 7257
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 簡介與設計動機
+    text: MCP 協議能促進 AI 模型之間的互操作性，這是因為它提供了什麼？
+    type: multiple_choice
+    options:
+      - 一套強制所有模型使用的私有通訊協定
+      - 標準化的工具與資源描述介面，不受特定模型綁定
+      - 一個統一的模型訓練框架
+      - 一種通用的 AI 模型效能評分標準
+    correct_index: 1
+    explanation: MCP 的標準化介面讓不同 AI 模型都能使用相同的工具描述，切換模型時不需重寫整合。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-intro
+    usage: quiz
+  - id: 7258
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: 代理人可觀測性與評估
+    text: 在代理人系統中實作「儀器化（Instrumentation）」時，通常會使用哪一種開放標準？
+    type: multiple_choice
+    options:
+      - MCP（模型上下文協議）
+      - OpenTelemetry
+      - HTTP/2
+      - gRPC
+    correct_index: 1
+    explanation: OpenTelemetry 是業界標準的儀器化框架，用於捕獲追蹤、日誌和指標。
+    tags:
+      - chap-m5-ch2
+      - sec-agent-observability
+    usage: quiz
+  - id: 7259
+    chapter_title: 模型上下文協議 (MCP)
+    section_title: MCP 安全考量
+    text: 下列哪一項是 MCP 系統中防範提示注入攻擊的最佳做法？
+    type: multiple_choice
+    options:
+      - 完全不讓 LLM 存取任何外部資料
+      - 對 LLM 請求的所有外部資料內容進行嚴格的驗證與消毒
+      - 只使用 OpenAI 提供的官方 MCP 伺服器
+      - 將所有工具的輸入參數設為必填以減少攻擊面
+    correct_index: 1
+    explanation: 將外部資料視為不可信任的內容，進行驗證與消毒後再讓 LLM 處理，是防範提示注入的關鍵。
+    tags:
+      - chap-m5-ch2
+      - sec-mcp-security
+    usage: quiz
