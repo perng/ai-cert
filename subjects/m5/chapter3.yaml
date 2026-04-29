@@ -5,11 +5,11 @@ questions:
     text: 下列哪個選項最能描述「技能 (Skill)」與「工具 (Tool)」的差異？
     type: multiple_choice
     options:
-      - 工具具有內部狀態，而技能則是無狀態的底層函數
-      - 技能是含多步驟的較高層封裝，工具為單一操作呼叫
-      - 技能僅限用於文字處理，工具則可處理所有類型資料
       - 兩者的本質完全相同，只是不同代理框架的命名習慣
-    correct_index: 1
+      - 工具具有內部狀態，而技能則是無狀態的底層函數
+      - 技能僅限用於文字處理，工具則可處理所有類型資料
+      - 技能是含多步驟的較高層封裝，工具為單一操作呼叫
+    correct_index: 3
     explanation: 技能是對能力的高層封裝，可包含複雜邏輯與多個步驟；工具則更接近底層的單一函數呼叫。不過在許多現代框架中兩者常被混用。
     tags:
       - chap-m5-ch3
@@ -22,10 +22,10 @@ questions:
     type: multiple_choice
     options:
       - 語言模型會在內部直接執行工具函數並回傳結果
-      - 模型輸出含工具名稱與參數，由應用程式解析執行
       - 模型會透過網路請求直接呼叫工具的外部 API
       - 模型會暫停並等待使用者手動執行工具後再繼續
-    correct_index: 1
+      - 模型輸出含工具名稱與參數，由應用程式解析執行
+    correct_index: 3
     explanation: LLM 本身無法直接執行外部函數。它輸出格式化的工具呼叫請求（tool_use block），由外部應用程式解析、執行對應函數，再將結果透過
       tool_result 回傳給模型。
     tags:
@@ -38,11 +38,11 @@ questions:
     text: 「並行工具呼叫 (Parallel Tool Calling)」的主要優點是什麼？
     type: multiple_choice
     options:
-      - 為了減少語言模型在推論過程中產生錯誤的機率
-      - 單次回應請求多個工具，以減少來回並提升效率
       - 強制確保所有呼叫的工具都能按照特定順序執行
       - 大幅降低每一次模型 API 網路呼叫的平均成本
-    correct_index: 1
+      - 為了減少語言模型在推論過程中產生錯誤的機率
+      - 單次回應請求多個工具，以減少來回並提升效率
+    correct_index: 3
     explanation: 並行工具呼叫允許模型在一次回應中請求多個獨立工具，應用程式可並行執行這些工具，避免不必要的序列等待，顯著縮短多工具任務的執行時間。
     tags:
       - chap-m5-ch3
@@ -54,11 +54,11 @@ questions:
     text: 在處理長期對話的記憶管理中，「摘要壓縮 (Summarization)」策略的主要目的是什麼？
     type: multiple_choice
     options:
+      - 將過去的對話全部轉換為向量形式並儲存於資料庫
       - 嚴格加密代理人的對話內容以保護使用者的隱私
       - 將舊對話壓縮為摘要，在有限視窗內保留有效資訊
       - 定期刪除所有非關鍵的對話紀錄以節省記憶空間
-      - 將過去的對話全部轉換為向量形式並儲存於資料庫
-    correct_index: 1
+    correct_index: 2
     explanation: 上下文視窗大小有限，摘要壓縮策略透過將舊對話歷史濃縮為精簡摘要，保留關鍵資訊的同時騰出空間給近期的對話內容。
     tags:
       - chap-m5-ch3
@@ -70,11 +70,11 @@ questions:
     text: 「動態重規劃 (Dynamic Replanning)」在代理人設計中解決了什麼問題？
     type: multiple_choice
     options:
-      - 遇到意外情況時動態調整，而非強制執行失效計劃
-      - 確保代理人永遠能按照最短路徑與最少步驟完成任務
-      - 有效防止代理人在複雜情境下重複執行相同的步驟
       - 根據當前環境自動尋找並優化工具的最佳選擇策略
-    correct_index: 0
+      - 有效防止代理人在複雜情境下重複執行相同的步驟
+      - 確保代理人永遠能按照最短路徑與最少步驟完成任務
+      - 遇到意外情況時動態調整，而非強制執行失效計劃
+    correct_index: 3
     explanation: 現實任務往往充滿不確定性。動態重規劃讓代理人在步驟失敗或環境變化時，能根據已執行步驟和失敗原因重新生成後續計劃，而非固執地繼續執行已過時的計劃。
     tags:
       - chap-m5-ch3
@@ -86,11 +86,11 @@ questions:
     text: 撰寫高品質技能描述時，下列哪個原則「最不重要」？
     type: multiple_choice
     options:
+      - 列舉技能的限制條件（如格式限制、數量上限）
+      - 詳細描述技能的內部演算法邏輯
       - 說明技能的用途而非實作細節
       - 包含使用時機的說明
-      - 詳細描述技能的內部演算法邏輯
-      - 列舉技能的限制條件（如格式限制、數量上限）
-    correct_index: 2
+    correct_index: 1
     explanation: 技能描述的目的是幫助 LLM 決定何時以及如何使用技能，因此應著重描述「能做什麼」和「何時使用」，而非內部實作細節，後者對 LLM
       的使用決策沒有幫助。
     tags:
@@ -103,10 +103,10 @@ questions:
     text: 技能實作中採用「指數退避 (Exponential Backoff)」重試策略的主要原因是什麼？
     type: multiple_choice
     options:
-      - 顯著提高各項代理技能在複雜環境中的執行速度
-      - 避免服務不穩時頻繁重試導致雪崩，給予恢復機會
-      - 有效降低所有自訂技能的底層程式碼撰寫複雜度
       - 確保代理每次重試時都會隨機使用完全不同的工具
+      - 避免服務不穩時頻繁重試導致雪崩，給予恢復機會
+      - 顯著提高各項代理技能在複雜環境中的執行速度
+      - 有效降低所有自訂技能的底層程式碼撰寫複雜度
     correct_index: 1
     explanation: 指數退避（每次重試等待時間倍增）是避免對不穩定服務造成過多壓力的標準做法，能在給服務足夠恢復時間的同時，仍然在最終嘗試成功。
     tags:
@@ -119,11 +119,11 @@ questions:
     text: 「上下文工程 (Context Engineering)」與「提示詞工程 (Prompt Engineering)」最大的差異是什麼？
     type: multiple_choice
     options:
-      - 提示詞專注靜態指令，上下文則管理動態資訊以確保正確
-      - 上下文工程只適用於 RAG 系統，提示詞則適用所有情況
-      - 提示詞工程用於降低 API 成本，上下文用於增加模型參數
       - 兩者概念完全相同，純粹只是不同學術課程中的不同說法
-    correct_index: 0
+      - 提示詞工程用於降低 API 成本，上下文用於增加模型參數
+      - 上下文工程只適用於 RAG 系統，提示詞則適用所有情況
+      - 提示詞專注靜態指令，上下文則管理動態資訊以確保正確
+    correct_index: 3
     explanation: 上下文工程是管理一段動態資訊集（包含初始提示詞）的實踐，讓代理人能隨時取得完成下一步任務的適當資訊。
     tags:
       - chap-m5-ch3
@@ -135,11 +135,11 @@ questions:
     text: 當一次提供數十種工具給模型，導致模型不知所措而呼叫無關工具時，這屬於哪一種上下文失效模式？
     type: multiple_choice
     options:
-      - 上下文中毒 (Context Poisoning)
-      - 上下文衝突 (Context Clash)
       - 上下文分心 (Context Distraction)
       - 上下文混淆 (Context Confusion)
-    correct_index: 3
+      - 上下文衝突 (Context Clash)
+      - 上下文中毒 (Context Poisoning)
+    correct_index: 1
     explanation: 上下文混淆是指過多不必要的上下文（如過多工具）讓模型無法判斷最佳選擇。解法是實施工具掛載管理，僅提供最相關的幾個工具。
     tags:
       - chap-m5-ch3
@@ -151,11 +151,11 @@ questions:
     text: 相較於上下文工程，單純依賴提示詞工程在代理人場景中最大的限制是什麼？
     type: multiple_choice
     options:
+      - 進階提示詞的撰寫語法對於多數開發者而言過於困難且複雜
       - 開發者無法精確控制模型最終生成回應的字數長度與格式
       - 靜態指令難以應對動態變化且不可預測的外部系統環境
-      - 進階提示詞的撰寫語法對於多數開發者而言過於困難且複雜
       - 大型語言模型在解析超過一百個字的提示詞時容易發生崩潰
-    correct_index: 1
+    correct_index: 2
     explanation: 代理人面對的任務環境隨時在變，靜態的提示詞無法涵蓋所有可能的突發狀況。
     tags:
       - chap-m5-ch3
@@ -166,11 +166,11 @@ questions:
     text: 代理人運作時遇到的「上下文中毒 (Context Poisoning)」是指什麼現象？
     type: multiple_choice
     options:
-      - 使用者輸入的文字長度大幅超越了系統設定的上下文視窗限制
-      - 錯誤的幻覺資訊進入記憶中並被反覆引用，導致模型陷入邏輯死胡同
       - 系統遭受到惡意使用者的直接網路攻擊，導致伺服器完全停止運作
       - 代理人因為安全機制過於嚴格而拒絕讀取任何上下文中的敏感內容
-    correct_index: 1
+      - 使用者輸入的文字長度大幅超越了系統設定的上下文視窗限制
+      - 錯誤的幻覺資訊進入記憶中並被反覆引用，導致模型陷入邏輯死胡同
+    correct_index: 3
     explanation: 當錯誤資訊成為後續推理的基礎時，代理人就會不斷做出荒謬或無效的決策。
     tags:
       - chap-m5-ch3
@@ -181,11 +181,11 @@ questions:
     text: 要有效防範「上下文中毒」，系統架構上應該採取哪一種策略最為合適？
     type: multiple_choice
     options:
+      - 為了絕對的資料安全，完全停用代理人的所有長期記憶保存功能
       - 直接將系統容許的上下文總字數限制增加到原來的一百倍以上
       - 實施嚴格的上下文即時驗證，確保寫入記憶前的資訊是正確的
-      - 為了絕對的資料安全，完全停用代理人的所有長期記憶保存功能
       - 將所有可能導致衝突的上下文自動翻譯成模型不熟悉的罕見語言
-    correct_index: 1
+    correct_index: 2
     explanation: 在資訊被當作事實存入記憶前，透過外部工具進行交叉驗證是防止中毒的關鍵。
     tags:
       - chap-m5-ch3
@@ -196,11 +196,11 @@ questions:
     text: 代理人運作時遇到的「上下文分心 (Context Distraction)」是指什麼現象？
     type: multiple_choice
     options:
+      - 系統的安全過濾機制拒絕執行任何包含潛在風險的工具呼叫請求
       - 模型因為過度關注龐大的歷史紀錄而忽略了當前任務的真實指令
       - 代理人在多個子系統之間頻繁切換導致伺服器網路連線不穩定
-      - 系統的安全過濾機制拒絕執行任何包含潛在風險的工具呼叫請求
       - 代理人因為無法獲取任何足夠的上下文資訊而無法生成有效回應
-    correct_index: 0
+    correct_index: 1
     explanation: 當雜訊過多時，模型的注意力機制會被稀釋，忘記現在最重要應該做什麼事。
     tags:
       - chap-m5-ch3
@@ -211,11 +211,11 @@ questions:
     text: 開發者可以透過什麼技術手段來有效減緩「上下文分心」的問題？
     type: multiple_choice
     options:
-      - 在每次對話前，都將過去一年的所有歷史對話紀錄完整地提供給模型
       - 定期使用大語言模型摘要技術，將過長的歷史資訊壓縮成精簡的重點
-      - 為了確保指令清晰，嚴格禁止終端使用者輸入超過十個英文字母的指令
       - 強制設定系統，讓模型在任何情況下都只能用「是」或「否」來回答問題
-    correct_index: 1
+      - 為了確保指令清晰，嚴格禁止終端使用者輸入超過十個英文字母的指令
+      - 在每次對話前，都將過去一年的所有歷史對話紀錄完整地提供給模型
+    correct_index: 0
     explanation: 摘要技術能去除冗餘對話，保留核心意義，幫助模型在有限視窗內維持專注。
     tags:
       - chap-m5-ch3
@@ -226,11 +226,11 @@ questions:
     text: 若系統一次性提供 50 個不相關的工具給代理人，導致其呼叫錯誤，這屬於何種失效模式？
     type: multiple_choice
     options:
-      - 上下文衝突 (Context Clash)
-      - 上下文中毒 (Context Poisoning)
       - 上下文混淆 (Context Confusion)
       - 上下文分心 (Context Distraction)
-    correct_index: 2
+      - 上下文衝突 (Context Clash)
+      - 上下文中毒 (Context Poisoning)
+    correct_index: 0
     explanation: 過多選擇會干擾模型的判斷能力，造成上下文混淆，進而選錯工具。
     tags:
       - chap-m5-ch3
@@ -241,11 +241,11 @@ questions:
     text: 實施「工具掛載管理 (Tool Loadout Management)」的主要目的是什麼？
     type: multiple_choice
     options:
+      - 嚴格限制普通使用者每天可以呼叫系統中特定工具的總次數上限
       - 讓系統能在背景自動下載並更新所有工具的最新底層程式碼
       - 透過動態檢索，僅提供給代理人當下任務最相關的少量工具集合
       - 詳細記錄每個工具在過去一個月內的平均執行時間與效能瓶頸
-      - 嚴格限制普通使用者每天可以呼叫系統中特定工具的總次數上限
-    correct_index: 1
+    correct_index: 2
     explanation: 減少不必要的工具干擾，能顯著提升代理人選擇正確工具的準確率。
     tags:
       - chap-m5-ch3
@@ -256,11 +256,11 @@ questions:
     text: 在代理人的推理過程中，「上下文衝突 (Context Clash)」通常是如何發生的？
     type: multiple_choice
     options:
+      - 系統傳遞的上下文資料格式不符合底層 API 所規定的嚴格 JSON 標準
+      - 兩個不同功能的代理人為了完成任務，同時搶奪同一個網路連接埠
       - 系統內剛好存在兩個不同開發者所撰寫且名稱完全一模一樣的工具
       - 代理人的記憶中同時存在著前後矛盾或邏輯完全相反的使用者指示
-      - 兩個不同功能的代理人為了完成任務，同時搶奪同一個網路連接埠
-      - 系統傳遞的上下文資料格式不符合底層 API 所規定的嚴格 JSON 標準
-    correct_index: 1
+    correct_index: 3
     explanation: 矛盾的資訊會讓模型無法判斷哪一個才是真實意圖，導致推理不一致。
     tags:
       - chap-m5-ch3
@@ -271,11 +271,11 @@ questions:
     text: 當面對「上下文衝突」時，下列哪一種做法是有效的解決方案之一？
     type: multiple_choice
     options:
-      - 提供獨立的暫存區 (Scratchpad) 讓模型有空間先協調與統整衝突資訊
+      - 遇到衝突時立即暫停系統所有運作，並發送電子郵件等待人工介入處理
       - 寫一個程式將所有看起來發生衝突的歷史資訊隨機挑選一個並直接刪除
       - 不做任何修改，直接把底層模型替換成參數規模大十倍的最新商用版本
-      - 遇到衝突時立即暫停系統所有運作，並發送電子郵件等待人工介入處理
-    correct_index: 0
+      - 提供獨立的暫存區 (Scratchpad) 讓模型有空間先協調與統整衝突資訊
+    correct_index: 3
     explanation: 暫存區賦予代理人額外的運算空間來分析矛盾，最終得出一致的行動方針。
     tags:
       - chap-m5-ch3
@@ -286,11 +286,11 @@ questions:
     text: 在記憶管理的設計中，實施「衰減機制 (Fading)」的主要用意為何？
     type: multiple_choice
     options:
-      - 使距離現在較久遠的歷史記憶在檢索時的權重或重要性自然降低
-      - 將純文字的對話內容自動轉換為多維度的向量格式以利快速比較
       - 透過加密手段防止未經授權的第三方用戶讀取代理人的敏感資料
+      - 將純文字的對話內容自動轉換為多維度的向量格式以利快速比較
+      - 使距離現在較久遠的歷史記憶在檢索時的權重或重要性自然降低
       - 藉由刪除特定字元來加快整體工具執行的伺服器網路反應時間
-    correct_index: 0
+    correct_index: 2
     explanation: 衰減機制確保代理人會優先參考使用者近期的狀態或偏好，而非陳舊過時的資訊。
     tags:
       - chap-m5-ch3
@@ -301,11 +301,11 @@ questions:
     text: 代理人運用「任務分解 (Task Decomposition)」策略能夠帶來什麼具體好處？
     type: multiple_choice
     options:
-      - 讓大語言模型在生成文字時的速度與流暢度獲得飛躍性的提升
       - 將過於複雜且難以一次解決的目標，拆解為數個可受控且單純的小步驟
-      - 大幅減少代理人為了完成任務而呼叫各種外部 API 的總計費用
+      - 讓大語言模型在生成文字時的速度與流暢度獲得飛躍性的提升
       - 從根本上徹底避免模型在撰寫程式碼時產生任何的語法或邏輯錯誤
-    correct_index: 1
+      - 大幅減少代理人為了完成任務而呼叫各種外部 API 的總計費用
+    correct_index: 0
     explanation: 拆解任務能降低每一步的認知負擔，讓代理人更容易成功達成最終目標。
     tags:
       - chap-m5-ch3
@@ -332,10 +332,10 @@ questions:
     type: multiple_choice
     options:
       - 為了滿足大型企業在軟體開發流程中對於程式碼行數的標準合規性規定
-      - 讓大型語言模型能讀懂失敗的原因，並據此動態調整參數或嘗試其他策略
       - 刻意隱藏系統底層的實際網路架構，避免遭到外部駭客針對性的惡意攻擊
+      - 讓大型語言模型能讀懂失敗的原因，並據此動態調整參數或嘗試其他策略
       - 讓終端使用者在看到錯誤畫面時，覺得系統非常有禮貌且富有同理心
-    correct_index: 1
+    correct_index: 2
     explanation: 錯誤訊息是代理人自我反省的關鍵輸入，沒有清晰的錯誤訊息就無法修正路線。
     tags:
       - chap-m5-ch3
@@ -346,9 +346,9 @@ questions:
     text: 有關於「並行工具呼叫 (Parallel Tool Calling)」的敘述，下列何者是正確的？
     type: multiple_choice
     options:
-      - 系統會強迫所有的工具都必須嚴格按照英文字母順序依次排隊執行
-      - 代理人能夠在一次的推論回應中，同時觸發並執行多個彼此獨立的工具任務
       - 這個機制僅適用於那些彼此之間具有高度且嚴格順序依賴的複雜連鎖步驟
+      - 代理人能夠在一次的推論回應中，同時觸發並執行多個彼此獨立的工具任務
+      - 系統會強迫所有的工具都必須嚴格按照英文字母順序依次排隊執行
       - 啟用這個機制通常會導致系統處理任務的整體花費時間大幅度地往上增加
     correct_index: 1
     explanation: 並行工具呼叫省去了多次網路往返的延遲，對於互相獨立的任務能顯著提升效率。
@@ -361,11 +361,11 @@ questions:
     text: 在定義提供給代理人的技能時，為什麼在提示詞中提供明確的參數邊界限制（例如設定字數上限）非常重要？
     type: multiple_choice
     options:
-      - 主要是為了幫助資料庫管理員節省伺服器硬碟中日益枯竭的儲存空間
       - 能有效避免語言模型給出過於龐大或不切實際的參數，導致後端程式執行崩潰
+      - 主要是為了幫助資料庫管理員節省伺服器硬碟中日益枯竭的儲存空間
       - 為了讓開發出來的技能在名稱與說明文件上看起來更加符合專業的工業標準
       - 因為這是多數知名雲端平台在提供 API 服務時所要求的強制性資訊安全規定
-    correct_index: 1
+    correct_index: 0
     explanation: 明確的限制能防止代理人因為過度發散的想像力而產生導致系統錯誤的極端輸入。
     tags:
       - chap-m5-ch3
@@ -377,10 +377,10 @@ questions:
     type: multiple_choice
     options:
       - 確保使用者在登入系統時輸入的密碼與權限能夠被最精確無誤地比對驗證
+      - 為了完全取代電腦傳統的主記憶體 (RAM) 架構，從而大幅度降低系統建置的硬體成本
       - 透過將文字轉化為數學向量，實現語意層級的搜尋，快速召回最相關的歷史經驗
       - 用來穩定且大量地儲存使用者上傳的高解析度圖片、音訊檔案與高畫質影片資料
-      - 為了完全取代電腦傳統的主記憶體 (RAM) 架構，從而大幅度降低系統建置的硬體成本
-    correct_index: 1
+    correct_index: 2
     explanation: 向量搜尋超越了傳統的關鍵字比對，讓代理人能理解概念上的相似性並找到對應記憶。
     tags:
       - chap-m5-ch3
@@ -391,10 +391,10 @@ questions:
     text: 當具備「動態重規劃」能力的代理人在執行步驟中途遇到 API 呼叫失敗時，它通常會怎麼應對？
     type: multiple_choice
     options:
-      - 會立刻判定任務失敗，直接中斷所有背景程式並回報嚴重錯誤給終端使用者
+      - 假裝沒看到錯誤，直接忽略這個失敗的關鍵步驟，並強行跳到計畫中的最後一個步驟
       - 吸收失敗的錯誤訊息作為新上下文，重新思考並生成一條可能成功的全新解決路徑
       - 不考慮任何其他可能性，持續以極高的頻率不斷重複呼叫同一個 API 直到成功為止
-      - 假裝沒看到錯誤，直接忽略這個失敗的關鍵步驟，並強行跳到計畫中的最後一個步驟
+      - 會立刻判定任務失敗，直接中斷所有背景程式並回報嚴重錯誤給終端使用者
     correct_index: 1
     explanation: 動態重規劃的精髓在於保持目標不變，但通往目標的路徑可以根據現實狀況靈活調整。
     tags:
@@ -406,11 +406,11 @@ questions:
     text: 開發者在替代理人撰寫工具的自然語言描述 (Description) 時，最應當遵守的指導原則是什麼？
     type: multiple_choice
     options:
-      - 必須鉅細靡遺地詳列出該工具在後端伺服器中的所有程式碼實作邏輯與細節
       - 應該清楚且精確地說明這個工具「能達成什麼目的」以及「在什麼情境下該被使用」
-      - 為了顯示開發團隊的技術實力，盡量在說明中塞滿各種深奧且難懂的業界專有名詞
       - 為了節省語言模型處理的 token 數量，務必將所有描述的總字數嚴格控制在十個字以內
-    correct_index: 1
+      - 為了顯示開發團隊的技術實力，盡量在說明中塞滿各種深奧且難懂的業界專有名詞
+      - 必須鉅細靡遺地詳列出該工具在後端伺服器中的所有程式碼實作邏輯與細節
+    correct_index: 0
     explanation: 模型不需要知道底層怎麼實作，只需要知道什麼時候用它、用了會有什麼效果。
     tags:
       - chap-m5-ch3
@@ -421,11 +421,11 @@ questions:
     text: 「上下文修剪 (Context Pruning)」技術通常被應用於解決代理人的哪一種內部問題？
     type: multiple_choice
     options:
+      - 當代理人發現自己的程式碼架構過於老舊時，自動向版本控制系統發送的更新請求
       - 當代理人需要產生極度冗長的文章時，用來限制其最大輸出字數的控制機制
       - 當新獲得的資訊與舊有記憶產生嚴重矛盾時，主動移除或覆寫已過時的歷史資訊
-      - 當代理人發現自己的程式碼架構過於老舊時，自動向版本控制系統發送的更新請求
       - 當系統的硬碟儲存空間即將耗盡時，自動對所有的多媒體檔案進行深度破壞性壓縮
-    correct_index: 1
+    correct_index: 2
     explanation: 修剪過時與矛盾的資訊能確保模型在推理時有一個乾淨、邏輯一致的上下文基礎。
     tags:
       - chap-m5-ch3
@@ -437,10 +437,10 @@ questions:
     type: multiple_choice
     options:
       - 確保每一次的對話記錄都會被永久保存到不可竄改的去中心化區塊鏈網路上
-      - 賦予模型一段不被使用者直接看見的「思考空間」，以利其整理邏輯、拆解步驟與協調衝突
       - 能夠自動將模型思考過程中所產生的任何有趣見解，直接發布更新到外部的社群媒體平台上
       - 透過跳過所有複雜的推理步驟直接輸出預設答案，來大幅降低大型語言模型的整體運算成本
-    correct_index: 1
+      - 賦予模型一段不被使用者直接看見的「思考空間」，以利其整理邏輯、拆解步驟與協調衝突
+    correct_index: 3
     explanation: 暫存區如同人類的計算紙，先寫下推理過程再給出最終答案，能大幅提升準確率。
     tags:
       - chap-m5-ch3
@@ -452,10 +452,10 @@ questions:
     type: multiple_choice
     options:
       - 提示詞可以完全取代技能，兩者功能相同
-      - 提示詞決定如何思考與規劃，技能決定能真正做到什麼
-      - 技能比提示詞更不重要
       - 提示詞僅用於除錯，技能用於正式部署
-    correct_index: 1
+      - 技能比提示詞更不重要
+      - 提示詞決定如何思考與規劃，技能決定能真正做到什麼
+    correct_index: 3
     explanation: 提示詞影響 LLM 的推理方式，技能提供實際的行動能力，兩者相輔相成。
     tags:
       - chap-m5-ch3
@@ -468,10 +468,10 @@ questions:
     type: multiple_choice
     options:
       - LLM 本身會在內部直接執行工具
+      - 工具會自動執行，不需要任何中介
       - 主機端的應用程式（非 LLM）負責解析請求並執行
       - 使用者必須手動執行工具並回傳結果
-      - 工具會自動執行，不需要任何中介
-    correct_index: 1
+    correct_index: 2
     explanation: LLM 只輸出格式化的工具呼叫請求，由應用程式層解析請求、執行工具、並回傳結果給 LLM。
     tags:
       - chap-m5-ch3
@@ -483,11 +483,11 @@ questions:
     text: 「滑動視窗（Sliding Window）」記憶策略的主要限制是什麼？
     type: multiple_choice
     options:
-      - 需要大量的向量資料庫支援
-      - 可能丟失窗口之外的早期重要資訊
       - 只能儲存影像資料，無法儲存文字
       - 實作難度是所有策略中最高的
-    correct_index: 1
+      - 可能丟失窗口之外的早期重要資訊
+      - 需要大量的向量資料庫支援
+    correct_index: 2
     explanation: 滑動視窗只保留最近 N 輪對話，超出視窗的資訊會被直接丟棄，可能遺失關鍵的早期上下文。
     tags:
       - chap-m5-ch3
@@ -499,11 +499,11 @@ questions:
     text: 哪一種規劃策略最適合處理結果不確定、需要反覆嘗試的任務？
     type: multiple_choice
     options:
-      - 固定計畫模式（一次規劃到底）
       - 動態重規劃（根據中間結果調整後續步驟）
       - 隨機嘗試模式（完全隨機選擇步驟）
+      - 固定計畫模式（一次規劃到底）
       - 跳躍模式（跳過困難步驟直接結束）
-    correct_index: 1
+    correct_index: 0
     explanation: 動態重規劃能根據實際執行結果靈活調整，非常適合結果不確定的任務。
     tags:
       - chap-m5-ch3
@@ -515,11 +515,11 @@ questions:
     text: 為什麼技能的錯誤訊息應該盡量提供詳細的上下文資訊？
     type: multiple_choice
     options:
-      - 為了符合程式碼規範的字數要求
       - 為了讓 LLM 能診斷問題並嘗試其他方法
-      - 為了讓使用者能自行修復系統
       - 為了記錄開發者的個人資訊
-    correct_index: 1
+      - 為了符合程式碼規範的字數要求
+      - 為了讓使用者能自行修復系統
+    correct_index: 0
     explanation: 詳細的錯誤訊息是 LLM 重新規劃的重要輸入，讓代理人能理解為何失敗並嘗試替代方案。
     tags:
       - chap-m5-ch3
@@ -531,11 +531,11 @@ questions:
     text: 相較於提示詞工程，上下文工程最核心的差異是什麼？
     type: multiple_choice
     options:
-      - 上下文工程管理的是動態變化的資訊，提示詞是靜態的
       - 上下文工程比提示詞工程更簡單
       - 上下文工程不需要考慮 LLM 的行為
       - 上下文工程只能在特定模型上使用
-    correct_index: 0
+      - 上下文工程管理的是動態變化的資訊，提示詞是靜態的
+    correct_index: 3
     explanation: 上下文工程管理動態資訊集，包含即時工具回傳結果與記憶，而提示詞工程主要處理靜態指令。
     tags:
       - chap-m5-ch3
@@ -547,11 +547,11 @@ questions:
     text: 提示詞工程的三個主要限制之一是 AI 的知識有截止日期，這代表什麼？
     type: multiple_choice
     options:
+      - AI 只能回答關於未來的問題
+      - AI 無法理解任何 2020 年之前的歷史事件
       - AI 在訓練完成後就無法知道訓練後發生的事件
       - AI 的所有知識在三天後會自動過期
-      - AI 無法理解任何 2020 年之前的歷史事件
-      - AI 只能回答關於未來的問題
-    correct_index: 0
+    correct_index: 2
     explanation: 語言模型的知識凍結在訓練截止日期，無法透過提示詞讓它知道訓練後發生的事件。
     tags:
       - chap-m5-ch3
@@ -563,11 +563,11 @@ questions:
     text: 在工具呼叫流程中，tool_use block 包含哪些必要資訊？
     type: multiple_choice
     options:
-      - 工具的名稱與傳入的參數
       - 工具的完整原始碼
-      - 工具的作者姓名與版本歷史
       - 工具的使用者評價與評分
-    correct_index: 0
+      - 工具的作者姓名與版本歷史
+      - 工具的名稱與傳入的參數
+    correct_index: 3
     explanation: tool_use block 包含工具名稱和參數，由應用程式解析後執行對應函數。
     tags:
       - chap-m5-ch3
@@ -579,10 +579,10 @@ questions:
     text: 「外部記憶庫」策略相較於「摘要壓縮」的主要優勢是什麼？
     type: multiple_choice
     options:
-      - 外部記憶庫不需要任何資料庫系統
-      - 外部記憶庫的容量幾乎無限，且支援語意搜尋
-      - 外部記憶庫的實作比摘要壓縮簡單十倍
       - 外部記憶庫不需要嵌入模型
+      - 外部記憶庫的容量幾乎無限，且支援語意搜尋
+      - 外部記憶庫不需要任何資料庫系統
+      - 外部記憶庫的實作比摘要壓縮簡單十倍
     correct_index: 1
     explanation: 外部記憶庫（向量資料庫）能儲存大量資訊，並透過語意相似度搜尋精確召回相關內容。
     tags:
@@ -596,10 +596,10 @@ questions:
     type: multiple_choice
     options:
       - 鏈結串列（Linked List）
-      - 樹狀結構（Tree Structure）
       - 雜湊表（Hash Table）
       - 堆疊（Stack）
-    correct_index: 1
+      - 樹狀結構（Tree Structure）
+    correct_index: 3
     explanation: 任務分解常以樹狀結構呈現，根節點是總目標，子節點是逐步拆解的細項任務。
     tags:
       - chap-m5-ch3
@@ -611,11 +611,11 @@ questions:
     text: 「原子技能」設計原則的核心思想是什麼？
     type: multiple_choice
     options:
-      - 每個技能應該越複雜越好，一次完成所有事情
-      - 每個技能只做一件事並做好這件事
       - 技能之間不應該有任何關聯
       - 技能的名稱應該使用隨機字串
-    correct_index: 1
+      - 每個技能應該越複雜越好，一次完成所有事情
+      - 每個技能只做一件事並做好這件事
+    correct_index: 3
     explanation: 原子技能保持單一職責，便於組合測試和除錯。
     tags:
       - chap-m5-ch3
@@ -627,11 +627,11 @@ questions:
     text: 下列哪一項是「上下文中毒」的正確解法？
     type: multiple_choice
     options:
-      - 增加更多的工具讓模型有更多選擇
       - 實施上下文驗證，確保資訊正確後才寫入記憶
       - 定期清除所有記憶，從零開始
+      - 增加更多的工具讓模型有更多選擇
       - 提供更大的上下文視窗
-    correct_index: 1
+    correct_index: 0
     explanation: 上下文驗證能在資訊被當作事實存入記憶前確認其正確性，防止錯誤資訊擴散。
     tags:
       - chap-m5-ch3
@@ -659,11 +659,11 @@ questions:
     text: 並行工具呼叫在什麼情況下「不適合」使用？
     type: multiple_choice
     options:
-      - 當多個工具之間沒有依賴關係時
-      - 當某個工具的輸出是另一個工具的輸入時
-      - 當所有工具可以同時執行時
       - 當需要減少 API 來回次數時
-    correct_index: 1
+      - 當多個工具之間沒有依賴關係時
+      - 當所有工具可以同時執行時
+      - 當某個工具的輸出是另一個工具的輸入時
+    correct_index: 3
     explanation: 工具間存在依賴關係時，必須序列執行，不能並行。
     tags:
       - chap-m5-ch3
@@ -677,8 +677,8 @@ questions:
     options:
       - 根據時間遠近調整記憶的檢索權重，越舊的權重越低
       - 每隔固定時間就刪除所有舊記憶
-      - 將舊記憶轉換為圖片儲存
       - 將舊記憶移動到離線備份裝置
+      - 將舊記憶轉換為圖片儲存
     correct_index: 0
     explanation: 衰減機制讓較新的記憶在檢索時有更高的優先權，確保代理人關注使用者最近的狀態。
     tags:
@@ -691,10 +691,10 @@ questions:
     text: 在「管線模式（Pipeline）」的技能組合中，資料的流動方式是？
     type: multiple_choice
     options:
-      - 多個技能同時執行，結果合併
-      - 一個技能的輸出自動成為下一個技能的輸入
-      - 技能之間完全獨立，不需要交換資料
       - 技能隨機選取執行順序
+      - 一個技能的輸出自動成為下一個技能的輸入
+      - 多個技能同時執行，結果合併
+      - 技能之間完全獨立，不需要交換資料
     correct_index: 1
     explanation: 管線模式中，技能依序執行，前者的輸出作為後者的輸入，形成處理鏈。
     tags:
@@ -707,11 +707,11 @@ questions:
     text: 上下文修剪（Context Pruning）與上下文摘要（Context Summarization）的主要差別是什麼？
     type: multiple_choice
     options:
+      - 修剪是自動的，摘要是手動的
       - 修剪移除衝突資訊，摘要壓縮冗長資訊
       - 兩者完全相同
       - 修剪只用在多代理系統，摘要只用在單代理
-      - 修剪是自動的，摘要是手動的
-    correct_index: 0
+    correct_index: 1
     explanation: 上下文修剪用於移除矛盾或過時的資訊，摘要用於將冗長資訊濃縮為精簡版本。
     tags:
       - chap-m5-ch3
@@ -723,11 +723,11 @@ questions:
     text: 提示詞無法完成「多步驟複雜任務」，主要原因為何？
     type: multiple_choice
     options:
-      - 提示詞的長度上限太短
-      - 多步驟任務的後續步驟依賴前面步驟的真實結果，提示詞無法提供即時回饋
       - 提示詞不支援中文字元
       - 多步驟任務只能由人類完成
-    correct_index: 1
+      - 多步驟任務的後續步驟依賴前面步驟的真實結果，提示詞無法提供即時回饋
+      - 提示詞的長度上限太短
+    correct_index: 2
     explanation: 多步驟任務需要基於真實的執行結果來決定後續步驟，靜態提示詞無法模擬這種動態過程。
     tags:
       - chap-m5-ch3
@@ -740,10 +740,10 @@ questions:
     type: multiple_choice
     options:
       - 工具的使用時機說明
-      - 工具的限制與注意事項
       - 工具的內部程式碼實作細節
+      - 工具的限制與注意事項
       - 工具的參數格式與型別
-    correct_index: 2
+    correct_index: 1
     explanation: 內部實作細節對 LLM 的使用決策沒有幫助，描述應聚焦在「能做什麼」和「何時使用」。
     tags:
       - chap-m5-ch3
@@ -755,11 +755,11 @@ questions:
     text: 當代理人的任務需要在數天的時間跨度內持續進行時，應該優先採用哪一種記憶策略？
     type: multiple_choice
     options:
+      - 僅使用短期記憶
       - 滑動視窗（保留最近幾輪）
       - 外部記憶庫（向量資料庫）
       - 不使用任何記憶
-      - 僅使用短期記憶
-    correct_index: 1
+    correct_index: 2
     explanation: 跨日任務需要可靠的長期記憶支援，外部記憶庫能持久保存資訊並支援語意檢索。
     tags:
       - chap-m5-ch3
@@ -771,11 +771,11 @@ questions:
     text: 「扇出模式（Fan-out）」的技能組合最適合下列哪一種情境？
     type: multiple_choice
     options:
-      - 需要依序執行 A→B→C 的資料處理管線
-      - 需要同時向三家供應商查詢報價後比較
       - 根據檔案類型選擇不同的解析器
       - 持續搜尋直到找到足夠的參考資料
-    correct_index: 1
+      - 需要同時向三家供應商查詢報價後比較
+      - 需要依序執行 A→B→C 的資料處理管線
+    correct_index: 2
     explanation: 扇出模式並行執行多個獨立技能，適合同時查詢多個來源再合併結果的場景。
     tags:
       - chap-m5-ch3
@@ -787,11 +787,11 @@ questions:
     text: 為什麼工具的參數定義中應該提供明確的邊界限制（如最大字數）？
     type: multiple_choice
     options:
-      - 為了符合資料庫的欄位長度限制
-      - 為了避免 LLM 給出極端值導致系統錯誤
       - 為了減少 API 呼叫的費用
       - 為了加快 LLM 的推理速度
-    correct_index: 1
+      - 為了符合資料庫的欄位長度限制
+      - 為了避免 LLM 給出極端值導致系統錯誤
+    correct_index: 3
     explanation: 明確的邊界限制能防止 LLM 生成不合理的大參數，確保工具執行的穩定性。
     tags:
       - chap-m5-ch3
@@ -803,11 +803,11 @@ questions:
     text: 實施「工具掛載管理」時，通常使用什麼技術來動態選擇相關工具？
     type: multiple_choice
     options:
-      - 隨機選擇工具
       - RAG（檢索增強生成）技術
-      - 按照工具名稱的字母順序排列
+      - 隨機選擇工具
       - 由使用者手動指定每次需要哪些工具
-    correct_index: 1
+      - 按照工具名稱的字母順序排列
+    correct_index: 0
     explanation: RAG 技術能根據任務內容檢索最相關的工具描述，減少不相關工具的干擾。
     tags:
       - chap-m5-ch3
@@ -819,11 +819,11 @@ questions:
     text: Agentic Skills 與傳統 API 的主要差異是什麼？
     type: multiple_choice
     options:
-      - Skills 是為 LLM 設計的，包含自然語言描述讓 LLM 理解用途
-      - Skills 不需要參數，API 一定需要參數
-      - Skills 只能在本機執行，API 只能在雲端執行
       - Skills 比 API 慢很多
-    correct_index: 0
+      - Skills 是為 LLM 設計的，包含自然語言描述讓 LLM 理解用途
+      - Skills 只能在本機執行，API 只能在雲端執行
+      - Skills 不需要參數，API 一定需要參數
+    correct_index: 1
     explanation: Agentic Skills 的設計考量了 LLM 的使用方式，透過自然語言描述讓 LLM 知道何時該用。
     tags:
       - chap-m5-ch3
@@ -835,11 +835,11 @@ questions:
     text: 語言模型無法直接執行外部函數，這個設計的主要安全考量是什麼？
     type: multiple_choice
     options:
-      - 為了減少模型的運算負擔
       - 確保所有操作都經過應用程式層的控制與驗證
+      - 為了減少模型的運算負擔
       - 因為語言模型沒有足夠的記憶體來執行程式
       - 因為工具函數只能由人類操作
-    correct_index: 1
+    correct_index: 0
     explanation: 透過應用程式層中介，可以對每個工具呼叫進行安全檢查與權限驗證，防止惡意執行。
     tags:
       - chap-m5-ch3
@@ -851,11 +851,11 @@ questions:
     text: 如果一個代理人需要同時記住「使用者喜歡簡短回答」和「使用者喜歡繁體中文」，這屬於哪種記憶類型？
     type: multiple_choice
     options:
-      - 工作記憶
-      - 長期記憶（使用者建模）
-      - 短期記憶
       - 語義記憶
-    correct_index: 1
+      - 短期記憶
+      - 長期記憶（使用者建模）
+      - 工作記憶
+    correct_index: 2
     explanation: 使用者的長期偏好應儲存在長期記憶中，跨任務持續使用。
     tags:
       - chap-m5-ch3
@@ -867,11 +867,11 @@ questions:
     text: 在「迴圈模式（Loop）」的技能組合中，決定何時停止重複的關鍵條件是什麼？
     type: multiple_choice
     options:
+      - 由使用者手動發出停止指令
       - 固定執行十次後自動停止
       - 達到預先設定的終止條件（如收集到足夠資料）
-      - 由使用者手動發出停止指令
       - 系統記憶體耗盡時自動停止
-    correct_index: 1
+    correct_index: 2
     explanation: 迴圈模式需要明確定義終止條件，避免代理人陷入無限循環。
     tags:
       - chap-m5-ch3
@@ -883,11 +883,11 @@ questions:
     text: 為什麼技能的冪等性（Idempotency）對代理人系統特別重要？
     type: multiple_choice
     options:
-      - 因為代理人經常需要重試失敗的步驟，冪等性確保重試安全
-      - 因為冪等性能讓工具執行的速度變快
       - 因為冪等性是資料庫的標準要求
+      - 因為冪等性能讓工具執行的速度變快
       - 因為冪等性能減少程式碼的行數
-    correct_index: 0
+      - 因為代理人經常需要重試失敗的步驟，冪等性確保重試安全
+    correct_index: 3
     explanation: 代理人可能在執行失敗後重試相同操作，冪等性確保重試不會產生非預期的副作用。
     tags:
       - chap-m5-ch3
@@ -899,11 +899,11 @@ questions:
     text: 當代理人同時接收到「幫我省錢」和「幫我訂頭等艙」兩個矛盾指令時，屬於哪一種上下文失效？
     type: multiple_choice
     options:
-      - 上下文中毒
       - 上下文衝突
       - 上下文分心
       - 上下文混淆
-    correct_index: 1
+      - 上下文中毒
+    correct_index: 0
     explanation: 兩個矛盾的指令同時存在於上下文中，導致代理人無法判斷真實意圖，屬於上下文衝突。
     tags:
       - chap-m5-ch3
@@ -916,10 +916,10 @@ questions:
     type: multiple_choice
     options:
       - 在系統提示詞中加入一段空白文字區域
-      - 讓模型先在不受使用者看見的區域中分析矛盾並得出結論
       - 建立一個實體的記事本檔案供模型寫入
       - 使用外部 API 來解決衝突
-    correct_index: 1
+      - 讓模型先在不受使用者看見的區域中分析矛盾並得出結論
+    correct_index: 3
     explanation: 暫存區是模型內部的一段「思考空間」，讓模型有機會先協調衝突資訊再給出最終答案。
     tags:
       - chap-m5-ch3

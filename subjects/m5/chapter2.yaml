@@ -5,11 +5,11 @@ questions:
     text: MCP (Model Context Protocol) 主要解決什麼問題？
     type: multiple_choice
     options:
-      - 提升大型語言模型的推理速度
-      - 解決 AI 模型與外部工具整合的碎片化問題，提供標準化協議
-      - 改善 LLM 的訓練效率
       - 降低 AI 模型的幻覺（Hallucination）問題
-    correct_index: 1
+      - 改善 LLM 的訓練效率
+      - 解決 AI 模型與外部工具整合的碎片化問題，提供標準化協議
+      - 提升大型語言模型的推理速度
+    correct_index: 2
     explanation: MCP 提供統一標準，讓 AI 系統與工具的整合從 M×N 個客製化整合簡化為 M+N 個標準實作，解決碎片化問題。
     tags:
       - chap-m5-ch2
@@ -21,11 +21,11 @@ questions:
     text: 在 MCP 架構中，「主機 (Host)」的主要職責是什麼？
     type: multiple_choice
     options:
-      - 直接儲存和管理工具的程式碼邏輯
       - 管理 MCP 客戶端生命週期、協調 LLM 與伺服器通訊，並執行授權決策
-      - 只負責將使用者輸入轉換為 JSON 格式
       - 充當 LLM 和使用者之間的翻譯層
-    correct_index: 1
+      - 只負責將使用者輸入轉換為 JSON 格式
+      - 直接儲存和管理工具的程式碼邏輯
+    correct_index: 0
     explanation: 主機是整個 MCP 系統的協調中心，負責管理客戶端、執行安全策略，以及在 LLM 和 MCP 伺服器之間傳遞訊息。
     tags:
       - chap-m5-ch2
@@ -37,11 +37,11 @@ questions:
     text: 在 MCP 架構中，一個「客戶端 (Client)」維護的連線關係是？
     type: multiple_choice
     options:
-      - 一個客戶端可同時連線多個 MCP 伺服器
       - 每個客戶端維護與單一 MCP 伺服器的一對一連線
-      - 客戶端直接與使用者連線，不與伺服器通訊
       - 多個客戶端共享同一個 MCP 伺服器連線
-    correct_index: 1
+      - 客戶端直接與使用者連線，不與伺服器通訊
+      - 一個客戶端可同時連線多個 MCP 伺服器
+    correct_index: 0
     explanation: MCP 架構設計為每個客戶端維護與單一 MCP 伺服器的連線，主機可以建立多個客戶端以同時連線不同的伺服器。
     tags:
       - chap-m5-ch2
@@ -55,8 +55,8 @@ questions:
     options:
       - 資源是 LLM 可讀取的資料，工具是 LLM 可執行的操作
       - 資源比工具更安全，不需要使用者授權
-      - 工具只能回傳文字，資源可回傳二進位資料
       - 資源和工具功能完全相同，只是命名不同
+      - 工具只能回傳文字，資源可回傳二進位資料
     correct_index: 0
     explanation: 資源（Resources）代表可讀取的資料（如檔案、資料庫記錄），透過 URI 定位；工具（Tools）代表可執行的操作（如搜尋、計算），由
       LLM 主動呼叫。
@@ -70,10 +70,10 @@ questions:
     text: MCP 的「stdio 傳輸」與「HTTP + SSE 傳輸」最主要的適用場景差異是什麼？
     type: multiple_choice
     options:
-      - stdio 適合遠端伺服器，HTTP + SSE 適合本地程式
-      - stdio 適合本地部署（透過子程序），HTTP + SSE 適合遠端/雲端部署
       - stdio 速度更快但不安全，HTTP + SSE 較慢但安全
+      - stdio 適合本地部署（透過子程序），HTTP + SSE 適合遠端/雲端部署
       - 兩者完全相同，只是語法不同
+      - stdio 適合遠端伺服器，HTTP + SSE 適合本地程式
     correct_index: 1
     explanation: stdio 傳輸透過標準輸入/輸出管道與本地子程序通訊，適合本地安全部署；HTTP + SSE 支援跨網路存取，適合雲端或遠端 MCP
       伺服器。
@@ -88,10 +88,10 @@ questions:
     type: multiple_choice
     options:
       - 用於顯示給最終使用者看的說明文字
-      - LLM 根據此描述決定何時以及如何呼叫此工具
       - 用於產生 API 文件
       - 定義工具的輸入參數類型
-    correct_index: 1
+      - LLM 根據此描述決定何時以及如何呼叫此工具
+    correct_index: 3
     explanation: 工具的描述 (description) 是 LLM 判斷在什麼情況下應呼叫此工具的關鍵依據，清晰的描述能顯著提升工具被正確選用的機率。
     tags:
       - chap-m5-ch2
@@ -103,11 +103,11 @@ questions:
     text: 依照 MCP 安全設計，什麼是防範「提示注入攻擊 (Prompt Injection)」的最佳實踐？
     type: multiple_choice
     options:
-      - 禁止 LLM 呼叫任何外部工具
       - MCP 伺服器應對所有來自 LLM 的輸入進行驗證，不信任任何未經驗證的內容
-      - 只使用官方提供的 MCP 伺服器
       - 將所有工具呼叫結果加密後再回傳
-    correct_index: 1
+      - 禁止 LLM 呼叫任何外部工具
+      - 只使用官方提供的 MCP 伺服器
+    correct_index: 0
     explanation: 提示注入攻擊可能透過惡意資料偽裝成合法指令。MCP 伺服器應對輸入進行嚴格驗證，避免將未受信任的資料直接用於執行系統命令或資料庫查詢。
     tags:
       - chap-m5-ch2
@@ -119,11 +119,11 @@ questions:
     text: 在 AI 代理人的運作中，「思考-行動-觀察循環 (Thought-Action-Observation Cycle)」又被稱為什麼？
     type: multiple_choice
     options:
-      - MCP 模式
-      - Reflexion 模式
       - ReAct 模式
+      - Reflexion 模式
+      - MCP 模式
       - RAG 模式
-    correct_index: 2
+    correct_index: 0
     explanation: 思考-行動-觀察循環也被稱為 ReAct (Reason + Act) 模式，是代理人進行內部推理並透過工具與環境互動的核心運作方式。
     tags:
       - chap-m5-ch2
@@ -135,11 +135,11 @@ questions:
     text: 在監控 AI 代理人的可觀測性時，通常會透過何種技術來捕獲運作時的追蹤 (Traces)、日誌與指標？
     type: multiple_choice
     options:
+      - 向量資料庫檢索
       - 提示詞工程 (Prompt Engineering)
       - 儀器化 (Instrumentation)
-      - 向量資料庫檢索
       - 記憶壓縮 (Memory Compression)
-    correct_index: 1
+    correct_index: 2
     explanation: 儀器化 (Instrumentation) 是使用系統（例如 OpenTelemetry）來捕獲代理人運作時的追蹤、日誌與指標，藉此擺脫「黑箱」行為。
     tags:
       - chap-m5-ch2
@@ -152,10 +152,10 @@ questions:
     type: multiple_choice
     options:
       - 訓練最新大型語言模型的整體運算成本過於高昂
-      - AI 系統與各種外部資料源整合時的嚴重碎片化問題
-      - 本地端執行伺服器時的記憶體管理與分配效率太低
       - 開發者在設計提示詞工程時面臨的語法難度過於複雜
-    correct_index: 1
+      - 本地端執行伺服器時的記憶體管理與分配效率太低
+      - AI 系統與各種外部資料源整合時的嚴重碎片化問題
+    correct_index: 3
     explanation: 隨著工具與資料源激增，MCP 提供標準化協議來消弭 M×N 的客製化整合噩夢。
     tags:
       - chap-m5-ch2
@@ -166,11 +166,11 @@ questions:
     text: 在 MCP 架構中，主要負責管理安全策略與使用者授權決策的元件是？
     type: multiple_choice
     options:
-      - 直接與伺服器溝通的 MCP 客戶端應用程式
-      - 統籌管理與協調的 MCP 主機 (Host) 系統
-      - 提供具體工具與資源的外部 MCP 伺服器
       - 負責執行所有推論工作的大型語言模型本身
-    correct_index: 1
+      - 直接與伺服器溝通的 MCP 客戶端應用程式
+      - 提供具體工具與資源的外部 MCP 伺服器
+      - 統籌管理與協調的 MCP 主機 (Host) 系統
+    correct_index: 3
     explanation: MCP 主機 (Host) 控制整個系統的生命週期，並確保使用者在呼叫高風險工具時能進行審核。
     tags:
       - chap-m5-ch2
@@ -181,11 +181,11 @@ questions:
     text: 一個標準的 MCP 伺服器可以同時對外提供哪些核心功能元件？
     type: multiple_choice
     options:
-      - 提供模型動態上下文的工具、資源與提示範本
       - 模型本身的神經網路權重與大量的歷史訓練資料
-      - 針對終端使用者設計的圖形介面與豐富的前端佈景
       - 底層運作所需的網路伺服器與高效能關聯式資料庫
-    correct_index: 0
+      - 提供模型動態上下文的工具、資源與提示範本
+      - 針對終端使用者設計的圖形介面與豐富的前端佈景
+    correct_index: 2
     explanation: MCP 伺服器主要透過暴露工具、資源和提示範本來為代理人擴展能力。
     tags:
       - chap-m5-ch2
@@ -196,11 +196,11 @@ questions:
     text: MCP 中的「Prompts (提示範本)」所扮演的主要角色是什麼？
     type: multiple_choice
     options:
-      - 強制模型遵守所有內建的安全規範與禁止事項
-      - 提供標準化的任務起始上下文與可重用的對話模板
-      - 自動記錄使用者過去所輸入過的所有指令與日誌
       - 在使用者輸入過慢時自動幫忙補齊尚未打完的文字
-    correct_index: 1
+      - 自動記錄使用者過去所輸入過的所有指令與日誌
+      - 提供標準化的任務起始上下文與可重用的對話模板
+      - 強制模型遵守所有內建的安全規範與禁止事項
+    correct_index: 2
     explanation: 提示範本允許伺服器提供預先定義好的工作流程起點，幫助代理人快速進入狀況。
     tags:
       - chap-m5-ch2
@@ -211,10 +211,10 @@ questions:
     text: 當我們在本地電腦開發與部署 MCP 伺服器時，最常使用的傳輸機制是？
     type: multiple_choice
     options:
-      - 適合跨網路存取的 HTTP + SSE 遠端連線傳輸機制
-      - 透過本地子程序建立的 stdio (標準輸入輸出) 管道
       - 用於即時通訊服務的 WebSockets 雙向資料傳輸協定
+      - 透過本地子程序建立的 stdio (標準輸入輸出) 管道
       - 專為微服務架構設計的 gRPC 遠端程序高速呼叫協定
+      - 適合跨網路存取的 HTTP + SSE 遠端連線傳輸機制
     correct_index: 1
     explanation: stdio 傳輸方式安全性高且非常適合本地環境，因為它依賴本機程序的執行權限。
     tags:
@@ -226,11 +226,11 @@ questions:
     text: MCP 架構如何顯著提升 AI 代理人的「工具發現」能力？
     type: multiple_choice
     options:
-      - 讓代理人透過自動爬蟲不斷搜尋網路上的可用 API 工具
       - 讓伺服器能動態提供可用工具清單與詳細的使用參數說明
       - 預先將全球所有的工具特徵寫死在大型語言模型的權重中
       - 強迫使用者在使用前手動輸入所有工具的底層實作原始碼
-    correct_index: 1
+      - 讓代理人透過自動爬蟲不斷搜尋網路上的可用 API 工具
+    correct_index: 0
     explanation: MCP 客戶端能直接向伺服器查詢可用清單，代理人因此能動態發掘並使用新工具。
     tags:
       - chap-m5-ch2
@@ -242,10 +242,10 @@ questions:
     type: multiple_choice
     options:
       - 為了節省使用者電腦上寶貴的硬碟與記憶體儲存空間
+      - 為了避免被作業系統內建的防毒軟體誤判為惡意程式
       - 為了專注暴露特定領域的能力並遵循單一職責原則
       - 為了讓大型語言模型可以直接下載並分析其內部架構
-      - 為了避免被作業系統內建的防毒軟體誤判為惡意程式
-    correct_index: 1
+    correct_index: 2
     explanation: 輕量級的伺服器專注於做好一件事情，能提升系統整體的穩定度與易維護性。
     tags:
       - chap-m5-ch2
@@ -256,11 +256,11 @@ questions:
     text: 在系統可觀測性 (Observability) 領域中，「Span」代表什麼意義？
     type: multiple_choice
     options:
-      - 代理人處理完整個使用者對話任務的總計花費時間
       - 系統內單一操作或函數執行的具體起始與結束時間區間
       - 大型語言模型在一次生成過程中所輸出的總字數統計
       - 系統伺服器在執行複雜推論時記憶體使用的最高峰值
-    correct_index: 1
+      - 代理人處理完整個使用者對話任務的總計花費時間
+    correct_index: 0
     explanation: Span 用來標記與測量特定操作的持續時間，幫助開發者定位效能瓶頸。
     tags:
       - chap-m5-ch2
@@ -271,11 +271,11 @@ questions:
     text: 為 AI 代理人實施儀器化 (Instrumentation) 的最主要好處是什麼？
     type: multiple_choice
     options:
-      - 能大幅度降低呼叫各大雲端模型 API 的整體使用成本
       - 讓代理人的內部決策過程與工具呼叫狀況變得完全透明化
+      - 能大幅度降低呼叫各大雲端模型 API 的整體使用成本
       - 能夠自動偵測並完全修正大型語言模型產生的所有錯誤
       - 直接取代傳統的軟體單元測試與人工驗收測試標準流程
-    correct_index: 1
+    correct_index: 0
     explanation: 透過追蹤系統運作，開發者能洞察代理人的思考邏輯，使「黑箱」模型具備可解釋性。
     tags:
       - chap-m5-ch2
@@ -286,10 +286,10 @@ questions:
     text: 在處理多個工具呼叫時，系統日誌常常變得難以閱讀，引入可觀測性工具可以如何解決？
     type: multiple_choice
     options:
-      - 將所有的系統日誌全數刪除以節省開發人員的閱讀時間
-      - 透過結構化的追蹤 (Traces) 將日誌與特定的操作上下文綁定
-      - 自動把所有日誌翻譯成更易讀的另一種人類自然語言
       - 強迫模型在每次操作後都必須用語音播報執行結果
+      - 透過結構化的追蹤 (Traces) 將日誌與特定的操作上下文綁定
+      - 將所有的系統日誌全數刪除以節省開發人員的閱讀時間
+      - 自動把所有日誌翻譯成更易讀的另一種人類自然語言
     correct_index: 1
     explanation: 結構化追蹤可以將錯綜複雜的系統日誌關聯到特定的請求上，大幅簡化除錯難度。
     tags:
@@ -301,10 +301,10 @@ questions:
     text: 當代理人發生非預期行為時，哪一種觀測工具最能有效幫助開發者除錯？
     type: multiple_choice
     options:
-      - 直接匯出並分析大型語言模型的內部神經網路權重分佈圖
-      - 透過代理人的追蹤日誌 (Traces) 還原當時的決策與環境上下文
-      - 檢查使用者的瀏覽器搜尋記錄以推測其真實的問題意圖
       - 監控伺服器作業系統的 CPU 佔用率與網路頻寬使用情況
+      - 透過代理人的追蹤日誌 (Traces) 還原當時的決策與環境上下文
+      - 直接匯出並分析大型語言模型的內部神經網路權重分佈圖
+      - 檢查使用者的瀏覽器搜尋記錄以推測其真實的問題意圖
     correct_index: 1
     explanation: 追蹤日誌能清晰重現代理人收到的提示詞、工具回傳結果與其當時的決策過程。
     tags:
@@ -316,11 +316,11 @@ questions:
     text: 在標準的 MCP 系統架構設計中，Client 和 Server 之間的連線關係是？
     type: multiple_choice
     options:
-      - 客戶端將訊息向所有伺服器廣播的一對多廣播模式
-      - 每個客戶端應用程式維護與單一伺服器的一對一綁定連線
       - 多個客戶端共享同一個伺服器狀態的多對多無狀態連線
       - 多個伺服器輪流服務一個客戶端的多對一輪詢連線模式
-    correct_index: 1
+      - 客戶端將訊息向所有伺服器廣播的一對多廣播模式
+      - 每個客戶端應用程式維護與單一伺服器的一對一綁定連線
+    correct_index: 3
     explanation: 一對一的連線設計簡化了狀態管理，讓客戶端與伺服器間的溝通更加清晰可靠。
     tags:
       - chap-m5-ch2
@@ -331,11 +331,11 @@ questions:
     text: 面對來自大型語言模型 (LLM) 的工具呼叫請求，MCP 伺服器應當採取什麼安全態度？
     type: multiple_choice
     options:
-      - 百分之百信任所有來自知名 LLM 提供商的工具呼叫參數
       - 伺服器端必須對所有傳入的參數進行嚴格的驗證與邊界檢查
-      - 將所有可能被呼叫的工具設為公開存取以確保最高相容性
+      - 百分之百信任所有來自知名 LLM 提供商的工具呼叫參數
       - 為了節省運算效能，盡量停用伺服器端所有的日誌記錄功能
-    correct_index: 1
+      - 將所有可能被呼叫的工具設為公開存取以確保最高相容性
+    correct_index: 0
     explanation: 為了防止提示詞注入與幻覺帶來的危害，伺服器絕不可盲目信任 LLM 傳來的資料。
     tags:
       - chap-m5-ch2
@@ -347,10 +347,10 @@ questions:
     type: multiple_choice
     options:
       - 透過強制要求世界上所有的模型都必須使用完全相同的內部權重
+      - 透過設計一個專屬的私有通訊協定讓模型之間可以直接互相通訊
       - 透過提供一套標準化的通用介面來描述與呼叫外部工具與資源
       - 透過將所有競爭對手的模型統一部署在同一台巨大的實體伺服器
-      - 透過設計一個專屬的私有通訊協定讓模型之間可以直接互相通訊
-    correct_index: 1
+    correct_index: 2
     explanation: 標準化的介面讓開發者不需修改整合程式碼，就能無痛切換底層使用的語言模型。
     tags:
       - chap-m5-ch2
@@ -376,11 +376,11 @@ questions:
     text: 在系統可觀測性資料中的「Event (事件)」，通常被用來記錄什麼樣的資訊？
     type: multiple_choice
     options:
-      - 整個應用程式啟動到結束所持續數分鐘的長時間運作週期
       - 系統在某個特定時間點所發生的重要動作、警告或狀態變化
       - 代理人模型在完成訓練後的完整神經網路權重與參數清單
       - 執行該次對話任務時伺服器硬碟剩餘可用空間的動態變化
-    correct_index: 1
+      - 整個應用程式啟動到結束所持續數分鐘的長時間運作週期
+    correct_index: 0
     explanation: 事件代表瞬間發生的狀態標記，例如「使用者點擊同意」、「API 連線失敗」等。
     tags:
       - chap-m5-ch2
@@ -392,10 +392,10 @@ questions:
     type: multiple_choice
     options:
       - 保證使用該協議的所有系統絕對不會被任何惡意駭客入侵
-      - 促進全球開發者社群共同建立豐富且相容的工具伺服器生態
       - 讓各大企業開發的高階模型可以完全免費且無限制地被使用
+      - 促進全球開發者社群共同建立豐富且相容的工具伺服器生態
       - 完全免除軟體開發者在維護與更新伺服器程式碼上的任何責任
-    correct_index: 1
+    correct_index: 2
     explanation: 開源標準打破了廠商鎖定，吸引更多開發者貢獻相容於 MCP 的通用工具與服務。
     tags:
       - chap-m5-ch2
@@ -406,10 +406,10 @@ questions:
     text: 如果你的 MCP 伺服器需要提供一個「讓代理人讀取本地設定檔」的功能，這個功能應該被定義為？
     type: multiple_choice
     options:
-      - MCP Tool (工具)
+      - MCP Client (客戶端)
       - MCP Resource (資源)
       - MCP Prompt (提示範本)
-      - MCP Client (客戶端)
+      - MCP Tool (工具)
     correct_index: 1
     explanation: 讀取靜態檔案且不改變系統狀態的操作，最適合使用 MCP Resource 來實作。
     tags:
@@ -422,9 +422,9 @@ questions:
     type: multiple_choice
     options:
       - MCP Tool (工具)
+      - MCP Client (客戶端)
       - MCP Resource (資源)
       - MCP Prompt (提示範本)
-      - MCP Client (客戶端)
     correct_index: 0
     explanation: 發送電子郵件會改變外部環境的狀態（產生副作用），必須實作為 MCP Tool。
     tags:
@@ -436,9 +436,9 @@ questions:
     text: 在代理人的「思考-行動-觀察循環」中，讓「行動」階段得以具體落實的關鍵技術通常是？
     type: multiple_choice
     options:
-      - 依賴大型語言模型內部的自我反思與情緒模擬機制
-      - 呼叫由 MCP 或其他類似協議所定義的標準化外部工具
       - 讀取並重新分析使用者過去數個月來的所有對話歷史
+      - 呼叫由 MCP 或其他類似協議所定義的標準化外部工具
+      - 依賴大型語言模型內部的自我反思與情緒模擬機制
       - 深入分析本地作業系統內部的 CPU 與記憶體效能瓶頸
     correct_index: 1
     explanation: 行動階段需要透過工具呼叫的機制，將模型的決策轉化為具體的外部系統操作。
@@ -451,10 +451,10 @@ questions:
     text: MCP 與傳統的客製化 API 整合相比，最大的優勢是什麼？
     type: multiple_choice
     options:
-      - MCP 的執行速度永遠比客製化 API 更快
-      - MCP 提供標準化介面，讓整合從 M×N 簡化為 M+N
-      - MCP 不需要任何程式碼即可完成工具整合
       - MCP 只能用於 Claude 模型
+      - MCP 提供標準化介面，讓整合從 M×N 簡化為 M+N
+      - MCP 的執行速度永遠比客製化 API 更快
+      - MCP 不需要任何程式碼即可完成工具整合
     correct_index: 1
     explanation: MCP 的標準化設計大幅降低了整合複雜度，從乘法級的客製化整合變為加法級的標準實作。
     tags:
@@ -467,11 +467,11 @@ questions:
     text: 在 MCP 架構中，如果一個應用程式需要同時連接資料庫和檔案系統，它需要建立多少個客戶端？
     type: multiple_choice
     options:
-      - 1 個客戶端同時連線兩個伺服器
-      - 2 個客戶端，各連線一個伺服器
       - 不需要客戶端，直接由主機連線
       - 取決於 LLM 模型的種類
-    correct_index: 1
+      - 1 個客戶端同時連線兩個伺服器
+      - 2 個客戶端，各連線一個伺服器
+    correct_index: 3
     explanation: 每個 MCP 客戶端僅維護與單一伺服器的一對一連線，因此需要為每個伺服器建立獨立的客戶端。
     tags:
       - chap-m5-ch2
@@ -483,11 +483,11 @@ questions:
     text: 下列哪一項是 MCP 中「工具（Tools）」的典型範例？
     type: multiple_choice
     options:
-      - 讀取伺服器上的設定檔內容
       - 發送電子郵件的函數
       - 顯示系統版本的靜態資訊
+      - 讀取伺服器上的設定檔內容
       - 預先定義的對話起始模板
-    correct_index: 1
+    correct_index: 0
     explanation: 工具是可由 LLM 主動呼叫的操作，會產生副作用（如發送郵件），而非單純讀取資料。
     tags:
       - chap-m5-ch2
@@ -500,10 +500,10 @@ questions:
     type: multiple_choice
     options:
       - 開發者在本機筆電上測試 MCP 伺服器
-      - MCP 伺服器部署在雲端需要跨網路存取
       - 使用者的電腦完全沒有網路連線
+      - MCP 伺服器部署在雲端需要跨網路存取
       - 伺服器需要直接讀取本機檔案系統
-    correct_index: 1
+    correct_index: 2
     explanation: HTTP + SSE 支援跨網路遠端通訊，適合部署在雲端的伺服器。
     tags:
       - chap-m5-ch2
@@ -515,9 +515,9 @@ questions:
     text: 在 MCP 的安全設計中，使用者何時會被要求授權工具操作？
     type: multiple_choice
     options:
-      - 每次工具呼叫都需要使用者手動授權
-      - 只有高風險操作才需要使用者授權，一般操作可自動執行
       - 使用者永遠不需要授權，完全信任 LLM
+      - 只有高風險操作才需要使用者授權，一般操作可自動執行
+      - 每次工具呼叫都需要使用者手動授權
       - 授權與否完全由 MCP 伺服器自行決定
     correct_index: 1
     explanation: MCP 設計讓使用者掌握控制權，高風險操作需要授權，一般操作可設為自動允許。
@@ -533,8 +533,8 @@ questions:
     options:
       - 多個 Spans 組合成一個 Trace
       - 多個 Events 組合成一個 Span
-      - 多個 Metrics 組合成一個 Trace
       - 多個 Traces 組合成一個 Span
+      - 多個 Metrics 組合成一個 Trace
     correct_index: 0
     explanation: Trace 由多個 Span 組成，每個 Span 代表系統中的一個操作區間。
     tags:
@@ -547,10 +547,10 @@ questions:
     text: 使用 FastMCP 定義工具時，為什麼參數的型別註記（type hint）很重要？
     type: multiple_choice
     options:
-      - 型別註記會影響 LLM 選擇工具的意願
+      - 型別註記會決定工具呼叫的網路傳輸協定
       - 型別註記會自動轉換為 JSON Schema，幫助 LLM 理解參數格式
       - 型別註記只對人類閱讀有幫助，對 LLM 沒有影響
-      - 型別註記會決定工具呼叫的網路傳輸協定
+      - 型別註記會影響 LLM 選擇工具的意願
     correct_index: 1
     explanation: FastMCP 會根據型別註記自動生成 JSON Schema 描述，讓 LLM 知道參數的格式與限制。
     tags:
@@ -564,9 +564,9 @@ questions:
     type: multiple_choice
     options:
       - Model（模型）
-      - Message（訊息）
       - Machine（機器）
       - Multi（多重）
+      - Message（訊息）
     correct_index: 0
     explanation: MCP 全稱為 Model Context Protocol（模型上下文協議），M 代表 Model。
     tags:
@@ -580,10 +580,10 @@ questions:
     type: multiple_choice
     options:
       - 整個主機都會跟著崩潰
-      - 只有連線到該伺服器的那個客戶端受影響，其他正常運作
-      - 所有已連線的伺服器都會一起崩潰
       - 系統會自動重新啟動整個主機
-    correct_index: 1
+      - 所有已連線的伺服器都會一起崩潰
+      - 只有連線到該伺服器的那個客戶端受影響，其他正常運作
+    correct_index: 3
     explanation: 一對一的客戶端-伺服器設計確保了故障隔離，一個伺服器崩潰不會影響其他連線。
     tags:
       - chap-m5-ch2
@@ -595,11 +595,11 @@ questions:
     text: MCP 的「Prompts（提示範本）」與一般的系統提示詞有何不同？
     type: multiple_choice
     options:
-      - Prompts 是由伺服器動態提供的模板，而非主機預先設定的靜態提示
-      - 兩者完全相同，只是 MCP 重新命名
-      - Prompts 只能用於除錯目的，不能用在正式環境
       - Prompts 只能由使用者手動撰寫，不能由伺服器提供
-    correct_index: 0
+      - 兩者完全相同，只是 MCP 重新命名
+      - Prompts 是由伺服器動態提供的模板，而非主機預先設定的靜態提示
+      - Prompts 只能用於除錯目的，不能用在正式環境
+    correct_index: 2
     explanation: MCP Prompts 是伺服器端提供的動態模板，讓主機能根據任務需求載入不同的起始設定。
     tags:
       - chap-m5-ch2
@@ -611,11 +611,11 @@ questions:
     text: stdio 傳輸方式的主要安全優勢是什麼？
     type: multiple_choice
     options:
-      - stdio 會自動加密所有傳輸的資料
       - stdio 只在本機子程序間通訊，不暴露網路埠
-      - stdio 傳輸速度比網路傳輸快十倍
+      - stdio 會自動加密所有傳輸的資料
       - stdio 支援任何程式語言開發的伺服器
-    correct_index: 1
+      - stdio 傳輸速度比網路傳輸快十倍
+    correct_index: 0
     explanation: stdio 透過標準輸入輸出與本地子程序通訊，不需要開放任何網路埠，減少攻擊面。
     tags:
       - chap-m5-ch2
@@ -627,11 +627,11 @@ questions:
     text: 在 MCP 伺服器中，為什麼工具的描述（description）比工具的名稱更重要？
     type: multiple_choice
     options:
-      - 因為 LLM 主要根據 description 判斷何時使用工具，名稱只是識別
       - 因為 description 的長度會影響工具呼叫的優先權
       - 因為名稱對 LLM 完全沒有意義
+      - 因為 LLM 主要根據 description 判斷何時使用工具，名稱只是識別
       - 因為 description 決定了工具的回傳格式
-    correct_index: 0
+    correct_index: 2
     explanation: LLM 透過自然語言理解來決定工具使用時機，清晰描述能大幅提升工具的選用準確率。
     tags:
       - chap-m5-ch2
@@ -643,11 +643,11 @@ questions:
     text: 一個完整的「思考-行動-觀察」循環中，若觀察結果顯示工具呼叫失敗，代理人應如何應對？
     type: multiple_choice
     options:
-      - 忽略失敗並繼續下一步行動
-      - 根據失敗原因重新思考並嘗試替代方案
       - 直接終止整個任務並回報錯誤
       - 重複相同的行動直到成功
-    correct_index: 1
+      - 根據失敗原因重新思考並嘗試替代方案
+      - 忽略失敗並繼續下一步行動
+    correct_index: 2
     explanation: 良好的代理人在工具失敗後，會根據錯誤訊息調整策略並嘗試替代方法。
     tags:
       - chap-m5-ch2
@@ -659,11 +659,11 @@ questions:
     text: MCP 如何幫助 AI 系統「發現」新的工具？
     type: multiple_choice
     options:
-      - MCP 客戶端會定期掃描網路上的所有可用服務
       - MCP 伺服器可動態提供可用工具清單與參數定義
-      - LLM 會自動從訓練資料中學習新工具的使用方式
+      - MCP 客戶端會定期掃描網路上的所有可用服務
       - 使用者必須手動在設定檔中描述每個工具的細節
-    correct_index: 1
+      - LLM 會自動從訓練資料中學習新工具的使用方式
+    correct_index: 0
     explanation: MCP 伺服器會向客戶端揭露可用工具清單與 JSON Schema 參數定義。
     tags:
       - chap-m5-ch2
@@ -675,10 +675,10 @@ questions:
     text: 在使用 Langfuse 或 Arize Phoenix 等可觀測性工具時，主要獲得的幫助是什麼？
     type: multiple_choice
     options:
-      - 自動修正代理人的錯誤決策
-      - 視覺化代理人的效能指標與決策過程
-      - 直接降低 LLM API 的呼叫費用
       - 自動生成代理人的程式碼
+      - 視覺化代理人的效能指標與決策過程
+      - 自動修正代理人的錯誤決策
+      - 直接降低 LLM API 的呼叫費用
     correct_index: 1
     explanation: 可觀測性工具將代理人的運作過程視覺化，讓開發者能直觀地了解其行為與效能。
     tags:
@@ -691,11 +691,11 @@ questions:
     text: 一個天氣查詢用的 MCP 伺服器應該擁有什麼權限？
     type: multiple_choice
     options:
+      - 可以存取所有使用者的個人資料
       - 擁有完整的檔案系統讀寫權限
       - 只需要呼叫天氣 API 與回傳結果的權限
       - 擁有管理員權限以確保穩定性
-      - 可以存取所有使用者的個人資料
-    correct_index: 1
+    correct_index: 2
     explanation: 遵循最小授權原則，天氣伺服器只需要呼叫天氣 API 的能力，不應擁有其他權限。
     tags:
       - chap-m5-ch2
@@ -707,11 +707,11 @@ questions:
     text: 在 MCP 術語中，「主機（Host）」與「客戶端（Client）」的關係類似於什麼？
     type: multiple_choice
     options:
-      - 主機是作業系統，客戶端是應用程式
-      - 主機是整體應用程式，客戶端是內部的通訊模組
-      - 主機是硬體，客戶端是軟體
       - 主機是伺服器，客戶端是使用者
-    correct_index: 1
+      - 主機是硬體，客戶端是軟體
+      - 主機是整體應用程式，客戶端是內部的通訊模組
+      - 主機是作業系統，客戶端是應用程式
+    correct_index: 2
     explanation: 主機是使用者直接互動的應用程式（如 Claude Desktop），客戶端是主機內部負責與單一伺服器通訊的模組。
     tags:
       - chap-m5-ch2
@@ -724,10 +724,10 @@ questions:
     type: multiple_choice
     options:
       - 一個負責發送 Slack 通知的函數
-      - 一個位於 file:///reports/summary.pdf 的檔案
-      - 一個用於程式碼審查的對話範本
       - 一個計算匯率的數學運算
-    correct_index: 1
+      - 一個用於程式碼審查的對話範本
+      - 一個位於 file:///reports/summary.pdf 的檔案
+    correct_index: 3
     explanation: 資源是可讀取的靜態資料，以 URI 定位。檔案屬於典型的資源。
     tags:
       - chap-m5-ch2
@@ -739,10 +739,10 @@ questions:
     text: stdio 傳輸方式在何種情況下可能不適合使用？
     type: multiple_choice
     options:
-      - 當開發者在本地開發與測試時
-      - 當 MCP 伺服器需要被多個遠端使用者共享時
-      - 當伺服器需要讀取本地檔案時
       - 當主機和伺服器在同一台電腦上時
+      - 當 MCP 伺服器需要被多個遠端使用者共享時
+      - 當開發者在本地開發與測試時
+      - 當伺服器需要讀取本地檔案時
     correct_index: 1
     explanation: stdio 僅限本機通訊，當伺服器需要被遠端存取時應改用 HTTP + SSE。
     tags:
@@ -755,11 +755,11 @@ questions:
     text: 在 Claude Desktop 中設定 MCP 伺服器時，使用者需要提供哪些資訊？
     type: multiple_choice
     options:
-      - 工具的名稱、啟動方式、以及存取範圍
-      - LLM 模型的 API 金鑰
-      - MCP 協議的版本號與原始碼
       - 使用者的電子郵件與密碼
-    correct_index: 0
+      - 工具的名稱、啟動方式、以及存取範圍
+      - MCP 協議的版本號與原始碼
+      - LLM 模型的 API 金鑰
+    correct_index: 1
     explanation: 設定 MCP 伺服器需要指定工具名稱、如何啟動該伺服器程式，以及允許存取的資源範圍。
     tags:
       - chap-m5-ch2
@@ -771,11 +771,11 @@ questions:
     text: MCP 誕生之前，開發者整合 AI 與工具的典型困境為何？
     type: multiple_choice
     options:
-      - 工具數量太少，無法滿足需求
-      - 每個 AI 與每個工具都需要客製化整合，維護成本極高
       - 所有工具都需要收費，開源方案很少
       - 語言模型完全無法理解任何工具的用途
-    correct_index: 1
+      - 每個 AI 與每個工具都需要客製化整合，維護成本極高
+      - 工具數量太少，無法滿足需求
+    correct_index: 2
     explanation: 在 MCP 之前，每對 AI-工具都需要單獨整合，形成難以維護的 M×N 整合矩陣。
     tags:
       - chap-m5-ch2
@@ -787,11 +787,11 @@ questions:
     text: 「離線評估（Offline Evaluation）」與「線上評估（Online Evaluation）」的主要差別為何？
     type: multiple_choice
     options:
-      - 離線評估使用測試資料集，線上評估收集真實使用者回饋
       - 離線評估只能在夜間執行，線上評估在白天執行
-      - 離線評估不需要 LLM，線上評估需要 LLM
       - 離線評估由 AI 執行，線上評估由人類執行
-    correct_index: 0
+      - 離線評估不需要 LLM，線上評估需要 LLM
+      - 離線評估使用測試資料集，線上評估收集真實使用者回饋
+    correct_index: 3
     explanation: 離線評估使用固定基準測試代理人，線上評估則從真實使用者互動中收集效能資料。
     tags:
       - chap-m5-ch2
@@ -804,10 +804,10 @@ questions:
     type: multiple_choice
     options:
       - 攻擊者透過修改 MCP 協議的原始碼入侵系統
-      - 惡意資料偽裝成正常內容混入上下文，誘導 LLM 呼叫非預期工具
       - 攻擊者直接刪除伺服器上的工具定義檔
       - 攻擊者透過阻塞網路連線來阻止 MCP 通訊
-    correct_index: 1
+      - 惡意資料偽裝成正常內容混入上下文，誘導 LLM 呼叫非預期工具
+    correct_index: 3
     explanation: 提示注入攻擊將惡意指令藏在看似正常的資料中，讓 LLM 誤以為是合法指令而執行。
     tags:
       - chap-m5-ch2
@@ -819,11 +819,11 @@ questions:
     text: 一個設計良好的 MCP 伺服器應該遵循什麼原則？
     type: multiple_choice
     options:
-      - 一個伺服器提供所有可能的功能以最大化便利性
       - 專注單一職責，只提供特定領域的能力
+      - 一個伺服器提供所有可能的功能以最大化便利性
       - 伺服器應該包含完整的 LLM 推理能力
       - 伺服器不應該對外暴露任何功能描述
-    correct_index: 1
+    correct_index: 0
     explanation: 遵循單一職責原則，每個 MCP 伺服器專注於一個特定領域（如天氣、資料庫），便於維護與組合。
     tags:
       - chap-m5-ch2
@@ -835,11 +835,11 @@ questions:
     text: 當 LLM 需要執行一個有副作用的操作（如刪除檔案）時，MCP 中應該使用哪一種元件？
     type: multiple_choice
     options:
-      - Resource（資源）
-      - Tool（工具）
-      - Prompt（提示範本）
       - Client（客戶端）
-    correct_index: 1
+      - Prompt（提示範本）
+      - Tool（工具）
+      - Resource（資源）
+    correct_index: 2
     explanation: 有副作用的操作應使用 Tool，因為 Tool 代表可由 LLM 主動呼叫的執行操作。
     tags:
       - chap-m5-ch2
@@ -852,10 +852,10 @@ questions:
     type: multiple_choice
     options:
       - 客戶端向伺服器發送的工具呼叫請求
-      - 伺服器向客戶端的單向即時事件推送
       - 使用者與主機之間的自然語言對話
       - LLM 模型的神經網路權重更新
-    correct_index: 1
+      - 伺服器向客戶端的單向即時事件推送
+    correct_index: 3
     explanation: SSE 是伺服器向客戶端的單向推送機制，適合傳遞即時的事件與狀態更新。
     tags:
       - chap-m5-ch2
@@ -867,11 +867,11 @@ questions:
     text: 使用社群提供的現成 MCP 伺服器（如 server-filesystem）時，開發者還需要做什麼？
     type: multiple_choice
     options:
+      - 需要向原始作者支付授權費用
+      - 必須自行將伺服器重新編譯成可執行檔
       - 必須從頭閱讀所有原始碼才能使用
       - 只需在設定檔中描述要連接的伺服器與存取範圍
-      - 必須自行將伺服器重新編譯成可執行檔
-      - 需要向原始作者支付授權費用
-    correct_index: 1
+    correct_index: 3
     explanation: 使用現成 MCP 伺服器時，只需在設定中指定伺服器名稱與存取範圍即可使用。
     tags:
       - chap-m5-ch2
@@ -884,10 +884,10 @@ questions:
     type: multiple_choice
     options:
       - 一套強制所有模型使用的私有通訊協定
-      - 標準化的工具與資源描述介面，不受特定模型綁定
-      - 一個統一的模型訓練框架
       - 一種通用的 AI 模型效能評分標準
-    correct_index: 1
+      - 一個統一的模型訓練框架
+      - 標準化的工具與資源描述介面，不受特定模型綁定
+    correct_index: 3
     explanation: MCP 的標準化介面讓不同 AI 模型都能使用相同的工具描述，切換模型時不需重寫整合。
     tags:
       - chap-m5-ch2
@@ -899,11 +899,11 @@ questions:
     text: 在代理人系統中實作「儀器化（Instrumentation）」時，通常會使用哪一種開放標準？
     type: multiple_choice
     options:
-      - MCP（模型上下文協議）
       - OpenTelemetry
-      - HTTP/2
       - gRPC
-    correct_index: 1
+      - MCP（模型上下文協議）
+      - HTTP/2
+    correct_index: 0
     explanation: OpenTelemetry 是業界標準的儀器化框架，用於捕獲追蹤、日誌和指標。
     tags:
       - chap-m5-ch2
@@ -915,11 +915,11 @@ questions:
     text: 下列哪一項是 MCP 系統中防範提示注入攻擊的最佳做法？
     type: multiple_choice
     options:
+      - 將所有工具的輸入參數設為必填以減少攻擊面
+      - 只使用 OpenAI 提供的官方 MCP 伺服器
       - 完全不讓 LLM 存取任何外部資料
       - 對 LLM 請求的所有外部資料內容進行嚴格的驗證與消毒
-      - 只使用 OpenAI 提供的官方 MCP 伺服器
-      - 將所有工具的輸入參數設為必填以減少攻擊面
-    correct_index: 1
+    correct_index: 3
     explanation: 將外部資料視為不可信任的內容，進行驗證與消毒後再讓 LLM 處理，是防範提示注入的關鍵。
     tags:
       - chap-m5-ch2

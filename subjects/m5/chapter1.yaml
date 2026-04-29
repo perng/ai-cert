@@ -5,11 +5,11 @@ questions:
   text: AI 代理人（AI Agent）與傳統聊天機器人最主要的差異是什麼？
   type: multiple_choice
   options:
-  - 代理人只能被動回答問題，無法執行動作
-  - 代理人能夠自主進行多步驟規劃與工具呼叫，而聊天機器人主要進行單輪問答
   - 代理人不需要大型語言模型作為其核心運作引擎
   - 代理人無法理解使用者輸入的自然語言指令
-  correct_index: 1
+  - 代理人只能被動回答問題，無法執行動作
+  - 代理人能夠自主進行多步驟規劃與工具呼叫，而聊天機器人主要進行單輪問答
+  correct_index: 3
   explanation: AI 代理人的核心特徵是自主性、多步驟執行與工具使用能力，能主動規劃並執行任務，而非僅被動回應。
   tags:
   - chap-m5-ch1
@@ -22,10 +22,10 @@ questions:
   type: multiple_choice
   options:
   - 自主性 (Autonomy)：無需持續人工干預即可獨立運作
-  - 目標導向 (Goal-directed)：圍繞明確目標組織其行為
   - 固定性 (Fixedness)：行為模式在部署後不會改變
   - 持續性 (Persistence)：能跨多個步驟維持狀態與記憶
-  correct_index: 2
+  - 目標導向 (Goal-directed)：圍繞明確目標組織其行為
+  correct_index: 1
   explanation: AI 代理人的特徵包括自主性、感知能力、行動能力、目標導向與持續性。「固定性」並非代理人特徵，代理人能夠動態調整策略。
   tags:
   - chap-m5-ch1
@@ -37,11 +37,11 @@ questions:
   text: 在 AI 代理人的記憶系統中，「向量資料庫（如 Chroma、Pinecone）」屬於哪種記憶類型？
   type: multiple_choice
   options:
+  - 長期記憶 (Long-term Memory)，儲存跨任務的知識與經驗
   - 短期記憶 (Short-term Memory)，儲存當前對話的上下文
   - 工作記憶 (Working Memory)，儲存當前任務的中間狀態
-  - 長期記憶 (Long-term Memory)，儲存跨任務的知識與經驗
   - 感知記憶 (Sensory Memory)，暫存外部環境的輸入
-  correct_index: 2
+  correct_index: 0
   explanation: 向量資料庫用於儲存長期記憶，能跨任務保存知識與過往經驗，透過語義相似度搜尋進行召回。
   tags:
   - chap-m5-ch1
@@ -53,11 +53,11 @@ questions:
   text: ReAct (Reasoning + Acting) 框架的核心思想是什麼？
   type: multiple_choice
   options:
-  - 先產生完整計畫再一次性執行所有規劃的步驟
-  - 透過自我反思記錄失敗原因以改進下次的嘗試
-  - 交替進行推理（Thought）和行動（Action），並根據觀察結果動態調整
   - 使用多個代理人並行執行任務後投票決定結果
-  correct_index: 2
+  - 交替進行推理（Thought）和行動（Action），並根據觀察結果動態調整
+  - 透過自我反思記錄失敗原因以改進下次的嘗試
+  - 先產生完整計畫再一次性執行所有規劃的步驟
+  correct_index: 1
   explanation: ReAct 框架的精髓在於「思考-行動-觀察」的交替循環，讓代理人能基於真實的工具回傳結果進行推理，減少幻覺並提高可靠性。
   tags:
   - chap-m5-ch1
@@ -69,11 +69,11 @@ questions:
   text: Reflexion 框架與 ReAct 框架的主要區別是什麼？
   type: multiple_choice
   options:
-  - Reflexion 框架在運作時完全不使用工具呼叫
-  - Reflexion 引入自我反思機制，將失敗經驗以文字形式儲存為記憶以改進後續嘗試
-  - Reflexion 框架只能夠適用於數學計算類型的任務
   - Reflexion 在運作時需要多個 LLM 模型來協同工作
-  correct_index: 1
+  - Reflexion 框架只能夠適用於數學計算類型的任務
+  - Reflexion 引入自我反思機制，將失敗經驗以文字形式儲存為記憶以改進後續嘗試
+  - Reflexion 框架在運作時完全不使用工具呼叫
+  correct_index: 2
   explanation: Reflexion 的創新在於讓代理人在任務失敗後生成文字形式的自我反思，並將其作為長期記憶，在後續嘗試中避免重複犯同樣的錯誤。
   tags:
   - chap-m5-ch1
@@ -85,10 +85,10 @@ questions:
   text: 「Agentic RAG」與「Naive RAG」的主要差異是什麼？
   type: multiple_choice
   options:
-  - Agentic RAG 的系統完全不使用向量資料庫
+  - Agentic RAG 的整體回應速度比 Naive RAG 更快
   - Agentic RAG 只能處理文字資料，而 Naive RAG 可處理多模態資料
   - Agentic RAG 讓代理人主動決定何時和如何進行檢索，可進行多輪查詢
-  - Agentic RAG 的整體回應速度比 Naive RAG 更快
+  - Agentic RAG 的系統完全不使用向量資料庫
   correct_index: 2
   explanation: Agentic RAG 將 RAG 融入代理迴圈，代理人能自主判斷何時需要檢索、使用哪種查詢策略，並可多輪迭代查詢以獲得更完整的資訊。
   tags:
@@ -101,10 +101,10 @@ questions:
   text: 評估 AI 代理人效能時，「步驟效率 (Step Efficiency)」指的是什麼？
   type: multiple_choice
   options:
-  - 代理人每秒鐘能夠處理的請求總數量
+  - 代理人在給定時間內完成任務的比例
   - 代理人完成任務所需的最少步驟數，步驟越少效率越高
   - 代理人在任務中正確選擇工具的比例
-  - 代理人在給定時間內完成任務的比例
+  - 代理人每秒鐘能夠處理的請求總數量
   correct_index: 1
   explanation: 步驟效率衡量代理人解決問題的簡潔程度，不必要的冗餘步驟會降低效率並增加成本和延遲。
   tags:
@@ -117,11 +117,11 @@ questions:
   text: 在 AI 代理人的框架中，「後設認知 (Metacognition)」的主要作用是什麼？
   type: multiple_choice
   options:
-  - 用來加速大型語言模型的整體推理速度
-  - 讓代理人意識到自身的決策過程，並根據經驗進行自我反省與錯誤修正
-  - 強制代理人按照預先設定的固定腳本執行任務
   - 自動為系統中的代理人生成新的工具函數
-  correct_index: 1
+  - 用來加速大型語言模型的整體推理速度
+  - 強制代理人按照預先設定的固定腳本執行任務
+  - 讓代理人意識到自身的決策過程，並根據經驗進行自我反省與錯誤修正
+  correct_index: 3
   explanation: 後設認知也就是「對思考過程的反思」，讓 AI 代理人能評估自身表現、適應環境並修正錯誤。
   tags:
   - chap-m5-ch1
@@ -149,11 +149,11 @@ questions:
   text: 代理人架構中「長期記憶」最常依賴的儲存技術是？
   type: multiple_choice
   options:
+  - 系統環境變數與暫存檔案的動態讀寫
+  - 傳統的關聯式資料庫與表格結構儲存
   - 電腦處理器內建的高速快取記憶體裝置
   - 透過嵌入模型轉換的向量資料庫系統
-  - 傳統的關聯式資料庫與表格結構儲存
-  - 系統環境變數與暫存檔案的動態讀寫
-  correct_index: 1
+  correct_index: 3
   explanation: 向量資料庫能將過往知識轉換為向量，實現跨任務的語意檢索。
   tags:
   - chap-m5-ch1
@@ -165,11 +165,11 @@ questions:
   text: Plan-and-Execute 模式在處理任務時的主要優勢是什麼？
   type: multiple_choice
   options:
+  - 能夠完全避免模型產生幻覺的錯誤情況
   - 系統的反應速度快且幾乎沒有任何延遲
   - 非常適合處理步驟已經明確的固定任務
   - 整個過程中不需依賴任何外部工具的輔助
-  - 能夠完全避免模型產生幻覺的錯誤情況
-  correct_index: 1
+  correct_index: 2
   explanation: 該模式將任務一次性拆解為多個步驟，非常適合邏輯清晰且明確的工作。
   tags:
   - chap-m5-ch1
@@ -181,10 +181,10 @@ questions:
   type: multiple_choice
   options:
   - 當任務的內容本身過於簡單且缺乏挑戰時
-  - 執行過程中環境發生非預期的突發變化時
   - 系統需要進行多次的工具函數呼叫步驟時
   - 本地電腦的可用記憶體空間不足夠使用時
-  correct_index: 1
+  - 執行過程中環境發生非預期的突發變化時
+  correct_index: 3
   explanation: 由於一開始就制定好所有計畫，一旦執行環境有變，系統往往無法彈性調整。
   tags:
   - chap-m5-ch1
@@ -195,9 +195,9 @@ questions:
   text: 下列哪一項操作屬於代理人的「感知能力 (Perception)」範疇？
   type: multiple_choice
   options:
-  - 規劃出完成任務所需的詳細後續執行步驟
-  - 讀取使用者的文字輸入與系統的運作日誌
   - 呼叫外部 API 來執行實際的網路請求操作
+  - 讀取使用者的文字輸入與系統的運作日誌
+  - 規劃出完成任務所需的詳細後續執行步驟
   - 根據執行結果進行自我反省與修正錯誤
   correct_index: 1
   explanation: 感知能力指的是代理人接收並理解來自外部環境的輸入資訊。
@@ -210,10 +210,10 @@ questions:
   text: AI 代理人設定中的「Persona (角色設定)」主要目的是什麼？
   type: multiple_choice
   options:
-  - 強制限制模型所能執行的最高運算速度
-  - 賦予模型特定的行為邊界與互動風格
   - 決定系統預設需要掛載多少工具數量
+  - 賦予模型特定的行為邊界與互動風格
   - 自動減少每次對話的上下文視窗大小
+  - 強制限制模型所能執行的最高運算速度
   correct_index: 1
   explanation: 角色設定能指導代理人該以何種語氣和態度回應，確保行為符合預期。
   tags:
@@ -225,11 +225,11 @@ questions:
   text: Reflexion 框架相對於一般迴圈，加入了什麼關鍵機制？
   type: multiple_choice
   options:
-  - 任務開始之前先進行詳細的步驟規劃
   - 任務失敗之後進行自我反省與改進
-  - 將複雜任務分配給其他的協作代理
   - 完全隨機地嘗試各種可用的新方法
-  correct_index: 1
+  - 將複雜任務分配給其他的協作代理
+  - 任務開始之前先進行詳細的步驟規劃
+  correct_index: 0
   explanation: Reflexion 的核心在於遇到失敗時能進行反思，並將經驗保留給後續嘗試。
   tags:
   - chap-m5-ch1
@@ -240,11 +240,11 @@ questions:
   text: 在 Reflexion 框架中，代理人自我反省的結果通常會如何被儲存？
   type: multiple_choice
   options:
-  - 作為短期記憶區塊中的一次性使用變數
   - 轉化為長期記憶庫中的歷史經驗紀錄
   - 直接寫入系統的底層錯誤日誌檔案中
+  - 作為短期記憶區塊中的一次性使用變數
   - 備份到使用者個人的雲端硬碟儲存空間
-  correct_index: 1
+  correct_index: 0
   explanation: 反省結果會被存入記憶體中，讓代理人未來面對類似任務時能避開錯誤。
   tags:
   - chap-m5-ch1
@@ -255,11 +255,11 @@ questions:
   text: 「後設認知 (Metacognition)」賦予代理人哪一種關鍵能力？
   type: multiple_choice
   options:
-  - 產生出更快的文字串流生成速度與效率
   - 自主偵測行為缺陷並主動修正執行錯誤
   - 能夠自動產生出全新的後端應用程式碼
   - 繞過底層安全機制以獲取系統最高權限
-  correct_index: 1
+  - 產生出更快的文字串流生成速度與效率
+  correct_index: 0
   explanation: 後設認知讓代理人能「思考自己的思考過程」，進而達到修正錯誤與適應環境。
   tags:
   - chap-m5-ch1
@@ -270,11 +270,11 @@ questions:
   text: Agentic RAG 與傳統的 Naive RAG 最大的區別在於什麼？
   type: multiple_choice
   options:
-  - 向量資料庫所能容納的整體資料容量大小
   - 代理人是否能主動決定何時進行資料檢索
-  - 伺服器回傳檢索結果時的速度快慢差異
   - 系統底層是否依賴強大的向量嵌入模型
-  correct_index: 1
+  - 伺服器回傳檢索結果時的速度快慢差異
+  - 向量資料庫所能容納的整體資料容量大小
+  correct_index: 0
   explanation: Agentic RAG 允許代理人根據當下需求，自主判斷是否需要呼叫檢索工具。
   tags:
   - chap-m5-ch1
@@ -286,10 +286,10 @@ questions:
   type: multiple_choice
   options:
   - 系統成功呼叫所有外部工具的總次數統計
-  - 代理人最終能順利完成給定目標的比例
   - 代理人生成回覆時所使用的總文字數量
   - 代理人運行單一任務所耗費的整體時間
-  correct_index: 1
+  - 代理人最終能順利完成給定目標的比例
+  correct_index: 3
   explanation: 任務成功率是最直觀的指標，衡量代理人是否能實際解決使用者交付的問題。
   tags:
   - chap-m5-ch1
@@ -300,11 +300,11 @@ questions:
   text: 評估代理人時，「工具準確度」主要是用來衡量什麼？
   type: multiple_choice
   options:
+  - 外部系統所能支援處理的多國語言數量
+  - 每個外部工具執行時消耗的雲端運算資源
   - 工具伺服器回應 API 請求時的網路延遲時間
   - 代理人在各種情境下選擇正確工具的比例
-  - 每個外部工具執行時消耗的雲端運算資源
-  - 外部系統所能支援處理的多國語言數量
-  correct_index: 1
+  correct_index: 3
   explanation: 工具準確度關注代理人是否能在對的時機挑選並正確呼叫合適的工具。
   tags:
   - chap-m5-ch1
@@ -316,10 +316,10 @@ questions:
   type: multiple_choice
   options:
   - 直接中斷執行並回報任務失敗給終端使用者
-  - 基於環境回饋來動態調整策略並尋找替代方案
-  - 隨機挑選系統中任何一個可用的工具進行測試
   - 忽略所有出現的錯誤訊息並繼續執行既定步驟
-  correct_index: 1
+  - 隨機挑選系統中任何一個可用的工具進行測試
+  - 基於環境回饋來動態調整策略並尋找替代方案
+  correct_index: 3
   explanation: 自主性與適應力是代理人的核心，面對變化時能動態調整是其最大價值。
   tags:
   - chap-m5-ch1
@@ -330,11 +330,11 @@ questions:
   text: 相較於寫死的傳統自動化腳本，AI 代理人的核心優勢是什麼？
   type: multiple_choice
   options:
+  - 程式的執行總耗時必定比傳統腳本更快
   - 在執行過程中絕對不會產生任何系統錯誤
   - 能夠彈性適應高度不可預測的動態環境
-  - 程式的執行總耗時必定比傳統腳本更快
   - 系統在運作時完全不需要任何人類的監督
-  correct_index: 1
+  correct_index: 2
   explanation: 傳統腳本只能處理預先定義好的狀況，而代理人能根據上下文彈性處理未知變化。
   tags:
   - chap-m5-ch1
@@ -345,10 +345,10 @@ questions:
   text: 在代理人的推理迴圈中，「Action (行動)」階段的主要作用是？
   type: multiple_choice
   options:
-  - 分析使用者輸入文字背後所隱藏的真實意圖
+  - 評估自身表現的優劣並將其寫入錯誤日誌
   - 實際呼叫外部工具或 API 來改變環境狀態
   - 觀察並記錄環境在指令執行後的回傳結果
-  - 評估自身表現的優劣並將其寫入錯誤日誌
+  - 分析使用者輸入文字背後所隱藏的真實意圖
   correct_index: 1
   explanation: 行動階段是指模型決定好策略後，具體執行工具呼叫來影響外部世界。
   tags:
@@ -360,11 +360,11 @@ questions:
   text: 在代理人的推理迴圈中，「Observation (觀察)」階段的主要作用是？
   type: multiple_choice
   options:
-  - 獲取並解析外部工具執行後所回傳的具體結果
-  - 決定下一步應該要呼叫哪一個外部系統的工具
   - 生成給使用者的最終自然語言對話回覆內容
   - 將整次對話的完整歷史記錄壓縮備份到雲端
-  correct_index: 0
+  - 決定下一步應該要呼叫哪一個外部系統的工具
+  - 獲取並解析外部工具執行後所回傳的具體結果
+  correct_index: 3
   explanation: 觀察階段讓代理人能看到剛才行動的結果，作為後續判斷與推理的依據。
   tags:
   - chap-m5-ch1
@@ -375,11 +375,11 @@ questions:
   text: 下列何者最符合「工作記憶 (Working Memory)」的典型應用場景？
   type: multiple_choice
   options:
+  - 記錄系統啟動時載入的預設系統提示詞
   - 永遠記住使用者的名字與偏好的語言設定
   - 暫存多步驟計算過程中產生的中間變數
   - 永久保存過去所有專案任務的歷史經驗
-  - 記錄系統啟動時載入的預設系統提示詞
-  correct_index: 1
+  correct_index: 2
   explanation: 工作記憶就像系統的草稿紙，專門用來暫存執行中任務的各種中間狀態。
   tags:
   - chap-m5-ch1
@@ -390,11 +390,11 @@ questions:
   text: 在多代理 (Multi-Agent) 系統中，不同的代理人通常是如何進行協作的？
   type: multiple_choice
   options:
-  - 所有代理人共用同一個神經網路模型與內部權重
   - 代理人透過標準化協議交換訊息以分配並完成任務
   - 代理人之間互相競爭搶奪系統中有限的運算資源
+  - 所有代理人共用同一個神經網路模型與內部權重
   - 代理人會透過直接覆寫對方的短期記憶來傳遞資訊
-  correct_index: 1
+  correct_index: 0
   explanation: 多代理系統透過定義明確的通訊協議，讓各自專業的代理人能分工協作。
   tags:
   - chap-m5-ch1
@@ -405,9 +405,9 @@ questions:
   text: 下列哪一個選項「不屬於」現代 AI 代理人的核心組成要素？
   type: multiple_choice
   options:
-  - 具備自然語言理解能力的大型語言模型
-  - 只能按照單一路徑執行的固定不變決策樹
   - 能夠用來影響外部環境的可呼叫外部工具
+  - 只能按照單一路徑執行的固定不變決策樹
+  - 具備自然語言理解能力的大型語言模型
   - 用來儲存任務狀態與歷史經驗的記憶系統
   correct_index: 1
   explanation: 代理人依賴 LLM 動態推理，而非傳統自動化系統所使用的固定決策樹。
@@ -420,11 +420,11 @@ questions:
   text: 為什麼功能完善的 AI 代理人系統不可或缺「長期記憶」？
   type: multiple_choice
   options:
-  - 為了讓模型能以更快的速度生成文字對話串流
   - 為了在跨越多個獨立對話時仍能保留過往經驗
   - 為了大幅度減少系統呼叫外部 API 的整體次數
   - 為了能直接取代大型語言模型本身的內部權重
-  correct_index: 1
+  - 為了讓模型能以更快的速度生成文字對話串流
+  correct_index: 0
   explanation: 長期記憶讓代理人能記住使用者的偏好與過往互動，提供更個人化的服務。
   tags:
   - chap-m5-ch1
@@ -435,10 +435,10 @@ questions:
   text: AI 代理人所需的「角色設定（Persona）」通常存放在哪個元件中？
   type: multiple_choice
   options:
-  - 大型語言模型的內部神經網路權重
-  - 系統提示詞或 Profile 設定檔中
   - 外部向量資料庫的記憶檔案中
+  - 系統提示詞或 Profile 設定檔中
   - 作業系統的環境變數設定檔中
+  - 大型語言模型的內部神經網路權重
   correct_index: 1
   explanation: 角色設定通常是靜態資訊，存放在系統提示詞或 Profile 設定檔中，指導代理人的行為風格與邊界。
   tags:
@@ -450,11 +450,11 @@ questions:
   text: 「工具使用代理人」與一般聊天機器人最大的不同點是什麼？
   type: multiple_choice
   options:
-  - 工具使用代理人只能使用預先寫死的工具集
-  - 工具使用代理人能根據任務需求動態選擇並呼叫外部工具
   - 工具使用代理人不需要大型語言模型作為核心引擎
+  - 工具使用代理人只能使用預先寫死的工具集
   - 工具使用代理人的回應速度一定比聊天機器人更快
-  correct_index: 1
+  - 工具使用代理人能根據任務需求動態選擇並呼叫外部工具
+  correct_index: 3
   explanation: 工具使用代理人的核心特徵是能動態選擇工具，而非只能被動回話。
   tags:
   - chap-m5-ch1
@@ -465,11 +465,11 @@ questions:
   text: 在 ReAct 框架中，Thought（思考）階段後通常緊接著哪一個階段？
   type: multiple_choice
   options:
-  - 最終答案生成階段
   - Action（行動）階段
-  - 任務規劃階段
   - 記憶儲存階段
-  correct_index: 1
+  - 任務規劃階段
+  - 最終答案生成階段
+  correct_index: 0
   explanation: ReAct 循環是「思考→行動→觀察→再思考」，思考後緊接行動。
   tags:
   - chap-m5-ch1
@@ -480,11 +480,11 @@ questions:
   text: 代理人的「幻覺率（Hallucination Rate）」指的是什麼？
   type: multiple_choice
   options:
+  - 代理人在任務中呼叫錯誤工具的比例
   - 代理人從接收到任務到給出回應所花費的平均時間
   - 代理人生成虛假或與事實不符資訊的頻率
-  - 代理人在任務中呼叫錯誤工具的比例
   - 代理人因為系統錯誤而中斷任務的機率
-  correct_index: 1
+  correct_index: 2
   explanation: 幻覺率衡量代理人產生不實資訊的傾向，是評估可靠性的關鍵指標。
   tags:
   - chap-m5-ch1
@@ -497,8 +497,8 @@ questions:
   options:
   - 忽略錯誤並繼續執行原計劃
   - 退回到規劃階段進行重新規劃
-  - 直接將任務標記為失敗
   - 自動切換到另一組完全不同的工具
+  - 直接將任務標記為失敗
   correct_index: 1
   explanation: Plan-and-Execute 在遇到問題時可以回到規劃階段動態調整，但不如 ReAct 靈活。
   tags:
@@ -510,11 +510,11 @@ questions:
   text: 下列何者最適合用來描述 AI 代理人的「目標導向」特徵？
   type: multiple_choice
   options:
-  - 代理人能以最快速度生成文字回應
-  - 代理人圍繞明確目標持續工作直到達成
   - 代理人能同時處理多個使用者的請求
   - 代理人能自動更新語言模型的訓練資料
-  correct_index: 1
+  - 代理人圍繞明確目標持續工作直到達成
+  - 代理人能以最快速度生成文字回應
+  correct_index: 2
   explanation: 目標導向意味著代理人的所有行為都圍繞一個明確目標，而非隨機回應。
   tags:
   - chap-m5-ch1
@@ -527,8 +527,8 @@ questions:
   options:
   - 工作記憶儲存的是執行中的中間狀態，短期記憶儲存對話歷史
   - 工作記憶的容量比短期記憶大得多
-  - 工作記憶是永久儲存，短期記憶是暫時儲存
   - 兩者本質完全相同，只是名稱不同
+  - 工作記憶是永久儲存，短期記憶是暫時儲存
   correct_index: 0
   explanation: 工作記憶專注於當前任務的中間變數，短期記憶主要保存對話上下文。
   tags:
@@ -540,11 +540,11 @@ questions:
   text: Reflexion 框架中的自我反思機制主要依賴哪一種技術來產生？
   type: multiple_choice
   options:
+  - 使用傳統的程式碼異常處理機制
   - 使用固定模板自動生成反省文字
   - 讓語言模型本身以自然語言撰寫反省內容
   - 透過外部 API 查詢錯誤原因
-  - 使用傳統的程式碼異常處理機制
-  correct_index: 1
+  correct_index: 2
   explanation: Reflexion 讓 LLM 用自己的語言描述失敗原因，這種文字形式的反思比結構化記錄更有幫助。
   tags:
   - chap-m5-ch1
@@ -555,11 +555,11 @@ questions:
   text: 知識檢索代理人（RAG Agent）的特色是什麼？
   type: multiple_choice
   options:
-  - 只能回傳已經存在於訓練資料中的知識
-  - 能從外部知識庫中即時檢索相關資訊來輔助回答
   - 不需要大型語言模型即可獨立運作
   - 主要用於執行系統層級的檔案管理任務
-  correct_index: 1
+  - 能從外部知識庫中即時檢索相關資訊來輔助回答
+  - 只能回傳已經存在於訓練資料中的知識
+  correct_index: 2
   explanation: RAG Agent 能在推理過程中從外部知識庫擷取相關資訊，擴展模型的能力範圍。
   tags:
   - chap-m5-ch1
@@ -570,11 +570,11 @@ questions:
   text: 在衡量代理人效能時，「回應延遲（Response Latency）」指的是什麼？
   type: multiple_choice
   options:
-  - 代理人從接到任務到給出最終結果所花費的總時間
-  - 使用者輸入文字後到看到第一個字元回應的時間
-  - 代理人呼叫外部工具後等待回傳結果的時間
   - 系統從啟動到可以開始接受任務的初始化時間
-  correct_index: 0
+  - 使用者輸入文字後到看到第一個字元回應的時間
+  - 代理人從接到任務到給出最終結果所花費的總時間
+  - 代理人呼叫外部工具後等待回傳結果的時間
+  correct_index: 2
   explanation: 回應延遲是衡量代理人效率的重要指標，包含推理、工具呼叫與結果生成的全部時間。
   tags:
   - chap-m5-ch1
@@ -586,8 +586,8 @@ questions:
   type: multiple_choice
   options:
   - 為了在對話過程中提供更一致的體驗並避免重複錯誤
-  - 為了讓模型能夠更快地生成文字回覆
   - 為了減少系統對大型語言模型的依賴
+  - 為了讓模型能夠更快地生成文字回覆
   - 為了讓系統能在離線環境下正常運作
   correct_index: 0
   explanation: 記憶讓代理人能記住過往互動，避免重複錯誤並提供一致的個人化體驗。
@@ -600,10 +600,10 @@ questions:
   text: 在多代理系統中，為什麼不讓單一代理人處理所有事情就好？
   type: multiple_choice
   options:
-  - 因為單一模型無法理解多種語言的指令
-  - 因為專業分工能讓不同代理人各自專精，提升整體效能
-  - 因為多代理系統的建置成本一定比單一代理更低
   - 因為單一代理人一定會違反系統的安全規範
+  - 因為專業分工能讓不同代理人各自專精，提升整體效能
+  - 因為單一模型無法理解多種語言的指令
+  - 因為多代理系統的建置成本一定比單一代理更低
   correct_index: 1
   explanation: 多代理系統讓每個代理人專精特定領域，就像團隊成員各有專長，協作效果優於全能但平庸的個體。
   tags:
@@ -616,10 +616,10 @@ questions:
   type: multiple_choice
   options:
   - 只使用短期記憶，每次任務從零開始
-  - 將使用者偏好寫入長期記憶（如向量資料庫）並跨任務檢索
   - 將所有對話歷史直接塞入上下文視窗中
   - 不使用任何記憶，每次由使用者重新設定
-  correct_index: 1
+  - 將使用者偏好寫入長期記憶（如向量資料庫）並跨任務檢索
+  correct_index: 3
   explanation: 長期記憶能跨任務保存使用者偏好，讓代理人在不同對話中保持一致的行為。
   tags:
   - chap-m5-ch1
@@ -630,11 +630,11 @@ questions:
   text: 下列哪一個不是 ReAct 框架的核心步驟？
   type: multiple_choice
   options:
-  - Thought（思考）
-  - Action（行動）
   - Observation（觀察）
+  - Thought（思考）
   - Reflection（反思）
-  correct_index: 3
+  - Action（行動）
+  correct_index: 2
   explanation: Reflection（反思）是 Reflexion 框架的特色，非 ReAct 的核心步驟。ReAct 的核心是思考→行動→觀察。
   tags:
   - chap-m5-ch1
@@ -645,11 +645,11 @@ questions:
   text: 一個行動能力完整的 AI 代理人，無法做到下列哪一件事？
   type: multiple_choice
   options:
-  - 搜尋網路上的即時資訊
-  - 執行簡單的數學計算
   - 直接修改自身語言模型的內部權重
+  - 執行簡單的數學計算
+  - 搜尋網路上的即時資訊
   - 發送電子郵件給使用者
-  correct_index: 2
+  correct_index: 0
   explanation: 代理人無法修改自身 LLM 的內部權重，那是訓練階段才能做的事。代理人只能透過工具與外部環境互動。
   tags:
   - chap-m5-ch1
@@ -660,11 +660,11 @@ questions:
   text: 評估代理人時，「成本效率（Cost Efficiency）」通常如何計算？
   type: multiple_choice
   options:
-  - 代理人完成任務所需的總 API 呼叫費用除以任務數量
   - 代理人每秒鐘可以處理的請求數量
-  - 代理人生成每個字元所需的算力成本
+  - 代理人完成任務所需的總 API 呼叫費用除以任務數量
   - 系統啟動代理人所需的初始設定費用
-  correct_index: 0
+  - 代理人生成每個字元所需的算力成本
+  correct_index: 1
   explanation: 成本效率衡量每次成功任務的平均花費，是評估代理人經濟效益的重要指標。
   tags:
   - chap-m5-ch1
@@ -692,8 +692,8 @@ questions:
   options:
   - 作為長期記憶的儲存載體
   - 作為核心的推理與決策引擎
-  - 作為工具呼叫的執行環境
   - 作為網路通訊的傳輸層
+  - 作為工具呼叫的執行環境
   correct_index: 1
   explanation: LLM 是代理人的「大腦」，負責理解任務、規劃步驟與決定工具使用時機。
   tags:
@@ -705,10 +705,10 @@ questions:
   text: 下列何種情境最適合使用 Plan-and-Execute 而非 ReAct？
   type: multiple_choice
   options:
-  - 需要頻繁查詢即時股價的投資顧問
+  - 需要即時監控多個社群媒體的輿情分析系統
   - 步驟明確且不太需要中途調整的批次資料處理任務
   - 需要與使用者多輪對話確認需求的客服機器人
-  - 需要即時監控多個社群媒體的輿情分析系統
+  - 需要頻繁查詢即時股價的投資顧問
   correct_index: 1
   explanation: Plan-and-Execute 適合步驟可預先確定的任務，批次資料處理是典型應用。
   tags:
@@ -720,11 +720,11 @@ questions:
   text: 傳統的「聊天機器人」在下列哪個方面與 AI 代理人最相似？
   type: multiple_choice
   options:
-  - 都能夠自主執行多步驟的任務
-  - 都具備自然語言理解與生成的能力
-  - 都能夠呼叫外部工具來改變環境
   - 都具備跨任務的長期記憶能力
-  correct_index: 1
+  - 都能夠自主執行多步驟的任務
+  - 都能夠呼叫外部工具來改變環境
+  - 都具備自然語言理解與生成的能力
+  correct_index: 3
   explanation: 聊天機器人和代理人都具備自然語言處理能力，但代理人多了自主行動與工具使用能力。
   tags:
   - chap-m5-ch1
@@ -736,10 +736,10 @@ questions:
   type: multiple_choice
   options:
   - 工具直接修改 LLM 的內部參數來影響行為
+  - 工具將結果編碼成 EEG 訊號輸入 LLM
   - LLM 輸出格式化的工具呼叫請求，由應用程式層執行
   - 工具透過藍牙或 Wi-Fi 直接與 LLM 硬體連線
-  - 工具將結果編碼成 EEG 訊號輸入 LLM
-  correct_index: 1
+  correct_index: 2
   explanation: LLM 不能直接執行程式，而是輸出結構化請求，由中介層負責執行工具。
   tags:
   - chap-m5-ch1
@@ -750,11 +750,11 @@ questions:
   text: Reflexion 框架中，若代理人在多次嘗試後仍失敗，它通常會怎麼做？
   type: multiple_choice
   options:
-  - 無限期重試直到成功為止
-  - 將每次失敗的反思累積起來，不斷改進策略
-  - 直接刪除所有相關記憶並從頭開始
   - 自動切換到另一個完全不同領域的語言模型
-  correct_index: 1
+  - 無限期重試直到成功為止
+  - 直接刪除所有相關記憶並從頭開始
+  - 將每次失敗的反思累積起來，不斷改進策略
+  correct_index: 3
   explanation: Reflexion 會累積每次失敗的反思，隨著經驗增加，成功機率也會提高。
   tags:
   - chap-m5-ch1
@@ -765,11 +765,11 @@ questions:
   text: 下列何者最適合描述「Agentic RAG」的運作方式？
   type: multiple_choice
   options:
-  - 使用者提問後，系統固定檢索一次就回答
   - 代理人根據問題自主決定是否檢索、檢索什麼、以及需要檢索幾次
-  - 將所有知識庫內容預先載入語言模型的上下文視窗
   - 完全不使用外部資料，只依賴模型內部知識
-  correct_index: 1
+  - 使用者提問後，系統固定檢索一次就回答
+  - 將所有知識庫內容預先載入語言模型的上下文視窗
+  correct_index: 0
   explanation: Agentic RAG 讓代理人在推理迴圈中動態決定檢索策略，比固定檢索更靈活。
   tags:
   - chap-m5-ch1
@@ -780,11 +780,11 @@ questions:
   text: 在評估代理人時，為什麼「步驟效率」和「任務成功率」需要同時考量？
   type: multiple_choice
   options:
-  - 因為高效率但低成功率的代理人不實用，高成功率但效率低則成本太高
-  - 因為這兩個指標永遠呈反比關係
   - 因為這兩個指標合併計算後可以推估模型參數大小
   - 因為這是業界法規強制規定的評估標準
-  correct_index: 0
+  - 因為高效率但低成功率的代理人不實用，高成功率但效率低則成本太高
+  - 因為這兩個指標永遠呈反比關係
+  correct_index: 2
   explanation: 理想的代理人應同時兼顧效率與成功率，過度追求單一指標可能犧牲另一項。
   tags:
   - chap-m5-ch1
@@ -810,9 +810,9 @@ questions:
   text: 下列哪一個選項最適合作為代理人的「短期記憶」範例？
   type: multiple_choice
   options:
-  - 資料庫中儲存的使用者偏好設定檔
-  - 當前對話中使用者剛才問的問題與 AI 的回答
   - 向量資料庫中所有過往專案的知識
+  - 當前對話中使用者剛才問的問題與 AI 的回答
+  - 資料庫中儲存的使用者偏好設定檔
   - 系統開機時載入的作業系統核心模組
   correct_index: 1
   explanation: 短期記憶對應當前的對話上下文，保存最近的互動內容。
@@ -826,10 +826,10 @@ questions:
   type: multiple_choice
   options:
   - 在工具呼叫失敗時自動切換備用伺服器
-  - 評估自身推理品質、識別錯誤並據此調整策略
   - 將任務自動分配給其他協作代理人
   - 以更快的速度生成自然語言文本
-  correct_index: 1
+  - 評估自身推理品質、識別錯誤並據此調整策略
+  correct_index: 3
   explanation: 後設認知是「對思考的思考」，讓代理人能自我評估與修正。
   tags:
   - chap-m5-ch1
@@ -841,10 +841,10 @@ questions:
   type: multiple_choice
   options:
   - 代理人可以完全自由地執行任何工具
-  - 高風險工具應加入人類審核機制
   - 工具使用不需要任何權限管理
+  - 高風險工具應加入人類審核機制
   - 只有 OpenAI 提供的工具才安全
-  correct_index: 1
+  correct_index: 2
   explanation: 高風險操作（如刪除檔案、發送郵件）應由人類確認後再執行，確保安全。
   tags:
   - chap-m5-ch1
@@ -855,10 +855,10 @@ questions:
   text: 「寫作代理人」和「程式碼代理人」在多代理系統中如何協作？
   type: multiple_choice
   options:
-  - 寫作代理人先完成所有文字，再交給程式碼代理人執行
+  - 只有一個代理人會真正工作，另一個是備份
   - 各司其職，寫作代理人負責文件生成，程式碼代理人負責開發測試
   - 兩個代理人輪流執行完全相同的任務以確保一致性
-  - 只有一個代理人會真正工作，另一個是備份
+  - 寫作代理人先完成所有文字，再交給程式碼代理人執行
   correct_index: 1
   explanation: 在多代理系統中，不同專業的代理人分工協作，各自負責擅長的領域。
   tags:
@@ -871,10 +871,10 @@ questions:
   type: multiple_choice
   options:
   - 代理人根據使用者輸入決定下一步行動
-  - 代理人從 PDF 檔案中提取文字內容並解析
   - 代理人在完成任務後將結果儲存到資料庫
   - 代理人根據失敗經驗調整未來的行為
-  correct_index: 1
+  - 代理人從 PDF 檔案中提取文字內容並解析
+  correct_index: 3
   explanation: 感知能力是從外部環境獲取資訊，讀取 PDF 檔案並解析內容屬於感知範疇。
   tags:
   - chap-m5-ch1
