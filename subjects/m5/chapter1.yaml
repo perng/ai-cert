@@ -14,7 +14,7 @@ questions:
   tags:
   - chap-m5-ch1
   - sec-agent-definition
-  usage: quiz
+  usage: both
 - id: 7102
   chapter_title: AI 代理人基礎概念
   section_title: 什麼是 AI 代理人
@@ -30,7 +30,7 @@ questions:
   tags:
   - chap-m5-ch1
   - sec-agent-definition
-  usage: quiz
+  usage: both
 - id: 7103
   chapter_title: AI 代理人基礎概念
   section_title: 代理人的組成架構
@@ -46,7 +46,7 @@ questions:
   tags:
   - chap-m5-ch1
   - sec-agent-architecture
-  usage: quiz
+  usage: both
 - id: 7104
   chapter_title: AI 代理人基礎概念
   section_title: 代理推理迴圈
@@ -62,7 +62,7 @@ questions:
   tags:
   - chap-m5-ch1
   - sec-agent-loop
-  usage: quiz
+  usage: both
 - id: 7105
   chapter_title: AI 代理人基礎概念
   section_title: 代理推理迴圈
@@ -78,7 +78,7 @@ questions:
   tags:
   - chap-m5-ch1
   - sec-agent-loop
-  usage: quiz
+  usage: both
 - id: 7106
   chapter_title: AI 代理人基礎概念
   section_title: 代理人類型
@@ -94,7 +94,7 @@ questions:
   tags:
   - chap-m5-ch1
   - sec-agent-types
-  usage: quiz
+  usage: both
 - id: 7107
   chapter_title: AI 代理人基礎概念
   section_title: Agent 的評估指標
@@ -110,7 +110,7 @@ questions:
   tags:
   - chap-m5-ch1
   - sec-agent-eval
-  usage: quiz
+  usage: both
 - id: 7108
   chapter_title: AI 代理人基礎概念
   section_title: 代理推理迴圈
@@ -126,7 +126,7 @@ questions:
   tags:
   - chap-m5-ch1
   - sec-agent-loop
-  usage: quiz
+  usage: both
 - id: 7109
   chapter_title: AI 代理人基礎概念
   section_title: 代理人的組成架構
@@ -142,7 +142,7 @@ questions:
   tags:
   - chap-m5-ch1
   - sec-agent-architecture
-  usage: quiz
+  usage: both
 - id: 7110
   chapter_title: AI 代理人基礎概念
   section_title: 代理人的組成架構
@@ -158,7 +158,7 @@ questions:
   tags:
   - chap-m5-ch1
   - sec-agent-architecture
-  usage: quiz
+  usage: both
 - id: 7111
   chapter_title: AI 代理人基礎概念
   section_title: 代理推理迴圈
@@ -173,7 +173,7 @@ questions:
   explanation: 該模式將任務一次性拆解為多個步驟，非常適合邏輯清晰且明確的工作。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7112
   chapter_title: AI 代理人基礎概念
   section_title: 代理推理迴圈
@@ -188,7 +188,7 @@ questions:
   explanation: 由於一開始就制定好所有計畫，一旦執行環境有變，系統往往無法彈性調整。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7113
   chapter_title: AI 代理人基礎概念
   section_title: 什麼是 AI 代理人
@@ -203,7 +203,7 @@ questions:
   explanation: 感知能力指的是代理人接收並理解來自外部環境的輸入資訊。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7114
   chapter_title: AI 代理人基礎概念
   section_title: 代理人的組成架構
@@ -218,7 +218,7 @@ questions:
   explanation: 角色設定能指導代理人該以何種語氣和態度回應，確保行為符合預期。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7115
   chapter_title: AI 代理人基礎概念
   section_title: 代理推理迴圈
@@ -233,7 +233,7 @@ questions:
   explanation: Reflexion 的核心在於遇到失敗時能進行反思，並將經驗保留給後續嘗試。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7116
   chapter_title: AI 代理人基礎概念
   section_title: 代理推理迴圈
@@ -248,7 +248,7 @@ questions:
   explanation: 反省結果會被存入記憶體中，讓代理人未來面對類似任務時能避開錯誤。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7117
   chapter_title: AI 代理人基礎概念
   section_title: 代理推理迴圈
@@ -263,7 +263,7 @@ questions:
   explanation: 後設認知讓代理人能「思考自己的思考過程」，進而達到修正錯誤與適應環境。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7118
   chapter_title: AI 代理人基礎概念
   section_title: 代理人類型
@@ -278,7 +278,7 @@ questions:
   explanation: Agentic RAG 允許代理人根據當下需求，自主判斷是否需要呼叫檢索工具。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7119
   chapter_title: AI 代理人基礎概念
   section_title: Agent 的評估指標
@@ -293,7 +293,7 @@ questions:
   explanation: 任務成功率是最直觀的指標，衡量代理人是否能實際解決使用者交付的問題。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7120
   chapter_title: AI 代理人基礎概念
   section_title: Agent 的評估指標
@@ -308,7 +308,7 @@ questions:
   explanation: 工具準確度關注代理人是否能在對的時機挑選並正確呼叫合適的工具。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7121
   chapter_title: AI 代理人基礎概念
   section_title: 什麼是 AI 代理人
@@ -323,7 +323,7 @@ questions:
   explanation: 自主性與適應力是代理人的核心，面對變化時能動態調整是其最大價值。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7122
   chapter_title: AI 代理人基礎概念
   section_title: 什麼是 AI 代理人
@@ -338,7 +338,7 @@ questions:
   explanation: 傳統腳本只能處理預先定義好的狀況，而代理人能根據上下文彈性處理未知變化。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7123
   chapter_title: AI 代理人基礎概念
   section_title: 代理推理迴圈
@@ -353,7 +353,7 @@ questions:
   explanation: 行動階段是指模型決定好策略後，具體執行工具呼叫來影響外部世界。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7124
   chapter_title: AI 代理人基礎概念
   section_title: 代理推理迴圈
@@ -368,7 +368,7 @@ questions:
   explanation: 觀察階段讓代理人能看到剛才行動的結果，作為後續判斷與推理的依據。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7125
   chapter_title: AI 代理人基礎概念
   section_title: 代理人的組成架構
@@ -383,7 +383,7 @@ questions:
   explanation: 工作記憶就像系統的草稿紙，專門用來暫存執行中任務的各種中間狀態。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7126
   chapter_title: AI 代理人基礎概念
   section_title: 代理人類型
@@ -398,7 +398,7 @@ questions:
   explanation: 多代理系統透過定義明確的通訊協議，讓各自專業的代理人能分工協作。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7127
   chapter_title: AI 代理人基礎概念
   section_title: 代理人的組成架構
@@ -413,7 +413,7 @@ questions:
   explanation: 代理人依賴 LLM 動態推理，而非傳統自動化系統所使用的固定決策樹。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7128
   chapter_title: AI 代理人基礎概念
   section_title: 代理人的組成架構
@@ -428,7 +428,7 @@ questions:
   explanation: 長期記憶讓代理人能記住使用者的偏好與過往互動，提供更個人化的服務。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7129
   chapter_title: AI 代理人基礎概念
   section_title: 代理人的組成架構
@@ -443,7 +443,7 @@ questions:
   explanation: 角色設定通常是靜態資訊，存放在系統提示詞或 Profile 設定檔中，指導代理人的行為風格與邊界。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7130
   chapter_title: AI 代理人基礎概念
   section_title: 代理人類型
@@ -458,7 +458,7 @@ questions:
   explanation: 工具使用代理人的核心特徵是能動態選擇工具，而非只能被動回話。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7131
   chapter_title: AI 代理人基礎概念
   section_title: 代理推理迴圈
@@ -473,7 +473,7 @@ questions:
   explanation: ReAct 循環是「思考→行動→觀察→再思考」，思考後緊接行動。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7132
   chapter_title: AI 代理人基礎概念
   section_title: Agent 的評估指標
@@ -488,7 +488,7 @@ questions:
   explanation: 幻覺率衡量代理人產生不實資訊的傾向，是評估可靠性的關鍵指標。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7133
   chapter_title: AI 代理人基礎概念
   section_title: 代理推理迴圈
@@ -503,7 +503,7 @@ questions:
   explanation: Plan-and-Execute 在遇到問題時可以回到規劃階段動態調整，但不如 ReAct 靈活。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7134
   chapter_title: AI 代理人基礎概念
   section_title: 什麼是 AI 代理人
@@ -518,7 +518,7 @@ questions:
   explanation: 目標導向意味著代理人的所有行為都圍繞一個明確目標，而非隨機回應。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7135
   chapter_title: AI 代理人基礎概念
   section_title: 代理人的組成架構
@@ -533,7 +533,7 @@ questions:
   explanation: 工作記憶專注於當前任務的中間變數，短期記憶主要保存對話上下文。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7136
   chapter_title: AI 代理人基礎概念
   section_title: 代理推理迴圈
@@ -548,7 +548,7 @@ questions:
   explanation: Reflexion 讓 LLM 用自己的語言描述失敗原因，這種文字形式的反思比結構化記錄更有幫助。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7137
   chapter_title: AI 代理人基礎概念
   section_title: 代理人類型
@@ -563,7 +563,7 @@ questions:
   explanation: RAG Agent 能在推理過程中從外部知識庫擷取相關資訊，擴展模型的能力範圍。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7138
   chapter_title: AI 代理人基礎概念
   section_title: Agent 的評估指標
@@ -578,7 +578,7 @@ questions:
   explanation: 回應延遲是衡量代理人效率的重要指標，包含推理、工具呼叫與結果生成的全部時間。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7139
   chapter_title: AI 代理人基礎概念
   section_title: 什麼是 AI 代理人
@@ -593,7 +593,7 @@ questions:
   explanation: 記憶讓代理人能記住過往互動，避免重複錯誤並提供一致的個人化體驗。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7140
   chapter_title: AI 代理人基礎概念
   section_title: 代理人類型
@@ -608,7 +608,7 @@ questions:
   explanation: 多代理系統讓每個代理人專精特定領域，就像團隊成員各有專長，協作效果優於全能但平庸的個體。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7141
   chapter_title: AI 代理人基礎概念
   section_title: 代理人的組成架構
@@ -623,7 +623,7 @@ questions:
   explanation: 長期記憶能跨任務保存使用者偏好，讓代理人在不同對話中保持一致的行為。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7142
   chapter_title: AI 代理人基礎概念
   section_title: 代理推理迴圈
@@ -638,7 +638,7 @@ questions:
   explanation: Reflection（反思）是 Reflexion 框架的特色，非 ReAct 的核心步驟。ReAct 的核心是思考→行動→觀察。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7143
   chapter_title: AI 代理人基礎概念
   section_title: 什麼是 AI 代理人
@@ -653,7 +653,7 @@ questions:
   explanation: 代理人無法修改自身 LLM 的內部權重，那是訓練階段才能做的事。代理人只能透過工具與外部環境互動。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7144
   chapter_title: AI 代理人基礎概念
   section_title: Agent 的評估指標
@@ -668,7 +668,7 @@ questions:
   explanation: 成本效率衡量每次成功任務的平均花費，是評估代理人經濟效益的重要指標。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7145
   chapter_title: AI 代理人基礎概念
   section_title: 代理推理迴圈
@@ -683,7 +683,7 @@ questions:
   explanation: 觀察結果是下一輪思考的關鍵輸入，讓代理人基於真實回饋動態調整行為。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7146
   chapter_title: AI 代理人基礎概念
   section_title: 代理人的組成架構
@@ -698,7 +698,7 @@ questions:
   explanation: LLM 是代理人的「大腦」，負責理解任務、規劃步驟與決定工具使用時機。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7147
   chapter_title: AI 代理人基礎概念
   section_title: 代理推理迴圈
@@ -713,7 +713,7 @@ questions:
   explanation: Plan-and-Execute 適合步驟可預先確定的任務，批次資料處理是典型應用。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7148
   chapter_title: AI 代理人基礎概念
   section_title: 什麼是 AI 代理人
@@ -728,7 +728,7 @@ questions:
   explanation: 聊天機器人和代理人都具備自然語言處理能力，但代理人多了自主行動與工具使用能力。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7149
   chapter_title: AI 代理人基礎概念
   section_title: 代理人的組成架構
@@ -743,7 +743,7 @@ questions:
   explanation: LLM 不能直接執行程式，而是輸出結構化請求，由中介層負責執行工具。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7150
   chapter_title: AI 代理人基礎概念
   section_title: 代理推理迴圈
@@ -758,7 +758,7 @@ questions:
   explanation: Reflexion 會累積每次失敗的反思，隨著經驗增加，成功機率也會提高。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7151
   chapter_title: AI 代理人基礎概念
   section_title: 代理人類型
@@ -773,7 +773,7 @@ questions:
   explanation: Agentic RAG 讓代理人在推理迴圈中動態決定檢索策略，比固定檢索更靈活。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7152
   chapter_title: AI 代理人基礎概念
   section_title: Agent 的評估指標
@@ -788,7 +788,7 @@ questions:
   explanation: 理想的代理人應同時兼顧效率與成功率，過度追求單一指標可能犧牲另一項。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7153
   chapter_title: AI 代理人基礎概念
   section_title: 什麼是 AI 代理人
@@ -803,7 +803,7 @@ questions:
   explanation: 傳統腳本是固定的 if-then-else 規則，代理人則仰賴 LLM 的動態推理能力。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7154
   chapter_title: AI 代理人基礎概念
   section_title: 代理人的組成架構
@@ -818,7 +818,7 @@ questions:
   explanation: 短期記憶對應當前的對話上下文，保存最近的互動內容。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7155
   chapter_title: AI 代理人基礎概念
   section_title: 代理推理迴圈
@@ -833,7 +833,7 @@ questions:
   explanation: 後設認知是「對思考的思考」，讓代理人能自我評估與修正。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7156
   chapter_title: AI 代理人基礎概念
   section_title: 什麼是 AI 代理人
@@ -848,7 +848,7 @@ questions:
   explanation: 高風險操作（如刪除檔案、發送郵件）應由人類確認後再執行，確保安全。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7157
   chapter_title: AI 代理人基礎概念
   section_title: 代理人類型
@@ -863,7 +863,7 @@ questions:
   explanation: 在多代理系統中，不同專業的代理人分工協作，各自負責擅長的領域。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both
 - id: 7158
   chapter_title: AI 代理人基礎概念
   section_title: 代理人的組成架構
@@ -878,4 +878,4 @@ questions:
   explanation: 感知能力是從外部環境獲取資訊，讀取 PDF 檔案並解析內容屬於感知範疇。
   tags:
   - chap-m5-ch1
-  usage: quiz
+  usage: both

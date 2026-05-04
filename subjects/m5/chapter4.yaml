@@ -15,7 +15,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-openclaw
-    usage: quiz
+    usage: both
   - id: 7402
     chapter_title: 主流 AI 代理框架總覽
     section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
@@ -32,7 +32,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-openclaw
-    usage: quiz
+    usage: both
   - id: 7403
     chapter_title: 主流 AI 代理框架總覽
     section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
@@ -48,7 +48,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-openclaw
-    usage: quiz
+    usage: both
   - id: 7404
     chapter_title: 主流 AI 代理框架總覽
     section_title: Hermes Agent：會自我學習的多平台代理
@@ -64,7 +64,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-hermes
-    usage: quiz
+    usage: both
   - id: 7405
     chapter_title: 主流 AI 代理框架總覽
     section_title: Hermes Agent：會自我學習的多平台代理
@@ -80,7 +80,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-hermes
-    usage: quiz
+    usage: both
   - id: 7406
     chapter_title: 主流 AI 代理框架總覽
     section_title: Hermes Agent：會自我學習的多平台代理
@@ -96,7 +96,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-hermes
-    usage: quiz
+    usage: both
   - id: 7407
     chapter_title: 主流 AI 代理框架總覽
     section_title: AI 代理框架的發展趨勢
@@ -113,7 +113,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-lessons
-    usage: quiz
+    usage: both
   - id: 7408
     chapter_title: 主流 AI 代理框架總覽
     section_title: Hermes Agent：會自我學習的多平台代理
@@ -128,7 +128,7 @@ questions:
     explanation: Hermes 支援並行派生子代理來高效率解決複雜多步驟任務。
     tags:
       - chap-m5-ch4
-    usage: quiz
+    usage: both
   - id: 7409
     chapter_title: 主流 AI 代理框架總覽
     section_title: 框架比較總覽
@@ -143,7 +143,7 @@ questions:
     explanation: 兩者都設計為可自由切換不同的底層語言模型。
     tags:
       - chap-m5-ch4
-    usage: quiz
+    usage: both
   - id: 7410
     chapter_title: 主流 AI 代理框架總覽
     section_title: AI 代理框架的發展趨勢
@@ -158,7 +158,7 @@ questions:
     explanation: 代理正逐漸融入人們常用的通訊軟體與工作環境中。
     tags:
       - chap-m5-ch4
-    usage: quiz
+    usage: both
   - id: 7411
     chapter_title: 主流 AI 代理框架總覽
     section_title: Hermes Agent：會自我學習的多平台代理
@@ -173,7 +173,7 @@ questions:
     explanation: 使用者可以直接用自然語言設定任務排程（如每天早上八點...）。
     tags:
       - chap-m5-ch4
-    usage: quiz
+    usage: both
   - id: 7412
     chapter_title: 主流 AI 代理框架總覽
     section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
@@ -188,7 +188,7 @@ questions:
     explanation: OpenClaw 在本地運行，能在不暴露隱私的情況下處理本地檔案。
     tags:
       - chap-m5-ch4
-    usage: quiz
+    usage: both
   - id: 7413
     chapter_title: 主流 AI 代理框架總覽
     section_title: 框架比較總覽
@@ -203,7 +203,7 @@ questions:
     explanation: 沒有記憶的代理無法成為稱職助理，持久記憶是未來發展關鍵。
     tags:
       - chap-m5-ch4
-    usage: quiz
+    usage: both
   - id: 7414
     chapter_title: 主流 AI 代理框架總覽
     section_title: Hermes Agent：會自我學習的多平台代理
@@ -218,7 +218,7 @@ questions:
     explanation: Hermes 不需要使用者特別指示，也能主動分辨並保存關鍵資訊。
     tags:
       - chap-m5-ch4
-    usage: quiz
+    usage: both
   - id: 7415
     chapter_title: 主流 AI 代理框架總覽
     section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
@@ -233,7 +233,7 @@ questions:
     explanation: OpenClaw 能自己寫技能，將反覆任務的解法固定下來。
     tags:
       - chap-m5-ch4
-    usage: quiz
+    usage: both
   - id: 7416
     chapter_title: 主流 AI 代理框架總覽
     section_title: 框架比較總覽
@@ -248,7 +248,7 @@ questions:
     explanation: 兩者都非常重視開源社群，並支援 MCP 或 agentskills 擴展。
     tags:
       - chap-m5-ch4
-    usage: quiz
+    usage: both
   - id: 7417
     chapter_title: 主流 AI 代理框架總覽
     section_title: Hermes Agent：會自我學習的多平台代理
@@ -263,7 +263,7 @@ questions:
     explanation: 透過搜尋與摘要技術，Hermes 能在海量歷史中找到相關脈絡。
     tags:
       - chap-m5-ch4
-    usage: quiz
+    usage: both
   - id: 7418
     chapter_title: 主流 AI 代理框架總覽
     section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
@@ -278,7 +278,7 @@ questions:
     explanation: OpenClaw 具備底層操作能力，能代為執行本地終端機指令。
     tags:
       - chap-m5-ch4
-    usage: quiz
+    usage: both
   - id: 7419
     chapter_title: 主流 AI 代理框架總覽
     section_title: AI 代理框架的發展趨勢
@@ -293,7 +293,7 @@ questions:
     explanation: 標準化讓不同框架開發出來的工具可以互相移植與重用。
     tags:
       - chap-m5-ch4
-    usage: quiz
+    usage: both
   - id: 7420
     chapter_title: 主流 AI 代理框架總覽
     section_title: 框架比較總覽
@@ -308,7 +308,7 @@ questions:
     explanation: Hermes 的核心優勢在於自我學習與進化，適合進階的生產力使用者。
     tags:
       - chap-m5-ch4
-    usage: quiz
+    usage: both
   - id: 7421
     chapter_title: 主流 AI 代理框架總覽
     section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
@@ -324,7 +324,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-openclaw
-    usage: quiz
+    usage: both
   - id: 7422
     chapter_title: 主流 AI 代理框架總覽
     section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
@@ -340,7 +340,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-openclaw
-    usage: quiz
+    usage: both
   - id: 7423
     chapter_title: 主流 AI 代理框架總覽
     section_title: Hermes Agent：會自我學習的多平台代理
@@ -356,7 +356,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-hermes
-    usage: quiz
+    usage: both
   - id: 7424
     chapter_title: 主流 AI 代理框架總覽
     section_title: Hermes Agent：會自我學習的多平台代理
@@ -372,7 +372,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-hermes
-    usage: quiz
+    usage: both
   - id: 7425
     chapter_title: 主流 AI 代理框架總覽
     section_title: 框架比較總覽
@@ -388,7 +388,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-comparison
-    usage: quiz
+    usage: both
   - id: 7426
     chapter_title: 主流 AI 代理框架總覽
     section_title: AI 代理框架的發展趨勢
@@ -404,7 +404,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-lessons
-    usage: quiz
+    usage: both
   - id: 7427
     chapter_title: 主流 AI 代理框架總覽
     section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
@@ -420,7 +420,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-openclaw
-    usage: quiz
+    usage: both
   - id: 7428
     chapter_title: 主流 AI 代理框架總覽
     section_title: Hermes Agent：會自我學習的多平台代理
@@ -436,7 +436,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-hermes
-    usage: quiz
+    usage: both
   - id: 7429
     chapter_title: 主流 AI 代理框架總覽
     section_title: 框架比較總覽
@@ -452,7 +452,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-comparison
-    usage: quiz
+    usage: both
   - id: 7430
     chapter_title: 主流 AI 代理框架總覽
     section_title: AI 代理框架的發展趨勢
@@ -468,7 +468,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-lessons
-    usage: quiz
+    usage: both
   - id: 7431
     chapter_title: 主流 AI 代理框架總覽
     section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
@@ -484,7 +484,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-openclaw
-    usage: quiz
+    usage: both
   - id: 7432
     chapter_title: 主流 AI 代理框架總覽
     section_title: Hermes Agent：會自我學習的多平台代理
@@ -500,7 +500,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-hermes
-    usage: quiz
+    usage: both
   - id: 7433
     chapter_title: 主流 AI 代理框架總覽
     section_title: 框架比較總覽
@@ -516,7 +516,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-comparison
-    usage: quiz
+    usage: both
   - id: 7434
     chapter_title: 主流 AI 代理框架總覽
     section_title: Hermes Agent：會自我學習的多平台代理
@@ -532,7 +532,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-hermes
-    usage: quiz
+    usage: both
   - id: 7435
     chapter_title: 主流 AI 代理框架總覽
     section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
@@ -548,7 +548,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-openclaw
-    usage: quiz
+    usage: both
   - id: 7436
     chapter_title: 主流 AI 代理框架總覽
     section_title: AI 代理框架的發展趨勢
@@ -564,7 +564,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-lessons
-    usage: quiz
+    usage: both
   - id: 7437
     chapter_title: 主流 AI 代理框架總覽
     section_title: Hermes Agent：會自我學習的多平台代理
@@ -580,7 +580,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-hermes
-    usage: quiz
+    usage: both
   - id: 7438
     chapter_title: 主流 AI 代理框架總覽
     section_title: 框架比較總覽
@@ -596,7 +596,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-comparison
-    usage: quiz
+    usage: both
   - id: 7439
     chapter_title: 主流 AI 代理框架總覽
     section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
@@ -612,7 +612,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-openclaw
-    usage: quiz
+    usage: both
   - id: 7440
     chapter_title: 主流 AI 代理框架總覽
     section_title: AI 代理框架的發展趨勢
@@ -628,7 +628,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-lessons
-    usage: quiz
+    usage: both
   - id: 7441
     chapter_title: 主流 AI 代理框架總覽
     section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
@@ -644,7 +644,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-openclaw
-    usage: quiz
+    usage: both
   - id: 7442
     chapter_title: 主流 AI 代理框架總覽
     section_title: Hermes Agent：會自我學習的多平台代理
@@ -660,7 +660,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-hermes
-    usage: quiz
+    usage: both
   - id: 7443
     chapter_title: 主流 AI 代理框架總覽
     section_title: 框架比較總覽
@@ -676,7 +676,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-comparison
-    usage: quiz
+    usage: both
   - id: 7444
     chapter_title: 主流 AI 代理框架總覽
     section_title: AI 代理框架的發展趨勢
@@ -692,7 +692,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-lessons
-    usage: quiz
+    usage: both
   - id: 7445
     chapter_title: 主流 AI 代理框架總覽
     section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
@@ -708,7 +708,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-openclaw
-    usage: quiz
+    usage: both
   - id: 7446
     chapter_title: 主流 AI 代理框架總覽
     section_title: Hermes Agent：會自我學習的多平台代理
@@ -724,7 +724,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-hermes
-    usage: quiz
+    usage: both
   - id: 7447
     chapter_title: 主流 AI 代理框架總覽
     section_title: 框架比較總覽
@@ -740,7 +740,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-comparison
-    usage: quiz
+    usage: both
   - id: 7448
     chapter_title: 主流 AI 代理框架總覽
     section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
@@ -756,7 +756,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-openclaw
-    usage: quiz
+    usage: both
   - id: 7449
     chapter_title: 主流 AI 代理框架總覽
     section_title: Hermes Agent：會自我學習的多平台代理
@@ -772,7 +772,7 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-hermes
-    usage: quiz
+    usage: both
   - id: 7450
     chapter_title: 主流 AI 代理框架總覽
     section_title: AI 代理框架的發展趨勢
@@ -788,4 +788,4 @@ questions:
     tags:
       - chap-m5-ch4
       - sec-lessons
-    usage: quiz
+    usage: both

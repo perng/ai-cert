@@ -14,7 +14,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-mas-overview
-    usage: quiz
+    usage: both
   - id: 7502
     chapter_title: 多代理系統與未來發展
     section_title: 多代理協作模式
@@ -30,7 +30,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-mas-patterns
-    usage: quiz
+    usage: both
   - id: 7503
     chapter_title: 多代理系統與未來發展
     section_title: 多代理協作模式
@@ -46,7 +46,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-mas-patterns
-    usage: quiz
+    usage: both
   - id: 7504
     chapter_title: 多代理系統與未來發展
     section_title: 代理通訊協議
@@ -62,7 +62,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-agent-communication
-    usage: quiz
+    usage: both
   - id: 7505
     chapter_title: 多代理系統與未來發展
     section_title: 代理安全與信任
@@ -79,7 +79,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-agent-safety
-    usage: quiz
+    usage: both
   - id: 7506
     chapter_title: 多代理系統與未來發展
     section_title: 代理安全與信任
@@ -95,7 +95,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-agent-safety
-    usage: quiz
+    usage: both
   - id: 7507
     chapter_title: 多代理系統與未來發展
     section_title: AI 代理技術的未來趨勢
@@ -112,7 +112,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-future-trends
-    usage: quiz
+    usage: both
   - id: 7508
     chapter_title: 多代理系統與未來發展
     section_title: 代理通訊協議
@@ -128,7 +128,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-agent-communication
-    usage: quiz
+    usage: both
   - id: 7509
     chapter_title: 多代理系統與未來發展
     section_title: 自然語言網路 (NLWeb)
@@ -144,7 +144,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-nlweb
-    usage: quiz
+    usage: both
   - id: 7510
     chapter_title: 多代理系統與未來發展
     section_title: 代理通訊協議
@@ -159,7 +159,7 @@ questions:
     explanation: Artifact 包含了代理人的工作結果與相關描述，便於協調者整合。
     tags:
       - chap-m5-ch5
-    usage: quiz
+    usage: both
   - id: 7511
     chapter_title: 多代理系統與未來發展
     section_title: 代理通訊協議
@@ -174,7 +174,7 @@ questions:
     explanation: 事件佇列處理長時間運行的狀態更新，確保連線的穩定性。
     tags:
       - chap-m5-ch5
-    usage: quiz
+    usage: both
   - id: 7512
     chapter_title: 多代理系統與未來發展
     section_title: 自然語言網路 (NLWeb)
@@ -189,7 +189,7 @@ questions:
     explanation: NLWeb 旨在讓網站具備被代理人輕易理解與操作的自然語言介面。
     tags:
       - chap-m5-ch5
-    usage: quiz
+    usage: both
   - id: 7513
     chapter_title: 多代理系統與未來發展
     section_title: 自然語言網路 (NLWeb)
@@ -204,7 +204,7 @@ questions:
     explanation: 向量資料庫能高效儲存與檢索具有語意特徵的網站內容。
     tags:
       - chap-m5-ch5
-    usage: quiz
+    usage: both
   - id: 7514
     chapter_title: 多代理系統與未來發展
     section_title: 自然語言網路 (NLWeb)
@@ -219,7 +219,7 @@ questions:
     explanation: NLWeb 整合了 MCP，讓代理人能透過標準化協定查詢網站資料。
     tags:
       - chap-m5-ch5
-    usage: quiz
+    usage: both
   - id: 7515
     chapter_title: 多代理系統與未來發展
     section_title: 多代理協作模式
@@ -234,7 +234,7 @@ questions:
     explanation: 協調者的核心價值在於拆解與分派任務，讓專業代理各司其職。
     tags:
       - chap-m5-ch5
-    usage: quiz
+    usage: both
   - id: 7516
     chapter_title: 多代理系統與未來發展
     section_title: 多代理系統概述
@@ -249,7 +249,7 @@ questions:
     explanation: 每個代理有自己獨立的上下文，整體系統能處理更龐大的資訊。
     tags:
       - chap-m5-ch5
-    usage: quiz
+    usage: both
   - id: 7517
     chapter_title: 多代理系統與未來發展
     section_title: 多代理協作模式
@@ -264,7 +264,7 @@ questions:
     explanation: 透過不同代理從正反兩面交互詰問，能有效揭露邏輯盲點與偏見。
     tags:
       - chap-m5-ch5
-    usage: quiz
+    usage: both
   - id: 7518
     chapter_title: 多代理系統與未來發展
     section_title: 代理安全與信任
@@ -279,7 +279,7 @@ questions:
     explanation: 注入攻擊的目標是掌控代理人的行為，利用其權限進行不當操作。
     tags:
       - chap-m5-ch5
-    usage: quiz
+    usage: both
   - id: 7519
     chapter_title: 多代理系統與未來發展
     section_title: 代理安全與信任
@@ -294,7 +294,7 @@ questions:
     explanation: 預算機制能確保系統在失控時及時止損，控制成本與運算資源。
     tags:
       - chap-m5-ch5
-    usage: quiz
+    usage: both
   - id: 7520
     chapter_title: 多代理系統與未來發展
     section_title: AI 代理技術的未來趨勢
@@ -309,7 +309,7 @@ questions:
     explanation: 這類代理不依賴 API，而是透過像素級視覺與 GUI 直接互動。
     tags:
       - chap-m5-ch5
-    usage: quiz
+    usage: both
   - id: 7521
     chapter_title: 多代理系統與未來發展
     section_title: 代理安全與信任
@@ -324,7 +324,7 @@ questions:
     explanation: 人類作為安全守門員，負責在關鍵決策節點上給予授權與監督。
     tags:
       - chap-m5-ch5
-    usage: quiz
+    usage: both
   - id: 7522
     chapter_title: 多代理系統與未來發展
     section_title: 代理安全與信任
@@ -339,7 +339,7 @@ questions:
     explanation: 最小權限原則可降低代理人遭挾持時對系統造成的損害範圍。
     tags:
       - chap-m5-ch5
-    usage: quiz
+    usage: both
   - id: 7523
     chapter_title: 多代理系統與未來發展
     section_title: 多代理系統概述
@@ -354,7 +354,7 @@ questions:
     explanation: 分工可以讓特定代理專精於單一領域，提升整體的決策品質。
     tags:
       - chap-m5-ch5
-    usage: quiz
+    usage: both
   - id: 7524
     chapter_title: 多代理系統與未來發展
     section_title: 代理通訊協議
@@ -369,7 +369,7 @@ questions:
     explanation: 通訊標準打破了系統孤島，讓異質代理人能夠建立合作關係。
     tags:
       - chap-m5-ch5
-    usage: quiz
+    usage: both
   - id: 7525
     chapter_title: 多代理系統與未來發展
     section_title: AI 代理技術的未來趨勢
@@ -384,7 +384,7 @@ questions:
     explanation: 邊緣計算將運算推向裝置端，具有低延遲與高隱私的優勢。
     tags:
       - chap-m5-ch5
-    usage: quiz
+    usage: both
   - id: 7526
     chapter_title: 多代理系統與未來發展
     section_title: 代理安全與信任
@@ -399,7 +399,7 @@ questions:
     explanation: 沙盒限制了程式執行的影響範圍，防止惡意操作破壞主系統。
     tags:
       - chap-m5-ch5
-    usage: quiz
+    usage: both
   - id: 7527
     chapter_title: 多代理系統與未來發展
     section_title: 多代理系統概述
@@ -414,7 +414,7 @@ questions:
     explanation: 多代理系統的難點在於協作、通訊與避免代理人間發生衝突。
     tags:
       - chap-m5-ch5
-    usage: quiz
+    usage: both
   - id: 7528
     chapter_title: 多代理系統與未來發展
     section_title: 自然語言網路 (NLWeb)
@@ -429,7 +429,7 @@ questions:
     explanation: 自然語言介面讓使用者與代理人能跨越層層選單直接獲取目標。
     tags:
       - chap-m5-ch5
-    usage: quiz
+    usage: both
   - id: 7529
     chapter_title: 多代理系統與未來發展
     section_title: 代理安全與信任
@@ -444,7 +444,7 @@ questions:
     explanation: 程式碼執行權限極高，若未加限制，可能對系統造成嚴重危害。
     tags:
       - chap-m5-ch5
-    usage: quiz
+    usage: both
   - id: 7530
     chapter_title: 多代理系統與未來發展
     section_title: 多代理系統概述
@@ -460,7 +460,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-mas-overview
-    usage: quiz
+    usage: both
   - id: 7531
     chapter_title: 多代理系統與未來發展
     section_title: 多代理系統概述
@@ -476,7 +476,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-mas-overview
-    usage: quiz
+    usage: both
   - id: 7532
     chapter_title: 多代理系統與未來發展
     section_title: 多代理協作模式
@@ -492,7 +492,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-mas-patterns
-    usage: quiz
+    usage: both
   - id: 7533
     chapter_title: 多代理系統與未來發展
     section_title: 代理通訊協議
@@ -508,7 +508,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-agent-communication
-    usage: quiz
+    usage: both
   - id: 7534
     chapter_title: 多代理系統與未來發展
     section_title: 代理安全與信任
@@ -524,7 +524,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-agent-safety
-    usage: quiz
+    usage: both
   - id: 7535
     chapter_title: 多代理系統與未來發展
     section_title: AI 代理技術未來趨勢
@@ -540,7 +540,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-future-trends
-    usage: quiz
+    usage: both
   - id: 7536
     chapter_title: 多代理系統與未來發展
     section_title: 多代理系統概述
@@ -556,7 +556,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-mas-overview
-    usage: quiz
+    usage: both
   - id: 7537
     chapter_title: 多代理系統與未來發展
     section_title: 多代理協作模式
@@ -572,7 +572,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-mas-patterns
-    usage: quiz
+    usage: both
   - id: 7538
     chapter_title: 多代理系統與未來發展
     section_title: 代理通訊協議
@@ -588,7 +588,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-agent-communication
-    usage: quiz
+    usage: both
   - id: 7539
     chapter_title: 多代理系統與未來發展
     section_title: 代理安全與信任
@@ -604,7 +604,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-agent-safety
-    usage: quiz
+    usage: both
   - id: 7540
     chapter_title: 多代理系統與未來發展
     section_title: AI 代理技術未來趨勢
@@ -620,7 +620,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-future-trends
-    usage: quiz
+    usage: both
   - id: 7541
     chapter_title: 多代理系統與未來發展
     section_title: 多代理系統概述
@@ -636,7 +636,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-mas-overview
-    usage: quiz
+    usage: both
   - id: 7542
     chapter_title: 多代理系統與未來發展
     section_title: 多代理協作模式
@@ -652,7 +652,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-mas-patterns
-    usage: quiz
+    usage: both
   - id: 7543
     chapter_title: 多代理系統與未來發展
     section_title: 代理通訊協議
@@ -668,7 +668,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-agent-communication
-    usage: quiz
+    usage: both
   - id: 7544
     chapter_title: 多代理系統與未來發展
     section_title: 代理安全與信任
@@ -684,7 +684,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-agent-safety
-    usage: quiz
+    usage: both
   - id: 7545
     chapter_title: 多代理系統與未來發展
     section_title: AI 代理技術未來趨勢
@@ -700,7 +700,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-future-trends
-    usage: quiz
+    usage: both
   - id: 7546
     chapter_title: 多代理系統與未來發展
     section_title: 多代理系統概述
@@ -716,7 +716,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-mas-overview
-    usage: quiz
+    usage: both
   - id: 7547
     chapter_title: 多代理系統與未來發展
     section_title: 多代理協作模式
@@ -732,7 +732,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-mas-patterns
-    usage: quiz
+    usage: both
   - id: 7548
     chapter_title: 多代理系統與未來發展
     section_title: 代理通訊協議
@@ -748,7 +748,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-agent-communication
-    usage: quiz
+    usage: both
   - id: 7549
     chapter_title: 多代理系統與未來發展
     section_title: 代理安全與信任
@@ -764,7 +764,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-agent-safety
-    usage: quiz
+    usage: both
   - id: 7550
     chapter_title: 多代理系統與未來發展
     section_title: AI 代理技術未來趨勢
@@ -780,7 +780,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-future-trends
-    usage: quiz
+    usage: both
   - id: 7551
     chapter_title: 多代理系統與未來發展
     section_title: 多代理系統概述
@@ -796,7 +796,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-mas-overview
-    usage: quiz
+    usage: both
   - id: 7552
     chapter_title: 多代理系統與未來發展
     section_title: 多代理協作模式
@@ -812,7 +812,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-mas-patterns
-    usage: quiz
+    usage: both
   - id: 7553
     chapter_title: 多代理系統與未來發展
     section_title: 代理通訊協議
@@ -828,7 +828,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-agent-communication
-    usage: quiz
+    usage: both
   - id: 7554
     chapter_title: 多代理系統與未來發展
     section_title: 代理安全與信任
@@ -844,7 +844,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-agent-safety
-    usage: quiz
+    usage: both
   - id: 7555
     chapter_title: 多代理系統與未來發展
     section_title: AI 代理技術未來趨勢
@@ -860,7 +860,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-future-trends
-    usage: quiz
+    usage: both
   - id: 7556
     chapter_title: 多代理系統與未來發展
     section_title: 多代理系統概述
@@ -876,7 +876,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-mas-overview
-    usage: quiz
+    usage: both
   - id: 7557
     chapter_title: 多代理系統與未來發展
     section_title: 多代理協作模式
@@ -892,7 +892,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-mas-patterns
-    usage: quiz
+    usage: both
   - id: 7558
     chapter_title: 多代理系統與未來發展
     section_title: 代理通訊協議
@@ -908,7 +908,7 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-agent-communication
-    usage: quiz
+    usage: both
   - id: 7559
     chapter_title: 多代理系統與未來發展
     section_title: AI 代理技術未來趨勢
@@ -924,4 +924,4 @@ questions:
     tags:
       - chap-m5-ch5
       - sec-future-trends
-    usage: quiz
+    usage: both

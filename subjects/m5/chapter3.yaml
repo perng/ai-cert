@@ -14,7 +14,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-skills-intro
-    usage: quiz
+    usage: both
   - id: 7302
     chapter_title: Agentic Skills 設計
     section_title: 工具呼叫機制
@@ -31,7 +31,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-tool-calling
-    usage: quiz
+    usage: both
   - id: 7303
     chapter_title: Agentic Skills 設計
     section_title: 工具呼叫機制
@@ -47,7 +47,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-tool-calling
-    usage: quiz
+    usage: both
   - id: 7304
     chapter_title: Agentic Skills 設計
     section_title: 記憶管理設計
@@ -63,7 +63,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-memory-management
-    usage: quiz
+    usage: both
   - id: 7305
     chapter_title: Agentic Skills 設計
     section_title: 規劃策略設計
@@ -79,7 +79,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-planning-strategies
-    usage: quiz
+    usage: both
   - id: 7306
     chapter_title: Agentic Skills 設計
     section_title: Skill 設計最佳實踐
@@ -96,7 +96,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-skill-best-practices
-    usage: quiz
+    usage: both
   - id: 7307
     chapter_title: Agentic Skills 設計
     section_title: Skill 設計最佳實踐
@@ -112,7 +112,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-skill-best-practices
-    usage: quiz
+    usage: both
   - id: 7308
     chapter_title: Agentic Skills 設計
     section_title: 上下文工程 (Context Engineering)
@@ -128,7 +128,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-context-engineering
-    usage: quiz
+    usage: both
   - id: 7309
     chapter_title: Agentic Skills 設計
     section_title: 上下文工程 (Context Engineering)
@@ -144,7 +144,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-context-engineering
-    usage: quiz
+    usage: both
   - id: 7310
     chapter_title: Agentic Skills 設計
     section_title: 光靠提示詞，為什麼不夠？
@@ -159,7 +159,7 @@ questions:
     explanation: 代理人面對的任務環境隨時在變，靜態的提示詞無法涵蓋所有可能的突發狀況。
     tags:
       - chap-m5-ch3
-    usage: quiz
+    usage: both
   - id: 7311
     chapter_title: Agentic Skills 設計
     section_title: 上下文工程 (Context Engineering)
@@ -174,7 +174,7 @@ questions:
     explanation: 當錯誤資訊成為後續推理的基礎時，代理人就會不斷做出荒謬或無效的決策。
     tags:
       - chap-m5-ch3
-    usage: quiz
+    usage: both
   - id: 7312
     chapter_title: Agentic Skills 設計
     section_title: 上下文工程 (Context Engineering)
@@ -189,7 +189,7 @@ questions:
     explanation: 在資訊被當作事實存入記憶前，透過外部工具進行交叉驗證是防止中毒的關鍵。
     tags:
       - chap-m5-ch3
-    usage: quiz
+    usage: both
   - id: 7313
     chapter_title: Agentic Skills 設計
     section_title: 上下文工程 (Context Engineering)
@@ -204,7 +204,7 @@ questions:
     explanation: 當雜訊過多時，模型的注意力機制會被稀釋，忘記現在最重要應該做什麼事。
     tags:
       - chap-m5-ch3
-    usage: quiz
+    usage: both
   - id: 7314
     chapter_title: Agentic Skills 設計
     section_title: 上下文工程 (Context Engineering)
@@ -219,7 +219,7 @@ questions:
     explanation: 摘要技術能去除冗餘對話，保留核心意義，幫助模型在有限視窗內維持專注。
     tags:
       - chap-m5-ch3
-    usage: quiz
+    usage: both
   - id: 7315
     chapter_title: Agentic Skills 設計
     section_title: 上下文工程 (Context Engineering)
@@ -234,7 +234,7 @@ questions:
     explanation: 過多選擇會干擾模型的判斷能力，造成上下文混淆，進而選錯工具。
     tags:
       - chap-m5-ch3
-    usage: quiz
+    usage: both
   - id: 7316
     chapter_title: Agentic Skills 設計
     section_title: 上下文工程 (Context Engineering)
@@ -249,7 +249,7 @@ questions:
     explanation: 減少不必要的工具干擾，能顯著提升代理人選擇正確工具的準確率。
     tags:
       - chap-m5-ch3
-    usage: quiz
+    usage: both
   - id: 7317
     chapter_title: Agentic Skills 設計
     section_title: 上下文工程 (Context Engineering)
@@ -264,7 +264,7 @@ questions:
     explanation: 矛盾的資訊會讓模型無法判斷哪一個才是真實意圖，導致推理不一致。
     tags:
       - chap-m5-ch3
-    usage: quiz
+    usage: both
   - id: 7318
     chapter_title: Agentic Skills 設計
     section_title: 上下文工程 (Context Engineering)
@@ -279,7 +279,7 @@ questions:
     explanation: 暫存區賦予代理人額外的運算空間來分析矛盾，最終得出一致的行動方針。
     tags:
       - chap-m5-ch3
-    usage: quiz
+    usage: both
   - id: 7319
     chapter_title: Agentic Skills 設計
     section_title: 記憶管理設計
@@ -294,7 +294,7 @@ questions:
     explanation: 衰減機制確保代理人會優先參考使用者近期的狀態或偏好，而非陳舊過時的資訊。
     tags:
       - chap-m5-ch3
-    usage: quiz
+    usage: both
   - id: 7320
     chapter_title: Agentic Skills 設計
     section_title: 規劃策略設計
@@ -309,7 +309,7 @@ questions:
     explanation: 拆解任務能降低每一步的認知負擔，讓代理人更容易成功達成最終目標。
     tags:
       - chap-m5-ch3
-    usage: quiz
+    usage: both
   - id: 7321
     chapter_title: Agentic Skills 設計
     section_title: Skill 設計最佳實踐
@@ -324,7 +324,7 @@ questions:
     explanation: 代理人經常會重試失敗的步驟，冪等性可保證重試過程是安全的。
     tags:
       - chap-m5-ch3
-    usage: quiz
+    usage: both
   - id: 7322
     chapter_title: Agentic Skills 設計
     section_title: Skill 設計最佳實踐
@@ -339,7 +339,7 @@ questions:
     explanation: 錯誤訊息是代理人自我反省的關鍵輸入，沒有清晰的錯誤訊息就無法修正路線。
     tags:
       - chap-m5-ch3
-    usage: quiz
+    usage: both
   - id: 7323
     chapter_title: Agentic Skills 設計
     section_title: 工具呼叫機制
@@ -354,7 +354,7 @@ questions:
     explanation: 並行工具呼叫省去了多次網路往返的延遲，對於互相獨立的任務能顯著提升效率。
     tags:
       - chap-m5-ch3
-    usage: quiz
+    usage: both
   - id: 7324
     chapter_title: Agentic Skills 設計
     section_title: Skill 設計最佳實踐
@@ -369,7 +369,7 @@ questions:
     explanation: 明確的限制能防止代理人因為過度發散的想像力而產生導致系統錯誤的極端輸入。
     tags:
       - chap-m5-ch3
-    usage: quiz
+    usage: both
   - id: 7325
     chapter_title: Agentic Skills 設計
     section_title: 記憶管理設計
@@ -384,7 +384,7 @@ questions:
     explanation: 向量搜尋超越了傳統的關鍵字比對，讓代理人能理解概念上的相似性並找到對應記憶。
     tags:
       - chap-m5-ch3
-    usage: quiz
+    usage: both
   - id: 7326
     chapter_title: Agentic Skills 設計
     section_title: 規劃策略設計
@@ -399,7 +399,7 @@ questions:
     explanation: 動態重規劃的精髓在於保持目標不變，但通往目標的路徑可以根據現實狀況靈活調整。
     tags:
       - chap-m5-ch3
-    usage: quiz
+    usage: both
   - id: 7327
     chapter_title: Agentic Skills 設計
     section_title: Skill 設計最佳實踐
@@ -414,7 +414,7 @@ questions:
     explanation: 模型不需要知道底層怎麼實作，只需要知道什麼時候用它、用了會有什麼效果。
     tags:
       - chap-m5-ch3
-    usage: quiz
+    usage: both
   - id: 7328
     chapter_title: Agentic Skills 設計
     section_title: 上下文工程 (Context Engineering)
@@ -429,7 +429,7 @@ questions:
     explanation: 修剪過時與矛盾的資訊能確保模型在推理時有一個乾淨、邏輯一致的上下文基礎。
     tags:
       - chap-m5-ch3
-    usage: quiz
+    usage: both
   - id: 7329
     chapter_title: Agentic Skills 設計
     section_title: 上下文工程 (Context Engineering)
@@ -444,7 +444,7 @@ questions:
     explanation: 暫存區如同人類的計算紙，先寫下推理過程再給出最終答案，能大幅提升準確率。
     tags:
       - chap-m5-ch3
-    usage: quiz
+    usage: both
   - id: 7330
     chapter_title: Agentic Skills 設計
     section_title: 什麼是 Agentic Skills
@@ -460,7 +460,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-skills-intro
-    usage: quiz
+    usage: both
   - id: 7331
     chapter_title: Agentic Skills 設計
     section_title: 工具呼叫機制
@@ -476,7 +476,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-tool-calling
-    usage: quiz
+    usage: both
   - id: 7332
     chapter_title: Agentic Skills 設計
     section_title: 記憶管理設計
@@ -492,7 +492,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-memory-management
-    usage: quiz
+    usage: both
   - id: 7333
     chapter_title: Agentic Skills 設計
     section_title: 規劃策略設計
@@ -508,7 +508,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-planning-strategies
-    usage: quiz
+    usage: both
   - id: 7334
     chapter_title: Agentic Skills 設計
     section_title: Skill 設計最佳實踐
@@ -524,7 +524,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-skill-best-practices
-    usage: quiz
+    usage: both
   - id: 7335
     chapter_title: Agentic Skills 設計
     section_title: 上下文工程 (Context Engineering)
@@ -540,7 +540,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-context-engineering
-    usage: quiz
+    usage: both
   - id: 7336
     chapter_title: Agentic Skills 設計
     section_title: 什麼是 Agentic Skills
@@ -556,7 +556,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-skills-intro
-    usage: quiz
+    usage: both
   - id: 7337
     chapter_title: Agentic Skills 設計
     section_title: 工具呼叫機制
@@ -572,7 +572,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-tool-calling
-    usage: quiz
+    usage: both
   - id: 7338
     chapter_title: Agentic Skills 設計
     section_title: 記憶管理設計
@@ -588,7 +588,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-memory-management
-    usage: quiz
+    usage: both
   - id: 7339
     chapter_title: Agentic Skills 設計
     section_title: 規劃策略設計
@@ -604,7 +604,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-planning-strategies
-    usage: quiz
+    usage: both
   - id: 7340
     chapter_title: Agentic Skills 設計
     section_title: Skill 設計最佳實踐
@@ -620,7 +620,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-skill-best-practices
-    usage: quiz
+    usage: both
   - id: 7341
     chapter_title: Agentic Skills 設計
     section_title: 上下文工程 (Context Engineering)
@@ -636,7 +636,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-context-engineering
-    usage: quiz
+    usage: both
   - id: 7342
     chapter_title: Agentic Skills 設計
     section_title: 什麼是 Agentic Skills
@@ -652,7 +652,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-skills-intro
-    usage: quiz
+    usage: both
   - id: 7343
     chapter_title: Agentic Skills 設計
     section_title: 工具呼叫機制
@@ -668,7 +668,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-tool-calling
-    usage: quiz
+    usage: both
   - id: 7344
     chapter_title: Agentic Skills 設計
     section_title: 記憶管理設計
@@ -684,7 +684,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-memory-management
-    usage: quiz
+    usage: both
   - id: 7345
     chapter_title: Agentic Skills 設計
     section_title: 規劃策略設計
@@ -700,7 +700,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-skill-best-practices
-    usage: quiz
+    usage: both
   - id: 7346
     chapter_title: Agentic Skills 設計
     section_title: 上下文工程 (Context Engineering)
@@ -716,7 +716,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-context-engineering
-    usage: quiz
+    usage: both
   - id: 7347
     chapter_title: Agentic Skills 設計
     section_title: 什麼是 Agentic Skills
@@ -732,7 +732,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-skills-intro
-    usage: quiz
+    usage: both
   - id: 7348
     chapter_title: Agentic Skills 設計
     section_title: 工具呼叫機制
@@ -748,7 +748,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-tool-calling
-    usage: quiz
+    usage: both
   - id: 7349
     chapter_title: Agentic Skills 設計
     section_title: 記憶管理設計
@@ -764,7 +764,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-memory-management
-    usage: quiz
+    usage: both
   - id: 7350
     chapter_title: Agentic Skills 設計
     section_title: 規劃策略設計
@@ -780,7 +780,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-planning-strategies
-    usage: quiz
+    usage: both
   - id: 7351
     chapter_title: Agentic Skills 設計
     section_title: Skill 設計最佳實踐
@@ -796,7 +796,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-skill-best-practices
-    usage: quiz
+    usage: both
   - id: 7352
     chapter_title: Agentic Skills 設計
     section_title: 上下文工程 (Context Engineering)
@@ -812,7 +812,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-context-engineering
-    usage: quiz
+    usage: both
   - id: 7353
     chapter_title: Agentic Skills 設計
     section_title: 什麼是 Agentic Skills
@@ -828,7 +828,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-skills-intro
-    usage: quiz
+    usage: both
   - id: 7354
     chapter_title: Agentic Skills 設計
     section_title: 工具呼叫機制
@@ -844,7 +844,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-tool-calling
-    usage: quiz
+    usage: both
   - id: 7355
     chapter_title: Agentic Skills 設計
     section_title: 記憶管理設計
@@ -860,7 +860,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-memory-management
-    usage: quiz
+    usage: both
   - id: 7356
     chapter_title: Agentic Skills 設計
     section_title: 規劃策略設計
@@ -876,7 +876,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-planning-strategies
-    usage: quiz
+    usage: both
   - id: 7357
     chapter_title: Agentic Skills 設計
     section_title: Skill 設計最佳實踐
@@ -892,7 +892,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-skill-best-practices
-    usage: quiz
+    usage: both
   - id: 7358
     chapter_title: Agentic Skills 設計
     section_title: 上下文工程 (Context Engineering)
@@ -908,7 +908,7 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-context-engineering
-    usage: quiz
+    usage: both
   - id: 7359
     chapter_title: Agentic Skills 設計
     section_title: 上下文工程 (Context Engineering)
@@ -924,4 +924,4 @@ questions:
     tags:
       - chap-m5-ch3
       - sec-context-engineering
-    usage: quiz
+    usage: both

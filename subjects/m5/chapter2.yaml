@@ -14,7 +14,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-intro
-    usage: quiz
+    usage: both
   - id: 7202
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 系統架構
@@ -30,7 +30,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-architecture
-    usage: quiz
+    usage: both
   - id: 7203
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 系統架構
@@ -46,7 +46,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-architecture
-    usage: quiz
+    usage: both
   - id: 7204
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 核心元件
@@ -63,7 +63,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-components
-    usage: quiz
+    usage: both
   - id: 7205
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 傳輸機制
@@ -80,7 +80,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-transport
-    usage: quiz
+    usage: both
   - id: 7206
     chapter_title: 模型上下文協議 (MCP)
     section_title: 開發 MCP 伺服器
@@ -96,7 +96,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-server-dev
-    usage: quiz
+    usage: both
   - id: 7207
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 安全考量
@@ -112,7 +112,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-security
-    usage: quiz
+    usage: both
   - id: 7208
     chapter_title: 模型上下文協議 (MCP)
     section_title: AI 代理人基礎概念
@@ -128,7 +128,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-agent-fundamentals
-    usage: quiz
+    usage: both
   - id: 7209
     chapter_title: 模型上下文協議 (MCP)
     section_title: 代理人可觀測性與評估
@@ -144,7 +144,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-agent-observability
-    usage: quiz
+    usage: both
   - id: 7210
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 簡介與設計動機
@@ -159,7 +159,7 @@ questions:
     explanation: 隨著工具與資料源激增，MCP 提供標準化協議來消弭 M×N 的客製化整合噩夢。
     tags:
       - chap-m5-ch2
-    usage: quiz
+    usage: both
   - id: 7211
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 系統架構
@@ -174,7 +174,7 @@ questions:
     explanation: MCP 主機 (Host) 控制整個系統的生命週期，並確保使用者在呼叫高風險工具時能進行審核。
     tags:
       - chap-m5-ch2
-    usage: quiz
+    usage: both
   - id: 7212
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 核心元件
@@ -189,7 +189,7 @@ questions:
     explanation: MCP 伺服器主要透過暴露工具、資源和提示範本來為代理人擴展能力。
     tags:
       - chap-m5-ch2
-    usage: quiz
+    usage: both
   - id: 7213
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 核心元件
@@ -204,7 +204,7 @@ questions:
     explanation: 提示範本允許伺服器提供預先定義好的工作流程起點，幫助代理人快速進入狀況。
     tags:
       - chap-m5-ch2
-    usage: quiz
+    usage: both
   - id: 7214
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 傳輸機制
@@ -219,7 +219,7 @@ questions:
     explanation: stdio 傳輸方式安全性高且非常適合本地環境，因為它依賴本機程序的執行權限。
     tags:
       - chap-m5-ch2
-    usage: quiz
+    usage: both
   - id: 7215
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 簡介與設計動機
@@ -234,7 +234,7 @@ questions:
     explanation: MCP 客戶端能直接向伺服器查詢可用清單，代理人因此能動態發掘並使用新工具。
     tags:
       - chap-m5-ch2
-    usage: quiz
+    usage: both
   - id: 7216
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 系統架構
@@ -249,7 +249,7 @@ questions:
     explanation: 輕量級的伺服器專注於做好一件事情，能提升系統整體的穩定度與易維護性。
     tags:
       - chap-m5-ch2
-    usage: quiz
+    usage: both
   - id: 7217
     chapter_title: 模型上下文協議 (MCP)
     section_title: 代理人可觀測性與評估
@@ -264,7 +264,7 @@ questions:
     explanation: Span 用來標記與測量特定操作的持續時間，幫助開發者定位效能瓶頸。
     tags:
       - chap-m5-ch2
-    usage: quiz
+    usage: both
   - id: 7218
     chapter_title: 模型上下文協議 (MCP)
     section_title: 代理人可觀測性與評估
@@ -279,7 +279,7 @@ questions:
     explanation: 透過追蹤系統運作，開發者能洞察代理人的思考邏輯，使「黑箱」模型具備可解釋性。
     tags:
       - chap-m5-ch2
-    usage: quiz
+    usage: both
   - id: 7219
     chapter_title: 模型上下文協議 (MCP)
     section_title: 代理人可觀測性與評估
@@ -294,7 +294,7 @@ questions:
     explanation: 結構化追蹤可以將錯綜複雜的系統日誌關聯到特定的請求上，大幅簡化除錯難度。
     tags:
       - chap-m5-ch2
-    usage: quiz
+    usage: both
   - id: 7220
     chapter_title: 模型上下文協議 (MCP)
     section_title: 代理人可觀測性與評估
@@ -309,7 +309,7 @@ questions:
     explanation: 追蹤日誌能清晰重現代理人收到的提示詞、工具回傳結果與其當時的決策過程。
     tags:
       - chap-m5-ch2
-    usage: quiz
+    usage: both
   - id: 7221
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 系統架構
@@ -324,7 +324,7 @@ questions:
     explanation: 一對一的連線設計簡化了狀態管理，讓客戶端與伺服器間的溝通更加清晰可靠。
     tags:
       - chap-m5-ch2
-    usage: quiz
+    usage: both
   - id: 7222
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 安全考量
@@ -339,7 +339,7 @@ questions:
     explanation: 為了防止提示詞注入與幻覺帶來的危害，伺服器絕不可盲目信任 LLM 傳來的資料。
     tags:
       - chap-m5-ch2
-    usage: quiz
+    usage: both
   - id: 7223
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 簡介與設計動機
@@ -354,7 +354,7 @@ questions:
     explanation: 標準化的介面讓開發者不需修改整合程式碼，就能無痛切換底層使用的語言模型。
     tags:
       - chap-m5-ch2
-    usage: quiz
+    usage: both
   - id: 7224
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 核心元件
@@ -369,7 +369,7 @@ questions:
     explanation: 資源是被動讀取的上下文資料，而工具是模型主動決定執行的動態操作。
     tags:
       - chap-m5-ch2
-    usage: quiz
+    usage: both
   - id: 7225
     chapter_title: 模型上下文協議 (MCP)
     section_title: 代理人可觀測性與評估
@@ -384,7 +384,7 @@ questions:
     explanation: 事件代表瞬間發生的狀態標記，例如「使用者點擊同意」、「API 連線失敗」等。
     tags:
       - chap-m5-ch2
-    usage: quiz
+    usage: both
   - id: 7226
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 簡介與設計動機
@@ -399,7 +399,7 @@ questions:
     explanation: 開源標準打破了廠商鎖定，吸引更多開發者貢獻相容於 MCP 的通用工具與服務。
     tags:
       - chap-m5-ch2
-    usage: quiz
+    usage: both
   - id: 7227
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 核心元件
@@ -414,7 +414,7 @@ questions:
     explanation: 讀取靜態檔案且不改變系統狀態的操作，最適合使用 MCP Resource 來實作。
     tags:
       - chap-m5-ch2
-    usage: quiz
+    usage: both
   - id: 7228
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 核心元件
@@ -429,7 +429,7 @@ questions:
     explanation: 發送電子郵件會改變外部環境的狀態（產生副作用），必須實作為 MCP Tool。
     tags:
       - chap-m5-ch2
-    usage: quiz
+    usage: both
   - id: 7229
     chapter_title: 模型上下文協議 (MCP)
     section_title: AI 代理人基礎概念
@@ -444,7 +444,7 @@ questions:
     explanation: 行動階段需要透過工具呼叫的機制，將模型的決策轉化為具體的外部系統操作。
     tags:
       - chap-m5-ch2
-    usage: quiz
+    usage: both
   - id: 7230
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 簡介與設計動機
@@ -460,7 +460,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-intro
-    usage: quiz
+    usage: both
   - id: 7231
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 系統架構
@@ -476,7 +476,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-architecture
-    usage: quiz
+    usage: both
   - id: 7232
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 核心元件
@@ -492,7 +492,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-components
-    usage: quiz
+    usage: both
   - id: 7233
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 傳輸機制
@@ -508,7 +508,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-transport
-    usage: quiz
+    usage: both
   - id: 7234
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 安全考量
@@ -524,7 +524,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-security
-    usage: quiz
+    usage: both
   - id: 7235
     chapter_title: 模型上下文協議 (MCP)
     section_title: 代理人可觀測性與評估
@@ -540,7 +540,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-agent-observability
-    usage: quiz
+    usage: both
   - id: 7236
     chapter_title: 模型上下文協議 (MCP)
     section_title: 開發 MCP 伺服器
@@ -556,7 +556,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-server-dev
-    usage: quiz
+    usage: both
   - id: 7237
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 簡介與設計動機
@@ -572,7 +572,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-intro
-    usage: quiz
+    usage: both
   - id: 7238
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 系統架構
@@ -588,7 +588,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-architecture
-    usage: quiz
+    usage: both
   - id: 7239
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 核心元件
@@ -604,7 +604,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-components
-    usage: quiz
+    usage: both
   - id: 7240
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 傳輸機制
@@ -620,7 +620,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-transport
-    usage: quiz
+    usage: both
   - id: 7241
     chapter_title: 模型上下文協議 (MCP)
     section_title: 開發 MCP 伺服器
@@ -636,7 +636,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-server-dev
-    usage: quiz
+    usage: both
   - id: 7242
     chapter_title: 模型上下文協議 (MCP)
     section_title: AI 代理人基礎概念
@@ -652,7 +652,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-agent-fundamentals
-    usage: quiz
+    usage: both
   - id: 7243
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 簡介與設計動機
@@ -668,7 +668,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-intro
-    usage: quiz
+    usage: both
   - id: 7244
     chapter_title: 模型上下文協議 (MCP)
     section_title: 代理人可觀測性與評估
@@ -684,7 +684,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-agent-observability
-    usage: quiz
+    usage: both
   - id: 7245
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 安全考量
@@ -700,7 +700,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-security
-    usage: quiz
+    usage: both
   - id: 7246
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 系統架構
@@ -716,7 +716,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-architecture
-    usage: quiz
+    usage: both
   - id: 7247
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 核心元件
@@ -732,7 +732,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-components
-    usage: quiz
+    usage: both
   - id: 7248
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 傳輸機制
@@ -748,7 +748,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-transport
-    usage: quiz
+    usage: both
   - id: 7249
     chapter_title: 模型上下文協議 (MCP)
     section_title: 開發 MCP 伺服器
@@ -764,7 +764,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-server-dev
-    usage: quiz
+    usage: both
   - id: 7250
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 簡介與設計動機
@@ -780,7 +780,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-intro
-    usage: quiz
+    usage: both
   - id: 7251
     chapter_title: 模型上下文協議 (MCP)
     section_title: 代理人可觀測性與評估
@@ -796,7 +796,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-agent-observability
-    usage: quiz
+    usage: both
   - id: 7252
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 安全考量
@@ -812,7 +812,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-security
-    usage: quiz
+    usage: both
   - id: 7253
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 系統架構
@@ -828,7 +828,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-architecture
-    usage: quiz
+    usage: both
   - id: 7254
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 核心元件
@@ -844,7 +844,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-components
-    usage: quiz
+    usage: both
   - id: 7255
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 傳輸機制
@@ -860,7 +860,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-transport
-    usage: quiz
+    usage: both
   - id: 7256
     chapter_title: 模型上下文協議 (MCP)
     section_title: 開發 MCP 伺服器
@@ -876,7 +876,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-server-dev
-    usage: quiz
+    usage: both
   - id: 7257
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 簡介與設計動機
@@ -892,7 +892,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-intro
-    usage: quiz
+    usage: both
   - id: 7258
     chapter_title: 模型上下文協議 (MCP)
     section_title: 代理人可觀測性與評估
@@ -908,7 +908,7 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-agent-observability
-    usage: quiz
+    usage: both
   - id: 7259
     chapter_title: 模型上下文協議 (MCP)
     section_title: MCP 安全考量
@@ -924,4 +924,4 @@ questions:
     tags:
       - chap-m5-ch2
       - sec-mcp-security
-    usage: quiz
+    usage: both

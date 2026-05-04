@@ -82,6 +82,16 @@ website:
             - subjects/m5/chapter3.qmd
             - subjects/m5/chapter4.qmd
             - subjects/m5/chapter5.qmd
+        - section: "Python AI 實作工具鏈"
+          contents:
+            - subjects/m6/index.qmd
+            - subjects/m6/chapter1.qmd
+            - subjects/m6/chapter2.qmd
+            - subjects/m6/chapter3.qmd
+            - subjects/m6/chapter4.qmd
+            - subjects/m6/chapter5.qmd
+            - subjects/m6/chapter6.qmd
+            - subjects/m6/chapter7.qmd
 
 format:
   html:

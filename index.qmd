@@ -12,4 +12,4 @@ format: html
 *   [（中級）大數據處理分析與應用](subjects/m3/index.html)
 *   [（中級）機器學習技術與應用](subjects/m4/index.html)
 *   [（補充教材）AI 代理人技術與應用](subjects/m5/index.html)
-
+*   [（補充教材）Python AI 實作工具鏈](subjects/m6/index.html)
