@@ -1,0 +1,129 @@
+questions:
+- id: 8031
+  chapter_title: OpenCV 與 NLTK
+  section_title: OpenCV 基礎：影像表示與讀寫
+  text: OpenCV 使用 cv2.imread 讀取彩色影像時，預設通道順序通常是什麼？
+  type: multiple_choice
+  options:
+  - RGB
+  - BGR
+  - HSV
+  - CMYK
+  correct_index: 1
+  explanation: OpenCV 預設彩色影像通道順序為 BGR，與 Matplotlib 和多數網頁使用的 RGB 不同。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-image-basics
+  usage: both
+- id: 8032
+  chapter_title: OpenCV 與 NLTK
+  section_title: 影像前處理與特徵
+  text: CNN 訓練前常將影像 resize 到固定尺寸，主要原因是什麼？
+  type: multiple_choice
+  options:
+  - 讓同一批次影像具有一致 shape，方便模型運算
+  - 讓影像完全失去顏色資訊
+  - 讓模型不需要 loss function
+  - 讓文字資料可以直接進入 OpenCV
+  correct_index: 0
+  explanation: 批次張量需要一致的高度、寬度與通道數，因此影像常先 resize 或 crop。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-preprocessing
+  usage: both
+- id: 8033
+  chapter_title: OpenCV 與 NLTK
+  section_title: 影像資料進入模型
+  text: 若使用 OpenCV 讀取影像後要交給一般 RGB 模型，常需要先做哪個處理？
+  type: multiple_choice
+  options:
+  - 將 BGR 轉為 RGB
+  - 將所有像素改為文字 token
+  - 刪除 channel 維度
+  - 將影像改成 YAML
+  correct_index: 0
+  explanation: OpenCV 讀取為 BGR，而多數深度學習前處理與視覺化流程使用 RGB。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-to-model
+  usage: both
+- id: 8034
+  chapter_title: OpenCV 與 NLTK
+  section_title: NLTK 基礎：文字前處理
+  text: Tokenization 的主要作用是什麼？
+  type: multiple_choice
+  options:
+  - 將文字切分成較小單位，例如單字、標點或子詞
+  - 將影像轉成灰階
+  - 將 GPU 記憶體清空
+  - 將模型參數儲存成 state_dict
+  correct_index: 0
+  explanation: tokenization 是 NLP 前處理的基本步驟，將原始文字切成可處理的 token。
+  tags:
+  - chap-m6-ch4
+  - sec-nltk-text-basics
+  usage: both
+- id: 8035
+  chapter_title: OpenCV 與 NLTK
+  section_title: Stop Words、Stemming 與 Lemmatization
+  text: Lemmatization 與 stemming 相比，通常有什麼差異？
+  type: multiple_choice
+  options:
+  - Lemmatization 較嘗試還原成字典詞形，stemming 則較粗略切除字尾
+  - Lemmatization 只能處理影像資料
+  - Stemming 需要 GPU，lemmatization 不需要任何字典
+  - 兩者都是用來 resize 圖片
+  correct_index: 0
+  explanation: lemmatization 會依語言詞形規則還原字典形式，stemming 則通常是規則式切字尾。
+  tags:
+  - chap-m6-ch4
+  - sec-nltk-normalization
+  usage: both
+- id: 8036
+  chapter_title: OpenCV 與 NLTK
+  section_title: 從文字到特徵
+  text: TF-IDF 的核心想法是什麼？
+  type: multiple_choice
+  options:
+  - 常出現在某文件但不常出現在所有文件的詞，通常更能代表該文件
+  - 所有詞都應該得到完全相同權重
+  - 只統計圖片中的邊緣數量
+  - 把文字轉成 BGR 影像
+  correct_index: 0
+  explanation: TF-IDF 結合詞頻與反文件頻率，降低過度常見詞的權重。
+  tags:
+  - chap-m6-ch4
+  - sec-nltk-text-features
+  usage: both
+- id: 8037
+  chapter_title: OpenCV 與 NLTK
+  section_title: OpenCV 與 NLTK 的共同觀念
+  text: 影像與文字前處理共同的重要目標是什麼？
+  type: multiple_choice
+  options:
+  - 將資料轉成模型可接受且訓練與推論一致的數值表示
+  - 讓資料永遠不需要清理
+  - 讓模型完全不需要評估
+  - 把所有資料轉成同一張圖片
+  correct_index: 0
+  explanation: 非結構化資料都需要讀取、清理、轉換與一致的前處理流程。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-nltk-common
+  usage: both
+- id: 8038
+  chapter_title: OpenCV 與 NLTK
+  section_title: OpenCV 與 NLTK 的共同觀念
+  text: 訓練與部署階段前處理不一致，最可能造成什麼問題？
+  type: multiple_choice
+  options:
+  - 模型推論表現異常或不可預期
+  - Python 無法匯入任何標準函式庫
+  - 所有圖片自動變成高解析度
+  - DataFrame 欄位名稱自動消失
+  correct_index: 0
+  explanation: 模型訓練時看到的資料分布若和部署推論不同，輸出品質會明顯下降。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-nltk-common
+  usage: both

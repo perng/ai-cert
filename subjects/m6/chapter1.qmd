@@ -1,0 +1,131 @@
+---
+title: "Basic Python Language"
+order: 1
+label: chap-m6-ch1
+---
+
+Python 是 AI 與資料科學最常用的語言之一，原因不是它執行速度最快，而是語法簡潔、套件生態成熟，並且能把資料處理、模型訓練、服務部署與自動化串在同一個工作流程中。
+
+## Python 的定位與執行方式 {#sec-python-runtime}
+
+Python 屬於高階、直譯式、動態型別語言。開發者不需要先編譯成機器碼才能執行，常見執行方式包括：
+
+*   **互動式 REPL**：快速測試語法與變數。
+*   **`.py` 腳本**：適合自動化、資料處理與模型訓練。
+*   **Jupyter Notebook**：適合探索式分析、教學與實驗紀錄。
+*   **套件與模組**：把可重用邏輯整理成可匯入的程式碼。
+
+Python 的動態型別代表變數本身不固定型別，型別跟著值走：
+
+```{python}
+x = 3
+x = "AI"
+print(type(x))
+```
+
+這帶來開發速度，也代表大型專案通常會搭配 type hints、測試與 lint 工具降低錯誤。
+
+## 變數、型別與資料結構 {#sec-python-data-structures}
+
+Python 常見基本型別包括 `int`、`float`、`bool`、`str` 與 `None`。常見容器包括：
+
+| 結構 | 語法 | 特性 | 常見用途 |
+|------|------|------|----------|
+| list | `[1, 2, 3]` | 有序、可變、可重複 | 儲存資料序列 |
+| tuple | `(1, 2)` | 有序、不可變 | 回傳多個值、固定組合 |
+| dict | `{"a": 1}` | key-value 查詢 | JSON、設定、特徵字典 |
+| set | `{1, 2, 3}` | 不重複、無序 | 去重、集合運算 |
+
+AI 實作中最常見的是 list 與 dict。list 常用來暫存資料列，dict 常用來表示設定、標籤對應或 API 回傳結果。
+
+```{python}
+sample = {
+    "text": "I love machine learning",
+    "label": 1,
+    "tokens": ["I", "love", "machine", "learning"]
+}
+
+print(sample["tokens"])
+```
+
+## 流程控制與函式 {#sec-python-control-functions}
+
+Python 使用縮排表示程式區塊。條件判斷與迴圈語法簡潔：
+
+```{python}
+scores = [0.91, 0.63, 0.78]
+
+for score in scores:
+    if score >= 0.8:
+        print("high confidence")
+    else:
+        print("needs review")
+```
+
+函式用 `def` 定義，能讓資料處理步驟變得可重用：
+
+```{python}
+def normalize_text(text: str) -> str:
+    return text.strip().lower()
+
+print(normalize_text("  AI Planning  "))
+```
+
+type hints 不會強制 Python 在執行時檢查型別，但能提升可讀性，並讓 IDE、靜態分析工具更容易發現錯誤。
+
+## List Comprehension 與 Generator {#sec-python-comprehension}
+
+Python 常用 list comprehension 讓轉換邏輯更簡潔：
+
+```{python}
+values = [1, 2, 3, 4]
+squares = [x * x for x in values if x % 2 == 0]
+print(squares)
+```
+
+當資料量很大時，generator 能逐筆產生結果，不一次把所有資料放進記憶體：
+
+```{python}
+def batch_ids(total: int, batch_size: int):
+    for start in range(0, total, batch_size):
+        yield range(start, min(start + batch_size, total))
+
+for batch in batch_ids(10, 4):
+    print(list(batch))
+```
+
+這種「批次產生」的觀念會在深度學習的 DataLoader 中再次出現。
+
+## 檔案、例外與環境管理 {#sec-python-files-env}
+
+AI 專案常需要讀取資料檔、模型權重與設定檔。讀寫檔案時建議使用 `with`，讓 Python 自動關閉資源：
+
+```python
+with open("labels.txt", "r", encoding="utf-8") as f:
+    labels = [line.strip() for line in f]
+```
+
+例外處理能讓程式在遇到可預期錯誤時做出明確反應：
+
+```python
+try:
+    value = float("3.14")
+except ValueError:
+    value = 0.0
+```
+
+實務上也應使用虛擬環境隔離相依套件，例如 `venv`、Conda 或 uv。這能避免不同專案使用不同版本的 NumPy、PyTorch 或 OpenCV 時互相衝突。
+
+## 模組、套件與匯入 {#sec-python-modules}
+
+Python 用 `import` 載入標準函式庫或第三方套件：
+
+```{python}
+import math
+from statistics import mean
+
+print(math.sqrt(16))
+print(mean([1, 2, 3]))
+```
+
+當專案變大時，應把資料讀取、特徵工程、模型定義與訓練流程拆成不同模組。這樣做的目的不是讓檔案變多，而是讓每個檔案有清楚責任，方便測試與維護。

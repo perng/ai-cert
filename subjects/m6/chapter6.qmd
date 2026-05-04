@@ -1,0 +1,147 @@
+---
+title: "PyTorch 實作簡單神經網路與 CNN"
+order: 6
+label: chap-m6-ch6
+---
+
+本章用 PyTorch 實作兩種常見模型：多層感知器 (MLP) 與卷積神經網路 (CNN)。MLP 適合表格或向量資料，CNN 適合具有空間結構的影像資料。
+
+## MLP 的基本架構 {#sec-pytorch-mlp}
+
+MLP 由多個 fully connected layer 組成，透過非線性 activation 學習複雜函數。最簡單的二分類模型可以寫成：
+
+```{python}
+import torch
+import torch.nn as nn
+from torch.utils.data import DataLoader, TensorDataset
+
+X = torch.randn(256, 10)
+y = (X[:, 0] + X[:, 1] > 0).long()
+loader = DataLoader(TensorDataset(X, y), batch_size=32, shuffle=True)
+
+class MLP(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.layers = nn.Sequential(
+            nn.Linear(10, 32),
+            nn.ReLU(),
+            nn.Linear(32, 16),
+            nn.ReLU(),
+            nn.Linear(16, 2)
+        )
+
+    def forward(self, x):
+        return self.layers(x)
+
+model = MLP()
+```
+
+輸出維度為 2，代表兩個類別的 logits。若是迴歸任務，最後一層通常輸出 1 或目標維度，loss 也會改用 MSELoss。
+
+## 訓練 MLP {#sec-pytorch-train-mlp}
+
+訓練流程與前章相同，但這裡加入簡單 epoch：
+
+```{python}
+criterion = nn.CrossEntropyLoss()
+optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
+
+for epoch in range(3):
+    total_loss = 0.0
+    for batch_x, batch_y in loader:
+        logits = model(batch_x)
+        loss = criterion(logits, batch_y)
+
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+        total_loss += float(loss)
+
+    print(epoch, round(total_loss / len(loader), 4))
+```
+
+訓練迴圈應保持清楚：資料進來、模型預測、計算 loss、反向傳播、更新參數。複雜專案可再抽成 `train_one_epoch()` 與 `evaluate()` 函式。
+
+## CNN 的核心觀念 {#sec-pytorch-cnn-concepts}
+
+CNN 使用卷積層提取局部特徵。影像資料通常表示為 `(batch, channels, height, width)`，例如灰階 MNIST 是 `(N, 1, 28, 28)`，RGB 影像是 `(N, 3, H, W)`。
+
+卷積層重要參數包括：
+
+*   **in_channels / out_channels**：輸入與輸出通道數。
+*   **kernel_size**：卷積核大小。
+*   **stride**：滑動步幅。
+*   **padding**：邊界補零。
+
+Pooling 層常用於降低空間尺寸，讓模型對小幅位移更穩定。
+
+## 實作簡單 CNN {#sec-pytorch-simple-cnn}
+
+以下是一個可處理 28x28 灰階影像的簡單 CNN：
+
+```{python}
+class SimpleCNN(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.features = nn.Sequential(
+            nn.Conv2d(1, 8, kernel_size=3, padding=1),
+            nn.ReLU(),
+            nn.MaxPool2d(2),
+            nn.Conv2d(8, 16, kernel_size=3, padding=1),
+            nn.ReLU(),
+            nn.MaxPool2d(2)
+        )
+        self.classifier = nn.Sequential(
+            nn.Flatten(),
+            nn.Linear(16 * 7 * 7, 10)
+        )
+
+    def forward(self, x):
+        x = self.features(x)
+        return self.classifier(x)
+
+cnn = SimpleCNN()
+dummy = torch.randn(4, 1, 28, 28)
+print(cnn(dummy).shape)
+```
+
+`Flatten` 把卷積特徵圖攤平成向量，再交給線性層分類。若輸入尺寸改變，`Linear` 的輸入維度也可能需要調整。
+
+## 資料增強與正規化 {#sec-pytorch-cnn-augmentation}
+
+影像模型常搭配資料增強，例如 random crop、horizontal flip、color jitter。這些操作能增加資料多樣性，降低過擬合。典型流程會使用 torchvision transforms：
+
+```python
+from torchvision import transforms
+
+train_tfms = transforms.Compose([
+    transforms.Resize((224, 224)),
+    transforms.RandomHorizontalFlip(),
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.485, 0.456, 0.406],
+                         std=[0.229, 0.224, 0.225])
+])
+```
+
+訓練與驗證資料的 transforms 不應完全相同。驗證階段通常不使用隨機增強，只做 deterministic resize、to tensor 與 normalize。
+
+## 評估 CNN 與常見錯誤 {#sec-pytorch-cnn-eval}
+
+CNN 評估時需切換到 eval mode：
+
+```python
+model.eval()
+correct = 0
+total = 0
+
+with torch.no_grad():
+    for images, labels in val_loader:
+        logits = model(images)
+        pred = logits.argmax(dim=1)
+        correct += (pred == labels).sum().item()
+        total += labels.size(0)
+
+accuracy = correct / total
+```
+
+常見錯誤包括 channel 順序錯誤、輸入沒有 normalize、訓練與推論前處理不一致、最後一層輸出類別數不符，以及在驗證時忘記 `torch.no_grad()`。

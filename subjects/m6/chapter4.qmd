@@ -1,0 +1,114 @@
+---
+title: "OpenCV 與 NLTK"
+order: 4
+label: chap-m6-ch4
+---
+
+OpenCV 與 NLTK 分別代表兩類常見非結構化資料處理工具：影像與文字。深度學習模型很強大，但在進入模型前，資料仍需要讀取、清理、轉換與檢查。
+
+## OpenCV 基礎：影像表示與讀寫 {#sec-opencv-image-basics}
+
+OpenCV 是常用的電腦視覺函式庫，可用於讀取影像、影像轉換、濾波、邊緣偵測、物件追蹤與傳統特徵工程。
+
+OpenCV 讀取影像後通常得到 NumPy 陣列，shape 常見為 `(height, width, channels)`。需要注意的是，OpenCV 預設色彩順序是 BGR，不是一般網頁或 Matplotlib 常見的 RGB。
+
+```python
+import cv2
+
+image = cv2.imread("input.jpg")
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+cv2.imwrite("gray.jpg", gray)
+```
+
+這段程式代表三件事：讀取檔案、轉為灰階、輸出新檔案。
+
+## 影像前處理與特徵 {#sec-opencv-preprocessing}
+
+常見影像前處理包括 resize、normalization、blur、threshold、edge detection：
+
+```python
+import cv2
+
+image = cv2.imread("input.jpg")
+resized = cv2.resize(image, (224, 224))
+gray = cv2.cvtColor(resized, cv2.COLOR_BGR2GRAY)
+edges = cv2.Canny(gray, threshold1=100, threshold2=200)
+```
+
+在深度學習中，resize 到固定尺寸很常見，因為 CNN 通常需要批次影像具有一致 shape。傳統影像處理中的邊緣、輪廓、形態學操作，仍常用於工業檢測、文件掃描與影像品質檢查。
+
+## 影像資料進入模型 {#sec-opencv-to-model}
+
+若影像要進入 PyTorch，常見流程是：
+
+1.  讀取影像。
+2.  轉成 RGB。
+3.  resize 或 crop。
+4.  轉成 tensor。
+5.  normalize。
+
+OpenCV 負責讀取與基本處理，PyTorch 或 torchvision 負責 tensor 轉換與資料增強。若忘記 BGR/RGB 差異，模型輸入顏色會錯，視覺化結果也會異常。
+
+## NLTK 基礎：文字前處理 {#sec-nltk-text-basics}
+
+NLTK 是經典自然語言處理工具包，適合學習文字處理概念，例如 tokenization、stop words、stemming、lemmatization、part-of-speech tagging。
+
+```python
+import nltk
+from nltk.tokenize import word_tokenize
+
+text = "Python is useful for natural language processing."
+tokens = word_tokenize(text)
+print(tokens)
+```
+
+tokenization 是把文字切成較小單位。英文常切成單字與標點；中文則通常需要額外斷詞工具，例如 jieba 或 CKIP。
+
+## Stop Words、Stemming 與 Lemmatization {#sec-nltk-normalization}
+
+文字前處理常會移除 stop words，例如英文中的 "the"、"is"、"and"。但這不是永遠正確，因為在情緒分析或法律文本中，小字也可能影響語意。
+
+Stemming 會粗略切除字尾，lemmatization 則嘗試還原成字典詞形：
+
+```python
+from nltk.stem import PorterStemmer, WordNetLemmatizer
+
+stemmer = PorterStemmer()
+lemmatizer = WordNetLemmatizer()
+
+print(stemmer.stem("running"))
+print(lemmatizer.lemmatize("running", pos="v"))
+```
+
+傳統 NLP 中，這些處理能降低詞彙稀疏性。現代 Transformer 模型雖然使用 subword tokenizer，但理解這些基本概念仍有助於資料清理與錯誤分析。
+
+## 從文字到特徵 {#sec-nltk-text-features}
+
+傳統機器學習常用 Bag-of-Words 或 TF-IDF 把文字轉成稀疏向量。scikit-learn 提供常用工具：
+
+```{python}
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+docs = [
+    "machine learning is useful",
+    "deep learning uses neural networks",
+    "text features can use tfidf"
+]
+
+vectorizer = TfidfVectorizer()
+X = vectorizer.fit_transform(docs)
+print(X.shape)
+```
+
+TF-IDF 的思想是：常出現在某篇文件但不常出現在所有文件的詞，通常更能代表該文件。它比單純詞頻更能降低常見詞的影響。
+
+## OpenCV 與 NLTK 的共同觀念 {#sec-opencv-nltk-common}
+
+影像與文字看似不同，但進入 AI 系統前都需要完成幾個共同任務：
+
+*   讀取資料並確認格式。
+*   清理錯誤、缺失與噪音。
+*   轉成模型能接受的數值表示。
+*   保留可追蹤的前處理流程，讓訓練與推論一致。
+
+許多模型失敗不是因為架構不夠複雜，而是資料前處理在訓練與部署階段不一致。

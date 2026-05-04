@@ -1,0 +1,143 @@
+---
+title: "NumPy 與 Pandas"
+order: 2
+label: chap-m6-ch2
+---
+
+NumPy 與 Pandas 是 Python 資料科學的核心。NumPy 負責高效率數值陣列運算，Pandas 負責表格資料處理。大多數機器學習專案都會先經過這兩個工具，才進入 scikit-learn 或深度學習框架。
+
+## NumPy 陣列與向量化 {#sec-numpy-array-vectorization}
+
+NumPy 的核心物件是 `ndarray`。它和 Python list 最大差異在於：NumPy 陣列通常儲存同一種資料型別，並且底層用連續記憶體與 C 實作加速數值運算。
+
+```{python}
+import numpy as np
+
+x = np.array([1, 2, 3])
+y = np.array([10, 20, 30])
+print(x + y)
+print(x * 2)
+```
+
+向量化 (Vectorization) 是 NumPy 的重要思想：盡量用陣列運算取代 Python 層的逐筆迴圈。這通常更快，也更接近數學表示。
+
+```{python}
+scores = np.array([72, 85, 91, 64])
+passed = scores >= 70
+print(passed)
+print(scores[passed])
+```
+
+## Shape、Broadcasting 與矩陣運算 {#sec-numpy-shape-broadcast}
+
+AI 模型中的資料通常是矩陣或更高維張量。理解 shape 是避免錯誤的第一步：
+
+```{python}
+X = np.array([[1, 2, 3], [4, 5, 6]])
+print(X.shape)
+print(X.T.shape)
+```
+
+Broadcasting 讓不同 shape 的陣列在規則允許下自動對齊：
+
+```{python}
+X = np.array([[1, 2, 3], [4, 5, 6]])
+mean = X.mean(axis=0)
+centered = X - mean
+print(centered)
+```
+
+常見矩陣運算包括 dot product、matrix multiplication、norm 與統計量計算：
+
+```{python}
+w = np.array([0.2, 0.5, 0.3])
+prediction = X @ w
+print(prediction)
+```
+
+## Pandas DataFrame 基礎 {#sec-pandas-dataframe}
+
+Pandas 的核心物件是 `Series` 與 `DataFrame`。DataFrame 可視為有欄位名稱與索引的表格，非常適合處理 CSV、Excel、資料庫查詢結果與模型訓練資料。
+
+```{python}
+import pandas as pd
+
+df = pd.DataFrame({
+    "age": [22, 35, 47],
+    "income": [32000, 58000, 76000],
+    "clicked": [0, 1, 1]
+})
+
+print(df.head())
+print(df["income"].mean())
+```
+
+常見操作包括欄位選取、條件篩選、排序與新增欄位：
+
+```{python}
+high_income = df[df["income"] > 50000]
+df["income_k"] = df["income"] / 1000
+print(high_income)
+```
+
+## 缺失值、類別資料與特徵整理 {#sec-pandas-cleaning-features}
+
+真實資料常有缺失值、異常值、類別欄位與格式不一致。Pandas 提供資料清理工具：
+
+```{python}
+raw = pd.DataFrame({
+    "city": ["Taipei", "Tainan", None],
+    "age": [25, None, 41]
+})
+
+clean = raw.copy()
+clean["city"] = clean["city"].fillna("Unknown")
+clean["age"] = clean["age"].fillna(clean["age"].median())
+print(clean)
+```
+
+類別資料可用 one-hot encoding 轉成模型能處理的數值欄位：
+
+```{python}
+encoded = pd.get_dummies(clean, columns=["city"])
+print(encoded)
+```
+
+特徵工程的重點不是盲目產生欄位，而是把原始資料轉成能代表問題結構的數值訊號。
+
+## GroupBy、合併與時間序列 {#sec-pandas-groupby-merge-time}
+
+`groupby` 可用於分群統計：
+
+```{python}
+sales = pd.DataFrame({
+    "store": ["A", "A", "B", "B"],
+    "amount": [100, 120, 80, 160]
+})
+
+print(sales.groupby("store")["amount"].mean())
+```
+
+多個資料來源可以用 `merge` 合併：
+
+```{python}
+users = pd.DataFrame({"user_id": [1, 2], "city": ["Taipei", "Kaohsiung"]})
+orders = pd.DataFrame({"user_id": [1, 1, 2], "amount": [50, 70, 90]})
+print(orders.merge(users, on="user_id"))
+```
+
+時間序列資料通常需要解析日期、排序、重採樣與 rolling statistics。這些操作在需求預測、異常偵測與營運分析中很常見。
+
+## 從 Pandas 到模型輸入 {#sec-pandas-to-model}
+
+機器學習模型通常需要 `X` 特徵矩陣與 `y` 標籤向量：
+
+```{python}
+features = df[["age", "income_k"]].to_numpy()
+target = df["clicked"].to_numpy()
+
+print(features.shape)
+print(target.shape)
+```
+
+進入 scikit-learn 前，應確認欄位順序、資料型別、缺失值與 train/test split。進入 PyTorch 前，通常還需要把 NumPy 陣列轉成 tensor。

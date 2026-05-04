@@ -1,0 +1,21 @@
+# 前言 {.unnumbered}
+
+歡迎來到《Python AI 實作工具鏈》。本書聚焦在 AI 應用規劃與原型開發最常見的 Python 技術棧，從語言基礎、資料處理、科學運算、機器學習，到電腦視覺、自然語言處理與 PyTorch 深度學習實作。
+
+::: {.callout-important}
+### 關於本補充教材
+
+AI 應用規劃不只需要理解模型概念，也需要知道常見工具各自解決什麼問題、資料如何進入模型、訓練流程如何組織，以及原型程式碼大致長什麼樣子。本書不追求把每個套件變成完整 API 手冊，而是建立「看得懂、選得對、能做出簡單實作」的能力。
+:::
+
+## 本書架構
+
+本書共分為七章：
+
+1.  **Basic Python Language**：整理 Python 語法、資料結構、函式、例外處理、模組與虛擬環境。
+2.  **NumPy 與 Pandas**：介紹陣列運算、向量化、DataFrame、資料清理與特徵整理。
+3.  **SciPy 與 scikit-learn**：說明科學運算、最佳化、統計工具、傳統機器學習流程與 Pipeline。
+4.  **OpenCV 與 NLTK**：涵蓋影像處理、特徵擷取、文字斷詞、語料前處理與基礎 NLP。
+5.  **PyTorch 基礎**：建立 Tensor、Autograd、Dataset、DataLoader、模型與訓練迴圈概念。
+6.  **PyTorch 實作簡單神經網路與 CNN**：以 MLP 與卷積神經網路說明分類模型的實作方式。
+7.  **PyTorch Transformer 基礎**：介紹 Embedding、位置編碼、自注意力與簡化 Transformer 分類器。

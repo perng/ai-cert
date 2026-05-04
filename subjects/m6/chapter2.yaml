@@ -1,0 +1,129 @@
+questions:
+- id: 8011
+  chapter_title: NumPy 與 Pandas
+  section_title: NumPy 陣列與向量化
+  text: NumPy 陣列相較於 Python list，在數值運算上通常較有效率的主要原因是什麼？
+  type: multiple_choice
+  options:
+  - NumPy 陣列完全不需要記憶體
+  - NumPy 陣列通常儲存同質資料並使用底層最佳化運算
+  - NumPy 陣列只能儲存字串
+  - NumPy 會自動替所有模型調整超參數
+  correct_index: 1
+  explanation: NumPy ndarray 通常以同質型別與連續記憶體表示資料，並透過底層最佳化提升數值運算效率。
+  tags:
+  - chap-m6-ch2
+  - sec-numpy-array-vectorization
+  usage: both
+- id: 8012
+  chapter_title: NumPy 與 Pandas
+  section_title: NumPy 陣列與向量化
+  text: 向量化 (Vectorization) 的核心精神是什麼？
+  type: multiple_choice
+  options:
+  - 儘量使用 Python 層逐筆 for 迴圈完成數值計算
+  - 用陣列層級的批次運算取代逐筆迴圈
+  - 把所有資料都轉成文字
+  - 只使用 GPU 而不使用 CPU
+  correct_index: 1
+  explanation: 向量化透過陣列運算一次處理多筆資料，通常比 Python 逐筆迴圈更快。
+  tags:
+  - chap-m6-ch2
+  - sec-numpy-array-vectorization
+  usage: both
+- id: 8013
+  chapter_title: NumPy 與 Pandas
+  section_title: Shape、Broadcasting 與矩陣運算
+  text: 在 NumPy 與深度學習中，理解 shape 最主要是為了避免什麼問題？
+  type: multiple_choice
+  options:
+  - 避免矩陣或張量維度不相容造成運算錯誤
+  - 避免 Python 程式使用函式
+  - 避免資料集需要標籤
+  - 避免模型產生任何 loss
+  correct_index: 0
+  explanation: 大量資料與模型運算都依賴維度對齊，shape 不相容會造成矩陣乘法或 broadcasting 錯誤。
+  tags:
+  - chap-m6-ch2
+  - sec-numpy-shape-broadcast
+  usage: both
+- id: 8014
+  chapter_title: NumPy 與 Pandas
+  section_title: Pandas DataFrame 基礎
+  text: Pandas DataFrame 最適合用來表示哪一類資料？
+  type: multiple_choice
+  options:
+  - 有列與欄位的表格資料
+  - 單一 GPU kernel
+  - 未經 tokenize 的模型權重
+  - 作業系統核心排程
+  correct_index: 0
+  explanation: DataFrame 是有索引與欄位名稱的表格資料結構，常用於 CSV、Excel 與資料庫查詢結果。
+  tags:
+  - chap-m6-ch2
+  - sec-pandas-dataframe
+  usage: both
+- id: 8015
+  chapter_title: NumPy 與 Pandas
+  section_title: 缺失值、類別資料與特徵整理
+  text: one-hot encoding 的主要用途是什麼？
+  type: multiple_choice
+  options:
+  - 把類別欄位轉成模型可處理的數值欄位
+  - 將所有數值欄位刪除
+  - 自動完成模型部署
+  - 將影像從 BGR 轉成 RGB
+  correct_index: 0
+  explanation: one-hot encoding 會為不同類別建立指示欄位，讓機器學習模型能處理類別資料。
+  tags:
+  - chap-m6-ch2
+  - sec-pandas-cleaning-features
+  usage: both
+- id: 8016
+  chapter_title: NumPy 與 Pandas
+  section_title: GroupBy、合併與時間序列
+  text: Pandas 的 groupby 常用於哪一種工作？
+  type: multiple_choice
+  options:
+  - 依照某個欄位分組後計算統計量
+  - 訓練卷積神經網路
+  - 自動產生 tokenizer
+  - 將 Python 程式碼編譯成 Java
+  correct_index: 0
+  explanation: groupby 適合做分群統計，例如依店家、月份或類別計算平均、總和與筆數。
+  tags:
+  - chap-m6-ch2
+  - sec-pandas-groupby-merge-time
+  usage: both
+- id: 8017
+  chapter_title: NumPy 與 Pandas
+  section_title: 從 Pandas 到模型輸入
+  text: 在監督式學習中，通常用 X 與 y 分別代表什麼？
+  type: multiple_choice
+  options:
+  - X 是特徵矩陣，y 是目標標籤或目標值
+  - X 是模型權重，y 是 optimizer
+  - X 是資料夾名稱，y 是檔案副檔名
+  - X 是 GPU，y 是 CPU
+  correct_index: 0
+  explanation: X 表示模型輸入特徵，y 表示希望模型預測的標籤或連續目標。
+  tags:
+  - chap-m6-ch2
+  - sec-pandas-to-model
+  usage: both
+- id: 8018
+  chapter_title: NumPy 與 Pandas
+  section_title: 缺失值、類別資料與特徵整理
+  text: 處理缺失值時，下列哪一項做法較合理？
+  type: multiple_choice
+  options:
+  - 不檢查缺失值，直接假設模型會自動理解
+  - 根據欄位語意使用填補、刪除或建立 Unknown 類別等策略
+  - 將所有缺失值固定改成文字 "GPU"
+  - 把整個資料集隨機打亂後忽略欄位名稱
+  correct_index: 1
+  explanation: 缺失值處理應依據資料語意與模型需求選擇策略，不能盲目套用同一規則。
+  tags:
+  - chap-m6-ch2
+  - sec-pandas-cleaning-features
+  usage: both
