@@ -8,7 +8,7 @@ questions:
   - 訓練寵物（獎勵與懲罰）(Training Pets with Rewards and Punishments)，屬於強化學習的模式。
   - 隨機猜測 (Random Guessing)，無學習過程的隨機預測。
   - 嬰兒自我探索 (Infant Self-Exploration)，屬於非監督式學習的模式。
-  - "人類的正規教育（老師給題目和答案）(Formal Human Education: Teacher Provides Questions and Answers)"
+  - '人類的正規教育（老師給題目和答案）(Formal Human Education: Teacher Provides Questions and Answers)'
   correct_index: 3
   explanation: 監督式學習需要輸入資料 (題目) 和對應的標籤 (答案)，就像老師教學生一樣。
   tags:
@@ -261,10 +261,10 @@ questions:
   text: 下列關於 Bagging 和 Boosting 的比較，何者正確？
   type: multiple_choice
   options:
-  - "Bagging 是序列訓練，Boosting 是並行訓練 (Bagging: Sequential, Boosting: Parallel)，訓練順序相反。"
-  - "兩者都是序列訓練 (Both Are Sequential Training)，都需要依序訓練模型。"
-  - "Bagging 是並行訓練，Boosting 是序列訓練 (Bagging: Parallel, Boosting: Sequential)"
-  - "兩者都是並行訓練 (Both Are Parallel Training)，都可以同時訓練多個模型。"
+  - 'Bagging 是序列訓練，Boosting 是並行訓練 (Bagging: Sequential, Boosting: Parallel)，訓練順序相反。'
+  - 兩者都是序列訓練 (Both Are Sequential Training)，都需要依序訓練模型。
+  - 'Bagging 是並行訓練，Boosting 是序列訓練 (Bagging: Parallel, Boosting: Sequential)'
+  - 兩者都是並行訓練 (Both Are Parallel Training)，都可以同時訓練多個模型。
   correct_index: 2
   explanation: Bagging (隨機森林) 的樹互不影響可同時訓練 (並行)；Boosting 的樹依賴前一棵樹的結果 (序列)。
   tags:
@@ -296,7 +296,8 @@ questions:
   - 處理共線性 (Handling Multicollinearity)，解決特徵間高度相關的問題。
   - 將權重變大 (Increasing Weights)，放大模型參數的數值。
   - 增加模型複雜度 (Increasing Model Complexity)，讓模型更複雜以學習更多模式。
-  - "特徵選擇 (將不重要特徵權重變為 0) (Feature Selection: Setting Unimportant Feature Weights to Zero)"
+  - '特徵選擇 (將不重要特徵權重變為 0) (Feature Selection: Setting Unimportant Feature Weights to
+    Zero)'
   correct_index: 3
   explanation: Lasso 加入絕對值懲罰項，傾向於將不重要的特徵權重壓縮至 0，達到特徵選擇的效果。
   tags:
@@ -374,7 +375,8 @@ questions:
   type: multiple_choice
   options:
   - 異常值 (Outliers)，與正常資料差異極大的資料點。
-  - 落在決策邊界邊緣、決定邊界位置的關鍵資料點 (Key Data Points on Decision Boundary Edges That Determine Boundary Position)
+  - 落在決策邊界邊緣、決定邊界位置的關鍵資料點 (Key Data Points on Decision Boundary Edges That Determine
+    Boundary Position)
   - 所有的資料點 (All Data Points)，資料集中的每一個樣本。
   - 中心點 (Center Point)，資料分佈的中心位置。
   correct_index: 1
@@ -407,7 +409,8 @@ questions:
   options:
   - 隨機時間與隨機地點 (Random Time and Random Location)，根據時間與空間進行隨機化。
   - 隨機分類與隨機迴歸 (Random Classification and Random Regression)，隨機選擇任務類型。
-  - 隨機採樣資料 (Bootstrap) 與隨機選取特徵 (Random Data Sampling (Bootstrap) and Random Feature Selection)
+  - 隨機採樣資料 (Bootstrap) 與隨機選取特徵 (Random Data Sampling (Bootstrap) and Random Feature
+    Selection)
   - 隨機參數與隨機權重 (Random Parameters and Random Weights)，隨機初始化模型參數。
   correct_index: 2
   explanation: 隨機森林對資料進行 Bootstrap 採樣，且在分裂節點時隨機選取部分特徵，以增加多樣性。
@@ -423,7 +426,8 @@ questions:
   options:
   - 增加訓練資料 (Increasing Training Data)，擴充資料集的大小。
   - 計算特徵重要性 (Calculating Feature Importance)，評估特徵對模型的貢獻。
-  - 驗證隨機森林模型的效能，無需額外切分驗證集 (Validating Random Forest Model Performance Without Additional Validation Set Split)
+  - 驗證隨機森林模型的效能，無需額外切分驗證集 (Validating Random Forest Model Performance Without Additional
+    Validation Set Split)
   - 調整學習率 (Adjusting Learning Rate)，控制模型學習速度的參數。
   correct_index: 2
   explanation: OOB 資料是那些未被該棵樹採樣到的資料，可直接用來測試該樹的準確度。
@@ -453,7 +457,7 @@ questions:
   text: 如果資料特徵比資料筆數還多 (High Dimensionality)，哪種迴歸模型較適合？
   type: multiple_choice
   options:
-  - "Lasso 或 Ridge 回歸 (正規化迴歸) (Lasso or Ridge Regression: Regularized Regression)，透過正則化防止過擬合。"
+  - 'Lasso 或 Ridge 回歸 (正規化迴歸) (Lasso or Ridge Regression: Regularized Regression)，透過正則化防止過擬合。'
   - 一般線性迴歸 (Ordinary Linear Regression)，無正則化的標準線性迴歸。
   - KNN (K-Nearest Neighbors)，基於距離計算的分類演算法。
   - Naive Bayes，基於機率的分類演算法。
@@ -469,10 +473,10 @@ questions:
   text: 邏輯迴歸的決策邊界通常預設為多少機率？
   type: multiple_choice
   options:
-  - "'0.5'，邏輯迴歸的標準決策閾值。"
-  - "'0.9'，較高的決策閾值，更保守的預測。"
-  - "'0.1'，較低的決策閾值，更積極的預測。"
-  - "'0.0'，極端的決策閾值，幾乎所有樣本都被預測為正類別。"
+  - '''0.5''，邏輯迴歸的標準決策閾值。'
+  - '''0.9''，較高的決策閾值，更保守的預測。'
+  - '''0.1''，較低的決策閾值，更積極的預測。'
+  - '''0.0''，極端的決策閾值，幾乎所有樣本都被預測為正類別。'
   correct_index: 0
   explanation: 通常以 0.5 為界，大於 0.5 判為正類別，小於 0.5 判為負類別。
   tags:
@@ -565,7 +569,7 @@ questions:
   text: 下列何者不是監督式學習的應用？
   type: multiple_choice
   options:
-  - "客戶分群 (無標籤) (Customer Clustering: No Labels)，屬於非監督式學習。"
+  - '客戶分群 (無標籤) (Customer Clustering: No Labels)，屬於非監督式學習。'
   - 房價預測 (House Price Prediction)，使用已標籤資料的迴歸任務。
   - 垃圾郵件分類 (Spam Email Classification)，使用已標籤資料的分類任務。
   - 手寫數字辨識 (Handwritten Digit Recognition)，使用已標籤資料的分類任務。
@@ -646,8 +650,10 @@ questions:
   type: multiple_choice
   options:
   - 因為醫院希望找出越少病人越好 (Hospitals Want to Find Fewer Patients)，減少醫療負擔。
-  - 因為漏掉一個真正有病的患者 (False Negative) 可能導致延誤治療甚至死亡，代價遠高於虛驚一場 (Missing a Truly Sick Patient May Lead to Delayed Treatment or Death, Cost Far Exceeds False Alarm)
-  - 因為誤判一個健康人有病 (False Positive) 後果很嚴重 (Misdiagnosing a Healthy Person Has Serious Consequences)，會造成不必要的恐慌。
+  - 因為漏掉一個真正有病的患者 (False Negative) 可能導致延誤治療甚至死亡，代價遠高於虛驚一場 (Missing a Truly Sick Patient
+    May Lead to Delayed Treatment or Death, Cost Far Exceeds False Alarm)
+  - 因為誤判一個健康人有病 (False Positive) 後果很嚴重 (Misdiagnosing a Healthy Person Has Serious
+    Consequences)，會造成不必要的恐慌。
   - 因為 Recall 計算比較簡單 (Recall Calculation is Simpler)，計算過程較為容易。
   correct_index: 1
   explanation: 在攸關性命的篩檢中，寧可錯殺一百（誤判有病再複檢），不可放過一個（漏判導致病情惡化）。
@@ -661,10 +667,14 @@ questions:
   text: Bagging (如 Random Forest) 與 Boosting (如 XGBoost) 的主要區別在於？
   type: multiple_choice
   options:
-  - "Bagging 是串列訓練，Boosting 是平行訓練 (Bagging: Sequential, Boosting: Parallel)，訓練順序相反。"
-  - "Bagging 透過並行訓練多個獨立模型來降低變異數 (Variance)，Boosting 透過循序修正前一個模型的錯誤來降低偏差 (Bias) (Bagging: Parallel Training to Reduce Variance, Boosting: Sequential Error Correction to Reduce Bias)"
-  - Bagging 只能用於分類，Boosting 只能用於回歸 (Bagging Only for Classification, Boosting Only for Regression)，任務類型限制。
-  - Bagging 容易過擬合，Boosting 不容易過擬合 (Bagging Prone to Overfitting, Boosting Not Prone to Overfitting)，過擬合傾向相反。
+  - 'Bagging 是串列訓練，Boosting 是平行訓練 (Bagging: Sequential, Boosting: Parallel)，訓練順序相反。'
+  - 'Bagging 透過並行訓練多個獨立模型來降低變異數 (Variance)，Boosting 透過循序修正前一個模型的錯誤來降低偏差 (Bias) (Bagging:
+    Parallel Training to Reduce Variance, Boosting: Sequential Error Correction to
+    Reduce Bias)'
+  - Bagging 只能用於分類，Boosting 只能用於回歸 (Bagging Only for Classification, Boosting Only
+    for Regression)，任務類型限制。
+  - Bagging 容易過擬合，Boosting 不容易過擬合 (Bagging Prone to Overfitting, Boosting Not Prone
+    to Overfitting)，過擬合傾向相反。
   correct_index: 1
   explanation: Bagging 是「三個臭皮匠勝過諸葛亮」（多樣性投票），Boosting 是「知錯能改，善莫大焉」（專注改進錯誤）。
   tags:
@@ -1131,3 +1141,167 @@ questions:
   - sec-random-forest
   id: 11441
   usage: both
+- id: 5071
+  chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
+  section_title: 基礎搜尋演算法
+  text: 若資料尚未排序，但需要從頭到尾逐筆比對找出某個目標，最符合哪一種搜尋方法？
+  type: multiple_choice
+  options:
+  - 線性搜尋 (Linear Search)
+  - 二分搜尋 (Binary Search)
+  - 主成分分析 (PCA)
+  - 隨機森林 (Random Forest)
+  correct_index: 0
+  explanation: 線性搜尋會從第一筆資料開始逐筆比對，不要求資料事先排序；缺點是資料量大時效率較低。
+  tags:
+  - chap-ai-foundation-chapter5
+  - sec-linear-binary-search
+  usage: quiz
+- id: 5072
+  chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
+  section_title: 基礎搜尋演算法
+  text: 二分搜尋 (Binary Search) 能快速查找資料，但最重要的前提是什麼？
+  type: multiple_choice
+  options:
+  - 資料必須已排序
+  - 資料必須是圖片
+  - 資料必須沒有任何數值欄位
+  - 資料必須由神經網路產生
+  correct_index: 0
+  explanation: 二分搜尋每次比較中間值並排除一半資料，因此資料必須已排序。若資料未排序，直接使用二分搜尋會得到錯誤結果。
+  tags:
+  - chap-ai-foundation-chapter5
+  - sec-linear-binary-search
+  usage: quiz
+- id: 5073
+  chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
+  section_title: 基礎搜尋演算法
+  text: 在樹狀或圖形結構中，若演算法會沿著一條路徑盡可能深入，直到無路可走才回溯，這是哪一種搜尋？
+  type: multiple_choice
+  options:
+  - 深度優先搜尋 (DFS)
+  - 廣度優先搜尋 (BFS)
+  - K-means
+  - 邏輯迴歸
+  correct_index: 0
+  explanation: DFS 的特徵是一路往深處探索，遇到死路再回溯，常用於路徑探索、樹遍歷與遞迴問題。
+  tags:
+  - chap-ai-foundation-chapter5
+  - sec-dfs-bfs
+  usage: quiz
+- id: 5074
+  chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
+  section_title: 基礎搜尋演算法
+  text: 在無權重圖中，若要找出從起點到目標的最短步數路徑，通常優先考慮哪一種搜尋方法？
+  type: multiple_choice
+  options:
+  - 廣度優先搜尋 (BFS)
+  - 線性迴歸
+  - Lasso 正則化
+  - 生成對抗網路 (GAN)
+  correct_index: 0
+  explanation: BFS 會從起點一層一層向外擴散，因此在無權重圖中可找到最短步數路徑。
+  tags:
+  - chap-ai-foundation-chapter5
+  - sec-dfs-bfs
+  usage: quiz
+- id: 115-1-8
+  text: 某零售企業在建置機器學習模型預測顧客購買機率時， 資料同時包含大量稀疏類別特徵與數值型特徵。 團隊希望模型既能學習過去已出現的特徵組合規律，也能對未出現的特徵組合做出合理預測。
+    下列哪一種模型架構最適合此類需求？ （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 線性迴歸（Linear Regression）
+  - 決策樹（Decision Tree）
+  - 支援向量機（Support Vector Machine, SVM）
+  - 寬深模型（Wide and Deep）
+  correct_index: 3
+  explanation: 本題測驗相關核心概念。正確解答為「寬深模型（Wide and Deep）」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-10
+  text: 某設計公司導入生成式 AI（Generative AI）工具，用於自動產生產品概念圖與風格草圖。為了讓系統能依據既有圖像資料產生具有變化且風格一致的新圖像，模型必須具備學習資料特性並生成新樣本的能力。下列哪一種模型技術或方法最符合上述需求？    （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 隱變量自編碼器（Variational Autoencoder, V AE）
+  - 隨機森林（Random Forest）
+  - K-近鄰演算法（K-Nearest Neighbors, KNN）
+  - 貝氏網路（Bayesian Network）
+  correct_index: 0
+  explanation: 本題測驗相關核心概念。正確解答為「隱變量自編碼器（Variational Autoencoder, V AE）」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-20
+  text: 某團隊訓練影像分類模型，發現模型在訓練資料上的準確率達 98%，但在測試資115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 第一科：人工智慧基礎概論
+    考試日期：115 年 03 月 21 日 第 5 頁，共 12 頁  答案 題目 料上僅有 72%。若團隊希望提升模型對新資料的適應能力，並增加訓練資料的多樣性，下列何者最適合？    （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 增加模型的深度與參數量，使模型學習更多細節
+  - 對訓練影像進行旋轉、翻轉等隨機變化
+  - 提高訓練速度，使模型更快完成學習
+  - 僅保留模型表現較好的訓練資料
+  correct_index: 1
+  explanation: 本題測驗相關核心概念。正確解答為「對訓練影像進行旋轉、翻轉等隨機變化」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-21
+  text: 某時尚品牌導入生成式 AI（Generative AI）技術，建立服裝設計輔助系統。系統需根據設計師輸入的風格條件，自動產生具有高度視覺品質、細節穩定且風格變化自然的服裝草圖。團隊特別重視生成結果的穩定性與多樣性控制能力。在此需求下，下列哪一種模型技術或方法較為適合？    （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 支援向量機（Support Vector Machine, SVM）
+  - 生成對抗網路（Generative Adversarial Network, GAN）
+  - 決策樹（Decision Tree）
+  - 擴散模型（Diffusion Model）
+  correct_index: 3
+  explanation: 本題測驗相關核心概念。正確解答為「擴散模型（Diffusion Model）」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-22
+  text: 某製造業工廠規劃導入 AI 監控系統，持續分析設備感測數據（如溫度、震動與壓力） 。系統需能在缺乏完整異常標註資料的情況下，辨識與一般運作型態顯著不同的狀態，並發出預警。在此需求下，下列何種技術較為適合？    （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 使用支援向量機（Support Vector Machine, SVM）建立異常分類模型
+  - 以決策樹（Decision Tree）學習異常類型的判斷規則
+  - 採用變分自編碼器（Variational Autoencoder, V AE）學習正常資料分佈
+  - 使用生成對抗網路（Generative Adversarial Network, GAN）直接預測異常標籤
+  correct_index: 2
+  explanation: 本題測驗相關核心概念。正確解答為「採用變分自編碼器（Variational Autoencoder, V AE）學習正常資料分佈」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-32
+  text: 某環保局想建立 AI 系統監測空氣品質，透過分析監測站攝影機拍攝的影像來識別煙霧。系統需要在影像中找出煙霧區域並標示其位置和範圍。這個應用主要屬於電腦視覺的哪個技術領域？    （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 影像分類，判斷影像中是否有煙霧
+  - 物件偵測，找出煙霧位置並用方框標示
+  - 影像分割，精確標示出煙霧的像素區域
+  - 人臉辨識，識別煙霧來源
+  correct_index: 2
+  explanation: 本題測驗相關核心概念。正確解答為「影像分割，精確標示出煙霧的像素區域」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-36
+  text: 某電子製造公司建置 AI 視覺檢測系統，用於辨識 PCB 電路板製程缺陷。系統在影像判讀任務上表現穩定，但其模型設計與訓練目標皆侷限於特定應用範圍，無法直接遷移至其他營運決策任務。依人工智慧能力範疇分類，下列何者最符合該系統特性？    （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 弱 AI（Weak AI/Narrow AI）
+  - 強 AI（Strong AI）
+  - 通用人工智慧（Artificial General Intelligence, AGI）
+  - 超級人工智慧（Artificial Superintelligence, ASI）
+  correct_index: 0
+  explanation: 本題測驗相關核心概念。正確解答為「弱 AI（Weak AI/Narrow AI）」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock

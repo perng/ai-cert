@@ -1131,3 +1131,433 @@ questions:
   - sec-outliers
   id: 11468
   usage: both
+- id: 3071
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料類型與儲存
+  text: 企業想直接向目標客群蒐集產品滿意度、需求與使用回饋，最適合使用哪一種資料蒐集方法？
+  type: multiple_choice
+  options:
+  - 問卷與調查，直接從目標受眾蒐集第一手意見
+  - 二分搜尋，在排序資料中快速找出指定數值
+  - Dropout，在訓練神經網路時隨機關閉神經元
+  - 模型量化，降低模型權重的數值精度
+  correct_index: 0
+  explanation: 問卷與調查適合直接向目標受眾蒐集第一手意見，常用於市場研究、用戶回饋與需求洞察。但仍需注意抽樣偏差與填答品質。
+  tags:
+  - chap-ai-foundation-chapter3
+  - sec-data-collection-methods
+  usage: quiz
+- id: 3072
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料類型與儲存
+  text: 關於網路爬蟲 (Web Scraping) 作為資料來源，下列敘述何者最正確？
+  type: multiple_choice
+  options:
+  - 只要資料在網頁上看得到，就一定可以無限制蒐集與商用
+  - 網路爬蟲可自動擷取公開網頁資料，但需注意網站條款、著作權與個資法規
+  - 網路爬蟲只能蒐集結構化 SQL 表格，不能處理文字或評論
+  - 網路爬蟲會自動修正所有資料錯誤與偏差
+  correct_index: 1
+  explanation: 網路爬蟲可用於蒐集公開網頁資料，如商品價格、評論與新聞，但不代表可任意使用。仍需遵守網站服務條款、著作權、個資與資料授權規範。
+  tags:
+  - chap-ai-foundation-chapter3
+  - sec-data-collection-methods
+  usage: quiz
+- id: 3073
+  chapter_title: 數據處理生命週期與架構
+  section_title: 探索性資料分析
+  text: 驗證性資料分析 (CDA) 與探索性資料分析 (EDA) 最大的差異是什麼？
+  type: multiple_choice
+  options:
+  - EDA 主要驗證既有假設，CDA 主要任意探索資料
+  - CDA 著重驗證先前提出的假設，EDA 著重發現模式、關聯與異常
+  - CDA 只能使用圖片資料，EDA 只能使用表格資料
+  - EDA 不需要任何資料，CDA 不需要任何統計方法
+  correct_index: 1
+  explanation: EDA 的重點是開放式探索資料、形成假設；CDA 的重點是使用統計檢定、模型或實驗設計來驗證假設是否被資料支持。
+  tags:
+  - chap-ai-foundation-chapter3
+  - sec-eda-vs-cda
+  usage: quiz
+- id: 3074
+  chapter_title: 數據處理生命週期與架構
+  section_title: 探索性資料分析
+  text: 某假設檢定設定顯著水準 α = 0.05，計算得到 p 值 = 0.03。一般應如何判斷？
+  type: multiple_choice
+  options:
+  - p 值小於 α，因此拒絕虛無假設
+  - p 值小於 α，因此一定證明對立假設百分之百正確
+  - p 值大於 α，因此接受虛無假設
+  - p 值代表虛無假設有 3% 的機率為真
+  correct_index: 0
+  explanation: 當 p 值小於顯著水準 α 時，通常拒絕虛無假設。p 值不是「虛無假設為真的機率」，而是在 H0 為真時觀察到目前或更極端結果的機率。
+  tags:
+  - chap-ai-foundation-chapter3
+  - sec-hypothesis-testing
+  usage: quiz
+- id: 3075
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料轉換
+  text: 將數值資料縮放到平均數為 0、標準差為 1 的分布，稱為什麼？
+  type: multiple_choice
+  options:
+  - Z-score 標準化 (Standardization)
+  - One-Hot Encoding
+  - 資料爬蟲 (Web Scraping)
+  - 圓餅圖 (Pie Chart)
+  correct_index: 0
+  explanation: Z-score 標準化會將資料轉換為平均數 0、標準差 1 的尺度，常用於對特徵尺度敏感的模型或梯度式訓練。
+  tags:
+  - chap-ai-foundation-chapter3
+  - sec-data-transformation
+  usage: quiz
+- id: 3076
+  chapter_title: 數據處理生命週期與架構
+  section_title: 資料轉換
+  text: 將年齡由連續數值轉為「青年、中年、老年」等區間，這種處理稱為什麼？其主要代價是什麼？
+  type: multiple_choice
+  options:
+  - 離散化 (Discretization)，代價是可能犧牲細節與精確度
+  - 標準化 (Standardization)，代價是刪除所有資料列
+  - 網格搜索 (Grid Search)，代價是無法調整超參數
+  - 交叉驗證 (Cross-Validation)，代價是不能評估模型
+  correct_index: 0
+  explanation: 離散化會把連續數值切成區間或類別，有助於簡化分析，但會造成資訊流失，例如 19 歲與 35 歲可能被視為同一類。
+  tags:
+  - chap-ai-foundation-chapter3
+  - sec-data-transformation
+  usage: quiz
+- id: 115-1-3
+  text: 下列何者不符合非監督式學習（Unsupervised Learning）的典型特徵？ （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 模型可依據資料中的特徵相似性進行自動分群
+  - 訓練過程中不需仰賴事先定義的標籤資料
+  - 常用於探索資料的潛在結構或隱含模式
+  - 模型主要學習輸入特徵與既定目標標記之間的對應關係
+  correct_index: 3
+  explanation: 本題測驗相關核心概念。正確解答為「模型主要學習輸入特徵與既定目標標記之間的對應關係」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-4
+  text: 某保險公司建立 AI 理賠金額預測模型。歷史理賠資料經檢定後呈近似常態分佈，但仍存在少數極端高額案件。資料科學團隊在不破壞整體分佈特性的前提下，規劃進行離群值處理。下列何者最不適當？    （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 依統計準則（如 Z-score 或 IQR）評估後，再決定是否調整或處理極端值
+  - 採用截尾（Trimming）處理極端值，以提升模型穩定性
+  - '使用 One-hot 編碼（One-hot Encoding）將離群值轉換為類別特徵以改善數值穩
+
+    定性'
+  - 結合領域知識評估其合理性，再決定保留或修正
+  correct_index: 2
+  explanation: '本題測驗相關核心概念。正確解答為「使用 One-hot 編碼（One-hot Encoding）將離群值轉換為類別特徵以改善數值穩
+
+    定性」，因為這最符合題幹中描述的情境與技術特性。'
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-5
+  text: 某銀行建立 AI 詐欺交易偵測模型。歷史交易資料中，詐欺樣本比例極低，導致模型訓練時偏向預測為「正常交易」 。資料科學團隊評估採用SMOTE（Synthetic
+    Minority Over-sampling Technique）改善訓練資料分佈。下列何者最符合 SMOTE技術的主要功能？ （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 透過隨機刪除部分正常交易資料，以降低類別失衡程度
+  - 依據少數類別樣本的特徵空間，合成產生新的少數類別樣本
+  - 調整模型的損失函數（Loss Function）權重，使誤判少數類別時的懲罰提高
+  - "以交叉驗證（Cross-validation）方式重新分割資料集，使各折資料類別比例一\n115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 \n\
+    第一科：人工智慧基礎概論 \n考試日期：115 年 03 月 21 日 \n第 2 頁，共 12 頁 \n \n答案 題目 \n致"
+  correct_index: 1
+  explanation: 本題測驗相關核心概念。正確解答為「依據少數類別樣本的特徵空間，合成產生新的少數類別樣本」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-6
+  text: 資料科學團隊在模型訓練前，需對數值特徵進行正規化（Normalization）或標準化（Standardization） 。為確保模型評估結果具真實性並避免資料洩漏（Data
+    Leakage） ，下列何者為最適當的作法？ （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 於資料分割前，先對完整資料集計算統計量並進行標準化處理
+  - '先分割訓練資料（Training  Data ）和測試資料（Test Data） ，並各自獨立計算
+
+    統計量後進行標準化'
+  - '先分割訓練資料（Training Data）和測試資料（Test Data） ，僅以訓練資料計算
+
+    統計量，再套用至測試資料'
+  - '僅對訓練資料（Training Data）進行標準化處理，測試資料（Test Data）保持原
+
+    始數值'
+  correct_index: 2
+  explanation: '本題測驗相關核心概念。正確解答為「先分割訓練資料（Training Data）和測試資料（Test Data） ，僅以訓練資料計算
+
+    統計量，再套用至測試資料」，因為這最符合題幹中描述的情境與技術特性。'
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-7
+  text: 某電信公司建立機器學習模型預測用戶流失風險。資料中包含多個類別型特徵（Categorical Features） ，例如「資費方案類型」與「客戶地區」
+    。為使模型能有效使用這些特徵，下列何者最直接用於將類別型特徵轉換為模型可處理的數值格式？ （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 資料分群（Data Clustering）
+  - 特徵交叉（Feature Cross）
+  - One-hot 編碼（One-hot Encoding）
+  - 寬深模型（Wide and Deep）
+  correct_index: 2
+  explanation: 本題測驗相關核心概念。正確解答為「One-hot 編碼（One-hot Encoding）」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-9
+  text: 某影音串流平台建立神經網路模型，用於預測使用者最可能感興趣的影片類型。模型輸出層需將結果轉換為各類別的機率分佈，以便系統依機率高低推薦內容。下列哪一種函數最適合用於模型輸出層？    （115年第一梯次）
+  type: multiple_choice
+  options:
+  - Softmax 函數（Softmax Function）
+  - Sigmoid 函數（Sigmoid Function）
+  - 線性函數（Linear Function）
+  - "ReLU 函數（Rectified Linear Unit Function） \n115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 \n第一科：人工智慧基礎概論\
+    \ \n考試日期：115 年 03 月 21 日 \n第 3 頁，共 12 頁 \n \n答案 題目"
+  correct_index: 0
+  explanation: 本題測驗相關核心概念。正確解答為「Softmax 函數（Softmax Function）」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-11
+  text: 某企業導入生成式 AI（Generative AI）系統自動產出會議摘要，並規劃額外建置一套 AI 系統，用於評估摘要內容的正確性與完整性。下列何者為此
+    AI 系統的核心目標？ （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 自動新增專業名詞與技術指標
+  - 判斷摘要是否遺漏關鍵資訊或出現語意錯誤
+  - 調整語音轉文字結果
+  - 自動標註摘要的關鍵字與主題標籤
+  correct_index: 1
+  explanation: 本題測驗相關核心概念。正確解答為「判斷摘要是否遺漏關鍵資訊或出現語意錯誤」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-14
+  text: 下列哪一項「AI 技術應用與產業領域」的對應最為恰當？ （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 利用 AI 分析商場顧客購買紀錄以預測股票市場波動—智慧交通
+  - 使用 AI 進行設備故障預測與預防性維護—智慧製造
+  - '以 AI 模型融合即時氣象資料與乘客消費行為特徵，推薦會員升級優惠方案—
+
+    智慧醫療'
+  - "利用 AI 分析社群媒體互動以提升臨床診斷準確度—金融服務業 \n115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 \n第一科：人工智慧基礎概論\
+    \ \n考試日期：115 年 03 月 21 日 \n第 4 頁，共 12 頁 \n \n答案 題目"
+  correct_index: 1
+  explanation: 本題測驗相關核心概念。正確解答為「使用 AI 進行設備故障預測與預防性維護—智慧製造」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-16
+  text: 關於敘述性統計指標，下列敘述何者最為正確？ （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 中位數（Median）能有效反映極端值對資料分佈的影響
+  - 標準差（Standard Deviation）越大，代表資料越集中
+  - 百分位數（Percentile）主要用於衡量資料在整體分布中的相對位置
+  - 平均值（Mean）適合描述偏態且包含離群值（Outliers）的資料
+  correct_index: 2
+  explanation: 本題測驗相關核心概念。正確解答為「百分位數（Percentile）主要用於衡量資料在整體分布中的相對位置」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-17
+  text: 某企業資料分析人員需針對不同型態的數據選擇合適的視覺化工具。下列哪一種情境最適合使用直方圖（Histogram）？ （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 檢視顧客年齡資料在不同區間的集中情形
+  - 分析產品售價與銷售量之間的關聯程度
+  - 比較各產品類別的年度銷售總額
+  - 在地圖上標示各縣市加盟店的地理分布位置
+  correct_index: 0
+  explanation: 本題測驗相關核心概念。正確解答為「檢視顧客年齡資料在不同區間的集中情形」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-26
+  text: 在可解釋 AI(Explainable AI, XAI) 的分類架構中，LIME（Local Interpretable Model-agnostic
+    Explanations）屬於哪一類解釋技術？ （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 內建可解釋模型（Intrinsic Interpretability） ：模型本身具有透明的決策結構
+  - 對話式解釋系統（Conversational AI Explainer） ：透過互動對話提供模型解釋
+  - "後處理模型解釋（post-hoc） ：對已訓練模型提供外部解釋 \n"
+  - '代理模型技術（Surrogate Model） ：訓練另一個簡單模型來完全取代原黑盒模型
+
+    進行推論'
+  correct_index: 2
+  explanation: 本題測驗相關核心概念。正確解答為「後處理模型解釋（post-hoc） ：對已訓練模型提供外部解釋」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-27
+  text: SHAP（SHapley Additive exPlanations）值常用於分析機器學習模型的輸出行為。下列何者最符合 SHAP 值所提供的資訊？    （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 模型在訓練過程中，各特徵對損失函數收斂速度的影響程度
+  - 依據特徵對模型整體準確率的影響，自動篩除低重要性變數
+  - 在單一預測結果中，各輸入特徵對最終輸出所產生的貢獻分配
+  - 透過調整特徵權重，使模型在推論階段降低計算複雜度
+  correct_index: 2
+  explanation: 本題測驗相關核心概念。正確解答為「在單一預測結果中，各輸入特徵對最終輸出所產生的貢獻分配」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-29
+  text: 在深度學習模型的分析與驗證過程中，研究人員有時會利用「顯著性圖（Saliency Map） 」來輔助理解模型行為。下列何者最符合此技術的主要用途？    （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 量化各輸入特徵對模型整體預測準確度的平均影響程度
+  - 標示輸入資料中對單一預測結果影響較大的區域或部分
+  - 評估在不同模型參數設定下，預測結果的穩定性變化
+  - 比較不同模型架構在測試資料上的泛化能力差異
+  correct_index: 1
+  explanation: 本題測驗相關核心概念。正確解答為「標示輸入資料中對單一預測結果影響較大的區域或部分」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-31
+  text: 某農場收集了大量作物葉片影像，但只有 30%的影像有病害類別標註，其餘 70%的影像沒有任何標籤。農場希望充分利用所有資料來訓練病害識別模型。這種情況最適合使用哪一種學習方法？    （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 半監督式學習（Semi-supervised Learning）
+  - 監督式學習（Supervised Learning）
+  - 非監督式學習（Unsupervised Learning）
+  - 強化式學習（Reinforcement Learning）
+  correct_index: 0
+  explanation: 本題測驗相關核心概念。正確解答為「半監督式學習（Semi-supervised Learning）」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-35
+  text: 某市政府規劃釋出市民用電資料供學術研究使用，資料內容包含用電紀錄與部分人口統計欄位。考量資料可能涉及可識別個人之資訊，且須符合個人資料保護相關規範，下列哪一種資料處理方式最為適當？    （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 提供完整資料集並透過合約約定研究用途與保密責任
+  - 僅保留用電數值資料，移除所有其他欄位以避免識別風險
+  - 對具識別風險的資料欄位進行轉換處理，並移除直接識別資訊
+  - 僅將資料加密後提供，確保資料在傳輸過程中的安全性
+  correct_index: 2
+  explanation: 本題測驗相關核心概念。正確解答為「對具識別風險的資料欄位進行轉換處理，並移除直接識別資訊」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-38
+  text: 某果園管理公司計畫導入 AI 系統協助農民判斷蘋果成熟度，透過分析果實特徵資訊，評估成熟狀態並自動判斷採收時機。根據 AI 應用領域的分類，這個系統主要屬於哪一個應用領域？    （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 自然語言處理（Natural Language Processing）
+  - 電腦視覺（Computer Vision）
+  - 語音識別（Speech Recognition）
+  - 推薦系統（Recommendation System）
+  correct_index: 1
+  explanation: 本題測驗相關核心概念。正確解答為「電腦視覺（Computer Vision）」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-39
+  text: 某企業評估於不同業務場景導入機器學習技術。下列哪一項應用情境與機器學習類型的搭配最為適當？ （115年第一梯次）
+  type: multiple_choice
+  options:
+  - '在醫療影像分析中，同時運用少量已標註資料與大量未標註影像進行模型訓練
+
+    —監督式學習（Supervised Learning）'
+  - '在智慧推薦系統中，利用顧客是否點擊的歷史標籤資料預測未來偏好—非監督
+
+    式學習（Unsupervised Learning）'
+  - '在詐欺交易分析中，模型透過錯誤判斷所產生的損失作為回饋訊號，持續調整
+
+    策略—監督式學習（Supervised Learning）'
+  - '在股價資料分析中，將歷史價格變動模式劃分為若干趨勢型態，且未使用人工
+
+    標註—非監督式學習（Unsupervised Learning）'
+  correct_index: 3
+  explanation: '本題測驗相關核心概念。正確解答為「在股價資料分析中，將歷史價格變動模式劃分為若干趨勢型態，且未使用人工
+
+    標註—非監督式學習（Unsupervised Learning）」，因為這最符合題幹中描述的情境與技術特性。'
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-43
+  text: 關於機器學習不同的學習模式，下列敘述何者錯誤？ 1. 監督式學習（Supervised Learning）透過已標註資料學習輸入與目標之間的對應關係，常見任務包含分類與數值預測。
+    2. 非監督式學習（Unsupervised Learning）雖不需標註資料，但通常需預先定義每筆資料的正確輸出類別以利模型收斂。 3. 半監督式學習（Semi-supervised
+    Learning）在訓練過程中僅利用未標註資料進行特徵學習，並不涉及標註資料。 4. 自監督式學習（Self-supervised Learning）的訓練方式與監督式學習相同，皆需人工逐筆提供標註資料。
+    5. 強化式學習（Reinforcement Learning）透過與環境互動並依據回饋訊號調整策略，以優化決策行為。 6. 自監督式學習（Self-supervised
+    Learning）通常利用資料本身產生訓練目標，以降低對人工標註資料的依賴。 （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 2、3、6
+  - 2、4、5
+  - 1、3、6
+  - "2、3、4 \n115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 \n第一科：人工智慧基礎概論 \n考試日期：115 年 03 月 21 日\
+    \ \n第 11 頁，共 12 頁 \n \n答案 題目"
+  correct_index: 3
+  explanation: "本題測驗相關核心概念。正確解答為「2、3、4 \n115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 \n第一科：人工智慧基礎概論\
+    \ \n考試日期：115 年 03 月 21 日 \n第 11 頁，共 12 頁 \n \n答案 題目」，因為這最符合題幹中描述的情境與技術特性。"
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-44
+  text: 某零售業者建立顧客行為預測模型，資料集中包含「年消費金額」 、 「平均單筆交易金額」及「會員年資」等數值型特徵。資料分析顯示，部分金額特徵呈現高度偏態分布，少數樣本的數值顯著高於多數觀測值。為降低極端值對模型學習穩定性的影響，下列哪一種特徵工程方法最適合？    （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 對數轉換（Log Transformation）
+  - 區間化（Binning）
+  - One-hot 編碼（One-hot Encoding）
+  - 隨機重抽樣（Random Resampling）
+  correct_index: 0
+  explanation: 本題測驗相關核心概念。正確解答為「對數轉換（Log Transformation）」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-46
+  text: 某市政府建置城市治理資料平台，需整合交通車流偵測資料、路口監視器影像，以及民眾透過陳情系統提交的文字通報。由於各類資料格式、儲存方式與資料型態差異甚大，導致資料清理與整合成本顯著增加。就大數據特性而言，此專案最主要面臨下列哪一項挑戰？    （115年第一梯次）
+  type: multiple_choice
+  options:
+  - V olume
+  - Velocity
+  - Variety
+  - Veracity
+  correct_index: 2
+  explanation: 本題測驗相關核心概念。正確解答為「Variety」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-47
+  text: 某企業規劃導入 AI 技術支援多項資料分析任務中，下列何種屬於結構化預測（Structured Prediction）問題？ （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 判斷一封電子郵件是否為垃圾郵件
+  - 預測未來一週的產品需求量
+  - 預測客戶是否可能流失
+  - 為語音內容轉換後的文字進行逐詞標註
+  correct_index: 3
+  explanation: 本題測驗相關核心概念。正確解答為「為語音內容轉換後的文字進行逐詞標註」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock

@@ -390,7 +390,7 @@ questions:
   text: 統計式 AI 能夠處理哪種類型的數據，這是符號式 AI 難以做到的？
   type: multiple_choice
   options:
-  - "非結構化數據（如影像、語音、自然語言）(Unstructured Data: Images, Speech, Natural Language)"
+  - '非結構化數據（如影像、語音、自然語言）(Unstructured Data: Images, Speech, Natural Language)'
   - 數學公式 (Mathematical Formulas)，需要精確的符號運算與邏輯推導。
   - 明確的邏輯規則 (Explicit Logical Rules)，基於 If-Then 條件判斷的規則系統。
   - 結構化資料庫 (Structured Databases)，具有固定格式與架構的表格數據。
@@ -665,7 +665,8 @@ questions:
   type: multiple_choice
   options:
   - 因為資料驅動的模型不需要任何運算資源 (No Computational Resources Needed)，運算成本為零。
-  - 因為資料驅動能自動從新數據中學習變異模式，解決了規則驅動難以窮舉所有變化的「知識擷取瓶頸」(Automatically Learning Variant Patterns, Solving Knowledge Acquisition Bottleneck)
+  - 因為資料驅動能自動從新數據中學習變異模式，解決了規則驅動難以窮舉所有變化的「知識擷取瓶頸」(Automatically Learning Variant Patterns,
+    Solving Knowledge Acquisition Bottleneck)
   - 因為規則驅動的系統完全無法處理文字 (Cannot Process Text at All)，僅限於數值運算。
   - 因為資料驅動的模型具有最高的可解釋性 (Highest Interpretability)，決策過程完全透明。
   correct_index: 1
@@ -680,9 +681,12 @@ questions:
   text: 在人工智慧系統的決策流程中，下列哪一種情境最符合「人在迴圈上 （Human-over-the-loop）」所強調的監督機制？ (114年第四梯次)
   type: multiple_choice
   options:
-  - AI 系統只能提供建議，人類需主動下達命令才能進行決策 (AI Only Provides Suggestions, Human Must Actively Command)，AI 僅為輔助工具。
-  - 人類對 AI 的運行進行日常監督，必要時可立即介入修正或干預 (Daily Supervision with Immediate Intervention Capability)
-  - 人類平時不參與 AI 的運作，僅在發生異常或重大錯誤時才接手控制 (No Regular Participation, Only Intervening in Anomalies)，屬於被動監控模式。
+  - AI 系統只能提供建議，人類需主動下達命令才能進行決策 (AI Only Provides Suggestions, Human Must Actively
+    Command)，AI 僅為輔助工具。
+  - 人類對 AI 的運行進行日常監督，必要時可立即介入修正或干預 (Daily Supervision with Immediate Intervention
+    Capability)
+  - 人類平時不參與 AI 的運作，僅在發生異常或重大錯誤時才接手控制 (No Regular Participation, Only Intervening in
+    Anomalies)，屬於被動監控模式。
   - AI 的所有判斷與行動在執行前，皆須經過人類逐一審核與批准 (All Decisions Require Human Review and Approval)，屬於嚴格審核模式。
   correct_index: 1
   explanation: Human-in-the-loop (HITL) 強調在 AI 系統中保留人類的監督與介入，特別是在高風險決策或模型信心不足時。
@@ -777,7 +781,8 @@ questions:
   type: multiple_choice
   options:
   - 深度學習準確率太低 (Low Accuracy)，在分類任務上表現不佳。
-  - 深度學習需要海量數據才能收斂，小數據集下傳統 ML 效果可能更好且不易過擬合 (Requiring Massive Data, Traditional ML Better on Small Datasets)
+  - 深度學習需要海量數據才能收斂，小數據集下傳統 ML 效果可能更好且不易過擬合 (Requiring Massive Data, Traditional ML
+    Better on Small Datasets)
   - SVM 運算更慢 (Slower Computation)，處理速度不如深度學習。
   - SVM 是最新的技術 (Latest Technology)，代表最先進的機器學習方法。
   correct_index: 1
@@ -809,7 +814,7 @@ questions:
   type: multiple_choice
   options:
   - 規則驅動需要大量數據 (Requiring Large Datasets)，對數據量需求極高。
-  - "資料驅動是「輸入 + 輸出 = 規則」(Data-Driven: Input + Output = Rules)，從數據中學習模式。"
+  - '資料驅動是「輸入 + 輸出 = 規則」(Data-Driven: Input + Output = Rules)，從數據中學習模式。'
   - 規則驅動適合模糊的問題 (Suitable for Ambiguous Problems)，能處理不確定性。
   - 資料驅動不需要運算資源 (No Computational Resources Needed)，運算成本為零。
   correct_index: 1
@@ -905,7 +910,7 @@ questions:
   type: multiple_choice
   options:
   - 訓練一個 100 層的深度神經網路 (Training a 100-Layer Deep Neural Network)，使用複雜的深度學習架構。
-  - "使用傳統機器學習模型（如決策樹或隨機森林）(Using Traditional ML Models: Decision Trees or Random Forests)"
+  - '使用傳統機器學習模型（如決策樹或隨機森林）(Using Traditional ML Models: Decision Trees or Random Forests)'
   - 手寫規則 (Hand-Written Rules)，人工定義 If-Then 邏輯規則。
   - 使用生成式 AI (Using Generative AI)，利用生成模型進行預測。
   correct_index: 1
@@ -921,7 +926,8 @@ questions:
   type: multiple_choice
   options:
   - 測試電腦的運算速度 (Testing Computational Speed)，評估硬體處理效能。
-  - 判斷機器是否具備展現出與人類無法區分的智慧行為的能力 (Testing if Machine Can Exhibit Indistinguishable Intelligence from Humans)
+  - 判斷機器是否具備展現出與人類無法區分的智慧行為的能力 (Testing if Machine Can Exhibit Indistinguishable Intelligence
+    from Humans)
   - 測試網路連線 (Testing Network Connectivity)，檢查網路連線品質。
   - 測試硬體耐用度 (Testing Hardware Durability)，評估設備使用壽命。
   correct_index: 1
@@ -1012,3 +1018,282 @@ questions:
   - sec-human-ai-collab
   id: 11421
   usage: both
+- id: 1043
+  chapter_title: 人工智慧的本質與層次架構
+  section_title: 功能導向的 AI 分類
+  text: 某零售企業希望分析會員消費紀錄，找出高價值客群、流失風險族群與不同商品之間的購買關聯。這個需求最接近哪一類 AI？
+  type: multiple_choice
+  options:
+  - 分析型 AI (Analytical AI)，重點在洞悉既有資料中的模式、關聯與異常。
+  - 預測型 AI (Predictive AI)，重點只在生成未來的精確日期與時間。
+  - 生成型 AI (Generative AI)，重點在依提示詞產生全新圖片或文字。
+  - 強人工智慧 (AGI)，具備人類般通用智慧並能跨領域處理所有任務。
+  correct_index: 0
+  explanation: 題目重點是從既有消費資料中找出模式、分群與關聯，屬於分析型 AI。若題目強調預測未來違約、流失或需求，才更偏向預測型 AI；若強調產生新內容，才是生成型
+    AI。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-ai-functional-types
+  usage: quiz
+- id: 1044
+  chapter_title: 人工智慧的本質與層次架構
+  section_title: 功能導向的 AI 分類
+  text: 銀行根據客戶收入、信用紀錄、還款行為與交易資料，推估未來發生貸款違約的機率。這個案例最符合哪一類 AI？
+  type: multiple_choice
+  options:
+  - 分析型 AI，因為它只是在回顧過去資料，不涉及未來結果。
+  - 預測型 AI，因為它使用歷史資料推估未來可能發生的風險。
+  - 生成型 AI，因為它會產生新的影像、語音或影片素材。
+  - 符號式 AI，因為所有信用風險模型都只能由人工手寫規則完成。
+  correct_index: 1
+  explanation: 使用歷史資料推估未來違約機率，是典型的預測型 AI。信用風險評估也常是 AI 應用規劃師考題中的代表場景。
+  tags:
+  - chap-ai-foundation-chapter1
+  - def-predictive-ai
+  usage: quiz
+- id: 1045
+  chapter_title: 人工智慧的本質與層次架構
+  section_title: 功能導向的 AI 分類
+  text: 行銷部門輸入「請替新款運動鞋寫三則社群廣告文案」後，系統產生多個可供修改的文案草稿。這最符合哪一類 AI？
+  type: multiple_choice
+  options:
+  - 生成型 AI，依提示詞產生新的文字內容。
+  - 分析型 AI，只能找出既有資料中的模式。
+  - 預測型 AI，只能預測未來數值或風險。
+  - 專家系統，只能依固定 If-Then 規則推論。
+  correct_index: 0
+  explanation: 依提示詞產生文字、圖片、語音、程式碼或影片等新素材，是生成型 AI 的核心能力。此案例產生廣告文案，因此屬於生成型 AI。
+  tags:
+  - chap-ai-foundation-chapter1
+  - def-generative-ai-functional
+  usage: quiz
+- id: 1046
+  chapter_title: 人工智慧的本質與層次架構
+  section_title: AI 的主要應用領域
+  text: 製造業在機台上安裝感測器，持續收集震動、溫度與電流資料，並用 AI 在故障發生前發出維修警示。這個應用稱為什麼？
+  type: multiple_choice
+  options:
+  - 預測性維護 (Predictive Maintenance)，透過設備資料提前預測故障。
+  - 內容推薦 (Content Recommendation)，依使用者偏好推薦影片或音樂。
+  - 藥物研發 (Drug Discovery)，模擬分子結構以尋找候選藥物。
+  - 圖靈測試 (Turing Test)，判斷機器是否能騙過人類評審。
+  correct_index: 0
+  explanation: 利用設備運行資料提前預測故障並安排維修，是製造業常見的預測性維護應用，可降低非預期停機與維修成本。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-ai-application-domains
+  usage: quiz
+- id: 1047
+  chapter_title: 人工智慧的本質與層次架構
+  section_title: AI 的主要應用領域
+  text: 醫院使用 AI 分析 X 光與 MRI 影像，標記疑似病灶供醫師判讀。下列敘述何者最正確？
+  type: multiple_choice
+  options:
+  - 這是醫療保健中的疾病診斷輔助，通常仍需醫師保留最終判斷。
+  - 這表示系統已經是強人工智慧，能完全取代醫師所有工作。
+  - 這是娛樂推薦系統，主要目的是推薦影音內容。
+  - 這是資料庫管理系統，不屬於 AI 應用。
+  correct_index: 0
+  explanation: 醫學影像分析是 AI 在醫療保健中的典型應用，但涉及高風險決策時，AI 通常是輔助工具，最終診斷與責任仍需由醫師承擔。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-ai-application-domains
+  - sec-hitl
+  usage: quiz
+- id: 1048
+  chapter_title: 人工智慧的本質與層次架構
+  section_title: AI 系統的多層次實現架構
+  text: 在 AI 系統的多層次實現架構中，下列何者最適合歸類為「技術底層」？
+  type: multiple_choice
+  options:
+  - 資料處理與分析、演算法、機器學習、深度學習與專家系統。
+  - 只包含產品行銷文案與銷售通路規劃。
+  - 只包含客服人員的話術訓練，不包含資料或演算法。
+  - 只包含企業年度預算審查，與 AI 技術無關。
+  correct_index: 0
+  explanation: 技術底層是 AI 運作的基礎，包含資料、演算法、機器學習、深度學習、專家系統與算力等要素。沒有這些基礎，AI 應用很難穩定落地。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-ai-layered-architecture
+  - sec-ai-technical-foundation
+  usage: quiz
+- id: 1049
+  chapter_title: 人工智慧的本質與層次架構
+  section_title: AI 系統的多層次實現架構
+  text: 一個 AI 專案已完成資料清理與模型選擇，接著進行模型訓練、測試、部署，並上線後持續監控資料漂移與準確率下降。這主要屬於哪個層次？
+  type: multiple_choice
+  options:
+  - 開發應用層，將底層技術轉換成可測試、可部署、可維護的功能。
+  - 純粹的硬體採購層，只是在購買伺服器與網路設備。
+  - 使用者娛樂層，主要用來提升遊戲沉浸感。
+  - 法律訴訟層，主要處理法院判決與司法程序。
+  correct_index: 0
+  explanation: 模型設計、訓練、測試、部署與監控，屬於開發應用階段。這一層負責把技術底層轉化成實際可用的 AI 功能。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-ai-development-application
+  usage: quiz
+- id: 1050
+  chapter_title: 人工智慧的本質與層次架構
+  section_title: AI 治理概念入門
+  text: 為了提升 AI 系統透明性，下列哪一種措施最適當？
+  type: multiple_choice
+  options:
+  - 規劃透過報告、技術文件、模型說明或網站揭露 AI 系統用途、限制與決策流程。
+  - 不需對外揭露任何 AI 系統資訊，所有內容都應完全保密。
+  - 只告訴內部工程師模型名稱，不需要讓使用者知道 AI 是否介入。
+  - 刪除所有模型版本紀錄，避免外部稽核。
+  correct_index: 0
+  explanation: 透明性要求組織適度揭露 AI 系統的用途、限制、資料概況與決策流程。完全保密或刪除紀錄會降低信任與可追溯性。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-ai-governance-intro
+  - sec-ai-transparency-practices
+  usage: quiz
+- id: 1051
+  chapter_title: 人工智慧的本質與層次架構
+  section_title: AI 治理概念入門
+  text: 在 AI 治理中，「當責性 (Accountability)」最強調什麼？
+  type: multiple_choice
+  options:
+  - AI 系統一旦做出決策，就由 AI 自己承擔法律與倫理責任。
+  - 組織必須明確定義誰負責資料治理、模型部署、例外處理與事後補救。
+  - 只要模型準確率高，就不需要任何人類負責。
+  - 為了避免責任問題，所有 AI 系統都應禁止使用。
+  correct_index: 1
+  explanation: AI 不是責任主體。當責性要求組織明確定義人類與部門的責任分工，包含資料、模型、部署、監控、申訴與補救流程。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-ai-governance-principles
+  usage: quiz
+- id: 1052
+  chapter_title: 人工智慧的本質與層次架構
+  section_title: AI 治理概念入門
+  text: 在 AI 治理中，國際合作的重要性包含哪些面向？
+  type: multiple_choice
+  options:
+  - 統一或協調 AI 發展標準、降低技術濫用風險、促進技術交流與轉移。
+  - 讓每個國家完全不需要制定任何 AI 規範。
+  - 確保所有 AI 模型都只由單一國家開發與管理。
+  - 只用來提高硬體售價，與倫理、安全或標準無關。
+  correct_index: 0
+  explanation: AI 技術跨國流通，國際合作可協助建立共同標準、降低濫用與安全風險、促進技術交流，並縮小不同國家或產業之間的數位落差。
+  tags:
+  - chap-ai-foundation-chapter1
+  - sec-ai-governance-principles
+  usage: quiz
+- id: 115-1-1
+  text: 下列何者不屬於資料整合（Data Integration）的主要目的？ （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 統一不同來源資料的格式與欄位定義，以確保分析一致性
+  - 識別並處理重複資料，避免影響模型訓練結果
+  - 整併多來源資料，以提升資料完整性與應用價值
+  - 依資料保存政策延長原始資料留存期限，以利未來可能的分析需求
+  correct_index: 3
+  explanation: 本題測驗相關核心概念。正確解答為「依資料保存政策延長原始資料留存期限，以利未來可能的分析需求」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-2
+  text: 某智慧城市專案導入 AI 技術，以優化垃圾收集路線調度並即時監測空氣品質變化。系統需持續蒐集環境數據（如 PM2.5、氣體濃度）與設備狀態（如垃圾桶滿溢度）
+    。下列何種技術最直接支援上述需求？     （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 專家系統（Expert System）
+  - 決策支援系統（Decision Support System）
+  - 啟發式決策引擎（Heuristic Decision Engine）
+  - 感知器網路（Sensor Network）
+  correct_index: 3
+  explanation: 本題測驗相關核心概念。正確解答為「感知器網路（Sensor Network）」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-13
+  text: 根據《金融機構運用人工智慧技術作業規範》 ，金融機構於使用人工智慧提供金融服務並直接與消費者互動時，下列何者非必要揭露之資訊？ （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 該服務之 AI 模型原始程式碼
+  - 服務適用對象與用途範圍
+  - 該服務是否為 AI 自動完成
+  - 該服務是否提供替代方案
+  correct_index: 0
+  explanation: 本題測驗相關核心概念。正確解答為「該服務之 AI 模型原始程式碼」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-15
+  text: 在資料處理中，下列何者屬於「結構化數據」的例子？ （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 儲存在 MySQL 資料庫中的訂單記錄
+  - 以 JSON 格式儲存的商品訂單資訊
+  - 用 XML 標註的產品目錄
+  - 儲存在純文字檔案中的客服對話紀錄
+  correct_index: 0
+  explanation: 本題測驗相關核心概念。正確解答為「儲存在 MySQL 資料庫中的訂單記錄」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-18
+  text: 某電商平台工程師需在已排序的價格清單中，快速定位指定價格是否存在，給定排序後陣列：arr = [3, 8, 14, 19, 21, 27, 33,
+    45, 52]。若搜尋目標值為 27，且採用標準二分搜尋（Binary Search）流程（每次比較後排除中位數） ，請問最多需要比較幾次即可找到目標？ （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 2 次
+  - 3 次
+  - 4 次
+  - 5 次
+  correct_index: 1
+  explanation: 本題測驗相關核心概念。正確解答為「3 次」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-28
+  text: 在金融業導入 AI 模型與可解釋性技術時，反事實解釋（Counterfactual 115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 第一科：人工智慧基礎概論
+    考試日期：115 年 03 月 21 日 第 7 頁，共 12 頁  答案 題目 Explanation）最符合下列哪一種應用？ （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 分析整體客戶群的信用風險分布，以預測未來違約率趨勢
+  - 回溯歷史呆帳案例，辨識造成違約的主要影響因素
+  - 分析在模型不變的前提下，客戶申請資料變動對授信決策結果的影響
+  - 依據客戶輪廓與行為資料，推薦最適合的金融商品以提升交叉銷售
+  correct_index: 2
+  explanation: 本題測驗相關核心概念。正確解答為「分析在模型不變的前提下，客戶申請資料變動對授信決策結果的影響」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-42
+  text: 某企業建置基於檢索增強生成（RAG）的法遵知識輔助系統，用於整合法規條文、內控制度與歷史函釋文件。系統運行後發現，每當法規更新或新增解釋文件時，需重新建立完整索引，導致更新期間系統暫停服務，且部分回應偶有引用舊版內容的情形。若希望在兼顧查詢效率的同時提升知識更新彈性與系統穩定性，下列何者最適合？    （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 提升模型推論資源配置，以維持高流量查詢時的回應效能
+  - 調整語言模型的輸出限制機制，以降低生成內容與法規不一致的風險
+  - 建立固定法規問答對照表，以規則化方式優先回應常見問題
+  - 導入可支援增量更新的索引管理方式，使異動文件可即時反映於檢索結果
+  correct_index: 3
+  explanation: 本題測驗相關核心概念。正確解答為「導入可支援增量更新的索引管理方式，使異動文件可即時反映於檢索結果」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-49
+  text: 某 AI 科技公司在工業缺陷檢測領域已有成熟的辨識產品經驗。現欲與新客戶合作開發一項類似產品的表面瑕疵檢測系統，但因新產品量產不久，標註樣本極為稀少且專家標註成本高昂。在不大幅增加標註預算的前提下，下列哪一種做法最能利用該公司既有的技術優勢來提升模型表現？（115年第一梯次）
+  type: multiple_choice
+  options:
+  - 增加模型參數規模，使模型具備更強表達能力
+  - 透過資料增強（Data Augmentation）擴展影像變化，以提升模型穩定性
+  - 重新蒐集大量影像並進行完整人工標註
+  - 採用遷移學習（Transfer Learning） ，利用既有預訓練模型進行調整
+  correct_index: 3
+  explanation: 本題測驗相關核心概念。正確解答為「採用遷移學習（Transfer Learning） ，利用既有預訓練模型進行調整」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock

@@ -12,6 +12,100 @@ label: chap-ai-foundation-chapter5
   1.  **分類 (Classification)**：預測的是**類別**（離散值）。例如：這封信是垃圾郵件嗎？（是/否）、這張照片是貓還是狗？
   2.  **迴歸 (Regression)**：預測的是**數值**（連續值）。例如：明天的氣溫是幾度？這間房子的房價是多少？
 
+## 基礎搜尋演算法 (Search Algorithms) {#sec-search-algorithms}
+
+在學習機器學習模型之前，也需要理解幾種基礎演算法概念。搜尋演算法 (Search Algorithms) 的目的，是在資料集合、樹狀結構或圖形結構中找出目標。它們不一定是「機器學習模型」，但常是 AI 系統、路徑規劃、資料檢索與問題求解的基礎。
+
+### 線性搜尋與二分搜尋 {#sec-linear-binary-search}
+
+*   **線性搜尋 (Linear Search / Sequential Search)**：
+    *   **作法**：從第一筆資料開始，一筆一筆往後比對，直到找到目標或全部找完。
+    *   **優點**：資料不需要排序，概念簡單，任何列表都能用。
+    *   **缺點**：資料量大時效率低，最壞情況要檢查所有資料 (時間複雜度 $O(n)$)。
+    *   **實務例子**：在未排序的客戶名單 (如 Excel 表格) 中逐筆尋找某位客戶的姓名。
+    *   **虛擬碼 (Pseudo Code)**：
+        ```python
+        def linear_search(arr, target):
+            for i in range(len(arr)):
+                if arr[i] == target:
+                    return i  # 找到目標，回傳索引
+            return -1  # 找不到目標
+        ```
+
+*   **二分搜尋 (Binary Search)**：
+    *   **作法**：資料必須先排序。每次取中間值比較，若目標較小就往左半邊找，較大就往右半邊找。
+    *   **優點**：效率高，每次都能排除一半資料 (時間複雜度 $O(\log n)$)。
+    *   **缺點**：前提是資料已排序；若資料經常新增刪除，維持排序也有成本。
+    *   **實務例子**：在已排序的產品價格表中快速找出特定價格，或是在字典中找單字。
+    *   **虛擬碼 (Pseudo Code)**：
+        ```python
+        def binary_search(arr, target):
+            left, right = 0, len(arr) - 1
+            while left <= right:
+                mid = (left + right) // 2
+                if arr[mid] == target:
+                    return mid  # 找到目標
+                elif arr[mid] < target:
+                    left = mid + 1  # 目標在右半邊
+                else:
+                    right = mid - 1 # 目標在左半邊
+            return -1  # 找不到目標
+        ```
+
+**考試陷阱**：二分搜尋的關鍵條件是「資料已排序」。若資料沒有排序，不能直接使用二分搜尋。
+
+### 深度優先搜尋與廣度優先搜尋 {#sec-dfs-bfs}
+
+DFS 與 BFS 常用於樹狀或圖形資料，例如路徑搜尋、關係網路、網頁爬取與遊戲狀態探索。
+
+*   **深度優先搜尋 (Depth-First Search, DFS)**：
+    *   **作法**：沿著一條路一直往深處走，走到底或無路可走時再回溯。通常使用**堆疊 (Stack)** 或**遞迴 (Recursion)** 來實作。
+    *   **類比**：走迷宮時先沿一條路走到底，發現死路再退回上一個岔路。
+    *   **適用**：需要探索完整路徑、檢查是否存在某條路、處理樹狀結構遞迴問題。
+    *   **虛擬碼 (Pseudo Code - 遞迴版)**：
+        ```python
+        def dfs(node, visited):
+            if node is None or node in visited:
+                return
+            visited.add(node)
+            print("拜訪:", node.value)
+            
+            # 深入拜訪所有鄰居
+            for neighbor in node.neighbors:
+                dfs(neighbor, visited)
+        ```
+
+*   **廣度優先搜尋 (Breadth-First Search, BFS)**:
+    *   **作法**：先拜訪起點周圍所有鄰居，再往下一層擴散。通常使用**佇列 (Queue)** 來實作。
+    *   **類比**：水波從中心一圈一圈往外擴散。
+    *   **適用**：在無權重圖中找最短步數路徑，例如社群網路中的「幾度分隔」或地圖格線最短路徑。
+    *   **虛擬碼 (Pseudo Code)**：
+        ```python
+        from collections import deque
+        
+        def bfs(start_node):
+            visited = set()
+            queue = deque([start_node])
+            visited.add(start_node)
+            
+            while queue:
+                current = queue.popleft() # 取出最先進入佇列的節點 (FIFO)
+                print("拜訪:", current.value)
+                
+                # 拜訪該節點的所有鄰居
+                for neighbor in current.neighbors:
+                    if neighbor not in visited:
+                        visited.add(neighbor)
+                        queue.append(neighbor) # 將鄰居加入佇列排隊
+        ```
+
+| 演算法 | 搜尋方式 | 常見資料結構 | 典型用途 |
+| :--- | :--- | :--- | :--- |
+| Linear Search | 逐筆掃描 | 陣列、列表 | 未排序資料查找 |
+| Binary Search | 每次砍半 | 已排序陣列 | 快速查找排序資料 |
+| DFS | 一路深入再回溯 | Stack / 遞迴 | 路徑探索、樹遍歷 |
+| BFS | 一層一層擴散 | Queue | 無權重最短路徑、層級搜尋 |
+
 ## 分類演算法 (Classification) {#sec-classification}
 
 ### K-近鄰演算法 (KNN, K-Nearest Neighbors) {#sec-knn}
@@ -281,4 +375,3 @@ label: chap-ai-foundation-chapter5
 ### 延伸思考
 
 *   為什麼邏輯迴歸 (Logistic Regression) 叫「迴歸」卻是用來做「分類」？（因為它底層是預測一個 0~1 的機率數值，只是我們設了門檻把它變成分類）。
-

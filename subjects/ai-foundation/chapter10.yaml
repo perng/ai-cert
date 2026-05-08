@@ -6,7 +6,8 @@ questions:
   type: multiple_choice
   options:
   - 模型沒有輸出 (Model Has No Output)，模型無法產生預測結果。
-  - 模型結構複雜，人類無法直觀理解其決策過程 (Model Structure Complex, Humans Cannot Intuitively Understand Decision Process)
+  - 模型結構複雜，人類無法直觀理解其決策過程 (Model Structure Complex, Humans Cannot Intuitively Understand
+    Decision Process)
   - 模型的顏色是黑色的 (Model Color Is Black)，模型外觀為黑色。
   - 模型只能在晚上運作 (Model Can Only Operate at Night)，僅限於特定時段使用。
   correct_index: 1
@@ -69,7 +70,8 @@ questions:
   text: LIME (Local Interpretable Model-agnostic Explanations) 的核心思想是？
   type: multiple_choice
   options:
-  - 在局部範圍內，用簡單的線性模型來模擬複雜的黑箱模型 (In Local Range, Using Simple Linear Model to Simulate Complex Black Box Model)
+  - 在局部範圍內，用簡單的線性模型來模擬複雜的黑箱模型 (In Local Range, Using Simple Linear Model to Simulate
+    Complex Black Box Model)
   - 計算所有特徵的平均值 (Calculating Average of All Features)，統計特徵的平均數。
   - 將模型轉換為決策樹 (Converting Model to Decision Tree)，改變模型架構。
   - 重新訓練一個白箱模型 (Retraining a White Box Model)，完全重新訓練。
@@ -88,7 +90,7 @@ questions:
   - 它不需要模型 (It Does Not Require Model)，可以在無模型情況下使用。
   - 它只能解釋神經網路 (It Can Only Explain Neural Networks)，僅限於特定模型類型。
   - 它只能解釋線性模型 (It Can Only Explain Linear Models)，僅限於線性架構。
-  - "它適用於任何類型的模型（與模型無關）(It Applies to Any Type of Model: Model-Agnostic)"
+  - '它適用於任何類型的模型（與模型無關）(It Applies to Any Type of Model: Model-Agnostic)'
   correct_index: 3
   explanation: Model-agnostic 代表該技術不依賴特定模型的內部結構，可以應用於 SVM、隨機森林、神經網路等任何模型。
   tags:
@@ -135,7 +137,8 @@ questions:
   options:
   - 這是一個貓的圖片 (This Is a Cat Image)，描述性的說明。
   - 特徵 A 的重要性是 0.5 (Feature A's Importance Is 0.5)，特徵重要性的數值。
-  - 如果特徵 X 改變成 Y，預測結果就會變成 Z (If Feature X Changes to Y, Prediction Result Will Become Z)
+  - 如果特徵 X 改變成 Y，預測結果就會變成 Z (If Feature X Changes to Y, Prediction Result Will Become
+    Z)
   - 模型的準確率是 90% (Model Accuracy Is 90%)，模型效能的指標。
   correct_index: 2
   explanation: 反事實解釋提供「如果...就會...」的假設性情境，告訴使用者如何改變輸入以獲得想要的結果。
@@ -165,7 +168,8 @@ questions:
   text: 「如果你年輕 10 歲，貸款就會通過」這是一個好的反事實解釋嗎？
   type: multiple_choice
   options:
-  - "否，因為它違反了「可操作性」原則（使用者無法改變年齡）(No, Because It Violates Actionability Principle: Users Cannot Change Age)"
+  - '否，因為它違反了「可操作性」原則（使用者無法改變年齡）(No, Because It Violates Actionability Principle:
+    Users Cannot Change Age)'
   - 否，因為它不夠精確 (No, Because It Is Not Precise Enough)，建議不夠準確。
   - 是，因為它很誠實 (Yes, Because It Is Honest)，建議真實可靠。
   - 是，因為它很簡單 (Yes, Because It Is Simple)，建議容易理解。
@@ -200,7 +204,8 @@ questions:
   - 它使用深度學習 (It Uses Deep Learning)，採用複雜的神經網路架構。
   - 它沒有參數 (It Has No Parameters)，模型無需參數。
   - 它的預測很準 (Its Predictions Are Accurate)，預測正確率極高。
-  - 它的係數 (Weights) 直接反映了特徵與結果的正負相關及強度 (Its Coefficients Directly Reflect Positive/Negative Correlation and Strength Between Features and Results)
+  - 它的係數 (Weights) 直接反映了特徵與結果的正負相關及強度 (Its Coefficients Directly Reflect Positive/Negative
+    Correlation and Strength Between Features and Results)
   correct_index: 3
   explanation: 線性迴歸的方程式 y = wx + b 中，w 的大小和正負號直接告訴我們 x 對 y 的影響，非常直觀。
   tags:
@@ -214,7 +219,8 @@ questions:
   type: multiple_choice
   options:
   - 因為它們不公開原始碼 (Because They Do Not Open Source Code)，程式碼不公開。
-  - 因為它們包含數百萬個參數與非線性轉換，難以追蹤單一特徵的影響路徑 (Because They Contain Millions of Parameters and Non-Linear Transformations, Difficult to Track Single Feature's Impact Path)
+  - 因為它們包含數百萬個參數與非線性轉換，難以追蹤單一特徵的影響路徑 (Because They Contain Millions of Parameters
+    and Non-Linear Transformations, Difficult to Track Single Feature's Impact Path)
   - 因為它們通常在暗房訓練 (Because They Are Usually Trained in Dark Rooms)，訓練環境特殊。
   - 因為它們只能處理黑白圖片 (Because They Can Only Process Black and White Images)，僅限於特定資料類型。
   correct_index: 1
@@ -248,7 +254,8 @@ questions:
   - 模型的損失函數 (Model's Loss Function)，用於優化的目標函數。
   - 只有特徵重要性排序 (Only Feature Importance Ranking)，僅提供排序資訊。
   - 模型的訓練過程 (Model's Training Process)，訓練的歷史記錄。
-  - 特徵重要性排序以及特徵值高低對預測結果的正負影響 (Feature Importance Ranking and Positive/Negative Impact of Feature Values on Prediction Results)
+  - 特徵重要性排序以及特徵值高低對預測結果的正負影響 (Feature Importance Ranking and Positive/Negative Impact
+    of Feature Values on Prediction Results)
   correct_index: 3
   explanation: SHAP Summary Plot 結合了特徵重要性與特徵效應，能顯示出「數值高的特徵 A 會導致預測值增加還是減少」。
   tags:
@@ -309,10 +316,10 @@ questions:
   text: SHAP 值為正數代表該特徵？
   type: multiple_choice
   options:
-  - "對預測結果有正向影響（推高分數）(Positive Impact on Prediction Results: Raising Score)"
+  - '對預測結果有正向影響（推高分數）(Positive Impact on Prediction Results: Raising Score)'
   - 對預測結果無影響 (No Impact on Prediction Results)，特徵不影響預測。
   - 特徵值是正數 (Feature Value Is Positive)，數值為正。
-  - "對預測結果有負向影響（拉低分數）(Negative Impact on Prediction Results: Lowering Score)"
+  - '對預測結果有負向影響（拉低分數）(Negative Impact on Prediction Results: Lowering Score)'
   correct_index: 0
   explanation: SHAP 值代表相對於基準值，該特徵將預測結果推高（正值）或拉低（負值）的程度。
   tags:
@@ -357,7 +364,7 @@ questions:
   text: SHAP 的計算複雜度通常？
   type: multiple_choice
   options:
-  - "非常高（因為要考慮所有特徵組合）(Very High: Because Need to Consider All Feature Combinations)"
+  - '非常高（因為要考慮所有特徵組合）(Very High: Because Need to Consider All Feature Combinations)'
   - 非常低 (Very Low)，計算成本極低。
   - 為零 (Zero)，完全不需要計算。
   - 是常數 (Is Constant)，計算量固定不變。
@@ -385,20 +392,6 @@ questions:
   usage: both
 - id: 10025
   chapter_title: 可解釋 AI (XAI)
-  section_title: XAI 的層次
-  text: 決策樹雖然是白箱，但在什麼情況下可解釋性會下降？
-  type: multiple_choice
-  options:
-  - 只有兩個特徵的時候 (When There Are Only Two Features)，特徵數量極少。
-  - 資料量很少的時候 (When Data Volume Is Very Small)，訓練資料不足。
-  - 樹很淺的時候 (When Tree Is Very Shallow)，決策樹層數很少。
-  - 樹變得非常深且複雜的時候 (When Tree Becomes Very Deep and Complex)，決策樹過於複雜。
-  correct_index: 3
-  explanation: 當決策樹過深（例如幾百層），規則變得極度繁瑣，人類也難以追蹤其邏輯，可解釋性隨之降低。
-  tags:
-  - chap-ai-foundation-chapter10
-  - sec-black-white-box
-  chapter_title: 可解釋 AI (XAI)
   section_title: 解釋技術與工具
   text: 反事實解釋主要關注於？
   type: multiple_choice
@@ -406,7 +399,7 @@ questions:
   - 過去的原因 (Past Causes)，歷史事件的成因。
   - 模型的參數 (Model Parameters)，模型內部的權重值。
   - 現在的狀態 (Current Status)，目前的狀況。
-  - "未來的改變 (What-if) (Future Changes: What-if)，假設性的未來情境。"
+  - '未來的改變 (What-if) (Future Changes: What-if)，假設性的未來情境。'
   correct_index: 3
   explanation: 反事實解釋探討「如果輸入改變，輸出會如何變化」，是一種面向未來的假設性分析。
   tags:
@@ -452,7 +445,8 @@ questions:
   type: multiple_choice
   options:
   - 所有特徵的 SHAP 值相加等於 0 (Sum of All Features' SHAP Values Equals Zero)，總和為零。
-  - 所有特徵的 SHAP 值相加等於預測值與基準值的差 (Sum of All Features' SHAP Values Equals Difference Between Prediction and Baseline Value)
+  - 所有特徵的 SHAP 值相加等於預測值與基準值的差 (Sum of All Features' SHAP Values Equals Difference
+    Between Prediction and Baseline Value)
   - 所有特徵的 SHAP 值相加等於 1 (Sum of All Features' SHAP Values Equals One)，總和為一。
   - 所有特徵的 SHAP 值相加等於無限大 (Sum of All Features' SHAP Values Equals Infinity)，總和為無限。
   correct_index: 1
@@ -595,8 +589,11 @@ questions:
   text: LIME (Local Interpretable Model-agnostic Explanations) 的主要特點是？
   type: multiple_choice
   options:
-  - "它能解釋整個模型的運作邏輯 (Global Explanation) (It Can Explain Overall Model Operation Logic: Global Explanation)"
-  - "它透過擾動單一樣本的特徵，觀察預測變化，來解釋「為什麼模型對這個特定樣本做出這種判斷」 (Local Explanation) (It Perturbs Single Sample's Features, Observes Prediction Changes to Explain Why Model Made This Judgment for This Specific Sample: Local Explanation)"
+  - '它能解釋整個模型的運作邏輯 (Global Explanation) (It Can Explain Overall Model Operation Logic:
+    Global Explanation)'
+  - '它透過擾動單一樣本的特徵，觀察預測變化，來解釋「為什麼模型對這個特定樣本做出這種判斷」 (Local Explanation) (It Perturbs
+    Single Sample''s Features, Observes Prediction Changes to Explain Why Model Made
+    This Judgment for This Specific Sample: Local Explanation)'
   - 它只能用於線性模型 (It Can Only Be Used for Linear Models)，僅限於特定模型類型。
   - 它需要重新訓練模型 (It Requires Retraining Model)，必須重新訓練。
   correct_index: 1
@@ -612,7 +609,9 @@ questions:
   type: multiple_choice
   options:
   - 因為法規規定模型準確度不能太高 (Because Regulations Require Model Accuracy Cannot Be Too High)，法規限制準確率。
-  - 因為若無法解釋診斷依據（黑箱），醫生和病人都無法信任 AI 的建議，且可能面臨法律責任 (Because If Cannot Explain Diagnostic Basis (Black Box), Doctors and Patients Cannot Trust AI Recommendations and May Face Legal Liability)
+  - 因為若無法解釋診斷依據（黑箱），醫生和病人都無法信任 AI 的建議，且可能面臨法律責任 (Because If Cannot Explain Diagnostic
+    Basis (Black Box), Doctors and Patients Cannot Trust AI Recommendations and May
+    Face Legal Liability)
   - 因為可解釋的模型比較便宜 (Because Explainable Models Are Cheaper)，成本考量。
   - 因為醫生不喜歡太準的模型 (Because Doctors Do Not Like Too Accurate Models)，偏好較不準確的模型。
   correct_index: 1
@@ -627,7 +626,8 @@ questions:
   text: 「反事實解釋 (Counterfactual Explanation)」通常是如何呈現的？
   type: multiple_choice
   options:
-  - "告訴使用者：「如果你的年收入增加 5 萬，貸款申請就會通過」 (Telling User: If Your Annual Income Increases by 50,000, Loan Application Will Be Approved)"
+  - '告訴使用者：「如果你的年收入增加 5 萬，貸款申請就會通過」 (Telling User: If Your Annual Income Increases
+    by 50,000, Loan Application Will Be Approved)'
   - 顯示模型的決策樹結構 (Displaying Model's Decision Tree Structure)，屬於全局解釋。
   - 列出所有特徵的權重 (Listing All Features' Weights)，屬於全局解釋。
   - 顯示一張熱力圖 (Displaying a Heatmap)，視覺化特徵重要性。
@@ -645,7 +645,8 @@ questions:
   options:
   - 模型的運算時間 (Model's Computation Time)，處理所需的時間。
   - 資料的缺失比例 (Data's Missing Proportion)，缺失值的比例。
-  - 每個特徵對於最終預測結果的邊際貢獻 (Marginal Contribution) (Each Feature's Marginal Contribution to Final Prediction Result)
+  - 每個特徵對於最終預測結果的邊際貢獻 (Marginal Contribution) (Each Feature's Marginal Contribution
+    to Final Prediction Result)
   - 特徵之間的相關係數 (Correlation Coefficient Between Features)，特徵間的線性相關性。
   correct_index: 2
   explanation: SHAP 公平地分配了每個特徵的功勞，告訴你「因為有年齡這個特徵，預測機率增加了 10%」。
@@ -731,7 +732,8 @@ questions:
   type: multiple_choice
   options:
   - 將整個黑箱模型轉換為白箱 (Converting Entire Black Box Model to White Box)，完全改變模型架構。
-  - 在局部範圍內，用簡單的線性模型來模擬複雜的黑箱模型 (In Local Range, Using Simple Linear Model to Simulate Complex Black Box Model)
+  - 在局部範圍內，用簡單的線性模型來模擬複雜的黑箱模型 (In Local Range, Using Simple Linear Model to Simulate
+    Complex Black Box Model)
   - 計算所有特徵的平均值 (Calculating Average of All Features)，統計特徵的平均數。
   - 使用賽局理論 (Using Game Theory)，採用賽局理論方法。
   correct_index: 1
@@ -1029,3 +1031,61 @@ questions:
   - sec-counterfactual
   id: 11451
   usage: both
+- id: 115-1-23
+  text: 在 AI 推論服務架構設計中， 「批次推論（Batch Inference） 」與「即時推論（Real-time Inference） 」常依任務特性選擇不同機制。下列關於兩者特性的敘述何者最正確？    （115年第一梯次）
+  type: multiple_choice
+  options:
+  - '批次推論通常以同步請求方式回傳結果，以確保資料一致性；即時推論則多採
+
+    非同步機制以提升系統吞吐量（Throughput）'
+  - '批次推論多用於延遲容忍度較高的大規模資料處理，通常以吞吐量
+
+    （Throughput）最佳化為優先；即時推論則著重於請求回應時間的穩定性與低延遲
+
+    特性'
+  - '批次推論因計算資源需求高，僅適用於影像類模型；即時推論則主要應用於結
+
+    構化資料模型'
+  - "即時推論為確保回應速度，通常限制為單筆資料輸入；批次推論則可支援同步\n多筆資料即時回傳 \n115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】\
+    \ \n第一科：人工智慧基礎概論 \n考試日期：115 年 03 月 21 日 \n第 6 頁，共 12 頁 \n \n答案 題目"
+  correct_index: 1
+  explanation: '本題測驗相關核心概念。正確解答為「批次推論多用於延遲容忍度較高的大規模資料處理，通常以吞吐量
+
+    （Throughput）最佳化為優先；即時推論則著重於請求回應時間的穩定性與低延遲
+
+    特性」，因為這最符合題幹中描述的情境與技術特性。'
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-34
+  text: 某保險公司每月處理約 50 萬筆理賠申請，希望建立 AI 系統自動識別可疑的詐欺案件。由於公司內部缺乏 AI 專業人員，且需要快速上線驗證效果，IT
+    資訊主管正在評估不同的 AI 平台解決方案。在去識別化個人隱私資料後，下列哪一種平台類型最適合該公司的需求？ （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 從零開始建立深度學習框架並自行訓練模型
+  - 採用開源機器學習框架進行客製化模型開發
+  - 使用雲端 AutoML 平台進行自動化模型訓練
+  - 購買現成的詐欺偵測軟體套件直接部署
+  correct_index: 2
+  explanation: 本題測驗相關核心概念。正確解答為「使用雲端 AutoML 平台進行自動化模型訓練」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-37
+  text: 某紡織製造公司導入 AI 系統進行布料瑕疵檢測，每天需處理來自 30 條產線的影115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 第一科：人工智慧基礎概論
+    考試日期：115 年 03 月 21 日 第 9 頁，共 12 頁  答案 題目 像資料，包括高解析度照片、感測器數值、生產參數記錄等多種格式。該公司收集的資料量從每日
+    2GB 增長至 50GB，且需在布料離開產線前的 3 秒內完成瑕疵判定。近期團隊發現系統在尖峰時段容易出現判定延遲，影響製程節奏。若要優先改善此問題，下列哪一種做法最適合？    （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 擴充資料儲存容量，以因應長期資料累積需求
+  - 強化即時資料處理與推論計算資源配置，以降低延遲風險
+  - 調整資料格式標準，以降低跨來源整合複雜度
+  - 增加資料驗證與清理機制，以提升資料品質穩定性
+  correct_index: 1
+  explanation: 本題測驗相關核心概念。正確解答為「強化即時資料處理與推論計算資源配置，以降低延遲風險」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock

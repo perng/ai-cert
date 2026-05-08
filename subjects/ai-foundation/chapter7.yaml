@@ -119,7 +119,8 @@ questions:
   options:
   - 不更新權重 (Not Updating Weights)，模型參數保持不變。
   - 每次使用全部資料更新，路徑平滑 (Using All Data Each Update, Smooth Path)，屬於批次梯度下降。
-  - 每次使用一小批資料更新，路徑震盪但計算快 (Using Small Batch Each Update, Oscillating Path But Fast Computation)
+  - 每次使用一小批資料更新，路徑震盪但計算快 (Using Small Batch Each Update, Oscillating Path But Fast
+    Computation)
   - 只能用於線性模型 (Only for Linear Models)，僅適用於線性迴歸。
   correct_index: 2
   explanation: SGD 每次只看部分資料就調整方向，雖然路徑較曲折，但能在大數據下快速迭代。
@@ -197,7 +198,8 @@ questions:
   text: 傳統 RNN 面臨的最大挑戰是什麼？
   type: multiple_choice
   options:
-  - 梯度消失 (Vanishing Gradient) 導致無法記憶長序列 (Vanishing Gradient Prevents Memory of Long Sequences)
+  - 梯度消失 (Vanishing Gradient) 導致無法記憶長序列 (Vanishing Gradient Prevents Memory of Long
+    Sequences)
   - 無法處理數值 (Cannot Process Numeric Values)，僅能處理類別資料。
   - 過度擬合 (Overfitting)，模型過於複雜無法泛化。
   - 計算量太小 (Insufficient Computation)，運算資源不足。
@@ -389,7 +391,8 @@ questions:
   text: 多頭注意力 (Multi-Head Attention) 的好處是？
   type: multiple_choice
   options:
-  - 讓模型能從多個不同角度（如文法、語意）關注資訊 (Allowing Model to Focus on Information from Multiple Perspectives Like Grammar and Semantics)
+  - 讓模型能從多個不同角度（如文法、語意）關注資訊 (Allowing Model to Focus on Information from Multiple
+    Perspectives Like Grammar and Semantics)
   - 減少運算量 (Reducing Computation)，降低計算成本。
   - 不需要訓練 (No Training Required)，可以直接使用。
   - 只能處理單一語言 (Can Only Process Single Language)，語言適用範圍受限。
@@ -1149,3 +1152,55 @@ questions:
   - sec-rnn
   id: 11467
   usage: both
+- id: 115-1-33
+  text: 某公車系統想預測各站點的到站時間，需要考慮歷史班次資料、即時路況、天氣115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 第一科：人工智慧基礎概論
+    考試日期：115 年 03 月 21 日 第 8 頁，共 12 頁  答案 題目 等因素。由於路況變化複雜，傳統循環神經網路（Recurrent Neural
+    Network, RNN）在建模時可能難以保留較早期的重要資訊。下列哪種架構最能解決這個問題？ （115年第一梯次）
+  type: multiple_choice
+  options:
+  - '卷積神經網路（Convolutional Neural Network, CNN） ，利用卷積層捕捉局部特
+
+    徵'
+  - 自編碼器（Autoencoder, AE） ，先進行資料壓縮再重建
+  - 全連接神經網路（Fully Connected Neural Network, FCNN） ，增加隱藏層數量
+  - '長短期記憶網路（Long Short-Term Memory, LSTM） ，改善RNN 的長期記憶問
+
+    題'
+  correct_index: 3
+  explanation: '本題測驗相關核心概念。正確解答為「長短期記憶網路（Long Short-Term Memory, LSTM） ，改善RNN 的長期記憶問
+
+    題」，因為這最符合題幹中描述的情境與技術特性。'
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-45
+  text: 某團隊訓練深層神經網路模型時，發現訓練誤差長時間幾乎未下降，模型參數更新幅度極小，呈現學習停滯現象。若研判問題與梯度傳遞效率有關，下列何者最適合的改善策略？    （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 延長模型訓練時間，使模型有更多機會調整參數
+  - 增加訓練樣本數量，以提升模型學習能力
+  - 調整模型中的啟動函數設定，以改善訓練過程的穩定性
+  - 簡化模型結構，以降低模型過度擬合的可能性
+  correct_index: 2
+  explanation: 本題測驗相關核心概念。正確解答為「調整模型中的啟動函數設定，以改善訓練過程的穩定性」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-48
+  text: 某物流公司想導入 AI 以提升營運效率，評估不同資料型態與模型架構。下列哪一種應用情境最適合採用卷積神經網路（Convolutional Neural
+    Network, CNN）作為主要模型架構？ （115年第一梯次）
+  type: multiple_choice
+  options:
+  - "依據包裹每日掃描紀錄的時間序列，預測下週各倉庫的進貨量波動； \n115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 \n第一科：人工智慧基礎概論\
+    \ \n考試日期：115 年 03 月 21 日 \n第 12 頁，共 12 頁 \n \n答案 題目"
+  - 根據客服對話逐句內容的先後順序，判斷客訴是否可能升級為申訴案件
+  - 根據倉庫監視器影像，自動辨識貨架是否缺貨並標示缺貨區域位置
+  - 依據車隊 GPS 路徑點的連續軌跡，預測下一段可能行駛路線
+  correct_index: 2
+  explanation: 本題測驗相關核心概念。正確解答為「根據倉庫監視器影像，自動辨識貨架是否缺貨並標示缺貨區域位置」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock

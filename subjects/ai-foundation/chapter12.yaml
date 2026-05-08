@@ -1,0 +1,565 @@
+questions:
+- id: 12001
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: OpenAI 產品線與前沿技術
+  text: 關於 OpenAI 推出的 GPT-Realtime 模型，與早期的「語音轉文字 (ASR) ➔ LLM ➔ 文字轉語音 (TTS)」管線相比，其最核心的優勢為何？
+  type: multiple_choice
+  options:
+  - 能夠自動將所有語音記錄翻譯為多國文字，並永久儲存於雲端
+  - 採用原生端到端 (End-to-End) 架構處理音訊，能大幅降低延遲並保留語氣與情緒等非文字資訊
+  - 內建強大的程式碼編譯器，能透過語音直接執行並測試複雜的 Python 腳本
+  - 取代了所有的視覺語言模型，僅處理聲音輸入便能完成所有多模態任務
+  correct_index: 1
+  explanation: GPT-Realtime 採用原生的端到端多模態架構，直接將語音音頻作為輸入與輸出。這不僅將延遲壓縮至毫秒級，更能理解使用者的喘息、笑聲與情緒，非常適合即時語音客服與互動式 AI 代理。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-gpt-realtime
+  usage: quiz
+
+- id: 12002
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: OpenAI 產品線與前沿技術
+  text: 企業若欲開發一套能自動指派「搜尋資料」、「撰寫程式碼」與「執行測試」等多個專精任務並協同工作的 AI 系統，最適合參考下列哪個工具框架？
+  type: multiple_choice
+  options:
+  - Google SynthID
+  - OpenAI AgentKit
+  - C2PA Metadata
+  - GitHub Copilot
+  correct_index: 1
+  explanation: AgentKit 是專注於多代理生態系的框架，支援 AI 代理的建構、工具整合、記憶管理與複雜的任務流程編排，適合用來組合多個專精不同任務的 Agents 協同工作。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-agentkit
+  usage: quiz
+
+- id: 12003
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: Google 產品線與資訊防護
+  text: 為了對抗不實影像與 Deepfake 威脅，Google 在其影像生成模型（如 Gemini Veo）中主要整合了哪一項數位浮水印技術，且具備極高的抗壓縮與抗裁切能力？
+  type: multiple_choice
+  options:
+  - 零知識證明 (Zero-Knowledge Proof)
+  - 差分隱私 (Differential Privacy)
+  - SynthID
+  - RSA 非對稱加密
+  correct_index: 2
+  explanation: Google 開發的 SynthID 是一項先進的數位浮水印技術，直接將加密標記嵌入到影像的像素數值中，因此即使圖片經過壓縮、裁切或濾鏡處理，浮水印依然能被準確偵測。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-synthid
+  usage: quiz
+
+- id: 12004
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: AI 程式碼輔助工具 (AI Coding Assistants)
+  text: 下列關於 AI 輔助寫程式工具（如 GitHub Copilot, Anthropic Claude）的敘述，何者最為正確？
+  type: multiple_choice
+  options:
+  - 它們基於大型語言模型 (LLM) 預測生成程式碼，但不保證正確性，開發者仍需負起程式碼審查與測試的責任。
+  - 這些工具內建了自動編譯更正機制，只要模型產生了程式碼，便保證能順利執行且無資安漏洞。
+  - AI 開發工具的運作本質是基於精確的邏輯推演引擎，而非機率預測，因此絕不會產生程式碼幻覺 (Code Hallucination)。
+  - 它們完全取代了軟體工程師，企業可直接將生成的程式碼部署至生產環境而無需人工介入。
+  correct_index: 0
+  explanation: AI 程式碼輔助工具的核心仍是基於機率的「下一個詞元預測」，沒有內建編譯器，無法保證生成的程式碼無語法或邏輯錯誤。開發者 (Pilot) 仍需對副駕駛 (Copilot) 產出的程式碼進行審查與自動化測試。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-coding-tools-limits
+  usage: quiz
+
+- id: 12005
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: OpenAI 產品線與前沿技術
+  text: OpenAI 的 Sora 影片生成模型在內容出處證明上，採用了 C2PA 規範。請問 C2PA 的主要功能為何？
+  type: multiple_choice
+  options:
+  - 透過調整影片的幀率 (FPS) 來加速影片生成
+  - 在檔案標頭 (Header) 中寫入加密的元數據 (Metadata)，標示該影片由 AI 生成及相關資訊
+  - 透過同態加密技術，讓影片在未解密的狀態下直接進行編輯
+  - 將惡意使用者的 IP 地址永久封鎖於區塊鏈中
+  correct_index: 1
+  explanation: C2PA (Coalition for Content Provenance and Authenticity) 是一個開放標準，旨在透過加密憑證與元數據，為數位內容建立「出處證明」，標示內容是否由 AI 生成。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-sora-c2pa
+  usage: quiz
+
+- id: 12006
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: Google 產品線與資訊防護
+  text: 若惡意使用者將 AI 生成的圖片截圖、轉換格式（例如從 PNG 轉為 JPEG）並套用濾鏡，下列哪一種防護機制最有可能失效？
+  type: multiple_choice
+  options:
+  - 像素級隱寫術 (Pixel-level Steganography)
+  - SynthID
+  - 基於 C2PA 的檔案元數據 (Metadata) 標記
+  - 聯邦學習 (Federated Learning)
+  correct_index: 2
+  explanation: C2PA 等基於檔案標頭的元數據標記，一旦檔案遭到截圖、重新編碼或轉換格式，標頭資訊通常就會遺失。相對地，SynthID 這種像素層級的隱藏浮水印則具備較高的抗干擾能力。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-synthid
+  usage: quiz
+
+- id: 12007
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: AI 程式碼輔助工具 (AI Coding Assistants)
+  text: 一位開發者在使用 OpenAI Codex 撰寫程式碼時，AI 自動補全了一段連線至資料庫的函式，但其中包含了一組寫死的(Hardcoded) 金鑰，且引用了一個實際上不存在的第三方套件。這種現象在生成式 AI 中稱為什麼？
+  type: multiple_choice
+  options:
+  - 模型量化 (Model Quantization)
+  - 程式碼幻覺 (Code Hallucination)
+  - 提示注入 (Prompt Injection)
+  - 零樣本學習 (Zero-shot Learning)
+  correct_index: 1
+  explanation: 當模型生成看似合理但實際上不存在（如虛構的函式庫），或邏輯錯誤、不符合資安規範的程式碼時，即為「程式碼幻覺」。這是因為模型基於機率進行文字接龍，而非具備真正的程式邏輯驗證能力。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-coding-tools-limits
+  usage: quiz
+
+- id: 12008
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: OpenAI 產品線與前沿技術
+  text: 一家新聞平台希望讀者能查驗影片是否由 AI 生成，並了解影片的來源、生成時間與編輯歷程。下列哪一種技術最符合「內容出處證明」的需求？
+  type: multiple_choice
+  options:
+  - C2PA Metadata，透過加密元數據記錄內容來源與履歷
+  - 模型量化 (Model Quantization)，降低模型推論成本
+  - 聯邦學習 (Federated Learning)，讓資料不離開本地端
+  - 梯度下降 (Gradient Descent)，調整模型參數以降低損失
+  correct_index: 0
+  explanation: C2PA 的核心目標是建立數位內容的來源與編輯履歷，讓平台或讀者能查驗內容是否由 AI 生成、何時生成，以及是否經過修改。它與像素級浮水印互補，但本題關鍵字是「來源、生成時間與編輯歷程」。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-sora-c2pa
+  usage: quiz
+
+- id: 12009
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: OpenAI 產品線與前沿技術
+  text: 企業正在設計一個能查詢 CRM、寄送電子郵件、建立任務並修改訂單狀態的 AI Agent。從治理角度來看，下列哪一項措施最重要？
+  type: multiple_choice
+  options:
+  - 給 Agent 所有系統的最高管理員權限，避免工具呼叫失敗
+  - 關閉日誌紀錄，降低儲存成本並保護模型隱私
+  - 採用最小權限原則、工具 allowlist、稽核日誌與必要的人工批准節點
+  - 只要模型回答流暢，就可略過評測與測試資料集
+  correct_index: 2
+  explanation: Agent 能呼叫外部工具並改變真實系統狀態，因此風險高於一般聊天機器人。企業應限制可用工具與權限，保留稽核紀錄，並在高風險操作前加入人工批准。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-agentkit
+  usage: quiz
+
+- id: 12010
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: Google 產品線與資訊防護
+  text: 關於「長上下文模型」與 RAG 的比較，下列何者最正確？
+  type: multiple_choice
+  options:
+  - 只要模型有 100 萬 token 上下文，就永遠不需要 RAG
+  - 長上下文適合一次性讀取大量資料，但若資料需持續更新、權限控管與來源引用，RAG 仍有價值
+  - RAG 只能用於圖片生成，不能用於文字或企業知識庫
+  - 長上下文模型會自動驗證所有輸入資料的真實性，因此不會產生幻覺
+  correct_index: 1
+  explanation: 長上下文能直接放入大量文件、程式碼或影片轉錄，但不代表能取代所有檢索架構。企業場景常需要最新資料、來源引用、權限控管與成本控制，因此 RAG 仍然重要。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-gemini-veo
+  usage: quiz
+
+- id: 12011
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: 商用模型選型比較
+  text: 某企業想建立一套能在電話中即時回應客戶、可被客戶打斷、能理解語氣並查詢訂單狀態的客服系統。最合適的技術組合為何？
+  type: multiple_choice
+  options:
+  - 文字轉影片模型加上 C2PA Metadata
+  - 傳統批次式報表系統加上資料倉儲
+  - 即時端到端語音模型，加上受控的工具呼叫與權限治理
+  - 只使用靜態 FAQ 文件，不需要任何語音或工具整合
+  correct_index: 2
+  explanation: 題目同時提到即時語音、插話、語氣理解與查詢訂單。這需要 Realtime 類型的端到端語音模型，並搭配安全的工具呼叫來存取訂單系統。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-commercial-model-selection
+  - sec-gpt-realtime
+  usage: quiz
+
+- id: 12012
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: AI 程式碼輔助工具 (AI Coding Assistants)
+  text: 企業導入 AI Coding Assistant 後，下列哪一項做法最符合安全開發流程？
+  type: multiple_choice
+  options:
+  - AI 產生的程式碼可直接部署到生產環境，因為模型已經看過大量開源程式碼
+  - 若 AI 對程式碼的解釋聽起來合理，就不需要編譯、測試或審查
+  - 要求 AI 修改後的程式碼通過測試、建置、靜態分析、資安掃描與人工 Code Review
+  - 為了提高模型效果，應將所有客戶資料、金鑰與內部文件直接貼入提示中
+  correct_index: 2
+  explanation: AI Coding Assistant 可以提高效率，但不能保證正確性或安全性。企業仍需透過測試、建置、靜態分析、資安掃描與人工審查來驗證生成程式碼。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-coding-tools-adoption
+  - sec-coding-tools-limits
+  usage: quiz
+
+- id: 12013
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: Google 產品線與資訊防護
+  text: 下列何者最能說明 SynthID 與 C2PA 的差異？
+  type: multiple_choice
+  options:
+  - SynthID 主要是模型壓縮技術，C2PA 主要是語音辨識技術
+  - SynthID 將不可見標記嵌入內容本身，C2PA 則偏向在檔案中保存來源與編輯履歷
+  - SynthID 只能記錄資料庫權限，C2PA 只能用於訓練大型語言模型
+  - 兩者完全相同，只是不同公司使用的品牌名稱
+  correct_index: 1
+  explanation: SynthID 是內容層級的數位浮水印，重點在抗裁切、抗壓縮與偵測 AI 生成內容；C2PA 則是內容出處證明標準，重點在記錄來源、生成資訊與編輯履歷。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-synthid
+  - sec-sora-c2pa
+  usage: quiz
+
+- id: 12014
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: OpenAI 產品線與前沿技術
+  text: Sora 這類文字轉影片 (Text-to-Video) 模型在生成內容時，最核心的技術挑戰與能力特徵是什麼？
+  type: multiple_choice
+  options:
+  - 確保文字轉譯為多國語言字幕的精準度
+  - 確保生成的各影格間具備高度的「時空一致性 (Spatiotemporal Consistency)」與物理合理性
+  - 確保影片的檔案大小能壓縮至原本的百分之一而不失真
+  - 確保模型能自動分析觀看者的臉部表情並改變劇情
+  correct_index: 1
+  explanation: 影片生成的最大挑戰在於時間與空間的連續性，如角色外觀不能在下一秒變形、物體移動需符合物理規律。Sora 結合了擴散模型與 Transformer 架構，以加強這方面的能力。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-sora-c2pa
+  usage: quiz
+
+- id: 12015
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: OpenAI 產品線與前沿技術
+  text: 關於文字轉影片模型（如 Sora、Veo）的限制與風險，下列敘述何者最為正確？
+  type: multiple_choice
+  options:
+  - 它們生成的影片已經能 100% 完美遵循物理學定律，無須任何人工審查
+  - 模型生成影片時極少出現因果關係錯亂或物件突然消失的問題
+  - 它們仍可能出現物理不合理、人物肢體變形等錯誤，企業若用於公開素材仍應建立人工審核流程
+  - 因為採用了擴散模型，這些生成的影片絕不可能被用來製造假新聞
+  correct_index: 2
+  explanation: 影片生成模型雖然能產生高度擬真的內容，但本質上仍是機率模型，可能產生物理不合理、肢體變形或因果錯亂的幻覺。因此，作為商業素材時，必須有人工介入審核。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-sora-c2pa
+  usage: quiz
+
+- id: 12016
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: OpenAI 產品線與前沿技術
+  text: 在設計即時語音 Agent（如使用 GPT-Realtime）時，為使對話體驗接近真人通話，系統必須具備下列哪一項關鍵功能？
+  type: multiple_choice
+  options:
+  - 能夠將所有通話內容即時加密儲存至區塊鏈
+  - 具備「中斷與插話 (Barge-in)」處理能力，在使用者插話時能停止輸出並重新理解上下文
+  - 強制要求使用者在每次發言前先按下特定按鍵 (Push-to-Talk)
+  - 能自動將使用者的語音轉換為高解析度影片輸出
+  correct_index: 1
+  explanation: 真人通話的特徵是會互相打斷與插話。為了達到自然的語音互動，即時語音模型必須支援 Barge-in，當偵測到使用者說話時，能立刻停止當前的音音串流，並基於新的上下文做出回應。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-gpt-realtime
+  usage: quiz
+
+- id: 12017
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: OpenAI 產品線與前沿技術
+  text: 為了維持即時語音應用程式 (Realtime Audio Apps) 的極低延遲，開發者通常會選用下列哪一種連線協定來傳輸雙向串流？
+  type: multiple_choice
+  options:
+  - FTP
+  - SMTP
+  - WebRTC 或 WebSocket
+  - HTTP/1.0 傳統請求
+  correct_index: 2
+  explanation: 即時語音應用需要低延遲、雙向持續的資料傳輸。WebRTC 或 WebSocket 是此類應用的標準協定，傳統的 HTTP 短連線無法滿足其即時性要求。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-gpt-realtime
+  usage: quiz
+
+- id: 12018
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: OpenAI 產品線與前沿技術
+  text: 企業在建構多代理系統 (Multi-Agent System) 時，為了評量 Agent 是否真的完成任務，並非單純依靠其對話內容。實務上最常使用的作法是？
+  type: multiple_choice
+  options:
+  - 僅測量模型生成回應的速度是否小於 100 毫秒
+  - 關閉所有日誌以提升模型的創造力與隨機性
+  - 建立「評測與追蹤 (Evals & Tracing)」機制，利用測試資料集與執行軌跡來自動或人工評分
+  - 強制所有 Agent 只能使用同一組固定不變的系統提示詞
+  correct_index: 2
+  explanation: 代理系統的成敗在於任務是否完成，而不只是對話是否流暢。因此，企業需要透過 Evals (評測框架) 與 Tracing (執行軌跡追蹤) 來了解 Agent 在多個步驟中的決策與工具呼叫是否正確。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-agentkit
+  usage: quiz
+
+- id: 12019
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: OpenAI 產品線與前沿技術
+  text: 根據「代理系統的典型流程」，當 Agent 讀取工具回傳的資料並判斷是否達成目標時，這屬於哪一個階段？
+  type: multiple_choice
+  options:
+  - 規劃 (Plan)
+  - 取用工具 (Act)
+  - 觀察結果 (Observe)
+  - 修正策略 (Revise)
+  correct_index: 2
+  explanation: 代理流程通常遵循 Plan ➔ Act ➔ Observe ➔ Revise ➔ Deliver 的循環。讀取工具結果並判斷現狀，正是「觀察結果 (Observe)」階段的核心工作。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-agentkit
+  usage: quiz
+
+- id: 12020
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: Google 產品線與資訊防護
+  text: 關於 SynthID 數位浮水印技術的擴展性，下列敘述何者錯誤？
+  type: multiple_choice
+  options:
+  - 它只能應用於靜態圖片，無法應用於動態影片
+  - 它可以將浮水印嵌入音訊中，且通常不會被人耳察覺
+  - 它可以應用於文字生成，透過調整詞元選擇的機率來形成可偵測的模式
+  - 它可以嵌入影片的影格之中，對抗後製修改
+  correct_index: 0
+  explanation: SynthID 不僅限於圖片，它已發展為跨模態的浮水印技術，可應用於圖片、影片、音訊，甚至可透過機率分布模型應用於生成的文字上。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-synthid
+  usage: quiz
+
+- id: 12021
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: 商用模型選型比較
+  text: 某法律事務所需要一套 AI 系統來閱讀一份長達三百頁的法庭紀錄，並從中摘要特定證人的證詞。若不需要頻繁更新資料或追蹤細部引用權限，下列何種技術最能以最簡單架構滿足需求？
+  type: multiple_choice
+  options:
+  - 即時端到端語音模型 (GPT-Realtime)
+  - 具備超大上下文窗口的模型 (如 Gemini 1.5 Pro)
+  - Agent 流程編排框架 (如 AgentKit)
+  - 內容出處證明標準 (C2PA)
+  correct_index: 1
+  explanation: 處理一次性、固定且篇幅龐大（如數百頁）的單一文件摘要，最適合直接利用長上下文模型 (Long Context Window)，無須額外建置 RAG 或複雜的代理系統。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-commercial-model-selection
+  usage: quiz
+
+- id: 12022
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: AI 程式碼輔助工具 (AI Coding Assistants)
+  text: 開發者使用 AI 程式碼輔助工具時，模型給出的建議品質往往取決於「上下文 (Context)」。下列何者「不是」現代 AI 開發工具常用來提升建議品質的上下文來源？
+  type: multiple_choice
+  options:
+  - 開發者目前正在編輯的檔案內容與相鄰的分頁
+  - 終端機 (Terminal) 的錯誤輸出訊息
+  - 開發者私人社群軟體上的對話紀錄
+  - 專案程式碼庫的全局索引 (Codebase Indexing)
+  correct_index: 2
+  explanation: AI Coding Assistants 會讀取開發環境中的檔案、分頁、終端機輸出與專案索引來補充電腦語言的上下文。但它們無法（也不應）讀取開發者與工作無關的私人社群軟體紀錄，這會引發嚴重的隱私問題。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-coding-tools-mechanism
+  usage: quiz
+
+- id: 12023
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: AI 程式碼輔助工具 (AI Coding Assistants)
+  text: 在企業導入 AI 輔助寫程式工具時，會面臨「授權與版權風險」。這主要是指什麼情況？
+  type: multiple_choice
+  options:
+  - AI 工具必須每年重新付費授權才能使用
+  - 生成的程式碼可能過度雷同於開源社群受保護的片段，導致企業產品違反開源授權條款
+  - 企業開發者喪失了自身程式碼的著作權
+  - 開發者不小心將自己的銀行帳號寫入程式碼中
+  correct_index: 1
+  explanation: LLM 訓練自海量開源程式碼，有時會直接「背誦」出帶有 GPL 或其他限制性授權條款的程式片段。企業若照單全收，可能會面臨版權侵權與違約的法律風險。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-coding-tools-limits
+  usage: quiz
+
+- id: 12024
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: AI 程式碼輔助工具 (AI Coding Assistants)
+  text: 當開發者要求 AI 幫忙撰寫一段複雜的演算法，AI 回傳了看起來專業且富有說服力的解釋與程式碼。下列哪一種態度是企業應極力避免的「過度信任風險」？
+  type: multiple_choice
+  options:
+  - 因為 AI 解釋得很合理，所以省略單元測試與人工 Code Review 直接推送到主分支
+  - 將程式碼複製到沙盒環境中進行單元測試與邊界值測試
+  - 使用 SAST (靜態應用程式安全測試) 工具掃描 AI 產生的程式碼
+  - 邀請另一位資深工程師進行人工代碼審查
+  correct_index: 0
+  explanation: AI 的「文字接龍」特性使其極擅長產生「聽起來很有道理的廢話」或包含隱蔽漏洞的程式碼。省略測試與審查是過度信任的最大風險，正確作法是將 AI 當作不可信的實習生，嚴格檢驗其產出。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-coding-tools-limits
+  usage: quiz
+
+- id: 12025
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: AI 程式碼輔助工具 (AI Coding Assistants)
+  text: 企業制定「AI Coding 導入建議流程」時，首要之務為何？
+  type: multiple_choice
+  options:
+  - 立刻裁撤 30% 的初階工程師以節省成本
+  - 訂定明確的使用政策，規範哪些程式碼與內部機密可提供給 AI 工具
+  - 關閉所有版本控制系統，完全依賴 AI 工具的記憶
+  - 強制規定工程師每天必須使用 AI 工具產生至少 1000 行程式碼
+  correct_index: 1
+  explanation: 導入 AI 開發工具的第一步是治理與規範。為了避免資料外洩，企業必須清楚定義哪些層級的原始碼、客戶資料或金鑰「絕對不可」輸入至外部 AI 模型中。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-coding-tools-adoption
+  usage: quiz
+
+- id: 12026
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: OpenAI 產品線與前沿技術
+  text: 針對多代理系統 (Multi-Agent System) 中常見的「錯誤傳遞」風險，以下何種描述最為貼切？
+  type: multiple_choice
+  options:
+  - 前端網頁發生 UI 顯示錯誤，直接導致後端資料庫當機
+  - 某個 Agent 產生幻覺或抓錯資料，下游負責決策或執行的 Agent 盲目相信該資料並採取錯誤行動
+  - 模型在訓練時將不相關的標籤連結在一起
+  - 浮水印技術無法被解碼器成功讀取
+  correct_index: 1
+  explanation: 在多代理協作流程（如 Research ➔ Plan ➔ Execute）中，若上游的 Researcher Agent 產生了錯誤資訊，下游的 Execute Agent 沒有查證能力，就會將錯誤放大並執行，這就是多代理系統特有的「錯誤傳遞」風險。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-agentkit
+  usage: quiz
+
+- id: 12027
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: Google 產品線與資訊防護
+  text: 關於 Gemini 1.5 Pro 等支援「長上下文 (Long Context)」的 AI 模型，其最重要的突破在於？
+  type: multiple_choice
+  options:
+  - 模型不再需要 GPU 即可在手機端極速運行
+  - 能夠原生處理長達數十萬甚至百萬級別的 Token，開發者可直接餵入整本厚重手冊而不需切片檢索
+  - 能夠自動編譯執行任何程式語言，達到零錯誤率
+  - 成功消滅了大型語言模型所有的幻覺問題
+  correct_index: 1
+  explanation: 長上下文模型最大的進展是記憶容量的巨幅提升（從早期 4K 提升至 1M/2M Token）。這使得「全文本分析」成為可能，開發者不一定要依賴複雜的文本切片與檢索 (RAG) 技術，就能讓模型了解大範圍的上下文。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-gemini-veo
+  usage: quiz
+
+- id: 12028
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: OpenAI 產品線與前沿技術
+  text: 開發者透過 Agent 框架整合企業內部系統時，為了防止模型遭到提示注入 (Prompt Injection) 後惡意刪除資料庫，最有效的防範措施是？
+  type: multiple_choice
+  options:
+  - 限制該 Agent 連接器 (Connector) 的權限，僅賦予「唯讀 (Read-only)」或最低必要權限
+  - 只允許模型使用文言文回應使用者
+  - 每天重新啟動伺服器一次
+  - 在 Prompt 中大聲警告模型「絕對不可以做壞事」
+  correct_index: 0
+  explanation: 在 Agent 安全治理中，「最小權限原則」最為關鍵。不要賦予 Agent 超過其任務所需的權限，若 Agent 只需查詢訂單，就不應給予刪除訂單或修改資料庫的權限，這是防止提示注入導致破壞性後果的底線防禦。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-agentkit
+  usage: quiz
+
+- id: 12029
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: AI 程式碼輔助工具 (AI Coding Assistants)
+  text: 企業在提升工程師使用 AI Coding 效率的培訓中，對於「提問能力 (Prompting)」最正確的指導原則是什麼？
+  type: multiple_choice
+  options:
+  - 只需給予最短的指令（例如：「幫我寫一個登入功能」），讓 AI 自由發揮
+  - 提供豐富的上下文，包含需求限制、錯誤訊息、既有系統架構與具體的驗收條件
+  - 故意給出錯誤的邏輯，測試 AI 能不能自行發現
+  - 每次提問前都要輸入長達五千字的背景知識
+  correct_index: 1
+  explanation: 好的 Prompt 是成功的一半。開發者應將 AI 視為新進員工，提供清晰明確的上下文、約束條件、相關檔案與錯誤訊息，AI 才能給出符合專案風格且具體的程式碼建議。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-coding-tools-adoption
+  usage: quiz
+
+- id: 12030
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: Google 產品線與資訊防護
+  text: 在企業導入 AI 內容生成時，若特別強調「所產出的廣告影片不可出現物理動態異常（如主角手指突然增加或汽車倒著開）」，應優先評估模型的哪一項指標？
+  type: multiple_choice
+  options:
+  - 文字生成速度 (Tokens per second)
+  - 時空一致性 (Spatiotemporal Consistency)
+  - 浮水印隱藏率 (Steganography stealth)
+  - RAG 檢索準確度 (Context Precision)
+  correct_index: 1
+  explanation: 生成影片最容易出現的問題是物體隨時間改變形狀或違反物理規律。「時空一致性」是衡量影片生成模型（如 Sora、Veo）品質的最關鍵指標。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-gemini-veo
+  - sec-sora-c2pa
+  usage: quiz
+
+- id: 12031
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: AI 程式碼輔助工具 (AI Coding Assistants)
+  text: 下列哪一項功能屬於進階 AI 程式碼輔助工具（如 Agentic IDEs）能做到，但傳統基礎語法補全工具做不到的？
+  type: multiple_choice
+  options:
+  - 根據目前游標前方的文字預測下一個單字
+  - 顯示該語言的標準函數庫說明書
+  - 讀取多個檔案後直接制定修改計畫、自動編輯程式碼、執行測試並修正發現的錯誤
+  - 將程式碼文字標上不同的顏色以利閱讀
+  correct_index: 2
+  explanation: 傳統的補全工具（如早期版本）只能進行片段預測。新一代的 Agent-based 開發工具（如 Cursor 等）具備跨檔案分析、多步規劃、自動編輯與自主 debug 的能力，這也是「代理式修改」的核心特徵。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-coding-tools-mechanism
+  usage: quiz
+
+- id: 12032
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: OpenAI 產品線與前沿技術
+  text: 若企業需開發一套「全自動化的軟體測試 AI Agent」，該 Agent 需要能讀取測試計畫、撰寫測試腳本、呼叫 Selenium 執行測試並回報結果。這種架構最依賴 LLM 的哪一項延伸能力？
+  type: multiple_choice
+  options:
+  - 多國語言翻譯能力
+  - 圖像識別能力
+  - 工具整合與外部 API 呼叫能力 (Tool Calling / Function Calling)
+  - 文字壓縮與摘要能力
+  correct_index: 2
+  explanation: Agent 要能執行自動化任務（如寫腳本並丟給 Selenium 執行），最關鍵的就是讓模型擁有呼叫外部工具的能力（Tool Calling）。這讓 LLM 突破純文字世界的限制，與真實軟體環境互動。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-agentkit
+  usage: quiz
+
+- id: 12033
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: Google 產品線與資訊防護
+  text: 相較於將數位浮水印直接顯示於影片角落（Visible Watermark），採用 SynthID 這類隱含式像素級浮水印的主要考量為何？
+  type: multiple_choice
+  options:
+  - 隱含式浮水印可以無限期保存於區塊鏈上
+  - 隱含式浮水印不會破壞觀看體驗與畫面美感，同時依然能讓演算法偵測其為 AI 生成
+  - 隱含式浮水印可以完全取代影片壓縮演算法
+  - 隱含式浮水印能夠自動追蹤上傳者的 GPS 定位
+  correct_index: 1
+  explanation: 商業級影片或圖片不希望因為印上明顯的浮水印而破壞畫面美感與實用性。隱含式浮水印（如 SynthID）能在不被人眼察覺的狀態下達到防偽目的，兼顧了品質與安全性。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-synthid
+  usage: quiz

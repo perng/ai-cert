@@ -6,7 +6,8 @@ questions:
   type: multiple_choice
   options:
   - 生成式 AI 只能處理文字 (Generative AI Can Only Process Text)，僅限於文字生成。
-  - 鑑別式 AI 負責分類，生成式 AI 負責創造新資料 (Discriminative AI Classifies, Generative AI Creates New Data)
+  - 鑑別式 AI 負責分類，生成式 AI 負責創造新資料 (Discriminative AI Classifies, Generative AI Creates
+    New Data)
   - 生成式 AI 不需要訓練 (Generative AI Does Not Require Training)，可以直接使用。
   - 鑑別式 AI 比較聰明 (Discriminative AI Is Smarter)，智能程度更高。
   correct_index: 1
@@ -24,7 +25,8 @@ questions:
   - 逐步加噪與去噪 (Gradually Adding and Removing Noise)，屬於擴散模型的過程。
   - 預測下一個字 (Predicting Next Token)，屬於語言模型的任務。
   - 對抗訓練 (Adversarial Training)，屬於 GAN 的訓練方式。
-  - 將資料壓縮到潛在空間的機率分佈，再進行採樣與解碼 (Compressing Data to Latent Space Probability Distribution, Then Sampling and Decoding)
+  - 將資料壓縮到潛在空間的機率分佈，再進行採樣與解碼 (Compressing Data to Latent Space Probability Distribution,
+    Then Sampling and Decoding)
   correct_index: 3
   explanation: VAE 透過 Encoder 將資料編碼為常態分佈參數，再從中採樣並透過 Decoder 還原。
   tags:
@@ -55,7 +57,8 @@ questions:
   options:
   - 生成圖片模糊 (Generated Images Are Blurry)，影像品質不佳。
   - 模型無法收斂 (Model Cannot Converge)，訓練過程不穩定。
-  - 生成器只生成單一或極少數種類的樣本，失去多樣性 (Generator Only Generates Single or Very Few Types of Samples, Losing Diversity)
+  - 生成器只生成單一或極少數種類的樣本，失去多樣性 (Generator Only Generates Single or Very Few Types of
+    Samples, Losing Diversity)
   - 判別器太強 (Discriminator Too Strong)，判別器過於強大導致訓練困難。
   correct_index: 2
   explanation: 當生成器發現某種特定的騙術（樣本）特別有效時，就會一直重複生成該樣本，導致輸出缺乏變化。
@@ -119,7 +122,8 @@ questions:
   options:
   - 加快訓練速度 (Accelerating Training Speed)，提升訓練效率。
   - 讓模型學會寫程式 (Teaching Model to Write Code)，提升程式生成能力。
-  - "讓模型的回答符合人類價值觀（有用、誠實、無害）(Making Model Responses Align with Human Values: Helpful, Honest, Harmless)"
+  - '讓模型的回答符合人類價值觀（有用、誠實、無害）(Making Model Responses Align with Human Values: Helpful,
+    Honest, Harmless)'
   - 增加模型的參數量 (Increasing Model Parameter Count)，擴大模型規模。
   correct_index: 2
   explanation: RLHF 引入人類回饋來微調模型，使其產出更符合人類偏好與道德標準的內容。
@@ -263,7 +267,8 @@ questions:
   options:
   - 刪除模型中的雜訊 (Removing Noise from Model)，清理模型中的干擾。
   - 壓縮訓練資料 (Compressing Training Data)，減少資料儲存空間。
-  - 用大模型 (Teacher) 教導小模型 (Student) (Using Large Model (Teacher) to Teach Small Model (Student))
+  - 用大模型 (Teacher) 教導小模型 (Student) (Using Large Model (Teacher) to Teach Small Model
+    (Student))
   - 用水冷系統冷卻 GPU (Using Water Cooling System to Cool GPU)，硬體散熱方法。
   correct_index: 2
   explanation: 知識蒸餾讓小模型學習大模型的輸出機率分佈（暗知識），使其在較小規模下也能達到不錯的效能。
@@ -358,7 +363,7 @@ questions:
   type: multiple_choice
   options:
   - 無法生成彩色圖 (Cannot Generate Color Images)，僅能產生黑白影像。
-  - "生成速度慢 (需要多步去噪) (Slow Generation Speed: Requires Multiple Denoising Steps)"
+  - '生成速度慢 (需要多步去噪) (Slow Generation Speed: Requires Multiple Denoising Steps)'
   - 生成品質差 (Poor Generation Quality)，影像品質不佳。
   - 容易模式崩潰 (Prone to Mode Collapse)，生成樣本缺乏多樣性。
   correct_index: 1
@@ -389,7 +394,7 @@ questions:
   text: Tree of Thoughts (ToT) 提示法類似於？
   type: multiple_choice
   options:
-  - "下棋時的推演（考慮多種分支與回溯）(Chess Reasoning: Considering Multiple Branches and Backtracking)"
+  - '下棋時的推演（考慮多種分支與回溯）(Chess Reasoning: Considering Multiple Branches and Backtracking)'
   - 隨機亂想 (Random Thinking)，無系統性的隨機思考。
   - 直覺反應 (Intuitive Reaction)，基於直覺的快速反應。
   - 直線思考 (Linear Thinking)，單一路徑的思考方式。
@@ -406,7 +411,7 @@ questions:
   type: multiple_choice
   options:
   - 關鍵字匹配次數 (Keyword Match Count)，文字匹配的頻率。
-  - "語意相似度 (向量距離) (Semantic Similarity: Vector Distance)"
+  - '語意相似度 (向量距離) (Semantic Similarity: Vector Distance)'
   - 閱讀時間 (Reading Time)，使用者閱讀的時長。
   - 文章字數 (Article Word Count)，文本的長度。
   correct_index: 1
@@ -488,7 +493,7 @@ questions:
   - 詞彙量 (Vocabulary Size)，模型認識的詞彙數量。
   - 運算速度 (Computation Speed)，模型處理的速度。
   - 語言種類 (Language Types)，支援的語言數量。
-  - "單次能處理的資訊量 (記憶長度) (Amount of Information Processable at Once: Memory Length)"
+  - '單次能處理的資訊量 (記憶長度) (Amount of Information Processable at Once: Memory Length)'
   correct_index: 3
   explanation: Context Window 決定了模型一次能「讀」多少字，超過這個長度的資訊會被截斷或遺忘。
   tags:
@@ -613,7 +618,8 @@ questions:
   text: 鑑別式 AI (Discriminative AI) 學習的是？
   type: multiple_choice
   options:
-  - 條件機率 P(Y|X) 或決策邊界 (Conditional Probability P(Y|X) or Decision Boundary)，屬於鑑別式 AI 的學習目標。
+  - 條件機率 P(Y|X) 或決策邊界 (Conditional Probability P(Y|X) or Decision Boundary)，屬於鑑別式
+    AI 的學習目標。
   - 如何畫圖 (How to Draw)，圖像生成的技巧。
   - 資料分佈 P(X) (Data Distribution P(X))，生成式 AI 的學習目標。
   - 如何寫詩 (How to Write Poetry)，文字創作的技巧。
@@ -631,7 +637,8 @@ questions:
   options:
   - 需要人工標註大量標籤 (Requiring Manual Annotation of Large Amounts of Labels)，屬於監督式學習。
   - 只用圖片訓練 (Only Using Images for Training)，僅限於影像資料。
-  - "不需要人工標籤，從資料本身產生標籤（如遮蓋字詞讓模型猜）(No Manual Labels Required, Generating Labels from Data Itself: e.g., Masking Words for Model to Guess)"
+  - '不需要人工標籤，從資料本身產生標籤（如遮蓋字詞讓模型猜）(No Manual Labels Required, Generating Labels from
+    Data Itself: e.g., Masking Words for Model to Guess)'
   - 完全不學習 (No Learning at All)，不進行任何訓練。
   correct_index: 2
   explanation: 預訓練階段利用文本本身的上下文關係（如 Next Token Prediction）作為監督訊號，無需人工標註。
@@ -646,9 +653,12 @@ questions:
   type: multiple_choice
   options:
   - 合作關係，互相幫助 (Cooperative Relationship, Mutual Assistance)，共同合作的關係。
-  - "主從關係，Generator 聽命於 Discriminator (Master-Slave Relationship: Generator Obeys Discriminator)，上下級關係。"
+  - '主從關係，Generator 聽命於 Discriminator (Master-Slave Relationship: Generator Obeys
+    Discriminator)，上下級關係。'
   - 毫無關係，各自訓練 (No Relationship, Training Separately)，完全獨立的訓練。
-  - "零和賽局 (Zero-Sum Game)，Generator 試圖騙過 Discriminator，Discriminator 試圖抓出 Generator (Zero-Sum Game: Generator Tries to Fool Discriminator, Discriminator Tries to Catch Generator) 的假貨"
+  - '零和賽局 (Zero-Sum Game)，Generator 試圖騙過 Discriminator，Discriminator 試圖抓出 Generator
+    (Zero-Sum Game: Generator Tries to Fool Discriminator, Discriminator Tries to
+    Catch Generator) 的假貨'
   correct_index: 3
   explanation: GAN 的強大來自於這種「道高一尺，魔高一丈」的對抗過程，迫使 Generator 生成越來越逼真的數據。
   tags:
@@ -664,7 +674,8 @@ questions:
   - 直接使用公有的 ChatGPT (Directly Using Public ChatGPT)，使用公開的模型服務。
   - 重新訓練一個從頭開始的 LLM (Pre-training from scratch) (Retraining LLM from Scratch)，完全重新訓練模型。
   - RAG (檢索增強生成) 或 Fine-tuning (微調) 私有模型 (RAG or Fine-tuning Private Model)
-  - "Prompt Engineering (提示工程)，把所有資料貼在 Prompt 裡 (Prompt Engineering: Pasting All Data in Prompt)，將所有資訊放入提示詞。"
+  - 'Prompt Engineering (提示工程)，把所有資料貼在 Prompt 裡 (Prompt Engineering: Pasting All Data
+    in Prompt)，將所有資訊放入提示詞。'
   correct_index: 2
   explanation: Prompt 長度有限且不安全；Pre-training 成本天價。RAG 或 Fine-tuning 是兼顧效果、成本與隱私的實務選擇。
   tags:
@@ -677,9 +688,11 @@ questions:
   text: VAE (變分自編碼器) 與傳統 Autoencoder 最大的不同在於？
   type: multiple_choice
   options:
-  - VAE 的 Latent Space 是連續的機率分佈，允許透過採樣生成新樣本 (VAE's Latent Space is Continuous Probability Distribution, Allowing Generation of New Samples Through Sampling)
+  - VAE 的 Latent Space 是連續的機率分佈，允許透過採樣生成新樣本 (VAE's Latent Space is Continuous Probability
+    Distribution, Allowing Generation of New Samples Through Sampling)
   - VAE 不需要解碼器 (Decoder) (VAE Does Not Require Decoder)，可以省略解碼步驟。
-  - VAE 只能處理圖片，Autoencoder 只能處理文字 (VAE Can Only Process Images, Autoencoder Can Only Process Text)，資料類型限制。
+  - VAE 只能處理圖片，Autoencoder 只能處理文字 (VAE Can Only Process Images, Autoencoder Can Only
+    Process Text)，資料類型限制。
   - VAE 是監督式學習 (VAE Is Supervised Learning)，需要標籤資料。
   correct_index: 0
   explanation: Autoencoder 只是壓縮與解壓縮；VAE 學習的是數據的「分布」，因此具備生成新數據的能力。
@@ -696,7 +709,8 @@ questions:
   - 訓練資料太少 (Insufficient Training Data)，資料量不足。
   - 網際網路連線中斷 (Internet Connection Interrupted)，網路連線問題。
   - 模型故意說謊 (Model Intentionally Lies)，模型有意識地產生錯誤資訊。
-  - "模型本質上是「機率預測器」，它只是選擇機率最高的下一個字，而非查證事實 (Model Is Essentially a Probability Predictor: It Only Chooses the Most Probable Next Token, Not Verifying Facts)"
+  - '模型本質上是「機率預測器」，它只是選擇機率最高的下一個字，而非查證事實 (Model Is Essentially a Probability Predictor:
+    It Only Chooses the Most Probable Next Token, Not Verifying Facts)'
   correct_index: 3
   explanation: LLM 像是一個讀過很多書但沒有求證能力的鸚鵡，它會一本正經地胡說八道，因為那樣說起來很「順」。
   tags:
@@ -709,9 +723,12 @@ questions:
   text: 關於變分自編碼器（Variational Autoencoder, VAE）的運作流程，下 列何者敘述最為正確？ (114年第四梯次)
   type: multiple_choice
   options:
-  - 解碼器的任務是將低維壓縮向量分類為不同類別 (Decoder's Task Is to Classify Low-Dimensional Compressed Vectors into Different Categories)，屬於分類任務。
-  - 編碼器將輸入資料轉換為可視化圖像以利模型學習 (Encoder Converts Input Data to Visualizable Images for Model Learning)，用於視覺化。
-  - 編碼器將資料轉換為潛在空間表示，解碼器再重建資料 (Encoder Converts Data to Latent Space Representation, Decoder Reconstructs Data)
+  - 解碼器的任務是將低維壓縮向量分類為不同類別 (Decoder's Task Is to Classify Low-Dimensional Compressed
+    Vectors into Different Categories)，屬於分類任務。
+  - 編碼器將輸入資料轉換為可視化圖像以利模型學習 (Encoder Converts Input Data to Visualizable Images for
+    Model Learning)，用於視覺化。
+  - 編碼器將資料轉換為潛在空間表示，解碼器再重建資料 (Encoder Converts Data to Latent Space Representation,
+    Decoder Reconstructs Data)
   - 編碼器利用最大邊際機率對資料進行異常點偵測 (Encoder Uses Maximum Marginal Probability for Anomaly Detection)，屬於異常偵測。
   correct_index: 2
   explanation: 此題涉及 生成式 AI 原理 的核心概念。正確答案為「編碼器將資料轉換為潛在空間表示，解碼器再重建資料」。
@@ -802,7 +819,7 @@ questions:
   type: multiple_choice
   options:
   - 老師教學生 (Teacher Teaching Students)，屬於監督式學習的比喻。
-  - "偽鈔集團與警察的攻防 (零和賽局) (Counterfeit Gang vs. Police: Zero-Sum Game)"
+  - '偽鈔集團與警察的攻防 (零和賽局) (Counterfeit Gang vs. Police: Zero-Sum Game)'
   - 尋找寶藏 (Finding Treasure)，探索未知的過程。
   - 堆積木 (Stacking Blocks)，逐步建構的過程。
   correct_index: 1
@@ -850,7 +867,7 @@ questions:
   type: multiple_choice
   options:
   - 重新訓練一個大模型 (Retraining a Large Model)，完全重新訓練。
-  - "RAG (檢索增強生成) (RAG: Retrieval-Augmented Generation)"
+  - 'RAG (檢索增強生成) (RAG: Retrieval-Augmented Generation)'
   - 增加 Prompt 長度 (Increasing Prompt Length)，延長輸入提示詞。
   - 調高 Temperature (Increasing Temperature)，增加生成隨機性。
   correct_index: 1
@@ -866,7 +883,8 @@ questions:
   type: multiple_choice
   options:
   - 減少參數量 (Reducing Parameter Count)，縮小模型規模。
-  - 同時增加參數量、資料量與計算量 (Simultaneously Increasing Parameter Count, Data Volume, and Computation Amount)
+  - 同時增加參數量、資料量與計算量 (Simultaneously Increasing Parameter Count, Data Volume, and Computation
+    Amount)
   - 只增加層數 (Only Increasing Layers)，僅擴充網路深度。
   - 使用更小的模型 (Using Smaller Models)，採用較小規模的模型。
   correct_index: 1
@@ -882,7 +900,8 @@ questions:
   type: multiple_choice
   options:
   - 讓模型畫圖 (Making Model Draw)，提升圖像生成能力。
-  - 引導模型逐步推理，提升解決複雜問題（如數學）的能力 (Guiding Model to Reason Step by Step, Improving Ability to Solve Complex Problems Like Mathematics)
+  - 引導模型逐步推理，提升解決複雜問題（如數學）的能力 (Guiding Model to Reason Step by Step, Improving Ability
+    to Solve Complex Problems Like Mathematics)
   - 縮短回答長度 (Shortening Response Length)，減少輸出文本長度。
   - 減少運算量 (Reducing Computation)，降低計算成本。
   correct_index: 1
@@ -898,7 +917,8 @@ questions:
   type: multiple_choice
   options:
   - 模型訓練失敗 (Model Training Failed)，訓練過程無法完成。
-  - 生成器只產生單一或極少數種類的樣本，缺乏多樣性 (Generator Only Produces Single or Very Few Types of Samples, Lacking Diversity)
+  - 生成器只產生單一或極少數種類的樣本，缺乏多樣性 (Generator Only Produces Single or Very Few Types of Samples,
+    Lacking Diversity)
   - 判別器太弱 (Discriminator Too Weak)，判別能力不足。
   - 生成器太弱 (Generator Too Weak)，生成能力不足。
   correct_index: 1
@@ -930,7 +950,8 @@ questions:
   type: multiple_choice
   options:
   - 模型一開始就很強 (Model Is Strong from the Start)，初始能力就很高。
-  - 當模型規模突破臨界點時，突然出現小模型不具備的新能力 (When Model Scale Breaks Through Threshold, Suddenly Emerges New Capabilities Not Present in Small Models)
+  - 當模型規模突破臨界點時，突然出現小模型不具備的新能力 (When Model Scale Breaks Through Threshold, Suddenly
+    Emerges New Capabilities Not Present in Small Models)
   - 模型會自我複製 (Model Will Self-Replicate)，自動複製自身。
   - 模型會產生幻覺 (Model Will Generate Hallucinations)，產生不存在的內容。
   correct_index: 1
@@ -978,7 +999,8 @@ questions:
   type: multiple_choice
   options:
   - 讓大模型學得更好 (Making Large Model Learn Better)，提升大模型的表現。
-  - 讓小模型模仿大模型的行為，以獲得接近大模型的效能 (Making Small Model Imitate Large Model's Behavior to Achieve Performance Close to Large Model)
+  - 讓小模型模仿大模型的行為，以獲得接近大模型的效能 (Making Small Model Imitate Large Model's Behavior to
+    Achieve Performance Close to Large Model)
   - 增加資料量 (Increasing Data Volume)，擴充訓練資料集。
   - 減少訓練時間 (Reducing Training Time)，縮短訓練週期。
   correct_index: 1
@@ -1010,7 +1032,8 @@ questions:
   type: multiple_choice
   options:
   - 鑑別式 AI 創造新資料，生成式 AI 進行分類 (Discriminative AI Creates New Data, Generative AI Classifies)，功能定義相反。
-  - 鑑別式 AI 學習邊界 (判斷)，生成式 AI 學習分佈 (創造) (Discriminative AI Learns Boundaries (Judgment), Generative AI Learns Distributions (Creation))
+  - 鑑別式 AI 學習邊界 (判斷)，生成式 AI 學習分佈 (創造) (Discriminative AI Learns Boundaries (Judgment),
+    Generative AI Learns Distributions (Creation))
   - 兩者一樣 (Both Are the Same)，功能完全相同。
   - 生成式 AI 比較便宜 (Generative AI Is Cheaper)，成本較低。
   correct_index: 1
@@ -1116,3 +1139,139 @@ questions:
   - sec-prompt-engineering
   id: 11470
   usage: both
+- id: 8071
+  chapter_title: 生成式 AI 與大型語言模型
+  section_title: 鑑別式 AI vs. 生成式 AI
+  text: 下列何者最符合鑑別式 AI 的主要目標？
+  type: multiple_choice
+  options:
+  - 學習決策邊界，進行分類、辨識或數值預測
+  - 產生全新的圖片、文字、音訊或影片
+  - 將資料庫格式從 CSV 轉成 JSON
+  - 將模型權重從 FP32 轉成 INT8
+  correct_index: 0
+  explanation: 鑑別式 AI 學習 P(Y|X) 或決策邊界，主要用於分類、辨識與預測；生成式 AI 則學習資料分佈並產生新內容。
+  tags:
+  - chap-ai-foundation-chapter8
+  - def-discriminative-ai
+  usage: quiz
+- id: 8072
+  chapter_title: 生成式 AI 與大型語言模型
+  section_title: 生成式模型原理
+  text: 下列哪一組因素最能影響生成模型的最終效果？
+  type: multiple_choice
+  options:
+  - 資料品質、模型結構、超參數設定與計算資源
+  - 螢幕大小、鍵盤品牌、滑鼠解析度與辦公室座位
+  - 只看模型名稱，其他因素都不重要
+  - 只看是否使用 SQL，與資料品質無關
+  correct_index: 0
+  explanation: 生成模型效果取決於資料品質與多樣性、模型架構、超參數設定、訓練與推論計算資源等多重因素。
+  tags:
+  - chap-ai-foundation-chapter8
+  - sec-generative-model-quality-factors
+  usage: quiz
+- id: 8073
+  chapter_title: 生成式 AI 與大型語言模型
+  section_title: 鑑別式 AI 與生成式 AI 的整合應用
+  text: 在醫療影像資料稀缺時，生成式 AI 與鑑別式 AI 的整合最常見的價值是什麼？
+  type: multiple_choice
+  options:
+  - 生成合成病灶影像作為資料增強，再訓練分類模型提升泛化能力
+  - 完全取代醫師並自動發布診斷結論
+  - 刪除所有真實資料，只保留生成資料
+  - 讓模型不需要任何評估指標
+  correct_index: 0
+  explanation: 生成式 AI 可產生多樣化合成資料，補足稀缺或不平衡資料；鑑別式 AI 再使用這些資料訓練分類或偵測模型，提高泛化能力。
+  tags:
+  - chap-ai-foundation-chapter8
+  - sec-discriminative-generative-integration
+  - sec-gen-disc-data-augmentation
+  usage: quiz
+- id: 8074
+  chapter_title: 生成式 AI 與大型語言模型
+  section_title: 鑑別式 AI 與生成式 AI 的整合應用
+  text: 在內容生成與審核流程中，鑑別式 AI 通常可以如何支援生成式 AI？
+  type: multiple_choice
+  options:
+  - 對生成內容進行分類、合規檢查、敏感內容偵測與品質過濾
+  - 讓生成模型不再需要任何提示詞
+  - 把所有生成內容都視為真實新聞
+  - 直接移除所有資料治理流程
+  correct_index: 0
+  explanation: 生成式 AI 可產生文案或回覆，鑑別式 AI 可負責審核、分類、過濾與品質控管，降低不當內容或品牌不一致的風險。
+  tags:
+  - chap-ai-foundation-chapter8
+  - sec-gen-disc-multimodal-feedback
+  usage: quiz
+- id: 8075
+  chapter_title: 生成式 AI 與大型語言模型
+  section_title: 鑑別式 AI 與生成式 AI 的整合應用
+  text: 生成對抗網路 (GAN) 在訓練時可能出現模式崩潰或梯度消失。下列哪一項是常見的改良方向？
+  type: multiple_choice
+  options:
+  - 採用 WGAN 等改良方法提升訓練穩定性
+  - 刪除鑑別器，只保留資料庫
+  - 將所有圖片改成 CSV 就能解決
+  - 永遠不使用驗證資料
+  correct_index: 0
+  explanation: GAN 訓練可能不穩定，WGAN 等改良方法可改善訓練穩定性，減少模式崩潰與梯度問題。
+  tags:
+  - chap-ai-foundation-chapter8
+  - sec-gen-disc-integration-challenges
+  usage: quiz
+- id: 115-1-12
+  text: ChatGPT、Gemini 等對話型生成式 AI 工具所依據的基礎模型技術，下列何者正確？ （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 決策樹（Decision Tree）
+  - 大型語言模型（Large Language Model, LLM）
+  - 生成對抗網路（Generative Adversarial Network, GAN）
+  - 圖卷積網路（Graph Convolutional Network, GCN）
+  correct_index: 1
+  explanation: 本題測驗相關核心概念。正確解答為「大型語言模型（Large Language Model, LLM）」，因為這最符合題幹中描述的情境與技術特性。
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-25
+  text: 在大型語言模型（LLM）的推論服務中，常透過請求批次處理（Batching）來提升系統效能。關於批次處理（Batching）機制的影響，下列敘述何者最正確？    （115年第一梯次）
+  type: multiple_choice
+  options:
+  - 'Batching 可提升加速器資源使用效率並增加整體吞吐量（Throughput） ，但在部
+
+    分情境下可能對單筆請求延遲造成影響'
+  - Batching 主要用於加快單筆請求回應時間
+  - 'Batching 的效益主要來自降低記憶體使用量，對於吞吐量（Throughput）與延
+
+    遲表現影響有限'
+  - Batching 在低併發（Concurrency）請求下，仍能明顯提升系統效能
+  correct_index: 0
+  explanation: '本題測驗相關核心概念。正確解答為「Batching 可提升加速器資源使用效率並增加整體吞吐量（Throughput） ，但在部
+
+    分情境下可能對單筆請求延遲造成影響」，因為這最符合題幹中描述的情境與技術特性。'
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock
+- id: 115-1-41
+  text: 在大型語言模型（LLM）的效能優化中，Flash Attention 常被用來改善 Transformer注意力機制的運算效率。關於 Flash Attention
+    的主要效益，下列敘述何者最正確？ （115年第一梯次）
+  type: multiple_choice
+  options:
+  - '透過忽略影響較小的注意力權重，減少模型需要計算的關聯數量，以降低運算
+
+    成本'
+  - '透過調整注意力計算與資料處理方式，減少中間結果的儲存需求，進而改善速
+
+    度與資源使用效率'
+  - 透過增加注意力計算的並行程度，使模型可同時處理更多注意力頭部
+  - 透過將注意力結果暫存於高速快取記憶體，以避免重複計算造成延遲
+  correct_index: 1
+  explanation: '本題測驗相關核心概念。正確解答為「透過調整注意力計算與資料處理方式，減少中間結果的儲存需求，進而改善速
+
+    度與資源使用效率」，因為這最符合題幹中描述的情境與技術特性。'
+  tags:
+  - past-exam
+  - 115-1
+  usage: mock

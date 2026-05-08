@@ -95,6 +95,60 @@ label: chap-ai-foundation-chapter9
 
 ![迴歸指標](images/regression-metrics.webp)
 
+## 模型訓練與調參機制 {#sec-training-optimization}
+
+模型評估之前，必須先理解模型如何被訓練。機器學習的訓練本質上是在找一組參數，讓模型輸出與真實答案之間的誤差盡可能小。
+
+### 損失函數 (Loss Function) {#sec-loss-functions}
+
+**損失函數 (Loss Function)** 是衡量模型「錯得多嚴重」的函數。損失值越大，代表預測與真實答案差距越大；訓練的目標就是讓損失逐步下降。
+
+*   **均方誤差 (MSE)**：
+    *   常用於迴歸問題。
+    *   會把誤差平方，因此對大錯特別敏感。
+    *   例子：房價預測、銷售額預測。
+*   **交叉熵損失 (Cross-Entropy Loss)**：
+    *   常用於分類問題。
+    *   衡量模型預測的機率分布與真實標籤之間的差距。
+    *   例子：垃圾郵件分類、影像分類、疾病分類。
+
+**考試重點**：損失函數不是最終商業 KPI，而是訓練期間用來指導模型更新參數的數學目標。
+
+### 優化器與梯度下降 {#sec-optimizers-gradient-descent}
+
+**優化器 (Optimizer)** 負責根據損失函數的結果更新模型參數。最常見的核心概念是**梯度下降 (Gradient Descent)**。
+
+*   **梯度下降 (Gradient Descent)**：沿著讓損失下降最快的方向調整參數，就像在山坡上一步步往最低谷走。
+*   **批次梯度下降 (Batch Gradient Descent)**：每次使用全部訓練資料計算梯度，穩定但成本高。
+*   **隨機梯度下降 (Stochastic Gradient Descent, SGD)**：每次使用一筆或小批資料更新，速度快但震盪較大。
+*   **Adam**：結合動量與自適應學習率，是深度學習常用優化器。
+
+**學習率 (Learning Rate)** 是調參重點。學習率太大可能越過最佳點而震盪；太小則收斂很慢。
+
+### 超參數調整 (Hyperparameter Tuning) {#sec-hyperparameter-tuning}
+
+**參數 (Parameters)** 是模型從資料中學到的權重；**超參數 (Hyperparameters)** 則是在訓練前或訓練過程外由人設定的控制項，例如學習率、樹深度、KNN 的 K、正則化強度、批次大小等。
+
+常見調參方法：
+
+1.  **網格搜索 (Grid Search)**：列出所有候選組合逐一測試。完整但成本高。
+2.  **隨機搜索 (Random Search)**：在範圍內隨機抽樣組合。常比網格搜索更有效率。
+3.  **貝葉斯優化 (Bayesian Optimization)**：根據過去測試結果推估下一組較可能好的超參數，適合昂貴的模型訓練。
+
+調參必須使用驗證集或交叉驗證，不能用測試集反覆調整，否則測試集就被「偷看」了，最終評估會過度樂觀。
+
+## 財務評估與投資報酬率計算 (Financial Evaluation & ROI Calculation) {#sec-financial-evaluation}
+
+企業導入 AI (特別是生成式 AI) 是一項重大投資，必須在「模型效能」之外，進一步進行嚴謹的商業與財務評估。
+
+*   **Token Economics 與 ROI 計算 (實戰演練)** {#def-token-economics-roi}：
+    *   **Token Economics (代幣經濟學)**：涵蓋輸入 Token (Input Tokens) 數量、輸出 Token (Output Tokens) 費用、以及推理過程使用量的統計。
+        *   *(需強調：訓練階段的 GPU 記憶體與算力成本，屬於基礎建設投資，並不屬於推論期的 Token Economics 計算範疇)*。
+    *   **ROI (投資報酬率) 計算範例**：
+        *   企業應比較「導入前的人工處理成本」與「導入後的 API Token 成本 + 系統整合開發費用」，並計算出**成本回收期 (Payback Period, 單位通常為月數)**，以判斷專案可行性。
+*   **總體擁有成本 (TCO, Total Cost of Ownership) 評估** {#def-tco-assessment}：
+    *   除了直接的 API 調用費用與基礎設施成本外，必須強調與計入「維護人力、員工訓練、系統持續整合、以及資安與合規管理」等長期隱性支出。
+
 ## 誤差分析與正則化 {#sec-error-analysis}
 
 ### 偏差-變異權衡 (Bias-Variance Tradeoff) {#sec-bias-variance}
@@ -146,6 +200,10 @@ label: chap-ai-foundation-chapter9
     *   **Bias**：準不準 (Underfitting)。
     *   **Variance**：穩不穩 (Overfitting)。
 *   **抗過擬合**：L1/L2 正則化、Dropout、Early Stopping、Data Augmentation。
+*   **訓練機制**：
+    *   **Loss Function**：衡量模型錯誤，指導訓練方向。
+    *   **Optimizer**：更新參數以降低損失，例如 Gradient Descent、SGD、Adam。
+    *   **Hyperparameter Tuning**：用驗證集或交叉驗證調整學習率、樹深度、K 值等。
 
 ### AI 應用規劃師認證考點
 
@@ -166,6 +224,11 @@ label: chap-ai-foundation-chapter9
 3.  **解決方案題**：
     *   *例題*：「遇到過度擬合該怎麼辦？」
     *   **解答**：增加資料、使用 Dropout、L2 正則化、早停。
+4.  **訓練機制題**：
+    *   *例題*：「梯度下降主要用來做什麼？」
+    *   **解答**：更新模型參數，使損失函數最小化。
+    *   *例題*：「學習率、樹深度、KNN 的 K 屬於參數還是超參數？」
+    *   **解答**：超參數，需透過驗證集或交叉驗證調整。
 
 ### 記憶口訣
 
@@ -177,4 +240,3 @@ label: chap-ai-foundation-chapter9
 ### 延伸思考
 
 *   為什麼 Accuracy 在資料不平衡時會騙人？（因為模型只要全部猜多數類別，分數就會很高，但完全沒有鑑別力）。
-
