@@ -954,8 +954,7 @@ questions:
   - 1 → 2 → 4 → 3；
   - 2 → 1→ 3 → 4；
   - 1 → 3 → 2 → 4；
-  - 3 → 1 → 2 → 4 C 22.  一家顧問公司使用生成式 AI 協助撰寫數據分析報告。雖然模型在測試 中表現優異，但其生成的報告多半僅遵循固定段落結構，替換數值或關
-    鍵詞即可完成，卻未能展現針對不同專案的多樣化推理與分析。下列何 者為造成這種現象的最合理解釋？
+  - 3 → 1 → 2 → 4 C 22.  一家顧問公司使用生成式 AI 協助撰寫數據分析報告。雖然模型在測試 中表現優異，但其生成的報告多半僅遵循固定段落結構，替換數值或關 鍵詞即可完成，卻未能展現針對不同專案的多樣化推理與分析。下列何 者為造成這種現象的最合理解釋？
   correct_index: 0
   explanation: 溫度 (Temperature) 參數控制生成結果的隨機性。較高的溫度（如 0.8）使輸出更多樣且具創意；較低的溫度（如 0.2）使輸出更確定且聚焦。
   tags:
@@ -973,8 +972,7 @@ questions:
   - 2 → 3 → 4 → 1；
   - 3 → 2 → 1 → 4；
   - 2 → 1 → 3 → 4；
-  - 1 → 4 → 3 → 2 B 31.  某跨國電商企業導入生成式 AI，協助處理顧客服務請求，並根據顧客 歷史訂單提供個人化建議。資安與法遵部門擔心AI
-    在回覆時可能洩漏 顧客個資，若要在導入初期優先避免觸法風險，下列哪一項措施最符合 要求？
+  - 1 → 4 → 3 → 2 B 31.  某跨國電商企業導入生成式 AI，協助處理顧客服務請求，並根據顧客 歷史訂單提供個人化建議。資安與法遵部門擔心AI 在回覆時可能洩漏 顧客個資，若要在導入初期優先避免觸法風險，下列哪一項措施最符合 要求？
   correct_index: 0
   explanation: 此題涉及  評估並選擇合適的 ... 的核心概念。正確答案為「2 → 3 → 4 → 1；」。
   tags:
@@ -986,8 +984,7 @@ questions:
 - id: 11422
   chapter_title: 生成式 AI 的專案規劃與評估
   section_title: 生成式 AI 專案管理與評估
-  text: 一家顧問公司使用生成式 AI 協助撰寫數據分析報告。雖然模型在測試 中表現優異，但其生成的報告多半僅遵循固定段落結構，替換數值或關 鍵詞即可完成，卻未能展現針對不同專案的多樣化推理與分析。下列何
-    者為造成這種現象的最合理解釋？ (114年第四梯次)
+  text: 一家顧問公司使用生成式 AI 協助撰寫數據分析報告。雖然模型在測試 中表現優異，但其生成的報告多半僅遵循固定段落結構，替換數值或關 鍵詞即可完成，卻未能展現針對不同專案的多樣化推理與分析。下列何 者為造成這種現象的最合理解釋？ (114年第四梯次)
   type: multiple_choice
   options:
   - 模型在生成過程中缺乏對字體與排版的優化能力，因此無法展現分 析邏輯；
@@ -1013,8 +1010,7 @@ questions:
   - 模型規模與基準測試結果完全無關，影響主要來自測試設計；
   - 模型越大，Benchmark 結果可能提升，但幅度取決於訓練數據品質 與資源配置
   correct_index: 0
-  explanation: 此題涉及 在評估大型語言模型，... 的核心概念。正確答案為「小模型在正確調整下能超越大模型，因此模型大小並不重要； 第二科：生成式
-    AI 應用與規劃」。
+  explanation: 此題涉及 在評估大型語言模型，... 的核心概念。正確答案為「小模型在正確調整下能超越大模型，因此模型大小並不重要； 第二科：生成式 AI 應用與規劃」。
   tags:
   - past-exam
   - 114-4
@@ -1042,8 +1038,7 @@ questions:
 - id: 11403
   chapter_title: 生成式 AI 的專案規劃與評估
   section_title: 部署與營運 (LLMOps)
-  text: 某企業利用 No Code/Low Code平台開發內部營運系統。為確保系統在 跨部門流程與外部服務整合下仍具良好的可測試性 （Testability）
-    ，下 列哪一項作法最為合適？ (114年第四梯次)
+  text: 某企業利用 No Code/Low Code平台開發內部營運系統。為確保系統在 跨部門流程與外部服務整合下仍具良好的可測試性 （Testability） ，下 列哪一項作法最為合適？ (114年第四梯次)
   type: multiple_choice
   options:
   - 依賴 No Code/Low Code平台提供的即時預覽與基本單元測試功能， 快速驗證常見流程；
@@ -1079,8 +1074,7 @@ questions:
 - id: 11433
   chapter_title: 生成式 AI 的專案規劃與評估
   section_title: 部署與營運 (LLMOps)
-  text: 在企業導入 MLOps（Machine Learning Operations）的過程中，除了 模型部署與維運挑戰外，仍可能面臨其他推動上的困難。下列何者為
-    No Code 平台最能有效解決的挑戰？ (114年第四梯次)
+  text: 在企業導入 MLOps（Machine Learning Operations）的過程中，除了 模型部署與維運挑戰外，仍可能面臨其他推動上的困難。下列何者為 No Code 平台最能有效解決的挑戰？ (114年第四梯次)
   type: multiple_choice
   options:
   - 自動化大量資料的標註與前處理，以降低數據準備成本；
@@ -1414,4 +1408,148 @@ questions:
   - chap-gen-chapter6
   - sec-implementation-strategy
   id: 11465
+  usage: both
+- id: 115004
+  chapter_title: 生成式 AI 專案管理與評估
+  section_title: 歷屆考題
+  text: 某企業導入生成式 AI 客服系統後發現，系統整體運作穩定，且在單位時間內可處 理大量對話請求。部分使用者仍反映在互動過程中回覆出現卡頓感，經初步排除 網路連線與前端介面效能問題後，若專案團隊希望針對此現象進行效能測試，下 列何者最符合測試重點？（115年第一梯次）
+  options:
+  - 評估系統長時間運作的穩定程度；
+  - 測量系統單位時間的總處理量；
+  - 比較不同回覆內容的語言品質；
+  - 分析單次互動回覆的反應速度表現
+  correct_index: 3
+  explanation: 「回覆出現卡頓感」通常與首字延遲（Time to First Token, TTFT）或生成速度（Tokens per Second）有關，因此應聚焦於分析單次互動的反應速度表現。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter6
+  - sec-past-exam
+  usage: both
+- id: 115005
+  chapter_title: 生成式 AI 專案管理與評估
+  section_title: 歷屆考題
+  text: 某企業導入生成式 AI 系統，希望自動產出客服回覆與內部文件摘要。系統需能理 解使用者輸入的完整語句內容，並在回覆中維持語意連貫，即使對話內容較長仍 能保持上下文一致性。基於上述需求，下列何種模型架構最為適合？ 第二科：生成式 AI 應用與規劃（115年第一梯次）
+  options:
+  - 卷積神經網路（Convolutional Neural Network, CNN）；
+  - 遞迴神經網路（Recurrent Neural Network, RNN）；
+  - 基於 Transformer 架構的自迴歸模型（Autoregressive Model）；
+  - 生成對抗網路（Generative Adversarial Network, GAN）
+  correct_index: 2
+  explanation: 生成式 AI (如 ChatGPT) 能處理長上下文並維持語意連貫，主要是依賴基於 Transformer 架構的自迴歸模型 (Autoregressive Model) 的注意力機制與生成特性。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter6
+  - sec-past-exam
+  usage: both
+- id: 115014
+  chapter_title: 生成式 AI 專案管理與評估
+  section_title: 歷屆考題
+  text: 某企業導入大型語言模型（LLM）分析內部報表，使用者經常提供 Excel 匯出的 表格資料（如銷售數據與統計表） 。測試時發現，模型對原始表格解析效果不穩 定。為提升模型理解與回應品質，下列哪一種上下文工程（Context Engineering） 作法較為適當？ 第二科：生成式 AI 應用與規劃（115年第一梯次）
+  options:
+  - 將表格內容轉換為結構化 JSON 或 Markdown table；
+  - 在維持原始表格呈現方式下，補充欄位與數據說明；
+  - 將表格資料隨機切割後分段輸入；
+  - 直接提供原始表格內容以保留完整資訊
+  correct_index: 0
+  explanation: LLM 對於純文字的理解力遠勝於複雜的 Excel 檔案格式。將表格轉換為 JSON 或 Markdown table 等結構化文字格式，能大幅提升模型的解析與推理準確度。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter6
+  - sec-past-exam
+  usage: both
+- id: 115017
+  chapter_title: 生成式 AI 專案管理與評估
+  section_title: 歷屆考題
+  text: 某企業提供大型語言模型（LLM）API 服務，需支援高併發請求與流量波動，同 時要求服務不中斷並具備故障容忍能力。若以高可用性與可擴展性為主要設計原 則，下列哪一種部署方式較為適當？（115年第一梯次）
+  options:
+  - 採用單一高效能虛擬機（VM）集中部署，以提升資源使用效率；
+  - 建立多個模型服務實例並透過負載分散機制提供服務；
+  - 將推論任務改由用戶端設備分擔，以降低伺服器負載壓力；
+  - 使用 FTP 協議傳輸請求與回應，以減少服務通訊負擔
+  correct_index: 1
+  explanation: 為了因應高併發流量並維持高可用性（HA），最佳實務是建立多個模型服務實例（Instances），並利用負載平衡器（Load Balancer）來分散請求流量。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter6
+  - sec-past-exam
+  usage: both
+- id: 115025
+  chapter_title: 生成式 AI 專案管理與評估
+  section_title: 歷屆考題
+  text: 某機構計畫導入生成式 AI 旅遊資訊服務對話系統自動生成多語言對話。目前每月 需人工翻譯 600 則訊息，每則成本 50 元；若改用 ChatGPT API，每則訊息需 2000 Tokens，而 Token 成本 0.8 元/1000 Tokens，但需額外投入系統整合費用 20 萬元。 關於投資報酬率（Return on Investment, ROI）評估，下列何者最為正確？（115年第一梯次）
+  options:
+  - 每月節省成本 29,040 元，系統整合成本約 7 個月回收；
+  - 每月節省成本 30,000 元，系統整合成本約 7 個月回收；
+  - 每月節省成本 28,040 元，系統整合成本約 8 個月回收；
+  - 每月節省成本 25,000 元，系統整合成本約 8 個月回收
+  correct_index: 0
+  explanation: 每月人工成本為 600 * 50 = 30,000 元。改用 API 每月成本為 600 * (2000/1000) * 0.8 = 960 元。每月節省 29,040 元。20 萬系統整合成本 / 29040 ≈ 6.88，約 7 個月回收。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter6
+  - sec-past-exam
+  usage: both
+- id: 115027
+  chapter_title: 生成式 AI 專案管理與評估
+  section_title: 歷屆考題
+  text: 某紡織公司希望建立自動化品質檢測流程，既有的 AI 系統檢測到布料瑕疵時，需 自動拍照存檔、發送通知給品管人員。該公司具有一定開發人力，希望快速建置 此工作流程，並保有彈性調整空間，下列哪一種解決方案最適合？（115年第一梯次）
+  options:
+  - 使用 n8n 建立工作流（Workflow） ，整合AI 檢測 API、檔案系統、通訊軟體；
+  - 委外開發客製化程式，完全符合公司需求規格；
+  - 採購現成的品質管理軟體，直接導入使用；
+  - 使用 Excel 巨集搭配人工作業處理檢測結果
+  correct_index: 0
+  explanation: n8n 是一個強大的自動化工作流工具，能以視覺化方式快速串接 AI API、檔案系統與通訊軟體，既節省開發時間又保留了日後調整流程的彈性。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter6
+  - sec-past-exam
+  usage: both
+- id: 115028
+  chapter_title: 生成式 AI 專案管理與評估
+  section_title: 歷屆考題
+  text: 某市政府交通局計劃導入生成式 AI 技術來自動生成公車到站時間預測的文字報 告，每日需處理約 50 萬筆交通資料並生成 1000 份報告。在評估導入成本時，團 隊希望進行 Token Economics 分析（指模型推理與生成過程中，Token 使用量及其 費用） 。下列何者不屬於Token Economics 的考量範圍？（115年第一梯次）
+  options:
+  - 每次 API 呼叫所需的輸入 Token 數量；
+  - 生成報告內容所消耗的輸出 Token 費用；
+  - AI 模型訓練階段使用 Token 數量所需的 GPU 記憶體成本；
+  - 模型推理過程中的 Token 使用量統計 第二科：生成式 AI 應用與規劃
+  correct_index: 2
+  explanation: Token Economics 專注於評估模型在推論（Inference）時消耗的輸入與輸出 Token 費用。模型訓練階段的 GPU 運算與記憶體成本屬於基礎設施投資，不包含在內。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter6
+  - sec-past-exam
+  usage: both
+- id: 115044
+  chapter_title: 生成式 AI 專案管理與評估
+  section_title: 歷屆考題
+  text: 某智慧製造廠導入語音互動 AI 助理，作業人員可透過語音查詢設備狀態與操作指 引。系統流程包含語音轉文字、語言模型生成回覆，以及即時查詢內部系統資 料。測試結果顯示：語音轉文字在專業設備術語上錯誤率偏高；語言模型回覆偶 有內容不夠精準；系統整體回應速度略慢但仍在可接受範圍。若專案目標為優先 確保正確執行指令，下列改進措施的執行順序何者最合理？（115年第一梯次）
+  options:
+  - 優化語言模型 → 強化語音模型 → 優化系統效能 → 調整生成參數；
+  - 強化語音模型 → 優化語言模型與知識補充 → 調整生成參數 → 優化系統效 能；
+  - 優化系統效能 → 強化語音模型 → 優化語言模型與知識補充 → 調整生成參 數；
+  - 強化語音模型 → 優化系統效能 → 優化語言模型與知識補充 → 調整生成參 數
+  correct_index: 1
+  explanation: 語音轉文字的錯誤會直接導致語言模型獲得錯誤的輸入，因此必須先「強化語音模型」；接著才是「優化語言模型」，最後再處理生成參數與系統效能優化。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter6
+  - sec-past-exam
+  usage: both
+- id: 115047
+  chapter_title: 生成式 AI 專案管理與評估
+  section_title: 歷屆考題
+  text: 某製造企業規劃導入生成式 AI 協助產線異常紀錄分析，系統將根據設備回報與維 修紀錄自動產出問題摘要與建議處置說明。在試行測試階段，為降低營運與決策 風險，下列何者最應優先驗證？（115年第一梯次）
+  options:
+  - AI 生成建議與實際工程判斷的一致性與正確性；
+  - 系統在高資料量輸入下的處理速度與延遲表現；
+  - 模型對不同設備品牌資料格式的轉換能力；
+  - 異常分析報告的視覺化呈現與介面易讀性
+  correct_index: 0
+  explanation: AI 在異常分析中若提供錯誤建議，可能導致產線停機或工安風險。因此在試行階段，最關鍵且最優先的任務是驗證 AI 建議與人類工程師專業判斷的正確性與一致性。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter6
+  - sec-past-exam
   usage: both

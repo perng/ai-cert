@@ -63,17 +63,16 @@ questions:
   - chap-gen-chapter5
   - sec-no-code-low-code
   usage: quiz
-  usage: quiz
 - id: 5006
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 整合策略與風險
   text: 影子 IT (Shadow IT) 是指？
   type: multiple_choice
   options:
-  - "駭客攻擊 (Hacker Attack)，惡意入侵。"
-  - "公司停電 (Power Outage)，電力中斷。"
-  - "員工未經 IT 部門核准，擅自使用外部工具處理公務 (Shadow IT: Unauthorized Use of External Tools by Employees)"
-  - "在黑暗中寫程式 (Coding in the Dark)，字面誤解。"
+  - 駭客攻擊 (Hacker Attack)，惡意入侵。
+  - 公司停電 (Power Outage)，電力中斷。
+  - '員工未經 IT 部門核准，擅自使用外部工具處理公務 (Shadow IT: Unauthorized Use of External Tools by Employees)'
+  - 在黑暗中寫程式 (Coding in the Dark)，字面誤解。
   correct_index: 2
   explanation: 影子 IT 雖然能提升個別員工效率，但往往帶來資安風險與資料孤島問題。
   tags:
@@ -86,10 +85,10 @@ questions:
   text: n8n 的主要功能是？
   type: multiple_choice
   options:
-  - "繪圖軟體 (Drawing Software)，設計用途。"
-  - "工作流自動化工具，串接 AI 與外部服務 (Workflow Automation Tool: Connecting AI and External Services)"
-  - "作業系統 (Operating System)，如 Windows。"
-  - "防毒軟體 (Antivirus Software)，資安防護。"
+  - 繪圖軟體 (Drawing Software)，設計用途。
+  - '工作流自動化工具，串接 AI 與外部服務 (Workflow Automation Tool: Connecting AI and External Services)'
+  - 作業系統 (Operating System)，如 Windows。
+  - 防毒軟體 (Antivirus Software)，資安防護。
   correct_index: 1
   explanation: n8n 提供節點式介面，讓使用者能輕鬆串接 LLM 與各種 API，實現辦公流程自動化。
   tags:
@@ -102,10 +101,10 @@ questions:
   text: ComfyUI 是專為哪個 AI 模型設計的圖形介面？
   type: multiple_choice
   options:
-  - "Stable Diffusion (Stable Diffusion)，圖像生成模型。"
-  - "GPT-4 (GPT-4)，文字生成模型。"
-  - "Claude 3 (Claude 3)，文字生成模型。"
-  - "Llama 3 (Llama 3)，開源文字生成模型。"
+  - Stable Diffusion (Stable Diffusion)，圖像生成模型。
+  - GPT-4 (GPT-4)，文字生成模型。
+  - Claude 3 (Claude 3)，文字生成模型。
+  - Llama 3 (Llama 3)，開源文字生成模型。
   correct_index: 0
   explanation: ComfyUI 將 Stable Diffusion 的生成流程拆解為節點，提供高度可控的圖像生成體驗。
   tags:
@@ -118,10 +117,10 @@ questions:
   text: 在 Low Code 平台中，「Model」通常指的是？
   type: multiple_choice
   options:
-  - "3D 模型 (3D Model)，立體幾何物件。"
-  - "資料模型 (Data Model)，描述資料結構與業務邏輯 (Data Model: Defining Data Structure and Business Logic)"
-  - "模特兒 (Fashion Model)，展示服裝的人。"
-  - "AI 模型 (如 GPT) (AI Model)，機器學習模型。"
+  - 3D 模型 (3D Model)，立體幾何物件。
+  - '資料模型 (Data Model)，描述資料結構與業務邏輯 (Data Model: Defining Data Structure and Business Logic)'
+  - 模特兒 (Fashion Model)，展示服裝的人。
+  - AI 模型 (如 GPT) (AI Model)，機器學習模型。
   correct_index: 1
   explanation: 在軟體開發語境下，Model 通常指資料庫綱要或業務物件的抽象定義。
   tags:
@@ -134,10 +133,10 @@ questions:
   text: Google Antigravity 的核心特色是？
   type: multiple_choice
   options:
-  - "完全免費 (Completely Free)，無成本。"
-  - "Agent-first IDE，強調多 Agent 協作與可驗證性 (Agent-first IDE: Emphasizing Multi-Agent Collaboration and Verifiability)"
-  - "只能用手機操作 (Mobile Only)，限制裝置。"
-  - "不支援 Python (No Python Support)，語言限制。"
+  - 完全免費 (Completely Free)，無成本。
+  - 'Agent-first IDE，強調多 Agent 協作與可驗證性 (Agent-first IDE: Emphasizing Multi-Agent Collaboration and Verifiability)'
+  - 只能用手機操作 (Mobile Only)，限制裝置。
+  - 不支援 Python (No Python Support)，語言限制。
   correct_index: 1
   explanation: Antigravity 透過雙視圖與 Agent 協作，專注於解決複雜的系統級開發任務。
   tags:
@@ -150,10 +149,10 @@ questions:
   text: 使用 AI 生成程式碼時，最重要的安全守則是？
   type: multiple_choice
   options:
-  - "完全信任 AI (Fully Trusting AI)，盲目接受。"
-  - "人類必須進行 Code Review，檢查 Bug 與漏洞 (Human Code Review Required: Checking for Bugs and Vulnerabilities)"
-  - "不看程式碼 (Not Reviewing Code)，忽略潛在風險。"
-  - "直接部署到正式環境 (Deploying Directly to Production)，高風險操作。"
+  - 完全信任 AI (Fully Trusting AI)，盲目接受。
+  - '人類必須進行 Code Review，檢查 Bug 與漏洞 (Human Code Review Required: Checking for Bugs and Vulnerabilities)'
+  - 不看程式碼 (Not Reviewing Code)，忽略潛在風險。
+  - 直接部署到正式環境 (Deploying Directly to Production)，高風險操作。
   correct_index: 1
   explanation: AI 生成的程式碼可能包含錯誤或安全隱患，人工審查是不可或缺的防線。
   tags:
@@ -166,10 +165,10 @@ questions:
   text: Claude Code 是一個什麼樣的工具？
   type: multiple_choice
   options:
-  - "網頁瀏覽器 (Web Browser)，瀏覽網頁。"
-  - "CLI (命令列介面) 工具，能在終端機操作檔案與指令 (CLI Tool: Operating Files and Commands in Terminal)"
-  - "繪圖軟體 (Drawing Software)，設計用途。"
-  - "遊戲 (Game)，娛樂用途。"
+  - 網頁瀏覽器 (Web Browser)，瀏覽網頁。
+  - 'CLI (命令列介面) 工具，能在終端機操作檔案與指令 (CLI Tool: Operating Files and Commands in Terminal)'
+  - 繪圖軟體 (Drawing Software)，設計用途。
+  - 遊戲 (Game)，娛樂用途。
   correct_index: 1
   explanation: Claude Code 將 AI 的能力帶入終端機，適合進行腳本自動化與系統管理任務。
   tags:
@@ -182,10 +181,10 @@ questions:
   text: LangFlow 主要用於構建什麼類型的應用？
   type: multiple_choice
   options:
-  - "防毒軟體 (Antivirus Software)，資安防護。"
-  - "會計系統 (Accounting System)，財務管理。"
-  - "3D 遊戲 (3D Game)，娛樂應用。"
-  - "LLM 應用 (如 RAG, Chatbot) (LLM Applications: e.g., RAG, Chatbot)"
+  - 防毒軟體 (Antivirus Software)，資安防護。
+  - 會計系統 (Accounting System)，財務管理。
+  - 3D 遊戲 (3D Game)，娛樂應用。
+  - 'LLM 應用 (如 RAG, Chatbot) (LLM Applications: e.g., RAG, Chatbot)'
   correct_index: 3
   explanation: LangFlow 提供視覺化介面來組裝 LangChain 元件，加速 LLM 應用的原型開發。
   tags:
@@ -198,10 +197,10 @@ questions:
   text: No Code 平台的限制通常在於？
   type: multiple_choice
   options:
-  - "太難學 (Too Hard to Learn)，學習曲線陡峭。"
-  - "需要寫程式 (Requires Coding)，違背 No Code 初衷。"
-  - "太貴 (Too Expensive)，成本過高。"
-  - "靈活性低，難以客製化複雜邏輯 (Low Flexibility: Difficult to Customize Complex Logic)"
+  - 太難學 (Too Hard to Learn)，學習曲線陡峭。
+  - 需要寫程式 (Requires Coding)，違背 No Code 初衷。
+  - 太貴 (Too Expensive)，成本過高。
+  - '靈活性低，難以客製化複雜邏輯 (Low Flexibility: Difficult to Customize Complex Logic)'
   correct_index: 3
   explanation: No Code 為了易用性犧牲了靈活性，使用者通常受限於平台預設的功能模組。
   tags:
@@ -214,10 +213,10 @@ questions:
   text: Windsurf 編輯器強調的「Flow」範式是指？
   type: multiple_choice
   options:
-  - "Agent 主動監控並預測開發行為，提供流暢協助 (Agent Proactively Monitors and Predicts Dev Behavior for Smooth Assistance)"
-  - "限制打字速度 (Limiting Typing Speed)，降低效率。"
-  - "水流模擬 (Water Flow Simulation)，物理模擬。"
-  - "強制休息 (Forced Rest)，健康管理。"
+  - Agent 主動監控並預測開發行為，提供流暢協助 (Agent Proactively Monitors and Predicts Dev Behavior for Smooth Assistance)
+  - 限制打字速度 (Limiting Typing Speed)，降低效率。
+  - 水流模擬 (Water Flow Simulation)，物理模擬。
+  - 強制休息 (Forced Rest)，健康管理。
   correct_index: 0
   explanation: Windsurf 試圖讓 AI 融入開發者的心流 (Flow)，而非被動等待指令。
   tags:
@@ -230,10 +229,10 @@ questions:
   text: OpenAI Codex 最初是哪個工具背後的模型？
   type: multiple_choice
   options:
-  - "Sora (Sora)，影片生成模型。"
-  - "DALL-E (DALL-E)，圖像生成模型。"
-  - "ChatGPT (ChatGPT)，對話生成模型。"
-  - "GitHub Copilot (GitHub Copilot)，AI 程式碼輔助工具。"
+  - Sora (Sora)，影片生成模型。
+  - DALL-E (DALL-E)，圖像生成模型。
+  - ChatGPT (ChatGPT)，對話生成模型。
+  - GitHub Copilot (GitHub Copilot)，AI 程式碼輔助工具。
   correct_index: 3
   explanation: Codex 是 OpenAI 專為程式碼生成訓練的模型，早期驅動了 GitHub Copilot。
   tags:
@@ -246,10 +245,10 @@ questions:
   text: 影子 IT 可能導致的「資料孤島」問題是指？
   type: multiple_choice
   options:
-  - "資料被存在海島上 (Data on an Island)，字面誤解。"
-  - "資料被刪除 (Data Deleted)，資料遺失。"
-  - "數據散落在各個獨立應用中，無法整合與共享 (Data Silos: Data Scattered Across Independent Apps, Unable to Integrate)"
-  - "資料只有一份 (Single Copy of Data)，備份問題。"
+  - 資料被存在海島上 (Data on an Island)，字面誤解。
+  - 資料被刪除 (Data Deleted)，資料遺失。
+  - '數據散落在各個獨立應用中，無法整合與共享 (Data Silos: Data Scattered Across Independent Apps, Unable to Integrate)'
+  - 資料只有一份 (Single Copy of Data)，備份問題。
   correct_index: 2
   explanation: 各部門各自為政使用不同工具，導致企業數據無法流通，形成資訊壁壘。
   tags:
@@ -262,10 +261,10 @@ questions:
   text: Cursor 的 Composer 功能允許使用者？
   type: multiple_choice
   options:
-  - "玩遊戲 (Playing Games)，娛樂功能。"
-  - "看影片 (Watching Videos)，媒體播放。"
-  - "同時編輯多個檔案，進行跨檔案修改 (Editing Multiple Files Simultaneously: Cross-File Modification)"
-  - "作曲 (Composing Music)，音樂創作。"
+  - 玩遊戲 (Playing Games)，娛樂功能。
+  - 看影片 (Watching Videos)，媒體播放。
+  - '同時編輯多個檔案，進行跨檔案修改 (Editing Multiple Files Simultaneously: Cross-File Modification)'
+  - 作曲 (Composing Music)，音樂創作。
   correct_index: 2
   explanation: Composer 突破了單一檔案編輯的限制，能理解並修改整個專案的相關檔案。
   tags:
@@ -278,10 +277,10 @@ questions:
   text: Low Code 平台適合哪種開發者？
   type: multiple_choice
   options:
-  - "完全不懂電腦的人 (Computer Illiterate)，無法操作。"
-  - "美術設計師 (Graphic Designer)，專注於視覺。"
-  - "專業開發者或具備基本程式概念的 IT 人員 (Professional Developers or IT Staff with Basic Coding Concepts)"
-  - "會計師 (Accountant)，專注於財務。"
+  - 完全不懂電腦的人 (Computer Illiterate)，無法操作。
+  - 美術設計師 (Graphic Designer)，專注於視覺。
+  - 專業開發者或具備基本程式概念的 IT 人員 (Professional Developers or IT Staff with Basic Coding Concepts)
+  - 會計師 (Accountant)，專注於財務。
   correct_index: 2
   explanation: Low Code 雖然簡化了開發，但仍涉及邏輯設計與少量編碼，需要一定的技術背景。
   tags:
@@ -294,10 +293,10 @@ questions:
   text: n8n 的優勢之一是強調？
   type: multiple_choice
   options:
-  - "介面很醜 (Ugly Interface)，主觀評價。"
-  - "可自託管 (Self-hosted) 與高度客製化 (Self-hosted and Highly Customizable)"
-  - "不支援 AI (No AI Support)，錯誤描述。"
-  - "只能在雲端跑 (Cloud Only)，限制部署。"
+  - 介面很醜 (Ugly Interface)，主觀評價。
+  - 可自託管 (Self-hosted) 與高度客製化 (Self-hosted and Highly Customizable)
+  - 不支援 AI (No AI Support)，錯誤描述。
+  - 只能在雲端跑 (Cloud Only)，限制部署。
   correct_index: 1
   explanation: 自託管特性讓企業能完全掌控數據隱私，避免敏感資料外流。
   tags:
@@ -310,10 +309,10 @@ questions:
   text: ComfyUI 的節點式設計讓使用者能？
   type: multiple_choice
   options:
-  - "隨便亂畫 (Random Drawing)，無目的操作。"
-  - "無法控制 (Uncontrollable)，缺乏主導權。"
-  - "精細控制圖像生成的每一個步驟 (Fine-Grained Control over Every Step of Image Generation)"
-  - "只能用預設設定 (Default Settings Only)，限制客製化。"
+  - 隨便亂畫 (Random Drawing)，無目的操作。
+  - 無法控制 (Uncontrollable)，缺乏主導權。
+  - 精細控制圖像生成的每一個步驟 (Fine-Grained Control over Every Step of Image Generation)
+  - 只能用預設設定 (Default Settings Only)，限制客製化。
   correct_index: 2
   explanation: 透過連接不同的功能節點，使用者可以客製化極其複雜的圖像生成工作流。
   tags:
@@ -326,10 +325,10 @@ questions:
   text: GitHub Copilot 主要提供什麼功能？
   type: multiple_choice
   options:
-  - "即時程式碼補全 (Autocomplete) 與建議 (Real-time Code Autocomplete and Suggestions)"
-  - "專案管理 (Project Management)，進度追蹤。"
-  - "薪資計算 (Payroll Calculation)，財務功能。"
-  - "自動部署 (Automated Deployment)，DevOps 功能。"
+  - 即時程式碼補全 (Autocomplete) 與建議 (Real-time Code Autocomplete and Suggestions)
+  - 專案管理 (Project Management)，進度追蹤。
+  - 薪資計算 (Payroll Calculation)，財務功能。
+  - 自動部署 (Automated Deployment)，DevOps 功能。
   correct_index: 0
   explanation: Copilot 就像隨身的結對程式設計師，隨時預測並補完你正在寫的程式碼。
   tags:
@@ -342,10 +341,10 @@ questions:
   text: OpenAI Codex 擅長於？
   type: multiple_choice
   options:
-  - "畫圖 (Drawing)，圖像創作。"
-  - "精確的程式碼生成、除錯與測試 (Precise Code Generation, Debugging, and Testing)"
-  - "寫小說 (Writing Novels)，文學創作。"
-  - "唱歌 (Singing)，音樂表演。"
+  - 畫圖 (Drawing)，圖像創作。
+  - 精確的程式碼生成、除錯與測試 (Precise Code Generation, Debugging, and Testing)
+  - 寫小說 (Writing Novels)，文學創作。
+  - 唱歌 (Singing)，音樂表演。
   correct_index: 1
   explanation: Codex 經過大量程式碼數據訓練，對程式語言的語法與邏輯有深刻理解。
   tags:
@@ -358,10 +357,10 @@ questions:
   text: 影子 IT 帶來的「孤兒系統」風險是指？
   type: multiple_choice
   options:
-  - "員工離職後，其建立的系統無人維護 (Orphaned Systems: Unmaintained After Employee Departure)"
-  - "系統沒有父母 (System Has No Parents)，擬人化描述。"
-  - "系統被隔離 (System Isolated)，網路隔離。"
-  - "系統很孤單 (System is Lonely)，情感描述。"
+  - '員工離職後，其建立的系統無人維護 (Orphaned Systems: Unmaintained After Employee Departure)'
+  - 系統沒有父母 (System Has No Parents)，擬人化描述。
+  - 系統被隔離 (System Isolated)，網路隔離。
+  - 系統很孤單 (System is Lonely)，情感描述。
   correct_index: 0
   explanation: 非正規開發的系統通常缺乏文件與交接機制，一旦原作者離開，往往難以為繼。
   tags:
@@ -374,10 +373,10 @@ questions:
   text: Replit 是一個什麼類型的平台？
   type: multiple_choice
   options:
-  - "雲端 IDE (Cloud IDE)，線上整合開發環境。"
-  - "資料庫 (Database)，資料儲存系統。"
-  - "作業系統 (Operating System)，如 Linux。"
-  - "單機編輯器 (Local Editor)，如 Notepad++。"
+  - 雲端 IDE (Cloud IDE)，線上整合開發環境。
+  - 資料庫 (Database)，資料儲存系統。
+  - 作業系統 (Operating System)，如 Linux。
+  - 單機編輯器 (Local Editor)，如 Notepad++。
   correct_index: 0
   explanation: Replit 提供基於瀏覽器的開發環境，讓使用者隨時隨地都能寫程式。
   tags:
@@ -390,10 +389,10 @@ questions:
   text: Google Antigravity 的「可驗證性 (Verifiability)」是指？
   type: multiple_choice
   options:
-  - "可以驗證密碼 (Password Verification)，安全功能。"
-  - "Agent 會產出實作計畫與截圖，讓使用者確認其行為 (Agent Produces Implementation Plan and Screenshots for User Verification)"
-  - "可以驗證身分 (Identity Verification)，身份認證。"
-  - "可以驗證信用卡 (Credit Card Verification)，支付驗證。"
+  - 可以驗證密碼 (Password Verification)，安全功能。
+  - Agent 會產出實作計畫與截圖，讓使用者確認其行為 (Agent Produces Implementation Plan and Screenshots for User Verification)
+  - 可以驗證身分 (Identity Verification)，身份認證。
+  - 可以驗證信用卡 (Credit Card Verification)，支付驗證。
   correct_index: 1
   explanation: 在複雜任務中，讓使用者能追蹤並驗證 Agent 的決策過程與執行結果至關重要。
   tags:
@@ -406,10 +405,10 @@ questions:
   text: No Code 平台通常使用什麼樣的介面？
   type: multiple_choice
   options:
-  - "二進位碼 (Binary Code)，機器語言。"
-  - "圖形化介面 (GUI)，拖拉元件 (GUI: Drag-and-Drop Components)"
-  - "命令列 (CLI) (Command Line Interface)，文字指令。"
-  - "純文字編輯器 (Text Editor)，如 Notepad。"
+  - 二進位碼 (Binary Code)，機器語言。
+  - '圖形化介面 (GUI)，拖拉元件 (GUI: Drag-and-Drop Components)'
+  - 命令列 (CLI) (Command Line Interface)，文字指令。
+  - 純文字編輯器 (Text Editor)，如 Notepad。
   correct_index: 1
   explanation: 直觀的拖拉介面是 No Code 降低門檻的關鍵。
   tags:
@@ -422,10 +421,10 @@ questions:
   text: LangFlow 通常基於哪個框架？
   type: multiple_choice
   options:
-  - "TensorFlow (TensorFlow)，Google 開發的深度學習框架。"
-  - "PyTorch (PyTorch)，Meta 開發的深度學習框架。"
-  - "Keras (Keras)，高階神經網路 API。"
-  - "LangChain (LangChain)，LLM 應用開發框架。"
+  - TensorFlow (TensorFlow)，Google 開發的深度學習框架。
+  - PyTorch (PyTorch)，Meta 開發的深度學習框架。
+  - Keras (Keras)，高階神經網路 API。
+  - LangChain (LangChain)，LLM 應用開發框架。
   correct_index: 3
   explanation: LangFlow 是 LangChain 生態系的一部分，將 LangChain 的程式碼元件視覺化。
   tags:
@@ -438,10 +437,10 @@ questions:
   text: Claude Code 能在終端機中執行什麼操作？
   type: multiple_choice
   options:
-  - "只能關機 (Shutdown Only)，功能單一。"
-  - "只能看檔案 (Read-Only)，無法修改。"
-  - "只能聊天 (Chat Only)，無法操作系統。"
-  - "操作檔案系統、執行指令並修改程式碼 (File System Operations, Command Execution, and Code Modification)"
+  - 只能關機 (Shutdown Only)，功能單一。
+  - 只能看檔案 (Read-Only)，無法修改。
+  - 只能聊天 (Chat Only)，無法操作系統。
+  - 操作檔案系統、執行指令並修改程式碼 (File System Operations, Command Execution, and Code Modification)
   correct_index: 3
   explanation: Claude Code 具備 Agent 能力，能直接對開發環境進行讀寫操作。
   tags:
@@ -454,10 +453,10 @@ questions:
   text: 新一代 AI 開發工具的趨勢是？
   type: multiple_choice
   options:
-  - "回到組合語言 (Back to Assembly)，技術倒退。"
-  - "完全取代人類 (Replacing Humans Completely)，過度誇大。"
-  - "模糊了 Coding 與 No Code 的界線，深度整合生成式 AI (Blurring Lines Between Coding and No Code: Deep Integration of GenAI)"
-  - "禁止使用 AI (Banning AI)，反對技術進步。"
+  - 回到組合語言 (Back to Assembly)，技術倒退。
+  - 完全取代人類 (Replacing Humans Completely)，過度誇大。
+  - '模糊了 Coding 與 No Code 的界線，深度整合生成式 AI (Blurring Lines Between Coding and No Code: Deep Integration of GenAI)'
+  - 禁止使用 AI (Banning AI)，反對技術進步。
   correct_index: 2
   explanation: AI 讓寫程式變得像說話一樣自然，同時讓 No Code 工具具備了處理複雜邏輯的能力。
   tags:
@@ -470,10 +469,10 @@ questions:
   text: v0 的主要功能是將什麼轉換為程式碼？
   type: multiple_choice
   options:
-  - "聲音 (Sound)，音訊轉換。"
-  - "腦波 (Brainwaves)，神經訊號。"
-  - "圖像/草圖/文字描述 (Images/Sketches/Text Descriptions)"
-  - "影片 (Video)，動態影像。"
+  - 聲音 (Sound)，音訊轉換。
+  - 腦波 (Brainwaves)，神經訊號。
+  - 圖像/草圖/文字描述 (Images/Sketches/Text Descriptions)
+  - 影片 (Video)，動態影像。
   correct_index: 2
   explanation: v0 利用多模態模型理解視覺設計，並生成對應的前端程式碼。
   tags:
@@ -486,10 +485,10 @@ questions:
   text: AI 輔助開發的主要效益是？
   type: multiple_choice
   options:
-  - "增加 Bug (Increasing Bugs)，降低品質。"
-  - "讓開發者可以睡覺 (Letting Developers Sleep)，誇張描述。"
-  - "生成樣板程式碼與測試數據，讓開發者專注於核心邏輯 (Generating Boilerplate Code and Test Data, Allowing Focus on Core Logic)"
-  - "降低薪水 (Lowering Salaries)，負面影響。"
+  - 增加 Bug (Increasing Bugs)，降低品質。
+  - 讓開發者可以睡覺 (Letting Developers Sleep)，誇張描述。
+  - 生成樣板程式碼與測試數據，讓開發者專注於核心邏輯 (Generating Boilerplate Code and Test Data, Allowing Focus on Core Logic)
+  - 降低薪水 (Lowering Salaries)，負面影響。
   correct_index: 2
   explanation: AI 能處理繁瑣重複的編碼工作，釋放開發者的創造力。
   tags:
@@ -502,10 +501,10 @@ questions:
   text: n8n 內建的 AI Agent 節點可以連接？
   type: multiple_choice
   options:
-  - "多種 LLM 與超過 400 種外部服務 (Multiple LLMs and Over 400 External Services)"
-  - "只有 Google Sheets (Google Sheets Only)，限制單一服務。"
-  - "只有 Slack (Slack Only)，限制通訊軟體。"
-  - "只有 GPT-4 (GPT-4 Only)，限制單一模型。"
+  - 多種 LLM 與超過 400 種外部服務 (Multiple LLMs and Over 400 External Services)
+  - 只有 Google Sheets (Google Sheets Only)，限制單一服務。
+  - 只有 Slack (Slack Only)，限制通訊軟體。
+  - 只有 GPT-4 (GPT-4 Only)，限制單一模型。
   correct_index: 0
   explanation: n8n 的強大之處在於其廣泛的整合能力，能將 AI 智慧注入各種第三方服務。
   tags:
@@ -518,10 +517,10 @@ questions:
   text: ComfyUI 適合哪種使用者？
   type: multiple_choice
   options:
-  - "需要進階控制圖像生成流程的專業使用者 (Professional Users Requiring Advanced Control over Image Generation Workflow)"
-  - "會計師 (Accountant)，專注於財務。"
-  - "只需要一鍵生成的人 (One-Click Generation Users)，偏好簡單操作。"
-  - "文字工作者 (Writers)，專注於文字創作。"
+  - 需要進階控制圖像生成流程的專業使用者 (Professional Users Requiring Advanced Control over Image Generation Workflow)
+  - 會計師 (Accountant)，專注於財務。
+  - 只需要一鍵生成的人 (One-Click Generation Users)，偏好簡單操作。
+  - 文字工作者 (Writers)，專注於文字創作。
   correct_index: 0
   explanation: ComfyUI 的學習曲線較陡，但提供了無與倫比的控制力，適合專業創作者。
   tags:
@@ -534,10 +533,10 @@ questions:
   text: Cursor 是基於哪個編輯器修改的？
   type: multiple_choice
   options:
-  - "Sublime Text (Sublime Text)，輕量級編輯器。"
-  - "Vim (Vim)，命令列編輯器。"
-  - "VS Code (VS Code)，微軟開發的開源編輯器。"
-  - "Atom (Atom)，GitHub 開發的編輯器。"
+  - Sublime Text (Sublime Text)，輕量級編輯器。
+  - Vim (Vim)，命令列編輯器。
+  - VS Code (VS Code)，微軟開發的開源編輯器。
+  - Atom (Atom)，GitHub 開發的編輯器。
   correct_index: 2
   explanation: Cursor 繼承了 VS Code 的生態系與操作習慣，讓開發者能無痛轉移。
   tags:
@@ -550,10 +549,10 @@ questions:
   text: Low Code 平台的優勢在於兼具？
   type: multiple_choice
   options:
-  - "好看與好用 (Good Looking and Easy to Use)，主觀感受。"
-  - "簡單與複雜 (Simple and Complex)，矛盾描述。"
-  - "開發速度與擴展性 (Scalability) (Development Speed and Scalability)"
-  - "便宜與免費 (Cheap and Free)，成本考量。"
+  - 好看與好用 (Good Looking and Easy to Use)，主觀感受。
+  - 簡單與複雜 (Simple and Complex)，矛盾描述。
+  - 開發速度與擴展性 (Scalability) (Development Speed and Scalability)
+  - 便宜與免費 (Cheap and Free)，成本考量。
   correct_index: 2
   explanation: Low Code 在提升效率的同時，保留了透過程式碼擴充功能的空間，避免被平台限制鎖死。
   tags:
@@ -566,10 +565,10 @@ questions:
   text: Google Antigravity 採用什麼樣的介面設計？
   type: multiple_choice
   options:
-  - "雙視圖 (Editor & Manager) (Dual View: Editor & Manager)"
-  - "全螢幕 (Full Screen)，顯示模式。"
-  - "單一視窗 (Single Window)，傳統介面。"
-  - "VR 介面 (VR Interface)，虛擬實境。"
+  - '雙視圖 (Editor & Manager) (Dual View: Editor & Manager)'
+  - 全螢幕 (Full Screen)，顯示模式。
+  - 單一視窗 (Single Window)，傳統介面。
+  - VR 介面 (VR Interface)，虛擬實境。
   correct_index: 0
   explanation: 雙視圖設計讓使用者能同時關注程式碼細節與 Agent 的高層規劃。
   tags:
@@ -582,10 +581,10 @@ questions:
   text: OpenAI Codex 具備在什麼環境中執行測試的能力？
   type: multiple_choice
   options:
-  - "區塊鏈 (Blockchain)，分散式帳本。"
-  - "使用者的電腦 (User's Computer)，本地環境。"
-  - "公開網路 (Public Internet)，外部網路。"
-  - "隔離沙箱 (Sandbox) (Isolated Sandbox)，安全測試環境。"
+  - 區塊鏈 (Blockchain)，分散式帳本。
+  - 使用者的電腦 (User's Computer)，本地環境。
+  - 公開網路 (Public Internet)，外部網路。
+  - 隔離沙箱 (Sandbox) (Isolated Sandbox)，安全測試環境。
   correct_index: 3
   explanation: 沙箱環境確保 AI 執行的程式碼不會對外部系統造成危害，提供安全的測試空間。
   tags:
@@ -598,10 +597,10 @@ questions:
   text: Windsurf 的 Agent 能做什麼？
   type: multiple_choice
   options:
-  - "只能回答問題 (Answer Questions Only)，被動回應。"
-  - "只能格式化程式碼 (Format Code Only)，單一功能。"
-  - "持續監控並預測開發者下一步想做什麼 (Continuously Monitor and Predict Developer's Next Move)"
-  - "只能寫註解 (Write Comments Only)，輔助功能。"
+  - 只能回答問題 (Answer Questions Only)，被動回應。
+  - 只能格式化程式碼 (Format Code Only)，單一功能。
+  - 持續監控並預測開發者下一步想做什麼 (Continuously Monitor and Predict Developer's Next Move)
+  - 只能寫註解 (Write Comments Only)，輔助功能。
   correct_index: 2
   explanation: Windsurf 的主動性是其一大特色，試圖減少開發者手動下指令的頻率。
   tags:
@@ -614,10 +613,10 @@ questions:
   text: Replit Agent 適合用來？
   type: multiple_choice
   options:
-  - "開發大型企業系統 (Developing Large Enterprise Systems)，規模限制。"
-  - "維護舊系統 (Maintaining Legacy Systems)，相容性挑戰。"
-  - "快速構建 MVP (最小可行性產品) (Rapidly Building MVP: Minimum Viable Product)"
-  - "寫組合語言 (Writing Assembly Language)，不支援。"
+  - 開發大型企業系統 (Developing Large Enterprise Systems)，規模限制。
+  - 維護舊系統 (Maintaining Legacy Systems)，相容性挑戰。
+  - '快速構建 MVP (最小可行性產品) (Rapidly Building MVP: Minimum Viable Product)'
+  - 寫組合語言 (Writing Assembly Language)，不支援。
   correct_index: 2
   explanation: Replit Agent 能快速將想法轉化為可運行的原型，非常適合驗證創意或構建小型應用。
   tags:
@@ -630,10 +629,10 @@ questions:
   text: No Code (無程式碼) 平台的主要目標客群通常是？
   type: multiple_choice
   options:
-  - "資深後端工程師 (Senior Backend Engineers)，偏好 Coding。"
-  - "駭客 (Hackers)，專注於資安攻防。"
-  - "系統架構師 (System Architects)，專注於整體設計。"
-  - "非技術人員 (Citizen Developers)、行銷、PM (Non-technical Users: Citizen Developers, Marketing, PM)"
+  - 資深後端工程師 (Senior Backend Engineers)，偏好 Coding。
+  - 駭客 (Hackers)，專注於資安攻防。
+  - 系統架構師 (System Architects)，專注於整體設計。
+  - '非技術人員 (Citizen Developers)、行銷、PM (Non-technical Users: Citizen Developers, Marketing, PM)'
   correct_index: 3
   explanation: No Code 旨在賦能不懂程式碼的人員，透過圖形化介面也能構建應用程式。
   tags:
@@ -646,10 +645,10 @@ questions:
   text: AI-Native IDE (如 Cursor) 與傳統 IDE 外掛最大的不同在於？
   type: multiple_choice
   options:
-  - "只能寫 Python (Python Only)，語言限制。"
-  - "比較便宜 (Cheaper)，價格因素。"
-  - "沒有語法高亮 (No Syntax Highlighting)，功能缺失。"
-  - "會建立專案的 AST 與向量索引，能理解整個 Codebase 的上下文 (AST and Vector Indexing: Understanding Full Codebase Context)"
+  - 只能寫 Python (Python Only)，語言限制。
+  - 比較便宜 (Cheaper)，價格因素。
+  - 沒有語法高亮 (No Syntax Highlighting)，功能缺失。
+  - '會建立專案的 AST 與向量索引，能理解整個 Codebase 的上下文 (AST and Vector Indexing: Understanding Full Codebase Context)'
   correct_index: 3
   explanation: AI-Native IDE 從底層整合 AI，能跨檔案理解專案結構，而非僅限於當前編輯的檔案。
   tags:
@@ -662,10 +661,10 @@ questions:
   text: Cursor 編輯器的 Codebase RAG 功能主要用途是？
   type: multiple_choice
   options:
-  - "讓 AI 參考整個專案的程式碼風格與架構來回答問題 (Referencing Full Project Style and Architecture for Answers)"
-  - "刪除多餘程式碼 (Deleting Redundant Code)，重構功能。"
-  - "編譯程式碼 (Compiling Code)，編譯器功能。"
-  - "自動上色 (Auto Coloring)，語法高亮。"
+  - 讓 AI 參考整個專案的程式碼風格與架構來回答問題 (Referencing Full Project Style and Architecture for Answers)
+  - 刪除多餘程式碼 (Deleting Redundant Code)，重構功能。
+  - 編譯程式碼 (Compiling Code)，編譯器功能。
+  - 自動上色 (Auto Coloring)，語法高亮。
   correct_index: 0
   explanation: 透過索引整個專案，Cursor 能給出符合現有架構與規範的建議，而非通用的範例代碼。
   tags:
@@ -678,10 +677,10 @@ questions:
   text: Windsurf 編輯器強調的 "Flow" 範式是指？
   type: multiple_choice
   options:
-  - "水流冷卻系統 (Water Cooling System)，硬體散熱。"
-  - "Agent 主動監控開發行為並預測下一步，提供無縫協助 (Agent Proactively Monitors and Predicts Next Steps for Seamless Assistance)"
-  - "強制休息提醒 (Forced Rest Reminder)，健康功能。"
-  - "音樂播放功能 (Music Player)，娛樂功能。"
+  - 水流冷卻系統 (Water Cooling System)，硬體散熱。
+  - Agent 主動監控開發行為並預測下一步，提供無縫協助 (Agent Proactively Monitors and Predicts Next Steps for Seamless Assistance)
+  - 強制休息提醒 (Forced Rest Reminder)，健康功能。
+  - 音樂播放功能 (Music Player)，娛樂功能。
   correct_index: 1
   explanation: Flow 範式強調 AI 與開發者的無縫協作，AI 不再被動等待指令，而是主動預判需求。
   tags:
@@ -694,10 +693,10 @@ questions:
   text: Google Antigravity IDE 的核心設計理念是？
   type: multiple_choice
   options:
-  - "Agent-first，強調多 Agent 協作與可驗證性 (Verifiability) (Agent-first: Emphasizing Multi-Agent Collaboration and Verifiability)"
-  - "No-code only (No-code Only)，僅限無程式碼。"
-  - "Mobile-first (Mobile-first)，行動優先。"
-  - "Offline-first (Offline-first)，離線優先。"
+  - 'Agent-first，強調多 Agent 協作與可驗證性 (Verifiability) (Agent-first: Emphasizing Multi-Agent Collaboration and Verifiability)'
+  - No-code only (No-code Only)，僅限無程式碼。
+  - Mobile-first (Mobile-first)，行動優先。
+  - Offline-first (Offline-first)，離線優先。
   correct_index: 0
   explanation: Antigravity 讓使用者指揮多個 Agent 進行自主規劃與實作，並提供 Artifacts 供驗證。
   tags:
@@ -710,10 +709,10 @@ questions:
   text: Replit Agent 的主要功能是？
   type: multiple_choice
   options:
-  - "版本控制 (Version Control)，如 Git。"
-  - "根據自然語言描述，自動規劃、撰寫並部署應用程式 (Automated Planning, Coding, and Deployment from Natural Language Description)"
-  - "雲端儲存 (Cloud Storage)，如 Dropbox。"
-  - "聊天機器人 (Chatbot)，對話功能。"
+  - 版本控制 (Version Control)，如 Git。
+  - 根據自然語言描述，自動規劃、撰寫並部署應用程式 (Automated Planning, Coding, and Deployment from Natural Language Description)
+  - 雲端儲存 (Cloud Storage)，如 Dropbox。
+  - 聊天機器人 (Chatbot)，對話功能。
   correct_index: 1
   explanation: Replit Agent 降低了開發門檻，讓使用者只需描述想法，AI 就能完成從開發到部署的全流程。
   tags:
@@ -726,10 +725,10 @@ questions:
   text: n8n 是一個什麼樣的工具？
   type: multiple_choice
   options:
-  - "工作流自動化工具，可串接 LLM 與外部服務 (Workflow Automation Tool: Connecting LLM and External Services)"
-  - "繪圖軟體 (Drawing Software)，設計用途。"
-  - "防毒軟體 (Antivirus Software)，資安防護。"
-  - "作業系統 (Operating System)，如 Windows。"
+  - '工作流自動化工具，可串接 LLM 與外部服務 (Workflow Automation Tool: Connecting LLM and External Services)'
+  - 繪圖軟體 (Drawing Software)，設計用途。
+  - 防毒軟體 (Antivirus Software)，資安防護。
+  - 作業系統 (Operating System)，如 Windows。
   correct_index: 0
   explanation: n8n 透過節點串接不同服務 (如 Gmail, Slack, LLM)，實現辦公流程自動化。
   tags:
@@ -742,10 +741,10 @@ questions:
   text: ComfyUI 主要是為了哪個 AI 模型設計的節點式介面？
   type: multiple_choice
   options:
-  - "GPT-4 (GPT-4)，文字生成模型。"
-  - "Llama 3 (Llama 3)，開源文字生成模型。"
-  - "Stable Diffusion (Stable Diffusion)，圖像生成模型。"
-  - "BERT (BERT)，自然語言理解模型。"
+  - GPT-4 (GPT-4)，文字生成模型。
+  - Llama 3 (Llama 3)，開源文字生成模型。
+  - Stable Diffusion (Stable Diffusion)，圖像生成模型。
+  - BERT (BERT)，自然語言理解模型。
   correct_index: 2
   explanation: ComfyUI 讓使用者能以節點方式精細控制 Stable Diffusion 的圖像生成流程。
   tags:
@@ -758,10 +757,10 @@ questions:
   text: 「影子 IT (Shadow IT)」帶來的風險不包括？
   type: multiple_choice
   options:
-  - "資安漏洞 (Security Vulnerabilities)，未經授權的工具可能不安全。"
-  - "提升 IT 部門權力 (Increasing IT Department Power)，這是反義，影子 IT 削弱了 IT 管控。"
-  - "資料孤島 (Data Silos)，資料無法整合。"
-  - "系統缺乏維護 (Lack of System Maintenance)，人員離職後無人接手。"
+  - 資安漏洞 (Security Vulnerabilities)，未經授權的工具可能不安全。
+  - 提升 IT 部門權力 (Increasing IT Department Power)，這是反義，影子 IT 削弱了 IT 管控。
+  - 資料孤島 (Data Silos)，資料無法整合。
+  - 系統缺乏維護 (Lack of System Maintenance)，人員離職後無人接手。
   correct_index: 1
   explanation: 影子 IT 通常發生在 IT 部門管轄之外，削弱了 IT 的管控能力，而非提升。
   tags:
@@ -774,10 +773,10 @@ questions:
   text: 利用 AI 生成 Boilerplate Code (樣板程式碼) 的好處是？
   type: multiple_choice
   options:
-  - "完全取代工程師 (Replacing Engineers Completely)，過度誇大。"
-  - "保證程式碼無 Bug (Guaranteed Bug-free Code)，AI 也會出錯。"
-  - "節省撰寫重複性高、結構化程式碼的時間 (Saving Time on Repetitive, Structured Code)"
-  - "增加程式碼複雜度 (Increasing Code Complexity)，負面影響。"
+  - 完全取代工程師 (Replacing Engineers Completely)，過度誇大。
+  - 保證程式碼無 Bug (Guaranteed Bug-free Code)，AI 也會出錯。
+  - 節省撰寫重複性高、結構化程式碼的時間 (Saving Time on Repetitive, Structured Code)
+  - 增加程式碼複雜度 (Increasing Code Complexity)，負面影響。
   correct_index: 2
   explanation: AI 非常擅長生成標準化、重複性的代碼，讓開發者能專注於核心邏輯。
   tags:
@@ -790,10 +789,10 @@ questions:
   text: 對於一家需要高度客製化 ERP 系統且擁有專業 IT 團隊的大型企業，應選擇 No Code 還是 Low Code 平台？
   type: multiple_choice
   options:
-  - "兩者都不選，直接用 Excel 管理 (Use Excel Only)，難以擴展。"
-  - "No Code，因為它比較便宜 (No Code: Cheaper)，但功能受限。"
-  - "No Code，因為開發速度最快，完全不需要寫程式 (No Code: Fastest Dev, No Coding)，但靈活性低。"
-  - "Low Code，因為它允許插入自定義程式碼以處理複雜邏輯，同時保有一定的開發效率 (Low Code: Allows Custom Code for Complex Logic while Maintaining Efficiency)"
+  - 兩者都不選，直接用 Excel 管理 (Use Excel Only)，難以擴展。
+  - 'No Code，因為它比較便宜 (No Code: Cheaper)，但功能受限。'
+  - 'No Code，因為開發速度最快，完全不需要寫程式 (No Code: Fastest Dev, No Coding)，但靈活性低。'
+  - 'Low Code，因為它允許插入自定義程式碼以處理複雜邏輯，同時保有一定的開發效率 (Low Code: Allows Custom Code for Complex Logic while Maintaining Efficiency)'
   correct_index: 3
   explanation: No Code 靈活性太低，無法滿足大型企業的複雜邏輯需求；Low Code 提供了必要的擴展性。
   tags:
@@ -806,10 +805,10 @@ questions:
   text: n8n 這類工作流自動化工具，與傳統寫程式開發相比，最大的優勢在於？
   type: multiple_choice
   options:
-  - "生成的應用程式介面最美觀 (Most Beautiful UI)，非主要優勢。"
-  - "可以完全離線執行，不需要網路 (Offline Execution)，通常需要網路。"
-  - "執行速度比編譯語言快 100 倍 (100x Faster Execution)，錯誤描述。"
-  - "視覺化節點設計讓流程一目了然，且內建大量第三方服務 (如 Slack, Gmail) 的整合，大幅降低串接門檻 (Visual Node Design and Built-in Integrations for Easy Connection)"
+  - 生成的應用程式介面最美觀 (Most Beautiful UI)，非主要優勢。
+  - 可以完全離線執行，不需要網路 (Offline Execution)，通常需要網路。
+  - 執行速度比編譯語言快 100 倍 (100x Faster Execution)，錯誤描述。
+  - 視覺化節點設計讓流程一目了然，且內建大量第三方服務 (如 Slack, Gmail) 的整合，大幅降低串接門檻 (Visual Node Design and Built-in Integrations for Easy Connection)
   correct_index: 3
   explanation: n8n 解決了「API 串接」的繁瑣工作，讓開發者專注於業務邏輯的編排。
   tags:
@@ -822,10 +821,10 @@ questions:
   text: 使用 v0 或 Lovable 這類 UI 生成工具時，開發者最需要注意的限制是？
   type: multiple_choice
   options:
-  - "它們生成的程式碼有版權問題，完全不能商用 (Copyright Issues: Non-commercial Use Only)，通常不正確。"
-  - "生成的 UI 通常非常醜陋，無法使用 (Ugly UI: Unusable)，主觀且不符事實。"
-  - "它們通常只生成前端畫面代碼，後端的資料庫與業務邏輯仍需人工處理或另外串接 (Frontend Only: Backend Logic Requires Manual Integration)"
-  - "它們只能生成 Python 程式碼，無法生成 HTML/CSS (Python Only: No HTML/CSS)，錯誤描述。"
+  - '它們生成的程式碼有版權問題，完全不能商用 (Copyright Issues: Non-commercial Use Only)，通常不正確。'
+  - '生成的 UI 通常非常醜陋，無法使用 (Ugly UI: Unusable)，主觀且不符事實。'
+  - '它們通常只生成前端畫面代碼，後端的資料庫與業務邏輯仍需人工處理或另外串接 (Frontend Only: Backend Logic Requires Manual Integration)'
+  - '它們只能生成 Python 程式碼，無法生成 HTML/CSS (Python Only: No HTML/CSS)，錯誤描述。'
   correct_index: 2
   explanation: UI 生成工具專注於「皮」，「骨肉」（後端邏輯）通常仍需開發者自行補完。
   tags:
@@ -838,10 +837,10 @@ questions:
   text: 企業內部「影子 IT (Shadow IT)」現象氾濫（員工私自使用 AI 工具），最根本的解決策略是？
   type: multiple_choice
   options:
-  - "安裝監控軟體，開除所有違規員工 (Surveillance and Firing)，治標不治本。"
-  - "提供合規且好用的企業級 AI 工具替代方案，並建立明確的使用規範，而非單純防堵 (Provide Compliant AI Tools and Guidelines instead of Just Blocking)"
-  - "嚴格禁止所有員工使用電腦 (Ban Computers)，不切實際。"
-  - "切斷公司網路，回歸紙本作業 (Cut Internet, Return to Paper)，倒退做法。"
+  - 安裝監控軟體，開除所有違規員工 (Surveillance and Firing)，治標不治本。
+  - 提供合規且好用的企業級 AI 工具替代方案，並建立明確的使用規範，而非單純防堵 (Provide Compliant AI Tools and Guidelines instead of Just Blocking)
+  - 嚴格禁止所有員工使用電腦 (Ban Computers)，不切實際。
+  - 切斷公司網路，回歸紙本作業 (Cut Internet, Return to Paper)，倒退做法。
   correct_index: 1
   explanation: 影子 IT 源於員工想提高效率的需求。疏導（提供安全工具）通常比圍堵（全面禁止）更有效。
   tags:
@@ -854,10 +853,10 @@ questions:
   text: 在 AI 輔助開發 (AI-Assisted Development) 中，堅持 Human-in-the-loop (HITL) 原則的主要原因是？
   type: multiple_choice
   options:
-  - "因為法律規定程式碼必須由人類撰寫 (Legal Requirement)，非主要原因。"
-  - "為了讓人類感覺自己還有用 (To Make Humans Feel Useful)，心理因素。"
-  - "因為 AI 生成的程式碼可能包含隱蔽的 Bug 或資安漏洞，必須由人類審查把關 (AI Code May Contain Hidden Bugs/Vulnerabilities, Requiring Human Review)"
-  - "因為 AI 無法自行按下鍵盤上的 Enter 鍵 (AI Cannot Press Enter)，錯誤描述。"
+  - 因為法律規定程式碼必須由人類撰寫 (Legal Requirement)，非主要原因。
+  - 為了讓人類感覺自己還有用 (To Make Humans Feel Useful)，心理因素。
+  - 因為 AI 生成的程式碼可能包含隱蔽的 Bug 或資安漏洞，必須由人類審查把關 (AI Code May Contain Hidden Bugs/Vulnerabilities, Requiring Human Review)
+  - 因為 AI 無法自行按下鍵盤上的 Enter 鍵 (AI Cannot Press Enter)，錯誤描述。
   correct_index: 2
   explanation: AI 是強大的副駕駛，但它會犯錯（幻覺）。人類必須對最終產品的品質與安全性負責。
   tags:
@@ -870,10 +869,10 @@ questions:
   text: Cursor 的 Composer 功能與傳統 IDE 的 Copilot 最大的區別在於？
   type: multiple_choice
   options:
-  - "Composer 具備跨檔案編輯能力，能一次性修改多個檔案以完成一個完整功能，而非僅在當前游標處補全 (Cross-File Editing: Modifying Multiple Files for Complete Feature Implementation)"
-  - "Composer 支援語音輸入，Copilot 不支援 (Voice Input Support)，非主要區別。"
-  - "Composer 是完全免費的，Copilot 需要付費 (Free vs Paid)，非功能區別。"
-  - "Composer 只能寫註解，不能寫程式 (Comments Only)，錯誤描述。"
+  - 'Composer 具備跨檔案編輯能力，能一次性修改多個檔案以完成一個完整功能，而非僅在當前游標處補全 (Cross-File Editing: Modifying Multiple Files for Complete Feature Implementation)'
+  - Composer 支援語音輸入，Copilot 不支援 (Voice Input Support)，非主要區別。
+  - Composer 是完全免費的，Copilot 需要付費 (Free vs Paid)，非功能區別。
+  - Composer 只能寫註解，不能寫程式 (Comments Only)，錯誤描述。
   correct_index: 0
   explanation: Composer 突破了單一檔案的限制，讓 AI 能像資深工程師一樣進行系統級的重構或功能開發。
   tags:
@@ -886,10 +885,10 @@ questions:
   text: 某新創公司開發一套圖像描述生成系統，能根據輸入的照片自動產生 說明文字。為了讓產生的描述文字能與圖片資訊精準對應，下列哪一種 設計思路最關鍵？ (114年第四梯次)
   type: multiple_choice
   options:
-  - "強化語言模型的句法與流暢性，確保生成文字更自然易讀 (Enhancing Syntax and Fluency)"
-  - "在生成過程中結合圖片特徵與語言建模，讓模型同時利用影像內容與文字資訊 (Combining Image Features and Language Modeling)"
-  - "調整生成策略（如 Beam Search 或溫度參數） ，以提升輸出文字的合理性 (Adjusting Generation Strategy)"
-  - "專注於文字序列上下文的建模，只提升文字間的連貫性 (Focusing on Text Context Modeling)"
+  - 強化語言模型的句法與流暢性，確保生成文字更自然易讀 (Enhancing Syntax and Fluency)
+  - 在生成過程中結合圖片特徵與語言建模，讓模型同時利用影像內容與文字資訊 (Combining Image Features and Language Modeling)
+  - 調整生成策略（如 Beam Search 或溫度參數） ，以提升輸出文字的合理性 (Adjusting Generation Strategy)
+  - 專注於文字序列上下文的建模，只提升文字間的連貫性 (Focusing on Text Context Modeling)
   correct_index: 1
   explanation: 圖像描述生成 (Image Captioning) 的核心在於將影像特徵與文字生成模型結合，使生成的文字能準確反映影像內容，而非僅是通順的句子。
   tags:
@@ -963,8 +962,7 @@ questions:
   - GitHub Copilot利用靜態分析技術分析程式碼，根據邏輯流程推導下一步應寫的程式碼
   - GitHub Copilot 由OpenAI 的 Codex 模型提供技術支援，可即時在開發者編輯程式碼時給出整行或整個函式建議
   correct_index: 0
-  explanation: 此題涉及 關於 GitHub ... 的核心概念。正確答案為「GitHub Copilot 基於程式碼片段查詢工具，透過後端搜尋大型程式
-    碼資料庫提供建議； 第二科：生成式 AI 應用與規劃」。
+  explanation: 此題涉及 關於 GitHub ... 的核心概念。正確答案為「GitHub Copilot 基於程式碼片段查詢工具，透過後端搜尋大型程式 碼資料庫提供建議； 第二科：生成式 AI 應用與規劃」。
   tags:
   - past-exam
   - 114-4
@@ -1308,4 +1306,148 @@ questions:
   - chap-gen-chapter5
   - sec-integration-risks
   id: 11457
+  usage: both
+- id: 115003
+  chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 歷屆考題
+  text: 某企業規劃透過 Low-Code 平台建置可視化儀表板，以支援營運數據的即時監控 與分析判讀。若企業特別關注儀表板顯示結果的穩定性與分析可信度，下列何者 最應優先確認？（115年第一梯次）
+  options:
+  - 是否具備穩定的資料串接能力與即時更新機制；
+  - 是否提供自動化決策建議與預測分析模組；
+  - 是否支援彈性介面設計與多角色權限管理；
+  - 是否整合流程觸發與跨系統通知功能
+  correct_index: 0
+  explanation: 儀表板的可信度建立在資料源的正確性上，因此必須優先確認平台是否具備穩定的資料串接能力與即時更新機制。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter5
+  - sec-past-exam
+  usage: both
+- id: 115007
+  chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 歷屆考題
+  text: 某企業導入 No-Code/Low-Code 平台，讓各部門能自行建立資料分析與流程應用。 隨著使用範圍擴大，管理層開始關注資料權限、存取紀錄與合規要求。依資料治 理觀點，下列何者最合理描述此類平台對企業治理機制的典型影響？（115年第一梯次）
+  options:
+  - 平台內建角色權限與資料存取控管機制，有助治理制度落實；
+  - 平台強化部門自主性，通常使既有治理流程難以延續；
+  - 平台主要支援應用快速開發，資料治理仍需完全仰賴外部系統；
+  - 平台透過自動化設定機制，可顯著降低治理與合規管理需求
+  correct_index: 0
+  explanation: 在企業級的 No-Code/Low-Code 平台中，通常內建角色權限與資料存取控管機制，這有助於集中管理並落實企業的資料治理制度。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter5
+  - sec-past-exam
+  usage: both
+- id: 115008
+  chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 歷屆考題
+  text: 某製造企業規劃於設備端建置邊緣運算（Edge Computing）架構，並以 No- Code/Low-Code 平台開發即時監控應用。測試顯示，系統在雲端環境執行順暢， 但部署至邊緣裝置後出現回應延遲與效能下降。依此情境判斷，下列何者最合理 解釋該現象？（115年第一梯次）
+  options:
+  - 邊緣運算架構可降低系統對效能的需求；
+  - No-Code/Low-Code 平台僅能在雲端環境執行；
+  - 雲端部署通常比邊緣部署更容易出現延遲；
+  - 邊緣裝置通常受限於運算能力與可用資源
+  correct_index: 3
+  explanation: 邊緣裝置（Edge Devices）相較於雲端伺服器，通常受限於運算能力與可用資源，因此在執行複雜的 AI 模型或大量數據處理時容易出現延遲。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter5
+  - sec-past-exam
+  usage: both
+- id: 115011
+  chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 歷屆考題
+  text: 某零售企業規劃提升門市數據應用能力，目標包括：門市主管可自行調整分析畫 面與檢視指標呈現，以及由行銷部門建立銷售預測模型，以支援補貨與促銷規 劃。企業在選型時以工具的主要功能定位與典型用途作為評估依據。依此需求判 斷，下列哪一項 AI 工具使用規劃最合理？（115年第一梯次）
+  options:
+  - 以 AutoML 作為分析介面調整平台，No-Code 平台用於模型訓練；
+  - 以 No-Code 平台支援分析與介面調整，AutoML 負責模型建立；
+  - 僅導入 No-Code 平台，同時滿足高階模型建立與分析需求；
+  - 僅導入 AutoML，以兼顧介面調整與模型訓練
+  correct_index: 1
+  explanation: No-Code 平台適合讓主管等非技術人員以視覺化介面自行調整分析畫面；而 AutoML 工具則適合行銷人員用於建立與訓練銷售預測模型。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter5
+  - sec-past-exam
+  usage: both
+- id: 115029
+  chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 歷屆考題
+  text: 某農業合作社希望建立一套自動化工作流程，當農民透過手機 APP 回報田間病蟲 害照片時，系統能自動通知相關專家、建立案件紀錄並排程現場訪查。該合作社 IT 資訊人力有限，僅有一位具備基礎程式概念的人員。下列哪一種開發方式最適 合此需求？（115年第一梯次）
+  options:
+  - 採用傳統程式開發，從零開始撰寫完整系統；
+  - 使用純粹的 No-Code 平台，完全不需要任何程式技能；
+  - 使用 Low-Code 平台，結合視覺化拖拉與少量程式碼；
+  - 直接購買現成的農業管理軟體，不進行客製化
+  correct_index: 2
+  explanation: 由於 IT 人力有限但具備基礎程式概念，Low-Code 平台結合了視覺化拖拉與少量程式碼的特性，最適合用來快速串接多個系統與工作流程。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter5
+  - sec-past-exam
+  usage: both
+- id: 115032
+  chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 歷屆考題
+  text: 隨著企業加速導入 AI，No-Code/Low-Code 平台逐漸成為模型開發與產品化的常 見工具。相較於傳統自行撰寫程式的建模流程，下列何者最能正確描述此類平台 在模型訓練機制上的典型特性？（115年第一梯次）
+  options:
+  - 透過視覺化介面與標準化流程，協助完成模型訓練與調校；
+  - 主要提供既有模型推論能力，通常不支援重新訓練；
+  - 著重資料處理與轉換，模型訓練仍需外部工具完成；
+  - 多數僅適用於特定大數據框架（如 Spark）的訓練流程
+  correct_index: 0
+  explanation: 多數 No-Code/Low-Code 平台在模型訓練上，主要是透過視覺化介面與標準化流程來降低門檻，協助使用者快速完成模型訓練與參數調校。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter5
+  - sec-past-exam
+  usage: both
+- id: 115033
+  chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 歷屆考題
+  text: 某醫療院所希望改善行政效率，規劃讓各科室人員可自行建立行政回報與內部申 請表單，並導入 AI 功能以自動判讀與分類填寫內容（如問題類型或需求性質） ， 同時需兼顧流程調整彈性與降低系統開發維運負擔。下列哪一種技術組合最適 第二科：生成式 AI 應用與規劃 合？（115年第一梯次）
+  options:
+  - Low-Code 平台 × 預訓練語言模型 API；
+  - No-Code 平台 × 規則式自動化（Rule-based Automation）；
+  - 傳統程式開發 × 自建深度學習模型；
+  - 試算表工具 × 手動資料標記分析
+  correct_index: 0
+  explanation: Low-Code 平台提供了開發表單與流程的彈性，而預訓練語言模型（LLM）API 則能輕鬆導入 AI 判讀與分類能力，且大幅降低自建模型的維運負擔。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter5
+  - sec-past-exam
+  usage: both
+- id: 115034
+  chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 歷屆考題
+  text: 某企業導入 No-Code/Low-Code 平台開放各部門自行開發應用。半年後發現：出 現多個功能相近系統、資料欄位定義不一致，且部分應用未經審核即上線，並伴 隨權限與維運管理混亂。下列何者最可能為根本問題？（115年第一梯次）
+  options:
+  - 缺乏統一的開發與上線管理機制；
+  - 平台提供過高的應用設計自主性；
+  - 部門未建立共用的資料分析呈現標準；
+  - 系統整合與自動化能力尚未完善
+  correct_index: 0
+  explanation: 當開放各部門自行開發應用時，若缺乏統一的開發與上線管理機制（如集中審核、欄位標準化），極易造成系統重疊與權限混亂的「影子 IT」問題。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter5
+  - sec-past-exam
+  usage: both
+- id: 115049
+  chapter_title: No Code / Low Code 平台與 AI 開發工具
+  section_title: 歷屆考題
+  text: 某企業使用 Low-Code 平台建置內部營運系統，系統需整合財務、庫存與第三方 物流服務。團隊希望確保系統在跨部門流程與外部服務整合下，具高可靠性與可 測試性。下列哪一項作法最能達成目標？（115年第一梯次）
+  options:
+  - 只透過平台提供的流程模擬與即時預覽，檢查常用操作路徑；
+  - 建立自動化測試流程，結合模擬外部服務與可重複執行的整合測試；
+  - 將測試重點放在使用者介面操作，確認操作流程是否順暢；
+  - 上線後再透過使用者回饋與報表監控系統行為，進行修正
+  correct_index: 1
+  explanation: 在牽涉到跨部門與第三方服務的複雜系統中，建立自動化整合測試流程能最有效地確保各個介接點的穩定性與可靠性。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter5
+  - sec-past-exam
   usage: both

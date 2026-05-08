@@ -85,7 +85,6 @@ questions:
   text: 解決方案圖譜 (Solution Graph) 將解決問題的過程建模為？
   type: multiple_choice
   options:
-  options:
   - 一個點 (A Single Node) – overly simplistic representation.
   - 一個圓圈 (A Circle) – does not capture relationships.
   - 一條直線 (A Straight Line) – insufficient for complex decision paths.
@@ -101,7 +100,6 @@ questions:
   section_title: Agent 架構與組件
   text: 在 Solution Graph 中，廣度優先搜尋 (BFS) 適合？
   type: multiple_choice
-  options:
   options:
   - 什麼都不做 (Do Nothing) – no exploration.
   - 深入挖掘單一路徑 (Deep Dive Single Path) – may miss broader solutions.
@@ -119,12 +117,10 @@ questions:
   text: 在 Solution Graph 中，深度優先搜尋 (DFS) 適合？
   type: multiple_choice
   options:
-  options:
   - 廣泛探索 (Broad Exploration) – akin to BFS, covers many branches.
   - 快速瀏覽 (Quick Scan) – shallow, may miss depth.
   - 需要深入挖掘的任務 (Task Requiring Deep Exploration) – aligns with DFS.
   - 尋找最短路徑 (Find Shortest Path) – more BFS-oriented.
-
   correct_index: 2
   explanation: DFS 優先探索深層節點，適合需要連續推理或鑽研到底的場景。
   tags:
@@ -137,12 +133,10 @@ questions:
   text: 多代理系統 (Multi-Agent Systems) 的主要優勢是？
   type: multiple_choice
   options:
-  options:
   - 省電 (Energy Saving) – not a primary advantage.
   - 減少程式碼量 (Reduced Code Size) – minor benefit.
   - 透過角色分工協作，解決單一 Agent 無法處理的複雜任務 (Collaborative Role Division to Solve Complex Tasks) – core advantage.
   - 不需要 LLM (No Need for LLM) – inaccurate.
-
   correct_index: 2
   explanation: 透過專業分工（如 PM、工程師、測試員），多個 Agent 能協作完成大型專案。
   tags:
@@ -155,12 +149,10 @@ questions:
   text: 在多代理協作中，負責拆解需求並分派任務的角色通常是？
   type: multiple_choice
   options:
-  options:
   - 工程師 Agent (Engineer Agent) – typically handles implementation.
   - 實習生 Agent (Intern Agent) – unlikely to lead task allocation.
   - 產品經理 (PM) Agent – responsible for task decomposition and assignment.
   - 測試 Agent (Tester Agent) – focuses on validation.
-
   correct_index: 2
   explanation: PM Agent 負責統籌規劃，將大目標轉化為可執行的子任務並指派給專責 Agent。
   tags:
@@ -173,10 +165,10 @@ questions:
   text: 多代理系統常見的挑戰「無限循環 (Infinite Loops)」是指？
   type: multiple_choice
   options:
-  - "Agent 當機 (Agent Crash)，系統完全停止運作。"
-  - "Agent 之間互相踢皮球，任務無法推進 (Infinite Loops: Agents Passing Tasks Back and Forth Without Progress)"
-  - "Agent 跑得太快 (Agent Running Too Fast)，導致資源耗盡。"
-  - "Agent 拒絕工作 (Agent Refusing Work)，因權限不足而停止。"
+  - Agent 當機 (Agent Crash)，系統完全停止運作。
+  - 'Agent 之間互相踢皮球，任務無法推進 (Infinite Loops: Agents Passing Tasks Back and Forth Without Progress)'
+  - Agent 跑得太快 (Agent Running Too Fast)，導致資源耗盡。
+  - Agent 拒絕工作 (Agent Refusing Work)，因權限不足而停止。
   correct_index: 1
   explanation: 當 Agent A 等待 Agent B，而 Agent B 又等待 Agent A 時，就會陷入死結或無窮迴圈。
   tags:
@@ -189,10 +181,10 @@ questions:
   text: 解決多代理系統「無限循環」的常見方法是？
   type: multiple_choice
   options:
-  - "拔掉電源 (Unplugging Power)，強制重啟系統。"
-  - "刪除記憶 (Deleting Memory)，清除所有歷史紀錄。"
-  - "增加更多 Agent (Adding More Agents)，試圖透過更多人手解決問題。"
-  - "設定最大對話輪數 (Max Turns) 或引入監督者 Agent (Setting Max Turns or Introducing Supervisor Agent)"
+  - 拔掉電源 (Unplugging Power)，強制重啟系統。
+  - 刪除記憶 (Deleting Memory)，清除所有歷史紀錄。
+  - 增加更多 Agent (Adding More Agents)，試圖透過更多人手解決問題。
+  - 設定最大對話輪數 (Max Turns) 或引入監督者 Agent (Setting Max Turns or Introducing Supervisor Agent)
   correct_index: 3
   explanation: 強制限制互動次數或由上層監督者介入中斷，能有效防止系統空轉。
   tags:
@@ -205,10 +197,10 @@ questions:
   text: 若多個 Agent 對同一問題有不同答案（答案衝突），該如何解決？
   type: multiple_choice
   options:
-  - "全部捨棄 (Discard All)，重新開始任務。"
-  - "讓它們吵架 (Let Them Argue)，直到一方勝出。"
-  - "引入「決策者 Agent」或投票機制 (Introducing Decision Maker Agent or Voting Mechanism)"
-  - "隨機選一個 (Random Selection)，任選一個答案作為最終結果。"
+  - 全部捨棄 (Discard All)，重新開始任務。
+  - 讓它們吵架 (Let Them Argue)，直到一方勝出。
+  - 引入「決策者 Agent」或投票機制 (Introducing Decision Maker Agent or Voting Mechanism)
+  - 隨機選一個 (Random Selection)，任選一個答案作為最終結果。
   correct_index: 2
   explanation: 透過仲裁機制或多數決，可以從衝突的意見中整合出最終決策。
   tags:
@@ -221,10 +213,10 @@ questions:
   text: Agent 的「自我反思 (Self-Reflection)」功能是指？
   type: multiple_choice
   options:
-  - "自我刪除 (Self-Deletion)，任務完成後自動移除程式碼。"
-  - "執行後檢查結果是否符合預期，並進行修正 (Self-Reflection: Checking Results Against Expectations and Correcting)"
-  - "自我備份 (Self-Backup)，定期儲存當前狀態。"
-  - "自我複製 (Self-Replication)，產生新的 Agent 實例。"
+  - 自我刪除 (Self-Deletion)，任務完成後自動移除程式碼。
+  - '執行後檢查結果是否符合預期，並進行修正 (Self-Reflection: Checking Results Against Expectations and Correcting)'
+  - 自我備份 (Self-Backup)，定期儲存當前狀態。
+  - 自我複製 (Self-Replication)，產生新的 Agent 實例。
   correct_index: 1
   explanation: 反思能力讓 Agent 能從錯誤中學習並調整策略，而非盲目執行錯誤的計畫。
   tags:
@@ -237,10 +229,10 @@ questions:
   text: 最佳優先搜尋 (Best-First Search) 的策略是？
   type: multiple_choice
   options:
-  - "隨機選擇 (Random Selection)，不考慮任何路徑成本。"
-  - "先走最長的路 (Longest Path First)，優先探索最深的路徑。"
-  - "評估哪條路看起來最有希望 (Heuristic)，優先走那條 (Best-First Search: Prioritizing Most Promising Path via Heuristic)"
-  - "先走最難的路 (Hardest Path First)，優先解決最困難的部分。"
+  - 隨機選擇 (Random Selection)，不考慮任何路徑成本。
+  - 先走最長的路 (Longest Path First)，優先探索最深的路徑。
+  - '評估哪條路看起來最有希望 (Heuristic)，優先走那條 (Best-First Search: Prioritizing Most Promising Path via Heuristic)'
+  - 先走最難的路 (Hardest Path First)，優先解決最困難的部分。
   correct_index: 2
   explanation: 利用啟發式函數評估節點價值，優先探索最可能通往目標的路徑，效率通常比盲目搜尋高。
   tags:
@@ -253,10 +245,10 @@ questions:
   text: 在 A2A 協作中，Client Agent 的角色是？
   type: multiple_choice
   options:
-  - "執行任務 (Executing Tasks)，負責實際的工作執行。"
-  - "資料庫 (Database)，負責儲存數據。"
-  - "發起者，接收人類指令並轉發給執行者 (Initiator: Receiving Human Instructions and Forwarding to Executors)"
-  - "測試軟體 (Testing Software)，負責驗證結果。"
+  - 執行任務 (Executing Tasks)，負責實際的工作執行。
+  - 資料庫 (Database)，負責儲存數據。
+  - '發起者，接收人類指令並轉發給執行者 (Initiator: Receiving Human Instructions and Forwarding to Executors)'
+  - 測試軟體 (Testing Software)，負責驗證結果。
   correct_index: 2
   explanation: Client Agent 作為人類與 Agent 系統的介面，負責接收需求與回報結果。
   tags:
@@ -269,10 +261,10 @@ questions:
   text: 為了解決「角色定義不清」的問題，應該？
   type: multiple_choice
   options:
-  - "隨機指派任務 (Randomly Assigning Tasks)，不考慮 Agent 能力。"
-  - "在 System Prompt 中極度明確地定義每個 Agent 的職責邊界 (Defining Clear Role Boundaries in System Prompt)"
-  - "不給任何指令 (Giving No Instructions)，讓 Agent 自由發揮。"
-  - "讓 Agent 自己猜 (Letting Agent Guess)，不提供明確指引。"
+  - 隨機指派任務 (Randomly Assigning Tasks)，不考慮 Agent 能力。
+  - 在 System Prompt 中極度明確地定義每個 Agent 的職責邊界 (Defining Clear Role Boundaries in System Prompt)
+  - 不給任何指令 (Giving No Instructions)，讓 Agent 自由發揮。
+  - 讓 Agent 自己猜 (Letting Agent Guess)，不提供明確指引。
   correct_index: 1
   explanation: 明確的職責定義能避免責任重疊或推卸，確保協作順暢。
   tags:
@@ -285,10 +277,10 @@ questions:
   text: Agent 的短期記憶通常是指？
   type: multiple_choice
   options:
-  - "當下的對話上下文 (Context) (Current Dialogue Context)"
-  - "訓練資料 (Training Data)，用於模型預訓練的數據。"
-  - "硬碟檔案 (Hard Drive Files)，長期儲存的資料。"
-  - "網路搜尋結果 (Web Search Results)，外部檢索的資訊。"
+  - 當下的對話上下文 (Context) (Current Dialogue Context)
+  - 訓練資料 (Training Data)，用於模型預訓練的數據。
+  - 硬碟檔案 (Hard Drive Files)，長期儲存的資料。
+  - 網路搜尋結果 (Web Search Results)，外部檢索的資訊。
   correct_index: 0
   explanation: 短期記憶維持對當前對話狀態的認知，受限於 Context Window 大小。
   tags:
@@ -301,10 +293,10 @@ questions:
   text: Solution Graph 中的「邊 (Edge)」代表？
   type: multiple_choice
   options:
-  - "採取的行動或轉換 (Action or Transition Taken)"
-  - "錯誤 (Error)，執行過程中的異常。"
-  - "終點 (Endpoint)，任務的結束狀態。"
-  - "狀態 (State)，系統當前的狀況。"
+  - 採取的行動或轉換 (Action or Transition Taken)
+  - 錯誤 (Error)，執行過程中的異常。
+  - 終點 (Endpoint)，任務的結束狀態。
+  - 狀態 (State)，系統當前的狀況。
   correct_index: 0
   explanation: 邊連接了不同的狀態節點，代表導致狀態改變的動作或決策。
   tags:
@@ -317,10 +309,10 @@ questions:
   text: Remote Agent 在 A2A 架構中負責？
   type: multiple_choice
   options:
-  - "發號施令 (Giving Orders)，負責指揮其他 Agent。"
-  - "付錢 (Paying)，負責支付費用。"
-  - "休息 (Resting)，不進行任何操作。"
-  - "執行被指派的任務 (Executing Assigned Tasks)"
+  - 發號施令 (Giving Orders)，負責指揮其他 Agent。
+  - 付錢 (Paying)，負責支付費用。
+  - 休息 (Resting)，不進行任何操作。
+  - 執行被指派的任務 (Executing Assigned Tasks)
   correct_index: 3
   explanation: Remote Agent 是實際的執行者，負責完成 Client Agent 指派的具體工作。
   tags:
@@ -333,10 +325,10 @@ questions:
   text: Agent 能夠「感知環境」意味著？
   type: multiple_choice
   options:
-  - "它能預知未來 (Predicting Future)，預測尚未發生的事件。"
-  - "它有眼睛 (Having Eyes)，具備生物視覺器官。"
-  - "它有感覺 (Having Feelings)，具備情感感知能力。"
-  - "它能透過輸入（如文字、API 回傳值）獲取外部狀態資訊 (Perceiving Environment: Acquiring External State Info via Inputs like Text or API)"
+  - 它能預知未來 (Predicting Future)，預測尚未發生的事件。
+  - 它有眼睛 (Having Eyes)，具備生物視覺器官。
+  - 它有感覺 (Having Feelings)，具備情感感知能力。
+  - '它能透過輸入（如文字、API 回傳值）獲取外部狀態資訊 (Perceiving Environment: Acquiring External State Info via Inputs like Text or API)'
   correct_index: 3
   explanation: 感知是指接收並理解外部資訊的能力，這是做出正確決策的前提。
   tags:
@@ -349,10 +341,10 @@ questions:
   text: 下列何者屬於 Agent 的「工具」？
   type: multiple_choice
   options:
-  - "搜尋引擎 API (Search Engine API)，用於檢索網路資訊。"
-  - "計算機 (Calculator)，用於執行數學運算。"
-  - "Python 直譯器 (Python Interpreter)，用於執行程式碼。"
-  - "以上皆是 (All of the Above)，皆為擴展 Agent 能力的工具。"
+  - 搜尋引擎 API (Search Engine API)，用於檢索網路資訊。
+  - 計算機 (Calculator)，用於執行數學運算。
+  - Python 直譯器 (Python Interpreter)，用於執行程式碼。
+  - 以上皆是 (All of the Above)，皆為擴展 Agent 能力的工具。
   correct_index: 3
   explanation: 任何能擴展 Agent 能力、與外部互動的介面或軟體都可視為工具。
   tags:
@@ -365,10 +357,10 @@ questions:
   text: 軟體開發團隊的 Agent 協作模式是模仿？
   type: multiple_choice
   options:
-  - "人類公司的組織分工 (Human Organizational Division of Labor)，模仿企業架構。"
-  - "物理定律 (Laws of Physics)，模仿自然界的物理規則。"
-  - "隨機漫步 (Random Walk)，無目的的隨機移動。"
-  - "動物行為 (Animal Behavior)，模仿生物本能。"
+  - 人類公司的組織分工 (Human Organizational Division of Labor)，模仿企業架構。
+  - 物理定律 (Laws of Physics)，模仿自然界的物理規則。
+  - 隨機漫步 (Random Walk)，無目的的隨機移動。
+  - 動物行為 (Animal Behavior)，模仿生物本能。
   correct_index: 0
   explanation: MAS 常借鑑人類社會的組織架構，透過專業分工提升效率。
   tags:
@@ -381,10 +373,10 @@ questions:
   text: Solution Graph 的功能是作為 Agent 的？
   type: multiple_choice
   options:
-  - "燃料 (Fuel)，提供運作能量。"
-  - "導航地圖 (Navigation Map)，指引從起點到目標的路徑。"
-  - "外觀 (Appearance)，定義視覺形象。"
-  - "聲音 (Voice)，定義語音輸出。"
+  - 燃料 (Fuel)，提供運作能量。
+  - 導航地圖 (Navigation Map)，指引從起點到目標的路徑。
+  - 外觀 (Appearance)，定義視覺形象。
+  - 聲音 (Voice)，定義語音輸出。
   correct_index: 1
   explanation: 它提供了決策空間的結構化視圖，指引 Agent 如何從起點到達目標狀態。
   tags:
@@ -397,10 +389,10 @@ questions:
   text: 監督者 Agent (Supervisor) 的主要職責是？
   type: multiple_choice
   options:
-  - "掃地 (Sweeping)，負責清潔工作。"
-  - "發送 Email (Sending Emails)，負責通訊工作。"
-  - "監控流程、協調衝突並防止無限循環 (Monitoring Process, Coordinating Conflicts, and Preventing Infinite Loops)"
-  - "寫程式 (Writing Code)，負責開發工作。"
+  - 掃地 (Sweeping)，負責清潔工作。
+  - 發送 Email (Sending Emails)，負責通訊工作。
+  - 監控流程、協調衝突並防止無限循環 (Monitoring Process, Coordinating Conflicts, and Preventing Infinite Loops)
+  - 寫程式 (Writing Code)，負責開發工作。
   correct_index: 2
   explanation: 監督者負責維持系統秩序，確保各 Agent 依循規則協作，並在異常時介入。
   tags:
@@ -413,10 +405,10 @@ questions:
   text: Agent 的「任務拆解」能力為何重要？
   type: multiple_choice
   options:
-  - "因為複雜目標通常無法一步登天，需分解為可執行的小步驟 (Complex Goals Require Decomposition into Executable Steps)"
-  - "為了拖延時間 (To Delay Time)，故意放慢執行速度。"
-  - "因為 LLM 只能處理短句 (Because LLM Can Only Handle Short Sentences)，受限於模型能力。"
-  - "為了增加成本 (To Increase Cost)，故意增加資源消耗。"
+  - 因為複雜目標通常無法一步登天，需分解為可執行的小步驟 (Complex Goals Require Decomposition into Executable Steps)
+  - 為了拖延時間 (To Delay Time)，故意放慢執行速度。
+  - 因為 LLM 只能處理短句 (Because LLM Can Only Handle Short Sentences)，受限於模型能力。
+  - 為了增加成本 (To Increase Cost)，故意增加資源消耗。
   correct_index: 0
   explanation: 將大目標（如旅遊規劃）拆解為小步驟（如訂票），能降低單一步驟的難度與出錯率。
   tags:
@@ -429,10 +421,10 @@ questions:
   text: BFS 與 DFS 都是在哪種結構上進行的搜尋策略？
   type: multiple_choice
   options:
-  - "圖 (Graph) 或 樹 (Tree) (Graph or Tree)，非線性資料結構。"
-  - "佇列 (Queue)，先進先出的線性結構。"
-  - "堆疊 (Stack)，後進先出的線性結構。"
-  - "列表 (List)，有序的線性結構。"
+  - 圖 (Graph) 或 樹 (Tree) (Graph or Tree)，非線性資料結構。
+  - 佇列 (Queue)，先進先出的線性結構。
+  - 堆疊 (Stack)，後進先出的線性結構。
+  - 列表 (List)，有序的線性結構。
   correct_index: 0
   explanation: 這兩者是圖論與演算法中遍歷圖形結構的經典方法。
   tags:
@@ -445,10 +437,10 @@ questions:
   text: 工程師 Agent 與 測試 Agent 的關係通常是？
   type: multiple_choice
   options:
-  - "協作與回饋循環 (Collaboration and Feedback Loop: Engineer Writes -> Tester Tests -> Reports Bug -> Engineer Fixes)"
-  - "互不相干 (Independent)，各自獨立工作無交集。"
-  - "競爭 (Competition)，爭奪資源或獎勵。"
-  - "敵對 (Hostile)，互相阻礙對方工作。"
+  - '協作與回饋循環 (Collaboration and Feedback Loop: Engineer Writes -> Tester Tests -> Reports Bug -> Engineer Fixes)'
+  - 互不相干 (Independent)，各自獨立工作無交集。
+  - 競爭 (Competition)，爭奪資源或獎勵。
+  - 敵對 (Hostile)，互相阻礙對方工作。
   correct_index: 0
   explanation: 這模擬了軟體開發中的迭代流程，透過回饋循環不斷提升程式碼品質。
   tags:
@@ -461,10 +453,10 @@ questions:
   text: Agent 的四大組件不包含？
   type: multiple_choice
   options:
-  - "情感 (Emotion)，情緒感知與表達能力。"
-  - "規劃 (Planning)，制定行動方案的能力。"
-  - "工具使用 (Tool Use)，調用外部工具的能力。"
-  - "大腦 (Brain)，核心推理與決策模組。"
+  - 情感 (Emotion)，情緒感知與表達能力。
+  - 規劃 (Planning)，制定行動方案的能力。
+  - 工具使用 (Tool Use)，調用外部工具的能力。
+  - 大腦 (Brain)，核心推理與決策模組。
   correct_index: 0
   explanation: 目前的 Agent 架構主要關注功能性組件（腦、記憶、規劃、工具），情感模組並非標準配備。
   tags:
@@ -477,10 +469,10 @@ questions:
   text: Solution Graph 中的節點 (Node) 代表？
   type: multiple_choice
   options:
-  - "行動 (Action)，導致狀態改變的操作。"
-  - "起點 (Start Point)，任務的初始狀態。"
-  - "終點 (End Point)，任務的結束狀態。"
-  - "某個狀態或中間結果 (State or Intermediate Result)"
+  - 行動 (Action)，導致狀態改變的操作。
+  - 起點 (Start Point)，任務的初始狀態。
+  - 終點 (End Point)，任務的結束狀態。
+  - 某個狀態或中間結果 (State or Intermediate Result)
   correct_index: 3
   explanation: 節點儲存了任務執行過程中的快照或暫存結果。
   tags:
@@ -493,10 +485,10 @@ questions:
   text: 為何需要多代理系統？
   type: multiple_choice
   options:
-  - "為了消耗更多算力 (To Consume More Compute Power)，增加硬體負擔。"
-  - "因為一個 Agent 太寂寞 (Because One Agent is Lonely)，擬人化解釋。"
-  - "為了好玩 (For Fun)，純粹娛樂性質。"
-  - "因為單一 Agent 的 Context Window 有限且能力單一，難以處理超大型任務 (Single Agent Limitations: Finite Context Window and Specialized Capabilities)"
+  - 為了消耗更多算力 (To Consume More Compute Power)，增加硬體負擔。
+  - 因為一個 Agent 太寂寞 (Because One Agent is Lonely)，擬人化解釋。
+  - 為了好玩 (For Fun)，純粹娛樂性質。
+  - '因為單一 Agent 的 Context Window 有限且能力單一，難以處理超大型任務 (Single Agent Limitations: Finite Context Window and Specialized Capabilities)'
   correct_index: 3
   explanation: MAS 突破了單一模型的限制，透過擴展性架構處理更複雜、更多元的任務。
   tags:
@@ -509,10 +501,10 @@ questions:
   text: Agent 執行 Python 程式碼的能力屬於？
   type: multiple_choice
   options:
-  - "記憶 (Memory)，儲存資訊的能力。"
-  - "工具使用 (Tool Use)，利用外部程式執行特定任務。"
-  - "大腦 (Brain)，核心推理能力。"
-  - "規劃 (Planning)，制定策略的能力。"
+  - 記憶 (Memory)，儲存資訊的能力。
+  - 工具使用 (Tool Use)，利用外部程式執行特定任務。
+  - 大腦 (Brain)，核心推理能力。
+  - 規劃 (Planning)，制定策略的能力。
   correct_index: 1
   explanation: Python 直譯器是 Agent 用來執行計算或處理資料的外部工具。
   tags:
@@ -525,10 +517,10 @@ questions:
   text: 在 A2A 互動中，Agent 之間的溝通通常透過？
   type: multiple_choice
   options:
-  - "心電感應 (Telepathy)，超自然溝通方式。"
-  - "圖片 (Images)，視覺化溝通。"
-  - "自然語言 (文字訊息) (Natural Language: Text Messages)，人類可讀的溝通方式。"
-  - "二進位碼 (Binary Code)，機器語言。"
+  - 心電感應 (Telepathy)，超自然溝通方式。
+  - 圖片 (Images)，視覺化溝通。
+  - '自然語言 (文字訊息) (Natural Language: Text Messages)，人類可讀的溝通方式。'
+  - 二進位碼 (Binary Code)，機器語言。
   correct_index: 2
   explanation: LLM Agent 之間主要透過自然語言進行對話與協調，這也是其靈活性的來源。
   tags:
@@ -541,10 +533,10 @@ questions:
   text: 自我反思 (Self-Reflection) 有助於避免？
   type: multiple_choice
   options:
-  - "學習 (Learning)，獲取新知識。"
-  - "修正 (Correction)，改正錯誤。"
-  - "一錯再錯 (累積誤差) (Repeating Mistakes: Accumulating Errors)"
-  - "成功 (Success)，達成目標。"
+  - 學習 (Learning)，獲取新知識。
+  - 修正 (Correction)，改正錯誤。
+  - '一錯再錯 (累積誤差) (Repeating Mistakes: Accumulating Errors)'
+  - 成功 (Success)，達成目標。
   correct_index: 2
   explanation: 透過及時檢查與修正，Agent 能防止錯誤擴大，提高任務成功率。
   tags:
@@ -557,10 +549,10 @@ questions:
   text: Heuristic (啟發式) 在最佳優先搜尋中的作用是？
   type: multiple_choice
   options:
-  - "隨機猜測 (Random Guessing)，無依據的選擇。"
-  - "評估路徑的好壞，指引搜尋方向 (Evaluating Path Quality to Guide Search Direction)"
-  - "記錄路徑 (Recording Path)，儲存歷史軌跡。"
-  - "阻擋搜尋 (Blocking Search)，停止探索。"
+  - 隨機猜測 (Random Guessing)，無依據的選擇。
+  - 評估路徑的好壞，指引搜尋方向 (Evaluating Path Quality to Guide Search Direction)
+  - 記錄路徑 (Recording Path)，儲存歷史軌跡。
+  - 阻擋搜尋 (Blocking Search)，停止探索。
   correct_index: 1
   explanation: 啟發式函數提供了一種估計方法，幫助演算法判斷哪個方向更接近目標。
   tags:
@@ -573,10 +565,10 @@ questions:
   text: 投票機制在 MAS 中用於？
   type: multiple_choice
   options:
-  - "解決 Agent 間的答案衝突 (Resolving Conflicts Between Agents' Answers)"
-  - "決定誰休息 (Deciding Who Rests)，分配休息時間。"
-  - "選總統 (Electing President)，政治選舉。"
-  - "娛樂 (Entertainment)，消遣活動。"
+  - 解決 Agent 間的答案衝突 (Resolving Conflicts Between Agents' Answers)
+  - 決定誰休息 (Deciding Who Rests)，分配休息時間。
+  - 選總統 (Electing President)，政治選舉。
+  - 娛樂 (Entertainment)，消遣活動。
   correct_index: 0
   explanation: 當多個 Agent 意見不一致時，投票是一種簡單有效的決策整合方式。
   tags:
@@ -589,10 +581,10 @@ questions:
   text: Agent 的長期記憶通常使用哪種技術實現？
   type: multiple_choice
   options:
-  - "Coding (程式設計)，撰寫程式碼。"
-  - "Fine-tuning (微調)，調整模型參數。"
-  - "RAG (檢索增強生成) (Retrieval-Augmented Generation)，結合檢索與生成。"
-  - "Prompting (提示工程)，設計提示詞。"
+  - Coding (程式設計)，撰寫程式碼。
+  - Fine-tuning (微調)，調整模型參數。
+  - RAG (檢索增強生成) (Retrieval-Augmented Generation)，結合檢索與生成。
+  - Prompting (提示工程)，設計提示詞。
   correct_index: 2
   explanation: 長期記憶的存取機制本質上就是 RAG，透過檢索向量資料庫來回憶過去的資訊。
   tags:
@@ -605,10 +597,10 @@ questions:
   text: Agent 能夠「做」事情，是因為它具備？
   type: multiple_choice
   options:
-  - "手腳 (Hands and Feet)，生物肢體。"
-  - "夢想 (Dreams)，未來願景。"
-  - "執行力 (Action / Tool Use) (Execution Capability: Action and Tool Use)"
-  - "勇氣 (Courage)，面對困難的膽量。"
+  - 手腳 (Hands and Feet)，生物肢體。
+  - 夢想 (Dreams)，未來願景。
+  - '執行力 (Action / Tool Use) (Execution Capability: Action and Tool Use)'
+  - 勇氣 (Courage)，面對困難的膽量。
   correct_index: 2
   explanation: 執行力是 Agent 與 Chatbot 的分水嶺，使其能對現實世界產生影響。
   tags:
@@ -621,10 +613,10 @@ questions:
   text: System Prompt 在 MAS 中的重要性在於？
   type: multiple_choice
   options:
-  - "定義 Agent 的角色、職責與行為準則 (Defining Agent Role, Responsibilities, and Behavioral Guidelines)"
-  - "不重要 (Not Important)，可有可無。"
-  - "增加 Token (Increasing Token Count)，消耗更多資源。"
-  - "美化介面 (Beautifying Interface)，改善視覺效果。"
+  - 定義 Agent 的角色、職責與行為準則 (Defining Agent Role, Responsibilities, and Behavioral Guidelines)
+  - 不重要 (Not Important)，可有可無。
+  - 增加 Token (Increasing Token Count)，消耗更多資源。
+  - 美化介面 (Beautifying Interface)，改善視覺效果。
   correct_index: 0
   explanation: System Prompt 是 Agent 的「人設」與「規則書」，決定了它在團隊中的行為模式。
   tags:
@@ -637,10 +629,10 @@ questions:
   text: Agentic AI 的發展標誌著 AI 從？
   type: multiple_choice
   options:
-  - "對話走向行動 (Chat to Action) (From Conversation to Execution)"
-  - "文字走向圖片 (Text to Image)，生成式繪圖。"
-  - "行動走向對話 (Action to Chat)，反向發展。"
-  - "圖片走向文字 (Image to Text)，影像辨識。"
+  - 對話走向行動 (Chat to Action) (From Conversation to Execution)
+  - 文字走向圖片 (Text to Image)，生成式繪圖。
+  - 行動走向對話 (Action to Chat)，反向發展。
+  - 圖片走向文字 (Image to Text)，影像辨識。
   correct_index: 0
   explanation: Agentic AI 代表 AI 不再只是被動的聊天機器人，而是能主動解決問題的數位勞動力。
   tags:
@@ -653,10 +645,10 @@ questions:
   text: 一個完整的 Agent 架構通常包含哪四大組件？
   type: multiple_choice
   options:
-  - "前端, 後端, 資料庫, API (Frontend, Backend, Database, API)，Web 應用架構。"
-  - "CPU, RAM, SSD, GPU，電腦硬體組件。"
-  - "輸入, 輸出, 處理, 儲存 (Input, Output, Processing, Storage)，電腦運作原理。"
-  - "大腦 (Brain), 規劃 (Planning), 記憶 (Memory), 工具使用 (Tools) (Brain, Planning, Memory, Tools)"
+  - 前端, 後端, 資料庫, API (Frontend, Backend, Database, API)，Web 應用架構。
+  - CPU, RAM, SSD, GPU，電腦硬體組件。
+  - 輸入, 輸出, 處理, 儲存 (Input, Output, Processing, Storage)，電腦運作原理。
+  - 大腦 (Brain), 規劃 (Planning), 記憶 (Memory), 工具使用 (Tools) (Brain, Planning, Memory, Tools)
   correct_index: 3
   explanation: 這是 Agent 架構的標準模型，涵蓋了思考、決策、記憶與行動的能力。
   tags:
@@ -669,10 +661,10 @@ questions:
   text: LLM 使用工具的標準機制稱為？
   type: multiple_choice
   options:
-  - "Web Scraping (網頁爬蟲)，抓取網頁資料。"
-  - "Tool Calling (工具呼叫)，泛指使用工具。"
-  - "API Request (API 請求)，發送網路請求。"
-  - "Function Calling (函數呼叫) (Function Calling)，LLM 輸出結構化指令以執行函數。"
+  - Web Scraping (網頁爬蟲)，抓取網頁資料。
+  - Tool Calling (工具呼叫)，泛指使用工具。
+  - API Request (API 請求)，發送網路請求。
+  - Function Calling (函數呼叫) (Function Calling)，LLM 輸出結構化指令以執行函數。
   correct_index: 3
   explanation: Function Calling 允許 LLM 輸出結構化的 JSON 來請求執行特定函數。
   tags:
@@ -685,10 +677,10 @@ questions:
   text: Agent 的「自我反思 (Self-Reflection)」能力是指？
   type: multiple_choice
   options:
-  - "在執行失敗後，分析原因並修改計畫，而非直接放棄 (Analyzing Failure Causes and Modifying Plan Instead of Giving Up)"
-  - "自我複製 (Self-Replication)，產生複本。"
-  - "自我刪除 (Self-Deletion)，移除自身程式。"
-  - "照鏡子 (Looking in Mirror)，物理反射。"
+  - 在執行失敗後，分析原因並修改計畫，而非直接放棄 (Analyzing Failure Causes and Modifying Plan Instead of Giving Up)
+  - 自我複製 (Self-Replication)，產生複本。
+  - 自我刪除 (Self-Deletion)，移除自身程式。
+  - 照鏡子 (Looking in Mirror)，物理反射。
   correct_index: 0
   explanation: 反思能力讓 Agent 具備從錯誤中學習並自我修正的韌性。
   tags:
@@ -701,10 +693,10 @@ questions:
   text: 在 Solution Graph 中，若要尋找最短路徑，通常使用哪種搜尋策略？
   type: multiple_choice
   options:
-  - "廣度優先搜尋 (BFS) (Breadth-First Search)，層層擴展搜尋。"
-  - "隨機搜尋 (Random Search)，無規律搜尋。"
-  - "暴力搜尋 (Brute Force Search)，窮舉所有可能。"
-  - "深度優先搜尋 (DFS) (Depth-First Search)，深入單一路徑搜尋。"
+  - 廣度優先搜尋 (BFS) (Breadth-First Search)，層層擴展搜尋。
+  - 隨機搜尋 (Random Search)，無規律搜尋。
+  - 暴力搜尋 (Brute Force Search)，窮舉所有可能。
+  - 深度優先搜尋 (DFS) (Depth-First Search)，深入單一路徑搜尋。
   correct_index: 0
   explanation: BFS 層層推進，能保證找到起始點到目標點的最短路徑。
   tags:
@@ -717,10 +709,10 @@ questions:
   text: 多代理系統 (Multi-Agent Systems) 常見的挑戰之一是？
   type: multiple_choice
   options:
-  - "無限循環 (Infinite Loops)，Agent 間互相踢皮球 (Infinite Loops: Agents Passing Tasks Back and Forth)"
-  - "Agent 會吵架 (Agents Arguing)，擬人化衝突。"
-  - "Agent 太多導致電腦當機 (Too Many Agents Crashing Computer)，資源耗盡。"
-  - "Agent 會罷工 (Agents Going on Strike)，拒絕工作。"
+  - '無限循環 (Infinite Loops)，Agent 間互相踢皮球 (Infinite Loops: Agents Passing Tasks Back and Forth)'
+  - Agent 會吵架 (Agents Arguing)，擬人化衝突。
+  - Agent 太多導致電腦當機 (Too Many Agents Crashing Computer)，資源耗盡。
+  - Agent 會罷工 (Agents Going on Strike)，拒絕工作。
   correct_index: 0
   explanation: 若缺乏明確的終止條件或職責劃分，Agent 容易陷入無窮的對話迴圈。
   tags:
@@ -733,10 +725,10 @@ questions:
   text: Microsoft AutoGen 框架的主要特色是？
   type: multiple_choice
   options:
-  - "只能用 C# 開發 (C# Only)，語言限制。"
-  - "專注於影像處理 (Focus on Image Processing)，視覺任務。"
-  - "透過多個 Agent 之間的「對話」來解決問題 (Solving Problems via Multi-Agent Conversation)"
-  - "只支援單一 Agent (Single Agent Support Only)，不支援協作。"
+  - 只能用 C# 開發 (C# Only)，語言限制。
+  - 專注於影像處理 (Focus on Image Processing)，視覺任務。
+  - 透過多個 Agent 之間的「對話」來解決問題 (Solving Problems via Multi-Agent Conversation)
+  - 只支援單一 Agent (Single Agent Support Only)，不支援協作。
   correct_index: 2
   explanation: AutoGen 強調 Conversational Programming，讓 Agent 像人類團隊一樣溝通協作。
   tags:
@@ -749,10 +741,10 @@ questions:
   text: CrewAI 框架強調什麼概念？
   type: multiple_choice
   options:
-  - "角色扮演 (Role-Playing) 與團隊運作 (Role-Playing and Team Operation)"
-  - "網頁爬蟲 (Web Scraping)，資料抓取。"
-  - "遊戲開發 (Game Development)，軟體製作。"
-  - "數學運算 (Mathematical Computation)，數值計算。"
+  - 角色扮演 (Role-Playing) 與團隊運作 (Role-Playing and Team Operation)
+  - 網頁爬蟲 (Web Scraping)，資料抓取。
+  - 遊戲開發 (Game Development)，軟體製作。
+  - 數學運算 (Mathematical Computation)，數值計算。
   correct_index: 0
   explanation: CrewAI 將 Agent 視為擁有特定角色、目標與背景故事的團隊成員 (Crew)。
   tags:
@@ -765,10 +757,10 @@ questions:
   text: Microsoft Semantic Kernel 特別適合哪種場景？
   type: multiple_choice
   options:
-  - "企業級應用整合，特別是 .NET 生態系 (Enterprise App Integration, especially .NET Ecosystem)"
-  - "手機遊戲 (Mobile Games)，娛樂應用。"
-  - "繪圖軟體 (Drawing Software)，設計工具。"
-  - "兒童教育 (Child Education)，學習軟體。"
+  - 企業級應用整合，特別是 .NET 生態系 (Enterprise App Integration, especially .NET Ecosystem)
+  - 手機遊戲 (Mobile Games)，娛樂應用。
+  - 繪圖軟體 (Drawing Software)，設計工具。
+  - 兒童教育 (Child Education)，學習軟體。
   correct_index: 0
   explanation: Semantic Kernel 提供了強大的 SDK，方便將 LLM 整合進現有的企業應用程式中。
   tags:
@@ -781,10 +773,10 @@ questions:
   text: Agent 與傳統 Chatbot 最大的區別在於？
   type: multiple_choice
   options:
-  - "Agent 比較貴 (Agent is More Expensive)，成本較高。"
-  - "Agent 具備感知環境、決策並執行行動 (Action) 的能力 (Agent Capabilities: Perception, Decision Making, and Action Execution)"
-  - "Agent 會說話 (Agent Can Speak)，語音能力。"
-  - "Agent 只能打字 (Agent Can Only Type)，文字輸入。"
+  - Agent 比較貴 (Agent is More Expensive)，成本較高。
+  - 'Agent 具備感知環境、決策並執行行動 (Action) 的能力 (Agent Capabilities: Perception, Decision Making, and Action Execution)'
+  - Agent 會說話 (Agent Can Speak)，語音能力。
+  - Agent 只能打字 (Agent Can Only Type)，文字輸入。
   correct_index: 1
   explanation: Chatbot 止於對話，Agent 始於行動。
   tags:
@@ -797,10 +789,10 @@ questions:
   text: Agent 的長期記憶通常儲存在哪裡？
   type: multiple_choice
   options:
-  - "紙本筆記 (Paper Notes)，物理紀錄。"
-  - "RAM (Random Access Memory)，揮發性記憶體。"
-  - "CPU 快取 (CPU Cache)，高速暫存。"
-  - "向量資料庫 (Vector DB) (Vector Database)，用於儲存語意向量。"
+  - 紙本筆記 (Paper Notes)，物理紀錄。
+  - RAM (Random Access Memory)，揮發性記憶體。
+  - CPU 快取 (CPU Cache)，高速暫存。
+  - 向量資料庫 (Vector DB) (Vector Database)，用於儲存語意向量。
   correct_index: 3
   explanation: 向量資料庫能高效儲存與檢索大量的非結構化經驗數據，作為 Agent 的長期記憶。
   tags:
@@ -813,10 +805,10 @@ questions:
   text: 在 Agent 架構中，「短期記憶 (Short-term Memory)」通常對應到什麼？
   type: multiple_choice
   options:
-  - "硬碟中的 Log 檔案 (Log Files on Hard Drive)，持久化紀錄。"
-  - "模型預訓練時學到的所有知識 (Knowledge from Pre-training)，長期知識庫。"
-  - "儲存在向量資料庫中的企業文件 (Enterprise Documents in Vector DB)，外部知識庫。"
-  - "當前對話的 Context Window，包含最近的對話紀錄與思考過程 (Context Window: Current Dialogue History and Thought Process)"
+  - 硬碟中的 Log 檔案 (Log Files on Hard Drive)，持久化紀錄。
+  - 模型預訓練時學到的所有知識 (Knowledge from Pre-training)，長期知識庫。
+  - 儲存在向量資料庫中的企業文件 (Enterprise Documents in Vector DB)，外部知識庫。
+  - '當前對話的 Context Window，包含最近的對話紀錄與思考過程 (Context Window: Current Dialogue History and Thought Process)'
   correct_index: 3
   explanation: 短期記憶讓 Agent 能理解當下的對話情境，但受限於 Context Window 大小，對話結束後通常會消失。
   tags:
@@ -829,10 +821,10 @@ questions:
   text: Agent 的「規劃 (Planning)」能力中，Decomposition (任務拆解) 的目的是？
   type: multiple_choice
   options:
-  - "將輸出的結果拆解成亂碼，以保護隱私 (Scrambling Output for Privacy)"
-  - "將使用者的 Prompt 拆解成單字，以便進行翻譯 (Tokenizing Prompt for Translation)"
-  - "將模型的權重拆解成多個小檔案，以便傳輸 (Splitting Model Weights for Transfer)"
-  - "將複雜的大目標拆解成多個可執行的小步驟，以降低執行難度 (Decomposing Complex Goals into Executable Steps)"
+  - 將輸出的結果拆解成亂碼，以保護隱私 (Scrambling Output for Privacy)
+  - 將使用者的 Prompt 拆解成單字，以便進行翻譯 (Tokenizing Prompt for Translation)
+  - 將模型的權重拆解成多個小檔案，以便傳輸 (Splitting Model Weights for Transfer)
+  - 將複雜的大目標拆解成多個可執行的小步驟，以降低執行難度 (Decomposing Complex Goals into Executable Steps)
   correct_index: 3
   explanation: 面對複雜任務（如寫一個遊戲），直接生成往往會失敗；拆解成「寫劇本、寫程式、測試」等小步驟能顯著提升成功率。
   tags:
@@ -845,10 +837,10 @@ questions:
   text: 在多代理系統 (MAS) 中，採用「階層式 (Hierarchical)」協作模式的主要好處是？
   type: multiple_choice
   options:
-  - "可以節省最多的 API Token (Saving Most API Tokens)，非主要優勢。"
-  - "所有 Agent 平起平坐，溝通效率最高 (Flat Structure: Equal Status Agents)，非階層式特點。"
-  - "不需要任何人類介入，Agent 會自己演化出語言 (No Human Intervention: Evolving Language)，不切實際。"
-  - "透過上層 Manager 分派任務給下層 Worker，權責分明，適合處理複雜且需統一指揮的專案 (Hierarchical Structure: Manager Assigns Tasks to Workers, Clear Roles)"
+  - 可以節省最多的 API Token (Saving Most API Tokens)，非主要優勢。
+  - '所有 Agent 平起平坐，溝通效率最高 (Flat Structure: Equal Status Agents)，非階層式特點。'
+  - '不需要任何人類介入，Agent 會自己演化出語言 (No Human Intervention: Evolving Language)，不切實際。'
+  - '透過上層 Manager 分派任務給下層 Worker，權責分明，適合處理複雜且需統一指揮的專案 (Hierarchical Structure: Manager Assigns Tasks to Workers, Clear Roles)'
   correct_index: 3
   explanation: 階層式架構（如 ChatDev）模擬了人類公司的組織結構，能有效管理複雜流程，避免 Agent 之間互相推託或混亂。
   tags:
@@ -858,14 +850,13 @@ questions:
 - id: 4064
   chapter_title: AI Agent 與多代理系統
   section_title: 多代理系統 (MAS)
-  text: 當多個 Agent 意見不合時（例如 Developer 寫的程式被 Tester 認為有 Bug，但 Developer 認為是 Feature），MAS
-    通常如何解決？
+  text: 當多個 Agent 意見不合時（例如 Developer 寫的程式被 Tester 認為有 Bug，但 Developer 認為是 Feature），MAS 通常如何解決？
   type: multiple_choice
   options:
-  - "隨機選擇一個 Agent 的意見作為最終結果 (Random Selection)，缺乏理性決策。"
-  - "透過多輪對話與反饋循環 (Feedback Loop)，讓 Agent 互相辯論並修正，直到達成共識或滿足終止條件 (Multi-turn Dialogue and Feedback Loop: Debate and Correction until Consensus)"
-  - "直接刪除兩個 Agent，重新建立新的 (Deleting Agents)，無法解決問題。"
-  - "停止系統運作，等待人類工程師手動修改程式碼 (Halting System for Human Intervention)，降低自動化程度。"
+  - 隨機選擇一個 Agent 的意見作為最終結果 (Random Selection)，缺乏理性決策。
+  - '透過多輪對話與反饋循環 (Feedback Loop)，讓 Agent 互相辯論並修正，直到達成共識或滿足終止條件 (Multi-turn Dialogue and Feedback Loop: Debate and Correction until Consensus)'
+  - 直接刪除兩個 Agent，重新建立新的 (Deleting Agents)，無法解決問題。
+  - 停止系統運作，等待人類工程師手動修改程式碼 (Halting System for Human Intervention)，降低自動化程度。
   correct_index: 1
   explanation: MAS 的強大之處在於 Agent 間的自主協商與修正，這模擬了人類團隊的 Code Review 流程。
   tags:
@@ -875,14 +866,13 @@ questions:
 - id: 11408
   chapter_title: AI 代理人 (AI Agents)
   section_title: Agent 架構與組件
-  text: 在 Agent-to-Agent（A2A）架構中，不同代理人之間會分工合作。一般 而言，下列敘述何者最符合 Client Agent 與 Remote
-    Agent 的互動流 程？ (114年第四梯次)
+  text: 在 Agent-to-Agent（A2A）架構中，不同代理人之間會分工合作。一般 而言，下列敘述何者最符合 Client Agent 與 Remote Agent 的互動流 程？ (114年第四梯次)
   type: multiple_choice
   options:
-  - "Remote Agent 主動分派任務給Client Agent (Remote Agent Assigns Tasks to Client Agent)"
-  - "由人工事先設定 Client Agent與 Remote Agent處理任務的先後順序 (Manually Pre-defined Order)"
-  - "Client Agent 發起任務，Remote Agent 執行並回傳結果 (Client Agent Initiates Task, Remote Agent Executes and Returns Result)"
-  - "Client Agent 與 Remote Agent同時處理任務並同步處理結果 (Simultaneous Processing)"
+  - Remote Agent 主動分派任務給Client Agent (Remote Agent Assigns Tasks to Client Agent)
+  - 由人工事先設定 Client Agent與 Remote Agent處理任務的先後順序 (Manually Pre-defined Order)
+  - Client Agent 發起任務，Remote Agent 執行並回傳結果 (Client Agent Initiates Task, Remote Agent Executes and Returns Result)
+  - Client Agent 與 Remote Agent同時處理任務並同步處理結果 (Simultaneous Processing)
   correct_index: 2
   explanation: AI Agent 具備感知、規劃、記憶與工具使用能力，能自主拆解目標並執行一連串行動以完成複雜任務。
   tags:
@@ -930,8 +920,7 @@ questions:
 - id: 11406
   chapter_title: AI 代理人 (AI Agents)
   section_title: Agent 架構與組件
-  text: 某設計團隊計畫在短時間內完成一款行動應用程式，必須同時達到高 度個人化體驗、快速生成介面與行銷內容自動產出等需求。若結合 No Code/Low Code平台與生成式AI
-    技術，以下哪一種整合策略最能符合 目標？ (114年第四梯次)
+  text: 某設計團隊計畫在短時間內完成一款行動應用程式，必須同時達到高 度個人化體驗、快速生成介面與行銷內容自動產出等需求。若結合 No Code/Low Code平台與生成式AI 技術，以下哪一種整合策略最能符合 目標？ (114年第四梯次)
   type: multiple_choice
   options:
   - 使用生成式 AI 自動產生 API 呼叫與元件配置，並由開發者手動整合至 No Code 平台流程
@@ -949,8 +938,7 @@ questions:
 - id: 11414
   chapter_title: AI 代理人 (AI Agents)
   section_title: Agent 架構與組件
-  text: 某電商公司導入 Agentic AI 來處理客服工作。測試發現 Agent 在回答 產品 FAQ 時經常出錯，且無法幫客戶修改訂單。這種情況最可能是因
-    為缺少下列哪兩項工具或技術？ (114年第四梯次)
+  text: 某電商公司導入 Agentic AI 來處理客服工作。測試發現 Agent 在回答 產品 FAQ 時經常出錯，且無法幫客戶修改訂單。這種情況最可能是因 為缺少下列哪兩項工具或技術？ (114年第四梯次)
   type: multiple_choice
   options:
   - API 調用（API Calling）＋ 任務規劃器（Task Planner）
@@ -968,8 +956,7 @@ questions:
 - id: 11450
   chapter_title: AI 代理人 (AI Agents)
   section_title: Agent 架構與組件
-  text: 小明想開發一個部落格寫作工具，讓用戶輸入文章開頭後，系統自動幫 忙寫出後續內容，例如輸入「今天去了台北木柵動物園...」 ，系統就能 續寫。若要實現這樣的功能，最適合選擇下列哪一類任務？
-    (114年第四梯次)
+  text: 小明想開發一個部落格寫作工具，讓用戶輸入文章開頭後，系統自動幫 忙寫出後續內容，例如輸入「今天去了台北木柵動物園...」 ，系統就能 續寫。若要實現這樣的功能，最適合選擇下列哪一類任務？ (114年第四梯次)
   type: multiple_choice
   options:
   - 序列到序列建模（Sequence-to-Sequence Modeling） ，透過輸入序列產生新的輸出序列
@@ -977,8 +964,7 @@ questions:
   - 生成式語言建模（Text Generation） ，依據上下文持續產生新的內容
   - 文本分類（Text Classification） ，針對輸入文本判斷情感、主題或標籤
   correct_index: 0
-  explanation: 此題涉及 小明想開發一個部落格... 的核心概念。正確答案為「序列到序列建模（Sequence-to-Sequence Modeling）
-    ，透過輸入序 列產生新的輸出序列；」。
+  explanation: 此題涉及 小明想開發一個部落格... 的核心概念。正確答案為「序列到序列建模（Sequence-to-Sequence Modeling） ，透過輸入序 列產生新的輸出序列；」。
   tags:
   - past-exam
   - 114-4
@@ -988,9 +974,7 @@ questions:
 - id: 11430
   chapter_title: AI 代理人 (AI Agents)
   section_title: Agent 架構與組件
-  text: 某大型物流公司計畫導入 AI 系統，以改善客服與配送作業的效率。專 案團隊規劃了以下四個步驟，請問正確的執行順序為何？ 1. 建立符合公司服務流程的
-    AI 對話邏輯與應答範本，確保顧客體驗 一致 2. 明確定義導入 AI 的目標並設定關鍵績效指標（KPI） 3. 蒐集與清理過往客服紀錄與配送相關資料，作為模型訓練素材
-    4. 評估並選擇合適的 AI 技術供應商或開源方案，確立技術方向與架 構 (114年第四梯次)
+  text: 某大型物流公司計畫導入 AI 系統，以改善客服與配送作業的效率。專 案團隊規劃了以下四個步驟，請問正確的執行順序為何？ 1. 建立符合公司服務流程的 AI 對話邏輯與應答範本，確保顧客體驗 一致 2. 明確定義導入 AI 的目標並設定關鍵績效指標（KPI） 3. 蒐集與清理過往客服紀錄與配送相關資料，作為模型訓練素材 4. 評估並選擇合適的 AI 技術供應商或開源方案，確立技術方向與架 構 (114年第四梯次)
   type: multiple_choice
   options:
   - 2 → 3 → 4 → 1
@@ -1008,8 +992,7 @@ questions:
 - id: 11435
   chapter_title: AI 代理人 (AI Agents)
   section_title: Agent 架構與組件
-  text: 在即時客服系統的效能測試中，若針對延遲測試（Latency Testing） 進行評估，下列哪一項指標最能反映系統是否符合用戶即時互動需 求？ 第二科：生成式
-    AI 應用與規劃 (114年第四梯次)
+  text: 在即時客服系統的效能測試中，若針對延遲測試（Latency Testing） 進行評估，下列哪一項指標最能反映系統是否符合用戶即時互動需 求？ 第二科：生成式 AI 應用與規劃 (114年第四梯次)
   type: multiple_choice
   options:
   - AI 模型在同一分鐘內可完成的回覆訊息數量
@@ -1027,8 +1010,7 @@ questions:
 - id: 11420
   chapter_title: AI 代理人 (AI Agents)
   section_title: Agent 架構與組件
-  text: 某醫院正在規劃一個 AI專案，目的是協助醫師從胸腔X 光影像中判斷 是否存在肺炎徵兆，團隊卻誤將生成式 AI 模型運用於影像診斷。下列 哪一項最可能成為主要風險？
-    (114年第四梯次)
+  text: 某醫院正在規劃一個 AI專案，目的是協助醫師從胸腔X 光影像中判斷 是否存在肺炎徵兆，團隊卻誤將生成式 AI 模型運用於影像診斷。下列 哪一項最可能成為主要風險？ (114年第四梯次)
   type: multiple_choice
   options:
   - 模型在生成報告時語句流暢，但僅在文字表達上有差異，對診斷結果沒有重大影響
@@ -1046,8 +1028,7 @@ questions:
 - id: 11424
   chapter_title: AI 代理人 (AI Agents)
   section_title: Agent 架構與組件
-  text: 某保險公司計畫導入生成式 AI 的內部合約查詢系統，協助業務員與法 務部門快速解讀保單條款與理賠規範。高層特別強調客戶資料隱私與 合規風險控管，即使需要投入較多資源，也必須確保資料不會外洩。在
-    第二科：生成式 AI 應用與規劃 此情況下，下列哪一種策略最符合公司的資料安全與合規優先考量？ (114年第四梯次)
+  text: 某保險公司計畫導入生成式 AI 的內部合約查詢系統，協助業務員與法 務部門快速解讀保單條款與理賠規範。高層特別強調客戶資料隱私與 合規風險控管，即使需要投入較多資源，也必須確保資料不會外洩。在 第二科：生成式 AI 應用與規劃 此情況下，下列哪一種策略最符合公司的資料安全與合規優先考量？ (114年第四梯次)
   type: multiple_choice
   options:
   - 導入開源模型並由 IT 團隊自建，後續再逐步補強隱私與合規控管

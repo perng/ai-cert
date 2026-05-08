@@ -802,8 +802,7 @@ questions:
 - id: 2061
   chapter_title: 進階提示工程 (Advanced Prompt Engineering)
   section_title: 進階提示策略
-  text: 在解決「24 點遊戲」這類需要多步驟推理與回溯的問題時，為何 Tree of Thoughts (ToT) 優於 Chain of Thought
-    (CoT)？
+  text: 在解決「24 點遊戲」這類需要多步驟推理與回溯的問題時，為何 Tree of Thoughts (ToT) 優於 Chain of Thought (CoT)？
   type: multiple_choice
   options:
   - 因為 ToT 不需要任何範例，而 CoT 需要大量範例 (ToT No Examples)
@@ -899,8 +898,7 @@ questions:
 - id: 11410
   chapter_title: 提示工程 (Prompt Engineering)
   section_title: 基礎提示模式
-  text: 某公司在導入生成式 AI協助撰寫內部報告時，測試人員刻意在輸入的 上下文中放入互相矛盾的資訊 （例如：同一位員工在不同段落被描述為 「入職三年」與「入職五年」
-    ） 。在這種情況下，最常見的模型行為會是 什麼？ (114年第四梯次)
+  text: 某公司在導入生成式 AI協助撰寫內部報告時，測試人員刻意在輸入的 上下文中放入互相矛盾的資訊 （例如：同一位員工在不同段落被描述為 「入職三年」與「入職五年」 ） 。在這種情況下，最常見的模型行為會是 什麼？ (114年第四梯次)
   type: multiple_choice
   options:
   - 永遠選擇第一段資訊作為答案依據 (Always First Info)
@@ -918,8 +916,7 @@ questions:
 - id: 11440
   chapter_title: 提示工程 (Prompt Engineering)
   section_title: 進階提示技巧
-  text: 在生成式 AI 的提示工程中，Graph Prompting 在處理複雜關係資料時， 為何通常比 Chain-of-Thought（CoT）更有效？
-    (114年第四梯次)
+  text: 在生成式 AI 的提示工程中，Graph Prompting 在處理複雜關係資料時， 為何通常比 Chain-of-Thought（CoT）更有效？ (114年第四梯次)
   type: multiple_choice
   options:
   - Graph Prompting 幾乎不需要推理，只依靠圖結構即可得出結論 (No Reasoning Needed)
@@ -937,8 +934,7 @@ questions:
 - id: 11441
   chapter_title: 提示工程 (Prompt Engineering)
   section_title: 基礎提示模式
-  text: 在少樣本提示（Few-shot Prompting）僅能提供 1–2 個範例的情況 下，若遇到領域偏移（Domain Shift） ，下列何者為模型最可能面臨的
-    核心挑戰？ (114年第四梯次)
+  text: 在少樣本提示（Few-shot Prompting）僅能提供 1–2 個範例的情況 下，若遇到領域偏移（Domain Shift） ，下列何者為模型最可能面臨的 核心挑戰？ (114年第四梯次)
   type: multiple_choice
   options:
   - 範例數量過少，無法涵蓋新領域的多樣性，導致模型泛化不足 (Insufficient Examples for Generalization)
@@ -956,8 +952,7 @@ questions:
 - id: 11404
   chapter_title: 提示工程 (Prompt Engineering)
   section_title: 進階提示技巧
-  text: 某社交平台嘗試結合自動提示工程（ Automatic Prompt Engineer, APE）與圖提示（Graph Prompting） ，讓AI
-    協助分析使用者之間的互動 關係。在這個過程中，下列何者為最可能遇到的挑戰？ (114年第四梯次)
+  text: 某社交平台嘗試結合自動提示工程（ Automatic Prompt Engineer, APE）與圖提示（Graph Prompting） ，讓AI 協助分析使用者之間的互動 關係。在這個過程中，下列何者為最可能遇到的挑戰？ (114年第四梯次)
   type: multiple_choice
   options:
   - 圖結構轉換為文字提示時，可能導致部分關聯資訊遺失 (Loss of Info in Conversion)
@@ -993,8 +988,7 @@ questions:
 - id: 11407
   chapter_title: 提示工程 (Prompt Engineering)
   section_title: 基礎提示模式
-  text: 某團隊希望讓 AI 自動查詢 GitHub 上的程式碼庫，並生成摘要給使用 者參考。開發者決定透過Model Context Protocol（MCP）來實現，AI
-    需先發出請求，再經由 MCP 架構逐步完成查詢與回傳。在此情境下， MCP 運作流程的正確順序為何？ (114年第四梯次)
+  text: 某團隊希望讓 AI 自動查詢 GitHub 上的程式碼庫，並生成摘要給使用 者參考。開發者決定透過Model Context Protocol（MCP）來實現，AI 需先發出請求，再經由 MCP 架構逐步完成查詢與回傳。在此情境下， MCP 運作流程的正確順序為何？ (114年第四梯次)
   type: multiple_choice
   options:
   - MCP Server →AI Host →MCP Client →資料查詢→結果回傳 AI Host (Server -> Host -> Client)
@@ -1012,8 +1006,7 @@ questions:
 - id: 11428
   chapter_title: 提示工程 (Prompt Engineering)
   section_title: 基礎提示模式
-  text: 某公司正在開發一個智慧客服系統，負責回覆顧客關於退換貨、優惠活 動與商品建議等問題。研發團隊嘗試使用不同的提示設計方式來提升 模型效能 。 下列哪一個提示最符合
-    「少樣本提示 （Few-Shot Prompting）」 的設計原則？ (114年第四梯次)
+  text: 某公司正在開發一個智慧客服系統，負責回覆顧客關於退換貨、優惠活 動與商品建議等問題。研發團隊嘗試使用不同的提示設計方式來提升 模型效能 。 下列哪一個提示最符合 「少樣本提示 （Few-Shot Prompting）」 的設計原則？ (114年第四梯次)
   type: multiple_choice
   options:
   - 「請回答顧客詢問：如何申請退貨？」 (Direct Question)
@@ -1049,8 +1042,7 @@ questions:
 - id: 11405
   chapter_title: 提示工程 (Prompt Engineering)
   section_title: 進階提示技巧
-  text: 在超長上下文任務中使用自動提示工程 （Automatic Prompt Engineer, 第二科：生成式 AI 應用與規劃 APE）時，可能面臨的最大限制是什麼？
-    (114年第四梯次)
+  text: 在超長上下文任務中使用自動提示工程 （Automatic Prompt Engineer, 第二科：生成式 AI 應用與規劃 APE）時，可能面臨的最大限制是什麼？ (114年第四梯次)
   type: multiple_choice
   options:
   - 迭代優化難以因應上下文的不斷變動，導致調整失效 (Dynamic Context Issue)
@@ -1086,13 +1078,11 @@ questions:
 - id: 11439
   chapter_title: 提示工程 (Prompt Engineering)
   section_title: 進階提示技巧
-  text: 在提示工程 （Prompt Engineering） 的應用中，Chain-of-Thought（CoT） 與 Tree of Thoughts（ToT）各適用於不同的推理情境，請問以下兩個
-    情境，分別最適合採用哪一種方法？ 第二科：生成式 AI 應用與規劃 情境一：電商公司開發客服助理，用來協助客戶查詢退款流程與相關規 範 情境二：活動策劃團隊使用AI
-    協助規劃多場跨部門行銷活動，需要同 時考量預算、場地、時程與人力資源，並比較不同方案的可行性。 (114年第四梯次)
+  text: 在提示工程 （Prompt Engineering） 的應用中，Chain-of-Thought（CoT） 與 Tree of Thoughts（ToT）各適用於不同的推理情境，請問以下兩個 情境，分別最適合採用哪一種方法？ 第二科：生成式 AI 應用與規劃 情境一：電商公司開發客服助理，用來協助客戶查詢退款流程與相關規 範 情境二：活動策劃團隊使用AI 協助規劃多場跨部門行銷活動，需要同 時考量預算、場地、時程與人力資源，並比較不同方案的可行性。 (114年第四梯次)
   type: multiple_choice
   options:
-  - "情境一採用 CoT，情境二採用ToT (Scenario 1: CoT, Scenario 2: ToT)"
-  - "情境一採用 ToT，情境二採用CoT (Scenario 1: ToT, Scenario 2: CoT)"
+  - '情境一採用 CoT，情境二採用ToT (Scenario 1: CoT, Scenario 2: ToT)'
+  - '情境一採用 ToT，情境二採用CoT (Scenario 1: ToT, Scenario 2: CoT)'
   - 情境一與情境二都適合 CoT (Both CoT)
   - 情境一與情境二都適合 ToT (Both ToT)
   correct_index: 0
@@ -1422,4 +1412,116 @@ questions:
   - chap-gen-chapter2
   - sec-prompt-injection
   id: 11461
+  usage: both
+- id: 115002
+  chapter_title: 進階提示工程
+  section_title: 歷屆考題
+  text: 在進行大型語言模型 (LLM) 企業專屬知識的 Fine-tuning 時，若內部 GPU 運算資 源與記憶體嚴重受限，下列哪一種參數高效微調（PEFT, Parameter Efficient Fine- Tuning）技術最能在維持模型效能的前提下，顯著降低需更新的參數數量？（115年第一梯次）
+  options:
+  - 知識蒸餾（Knowledge Distillation）；
+  - 提示詞工程（Prompt Engineering）；
+  - 梯度凍結（Gradient Freezing）；
+  - 低秩適配（Low-Rank Adaptation）
+  correct_index: 3
+  explanation: 低秩適配（LoRA）是一種主流的 PEFT 技術，透過在模型中加入小型的低秩矩陣進行微調，能顯著降低所需的 GPU 記憶體與更新參數數量。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter2
+  - sec-past-exam
+  usage: both
+- id: 115009
+  chapter_title: 進階提示工程
+  section_title: 歷屆考題
+  text: 某企業使用生成式 AI 進行文字分類，初期僅根據既有業務資料設計少量樣本提示 （Few-shot Prompting） 。當模型應用至新市場資料時，團隊發現分類結果明顯不穩 定，且原先提供的範例並未涵蓋新市場常見的表達方式。依此情境判斷，下列何 者最可能為主要原因？（115年第一梯次）
+  options:
+  - 模型容易對單一範例產生過度記憶；
+  - 少量範例難以涵蓋新情境的資料差異；
+  - Prompt 設計無法引導模型擷取共通特徵；
+  - 模型推理能力不足以完成分類任務 第二科：生成式 AI 應用與規劃
+  correct_index: 1
+  explanation: Few-shot Prompting 的效果高度依賴範例的代表性。當應用至新市場時，既有範例無法涵蓋新資料的差異性，導致模型分類結果不穩定。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter2
+  - sec-past-exam
+  usage: both
+- id: 115019
+  chapter_title: 進階提示工程
+  section_title: 歷屆考題
+  text: 某新創公司採用 MVP（Minimum Viable Product）策略，導入 Vibe Coding 以加速 開發，雖然初期能快速產出可運作功能，但技術主管提醒，在正式上線前仍可能 存在程式碼品質與安全風險。下列哪一項措施最合理，以降低品質與安全問題？（115年第一梯次）
+  options:
+  - 直接沿用 AI 生成程式碼至正式環境，以降低開發成本；
+  - 持續優化提示詞，即可避免大部分品質問題；
+  - 將生成程式碼納入審查、重構與安全測試流程；
+  - 限制開發者修改 AI 生成之程式碼架構，以維持一致性
+  correct_index: 2
+  explanation: AI 生成的程式碼雖然能快速建置 MVP，但可能隱藏安全性漏洞或效能問題，因此在正式上線前必須經過人工審查、重構與安全測試。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter2
+  - sec-past-exam
+  usage: both
+- id: 115031
+  chapter_title: 進階提示工程
+  section_title: 歷屆考題
+  text: 某有機農場累積了十年的病蟲害防治紀錄文件，包含不同作物的病害症狀描述、 防治方法和效果評估。農場主人希望建立一個 AI 助手，能根據農民描述的作物症 狀，快速提供相關的防治建議和歷史案例。下列哪一種技術最適合解決這個需 求？（115年第一梯次）
+  options:
+  - 直接使用 ChatGPT 的預訓練知識回答農業問題；
+  - 將所有文件內容加入 ChatGPT 的系統提示詞中；
+  - 採用 RAG 技術，將農場文件建立向量資料庫，結合大語言模型生成回答；
+  - 使用少樣本學習（Few-shot Learning） ，在提示詞中提供3-5 個病害案例
+  correct_index: 2
+  explanation: 將 10 年的專業歷史文件轉換為知識庫，最適合採用 RAG 技術。透過向量檢索，模型能針對農民描述的症狀精準提供相關防治建議。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter2
+  - sec-past-exam
+  usage: both
+- id: 115036
+  chapter_title: 進階提示工程
+  section_title: 歷屆考題
+  text: 某連鎖零售企業使用生成式 AI 協助規劃門市補貨策略。決策時需同時考量多項彼 此相關的因素，例如：庫存水位、促銷活動、區域銷售差異與物流限制。專案團 隊發現，AI 雖能逐步說明推論過程，但對於多條件之間的相互影響掌握不足，導 致建議結果偶有偏差。若希望透過提示工程（Prompt Engineering）改善此問題， 下列哪一種策略最為適合？（115年第一梯次）
+  options:
+  - Chain of Thought，要求模型逐步展開推論；
+  - Tree of Thoughts，增加多種推論路徑探索；
+  - Graph Prompting，以結構化方式呈現條件與關聯；
+  - Zero-shot Prompting，避免範例影響模型判斷
+  correct_index: 2
+  explanation: 當決策牽涉多個相互影響的複雜條件時，Graph Prompting 能以圖結構的方式清晰定義條件間的關聯，幫助模型進行更準確的推論。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter2
+  - sec-past-exam
+  usage: both
+- id: 115037
+  chapter_title: 進階提示工程
+  section_title: 歷屆考題
+  text: 某電商平台導入生成式 AI 客服助理，用於自動回覆顧客詢問。營運需求包含：需 即時反映每日更新的促銷活動與商品資訊，同時維持品牌一致的回覆語氣，且企 業希望避免因模型重新訓練所造成的成本增加與系統不穩定。在此情境下，下列 哪一種技術策略最合理？（115年第一梯次）
+  options:
+  - 僅進行 Fine-tuning，使模型同時學習品牌語氣與即時促銷內容； 第二科：生成式 AI 應用與規劃
+  - 僅導入 RAG 更新促銷資訊，期望模型直接從檢索內容學習品牌語氣；
+  - 透過 Prompt Engineering 控制回覆風格，並以 RAG 引入最新商品與活動資訊；
+  - 持續進行增量 Fine-tuning，以確保活動資訊同步更新
+  correct_index: 2
+  explanation: Prompt Engineering 能有效控制品牌語氣與風格，而 RAG 則能動態提供每日更新的促銷與商品資訊，兩者結合能以最低成本達成需求。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter2
+  - sec-past-exam
+  usage: both
+- id: 115045
+  chapter_title: 進階提示工程
+  section_title: 歷屆考題
+  text: 某企業導入生成式 AI 助理，協助內部人員撰寫專案建議與分析報告。團隊希望透 過思維鏈（Chain of Thought, CoT）提示設計提升模型輸出的邏輯性與推理透明 度，下列何者最符合該提示策略？（115年第一梯次）
+  options:
+  - 「請直接給出最終建議，不需顯示分析過程。」；
+  - 「以下提供兩份分析報告範例，請依相同格式產出新報告。」；
+  - 「請將任務拆為三個步驟：資料整理 → 重點摘要 → 建議產出。」；
+  - 「請逐步說明你的判斷依據與推理過程，最後再給出結論。」
+  correct_index: 3
+  explanation: 思維鏈（Chain of Thought）提示的核心在於要求模型「逐步說明判斷依據與推理過程」，這能大幅提升複雜任務的邏輯性與結果透明度。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter2
+  - sec-past-exam
   usage: both

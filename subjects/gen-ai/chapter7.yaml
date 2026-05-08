@@ -930,8 +930,7 @@ questions:
 - id: 11446
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 風險管理框架
-  text: 某智慧工廠導入生成式 AI，協助產線工程師即時產生維修指引與操作 建議。下列哪一項並非團隊在系統設計中加入Guardrails（防護機制） 的主要目的？
-    (114年第四梯次)
+  text: 某智慧工廠導入生成式 AI，協助產線工程師即時產生維修指引與操作 建議。下列哪一項並非團隊在系統設計中加入Guardrails（防護機制） 的主要目的？ (114年第四梯次)
   type: multiple_choice
   options:
   - 檢查工程師輸入內容，避免觸發錯誤或危險需求；
@@ -949,8 +948,7 @@ questions:
 - id: 11402
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 隱私強化技術 (PETs)
-  text: 企業在導入生成式 AI 平台時，往往需要利用分散於不同部門或機構中 的大量敏感文本資料。若希望在確保隱私的前提下，仍能讓模型持續優 化並降低資料外洩風險，下列哪一種方法最適合？
-    (114年第四梯次)
+  text: 企業在導入生成式 AI 平台時，往往需要利用分散於不同部門或機構中 的大量敏感文本資料。若希望在確保隱私的前提下，仍能讓模型持續優 化並降低資料外洩風險，下列哪一種方法最適合？ (114年第四梯次)
   type: multiple_choice
   options:
   - 同態加密（Homomorphic Encryption）；
@@ -968,8 +966,7 @@ questions:
 - id: 11431
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 風險管理框架
-  text: 某跨國電商企業導入生成式 AI，協助處理顧客服務請求，並根據顧客 歷史訂單提供個人化建議。資安與法遵部門擔心AI 在回覆時可能洩漏 顧客個資，若要在導入初期優先避免觸法風險，下列哪一項措施最符合
-    要求？ (114年第四梯次)
+  text: 某跨國電商企業導入生成式 AI，協助處理顧客服務請求，並根據顧客 歷史訂單提供個人化建議。資安與法遵部門擔心AI 在回覆時可能洩漏 顧客個資，若要在導入初期優先避免觸法風險，下列哪一項措施最符合 要求？ (114年第四梯次)
   type: multiple_choice
   options:
   - 在加密環境下導入完整的顧客訂單與行為資料，並透過嚴格存取控 管降低洩漏風險；
@@ -987,8 +984,7 @@ questions:
 - id: 11432
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 合規與治理
-  text: 某國際銀行導入生成式 AI，用於彙整不同國家金融監管機構的合規規 範，建立跨國合規知識庫。由於各國條文表述方式不同，且監管要求具 有高度專業性與隱含邏輯，若要確保知識庫在後續查詢與生成報告時
-    能維持正確性與一致性，下列哪一項 AI 能力最為關鍵？ (114年第四梯次)
+  text: 某國際銀行導入生成式 AI，用於彙整不同國家金融監管機構的合規規 範，建立跨國合規知識庫。由於各國條文表述方式不同，且監管要求具 有高度專業性與隱含邏輯，若要確保知識庫在後續查詢與生成報告時 能維持正確性與一致性，下列哪一項 AI 能力最為關鍵？ (114年第四梯次)
   type: multiple_choice
   options:
   - 具備跨語言專業術語對齊與條文語意抽取能力，能正確辨識不同國 家規範間的對應與差異；
@@ -1006,8 +1002,7 @@ questions:
 - id: 11436
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 生成式 AI 特有資安威脅
-  text: 某航空公司導入生成式 AI 聲控客服，提供航班與票務查詢。有人員透 過惡意提示，試圖讓系統洩漏內部安檢流程。在此情境中，下列何者為 降低提示攻擊（Prompt
-    Injection）風險的最佳策略？ (114年第四梯次)
+  text: 某航空公司導入生成式 AI 聲控客服，提供航班與票務查詢。有人員透 過惡意提示，試圖讓系統洩漏內部安檢流程。在此情境中，下列何者為 降低提示攻擊（Prompt Injection）風險的最佳策略？ (114年第四梯次)
   type: multiple_choice
   options:
   - 導入輸入檢測與回應審核流程，防止敏感指令被執行；
@@ -1025,8 +1020,7 @@ questions:
 - id: 11438
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 風險管理框架
-  text: 某銀行導入生成式 AI 放貸審核系統，用於分析申貸人條件並生成初步 審核意見。測試過程中發現，模型對不同族群的核准率存在顯著差異， 可能引發演算法偏見問題。為降低此風險，下列哪一項措施最合適？
-    (114年第四梯次)
+  text: 某銀行導入生成式 AI 放貸審核系統，用於分析申貸人條件並生成初步 審核意見。測試過程中發現，模型對不同族群的核准率存在顯著差異， 可能引發演算法偏見問題。為降低此風險，下列哪一項措施最合適？ (114年第四梯次)
   type: multiple_choice
   options:
   - 提升模型運算速度與效能，以確保在大量申請中快速回應；
@@ -1360,4 +1354,164 @@ questions:
   - chap-gen-chapter7
   - sec-genai-security-threats
   id: 11466
+  usage: both
+- id: 115001
+  chapter_title: 生成式 AI 的資安、合規與倫理
+  section_title: 歷屆考題
+  text: 某零售企業導入生成式 AI 商品推薦系統。測試結果顯示，在購物行為、偏好設定 與價格區間相同的情況下，不同客戶族群收到的推薦商品類型仍出現明顯差異， 且差異方向不易以既有行銷策略解釋。若在模型架構與推論設定皆未調整情形 下，專案目標是優先降低可能的模型偏差風險，下列何者最合理？（115年第一梯次）
+  options:
+  - 重新檢視訓練資料的樣本分布與代表性；
+  - 限制推薦結果僅顯示高銷量商品；
+  - 降低模型參數規模以簡化決策邏輯；
+  - 提高推薦結果的隨機性以增加多樣性
+  correct_index: 0
+  explanation: 模型產生無法解釋的偏差，通常根源於訓練資料本身。因此優先重新檢視訓練資料的樣本分布是否對不同客群具有公平的代表性是最合理的做法。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter7
+  - sec-past-exam
+  usage: both
+- id: 115006
+  chapter_title: 生成式 AI 的資安、合規與倫理
+  section_title: 歷屆考題
+  text: OpenAI 已為 Sora 生成的影片提供多種出處證明機制，以降低誤導性或欺騙性內 容帶來的風險。下列何者不屬於目前 OpenAI 官方為 Sora 內容提供的出處證明工 具？（115年第一梯次）
+  options:
+  - 所有資產上內嵌的 C2PA（Content Credentials）元數據；
+  - 預設可見的動態浮水印；
+  - 用於追蹤生成內容的內部反向影像與音訊搜尋工具；
+  - 平台對外開放的實時來源驗證介面
+  correct_index: 3
+  explanation: OpenAI 的 Sora 目前已支援 C2PA 元數據與浮水印等證明，但並未提供平台對外開放的實時來源驗證介面作為官方標準工具。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter7
+  - sec-past-exam
+  usage: both
+- id: 115022
+  chapter_title: 生成式 AI 的資安、合規與倫理
+  section_title: 歷屆考題
+  text: 所有在 Gemini 應用程式透過 Veo 生成的影片，皆採用何種技術措施來協助企業用 戶應對 AI 生成內容可能帶來的不實資訊風險？（115年第一梯次）
+  options:
+  - 嚴格限制所有用戶每日的影片生成次數與使用時間；
+  - 在所有生成影片的開頭與結尾處強制加入明顯的 AI 標示警語；
+  - 要求所有影片輸出時必須附帶至少 10 秒的免責聲明片段；
+  - 使用 SynthID 技術在每一幀（frame）影片中嵌入不可見的數位浮水印
+  correct_index: 3
+  explanation: Google 的 SynthID 技術能在 AI 生成的影片（如 Veo）的每一幀中嵌入不可見的數位浮水印，這有助於後續驗證影片是否為 AI 生成，且不易被抹除。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter7
+  - sec-past-exam
+  usage: both
+- id: 115024
+  chapter_title: 生成式 AI 的資安、合規與倫理
+  section_title: 歷屆考題
+  text: 某大型製造工廠導入生成式 AI 系統來優化能源消耗，每日需處理約 10 萬筆設備 數據並生成能源優化建議。系統每月 API 調用成本約 15 萬元，內部維護人力成本 8 萬元，基礎設施成本 5 萬元。該工廠評估導入效益時，下列哪一項總體擁有成本 （Total Cost of Ownership, TCO）分析最完整？ 第二科：生成式 AI 應用與規劃（115年第一梯次）
+  options:
+  - 主要以 API 調用成本 15 萬元作為 TCO 評估基礎；
+  - 以 API 調用成本 15 萬元及維護人力成本 8 萬元進行整體估算；
+  - 綜合 API 調用、維護人力與基礎設施等直接成本進行評估，共約 28 萬元；
+  - 除直接成本外，並考量訓練、系統整合與資安合規等相關支出
+  correct_index: 3
+  explanation: 總體擁有成本（TCO）不僅包含直接的 API 調用與硬體設施費用，還必須綜合考量隱性成本，如系統整合、員工訓練與資安合規等各項支出。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter7
+  - sec-past-exam
+  usage: both
+- id: 115038
+  chapter_title: 生成式 AI 的資安、合規與倫理
+  section_title: 歷屆考題
+  text: 某企業規劃導入生成式 AI 助理，在正式全面部署前進行概念驗證（PoC） ，下列 何者最不適合作為此階段的主要工作？（115年第一梯次）
+  options:
+  - 驗證模型在實際使用情境下的回覆品質與穩定性；
+  - 測試 AI 功能與業務需求的匹配程度；
+  - 制定跨部門使用規範，與長期治理框架；
+  - 評估系統整合可行性與技術限制
+  correct_index: 2
+  explanation: 概念驗證（PoC）階段的重點在於快速驗證技術可行性與業務匹配度，制定長期跨部門治理框架與規範通常是在 PoC 成功後，準備規模化導入時才進行。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter7
+  - sec-past-exam
+  usage: both
+- id: 115039
+  chapter_title: 生成式 AI 的資安、合規與倫理
+  section_title: 歷屆考題
+  text: 某企業規劃導入生成式 AI 客服系統，需處理顧客查詢並引用歷史交易資料。法 遵部門在風險評估中指出，系統若不當處理顧客個人資料，可能引發合規與法律 責任。若專案初期希望從資料層面降低敏感資訊暴露風險，下列敘述何者最為合 理？（115年第一梯次）
+  options:
+  - 強化模型輸出審查與遮罩機制，以過濾可能出現的敏感資訊；
+  - 設定 AI 回覆範圍與角色權限，限制其存取特定類型資料；
+  - 將資料集中於加密儲存環境，並加強系統存取控管；
+  - 僅提供必要資料或數據欄位與去識別化策略，減少模型接觸可識別個資
+  correct_index: 3
+  explanation: 從資料源頭進行管控最為安全。在系統將資料送交給模型前，僅提供必要欄位並執行去識別化，能最大程度減少模型接觸敏感個資的風險。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter7
+  - sec-past-exam
+  usage: both
+- id: 115041
+  chapter_title: 生成式 AI 的資安、合規與倫理
+  section_title: 歷屆考題
+  text: 企業在評估 AI 決策模型是否存在資料分布偏差時，下列何者最屬於偏見檢測 （Bias Detection）而非偏見緩解（Bias Mitigation）措施？（115年第一梯次）
+  options:
+  - 比較不同資料分布的模型預測結果分布與錯誤率；
+  - 重新加權訓練樣本以平衡資料分布代表性；
+  - 在推論階段加入輸出過濾規則；
+  - 調整模型決策閾值（Decision Threshold）以降低預測差異
+  correct_index: 0
+  explanation: 比較不同資料分布的模型預測結果與錯誤率，是為了「發現」是否存在偏見，屬於偏見檢測（Bias Detection）；其餘選項皆屬於修正偏見的緩解措施。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter7
+  - sec-past-exam
+  usage: both
+- id: 115043
+  chapter_title: 生成式 AI 的資安、合規與倫理
+  section_title: 歷屆考題
+  text: 某金融服務公司規劃導入生成式 AI，在評估模型部署方式時，基於內部控制與治 理要求，企業考慮將大型語言模型建置於公司可管理環境，而非直接採用外部雲 端服務。下列何者最能合理說明此部署決策的潛在優勢？（115年第一梯次）
+  options:
+  - 有助提升模型回覆穩定性並降低隨機性影響；
+  - 可降低敏感資料需傳輸至外部服務的風險；
+  - 可直接減少模型訓練與維運所需資源投入；
+  - 可避免模型輸出偏差與幻覺（Hallucination）問題
+  correct_index: 1
+  explanation: 對於金融機構而言，資料的隱私與安全至關重要。私有化部署大型語言模型確保敏感資料不需要傳輸至公有雲，能大幅降低合規與外洩風險。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter7
+  - sec-past-exam
+  usage: both
+- id: 115046
+  chapter_title: 生成式 AI 的資安、合規與倫理
+  section_title: 歷屆考題
+  text: 某金融監理機構規劃導入生成式 AI 以協助內部人員分析申報文件與監理報告，系 統需處理大量涉及企業敏感資料與未公開資訊。主管機關明確要求「資料安全與 法規遵循必須優先於導入速度與成本考量」 。在此條件下，下列哪一種策略最為適 第二科：生成式 AI 應用與規劃 當？（115年第一梯次）
+  options:
+  - 採用雲端大型語言模型 API，並透過資料遮罩與加密機制降低外洩風險；
+  - 導入開源模型進行私有化部署，以兼顧成本彈性與模型可控性；
+  - 自行訓練並私有化部署模型，同時建立存取控管與稽核機制；
+  - 先驗證模型效益，再逐步補強合規與資安架構
+  correct_index: 2
+  explanation: 在法規遵循與資料安全優先於成本考量的前提下，金融監理機構應選擇自行訓練並私有化部署模型，並落實嚴格的存取與稽核機制。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter7
+  - sec-past-exam
+  usage: both
+- id: 115050
+  chapter_title: 生成式 AI 的資安、合規與倫理
+  section_title: 歷屆考題
+  text: 某招聘公司使用生成式 AI 生成面試問題與候選人評估建議。團隊發現模型可能對 性別或年齡產生的資料分布偏差。下列哪一種策略最能有效降低生成偏差輸出的 風險？（115年第一梯次）
+  options:
+  - 調整模型架構與參數，使生成更靈活與多樣化；
+  - 大幅增加訓練資料量，但不清理或平衡資料中的性別與年齡分布；
+  - 在生成後對模型輸出進行人工審查，並依偏差情況修正結果；
+  - 僅允許高階主管操作系統，透過人員篩選控制生成結果
+  correct_index: 2
+  explanation: 由於 AI 面試評估涉及敏感的就業公平性問題，在目前技術難以完全根除偏差的情況下，透過「Human-in-the-loop」對輸出結果進行人工審查與修正最能防範風險。
+  type: multiple_choice
+  tags:
+  - chap-gen-chapter7
+  - sec-past-exam
   usage: both
