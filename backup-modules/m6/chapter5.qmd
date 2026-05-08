@@ -1,0 +1,266 @@
+---
+title: "PyTorch 基礎"
+order: 5
+label: chap-m6-ch5
+---
+
+PyTorch 是常用深度學習框架，特色是動態計算圖、Pythonic API、除錯直覺，並且有成熟的 GPU、資料載入與模型部署生態。
+
+## Tensor 與裝置 {#sec-pytorch-tensor-device}
+
+Tensor 是 PyTorch 的核心資料結構，可視為支援 GPU 與自動微分的多維陣列。
+
+```{python}
+import torch
+
+# 建立 2x2 浮點數 tensor
+x = torch.tensor([[1.0, 2.0], [3.0, 4.0]])
+print(x.shape)
+print(x.mean())
+```
+
+若有 GPU，可把 tensor 與模型移到 CUDA 裝置：
+
+```python
+# 若有 GPU 則使用 CUDA，否則退回 CPU
+device = "cuda" if torch.cuda.is_available() else "cpu"
+x = x.to(device)
+```
+
+實務上最常見錯誤之一，是模型在 GPU、資料卻在 CPU，或反過來。模型與 tensor 必須在同一個 device。
+
+## Autograd 與反向傳播 {#sec-pytorch-autograd}
+
+PyTorch 的 `autograd` 會追蹤 tensor 運算並自動計算梯度：
+
+```{python}
+# requires_grad=True 表示要追蹤 w 的梯度
+w = torch.tensor([2.0], requires_grad=True)
+loss = (w - 5) ** 2
+# 反向傳播後，梯度會存到 w.grad
+loss.backward()
+print(w.grad)
+```
+
+深度學習訓練的核心流程是：
+
+1.  前向傳播計算預測。
+2.  計算 loss。
+3.  反向傳播計算梯度。
+4.  optimizer 更新參數。
+5.  清空梯度，進入下一批資料。
+
+如果忘記 `optimizer.zero_grad()`，梯度會累加，造成訓練結果不符合預期。
+
+```{mermaid}
+flowchart LR
+    A["Batch 資料"] --> B["前向傳播<br/>model(x)"]
+    B --> C["計算 loss"]
+    C --> D["zero_grad<br/>清空舊梯度"]
+    D --> E["backward<br/>計算新梯度"]
+    E --> F["optimizer.step<br/>更新參數"]
+    F --> A
+```
+
+這個迴圈是 PyTorch 訓練的核心。每個 batch 都會重新計算 loss 與梯度，再用 optimizer 更新模型參數。
+
+## Dataset 與 DataLoader {#sec-pytorch-dataset-dataloader}
+
+PyTorch 用 `Dataset` 表示可索引的資料集，用 `DataLoader` 負責批次、打亂與平行載入。
+
+```{python}
+from torch.utils.data import TensorDataset, DataLoader
+
+# 建立 100 筆、每筆 4 個特徵的假資料
+X = torch.randn(100, 4)
+# 用特徵加總是否大於 0 建立二分類標籤
+y = (X.sum(dim=1) > 0).long()
+
+dataset = TensorDataset(X, y)
+# DataLoader 負責批次化與打亂資料
+loader = DataLoader(dataset, batch_size=16, shuffle=True)
+
+batch_x, batch_y = next(iter(loader))
+print(batch_x.shape, batch_y.shape)
+```
+
+batch size 影響記憶體使用、梯度估計穩定度與訓練速度。太大可能超出 GPU 記憶體，太小可能訓練震盪較大。
+
+## nn.Module 與模型定義 {#sec-pytorch-nn-module}
+
+模型通常繼承 `torch.nn.Module`，在 `__init__` 定義層，在 `forward` 定義資料如何流動：
+
+```{python}
+import torch.nn as nn
+
+class TinyClassifier(nn.Module):
+    def __init__(self):
+        super().__init__()
+        # Sequential 依序堆疊線性層與 activation
+        self.net = nn.Sequential(
+            nn.Linear(4, 8),
+            nn.ReLU(),
+            nn.Linear(8, 2)
+        )
+
+    def forward(self, x):
+        # 定義資料從輸入到輸出的流動方式
+        return self.net(x)
+
+model = TinyClassifier()
+print(model(batch_x).shape)
+```
+
+`forward` 不需要手動呼叫，通常直接用 `model(x)`，PyTorch 會執行必要的 hook 與圖追蹤。
+
+## Loss、Optimizer 與訓練迴圈 {#sec-pytorch-training-loop}
+
+分類任務常用 `CrossEntropyLoss`，它預期模型輸出 logits，不需要先做 softmax：
+
+```{python}
+# Adam 是常用 optimizer，lr 是 learning rate
+optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
+criterion = nn.CrossEntropyLoss()
+
+for batch_x, batch_y in loader:
+    # 前向傳播：取得每個類別的 logits
+    logits = model(batch_x)
+    loss = criterion(logits, batch_y)
+
+    # 清空舊梯度，避免累加
+    optimizer.zero_grad()
+    # 反向傳播計算梯度
+    loss.backward()
+    # 根據梯度更新參數
+    optimizer.step()
+
+print(float(loss))
+```
+
+訓練時使用 `model.train()`，驗證或推論時使用 `model.eval()` 並搭配 `torch.no_grad()`。這會影響 dropout、batch normalization 與梯度記錄。
+
+## 儲存與載入模型 {#sec-pytorch-save-load}
+
+PyTorch 常儲存 `state_dict`，也就是模型參數字典：
+
+```python
+# 只儲存模型權重參數
+torch.save(model.state_dict(), "model.pt")
+
+new_model = TinyClassifier()
+# 建立同架構模型後載入權重
+new_model.load_state_dict(torch.load("model.pt"))
+new_model.eval()
+```
+
+這比直接儲存整個模型物件更穩定，因為模型架構仍由程式碼定義，權重檔只保存參數。
+
+## PyTorch 訓練流程的完整心智模型 {#sec-pytorch-training-mental-model}
+
+PyTorch 的彈性很高，但也代表訓練流程需要開發者自己掌握。完整訓練流程通常包含：
+
+1.  準備資料集與 DataLoader。
+2.  建立模型並移到正確 device。
+3.  選擇 loss function。
+4.  選擇 optimizer 與 learning rate。
+5.  逐 epoch 訓練。
+6.  定期驗證並保存最佳模型。
+7.  用 test set 做最終評估。
+
+一個更完整的訓練框架通常會長這樣：
+
+```python
+for epoch in range(num_epochs):
+    # 訓練模式會啟用 dropout 等訓練期行為
+    model.train()
+    for x, y in train_loader:
+        # 將資料搬到與模型相同的裝置
+        x = x.to(device)
+        y = y.to(device)
+
+        logits = model(x)
+        loss = criterion(logits, y)
+
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+
+    # 評估模式會關閉 dropout 等隨機行為
+    model.eval()
+    # 驗證時不需要建立梯度計算圖
+    with torch.no_grad():
+        for x, y in val_loader:
+            logits = model(x.to(device))
+            # compute validation metrics
+```
+
+`train()` 與 `eval()` 不是形式上的切換。Dropout 與 BatchNorm 在兩種模式下行為不同，因此忘記切換可能造成驗證結果不穩定。
+
+## Tensor Shape 與 dtype 常見規則 {#sec-pytorch-shape-dtype}
+
+PyTorch 初學者最常卡在 shape 與 dtype。常見規則如下：
+
+| 任務 | 輸入 shape | 標籤 shape | 常見 loss |
+|------|------------|------------|-----------|
+| 表格分類 | `(batch, features)` | `(batch,)` 類別 id | `CrossEntropyLoss` |
+| 影像分類 | `(batch, channels, height, width)` | `(batch,)` 類別 id | `CrossEntropyLoss` |
+| 二元多標籤 | `(batch, labels)` logits | `(batch, labels)` float | `BCEWithLogitsLoss` |
+| 迴歸 | `(batch, features)` | `(batch, target_dim)` | `MSELoss` 或 `L1Loss` |
+
+`CrossEntropyLoss` 的 target 通常是 `LongTensor` 類別 id，不是 one-hot。`BCEWithLogitsLoss` 的 target 則通常是 float，且輸出每個 label 的 logit。這兩者很容易混淆。
+
+## Learning Rate 與 Optimizer {#sec-pytorch-optimizer-detail}
+
+optimizer 決定如何根據梯度更新參數。常見選擇：
+
+*   **SGD**：簡單、穩定，常搭配 momentum。
+*   **Adam**：自適應 learning rate，原型開發常用。
+*   **AdamW**：將 weight decay 與 Adam 更新解耦，Transformer 訓練常見。
+
+Learning rate 是最重要超參數之一。太大可能 loss 發散，太小可能訓練很慢或卡住。若訓練 loss 完全不下降，應先檢查：
+
+*   learning rate 是否合理。
+*   loss 與輸出格式是否匹配。
+*   label 是否正確。
+*   梯度是否正常產生。
+*   模型是否真的有可訓練參數。
+
+## Reproducibility 與實驗紀錄 {#sec-pytorch-reproducibility}
+
+深度學習實驗需要紀錄設定，否則很難比較不同模型。至少應紀錄：
+
+*   資料版本與切分方式。
+*   模型架構與參數量。
+*   batch size、learning rate、optimizer。
+*   訓練 epoch 數。
+*   random seed。
+*   最佳 validation 指標與 test 指標。
+
+簡單設定 random seed 的做法：
+
+```python
+import random
+import numpy as np
+import torch
+
+seed = 42
+# 固定常見隨機來源，讓實驗較容易重現
+random.seed(seed)
+np.random.seed(seed)
+torch.manual_seed(seed)
+```
+
+完全可重現有時會犧牲效能，尤其在 GPU 上，但基本 seed 與設定紀錄仍是必要工程習慣。
+
+## PyTorch 常見錯誤排查 {#sec-pytorch-debugging}
+
+遇到 PyTorch 訓練問題時，可依序檢查：
+
+1.  **資料 shape**：每個 batch 的輸入與標籤 shape 是否符合模型與 loss。
+2.  **dtype**：分類標籤是否為 long，迴歸標籤是否為 float。
+3.  **device**：模型、輸入與標籤是否在同一 device。
+4.  **loss 是否下降**：若完全不下降，先用很小資料集測試是否能 overfit。
+5.  **模型輸出**：logits 是否有 NaN 或極端值。
+6.  **資料標籤**：標籤是否錯位，或資料切分是否混亂。
+
+能在 20 筆資料上快速 overfit，是檢查訓練程式是否基本正確的好方法。如果連小資料都學不起來，通常是程式、資料或 loss 設定有問題。

@@ -19,3 +19,28 @@ AI 應用規劃不只需要理解模型概念，也需要知道常見工具各�
 5.  **PyTorch 基礎**：建立 Tensor、Autograd、Dataset、DataLoader、模型與訓練迴圈概念。
 6.  **PyTorch 實作簡單神經網路與 CNN**：以 MLP 與卷積神經網路說明分類模型的實作方式。
 7.  **PyTorch Transformer 基礎**：介紹 Embedding、位置編碼、自注意力與簡化 Transformer 分類器。
+
+## 學習方式建議
+
+本書建議用「工具定位 → 資料流程 → 最小可行實作 → 常見錯誤」的方式閱讀。每個工具都不只是一組函式，而是在 AI 專案中負責特定階段：
+
+*   Python 負責把資料、模型、檔案與自動化流程串起來。
+*   NumPy 與 Pandas 負責把原始資料整理成可運算的陣列與表格。
+*   SciPy 與 scikit-learn 負責統計分析、傳統機器學習、baseline 與評估。
+*   OpenCV 與 NLTK 負責影像與文字等非結構化資料的前處理。
+*   PyTorch 負責深度學習模型的張量運算、訓練迴圈與自訂架構。
+
+讀者不需要背誦所有 API，但需要能判斷「現在問題卡在哪個階段」：是資料格式錯誤、特徵工程不足、模型選擇不合適、訓練流程有 bug，還是評估方式不合理。這種判斷能力比記住單一函式名稱更重要。
+
+```{mermaid}
+flowchart LR
+    A["Python 語言基礎"] --> B["NumPy / Pandas<br/>整理資料"]
+    B --> C["SciPy / scikit-learn<br/>baseline 與評估"]
+    B --> D["OpenCV / NLTK<br/>非結構化資料前處理"]
+    C --> E["PyTorch<br/>深度學習訓練"]
+    D --> E
+    E --> F["MLP / CNN / Transformer<br/>任務模型"]
+    F --> G["評估、除錯、部署規劃"]
+```
+
+上圖呈現本書的學習路線：先建立 Python 與資料處理基礎，再進入傳統機器學習與非結構化資料前處理，最後銜接 PyTorch 深度學習模型。

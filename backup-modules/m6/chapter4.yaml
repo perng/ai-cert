@@ -1,0 +1,257 @@
+questions:
+- id: 8031
+  chapter_title: OpenCV 與 NLTK
+  section_title: OpenCV 基礎：影像表示與讀寫
+  text: OpenCV 使用 cv2.imread 讀取彩色影像時，預設通道順序通常是什麼？
+  type: multiple_choice
+  options:
+  - RGB
+  - BGR
+  - HSV
+  - CMYK
+  correct_index: 1
+  explanation: OpenCV 預設彩色影像通道順序為 BGR，與 Matplotlib 和多數網頁使用的 RGB 不同。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-image-basics
+  usage: both
+- id: 8032
+  chapter_title: OpenCV 與 NLTK
+  section_title: 影像前處理與特徵
+  text: CNN 訓練前常將影像 resize 到固定尺寸，主要原因是什麼？
+  type: multiple_choice
+  options:
+  - 讓同一批次影像具有一致 shape，方便模型運算
+  - 讓影像完全失去顏色資訊
+  - 讓模型不需要 loss function
+  - 讓文字資料可以直接進入 OpenCV
+  correct_index: 0
+  explanation: 批次張量需要一致的高度、寬度與通道數，因此影像常先 resize 或 crop。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-preprocessing
+  usage: both
+- id: 8033
+  chapter_title: OpenCV 與 NLTK
+  section_title: 影像資料進入模型
+  text: 若使用 OpenCV 讀取影像後要交給一般 RGB 模型，常需要先做哪個處理？
+  type: multiple_choice
+  options:
+  - 將 BGR 轉為 RGB
+  - 將所有像素改為文字 token
+  - 刪除 channel 維度
+  - 將影像改成 YAML
+  correct_index: 0
+  explanation: OpenCV 讀取為 BGR，而多數深度學習前處理與視覺化流程使用 RGB。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-to-model
+  usage: both
+- id: 8034
+  chapter_title: OpenCV 與 NLTK
+  section_title: NLTK 基礎：文字前處理
+  text: Tokenization 的主要作用是什麼？
+  type: multiple_choice
+  options:
+  - 將文字切分成較小單位，例如單字、標點或子詞
+  - 將影像轉成灰階
+  - 將 GPU 記憶體清空
+  - 將模型參數儲存成 state_dict
+  correct_index: 0
+  explanation: tokenization 是 NLP 前處理的基本步驟，將原始文字切成可處理的 token。
+  tags:
+  - chap-m6-ch4
+  - sec-nltk-text-basics
+  usage: both
+- id: 8035
+  chapter_title: OpenCV 與 NLTK
+  section_title: Stop Words、Stemming 與 Lemmatization
+  text: Lemmatization 與 stemming 相比，通常有什麼差異？
+  type: multiple_choice
+  options:
+  - Lemmatization 較嘗試還原成字典詞形，stemming 則較粗略切除字尾
+  - Lemmatization 只能處理影像資料
+  - Stemming 需要 GPU，lemmatization 不需要任何字典
+  - 兩者都是用來 resize 圖片
+  correct_index: 0
+  explanation: lemmatization 會依語言詞形規則還原字典形式，stemming 則通常是規則式切字尾。
+  tags:
+  - chap-m6-ch4
+  - sec-nltk-normalization
+  usage: both
+- id: 8036
+  chapter_title: OpenCV 與 NLTK
+  section_title: 從文字到特徵
+  text: TF-IDF 的核心想法是什麼？
+  type: multiple_choice
+  options:
+  - 常出現在某文件但不常出現在所有文件的詞，通常更能代表該文件
+  - 所有詞都應該得到完全相同權重
+  - 只統計圖片中的邊緣數量
+  - 把文字轉成 BGR 影像
+  correct_index: 0
+  explanation: TF-IDF 結合詞頻與反文件頻率，降低過度常見詞的權重。
+  tags:
+  - chap-m6-ch4
+  - sec-nltk-text-features
+  usage: both
+- id: 8037
+  chapter_title: OpenCV 與 NLTK
+  section_title: OpenCV 與 NLTK 的共同觀念
+  text: 影像與文字前處理共同的重要目標是什麼？
+  type: multiple_choice
+  options:
+  - 將資料轉成模型可接受且訓練與推論一致的數值表示
+  - 讓資料永遠不需要清理
+  - 讓模型完全不需要評估
+  - 把所有資料轉成同一張圖片
+  correct_index: 0
+  explanation: 非結構化資料都需要讀取、清理、轉換與一致的前處理流程。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-nltk-common
+  usage: both
+- id: 8038
+  chapter_title: OpenCV 與 NLTK
+  section_title: OpenCV 與 NLTK 的共同觀念
+  text: 訓練與部署階段前處理不一致，最可能造成什麼問題？
+  type: multiple_choice
+  options:
+  - 模型推論表現異常或不可預期
+  - Python 無法匯入任何標準函式庫
+  - 所有圖片自動變成高解析度
+  - DataFrame 欄位名稱自動消失
+  correct_index: 0
+  explanation: 模型訓練時看到的資料分布若和部署推論不同，輸出品質會明顯下降。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-nltk-common
+  usage: both
+- id: 8101
+  chapter_title: OpenCV 與 NLTK
+  section_title: OpenCV 基礎：影像表示與讀寫
+  text: OpenCV 讀取影像後通常會以哪一種 Python 物件表示影像資料？
+  type: multiple_choice
+  options:
+  - NumPy 陣列
+  - Pandas Index
+  - Python generator function
+  - scikit-learn Pipeline
+  correct_index: 0
+  explanation: OpenCV 影像通常以 NumPy ndarray 表示，shape 常見為高度、寬度、通道數。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-image-basics
+  usage: both
+- id: 8102
+  chapter_title: OpenCV 與 NLTK
+  section_title: 影像前處理與特徵
+  text: GaussianBlur 在影像前處理中常見用途是什麼？
+  type: multiple_choice
+  options:
+  - 降低雜訊，使後續閾值或邊緣處理更穩定
+  - 將文字切成 token
+  - 計算 TF-IDF 權重
+  - 儲存 PyTorch 權重
+  correct_index: 0
+  explanation: 模糊化可平滑局部雜訊，常在 threshold 或 edge detection 前使用。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-preprocessing
+  usage: both
+- id: 8103
+  chapter_title: OpenCV 與 NLTK
+  section_title: 影像資料進入模型
+  text: 影像進入 PyTorch CNN 前通常需要轉成哪一種維度順序？
+  type: multiple_choice
+  options:
+  - channels, height, width
+  - height, width, channels, text
+  - rows, columns, key, value
+  - token, position, label
+  correct_index: 0
+  explanation: 單張影像給 PyTorch CNN 時通常是 CHW；批次資料則是 NCHW。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-to-model
+  usage: both
+- id: 8104
+  chapter_title: OpenCV 與 NLTK
+  section_title: NLTK 基礎：文字前處理
+  text: 對中文文字來說，tokenization 比英文更具挑戰的主要原因是什麼？
+  type: multiple_choice
+  options:
+  - 中文詞與詞之間通常沒有空白分隔
+  - 中文不能用任何機器學習模型處理
+  - 中文文字只能轉成影像
+  - 中文不可能有專有名詞
+  correct_index: 0
+  explanation: 中文沒有天然空白分隔，因此斷詞需要額外工具與領域詞彙支援。
+  tags:
+  - chap-m6-ch4
+  - sec-nltk-text-basics
+  usage: both
+- id: 8105
+  chapter_title: OpenCV 與 NLTK
+  section_title: Stop Words、Stemming 與 Lemmatization
+  text: 移除 stop words 時應注意什麼？
+  type: multiple_choice
+  options:
+  - 不同任務中 stop words 可能仍含重要語意，不應盲目刪除
+  - 所有 stop words 都一定會提升模型準確率
+  - stop words 只能用於影像分類
+  - stop words 會自動修正標籤錯誤
+  correct_index: 0
+  explanation: 在情緒分析、法律文本或否定句中，常見小字也可能影響語意。
+  tags:
+  - chap-m6-ch4
+  - sec-nltk-normalization
+  usage: both
+- id: 8106
+  chapter_title: OpenCV 與 NLTK
+  section_title: OpenCV 實務流程：從原始影像到模型資料
+  text: 在影像專案中先檢查損毀檔案、尺寸與通道數，主要是為了什麼？
+  type: multiple_choice
+  options:
+  - 避免資料載入或模型輸入階段發生格式錯誤
+  - 讓所有圖片自動標註正確類別
+  - 讓模型不需要驗證集
+  - 將影像轉成 SQL
+  correct_index: 0
+  explanation: 影像格式與尺寸不一致很容易造成 DataLoader 或模型輸入錯誤，應在訓練前檢查。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-practical-pipeline
+  usage: both
+- id: 8107
+  chapter_title: OpenCV 與 NLTK
+  section_title: 傳統電腦視覺與深度學習的分工
+  text: 在高度固定、光線穩定的工業檢測場景中，傳統 OpenCV 方法可能有什麼優勢？
+  type: multiple_choice
+  options:
+  - 快速、可解釋，且不一定需要大量標註資料
+  - 必定比所有深度學習方法準確
+  - 可以完全取代資料品質檢查
+  - 只能處理文字資料
+  correct_index: 0
+  explanation: 固定場景下，閾值、輪廓等傳統方法常具備成本低、速度快、可解釋的優勢。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-traditional-vs-dl
+  usage: both
+- id: 8108
+  chapter_title: OpenCV 與 NLTK
+  section_title: 錯誤案例分析
+  text: 影像分類模型錯誤集中在低光與模糊圖片時，較合理的下一步是什麼？
+  type: multiple_choice
+  options:
+  - 補充或改善相關資料品質，並考慮對應資料增強
+  - 只增加模型輸出類別數
+  - 刪除所有驗證資料
+  - 將圖片改成文字 TF-IDF
+  correct_index: 0
+  explanation: 錯誤集中在特定資料品質問題時，應優先改善資料收集、清理或增強策略。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-nltk-error-analysis
+  usage: both

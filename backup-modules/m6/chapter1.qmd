@@ -18,6 +18,7 @@ Python 屬於高階、直譯式、動態型別語言。開發者不需要先編�
 Python 的動態型別代表變數本身不固定型別，型別跟著值走：
 
 ```{python}
+# Python 變數可重新指派成不同型別的值
 x = 3
 x = "AI"
 print(type(x))
@@ -39,12 +40,14 @@ Python 常見基本型別包括 `int`、`float`、`bool`、`str` 與 `None`。�
 AI 實作中最常見的是 list 與 dict。list 常用來暫存資料列，dict 常用來表示設定、標籤對應或 API 回傳結果。
 
 ```{python}
+# 用 dict 表示一筆文字分類樣本
 sample = {
     "text": "I love machine learning",
     "label": 1,
     "tokens": ["I", "love", "machine", "learning"]
 }
 
+# 透過 key 取出已斷詞的 token 清單
 print(sample["tokens"])
 ```
 
@@ -55,6 +58,7 @@ Python 使用縮排表示程式區塊。條件判斷與迴圈語法簡潔：
 ```{python}
 scores = [0.91, 0.63, 0.78]
 
+# 逐一檢查每個模型預測分數
 for score in scores:
     if score >= 0.8:
         print("high confidence")
@@ -65,6 +69,7 @@ for score in scores:
 函式用 `def` 定義，能讓資料處理步驟變得可重用：
 
 ```{python}
+# 將常見文字標準化步驟包成可重用函式
 def normalize_text(text: str) -> str:
     return text.strip().lower()
 
@@ -79,6 +84,7 @@ Python 常用 list comprehension 讓轉換邏輯更簡潔：
 
 ```{python}
 values = [1, 2, 3, 4]
+# 只保留偶數，並同時計算平方
 squares = [x * x for x in values if x % 2 == 0]
 print(squares)
 ```
@@ -87,9 +93,11 @@ print(squares)
 
 ```{python}
 def batch_ids(total: int, batch_size: int):
+    # 每次只產生一個批次範圍，避免一次建立全部資料
     for start in range(0, total, batch_size):
         yield range(start, min(start + batch_size, total))
 
+# 模擬逐批處理資料 id
 for batch in batch_ids(10, 4):
     print(list(batch))
 ```
@@ -101,6 +109,7 @@ for batch in batch_ids(10, 4):
 AI 專案常需要讀取資料檔、模型權重與設定檔。讀寫檔案時建議使用 `with`，讓 Python 自動關閉資源：
 
 ```python
+# with 會在區塊結束後自動關閉檔案
 with open("labels.txt", "r", encoding="utf-8") as f:
     labels = [line.strip() for line in f]
 ```
@@ -109,8 +118,10 @@ with open("labels.txt", "r", encoding="utf-8") as f:
 
 ```python
 try:
+    # 嘗試將字串轉成浮點數
     value = float("3.14")
 except ValueError:
+    # 轉換失敗時提供預設值，避免程式直接中斷
     value = 0.0
 ```
 
@@ -129,3 +140,89 @@ print(mean([1, 2, 3]))
 ```
 
 當專案變大時，應把資料讀取、特徵工程、模型定義與訓練流程拆成不同模組。這樣做的目的不是讓檔案變多，而是讓每個檔案有清楚責任，方便測試與維護。
+
+## Python 在 AI 專案中的典型檔案結構 {#sec-python-project-structure}
+
+初學者常把所有程式寫在單一 Notebook 裡。這適合探索，但不適合長期維護。當專案進入原型或部署階段，常見結構會像這樣：
+
+```text
+project/
+  data/
+    raw/
+    processed/
+  notebooks/
+    01_exploration.ipynb
+  src/
+    data.py
+    features.py
+    model.py
+    train.py
+    evaluate.py
+  tests/
+  pyproject.toml
+  README.md
+```
+
+這種分層的好處是責任清楚：
+
+*   `data.py` 負責讀取資料與切分資料集。
+*   `features.py` 負責清理與轉換欄位。
+*   `model.py` 負責模型架構或 estimator 建立。
+*   `train.py` 負責訓練流程。
+*   `evaluate.py` 負責指標計算與報告。
+
+Notebook 可以保留在 `notebooks/` 作為探索紀錄，但核心邏輯應逐步移到 `src/`。這樣才能被測試、重複執行，也方便其他人接手。
+
+```{mermaid}
+flowchart TD
+    A["notebooks/<br/>探索與實驗紀錄"] --> B["src/data.py<br/>資料讀取與切分"]
+    B --> C["src/features.py<br/>清理與特徵工程"]
+    C --> D["src/model.py<br/>模型定義"]
+    D --> E["src/train.py<br/>訓練流程"]
+    E --> F["src/evaluate.py<br/>評估與報告"]
+    G["tests/<br/>關鍵邏輯測試"] -.-> B
+    G -.-> C
+    G -.-> D
+```
+
+這個圖強調 Notebook 與正式程式碼的分工：Notebook 用來探索，`src/` 中的模組用來重複執行、測試與維護。
+
+## 可讀性與可維護性原則 {#sec-python-maintainability}
+
+AI 原型常在很短時間內累積大量臨時程式碼。若沒有基本規範，後續很難判斷模型結果是否可信。以下原則特別重要：
+
+*   **變數名稱要表達語意**：`train_features` 比 `x1` 更容易理解。
+*   **函式只做一件事**：不要讓同一個函式同時讀檔、清理、訓練、畫圖。
+*   **避免隱藏狀態**：全域變數會讓程式依賴執行順序，Notebook 特別容易出錯。
+*   **固定隨機種子**：需要可重現實驗時，應設定 random seed。
+*   **將設定集中管理**：例如 batch size、learning rate、資料路徑不應散落在多個檔案。
+
+以下是一個較清楚的設定寫法：
+
+```{python}
+config = {
+    # 將訓練設定集中管理，方便重現與調整
+    "batch_size": 32,
+    "learning_rate": 1e-3,
+    "random_seed": 42,
+    "target_column": "clicked"
+}
+
+print(config["batch_size"])
+```
+
+在考試或面試情境中，看到一段 Python AI 程式時，應能辨認它屬於資料讀取、前處理、模型訓練、評估或部署哪個階段。
+
+## 常見錯誤與除錯方法 {#sec-python-debugging}
+
+Python AI 專案常見錯誤可以分成幾類：
+
+| 錯誤類型 | 常見訊息或現象 | 解法 |
+|----------|----------------|------|
+| 型別錯誤 | `TypeError` | 印出 `type()`，確認輸入是否符合函式需求 |
+| 維度錯誤 | shape 不相容 | 印出 `.shape`，追蹤每一步資料形狀 |
+| Key 錯誤 | `KeyError` | 檢查 dict key 或 DataFrame 欄位名稱 |
+| 檔案錯誤 | `FileNotFoundError` | 確認工作目錄與相對路徑 |
+| 套件錯誤 | `ModuleNotFoundError` | 確認虛擬環境與安裝版本 |
+
+除錯時不要只看最後一行錯誤，應從 traceback 追到第一個屬於自己專案的檔案與行號。對 AI 專案而言，最實用的除錯習慣是「每經過一個資料轉換步驟，就確認資料筆數、欄位、型別與 shape 是否符合預期」。

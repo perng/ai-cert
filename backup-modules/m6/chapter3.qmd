@@ -1,0 +1,211 @@
+---
+title: "SciPy 與 scikit-learn"
+order: 3
+label: chap-m6-ch3
+---
+
+SciPy 提供科學運算、統計、最佳化與訊號處理工具；scikit-learn 則提供傳統機器學習的標準流程。兩者常與 NumPy、Pandas 一起形成完整的資料分析與模型開發基礎。
+
+## SciPy 的角色 {#sec-scipy-role}
+
+SciPy 建立在 NumPy 之上，提供更高階的科學運算模組，例如：
+
+*   `scipy.stats`：統計分布、假設檢定、相關係數。
+*   `scipy.optimize`：最佳化、曲線擬合、求根。
+*   `scipy.sparse`：稀疏矩陣，常用於文字特徵。
+*   `scipy.signal`：訊號處理與濾波。
+
+例如使用 `scipy.stats` 計算常態分布機率：
+
+```{python}
+from scipy import stats
+
+# 查詢標準常態分布在 z=1.96 左側的累積機率
+z = 1.96
+print(stats.norm.cdf(z))
+```
+
+在 AI 專案中，SciPy 常不是最前台的工具，但會在統計檢定、特徵轉換、最佳化與資料表示中被間接使用。
+
+## 最佳化與曲線擬合 {#sec-scipy-optimize}
+
+許多模型訓練問題本質上是最佳化問題：找到一組參數，讓損失函數最小。SciPy 的 `optimize` 可用來理解這個概念：
+
+```{python}
+from scipy.optimize import minimize
+
+# 定義一個簡單的二維損失函數
+def loss(w):
+    return (w[0] - 3) ** 2 + (w[1] + 2) ** 2
+
+# 從初始點 [0, 0] 開始尋找最小值
+result = minimize(loss, x0=[0, 0])
+print(result.x)
+```
+
+雖然深度學習通常使用 PyTorch 或 TensorFlow 內建 optimizer，但理解最佳化能幫助我們掌握梯度下降、局部最小值與收斂問題。
+
+## scikit-learn 的標準流程 {#sec-sklearn-workflow}
+
+scikit-learn 的核心 API 非常一致：
+
+1.  建立 estimator。
+2.  呼叫 `fit()` 訓練。
+3.  呼叫 `predict()` 或 `transform()` 使用模型。
+4.  用 metrics 評估結果。
+
+```{python}
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+
+data = load_iris()
+# 將資料分成訓練集與測試集
+X_train, X_test, y_train, y_test = train_test_split(
+    data.data, data.target, test_size=0.2, random_state=42
+)
+
+# 建立隨機森林分類器
+model = RandomForestClassifier(random_state=42)
+model.fit(X_train, y_train)
+# 對測試集產生預測並計算準確率
+pred = model.predict(X_test)
+print(accuracy_score(y_test, pred))
+```
+
+這種一致介面讓不同模型能快速替換，也方便進行交叉驗證與超參數搜尋。
+
+## 前處理與 Pipeline {#sec-sklearn-preprocessing-pipeline}
+
+實務模型不只包含演算法，也包含前處理。數值欄位可能需要標準化，類別欄位可能需要 one-hot encoding。Pipeline 能把這些步驟綁在一起，避免資料洩漏。
+
+```{mermaid}
+flowchart LR
+    A["Training data"] --> B["fit StandardScaler<br/>只看訓練資料"]
+    B --> C["transform training data"]
+    C --> D["fit classifier"]
+    E["Validation / Test data"] --> F["使用同一個 scaler<br/>只 transform，不重新 fit"]
+    F --> G["predict / evaluate"]
+    D --> G
+```
+
+圖中最重要的觀念是：前處理器只能在訓練資料上 `fit`。驗證與測試資料只能使用訓練資料學到的轉換規則，否則會產生資料洩漏。
+
+```{python}
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
+
+# Pipeline 會依序執行標準化與分類器訓練
+pipe = Pipeline([
+    ("scaler", StandardScaler()),
+    ("clf", LogisticRegression(max_iter=200))
+])
+
+pipe.fit(X_train, y_train)
+print(pipe.score(X_test, y_test))
+```
+
+資料洩漏 (Data Leakage) 是常見錯誤：如果先用全部資料計算標準化參數，再切分訓練與測試，測試資料資訊就已經滲入訓練流程。Pipeline 能讓前處理只在訓練集 `fit`。
+
+## 分類、迴歸與分群 {#sec-sklearn-model-types}
+
+scikit-learn 支援多種模型類型：
+
+| 任務 | 常見模型 | 目標 |
+|------|----------|------|
+| 分類 | Logistic Regression、SVM、Random Forest | 預測離散類別 |
+| 迴歸 | Linear Regression、Random Forest Regressor | 預測連續數值 |
+| 分群 | KMeans、DBSCAN | 找出資料群組 |
+| 降維 | PCA、t-SNE | 壓縮特徵、視覺化 |
+
+選模型時應先建立簡單 baseline，再依據問題特性與評估結果提升複雜度。
+
+## 評估、交叉驗證與超參數搜尋 {#sec-sklearn-evaluation}
+
+單一次 train/test split 可能受資料切分影響。交叉驗證會把資料切成多份，輪流訓練與驗證：
+
+```{python}
+from sklearn.model_selection import cross_val_score
+
+# 用 5 折交叉驗證估計模型平均表現
+scores = cross_val_score(pipe, data.data, data.target, cv=5)
+print(scores.mean())
+```
+
+超參數搜尋可用 `GridSearchCV` 或 `RandomizedSearchCV`。重點是搜尋範圍要合理，並且用正確評估指標，例如分類不平衡問題不能只看 accuracy，還應看 precision、recall、F1 或 ROC-AUC。
+
+## 建立 Baseline 的重要性 {#sec-sklearn-baseline}
+
+在導入複雜模型前，應先建立 baseline。Baseline 是一個簡單但可比較的基準模型，例如：
+
+*   分類問題先用 majority class 或 Logistic Regression。
+*   表格資料先用 Random Forest 或 Gradient Boosting。
+*   迴歸問題先用平均值、Linear Regression 或 Random Forest Regressor。
+*   文字分類先用 TF-IDF 加 Logistic Regression。
+
+Baseline 的目的不是追求最佳分數，而是快速回答三個問題：
+
+1.  這個資料是否真的含有可學習訊號？
+2.  複雜模型是否明顯優於簡單模型？
+3.  評估流程是否合理？
+
+若深度學習模型只比簡單 baseline 好一點，可能不值得承擔更高的訓練成本、部署成本與維護成本。
+
+## Train、Validation、Test 的分工 {#sec-sklearn-data-splits}
+
+資料切分是模型評估的基礎：
+
+| 資料集 | 用途 | 注意事項 |
+|--------|------|----------|
+| Training set | 訓練模型參數 | 可用於 fit 前處理與模型 |
+| Validation set | 選模型與調超參數 | 會影響決策，不應當最終客觀評估 |
+| Test set | 最終評估 | 應盡量只使用一次 |
+
+在時間序列或營運資料中，常不能隨機切分。例如用 2025 年資料預測 2026 年需求時，應使用時間先後切分，避免模型看到未來資料。
+
+```python
+# 時間序列資料應依時間先後切分，避免未來資訊洩漏
+train = df[df["date"] < "2025-01-01"]
+test = df[df["date"] >= "2025-01-01"]
+```
+
+資料切分方式必須符合部署情境。若實際部署是預測未來，就不能用未來資料訓練或調參。
+
+## 模型選擇的實務判斷 {#sec-sklearn-model-selection}
+
+scikit-learn 提供很多模型，選擇時可依問題特性判斷：
+
+*   **資料量小、需要可解釋**：Linear Regression、Logistic Regression、Decision Tree。
+*   **表格資料、非線性關係強**：Random Forest、Gradient Boosting、XGBoost、LightGBM。
+*   **高維稀疏文字特徵**：Linear SVM、Logistic Regression。
+*   **需要機率輸出**：選擇校準良好的模型，或使用 probability calibration。
+*   **需要快速 baseline**：先用簡單模型，再逐步增加複雜度。
+
+模型選擇不是看哪個演算法名氣最大，而是看資料型態、可解釋性需求、部署限制、延遲、維護成本與評估結果。
+
+## 常見評估指標 {#sec-sklearn-metrics-detail}
+
+不同任務需要不同指標：
+
+| 任務 | 常見指標 | 適用情境 |
+|------|----------|----------|
+| 平衡分類 | Accuracy | 類別比例接近時 |
+| 不平衡分類 | Precision、Recall、F1、PR-AUC | 詐欺、醫療、故障偵測 |
+| 排序或二分類機率 | ROC-AUC、PR-AUC | 需要比較閾值表現 |
+| 迴歸 | MAE、RMSE、R² | 預測連續數值 |
+| 分群 | Silhouette Score | 無標籤分群品質參考 |
+
+例如詐欺偵測中，recall 低代表漏掉很多詐欺；precision 低代表太多正常交易被誤判。哪個更重要取決於業務成本。
+
+## scikit-learn 與深度學習的界線 {#sec-sklearn-vs-deep-learning}
+
+scikit-learn 很適合傳統機器學習與中小型表格資料，但不適合大規模深度學習訓練。一般判斷方式如下：
+
+*   表格資料、樣本數中等、需要快速 baseline：優先 scikit-learn。
+*   影像、語音、大型文字、複雜序列資料：通常使用 PyTorch 或 TensorFlow。
+*   需要自訂神經網路架構與 GPU 訓練：使用 PyTorch。
+*   需要可解釋且部署簡單的模型：scikit-learn 可能更合適。
+
+好的 AI 應用規劃不是一開始就選最複雜模型，而是先找出能穩定解決問題的最簡方案。

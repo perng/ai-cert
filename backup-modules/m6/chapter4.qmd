@@ -1,0 +1,206 @@
+---
+title: "OpenCV 與 NLTK"
+order: 4
+label: chap-m6-ch4
+---
+
+OpenCV 與 NLTK 分別代表兩類常見非結構化資料處理工具：影像與文字。深度學習模型很強大，但在進入模型前，資料仍需要讀取、清理、轉換與檢查。
+
+## OpenCV 基礎：影像表示與讀寫 {#sec-opencv-image-basics}
+
+OpenCV 是常用的電腦視覺函式庫，可用於讀取影像、影像轉換、濾波、邊緣偵測、物件追蹤與傳統特徵工程。
+
+OpenCV 讀取影像後通常得到 NumPy 陣列，shape 常見為 `(height, width, channels)`。需要注意的是，OpenCV 預設色彩順序是 BGR，不是一般網頁或 Matplotlib 常見的 RGB。
+
+```python
+import cv2
+
+# OpenCV 讀進來的彩色影像預設是 BGR 順序
+image = cv2.imread("input.jpg")
+# 將彩色影像轉成灰階，方便後續處理
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+cv2.imwrite("gray.jpg", gray)
+```
+
+這段程式代表三件事：讀取檔案、轉為灰階、輸出新檔案。
+
+## 影像前處理與特徵 {#sec-opencv-preprocessing}
+
+常見影像前處理包括 resize、normalization、blur、threshold、edge detection：
+
+```python
+import cv2
+
+image = cv2.imread("input.jpg")
+# CNN 常需要固定輸入大小
+resized = cv2.resize(image, (224, 224))
+gray = cv2.cvtColor(resized, cv2.COLOR_BGR2GRAY)
+# Canny 可擷取影像邊緣
+edges = cv2.Canny(gray, threshold1=100, threshold2=200)
+```
+
+在深度學習中，resize 到固定尺寸很常見，因為 CNN 通常需要批次影像具有一致 shape。傳統影像處理中的邊緣、輪廓、形態學操作，仍常用於工業檢測、文件掃描與影像品質檢查。
+
+## 影像資料進入模型 {#sec-opencv-to-model}
+
+若影像要進入 PyTorch，常見流程是：
+
+1.  讀取影像。
+2.  轉成 RGB。
+3.  resize 或 crop。
+4.  轉成 tensor。
+5.  normalize。
+
+OpenCV 負責讀取與基本處理，PyTorch 或 torchvision 負責 tensor 轉換與資料增強。若忘記 BGR/RGB 差異，模型輸入顏色會錯，視覺化結果也會異常。
+
+## NLTK 基礎：文字前處理 {#sec-nltk-text-basics}
+
+NLTK 是經典自然語言處理工具包，適合學習文字處理概念，例如 tokenization、stop words、stemming、lemmatization、part-of-speech tagging。
+
+```python
+import nltk
+from nltk.tokenize import word_tokenize
+
+text = "Python is useful for natural language processing."
+# 將句子切成 token，作為 NLP 前處理的第一步
+tokens = word_tokenize(text)
+print(tokens)
+```
+
+tokenization 是把文字切成較小單位。英文常切成單字與標點；中文則通常需要額外斷詞工具，例如 jieba 或 CKIP。
+
+## Stop Words、Stemming 與 Lemmatization {#sec-nltk-normalization}
+
+文字前處理常會移除 stop words，例如英文中的 "the"、"is"、"and"。但這不是永遠正確，因為在情緒分析或法律文本中，小字也可能影響語意。
+
+Stemming 會粗略切除字尾，lemmatization 則嘗試還原成字典詞形：
+
+```python
+from nltk.stem import PorterStemmer, WordNetLemmatizer
+
+stemmer = PorterStemmer()
+lemmatizer = WordNetLemmatizer()
+
+# stemming 較粗略，lemmatization 較重視字典詞形
+print(stemmer.stem("running"))
+print(lemmatizer.lemmatize("running", pos="v"))
+```
+
+傳統 NLP 中，這些處理能降低詞彙稀疏性。現代 Transformer 模型雖然使用 subword tokenizer，但理解這些基本概念仍有助於資料清理與錯誤分析。
+
+## 從文字到特徵 {#sec-nltk-text-features}
+
+傳統機器學習常用 Bag-of-Words 或 TF-IDF 把文字轉成稀疏向量。scikit-learn 提供常用工具：
+
+```{python}
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+docs = [
+    "machine learning is useful",
+    "deep learning uses neural networks",
+    "text features can use tfidf"
+]
+
+vectorizer = TfidfVectorizer()
+# fit_transform 會建立詞彙表，並將文件轉成 TF-IDF 稀疏矩陣
+X = vectorizer.fit_transform(docs)
+print(X.shape)
+```
+
+TF-IDF 的思想是：常出現在某篇文件但不常出現在所有文件的詞，通常更能代表該文件。它比單純詞頻更能降低常見詞的影響。
+
+## OpenCV 與 NLTK 的共同觀念 {#sec-opencv-nltk-common}
+
+影像與文字看似不同，但進入 AI 系統前都需要完成幾個共同任務：
+
+*   讀取資料並確認格式。
+*   清理錯誤、缺失與噪音。
+*   轉成模型能接受的數值表示。
+*   保留可追蹤的前處理流程，讓訓練與推論一致。
+
+許多模型失敗不是因為架構不夠複雜，而是資料前處理在訓練與部署階段不一致。
+
+```{mermaid}
+flowchart TD
+    A["非結構化資料"] --> B{"資料類型"}
+    B --> C["影像<br/>OpenCV"]
+    B --> D["文字<br/>NLTK / tokenizer"]
+    C --> E["格式檢查<br/>尺寸、通道、品質"]
+    C --> F["影像轉換<br/>resize、RGB、normalize"]
+    D --> G["文字清理<br/>HTML、符號、重複"]
+    D --> H["文字表示<br/>tokens、TF-IDF、embedding"]
+    F --> I["模型輸入"]
+    H --> I
+```
+
+影像與文字的工具不同，但目標相同：把原始非結構化資料轉成穩定、可重複、模型可接受的數值表示。
+
+## OpenCV 實務流程：從原始影像到模型資料 {#sec-opencv-practical-pipeline}
+
+影像專案常見流程如下：
+
+1.  收集影像與標註。
+2.  檢查影像尺寸、格式、通道數與損毀檔案。
+3.  將影像轉成統一格式，例如 RGB、固定大小、固定資料型別。
+4.  建立訓練與驗證資料切分。
+5.  套用訓練資料增強與驗證資料標準化。
+6.  訓練模型並檢查錯誤案例。
+
+OpenCV 在第 2 與第 3 步特別常用。例如工業檢測中，模型訓練前可能先用 OpenCV 找出產品區域、裁切 ROI、去除背景或檢查曝光是否異常。
+
+```python
+image = cv2.imread("part.jpg")
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+# 先模糊化可降低雜訊對閾值處理的影響
+blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+# 產生二值遮罩，常用於找出前景或產品區域
+_, mask = cv2.threshold(blurred, 120, 255, cv2.THRESH_BINARY)
+```
+
+這類傳統處理不一定取代深度學習，但能讓模型輸入更穩定，也能降低資料雜訊。
+
+## 傳統電腦視覺與深度學習的分工 {#sec-opencv-traditional-vs-dl}
+
+傳統 OpenCV 方法與深度學習各有適用情境：
+
+| 方法 | 優點 | 限制 | 適合情境 |
+|------|------|------|----------|
+| 閾值、邊緣、輪廓 | 快、可解釋、不需訓練資料 | 對光線與背景變化敏感 | 文件掃描、固定場景檢測 |
+| SIFT/ORB 等特徵 | 可做匹配與定位 | 複雜場景表現有限 | 影像拼接、物件匹配 |
+| CNN/YOLO/Segmentation | 可學習複雜模式 | 需要標註資料與訓練成本 | 物件辨識、瑕疵檢測 |
+
+如果場景高度固定，傳統方法可能更便宜、更可靠；如果變化大且資料充足，深度學習通常表現更好。
+
+## NLTK 實務流程：從原始文字到模型特徵 {#sec-nltk-practical-pipeline}
+
+文字專案常見流程如下：
+
+1.  收集文件、留言、客服紀錄或文章。
+2.  清理 HTML、特殊符號、重複資料與無效內容。
+3.  斷詞或 tokenize。
+4.  選擇特徵表示，例如 TF-IDF、word embedding 或 Transformer tokenizer。
+5.  訓練分類、檢索、摘要或問答模型。
+6.  分析錯誤案例，例如否定句、諷刺、領域詞彙、拼字錯誤。
+
+NLTK 適合建立基本 NLP 概念，也適合做小型文字分析。大型現代 NLP 通常使用 Hugging Face Transformers、spaCy、jieba、CKIP 或其他更專門工具。
+
+## 中文 NLP 的額外挑戰 {#sec-chinese-nlp}
+
+中文與英文處理差異很大。英文可以用空白大致切詞，但中文句子沒有天然空白。例如「人工智慧應用規劃師」可以切成：
+
+*   人工智慧 / 應用 / 規劃師
+*   人工 / 智慧 / 應用 / 規劃 / 師
+*   人工智慧應用規劃師
+
+不同斷詞結果會影響 TF-IDF、關鍵字抽取與分類效果。中文 NLP 還需要處理繁簡轉換、專有名詞、混合英文縮寫與領域術語。若任務是台灣產業文件或考試資料，繁體中文詞庫與領域詞彙會很重要。
+
+## 錯誤案例分析 {#sec-opencv-nltk-error-analysis}
+
+影像與文字模型都應做錯誤案例分析。不要只看整體 accuracy，還要看模型錯在哪裡：
+
+*   影像分類是否常錯在低光、遮擋、反光、解析度低的圖片？
+*   OCR 是否常錯在手寫字、表格線、旋轉角度？
+*   文字分類是否常錯在否定句、雙關語、專有名詞？
+*   NLP 模型是否對少數類別或罕見詞表現很差？
+
+錯誤案例會反過來指導資料收集與前處理策略。若錯誤集中在資料品質，而不是模型能力，盲目換更大模型通常不是最有效解法。

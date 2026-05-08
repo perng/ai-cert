@@ -15,13 +15,16 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, TensorDataset
 
+# 建立 256 筆、每筆 10 個特徵的假資料
 X = torch.randn(256, 10)
+# 用前兩個特徵建立二分類標籤
 y = (X[:, 0] + X[:, 1] > 0).long()
 loader = DataLoader(TensorDataset(X, y), batch_size=32, shuffle=True)
 
 class MLP(nn.Module):
     def __init__(self):
         super().__init__()
+        # MLP 由多層 Linear 與 ReLU 組成
         self.layers = nn.Sequential(
             nn.Linear(10, 32),
             nn.ReLU(),
@@ -31,6 +34,7 @@ class MLP(nn.Module):
         )
 
     def forward(self, x):
+        # 輸入 shape: (batch, 10)，輸出 shape: (batch, 2)
         return self.layers(x)
 
 model = MLP()
@@ -49,9 +53,11 @@ optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
 for epoch in range(3):
     total_loss = 0.0
     for batch_x, batch_y in loader:
+        # 前向傳播並計算分類 loss
         logits = model(batch_x)
         loss = criterion(logits, batch_y)
 
+        # 標準訓練三步驟：清梯度、反向傳播、更新參數
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
@@ -83,6 +89,7 @@ Pooling 層常用於降低空間尺寸，讓模型對小幅位移更穩定。
 class SimpleCNN(nn.Module):
     def __init__(self):
         super().__init__()
+        # features 負責從影像中抽取局部視覺特徵
         self.features = nn.Sequential(
             nn.Conv2d(1, 8, kernel_size=3, padding=1),
             nn.ReLU(),
@@ -91,16 +98,19 @@ class SimpleCNN(nn.Module):
             nn.ReLU(),
             nn.MaxPool2d(2)
         )
+        # classifier 負責將卷積特徵轉成類別 logits
         self.classifier = nn.Sequential(
             nn.Flatten(),
             nn.Linear(16 * 7 * 7, 10)
         )
 
     def forward(self, x):
+        # 先抽特徵，再分類
         x = self.features(x)
         return self.classifier(x)
 
 cnn = SimpleCNN()
+# 模擬 4 張 28x28 灰階影像
 dummy = torch.randn(4, 1, 28, 28)
 print(cnn(dummy).shape)
 ```
@@ -114,6 +124,7 @@ print(cnn(dummy).shape)
 ```python
 from torchvision import transforms
 
+# 訓練階段可加入隨機增強，提高模型泛化能力
 train_tfms = transforms.Compose([
     transforms.Resize((224, 224)),
     transforms.RandomHorizontalFlip(),
@@ -134,9 +145,11 @@ model.eval()
 correct = 0
 total = 0
 
+# 評估時關閉梯度以節省記憶體
 with torch.no_grad():
     for images, labels in val_loader:
         logits = model(images)
+        # 取 logit 最大的類別作為預測
         pred = logits.argmax(dim=1)
         correct += (pred == labels).sum().item()
         total += labels.size(0)
@@ -145,3 +158,84 @@ accuracy = correct / total
 ```
 
 常見錯誤包括 channel 順序錯誤、輸入沒有 normalize、訓練與推論前處理不一致、最後一層輸出類別數不符，以及在驗證時忘記 `torch.no_grad()`。
+
+## MLP 適合與不適合的資料 {#sec-pytorch-mlp-use-cases}
+
+MLP 適合已經整理成固定長度向量的資料，例如：
+
+*   表格資料中的數值特徵。
+*   經過 one-hot encoding 或 embedding 後的類別特徵。
+*   文字或影像經其他模型抽出的固定長度 embedding。
+*   小型分類或迴歸 baseline。
+
+MLP 不擅長直接處理具有明顯結構的原始資料。例如影像具有空間鄰近關係，文字具有序列順序。如果直接把圖片攤平成向量交給 MLP，模型會失去「相鄰像素相關」這個重要假設，因此 CNN 通常更適合影像。
+
+## Activation、Normalization 與 Dropout {#sec-pytorch-network-components}
+
+神經網路不是只有線性層。常見元件有：
+
+| 元件 | 作用 | 注意事項 |
+|------|------|----------|
+| ReLU / GELU | 提供非線性能力 | 沒有 activation，多層線性層仍等同單層線性模型 |
+| BatchNorm | 穩定中間特徵分布 | train/eval 模式行為不同 |
+| LayerNorm | 常用於 Transformer | 對 batch size 較不敏感 |
+| Dropout | 隨機關閉部分神經元 | 訓練時啟用，推論時關閉 |
+| Weight decay | 正規化權重 | 可降低過擬合 |
+
+過擬合時，訓練集表現很好、驗證集表現差。可嘗試增加資料、資料增強、降低模型複雜度、加入 dropout、weight decay 或 early stopping。
+
+## CNN 中尺寸如何變化 {#sec-pytorch-cnn-shape-calculation}
+
+CNN 設計時要追蹤 feature map 尺寸。以 28x28 灰階影像為例：
+
+1.  `Conv2d(1, 8, kernel_size=3, padding=1)` 保持 28x28，通道變成 8。
+2.  `MaxPool2d(2)` 將 28x28 降成 14x14。
+3.  `Conv2d(8, 16, kernel_size=3, padding=1)` 保持 14x14，通道變成 16。
+4.  第二次 `MaxPool2d(2)` 將 14x14 降成 7x7。
+
+因此 Flatten 後大小是 `16 * 7 * 7`。如果輸入改成 32x32，最後大小會不同，線性層輸入維度就要改。實務上可用 dummy input 檢查：
+
+```{mermaid}
+flowchart LR
+    A["Input<br/>1 x 28 x 28"] --> B["Conv2d<br/>8 x 28 x 28"]
+    B --> C["MaxPool2d<br/>8 x 14 x 14"]
+    C --> D["Conv2d<br/>16 x 14 x 14"]
+    D --> E["MaxPool2d<br/>16 x 7 x 7"]
+    E --> F["Flatten<br/>784"]
+    F --> G["Linear<br/>10 classes"]
+```
+
+這張圖把 CNN 中 feature map 的尺寸變化攤開來看。只要輸入尺寸或 pooling 次數改變，Flatten 後的維度就可能跟著改變。
+
+```python
+with torch.no_grad():
+    # 用假輸入檢查 CNN 中間特徵圖 shape
+    x = torch.randn(1, 1, 28, 28)
+    features = model.features(x)
+    print(features.shape)
+```
+
+這比手算更不容易出錯。
+
+## Transfer Learning 與預訓練模型 {#sec-pytorch-transfer-learning}
+
+影像任務若資料量不大，常不會從零訓練 CNN，而是使用預訓練模型，例如 ResNet、EfficientNet、MobileNet。Transfer learning 的做法是：
+
+1.  載入在大型資料集上預訓練的 backbone。
+2.  替換最後分類層，使輸出類別數符合任務。
+3.  先凍結部分 backbone，只訓練分類頭。
+4.  視資料量與效果決定是否 fine-tune 更多層。
+
+這能利用模型已學到的邊緣、紋理、形狀等通用視覺特徵，降低資料需求與訓練時間。
+
+## CNN 專案的錯誤分析方法 {#sec-pytorch-cnn-error-analysis}
+
+CNN 評估不應只看 accuracy。應抽出錯誤影像檢查：
+
+*   是否標籤本身有錯？
+*   是否某些類別資料太少？
+*   是否模型常錯在相似類別？
+*   是否圖片太暗、太小、模糊或被遮擋？
+*   是否訓練資料與部署資料風格不同？
+
+混淆矩陣能快速看出哪些類別容易互相混淆。若錯誤集中在資料品質，應先改善資料，而不是只加深模型。

@@ -183,36 +183,48 @@
 <body>
 <div class="container">
 <h1>📋 Basic Python Language — 題庫審閱</h1>
-<div class="subtitle">模組：m6 ｜ 來源：chapter1.yaml, chapter2.yaml, chapter3.yaml, chapter4.yaml, chapter5.yaml, chapter6.yaml, chapter7.yaml</div>
+<div class="subtitle">模組：. ｜ 來源：chapter1.yaml, chapter2.yaml, chapter3.yaml, chapter4.yaml, chapter5.yaml, chapter6.yaml, chapter7.yaml</div>
 <div class="stats">
-<div class="stat-card">題目總數 <strong>56</strong></div>
+<div class="stat-card">題目總數 <strong>112</strong></div>
 <div class="stat-card">章節數 <strong>7</strong></div>
 <div class="stat-card">檔案數 <strong>7</strong></div>
 </div>
-<div class="warning"><strong>⚠️ 答案分佈不均：</strong>正確答案集中在選項 A（77%）。<br/>分佈：A：43 題 (77%) ｜ B：11 題 (20%) ｜ C：2 題 (4%)</div>
+<div class="warning"><strong>⚠️ 答案分佈不均：</strong>正確答案集中在選項 A（88%）。<br/>分佈：A：99 題 (88%) ｜ B：11 題 (10%) ｜ C：2 題 (2%)</div>
 <div class="toc"><h2>目錄</h2><ul>
-<li><a href="#ch-1">Basic Python Language</a> (8 題)</li>
+<li><a href="#ch-1">Basic Python Language</a> (16 題)</li>
 <li class="toc-section">— Python 的定位與執行方式</li>
 <li class="toc-section">— 變數、型別與資料結構</li>
 <li class="toc-section">— 流程控制與函式</li>
 <li class="toc-section">— List Comprehension 與 Generator</li>
 <li class="toc-section">— 檔案、例外與環境管理</li>
 <li class="toc-section">— 模組、套件與匯入</li>
-<li><a href="#ch-2">NumPy 與 Pandas</a> (8 題)</li>
+<li class="toc-section">— Python 在 AI 專案中的典型檔案結構</li>
+<li class="toc-section">— 可讀性與可維護性原則</li>
+<li class="toc-section">— 常見錯誤與除錯方法</li>
+<li><a href="#ch-2">NumPy 與 Pandas</a> (16 題)</li>
 <li class="toc-section">— NumPy 陣列與向量化</li>
 <li class="toc-section">— Shape、Broadcasting 與矩陣運算</li>
 <li class="toc-section">— Pandas DataFrame 基礎</li>
 <li class="toc-section">— 缺失值、類別資料與特徵整理</li>
 <li class="toc-section">— GroupBy、合併與時間序列</li>
 <li class="toc-section">— 從 Pandas 到模型輸入</li>
-<li><a href="#ch-3">SciPy 與 scikit-learn</a> (8 題)</li>
+<li class="toc-section">— NumPy 與 Pandas 的分工</li>
+<li class="toc-section">— 資料品質檢查清單</li>
+<li class="toc-section">— 效能與記憶體觀念</li>
+<li class="toc-section">— 特徵工程範例：從原始欄位到模型欄位</li>
+<li><a href="#ch-3">SciPy 與 scikit-learn</a> (16 題)</li>
 <li class="toc-section">— SciPy 的角色</li>
 <li class="toc-section">— 最佳化與曲線擬合</li>
 <li class="toc-section">— scikit-learn 的標準流程</li>
 <li class="toc-section">— 前處理與 Pipeline</li>
 <li class="toc-section">— 分類、迴歸與分群</li>
 <li class="toc-section">— 評估、交叉驗證與超參數搜尋</li>
-<li><a href="#ch-4">OpenCV 與 NLTK</a> (8 題)</li>
+<li class="toc-section">— 建立 Baseline 的重要性</li>
+<li class="toc-section">— Train、Validation、Test 的分工</li>
+<li class="toc-section">— 模型選擇的實務判斷</li>
+<li class="toc-section">— 常見評估指標</li>
+<li class="toc-section">— scikit-learn 與深度學習的界線</li>
+<li><a href="#ch-4">OpenCV 與 NLTK</a> (16 題)</li>
 <li class="toc-section">— OpenCV 基礎：影像表示與讀寫</li>
 <li class="toc-section">— 影像前處理與特徵</li>
 <li class="toc-section">— 影像資料進入模型</li>
@@ -220,27 +232,43 @@
 <li class="toc-section">— Stop Words、Stemming 與 Lemmatization</li>
 <li class="toc-section">— 從文字到特徵</li>
 <li class="toc-section">— OpenCV 與 NLTK 的共同觀念</li>
-<li><a href="#ch-5">PyTorch 基礎</a> (8 題)</li>
+<li class="toc-section">— OpenCV 實務流程：從原始影像到模型資料</li>
+<li class="toc-section">— 傳統電腦視覺與深度學習的分工</li>
+<li class="toc-section">— 錯誤案例分析</li>
+<li><a href="#ch-5">PyTorch 基礎</a> (16 題)</li>
 <li class="toc-section">— Tensor 與裝置</li>
 <li class="toc-section">— Autograd 與反向傳播</li>
 <li class="toc-section">— Dataset 與 DataLoader</li>
 <li class="toc-section">— nn.Module 與模型定義</li>
 <li class="toc-section">— Loss、Optimizer 與訓練迴圈</li>
 <li class="toc-section">— 儲存與載入模型</li>
-<li><a href="#ch-6">PyTorch 實作簡單神經網路與 CNN</a> (8 題)</li>
+<li class="toc-section">— PyTorch 訓練流程的完整心智模型</li>
+<li class="toc-section">— Tensor Shape 與 dtype 常見規則</li>
+<li class="toc-section">— Learning Rate 與 Optimizer</li>
+<li class="toc-section">— PyTorch 常見錯誤排查</li>
+<li><a href="#ch-6">PyTorch 實作簡單神經網路與 CNN</a> (16 題)</li>
 <li class="toc-section">— MLP 的基本架構</li>
 <li class="toc-section">— 訓練 MLP</li>
 <li class="toc-section">— CNN 的核心觀念</li>
 <li class="toc-section">— 實作簡單 CNN</li>
 <li class="toc-section">— 資料增強與正規化</li>
 <li class="toc-section">— 評估 CNN 與常見錯誤</li>
-<li><a href="#ch-7">PyTorch Transformer 基礎</a> (8 題)</li>
+<li class="toc-section">— MLP 適合與不適合的資料</li>
+<li class="toc-section">— Activation、Normalization 與 Dropout</li>
+<li class="toc-section">— Transfer Learning 與預訓練模型</li>
+<li class="toc-section">— CNN 專案的錯誤分析方法</li>
+<li><a href="#ch-7">PyTorch Transformer 基礎</a> (16 題)</li>
 <li class="toc-section">— Transformer 的核心想法</li>
 <li class="toc-section">— Embedding 與位置資訊</li>
 <li class="toc-section">— MultiheadAttention 基礎</li>
 <li class="toc-section">— Transformer Encoder 分類器</li>
 <li class="toc-section">— Mask 與序列長度</li>
 <li class="toc-section">— 從簡化模型到大型語言模型</li>
+<li class="toc-section">— Attention 的直覺與限制</li>
+<li class="toc-section">— Encoder、Decoder 與 Encoder-Decoder</li>
+<li class="toc-section">— Tokenizer 與 Subword</li>
+<li class="toc-section">— Transformer 訓練時的 Loss</li>
+<li class="toc-section">— Fine-tuning、Feature Extraction 與 RAG</li>
 </ul></div>
 <h2 class="chapter-heading" id="ch-1">Basic Python Language</h2>
 <h3 class="section-heading">Python 的定位與執行方式</h3>
@@ -261,6 +289,23 @@
 <span class="tag">sec-python-runtime</span>
 </div>
 </div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪一種 Python 執行方式最適合探索式資料分析與逐步紀錄實驗結果？</div>
+<span class="q-id">#8071</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">Jupyter Notebook</li>
+<li data-label="B.">CSS stylesheet</li>
+<li data-label="C.">SQL index</li>
+<li data-label="D.">Docker image tag</li>
+</ol>
+<div class="explanation">💡 Jupyter Notebook 適合逐步執行、觀察輸出、保留圖表與分析過程，因此常用於探索式資料分析。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch1</span>
+<span class="tag">sec-python-runtime</span>
+</div>
+</div>
 <h3 class="section-heading">變數、型別與資料結構</h3>
 <div class="question-card">
 <div class="q-header">
@@ -274,6 +319,23 @@
 <li data-label="D.">set</li>
 </ol>
 <div class="explanation">💡 dict 用 key-value 形式儲存資料，適合表示設定、JSON 結構與標籤對應。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch1</span>
+<span class="tag">sec-python-data-structures</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Python 的 tuple 與 list 相比，主要差異是什麼？</div>
+<span class="q-id">#8072</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">tuple 有序但不可變，list 有序且可變</li>
+<li data-label="B.">tuple 只能儲存浮點數，list 只能儲存字串</li>
+<li data-label="C.">tuple 會自動訓練模型，list 不會</li>
+<li data-label="D.">tuple 無法被函式回傳</li>
+</ol>
+<div class="explanation">💡 tuple 是不可變序列，適合表示固定組合；list 是可變序列，適合持續新增或修改元素。</div>
 <div class="tags">
 <span class="tag">chap-m6-ch1</span>
 <span class="tag">sec-python-data-structures</span>
@@ -332,6 +394,23 @@
 <span class="tag">sec-python-comprehension</span>
 </div>
 </div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">list comprehension 最適合用於哪一類工作？</div>
+<span class="q-id">#8073</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">對序列資料進行簡潔的篩選與轉換</li>
+<li data-label="B.">自動安裝所有缺少的套件</li>
+<li data-label="C.">將 GPU 記憶體永久鎖定</li>
+<li data-label="D.">取代所有錯誤處理</li>
+</ol>
+<div class="explanation">💡 list comprehension 常用於用一行程式完成篩選、映射與簡單轉換。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch1</span>
+<span class="tag">sec-python-comprehension</span>
+</div>
+</div>
 <h3 class="section-heading">檔案、例外與環境管理</h3>
 <div class="question-card">
 <div class="q-header">
@@ -367,6 +446,23 @@
 <span class="tag">sec-python-files-env</span>
 </div>
 </div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">例外處理 try/except 的主要目的為何？</div>
+<span class="q-id">#8074</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">處理可預期錯誤，讓程式能採取替代流程</li>
+<li data-label="B.">讓所有函式自動平行化</li>
+<li data-label="C.">將文字資料轉為影像</li>
+<li data-label="D.">保證模型不會過擬合</li>
+</ol>
+<div class="explanation">💡 try/except 可攔截特定錯誤並執行替代處理，避免程式在可預期錯誤下直接中斷。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch1</span>
+<span class="tag">sec-python-files-env</span>
+</div>
+</div>
 <h3 class="section-heading">模組、套件與匯入</h3>
 <div class="question-card">
 <div class="q-header">
@@ -383,6 +479,77 @@
 <div class="tags">
 <span class="tag">chap-m6-ch1</span>
 <span class="tag">sec-python-modules</span>
+</div>
+</div>
+<h3 class="section-heading">Python 在 AI 專案中的典型檔案結構</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 AI 專案中，將探索性 Notebook 中的核心邏輯移到 src/ 目錄，主要好處是什麼？</div>
+<span class="q-id">#8075</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">讓核心邏輯可重用、可測試，也更容易由他人維護</li>
+<li data-label="B.">讓模型自動取得更高準確率</li>
+<li data-label="C.">讓資料集不需要任何標籤</li>
+<li data-label="D.">讓 Python 變成靜態型別語言</li>
+</ol>
+<div class="explanation">💡 Notebook 適合探索，src/ 中的模組化程式碼更適合測試、重複執行與團隊維護。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch1</span>
+<span class="tag">sec-python-project-structure</span>
+</div>
+</div>
+<h3 class="section-heading">可讀性與可維護性原則</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">為什麼 AI 實驗中應集中管理 batch size、learning rate、資料路徑等設定？</div>
+<span class="q-id">#8076</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">方便重現實驗、比較結果與調整參數</li>
+<li data-label="B.">讓訓練資料自動變成無缺失值</li>
+<li data-label="C.">讓所有程式都不需要 import</li>
+<li data-label="D.">讓模型只能使用 CPU</li>
+</ol>
+<div class="explanation">💡 設定集中管理可降低散落在多處造成的不一致，也方便追蹤實驗條件。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch1</span>
+<span class="tag">sec-python-maintainability</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 Python AI 專案中，過度依賴全域變數最主要的風險是什麼？</div>
+<span class="q-id">#8078</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">程式結果容易依賴隱藏狀態與執行順序</li>
+<li data-label="B.">會讓 dict 無法使用 key 查詢</li>
+<li data-label="C.">會讓 NumPy 陣列無法相加</li>
+<li data-label="D.">會讓所有註解失效</li>
+</ol>
+<div class="explanation">💡 全域變數會讓函式依賴外部狀態，特別在 Notebook 中容易因執行順序不同而得到不同結果。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch1</span>
+<span class="tag">sec-python-maintainability</span>
+</div>
+</div>
+<h3 class="section-heading">常見錯誤與除錯方法</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">當 AI 程式出現矩陣或張量維度錯誤時，最直接的除錯動作是什麼？</div>
+<span class="q-id">#8077</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">印出每一步資料的 shape</li>
+<li data-label="B.">立即更換作業系統</li>
+<li data-label="C.">將所有變數改成全域變數</li>
+<li data-label="D.">刪除測試資料集</li>
+</ol>
+<div class="explanation">💡 維度錯誤通常需要逐步追蹤資料 shape，確認哪一步的轉換造成不相容。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch1</span>
+<span class="tag">sec-python-debugging</span>
 </div>
 </div>
 <h2 class="chapter-heading" id="ch-2">NumPy 與 Pandas</h2>
@@ -439,6 +606,23 @@
 <span class="tag">sec-numpy-shape-broadcast</span>
 </div>
 </div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">NumPy broadcasting 的主要用途是什麼？</div>
+<span class="q-id">#8081</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">在規則允許下自動對齊不同 shape 的陣列進行運算</li>
+<li data-label="B.">將資料自動上傳到雲端</li>
+<li data-label="C.">將所有陣列轉成 Python dict</li>
+<li data-label="D.">自動建立神經網路架構</li>
+</ol>
+<div class="explanation">💡 broadcasting 讓較小陣列能依規則擴展到較大陣列的 shape，常用於中心化、標準化等操作。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch2</span>
+<span class="tag">sec-numpy-shape-broadcast</span>
+</div>
+</div>
 <h3 class="section-heading">Pandas DataFrame 基礎</h3>
 <div class="question-card">
 <div class="q-header">
@@ -452,6 +636,23 @@
 <li data-label="D.">作業系統核心排程</li>
 </ol>
 <div class="explanation">💡 DataFrame 是有索引與欄位名稱的表格資料結構，常用於 CSV、Excel 與資料庫查詢結果。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch2</span>
+<span class="tag">sec-pandas-dataframe</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">使用 df.head() 的主要目的通常是什麼？</div>
+<span class="q-id">#8082</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">快速查看資料前幾列與欄位格式</li>
+<li data-label="B.">將資料全部刪除</li>
+<li data-label="C.">訓練 Transformer 模型</li>
+<li data-label="D.">將 CSV 轉成影像</li>
+</ol>
+<div class="explanation">💡 head() 可快速檢查資料內容、欄位名稱與大致格式，是讀取資料後常見的第一步檢查。</div>
 <div class="tags">
 <span class="tag">chap-m6-ch2</span>
 <span class="tag">sec-pandas-dataframe</span>
@@ -510,6 +711,23 @@
 <span class="tag">sec-pandas-groupby-merge-time</span>
 </div>
 </div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Pandas merge 通常用於哪一種情境？</div>
+<span class="q-id">#8083</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">根據共同 key 合併多張表格</li>
+<li data-label="B.">將模型參數歸零</li>
+<li data-label="C.">將影像通道順序改成 BGR</li>
+<li data-label="D.">自動計算梯度</li>
+</ol>
+<div class="explanation">💡 merge 會根據共同欄位或索引把不同表格串接起來，例如訂單表與使用者表。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch2</span>
+<span class="tag">sec-pandas-groupby-merge-time</span>
+</div>
+</div>
 <h3 class="section-heading">從 Pandas 到模型輸入</h3>
 <div class="question-card">
 <div class="q-header">
@@ -526,6 +744,95 @@
 <div class="tags">
 <span class="tag">chap-m6-ch2</span>
 <span class="tag">sec-pandas-to-model</span>
+</div>
+</div>
+<h3 class="section-heading">NumPy 與 Pandas 的分工</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪一種情境通常較適合先使用 Pandas 而不是直接使用 NumPy？</div>
+<span class="q-id">#8084</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">讀取 CSV 並依欄位名稱清理表格資料</li>
+<li data-label="B.">執行純矩陣乘法</li>
+<li data-label="C.">計算 GPU 反向傳播</li>
+<li data-label="D.">建立 CNN 卷積層</li>
+</ol>
+<div class="explanation">💡 Pandas 保留欄位名稱與表格語意，適合資料讀取、清理、合併與特徵整理。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch2</span>
+<span class="tag">sec-numpy-pandas-division</span>
+</div>
+</div>
+<h3 class="section-heading">資料品質檢查清單</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">建模前檢查目標欄位分布的原因是什麼？</div>
+<span class="q-id">#8085</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">確認分類是否不平衡或迴歸目標是否有極端值</li>
+<li data-label="B.">讓模型跳過訓練階段</li>
+<li data-label="C.">將所有欄位改成字串</li>
+<li data-label="D.">避免 DataFrame 顯示欄位名稱</li>
+</ol>
+<div class="explanation">💡 目標分布會影響評估指標、切分策略與模型選擇，例如分類不平衡時不能只看 accuracy。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch2</span>
+<span class="tag">sec-pandas-quality-checklist</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">對時間序列問題誤用隨機切分，最可能造成什麼問題？</div>
+<span class="q-id">#8088</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">未來資料資訊可能進入訓練流程，導致評估過度樂觀</li>
+<li data-label="B.">模型會無法使用任何數值欄位</li>
+<li data-label="C.">DataFrame 會自動轉成 list</li>
+<li data-label="D.">所有類別欄位都會消失</li>
+</ol>
+<div class="explanation">💡 時間序列任務應模擬真實部署，用過去預測未來；隨機切分可能讓未來資訊滲入訓練。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch2</span>
+<span class="tag">sec-pandas-quality-checklist</span>
+</div>
+</div>
+<h3 class="section-heading">效能與記憶體觀念</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在大量資料上，Pandas 向量化操作通常比逐列 apply 更好的原因是什麼？</div>
+<span class="q-id">#8086</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">向量化操作通常由底層最佳化實作，速度較快且更簡潔</li>
+<li data-label="B.">向量化會自動刪除缺失值</li>
+<li data-label="C.">apply 永遠不能處理數值資料</li>
+<li data-label="D.">向量化只能用於文字資料</li>
+</ol>
+<div class="explanation">💡 向量化操作減少 Python 層逐筆迴圈，通常能提升效能並讓程式更清楚。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch2</span>
+<span class="tag">sec-pandas-performance</span>
+</div>
+</div>
+<h3 class="section-heading">特徵工程範例：從原始欄位到模型欄位</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">為什麼目標欄位 purchased 不應放入模型輸入特徵 X？</div>
+<span class="q-id">#8087</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">因為它是模型要預測的答案，放入 X 會造成資料洩漏</li>
+<li data-label="B.">因為 Pandas 不支援布林欄位</li>
+<li data-label="C.">因為 NumPy 不能處理 0 和 1</li>
+<li data-label="D.">因為 scikit-learn 只能讀取日期</li>
+</ol>
+<div class="explanation">💡 目標欄位是 y，若也放進 X，模型等於直接看到答案，離線評估會失真。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch2</span>
+<span class="tag">sec-pandas-feature-example</span>
 </div>
 </div>
 <h2 class="chapter-heading" id="ch-3">SciPy 與 scikit-learn</h2>
@@ -564,6 +871,23 @@
 <span class="tag">sec-scipy-role</span>
 </div>
 </div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">scipy.sparse 特別常用於哪一類資料表示？</div>
+<span class="q-id">#8091</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">高維但大多數元素為 0 的稀疏矩陣，例如文字特徵</li>
+<li data-label="B.">RGB 影像的通道轉換</li>
+<li data-label="C.">PyTorch 模型的 state_dict</li>
+<li data-label="D.">Docker container 的網路設定</li>
+</ol>
+<div class="explanation">💡 文字特徵如 Bag-of-Words 或 TF-IDF 常是高維稀疏矩陣，適合用 scipy.sparse 表示。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch3</span>
+<span class="tag">sec-scipy-role</span>
+</div>
+</div>
 <h3 class="section-heading">最佳化與曲線擬合</h3>
 <div class="question-card">
 <div class="q-header">
@@ -577,6 +901,23 @@
 <li data-label="D.">讓所有特徵都變成字串的轉換方式</li>
 </ol>
 <div class="explanation">💡 模型訓練通常是調整參數以最小化 loss，使預測更接近目標。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch3</span>
+<span class="tag">sec-scipy-optimize</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">若最佳化問題中的 learning rate 或步長過大，常見結果是什麼？</div>
+<span class="q-id">#8092</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">可能跳過最小值或導致 loss 發散</li>
+<li data-label="B.">模型一定會完美收斂</li>
+<li data-label="C.">資料集會自動變大</li>
+<li data-label="D.">所有特徵都會變成類別欄位</li>
+</ol>
+<div class="explanation">💡 步長過大可能讓參數更新過度，無法穩定接近最佳解。</div>
 <div class="tags">
 <span class="tag">chap-m6-ch3</span>
 <span class="tag">sec-scipy-optimize</span>
@@ -613,6 +954,23 @@
 <li data-label="D.">強制模型只能做分群</li>
 </ol>
 <div class="explanation">💡 Pipeline 可把 scaler、encoder、classifier 等步驟一起 fit，避免測試資料資訊滲入訓練流程。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch3</span>
+<span class="tag">sec-sklearn-preprocessing-pipeline</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 Pipeline 中，StandardScaler 應該在哪個資料集上 fit？</div>
+<span class="q-id">#8093</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">只在訓練資料上 fit，再套用到驗證或測試資料</li>
+<li data-label="B.">在測試資料上 fit，再回頭套用到訓練資料</li>
+<li data-label="C.">在全部資料上 fit 後再切分</li>
+<li data-label="D.">不需要 fit，直接隨機產生平均值</li>
+</ol>
+<div class="explanation">💡 前處理參數應只由訓練資料學得，否則測試資料資訊會洩漏到訓練流程。</div>
 <div class="tags">
 <span class="tag">chap-m6-ch3</span>
 <span class="tag">sec-sklearn-preprocessing-pipeline</span>
@@ -671,6 +1029,96 @@
 <span class="tag">sec-sklearn-evaluation</span>
 </div>
 </div>
+<h3 class="section-heading">建立 Baseline 的重要性</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">建立 baseline 模型的主要目的不是什麼？</div>
+<span class="q-id">#8094</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">一開始就保證達到最佳商業結果</li>
+<li data-label="B.">快速檢查資料是否有可學習訊號</li>
+<li data-label="C.">作為複雜模型的比較基準</li>
+<li data-label="D.">檢查評估流程是否合理</li>
+</ol>
+<div class="explanation">💡 baseline 是簡單基準，用於比較與檢查，不保證是最佳最終模型。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch3</span>
+<span class="tag">sec-sklearn-baseline</span>
+</div>
+</div>
+<h3 class="section-heading">Train、Validation、Test 的分工</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Validation set 的主要用途是什麼？</div>
+<span class="q-id">#8095</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">選模型與調整超參數</li>
+<li data-label="B.">作為唯一訓練資料</li>
+<li data-label="C.">替代所有測試資料</li>
+<li data-label="D.">儲存模型權重</li>
+</ol>
+<div class="explanation">💡 Validation set 會參與模型選擇與調參決策，因此不應當作最終客觀評估。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch3</span>
+<span class="tag">sec-sklearn-data-splits</span>
+</div>
+</div>
+<h3 class="section-heading">模型選擇的實務判斷</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">若資料是中小型表格資料，且需要快速建立 baseline，通常可優先考慮哪類工具？</div>
+<span class="q-id">#8096</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">scikit-learn 的傳統機器學習模型</li>
+<li data-label="B.">從零訓練大型語言模型</li>
+<li data-label="C.">手寫 CUDA kernel</li>
+<li data-label="D.">只使用 OpenCV 閾值處理</li>
+</ol>
+<div class="explanation">💡 scikit-learn 對中小型表格資料、baseline 與傳統模型流程非常適合。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch3</span>
+<span class="tag">sec-sklearn-model-selection</span>
+</div>
+</div>
+<h3 class="section-heading">常見評估指標</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在迴歸任務中，MAE 與 RMSE 主要用來評估什麼？</div>
+<span class="q-id">#8097</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">預測連續數值的誤差大小</li>
+<li data-label="B.">文字 tokenizer 的詞彙表大小</li>
+<li data-label="C.">影像通道順序</li>
+<li data-label="D.">DataLoader 的批次順序</li>
+</ol>
+<div class="explanation">💡 MAE 與 RMSE 都是迴歸誤差指標，用於衡量預測值與真實連續目標的差距。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch3</span>
+<span class="tag">sec-sklearn-metrics-detail</span>
+</div>
+</div>
+<h3 class="section-heading">scikit-learn 與深度學習的界線</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪一種任務通常更適合使用 PyTorch 而不是 scikit-learn？</div>
+<span class="q-id">#8098</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">需要自訂神經網路並使用 GPU 訓練影像模型</li>
+<li data-label="B.">小型表格資料的 Logistic Regression baseline</li>
+<li data-label="C.">CSV 欄位統計摘要</li>
+<li data-label="D.">Pandas groupby 報表</li>
+</ol>
+<div class="explanation">💡 PyTorch 適合自訂深度學習架構、GPU 訓練與影像、文字、語音等複雜資料。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch3</span>
+<span class="tag">sec-sklearn-vs-deep-learning</span>
+</div>
+</div>
 <h2 class="chapter-heading" id="ch-4">OpenCV 與 NLTK</h2>
 <h3 class="section-heading">OpenCV 基礎：影像表示與讀寫</h3>
 <div class="question-card">
@@ -685,6 +1133,23 @@
 <li data-label="D.">CMYK</li>
 </ol>
 <div class="explanation">💡 OpenCV 預設彩色影像通道順序為 BGR，與 Matplotlib 和多數網頁使用的 RGB 不同。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch4</span>
+<span class="tag">sec-opencv-image-basics</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">OpenCV 讀取影像後通常會以哪一種 Python 物件表示影像資料？</div>
+<span class="q-id">#8101</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">NumPy 陣列</li>
+<li data-label="B.">Pandas Index</li>
+<li data-label="C.">Python generator function</li>
+<li data-label="D.">scikit-learn Pipeline</li>
+</ol>
+<div class="explanation">💡 OpenCV 影像通常以 NumPy ndarray 表示，shape 常見為高度、寬度、通道數。</div>
 <div class="tags">
 <span class="tag">chap-m6-ch4</span>
 <span class="tag">sec-opencv-image-basics</span>
@@ -708,6 +1173,23 @@
 <span class="tag">sec-opencv-preprocessing</span>
 </div>
 </div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">GaussianBlur 在影像前處理中常見用途是什麼？</div>
+<span class="q-id">#8102</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">降低雜訊，使後續閾值或邊緣處理更穩定</li>
+<li data-label="B.">將文字切成 token</li>
+<li data-label="C.">計算 TF-IDF 權重</li>
+<li data-label="D.">儲存 PyTorch 權重</li>
+</ol>
+<div class="explanation">💡 模糊化可平滑局部雜訊，常在 threshold 或 edge detection 前使用。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch4</span>
+<span class="tag">sec-opencv-preprocessing</span>
+</div>
+</div>
 <h3 class="section-heading">影像資料進入模型</h3>
 <div class="question-card">
 <div class="q-header">
@@ -721,6 +1203,23 @@
 <li data-label="D.">將影像改成 YAML</li>
 </ol>
 <div class="explanation">💡 OpenCV 讀取為 BGR，而多數深度學習前處理與視覺化流程使用 RGB。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch4</span>
+<span class="tag">sec-opencv-to-model</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">影像進入 PyTorch CNN 前通常需要轉成哪一種維度順序？</div>
+<span class="q-id">#8103</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">channels, height, width</li>
+<li data-label="B.">height, width, channels, text</li>
+<li data-label="C.">rows, columns, key, value</li>
+<li data-label="D.">token, position, label</li>
+</ol>
+<div class="explanation">💡 單張影像給 PyTorch CNN 時通常是 CHW；批次資料則是 NCHW。</div>
 <div class="tags">
 <span class="tag">chap-m6-ch4</span>
 <span class="tag">sec-opencv-to-model</span>
@@ -744,6 +1243,23 @@
 <span class="tag">sec-nltk-text-basics</span>
 </div>
 </div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">對中文文字來說，tokenization 比英文更具挑戰的主要原因是什麼？</div>
+<span class="q-id">#8104</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">中文詞與詞之間通常沒有空白分隔</li>
+<li data-label="B.">中文不能用任何機器學習模型處理</li>
+<li data-label="C.">中文文字只能轉成影像</li>
+<li data-label="D.">中文不可能有專有名詞</li>
+</ol>
+<div class="explanation">💡 中文沒有天然空白分隔，因此斷詞需要額外工具與領域詞彙支援。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch4</span>
+<span class="tag">sec-nltk-text-basics</span>
+</div>
+</div>
 <h3 class="section-heading">Stop Words、Stemming 與 Lemmatization</h3>
 <div class="question-card">
 <div class="q-header">
@@ -757,6 +1273,23 @@
 <li data-label="D.">兩者都是用來 resize 圖片</li>
 </ol>
 <div class="explanation">💡 lemmatization 會依語言詞形規則還原字典形式，stemming 則通常是規則式切字尾。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch4</span>
+<span class="tag">sec-nltk-normalization</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">移除 stop words 時應注意什麼？</div>
+<span class="q-id">#8105</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">不同任務中 stop words 可能仍含重要語意，不應盲目刪除</li>
+<li data-label="B.">所有 stop words 都一定會提升模型準確率</li>
+<li data-label="C.">stop words 只能用於影像分類</li>
+<li data-label="D.">stop words 會自動修正標籤錯誤</li>
+</ol>
+<div class="explanation">💡 在情緒分析、法律文本或否定句中，常見小字也可能影響語意。</div>
 <div class="tags">
 <span class="tag">chap-m6-ch4</span>
 <span class="tag">sec-nltk-normalization</span>
@@ -815,6 +1348,60 @@
 <span class="tag">sec-opencv-nltk-common</span>
 </div>
 </div>
+<h3 class="section-heading">OpenCV 實務流程：從原始影像到模型資料</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在影像專案中先檢查損毀檔案、尺寸與通道數，主要是為了什麼？</div>
+<span class="q-id">#8106</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">避免資料載入或模型輸入階段發生格式錯誤</li>
+<li data-label="B.">讓所有圖片自動標註正確類別</li>
+<li data-label="C.">讓模型不需要驗證集</li>
+<li data-label="D.">將影像轉成 SQL</li>
+</ol>
+<div class="explanation">💡 影像格式與尺寸不一致很容易造成 DataLoader 或模型輸入錯誤，應在訓練前檢查。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch4</span>
+<span class="tag">sec-opencv-practical-pipeline</span>
+</div>
+</div>
+<h3 class="section-heading">傳統電腦視覺與深度學習的分工</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在高度固定、光線穩定的工業檢測場景中，傳統 OpenCV 方法可能有什麼優勢？</div>
+<span class="q-id">#8107</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">快速、可解釋，且不一定需要大量標註資料</li>
+<li data-label="B.">必定比所有深度學習方法準確</li>
+<li data-label="C.">可以完全取代資料品質檢查</li>
+<li data-label="D.">只能處理文字資料</li>
+</ol>
+<div class="explanation">💡 固定場景下，閾值、輪廓等傳統方法常具備成本低、速度快、可解釋的優勢。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch4</span>
+<span class="tag">sec-opencv-traditional-vs-dl</span>
+</div>
+</div>
+<h3 class="section-heading">錯誤案例分析</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">影像分類模型錯誤集中在低光與模糊圖片時，較合理的下一步是什麼？</div>
+<span class="q-id">#8108</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">補充或改善相關資料品質，並考慮對應資料增強</li>
+<li data-label="B.">只增加模型輸出類別數</li>
+<li data-label="C.">刪除所有驗證資料</li>
+<li data-label="D.">將圖片改成文字 TF-IDF</li>
+</ol>
+<div class="explanation">💡 錯誤集中在特定資料品質問題時，應優先改善資料收集、清理或增強策略。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch4</span>
+<span class="tag">sec-opencv-nltk-error-analysis</span>
+</div>
+</div>
 <h2 class="chapter-heading" id="ch-5">PyTorch 基礎</h2>
 <h3 class="section-heading">Tensor 與裝置</h3>
 <div class="question-card">
@@ -846,6 +1433,23 @@
 <li data-label="D.">optimizer 會自動刪除資料集</li>
 </ol>
 <div class="explanation">💡 模型參數與輸入 tensor 必須在同一 device，例如都在 CPU 或都在同一張 GPU。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch5</span>
+<span class="tag">sec-pytorch-tensor-device</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">若要把 tensor 移到與模型相同的 GPU 或 CPU，通常會使用哪個方法？</div>
+<span class="q-id">#8111</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">to(device)</li>
+<li data-label="B.">groupby()</li>
+<li data-label="C.">fit_transform()</li>
+<li data-label="D.">cvtColor()</li>
+</ol>
+<div class="explanation">💡 PyTorch 中可用 tensor.to(device) 或 model.to(device) 將資料與模型移到指定裝置。</div>
 <div class="tags">
 <span class="tag">chap-m6-ch5</span>
 <span class="tag">sec-pytorch-tensor-device</span>
@@ -904,6 +1508,23 @@
 <span class="tag">sec-pytorch-dataset-dataloader</span>
 </div>
 </div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">DataLoader 中 shuffle=True 通常在訓練資料上有什麼作用？</div>
+<span class="q-id">#8112</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">每個 epoch 打亂資料順序，降低模型依賴固定順序</li>
+<li data-label="B.">將標籤全部改成 0</li>
+<li data-label="C.">將資料轉成 BGR</li>
+<li data-label="D.">自動增加模型層數</li>
+</ol>
+<div class="explanation">💡 訓練時打亂資料能讓 mini-batch 更隨機，通常有助於穩定訓練。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch5</span>
+<span class="tag">sec-pytorch-dataset-dataloader</span>
+</div>
+</div>
 <h3 class="section-heading">nn.Module 與模型定義</h3>
 <div class="question-card">
 <div class="q-header">
@@ -917,6 +1538,23 @@
 <li data-label="D.">GPU 如何製造</li>
 </ol>
 <div class="explanation">💡 forward 定義模型的前向傳播邏輯，通常透過 model(x) 間接呼叫。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch5</span>
+<span class="tag">sec-pytorch-nn-module</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">為什麼通常用 model(x) 而不是直接呼叫 model.forward(x)？</div>
+<span class="q-id">#8113</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">model(x) 會經過 PyTorch Module 的標準呼叫流程與 hooks</li>
+<li data-label="B.">forward 不能接收任何 tensor</li>
+<li data-label="C.">model(x) 會自動下載資料集</li>
+<li data-label="D.">forward 只適用於 NumPy</li>
+</ol>
+<div class="explanation">💡 直接呼叫 model(x) 會觸發 Module 的 __call__ 流程，包含 hooks 等 PyTorch 機制。</div>
 <div class="tags">
 <span class="tag">chap-m6-ch5</span>
 <span class="tag">sec-pytorch-nn-module</span>
@@ -940,6 +1578,23 @@
 <span class="tag">sec-pytorch-training-loop</span>
 </div>
 </div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">訓練分類模型時，loss.backward() 與 optimizer.step() 的先後順序通常為何？</div>
+<span class="q-id">#8114</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">先 backward 計算梯度，再 step 更新參數</li>
+<li data-label="B.">先 step 更新參數，再 backward 清空資料</li>
+<li data-label="C.">兩者順序永遠不重要</li>
+<li data-label="D.">只需要 step，不需要 backward</li>
+</ol>
+<div class="explanation">💡 optimizer.step() 依賴已計算好的梯度，因此必須先執行 loss.backward()。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch5</span>
+<span class="tag">sec-pytorch-training-loop</span>
+</div>
+</div>
 <h3 class="section-heading">儲存與載入模型</h3>
 <div class="question-card">
 <div class="q-header">
@@ -956,6 +1611,78 @@
 <div class="tags">
 <span class="tag">chap-m6-ch5</span>
 <span class="tag">sec-pytorch-save-load</span>
+</div>
+</div>
+<h3 class="section-heading">PyTorch 訓練流程的完整心智模型</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">PyTorch 訓練流程中，保存最佳模型通常應依據哪一類資料集表現？</div>
+<span class="q-id">#8115</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">Validation set 表現</li>
+<li data-label="B.">Training set 最後一個 batch 的 loss</li>
+<li data-label="C.">未切分的全部資料</li>
+<li data-label="D.">原始 CSV 檔案大小</li>
+</ol>
+<div class="explanation">💡 Validation set 用於模型選擇，常以其指標決定是否保存目前最佳模型。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch5</span>
+<span class="tag">sec-pytorch-training-mental-model</span>
+</div>
+</div>
+<h3 class="section-heading">Tensor Shape 與 dtype 常見規則</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">使用 CrossEntropyLoss 時，分類 target 通常應是什麼格式？</div>
+<span class="q-id">#8116</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">LongTensor 類別 id，shape 通常為 (batch,)</li>
+<li data-label="B.">one-hot float 矩陣，且必須先 softmax</li>
+<li data-label="C.">BGR 影像陣列</li>
+<li data-label="D.">Pandas DataFrame 欄位名稱</li>
+</ol>
+<div class="explanation">💡 CrossEntropyLoss 預期輸入為 logits，target 通常是 long 型別的類別 id。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch5</span>
+<span class="tag">sec-pytorch-shape-dtype</span>
+</div>
+</div>
+<h3 class="section-heading">Learning Rate 與 Optimizer</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">AdamW 與 Transformer 訓練中常見的 weight decay 有什麼關係？</div>
+<span class="q-id">#8117</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">AdamW 將 weight decay 與 Adam 更新解耦，常用於 Transformer 訓練</li>
+<li data-label="B.">AdamW 只能用於 OpenCV</li>
+<li data-label="C.">AdamW 會自動建立 tokenizer</li>
+<li data-label="D.">AdamW 不需要梯度</li>
+</ol>
+<div class="explanation">💡 AdamW 是深度學習常見 optimizer，尤其在 Transformer 訓練與微調中很常使用。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch5</span>
+<span class="tag">sec-pytorch-optimizer-detail</span>
+</div>
+</div>
+<h3 class="section-heading">PyTorch 常見錯誤排查</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">若模型連 20 筆小資料都無法 overfit，最可能代表什麼？</div>
+<span class="q-id">#8118</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">訓練程式、資料、loss 或標籤設定可能有基本錯誤</li>
+<li data-label="B.">模型一定已經泛化得很好</li>
+<li data-label="C.">測試資料太大</li>
+<li data-label="D.">Pandas 沒有安裝</li>
+</ol>
+<div class="explanation">💡 小資料 overfit 測試是檢查訓練流程是否基本正確的常用方法。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch5</span>
+<span class="tag">sec-pytorch-debugging</span>
 </div>
 </div>
 <h2 class="chapter-heading" id="ch-6">PyTorch 實作簡單神經網路與 CNN</h2>
@@ -994,6 +1721,23 @@
 <span class="tag">sec-pytorch-mlp</span>
 </div>
 </div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">若 MLP 中完全不使用 activation function，多層線性層本質上會發生什麼？</div>
+<span class="q-id">#8121</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">多層線性轉換仍可合併為單一線性轉換</li>
+<li data-label="B.">模型會自動變成 CNN</li>
+<li data-label="C.">模型會自動產生 tokenizer</li>
+<li data-label="D.">loss 一定會等於 0</li>
+</ol>
+<div class="explanation">💡 沒有非線性 activation 時，多層線性層無法增加非線性表達能力。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch6</span>
+<span class="tag">sec-pytorch-mlp</span>
+</div>
+</div>
 <h3 class="section-heading">訓練 MLP</h3>
 <div class="question-card">
 <div class="q-header">
@@ -1007,6 +1751,23 @@
 <li data-label="D.">產生 DataFrame 欄位名稱</li>
 </ol>
 <div class="explanation">💡 optimizer.step() 會根據目前梯度與最佳化演算法更新參數。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch6</span>
+<span class="tag">sec-pytorch-train-mlp</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 epoch 訓練迴圈中累加 total_loss 的常見用途是什麼？</div>
+<span class="q-id">#8122</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">計算該 epoch 的平均訓練 loss，觀察訓練趨勢</li>
+<li data-label="B.">將所有模型參數設為 0</li>
+<li data-label="C.">自動切換 BGR 與 RGB</li>
+<li data-label="D.">建立 Pandas merge key</li>
+</ol>
+<div class="explanation">💡 追蹤每個 epoch 的平均 loss 有助於觀察模型是否正在學習。</div>
 <div class="tags">
 <span class="tag">chap-m6-ch6</span>
 <span class="tag">sec-pytorch-train-mlp</span>
@@ -1047,6 +1808,23 @@
 <span class="tag">sec-pytorch-cnn-concepts</span>
 </div>
 </div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">MaxPool2d 常見作用是什麼？</div>
+<span class="q-id">#8123</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">降低特徵圖空間尺寸，保留局部重要訊號</li>
+<li data-label="B.">將文字轉為 token id</li>
+<li data-label="C.">將 loss 轉成 optimizer</li>
+<li data-label="D.">讀取 CSV 欄位名稱</li>
+</ol>
+<div class="explanation">💡 Pooling 可降低特徵圖大小與計算量，也增加對小幅位移的穩定性。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch6</span>
+<span class="tag">sec-pytorch-cnn-concepts</span>
+</div>
+</div>
 <h3 class="section-heading">實作簡單 CNN</h3>
 <div class="question-card">
 <div class="q-header">
@@ -1060,6 +1838,23 @@
 <li data-label="D.">將 BGR 轉成 HSV</li>
 </ol>
 <div class="explanation">💡 Flatten 會保留 batch 維度，將其餘維度展平成一個向量供 classifier 使用。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch6</span>
+<span class="tag">sec-pytorch-simple-cnn</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">若 CNN 輸入影像尺寸改變，最容易需要同步調整哪一個部分？</div>
+<span class="q-id">#8124</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">Flatten 後接到 Linear 層的輸入維度</li>
+<li data-label="B.">Python 的 import 語法</li>
+<li data-label="C.">optimizer.zero_grad 的名稱</li>
+<li data-label="D.">YAML 的 usage 欄位</li>
+</ol>
+<div class="explanation">💡 卷積與 pooling 後的特徵圖尺寸會影響 Flatten 後大小，因此 Linear 輸入維度可能需要調整。</div>
 <div class="tags">
 <span class="tag">chap-m6-ch6</span>
 <span class="tag">sec-pytorch-simple-cnn</span>
@@ -1101,6 +1896,78 @@
 <span class="tag">sec-pytorch-cnn-eval</span>
 </div>
 </div>
+<h3 class="section-heading">MLP 適合與不適合的資料</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">為什麼不建議直接把原始影像攤平成向量交給 MLP 作為主要方法？</div>
+<span class="q-id">#8125</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">會失去影像中的空間鄰近結構，CNN 通常更適合</li>
+<li data-label="B.">MLP 完全不能處理任何數值</li>
+<li data-label="C.">MLP 只能處理文字</li>
+<li data-label="D.">影像不能轉成 tensor</li>
+</ol>
+<div class="explanation">💡 CNN 利用局部感受野與權重共享保留影像空間結構，通常比直接 flatten 給 MLP 更適合。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch6</span>
+<span class="tag">sec-pytorch-mlp-use-cases</span>
+</div>
+</div>
+<h3 class="section-heading">Activation、Normalization 與 Dropout</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Dropout 在訓練與推論時的行為有何差異？</div>
+<span class="q-id">#8126</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">訓練時隨機關閉部分神經元，推論時關閉這種隨機行為</li>
+<li data-label="B.">訓練時完全不作用，推論時隨機刪除標籤</li>
+<li data-label="C.">只會影響 Pandas DataFrame</li>
+<li data-label="D.">只會改變影像通道順序</li>
+</ol>
+<div class="explanation">💡 Dropout 是正規化方法，依賴 model.train() 與 model.eval() 切換不同模式。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch6</span>
+<span class="tag">sec-pytorch-network-components</span>
+</div>
+</div>
+<h3 class="section-heading">Transfer Learning 與預訓練模型</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">影像資料量不大時，使用預訓練 CNN 進行 transfer learning 的主要好處是什麼？</div>
+<span class="q-id">#8127</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">利用模型已學到的通用視覺特徵，降低資料需求與訓練成本</li>
+<li data-label="B.">讓資料標註完全不需要檢查</li>
+<li data-label="C.">保證不需要驗證集</li>
+<li data-label="D.">讓所有模型只能輸出一個類別</li>
+</ol>
+<div class="explanation">💡 預訓練 backbone 已學到邊緣、紋理與形狀等特徵，常能提升小資料任務效果。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch6</span>
+<span class="tag">sec-pytorch-transfer-learning</span>
+</div>
+</div>
+<h3 class="section-heading">CNN 專案的錯誤分析方法</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">混淆矩陣在 CNN 分類專案中主要幫助我們觀察什麼？</div>
+<span class="q-id">#8128</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">哪些類別容易被模型互相混淆</li>
+<li data-label="B.">optimizer 是否支援 GPU</li>
+<li data-label="C.">Python 是否使用虛擬環境</li>
+<li data-label="D.">OpenCV 是否以 BGR 讀圖</li>
+</ol>
+<div class="explanation">💡 混淆矩陣可顯示真實類別與預測類別的對應，幫助找出常見錯誤類別對。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch6</span>
+<span class="tag">sec-pytorch-cnn-error-analysis</span>
+</div>
+</div>
 <h2 class="chapter-heading" id="ch-7">PyTorch Transformer 基礎</h2>
 <h3 class="section-heading">Transformer 的核心想法</h3>
 <div class="question-card">
@@ -1137,6 +2004,23 @@
 <span class="tag">sec-transformer-core-idea</span>
 </div>
 </div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Multi-head attention 中使用多個 head 的主要直覺是什麼？</div>
+<span class="q-id">#8131</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">讓模型能在不同子空間學習不同關係</li>
+<li data-label="B.">讓模型不需要 embedding</li>
+<li data-label="C.">讓輸入 token 不需要位置資訊</li>
+<li data-label="D.">讓所有參數固定不訓練</li>
+</ol>
+<div class="explanation">💡 多個 attention head 可同時捕捉不同類型的關係，例如局部片語、語法或長距離依賴。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch7</span>
+<span class="tag">sec-transformer-core-idea</span>
+</div>
+</div>
 <h3 class="section-heading">Embedding 與位置資訊</h3>
 <div class="question-card">
 <div class="q-header">
@@ -1155,6 +2039,23 @@
 <span class="tag">sec-transformer-embedding-position</span>
 </div>
 </div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">若 positional embedding 的最大長度小於輸入序列長度，最可能發生什麼？</div>
+<span class="q-id">#8132</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">長文本位置 id 超出可表示範圍，造成錯誤或無法處理</li>
+<li data-label="B.">模型會自動變成 CNN</li>
+<li data-label="C.">tokenizer 會改用 OpenCV</li>
+<li data-label="D.">loss 會永遠等於 0</li>
+</ol>
+<div class="explanation">💡 可學習位置 embedding 有固定大小，輸入序列長度不可超過其可表示位置範圍。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch7</span>
+<span class="tag">sec-transformer-embedding-position</span>
+</div>
+</div>
 <h3 class="section-heading">MultiheadAttention 基礎</h3>
 <div class="question-card">
 <div class="q-header">
@@ -1168,6 +2069,23 @@
 <li data-label="D.">Python 的虛擬環境名稱</li>
 </ol>
 <div class="explanation">💡 Self-attention 的 Q、K、V 都由同一序列轉換而來，使序列內部位置互相注意。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch7</span>
+<span class="tag">sec-transformer-attention</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">當 nn.MultiheadAttention 設定 batch_first=True 時，輸入 shape 通常為何？</div>
+<span class="q-id">#8133</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">batch, seq_len, d_model</li>
+<li data-label="B.">seq_len, d_model, batch</li>
+<li data-label="C.">channels, height, width</li>
+<li data-label="D.">rows, columns, labels</li>
+</ol>
+<div class="explanation">💡 batch_first=True 時，PyTorch attention 接受 batch 在第一維的輸入格式。</div>
 <div class="tags">
 <span class="tag">chap-m6-ch7</span>
 <span class="tag">sec-transformer-attention</span>
@@ -1242,6 +2160,96 @@
 <div class="tags">
 <span class="tag">chap-m6-ch7</span>
 <span class="tag">sec-transformer-to-llm</span>
+</div>
+</div>
+<h3 class="section-heading">Attention 的直覺與限制</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Attention 公式中除以 sqrt(d_k) 的主要目的為何？</div>
+<span class="q-id">#8134</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">避免 dot product 隨維度變大而使 softmax 過度尖銳</li>
+<li data-label="B.">將所有 token id 轉成文字</li>
+<li data-label="C.">取代 optimizer</li>
+<li data-label="D.">讓模型不需要資料</li>
+</ol>
+<div class="explanation">💡 scale dot-product attention 會除以 sqrt(d_k)，讓數值範圍較穩定。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch7</span>
+<span class="tag">sec-transformer-attention-intuition</span>
+</div>
+</div>
+<h3 class="section-heading">Encoder、Decoder 與 Encoder-Decoder</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">BERT 類模型通常屬於哪一種 Transformer 架構？</div>
+<span class="q-id">#8135</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">Encoder-only</li>
+<li data-label="B.">Decoder-only</li>
+<li data-label="C.">OpenCV-only</li>
+<li data-label="D.">DataFrame-only</li>
+</ol>
+<div class="explanation">💡 BERT 使用 encoder-only 架構，適合理解、分類、檢索與序列標註等任務。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch7</span>
+<span class="tag">sec-transformer-architectures</span>
+</div>
+</div>
+<h3 class="section-heading">Tokenizer 與 Subword</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Subword tokenizer 的一個重要優點是什麼？</div>
+<span class="q-id">#8136</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">能處理罕見詞與新詞，並控制詞彙表大小</li>
+<li data-label="B.">只能處理灰階影像</li>
+<li data-label="C.">會刪除所有位置資訊</li>
+<li data-label="D.">不需要 embedding layer</li>
+</ol>
+<div class="explanation">💡 BPE、WordPiece、SentencePiece 等 subword 方法可把罕見詞拆成較小片段，降低 unknown token 問題。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch7</span>
+<span class="tag">sec-transformer-tokenizer</span>
+</div>
+</div>
+<h3 class="section-heading">Transformer 訓練時的 Loss</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">自回歸語言模型訓練中 shifted labels 的核心概念是什麼？</div>
+<span class="q-id">#8137</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">每個位置學習預測下一個 token</li>
+<li data-label="B.">每個位置都預測前一張影像</li>
+<li data-label="C.">每個 token 都被轉成 DataFrame 欄位</li>
+<li data-label="D.">每個 batch 都不需要 loss</li>
+</ol>
+<div class="explanation">💡 自回歸模型以目前與過去 token 預測下一個 token，因此 target 通常相對 input 位移一格。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch7</span>
+<span class="tag">sec-transformer-loss</span>
+</div>
+</div>
+<h3 class="section-heading">Fine-tuning、Feature Extraction 與 RAG</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">當知識內容經常更新時，RAG 相較於頻繁 fine-tuning 的常見優勢是什麼？</div>
+<span class="q-id">#8138</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">可透過更新外部知識庫反映新資訊，不一定要重訓模型</li>
+<li data-label="B.">一定不需要檢索品質評估</li>
+<li data-label="C.">可完全避免幻覺</li>
+<li data-label="D.">會讓模型參數自動變小</li>
+</ol>
+<div class="explanation">💡 RAG 將外部知識檢索後放入上下文，知識更新可集中在資料庫或索引，而不必每次重訓模型。</div>
+<div class="tags">
+<span class="tag">chap-m6-ch7</span>
+<span class="tag">sec-transformer-application-patterns</span>
 </div>
 </div>
 </div>

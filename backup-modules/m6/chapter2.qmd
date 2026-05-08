@@ -1,0 +1,250 @@
+---
+title: "NumPy 與 Pandas"
+order: 2
+label: chap-m6-ch2
+---
+
+NumPy 與 Pandas 是 Python 資料科學的核心。NumPy 負責高效率數值陣列運算，Pandas 負責表格資料處理。大多數機器學習專案都會先經過這兩個工具，才進入 scikit-learn 或深度學習框架。
+
+## NumPy 陣列與向量化 {#sec-numpy-array-vectorization}
+
+NumPy 的核心物件是 `ndarray`。它和 Python list 最大差異在於：NumPy 陣列通常儲存同一種資料型別，並且底層用連續記憶體與 C 實作加速數值運算。
+
+```{python}
+import numpy as np
+
+# 建立一維 NumPy 陣列
+x = np.array([1, 2, 3])
+y = np.array([10, 20, 30])
+# 陣列可直接做逐元素運算
+print(x + y)
+print(x * 2)
+```
+
+向量化 (Vectorization) 是 NumPy 的重要思想：盡量用陣列運算取代 Python 層的逐筆迴圈。這通常更快，也更接近數學表示。
+
+```{python}
+scores = np.array([72, 85, 91, 64])
+# 產生布林遮罩，用來篩選及格分數
+passed = scores >= 70
+print(passed)
+print(scores[passed])
+```
+
+## Shape、Broadcasting 與矩陣運算 {#sec-numpy-shape-broadcast}
+
+AI 模型中的資料通常是矩陣或更高維張量。理解 shape 是避免錯誤的第一步：
+
+```{python}
+X = np.array([[1, 2, 3], [4, 5, 6]])
+# shape 可用來確認矩陣維度是否符合後續運算
+print(X.shape)
+print(X.T.shape)
+```
+
+Broadcasting 讓不同 shape 的陣列在規則允許下自動對齊：
+
+```{python}
+X = np.array([[1, 2, 3], [4, 5, 6]])
+# 沿著列方向計算每個欄位的平均
+mean = X.mean(axis=0)
+# broadcasting 會自動將 mean 套用到每一列
+centered = X - mean
+print(centered)
+```
+
+常見矩陣運算包括 dot product、matrix multiplication、norm 與統計量計算：
+
+```{python}
+w = np.array([0.2, 0.5, 0.3])
+# @ 表示矩陣乘法，常用於線性模型的加權加總
+prediction = X @ w
+print(prediction)
+```
+
+## Pandas DataFrame 基礎 {#sec-pandas-dataframe}
+
+Pandas 的核心物件是 `Series` 與 `DataFrame`。DataFrame 可視為有欄位名稱與索引的表格，非常適合處理 CSV、Excel、資料庫查詢結果與模型訓練資料。
+
+```{python}
+import pandas as pd
+
+# 用欄位名稱建立表格資料
+df = pd.DataFrame({
+    "age": [22, 35, 47],
+    "income": [32000, 58000, 76000],
+    "clicked": [0, 1, 1]
+})
+
+print(df.head())
+# 快速計算欄位統計量
+print(df["income"].mean())
+```
+
+常見操作包括欄位選取、條件篩選、排序與新增欄位：
+
+```{python}
+# 依條件篩選列
+high_income = df[df["income"] > 50000]
+# 新增以千元為單位的收入欄位
+df["income_k"] = df["income"] / 1000
+print(high_income)
+```
+
+## 缺失值、類別資料與特徵整理 {#sec-pandas-cleaning-features}
+
+真實資料常有缺失值、異常值、類別欄位與格式不一致。Pandas 提供資料清理工具：
+
+```{python}
+raw = pd.DataFrame({
+    "city": ["Taipei", "Tainan", None],
+    "age": [25, None, 41]
+})
+
+clean = raw.copy()
+# 類別欄位缺失值可補成 Unknown
+clean["city"] = clean["city"].fillna("Unknown")
+# 數值欄位可用中位數填補，降低極端值影響
+clean["age"] = clean["age"].fillna(clean["age"].median())
+print(clean)
+```
+
+類別資料可用 one-hot encoding 轉成模型能處理的數值欄位：
+
+```{python}
+# 將 city 類別欄位展開成多個 0/1 指示欄位
+encoded = pd.get_dummies(clean, columns=["city"])
+print(encoded)
+```
+
+特徵工程的重點不是盲目產生欄位，而是把原始資料轉成能代表問題結構的數值訊號。
+
+## GroupBy、合併與時間序列 {#sec-pandas-groupby-merge-time}
+
+`groupby` 可用於分群統計：
+
+```{python}
+sales = pd.DataFrame({
+    "store": ["A", "A", "B", "B"],
+    "amount": [100, 120, 80, 160]
+})
+
+# 依店家分組，計算各店平均銷售額
+print(sales.groupby("store")["amount"].mean())
+```
+
+多個資料來源可以用 `merge` 合併：
+
+```{python}
+users = pd.DataFrame({"user_id": [1, 2], "city": ["Taipei", "Kaohsiung"]})
+orders = pd.DataFrame({"user_id": [1, 1, 2], "amount": [50, 70, 90]})
+# 用共同欄位 user_id 合併訂單與使用者資料
+print(orders.merge(users, on="user_id"))
+```
+
+時間序列資料通常需要解析日期、排序、重採樣與 rolling statistics。這些操作在需求預測、異常偵測與營運分析中很常見。
+
+## 從 Pandas 到模型輸入 {#sec-pandas-to-model}
+
+機器學習模型通常需要 `X` 特徵矩陣與 `y` 標籤向量：
+
+```{python}
+# X 是模型輸入特徵矩陣
+features = df[["age", "income_k"]].to_numpy()
+# y 是模型要預測的目標
+target = df["clicked"].to_numpy()
+
+print(features.shape)
+print(target.shape)
+```
+
+進入 scikit-learn 前，應確認欄位順序、資料型別、缺失值與 train/test split。進入 PyTorch 前，通常還需要把 NumPy 陣列轉成 tensor。
+
+## NumPy 與 Pandas 的分工 {#sec-numpy-pandas-division}
+
+NumPy 與 Pandas 常一起使用，但定位不同。簡單來說，Pandas 適合「有欄位語意的表格資料」，NumPy 適合「已經整理好的數值矩陣」。
+
+| 問題 | 較適合工具 | 原因 |
+|------|------------|------|
+| 讀取 CSV、檢查欄位、合併表格 | Pandas | 保留欄位名稱與索引，方便資料清理 |
+| 計算矩陣乘法、距離、向量化統計 | NumPy | 數值運算效率高，API 接近線性代數 |
+| 處理缺失值與類別欄位 | Pandas | 提供 `fillna`、`get_dummies`、`groupby` |
+| 將資料交給模型訓練 | NumPy 或 Tensor | 模型通常需要純數值矩陣或張量 |
+
+實務流程通常是：先用 Pandas 讀取與整理資料，再用 `.to_numpy()` 轉成 NumPy 陣列，最後交給 scikit-learn 或 PyTorch。
+
+```{mermaid}
+flowchart LR
+    A["原始資料<br/>CSV / Excel / DB"] --> B["Pandas<br/>讀取、合併、清理"]
+    B --> C["特徵工程<br/>缺失值、類別、日期"]
+    C --> D["NumPy array<br/>純數值矩陣"]
+    D --> E["scikit-learn<br/>傳統 ML"]
+    D --> F["PyTorch tensor<br/>深度學習"]
+```
+
+這個流程圖說明 Pandas 與 NumPy 的典型接力關係：Pandas 保留欄位語意，NumPy 則提供模型需要的數值矩陣。
+
+## 資料品質檢查清單 {#sec-pandas-quality-checklist}
+
+資料品質通常比模型架構更影響結果。建立模型前，至少應檢查：
+
+*   **筆數是否合理**：資料是否因過濾條件錯誤而少很多？
+*   **欄位型別是否正確**：日期是否仍是字串？類別是否被誤讀為數字？
+*   **缺失值比例**：缺失是否集中在某些欄位或某些族群？
+*   **重複資料**：是否有重複訂單、重複使用者或重複標註？
+*   **目標欄位分布**：分類是否嚴重不平衡？迴歸是否有極端值？
+*   **資料切分方式**：時間序列問題是否誤用隨機切分？
+
+範例：
+
+```{python}
+# 建立簡單資料品質稽核表
+audit = pd.DataFrame({
+    "feature": ["age", "income", "clicked"],
+    "missing_rate": [0.02, 0.15, 0.00],
+    "dtype": ["float", "float", "int"]
+})
+
+print(audit)
+```
+
+這類檢查應成為固定流程，而不是模型效果不好後才補做。
+
+## 效能與記憶體觀念 {#sec-pandas-performance}
+
+Pandas 很方便，但資料量變大時容易遇到記憶體問題。常見改善方式包括：
+
+*   只讀取需要的欄位，而不是整張表。
+*   將高重複字串欄位轉成 category。
+*   避免在大量資料上使用逐列 `apply`。
+*   儘量使用向量化操作。
+*   對超大資料改用批次處理、資料庫、DuckDB、Polars 或 Spark。
+
+例如，比起逐列判斷：
+
+```python
+# 較慢：逐列呼叫 Python 函式
+df["is_high"] = df["income"].apply(lambda x: x > 50000)
+```
+
+向量化寫法通常更快也更清楚：
+
+```python
+# 較快：使用 Pandas 向量化比較
+df["is_high"] = df["income"] > 50000
+```
+
+在 AI 應用規劃中，選工具時要估計資料量。如果資料只有幾萬列，Pandas 足夠；如果資料是數十億筆交易紀錄，就需要資料庫或分散式處理工具。
+
+## 特徵工程範例：從原始欄位到模型欄位 {#sec-pandas-feature-example}
+
+假設原始資料包含使用者年齡、城市、最近一次登入日期與是否購買。模型不能直接理解所有原始欄位，通常需要轉換：
+
+| 原始欄位 | 問題 | 可能轉換 |
+|----------|------|----------|
+| `age` | 可能有缺失與極端值 | 中位數填補、分箱、標準化 |
+| `city` | 類別資料 | one-hot encoding 或 target encoding |
+| `last_login_at` | 日期字串 | 轉成距今天數、星期幾、月份 |
+| `purchased` | 目標欄位 | 作為 y，不應放入 X |
+
+最重要的是避免把未來資訊放入特徵。例如要預測「使用者下週是否流失」，就不能使用下週之後才會知道的欄位。這類錯誤就是資料洩漏，會讓離線評估看起來很好，部署後卻失效。

@@ -1,0 +1,236 @@
+---
+title: "PyTorch Transformer 基礎"
+order: 7
+label: chap-m6-ch7
+---
+
+Transformer 是現代 NLP、生成式 AI 與多模態模型的重要基礎。本章不追求完整大型語言模型訓練，而是用 PyTorch 建立核心概念：embedding、位置資訊、自注意力與簡化分類器。
+
+## Transformer 的核心想法 {#sec-transformer-core-idea}
+
+RNN 依序處理 token，CNN 使用固定窗口看局部區域；Transformer 則透過 self-attention 讓每個 token 直接參考序列中其他 token。
+
+Self-attention 的直覺是：模型在處理某個 token 時，會學習「應該關注序列中的哪些位置」。例如句子「The animal did not cross the street because it was tired」中的 "it"，需要參考前文判斷代稱。
+
+Transformer 常見元件包括：
+
+*   **Token embedding**：把 token id 轉成向量。
+*   **Positional encoding / positional embedding**：加入位置資訊。
+*   **Multi-head attention**：從多個子空間學習關注關係。
+*   **Feed-forward network**：逐 token 的非線性轉換。
+*   **Residual connection 與 LayerNorm**：穩定訓練。
+
+```{mermaid}
+flowchart TD
+    A["Token ids"] --> B["Token embedding"]
+    C["Position ids"] --> D["Positional embedding"]
+    B --> E["相加<br/>token + position"]
+    D --> E
+    E --> F["Multi-head self-attention"]
+    F --> G["Add & LayerNorm"]
+    G --> H["Feed-forward network"]
+    H --> I["Add & LayerNorm"]
+    I --> J["上下文 token 表示"]
+```
+
+圖中是一個 Transformer encoder block 的簡化資料流。Embedding 提供語意起點，位置資訊提供順序，自注意力讓每個 token 整合上下文。
+
+## Embedding 與位置資訊 {#sec-transformer-embedding-position}
+
+模型不能直接理解文字，只能處理數字。Tokenizer 會先把文字轉成 token id，embedding layer 再把 id 轉成向量。
+
+```{python}
+import torch
+import torch.nn as nn
+
+vocab_size = 1000
+d_model = 32
+# token id 是 tokenizer 輸出的整數序列
+tokens = torch.tensor([[5, 17, 23, 9]])
+
+# Embedding 將離散 token id 轉成連續向量
+embedding = nn.Embedding(vocab_size, d_model)
+x = embedding(tokens)
+print(x.shape)
+```
+
+Self-attention 本身不理解順序，因此需要位置資訊。簡化做法是使用可學習 positional embedding：
+
+```{python}
+max_len = 16
+pos_embedding = nn.Embedding(max_len, d_model)
+# 建立每個 token 的位置 id
+positions = torch.arange(tokens.size(1)).unsqueeze(0)
+# token embedding 加上位置 embedding，讓模型知道順序
+x = x + pos_embedding(positions)
+print(x.shape)
+```
+
+## MultiheadAttention 基礎 {#sec-transformer-attention}
+
+PyTorch 提供 `nn.MultiheadAttention`。若設定 `batch_first=True`，輸入 shape 可使用 `(batch, seq_len, d_model)`：
+
+```{python}
+attention = nn.MultiheadAttention(
+    embed_dim=d_model,
+    num_heads=4,
+    batch_first=True
+)
+
+# self-attention 中 Q、K、V 都來自同一個序列 x
+attn_out, attn_weights = attention(x, x, x)
+print(attn_out.shape)
+print(attn_weights.shape)
+```
+
+在 self-attention 中，query、key、value 都來自同一個序列。注意力權重可解釋為每個 token 對其他 token 的關注程度，但在大型模型中不能把它簡化成完整可解釋性。
+
+## Transformer Encoder 分類器 {#sec-transformer-classifier}
+
+PyTorch 內建 `nn.TransformerEncoderLayer` 與 `nn.TransformerEncoder`，可快速建立文字分類模型：
+
+```{python}
+class TinyTransformerClassifier(nn.Module):
+    def __init__(self, vocab_size=1000, d_model=32, nhead=4, num_classes=2):
+        super().__init__()
+        self.token_embedding = nn.Embedding(vocab_size, d_model)
+        self.position_embedding = nn.Embedding(64, d_model)
+        # Encoder layer 包含 multi-head attention 與 feed-forward network
+        encoder_layer = nn.TransformerEncoderLayer(
+            d_model=d_model,
+            nhead=nhead,
+            batch_first=True
+        )
+        self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=2)
+        self.classifier = nn.Linear(d_model, num_classes)
+
+    def forward(self, input_ids):
+        # 依照序列長度產生位置 id，並放到相同 device
+        positions = torch.arange(input_ids.size(1), device=input_ids.device).unsqueeze(0)
+        x = self.token_embedding(input_ids) + self.position_embedding(positions)
+        # Transformer encoder 產生每個 token 的上下文表示
+        encoded = self.encoder(x)
+        # 用平均池化取得整段文字的表示
+        pooled = encoded.mean(dim=1)
+        return self.classifier(pooled)
+
+model = TinyTransformerClassifier()
+# 模擬 8 筆、每筆 12 個 token 的輸入
+sample = torch.randint(0, 1000, (8, 12))
+print(model(sample).shape)
+```
+
+這裡用 mean pooling 把整個序列壓成一個向量，再進入分類層。BERT 類模型常使用 `[CLS]` token，實務選擇取決於模型設計。
+
+## Mask 與序列長度 {#sec-transformer-mask}
+
+文字批次通常有不同長度，會用 padding 補齊。模型需要知道哪些位置是 padding，避免把補齊 token 當成真實內容。
+
+```python
+input_ids = torch.tensor([
+    [10, 20, 30, 0, 0],
+    [11, 22, 33, 44, 55]
+])
+# token id 0 在此例中代表 padding
+padding_mask = input_ids == 0
+```
+
+Encoder 常用 padding mask；decoder 或語言模型訓練還需要 causal mask，避免模型偷看未來 token。這是自回歸生成模型的重要限制。
+
+## 從簡化模型到大型語言模型 {#sec-transformer-to-llm}
+
+大型語言模型可視為巨大化的 Transformer，差異包含更多層、更大 hidden size、更大量資料、更複雜 tokenizer、分散式訓練與對齊流程。基礎元件仍然包括 embedding、attention、feed-forward、normalization 與 optimizer。
+
+學習 Transformer 實作時，重點不是從零訓練大型模型，而是理解資料 shape、mask、loss、訓練迴圈與推論流程。這些概念能幫助判斷模型限制、除錯訓練問題，也能理解 RAG、fine-tuning 與 prompt engineering 背後的技術基礎。
+
+## Attention 的直覺與限制 {#sec-transformer-attention-intuition}
+
+Attention 可以想成一種「加權查詢」。每個 token 會產生 query，拿 query 去和其他 token 的 key 比較，得到注意力權重，再用這些權重加總 value。簡化表示如下：
+
+```text
+Attention(Q, K, V) = softmax(QK^T / sqrt(d_k)) V
+```
+
+除以 `sqrt(d_k)` 是為了避免 dot product 隨維度變大而數值過大，造成 softmax 太尖銳。Multi-head attention 則是讓模型在多個子空間同時學不同關係，例如語法關係、長距離依賴或局部片語關係。
+
+不過，attention 權重不等於完整解釋。它能提供線索，但不能直接宣稱「模型就是因為這個 token 才做出判斷」。實務可解釋性仍需要更嚴謹方法。
+
+## Encoder、Decoder 與 Encoder-Decoder {#sec-transformer-architectures}
+
+Transformer 架構常分成三類：
+
+| 架構 | 代表模型 | 適合任務 |
+|------|----------|----------|
+| Encoder-only | BERT、RoBERTa | 分類、檢索、序列標註、理解任務 |
+| Decoder-only | GPT 類模型 | 自回歸生成、聊天、程式生成 |
+| Encoder-Decoder | T5、原始 Transformer | 翻譯、摘要、輸入到輸出序列轉換 |
+
+本章的簡化分類器屬於 encoder-only 思路：讀完整段輸入後產生整體表示，再做分類。大型語言模型多為 decoder-only，使用 causal mask 一次預測下一個 token。
+
+## Tokenizer 與 Subword {#sec-transformer-tokenizer}
+
+Transformer 模型通常不用傳統單字斷詞，而使用 subword tokenizer，例如 BPE、WordPiece 或 SentencePiece。原因是：
+
+*   可處理罕見詞與新詞。
+*   詞彙表大小可控制。
+*   可支援多語言與混合符號。
+*   避免完全 unknown token 的問題。
+
+例如 "unbelievable" 可能被切成 `un`、`believ`、`able`。中文也可能被切成字、詞片段或混合單位。Tokenizer 是模型輸入的一部分，fine-tuning 或推論時必須使用與模型一致的 tokenizer。
+
+## Transformer 訓練時的 Loss {#sec-transformer-loss}
+
+不同 Transformer 任務使用不同 loss：
+
+*   **文字分類**：取 `[CLS]` 或 pooled representation，使用 `CrossEntropyLoss`。
+*   **Token classification**：每個 token 都有標籤，例如 NER，對每個 token 計算分類 loss。
+*   **Language modeling**：預測下一個 token，對 shifted labels 計算 cross entropy。
+*   **Seq2seq**：decoder 每個位置預測目標序列 token。
+
+自回歸語言模型的訓練概念是：
+
+```text
+輸入:  [今, 天, 天, 氣]
+目標:  [天, 天, 氣, 好]
+```
+
+也就是每個位置都學習預測下一個 token。這就是 causal mask 與 shifted labels 的核心。
+
+## Fine-tuning、Feature Extraction 與 RAG {#sec-transformer-application-patterns}
+
+使用 Transformer 不一定要從零訓練。常見應用模式包括：
+
+*   **Feature extraction**：使用預訓練模型產生 embedding，再交給其他模型或向量資料庫。
+*   **Fine-tuning**：用任務資料微調模型參數，例如情緒分類、意圖分類。
+*   **Parameter-efficient fine-tuning**：例如 LoRA，只訓練少量額外參數。
+*   **RAG**：不改模型參數，而是先檢索外部知識，再把相關內容放入 prompt。
+*   **Prompting**：透過提示設計引導模型完成任務。
+
+選擇方式取決於資料量、任務變動頻率、成本、延遲、準確率要求與是否需要更新知識。若知識常更新，RAG 通常比頻繁 fine-tuning 更合適。
+
+## Transformer 常見錯誤與除錯 {#sec-transformer-debugging}
+
+Transformer 實作常見問題包括：
+
+| 問題 | 現象 | 檢查方式 |
+|------|------|----------|
+| padding mask 錯誤 | 模型關注 padding token | 檢查 mask shape 與 True/False 語意 |
+| 位置長度不足 | 長文本超過 max length | 檢查 positional embedding 大小 |
+| tokenizer 不一致 | 推論效果異常 | 確認訓練與推論使用同一 tokenizer |
+| label shift 錯誤 | 語言模型 loss 異常 | 檢查 input 與 target 是否錯位一格 |
+| 記憶體不足 | batch 無法訓練 | 降低 batch size、sequence length 或使用 gradient accumulation |
+
+Transformer 的成本與 sequence length 關係密切。標準 self-attention 計算量約隨序列長度平方成長，因此長文本處理會顯著增加記憶體與時間成本。
+
+## 從實作理解應用規劃 {#sec-transformer-planning-perspective}
+
+AI 應用規劃者不一定要從零寫出完整 LLM，但需要理解下列問題：
+
+*   模型最大上下文長度是否足夠？
+*   輸入是否需要截斷、分段或檢索？
+*   任務是分類、生成、檢索還是重新排序？
+*   能否用 embedding 與傳統模型解決，而不必 fine-tune？
+*   部署延遲與成本是否可接受？
+*   模型輸出是否需要後處理、驗證或人工審核？
+
+這些判斷都建立在 Transformer 基礎概念之上。理解 attention、mask、tokenizer 與 loss，能讓規劃者更準確地評估方案可行性。
