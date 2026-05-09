@@ -800,7 +800,7 @@ questions:
   id: 6450
   usage: both
 - chapter_title: 強化學習
-  section_title: 演算法
+  section_title: 應用案例
   text: 情境：AlphaGo 結合了深度強化學習與什麼技術？
   type: multiple_choice
   options:
@@ -960,7 +960,7 @@ questions:
   id: 6460
   usage: both
 - chapter_title: 強化學習
-  section_title: 基本概念
+  section_title: 貝爾曼方程式
   text: 情境：價值函數 V(s) 代表？
   type: multiple_choice
   options:
@@ -1024,7 +1024,7 @@ questions:
   id: 6464
   usage: both
 - chapter_title: 強化學習
-  section_title: 演算法
+  section_title: 應用案例
   text: 情境：OpenAI Gym 是一個？
   type: multiple_choice
   options:

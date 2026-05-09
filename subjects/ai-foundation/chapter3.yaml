@@ -1,7 +1,7 @@
 questions:
 - id: 3001
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料類型與儲存
+  section_title: 資料類型與儲存 (Data Types & Storage)
   text: 下列何者屬於「結構化資料 (Structured Data)」？
   type: multiple_choice
   options:
@@ -17,7 +17,7 @@ questions:
   usage: quiz
 - id: 3002
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料類型與儲存
+  section_title: 資料類型與儲存 (Data Types & Storage)
   text: 非結構化資料 (Unstructured Data) 通常佔據全世界資料的比例約為多少？
   type: multiple_choice
   options:
@@ -33,7 +33,7 @@ questions:
   usage: quiz
 - id: 3003
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料類型與儲存
+  section_title: 資料類型與儲存 (Data Types & Storage)
   text: JSON 格式通常被歸類為哪種資料類型？
   type: multiple_choice
   options:
@@ -49,7 +49,7 @@ questions:
   usage: quiz
 - id: 3004
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料管道 (Data Pipeline)
+  section_title: ETL (Extract-Transform-Load) 架構
   text: ETL 架構中的 'T' 代表什麼？
   type: multiple_choice
   options:
@@ -65,7 +65,7 @@ questions:
   usage: quiz
 - id: 3005
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料管道 (Data Pipeline)
+  section_title: ELT (Extract-Load-Transform) 架構與資料湖 (Data Lake)
   text: 相較於 ETL，ELT 架構的主要優勢是什麼？
   type: multiple_choice
   options:
@@ -81,7 +81,7 @@ questions:
   usage: quiz
 - id: 3006
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料管道 (Data Pipeline)
+  section_title: ELT (Extract-Load-Transform) 架構與資料湖 (Data Lake)
   text: 「資料湖 (Data Lake)」通常與哪種資料處理架構相關聯？
   type: multiple_choice
   options:
@@ -129,7 +129,7 @@ questions:
   usage: quiz
 - id: 3009
   chapter_title: 數據處理生命週期與架構
-  section_title: 探索性資料分析 (EDA)
+  section_title: 數值型 vs. 類別型資料 (Numerical vs. Categorical Data)
   text: 下列何者屬於「連續型數值資料」？
   type: multiple_choice
   options:
@@ -145,7 +145,7 @@ questions:
   usage: quiz
 - id: 3010
   chapter_title: 數據處理生命週期與架構
-  section_title: 探索性資料分析 (EDA)
+  section_title: 數值型 vs. 類別型資料 (Numerical vs. Categorical Data)
   text: 對於類別型資料（如顏色：紅、綠、藍），應使用哪種編碼方式避免模型誤解？
   type: multiple_choice
   options:
@@ -161,7 +161,7 @@ questions:
   usage: quiz
 - id: 3011
   chapter_title: 數據處理生命週期與架構
-  section_title: 統計摘要
+  section_title: 統計摘要 (Descriptive Statistics)
   text: 當資料中存在極端值 (Outliers) 時，哪種集中趨勢指標較為穩健？
   type: multiple_choice
   options:
@@ -177,7 +177,7 @@ questions:
   usage: both
 - id: 3012
   chapter_title: 數據處理生命週期與架構
-  section_title: 統計摘要
+  section_title: 統計摘要 (Descriptive Statistics)
   text: 標準差 (Standard Deviation) 主要用來衡量資料的什麼特性？
   type: multiple_choice
   options:
@@ -193,7 +193,7 @@ questions:
   usage: both
 - id: 3013
   chapter_title: 數據處理生命週期與架構
-  section_title: 統計摘要
+  section_title: 統計摘要 (Descriptive Statistics)
   text: 如果一組資料呈現「右偏 (Right Skewed)」，通常意味著什麼？
   type: multiple_choice
   options:
@@ -209,7 +209,7 @@ questions:
   usage: both
 - id: 3014
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料視覺化
+  section_title: 資料視覺化決策邏輯
   text: 若要觀察兩個變數之間的「關聯性」（如身高 vs. 體重），最適合使用哪種圖表？
   type: multiple_choice
   options:
@@ -225,7 +225,7 @@ questions:
   usage: both
 - id: 3015
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料視覺化
+  section_title: 資料視覺化決策邏輯
   text: 若要觀察單一變數的「分佈情況」（如全校成績分佈），最適合使用哪種圖表？
   type: multiple_choice
   options:
@@ -241,7 +241,7 @@ questions:
   usage: both
 - id: 3016
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料清理
+  section_title: 缺失值處理 (Missing Values)
   text: 處理缺失值 (Missing Values) 時，若該欄位對預測很重要且資料量不大，應避免使用哪種方法？
   type: multiple_choice
   options:
@@ -257,7 +257,7 @@ questions:
   usage: both
 - id: 3017
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料清理
+  section_title: 缺失值處理 (Missing Values)
   text: KNN (K-近鄰) 插補法的原理是什麼？
   type: multiple_choice
   options:
@@ -273,7 +273,7 @@ questions:
   usage: both
 - id: 3018
   chapter_title: 數據處理生命週期與架構
-  section_title: 異常值處理
+  section_title: 異常值/離群值處理 (Outliers Handling)
   text: 利用 Z-score 偵測異常值時，通常將超過多少個標準差的數值視為異常？
   type: multiple_choice
   options:
@@ -289,7 +289,7 @@ questions:
   usage: both
 - id: 3019
   chapter_title: 數據處理生命週期與架構
-  section_title: 異常值處理
+  section_title: 異常值/離群值處理 (Outliers Handling)
   text: 「蓋帽法 (Winsorizing)」是如何處理異常值的？
   type: multiple_choice
   options:
@@ -305,7 +305,7 @@ questions:
   usage: both
 - id: 3020
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料隱私
+  section_title: 資料匿名化與隱私保護 (PII 處理)
   text: 在處理個資 (PII) 時，「去識別化 (De-identification)」的主要目的是什麼？
   type: multiple_choice
   options:
@@ -321,7 +321,7 @@ questions:
   usage: both
 - id: 3021
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料隱私
+  section_title: 資料匿名化與隱私保護 (PII 處理)
   text: 將「王大明」轉換為「王O明」，屬於哪種隱私保護技術？
   type: multiple_choice
   options:
@@ -337,7 +337,7 @@ questions:
   usage: both
 - id: 3022
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料隱私
+  section_title: 資料匿名化與隱私保護 (PII 處理)
   text: 根據個資法，「目的拘束 (Purpose Limitation)」原則是指什麼？
   type: multiple_choice
   options:
@@ -353,7 +353,7 @@ questions:
   usage: both
 - id: 3023
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料一致性
+  section_title: 數據一致性處理 (Data Consistency)
   text: 將不同來源的日期格式統一轉換為 `YYYY-MM-DD`，屬於資料清理中的哪個步驟？
   type: multiple_choice
   options:
@@ -369,7 +369,7 @@ questions:
   usage: both
 - id: 3024
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料管道
+  section_title: ETL (Extract-Transform-Load) 架構
   text: 「資料倉儲 (Data Warehouse)」通常存放哪種狀態的資料？
   type: multiple_choice
   options:
@@ -385,7 +385,7 @@ questions:
   usage: both
 - id: 3025
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料分析層次
+  section_title: 統計摘要 (Descriptive Statistics)
   text: 四分位距 (IQR) 常用於協助偵測什麼？
   type: multiple_choice
   options:
@@ -401,7 +401,7 @@ questions:
   usage: both
 - id: 3026
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料類型
+  section_title: 數值型 vs. 類別型資料 (Numerical vs. Categorical Data)
   text: 「滿意度調查（非常滿意、滿意、普通、不滿意）」屬於哪種資料類型？
   type: multiple_choice
   options:
@@ -417,7 +417,7 @@ questions:
   usage: both
 - id: 3027
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料視覺化
+  section_title: 資料視覺化決策邏輯
   text: 盒鬚圖 (Box Plot) 無法直接顯示下列哪個統計量？
   type: multiple_choice
   options:
@@ -433,7 +433,7 @@ questions:
   usage: both
 - id: 3028
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料清理
+  section_title: 資料匿名化與隱私保護 (PII 處理)
   text: 「資料最小化 (Data Minimization)」原則建議企業怎麼做？
   type: multiple_choice
   options:
@@ -449,7 +449,7 @@ questions:
   usage: both
 - id: 3029
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料管道
+  section_title: 資料類型與儲存 (Data Types & Storage)
   text: NoSQL 資料庫的主要優勢不包括下列何者？
   type: multiple_choice
   options:
@@ -465,7 +465,7 @@ questions:
   usage: both
 - id: 3030
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料管道
+  section_title: 資料類型與儲存 (Data Types & Storage)
   text: Redis 是一種常見的 NoSQL 資料庫，它主要用於什麼用途？
   type: multiple_choice
   options:
@@ -481,7 +481,7 @@ questions:
   usage: both
 - id: 3031
   chapter_title: 數據處理生命週期與架構
-  section_title: 統計摘要
+  section_title: 統計摘要 (Descriptive Statistics)
   text: 如果平均數遠大於中位數，這組資料的分佈形狀是？
   type: multiple_choice
   options:
@@ -497,7 +497,7 @@ questions:
   usage: both
 - id: 3032
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料清理
+  section_title: 異常值/離群值處理 (Outliers Handling)
   text: 對數轉換 (Log Transformation) 常用於處理什麼問題？
   type: multiple_choice
   options:
@@ -513,7 +513,7 @@ questions:
   usage: both
 - id: 3033
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料視覺化
+  section_title: 資料視覺化決策邏輯
   text: 熱圖 (Heatmap) 最常用來呈現什麼資訊？
   type: multiple_choice
   options:
@@ -529,7 +529,7 @@ questions:
   usage: both
 - id: 3034
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料管道
+  section_title: 資料類型與儲存 (Data Types & Storage)
   text: SQL 是用於操作哪種資料庫的標準語言？
   type: multiple_choice
   options:
@@ -545,7 +545,7 @@ questions:
   usage: both
 - id: 3035
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料隱私
+  section_title: 資料匿名化與隱私保護 (PII 處理)
   text: 「假名化 (Pseudonymization)」與「匿名化」的主要區別在於？
   type: multiple_choice
   options:
@@ -561,7 +561,7 @@ questions:
   usage: both
 - id: 3036
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料清理
+  section_title: 缺失值處理 (Missing Values)
   text: 下列何者不是處理缺失值的常見策略？
   type: multiple_choice
   options:
@@ -577,7 +577,7 @@ questions:
   usage: both
 - id: 3037
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料管道
+  section_title: 資料類型與儲存 (Data Types & Storage)
   text: Amazon S3 和 Google Cloud Storage 屬於哪種儲存服務？
   type: multiple_choice
   options:
@@ -593,7 +593,7 @@ questions:
   usage: both
 - id: 3038
   chapter_title: 數據處理生命週期與架構
-  section_title: 統計摘要
+  section_title: 統計摘要 (Descriptive Statistics)
   text: 眾數 (Mode) 最適合用於描述哪種資料的集中趨勢？
   type: multiple_choice
   options:
@@ -609,7 +609,7 @@ questions:
   usage: both
 - id: 3039
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料管道
+  section_title: ELT (Extract-Load-Transform) 架構與資料湖 (Data Lake)
   text: 「資料沼澤 (Data Swamp)」是指什麼狀況？
   type: multiple_choice
   options:
@@ -625,7 +625,7 @@ questions:
   usage: both
 - id: 3040
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料分析層次
+  section_title: 統計摘要 (Descriptive Statistics)
   text: 貝塞爾校正 (Bessel's Correction) 在計算樣本標準差時，分母為什麼是 n-1？
   type: multiple_choice
   options:
@@ -657,7 +657,7 @@ questions:
   usage: both
 - id: 3052
   chapter_title: 數據工程與資料處理
-  section_title: 數據處理流程
+  section_title: 資料管道 (Data Pipeline)
   text: 在現代的大數據架構中，為何 ELT (Extract, Load, Transform) 逐漸取代傳統的 ETL？
   type: multiple_choice
   options:
@@ -673,7 +673,7 @@ questions:
   usage: both
 - id: 3053
   chapter_title: 數據工程與資料處理
-  section_title: 探索式資料分析 (EDA)
+  section_title: 探索性資料分析 (Exploratory Data Analysis, EDA)
   text: 在 EDA 階段發現兩個變數高度相關 (Correlation)，我們可以斷定它們有因果關係 (Causation) 嗎？
   type: multiple_choice
   options:
@@ -689,7 +689,7 @@ questions:
   usage: both
 - id: 3054
   chapter_title: 數據工程與資料處理
-  section_title: 數據清洗與品質
+  section_title: 資料清理與品質管理
   text: 處理缺失值 (Missing Values) 時，若該欄位缺失比例高達 80%，最安全的處理方式通常是？
   type: multiple_choice
   options:
@@ -705,7 +705,7 @@ questions:
   usage: both
 - id: 3055
   chapter_title: 數據工程與資料處理
-  section_title: 數據清洗與品質
+  section_title: 資料清理與品質管理
   text: 在偵測異常值 (Outliers) 時，使用 IQR (四分位距) 法比使用 Z-Score 法有什麼優勢？
   type: multiple_choice
   options:
@@ -721,7 +721,7 @@ questions:
   usage: both
 - id: 3056
   chapter_title: 數據工程與資料處理
-  section_title: 數據處理流程
+  section_title: 資料管道 (Data Pipeline)
   text: 對於即時詐欺偵測系統，應採用哪種數據處理架構？
   type: multiple_choice
   options:
@@ -735,9 +735,9 @@ questions:
   - sec-ai-chapter3
   - sec-data-pipeline
   usage: both
-- id: 11448
+- id: '11448_2'
   chapter_title: 數據工程與資料處理
-  section_title: 探索式資料分析 (EDA)
+  section_title: 歷屆考題
   text: 若希望檢視某一連續型數據的分布情形 （如集中程度、偏態或是否呈現 多峰） ，下列哪一種應用情境最適合使用直方圖（Histogram） 來進行 分析？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -748,14 +748,15 @@ questions:
   correct_index: 0
   explanation: 直方圖 (Histogram) 是觀察連續型數值資料分布（如年齡、收入）的最佳工具，能直觀呈現數據的集中趨勢、偏態與峰度。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter3
   - sec-eda
   usage: mock
-- id: 11437
+- id: '11437_1'
   chapter_title: 數據工程與資料處理
-  section_title: 探索式資料分析 (EDA)
+  section_title: 歷屆考題
   text: 某金融科技公司在利用歷史交易資料建立風險控管模型時，嘗試推估 整體詐騙交易比例。近期發現，樣本間存在明顯的時間序列相關性，導 致模型在實際偵測新交易時誤判率升高。若希望同時改善詐騙比例推 估的準確性並提升模型的穩健性，下列哪一種做法最為合適？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -766,6 +767,7 @@ questions:
   correct_index: 1
   explanation: 此題涉及 探索式資料分析 (EDA) 的核心概念。正確答案為「採取時間序列敏感的抽樣策略，例如依據交易時間區間進行分層， 以保存原始的時間結構特性」。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter3
@@ -773,7 +775,7 @@ questions:
   usage: both
 - id: 11403
   chapter_title: 數據工程與資料處理
-  section_title: 數據類型與儲存
+  section_title: 歷屆考題
   text: 下列哪一種圖表最適合用來呈現並分析「兩個數值型變數」之間的關 係，例如觀察身高與體重的相關性？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -784,14 +786,15 @@ questions:
   correct_index: 0
   explanation: 此題涉及 數據類型與儲存 的核心概念。正確答案為「散佈圖（Scatter Plot）」。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter3
   - sec-data-storage
   usage: both
-- id: 11445
+- id: '11445_1'
   chapter_title: 數據工程與資料處理
-  section_title: 探索式資料分析 (EDA)
+  section_title: 歷屆考題
   text: 某醫院研究團隊蒐集了大量病患的「收縮壓」數據，經檢驗後顯示此數 值大致呈現常態分布。在進行後續模型分析前，研究人員希望妥善處理 可能存在的極端血壓數值。下列哪一種做法最為合適？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -802,13 +805,14 @@ questions:
   correct_index: 2
   explanation: 此題涉及 探索式資料分析 (EDA) 的核心概念。正確答案為「透過 Z 分數（Z-score）或標準差範圍檢測異常值，並依研究需求決 定是否調整或移除；  答案 題    目」。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter3
   - sec-eda
   usage: both
 - chapter_title: 數據處理生命週期與架構
-  section_title: 資料類型與儲存
+  section_title: 資料類型與儲存 (Data Types & Storage)
   text: 情境：你需要儲存大量的社群媒體貼文（包含文字、圖片、影片），且資料量增長極快。最合適的儲存方案是？
   type: multiple_choice
   options:
@@ -821,10 +825,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-data-types-storage
-  id: 11449
+  id: '11449_2'
   usage: both
 - chapter_title: 數據處理生命週期與架構
-  section_title: 資料管道
+  section_title: ELT (Extract-Load-Transform) 架構與資料湖 (Data Lake)
   text: 情境：某公司採用「資料湖 (Data Lake)」架構，先把所有原始資料存進去，要分析時再處理。這屬於哪種流程？
   type: multiple_choice
   options:
@@ -837,10 +841,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-elt
-  id: 11450
+  id: '11450_3'
   usage: both
 - chapter_title: 數據處理生命週期與架構
-  section_title: 資料管道
+  section_title: 批次處理 vs. 串流處理
   text: 情境：為了即時偵測信用卡盜刷，系統必須在交易發生的毫秒內完成分析。應採用哪種處理模式？
   type: multiple_choice
   options:
@@ -853,10 +857,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-batch-vs-streaming
-  id: 11451
+  id: '11451_3'
   usage: both
 - chapter_title: 數據處理生命週期與架構
-  section_title: 探索性資料分析
+  section_title: 統計摘要 (Descriptive Statistics)
   text: 情境：某公司的薪資分佈呈現嚴重的「右偏 (Right Skewed)」，代表有少數高薪主管拉高了平均。此時哪個指標更能代表一般員工的薪資？
   type: multiple_choice
   options:
@@ -869,10 +873,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-descriptive-statistics
-  id: 11452
+  id: '11452_3'
   usage: both
 - chapter_title: 數據處理生命週期與架構
-  section_title: 資料清理與品質管理
+  section_title: 缺失值處理 (Missing Values)
   text: 情境：在處理問卷資料時，發現「年齡」欄位有 5% 的缺失值。若直接刪除這些資料會損失太多資訊，最佳的插補策略是？
   type: multiple_choice
   options:
@@ -885,10 +889,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-missing-values
-  id: 11453
+  id: '11453_3'
   usage: both
 - chapter_title: 數據處理生命週期與架構
-  section_title: 資料清理與品質管理
+  section_title: 資料匿名化與隱私保護 (PII 處理)
   text: 情境：根據 GDPR，當不再需要某個使用者的資料時，必須將其刪除。若資料庫設計使用「假名化 (Pseudonymization)」，應如何刪除？
   type: multiple_choice
   options:
@@ -901,10 +905,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-anonymization
-  id: 11454
+  id: '11454_3'
   usage: both
 - chapter_title: 數據處理生命週期與架構
-  section_title: 資料清理與品質管理
+  section_title: 異常值/離群值處理 (Outliers Handling)
   text: 情境：使用 Z-score 偵測異常值時，通常將超過幾個標準差的數值視為異常？
   type: multiple_choice
   options:
@@ -917,10 +921,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-outliers
-  id: 11455
+  id: '11455_3'
   usage: both
 - chapter_title: 數據處理生命週期與架構
-  section_title: 探索性資料分析
+  section_title: 資料視覺化決策邏輯
   text: 情境：想比較不同部門的「業績分佈」情形（包含中位數、四分位數及是否有離群值）。最適合的圖表是？
   type: multiple_choice
   options:
@@ -933,10 +937,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-data-visualization
-  id: 11456
+  id: '11456_3'
   usage: both
 - chapter_title: 數據處理生命週期與架構
-  section_title: 資料類型與儲存
+  section_title: 資料類型與儲存 (Data Types & Storage)
   text: 情境：JSON 格式的資料屬於哪種類型？
   type: multiple_choice
   options:
@@ -949,10 +953,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-data-types-storage
-  id: 11457
+  id: '11457_3'
   usage: both
 - chapter_title: 數據處理生命週期與架構
-  section_title: 資料管道
+  section_title: ETL (Extract-Transform-Load) 架構
   text: 情境：ETL 流程中的「轉換 (Transform)」步驟不包含下列何者？
   type: multiple_choice
   options:
@@ -965,10 +969,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-etl
-  id: 11458
+  id: '11458_3'
   usage: both
 - chapter_title: 數據處理生命週期與架構
-  section_title: 探索性資料分析
+  section_title: 數值型 vs. 類別型資料 (Numerical vs. Categorical Data)
   text: 情境：將「衣服尺寸 (S, M, L, XL)」轉換為數值 (1, 2, 3, 4) 是合理的，因為？
   type: multiple_choice
   options:
@@ -981,10 +985,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-data-types
-  id: 11459
+  id: '11459_3'
   usage: both
 - chapter_title: 數據處理生命週期與架構
-  section_title: 資料清理與品質管理
+  section_title: 資料匿名化與隱私保護 (PII 處理)
   text: 情境：為了保護隱私，將「王小明」改為「王O明」。這屬於？
   type: multiple_choice
   options:
@@ -997,10 +1001,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-anonymization
-  id: 11460
+  id: '11460_3'
   usage: both
 - chapter_title: 數據處理生命週期與架構
-  section_title: 探索性資料分析
+  section_title: 統計摘要 (Descriptive Statistics)
   text: 情境：標準差 (Standard Deviation) 越大，代表資料？
   type: multiple_choice
   options:
@@ -1013,10 +1017,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-descriptive-statistics
-  id: 11461
+  id: '11461_3'
   usage: both
 - chapter_title: 數據處理生命週期與架構
-  section_title: 資料清理與品質管理
+  section_title: 數據一致性處理 (Data Consistency)
   text: 情境：資料一致性處理中，「去重 (Deduplication)」的目的是？
   type: multiple_choice
   options:
@@ -1029,10 +1033,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-consistency
-  id: 11462
+  id: '11462_3'
   usage: both
 - chapter_title: 數據處理生命週期與架構
-  section_title: 資料類型與儲存
+  section_title: 資料類型與儲存 (Data Types & Storage)
   text: 情境：關聯式資料庫 (RDB) 強調 ACID 特性，其中 A 代表？
   type: multiple_choice
   options:
@@ -1045,10 +1049,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-data-types-storage
-  id: 11463
+  id: '11463_3'
   usage: both
 - chapter_title: 數據處理生命週期與架構
-  section_title: 探索性資料分析
+  section_title: 資料視覺化決策邏輯
   text: 情境：若要觀察兩個連續變數（如廣告費 vs 營收）之間的相關性，應繪製？
   type: multiple_choice
   options:
@@ -1061,10 +1065,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-data-visualization
-  id: 11464
+  id: '11464_2'
   usage: both
 - chapter_title: 數據處理生命週期與架構
-  section_title: 資料清理與品質管理
+  section_title: 數值型 vs. 類別型資料 (Numerical vs. Categorical Data)
   text: 情境：對於「顏色 (紅, 綠, 藍)」這種名目型資料，應使用什麼編碼方式？
   type: multiple_choice
   options:
@@ -1077,10 +1081,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-data-types
-  id: 11465
+  id: '11465_2'
   usage: both
 - chapter_title: 數據處理生命週期與架構
-  section_title: 資料管道
+  section_title: ELT (Extract-Load-Transform) 架構與資料湖 (Data Lake)
   text: 情境：資料湖 (Data Lake) 的缺點之一是容易變成「資料沼澤 (Data Swamp)」，這是指？
   type: multiple_choice
   options:
@@ -1093,10 +1097,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-elt
-  id: 11466
+  id: '11466_2'
   usage: both
 - chapter_title: 數據處理生命週期與架構
-  section_title: 資料清理與品質管理
+  section_title: 統計摘要 (Descriptive Statistics)
   text: 情境：四分位距 (IQR) 是用來衡量？
   type: multiple_choice
   options:
@@ -1109,10 +1113,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-descriptive-statistics
-  id: 11467
+  id: '11467_1'
   usage: both
 - chapter_title: 數據處理生命週期與架構
-  section_title: 資料清理與品質管理
+  section_title: 異常值/離群值處理 (Outliers Handling)
   text: 情境：蓋帽法 (Winsorizing) 處理離群值的方式是？
   type: multiple_choice
   options:
@@ -1125,11 +1129,11 @@ questions:
   tags:
   - chap-ai-foundation-chapter3
   - sec-outliers
-  id: 11468
+  id: '11468_1'
   usage: both
 - id: 3071
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料類型與儲存
+  section_title: 常見資料蒐集方法
   text: 企業想直接向目標客群蒐集產品滿意度、需求與使用回饋，最適合使用哪一種資料蒐集方法？
   type: multiple_choice
   options:
@@ -1145,7 +1149,7 @@ questions:
   usage: quiz
 - id: 3072
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料類型與儲存
+  section_title: 常見資料蒐集方法
   text: 關於網路爬蟲 (Web Scraping) 作為資料來源，下列敘述何者最正確？
   type: multiple_choice
   options:
@@ -1161,7 +1165,7 @@ questions:
   usage: quiz
 - id: 3073
   chapter_title: 數據處理生命週期與架構
-  section_title: 探索性資料分析
+  section_title: 探索性資料分析 vs. 驗證性資料分析
   text: 驗證性資料分析 (CDA) 與探索性資料分析 (EDA) 最大的差異是什麼？
   type: multiple_choice
   options:
@@ -1177,7 +1181,7 @@ questions:
   usage: quiz
 - id: 3074
   chapter_title: 數據處理生命週期與架構
-  section_title: 探索性資料分析
+  section_title: 假設檢定基本概念
   text: 某假設檢定設定顯著水準 α = 0.05，計算得到 p 值 = 0.03。一般應如何判斷？
   type: multiple_choice
   options:
@@ -1193,7 +1197,7 @@ questions:
   usage: quiz
 - id: 3075
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料轉換
+  section_title: 資料轉換 (Data Transformation)
   text: 將數值資料縮放到平均數為 0、標準差為 1 的分布，稱為什麼？
   type: multiple_choice
   options:
@@ -1209,7 +1213,7 @@ questions:
   usage: quiz
 - id: 3076
   chapter_title: 數據處理生命週期與架構
-  section_title: 資料轉換
+  section_title: 資料轉換 (Data Transformation)
   text: 將年齡由連續數值轉為「青年、中年、老年」等區間，這種處理稱為什麼？其主要代價是什麼？
   type: multiple_choice
   options:
@@ -1234,9 +1238,11 @@ questions:
   correct_index: 3
   explanation: 本題測驗相關核心概念。正確解答為「模型主要學習輸入特徵與既定目標標記之間的對應關係」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-4
   text: 某保險公司建立 AI 理賠金額預測模型。歷史理賠資料經檢定後呈近似常態分佈，但仍存在少數極端高額案件。資料科學團隊在不破壞整體分佈特性的前提下，規劃進行離群值處理。下列何者最不適當？    （115年第一梯次）
   type: multiple_choice
@@ -1252,9 +1258,11 @@ questions:
 
     定性」，因為這最符合題幹中描述的情境與技術特性。'
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-5
   text: 某銀行建立 AI 詐欺交易偵測模型。歷史交易資料中，詐欺樣本比例極低，導致模型訓練時偏向預測為「正常交易」 。資料科學團隊評估採用SMOTE（Synthetic Minority Over-sampling Technique）改善訓練資料分佈。下列何者最符合 SMOTE技術的主要功能？ （115年第一梯次）
   type: multiple_choice
@@ -1266,9 +1274,11 @@ questions:
   correct_index: 1
   explanation: 本題測驗相關核心概念。正確解答為「依據少數類別樣本的特徵空間，合成產生新的少數類別樣本」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-6
   text: 資料科學團隊在模型訓練前，需對數值特徵進行正規化（Normalization）或標準化（Standardization） 。為確保模型評估結果具真實性並避免資料洩漏（Data Leakage） ，下列何者為最適當的作法？ （115年第一梯次）
   type: multiple_choice
@@ -1288,9 +1298,11 @@ questions:
 
     統計量，再套用至測試資料」，因為這最符合題幹中描述的情境與技術特性。'
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-7
   text: 某電信公司建立機器學習模型預測用戶流失風險。資料中包含多個類別型特徵（Categorical Features） ，例如「資費方案類型」與「客戶地區」 。為使模型能有效使用這些特徵，下列何者最直接用於將類別型特徵轉換為模型可處理的數值格式？ （115年第一梯次）
   type: multiple_choice
@@ -1302,9 +1314,11 @@ questions:
   correct_index: 2
   explanation: 本題測驗相關核心概念。正確解答為「One-hot 編碼（One-hot Encoding）」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-9
   text: 某影音串流平台建立神經網路模型，用於預測使用者最可能感興趣的影片類型。模型輸出層需將結果轉換為各類別的機率分佈，以便系統依機率高低推薦內容。下列哪一種函數最適合用於模型輸出層？    （115年第一梯次）
   type: multiple_choice
@@ -1316,9 +1330,11 @@ questions:
   correct_index: 0
   explanation: 本題測驗相關核心概念。正確解答為「Softmax 函數（Softmax Function）」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-11
   text: 某企業導入生成式 AI（Generative AI）系統自動產出會議摘要，並規劃額外建置一套 AI 系統，用於評估摘要內容的正確性與完整性。下列何者為此 AI 系統的核心目標？ （115年第一梯次）
   type: multiple_choice
@@ -1330,9 +1346,11 @@ questions:
   correct_index: 1
   explanation: 本題測驗相關核心概念。正確解答為「判斷摘要是否遺漏關鍵資訊或出現語意錯誤」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-14
   text: 下列哪一項「AI 技術應用與產業領域」的對應最為恰當？ （115年第一梯次）
   type: multiple_choice
@@ -1346,9 +1364,11 @@ questions:
   correct_index: 1
   explanation: 本題測驗相關核心概念。正確解答為「使用 AI 進行設備故障預測與預防性維護—智慧製造」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-16
   text: 關於敘述性統計指標，下列敘述何者最為正確？ （115年第一梯次）
   type: multiple_choice
@@ -1360,9 +1380,11 @@ questions:
   correct_index: 2
   explanation: 本題測驗相關核心概念。正確解答為「百分位數（Percentile）主要用於衡量資料在整體分布中的相對位置」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-17
   text: 某企業資料分析人員需針對不同型態的數據選擇合適的視覺化工具。下列哪一種情境最適合使用直方圖（Histogram）？ （115年第一梯次）
   type: multiple_choice
@@ -1374,9 +1396,11 @@ questions:
   correct_index: 0
   explanation: 本題測驗相關核心概念。正確解答為「檢視顧客年齡資料在不同區間的集中情形」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-26
   text: 在可解釋 AI(Explainable AI, XAI) 的分類架構中，LIME（Local Interpretable Model-agnostic Explanations）屬於哪一類解釋技術？ （115年第一梯次）
   type: multiple_choice
@@ -1390,9 +1414,11 @@ questions:
   correct_index: 2
   explanation: 本題測驗相關核心概念。正確解答為「後處理模型解釋（post-hoc） ：對已訓練模型提供外部解釋」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-27
   text: SHAP（SHapley Additive exPlanations）值常用於分析機器學習模型的輸出行為。下列何者最符合 SHAP 值所提供的資訊？    （115年第一梯次）
   type: multiple_choice
@@ -1404,9 +1430,11 @@ questions:
   correct_index: 2
   explanation: 本題測驗相關核心概念。正確解答為「在單一預測結果中，各輸入特徵對最終輸出所產生的貢獻分配」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-29
   text: 在深度學習模型的分析與驗證過程中，研究人員有時會利用「顯著性圖（Saliency Map） 」來輔助理解模型行為。下列何者最符合此技術的主要用途？    （115年第一梯次）
   type: multiple_choice
@@ -1418,9 +1446,11 @@ questions:
   correct_index: 1
   explanation: 本題測驗相關核心概念。正確解答為「標示輸入資料中對單一預測結果影響較大的區域或部分」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-31
   text: 某農場收集了大量作物葉片影像，但只有 30%的影像有病害類別標註，其餘 70%的影像沒有任何標籤。農場希望充分利用所有資料來訓練病害識別模型。這種情況最適合使用哪一種學習方法？    （115年第一梯次）
   type: multiple_choice
@@ -1432,9 +1462,11 @@ questions:
   correct_index: 0
   explanation: 本題測驗相關核心概念。正確解答為「半監督式學習（Semi-supervised Learning）」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-35
   text: 某市政府規劃釋出市民用電資料供學術研究使用，資料內容包含用電紀錄與部分人口統計欄位。考量資料可能涉及可識別個人之資訊，且須符合個人資料保護相關規範，下列哪一種資料處理方式最為適當？    （115年第一梯次）
   type: multiple_choice
@@ -1446,9 +1478,11 @@ questions:
   correct_index: 2
   explanation: 本題測驗相關核心概念。正確解答為「對具識別風險的資料欄位進行轉換處理，並移除直接識別資訊」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-38
   text: 某果園管理公司計畫導入 AI 系統協助農民判斷蘋果成熟度，透過分析果實特徵資訊，評估成熟狀態並自動判斷採收時機。根據 AI 應用領域的分類，這個系統主要屬於哪一個應用領域？    （115年第一梯次）
   type: multiple_choice
@@ -1460,9 +1494,11 @@ questions:
   correct_index: 1
   explanation: 本題測驗相關核心概念。正確解答為「電腦視覺（Computer Vision）」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-39
   text: 某企業評估於不同業務場景導入機器學習技術。下列哪一項應用情境與機器學習類型的搭配最為適當？ （115年第一梯次）
   type: multiple_choice
@@ -1484,9 +1520,11 @@ questions:
 
     標註—非監督式學習（Unsupervised Learning）」，因為這最符合題幹中描述的情境與技術特性。'
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-43
   text: 關於機器學習不同的學習模式，下列敘述何者錯誤？ 1. 監督式學習（Supervised Learning）透過已標註資料學習輸入與目標之間的對應關係，常見任務包含分類與數值預測。 2. 非監督式學習（Unsupervised Learning）雖不需標註資料，但通常需預先定義每筆資料的正確輸出類別以利模型收斂。 3. 半監督式學習（Semi-supervised Learning）在訓練過程中僅利用未標註資料進行特徵學習，並不涉及標註資料。 4. 自監督式學習（Self-supervised Learning）的訓練方式與監督式學習相同，皆需人工逐筆提供標註資料。 5. 強化式學習（Reinforcement Learning）透過與環境互動並依據回饋訊號調整策略，以優化決策行為。 6. 自監督式學習（Self-supervised Learning）通常利用資料本身產生訓練目標，以降低對人工標註資料的依賴。 （115年第一梯次）
   type: multiple_choice
@@ -1498,9 +1536,11 @@ questions:
   correct_index: 3
   explanation: "本題測驗相關核心概念。正確解答為「2、3、4 \n115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 \n第一科：人工智慧基礎概論 \n考試日期：115 年 03 月 21 日 \n第 11 頁，共 12 頁 \n \n答案 題目」，因為這最符合題幹中描述的情境與技術特性。"
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-44
   text: 某零售業者建立顧客行為預測模型，資料集中包含「年消費金額」 、 「平均單筆交易金額」及「會員年資」等數值型特徵。資料分析顯示，部分金額特徵呈現高度偏態分布，少數樣本的數值顯著高於多數觀測值。為降低極端值對模型學習穩定性的影響，下列哪一種特徵工程方法最適合？    （115年第一梯次）
   type: multiple_choice
@@ -1512,9 +1552,11 @@ questions:
   correct_index: 0
   explanation: 本題測驗相關核心概念。正確解答為「對數轉換（Log Transformation）」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-46
   text: 某市政府建置城市治理資料平台，需整合交通車流偵測資料、路口監視器影像，以及民眾透過陳情系統提交的文字通報。由於各類資料格式、儲存方式與資料型態差異甚大，導致資料清理與整合成本顯著增加。就大數據特性而言，此專案最主要面臨下列哪一項挑戰？    （115年第一梯次）
   type: multiple_choice
@@ -1526,9 +1568,11 @@ questions:
   correct_index: 2
   explanation: 本題測驗相關核心概念。正確解答為「Variety」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-47
   text: 某企業規劃導入 AI 技術支援多項資料分析任務中，下列何種屬於結構化預測（Structured Prediction）問題？ （115年第一梯次）
   type: multiple_choice
@@ -1540,6 +1584,8 @@ questions:
   correct_index: 3
   explanation: 本題測驗相關核心概念。正確解答為「為語音內容轉換後的文字進行逐詞標註」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: 歷屆考題

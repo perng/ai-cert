@@ -183,7 +183,6 @@ label: chap-ai-foundation-chapter9
 
 ![防止過擬合技術](images/prevent-overfitting.webp)
 
-## 本章總結與考點提示 {#chap-ai-foundation-chapter9-summary}
 
 ### 核心概念回顧
 
@@ -240,3 +239,8 @@ label: chap-ai-foundation-chapter9
 ### 延伸思考
 
 *   為什麼 Accuracy 在資料不平衡時會騙人？（因為模型只要全部猜多數類別，分數就會很高，但完全沒有鑑別力）。
+
+## 歷屆考題 {#sec-past-exam}
+
+請做測驗看歷屆考題。
+

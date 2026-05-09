@@ -46,6 +46,7 @@ label: chap-gen-chapter4
 *   **定義**：將解決問題的過程建模為一個圖 (Graph)。
     *   **節點 (Node)**：代表某個狀態或中間結果。
     *   **邊 (Edge)**：代表採取的行動或轉換。
+
 *   **功能**：它作為 Agent 的導航地圖，組織決策步驟。Agent 不是盲目地走，而是在圖上進行搜尋。
 *   **搜尋策略**：
     *   **廣度優先搜尋 (BFS)**：先探索所有可能的下一步，再往深處走。適合尋找最短路徑。
@@ -61,6 +62,7 @@ label: chap-gen-chapter4
     *   *產品經理 Agent*：負責拆解需求，分派任務。
     *   *工程師 Agent*：負責寫程式碼。
     *   *測試 Agent*：負責跑測試，回報 Bug 給工程師。
+
 *   **互動流程**：
     1.  **Client Agent (發起者)** 接收人類指令。
     2.  Client Agent 將任務轉發給 **Remote Agent (執行者)**。
@@ -76,9 +78,11 @@ label: chap-gen-chapter4
 *   **無限循環 (Infinite Loops)**：
     *   Agent A 問 Agent B，Agent B 又問 Agent A，兩人互相踢皮球，任務永遠無法完成。
     *   *解法*：設定最大對話輪數 (Max Turns) 或引入一個「監督者 Agent」來強制終止。
+
 *   **角色定義不清**：
     *   如果職責重疊，兩個 Agent 可能會搶著做同一件事，或者以為對方會做結果沒人做。
     *   *解法*：在 System Prompt 中極度明確地定義每個 Agent 的職責邊界。
+
 *   **答案衝突**：
     *   Agent A 說要用 Python，Agent B 說要用 Node.js。
     *   *解法*：引入「決策者 Agent」或投票機制來解決歧見。
@@ -89,18 +93,40 @@ label: chap-gen-chapter4
 *   **LangChain / LangGraph**：
     *   最流行的框架，提供豐富的工具整合與 Chain/Graph 的抽象層。
     *   *特色*：高度靈活，適合建構複雜的單體或多體 Agent。
+
 *   **LlamaIndex**：
     *   最初專注於 RAG，現已發展出強大的 Agentic RAG 能力。
     *   *特色*：擅長處理**資料密集型 (Data-Centric)** 的 Agent，能將複雜的資料檢索策略轉化為 Agent 的工具。
+
 *   **Microsoft AutoGen**：
     *   專注於**多代理協作 (Multi-Agent Collaboration)**。
     *   *特色*：透過「對話」來解決問題。你可以定義多個 Agent (如 UserProxy, Assistant)，讓它們互相聊天來完成任務。
+
 *   **Microsoft Semantic Kernel**：
     *   微軟推出的輕量級 SDK，強調將 LLM 與現有程式碼 (C#, Python, Java) 整合。
     *   *特色*：企業級整合首選，特別是 .NET 生態系。強調 **Plugins** 與 **Planners** 的概念。
+
 *   **CrewAI**：
     *   基於 LangChain，強調**角色扮演 (Role-Playing)** 與**任務指派**。
     *   *特色*：讓 Agent 像一個團隊 (Crew) 一樣運作，每個 Agent 有明確的角色 (Role)、目標 (Goal) 與背景故事 (Backstory)。
+
 *   **OpenAI Swarm (Experimental)**：
     *   OpenAI 推出的教育性質框架，展示輕量級的多代理編排。
     *   *特色*：強調 **Handoffs (交接)** 機制，讓 Agent 能將對話控制權轉交給另一個更適合的 Agent。
+
+
+## 多代理系統 (MAS) {#sec-mas}
+
+多代理系統 (Multi-Agent Systems, MAS) 是由多個具備自主性的 AI 代理 (Agent) 共同組成的系統：
+
+1. **協作模式 (Collaboration)**：不同的 Agent 各司其職（例如：一個負責資料收集、一個負責分析、一個負責撰寫報告），透過溝通與協作完成複雜任務。
+2. **對抗模式 (Adversarial)**：Agent 之間處於競爭關係，例如生成器與判別器，或是在辯論情境中互相檢驗對方的邏輯，藉此提升最終結果的品質。
+3. **框架工具**：如 AutoGen、CrewAI 等框架，大幅簡化了開發者建立多代理系統的難度，允許開發者定義各個 Agent 的角色、目標與溝通管道。
+多代理系統能克服單一模型的局限性，實現更複雜、更長週期的自主任務處理。
+
+
+
+## 歷屆考題 {#sec-past-exam}
+
+請做測驗看歷屆考題。
+

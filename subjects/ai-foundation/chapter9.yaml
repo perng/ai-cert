@@ -1,7 +1,7 @@
 questions:
 - id: 9001
   chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 資料集劃分 (Data Splitting)
   text: 在機器學習中，將資料集劃分為訓練集、驗證集和測試集的主要目的是？
   type: multiple_choice
   options:
@@ -17,7 +17,7 @@ questions:
   usage: quiz
 - id: 9002
   chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 資料集劃分 (Data Splitting)
   text: 驗證集 (Validation Set) 的主要用途是什麼？
   type: multiple_choice
   options:
@@ -33,7 +33,7 @@ questions:
   usage: quiz
 - id: 9003
   chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: K-fold 交叉驗證 (Cross-Validation)
   text: K-fold 交叉驗證 (Cross-Validation) 的主要優點是？
   type: multiple_choice
   options:
@@ -49,7 +49,7 @@ questions:
   usage: quiz
 - id: 9004
   chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 分類指標 (Classification Metrics)
   text: 混淆矩陣 (Confusion Matrix) 中的 TP (True Positive) 代表什麼？
   type: multiple_choice
   options:
@@ -65,7 +65,7 @@ questions:
   usage: quiz
 - id: 9005
   chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 分類指標 (Classification Metrics)
   text: 在資料極度不平衡的情況下（如詐欺偵測），哪個指標最容易產生誤導？
   type: multiple_choice
   options:
@@ -81,7 +81,7 @@ questions:
   usage: quiz
 - id: 9006
   chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 分類指標 (Classification Metrics)
   text: 精確率 (Precision) 的定義是？
   type: multiple_choice
   options:
@@ -97,7 +97,7 @@ questions:
   usage: quiz
 - id: 9007
   chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 分類指標 (Classification Metrics)
   text: 召回率 (Recall) 的定義是？
   type: multiple_choice
   options:
@@ -113,7 +113,7 @@ questions:
   usage: quiz
 - id: 9008
   chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 分類指標 (Classification Metrics)
   text: 癌症篩檢模型應該最重視哪個指標？
   type: multiple_choice
   options:
@@ -129,7 +129,7 @@ questions:
   usage: quiz
 - id: 9009
   chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 分類指標 (Classification Metrics)
   text: 垃圾郵件過濾應該最重視哪個指標？
   type: multiple_choice
   options:
@@ -145,7 +145,7 @@ questions:
   usage: quiz
 - id: 9010
   chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 分類指標 (Classification Metrics)
   text: F1-Score 是哪兩個指標的調和平均數？
   type: multiple_choice
   options:
@@ -161,7 +161,7 @@ questions:
   usage: quiz
 - id: 9011
   chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 分類指標 (Classification Metrics)
   text: AUC-ROC 曲線中，AUC = 0.5 代表模型的表現如何？
   type: multiple_choice
   options:
@@ -177,7 +177,7 @@ questions:
   usage: both
 - id: 9012
   chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 迴歸指標 (Regression Metrics)
   text: 均方誤差 (MSE) 的特點是？
   type: multiple_choice
   options:
@@ -193,7 +193,7 @@ questions:
   usage: both
 - id: 9013
   chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 迴歸指標 (Regression Metrics)
   text: R-squared (決定係數) 為 1 代表什麼？
   type: multiple_choice
   options:
@@ -209,7 +209,7 @@ questions:
   usage: both
 - id: 9014
   chapter_title: 模型評估與效能優化
-  section_title: 誤差分析與正則化
+  section_title: 偏差-變異權衡 (Bias-Variance Tradeoff)
   text: 高偏差 (High Bias) 通常對應到什麼問題？
   type: multiple_choice
   options:
@@ -225,7 +225,7 @@ questions:
   usage: both
 - id: 9015
   chapter_title: 模型評估與效能優化
-  section_title: 誤差分析與正則化
+  section_title: 偏差-變異權衡 (Bias-Variance Tradeoff)
   text: 高變異 (High Variance) 通常對應到什麼問題？
   type: multiple_choice
   options:
@@ -241,7 +241,7 @@ questions:
   usage: both
 - id: 9016
   chapter_title: 模型評估與效能優化
-  section_title: 誤差分析與正則化
+  section_title: 防止過擬合技術 (Regularization)
   text: 下列何者不是解決過度擬合 (Overfitting) 的方法？
   type: multiple_choice
   options:
@@ -257,7 +257,7 @@ questions:
   usage: both
 - id: 9017
   chapter_title: 模型評估與效能優化
-  section_title: 誤差分析與正則化
+  section_title: 防止過擬合技術 (Regularization)
   text: L1 正則化 (Lasso) 的特殊效果是？
   type: multiple_choice
   options:
@@ -273,7 +273,7 @@ questions:
   usage: both
 - id: 9018
   chapter_title: 模型評估與效能優化
-  section_title: 誤差分析與正則化
+  section_title: 防止過擬合技術 (Regularization)
   text: Dropout 機制是如何運作的？
   type: multiple_choice
   options:
@@ -289,7 +289,7 @@ questions:
   usage: both
 - id: 9019
   chapter_title: 模型評估與效能優化
-  section_title: 誤差分析與正則化
+  section_title: 防止過擬合技術 (Regularization)
   text: 早停 (Early Stopping) 是監控哪個數據來決定何時停止訓練？
   type: multiple_choice
   options:
@@ -305,7 +305,7 @@ questions:
   usage: both
 - id: 9020
   chapter_title: 模型評估與效能優化
-  section_title: 誤差分析與正則化
+  section_title: 防止過擬合技術 (Regularization)
   text: 資料增強 (Data Augmentation) 的主要目的是？
   type: multiple_choice
   options:
@@ -321,7 +321,7 @@ questions:
   usage: both
 - id: 9021
   chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 資料集劃分 (Data Splitting)
   text: 測試集 (Test Set) 絕對不能用於什麼用途？
   type: multiple_choice
   options:
@@ -337,7 +337,7 @@ questions:
   usage: both
 - id: 9022
   chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 分類指標 (Classification Metrics)
   text: 混淆矩陣中，FN (False Negative) 代表？
   type: multiple_choice
   options:
@@ -353,7 +353,7 @@ questions:
   usage: both
 - id: 9023
   chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 分類指標 (Classification Metrics)
   text: ROC 曲線的 X 軸和 Y 軸分別是？
   type: multiple_choice
   options:
@@ -369,7 +369,7 @@ questions:
   usage: both
 - id: 9024
   chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 迴歸指標 (Regression Metrics)
   text: 平均絕對誤差 (MAE) 的優點是？
   type: multiple_choice
   options:
@@ -385,7 +385,7 @@ questions:
   usage: both
 - id: 9025
   chapter_title: 模型評估與效能優化
-  section_title: 誤差分析與正則化
+  section_title: 偏差-變異權衡 (Bias-Variance Tradeoff)
   text: 如果模型在訓練集和驗證集的誤差都很高，這是什麼情況？
   type: multiple_choice
   options:
@@ -401,7 +401,7 @@ questions:
   usage: both
 - id: 9026
   chapter_title: 模型評估與效能優化
-  section_title: 誤差分析與正則化
+  section_title: 防止過擬合技術 (Regularization)
   text: L2 正則化 (Ridge) 對權重的影響是？
   type: multiple_choice
   options:
@@ -417,7 +417,7 @@ questions:
   usage: both
 - id: 9027
   chapter_title: 模型評估與效能優化
-  section_title: 誤差分析與正則化
+  section_title: 防止過擬合技術 (Regularization)
   text: 在影像處理中，水平翻轉 (Horizontal Flip) 屬於哪種技術？
   type: multiple_choice
   options:
@@ -433,7 +433,7 @@ questions:
   usage: both
 - id: 9028
   chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 偏差-變異權衡 (Bias-Variance Tradeoff)
   text: 如果訓練集準確率 99%，測試集準確率 60%，最可能的診斷是？
   type: multiple_choice
   options:
@@ -449,7 +449,7 @@ questions:
   usage: both
 - id: 9029
   chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 迴歸指標 (Regression Metrics)
   text: R-squared < 0 代表什麼？
   type: multiple_choice
   options:
@@ -465,7 +465,7 @@ questions:
   usage: both
 - id: 9030
   chapter_title: 模型評估與效能優化
-  section_title: 誤差分析與正則化
+  section_title: 偏差-變異權衡 (Bias-Variance Tradeoff)
   text: 解決欠擬合 (Underfitting) 的有效方法是？
   type: multiple_choice
   options:
@@ -481,7 +481,7 @@ questions:
   usage: both
 - id: 9031
   chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 分類指標 (Classification Metrics)
   text: 混淆矩陣中，FP (False Positive) 又被稱為？
   type: multiple_choice
   options:
@@ -497,7 +497,7 @@ questions:
   usage: both
 - id: 9032
   chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 分類指標 (Classification Metrics)
   text: 混淆矩陣中，FN (False Negative) 又被稱為？
   type: multiple_choice
   options:
@@ -513,7 +513,7 @@ questions:
   usage: both
 - id: 9033
   chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 分類指標 (Classification Metrics)
   text: AUC = 1.0 通常意味著什麼？
   type: multiple_choice
   options:
@@ -529,7 +529,7 @@ questions:
   usage: both
 - id: 9034
   chapter_title: 模型評估與效能優化
-  section_title: 誤差分析與正則化
+  section_title: 防止過擬合技術 (Regularization)
   text: Dropout 類似於哪種機器學習技術？
   type: multiple_choice
   options:
@@ -545,7 +545,7 @@ questions:
   usage: both
 - id: 9035
   chapter_title: 模型評估與效能優化
-  section_title: 誤差分析與正則化
+  section_title: 防止過擬合技術 (Regularization)
   text: 在文字資料增強中，「回譯 (Back Translation)」是指？
   type: multiple_choice
   options:
@@ -561,7 +561,7 @@ questions:
   usage: both
 - id: 9036
   chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 分類指標 (Classification Metrics)
   text: 如果我們希望模型「寧可錯殺一百，不可放過一個」，應優化哪個指標？
   type: multiple_choice
   options:
@@ -577,7 +577,7 @@ questions:
   usage: both
 - id: 9037
   chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 分類指標 (Classification Metrics)
   text: 如果我們希望模型「寧缺勿濫」，應優化哪個指標？
   type: multiple_choice
   options:
@@ -593,7 +593,7 @@ questions:
   usage: both
 - id: 9038
   chapter_title: 模型評估與效能優化
-  section_title: 誤差分析與正則化
+  section_title: 偏差-變異權衡 (Bias-Variance Tradeoff)
   text: Bias 和 Variance 之間通常存在什麼關係？
   type: multiple_choice
   options:
@@ -609,7 +609,7 @@ questions:
   usage: both
 - id: 9039
   chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: K-fold 交叉驗證 (Cross-Validation)
   text: K-fold 中的 K 通常設為多少？
   type: multiple_choice
   options:
@@ -625,7 +625,7 @@ questions:
   usage: both
 - id: 9040
   chapter_title: 模型評估與效能優化
-  section_title: 模型評估與效能優化
+  section_title: 本章總結與考點提示
   text: 訓練完模型後，最重要的第一步是？
   type: multiple_choice
   options:
@@ -641,7 +641,7 @@ questions:
   usage: both
 - id: 9051
   chapter_title: 模型評估與優化
-  section_title: 評估指標
+  section_title: 評估流程與指標
   text: 在一個 99% 都是負樣本（正常）的不平衡資料集中，若模型全部預測為「正常」，其 Accuracy 會高達 99%。這說明了什麼？
   type: multiple_choice
   options:
@@ -657,7 +657,7 @@ questions:
   usage: both
 - id: 9052
   chapter_title: 模型評估與優化
-  section_title: 評估指標
+  section_title: 評估流程與指標
   text: AUC-ROC 曲線下的面積 (AUC) 為 0.5 代表什麼意思？
   type: multiple_choice
   options:
@@ -673,7 +673,7 @@ questions:
   usage: both
 - id: 9053
   chapter_title: 模型評估與優化
-  section_title: 誤差分析與優化
+  section_title: 誤差分析與正則化
   text: 當模型在訓練集表現很好，但在測試集表現很差（High Variance），這通常是發生了什麼問題？
   type: multiple_choice
   options:
@@ -689,7 +689,7 @@ questions:
   usage: both
 - id: 9054
   chapter_title: 模型評估與優化
-  section_title: 誤差分析與優化
+  section_title: 誤差分析與正則化
   text: Early Stopping (早停法) 是如何防止過擬合的？
   type: multiple_choice
   options:
@@ -705,7 +705,7 @@ questions:
   usage: both
 - id: 11439
   chapter_title: 模型評估與優化
-  section_title: 評估指標
+  section_title: 歷屆考題
   text: 某醫院計畫開發住院日數預測模型，以協助病房調度。多數病人的住院 日數集中在 3–7 天，但仍有少數重症患者因治療需求而住院日數明顯 偏長。醫院希望採用一種合適的評估方式，既能兼顧大部分病人的預測 準確度，也能確保對重症個案的預測維持穩健。下列哪一種方法最符合 此需求？  答案 題    目 (114年第四梯次)
   type: multiple_choice
   options:
@@ -716,6 +716,7 @@ questions:
   correct_index: 0
   explanation: 此題涉及 評估指標 的核心概念。正確答案為「在模型檢核時，同時呈現平均絕對誤差（MAE）與重症子群的誤差指 標」。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter9
@@ -723,7 +724,7 @@ questions:
   usage: mock
 - id: 11406
   chapter_title: 模型評估與優化
-  section_title: 誤差分析與優化
+  section_title: 歷屆考題
   text: 在 Lasso 模型中，L1 正則化（Regularization）導致參數收斂為零的 原因為何？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -734,6 +735,7 @@ questions:
   correct_index: 2
   explanation: L1 正則化 (Lasso) 具有特徵選擇的功能，因為其幾何特性（菱形約束區域）傾向於讓不重要的特徵權重收斂為 0，從而產生稀疏模型。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter9
@@ -741,7 +743,7 @@ questions:
   usage: both
 - id: 11443
   chapter_title: 模型評估與優化
-  section_title: 評估指標
+  section_title: 歷屆考題
   text: 某公司欲建立員工離職風險預測模型，資料集中包含 「年度績效分數」 、 「平均每月加班時數」 、 「年齡」等數值型特徵。由於各特徵的數值範圍 差異極大（例如績效分數1–5、加班時數0–80、年齡20–65） ，若直 接輸入至使用梯度下降的邏輯迴歸(Logistic Regression)模型，可能 導致模型收斂緩慢或權重偏斜。為提升模型訓練效率與準確度，下列哪 一種特徵工程方法最適合應用於這些數值特徵？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -752,6 +754,7 @@ questions:
   correct_index: 3
   explanation: 此題涉及 評估指標 的核心概念。正確答案為「數值標準化（Numerical Standardization）」。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter9
@@ -759,7 +762,7 @@ questions:
   usage: mock
 - id: 11419
   chapter_title: 模型評估與優化
-  section_title: 誤差分析與優化
+  section_title: 歷屆考題
   text: 在訓練機器學習模型時，若任務為預測房價，應選用下列哪一種損失函 數（Loss Function）來衡量預測誤差？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -770,13 +773,14 @@ questions:
   correct_index: 0
   explanation: 此題涉及 誤差分析與優化 的核心概念。正確答案為「均方誤差（MSE）」。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter9
   - sec-error-analysis
   usage: both
 - chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 分類指標 (Classification Metrics)
   text: 情境：在癌症篩檢中，我們最不希望漏掉任何一個病人（寧可誤判也要抓到）。應優先優化哪個指標？
   type: multiple_choice
   options:
@@ -792,7 +796,7 @@ questions:
   id: 11444
   usage: both
 - chapter_title: 模型評估與效能優化
-  section_title: 誤差分析與正則化
+  section_title: 偏差-變異權衡 (Bias-Variance Tradeoff)
   text: 情境：模型在訓練集上表現極好 (99%)，但在測試集上表現很差 (60%)。這是什麼現象？
   type: multiple_choice
   options:
@@ -808,7 +812,7 @@ questions:
   id: 11445
   usage: both
 - chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: K-fold 交叉驗證 (Cross-Validation)
   text: 情境：K-fold 交叉驗證 (Cross-Validation) 的主要好處是？
   type: multiple_choice
   options:
@@ -824,7 +828,7 @@ questions:
   id: 11446
   usage: both
 - chapter_title: 模型評估與效能優化
-  section_title: 誤差分析與正則化
+  section_title: 防止過擬合技術 (Regularization)
   text: 情境：Dropout 技術是如何防止過度擬合的？
   type: multiple_choice
   options:
@@ -840,7 +844,7 @@ questions:
   id: 11447
   usage: both
 - chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 分類指標 (Classification Metrics)
   text: 情境：混淆矩陣中，TP=90, FP=10, FN=5, TN=895。準確率 (Accuracy) 是多少？
   type: multiple_choice
   options:
@@ -856,7 +860,7 @@ questions:
   id: 11448
   usage: both
 - chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 分類指標 (Classification Metrics)
   text: 情境：對於垃圾郵件過濾器，我們希望盡量不要把重要信件誤判為垃圾信。應看重哪個指標？
   type: multiple_choice
   options:
@@ -872,7 +876,7 @@ questions:
   id: 11449
   usage: both
 - chapter_title: 模型評估與效能優化
-  section_title: 誤差分析與正則化
+  section_title: 防止過擬合技術 (Regularization)
   text: 情境：早停 (Early Stopping) 的運作機制是？
   type: multiple_choice
   options:
@@ -888,7 +892,7 @@ questions:
   id: 11450
   usage: both
 - chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 分類指標 (Classification Metrics)
   text: 情境：F1-Score 是哪兩個指標的調和平均？
   type: multiple_choice
   options:
@@ -904,7 +908,7 @@ questions:
   id: 11451
   usage: both
 - chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 分類指標 (Classification Metrics)
   text: 情境：AUC-ROC 曲線中，AUC = 0.5 代表什麼？
   type: multiple_choice
   options:
@@ -920,7 +924,7 @@ questions:
   id: 11452
   usage: both
 - chapter_title: 模型評估與效能優化
-  section_title: 誤差分析與正則化
+  section_title: 偏差-變異權衡 (Bias-Variance Tradeoff)
   text: 情境：欠擬合 (Underfitting) 通常是因為？
   type: multiple_choice
   options:
@@ -936,7 +940,7 @@ questions:
   id: 11453
   usage: both
 - chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 資料集劃分 (Data Splitting)
   text: 情境：資料集劃分中，測試集 (Test Set) 的用途是？
   type: multiple_choice
   options:
@@ -952,7 +956,7 @@ questions:
   id: 11454
   usage: both
 - chapter_title: 模型評估與效能優化
-  section_title: 誤差分析與正則化
+  section_title: 防止過擬合技術 (Regularization)
   text: 情境：資料增強 (Data Augmentation) 透過旋轉、裁切圖片來增加資料量，主要能解決什麼問題？
   type: multiple_choice
   options:
@@ -968,7 +972,7 @@ questions:
   id: 11455
   usage: both
 - chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 迴歸指標 (Regression Metrics)
   text: 情境：迴歸問題中，MSE (均方誤差) 相比 MAE (平均絕對誤差) 的特點是？
   type: multiple_choice
   options:
@@ -984,7 +988,7 @@ questions:
   id: 11456
   usage: both
 - chapter_title: 模型評估與效能優化
-  section_title: 誤差分析與正則化
+  section_title: 防止過擬合技術 (Regularization)
   text: 情境：L2 正則化 (Ridge) 對權重的影響是？
   type: multiple_choice
   options:
@@ -1000,7 +1004,7 @@ questions:
   id: 11457
   usage: both
 - chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 迴歸指標 (Regression Metrics)
   text: 情境：R-squared (R2) 值為 1 代表？
   type: multiple_choice
   options:
@@ -1016,7 +1020,7 @@ questions:
   id: 11458
   usage: both
 - chapter_title: 模型評估與效能優化
-  section_title: 誤差分析與正則化
+  section_title: 偏差-變異權衡 (Bias-Variance Tradeoff)
   text: 情境：高偏差 (High Bias) 對應的是哪種狀態？
   type: multiple_choice
   options:
@@ -1032,7 +1036,7 @@ questions:
   id: 11459
   usage: both
 - chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 資料集劃分 (Data Splitting)
   text: 情境：驗證集 (Validation Set) 的主要用途是？
   type: multiple_choice
   options:
@@ -1048,7 +1052,7 @@ questions:
   id: 11460
   usage: both
 - chapter_title: 模型評估與效能優化
-  section_title: 誤差分析與正則化
+  section_title: 防止過擬合技術 (Regularization)
   text: 情境：L1 正則化 (Lasso) 的一個特殊功能是？
   type: multiple_choice
   options:
@@ -1064,7 +1068,7 @@ questions:
   id: 11461
   usage: both
 - chapter_title: 模型評估與效能優化
-  section_title: 評估流程與指標
+  section_title: 分類指標 (Classification Metrics)
   text: 情境：在不平衡資料集上，Accuracy 高達 99% 可能意味著？
   type: multiple_choice
   options:
@@ -1080,7 +1084,7 @@ questions:
   id: 11462
   usage: both
 - chapter_title: 模型評估與效能優化
-  section_title: 誤差分析與正則化
+  section_title: 偏差-變異權衡 (Bias-Variance Tradeoff)
   text: 情境：解決高變異 (High Variance) 問題的方法不包括？
   type: multiple_choice
   options:
@@ -1097,7 +1101,7 @@ questions:
   usage: both
 - id: 9071
   chapter_title: 模型評估與效能優化
-  section_title: 模型訓練與調參機制
+  section_title: 損失函數 (Loss Function)
   text: 損失函數 (Loss Function) 在模型訓練中的主要用途是什麼？
   type: multiple_choice
   options:
@@ -1113,7 +1117,7 @@ questions:
   usage: quiz
 - id: 9072
   chapter_title: 模型評估與效能優化
-  section_title: 模型訓練與調參機制
+  section_title: 優化器與梯度下降
   text: 梯度下降 (Gradient Descent) 在機器學習中主要用來做什麼？
   type: multiple_choice
   options:
@@ -1129,7 +1133,7 @@ questions:
   usage: quiz
 - id: 9073
   chapter_title: 模型評估與效能優化
-  section_title: 模型訓練與調參機制
+  section_title: 超參數調整 (Hyperparameter Tuning)
   text: 下列何者屬於「超參數 (Hyperparameter)」？
   type: multiple_choice
   options:
@@ -1145,7 +1149,7 @@ questions:
   usage: quiz
 - id: 9074
   chapter_title: 模型評估與效能優化
-  section_title: 模型訓練與調參機制
+  section_title: 超參數調整 (Hyperparameter Tuning)
   text: 為什麼不能反覆使用測試集來調整超參數？
   type: multiple_choice
   options:
@@ -1171,9 +1175,11 @@ questions:
   correct_index: 0
   explanation: 本題測驗相關核心概念。正確解答為「F1-score」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-50
   text: 某醫院使用機器學習模型篩檢癌症患者。模型預測結果會決定哪些病人需要進一步檢查。院方非常重視盡量找出所有可能的癌症患者，即希望降低漏診（Missed Diagnosis）風險，即便這可能增加一些誤判。下列哪一個評估指標最能反映模型找出癌症患者的能力？ （115年第一梯次）
   type: multiple_choice
@@ -1185,6 +1191,56 @@ questions:
   correct_index: 1
   explanation: 本題測驗相關核心概念。正確解答為「召回率（Recall）」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: 歷屆考題
+- id: 900002
+  chapter_title: 模型評估與效能優化 (Model Evaluation & Optimization)
+  section_title: 財務評估與投資報酬率計算 (Financial Evaluation & ROI Calculation)
+  text: 計算 AI 專案 ROI 時，下列哪一項最符合投資報酬率的基本概念？
+  type: multiple_choice
+  options:
+  - 將導入後產生的淨效益相對於投入成本進行比較
+  - 只計算模型準確率是否超過 90%
+  - 只計算輸入 Token 數，不需估算人力與維運成本
+  - 只要使用最新模型，ROI 必定為正
+  correct_index: 0
+  explanation: ROI 應比較收益或節省成本扣除投入成本後，相對於投入成本的比例；模型指標、Token 成本與維運成本都只是評估的一部分。
+  tags:
+  - chap-ai-foundation-chapter9
+  - sec-financial-evaluation
+  usage: both
+- id: 900003
+  chapter_title: 模型評估與效能優化 (Model Evaluation & Optimization)
+  section_title: 財務評估與投資報酬率計算 (Financial Evaluation & ROI Calculation)
+  text: 關於 TCO (Total Cost of Ownership) 評估，下列何者最正確？
+  type: multiple_choice
+  options:
+  - 除 API 或硬體成本外，也應納入維護人力、訓練、資安、合規與系統整合等長期成本
+  - TCO 只包含第一個月的雲端 API 帳單
+  - TCO 只用來衡量模型的 F1-score
+  - TCO 不需要考慮人員教育訓練，因為那不是技術成本
+  correct_index: 0
+  explanation: TCO 是完整擁有成本，包含直接與間接支出；忽略維運、合規與訓練成本會低估專案長期負擔。
+  tags:
+  - chap-ai-foundation-chapter9
+  - sec-financial-evaluation
+  usage: both
+- id: 900004
+  chapter_title: 模型評估與效能優化 (Model Evaluation & Optimization)
+  section_title: 財務評估與投資報酬率計算 (Financial Evaluation & ROI Calculation)
+  text: 某客服 AI 每月可節省 30 萬元人工作業成本，但每月 API 與維運成本為 8 萬元，初期導入成本為 88 萬元。若只用月淨效益估算，回收期約為多久？
+  type: multiple_choice
+  options:
+  - 約 4 個月
+  - 約 1 個月
+  - 約 11 個月
+  - 無法回收，因為 API 成本大於節省成本
+  correct_index: 0
+  explanation: 月淨效益為 30-8=22 萬元，88/22=4，因此簡化估算的回收期約為 4 個月。
+  tags:
+  - chap-ai-foundation-chapter9
+  - sec-financial-evaluation
+  usage: both

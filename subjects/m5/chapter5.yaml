@@ -1,7 +1,7 @@
 questions:
 - id: 7501
   chapter_title: 多代理系統與未來發展
-  section_title: 多代理系統概述
+  section_title: 為什麼需要多個代理人協作？
   text: 多代理系統（MAS）能「超越上下文視窗限制」的原理是？
   type: multiple_choice
   options:
@@ -17,7 +17,7 @@ questions:
   usage: both
 - id: 7502
   chapter_title: 多代理系統與未來發展
-  section_title: 多代理協作模式
+  section_title: 常見的多代理協作模式
   text: 「協調者-執行者模式 (Orchestrator-Worker)」中，協調者代理的主要職責是？
   type: multiple_choice
   options:
@@ -33,7 +33,7 @@ questions:
   usage: both
 - id: 7503
   chapter_title: 多代理系統與未來發展
-  section_title: 多代理協作模式
+  section_title: 常見的多代理協作模式
   text: 「辯論模式 (Debate)」的多代理架構主要用於解決什麼問題？
   type: multiple_choice
   options:
@@ -49,7 +49,7 @@ questions:
   usage: both
 - id: 7504
   chapter_title: 多代理系統與未來發展
-  section_title: 代理通訊協議
+  section_title: 代理人之間如何「說話」：通訊協議
   text: A2A (Agent-to-Agent) 協議中的「代理名片 (Agent Card)」的用途是？
   type: multiple_choice
   options:
@@ -65,7 +65,7 @@ questions:
   usage: both
 - id: 7505
   chapter_title: 多代理系統與未來發展
-  section_title: 代理安全與信任
+  section_title: 代理安全：當 AI 有了行動能力，風險也來了
   text: 「提示注入攻擊 (Prompt Injection)」在多代理系統中的主要風險是？
   type: multiple_choice
   options:
@@ -81,7 +81,7 @@ questions:
   usage: both
 - id: 7506
   chapter_title: 多代理系統與未來發展
-  section_title: 代理安全與信任
+  section_title: 代理安全：當 AI 有了行動能力，風險也來了
   text: 在代理安全設計中，「執行預算 (Execution Budget)」的主要目的是？
   type: multiple_choice
   options:
@@ -97,7 +97,7 @@ questions:
   usage: both
 - id: 7507
   chapter_title: 多代理系統與未來發展
-  section_title: AI 代理技術的未來趨勢
+  section_title: AI 代理的未來發展方向
   text: 「電腦使用代理 (Computer Use Agent)」的特殊能力是什麼？
   type: multiple_choice
   options:
@@ -113,7 +113,7 @@ questions:
   usage: both
 - id: 7508
   chapter_title: 多代理系統與未來發展
-  section_title: 代理通訊協議
+  section_title: 代理人之間如何「說話」：通訊協議
   text: 在 A2A (Agent-to-Agent) 協議中，負責將使用者的對話上下文傳遞給遠端代理人的元件是？
   type: multiple_choice
   options:
@@ -445,7 +445,7 @@ questions:
   usage: both
 - id: 7530
   chapter_title: 多代理系統與未來發展
-  section_title: 多代理系統概述
+  section_title: 為什麼需要多個代理人協作？
   text: 在單一代理人系統中，若處理一個大型任務導致上下文視窗溢出，哪一種方法可以解決？
   type: multiple_choice
   options:
@@ -461,7 +461,7 @@ questions:
   usage: both
 - id: 7531
   chapter_title: 多代理系統與未來發展
-  section_title: 多代理系統概述
+  section_title: 為什麼需要多個代理人協作？
   text: 多代理系統中「相互驗證」的優勢是如何實現的？
   type: multiple_choice
   options:
@@ -477,7 +477,7 @@ questions:
   usage: both
 - id: 7532
   chapter_title: 多代理系統與未來發展
-  section_title: 多代理協作模式
+  section_title: 常見的多代理協作模式
   text: 在協調者-執行者（Orchestrator-Worker）模式中，協調者的主要職責是什麼？
   type: multiple_choice
   options:
@@ -493,7 +493,7 @@ questions:
   usage: both
 - id: 7533
   chapter_title: 多代理系統與未來發展
-  section_title: 代理通訊協議
+  section_title: 代理人之間如何「說話」：通訊協議
   text: A2A 協議中的「代理名片（Agent Card）」主要包含什麼資訊？
   type: multiple_choice
   options:
@@ -509,7 +509,7 @@ questions:
   usage: both
 - id: 7534
   chapter_title: 多代理系統與未來發展
-  section_title: 代理安全與信任
+  section_title: 代理安全：當 AI 有了行動能力，風險也來了
   text: 提示注入攻擊中，攻擊者常用的手法是什麼？
   type: multiple_choice
   options:
@@ -525,7 +525,7 @@ questions:
   usage: both
 - id: 7535
   chapter_title: 多代理系統與未來發展
-  section_title: AI 代理技術未來趨勢
+  section_title: AI 代理的未來發展方向
   text: 「電腦使用代理（Computer Use Agent）」與傳統 API 代理人的核心差異是什麼？
   type: multiple_choice
   options:
@@ -541,7 +541,7 @@ questions:
   usage: both
 - id: 7536
   chapter_title: 多代理系統與未來發展
-  section_title: 多代理系統概述
+  section_title: 為什麼需要多個代理人協作？
   text: 下列哪一項「不是」多代理系統的固有挑戰？
   type: multiple_choice
   options:
@@ -557,7 +557,7 @@ questions:
   usage: both
 - id: 7537
   chapter_title: 多代理系統與未來發展
-  section_title: 多代理協作模式
+  section_title: 常見的多代理協作模式
   text: 在「辯論模式（Debate）」的多代理架構中，最終結論通常由誰做出？
   type: multiple_choice
   options:
@@ -573,7 +573,7 @@ questions:
   usage: both
 - id: 7538
   chapter_title: 多代理系統與未來發展
-  section_title: 代理通訊協議
+  section_title: 代理人之間如何「說話」：通訊協議
   text: 在 A2A 通訊中，「工作產物（Artifact）」指的是什麼？
   type: multiple_choice
   options:
@@ -589,7 +589,7 @@ questions:
   usage: both
 - id: 7539
   chapter_title: 多代理系統與未來發展
-  section_title: 代理安全與信任
+  section_title: 代理安全：當 AI 有了行動能力，風險也來了
   text: 在安全設計中，「最小授權原則」在多代理系統中如何應用？
   type: multiple_choice
   options:
@@ -605,7 +605,7 @@ questions:
   usage: both
 - id: 7540
   chapter_title: 多代理系統與未來發展
-  section_title: AI 代理技術未來趨勢
+  section_title: AI 代理的未來發展方向
   text: 「代理市場生態系統」最類似於現有的哪一種商業模式？
   type: multiple_choice
   options:
@@ -621,7 +621,7 @@ questions:
   usage: both
 - id: 7541
   chapter_title: 多代理系統與未來發展
-  section_title: 多代理系統概述
+  section_title: 為什麼需要多個代理人協作？
   text: 多代理系統的「容錯能力」是如何實現的？
   type: multiple_choice
   options:
@@ -637,7 +637,7 @@ questions:
   usage: both
 - id: 7542
   chapter_title: 多代理系統與未來發展
-  section_title: 多代理協作模式
+  section_title: 常見的多代理協作模式
   text: 「流水線（Pipeline）」模式與「協調者-執行者」模式最大的區別是什麼？
   type: multiple_choice
   options:
@@ -653,7 +653,7 @@ questions:
   usage: both
 - id: 7543
   chapter_title: 多代理系統與未來發展
-  section_title: 代理通訊協議
+  section_title: 代理人之間如何「說話」：通訊協議
   text: 在 A2A 通訊中，「事件佇列（Event Queue）」主要解決什麼問題？
   type: multiple_choice
   options:
@@ -669,7 +669,7 @@ questions:
   usage: both
 - id: 7544
   chapter_title: 多代理系統與未來發展
-  section_title: 代理安全與信任
+  section_title: 代理安全：當 AI 有了行動能力，風險也來了
   text: 代理人設定「執行預算」的主要目的是什麼？
   type: multiple_choice
   options:
@@ -685,7 +685,7 @@ questions:
   usage: both
 - id: 7545
   chapter_title: 多代理系統與未來發展
-  section_title: AI 代理技術未來趨勢
+  section_title: AI 代理的未來發展方向
   text: 「多模態代理」相較於純文字代理人的主要優勢是什麼？
   type: multiple_choice
   options:
@@ -701,7 +701,7 @@ questions:
   usage: both
 - id: 7546
   chapter_title: 多代理系統與未來發展
-  section_title: 多代理系統概述
+  section_title: 為什麼需要多個代理人協作？
   text: 若企業需要同時讓多個 AI 代理人協作完成一份市場分析報告，下列哪個架構最適合？
   type: multiple_choice
   options:
@@ -717,7 +717,7 @@ questions:
   usage: both
 - id: 7547
   chapter_title: 多代理系統與未來發展
-  section_title: 多代理協作模式
+  section_title: 常見的多代理協作模式
   text: 在協調者-執行者模式中，哪個代理人需要了解任務的整體全貌？
   type: multiple_choice
   options:
@@ -733,7 +733,7 @@ questions:
   usage: both
 - id: 7548
   chapter_title: 多代理系統與未來發展
-  section_title: 代理通訊協議
+  section_title: 代理人之間如何「說話」：通訊協議
   text: NLWeb（自然語言網路）的核心目標是什麼？
   type: multiple_choice
   options:
@@ -749,7 +749,7 @@ questions:
   usage: both
 - id: 7549
   chapter_title: 多代理系統與未來發展
-  section_title: 代理安全與信任
+  section_title: 代理安全：當 AI 有了行動能力，風險也來了
   text: 人機協作（Human-in-the-Loop）在哪些操作中最應該被強制執行？
   type: multiple_choice
   options:
@@ -765,7 +765,7 @@ questions:
   usage: both
 - id: 7550
   chapter_title: 多代理系統與未來發展
-  section_title: AI 代理技術未來趨勢
+  section_title: AI 代理的未來發展方向
   text: 未來「可信任代理」發展的核心需求是什麼？
   type: multiple_choice
   options:
@@ -781,7 +781,7 @@ questions:
   usage: both
 - id: 7551
   chapter_title: 多代理系統與未來發展
-  section_title: 多代理系統概述
+  section_title: 為什麼需要多個代理人協作？
   text: 多代理系統中「並行執行」最主要的商業效益是什麼？
   type: multiple_choice
   options:
@@ -797,7 +797,7 @@ questions:
   usage: both
 - id: 7552
   chapter_title: 多代理系統與未來發展
-  section_title: 多代理協作模式
+  section_title: 常見的多代理協作模式
   text: 當需要讓 AI 從多個角度審視一個商業計劃的可行性時，最適合採用哪種模式？
   type: multiple_choice
   options:
@@ -813,7 +813,7 @@ questions:
   usage: both
 - id: 7553
   chapter_title: 多代理系統與未來發展
-  section_title: 代理通訊協議
+  section_title: 代理人之間如何「說話」：通訊協議
   text: 代理名片（Agent Card）在設計時為什麼需要包含版本資訊？
   type: multiple_choice
   options:
@@ -829,7 +829,7 @@ questions:
   usage: both
 - id: 7554
   chapter_title: 多代理系統與未來發展
-  section_title: 代理安全與信任
+  section_title: 代理安全：當 AI 有了行動能力，風險也來了
   text: 下列哪項措施能最有效地防止代理人陷入「無限迴圈」？
   type: multiple_choice
   options:
@@ -845,7 +845,7 @@ questions:
   usage: both
 - id: 7555
   chapter_title: 多代理系統與未來發展
-  section_title: AI 代理技術未來趨勢
+  section_title: AI 代理的未來發展方向
   text: 「長期自主代理」需要克服的最大技術挑戰是什麼？
   type: multiple_choice
   options:
@@ -861,7 +861,7 @@ questions:
   usage: both
 - id: 7556
   chapter_title: 多代理系統與未來發展
-  section_title: 多代理系統概述
+  section_title: 為什麼需要多個代理人協作？
   text: 若兩個代理人在多代理系統中對同一問題得出不同結論，應如何處理？
   type: multiple_choice
   options:
@@ -877,7 +877,7 @@ questions:
   usage: both
 - id: 7557
   chapter_title: 多代理系統與未來發展
-  section_title: 多代理協作模式
+  section_title: 常見的多代理協作模式
   text: 在流水線模式中，如果中間的某個代理人失敗，系統應如何處理？
   type: multiple_choice
   options:
@@ -893,7 +893,7 @@ questions:
   usage: both
 - id: 7558
   chapter_title: 多代理系統與未來發展
-  section_title: 代理通訊協議
+  section_title: 代理人之間如何「說話」：通訊協議
   text: 在 NLWeb 中，每個實例同時也是一個 MCP 伺服器端點，這代表什麼？
   type: multiple_choice
   options:
@@ -909,7 +909,7 @@ questions:
   usage: both
 - id: 7559
   chapter_title: 多代理系統與未來發展
-  section_title: AI 代理技術未來趨勢
+  section_title: AI 代理的未來發展方向
   text: 去中心化信任技術在代理系統中的應用場景是什麼？
   type: multiple_choice
   options:

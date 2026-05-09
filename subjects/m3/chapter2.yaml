@@ -1,7 +1,7 @@
 questions:
 - id: 5201
   chapter_title: 進階資料處理
-  section_title: 資料品質與清理
+  section_title: 資料品質與清理 (Data Quality & Cleaning)
   text: 資料品質維度中的「一致性 (Consistency)」是指？
   type: multiple_choice
   options:
@@ -17,7 +17,7 @@ questions:
   usage: quiz
 - id: 5202
   chapter_title: 進階資料處理
-  section_title: 資料品質與清理
+  section_title: 資料品質與清理 (Data Quality & Cleaning)
   text: 處理缺失值 (Missing Values) 的「填補 (Imputation)」方法不包括？
   type: multiple_choice
   options:
@@ -33,7 +33,7 @@ questions:
   usage: quiz
 - id: 5203
   chapter_title: 進階資料處理
-  section_title: 資料轉換與特徵工程
+  section_title: 資料轉換與特徵工程 (Data Transformation & Feature Engineering)
   text: One-hot Encoding 的主要缺點是？
   type: multiple_choice
   options:
@@ -49,7 +49,7 @@ questions:
   usage: quiz
 - id: 5204
   chapter_title: 進階資料處理
-  section_title: 資料轉換與特徵工程
+  section_title: 資料轉換與特徵工程 (Data Transformation & Feature Engineering)
   text: Min-Max Normalization 將數據縮放到哪個區間？
   type: multiple_choice
   options:
@@ -113,7 +113,7 @@ questions:
   usage: quiz
 - id: 5208
   chapter_title: 進階資料處理
-  section_title: 資料治理與安全
+  section_title: 資料治理與安全 (Data Governance & Security)
   text: Data Lineage (血緣分析) 的主要用途是？
   type: multiple_choice
   options:
@@ -129,7 +129,7 @@ questions:
   usage: quiz
 - id: 5209
   chapter_title: 進階資料處理
-  section_title: 資料治理與安全
+  section_title: 資料治理與安全 (Data Governance & Security)
   text: 零信任架構 (Zero Trust) 的核心原則是？
   type: multiple_choice
   options:
@@ -145,7 +145,7 @@ questions:
   usage: quiz
 - id: 5210
   chapter_title: 進階資料處理
-  section_title: 大數據在人工智慧之應用
+  section_title: 大數據在人工智慧之應用 (Big Data Applications in AI)
   text: 在分散式訓練中，資料平行 (Data Parallelism) 是指？
   type: multiple_choice
   options:
@@ -161,7 +161,7 @@ questions:
   usage: quiz
 - id: 5211
   chapter_title: 進階資料處理
-  section_title: 資料品質與清理
+  section_title: 資料品質與清理 (Data Quality & Cleaning)
   text: 識別異常值 (Outliers) 的常用統計方法是？
   type: multiple_choice
   options:
@@ -177,7 +177,7 @@ questions:
   usage: both
 - id: 5212
   chapter_title: 進階資料處理
-  section_title: 資料轉換與特徵工程
+  section_title: 資料轉換與特徵工程 (Data Transformation & Feature Engineering)
   text: Label Encoding 適合用於哪種變數？
   type: multiple_choice
   options:
@@ -225,7 +225,7 @@ questions:
   usage: both
 - id: 5215
   chapter_title: 進階資料處理
-  section_title: 資料治理與安全
+  section_title: 資料治理與安全 (Data Governance & Security)
   text: RBAC (Role-Based Access Control) 是基於什麼來分配權限？
   type: multiple_choice
   options:
@@ -241,7 +241,7 @@ questions:
   usage: both
 - id: 5216
   chapter_title: 進階資料處理
-  section_title: 大數據在人工智慧之應用
+  section_title: 大數據在人工智慧之應用 (Big Data Applications in AI)
   text: 主動式學習 (Active Learning) 的核心思想是？
   type: multiple_choice
   options:
@@ -257,7 +257,7 @@ questions:
   usage: both
 - id: 5217
   chapter_title: 進階資料處理
-  section_title: 資料轉換與特徵工程
+  section_title: 資料轉換與特徵工程 (Data Transformation & Feature Engineering)
   text: SMOTE 技術主要用於解決什麼問題？
   type: multiple_choice
   options:
@@ -289,7 +289,7 @@ questions:
   usage: both
 - id: 5219
   chapter_title: 進階資料處理
-  section_title: 資料治理與安全
+  section_title: 資料治理與安全 (Data Governance & Security)
   text: 差分隱私 (Differential Privacy) 如何保護隱私？
   type: multiple_choice
   options:
@@ -305,7 +305,7 @@ questions:
   usage: both
 - id: 5220
   chapter_title: 進階資料處理
-  section_title: 大數據在人工智慧之應用
+  section_title: 大數據在人工智慧之應用 (Big Data Applications in AI)
   text: 聯邦學習 (Federated Learning) 的特點是？
   type: multiple_choice
   options:
@@ -321,7 +321,7 @@ questions:
   usage: both
 - id: 5221
   chapter_title: 進階資料處理
-  section_title: 資料品質與清理
+  section_title: 資料品質與清理 (Data Quality & Cleaning)
   text: 資料完整性 (Completeness) 關注的是？
   type: multiple_choice
   options:
@@ -337,7 +337,7 @@ questions:
   usage: both
 - id: 5222
   chapter_title: 進階資料處理
-  section_title: 資料轉換與特徵工程
+  section_title: 資料轉換與特徵工程 (Data Transformation & Feature Engineering)
   text: Z-score Standardization 後的數據分佈特徵是？
   type: multiple_choice
   options:
@@ -385,7 +385,7 @@ questions:
   usage: both
 - id: 5225
   chapter_title: 進階資料處理
-  section_title: 大數據在人工智慧之應用
+  section_title: 大數據在人工智慧之應用 (Big Data Applications in AI)
   text: 弱監督 (Weak Supervision) 標註通常使用什麼方法？
   type: multiple_choice
   options:
@@ -401,7 +401,7 @@ questions:
   usage: both
 - id: 5226
   chapter_title: 進階資料處理
-  section_title: 資料轉換與特徵工程
+  section_title: 資料轉換與特徵工程 (Data Transformation & Feature Engineering)
   text: 特徵選擇 (Feature Selection) 中的 Filter 方法是基於什麼來篩選特徵？
   type: multiple_choice
   options:
@@ -433,7 +433,7 @@ questions:
   usage: both
 - id: 5228
   chapter_title: 進階資料處理
-  section_title: 資料治理與安全
+  section_title: 資料治理與安全 (Data Governance & Security)
   text: 最小權限原則 (Least Privilege) 是指？
   type: multiple_choice
   options:
@@ -449,7 +449,7 @@ questions:
   usage: both
 - id: 5229
   chapter_title: 進階資料處理
-  section_title: 大數據在人工智慧之應用
+  section_title: 大數據在人工智慧之應用 (Big Data Applications in AI)
   text: Horovod 是一個什麼框架？
   type: multiple_choice
   options:
@@ -465,7 +465,7 @@ questions:
   usage: both
 - id: 5230
   chapter_title: 進階資料處理
-  section_title: 資料品質與清理
+  section_title: 資料品質與清理 (Data Quality & Cleaning)
   text: 資料有效性 (Validity) 檢查的是？
   type: multiple_choice
   options:
@@ -481,7 +481,7 @@ questions:
   usage: both
 - id: 5231
   chapter_title: 進階資料處理
-  section_title: 資料轉換與特徵工程
+  section_title: 資料轉換與特徵工程 (Data Transformation & Feature Engineering)
   text: Robust Scaling 使用什麼統計量進行縮放？
   type: multiple_choice
   options:
@@ -513,7 +513,7 @@ questions:
   usage: both
 - id: 5233
   chapter_title: 進階資料處理
-  section_title: 大數據在人工智慧之應用
+  section_title: 大數據在人工智慧之應用 (Big Data Applications in AI)
   text: 生成式 AI 對訓練數據的一個關鍵需求是？
   type: multiple_choice
   options:
@@ -529,7 +529,7 @@ questions:
   usage: both
 - id: 5234
   chapter_title: 進階資料處理
-  section_title: 資料轉換與特徵工程
+  section_title: 資料轉換與特徵工程 (Data Transformation & Feature Engineering)
   text: Target Encoding 的主要風險是？
   type: multiple_choice
   options:
@@ -545,7 +545,7 @@ questions:
   usage: both
 - id: 5235
   chapter_title: 進階資料處理
-  section_title: 大數據在人工智慧之應用
+  section_title: 大數據在人工智慧之應用 (Big Data Applications in AI)
   text: Streaming Confusion Matrix 用於？
   type: multiple_choice
   options:
@@ -561,7 +561,7 @@ questions:
   usage: both
 - id: 5236
   chapter_title: 進階資料處理
-  section_title: 資料治理與安全
+  section_title: 資料治理與安全 (Data Governance & Security)
   text: 去識別化中的「遮罩 (Masking)」是指？
   type: multiple_choice
   options:
@@ -577,7 +577,7 @@ questions:
   usage: both
 - id: 5237
   chapter_title: 進階資料處理
-  section_title: 資料轉換與特徵工程
+  section_title: 資料轉換與特徵工程 (Data Transformation & Feature Engineering)
   text: 特徵衍生 (Feature Generation) 的目的是？
   type: multiple_choice
   options:
@@ -609,7 +609,7 @@ questions:
   usage: both
 - id: 5239
   chapter_title: 進階資料處理
-  section_title: 大數據在人工智慧之應用
+  section_title: 大數據在人工智慧之應用 (Big Data Applications in AI)
   text: 模型平行 (Model Parallelism) 適用於什麼情況？
   type: multiple_choice
   options:
@@ -625,7 +625,7 @@ questions:
   usage: both
 - id: 5240
   chapter_title: 進階資料處理
-  section_title: 資料品質與清理
+  section_title: 資料品質與清理 (Data Quality & Cleaning)
   text: 資料唯一性 (Uniqueness) 檢查是為了？
   type: multiple_choice
   options:
@@ -752,7 +752,7 @@ questions:
   id: 5247
   usage: both
 - chapter_title: 進階資料處理
-  section_title: 資料品質與清理
+  section_title: 資料品質與清理 (Data Quality & Cleaning)
   text: 情境：資料品質維度中的「完整性 (Completeness)」是指？
   type: multiple_choice
   options:
@@ -768,7 +768,7 @@ questions:
   id: 5248
   usage: both
 - chapter_title: 進階資料處理
-  section_title: 資料轉換與特徵工程
+  section_title: 資料轉換與特徵工程 (Data Transformation & Feature Engineering)
   text: 情境：SMOTE 技術主要用於解決什麼問題？
   type: multiple_choice
   options:
@@ -800,7 +800,7 @@ questions:
   id: 5250
   usage: both
 - chapter_title: 進階資料處理
-  section_title: 資料治理與安全
+  section_title: 資料治理與安全 (Data Governance & Security)
   text: 情境：零信任架構 (Zero Trust) 的核心原則是？
   type: multiple_choice
   options:
@@ -816,7 +816,7 @@ questions:
   id: 5251
   usage: both
 - chapter_title: 進階資料處理
-  section_title: 資料轉換與特徵工程
+  section_title: 資料轉換與特徵工程 (Data Transformation & Feature Engineering)
   text: 情境：One-hot Encoding 適合處理哪種資料？
   type: multiple_choice
   options:
@@ -848,7 +848,7 @@ questions:
   id: 5253
   usage: both
 - chapter_title: 進階資料處理
-  section_title: 資料治理與安全
+  section_title: 資料治理與安全 (Data Governance & Security)
   text: 情境：資料血緣 (Data Lineage) 的作用是？
   type: multiple_choice
   options:
@@ -864,7 +864,7 @@ questions:
   id: 5254
   usage: both
 - chapter_title: 進階資料處理
-  section_title: 資料轉換與特徵工程
+  section_title: 資料轉換與特徵工程 (Data Transformation & Feature Engineering)
   text: 情境：Z-score Standardization 將數據轉換為？
   type: multiple_choice
   options:
@@ -880,7 +880,7 @@ questions:
   id: 5255
   usage: both
 - chapter_title: 進階資料處理
-  section_title: 資料品質與清理
+  section_title: 資料品質與清理 (Data Quality & Cleaning)
   text: 情境：箱型圖 (Box Plot) 常用於識別？
   type: multiple_choice
   options:
@@ -896,7 +896,7 @@ questions:
   id: 5256
   usage: both
 - chapter_title: 進階資料處理
-  section_title: 資料治理與安全
+  section_title: 資料治理與安全 (Data Governance & Security)
   text: 情境：RBAC (Role-Based Access Control) 是基於什麼來分配權限？
   type: multiple_choice
   options:
@@ -912,7 +912,7 @@ questions:
   id: 5257
   usage: both
 - chapter_title: 進階資料處理
-  section_title: 資料轉換與特徵工程
+  section_title: 資料轉換與特徵工程 (Data Transformation & Feature Engineering)
   text: 情境：特徵選擇中的 Wrapper 方法（如 RFE）通常比 Filter 方法？
   type: multiple_choice
   options:
@@ -944,7 +944,7 @@ questions:
   id: 5259
   usage: both
 - chapter_title: 進階資料處理
-  section_title: 資料品質與清理
+  section_title: 資料品質與清理 (Data Quality & Cleaning)
   text: 情境：資料的一致性 (Consistency) 是指？
   type: multiple_choice
   options:
@@ -976,7 +976,7 @@ questions:
   id: 5261
   usage: both
 - chapter_title: 進階資料處理
-  section_title: 資料轉換與特徵工程
+  section_title: 資料轉換與特徵工程 (Data Transformation & Feature Engineering)
   text: 情境：Label Encoding 適合處理？
   type: multiple_choice
   options:
@@ -992,7 +992,7 @@ questions:
   id: 5262
   usage: both
 - chapter_title: 進階資料處理
-  section_title: 資料治理與安全
+  section_title: 資料治理與安全 (Data Governance & Security)
   text: 情境：最小權限原則 (Least Privilege) 意味著？
   type: multiple_choice
   options:
@@ -1024,7 +1024,7 @@ questions:
   id: 5264
   usage: both
 - chapter_title: 進階資料處理
-  section_title: 資料品質與清理
+  section_title: 資料品質與清理 (Data Quality & Cleaning)
   text: 情境：資料剖析 (Data Profiling) 的目的是？
   type: multiple_choice
   options:
@@ -1041,7 +1041,7 @@ questions:
   usage: both
 - id: 5266
   chapter_title: 資料處理與應用
-  section_title: 串流處理
+  section_title: 資料攝取
   text: Apache Beam 的主要特色是什麼？
   type: multiple_choice
   options:
@@ -1057,7 +1057,7 @@ questions:
   usage: both
 - id: 5267
   chapter_title: 資料處理與應用
-  section_title: 串流處理
+  section_title: 資料攝取
   text: 串流系統中的 Watermark 主要用來處理什麼問題？
   type: multiple_choice
   options:

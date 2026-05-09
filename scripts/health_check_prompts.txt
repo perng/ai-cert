@@ -1,0 +1,595 @@
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** 人工智慧基礎理論
+**Chapter:** 2024-2025 主流商用模型與應用生態
+**Section:** 商用模型選型比較
+
+**Identified Issues:**
+- The section only has 2 questions (needs at least 3).
+
+Task 2: Please generate 1 additional high-quality, multiple-choice questions for this section in YAML format. Ensure the questions have clear explanations and plausible distractors.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** 人工智慧基礎理論
+**Chapter:** 模型評估與效能優化 (Model Evaluation & Optimization)
+**Section:** 財務評估與投資報酬率計算 (Financial Evaluation & ROI Calculation)
+
+**Identified Issues:**
+- The section only has 0 questions (needs at least 3).
+
+Task 2: Please generate 3 additional high-quality, multiple-choice questions for this section in YAML format. Ensure the questions have clear explanations and plausible distractors.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** 生成式 AI 應用與規劃
+**Chapter:** 生成式 AI 模型架構與機制 (Generative Models & Mechanisms)
+**Section:** 官方學習指引補充：生成式 AI 應用領域與工具使用
+
+**Identified Issues:**
+- The section only has 0 questions (needs at least 3).
+
+Task 2: Please generate 3 additional high-quality, multiple-choice questions for this section in YAML format. Ensure the questions have clear explanations and plausible distractors.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** 生成式 AI 應用與規劃
+**Chapter:** 生成式 AI 模型架構與機制 (Generative Models & Mechanisms)
+**Section:** 生成式 AI 模型原理
+
+**Identified Issues:**
+- The section only has 2 questions (needs at least 3).
+
+Task 2: Please generate 1 additional high-quality, multiple-choice questions for this section in YAML format. Ensure the questions have clear explanations and plausible distractors.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** 生成式 AI 應用與規劃
+**Chapter:** No Code / Low Code 平台與 AI 開發工具
+**Section:** 官方學習指引補充：No code / Low code 概念
+
+**Identified Issues:**
+- The section only has 0 questions (needs at least 3).
+
+Task 2: Please generate 3 additional high-quality, multiple-choice questions for this section in YAML format. Ensure the questions have clear explanations and plausible distractors.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** 生成式 AI 應用與規劃
+**Chapter:** No Code / Low Code 平台與 AI 開發工具
+**Section:** 低程式碼與無程式碼開發
+
+**Identified Issues:**
+- The section only has 1 questions (needs at least 3).
+
+Task 2: Please generate 2 additional high-quality, multiple-choice questions for this section in YAML format. Ensure the questions have clear explanations and plausible distractors.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** 生成式 AI 應用與規劃
+**Chapter:** No Code / Low Code 平台與 AI 開發工具
+**Section:** AI 輔助開發 (Copilot)
+
+**Identified Issues:**
+- The section only has 1 questions (needs at least 3).
+
+Task 2: Please generate 2 additional high-quality, multiple-choice questions for this section in YAML format. Ensure the questions have clear explanations and plausible distractors.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** 生成式 AI 應用與規劃
+**Chapter:** 生成式 AI 專案管理與評估 (Project Planning & Eval)
+**Section:** 官方學習指引補充：生成式 AI 導入評估規劃
+
+**Identified Issues:**
+- The section only has 0 questions (needs at least 3).
+
+Task 2: Please generate 3 additional high-quality, multiple-choice questions for this section in YAML format. Ensure the questions have clear explanations and plausible distractors.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** 核心 AI 基礎
+**Chapter:** 人工智慧數學基礎
+**Section:** 深度思考情境題
+
+**Identified Issues:**
+- The content length is only 54 characters (needs at least 200).
+
+**Current Content Snippet:**
+```markdown
+<section class="level2" id="sec-scenario">
+
+</section>
+```
+
+Task 1: Please write detailed, educational textbook content for this section to reach at least 200 characters. Cover the core concepts, technical details, and real-world examples related to this topic.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** 核心 AI 基礎
+**Chapter:** 資料處理基礎
+**Section:** 深度思考情境題
+
+**Identified Issues:**
+- The content length is only 54 characters (needs at least 200).
+
+**Current Content Snippet:**
+```markdown
+<section class="level2" id="sec-scenario">
+
+</section>
+```
+
+Task 1: Please write detailed, educational textbook content for this section to reach at least 200 characters. Cover the core concepts, technical details, and real-world examples related to this topic.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** 核心 AI 基礎
+**Chapter:** 機器學習基礎概念
+**Section:** 深度思考情境題
+
+**Identified Issues:**
+- The content length is only 54 characters (needs at least 200).
+
+**Current Content Snippet:**
+```markdown
+<section class="level2" id="sec-scenario">
+
+</section>
+```
+
+Task 1: Please write detailed, educational textbook content for this section to reach at least 200 characters. Cover the core concepts, technical details, and real-world examples related to this topic.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** 核心 AI 基礎
+**Chapter:** 深度學習簡介
+**Section:** 深度思考情境題
+
+**Identified Issues:**
+- The content length is only 54 characters (needs at least 200).
+
+**Current Content Snippet:**
+```markdown
+<section class="level2" id="sec-scenario">
+
+</section>
+```
+
+Task 1: Please write detailed, educational textbook content for this section to reach at least 200 characters. Cover the core concepts, technical details, and real-world examples related to this topic.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** AI 技術應用與規劃
+**Chapter:** AI 專案生命週期
+**Section:** 深度思考情境題
+
+**Identified Issues:**
+- The content length is only 54 characters (needs at least 200).
+
+**Current Content Snippet:**
+```markdown
+<section class="level2" id="sec-scenario">
+
+</section>
+```
+
+Task 1: Please write detailed, educational textbook content for this section to reach at least 200 characters. Cover the core concepts, technical details, and real-world examples related to this topic.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** AI 技術應用與規劃
+**Chapter:** 自然語言處理 (NLP)
+**Section:** 定義與範疇
+
+**Identified Issues:**
+- The section only has 2 questions (needs at least 3).
+
+Task 2: Please generate 1 additional high-quality, multiple-choice questions for this section in YAML format. Ensure the questions have clear explanations and plausible distractors.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** AI 技術應用與規劃
+**Chapter:** 自然語言處理 (NLP)
+**Section:** 技術演進脈絡
+
+**Identified Issues:**
+- The section only has 2 questions (needs at least 3).
+
+Task 2: Please generate 1 additional high-quality, multiple-choice questions for this section in YAML format. Ensure the questions have clear explanations and plausible distractors.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** AI 技術應用與規劃
+**Chapter:** 自然語言處理 (NLP)
+**Section:** 深度思考情境題
+
+**Identified Issues:**
+- The content length is only 54 characters (needs at least 200).
+
+**Current Content Snippet:**
+```markdown
+<section class="level2" id="sec-scenario">
+
+</section>
+```
+
+Task 1: Please write detailed, educational textbook content for this section to reach at least 200 characters. Cover the core concepts, technical details, and real-world examples related to this topic.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** AI 技術應用與規劃
+**Chapter:** 電腦視覺 (CV)
+**Section:** 深度思考情境題
+
+**Identified Issues:**
+- The content length is only 54 characters (needs at least 200).
+
+**Current Content Snippet:**
+```markdown
+<section class="level2" id="sec-scenario">
+
+</section>
+```
+
+Task 1: Please write detailed, educational textbook content for this section to reach at least 200 characters. Cover the core concepts, technical details, and real-world examples related to this topic.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** AI 技術應用與規劃
+**Chapter:** 生成式 AI 與多模態 AI
+**Section:** 深度思考情境題
+
+**Identified Issues:**
+- The content length is only 54 characters (needs at least 200).
+
+**Current Content Snippet:**
+```markdown
+<section class="level2" id="sec-scenario">
+
+</section>
+```
+
+Task 1: Please write detailed, educational textbook content for this section to reach at least 200 characters. Cover the core concepts, technical details, and real-world examples related to this topic.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** AI 技術應用與規劃
+**Chapter:** 系統部署與 MLOps
+**Section:** 深度思考情境題
+
+**Identified Issues:**
+- The content length is only 54 characters (needs at least 200).
+
+**Current Content Snippet:**
+```markdown
+<section class="level2" id="sec-scenario">
+
+</section>
+```
+
+Task 1: Please write detailed, educational textbook content for this section to reach at least 200 characters. Cover the core concepts, technical details, and real-world examples related to this topic.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** 大數據處理與分析
+**Chapter:** 大數據生態系統
+**Section:** 深度思考情境題
+
+**Identified Issues:**
+- The content length is only 54 characters (needs at least 200).
+
+**Current Content Snippet:**
+```markdown
+<section class="level2" id="sec-scenario">
+
+</section>
+```
+
+Task 1: Please write detailed, educational textbook content for this section to reach at least 200 characters. Cover the core concepts, technical details, and real-world examples related to this topic.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** 大數據處理與分析
+**Chapter:** 進階資料處理
+**Section:** 深度思考情境題
+
+**Identified Issues:**
+- The content length is only 54 characters (needs at least 200).
+
+**Current Content Snippet:**
+```markdown
+<section class="level2" id="sec-scenario">
+
+</section>
+```
+
+Task 1: Please write detailed, educational textbook content for this section to reach at least 200 characters. Cover the core concepts, technical details, and real-world examples related to this topic.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** 大數據處理與分析
+**Chapter:** 進階分析方法
+**Section:** 大規模統計摘要與穩健建模
+
+**Identified Issues:**
+- The section only has 2 questions (needs at least 3).
+
+Task 2: Please generate 1 additional high-quality, multiple-choice questions for this section in YAML format. Ensure the questions have clear explanations and plausible distractors.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** 大數據處理與分析
+**Chapter:** 進階分析方法
+**Section:** 深度思考情境題
+
+**Identified Issues:**
+- The content length is only 54 characters (needs at least 200).
+
+**Current Content Snippet:**
+```markdown
+<section class="level2" id="sec-scenario">
+
+</section>
+```
+
+Task 1: Please write detailed, educational textbook content for this section to reach at least 200 characters. Cover the core concepts, technical details, and real-world examples related to this topic.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** 大數據處理與分析
+**Chapter:** 資料視覺化與報告
+**Section:** 深度思考情境題
+
+**Identified Issues:**
+- The content length is only 54 characters (needs at least 200).
+
+**Current Content Snippet:**
+```markdown
+<section class="level2" id="sec-scenario">
+
+</section>
+```
+
+Task 1: Please write detailed, educational textbook content for this section to reach at least 200 characters. Cover the core concepts, technical details, and real-world examples related to this topic.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** 大數據處理與分析
+**Chapter:** 大數據治理
+**Section:** 深度思考情境題
+
+**Identified Issues:**
+- The content length is only 54 characters (needs at least 200).
+
+**Current Content Snippet:**
+```markdown
+<section class="level2" id="sec-scenario">
+
+</section>
+```
+
+Task 1: Please write detailed, educational textbook content for this section to reach at least 200 characters. Cover the core concepts, technical details, and real-world examples related to this topic.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** 機器學習技術與應用
+**Chapter:** 進階機器學習演算法
+**Section:** 深度思考情境題
+
+**Identified Issues:**
+- The content length is only 54 characters (needs at least 200).
+
+**Current Content Snippet:**
+```markdown
+<section class="level2" id="sec-scenario">
+
+</section>
+```
+
+Task 1: Please write detailed, educational textbook content for this section to reach at least 200 characters. Cover the core concepts, technical details, and real-world examples related to this topic.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** 機器學習技術與應用
+**Chapter:** 深度學習框架與架構
+**Section:** 深度思考情境題
+
+**Identified Issues:**
+- The content length is only 54 characters (needs at least 200).
+
+**Current Content Snippet:**
+```markdown
+<section class="level2" id="sec-scenario">
+
+</section>
+```
+
+Task 1: Please write detailed, educational textbook content for this section to reach at least 200 characters. Cover the core concepts, technical details, and real-world examples related to this topic.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** 機器學習技術與應用
+**Chapter:** 模型最佳化與調校
+**Section:** 深度思考情境題
+
+**Identified Issues:**
+- The content length is only 54 characters (needs at least 200).
+
+**Current Content Snippet:**
+```markdown
+<section class="level2" id="sec-scenario">
+
+</section>
+```
+
+Task 1: Please write detailed, educational textbook content for this section to reach at least 200 characters. Cover the core concepts, technical details, and real-world examples related to this topic.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** 機器學習技術與應用
+**Chapter:** 強化學習
+**Section:** 深度思考情境題
+
+**Identified Issues:**
+- The content length is only 54 characters (needs at least 200).
+
+**Current Content Snippet:**
+```markdown
+<section class="level2" id="sec-scenario">
+
+</section>
+```
+
+Task 1: Please write detailed, educational textbook content for this section to reach at least 200 characters. Cover the core concepts, technical details, and real-world examples related to this topic.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** 機器學習技術與應用
+**Chapter:** 機器學習治理與倫理
+**Section:** 深度思考情境題
+
+**Identified Issues:**
+- The content length is only 54 characters (needs at least 200).
+
+**Current Content Snippet:**
+```markdown
+<section class="level2" id="sec-scenario">
+
+</section>
+```
+
+Task 1: Please write detailed, educational textbook content for this section to reach at least 200 characters. Cover the core concepts, technical details, and real-world examples related to this topic.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** AI 代理人技術與應用
+**Chapter:** AI 代理人基礎概念
+**Section:** 從聊天到行動：為什麼需要 AI 代理人
+
+**Identified Issues:**
+- The section only has 2 questions (needs at least 3).
+
+Task 2: Please generate 1 additional high-quality, multiple-choice questions for this section in YAML format. Ensure the questions have clear explanations and plausible distractors.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** AI 代理人技術與應用
+**Chapter:** AI 代理人基礎概念
+**Section:** 代理人的種類
+
+**Identified Issues:**
+- The section only has 1 questions (needs at least 3).
+
+Task 2: Please generate 2 additional high-quality, multiple-choice questions for this section in YAML format. Ensure the questions have clear explanations and plausible distractors.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** AI 代理人技術與應用
+**Chapter:** AI 代理人基礎概念
+**Section:** 如何評估代理人的好壞
+
+**Identified Issues:**
+- The section only has 1 questions (needs at least 3).
+
+Task 2: Please generate 2 additional high-quality, multiple-choice questions for this section in YAML format. Ensure the questions have clear explanations and plausible distractors.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** AI 代理人技術與應用
+**Chapter:** Agentic Skills 設計
+**Section:** 技能的核心要素
+
+**Identified Issues:**
+- The section only has 0 questions (needs at least 3).
+
+Task 2: Please generate 3 additional high-quality, multiple-choice questions for this section in YAML format. Ensure the questions have clear explanations and plausible distractors.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** AI 代理人技術與應用
+**Chapter:** 主流 AI 代理框架總覽
+**Section:** 多代理協作框架
+
+**Identified Issues:**
+- The section only has 0 questions (needs at least 3).
+
+Task 2: Please generate 3 additional high-quality, multiple-choice questions for this section in YAML format. Ensure the questions have clear explanations and plausible distractors.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** AI 代理人技術與應用
+**Chapter:** 主流 AI 代理框架總覽
+**Section:** 技術與專業框架
+
+**Identified Issues:**
+- The section only has 0 questions (needs at least 3).
+
+Task 2: Please generate 3 additional high-quality, multiple-choice questions for this section in YAML format. Ensure the questions have clear explanations and plausible distractors.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** AI 代理人技術與應用
+**Chapter:** 主流 AI 代理框架總覽
+**Section:** 2026 年新興框架
+
+**Identified Issues:**
+- The section only has 0 questions (needs at least 3).
+
+Task 2: Please generate 3 additional high-quality, multiple-choice questions for this section in YAML format. Ensure the questions have clear explanations and plausible distractors.
+---
+
+Please improve the following section in the AI certification curriculum:
+
+**Subject:** AI 代理人技術與應用
+**Chapter:** 主流 AI 代理框架總覽
+**Section:** 框架比較總覽
+
+**Identified Issues:**
+- The content length is only 56 characters (needs at least 200).
+
+**Current Content Snippet:**
+```markdown
+<section class="level2" id="sec-comparison">
+
+</section>
+```
+
+Task 1: Please write detailed, educational textbook content for this section to reach at least 200 characters. Cover the core concepts, technical details, and real-world examples related to this topic.
+---

@@ -1041,7 +1041,7 @@ questions:
   usage: both
 - id: 3266
   chapter_title: 資料處理基礎
-  section_title: 正規化
+  section_title: 資料預處理
   text: 當數值特徵存在明顯極端值時，哪一種縮放方式通常比 Min-Max Scaling 更穩健？
   type: multiple_choice
   options:
@@ -1057,7 +1057,7 @@ questions:
   usage: both
 - id: 3267
   chapter_title: 資料處理基礎
-  section_title: 不平衡資料處理
+  section_title: 特徵工程
   text: 使用 SMOTE 處理不平衡資料時，哪一項流程最能避免資料洩漏？
   type: multiple_choice
   options:

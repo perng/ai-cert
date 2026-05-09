@@ -1041,7 +1041,7 @@ questions:
   usage: both
 - id: 4366
   chapter_title: 電腦視覺 (CV)
-  section_title: 物件偵測
+  section_title: 核心任務與模型
   text: 在物件偵測中，IoU 閾值設定較高代表什麼？
   type: multiple_choice
   options:
@@ -1057,7 +1057,7 @@ questions:
   usage: both
 - id: 4367
   chapter_title: 電腦視覺 (CV)
-  section_title: 影像分割
+  section_title: 核心任務與模型
   text: 全景分割 (Panoptic Segmentation) 與語義分割的主要差異為何？
   type: multiple_choice
   options:

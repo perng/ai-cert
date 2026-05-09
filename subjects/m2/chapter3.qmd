@@ -98,6 +98,7 @@ model = models.Sequential([
 # 顯示模型架構摘要
 model.summary()
 ```
+
 *   **經典模型**：
     *   **VGG (Visual Geometry Group)**：
         *   **特點**：捨棄了早期 CNN 使用的大尺寸卷積核（如 7x7），改為全面使用小尺寸的 **3x3 卷積核**。
@@ -140,6 +141,7 @@ model.summary()
             style NMS fill:#f3e5f5,stroke:#7b1fa2,color:#000
             style Final fill:#fff,stroke:#333,color:#000
         ```
+
 *   **評估指標：IoU (Intersection over Union)**
     *   衡量預測框與真實框重疊程度的指標。
     *   **公式**：        $$ IoU = \frac{\text{重疊區域 (Intersection)}}{\text{聯集區域 (Union)}} $$
@@ -159,6 +161,7 @@ model.summary()
 ### 3. 影像分割 (Segmentation) {.unnumbered}
 *   **定義**：將影像中的每一個像素 (Pixel) 都分配一個類別標籤，是電腦視覺中最精細的任務。
 ![Image Segmentation](images/image_segmentation.webp)
+
 *   **類型比較**：
     *   **語義分割 (Semantic Segmentation)**：
         *   **概念**：只管「類別」，不管「個體」。
@@ -276,3 +279,8 @@ model.summary()
         *   **剪枝 (Pruning)**：移除神經網路中不重要的連接或神經元。
         *   **輕量化架構**：選用 MobileNet, ShuffleNet 或 YOLO-Nano 等專為行動裝置設計的模型。
     *   **持續監控 (Continuous Monitoring)**：建立 MLOps 流程，監控影像品質（如亮度、模糊度）與模型信心分數。一旦發現異常，自動觸發警報或重新訓練 (Retraining)。
+
+
+## 深度思考情境題 {#sec-scenario}
+
+電腦視覺情境題通常會描述影像任務需求，要求辨識分類、偵測或分割的差異。若只需判斷整張圖是否有瑕疵，影像分類即可；若要標出瑕疵位置，需要物件偵測；若要逐像素標記道路、腫瘤或零件邊界，則需要語義分割、實例分割或全景分割。評估時也要理解 IoU、mAP、Precision/Recall 與資料漂移。部署到產線或車載設備時，還需考慮光照變化、攝影角度、延遲、模型大小與邊緣運算限制。

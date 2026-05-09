@@ -1,7 +1,7 @@
 questions:
 - id: 12001
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: OpenAI 產品線與前沿技術
+  section_title: 2. GPT-Realtime 與即時語音互動
   text: 關於 OpenAI 推出的 GPT-Realtime 模型，與早期的「語音轉文字 (ASR) ➔ LLM ➔ 文字轉語音 (TTS)」管線相比，其最核心的優勢為何？
   type: multiple_choice
   options:
@@ -17,7 +17,7 @@ questions:
   usage: quiz
 - id: 12002
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: OpenAI 產品線與前沿技術
+  section_title: 3. AgentKit (2025) 與多代理生態系
   text: 企業若欲開發一套能自動指派「搜尋資料」、「撰寫程式碼」與「執行測試」等多個專精任務並協同工作的 AI 系統，最適合參考下列哪個工具框架？
   type: multiple_choice
   options:
@@ -33,7 +33,7 @@ questions:
   usage: quiz
 - id: 12003
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: Google 產品線與資訊防護
+  section_title: 2. SynthID 數位浮水印技術
   text: 為了對抗不實影像與 Deepfake 威脅，Google 在其影像生成模型（如 Gemini Veo）中主要整合了哪一項數位浮水印技術，且具備極高的抗壓縮與抗裁切能力？
   type: multiple_choice
   options:
@@ -49,7 +49,7 @@ questions:
   usage: quiz
 - id: 12004
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: AI 程式碼輔助工具 (AI Coding Assistants)
+  section_title: 2. 限制與資安風險 (考點核心)
   text: 下列關於 AI 輔助寫程式工具（如 GitHub Copilot, Anthropic Claude）的敘述，何者最為正確？
   type: multiple_choice
   options:
@@ -65,7 +65,7 @@ questions:
   usage: quiz
 - id: 12005
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: OpenAI 產品線與前沿技術
+  section_title: 1. Sora 與影像生成的真實性防護
   text: OpenAI 的 Sora 影片生成模型在內容出處證明上，採用了 C2PA 規範。請問 C2PA 的主要功能為何？
   type: multiple_choice
   options:
@@ -81,7 +81,7 @@ questions:
   usage: quiz
 - id: 12006
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: Google 產品線與資訊防護
+  section_title: 2. SynthID 數位浮水印技術
   text: 若惡意使用者將 AI 生成的圖片截圖、轉換格式（例如從 PNG 轉為 JPEG）並套用濾鏡，下列哪一種防護機制最有可能失效？
   type: multiple_choice
   options:
@@ -97,7 +97,7 @@ questions:
   usage: quiz
 - id: 12007
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: AI 程式碼輔助工具 (AI Coding Assistants)
+  section_title: 2. 限制與資安風險 (考點核心)
   text: 一位開發者在使用 OpenAI Codex 撰寫程式碼時，AI 自動補全了一段連線至資料庫的函式，但其中包含了一組寫死的(Hardcoded) 金鑰，且引用了一個實際上不存在的第三方套件。這種現象在生成式 AI 中稱為什麼？
   type: multiple_choice
   options:
@@ -113,7 +113,7 @@ questions:
   usage: quiz
 - id: 12008
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: OpenAI 產品線與前沿技術
+  section_title: 1. Sora 與影像生成的真實性防護
   text: 一家新聞平台希望讀者能查驗影片是否由 AI 生成，並了解影片的來源、生成時間與編輯歷程。下列哪一種技術最符合「內容出處證明」的需求？
   type: multiple_choice
   options:
@@ -129,7 +129,7 @@ questions:
   usage: quiz
 - id: 12009
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: OpenAI 產品線與前沿技術
+  section_title: 3. AgentKit (2025) 與多代理生態系
   text: 企業正在設計一個能查詢 CRM、寄送電子郵件、建立任務並修改訂單狀態的 AI Agent。從治理角度來看，下列哪一項措施最重要？
   type: multiple_choice
   options:
@@ -145,7 +145,7 @@ questions:
   usage: quiz
 - id: 12010
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: Google 產品線與資訊防護
+  section_title: 1. Gemini (Veo) 與多模態生成
   text: 關於「長上下文模型」與 RAG 的比較，下列何者最正確？
   type: multiple_choice
   options:
@@ -178,7 +178,7 @@ questions:
   usage: quiz
 - id: 12012
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: AI 程式碼輔助工具 (AI Coding Assistants)
+  section_title: 3. 企業導入 AI Coding 的建議流程
   text: 企業導入 AI Coding Assistant 後，下列哪一項做法最符合安全開發流程？
   type: multiple_choice
   options:
@@ -195,7 +195,7 @@ questions:
   usage: quiz
 - id: 12013
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: Google 產品線與資訊防護
+  section_title: 2. SynthID 數位浮水印技術
   text: 下列何者最能說明 SynthID 與 C2PA 的差異？
   type: multiple_choice
   options:
@@ -212,7 +212,7 @@ questions:
   usage: quiz
 - id: 12014
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: OpenAI 產品線與前沿技術
+  section_title: 1. Sora 與影像生成的真實性防護
   text: Sora 這類文字轉影片 (Text-to-Video) 模型在生成內容時，最核心的技術挑戰與能力特徵是什麼？
   type: multiple_choice
   options:
@@ -228,7 +228,7 @@ questions:
   usage: quiz
 - id: 12015
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: OpenAI 產品線與前沿技術
+  section_title: 1. Sora 與影像生成的真實性防護
   text: 關於文字轉影片模型（如 Sora、Veo）的限制與風險，下列敘述何者最為正確？
   type: multiple_choice
   options:
@@ -244,7 +244,7 @@ questions:
   usage: quiz
 - id: 12016
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: OpenAI 產品線與前沿技術
+  section_title: 2. GPT-Realtime 與即時語音互動
   text: 在設計即時語音 Agent（如使用 GPT-Realtime）時，為使對話體驗接近真人通話，系統必須具備下列哪一項關鍵功能？
   type: multiple_choice
   options:
@@ -260,7 +260,7 @@ questions:
   usage: quiz
 - id: 12017
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: OpenAI 產品線與前沿技術
+  section_title: 2. GPT-Realtime 與即時語音互動
   text: 為了維持即時語音應用程式 (Realtime Audio Apps) 的極低延遲，開發者通常會選用下列哪一種連線協定來傳輸雙向串流？
   type: multiple_choice
   options:
@@ -276,7 +276,7 @@ questions:
   usage: quiz
 - id: 12018
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: OpenAI 產品線與前沿技術
+  section_title: 3. AgentKit (2025) 與多代理生態系
   text: 企業在建構多代理系統 (Multi-Agent System) 時，為了評量 Agent 是否真的完成任務，並非單純依靠其對話內容。實務上最常使用的作法是？
   type: multiple_choice
   options:
@@ -292,7 +292,7 @@ questions:
   usage: quiz
 - id: 12019
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: OpenAI 產品線與前沿技術
+  section_title: 3. AgentKit (2025) 與多代理生態系
   text: 根據「代理系統的典型流程」，當 Agent 讀取工具回傳的資料並判斷是否達成目標時，這屬於哪一個階段？
   type: multiple_choice
   options:
@@ -308,7 +308,7 @@ questions:
   usage: quiz
 - id: 12020
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: Google 產品線與資訊防護
+  section_title: 2. SynthID 數位浮水印技術
   text: 關於 SynthID 數位浮水印技術的擴展性，下列敘述何者錯誤？
   type: multiple_choice
   options:
@@ -340,7 +340,7 @@ questions:
   usage: quiz
 - id: 12022
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: AI 程式碼輔助工具 (AI Coding Assistants)
+  section_title: 1. 運作原理與機制
   text: 開發者使用 AI 程式碼輔助工具時，模型給出的建議品質往往取決於「上下文 (Context)」。下列何者「不是」現代 AI 開發工具常用來提升建議品質的上下文來源？
   type: multiple_choice
   options:
@@ -356,7 +356,7 @@ questions:
   usage: quiz
 - id: 12023
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: AI 程式碼輔助工具 (AI Coding Assistants)
+  section_title: 2. 限制與資安風險 (考點核心)
   text: 在企業導入 AI 輔助寫程式工具時，會面臨「授權與版權風險」。這主要是指什麼情況？
   type: multiple_choice
   options:
@@ -372,7 +372,7 @@ questions:
   usage: quiz
 - id: 12024
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: AI 程式碼輔助工具 (AI Coding Assistants)
+  section_title: 2. 限制與資安風險 (考點核心)
   text: 當開發者要求 AI 幫忙撰寫一段複雜的演算法，AI 回傳了看起來專業且富有說服力的解釋與程式碼。下列哪一種態度是企業應極力避免的「過度信任風險」？
   type: multiple_choice
   options:
@@ -388,7 +388,7 @@ questions:
   usage: quiz
 - id: 12025
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: AI 程式碼輔助工具 (AI Coding Assistants)
+  section_title: 3. 企業導入 AI Coding 的建議流程
   text: 企業制定「AI Coding 導入建議流程」時，首要之務為何？
   type: multiple_choice
   options:
@@ -404,7 +404,7 @@ questions:
   usage: quiz
 - id: 12026
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: OpenAI 產品線與前沿技術
+  section_title: 3. AgentKit (2025) 與多代理生態系
   text: 針對多代理系統 (Multi-Agent System) 中常見的「錯誤傳遞」風險，以下何種描述最為貼切？
   type: multiple_choice
   options:
@@ -420,7 +420,7 @@ questions:
   usage: quiz
 - id: 12027
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: Google 產品線與資訊防護
+  section_title: 1. Gemini (Veo) 與多模態生成
   text: 關於 Gemini 1.5 Pro 等支援「長上下文 (Long Context)」的 AI 模型，其最重要的突破在於？
   type: multiple_choice
   options:
@@ -436,7 +436,7 @@ questions:
   usage: quiz
 - id: 12028
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: OpenAI 產品線與前沿技術
+  section_title: 3. AgentKit (2025) 與多代理生態系
   text: 開發者透過 Agent 框架整合企業內部系統時，為了防止模型遭到提示注入 (Prompt Injection) 後惡意刪除資料庫，最有效的防範措施是？
   type: multiple_choice
   options:
@@ -452,7 +452,7 @@ questions:
   usage: quiz
 - id: 12029
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: AI 程式碼輔助工具 (AI Coding Assistants)
+  section_title: 3. 企業導入 AI Coding 的建議流程
   text: 企業在提升工程師使用 AI Coding 效率的培訓中，對於「提問能力 (Prompting)」最正確的指導原則是什麼？
   type: multiple_choice
   options:
@@ -468,7 +468,7 @@ questions:
   usage: quiz
 - id: 12030
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: Google 產品線與資訊防護
+  section_title: 1. Gemini (Veo) 與多模態生成
   text: 在企業導入 AI 內容生成時，若特別強調「所產出的廣告影片不可出現物理動態異常（如主角手指突然增加或汽車倒著開）」，應優先評估模型的哪一項指標？
   type: multiple_choice
   options:
@@ -485,7 +485,7 @@ questions:
   usage: quiz
 - id: 12031
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: AI 程式碼輔助工具 (AI Coding Assistants)
+  section_title: 1. 運作原理與機制
   text: 下列哪一項功能屬於進階 AI 程式碼輔助工具（如 Agentic IDEs）能做到，但傳統基礎語法補全工具做不到的？
   type: multiple_choice
   options:
@@ -501,7 +501,7 @@ questions:
   usage: quiz
 - id: 12032
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: OpenAI 產品線與前沿技術
+  section_title: 3. AgentKit (2025) 與多代理生態系
   text: 若企業需開發一套「全自動化的軟體測試 AI Agent」，該 Agent 需要能讀取測試計畫、撰寫測試腳本、呼叫 Selenium 執行測試並回報結果。這種架構最依賴 LLM 的哪一項延伸能力？
   type: multiple_choice
   options:
@@ -517,7 +517,7 @@ questions:
   usage: quiz
 - id: 12033
   chapter_title: 2024-2025 主流商用模型與應用生態
-  section_title: Google 產品線與資訊防護
+  section_title: 2. SynthID 數位浮水印技術
   text: 相較於將數位浮水印直接顯示於影片角落（Visible Watermark），採用 SynthID 這類隱含式像素級浮水印的主要考量為何？
   type: multiple_choice
   options:
@@ -531,3 +531,19 @@ questions:
   - chap-ai-foundation-chapter12
   - sec-synthid
   usage: quiz
+- id: 900001
+  chapter_title: 2024-2025 主流商用模型與應用生態
+  section_title: 商用模型選型比較
+  text: 某企業要建立即時語音客服，需求包含低延遲回應、可插話打斷、理解語氣，並能在必要時呼叫訂單查詢工具。下列哪一項模型選型考量最合理？
+  type: multiple_choice
+  options:
+  - 優先選擇支援即時端到端語音與工具呼叫的模型或平台，並評估延遲、權限與監控能力
+  - 只選擇文字轉影片模型，因為影片模型一定能處理語音對話
+  - 只看模型參數量，參數越大就一定越適合即時客服
+  - 選擇離線批次摘要工具，完全不需要考慮互動延遲
+  correct_index: 0
+  explanation: 即時語音客服的核心是互動延遲、語音理解、打斷處理、工具整合與安全控管；模型排行榜或參數量不能單獨決定選型。
+  tags:
+  - chap-ai-foundation-chapter12
+  - sec-commercial-model-selection
+  usage: both

@@ -189,7 +189,6 @@ Transformer 由 Encoder（編碼器）和 Decoder（解碼器）組成，後來�
     *   同時具備理解與生成能力。
     *   *應用*：機器翻譯（英文入  →  理解  →  生成  →  中文出）、摘要生成。
 
-## 本章總結與考點提示 {#chap-ai-foundation-chapter7-summary}
 
 ### 核心概念回顧
 
@@ -235,4 +234,8 @@ Transformer 由 Encoder（編碼器）和 Decoder（解碼器）組成，後來�
 ### 延伸思考
 
 *   為什麼 Transformer 可以取代 RNN？（因為它可以平行運算，速度快很多，且 Attention 機制解決了長距離記憶問題）。
+
+## 歷屆考題 {#sec-past-exam}
+
+請做測驗看歷屆考題。
 

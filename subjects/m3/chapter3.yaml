@@ -97,7 +97,7 @@ questions:
   usage: quiz
 - id: 5307
   chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 獨立樣本 t 檢定 (Independent two-sample t-test) 用於比較？
   type: multiple_choice
   options:
@@ -113,7 +113,7 @@ questions:
   usage: quiz
 - id: 5308
   chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 當需要比較三組或以上樣本的平均值時，應使用？
   type: multiple_choice
   options:
@@ -129,7 +129,7 @@ questions:
   usage: quiz
 - id: 5309
   chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 卡方獨立性檢定 (Chi-square Test of Independence) 用於檢驗？
   type: multiple_choice
   options:
@@ -145,7 +145,7 @@ questions:
   usage: quiz
 - id: 5310
   chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 型一錯誤 (Type I Error) 是指？
   type: multiple_choice
   options:
@@ -193,7 +193,7 @@ questions:
   usage: both
 - id: 5313
   chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 皮爾森相關係數 (Pearson Correlation Coefficient) r = -1 代表？
   type: multiple_choice
   options:
@@ -209,7 +209,7 @@ questions:
   usage: both
 - id: 5314
   chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 當數據不符合常態分佈假設時，比較兩組獨立樣本應使用哪種非參數檢定？
   type: multiple_choice
   options:
@@ -225,7 +225,7 @@ questions:
   usage: both
 - id: 5315
   chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 檢定力 (Statistical Power) 是指？
   type: multiple_choice
   options:
@@ -289,7 +289,7 @@ questions:
   usage: both
 - id: 5319
   chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 單因子變異數分析 (One-way ANOVA) 的虛無假設 (H0) 是？
   type: multiple_choice
   options:
@@ -305,7 +305,7 @@ questions:
   usage: both
 - id: 5320
   chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 斯皮爾曼等級相關係數 (Spearman Rank Correlation) 適用於？
   type: multiple_choice
   options:
@@ -321,7 +321,7 @@ questions:
   usage: both
 - id: 5321
   chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 型二錯誤 (Type II Error) 是指？
   type: multiple_choice
   options:
@@ -369,7 +369,7 @@ questions:
   usage: both
 - id: 5324
   chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 成對樣本 t 檢定 (Paired samples t-test) 適用於？
   type: multiple_choice
   options:
@@ -385,7 +385,7 @@ questions:
   usage: both
 - id: 5325
   chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: Kruskal-Wallis 檢定是哪種參數檢定的非參數版本？
   type: multiple_choice
   options:
@@ -417,7 +417,7 @@ questions:
   usage: both
 - id: 5327
   chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 比例檢定 (Proportion Test) 用於？
   type: multiple_choice
   options:
@@ -449,7 +449,7 @@ questions:
   usage: both
 - id: 5329
   chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 在假設檢定中，p-value < 0.05 通常意味著？
   type: multiple_choice
   options:
@@ -465,7 +465,7 @@ questions:
   usage: both
 - id: 5330
   chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 卡方適合度檢定 (Goodness of Fit Test) 用於？
   type: multiple_choice
   options:
@@ -513,7 +513,7 @@ questions:
   usage: both
 - id: 5333
   chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 雙樣本比例檢定 (Two-sample proportion test) 的虛無假設通常是？
   type: multiple_choice
   options:
@@ -529,7 +529,7 @@ questions:
   usage: both
 - id: 5334
   chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 為了降低型二錯誤 (偽陰性) 的機率，最有效的方法是？
   type: multiple_choice
   options:
@@ -561,7 +561,7 @@ questions:
   usage: both
 - id: 5336
   chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 皮爾森相關係數 (r) 為 0 表示？
   type: multiple_choice
   options:
@@ -593,7 +593,7 @@ questions:
   usage: both
 - id: 5338
   chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 單樣本 t 檢定 (One-sample t-test) 的自由度 (df) 是？
   type: multiple_choice
   options:
@@ -625,7 +625,7 @@ questions:
   usage: both
 - id: 5340
   chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 當我們說「結果具有統計顯著性」時，通常是指？
   type: multiple_choice
   options:
@@ -720,7 +720,7 @@ questions:
   - sec-scenario
   usage: mock
 - chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 情境：若 p-value < 0.05，我們通常會？
   type: multiple_choice
   options:
@@ -768,7 +768,7 @@ questions:
   id: 5348
   usage: both
 - chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 情境：型一錯誤 (Type I Error) 是指？
   type: multiple_choice
   options:
@@ -800,7 +800,7 @@ questions:
   id: 5350
   usage: both
 - chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 情境：若要比較三組學生的平均成績是否有顯著差異，應使用？
   type: multiple_choice
   options:
@@ -832,7 +832,7 @@ questions:
   id: 5352
   usage: both
 - chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 情境：卡方檢定 (Chi-square Test) 主要用於分析？
   type: multiple_choice
   options:
@@ -864,7 +864,7 @@ questions:
   id: 5354
   usage: both
 - chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 情境：皮爾森相關係數 (Pearson r) 為 0 代表？
   type: multiple_choice
   options:
@@ -896,7 +896,7 @@ questions:
   id: 5356
   usage: both
 - chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 情境：型二錯誤 (Type II Error) 是指？
   type: multiple_choice
   options:
@@ -928,7 +928,7 @@ questions:
   id: 5358
   usage: both
 - chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 情境：當數據不符合常態分佈時，應使用？
   type: multiple_choice
   options:
@@ -960,7 +960,7 @@ questions:
   id: 5360
   usage: both
 - chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 情境：檢定力 (Statistical Power) 是指？
   type: multiple_choice
   options:
@@ -1008,7 +1008,7 @@ questions:
   id: 5363
   usage: both
 - chapter_title: 進階分析方法
-  section_title: 統計檢定與推論
+  section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 情境：斯皮爾曼等級相關 (Spearman rho) 適用於？
   type: multiple_choice
   options:
@@ -1041,7 +1041,7 @@ questions:
   usage: both
 - id: 5366
   chapter_title: 進階資料分析方法
-  section_title: 近似分位數
+  section_title: 大規模統計摘要與穩健建模
   text: 大規模串流資料中使用近似分位數的主要目的為何？
   type: multiple_choice
   options:
@@ -1055,9 +1055,25 @@ questions:
   - chap-m3-ch3
   - sec-large-scale-statistics
   usage: both
+- id: 900021
+  chapter_title: 進階資料分析方法
+  section_title: 大規模統計摘要與穩健建模
+  text: 在數百萬筆交易資料中，若少數極端金額會嚴重拉高平均值，下列哪一種摘要指標較能穩健描述典型交易水準？
+  type: multiple_choice
+  options:
+  - 中位數與四分位距
+  - 最大值與最小值相加
+  - 隨機挑一筆交易金額
+  - 只看資料表的欄位數
+  correct_index: 0
+  explanation: 中位數與四分位距對極端值較不敏感，適合描述偏態或含離群值的大規模資料；平均值在極端值存在時可能失真。
+  tags:
+  - chap-m3-ch3
+  - sec-large-scale-statistics
+  usage: both
 - id: 5367
   chapter_title: 進階資料分析方法
-  section_title: 分位數回歸與 Box-Cox 轉換
+  section_title: 大規模統計摘要與穩健建模
   text: 當目標變數明顯右偏且變異數隨平均值增加時，為改善線性迴歸假設可優先考慮哪種轉換？
   type: multiple_choice
   options:

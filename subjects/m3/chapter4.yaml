@@ -145,7 +145,7 @@ questions:
   usage: quiz
 - id: 5410
   chapter_title: 資料視覺化與報告
-  section_title: 產業應用案例
+  section_title: 產業應用案例 (Industry Application Scenarios)
   text: 在製造業中，儀表圖 (Gauge) 通常用於顯示？
   type: multiple_choice
   options:
@@ -257,7 +257,7 @@ questions:
   usage: both
 - id: 5417
   chapter_title: 資料視覺化與報告
-  section_title: 產業應用案例
+  section_title: 產業應用案例 (Industry Application Scenarios)
   text: 在金融詐欺偵測中，散佈圖常用於？
   type: multiple_choice
   options:
@@ -337,7 +337,7 @@ questions:
   usage: both
 - id: 5422
   chapter_title: 資料視覺化與報告
-  section_title: 產業應用案例
+  section_title: 產業應用案例 (Industry Application Scenarios)
   text: 智慧城市中，地理熱力圖常用於展示？
   type: multiple_choice
   options:
@@ -449,7 +449,7 @@ questions:
   usage: both
 - id: 5429
   chapter_title: 資料視覺化與報告
-  section_title: 產業應用案例
+  section_title: 產業應用案例 (Industry Application Scenarios)
   text: 在零售業中，折線圖常用於分析？
   type: multiple_choice
   options:
@@ -593,7 +593,7 @@ questions:
   usage: both
 - id: 5438
   chapter_title: 資料視覺化與報告
-  section_title: 產業應用案例
+  section_title: 產業應用案例 (Industry Application Scenarios)
   text: 醫療領域的時間軸圖 (Timeline) 用於？
   type: multiple_choice
   options:
@@ -800,7 +800,7 @@ questions:
   id: 5450
   usage: both
 - chapter_title: 資料視覺化與報告
-  section_title: 產業應用案例
+  section_title: 產業應用案例 (Industry Application Scenarios)
   text: 情境：工廠經理需要即時監控數百台設備的健康狀態，並希望能快速識別出故障風險高的區域。最適合的視覺化方式是？
   type: multiple_choice
   options:
@@ -880,7 +880,7 @@ questions:
   id: 5455
   usage: both
 - chapter_title: 資料視覺化與報告
-  section_title: 產業應用案例
+  section_title: 產業應用案例 (Industry Application Scenarios)
   text: 情境：在金融詐欺偵測中，分析師使用散點圖觀察交易金額與頻次，發現遠離主要群聚點的孤立點。這些點通常代表？
   type: multiple_choice
   options:
@@ -976,7 +976,7 @@ questions:
   id: 5461
   usage: both
 - chapter_title: 資料視覺化與報告
-  section_title: 產業應用案例
+  section_title: 產業應用案例 (Industry Application Scenarios)
   text: 情境：智慧城市專案需要展示市區交通擁堵的即時狀況。最直觀的圖表是？
   type: multiple_choice
   options:
@@ -1136,7 +1136,7 @@ questions:
   id: 5471
   usage: both
 - chapter_title: 資料視覺化與報告
-  section_title: 視覺化工具
+  section_title: 視覺化原則與工具
   text: 情境：Tableau 的主要優勢是？
   type: multiple_choice
   options:
@@ -1152,7 +1152,7 @@ questions:
   id: 5472
   usage: both
 - chapter_title: 資料視覺化與報告
-  section_title: 產業應用案例
+  section_title: 產業應用案例 (Industry Application Scenarios)
   text: 情境：在製造業中，儀表圖 (Gauge) 常用於顯示？
   type: multiple_choice
   options:
@@ -1200,7 +1200,7 @@ questions:
   id: 5475
   usage: both
 - chapter_title: 資料視覺化與報告
-  section_title: 視覺化工具
+  section_title: 視覺化原則與工具
   text: 情境：Grafana 最常搭配哪個資料庫用於監控時序數據？
   type: multiple_choice
   options:
@@ -1264,7 +1264,7 @@ questions:
   id: 5479
   usage: both
 - chapter_title: 資料視覺化與報告
-  section_title: 產業應用案例
+  section_title: 產業應用案例 (Industry Application Scenarios)
   text: 情境：在零售業，RFM 模型分析常用什麼圖表來展示顧客分群？
   type: multiple_choice
   options:
@@ -1280,7 +1280,7 @@ questions:
   id: 5480
   usage: both
 - chapter_title: 資料視覺化與報告
-  section_title: 視覺化工具
+  section_title: 視覺化原則與工具
   text: 情境：Seaborn 是基於哪個 Python 庫構建的？
   type: multiple_choice
   options:
@@ -1344,7 +1344,7 @@ questions:
   id: 5484
   usage: both
 - chapter_title: 資料視覺化與報告
-  section_title: 產業應用案例
+  section_title: 產業應用案例 (Industry Application Scenarios)
   text: 情境：地理熱力圖常用於智慧城市的哪個場景？
   type: multiple_choice
   options:

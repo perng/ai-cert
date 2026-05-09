@@ -1,7 +1,7 @@
 questions:
 - id: 11001
   chapter_title: AI 治理、法規與倫理
-  section_title: 倫理原則與風險管理
+  section_title: 公平性與偏見 (Bias & Fairness)
   text: AI 模型產生偏見 (Bias) 的主要原因通常是？
   type: multiple_choice
   options:
@@ -17,7 +17,7 @@ questions:
   usage: quiz
 - id: 11002
   chapter_title: AI 治理、法規與倫理
-  section_title: 倫理原則與風險管理
+  section_title: 公平性與偏見 (Bias & Fairness)
   text: Amazon 的 AI 招聘系統曾發生什麼倫理問題？
   type: multiple_choice
   options:
@@ -33,7 +33,7 @@ questions:
   usage: quiz
 - id: 11003
   chapter_title: AI 治理、法規與倫理
-  section_title: 倫理原則與風險管理
+  section_title: 隱私保護技術 (Privacy-Preserving AI)
   text: 差分隱私 (Differential Privacy) 的核心技術是？
   type: multiple_choice
   options:
@@ -49,7 +49,7 @@ questions:
   usage: quiz
 - id: 11004
   chapter_title: AI 治理、法規與倫理
-  section_title: 倫理原則與風險管理
+  section_title: 隱私保護技術 (Privacy-Preserving AI)
   text: 聯邦學習 (Federated Learning) 的最大特色是？
   type: multiple_choice
   options:
@@ -65,7 +65,7 @@ questions:
   usage: quiz
 - id: 11005
   chapter_title: AI 治理、法規與倫理
-  section_title: 倫理原則與風險管理
+  section_title: 責任歸屬與問責性 (Accountability)
   text: 在 AI 輔助決策（如醫療診斷）中，「人機協作 (Human-in-the-loop)」意味著？
   type: multiple_choice
   options:
@@ -81,7 +81,7 @@ questions:
   usage: quiz
 - id: 11006
   chapter_title: AI 治理、法規與倫理
-  section_title: 台灣與國際法規架構
+  section_title: 台灣《人工智慧基本法》草案
   text: 台灣《人工智慧基本法》草案中提到的「監理沙盒 (Regulatory Sandbox)」目的是？
   type: multiple_choice
   options:
@@ -97,7 +97,7 @@ questions:
   usage: quiz
 - id: 11007
   chapter_title: AI 治理、法規與倫理
-  section_title: 台灣與國際法規架構
+  section_title: 台灣金融業 AI 規範
   text: 台灣金融業運用 AI 的核心原則中，關於「治理 (Governance)」的重點是？
   type: multiple_choice
   options:
@@ -113,7 +113,7 @@ questions:
   usage: quiz
 - id: 11008
   chapter_title: AI 治理、法規與倫理
-  section_title: 台灣與國際法規架構
+  section_title: 歐盟《人工智慧法案》(EU AI Act)
   text: 歐盟《人工智慧法案》(EU AI Act) 採取什麼樣的監管模式？
   type: multiple_choice
   options:
@@ -129,7 +129,7 @@ questions:
   usage: quiz
 - id: 11009
   chapter_title: AI 治理、法規與倫理
-  section_title: AI 產品評測標準
+  section_title: 數位發展部 AI 產品與系統評測中心
   text: 數位發展部 AI 產品評測中心的評測指標不包含下列何者？
   type: multiple_choice
   options:
@@ -145,7 +145,7 @@ questions:
   usage: both
 - id: 11013
   chapter_title: AI 治理、法規與倫理
-  section_title: 倫理原則與風險管理
+  section_title: 公平性與偏見 (Bias & Fairness)
   text: 「資料去偏 (Data Debiasing)」的主要目的是？
   type: multiple_choice
   options:
@@ -161,7 +161,7 @@ questions:
   usage: both
 - id: 11014
   chapter_title: AI 治理、法規與倫理
-  section_title: 倫理原則與風險管理
+  section_title: 隱私保護技術 (Privacy-Preserving AI)
   text: 聯邦學習適合應用於哪個場景？
   type: multiple_choice
   options:
@@ -177,7 +177,7 @@ questions:
   usage: both
 - id: 11015
   chapter_title: AI 治理、法規與倫理
-  section_title: 台灣與國際法規架構
+  section_title: 台灣金融業 AI 規範
   text: 金融業 AI 規範中的「透明度與可解釋性」要求什麼？
   type: multiple_choice
   options:
@@ -193,7 +193,7 @@ questions:
   usage: both
 - id: 11016
   chapter_title: AI 治理、法規與倫理
-  section_title: 台灣與國際法規架構
+  section_title: 歐盟《人工智慧法案》(EU AI Act)
   text: EU AI Act 對於 Deepfake 的規範是？
   type: multiple_choice
   options:
@@ -209,7 +209,7 @@ questions:
   usage: both
 - id: 11017
   chapter_title: AI 治理、法規與倫理
-  section_title: AI 產品評測標準
+  section_title: 數位發展部 AI 產品與系統評測中心
   text: Prompt Injection 攻擊是針對 AI 的哪項指標進行測試？
   type: multiple_choice
   options:
@@ -225,7 +225,7 @@ questions:
   usage: both
 - id: 11018
   chapter_title: AI 治理、法規與倫理
-  section_title: 倫理原則與風險管理
+  section_title: 責任歸屬與問責性 (Accountability)
   text: 當責性 (Accountability) 強調的是？
   type: multiple_choice
   options:
@@ -241,7 +241,7 @@ questions:
   usage: both
 - id: 11019
   chapter_title: AI 治理、法規與倫理
-  section_title: 台灣與國際法規架構
+  section_title: 歐盟《人工智慧法案》(EU AI Act)
   text: 下列何者屬於 EU AI Act 定義的「最小風險」？
   type: multiple_choice
   options:
@@ -257,7 +257,7 @@ questions:
   usage: both
 - id: 11020
   chapter_title: AI 治理、法規與倫理
-  section_title: 台灣與國際法規架構
+  section_title: 台灣金融業 AI 規範
   text: 台灣金融業 AI 規範的口訣「治平隱安透責」中，「透」代表？
   type: multiple_choice
   options:
@@ -273,7 +273,7 @@ questions:
   usage: both
 - id: 11021
   chapter_title: AI 治理、法規與倫理
-  section_title: 倫理原則與風險管理
+  section_title: 公平性與偏見 (Bias & Fairness)
   text: 抽樣偏見 (Sampling Bias) 是指？
   type: multiple_choice
   options:
@@ -289,7 +289,7 @@ questions:
   usage: both
 - id: 11022
   chapter_title: AI 治理、法規與倫理
-  section_title: 倫理原則與風險管理
+  section_title: 隱私保護技術 (Privacy-Preserving AI)
   text: Google Gboard 使用什麼技術來保護用戶輸入隱私？
   type: multiple_choice
   options:
@@ -305,7 +305,7 @@ questions:
   usage: both
 - id: 11023
   chapter_title: AI 治理、法規與倫理
-  section_title: 台灣與國際法規架構
+  section_title: 歐盟《人工智慧法案》(EU AI Act)
   text: EU AI Act 對於「潛意識操縱」的規範是？
   type: multiple_choice
   options:
@@ -321,7 +321,7 @@ questions:
   usage: both
 - id: 11024
   chapter_title: AI 治理、法規與倫理
-  section_title: 台灣與國際法規架構
+  section_title: 台灣金融業 AI 規範
   text: 金融業 AI 規範中，「系統安全性」要求防止什麼？
   type: multiple_choice
   options:
@@ -337,7 +337,7 @@ questions:
   usage: both
 - id: 11025
   chapter_title: AI 治理、法規與倫理
-  section_title: AI 產品評測標準
+  section_title: 數位發展部 AI 產品與系統評測中心
   text: AI 產品評測中的「彈性 (Resilience)」是指？
   type: multiple_choice
   options:
@@ -353,7 +353,7 @@ questions:
   usage: both
 - id: 11026
   chapter_title: AI 治理、法規與倫理
-  section_title: 台灣與國際法規架構
+  section_title: 台灣《人工智慧基本法》草案
   text: 台灣 AI 基本法草案的定位是？
   type: multiple_choice
   options:
@@ -369,7 +369,7 @@ questions:
   usage: both
 - id: 11027
   chapter_title: AI 治理、法規與倫理
-  section_title: 倫理原則與風險管理
+  section_title: 公平性與偏見 (Bias & Fairness)
   text: 歷史偏見 (Historical Bias) 的例子是？
   type: multiple_choice
   options:
@@ -385,7 +385,7 @@ questions:
   usage: both
 - id: 11028
   chapter_title: AI 治理、法規與倫理
-  section_title: 台灣與國際法規架構
+  section_title: 歐盟《人工智慧法案》(EU AI Act)
   text: EU AI Act 中，公共場所的即時遠端生物辨識原則上是？
   type: multiple_choice
   options:
@@ -401,7 +401,7 @@ questions:
   usage: both
 - id: 11029
   chapter_title: AI 治理、法規與倫理
-  section_title: 台灣與國際法規架構
+  section_title: 台灣金融業 AI 規範
   text: 金融業 AI 規範中，「保護隱私」強調什麼原則？
   type: multiple_choice
   options:
@@ -417,7 +417,7 @@ questions:
   usage: both
 - id: 11030
   chapter_title: AI 治理、法規與倫理
-  section_title: AI 治理、法規與倫理
+  section_title: 本章總結與考點提示
   text: AI 治理 (AI Governance) 的核心目標是？
   type: multiple_choice
   options:
@@ -433,7 +433,7 @@ questions:
   usage: both
 - id: 11031
   chapter_title: AI 治理、法規與倫理
-  section_title: 倫理原則與風險管理
+  section_title: 隱私保護技術 (Privacy-Preserving AI)
   text: 下列哪項技術可以在不洩漏個資的情況下進行數據統計？
   type: multiple_choice
   options:
@@ -449,7 +449,7 @@ questions:
   usage: both
 - id: 11032
   chapter_title: AI 治理、法規與倫理
-  section_title: 台灣與國際法規架構
+  section_title: 歐盟《人工智慧法案》(EU AI Act)
   text: EU AI Act 的影響力常被比喻為？
   type: multiple_choice
   options:
@@ -465,7 +465,7 @@ questions:
   usage: both
 - id: 11033
   chapter_title: AI 治理、法規與倫理
-  section_title: AI 產品評測標準
+  section_title: 數位發展部 AI 產品與系統評測中心
   text: AI 產品評測中的「幻覺 (Hallucination)」檢測屬於哪項指標？
   type: multiple_choice
   options:
@@ -481,7 +481,7 @@ questions:
   usage: both
 - id: 11034
   chapter_title: AI 治理、法規與倫理
-  section_title: 台灣與國際法規架構
+  section_title: 台灣《人工智慧基本法》草案
   text: 風險分級管理的好處是？
   type: multiple_choice
   options:
@@ -497,7 +497,7 @@ questions:
   usage: both
 - id: 11035
   chapter_title: AI 治理、法規與倫理
-  section_title: 倫理原則與風險管理
+  section_title: 隱私保護技術 (Privacy-Preserving AI)
   text: 「數據不離地」是哪種技術的口號？
   type: multiple_choice
   options:
@@ -513,7 +513,7 @@ questions:
   usage: both
 - id: 11036
   chapter_title: AI 治理、法規與倫理
-  section_title: 台灣與國際法規架構
+  section_title: 歐盟《人工智慧法案》(EU AI Act)
   text: 對於高風險 AI 系統，EU AI Act 要求必須？
   type: multiple_choice
   options:
@@ -529,7 +529,7 @@ questions:
   usage: both
 - id: 11037
   chapter_title: AI 治理、法規與倫理
-  section_title: 台灣與國際法規架構
+  section_title: 台灣金融業 AI 規範
   text: 金融業 AI 規範中，關於「當責性」的要求包括？
   type: multiple_choice
   options:
@@ -545,7 +545,7 @@ questions:
   usage: both
 - id: 11038
   chapter_title: AI 治理、法規與倫理
-  section_title: AI 產品評測標準
+  section_title: 數位發展部 AI 產品與系統評測中心
   text: 目前的 AI 產品評測主要針對？
   type: multiple_choice
   options:
@@ -561,7 +561,7 @@ questions:
   usage: both
 - id: 11039
   chapter_title: AI 治理、法規與倫理
-  section_title: 倫理原則與風險管理
+  section_title: 公平性與偏見 (Bias & Fairness)
   text: 為了避免 AI 偏見，我們應該？
   type: multiple_choice
   options:
@@ -577,7 +577,7 @@ questions:
   usage: both
 - id: 11040
   chapter_title: AI 治理、法規與倫理
-  section_title: 台灣與國際法規架構
+  section_title: 台灣《人工智慧基本法》草案
   text: 監理沙盒對新創企業的重要性在於？
   type: multiple_choice
   options:
@@ -687,9 +687,9 @@ questions:
   - sec-ai-chapter11
   - sec-eval-standards
   usage: both
-- id: 11410
+- id: '11410_1'
   chapter_title: AI 治理、法規與倫理
-  section_title: AI 法規與標準
+  section_title: 歷屆考題
   text: 根據《金融機構運用人工智慧技術作業規範》 ，金融機構須建立內部治 理架構，並指定專責單位或人員負責推動及管理人工智慧事務，下列何 者並非規範所明訂須落實的治理措施？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -700,14 +700,15 @@ questions:
   correct_index: 2
   explanation: 金融機構運用 AI 需遵循嚴格的治理規範，包括建立專責單位、風險評估、模型監控與消費者權益保護。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter11
   - sec-ai-regulations
   usage: both
-- id: 11409
+- id: '11409_1'
   chapter_title: AI 治理、法規與倫理
-  section_title: AI 法規與標準
+  section_title: 歷屆考題
   text: 根據 2025 年 9 月行政院通過之《人工智慧基本法》草案，政府推動人 工智慧之「創新實驗環境」制度，主要參考歐盟的何種制度？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -718,14 +719,15 @@ questions:
   correct_index: 1
   explanation: 此題涉及 AI 法規與標準 的核心概念。正確答案為「Regulatory Sandbox」。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter11
   - sec-ai-regulations
   usage: both
-- id: 11425
+- id: '11425_2'
   chapter_title: AI 治理、法規與倫理
-  section_title: AI 倫理議題
+  section_title: 歷屆考題
   text: 在自然語言處理任務中，為了減少訓練語料中偏見對模型的影響，下列  答案 題    目 哪種資料處理策略屬於常見的「資料去偏（Data Debiasing） 」做法？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -736,14 +738,15 @@ questions:
   correct_index: 2
   explanation: 演算法偏見通常源自訓練數據的偏差。若數據本身包含歷史歧視，模型便會學習並放大這些偏見。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter11
   - sec-ai-ethics
   usage: both
-- id: 11442
+- id: '11442_1'
   chapter_title: AI 治理、法規與倫理
-  section_title: AI 法規與標準
+  section_title: 歷屆考題
   text: 一家跨國醫療研究機構希望利用各地醫院的病患資料，建立一個能夠 預測疾病早期風險的機器學習模型。由於各國法規限制，病患的原始資  答案 題    目 料無法集中到單一伺服器。在此情境下，下列哪一種方法最能同時滿足 「各醫院保留資料不外流」與「模型仍能跨院學習」的需求？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -754,14 +757,15 @@ questions:
   correct_index: 2
   explanation: 此題涉及 AI 法規與標準 的核心概念。正確答案為「聯邦學習（Federated Learning）」。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter11
   - sec-ai-regulations
   usage: mock
-- id: 11423
+- id: '11423_2'
   chapter_title: AI 治理、法規與倫理
-  section_title: AI 產品評估標準
+  section_title: 歷屆考題
   text: 下列何者不是我國數位發展部 AI 產品與系統評測中心對生成式 AI 的 評測項目? (114年第四梯次)
   type: multiple_choice
   options:
@@ -772,14 +776,15 @@ questions:
   correct_index: 3
   explanation: 此題涉及 AI 產品評估標準 的核心概念。正確答案為「互動性」。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter11
   - sec-eval-standards
   usage: both
-- id: 11405
+- id: '11405_1'
   chapter_title: AI 治理、法規與倫理
-  section_title: AI 倫理議題
+  section_title: 歷屆考題
   text: 在機器學習中， 「偏差與變異權衡（Bias-Variance Tradeoff） 」主要用 來解決下列哪一類型的問題？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -790,14 +795,15 @@ questions:
   correct_index: 3
   explanation: 演算法偏見通常源自訓練數據的偏差。若數據本身包含歷史歧視，模型便會學習並放大這些偏見。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter11
   - sec-ai-ethics
   usage: both
-- id: 11449
+- id: '11449_4'
   chapter_title: AI 治理、法規與倫理
-  section_title: AI 產品評估標準
+  section_title: 歷屆考題
   text: 下列何者並非我國數位發展部 AI 產品與評測中心在評估大型語言模 型安全性時，所指出的常見使用指標？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -808,6 +814,7 @@ questions:
   correct_index: 0
   explanation: 此題涉及 AI 產品評估標準 的核心概念。正確答案為「資料複雜性」。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter11

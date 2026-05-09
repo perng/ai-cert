@@ -33,6 +33,7 @@ Output: Optimized weights w
     b. Calculate Error = y_pred - y
     c. Calculate Gradient = (2/m) * X.T * Error  (where m is number of samples)
     d. Update weights: w = w - alpha * Gradient
+
 3. Return w
 ```
 
@@ -321,6 +322,7 @@ Output: Cluster assignments for each point
     b. Update Step:
        For each cluster:
            Calculate new centroid as the mean of all points assigned to it
+
 3. Return cluster assignments
 ```
 
@@ -511,3 +513,8 @@ print(f"Average score: {scores.mean():.2f}")
 *   **高偏差 (欠擬合)**：增加模型複雜度（如增加特徵、增加神經網路層數）、減少正則化。
 *   **高變異數 (過擬合)**：增加訓練數據、減少模型複雜度（如特徵選擇）、增加正則化 (Regularization)、使用 Dropout。
 :::
+
+
+## 深度思考情境題 {#sec-scenario}
+
+機器學習情境題常會描述一個業務目標，要求選擇合適的學習類型、演算法與評估方式。若資料有標籤且目標是預測類別，通常屬於監督式分類；若要探索顧客群型，則偏向非監督式分群。KNN 與 SVM 對特徵尺度敏感，決策樹較容易解釋，DBSCAN 適合含雜訊且形狀不規則的群集。評估時也要注意類別不平衡、資料切分與交叉驗證。真正的判斷不是「哪個模型最強」，而是哪個模型最符合資料特性、風險要求與部署限制。

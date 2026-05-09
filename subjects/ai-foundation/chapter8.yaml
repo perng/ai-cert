@@ -1,7 +1,7 @@
 questions:
 - id: 8001
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 生成式 AI 概述
+  section_title: 本章總結與考點提示
   text: 生成式 AI (Generative AI) 與鑑別式 AI (Discriminative AI) 最大的區別在於？
   type: multiple_choice
   options:
@@ -17,7 +17,7 @@ questions:
   usage: quiz
 - id: 8002
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 生成式模型原理
+  section_title: 變分自編碼器 (VAE, Variational Autoencoder)
   text: 變分自編碼器 (VAE) 的核心運作機制是？
   type: multiple_choice
   options:
@@ -33,7 +33,7 @@ questions:
   usage: quiz
 - id: 8003
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 生成式模型原理
+  section_title: 生成對抗網路 (GAN, Generative Adversarial Network)
   text: 生成對抗網路 (GAN) 由哪兩個部分組成？
   type: multiple_choice
   options:
@@ -49,7 +49,7 @@ questions:
   usage: quiz
 - id: 8004
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 生成式模型原理
+  section_title: 生成對抗網路 (GAN, Generative Adversarial Network)
   text: GAN 訓練過程中常見的問題「模式崩潰 (Mode Collapse)」是指？
   type: multiple_choice
   options:
@@ -65,7 +65,7 @@ questions:
   usage: quiz
 - id: 8005
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 生成式模型原理
+  section_title: 擴散模型 (Diffusion Models)
   text: 擴散模型 (Diffusion Models) 的生成過程可以比喻為？
   type: multiple_choice
   options:
@@ -81,7 +81,7 @@ questions:
   usage: quiz
 - id: 8006
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 生成式模型原理
+  section_title: 擴散模型 (Diffusion Models)
   text: Stable Diffusion 和 Midjourney 是基於哪種技術？
   type: multiple_choice
   options:
@@ -97,7 +97,7 @@ questions:
   usage: quiz
 - id: 8007
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 大型語言模型技術
+  section_title: 預訓練與微調 (Pre-training & Fine-tuning)
   text: 大型語言模型 (LLM) 的預訓練任務通常是？
   type: multiple_choice
   options:
@@ -113,7 +113,7 @@ questions:
   usage: quiz
 - id: 8008
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 大型語言模型技術
+  section_title: 預訓練與微調 (Pre-training & Fine-tuning)
   text: RLHF (Reinforcement Learning from Human Feedback) 的主要目的是？
   type: multiple_choice
   options:
@@ -129,7 +129,7 @@ questions:
   usage: quiz
 - id: 8009
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 大型語言模型技術
+  section_title: Scaling Laws (擴展定律)
   text: Scaling Laws (擴展定律) 指出，LLM 的性能與哪三個因素呈冪律關係？
   type: multiple_choice
   options:
@@ -145,7 +145,7 @@ questions:
   usage: quiz
 - id: 8010
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 大型語言模型技術
+  section_title: Scaling Laws (擴展定律)
   text: 「能力湧現 (Emergent Abilities)」是指 LLM 在什麼情況下會突然獲得新能力？
   type: multiple_choice
   options:
@@ -161,7 +161,7 @@ questions:
   usage: quiz
 - id: 8011
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 提示工程
+  section_title: 提示工程 (Prompt Engineering)
   text: Zero-shot Prompting (零樣本提示) 是指？
   type: multiple_choice
   options:
@@ -177,7 +177,7 @@ questions:
   usage: both
 - id: 8012
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 提示工程
+  section_title: 提示工程 (Prompt Engineering)
   text: Chain-of-Thought (CoT, 思維鏈) 提示技巧能顯著提升模型哪方面的能力？
   type: multiple_choice
   options:
@@ -193,7 +193,7 @@ questions:
   usage: both
 - id: 8013
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 提示工程
+  section_title: 提示工程 (Prompt Engineering)
   text: 「迷失在中間 (Lost in the Middle)」現象是指 LLM 容易忽略哪裡的資訊？
   type: multiple_choice
   options:
@@ -209,7 +209,7 @@ questions:
   usage: both
 - id: 8014
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: LLM 優化與應用
+  section_title: 檢索增強生成 (RAG, Retrieval-Augmented Generation)
   text: 檢索增強生成 (RAG) 主要解決了 LLM 的什麼問題？
   type: multiple_choice
   options:
@@ -225,7 +225,7 @@ questions:
   usage: both
 - id: 8015
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: LLM 優化與應用
+  section_title: 檢索增強生成 (RAG, Retrieval-Augmented Generation)
   text: RAG 技術的核心元件通常包含？
   type: multiple_choice
   options:
@@ -241,7 +241,7 @@ questions:
   usage: both
 - id: 8016
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: LLM 優化與應用
+  section_title: 模型壓縮 (Model Compression)
   text: 模型量化 (Quantization) 的主要好處是？
   type: multiple_choice
   options:
@@ -257,7 +257,7 @@ questions:
   usage: both
 - id: 8017
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: LLM 優化與應用
+  section_title: 模型壓縮 (Model Compression)
   text: 知識蒸餾 (Knowledge Distillation) 是指？
   type: multiple_choice
   options:
@@ -273,7 +273,7 @@ questions:
   usage: both
 - id: 8018
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 生成式模型原理
+  section_title: 變分自編碼器 (VAE, Variational Autoencoder)
   text: VAE 生成的圖像通常具有什麼特徵？
   type: multiple_choice
   options:
@@ -289,7 +289,7 @@ questions:
   usage: both
 - id: 8019
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 生成式模型原理
+  section_title: 生成對抗網路 (GAN, Generative Adversarial Network)
   text: GAN 的訓練過程是一種？
   type: multiple_choice
   options:
@@ -305,7 +305,7 @@ questions:
   usage: both
 - id: 8020
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 大型語言模型技術
+  section_title: 預訓練與微調 (Pre-training & Fine-tuning)
   text: 指令微調 (Instruction Tuning) 的目的是？
   type: multiple_choice
   options:
@@ -321,7 +321,7 @@ questions:
   usage: both
 - id: 8021
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 提示工程
+  section_title: 提示工程 (Prompt Engineering)
   text: Few-shot Prompting 的做法是？
   type: multiple_choice
   options:
@@ -337,7 +337,7 @@ questions:
   usage: both
 - id: 8022
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: LLM 優化與應用
+  section_title: 檢索增強生成 (RAG, Retrieval-Augmented Generation)
   text: 為什麼 RAG 比 Fine-tuning 更適合企業內部知識應用？
   type: multiple_choice
   options:
@@ -353,7 +353,7 @@ questions:
   usage: both
 - id: 8023
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 生成式模型原理
+  section_title: 擴散模型 (Diffusion Models)
   text: Diffusion Model 的缺點是？
   type: multiple_choice
   options:
@@ -369,7 +369,7 @@ questions:
   usage: both
 - id: 8024
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 大型語言模型技術
+  section_title: 預訓練與微調 (Pre-training & Fine-tuning)
   text: 基底模型 (Base Model) 通常不具備什麼能力？
   type: multiple_choice
   options:
@@ -385,7 +385,7 @@ questions:
   usage: both
 - id: 8025
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 提示工程
+  section_title: 提示工程 (Prompt Engineering)
   text: Tree of Thoughts (ToT) 提示法類似於？
   type: multiple_choice
   options:
@@ -401,7 +401,7 @@ questions:
   usage: both
 - id: 8026
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: LLM 優化與應用
+  section_title: 檢索增強生成 (RAG, Retrieval-Augmented Generation)
   text: 向量資料庫在 RAG 中的作用是計算什麼？
   type: multiple_choice
   options:
@@ -417,7 +417,7 @@ questions:
   usage: both
 - id: 8027
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: LLM 優化與應用
+  section_title: 模型壓縮 (Model Compression)
   text: 將 32-bit 浮點數權重轉換為 8-bit 整數的過程稱為？
   type: multiple_choice
   options:
@@ -433,7 +433,7 @@ questions:
   usage: both
 - id: 8028
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 生成式 AI 概述
+  section_title: 本章總結與考點提示
   text: 下列何者是生成式 AI 的應用？
   type: multiple_choice
   options:
@@ -449,7 +449,7 @@ questions:
   usage: both
 - id: 8029
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 生成式模型原理
+  section_title: 生成對抗網路 (GAN, Generative Adversarial Network)
   text: GAN 中的判別器 (Discriminator) 的目標是？
   type: multiple_choice
   options:
@@ -465,7 +465,7 @@ questions:
   usage: both
 - id: 8030
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 大型語言模型技術
+  section_title: 檢索增強生成 (RAG, Retrieval-Augmented Generation)
   text: LLM 的「幻覺 (Hallucination)」是指？
   type: multiple_choice
   options:
@@ -481,7 +481,7 @@ questions:
   usage: both
 - id: 8031
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 提示工程
+  section_title: 提示工程 (Prompt Engineering)
   text: Context Window (上下文視窗) 的大小限制了 LLM 的什麼能力？
   type: multiple_choice
   options:
@@ -497,7 +497,7 @@ questions:
   usage: both
 - id: 8032
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: LLM 優化與應用
+  section_title: 模型壓縮 (Model Compression)
   text: 知識蒸餾中的「軟標籤 (Soft Targets)」是指？
   type: multiple_choice
   options:
@@ -513,7 +513,7 @@ questions:
   usage: both
 - id: 8033
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 生成式模型原理
+  section_title: 變分自編碼器 (VAE, Variational Autoencoder)
   text: VAE 的潛在空間 (Latent Space) 具有什麼特性？
   type: multiple_choice
   options:
@@ -529,7 +529,7 @@ questions:
   usage: both
 - id: 8034
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 生成式模型原理
+  section_title: 擴散模型 (Diffusion Models)
   text: Diffusion Model 的前向擴散過程是？
   type: multiple_choice
   options:
@@ -545,7 +545,7 @@ questions:
   usage: both
 - id: 8035
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 大型語言模型技術
+  section_title: 預訓練與微調 (Pre-training & Fine-tuning)
   text: RLHF 的 3H 原則不包括？
   type: multiple_choice
   options:
@@ -561,7 +561,7 @@ questions:
   usage: both
 - id: 8036
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 提示工程
+  section_title: 提示工程 (Prompt Engineering)
   text: 在長文本中，最重要的指令應該放在哪裡？
   type: multiple_choice
   options:
@@ -577,7 +577,7 @@ questions:
   usage: both
 - id: 8037
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: LLM 優化與應用
+  section_title: 檢索增強生成 (RAG, Retrieval-Augmented Generation)
   text: RAG 系統中的「增強 (Augment)」步驟是指？
   type: multiple_choice
   options:
@@ -593,7 +593,7 @@ questions:
   usage: both
 - id: 8038
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: LLM 優化與應用
+  section_title: 模型壓縮 (Model Compression)
   text: INT8 量化相較於 FP32，模型大小大約縮小了幾倍？
   type: multiple_choice
   options:
@@ -609,7 +609,7 @@ questions:
   usage: both
 - id: 8039
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 生成式 AI 概述
+  section_title: 本章總結與考點提示
   text: 鑑別式 AI (Discriminative AI) 學習的是？
   type: multiple_choice
   options:
@@ -625,7 +625,7 @@ questions:
   usage: both
 - id: 8040
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 大型語言模型技術
+  section_title: 預訓練與微調 (Pre-training & Fine-tuning)
   text: 自我監督學習 (Self-Supervised Learning) 的特點是？
   type: multiple_choice
   options:
@@ -703,9 +703,9 @@ questions:
   - sec-ai-chapter8
   - sec-llm-technologies
   usage: both
-- id: 11422
+- id: '11422_1'
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 生成式 AI 原理
+  section_title: 歷屆考題
   text: 關於變分自編碼器（Variational Autoencoder, VAE）的運作流程，下 列何者敘述最為正確？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -716,14 +716,15 @@ questions:
   correct_index: 2
   explanation: 此題涉及 生成式 AI 原理 的核心概念。正確答案為「編碼器將資料轉換為潛在空間表示，解碼器再重建資料」。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter8
   - sec-generative-principles
   usage: both
-- id: 11426
+- id: '11426_1'
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: LLM 技術與應用
+  section_title: 歷屆考題
   text: 在深度學習模型的微調（Fine-tuning）過程中，可能出現所謂的「災 難性遺忘 （Catastrophic Forgetting） 」 。 此現象最可能造成哪種情況？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -734,6 +735,7 @@ questions:
   correct_index: 3
   explanation: 此題涉及 LLM 技術與應用 的核心概念。正確答案為「模型過度適應微調的資料分佈，逐漸遺忘先前預訓練所獲得的廣泛 知識，在原有任務或廣泛領域上表現變差」。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter8
@@ -741,7 +743,7 @@ questions:
   usage: both
 - id: 11408
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 生成式 AI 原理
+  section_title: 歷屆考題
   text: 為提升生成式 AI 系統回應的語境一致性，常會結合哪類模型技術？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -752,14 +754,15 @@ questions:
   correct_index: 1
   explanation: 此題涉及 生成式 AI 原理 的核心概念。正確答案為「條件語言模型（Conditional Language Model）」。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter8
   - sec-generative-principles
   usage: both
-- id: 11438
+- id: '11438_1'
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: LLM 技術與應用
+  section_title: 歷屆考題
   text: 某公司建置基於檢索增強生成（RAG）的知識查詢系統，需同時兼顧查 詢效能與資料的即時更新。近期發現回應內容偶爾過時，且每次更新文 件都需完整重建索引，導致系統在更新期間無法服務。若要解決此問題 並提升整體穩健性，下列哪項做法最適合？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -770,14 +773,15 @@ questions:
   correct_index: 2
   explanation: RAG (檢索增強生成) 結合了檢索系統與生成模型，能讓 LLM 參考外部知識庫回答問題，有效減少幻覺並確保資訊時效性。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter8
   - sec-llm-technologies
   usage: both
-- id: 11450
+- id: '11450_2'
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: LLM 技術與應用
+  section_title: 歷屆考題
   text: 某雲端服務公司計畫將大型語言模型部署於線上系統，並以批次推論  答案 題    目 （Batch Inference）方式處理每日上百萬筆用戶請求。專案團隊在評 估可能遇到的挑戰時，下列哪一項通常不會被視為批次推論階段的主 要難題？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -788,13 +792,14 @@ questions:
   correct_index: 0
   explanation: 此題涉及 LLM 技術與應用 的核心概念。正確答案為「如何確保訓練語料的涵蓋性與標註品質，以避免模型偏差影響輸 出」。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter8
   - sec-llm-technologies
   usage: both
 - chapter_title: 生成式 AI 與大型語言模型
-  section_title: 生成式模型原理
+  section_title: 生成對抗網路 (GAN, Generative Adversarial Network)
   text: 情境：GAN (生成對抗網路) 的訓練過程常被比喻為？
   type: multiple_choice
   options:
@@ -807,10 +812,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter8
   - sec-gan
-  id: 11451
+  id: '11451_2'
   usage: both
 - chapter_title: 生成式 AI 與大型語言模型
-  section_title: LLM 技術
+  section_title: 預訓練與微調 (Pre-training & Fine-tuning)
   text: 情境：ChatGPT 能夠流暢對話並遵循指令，主要是經過了哪個階段的訓練？
   type: multiple_choice
   options:
@@ -823,10 +828,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter8
   - sec-pretrain-finetune
-  id: 11452
+  id: '11452_2'
   usage: both
 - chapter_title: 生成式 AI 與大型語言模型
-  section_title: 生成式模型原理
+  section_title: 擴散模型 (Diffusion Models)
   text: 情境：擴散模型 (Diffusion Model) 生成圖片的原理是？
   type: multiple_choice
   options:
@@ -839,10 +844,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter8
   - sec-diffusion
-  id: 11453
+  id: '11453_2'
   usage: both
 - chapter_title: 生成式 AI 與大型語言模型
-  section_title: LLM 優化與應用架構
+  section_title: 檢索增強生成 (RAG, Retrieval-Augmented Generation)
   text: 情境：企業希望導入 LLM 來回答內部規章問題，但擔心模型會胡說八道 (幻覺)。最佳解決方案是？
   type: multiple_choice
   options:
@@ -855,10 +860,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter8
   - sec-rag
-  id: 11454
+  id: '11454_2'
   usage: both
 - chapter_title: 生成式 AI 與大型語言模型
-  section_title: LLM 技術
+  section_title: Scaling Laws (擴展定律)
   text: 情境：Scaling Laws 指出，要提升 LLM 的效能，應該？
   type: multiple_choice
   options:
@@ -871,10 +876,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter8
   - sec-scaling-laws
-  id: 11455
+  id: '11455_2'
   usage: both
 - chapter_title: 生成式 AI 與大型語言模型
-  section_title: LLM 技術
+  section_title: 提示工程 (Prompt Engineering)
   text: 情境：CoT (Chain-of-Thought) 提示工程技巧的主要目的是？
   type: multiple_choice
   options:
@@ -887,10 +892,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter8
   - sec-prompt-engineering
-  id: 11456
+  id: '11456_2'
   usage: both
 - chapter_title: 生成式 AI 與大型語言模型
-  section_title: 生成式模型原理
+  section_title: 生成對抗網路 (GAN, Generative Adversarial Network)
   text: 情境：GAN 訓練中常見的「模式崩潰 (Mode Collapse)」是指？
   type: multiple_choice
   options:
@@ -903,10 +908,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter8
   - sec-gan
-  id: 11457
+  id: '11457_2'
   usage: both
 - chapter_title: 生成式 AI 與大型語言模型
-  section_title: LLM 優化與應用架構
+  section_title: 模型壓縮 (Model Compression)
   text: 情境：模型量化 (Quantization) 將 FP32 轉為 INT8 的主要好處是？
   type: multiple_choice
   options:
@@ -919,10 +924,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter8
   - sec-model-compression
-  id: 11458
+  id: '11458_2'
   usage: both
 - chapter_title: 生成式 AI 與大型語言模型
-  section_title: LLM 技術
+  section_title: Scaling Laws (擴展定律)
   text: 情境：LLM 的「能力湧現 (Emergent Abilities)」是指？
   type: multiple_choice
   options:
@@ -935,10 +940,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter8
   - sec-scaling-laws
-  id: 11459
+  id: '11459_2'
   usage: both
 - chapter_title: 生成式 AI 與大型語言模型
-  section_title: 生成式模型原理
+  section_title: 變分自編碼器 (VAE, Variational Autoencoder)
   text: 情境：VAE (變分自編碼器) 生成的圖片通常有什麼特徵？
   type: multiple_choice
   options:
@@ -951,10 +956,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter8
   - sec-vae
-  id: 11460
+  id: '11460_2'
   usage: both
 - chapter_title: 生成式 AI 與大型語言模型
-  section_title: LLM 技術
+  section_title: 提示工程 (Prompt Engineering)
   text: 情境：Zero-shot Prompting 是指？
   type: multiple_choice
   options:
@@ -967,10 +972,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter8
   - sec-prompt-engineering
-  id: 11461
+  id: '11461_2'
   usage: both
 - chapter_title: 生成式 AI 與大型語言模型
-  section_title: LLM 優化與應用架構
+  section_title: 模型壓縮 (Model Compression)
   text: 情境：知識蒸餾 (Knowledge Distillation) 的目的是？
   type: multiple_choice
   options:
@@ -983,10 +988,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter8
   - sec-model-compression
-  id: 11462
+  id: '11462_2'
   usage: both
 - chapter_title: 生成式 AI 與大型語言模型
-  section_title: LLM 技術
+  section_title: 預訓練與微調 (Pre-training & Fine-tuning)
   text: 情境：預訓練 (Pre-training) 階段，LLM 主要進行什麼任務？
   type: multiple_choice
   options:
@@ -999,7 +1004,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter8
   - sec-pretrain-finetune
-  id: 11463
+  id: '11463_2'
   usage: both
 - chapter_title: 生成式 AI 與大型語言模型
   section_title: 生成式模型原理
@@ -1015,10 +1020,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter8
   - sec-generative-models
-  id: 11464
+  id: '11464_1'
   usage: both
 - chapter_title: 生成式 AI 與大型語言模型
-  section_title: LLM 優化與應用架構
+  section_title: 檢索增強生成 (RAG, Retrieval-Augmented Generation)
   text: 情境：RAG 系統中，向量資料庫的作用是？
   type: multiple_choice
   options:
@@ -1031,10 +1036,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter8
   - sec-rag
-  id: 11465
+  id: '11465_1'
   usage: both
 - chapter_title: 生成式 AI 與大型語言模型
-  section_title: LLM 技術
+  section_title: 提示工程 (Prompt Engineering)
   text: 情境：Few-shot Prompting 的做法是？
   type: multiple_choice
   options:
@@ -1047,10 +1052,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter8
   - sec-prompt-engineering
-  id: 11466
+  id: '11466_1'
   usage: both
 - chapter_title: 生成式 AI 與大型語言模型
-  section_title: 生成式模型原理
+  section_title: 擴散模型 (Diffusion Models)
   text: 情境：Stable Diffusion 屬於哪一類生成模型？
   type: multiple_choice
   options:
@@ -1066,7 +1071,7 @@ questions:
   id: 11467
   usage: both
 - chapter_title: 生成式 AI 與大型語言模型
-  section_title: LLM 技術
+  section_title: 預訓練與微調 (Pre-training & Fine-tuning)
   text: 情境：RLHF 中的 Reward Model 是由誰訓練的？
   type: multiple_choice
   options:
@@ -1082,7 +1087,7 @@ questions:
   id: 11468
   usage: both
 - chapter_title: 生成式 AI 與大型語言模型
-  section_title: LLM 優化與應用架構
+  section_title: 檢索增強生成 (RAG, Retrieval-Augmented Generation)
   text: 情境：LLM 的「幻覺 (Hallucination)」是指？
   type: multiple_choice
   options:
@@ -1098,7 +1103,7 @@ questions:
   id: 11469
   usage: both
 - chapter_title: 生成式 AI 與大型語言模型
-  section_title: LLM 技術
+  section_title: 提示工程 (Prompt Engineering)
   text: 情境：Lost in the Middle 現象是指 LLM 容易忽略哪裡的資訊？
   type: multiple_choice
   options:
@@ -1131,7 +1136,7 @@ questions:
   usage: quiz
 - id: 8072
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 生成式模型原理
+  section_title: 影響生成模型效果的關鍵因素
   text: 下列哪一組因素最能影響生成模型的最終效果？
   type: multiple_choice
   options:
@@ -1164,7 +1169,7 @@ questions:
   usage: quiz
 - id: 8074
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 鑑別式 AI 與生成式 AI 的整合應用
+  section_title: 2. 多模態與即時回饋
   text: 在內容生成與審核流程中，鑑別式 AI 通常可以如何支援生成式 AI？
   type: multiple_choice
   options:
@@ -1180,7 +1185,7 @@ questions:
   usage: quiz
 - id: 8075
   chapter_title: 生成式 AI 與大型語言模型
-  section_title: 鑑別式 AI 與生成式 AI 的整合應用
+  section_title: 3. 整合應用的挑戰
   text: 生成對抗網路 (GAN) 在訓練時可能出現模式崩潰或梯度消失。下列哪一項是常見的改良方向？
   type: multiple_choice
   options:
@@ -1205,9 +1210,11 @@ questions:
   correct_index: 1
   explanation: 本題測驗相關核心概念。正確解答為「大型語言模型（Large Language Model, LLM）」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-25
   text: 在大型語言模型（LLM）的推論服務中，常透過請求批次處理（Batching）來提升系統效能。關於批次處理（Batching）機制的影響，下列敘述何者最正確？    （115年第一梯次）
   type: multiple_choice
@@ -1225,9 +1232,11 @@ questions:
 
     分情境下可能對單筆請求延遲造成影響」，因為這最符合題幹中描述的情境與技術特性。'
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-41
   text: 在大型語言模型（LLM）的效能優化中，Flash Attention 常被用來改善 Transformer注意力機制的運算效率。關於 Flash Attention 的主要效益，下列敘述何者最正確？ （115年第一梯次）
   type: multiple_choice
@@ -1245,6 +1254,8 @@ questions:
 
     度與資源使用效率」，因為這最符合題幹中描述的情境與技術特性。'
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: 歷屆考題

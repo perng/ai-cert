@@ -1359,7 +1359,7 @@ questions:
   - sec-storage-solutions
   id: 5185
   usage: both
-- id: 5185
+- id: '5185_1'
   chapter_title: 大數據生態系統
   text: 若某數據點的Z分數(Z-Score) = 2,請問代表下列哪一種意涵? (114年第二梯次)
   type: multiple_choice
@@ -1371,6 +1371,7 @@ questions:
   correct_index: 3
   explanation: Z-Score = 2 代表該數據點比平均值高 2 個標準差。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
 - id: 5186
@@ -1385,6 +1386,7 @@ questions:
   correct_index: 1
   explanation: describe() 函數會列出包含平均值、標準差、最小值、最大值等敘述性統計量。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
 - id: 5187
@@ -1399,6 +1401,7 @@ questions:
   correct_index: 1
   explanation: 右偏態 (Right-skewed) 或正偏態 (Positive Skewness) 的偏態係數 > 0。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
 - id: 5188
@@ -1413,6 +1416,7 @@ questions:
   correct_index: 1
   explanation: 累積分佈函數 (CDF) 是機率密度函數 (PDF) 的積分，代表隨機變數小於或等於某數值的機率。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
 - id: 5189
@@ -1427,6 +1431,7 @@ questions:
   correct_index: 1
   explanation: Label Encoding 會將類別轉換為整數 (0, 1, 2...)，模型可能會誤以為這些數字具有大小順序關係。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
 - id: 5190
@@ -1441,6 +1446,7 @@ questions:
   correct_index: 2
   explanation: 標準化 (Standardization) 是將資料轉換為平均值 0、標準差 1 的分佈，並非壓縮至 0 到 1 之間 (那是 Min-Max Normalization)。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
 - id: 5191
@@ -1455,6 +1461,7 @@ questions:
   correct_index: 2
   explanation: 原子性 (Atomicity) 確保交易中的所有操作要麼全部完成，要麼全部不執行 (All or Nothing)。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
 - id: 5192
@@ -1469,6 +1476,7 @@ questions:
   correct_index: 1
   explanation: 利用現有特徵透過運算產生新特徵 (如銷售額/瀏覽次數) 屬於特徵衍生 (Feature Derivation)。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
 - id: 5193
@@ -1483,6 +1491,7 @@ questions:
   correct_index: 2
   explanation: 穩健縮放 (Robust Scaling) 使用中位數與四分位距 (IQR) 進行縮放，較不易受極端值 (Outliers) 影響。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
 - id: 5194
@@ -1497,6 +1506,7 @@ questions:
   correct_index: 2
   explanation: 異常偵測常用於金融詐欺偵測、網路入侵偵測等情境，即時找出與常態行為不同的可疑紀錄。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
 - id: 5195
@@ -1511,6 +1521,7 @@ questions:
   correct_index: 2
   explanation: 大數據平台搭配即時資料分析技術 (如 Spark Streaming, Flink) 最適合處理大量且需即時監控的 IoT 數據。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
 - id: 5196
@@ -1525,6 +1536,7 @@ questions:
   correct_index: 0
   explanation: 隨機過採樣 (Random Oversampling) 會重複複製少數類樣本，容易導致模型對這些特定樣本過擬合。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
 - id: 5197
@@ -1539,6 +1551,7 @@ questions:
   correct_index: 3
   explanation: 同態加密 (Homomorphic Encryption) 允許在加密資料上直接進行運算，解密後的結果與在明文上運算相同。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
 - id: 5198
@@ -1553,6 +1566,7 @@ questions:
   correct_index: 3
   explanation: 正規化吉尼不純度 (Normalized Gini Impurity) 在二元分類且分佈均勻時最大值為 1 (若未正規化通常為 0.5)。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
 - id: 5199
@@ -1567,6 +1581,7 @@ questions:
   correct_index: 2
   explanation: 卜瓦松分佈 (Poisson Distribution) 適合描述單位時間內隨機事件發生的次數 (如每分鐘來電數)。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
 - id: 5200
@@ -1581,9 +1596,10 @@ questions:
   correct_index: 0
   explanation: Z-score = (3200 - 2000) / 400 = 3。|3| ≥ 3，故標記為異常值。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5201
+- id: '5201_1'
   chapter_title: 大數據生態系統
   text: 某電商公司欲利用顧客行為資料建立消費預測模型,其中「會員等級」欄位包含「一般、白金、黑卡」三種類別。若模型採用梯度提升樹(Gradient Boosting Tree)演算法,資料科學家在進行特徵編碼時應特別注意下列何種情況? (114年第二梯次)
   type: multiple_choice
@@ -1595,9 +1611,10 @@ questions:
   correct_index: 1
   explanation: 梯度提升樹 (GBT) 雖然對數值特徵較穩健，但若類別間無序，Label Encoding 仍可能引入不必要的順序偏差，需謹慎評估。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5202
+- id: '5202_1'
   chapter_title: 大數據生態系統
   text: 某人工智慧團隊使用分散式資料庫(Distributed Database)儲存模型訓練資料,並在更新訓練樣本時啟用多節點交易。若其中一個節點在交易過程中發生錯誤,但系統仍確保整體資料不會出現部分更新、最終狀態維持一致,下列何者最能說明此現象? (114年第二梯次)
   type: multiple_choice
@@ -1609,9 +1626,10 @@ questions:
   correct_index: 0
   explanation: 原子性 (Atomicity) 保證分散式交易的完整性，不會發生只更新部分節點的情況。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5203
+- id: '5203_1'
   chapter_title: 大數據生態系統
   text: 某製造企業導入上萬台物聯網(IoT)感測器以進行設備健康監測。系統需在毫秒級回應異常事件,並同時將完整資料保留於雲端供後續 AI 模型訓練與分析。若企業希望兼顧即時性、資料完整性與可擴展性,下列哪一種資料流程設計最符合此目標? (114年第二梯次)
   type: multiple_choice
@@ -1623,9 +1641,10 @@ questions:
   correct_index: 2
   explanation: 典型的即時大數據架構：感測器 -> 邊緣/串流處理 -> 資料湖/倉儲 -> 推論。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5204
+- id: '5204_1'
   chapter_title: 大數據生態系統
   text: 某銀行計畫將信用風險評估模型部署至雲端平台,以便即時分析客戶交易行為。由於涉及大量敏感金融資料,銀行要求雲端服務商在不解密原始資料的情況下仍能執行模型運算。為達成此目標,最適合採用下列哪一項技術? (114年第二梯次)
   type: multiple_choice
@@ -1637,9 +1656,10 @@ questions:
   correct_index: 3
   explanation: 同態加密技術可滿足雲端運算不解密原始資料的需求。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5205
+- id: '5205_1'
   chapter_title: 大數據生態系統
   text: 某資料分析師設計在業務績效報告時,希望單一頁面中同時呈現多區域不同產品線的銷售趨勢變化,並確保主管能在短時間內掌握整體資料走向。若依據 Edward Rolf Tufte 的數據密度(Data Density)原則,下列哪一種設計方式最能符合該概念? (114年第二梯次)
   type: multiple_choice
@@ -1651,9 +1671,10 @@ questions:
   correct_index: 1
   explanation: 在同一圖表中整合多條折線並用顏色區分，能有效比較多區域趨勢，符合高數據密度原則。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5206
+- id: '5206_1'
   chapter_title: 大數據生態系統
   text: 某投資研究員希望分析四檔科技類股 (A, B, C, D) 每日報酬率的變化趨勢,以判斷這些股票之間是否存在高度相關性與共變動性,並評估投資組合分散風險的程度。若研究員希望以單一圖表快速呈現各股票間的關聯強度與方向,下列哪一種視覺化呈現方式最適合? (114年第二梯次)
   type: multiple_choice
@@ -1665,9 +1686,10 @@ questions:
   correct_index: 3
   explanation: 熱力圖 (Heatmap) 搭配相關係數矩陣是觀察多變數間兩兩相關性的最佳視覺化工具。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5207
+- id: '5207_1'
   chapter_title: 大數據生態系統
   text: 某研究團隊以單樣本t檢定(one-sample t-test)檢驗「新行銷策略後的平均月銷售額是否與原本的100萬元不同」,顯著水準設定為 a = 0.05。檢定結果顯示:p值=0.08,且95%信賴區間為[95萬元,108萬元]。根據上述結果,下列敘述何者正確? (114年第二梯次)
   type: multiple_choice
@@ -1679,9 +1701,10 @@ questions:
   correct_index: 2
   explanation: 100 萬元落在 95% 信賴區間 [95, 108] 內，表示檢定結果不顯著，無法拒絕虛無假設。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5208
+- id: '5208_1'
   chapter_title: 大數據生態系統
   text: 某企業建置生成式 AI 系統,利用大量客服紀錄與產品評論資料訓練語言模型,以自動生成客服回覆與知識摘要。由於資料來源多樣,且包含非結構化文字、影像與表格資訊,團隊希望在不降低模型效能的前提下,提升資料處理效率與一致性,下列哪一種資料處理策略最適合? (114年第二梯次)
   type: multiple_choice
@@ -1693,9 +1716,10 @@ questions:
   correct_index: 0
   explanation: 建立資料湖並使用分散式框架 (如 Spark) 是處理多樣化、大規模非結構化資料的標準大數據策略。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5209
+- id: '5209_1'
   chapter_title: 大數據生態系統
   text: 某電商資料團隊繪製顧客單筆消費金額的箱型圖後發現:四分位距(IQR)範圍極小,但上鬚線拉得很長,且在高金額區域有多筆離群值。若希望協助行銷部門依據消費層級設計分群策略,下列哪一種視覺化方式最有助於凸顯不同消費層級間的差異? (114年第二梯次)
   type: multiple_choice
@@ -1707,9 +1731,10 @@ questions:
   correct_index: 0
   explanation: 對數刻度 (Log Scale) 能壓縮高數值區域，讓長尾分佈或差異極大的數據在視覺上更易於比較。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5210
+- id: '5210_1'
   chapter_title: 大數據生態系統
   text: 某串流影音平台運用關聯規則學習(Association Rule Learning)分析用戶的觀影行為,發現若使用者觀看了科幻影集,則有較高機率接著觀看超級英雄電影。分析顯示,同時觀看這兩種類型的使用者約佔全部觀影紀錄的12%,而觀看科幻影集的使用者中,有50%也觀看了超級英雄電影,該規則的提升度(Lift)為1.8。根據上述資訊,下列哪一項推論最為正確? (114年第二梯次)
   type: multiple_choice
@@ -1721,9 +1746,10 @@ questions:
   correct_index: 2
   explanation: 信賴度 (Confidence) = P(B|A) = 50%，表示看了科幻影集的人有一半也會看超級英雄電影，關聯性強。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5211
+- id: '5211_1'
   chapter_title: 大數據生態系統
   text: 某金融科技公司分析每日上億筆交易資料,以監控客戶轉帳金額分佈與異常波動。由於資料量極大,為兼顧效率與準確度,團隊決定採用「近似分位數(Approximate Quantile)」方法進行資料摘要統計。下列何者最能正確反映該技術的核心目的? (114年第二梯次)
   type: multiple_choice
@@ -1735,9 +1761,10 @@ questions:
   correct_index: 3
   explanation: 近似分位數 (Approximate Quantile) 演算法 (如 t-digest) 能在極低誤差下快速估算大數據的分位數，適合即時分析。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5212
+- id: '5212_1'
   chapter_title: 大數據生態系統
   text: 若在高維度(>500維)的資料上應用DBSCAN(Density-Based Spatial Clustering of Applications with Noise)演算法,卻發現所有資料點皆被判定為雜訊(Noise),下列何者為最有可能的原因? (114年第二梯次)
   type: multiple_choice
@@ -1749,9 +1776,10 @@ questions:
   correct_index: 0
   explanation: 在高維空間中，距離度量會失效 (Curse of Dimensionality)，導致所有點之間的距離趨於一致，難以區分群集與雜訊。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5213
+- id: '5213_1'
   chapter_title: 大數據生態系統
   text: 某團隊在開發風險評估模型時,使用主成分分析(Principal Component Analysis, PCA)進行降維。輸入資料包含三個數值欄位:「交易金額(單位:新台幣)」、「交易次數(次/月)」與「年齡(歲)」,其數值量級分別約為10^5、10^1與10^2。分析人員直接將原始數據帶入 PCA,結果第一主成分(PC1)幾乎完全由「交易金額」主導。下列哪一項作法或判斷最合理? (114年第二梯次)
   type: multiple_choice
@@ -1763,9 +1791,10 @@ questions:
   correct_index: 3
   explanation: PCA 對變數的尺度非常敏感，變異數大的變數會主導主成分，因此必須先進行標準化。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5214
+- id: '5214_1'
   chapter_title: 大數據生態系統
   text: 某行銷團隊想了解「廣告預算」與「銷售金額」之間的關聯程度。經繪製散佈圖後發現兩者呈現明顯線性趨勢,且資料中無明顯離群值(Outliers)。若希望衡量兩者之間線性關係的強度與方向,下列哪一種方法最適合? (114年第二梯次)
   type: multiple_choice
@@ -1777,9 +1806,10 @@ questions:
   correct_index: 2
   explanation: 皮爾森相關係數 (Pearson Correlation) 用於衡量兩個連續變數間的線性關係強度。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5215
+- id: '5215_1'
   chapter_title: 大數據生態系統
   text: 某電商團隊觀察到,每位顧客對廣告推播的點擊行為可視為一次伯努利試驗(Bernoulli Trial),單次點擊成功機率為p=0.4。當推播對象擴增至5,000位顧客時,團隊想快速預估「成功點擊總數」的分佈情形,以進行模型效能模擬與預測。若希望以常態分佈(Normal Distribution)近似原始分佈,下列哪一項判斷最為合理? (114年第二梯次)
   type: multiple_choice
@@ -1791,9 +1821,10 @@ questions:
   correct_index: 1
   explanation: 二項分佈近似常態分佈的條件通常是 np ≥ 5 且 n(1-p) ≥ 5。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5216
+- id: '5216_1'
   chapter_title: 大數據生態系統
   text: 某電信公司導入生成式AI客服系統,利用過去對話紀錄與用戶行為資料訓練語言模型,在資料治理與合規審查過程中,團隊發現模型可能會在回答中生成包含真實姓名、電話或交易資訊的內容。為確保系統符合個資法及生成式AI的安全與隱私要求,下列哪一項作法最符合實務可行及法規原則? (114年第二梯次)
   type: multiple_choice
@@ -1805,9 +1836,10 @@ questions:
   correct_index: 0
   explanation: 資料匿名化 (Anonymization) 是保護個資的常見合規手段，確保輸出內容不含可識別個人資訊。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5217
+- id: '5217_1'
   chapter_title: 大數據生態系統
   text: 某金融機構的量化分析師在建立資產風險評估模型時,發現報酬率資料分佈明顯非對稱,且出現多次極端損失事件,使得傳統假設常態分佈的模型無法準確反映真實風險。若希望在不依賴常態分佈假設的前提下,採取更能捕捉資料極端情況的建模策略,下列哪一種方法最為合適? (114年第二梯次)
   type: multiple_choice
@@ -1819,9 +1851,10 @@ questions:
   correct_index: 3
   explanation: 分位數回歸 (Quantile Regression) 能針對分佈的尾端 (如 95% 或 99% 分位數) 進行建模，適合評估極端風險。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5218
+- id: '5218_1'
   chapter_title: 大數據生態系統
   text: 在圖形資料庫(Graph Database)中建模社群平台資料時,若每筆「按讚」行為都包含時間戳記(Timestamp)與裝置類型(Device Type)等資訊。若希望同時保留使用者與貼文之間的互動關係,並能有效查詢「按讚」的行為屬性,下列哪一種設計方式最為合適? (114年第二梯次)
   type: multiple_choice
@@ -1833,9 +1866,10 @@ questions:
   correct_index: 1
   explanation: 在圖資料庫中，將互動行為 (如按讚) 設為邊的屬性，能有效保留關係及其細節 (時間、裝置)。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5219
+- id: '5219_1'
   chapter_title: 大數據生態系統
   text: 某企業欲建構知識圖譜(Knowledge Graph),以整合內部的研究報告、專利資料與專家知識,並支援語意查詢與關聯推理。若希望模型能具備良好的語意擴展性與高效推理能力,下列哪一種圖模型設計最為合適? (114年第二梯次)
   type: multiple_choice
@@ -1847,9 +1881,10 @@ questions:
   correct_index: 1
   explanation: RDF (Resource Description Framework) 三元組是知識圖譜的標準資料結構，具備良好的語意擴展性。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5220
+- id: '5220_1'
   chapter_title: 大數據生態系統
   text: 某研究人員欲使用線性迴歸模型(Linear Regression Model)分析變數Y與X之間的關係,但發現Y的分佈明顯右偏,且其變異數隨X的增大而增加。為滿足模型假設並提升配適效果,下列哪一種前處理方法最為合適? (114年第二梯次)
   type: multiple_choice
@@ -1861,9 +1896,10 @@ questions:
   correct_index: 1
   explanation: 當變異數隨 X 增大而增加 (異質變異性)，對 Y 進行 Box-Cox 轉換可穩定變異數並改善常態性。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5221
+- id: '5221_1'
   chapter_title: 大數據生態系統
   text: 若開發一個用於罕見疾病自動診斷的分類模型,目前資料集中確診樣本僅佔不到1%,且因為標註成本高,短期內無法取得更多資料。在此情況下,若希望提升模型對少數類的偵測能力,同時避免過擬合,下列哪一種策略最為合理? (114年第二梯次)
   type: multiple_choice
@@ -1875,9 +1911,10 @@ questions:
   correct_index: 2
   explanation: SMOTE (Synthetic Minority Over-sampling Technique) 透過插值生成合成樣本，能平衡類別分佈並減輕過擬合風險。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5222
+- id: '5222_1'
   chapter_title: 大數據生態系統
   text: 一家製造廠評估新生產線推出後,產品良率是否較原生產線提升。工程師分別從兩條生產線各抽樣 100件產品,原生產線良率為95%,新生產線為97%。若欲檢定兩條生產線良率的差異是否具有統計意義,下列哪一種方法最為合適? (114年第二梯次)
   type: multiple_choice
@@ -1889,9 +1926,10 @@ questions:
   correct_index: 1
   explanation: 比較兩個獨立樣本的比例 (良率) 差異，應使用雙比例 Z 檢定 (Two-proportion Z-test)。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5223
+- id: '5223_1'
   chapter_title: 大數據生態系統
   text: 若評估一個新開發的腫瘤分類模型,其資料集中有80%的樣本來自良性病例。若直接使用5-fold交叉驗證(Cross-Validation) 進行模型評估,可能導致模型效能評估出現偏差,為避免此問題,下列哪一種作法最合適? (114年第二梯次)
   type: multiple_choice
@@ -1903,9 +1941,10 @@ questions:
   correct_index: 3
   explanation: 分層交叉驗證 (Stratified K-Fold) 能確保每一折中的類別比例與原始資料一致，避免因取樣偏差影響評估。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5224
+- id: '5224_1'
   chapter_title: 大數據生態系統
   text: '請參考附圖,下列虛擬程式碼(pseudocode)最可能是在描述何種驗證法? Input: data_set, model_training_function, model_evaluation_function Algorithm: 2. 對 i=1 到N: a. 將第i 筆資料作為測試集 test_data b. 將其餘 N-1 筆資料作為訓練集 train_data c. 訓練模型... d. 預測... (114年第二梯次)'
   type: multiple_choice
@@ -1917,9 +1956,10 @@ questions:
   correct_index: 1
   explanation: 該演算法描述的是留一交叉驗證 (Leave-One-Out Cross Validation, LOOCV)，每次取一筆當測試，其餘當訓練。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5225
+- id: '5225_1'
   chapter_title: 大數據生態系統
   text: '請參考附圖,下列虛擬程式碼(pseudocode)最可能是在描述何種演算法? Input: data_points, X(群數) Algorithm:
 
@@ -1937,9 +1977,10 @@ questions:
   correct_index: 0
   explanation: 該演算法描述的是 K-means 分群：隨機中心 -> 分配 -> 更新中心 -> 收斂。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5226
+- id: '5226_1'
   chapter_title: 大數據生態系統
   text: '考慮某生產線每小時出現瑕疵品的個數符合卜瓦松分佈(Poisson Distribution),已知平均每小時產生5個瑕疵品,附圖程式碼展示資料處理,請問下列敘述何者正確? Code: print(poisson.pmf(5, lambda_poisson)) (114年第二梯次)'
   type: multiple_choice
@@ -1951,9 +1992,10 @@ questions:
   correct_index: 2
   explanation: poisson.pmf(k, lambda) 計算的是發生恰好 k 次事件的機率。卜瓦松分佈假設事件獨立且平均發生率固定。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5227
+- id: '5227_1'
   chapter_title: 大數據生態系統
   text: '(情境：vgsales.csv 資料包含遊戲銷售數據。Year欄位為float64) 分析師在載入資料後,檢視 Year 欄位的資料型態,發現它是float64,而非一般年份常用的整數。他想了解這樣的情形為什麼會發生。請問下列哪些原因可能導致這種狀況? 原因A: CSV檔中 Year 欄位有缺失值(NaN),導致Pandas自動將整欄轉為浮點數。 原因B: CSV檔中的年份資料原本是字串,Pandas 轉換時出錯。 原因C: Pandas預設會將所有數值型態讀取為float64。 原因D: CSV檔中的年份資料可能包含小數點(例如2006.0),因此被視為浮點數。 (114年第二梯次)'
   type: multiple_choice
@@ -1965,9 +2007,10 @@ questions:
   correct_index: 1
   explanation: CSV 中的 Year 若有缺失值 (NaN)，Pandas 會將整欄強制轉為 float (因為 NaN 是 float)。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5228
+- id: '5228_1'
   chapter_title: 大數據生態系統
   text: 研究團隊接下來想要將 Year 欄位轉換為整數型態,以便後續進行年份趨勢分析。考慮到資料中可能包含缺失值(NaN),請選出最合適的轉換方式。 (114年第二梯次)
   type: multiple_choice
@@ -1979,9 +2022,10 @@ questions:
   correct_index: 3
   explanation: Int64 (大寫 I) 是 Pandas 的可空整數型態 (Nullable Integer)，支援 NaN 且保持整數特性。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5229
+- id: '5229_1'
   chapter_title: 大數據生態系統
   text: 為了觀察各遊戲平台的市場表現,分析師想要統計每個平台的全球銷售總額,並以長條圖呈現。請選出最能正確實現此分析的程式碼。 (114年第二梯次)
   type: multiple_choice
@@ -1993,9 +2037,10 @@ questions:
   correct_index: 0
   explanation: groupby("Platform")["Global_Sales"].sum() 計算各平台總銷售額，再 plot(kind="bar") 繪製長條圖。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5230
+- id: '5230_1'
   chapter_title: 大數據生態系統
   text: 團隊希望比較北美、歐洲、日本及其他地區的整體銷售比例,並使用 seaborn 套件以長條圖的形式進行可視化分析。請選出能正確顯示這些地區銷售總額比例的程式碼。 (114年第二梯次)
   type: multiple_choice
@@ -2007,9 +2052,10 @@ questions:
   correct_index: 2
   explanation: sns.barplot 需指定 x, y。若要比較多個欄位 (NA, EU, JP...)，需先 melt 轉長格式，再繪圖。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5231
+- id: '5231_1'
   chapter_title: 大數據生態系統
   text: 研究團隊想要知道在北美地區(NA)銷售成績最好的遊戲前五名,並希望以seaborn 的條狀圖呈現結果。請選出能正確完成這項分析的程式碼。 (114年第二梯次)
   type: multiple_choice
@@ -2021,9 +2067,10 @@ questions:
   correct_index: 1
   explanation: data.nlargest(5, "NA_Sales") 取前五名，再用 sns.barplot 繪製。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5232
+- id: '5232_1'
   chapter_title: 大數據生態系統
   text: 情境：marketing.csv 銷售資料迴歸分析。使用 df.describe() 觀察統計量， 根據上述結果,下列何者正確? (114年第二梯次)
   type: multiple_choice
@@ -2035,9 +2082,10 @@ questions:
   correct_index: 3
   explanation: describe() 輸出中，25% 對應 Q1，75% 對應 Q3。選項 D 指出 Q1 為 89.25 (假設對應圖表數據)。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
-- id: 5233
+- id: '5233_1'
   chapter_title: 大數據生態系統
   text: '參考下圖計算各變數的遺漏值(NaN)個數結果,下列何者正確? 選項A: df.isnull().sum() 選項B: df.isNaN().sum() 選項C: df.isna().sum() 選項D: df.isnan().sum() (114年第二梯次)'
   type: multiple_choice
@@ -2049,11 +2097,12 @@ questions:
   correct_index: 2
   explanation: Pandas 中 isnull() 與 isna() 功能相同，皆可用於偵測缺失值。
   tags:
+  - sec-past-exam
   - chap-m3-ch1
   usage: mock
 - id: 5566
   chapter_title: 大數據生態系統
-  section_title: 資料湖倉與資料版本控制
+  section_title: 儲存解決方案
   text: 資料湖倉 (Data Lakehouse) 相較於單純資料湖，最主要補強了哪一類能力？
   type: multiple_choice
   options:

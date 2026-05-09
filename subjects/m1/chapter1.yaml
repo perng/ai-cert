@@ -1,7 +1,7 @@
 questions:
 - id: 3101
   chapter_title: 人工智慧數學基礎
-  section_title: 敘述統計
+  section_title: 機率與統計
   text: 在敘述統計中，哪一個指標最容易受到極端值 (Outliers) 的影響？
   type: multiple_choice
   options:
@@ -17,7 +17,7 @@ questions:
   usage: quiz
 - id: 3102
   chapter_title: 人工智慧數學基礎
-  section_title: 敘述統計
+  section_title: 機率與統計
   text: 變異數 (Variance) 與標準差 (Standard Deviation) 的關係為何？
   type: multiple_choice
   options:
@@ -33,7 +33,7 @@ questions:
   usage: quiz
 - id: 3103
   chapter_title: 人工智慧數學基礎
-  section_title: 機率分佈
+  section_title: 機率與統計
   text: 根據「68-95-99.7 法則」，在常態分佈中，約有多少比例的數據落在平均值正負兩個標準差 ($\mu \pm 2\sigma$) 範圍內？
   type: multiple_choice
   options:
@@ -49,7 +49,7 @@ questions:
   usage: quiz
 - id: 3104
   chapter_title: 人工智慧數學基礎
-  section_title: 機率分佈
+  section_title: 機率與統計
   text: 哪一種機率分佈最適合用來描述「投擲一枚硬幣 10 次，出現正面 5 次的機率」？
   type: multiple_choice
   options:
@@ -65,7 +65,7 @@ questions:
   usage: quiz
 - id: 3105
   chapter_title: 人工智慧數學基礎
-  section_title: 假設檢定
+  section_title: 機率與統計
   text: 在假設檢定中，p-value 代表什麼意義？
   type: multiple_choice
   options:
@@ -161,7 +161,7 @@ questions:
   usage: quiz
 - id: 3111
   chapter_title: 人工智慧數學基礎
-  section_title: 機率分佈
+  section_title: 機率與統計
   text: 貝氏定理 (Bayes' Theorem) 的核心公式是？
   type: multiple_choice
   options:
@@ -241,7 +241,7 @@ questions:
   usage: both
 - id: 3116
   chapter_title: 人工智慧數學基礎
-  section_title: 機率分佈
+  section_title: 機率與統計
   text: 兩個事件 A 和 B 獨立 (Independent) 意味著？
   type: multiple_choice
   options:
@@ -257,7 +257,7 @@ questions:
   usage: both
 - id: 3117
   chapter_title: 人工智慧數學基礎
-  section_title: 機率分佈
+  section_title: 機率與統計
   text: 期望值 (Expectation) $E[X]$ 在幾何上對應於機率分佈的？
   type: multiple_choice
   options:
@@ -305,7 +305,7 @@ questions:
   usage: both
 - id: 3120
   chapter_title: 人工智慧數學基礎
-  section_title: 假設檢定
+  section_title: 機率與統計
   text: 型一錯誤 (Type I Error) 又稱為？
   type: multiple_choice
   options:
@@ -321,7 +321,7 @@ questions:
   usage: both
 - id: 3121
   chapter_title: 人工智慧數學基礎
-  section_title: 假設檢定
+  section_title: 機率與統計
   text: 顯著水準 (Significance Level) $\alpha$ 通常設定為？
   type: multiple_choice
   options:
@@ -353,7 +353,7 @@ questions:
   usage: both
 - id: 3123
   chapter_title: 人工智慧數學基礎
-  section_title: 機率分佈
+  section_title: 機率與統計
   text: 中央極限定理 (Central Limit Theorem) 指出，當樣本數夠大時，樣本平均數的抽樣分佈會趨近於？
   type: multiple_choice
   options:
@@ -417,7 +417,7 @@ questions:
   usage: both
 - id: 3127
   chapter_title: 人工智慧數學基礎
-  section_title: 機率分佈
+  section_title: 機率與統計
   text: 條件機率 $P(A|B)$ 的定義是？
   type: multiple_choice
   options:
@@ -433,7 +433,7 @@ questions:
   usage: both
 - id: 3128
   chapter_title: 人工智慧數學基礎
-  section_title: 假設檢定
+  section_title: 機率與統計
   text: 對立假設 (Alternative Hypothesis, $H_1$) 通常代表？
   type: multiple_choice
   options:
@@ -481,7 +481,7 @@ questions:
   usage: both
 - id: 3131
   chapter_title: 人工智慧數學基礎
-  section_title: 機率分佈
+  section_title: 機率與統計
   text: 伯努利試驗 (Bernoulli Trial) 的特點是？
   type: multiple_choice
   options:
@@ -529,7 +529,7 @@ questions:
   usage: both
 - id: 3134
   chapter_title: 人工智慧數學基礎
-  section_title: 假設檢定
+  section_title: 機率與統計
   text: 雙尾檢定 (Two-tailed Test) 用於檢驗？
   type: multiple_choice
   options:
@@ -577,7 +577,7 @@ questions:
   usage: both
 - id: 3137
   chapter_title: 人工智慧數學基礎
-  section_title: 機率分佈
+  section_title: 機率與統計
   text: 聯合機率 (Joint Probability) $P(A, B)$ 表示？
   type: multiple_choice
   options:
@@ -609,7 +609,7 @@ questions:
   usage: both
 - id: 3139
   chapter_title: 人工智慧數學基礎
-  section_title: 假設檢定
+  section_title: 機率與統計
   text: 自由度 (Degrees of Freedom) 通常與什麼有關？
   type: multiple_choice
   options:
@@ -1041,7 +1041,7 @@ questions:
   usage: both
 - id: 3166
   chapter_title: 人工智慧數學基礎
-  section_title: 條件機率與貝氏定理
+  section_title: 機率與統計
   text: 貝氏定理在機器學習中的核心用途為何？
   type: multiple_choice
   options:
@@ -1057,7 +1057,7 @@ questions:
   usage: both
 - id: 3167
   chapter_title: 人工智慧數學基礎
-  section_title: 損失函數與非凸最佳化
+  section_title: 微積分與最佳化
   text: 若迴歸資料含有明顯離群值，且希望損失函數不要過度放大大誤差，下列何者通常比 MSE 更穩健？
   type: multiple_choice
   options:

@@ -254,17 +254,22 @@ label: chap-ai-foundation-chapter3
 
 *   **散佈圖 (Scatter Plot)**：看兩個變數之間的**關聯**（例如：身高 vs. 體重）。
 ![Scatter Plot](images/scatter-plot.webp)
+
 *   **圓餅圖 (Pie Chart)**：顯示各類別佔整體的**比例**（例如：市佔率）。
 ![Pie Chart](images/pie-chart.webp)
 
 *   **折線圖 (Line Chart)**：看**時間趨勢**（例如：股價走勢、氣溫變化）。
 ![Line Chart](images/line-chart.webp)
+
 *   **直方圖 (Histogram)**：看單一變數的**分佈**情況（例如：全校學生的成績分佈）。
 ![Histogram](images/histogram.webp)
+
 *   **長條圖 (Bar Chart)**：比較不同**類別**的大小（例如：各部門的業績比較）。
 ![Bar Chart](images/bar-chart.webp)
+
 *   **熱圖 (Heatmap)**：用顏色深淺表示數值大小，常用於顯示**相關係數矩陣**（哪些變數連動性高）。
 ![Heatmap](images/heatmap.webp)
+
 *   **盒鬚圖 (Box Plot)**：快速看出資料的分佈範圍、中位數以及**離群值**。
 ![Box Plot](images/box-plot.webp)
 
@@ -374,7 +379,6 @@ label: chap-ai-foundation-chapter3
 
 ![PII 處理](images/pii.webp)
 
-## 本章總結與考點提示 {#chap-ai-foundation-chapter3-summary}
 
 ### 核心概念回顧
 
@@ -428,3 +432,8 @@ label: chap-ai-foundation-chapter3
 ### 延伸思考
 
 *   為什麼在醫療數據中，我們通常不隨意刪除有缺失值的資料？（因為每一筆病歷都很珍貴，且缺失本身可能帶有資訊，例如病人太嚴重無法測量）。
+
+## 歷屆考題 {#sec-past-exam}
+
+請做測驗看歷屆考題。
+

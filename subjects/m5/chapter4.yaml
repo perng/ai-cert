@@ -111,6 +111,150 @@ questions:
   - chap-m5-ch4
   - sec-lessons
   usage: both
+- id: 900030
+  chapter_title: 主流 AI 代理框架總覽
+  section_title: 多代理協作框架
+  text: 多代理協作框架通常需要哪一種機制來避免不同代理人的輸出互相矛盾？
+  type: multiple_choice
+  options:
+  - 角色分工、共享狀態、衝突檢查與最終仲裁流程
+  - 讓所有代理人使用完全相同的提示詞
+  - 禁止代理人交換任何資訊
+  - 只保留輸出最長的代理人答案
+  correct_index: 0
+  explanation: 多代理協作的價值在於分工，但也需要共享上下文、審查與仲裁機制，才能整合成一致且可執行的結果。
+  tags:
+  - chap-m5-ch4
+  - sec-multi-agent-frameworks
+  usage: both
+- id: 900031
+  chapter_title: 主流 AI 代理框架總覽
+  section_title: 多代理協作框架
+  text: 在軟體開發情境中，研究代理、程式代理與審查代理分工的主要優點是什麼？
+  type: multiple_choice
+  options:
+  - 將需求理解、實作與品質檢查拆開，降低單一代理人遺漏風險
+  - 讓每個代理人都重複寫同一段程式
+  - 取消測試與人工審查
+  - 確保所有代理人永遠不會產生不同意見
+  correct_index: 0
+  explanation: 分工能讓不同代理人專注於不同品質面向，但仍需測試、審查與整合流程來管理成本與一致性。
+  tags:
+  - chap-m5-ch4
+  - sec-multi-agent-frameworks
+  usage: both
+- id: 900032
+  chapter_title: 主流 AI 代理框架總覽
+  section_title: 多代理協作框架
+  text: 下列哪一項是多代理系統相較單一代理人更需要注意的風險？
+  type: multiple_choice
+  options:
+  - 溝通成本、責任歸屬與錯誤在代理人之間傳遞
+  - 完全無法使用任何工具
+  - 只能回答單一句子問題
+  - 不需要任何監控
+  correct_index: 0
+  explanation: 多代理系統可能放大溝通延遲、上下文漂移與責任不清，因此要設計明確協議、日誌與終止條件。
+  tags:
+  - chap-m5-ch4
+  - sec-multi-agent-frameworks
+  usage: both
+- id: 900033
+  chapter_title: 主流 AI 代理框架總覽
+  section_title: 技術與專業框架
+  text: 選擇技術型代理框架時，最應優先檢查哪一項能力？
+  type: multiple_choice
+  options:
+  - 是否支援工具整合、狀態管理、評估追蹤與部署監控
+  - 是否只提供漂亮的聊天介面
+  - 是否完全不允許自訂工具
+  - 是否要求所有資料公開上傳
+  correct_index: 0
+  explanation: 技術框架的價值在於能支撐真實任務流程，包括工具呼叫、記憶或狀態、測試評估、觀測性與部署治理。
+  tags:
+  - chap-m5-ch4
+  - sec-technical-frameworks
+  usage: both
+- id: 900034
+  chapter_title: 主流 AI 代理框架總覽
+  section_title: 技術與專業框架
+  text: 專業領域代理框架與通用代理框架的主要差異通常是什麼？
+  type: multiple_choice
+  options:
+  - 會內建特定領域流程、資料格式、合規要求或工具連接器
+  - 完全不使用語言模型
+  - 只能在沒有資料的情況下運作
+  - 永遠不需要人類專家參與
+  correct_index: 0
+  explanation: 專業框架常針對醫療、法務、金融或軟體開發等場景加入領域流程與控管，但仍需配合專家驗證。
+  tags:
+  - chap-m5-ch4
+  - sec-technical-frameworks
+  usage: both
+- id: 900035
+  chapter_title: 主流 AI 代理框架總覽
+  section_title: 技術與專業框架
+  text: 若企業要把代理人接入內部 ERP 與工單系統，下列哪一項框架能力最關鍵？
+  type: multiple_choice
+  options:
+  - 可控的工具權限、API 連接器與操作審計
+  - 只能輸出一般聊天文字
+  - 不保存任何執行紀錄
+  - 只支援單機玩具範例
+  correct_index: 0
+  explanation: 企業系統整合涉及權限、資料安全與可追溯性，因此框架必須能限制工具範圍、記錄操作並支援 API 整合。
+  tags:
+  - chap-m5-ch4
+  - sec-technical-frameworks
+  usage: both
+- id: 900036
+  chapter_title: 主流 AI 代理框架總覽
+  section_title: 2026 年新興框架
+  text: 評估 2026 年新興代理框架時，哪一種態度最合適？
+  type: multiple_choice
+  options:
+  - 用小型試點驗證能力、社群活躍度、文件成熟度與維運風險
+  - 只要名稱新就全面替換現有系統
+  - 完全忽略安全與治理功能
+  - 只看宣傳影片，不做任何實測
+  correct_index: 0
+  explanation: 新興框架可能帶來新能力，但成熟度、相容性與長期維護仍有不確定性，應以試點和可量測指標評估。
+  tags:
+  - chap-m5-ch4
+  - sec-emerging-frameworks
+  usage: both
+- id: 900037
+  chapter_title: 主流 AI 代理框架總覽
+  section_title: 2026 年新興框架
+  text: 新興代理框架若主打「開放技能標準」，對企業導入最可能帶來什麼好處？
+  type: multiple_choice
+  options:
+  - 降低技能被單一平台鎖定的風險，提升重用與移植性
+  - 讓所有技能都不需要測試
+  - 保證任何模型輸出都完全正確
+  - 取消資料權限控管
+  correct_index: 0
+  explanation: 開放標準有助於跨框架共享技能與降低供應商鎖定，但仍需測試、治理與安全審查。
+  tags:
+  - chap-m5-ch4
+  - sec-emerging-frameworks
+  usage: both
+- id: 900038
+  chapter_title: 主流 AI 代理框架總覽
+  section_title: 2026 年新興框架
+  text: 某新代理框架強調本機執行與隱私保護，最適合優先驗證哪一項？
+  type: multiple_choice
+  options:
+  - 敏感資料是否能在本機處理，同時維持可接受的延遲與任務成功率
+  - 是否能把所有資料自動公開分享
+  - 是否完全不需要硬體資源
+  - 是否只能回答閒聊問題
+  correct_index: 0
+  explanation: 本機代理的價值在於資料不外流與低延遲，但仍要測量模型能力、硬體成本、維護方式與安全邊界。
+  tags:
+  - chap-m5-ch4
+  - sec-emerging-frameworks
+  usage: both
 - id: 7408
   chapter_title: 主流 AI 代理框架總覽
   section_title: Hermes Agent：會自我學習的多平台代理

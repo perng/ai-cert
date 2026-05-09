@@ -880,7 +880,7 @@ questions:
   id: 3355
   usage: both
 - chapter_title: 機器學習基礎概念
-  section_title: 交叉驗證
+  section_title: 模型評估
   text: 情境：K-Fold 交叉驗證的主要目的是？
   type: multiple_choice
   options:
@@ -896,7 +896,7 @@ questions:
   id: 3356
   usage: both
 - chapter_title: 機器學習基礎概念
-  section_title: 偏差-變異數權衡
+  section_title: 模型評估
   text: 情境：高偏差 (High Bias) 通常對應於？
   type: multiple_choice
   options:
@@ -960,7 +960,7 @@ questions:
   id: 3360
   usage: both
 - chapter_title: 機器學習基礎概念
-  section_title: 偏差-變異數權衡
+  section_title: 模型評估
   text: 情境：解決過擬合 (High Variance) 的方法不包括？
   type: multiple_choice
   options:
@@ -1041,7 +1041,7 @@ questions:
   usage: both
 - id: 3366
   chapter_title: 機器學習基礎概念
-  section_title: 樸素貝氏
+  section_title: 監督式學習
   text: 樸素貝氏分類器中的「樸素」主要指哪一個假設？
   type: multiple_choice
   options:
@@ -1057,7 +1057,7 @@ questions:
   usage: both
 - id: 3367
   chapter_title: 機器學習基礎概念
-  section_title: 階層式分群與 DBSCAN
+  section_title: 非監督式學習
   text: DBSCAN 的兩個主要超參數是什麼？
   type: multiple_choice
   options:
@@ -1073,7 +1073,7 @@ questions:
   usage: both
 - id: 3368
   chapter_title: 機器學習基礎概念
-  section_title: 交叉驗證
+  section_title: 模型評估
   text: 為什麼在超參數搜尋後回報模型泛化能力時，巢狀交叉驗證較嚴謹？
   type: multiple_choice
   options:

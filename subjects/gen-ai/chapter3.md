@@ -65,9 +65,11 @@ RAG 的運作可以分為五個標準步驟：
 *   **混合搜尋 (Hybrid Search)**：
     *   同時使用 **關鍵字搜尋 (Keyword Search/BM25)** 與 **向量搜尋 (Vector Search)**。
     *   *優點*：結合了關鍵字的精準度（如專有名詞、型號）與向量的語意理解能力。
+
 *   **重排序 (Re-ranking)**：
     *   先檢索出較多候選片段 (Top-50)，再用一個精準的 Cross-Encoder 模型對這 50 個片段進行詳細評分與排序，最後只取 Top-5 給 LLM。
     *   *類比*：海選 (Retrieval) 先撈一堆人，決賽 (Re-ranking) 再由評審仔細打分。
+
 *   **查詢轉換 (Query Transformation)**：
     *   LLM 在檢索前先改寫使用者的問題。
     *   *例子*：使用者問「它好用嗎？」，LLM 改寫為「iPhone 15 Pro 的電池續航力與相機效能評價如何？」，再進行檢索。
@@ -83,6 +85,7 @@ RAG 的運作可以分為五個標準步驟：
         *   標準答案：狗 (100%)。
         *   Teacher 看法：狗 (90%)、貓 (9%)、車子 (1%)。
         *   Teacher 傳遞出的「這張圖有點像貓」的資訊 (Dark Knowledge)，能幫助 Student 學得更好。
+
 *   **應用**：將 GPT-4 的能力蒸餾到 LLaMA-7B 或更小的模型中，以降低推論成本並提升速度。
 
 ![Knowledge Distillation](images/knowledge_distillation.webp)
@@ -131,3 +134,21 @@ MCP 定義了三種主要的互動模式：
 | **運作方式** | 切塊 → 向量化 → 檢索 → 生成。 | Client <→ Server 透過標準協議溝通 (JSON-RPC)。 |
 | **資料型態** | 主要是**非結構化文字** (PDF, Wiki)。 | 包含**結構化資料** (DB)、**即時狀態** (Logs)、**操作能力** (Tools)。 |
 | **關係** | RAG 是 AI 的一種**能力**。 | MCP 是實現 RAG 的一種**管道** (例如透過 MCP 連接向量資料庫)。 |
+
+
+## 模型微調 (Fine-tuning) 與優化 {#sec-finetuning}
+
+雖然預訓練模型具備強大的泛化能力，但針對特定領域應用時，通常需要透過微調來提升表現：
+
+* **全參數微調 (Full Fine-Tuning)**：更新模型中所有的權重參數。這需要大量的計算資源與高質量的訓練資料，但能獲得最好的領域適應性。
+* **參數高效微調 (PEFT, Parameter-Efficient Fine-Tuning)**：為解決資源消耗問題而生的技術，僅訓練極少數的額外參數。
+* **LoRA (Low-Rank Adaptation)**：PEFT 的代表技術，透過在原始權重旁插入低秩矩陣來模擬權重變化，大幅降低了微調時所需的 VRAM 和時間。
+* **RLHF (人類回饋強化學習)**：利用人類的偏好資料來訓練獎勵模型，再透過強化學習演算法 (如 PPO) 微調 LLM，使其行為更符合人類價值觀。
+
+
+
+## 歷屆考題 {#sec-past-exam}
+
+請做測驗看歷屆考題。
+
+

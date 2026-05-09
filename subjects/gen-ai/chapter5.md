@@ -10,6 +10,14 @@ label: chap-gen-chapter5
 
 ## 平台特性與選擇 (理論基礎) {#sec-platform-characteristics}
 
+選擇適合的生成式 AI 平台時，企業需要評估多項維度：
+
+1. **開源 (Open-Source) vs. 閉源 (Closed-Source)**：開源模型（如 LLaMA）提供完全的控制權與資料隱私，但需要自建基礎設施；閉源 API（如 OpenAI）則提供頂尖效能與易用性，但資料需傳輸至雲端。
+2. **邊緣運算 (Edge AI) vs. 雲端運算 (Cloud AI)**：對於延遲敏感或隱私要求極高的場景，將模型部署於終端設備（Edge）是較佳選擇；而需要強大算力的大型模型則依賴雲端。
+3. **生態系支援**：平台是否具備豐富的開發工具（如 LangChain 支援）、社群資源與技術文件，是決定開發效率的關鍵。
+
+
+
 ### 1. No Code vs. Low Code {.unnumbered}
 這兩者都是為了加速開發，但目標客群與適用場景不同。
 
@@ -18,6 +26,7 @@ label: chap-gen-chapter5
     *   **目標客群**：非技術人員 (Citizen Developers)、行銷、PM。
     *   **適用場景**：標準化應用、簡單的表單流程、個人網站、內部儀表板。
     *   **限制**：靈活性低，只能做平台允許的功能，很難客製化複雜邏輯。
+
 *   **Low Code (低程式碼)**：
     *   **核心**：大部分功能用拖拉，但關鍵邏輯允許（或需要）寫少量程式碼。
     *   **目標客群**：專業開發者 (加速開發)、具有基本程式概念的 IT 人員。
@@ -46,8 +55,10 @@ label: chap-gen-chapter5
     *   基於 VS Code 修改。
     *   **Codebase RAG**：它會索引你整個專案的程式碼。當你問「如何新增一個 API？」時，它會參考你現有的程式碼風格與架構來回答，而不是給出通用的範例。
     *   **Composer**：可以同時編輯多個檔案，一次完成跨檔案的修改。
+
 *   **Windsurf**：
     *   強調 "Flow" 範式。Agent 能持續監控你的開發行為，預測你下一步想做什麼，並主動提供協助。
+
 *   **Google Antigravity**：
     *   **核心**：Google 推出的 "Agent-first" IDE，基於 VS Code 修改。
     *   **特色**：內建 Gemini 3 Pro 模型。採用雙視圖設計 (Editor & Manager)，允許使用者同時指揮多個 AI Agent 進行自主規劃、寫程式、執行終端機指令甚至瀏覽網頁。
@@ -57,14 +68,17 @@ label: chap-gen-chapter5
 ### 2. 雲端與 Agentic 平台 {.unnumbered}
 *   **Replit**：
     *   雲端 IDE。其 **Replit Agent** 允許使用者用自然語言描述需求（如「做一個貪食蛇遊戲」），Agent 會自動規劃、寫程式、除錯並部署，使用者完全不用看程式碼。
+
 *   **Lovable / v0**：
     *   專注於 UI 生成。使用者上傳一張手繪草圖或截圖，AI 直接生成可用的前端程式碼 (React/Tailwind)。
 
 ### 3. 模型引擎與 CLI {.unnumbered}
 *   **GitHub Copilot**：
     *   最普及的 AI 助手。提供即時的程式碼補全 (Autocomplete) 和單元測試建議。
+
 *   **Claude Code**：
     *   Anthropic 推出的 CLI 工具，具備強大的邏輯推理能力，能在終端機中直接操作檔案系統、執行指令並修改程式碼。
+
 *   **[OpenAI Codex](https://openai.com/codex/)**：
     *   **核心**：最初是 GitHub Copilot 背後的模型，現已演化為全方位的雲端軟體工程 Agent。
     *   **特色**：可透過 CLI 或 IDE 擴充功能使用。具備在隔離沙箱 (Sandbox) 中導航程式碼庫、執行測試與修復 Bug 的能力。
@@ -78,18 +92,20 @@ label: chap-gen-chapter5
     *   **AI 整合**：內建 AI Agent 節點，可以輕鬆將 LLM (如 GPT-4, Claude) 與超過 400 種外部服務 (如 Google Sheets, Slack, Email) 串接。
     *   **應用場景**：自動化辦公流程，例如「收到客戶 Email → 用 AI 分析情緒與摘要 → 寫入 Notion 資料庫 → 自動草擬回信」。
     ![n8n](images/n8n.webp)
+
 *   **ComfyUI**：
     *   **定位**：專為 [Stable Diffusion](https://en.wikipedia.org/wiki/Stable_Diffusion) 設計的節點式圖形介面 (Node-based GUI)。
     *   **核心**：將圖像生成的各個步驟 (如 Checkpoint 載入、CLIP 編碼、採樣器 Sampler、VAE 解碼) 拆解成獨立的節點，讓使用者能精細控制生成流程。
     *   **應用場景**：進階圖像生成、影片製作、建立複雜的圖像處理工作流 (Workflow)。
     ![ComfyUI](images/comfyui.webp)
+
 *   **LangFlow / Flowise**：
     *   **定位**：專為構建 LLM 應用設計的視覺化平台，通常基於 [LangChain](https://www.langchain.com/) 框架。
     *   **核心**：提供拖拉介面來組裝 RAG (檢索增強生成) 系統、聊天機器人 (Chatbot) 或 Agent。
     *   **應用場景**：快速原型開發 (Prototyping)，無需寫程式即可測試不同的 Prompt 策略或知識庫檢索效果。
     ![LangFlow](images/langflow.webp)
 
-### 5. 生成式 AI 產業應用案例 (Industry Applications) {.unnumbered}
+### 5. 生成式 AI 產業應用案例 (Industry Applications) {.unnumbered} {#sec-industry-applications}
 生成式 AI 與 No Code / Low Code 工具的結合，正推動各行各業的數位轉型。以下是主要領域的應用場景：
 
 #### (1) 醫療與生物科技 (Healthcare & Biotech)
@@ -141,6 +157,14 @@ label: chap-gen-chapter5
 
 ## 整合策略與風險 {#sec-integration-risks}
 
+企業在將生成式 AI 整合至現有系統時，面臨著策略與風險的雙重考量：
+
+* **整合策略**：可採用 API 串接、自建微型模型或部署混合雲架構。建議從小規模的 PoC (概念驗證) 開始，逐步擴展至核心業務。
+* **資料外洩風險**：員工若不慎將公司機密輸入至公共 AI 平台，可能導致資料外洩。企業應建立內部專用的 AI 入口並簽署企業級隱私協議。
+* **幻覺與責任風險**：若 AI 在客服或醫療建議中產生幻覺（給出錯誤資訊），企業需承擔法律責任。因此，必須建立「人機協同 (Human-in-the-loop)」的審核機制。
+
+
+
 ### 1. 影子 IT (Shadow IT) {.unnumbered}
 *   **定義**：員工在未經 IT 部門核准的情況下，擅自使用外部的 No Code/AI 工具來處理公務。
 *   **風險**：
@@ -148,6 +172,7 @@ label: chap-gen-chapter5
     *   **缺乏維護**：員工離職後，他用 No Code 做的系統沒人會維護，變成孤兒系統。
     *   **資料孤島**：數據散落在各個小應用中，無法整合。
     *   *類比*：就像辦公室裡的員工覺得插座不夠，自己亂拉延長線 (DIY Wiring)。雖然暫時解決了問題，但可能導致跳電甚至火災 (資安風險)，且水電工 (IT 部門) 根本不知道這些線路的存在。
+
 *   **實例**：
     *   行銷部門為了方便，自己用 Airtable 建立客戶名單，結果該服務被駭客入侵，導致公司資料外洩。
     *   業務為了省事，用個人的 Gmail 帳號註冊了某個 AI 摘要工具，並上傳了機密的會議記錄。
@@ -158,12 +183,15 @@ label: chap-gen-chapter5
 *   **Boilerplate Code (樣板程式碼)**：
     *   利用 AI 生成重複性高的程式碼，如 API 串接、資料庫連線設定、單元測試框架。
     *   *例子*：「幫我寫一個 Python Flask 的 Hello World 範例，並包含 Swagger 文件設定。」
+
 *   **測試數據生成 (Mock Data)**：
     *   利用 AI 生成逼真的測試資料，避免使用真實客戶個資。
     *   *例子*：「生成 100 筆包含姓名、Email、台灣手機號碼的 JSON 測試資料。」
+
 *   **Code Review 與重構**：
     *   讓 AI 擔任 Reviewer，檢查程式碼的潛在 Bug 或優化空間。
     *   *例子*：「請檢查這段程式碼是否有 SQL Injection 的風險，並建議如何優化效能。」
+
 *   **關鍵原則**：
     *   **Human-in-the-loop**：AI 只是副駕駛 (Copilot)，人類機長 (Pilot) 必須對最終結果負責。
     *   **Zero Trust**：預設 AI 生成的程式碼是不可信的，必須經過測試與審查。
@@ -185,6 +213,7 @@ label: chap-gen-chapter5
 ### 2. 生成式 AI 結合 No Code / Low Code 的優勢
 
 生成式 AI（如 ChatGPT、DALL-E 等）進一步提升 No Code 和 Low Code 平台的效能，實現自動化、智慧化開發與應用：
+
 *   **自動生成程式碼**：AI 協助開發客製化功能，節省開發時間。
 *   **模板設計優化**：AI 提供設計建議，快速完成介面設計與互動流程。
 *   **數據分析與決策**：AI 基於專案數據進行分析，提供決策建議並自動化操作。
@@ -206,6 +235,7 @@ label: chap-gen-chapter5
 ### 4. No Code / Low Code 平台的評估與選擇
 
 選擇合適的平台對於提升開發效率至關重要。以下是 6 個關鍵因素：
+
 1.  **目標用戶與技術需求**：No Code 面向非技術使用者，Low Code 面向具一定技術背景的開發者。
 2.  **功能與擴展性**：評估與現有系統 (如 CRM、ERP) 的整合能力與高度自訂性。
 3.  **安全性與合規性**：確認平台符合資料保護法規 (如 GDPR、CCPA)，具備資料加密與權限管理。
@@ -223,6 +253,7 @@ label: chap-gen-chapter5
 *   **技術整合與平台適配性**：效能優化挑戰。選擇具備 API 擴充能力的平台並採用雲端運算分散負載。
 
 **風險管理策略**：
+
 *   **數據品質管理**：確保訓練數據多樣性與高品質。
 *   **模型效能評估**：採用多維度評估指標，定期進行壓力測試。
 *   **人機協作機制**：在關鍵應用場景設置人工干預機制 (Human-in-the-loop)。
@@ -240,8 +271,48 @@ label: chap-gen-chapter5
 [AI 民主化](#sec-ai-democratization)是指將 AI 技術的使用從少數專家和大型企業擴展到廣泛的社會層面。No Code / Low Code 平台使「市民開發者 (Citizen Developer)」能夠利用這些工具自動化日常工作，促進「創意民主化」。
 
 **對 AI 民主化的影響**：
+
 *   **降低技術門檻**：直觀界面讓非技術背景的人也能開發 AI 應用。
 *   **擴大可訪問性**：減少成本，讓中小型企業甚至非營利組織能夠使用 AI。
 *   **推動跨領域創新**：促進業務與技術部門協作。
 *   **普及化應用**：AI 的學習曲線變得平緩，使 AI 在教育、行銷等領域普及。
 *   **啟動全球性影響**：讓技術資源匱乏地區也有機會接觸 AI，促進技術平權。
+
+
+## 常見生成式 AI 應用 {#sec-genai-applications}
+
+生成式 AI 已廣泛應用於多種企業場景，大幅提升生產力：
+
+1. **內容生成 (Content Generation)**：自動撰寫行銷文案、新聞稿、社群貼文，或生成商業簡報與圖片素材。
+2. **知識管理與問答 (Knowledge Management)**：結合 RAG 技術，將企業內部的龐大文件庫轉化為可即時查詢的智慧問答系統。
+3. **智慧客服 (Smart Customer Service)**：提供 24 小時無休的多輪對話客服，處理常見問題並進行情感分析，提升顧客滿意度。
+4. **程式碼生成 (Code Generation)**：協助工程師自動生成程式碼片段、撰寫測試案例、尋找 Bug 並進行程式碼重構。
+
+
+
+## 低程式碼與無程式碼開發 {#sec-low-code-no-code}
+
+低程式碼 (Low-Code) 與無程式碼 (No-Code) 平台結合生成式 AI，正在改變軟體開發的生態：
+
+* **自然語言開發**：使用者只需用自然語言描述需求（例如：「幫我做一個可以登記員工請假的系統」），AI 就能自動生成後端資料庫結構與前端 UI 介面。
+* **門檻降低**：讓不具備深厚程式設計背景的業務人員（Citizen Developers）也能夠快速建立自動化工作流與應用程式。
+* **加速創新**：大幅縮短了從概念到 MVP (最小可行性產品) 的開發週期，使企業能更敏捷地應對市場變化。
+
+
+
+## AI 輔助開發 (Copilot) {#sec-ai-copilot}
+
+AI 輔助開發工具 (如 GitHub Copilot, Cursor) 已經成為現代軟體工程師的標準配備：
+
+* **自動補全 (Auto-Completion)**：根據上下文語境，即時預測並生成下一行程式碼或整個函式區塊。
+* **註解轉程式碼 (Comment-to-Code)**：工程師寫下註解描述邏輯，AI 即可將其翻譯為可執行的程式碼。
+* **程式碼解釋與重構**：對於遺留的複雜程式碼 (Legacy Code)，AI 能提供逐行解釋，並給出優化或重構的具體建議。
+* **測試驅動**：AI 能快速生成覆蓋率極高的單元測試，確保程式碼的強健性。
+
+
+
+## 歷屆考題 {#sec-past-exam}
+
+請做測驗看歷屆考題。
+
+

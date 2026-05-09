@@ -1,7 +1,7 @@
 questions:
 - id: 10001
   chapter_title: 可解釋 AI (XAI)
-  section_title: XAI 的層次
+  section_title: 黑箱模型 vs. 白箱模型
   text: 在 AI 領域中，「黑箱 (Black Box)」通常指的是什麼？
   type: multiple_choice
   options:
@@ -17,7 +17,7 @@ questions:
   usage: quiz
 - id: 10002
   chapter_title: 可解釋 AI (XAI)
-  section_title: XAI 的層次
+  section_title: 黑箱模型 vs. 白箱模型
   text: 下列哪種模型通常被視為「白箱 (White Box)」模型？
   type: multiple_choice
   options:
@@ -33,7 +33,7 @@ questions:
   usage: quiz
 - id: 10003
   chapter_title: 可解釋 AI (XAI)
-  section_title: XAI 的層次
+  section_title: 全局解釋 vs. 局部解釋
   text: 「全局解釋 (Global Explanation)」旨在回答什麼問題？
   type: multiple_choice
   options:
@@ -49,7 +49,7 @@ questions:
   usage: quiz
 - id: 10004
   chapter_title: 可解釋 AI (XAI)
-  section_title: XAI 的層次
+  section_title: 全局解釋 vs. 局部解釋
   text: 「局部解釋 (Local Explanation)」旨在回答什麼問題？
   type: multiple_choice
   options:
@@ -65,7 +65,7 @@ questions:
   usage: quiz
 - id: 10005
   chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: LIME (Local Interpretable Model-agnostic Explanations)
   text: LIME (Local Interpretable Model-agnostic Explanations) 的核心思想是？
   type: multiple_choice
   options:
@@ -81,7 +81,7 @@ questions:
   usage: quiz
 - id: 10006
   chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: LIME (Local Interpretable Model-agnostic Explanations)
   text: LIME 的 Model-agnostic 特性意味著什麼？
   type: multiple_choice
   options:
@@ -97,7 +97,7 @@ questions:
   usage: quiz
 - id: 10007
   chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: SHAP (Shapley Values)
   text: SHAP (Shapley Values) 源自於哪個領域的理論？
   type: multiple_choice
   options:
@@ -113,7 +113,7 @@ questions:
   usage: quiz
 - id: 10008
   chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: SHAP (Shapley Values)
   text: SHAP 值的主要優點是？
   type: multiple_choice
   options:
@@ -129,7 +129,7 @@ questions:
   usage: quiz
 - id: 10009
   chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: 反事實解釋 (Counterfactual Explanation)
   text: 反事實解釋 (Counterfactual Explanation) 的形式通常是？
   type: multiple_choice
   options:
@@ -145,7 +145,7 @@ questions:
   usage: quiz
 - id: 10010
   chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: 反事實解釋 (Counterfactual Explanation)
   text: 反事實解釋的三大原則不包括下列何者？
   type: multiple_choice
   options:
@@ -161,7 +161,7 @@ questions:
   usage: quiz
 - id: 10011
   chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: 反事實解釋 (Counterfactual Explanation)
   text: 「如果你年輕 10 歲，貸款就會通過」這是一個好的反事實解釋嗎？
   type: multiple_choice
   options:
@@ -177,7 +177,7 @@ questions:
   usage: both
 - id: 10012
   chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: 特徵重要度 (Feature Importance)
   text: 特徵重要度 (Feature Importance) 通常無法做到什麼？
   type: multiple_choice
   options:
@@ -193,7 +193,7 @@ questions:
   usage: both
 - id: 10013
   chapter_title: 可解釋 AI (XAI)
-  section_title: XAI 的層次
+  section_title: 黑箱模型 vs. 白箱模型
   text: 線性迴歸模型的可解釋性來自於？
   type: multiple_choice
   options:
@@ -209,7 +209,7 @@ questions:
   usage: both
 - id: 10014
   chapter_title: 可解釋 AI (XAI)
-  section_title: XAI 的層次
+  section_title: 黑箱模型 vs. 白箱模型
   text: 為什麼深度學習模型被稱為黑箱？
   type: multiple_choice
   options:
@@ -225,7 +225,7 @@ questions:
   usage: both
 - id: 10015
   chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: LIME (Local Interpretable Model-agnostic Explanations)
   text: LIME 透過什麼方式來生成解釋？
   type: multiple_choice
   options:
@@ -241,7 +241,7 @@ questions:
   usage: both
 - id: 10016
   chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: SHAP (Shapley Values)
   text: SHAP Summary Plot 可以展示什麼資訊？
   type: multiple_choice
   options:
@@ -257,7 +257,7 @@ questions:
   usage: both
 - id: 10017
   chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: 反事實解釋 (Counterfactual Explanation)
   text: 如果客戶問：「我該怎麼做才能讓貸款通過？」，最適合用哪種技術回答？
   type: multiple_choice
   options:
@@ -273,7 +273,7 @@ questions:
   usage: both
 - id: 10018
   chapter_title: 可解釋 AI (XAI)
-  section_title: XAI 的層次
+  section_title: 本章總結與考點提示
   text: 可解釋性 (Explainability) 與模型效能 (Performance) 之間通常存在什麼關係？
   type: multiple_choice
   options:
@@ -289,7 +289,7 @@ questions:
   usage: both
 - id: 10019
   chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: 反事實解釋 (Counterfactual Explanation)
   text: 反事實解釋中的「稀疏性 (Sparsity)」原則建議？
   type: multiple_choice
   options:
@@ -305,7 +305,7 @@ questions:
   usage: both
 - id: 10020
   chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: SHAP (Shapley Values)
   text: SHAP 值為正數代表該特徵？
   type: multiple_choice
   options:
@@ -321,7 +321,7 @@ questions:
   usage: both
 - id: 10021
   chapter_title: 可解釋 AI (XAI)
-  section_title: XAI 的層次
+  section_title: 本章總結與考點提示
   text: 下列何者屬於高風險 AI 應用領域，特別需要 XAI？
   type: multiple_choice
   options:
@@ -337,7 +337,7 @@ questions:
   usage: both
 - id: 10022
   chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: LIME (Local Interpretable Model-agnostic Explanations)
   text: LIME 解釋的線性模型是？
   type: multiple_choice
   options:
@@ -353,7 +353,7 @@ questions:
   usage: both
 - id: 10023
   chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: SHAP (Shapley Values)
   text: SHAP 的計算複雜度通常？
   type: multiple_choice
   options:
@@ -369,7 +369,7 @@ questions:
   usage: both
 - id: 10024
   chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: 反事實解釋 (Counterfactual Explanation)
   text: 反事實解釋的「有效性 (Validity)」是指？
   type: multiple_choice
   options:
@@ -385,7 +385,7 @@ questions:
   usage: both
 - id: 10025
   chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: 反事實解釋 (Counterfactual Explanation)
   text: 反事實解釋主要關注於？
   type: multiple_choice
   options:
@@ -401,7 +401,7 @@ questions:
   usage: both
 - id: 10030
   chapter_title: 可解釋 AI (XAI)
-  section_title: XAI 的層次
+  section_title: 本章總結與考點提示
   text: XAI 的主要目標是？
   type: multiple_choice
   options:
@@ -417,7 +417,7 @@ questions:
   usage: both
 - id: 10031
   chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: LIME (Local Interpretable Model-agnostic Explanations)
   text: LIME 的全名是？
   type: multiple_choice
   options:
@@ -433,7 +433,7 @@ questions:
   usage: both
 - id: 10032
   chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: SHAP (Shapley Values)
   text: SHAP 值滿足的「可加性 (Additivity)」是指？
   type: multiple_choice
   options:
@@ -449,7 +449,7 @@ questions:
   usage: both
 - id: 10033
   chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: 反事實解釋 (Counterfactual Explanation)
   text: 在反事實解釋中，若建議「改變性別」，這違反了？
   type: multiple_choice
   options:
@@ -465,7 +465,7 @@ questions:
   usage: both
 - id: 10034
   chapter_title: 可解釋 AI (XAI)
-  section_title: XAI 的層次
+  section_title: 全局解釋 vs. 局部解釋
   text: 下列哪種情況最需要局部解釋？
   type: multiple_choice
   options:
@@ -481,7 +481,7 @@ questions:
   usage: both
 - id: 10035
   chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: LIME (Local Interpretable Model-agnostic Explanations)
   text: LIME 在解釋圖像分類時，通常會將圖片切分成？
   type: multiple_choice
   options:
@@ -497,7 +497,7 @@ questions:
   usage: both
 - id: 10036
   chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: SHAP (Shapley Values)
   text: SHAP 的缺點之一是？
   type: multiple_choice
   options:
@@ -513,7 +513,7 @@ questions:
   usage: both
 - id: 10037
   chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: 反事實解釋 (Counterfactual Explanation)
   text: 反事實解釋可以幫助使用者？
   type: multiple_choice
   options:
@@ -529,7 +529,7 @@ questions:
   usage: both
 - id: 10038
   chapter_title: 可解釋 AI (XAI)
-  section_title: XAI 的層次
+  section_title: 本章總結與考點提示
   text: GDPR (歐盟通用資料保護規則) 中的「解釋權 (Right to Explanation)」要求？
   type: multiple_choice
   options:
@@ -545,7 +545,7 @@ questions:
   usage: both
 - id: 10039
   chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: LIME (Local Interpretable Model-agnostic Explanations)
   text: LIME 的解釋結果通常以什麼形式呈現？
   type: multiple_choice
   options:
@@ -561,7 +561,7 @@ questions:
   usage: both
 - id: 10040
   chapter_title: 可解釋 AI (XAI)
-  section_title: XAI 的層次
+  section_title: 黑箱模型 vs. 白箱模型
   text: 如果一個模型完全不可解釋，我們稱之為？
   type: multiple_choice
   options:
@@ -577,7 +577,7 @@ questions:
   usage: both
 - id: 10051
   chapter_title: 可解釋 AI (XAI)
-  section_title: XAI 層次與方法
+  section_title: XAI 的層次
   text: LIME (Local Interpretable Model-agnostic Explanations) 的主要特點是？
   type: multiple_choice
   options:
@@ -593,7 +593,7 @@ questions:
   usage: both
 - id: 10052
   chapter_title: 可解釋 AI (XAI)
-  section_title: XAI 層次與方法
+  section_title: XAI 的層次
   text: 在醫療診斷等高風險領域，為何我們有時會犧牲一點準確度來換取可解釋性？
   type: multiple_choice
   options:
@@ -639,9 +639,9 @@ questions:
   - sec-ai-chapter10
   - sec-explanation-tools
   usage: both
-- id: 11429
+- id: '11429_2'
   chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: 歷屆考題
   text: 在「可解釋人工智慧（Explainable AI, XAI） 」領域中，LIME（Local Interpretable Model-agnostic Explanations）方法最核心的應用目 的是什麼？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -652,14 +652,15 @@ questions:
   correct_index: 0
   explanation: LIME 與 SHAP 是常見的 XAI 工具。LIME 提供局部解釋，SHAP 則基於博弈論計算特徵的邊際貢獻。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter10
   - sec-explanation-tools
   usage: both
-- id: 11431
+- id: '11431_2'
   chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: 歷屆考題
   text: 在金融科技公司的信貸決策系統中，導入反事實解釋 （Counterfactual Explanation）時，實際部署往往伴隨技術與監管挑戰。下列哪一項最 符合該情境下的核心挑戰？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -670,14 +671,15 @@ questions:
   correct_index: 3
   explanation: 此題涉及 解釋技術與工具 的核心概念。正確答案為「生成的反事實樣本必須滿足特徵間的因果約束和業務邏輯約束，同 時確保建議的改變在現實中具有可操作性且符合公平放貸法規」。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter10
   - sec-explanation-tools
   usage: mock
-- id: 11430
+- id: '11430_2'
   chapter_title: 可解釋 AI (XAI)
-  section_title: XAI 層次與方法
+  section_title: 歷屆考題
   text: 在醫療診斷決策支援系統等高風險領域中， 「可解釋人工智慧 （Explainable AI, XAI） 」的核心價值最主要呈現在哪個面向？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -688,13 +690,14 @@ questions:
   correct_index: 0
   explanation: 此題涉及 XAI 層次與方法 的核心概念。正確答案為「透過提供可理解的決策依據，促進患者與醫療專業人員對系統診斷 結果的信任與接受度」。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter10
   - sec-xai-levels
   usage: both
 - chapter_title: 可解釋 AI (XAI)
-  section_title: XAI 的層次
+  section_title: 黑箱模型 vs. 白箱模型
   text: 情境：銀行使用 AI 審核貸款，客戶被拒絕後詢問原因。若行員只能回答「因為 AI 算出你的分數是 59 分，不及格」，這代表該 AI 模型屬於？
   type: multiple_choice
   options:
@@ -707,10 +710,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter10
   - sec-black-white-box
-  id: 11432
+  id: '11432_2'
   usage: both
 - chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: LIME (Local Interpretable Model-agnostic Explanations)
   text: 情境：LIME (Local Interpretable Model-agnostic Explanations) 的核心思想是？
   type: multiple_choice
   options:
@@ -723,10 +726,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter10
   - sec-lime
-  id: 11433
+  id: '11433_3'
   usage: both
 - chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: SHAP (Shapley Values)
   text: 情境：SHAP (Shapley Values) 源自於哪個領域的理論？
   type: multiple_choice
   options:
@@ -739,10 +742,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter10
   - sec-shap
-  id: 11434
+  id: '11434_3'
   usage: both
 - chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: 反事實解釋 (Counterfactual Explanation)
   text: 情境：客戶問：「我要怎麼做才能讓貸款通過？」這時候最適合提供哪種解釋？
   type: multiple_choice
   options:
@@ -755,10 +758,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter10
   - sec-counterfactual
-  id: 11435
+  id: '11435_2'
   usage: both
 - chapter_title: 可解釋 AI (XAI)
-  section_title: XAI 的層次
+  section_title: 黑箱模型 vs. 白箱模型
   text: 情境：下列哪個模型通常被視為「白箱模型 (White Box)」，可解釋性最高？
   type: multiple_choice
   options:
@@ -771,10 +774,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter10
   - sec-black-white-box
-  id: 11436
+  id: '11436_1'
   usage: both
 - chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: 反事實解釋 (Counterfactual Explanation)
   text: 情境：反事實解釋的三大原則中，「可操作性 (Actionability)」是指？
   type: multiple_choice
   options:
@@ -787,10 +790,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter10
   - sec-counterfactual
-  id: 11437
+  id: '11437_2'
   usage: both
 - chapter_title: 可解釋 AI (XAI)
-  section_title: XAI 的層次
+  section_title: 全局解釋 vs. 局部解釋
   text: 情境：全局解釋 (Global Explanation) 主要回答什麼問題？
   type: multiple_choice
   options:
@@ -803,10 +806,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter10
   - sec-global-local
-  id: 11438
+  id: '11438_2'
   usage: both
 - chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: SHAP (Shapley Values)
   text: 情境：SHAP 值為正數 (+10) 代表該特徵對預測結果的影響是？
   type: multiple_choice
   options:
@@ -819,10 +822,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter10
   - sec-shap
-  id: 11439
+  id: '11439_2'
   usage: both
 - chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: LIME (Local Interpretable Model-agnostic Explanations)
   text: 情境：LIME 的優點之一是 "Model-agnostic"，這意味著？
   type: multiple_choice
   options:
@@ -835,10 +838,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter10
   - sec-lime
-  id: 11440
+  id: '11440_1'
   usage: both
 - chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: 反事實解釋 (Counterfactual Explanation)
   text: 情境：反事實解釋的「稀疏性 (Sparsity)」原則建議？
   type: multiple_choice
   options:
@@ -851,10 +854,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter10
   - sec-counterfactual
-  id: 11441
+  id: '11441_2'
   usage: both
 - chapter_title: 可解釋 AI (XAI)
-  section_title: XAI 的層次
+  section_title: 全局解釋 vs. 局部解釋
   text: 情境：局部解釋 (Local Explanation) 適用於什麼場景？
   type: multiple_choice
   options:
@@ -870,7 +873,7 @@ questions:
   id: 11442
   usage: both
 - chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: 特徵重要度 (Feature Importance)
   text: 情境：特徵重要度 (Feature Importance) 通常無法做到？
   type: multiple_choice
   options:
@@ -883,10 +886,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter10
   - sec-feature-importance
-  id: 11443
+  id: '11443_1'
   usage: both
 - chapter_title: 可解釋 AI (XAI)
-  section_title: XAI 的層次
+  section_title: 黑箱模型 vs. 白箱模型
   text: 情境：為什麼深度學習模型通常被稱為黑箱？
   type: multiple_choice
   options:
@@ -899,10 +902,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter10
   - sec-black-white-box
-  id: 11444
+  id: '11444_1'
   usage: both
 - chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: SHAP (Shapley Values)
   text: 情境：SHAP 的一致性 (Consistency) 特性是指？
   type: multiple_choice
   options:
@@ -915,10 +918,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter10
   - sec-shap
-  id: 11445
+  id: '11445_2'
   usage: both
 - chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: LIME (Local Interpretable Model-agnostic Explanations)
   text: 情境：LIME 在解釋圖像分類模型時，通常會怎麼做？
   type: multiple_choice
   options:
@@ -931,10 +934,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter10
   - sec-lime
-  id: 11446
+  id: '11446_2'
   usage: both
 - chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: 反事實解釋 (Counterfactual Explanation)
   text: 情境：反事實解釋的「有效性 (Validity)」是指？
   type: multiple_choice
   options:
@@ -947,10 +950,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter10
   - sec-counterfactual
-  id: 11447
+  id: '11447_2'
   usage: both
 - chapter_title: 可解釋 AI (XAI)
-  section_title: XAI 的層次
+  section_title: 黑箱模型 vs. 白箱模型
   text: 情境：線性迴歸模型的可解釋性來自於？
   type: multiple_choice
   options:
@@ -963,10 +966,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter10
   - sec-black-white-box
-  id: 11448
+  id: '11448_3'
   usage: both
 - chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: SHAP (Shapley Values)
   text: 情境：SHAP Summary Plot 可以用來展示？
   type: multiple_choice
   options:
@@ -979,10 +982,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter10
   - sec-shap
-  id: 11449
+  id: '11449_3'
   usage: both
 - chapter_title: 可解釋 AI (XAI)
-  section_title: XAI 的層次
+  section_title: 黑箱模型 vs. 白箱模型
   text: 情境：在醫療診斷中，醫生通常更偏好哪種模型？
   type: multiple_choice
   options:
@@ -995,10 +998,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter10
   - sec-black-white-box
-  id: 11450
+  id: '11450_4'
   usage: both
 - chapter_title: 可解釋 AI (XAI)
-  section_title: 解釋技術與工具
+  section_title: 反事實解釋 (Counterfactual Explanation)
   text: 情境：反事實解釋是「展望未來」的，這句話的意思是？
   type: multiple_choice
   options:
@@ -1011,7 +1014,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter10
   - sec-counterfactual
-  id: 11451
+  id: '11451_4'
   usage: both
 - id: 115-1-23
   text: 在 AI 推論服務架構設計中， 「批次推論（Batch Inference） 」與「即時推論（Real-time Inference） 」常依任務特性選擇不同機制。下列關於兩者特性的敘述何者最正確？    （115年第一梯次）
@@ -1036,9 +1039,11 @@ questions:
 
     特性」，因為這最符合題幹中描述的情境與技術特性。'
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-34
   text: 某保險公司每月處理約 50 萬筆理賠申請，希望建立 AI 系統自動識別可疑的詐欺案件。由於公司內部缺乏 AI 專業人員，且需要快速上線驗證效果，IT 資訊主管正在評估不同的 AI 平台解決方案。在去識別化個人隱私資料後，下列哪一種平台類型最適合該公司的需求？ （115年第一梯次）
   type: multiple_choice
@@ -1050,9 +1055,11 @@ questions:
   correct_index: 2
   explanation: 本題測驗相關核心概念。正確解答為「使用雲端 AutoML 平台進行自動化模型訓練」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-37
   text: 某紡織製造公司導入 AI 系統進行布料瑕疵檢測，每天需處理來自 30 條產線的影115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 第一科：人工智慧基礎概論 考試日期：115 年 03 月 21 日 第 9 頁，共 12 頁  答案 題目 像資料，包括高解析度照片、感測器數值、生產參數記錄等多種格式。該公司收集的資料量從每日 2GB 增長至 50GB，且需在布料離開產線前的 3 秒內完成瑕疵判定。近期團隊發現系統在尖峰時段容易出現判定延遲，影響製程節奏。若要優先改善此問題，下列哪一種做法最適合？    （115年第一梯次）
   type: multiple_choice
@@ -1064,6 +1071,8 @@ questions:
   correct_index: 1
   explanation: 本題測驗相關核心概念。正確解答為「強化即時資料處理與推論計算資源配置，以降低延遲風險」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: 歷屆考題

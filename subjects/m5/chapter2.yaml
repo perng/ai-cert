@@ -1,7 +1,7 @@
 questions:
 - id: 7201
   chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 簡介與設計動機
+  section_title: 問題的起源：為什麼需要 MCP？
   text: MCP (Model Context Protocol) 主要解決什麼問題？
   type: multiple_choice
   options:
@@ -17,7 +17,7 @@ questions:
   usage: both
 - id: 7202
   chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 系統架構
+  section_title: MCP 的三個角色
   text: 在 MCP 架構中，「主機 (Host)」的主要職責是什麼？
   type: multiple_choice
   options:
@@ -33,7 +33,7 @@ questions:
   usage: both
 - id: 7203
   chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 系統架構
+  section_title: MCP 的三個角色
   text: 在 MCP 架構中，一個「客戶端 (Client)」維護的連線關係是？
   type: multiple_choice
   options:
@@ -49,7 +49,7 @@ questions:
   usage: both
 - id: 7204
   chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 核心元件
+  section_title: MCP 提供的三種能力
   text: MCP 中的「資源 (Resources)」與「工具 (Tools)」的主要差異是什麼？
   type: multiple_choice
   options:
@@ -65,7 +65,7 @@ questions:
   usage: both
 - id: 7205
   chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 傳輸機制
+  section_title: MCP 的通訊方式
   text: MCP 的「stdio 傳輸」與「HTTP + SSE 傳輸」最主要的適用場景差異是什麼？
   type: multiple_choice
   options:
@@ -81,7 +81,7 @@ questions:
   usage: both
 - id: 7206
   chapter_title: 模型上下文協議 (MCP)
-  section_title: 開發 MCP 伺服器
+  section_title: 在 Claude Desktop 設定 MCP 工具
   text: 使用 Python MCP SDK (FastMCP) 定義工具時，工具的「description」欄位最重要的用途是什麼？
   type: multiple_choice
   options:
@@ -97,7 +97,7 @@ questions:
   usage: both
 - id: 7207
   chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 安全考量
+  section_title: MCP 的安全設計
   text: 依照 MCP 安全設計，什麼是防範「提示注入攻擊 (Prompt Injection)」的最佳實踐？
   type: multiple_choice
   options:
@@ -113,7 +113,7 @@ questions:
   usage: both
 - id: 7208
   chapter_title: 模型上下文協議 (MCP)
-  section_title: AI 代理人基礎概念
+  section_title: AI 代理人基礎概念回顧
   text: 在 AI 代理人的運作中，「思考-行動-觀察循環 (Thought-Action-Observation Cycle)」又被稱為什麼？
   type: multiple_choice
   options:
@@ -445,7 +445,7 @@ questions:
   usage: both
 - id: 7230
   chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 簡介與設計動機
+  section_title: 問題的起源：為什麼需要 MCP？
   text: MCP 與傳統的客製化 API 整合相比，最大的優勢是什麼？
   type: multiple_choice
   options:
@@ -461,7 +461,7 @@ questions:
   usage: both
 - id: 7231
   chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 系統架構
+  section_title: MCP 的三個角色
   text: 在 MCP 架構中，如果一個應用程式需要同時連接資料庫和檔案系統，它需要建立多少個客戶端？
   type: multiple_choice
   options:
@@ -477,7 +477,7 @@ questions:
   usage: both
 - id: 7232
   chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 核心元件
+  section_title: MCP 提供的三種能力
   text: 下列哪一項是 MCP 中「工具（Tools）」的典型範例？
   type: multiple_choice
   options:
@@ -493,7 +493,7 @@ questions:
   usage: both
 - id: 7233
   chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 傳輸機制
+  section_title: MCP 的通訊方式
   text: 下列哪種情況最適合選擇 HTTP + SSE 而非 stdio 傳輸？
   type: multiple_choice
   options:
@@ -509,7 +509,7 @@ questions:
   usage: both
 - id: 7234
   chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 安全考量
+  section_title: MCP 的安全設計
   text: 在 MCP 的安全設計中，使用者何時會被要求授權工具操作？
   type: multiple_choice
   options:
@@ -541,7 +541,7 @@ questions:
   usage: both
 - id: 7236
   chapter_title: 模型上下文協議 (MCP)
-  section_title: 開發 MCP 伺服器
+  section_title: 在 Claude Desktop 設定 MCP 工具
   text: 使用 FastMCP 定義工具時，為什麼參數的型別註記（type hint）很重要？
   type: multiple_choice
   options:
@@ -557,7 +557,7 @@ questions:
   usage: both
 - id: 7237
   chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 簡介與設計動機
+  section_title: 問題的起源：為什麼需要 MCP？
   text: MCP 協議中的「M」代表什麼？
   type: multiple_choice
   options:
@@ -573,7 +573,7 @@ questions:
   usage: both
 - id: 7238
   chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 系統架構
+  section_title: MCP 的三個角色
   text: 如果一個 MCP 伺服器崩潰了，對整個系統的影響為何？
   type: multiple_choice
   options:
@@ -589,7 +589,7 @@ questions:
   usage: both
 - id: 7239
   chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 核心元件
+  section_title: MCP 提供的三種能力
   text: MCP 的「Prompts（提示範本）」與一般的系統提示詞有何不同？
   type: multiple_choice
   options:
@@ -605,7 +605,7 @@ questions:
   usage: both
 - id: 7240
   chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 傳輸機制
+  section_title: MCP 的通訊方式
   text: stdio 傳輸方式的主要安全優勢是什麼？
   type: multiple_choice
   options:
@@ -621,7 +621,7 @@ questions:
   usage: both
 - id: 7241
   chapter_title: 模型上下文協議 (MCP)
-  section_title: 開發 MCP 伺服器
+  section_title: 在 Claude Desktop 設定 MCP 工具
   text: 在 MCP 伺服器中，為什麼工具的描述（description）比工具的名稱更重要？
   type: multiple_choice
   options:
@@ -637,7 +637,7 @@ questions:
   usage: both
 - id: 7242
   chapter_title: 模型上下文協議 (MCP)
-  section_title: AI 代理人基礎概念
+  section_title: AI 代理人基礎概念回顧
   text: 一個完整的「思考-行動-觀察」循環中，若觀察結果顯示工具呼叫失敗，代理人應如何應對？
   type: multiple_choice
   options:
@@ -653,7 +653,7 @@ questions:
   usage: both
 - id: 7243
   chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 簡介與設計動機
+  section_title: 問題的起源：為什麼需要 MCP？
   text: MCP 如何幫助 AI 系統「發現」新的工具？
   type: multiple_choice
   options:
@@ -685,7 +685,7 @@ questions:
   usage: both
 - id: 7245
   chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 安全考量
+  section_title: MCP 的安全設計
   text: 一個天氣查詢用的 MCP 伺服器應該擁有什麼權限？
   type: multiple_choice
   options:
@@ -701,7 +701,7 @@ questions:
   usage: both
 - id: 7246
   chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 系統架構
+  section_title: MCP 的三個角色
   text: 在 MCP 術語中，「主機（Host）」與「客戶端（Client）」的關係類似於什麼？
   type: multiple_choice
   options:
@@ -717,7 +717,7 @@ questions:
   usage: both
 - id: 7247
   chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 核心元件
+  section_title: MCP 提供的三種能力
   text: 下列哪個選項屬於 MCP 的「資源（Resources）」？
   type: multiple_choice
   options:
@@ -733,7 +733,7 @@ questions:
   usage: both
 - id: 7248
   chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 傳輸機制
+  section_title: MCP 的通訊方式
   text: stdio 傳輸方式在何種情況下可能不適合使用？
   type: multiple_choice
   options:
@@ -749,7 +749,7 @@ questions:
   usage: both
 - id: 7249
   chapter_title: 模型上下文協議 (MCP)
-  section_title: 開發 MCP 伺服器
+  section_title: 在 Claude Desktop 設定 MCP 工具
   text: 在 Claude Desktop 中設定 MCP 伺服器時，使用者需要提供哪些資訊？
   type: multiple_choice
   options:
@@ -765,7 +765,7 @@ questions:
   usage: both
 - id: 7250
   chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 簡介與設計動機
+  section_title: 問題的起源：為什麼需要 MCP？
   text: MCP 誕生之前，開發者整合 AI 與工具的典型困境為何？
   type: multiple_choice
   options:
@@ -797,7 +797,7 @@ questions:
   usage: both
 - id: 7252
   chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 安全考量
+  section_title: MCP 的安全設計
   text: 提示注入攻擊（Prompt Injection）如何影響 MCP 系統的安全性？
   type: multiple_choice
   options:
@@ -813,7 +813,7 @@ questions:
   usage: both
 - id: 7253
   chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 系統架構
+  section_title: MCP 的三個角色
   text: 一個設計良好的 MCP 伺服器應該遵循什麼原則？
   type: multiple_choice
   options:
@@ -829,7 +829,7 @@ questions:
   usage: both
 - id: 7254
   chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 核心元件
+  section_title: MCP 提供的三種能力
   text: 當 LLM 需要執行一個有副作用的操作（如刪除檔案）時，MCP 中應該使用哪一種元件？
   type: multiple_choice
   options:
@@ -845,7 +845,7 @@ questions:
   usage: both
 - id: 7255
   chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 傳輸機制
+  section_title: MCP 的通訊方式
   text: 在 MCP 的 HTTP + SSE 傳輸模式中，SSE（Server-Sent Events）主要用於傳遞什麼類型的資料？
   type: multiple_choice
   options:
@@ -861,7 +861,7 @@ questions:
   usage: both
 - id: 7256
   chapter_title: 模型上下文協議 (MCP)
-  section_title: 開發 MCP 伺服器
+  section_title: 在 Claude Desktop 設定 MCP 工具
   text: 使用社群提供的現成 MCP 伺服器（如 server-filesystem）時，開發者還需要做什麼？
   type: multiple_choice
   options:
@@ -877,7 +877,7 @@ questions:
   usage: both
 - id: 7257
   chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 簡介與設計動機
+  section_title: 問題的起源：為什麼需要 MCP？
   text: MCP 協議能促進 AI 模型之間的互操作性，這是因為它提供了什麼？
   type: multiple_choice
   options:
@@ -909,7 +909,7 @@ questions:
   usage: both
 - id: 7259
   chapter_title: 模型上下文協議 (MCP)
-  section_title: MCP 安全考量
+  section_title: MCP 的安全設計
   text: 下列哪一項是 MCP 系統中防範提示注入攻擊的最佳做法？
   type: multiple_choice
   options:

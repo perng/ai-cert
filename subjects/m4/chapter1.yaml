@@ -1041,7 +1041,7 @@ questions:
   - sec-ensemble-methods
   id: 6165
   usage: both
-- id: 6165
+- id: '6165_1'
   chapter_title: 進階機器學習演算法
   text: 某零售企業建立一個銷售預測模型，希望評估該模型在不同月份的新資料上，是否仍能維持穩定的預測表現。資料科學團隊計畫利用統計方法檢驗模型對未觀察資料的適應能力與泛化效果。下列哪一種方法最適合用於此目的？ (114年第二梯次)
   type: multiple_choice
@@ -1053,6 +1053,7 @@ questions:
   correct_index: 1
   explanation: 交叉驗證 (Cross-Validation) 是評估模型泛化能力與穩定性的標準方法。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6166
@@ -1067,6 +1068,7 @@ questions:
   correct_index: 2
   explanation: L1 正則化 (Lasso) 傾向於產生稀疏解 (Sparse Solution)，即將不重要的特徵權重降為 0。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6167
@@ -1081,6 +1083,7 @@ questions:
   correct_index: 2
   explanation: 非凸函數 (Non-convex Function) 擁有多個局部極小值，梯度下降法容易陷入局部最優解 (Local Optima)。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6168
@@ -1095,6 +1098,7 @@ questions:
   correct_index: 1
   explanation: 在 DBSCAN 中，未達核心點條件且不在核心點鄰域內的點被視為雜訊點 (Noise Point)。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6169
@@ -1109,6 +1113,7 @@ questions:
   correct_index: 0
   explanation: 卷積層 (Convolutional Layer) 的主要功能是透過濾波器滑動提取影像的局部特徵 (如邊緣、紋理)。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6170
@@ -1123,6 +1128,7 @@ questions:
   correct_index: 2
   explanation: CNN 透過參數共享 (Parameter Sharing) 與局部感知，大幅減少了參數量，比全連接網路更高效。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6171
@@ -1137,6 +1143,7 @@ questions:
   correct_index: 0
   explanation: LSTM 專為處理序列資料設計，適合時間序列預測 (如電力需求)。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6172
@@ -1151,6 +1158,7 @@ questions:
   correct_index: 3
   explanation: 資訊增益 (Information Gain) 是決策樹 (Decision Tree) 用於選擇分裂特徵的指標。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6173
@@ -1165,6 +1173,7 @@ questions:
   correct_index: 0
   explanation: 距離型演算法 (KNN, SVM, K-means) 對特徵尺度非常敏感，必須進行特徵縮放 (Feature Scaling)。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6174
@@ -1179,6 +1188,7 @@ questions:
   correct_index: 2
   explanation: AutoML 適合資源有限或需快速驗證多種模型的場景 (如行銷部門快速建模)。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6175
@@ -1193,6 +1203,7 @@ questions:
   correct_index: 3
   explanation: Random Search 在高維參數空間中，比 Grid Search 更能有效率地找到較佳的超參數組合。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6176
@@ -1207,6 +1218,7 @@ questions:
   correct_index: 2
   explanation: 學習率 (Learning Rate) 控制權重更新的步長，過大導致震盪，過小導致收斂緩慢。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6177
@@ -1221,6 +1233,7 @@ questions:
   correct_index: 1
   explanation: 標籤偏差 (Label Bias) 常源自標註者主觀判斷不一致或系統性錯誤。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6178
@@ -1235,6 +1248,7 @@ questions:
   correct_index: 2
   explanation: 醫療診斷涉及生命安全，模型的可解釋性 (為何判斷為惡性) 至關重要。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6179
@@ -1249,6 +1263,7 @@ questions:
   correct_index: 1
   explanation: R-squared = 0.85 表示模型能解釋目標變數 85% 的變異量。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6180
@@ -1263,6 +1278,7 @@ questions:
   correct_index: 0
   explanation: F1 = 2 * (0.8 * 0.6) / (0.8 + 0.6) = 0.96 / 1.4 ≈ 0.686。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6181
@@ -1277,6 +1293,7 @@ questions:
   correct_index: 1
   explanation: 官方答案是Adam，因為Adam 優化器結合了動量 (Momentum) 與 RMSProp 的概念。 但是SGD + Momentum 看起來也是正確答案，都寫明了 (+ Momentum)。這題目有點問題。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6182
@@ -1291,6 +1308,7 @@ questions:
   correct_index: 0
   explanation: XGBoost 引入了正則化項 (L1/L2) 來控制模型複雜度，這是其優於傳統 GBDT 的關鍵之一。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6183
@@ -1305,6 +1323,7 @@ questions:
   correct_index: 2
   explanation: 使用準確率 (Accuracy) 評估不平衡資料會產生誤導 (如全猜多數類也有高準確率)。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6184
@@ -1319,6 +1338,7 @@ questions:
   correct_index: 2
   explanation: 建立互動特徵 (Interaction Features) 最直接的方式是將特徵相乘。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6185
@@ -1333,6 +1353,7 @@ questions:
   correct_index: 2
   explanation: 多頭注意力 (Multi-head Attention) 允許模型同時關注來自不同表示子空間的資訊。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6186
@@ -1347,6 +1368,7 @@ questions:
   correct_index: 1
   explanation: 貝氏分類器基於貝氏定理，計算給定特徵下的條件機率 P(Y|X)。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6187
@@ -1361,6 +1383,7 @@ questions:
   correct_index: 0
   explanation: 蒙地卡羅方法 (Monte Carlo) 透過大量隨機抽樣來模擬系統的機率分佈與風險。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6188
@@ -1375,6 +1398,7 @@ questions:
   correct_index: 2
   explanation: 殘差圖呈現系統性彎曲 (非隨機分佈) 通常暗示模型未捕捉到非線性關係或遺漏了重要變數。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6189
@@ -1389,6 +1413,7 @@ questions:
   correct_index: 0
   explanation: 傳統信用評分卡 (Scorecard) 通常不使用生成式模型，而是基於 WOE/IV 的邏輯迴歸。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6190
@@ -1403,6 +1428,7 @@ questions:
   correct_index: 3
   explanation: 擴增輸入特徵通常會增加模型複雜度，若無適當篩選反而容易導致過擬合。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6191
@@ -1417,6 +1443,7 @@ questions:
   correct_index: 3
   explanation: ReLU (Rectified Linear Unit) 解決了梯度消失問題並引入非線性，能提升深度網路的表達能力。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6192
@@ -1431,6 +1458,7 @@ questions:
   correct_index: 2
   explanation: 訓練樣本僅包含活躍顧客，導致模型無法泛化至新會員或低消費族群，屬於取樣偏差 (Sampling Bias)。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6193
@@ -1445,6 +1473,7 @@ questions:
   correct_index: 3
   explanation: 時間序列交叉驗證 (Time Series CV) 能模擬真實的時間演進，避免使用未來資訊預測過去。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6194
@@ -1459,6 +1488,7 @@ questions:
   correct_index: 2
   explanation: 語言轉移 (Language Transfer) 常因詞彙或語法差異導致模型無法識別關鍵特徵，造成召回率下降。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6195
@@ -1473,6 +1503,7 @@ questions:
   correct_index: 1
   explanation: 監控驗證集損失並設定耐心值 (Patience) 是早停法 (Early Stopping) 的標準實作，能避免過早或過晚停止。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6196
@@ -1487,6 +1518,7 @@ questions:
   correct_index: 3
   explanation: L1 正則化 (Lasso) 能將係數壓縮為 0，具備特徵選擇的功能。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6197
@@ -1501,6 +1533,7 @@ questions:
   correct_index: 1
   explanation: 逐一比對所有組合 (Pairwise Comparison) 的次數為 n*(n-1)/2，時間複雜度為 O(n^2)。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6198
@@ -1515,6 +1548,7 @@ questions:
   correct_index: 3
   explanation: 分層留一法 (Stratified LOOCV) 或分層 K-Fold 在小樣本且不平衡資料中能確保驗證的穩定性與代表性。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6199
@@ -1529,6 +1563,7 @@ questions:
   correct_index: 0
   explanation: 前兩個主成分解釋變異量 = (6+3)/10 = 90% > 80%，保留前兩個即可。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6200
@@ -1543,9 +1578,10 @@ questions:
   correct_index: 3
   explanation: 同態加密允許在密文上進行運算，結果解密後等於在明文上運算的結果，適合隱私保護機器學習。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
-- id: 6201
+- id: '6201_1'
   chapter_title: 進階機器學習演算法
   text: 某跨銀行風控平台希望整合多家銀行的用戶行為資料，用於訓練信用風險預測模型。由於競爭與法規限制，各銀行僅願意提供加密後資料，且資料在任何時間不得被平台解密。同時，平台需建立安全通訊協議以確保資料在傳輸過程未被竄改或重放。下列哪一組技術最能完整對應上述需求？ (114年第二梯次)
   type: multiple_choice
@@ -1557,11 +1593,12 @@ questions:
   correct_index: 1
   explanation: 結合同態加密 (運算)、非對稱加密 (傳輸/金鑰交換)、雜湊 (完整性) 等技術能滿足高規格安全需求。
   tags:
+  - sec-past-exam
   - chap-m4-ch1
   usage: mock
 - id: 6569
   chapter_title: 進階機器學習演算法
-  section_title: 階層式分群與密度分群
+  section_title: 進階非監督式學習
   text: DBSCAN 相較於 K-means 的一個重要優點是什麼？
   type: multiple_choice
   options:

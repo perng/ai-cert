@@ -720,7 +720,7 @@ questions:
   - sec-scenario
   usage: mock
 - chapter_title: 機器學習治理與倫理
-  section_title: 解決偏見與確保可解釋性
+  section_title: 解決偏見與確保可解釋性 (XAI)
   text: 情境：SHAP (SHapley Additive exPlanations) 的核心概念源自？
   type: multiple_choice
   options:
@@ -736,7 +736,7 @@ questions:
   id: 6546
   usage: both
 - chapter_title: 機器學習治理與倫理
-  section_title: ML 中的公平性、當責性與透明度
+  section_title: ML 中的公平性、當責性與透明度 (FAT)
   text: 情境：選擇性偏見 (Selection Bias) 是指？
   type: multiple_choice
   options:
@@ -768,7 +768,7 @@ questions:
   id: 6548
   usage: both
 - chapter_title: 機器學習治理與倫理
-  section_title: 解決偏見與確保可解釋性
+  section_title: 解決偏見與確保可解釋性 (XAI)
   text: 情境：LIME 的主要作用是？
   type: multiple_choice
   options:
@@ -784,7 +784,7 @@ questions:
   id: 6549
   usage: both
 - chapter_title: 機器學習治理與倫理
-  section_title: ML 中的公平性、當責性與透明度
+  section_title: ML 中的公平性、當責性與透明度 (FAT)
   text: 情境：FAT 原則中的「透明度 (Transparency)」要求？
   type: multiple_choice
   options:
@@ -816,7 +816,7 @@ questions:
   id: 6551
   usage: both
 - chapter_title: 機器學習治理與倫理
-  section_title: 解決偏見與確保可解釋性
+  section_title: 解決偏見與確保可解釋性 (XAI)
   text: 情境：全域解釋 (Global Interpretability) 關注的是？
   type: multiple_choice
   options:
@@ -832,7 +832,7 @@ questions:
   id: 6552
   usage: both
 - chapter_title: 機器學習治理與倫理
-  section_title: ML 中的公平性、當責性與透明度
+  section_title: ML 中的公平性、當責性與透明度 (FAT)
   text: 情境：歷史偏見 (Historical Bias) 源於？
   type: multiple_choice
   options:
@@ -864,7 +864,7 @@ questions:
   id: 6554
   usage: both
 - chapter_title: 機器學習治理與倫理
-  section_title: 解決偏見與確保可解釋性
+  section_title: 解決偏見與確保可解釋性 (XAI)
   text: 情境：SHAP 值為正表示？
   type: multiple_choice
   options:
@@ -880,7 +880,7 @@ questions:
   id: 6555
   usage: both
 - chapter_title: 機器學習治理與倫理
-  section_title: ML 中的公平性、當責性與透明度
+  section_title: ML 中的公平性、當責性與透明度 (FAT)
   text: 情境：當責性 (Accountability) 強調？
   type: multiple_choice
   options:
@@ -912,7 +912,7 @@ questions:
   id: 6557
   usage: both
 - chapter_title: 機器學習治理與倫理
-  section_title: 解決偏見與確保可解釋性
+  section_title: 解決偏見與確保可解釋性 (XAI)
   text: 情境：LIME 適用於哪種模型？
   type: multiple_choice
   options:
@@ -928,7 +928,7 @@ questions:
   id: 6558
   usage: both
 - chapter_title: 機器學習治理與倫理
-  section_title: ML 中的公平性、當責性與透明度
+  section_title: ML 中的公平性、當責性與透明度 (FAT)
   text: 情境：測量偏見 (Measurement Bias) 發生在？
   type: multiple_choice
   options:
@@ -944,7 +944,7 @@ questions:
   id: 6559
   usage: both
 - chapter_title: 機器學習治理與倫理
-  section_title: 解決偏見與確保可解釋性
+  section_title: 解決偏見與確保可解釋性 (XAI)
   text: 情境：XAI (Explainable AI) 的主要目標是？
   type: multiple_choice
   options:
@@ -976,7 +976,7 @@ questions:
   id: 6561
   usage: both
 - chapter_title: 機器學習治理與倫理
-  section_title: ML 中的公平性、當責性與透明度
+  section_title: ML 中的公平性、當責性與透明度 (FAT)
   text: 情境：公平性 (Fairness) 要求模型？
   type: multiple_choice
   options:
@@ -992,7 +992,7 @@ questions:
   id: 6562
   usage: both
 - chapter_title: 機器學習治理與倫理
-  section_title: 解決偏見與確保可解釋性
+  section_title: 解決偏見與確保可解釋性 (XAI)
   text: 情境：SHAP 摘要圖 (Summary Plot) 可以展示？
   type: multiple_choice
   options:
@@ -1024,7 +1024,7 @@ questions:
   id: 6564
   usage: both
 - chapter_title: 機器學習治理與倫理
-  section_title: ML 中的公平性、當責性與透明度
+  section_title: ML 中的公平性、當責性與透明度 (FAT)
   text: 情境：為了減少選擇性偏見，應該？
   type: multiple_choice
   options:
@@ -1041,7 +1041,7 @@ questions:
   usage: both
 - id: 6566
   chapter_title: 機器學習治理與倫理
-  section_title: 公平性指標與工具
+  section_title: ML 中的公平性、當責性與透明度 (FAT)
   text: Equal Opportunity 公平性指標主要要求不同群體的哪一項表現接近？
   type: multiple_choice
   options:
@@ -1057,7 +1057,7 @@ questions:
   usage: both
 - id: 6567
   chapter_title: 機器學習治理與倫理
-  section_title: 偏見緩解策略
+  section_title: 解決偏見與確保可解釋性 (XAI)
   text: 對抗式去偏模型 (Adversarial Fairness) 的核心想法是什麼？
   type: multiple_choice
   options:
@@ -1073,7 +1073,7 @@ questions:
   usage: both
 - id: 6568
   chapter_title: 機器學習治理與倫理
-  section_title: 組織治理機制
+  section_title: 模型監控與治理
   text: 高風險 AI 系統設立公平性審查委員會的主要目的為何？
   type: multiple_choice
   options:

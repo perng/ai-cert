@@ -207,6 +207,38 @@ questions:
   - chap-m2-ch2
   - sec-nlp-core-tech
   usage: both
+- id: 900019
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 定義與範疇
+  text: 下列哪一個案例最能代表自然語言處理的典型應用範疇？
+  type: multiple_choice
+  options:
+  - 從客服對話中辨識客戶意圖並自動分類問題類型
+  - 計算影像中每個像素的紅綠藍數值
+  - 控制機械手臂依照固定座標移動
+  - 對資料庫索引進行磁碟重組
+  correct_index: 0
+  explanation: NLP 處理人類語言的理解、生成、檢索與轉換，意圖辨識、情緒分析、摘要與問答都屬於常見範疇。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-definition
+  usage: both
+- id: 900020
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 技術演進脈絡
+  text: NLP 從規則式方法發展到 Transformer 模型，最關鍵的能力提升是什麼？
+  type: multiple_choice
+  options:
+  - 模型能透過大量語料學習上下文語意與長距離依賴
+  - 系統完全不需要訓練資料或語料庫
+  - 所有任務都改成只用正規表示式處理
+  - 模型只能處理單字，不能處理句子
+  correct_index: 0
+  explanation: 規則式與傳統統計方法常受限於人工特徵與上下文表示；深度學習與 Transformer 透過注意力機制學習語境關係，提升翻譯、問答與摘要等任務表現。
+  tags:
+  - chap-m2-ch2
+  - sec-nlp-evolution
+  usage: both
 - id: 4214
   chapter_title: 自然語言處理 (NLP)
   section_title: 核心技術與模型
@@ -1041,7 +1073,7 @@ questions:
   usage: both
 - id: 4266
   chapter_title: 自然語言處理 (NLP)
-  section_title: 詞向量與語境表示
+  section_title: 核心技術與模型
   text: Word2Vec 與 GloVe 的主要差異為何？
   type: multiple_choice
   options:
@@ -1057,7 +1089,7 @@ questions:
   usage: both
 - id: 4267
   chapter_title: 自然語言處理 (NLP)
-  section_title: Seq2Seq 與序列標註
+  section_title: 核心技術與模型
   text: 下列哪一個任務最典型地適合使用 Seq2Seq 模型？
   type: multiple_choice
   options:

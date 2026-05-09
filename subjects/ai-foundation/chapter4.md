@@ -199,7 +199,6 @@ label: chap-ai-foundation-chapter4
     *   模型為了少賠錢，會寧可把「有點像詐欺的」都猜成詐欺。
 
 
-## 本章總結與考點提示 {#chap-ai-foundation-chapter4-summary}
 
 ### 核心概念回顧
 
@@ -249,4 +248,8 @@ label: chap-ai-foundation-chapter4
 ### 延伸思考
 
 *   為什麼 One-Hot Encoding 在類別太多時會失效？（維度災難，導致計算量大且模型難以收斂。解法：Target Encoding 或 Embedding）。
+
+## 歷屆考題 {#sec-past-exam}
+
+請做測驗看歷屆考題。
 

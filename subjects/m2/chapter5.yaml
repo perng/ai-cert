@@ -49,7 +49,7 @@ questions:
   usage: quiz
 - id: 4504
   chapter_title: 系統部署與 MLOps
-  section_title: 微服務架構
+  section_title: 微服務架構 (Microservices Architecture)
   text: 微服務架構 (Microservices) 的核心特點是？
   type: multiple_choice
   options:
@@ -161,7 +161,7 @@ questions:
   usage: quiz
 - id: 4511
   chapter_title: 系統部署與 MLOps
-  section_title: 微服務架構
+  section_title: 微服務架構 (Microservices Architecture)
   text: Docker 容器化技術在微服務中的主要好處是？
   type: multiple_choice
   options:
@@ -305,7 +305,7 @@ questions:
   usage: both
 - id: 4520
   chapter_title: 系統部署與 MLOps
-  section_title: 微服務架構
+  section_title: 微服務架構 (Microservices Architecture)
   text: Kubernetes (K8s) 的主要功能是？
   type: multiple_choice
   options:
@@ -433,7 +433,7 @@ questions:
   usage: both
 - id: 4528
   chapter_title: 系統部署與 MLOps
-  section_title: 微服務架構
+  section_title: 微服務架構 (Microservices Architecture)
   text: 微服務架構的一個缺點是？
   type: multiple_choice
   options:
@@ -561,7 +561,7 @@ questions:
   usage: both
 - id: 4536
   chapter_title: 系統部署與 MLOps
-  section_title: 微服務架構
+  section_title: 微服務架構 (Microservices Architecture)
   text: 單一職責原則 (Single Responsibility Principle) 在微服務中意味著？
   type: multiple_choice
   options:
@@ -752,7 +752,7 @@ questions:
   id: 4547
   usage: both
 - chapter_title: 系統部署與 MLOps
-  section_title: 微服務架構
+  section_title: 微服務架構 (Microservices Architecture)
   text: 情境：將單體式 AI 應用拆解為微服務後，發現服務間通訊延遲顯著增加，影響了整體效能。最可能的架構瓶頸是？
   type: multiple_choice
   options:
@@ -896,7 +896,7 @@ questions:
   id: 4556
   usage: both
 - chapter_title: 系統部署與 MLOps
-  section_title: 微服務架構
+  section_title: 微服務架構 (Microservices Architecture)
   text: 情境：Kubernetes 叢集中的某個推論服務 Pod 因為記憶體洩漏而掛掉。K8s 會如何處理？
   type: multiple_choice
   options:
@@ -1041,7 +1041,7 @@ questions:
   usage: both
 - id: 4566
   chapter_title: MLOps 與系統部署
-  section_title: 容器化與編排
+  section_title: 模型部署策略
   text: Kubernetes 在 AI 模型服務部署中的核心功能是什麼？
   type: multiple_choice
   options:
@@ -1057,7 +1057,7 @@ questions:
   usage: both
 - id: 4567
   chapter_title: MLOps 與系統部署
-  section_title: Model Registry 與可追溯性
+  section_title: AI 的持續整合/持續部署 (CI/CD)
   text: Model Registry 最主要用來管理什麼？
   type: multiple_choice
   options:

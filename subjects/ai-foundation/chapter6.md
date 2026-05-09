@@ -15,6 +15,7 @@ label: chap-ai-foundation-chapter6
 #### 為什麼要做分群？ (Why Clustering?)
 
 在沒有標籤的情況下，分群能幫助我們：
+
 1.  **發現隱藏結構**：找出資料中自然的群聚現象。
 2.  **簡化數據**：用少數幾個「群代表」來概括大量數據。
 3.  **作為前處理**：分群結果可以作為監督式學習的新特徵。
@@ -191,7 +192,6 @@ label: chap-ai-foundation-chapter6
 
 ![DQN](images/dqn.webp)
 
-## 本章總結與考點提示 {#chap-ai-foundation-chapter6-summary}
 
 ### 核心概念回顧
 
@@ -240,4 +240,8 @@ label: chap-ai-foundation-chapter6
 ### 延伸思考
 
 *   為什麼 K-means 對離群值很敏感？（因為平均數會被拉走，導致中心點偏移）。
+
+## 歷屆考題 {#sec-past-exam}
+
+請做測驗看歷屆考題。
 

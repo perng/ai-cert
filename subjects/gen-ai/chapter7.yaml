@@ -1,5 +1,5 @@
 questions:
-- id: 7001
+- id: '7001_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 生成式 AI 特有資安威脅
   text: 提示注入 (Prompt Injection) 的核心原理是？
@@ -15,7 +15,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: quiz
-- id: 7002
+- id: '7002_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 生成式 AI 特有資安威脅
   text: 間接注入 (Indirect Injection) 是指攻擊者將惡意指令藏在哪裡？
@@ -31,7 +31,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: quiz
-- id: 7003
+- id: '7003_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 生成式 AI 特有資安威脅
   text: Zero-Retention (零留存) 政策的主要目的是？
@@ -47,7 +47,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: quiz
-- id: 7004
+- id: '7004_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 隱私強化技術 (PETs)
   text: 同態加密 (Homomorphic Encryption) 的最大特點是？
@@ -63,7 +63,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: quiz
-- id: 7005
+- id: '7005_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 隱私強化技術 (PETs)
   text: 同態加密目前難以大規模商用的主要原因是？
@@ -79,7 +79,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: quiz
-- id: 7006
+- id: '7006_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 隱私強化技術 (PETs)
   text: 安全多方計算 (SMPC) 解決了什麼問題？
@@ -95,7 +95,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: quiz
-- id: 7007
+- id: '7007_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 合規與治理
   text: 幻覺 (Hallucination) 的定義是？
@@ -111,7 +111,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: quiz
-- id: 7008
+- id: '7008_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 合規與治理
   text: 解決幻覺問題最有效的方法之一是？
@@ -127,7 +127,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: quiz
-- id: 7009
+- id: '7009_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 合規與治理
   text: 防護機制 (Guardrails) 中的「輸入過濾」主要檢測？
@@ -143,7 +143,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: quiz
-- id: 7010
+- id: '7010_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 合規與治理
   text: NVIDIA NeMo Guardrails 是一個什麼樣的工具？
@@ -159,7 +159,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: quiz
-- id: 7011
+- id: '7011_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 生成式 AI 特有資安威脅
   text: 直接注入 (Direct Injection) 的例子是？
@@ -175,7 +175,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7012
+- id: '7012_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 生成式 AI 特有資安威脅
   text: 資料外洩的一種形式是「訓練資料記憶」，這指的是？
@@ -191,7 +191,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7013
+- id: '7013_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 生成式 AI 特有資安威脅
   text: 去識別化 (De-identification) 的作法是？
@@ -207,7 +207,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7014
+- id: '7014_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 合規與治理
   text: 輸出過濾 (Output Rail) 的作用是？
@@ -223,7 +223,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7015
+- id: '7015_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 合規與治理
   text: 幻覺的成因之一是「機率本質」，這意味著？
@@ -239,7 +239,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7016
+- id: '7016_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 隱私強化技術 (PETs)
   text: 百萬富翁問題是哪個技術的經典案例？
@@ -255,7 +255,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7017
+- id: '7017_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 生成式 AI 特有資安威脅
   text: 間接注入攻擊通常針對哪類 AI 系統？
@@ -271,7 +271,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7018
+- id: '7018_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 合規與治理
   text: Grounding (接地) 技術是指？
@@ -287,7 +287,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7019
+- id: '7019_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 生成式 AI 特有資安威脅
   text: Prompt Injection 之所以難以防禦，是因為？
@@ -303,7 +303,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7020
+- id: '7020_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 隱私強化技術 (PETs)
   text: 同態加密的應用場景例如？
@@ -319,7 +319,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7021
+- id: '7021_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 合規與治理
   text: Guardrails (護欄) 對於企業級 AI 的重要性在於？
@@ -335,7 +335,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7022
+- id: '7022_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 生成式 AI 特有資安威脅
   text: OpenAI Enterprise 版提供的資安承諾通常包含？
@@ -351,7 +351,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7023
+- id: '7023_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 合規與治理
   text: 幻覺的另一個成因是「語料不足」，這會導致？
@@ -367,7 +367,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7024
+- id: '7024_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 隱私強化技術 (PETs)
   text: SMPC 的全名是？
@@ -383,7 +383,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7025
+- id: '7025_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 生成式 AI 特有資安威脅
   text: 網頁原始碼中隱藏 `<font color="white">...` 的攻擊手法屬於？
@@ -399,7 +399,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7026
+- id: '7026_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 合規與治理
   text: NeMo Guardrails 允許開發者定義？
@@ -415,7 +415,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7027
+- id: '7027_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 生成式 AI 特有資安威脅
   text: 為了防止資料外洩，在送出資料前應該？
@@ -431,7 +431,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7028
+- id: '7028_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 隱私強化技術 (PETs)
   text: 同態加密的「同態」性質是指？
@@ -447,7 +447,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7029
+- id: '7029_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 合規與治理
   text: RAG 如何幫助減少幻覺？
@@ -463,7 +463,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7030
+- id: '7030_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 生成式 AI 的資安、合規與倫理
   text: 本章強調生成式 AI 的資安防護重點在於？
@@ -479,7 +479,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7031
+- id: '7031_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 生成式 AI 特有資安威脅
   text: Prompt Injection 攻擊混淆了模型的？
@@ -495,7 +495,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7032
+- id: '7032_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 合規與治理
   text: 企業在導入 AI 時，對於「不當內容」的檢測屬於？
@@ -511,7 +511,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7033
+- id: '7033_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 隱私強化技術 (PETs)
   text: SMPC 的一個缺點通常是？
@@ -527,7 +527,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7034
+- id: '7034_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 生成式 AI 特有資安威脅
   text: Bing Chat 曾遭受的攻擊多屬於？
@@ -543,7 +543,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7035
+- id: '7035_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 合規與治理
   text: Grounding 的中文通常翻譯為？
@@ -559,7 +559,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7036
+- id: '7036_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 生成式 AI 特有資安威脅
   text: API 供應商承諾「不使用客戶資料訓練模型」是為了？
@@ -575,7 +575,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7037
+- id: '7037_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 合規與治理
   text: NeMo Guardrails 是哪家公司推出的工具？
@@ -591,7 +591,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7038
+- id: '7038_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 隱私強化技術 (PETs)
   text: 隱私保護的「聖杯」通常指？
@@ -607,7 +607,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7039
+- id: '7039_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 生成式 AI 特有資安威脅
   text: Prompt Injection 類似於傳統 Web 攻擊中的？
@@ -623,7 +623,7 @@ questions:
   - chap-gen-chapter7
   - sec-security-ethics
   usage: both
-- id: 7040
+- id: '7040_1'
   chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 合規與治理
   text: 為何需要「輸入過濾」？
@@ -721,7 +721,7 @@ questions:
   usage: both
 - id: 7046
   chapter_title: 生成式 AI 的資安、合規與倫理
-  section_title: 隱私強化技術 (PETs)
+  section_title: 隱私強化技術 (Privacy-Enhancing Technologies, PETs)
   text: 同態加密 (Homomorphic Encryption) 的核心特性是？
   type: multiple_choice
   options:
@@ -737,7 +737,7 @@ questions:
   usage: both
 - id: 7047
   chapter_title: 生成式 AI 的資安、合規與倫理
-  section_title: 隱私強化技術 (PETs)
+  section_title: 隱私強化技術 (Privacy-Enhancing Technologies, PETs)
   text: 安全多方計算 (SMPC) 解決了什麼經典問題？
   type: multiple_choice
   options:
@@ -833,7 +833,7 @@ questions:
   usage: both
 - id: 7063
   chapter_title: 生成式 AI 的資安、合規與倫理
-  section_title: 隱私強化技術 (PETs)
+  section_title: 隱私強化技術 (Privacy-Enhancing Technologies, PETs)
   text: 同態加密 (Homomorphic Encryption) 雖然安全，但目前難以大規模普及的主要障礙是？
   type: multiple_choice
   options:
@@ -849,7 +849,7 @@ questions:
   usage: both
 - id: 7064
   chapter_title: 生成式 AI 的資安、合規與倫理
-  section_title: 隱私強化技術 (PETs)
+  section_title: 隱私強化技術 (Privacy-Enhancing Technologies, PETs)
   text: 差分隱私 (Differential Privacy) 如何在「保護隱私」與「資料可用性」之間取得平衡？
   type: multiple_choice
   options:
@@ -865,7 +865,7 @@ questions:
   usage: both
 - id: 7065
   chapter_title: 生成式 AI 的資安、合規與倫理
-  section_title: 風險管理框架
+  section_title: 風險管理框架 (Risk Management Framework)
   text: 在風險矩陣 (Risk Matrix) 中，對於「發生機率低」但「影響程度極高」的風險（如 AI 失控導致傷亡），應採取何種策略？
   type: multiple_choice
   options:
@@ -881,7 +881,7 @@ questions:
   usage: both
 - id: 7066
   chapter_title: 生成式 AI 的資安、合規與倫理
-  section_title: 風險管理框架
+  section_title: 風險管理框架 (Risk Management Framework)
   text: 「風險溯源 (Risk Tracing)」在 GenAI 專案中的具體作為是？
   type: multiple_choice
   options:
@@ -927,9 +927,9 @@ questions:
   - chap-gen-chapter7
   - sec-compliance-governance
   usage: both
-- id: 11446
+- id: '11446_7'
   chapter_title: 生成式 AI 的資安、合規與倫理
-  section_title: 風險管理框架
+  section_title: 歷屆考題
   text: 某智慧工廠導入生成式 AI，協助產線工程師即時產生維修指引與操作 建議。下列哪一項並非團隊在系統設計中加入Guardrails（防護機制） 的主要目的？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -940,14 +940,15 @@ questions:
   correct_index: 0
   explanation: 此題涉及 某智慧工廠導入生成式... 的核心概念。正確答案為「檢查工程師輸入內容，避免觸發錯誤或危險需求；」。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - chap-gen-chapter7
   - sec-risk-management
   usage: both
-- id: 11402
+- id: '11402_2'
   chapter_title: 生成式 AI 的資安、合規與倫理
-  section_title: 隱私強化技術 (PETs)
+  section_title: 歷屆考題
   text: 企業在導入生成式 AI 平台時，往往需要利用分散於不同部門或機構中 的大量敏感文本資料。若希望在確保隱私的前提下，仍能讓模型持續優 化並降低資料外洩風險，下列哪一種方法最適合？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -958,14 +959,15 @@ questions:
   correct_index: 0
   explanation: 此題涉及 企業在導入生成式 A... 的核心概念。正確答案為「同態加密（Homomorphic Encryption）；」。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - chap-gen-chapter7
   - sec-privacy-enhancing-tech
   usage: both
-- id: 11431
+- id: '11431_4'
   chapter_title: 生成式 AI 的資安、合規與倫理
-  section_title: 風險管理框架
+  section_title: 歷屆考題
   text: 某跨國電商企業導入生成式 AI，協助處理顧客服務請求，並根據顧客 歷史訂單提供個人化建議。資安與法遵部門擔心AI 在回覆時可能洩漏 顧客個資，若要在導入初期優先避免觸法風險，下列哪一項措施最符合 要求？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -976,14 +978,15 @@ questions:
   correct_index: 0
   explanation: 此題涉及 某跨國電商企業導入生... 的核心概念。正確答案為「在加密環境下導入完整的顧客訂單與行為資料，並透過嚴格存取控 管降低洩漏風險；」。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - chap-gen-chapter7
   - sec-risk-management
   usage: both
-- id: 11432
+- id: '11432_5'
   chapter_title: 生成式 AI 的資安、合規與倫理
-  section_title: 合規與治理
+  section_title: 歷屆考題
   text: 某國際銀行導入生成式 AI，用於彙整不同國家金融監管機構的合規規 範，建立跨國合規知識庫。由於各國條文表述方式不同，且監管要求具 有高度專業性與隱含邏輯，若要確保知識庫在後續查詢與生成報告時 能維持正確性與一致性，下列哪一項 AI 能力最為關鍵？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -994,14 +997,15 @@ questions:
   correct_index: 0
   explanation: 此題涉及 某國際銀行導入生成式... 的核心概念。正確答案為「具備跨語言專業術語對齊與條文語意抽取能力，能正確辨識不同國 家規範間的對應與差異；」。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - chap-gen-chapter7
   - sec-compliance-governance
   usage: both
-- id: 11436
+- id: '11436_4'
   chapter_title: 生成式 AI 的資安、合規與倫理
-  section_title: 生成式 AI 特有資安威脅
+  section_title: 歷屆考題
   text: 某航空公司導入生成式 AI 聲控客服，提供航班與票務查詢。有人員透 過惡意提示，試圖讓系統洩漏內部安檢流程。在此情境中，下列何者為 降低提示攻擊（Prompt Injection）風險的最佳策略？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -1012,14 +1016,15 @@ questions:
   correct_index: 0
   explanation: Prompt Injection 是一種攻擊手法，透過惡意指令誤導模型忽略原有的安全限制或執行未授權的操作。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - chap-gen-chapter7
   - sec-genai-security-threats
   usage: mock
-- id: 11438
+- id: '11438_5'
   chapter_title: 生成式 AI 的資安、合規與倫理
-  section_title: 風險管理框架
+  section_title: 歷屆考題
   text: 某銀行導入生成式 AI 放貸審核系統，用於分析申貸人條件並生成初步 審核意見。測試過程中發現，模型對不同族群的核准率存在顯著差異， 可能引發演算法偏見問題。為降低此風險，下列哪一項措施最合適？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -1030,6 +1035,7 @@ questions:
   correct_index: 0
   explanation: AI 偏見通常源自訓練數據中的社會刻板印象。緩解策略包括數據平衡、去偏演算法以及人類回饋強化學習 (RLHF)。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - chap-gen-chapter7
@@ -1049,7 +1055,7 @@ questions:
   tags:
   - chap-gen-chapter7
   - sec-genai-security-threats
-  id: 11447
+  id: '11447_9'
   usage: both
 - chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 生成式 AI 特有資安威脅
@@ -1065,7 +1071,7 @@ questions:
   tags:
   - chap-gen-chapter7
   - sec-genai-security-threats
-  id: 11448
+  id: '11448_10'
   usage: both
 - chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 合規與治理
@@ -1081,10 +1087,10 @@ questions:
   tags:
   - chap-gen-chapter7
   - sec-compliance-governance
-  id: 11449
+  id: '11449_12'
   usage: both
 - chapter_title: 生成式 AI 的資安、合規與倫理
-  section_title: 隱私強化技術 (PETs)
+  section_title: 隱私強化技術 (Privacy-Enhancing Technologies, PETs)
   text: 情境：同態加密 (Homomorphic Encryption) 的核心優勢是？
   type: multiple_choice
   options:
@@ -1097,7 +1103,7 @@ questions:
   tags:
   - chap-gen-chapter7
   - sec-privacy-enhancing-tech
-  id: 11450
+  id: '11450_11'
   usage: both
 - chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 生成式 AI 特有資安威脅
@@ -1113,7 +1119,7 @@ questions:
   tags:
   - chap-gen-chapter7
   - sec-genai-security-threats
-  id: 11451
+  id: '11451_11'
   usage: both
 - chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 合規與治理
@@ -1129,10 +1135,10 @@ questions:
   tags:
   - chap-gen-chapter7
   - sec-compliance-governance
-  id: 11452
+  id: '11452_10'
   usage: both
 - chapter_title: 生成式 AI 的資安、合規與倫理
-  section_title: 隱私強化技術 (PETs)
+  section_title: 隱私強化技術 (Privacy-Enhancing Technologies, PETs)
   text: 情境：安全多方計算 (SMPC) 解決了什麼問題？
   type: multiple_choice
   options:
@@ -1145,7 +1151,7 @@ questions:
   tags:
   - chap-gen-chapter7
   - sec-privacy-enhancing-tech
-  id: 11453
+  id: '11453_10'
   usage: both
 - chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 生成式 AI 特有資安威脅
@@ -1161,7 +1167,7 @@ questions:
   tags:
   - chap-gen-chapter7
   - sec-genai-security-threats
-  id: 11454
+  id: '11454_10'
   usage: both
 - chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 合規與治理
@@ -1177,7 +1183,7 @@ questions:
   tags:
   - chap-gen-chapter7
   - sec-compliance-governance
-  id: 11455
+  id: '11455_10'
   usage: both
 - chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 合規與治理
@@ -1193,7 +1199,7 @@ questions:
   tags:
   - chap-gen-chapter7
   - sec-compliance-governance
-  id: 11456
+  id: '11456_10'
   usage: both
 - chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 生成式 AI 特有資安威脅
@@ -1209,7 +1215,7 @@ questions:
   tags:
   - chap-gen-chapter7
   - sec-genai-security-threats
-  id: 11457
+  id: '11457_10'
   usage: both
 - chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 合規與治理
@@ -1225,10 +1231,10 @@ questions:
   tags:
   - chap-gen-chapter7
   - sec-compliance-governance
-  id: 11458
+  id: '11458_9'
   usage: both
 - chapter_title: 生成式 AI 的資安、合規與倫理
-  section_title: 風險管理框架
+  section_title: 風險管理框架 (Risk Management Framework)
   text: 情境：風險矩陣 (Risk Matrix) 通常依據哪兩個維度分類風險？
   type: multiple_choice
   options:
@@ -1241,7 +1247,7 @@ questions:
   tags:
   - chap-gen-chapter7
   - sec-risk-management
-  id: 11459
+  id: '11459_9'
   usage: both
 - chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 合規與治理
@@ -1257,7 +1263,7 @@ questions:
   tags:
   - chap-gen-chapter7
   - sec-compliance-governance
-  id: 11460
+  id: '11460_9'
   usage: both
 - chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 生成式 AI 特有資安威脅
@@ -1273,7 +1279,7 @@ questions:
   tags:
   - chap-gen-chapter7
   - sec-genai-security-threats
-  id: 11461
+  id: '11461_9'
   usage: both
 - chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 合規與治理
@@ -1289,10 +1295,10 @@ questions:
   tags:
   - chap-gen-chapter7
   - sec-compliance-governance
-  id: 11462
+  id: '11462_8'
   usage: both
 - chapter_title: 生成式 AI 的資安、合規與倫理
-  section_title: 隱私強化技術 (PETs)
+  section_title: 隱私強化技術 (Privacy-Enhancing Technologies, PETs)
   text: 情境：差分隱私 (Differential Privacy) 透過什麼方式保護個資？
   type: multiple_choice
   options:
@@ -1305,7 +1311,7 @@ questions:
   tags:
   - chap-gen-chapter7
   - sec-privacy-enhancing-tech
-  id: 11463
+  id: '11463_8'
   usage: both
 - chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 合規與治理
@@ -1321,10 +1327,10 @@ questions:
   tags:
   - chap-gen-chapter7
   - sec-compliance-governance
-  id: 11464
+  id: '11464_7'
   usage: both
 - chapter_title: 生成式 AI 的資安、合規與倫理
-  section_title: 風險管理框架
+  section_title: 風險管理框架 (Risk Management Framework)
   text: 情境：風險轉移 (Transfer) 的一個例子是？
   type: multiple_choice
   options:
@@ -1337,7 +1343,7 @@ questions:
   tags:
   - chap-gen-chapter7
   - sec-risk-management
-  id: 11465
+  id: '11465_6'
   usage: both
 - chapter_title: 生成式 AI 的資安、合規與倫理
   section_title: 生成式 AI 特有資安威脅
@@ -1353,7 +1359,7 @@ questions:
   tags:
   - chap-gen-chapter7
   - sec-genai-security-threats
-  id: 11466
+  id: '11466_6'
   usage: both
 - id: 115001
   chapter_title: 生成式 AI 的資安、合規與倫理

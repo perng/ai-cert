@@ -1,7 +1,7 @@
 questions:
 - id: 5001
   chapter_title: 監督式學習演算法
-  section_title: 監督式學習概述
+  section_title: 本章總結與考點提示
   text: 監督式學習 (Supervised Learning) 的核心運作模式最像什麼？
   type: multiple_choice
   options:
@@ -17,7 +17,7 @@ questions:
   usage: quiz
 - id: 5002
   chapter_title: 監督式學習演算法
-  section_title: 監督式學習概述
+  section_title: 分類演算法 (Classification)
   text: 如果目標變數是「明天會不會下雨（是/否）」，這是哪種任務？
   type: multiple_choice
   options:
@@ -33,7 +33,7 @@ questions:
   usage: quiz
 - id: 5003
   chapter_title: 監督式學習演算法
-  section_title: 監督式學習概述
+  section_title: 迴歸演算法 (Regression)
   text: 如果目標變數是「明天的氣溫（攝氏度）」，這是哪種任務？
   type: multiple_choice
   options:
@@ -49,7 +49,7 @@ questions:
   usage: quiz
 - id: 5004
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: K-近鄰演算法 (KNN, K-Nearest Neighbors)
   text: K-近鄰演算法 (KNN) 的核心概念可以用哪句成語形容？
   type: multiple_choice
   options:
@@ -65,7 +65,7 @@ questions:
   usage: quiz
 - id: 5005
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: K-近鄰演算法 (KNN, K-Nearest Neighbors)
   text: KNN 演算法中，如果 K 值設得太小（如 K=1），容易發生什麼問題？
   type: multiple_choice
   options:
@@ -81,7 +81,7 @@ questions:
   usage: quiz
 - id: 5006
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: 貝氏分類器 (Naive Bayes)
   text: 貝氏分類器 (Naive Bayes) 的「樸素/天真 (Naive)」假設是指什麼？
   type: multiple_choice
   options:
@@ -97,7 +97,7 @@ questions:
   usage: quiz
 - id: 5007
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: 貝氏分類器 (Naive Bayes)
   text: 垃圾郵件過濾系統最常使用哪種演算法？
   type: multiple_choice
   options:
@@ -113,7 +113,7 @@ questions:
   usage: quiz
 - id: 5008
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: 邏輯迴歸 (Logistic Regression)
   text: 邏輯迴歸 (Logistic Regression) 雖然名字有迴歸，但它主要用於解決什麼問題？
   type: multiple_choice
   options:
@@ -129,7 +129,7 @@ questions:
   usage: quiz
 - id: 5009
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: 邏輯迴歸 (Logistic Regression)
   text: 邏輯迴歸使用哪個函數將數值壓縮到 0 到 1 之間？
   type: multiple_choice
   options:
@@ -145,7 +145,7 @@ questions:
   usage: quiz
 - id: 5010
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: 支援向量機 (SVM, Support Vector Machine)
   text: 支援向量機 (SVM) 的核心目標是什麼？
   type: multiple_choice
   options:
@@ -161,7 +161,7 @@ questions:
   usage: quiz
 - id: 5011
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: 支援向量機 (SVM, Support Vector Machine)
   text: 當資料在低維空間無法線性分割時，SVM 使用什麼技巧解決？
   type: multiple_choice
   options:
@@ -177,7 +177,7 @@ questions:
   usage: both
 - id: 5012
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: 決策樹 (Decision Tree)
   text: 決策樹 (Decision Tree) 的最大優點是什麼？
   type: multiple_choice
   options:
@@ -193,7 +193,7 @@ questions:
   usage: both
 - id: 5013
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: 決策樹 (Decision Tree)
   text: 決策樹容易發生什麼問題，導致在訓練集表現很好但在測試集很差？
   type: multiple_choice
   options:
@@ -209,7 +209,7 @@ questions:
   usage: both
 - id: 5014
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: 隨機森林 (Random Forest)
   text: 隨機森林 (Random Forest) 是由許多什麼模型組成的？
   type: multiple_choice
   options:
@@ -225,7 +225,7 @@ questions:
   usage: both
 - id: 5015
   chapter_title: 監督式學習演算法
-  section_title: 集成學習
+  section_title: Bagging (Bootstrap Aggregating)
   text: Bagging (如隨機森林) 的主要目的是降低模型的什麼？
   type: multiple_choice
   options:
@@ -241,7 +241,7 @@ questions:
   usage: both
 - id: 5016
   chapter_title: 監督式學習演算法
-  section_title: 集成學習
+  section_title: Boosting (提升法)
   text: Boosting (如 XGBoost) 的主要目的是降低模型的什麼？
   type: multiple_choice
   options:
@@ -257,7 +257,7 @@ questions:
   usage: both
 - id: 5017
   chapter_title: 監督式學習演算法
-  section_title: 集成學習
+  section_title: Bagging 與 Boosting 的關鍵差異
   text: 下列關於 Bagging 和 Boosting 的比較，何者正確？
   type: multiple_choice
   options:
@@ -273,7 +273,7 @@ questions:
   usage: both
 - id: 5018
   chapter_title: 監督式學習演算法
-  section_title: 迴歸演算法
+  section_title: 線性迴歸 (Linear Regression)
   text: 線性迴歸 (Linear Regression) 使用什麼作為損失函數？
   type: multiple_choice
   options:
@@ -289,7 +289,7 @@ questions:
   usage: both
 - id: 5019
   chapter_title: 監督式學習演算法
-  section_title: 迴歸演算法
+  section_title: 正規化迴歸 (Regularized Regression)
   text: Lasso 回歸 (L1 正則化) 的主要功能是什麼？
   type: multiple_choice
   options:
@@ -305,7 +305,7 @@ questions:
   usage: both
 - id: 5020
   chapter_title: 監督式學習演算法
-  section_title: 迴歸演算法
+  section_title: 正規化迴歸 (Regularized Regression)
   text: Ridge 回歸 (L2 正則化) 主要用於解決什麼問題？
   type: multiple_choice
   options:
@@ -321,7 +321,7 @@ questions:
   usage: both
 - id: 5021
   chapter_title: 監督式學習演算法
-  section_title: 演算法比較
+  section_title: 演算法比較總結
   text: 如果需要向監管單位解釋拒絕貸款的原因，應優先選擇哪種模型？
   type: multiple_choice
   options:
@@ -337,7 +337,7 @@ questions:
   usage: both
 - id: 5022
   chapter_title: 監督式學習演算法
-  section_title: 演算法比較
+  section_title: 演算法比較總結
   text: 在 Kaggle 比賽中，哪種演算法常因其強大的效能而獲勝？
   type: multiple_choice
   options:
@@ -353,7 +353,7 @@ questions:
   usage: both
 - id: 5023
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: K-近鄰演算法 (KNN, K-Nearest Neighbors)
   text: KNN 是一種 Lazy Learning，這意味著什麼？
   type: multiple_choice
   options:
@@ -369,7 +369,7 @@ questions:
   usage: both
 - id: 5024
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: 支援向量機 (SVM, Support Vector Machine)
   text: SVM 中的「支援向量」指的是？
   type: multiple_choice
   options:
@@ -385,7 +385,7 @@ questions:
   usage: both
 - id: 5025
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: 決策樹 (Decision Tree)
   text: 決策樹的分裂準則通常基於什麼指標？
   type: multiple_choice
   options:
@@ -401,7 +401,7 @@ questions:
   usage: both
 - id: 5026
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: 隨機森林 (Random Forest)
   text: 隨機森林中的「隨機」體現在哪兩個方面？
   type: multiple_choice
   options:
@@ -417,7 +417,7 @@ questions:
   usage: both
 - id: 5027
   chapter_title: 監督式學習演算法
-  section_title: 集成學習
+  section_title: 隨機森林 (Random Forest)
   text: OOB (Out-of-Bag) 誤差可以用來做什麼？
   type: multiple_choice
   options:
@@ -433,7 +433,7 @@ questions:
   usage: both
 - id: 5028
   chapter_title: 監督式學習演算法
-  section_title: 集成學習
+  section_title: Boosting (提升法)
   text: AdaBoost 的核心機制是？
   type: multiple_choice
   options:
@@ -449,7 +449,7 @@ questions:
   usage: both
 - id: 5029
   chapter_title: 監督式學習演算法
-  section_title: 迴歸演算法
+  section_title: 正規化迴歸 (Regularized Regression)
   text: 如果資料特徵比資料筆數還多 (High Dimensionality)，哪種迴歸模型較適合？
   type: multiple_choice
   options:
@@ -465,7 +465,7 @@ questions:
   usage: both
 - id: 5030
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: 邏輯迴歸 (Logistic Regression)
   text: 邏輯迴歸的決策邊界通常預設為多少機率？
   type: multiple_choice
   options:
@@ -481,7 +481,7 @@ questions:
   usage: both
 - id: 5031
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: 支援向量機 (SVM, Support Vector Machine)
   text: SVM 適合處理哪種規模的資料？
   type: multiple_choice
   options:
@@ -497,7 +497,7 @@ questions:
   usage: both
 - id: 5032
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: 決策樹 (Decision Tree)
   text: 哪種演算法被稱為「白箱 (White Box)」模型？
   type: multiple_choice
   options:
@@ -513,7 +513,7 @@ questions:
   usage: both
 - id: 5033
   chapter_title: 監督式學習演算法
-  section_title: 集成學習
+  section_title: Bagging (Bootstrap Aggregating)
   text: 隨機森林屬於哪種集成學習方法？
   type: multiple_choice
   options:
@@ -529,7 +529,7 @@ questions:
   usage: both
 - id: 5034
   chapter_title: 監督式學習演算法
-  section_title: 迴歸演算法
+  section_title: 正規化迴歸 (Regularized Regression)
   text: Lasso 回歸的解空間幾何形狀是？
   type: multiple_choice
   options:
@@ -545,7 +545,7 @@ questions:
   usage: both
 - id: 5035
   chapter_title: 監督式學習演算法
-  section_title: 迴歸演算法
+  section_title: 正規化迴歸 (Regularized Regression)
   text: Ridge 回歸的解空間幾何形狀是？
   type: multiple_choice
   options:
@@ -561,7 +561,7 @@ questions:
   usage: both
 - id: 5036
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: 本章總結與考點提示
   text: 下列何者不是監督式學習的應用？
   type: multiple_choice
   options:
@@ -577,7 +577,7 @@ questions:
   usage: both
 - id: 5037
   chapter_title: 監督式學習演算法
-  section_title: 集成學習
+  section_title: Bagging 與 Boosting 的關鍵差異
   text: Boosting 演算法對雜訊的敏感度如何？
   type: multiple_choice
   options:
@@ -593,7 +593,7 @@ questions:
   usage: both
 - id: 5038
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: 貝氏分類器 (Naive Bayes)
   text: 在貝氏分類器中，先驗機率 (Prior) 是指？
   type: multiple_choice
   options:
@@ -609,7 +609,7 @@ questions:
   usage: both
 - id: 5039
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: 決策樹 (Decision Tree)
   text: 決策樹中的「葉節點 (Leaf)」代表什麼？
   type: multiple_choice
   options:
@@ -625,7 +625,7 @@ questions:
   usage: both
 - id: 5040
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: 邏輯迴歸 (Logistic Regression)
   text: 邏輯迴歸的輸出值範圍是？
   type: multiple_choice
   options:
@@ -641,7 +641,7 @@ questions:
   usage: both
 - id: 5051
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: 分類演算法 (Classification)
   text: 在癌症篩檢模型中，我們通常更看重 Recall (召回率) 而非 Precision (精確率)，原因是？
   type: multiple_choice
   options:
@@ -657,7 +657,7 @@ questions:
   usage: both
 - id: 5052
   chapter_title: 監督式學習演算法
-  section_title: 集成學習
+  section_title: 集成學習 (Ensemble Learning)
   text: Bagging (如 Random Forest) 與 Boosting (如 XGBoost) 的主要區別在於？
   type: multiple_choice
   options:
@@ -673,7 +673,7 @@ questions:
   usage: both
 - id: 5053
   chapter_title: 監督式學習演算法
-  section_title: 回歸演算法
+  section_title: 迴歸演算法 (Regression)
   text: 當特徵數量多於樣本數量，或特徵間存在高度共線性 (Multicollinearity) 時，為何 Ridge Regression (L2) 優於一般 Linear Regression？
   type: multiple_choice
   options:
@@ -689,7 +689,7 @@ questions:
   usage: both
 - id: 5054
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: 分類演算法 (Classification)
   text: 決策樹 (Decision Tree) 最大的缺點是容易過擬合，通常透過什麼方式來解決？
   type: multiple_choice
   options:
@@ -705,7 +705,7 @@ questions:
   usage: both
 - id: 5055
   chapter_title: 監督式學習演算法
-  section_title: 集成學習
+  section_title: 集成學習 (Ensemble Learning)
   text: 隨機森林 (Random Forest) 中的「隨機」體現在哪兩個方面？
   type: multiple_choice
   options:
@@ -721,7 +721,7 @@ questions:
   usage: both
 - id: 5056
   chapter_title: 監督式學習演算法
-  section_title: 回歸演算法
+  section_title: 迴歸演算法 (Regression)
   text: 線性回歸的基本假設中，若違反了「殘差變異數同質性 (Homoscedasticity)」，會發生什麼事？
   type: multiple_choice
   options:
@@ -737,7 +737,7 @@ questions:
   usage: both
 - id: 11421
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: 歷屆考題
   text: 某金融科技公司正開發一套違約風險預測系統，需大量處理不同客戶 的財務特徵資料。考量到資料特徵數量眾多，且希望提升預測的穩定性 與泛化能力，下列哪一種鑑別式 AI 模型最適合？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -748,6 +748,7 @@ questions:
   correct_index: 3
   explanation: 此題涉及 分類演算法 的核心概念。正確答案為「隨機森林（Random Forest）」。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter5
@@ -755,7 +756,7 @@ questions:
   usage: both
 - id: 11407
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: 歷屆考題
   text: 貝氏分類器（Naive Bayes Classifier）常被應用於文字分類、垃圾郵 件過濾等場景。依據模型特性，它最適合歸類於下列哪一類？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -766,6 +767,7 @@ questions:
   correct_index: 1
   explanation: 此題涉及 分類演算法 的核心概念。正確答案為「透過建構資料的整體分布，並利用條件關係進行推斷和分類的模 型」。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter5
@@ -773,7 +775,7 @@ questions:
   usage: both
 - id: 11420
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: 歷屆考題
   text: 某醫院希望開發一個系統，根據患者的年齡、血壓與BMI 等資訊，預測  答案 題    目 其罹患糖尿病的機率（0~1） ，並依據預測值是否超過0.5 做出風險警 示。下列哪一種模型最適合用於此分類任務？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -784,6 +786,7 @@ questions:
   correct_index: 0
   explanation: 此題涉及 分類演算法 的核心概念。正確答案為「邏輯迴歸（Logistic Regression）」。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter5
@@ -791,7 +794,7 @@ questions:
   usage: both
 - id: 11415
   chapter_title: 監督式學習演算法
-  section_title: 分類演算法
+  section_title: 歷屆考題
   text: 某模型使用 K-近鄰演算法（KNN）進行分類，K 設為 3。 一筆新的測 試資料輸入後，與其最接近的3 筆資料的類別如下：鄰近樣本1：類別 A；鄰近樣本 2：類別B；鄰近樣本 3：類別A。請問模型會將這筆資料 預測為哪一類別？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -802,13 +805,14 @@ questions:
   correct_index: 0
   explanation: 此題涉及 分類演算法 的核心概念。正確答案為「類別 A」。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter5
   - sec-classification
   usage: both
 - chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
-  section_title: 分類演算法
+  section_title: 貝氏分類器 (Naive Bayes)
   text: 情境：你需要開發一個垃圾郵件過濾器，且系統資源有限，要求極高的預測速度。最適合的演算法是？
   type: multiple_choice
   options:
@@ -824,7 +828,7 @@ questions:
   id: 11422
   usage: both
 - chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
-  section_title: 分類演算法
+  section_title: 隨機森林 (Random Forest)
   text: 情境：銀行需要一個信用評分模型，法規要求必須能清楚解釋「為什麼拒絕客戶貸款」。應避免使用哪個模型？
   type: multiple_choice
   options:
@@ -840,7 +844,7 @@ questions:
   id: 11423
   usage: both
 - chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
-  section_title: 集成學習
+  section_title: Bagging (Bootstrap Aggregating)
   text: 情境：隨機森林 (Random Forest) 透過「投票」機制來決定最終結果，這主要是為了降低模型的？
   type: multiple_choice
   options:
@@ -856,7 +860,7 @@ questions:
   id: 11424
   usage: both
 - chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
-  section_title: 分類演算法
+  section_title: 支援向量機 (SVM, Support Vector Machine)
   text: 情境：SVM 在處理非線性可分的資料（如太極圖）時，使用了什麼技巧將資料投影到高維空間？
   type: multiple_choice
   options:
@@ -872,7 +876,7 @@ questions:
   id: 11425
   usage: both
 - chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
-  section_title: 迴歸演算法
+  section_title: 正規化迴歸 (Regularized Regression)
   text: 情境：在訓練房價預測模型時，發現特徵之間存在嚴重的共線性 (Multicollinearity)（如坪數與平方公尺）。應使用哪種迴歸來改善穩定性？
   type: multiple_choice
   options:
@@ -888,7 +892,7 @@ questions:
   id: 11426
   usage: both
 - chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
-  section_title: 集成學習
+  section_title: Boosting (提升法)
   text: 情境：XGBoost 是一種 Boosting 演算法，它的訓練過程是？
   type: multiple_choice
   options:
@@ -904,7 +908,7 @@ questions:
   id: 11427
   usage: both
 - chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
-  section_title: 分類演算法
+  section_title: K-近鄰演算法 (KNN, K-Nearest Neighbors)
   text: 情境：KNN 演算法中的 K 值若設得太小（例如 K=1），容易導致？
   type: multiple_choice
   options:
@@ -920,7 +924,7 @@ questions:
   id: 11428
   usage: both
 - chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
-  section_title: 分類演算法
+  section_title: 邏輯迴歸 (Logistic Regression)
   text: 情境：邏輯迴歸 (Logistic Regression) 的輸出值範圍是？
   type: multiple_choice
   options:
@@ -936,7 +940,7 @@ questions:
   id: 11429
   usage: both
 - chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
-  section_title: 迴歸演算法
+  section_title: 正規化迴歸 (Regularized Regression)
   text: 情境：Lasso Regression (L1) 的一個重要特性是？
   type: multiple_choice
   options:
@@ -952,7 +956,7 @@ questions:
   id: 11430
   usage: both
 - chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
-  section_title: 分類演算法
+  section_title: 決策樹 (Decision Tree)
   text: 情境：決策樹在訓練過程中，如何決定最佳的分裂點？
   type: multiple_choice
   options:
@@ -968,7 +972,7 @@ questions:
   id: 11431
   usage: both
 - chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
-  section_title: 集成學習
+  section_title: Bagging 與 Boosting 的關鍵差異
   text: 情境：Bagging 與 Boosting 的主要區別在於？
   type: multiple_choice
   options:
@@ -984,7 +988,7 @@ questions:
   id: 11432
   usage: both
 - chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
-  section_title: 分類演算法
+  section_title: 支援向量機 (SVM, Support Vector Machine)
   text: 情境：SVM 的目標是最大化什麼？
   type: multiple_choice
   options:
@@ -1000,7 +1004,7 @@ questions:
   id: 11433
   usage: both
 - chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
-  section_title: 分類演算法
+  section_title: 貝氏分類器 (Naive Bayes)
   text: 情境：貝氏分類器 (Naive Bayes) 的「天真 (Naive)」假設是指？
   type: multiple_choice
   options:
@@ -1016,7 +1020,7 @@ questions:
   id: 11434
   usage: both
 - chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
-  section_title: 分類演算法
+  section_title: 隨機森林 (Random Forest)
   text: 情境：隨機森林中的「隨機」體現在哪兩個方面？
   type: multiple_choice
   options:
@@ -1032,7 +1036,7 @@ questions:
   id: 11435
   usage: both
 - chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
-  section_title: 迴歸演算法
+  section_title: 線性迴歸 (Linear Regression)
   text: 情境：線性迴歸通常使用什麼作為損失函數？
   type: multiple_choice
   options:
@@ -1048,7 +1052,7 @@ questions:
   id: 11436
   usage: both
 - chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
-  section_title: 集成學習
+  section_title: Boosting (提升法)
   text: 情境：Boosting 演算法主要用於降低模型的？
   type: multiple_choice
   options:
@@ -1064,7 +1068,7 @@ questions:
   id: 11437
   usage: both
 - chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
-  section_title: 分類演算法
+  section_title: K-近鄰演算法 (KNN, K-Nearest Neighbors)
   text: 情境：KNN 是一種 Lazy Learning 演算法，這意味著？
   type: multiple_choice
   options:
@@ -1080,7 +1084,7 @@ questions:
   id: 11438
   usage: both
 - chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
-  section_title: 分類演算法
+  section_title: 邏輯迴歸 (Logistic Regression)
   text: 情境：邏輯迴歸雖然輸出機率，但通常設定什麼閾值來進行二元分類？
   type: multiple_choice
   options:
@@ -1093,10 +1097,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter5
   - sec-logistic-regression
-  id: 11439
+  id: '11439_1'
   usage: both
 - chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
-  section_title: 分類演算法
+  section_title: 決策樹 (Decision Tree)
   text: 情境：決策樹容易過度擬合，通常透過什麼方法來改善？
   type: multiple_choice
   options:
@@ -1112,7 +1116,7 @@ questions:
   id: 11440
   usage: both
 - chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
-  section_title: 集成學習
+  section_title: 隨機森林 (Random Forest)
   text: 情境：OOB (Out-of-Bag) 誤差可用於評估哪個模型的效能？
   type: multiple_choice
   options:
@@ -1129,7 +1133,7 @@ questions:
   usage: both
 - id: 5071
   chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
-  section_title: 基礎搜尋演算法
+  section_title: 線性搜尋與二分搜尋
   text: 若資料尚未排序，但需要從頭到尾逐筆比對找出某個目標，最符合哪一種搜尋方法？
   type: multiple_choice
   options:
@@ -1145,7 +1149,7 @@ questions:
   usage: quiz
 - id: 5072
   chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
-  section_title: 基礎搜尋演算法
+  section_title: 線性搜尋與二分搜尋
   text: 二分搜尋 (Binary Search) 能快速查找資料，但最重要的前提是什麼？
   type: multiple_choice
   options:
@@ -1161,7 +1165,7 @@ questions:
   usage: quiz
 - id: 5073
   chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
-  section_title: 基礎搜尋演算法
+  section_title: 深度優先搜尋與廣度優先搜尋
   text: 在樹狀或圖形結構中，若演算法會沿著一條路徑盡可能深入，直到無路可走才回溯，這是哪一種搜尋？
   type: multiple_choice
   options:
@@ -1177,7 +1181,7 @@ questions:
   usage: quiz
 - id: 5074
   chapter_title: 監督式學習演算法 (Supervised Learning Algorithms)
-  section_title: 基礎搜尋演算法
+  section_title: 深度優先搜尋與廣度優先搜尋
   text: 在無權重圖中，若要找出從起點到目標的最短步數路徑，通常優先考慮哪一種搜尋方法？
   type: multiple_choice
   options:
@@ -1202,9 +1206,11 @@ questions:
   correct_index: 3
   explanation: 本題測驗相關核心概念。正確解答為「寬深模型（Wide and Deep）」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-10
   text: 某設計公司導入生成式 AI（Generative AI）工具，用於自動產生產品概念圖與風格草圖。為了讓系統能依據既有圖像資料產生具有變化且風格一致的新圖像，模型必須具備學習資料特性並生成新樣本的能力。下列哪一種模型技術或方法最符合上述需求？    （115年第一梯次）
   type: multiple_choice
@@ -1216,9 +1222,11 @@ questions:
   correct_index: 0
   explanation: 本題測驗相關核心概念。正確解答為「隱變量自編碼器（Variational Autoencoder, V AE）」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-20
   text: 某團隊訓練影像分類模型，發現模型在訓練資料上的準確率達 98%，但在測試資115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 第一科：人工智慧基礎概論 考試日期：115 年 03 月 21 日 第 5 頁，共 12 頁  答案 題目 料上僅有 72%。若團隊希望提升模型對新資料的適應能力，並增加訓練資料的多樣性，下列何者最適合？    （115年第一梯次）
   type: multiple_choice
@@ -1230,9 +1238,11 @@ questions:
   correct_index: 1
   explanation: 本題測驗相關核心概念。正確解答為「對訓練影像進行旋轉、翻轉等隨機變化」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-21
   text: 某時尚品牌導入生成式 AI（Generative AI）技術，建立服裝設計輔助系統。系統需根據設計師輸入的風格條件，自動產生具有高度視覺品質、細節穩定且風格變化自然的服裝草圖。團隊特別重視生成結果的穩定性與多樣性控制能力。在此需求下，下列哪一種模型技術或方法較為適合？    （115年第一梯次）
   type: multiple_choice
@@ -1244,9 +1254,11 @@ questions:
   correct_index: 3
   explanation: 本題測驗相關核心概念。正確解答為「擴散模型（Diffusion Model）」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-22
   text: 某製造業工廠規劃導入 AI 監控系統，持續分析設備感測數據（如溫度、震動與壓力） 。系統需能在缺乏完整異常標註資料的情況下，辨識與一般運作型態顯著不同的狀態，並發出預警。在此需求下，下列何種技術較為適合？    （115年第一梯次）
   type: multiple_choice
@@ -1258,9 +1270,11 @@ questions:
   correct_index: 2
   explanation: 本題測驗相關核心概念。正確解答為「採用變分自編碼器（Variational Autoencoder, V AE）學習正常資料分佈」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-32
   text: 某環保局想建立 AI 系統監測空氣品質，透過分析監測站攝影機拍攝的影像來識別煙霧。系統需要在影像中找出煙霧區域並標示其位置和範圍。這個應用主要屬於電腦視覺的哪個技術領域？    （115年第一梯次）
   type: multiple_choice
@@ -1272,9 +1286,11 @@ questions:
   correct_index: 2
   explanation: 本題測驗相關核心概念。正確解答為「影像分割，精確標示出煙霧的像素區域」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: AI 應用規劃師認證考點
 - id: 115-1-36
   text: 某電子製造公司建置 AI 視覺檢測系統，用於辨識 PCB 電路板製程缺陷。系統在影像判讀任務上表現穩定，但其模型設計與訓練目標皆侷限於特定應用範圍，無法直接遷移至其他營運決策任務。依人工智慧能力範疇分類，下列何者最符合該系統特性？    （115年第一梯次）
   type: multiple_choice
@@ -1286,6 +1302,8 @@ questions:
   correct_index: 0
   explanation: 本題測驗相關核心概念。正確解答為「弱 AI（Weak AI/Narrow AI）」，因為這最符合題幹中描述的情境與技術特性。
   tags:
+  - sec-past-exam
   - past-exam
   - 115-1
   usage: mock
+  section_title: 歷屆考題

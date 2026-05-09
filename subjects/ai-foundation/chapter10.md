@@ -86,7 +86,6 @@ label: chap-ai-foundation-chapter10
 
 ![反事實解釋](images/counterfactual.webp)
 
-## 本章總結與考點提示 {#chap-ai-foundation-chapter10-summary}
 
 ### 核心概念回顧
 
@@ -130,4 +129,8 @@ XAI 是建立 AI 信任的關鍵。
 ### 延伸思考
 
 *   可解釋性與準確率通常存在什麼關係？（Trade-off。通常模型越複雜準確率越高，但可解釋性越低。XAI 的目標就是打破這個權衡）。
+
+## 歷屆考題 {#sec-past-exam}
+
+請做測驗看歷屆考題。
 

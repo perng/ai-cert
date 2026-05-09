@@ -50,6 +50,7 @@ graph TD
 ### 大腦：語言模型（LLM） {.unnumbered}
 
 語言模型（如 Claude、GPT-4）是代理人的核心思考引擎。它負責：
+
 *   理解你交代的任務是什麼
 *   規劃完成任務需要哪些步驟
 *   決定下一步應該呼叫哪個工具
@@ -60,6 +61,7 @@ graph TD
 ### 手：工具集（Tools） {.unnumbered}
 
 工具是代理人與外部世界互動的「手」。常見工具包括：
+
 *   **搜尋引擎**：查詢即時資訊
 *   **程式執行器**：執行計算或腳本
 *   **檔案讀寫**：存取電腦上的文件
@@ -118,6 +120,7 @@ flowchart LR
 這個框架的核心是 [後設認知 (Metacognition)](#def-metacognition)。[後設認知 (Metacognition)]{#def-metacognition} 也就是「對思考過程的反思 (Thinking about thinking)」，指 AI 代理人能夠意識到自己的內部決策過程，並根據經驗監控、調節與適應自己的行為。
 
 [後設認知 (Metacognition)](#def-metacognition) 對於代理人的重要性在於：
+
 *   **自我反省 (Self-Reflection)**：評估自身表現並找出改進空間。
 *   **適應性 (Adaptability)**：根據過去經驗和不斷變化的環境調整策略。
 *   **錯誤修正 (Error Correction)**：自主偵測並修正錯誤。
@@ -160,3 +163,4 @@ flowchart LR
 *   **回應延遲**：從接到任務到完成需要多長時間？
 
 這些指標幫助開發者不斷改進代理人的設計，就像評估一位新員工的工作表現一樣。
+

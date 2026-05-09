@@ -1,7 +1,7 @@
 questions:
 - id: 4401
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: AI 發展演進
+  section_title: AI 發展演進 (AI Evolution)
   text: 根據 NVIDIA 的觀點，AI 發展的第二階段「生成式 AI」的主要特徵是？
   type: multiple_choice
   options:
@@ -17,7 +17,7 @@ questions:
   usage: quiz
 - id: 4402
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 生成式 AI (Generative AI) 與鑑別式 AI (Discriminative AI) 的主要區別在於？
   type: multiple_choice
   options:
@@ -33,7 +33,7 @@ questions:
   usage: quiz
 - id: 4403
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: GAN (生成對抗網路) 中的「生成器 (Generator)」的目標是？
   type: multiple_choice
   options:
@@ -49,7 +49,7 @@ questions:
   usage: quiz
 - id: 4404
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 在 GAN 的訓練過程中，當達到「納什均衡 (Nash Equilibrium)」時，判別器的輸出機率通常接近？
   type: multiple_choice
   options:
@@ -65,7 +65,7 @@ questions:
   usage: quiz
 - id: 4405
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: VAE (變分自動編碼器) 的損失函數包含哪兩部分？
   type: multiple_choice
   options:
@@ -81,7 +81,7 @@ questions:
   usage: quiz
 - id: 4406
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 擴散模型 (Diffusion Models) 的「前向過程 (Forward Process)」是指？
   type: multiple_choice
   options:
@@ -97,7 +97,7 @@ questions:
   usage: quiz
 - id: 4407
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 擴散模型中的「反向過程 (Reverse Process)」通常使用什麼模型來預測雜訊？
   type: multiple_choice
   options:
@@ -113,7 +113,7 @@ questions:
   usage: quiz
 - id: 4408
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 多模態應用
+  section_title: 多模態應用 (Multimodal Applications)
   text: CLIP 模型的核心訓練目標是？
   type: multiple_choice
   options:
@@ -129,7 +129,7 @@ questions:
   usage: quiz
 - id: 4409
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 多模態應用
+  section_title: 多模態應用 (Multimodal Applications)
   text: 在文字轉圖像 (Text-to-Image) 生成中，CLIP 的作用通常是？
   type: multiple_choice
   options:
@@ -145,7 +145,7 @@ questions:
   usage: quiz
 - id: 4410
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 相比於 GAN，擴散模型 (Diffusion Models) 的主要優勢是？
   type: multiple_choice
   options:
@@ -161,7 +161,7 @@ questions:
   usage: quiz
 - id: 4411
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: AI 發展演進
+  section_title: AI 發展演進 (AI Evolution)
   text: 代理式 AI (Agentic AI) 的核心能力是？
   type: multiple_choice
   options:
@@ -177,7 +177,7 @@ questions:
   usage: both
 - id: 4412
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: VAE 中的「重參數化技巧 (Reparameterization Trick)」是為了解決什麼問題？
   type: multiple_choice
   options:
@@ -193,7 +193,7 @@ questions:
   usage: both
 - id: 4413
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: GAN 的損失函數通常被描述為一種什麼博弈？
   type: multiple_choice
   options:
@@ -209,7 +209,7 @@ questions:
   usage: both
 - id: 4414
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 多模態應用
+  section_title: 多模態應用 (Multimodal Applications)
   text: CLIP 的圖像編碼器通常使用哪種架構？
   type: multiple_choice
   options:
@@ -225,7 +225,7 @@ questions:
   usage: both
 - id: 4415
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 擴散模型的生成過程可以被視為？
   type: multiple_choice
   options:
@@ -241,7 +241,7 @@ questions:
   usage: both
 - id: 4416
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 在 GAN 中，若判別器太強，會導致什麼問題？
   type: multiple_choice
   options:
@@ -257,7 +257,7 @@ questions:
   usage: both
 - id: 4417
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 多模態應用
+  section_title: 多模態應用 (Multimodal Applications)
   text: 多模態 AI (Multimodal AI) 的定義是？
   type: multiple_choice
   options:
@@ -273,7 +273,7 @@ questions:
   usage: both
 - id: 4418
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: VAE 的解碼器 (Decoder) 負責？
   type: multiple_choice
   options:
@@ -289,7 +289,7 @@ questions:
   usage: both
 - id: 4419
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 擴散模型中的「雜訊調度參數 (Noise Schedule)」控制什麼？
   type: multiple_choice
   options:
@@ -305,7 +305,7 @@ questions:
   usage: both
 - id: 4420
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 多模態應用
+  section_title: 多模態應用 (Multimodal Applications)
   text: CLIP 的訓練數據來源主要是？
   type: multiple_choice
   options:
@@ -321,7 +321,7 @@ questions:
   usage: both
 - id: 4421
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 模式崩潰 (Mode Collapse) 是 GAN 常見的問題，指的是？
   type: multiple_choice
   options:
@@ -337,7 +337,7 @@ questions:
   usage: both
 - id: 4422
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: VAE 中的 KL 散度項作為正則化，強制潛在分佈接近？
   type: multiple_choice
   options:
@@ -353,7 +353,7 @@ questions:
   usage: both
 - id: 4423
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 擴散模型通常需要多少步才能生成一張高品質圖像？
   type: multiple_choice
   options:
@@ -369,7 +369,7 @@ questions:
   usage: both
 - id: 4424
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 多模態應用
+  section_title: 多模態應用 (Multimodal Applications)
   text: Prompt Engineering 在文字轉圖像生成中的作用是？
   type: multiple_choice
   options:
@@ -385,7 +385,7 @@ questions:
   usage: both
 - id: 4425
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: AI 發展演進
+  section_title: AI 發展演進 (AI Evolution)
   text: 物理 AI (Physical AI) 的典型例子是？
   type: multiple_choice
   options:
@@ -401,7 +401,7 @@ questions:
   usage: both
 - id: 4426
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: GAN 中的判別器 (Discriminator) 本質上是一個？
   type: multiple_choice
   options:
@@ -417,7 +417,7 @@ questions:
   usage: both
 - id: 4427
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: VAE 的編碼器 (Encoder) 輸出的是？
   type: multiple_choice
   options:
@@ -433,7 +433,7 @@ questions:
   usage: both
 - id: 4428
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 擴散模型的前向過程是否需要訓練？
   type: multiple_choice
   options:
@@ -449,7 +449,7 @@ questions:
   usage: both
 - id: 4429
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 多模態應用
+  section_title: 多模態應用 (Multimodal Applications)
   text: CLIP 的「雙塔架構」指的是？
   type: multiple_choice
   options:
@@ -465,7 +465,7 @@ questions:
   usage: both
 - id: 4430
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 鑑別式 AI (Discriminative AI) 的典型應用是？
   type: multiple_choice
   options:
@@ -481,7 +481,7 @@ questions:
   usage: both
 - id: 4431
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: GAN 訓練困難的一個主要原因是？
   type: multiple_choice
   options:
@@ -497,7 +497,7 @@ questions:
   usage: both
 - id: 4432
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: VAE 相比於 GAN 的一個優點是？
   type: multiple_choice
   options:
@@ -513,7 +513,7 @@ questions:
   usage: both
 - id: 4433
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 擴散模型在去噪過程中，實際上是在預測？
   type: multiple_choice
   options:
@@ -529,7 +529,7 @@ questions:
   usage: both
 - id: 4434
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 多模態應用
+  section_title: 多模態應用 (Multimodal Applications)
   text: CLIP 的訓練方法稱為？
   type: multiple_choice
   options:
@@ -545,7 +545,7 @@ questions:
   usage: both
 - id: 4435
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 潛在空間 (Latent Space) 是指？
   type: multiple_choice
   options:
@@ -561,7 +561,7 @@ questions:
   usage: both
 - id: 4436
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: GAN 中的 $z$ 通常代表？
   type: multiple_choice
   options:
@@ -577,7 +577,7 @@ questions:
   usage: both
 - id: 4437
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: VAE 的重建誤差通常使用什麼函數計算？
   type: multiple_choice
   options:
@@ -593,7 +593,7 @@ questions:
   usage: both
 - id: 4438
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 擴散模型之所以生成慢，是因為？
   type: multiple_choice
   options:
@@ -609,7 +609,7 @@ questions:
   usage: both
 - id: 4439
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 多模態應用
+  section_title: 多模態應用 (Multimodal Applications)
   text: Stable Diffusion 結合了哪兩種技術？
   type: multiple_choice
   options:
@@ -625,7 +625,7 @@ questions:
   usage: both
 - id: 4440
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 納什均衡 (Nash Equilibrium) 的概念源自？
   type: multiple_choice
   options:
@@ -720,7 +720,7 @@ questions:
   - sec-scenario
   usage: mock
 - chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 情境：GAN (生成對抗網路) 中的生成器 (Generator) 的目標是？
   type: multiple_choice
   options:
@@ -736,7 +736,7 @@ questions:
   id: 4446
   usage: both
 - chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 情境：擴散模型 (Diffusion Models) 的「反向過程」是做什麼？
   type: multiple_choice
   options:
@@ -752,7 +752,7 @@ questions:
   id: 4447
   usage: both
 - chapter_title: 生成式 AI 與多模態 AI
-  section_title: 多模態應用
+  section_title: 多模態應用 (Multimodal Applications)
   text: 情境：CLIP 模型的核心訓練目標是？
   type: multiple_choice
   options:
@@ -768,7 +768,7 @@ questions:
   id: 4448
   usage: both
 - chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 情境：VAE (變分自動編碼器) 的損失函數包含哪兩部分？
   type: multiple_choice
   options:
@@ -784,7 +784,7 @@ questions:
   id: 4449
   usage: both
 - chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 情境：GAN 訓練達到「納什均衡」時，判別器的輸出機率通常接近？
   type: multiple_choice
   options:
@@ -800,7 +800,7 @@ questions:
   id: 4450
   usage: both
 - chapter_title: 生成式 AI 與多模態 AI
-  section_title: 多模態應用
+  section_title: 多模態應用 (Multimodal Applications)
   text: 情境：Text-to-Image 生成 (如 Stable Diffusion) 通常結合了哪兩種技術？
   type: multiple_choice
   options:
@@ -816,7 +816,7 @@ questions:
   id: 4451
   usage: both
 - chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 情境：生成式 AI 與鑑別式 AI 的最大區別是？
   type: multiple_choice
   options:
@@ -832,7 +832,7 @@ questions:
   id: 4452
   usage: both
 - chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 情境：擴散模型的前向過程 (Forward Process) 是？
   type: multiple_choice
   options:
@@ -848,7 +848,7 @@ questions:
   id: 4453
   usage: both
 - chapter_title: 生成式 AI 與多模態 AI
-  section_title: 多模態應用
+  section_title: 多模態應用 (Multimodal Applications)
   text: 情境：CLIP 的雙塔架構包含哪兩個編碼器？
   type: multiple_choice
   options:
@@ -864,7 +864,7 @@ questions:
   id: 4454
   usage: both
 - chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 情境：VAE 中的「重參數化技巧 (Reparameterization Trick)」是為了解決什麼問題？
   type: multiple_choice
   options:
@@ -880,7 +880,7 @@ questions:
   id: 4455
   usage: both
 - chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 情境：GAN 的判別器 (Discriminator) 的目標是？
   type: multiple_choice
   options:
@@ -896,7 +896,7 @@ questions:
   id: 4456
   usage: both
 - chapter_title: 生成式 AI 與多模態 AI
-  section_title: 多模態應用
+  section_title: 多模態應用 (Multimodal Applications)
   text: 情境：在 Text-to-Image 中，Prompt Engineering 的作用是？
   type: multiple_choice
   options:
@@ -912,7 +912,7 @@ questions:
   id: 4457
   usage: both
 - chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 情境：擴散模型相比於 GAN 的一個優勢是？
   type: multiple_choice
   options:
@@ -928,7 +928,7 @@ questions:
   id: 4458
   usage: both
 - chapter_title: 生成式 AI 與多模態 AI
-  section_title: AI 發展演進
+  section_title: AI 發展演進 (AI Evolution)
   text: 情境：根據 NVIDIA 黃仁勳的分類，具備推理與計畫能力的 AI 屬於？
   type: multiple_choice
   options:
@@ -944,7 +944,7 @@ questions:
   id: 4459
   usage: both
 - chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 情境：KL 散度在 VAE 中的作用是？
   type: multiple_choice
   options:
@@ -960,7 +960,7 @@ questions:
   id: 4460
   usage: both
 - chapter_title: 生成式 AI 與多模態 AI
-  section_title: 多模態應用
+  section_title: 多模態應用 (Multimodal Applications)
   text: 情境：CLIP 的訓練數據來源是？
   type: multiple_choice
   options:
@@ -976,7 +976,7 @@ questions:
   id: 4461
   usage: both
 - chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 情境：GAN 的損失函數本質上是一個？
   type: multiple_choice
   options:
@@ -992,7 +992,7 @@ questions:
   id: 4462
   usage: both
 - chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 情境：擴散模型的雜訊調度參數 (Noise Schedule) 控制的是？
   type: multiple_choice
   options:
@@ -1008,7 +1008,7 @@ questions:
   id: 4463
   usage: both
 - chapter_title: 生成式 AI 與多模態 AI
-  section_title: AI 發展演進
+  section_title: AI 發展演進 (AI Evolution)
   text: 情境：物理 AI (Physical AI) 的特徵是？
   type: multiple_choice
   options:
@@ -1024,7 +1024,7 @@ questions:
   id: 4464
   usage: both
 - chapter_title: 生成式 AI 與多模態 AI
-  section_title: 生成模型
+  section_title: 生成模型 (Generative Models)
   text: 情境：VAE 的編碼器 (Encoder) 輸出的是？
   type: multiple_choice
   options:
@@ -1041,7 +1041,7 @@ questions:
   usage: both
 - id: 4466
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 提示工程與生成品質控制
+  section_title: 多模態應用 (Multimodal Applications)
   text: 在文字轉圖像生成中，若品牌顏色或手部姿勢常與提示不一致，最可能反映哪一類問題？
   type: multiple_choice
   options:
@@ -1057,7 +1057,7 @@ questions:
   usage: both
 - id: 4467
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 文本、語音與影像編輯生成
+  section_title: 生成模型 (Generative Models)
   text: 下列哪一項最符合 TTS (Text-to-Speech) 生成任務？
   type: multiple_choice
   options:

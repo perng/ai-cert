@@ -241,7 +241,7 @@ questions:
   usage: both
 - id: 2016
   chapter_title: AI 應用問題類型
-  section_title: 資料分析層次
+  section_title: '1. 描述性分析 (Descriptive Analysis): 發生了什麼？'
   text: 資料分析的四個層次中，最基礎的是哪一個？
   type: multiple_choice
   options:
@@ -257,7 +257,7 @@ questions:
   usage: both
 - id: 2017
   chapter_title: AI 應用問題類型
-  section_title: 資料分析層次
+  section_title: '1. 描述性分析 (Descriptive Analysis): 發生了什麼？'
   text: 「上個月的銷售總額是多少？」這個問題屬於哪種分析層次？
   type: multiple_choice
   options:
@@ -273,7 +273,7 @@ questions:
   usage: both
 - id: 2018
   chapter_title: AI 應用問題類型
-  section_title: 資料分析層次
+  section_title: '2. 診斷性分析 (Diagnostic Analysis): 為什麼發生？'
   text: 診斷性分析 (Diagnostic Analysis) 的主要目的是什麼？
   type: multiple_choice
   options:
@@ -289,7 +289,7 @@ questions:
   usage: both
 - id: 2019
   chapter_title: AI 應用問題類型
-  section_title: 資料分析層次
+  section_title: '2. 診斷性分析 (Diagnostic Analysis): 為什麼發生？'
   text: 「為什麼上個月客戶流失率突然升高？」屬於哪種分析層次？
   type: multiple_choice
   options:
@@ -305,7 +305,7 @@ questions:
   usage: both
 - id: 2020
   chapter_title: AI 應用問題類型
-  section_title: 資料分析層次
+  section_title: '3. 預測性分析 (Predictive Analysis): 將會發生什麼？'
   text: 預測性分析 (Predictive Analysis) 的核心功能是什麼？
   type: multiple_choice
   options:
@@ -321,7 +321,7 @@ questions:
   usage: both
 - id: 2021
   chapter_title: AI 應用問題類型
-  section_title: 資料分析層次
+  section_title: '3. 預測性分析 (Predictive Analysis): 將會發生什麼？'
   text: 「這台機器下週故障的機率是多少？」屬於哪種分析層次？
   type: multiple_choice
   options:
@@ -337,7 +337,7 @@ questions:
   usage: both
 - id: 2022
   chapter_title: AI 應用問題類型
-  section_title: 資料分析層次
+  section_title: '4. 處方性分析 (Prescriptive Analysis): 應該怎麼做？'
   text: 處方性分析 (Prescriptive Analysis) 是分析的最高境界，它能提供什麼？
   type: multiple_choice
   options:
@@ -353,7 +353,7 @@ questions:
   usage: both
 - id: 2023
   chapter_title: AI 應用問題類型
-  section_title: 資料分析層次
+  section_title: '4. 處方性分析 (Prescriptive Analysis): 應該怎麼做？'
   text: 導航系統建議「改走 B 路線以節省 10 分鐘」，這是哪種分析層次的應用？
   type: multiple_choice
   options:
@@ -369,7 +369,7 @@ questions:
   usage: both
 - id: 2024
   chapter_title: AI 應用問題類型
-  section_title: 學習範式
+  section_title: 本章總結與考點提示
   text: 在監督式學習中，我們將資料分為哪兩部分來驗證模型效果？
   type: multiple_choice
   options:
@@ -385,7 +385,7 @@ questions:
   usage: both
 - id: 2025
   chapter_title: AI 應用問題類型
-  section_title: 學習範式
+  section_title: 非監督式學習 (Unsupervised Learning)
   text: 下列哪種學習範式不需要「人類標註」的介入？
   type: multiple_choice
   options:
@@ -401,7 +401,7 @@ questions:
   usage: both
 - id: 2026
   chapter_title: AI 應用問題類型
-  section_title: 強化學習
+  section_title: 強化學習 (Reinforcement Learning)
   text: 在強化學習中，「利用 (Exploitation)」是指什麼？
   type: multiple_choice
   options:
@@ -417,7 +417,7 @@ questions:
   usage: both
 - id: 2027
   chapter_title: AI 應用問題類型
-  section_title: 遷移學習
+  section_title: 遷移學習 (Transfer Learning)
   text: 風格轉換 (Style Transfer) 將梵谷的畫風應用到照片上，這是哪種技術的應用？
   type: multiple_choice
   options:
@@ -433,7 +433,7 @@ questions:
   usage: both
 - id: 2028
   chapter_title: AI 應用問題類型
-  section_title: 資料分析層次
+  section_title: '1. 描述性分析 (Descriptive Analysis): 發生了什麼？'
   text: 企業儀表板 (Dashboard) 主要呈現的是哪種分析結果？
   type: multiple_choice
   options:
@@ -449,7 +449,7 @@ questions:
   usage: both
 - id: 2029
   chapter_title: AI 應用問題類型
-  section_title: 資料分析層次
+  section_title: '4. 處方性分析 (Prescriptive Analysis): 應該怎麼做？'
   text: 「庫存優化系統建議向供應商 A 訂貨」屬於哪種分析？
   type: multiple_choice
   options:
@@ -465,7 +465,7 @@ questions:
   usage: both
 - id: 2030
   chapter_title: AI 應用問題類型
-  section_title: 學習範式
+  section_title: 非監督式學習 (Unsupervised Learning)
   text: 如果我有一堆客戶資料，想知道他們自然形成了哪些群體，該用什麼方法？
   type: multiple_choice
   options:
@@ -481,7 +481,7 @@ questions:
   usage: both
 - id: 2031
   chapter_title: AI 應用問題類型
-  section_title: 學習範式
+  section_title: 監督式學習 (Supervised Learning)
   text: 如果我想預測明天的氣溫（數值），該用什麼方法？
   type: multiple_choice
   options:
@@ -497,7 +497,7 @@ questions:
   usage: both
 - id: 2032
   chapter_title: AI 應用問題類型
-  section_title: 學習範式
+  section_title: 監督式學習 (Supervised Learning)
   text: 如果我想判斷這張照片是貓還是狗，該用什麼方法？
   type: multiple_choice
   options:
@@ -513,7 +513,7 @@ questions:
   usage: both
 - id: 2033
   chapter_title: AI 應用問題類型
-  section_title: 強化學習
+  section_title: 強化學習 (Reinforcement Learning)
   text: 在強化學習中，環境給予的回饋稱為什麼？
   type: multiple_choice
   options:
@@ -529,7 +529,7 @@ questions:
   usage: both
 - id: 2034
   chapter_title: AI 應用問題類型
-  section_title: 遷移學習
+  section_title: 遷移學習 (Transfer Learning)
   text: BERT 模型先閱讀大量文本，再針對特定任務微調，這是什麼技術？
   type: multiple_choice
   options:
@@ -545,7 +545,7 @@ questions:
   usage: both
 - id: 2035
   chapter_title: AI 應用問題類型
-  section_title: 資料分析層次
+  section_title: '2. 診斷性分析 (Diagnostic Analysis): 為什麼發生？'
   text: 「分析設備故障的根本原因」屬於哪種分析？
   type: multiple_choice
   options:
@@ -561,7 +561,7 @@ questions:
   usage: both
 - id: 2036
   chapter_title: AI 應用問題類型
-  section_title: 學習範式
+  section_title: 半監督式學習 (Semi-supervised Learning)
   text: 半監督式學習結合了哪兩種資料？
   type: multiple_choice
   options:
@@ -577,7 +577,7 @@ questions:
   usage: both
 - id: 2037
   chapter_title: AI 應用問題類型
-  section_title: 強化學習
+  section_title: 強化學習 (Reinforcement Learning)
   text: 掃地機器人在房間裡碰撞學習路徑，這是什麼學習方式？
   type: multiple_choice
   options:
@@ -593,7 +593,7 @@ questions:
   usage: both
 - id: 2038
   chapter_title: AI 應用問題類型
-  section_title: 資料分析層次
+  section_title: '3. 預測性分析 (Predictive Analysis): 將會發生什麼？'
   text: 信用評分系統預測客戶違約機率，屬於哪種分析？
   type: multiple_choice
   options:
@@ -609,7 +609,7 @@ questions:
   usage: both
 - id: 2039
   chapter_title: AI 應用問題類型
-  section_title: 學習範式
+  section_title: 遷移學習 (Transfer Learning)
   text: 下列哪種情況最適合使用遷移學習？
   type: multiple_choice
   options:
@@ -625,7 +625,7 @@ questions:
   usage: both
 - id: 2040
   chapter_title: AI 應用問題類型
-  section_title: 學習範式
+  section_title: 監督式學習 (Supervised Learning)
   text: 在機器學習中，「標籤 (Label)」通常指的是什麼？
   type: multiple_choice
   options:
@@ -641,7 +641,7 @@ questions:
   usage: both
 - id: 2051
   chapter_title: AI 應用與問題類型
-  section_title: 機器學習範式
+  section_title: 學習範式
   text: 某銀行希望透過分析客戶過去的交易紀錄來偵測信用卡盜刷，但他們只有極少數確定的盜刷樣本，絕大多數都是正常交易。這種情況下，哪種學習範式最不適用？
   type: multiple_choice
   options:
@@ -657,7 +657,7 @@ questions:
   usage: both
 - id: 2052
   chapter_title: AI 應用與問題類型
-  section_title: 機器學習範式
+  section_title: 學習範式
   text: AlphaGo Zero 在沒有人類棋譜的情況下，透過自我對弈學會圍棋，這是屬於哪種學習範式？
   type: multiple_choice
   options:
@@ -673,7 +673,7 @@ questions:
   usage: both
 - id: 2053
   chapter_title: AI 應用與問題類型
-  section_title: 數據分析層次
+  section_title: 資料分析層次
   text: 從「預測性分析 (Predictive)」進階到「處方性分析 (Prescriptive)」，主要的差異在於？
   type: multiple_choice
   options:
@@ -689,7 +689,7 @@ questions:
   usage: both
 - id: 2054
   chapter_title: AI 應用與問題類型
-  section_title: 數據分析層次
+  section_title: 資料分析層次
   text: 當儀表板顯示「上個月營收下降了 20%」，這屬於哪一層次的分析？
   type: multiple_choice
   options:
@@ -705,7 +705,7 @@ questions:
   usage: both
 - id: 11413
   chapter_title: AI 應用與問題類型
-  section_title: 機器學習範式
+  section_title: 歷屆考題
   text: 下列哪一項應用情境與機器學習類型搭配正確？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -716,6 +716,7 @@ questions:
   correct_index: 3
   explanation: 此題涉及 機器學習範式 的核心概念。正確答案為「在股票市場資料中，輸入歷史股價序列，嘗試將未來可能走勢劃分 成若干「上升型、盤整型、下降型」群組，無需使用任何標籤 — 非監 督式學習（Unsupervised Learning）」。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter2
@@ -723,7 +724,7 @@ questions:
   usage: mock
 - id: 11414
   chapter_title: AI 應用與問題類型
-  section_title: 數據分析層次
+  section_title: 歷屆考題
   text: 某企業分析團隊正在處理一組近兩年的營運與銷售數據，共有四個部 門提出了各自的分析需求，請判斷哪一個最接近「預測性分析 （Predictive Analysis） 」的特性？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -734,6 +735,7 @@ questions:
   correct_index: 2
   explanation: 此題涉及 數據分析層次 的核心概念。正確答案為「建構模型推算下一季的主力商品銷量，以規劃備貨與倉儲資源配 置」。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter2
@@ -741,7 +743,7 @@ questions:
   usage: both
 - id: 11411
   chapter_title: AI 應用與問題類型
-  section_title: 機器學習範式
+  section_title: 歷屆考題
   text: 下列哪一類問題最適合使用非監督式學習（Unsupervised Learning） 來處理？ (114年第四梯次)
   type: multiple_choice
   options:
@@ -752,13 +754,14 @@ questions:
   correct_index: 1
   explanation: 此題涉及 機器學習範式 的核心概念。正確答案為「根據使用者行為將用戶分群，以優化行銷策略」。
   tags:
+  - sec-past-exam
   - past-exam
   - 114-4
   - sec-ai-chapter2
   - sec-learning-paradigms
   usage: both
 - chapter_title: AI 應用問題類型
-  section_title: 學習範式
+  section_title: 監督式學習 (Supervised Learning)
   text: 情境：銀行希望根據客戶過去的還款紀錄（有違約/沒違約）來訓練一個模型，預測新客戶的違約風險。這屬於哪種學習範式？
   type: multiple_choice
   options:
@@ -771,10 +774,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter2
   - sec-supervised-learning
-  id: 11415
+  id: '11415_1'
   usage: both
 - chapter_title: AI 應用問題類型
-  section_title: 學習範式
+  section_title: 非監督式學習 (Unsupervised Learning)
   text: 情境：電商平台想要將百萬名會員分成幾個不同的消費群體，但事先並不知道有哪些群體。應使用？
   type: multiple_choice
   options:
@@ -790,7 +793,7 @@ questions:
   id: 11416
   usage: both
 - chapter_title: AI 應用問題類型
-  section_title: 學習範式
+  section_title: 強化學習 (Reinforcement Learning)
   text: 情境：訓練一隻機械手臂抓取不規則物體。它需要不斷嘗試不同的抓取角度，成功抓起得 1 分，掉落扣 1 分。這是？
   type: multiple_choice
   options:
@@ -806,7 +809,7 @@ questions:
   id: 11417
   usage: both
 - chapter_title: AI 應用問題類型
-  section_title: 學習範式
+  section_title: 半監督式學習 (Semi-supervised Learning)
   text: 情境：醫院有 10 萬張 X 光片，但只有 1000 張由醫生標註了病灶。為了充分利用所有資料，應採用？
   type: multiple_choice
   options:
@@ -822,7 +825,7 @@ questions:
   id: 11418
   usage: both
 - chapter_title: AI 應用問題類型
-  section_title: 學習範式
+  section_title: 遷移學習 (Transfer Learning)
   text: 情境：你想要開發一個能辨識「台灣黑熊」的模型，但手邊照片很少。你決定拿一個已經會辨識「棕熊、北極熊」的模型來微調。這稱為？
   type: multiple_choice
   options:
@@ -835,10 +838,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter2
   - sec-transfer-learning
-  id: 11419
+  id: '11419_1'
   usage: both
 - chapter_title: AI 應用問題類型
-  section_title: 資料分析層次
+  section_title: '2. 診斷性分析 (Diagnostic Analysis): 為什麼發生？'
   text: 情境：老闆問：「為什麼上個月的營收會下降 20%？」這屬於哪個層次的分析？
   type: multiple_choice
   options:
@@ -851,10 +854,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter2
   - sec-diagnostic-analysis
-  id: 11420
+  id: '11420_1'
   usage: both
 - chapter_title: AI 應用問題類型
-  section_title: 資料分析層次
+  section_title: '4. 處方性分析 (Prescriptive Analysis): 應該怎麼做？'
   text: 情境：導航軟體顯示：「前方 5 公里處塞車，建議改走 B 路線以節省 10 分鐘。」這屬於？
   type: multiple_choice
   options:
@@ -867,10 +870,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter2
   - sec-prescriptive-analysis
-  id: 11421
+  id: '11421_1'
   usage: both
 - chapter_title: AI 應用問題類型
-  section_title: 資料分析層次
+  section_title: '1. 描述性分析 (Descriptive Analysis): 發生了什麼？'
   text: 情境：儀表板上顯示「目前庫存量：500 件」。這屬於？
   type: multiple_choice
   options:
@@ -883,10 +886,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter2
   - sec-descriptive-analysis
-  id: 11422
+  id: '11422_2'
   usage: both
 - chapter_title: AI 應用問題類型
-  section_title: 學習範式
+  section_title: 強化學習 (Reinforcement Learning)
   text: 情境：強化學習中的「探索 (Exploration)」是指？
   type: multiple_choice
   options:
@@ -899,10 +902,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter2
   - sec-reinforcement-learning
-  id: 11423
+  id: '11423_1'
   usage: both
 - chapter_title: AI 應用問題類型
-  section_title: 學習範式
+  section_title: 監督式學習 (Supervised Learning)
   text: 情境：垃圾郵件過濾器通常屬於哪種問題？
   type: multiple_choice
   options:
@@ -915,10 +918,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter2
   - sec-supervised-learning
-  id: 11424
+  id: '11424_1'
   usage: both
 - chapter_title: AI 應用問題類型
-  section_title: 資料分析層次
+  section_title: '3. 預測性分析 (Predictive Analysis): 將會發生什麼？'
   text: 情境：氣象局預報「明天降雨機率 80%」。這屬於？
   type: multiple_choice
   options:
@@ -931,10 +934,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter2
   - sec-predictive-analysis
-  id: 11425
+  id: '11425_1'
   usage: both
 - chapter_title: AI 應用問題類型
-  section_title: 學習範式
+  section_title: 非監督式學習 (Unsupervised Learning)
   text: 情境：非監督式學習中的「異常偵測」常用於？
   type: multiple_choice
   options:
@@ -947,10 +950,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter2
   - sec-unsupervised-learning
-  id: 11426
+  id: '11426_2'
   usage: both
 - chapter_title: AI 應用問題類型
-  section_title: 學習範式
+  section_title: 強化學習 (Reinforcement Learning)
   text: 情境：強化學習的三個核心要素不包括？
   type: multiple_choice
   options:
@@ -963,10 +966,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter2
   - sec-reinforcement-learning
-  id: 11427
+  id: '11427_1'
   usage: both
 - chapter_title: AI 應用問題類型
-  section_title: 學習範式
+  section_title: 監督式學習 (Supervised Learning)
   text: 情境：房價預測（預測一個連續的金額數值）屬於監督式學習中的哪類問題？
   type: multiple_choice
   options:
@@ -979,10 +982,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter2
   - sec-supervised-learning
-  id: 11428
+  id: '11428_1'
   usage: both
 - chapter_title: AI 應用問題類型
-  section_title: 學習範式
+  section_title: 遷移學習 (Transfer Learning)
   text: 情境：BERT 模型先在海量文本上預訓練，然後再針對情感分析任務進行微調。這是什麼的應用？
   type: multiple_choice
   options:
@@ -995,7 +998,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter2
   - sec-transfer-learning
-  id: 11429
+  id: '11429_1'
   usage: both
 - chapter_title: AI 應用問題類型
   section_title: 資料分析層次
@@ -1011,10 +1014,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter2
   - sec-data-analysis-levels
-  id: 11430
+  id: '11430_1'
   usage: both
 - chapter_title: AI 應用問題類型
-  section_title: 學習範式
+  section_title: 強化學習 (Reinforcement Learning)
   text: 情境：AlphaGo Zero 不使用人類棋譜，完全靠自己跟自己下棋來學習。這屬於？
   type: multiple_choice
   options:
@@ -1027,10 +1030,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter2
   - sec-reinforcement-learning
-  id: 11431
+  id: '11431_1'
   usage: both
 - chapter_title: AI 應用問題類型
-  section_title: 學習範式
+  section_title: 半監督式學習 (Semi-supervised Learning)
   text: 情境：在半監督式學習中，無標籤資料的主要作用是？
   type: multiple_choice
   options:
@@ -1043,7 +1046,7 @@ questions:
   tags:
   - chap-ai-foundation-chapter2
   - sec-semi-supervised-learning
-  id: 11432
+  id: '11432_1'
   usage: both
 - chapter_title: AI 應用問題類型
   section_title: 資料分析層次
@@ -1059,10 +1062,10 @@ questions:
   tags:
   - chap-ai-foundation-chapter2
   - sec-data-analysis-levels
-  id: 11433
+  id: '11433_2'
   usage: both
 - chapter_title: AI 應用問題類型
-  section_title: 學習範式
+  section_title: 監督式學習 (Supervised Learning)
   text: 情境：下列何者不是監督式學習的必要條件？
   type: multiple_choice
   options:
@@ -1075,5 +1078,5 @@ questions:
   tags:
   - chap-ai-foundation-chapter2
   - sec-supervised-learning
-  id: 11434
+  id: '11434_2'
   usage: both

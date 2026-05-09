@@ -17,6 +17,7 @@ Transformer 的強大來自於其獨特的設計，摒棄了傳統 RNN 的循環
 
 *   **例子**：「**蘋果**因為太貴了，所以我沒買**它**。」
     *   當模型處理「它」這個字時，Self-Attention 機制會告訴模型，「它」指代的是前面的「蘋果」，而不是「我」。
+
 *   **優勢**：解決了長距離依賴問題 (Long-term Dependency)，即使句子很長，開頭和結尾的關係也能被捕捉。
 
 
@@ -42,6 +43,7 @@ Transformer 模型自 2017 年問世以來，已成為自然語言處理 (NLP) �
     *   情感分析 (Sentiment Analysis)：判斷這句話是正評還是負評。
     *   命名實體識別 (NER)：找出句子中的人名、地名、機構名。
     *   文本分類 (Text Classification)：將新聞歸類為體育、財經或政治。
+
 *   **運作原理**：像是一個閱讀測驗的高手，讀完文章後能精準回答關於文章內容的問題，但不太會自己寫作文。
 
 ### 2. Decoder-only (解碼器模型) {.unnumbered}
@@ -51,6 +53,7 @@ Transformer 模型自 2017 年問世以來，已成為自然語言處理 (NLP) �
 *   **核心能力**：**生成與續寫**。
     *   文本生成 (Text Generation)：寫故事、寫信、寫程式碼。
     *   對話系統 (Chatbot)：與使用者進行流暢的對話。
+
 *   **運作原理**：像是一個即興演講者或小說家，根據已經講過的內容，不斷構思並說出下一個字，創造出流暢的篇章。
 
 ### 3. Encoder-Decoder (編碼器-解碼器模型) {.unnumbered}
@@ -60,6 +63,7 @@ Transformer 模型自 2017 年問世以來，已成為自然語言處理 (NLP) �
 *   **核心能力**：**序列到序列 (Seq2Seq) 的轉換**。
     *   機器翻譯 (Machine Translation)：將英文句子轉換為中文句子。
     *   文本摘要 (Summarization)：將長篇文章轉換為短摘要。
+
 *   **運作原理**：像是一個專業的翻譯官，先聽懂（Encode）整段話的意思，再用另一種語言或形式表達（Decode）出來。
 
 | 架構類型 | 代表模型 | 核心機制 | 擅長任務 | 類比 |
@@ -90,6 +94,7 @@ Transformer 模型自 2017 年問世以來，已成為自然語言處理 (NLP) �
     *   人類標註員對回答進行排名 (Ranking)。
     *   訓練一個獎勵模型 (Reward Model) 來模擬人類喜好。
     *   用強化學習 (PPO) 優化模型。
+
 *   **產出**：對齊模型 (Aligned Model)。這是我們最終使用的版本 (如 GPT-4)。
 
 <!-- Image Prompt: Title: "LLM Training Lifecycle". Style: Stick figures with color. Content: Three stages. Stage 1 (Pre-training): A robot reading a mountain of books (Base Model). Stage 2 (SFT): A teacher showing the robot Q&A flashcards (Instruction Tuned). Stage 3 (RLHF): A human giving a thumbs up/down to the robot's answers (Aligned Model). Label: "From Reading to Chatting". Note: dialogs and all texts/labels should be in Traditional Chinese. -->
@@ -107,6 +112,7 @@ Transformer 模型自 2017 年問世以來，已成為自然語言處理 (NLP) �
     *   **效果**：模型會傾向選擇機率最高的 Token。輸出非常穩定、確定性高，幾乎每次跑結果都一樣。
     *   **適用場景**：事實問答、程式碼生成、數學解題、資料萃取。
     *   *例子*：問「中華民國的首都是哪？」，我們希望它回答「台北」，而不是發揮創意說「可能是高雄」。
+
 *   **高溫 (0.7 - 1.0+)**：
     *   **效果**：模型有機會選擇機率較低（但仍合理）的 Token。輸出變化多端，充滿創造力，但有時會胡言亂語。
     *   **適用場景**：創意寫作、腦力激盪、寫詩、聊天。
@@ -147,6 +153,7 @@ Transformer 模型自 2017 年問世以來，已成為自然語言處理 (NLP) �
 ### 5. 頻率懲罰 (Frequency Penalty) 與 存在懲罰 (Presence Penalty) {.unnumbered}
 *   **Frequency Penalty**：根據一個字**已經出現的次數**來懲罰它。出現越多次，懲罰越重。
     *   *用途*：減少「跳針」、重複同一句話的情況。
+
 *   **Presence Penalty**：只要一個字**出現過**（不管幾次），就給予懲罰。
     *   *用途*：鼓勵模型談論新的話題，增加多樣性。
 
@@ -157,6 +164,7 @@ Transformer 模型自 2017 年問世以來，已成為自然語言處理 (NLP) �
     *   每次都只選機率最高的那個字。
     *   *優點*：速度快、穩定。
     *   *缺點*：容易陷入局部最佳解，生成的句子可能缺乏創意或重複。
+
 *   **Beam Search (束搜尋)**：
     *   每次保留前 N 個 (Beam Width) 可能性最高的「路徑」，走到最後再選總分最高的。
     *   *優點*：生成的句子通常比 Greedy Search 更通順、品質更好。
@@ -201,6 +209,7 @@ Transformer 模型自 2017 年問世以來，已成為自然語言處理 (NLP) �
     *   技術層面：資料安全、模型可靠性和系統穩定性。
     *   商業層面：投資回報的不確定性、市場競爭加劇及法規要求增高。
     *   社會層面：就業結構變動、數位落差及倫理道德問題。
+
 *   **產業轉型影響**：推動生產力的大幅提升，顯著提高自動化程度。
 *   **就業市場變革**：部分重複性工作被 AI 取代，同時湧現新興職務（如 AI 訓練師、提示工程師）。
 *   **經濟效益分析**：降低營運成本、促進創新、帶動 AI 硬體和雲端服務發展。
@@ -246,3 +255,33 @@ Transformer 模型自 2017 年問世以來，已成為自然語言處理 (NLP) �
 *   **教育與培訓**：自動生成教學內容、個人化學習路徑、互動式教材。
 *   **娛樂與媒體**：遊戲地圖生成、劇本構思、驅動虛擬角色。
 *   **產品設計與製造**：生成式設計優化外觀與結構、快速原型製作、供應鏈管理預測。
+
+
+## 模型參數與控制 {#sec-model-parameters}
+
+在生成式 AI 中，有幾個關鍵參數可以用來控制模型輸出的風格與隨機性：
+
+1. **Temperature (溫度)**：控制預測下一個 Token 的隨機程度。數值越低（如 0.2），模型會選擇機率最高的詞，輸出較為保守與固定；數值越高（如 0.8），模型會選擇機率較低的詞，輸出更具多樣性與創造力。
+2. **Top-K Sampling**：在每一步預測時，模型只從機率最高的前 K 個 Token 中進行隨機挑選，這有助於避免生成出完全無意義的詞彙。
+3. **Top-P Sampling (Nucleus Sampling)**：模型會從累積機率達到閾值 P 的 Token 集合中進行選擇。這是一種更靈活的截斷方式，能根據當前語境的機率分佈動態調整候選詞的數量。
+4. **Frequency/Presence Penalty (頻率/存在懲罰)**：用來減少模型重複生成相同詞彙或句子的機率，鼓勵模型引入新的概念與單字。
+
+
+
+## 生成式 AI 模型原理 {#sec-genai-principles}
+
+生成式 AI 的核心在於學習訓練數據的潛在分佈特徵，並生成與訓練數據相似但不完全相同的新樣本。
+
+*   **變分自編碼器 (VAE)**：透過 Encoder 將輸入數據壓縮為潛在空間（Latent Space）的機率分佈，再透過 Decoder 從分佈中採樣並還原為新數據。
+*   **生成對抗網路 (GAN)**：由「生成器 (Generator)」與「判別器 (Discriminator)」組成。生成器負責產生假數據，判別器負責分辨真假，兩者在對抗過程中共同進化，最終生成逼真度極高的資料。
+*   **擴散模型 (Diffusion Models)**：透過在圖片中逐步加入雜訊（Forward Process），再訓練模型學習如何逐步去除雜訊（Reverse Process）來生成清晰的圖像，為目前主流的圖像生成技術。
+*   **Transformer**：以自注意力機制 (Self-Attention) 為核心，能有效處理長序列資料，為大型語言模型 (LLM) 的基石。
+
+
+
+
+## 歷屆考題 {#sec-past-exam}
+
+請做測驗看歷屆考題。
+
+

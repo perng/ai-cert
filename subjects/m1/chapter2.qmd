@@ -51,6 +51,7 @@ print("Dropped DataFrame:\n", df_dropped)
 *   **Min-Max Scaling**：將數據縮放到 [0, 1] 區間。  $$ x' = \frac{x - \min(x)}{\max(x) - \min(x)} $$
 *   **標準化 (Standardization / Z-score Normalization)**：將數據轉換為平均值為 0，標準差為 1 的分佈。
     $$ x' = \frac{x - \mu}{\sigma} $$
+
 *   **穩健縮放 (Robust Scaling)**：使用中位數與四分位距 (IQR) 進行縮放，對極端值較不敏感。當交易金額、醫療費用等資料有長尾分佈時，通常比 Min-Max Scaling 更穩定。
 
 **Python 範例：使用 Scikit-learn 進行正規化**
@@ -222,3 +223,8 @@ print(df_encoded)
 *   **隨機過採樣 (Random Oversampling)**：複製少數類樣本，簡單但容易過擬合。
 *   **隨機欠採樣 (Random Undersampling)**：減少多數類樣本，能平衡比例但可能丟失重要資訊。
 *   **SMOTE**：Synthetic Minority Over-sampling Technique 透過鄰近少數類樣本合成新樣本，能增加少數類多樣性，但仍需避免在切分資料前先做 SMOTE，以免造成資料洩漏。
+
+
+## 深度思考情境題 {#sec-scenario}
+
+資料處理情境題的重點在於判斷資料問題會如何影響模型。缺失值、離群值、類別編碼、尺度差異與資料洩漏，常比演算法本身更早決定專案成敗。例如交易金額有極端值時，Robust Scaling 可能比 Min-Max Scaling 更穩健；無序類別若直接 Label Encoding，模型可能誤判大小關係；SMOTE 若在切分資料前執行，會把合成資訊洩漏到測試集。解題時應先確認資料來源、欄位語意、切分順序與評估目的，再選擇清理、轉換與特徵工程策略。
