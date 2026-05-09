@@ -642,8 +642,7 @@ questions:
 - id: 4141
   chapter_title: AI 專案生命週期
   section_title: 深度思考情境題
-  text: 情境：公司決定導入 AI 客服，POC 階段模型準確率達 95%。但上線一週後，客服投訴率反而上升。經調查發現，AI 對於憤怒客戶的語氣無法辨識，仍使用制式回答激怒客戶。這反映了
-    POC 設計時忽略了什麼？
+  text: 情境：公司決定導入 AI 客服，POC 階段模型準確率達 95%。但上線一週後，客服投訴率反而上升。經調查發現，AI 對於憤怒客戶的語氣無法辨識，仍使用制式回答激怒客戶。這反映了 POC 設計時忽略了什麼？
   type: multiple_choice
   options:
   - 技術指標 (Accuracy) 選擇錯誤 (Wrong Metric)
@@ -906,8 +905,7 @@ questions:
   - 放入 Product Backlog，在下個 Sprint 規劃 (Add to Backlog)
   - 要求團隊立刻加班做完 (Overtime)
   correct_index: 2
-  explanation: 為了保障團隊專注與開發節奏，Sprint 期間不應隨意插入新需求。新需求應加入待辦清單 (Backlog)，經優先級排序後在後續 Sprint
-    執行。
+  explanation: 為了保障團隊專注與開發節奏，Sprint 期間不應隨意插入新需求。新需求應加入待辦清單 (Backlog)，經優先級排序後在後續 Sprint 執行。
   tags:
   - chap-m2-ch1
   - sec-project-planning

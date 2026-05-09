@@ -186,8 +186,7 @@ questions:
   - 人在迴圈上 (HOTL)，AI 獨立運作，人類僅在異常時介入監督。
   - 人在迴圈外 (HOOTL)，完全自動化無需人類監控。
   correct_index: 2
-  explanation: HOTL (Human-over-the-loop) 指 AI 可獨立完成大部分任務，人類扮演監督者，僅在異常時介入。Level 3
-    自駕車符合此定義。
+  explanation: HOTL (Human-over-the-loop) 指 AI 可獨立完成大部分任務，人類扮演監督者，僅在異常時介入。Level 3 自駕車符合此定義。
   tags:
   - chap-ai-foundation-chapter1
   - sec-hotl
@@ -643,8 +642,7 @@ questions:
 - id: 1041
   chapter_title: 人工智慧的本質與層次架構
   section_title: 人類與 AI 的協作模式
-  text: 情境題：某醫院引進一套 AI 系統協助判讀 CT 影像，該系統會自動標記出疑似腫瘤的位置，但最終診斷報告必須由放射科醫師檢視並簽名確認後才能發出。請問此系統屬於哪種
-    AI 類型與協作模式？
+  text: 情境題：某醫院引進一套 AI 系統協助判讀 CT 影像，該系統會自動標記出疑似腫瘤的位置，但最終診斷報告必須由放射科醫師檢視並簽名確認後才能發出。請問此系統屬於哪種 AI 類型與協作模式？
   type: multiple_choice
   options:
   - 強 AI (AGI) 搭配 人在迴圈外 (HOOTL)，通用 AI 完全自動化運作。
@@ -660,13 +658,11 @@ questions:
 - id: 1042
   chapter_title: 人工智慧的本質與層次架構
   section_title: AI 的定義與範疇
-  text: 情境題：你正在開發一個垃圾郵件過濾器。若垃圾郵件的特徵每天都在變（例如從「中獎」變成「幸運得主」再變成「LUCKY WINNER」），為何「資料驅動
-    (Data-Driven)」的方法通常優於「規則驅動 (Rule-Based)」？
+  text: 情境題：你正在開發一個垃圾郵件過濾器。若垃圾郵件的特徵每天都在變（例如從「中獎」變成「幸運得主」再變成「LUCKY WINNER」），為何「資料驅動 (Data-Driven)」的方法通常優於「規則驅動 (Rule-Based)」？
   type: multiple_choice
   options:
   - 因為資料驅動的模型不需要任何運算資源 (No Computational Resources Needed)，運算成本為零。
-  - 因為資料驅動能自動從新數據中學習變異模式，解決了規則驅動難以窮舉所有變化的「知識擷取瓶頸」(Automatically Learning Variant Patterns,
-    Solving Knowledge Acquisition Bottleneck)
+  - 因為資料驅動能自動從新數據中學習變異模式，解決了規則驅動難以窮舉所有變化的「知識擷取瓶頸」(Automatically Learning Variant Patterns, Solving Knowledge Acquisition Bottleneck)
   - 因為規則驅動的系統完全無法處理文字 (Cannot Process Text at All)，僅限於數值運算。
   - 因為資料驅動的模型具有最高的可解釋性 (Highest Interpretability)，決策過程完全透明。
   correct_index: 1
@@ -681,12 +677,9 @@ questions:
   text: 在人工智慧系統的決策流程中，下列哪一種情境最符合「人在迴圈上 （Human-over-the-loop）」所強調的監督機制？ (114年第四梯次)
   type: multiple_choice
   options:
-  - AI 系統只能提供建議，人類需主動下達命令才能進行決策 (AI Only Provides Suggestions, Human Must Actively
-    Command)，AI 僅為輔助工具。
-  - 人類對 AI 的運行進行日常監督，必要時可立即介入修正或干預 (Daily Supervision with Immediate Intervention
-    Capability)
-  - 人類平時不參與 AI 的運作，僅在發生異常或重大錯誤時才接手控制 (No Regular Participation, Only Intervening in
-    Anomalies)，屬於被動監控模式。
+  - AI 系統只能提供建議，人類需主動下達命令才能進行決策 (AI Only Provides Suggestions, Human Must Actively Command)，AI 僅為輔助工具。
+  - 人類對 AI 的運行進行日常監督，必要時可立即介入修正或干預 (Daily Supervision with Immediate Intervention Capability)
+  - 人類平時不參與 AI 的運作，僅在發生異常或重大錯誤時才接手控制 (No Regular Participation, Only Intervening in Anomalies)，屬於被動監控模式。
   - AI 的所有判斷與行動在執行前，皆須經過人類逐一審核與批准 (All Decisions Require Human Review and Approval)，屬於嚴格審核模式。
   correct_index: 1
   explanation: Human-in-the-loop (HITL) 強調在 AI 系統中保留人類的監督與介入，特別是在高風險決策或模型信心不足時。
@@ -781,8 +774,7 @@ questions:
   type: multiple_choice
   options:
   - 深度學習準確率太低 (Low Accuracy)，在分類任務上表現不佳。
-  - 深度學習需要海量數據才能收斂，小數據集下傳統 ML 效果可能更好且不易過擬合 (Requiring Massive Data, Traditional ML
-    Better on Small Datasets)
+  - 深度學習需要海量數據才能收斂，小數據集下傳統 ML 效果可能更好且不易過擬合 (Requiring Massive Data, Traditional ML Better on Small Datasets)
   - SVM 運算更慢 (Slower Computation)，處理速度不如深度學習。
   - SVM 是最新的技術 (Latest Technology)，代表最先進的機器學習方法。
   correct_index: 1
@@ -926,8 +918,7 @@ questions:
   type: multiple_choice
   options:
   - 測試電腦的運算速度 (Testing Computational Speed)，評估硬體處理效能。
-  - 判斷機器是否具備展現出與人類無法區分的智慧行為的能力 (Testing if Machine Can Exhibit Indistinguishable Intelligence
-    from Humans)
+  - 判斷機器是否具備展現出與人類無法區分的智慧行為的能力 (Testing if Machine Can Exhibit Indistinguishable Intelligence from Humans)
   - 測試網路連線 (Testing Network Connectivity)，檢查網路連線品質。
   - 測試硬體耐用度 (Testing Hardware Durability)，評估設備使用壽命。
   correct_index: 1
@@ -947,8 +938,7 @@ questions:
   - HOOTL (Human-out-of-the-loop)，完全自動化無需人類介入。
   - 手動維運 (Manual Operations)，完全由人類手動執行所有任務。
   correct_index: 2
-  explanation: 如果清理過程完全自動化且無需人類批准，則屬於 HOOTL。若需人類批准則為 HOTL。通常 AIOps 的自動修復傾向於 HOOTL
-    以求時效。
+  explanation: 如果清理過程完全自動化且無需人類批准，則屬於 HOOTL。若需人類批准則為 HOTL。通常 AIOps 的自動修復傾向於 HOOTL 以求時效。
   tags:
   - chap-ai-foundation-chapter1
   - sec-human-ai-collab
@@ -1029,8 +1019,7 @@ questions:
   - 生成型 AI (Generative AI)，重點在依提示詞產生全新圖片或文字。
   - 強人工智慧 (AGI)，具備人類般通用智慧並能跨領域處理所有任務。
   correct_index: 0
-  explanation: 題目重點是從既有消費資料中找出模式、分群與關聯，屬於分析型 AI。若題目強調預測未來違約、流失或需求，才更偏向預測型 AI；若強調產生新內容，才是生成型
-    AI。
+  explanation: 題目重點是從既有消費資料中找出模式、分群與關聯，屬於分析型 AI。若題目強調預測未來違約、流失或需求，才更偏向預測型 AI；若強調產生新內容，才是生成型 AI。
   tags:
   - chap-ai-foundation-chapter1
   - sec-ai-functional-types
@@ -1197,8 +1186,7 @@ questions:
   - 115-1
   usage: mock
 - id: 115-1-2
-  text: 某智慧城市專案導入 AI 技術，以優化垃圾收集路線調度並即時監測空氣品質變化。系統需持續蒐集環境數據（如 PM2.5、氣體濃度）與設備狀態（如垃圾桶滿溢度）
-    。下列何種技術最直接支援上述需求？     （115年第一梯次）
+  text: 某智慧城市專案導入 AI 技術，以優化垃圾收集路線調度並即時監測空氣品質變化。系統需持續蒐集環境數據（如 PM2.5、氣體濃度）與設備狀態（如垃圾桶滿溢度） 。下列何種技術最直接支援上述需求？     （115年第一梯次）
   type: multiple_choice
   options:
   - 專家系統（Expert System）
@@ -1240,8 +1228,7 @@ questions:
   - 115-1
   usage: mock
 - id: 115-1-18
-  text: 某電商平台工程師需在已排序的價格清單中，快速定位指定價格是否存在，給定排序後陣列：arr = [3, 8, 14, 19, 21, 27, 33,
-    45, 52]。若搜尋目標值為 27，且採用標準二分搜尋（Binary Search）流程（每次比較後排除中位數） ，請問最多需要比較幾次即可找到目標？ （115年第一梯次）
+  text: 某電商平台工程師需在已排序的價格清單中，快速定位指定價格是否存在，給定排序後陣列：arr = [3, 8, 14, 19, 21, 27, 33, 45, 52]。若搜尋目標值為 27，且採用標準二分搜尋（Binary Search）流程（每次比較後排除中位數） ，請問最多需要比較幾次即可找到目標？ （115年第一梯次）
   type: multiple_choice
   options:
   - 2 次
@@ -1255,8 +1242,7 @@ questions:
   - 115-1
   usage: mock
 - id: 115-1-28
-  text: 在金融業導入 AI 模型與可解釋性技術時，反事實解釋（Counterfactual 115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 第一科：人工智慧基礎概論
-    考試日期：115 年 03 月 21 日 第 7 頁，共 12 頁  答案 題目 Explanation）最符合下列哪一種應用？ （115年第一梯次）
+  text: 在金融業導入 AI 模型與可解釋性技術時，反事實解釋（Counterfactual 115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 第一科：人工智慧基礎概論 考試日期：115 年 03 月 21 日 第 7 頁，共 12 頁  答案 題目 Explanation）最符合下列哪一種應用？ （115年第一梯次）
   type: multiple_choice
   options:
   - 分析整體客戶群的信用風險分布，以預測未來違約率趨勢

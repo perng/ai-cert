@@ -6,8 +6,7 @@ questions:
   type: multiple_choice
   options:
   - 增加資料量 (Increasing Data Volume)，擴充訓練資料集。
-  - '公平評估模型效能，避免作弊（偷看答案）(Fairly Evaluating Model Performance, Avoiding Cheating: Peeking
-    at Answers)'
+  - '公平評估模型效能，避免作弊（偷看答案）(Fairly Evaluating Model Performance, Avoiding Cheating: Peeking at Answers)'
   - 減少計算時間 (Reducing Computation Time)，縮短處理時間。
   - 方便儲存 (Convenient Storage)，簡化資料管理。
   correct_index: 1
@@ -24,8 +23,7 @@ questions:
   options:
   - 最終效能評估 (Final Performance Evaluation)，屬於測試集的用途。
   - 資料增強 (Data Augmentation)，擴充訓練資料的方法。
-  - 調整超參數 (Hyperparameters) 與挑選最佳模型 (Adjusting Hyperparameters and Selecting Best
-    Model)
+  - 調整超參數 (Hyperparameters) 與挑選最佳模型 (Adjusting Hyperparameters and Selecting Best Model)
   - 訓練模型權重 (Training Model Weights)，屬於訓練集的用途。
   correct_index: 2
   explanation: 驗證集就像模擬考，用來在訓練過程中評估模型表現，以調整學習率、樹的深度等超參數。
@@ -41,8 +39,7 @@ questions:
   options:
   - 不需要測試集 (No Test Set Required)，可以省略測試階段。
   - 可以自動調整參數 (Can Automatically Adjust Parameters)，自動化超參數優化。
-  - 每一筆資料都有機會被用來訓練和驗證，評估結果更穩健 (Every Data Point Has Opportunity to Be Used for Training
-    and Validation, More Robust Evaluation Results)
+  - 每一筆資料都有機會被用來訓練和驗證，評估結果更穩健 (Every Data Point Has Opportunity to Be Used for Training and Validation, More Robust Evaluation Results)
   - 計算速度最快 (Fastest Computation Speed)，處理效率最高。
   correct_index: 2
   explanation: K-fold 輪流使用不同部分的資料當驗證集，能避免因資料切分運氣好壞而導致的評估偏差。
@@ -88,8 +85,7 @@ questions:
   text: 精確率 (Precision) 的定義是？
   type: multiple_choice
   options:
-  - 所有被判斷為有病的人中，真的有病的比例 (Proportion of Actually Sick Among Those Predicted Sick)，精確率
-    (Precision) 的定義。
+  - 所有被判斷為有病的人中，真的有病的比例 (Proportion of Actually Sick Among Those Predicted Sick)，精確率 (Precision) 的定義。
   - 預測錯誤的比例 (Proportion of Prediction Errors)，錯誤率的定義。
   - 答對的總比例 (Overall Proportion of Correct Answers)，準確率 (Accuracy) 的定義。
   - 所有真的有病的人中，被抓到的比例 (Proportion of Actually Sick Caught)，召回率 (Recall) 的定義。
@@ -106,8 +102,7 @@ questions:
   type: multiple_choice
   options:
   - 預測錯誤的比例 (Proportion of Prediction Errors)，錯誤率的定義。
-  - 所有被判斷為有病的人中，真的有病的比例 (Proportion of Actually Sick Among Those Predicted Sick)，精確率
-    (Precision) 的定義。
+  - 所有被判斷為有病的人中，真的有病的比例 (Proportion of Actually Sick Among Those Predicted Sick)，精確率 (Precision) 的定義。
   - 答對的總比例 (Overall Proportion of Correct Answers)，準確率 (Accuracy) 的定義。
   - 所有真的有病的人中，被成功抓出來的比例 (Proportion of Actually Sick Successfully Caught)
   correct_index: 3
@@ -314,8 +309,7 @@ questions:
   text: 資料增強 (Data Augmentation) 的主要目的是？
   type: multiple_choice
   options:
-  - 透過變換原始資料創造新樣本，增加資料多樣性以抗過擬合 (Creating New Samples Through Transforming Original
-    Data, Increasing Data Diversity to Resist Overfitting)
+  - 透過變換原始資料創造新樣本，增加資料多樣性以抗過擬合 (Creating New Samples Through Transforming Original Data, Increasing Data Diversity to Resist Overfitting)
   - 修正錯誤標籤 (Correcting Wrong Labels)，修正不正確的標註。
   - 壓縮圖片 (Compressing Images)，減少影像檔案大小。
   - 減少資料量 (Reducing Data Volume)，縮小訓練資料集。
@@ -368,8 +362,7 @@ questions:
   - TP 和 TN (TP and TN)，真陽性與真陰性。
   - 'FPR (誤報率) 和 TPR (召回率) (FPR: False Positive Rate and TPR: Recall)，假陽性率與真陽性率。'
   correct_index: 3
-  explanation: ROC 曲線描繪了在不同門檻下，FPR (False Positive Rate) 與 TPR (True Positive Rate)
-    的權衡關係。
+  explanation: ROC 曲線描繪了在不同門檻下，FPR (False Positive Rate) 與 TPR (True Positive Rate) 的權衡關係。
   tags:
   - chap-ai-foundation-chapter9
   - sec-classification-metrics
@@ -526,8 +519,7 @@ questions:
   options:
   - 模型非常完美 (Model Is Very Perfect)，預測能力極佳。
   - 資料太難 (Data Too Difficult)，資料過於複雜難以學習。
-  - 可能發生了資料洩漏 (Data Leakage)，需檢查資料 (Possible Data Leakage Occurred, Need to Check
-    Data)
+  - 可能發生了資料洩漏 (Data Leakage)，需檢查資料 (Possible Data Leakage Occurred, Need to Check Data)
   - 模型壞了 (Model Is Broken)，模型無法正常運作。
   correct_index: 2
   explanation: 現實世界中幾乎不可能有完美的模型，AUC=1 通常暗示測試資料被混入訓練集，或標籤直接洩漏給了特徵。
@@ -559,8 +551,7 @@ questions:
   options:
   - 把文字倒著寫 (Writing Text Backwards)，反轉文字順序。
   - 翻譯成二進位 (Translating to Binary)，轉換為二進位編碼。
-  - 翻譯成外文再翻譯回來，以取得語意相近但用詞不同的句子 (Translating to Foreign Language Then Back to Get Semantically
-    Similar But Different Wording)
+  - 翻譯成外文再翻譯回來，以取得語意相近但用詞不同的句子 (Translating to Foreign Language Then Back to Get Semantically Similar But Different Wording)
   - 刪除翻譯 (Deleting Translation)，移除翻譯功能。
   correct_index: 2
   explanation: 回譯能產生多樣化的句型，是 NLP 常用的資料增強技巧。
@@ -657,8 +648,7 @@ questions:
   - Accuracy 是一個完美的指標 (Accuracy Is a Perfect Metric)，準確率完全可靠。
   - 模型表現非常優秀 (Model Performance Is Excellent)，預測能力極佳。
   - 不需要再做任何優化 (No Further Optimization Needed)，模型已達最佳狀態。
-  - 在不平衡資料集中，Accuracy 具有高度誤導性，應改用 F1-Score 或 AUC-ROC (In Imbalanced Datasets, Accuracy
-    Is Highly Misleading, Should Use F1-Score or AUC-ROC Instead)
+  - 在不平衡資料集中，Accuracy 具有高度誤導性，應改用 F1-Score 或 AUC-ROC (In Imbalanced Datasets, Accuracy Is Highly Misleading, Should Use F1-Score or AUC-ROC Instead)
   correct_index: 3
   explanation: 這就是「準確度的悖論」。模型雖然準，但對我們真正關心的少數類（如詐欺、疾病）完全無能為力。
   tags:
@@ -705,8 +695,7 @@ questions:
   options:
   - 隨機停止訓練 (Randomly Stopping Training)，無系統性地結束訓練。
   - 在訓練開始前就停止 (Stopping Before Training Begins)，完全不進行訓練。
-  - 監控驗證集 (Validation Set) 的誤差，一旦誤差不再下降甚至開始上升，就停止訓練 (Monitoring Validation Set Error,
-    Stopping Training Once Error Stops Decreasing or Starts Increasing)
+  - 監控驗證集 (Validation Set) 的誤差，一旦誤差不再下降甚至開始上升，就停止訓練 (Monitoring Validation Set Error, Stopping Training Once Error Stops Decreasing or Starts Increasing)
   - 當訓練集誤差為 0 時停止 (Stopping When Training Set Error Reaches Zero)，可能導致過擬合。
   correct_index: 2
   explanation: 這就像在煮麵，要在麵條剛好熟（驗證誤差最低）的時候撈起來，煮太久（訓練太久）就會爛掉（過擬合）。
@@ -717,18 +706,13 @@ questions:
 - id: 11439
   chapter_title: 模型評估與優化
   section_title: 評估指標
-  text: 某醫院計畫開發住院日數預測模型，以協助病房調度。多數病人的住院 日數集中在 3–7 天，但仍有少數重症患者因治療需求而住院日數明顯 偏長。醫院希望採用一種合適的評估方式，既能兼顧大部分病人的預測
-    準確度，也能確保對重症個案的預測維持穩健。下列哪一種方法最符合 此需求？  答案 題    目 (114年第四梯次)
+  text: 某醫院計畫開發住院日數預測模型，以協助病房調度。多數病人的住院 日數集中在 3–7 天，但仍有少數重症患者因治療需求而住院日數明顯 偏長。醫院希望採用一種合適的評估方式，既能兼顧大部分病人的預測 準確度，也能確保對重症個案的預測維持穩健。下列哪一種方法最符合 此需求？  答案 題    目 (114年第四梯次)
   type: multiple_choice
   options:
-  - 在模型檢核時，同時呈現平均絕對誤差（MAE）與重症子群的誤差指 標 (During Model Validation, Simultaneously Presenting
-    MAE and Error Indicators for Critical Care Subgroup)
-  - 僅針對一般病人樣本進行交叉驗證，以避免重症個案拉高誤差 (Only Performing Cross-Validation on General Patient
-    Samples to Avoid Critical Cases Raising Error)
-  - 將所有病人的住院日數進行標準化處理，以減少數值範圍差異的影 響 (Standardizing All Patients' Length of Stay to
-    Reduce Impact of Value Range Differences)
-  - 只採用單一的整體決定係數 (R²) 作為模型優劣的判斷依據 (Only Using Single Overall R² as Model Quality Judgment
-    Criterion)
+  - 在模型檢核時，同時呈現平均絕對誤差（MAE）與重症子群的誤差指 標 (During Model Validation, Simultaneously Presenting MAE and Error Indicators for Critical Care Subgroup)
+  - 僅針對一般病人樣本進行交叉驗證，以避免重症個案拉高誤差 (Only Performing Cross-Validation on General Patient Samples to Avoid Critical Cases Raising Error)
+  - 將所有病人的住院日數進行標準化處理，以減少數值範圍差異的影 響 (Standardizing All Patients' Length of Stay to Reduce Impact of Value Range Differences)
+  - 只採用單一的整體決定係數 (R²) 作為模型優劣的判斷依據 (Only Using Single Overall R² as Model Quality Judgment Criterion)
   correct_index: 0
   explanation: 此題涉及 評估指標 的核心概念。正確答案為「在模型檢核時，同時呈現平均絕對誤差（MAE）與重症子群的誤差指 標」。
   tags:
@@ -745,8 +729,7 @@ questions:
   options:
   - L1 正則化忽略目標變數 (L1 Regularization Ignores Target Variable)，不考慮預測目標。
   - L1 對梯度有平滑作用 (L1 Has Smoothing Effect on Gradient)，使梯度變化平緩。
-  - L1 對大係數懲罰較強，促使稀疏解 (L1 Penalizes Large Coefficients More Strongly, Promoting Sparse
-    Solutions)
+  - L1 對大係數懲罰較強，促使稀疏解 (L1 Penalizes Large Coefficients More Strongly, Promoting Sparse Solutions)
   - L1 會轉換損失函數為非凸形 (L1 Transforms Loss Function to Non-Convex)，改變函數形狀。
   correct_index: 2
   explanation: L1 正則化 (Lasso) 具有特徵選擇的功能，因為其幾何特性（菱形約束區域）傾向於讓不重要的特徵權重收斂為 0，從而產生稀疏模型。
@@ -759,9 +742,7 @@ questions:
 - id: 11443
   chapter_title: 模型評估與優化
   section_title: 評估指標
-  text: 某公司欲建立員工離職風險預測模型，資料集中包含 「年度績效分數」 、 「平均每月加班時數」 、 「年齡」等數值型特徵。由於各特徵的數值範圍 差異極大（例如績效分數1–5、加班時數0–80、年齡20–65）
-    ，若直 接輸入至使用梯度下降的邏輯迴歸(Logistic Regression)模型，可能 導致模型收斂緩慢或權重偏斜。為提升模型訓練效率與準確度，下列哪
-    一種特徵工程方法最適合應用於這些數值特徵？ (114年第四梯次)
+  text: 某公司欲建立員工離職風險預測模型，資料集中包含 「年度績效分數」 、 「平均每月加班時數」 、 「年齡」等數值型特徵。由於各特徵的數值範圍 差異極大（例如績效分數1–5、加班時數0–80、年齡20–65） ，若直 接輸入至使用梯度下降的邏輯迴歸(Logistic Regression)模型，可能 導致模型收斂緩慢或權重偏斜。為提升模型訓練效率與準確度，下列哪 一種特徵工程方法最適合應用於這些數值特徵？ (114年第四梯次)
   type: multiple_choice
   options:
   - 布林轉換（Boolean Conversion），將數值轉換為布林值。
@@ -832,8 +813,7 @@ questions:
   type: multiple_choice
   options:
   - 計算速度快 (Fast Computation Speed)，處理效率高。
-  - 每一筆資料都有機會被當作驗證集，評估結果更穩健 (Every Data Point Has Opportunity to Be Used as Validation
-    Set, More Robust Evaluation Results)
+  - 每一筆資料都有機會被當作驗證集，評估結果更穩健 (Every Data Point Has Opportunity to Be Used as Validation Set, More Robust Evaluation Results)
   - 不需要測試集 (No Test Set Required)，可以省略測試階段。
   - 模型更簡單 (Model Simpler)，模型複雜度較低。
   correct_index: 1
@@ -849,8 +829,7 @@ questions:
   type: multiple_choice
   options:
   - 增加資料量 (Increasing Data Volume)，擴充訓練資料集。
-  - 訓練時隨機關閉部分神經元，減少對特定路徑的依賴 (Randomly Closing Some Neurons During Training, Reducing
-    Dependence on Specific Paths)
+  - 訓練時隨機關閉部分神經元，減少對特定路徑的依賴 (Randomly Closing Some Neurons During Training, Reducing Dependence on Specific Paths)
   - 刪除錯誤標籤 (Deleting Wrong Labels)，移除不正確的標註。
   - 增加層數 (Adding Layers)，會加劇過擬合。
   correct_index: 1
@@ -963,8 +942,7 @@ questions:
   options:
   - 訓練模型 (Training Model)，屬於訓練集的用途。
   - 調整超參數 (Adjusting Hyperparameters)，屬於驗證集的用途。
-  - '最終效能評估 (不可用於訓練或調整) (Final Performance Evaluation: Cannot Be Used for Training
-    or Adjustment)'
+  - '最終效能評估 (不可用於訓練或調整) (Final Performance Evaluation: Cannot Be Used for Training or Adjustment)'
   - 沒用 (No Use)，完全沒有用途。
   correct_index: 2
   explanation: 測試集模擬真實上線環境，必須完全隔離，以確保評估的客觀性。
@@ -1189,8 +1167,7 @@ questions:
   - F1-score
   - 均方誤差（Root Mean Squared Error, RMSE）
   - 準確率（Accuracy）
-  - "判定係數（R², Coefficient of Determination） \n115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 \n第一科：人工智慧基礎概論\
-    \ \n考試日期：115 年 03 月 21 日 \n第 10 頁，共 12 頁 \n \n答案 題目"
+  - "判定係數（R², Coefficient of Determination） \n115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 \n第一科：人工智慧基礎概論 \n考試日期：115 年 03 月 21 日 \n第 10 頁，共 12 頁 \n \n答案 題目"
   correct_index: 0
   explanation: 本題測驗相關核心概念。正確解答為「F1-score」，因為這最符合題幹中描述的情境與技術特性。
   tags:
@@ -1198,8 +1175,7 @@ questions:
   - 115-1
   usage: mock
 - id: 115-1-50
-  text: 某醫院使用機器學習模型篩檢癌症患者。模型預測結果會決定哪些病人需要進一步檢查。院方非常重視盡量找出所有可能的癌症患者，即希望降低漏診（Missed
-    Diagnosis）風險，即便這可能增加一些誤判。下列哪一個評估指標最能反映模型找出癌症患者的能力？ （115年第一梯次）
+  text: 某醫院使用機器學習模型篩檢癌症患者。模型預測結果會決定哪些病人需要進一步檢查。院方非常重視盡量找出所有可能的癌症患者，即希望降低漏診（Missed Diagnosis）風險，即便這可能增加一些誤判。下列哪一個評估指標最能反映模型找出癌症患者的能力？ （115年第一梯次）
   type: multiple_choice
   options:
   - 精準率（Precision）

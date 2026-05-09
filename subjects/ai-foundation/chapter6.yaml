@@ -6,8 +6,7 @@ questions:
   type: multiple_choice
   options:
   - 透過獎勵與懲罰學習 (Learning Through Rewards and Punishments)，屬於強化學習的特徵。
-  - 沒有標準答案，模型需自行尋找隱藏結構 (No Standard Answers, Model Must Find Hidden Structure on Its
-    Own)
+  - 沒有標準答案，模型需自行尋找隱藏結構 (No Standard Answers, Model Must Find Hidden Structure on Its Own)
   - 有老師教導標準答案 (Teacher Provides Standard Answers)，屬於監督式學習的特徵。
   - 需要預訓練模型 (Requiring Pre-trained Models)，屬於遷移學習的特徵。
   correct_index: 1
@@ -24,8 +23,7 @@ questions:
   options:
   - 將資料壓縮到低維度 (Compressing Data to Low Dimensions)，屬於降維的目標。
   - 找出變數間的因果關係 (Finding Causal Relationships Between Variables)，屬於因果推論的目標。
-  - 將相似的資料歸為同一群，群間差異最大化 (Grouping Similar Data Together, Maximizing Differences Between
-    Groups)
+  - 將相似的資料歸為同一群，群間差異最大化 (Grouping Similar Data Together, Maximizing Differences Between Groups)
   - 預測未來的數值 (Predicting Future Values)，屬於迴歸的目標。
   correct_index: 2
   explanation: 分群旨在實現「物以類聚」，讓同一群內的資料越像越好，不同群之間的差異越大越好。
@@ -154,8 +152,7 @@ questions:
   - 兩者呈負相關 (Negative Correlation)，買 A 會降低買 B 的機率。
   - 計算錯誤 (Calculation Error)，演算法計算過程有誤。
   - 兩者無關 (No Relationship)，A 與 B 之間沒有關聯性。
-  - '兩者呈正相關（買 A 會提升買 B 的機率）(Positive Correlation: Buying A Increases Probability of
-    Buying B)'
+  - '兩者呈正相關（買 A 會提升買 B 的機率）(Positive Correlation: Buying A Increases Probability of Buying B)'
   correct_index: 3
   explanation: Lift > 1 表示 A 的出現會增加 B 出現的機率，兩者有正向關聯。
   tags:
@@ -168,8 +165,7 @@ questions:
   text: 主成分分析 (PCA) 的核心目標是什麼？
   type: multiple_choice
   options:
-  - 找出變異量 (Variance) 最大的投影方向以保留最多資訊 (Finding Projection Direction with Maximum Variance
-    to Retain Most Information)
+  - 找出變異量 (Variance) 最大的投影方向以保留最多資訊 (Finding Projection Direction with Maximum Variance to Retain Most Information)
   - 消除所有雜訊 (Eliminating All Noise)，移除資料中的隨機誤差。
   - 將資料分類 (Classifying Data)，將資料分為不同類別。
   - 增加資料維度 (Increasing Data Dimensionality)，擴充特徵的數量。
@@ -760,8 +756,7 @@ questions:
 - id: 11436
   chapter_title: 非監督式與強化學習
   section_title: 強化學習
-  text: 某電商資料團隊要協助行銷部門規劃再行銷策略。目前取得資料包含 使用者點擊、購買紀錄、流量來源與轉換率。若資料團隊希望先進行探 索性資料分析（EDA）
-    ，下列哪一項最符合EDA 的做法？ (114年第四梯次)
+  text: 某電商資料團隊要協助行銷部門規劃再行銷策略。目前取得資料包含 使用者點擊、購買紀錄、流量來源與轉換率。若資料團隊希望先進行探 索性資料分析（EDA） ，下列哪一項最符合EDA 的做法？ (114年第四梯次)
   type: multiple_choice
   options:
   - 建立隨機森林模型，預測使用者是否會完成購買
@@ -779,11 +774,7 @@ questions:
 - id: 11440
   chapter_title: 非監督式與強化學習
   section_title: 關聯規則
-  text: 關 於 監 督 式 學 習 （Supervised Learning ） 與 非 監 督 式 學 習 （Unsupervised Learning）的目標，下列敘述何者錯誤？
-    1.非監督式學習的核心在於發掘資料內在結構，例如分群、關聯規則與 降維，而不依賴外部標籤。 2.監督式學習的典型應用為分類與迴歸，通常不適合應用於異常偵測
-    任務。 3.非監督式學習若搭配少量標註資料，即會完全轉化為監督式學習。 4.監督式學習仰賴已標註的資料集，透過最小化輸出與真實標籤之間 的差距，學習輸入與目標之間的對應函數。
-    5.所有監督式學習任務都必須要有大量完整標註資料，否則無法進行 任何有效的模型訓練。 6.非監督式學習不需要目標變數，僅透過輸入資料本身的特徵分布進 行模式學習。
-    (114年第四梯次)
+  text: 關 於 監 督 式 學 習 （Supervised Learning ） 與 非 監 督 式 學 習 （Unsupervised Learning）的目標，下列敘述何者錯誤？ 1.非監督式學習的核心在於發掘資料內在結構，例如分群、關聯規則與 降維，而不依賴外部標籤。 2.監督式學習的典型應用為分類與迴歸，通常不適合應用於異常偵測 任務。 3.非監督式學習若搭配少量標註資料，即會完全轉化為監督式學習。 4.監督式學習仰賴已標註的資料集，透過最小化輸出與真實標籤之間 的差距，學習輸入與目標之間的對應函數。 5.所有監督式學習任務都必須要有大量完整標註資料，否則無法進行 任何有效的模型訓練。 6.非監督式學習不需要目標變數，僅透過輸入資料本身的特徵分布進 行模式學習。 (114年第四梯次)
   type: multiple_choice
   options:
   - 3、5、6
@@ -801,8 +792,7 @@ questions:
 - id: 11417
   chapter_title: 非監督式與強化學習
   section_title: 強化學習
-  text: 一間金融科技公司設計一款智慧投資系統，該系統會根據市場變化自 動決定「買進」 、 「持有」或「賣出」的行動，並根據每次交易後的盈虧 結果，逐步優化下一次的投資策略。整個過程中，系統不依賴事先標記
-    的資料，而是根據歷次行動獲得的獎勵進行調整。請問此系統最可能採 用哪一種學習方法？ (114年第四梯次)
+  text: 一間金融科技公司設計一款智慧投資系統，該系統會根據市場變化自 動決定「買進」 、 「持有」或「賣出」的行動，並根據每次交易後的盈虧 結果，逐步優化下一次的投資策略。整個過程中，系統不依賴事先標記 的資料，而是根據歷次行動獲得的獎勵進行調整。請問此系統最可能採 用哪一種學習方法？ (114年第四梯次)
   type: multiple_choice
   options:
   - 強化式學習（Reinforcement Learning）
@@ -1188,8 +1178,7 @@ questions:
   - 115-1
   usage: mock
 - id: 115-1-24
-  text: 某企業導入大型語言模型作為客服助理。模型已具備穩定語言能力，但在回覆偏好一致性與組織規範遵循方面仍需優化，團隊因此規劃導入人類反饋強化學習（RLHF）流程，下列何者最不屬於
-    RLHF 階段的典型技術活動？ （115年第一梯次）
+  text: 某企業導入大型語言模型作為客服助理。模型已具備穩定語言能力，但在回覆偏好一致性與組織規範遵循方面仍需優化，團隊因此規劃導入人類反饋強化學習（RLHF）流程，下列何者最不屬於 RLHF 階段的典型技術活動？ （115年第一梯次）
   type: multiple_choice
   options:
   - '透過人工評估方式建立偏好資料，使模型的不同候選輸出可反映人類主觀品質

@@ -698,8 +698,7 @@ questions:
   - VAE 模型太小 (Model too Small)
   - VAE 的損失函數包含均方誤差 (MSE)，傾向於生成平均化的結果，導致模糊 (MSE causes Blurring)
   correct_index: 3
-  explanation: VAE 的重建損失（通常是 MSE）假設數據服從高斯分佈，這會導致模型傾向於輸出像素的平均值，從而造成圖像邊緣模糊。相比之下，GAN
-    和 Diffusion 能生成更銳利的細節。
+  explanation: VAE 的重建損失（通常是 MSE）假設數據服從高斯分佈，這會導致模型傾向於輸出像素的平均值，從而造成圖像邊緣模糊。相比之下，GAN 和 Diffusion 能生成更銳利的細節。
   tags:
   - chap-m2-ch4
   - sec-scenario
@@ -707,8 +706,7 @@ questions:
 - id: 4445
   chapter_title: 生成式 AI 與多模態 AI
   section_title: 深度思考情境題
-  text: 情境：你想要生成高品質的「貓咪騎機車」圖片。你輸入 Prompt "Cat riding a motorcycle"，但生成的圖片裡貓咪有 6 條腿，機車輪子是方形的。這說明了目前生成式
-    AI 的什麼局限？
+  text: 情境：你想要生成高品質的「貓咪騎機車」圖片。你輸入 Prompt "Cat riding a motorcycle"，但生成的圖片裡貓咪有 6 條腿，機車輪子是方形的。這說明了目前生成式 AI 的什麼局限？
   type: multiple_choice
   options:
   - Prompt 寫得太短 (Short Prompt)
@@ -790,10 +788,10 @@ questions:
   text: 情境：GAN 訓練達到「納什均衡」時，判別器的輸出機率通常接近？
   type: multiple_choice
   options:
-  - "0.5 (無法區分真假) (Indistinguishable)"
-  - "'0.9' (High Confidence)"
-  - "'1' (Real)"
-  - "'0' (Fake)"
+  - 0.5 (無法區分真假) (Indistinguishable)
+  - '''0.9'' (High Confidence)'
+  - '''1'' (Real)'
+  - '''0'' (Fake)'
   correct_index: 0
   explanation: 此時生成器生成的數據已完美擬合真實分佈，判別器只能隨機猜測。
   tags:
@@ -1040,4 +1038,36 @@ questions:
   - chap-m2-ch4
   - sec-generative-models
   id: 4465
+  usage: both
+- id: 4466
+  chapter_title: 生成式 AI 與多模態 AI
+  section_title: 提示工程與生成品質控制
+  text: 在文字轉圖像生成中，若品牌顏色或手部姿勢常與提示不一致，最可能反映哪一類問題？
+  type: multiple_choice
+  options:
+  - 多模態語意對齊與生成細節控制不足
+  - 資料庫 ACID 原子性失效
+  - K-means 群數設定過低
+  - 交叉驗證折數太多
+  correct_index: 0
+  explanation: 文字與影像嵌入若未充分對齊，或生成模型細節控制不足，可能導致局部與語意不一致。
+  tags:
+  - chap-m2-ch4
+  - sec-multimodal
+  usage: both
+- id: 4467
+  chapter_title: 生成式 AI 與多模態 AI
+  section_title: 文本、語音與影像編輯生成
+  text: 下列哪一項最符合 TTS (Text-to-Speech) 生成任務？
+  type: multiple_choice
+  options:
+  - 根據文字輸入產生自然語音
+  - 將交易資料分群
+  - 計算影像邊界框 IoU
+  - 將關聯式資料轉為第三正規化
+  correct_index: 0
+  explanation: TTS 是由文字產生語音的生成式任務，常見模型包含 Tacotron、FastSpeech 與 VITS。
+  tags:
+  - chap-m2-ch4
+  - sec-generative-models
   usage: both

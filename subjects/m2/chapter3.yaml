@@ -698,8 +698,7 @@ questions:
   - U-Net (分割模型) (Segmentation Model)
   - MobileNet (MobileNet)
   correct_index: 2
-  explanation: YOLO 是偵測模型，只能給出矩形框 (Bounding Box)。手術規劃需要像素級的精確輪廓，這是語義分割/實例分割的任務，U-Net
-    是此領域的標竿模型。
+  explanation: YOLO 是偵測模型，只能給出矩形框 (Bounding Box)。手術規劃需要像素級的精確輪廓，這是語義分割/實例分割的任務，U-Net 是此領域的標竿模型。
   tags:
   - chap-m2-ch3
   - sec-scenario
@@ -707,8 +706,7 @@ questions:
 - id: 4345
   chapter_title: 電腦視覺 (CV)
   section_title: 深度思考情境題
-  text: 情境：你的公司計畫在商場安裝人臉辨識系統以分析客群。法務部門警告這可能違反個資法。除了取得顧客同意外，在技術架構上可以採取什麼「隱私設計 (Privacy
-    by Design)」措施？
+  text: 情境：你的公司計畫在商場安裝人臉辨識系統以分析客群。法務部門警告這可能違反個資法。除了取得顧客同意外，在技術架構上可以採取什麼「隱私設計 (Privacy by Design)」措施？
   type: multiple_choice
   options:
   - 降低影像解析度 (Reduce Resolution)
@@ -1040,4 +1038,36 @@ questions:
   - chap-m2-ch3
   - sec-cv-applications
   id: 4365
+  usage: both
+- id: 4366
+  chapter_title: 電腦視覺 (CV)
+  section_title: 物件偵測
+  text: 在物件偵測中，IoU 閾值設定較高代表什麼？
+  type: multiple_choice
+  options:
+  - 預測框必須與真實框有更高重疊程度才算偵測正確
+  - 模型可以忽略邊界框位置，只看類別
+  - 召回率一定會上升
+  - 所有預測框都會被保留，不做 NMS
+  correct_index: 0
+  explanation: IoU 衡量預測框與真實框的交集除以聯集；閾值越高，定位要求越嚴格。
+  tags:
+  - chap-m2-ch3
+  - sec-cv-models
+  usage: both
+- id: 4367
+  chapter_title: 電腦視覺 (CV)
+  section_title: 影像分割
+  text: 全景分割 (Panoptic Segmentation) 與語義分割的主要差異為何？
+  type: multiple_choice
+  options:
+  - 全景分割同時提供像素類別與可數物件的個體區分
+  - 全景分割只輸出整張圖片的一個類別
+  - 全景分割不能處理道路、天空等背景類別
+  - 全景分割只用於文字資料
+  correct_index: 0
+  explanation: 全景分割結合語義分割與實例分割，可同時標示類別與個體。
+  tags:
+  - chap-m2-ch3
+  - sec-cv-models
   usage: both

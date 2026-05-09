@@ -296,8 +296,7 @@ questions:
   - 處理共線性 (Handling Multicollinearity)，解決特徵間高度相關的問題。
   - 將權重變大 (Increasing Weights)，放大模型參數的數值。
   - 增加模型複雜度 (Increasing Model Complexity)，讓模型更複雜以學習更多模式。
-  - '特徵選擇 (將不重要特徵權重變為 0) (Feature Selection: Setting Unimportant Feature Weights to
-    Zero)'
+  - '特徵選擇 (將不重要特徵權重變為 0) (Feature Selection: Setting Unimportant Feature Weights to Zero)'
   correct_index: 3
   explanation: Lasso 加入絕對值懲罰項，傾向於將不重要的特徵權重壓縮至 0，達到特徵選擇的效果。
   tags:
@@ -375,8 +374,7 @@ questions:
   type: multiple_choice
   options:
   - 異常值 (Outliers)，與正常資料差異極大的資料點。
-  - 落在決策邊界邊緣、決定邊界位置的關鍵資料點 (Key Data Points on Decision Boundary Edges That Determine
-    Boundary Position)
+  - 落在決策邊界邊緣、決定邊界位置的關鍵資料點 (Key Data Points on Decision Boundary Edges That Determine Boundary Position)
   - 所有的資料點 (All Data Points)，資料集中的每一個樣本。
   - 中心點 (Center Point)，資料分佈的中心位置。
   correct_index: 1
@@ -409,8 +407,7 @@ questions:
   options:
   - 隨機時間與隨機地點 (Random Time and Random Location)，根據時間與空間進行隨機化。
   - 隨機分類與隨機迴歸 (Random Classification and Random Regression)，隨機選擇任務類型。
-  - 隨機採樣資料 (Bootstrap) 與隨機選取特徵 (Random Data Sampling (Bootstrap) and Random Feature
-    Selection)
+  - 隨機採樣資料 (Bootstrap) 與隨機選取特徵 (Random Data Sampling (Bootstrap) and Random Feature Selection)
   - 隨機參數與隨機權重 (Random Parameters and Random Weights)，隨機初始化模型參數。
   correct_index: 2
   explanation: 隨機森林對資料進行 Bootstrap 採樣，且在分裂節點時隨機選取部分特徵，以增加多樣性。
@@ -426,8 +423,7 @@ questions:
   options:
   - 增加訓練資料 (Increasing Training Data)，擴充資料集的大小。
   - 計算特徵重要性 (Calculating Feature Importance)，評估特徵對模型的貢獻。
-  - 驗證隨機森林模型的效能，無需額外切分驗證集 (Validating Random Forest Model Performance Without Additional
-    Validation Set Split)
+  - 驗證隨機森林模型的效能，無需額外切分驗證集 (Validating Random Forest Model Performance Without Additional Validation Set Split)
   - 調整學習率 (Adjusting Learning Rate)，控制模型學習速度的參數。
   correct_index: 2
   explanation: OOB 資料是那些未被該棵樹採樣到的資料，可直接用來測試該樹的準確度。
@@ -650,10 +646,8 @@ questions:
   type: multiple_choice
   options:
   - 因為醫院希望找出越少病人越好 (Hospitals Want to Find Fewer Patients)，減少醫療負擔。
-  - 因為漏掉一個真正有病的患者 (False Negative) 可能導致延誤治療甚至死亡，代價遠高於虛驚一場 (Missing a Truly Sick Patient
-    May Lead to Delayed Treatment or Death, Cost Far Exceeds False Alarm)
-  - 因為誤判一個健康人有病 (False Positive) 後果很嚴重 (Misdiagnosing a Healthy Person Has Serious
-    Consequences)，會造成不必要的恐慌。
+  - 因為漏掉一個真正有病的患者 (False Negative) 可能導致延誤治療甚至死亡，代價遠高於虛驚一場 (Missing a Truly Sick Patient May Lead to Delayed Treatment or Death, Cost Far Exceeds False Alarm)
+  - 因為誤判一個健康人有病 (False Positive) 後果很嚴重 (Misdiagnosing a Healthy Person Has Serious Consequences)，會造成不必要的恐慌。
   - 因為 Recall 計算比較簡單 (Recall Calculation is Simpler)，計算過程較為容易。
   correct_index: 1
   explanation: 在攸關性命的篩檢中，寧可錯殺一百（誤判有病再複檢），不可放過一個（漏判導致病情惡化）。
@@ -668,13 +662,9 @@ questions:
   type: multiple_choice
   options:
   - 'Bagging 是串列訓練，Boosting 是平行訓練 (Bagging: Sequential, Boosting: Parallel)，訓練順序相反。'
-  - 'Bagging 透過並行訓練多個獨立模型來降低變異數 (Variance)，Boosting 透過循序修正前一個模型的錯誤來降低偏差 (Bias) (Bagging:
-    Parallel Training to Reduce Variance, Boosting: Sequential Error Correction to
-    Reduce Bias)'
-  - Bagging 只能用於分類，Boosting 只能用於回歸 (Bagging Only for Classification, Boosting Only
-    for Regression)，任務類型限制。
-  - Bagging 容易過擬合，Boosting 不容易過擬合 (Bagging Prone to Overfitting, Boosting Not Prone
-    to Overfitting)，過擬合傾向相反。
+  - 'Bagging 透過並行訓練多個獨立模型來降低變異數 (Variance)，Boosting 透過循序修正前一個模型的錯誤來降低偏差 (Bias) (Bagging: Parallel Training to Reduce Variance, Boosting: Sequential Error Correction to Reduce Bias)'
+  - Bagging 只能用於分類，Boosting 只能用於回歸 (Bagging Only for Classification, Boosting Only for Regression)，任務類型限制。
+  - Bagging 容易過擬合，Boosting 不容易過擬合 (Bagging Prone to Overfitting, Boosting Not Prone to Overfitting)，過擬合傾向相反。
   correct_index: 1
   explanation: Bagging 是「三個臭皮匠勝過諸葛亮」（多樣性投票），Boosting 是「知錯能改，善莫大焉」（專注改進錯誤）。
   tags:
@@ -684,8 +674,7 @@ questions:
 - id: 5053
   chapter_title: 監督式學習演算法
   section_title: 回歸演算法
-  text: 當特徵數量多於樣本數量，或特徵間存在高度共線性 (Multicollinearity) 時，為何 Ridge Regression (L2) 優於一般
-    Linear Regression？
+  text: 當特徵數量多於樣本數量，或特徵間存在高度共線性 (Multicollinearity) 時，為何 Ridge Regression (L2) 優於一般 Linear Regression？
   type: multiple_choice
   options:
   - 因為 Ridge 不需要截距項
@@ -749,8 +738,7 @@ questions:
 - id: 11421
   chapter_title: 監督式學習演算法
   section_title: 分類演算法
-  text: 某金融科技公司正開發一套違約風險預測系統，需大量處理不同客戶 的財務特徵資料。考量到資料特徵數量眾多，且希望提升預測的穩定性 與泛化能力，下列哪一種鑑別式
-    AI 模型最適合？ (114年第四梯次)
+  text: 某金融科技公司正開發一套違約風險預測系統，需大量處理不同客戶 的財務特徵資料。考量到資料特徵數量眾多，且希望提升預測的穩定性 與泛化能力，下列哪一種鑑別式 AI 模型最適合？ (114年第四梯次)
   type: multiple_choice
   options:
   - 邏輯迴歸（Logistic Regression）
@@ -786,8 +774,7 @@ questions:
 - id: 11420
   chapter_title: 監督式學習演算法
   section_title: 分類演算法
-  text: 某醫院希望開發一個系統，根據患者的年齡、血壓與BMI 等資訊，預測  答案 題    目 其罹患糖尿病的機率（0~1） ，並依據預測值是否超過0.5
-    做出風險警 示。下列哪一種模型最適合用於此分類任務？ (114年第四梯次)
+  text: 某醫院希望開發一個系統，根據患者的年齡、血壓與BMI 等資訊，預測  答案 題    目 其罹患糖尿病的機率（0~1） ，並依據預測值是否超過0.5 做出風險警 示。下列哪一種模型最適合用於此分類任務？ (114年第四梯次)
   type: multiple_choice
   options:
   - 邏輯迴歸（Logistic Regression）
@@ -805,8 +792,7 @@ questions:
 - id: 11415
   chapter_title: 監督式學習演算法
   section_title: 分類演算法
-  text: 某模型使用 K-近鄰演算法（KNN）進行分類，K 設為 3。 一筆新的測 試資料輸入後，與其最接近的3 筆資料的類別如下：鄰近樣本1：類別 A；鄰近樣本
-    2：類別B；鄰近樣本 3：類別A。請問模型會將這筆資料 預測為哪一類別？ (114年第四梯次)
+  text: 某模型使用 K-近鄰演算法（KNN）進行分類，K 設為 3。 一筆新的測 試資料輸入後，與其最接近的3 筆資料的類別如下：鄰近樣本1：類別 A；鄰近樣本 2：類別B；鄰近樣本 3：類別A。請問模型會將這筆資料 預測為哪一類別？ (114年第四梯次)
   type: multiple_choice
   options:
   - 類別 A
@@ -1206,8 +1192,7 @@ questions:
   - sec-dfs-bfs
   usage: quiz
 - id: 115-1-8
-  text: 某零售企業在建置機器學習模型預測顧客購買機率時， 資料同時包含大量稀疏類別特徵與數值型特徵。 團隊希望模型既能學習過去已出現的特徵組合規律，也能對未出現的特徵組合做出合理預測。
-    下列哪一種模型架構最適合此類需求？ （115年第一梯次）
+  text: 某零售企業在建置機器學習模型預測顧客購買機率時， 資料同時包含大量稀疏類別特徵與數值型特徵。 團隊希望模型既能學習過去已出現的特徵組合規律，也能對未出現的特徵組合做出合理預測。 下列哪一種模型架構最適合此類需求？ （115年第一梯次）
   type: multiple_choice
   options:
   - 線性迴歸（Linear Regression）
@@ -1235,8 +1220,7 @@ questions:
   - 115-1
   usage: mock
 - id: 115-1-20
-  text: 某團隊訓練影像分類模型，發現模型在訓練資料上的準確率達 98%，但在測試資115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 第一科：人工智慧基礎概論
-    考試日期：115 年 03 月 21 日 第 5 頁，共 12 頁  答案 題目 料上僅有 72%。若團隊希望提升模型對新資料的適應能力，並增加訓練資料的多樣性，下列何者最適合？    （115年第一梯次）
+  text: 某團隊訓練影像分類模型，發現模型在訓練資料上的準確率達 98%，但在測試資115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 第一科：人工智慧基礎概論 考試日期：115 年 03 月 21 日 第 5 頁，共 12 頁  答案 題目 料上僅有 72%。若團隊希望提升模型對新資料的適應能力，並增加訓練資料的多樣性，下列何者最適合？    （115年第一梯次）
   type: multiple_choice
   options:
   - 增加模型的深度與參數量，使模型學習更多細節

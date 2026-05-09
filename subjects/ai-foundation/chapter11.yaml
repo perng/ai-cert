@@ -21,7 +21,7 @@ questions:
   text: Amazon 的 AI 招聘系統曾發生什麼倫理問題？
   type: multiple_choice
   options:
-  - "歧視女性求職者（對包含女性詞彙的履歷扣分）(Discriminating Against Female Job Applicants: Deducting Points from Resumes Containing Female Terms)"
+  - '歧視女性求職者（對包含女性詞彙的履歷扣分）(Discriminating Against Female Job Applicants: Deducting Points from Resumes Containing Female Terms)'
   - 洩漏個資 (Leaking Personal Data)，個人資料外洩。
   - 錄取太多人 (Hiring Too Many People)，錄取人數過多。
   - 系統當機 (System Crash)，系統無法運作。
@@ -129,20 +129,6 @@ questions:
   usage: quiz
 - id: 11009
   chapter_title: AI 治理、法規與倫理
-  section_title: 台灣與國際法規架構
-  text: 根據 EU AI Act，「社會信用評分 (Social Scoring)」屬於哪一級風險？
-  type: multiple_choice
-  options:
-  - 有限風險 (Limited Risk)，風險程度有限。
-  - 高風險 (High Risk)，風險程度較高。
-  - 最小風險 (Minimal Risk)，風險程度極低。
-  - "不可接受風險 (Unacceptable Risk) - 禁止 (Unacceptable Risk: Prohibited)"
-  correct_index: 3
-  explanation: 社會信用評分被認為嚴重侵犯人權，在歐盟是完全禁止的。
-  tags:
-  - chap-ai-foundation-chapter11
-  - sec-eu-ai-act
-  chapter_title: AI 治理、法規與倫理
   section_title: AI 產品評測標準
   text: 數位發展部 AI 產品評測中心的評測指標不包含下列何者？
   type: multiple_choice
@@ -212,7 +198,7 @@ questions:
   type: multiple_choice
   options:
   - 不需管制 (No Regulation Required)，完全不需要監管。
-  - "必須標示為生成內容（透明度義務）(Must Label as Generated Content: Transparency Obligation)"
+  - '必須標示為生成內容（透明度義務）(Must Label as Generated Content: Transparency Obligation)'
   - 完全禁止 (Completely Prohibited)，禁止所有使用。
   - 只能用於娛樂 (Can Only Be Used for Entertainment)，僅限娛樂用途。
   correct_index: 1
@@ -324,7 +310,7 @@ questions:
   type: multiple_choice
   options:
   - 高風險 (High Risk)，需要嚴格監管的風險等級。
-  - "禁止 (不可接受風險) (Prohibited: Unacceptable Risk)，完全禁止的應用。"
+  - '禁止 (不可接受風險) (Prohibited: Unacceptable Risk)，完全禁止的應用。'
   - 有限風險 (Limited Risk)，風險程度有限。
   - 最小風險 (Minimal Risk)，風險程度極低。
   correct_index: 1
@@ -406,7 +392,7 @@ questions:
   - 僅限商業使用 (Limited to Commercial Use)，僅限商業用途。
   - 完全開放 (Completely Open)，完全不受限制。
   - 鼓勵使用 (Encouraging Use)，積極推廣使用。
-  - "禁止 (除特定執法例外) (Prohibited: Except for Specific Law Enforcement Exceptions)"
+  - '禁止 (除特定執法例外) (Prohibited: Except for Specific Law Enforcement Exceptions)'
   correct_index: 3
   explanation: 為了保障隱私與自由，原則上禁止，除非是為了追捕重犯等重大公共利益。
   tags:
@@ -468,7 +454,7 @@ questions:
   type: multiple_choice
   options:
   - ISO 9001，品質管理系統標準。
-  - "GDPR (一般資料保護規則) (GDPR: General Data Protection Regulation)"
+  - 'GDPR (一般資料保護規則) (GDPR: General Data Protection Regulation)'
   - 憲法 (Constitution)，國家根本大法。
   - 交通規則 (Traffic Rules)，道路交通法規。
   correct_index: 1
@@ -613,7 +599,7 @@ questions:
   options:
   - 電腦硬體故障 (Computer Hardware Malfunction)，硬體設備損壞。
   - 駭客攻擊 (Hacker Attacks)，惡意網路攻擊。
-  - "訓練數據本身就反映了人類社會既有的偏見與不平等（如性別、種族歧視）(Training Data Itself Reflects Existing Bias and Inequality in Human Society: Gender, Racial Discrimination)"
+  - '訓練數據本身就反映了人類社會既有的偏見與不平等（如性別、種族歧視）(Training Data Itself Reflects Existing Bias and Inequality in Human Society: Gender, Racial Discrimination)'
   - 程式碼寫錯了 (Code Written Incorrectly)，程式碼有錯誤。
   correct_index: 2
   explanation: Garbage In, Garbage Out。如果歷史招聘數據都偏好男性，AI 就會學會「男性比較適合工作」這個偏見。
@@ -630,7 +616,7 @@ questions:
   - 高風險 (High Risk)，需要嚴格監管的風險等級。
   - 最小風險 (Minimal Risk)，風險程度極低。
   - 有限風險 (Limited Risk)，風險程度有限。
-  - "不可接受的風險 (Unacceptable Risk)，完全禁止使用 (Unacceptable Risk: Completely Prohibited)"
+  - '不可接受的風險 (Unacceptable Risk)，完全禁止使用 (Unacceptable Risk: Completely Prohibited)'
   correct_index: 3
   explanation: 歐盟認為利用 AI 進行大規模社會監控與評分嚴重侵犯人權，因此將其列為禁區。
   tags:
@@ -694,7 +680,7 @@ questions:
   - 模型是否過擬合 (Whether Model Is Overfitting)，模型是否過度學習訓練資料。
   - 運算速度太慢 (Computation Speed Too Slow)，處理速度不足。
   - 模型是否使用了盜版軟體 (Whether Model Uses Pirated Software)，是否使用非法軟體。
-  - "對不同群體（如性別、種族）的預測表現是否存在顯著差異（例如對女性的貸款核准率異常低）(Whether Significant Differences Exist in Prediction Performance Across Different Groups: Gender, Race, e.g., Abnormally Low Loan Approval Rate for Females)"
+  - '對不同群體（如性別、種族）的預測表現是否存在顯著差異（例如對女性的貸款核准率異常低）(Whether Significant Differences Exist in Prediction Performance Across Different Groups: Gender, Race, e.g., Abnormally Low Loan Approval Rate for Females)'
   correct_index: 3
   explanation: 公平性測試旨在揭露模型潛藏的歧視，確保 AI 不會加劇社會的不平等。
   tags:
@@ -704,8 +690,7 @@ questions:
 - id: 11410
   chapter_title: AI 治理、法規與倫理
   section_title: AI 法規與標準
-  text: 根據《金融機構運用人工智慧技術作業規範》 ，金融機構須建立內部治 理架構，並指定專責單位或人員負責推動及管理人工智慧事務，下列何 者並非規範所明訂須落實的治理措施？
-    (114年第四梯次)
+  text: 根據《金融機構運用人工智慧技術作業規範》 ，金融機構須建立內部治 理架構，並指定專責單位或人員負責推動及管理人工智慧事務，下列何 者並非規範所明訂須落實的治理措施？ (114年第四梯次)
   type: multiple_choice
   options:
   - 辦理人工智慧人才培育 (Conducting AI Talent Training)，培養 AI 專業人才。
@@ -741,8 +726,7 @@ questions:
 - id: 11425
   chapter_title: AI 治理、法規與倫理
   section_title: AI 倫理議題
-  text: 在自然語言處理任務中，為了減少訓練語料中偏見對模型的影響，下列  答案 題    目 哪種資料處理策略屬於常見的「資料去偏（Data Debiasing）
-    」做法？ (114年第四梯次)
+  text: 在自然語言處理任務中，為了減少訓練語料中偏見對模型的影響，下列  答案 題    目 哪種資料處理策略屬於常見的「資料去偏（Data Debiasing） 」做法？ (114年第四梯次)
   type: multiple_choice
   options:
   - 讓模型在訓練時隨機替換輸出，以抵消資料中存在的系統性偏差 (Randomly Replacing Outputs During Training to Offset Systematic Bias in Data)，隨機替換輸出。
@@ -760,8 +744,7 @@ questions:
 - id: 11442
   chapter_title: AI 治理、法規與倫理
   section_title: AI 法規與標準
-  text: 一家跨國醫療研究機構希望利用各地醫院的病患資料，建立一個能夠 預測疾病早期風險的機器學習模型。由於各國法規限制，病患的原始資  答案 題    目
-    料無法集中到單一伺服器。在此情境下，下列哪一種方法最能同時滿足 「各醫院保留資料不外流」與「模型仍能跨院學習」的需求？ (114年第四梯次)
+  text: 一家跨國醫療研究機構希望利用各地醫院的病患資料，建立一個能夠 預測疾病早期風險的機器學習模型。由於各國法規限制，病患的原始資  答案 題    目 料無法集中到單一伺服器。在此情境下，下列哪一種方法最能同時滿足 「各醫院保留資料不外流」與「模型仍能跨院學習」的需求？ (114年第四梯次)
   type: multiple_choice
   options:
   - 資料匿名化（Data Anonymization）(Data Anonymization)，移除個人識別資訊。

@@ -42,8 +42,7 @@ questions:
   - 約 99.7% 的數據
   - 約 95% 的數據
   correct_index: 3
-  explanation: 常態分佈的特性是：$\mu \pm 1\sigma$ 涵蓋約 68%，$\mu \pm 2\sigma$ 涵蓋約 95%，$\mu \pm
-    3\sigma$ 涵蓋約 99.7%。
+  explanation: 常態分佈的特性是：$\mu \pm 1\sigma$ 涵蓋約 68%，$\mu \pm 2\sigma$ 涵蓋約 95%，$\mu \pm 3\sigma$ 涵蓋約 99.7%。
   tags:
   - chap-m1-ch1
   - sec-prob-stats
@@ -91,8 +90,7 @@ questions:
   - 兩向量垂直 (Orthogonal)
   - 兩向量方向相反 (Opposite Direction)
   correct_index: 2
-  explanation: 內積公式為 $a \cdot b = ||a|| ||b|| \cos \theta$。當內積為 0 時，$\cos \theta =
-    0$，即 $\theta = 90^\circ$，表示兩向量垂直（正交）。
+  explanation: 內積公式為 $a \cdot b = ||a|| ||b|| \cos \theta$。當內積為 0 時，$\cos \theta = 0$，即 $\theta = 90^\circ$，表示兩向量垂直（正交）。
   tags:
   - chap-m1-ch1
   - sec-linear-algebra
@@ -204,8 +202,7 @@ questions:
   - A 和 B 必須是方陣 (Square Matrices)
   - A 和 B 的維度完全相同 (Same Dimensions)
   correct_index: 1
-  explanation: 若 A 是 $m \times n$ 矩陣，B 是 $p \times q$ 矩陣，則必須 $n = p$ (A 的行數等於 B 的列數)
-    才能相乘。
+  explanation: 若 A 是 $m \times n$ 矩陣，B 是 $p \times q$ 矩陣，則必須 $n = p$ (A 的行數等於 B 的列數) 才能相乘。
   tags:
   - chap-m1-ch1
   - sec-linear-algebra
@@ -645,8 +642,7 @@ questions:
 - id: 3141
   chapter_title: 人工智慧數學基礎
   section_title: 深度思考情境題
-  text: 情境：你正在開發一個用於檢測罕見疾病的 AI 模型。該疾病的發病率僅為 0.1%。如果你訓練的模型預測所有人都「沒病」，其準確率 (Accuracy)
-    將高達 99.9%。請問這個指標是否足以評估模型好壞？為什麼？
+  text: 情境：你正在開發一個用於檢測罕見疾病的 AI 模型。該疾病的發病率僅為 0.1%。如果你訓練的模型預測所有人都「沒病」，其準確率 (Accuracy) 將高達 99.9%。請問這個指標是否足以評估模型好壞？為什麼？
   type: multiple_choice
   options:
   - 足以，因為 99.9% 準確率非常高，代表模型性能極佳
@@ -654,8 +650,7 @@ questions:
   - 不足以，應參考召回率 (Recall) 或 F1-score 等指標，特別是在類別不平衡的情況下
   - 足以，只要模型運算速度夠快，準確率不是唯一標準
   correct_index: 2
-  explanation: 在類別不平衡（Imbalanced Data）問題中，準確率 (Accuracy) 往往具有欺騙性。模型只需盲目猜測多數類別即可獲得高分，但對於我們真正關心的少數類別（罕見病）卻毫無偵測能力。因此需使用
-    Recall, Precision 或 F1-score 等指標。
+  explanation: 在類別不平衡（Imbalanced Data）問題中，準確率 (Accuracy) 往往具有欺騙性。模型只需盲目猜測多數類別即可獲得高分，但對於我們真正關心的少數類別（罕見病）卻毫無偵測能力。因此需使用 Recall, Precision 或 F1-score 等指標。
   tags:
   - chap-m1-ch1
   - sec-scenario
@@ -671,8 +666,7 @@ questions:
   - 學習率過大 (High Learning Rate)；應降低學習率
   - 欠擬合 (Underfitting)；應增加模型複雜度或訓練時間
   correct_index: 1
-  explanation: 訓練集表現好但驗證集表現變差是典型的過擬合現象。數學上，這意味著模型擬合了訓練數據中的雜訊。解決方案包括在損失函數中加入正則化項（限制權重大小）或使用
-    Dropout 等技術。
+  explanation: 訓練集表現好但驗證集表現變差是典型的過擬合現象。數學上，這意味著模型擬合了訓練數據中的雜訊。解決方案包括在損失函數中加入正則化項（限制權重大小）或使用 Dropout 等技術。
   tags:
   - chap-m1-ch1
   - sec-scenario
@@ -680,8 +674,7 @@ questions:
 - id: 3143
   chapter_title: 人工智慧數學基礎
   section_title: 深度思考情境題
-  text: 情境：某電商平台希望透過 A/B 測試來評估新版網頁是否能提升購買率。經過一週測試，A 組購買率 5.0%，B 組 5.2%，p-value 為 0.03。若顯著水準設為
-    0.05，你應如何解讀並建議？
+  text: 情境：某電商平台希望透過 A/B 測試來評估新版網頁是否能提升購買率。經過一週測試，A 組購買率 5.0%，B 組 5.2%，p-value 為 0.03。若顯著水準設為 0.05，你應如何解讀並建議？
   type: multiple_choice
   options:
   - p-value < 0.05，差異不顯著，建議維持 A 版網頁
@@ -689,8 +682,7 @@ questions:
   - 數據不足，無法判斷，建議延長測試時間
   - p-value < 0.05，差異顯著，建議立即採用 B 版網頁
   correct_index: 1
-  explanation: 雖然 p < 0.05 達到統計顯著性，但在商業決策中，還需考慮「實質顯著性」。0.2% 的微幅提升是否值得投入巨大的改版成本？這需要結合商業邏輯（如預期營收增加
-    vs 開發成本）進行綜合判斷，而非僅看 p-value。
+  explanation: 雖然 p < 0.05 達到統計顯著性，但在商業決策中，還需考慮「實質顯著性」。0.2% 的微幅提升是否值得投入巨大的改版成本？這需要結合商業邏輯（如預期營收增加 vs 開發成本）進行綜合判斷，而非僅看 p-value。
   tags:
   - chap-m1-ch1
   - sec-scenario
@@ -706,8 +698,7 @@ questions:
   - 陷入局部最小值；應使用隨機初始化 (Random Initialization)
   - 直接發散；應增加批次大小 (Increase Batch Size)
   correct_index: 0
-  explanation: 在狹長峽谷狀的損失曲面上，SGD 容易在陡峭方向上大幅震盪，而在平緩方向上移動緩慢。動量法 (Momentum) 能累積過去的梯度方向，加速通過平緩區並抑制震盪；Adam
-    等自適應方法則能針對不同參數調整學習率，有效解決此問題。
+  explanation: 在狹長峽谷狀的損失曲面上，SGD 容易在陡峭方向上大幅震盪，而在平緩方向上移動緩慢。動量法 (Momentum) 能累積過去的梯度方向，加速通過平緩區並抑制震盪；Adam 等自適應方法則能針對不同參數調整學習率，有效解決此問題。
   tags:
   - chap-m1-ch1
   - sec-scenario
@@ -715,8 +706,7 @@ questions:
 - id: 3145
   chapter_title: 人工智慧數學基礎
   section_title: 深度思考情境題
-  text: 情境：你正在處理一個高維度的數據集（如 1000 個特徵），打算使用 PCA 進行降維。PCA 透過特徵值分解找到主成分。若前兩個主成分的特徵值總和佔所有特徵值總和的
-    95%，這代表什麼幾何意義？
+  text: 情境：你正在處理一個高維度的數據集（如 1000 個特徵），打算使用 PCA 進行降維。PCA 透過特徵值分解找到主成分。若前兩個主成分的特徵值總和佔所有特徵值總和的 95%，這代表什麼幾何意義？
   type: multiple_choice
   options:
   - 剩下的 998 個維度完全沒有用，可以刪除
@@ -724,8 +714,7 @@ questions:
   - 數據 95% 的變異量 (Variance) 集中在由這兩個主成分構成的二維平面上
   - 數據有 95% 是雜訊 (Noise)
   correct_index: 2
-  explanation: PCA 的特徵值代表了對應主成分方向上的變異量。若前兩個主成分解釋了 95% 的總變異，意味著數據的主要結構（資訊）幾乎都保留在這 2D
-    平面上，這為高維數據的視覺化和簡化提供了強有力的數學依據。
+  explanation: PCA 的特徵值代表了對應主成分方向上的變異量。若前兩個主成分解釋了 95% 的總變異，意味著數據的主要結構（資訊）幾乎都保留在這 2D 平面上，這為高維數據的視覺化和簡化提供了強有力的數學依據。
   tags:
   - chap-m1-ch1
   - sec-scenario
@@ -748,8 +737,7 @@ questions:
   usage: both
 - chapter_title: 人工智慧數學基礎
   section_title: 機率與統計
-  text: 情境：某工廠生產的燈泡壽命呈現常態分佈，平均壽命 1000 小時，標準差 50 小時。根據 68-95-99.7 法則，約有多少比例的燈泡壽命在 900
-    到 1100 小時之間？
+  text: 情境：某工廠生產的燈泡壽命呈現常態分佈，平均壽命 1000 小時，標準差 50 小時。根據 68-95-99.7 法則，約有多少比例的燈泡壽命在 900 到 1100 小時之間？
   type: multiple_choice
   options:
   - 約 95% 的燈泡
@@ -1050,4 +1038,36 @@ questions:
   - chap-m1-ch1
   - sec-prob-stats
   id: 3165
+  usage: both
+- id: 3166
+  chapter_title: 人工智慧數學基礎
+  section_title: 條件機率與貝氏定理
+  text: 貝氏定理在機器學習中的核心用途為何？
+  type: multiple_choice
+  options:
+  - 將先驗知識與新觀察資料結合，更新事件發生的後驗機率
+  - 將所有特徵強制轉換為常態分佈
+  - 讓梯度下降不需要設定學習率
+  - 保證模型在測試資料上一定不會過擬合
+  correct_index: 0
+  explanation: 貝氏定理用 $P(B|A)$、$P(A)$ 與 $P(B)$ 更新 $P(A|B)$，常用於分類與不確定性推論。
+  tags:
+  - chap-m1-ch1
+  - sec-prob-stats
+  usage: both
+- id: 3167
+  chapter_title: 人工智慧數學基礎
+  section_title: 損失函數與非凸最佳化
+  text: 若迴歸資料含有明顯離群值，且希望損失函數不要過度放大大誤差，下列何者通常比 MSE 更穩健？
+  type: multiple_choice
+  options:
+  - MAE 或 Huber Loss
+  - Softmax
+  - 交叉熵損失
+  - Gini 不純度
+  correct_index: 0
+  explanation: MSE 會平方誤差，對離群值非常敏感；MAE 與 Huber Loss 對極端誤差較穩健。
+  tags:
+  - chap-m1-ch1
+  - sec-calculus-optimization
   usage: both

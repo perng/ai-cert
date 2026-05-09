@@ -409,7 +409,6 @@ questions:
   - 分析兩個變數之間的相關性
   - 監控即時的數據趨勢
   - 比較總量以及各組成的比例 (Part-to-Whole Comparison)
-
   correct_index: 3
   explanation: 例如展示各分店的總銷售額，同時在柱子內區分不同產品線的貢獻。
   tags:
@@ -715,8 +714,7 @@ questions:
   - 放棄繪製圖表，直接展示原始數據表格
   - 堅持畫散佈圖，忽略重疊問題
   correct_index: 0
-  explanation: 當數據量過大時，點會重疊在一起無法辨識。將空間劃分為網格（熱力圖/Hexbin）並用顏色表示每個網格內的點數量，能有效解決 Overplotting
-    問題並展示密度分佈。
+  explanation: 當數據量過大時，點會重疊在一起無法辨識。將空間劃分為網格（熱力圖/Hexbin）並用顏色表示每個網格內的點數量，能有效解決 Overplotting 問題並展示密度分佈。
   tags:
   - chap-m3-ch4
   - sec-scenario
@@ -1035,8 +1033,7 @@ questions:
   - Elasticsearch 搜尋引擎與資料庫
   - MySQL 關聯式資料庫
   correct_index: 2
-  explanation: Kibana 是 ELK Stack (Elasticsearch, Logstash, Kibana) 的一部分，專門用於搜尋、檢視與分析存儲在
-    Elasticsearch 中的數據。
+  explanation: Kibana 是 ELK Stack (Elasticsearch, Logstash, Kibana) 的一部分，專門用於搜尋、檢視與分析存儲在 Elasticsearch 中的數據。
   tags:
   - chap-m3-ch4
   - sec-viz-principles

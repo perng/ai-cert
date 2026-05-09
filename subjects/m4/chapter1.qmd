@@ -65,6 +65,12 @@ print(f"Accuracy: {accuracy_score(y_test, y_pred):.4f}")
 
 進階非監督式學習 (Advanced Unsupervised Learning) 技術用於發現數據中的複雜模式。
 
+### 階層式分群與密度分群 {.unnumbered}
+
+*   **階層式分群 (Hierarchical Clustering)**：建立巢狀群集結構，可用樹狀圖觀察資料由細到粗的群集關係。適合探索群集層級，但大資料上計算成本較高。
+*   **DBSCAN**：以密度為基礎，核心參數為 **eps**（鄰域半徑）與 **MinPts**（最小點數）。它能找出任意形狀群集並標記雜訊點，適合地理熱區、異常行為與不規則群集分析。
+*   **高維限制**：高維資料中距離容易趨同，DBSCAN 的 eps 會變難選擇；可先做 PCA、UMAP 或特徵選擇降低維度。
+
 ### 關聯規則學習 {.unnumbered}
 
 關聯規則學習 (Association Rule Learning) 用於發現變數之間的有趣關係，最經典的例子是「啤酒與尿布」。

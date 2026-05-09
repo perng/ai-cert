@@ -852,8 +852,8 @@ questions:
   text: 情境：EPSG:4326 代表哪種座標系統？
   type: multiple_choice
   options:
-  - "WGS84 經緯度座標系統 (EPSG:4326)"
-  - "Web Mercator 投影座標系統 (EPSG:3857)"
+  - WGS84 經緯度座標系統 (EPSG:4326)
+  - Web Mercator 投影座標系統 (EPSG:3857)
   - TWD97 台灣二度分帶座標系統
   - 火星座標系統 (GCJ-02)
   correct_index: 0
@@ -1038,4 +1038,36 @@ questions:
   - chap-m3-ch3
   - sec-time-series
   id: 5365
+  usage: both
+- id: 5366
+  chapter_title: 進階資料分析方法
+  section_title: 近似分位數
+  text: 大規模串流資料中使用近似分位數的主要目的為何？
+  type: multiple_choice
+  options:
+  - 在可容忍誤差內快速估算中位數或百分位數
+  - 保證每個分位數都以完整排序精確計算
+  - 將所有類別資料改成連續變數
+  - 取代資料治理與權限控管
+  correct_index: 0
+  explanation: 近似分位數以效率換取可控誤差，常用於 P95 延遲、交易金額與 IoT 指標監控。
+  tags:
+  - chap-m3-ch3
+  - sec-large-scale-statistics
+  usage: both
+- id: 5367
+  chapter_title: 進階資料分析方法
+  section_title: 分位數回歸與 Box-Cox 轉換
+  text: 當目標變數明顯右偏且變異數隨平均值增加時，為改善線性迴歸假設可優先考慮哪種轉換？
+  type: multiple_choice
+  options:
+  - Box-Cox 轉換
+  - One-Hot Encoding
+  - NMS 非極大值抑制
+  - Softmax 正規化
+  correct_index: 0
+  explanation: Box-Cox 可減少右偏並改善等變異性，但通常要求資料為正值。
+  tags:
+  - chap-m3-ch3
+  - sec-large-scale-statistics
   usage: both

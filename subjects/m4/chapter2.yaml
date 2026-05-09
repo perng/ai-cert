@@ -138,8 +138,7 @@ questions:
   - 混合計算圖 (Hybrid Computation Graph)
   - 動態計算圖 (Dynamic Computation Graph)，即 Define-by-Run
   correct_index: 1
-  explanation: TF 1.x 採用 "Define-and-Run" 模式，先定義好整個圖結構再執行。雖然優化容易，但除錯困難。TF 2.x 預設改為
-    Eager Execution (類似 PyTorch)。
+  explanation: TF 1.x 採用 "Define-and-Run" 模式，先定義好整個圖結構再執行。雖然優化容易，但除錯困難。TF 2.x 預設改為 Eager Execution (類似 PyTorch)。
   tags:
   - chap-m4-ch2
   - sec-dl-frameworks
@@ -507,8 +506,7 @@ questions:
   - SVM (支持向量機)
   - K-Means 分群演算法
   correct_index: 1
-  explanation: BiLSTM-CRF 是 NLP 的經典架構。BiLSTM 提取特徵，CRF 考慮標籤之間的依賴關係（如 B-Person 後面不能接
-    I-Location），優化全局序列。
+  explanation: BiLSTM-CRF 是 NLP 的經典架構。BiLSTM 提取特徵，CRF 考慮標籤之間的依賴關係（如 B-Person 後面不能接 I-Location），優化全局序列。
   tags:
   - chap-m4-ch2
   - sec-adv-architectures

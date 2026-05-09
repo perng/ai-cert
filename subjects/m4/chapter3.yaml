@@ -666,8 +666,7 @@ questions:
   - 使用 Grid Search 尋找更小的模型架構
   - 結合知識蒸餾 (Knowledge Distillation) 與量化 (Quantization) 技術進行模型壓縮
   correct_index: 3
-  explanation: 蒸餾能將大模型的知識轉移給小模型（如 DistilBERT），量化能進一步將權重從 FP32 轉為 INT8，兩者結合通常能達到 10
-    倍以上的壓縮率。
+  explanation: 蒸餾能將大模型的知識轉移給小模型（如 DistilBERT），量化能進一步將權重從 FP32 轉為 INT8，兩者結合通常能達到 10 倍以上的壓縮率。
   tags:
   - chap-m4-ch3
   - sec-scenario
@@ -1056,6 +1055,54 @@ questions:
   - chap-m4-ch3
   - sec-model-compression
   usage: mock
+- id: 6369
+  chapter_title: 模型最佳化與調校
+  section_title: 超參數調校
+  text: Nested Cross-Validation 的主要目的為何？
+  type: multiple_choice
+  options:
+  - 將超參數搜尋與泛化能力估計分開，降低過度樂觀偏差
+  - 讓所有資料都成為測試資料且不訓練模型
+  - 自動把模型轉成 INT8
+  - 專門用於影像分割標註
+  correct_index: 0
+  explanation: 巢狀交叉驗證內層調參、外層評估，可避免同一驗證資料同時用於模型選擇與效能回報。
+  tags:
+  - chap-m4-ch3
+  - sec-hyperparameter-tuning
+  usage: both
+- id: 6370
+  chapter_title: 模型最佳化與調校
+  section_title: 正規化技術
+  text: Elastic Net 的特性為何？
+  type: multiple_choice
+  options:
+  - 同時結合 L1 與 L2 正則化
+  - 只適用於無監督分群
+  - 將所有權重固定為 1
+  - 只用於資料庫交易回滾
+  correct_index: 0
+  explanation: Elastic Net 同時具有 Lasso 稀疏化與 Ridge 處理共線性的特性。
+  tags:
+  - chap-m4-ch3
+  - sec-regularization
+  usage: both
+- id: 6371
+  chapter_title: 模型最佳化與調校
+  section_title: 模型壓縮
+  text: 量化感知訓練 (QAT) 的主要目的為何？
+  type: multiple_choice
+  options:
+  - 在訓練時模擬量化誤差，使模型較能適應低精度推論
+  - 將資料庫轉成資料湖
+  - 取代所有模型監控
+  - 讓模型不需要任何測試資料
+  correct_index: 0
+  explanation: QAT 讓模型在訓練階段適應低精度運算，通常比訓練後直接量化更能保留準確率。
+  tags:
+  - chap-m4-ch3
+  - sec-model-compression
+  usage: both
 - id: 6367
   chapter_title: 模型最佳化與調校
   section_title: 模型壓縮

@@ -889,8 +889,7 @@ questions:
   - 網路設定 (Network Config)
   - 數據與模型的版本控制及實驗追蹤 (Data & Model Versioning)
   correct_index: 3
-  explanation: 傳統 DevOps 關注程式碼 (Code)，而 MLOps 必須同時關注程式碼、數據 (Data) 與模型 (Model)。數據的變動性是
-    MLOps 最大的挑戰。
+  explanation: 傳統 DevOps 關注程式碼 (Code)，而 MLOps 必須同時關注程式碼、數據 (Data) 與模型 (Model)。數據的變動性是 MLOps 最大的挑戰。
   tags:
   - chap-m2-ch5
   - sec-mlops-core
@@ -1039,4 +1038,36 @@ questions:
   - chap-m2-ch5
   - sec-deployment-strategies
   id: 4565
+  usage: both
+- id: 4566
+  chapter_title: MLOps 與系統部署
+  section_title: 容器化與編排
+  text: Kubernetes 在 AI 模型服務部署中的核心功能是什麼？
+  type: multiple_choice
+  options:
+  - 管理容器化服務的部署、擴展、資源調度與故障恢復
+  - 自動標註所有訓練資料
+  - 取代模型評估指標
+  - 將所有資料轉換為圖片格式
+  correct_index: 0
+  explanation: Kubernetes 是容器編排平台，常用於高可用、可擴展的模型推論服務。
+  tags:
+  - chap-m2-ch5
+  - sec-deployment-strategies
+  usage: both
+- id: 4567
+  chapter_title: MLOps 與系統部署
+  section_title: Model Registry 與可追溯性
+  text: Model Registry 最主要用來管理什麼？
+  type: multiple_choice
+  options:
+  - 模型版本、訓練紀錄、評估指標與部署狀態
+  - 使用者介面的顏色主題
+  - 原始資料的物理硬碟位置
+  - 圖表中文字的字型
+  correct_index: 0
+  explanation: Model Registry 集中管理模型生命週期資訊，支援審核、回滾與稽核追蹤。
+  tags:
+  - chap-m2-ch5
+  - sec-cicd4ai
   usage: both

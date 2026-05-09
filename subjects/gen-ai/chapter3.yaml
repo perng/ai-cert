@@ -639,8 +639,6 @@ questions:
   - chap-gen-chapter3
   - sec-advanced-rag
   usage: both
-- id: 3041
-  usage: both
 - id: 3046
   chapter_title: 進階 RAG 與系統架構
   section_title: Model Context Protocol (MCP)

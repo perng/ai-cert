@@ -37,10 +37,10 @@ questions:
   text: 標準化 (Standardization / Z-score) 的轉換公式為何？
   type: multiple_choice
   options:
-  - "(x - min) / (max - min)，正規化 (Normalization) 的轉換公式。"
-  - "(x - mean) / standard_deviation，標準化 (Standardization) 的轉換公式。"
-  - "log(x)，對數轉換 (Log Transformation) 的轉換公式。"
-  - "x * 2，線性縮放的轉換公式。"
+  - (x - min) / (max - min)，正規化 (Normalization) 的轉換公式。
+  - (x - mean) / standard_deviation，標準化 (Standardization) 的轉換公式。
+  - log(x)，對數轉換 (Log Transformation) 的轉換公式。
+  - x * 2，線性縮放的轉換公式。
   correct_index: 1
   explanation: 標準化是將數值減去平均數後，再除以標準差，使資料呈現平均為 0、標準差為 1 的分佈。
   tags:
@@ -53,10 +53,10 @@ questions:
   text: 正規化 (Normalization / Min-Max Scaling) 通常將資料壓縮到哪個範圍？
   type: multiple_choice
   options:
-  - "'[0, 100]'，將資料壓縮到 0 到 100 的範圍。"
-  - "'[0, 1]'，正規化 (Min-Max Scaling) 的標準範圍。"
-  - "'[-1, 1]'，將資料壓縮到 -1 到 1 的範圍。"
-  - "'[-infinity, infinity]'，無限制的數值範圍。"
+  - '''[0, 100]''，將資料壓縮到 0 到 100 的範圍。'
+  - '''[0, 1]''，正規化 (Min-Max Scaling) 的標準範圍。'
+  - '''[-1, 1]''，將資料壓縮到 -1 到 1 的範圍。'
+  - '''[-infinity, infinity]''，無限制的數值範圍。'
   correct_index: 1
   explanation: Min-Max Scaling 將資料線性轉換到 [0, 1] 之間，適用於對範圍敏感的演算法或影像處理。
   tags:
@@ -690,8 +690,7 @@ questions:
 - id: 4054
   chapter_title: 特徵工程 (Feature Engineering)
   section_title: 不平衡數據處理
-  text: SMOTE (Synthetic Minority Over-sampling Technique) 與簡單的隨機過採樣 (Random Oversampling)
-    相比，優點在於？
+  text: SMOTE (Synthetic Minority Over-sampling Technique) 與簡單的隨機過採樣 (Random Oversampling) 相比，優點在於？
   type: multiple_choice
   options:
   - SMOTE 不需要任何參數設定
@@ -757,8 +756,7 @@ questions:
 - id: 11441
   chapter_title: 特徵工程
   section_title: 類別特徵編碼
-  text: 一家旅遊平台希望建立模型，預測顧客下次是否會再次透過該平台訂 房。資料包含：顧客 ID、年齡、旅遊次數、平均花費金額、主要交通 方式（火車/飛機/自駕/公車）
-    、會員等級（普通/進階/白金） 、是否為 海外旅遊等。下列哪一種特徵工程方法最適合處理「主要交通方式」欄 位？ (114年第四梯次)
+  text: 一家旅遊平台希望建立模型，預測顧客下次是否會再次透過該平台訂 房。資料包含：顧客 ID、年齡、旅遊次數、平均花費金額、主要交通 方式（火車/飛機/自駕/公車） 、會員等級（普通/進階/白金） 、是否為 海外旅遊等。下列哪一種特徵工程方法最適合處理「主要交通方式」欄 位？ (114年第四梯次)
   type: multiple_choice
   options:
   - 布林轉換（Boolean Conversion）
@@ -776,8 +774,7 @@ questions:
 - id: 11434
   chapter_title: 特徵工程
   section_title: 類別特徵編碼
-  text: 在零售業進行客戶行為分析時，資料倉儲中發現多個欄位儲存相同的 購買金額資訊 （例如：amount_usd、total_price、transaction_value），
-    但其單位、命名慣例及格式不一致，進而導致特徵工程階段混淆模型輸 入。針對此種跨欄位語義重疊與結構冗餘問題，下列哪一種資料處理策 略最合適且具實務可行性？ (114年第四梯次)
+  text: 在零售業進行客戶行為分析時，資料倉儲中發現多個欄位儲存相同的 購買金額資訊 （例如：amount_usd、total_price、transaction_value）， 但其單位、命名慣例及格式不一致，進而導致特徵工程階段混淆模型輸 入。針對此種跨欄位語義重疊與結構冗餘問題，下列哪一種資料處理策 略最合適且具實務可行性？ (114年第四梯次)
   type: multiple_choice
   options:
   - 利用資料探勘技術自動選擇資料集中對目標變數最敏感的欄位，其 他欄位捨棄即可，避免過度清理干擾原始結構
@@ -795,8 +792,7 @@ questions:
 - id: 11435
   chapter_title: 特徵工程
   section_title: 不平衡數據處理
-  text: 某大型零售企業準備將商品推薦模型上線，專案團隊在檢視訓練資料 時，發現部分商品類別（例如高價商品）樣本數量極少，而多數樣本集 中於低價商品。若此不平衡問題未妥善處理，下列何種狀況最可能在實
-    際推薦結果中發生？ (114年第四梯次)
+  text: 某大型零售企業準備將商品推薦模型上線，專案團隊在檢視訓練資料 時，發現部分商品類別（例如高價商品）樣本數量極少，而多數樣本集 中於低價商品。若此不平衡問題未妥善處理，下列何種狀況最可能在實 際推薦結果中發生？ (114年第四梯次)
   type: multiple_choice
   options:
   - 模型在預測時傾向輸出稀有類別，導致雖能捕捉到少數樣本，但精 確率（Precision）顯著下降
@@ -814,8 +810,7 @@ questions:
 - id: 11433
   chapter_title: 特徵工程
   section_title: 不平衡數據處理
-  text: 在工業物聯網架構中 ， 進行設備預測性維護 （Predictive Maintenance） 時，若面對異常事件發生頻率極低、樣本高度不平衡的時間序列資料，
-    下列哪一種方法最能兼顧模型穩定性與異常偵測效能？ (114年第四梯次)
+  text: 在工業物聯網架構中 ， 進行設備預測性維護 （Predictive Maintenance） 時，若面對異常事件發生頻率極低、樣本高度不平衡的時間序列資料， 下列哪一種方法最能兼顧模型穩定性與異常偵測效能？ (114年第四梯次)
   type: multiple_choice
   options:
   - 將每筆異常事件資料複製多次以提升模型對異常的辨識敏感度，搭 配全序列訓練模型（如 LSTM）
@@ -833,8 +828,7 @@ questions:
 - id: 11446
   chapter_title: 特徵工程
   section_title: 特徵選擇
-  text: 某電商公司想預測用戶是否會購買特定商品，資料中包含多種用戶屬 性與行為特徵。分析師希望選出對購買結果最有預測價值的特徵，以提 升模型效能。下列哪一種描述最符合監督式特徵選擇（
-    Supervised Feature Selection）的概念？ (114年第四梯次)
+  text: 某電商公司想預測用戶是否會購買特定商品，資料中包含多種用戶屬 性與行為特徵。分析師希望選出對購買結果最有預測價值的特徵，以提 升模型效能。下列哪一種描述最符合監督式特徵選擇（ Supervised Feature Selection）的概念？ (114年第四梯次)
   type: multiple_choice
   options:
   - 根據特徵的整體分布、變異度或資訊量進行篩選，而不直接參考目標變數

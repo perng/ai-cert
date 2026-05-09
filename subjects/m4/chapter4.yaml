@@ -378,8 +378,7 @@ questions:
   - On-policy (同策略)
   - 兩者皆是
   correct_index: 1
-  explanation: Q-learning 更新時使用的是 max Q(s', a')（假設下一步做最好的動作），而實際行動可能因為 ε-Greedy 而選了別的。學習的策略與行動的策略不同，故為
-    Off-policy。
+  explanation: Q-learning 更新時使用的是 max Q(s', a')（假設下一步做最好的動作），而實際行動可能因為 ε-Greedy 而選了別的。學習的策略與行動的策略不同，故為 Off-policy。
   tags:
   - chap-m4-ch4
   - sec-rl-algorithms
@@ -643,8 +642,7 @@ questions:
 - id: 6441
   chapter_title: 強化學習
   section_title: 深度思考情境題
-  text: 情境：你訓練一個玩迷宮遊戲的 AI，但發現它一直在原地打轉，不肯去終點。檢查發現你設定每走一步扣 0.01 分（為了鼓勵走最短路徑），終點給 10
-    分。為什麼它會打轉？
+  text: 情境：你訓練一個玩迷宮遊戲的 AI，但發現它一直在原地打轉，不肯去終點。檢查發現你設定每走一步扣 0.01 分（為了鼓勵走最短路徑），終點給 10 分。為什麼它會打轉？
   type: multiple_choice
   options:
   - 迷宮設計太難，沒有解

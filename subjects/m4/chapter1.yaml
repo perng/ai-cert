@@ -74,8 +74,7 @@ questions:
   - 非結構化的文本特徵 (Text Features)
   - 高維度的圖像特徵 (Image Features)
   correct_index: 0
-  explanation: CatBoost (Categorical Boosting) 專為處理類別型特徵而設計，能自動處理編碼問題，無需預先進行 One-hot
-    Encoding。
+  explanation: CatBoost (Categorical Boosting) 專為處理類別型特徵而設計，能自動處理編碼問題，無需預先進行 One-hot Encoding。
   tags:
   - chap-m4-ch1
   - sec-ensemble-methods
@@ -661,7 +660,7 @@ questions:
 - id: 6142
   chapter_title: 進階機器學習演算法
   section_title: 深度思考情境題
-  text: "情境：你負責一家超市的銷售分析，發現「尿布 -> 啤酒」的 Lift 值高達 3.5。這對行銷策略有什麼啟示？"
+  text: 情境：你負責一家超市的銷售分析，發現「尿布 -> 啤酒」的 Lift 值高達 3.5。這對行銷策略有什麼啟示？
   type: multiple_choice
   options:
   - 停止銷售啤酒以專注於尿布銷售
@@ -717,8 +716,7 @@ questions:
   - CatBoost (Categorical Boosting)
   - K-Means Clustering (K-Means 分群)
   correct_index: 2
-  explanation: CatBoost 對類別特徵的處理非常強大且自動化，無需繁瑣的特徵工程（如 Target Encoding），非常適合這種場景作為強大的
-    Baseline。
+  explanation: CatBoost 對類別特徵的處理非常強大且自動化，無需繁瑣的特徵工程（如 Target Encoding），非常適合這種場景作為強大的 Baseline。
   tags:
   - chap-m4-ch1
   - sec-scenario
@@ -1259,9 +1257,9 @@ questions:
   type: multiple_choice
   options:
   - 0.686
-  - 0.700
-  - 0.720
-  - 0.750
+  - 0.7
+  - 0.72
+  - 0.75
   correct_index: 0
   explanation: F1 = 2 * (0.8 * 0.6) / (0.8 + 0.6) = 0.96 / 1.4 ≈ 0.686。
   tags:
@@ -1277,7 +1275,7 @@ questions:
   - RMSProp
   - Adagrad
   correct_index: 1
-  explanation: 官方答案是Adam，因為Adam 優化器結合了動量 (Momentum) 與 RMSProp 的概念。 但是SGD + Momentum 看起來也是正確答案，都寫明了 (+ Momentum)。這題目有點問題。 
+  explanation: 官方答案是Adam，因為Adam 優化器結合了動量 (Momentum) 與 RMSProp 的概念。 但是SGD + Momentum 看起來也是正確答案，都寫明了 (+ Momentum)。這題目有點問題。
   tags:
   - chap-m4-ch1
   usage: mock
@@ -1409,7 +1407,7 @@ questions:
   usage: mock
 - id: 6191
   chapter_title: 進階機器學習演算法
-  text: "某智慧製造團隊在開發瑕疵影像檢測模型時，發現使用線性激活函數 (Activation Function) 後，模型的訓練準確率長期停滯，懷疑模型無法學習到足夠複雜的特徵表達。若要改善此問題，下列哪一項調整方案最為合適？ (114年第二梯次)"
+  text: 某智慧製造團隊在開發瑕疵影像檢測模型時，發現使用線性激活函數 (Activation Function) 後，模型的訓練準確率長期停滯，懷疑模型無法學習到足夠複雜的特徵表達。若要改善此問題，下列哪一項調整方案最為合適？ (114年第二梯次)
   type: multiple_choice
   options:
   - 增加卷積層 (Convolutional Layer) 數量，使網路更深以強化特徵提取
@@ -1423,7 +1421,7 @@ questions:
   usage: mock
 - id: 6192
   chapter_title: 進階機器學習演算法
-  text: "一家零售電商公司希望建立顧客流失預測模型，用以判斷哪些會員可能在三個月內不再消費。團隊以去年會員資料進行訓練，並僅採用「曾經購買三次以上」的活躍顧客紀錄作為樣本。模型上線後，對整體會員進行預測時，發現模型對於新註冊會員與低消費會員的預測準確率明顯偏低。下列何者為造成此現象最可能的原因？ (114年第二梯次)"
+  text: 一家零售電商公司希望建立顧客流失預測模型，用以判斷哪些會員可能在三個月內不再消費。團隊以去年會員資料進行訓練，並僅採用「曾經購買三次以上」的活躍顧客紀錄作為樣本。模型上線後，對整體會員進行預測時，發現模型對於新註冊會員與低消費會員的預測準確率明顯偏低。下列何者為造成此現象最可能的原因？ (114年第二梯次)
   type: multiple_choice
   options:
   - 特徵設計未排除與會員忠誠度高度相關的變數，導致特徵偏差 (Feature Bias)
@@ -1437,7 +1435,7 @@ questions:
   usage: mock
 - id: 6193
   chapter_title: 進階機器學習演算法
-  text: "在工業設備故障預測專案中，模型訓練與超參數調整均依賴於一段歷史數據作為驗證集。然而，隨著設備運行環境與工況條件的變化，原有驗證集已無法充分反映現況，導致模型在實際部署後的預測準確率逐漸下降。下列哪一種策略最能有效提升模型在長期運行環境中的穩健性與泛化能力？ (114年第二梯次)"
+  text: 在工業設備故障預測專案中，模型訓練與超參數調整均依賴於一段歷史數據作為驗證集。然而，隨著設備運行環境與工況條件的變化，原有驗證集已無法充分反映現況，導致模型在實際部署後的預測準確率逐漸下降。下列哪一種策略最能有效提升模型在長期運行環境中的穩健性與泛化能力？ (114年第二梯次)
   type: multiple_choice
   options:
   - 固定驗證集內容，並透過模型正則化技巧 (如 L2 正則化) 強化模型泛化
@@ -1451,7 +1449,7 @@ questions:
   usage: mock
 - id: 6194
   chapter_title: 進階機器學習演算法
-  text: "某情感分析模型在英文資料集上取得 macro Fl-score = 0.91。當該模型部署於西班牙文資料集時, Fl-score 驟降至 0.58。下列哪一項解釋最合理，且與 Fl-score 變化相關？ (114年第二梯次)"
+  text: 某情感分析模型在英文資料集上取得 macro Fl-score = 0.91。當該模型部署於西班牙文資料集時, Fl-score 驟降至 0.58。下列哪一項解釋最合理，且與 Fl-score 變化相關？ (114年第二梯次)
   type: multiple_choice
   options:
   - macro Fl-score 本身波動性高，建議改用 micro-average Fl-score 評估
@@ -1465,7 +1463,7 @@ questions:
   usage: mock
 - id: 6195
   chapter_title: 進階機器學習演算法
-  text: "某能源公司利用歷史氣象與用電資料，開發長期電力需求預測模型，採用深度神經網路架構進行訓練。在訓練過程中，模型在訓練集上的損失值持續下降，但在驗證集上，損失在第 80 輪後開始波動，呈現週期性上升與下降。團隊懷疑模型受到季節性資料波動與隨機噪音影響，導致驗證損失難以穩定收斂。若要在此情境下合理運用早期停止法 (Early Stopping) 以確保模型具最佳泛化能力，下列哪一項策略最為適當？ (114年第二梯次)"
+  text: 某能源公司利用歷史氣象與用電資料，開發長期電力需求預測模型，採用深度神經網路架構進行訓練。在訓練過程中，模型在訓練集上的損失值持續下降，但在驗證集上，損失在第 80 輪後開始波動，呈現週期性上升與下降。團隊懷疑模型受到季節性資料波動與隨機噪音影響，導致驗證損失難以穩定收斂。若要在此情境下合理運用早期停止法 (Early Stopping) 以確保模型具最佳泛化能力，下列哪一項策略最為適當？ (114年第二梯次)
   type: multiple_choice
   options:
   - 直接根據訓練集損失最低點停止訓練，以確保模型充分擬合所有樣本
@@ -1479,7 +1477,7 @@ questions:
   usage: mock
 - id: 6196
   chapter_title: 進階機器學習演算法
-  text: "某電信公司開發客戶流失預測模型，使用大量顧客行為特徵，例如通話時長、上網頻率、帳單金額、客服聯絡次數等。在訓練過程中，團隊發現部分特徵彼此高度相關，但同時也懷疑有些特徵對流失預測的貢獻度有限。若希望模型在避免過擬合 (Overfitting) 的同時，能自動篩選出較具代表性的特徵，採用下列哪一種方法最為合適？ (114年第二梯次)"
+  text: 某電信公司開發客戶流失預測模型，使用大量顧客行為特徵，例如通話時長、上網頻率、帳單金額、客服聯絡次數等。在訓練過程中，團隊發現部分特徵彼此高度相關，但同時也懷疑有些特徵對流失預測的貢獻度有限。若希望模型在避免過擬合 (Overfitting) 的同時，能自動篩選出較具代表性的特徵，採用下列哪一種方法最為合適？ (114年第二梯次)
   type: multiple_choice
   options:
   - 使用早期停止法 (Early Stopping) 控制訓練回合數，避免過擬合 (Overfitting)
@@ -1493,7 +1491,7 @@ questions:
   usage: mock
 - id: 6197
   chapter_title: 進階機器學習演算法
-  text: "某資料科學團隊正在開發一個客戶相似度比對系統，用於計算所有客戶之間的相似度分數。若系統需逐一比對每一位客戶與其他所有客戶的資料組合，此時演算法的時間複雜度最可能為哪一種？其代表意義為何？ (114年第二梯次)"
+  text: 某資料科學團隊正在開發一個客戶相似度比對系統，用於計算所有客戶之間的相似度分數。若系統需逐一比對每一位客戶與其他所有客戶的資料組合，此時演算法的時間複雜度最可能為哪一種？其代表意義為何？ (114年第二梯次)
   type: multiple_choice
   options:
   - O(n) - 執行時間與資料量成線性關係
@@ -1507,7 +1505,7 @@ questions:
   usage: mock
 - id: 6198
   chapter_title: 進階機器學習演算法
-  text: "某醫療人工智慧團隊正在開發心臟病風險預測模型，資料量僅有 150 筆，其中陽性個案不到 8%。由於樣本數稀少且類別分布極不平衡，團隊希望在有限資料下，仍能準確評估模型在不同資料上的表現穩定性，同時避免訓練資料被過度切分而影響模型效能。若團隊希望在有限樣本下，同時兼顧資料的利用率與各類別在驗證折中的比例一致性，最適合採用下列哪一種交叉驗證方法？ (114年第二梯次)"
+  text: 某醫療人工智慧團隊正在開發心臟病風險預測模型，資料量僅有 150 筆，其中陽性個案不到 8%。由於樣本數稀少且類別分布極不平衡，團隊希望在有限資料下，仍能準確評估模型在不同資料上的表現穩定性，同時避免訓練資料被過度切分而影響模型效能。若團隊希望在有限樣本下，同時兼顧資料的利用率與各類別在驗證折中的比例一致性，最適合採用下列哪一種交叉驗證方法？ (114年第二梯次)
   type: multiple_choice
   options:
   - 5-Fold 交叉驗證 (5-Fold Cross Validation)
@@ -1521,7 +1519,7 @@ questions:
   usage: mock
 - id: 6199
   chapter_title: 進階機器學習演算法
-  text: "某公司針對製程感測器資料進行主成分分析 (PCA)，經標準化與協方差矩陣分解後，得到三個主成分的特徵值如下：$\\lambda_1=6.0, \\lambda_2=3.0, \\lambda_3=1.0$。若團隊決定僅保留能解釋至少 80% 總變異量的主成分，以進行後續模型建構，下列哪一項敘述最合理且數據解讀正確？ \n**💡 總變異量 = $6.0 + 3.0 + 1.0 = 10.0$**\n**💡 前兩個主成分解釋的變異量百分比 = $\\frac{6.0 + 3.0}{10.0} = 0.9 = 90\\%$** (114年第二梯次)"
+  text: "某公司針對製程感測器資料進行主成分分析 (PCA)，經標準化與協方差矩陣分解後，得到三個主成分的特徵值如下：$\\lambda_1=6.0, \\lambda_2=3.0, \\lambda_3=1.0$。若團隊決定僅保留能解釋至少 80% 總變異量的主成分，以進行後續模型建構，下列哪一項敘述最合理且數據解讀正確？ \n**\U0001F4A1 總變異量 = $6.0 + 3.0 + 1.0 = 10.0$**\n**\U0001F4A1 前兩個主成分解釋的變異量百分比 = $\\frac{6.0 + 3.0}{10.0} = 0.9 = 90\\%$** (114年第二梯次)"
   type: multiple_choice
   options:
   - 前兩個主成分合計解釋 90% 的總變異量，因此可安全降維至二維，且仍保留大部分資訊
@@ -1535,7 +1533,7 @@ questions:
   usage: mock
 - id: 6200
   chapter_title: 進階機器學習演算法
-  text: "某銀行計畫與多家合作機構共同訓練一個 AI 信用風險預測模型，為避免客戶交易資料在傳輸與運算過程中外洩，技術團隊評估使用同態加密 (Homomorphic Encryption) 技術。下列何者最能正確描述同態加密在此應用中的關鍵特性？ (114年第二梯次)"
+  text: 某銀行計畫與多家合作機構共同訓練一個 AI 信用風險預測模型，為避免客戶交易資料在傳輸與運算過程中外洩，技術團隊評估使用同態加密 (Homomorphic Encryption) 技術。下列何者最能正確描述同態加密在此應用中的關鍵特性？ (114年第二梯次)
   type: multiple_choice
   options:
   - 系統以隨機雜訊 (Noise) 干擾輸出，確保統計結果不洩漏個資
@@ -1549,11 +1547,11 @@ questions:
   usage: mock
 - id: 6201
   chapter_title: 進階機器學習演算法
-  text: "某跨銀行風控平台希望整合多家銀行的用戶行為資料，用於訓練信用風險預測模型。由於競爭與法規限制，各銀行僅願意提供加密後資料，且資料在任何時間不得被平台解密。同時，平台需建立安全通訊協議以確保資料在傳輸過程未被竄改或重放。下列哪一組技術最能完整對應上述需求？ (114年第二梯次)"
+  text: 某跨銀行風控平台希望整合多家銀行的用戶行為資料，用於訓練信用風險預測模型。由於競爭與法規限制，各銀行僅願意提供加密後資料，且資料在任何時間不得被平台解密。同時，平台需建立安全通訊協議以確保資料在傳輸過程未被竄改或重放。下列哪一組技術最能完整對應上述需求？ (114年第二梯次)
   type: multiple_choice
   options:
   - 對稱加密 (Symmetric Encryption) + 單向雜湊 (Hash Function) + 非對稱加密 (Asymmetric Encryption) + 差分隱私 (Differential Privacy)
-  - 同態加密 (Homomorphic Encryption) + 非對稱加密 (Asymmetric Encryption) + 單向雜湊 (One-way Hash Function) + 對稱加密 (Symmetric Encryption) 
+  - 同態加密 (Homomorphic Encryption) + 非對稱加密 (Asymmetric Encryption) + 單向雜湊 (One-way Hash Function) + 對稱加密 (Symmetric Encryption)
   - 差分隱私 (Differential Privacy) + 對稱加密 (Symmetric Encryption) + 同態加密 (Homomorphic Encryption) + 數位簽章 (Digital Signature)
   - 同態加密 (Homomorphic Encryption) + 安全多方計算 (Secure Multi-party Computation, MPC) + 雜湊函數 (Hash Function) + 對稱加密 (Symmetric Encryption)
   correct_index: 1
@@ -1561,3 +1559,19 @@ questions:
   tags:
   - chap-m4-ch1
   usage: mock
+- id: 6569
+  chapter_title: 進階機器學習演算法
+  section_title: 階層式分群與密度分群
+  text: DBSCAN 相較於 K-means 的一個重要優點是什麼？
+  type: multiple_choice
+  options:
+  - 不需預先指定群數，且可辨識雜訊點與任意形狀群集
+  - 必須假設所有群集都是球狀且大小相同
+  - 只能處理有標籤資料
+  - 一定比所有演算法更適合高維資料
+  correct_index: 0
+  explanation: DBSCAN 依密度形成群集，不需指定 K，並能標記離群或雜訊點；但高維資料中距離失效是其限制。
+  tags:
+  - chap-m4-ch1
+  - sec-adv-unsupervised
+  usage: both

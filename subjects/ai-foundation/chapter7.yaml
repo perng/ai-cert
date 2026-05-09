@@ -119,8 +119,7 @@ questions:
   options:
   - 不更新權重 (Not Updating Weights)，模型參數保持不變。
   - 每次使用全部資料更新，路徑平滑 (Using All Data Each Update, Smooth Path)，屬於批次梯度下降。
-  - 每次使用一小批資料更新，路徑震盪但計算快 (Using Small Batch Each Update, Oscillating Path But Fast
-    Computation)
+  - 每次使用一小批資料更新，路徑震盪但計算快 (Using Small Batch Each Update, Oscillating Path But Fast Computation)
   - 只能用於線性模型 (Only for Linear Models)，僅適用於線性迴歸。
   correct_index: 2
   explanation: SGD 每次只看部分資料就調整方向，雖然路徑較曲折，但能在大數據下快速迭代。
@@ -198,8 +197,7 @@ questions:
   text: 傳統 RNN 面臨的最大挑戰是什麼？
   type: multiple_choice
   options:
-  - 梯度消失 (Vanishing Gradient) 導致無法記憶長序列 (Vanishing Gradient Prevents Memory of Long
-    Sequences)
+  - 梯度消失 (Vanishing Gradient) 導致無法記憶長序列 (Vanishing Gradient Prevents Memory of Long Sequences)
   - 無法處理數值 (Cannot Process Numeric Values)，僅能處理類別資料。
   - 過度擬合 (Overfitting)，模型過於複雜無法泛化。
   - 計算量太小 (Insufficient Computation)，運算資源不足。
@@ -391,8 +389,7 @@ questions:
   text: 多頭注意力 (Multi-Head Attention) 的好處是？
   type: multiple_choice
   options:
-  - 讓模型能從多個不同角度（如文法、語意）關注資訊 (Allowing Model to Focus on Information from Multiple
-    Perspectives Like Grammar and Semantics)
+  - 讓模型能從多個不同角度（如文法、語意）關注資訊 (Allowing Model to Focus on Information from Multiple Perspectives Like Grammar and Semantics)
   - 減少運算量 (Reducing Computation)，降低計算成本。
   - 不需要訓練 (No Training Required)，可以直接使用。
   - 只能處理單一語言 (Can Only Process Single Language)，語言適用範圍受限。
@@ -741,8 +738,7 @@ questions:
 - id: 11416
   chapter_title: 神經網路與深度學習
   section_title: 經典深度學習架構
-  text: 某團隊想採用循環神經網路（Recurrent Neural Network, RNN）建構 長期氣候數據的預測模型，以下哪一項敘述最符合使用 RNN
-    可能會遇 到的挑戰？ (114年第四梯次)
+  text: 某團隊想採用循環神經網路（Recurrent Neural Network, RNN）建構 長期氣候數據的預測模型，以下哪一項敘述最符合使用 RNN 可能會遇 到的挑戰？ (114年第四梯次)
   type: multiple_choice
   options:
   - RNN 無法處理可變長度的序列輸入，因此在實務上限制極大
@@ -786,8 +782,7 @@ questions:
   - 較大的參數量能提升模型的表達能力與預測效能，但需足夠訓練資 料支持
   - 增加參數量不影響記憶體使用，只會影響計算速度
   correct_index: 2
-  explanation: 此題涉及 Transformer 與自注意力機制 的核心概念。正確答案為「較大的參數量能提升模型的表達能力與預測效能，但需足夠訓練資
-    料支持」。
+  explanation: 此題涉及 Transformer 與自注意力機制 的核心概念。正確答案為「較大的參數量能提升模型的表達能力與預測效能，但需足夠訓練資 料支持」。
   tags:
   - past-exam
   - 114-4
@@ -912,8 +907,7 @@ questions:
   usage: both
 - chapter_title: 神經網路架構演進
   section_title: Transformer 與注意力機制
-  text: 情境：在句子 "The animal didn't cross the street because it was too tired." 中，Self-Attention
-    機制能幫助模型理解 "it" 指的是 "animal" 而不是 "street"。這是透過計算什麼得出的？
+  text: 情境：在句子 "The animal didn't cross the street because it was too tired." 中，Self-Attention 機制能幫助模型理解 "it" 指的是 "animal" 而不是 "street"。這是透過計算什麼得出的？
   type: multiple_choice
   options:
   - 卷積核
@@ -921,8 +915,7 @@ questions:
   - 遞歸神經網路
   - 池化操作
   correct_index: 1
-  explanation: Self-Attention 計算單詞間的關聯強度，"it" 與 "animal" 的語意關聯度最高，因此獲得最高的 Attention
-    Score。
+  explanation: Self-Attention 計算單詞間的關聯強度，"it" 與 "animal" 的語意關聯度最高，因此獲得最高的 Attention Score。
   tags:
   - chap-ai-foundation-chapter7
   - sec-self-attention
@@ -1153,9 +1146,7 @@ questions:
   id: 11467
   usage: both
 - id: 115-1-33
-  text: 某公車系統想預測各站點的到站時間，需要考慮歷史班次資料、即時路況、天氣115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 第一科：人工智慧基礎概論
-    考試日期：115 年 03 月 21 日 第 8 頁，共 12 頁  答案 題目 等因素。由於路況變化複雜，傳統循環神經網路（Recurrent Neural
-    Network, RNN）在建模時可能難以保留較早期的重要資訊。下列哪種架構最能解決這個問題？ （115年第一梯次）
+  text: 某公車系統想預測各站點的到站時間，需要考慮歷史班次資料、即時路況、天氣115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 第一科：人工智慧基礎概論 考試日期：115 年 03 月 21 日 第 8 頁，共 12 頁  答案 題目 等因素。由於路況變化複雜，傳統循環神經網路（Recurrent Neural Network, RNN）在建模時可能難以保留較早期的重要資訊。下列哪種架構最能解決這個問題？ （115年第一梯次）
   type: multiple_choice
   options:
   - '卷積神經網路（Convolutional Neural Network, CNN） ，利用卷積層捕捉局部特
@@ -1189,12 +1180,10 @@ questions:
   - 115-1
   usage: mock
 - id: 115-1-48
-  text: 某物流公司想導入 AI 以提升營運效率，評估不同資料型態與模型架構。下列哪一種應用情境最適合採用卷積神經網路（Convolutional Neural
-    Network, CNN）作為主要模型架構？ （115年第一梯次）
+  text: 某物流公司想導入 AI 以提升營運效率，評估不同資料型態與模型架構。下列哪一種應用情境最適合採用卷積神經網路（Convolutional Neural Network, CNN）作為主要模型架構？ （115年第一梯次）
   type: multiple_choice
   options:
-  - "依據包裹每日掃描紀錄的時間序列，預測下週各倉庫的進貨量波動； \n115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 \n第一科：人工智慧基礎概論\
-    \ \n考試日期：115 年 03 月 21 日 \n第 12 頁，共 12 頁 \n \n答案 題目"
+  - "依據包裹每日掃描紀錄的時間序列，預測下週各倉庫的進貨量波動； \n115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 \n第一科：人工智慧基礎概論 \n考試日期：115 年 03 月 21 日 \n第 12 頁，共 12 頁 \n \n答案 題目"
   - 根據客服對話逐句內容的先後順序，判斷客訴是否可能升級為申訴案件
   - 根據倉庫監視器影像，自動辨識貨架是否缺貨並標示缺貨區域位置
   - 依據車隊 GPS 路徑點的連續軌跡，預測下一段可能行駛路線

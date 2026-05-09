@@ -282,6 +282,17 @@ plt.ylabel('Sepal width')
 plt.show()
 ```
 
+### 樸素貝氏 {.unnumbered}
+
+樸素貝氏 (Naive Bayes) 是基於貝氏定理的機率分類器，假設在給定類別後，各特徵彼此條件獨立。雖然這個假設在真實資料中不一定完全成立，但模型訓練快速、可解釋性高，在文字分類、垃圾郵件偵測與情感分析中很常見。
+
+*   **核心公式**：$P(y|x_1,\dots,x_n) \propto P(y)\prod_i P(x_i|y)$。
+*   **常見變體**：
+    *   **Gaussian Naive Bayes**：適合連續特徵，假設特徵服從常態分佈。
+    *   **Multinomial Naive Bayes**：適合詞頻、計數資料。
+    *   **Bernoulli Naive Bayes**：適合二元特徵，例如某詞是否出現。
+*   **限制**：若特徵間高度相關，條件獨立假設可能使機率估計偏誤。
+
 ## 非監督式學習 {#sec-unsupervised-learning}
 
 非監督式學習 (Unsupervised Learning) 處理沒有標籤的數據，旨在發現數據中的隱藏結構。
@@ -348,6 +359,20 @@ plt.xlabel('Number of clusters')
 plt.ylabel('WCSS')
 plt.show()
 ```
+
+### 階層式分群與 DBSCAN {.unnumbered}
+
+除了 K-means，常見的非監督式分群也包含階層式分群與 DBSCAN。
+
+*   **階層式分群 (Hierarchical Clustering)**：
+    *   **凝聚式 (Agglomerative)**：先把每個樣本視為一群，再逐步合併相近群集。
+    *   **分裂式 (Divisive)**：先把所有樣本視為一群，再逐步拆分。
+    *   **優點**：可用樹狀圖 (Dendrogram) 觀察不同分群層級。
+    *   **限制**：資料量大時計算成本較高。
+*   **DBSCAN**：
+    *   以密度為基礎，透過 **Epsilon (eps)** 與 **MinPts** 判斷核心點、邊界點與雜訊點。
+    *   **優點**：不需預先指定群數，可辨識任意形狀群集，也能標記離群值。
+    *   **限制**：高維資料中距離差異趨同，eps 難以選擇，可能使大量點被判為雜訊。
 
 **Python 範例：K-means 分群**
 
@@ -447,6 +472,9 @@ plt.show()
     1.  將數據隨機分為 **K** 份 (Folds)。
     2.  輪流使用其中 K-1 份作為訓練集，剩餘 1 份作為驗證集。
     3.  重複 **K** 次，計算 **K** 次評估指標的平均值作為最終性能指標。
+*   **分層 K-Fold (Stratified K-Fold)**：在分類問題中維持每一折的類別比例，特別適合不平衡資料。
+*   **留一交叉驗證 (LOOCV)**：每次只留一筆當驗證資料，其餘作為訓練資料。資料量小時可充分利用樣本，但計算成本高。
+*   **巢狀交叉驗證 (Nested Cross-Validation)**：外層估計泛化能力，內層做超參數搜尋。若直接在同一組 K-Fold 結果上同時調參與回報效能，容易造成過度樂觀的評估。
 
 **Python 範例：K-Fold 交叉驗證**
 

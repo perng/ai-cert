@@ -89,7 +89,6 @@ questions:
   - 視窗一旦開啟就永不結束
   - 視窗大小固定但時間區間允許重疊 (Overlapping)
   - 視窗大小會隨數據量動態變化
-
   correct_index: 0
   explanation: 滾動視窗像翻頁一樣，每 5 分鐘一頁，頁與頁之間沒有交集。
   tags:
@@ -219,8 +218,7 @@ questions:
   - 只能處理小規模的數據集
   - 利用現代雲端資料倉儲的強大算力進行轉換，且完整保留了原始數據 (Raw Data)
   correct_index: 3
-  explanation: 先把數據 Load 進 BigQuery/Snowflake，再用 SQL 進行 Transform，比在外部 ETL Server
-    處理更高效且靈活。
+  explanation: 先把數據 Load 進 BigQuery/Snowflake，再用 SQL 進行 Transform，比在外部 ETL Server 處理更高效且靈活。
   tags:
   - chap-m3-ch2
   - sec-etl-workflow
@@ -1040,4 +1038,36 @@ questions:
   - chap-m3-ch2
   - sec-data-quality
   id: 5265
+  usage: both
+- id: 5266
+  chapter_title: 資料處理與應用
+  section_title: 串流處理
+  text: Apache Beam 的主要特色是什麼？
+  type: multiple_choice
+  options:
+  - 提供統一的批次與串流程式模型，並可在多種執行引擎上運行
+  - 只能在單機 Excel 中執行
+  - 專門用來產生影像遮罩
+  - 只能處理靜態圖片分類
+  correct_index: 0
+  explanation: Beam 可在 Flink、Spark、Dataflow 等 runner 上執行，適合跨平台資料管線。
+  tags:
+  - chap-m3-ch2
+  - sec-data-ingestion
+  usage: both
+- id: 5267
+  chapter_title: 資料處理與應用
+  section_title: 串流處理
+  text: 串流系統中的 Watermark 主要用來處理什麼問題？
+  type: multiple_choice
+  options:
+  - 延遲抵達資料與事件時間視窗的完整性取捨
+  - 將所有資料永久刪除
+  - 訓練 CNN 卷積核
+  - 將類別特徵改成 One-Hot
+  correct_index: 0
+  explanation: Watermark 讓串流系統判斷某時間視窗大致完成，以處理晚到事件並平衡延遲與正確性。
+  tags:
+  - chap-m3-ch2
+  - sec-data-ingestion
   usage: both

@@ -650,8 +650,7 @@ questions:
   - 將數據寫入 MySQL 關聯式資料庫，並使用 SQL 進行查詢
   - 將數據寫入 HDFS 分散式檔案系統，並使用 Hive 進行離線查詢分析
   correct_index: 1
-  explanation: HDFS/Hive 延遲太高，不適合即時戰情室。MySQL 難以承受高併發寫入。Redis/HBase 具備高吞吐與低延遲特性，配合
-    Spark Streaming 可實現秒級的即時分析與展示。
+  explanation: HDFS/Hive 延遲太高，不適合即時戰情室。MySQL 難以承受高併發寫入。Redis/HBase 具備高吞吐與低延遲特性，配合 Spark Streaming 可實現秒級的即時分析與展示。
   tags:
   - chap-m3-ch1
   - sec-scenario
@@ -667,8 +666,7 @@ questions:
   - 選擇 Parquet 格式；因為它是列式儲存，非常適合 OLAP 聚合查詢，且壓縮率高
   - 選擇 JSON 格式；因為它結構靈活且易於解析
   correct_index: 2
-  explanation: 對於分析型查詢（讀取少數欄位，掃描大量行），列式儲存 (Parquet) 遠優於行式儲存 (CSV, JSON, Avro)。它能跳過不相關的欄位，大幅減少
-    I/O。
+  explanation: 對於分析型查詢（讀取少數欄位，掃描大量行），列式儲存 (Parquet) 遠優於行式儲存 (CSV, JSON, Avro)。它能跳過不相關的欄位，大幅減少 I/O。
   tags:
   - chap-m3-ch1
   - sec-scenario
@@ -716,8 +714,7 @@ questions:
   - 可能是因為分配的記憶體太大，導致 GC 頻繁
   - 可能是因為數據量太小，導致系統空轉
   correct_index: 1
-  explanation: Shuffle 是分散式運算的效能瓶頸，涉及網路傳輸與磁碟 I/O。優化 Spark 任務的關鍵往往在於減少 Shuffle 的數據量（例如使用
-    map-side combine）。
+  explanation: Shuffle 是分散式運算的效能瓶頸，涉及網路傳輸與磁碟 I/O。優化 Spark 任務的關鍵往往在於減少 Shuffle 的數據量（例如使用 map-side combine）。
   tags:
   - chap-m3-ch1
   - sec-scenario
@@ -732,8 +729,7 @@ questions:
   - 具備記憶體內運算與串流處理能力的 Apache Spark
   - 適合小規模數據分析的 Microsoft Excel
   correct_index: 2
-  explanation: Spark 具備記憶體內運算 (In-Memory Computing) 與 Streaming 功能，處理速度比 MapReduce
-    快百倍，且適合即時串流分析。
+  explanation: Spark 具備記憶體內運算 (In-Memory Computing) 與 Streaming 功能，處理速度比 MapReduce 快百倍，且適合即時串流分析。
   tags:
   - chap-m3-ch1
   - sec-distributed-computing
@@ -845,8 +841,7 @@ questions:
   - 類似於作業系統核心 (Kernel) 的資源調度器，管理 CPU 與記憶體
   - 類似於作業系統的圖形使用者介面 (GUI)
   correct_index: 2
-  explanation: YARN (Yet Another Resource Negotiator) 負責管理叢集的 CPU 與記憶體資源，並將其分配給不同的應用程式，就像
-    OS 的資源調度。
+  explanation: YARN (Yet Another Resource Negotiator) 負責管理叢集的 CPU 與記憶體資源，並將其分配給不同的應用程式，就像 OS 的資源調度。
   tags:
   - chap-m3-ch1
   - sec-distributed-computing
@@ -1548,7 +1543,7 @@ questions:
   usage: mock
 - id: 5198
   chapter_title: 大數據生態系統
-  text: "某組資料共10項標籤如下: A, A, A, A, A, B, B, B, B, B。若該標籤僅有A、B兩種,請問這組資料的「正規化吉尼不純度(Normalized Gini impurity)」為何? (114年第二梯次)"
+  text: '某組資料共10項標籤如下: A, A, A, A, A, B, B, B, B, B。若該標籤僅有A、B兩種,請問這組資料的「正規化吉尼不純度(Normalized Gini impurity)」為何? (114年第二梯次)'
   type: multiple_choice
   options:
   - 0
@@ -1912,7 +1907,7 @@ questions:
   usage: mock
 - id: 5224
   chapter_title: 大數據生態系統
-  text: "請參考附圖,下列虛擬程式碼(pseudocode)最可能是在描述何種驗證法? Input: data_set, model_training_function, model_evaluation_function Algorithm: 2. 對 i=1 到N: a. 將第i 筆資料作為測試集 test_data b. 將其餘 N-1 筆資料作為訓練集 train_data c. 訓練模型... d. 預測... (114年第二梯次)"
+  text: '請參考附圖,下列虛擬程式碼(pseudocode)最可能是在描述何種驗證法? Input: data_set, model_training_function, model_evaluation_function Algorithm: 2. 對 i=1 到N: a. 將第i 筆資料作為測試集 test_data b. 將其餘 N-1 筆資料作為訓練集 train_data c. 訓練模型... d. 預測... (114年第二梯次)'
   type: multiple_choice
   options:
   - Hold-out 驗證(Hold-out Validation)
@@ -1926,7 +1921,13 @@ questions:
   usage: mock
 - id: 5225
   chapter_title: 大數據生態系統
-  text: "請參考附圖,下列虛擬程式碼(pseudocode)最可能是在描述何種演算法? Input: data_points, X(群數) Algorithm:\n\n隨機選擇 X 個資料點作為初始中心\n\n重複直到收斂: a. 分群(指派給最近中心) b. 更新中心(計算平均值) (114年第二梯次)"
+  text: '請參考附圖,下列虛擬程式碼(pseudocode)最可能是在描述何種演算法? Input: data_points, X(群數) Algorithm:
+
+
+    隨機選擇 X 個資料點作為初始中心
+
+
+    重複直到收斂: a. 分群(指派給最近中心) b. 更新中心(計算平均值) (114年第二梯次)'
   type: multiple_choice
   options:
   - K-means 分群(K-means Clustering)
@@ -1940,7 +1941,7 @@ questions:
   usage: mock
 - id: 5226
   chapter_title: 大數據生態系統
-  text: "考慮某生產線每小時出現瑕疵品的個數符合卜瓦松分佈(Poisson Distribution),已知平均每小時產生5個瑕疵品,附圖程式碼展示資料處理,請問下列敘述何者正確? Code: print(poisson.pmf(5, lambda_poisson)) (114年第二梯次)"
+  text: '考慮某生產線每小時出現瑕疵品的個數符合卜瓦松分佈(Poisson Distribution),已知平均每小時產生5個瑕疵品,附圖程式碼展示資料處理,請問下列敘述何者正確? Code: print(poisson.pmf(5, lambda_poisson)) (114年第二梯次)'
   type: multiple_choice
   options:
   - lambda_poisson = 5 表示每小時最多5個瑕疵品
@@ -1954,7 +1955,7 @@ questions:
   usage: mock
 - id: 5227
   chapter_title: 大數據生態系統
-  text: "(情境：vgsales.csv 資料包含遊戲銷售數據。Year欄位為float64) 分析師在載入資料後,檢視 Year 欄位的資料型態,發現它是float64,而非一般年份常用的整數。他想了解這樣的情形為什麼會發生。請問下列哪些原因可能導致這種狀況? 原因A: CSV檔中 Year 欄位有缺失值(NaN),導致Pandas自動將整欄轉為浮點數。 原因B: CSV檔中的年份資料原本是字串,Pandas 轉換時出錯。 原因C: Pandas預設會將所有數值型態讀取為float64。 原因D: CSV檔中的年份資料可能包含小數點(例如2006.0),因此被視為浮點數。 (114年第二梯次)"
+  text: '(情境：vgsales.csv 資料包含遊戲銷售數據。Year欄位為float64) 分析師在載入資料後,檢視 Year 欄位的資料型態,發現它是float64,而非一般年份常用的整數。他想了解這樣的情形為什麼會發生。請問下列哪些原因可能導致這種狀況? 原因A: CSV檔中 Year 欄位有缺失值(NaN),導致Pandas自動將整欄轉為浮點數。 原因B: CSV檔中的年份資料原本是字串,Pandas 轉換時出錯。 原因C: Pandas預設會將所有數值型態讀取為float64。 原因D: CSV檔中的年份資料可能包含小數點(例如2006.0),因此被視為浮點數。 (114年第二梯次)'
   type: multiple_choice
   options:
   - 原因B、原因C
@@ -1968,7 +1969,7 @@ questions:
   usage: mock
 - id: 5228
   chapter_title: 大數據生態系統
-  text: "研究團隊接下來想要將 Year 欄位轉換為整數型態,以便後續進行年份趨勢分析。考慮到資料中可能包含缺失值(NaN),請選出最合適的轉換方式。 (114年第二梯次)"
+  text: 研究團隊接下來想要將 Year 欄位轉換為整數型態,以便後續進行年份趨勢分析。考慮到資料中可能包含缺失值(NaN),請選出最合適的轉換方式。 (114年第二梯次)
   type: multiple_choice
   options:
   - data['Year'] = data['Year'].astype(int)
@@ -1982,7 +1983,7 @@ questions:
   usage: mock
 - id: 5229
   chapter_title: 大數據生態系統
-  text: "為了觀察各遊戲平台的市場表現,分析師想要統計每個平台的全球銷售總額,並以長條圖呈現。請選出最能正確實現此分析的程式碼。 (114年第二梯次)"
+  text: 為了觀察各遊戲平台的市場表現,分析師想要統計每個平台的全球銷售總額,並以長條圖呈現。請選出最能正確實現此分析的程式碼。 (114年第二梯次)
   type: multiple_choice
   options:
   - data.groupby("Platform")["Global_Sales"].sum().plot(kind="bar")
@@ -1996,7 +1997,7 @@ questions:
   usage: mock
 - id: 5230
   chapter_title: 大數據生態系統
-  text: "團隊希望比較北美、歐洲、日本及其他地區的整體銷售比例,並使用 seaborn 套件以長條圖的形式進行可視化分析。請選出能正確顯示這些地區銷售總額比例的程式碼。 (114年第二梯次)"
+  text: 團隊希望比較北美、歐洲、日本及其他地區的整體銷售比例,並使用 seaborn 套件以長條圖的形式進行可視化分析。請選出能正確顯示這些地區銷售總額比例的程式碼。 (114年第二梯次)
   type: multiple_choice
   options:
   - sns.countplot(...)
@@ -2010,7 +2011,7 @@ questions:
   usage: mock
 - id: 5231
   chapter_title: 大數據生態系統
-  text: "研究團隊想要知道在北美地區(NA)銷售成績最好的遊戲前五名,並希望以seaborn 的條狀圖呈現結果。請選出能正確完成這項分析的程式碼。 (114年第二梯次)"
+  text: 研究團隊想要知道在北美地區(NA)銷售成績最好的遊戲前五名,並希望以seaborn 的條狀圖呈現結果。請選出能正確完成這項分析的程式碼。 (114年第二梯次)
   type: multiple_choice
   options:
   - sns.barplot(x="NA_Sales", y="Name", data=data.head(5))
@@ -2024,7 +2025,7 @@ questions:
   usage: mock
 - id: 5232
   chapter_title: 大數據生態系統
-  text: "情境：marketing.csv 銷售資料迴歸分析。使用 df.describe() 觀察統計量， 根據上述結果,下列何者正確? (114年第二梯次)"
+  text: 情境：marketing.csv 銷售資料迴歸分析。使用 df.describe() 觀察統計量， 根據上述結果,下列何者正確? (114年第二梯次)
   type: multiple_choice
   options:
   - 資料集個數為199筆,變數個數為4個
@@ -2038,7 +2039,7 @@ questions:
   usage: mock
 - id: 5233
   chapter_title: 大數據生態系統
-  text: "參考下圖計算各變數的遺漏值(NaN)個數結果,下列何者正確? 選項A: df.isnull().sum() 選項B: df.isNaN().sum() 選項C: df.isna().sum() 選項D: df.isnan().sum() (114年第二梯次)"
+  text: '參考下圖計算各變數的遺漏值(NaN)個數結果,下列何者正確? 選項A: df.isnull().sum() 選項B: df.isNaN().sum() 選項C: df.isna().sum() 選項D: df.isnan().sum() (114年第二梯次)'
   type: multiple_choice
   options:
   - 選項D
@@ -2050,3 +2051,19 @@ questions:
   tags:
   - chap-m3-ch1
   usage: mock
+- id: 5566
+  chapter_title: 大數據生態系統
+  section_title: 資料湖倉與資料版本控制
+  text: 資料湖倉 (Data Lakehouse) 相較於單純資料湖，最主要補強了哪一類能力？
+  type: multiple_choice
+  options:
+  - 結構化查詢、交易一致性、資料版本與治理能力
+  - 只能儲存 PDF 檔案
+  - 完全不需要資料權限管理
+  - 只能支援單機 CSV 分析
+  correct_index: 0
+  explanation: 資料湖倉結合資料湖彈性與資料倉儲治理能力，常見技術包含 Delta Lake、Iceberg 與 Hudi。
+  tags:
+  - chap-m3-ch1
+  - sec-storage-solutions
+  usage: both

@@ -51,6 +51,7 @@ print("Dropped DataFrame:\n", df_dropped)
 *   **Min-Max Scaling**：將數據縮放到 [0, 1] 區間。  $$ x' = \frac{x - \min(x)}{\max(x) - \min(x)} $$
 *   **標準化 (Standardization / Z-score Normalization)**：將數據轉換為平均值為 0，標準差為 1 的分佈。
     $$ x' = \frac{x - \mu}{\sigma} $$
+*   **穩健縮放 (Robust Scaling)**：使用中位數與四分位距 (IQR) 進行縮放，對極端值較不敏感。當交易金額、醫療費用等資料有長尾分佈時，通常比 Min-Max Scaling 更穩定。
 
 **Python 範例：使用 Scikit-learn 進行正規化**
 
@@ -205,3 +206,19 @@ df = pd.DataFrame({'Color': ['Red', 'Green', 'Blue', 'Green']})
 df_encoded = pd.get_dummies(df, columns=['Color'])
 print(df_encoded)
 ```
+
+### 進階類別編碼 {.unnumbered}
+
+不同類別編碼方式會影響模型是否誤解資料結構，選擇時要考量類別是否有序、基數高低與資料洩漏風險。
+
+*   **標籤編碼 (Label Encoding)**：將類別對應成整數。適合有自然順序的類別（如低、中、高），但用在無序類別時，模型可能誤判大小關係。
+*   **目標編碼 (Target Encoding)**：以類別對應的目標平均值取代類別。適合高基數類別，但必須只用訓練折內資料計算，避免把驗證或測試標籤資訊洩漏進特徵。
+*   **頻率編碼 (Frequency Encoding)**：以類別出現頻率取代原類別，適合描述類別熱門度或稀有度。
+
+### 不平衡資料處理 {.unnumbered}
+
+分類任務常遇到少數類樣本稀少的情況，例如詐欺交易、罕見疾病或設備故障。若只看準確率，模型可能全部預測為多數類也看似表現良好。
+
+*   **隨機過採樣 (Random Oversampling)**：複製少數類樣本，簡單但容易過擬合。
+*   **隨機欠採樣 (Random Undersampling)**：減少多數類樣本，能平衡比例但可能丟失重要資訊。
+*   **SMOTE**：Synthetic Minority Over-sampling Technique 透過鄰近少數類樣本合成新樣本，能增加少數類多樣性，但仍需避免在切分資料前先做 SMOTE，以免造成資料洩漏。

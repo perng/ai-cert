@@ -421,10 +421,10 @@ questions:
   text: 多層感知器 (MLP) 至少包含幾層？
   type: multiple_choice
   options:
-  - "2 層 (輸入、輸出) (2 Layers: Input, Output)"
-  - "3 層 (輸入、隱藏、輸出) (3 Layers: Input, Hidden, Output)"
+  - '2 層 (輸入、輸出) (2 Layers: Input, Output)'
+  - '3 層 (輸入、隱藏、輸出) (3 Layers: Input, Hidden, Output)'
   - 無限層 (Infinite Layers)
-  - "1 層 (輸入層) (1 Layer: Input)"
+  - '1 層 (輸入層) (1 Layer: Input)'
   correct_index: 1
   explanation: MLP 至少包含一個隱藏層，才能處理非線性問題。結構為：輸入層 -> 隱藏層 -> 輸出層。
   tags:
@@ -650,8 +650,7 @@ questions:
   - 學習率過大；應降低學習率 (High Learning Rate / Decrease Rate)
   - 過擬合；應使用 Dropout (Overfitting / Use Dropout)
   correct_index: 1
-  explanation: Sigmoid 的導數最大值僅為 0.25，且在飽和區趨近於 0。在深層網路中，多個小於 1 的導數連乘會導致梯度迅速消失。改用 ReLU
-    (導數為 1) 是標準解決方案。
+  explanation: Sigmoid 的導數最大值僅為 0.25，且在飽和區趨近於 0。在深層網路中，多個小於 1 的導數連乘會導致梯度迅速消失。改用 ReLU (導數為 1) 是標準解決方案。
   tags:
   - chap-m1-ch4
   - sec-scenario
@@ -667,8 +666,7 @@ questions:
   - 增加模型層數 (Increase Layers)
   - 更換成 SGD (Switch to SGD)
   correct_index: 0
-  explanation: 雖然 Adam 有自適應學習率，但基礎學習率若設得太大，後期仍可能導致在最小值附近震盪。手動或自動降低學習率 (Learning Rate
-    Schedule) 可以幫助模型在最後階段「沉澱」到更佳的極小值。
+  explanation: 雖然 Adam 有自適應學習率，但基礎學習率若設得太大，後期仍可能導致在最小值附近震盪。手動或自動降低學習率 (Learning Rate Schedule) 可以幫助模型在最後階段「沉澱」到更佳的極小值。
   tags:
   - chap-m1-ch4
   - sec-scenario
@@ -676,8 +674,7 @@ questions:
 - id: 3443
   chapter_title: 深度學習簡介
   section_title: 深度思考情境題
-  text: 情境：你的模型在訓練集上表現極好 (Loss 接近 0)，但在測試集上表現很差。你決定使用 Dropout。請問 Dropout 應該加在哪裡？測試階段
-    (Inference) 需要保留 Dropout 嗎？
+  text: 情境：你的模型在訓練集上表現極好 (Loss 接近 0)，但在測試集上表現很差。你決定使用 Dropout。請問 Dropout 應該加在哪裡？測試階段 (Inference) 需要保留 Dropout 嗎？
   type: multiple_choice
   options:
   - 隨便加；測試時保留 (Random / Keep)
@@ -685,8 +682,7 @@ questions:
   - 加在隱藏層後；測試時應移除 (或將權重乘以保留率) (Hidden Layer / Remove or Scale)
   - 加在輸入層；測試時保留 (Input Layer / Keep)
   correct_index: 2
-  explanation: Dropout 通常加在全連接層之後。在訓練時它隨機關閉神經元以防止過擬合；在測試時，我們希望利用整個網路的能力，因此不應關閉神經元，但需要對權重進行縮放
-    (Scaling) 以保持期望值一致。
+  explanation: Dropout 通常加在全連接層之後。在訓練時它隨機關閉神經元以防止過擬合；在測試時，我們希望利用整個網路的能力，因此不應關閉神經元，但需要對權重進行縮放 (Scaling) 以保持期望值一致。
   tags:
   - chap-m1-ch4
   - sec-scenario
@@ -702,8 +698,7 @@ questions:
   - N 個神經元；ReLU (N Neurons / ReLU)
   - N 個神經元 (N=類別數)；Sigmoid (N Neurons / Sigmoid)
   correct_index: 3
-  explanation: Softmax 強制所有類別機率和為 1，意味著類別互斥（單選）。對於多標籤問題（複選），每個類別是獨立的，應對每個輸出節點獨立使用
-    Sigmoid，使其輸出代表該類別存在的機率 (0~1)。
+  explanation: Softmax 強制所有類別機率和為 1，意味著類別互斥（單選）。對於多標籤問題（複選），每個類別是獨立的，應對每個輸出節點獨立使用 Sigmoid，使其輸出代表該類別存在的機率 (0~1)。
   tags:
   - chap-m1-ch4
   - sec-scenario
@@ -719,8 +714,7 @@ questions:
   - 模型太簡單 (Model too Simple)
   - 學習率過小 (Learning Rate too Small)
   correct_index: 1
-  explanation: Loss 變 NaN 通常意味著數值計算溢出。常見原因包括學習率過大導致參數更新飛出邊界、梯度爆炸（特別是在 RNN 中），或在計算
-    Log 時輸入了 0 或負數。梯度剪裁和降低學習率是常見對策。
+  explanation: Loss 變 NaN 通常意味著數值計算溢出。常見原因包括學習率過大導致參數更新飛出邊界、梯度爆炸（特別是在 RNN 中），或在計算 Log 時輸入了 0 或負數。梯度剪裁和降低學習率是常見對策。
   tags:
   - chap-m1-ch4
   - sec-scenario
@@ -970,10 +964,10 @@ questions:
   text: 情境：ReLU 函數在 x < 0 時的輸出為？
   type: multiple_choice
   options:
-  - "'1' (One)"
+  - '''1'' (One)'
   - x
-  - "'0' (Zero)"
-  - "'-1' (Negative One)"
+  - '''0'' (Zero)'
+  - '''-1'' (Negative One)'
   correct_index: 2
   explanation: ReLU 定義為 max(0, x)，負值部分被截斷為 0。
   tags:

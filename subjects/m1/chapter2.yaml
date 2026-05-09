@@ -650,8 +650,7 @@ questions:
   - 直接使用準確率 (Accuracy) 作為特徵選擇的評估指標，因為這會產生誤導
   - 使用欠採樣 (Undersampling) 減少正常交易數量，平衡數據集
   correct_index: 2
-  explanation: 在極度不平衡的數據中，準確率會產生誤導（盲猜「正常」就有 99.9% 準確率）。若基於準確率來選擇特徵，可能會選出對偵測詐欺毫無幫助的特徵，應改用
-    F1-score 或 AUC。
+  explanation: 在極度不平衡的數據中，準確率會產生誤導（盲猜「正常」就有 99.9% 準確率）。若基於準確率來選擇特徵，可能會選出對偵測詐欺毫無幫助的特徵，應改用 F1-score 或 AUC。
   tags:
   - chap-m1-ch2
   - sec-scenario
@@ -667,8 +666,7 @@ questions:
   - Frequency Encoding：用各國在數據中出現的頻率代替
   - 將低頻國家合併為 "Other" 類別，再進行 One-Hot Encoding
   correct_index: 1
-  explanation: Label Encoding 會賦予國家一個無意義的順序（如阿富汗=1, 辛巴威=180），模型可能會錯誤地學習到「國家編號越大，銷售額越高」這種不存在的線性關係。Target
-    Encoding 或合併低頻類別是更好的選擇。
+  explanation: Label Encoding 會賦予國家一個無意義的順序（如阿富汗=1, 辛巴威=180），模型可能會錯誤地學習到「國家編號越大，銷售額越高」這種不存在的線性關係。Target Encoding 或合併低頻類別是更好的選擇。
   tags:
   - chap-m1-ch2
   - sec-scenario
@@ -676,8 +674,7 @@ questions:
 - id: 3243
   chapter_title: 資料處理基礎
   section_title: 深度思考情境題
-  text: 情境：在房價預測任務中，你發現訓練集和測試集的特徵分佈有顯著差異（Covariate Shift），例如訓練集多為市中心小豪宅，測試集多為郊區大別墅。這時進行標準化
-    (Standardization) 應注意什麼？
+  text: 情境：在房價預測任務中，你發現訓練集和測試集的特徵分佈有顯著差異（Covariate Shift），例如訓練集多為市中心小豪宅，測試集多為郊區大別墅。這時進行標準化 (Standardization) 應注意什麼？
   type: multiple_choice
   options:
   - 應將訓練集和測試集和併後一起計算均值和標準差 (Data Leakage)
@@ -685,8 +682,7 @@ questions:
   - 應僅使用訓練集的均值和標準差來轉換測試集 (Correct Approach)
   - 不應進行標準化 (No Standardization)
   correct_index: 2
-  explanation: 嚴格來說，測試集代表未知的未來數據，我們不能預先知道其分佈。正確流程永遠是 `scaler.fit(train)` 然後 `scaler.transform(train)`
-    和 `scaler.transform(test)`。若分佈差異過大，應考慮重新收集數據或使用領域適應 (Domain Adaptation) 技術，而非錯誤地操作數據。
+  explanation: 嚴格來說，測試集代表未知的未來數據，我們不能預先知道其分佈。正確流程永遠是 `scaler.fit(train)` 然後 `scaler.transform(train)` 和 `scaler.transform(test)`。若分佈差異過大，應考慮重新收集數據或使用領域適應 (Domain Adaptation) 技術，而非錯誤地操作數據。
   tags:
   - chap-m1-ch2
   - sec-scenario
@@ -702,8 +698,7 @@ questions:
   - 是，PCA 證明了它們線性不可分 (Linearly Inseparable)
   - 是，說明數據品質太差 (Poor Data Quality)
   correct_index: 0
-  explanation: PCA 只能提取線性特徵。許多高維數據（如圖像、文字）的結構是非線性的（流形），在 PCA 的線性投影下會重疊。t-SNE 或 UMAP
-    等非線性方法更有機會將它們分開。
+  explanation: PCA 只能提取線性特徵。許多高維數據（如圖像、文字）的結構是非線性的（流形），在 PCA 的線性投影下會重疊。t-SNE 或 UMAP 等非線性方法更有機會將它們分開。
   tags:
   - chap-m1-ch2
   - sec-scenario
@@ -731,7 +726,7 @@ questions:
   options:
   - 刪除該筆資料 (Delete Row)
   - 最大值 (Maximum Value)
-  - "'0' (Zero Imputation)"
+  - '''0'' (Zero Imputation)'
   - 平均值 (Mean)，適用於分佈均勻的數值
   correct_index: 3
   explanation: 對於數值型且分佈正常的資料，使用平均值填補是常見且合理的做法。
@@ -1043,4 +1038,36 @@ questions:
   - chap-m1-ch2
   - sec-feature-engineering
   id: 3265
+  usage: both
+- id: 3266
+  chapter_title: 資料處理基礎
+  section_title: 正規化
+  text: 當數值特徵存在明顯極端值時，哪一種縮放方式通常比 Min-Max Scaling 更穩健？
+  type: multiple_choice
+  options:
+  - Robust Scaling，使用中位數與 IQR 進行縮放
+  - One-Hot Encoding，將數值轉為二元向量
+  - Label Encoding，將數值改成整數類別
+  - 隨機刪除所有大於平均值的資料
+  correct_index: 0
+  explanation: Robust Scaling 以中位數與四分位距縮放，較不會被極端值主導。
+  tags:
+  - chap-m1-ch2
+  - sec-data-preprocessing
+  usage: both
+- id: 3267
+  chapter_title: 資料處理基礎
+  section_title: 不平衡資料處理
+  text: 使用 SMOTE 處理不平衡資料時，哪一項流程最能避免資料洩漏？
+  type: multiple_choice
+  options:
+  - 先切分訓練與測試資料，只在訓練資料內套用 SMOTE
+  - 在切分資料前對完整資料集套用 SMOTE
+  - 對測試資料也套用 SMOTE 以平衡評估集
+  - 只要模型是樹模型就不需要切分資料
+  correct_index: 0
+  explanation: 若在切分前合成樣本，測試資料可能間接含有訓練資料資訊，導致評估過度樂觀。
+  tags:
+  - chap-m1-ch2
+  - sec-feature-engineering
   usage: both

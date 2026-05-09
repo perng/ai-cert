@@ -149,6 +149,10 @@ model.summary()
         *   聯集區域 (Union) = 100 + 80 - 40 = 140。
         *   IoU = 40 / 140 ≈ 0.286。
     *   通常 IoU > 0.5 視為偵測成功。
+*   **mAP (mean Average Precision)**：物件偵測常用整體指標，會在不同類別與信心閾值下整合 Precision-Recall 表現。IoU 閾值越高，代表預測框必須與真實框更精準重疊才算正確。
+*   **一階段與二階段偵測器**：
+    *   **一階段偵測器**：如 YOLO、SSD，直接預測位置與類別，速度快，適合即時監控、車流偵測。
+    *   **二階段偵測器**：如 Faster R-CNN，先產生候選區域再分類與微調框，通常精度較高但速度較慢。
 
 ![YOLO](images/yolo.webp)
 
@@ -162,6 +166,9 @@ model.summary()
     *   **實例分割 (Instance Segmentation)**：
         *   **概念**：既管「類別」，也管「個體」。結合了物件偵測與語義分割。
         *   **例子**：照片中有 5 個人，第 1 個人塗紅、第 2 個人塗藍...以此類推。
+    *   **全景分割 (Panoptic Segmentation)**：
+        *   **概念**：同時處理語義分割與實例分割，讓每個像素都有語義類別，也能區分可數物件的不同個體。
+        *   **例子**：自駕車場景中，同時標示道路、天空、建築等背景類別，並區分每一台車與每一位行人。
 *   **常見模型**：
     *   **FCN (Fully Convolutional Network)**：
         *   **創新**：將傳統 CNN 最後的「全連接層」替換為「卷積層」。
@@ -200,6 +207,14 @@ model.summary()
             style Encoder fill:#e1f5fe,stroke:#0277bd
             style Decoder fill:#fff9c4,stroke:#fbc02d
         ```
+
+### Vision Transformer 與多模態視覺模型 {.unnumbered}
+
+近年電腦視覺不只依賴 CNN，也大量採用 Transformer 與圖文對齊模型。
+
+*   **Vision Transformer (ViT)**：將影像切成 patch 後視為序列，使用自注意力機制建模全域關係。資料量足夠時能取得很高表現，但通常需要較多訓練資料與算力。
+*   **CLIP/BLIP 類模型**：把影像與文字映射到共同嵌入空間，可支援零樣本分類、文字找圖、影像自動標註與多模態檢索。
+*   **輕量化部署**：在邊緣裝置或即時攝影機場景，常選 MobileNet、YOLO Nano 等輕量模型，並搭配量化、剪枝降低延遲。
 
 
 ## 產業應用情境 {#sec-cv-applications}
