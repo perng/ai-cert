@@ -937,8 +937,8 @@ questions:
   - 調整模型的回應邏輯，讓 AI 優先輸出最新市場行情，而不是完整的背景分析 (Prioritize Latest Market Data)
   - 建立與外部即時行情來源同步的查詢模組，確保 AI 能即時擷取最新金融數據 (Real-time External Data Sync)
   - 增加訓練資料中模擬的金融危機與市場異常案例，以提升 AI 在特殊情境下的表現能力 (Simulate Market Anomalies)
-  correct_index: 0
-  explanation: 此題涉及 某投資公司導入生成式... 的核心概念。正確答案為「將 AI 系統連結至公司內部歷史交易資料庫，以便快速調用既有的 案例參考；」。
+  correct_index: 2
+  explanation: 要兼顧「即時性」與「可靠性」，最有效的方法是建立與外部即時行情來源同步的查詢模組 (如 RAG 或 API 工具調用)，確保模型能獲取當下最新的市場數據，而非僅依賴內部歷史資料。
   tags:
   - sec-past-exam
   - past-exam

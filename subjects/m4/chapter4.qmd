@@ -28,7 +28,7 @@ RL 的核心挑戰。
 **價值函數 (Value Function, V(s))**：從狀態 **s** 開始，遵循策略 **𝛑** 所能獲得的預期累積獎勵。
 **貝爾曼方程式 (Bellman Equation)** 描述了當前狀態價值與未來狀態價值之間的關係：
 
-$ V(s) = \max_a \left( R(s,a) + \gamma \sum_{s'} P(s'|s,a) V(s') \right) $
+$$ V(s) = \max_a \left( R(s,a) + \gamma \sum_{s'} P(s'|s,a) V(s') \right) $$
 
 其中 **𝝺** 是**折扣因子 (Discount Factor)**，用於平衡當前獎勵與未來獎勵的重要性。
 
@@ -39,7 +39,7 @@ $ V(s) = \max_a \left( R(s,a) + \gamma \sum_{s'} P(s'|s,a) V(s') \right) $
 Q-learning 是一種基於值的 (Value-based) 演算法，學習一個 Q 表 (Q-table)，記錄在狀態 **s** 採取行動 **a** 的預期獎勵 Q(s, a)。
 
 **更新規則**：
-$ Q(s, a) \leftarrow Q(s, a) + \alpha [R + \gamma \max_{a'} Q(s', a') - Q(s, a)] $
+$$Q(s, a) \leftarrow Q(s, a) + \alpha [R + \gamma \max_{a'} Q(s', a') - Q(s, a)]$$
 這利用了**時序差分 (Temporal Difference, TD)** 誤差來更新 Q 值。
 
 ### 深度 Q 網路 (DQN) {.unnumbered}
@@ -54,7 +54,7 @@ DQN 的兩個關鍵技術：
 ### 策略梯度 (Policy Gradients) {.unnumbered}
 
 策略梯度 (Policy Gradients) 直接最佳化策略函數 π(a|s; θ)。
-$$ \nabla_\theta J(\theta) = \mathbb{E} [\nabla_\theta \log \pi(a|s; \theta) \cdot R] $$
+$$\nabla_\theta J(\theta) = \mathbb{E} [\nabla_\theta \log \pi(a|s; \theta) \cdot R]$$
 這使得它能處理連續動作空間。
 
 *   **PPO (Proximal Policy Optimization)**：目前最流行的策略梯度方法。它通過限制策略更新的幅度（Clip 操作）來保證訓練的穩定性，避免了一次更新過大導致模型崩潰。

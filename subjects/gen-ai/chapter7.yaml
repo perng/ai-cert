@@ -937,8 +937,8 @@ questions:
   - 過濾與驗證 AI 輸出的維修指引，確保符合安全標準；
   - 確保生成的操作建議符合法規與產業安全規範；
   - 完整重建並追蹤 AI 模型的全部推理過程
-  correct_index: 0
-  explanation: 此題涉及 某智慧工廠導入生成式... 的核心概念。正確答案為「檢查工程師輸入內容，避免觸發錯誤或危險需求；」。
+  correct_index: 3
+  explanation: Guardrails 的主要目的是過濾輸入、驗證輸出以及確保合規。而「完整重建並追蹤 AI 模型的全部推理過程」屬於模型的可解釋性 (Explainability) 或審計日誌 (Audit Logging)，並非 Guardrails 的核心預防功能。
   tags:
   - sec-past-exam
   - past-exam
@@ -956,8 +956,8 @@ questions:
   - 安全多方計算（Secure Multi-party Computation）；
   - 零知識證明（Zero-knowledge Proofs）；
   - 聯邦學習（Federated Learning）
-  correct_index: 0
-  explanation: 此題涉及 企業在導入生成式 A... 的核心概念。正確答案為「同態加密（Homomorphic Encryption）；」。
+  correct_index: 3
+  explanation: 聯邦學習 (Federated Learning) 允許資料留在本地 (分散於不同部門)，僅在中央端聚合模型參數更新，最適合解決資料分散且需確保隱私的需求。
   tags:
   - sec-past-exam
   - past-exam
@@ -975,8 +975,8 @@ questions:
   - 實施資料最小化與去識別化，確保 AI 在訓練與生成過程中不直接 處理或暴露敏感個資； 第二科：生成式 AI 應用與規劃
   - 強化模型的回覆審查流程，透過自動過濾與人工抽查結合，降低個 資外洩的機率；
   - 設定 AI 的角色與回覆範圍，讓其專注於客服相關內容，避免回答 其他敏感議題
-  correct_index: 0
-  explanation: 此題涉及 某跨國電商企業導入生... 的核心概念。正確答案為「在加密環境下導入完整的顧客訂單與行為資料，並透過嚴格存取控 管降低洩漏風險；」。
+  correct_index: 1
+  explanation: 根據「資料最小化」與「隱私設計」原則，在處理個資時，最優先且符合法規要求的措施是實施去識別化，從源頭確保 AI 不會接觸到敏感個資。
   tags:
   - sec-past-exam
   - past-exam
@@ -1032,7 +1032,7 @@ questions:
   - 全面移除與申貸人身份相關的敏感屬性，避免模型因變數影響而產 生偏差；
   - 導入資料與結果的公平性檢測流程，並依合規規範調整模型或決策 邏輯；
   - 減少訓練樣本數量，降低偏見被放大的可能性
-  correct_index: 0
+  correct_index: 2
   explanation: AI 偏見通常源自訓練數據中的社會刻板印象。緩解策略包括數據平衡、去偏演算法以及人類回饋強化學習 (RLHF)。
   tags:
   - sec-past-exam

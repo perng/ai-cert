@@ -40,7 +40,7 @@ print("Best parameters:", clf.best_params_)
 
 正規化技術 (Regularization Techniques) 用於防止過擬合 (Overfitting)，通過在損失函數中加入懲罰項來限制模型複雜度。
 
-$L_{total} = L_{original} + \lambda \cdot R(w)$
+$$L_{total} = L_{original} + \lambda \cdot R(w)$$
 其中 **𝝺** 是正規化強度。
 
 ### 常見技術 {.unnumbered}
@@ -76,7 +76,7 @@ $L_{total} = L_{original} + \lambda \cdot R(w)$
 ### 知識蒸餾 {.unnumbered}
 
 知識蒸餾 (Knowledge Distillation) 訓練一個小的學生模型 (Student) 來模仿大的教師模型 (Teacher) 的輸出（Soft targets）。
-$ L = \alpha L_{CE}(y, \hat{y}_{student}) + (1-\alpha) L_{KL}(\hat{y}_{teacher}, \hat{y}_{student})$
+$$L = \alpha L_{CE}(y, \hat{y}_{student}) + (1-\alpha) L_{KL}(\hat{y}_{teacher}, \hat{y}_{student})$$
 學生模型不僅學習真實標籤，還學習教師模型的「暗知識」（例如，這張圖雖然是貓，但也有一點像狗）。
 
 

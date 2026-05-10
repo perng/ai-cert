@@ -1,0 +1,2242 @@
+- file: subjects/ai-foundation/chapter9.yaml
+  id: 11439
+  text: 某醫院計畫開發住院日數預測模型，以協助病房調度。多數病人的住院 日數集中在 3–7 天，但仍有少數重症患者因治療需求而住院日數明顯 偏長。醫院希望採用一種合適的評估方式，既能兼顧大部分病人的預測
+    準確度，也能確保對重症個案的預測維持穩健。下列哪一種方法最符合 此需求？  答案 題    目 (114年第四梯次)
+  options:
+  - 在模型檢核時，同時呈現平均絕對誤差（MAE）與重症子群的誤差指 標 (During Model Validation, Simultaneously Presenting
+    MAE and Error Indicators for Critical Care Subgroup)
+  - 僅針對一般病人樣本進行交叉驗證，以避免重症個案拉高誤差 (Only Performing Cross-Validation on General Patient
+    Samples to Avoid Critical Cases Raising Error)
+  - 將所有病人的住院日數進行標準化處理，以減少數值範圍差異的影 響 (Standardizing All Patients' Length of Stay to
+    Reduce Impact of Value Range Differences)
+  - 只採用單一的整體決定係數 (R²) 作為模型優劣的判斷依據 (Only Using Single Overall R² as Model Quality Judgment
+    Criterion)
+  correct_index: 0
+  explanation: 此題涉及 評估指標 的核心概念。正確答案為「在模型檢核時，同時呈現平均絕對誤差（MAE）與重症子群的誤差指 標」。
+- file: subjects/ai-foundation/chapter9.yaml
+  id: 11406
+  text: 在 Lasso 模型中，L1 正則化（Regularization）導致參數收斂為零的 原因為何？ (114年第四梯次)
+  options:
+  - L1 正則化忽略目標變數 (L1 Regularization Ignores Target Variable)，不考慮預測目標。
+  - L1 對梯度有平滑作用 (L1 Has Smoothing Effect on Gradient)，使梯度變化平緩。
+  - L1 對大係數懲罰較強，促使稀疏解 (L1 Penalizes Large Coefficients More Strongly, Promoting Sparse
+    Solutions)
+  - L1 會轉換損失函數為非凸形 (L1 Transforms Loss Function to Non-Convex)，改變函數形狀。
+  correct_index: 2
+  explanation: L1 正則化 (Lasso) 具有特徵選擇的功能，因為其幾何特性（菱形約束區域）傾向於讓不重要的特徵權重收斂為 0，從而產生稀疏模型。
+- file: subjects/ai-foundation/chapter9.yaml
+  id: 11443
+  text: 某公司欲建立員工離職風險預測模型，資料集中包含 「年度績效分數」 、 「平均每月加班時數」 、 「年齡」等數值型特徵。由於各特徵的數值範圍 差異極大（例如績效分數1–5、加班時數0–80、年齡20–65）
+    ，若直 接輸入至使用梯度下降的邏輯迴歸(Logistic Regression)模型，可能 導致模型收斂緩慢或權重偏斜。為提升模型訓練效率與準確度，下列哪
+    一種特徵工程方法最適合應用於這些數值特徵？ (114年第四梯次)
+  options:
+  - 布林轉換（Boolean Conversion），將數值轉換為布林值。
+  - 時間序列分解（Time Series Decomposition），將時間序列分解為趨勢與季節性。
+  - One-hot 編碼（One-hot Encoding），將類別轉換為二元欄位。
+  - 數值標準化（Numerical Standardization），統一數值範圍以提升訓練效率。
+  correct_index: 3
+  explanation: 此題涉及 評估指標 的核心概念。正確答案為「數值標準化（Numerical Standardization）」。
+- file: subjects/ai-foundation/chapter9.yaml
+  id: 11419
+  text: 在訓練機器學習模型時，若任務為預測房價，應選用下列哪一種損失函 數（Loss Function）來衡量預測誤差？ (114年第四梯次)
+  options:
+  - 均方誤差（MSE）(Mean Squared Error)，用於迴歸任務的損失函數。
+  - 交叉熵損失（Cross-Entropy Loss），用於分類任務的損失函數。
+  - Hinge 損失（Hinge Loss），用於 SVM 的損失函數。
+  - KL 散度（Kullback-Leibler Divergence），衡量兩個機率分佈差異的指標。
+  correct_index: 0
+  explanation: 此題涉及 誤差分析與優化 的核心概念。正確答案為「均方誤差（MSE）」。
+- file: subjects/ai-foundation/chapter9.yaml
+  id: 115-1-40
+  text: 某製造業公司建置機器學習模型，用於預測產品是否為瑕疵品。實際生產資料中，瑕疵品比例極低，大多數樣本皆為正常品。模型測試時發現，即使模型多數預測為正常品，仍可獲得很高的整體準確率。在此情境下，若希望更有效衡量模型對瑕疵品的辨識能力，下列何者較適合作為主要評估指標？    （115年第一梯次）
+  options:
+  - F1-score
+  - 均方誤差（Root Mean Squared Error, RMSE）
+  - 準確率（Accuracy）
+  - "判定係數（R², Coefficient of Determination） \n115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 \n第一科：人工智慧基礎概論\
+    \ \n考試日期：115 年 03 月 21 日 \n第 10 頁，共 12 頁 \n \n答案 題目"
+  correct_index: 0
+  explanation: 本題測驗相關核心概念。正確解答為「F1-score」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter9.yaml
+  id: 115-1-50
+  text: 某醫院使用機器學習模型篩檢癌症患者。模型預測結果會決定哪些病人需要進一步檢查。院方非常重視盡量找出所有可能的癌症患者，即希望降低漏診（Missed
+    Diagnosis）風險，即便這可能增加一些誤判。下列哪一個評估指標最能反映模型找出癌症患者的能力？ （115年第一梯次）
+  options:
+  - 精準率（Precision）
+  - 召回率（Recall）
+  - 假陽性率（False Positive Rate）
+  - ROC-AUC 曲線
+  correct_index: 1
+  explanation: 本題測驗相關核心概念。正確解答為「召回率（Recall）」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter5.yaml
+  id: 11421
+  text: 某金融科技公司正開發一套違約風險預測系統，需大量處理不同客戶 的財務特徵資料。考量到資料特徵數量眾多，且希望提升預測的穩定性 與泛化能力，下列哪一種鑑別式
+    AI 模型最適合？ (114年第四梯次)
+  options:
+  - 邏輯迴歸（Logistic Regression）
+  - 支援向量機（Support Vector Machine）
+  - 決策樹（Decision Tree）
+  - 隨機森林（Random Forest）
+  correct_index: 3
+  explanation: 此題涉及 分類演算法 的核心概念。正確答案為「隨機森林（Random Forest）」。
+- file: subjects/ai-foundation/chapter5.yaml
+  id: 11407
+  text: 貝氏分類器（Naive Bayes Classifier）常被應用於文字分類、垃圾郵 件過濾等場景。依據模型特性，它最適合歸類於下列哪一類？ (114年第四梯次)
+  options:
+  - 透過直接學習輸入特徵與目標標籤之間的邊界或關係來進行分類 的模型
+  - 透過建構資料的整體分布，並利用條件關係進行推斷和分類的模 型
+  - 側重探索資料中樣本間的相似性，將資料自動分成不同群組的模 型
+  - 透過試錯學習，根據行動結果的獎勵或懲罰來優化決策策略的模型
+  correct_index: 1
+  explanation: 此題涉及 分類演算法 的核心概念。正確答案為「透過建構資料的整體分布，並利用條件關係進行推斷和分類的模 型」。
+- file: subjects/ai-foundation/chapter5.yaml
+  id: 11420
+  text: 某醫院希望開發一個系統，根據患者的年齡、血壓與BMI 等資訊，預測  答案 題    目 其罹患糖尿病的機率（0~1） ，並依據預測值是否超過0.5
+    做出風險警 示。下列哪一種模型最適合用於此分類任務？ (114年第四梯次)
+  options:
+  - 邏輯迴歸（Logistic Regression）
+  - 支援向量機（Support Vector Machine）
+  - 決策樹（Decision Tree）
+  - K 平均演算法（K-means）
+  correct_index: 0
+  explanation: 此題涉及 分類演算法 的核心概念。正確答案為「邏輯迴歸（Logistic Regression）」。
+- file: subjects/ai-foundation/chapter5.yaml
+  id: 11415
+  text: 某模型使用 K-近鄰演算法（KNN）進行分類，K 設為 3。 一筆新的測 試資料輸入後，與其最接近的3 筆資料的類別如下：鄰近樣本1：類別 A；鄰近樣本
+    2：類別B；鄰近樣本 3：類別A。請問模型會將這筆資料 預測為哪一類別？ (114年第四梯次)
+  options:
+  - 類別 A
+  - 類別 B；  答案 題    目
+  - 類別 A 與 B 各一半，無法分類
+  - 類別 A 或 B，視距離遠近加權而定
+  correct_index: 0
+  explanation: 此題涉及 分類演算法 的核心概念。正確答案為「類別 A」。
+- file: subjects/ai-foundation/chapter5.yaml
+  id: 115-1-8
+  text: 某零售企業在建置機器學習模型預測顧客購買機率時， 資料同時包含大量稀疏類別特徵與數值型特徵。 團隊希望模型既能學習過去已出現的特徵組合規律，也能對未出現的特徵組合做出合理預測。
+    下列哪一種模型架構最適合此類需求？ （115年第一梯次）
+  options:
+  - 線性迴歸（Linear Regression）
+  - 決策樹（Decision Tree）
+  - 支援向量機（Support Vector Machine, SVM）
+  - 寬深模型（Wide and Deep）
+  correct_index: 3
+  explanation: 本題測驗相關核心概念。正確解答為「寬深模型（Wide and Deep）」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter5.yaml
+  id: 115-1-10
+  text: 某設計公司導入生成式 AI（Generative AI）工具，用於自動產生產品概念圖與風格草圖。為了讓系統能依據既有圖像資料產生具有變化且風格一致的新圖像，模型必須具備學習資料特性並生成新樣本的能力。下列哪一種模型技術或方法最符合上述需求？    （115年第一梯次）
+  options:
+  - 隱變量自編碼器（Variational Autoencoder, V AE）
+  - 隨機森林（Random Forest）
+  - K-近鄰演算法（K-Nearest Neighbors, KNN）
+  - 貝氏網路（Bayesian Network）
+  correct_index: 0
+  explanation: 本題測驗相關核心概念。正確解答為「隱變量自編碼器（Variational Autoencoder, V AE）」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter5.yaml
+  id: 115-1-20
+  text: 某團隊訓練影像分類模型，發現模型在訓練資料上的準確率達 98%，但在測試資115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 第一科：人工智慧基礎概論
+    考試日期：115 年 03 月 21 日 第 5 頁，共 12 頁  答案 題目 料上僅有 72%。若團隊希望提升模型對新資料的適應能力，並增加訓練資料的多樣性，下列何者最適合？    （115年第一梯次）
+  options:
+  - 增加模型的深度與參數量，使模型學習更多細節
+  - 對訓練影像進行旋轉、翻轉等隨機變化
+  - 提高訓練速度，使模型更快完成學習
+  - 僅保留模型表現較好的訓練資料
+  correct_index: 1
+  explanation: 本題測驗相關核心概念。正確解答為「對訓練影像進行旋轉、翻轉等隨機變化」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter5.yaml
+  id: 115-1-21
+  text: 某時尚品牌導入生成式 AI（Generative AI）技術，建立服裝設計輔助系統。系統需根據設計師輸入的風格條件，自動產生具有高度視覺品質、細節穩定且風格變化自然的服裝草圖。團隊特別重視生成結果的穩定性與多樣性控制能力。在此需求下，下列哪一種模型技術或方法較為適合？    （115年第一梯次）
+  options:
+  - 支援向量機（Support Vector Machine, SVM）
+  - 生成對抗網路（Generative Adversarial Network, GAN）
+  - 決策樹（Decision Tree）
+  - 擴散模型（Diffusion Model）
+  correct_index: 3
+  explanation: 本題測驗相關核心概念。正確解答為「擴散模型（Diffusion Model）」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter5.yaml
+  id: 115-1-22
+  text: 某製造業工廠規劃導入 AI 監控系統，持續分析設備感測數據（如溫度、震動與壓力） 。系統需能在缺乏完整異常標註資料的情況下，辨識與一般運作型態顯著不同的狀態，並發出預警。在此需求下，下列何種技術較為適合？    （115年第一梯次）
+  options:
+  - 使用支援向量機（Support Vector Machine, SVM）建立異常分類模型
+  - 以決策樹（Decision Tree）學習異常類型的判斷規則
+  - 採用變分自編碼器（Variational Autoencoder, V AE）學習正常資料分佈
+  - 使用生成對抗網路（Generative Adversarial Network, GAN）直接預測異常標籤
+  correct_index: 2
+  explanation: 本題測驗相關核心概念。正確解答為「採用變分自編碼器（Variational Autoencoder, V AE）學習正常資料分佈」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter5.yaml
+  id: 115-1-32
+  text: 某環保局想建立 AI 系統監測空氣品質，透過分析監測站攝影機拍攝的影像來識別煙霧。系統需要在影像中找出煙霧區域並標示其位置和範圍。這個應用主要屬於電腦視覺的哪個技術領域？    （115年第一梯次）
+  options:
+  - 影像分類，判斷影像中是否有煙霧
+  - 物件偵測，找出煙霧位置並用方框標示
+  - 影像分割，精確標示出煙霧的像素區域
+  - 人臉辨識，識別煙霧來源
+  correct_index: 2
+  explanation: 本題測驗相關核心概念。正確解答為「影像分割，精確標示出煙霧的像素區域」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter5.yaml
+  id: 115-1-36
+  text: 某電子製造公司建置 AI 視覺檢測系統，用於辨識 PCB 電路板製程缺陷。系統在影像判讀任務上表現穩定，但其模型設計與訓練目標皆侷限於特定應用範圍，無法直接遷移至其他營運決策任務。依人工智慧能力範疇分類，下列何者最符合該系統特性？    （115年第一梯次）
+  options:
+  - 弱 AI（Weak AI/Narrow AI）
+  - 強 AI（Strong AI）
+  - 通用人工智慧（Artificial General Intelligence, AGI）
+  - 超級人工智慧（Artificial Superintelligence, ASI）
+  correct_index: 0
+  explanation: 本題測驗相關核心概念。正確解答為「弱 AI（Weak AI/Narrow AI）」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter4.yaml
+  id: 11402
+  text: 下列哪一種特徵工程技巧，最適合將「星期幾」和「24 小時制時間」 這兩個欄位結合，以預測通勤時間？ (114年第四梯次)
+  options:
+  - One-hot 編碼（One-hot encoding）
+  - 正規化（Normalization）
+  - 特徵交叉（Feature Cross）
+  - 寬深模型（Wide and Deep）
+  correct_index: 2
+  explanation: 此題涉及 進階特徵處理 的核心概念。正確答案為「特徵交叉（Feature Cross）」。
+- file: subjects/ai-foundation/chapter4.yaml
+  id: '11441_1'
+  text: 一家旅遊平台希望建立模型，預測顧客下次是否會再次透過該平台訂 房。資料包含：顧客 ID、年齡、旅遊次數、平均花費金額、主要交通 方式（火車/飛機/自駕/公車）
+    、會員等級（普通/進階/白金） 、是否為 海外旅遊等。下列哪一種特徵工程方法最適合處理「主要交通方式」欄 位？ (114年第四梯次)
+  options:
+  - 布林轉換（Boolean Conversion）
+  - 序數編碼（Ordinal Encoding）
+  - 數值標準化（Numerical Standardization）
+  - One-hot 編碼（One-hot Encoding）
+  correct_index: 3
+  explanation: 此題涉及 類別特徵編碼 的核心概念。正確答案為「One-hot 編碼（One-hot Encoding）」。
+- file: subjects/ai-foundation/chapter4.yaml
+  id: '11434_1'
+  text: 在零售業進行客戶行為分析時，資料倉儲中發現多個欄位儲存相同的 購買金額資訊 （例如：amount_usd、total_price、transaction_value），
+    但其單位、命名慣例及格式不一致，進而導致特徵工程階段混淆模型輸 入。針對此種跨欄位語義重疊與結構冗餘問題，下列哪一種資料處理策 略最合適且具實務可行性？ (114年第四梯次)
+  options:
+  - 利用資料探勘技術自動選擇資料集中對目標變數最敏感的欄位，其 他欄位捨棄即可，避免過度清理干擾原始結構
+  - 保留所有相似欄位，交由高階模型 （如Gradient Boosting或 Deep Learning）自動學習特徵關聯，無需手動處理
+  - 建立欄位命名標準，統一金額單位與格式，進行欄位正規化與語義 合併，減少重複資訊影響特徵重要性估計
+  - 將重複欄位視為類別欄位，進行One-hot編碼 （One-hot encoding） 後輸入模型，以避免數值誤導模型學習過程
+  correct_index: 2
+  explanation: 此題涉及 類別特徵編碼 的核心概念。正確答案為「建立欄位命名標準，統一金額單位與格式，進行欄位正規化與語義 合併，減少重複資訊影響特徵重要性估計」。
+- file: subjects/ai-foundation/chapter4.yaml
+  id: '11435_1'
+  text: 某大型零售企業準備將商品推薦模型上線，專案團隊在檢視訓練資料 時，發現部分商品類別（例如高價商品）樣本數量極少，而多數樣本集 中於低價商品。若此不平衡問題未妥善處理，下列何種狀況最可能在實
+    際推薦結果中發生？ (114年第四梯次)
+  options:
+  - 模型在預測時傾向輸出稀有類別，導致雖能捕捉到少數樣本，但精 確率（Precision）顯著下降
+  - 模型由於類別分布不均，難以建立有效的線性分離邊界，進而無法 收斂
+  - 模型過度聚焦於稀有類別樣本，導致對多數類別的預測能力下降， 整體效能受損；  答案 題    目
+  - 模型學到的決策邊界主要由多數類別主導，忽視了稀有類別，造成 該類別的召回率（Recall）大幅降低
+  correct_index: 3
+  explanation: SMOTE 是一種過採樣技術，透過在少數類樣本間進行插值來合成新樣本，比單純複製樣本更能提升模型的泛化能力。
+- file: subjects/ai-foundation/chapter4.yaml
+  id: '11433_1'
+  text: 在工業物聯網架構中 ， 進行設備預測性維護 （Predictive Maintenance） 時，若面對異常事件發生頻率極低、樣本高度不平衡的時間序列資料，
+    下列哪一種方法最能兼顧模型穩定性與異常偵測效能？ (114年第四梯次)
+  options:
+  - 將每筆異常事件資料複製多次以提升模型對異常的辨識敏感度，搭 配全序列訓練模型（如 LSTM）
+  - 對時間序列進行差分與標準化後，使用傳統監督式學習模型（如 SVM）進行分類訓練
+  - 使用經過時間序列特化的 SMOTE 技術生成異常樣本，以平衡異常與 正常資料比例
+  - 採用基於重建誤差的自編碼器模型（ Sequence-to-Sequence Autoencoder）進行異常偵測，並僅使用正常資料進行訓練
+  correct_index: 3
+  explanation: SMOTE 是一種過採樣技術，透過在少數類樣本間進行插值來合成新樣本，比單純複製樣本更能提升模型的泛化能力。
+- file: subjects/ai-foundation/chapter4.yaml
+  id: '11446_1'
+  text: 某電商公司想預測用戶是否會購買特定商品，資料中包含多種用戶屬 性與行為特徵。分析師希望選出對購買結果最有預測價值的特徵，以提 升模型效能。下列哪一種描述最符合監督式特徵選擇（
+    Supervised Feature Selection）的概念？ (114年第四梯次)
+  options:
+  - 根據特徵的整體分布、變異度或資訊量進行篩選，而不直接參考目標變數
+  - 評估每個特徵與目標變數之間的相關性，選擇對預測結果貢獻最大的特徵
+  - 使用模型評估特徵對預測結果的重要性，並保留對目標變數影響較大的欄位
+  - 將特徵透過降維方法（如 PCA）轉換為新特徵，再用於模型訓練
+  correct_index: 1
+  explanation: 此題涉及 特徵選擇 的核心概念。正確答案為「評估每個特徵與目標變數之間的相關性，選擇對預測結果貢獻最大的特徵」。
+- file: subjects/ai-foundation/chapter8.yaml
+  id: '11422_1'
+  text: 關於變分自編碼器（Variational Autoencoder, VAE）的運作流程，下 列何者敘述最為正確？ (114年第四梯次)
+  options:
+  - 解碼器的任務是將低維壓縮向量分類為不同類別 (Decoder's Task Is to Classify Low-Dimensional Compressed
+    Vectors into Different Categories)，屬於分類任務。
+  - 編碼器將輸入資料轉換為可視化圖像以利模型學習 (Encoder Converts Input Data to Visualizable Images for
+    Model Learning)，用於視覺化。
+  - 編碼器將資料轉換為潛在空間表示，解碼器再重建資料 (Encoder Converts Data to Latent Space Representation,
+    Decoder Reconstructs Data)
+  - 編碼器利用最大邊際機率對資料進行異常點偵測 (Encoder Uses Maximum Marginal Probability for Anomaly Detection)，屬於異常偵測。
+  correct_index: 2
+  explanation: 此題涉及 生成式 AI 原理 的核心概念。正確答案為「編碼器將資料轉換為潛在空間表示，解碼器再重建資料」。
+- file: subjects/ai-foundation/chapter8.yaml
+  id: '11426_1'
+  text: 在深度學習模型的微調（Fine-tuning）過程中，可能出現所謂的「災 難性遺忘 （Catastrophic Forgetting） 」 。 此現象最可能造成哪種情況？
+    (114年第四梯次)
+  options:
+  - 由於計算資源或訓練步驟不足，模型在微調過程中無法完整收斂， 導致學習效果受限
+  - 微調後模型的表現變得隨機，無法有效記憶新學到的模式與知識
+  - 微調後模型的部分權重產生偏移，導致模型無法針對較長的文字進 行回應
+  - 模型過度適應微調的資料分佈，逐漸遺忘先前預訓練所獲得的廣泛 知識，在原有任務或廣泛領域上表現變差
+  correct_index: 3
+  explanation: 此題涉及 LLM 技術與應用 的核心概念。正確答案為「模型過度適應微調的資料分佈，逐漸遺忘先前預訓練所獲得的廣泛 知識，在原有任務或廣泛領域上表現變差」。
+- file: subjects/ai-foundation/chapter8.yaml
+  id: 11408
+  text: 為提升生成式 AI 系統回應的語境一致性，常會結合哪類模型技術？ (114年第四梯次)
+  options:
+  - 決策樹分類器（Decision Tree Classifier），用於分類任務的樹狀模型。
+  - 條件語言模型（Conditional Language Model），根據條件生成文本的模型。
+  - 強化學習 Q-learning函數模型 (Reinforcement Learning Q-learning Function Model)，用於強化學習的價值函數。
+  - 基因演算法（Genetic Algorithm），基於生物進化的優化演算法。
+  correct_index: 1
+  explanation: 此題涉及 生成式 AI 原理 的核心概念。正確答案為「條件語言模型（Conditional Language Model）」。
+- file: subjects/ai-foundation/chapter8.yaml
+  id: '11438_1'
+  text: 某公司建置基於檢索增強生成（RAG）的知識查詢系統，需同時兼顧查 詢效能與資料的即時更新。近期發現回應內容偶爾過時，且每次更新文 件都需完整重建索引，導致系統在更新期間無法服務。若要解決此問題
+    並提升整體穩健性，下列哪項做法最適合？ (114年第四梯次)
+  options:
+  - 調整生成模型的回應隨機性參數，以降低答案偏差並提升一致性
+  - 提升檢索與索引的運算效能，以縮短查詢與更新所需時間
+  - 採用索引的增量或分段更新方式，使新資料能即時納入而不需全部 重建
+  - 建立常見問題的標準答案集，透過快速檢索回應以降低模型負擔
+  correct_index: 2
+  explanation: RAG (檢索增強生成) 結合了檢索系統與生成模型，能讓 LLM 參考外部知識庫回答問題，有效減少幻覺並確保資訊時效性。
+- file: subjects/ai-foundation/chapter8.yaml
+  id: '11450_2'
+  text: 某雲端服務公司計畫將大型語言模型部署於線上系統，並以批次推論  答案 題    目 （Batch Inference）方式處理每日上百萬筆用戶請求。專案團隊在評
+    估可能遇到的挑戰時，下列哪一項通常不會被視為批次推論階段的主 要難題？ (114年第四梯次)
+  options:
+  - 如何確保訓練語料的涵蓋性與標註品質，以避免模型偏差影響輸 出
+  - 當批次規模增大時，如何降低推論延遲並保持即時回應能力
+  - 在推論過程中，有效管理與分配龐大的輸入資料量以避免資源壅 塞
+  - 在叢集環境中精確安排推論任務，以提升GPU/TPU 等硬體資源的利 用率 《以下空白》
+  correct_index: 0
+  explanation: 此題涉及 LLM 技術與應用 的核心概念。正確答案為「如何確保訓練語料的涵蓋性與標註品質，以避免模型偏差影響輸 出」。
+- file: subjects/ai-foundation/chapter8.yaml
+  id: 115-1-12
+  text: ChatGPT、Gemini 等對話型生成式 AI 工具所依據的基礎模型技術，下列何者正確？ （115年第一梯次）
+  options:
+  - 決策樹（Decision Tree）
+  - 大型語言模型（Large Language Model, LLM）
+  - 生成對抗網路（Generative Adversarial Network, GAN）
+  - 圖卷積網路（Graph Convolutional Network, GCN）
+  correct_index: 1
+  explanation: 本題測驗相關核心概念。正確解答為「大型語言模型（Large Language Model, LLM）」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter8.yaml
+  id: 115-1-25
+  text: 在大型語言模型（LLM）的推論服務中，常透過請求批次處理（Batching）來提升系統效能。關於批次處理（Batching）機制的影響，下列敘述何者最正確？    （115年第一梯次）
+  options:
+  - 'Batching 可提升加速器資源使用效率並增加整體吞吐量（Throughput） ，但在部
+
+    分情境下可能對單筆請求延遲造成影響'
+  - Batching 主要用於加快單筆請求回應時間
+  - 'Batching 的效益主要來自降低記憶體使用量，對於吞吐量（Throughput）與延
+
+    遲表現影響有限'
+  - Batching 在低併發（Concurrency）請求下，仍能明顯提升系統效能
+  correct_index: 0
+  explanation: '本題測驗相關核心概念。正確解答為「Batching 可提升加速器資源使用效率並增加整體吞吐量（Throughput） ，但在部
+
+    分情境下可能對單筆請求延遲造成影響」，因為這最符合題幹中描述的情境與技術特性。'
+- file: subjects/ai-foundation/chapter8.yaml
+  id: 115-1-41
+  text: 在大型語言模型（LLM）的效能優化中，Flash Attention 常被用來改善 Transformer注意力機制的運算效率。關於 Flash Attention
+    的主要效益，下列敘述何者最正確？ （115年第一梯次）
+  options:
+  - '透過忽略影響較小的注意力權重，減少模型需要計算的關聯數量，以降低運算
+
+    成本'
+  - '透過調整注意力計算與資料處理方式，減少中間結果的儲存需求，進而改善速
+
+    度與資源使用效率'
+  - 透過增加注意力計算的並行程度，使模型可同時處理更多注意力頭部
+  - 透過將注意力結果暫存於高速快取記憶體，以避免重複計算造成延遲
+  correct_index: 1
+  explanation: '本題測驗相關核心概念。正確解答為「透過調整注意力計算與資料處理方式，減少中間結果的儲存需求，進而改善速
+
+    度與資源使用效率」，因為這最符合題幹中描述的情境與技術特性。'
+- file: subjects/ai-foundation/chapter3.yaml
+  id: '11448_2'
+  text: 若希望檢視某一連續型數據的分布情形 （如集中程度、偏態或是否呈現 多峰） ，下列哪一種應用情境最適合使用直方圖（Histogram） 來進行 分析？
+    (114年第四梯次)
+  options:
+  - 探討顧客年齡資料的整體分布特徵，並檢視是否存在異常集中或分 散現象
+  - 比較不同商品在各月份的銷售額變化趨勢，以觀察季節性波動
+  - 追蹤公司近一年營收的時間序列變化，以了解整體成長趨勢
+  - 檢視產品價格與月銷售量之間的關聯性，以評估是否具線性相關
+  correct_index: 0
+  explanation: 直方圖 (Histogram) 是觀察連續型數值資料分布（如年齡、收入）的最佳工具，能直觀呈現數據的集中趨勢、偏態與峰度。
+- file: subjects/ai-foundation/chapter3.yaml
+  id: '11437_1'
+  text: 某金融科技公司在利用歷史交易資料建立風險控管模型時，嘗試推估 整體詐騙交易比例。近期發現，樣本間存在明顯的時間序列相關性，導 致模型在實際偵測新交易時誤判率升高。若希望同時改善詐騙比例推
+    估的準確性並提升模型的穩健性，下列哪一種做法最為合適？ (114年第四梯次)
+  options:
+  - 擴充樣本數量，以涵蓋更多潛在的詐騙型態，但維持既有的隨機抽 樣方式不變
+  - 採取時間序列敏感的抽樣策略，例如依據交易時間區間進行分層， 以保存原始的時間結構特性
+  - 將資料完全隨機打散，以降低序列相關性對模型訓練造成的影響
+  - 在模型評估時，針對相鄰時間區段進行誤差合併，以便用整體估計 方式修正詐騙比例
+  correct_index: 1
+  explanation: 此題涉及 探索式資料分析 (EDA) 的核心概念。正確答案為「採取時間序列敏感的抽樣策略，例如依據交易時間區間進行分層， 以保存原始的時間結構特性」。
+- file: subjects/ai-foundation/chapter3.yaml
+  id: 11403
+  text: 下列哪一種圖表最適合用來呈現並分析「兩個數值型變數」之間的關 係，例如觀察身高與體重的相關性？ (114年第四梯次)
+  options:
+  - 散佈圖（Scatter Plot）
+  - 折線圖（Line Chart）
+  - 直方圖（Histogram）
+  - 長條圖（Bar Chart）
+  correct_index: 0
+  explanation: 此題涉及 數據類型與儲存 的核心概念。正確答案為「散佈圖（Scatter Plot）」。
+- file: subjects/ai-foundation/chapter3.yaml
+  id: '11445_1'
+  text: 某醫院研究團隊蒐集了大量病患的「收縮壓」數據，經檢驗後顯示此數 值大致呈現常態分布。在進行後續模型分析前，研究人員希望妥善處理 可能存在的極端血壓數值。下列哪一種做法最為合適？
+    (114年第四梯次)
+  options:
+  - 將所有極端偏高或偏低的血壓數據直接刪除，以保留最具代表性的 病患樣本
+  - 使用對數轉換（Log Transformation） ，將數據壓縮至更接近常態， 以降低極端值的影響
+  - 透過 Z 分數（Z-score）或標準差範圍檢測異常值，並依研究需求決 定是否調整或移除；  答案 題    目
+  - 將檢測到的離群值以 Label Encoding 編碼，轉換為序號標籤以避 免影響原始分布
+  correct_index: 2
+  explanation: 此題涉及 探索式資料分析 (EDA) 的核心概念。正確答案為「透過 Z 分數（Z-score）或標準差範圍檢測異常值，並依研究需求決
+    定是否調整或移除；  答案 題    目」。
+- file: subjects/ai-foundation/chapter3.yaml
+  id: 115-1-3
+  text: 下列何者不符合非監督式學習（Unsupervised Learning）的典型特徵？ （115年第一梯次）
+  options:
+  - 模型可依據資料中的特徵相似性進行自動分群
+  - 訓練過程中不需仰賴事先定義的標籤資料
+  - 常用於探索資料的潛在結構或隱含模式
+  - 模型主要學習輸入特徵與既定目標標記之間的對應關係
+  correct_index: 3
+  explanation: 本題測驗相關核心概念。正確解答為「模型主要學習輸入特徵與既定目標標記之間的對應關係」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter3.yaml
+  id: 115-1-4
+  text: 某保險公司建立 AI 理賠金額預測模型。歷史理賠資料經檢定後呈近似常態分佈，但仍存在少數極端高額案件。資料科學團隊在不破壞整體分佈特性的前提下，規劃進行離群值處理。下列何者最不適當？    （115年第一梯次）
+  options:
+  - 依統計準則（如 Z-score 或 IQR）評估後，再決定是否調整或處理極端值
+  - 採用截尾（Trimming）處理極端值，以提升模型穩定性
+  - '使用 One-hot 編碼（One-hot Encoding）將離群值轉換為類別特徵以改善數值穩
+
+    定性'
+  - 結合領域知識評估其合理性，再決定保留或修正
+  correct_index: 2
+  explanation: '本題測驗相關核心概念。正確解答為「使用 One-hot 編碼（One-hot Encoding）將離群值轉換為類別特徵以改善數值穩
+
+    定性」，因為這最符合題幹中描述的情境與技術特性。'
+- file: subjects/ai-foundation/chapter3.yaml
+  id: 115-1-5
+  text: 某銀行建立 AI 詐欺交易偵測模型。歷史交易資料中，詐欺樣本比例極低，導致模型訓練時偏向預測為「正常交易」 。資料科學團隊評估採用SMOTE（Synthetic
+    Minority Over-sampling Technique）改善訓練資料分佈。下列何者最符合 SMOTE技術的主要功能？ （115年第一梯次）
+  options:
+  - 透過隨機刪除部分正常交易資料，以降低類別失衡程度
+  - 依據少數類別樣本的特徵空間，合成產生新的少數類別樣本
+  - 調整模型的損失函數（Loss Function）權重，使誤判少數類別時的懲罰提高
+  - "以交叉驗證（Cross-validation）方式重新分割資料集，使各折資料類別比例一\n115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 \n\
+    第一科：人工智慧基礎概論 \n考試日期：115 年 03 月 21 日 \n第 2 頁，共 12 頁 \n \n答案 題目 \n致"
+  correct_index: 1
+  explanation: 本題測驗相關核心概念。正確解答為「依據少數類別樣本的特徵空間，合成產生新的少數類別樣本」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter3.yaml
+  id: 115-1-6
+  text: 資料科學團隊在模型訓練前，需對數值特徵進行正規化（Normalization）或標準化（Standardization） 。為確保模型評估結果具真實性並避免資料洩漏（Data
+    Leakage） ，下列何者為最適當的作法？ （115年第一梯次）
+  options:
+  - 於資料分割前，先對完整資料集計算統計量並進行標準化處理
+  - '先分割訓練資料（Training  Data ）和測試資料（Test Data） ，並各自獨立計算
+
+    統計量後進行標準化'
+  - '先分割訓練資料（Training Data）和測試資料（Test Data） ，僅以訓練資料計算
+
+    統計量，再套用至測試資料'
+  - '僅對訓練資料（Training Data）進行標準化處理，測試資料（Test Data）保持原
+
+    始數值'
+  correct_index: 2
+  explanation: '本題測驗相關核心概念。正確解答為「先分割訓練資料（Training Data）和測試資料（Test Data） ，僅以訓練資料計算
+
+    統計量，再套用至測試資料」，因為這最符合題幹中描述的情境與技術特性。'
+- file: subjects/ai-foundation/chapter3.yaml
+  id: 115-1-7
+  text: 某電信公司建立機器學習模型預測用戶流失風險。資料中包含多個類別型特徵（Categorical Features） ，例如「資費方案類型」與「客戶地區」
+    。為使模型能有效使用這些特徵，下列何者最直接用於將類別型特徵轉換為模型可處理的數值格式？ （115年第一梯次）
+  options:
+  - 資料分群（Data Clustering）
+  - 特徵交叉（Feature Cross）
+  - One-hot 編碼（One-hot Encoding）
+  - 寬深模型（Wide and Deep）
+  correct_index: 2
+  explanation: 本題測驗相關核心概念。正確解答為「One-hot 編碼（One-hot Encoding）」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter3.yaml
+  id: 115-1-9
+  text: 某影音串流平台建立神經網路模型，用於預測使用者最可能感興趣的影片類型。模型輸出層需將結果轉換為各類別的機率分佈，以便系統依機率高低推薦內容。下列哪一種函數最適合用於模型輸出層？    （115年第一梯次）
+  options:
+  - Softmax 函數（Softmax Function）
+  - Sigmoid 函數（Sigmoid Function）
+  - 線性函數（Linear Function）
+  - "ReLU 函數（Rectified Linear Unit Function） \n115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 \n第一科：人工智慧基礎概論\
+    \ \n考試日期：115 年 03 月 21 日 \n第 3 頁，共 12 頁 \n \n答案 題目"
+  correct_index: 0
+  explanation: 本題測驗相關核心概念。正確解答為「Softmax 函數（Softmax Function）」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter3.yaml
+  id: 115-1-11
+  text: 某企業導入生成式 AI（Generative AI）系統自動產出會議摘要，並規劃額外建置一套 AI 系統，用於評估摘要內容的正確性與完整性。下列何者為此
+    AI 系統的核心目標？ （115年第一梯次）
+  options:
+  - 自動新增專業名詞與技術指標
+  - 判斷摘要是否遺漏關鍵資訊或出現語意錯誤
+  - 調整語音轉文字結果
+  - 自動標註摘要的關鍵字與主題標籤
+  correct_index: 1
+  explanation: 本題測驗相關核心概念。正確解答為「判斷摘要是否遺漏關鍵資訊或出現語意錯誤」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter3.yaml
+  id: 115-1-14
+  text: 下列哪一項「AI 技術應用與產業領域」的對應最為恰當？ （115年第一梯次）
+  options:
+  - 利用 AI 分析商場顧客購買紀錄以預測股票市場波動—智慧交通
+  - 使用 AI 進行設備故障預測與預防性維護—智慧製造
+  - '以 AI 模型融合即時氣象資料與乘客消費行為特徵，推薦會員升級優惠方案—
+
+    智慧醫療'
+  - "利用 AI 分析社群媒體互動以提升臨床診斷準確度—金融服務業 \n115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 \n第一科：人工智慧基礎概論\
+    \ \n考試日期：115 年 03 月 21 日 \n第 4 頁，共 12 頁 \n \n答案 題目"
+  correct_index: 1
+  explanation: 本題測驗相關核心概念。正確解答為「使用 AI 進行設備故障預測與預防性維護—智慧製造」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter3.yaml
+  id: 115-1-16
+  text: 關於敘述性統計指標，下列敘述何者最為正確？ （115年第一梯次）
+  options:
+  - 中位數（Median）能有效反映極端值對資料分佈的影響
+  - 標準差（Standard Deviation）越大，代表資料越集中
+  - 百分位數（Percentile）主要用於衡量資料在整體分布中的相對位置
+  - 平均值（Mean）適合描述偏態且包含離群值（Outliers）的資料
+  correct_index: 2
+  explanation: 本題測驗相關核心概念。正確解答為「百分位數（Percentile）主要用於衡量資料在整體分布中的相對位置」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter3.yaml
+  id: 115-1-17
+  text: 某企業資料分析人員需針對不同型態的數據選擇合適的視覺化工具。下列哪一種情境最適合使用直方圖（Histogram）？ （115年第一梯次）
+  options:
+  - 檢視顧客年齡資料在不同區間的集中情形
+  - 分析產品售價與銷售量之間的關聯程度
+  - 比較各產品類別的年度銷售總額
+  - 在地圖上標示各縣市加盟店的地理分布位置
+  correct_index: 0
+  explanation: 本題測驗相關核心概念。正確解答為「檢視顧客年齡資料在不同區間的集中情形」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter3.yaml
+  id: 115-1-26
+  text: 在可解釋 AI(Explainable AI, XAI) 的分類架構中，LIME（Local Interpretable Model-agnostic
+    Explanations）屬於哪一類解釋技術？ （115年第一梯次）
+  options:
+  - 內建可解釋模型（Intrinsic Interpretability） ：模型本身具有透明的決策結構
+  - 對話式解釋系統（Conversational AI Explainer） ：透過互動對話提供模型解釋
+  - "後處理模型解釋（post-hoc） ：對已訓練模型提供外部解釋 \n"
+  - '代理模型技術（Surrogate Model） ：訓練另一個簡單模型來完全取代原黑盒模型
+
+    進行推論'
+  correct_index: 2
+  explanation: 本題測驗相關核心概念。正確解答為「後處理模型解釋（post-hoc） ：對已訓練模型提供外部解釋」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter3.yaml
+  id: 115-1-27
+  text: SHAP（SHapley Additive exPlanations）值常用於分析機器學習模型的輸出行為。下列何者最符合 SHAP 值所提供的資訊？    （115年第一梯次）
+  options:
+  - 模型在訓練過程中，各特徵對損失函數收斂速度的影響程度
+  - 依據特徵對模型整體準確率的影響，自動篩除低重要性變數
+  - 在單一預測結果中，各輸入特徵對最終輸出所產生的貢獻分配
+  - 透過調整特徵權重，使模型在推論階段降低計算複雜度
+  correct_index: 2
+  explanation: 本題測驗相關核心概念。正確解答為「在單一預測結果中，各輸入特徵對最終輸出所產生的貢獻分配」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter3.yaml
+  id: 115-1-29
+  text: 在深度學習模型的分析與驗證過程中，研究人員有時會利用「顯著性圖（Saliency Map） 」來輔助理解模型行為。下列何者最符合此技術的主要用途？    （115年第一梯次）
+  options:
+  - 量化各輸入特徵對模型整體預測準確度的平均影響程度
+  - 標示輸入資料中對單一預測結果影響較大的區域或部分
+  - 評估在不同模型參數設定下，預測結果的穩定性變化
+  - 比較不同模型架構在測試資料上的泛化能力差異
+  correct_index: 1
+  explanation: 本題測驗相關核心概念。正確解答為「標示輸入資料中對單一預測結果影響較大的區域或部分」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter3.yaml
+  id: 115-1-31
+  text: 某農場收集了大量作物葉片影像，但只有 30%的影像有病害類別標註，其餘 70%的影像沒有任何標籤。農場希望充分利用所有資料來訓練病害識別模型。這種情況最適合使用哪一種學習方法？    （115年第一梯次）
+  options:
+  - 半監督式學習（Semi-supervised Learning）
+  - 監督式學習（Supervised Learning）
+  - 非監督式學習（Unsupervised Learning）
+  - 強化式學習（Reinforcement Learning）
+  correct_index: 0
+  explanation: 本題測驗相關核心概念。正確解答為「半監督式學習（Semi-supervised Learning）」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter3.yaml
+  id: 115-1-35
+  text: 某市政府規劃釋出市民用電資料供學術研究使用，資料內容包含用電紀錄與部分人口統計欄位。考量資料可能涉及可識別個人之資訊，且須符合個人資料保護相關規範，下列哪一種資料處理方式最為適當？    （115年第一梯次）
+  options:
+  - 提供完整資料集並透過合約約定研究用途與保密責任
+  - 僅保留用電數值資料，移除所有其他欄位以避免識別風險
+  - 對具識別風險的資料欄位進行轉換處理，並移除直接識別資訊
+  - 僅將資料加密後提供，確保資料在傳輸過程中的安全性
+  correct_index: 2
+  explanation: 本題測驗相關核心概念。正確解答為「對具識別風險的資料欄位進行轉換處理，並移除直接識別資訊」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter3.yaml
+  id: 115-1-38
+  text: 某果園管理公司計畫導入 AI 系統協助農民判斷蘋果成熟度，透過分析果實特徵資訊，評估成熟狀態並自動判斷採收時機。根據 AI 應用領域的分類，這個系統主要屬於哪一個應用領域？    （115年第一梯次）
+  options:
+  - 自然語言處理（Natural Language Processing）
+  - 電腦視覺（Computer Vision）
+  - 語音識別（Speech Recognition）
+  - 推薦系統（Recommendation System）
+  correct_index: 1
+  explanation: 本題測驗相關核心概念。正確解答為「電腦視覺（Computer Vision）」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter3.yaml
+  id: 115-1-39
+  text: 某企業評估於不同業務場景導入機器學習技術。下列哪一項應用情境與機器學習類型的搭配最為適當？ （115年第一梯次）
+  options:
+  - '在醫療影像分析中，同時運用少量已標註資料與大量未標註影像進行模型訓練
+
+    —監督式學習（Supervised Learning）'
+  - '在智慧推薦系統中，利用顧客是否點擊的歷史標籤資料預測未來偏好—非監督
+
+    式學習（Unsupervised Learning）'
+  - '在詐欺交易分析中，模型透過錯誤判斷所產生的損失作為回饋訊號，持續調整
+
+    策略—監督式學習（Supervised Learning）'
+  - '在股價資料分析中，將歷史價格變動模式劃分為若干趨勢型態，且未使用人工
+
+    標註—非監督式學習（Unsupervised Learning）'
+  correct_index: 3
+  explanation: '本題測驗相關核心概念。正確解答為「在股價資料分析中，將歷史價格變動模式劃分為若干趨勢型態，且未使用人工
+
+    標註—非監督式學習（Unsupervised Learning）」，因為這最符合題幹中描述的情境與技術特性。'
+- file: subjects/ai-foundation/chapter3.yaml
+  id: 115-1-43
+  text: 關於機器學習不同的學習模式，下列敘述何者錯誤？ 1. 監督式學習（Supervised Learning）透過已標註資料學習輸入與目標之間的對應關係，常見任務包含分類與數值預測。
+    2. 非監督式學習（Unsupervised Learning）雖不需標註資料，但通常需預先定義每筆資料的正確輸出類別以利模型收斂。 3. 半監督式學習（Semi-supervised
+    Learning）在訓練過程中僅利用未標註資料進行特徵學習，並不涉及標註資料。 4. 自監督式學習（Self-supervised Learning）的訓練方式與監督式學習相同，皆需人工逐筆提供標註資料。
+    5. 強化式學習（Reinforcement Learning）透過與環境互動並依據回饋訊號調整策略，以優化決策行為。 6. 自監督式學習（Self-supervised
+    Learning）通常利用資料本身產生訓練目標，以降低對人工標註資料的依賴。 （115年第一梯次）
+  options:
+  - 2、3、6
+  - 2、4、5
+  - 1、3、6
+  - "2、3、4 \n115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 \n第一科：人工智慧基礎概論 \n考試日期：115 年 03 月 21 日\
+    \ \n第 11 頁，共 12 頁 \n \n答案 題目"
+  correct_index: 3
+  explanation: "本題測驗相關核心概念。正確解答為「2、3、4 \n115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 \n第一科：人工智慧基礎概論\
+    \ \n考試日期：115 年 03 月 21 日 \n第 11 頁，共 12 頁 \n \n答案 題目」，因為這最符合題幹中描述的情境與技術特性。"
+- file: subjects/ai-foundation/chapter3.yaml
+  id: 115-1-44
+  text: 某零售業者建立顧客行為預測模型，資料集中包含「年消費金額」 、 「平均單筆交易金額」及「會員年資」等數值型特徵。資料分析顯示，部分金額特徵呈現高度偏態分布，少數樣本的數值顯著高於多數觀測值。為降低極端值對模型學習穩定性的影響，下列哪一種特徵工程方法最適合？    （115年第一梯次）
+  options:
+  - 對數轉換（Log Transformation）
+  - 區間化（Binning）
+  - One-hot 編碼（One-hot Encoding）
+  - 隨機重抽樣（Random Resampling）
+  correct_index: 0
+  explanation: 本題測驗相關核心概念。正確解答為「對數轉換（Log Transformation）」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter3.yaml
+  id: 115-1-46
+  text: 某市政府建置城市治理資料平台，需整合交通車流偵測資料、路口監視器影像，以及民眾透過陳情系統提交的文字通報。由於各類資料格式、儲存方式與資料型態差異甚大，導致資料清理與整合成本顯著增加。就大數據特性而言，此專案最主要面臨下列哪一項挑戰？    （115年第一梯次）
+  options:
+  - V olume
+  - Velocity
+  - Variety
+  - Veracity
+  correct_index: 2
+  explanation: 本題測驗相關核心概念。正確解答為「Variety」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter3.yaml
+  id: 115-1-47
+  text: 某企業規劃導入 AI 技術支援多項資料分析任務中，下列何種屬於結構化預測（Structured Prediction）問題？ （115年第一梯次）
+  options:
+  - 判斷一封電子郵件是否為垃圾郵件
+  - 預測未來一週的產品需求量
+  - 預測客戶是否可能流失
+  - 為語音內容轉換後的文字進行逐詞標註
+  correct_index: 3
+  explanation: 本題測驗相關核心概念。正確解答為「為語音內容轉換後的文字進行逐詞標註」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter2.yaml
+  id: 11413
+  text: 下列哪一項應用情境與機器學習類型搭配正確？ (114年第四梯次)
+  options:
+  - 在醫療影像資料中，僅有少部分影像有專家標註診斷，其餘大多數 影像未標註，研究者結合已標註與未標註資料來建立模型  — 監督式 學習（Supervised Learning）
+  - 在自駕車模擬環境中，模型透過試駕獲得「是否安全通過路口」的 獎勵或懲罰訊號，逐步調整決策策略 — 非監督式學習 （Unsupervised Learning）
+  - 在顧客購買紀錄中，利用已知的「顧客是否流失」標籤，訓練模型 以預測新顧客未來是否會流失  — 強化式學習（ Reinforcement Learning）
+  - 在股票市場資料中，輸入歷史股價序列，嘗試將未來可能走勢劃分 成若干「上升型、盤整型、下降型」群組，無需使用任何標籤 — 非監 督式學習（Unsupervised
+    Learning）
+  correct_index: 3
+  explanation: 此題涉及 機器學習範式 的核心概念。正確答案為「在股票市場資料中，輸入歷史股價序列，嘗試將未來可能走勢劃分 成若干「上升型、盤整型、下降型」群組，無需使用任何標籤
+    — 非監 督式學習（Unsupervised Learning）」。
+- file: subjects/ai-foundation/chapter2.yaml
+  id: 11414
+  text: 某企業分析團隊正在處理一組近兩年的營運與銷售數據，共有四個部 門提出了各自的分析需求，請判斷哪一個最接近「預測性分析 （Predictive Analysis）
+    」的特性？ (114年第四梯次)
+  options:
+  - 視覺化所有產品線過去月銷售走勢與標準差，觀察其分佈情況與波 動程度
+  - 藉由資料比對分析，找出去年母親節促銷失效的地區與品類組合
+  - 建構模型推算下一季的主力商品銷量，以規劃備貨與倉儲資源配 置
+  - 透過熱圖分析廣告投放成本與訂單轉換率之間的潛在關聯性
+  correct_index: 2
+  explanation: 此題涉及 數據分析層次 的核心概念。正確答案為「建構模型推算下一季的主力商品銷量，以規劃備貨與倉儲資源配 置」。
+- file: subjects/ai-foundation/chapter2.yaml
+  id: 11411
+  text: 下列哪一類問題最適合使用非監督式學習（Unsupervised Learning） 來處理？ (114年第四梯次)
+  options:
+  - 根據已標記的醫療影像訓練模型診斷疾病
+  - 根據使用者行為將用戶分群，以優化行銷策略
+  - 透過已知交通事故記錄預測未來事故發生機率
+  - 根據歷史股價預測未來股市的走勢  答案 題    目
+  correct_index: 1
+  explanation: 此題涉及 機器學習範式 的核心概念。正確答案為「根據使用者行為將用戶分群，以優化行銷策略」。
+- file: subjects/ai-foundation/chapter1.yaml
+  id: 11401
+  text: 在人工智慧系統的決策流程中，下列哪一種情境最符合「人在迴圈上 （Human-over-the-loop）」所強調的監督機制？ (114年第四梯次)
+  options:
+  - AI 系統只能提供建議，人類需主動下達命令才能進行決策 (AI Only Provides Suggestions, Human Must Actively
+    Command)，AI 僅為輔助工具。
+  - 人類對 AI 的運行進行日常監督，必要時可立即介入修正或干預 (Daily Supervision with Immediate Intervention
+    Capability)
+  - 人類平時不參與 AI 的運作，僅在發生異常或重大錯誤時才接手控制 (No Regular Participation, Only Intervening in
+    Anomalies)，屬於被動監控模式。
+  - AI 的所有判斷與行動在執行前，皆須經過人類逐一審核與批准 (All Decisions Require Human Review and Approval)，屬於嚴格審核模式。
+  correct_index: 1
+  explanation: Human-in-the-loop (HITL) 強調在 AI 系統中保留人類的監督與介入，特別是在高風險決策或模型信心不足時。
+- file: subjects/ai-foundation/chapter1.yaml
+  id: 115-1-1
+  text: 下列何者不屬於資料整合（Data Integration）的主要目的？ （115年第一梯次）
+  options:
+  - 統一不同來源資料的格式與欄位定義，以確保分析一致性
+  - 識別並處理重複資料，避免影響模型訓練結果
+  - 整併多來源資料，以提升資料完整性與應用價值
+  - 依資料保存政策延長原始資料留存期限，以利未來可能的分析需求
+  correct_index: 3
+  explanation: 本題測驗相關核心概念。正確解答為「依資料保存政策延長原始資料留存期限，以利未來可能的分析需求」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter1.yaml
+  id: 115-1-2
+  text: 某智慧城市專案導入 AI 技術，以優化垃圾收集路線調度並即時監測空氣品質變化。系統需持續蒐集環境數據（如 PM2.5、氣體濃度）與設備狀態（如垃圾桶滿溢度）
+    。下列何種技術最直接支援上述需求？     （115年第一梯次）
+  options:
+  - 專家系統（Expert System）
+  - 決策支援系統（Decision Support System）
+  - 啟發式決策引擎（Heuristic Decision Engine）
+  - 感知器網路（Sensor Network）
+  correct_index: 3
+  explanation: 本題測驗相關核心概念。正確解答為「感知器網路（Sensor Network）」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter1.yaml
+  id: 115-1-13
+  text: 根據《金融機構運用人工智慧技術作業規範》 ，金融機構於使用人工智慧提供金融服務並直接與消費者互動時，下列何者非必要揭露之資訊？ （115年第一梯次）
+  options:
+  - 該服務之 AI 模型原始程式碼
+  - 服務適用對象與用途範圍
+  - 該服務是否為 AI 自動完成
+  - 該服務是否提供替代方案
+  correct_index: 0
+  explanation: 本題測驗相關核心概念。正確解答為「該服務之 AI 模型原始程式碼」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter1.yaml
+  id: 115-1-15
+  text: 在資料處理中，下列何者屬於「結構化數據」的例子？ （115年第一梯次）
+  options:
+  - 儲存在 MySQL 資料庫中的訂單記錄
+  - 以 JSON 格式儲存的商品訂單資訊
+  - 用 XML 標註的產品目錄
+  - 儲存在純文字檔案中的客服對話紀錄
+  correct_index: 0
+  explanation: 本題測驗相關核心概念。正確解答為「儲存在 MySQL 資料庫中的訂單記錄」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter1.yaml
+  id: 115-1-18
+  text: 某電商平台工程師需在已排序的價格清單中，快速定位指定價格是否存在，給定排序後陣列：arr = [3, 8, 14, 19, 21, 27, 33,
+    45, 52]。若搜尋目標值為 27，且採用標準二分搜尋（Binary Search）流程（每次比較後排除中位數） ，請問最多需要比較幾次即可找到目標？ （115年第一梯次）
+  options:
+  - 2 次
+  - 3 次
+  - 4 次
+  - 5 次
+  correct_index: 1
+  explanation: 本題測驗相關核心概念。正確解答為「3 次」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter1.yaml
+  id: 115-1-28
+  text: 在金融業導入 AI 模型與可解釋性技術時，反事實解釋（Counterfactual 115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 第一科：人工智慧基礎概論
+    考試日期：115 年 03 月 21 日 第 7 頁，共 12 頁  答案 題目 Explanation）最符合下列哪一種應用？ （115年第一梯次）
+  options:
+  - 分析整體客戶群的信用風險分布，以預測未來違約率趨勢
+  - 回溯歷史呆帳案例，辨識造成違約的主要影響因素
+  - 分析在模型不變的前提下，客戶申請資料變動對授信決策結果的影響
+  - 依據客戶輪廓與行為資料，推薦最適合的金融商品以提升交叉銷售
+  correct_index: 2
+  explanation: 本題測驗相關核心概念。正確解答為「分析在模型不變的前提下，客戶申請資料變動對授信決策結果的影響」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter1.yaml
+  id: 115-1-42
+  text: 某企業建置基於檢索增強生成（RAG）的法遵知識輔助系統，用於整合法規條文、內控制度與歷史函釋文件。系統運行後發現，每當法規更新或新增解釋文件時，需重新建立完整索引，導致更新期間系統暫停服務，且部分回應偶有引用舊版內容的情形。若希望在兼顧查詢效率的同時提升知識更新彈性與系統穩定性，下列何者最適合？    （115年第一梯次）
+  options:
+  - 提升模型推論資源配置，以維持高流量查詢時的回應效能
+  - 調整語言模型的輸出限制機制，以降低生成內容與法規不一致的風險
+  - 建立固定法規問答對照表，以規則化方式優先回應常見問題
+  - 導入可支援增量更新的索引管理方式，使異動文件可即時反映於檢索結果
+  correct_index: 3
+  explanation: 本題測驗相關核心概念。正確解答為「導入可支援增量更新的索引管理方式，使異動文件可即時反映於檢索結果」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter1.yaml
+  id: 115-1-49
+  text: 某 AI 科技公司在工業缺陷檢測領域已有成熟的辨識產品經驗。現欲與新客戶合作開發一項類似產品的表面瑕疵檢測系統，但因新產品量產不久，標註樣本極為稀少且專家標註成本高昂。在不大幅增加標註預算的前提下，下列哪一種做法最能利用該公司既有的技術優勢來提升模型表現？（115年第一梯次）
+  options:
+  - 增加模型參數規模，使模型具備更強表達能力
+  - 透過資料增強（Data Augmentation）擴展影像變化，以提升模型穩定性
+  - 重新蒐集大量影像並進行完整人工標註
+  - 採用遷移學習（Transfer Learning） ，利用既有預訓練模型進行調整
+  correct_index: 3
+  explanation: 本題測驗相關核心概念。正確解答為「採用遷移學習（Transfer Learning） ，利用既有預訓練模型進行調整」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter10.yaml
+  id: '11429_2'
+  text: 在「可解釋人工智慧（Explainable AI, XAI） 」領域中，LIME（Local Interpretable Model-agnostic
+    Explanations）方法最核心的應用目 的是什麼？ (114年第四梯次)
+  options:
+  - 解釋單一樣本（局部預測）的黑箱模型決策過程
+  - 全面提升黑箱模型整體的預測準確度
+  - 將黑箱模型轉換成完全可解釋的模型作為替代
+  - 用於生成大量擬真數據來替代訓練集
+  correct_index: 0
+  explanation: LIME 與 SHAP 是常見的 XAI 工具。LIME 提供局部解釋，SHAP 則基於博弈論計算特徵的邊際貢獻。
+- file: subjects/ai-foundation/chapter10.yaml
+  id: '11431_2'
+  text: 在金融科技公司的信貸決策系統中，導入反事實解釋 （Counterfactual Explanation）時，實際部署往往伴隨技術與監管挑戰。下列哪一項最
+    符合該情境下的核心挑戰？ (114年第四梯次)
+  options:
+  - 需要建立完整的客戶行為預測模型來估算建議改變的實施成本，並 整合到現有的風險管理系統架構中
+  - 必須使用聯邦學習技術保護客戶隱私，同時在分散式環境中計算跨 機構的反事實解釋結果
+  - 需要建構時間序列因果圖來處理客戶信用狀況的動態變化，並預測 未來可能的信用評分軌跡
+  - 生成的反事實樣本必須滿足特徵間的因果約束和業務邏輯約束，同 時確保建議的改變在現實中具有可操作性且符合公平放貸法規
+  correct_index: 3
+  explanation: 此題涉及 解釋技術與工具 的核心概念。正確答案為「生成的反事實樣本必須滿足特徵間的因果約束和業務邏輯約束，同 時確保建議的改變在現實中具有可操作性且符合公平放貸法規」。
+- file: subjects/ai-foundation/chapter10.yaml
+  id: '11430_2'
+  text: 在醫療診斷決策支援系統等高風險領域中， 「可解釋人工智慧 （Explainable AI, XAI） 」的核心價值最主要呈現在哪個面向？ (114年第四梯次)
+  options:
+  - 透過提供可理解的決策依據，促進患者與醫療專業人員對系統診斷 結果的信任與接受度
+  - 以可解釋性方法優化臨床資料蒐集與管理流程，從而降低整體醫療 作業成本
+  - 利用解釋機制增強模型預測的統計顯著性與準確度，使其在研究及 實務應用中更具科學性
+  - 透過提供透明化的運作過程，進而減輕臨床人員負擔，並提升醫療 服務的整體效率
+  correct_index: 0
+  explanation: 此題涉及 XAI 層次與方法 的核心概念。正確答案為「透過提供可理解的決策依據，促進患者與醫療專業人員對系統診斷 結果的信任與接受度」。
+- file: subjects/ai-foundation/chapter10.yaml
+  id: 115-1-23
+  text: 在 AI 推論服務架構設計中， 「批次推論（Batch Inference） 」與「即時推論（Real-time Inference） 」常依任務特性選擇不同機制。下列關於兩者特性的敘述何者最正確？    （115年第一梯次）
+  options:
+  - '批次推論通常以同步請求方式回傳結果，以確保資料一致性；即時推論則多採
+
+    非同步機制以提升系統吞吐量（Throughput）'
+  - '批次推論多用於延遲容忍度較高的大規模資料處理，通常以吞吐量
+
+    （Throughput）最佳化為優先；即時推論則著重於請求回應時間的穩定性與低延遲
+
+    特性'
+  - '批次推論因計算資源需求高，僅適用於影像類模型；即時推論則主要應用於結
+
+    構化資料模型'
+  - "即時推論為確保回應速度，通常限制為單筆資料輸入；批次推論則可支援同步\n多筆資料即時回傳 \n115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】\
+    \ \n第一科：人工智慧基礎概論 \n考試日期：115 年 03 月 21 日 \n第 6 頁，共 12 頁 \n \n答案 題目"
+  correct_index: 1
+  explanation: '本題測驗相關核心概念。正確解答為「批次推論多用於延遲容忍度較高的大規模資料處理，通常以吞吐量
+
+    （Throughput）最佳化為優先；即時推論則著重於請求回應時間的穩定性與低延遲
+
+    特性」，因為這最符合題幹中描述的情境與技術特性。'
+- file: subjects/ai-foundation/chapter10.yaml
+  id: 115-1-34
+  text: 某保險公司每月處理約 50 萬筆理賠申請，希望建立 AI 系統自動識別可疑的詐欺案件。由於公司內部缺乏 AI 專業人員，且需要快速上線驗證效果，IT
+    資訊主管正在評估不同的 AI 平台解決方案。在去識別化個人隱私資料後，下列哪一種平台類型最適合該公司的需求？ （115年第一梯次）
+  options:
+  - 從零開始建立深度學習框架並自行訓練模型
+  - 採用開源機器學習框架進行客製化模型開發
+  - 使用雲端 AutoML 平台進行自動化模型訓練
+  - 購買現成的詐欺偵測軟體套件直接部署
+  correct_index: 2
+  explanation: 本題測驗相關核心概念。正確解答為「使用雲端 AutoML 平台進行自動化模型訓練」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter10.yaml
+  id: 115-1-37
+  text: 某紡織製造公司導入 AI 系統進行布料瑕疵檢測，每天需處理來自 30 條產線的影115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 第一科：人工智慧基礎概論
+    考試日期：115 年 03 月 21 日 第 9 頁，共 12 頁  答案 題目 像資料，包括高解析度照片、感測器數值、生產參數記錄等多種格式。該公司收集的資料量從每日
+    2GB 增長至 50GB，且需在布料離開產線前的 3 秒內完成瑕疵判定。近期團隊發現系統在尖峰時段容易出現判定延遲，影響製程節奏。若要優先改善此問題，下列哪一種做法最適合？    （115年第一梯次）
+  options:
+  - 擴充資料儲存容量，以因應長期資料累積需求
+  - 強化即時資料處理與推論計算資源配置，以降低延遲風險
+  - 調整資料格式標準，以降低跨來源整合複雜度
+  - 增加資料驗證與清理機制，以提升資料品質穩定性
+  correct_index: 1
+  explanation: 本題測驗相關核心概念。正確解答為「強化即時資料處理與推論計算資源配置，以降低延遲風險」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter11.yaml
+  id: '11410_1'
+  text: 根據《金融機構運用人工智慧技術作業規範》 ，金融機構須建立內部治 理架構，並指定專責單位或人員負責推動及管理人工智慧事務，下列何 者並非規範所明訂須落實的治理措施？
+    (114年第四梯次)
+  options:
+  - 辦理人工智慧人才培育 (Conducting AI Talent Training)，培養 AI 專業人才。
+  - 清楚了解生成式 AI 技術之運作模式 (Clearly Understanding Operation Mode of Generative AI Technology)，理解技術運作原理。
+  - 每日公布人工智慧系統運作狀況 (Daily Publication of AI System Operation Status)，每日公開系統狀態。
+  - 指派高階主管或委員會進行監督管理 (Assigning Senior Executives or Committee for Supervision and
+    Management)，建立監督機制。
+  correct_index: 2
+  explanation: 金融機構運用 AI 需遵循嚴格的治理規範，包括建立專責單位、風險評估、模型監控與消費者權益保護。
+- file: subjects/ai-foundation/chapter11.yaml
+  id: '11409_1'
+  text: 根據 2025 年 9 月行政院通過之《人工智慧基本法》草案，政府推動人 工智慧之「創新實驗環境」制度，主要參考歐盟的何種制度？ (114年第四梯次)
+  options:
+  - Data Protection Impact Assessment (資料保護影響評估)，評估資料保護的影響。
+  - Regulatory Sandbox (監理沙盒)，提供創新實驗環境的制度。
+  - AI Trust Label (AI 信任標章)，AI 產品的認證標章。
+  - AI Ethics Review Board (AI 倫理審查委員會)，倫理審查的組織。
+  correct_index: 1
+  explanation: 此題涉及 AI 法規與標準 的核心概念。正確答案為「Regulatory Sandbox」。
+- file: subjects/ai-foundation/chapter11.yaml
+  id: '11425_2'
+  text: 在自然語言處理任務中，為了減少訓練語料中偏見對模型的影響，下列  答案 題    目 哪種資料處理策略屬於常見的「資料去偏（Data Debiasing）
+    」做法？ (114年第四梯次)
+  options:
+  - 讓模型在訓練時隨機替換輸出，以抵消資料中存在的系統性偏差 (Randomly Replacing Outputs During Training to Offset
+    Systematic Bias in Data)，隨機替換輸出。
+  - 增加模型的參數量，依賴更大的模型自動消除原始資料中的偏見 (Increasing Model Parameters, Relying on Larger Models
+    to Automatically Eliminate Bias in Original Data)，擴大模型規模。
+  - 調整或擴充訓練語料，使不同群體或類型資料的比例更加平衡，避 免模型過度偏向出現頻率高的類別 (Adjusting or Expanding Training
+    Corpus to Balance Proportions of Different Groups or Types, Avoiding Model Over-Biasing
+    Toward High-Frequency Categories)
+  - 對訓練資料施加額外正則化或噪音，使模型在學習過程中對偏見敏 感度降低 (Applying Additional Regularization or Noise
+    to Training Data, Reducing Model Sensitivity to Bias During Learning)，加入正則化或噪音。
+  correct_index: 2
+  explanation: 演算法偏見通常源自訓練數據的偏差。若數據本身包含歷史歧視，模型便會學習並放大這些偏見。
+- file: subjects/ai-foundation/chapter11.yaml
+  id: '11442_1'
+  text: 一家跨國醫療研究機構希望利用各地醫院的病患資料，建立一個能夠 預測疾病早期風險的機器學習模型。由於各國法規限制，病患的原始資  答案 題    目
+    料無法集中到單一伺服器。在此情境下，下列哪一種方法最能同時滿足 「各醫院保留資料不外流」與「模型仍能跨院學習」的需求？ (114年第四梯次)
+  options:
+  - 資料匿名化（Data Anonymization）(Data Anonymization)，移除個人識別資訊。
+  - 差分隱私（Differential Privacy）(Differential Privacy)，加入雜訊保護隱私。
+  - 聯邦學習（Federated Learning）(Federated Learning)，資料不離地的分散式學習。
+  - 交叉驗證（Cross-validation）(Cross-Validation)，模型驗證的方法。
+  correct_index: 2
+  explanation: 此題涉及 AI 法規與標準 的核心概念。正確答案為「聯邦學習（Federated Learning）」。
+- file: subjects/ai-foundation/chapter11.yaml
+  id: '11423_2'
+  text: 下列何者不是我國數位發展部 AI 產品與系統評測中心對生成式 AI 的 評測項目? (114年第四梯次)
+  options:
+  - 當責性 (Accountability)，責任歸屬的明確性。
+  - 可靠性 (Reliability)，系統的可靠程度。
+  - 隱私及資安 (Privacy and Information Security)，隱私與資訊安全。
+  - 互動性 (Interactivity)，使用者互動的能力。
+  correct_index: 3
+  explanation: 此題涉及 AI 產品評估標準 的核心概念。正確答案為「互動性」。
+- file: subjects/ai-foundation/chapter11.yaml
+  id: '11405_1'
+  text: 在機器學習中， 「偏差與變異權衡（Bias-Variance Tradeoff） 」主要用 來解決下列哪一類型的問題？ (114年第四梯次)
+  options:
+  - 因資料來源或收集方式限制，導致模型學習到的資訊不足 (Insufficient Information Learned Due to Data Source
+    or Collection Method Limitations)，資料不足的問題。
+  - 測試資料樣本與訓練資料高度重複，造成模型泛化能力評估失準 (High Overlap Between Test and Training Data, Causing
+    Inaccurate Generalization Assessment)，資料重複的問題。
+  - 訓練資料中類別分布不均，使模型在少數類別上表現不佳 (Uneven Class Distribution in Training Data, Causing
+    Poor Performance on Minority Classes)，類別不平衡的問題。
+  - 如何在模型偏差與變異之間取得平衡，以避免過度擬合或欠擬合 (How to Balance Model Bias and Variance to Avoid
+    Overfitting or Underfitting)
+  correct_index: 3
+  explanation: 演算法偏見通常源自訓練數據的偏差。若數據本身包含歷史歧視，模型便會學習並放大這些偏見。
+- file: subjects/ai-foundation/chapter11.yaml
+  id: '11449_4'
+  text: 下列何者並非我國數位發展部 AI 產品與評測中心在評估大型語言模 型安全性時，所指出的常見使用指標？ (114年第四梯次)
+  options:
+  - 資料複雜性 (Data Complexity)，資料本身的複雜程度。
+  - 事實正確性 (Factual Correctness)，輸出內容的正確性。
+  - 偏見與歧視 (Bias and Discrimination)，模型中的偏見問題。
+  - 惡意與濫用可能性 (Malicious Use and Abuse Potential)，被惡意使用的風險。
+  correct_index: 0
+  explanation: 此題涉及 AI 產品評估標準 的核心概念。正確答案為「資料複雜性」。
+- file: subjects/ai-foundation/chapter7.yaml
+  id: '11416_2'
+  text: 某團隊想採用循環神經網路（Recurrent Neural Network, RNN）建構 長期氣候數據的預測模型，以下哪一項敘述最符合使用 RNN
+    可能會遇 到的挑戰？ (114年第四梯次)
+  options:
+  - RNN 無法處理可變長度的序列輸入，因此在實務上限制極大
+  - RNN 在長序列訓練中可能出現梯度消失，影響模型效果
+  - RNN 無法捕捉時間上的依賴關係，因此預測準確度低
+  - RNN 只能用於分類任務，不能應用於時間序列預測
+  correct_index: 1
+  explanation: RNN 適合處理時間序列數據，但存在梯度消失問題。LSTM 透過門控機制（遺忘門、輸入門、輸出門）有效解決了此問題，能記憶長期資訊。
+- file: subjects/ai-foundation/chapter7.yaml
+  id: '11447_3'
+  text: 在訓練神經網路時，為了提升模型收斂速度與穩定性，避免梯度消失或 梯度爆炸，下列哪一種做法最常被使用？ (114年第四梯次)
+  options:
+  - 對輸入資料進行隨機旋轉或水平翻轉，以增加資料多樣性
+  - 選用 ReLU 或其變體作為隱藏層的啟動函數，以改善梯度傳播
+  - 減少樣本量提升訓練速度
+  - 對目標變數或特徵進行標準化
+  correct_index: 1
+  explanation: 此題涉及 神經網路基礎 的核心概念。正確答案為「選用 ReLU 或其變體作為隱藏層的啟動函數，以改善梯度傳播」。
+- file: subjects/ai-foundation/chapter7.yaml
+  id: '11424_2'
+  text: 在保持 GPT-OSS 模型架構不變的前提下，如果將模型參數量從20 億提 升至 120 億，並假設有足夠的訓練資料支撐，下列敘述何者最正確？ (114年第四梯次)
+  options:
+  - 模型參數增加會線性提升效能，且即使訓練資料不變也不會遇到瓶 頸
+  - 參數越多模型推理越快，因為每層可以並行計算更多參數
+  - 較大的參數量能提升模型的表達能力與預測效能，但需足夠訓練資 料支持
+  - 增加參數量不影響記憶體使用，只會影響計算速度
+  correct_index: 2
+  explanation: 此題涉及 Transformer 與自注意力機制 的核心概念。正確答案為「較大的參數量能提升模型的表達能力與預測效能，但需足夠訓練資
+    料支持」。
+- file: subjects/ai-foundation/chapter7.yaml
+  id: '11427_2'
+  text: 在大型 Transformer 模型的效能優化過程中，常見的方法之一是「剪 枝（Pruning） 」 。下列哪一項最符合該方法的核心概念？ (114年第四梯次)
+  options:
+  - 將模型中所有權重按比例縮小，使其值更接近零，以降低計算量
+  - 移除模型中影響較小或冗餘的部分權重參數，以減少模型大小並提 升推理效率
+  - 在訓練時僅更新部分權重而將其他權重凍結，從而減少需要調整的 參數數量
+  - 根據注意力分數動態跳過處理部分輸入 Token，以減少每次前向傳 播的計算
+  correct_index: 1
+  explanation: Transformer 架構的核心是 Self-Attention 機制，它能平行處理序列數據並捕捉長距離依賴，解決了 RNN 無法平行化且易遺忘的問題。
+- file: subjects/ai-foundation/chapter7.yaml
+  id: '11428_2'
+  text: 對非常長的輸入序列進行推理（Inference），Transformer 模型推理的 主要計算瓶頸通常是什麼？ (114年第四梯次)
+  options:
+  - 模型輸出層產生文本的過程，因為每生成一個詞都必須重新訓練整 個模型一次
+  - 詞嵌入 (Embedding) 查找操作，因為其時間複雜度隨詞彙表大小 指數級增長
+  - Softmax 函數的計算，因為對每個 Token 都需要執行繁重的運算
+  - 自注意力層的計算和其記憶體使用，因為注意力矩陣的大小隨序列 長度呈平方級增長  答案 題    目
+  correct_index: 3
+  explanation: Transformer 架構的核心是 Self-Attention 機制，它能平行處理序列數據並捕捉長距離依賴，解決了 RNN 無法平行化且易遺忘的問題。
+- file: subjects/ai-foundation/chapter7.yaml
+  id: 115-1-33
+  text: 某公車系統想預測各站點的到站時間，需要考慮歷史班次資料、即時路況、天氣115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 第一科：人工智慧基礎概論
+    考試日期：115 年 03 月 21 日 第 8 頁，共 12 頁  答案 題目 等因素。由於路況變化複雜，傳統循環神經網路（Recurrent Neural
+    Network, RNN）在建模時可能難以保留較早期的重要資訊。下列哪種架構最能解決這個問題？ （115年第一梯次）
+  options:
+  - '卷積神經網路（Convolutional Neural Network, CNN） ，利用卷積層捕捉局部特
+
+    徵'
+  - 自編碼器（Autoencoder, AE） ，先進行資料壓縮再重建
+  - 全連接神經網路（Fully Connected Neural Network, FCNN） ，增加隱藏層數量
+  - '長短期記憶網路（Long Short-Term Memory, LSTM） ，改善RNN 的長期記憶問
+
+    題'
+  correct_index: 3
+  explanation: '本題測驗相關核心概念。正確解答為「長短期記憶網路（Long Short-Term Memory, LSTM） ，改善RNN 的長期記憶問
+
+    題」，因為這最符合題幹中描述的情境與技術特性。'
+- file: subjects/ai-foundation/chapter7.yaml
+  id: 115-1-45
+  text: 某團隊訓練深層神經網路模型時，發現訓練誤差長時間幾乎未下降，模型參數更新幅度極小，呈現學習停滯現象。若研判問題與梯度傳遞效率有關，下列何者最適合的改善策略？    （115年第一梯次）
+  options:
+  - 延長模型訓練時間，使模型有更多機會調整參數
+  - 增加訓練樣本數量，以提升模型學習能力
+  - 調整模型中的啟動函數設定，以改善訓練過程的穩定性
+  - 簡化模型結構，以降低模型過度擬合的可能性
+  correct_index: 2
+  explanation: 本題測驗相關核心概念。正確解答為「調整模型中的啟動函數設定，以改善訓練過程的穩定性」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter7.yaml
+  id: 115-1-48
+  text: 某物流公司想導入 AI 以提升營運效率，評估不同資料型態與模型架構。下列哪一種應用情境最適合採用卷積神經網路（Convolutional Neural
+    Network, CNN）作為主要模型架構？ （115年第一梯次）
+  options:
+  - "依據包裹每日掃描紀錄的時間序列，預測下週各倉庫的進貨量波動； \n115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 \n第一科：人工智慧基礎概論\
+    \ \n考試日期：115 年 03 月 21 日 \n第 12 頁，共 12 頁 \n \n答案 題目"
+  - 根據客服對話逐句內容的先後順序，判斷客訴是否可能升級為申訴案件
+  - 根據倉庫監視器影像，自動辨識貨架是否缺貨並標示缺貨區域位置
+  - 依據車隊 GPS 路徑點的連續軌跡，預測下一段可能行駛路線
+  correct_index: 2
+  explanation: 本題測驗相關核心概念。正確解答為「根據倉庫監視器影像，自動辨識貨架是否缺貨並標示缺貨區域位置」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter6.yaml
+  id: '11432_3'
+  text: 在統計推論中，若樣本來自母體但呈現明顯偏態分布，且樣本數有限， 下列哪一項策略最能減少推估母體參數的偏誤？ (114年第四梯次)
+  options:
+  - 直接使用樣本平均數與變異數估計母體參數，不做任何調整
+  - 增加樣本數並考慮使用分位數或中位數作為中心趨勢估計
+  - 將樣本隨機重新排列後，多次計算平均值以消除偏態影響
+  - 完全依賴樣本標準差來估計母體參數，忽略分布形態  答案 題    目
+  correct_index: 1
+  explanation: 此題涉及 強化學習 的核心概念。正確答案為「增加樣本數並考慮使用分位數或中位數作為中心趨勢估計」。
+- file: subjects/ai-foundation/chapter6.yaml
+  id: '11436_2'
+  text: 某電商資料團隊要協助行銷部門規劃再行銷策略。目前取得資料包含 使用者點擊、購買紀錄、流量來源與轉換率。若資料團隊希望先進行探 索性資料分析（EDA）
+    ，下列哪一項最符合EDA 的做法？ (114年第四梯次)
+  options:
+  - 建立隨機森林模型，預測使用者是否會完成購買
+  - 使用 K-means 對使用者群進行分群並立即制定對應促銷策略
+  - 繪製各類流量來源對轉換率的關聯圖，尋找潛在關係
+  - 對不同購物路徑設定統計假設並進行雙樣本 t 檢定
+  correct_index: 2
+  explanation: 此題涉及 強化學習 的核心概念。正確答案為「繪製各類流量來源對轉換率的關聯圖，尋找潛在關係」。
+- file: subjects/ai-foundation/chapter6.yaml
+  id: '11440_2'
+  text: 關 於 監 督 式 學 習 （Supervised Learning ） 與 非 監 督 式 學 習 （Unsupervised Learning）的目標，下列敘述何者錯誤？
+    1.非監督式學習的核心在於發掘資料內在結構，例如分群、關聯規則與 降維，而不依賴外部標籤。 2.監督式學習的典型應用為分類與迴歸，通常不適合應用於異常偵測
+    任務。 3.非監督式學習若搭配少量標註資料，即會完全轉化為監督式學習。 4.監督式學習仰賴已標註的資料集，透過最小化輸出與真實標籤之間 的差距，學習輸入與目標之間的對應函數。
+    5.所有監督式學習任務都必須要有大量完整標註資料，否則無法進行 任何有效的模型訓練。 6.非監督式學習不需要目標變數，僅透過輸入資料本身的特徵分布進 行模式學習。
+    (114年第四梯次)
+  options:
+  - 3、5、6
+  - 1、4、6
+  - 2、4、6
+  - 2、3、5
+  correct_index: 3
+  explanation: 此題涉及 關聯規則 的核心概念。正確答案為「2、3、5」。
+- file: subjects/ai-foundation/chapter6.yaml
+  id: '11417_2'
+  text: 一間金融科技公司設計一款智慧投資系統，該系統會根據市場變化自 動決定「買進」 、 「持有」或「賣出」的行動，並根據每次交易後的盈虧 結果，逐步優化下一次的投資策略。整個過程中，系統不依賴事先標記
+    的資料，而是根據歷次行動獲得的獎勵進行調整。請問此系統最可能採 用哪一種學習方法？ (114年第四梯次)
+  options:
+  - 強化式學習（Reinforcement Learning）
+  - 監督式學習（Supervised Learning）
+  - 非監督式學習（Unsupervised Learning）
+  - 遷移學習（Transfer Learning）
+  correct_index: 0
+  explanation: 此題涉及 強化學習 的核心概念。正確答案為「強化式學習（Reinforcement Learning）」。
+- file: subjects/ai-foundation/chapter6.yaml
+  id: '11444_2'
+  text: 在機器學習中， 「叢集（Clustering） 」方法最典型的應用情境是下列何 者？ (114年第四梯次)
+  options:
+  - 根據歷史交易紀錄與已標註的詐欺案例，訓練模型來偵測未來的詐 欺交易
+  - 使用醫療數據與病患的診斷標籤，建立模型以預測病人是否罹患特 定疾病
+  - 根據顧客的消費行為與特徵，將顧客自動劃分為數個群組，以便進 行差異化行銷
+  - 透過大量已標註影像，訓練深度學習模型來辨識照片中的物件種類
+  correct_index: 2
+  explanation: 此題涉及 分群演算法 的核心概念。正確答案為「根據顧客的消費行為與特徵，將顧客自動劃分為數個群組，以便進 行差異化行銷」。
+- file: subjects/ai-foundation/chapter6.yaml
+  id: '11418_2'
+  text: 關於 Q-Learning 與 Deep Q-Learning，下列敘述何者最正確？ (114年第四梯次)
+  options:
+  - Q-Learning 與 Deep Q-Learning 的差異在於是否使用標記資料作 為學習基礎
+  - Q-Learning 可處理任意維度的狀態空間，因此比 Deep Q-Learning 更靈活
+  - Deep Q-Learning 透過深度神經網路近似 Q 值，避免了 Q 表在高維 空間中難以擴展的問題
+  - Deep Q-Learning 無法搭配經驗回放（Experience Replay） ，因為 會導致樣本順序被打亂
+  correct_index: 2
+  explanation: 此題涉及 強化學習 的核心概念。正確答案為「Deep Q-Learning 透過深度神經網路近似 Q 值，避免了 Q 表在高維 空間中難以擴展的問題」。
+- file: subjects/ai-foundation/chapter6.yaml
+  id: 115-1-19
+  text: 某物流公司導入強化式學習（Reinforcement Learning）優化車隊調度。模型在系統運行過程中，會依據不同配送狀態動態調整行動選擇方式，使決策結果逐步朝較佳績效收斂。上述模型在學習過程中的調整行為，最符合下列哪一項強化式學習核心機制？    （115年第一梯次）
+  options:
+  - 調整策略函數以改變行動選擇機率
+  - 更新訓練資料分布以降低模型偏差
+  - 重新分群狀態資料以識別決策類型
+  - 建立正確決策標籤進行誤差修正
+  correct_index: 0
+  explanation: 本題測驗相關核心概念。正確解答為「調整策略函數以改變行動選擇機率」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter6.yaml
+  id: 115-1-24
+  text: 某企業導入大型語言模型作為客服助理。模型已具備穩定語言能力，但在回覆偏好一致性與組織規範遵循方面仍需優化，團隊因此規劃導入人類反饋強化學習（RLHF）流程，下列何者最不屬於
+    RLHF 階段的典型技術活動？ （115年第一梯次）
+  options:
+  - '透過人工評估方式建立偏好資料，使模型的不同候選輸出可反映人類主觀品質
+
+    差異'
+  - '訓練一個能依據人類偏好判斷輸出品質的模型，作為模型優化過程中的回饋依
+
+    據'
+  - '依據品質評估結果，調整模型生成策略，使其輸出更符合偏好導向的行為表
+
+    現'
+  - 以未標註語料為主進行長週期表示學習訓練，以提升模型基礎語言建模能力
+  correct_index: 3
+  explanation: 本題測驗相關核心概念。正確解答為「以未標註語料為主進行長週期表示學習訓練，以提升模型基礎語言建模能力」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/ai-foundation/chapter6.yaml
+  id: 115-1-30
+  text: 某商業銀行想建立洗錢行為檢測系統，擁有過去 5 年的交易記錄，其中包含已確認的洗錢案例（標記為「異常」 ）和正常交易（標記為「正常」 ） 。銀行希望系統能自動識別新交易是否為洗錢行為，請問使用下列哪一種機器學習方法最為適合？    （115年第一梯次）
+  options:
+  - 監督式學習的分類問題
+  - 非監督式學習的分群問題
+  - 強化式學習
+  - 非監督式學習的關聯規則挖掘
+  correct_index: 0
+  explanation: 本題測驗相關核心概念。正確解答為「監督式學習的分類問題」，因為這最符合題幹中描述的情境與技術特性。
+- file: subjects/gen-ai/chapter5.yaml
+  id: '11425_3'
+  text: 某新創公司開發一套圖像描述生成系統，能根據輸入的照片自動產生 說明文字。為了讓產生的描述文字能與圖片資訊精準對應，下列哪一種 設計思路最關鍵？ (114年第四梯次)
+  options:
+  - 強化語言模型的句法與流暢性，確保生成文字更自然易讀 (Enhancing Syntax and Fluency)
+  - 在生成過程中結合圖片特徵與語言建模，讓模型同時利用影像內容與文字資訊 (Combining Image Features and Language Modeling)
+  - 調整生成策略（如 Beam Search 或溫度參數） ，以提升輸出文字的合理性 (Adjusting Generation Strategy)
+  - 專注於文字序列上下文的建模，只提升文字間的連貫性 (Focusing on Text Context Modeling)
+  correct_index: 1
+  explanation: 圖像描述生成 (Image Captioning) 的核心在於將影像特徵與文字生成模型結合，使生成的文字能準確反映影像內容，而非僅是通順的句子。
+- file: subjects/gen-ai/chapter5.yaml
+  id: '11415_3'
+  text: 某客服自動回應系統希望根據不同客戶群體調整回覆風格。在兼顧即 時性與效果的前提下，下列哪一種方案最適合？ (114年第四梯次)
+  options:
+  - 直接微調預訓練模型針對每個客戶群體分別訓練不同風格模型
+  - 利用控制變量（Control Tokens）或風格標籤在同一模型內動態調整風格
+  - 利用生成對抗網路（GAN）生成不同風格文本，並透過人工篩選最終答案
+  - 採用規則式替換方法，替換回覆詞彙以符合不同風格要求
+  correct_index: 0
+  explanation: 此題涉及 某客服自動回應系統希... 的核心概念。正確答案為「直接微調預訓練模型針對每個客戶群體分別訓練不同風格模型；」。
+- file: subjects/gen-ai/chapter5.yaml
+  id: '11427_3'
+  text: 某企業已建置 AI 語音記錄系統，並希望整合生成式 AI 進行「會議即 時摘要」 功能，下列哪一種策略最能提升摘要的語意品質與使用價值？ (114年第四梯次)
+  options:
+  - 使用語音轉文字模型即時輸出逐字稿並轉入 GPT 摘要
+  - 將語音逐段切分並建立關鍵字索引，以利摘要模型從中擷取核心內容生成會議重點
+  - 將語音轉文字後標註發言角色與主題邊界，結合語意分群進行動態摘要
+  - 將所有語音內容儲存為完整紀錄，提供事後人工摘要比對用
+  correct_index: 0
+  explanation: 此題涉及 某企業已建置 AI ... 的核心概念。正確答案為「使用語音轉文字模型即時輸出逐字稿並轉入 GPT 摘要；」。
+- file: subjects/gen-ai/chapter5.yaml
+  id: '11401_1'
+  text: 在 Low Code平台的開發應用設計中，關於「模型（Model） 」 ，下列敘述 何者最符合實際情況？ (114年第四梯次)
+  options:
+  - 模型僅扮演設計視覺化的輔助工具，對應用邏輯的影響有限
+  - 模型是用來抽象描述資料結構、業務流程與介面邏輯的核心元素，影響應用的設計與維護
+  - 模型僅依循 UML（Unified Modeling Language）等傳統建模方式，缺乏針對 Low Code 環境的延展性
+  - 模型在 Low Code 平台中已被自動程式碼生成全面取代，實際價值有限
+  correct_index: 0
+  explanation: Low/No Code 平台降低了 AI 開發門檻，讓非技術人員也能透過圖形化介面快速構建與部署 AI 應用。
+- file: subjects/gen-ai/chapter5.yaml
+  id: '11413_2'
+  text: 關於 GitHub Copilot，下列敘述何者正確？ (114年第四梯次)
+  options:
+  - GitHub Copilot 基於程式碼片段查詢工具，透過後端搜尋大型程式碼資料庫提供建議
+  - GitHub Copilot 僅適用於GitHub 上的開源專案，無法在私有程式碼庫或本地環境中提供程式碼補全建議
+  - GitHub Copilot利用靜態分析技術分析程式碼，根據邏輯流程推導下一步應寫的程式碼
+  - GitHub Copilot 由OpenAI 的 Codex 模型提供技術支援，可即時在開發者編輯程式碼時給出整行或整個函式建議
+  correct_index: 0
+  explanation: 此題涉及 關於 GitHub ... 的核心概念。正確答案為「GitHub Copilot 基於程式碼片段查詢工具，透過後端搜尋大型程式
+    碼資料庫提供建議； 第二科：生成式 AI 應用與規劃」。
+- file: subjects/gen-ai/chapter5.yaml
+  id: '11437_3'
+  text: 在機器學習模型的實務應用中，常會出現數據漂移（Data Drift）的情 況。此現象主要是指下列哪一種情況？ (114年第四梯次)
+  options:
+  - 訓練時使用的資料分佈，與部署後實際輸入資料的統計特徵隨時間逐漸出現差異，導致模型表現衰退
+  - 在資料前處理過程中，因特徵刪減或缺失補值不當，造成樣本資訊量下降
+  - 模型對訓練數據擬合過度，在未知數據上泛化能力不足
+  - 後端資料庫因欄位定義或結構調整，導致特徵提取流程與原始設計不一致
+  correct_index: 0
+  explanation: 此題涉及 在機器學習模型的實務... 的核心概念。正確答案為「訓練時使用的資料分佈，與部署後實際輸入資料的統計特徵隨時間 逐漸出現差異，導致模型表現衰退；」。
+- file: subjects/gen-ai/chapter5.yaml
+  id: 115003
+  text: 某企業規劃透過 Low-Code 平台建置可視化儀表板，以支援營運數據的即時監控 與分析判讀。若企業特別關注儀表板顯示結果的穩定性與分析可信度，下列何者
+    最應優先確認？（115年第一梯次）
+  options:
+  - 是否具備穩定的資料串接能力與即時更新機制；
+  - 是否提供自動化決策建議與預測分析模組；
+  - 是否支援彈性介面設計與多角色權限管理；
+  - 是否整合流程觸發與跨系統通知功能
+  correct_index: 0
+  explanation: 儀表板的可信度建立在資料源的正確性上，因此必須優先確認平台是否具備穩定的資料串接能力與即時更新機制。
+- file: subjects/gen-ai/chapter5.yaml
+  id: 115007
+  text: 某企業導入 No-Code/Low-Code 平台，讓各部門能自行建立資料分析與流程應用。 隨著使用範圍擴大，管理層開始關注資料權限、存取紀錄與合規要求。依資料治
+    理觀點，下列何者最合理描述此類平台對企業治理機制的典型影響？（115年第一梯次）
+  options:
+  - 平台內建角色權限與資料存取控管機制，有助治理制度落實；
+  - 平台強化部門自主性，通常使既有治理流程難以延續；
+  - 平台主要支援應用快速開發，資料治理仍需完全仰賴外部系統；
+  - 平台透過自動化設定機制，可顯著降低治理與合規管理需求
+  correct_index: 0
+  explanation: 在企業級的 No-Code/Low-Code 平台中，通常內建角色權限與資料存取控管機制，這有助於集中管理並落實企業的資料治理制度。
+- file: subjects/gen-ai/chapter5.yaml
+  id: 115008
+  text: 某製造企業規劃於設備端建置邊緣運算（Edge Computing）架構，並以 No- Code/Low-Code 平台開發即時監控應用。測試顯示，系統在雲端環境執行順暢，
+    但部署至邊緣裝置後出現回應延遲與效能下降。依此情境判斷，下列何者最合理 解釋該現象？（115年第一梯次）
+  options:
+  - 邊緣運算架構可降低系統對效能的需求；
+  - No-Code/Low-Code 平台僅能在雲端環境執行；
+  - 雲端部署通常比邊緣部署更容易出現延遲；
+  - 邊緣裝置通常受限於運算能力與可用資源
+  correct_index: 3
+  explanation: 邊緣裝置（Edge Devices）相較於雲端伺服器，通常受限於運算能力與可用資源，因此在執行複雜的 AI 模型或大量數據處理時容易出現延遲。
+- file: subjects/gen-ai/chapter5.yaml
+  id: 115011
+  text: 某零售企業規劃提升門市數據應用能力，目標包括：門市主管可自行調整分析畫 面與檢視指標呈現，以及由行銷部門建立銷售預測模型，以支援補貨與促銷規 劃。企業在選型時以工具的主要功能定位與典型用途作為評估依據。依此需求判
+    斷，下列哪一項 AI 工具使用規劃最合理？（115年第一梯次）
+  options:
+  - 以 AutoML 作為分析介面調整平台，No-Code 平台用於模型訓練；
+  - 以 No-Code 平台支援分析與介面調整，AutoML 負責模型建立；
+  - 僅導入 No-Code 平台，同時滿足高階模型建立與分析需求；
+  - 僅導入 AutoML，以兼顧介面調整與模型訓練
+  correct_index: 1
+  explanation: No-Code 平台適合讓主管等非技術人員以視覺化介面自行調整分析畫面；而 AutoML 工具則適合行銷人員用於建立與訓練銷售預測模型。
+- file: subjects/gen-ai/chapter5.yaml
+  id: 115029
+  text: 某農業合作社希望建立一套自動化工作流程，當農民透過手機 APP 回報田間病蟲 害照片時，系統能自動通知相關專家、建立案件紀錄並排程現場訪查。該合作社
+    IT 資訊人力有限，僅有一位具備基礎程式概念的人員。下列哪一種開發方式最適 合此需求？（115年第一梯次）
+  options:
+  - 採用傳統程式開發，從零開始撰寫完整系統；
+  - 使用純粹的 No-Code 平台，完全不需要任何程式技能；
+  - 使用 Low-Code 平台，結合視覺化拖拉與少量程式碼；
+  - 直接購買現成的農業管理軟體，不進行客製化
+  correct_index: 2
+  explanation: 由於 IT 人力有限但具備基礎程式概念，Low-Code 平台結合了視覺化拖拉與少量程式碼的特性，最適合用來快速串接多個系統與工作流程。
+- file: subjects/gen-ai/chapter5.yaml
+  id: 115032
+  text: 隨著企業加速導入 AI，No-Code/Low-Code 平台逐漸成為模型開發與產品化的常 見工具。相較於傳統自行撰寫程式的建模流程，下列何者最能正確描述此類平台
+    在模型訓練機制上的典型特性？（115年第一梯次）
+  options:
+  - 透過視覺化介面與標準化流程，協助完成模型訓練與調校；
+  - 主要提供既有模型推論能力，通常不支援重新訓練；
+  - 著重資料處理與轉換，模型訓練仍需外部工具完成；
+  - 多數僅適用於特定大數據框架（如 Spark）的訓練流程
+  correct_index: 0
+  explanation: 多數 No-Code/Low-Code 平台在模型訓練上，主要是透過視覺化介面與標準化流程來降低門檻，協助使用者快速完成模型訓練與參數調校。
+- file: subjects/gen-ai/chapter5.yaml
+  id: 115033
+  text: 某醫療院所希望改善行政效率，規劃讓各科室人員可自行建立行政回報與內部申 請表單，並導入 AI 功能以自動判讀與分類填寫內容（如問題類型或需求性質）
+    ， 同時需兼顧流程調整彈性與降低系統開發維運負擔。下列哪一種技術組合最適 第二科：生成式 AI 應用與規劃 合？（115年第一梯次）
+  options:
+  - Low-Code 平台 × 預訓練語言模型 API；
+  - No-Code 平台 × 規則式自動化（Rule-based Automation）；
+  - 傳統程式開發 × 自建深度學習模型；
+  - 試算表工具 × 手動資料標記分析
+  correct_index: 0
+  explanation: Low-Code 平台提供了開發表單與流程的彈性，而預訓練語言模型（LLM）API 則能輕鬆導入 AI 判讀與分類能力，且大幅降低自建模型的維運負擔。
+- file: subjects/gen-ai/chapter5.yaml
+  id: 115034
+  text: 某企業導入 No-Code/Low-Code 平台開放各部門自行開發應用。半年後發現：出 現多個功能相近系統、資料欄位定義不一致，且部分應用未經審核即上線，並伴
+    隨權限與維運管理混亂。下列何者最可能為根本問題？（115年第一梯次）
+  options:
+  - 缺乏統一的開發與上線管理機制；
+  - 平台提供過高的應用設計自主性；
+  - 部門未建立共用的資料分析呈現標準；
+  - 系統整合與自動化能力尚未完善
+  correct_index: 0
+  explanation: 當開放各部門自行開發應用時，若缺乏統一的開發與上線管理機制（如集中審核、欄位標準化），極易造成系統重疊與權限混亂的「影子 IT」問題。
+- file: subjects/gen-ai/chapter5.yaml
+  id: 115049
+  text: 某企業使用 Low-Code 平台建置內部營運系統，系統需整合財務、庫存與第三方 物流服務。團隊希望確保系統在跨部門流程與外部服務整合下，具高可靠性與可
+    測試性。下列哪一項作法最能達成目標？（115年第一梯次）
+  options:
+  - 只透過平台提供的流程模擬與即時預覽，檢查常用操作路徑；
+  - 建立自動化測試流程，結合模擬外部服務與可重複執行的整合測試；
+  - 將測試重點放在使用者介面操作，確認操作流程是否順暢；
+  - 上線後再透過使用者回饋與報表監控系統行為，進行修正
+  correct_index: 1
+  explanation: 在牽涉到跨部門與第三方服務的複雜系統中，建立自動化整合測試流程能最有效地確保各個介接點的穩定性與可靠性。
+- file: subjects/gen-ai/chapter4.yaml
+  id: '11408_2'
+  text: 在 Agent-to-Agent（A2A）架構中，不同代理人之間會分工合作。一般 而言，下列敘述何者最符合 Client Agent 與 Remote
+    Agent 的互動流 程？ (114年第四梯次)
+  options:
+  - Remote Agent 主動分派任務給Client Agent (Remote Agent Assigns Tasks to Client Agent)
+  - 由人工事先設定 Client Agent與 Remote Agent處理任務的先後順序 (Manually Pre-defined Order)
+  - Client Agent 發起任務，Remote Agent 執行並回傳結果 (Client Agent Initiates Task, Remote Agent
+    Executes and Returns Result)
+  - Client Agent 與 Remote Agent同時處理任務並同步處理結果 (Simultaneous Processing)
+  correct_index: 2
+  explanation: AI Agent 具備感知、規劃、記憶與工具使用能力，能自主拆解目標並執行一連串行動以完成複雜任務。
+- file: subjects/gen-ai/chapter4.yaml
+  id: '11411_2'
+  text: Agentic AI 在解決方案圖譜（Solution Graph）上尋找最佳解決路徑 時，通常會使用什麼樣的搜尋策略？ (114年第四梯次)
+  options:
+  - 使用廣度優先、深度優先或最佳優先等演算法進行探索
+  - 每一步都隨機選擇動作，反覆嘗試直到找到一條可行路徑
+  - 只執行事先假定的一條路徑，失敗就停止
+  - 完全依靠 LLM 一次性推斷最優完整路徑
+  correct_index: 0
+  explanation: AI Agent 具備感知、規劃、記憶與工具使用能力，能自主拆解目標並執行一連串行動以完成複雜任務。
+- file: subjects/gen-ai/chapter4.yaml
+  id: '11449_8'
+  text: 在 Agentic AI 的架構中，解決方案圖譜（Solution Graph）常被用來 輔助代理的任務執行，其主要作用為何？ (114年第四梯次)
+  options:
+  - 透過圖形結構完全取代大型語言模型的推理，讓代理只依靠圖演算法完成任務
+  - 僅用於保存代理的輸出結果，方便後續檢視與審計，而不影響實際推理流程
+  - 將代理限制在既定流程內，避免其產生偏離設計腳本的行為
+  - 作為代理在執行過程中的參考框架，用於組織決策步驟並支援任務推理
+  correct_index: 0
+  explanation: AI Agent 具備感知、規劃、記憶與工具使用能力，能自主拆解目標並執行一連串行動以完成複雜任務。
+- file: subjects/gen-ai/chapter4.yaml
+  id: '11406_2'
+  text: 某設計團隊計畫在短時間內完成一款行動應用程式，必須同時達到高 度個人化體驗、快速生成介面與行銷內容自動產出等需求。若結合 No Code/Low Code平台與生成式AI
+    技術，以下哪一種整合策略最能符合 目標？ (114年第四梯次)
+  options:
+  - 使用生成式 AI 自動產生 API 呼叫與元件配置，並由開發者手動整合至 No Code 平台流程
+  - 透過生成式 AI 在 No Code 平台中自動建立介面模板，並結合使用者數據即時生成個人化功能與行銷推播內容
+  - 在 No Code平台中導入生成式 AI，快速建立跨專案可重用的通用模組，專注於提升開發速度
+  - 在 No Code 平台中完全依賴生成式 AI 自動產生所有應用功能與流程，不經人工設計或驗證
+  correct_index: 0
+  explanation: Low/No Code 平台降低了 AI 開發門檻，讓非技術人員也能透過圖形化介面快速構建與部署 AI 應用。
+- file: subjects/gen-ai/chapter4.yaml
+  id: '11414_2'
+  text: 某電商公司導入 Agentic AI 來處理客服工作。測試發現 Agent 在回答 產品 FAQ 時經常出錯，且無法幫客戶修改訂單。這種情況最可能是因
+    為缺少下列哪兩項工具或技術？ (114年第四梯次)
+  options:
+  - API 調用（API Calling）＋ 任務規劃器（Task Planner）
+  - 向量資料庫檢索（Vector Retrieval）＋API 調用（API Calling）
+  - 向量資料庫檢索（ Vector Retrieval ）＋任務規劃器（ Task Planner）
+  - 任務規劃器（Task Planner）＋溫度參數（Temperature）設定
+  correct_index: 0
+  explanation: AI Agent 具備感知、規劃、記憶與工具使用能力，能自主拆解目標並執行一連串行動以完成複雜任務。
+- file: subjects/gen-ai/chapter4.yaml
+  id: '11450_8'
+  text: 小明想開發一個部落格寫作工具，讓用戶輸入文章開頭後，系統自動幫 忙寫出後續內容，例如輸入「今天去了台北木柵動物園...」 ，系統就能 續寫。若要實現這樣的功能，最適合選擇下列哪一類任務？
+    (114年第四梯次)
+  options:
+  - 序列到序列建模（Sequence-to-Sequence Modeling） ，透過輸入序列產生新的輸出序列
+  - 遮罩語言建模（Masked Language Modeling ） ，補齊文字中缺失的詞語或片段
+  - 生成式語言建模（Text Generation） ，依據上下文持續產生新的內容
+  - 文本分類（Text Classification） ，針對輸入文本判斷情感、主題或標籤
+  correct_index: 0
+  explanation: 此題涉及 小明想開發一個部落格... 的核心概念。正確答案為「序列到序列建模（Sequence-to-Sequence Modeling）
+    ，透過輸入序 列產生新的輸出序列；」。
+- file: subjects/gen-ai/chapter4.yaml
+  id: '11430_3'
+  text: 某大型物流公司計畫導入 AI 系統，以改善客服與配送作業的效率。專 案團隊規劃了以下四個步驟，請問正確的執行順序為何？ 1. 建立符合公司服務流程的
+    AI 對話邏輯與應答範本，確保顧客體驗 一致 2. 明確定義導入 AI 的目標並設定關鍵績效指標（KPI） 3. 蒐集與清理過往客服紀錄與配送相關資料，作為模型訓練素材
+    4. 評估並選擇合適的 AI 技術供應商或開源方案，確立技術方向與架 構 (114年第四梯次)
+  options:
+  - 2 → 3 → 4 → 1
+  - 3 → 2 → 1 → 4
+  - 2 → 1 → 3 → 4
+  - 1 → 4 → 3 → 2
+  correct_index: 0
+  explanation: 此題涉及 某大型物流公司計畫導... 的核心概念。正確答案為「2 → 3 → 4 → 1；」。
+- file: subjects/gen-ai/chapter4.yaml
+  id: '11435_3'
+  text: 在即時客服系統的效能測試中，若針對延遲測試（Latency Testing） 進行評估，下列哪一項指標最能反映系統是否符合用戶即時互動需 求？ 第二科：生成式
+    AI 應用與規劃 (114年第四梯次)
+  options:
+  - AI 模型在同一分鐘內可完成的回覆訊息數量
+  - 客戶從輸入問題到收到第一個完整回應所需的時間
+  - 客服系統能連續提供服務的運行時長
+  - AI 產生回答時用詞的多樣性與表達創意程度
+  correct_index: 0
+  explanation: 此題涉及 在即時客服系統的效能... 的核心概念。正確答案為「AI 模型在同一分鐘內可完成的回覆訊息數量；」。
+- file: subjects/gen-ai/chapter4.yaml
+  id: '11420_3'
+  text: 某醫院正在規劃一個 AI專案，目的是協助醫師從胸腔X 光影像中判斷 是否存在肺炎徵兆，團隊卻誤將生成式 AI 模型運用於影像診斷。下列 哪一項最可能成為主要風險？
+    (114年第四梯次)
+  options:
+  - 模型在生成報告時語句流暢，但僅在文字表達上有差異，對診斷結果沒有重大影響
+  - 模型若資料不足，僅會降低生成報告的完整性，而非影響判斷病灶的正確性
+  - 模型偏向生成內容而非分類，但此差異僅影響效率，不會造成誤診風險
+  - 模型可能生成與實際影像不符的診斷結論，導致誤判並引發醫療與法律風險
+  correct_index: 3
+  explanation: 此題涉及 某醫院正在規劃一個 ... 的核心概念。正確答案為「模型可能生成與實際影像不符的診斷結論，導致誤判並引發醫療與法律風險；」。生成式
+    AI 有幻覺風險，不適合直接用於要求高準確度的醫療影像診斷。
+- file: subjects/gen-ai/chapter4.yaml
+  id: '11424_3'
+  text: 某保險公司計畫導入生成式 AI 的內部合約查詢系統，協助業務員與法 務部門快速解讀保單條款與理賠規範。高層特別強調客戶資料隱私與 合規風險控管，即使需要投入較多資源，也必須確保資料不會外洩。在
+    第二科：生成式 AI 應用與規劃 此情況下，下列哪一種策略最符合公司的資料安全與合規優先考量？ (114年第四梯次)
+  options:
+  - 導入開源模型並由 IT 團隊自建，後續再逐步補強隱私與合規控管
+  - 在需求確認階段即納入法遵與稽核單位，設定準確率 KPI，並透過 MVP 驗證成效
+  - 優先使用雲端大型 API 模型快速部署，並根據使用數據持續調整
+  - 投入資源自訓並私有化部署 LLM，並同步建立自動化風控機制
+  correct_index: 0
+  explanation: 此題涉及 某保險公司計畫導入生... 的核心概念。正確答案為「導入開源模型並由 IT 團隊自建，後續再逐步補強隱私與合規控管；」。
+- file: subjects/gen-ai/chapter3.yaml
+  id: '11418_3'
+  text: 某客服系統在回覆「訂單取消政策」時，即使生成溫度固定為 0.6，回 覆品質仍常出現差異。調查顯示，檢索到的政策內容有時是最新版本， 有時則是過時文件，此外
+    Prompt 約束不足，微調語料也有模糊描述。 若要優先改善品質波動，應先解決下列哪一項問題？ (114年第四梯次)
+  options:
+  - 調整溫度參數，降低生成隨機性
+  - 加強 Prompt 設計，限制模型表達方式
+  - 優化微調語料，減少含糊描述
+  - 提升檢索系統品質，確保取得的政策內容正確且最新
+  correct_index: 0
+  explanation: Fine-tuning 透過在特定領域數據上繼續訓練模型，能深度調整模型的知識與行為，適合需要高度專業化或特定格式的任務。
+- file: subjects/gen-ai/chapter3.yaml
+  id: '11444_4'
+  text: 在 AI 應用設計中，Model Context Protocol（MCP）與檢索增強生成 （RAG）都能擴展模型的能力，但兩者的核心差異主要為下列何者？
+    (114年第四梯次)
+  options:
+  - MCP 擴展模型工具，但主要用於補足訓練資料不足
+  - MCP 能標準化連接資源，但仍需依賴向量資料庫
+  - RAG 常用於擴展知識庫內容，而 MCP 更著重於動態工具與 API 呼叫的整合
+  - RAG 透過統一協議，提升回答相關性
+  correct_index: 0
+  explanation: RAG (Retrieval-Augmented Generation) 結合檢索系統與生成模型，能引入外部即時資訊，有效減少幻覺並提升回答的準確性。
+- file: subjects/gen-ai/chapter3.yaml
+  id: '11448_7'
+  text: 某開發團隊在建置企業內部知識檢索系統時，選擇採用多向量檢索器 （Multi-vector Retriever） ，下列何者為協助提升系統查詢的完整性
+    第二科：生成式 AI 應用與規劃 與精準度的主要方式？ (114年第四梯次)
+  options:
+  - 支援同時處理多種資訊表示，提升跨文本型態的檢索效果
+  - 透過多向量壓縮與共享權重方式，降低檢索過程的運算與儲存成本
+  - 以切分並過濾文件片段，減少上下文長度帶來的 Token 負擔
+  - 透過調整生成階段的溫度參數，使模型在回覆時更穩定一致
+  correct_index: 0
+  explanation: 此題涉及 某開發團隊在建置企業... 的核心概念。正確答案為「支援同時處理多種資訊表示，提升跨文本型態的檢索效果；」。
+- file: subjects/gen-ai/chapter3.yaml
+  id: '11417_3'
+  text: 某公司部署結合 Fine-tuning 與檢索增強生成（RAG）的語言模型系統 作為內部文件助理。系統需同時確保回覆語氣一致、能即時查詢每日新 增文件、維持效能穩定，並避免頻繁重新訓練。在長期維護與效能平衡
+    下，下列哪一種策略最合適？ (114年第四梯次)
+  options:
+  - 每週重新 Fine-tune模型，將新文件整合進模型知識，逐步取代RAG 模組
+  - 完全依靠基礎模型與 RAG，不進行 Fine-tune，僅透過提示設計控制語氣
+  - 每日進行增量 Fine-tune，讓模型即時學習新文件內容，避免依賴檢索
+  - 保留語氣相關 Fine-tuning，僅透過檢索系統更新文件內容，不頻繁改動模型
+  correct_index: 3
+  explanation: RAG 能引入外部即時知識以確保查詢每日新增文件，而 Fine-tuning 則適合用來調整固定語氣且不需要頻繁更新。因此在此情境下，保留語氣相關的
+    Fine-tuning 並透過 RAG 來更新文件內容是最合適用於長期維護的策略。
+- file: subjects/gen-ai/chapter3.yaml
+  id: '11419_3'
+  text: 某醫院導入了一套智慧系統，由三個模組構成：語音辨識 （ASR） → 語 言模型生成（LLM） → 查詢醫療資料庫 API。近期發現部分查詢結果 錯誤，例如醫師詢問「術後復健流程」時，系統卻誤判為要查詢「術前
+    注意事項」 ，因此查詢到錯誤的文件。經檢查已排除語音辨識的錯誤， 下列何者最可能是造成查詢錯誤的來源？ (114年第四梯次)
+  options:
+  - 醫療資料庫 API 對應規則設計不清，造成意圖映射模糊
+  - LLM 的 Prompt 缺乏明確指示，導致語意分類判斷錯誤
+  - 查詢 API 回傳速度過慢，影響系統處理正確性
+  - LLM 未經醫療領域微調，難以正確理解專業性詞彙
+  correct_index: 0
+  explanation: 此題涉及 某醫院導入了一套智慧... 的核心概念。正確答案為「醫療資料庫 API 對應規則設計不清，造成意圖映射模糊；」。
+- file: subjects/gen-ai/chapter3.yaml
+  id: '11421_3'
+  text: 某公司開發的智慧車載語音助理，可透過語音辨識（ASR）辨識駕駛語 音，再由 LLM 生成回答並查詢車載 API。測試中發現：ASR 對汽車專 業術語辨識錯誤率高；LLM
+    的回覆常不精確；系統回覆延遲雖存在但仍 可接受。若目標是「優先提升準確性與回答品質」 ，下列改進步驟的最 合理執行順序為何？ 1. 擴充並標註汽車領域語音資料，微調
+    ASR 模型 2. 微調 LLM 並加入檢索增強（RAG） 3. 優化系統架構，引入批次推論降低延遲 4. 動態調整生成溫度，平衡準確度與多樣性 (114年第四梯次)
+  options:
+  - 1 → 2 → 4 → 3
+  - 2 → 1→ 3 → 4
+  - 1 → 3 → 2 → 4
+  - 3 → 1 → 2 → 4
+  correct_index: 0
+  explanation: RAG (Retrieval-Augmented Generation) 結合檢索系統與生成模型，能引入外部即時資訊，有效減少幻覺並提升回答的準確性。
+- file: subjects/gen-ai/chapter3.yaml
+  id: '11442_3'
+  text: 某金融機構導入檢索增強生成（ Retrieval-Augmented Generation, RAG）模型，用於客服文件查詢與自動回覆。由於大型模型運算成本過
+    高，若考慮引入知識蒸餾（Knowledge Distillation, KD）技術，下列 何者為帶來的主要效益？ (114年第四梯次)
+  options:
+  - 讓小型模型學習大型模型的知識，在降低運算成本的同時維持檢索與生成品質
+  - 只能應用於語音或影像辨識，無法提升文字檢索生成效能
+  - 因為 RAG 已有檢索機制，因此無需額外蒸餾知識
+  - 僅能依賴特定 API 供應商才能使用，無法在自建模型中實現
+  correct_index: 0
+  explanation: RAG (Retrieval-Augmented Generation) 結合檢索系統與生成模型，能引入外部即時資訊，有效減少幻覺並提升回答的準確性。
+- file: subjects/gen-ai/chapter3.yaml
+  id: '11447_6'
+  text: 某顧問公司導入生成式 AI，協助團隊快速檢索並摘要長篇的法規文件。 為了改善檢索結果常出現不相關或過於分散內容的問題，下列何者為 團隊決定對文件進行文本切分（Chunking）的主要目的？
+    (114年第四梯次)
+  options:
+  - 讓模型在回答時能加快推理速度
+  - 提高檢索相關性與降低長上下文噪音
+  - 降低系統記憶體和硬體資源的負擔
+  - 使模型在生成回覆時更具創造性與多樣化
+  correct_index: 0
+  explanation: 此題涉及 某顧問公司導入生成式... 的核心概念。正確答案為「讓模型在回答時能加快推理速度；」。
+- file: subjects/gen-ai/chapter3.yaml
+  id: 115010
+  text: 某企業建置檢索增強生成（Retrieval-augmented generation, RAG）系統支援內部知 識查詢。隨著使用量提升，團隊發現模型回覆品質穩定，但推論延遲與運算成本
+    逐漸增加。專案規劃在維持回覆品質前提下進行效能優化。在此情境下，若採用 知識蒸餾（Knowledge Distillation） ，下列敘述何者最為合理？（115年第一梯次）
+  options:
+  - 將檢索資料轉換為結構化規則以取代模型；
+  - 僅透過增加檢索文件數量改善效能；
+  - 停用生成模型以避免延遲問題；
+  - 使小型模型學習大型模型行為，以降低推論成本
+  correct_index: 3
+  explanation: 知識蒸餾（Knowledge Distillation）是將大型教師模型的能力轉移給較小的學生模型，從而在維持相近回覆品質的前提下降低運算成本與推論延遲。
+- file: subjects/gen-ai/chapter3.yaml
+  id: 115012
+  text: 下列何者最能正確說明 Model Context Protocol（MCP）與檢索增強生成 （Retrieval-Augmented Generation,
+    RAG）在功能定位上的主要差異？（115年第一梯次）
+  options:
+  - MCP 主要用於降低模型訓練成本；RAG 主要用於提升推論速度；
+  - MCP 著重模型與外部工具或系統互動；RAG 著重補充模型知識來源；
+  - RAG 必須依賴向量資料庫；MCP 不需任何外部整合；
+  - RAG 屬標準化通訊協議；MCP 屬資料檢索技術
+  correct_index: 1
+  explanation: Model Context Protocol (MCP) 主要用於建立模型與外部工具/系統互動的標準化介面，而 RAG 的主要目的是檢索外部知識庫以補充模型的資訊。
+- file: subjects/gen-ai/chapter3.yaml
+  id: 115013
+  text: 某企業建置文件型知識查詢系統，將大量長篇內部文件轉換為可供生成式 AI 使用 的知識來源。在測試過程中，團隊發現若直接以整份文件進行檢索，模型回覆常
+    包含無關內容，且引用段落不夠精準。團隊評估後，決定導入 Chunking 機制的主 要目的為何？（115年第一梯次）
+  options:
+  - 透過縮短輸入長度，加速模型推理流程；
+  - 提升檢索結果的語意對齊程度，並降低長文件帶來的干擾；
+  - 減少模型執行時的記憶體使用量，以提升系統穩定性；
+  - 讓模型在生成回覆時具備更高的創意發揮空間
+  correct_index: 1
+  explanation: 將長文件切塊（Chunking）能提升向量檢索的精準度，確保模型只取用最相關的段落，從而降低長文件無關內容的干擾。
+- file: subjects/gen-ai/chapter3.yaml
+  id: 115016
+  text: 某企業建置 Agentic AI 系統處理跨部門複雜任務，團隊以解決方案圖譜（Solution Graph）作為規劃框架。下列何者為 Solution
+    Graph 的主要功能？（115年第一梯次）
+  options:
+  - 取代語言模型推理機制，改以圖形搜尋完成決策；
+  - 作為任務知識庫，用於儲存 AI 已完成案例以供檢索；
+  - 限制代理（Agent）僅能依固定流程執行，以降低行為不確定性；
+  - 定義代理（Agent）可參考的任務分解與決策路徑結構
+  correct_index: 3
+  explanation: Solution Graph 是一種結構化的任務規劃框架，用來定義 Agent 解決複雜問題時的任務分解邏輯與決策路徑。
+- file: subjects/gen-ai/chapter3.yaml
+  id: 115018
+  text: 關於 ChatGPT、Anthropic Claude、GitHub Copilot 等 AI 程式碼輔助工具的運作原 理，下列敘述何者正確？（115年第一梯次）
+  options:
+  - 這些工具基於大型語言模型，經由大量程式碼與文本訓練，透過預測下一個符 號來生成程式碼，但不保證產生程式碼的正確性；
+  - GitHub Copilot 會在提供程式碼建議前執行並驗證該程式碼，確保其執行結果 正確無誤；
+  - Anthropic Claude 的程式碼建議並非即時生成，而是從事先整理的已知解答資料 庫中檢索而得；
+  - ChatGPT 內建完整的編譯器，可在輸出程式碼前自動編譯並更正所有語法與邏 輯錯誤 第二科：生成式 AI 應用與規劃
+  correct_index: 0
+  explanation: 如 Copilot 這類的程式碼輔助工具是基於語言模型預測下一個 Token 來生成程式碼，雖然語法通常正確，但並無法保證邏輯絕對正確，仍需開發者審查。
+- file: subjects/gen-ai/chapter3.yaml
+  id: 115020
+  text: 在規劃生成式 AI 解決方案時，下列何種應用場景最適合採用 GPT-Realtime 類型 模型？（115年第一梯次）
+  options:
+  - 需長時間批次處理的大規模報表生成任務；
+  - 即時資料查詢與結構化資訊檢索系統；
+  - 即時語音客服與互動式 AI 代理；
+  - 以高一致性為優先的法規文件自動摘要
+  correct_index: 2
+  explanation: GPT-Realtime 類型的模型專注於極低延遲的語音與文字互動，最適合用於即時語音客服與互動式對話代理。
+- file: subjects/gen-ai/chapter3.yaml
+  id: 115026
+  text: 某支付平台為了強化洗錢行為檢測，計劃導入生成式 AI 技術來輔助分析可疑交易 模式。該平台擁有大量歷史交易記錄和已知洗錢案例資料，希望 AI 能自動生成可
+    疑交易的特徵描述報告。下列哪一種生成式 AI 技術最適合此需求？（115年第一梯次）
+  options:
+  - 使用 Midjourney 生成交易流程圖像；
+  - 採用 Few-shot Learning 訓練圖像識別模型；
+  - 運用 RAG 檢索增強生成技術結合歷史案例資料庫；
+  - 直接使用 ChatGPT 的基礎模型進行分析
+  correct_index: 2
+  explanation: 洗錢特徵分析需要比對大量歷史案例，採用 RAG 檢索增強生成技術能讓模型在生成報告時動態參考最新的內部案例資料庫。
+- file: subjects/gen-ai/chapter3.yaml
+  id: 115035
+  text: 在生成式 AI 文字生成模型設計中，Encoder–Decoder 與 Decoder-only 為常見架 構。下列何者最能正確說明兩者在資訊處理與生成機制上的核心差異？（115年第一梯次）
+  options:
+  - Encoder–Decoder 透過編碼與解碼階段處理序列，Decoder-only 則以單一模型完 成處理；
+  - Encoder–Decoder 區分輸入理解與內容生成階段，Decoder-only 以單一模型同時 處理上下文與生成；
+  - Decoder-only 架構主要依賴外部知識檢索，Encoder–Decoder 則不需要；
+  - Encoder–Decoder 架構僅適用於翻譯任務，Decoder-only 架構較適合對話任務
+  correct_index: 1
+  explanation: Encoder-Decoder 架構（如 T5）會先將輸入編碼為內部表示再解碼生成，而 Decoder-only 架構（如 GPT）則以單一模型透過自迴歸方式同時處理上下文並生成後續內容。
+- file: subjects/gen-ai/chapter3.yaml
+  id: 115040
+  text: 某企業導入大型語言模型（LLM）進行客服自動化，並已透過 Fine-Tuning 學習企 業標準問答範例，但在實務運作中仍出現回應策略未符合服務優先順序及語氣與
+    品牌風格不一致的情況，因此技術團隊建議再導入 Reinforcement Fine-tuning （RFT）機制進行優化，其主要目的為何？（115年第一梯次）
+  options:
+  - 擴展模型的知識涵蓋範圍與資料記憶能力；
+  - 透過 reward 訊號調整模型回應策略與行為偏好；
+  - 提升模型推論速度與降低回應延遲；
+  - 降低 prompt 設計複雜度並取代訓練流程
+  correct_index: 1
+  explanation: Reinforcement Fine-tuning (RFT) / RLHF 的主要目的是透過人類或獎勵模型的 Reward 訊號，引導模型的回應語氣、策略與品牌風格符合特定偏好。
+- file: subjects/gen-ai/chapter2.yaml
+  id: '11410_2'
+  text: 某公司在導入生成式 AI協助撰寫內部報告時，測試人員刻意在輸入的 上下文中放入互相矛盾的資訊 （例如：同一位員工在不同段落被描述為 「入職三年」與「入職五年」
+    ） 。在這種情況下，最常見的模型行為會是 什麼？ (114年第四梯次)
+  options:
+  - 永遠選擇第一段資訊作為答案依據 (Always First Info)
+  - 可能生成幻覺或隨機採信其中一方的內容 (Hallucination or Random Selection)
+  - 拒絕回答，並要求提供更一致的輸入 (Refuse to Answer)
+  - 自動判斷並只選擇正確的資訊 (Auto Correct)
+  correct_index: 0
+  explanation: 此題涉及 某公司在導入生成式 ... 的核心概念。正確答案為「永遠選擇第一段資訊作為答案依據；」。
+- file: subjects/gen-ai/chapter2.yaml
+  id: '11440_4'
+  text: 在生成式 AI 的提示工程中，Graph Prompting 在處理複雜關係資料時， 為何通常比 Chain-of-Thought（CoT）更有效？
+    (114年第四梯次)
+  options:
+  - Graph Prompting 幾乎不需要推理，只依靠圖結構即可得出結論 (No Reasoning Needed)
+  - Graph Prompting 僅需單次提示，即可避免多輪推理的誤差累積 (Single Prompt)
+  - Graph Prompting 的生成速度通常更快，因此效率更高 (Faster Speed)
+  - Graph Prompting 能捕捉非線性結構與上下文關聯，適合處理網絡化資訊 (Non-linear Structure & Context)
+  correct_index: 0
+  explanation: Chain-of-Thought (CoT) 透過引導模型逐步推理（Step-by-step），能顯著提升複雜邏輯與數學問題的解題能力。
+- file: subjects/gen-ai/chapter2.yaml
+  id: '11441_4'
+  text: 在少樣本提示（Few-shot Prompting）僅能提供 1–2 個範例的情況 下，若遇到領域偏移（Domain Shift） ，下列何者為模型最可能面臨的
+    核心挑戰？ (114年第四梯次)
+  options:
+  - 範例數量過少，無法涵蓋新領域的多樣性，導致模型泛化不足 (Insufficient Examples for Generalization)
+  - 範例表徵有限，模型容易依賴單一樣本特性而降低適應力 (Overfitting to Few Examples)
+  - 範例覆蓋不足，使模型難以抽取跨領域的穩定模式 (Insufficient Coverage)
+  - 範例資訊過於稀缺，模型缺乏應對不同輸入情境的能力 (Scarcity of Info)
+  correct_index: 0
+  explanation: Few-shot Prompting 透過提供少量範例（Examples），讓模型快速學習任務模式與輸出格式，無需更新參數。
+- file: subjects/gen-ai/chapter2.yaml
+  id: '11404_1'
+  text: 某社交平台嘗試結合自動提示工程（ Automatic Prompt Engineer, APE）與圖提示（Graph Prompting） ，讓AI
+    協助分析使用者之間的互動 關係。在這個過程中，下列何者為最可能遇到的挑戰？ (114年第四梯次)
+  options:
+  - 圖結構轉換為文字提示時，可能導致部分關聯資訊遺失 (Loss of Info in Conversion)
+  - APE 在圖資料上無法產生任何提示內容 (APE Fails on Graph)
+  - 圖轉文字後能完整保留所有上下文，對推理不造成影響 (No Loss in Conversion)
+  - Graph Prompting 僅能處理線性路徑，限制多分支探索 (Linear Path Only)
+  correct_index: 0
+  explanation: 此題涉及 某社交平台嘗試結合自... 的核心概念。正確答案為「圖結構轉換為文字提示時，可能導致部分關聯資訊遺失；」。
+- file: subjects/gen-ai/chapter2.yaml
+  id: '11416_3'
+  text: 在建置多代理大型語言模型（Multi-agent LLMs）系統時，如果沒有清 楚定義每個代理的任務啟動條件和角色分工，最可能出現什麼問題？ (114年第四梯次)
+  options:
+  - 回覆內容前後不連貫，系統邏輯斷裂 (Inconsistent Response)
+  - 不同代理的答案互相衝突，無法判斷最終決策 (Conflicting Answers)
+  - 系統陷入無限對話循環，導致資源耗盡 (Infinite Loop)
+  - 多個代理重複做同樣的任務，造成效率低落 (Redundant Tasks)
+  correct_index: 0
+  explanation: AI Agent 具備感知、規劃、記憶與工具使用能力，能自主拆解目標並執行一連串行動以完成複雜任務。
+- file: subjects/gen-ai/chapter2.yaml
+  id: '11407_2'
+  text: 某團隊希望讓 AI 自動查詢 GitHub 上的程式碼庫，並生成摘要給使用 者參考。開發者決定透過Model Context Protocol（MCP）來實現，AI
+    需先發出請求，再經由 MCP 架構逐步完成查詢與回傳。在此情境下， MCP 運作流程的正確順序為何？ (114年第四梯次)
+  options:
+  - MCP Server →AI Host →MCP Client →資料查詢→結果回傳 AI Host (Server -> Host -> Client)
+  - MCP Client →AI Host →MCP Server →資料查詢→結果回傳 AI Host (Client -> Host -> Server)
+  - AI Host →MCP Client → MCP Server →資料查詢→結果回傳 AI Host (Host -> Client -> Server)
+  - AI Host→MCP Server→MCP Client→資料查詢→結果回傳 AI Host (Host -> Server -> Client)
+  correct_index: 0
+  explanation: Model Context Protocol (MCP) 是一種標準化協議，旨在簡化 AI 模型與外部數據、工具及資源的連接與互動。
+- file: subjects/gen-ai/chapter2.yaml
+  id: '11428_3'
+  text: 某公司正在開發一個智慧客服系統，負責回覆顧客關於退換貨、優惠活 動與商品建議等問題。研發團隊嘗試使用不同的提示設計方式來提升 模型效能 。 下列哪一個提示最符合
+    「少樣本提示 （Few-Shot Prompting）」 的設計原則？ (114年第四梯次)
+  options:
+  - 「請回答顧客詢問：如何申請退貨？」 (Direct Question)
+  - 「以下是兩組客服對話範例，請依照相同風格回覆新的顧客問題」 (Few-shot Examples)
+  - 「請逐步分析顧客投訴的原因，並依照推理過程生成合適回覆」 (Chain of Thought)
+  - 「請以正式的語氣回覆顧客的提問」 (Tone Instruction)
+  correct_index: 0
+  explanation: Few-shot Prompting 透過提供少量範例（Examples），讓模型快速學習任務模式與輸出格式，無需更新參數。
+- file: subjects/gen-ai/chapter2.yaml
+  id: '11423_3'
+  text: 在應用零樣本提示（Zero-Shot Prompting）時，下列哪一種情境最可 能因缺乏示範而失敗，出現語意錯誤或結構錯誤的輸出？ (114年第四梯次)
+  options:
+  - 要求模型判斷一段影評文字的情感傾向 (Sentiment Analysis)
+  - 要求模型將一段新聞摘要濃縮為一句話 (Summarization)
+  - 要求模型將一段繁體中文翻譯成英文 (Translation)
+  - 要求模型從表格中擷取所有城市的最高氣溫 (Table Extraction)
+  correct_index: 0
+  explanation: Zero-shot Prompting 不提供任何範例，直接依靠模型預訓練的知識來解決任務，考驗模型的泛化能力。
+- file: subjects/gen-ai/chapter2.yaml
+  id: '11405_2'
+  text: 在超長上下文任務中使用自動提示工程 （Automatic Prompt Engineer, 第二科：生成式 AI 應用與規劃 APE）時，可能面臨的最大限制是什麼？
+    (114年第四梯次)
+  options:
+  - 迭代優化難以因應上下文的不斷變動，導致調整失效 (Dynamic Context Issue)
+  - 模型的記憶容量有限，無法完整保留所有長篇資訊 (Memory Limit)
+  - 提示內容難以有效分解，無法支援複雜任務拆解 (Decomposition Issue)
+  - 回饋機制通常僅針對局部片段，難以全面評估最終輸出品質 (Partial Feedback)
+  correct_index: 0
+  explanation: 此題涉及 在超長上下文任務中使... 的核心概念。正確答案為「迭代優化難以因應上下文的不斷變動，導致調整失效；」。
+- file: subjects/gen-ai/chapter2.yaml
+  id: '11409_2'
+  text: 在導入生成式 AI 的應用規劃中，上下文工程（Context Engineering） 的核心目的為何？ (114年第四梯次)
+  options:
+  - 縮短模型訓練時間 (Reduce Training Time)
+  - 優化提示與上下文 (Optimize Prompt & Context)
+  - 增加模型參數數量 (Increase Parameters)
+  - 優化 Fine-tuning 正確率 (Optimize Fine-tuning Accuracy)
+  correct_index: 0
+  explanation: 此題涉及 在導入生成式 AI ... 的核心概念。正確答案為「縮短模型訓練時間；」。
+- file: subjects/gen-ai/chapter2.yaml
+  id: '11439_4'
+  text: 在提示工程 （Prompt Engineering） 的應用中，Chain-of-Thought（CoT） 與 Tree of Thoughts（ToT）各適用於不同的推理情境，請問以下兩個
+    情境，分別最適合採用哪一種方法？ 第二科：生成式 AI 應用與規劃 情境一：電商公司開發客服助理，用來協助客戶查詢退款流程與相關規 範 情境二：活動策劃團隊使用AI
+    協助規劃多場跨部門行銷活動，需要同 時考量預算、場地、時程與人力資源，並比較不同方案的可行性。 (114年第四梯次)
+  options:
+  - '情境一採用 CoT，情境二採用ToT (Scenario 1: CoT, Scenario 2: ToT)'
+  - '情境一採用 ToT，情境二採用CoT (Scenario 1: ToT, Scenario 2: CoT)'
+  - 情境一與情境二都適合 CoT (Both CoT)
+  - 情境一與情境二都適合 ToT (Both ToT)
+  correct_index: 0
+  explanation: Chain-of-Thought (CoT) 透過引導模型逐步推理（Step-by-step），能顯著提升複雜邏輯與數學問題的解題能力。
+- file: subjects/gen-ai/chapter2.yaml
+  id: 115002
+  text: 在進行大型語言模型 (LLM) 企業專屬知識的 Fine-tuning 時，若內部 GPU 運算資 源與記憶體嚴重受限，下列哪一種參數高效微調（PEFT,
+    Parameter Efficient Fine- Tuning）技術最能在維持模型效能的前提下，顯著降低需更新的參數數量？（115年第一梯次）
+  options:
+  - 知識蒸餾（Knowledge Distillation）；
+  - 提示詞工程（Prompt Engineering）；
+  - 梯度凍結（Gradient Freezing）；
+  - 低秩適配（Low-Rank Adaptation）
+  correct_index: 3
+  explanation: 低秩適配（LoRA）是一種主流的 PEFT 技術，透過在模型中加入小型的低秩矩陣進行微調，能顯著降低所需的 GPU 記憶體與更新參數數量。
+- file: subjects/gen-ai/chapter2.yaml
+  id: 115009
+  text: 某企業使用生成式 AI 進行文字分類，初期僅根據既有業務資料設計少量樣本提示 （Few-shot Prompting） 。當模型應用至新市場資料時，團隊發現分類結果明顯不穩
+    定，且原先提供的範例並未涵蓋新市場常見的表達方式。依此情境判斷，下列何 者最可能為主要原因？（115年第一梯次）
+  options:
+  - 模型容易對單一範例產生過度記憶；
+  - 少量範例難以涵蓋新情境的資料差異；
+  - Prompt 設計無法引導模型擷取共通特徵；
+  - 模型推理能力不足以完成分類任務 第二科：生成式 AI 應用與規劃
+  correct_index: 1
+  explanation: Few-shot Prompting 的效果高度依賴範例的代表性。當應用至新市場時，既有範例無法涵蓋新資料的差異性，導致模型分類結果不穩定。
+- file: subjects/gen-ai/chapter2.yaml
+  id: 115019
+  text: 某新創公司採用 MVP（Minimum Viable Product）策略，導入 Vibe Coding 以加速 開發，雖然初期能快速產出可運作功能，但技術主管提醒，在正式上線前仍可能
+    存在程式碼品質與安全風險。下列哪一項措施最合理，以降低品質與安全問題？（115年第一梯次）
+  options:
+  - 直接沿用 AI 生成程式碼至正式環境，以降低開發成本；
+  - 持續優化提示詞，即可避免大部分品質問題；
+  - 將生成程式碼納入審查、重構與安全測試流程；
+  - 限制開發者修改 AI 生成之程式碼架構，以維持一致性
+  correct_index: 2
+  explanation: AI 生成的程式碼雖然能快速建置 MVP，但可能隱藏安全性漏洞或效能問題，因此在正式上線前必須經過人工審查、重構與安全測試。
+- file: subjects/gen-ai/chapter2.yaml
+  id: 115031
+  text: 某有機農場累積了十年的病蟲害防治紀錄文件，包含不同作物的病害症狀描述、 防治方法和效果評估。農場主人希望建立一個 AI 助手，能根據農民描述的作物症
+    狀，快速提供相關的防治建議和歷史案例。下列哪一種技術最適合解決這個需 求？（115年第一梯次）
+  options:
+  - 直接使用 ChatGPT 的預訓練知識回答農業問題；
+  - 將所有文件內容加入 ChatGPT 的系統提示詞中；
+  - 採用 RAG 技術，將農場文件建立向量資料庫，結合大語言模型生成回答；
+  - 使用少樣本學習（Few-shot Learning） ，在提示詞中提供3-5 個病害案例
+  correct_index: 2
+  explanation: 將 10 年的專業歷史文件轉換為知識庫，最適合採用 RAG 技術。透過向量檢索，模型能針對農民描述的症狀精準提供相關防治建議。
+- file: subjects/gen-ai/chapter2.yaml
+  id: 115036
+  text: 某連鎖零售企業使用生成式 AI 協助規劃門市補貨策略。決策時需同時考量多項彼 此相關的因素，例如：庫存水位、促銷活動、區域銷售差異與物流限制。專案團
+    隊發現，AI 雖能逐步說明推論過程，但對於多條件之間的相互影響掌握不足，導 致建議結果偶有偏差。若希望透過提示工程（Prompt Engineering）改善此問題，
+    下列哪一種策略最為適合？（115年第一梯次）
+  options:
+  - Chain of Thought，要求模型逐步展開推論；
+  - Tree of Thoughts，增加多種推論路徑探索；
+  - Graph Prompting，以結構化方式呈現條件與關聯；
+  - Zero-shot Prompting，避免範例影響模型判斷
+  correct_index: 2
+  explanation: 當決策牽涉多個相互影響的複雜條件時，Graph Prompting 能以圖結構的方式清晰定義條件間的關聯，幫助模型進行更準確的推論。
+- file: subjects/gen-ai/chapter2.yaml
+  id: 115037
+  text: 某電商平台導入生成式 AI 客服助理，用於自動回覆顧客詢問。營運需求包含：需 即時反映每日更新的促銷活動與商品資訊，同時維持品牌一致的回覆語氣，且企
+    業希望避免因模型重新訓練所造成的成本增加與系統不穩定。在此情境下，下列 哪一種技術策略最合理？（115年第一梯次）
+  options:
+  - 僅進行 Fine-tuning，使模型同時學習品牌語氣與即時促銷內容； 第二科：生成式 AI 應用與規劃
+  - 僅導入 RAG 更新促銷資訊，期望模型直接從檢索內容學習品牌語氣；
+  - 透過 Prompt Engineering 控制回覆風格，並以 RAG 引入最新商品與活動資訊；
+  - 持續進行增量 Fine-tuning，以確保活動資訊同步更新
+  correct_index: 2
+  explanation: Prompt Engineering 能有效控制品牌語氣與風格，而 RAG 則能動態提供每日更新的促銷與商品資訊，兩者結合能以最低成本達成需求。
+- file: subjects/gen-ai/chapter2.yaml
+  id: 115045
+  text: 某企業導入生成式 AI 助理，協助內部人員撰寫專案建議與分析報告。團隊希望透 過思維鏈（Chain of Thought, CoT）提示設計提升模型輸出的邏輯性與推理透明
+    度，下列何者最符合該提示策略？（115年第一梯次）
+  options:
+  - 「請直接給出最終建議，不需顯示分析過程。」；
+  - 「以下提供兩份分析報告範例，請依相同格式產出新報告。」；
+  - 「請將任務拆為三個步驟：資料整理 → 重點摘要 → 建議產出。」；
+  - 「請逐步說明你的判斷依據與推理過程，最後再給出結論。」
+  correct_index: 3
+  explanation: 思維鏈（Chain of Thought）提示的核心在於要求模型「逐步說明判斷依據與推理過程」，這能大幅提升複雜任務的邏輯性與結果透明度。
+- file: subjects/gen-ai/chapter1.yaml
+  id: '11429_3'
+  text: 某投資公司導入生成式 AI，用於即時分析股市波動並提供市場背景資 訊。若希望AI 能兼顧「即時性」與「可靠性」 。下列哪一項設計最能有 效提升 AI
+    在即時股市分析上的表現？ (114年第四梯次)
+  options:
+  - 將 AI 系統連結至公司內部歷史交易資料庫，以便快速調用既有的案例參考 (Connect to Internal DB)
+  - 調整模型的回應邏輯，讓 AI 優先輸出最新市場行情，而不是完整的背景分析 (Prioritize Latest Market Data)
+  - 建立與外部即時行情來源同步的查詢模組，確保 AI 能即時擷取最新金融數據 (Real-time External Data Sync)
+  - 增加訓練資料中模擬的金融危機與市場異常案例，以提升 AI 在特殊情境下的表現能力 (Simulate Market Anomalies)
+  correct_index: 0
+  explanation: 此題涉及 某投資公司導入生成式... 的核心概念。正確答案為「將 AI 系統連結至公司內部歷史交易資料庫，以便快速調用既有的 案例參考；」。
+- file: subjects/gen-ai/chapter1.yaml
+  id: '11426_3'
+  text: 某電商平台希望生成的商品描述在風格與用詞上保持一致性，但不需 要新增專業知識。下列哪種方法最適合？ (114年第四梯次)
+  options:
+  - 擴充語料庫並微調模型，使風格統一 (Fine-tuning for Style)
+  - 增加提示詞複雜度，引導模型風格一致 (Complex Prompting)
+  - 降低生成溫度，以減少隨機性並提升風格一致性 (Lower Temperature)
+  - 使用全連接神經網路對生成結果後期篩選 (Post-processing with NN)
+  correct_index: 0
+  explanation: 此題涉及 某電商平台希望生成的... 的核心概念。正確答案為「擴充語料庫並微調模型，使風格統一；」。
+- file: subjects/gen-ai/chapter1.yaml
+  id: 115015
+  text: 在生成式 AI 應用設計中，情境感知代理（Context-aware Agent）的核心特性為 何？（115年第一梯次）
+  options:
+  - 能依任務需求即時重新訓練模型參數以優化結果；
+  - 僅依使用者當前輸入指令執行任務，不保留歷程資訊；
+  - 具備跨模態處理能力，可同時理解文字與影像內容；
+  - 能利用對話歷史、任務狀態調整行為與決策
+  correct_index: 3
+  explanation: 情境感知代理（Context-aware Agent）不僅能理解單次指令，更重要的是具備記憶與狀態管理能力，能利用對話歷史與當前任務狀態來調整行為。
+- file: subjects/gen-ai/chapter1.yaml
+  id: 115021
+  text: 關於 2025 年 OpenAI 提供的 AgentKit，下列何者最能描述其主要用途？（115年第一梯次）
+  options:
+  - 建立強化式學習（Reinforcement Learning）訓練所需的互動式模擬環境；
+  - 提供代理（Agent）模型的大規模預訓練與權重優化機制；
+  - 「Agent-to-Agent」的代理通訊協議；
+  - 支援 Agents 的建構、工具整合與任務流程開發
+  correct_index: 3
+  explanation: AgentKit 的設計宗旨是作為一個開發框架，支援開發者快速建構 AI Agents、整合外部工具（Tools）以及編排複雜的任務流程。
+- file: subjects/gen-ai/chapter1.yaml
+  id: 115023
+  text: 某保險公司想建立智慧理賠系統，包含兩個功能：(1)自動判斷理賠案件是否為詐 欺案件 (2)自動生成理賠調查報告。請問這兩個功能分別屬於哪種 AI 技術類型？（115年第一梯次）
+  options:
+  - (1)鑑別式 AI (2)生成式 AI；
+  - (1)生成式 AI (2)鑑別式 AI；
+  - 兩者都是鑑別式 AI；
+  - 兩者都是生成式 AI
+  correct_index: 0
+  explanation: 自動判斷是否詐欺屬於分類問題，是鑑別式 AI（Discriminative AI）的應用；而自動生成調查報告則需要產生新內容，屬於生成式
+    AI（Generative AI）。
+- file: subjects/gen-ai/chapter1.yaml
+  id: 115030
+  text: 某市政府環保局想建立一個垃圾分類查詢系統，讓民眾輸入物品名稱後自動判斷 分類。由於垃圾種類繁多，但每種分類的訓練範例有限，工程師決定採用少樣本 學習（Few-shot
+    Learning）技術。下列何者為少樣本學習（Few-shot Learning）的 主要特徵？（115年第一梯次）
+  options:
+  - 需重新蒐集大規模標註資料，以確保模型具備穩定表現；
+  - 透過少量任務示例，引導模型適應新情境或新分類需求；
+  - 不需任何範例輸入，即可完成新任務推論；
+  - 僅適用於自然語言處理任務，對其他模態效果有限
+  correct_index: 1
+  explanation: 少樣本學習（Few-shot Learning）的特徵在於不需要大量訓練資料，只需在 Prompt 中提供少量的範例（如幾種垃圾的分類範例），即可引導模型適應新任務。
+- file: subjects/gen-ai/chapter1.yaml
+  id: 115042
+  text: 某企業希望利用含敏感資訊的資料進行 AI 模型訓練，但政策要求原始資料不得外 洩，且資料可集中於安全環境中處理。同時，企業希望在資料使用過程中，即使
+    資料處於加密狀態，仍能完成模型計算。在此需求下，下列哪一種技術最為適 第二科：生成式 AI 應用與規劃 合？（115年第一梯次）
+  options:
+  - 聯邦學習（Federated Learning）；
+  - 同態加密（Homomorphic Encryption）；
+  - 零知識證明（Zero-knowledge Proof）；
+  - 資料匿名化（Data Anonymization）
+  correct_index: 1
+  explanation: 同態加密（Homomorphic Encryption）允許在密文（加密狀態）上直接進行數學運算，運算結果解密後與在明文上運算的結果相同，非常適合用於隱私保護模型計算。
+- file: subjects/gen-ai/chapter1.yaml
+  id: 115048
+  text: 某企業將機器學習模型部署於線上推薦系統。模型在測試階段表現良好，但上線 數月後，點擊率與預測準確度逐漸下降。經分析發現，近期使用者行為模式與模 型訓練期間的資料特徵出現顯著變化。此現象最可能屬於下列何者？（115年第一梯次）
+  options:
+  - 模型過度擬合訓練資料，無法泛化至未知樣本；
+  - 特徵工程設計不佳，導致輸入資訊不足；
+  - 資料統計特徵隨時間改變，影響模型推論效果；
+  - 系統資料結構調整，造成特徵欄位錯置
+  correct_index: 2
+  explanation: 當模型上線後準確度逐漸下降，通常是因為真實世界的使用者行為或數據特徵發生了改變，這種現象稱為資料漂移（Data Drift）或概念漂移（Concept
+    Drift）。
+- file: subjects/gen-ai/chapter7.yaml
+  id: '11446_7'
+  text: 某智慧工廠導入生成式 AI，協助產線工程師即時產生維修指引與操作 建議。下列哪一項並非團隊在系統設計中加入Guardrails（防護機制） 的主要目的？
+    (114年第四梯次)
+  options:
+  - 檢查工程師輸入內容，避免觸發錯誤或危險需求；
+  - 過濾與驗證 AI 輸出的維修指引，確保符合安全標準；
+  - 確保生成的操作建議符合法規與產業安全規範；
+  - 完整重建並追蹤 AI 模型的全部推理過程
+  correct_index: 0
+  explanation: 此題涉及 某智慧工廠導入生成式... 的核心概念。正確答案為「檢查工程師輸入內容，避免觸發錯誤或危險需求；」。
+- file: subjects/gen-ai/chapter7.yaml
+  id: '11402_2'
+  text: 企業在導入生成式 AI 平台時，往往需要利用分散於不同部門或機構中 的大量敏感文本資料。若希望在確保隱私的前提下，仍能讓模型持續優 化並降低資料外洩風險，下列哪一種方法最適合？
+    (114年第四梯次)
+  options:
+  - 同態加密（Homomorphic Encryption）；
+  - 安全多方計算（Secure Multi-party Computation）；
+  - 零知識證明（Zero-knowledge Proofs）；
+  - 聯邦學習（Federated Learning）
+  correct_index: 0
+  explanation: 此題涉及 企業在導入生成式 A... 的核心概念。正確答案為「同態加密（Homomorphic Encryption）；」。
+- file: subjects/gen-ai/chapter7.yaml
+  id: '11431_4'
+  text: 某跨國電商企業導入生成式 AI，協助處理顧客服務請求，並根據顧客 歷史訂單提供個人化建議。資安與法遵部門擔心AI 在回覆時可能洩漏 顧客個資，若要在導入初期優先避免觸法風險，下列哪一項措施最符合
+    要求？ (114年第四梯次)
+  options:
+  - 在加密環境下導入完整的顧客訂單與行為資料，並透過嚴格存取控 管降低洩漏風險；
+  - 實施資料最小化與去識別化，確保 AI 在訓練與生成過程中不直接 處理或暴露敏感個資； 第二科：生成式 AI 應用與規劃
+  - 強化模型的回覆審查流程，透過自動過濾與人工抽查結合，降低個 資外洩的機率；
+  - 設定 AI 的角色與回覆範圍，讓其專注於客服相關內容，避免回答 其他敏感議題
+  correct_index: 0
+  explanation: 此題涉及 某跨國電商企業導入生... 的核心概念。正確答案為「在加密環境下導入完整的顧客訂單與行為資料，並透過嚴格存取控 管降低洩漏風險；」。
+- file: subjects/gen-ai/chapter7.yaml
+  id: '11432_5'
+  text: 某國際銀行導入生成式 AI，用於彙整不同國家金融監管機構的合規規 範，建立跨國合規知識庫。由於各國條文表述方式不同，且監管要求具 有高度專業性與隱含邏輯，若要確保知識庫在後續查詢與生成報告時
+    能維持正確性與一致性，下列哪一項 AI 能力最為關鍵？ (114年第四梯次)
+  options:
+  - 具備跨語言專業術語對齊與條文語意抽取能力，能正確辨識不同國 家規範間的對應與差異；
+  - 能自動最佳化文件檢索效率，縮短跨國法規查詢的延遲時間，提升 合規部門使用體驗；
+  - 能將合規文件轉換為多種輸出形式（如簡報、摘要或法規清單） ，以 符合不同決策層級需求；
+  - 具備根據歷史案例生成合規解釋的能力，協助新進員工快速理解法 規在實務上的應用
+  correct_index: 0
+  explanation: 此題涉及 某國際銀行導入生成式... 的核心概念。正確答案為「具備跨語言專業術語對齊與條文語意抽取能力，能正確辨識不同國 家規範間的對應與差異；」。
+- file: subjects/gen-ai/chapter7.yaml
+  id: '11436_4'
+  text: 某航空公司導入生成式 AI 聲控客服，提供航班與票務查詢。有人員透 過惡意提示，試圖讓系統洩漏內部安檢流程。在此情境中，下列何者為 降低提示攻擊（Prompt
+    Injection）風險的最佳策略？ (114年第四梯次)
+  options:
+  - 導入輸入檢測與回應審核流程，防止敏感指令被執行；
+  - 限制 AI 可回應的主題範圍，使系統僅回答非敏感的航班與票務查 詢，避免處理內部或敏感流程資訊；
+  - 隨機變化回覆內容，讓攻擊者難以預測回應行為以增加攻擊難度；
+  - 擴充與更新航班與票務資料來源，以提升模型的知識正確性與覆蓋 率
+  correct_index: 0
+  explanation: Prompt Injection 是一種攻擊手法，透過惡意指令誤導模型忽略原有的安全限制或執行未授權的操作。
+- file: subjects/gen-ai/chapter7.yaml
+  id: '11438_5'
+  text: 某銀行導入生成式 AI 放貸審核系統，用於分析申貸人條件並生成初步 審核意見。測試過程中發現，模型對不同族群的核准率存在顯著差異， 可能引發演算法偏見問題。為降低此風險，下列哪一項措施最合適？
+    (114年第四梯次)
+  options:
+  - 提升模型運算速度與效能，以確保在大量申請中快速回應；
+  - 全面移除與申貸人身份相關的敏感屬性，避免模型因變數影響而產 生偏差；
+  - 導入資料與結果的公平性檢測流程，並依合規規範調整模型或決策 邏輯；
+  - 減少訓練樣本數量，降低偏見被放大的可能性
+  correct_index: 2
+  explanation: AI 偏見通常源自訓練數據中的社會刻板印象。緩解策略包括數據平衡、去偏演算法以及人類回饋強化學習 (RLHF)。
+- file: subjects/gen-ai/chapter7.yaml
+  id: 115001
+  text: 某零售企業導入生成式 AI 商品推薦系統。測試結果顯示，在購物行為、偏好設定 與價格區間相同的情況下，不同客戶族群收到的推薦商品類型仍出現明顯差異，
+    且差異方向不易以既有行銷策略解釋。若在模型架構與推論設定皆未調整情形 下，專案目標是優先降低可能的模型偏差風險，下列何者最合理？（115年第一梯次）
+  options:
+  - 重新檢視訓練資料的樣本分布與代表性；
+  - 限制推薦結果僅顯示高銷量商品；
+  - 降低模型參數規模以簡化決策邏輯；
+  - 提高推薦結果的隨機性以增加多樣性
+  correct_index: 0
+  explanation: 模型產生無法解釋的偏差，通常根源於訓練資料本身。因此優先重新檢視訓練資料的樣本分布是否對不同客群具有公平的代表性是最合理的做法。
+- file: subjects/gen-ai/chapter7.yaml
+  id: 115006
+  text: OpenAI 已為 Sora 生成的影片提供多種出處證明機制，以降低誤導性或欺騙性內 容帶來的風險。下列何者不屬於目前 OpenAI 官方為 Sora
+    內容提供的出處證明工 具？（115年第一梯次）
+  options:
+  - 所有資產上內嵌的 C2PA（Content Credentials）元數據；
+  - 預設可見的動態浮水印；
+  - 用於追蹤生成內容的內部反向影像與音訊搜尋工具；
+  - 平台對外開放的實時來源驗證介面
+  correct_index: 3
+  explanation: OpenAI 的 Sora 目前已支援 C2PA 元數據與浮水印等證明，但並未提供平台對外開放的實時來源驗證介面作為官方標準工具。
+- file: subjects/gen-ai/chapter7.yaml
+  id: 115022
+  text: 所有在 Gemini 應用程式透過 Veo 生成的影片，皆採用何種技術措施來協助企業用 戶應對 AI 生成內容可能帶來的不實資訊風險？（115年第一梯次）
+  options:
+  - 嚴格限制所有用戶每日的影片生成次數與使用時間；
+  - 在所有生成影片的開頭與結尾處強制加入明顯的 AI 標示警語；
+  - 要求所有影片輸出時必須附帶至少 10 秒的免責聲明片段；
+  - 使用 SynthID 技術在每一幀（frame）影片中嵌入不可見的數位浮水印
+  correct_index: 3
+  explanation: Google 的 SynthID 技術能在 AI 生成的影片（如 Veo）的每一幀中嵌入不可見的數位浮水印，這有助於後續驗證影片是否為
+    AI 生成，且不易被抹除。
+- file: subjects/gen-ai/chapter7.yaml
+  id: 115024
+  text: 某大型製造工廠導入生成式 AI 系統來優化能源消耗，每日需處理約 10 萬筆設備 數據並生成能源優化建議。系統每月 API 調用成本約 15 萬元，內部維護人力成本
+    8 萬元，基礎設施成本 5 萬元。該工廠評估導入效益時，下列哪一項總體擁有成本 （Total Cost of Ownership, TCO）分析最完整？ 第二科：生成式
+    AI 應用與規劃（115年第一梯次）
+  options:
+  - 主要以 API 調用成本 15 萬元作為 TCO 評估基礎；
+  - 以 API 調用成本 15 萬元及維護人力成本 8 萬元進行整體估算；
+  - 綜合 API 調用、維護人力與基礎設施等直接成本進行評估，共約 28 萬元；
+  - 除直接成本外，並考量訓練、系統整合與資安合規等相關支出
+  correct_index: 3
+  explanation: 總體擁有成本（TCO）不僅包含直接的 API 調用與硬體設施費用，還必須綜合考量隱性成本，如系統整合、員工訓練與資安合規等各項支出。
+- file: subjects/gen-ai/chapter7.yaml
+  id: 115038
+  text: 某企業規劃導入生成式 AI 助理，在正式全面部署前進行概念驗證（PoC） ，下列 何者最不適合作為此階段的主要工作？（115年第一梯次）
+  options:
+  - 驗證模型在實際使用情境下的回覆品質與穩定性；
+  - 測試 AI 功能與業務需求的匹配程度；
+  - 制定跨部門使用規範，與長期治理框架；
+  - 評估系統整合可行性與技術限制
+  correct_index: 2
+  explanation: 概念驗證（PoC）階段的重點在於快速驗證技術可行性與業務匹配度，制定長期跨部門治理框架與規範通常是在 PoC 成功後，準備規模化導入時才進行。
+- file: subjects/gen-ai/chapter7.yaml
+  id: 115039
+  text: 某企業規劃導入生成式 AI 客服系統，需處理顧客查詢並引用歷史交易資料。法 遵部門在風險評估中指出，系統若不當處理顧客個人資料，可能引發合規與法律
+    責任。若專案初期希望從資料層面降低敏感資訊暴露風險，下列敘述何者最為合 理？（115年第一梯次）
+  options:
+  - 強化模型輸出審查與遮罩機制，以過濾可能出現的敏感資訊；
+  - 設定 AI 回覆範圍與角色權限，限制其存取特定類型資料；
+  - 將資料集中於加密儲存環境，並加強系統存取控管；
+  - 僅提供必要資料或數據欄位與去識別化策略，減少模型接觸可識別個資
+  correct_index: 3
+  explanation: 從資料源頭進行管控最為安全。在系統將資料送交給模型前，僅提供必要欄位並執行去識別化，能最大程度減少模型接觸敏感個資的風險。
+- file: subjects/gen-ai/chapter7.yaml
+  id: 115041
+  text: 企業在評估 AI 決策模型是否存在資料分布偏差時，下列何者最屬於偏見檢測 （Bias Detection）而非偏見緩解（Bias Mitigation）措施？（115年第一梯次）
+  options:
+  - 比較不同資料分布的模型預測結果分布與錯誤率；
+  - 重新加權訓練樣本以平衡資料分布代表性；
+  - 在推論階段加入輸出過濾規則；
+  - 調整模型決策閾值（Decision Threshold）以降低預測差異
+  correct_index: 0
+  explanation: 比較不同資料分布的模型預測結果與錯誤率，是為了「發現」是否存在偏見，屬於偏見檢測（Bias Detection）；其餘選項皆屬於修正偏見的緩解措施。
+- file: subjects/gen-ai/chapter7.yaml
+  id: 115043
+  text: 某金融服務公司規劃導入生成式 AI，在評估模型部署方式時，基於內部控制與治 理要求，企業考慮將大型語言模型建置於公司可管理環境，而非直接採用外部雲
+    端服務。下列何者最能合理說明此部署決策的潛在優勢？（115年第一梯次）
+  options:
+  - 有助提升模型回覆穩定性並降低隨機性影響；
+  - 可降低敏感資料需傳輸至外部服務的風險；
+  - 可直接減少模型訓練與維運所需資源投入；
+  - 可避免模型輸出偏差與幻覺（Hallucination）問題
+  correct_index: 1
+  explanation: 對於金融機構而言，資料的隱私與安全至關重要。私有化部署大型語言模型確保敏感資料不需要傳輸至公有雲，能大幅降低合規與外洩風險。
+- file: subjects/gen-ai/chapter7.yaml
+  id: 115046
+  text: 某金融監理機構規劃導入生成式 AI 以協助內部人員分析申報文件與監理報告，系 統需處理大量涉及企業敏感資料與未公開資訊。主管機關明確要求「資料安全與
+    法規遵循必須優先於導入速度與成本考量」 。在此條件下，下列哪一種策略最為適 第二科：生成式 AI 應用與規劃 當？（115年第一梯次）
+  options:
+  - 採用雲端大型語言模型 API，並透過資料遮罩與加密機制降低外洩風險；
+  - 導入開源模型進行私有化部署，以兼顧成本彈性與模型可控性；
+  - 自行訓練並私有化部署模型，同時建立存取控管與稽核機制；
+  - 先驗證模型效益，再逐步補強合規與資安架構
+  correct_index: 2
+  explanation: 在法規遵循與資料安全優先於成本考量的前提下，金融監理機構應選擇自行訓練並私有化部署模型，並落實嚴格的存取與稽核機制。
+- file: subjects/gen-ai/chapter7.yaml
+  id: 115050
+  text: 某招聘公司使用生成式 AI 生成面試問題與候選人評估建議。團隊發現模型可能對 性別或年齡產生的資料分布偏差。下列哪一種策略最能有效降低生成偏差輸出的
+    風險？（115年第一梯次）
+  options:
+  - 調整模型架構與參數，使生成更靈活與多樣化；
+  - 大幅增加訓練資料量，但不清理或平衡資料中的性別與年齡分布；
+  - 在生成後對模型輸出進行人工審查，並依偏差情況修正結果；
+  - 僅允許高階主管操作系統，透過人員篩選控制生成結果
+  correct_index: 2
+  explanation: 由於 AI 面試評估涉及敏感的就業公平性問題，在目前技術難以完全根除偏差的情況下，透過「Human-in-the-loop」對輸出結果進行人工審查與修正最能防範風險。
+- file: subjects/gen-ai/chapter6.yaml
+  id: '11445_7'
+  text: 下列哪一個資料集專門設計用於測試大型語言模型在多領域、多任務 語言理解中，涵蓋人文、科學與社會科學等領域，而非專門用於數學推 理或中文專業知識？ (114年第四梯次)
+  options:
+  - MMLU；
+  - GSM8K；
+  - MATH；
+  - C-Eval
+  correct_index: 0
+  explanation: 此題涉及 下列哪一個資料集專門... 的核心概念。正確答案為「MMLU；」。
+- file: subjects/gen-ai/chapter6.yaml
+  id: '11404_2'
+  text: ' 動態調整生成溫度，平衡準確度與多樣性 (114年第四梯次)'
+  options:
+  - 1 → 2 → 4 → 3；
+  - 2 → 1→ 3 → 4；
+  - 1 → 3 → 2 → 4；
+  - 3 → 1 → 2 → 4 C 22.  一家顧問公司使用生成式 AI 協助撰寫數據分析報告。雖然模型在測試 中表現優異，但其生成的報告多半僅遵循固定段落結構，替換數值或關
+    鍵詞即可完成，卻未能展現針對不同專案的多樣化推理與分析。下列何 者為造成這種現象的最合理解釋？
+  correct_index: 0
+  explanation: 溫度 (Temperature) 參數控制生成結果的隨機性。較高的溫度（如 0.8）使輸出更多樣且具創意；較低的溫度（如 0.2）使輸出更確定且聚焦。
+- file: subjects/gen-ai/chapter6.yaml
+  id: '11404_3'
+  text: ' 評估並選擇合適的 AI 技術供應商或開源方案，確立技術方向與架 構 (114年第四梯次)'
+  options:
+  - 2 → 3 → 4 → 1；
+  - 3 → 2 → 1 → 4；
+  - 2 → 1 → 3 → 4；
+  - 1 → 4 → 3 → 2 B 31.  某跨國電商企業導入生成式 AI，協助處理顧客服務請求，並根據顧客 歷史訂單提供個人化建議。資安與法遵部門擔心AI
+    在回覆時可能洩漏 顧客個資，若要在導入初期優先避免觸法風險，下列哪一項措施最符合 要求？
+  correct_index: 0
+  explanation: 此題涉及  評估並選擇合適的 ... 的核心概念。正確答案為「2 → 3 → 4 → 1；」。
+- file: subjects/gen-ai/chapter6.yaml
+  id: '11422_3'
+  text: 一家顧問公司使用生成式 AI 協助撰寫數據分析報告。雖然模型在測試 中表現優異，但其生成的報告多半僅遵循固定段落結構，替換數值或關 鍵詞即可完成，卻未能展現針對不同專案的多樣化推理與分析。下列何
+    者為造成這種現象的最合理解釋？ (114年第四梯次)
+  options:
+  - 模型在生成過程中缺乏對字體與排版的優化能力，因此無法展現分 析邏輯；
+  - 測試資料涵蓋過多統計圖表，導致模型無法專注於文字內容的多樣 化表達；
+  - 模型過度依賴訓練語料中的常見報告範式，導致生成結果以樣板化 結構取代真正的推理；
+  - 模型因無法正確辨識報告中的頁碼與標題層級，才出現樣板化的結 果
+  correct_index: 0
+  explanation: 此題涉及 一家顧問公司使用生成... 的核心概念。正確答案為「模型在生成過程中缺乏對字體與排版的優化能力，因此無法展現分 析邏輯；」。
+- file: subjects/gen-ai/chapter6.yaml
+  id: '11443_5'
+  text: 在評估大型語言模型，例如7B、13B、175B 參數規模時，模型規模對基 準測試（Benchmark）結果的影響，下列哪一種說法最為恰當？ (114年第四梯次)
+  options:
+  - 小模型在正確調整下能超越大模型，因此模型大小並不重要； 第二科：生成式 AI 應用與規劃
+  - 大模型在多數情境下表現較好，但在特定任務上略遜於小模型；
+  - 模型規模與基準測試結果完全無關，影響主要來自測試設計；
+  - 模型越大，Benchmark 結果可能提升，但幅度取決於訓練數據品質 與資源配置
+  correct_index: 0
+  explanation: 此題涉及 在評估大型語言模型，... 的核心概念。正確答案為「小模型在正確調整下能超越大模型，因此模型大小並不重要； 第二科：生成式
+    AI 應用與規劃」。
+- file: subjects/gen-ai/chapter6.yaml
+  id: '11434_5'
+  text: 某醫療機構計畫導入生成式 AI 協助撰寫病歷摘要。在技術測試階段， 為確保系統能安全應用於臨床，最應優先關注下列哪一項指標？ (114年第四梯次)
+  options:
+  - 資料儲存與存取架構的完整性，確保長期運作過程中的數據可追溯 性；
+  - 生成內容的醫療準確性與臨床一致性，避免出現錯誤或誤導性資 訊；
+  - 模型在不同病例語境下的泛化能力，確保不因個別樣本而偏差；
+  - 系統回應時間的穩定性，以支援醫療場域中可能的即時需求
+  correct_index: 0
+  explanation: 此題涉及 某醫療機構計畫導入生... 的核心概念。正確答案為「資料儲存與存取架構的完整性，確保長期運作過程中的數據可追溯 性；」。
+- file: subjects/gen-ai/chapter6.yaml
+  id: '11403_2'
+  text: 某企業利用 No Code/Low Code平台開發內部營運系統。為確保系統在 跨部門流程與外部服務整合下仍具良好的可測試性 （Testability）
+    ，下 列哪一項作法最為合適？ (114年第四梯次)
+  options:
+  - 依賴 No Code/Low Code平台提供的即時預覽與基本單元測試功能， 快速驗證常見流程；
+  - 導入可重複執行的自動化測試流程，並透過 API 或服務虛擬化進 行模組化驗證；
+  - 將測試聚焦於使用者介面互動與操作流程驗證，檢查系統表面功 能；
+  - 依靠使用者回饋與正式上線後的監控資料，作為修正依據
+  correct_index: 0
+  explanation: Low/No Code 平台降低了 AI 開發門檻，讓非技術人員也能透過圖形化介面快速構建與部署 AI 應用。
+- file: subjects/gen-ai/chapter6.yaml
+  id: '11412_1'
+  text: 某企業考慮將開源大型語言模型（GPT-OSS）自行部署在本地伺服器， 以取代雲端服務。下列何者最能代表本地部署對企業的實際好處？ (114年第四梯次)
+  options:
+  - 可以達到無運算成本，因為本地部署模型不會產生額外的資源消 耗；
+  - 模型的預測能力會比在雲端運行時更精度，因為本地環境更加可 靠；
+  - 可確保輸入模型的敏感資料不會傳輸給第三方，提升資料隱私和自 主控制；
+  - 以上皆是
+  correct_index: 0
+  explanation: 此題涉及 某企業考慮將開源大型... 的核心概念。正確答案為「可以達到無運算成本，因為本地部署模型不會產生額外的資源消 耗；」。
+- file: subjects/gen-ai/chapter6.yaml
+  id: '11433_5'
+  text: 在企業導入 MLOps（Machine Learning Operations）的過程中，除了 模型部署與維運挑戰外，仍可能面臨其他推動上的困難。下列何者為
+    No Code 平台最能有效解決的挑戰？ (114年第四梯次)
+  options:
+  - 自動化大量資料的標註與前處理，以降低數據準備成本；
+  - 提升運算基礎設施的可擴展性，以因應大規模服務需求；
+  - 透過可視化建模介面，降低技術門檻並促進跨部門協作；
+  - 提供進階特徵工程能力，優化高維度數據的處理效率
+  correct_index: 0
+  explanation: Low/No Code 平台降低了 AI 開發門檻，讓非技術人員也能透過圖形化介面快速構建與部署 AI 應用。
+- file: subjects/gen-ai/chapter6.yaml
+  id: 115004
+  text: 某企業導入生成式 AI 客服系統後發現，系統整體運作穩定，且在單位時間內可處 理大量對話請求。部分使用者仍反映在互動過程中回覆出現卡頓感，經初步排除
+    網路連線與前端介面效能問題後，若專案團隊希望針對此現象進行效能測試，下 列何者最符合測試重點？（115年第一梯次）
+  options:
+  - 評估系統長時間運作的穩定程度；
+  - 測量系統單位時間的總處理量；
+  - 比較不同回覆內容的語言品質；
+  - 分析單次互動回覆的反應速度表現
+  correct_index: 3
+  explanation: 「回覆出現卡頓感」通常與首字延遲（Time to First Token, TTFT）或生成速度（Tokens per Second）有關，因此應聚焦於分析單次互動的反應速度表現。
+- file: subjects/gen-ai/chapter6.yaml
+  id: 115005
+  text: 某企業導入生成式 AI 系統，希望自動產出客服回覆與內部文件摘要。系統需能理 解使用者輸入的完整語句內容，並在回覆中維持語意連貫，即使對話內容較長仍
+    能保持上下文一致性。基於上述需求，下列何種模型架構最為適合？ 第二科：生成式 AI 應用與規劃（115年第一梯次）
+  options:
+  - 卷積神經網路（Convolutional Neural Network, CNN）；
+  - 遞迴神經網路（Recurrent Neural Network, RNN）；
+  - 基於 Transformer 架構的自迴歸模型（Autoregressive Model）；
+  - 生成對抗網路（Generative Adversarial Network, GAN）
+  correct_index: 2
+  explanation: 生成式 AI (如 ChatGPT) 能處理長上下文並維持語意連貫，主要是依賴基於 Transformer 架構的自迴歸模型 (Autoregressive
+    Model) 的注意力機制與生成特性。
+- file: subjects/gen-ai/chapter6.yaml
+  id: 115014
+  text: 某企業導入大型語言模型（LLM）分析內部報表，使用者經常提供 Excel 匯出的 表格資料（如銷售數據與統計表） 。測試時發現，模型對原始表格解析效果不穩
+    定。為提升模型理解與回應品質，下列哪一種上下文工程（Context Engineering） 作法較為適當？ 第二科：生成式 AI 應用與規劃（115年第一梯次）
+  options:
+  - 將表格內容轉換為結構化 JSON 或 Markdown table；
+  - 在維持原始表格呈現方式下，補充欄位與數據說明；
+  - 將表格資料隨機切割後分段輸入；
+  - 直接提供原始表格內容以保留完整資訊
+  correct_index: 0
+  explanation: LLM 對於純文字的理解力遠勝於複雜的 Excel 檔案格式。將表格轉換為 JSON 或 Markdown table 等結構化文字格式，能大幅提升模型的解析與推理準確度。
+- file: subjects/gen-ai/chapter6.yaml
+  id: 115017
+  text: 某企業提供大型語言模型（LLM）API 服務，需支援高併發請求與流量波動，同 時要求服務不中斷並具備故障容忍能力。若以高可用性與可擴展性為主要設計原
+    則，下列哪一種部署方式較為適當？（115年第一梯次）
+  options:
+  - 採用單一高效能虛擬機（VM）集中部署，以提升資源使用效率；
+  - 建立多個模型服務實例並透過負載分散機制提供服務；
+  - 將推論任務改由用戶端設備分擔，以降低伺服器負載壓力；
+  - 使用 FTP 協議傳輸請求與回應，以減少服務通訊負擔
+  correct_index: 1
+  explanation: 為了因應高併發流量並維持高可用性（HA），最佳實務是建立多個模型服務實例（Instances），並利用負載平衡器（Load Balancer）來分散請求流量。
+- file: subjects/gen-ai/chapter6.yaml
+  id: 115025
+  text: 某機構計畫導入生成式 AI 旅遊資訊服務對話系統自動生成多語言對話。目前每月 需人工翻譯 600 則訊息，每則成本 50 元；若改用 ChatGPT
+    API，每則訊息需 2000 Tokens，而 Token 成本 0.8 元/1000 Tokens，但需額外投入系統整合費用 20 萬元。 關於投資報酬率（Return
+    on Investment, ROI）評估，下列何者最為正確？（115年第一梯次）
+  options:
+  - 每月節省成本 29,040 元，系統整合成本約 7 個月回收；
+  - 每月節省成本 30,000 元，系統整合成本約 7 個月回收；
+  - 每月節省成本 28,040 元，系統整合成本約 8 個月回收；
+  - 每月節省成本 25,000 元，系統整合成本約 8 個月回收
+  correct_index: 0
+  explanation: 每月人工成本為 600 * 50 = 30,000 元。改用 API 每月成本為 600 * (2000/1000) * 0.8 =
+    960 元。每月節省 29,040 元。20 萬系統整合成本 / 29040 ≈ 6.88，約 7 個月回收。
+- file: subjects/gen-ai/chapter6.yaml
+  id: 115027
+  text: 某紡織公司希望建立自動化品質檢測流程，既有的 AI 系統檢測到布料瑕疵時，需 自動拍照存檔、發送通知給品管人員。該公司具有一定開發人力，希望快速建置
+    此工作流程，並保有彈性調整空間，下列哪一種解決方案最適合？（115年第一梯次）
+  options:
+  - 使用 n8n 建立工作流（Workflow） ，整合AI 檢測 API、檔案系統、通訊軟體；
+  - 委外開發客製化程式，完全符合公司需求規格；
+  - 採購現成的品質管理軟體，直接導入使用；
+  - 使用 Excel 巨集搭配人工作業處理檢測結果
+  correct_index: 0
+  explanation: n8n 是一個強大的自動化工作流工具，能以視覺化方式快速串接 AI API、檔案系統與通訊軟體，既節省開發時間又保留了日後調整流程的彈性。
+- file: subjects/gen-ai/chapter6.yaml
+  id: 115028
+  text: 某市政府交通局計劃導入生成式 AI 技術來自動生成公車到站時間預測的文字報 告，每日需處理約 50 萬筆交通資料並生成 1000 份報告。在評估導入成本時，團
+    隊希望進行 Token Economics 分析（指模型推理與生成過程中，Token 使用量及其 費用） 。下列何者不屬於Token Economics 的考量範圍？（115年第一梯次）
+  options:
+  - 每次 API 呼叫所需的輸入 Token 數量；
+  - 生成報告內容所消耗的輸出 Token 費用；
+  - AI 模型訓練階段使用 Token 數量所需的 GPU 記憶體成本；
+  - 模型推理過程中的 Token 使用量統計 第二科：生成式 AI 應用與規劃
+  correct_index: 2
+  explanation: Token Economics 專注於評估模型在推論（Inference）時消耗的輸入與輸出 Token 費用。模型訓練階段的 GPU
+    運算與記憶體成本屬於基礎設施投資，不包含在內。
+- file: subjects/gen-ai/chapter6.yaml
+  id: 115044
+  text: 某智慧製造廠導入語音互動 AI 助理，作業人員可透過語音查詢設備狀態與操作指 引。系統流程包含語音轉文字、語言模型生成回覆，以及即時查詢內部系統資
+    料。測試結果顯示：語音轉文字在專業設備術語上錯誤率偏高；語言模型回覆偶 有內容不夠精準；系統整體回應速度略慢但仍在可接受範圍。若專案目標為優先 確保正確執行指令，下列改進措施的執行順序何者最合理？（115年第一梯次）
+  options:
+  - 優化語言模型 → 強化語音模型 → 優化系統效能 → 調整生成參數；
+  - 強化語音模型 → 優化語言模型與知識補充 → 調整生成參數 → 優化系統效 能；
+  - 優化系統效能 → 強化語音模型 → 優化語言模型與知識補充 → 調整生成參 數；
+  - 強化語音模型 → 優化系統效能 → 優化語言模型與知識補充 → 調整生成參 數
+  correct_index: 1
+  explanation: 語音轉文字的錯誤會直接導致語言模型獲得錯誤的輸入，因此必須先「強化語音模型」；接著才是「優化語言模型」，最後再處理生成參數與系統效能優化。
+- file: subjects/gen-ai/chapter6.yaml
+  id: 115047
+  text: 某製造企業規劃導入生成式 AI 協助產線異常紀錄分析，系統將根據設備回報與維 修紀錄自動產出問題摘要與建議處置說明。在試行測試階段，為降低營運與決策
+    風險，下列何者最應優先驗證？（115年第一梯次）
+  options:
+  - AI 生成建議與實際工程判斷的一致性與正確性；
+  - 系統在高資料量輸入下的處理速度與延遲表現；
+  - 模型對不同設備品牌資料格式的轉換能力；
+  - 異常分析報告的視覺化呈現與介面易讀性
+  correct_index: 0
+  explanation: AI 在異常分析中若提供錯誤建議，可能導致產線停機或工安風險。因此在試行階段，最關鍵且最優先的任務是驗證 AI 建議與人類工程師專業判斷的正確性與一致性。
