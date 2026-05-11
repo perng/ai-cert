@@ -1071,3 +1071,156 @@ questions:
   - chap-m2-ch4
   - sec-generative-models
   usage: both
+- id: m2-114-2-009
+  chapter_title: 生成式 AI 與多模態 AI
+  section_title: 歷屆考題
+  text: 某企業在訓練生成式AI 模型時，導入資料增強（Data Augmentation）技術以擴充訓練資料，但觀察到模型效能反而下降。下列哪一項最可能的原因與對應改善策略最為正確？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 增強樣本未經隨機初始化，導致模型梯度更新不穩定，應重新設計訓練啟動流程
+  - 增強後資料的特徵分佈與原始資料不一致，影響模型的泛化能力，應檢查並調整增強策略以維持語意一致性
+  - 增強樣本的比例過高，造成模型對特定資料產生偏好，應適度提高增強比例並調整學習率
+  - 增強後資料的標註可信度下降，導致訓練訊號偏差，應以半監督學習方式重新校正資料
+  correct_index: 1
+  explanation: 資料增強若改變原始資料的語意或特徵分佈，會使模型學到與真實資料不一致的模式，因此應調整增強策略並確認語意一致性。
+  tags:
+  - chap-m2-ch4
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m2-114-2-020
+  chapter_title: 生成式 AI 與多模態 AI
+  section_title: 歷屆考題
+  text: 在使用生成對抗網路（GAN）進行人臉影像生成時，若出現「模式崩潰」（Mode Collapse）現象，下列哪一種方法最常被用來有效解決此問題？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 在鑑別器中加入梯度懲罰（Gradient Penalty）以穩定訓練過程
+  - 採用 Wasserstein 距離（WGAN 損失）替代原始的 GAN 損失函數
+  - 對生成器輸入的潛在向量加入隨機擾動
+  - 使用多尺度鑑別器架構以提高對多樣性的判別能力
+  correct_index: 1
+  explanation: WGAN 以 Wasserstein 距離改善原始 GAN 損失在分佈不重疊時梯度不穩的問題，常用來緩解訓練不穩與模式崩潰。
+  tags:
+  - chap-m2-ch4
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m2-114-2-021
+  chapter_title: 生成式 AI 與多模態 AI
+  section_title: 歷屆考題
+  text: 在多模態 AI 模型訓練或推論過程中，遇到某一模態資料缺失（例如僅有影像資料但缺少文本說明），下列哪一種策略最有效維持模型效能？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 以零向量或固定向量填充缺失模態輸入
+  - 訓練具備模態缺失感知能力的模型，使其適應缺失狀況
+  - 利用生成模型（如 GAN 或自迴歸模型）預測並補全缺失模態資料
+  - 直接捨棄缺少模態的樣本，避免干擾訓練或推論
+  correct_index: 1
+  explanation: 模態缺失感知模型會在訓練或架構上考慮缺少文字、影像等模態的情況，比固定填零、捨棄樣本或事後補全更能穩定推論。
+  tags:
+  - chap-m2-ch4
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m2-114-2-025
+  chapter_title: 生成式 AI 與多模態 AI
+  section_title: 歷屆考題
+  text: 某企業部署生成式AI 系統協助行銷與內容產出，但近期遭質疑部分生成內容可能涉及著作權侵權。為降低企業在法律層面的潛在責任與風險，下列哪一項策略最能有效預防侵權問題產生？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 對生成內容進行語意相似度比對，自動標註可能涉及既有著作的輸出結果，以降低侵權風險
+  - 建立訓練資料篩選與授權驗證機制，排除未授權或高風險資料來源
+  - 在訓練與微調過程中採用差分隱私技術，避免模型記憶特定受著作權保護的樣本
+  - 在模型輸出端嵌入浮水印（Watermarking）或數位指紋（Digital Fingerprint）技術，以確保生成內容可追溯
+  correct_index: 1
+  explanation: 著作權風險最應從資料源頭控管，建立訓練資料授權與篩選機制能預防模型學習未授權內容；輸出比對或浮水印多屬事後控管。
+  tags:
+  - chap-m2-ch4
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m2-114-2-035
+  chapter_title: 生成式 AI 與多模態 AI
+  section_title: 歷屆考題
+  text: 某媒體公司計畫導入CLIP（Contrastive Language–Image Pre-training）模型，以協助大量影像自動標註與搜尋，並希望在無需新增標訓資料的情況下，僅透過文字提示（Text Prompt）即可識別影像內容。請問此應用情境中，CLIP 能夠達成的關鍵技術特性為何？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 透過圖文對比式學習（Contrastive Learning）將影像與文字映射至共同嵌入空間（Shared Embedding Space），可直接以語意相似度進行零樣本分類
+  - 透過影像增強與特徵擴散降低標訓資料需求
+  - 以監督式學習結合多層感知器（Multilayer Perceptron, MLP）進行影像特徵分類
+  - 以自迴歸生成模型（Autoregressive Model）逐步生成文字標籤描述影像內容
+  correct_index: 0
+  explanation: CLIP 透過圖文對比學習把文字與影像映射到共同嵌入空間，因此可用文字提示與影像的語意相似度做零樣本分類與搜尋。
+  tags:
+  - chap-m2-ch4
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m2-114-2-038
+  chapter_title: 生成式 AI 與多模態 AI
+  section_title: 歷屆考題
+  text: 某影像設計團隊在使用Stable Diffusion 生成4K 級產品圖時，發現影像邊緣與細節存在顆粒化與模糊現象。若僅能在生成階段進行調整，希望提升畫面清晰度與紋理層次，同時避免過度平滑，下列哪一項作法最適合？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 降低取樣步數，以縮短生成時間
+  - 增加取樣步數並選擇高品質取樣器，以強化細節還原度
+  - 提高CFG（Classifier-Free Guidance）值，使生成結果更具創意與多樣性
+  - 改用低解析度輸入以降低計算成本
+  correct_index: 1
+  explanation: 在 Stable Diffusion 生成階段，增加取樣步數並選擇品質較佳的 sampler 通常能改善細節與邊緣清晰度；降低步數或低解析度會犧牲品質。
+  tags:
+  - chap-m2-ch4
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m2-114-2-040
+  chapter_title: 生成式 AI 與多模態 AI
+  section_title: 歷屆考題
+  text: 下列哪一項最正確地描述了VAE（Variational Autoencoder）、GAN（Generative Adversarial Network）與擴散模型（Diffusion Model）在多模態潛在空間對齊（Latent Alignment）與生成策略上的根本差異？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - VAE 透過顯式潛在變數建模實現跨模態對齊，適合捕捉整體語意結構但生成解析度有限；GAN 透過對抗損失（Adversarial Loss）在不同模態間學習分佈映射，生成品質高但穩定性差；擴散模型則以條件化噪聲反推（Conditional Denoising）方式實現高保真跨模態生成，兼具穩定性與多樣性
+  - VAE 與Diffusion Ｍodel 均屬隱式生成架構，主要依賴對抗式訓練實現跨模態對齊；GAN 則以顯式後驗估計方式提升樣本一致性
+  - VAE 與GAN 均使用馬爾可夫鏈（Markov Chain）進行跨模態轉換；Diffusion Model 則透過 KL 散度最小化學習語意對應。
+  - 三者在多模態應用中皆依賴同一潛在表徵空間（Shared Latent Space），僅在解碼器結構不同而已
+  correct_index: 0
+  explanation: VAE 以顯式潛在變數建模，GAN 以對抗損失追求高品質但訓練較不穩，擴散模型透過條件化去噪逐步生成，通常兼具穩定性與高保真。
+  tags:
+  - chap-m2-ch4
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m2-114-2-044
+  chapter_title: 生成式 AI 與多模態 AI
+  section_title: 歷屆考題
+  text: 某電信公司希望建立一個模型來預測顧客是否即將流失，並進一步模擬不同促銷或服務策略下顧客的行為變化，以生成多樣化的虛擬樣本資料進行A/B 測試與行銷策略評估。若要同時兼顧預測與資料生成的需求，最適合採用下列哪一種方法？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 使用傳統隨機森林（Random Forest）
+  - 使用邏輯迴歸（Logistic Regression）模型
+  - 使用變分自編碼器（Variational Autoencoder, VAE）或生成對抗網路（Generative Adversarial Network, GAN）
+  - 使用強化學習代理（Reinforcement Learning Agent）
+  correct_index: 2
+  explanation: VAE 或 GAN 能建立資料生成機制，產生多樣化虛擬樣本；再結合下游預測可同時支援流失預測與策略情境模擬。
+  tags:
+  - chap-m2-ch4
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m2-114-2-050
+  chapter_title: 生成式 AI 與多模態 AI
+  section_title: 歷屆考題
+  text: 某設計師使用公司內部建置的生成式AI 工具製作行銷素材，並輸入提示語（Prompt）：「請生成一張模特兒手持品牌飲料、背景為海邊夕陽的照片」。系統能正確生成主要主題與場景，但輸出的圖像中，品牌標誌顏色常有誤差，或人物手部姿勢顯得不自然。若從多模態生成模型的技術機制分析，此現象最可能是下列哪一項原因所造成？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 擴散式生成模型的去雜訊過程出現隨機梯度漂移，導致影像像素錯誤
+  - 提示語過長造成Transformer 的位置編碼超出上下文限制，導致生成混亂
+  - CLIP 模型中的文字編碼器與影像編碼器在語意嵌入空間未充分對齊，導致跨模態理解偏差
+  - 模型未採用對比學習（Contrastive Learning）損失函數，無法建立多模態語意關聯
+  correct_index: 2
+  explanation: 品牌顏色錯誤或手部不自然常見於文字條件與影像細節未充分對齊的多模態生成問題；CLIP 式圖文嵌入對齊不足會造成跨模態理解偏差。
+  tags:
+  - chap-m2-ch4
+  - sec-past-exam
+  - past-exam
+  usage: mock

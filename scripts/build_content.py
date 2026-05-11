@@ -11,10 +11,209 @@ import re
 # Defaults
 DEFAULT_SUBJECTS_DIR = "subjects"
 DEFAULT_OUTPUT_FILE = "assets/content.json"
+CONTENT_SCHEMA_VERSION = 3
+REMOTE_IMAGE_PREFIXES = ('http://', 'https://', 'data:')
+ASSET_IMAGE_PREFIX = "assets/images/"
 
 def load_yaml(path):
     with open(path, 'r', encoding='utf-8') as f:
         return yaml.safe_load(f)
+
+def is_remote_image(src):
+    return src.startswith(REMOTE_IMAGE_PREFIXES)
+
+def block_context(yaml_path, question_id):
+    return f"{yaml_path} question {question_id}"
+
+def safe_filename_part(value):
+    return re.sub(r'[^A-Za-z0-9_.-]+', '_', str(value)).strip('_') or "unknown"
+
+def resolve_question_image(src, yaml_path, image_output_dir, question_id):
+    """
+    Copy rich question images into the app image asset directory and return the
+    Flutter asset path. Existing asset paths and remote/data images pass through.
+    """
+    if not src:
+        raise ValueError(f"{block_context(yaml_path, question_id)} image block missing src")
+
+    if is_remote_image(src) or src.startswith(ASSET_IMAGE_PREFIX):
+        return src
+
+    source_path = (yaml_path.parent / src).resolve()
+    if not source_path.exists():
+        raise FileNotFoundError(
+            f"{block_context(yaml_path, question_id)} image not found: {source_path}"
+        )
+
+    image_out_path = Path(image_output_dir)
+    image_out_path.mkdir(parents=True, exist_ok=True)
+
+    subject_name = yaml_path.parent.name
+    chapter_name = yaml_path.stem
+    unique_filename = (
+        f"{safe_filename_part(subject_name)}_"
+        f"{safe_filename_part(chapter_name)}_"
+        f"{safe_filename_part(question_id)}_"
+        f"{safe_filename_part(source_path.name)}"
+    )
+    dest_path = image_out_path / unique_filename
+    shutil.copy2(source_path, dest_path)
+    return f"{ASSET_IMAGE_PREFIX}{unique_filename}"
+
+def normalize_blocks(blocks, yaml_path, image_output_dir, question_id):
+    """
+    Normalize YAML rich content blocks into JSON-safe block dictionaries.
+    Supported types are text, code, and image.
+    """
+    if blocks is None:
+        return []
+
+    if not isinstance(blocks, list):
+        raise TypeError(f"{block_context(yaml_path, question_id)} content must be a list")
+
+    normalized = []
+    for index, block in enumerate(blocks):
+        if isinstance(block, str):
+            normalized.append({"type": "text", "text": block})
+            continue
+
+        if not isinstance(block, dict):
+            raise TypeError(
+                f"{block_context(yaml_path, question_id)} content block {index} must be a mapping"
+            )
+
+        block_type = block.get("type")
+        if block_type == "text":
+            text = block.get("text")
+            if text is None:
+                raise ValueError(
+                    f"{block_context(yaml_path, question_id)} text block {index} missing text"
+                )
+            normalized.append({"type": "text", "text": str(text)})
+        elif block_type == "code":
+            code = block.get("code")
+            if code is None:
+                raise ValueError(
+                    f"{block_context(yaml_path, question_id)} code block {index} missing code"
+                )
+            normalized_block = {"type": "code", "code": str(code)}
+            language = block.get("language")
+            if language:
+                normalized_block["language"] = str(language)
+            normalized.append(normalized_block)
+        elif block_type == "image":
+            src = resolve_question_image(
+                str(block.get("src", "")), yaml_path, image_output_dir, question_id
+            )
+            alt = block.get("alt")
+            if not alt:
+                raise ValueError(
+                    f"{block_context(yaml_path, question_id)} image block {index} missing alt"
+                )
+            normalized_block = {"type": "image", "src": src, "alt": str(alt)}
+            caption = block.get("caption")
+            if caption:
+                normalized_block["caption"] = str(caption)
+            normalized.append(normalized_block)
+        else:
+            raise ValueError(
+                f"{block_context(yaml_path, question_id)} unsupported content block type: {block_type}"
+            )
+
+    return normalized
+
+def blocks_to_markdown(blocks):
+    parts = []
+    for block in blocks:
+        block_type = block.get("type")
+        if block_type == "text":
+            parts.append(block.get("text", ""))
+        elif block_type == "code":
+            language = block.get("language", "")
+            code = block.get("code", "")
+            parts.append(f"```{language}\n{code.rstrip()}\n```")
+        elif block_type == "image":
+            alt = block.get("alt", "")
+            src = block.get("src", "")
+            image_markdown = f"![{alt}]({src})"
+            caption = block.get("caption")
+            if caption:
+                image_markdown = f"{image_markdown}\n\n{caption}"
+            parts.append(image_markdown)
+    return "\n\n".join(part for part in parts if part).strip()
+
+def scalar_to_text_block(value):
+    return [{"type": "text", "text": "" if value is None else str(value)}]
+
+def normalize_option(option, yaml_path, image_output_dir, question_id):
+    if isinstance(option, dict):
+        option_blocks = normalize_blocks(
+            option.get("content"), yaml_path, image_output_dir, question_id
+        )
+        fallback = option.get("text")
+        if not option_blocks:
+            option_blocks = scalar_to_text_block(fallback)
+        if fallback is None:
+            fallback = blocks_to_markdown(option_blocks)
+        return str(fallback), option_blocks
+
+    option_blocks = scalar_to_text_block(option)
+    return str(option), option_blocks
+
+def normalize_question(question, yaml_path, image_output_dir):
+    q = dict(question)
+    question_id = q.get("id", "unknown")
+
+    raw_content = q.pop("content", None)
+    if "text" in q:
+        raw_text = q.pop("text")
+        q.pop("textContent", None)
+    else:
+        raw_text = q.pop("textContent", None)
+    content_blocks = normalize_blocks(raw_content, yaml_path, image_output_dir, question_id)
+    if not content_blocks:
+        content_blocks = scalar_to_text_block(raw_text)
+
+    q["textContent"] = blocks_to_markdown(content_blocks)
+    q["content"] = content_blocks
+
+    options = q.get("options", [])
+    if not isinstance(options, list):
+        raise TypeError(f"{block_context(yaml_path, question_id)} options must be a list")
+
+    fallback_options = []
+    option_content = []
+    for option in options:
+        option_text, option_blocks = normalize_option(
+            option, yaml_path, image_output_dir, question_id
+        )
+        fallback_options.append(option_text)
+        option_content.append(option_blocks)
+
+    q["options"] = fallback_options
+    q["optionContent"] = option_content
+
+    if "correct_index" in q:
+        q["correctIndex"] = q.pop("correct_index")
+    if "correctIndex" in q:
+        correct_index = int(q["correctIndex"])
+        if correct_index < 0 or correct_index >= len(fallback_options):
+            raise ValueError(
+                f"{block_context(yaml_path, question_id)} correctIndex {correct_index} "
+                f"outside options length {len(fallback_options)}"
+            )
+        q["correctIndex"] = correct_index
+
+    explanation_content = q.pop("explanationContent", None)
+    if explanation_content is not None:
+        explanation_blocks = normalize_blocks(
+            explanation_content, yaml_path, image_output_dir, question_id
+        )
+        q["explanationContent"] = explanation_blocks
+        if not q.get("explanation"):
+            q["explanation"] = blocks_to_markdown(explanation_blocks)
+
+    return q
 
 def parse_frontmatter(file_path):
     """
@@ -301,7 +500,7 @@ def main():
         return
 
     final_json = {
-        "version": 2,
+        "version": CONTENT_SCHEMA_VERSION,
         "subjects": []
     }
     
@@ -357,16 +556,10 @@ def main():
                 print(f"    Found questions file: {yaml_name}")
                 q_data = load_yaml(yaml_path)
                 questions = q_data.get('questions', [])
-                # Transform keys for JSON model
-                for q in questions:
-                    if 'text' in q:
-                        q['textContent'] = q.pop('text')
-                    if 'correct_index' in q:
-                        q['correctIndex'] = q.pop('correct_index')
-                    
-                    # Ensure options are strings
-                    if 'options' in q and isinstance(q['options'], list):
-                        q['options'] = [str(opt) for opt in q['options']]
+                questions = [
+                    normalize_question(q, yaml_path, image_output_dir)
+                    for q in questions
+                ]
                 print(f"    Loaded {len(questions)} questions")
             else:
                 print(f"    No questions file found (looked for {yaml_name})")

@@ -1039,3 +1039,653 @@ questions:
   - sec-adv-architectures
   id: 6265
   usage: both
+- id: m4-114-2-005
+  chapter_title: 深度學習框架與架構
+  section_title: 歷屆考題
+  text: '某智慧製造公司開發一套影像辨識系統，用於自動檢測生產線上的瑕疵產品。系統採用卷積神經網路（Convolutional Neural Network, CNN）作為主要模型架構，其中第一層卷積層（Convolutional Layer）主要負責的功
+
+
+    能為下列何者？
+
+
+    (114年第二梯次)'
+  content:
+  - type: text
+    text: '某智慧製造公司開發一套影像辨識系統，用於自動檢測生產線上的瑕疵產品。系統採用卷積神經網路（Convolutional Neural Network, CNN）作為主要模型架構，其中第一層卷積層（Convolutional Layer）主要負責的功
+
+
+      能為下列何者？'
+  - type: text
+    text: (114年第二梯次)
+  type: multiple_choice
+  options:
+  - text: 自動提取輸入影像中的局部特徵
+    content:
+    - type: text
+      text: 自動提取輸入影像中的局部特徵
+  - text: 降低影像維度以加速運算效率
+    content:
+    - type: text
+      text: 降低影像維度以加速運算效率
+  - text: 增加神經元與參數數量以提升模型容量
+    content:
+    - type: text
+      text: 增加神經元與參數數量以提升模型容量
+  - text: 整合所有特徵並輸出最終分類結果
+    content:
+    - type: text
+      text: 整合所有特徵並輸出最終分類結果
+  correct_index: 0
+  explanation: CNN 的第一層卷積層會以卷積核掃描影像局部區域，自動學習邊緣、紋理等低階局部特徵。
+  tags:
+  - chap-m4-ch2
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m4-114-2-006
+  chapter_title: 深度學習框架與架構
+  section_title: 歷屆考題
+  text: '某智慧城市團隊開發一套交通監控系統，用於即時辨識路口監視器影像中的車輛與行人。團隊比較後發現，卷積神經網路（Convolutional NeuralNetwork, CNN）在訓練與推論效率上，明顯優於傳統的全連接神經網路（Fully Connected Neural Network, FCNN）。請問下列何者為主要原因？
+
+
+    (114年第二梯次)'
+  content:
+  - type: text
+    text: 某智慧城市團隊開發一套交通監控系統，用於即時辨識路口監視器影像中的車輛與行人。團隊比較後發現，卷積神經網路（Convolutional NeuralNetwork, CNN）在訓練與推論效率上，明顯優於傳統的全連接神經網路（Fully Connected Neural Network, FCNN）。請問下列何者為主要原因？
+  - type: text
+    text: (114年第二梯次)
+  type: multiple_choice
+  options:
+  - text: CNN 能自動學習影像的旋轉與比例不變性
+    content:
+    - type: text
+      text: CNN 能自動學習影像的旋轉與比例不變性
+  - text: CNN 可直接跳過人工特徵提取步驟進行分類
+    content:
+    - type: text
+      text: CNN 可直接跳過人工特徵提取步驟進行分類
+  - text: CNN 透過區域感知（Local Receptive Field）與參數共享（ParameterSharing）機制，降低模型參數量與運算複雜度
+    content:
+    - type: text
+      text: CNN 透過區域感知（Local Receptive Field）與參數共享（ParameterSharing）機制，降低模型參數量與運算複雜度
+  - text: CNN 捨棄激勵函數（Activation Function），以加快運算速度
+    content:
+    - type: text
+      text: CNN 捨棄激勵函數（Activation Function），以加快運算速度
+  correct_index: 2
+  explanation: CNN 利用局部感受野與參數共享，讓同一卷積核在不同位置重複使用，因此比全連接網路大幅減少參數量與運算成本。
+  tags:
+  - chap-m4-ch2
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m4-114-2-007
+  chapter_title: 深度學習框架與架構
+  section_title: 歷屆考題
+  text: '下列哪一種應用最適合採用長短期記憶網路（Long Short-Term Memory,LSTM）模型？
+
+
+    (114年第二梯次)'
+  content:
+  - type: text
+    text: 下列哪一種應用最適合採用長短期記憶網路（Long Short-Term Memory,LSTM）模型？
+  - type: text
+    text: (114年第二梯次)
+  type: multiple_choice
+  options:
+  - text: 預測未來七天的電力需求變化趨勢
+    content:
+    - type: text
+      text: 預測未來七天的電力需求變化趨勢
+  - text: 辨識監視影像中不同類別的物件
+    content:
+    - type: text
+      text: 辨識監視影像中不同類別的物件
+  - text: 將大量顧客資料依相似特徵自動分群
+    content:
+    - type: text
+      text: 將大量顧客資料依相似特徵自動分群
+  - text: 將高維度的感測器資料壓縮成低維表示
+    content:
+    - type: text
+      text: 將高維度的感測器資料壓縮成低維表示
+  correct_index: 0
+  explanation: LSTM 擅長處理序列資料與時間依賴，適合電力需求等時間序列預測；影像辨識、分群與降維分別更適合 CNN、分群模型與降維方法。
+  tags:
+  - chap-m4-ch2
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m4-114-2-021
+  chapter_title: 深度學習框架與架構
+  section_title: 歷屆考題
+  text: '某語音辨識系統開發團隊採用 Transformer 架構，為了讓模型能同時理解語音片段中的發音特徵、語速變化與語意脈絡等多層次資訊，團隊在設計中導入了多頭注意力（Multi-head Attention）機制。請問下列何者為此機制的主要優點？
+
+
+    (114年第二梯次)'
+  content:
+  - type: text
+    text: 某語音辨識系統開發團隊採用 Transformer 架構，為了讓模型能同時理解語音片段中的發音特徵、語速變化與語意脈絡等多層次資訊，團隊在設計中導入了多頭注意力（Multi-head Attention）機制。請問下列何者為此機制的主要優點？
+  - type: text
+    text: (114年第二梯次)
+  type: multiple_choice
+  options:
+  - text: 減少模型參數量以降低訓練成本
+    content:
+    - type: text
+      text: 減少模型參數量以降低訓練成本
+  - text: 加速整體注意力計算過程
+    content:
+    - type: text
+      text: 加速整體注意力計算過程
+  - text: 從不同表示子空間（Representation Subspaces）同時捕捉多樣化關聯資訊
+    content:
+    - type: text
+      text: 從不同表示子空間（Representation Subspaces）同時捕捉多樣化關聯資訊
+  - text: 避免梯度消失（Gradient Vanishing）問題
+    content:
+    - type: text
+      text: 避免梯度消失（Gradient Vanishing）問題
+  correct_index: 2
+  explanation: 多頭注意力會在多個表示子空間中平行計算注意力，讓模型同時捕捉不同類型的語音、語速與語意關聯。
+  tags:
+  - chap-m4-ch2
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m4-114-2-027
+  chapter_title: 深度學習框架與架構
+  section_title: 歷屆考題
+  text: '某智慧製造團隊在開發瑕疵影像檢測模型時，發現使用線性激活函數（Activation Function）後，模型的訓練準確率長期停滯，懷疑模型無法學習到足夠複雜的特徵表達。若要改善此問題，下列哪一項調整方案最為合適？
+
+
+    (114年第二梯次)'
+  content:
+  - type: text
+    text: 某智慧製造團隊在開發瑕疵影像檢測模型時，發現使用線性激活函數（Activation Function）後，模型的訓練準確率長期停滯，懷疑模型無法學習到足夠複雜的特徵表達。若要改善此問題，下列哪一項調整方案最為合適？
+  - type: text
+    text: (114年第二梯次)
+  type: multiple_choice
+  options:
+  - text: 增加卷積層（Convolutional Layer）數量，使網路更深以強化特徵提取
+    content:
+    - type: text
+      text: 增加卷積層（Convolutional Layer）數量，使網路更深以強化特徵提取
+  - text: 將輸入影像先進行灰階化處理，降低運算量
+    content:
+    - type: text
+      text: 將輸入影像先進行灰階化處理，降低運算量
+  - text: 使用Sigmoid 激活函數，以將輸出壓縮至[0,1]範圍
+    content:
+    - type: text
+      text: 使用Sigmoid 激活函數，以將輸出壓縮至[0,1]範圍
+  - text: 改用ReLU（Rectified Linear Unit）激活函數，以引入非線性並提升模型表達能力
+    content:
+    - type: text
+      text: 改用ReLU（Rectified Linear Unit）激活函數，以引入非線性並提升模型表達能力
+  correct_index: 3
+  explanation: 線性激活會讓多層網路仍近似線性映射，難以學習複雜特徵；ReLU 可引入非線性並改善深度網路表達能力。
+  tags:
+  - chap-m4-ch2
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m4-114-2-030
+  chapter_title: 深度學習框架與架構
+  section_title: 歷屆考題
+  text: '某情感分析模型在英文資料集上取得macro F1-score = 0.91。當該模型部署於西班牙文資料集時，F1-score 驟降至0.58。下列哪一項解釋最合理，且與F1-score 變化相關？
+
+
+    (114年第二梯次)'
+  content:
+  - type: text
+    text: 某情感分析模型在英文資料集上取得macro F1-score = 0.91。當該模型部署於西班牙文資料集時，F1-score 驟降至0.58。下列哪一項解釋最合理，且與F1-score 變化相關？
+  - type: text
+    text: (114年第二梯次)
+  type: multiple_choice
+  options:
+  - text: macro F1-score 本身波動性高，建議改用 micro-average F1-score評估
+    content:
+    - type: text
+      text: macro F1-score 本身波動性高，建議改用 micro-average F1-score評估
+  - text: 模型在西班牙文語料上過度擬合，導致評估結果偏高
+    content:
+    - type: text
+      text: 模型在西班牙文語料上過度擬合，導致評估結果偏高
+  - text: 語言轉移造成召回率（Recall）下降，模型無法正確辨識關鍵情緒詞彙
+    content:
+    - type: text
+      text: 語言轉移造成召回率（Recall）下降，模型無法正確辨識關鍵情緒詞彙
+  - text: 以均方誤差（MSE）取代 F1-score 評估可獲得更準確的結果
+    content:
+    - type: text
+      text: 以均方誤差（MSE）取代 F1-score 評估可獲得更準確的結果
+  correct_index: 2
+  explanation: 跨語言部署造成 F1 大幅下降，合理原因是語言轉移讓模型漏抓西班牙文關鍵情緒詞，使 recall 下降並拖累 F1。
+  tags:
+  - chap-m4-ch2
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m4-114-2-042
+  chapter_title: 深度學習框架與架構
+  section_title: 歷屆考題
+  text: 'VGG16 是由牛津大學 Visual Geometry Group(VGG)在2014 年提出的經典卷積神經網路（Convolutional Neural Network, CNN）架構。該模型以簡潔且規則的層堆疊設計聞名，廣泛應用於影像分類、特徵提取及遷移學習等任務。附圖程式碼載入了預訓練的VGG16 模型，並輸出其完整層級結構及參數統計摘要（如附表）。請根據此資訊回答42~45 題。
+
+
+    在深度神經網路中，不同層的參數量（parameter count）差異極大。有些層雖然數量少但計算量大，有些則相反。了解參數分佈情形，有助於模型壓縮與遷移學習設計。請問在VGG16 中，下列何者的參數量最多？
+
+
+    (114年第二梯次)'
+  content:
+  - type: text
+    text: VGG16 是由牛津大學 Visual Geometry Group(VGG)在2014 年提出的經典卷積神經網路（Convolutional Neural Network, CNN）架構。該模型以簡潔且規則的層堆疊設計聞名，廣泛應用於影像分類、特徵提取及遷移學習等任務。附圖程式碼載入了預訓練的VGG16 模型，並輸出其完整層級結構及參數統計摘要（如附表）。請根據此資訊回答42~45 題。
+  - type: code
+    language: text
+    code: "----------------------------------------------------------------\nLayer (type)               Output Shape         Param #\n================================================================\n            Conv2d-1         [-1, 64, 150, 150]           1,792\n              ReLU-2         [-1, 64, 150, 150]               0\n            Conv2d-3         [-1, 64, 150, 150]          36,928\n              ReLU-4         [-1, 64, 150, 150]               0\n         MaxPool2d-5           [-1, 64, 75, 75]               0\n            Conv2d-6          [-1, 128, 75, 75]          73,856\n              ReLU-7          [-1, 128, 75, 75]               0\n            Conv2d-8          [-1, 128, 75, 75]         147,584\n\n\n              ReLU-9          [-1, 128, 75, 75]               0\n        MaxPool2d-10          [-1, 128, 37, 37]               0\n           Conv2d-11          [-1, 256, 37, 37]         295,168\n             ReLU-12          [-1, 256, 37, 37]               0\n           Conv2d-13\
+      \          [-1, 256, 37, 37]         590,080\n             ReLU-14          [-1, 256, 37, 37]               0\n           Conv2d-15          [-1, 256, 37, 37]         590,080\n             ReLU-16          [-1, 256, 37, 37]               0\n        MaxPool2d-17          [-1, 256, 18, 18]               0\n           Conv2d-18          [-1, 512, 18, 18]       1,180,160\n             ReLU-19          [-1, 512, 18, 18]               0\n           Conv2d-20          [-1, 512, 18, 18]       2,359,808\n             ReLU-21          [-1, 512, 18, 18]               0\n           Conv2d-22          [-1, 512, 18, 18]       2,359,808\n             ReLU-23          [-1, 512, 18, 18]               0\n        MaxPool2d-24            [-1, 512, 9, 9]               0\n           Conv2d-25            [-1, 512, 9, 9]       2,359,808\n             ReLU-26            [-1, 512, 9, 9]               0\n           Conv2d-27            [-1, 512, 9, 9]       2,359,808\n             ReLU-28            [-1, 512,\
+      \ 9, 9]               0\n           Conv2d-29            [-1, 512, 9, 9]       2,359,808\n             ReLU-30            [-1, 512, 9, 9]               0\n        MaxPool2d-31            [-1, 512, 4, 4]               0\nAdaptiveAvgPool2d-32            [-1, 512, 7, 7]               0\n           Linear-33                 [-1, 4096]     102,764,544\n             ReLU-34                 [-1, 4096]               0\n          Dropout-35                 [-1, 4096]               0\n           Linear-36                 [-1, 4096]      16,781,312\n             ReLU-37                 [-1, 4096]               0\n          Dropout-38                 [-1, 4096]               0\n           Linear-39                 [-1, 1000]       4,097,000\n================================================================\nTotal params: 138,357,544\nTrainable params: 138,357,544\nNon-trainable params: 0\n----------------------------------------------------------------\nInput size (MB): 0.26\n\n\nForward/backward\
+      \ pass size (MB): 96.93\nParams size (MB): 527.79\nEstimated Total Size (MB): 624.98\n----------------------------------------------------------------"
+  - type: image
+    src: assets/images/m4_114_2_p11_img02.png
+    alt: Context for Questions 42-45
+  - type: text
+    text: 在深度神經網路中，不同層的參數量（parameter count）差異極大。有些層雖然數量少但計算量大，有些則相反。了解參數分佈情形，有助於模型壓縮與遷移學習設計。請問在VGG16 中，下列何者的參數量最多？
+  - type: text
+    text: (114年第二梯次)
+  type: multiple_choice
+  options:
+  - text: 卷積層(Conv2d)
+    content:
+    - type: text
+      text: 卷積層(Conv2d)
+  - text: 全連接層(Linear)
+    content:
+    - type: text
+      text: 全連接層(Linear)
+  - text: ReLU 激活函數
+    content:
+    - type: text
+      text: ReLU 激活函數
+  - text: 池化層(MaxPool2d, AdaptiveAvgPool2d)
+    content:
+    - type: text
+      text: 池化層(MaxPool2d, AdaptiveAvgPool2d)
+  correct_index: 1
+  explanation: VGG16 的全連接層參數量最大，尤其第一個 Linear 層約有 102M 參數，遠高於單一卷積或池化層。
+  tags:
+  - chap-m4-ch2
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m4-114-2-043
+  chapter_title: 深度學習框架與架構
+  section_title: 歷屆考題
+  text: 'VGG16 是由牛津大學 Visual Geometry Group(VGG)在2014 年提出的經典卷積神經網路（Convolutional Neural Network, CNN）架構。該模型以簡潔且規則的層堆疊設計聞名，廣泛應用於影像分類、特徵提取及遷移學習等任務。附圖程式碼載入了預訓練的VGG16 模型，並輸出其完整層級結構及參數統計摘要（如附表）。請根據此資訊回答42~45 題。
+
+
+    在神經網路中，了解各層的運算量分佈，有助於模型壓縮與硬體加速的策略設計。請問在VGG16 中，下列何者運算量(FLOPs)最多？
+
+
+    (114年第二梯次)'
+  content:
+  - type: text
+    text: VGG16 是由牛津大學 Visual Geometry Group(VGG)在2014 年提出的經典卷積神經網路（Convolutional Neural Network, CNN）架構。該模型以簡潔且規則的層堆疊設計聞名，廣泛應用於影像分類、特徵提取及遷移學習等任務。附圖程式碼載入了預訓練的VGG16 模型，並輸出其完整層級結構及參數統計摘要（如附表）。請根據此資訊回答42~45 題。
+  - type: code
+    language: text
+    code: "----------------------------------------------------------------\nLayer (type)               Output Shape         Param #\n================================================================\n            Conv2d-1         [-1, 64, 150, 150]           1,792\n              ReLU-2         [-1, 64, 150, 150]               0\n            Conv2d-3         [-1, 64, 150, 150]          36,928\n              ReLU-4         [-1, 64, 150, 150]               0\n         MaxPool2d-5           [-1, 64, 75, 75]               0\n            Conv2d-6          [-1, 128, 75, 75]          73,856\n              ReLU-7          [-1, 128, 75, 75]               0\n            Conv2d-8          [-1, 128, 75, 75]         147,584\n\n\n              ReLU-9          [-1, 128, 75, 75]               0\n        MaxPool2d-10          [-1, 128, 37, 37]               0\n           Conv2d-11          [-1, 256, 37, 37]         295,168\n             ReLU-12          [-1, 256, 37, 37]               0\n           Conv2d-13\
+      \          [-1, 256, 37, 37]         590,080\n             ReLU-14          [-1, 256, 37, 37]               0\n           Conv2d-15          [-1, 256, 37, 37]         590,080\n             ReLU-16          [-1, 256, 37, 37]               0\n        MaxPool2d-17          [-1, 256, 18, 18]               0\n           Conv2d-18          [-1, 512, 18, 18]       1,180,160\n             ReLU-19          [-1, 512, 18, 18]               0\n           Conv2d-20          [-1, 512, 18, 18]       2,359,808\n             ReLU-21          [-1, 512, 18, 18]               0\n           Conv2d-22          [-1, 512, 18, 18]       2,359,808\n             ReLU-23          [-1, 512, 18, 18]               0\n        MaxPool2d-24            [-1, 512, 9, 9]               0\n           Conv2d-25            [-1, 512, 9, 9]       2,359,808\n             ReLU-26            [-1, 512, 9, 9]               0\n           Conv2d-27            [-1, 512, 9, 9]       2,359,808\n             ReLU-28            [-1, 512,\
+      \ 9, 9]               0\n           Conv2d-29            [-1, 512, 9, 9]       2,359,808\n             ReLU-30            [-1, 512, 9, 9]               0\n        MaxPool2d-31            [-1, 512, 4, 4]               0\nAdaptiveAvgPool2d-32            [-1, 512, 7, 7]               0\n           Linear-33                 [-1, 4096]     102,764,544\n             ReLU-34                 [-1, 4096]               0\n          Dropout-35                 [-1, 4096]               0\n           Linear-36                 [-1, 4096]      16,781,312\n             ReLU-37                 [-1, 4096]               0\n          Dropout-38                 [-1, 4096]               0\n           Linear-39                 [-1, 1000]       4,097,000\n================================================================\nTotal params: 138,357,544\nTrainable params: 138,357,544\nNon-trainable params: 0\n----------------------------------------------------------------\nInput size (MB): 0.26\n\n\nForward/backward\
+      \ pass size (MB): 96.93\nParams size (MB): 527.79\nEstimated Total Size (MB): 624.98\n----------------------------------------------------------------"
+  - type: image
+    src: assets/images/m4_114_2_p11_img02.png
+    alt: Context for Questions 42-45
+  - type: text
+    text: 在神經網路中，了解各層的運算量分佈，有助於模型壓縮與硬體加速的策略設計。請問在VGG16 中，下列何者運算量(FLOPs)最多？
+  - type: text
+    text: (114年第二梯次)
+  type: multiple_choice
+  options:
+  - text: 卷積層(Conv2d)
+    content:
+    - type: text
+      text: 卷積層(Conv2d)
+  - text: 全連接層(Linear)
+    content:
+    - type: text
+      text: 全連接層(Linear)
+  - text: ReLU 激活函數
+    content:
+    - type: text
+      text: ReLU 激活函數
+  - text: 池化層(MaxPool2d, AdaptiveAvgPool2d)
+    content:
+    - type: text
+      text: 池化層(MaxPool2d, AdaptiveAvgPool2d)
+  correct_index: 0
+  explanation: CNN 中卷積層在空間位置上反覆做卷積運算，FLOPs 通常最多；全連接層參數多，但主要計算量常集中在卷積層。
+  tags:
+  - chap-m4-ch2
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m4-114-2-044
+  chapter_title: 深度學習框架與架構
+  section_title: 歷屆考題
+  text: 'VGG16 是由牛津大學 Visual Geometry Group(VGG)在2014 年提出的經典卷積神經網路（Convolutional Neural Network, CNN）架構。該模型以簡潔且規則的層堆疊設計聞名，廣泛應用於影像分類、特徵提取及遷移學習等任務。附圖程式碼載入了預訓練的VGG16 模型，並輸出其完整層級結構及參數統計摘要（如附表）。請根據此資訊回答42~45 題。
+
+
+    VGG16 層數深且結構規則，由多層卷積、池化及全連接層組成。了解各層的輸入/輸出維度、參數量及記憶體需求，有助於掌握CNN 模型的組成邏輯與實作技巧。根據VGG16 的模型架構，下列敘述何者正確？
+
+
+    (114年第二梯次)'
+  content:
+  - type: text
+    text: VGG16 是由牛津大學 Visual Geometry Group(VGG)在2014 年提出的經典卷積神經網路（Convolutional Neural Network, CNN）架構。該模型以簡潔且規則的層堆疊設計聞名，廣泛應用於影像分類、特徵提取及遷移學習等任務。附圖程式碼載入了預訓練的VGG16 模型，並輸出其完整層級結構及參數統計摘要（如附表）。請根據此資訊回答42~45 題。
+  - type: code
+    language: text
+    code: "----------------------------------------------------------------\nLayer (type)               Output Shape         Param #\n================================================================\n            Conv2d-1         [-1, 64, 150, 150]           1,792\n              ReLU-2         [-1, 64, 150, 150]               0\n            Conv2d-3         [-1, 64, 150, 150]          36,928\n              ReLU-4         [-1, 64, 150, 150]               0\n         MaxPool2d-5           [-1, 64, 75, 75]               0\n            Conv2d-6          [-1, 128, 75, 75]          73,856\n              ReLU-7          [-1, 128, 75, 75]               0\n            Conv2d-8          [-1, 128, 75, 75]         147,584\n\n\n              ReLU-9          [-1, 128, 75, 75]               0\n        MaxPool2d-10          [-1, 128, 37, 37]               0\n           Conv2d-11          [-1, 256, 37, 37]         295,168\n             ReLU-12          [-1, 256, 37, 37]               0\n           Conv2d-13\
+      \          [-1, 256, 37, 37]         590,080\n             ReLU-14          [-1, 256, 37, 37]               0\n           Conv2d-15          [-1, 256, 37, 37]         590,080\n             ReLU-16          [-1, 256, 37, 37]               0\n        MaxPool2d-17          [-1, 256, 18, 18]               0\n           Conv2d-18          [-1, 512, 18, 18]       1,180,160\n             ReLU-19          [-1, 512, 18, 18]               0\n           Conv2d-20          [-1, 512, 18, 18]       2,359,808\n             ReLU-21          [-1, 512, 18, 18]               0\n           Conv2d-22          [-1, 512, 18, 18]       2,359,808\n             ReLU-23          [-1, 512, 18, 18]               0\n        MaxPool2d-24            [-1, 512, 9, 9]               0\n           Conv2d-25            [-1, 512, 9, 9]       2,359,808\n             ReLU-26            [-1, 512, 9, 9]               0\n           Conv2d-27            [-1, 512, 9, 9]       2,359,808\n             ReLU-28            [-1, 512,\
+      \ 9, 9]               0\n           Conv2d-29            [-1, 512, 9, 9]       2,359,808\n             ReLU-30            [-1, 512, 9, 9]               0\n        MaxPool2d-31            [-1, 512, 4, 4]               0\nAdaptiveAvgPool2d-32            [-1, 512, 7, 7]               0\n           Linear-33                 [-1, 4096]     102,764,544\n             ReLU-34                 [-1, 4096]               0\n          Dropout-35                 [-1, 4096]               0\n           Linear-36                 [-1, 4096]      16,781,312\n             ReLU-37                 [-1, 4096]               0\n          Dropout-38                 [-1, 4096]               0\n           Linear-39                 [-1, 1000]       4,097,000\n================================================================\nTotal params: 138,357,544\nTrainable params: 138,357,544\nNon-trainable params: 0\n----------------------------------------------------------------\nInput size (MB): 0.26\n\n\nForward/backward\
+      \ pass size (MB): 96.93\nParams size (MB): 527.79\nEstimated Total Size (MB): 624.98\n----------------------------------------------------------------"
+  - type: image
+    src: assets/images/m4_114_2_p11_img02.png
+    alt: Context for Questions 42-45
+  - type: text
+    text: VGG16 層數深且結構規則，由多層卷積、池化及全連接層組成。了解各層的輸入/輸出維度、參數量及記憶體需求，有助於掌握CNN 模型的組成邏輯與實作技巧。根據VGG16 的模型架構，下列敘述何者正確？
+  - type: text
+    text: (114年第二梯次)
+  type: multiple_choice
+  options:
+  - text: AdaptiveAvgPool2d 的輸出會被攤平後傳入第一個全連接層；由於前一層池化輸出空間為 4×4，所以第一個線性層的輸入維度是 512×4×4 =8192
+    content:
+    - type: text
+      text: AdaptiveAvgPool2d 的輸出會被攤平後傳入第一個全連接層；由於前一層池化輸出空間為 4×4，所以第一個線性層的輸入維度是 512×4×4 =8192
+  - text: Linear-33（第一個全連接層）報出的102,764,544 參數只包含權重，偏差（bias）沒有算在內
+    content:
+    - type: text
+      text: Linear-33（第一個全連接層）報出的102,764,544 參數只包含權重，偏差（bias）沒有算在內
+  - text: 根據列出的「Estimated Total Size (MB) = 624.98」，表示訓練此模型只需大約625MB 的GPU 記憶體（包含所有optimizer state 與梯度），所以一張 1 GB 的GPU 就足夠訓練
+    content:
+    - type: text
+      text: 根據列出的「Estimated Total Size (MB) = 624.98」，表示訓練此模型只需大約625MB 的GPU 記憶體（包含所有optimizer state 與梯度），所以一張 1 GB 的GPU 就足夠訓練
+  - text: VGG16 包含13 層卷積層（conv）與3 層全連接層（FC），總參數數目約為 138,357,544（約138.36M）
+    content:
+    - type: text
+      text: VGG16 包含13 層卷積層（conv）與3 層全連接層（FC），總參數數目約為 138,357,544（約138.36M）
+  correct_index: 3
+  explanation: VGG16 經典結構包含 13 個卷積層與 3 個全連接層，總參數約 138.36M；其他選項對輸入維度、bias 或記憶體需求的解讀不正確。
+  tags:
+  - chap-m4-ch2
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m4-114-2-045
+  chapter_title: 深度學習框架與架構
+  section_title: 歷屆考題
+  text: 'VGG16 是由牛津大學 Visual Geometry Group(VGG)在2014 年提出的經典卷積神經網路（Convolutional Neural Network, CNN）架構。該模型以簡潔且規則的層堆疊設計聞名，廣泛應用於影像分類、特徵提取及遷移學習等任務。附圖程式碼載入了預訓練的VGG16 模型，並輸出其完整層級結構及參數統計摘要（如附表）。請根據此資訊回答42~45 題。
+
+
+    在實務應用中，我們常使用遷移學習(transfer learning)技巧，即載入預訓練模型（如VGG16），凍結部分層的參數，只針對特定任務重新訓練最後幾層，這種做法可節省訓練時間並提升模型效能。假設你要對VGG16 進行遷移學習(transfer learning)，希望凍結卷積層的參數，只訓練最後全連
+
+
+    接層(classifier)。下列哪段程式碼寫法正確？
+
+
+    (114年第二梯次)'
+  content:
+  - type: text
+    text: VGG16 是由牛津大學 Visual Geometry Group(VGG)在2014 年提出的經典卷積神經網路（Convolutional Neural Network, CNN）架構。該模型以簡潔且規則的層堆疊設計聞名，廣泛應用於影像分類、特徵提取及遷移學習等任務。附圖程式碼載入了預訓練的VGG16 模型，並輸出其完整層級結構及參數統計摘要（如附表）。請根據此資訊回答42~45 題。
+  - type: code
+    language: text
+    code: "----------------------------------------------------------------\nLayer (type)               Output Shape         Param #\n================================================================\n            Conv2d-1         [-1, 64, 150, 150]           1,792\n              ReLU-2         [-1, 64, 150, 150]               0\n            Conv2d-3         [-1, 64, 150, 150]          36,928\n              ReLU-4         [-1, 64, 150, 150]               0\n         MaxPool2d-5           [-1, 64, 75, 75]               0\n            Conv2d-6          [-1, 128, 75, 75]          73,856\n              ReLU-7          [-1, 128, 75, 75]               0\n            Conv2d-8          [-1, 128, 75, 75]         147,584\n\n\n              ReLU-9          [-1, 128, 75, 75]               0\n        MaxPool2d-10          [-1, 128, 37, 37]               0\n           Conv2d-11          [-1, 256, 37, 37]         295,168\n             ReLU-12          [-1, 256, 37, 37]               0\n           Conv2d-13\
+      \          [-1, 256, 37, 37]         590,080\n             ReLU-14          [-1, 256, 37, 37]               0\n           Conv2d-15          [-1, 256, 37, 37]         590,080\n             ReLU-16          [-1, 256, 37, 37]               0\n        MaxPool2d-17          [-1, 256, 18, 18]               0\n           Conv2d-18          [-1, 512, 18, 18]       1,180,160\n             ReLU-19          [-1, 512, 18, 18]               0\n           Conv2d-20          [-1, 512, 18, 18]       2,359,808\n             ReLU-21          [-1, 512, 18, 18]               0\n           Conv2d-22          [-1, 512, 18, 18]       2,359,808\n             ReLU-23          [-1, 512, 18, 18]               0\n        MaxPool2d-24            [-1, 512, 9, 9]               0\n           Conv2d-25            [-1, 512, 9, 9]       2,359,808\n             ReLU-26            [-1, 512, 9, 9]               0\n           Conv2d-27            [-1, 512, 9, 9]       2,359,808\n             ReLU-28            [-1, 512,\
+      \ 9, 9]               0\n           Conv2d-29            [-1, 512, 9, 9]       2,359,808\n             ReLU-30            [-1, 512, 9, 9]               0\n        MaxPool2d-31            [-1, 512, 4, 4]               0\nAdaptiveAvgPool2d-32            [-1, 512, 7, 7]               0\n           Linear-33                 [-1, 4096]     102,764,544\n             ReLU-34                 [-1, 4096]               0\n          Dropout-35                 [-1, 4096]               0\n           Linear-36                 [-1, 4096]      16,781,312\n             ReLU-37                 [-1, 4096]               0\n          Dropout-38                 [-1, 4096]               0\n           Linear-39                 [-1, 1000]       4,097,000\n================================================================\nTotal params: 138,357,544\nTrainable params: 138,357,544\nNon-trainable params: 0\n----------------------------------------------------------------\nInput size (MB): 0.26\n\n\nForward/backward\
+      \ pass size (MB): 96.93\nParams size (MB): 527.79\nEstimated Total Size (MB): 624.98\n----------------------------------------------------------------"
+  - type: image
+    src: assets/images/m4_114_2_p11_img02.png
+    alt: Context for Questions 42-45
+  - type: text
+    text: '在實務應用中，我們常使用遷移學習(transfer learning)技巧，即載入預訓練模型（如VGG16），凍結部分層的參數，只針對特定任務重新訓練最後幾層，這種做法可節省訓練時間並提升模型效能。假設你要對VGG16 進行遷移學習(transfer learning)，希望凍結卷積層的參數，只訓練最後全連
+
+
+      接層(classifier)。下列哪段程式碼寫法正確？'
+  - type: text
+    text: (114年第二梯次)
+  type: multiple_choice
+  options:
+  - text: 選項 A
+    content:
+    - type: image
+      src: assets/images/m4_114_2_p14_img01.png
+      alt: Q45 option A code
+  - text: 選項 B
+    content:
+    - type: image
+      src: assets/images/m4_114_2_p14_img02.png
+      alt: Q45 option B code
+  - text: 選項 C
+    content:
+    - type: image
+      src: assets/images/m4_114_2_p14_img03.png
+      alt: Q45 option C code
+  - text: 選項 D
+    content:
+    - type: image
+      src: assets/images/m4_114_2_p14_img04.png
+      alt: Q45 option D code
+  correct_index: 1
+  explanation: 遷移學習若要凍結卷積特徵抽取器，只訓練 classifier，需將 features 中參數的 requires_grad 設為 False，並保留或替換 classifier 進行訓練；附圖 B 符合此做法。
+  tags:
+  - chap-m4-ch2
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m4-114-2-048
+  chapter_title: 深度學習框架與架構
+  section_title: 歷屆考題
+  text: '使用鐵達尼號(Titanic)資料集進行多層感知機(Multilayer Perceptron,MLP)分類預測分析，其中survived 為反應變數(1 表示存活，0 表示死亡)。附圖程式碼展示資料載入與處理，請根據此資料回答第48~50 題。
+
+
+    下圖顯示資料集的前5 筆資料。
+
+
+    參考下圖程式碼，下列何者正確？
+
+
+    A：X_train -= X_train.mean(axis=0) 將每個訓練集特徵的平均值調整為0B：X_train /= X_train.std(axis=0) 將每個訓練集特徵的標準差調整為0C：X_train 處理結果會將資料壓縮到 0 和 1 之間D：標準化結果防止梯度爆炸或消失E：標準化是屬於特徵選擇(Feature Selection)方法F：X_train 程式碼應修正為 X_train = X_train.std(axis=0), X_test程式碼應修正為 X_test = X_test.std(axis=0)
+
+
+    (114年第二梯次)'
+  content:
+  - type: text
+    text: '使用鐵達尼號(Titanic)資料集進行多層感知機(Multilayer Perceptron,MLP)分類預測分析，其中survived 為反應變數(1 表示存活，0 表示死亡)。附圖程式碼展示資料載入與處理，請根據此資料回答第48~50 題。
+
+
+      下圖顯示資料集的前5 筆資料。'
+  - type: image
+    src: assets/images/m4_114_2_p16_img04.png
+    alt: Context for Questions 48-50
+  - type: image
+    src: assets/images/m4_114_2_p17_img01.png
+    alt: Context for Questions 48-50
+  - type: image
+    src: assets/images/m4_114_2_p17_img02.png
+    alt: Context for Questions 48-50
+  - type: image
+    src: assets/images/m4_114_2_p17_img03.png
+    alt: Context for Questions 48-50
+  - type: text
+    text: 參考下圖程式碼，下列何者正確？
+  - type: image
+    src: assets/images/m4_114_2_p17_img04.png
+    alt: Q48 standardization code 1
+  - type: text
+    text: A：X_train -= X_train.mean(axis=0) 將每個訓練集特徵的平均值調整為0B：X_train /= X_train.std(axis=0) 將每個訓練集特徵的標準差調整為0C：X_train 處理結果會將資料壓縮到 0 和 1 之間D：標準化結果防止梯度爆炸或消失E：標準化是屬於特徵選擇(Feature Selection)方法F：X_train 程式碼應修正為 X_train = X_train.std(axis=0), X_test程式碼應修正為 X_test = X_test.std(axis=0)
+  - type: text
+    text: (114年第二梯次)
+  type: multiple_choice
+  options:
+  - text: A、B、C、D
+    content:
+    - type: text
+      text: A、B、C、D
+  - text: A、E
+    content:
+    - type: text
+      text: A、E
+  - text: A、D
+    content:
+    - type: text
+      text: A、D
+  - text: A、C、F
+    content:
+    - type: text
+      text: A、C、F
+  correct_index: 2
+  explanation: 標準化以訓練集平均值與標準差調整特徵，A 正確；標準化能改善梯度尺度並降低梯度爆炸或消失風險，D 正確。它不是將資料壓到 0-1，也不是特徵選擇。
+  tags:
+  - chap-m4-ch2
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m4-114-2-049
+  chapter_title: 深度學習框架與架構
+  section_title: 歷屆考題
+  text: '使用鐵達尼號(Titanic)資料集進行多層感知機(Multilayer Perceptron,MLP)分類預測分析，其中survived 為反應變數(1 表示存活，0 表示死亡)。附圖程式碼展示資料載入與處理，請根據此資料回答第48~50 題。
+
+
+    下圖顯示資料集的前5 筆資料。
+
+
+    參考下圖執行結果，下列何者正確？
+
+
+    (114年第二梯次)'
+  content:
+  - type: text
+    text: '使用鐵達尼號(Titanic)資料集進行多層感知機(Multilayer Perceptron,MLP)分類預測分析，其中survived 為反應變數(1 表示存活，0 表示死亡)。附圖程式碼展示資料載入與處理，請根據此資料回答第48~50 題。
+
+
+      下圖顯示資料集的前5 筆資料。'
+  - type: image
+    src: assets/images/m4_114_2_p16_img04.png
+    alt: Context for Questions 48-50
+  - type: image
+    src: assets/images/m4_114_2_p17_img01.png
+    alt: Context for Questions 48-50
+  - type: image
+    src: assets/images/m4_114_2_p17_img02.png
+    alt: Context for Questions 48-50
+  - type: image
+    src: assets/images/m4_114_2_p17_img03.png
+    alt: Context for Questions 48-50
+  - type: text
+    text: 參考下圖執行結果，下列何者正確？
+  - type: image
+    src: assets/images/m4_114_2_p18_img01.png
+    alt: Q49 model summary/formula 1
+  - type: image
+    src: assets/images/m4_114_2_p18_img02.png
+    alt: Q49 model summary/formula 2
+  - type: text
+    text: (114年第二梯次)
+  type: multiple_choice
+  options:
+  - text: activation="relu"其數學式為
+    content:
+    - type: text
+      text: activation="relu"其數學式為
+  - text: 空格1 值為110，空格2 值為100
+    content:
+    - type: text
+      text: 空格1 值為110，空格2 值為100
+  - text: 空格1 值為100，空格2 值為110
+    content:
+    - type: text
+      text: 空格1 值為100，空格2 值為110
+  - text: activation="sigmoid"一般用於多類別分類預測模型
+    content:
+    - type: text
+      text: activation="sigmoid"一般用於多類別分類預測模型
+  correct_index: 2
+  explanation: 模型摘要中的參數數量由前一層輸出維度與下一層神經元數計算，依附圖空格應為 100 與 110；ReLU 與 sigmoid 的敘述不符合題目脈絡。
+  tags:
+  - chap-m4-ch2
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m4-114-2-050
+  chapter_title: 深度學習框架與架構
+  section_title: 歷屆考題
+  text: '使用鐵達尼號(Titanic)資料集進行多層感知機(Multilayer Perceptron,MLP)分類預測分析，其中survived 為反應變數(1 表示存活，0 表示死亡)。附圖程式碼展示資料載入與處理，請根據此資料回答第48~50 題。
+
+
+    下圖顯示資料集的前5 筆資料。
+
+
+    參考下圖執行結果，下列何者正確？
+
+
+    A：空格1 須填入 "b-"B：空格2 須填入 "b--"C：空格1 須填入 "r-"D：空格2 須填入 "r--"E：驗證損失明顯較訓練損失減少更明顯
+
+
+    (114年第二梯次)'
+  content:
+  - type: text
+    text: '使用鐵達尼號(Titanic)資料集進行多層感知機(Multilayer Perceptron,MLP)分類預測分析，其中survived 為反應變數(1 表示存活，0 表示死亡)。附圖程式碼展示資料載入與處理，請根據此資料回答第48~50 題。
+
+
+      下圖顯示資料集的前5 筆資料。'
+  - type: image
+    src: assets/images/m4_114_2_p16_img04.png
+    alt: Context for Questions 48-50
+  - type: image
+    src: assets/images/m4_114_2_p17_img01.png
+    alt: Context for Questions 48-50
+  - type: image
+    src: assets/images/m4_114_2_p17_img02.png
+    alt: Context for Questions 48-50
+  - type: image
+    src: assets/images/m4_114_2_p17_img03.png
+    alt: Context for Questions 48-50
+  - type: text
+    text: 參考下圖執行結果，下列何者正確？
+  - type: image
+    src: assets/images/m4_114_2_p18_img03.jpg
+    alt: Q50 training plot 1
+  - type: image
+    src: assets/images/m4_114_2_p18_img04.png
+    alt: Q50 training plot 2
+  - type: image
+    src: assets/images/m4_114_2_p19_img01.png
+    alt: Q50 training plot 3
+  - type: text
+    text: A：空格1 須填入 "b-"B：空格2 須填入 "b--"C：空格1 須填入 "r-"D：空格2 須填入 "r--"E：驗證損失明顯較訓練損失減少更明顯
+  - type: text
+    text: (114年第二梯次)
+  type: multiple_choice
+  options:
+  - text: B、C
+    content:
+    - type: text
+      text: B、C
+  - text: A、C、D
+    content:
+    - type: text
+      text: A、C、D
+  - text: A、D
+    content:
+    - type: text
+      text: A、D
+  - text: C、D、E
+    content:
+    - type: text
+      text: C、D、E
+  correct_index: 2
+  explanation: 依圖中訓練與驗證曲線標示，空格 1 應填 b-，空格 2 應填 r--；選項 C 對應 A 與 D。
+  tags:
+  - chap-m4-ch2
+  - sec-past-exam
+  - past-exam
+  usage: mock

@@ -339,4 +339,4 @@ future/
 /.quarto/
 **/*_files/
 
-site_ibs/
+site_libs/

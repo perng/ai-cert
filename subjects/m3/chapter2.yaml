@@ -1071,3 +1071,341 @@ questions:
   - chap-m3-ch2
   - sec-data-ingestion
   usage: both
+- id: 114-2-005
+  chapter_title: 進階資料處理
+  section_title: 歷屆考題
+  text: |-
+    在進行資料前處理時，若使用 Label Encoding 將類別變數轉換為數字型態，下列何者為最常見的潛在風險？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 無法處理缺值
+  - 會引入類別之間的虛假順序關係
+  - 無法擴展至新資料
+  - 記憶體佔用過高
+  correct_index: 1
+  explanation: Label Encoding 會把類別映射成 0、1、2 等數字。若類別本身無序，模型可能誤以為數字大小代表類別順序或距離，因此最常見風險是引入虛假的順序關係。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch2
+  usage: mock
+- id: 114-2-006
+  chapter_title: 進階資料處理
+  section_title: 歷屆考題
+  text: |-
+    在進行資料分析時，會遇到類別型（Categorical）與數值型（Numerical）資料格式。關於這兩種資料格式的處理，下列敘述何者不正確？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - One-Hot 編碼（One-Hot Encoding）會將類別變數轉換為多維二元向量，適用於無序（Nominal）類別資料，但在高基數（High Cardinality）特徵下可能造成維度爆炸問題
+  - 標籤編碼（Label Encoding）會以整數表示不同類別，若應用於無序（Nominal）資料，可能導致模型誤將編碼值解讀為具數值大小關係的特徵
+  - 標準化（Standardization）透過將資料平移與縮放，使其平均值為 0、標準差為 1，可在多數距離型演算法中改善收斂速度，並同時將數值範圍壓縮至 0 至 1 之間
+  - 對連續變數進行分箱（Binning）可提升模型可解釋性，但若分段方式未依據資料分佈特性設計，可能導致資訊損失或邊界偏誤
+  correct_index: 2
+  explanation: 標準化會讓資料平均值為 0、標準差為 1，但不會保證數值落在 0 到 1；把範圍壓到 0 到 1 是 Min-Max normalization 的特性，所以選項 C 的敘述不正確。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch2
+  usage: mock
+- id: 114-2-008
+  chapter_title: 進階資料處理
+  section_title: 歷屆考題
+  text: |-
+    資料科學家為分析顧客行為，利用現有欄位「銷售金額」與「瀏覽次數」，計算出新變數「銷售金額/瀏覽次數」。此動作屬於下列哪一類特徵工程方法？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 特徵選擇（Feature Selection）
+  - 特徵衍生（Feature Derivation）
+  - 特徵轉換（Feature Transformation）
+  - 分箱處理（Binning）
+  correct_index: 1
+  explanation: 用既有欄位計算新欄位，例如「銷售金額 / 瀏覽次數」，是在創造衍生特徵，因此屬於 Feature Derivation，而不是刪除欄位的特徵選擇。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch2
+  usage: mock
+- id: 114-2-009
+  chapter_title: 進階資料處理
+  section_title: 歷屆考題
+  text: |-
+    在進行數值特徵的標準化（Normalization）時，若資料中存在極端值（Outliers），下列哪一種方法最適合使用？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - Min-Max 正規化（Min-Max Scaling）
+  - Z-score 標準化（Z-score Normalization）
+  - 穩健縮放（Robust Scaling）
+  - 標準分箱（Standard Binning）
+  correct_index: 2
+  explanation: Robust Scaling 通常使用中位數與四分位距縮放，對極端值較不敏感；Min-Max 與一般 Z-score 容易被 outlier 拉動尺度。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch2
+  usage: mock
+- id: 114-2-010
+  chapter_title: 進階資料處理
+  section_title: 歷屆考題
+  text: |-
+    下列哪一種情境最適合應用異常偵測（Anomaly Detection）技術？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 根據歷史銷售資料預測特定商品在旺季期間是否會出現供貨短缺，以提前調整庫存策略
+  - 透過信用風險模型預測顧客是否可能發生違約，以輔助核貸決策
+  - 即時分析金融交易資料流，偵測與平常交易行為明顯不同的可疑交易紀錄
+  - 監控線上服務平台的使用者登入次數，預測次日的登入量變化趨勢
+  correct_index: 2
+  explanation: 異常偵測的核心是找出與常態行為明顯不同的事件，即時金融交易監控正符合此目的；其他選項偏向預測、報表或一般監控。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch2
+  usage: mock
+- id: 114-2-011
+  chapter_title: 進階資料處理
+  section_title: 歷屆考題
+  text: |-
+    若一家公司需即時監控大量物聯網裝置的異常行為，下列哪一種組合最適合此應用？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 傳統關聯式資料庫 + 圖形視覺化
+  - 批次資料處理 + 雲端備份
+  - 大數據平台 + 即時資料分析技術
+  - Word 文件 + 手動標註
+  correct_index: 2
+  explanation: 大量 IoT 裝置的即時異常監控需要能承受高吞吐資料流並低延遲分析的架構，因此大數據平台搭配即時資料分析技術最合適。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch2
+  usage: mock
+- id: 114-2-012
+  chapter_title: 進階資料處理
+  section_title: 歷屆考題
+  text: |-
+    在處理分類問題時，若某一類樣本數明顯少於其他類別，研究人員可能採用隨機過採樣（Random Oversampling）以平衡資料比例，此方法最常造成下列哪一種問題？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 增加過擬合風險
+  - 降低模型的收斂速度
+  - 減少資料總筆數數量
+  - 導致訓練資料欄位缺失
+  correct_index: 0
+  explanation: 隨機過採樣會重複複製少數類樣本，模型可能記住這些重複樣本而非學到泛化規則，因此最常見問題是過擬合風險上升。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch2
+  usage: mock
+- id: 114-2-017
+  chapter_title: 進階資料處理
+  section_title: 歷屆考題
+  text: |-
+    某電商公司欲利用顧客行為資料建立消費預測模型，其中「會員等級」欄位包含「一般、白金、黑卡」三種類別。若模型採用梯度提升樹（Gradient Boosting Tree）演算法，資料科學家在進行特徵編碼時應特別注意下列何種情況？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 應優先採用獨熱編碼（One-Hot Encoding），以減少類別之間的相依性與記憶體使用量
+  - 直接使用標籤編碼（Label Encoding）可能使模型誤判類別間存在順序關係，導致特徵重要性偏誤
+  - 使用目標編碼（Target Encoding）會自動消除過擬合（Overfitting）風險
+  - 若類別數量較少，建議先使用主成分分析（Principal Component Analysis, PCA）進行降維
+  correct_index: 1
+  explanation: 會員等級雖然以文字呈現，但直接 Label Encoding 會把類別轉成數字序列，梯度提升樹可能利用這個人為順序切分，造成特徵重要性或模型判斷偏誤。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch2
+  usage: mock
+- id: 114-2-019
+  chapter_title: 進階資料處理
+  section_title: 歷屆考題
+  text: |-
+    某製造企業導入上萬台物聯網（IoT）感測器以進行設備健康監測。系統需在毫秒級回應異常事件，並同時將完整資料保留於雲端供後續 AI 模型訓練與分析。若企業希望兼顧即時性、資料完整性與可擴展性，下列哪一種資料流程設計最符合此目標？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 感測器 → 雲端 API Gateway → 分散式資料庫 → 批次特徵工程 → 模型推論
+  - 感測器 → MQTT Broker → 雲端資料倉儲 → 即時儀表板 → 模型再訓練
+  - 感測器 → 邊緣運算節點 → 流式資料處理框架（Stream Processing Framework）→ 雲端資料湖 → 模型推論
+  - 感測器 → 本地快取層 → RESTful API → 雲端報表系統 → 模型批次更新
+  correct_index: 2
+  explanation: 毫秒級異常回應需要邊緣端先處理或推論，流式處理框架負責即時資料流，雲端資料湖保留完整資料供後續訓練與分析，三者能兼顧即時性、完整性與擴展性。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch2
+  usage: mock
+- id: 114-2-037
+  chapter_title: 進階資料處理
+  section_title: 歷屆考題
+  text: |-
+    若開發一個用於罕見疾病自動診斷的分類模型，目前資料集中確診樣本僅佔不到 1%，且因為標註成本高，短期內無法取得更多資料。在此情況下，若希望提升模型對少數類的偵測能力，同時避免過擬合，下列哪一種策略最為合理？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 對少數類進行隨機過採樣（Random Oversampling）
+  - 對多數類進行欠採樣（Random Undersampling）
+  - 使用 SMOTE（Synthetic Minority Over-sampling Technique）生成合成少數類樣本後再訓練分類模型
+  - 僅使用現有資料調整模型決策閾值（Decision Threshold）以提升召回率
+  correct_index: 2
+  explanation: 少數類不到 1% 且資料取得困難時，SMOTE 透過插值產生合成少數類樣本，比單純重複樣本的隨機過採樣更能降低過擬合風險。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch2
+  usage: mock
+- id: 114-2-043
+  chapter_title: 進階資料處理
+  section_title: 歷屆考題
+  text: "一間遊戲市場研究公司正在分析全球電子遊戲銷售情況，並準備建立一份「熱銷遊戲銷售報告」。分析師取得了一份名為 `vgsales.csv` 的資料集，內容包含了全球銷量超過 10 萬份的電子遊戲清單。研究團隊希望透過這份資料，了解不同年份、平台與地區的銷售趨勢。資料集的欄位說明如下，請根據下述資料情境回答 43–47 題。\n\n- `Name`：遊戲名稱\n- `Platform`：遊戲平台（如 PS4、X360、Wii 等）\n- `Year`：發售年份\n- `Genre`：遊戲類型（如 Action、Sports、Role-Playing 等）\n- `Publisher`：發行商名稱\n- `NA_Sales` / `EU_Sales` / `JP_Sales` / `Other_Sales`：各地區銷售量（單位：百萬份）\n- `Global_Sales`：全球總銷售量（單位：百萬份）\n\n資料的欄位概觀如下：\n\n![VGSales dataset overview](assets/images/q43_47_vgsales_head.png)\n\n第 43 題\n\n![Q43 Year column dtype output](assets/images/q43_year_dtype.png)\n\n分析師在載入資料後，檢視 `Year` 欄位的資料型態，發現它是 `float64`，而非一般年份常用的整數。他想了解這樣的情形為什麼會發生。請問下列哪些原因可能導致這種狀況？\n\n原因 A：CSV 檔中 `Year` 欄位有缺失值（NaN），導致 Pandas 自動將整欄轉為浮點數。  \n原因 B：CSV 檔中的年份資料原本是字串（如 `\"2006\"`），Pandas 轉換時出錯而變成浮點數。  \n原因 C：Pandas 預設會將所有數值型態讀取為 `float64`，不論資料是否為整數。  \n原因 D：CSV 檔中的年份資料可能包含小數點（例如 `2006.0`），因此被視為浮點數。\n\n(114年第二梯次)"
+  content:
+  - type: text
+    text: |-
+      一間遊戲市場研究公司正在分析全球電子遊戲銷售情況，並準備建立一份「熱銷遊戲銷售報告」。分析師取得了一份名為 `vgsales.csv` 的資料集，內容包含了全球銷量超過 10 萬份的電子遊戲清單。研究團隊希望透過這份資料，了解不同年份、平台與地區的銷售趨勢。資料集的欄位說明如下，請根據下述資料情境回答 43–47 題。
+
+      - `Name`：遊戲名稱
+      - `Platform`：遊戲平台（如 PS4、X360、Wii 等）
+      - `Year`：發售年份
+      - `Genre`：遊戲類型（如 Action、Sports、Role-Playing 等）
+      - `Publisher`：發行商名稱
+      - `NA_Sales` / `EU_Sales` / `JP_Sales` / `Other_Sales`：各地區銷售量（單位：百萬份）
+      - `Global_Sales`：全球總銷售量（單位：百萬份）
+
+      資料的欄位概觀如下：
+  - type: image
+    src: assets/images/q43_47_vgsales_head.png
+    alt: VGSales dataset overview
+  - type: text
+    text: 第 43 題
+  - type: image
+    src: assets/images/q43_year_dtype.png
+    alt: Q43 Year column dtype output
+  - type: text
+    text: "分析師在載入資料後，檢視 `Year` 欄位的資料型態，發現它是 `float64`，而非一般年份常用的整數。他想了解這樣的情形為什麼會發生。請問下列哪些原因可能導致這種狀況？\n\n原因 A：CSV 檔中 `Year` 欄位有缺失值（NaN），導致 Pandas 自動將整欄轉為浮點數。  \n原因 B：CSV 檔中的年份資料原本是字串（如 `\"2006\"`），Pandas 轉換時出錯而變成浮點數。  \n原因 C：Pandas 預設會將所有數值型態讀取為 `float64`，不論資料是否為整數。  \n原因 D：CSV 檔中的年份資料可能包含小數點（例如 `2006.0`），因此被視為浮點數。\n\n(114年第二梯次)"
+  type: multiple_choice
+  options:
+  - 原因 B、原因 C
+  - 原因 A、原因 D
+  - 原因 A、原因 B、原因 D
+  - 原因 C、原因 D
+  correct_index: 1
+  explanation: Pandas 整數欄位若含 NaN，通常會轉為 float，因為一般整數 dtype 不能表示 NaN；若來源年份本身以 2006.0 形式存在，也會被視為浮點數。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch2
+  usage: mock
+- id: 114-2-044
+  chapter_title: 進階資料處理
+  section_title: 歷屆考題
+  text: |-
+    一間遊戲市場研究公司正在分析全球電子遊戲銷售情況，並準備建立一份「熱銷遊戲銷售報告」。分析師取得了一份名為 `vgsales.csv` 的資料集，內容包含了全球銷量超過 10 萬份的電子遊戲清單。研究團隊希望透過這份資料，了解不同年份、平台與地區的銷售趨勢。資料集的欄位說明如下，請根據下述資料情境回答 43–47 題。
+
+    - `Name`：遊戲名稱
+    - `Platform`：遊戲平台（如 PS4、X360、Wii 等）
+    - `Year`：發售年份
+    - `Genre`：遊戲類型（如 Action、Sports、Role-Playing 等）
+    - `Publisher`：發行商名稱
+    - `NA_Sales` / `EU_Sales` / `JP_Sales` / `Other_Sales`：各地區銷售量（單位：百萬份）
+    - `Global_Sales`：全球總銷售量（單位：百萬份）
+
+    資料的欄位概觀如下：
+
+    ![VGSales dataset overview](assets/images/q43_47_vgsales_head.png)
+
+    第 44 題
+
+    研究團隊接下來想要將 `Year` 欄位轉換為整數型態，以便後續進行年份趨勢分析。考慮到資料中可能包含缺失值（NaN），請選出最合適的轉換方式。
+
+    (114年第二梯次)
+  content:
+  - type: text
+    text: |-
+      一間遊戲市場研究公司正在分析全球電子遊戲銷售情況，並準備建立一份「熱銷遊戲銷售報告」。分析師取得了一份名為 `vgsales.csv` 的資料集，內容包含了全球銷量超過 10 萬份的電子遊戲清單。研究團隊希望透過這份資料，了解不同年份、平台與地區的銷售趨勢。資料集的欄位說明如下，請根據下述資料情境回答 43–47 題。
+
+      - `Name`：遊戲名稱
+      - `Platform`：遊戲平台（如 PS4、X360、Wii 等）
+      - `Year`：發售年份
+      - `Genre`：遊戲類型（如 Action、Sports、Role-Playing 等）
+      - `Publisher`：發行商名稱
+      - `NA_Sales` / `EU_Sales` / `JP_Sales` / `Other_Sales`：各地區銷售量（單位：百萬份）
+      - `Global_Sales`：全球總銷售量（單位：百萬份）
+
+      資料的欄位概觀如下：
+  - type: image
+    src: assets/images/q43_47_vgsales_head.png
+    alt: VGSales dataset overview
+  - type: text
+    text: 第 44 題
+  - type: text
+    text: |-
+      研究團隊接下來想要將 `Year` 欄位轉換為整數型態，以便後續進行年份趨勢分析。考慮到資料中可能包含缺失值（NaN），請選出最合適的轉換方式。
+
+      (114年第二梯次)
+  type: multiple_choice
+  options:
+  - '`data[''Year''] = data[''Year''].astype(int)`'
+  - '`data[''Year''] = data[''Year''].fillna(0).astype(int)`'
+  - '`data[''Year''] = data[''Year''].fillna(1).astype(int)`'
+  - '`data[''Year''] = data[''Year''].astype(''Int64'')`'
+  correct_index: 3
+  explanation: 一般 int dtype 不能保留 NaN；Pandas 的可空整數型別 Int64 可以同時表示整數與缺失值，因此適合將含缺失年份的欄位轉成整數語意。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch2
+  usage: mock
+- id: 114-2-049
+  chapter_title: 進階資料處理
+  section_title: 歷屆考題
+  text: "使用銷售資料集（`marketing.csv`）進行迴歸分析，附圖程式碼展示資料載入與處理。\n\n![Marketing CSV loading code](assets/images/q48_50_marketing_load.png)\n\n下圖顯示資料集的前 5 筆資料與相關資訊。\n\n![Marketing dataset head and describe output](assets/images/q48_head_describe.png)\n\n第 49 題\n\n參考下圖計算各變數的遺漏值（NaN）個數結果，下列何者正確？\n\n![Q49 missing value counts output](assets/images/q49_missing_values.png)\n\n選項 A：`df.isnull().sum()`  \n選項 B：`df.isNaN().sum()`  \n選項 C：`df.isna().sum()`  \n選項 D：`df.isnan().sum()`\n\n(114年第二梯次)"
+  content:
+  - type: text
+    text: 使用銷售資料集（`marketing.csv`）進行迴歸分析，附圖程式碼展示資料載入與處理，請回答。
+  - type: image
+    src: assets/images/q48_50_marketing_load.png
+    alt: Marketing CSV loading code
+  - type: text
+    text: 下圖顯示資料集的前 5 筆資料與相關資訊。
+  - type: image
+    src: assets/images/q48_head_describe.png
+    alt: Marketing dataset head and describe output
+  - type: text
+    text: 第 49 題
+  - type: text
+    text: 參考下圖計算各變數的遺漏值（NaN）個數結果，下列何者正確？
+  - type: image
+    src: assets/images/q49_missing_values.png
+    alt: Q49 missing value counts output
+  - type: text
+    text: "選項 A：`df.isnull().sum()`  \n選項 B：`df.isNaN().sum()`  \n選項 C：`df.isna().sum()`  \n選項 D：`df.isnan().sum()`\n\n(114年第二梯次)"
+  type: multiple_choice
+  options:
+  - 選項 D
+  - 選項 B、選項 C、選項 D
+  - 選項 A、選項 C
+  - 選項 A、選項 B、選項 C
+  correct_index: 2
+  explanation: Pandas 中 isnull() 與 isna() 是等價方法，都可用來偵測缺失值並搭配 sum() 計算各欄 NaN 個數；isNaN() 與 isnan() 不是 DataFrame 的正確方法。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch2
+  usage: mock

@@ -1359,3 +1359,299 @@ questions:
   - sec-industry-apps
   id: 5485
   usage: both
+- id: 114-2-021
+  chapter_title: 資料視覺化與報告
+  section_title: 歷屆考題
+  text: |-
+    某資料分析師設計在業務績效報告時，希望單一頁面中同時呈現多區域、不同產品線的銷售趨勢變化，並確保主管能在短時間內掌握整體資料走向。若依據 Edward Rolf Tufte 的數據密度（Data Density）原則，下列哪一種設計方式最能符合該概念？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 將每個區域的銷售資料分成多張獨立折線圖，以避免資訊重疊
+  - 使用顏色區分產品線，於同一圖表中整合多區域趨勢線，保持比例一致且標註清晰
+  - 移除所有輔助線與標籤，僅保留主要折線以凸顯趨勢
+  - 將資料轉換為表格形式，確保數值精確呈現並取代圖表視覺化
+  correct_index: 1
+  explanation: Tufte 的 data density 強調在有限空間呈現更多有意義資訊且保持可讀性；在同一圖表中用顏色區分產品線並保持比例一致，比拆成多張或移除標籤更符合此原則。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch4
+  usage: mock
+- id: 114-2-022
+  chapter_title: 資料視覺化與報告
+  section_title: 歷屆考題
+  text: |-
+    某投資研究員希望分析四檔科技類股（A、B、C、D）每日報酬率的變化趨勢，以判斷這些股票之間是否存在高度相關性與共變動性，並評估投資組合分散風險的程度。若研究員希望以單一圖表快速呈現各股票間的關聯強度與方向，下列哪一種視覺化呈現方式最適合？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 為每檔股票各自繪製直方圖（Histogram）以比較報酬率分佈
+  - 針對任兩檔股票繪製散佈圖並加上趨勢線（Regression Line）
+  - 使用雙軸折線圖（Dual-axis Line Chart）同時顯示四檔股價變化
+  - 熱力圖（Heatmap）配合相關係數矩陣（Correlation Matrix）
+  correct_index: 3
+  explanation: 要快速比較多檔股票兩兩報酬率的相關強度與方向，相關係數矩陣搭配熱力圖最直接；直方圖看分佈，散點圖只適合少數配對。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch4
+  usage: mock
+- id: 114-2-025
+  chapter_title: 資料視覺化與報告
+  section_title: 歷屆考題
+  text: |-
+    某電商資料團隊繪製顧客單筆消費金額的箱型圖後發現：四分位距（IQR）範圍極小，但上鬚線拉得很長，且在高金額區域有多筆離群值。若希望協助行銷部門依據消費層級設計分群策略，下列哪一種視覺化方式最有助於凸顯不同消費層級間的差異？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 以對數刻度繪製箱型圖或長條圖，放大高金額消費族群的變化差異
+  - 移除所有離群值，確保資料呈現集中分布
+  - 採用等距分箱（Equal-Width Binning）方式分群
+  - 改以折線圖（Line Chart）觀察時間變化趨勢
+  correct_index: 0
+  explanation: 當資料長尾且高金額離群值很多時，對數刻度能壓縮大值區域並凸顯不同消費層級差異；直接移除離群值可能丟失高價值客群資訊。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch4
+  usage: mock
+- id: 114-2-045
+  chapter_title: 資料視覺化與報告
+  section_title: 歷屆考題
+  text: |-
+    一間遊戲市場研究公司正在分析全球電子遊戲銷售情況，並準備建立一份「熱銷遊戲銷售報告」。分析師取得了一份名為 `vgsales.csv` 的資料集，內容包含了全球銷量超過 10 萬份的電子遊戲清單。研究團隊希望透過這份資料，了解不同年份、平台與地區的銷售趨勢。資料集的欄位說明如下，請根據下述資料情境回答 43–47 題。
+
+    - `Name`：遊戲名稱
+    - `Platform`：遊戲平台（如 PS4、X360、Wii 等）
+    - `Year`：發售年份
+    - `Genre`：遊戲類型（如 Action、Sports、Role-Playing 等）
+    - `Publisher`：發行商名稱
+    - `NA_Sales` / `EU_Sales` / `JP_Sales` / `Other_Sales`：各地區銷售量（單位：百萬份）
+    - `Global_Sales`：全球總銷售量（單位：百萬份）
+
+    資料的欄位概觀如下：
+
+    ![VGSales dataset overview](assets/images/q43_47_vgsales_head.png)
+
+    第 45 題
+
+    為了觀察各遊戲平台的市場表現，分析師想要統計每個平台的全球銷售總額，並以長條圖呈現。請選出最能正確實現此分析的程式碼。
+
+    (114年第二梯次)
+  content:
+  - type: text
+    text: |-
+      一間遊戲市場研究公司正在分析全球電子遊戲銷售情況，並準備建立一份「熱銷遊戲銷售報告」。分析師取得了一份名為 `vgsales.csv` 的資料集，內容包含了全球銷量超過 10 萬份的電子遊戲清單。研究團隊希望透過這份資料，了解不同年份、平台與地區的銷售趨勢。資料集的欄位說明如下，請根據下述資料情境回答 43–47 題。
+
+      - `Name`：遊戲名稱
+      - `Platform`：遊戲平台（如 PS4、X360、Wii 等）
+      - `Year`：發售年份
+      - `Genre`：遊戲類型（如 Action、Sports、Role-Playing 等）
+      - `Publisher`：發行商名稱
+      - `NA_Sales` / `EU_Sales` / `JP_Sales` / `Other_Sales`：各地區銷售量（單位：百萬份）
+      - `Global_Sales`：全球總銷售量（單位：百萬份）
+
+      資料的欄位概觀如下：
+  - type: image
+    src: assets/images/q43_47_vgsales_head.png
+    alt: VGSales dataset overview
+  - type: text
+    text: 第 45 題
+  - type: text
+    text: |-
+      為了觀察各遊戲平台的市場表現，分析師想要統計每個平台的全球銷售總額，並以長條圖呈現。請選出最能正確實現此分析的程式碼。
+
+      (114年第二梯次)
+  type: multiple_choice
+  options:
+  - '`data.groupby("Platform")["Global_Sales"].sum().plot(kind="bar")`'
+  - '`data.groupby("Platform")["Global_Sales"].count().plot(kind="bar")`'
+  - '`data["Platform"].value_counts().plot(kind="bar")`'
+  - '`data.groupby("Platform")["Global_Sales"].mean().plot(kind="bar")`'
+  correct_index: 0
+  explanation: 要統計每個平台的全球銷售總額，應先 groupby Platform，再對 Global_Sales 做 sum，最後用 bar plot 呈現；count 或 mean 不是總額。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch4
+  usage: mock
+- id: 114-2-046
+  chapter_title: 資料視覺化與報告
+  section_title: 歷屆考題
+  text: |-
+    一間遊戲市場研究公司正在分析全球電子遊戲銷售情況，並準備建立一份「熱銷遊戲銷售報告」。分析師取得了一份名為 `vgsales.csv` 的資料集，內容包含了全球銷量超過 10 萬份的電子遊戲清單。研究團隊希望透過這份資料，了解不同年份、平台與地區的銷售趨勢。資料集的欄位說明如下，請根據下述資料情境回答 43–47 題。
+
+    - `Name`：遊戲名稱
+    - `Platform`：遊戲平台（如 PS4、X360、Wii 等）
+    - `Year`：發售年份
+    - `Genre`：遊戲類型（如 Action、Sports、Role-Playing 等）
+    - `Publisher`：發行商名稱
+    - `NA_Sales` / `EU_Sales` / `JP_Sales` / `Other_Sales`：各地區銷售量（單位：百萬份）
+    - `Global_Sales`：全球總銷售量（單位：百萬份）
+
+    資料的欄位概觀如下：
+
+    ![VGSales dataset overview](assets/images/q43_47_vgsales_head.png)
+
+    第 46 題
+
+    團隊希望比較北美、歐洲、日本及其他地區的整體銷售比例，並使用 seaborn 套件以長條圖的形式進行可視化分析。請選出能正確顯示這些地區銷售總額比例的程式碼。
+
+    (114年第二梯次)
+  content:
+  - type: text
+    text: |-
+      一間遊戲市場研究公司正在分析全球電子遊戲銷售情況，並準備建立一份「熱銷遊戲銷售報告」。分析師取得了一份名為 `vgsales.csv` 的資料集，內容包含了全球銷量超過 10 萬份的電子遊戲清單。研究團隊希望透過這份資料，了解不同年份、平台與地區的銷售趨勢。資料集的欄位說明如下，請根據下述資料情境回答 43–47 題。
+
+      - `Name`：遊戲名稱
+      - `Platform`：遊戲平台（如 PS4、X360、Wii 等）
+      - `Year`：發售年份
+      - `Genre`：遊戲類型（如 Action、Sports、Role-Playing 等）
+      - `Publisher`：發行商名稱
+      - `NA_Sales` / `EU_Sales` / `JP_Sales` / `Other_Sales`：各地區銷售量（單位：百萬份）
+      - `Global_Sales`：全球總銷售量（單位：百萬份）
+
+      資料的欄位概觀如下：
+  - type: image
+    src: assets/images/q43_47_vgsales_head.png
+    alt: VGSales dataset overview
+  - type: text
+    text: 第 46 題
+  - type: text
+    text: |-
+      團隊希望比較北美、歐洲、日本及其他地區的整體銷售比例，並使用 seaborn 套件以長條圖的形式進行可視化分析。請選出能正確顯示這些地區銷售總額比例的程式碼。
+
+      (114年第二梯次)
+  type: multiple_choice
+  options:
+  - text: |-
+      ```python
+      sns.countplot(x=["NA_Sales", "EU_Sales", "JP_Sales", "Other_Sales"], data=data)
+      ```
+    content:
+    - type: code
+      code: |
+        sns.countplot(x=["NA_Sales", "EU_Sales", "JP_Sales", "Other_Sales"], data=data)
+      language: python
+  - text: |-
+      ```python
+      sns.lineplot(
+          x="Platform",
+          y=["NA_Sales", "EU_Sales", "JP_Sales", "Other_Sales"],
+          data=data
+      )
+      ```
+    content:
+    - type: code
+      code: |
+        sns.lineplot(
+            x="Platform",
+            y=["NA_Sales", "EU_Sales", "JP_Sales", "Other_Sales"],
+            data=data
+        )
+      language: python
+  - text: |-
+      ```python
+      sns.barplot(
+          x="variable",
+          y="value",
+          data=pd.melt(
+              data,
+              value_vars=["NA_Sales", "EU_Sales", "JP_Sales", "Other_Sales"]
+          ),
+          estimator=sum
+      )
+      ```
+    content:
+    - type: code
+      code: |
+        sns.barplot(
+            x="variable",
+            y="value",
+            data=pd.melt(
+                data,
+                value_vars=["NA_Sales", "EU_Sales", "JP_Sales", "Other_Sales"]
+            ),
+            estimator=sum
+        )
+      language: python
+  - text: |-
+      ```python
+      sns.histplot(data[["NA_Sales", "EU_Sales", "JP_Sales", "Other_Sales"]])
+      ```
+    content:
+    - type: code
+      code: |
+        sns.histplot(data[["NA_Sales", "EU_Sales", "JP_Sales", "Other_Sales"]])
+      language: python
+  correct_index: 2
+  explanation: seaborn 的 barplot 需要長格式資料。pd.melt 將 NA、EU、JP、Other 等欄位轉成 variable/value，再用 estimator=sum 加總，才能比較各地區總銷售。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch4
+  usage: mock
+- id: 114-2-047
+  chapter_title: 資料視覺化與報告
+  section_title: 歷屆考題
+  text: |-
+    一間遊戲市場研究公司正在分析全球電子遊戲銷售情況，並準備建立一份「熱銷遊戲銷售報告」。分析師取得了一份名為 `vgsales.csv` 的資料集，內容包含了全球銷量超過 10 萬份的電子遊戲清單。研究團隊希望透過這份資料，了解不同年份、平台與地區的銷售趨勢。資料集的欄位說明如下，請根據下述資料情境回答 43–47 題。
+
+    - `Name`：遊戲名稱
+    - `Platform`：遊戲平台（如 PS4、X360、Wii 等）
+    - `Year`：發售年份
+    - `Genre`：遊戲類型（如 Action、Sports、Role-Playing 等）
+    - `Publisher`：發行商名稱
+    - `NA_Sales` / `EU_Sales` / `JP_Sales` / `Other_Sales`：各地區銷售量（單位：百萬份）
+    - `Global_Sales`：全球總銷售量（單位：百萬份）
+
+    資料的欄位概觀如下：
+
+    ![VGSales dataset overview](assets/images/q43_47_vgsales_head.png)
+
+    第 47 題
+
+    研究團隊想要知道在北美地區（NA）銷售成績最好的遊戲前五名，並希望以 seaborn 的條狀圖呈現結果。請選出能正確完成這項分析的程式碼。
+
+    (114年第二梯次)
+  content:
+  - type: text
+    text: |-
+      一間遊戲市場研究公司正在分析全球電子遊戲銷售情況，並準備建立一份「熱銷遊戲銷售報告」。分析師取得了一份名為 `vgsales.csv` 的資料集，內容包含了全球銷量超過 10 萬份的電子遊戲清單。研究團隊希望透過這份資料，了解不同年份、平台與地區的銷售趨勢。資料集的欄位說明如下，請根據下述資料情境回答 43–47 題。
+
+      - `Name`：遊戲名稱
+      - `Platform`：遊戲平台（如 PS4、X360、Wii 等）
+      - `Year`：發售年份
+      - `Genre`：遊戲類型（如 Action、Sports、Role-Playing 等）
+      - `Publisher`：發行商名稱
+      - `NA_Sales` / `EU_Sales` / `JP_Sales` / `Other_Sales`：各地區銷售量（單位：百萬份）
+      - `Global_Sales`：全球總銷售量（單位：百萬份）
+
+      資料的欄位概觀如下：
+  - type: image
+    src: assets/images/q43_47_vgsales_head.png
+    alt: VGSales dataset overview
+  - type: text
+    text: 第 47 題
+  - type: text
+    text: |-
+      研究團隊想要知道在北美地區（NA）銷售成績最好的遊戲前五名，並希望以 seaborn 的條狀圖呈現結果。請選出能正確完成這項分析的程式碼。
+
+      (114年第二梯次)
+  type: multiple_choice
+  options:
+  - '`sns.barplot(x="NA_Sales", y="Name", data=data.head(5))`'
+  - '`sns.barplot(x="Name", y="NA_Sales", data=data.nlargest(5, "NA_Sales"))`'
+  - '`sns.lineplot(x="Name", y="NA_Sales", data=data.nlargest(5, "NA_Sales"))`'
+  - '`sns.countplot(x="Name", y="NA_Sales", data=data)`'
+  correct_index: 1
+  explanation: 要找北美銷售前五名，應用 nlargest(5, "NA_Sales") 先取最大五筆；再以 barplot 呈現 Name 與 NA_Sales。head(5) 只取原資料前五列，不保證最大。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch4
+  usage: mock

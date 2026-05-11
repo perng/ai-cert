@@ -1039,3 +1039,63 @@ questions:
   - sec-compliance
   id: 5565
   usage: both
+- id: 114-2-013
+  chapter_title: 大數據治理
+  section_title: 歷屆考題
+  text: |-
+    下列何者為同態加密（Homomorphic Encryption）技術的核心特性？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 將資料轉換為匿名識別碼以隱藏身分
+  - 對資料進行標準化處理以提升模型精度
+  - 自動偵測與排除異常值
+  - 可直接在加密狀態下進行數據運算
+  correct_index: 3
+  explanation: 同態加密允許在密文上直接做特定運算，解密後得到與明文運算一致的結果；這正是它和匿名化、標準化或異常偵測不同的核心特性。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch5
+  usage: mock
+- id: 114-2-020
+  chapter_title: 大數據治理
+  section_title: 歷屆考題
+  text: |-
+    某銀行計畫將信用風險評估模型部署至雲端平台，以便即時分析客戶交易行為。由於涉及大量敏感金融資料，銀行要求雲端服務商在不解密原始資料的情況下仍能執行模型運算。為達成此目標，最適合採用下列哪一項技術？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 在上傳資料前進行匿名化（Anonymization），僅保留可識別代碼供比對使用
+  - 利用雜湊（Hash）函數轉換資料，以確保模型可追蹤但無法還原個資
+  - 採用資料本地化（Data Localization）策略，將所有模型訓練限制於內部伺服器中
+  - 透過同態加密（Homomorphic Encryption），讓雲端系統能直接在加密資料上執行運算，解密後結果與原始資料一致
+  correct_index: 3
+  explanation: 銀行要求雲端不解密原始資料仍能運算，最符合的是同態加密；匿名化與雜湊主要降低識別風險，資料本地化則是不把資料放到雲端運算。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch5
+  usage: mock
+- id: 114-2-032
+  chapter_title: 大數據治理
+  section_title: 歷屆考題
+  text: |-
+    某電信公司導入生成式 AI 客服系統，利用過去對話紀錄與用戶行為資料訓練語言模型，在資料治理與合規審查過程中，團隊發現模型可能會在回答中生成包含真實姓名、電話或交易資訊的內容。為確保系統符合個資法及生成式 AI 的安全與隱私要求，下列哪一項作法最符合實務可行及法規原則？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 在訓練資料前進行資料匿名化（Anonymization）或偽匿名化（Pseudonymization）處理，並建立輸出內容稽核機制
+  - 改以強化學習（Reinforcement Learning）微調模型，使模型學習避免產出真實資訊
+  - 採用同態加密（Homomorphic Encryption）以加密所有文字輸入，確保模型無法辨識任何個資
+  - 僅設定模型回覆時不顯示用戶姓名，即可視為隱私防護完成
+  correct_index: 0
+  explanation: 若模型可能輸出姓名、電話等個資，應在訓練前做匿名化或偽匿名化，並建立輸出稽核機制；只要求模型不要顯示姓名不足以符合法規與實務風險控管。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch5
+  usage: mock

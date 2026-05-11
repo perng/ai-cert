@@ -1071,3 +1071,190 @@ questions:
   - chap-m2-ch5
   - sec-cicd4ai
   usage: both
+- id: m2-114-2-013
+  chapter_title: 系統部署與 MLOps
+  section_title: 歷屆考題
+  text: 下列何者為Kubernetes 在AI 模型部署與運行中的核心功能？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 自動化管理模型的訓練流程與參數調校
+  - 管理與協調模型服務的部署、擴展與運行環境
+  - 提供AI 模型的資料儲存與版本控管功能
+  - 負責深度學習推論的 GPU 加速運算
+  correct_index: 1
+  explanation: Kubernetes 的核心價值是容器服務的部署、排程、擴展、健康檢查與運行管理；它不直接負責模型訓練、資料版本或 GPU 推論運算本身。
+  tags:
+  - chap-m2-ch5
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m2-114-2-015
+  chapter_title: 系統部署與 MLOps
+  section_title: 歷屆考題
+  text: 在企業導入的MLOps（Machine Learning Operations）流程中，Model Registry 最常用於哪一個階段？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 用於設定運算資源與執行環境以確保訓練穩定
+  - 用於建立可重複使用的資料與特徵版本
+  - 用於集中管理模型版本、訓練紀錄與部署狀態
+  - 用於追蹤模型上線後的表現與漂移情況
+  correct_index: 2
+  explanation: Model Registry 用來集中保存模型版本、訓練資料與指標、審核狀態及部署狀態，是 MLOps 中模型可追溯與發布控管的核心元件。
+  tags:
+  - chap-m2-ch5
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m2-114-2-022
+  chapter_title: 系統部署與 MLOps
+  section_title: 歷屆考題
+  text: 某電商平台開發的顧客流失預測模型在上線數月後，預測準確率明顯下降。專案團隊懷疑顧客行為模式改變，導致模型輸入特徵的分佈與原始訓練資料不同，出現典型的資料漂移（Data Drift）問題。為了偵測並確認資料分佈是否發生變化，下列哪一種作法最合適？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 定期重新訓練模型以應對外部變化
+  - 提升模型複雜度以捕捉更多資料變異性
+  - 增加測試資料量以提高評估準確度
+  - 計算輸入特徵分佈間的KL 散度（KL Divergence）
+  correct_index: 3
+  explanation: KL 散度可量化兩個機率分佈的差異，適合用來檢查線上輸入特徵分佈是否已偏離訓練資料分佈。
+  tags:
+  - chap-m2-ch5
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m2-114-2-027
+  chapter_title: 系統部署與 MLOps
+  section_title: 歷屆考題
+  text: 某企業需分析半結構化的系統日誌（JSON 格式），以提取關鍵的時序特徵供故障預測模型使用。考量日誌結構複雜且包含巢狀欄位（Nested Fields），下列哪一種策略最有效且實務可行？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 先將JSON 資料扁平化轉成CSV，再對欄位計算統計量（如均值、次數）作為特徵
+  - 使用遞歸神經網路（RNN）直接輸入原始JSON 字串進行時序特徵抽取
+  - 設計遞迴函式展開巢狀欄位，並基於時間窗口（Time Window）進行聚合與特徵萃取
+  - 只保留時間戳記欄位，忽略其他巢狀內容以簡化特徵工程
+  correct_index: 2
+  explanation: 巢狀 JSON 日誌需要先以遞迴方式展開結構，再依時間窗口彙總事件、次數或統計量，才能形成可用的時序特徵。
+  tags:
+  - chap-m2-ch5
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m2-114-2-029
+  chapter_title: 系統部署與 MLOps
+  section_title: 歷屆考題
+  text: 某AI 開發團隊為提升模型開發效率及品質控制，計畫實施持續整合（Continuous Integration, CI）流程。下列哪一項做法最符合CI的核心實踐，且能有效減少整合風險？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 在主分支（Main Branch）每日固定時間手動合併並執行完整測試流程
+  - 每次程式碼提交（Commit）後自動觸發建置、單元測試及靜態程式碼分析
+  - 於模型訓練完成後，定期安排開發團隊回顧並合併程式碼
+  - 透過自動化部署腳本，將模型在特定時間點批次釋出到測試環境
+  correct_index: 1
+  explanation: CI 的核心是每次提交後自動建置、測試與靜態分析，及早發現整合問題；手動定時合併或只做部署不符合 CI 重點。
+  tags:
+  - chap-m2-ch5
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m2-114-2-030
+  chapter_title: 系統部署與 MLOps
+  section_title: 歷屆考題
+  text: 某銀行計劃將AI 詐欺偵測模組整合至核心交易系統，主管機關要求全流程必須符合金融監管對「不可否認性（Non-repudiation）」的資訊安全規範，以確保日後能進行法務追蹤與稽核。下列哪一項措施最能確保此要求的落實？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 為每筆AI 模型推論記錄其輸入與輸出結果的加密雜湊值（Hash），並簽署數位簽章以確保不可竄改性
+  - 優化模型效能以降低平均推論延遲至100ms 以下，提升使用者體驗
+  - 增加主機備援數量，以確保系統在故障時持續可用
+  - 將模型推論請求導入負載平衡器，避免單點壅塞導致服務延遲
+  correct_index: 0
+  explanation: 不可否認性需要能證明紀錄未被竄改且可追溯責任方，對輸入輸出做雜湊並加上數位簽章最能滿足稽核需求。
+  tags:
+  - chap-m2-ch5
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m2-114-2-031
+  chapter_title: 系統部署與 MLOps
+  section_title: 歷屆考題
+  text: 某AI 服務系統每次推論請求需約1 秒完成，且必須支撐高達10,000次請求每秒（RPS）的流量。為確保系統具備高可用性且能穩定應付流量峰值，下列哪一種架構方案最為合適？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 依賴單台超高效能伺服器進行垂直擴展，提升硬體規格
+  - 採用容器化部署並水平擴展服務實例，結合自動彈性伸縮機制（Auto Scaling）
+  - 限制最大併發連線數，以避免系統過載
+  - 增加批次處理大小，一次同時處理上千筆請求
+  correct_index: 1
+  explanation: 高 RPS 且需高可用的推論服務應以容器化多實例水平擴展，並搭配自動伸縮與負載分散；單機垂直擴展或限制連線都不夠可靠。
+  tags:
+  - chap-m2-ch5
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m2-114-2-032
+  chapter_title: 系統部署與 MLOps
+  section_title: 歷屆考題
+  text: 某企業已將AI 模型部署於生產環境，為確保系統持續穩定運作，並能提前偵測模型效能可能衰退，技術團隊希望透過監控指標進行預警。下列哪一項監控指標最具預測效力，能提早發現模型效能下滑風險？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 系統CPU 與記憶體使用率波動幅度
+  - 模型推論結果的置信度（Confidence）分佈變化趨勢
+  - API 平均回應時間與延遲百分位數變化
+  - 輸入特徵與訓練資料分布差異的PSI（Population Stability Index）指數
+  correct_index: 3
+  explanation: PSI 直接衡量線上輸入特徵分佈與基準分佈的偏移，通常能比系統資源或延遲更早反映模型效能衰退風險。
+  tags:
+  - chap-m2-ch5
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m2-114-2-037
+  chapter_title: 系統部署與 MLOps
+  section_title: 歷屆考題
+  text: 某公司正在訓練一個大型語音合成模型，開發團隊使用多台GPU 進行訓練，但經常出現 GPU 記憶體不足問題。由於模型架構已固定且無法更換硬體，團隊希望在維持模型效能與收斂品質的前提下，下列哪一種方法最有效降低單張 GPU 的記憶體壓力？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 減少訓練資料量以降低記憶體使用
+  - 採用較小的批次大小（Batch Size）並搭配資料分片（Data Sharding）分散訓練負載
+  - 增加學習率（Learning Rate）以加快收斂速度
+  - 改用測試資料集（Test Set）進行部分訓練以節省空間
+  correct_index: 1
+  explanation: 降低 batch size 可直接減少單次前向與反向傳播的記憶體需求，資料分片則可把資料與訓練負載分散到多張 GPU。
+  tags:
+  - chap-m2-ch5
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m2-114-2-042
+  chapter_title: 系統部署與 MLOps
+  section_title: 歷屆考題
+  text: 若部署一個深度學習模型至金融風控系統，該模型採用鑑別式架構（如Transformer Classifier）。然而上線後，模型對新樣本的分類錯誤率顯著上升，經檢查發現，輸入資料分佈已與原訓練集明顯不同。針對此情形，下列哪一種應對策略最為適合？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 改用生成對抗網路（GAN）生成新樣本並混入訓練集
+  - 改用邏輯迴歸模型（Logistic Regression）以提升穩定性
+  - 增加模型容量（Model Capacity），以學習更多樣本差異
+  - 使用變分自編碼器（VAE）監控潛在空間分佈，偵測輸入資料偏移
+  correct_index: 3
+  explanation: 線上資料分佈明顯偏移時，應建立漂移偵測；VAE 可學習訓練資料的潛在分佈，監控新資料在潛在空間中的偏離程度。
+  tags:
+  - chap-m2-ch5
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m2-114-2-046
+  chapter_title: 系統部署與 MLOps
+  section_title: 歷屆考題
+  text: 某企業的AI 模型已部署於線上服務環境中，用於即時預測顧客流失機率。近期團隊注意到模型預測準確率逐漸下降，但系統運作正常且未出現錯誤訊息。經分析發現，近期輸入資料的分布與模型訓練資料相比出現顯著偏移。若要在MLOps 流程中主動偵測並預警此類問題，最應採用下列哪項措施？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 建立即時的資料漂移（Data Drift）與概念漂移（Concept Drift）監測機制
+  - 將模型轉換為量化版本以降低延遲
+  - 增加模型超參數調整次數以強化適應性
+  - 使用固定隨機種子（Random Seed）確保訓練穩定
+  correct_index: 0
+  explanation: 模型準確率下降且輸入分佈偏移時，MLOps 應監控資料漂移與概念漂移，搭配告警與再訓練流程，而不是只調整系統效能。
+  tags:
+  - chap-m2-ch5
+  - sec-past-exam
+  - past-exam
+  usage: mock

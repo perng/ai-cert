@@ -275,3 +275,7 @@ with DAG('simple_etl', start_date=datetime(2023, 1, 1), schedule_interval='@dail
 ## 深度思考情境題 {#sec-scenario}
 
 進階資料處理情境題通常會考資料從來源進入分析平台的完整流程。批次資料適合每日報表與離線訓練，串流資料適合即時告警、詐欺偵測與 IoT 監控。Kafka 可作為高吞吐訊息中介，Flink 適合低延遲與事件時間處理，Spark 適合大規模批次與微批次。設計管線時要注意 Schema 演進、Late Event、Watermark、Exactly-once 語意、資料品質檢查與特徵產製一致性，否則模型會吃到延遲、重複或錯誤資料。
+
+## 歷屆考題 {#sec-past-exam}
+
+請做測驗看歷屆考題。

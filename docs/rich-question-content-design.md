@@ -247,6 +247,211 @@ Rules:
 - If an option is a scalar, generate one text block for that option.
 - If an option is an object, use `option.text` as the fallback string and `option.content` as the rich representation.
 
+## `content.json` Schema Change
+
+The top-level `content.json` structure should stay the same so subject, chapter, and section navigation do not change:
+
+```json
+{
+  "version": 3,
+  "subjects": [
+    {
+      "id": 6,
+      "order": 6,
+      "isLocked": false,
+      "title": "Basic Python Language",
+      "description": "...",
+      "chapters": [
+        {
+          "id": 1006,
+          "order": 1,
+          "title": "Basic Python Language",
+          "sections": [
+            {
+              "id": 10001,
+              "order": 1,
+              "title": "變數、型別與資料結構",
+              "link_id": "sec-python-data-structures",
+              "content": "<section>...</section>",
+              "questions": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
+Only the objects inside each section's `questions` array need to change.
+
+### Question Object
+
+Recommended question object schema:
+
+```json
+{
+  "id": 8101,
+  "chapter_title": "Basic Python Language",
+  "section_title": "變數、型別與資料結構",
+  "type": "multiple_choice",
+  "textContent": "Fallback Markdown prompt",
+  "content": [],
+  "options": [],
+  "optionContent": [],
+  "correctIndex": 1,
+  "explanation": "Fallback Markdown explanation",
+  "explanationContent": [],
+  "tags": ["chap-m6-ch1", "sec-python-data-structures"],
+  "usage": "both"
+}
+```
+
+Field rules:
+
+| Field | Type | Required | Notes |
+| --- | --- | --- | --- |
+| `id` | number | yes | Existing question id. |
+| `chapter_title` | string | no | Preserved metadata from YAML. |
+| `section_title` | string | no | Used by `build_content.py` to attach questions to sections. |
+| `type` | string | yes | Existing value, currently `multiple_choice`. |
+| `textContent` | string | yes | Fallback Markdown prompt for the current app. |
+| `content` | `ContentBlock[]` | no | Rich prompt blocks. Prefer this when rendering in the updated app. |
+| `options` | `string[]` | yes | Fallback Markdown/plain option labels for the current app. |
+| `optionContent` | `ContentBlock[][]` | no | Rich blocks per answer option. Indexes must match `options`. |
+| `correctIndex` | number | yes | Existing zero-based correct option index. |
+| `explanation` | string | no | Existing fallback explanation. |
+| `explanationContent` | `ContentBlock[]` | no | Optional future extension; use the same block model if explanations need code or images. |
+| `tags` | `string[]` | no | Existing tags. |
+| `usage` | string | no | Existing usage field. Default remains `both`. |
+
+Use `version: 3` for generated files that include rich question fields. The app can use this version to decide whether to parse `content`, `optionContent`, and future `explanationContent`. If a short-term rollout needs to keep `version: 2`, the app must explicitly ignore unknown fields and rely on `textContent` and `options`.
+
+### Content Block Object
+
+`content`, each item in `optionContent`, and future `explanationContent` all use the same block schema.
+
+Text block:
+
+```json
+{
+  "type": "text",
+  "text": "Markdown text is allowed."
+}
+```
+
+Code block:
+
+```json
+{
+  "type": "code",
+  "language": "python",
+  "code": "def predict(x):\n    if x > 0:\n        return \"positive\"\n    return \"zero_or_negative\"\n"
+}
+```
+
+Image block:
+
+```json
+{
+  "type": "image",
+  "src": "assets/images/questions/m6_chapter1_8103_confusion_matrix.png",
+  "alt": "混淆矩陣範例",
+  "caption": "模型在四個類別上的預測結果"
+}
+```
+
+Block field rules:
+
+| Block type | Required fields | Optional fields | Notes |
+| --- | --- | --- | --- |
+| `text` | `type`, `text` | none | `text` may contain Markdown. |
+| `code` | `type`, `code` | `language` | Preserve code exactly after YAML parsing, including Python indentation. |
+| `image` | `type`, `src`, `alt` | `caption` | `src` should be rewritten to a Flutter asset path by `build_content.py`. |
+
+### Full Rich Question Example
+
+```json
+{
+  "id": 8104,
+  "chapter_title": "Basic Python Language",
+  "section_title": "流程控制與函式",
+  "type": "multiple_choice",
+  "textContent": "觀察程式碼與圖片，哪個選項描述正確？\n\n```python\nfor i in range(3):\n    print(i)\n```\n\n![迴圈輸出示意圖](assets/images/questions/m6_chapter1_8104_loop-output.png)",
+  "content": [
+    {
+      "type": "text",
+      "text": "觀察程式碼與圖片，哪個選項描述正確？"
+    },
+    {
+      "type": "code",
+      "language": "python",
+      "code": "for i in range(3):\n    print(i)\n"
+    },
+    {
+      "type": "image",
+      "src": "assets/images/questions/m6_chapter1_8104_loop-output.png",
+      "alt": "迴圈輸出示意圖"
+    }
+  ],
+  "options": [
+    "程式會輸出 0、1、2",
+    "程式會輸出 1、2、3",
+    "程式只會輸出圖片中的最後一列",
+    "程式會因為縮排錯誤而失敗"
+  ],
+  "optionContent": [
+    [
+      {
+        "type": "text",
+        "text": "程式會輸出 0、1、2"
+      },
+      {
+        "type": "code",
+        "language": "text",
+        "code": "0\n1\n2\n"
+      }
+    ],
+    [
+      {
+        "type": "text",
+        "text": "程式會輸出 1、2、3"
+      }
+    ],
+    [
+      {
+        "type": "text",
+        "text": "程式只會輸出圖片中的最後一列"
+      },
+      {
+        "type": "image",
+        "src": "assets/images/questions/m6_chapter1_8104_option-c.png",
+        "alt": "選項 C 示意圖"
+      }
+    ],
+    [
+      {
+        "type": "text",
+        "text": "程式會因為縮排錯誤而失敗"
+      }
+    ]
+  ],
+  "correctIndex": 0,
+  "explanation": "`range(3)` 會產生 0、1、2，且 `print(i)` 的縮排位於 for 區塊內。",
+  "tags": ["chap-m6-ch1", "sec-python-control-functions"],
+  "usage": "both"
+}
+```
+
+### Backward Compatibility
+
+For every rich question, `build_content.py` must still generate valid fallback fields:
+
+- `textContent` should be a Markdown rendering of `content`.
+- `options[index]` should be a Markdown/plain rendering of `optionContent[index]`.
+- Existing app code can continue to ignore `content` and `optionContent`.
+- Updated app code should prefer rich fields when present.
+
 ## Builder Changes
 
 Add helper functions to `scripts/build_content.py`:
@@ -334,7 +539,7 @@ questions:
 
 ## Open Decisions
 
-- Whether rich fields should trigger `content.json` version `3`.
-- Whether code blocks need syntax highlighting in the first app implementation or just monospace rendering.
-- Whether remote image URLs should be allowed. The recommended first version is local assets only.
-- Whether explanations should also support rich content later. The same block model can be reused as `explanationContent`.
+- Whether rich fields should trigger `content.json` version `3`. (Let's use version 3)
+- Whether code blocks need syntax highlighting in the first app implementation or just monospace rendering.  (Let's use monospace rendering first)
+- Whether remote image URLs should be allowed. The recommended first version is local assets only. (Let's use local assets only first)
+- Whether explanations should also support rich content later. The same block model can be reused as `explanationContent`. (Let's support rich content for explanations later)

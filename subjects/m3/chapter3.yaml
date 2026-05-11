@@ -1087,3 +1087,610 @@ questions:
   - chap-m3-ch3
   - sec-large-scale-statistics
   usage: both
+- id: 114-2-001
+  chapter_title: 進階分析方法
+  section_title: 歷屆考題
+  text: |-
+    若某數據點的 Z 分數（Z-Score）= 2，請問代表下列哪一種意涵？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 代表該數據點之原始數值為 2
+  - 該數據點比平均值低 2 個標準差
+  - 代表數據為異常值
+  - 該數據點比平均值高 2 個標準差
+  correct_index: 3
+  explanation: Z 分數表示資料點距離平均值幾個標準差；Z = 2 代表該點比平均值高 2 個標準差，不代表原始值就是 2，也未達常見 |Z| >= 3 的異常門檻。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch3
+  usage: mock
+- id: 114-2-002
+  chapter_title: 進階分析方法
+  section_title: 歷屆考題
+  text: |-
+    使用 Python 的 pandas 套件處理各商品銷售數據（變數為 `df`）時，若需計算「總銷售額」欄位的敘述性統計量（如平均值、標準差等），應使用下列哪一種語法？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - '`df[''總銷售額''].sum()`'
+  - '`df[''總銷售額''].describe()`'
+  - '`df[''總銷售額''].sort_values()`'
+  - '`df[''總銷售額''].stats()`'
+  correct_index: 1
+  explanation: Pandas 的 describe() 會回傳 count、mean、std、min、四分位數與 max 等敘述性統計量；sum() 只計算總和，sort_values() 是排序，stats() 不是 Series 的標準統計摘要方法。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch3
+  usage: mock
+- id: 114-2-003
+  chapter_title: 進階分析方法
+  section_title: 歷屆考題
+  text: |-
+    附圖為某資料之分佈圖，此圖資料之偏態（Skewness）值較有可能為下列哪個選項？
+
+    ![Q3 distribution plot for skewness](assets/images/q03_skewness_distribution.png)
+
+    (114年第二梯次)
+  content:
+  - type: text
+    text: |-
+      附圖為某資料之分佈圖，此圖資料之偏態（Skewness）值較有可能為下列哪個選項？
+
+      (114年第二梯次)
+  - type: image
+    src: assets/images/q03_skewness_distribution.png
+    alt: Q3 distribution plot for skewness
+  type: multiple_choice
+  options:
+  - Skewness < 0
+  - Skewness > 0
+  - Skewness = 0
+  - 無法計算 Skewness
+  correct_index: 0
+  explanation: 圖形若呈現左尾較長、資料主要集中在右側，偏態係數會小於 0，稱為負偏態；右尾較長才會是 Skewness > 0。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch3
+  usage: mock
+- id: 114-2-004
+  chapter_title: 進階分析方法
+  section_title: 歷屆考題
+  text: |-
+    累積分佈函數（Cumulative Distribution Function, CDF）可用於描述隨機變數的機率分佈特性，其數學定義為下列何者？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 機率密度函數（Probability Density Function, PDF）的平均值
+  - 機率密度函數（Probability Density Function, PDF）的積分
+  - 機率密度函數（Probability Density Function, PDF）的離散總和
+  - 機率密度函數（Probability Density Function, PDF）的標準差
+  correct_index: 1
+  explanation: 連續型隨機變數的 CDF 是 PDF 從負無限大累積到指定值的積分，用來表示 P(X <= x)；它不是平均值、標準差，也不是單純離散加總。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch3
+  usage: mock
+- id: 114-2-014
+  chapter_title: 進階分析方法
+  section_title: 歷屆考題
+  text: |-
+    某組資料共 10 項標籤如下：
+
+    ```text
+    A, A, A, A, A, B, B, B, B, B
+    ```
+
+    若該標籤僅有 A、B 兩種，請問這組資料的「正規化吉尼不純度（Normalized Gini impurity）」為何？
+
+    (114年第二梯次)
+  content:
+  - type: text
+    text: 某組資料共 10 項標籤如下：
+  - type: code
+    code: |
+      A, A, A, A, A, B, B, B, B, B
+    language: text
+  - type: text
+    text: |-
+      若該標籤僅有 A、B 兩種，請問這組資料的「正規化吉尼不純度（Normalized Gini impurity）」為何？
+
+      (114年第二梯次)
+  type: multiple_choice
+  options:
+  - '0'
+  - '0.42'
+  - '0.84'
+  - '1'
+  correct_index: 3
+  explanation: A 與 B 各占 50% 時，二元 Gini impurity 為 1 - (0.5^2 + 0.5^2) = 0.5；若題目採正規化吉尼不純度，二元情況最大值 0.5 會被正規化為 1。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch3
+  usage: mock
+- id: 114-2-015
+  chapter_title: 進階分析方法
+  section_title: 歷屆考題
+  text: |-
+    某家客服中心統計資料發現，平均每小時會接到約 20 通顧客來電，但每分鐘的來電數量不固定，可能為 0、1、2 通不等。這些來電事件彼此獨立，且在短時間內，發生的機率與時間長短成正比。若要以機率模型描述「每分鐘接到幾通來電」的機率分佈，下列哪一種最適合使用？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 均勻分佈（Uniform distribution）
+  - 指數分佈（Exponential distribution）
+  - 卜瓦松分佈（Poisson distribution）
+  - 常態分佈（Normal distribution）
+  correct_index: 2
+  explanation: 卜瓦松分佈適合描述固定時間或空間區間內、事件獨立且平均發生率固定的計數，例如每分鐘來電數。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch3
+  usage: mock
+- id: 114-2-016
+  chapter_title: 進階分析方法
+  section_title: 歷屆考題
+  text: |-
+    某金融科技公司以 Z 分數（Z-Score）監控交易金額異常狀況。若交易金額平均為新台幣 2,000 元，標準差為 400 元，某筆交易金額為 3,200 元，且公司以 |Z| ≥ 3 判定為異常值（Outlier），下列判斷何者最為正確？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 該筆交易的 Z 分數為 3，應標記為異常值
+  - 該筆交易的 Z 分數為 2.5，屬於合理變異範圍
+  - 該筆交易的 Z 分數為 2，顯示模型標準差估計過高
+  - 該筆交易的 Z 分數為 1.5，無須納入異常檢測
+  correct_index: 0
+  explanation: Z = (3200 - 2000) / 400 = 3；題目規則為 |Z| >= 3 判定異常，因此這筆交易應標記為異常值。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch3
+  usage: mock
+- id: 114-2-023
+  chapter_title: 進階分析方法
+  section_title: 歷屆考題
+  text: |-
+    某研究團隊以單樣本 t 檢定（one-sample t-test）檢驗「新行銷策略後的平均月銷售額是否與原本的 100 萬元不同」，顯著水準設定為 α = 0.05。檢定結果顯示：p 值 = 0.08，且 95% 信賴區間為 [95 萬元, 108 萬元]。根據上述結果，下列敘述何者正確？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 因 p 值 < 0.05，可拒絕虛無假設
+  - 若顯著水準改為 0.10，仍不顯著
+  - 因 100 萬元落在信賴區間內，無法拒絕虛無假設
+  - 信賴區間寬度僅與顯著水準有關
+  correct_index: 2
+  explanation: p = 0.08 大於 0.05，且假設值 100 萬元落在 95% 信賴區間 [95, 108] 內，因此在 5% 顯著水準下無法拒絕平均值等於 100 萬元的虛無假設。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch3
+  usage: mock
+- id: 114-2-026
+  chapter_title: 進階分析方法
+  section_title: 歷屆考題
+  text: |-
+    某串流影音平台運用關聯規則學習（Association Rule Learning）分析用戶的觀影行為，發現若使用者觀看了科幻影集，則有較高機率接著觀看超級英雄電影。分析顯示，同時觀看這兩種類型的使用者約佔全部觀影紀錄的 12%，而觀看科幻影集的使用者中，有 50% 也觀看了超級英雄電影，該規則的提升度（Lift）為 1.8。根據上述資訊，下列哪一項推論最為正確？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 支持度（Support）過低，代表此規則不具任何商業價值
+  - 提升度（Lift）大於 1 表示兩種類型內容無關，僅屬於隨機重疊
+  - 信賴度（Confidence）為 50%，代表觀看科幻影集者有明顯傾向觀看超級英雄電影
+  - 同時觀看比例僅 12%，代表兩種類型互相排斥
+  correct_index: 2
+  explanation: Confidence = P(超級英雄電影 | 科幻影集) = 50%，表示看過科幻影集的人有一半也看超級英雄電影；Lift > 1 也代表正向關聯，不是隨機無關。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch3
+  usage: mock
+- id: 114-2-027
+  chapter_title: 進階分析方法
+  section_title: 歷屆考題
+  text: |-
+    某金融科技公司分析每日上億筆交易資料，以監控客戶轉帳金額分佈與異常波動。由於資料量極大，為兼顧效率與準確度，團隊決定採用「近似分位數（Approximate Quantile）」方法進行資料摘要統計。下列何者最能正確反映該技術的核心目的？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 確保每個分位值的結果完全精確，即使計算時間較長
+  - 利用機器學習模型預測分位數位置，以減少統計計算量
+  - 僅能對結構化資料進行批次處理，無法應用於即時資料流
+  - 在可容忍誤差範圍內，快速估算分位值以支援即時分析
+  correct_index: 3
+  explanation: 近似分位數的目的不是追求完全精確，而是在可接受誤差內快速估算分位值，特別適合上億筆資料或即時監控情境。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch3
+  usage: mock
+- id: 114-2-028
+  chapter_title: 進階分析方法
+  section_title: 歷屆考題
+  text: |-
+    若在高維度（>500 維）的資料上應用 DBSCAN（Density-Based Spatial Clustering of Applications with Noise）演算法，卻發現所有資料點皆被判定為雜訊（Noise），下列何者為最有可能的原因？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 高維下距離變化趨同，導致 ε（Epsilon）閾值選擇失效
+  - 使用錯誤的距離函數（Distance Function）
+  - MinPts 參數設得太小
+  - 資料過度標準化導致特徵消失
+  correct_index: 0
+  explanation: 高維空間會出現距離集中現象，點與點之間距離差異變小，使 DBSCAN 的 epsilon 鄰域難以區分核心點與雜訊，因此可能全部被判為雜訊。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch3
+  usage: mock
+- id: 114-2-029
+  chapter_title: 進階分析方法
+  section_title: 歷屆考題
+  text: |-
+    某團隊在開發風險評估模型時，使用主成分分析（Principal Component Analysis, PCA）進行降維。輸入資料包含三個數值欄位：「交易金額（單位：新台幣）」、「交易次數（次／月）」與「年齡（歲）」，其數值量級分別約為 10⁵、10¹ 與 10²。分析人員直接將原始數據帶入 PCA，結果第一主成分（PC1）幾乎完全由「交易金額」主導。下列哪一項作法或判斷最合理？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 這是正常現象，金額本身變異較大，應主導主要成分
+  - 若改用特徵選擇法，可自動解決變數量級問題
+  - 可刪除「交易金額」欄位以平衡各主成分的影響
+  - 在進行 PCA 前應先進行標準化（Standardization），以避免因數值尺度差異造成特徵偏誤
+  correct_index: 3
+  explanation: PCA 對特徵尺度敏感；交易金額量級遠大於其他欄位時會主導變異，因此應先標準化，讓各欄位在相近尺度上共同影響主成分。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch3
+  usage: mock
+- id: 114-2-030
+  chapter_title: 進階分析方法
+  section_title: 歷屆考題
+  text: |-
+    某行銷團隊想了解「廣告預算」與「銷售金額」之間的關聯程度。經繪製散佈圖後發現兩者呈現明顯線性趨勢，且資料中無明顯離群值（Outliers）。若希望衡量兩者之間線性關係的強度與方向，下列哪一種方法最適合？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 均方根誤差（Root Mean Squared Error, RMSE）
+  - 共變異數（Covariance）
+  - 皮爾森相關係數（Pearson Correlation Coefficient）
+  - 平均絕對誤差（Mean Absolute Error, MAE）
+  correct_index: 2
+  explanation: 兩個連續變數呈明顯線性趨勢且無明顯離群值時，皮爾森相關係數最適合衡量線性關係的方向與強度。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch3
+  usage: mock
+- id: 114-2-031
+  chapter_title: 進階分析方法
+  section_title: 歷屆考題
+  text: |-
+    某電商團隊觀察到，每位顧客對廣告推播的點擊行為可視為一次伯努利試驗（Bernoulli Trial），單次點擊成功機率為 p = 0.4。當推播對象擴增至 5,000 位顧客時，團隊想快速預估「成功點擊總數」的分佈情形，以進行模型效能模擬與預測。若希望以常態分佈（Normal Distribution）近似原始分佈，下列哪一項判斷最為合理？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 因樣本數極大，可直接以常態分佈近似二項分佈（Binomial Distribution）
+  - 只有當 np 與 n(1-p) 皆大於 5 時，才能以常態分佈作近似
+  - 常態近似只適用於 p = 0.5 的情況
+  - 無論樣本數多大，二項分佈都不能以常態分佈近似
+  correct_index: 1
+  explanation: 二項分佈可用常態近似的常見條件是 np 與 n(1-p) 都足夠大，通常至少大於 5；本題 n=5000、p=0.4，兩者都遠大於 5。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch3
+  usage: mock
+- id: 114-2-033
+  chapter_title: 進階分析方法
+  section_title: 歷屆考題
+  text: |-
+    某金融機構的量化分析師在建立資產風險評估模型時，發現報酬率資料分佈明顯非對稱，且出現多次極端損失事件，使得傳統假設常態分佈的模型無法準確反映真實風險。若希望在不依賴常態分佈假設的前提下，採取更能捕捉資料極端情況的建模策略，下列哪一種方法最為合適？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 採用線性迴歸模型（Linear Regression Model），以常態分佈殘差（Residuals）為基礎進行推估
+  - 使用平均數（Mean）與標準差（Standard Deviation）估計波動範圍
+  - 將資料裁剪至 ±3σ 範圍內以排除異常值影響
+  - 採用分位數回歸模型（Quantile Regression Model），聚焦於尾部分位（Tail Quantiles）以評估極端風險
+  correct_index: 3
+  explanation: 報酬分佈非對稱且有極端損失時，平均與常態假設容易低估尾部風險；分位數回歸能直接建模尾部分位，更適合捕捉極端風險。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch3
+  usage: mock
+- id: 114-2-034
+  chapter_title: 進階分析方法
+  section_title: 歷屆考題
+  text: |-
+    在圖形資料庫（Graph Database）中建模社群平台資料時，若每筆「按讚」行為都包含時間戳記（Timestamp）與裝置類型（Device Type）等資訊。若希望同時保留使用者與貼文之間的互動關係，並能有效查詢「按讚」的行為屬性，下列哪一種設計方式最為合適？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 將「按讚」視為節點（Node），與使用者建立邊（Edge）
+  - 將「按讚」資訊作為邊的屬性（Property）儲存，連結使用者與被按讚的貼文節點
+  - 把「按讚」資訊直接寫入使用者節點中作為屬性
+  - 建立「按讚紀錄表」並將資料存入關聯式資料庫
+  correct_index: 1
+  explanation: 按讚是使用者與貼文之間的關係，時間戳記與裝置類型是這個關係的屬性；把它們存在邊的 property 上，可以保留互動關係並查詢行為細節。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch3
+  usage: mock
+- id: 114-2-035
+  chapter_title: 進階分析方法
+  section_title: 歷屆考題
+  text: |-
+    某企業欲建構知識圖譜（Knowledge Graph），以整合內部的研究報告、專利資料與專家知識，並支援語意查詢與關聯推理。若希望模型能具備良好的語意擴展性與高效推理能力，下列哪一種圖模型設計最為合適？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 僅以節點（Node）與邊（Edge）表示，所有資訊存放於節點屬性中
+  - 將資料結構建為 RDF（Resource Description Framework）三元組（Subject-Predicate-Object）
+  - 使用文件型資料庫儲存內容，並以標籤（Tag）連接節點
+  - 採用關聯式資料庫儲存對應關係，並搭配預建索引加速查詢
+  correct_index: 1
+  explanation: RDF 以 Subject-Predicate-Object 三元組表示知識，適合語意網、知識圖譜與推理；它比單純節點屬性或關聯表更能支援語意擴展。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch3
+  usage: mock
+- id: 114-2-036
+  chapter_title: 進階分析方法
+  section_title: 歷屆考題
+  text: |-
+    某研究人員欲使用線性迴歸模型（Linear Regression Model）分析變數 Y 與 X 之間的關係，但發現 Y 的分佈明顯右偏，且其變異數隨 X 的增大而增加。為滿足模型假設並提升配適效果，下列哪一種前處理方法最為合適？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 對 X 進行標準化（Standardization）
+  - 對 Y 進行 Box-Cox 轉換（Box-Cox Transformation）
+  - 對資料進行一次差分（First Differencing）
+  - 將 Y 中變異較大的樣本移除
+  correct_index: 1
+  explanation: Y 明顯右偏且變異數隨 X 增大，表示可能違反線性迴歸的常態與等變異假設；對正值目標 Y 做 Box-Cox 轉換可改善偏態與異質變異。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch3
+  usage: mock
+- id: 114-2-038
+  chapter_title: 進階分析方法
+  section_title: 歷屆考題
+  text: |-
+    一家製造廠評估新生產線推出後，產品良率是否較原生產線提升。工程師分別從兩條生產線各抽樣 100 件產品，原生產線良率為 95%，新生產線為 97%。若欲檢定兩條生產線良率的差異是否具有統計意義，下列哪一種方法最為合適？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 雙樣本平均數 t 檢定（Two-sample t-test）
+  - 雙比例 Z 檢定（Two-proportion Z-test）
+  - 卡方檢定（Chi-square test）
+  - 變異數分析（ANOVA）
+  correct_index: 1
+  explanation: 兩條生產線各抽樣 100 件，目標是比較兩個比例 95% 與 97% 是否有顯著差異，因此應使用雙比例 Z 檢定，而不是比較平均數的 t 檢定。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch3
+  usage: mock
+- id: 114-2-039
+  chapter_title: 進階分析方法
+  section_title: 歷屆考題
+  text: |-
+    若評估一個新開發的腫瘤分類模型，其資料集中有 80% 的樣本來自良性病例。若直接使用 5-fold 交叉驗證（Cross-Validation）進行模型評估，可能導致模型效能評估出現偏差，為避免此問題，下列哪一種作法最合適？
+
+    (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 降低 K 值以減少交叉驗證次數
+  - 改為使用拔靴法（Bootstrap）
+  - 調整測試集使良性樣本比例更高，以模擬真實分佈
+  - 使用分層交叉驗證（Stratified K-Fold Cross-Validation），以確保每折類別比例一致
+  correct_index: 3
+  explanation: 資料類別比例不平衡時，普通 K-fold 可能讓某些折的類別比例偏離整體分佈；Stratified K-Fold 可維持各折類別比例，讓評估較穩定。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch3
+  usage: mock
+- id: 114-2-040
+  chapter_title: 進階分析方法
+  section_title: 歷屆考題
+  text: |-
+    請參考附圖，下列虛擬程式碼（pseudocode）最可能是在描述何種驗證法？
+
+    ![Q40 pseudocode: leave-one-out validation algorithm](assets/images/q40_loocv_pseudocode.png)
+
+    (114年第二梯次)
+  content:
+  - type: text
+    text: |-
+      請參考附圖，下列虛擬程式碼（pseudocode）最可能是在描述何種驗證法？
+
+      (114年第二梯次)
+  - type: image
+    src: assets/images/q40_loocv_pseudocode.png
+    alt: 'Q40 pseudocode: leave-one-out validation algorithm'
+  type: multiple_choice
+  options:
+  - Hold-out 驗證（Hold-out Validation）
+  - 留一交叉驗證 LOOCV（Leave-One-Out Cross Validation）
+  - K-fold 交叉驗證（K-fold Cross Validation）
+  - 拔靴法（Bootstrap）驗證
+  correct_index: 1
+  explanation: 虛擬程式碼每次取第 i 筆作為測試集，其餘 N-1 筆作為訓練集，並對所有樣本輪流執行，這正是 Leave-One-Out Cross Validation。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch3
+  usage: mock
+- id: 114-2-041
+  chapter_title: 進階分析方法
+  section_title: 歷屆考題
+  text: |-
+    請參考附圖，下列虛擬程式碼（pseudocode）最可能是在描述何種演算法？
+
+    ![Q41 pseudocode: clustering algorithm](assets/images/q41_kmeans_pseudocode.png)
+
+    (114年第二梯次)
+  content:
+  - type: text
+    text: |-
+      請參考附圖，下列虛擬程式碼（pseudocode）最可能是在描述何種演算法？
+
+      (114年第二梯次)
+  - type: image
+    src: assets/images/q41_kmeans_pseudocode.png
+    alt: 'Q41 pseudocode: clustering algorithm'
+  type: multiple_choice
+  options:
+  - K-means 分群（K-means Clustering）
+  - 高斯混合模型分群（Gaussian Mixture Model Clustering）
+  - 階層式分群（Hierarchical Clustering）
+  - DBSCAN 分群（Density-based Spatial Clustering of Applications with Noise Clustering）
+  correct_index: 0
+  explanation: 虛擬程式碼若先隨機選擇 K 個中心，反覆將資料分配給最近中心並更新中心平均值，就是 K-means 分群的標準流程。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch3
+  usage: mock
+- id: 114-2-042
+  chapter_title: 進階分析方法
+  section_title: 歷屆考題
+  text: |-
+    考慮某生產線每小時出現瑕疵品的個數符合卜瓦松分佈（Poisson Distribution），已知平均每小時產生 5 個瑕疵品，附圖程式碼展示資料處理，請問下列敘述何者正確？
+
+    ![Q42 Python code using poisson.pmf](assets/images/q42_poisson_code.png)
+
+    (114年第二梯次)
+  content:
+  - type: text
+    text: |-
+      考慮某生產線每小時出現瑕疵品的個數符合卜瓦松分佈（Poisson Distribution），已知平均每小時產生 5 個瑕疵品，附圖程式碼展示資料處理，請問下列敘述何者正確？
+
+      (114年第二梯次)
+  - type: image
+    src: assets/images/q42_poisson_code.png
+    alt: Q42 Python code using poisson.pmf
+  type: multiple_choice
+  options:
+  - '`lambda_poisson = 5` 表示每小時最多 5 個瑕疵品'
+  - '`poisson.pmf(5, lambda_poisson)` 表示小於 5 個瑕疵品的機率'
+  - 卜瓦松分佈的適用條件為事件彼此獨立，且平均發生率固定
+  - '`poisson.cdf(10, 5)` 表示大於或等於 10 個瑕疵品的機率'
+  correct_index: 2
+  explanation: 卜瓦松分佈用於固定區間內事件發生次數，前提是事件彼此獨立且平均發生率固定；pmf(5, lambda) 是恰好 5 件的機率，不是小於 5。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch3
+  usage: mock
+- id: 114-2-048
+  chapter_title: 進階分析方法
+  section_title: 歷屆考題
+  text: |-
+    使用銷售資料集（`marketing.csv`）進行迴歸分析，附圖程式碼展示資料載入與處理。
+
+    ![Marketing CSV loading code](assets/images/q48_50_marketing_load.png)
+
+    下圖顯示資料集的前 5 筆資料與相關資訊。
+
+    ![Marketing dataset head and describe output](assets/images/q48_head_describe.png)
+
+    第 48 題
+
+    根據上述結果，下列何者正確？
+
+    (114年第二梯次)
+  content:
+  - type: text
+    text: 使用銷售資料集（`marketing.csv`）進行迴歸分析，附圖程式碼展示資料載入與處理。
+  - type: image
+    src: assets/images/q48_50_marketing_load.png
+    alt: Marketing CSV loading code
+  - type: text
+    text: 下圖顯示資料集的前 5 筆資料與相關資訊。
+  - type: image
+    src: assets/images/q48_head_describe.png
+    alt: Marketing dataset head and describe output
+  - type: text
+    text: 第 48 題
+  - type: text
+    text: |-
+      根據上述結果，下列何者正確？
+
+      (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 資料集個數為 199 筆，變數個數為 4 個
+  - '`sales` 變數的中位數是 16.827'
+  - '`facebook` 變數的第三四分位數（Q3）是 11.94'
+  - '`youtube` 變數的第一四分位數（Q1）是 89.25'
+  correct_index: 3
+  explanation: 題目附圖的 describe 統計量中，youtube 欄位 25% 分位數為 89.25；25% 對應第一四分位數 Q1，因此選項 D 正確。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch3
+  usage: mock
+- id: 114-2-050
+  chapter_title: 進階分析方法
+  section_title: 歷屆考題
+  text: "使用銷售資料集（`marketing.csv`）進行迴歸分析，附圖程式碼展示資料載入與處理。\n\n![Marketing CSV loading code](assets/images/q48_50_marketing_load.png)\n\n下圖顯示資料集的前 5 筆資料與相關資訊。\n\n![Marketing dataset head and describe output](assets/images/q48_head_describe.png)\n\n第 50 題\n\n考慮資料集已經填補遺漏值，參考下圖執行結果，下列何者正確？\n\n![Q50 regression code and OLS summary output](assets/images/q50_regression_summary.png)\n\nA：空格 1 完整語法 `reg = LinearRegression().fit(y, X)`  \nB：空格 1 完整語法 `reg = LinearRegression().fit(X, y)`  \nC：`print(reg.coef_)` 結果為包括截距項等 4 個係數值  \nD：空格 2 完整語法 `sm.OLS(X2, y).fit()`  \nE：`model_sm` 迴歸模型的所有迴歸係數在 α = 0.05 之下具有顯著的解釋力  \nF：截距項係數值為 3.5561\n\n(114年第二梯次)"
+  content:
+  - type: text
+    text: 使用銷售資料集（`marketing.csv`）進行迴歸分析，附圖程式碼展示資料載入與處理。
+  - type: image
+    src: assets/images/q48_50_marketing_load.png
+    alt: Marketing CSV loading code
+  - type: text
+    text: 下圖顯示資料集的前 5 筆資料與相關資訊。
+  - type: image
+    src: assets/images/q48_head_describe.png
+    alt: Marketing dataset head and describe output
+  - type: text
+    text: 第 50 題
+  - type: text
+    text: 考慮資料集已經填補遺漏值，參考下圖執行結果，下列何者正確？
+  - type: image
+    src: assets/images/q50_regression_summary.png
+    alt: Q50 regression code and OLS summary output
+  - type: text
+    text: "A：空格 1 完整語法 `reg = LinearRegression().fit(y, X)`  \nB：空格 1 完整語法 `reg = LinearRegression().fit(X, y)`  \nC：`print(reg.coef_)` 結果為包括截距項等 4 個係數值  \nD：空格 2 完整語法 `sm.OLS(X2, y).fit()`  \nE：`model_sm` 迴歸模型的所有迴歸係數在 α = 0.05 之下具有顯著的解釋力  \nF：截距項係數值為 3.5561\n\n(114年第二梯次)"
+  type: multiple_choice
+  options:
+  - B、C、F
+  - B、F
+  - A、C、D、F
+  - B、E
+  correct_index: 1
+  explanation: LinearRegression().fit(X, y) 的參數順序是特徵矩陣 X 在前、目標 y 在後，因此 B 正確；附圖 OLS 結果的截距項 const 為 3.5561，因此 F 正確。coef_ 不包含截距，sm.OLS 的參數順序也不是 X2 在前。
+  tags:
+  - sec-past-exam
+  - past-exam
+  - chap-m3-ch3
+  usage: mock

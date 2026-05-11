@@ -1071,3 +1071,71 @@ questions:
   - chap-m2-ch3
   - sec-cv-models
   usage: both
+- id: m2-114-2-007
+  chapter_title: 電腦視覺 (CV)
+  section_title: 歷屆考題
+  text: 在企業導入的智慧監控系統中，模型以物件偵測（Object Detection）方式自動辨識影像中的人物與車輛。若評估指標採用平均精確率（Mean Average Precision, mAP），其中 IoU（Intersection over Union）閾值設定較高時，代表下列哪一項意義？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 預測邊界框與真實邊界框的重疊程度越高，模型偵測結果越精準
+  - 預測邊界框與真實邊界框的誤差越大，導致mAP 數值上升
+  - 模型整體精確率（Precision）降低，但召回率（Recall）上升
+  - 預測邊界框的評估結果不受真實框大小影響
+  correct_index: 0
+  explanation: IoU 閾值越高，代表預測框必須與真實框有更高重疊才算正確偵測，因此評估標準更嚴格，也更重視定位精準度。
+  tags:
+  - chap-m2-ch3
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m2-114-2-008
+  chapter_title: 電腦視覺 (CV)
+  section_title: 歷屆考題
+  text: 關於Softmax 與Max-Pooling，下列敘述何者正確？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - Softmax 與Max-Pooling 都會將特徵張量壓縮為單一最大值
+  - Max-Pooling 會對輸入進行機率分佈的轉換
+  - Softmax 會保留所有輸入資訊，但以比例表示；Max-Pooling 只保留區域最大值
+  - Softmax 主要用於特徵降維，而Max-Pooling 用於分類輸出
+  correct_index: 2
+  explanation: Softmax 將所有輸入轉成總和為 1 的比例分布；Max-Pooling 則在局部區域只保留最大值，用於降低特徵圖尺寸與保留顯著特徵。
+  tags:
+  - chap-m2-ch3
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m2-114-2-034
+  chapter_title: 電腦視覺 (CV)
+  section_title: 歷屆考題
+  text: 在自駕車影像辨識系統中，開發團隊希望模型能同時辨識每個像素所屬的物件類別（例如道路、建築、行人），又能區分出同類物件的不同個體（例如多位行人）。此時最適合採用下列哪一項電腦視覺技術？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - 語義分割（Semantic Segmentation）
+  - 物件偵測（Object Detection）
+  - 實例分割（Instance Segmentation）
+  - 全景分割（Panoptic Segmentation）
+  correct_index: 3
+  explanation: 全景分割結合語義分割與實例分割，既標出每個像素的類別，也區分同類別中的不同個體。
+  tags:
+  - chap-m2-ch3
+  - sec-past-exam
+  - past-exam
+  usage: mock
+- id: m2-114-2-045
+  chapter_title: 電腦視覺 (CV)
+  section_title: 歷屆考題
+  text: 進行影像分類任務時，研究團隊嘗試利用主成分分析（Principal Component Analysis, PCA）將輸入特徵從1024 維降至100 維，並將降維後的資料輸入支持向量機（Support Vector Machine, SVM）模型進行訓練。關於此作法，下列哪一項描述最為合理？ (114年第二梯次)
+  type: multiple_choice
+  options:
+  - PCA 保留的主成分必然能提升SVM 的分類準確率
+  - 使用原始高維資料通常更能保留資訊，因此PCA 沒有實際意義
+  - PCA 可讓SVM 自動適用於非線性（Nonlinear）資料集
+  - 降維後可降低訓練時間並減少過擬合（Overfitting）風險
+  correct_index: 3
+  explanation: PCA 降維可減少輸入維度與計算量，並降低高維特徵造成的過擬合風險，但不保證一定提升準確率或處理所有非線性問題。
+  tags:
+  - chap-m2-ch3
+  - sec-past-exam
+  - past-exam
+  usage: mock
