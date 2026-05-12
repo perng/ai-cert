@@ -773,7 +773,7 @@ questions:
   - '[0.2]'
   - '[ True False True]'
   correct_index: 1
-  explanation: 條件選出 0.8 與 0.6。
+  explanation: 條件選出 0.8 與 0.6。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch2
   - sec-code-reading
@@ -798,7 +798,7 @@ questions:
   - '2'
   - '["A", "B"]'
   correct_index: 1
-  explanation: df["age"] 取出 age 欄位。
+  explanation: df["age"] 取出 age 欄位。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch2
   - sec-code-reading
@@ -825,7 +825,7 @@ questions:
   - '0'
   - '2'
   correct_index: 3
-  explanation: 30 與 40 符合條件，因此有 2 列。
+  explanation: 30 與 40 符合條件，因此有 2 列。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch2
   - sec-code-reading
@@ -852,7 +852,7 @@ questions:
   - '20'
   - '30'
   correct_index: 3
-  explanation: 20 與 40 的中位數是 30。
+  explanation: 20 與 40 的中位數是 30。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch2
   - sec-code-reading
@@ -902,7 +902,7 @@ questions:
   - '1'
   - '3'
   correct_index: 3
-  explanation: A 組 v 為 1 和 2，總和為 3。
+  explanation: A 組 v 為 1 和 2，總和為 3。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch2
   - sec-code-reading
@@ -931,7 +931,7 @@ questions:
   - '2'
   - '3'
   correct_index: 0
-  explanation: inner merge 只保留共同 id=2。
+  explanation: inner merge 只保留共同 id=2。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch2
   - sec-code-reading
@@ -981,7 +981,7 @@ questions:
   - (3, 1)
   - (3,)
   correct_index: 3
-  explanation: 單一欄位轉 NumPy 後是一維長度 3。
+  explanation: 單一欄位轉 NumPy 後是一維長度 3。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch2
   - sec-code-reading
@@ -1029,7 +1029,7 @@ questions:
   - 使用 Pandas 向量化比較
   - 自訂 Python 例外
   correct_index: 2
-  explanation: 整欄比較是 Pandas 向量化操作。
+  explanation: 整欄比較是 Pandas 向量化操作。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch2
   - sec-code-reading
@@ -1041,12 +1041,12 @@ questions:
   text: 關於「NumPy 陣列與向量化」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 向量化代表把所有運算改成 Python for loop 逐筆處理。
   - NumPy 向量化可減少 Python 層逐筆迴圈，提升數值計算效率。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - NumPy array 可以混合任意型別且不影響數值計算效率。
+  - 向量化只改善程式碼長度，不會影響大型矩陣運算速度。
   correct_index: 1
-  explanation: NumPy 向量化可減少 Python 層逐筆迴圈，提升數值計算效率。
+  explanation: NumPy 的核心是同質陣列與向量化運算，能把大量數值計算交給底層最佳化實作。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch2
   - sec-numpy-array-vectorization
@@ -1057,12 +1057,12 @@ questions:
   text: 關於「Shape、Broadcasting 與矩陣運算」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - broadcasting 會自動修正所有不相容 shape，因此不用檢查維度。
   - shape 是檢查矩陣乘法與模型輸入是否相容的第一步。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 矩陣乘法只要元素總數相同就一定可以相乘。
+  - 一維陣列沒有方向差異，因此永遠等同於 row vector。
   correct_index: 1
-  explanation: shape 是檢查矩陣乘法與模型輸入是否相容的第一步。
+  explanation: shape 決定矩陣乘法、broadcasting 與模型輸入是否相容，維度不符通常會導致錯誤或語意錯置。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略 shape、dtype、mask 或輸出目標的限制，實作時會造成錯誤或語意不符。
   tags:
   - chap-m6-ch2
   - sec-numpy-shape-broadcast
@@ -1073,12 +1073,12 @@ questions:
   text: 關於「Pandas DataFrame 基礎」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - DataFrame 會自動理解每個欄位的商業語意，不需要人工檢查。
+  - 索引與欄名只影響外觀，不會影響 join、filter 或選欄。
   - DataFrame 保留欄位名稱與索引，適合處理表格資料。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - Pandas 主要用於影像張量運算，不適合表格資料清理。
   correct_index: 2
-  explanation: DataFrame 保留欄位名稱與索引，適合處理表格資料。
+  explanation: DataFrame 保留欄名、索引與欄位型別，適合表格清理、篩選、合併與特徵整理。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch2
   - sec-pandas-dataframe
@@ -1089,12 +1089,12 @@ questions:
   text: 關於「缺失值、類別資料與特徵整理」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 所有缺失值都應直接填 0，避免保留 Unknown 類別。
+  - 類別欄位可直接以字母順序當作大小關係給所有模型使用。
   - 缺失值處理應依欄位語意選擇填補、刪除或 Unknown 類別。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 刪除含缺失值的列永遠不會造成樣本偏誤。
   correct_index: 2
-  explanation: 缺失值處理應依欄位語意選擇填補、刪除或 Unknown 類別。
+  explanation: 缺失值與類別欄位要依資料語意處理，錯誤填補或編碼會把雜訊帶入模型。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch2
   - sec-pandas-cleaning-features
@@ -1106,11 +1106,11 @@ questions:
   type: multiple_choice
   options:
   - groupby 適合依類別、店家或月份計算統計量。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - groupby 會改變原始資料意義，因此不適合計算彙總特徵。
+  - 合併資料時 key 是否唯一通常不影響結果列數。
+  - 時間序列資料可以任意打散後再計算過去期間特徵。
   correct_index: 0
-  explanation: groupby 適合依類別、店家或月份計算統計量。
+  explanation: groupby、merge 與時間序列處理會改變資料粒度，必須注意 key、時間順序與聚合意義。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch2
   - sec-pandas-groupby-merge-time
@@ -1121,12 +1121,12 @@ questions:
   text: 關於「從 Pandas 到模型輸入」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - X 應包含目標欄位，模型才能知道正確答案。
   - 監督式學習通常把特徵欄位整理成 X，把目標欄位整理成 y。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 進入模型前保留姓名、ID 等識別欄位通常能提升泛化能力。
+  - 訓練與推論可使用不同欄位順序，模型會自動對齊語意。
   correct_index: 1
-  explanation: 監督式學習通常把特徵欄位整理成 X，把目標欄位整理成 y。
+  explanation: 模型通常只接受整理後的 X/y，欄位選擇、順序與資料洩漏檢查是進入建模前的關鍵。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項混淆了訓練與推論流程，或忽略轉換規則必須一致。
   tags:
   - chap-m6-ch2
   - sec-pandas-to-model
@@ -1138,11 +1138,11 @@ questions:
   type: multiple_choice
   options:
   - 進入模型前應確認 X 沒有包含答案欄位，避免資料洩漏。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - X 應包含目標欄位，模型才能知道正確答案。
+  - 進入模型前保留姓名、ID 等識別欄位通常能提升泛化能力。
+  - 訓練與推論可使用不同欄位順序，模型會自動對齊語意。
   correct_index: 0
-  explanation: 進入模型前應確認 X 沒有包含答案欄位，避免資料洩漏。
+  explanation: 模型通常只接受整理後的 X/y，欄位選擇、順序與資料洩漏檢查是進入建模前的關鍵。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項混淆了訓練與推論流程，或忽略轉換規則必須一致。
   tags:
   - chap-m6-ch2
   - sec-pandas-to-model
@@ -1153,12 +1153,12 @@ questions:
   text: 關於「NumPy 與 Pandas 的分工」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - NumPy 主要負責欄位名稱管理與資料表 join。
   - Pandas 適合保留欄位語意並清理表格資料。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - Pandas 不適合處理缺失值與類別欄位。
+  - 兩者功能完全相同，實務上不需要依資料型態選擇。
   correct_index: 1
-  explanation: Pandas 適合保留欄位語意並清理表格資料。
+  explanation: Pandas 偏向保留表格語意，NumPy 偏向數值矩陣運算，兩者在資料流程中常前後銜接。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch2
   - sec-numpy-pandas-division
@@ -1169,12 +1169,12 @@ questions:
   text: 在實務應用「NumPy 與 Pandas 的分工」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - NumPy 主要負責欄位名稱管理與資料表 join。
   - NumPy 適合已整理好的純數值矩陣與線性代數運算。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - Pandas 不適合處理缺失值與類別欄位。
+  - 兩者功能完全相同，實務上不需要依資料型態選擇。
   correct_index: 1
-  explanation: NumPy 適合已整理好的純數值矩陣與線性代數運算。
+  explanation: Pandas 偏向保留表格語意，NumPy 偏向數值矩陣運算，兩者在資料流程中常前後銜接。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch2
   - sec-numpy-pandas-division
@@ -1186,11 +1186,11 @@ questions:
   type: multiple_choice
   options:
   - 建模前檢查目標分布可發現類別不平衡與極端值。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 只要模型能訓練完成，就表示資料品質已通過檢查。
+  - 資料品質檢查只需要看資料筆數，不需看分布或異常值。
+  - 重複列、極端值與標籤錯誤通常不會影響模型評估。
   correct_index: 0
-  explanation: 建模前檢查目標分布可發現類別不平衡與極端值。
+  explanation: 建模前的品質檢查能及早發現類別不平衡、極端值、重複列、缺失與標籤問題。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch2
   - sec-pandas-quality-checklist
@@ -1201,12 +1201,12 @@ questions:
   text: 關於「效能與記憶體觀念」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 讀取所有欄位通常比選取必要欄位更節省記憶體。
   - 只讀取必要欄位可降低 Pandas 記憶體使用。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - object 字串欄位在大量重複值時一定比 category 更省記憶體。
+  - 效能問題只能靠換模型解決，資料載入方式不重要。
   correct_index: 1
-  explanation: 只讀取必要欄位可降低 Pandas 記憶體使用。
+  explanation: 大型資料處理時，欄位選取、dtype、category 與分批讀取會直接影響記憶體和執行時間。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch2
   - sec-pandas-performance
@@ -1218,11 +1218,11 @@ questions:
   type: multiple_choice
   options:
   - 高重複字串欄位可考慮轉成 category 降低記憶體。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 讀取所有欄位通常比選取必要欄位更節省記憶體。
+  - object 字串欄位在大量重複值時一定比 category 更省記憶體。
+  - 效能問題只能靠換模型解決，資料載入方式不重要。
   correct_index: 0
-  explanation: 高重複字串欄位可考慮轉成 category 降低記憶體。
+  explanation: 大型資料處理時，欄位選取、dtype、category 與分批讀取會直接影響記憶體和執行時間。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch2
   - sec-pandas-performance
@@ -1233,12 +1233,12 @@ questions:
   text: 關於「特徵工程範例：從原始欄位到模型欄位」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 原始日期字串應直接丟給所有模型，不需拆解或轉換。
   - 日期欄位常可轉成距今天數、星期幾或月份等模型特徵。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 任何特徵只要來自資料表，就不可能造成資料洩漏。
+  - 特徵工程的目標是增加欄位數量，而不是提升可學習訊號品質。
   correct_index: 1
-  explanation: 日期欄位常可轉成距今天數、星期幾或月份等模型特徵。
+  explanation: 特徵工程要把原始欄位轉成可學習訊號，同時避免把答案或未來資訊混入 X。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch2
   - sec-pandas-feature-example
@@ -1250,11 +1250,11 @@ questions:
   type: multiple_choice
   options:
   - 目標欄位應作為 y，不應放入 X。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 原始日期字串應直接丟給所有模型，不需拆解或轉換。
+  - 任何特徵只要來自資料表，就不可能造成資料洩漏。
+  - 特徵工程的目標是增加欄位數量，而不是提升可學習訊號品質。
   correct_index: 0
-  explanation: 目標欄位應作為 y，不應放入 X。
+  explanation: 特徵工程要把原始欄位轉成可學習訊號，同時避免把答案或未來資訊混入 X。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch2
   - sec-pandas-feature-example

@@ -10,6 +10,7 @@ Usage:
 import argparse
 import glob
 import os
+import re
 import sys
 from pathlib import Path
 from collections import defaultdict
@@ -46,6 +47,22 @@ def group_questions(questions: list[dict]) -> dict:
         section = q.get("section_title", "未分類")
         grouped[chapter][section].append(q)
     return grouped
+
+
+def slugify_anchor(text: str) -> str:
+    """Create a stable HTML id fragment for generated review anchors."""
+    slug = re.sub(r"[^\w\u4e00-\u9fff-]+", "-", str(text).strip(), flags=re.UNICODE)
+    slug = re.sub(r"-+", "-", slug).strip("-").lower()
+    return slug or "section"
+
+
+def source_section_id(section: str, questions: list[dict]) -> str:
+    """Infer the source qmd section id from question tags when available."""
+    for q in questions:
+        for tag in q.get("tags", []):
+            if isinstance(tag, str) and tag.startswith("sec-"):
+                return tag
+    return slugify_anchor(section)
 
 
 HTML_TEMPLATE = """\
@@ -498,8 +515,15 @@ def build_html(questions: list[dict], module_dir: str, output_path: Optional[str
         parts.append(
             f'<li><a href="#{anchor}">{escape(chapter)}</a> ({sec_count} 題)</li>'
         )
-        for section in sections:
-            parts.append(f'<li class="toc-section">— {escape(section)}</li>')
+        sec_idx = 0
+        for section, qs in sections.items():
+            sec_idx += 1
+            source_id = source_section_id(section, qs)
+            section_anchor = f"{anchor}-{slugify_anchor(source_id)}-{sec_idx}"
+            parts.append(
+                f'<li class="toc-section">— <a href="#{section_anchor}">'
+                f'{escape(section)}</a></li>'
+            )
     parts.append("</ul></div>")
 
     # Questions
@@ -510,8 +534,15 @@ def build_html(questions: list[dict], module_dir: str, output_path: Optional[str
         anchor = f"ch-{chap_idx}"
         parts.append(f'<h2 class="chapter-heading" id="{anchor}">{escape(chapter)}</h2>')
 
+        sec_idx = 0
         for section, qs in sections.items():
-            parts.append(f'<h3 class="section-heading">{escape(section)}</h3>')
+            sec_idx += 1
+            source_id = source_section_id(section, qs)
+            section_anchor = f"{anchor}-{slugify_anchor(source_id)}-{sec_idx}"
+            parts.append(
+                f'<h3 class="section-heading" id="{section_anchor}" '
+                f'data-source-section="{escape(source_id)}">{escape(section)}</h3>'
+            )
 
             for q in qs:
                 qid = q.get("id", "?")
@@ -524,7 +555,8 @@ def build_html(questions: list[dict], module_dir: str, output_path: Optional[str
                 prompt_blocks = normalize_blocks(q.get("content"), text)
                 normalized_options = [normalize_option(opt) for opt in options]
 
-                parts.append('<div class="question-card">')
+                q_anchor = f"q-{slugify_anchor(qid)}"
+                parts.append(f'<div class="question-card" id="{q_anchor}">')
                 parts.append('<div class="q-header">')
                 if not q.get("content"):
                     parts.append(f'<div class="q-text">{escape(text)}</div>')

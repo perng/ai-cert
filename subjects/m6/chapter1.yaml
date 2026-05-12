@@ -90,7 +90,7 @@ questions:
   - 強制所有模型只能在 CPU 執行
   - 讓 Python 程式不需要任何套件
   correct_index: 1
-  explanation: 虛擬環境能隔離套件與版本，降低專案之間相依衝突。
+  explanation: 虛擬環境能隔離套件與版本，降低專案之間相依衝突。 判斷時要把此概念放回資料處理或模型流程中，確認它實際解決的是哪一個問題。
   tags:
   - chap-m6-ch1
   - sec-python-files-env
@@ -344,7 +344,7 @@ questions:
   options:
   - AI PLANNING
   - ai planning
-  - ai planning
+  - '  ai planning  '
   - AI Planning
   correct_index: 1
   explanation: strip() 移除前後空白，lower() 轉成小寫。
@@ -465,7 +465,7 @@ questions:
   - 2
   - 12
   correct_index: 1
-  explanation: 2、4、6 的平均值是 4。
+  explanation: 2、4、6 的平均值是 4。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch1
   - sec-code-reading
@@ -511,7 +511,7 @@ questions:
   - 42
   - 1e3
   correct_index: 1
-  explanation: 1e-3 等於 0.001。
+  explanation: 1e-3 等於 0.001。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch1
   - sec-code-reading
@@ -614,7 +614,7 @@ questions:
   - 將文字轉成 token id
   - 建立跨平台路徑物件
   correct_index: 3
-  explanation: Path 可用物件方式組合與操作檔案路徑。
+  explanation: Path 可用物件方式組合與操作檔案路徑。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch1
   - sec-code-reading
@@ -639,7 +639,7 @@ questions:
   - 資料筆數與每筆特徵數
   - 模型準確率
   correct_index: 2
-  explanation: 外層長度是資料筆數，內層長度是每筆特徵數。
+  explanation: 外層長度是資料筆數，內層長度是每筆特徵數。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch1
   - sec-code-reading
@@ -766,7 +766,7 @@ questions:
   - AI:model
   - model:AI
   correct_index: 2
-  explanation: 未提供 prefix 時使用預設值 AI。
+  explanation: 未提供 prefix 時使用預設值 AI。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch1
   - sec-code-reading
@@ -793,7 +793,7 @@ questions:
   - '[3, 5]'
   - '[1, 2, 3, 4, 5]'
   correct_index: 0
-  explanation: 條件 n % 2 == 1 會保留奇數。
+  explanation: 條件 n % 2 == 1 會保留奇數。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch1
   - sec-code-reading
@@ -866,7 +866,7 @@ questions:
   - 一個 NumPy array
   - 一個組合後的路徑
   correct_index: 3
-  explanation: Path 的 / 運算子可用來組合路徑。
+  explanation: Path 的 / 運算子可用來組合路徑。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch1
   - sec-code-reading
@@ -916,7 +916,7 @@ questions:
   - '["b", "c"]'
   - '["c", "d"]'
   correct_index: 2
-  explanation: 切片 [1:3] 取索引 1 和 2。
+  explanation: 切片 [1:3] 取索引 1 和 2。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch1
   - sec-code-reading
@@ -941,7 +941,7 @@ questions:
   - '  hello ai  '
   - HELLO AI
   correct_index: 0
-  explanation: strip 移除前後空白，lower 轉小寫。
+  explanation: strip 移除前後空白，lower 轉小寫。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch1
   - sec-code-reading
@@ -964,7 +964,7 @@ questions:
   - 訓練 CNN
   - 計算梯度
   correct_index: 1
-  explanation: 函式名稱與內容都表示讀取設定檔。
+  explanation: 函式名稱與內容都表示讀取設定檔。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch1
   - sec-code-reading
@@ -1027,11 +1027,11 @@ questions:
   type: multiple_choice
   options:
   - Python 適合把資料處理、模型訓練與自動化流程串接在同一個工作流中。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - Python 只能用於互動式 Notebook，不能撰寫可重複執行的腳本。
+  - Python 的直譯執行代表不需要管理相依套件與執行環境。
+  - AI 專案中 Python 主要負責畫圖，資料處理與模型訓練通常不能整合。
   correct_index: 0
-  explanation: Python 適合把資料處理、模型訓練與自動化流程串接在同一個工作流中。
+  explanation: Python 在 AI 專案中常扮演膠水語言，重點是把資料讀取、清理、建模、評估與自動化串成可重複流程。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch1
   - sec-python-runtime
@@ -1042,12 +1042,12 @@ questions:
   text: 關於「變數、型別與資料結構」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - list 最適合表示 key-value 對應，查找標籤時比 dict 更清楚。
+  - tuple 內容可任意增刪，適合持續追加訓練樣本。
   - dict 適合表示 key-value 對應，例如標籤名稱到數字的 mapping。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 所有欄位都轉成字串後，模型就能直接理解數值大小。
   correct_index: 2
-  explanation: dict 適合表示 key-value 對應，例如標籤名稱到數字的 mapping。
+  explanation: 資料結構會影響資料語意是否清楚，例如 dict 適合映射，list 適合有序集合，型別錯誤會直接影響後續特徵處理。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch1
   - sec-python-data-structures
@@ -1058,12 +1058,12 @@ questions:
   text: 關於「流程控制與函式」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 把所有資料處理寫在全域區塊中，通常比函式更容易測試。
+  - 函式只適合印出訊息，不適合封裝特徵轉換或評估邏輯。
   - 函式能把資料清理、特徵轉換或評估邏輯包成可重用單位。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 條件判斷越分散，資料清理流程越容易追蹤與重用。
   correct_index: 2
-  explanation: 函式能把資料清理、特徵轉換或評估邏輯包成可重用單位。
+  explanation: 函式與條件流程能把資料清理和模型評估拆成可測試、可重用的步驟，避免 Notebook 或腳本變成難追蹤的線性堆疊。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch1
   - sec-python-control-functions
@@ -1074,12 +1074,12 @@ questions:
   text: 關於「List Comprehension 與 Generator」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - list comprehension 適合放入大量副作用，讓資料處理流程更隱晦。
   - list comprehension 適合簡潔表達序列的篩選與轉換。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - generator 會一次建立完整清單，因此不適合處理大型資料流。
+  - 所有巢狀迴圈都應改成一行 comprehension，無論可讀性是否下降。
   correct_index: 1
-  explanation: list comprehension 適合簡潔表達序列的篩選與轉換。
+  explanation: comprehension 適合簡潔表達篩選與映射；generator 則適合逐步產生資料，兩者差異在可讀性與記憶體使用。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch1
   - sec-python-comprehension
@@ -1090,12 +1090,12 @@ questions:
   text: 關於「模組、套件與匯入」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - import 會複製整個套件原始碼到目前檔案中。
+  - 循環匯入通常代表架構清楚，不需要調整模組邊界。
+  - 把所有函式放在單一檔案能最有效避免命名衝突。
   - import 讓程式使用標準函式庫、第三方套件或專案內部模組。
   correct_index: 3
-  explanation: import 讓程式使用標準函式庫、第三方套件或專案內部模組。
+  explanation: 模組化與匯入機制的價值在於清楚分工、重用函式與管理第三方套件，而不是把所有邏輯塞進單一檔案。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch1
   - sec-python-modules
@@ -1107,11 +1107,11 @@ questions:
   type: multiple_choice
   options:
   - 將資料讀取、特徵工程與模型訓練拆成模組，可提升測試與維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - import 會複製整個套件原始碼到目前檔案中。
+  - 循環匯入通常代表架構清楚，不需要調整模組邊界。
+  - 把所有函式放在單一檔案能最有效避免命名衝突。
   correct_index: 0
-  explanation: 將資料讀取、特徵工程與模型訓練拆成模組，可提升測試與維護性。
+  explanation: 模組化與匯入機制的價值在於清楚分工、重用函式與管理第三方套件，而不是把所有邏輯塞進單一檔案。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch1
   - sec-python-modules
@@ -1123,11 +1123,11 @@ questions:
   type: multiple_choice
   options:
   - notebooks 適合探索與紀錄，src 目錄適合存放可重複執行的核心邏輯。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - notebooks 應作為唯一正式部署入口，避免建立 src 目錄。
+  - data、models、reports 混放在同一層可提升版本追蹤清楚度。
+  - 測試檔通常只適合 UI 專案，資料轉換與評估指標不需要測試。
   correct_index: 0
-  explanation: notebooks 適合探索與紀錄，src 目錄適合存放可重複執行的核心邏輯。
+  explanation: AI 專案通常區分探索、可重用原始碼、測試、資料與輸出，這能降低重跑實驗和交接時的不確定性。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch1
   - sec-python-project-structure
@@ -1138,12 +1138,12 @@ questions:
   text: 在實務應用「Python 在 AI 專案中的典型檔案結構」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - notebooks 應作為唯一正式部署入口，避免建立 src 目錄。
   - tests 目錄可驗證資料轉換、評估指標與模型包裝邏輯是否穩定。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - data、models、reports 混放在同一層可提升版本追蹤清楚度。
+  - 測試檔通常只適合 UI 專案，資料轉換與評估指標不需要測試。
   correct_index: 1
-  explanation: tests 目錄可驗證資料轉換、評估指標與模型包裝邏輯是否穩定。
+  explanation: AI 專案通常區分探索、可重用原始碼、測試、資料與輸出，這能降低重跑實驗和交接時的不確定性。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch1
   - sec-python-project-structure
@@ -1154,12 +1154,12 @@ questions:
   text: 關於「可讀性與可維護性原則」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 縮短所有變數名稱能讓 AI 專案更容易交接。
   - 清楚的變數名稱能降低資料與模型流程被誤解的風險。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 重複貼上同一段資料清理程式比抽成函式更容易維護。
+  - 註解應描述每一行語法，而不是說明資料假設或決策理由。
   correct_index: 1
-  explanation: 清楚的變數名稱能降低資料與模型流程被誤解的風險。
+  explanation: 可維護的程式碼應讓資料欄位、模型輸入與決策條件容易被下一位維護者理解與驗證。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch1
   - sec-python-maintainability
@@ -1170,12 +1170,12 @@ questions:
   text: 關於「常見錯誤與除錯方法」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 遇到 traceback 時應先修改最後一行套件內部程式碼。
+  - shape mismatch 通常可透過隨機改變 batch size 永久解決。
+  - dtype 錯誤只會影響顯示格式，不會影響模型運算。
   - shape、dtype 與欄位名稱是 AI 程式最常需要優先檢查的項目。
   correct_index: 3
-  explanation: shape、dtype 與欄位名稱是 AI 程式最常需要優先檢查的項目。
+  explanation: 除錯時先檢查 traceback、shape、dtype、欄位名稱與執行順序，通常比盲目修改模型更有效。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch1
   - sec-python-debugging
@@ -1187,11 +1187,11 @@ questions:
   type: multiple_choice
   options:
   - 遇到 traceback 時，應先找到第一個屬於自己專案的檔案與行號。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 遇到 traceback 時應先修改最後一行套件內部程式碼。
+  - shape mismatch 通常可透過隨機改變 batch size 永久解決。
+  - dtype 錯誤只會影響顯示格式，不會影響模型運算。
   correct_index: 0
-  explanation: 遇到 traceback 時，應先找到第一個屬於自己專案的檔案與行號。
+  explanation: 除錯時先檢查 traceback、shape、dtype、欄位名稱與執行順序，通常比盲目修改模型更有效。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch1
   - sec-python-debugging

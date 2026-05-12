@@ -351,7 +351,7 @@ questions:
   - 清梯度、算梯度、更新參數
   - 推論、softmax、argmax
   correct_index: 2
-  explanation: 這是 PyTorch 標準訓練更新順序。
+  explanation: 這是 PyTorch 標準訓練更新順序。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch7
   - sec-code-reading
@@ -374,7 +374,7 @@ questions:
   - 28
   - 1
   correct_index: 0
-  explanation: 第二個參數 8 是輸出通道數。
+  explanation: 第二個參數 8 是輸出通道數。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch7
   - sec-code-reading
@@ -514,7 +514,7 @@ questions:
   - 影片串流 frame 原檔
   - 原始不同大小影像
   correct_index: 0
-  explanation: MLP 適合處理固定長度向量資料。
+  explanation: MLP 適合處理固定長度向量資料。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch7
   - sec-code-reading
@@ -608,7 +608,7 @@ questions:
   - 影像檔案大小
   - GPU 是否可用
   correct_index: 0
-  explanation: 混淆矩陣可以顯示真實類別與預測類別的交叉分布。
+  explanation: 混淆矩陣可以顯示真實類別與預測類別的交叉分布。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch7
   - sec-code-reading
@@ -631,7 +631,7 @@ questions:
   - epoch 數
   - batch size
   correct_index: 0
-  explanation: 第一個參數是輸入維度。
+  explanation: 第一個參數是輸入維度。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch7
   - sec-code-reading
@@ -654,7 +654,7 @@ questions:
   - 轉成 RGB
   - 執行資料讀取
   correct_index: 0
-  explanation: activation 提供非線性能力。
+  explanation: activation 提供非線性能力。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch7
   - sec-code-reading
@@ -677,7 +677,7 @@ questions:
   - 兩個類別的 logits
   - 兩筆資料
   correct_index: 2
-  explanation: 輸出維度 2 對應兩個類別分數。
+  explanation: 輸出維度 2 對應兩個類別分數。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch7
   - sec-code-reading
@@ -723,7 +723,7 @@ questions:
   - 圖片高度
   - 輸入通道數
   correct_index: 3
-  explanation: 第一個參數是 in_channels。
+  explanation: 第一個參數是 in_channels。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch7
   - sec-code-reading
@@ -746,7 +746,7 @@ questions:
   - 輸出通道數
   - 輸入圖片寬度
   correct_index: 2
-  explanation: 第二個參數是 out_channels。
+  explanation: 第二個參數是 out_channels。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch7
   - sec-code-reading
@@ -838,7 +838,7 @@ questions:
   - loss function
   - 統計檢定
   correct_index: 1
-  explanation: ColorJitter 隨機改變影像顏色屬性。
+  explanation: ColorJitter 隨機改變影像顏色屬性。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch7
   - sec-code-reading
@@ -861,7 +861,7 @@ questions:
   - 計算 loss
   - 取最大 logit 的類別
   correct_index: 3
-  explanation: argmax 取預測類別索引。
+  explanation: argmax 取預測類別索引。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch7
   - sec-code-reading
@@ -884,7 +884,7 @@ questions:
   - 1 個連續值
   - 0 維
   correct_index: 2
-  explanation: 單目標迴歸通常輸出一個數值。
+  explanation: 單目標迴歸通常輸出一個數值。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch7
   - sec-code-reading
@@ -907,7 +907,7 @@ questions:
   - 增加圖片大小
   - 移除 label
   correct_index: 1
-  explanation: Dropout 是正規化手段。
+  explanation: Dropout 是正規化手段。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch7
   - sec-code-reading
@@ -953,7 +953,7 @@ questions:
   - A/B 類混淆樣本
   - Python 版本
   correct_index: 2
-  explanation: 類別混淆需要回看錯誤樣本與混淆矩陣。
+  explanation: 類別混淆需要回看錯誤樣本與混淆矩陣。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch7
   - sec-code-reading
@@ -965,12 +965,12 @@ questions:
   text: 關於「訓練 MLP」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - MLP 不需要 activation，多層線性堆疊已能提供非線性能力。
+  - 訓練 MLP 時只需 forward，不需要 loss 與 backward。
+  - MLP 的輸入可直接使用任意大小影像而不需展平或特徵化。
   - MLP 訓練仍遵循前向、loss、backward、step 的基本流程。
   correct_index: 3
-  explanation: MLP 訓練仍遵循前向、loss、backward、step 的基本流程。
+  explanation: MLP 訓練仍遵循神經網路基本流程，並依賴 activation、loss 與 optimizer 學習固定長度特徵。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把深度學習訓練步驟或框架責任混淆，無法正確描述模型如何學習。
   tags:
   - chap-m6-ch7
   - sec-pytorch-train-mlp
@@ -981,12 +981,12 @@ questions:
   text: 關於「實作簡單 CNN」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - CNN 的卷積層不會保留空間鄰近資訊。
+  - 卷積核大小與 padding 不會影響 feature map 尺寸。
   - CNN 使用卷積層學習局部視覺特徵。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - CNN 只能處理文字 token，不能處理影像資料。
   correct_index: 2
-  explanation: CNN 使用卷積層學習局部視覺特徵。
+  explanation: CNN 透過卷積與池化利用影像空間結構，kernel、padding 與 stride 會影響特徵圖。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把深度學習訓練步驟或框架責任混淆，無法正確描述模型如何學習。
   tags:
   - chap-m6-ch7
   - sec-pytorch-simple-cnn
@@ -997,12 +997,12 @@ questions:
   text: 關於「資料增強與正規化」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 驗證集應使用隨機翻轉與隨機裁切來提高不可重現性。
   - 訓練階段可用隨機 crop、flip 或 color jitter 增加資料多樣性。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 資料增強應改變標籤語意，讓模型學習更困難的錯誤標籤。
+  - Normalize 可使用任意 mean/std，不需配合資料或預訓練模型。
   correct_index: 1
-  explanation: 訓練階段可用隨機 crop、flip 或 color jitter 增加資料多樣性。
+  explanation: 資料增強通常只用於訓練以提升泛化，normalization 則要與資料或預訓練模型設定一致。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch7
   - sec-pytorch-cnn-augmentation
@@ -1013,12 +1013,12 @@ questions:
   text: 在實務應用「資料增強與正規化」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 驗證集應使用隨機翻轉與隨機裁切來提高不可重現性。
+  - 資料增強應改變標籤語意，讓模型學習更困難的錯誤標籤。
+  - Normalize 可使用任意 mean/std，不需配合資料或預訓練模型。
   - 驗證與測試通常不使用隨機增強。
   correct_index: 3
-  explanation: 驗證與測試通常不使用隨機增強。
+  explanation: 資料增強通常只用於訓練以提升泛化，normalization 則要與資料或預訓練模型設定一致。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch7
   - sec-pytorch-cnn-augmentation
@@ -1029,12 +1029,12 @@ questions:
   text: 關於「評估 CNN 與常見錯誤」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 評估時保持 model.train() 可避免 Dropout 影響結果。
+  - torch.no_grad() 會阻止模型輸出 logits，因此評估不能使用。
   - CNN 評估時應使用 model.eval() 與 torch.no_grad()。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - argmax 應套用在 batch 維度 dim=0 才能取得每筆類別。
   correct_index: 2
-  explanation: CNN 評估時應使用 model.eval() 與 torch.no_grad()。
+  explanation: 除錯時先檢查 traceback、shape、dtype、欄位名稱與執行順序，通常比盲目修改模型更有效。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch7
   - sec-pytorch-cnn-eval
@@ -1045,12 +1045,12 @@ questions:
   text: 在實務應用「評估 CNN 與常見錯誤」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 評估時保持 model.train() 可避免 Dropout 影響結果。
+  - torch.no_grad() 會阻止模型輸出 logits，因此評估不能使用。
+  - argmax 應套用在 batch 維度 dim=0 才能取得每筆類別。
   - argmax(dim=1) 常用來從 logits 取預測類別。
   correct_index: 3
-  explanation: argmax(dim=1) 常用來從 logits 取預測類別。
+  explanation: 除錯時先檢查 traceback、shape、dtype、欄位名稱與執行順序，通常比盲目修改模型更有效。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch7
   - sec-pytorch-cnn-eval
@@ -1061,12 +1061,12 @@ questions:
   text: 關於「MLP 適合與不適合的資料」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - MLP 天生保留影像二維空間結構，因此通常優於 CNN。
+  - 固定長度表格特徵不能送入 MLP。
   - MLP 適合固定長度向量或表格特徵。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 原始可變長文字不需任何向量化即可直接送入 MLP。
   correct_index: 2
-  explanation: MLP 適合固定長度向量或表格特徵。
+  explanation: MLP 適合固定長度向量；影像、文字或序列資料通常需要先保留或轉換其結構。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把深度學習訓練步驟或框架責任混淆，無法正確描述模型如何學習。
   tags:
   - chap-m6-ch7
   - sec-pytorch-mlp-use-cases
@@ -1077,12 +1077,12 @@ questions:
   text: 在實務應用「MLP 適合與不適合的資料」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - MLP 天生保留影像二維空間結構，因此通常優於 CNN。
+  - 固定長度表格特徵不能送入 MLP。
+  - 原始可變長文字不需任何向量化即可直接送入 MLP。
   - 原始影像通常更適合 CNN，因為具有空間結構。
   correct_index: 3
-  explanation: 原始影像通常更適合 CNN，因為具有空間結構。
+  explanation: MLP 適合固定長度向量；影像、文字或序列資料通常需要先保留或轉換其結構。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把深度學習訓練步驟或框架責任混淆，無法正確描述模型如何學習。
   tags:
   - chap-m6-ch7
   - sec-pytorch-mlp-use-cases
@@ -1093,12 +1093,12 @@ questions:
   text: 關於「Activation、Normalization 與 Dropout」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - Dropout 在推論時應保持啟用，讓結果更隨機。
+  - BatchNorm 與 LayerNorm 完全相同，訓練與推論行為也相同。
+  - activation 只用來改變輸出顏色，與非線性能力無關。
   - activation 提供非線性，否則多層線性仍近似單層線性。
   correct_index: 3
-  explanation: activation 提供非線性，否則多層線性仍近似單層線性。
+  explanation: activation 提供非線性，normalization 穩定訓練，dropout 則在訓練時提供正規化效果。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch7
   - sec-pytorch-network-components
@@ -1110,11 +1110,11 @@ questions:
   type: multiple_choice
   options:
   - Dropout 訓練時啟用，推論時關閉。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - Dropout 在推論時應保持啟用，讓結果更隨機。
+  - BatchNorm 與 LayerNorm 完全相同，訓練與推論行為也相同。
+  - activation 只用來改變輸出顏色，與非線性能力無關。
   correct_index: 0
-  explanation: Dropout 訓練時啟用，推論時關閉。
+  explanation: activation 提供非線性，normalization 穩定訓練，dropout 則在訓練時提供正規化效果。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch7
   - sec-pytorch-network-components
@@ -1125,12 +1125,12 @@ questions:
   text: 關於「CNN 中尺寸如何變化」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - MaxPool2d(2) 通常會讓高寬加倍。
+  - padding、stride 與 kernel size 不會影響輸出尺寸。
+  - Flatten 前不需要知道 feature map shape，Linear 會自動調整輸入維度。
   - padding=1 且 kernel_size=3 的卷積可保持空間尺寸。
   correct_index: 3
-  explanation: padding=1 且 kernel_size=3 的卷積可保持空間尺寸。
+  explanation: CNN 的輸出尺寸由 kernel、stride、padding 與 pooling 決定，接 Linear 前必須確認 flatten 維度。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略 shape、dtype、mask 或輸出目標的限制，實作時會造成錯誤或語意不符。
   tags:
   - chap-m6-ch7
   - sec-pytorch-cnn-shape-calculation
@@ -1141,12 +1141,12 @@ questions:
   text: 在實務應用「CNN 中尺寸如何變化」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - MaxPool2d(2) 通常會讓高寬加倍。
+  - padding、stride 與 kernel size 不會影響輸出尺寸。
+  - Flatten 前不需要知道 feature map shape，Linear 會自動調整輸入維度。
   - MaxPool2d(2) 通常讓高寬減半。
   correct_index: 3
-  explanation: MaxPool2d(2) 通常讓高寬減半。
+  explanation: CNN 的輸出尺寸由 kernel、stride、padding 與 pooling 決定，接 Linear 前必須確認 flatten 維度。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略 shape、dtype、mask 或輸出目標的限制，實作時會造成錯誤或語意不符。
   tags:
   - chap-m6-ch7
   - sec-pytorch-cnn-shape-calculation
@@ -1157,12 +1157,12 @@ questions:
   text: 下列哪一項最符合「CNN 中尺寸如何變化」的核心觀念？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - MaxPool2d(2) 通常會讓高寬加倍。
+  - padding、stride 與 kernel size 不會影響輸出尺寸。
   - 可用 dummy input 檢查 Flatten 前的 feature map shape。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - Flatten 前不需要知道 feature map shape，Linear 會自動調整輸入維度。
   correct_index: 2
-  explanation: 可用 dummy input 檢查 Flatten 前的 feature map shape。
+  explanation: CNN 的輸出尺寸由 kernel、stride、padding 與 pooling 決定，接 Linear 前必須確認 flatten 維度。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略 shape、dtype、mask 或輸出目標的限制，實作時會造成錯誤或語意不符。
   tags:
   - chap-m6-ch7
   - sec-pytorch-cnn-shape-calculation
@@ -1173,12 +1173,12 @@ questions:
   text: 關於「Transfer Learning 與預訓練模型」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 預訓練 backbone 的輸入 normalization 可任意替換。
   - transfer learning 常用預訓練 backbone 加新分類頭。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 新任務類別數改變時，不需要替換分類頭。
+  - 資料量少時從零訓練所有層一定比凍結 backbone 更穩定。
   correct_index: 1
-  explanation: transfer learning 常用預訓練 backbone 加新分類頭。
+  explanation: transfer learning 使用預訓練特徵降低資料需求，但仍要替換分類頭並使用正確前處理。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch7
   - sec-pytorch-transfer-learning
@@ -1190,11 +1190,11 @@ questions:
   type: multiple_choice
   options:
   - 資料量少時可先凍結 backbone，降低過擬合風險。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 預訓練 backbone 的輸入 normalization 可任意替換。
+  - 新任務類別數改變時，不需要替換分類頭。
+  - 資料量少時從零訓練所有層一定比凍結 backbone 更穩定。
   correct_index: 0
-  explanation: 資料量少時可先凍結 backbone，降低過擬合風險。
+  explanation: transfer learning 使用預訓練特徵降低資料需求，但仍要替換分類頭並使用正確前處理。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch7
   - sec-pytorch-transfer-learning
@@ -1205,12 +1205,12 @@ questions:
   text: 關於「CNN 專案的錯誤分析方法」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 錯誤影像不需要查看，混淆矩陣分數已足夠定位問題。
+  - 部署影像與訓練影像風格不同不會造成 domain shift。
+  - 標籤錯誤通常會讓模型泛化更好。
   - 錯誤影像可揭露標籤錯誤、遮擋、低光與類別相似問題。
   correct_index: 3
-  explanation: 錯誤影像可揭露標籤錯誤、遮擋、低光與類別相似問題。
+  explanation: CNN 專案錯誤分析要檢查錯分影像、資料分布與部署條件是否和訓練集一致。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch7
   - sec-pytorch-cnn-error-analysis
@@ -1222,11 +1222,11 @@ questions:
   type: multiple_choice
   options:
   - 若部署資料風格不同，離線評估可能過度樂觀。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 錯誤影像不需要查看，混淆矩陣分數已足夠定位問題。
+  - 部署影像與訓練影像風格不同不會造成 domain shift。
+  - 標籤錯誤通常會讓模型泛化更好。
   correct_index: 0
-  explanation: 若部署資料風格不同，離線評估可能過度樂觀。
+  explanation: CNN 專案錯誤分析要檢查錯分影像、資料分布與部署條件是否和訓練集一致。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch7
   - sec-pytorch-cnn-error-analysis

@@ -734,7 +734,7 @@ questions:
   - 輸出 4 個類別
   - batch size 必須為 4
   correct_index: 0
-  explanation: 多頭注意力可在不同子空間學關係。
+  explanation: 多頭注意力可在不同子空間學關係。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch8
   - sec-code-reading
@@ -757,7 +757,7 @@ questions:
   - 第一個真實 token
   - 最高機率 token
   correct_index: 0
-  explanation: padding mask 標示補齊位置。
+  explanation: padding mask 標示補齊位置。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch8
   - sec-code-reading
@@ -780,7 +780,7 @@ questions:
   - 刪除 embedding
   - 避免看未來 token
   correct_index: 3
-  explanation: 自回歸生成不能偷看未來位置。
+  explanation: 自回歸生成不能偷看未來位置。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch8
   - sec-code-reading
@@ -803,7 +803,7 @@ questions:
   - 計算 loss
   - 建立 tokenizer
   correct_index: 1
-  explanation: 沿 seq_len 維度平均可得到整段表示。
+  explanation: 沿 seq_len 維度平均可得到整段表示。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch8
   - sec-code-reading
@@ -826,7 +826,7 @@ questions:
   - 位置 id
   - tokenizer 詞表
   correct_index: 1
-  explanation: 分類層將序列表示轉成類別分數。
+  explanation: 分類層將序列表示轉成類別分數。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch8
   - sec-code-reading
@@ -874,7 +874,7 @@ questions:
   - 只預測第一個 token
   - 每個位置預測自己
   correct_index: 1
-  explanation: 語言模型常學習下一 token 預測。
+  explanation: 語言模型常學習下一 token 預測。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch8
   - sec-code-reading
@@ -897,7 +897,7 @@ questions:
   - 自回歸聊天生成為主
   - Pandas merge
   correct_index: 1
-  explanation: Encoder-only 擅長理解與分類。
+  explanation: Encoder-only 擅長理解與分類。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch8
   - sec-code-reading
@@ -943,7 +943,7 @@ questions:
   - BatchNorm running mean
   - optimizer state
   correct_index: 1
-  explanation: RAG 將外部知識放進模型上下文。
+  explanation: RAG 將外部知識放進模型上下文。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch8
   - sec-code-reading
@@ -979,11 +979,11 @@ questions:
   type: multiple_choice
   options:
   - Embedding 將離散 token id 轉成連續向量。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - Embedding 會把連續影像像素轉成檔案路徑。
+  - 沒有位置資訊時，模型仍能完整區分 token 順序。
+  - 位置編碼只影響圖表顏色，不影響序列表示。
   correct_index: 0
-  explanation: Embedding 將離散 token id 轉成連續向量。
+  explanation: embedding 把 token id 轉成連續向量，位置資訊則讓模型能辨識序列順序。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch8
   - sec-transformer-embedding-position
@@ -995,11 +995,11 @@ questions:
   type: multiple_choice
   options:
   - self-attention 中 Q、K、V 來自同一序列。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - Q、K、V 是資料庫欄位名稱，與 attention 計算無關。
+  - multi-head attention 只會重複同一個權重，不能學不同關係。
+  - attention 權重不需要 softmax，直接相加即可表示機率分布。
   correct_index: 0
-  explanation: self-attention 中 Q、K、V 來自同一序列。
+  explanation: attention 透過 Q、K、V 計算加權表示，多個 head 可學習不同關係。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch8
   - sec-transformer-attention
@@ -1011,11 +1011,11 @@ questions:
   type: multiple_choice
   options:
   - Encoder 會輸出每個 token 的上下文表示。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - Encoder 分類器只能輸出單一 token，不能產生上下文表示。
+  - 分類頭不需要接在 pooled 或 CLS 表示上。
+  - Encoder-only 架構只適合自回歸生成，不能做分類。
   correct_index: 0
-  explanation: Encoder 會輸出每個 token 的上下文表示。
+  explanation: Encoder 會產生上下文表示，分類任務通常再用 pooled 或 CLS 表示接分類頭。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch8
   - sec-transformer-classifier
@@ -1027,11 +1027,11 @@ questions:
   type: multiple_choice
   options:
   - 分類器可用 mean pooling 或 CLS 表示取得整段文字向量。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - Encoder 分類器只能輸出單一 token，不能產生上下文表示。
+  - 分類頭不需要接在 pooled 或 CLS 表示上。
+  - Encoder-only 架構只適合自回歸生成，不能做分類。
   correct_index: 0
-  explanation: 分類器可用 mean pooling 或 CLS 表示取得整段文字向量。
+  explanation: Encoder 會產生上下文表示，分類任務通常再用 pooled 或 CLS 表示接分類頭。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch8
   - sec-transformer-classifier
@@ -1042,12 +1042,12 @@ questions:
   text: 關於「Mask 與序列長度」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - padding token 應和真實 token 一樣被模型關注。
+  - mask 只用來加速讀檔，與 attention 計算無關。
+  - 所有 batch 都必須完全相同原始長度，不能使用 padding。
   - padding mask 用來避免模型關注補齊 token。
   correct_index: 3
-  explanation: padding mask 用來避免模型關注補齊 token。
+  explanation: mask 用來控制 attention 能看見哪些 token，padding 或 causal mask 錯誤會改變模型行為。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略 shape、dtype、mask 或輸出目標的限制，實作時會造成錯誤或語意不符。
   tags:
   - chap-m6-ch8
   - sec-transformer-mask
@@ -1058,12 +1058,12 @@ questions:
   text: 關於「從簡化模型到大型語言模型」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 大型語言模型與 attention、embedding 等元件無關。
+  - 模型規模變大通常會降低資料與算力需求。
+  - 大型模型部署不需要考慮延遲、記憶體或成本。
   - 大型語言模型仍建立在 embedding、attention、feed-forward 與 normalization 等元件上。
   correct_index: 3
-  explanation: 大型語言模型仍建立在 embedding、attention、feed-forward 與 normalization 等元件上。
+  explanation: 大型語言模型仍由 embedding、attention、feed-forward 與 normalization 等基本元件堆疊而成。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch8
   - sec-transformer-to-llm
@@ -1074,12 +1074,12 @@ questions:
   text: 在實務應用「從簡化模型到大型語言模型」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 大型語言模型與 attention、embedding 等元件無關。
+  - 模型規模變大通常會降低資料與算力需求。
+  - 大型模型部署不需要考慮延遲、記憶體或成本。
   - 模型規模變大會帶來更多資料、算力與部署成本需求。
   correct_index: 3
-  explanation: 模型規模變大會帶來更多資料、算力與部署成本需求。
+  explanation: 大型語言模型仍由 embedding、attention、feed-forward 與 normalization 等基本元件堆疊而成。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch8
   - sec-transformer-to-llm
@@ -1090,12 +1090,12 @@ questions:
   text: 關於「Attention 的直覺與限制」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - attention 權重永遠等同於人類可接受的因果解釋。
+  - dot product 越大越好，完全不需要 scaling。
   - attention 可視為 query 對 key 比較後加權 value。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - attention 的時間與記憶體成本與序列長度無關。
   correct_index: 2
-  explanation: attention 可視為 query 對 key 比較後加權 value。
+  explanation: attention 是 query 對 key 計分後加權 value，但權重不等於完整因果解釋，也有序列長度成本。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch8
   - sec-transformer-attention-intuition
@@ -1106,12 +1106,12 @@ questions:
   text: 在實務應用「Attention 的直覺與限制」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - attention 權重永遠等同於人類可接受的因果解釋。
+  - dot product 越大越好，完全不需要 scaling。
   - 除以 sqrt(d_k) 可避免 dot product 過大導致 softmax 過尖。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - attention 的時間與記憶體成本與序列長度無關。
   correct_index: 2
-  explanation: 除以 sqrt(d_k) 可避免 dot product 過大導致 softmax 過尖。
+  explanation: attention 是 query 對 key 計分後加權 value，但權重不等於完整因果解釋，也有序列長度成本。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch8
   - sec-transformer-attention-intuition
@@ -1122,12 +1122,12 @@ questions:
   text: 關於「Encoder、Decoder 與 Encoder-Decoder」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - Encoder-only 架構最適合逐 token 自回歸生成。
+  - Decoder-only 架構不能產生下一個 token。
+  - Encoder-Decoder 架構不能用於翻譯或摘要。
   - Encoder-only 架構適合理解、分類與檢索任務。
   correct_index: 3
-  explanation: Encoder-only 架構適合理解、分類與檢索任務。
+  explanation: Encoder、Decoder 與 Encoder-Decoder 架構服務不同任務，例如理解、生成與序列轉換。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch8
   - sec-transformer-architectures
@@ -1138,12 +1138,12 @@ questions:
   text: 在實務應用「Encoder、Decoder 與 Encoder-Decoder」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - Encoder-only 架構最適合逐 token 自回歸生成。
+  - Decoder-only 架構不能產生下一個 token。
   - Decoder-only 架構適合自回歸生成。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - Encoder-Decoder 架構不能用於翻譯或摘要。
   correct_index: 2
-  explanation: Decoder-only 架構適合自回歸生成。
+  explanation: Encoder、Decoder 與 Encoder-Decoder 架構服務不同任務，例如理解、生成與序列轉換。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch8
   - sec-transformer-architectures
@@ -1154,12 +1154,12 @@ questions:
   text: 關於「Tokenizer 與 Subword」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - Tokenizer 可在訓練與推論時任意更換，不影響 token id。
+  - Subword 會刪除所有罕見詞，讓模型永遠看不到新詞。
   - Subword tokenizer 可處理罕見詞與新詞。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - token id 的數值大小直接代表詞語語意強弱。
   correct_index: 2
-  explanation: Subword tokenizer 可處理罕見詞與新詞。
+  explanation: tokenizer 會決定文字如何映射成 token id，訓練與推論不一致會讓模型看到不同輸入表示。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項混淆了訓練與推論流程，或忽略轉換規則必須一致。
   tags:
   - chap-m6-ch8
   - sec-transformer-tokenizer
@@ -1171,11 +1171,11 @@ questions:
   type: multiple_choice
   options:
   - 模型訓練與推論必須使用一致 tokenizer。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - Tokenizer 可在訓練與推論時任意更換，不影響 token id。
+  - Subword 會刪除所有罕見詞，讓模型永遠看不到新詞。
+  - token id 的數值大小直接代表詞語語意強弱。
   correct_index: 0
-  explanation: 模型訓練與推論必須使用一致 tokenizer。
+  explanation: tokenizer 會決定文字如何映射成 token id，訓練與推論不一致會讓模型看到不同輸入表示。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項混淆了訓練與推論流程，或忽略轉換規則必須一致。
   tags:
   - chap-m6-ch8
   - sec-transformer-tokenizer
@@ -1186,12 +1186,12 @@ questions:
   text: 關於「Transformer 訓練時的 Loss」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - CrossEntropyLoss 通常要求模型輸出已經 argmax 後的類別。
+  - 語言模型訓練不需要 label shift，直接預測同一位置即可。
   - 文字分類常使用 pooled representation 搭配 CrossEntropyLoss。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - loss 只用於報表顯示，不參與梯度更新。
   correct_index: 2
-  explanation: 文字分類常使用 pooled representation 搭配 CrossEntropyLoss。
+  explanation: Transformer 任務的 loss 要配合輸出形狀與 label 對齊方式，例如分類或下一 token 預測。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略 shape、dtype、mask 或輸出目標的限制，實作時會造成錯誤或語意不符。
   tags:
   - chap-m6-ch8
   - sec-transformer-loss
@@ -1202,12 +1202,12 @@ questions:
   text: 在實務應用「Transformer 訓練時的 Loss」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - CrossEntropyLoss 通常要求模型輸出已經 argmax 後的類別。
+  - 語言模型訓練不需要 label shift，直接預測同一位置即可。
+  - loss 只用於報表顯示，不參與梯度更新。
   - 語言模型通常用 shifted labels 預測下一個 token。
   correct_index: 3
-  explanation: 語言模型通常用 shifted labels 預測下一個 token。
+  explanation: Transformer 任務的 loss 要配合輸出形狀與 label 對齊方式，例如分類或下一 token 預測。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略 shape、dtype、mask 或輸出目標的限制，實作時會造成錯誤或語意不符。
   tags:
   - chap-m6-ch8
   - sec-transformer-loss
@@ -1219,11 +1219,11 @@ questions:
   type: multiple_choice
   options:
   - RAG 適合知識常更新且需要外部資料來源的任務。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - RAG 需要把所有外部文件永久寫入模型權重。
+  - feature extraction 代表完全不使用預訓練模型表示。
+  - fine-tuning 永遠比檢索式方法更便宜且更容易更新知識。
   correct_index: 0
-  explanation: RAG 適合知識常更新且需要外部資料來源的任務。
+  explanation: fine-tuning、feature extraction 與 RAG 對應不同更新知識與使用預訓練模型的策略。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch8
   - sec-transformer-application-patterns
@@ -1234,12 +1234,12 @@ questions:
   text: 在實務應用「Fine-tuning、Feature Extraction 與 RAG」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - RAG 需要把所有外部文件永久寫入模型權重。
+  - feature extraction 代表完全不使用預訓練模型表示。
   - feature extraction 可用預訓練模型產生 embedding 給檢索或下游模型。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - fine-tuning 永遠比檢索式方法更便宜且更容易更新知識。
   correct_index: 2
-  explanation: feature extraction 可用預訓練模型產生 embedding 給檢索或下游模型。
+  explanation: fine-tuning、feature extraction 與 RAG 對應不同更新知識與使用預訓練模型的策略。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch8
   - sec-transformer-application-patterns
@@ -1250,12 +1250,12 @@ questions:
   text: 關於「Transformer 常見錯誤與除錯」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - padding mask 錯誤只會影響輸出格式，不會影響注意力。
   - padding mask 語意錯誤會讓模型關注 padding token。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - sequence length 增加不會改變 attention 記憶體需求。
+  - tokenizer 不一致只會改變文字顯示，不會改變模型輸入 id。
   correct_index: 1
-  explanation: padding mask 語意錯誤會讓模型關注 padding token。
+  explanation: 除錯時先檢查 traceback、shape、dtype、欄位名稱與執行順序，通常比盲目修改模型更有效。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch8
   - sec-transformer-debugging
@@ -1266,12 +1266,12 @@ questions:
   text: 在實務應用「Transformer 常見錯誤與除錯」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - padding mask 錯誤只會影響輸出格式，不會影響注意力。
+  - sequence length 增加不會改變 attention 記憶體需求。
+  - tokenizer 不一致只會改變文字顯示，不會改變模型輸入 id。
   - tokenizer 不一致會讓訓練與推論輸入表示不同。
   correct_index: 3
-  explanation: tokenizer 不一致會讓訓練與推論輸入表示不同。
+  explanation: 除錯時先檢查 traceback、shape、dtype、欄位名稱與執行順序，通常比盲目修改模型更有效。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch8
   - sec-transformer-debugging
@@ -1282,12 +1282,12 @@ questions:
   text: 下列哪一項最符合「Transformer 常見錯誤與除錯」的核心觀念？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - padding mask 錯誤只會影響輸出格式，不會影響注意力。
   - sequence length 太長會增加 attention 記憶體與時間成本。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - sequence length 增加不會改變 attention 記憶體需求。
+  - tokenizer 不一致只會改變文字顯示，不會改變模型輸入 id。
   correct_index: 1
-  explanation: sequence length 太長會增加 attention 記憶體與時間成本。
+  explanation: 除錯時先檢查 traceback、shape、dtype、欄位名稱與執行順序，通常比盲目修改模型更有效。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch8
   - sec-transformer-debugging
@@ -1298,12 +1298,12 @@ questions:
   text: 關於「從實作理解應用規劃」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 語意搜尋任務一定要用生成模型產生長答案。
+  - 知識常更新時，頻繁 fine-tuning 一定比檢索維護更簡單。
   - 應用規劃需評估上下文長度、延遲、成本與更新知識方式。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 應用規劃只需選最大模型，不需估算延遲與成本。
   correct_index: 2
-  explanation: 應用規劃需評估上下文長度、延遲、成本與更新知識方式。
+  explanation: 應用規劃要把模型能力轉成成本、延遲、上下文長度、知識更新與維護方式的取捨。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch8
   - sec-transformer-planning-perspective
@@ -1315,11 +1315,11 @@ questions:
   type: multiple_choice
   options:
   - 若知識常變動，RAG 通常比頻繁 fine-tuning 更容易維護。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 語意搜尋任務一定要用生成模型產生長答案。
+  - 知識常更新時，頻繁 fine-tuning 一定比檢索維護更簡單。
+  - 應用規劃只需選最大模型，不需估算延遲與成本。
   correct_index: 0
-  explanation: 若知識常變動，RAG 通常比頻繁 fine-tuning 更容易維護。
+  explanation: 應用規劃要把模型能力轉成成本、延遲、上下文長度、知識更新與維護方式的取捨。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch8
   - sec-transformer-planning-perspective
@@ -1330,12 +1330,12 @@ questions:
   text: 下列哪一項最符合「從實作理解應用規劃」的核心觀念？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 語意搜尋任務一定要用生成模型產生長答案。
+  - 知識常更新時，頻繁 fine-tuning 一定比檢索維護更簡單。
   - 任務若只是語意搜尋，embedding 方案可能比生成模型更簡單。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 應用規劃只需選最大模型，不需估算延遲與成本。
   correct_index: 2
-  explanation: 任務若只是語意搜尋，embedding 方案可能比生成模型更簡單。
+  explanation: 應用規劃要把模型能力轉成成本、延遲、上下文長度、知識更新與維護方式的取捨。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch8
   - sec-transformer-planning-perspective

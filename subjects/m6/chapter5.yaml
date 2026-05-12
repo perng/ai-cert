@@ -402,7 +402,7 @@ questions:
   - model
   - AI MODEL
   correct_index: 1
-  explanation: lower 將字母轉成小寫。
+  explanation: lower 將字母轉成小寫。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch5
   - sec-code-reading
@@ -425,7 +425,7 @@ questions:
   - 影像通道
   - 小寫英文字母、數字與空白
   correct_index: 3
-  explanation: 字元集合以外的符號會被移除。
+  explanation: 字元集合以外的符號會被移除。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch5
   - sec-code-reading
@@ -471,7 +471,7 @@ questions:
   - 粗略切字尾
   - 精確查資料庫
   correct_index: 2
-  explanation: Stemming 通常以規則方式粗略還原詞幹。
+  explanation: Stemming 通常以規則方式粗略還原詞幹。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch5
   - sec-code-reading
@@ -494,7 +494,7 @@ questions:
   - GPU 記憶體
   - 字典詞形與詞性
   correct_index: 3
-  explanation: Lemmatization 會考慮詞形與詞性。
+  explanation: Lemmatization 會考慮詞形與詞性。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch5
   - sec-code-reading
@@ -517,7 +517,7 @@ questions:
   - 增加所有停用詞權重
   - 降低所有文件都常見詞的權重
   correct_index: 3
-  explanation: IDF 會降低出現在很多文件中的常見詞影響。
+  explanation: IDF 會降低出現在很多文件中的常見詞影響。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch5
   - sec-code-reading
@@ -565,7 +565,7 @@ questions:
   - 大多數文件只包含詞彙表的一小部分詞
   - 影像尺寸固定
   correct_index: 2
-  explanation: 文字特徵高維且大多為 0，因此適合稀疏表示。
+  explanation: 文字特徵高維且大多為 0，因此適合稀疏表示。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch5
   - sec-code-reading
@@ -588,7 +588,7 @@ questions:
   - 先把圖片轉 RGB
   - 先計算 p-value
   correct_index: 0
-  explanation: 傳統分類器需要數值矩陣。
+  explanation: 傳統分類器需要數值矩陣。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch5
   - sec-code-reading
@@ -611,7 +611,7 @@ questions:
   - 中文沒有專有名詞
   - 中文只能用 OpenCV
   correct_index: 1
-  explanation: 中文沒有天然空白分隔，切詞策略會影響特徵。
+  explanation: 中文沒有天然空白分隔，切詞策略會影響特徵。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch5
   - sec-code-reading
@@ -634,7 +634,7 @@ questions:
   - 影像太暗
   - 否定詞處理不佳
   correct_index: 3
-  explanation: not 會反轉語意，模型忽略否定詞可能出錯。
+  explanation: not 會反轉語意，模型忽略否定詞可能出錯。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch5
   - sec-code-reading
@@ -657,7 +657,7 @@ questions:
   - 沒有假陽性
   - precision 一定為 1
   correct_index: 1
-  explanation: Recall 低表示真實投訴中只有少部分被找回。
+  explanation: Recall 低表示真實投訴中只有少部分被找回。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch5
   - sec-code-reading
@@ -715,12 +715,12 @@ questions:
   text: 關於「NLTK 基礎：文字前處理」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 英文與中文都能可靠地只用空白完成斷詞。
+  - 文字標準化應無條件刪除所有標點與大小寫資訊。
+  - tokenization 只會影響顯示格式，不會影響後續特徵表示。
   - tokenization 是把文字切成 token 的第一步。
   correct_index: 3
-  explanation: tokenization 是把文字切成 token 的第一步。
+  explanation: 文字前處理會決定 token 與後續特徵，英文、中文、標點與大小寫都要依任務處理。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項混淆了訓練與推論流程，或忽略轉換規則必須一致。
   tags:
   - chap-m6-ch5
   - sec-nltk-text-basics
@@ -731,12 +731,12 @@ questions:
   text: 在實務應用「NLTK 基礎：文字前處理」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 英文與中文都能可靠地只用空白完成斷詞。
+  - 文字標準化應無條件刪除所有標點與大小寫資訊。
+  - tokenization 只會影響顯示格式，不會影響後續特徵表示。
   - 文字標準化常包含去除多餘空白、大小寫處理與符號清理。
   correct_index: 3
-  explanation: 文字標準化常包含去除多餘空白、大小寫處理與符號清理。
+  explanation: 文字前處理會決定 token 與後續特徵，英文、中文、標點與大小寫都要依任務處理。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項混淆了訓練與推論流程，或忽略轉換規則必須一致。
   tags:
   - chap-m6-ch5
   - sec-nltk-text-basics
@@ -747,12 +747,12 @@ questions:
   text: 下列哪一項最符合「NLTK 基礎：文字前處理」的核心觀念？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 英文與中文都能可靠地只用空白完成斷詞。
   - 英文與中文斷詞策略不同，不能一律用空白切分。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 文字標準化應無條件刪除所有標點與大小寫資訊。
+  - tokenization 只會影響顯示格式，不會影響後續特徵表示。
   correct_index: 1
-  explanation: 英文與中文斷詞策略不同，不能一律用空白切分。
+  explanation: 文字前處理會決定 token 與後續特徵，英文、中文、標點與大小寫都要依任務處理。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項混淆了訓練與推論流程，或忽略轉換規則必須一致。
   tags:
   - chap-m6-ch5
   - sec-nltk-text-basics
@@ -764,11 +764,11 @@ questions:
   type: multiple_choice
   options:
   - stop words 不應無條件移除，否定詞可能影響語意。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - stop words 在所有任務中都應移除，包含否定詞。
+  - stemming 會完整查字典還原詞形，因此一定比 lemmatization 精準。
+  - lemmatization 只適用於影像資料，與文字正規化無關。
   correct_index: 0
-  explanation: stop words 不應無條件移除，否定詞可能影響語意。
+  explanation: stop words、stemming 與 lemmatization 都會改變詞彙表示，是否使用取決於語意是否被保留。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略文字任務會受語言、斷詞與特徵表示影響。
   tags:
   - chap-m6-ch5
   - sec-nltk-normalization
@@ -779,12 +779,12 @@ questions:
   text: 在實務應用「Stop Words、Stemming 與 Lemmatization」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - stop words 在所有任務中都應移除，包含否定詞。
   - stemming 較粗略，常用規則切除字尾。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - stemming 會完整查字典還原詞形，因此一定比 lemmatization 精準。
+  - lemmatization 只適用於影像資料，與文字正規化無關。
   correct_index: 1
-  explanation: stemming 較粗略，常用規則切除字尾。
+  explanation: stop words、stemming 與 lemmatization 都會改變詞彙表示，是否使用取決於語意是否被保留。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略文字任務會受語言、斷詞與特徵表示影響。
   tags:
   - chap-m6-ch5
   - sec-nltk-normalization
@@ -795,12 +795,12 @@ questions:
   text: 下列哪一項最符合「Stop Words、Stemming 與 Lemmatization」的核心觀念？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - stop words 在所有任務中都應移除，包含否定詞。
+  - stemming 會完整查字典還原詞形，因此一定比 lemmatization 精準。
   - lemmatization 較重視字典詞形與詞性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - lemmatization 只適用於影像資料，與文字正規化無關。
   correct_index: 2
-  explanation: lemmatization 較重視字典詞形與詞性。
+  explanation: stop words、stemming 與 lemmatization 都會改變詞彙表示，是否使用取決於語意是否被保留。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略文字任務會受語言、斷詞與特徵表示影響。
   tags:
   - chap-m6-ch5
   - sec-nltk-normalization
@@ -812,11 +812,11 @@ questions:
   type: multiple_choice
   options:
   - TF-IDF 可把文字文件轉成稀疏數值矩陣。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - Bag-of-Words 會保留完整語序，因此能直接理解長距離上下文。
+  - TF-IDF 會讓所有常見詞權重變得最高。
+  - 文字可直接以原始字串送入傳統分類器，不需向量化。
   correct_index: 0
-  explanation: TF-IDF 可把文字文件轉成稀疏數值矩陣。
+  explanation: 傳統文字模型需要把原始字串轉成 BoW、TF-IDF 或其他向量表示，模型才能進行數值運算。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略文字任務會受語言、斷詞與特徵表示影響。
   tags:
   - chap-m6-ch5
   - sec-nltk-text-features
@@ -828,11 +828,11 @@ questions:
   type: multiple_choice
   options:
   - IDF 會降低所有文件都常見詞的權重。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - Bag-of-Words 會保留完整語序，因此能直接理解長距離上下文。
+  - TF-IDF 會讓所有常見詞權重變得最高。
+  - 文字可直接以原始字串送入傳統分類器，不需向量化。
   correct_index: 0
-  explanation: IDF 會降低所有文件都常見詞的權重。
+  explanation: 傳統文字模型需要把原始字串轉成 BoW、TF-IDF 或其他向量表示，模型才能進行數值運算。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略文字任務會受語言、斷詞與特徵表示影響。
   tags:
   - chap-m6-ch5
   - sec-nltk-text-features
@@ -843,12 +843,12 @@ questions:
   text: 下列哪一項最符合「從文字到特徵」的核心觀念？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - Bag-of-Words 會保留完整語序，因此能直接理解長距離上下文。
   - 傳統分類器需要數值特徵，不能直接吃原始文字字串。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - TF-IDF 會讓所有常見詞權重變得最高。
+  - 文字可直接以原始字串送入傳統分類器，不需向量化。
   correct_index: 1
-  explanation: 傳統分類器需要數值特徵，不能直接吃原始文字字串。
+  explanation: 傳統文字模型需要把原始字串轉成 BoW、TF-IDF 或其他向量表示，模型才能進行數值運算。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略文字任務會受語言、斷詞與特徵表示影響。
   tags:
   - chap-m6-ch5
   - sec-nltk-text-features
@@ -859,12 +859,12 @@ questions:
   text: 關於「scikit-learn 文字分類 Baseline」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - TF-IDF 與 Logistic Regression 不能放進 Pipeline。
+  - baseline 的目的只是取代所有後續錯誤分析。
+  - 文字分類 baseline 一定需要大型 Transformer 才能開始。
   - TF-IDF 加 Logistic Regression 是常見文字分類 baseline。
   correct_index: 3
-  explanation: TF-IDF 加 Logistic Regression 是常見文字分類 baseline。
+  explanation: baseline 是判斷資料是否有可學習訊號的參照點，也能衡量複雜模型是否真的值得。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch5
   - sec-nlp-sklearn-baseline
@@ -875,12 +875,12 @@ questions:
   text: 在實務應用「scikit-learn 文字分類 Baseline」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - TF-IDF 與 Logistic Regression 不能放進 Pipeline。
+  - baseline 的目的只是取代所有後續錯誤分析。
+  - 文字分類 baseline 一定需要大型 Transformer 才能開始。
   - 文字 baseline 可快速確認資料中是否有可學習訊號。
   correct_index: 3
-  explanation: 文字 baseline 可快速確認資料中是否有可學習訊號。
+  explanation: baseline 是判斷資料是否有可學習訊號的參照點，也能衡量複雜模型是否真的值得。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch5
   - sec-nlp-sklearn-baseline
@@ -891,12 +891,12 @@ questions:
   text: 下列哪一項最符合「scikit-learn 文字分類 Baseline」的核心觀念？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - TF-IDF 與 Logistic Regression 不能放進 Pipeline。
+  - baseline 的目的只是取代所有後續錯誤分析。
+  - 文字分類 baseline 一定需要大型 Transformer 才能開始。
   - Pipeline 可讓文字特徵化與分類器訓練共用一致流程。
   correct_index: 3
-  explanation: Pipeline 可讓文字特徵化與分類器訓練共用一致流程。
+  explanation: baseline 是判斷資料是否有可學習訊號的參照點，也能衡量複雜模型是否真的值得。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch5
   - sec-nlp-sklearn-baseline
@@ -907,12 +907,12 @@ questions:
   text: 關於「NLP 實務流程：從原始文字到模型特徵」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 清理 HTML、重複內容與無效文字通常不會影響模型。
+  - tokenizer 可在訓練與推論階段任意更換。
   - NLP 流程通常包含清理、斷詞、特徵化、建模與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 錯誤案例分析只需看分數，不需要閱讀被錯分的文字。
   correct_index: 2
-  explanation: NLP 流程通常包含清理、斷詞、特徵化、建模與錯誤分析。
+  explanation: NLP 管線包含清理、斷詞、向量化、訓練與錯誤分析，每一步都會影響模型輸入與輸出品質。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略文字任務會受語言、斷詞與特徵表示影響。
   tags:
   - chap-m6-ch5
   - sec-nltk-practical-pipeline
@@ -923,12 +923,12 @@ questions:
   text: 在實務應用「NLP 實務流程：從原始文字到模型特徵」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 清理 HTML、重複內容與無效文字通常不會影響模型。
   - 清理 HTML、重複資料與無效內容可提升文字資料品質。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - tokenizer 可在訓練與推論階段任意更換。
+  - 錯誤案例分析只需看分數，不需要閱讀被錯分的文字。
   correct_index: 1
-  explanation: 清理 HTML、重複資料與無效內容可提升文字資料品質。
+  explanation: NLP 管線包含清理、斷詞、向量化、訓練與錯誤分析，每一步都會影響模型輸入與輸出品質。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略文字任務會受語言、斷詞與特徵表示影響。
   tags:
   - chap-m6-ch5
   - sec-nltk-practical-pipeline
@@ -939,12 +939,12 @@ questions:
   text: 下列哪一項最符合「NLP 實務流程：從原始文字到模型特徵」的核心觀念？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 清理 HTML、重複內容與無效文字通常不會影響模型。
+  - tokenizer 可在訓練與推論階段任意更換。
   - 錯誤案例分析能發現否定句、諷刺與領域詞彙問題。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 錯誤案例分析只需看分數，不需要閱讀被錯分的文字。
   correct_index: 2
-  explanation: 錯誤案例分析能發現否定句、諷刺與領域詞彙問題。
+  explanation: NLP 管線包含清理、斷詞、向量化、訓練與錯誤分析，每一步都會影響模型輸入與輸出品質。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略文字任務會受語言、斷詞與特徵表示影響。
   tags:
   - chap-m6-ch5
   - sec-nltk-practical-pipeline
@@ -955,12 +955,12 @@ questions:
   text: 關於「中文 NLP 的額外挑戰」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 中文句子天然以空白分隔詞，因此不需要斷詞工具。
+  - 繁簡轉換、專有名詞與混合英文縮寫通常不影響中文 NLP。
   - 中文沒有天然空白分隔詞，因此斷詞結果會影響特徵。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 中文文字一定比英文更適合直接使用英文 stop words 清單。
   correct_index: 2
-  explanation: 中文沒有天然空白分隔詞，因此斷詞結果會影響特徵。
+  explanation: 中文沒有天然空白分詞，還要處理繁簡、專有名詞與混合縮寫，因此不能照搬英文流程。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略文字任務會受語言、斷詞與特徵表示影響。
   tags:
   - chap-m6-ch5
   - sec-chinese-nlp
@@ -971,12 +971,12 @@ questions:
   text: 在實務應用「中文 NLP 的額外挑戰」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 中文句子天然以空白分隔詞，因此不需要斷詞工具。
+  - 繁簡轉換、專有名詞與混合英文縮寫通常不影響中文 NLP。
   - 繁簡轉換、專有名詞與混合英文縮寫會增加中文 NLP 難度。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 中文文字一定比英文更適合直接使用英文 stop words 清單。
   correct_index: 2
-  explanation: 繁簡轉換、專有名詞與混合英文縮寫會增加中文 NLP 難度。
+  explanation: 中文沒有天然空白分詞，還要處理繁簡、專有名詞與混合縮寫，因此不能照搬英文流程。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略文字任務會受語言、斷詞與特徵表示影響。
   tags:
   - chap-m6-ch5
   - sec-chinese-nlp
@@ -987,12 +987,12 @@ questions:
   text: 下列哪一項最符合「中文 NLP 的額外挑戰」的核心觀念？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 中文句子天然以空白分隔詞，因此不需要斷詞工具。
+  - 繁簡轉換、專有名詞與混合英文縮寫通常不影響中文 NLP。
+  - 中文文字一定比英文更適合直接使用英文 stop words 清單。
   - 領域詞彙表可改善產業文件或考試資料的斷詞品質。
   correct_index: 3
-  explanation: 領域詞彙表可改善產業文件或考試資料的斷詞品質。
+  explanation: 中文沒有天然空白分詞，還要處理繁簡、專有名詞與混合縮寫，因此不能照搬英文流程。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略文字任務會受語言、斷詞與特徵表示影響。
   tags:
   - chap-m6-ch5
   - sec-chinese-nlp
@@ -1003,12 +1003,12 @@ questions:
   text: 關於「NLP 錯誤案例分析」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 只看整體 accuracy 就能知道模型是否理解否定句與諷刺。
+  - 少數類別 recall 很低時，不需要檢查樣本數與標註品質。
   - 文字模型錯誤常出現在否定句、專有名詞與少數類別。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 模型把資料來源模板當捷徑時，代表泛化能力一定更好。
   correct_index: 2
-  explanation: 文字模型錯誤常出現在否定句、專有名詞與少數類別。
+  explanation: 文字錯誤分析要閱讀實際錯分案例，找出否定句、少數類別、模板捷徑或標註不一致。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch5
   - sec-nlp-error-analysis
@@ -1019,12 +1019,12 @@ questions:
   text: 在實務應用「NLP 錯誤案例分析」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 只看整體 accuracy 就能知道模型是否理解否定句與諷刺。
   - 少數類別 recall 低代表許多真實案例被漏掉。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 少數類別 recall 很低時，不需要檢查樣本數與標註品質。
+  - 模型把資料來源模板當捷徑時，代表泛化能力一定更好。
   correct_index: 1
-  explanation: 少數類別 recall 低代表許多真實案例被漏掉。
+  explanation: 文字錯誤分析要閱讀實際錯分案例，找出否定句、少數類別、模板捷徑或標註不一致。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch5
   - sec-nlp-error-analysis
@@ -1035,12 +1035,12 @@ questions:
   text: 下列哪一項最符合「NLP 錯誤案例分析」的核心觀念？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 只看整體 accuracy 就能知道模型是否理解否定句與諷刺。
   - 標註不一致會限制模型上限，應回頭檢查資料品質。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 少數類別 recall 很低時，不需要檢查樣本數與標註品質。
+  - 模型把資料來源模板當捷徑時，代表泛化能力一定更好。
   correct_index: 1
-  explanation: 標註不一致會限制模型上限，應回頭檢查資料品質。
+  explanation: 文字錯誤分析要閱讀實際錯分案例，找出否定句、少數類別、模板捷徑或標註不一致。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch5
   - sec-nlp-error-analysis

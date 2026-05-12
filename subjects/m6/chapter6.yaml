@@ -645,7 +645,7 @@ questions:
   - torch.Size([1, 2])
   - torch.Size([2, 2])
   correct_index: 3
-  explanation: 這是 2x2 tensor。
+  explanation: 這是 2x2 tensor。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch6
   - sec-code-reading
@@ -739,7 +739,7 @@ questions:
   - optimizer.lr
   - w.grad
   correct_index: 3
-  explanation: 梯度會累積在參數的 .grad 屬性。
+  explanation: 梯度會累積在參數的 .grad 屬性。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch6
   - sec-code-reading
@@ -762,7 +762,7 @@ questions:
   - 清空資料集
   - 清空舊梯度
   correct_index: 3
-  explanation: PyTorch 梯度會累加，因此更新前要清空。
+  explanation: PyTorch 梯度會累加，因此更新前要清空。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch6
   - sec-code-reading
@@ -785,7 +785,7 @@ questions:
   - 計算 p-value
   - 轉成 GPU
   correct_index: 1
-  explanation: shuffle 可降低訓練順序偏差。
+  explanation: shuffle 可降低訓練順序偏差。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch6
   - sec-code-reading
@@ -831,7 +831,7 @@ questions:
   - 如何切分 train/test
   - 如何讀檔
   correct_index: 1
-  explanation: forward 定義前向傳播邏輯。
+  explanation: forward 定義前向傳播邏輯。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch6
   - sec-code-reading
@@ -877,7 +877,7 @@ questions:
   - optimizer 類型
   - Dropout 與 BatchNorm 等
   correct_index: 3
-  explanation: eval 會切換訓練/推論行為。
+  explanation: eval 會切換訓練/推論行為。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch6
   - sec-code-reading
@@ -900,7 +900,7 @@ questions:
   - 保存資料集
   - 訓練時增加梯度
   correct_index: 1
-  explanation: 推論不需要梯度，可節省記憶體。
+  explanation: 推論不需要梯度，可節省記憶體。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch6
   - sec-code-reading
@@ -923,7 +923,7 @@ questions:
   - 模型參數字典
   - Matplotlib 圖
   correct_index: 2
-  explanation: state_dict 包含模型權重參數。
+  explanation: state_dict 包含模型權重參數。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch6
   - sec-code-reading
@@ -981,12 +981,12 @@ questions:
   text: 關於「Autograd 與反向傳播」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 呼叫 backward 會自動更新參數，不需要 optimizer.step。
+  - requires_grad=False 的張量仍一定會累積梯度。
   - autograd 會追蹤 tensor 運算並自動計算梯度。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 梯度計算只適用於 NumPy array，與 PyTorch tensor 無關。
   correct_index: 2
-  explanation: autograd 會追蹤 tensor 運算並自動計算梯度。
+  explanation: Autograd 追蹤 tensor 運算圖並計算梯度，但參數更新仍需 optimizer 依梯度執行。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把深度學習訓練步驟或框架責任混淆，無法正確描述模型如何學習。
   tags:
   - chap-m6-ch6
   - sec-pytorch-autograd
@@ -997,12 +997,12 @@ questions:
   text: 關於「Dataset 與 DataLoader」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - Dataset 應一次回傳整個資料集，而不是單筆樣本。
   - Dataset 定義如何取得單筆資料。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - DataLoader 只負責儲存模型權重，與 batch 無關。
+  - shuffle 在訓練資料中永遠不能使用。
   correct_index: 1
-  explanation: Dataset 定義如何取得單筆資料。
+  explanation: Dataset 定義單筆資料取得方式，DataLoader 負責 batch、shuffle 與平行載入。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch6
   - sec-pytorch-dataset-dataloader
@@ -1013,12 +1013,12 @@ questions:
   text: 關於「nn.Module 與模型定義」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - nn.Module 不需要定義 forward，PyTorch 會自動猜測網路流程。
+  - 模型層若放在一般 list 中，參數一定會被註冊。
+  - 模型定義只影響程式外觀，不影響參數是否被 optimizer 更新。
   - nn.Module 的 __init__ 定義層，forward 定義資料流。
   correct_index: 3
-  explanation: nn.Module 的 __init__ 定義層，forward 定義資料流。
+  explanation: nn.Module 會註冊層與參數，forward 則定義資料如何通過模型。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把深度學習訓練步驟或框架責任混淆，無法正確描述模型如何學習。
   tags:
   - chap-m6-ch6
   - sec-pytorch-nn-module
@@ -1029,12 +1029,12 @@ questions:
   text: 關於「Loss、Optimizer 與訓練迴圈」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - optimizer.zero_grad 可省略，梯度不會累積。
+  - loss function 只用於顯示訓練進度，不影響反向傳播。
   - CrossEntropyLoss 預期輸入 logits，不需先 softmax。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - optimizer.step 應在 backward 前執行，才能先更新參數。
   correct_index: 2
-  explanation: CrossEntropyLoss 預期輸入 logits，不需先 softmax。
+  explanation: 訓練迴圈的順序通常是 forward、loss、zero_grad、backward、step，順序錯會影響梯度更新。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略 shape、dtype、mask 或輸出目標的限制，實作時會造成錯誤或語意不符。
   tags:
   - chap-m6-ch6
   - sec-pytorch-training-loop
@@ -1045,12 +1045,12 @@ questions:
   text: 關於「儲存與載入模型」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只儲存模型檔即可，不需要記錄模型架構或前處理設定。
+  - 載入 state_dict 時輸出類別數不同也一定能成功。
+  - 訓練 checkpoint 不需要保存 optimizer 狀態。
   - state_dict 儲存模型參數名稱與 tensor 權重。
   correct_index: 3
-  explanation: state_dict 儲存模型參數名稱與 tensor 權重。
+  explanation: 模型保存不只權重，還要能對應架構、前處理、類別數與必要的訓練狀態。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch6
   - sec-pytorch-save-load
@@ -1061,12 +1061,12 @@ questions:
   text: 在實務應用「儲存與載入模型」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只儲存模型檔即可，不需要記錄模型架構或前處理設定。
+  - 載入 state_dict 時輸出類別數不同也一定能成功。
   - 載入 state_dict 前需先建立相同架構的模型物件。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 訓練 checkpoint 不需要保存 optimizer 狀態。
   correct_index: 2
-  explanation: 載入 state_dict 前需先建立相同架構的模型物件。
+  explanation: 模型保存不只權重，還要能對應架構、前處理、類別數與必要的訓練狀態。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch6
   - sec-pytorch-save-load
@@ -1077,12 +1077,12 @@ questions:
   text: 關於「PyTorch 訓練流程的完整心智模型」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 訓練迴圈不需要區分 train 與 eval 模式。
   - 完整訓練流程包含資料、模型、loss、optimizer、訓練與驗證。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - forward、loss、backward、step 的順序可以任意交換。
+  - batch 資料不需要搬到與模型相同的 device。
   correct_index: 1
-  explanation: 完整訓練流程包含資料、模型、loss、optimizer、訓練與驗證。
+  explanation: 完整 PyTorch 訓練需要同時管理模式、device、batch、loss、梯度與評估流程。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把深度學習訓練步驟或框架責任混淆，無法正確描述模型如何學習。
   tags:
   - chap-m6-ch6
   - sec-pytorch-training-mental-model
@@ -1093,12 +1093,12 @@ questions:
   text: 在實務應用「PyTorch 訓練流程的完整心智模型」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 訓練迴圈不需要區分 train 與 eval 模式。
+  - forward、loss、backward、step 的順序可以任意交換。
+  - batch 資料不需要搬到與模型相同的 device。
   - 訓練用 model.train()，驗證與推論用 model.eval()。
   correct_index: 3
-  explanation: 訓練用 model.train()，驗證與推論用 model.eval()。
+  explanation: 完整 PyTorch 訓練需要同時管理模式、device、batch、loss、梯度與評估流程。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把深度學習訓練步驟或框架責任混淆，無法正確描述模型如何學習。
   tags:
   - chap-m6-ch6
   - sec-pytorch-training-mental-model
@@ -1109,12 +1109,12 @@ questions:
   text: 關於「Tensor Shape 與 dtype 常見規則」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - CrossEntropyLoss 的 label 通常應是 one-hot float 矩陣。
   - 影像分類輸入常是 batch、channels、height、width。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 影像張量在 PyTorch 中通常使用 NHWC 作為卷積輸入。
+  - dtype mismatch 只影響列印格式，不會造成 loss 或運算錯誤。
   correct_index: 1
-  explanation: 影像分類輸入常是 batch、channels、height、width。
+  explanation: shape 決定矩陣乘法、broadcasting 與模型輸入是否相容，維度不符通常會導致錯誤或語意錯置。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略 shape、dtype、mask 或輸出目標的限制，實作時會造成錯誤或語意不符。
   tags:
   - chap-m6-ch6
   - sec-pytorch-shape-dtype
@@ -1125,12 +1125,12 @@ questions:
   text: 在實務應用「Tensor Shape 與 dtype 常見規則」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - CrossEntropyLoss 的 label 通常應是 one-hot float 矩陣。
+  - 影像張量在 PyTorch 中通常使用 NHWC 作為卷積輸入。
+  - dtype mismatch 只影響列印格式，不會造成 loss 或運算錯誤。
   - CrossEntropyLoss 的 target 通常是 LongTensor 類別 id。
   correct_index: 3
-  explanation: CrossEntropyLoss 的 target 通常是 LongTensor 類別 id。
+  explanation: shape 決定矩陣乘法、broadcasting 與模型輸入是否相容，維度不符通常會導致錯誤或語意錯置。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略 shape、dtype、mask 或輸出目標的限制，實作時會造成錯誤或語意不符。
   tags:
   - chap-m6-ch6
   - sec-pytorch-shape-dtype
@@ -1141,12 +1141,12 @@ questions:
   text: 關於「Learning Rate 與 Optimizer」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - learning rate 越大越穩定，通常不會發散。
+  - Adam 與 SGD 完全相同，只是名稱不同。
   - learning rate 太大可能造成 loss 發散。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - optimizer 只會改變資料載入速度，不會影響參數更新。
   correct_index: 2
-  explanation: learning rate 太大可能造成 loss 發散。
+  explanation: learning rate 與 optimizer 決定參數更新方式，過大可能發散，過小可能學習緩慢。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把深度學習訓練步驟或框架責任混淆，無法正確描述模型如何學習。
   tags:
   - chap-m6-ch6
   - sec-pytorch-optimizer-detail
@@ -1157,12 +1157,12 @@ questions:
   text: 在實務應用「Learning Rate 與 Optimizer」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - learning rate 越大越穩定，通常不會發散。
   - Adam 常用於原型開發，AdamW 常見於 Transformer。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - Adam 與 SGD 完全相同，只是名稱不同。
+  - optimizer 只會改變資料載入速度，不會影響參數更新。
   correct_index: 1
-  explanation: Adam 常用於原型開發，AdamW 常見於 Transformer。
+  explanation: learning rate 與 optimizer 決定參數更新方式，過大可能發散，過小可能學習緩慢。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把深度學習訓練步驟或框架責任混淆，無法正確描述模型如何學習。
   tags:
   - chap-m6-ch6
   - sec-pytorch-optimizer-detail
@@ -1173,12 +1173,12 @@ questions:
   text: 關於「Reproducibility 與實驗紀錄」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 只設定一次 random seed 就能保證所有硬體完全相同。
+  - 實驗紀錄不需要保存資料版本與超參數。
+  - 可重現性只適用於傳統統計，不適用於深度學習。
   - 固定 random seed 有助於實驗重現。
   correct_index: 3
-  explanation: 固定 random seed 有助於實驗重現。
+  explanation: 可重現性依賴 seed、資料版本、程式版本與實驗設定紀錄，但硬體與底層演算法仍可能造成差異。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch6
   - sec-pytorch-reproducibility
@@ -1189,12 +1189,12 @@ questions:
   text: 在實務應用「Reproducibility 與實驗紀錄」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只設定一次 random seed 就能保證所有硬體完全相同。
   - 應紀錄資料版本、切分方式、模型架構與超參數。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實驗紀錄不需要保存資料版本與超參數。
+  - 可重現性只適用於傳統統計，不適用於深度學習。
   correct_index: 1
-  explanation: 應紀錄資料版本、切分方式、模型架構與超參數。
+  explanation: 可重現性依賴 seed、資料版本、程式版本與實驗設定紀錄，但硬體與底層演算法仍可能造成差異。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch6
   - sec-pytorch-reproducibility
@@ -1205,12 +1205,12 @@ questions:
   text: 下列哪一項最符合「Reproducibility 與實驗紀錄」的核心觀念？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只設定一次 random seed 就能保證所有硬體完全相同。
+  - 實驗紀錄不需要保存資料版本與超參數。
+  - 可重現性只適用於傳統統計，不適用於深度學習。
   - 深度學習完全可重現有時會犧牲效能，但基本紀錄仍必要。
   correct_index: 3
-  explanation: 深度學習完全可重現有時會犧牲效能，但基本紀錄仍必要。
+  explanation: 可重現性依賴 seed、資料版本、程式版本與實驗設定紀錄，但硬體與底層演算法仍可能造成差異。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch6
   - sec-pytorch-reproducibility
@@ -1221,12 +1221,12 @@ questions:
   text: 關於「Keras：高階深度學習 API 的定位」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - Keras 必須手寫完整 backward 與 optimizer step。
+  - model.fit 只能用於 scikit-learn 模型，不能訓練神經網路。
+  - Keras 完全不能建立 CNN、RNN 或多層感知器。
   - Keras 強調用較少程式碼快速建立標準深度學習模型。
   correct_index: 3
-  explanation: Keras 強調用較少程式碼快速建立標準深度學習模型。
+  explanation: Keras 提供高階 API 快速建立、compile 與 fit 標準深度學習模型，適合原型與常見架構。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把深度學習訓練步驟或框架責任混淆，無法正確描述模型如何學習。
   tags:
   - chap-m6-ch6
   - sec-keras-overview
@@ -1238,11 +1238,11 @@ questions:
   type: multiple_choice
   options:
   - model.compile 會設定 optimizer、loss 與 metrics。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - Keras 必須手寫完整 backward 與 optimizer step。
+  - model.fit 只能用於 scikit-learn 模型，不能訓練神經網路。
+  - Keras 完全不能建立 CNN、RNN 或多層感知器。
   correct_index: 0
-  explanation: model.compile 會設定 optimizer、loss 與 metrics。
+  explanation: Keras 提供高階 API 快速建立、compile 與 fit 標準深度學習模型，適合原型與常見架構。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把深度學習訓練步驟或框架責任混淆，無法正確描述模型如何學習。
   tags:
   - chap-m6-ch6
   - sec-keras-overview
@@ -1253,12 +1253,12 @@ questions:
   text: 下列哪一項最符合「Keras：高階深度學習 API 的定位」的核心觀念？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - Keras 必須手寫完整 backward 與 optimizer step。
   - 需要高度客製化訓練邏輯時，PyTorch 通常更直覺。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - model.fit 只能用於 scikit-learn 模型，不能訓練神經網路。
+  - Keras 完全不能建立 CNN、RNN 或多層感知器。
   correct_index: 1
-  explanation: 需要高度客製化訓練邏輯時，PyTorch 通常更直覺。
+  explanation: Keras 提供高階 API 快速建立、compile 與 fit 標準深度學習模型，適合原型與常見架構。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把深度學習訓練步驟或框架責任混淆，無法正確描述模型如何學習。
   tags:
   - chap-m6-ch6
   - sec-keras-overview
@@ -1270,11 +1270,11 @@ questions:
   type: multiple_choice
   options:
   - device mismatch 常發生在模型與 tensor 不在同一裝置。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - device mismatch 可透過刪除 loss function 解決。
+  - loss 不下降時不需要檢查 label、shape 或 learning rate。
+  - RuntimeError 的 shape 訊息通常與模型輸入輸出無關。
   correct_index: 0
-  explanation: device mismatch 常發生在模型與 tensor 不在同一裝置。
+  explanation: 除錯時先檢查 traceback、shape、dtype、欄位名稱與執行順序，通常比盲目修改模型更有效。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch6
   - sec-pytorch-debugging
@@ -1285,12 +1285,12 @@ questions:
   text: 在實務應用「PyTorch 常見錯誤排查」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - device mismatch 可透過刪除 loss function 解決。
+  - loss 不下降時不需要檢查 label、shape 或 learning rate。
+  - RuntimeError 的 shape 訊息通常與模型輸入輸出無關。
   - loss 不下降時可先用小資料集測試是否能 overfit。
   correct_index: 3
-  explanation: loss 不下降時可先用小資料集測試是否能 overfit。
+  explanation: 除錯時先檢查 traceback、shape、dtype、欄位名稱與執行順序，通常比盲目修改模型更有效。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch6
   - sec-pytorch-debugging

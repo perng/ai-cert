@@ -90,7 +90,7 @@ questions:
   - 迴歸
   - Tokenization
   correct_index: 2
-  explanation: 迴歸任務預測連續數值，例如價格、溫度或需求量。
+  explanation: 迴歸任務預測連續數值，例如價格、溫度或需求量。 判斷時要先釐清任務型態與指標定義，否則容易把不同評估意義混在一起。
   tags:
   - chap-m6-ch3
   - sec-sklearn-model-types
@@ -154,7 +154,7 @@ questions:
   - 可能跳過最小值或導致 loss 發散
   - 模型一定會完美收斂
   correct_index: 2
-  explanation: 步長過大可能讓參數更新過度，無法穩定接近最佳解。
+  explanation: 步長過大可能讓參數更新過度，無法穩定接近最佳解。 判斷時要把此概念放回資料處理或模型流程中，確認它實際解決的是哪一個問題。
   tags:
   - chap-m6-ch3
   - sec-scipy-optimize
@@ -274,7 +274,7 @@ questions:
   - 1.0
   - 0.5
   correct_index: 3
-  explanation: 標準常態分布在 z=0 左側機率為 0.5。
+  explanation: 標準常態分布在 z=0 左側機率為 0.5。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch3
   - sec-code-reading
@@ -451,7 +451,7 @@ questions:
   - 5 個缺失值
   - 5 個輸出類別
   correct_index: 1
-  explanation: cv=5 表示把資料切成 5 折輪流訓練與驗證。
+  explanation: cv=5 表示把資料切成 5 折輪流訓練與驗證。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch3
   - sec-code-reading
@@ -651,7 +651,7 @@ questions:
   - 比較配對分數差異
   - GPU 記憶體釋放
   correct_index: 2
-  explanation: 配對 t 檢定可比較同一批資料上的兩組分數。
+  explanation: 配對 t 檢定可比較同一批資料上的兩組分數。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch3
   - sec-code-reading
@@ -674,7 +674,7 @@ questions:
   - '0'
   - '2'
   correct_index: 3
-  explanation: 平方項在 x[0]=2 時最小。
+  explanation: 平方項在 x[0]=2 時最小。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch3
   - sec-code-reading
@@ -697,7 +697,7 @@ questions:
   - 產生 Matplotlib 圖
   - 建立 HTML
   correct_index: 1
-  explanation: fit 會讓模型從訓練資料學習。
+  explanation: fit 會讓模型從訓練資料學習。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch3
   - sec-code-reading
@@ -722,7 +722,7 @@ questions:
   - 交叉驗證折數
   - 訓練資料標籤
   correct_index: 1
-  explanation: predict 對 X_test 產生預測。
+  explanation: predict 對 X_test 產生預測。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch3
   - sec-code-reading
@@ -768,7 +768,7 @@ questions:
   - 單張 RGB 圖片
   - PyTorch 梯度
   correct_index: 0
-  explanation: 它可讓不同欄位套用不同前處理。
+  explanation: 它可讓不同欄位套用不同前處理。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch3
   - sec-code-reading
@@ -791,7 +791,7 @@ questions:
   - 分類正確率
   - 模型參數數量
   correct_index: 2
-  explanation: accuracy 是分類預測正確比例。
+  explanation: accuracy 是分類預測正確比例。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch3
   - sec-code-reading
@@ -912,7 +912,7 @@ questions:
   - 資料庫索引
   - 訓練與驗證 loss 曲線
   correct_index: 3
-  explanation: plot 兩條 loss 曲線可觀察訓練過程。
+  explanation: plot 兩條 loss 曲線可觀察訓練過程。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch3
   - sec-code-reading
@@ -960,7 +960,7 @@ questions:
   - 模型沒有截距
   - 未來資訊洩漏
   correct_index: 3
-  explanation: 時間序列應用過去預測未來，避免未來資料進入訓練。
+  explanation: 時間序列應用過去預測未來，避免未來資料進入訓練。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch3
   - sec-code-reading
@@ -997,12 +997,12 @@ questions:
   text: 關於「最佳化與曲線擬合」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 最佳化只用來讓圖形更平滑，與參數估計無關。
+  - 曲線擬合一定代表模型能解釋因果關係。
   - 最佳化的目標是尋找讓損失函數最小或目標函數最佳的參數。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 損失函數越複雜，越不需要檢查殘差與資料範圍。
   correct_index: 2
-  explanation: 最佳化的目標是尋找讓損失函數最小或目標函數最佳的參數。
+  explanation: 最佳化和曲線擬合的重點是定義目標函數、估計參數並檢查模型是否符合資料形態。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch3
   - sec-scipy-optimize
@@ -1013,12 +1013,12 @@ questions:
   text: 關於「scikit-learn 的標準流程」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - scikit-learn estimator 通常先 predict 再 fit。
+  - fit 只會產生視覺化結果，不會學習模型或轉換器狀態。
+  - 同一個 estimator 介面不適用於前處理器與模型。
   - scikit-learn estimator 通常遵循 fit、predict 或 transform 的一致介面。
   correct_index: 3
-  explanation: scikit-learn estimator 通常遵循 fit、predict 或 transform 的一致介面。
+  explanation: scikit-learn 以 fit、transform、predict 等一致介面組合前處理、模型與評估流程。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch3
   - sec-sklearn-workflow
@@ -1029,12 +1029,12 @@ questions:
   text: 在實務應用「scikit-learn 的標準流程」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - scikit-learn estimator 通常先 predict 再 fit。
+  - fit 只會產生視覺化結果，不會學習模型或轉換器狀態。
   - train_test_split 用於把資料分成訓練與測試，避免只看訓練表現。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 同一個 estimator 介面不適用於前處理器與模型。
   correct_index: 2
-  explanation: train_test_split 用於把資料分成訓練與測試，避免只看訓練表現。
+  explanation: scikit-learn 以 fit、transform、predict 等一致介面組合前處理、模型與評估流程。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch3
   - sec-sklearn-workflow
@@ -1045,12 +1045,12 @@ questions:
   text: 關於「scikit-learn 實務補充：ColumnTransformer 與混合欄位」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - ColumnTransformer 只能處理數值欄位，不能處理類別欄位。
+  - 數值欄位與類別欄位應使用完全相同的轉換器。
+  - 推論遇到新類別時，OneHotEncoder 一定會自動新增模型權重。
   - ColumnTransformer 可讓數值欄位與類別欄位套用不同前處理。
   correct_index: 3
-  explanation: ColumnTransformer 可讓數值欄位與類別欄位套用不同前處理。
+  explanation: ColumnTransformer 讓不同欄位套用不同轉換，放入 Pipeline 後可保持訓練與推論一致。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項混淆了訓練與推論流程，或忽略轉換規則必須一致。
   tags:
   - chap-m6-ch3
   - sec-sklearn-column-transformer
@@ -1062,11 +1062,11 @@ questions:
   type: multiple_choice
   options:
   - OneHotEncoder(handle_unknown="ignore") 可降低推論遇到新類別時的錯誤風險。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - ColumnTransformer 只能處理數值欄位，不能處理類別欄位。
+  - 數值欄位與類別欄位應使用完全相同的轉換器。
+  - 推論遇到新類別時，OneHotEncoder 一定會自動新增模型權重。
   correct_index: 0
-  explanation: OneHotEncoder(handle_unknown="ignore") 可降低推論遇到新類別時的錯誤風險。
+  explanation: ColumnTransformer 讓不同欄位套用不同轉換，放入 Pipeline 後可保持訓練與推論一致。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項混淆了訓練與推論流程，或忽略轉換規則必須一致。
   tags:
   - chap-m6-ch3
   - sec-sklearn-column-transformer
@@ -1077,12 +1077,12 @@ questions:
   text: 下列哪一項最符合「scikit-learn 實務補充：ColumnTransformer 與混合欄位」的核心觀念？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - ColumnTransformer 只能處理數值欄位，不能處理類別欄位。
   - 把 ColumnTransformer 放進 Pipeline 可讓訓練與推論共用同一套轉換規則。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 數值欄位與類別欄位應使用完全相同的轉換器。
+  - 推論遇到新類別時，OneHotEncoder 一定會自動新增模型權重。
   correct_index: 1
-  explanation: 把 ColumnTransformer 放進 Pipeline 可讓訓練與推論共用同一套轉換規則。
+  explanation: ColumnTransformer 讓不同欄位套用不同轉換，放入 Pipeline 後可保持訓練與推論一致。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項混淆了訓練與推論流程，或忽略轉換規則必須一致。
   tags:
   - chap-m6-ch3
   - sec-sklearn-column-transformer
@@ -1093,12 +1093,12 @@ questions:
   text: 關於「前處理與 Pipeline」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 前處理應先在全資料 fit，再切分訓練與測試以提高分數。
   - Pipeline 可避免前處理在訓練與測試之間不一致。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - Pipeline 只負責排序圖表，不能封裝轉換器與模型。
+  - 訓練與推論分開手寫前處理通常比 Pipeline 更不容易出錯。
   correct_index: 1
-  explanation: Pipeline 可避免前處理在訓練與測試之間不一致。
+  explanation: Pipeline 的價值是把前處理與模型封裝在同一流程，降低資料洩漏和手動重複轉換的風險。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項混淆了訓練與推論流程，或忽略轉換規則必須一致。
   tags:
   - chap-m6-ch3
   - sec-sklearn-preprocessing-pipeline
@@ -1109,12 +1109,12 @@ questions:
   text: 關於「分類、迴歸與分群」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 迴歸任務通常預測離散標籤，例如貓或狗。
+  - 分群需要每筆資料都有人工標註的正確類別。
   - 分類預測離散類別，迴歸預測連續數值。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 分類、迴歸與分群的評估指標可以完全共用不需區分。
   correct_index: 2
-  explanation: 分類預測離散類別，迴歸預測連續數值。
+  explanation: 分類、迴歸與分群對應不同目標型態與標註條件，因此模型與評估指標不能混用。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch3
   - sec-sklearn-model-types
@@ -1125,12 +1125,12 @@ questions:
   text: 在實務應用「分類、迴歸與分群」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 迴歸任務通常預測離散標籤，例如貓或狗。
+  - 分群需要每筆資料都有人工標註的正確類別。
+  - 分類、迴歸與分群的評估指標可以完全共用不需區分。
   - 分群是無監督方法，常用於探索資料自然群組。
   correct_index: 3
-  explanation: 分群是無監督方法，常用於探索資料自然群組。
+  explanation: 分類、迴歸與分群對應不同目標型態與標註條件，因此模型與評估指標不能混用。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch3
   - sec-sklearn-model-types
@@ -1141,12 +1141,12 @@ questions:
   text: 關於「評估、交叉驗證與超參數搜尋」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 交叉驗證會把測試集答案提供給模型訓練。
+  - 超參數搜尋應直接在最終測試集上反覆調整。
   - 交叉驗證可降低單一次資料切分造成的評估偶然性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 只看單次訓練分數就能完整估計泛化能力。
   correct_index: 2
-  explanation: 交叉驗證可降低單一次資料切分造成的評估偶然性。
+  explanation: 交叉驗證與超參數搜尋用來估計泛化表現，但測試集仍應保留到最後評估。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch3
   - sec-sklearn-evaluation
@@ -1158,11 +1158,11 @@ questions:
   type: multiple_choice
   options:
   - baseline 用來判斷資料是否有可學習訊號。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - baseline 的目的只是讓報告有更多模型名稱。
+  - 一開始就使用最複雜模型，通常能省略資料檢查。
+  - baseline 表現很差時，一定代表應立即部署深度學習模型。
   correct_index: 0
-  explanation: baseline 用來判斷資料是否有可學習訊號。
+  explanation: baseline 是判斷資料是否有可學習訊號的參照點，也能衡量複雜模型是否真的值得。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch3
   - sec-sklearn-baseline
@@ -1173,12 +1173,12 @@ questions:
   text: 在實務應用「建立 Baseline 的重要性」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - baseline 的目的只是讓報告有更多模型名稱。
   - 複雜模型若沒有明顯超過 baseline，可能不值得增加成本。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 一開始就使用最複雜模型，通常能省略資料檢查。
+  - baseline 表現很差時，一定代表應立即部署深度學習模型。
   correct_index: 1
-  explanation: 複雜模型若沒有明顯超過 baseline，可能不值得增加成本。
+  explanation: baseline 是判斷資料是否有可學習訊號的參照點，也能衡量複雜模型是否真的值得。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch3
   - sec-sklearn-baseline
@@ -1189,12 +1189,12 @@ questions:
   text: 關於「Train、Validation、Test 的分工」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - test set 可在每次調參時反覆查看以挑選模型。
   - training set 用於 fit 模型與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - validation set 主要用來 fit 最終模型參數。
+  - training set 不應參與前處理器 fit，否則會造成資料洩漏。
   correct_index: 1
-  explanation: training set 用於 fit 模型與前處理。
+  explanation: 訓練、驗證與測試集分工不同，混用會造成資料洩漏或過度樂觀的評估。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch3
   - sec-sklearn-data-splits
@@ -1205,12 +1205,12 @@ questions:
   text: 在實務應用「Train、Validation、Test 的分工」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - test set 可在每次調參時反覆查看以挑選模型。
+  - validation set 主要用來 fit 最終模型參數。
+  - training set 不應參與前處理器 fit，否則會造成資料洩漏。
   - validation set 用於模型選擇與超參數調整。
   correct_index: 3
-  explanation: validation set 用於模型選擇與超參數調整。
+  explanation: 訓練、驗證與測試集分工不同，混用會造成資料洩漏或過度樂觀的評估。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch3
   - sec-sklearn-data-splits
@@ -1221,12 +1221,12 @@ questions:
   text: 關於「模型選擇的實務判斷」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 模型選擇只需比較 accuracy，延遲與維護成本不重要。
   - 模型選擇應考慮資料型態、可解釋性、延遲與維護成本。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 可解釋性需求越高，越應優先選完全不可解釋模型。
+  - 資料量很小時，直接訓練大型深度模型通常一定最佳。
   correct_index: 1
-  explanation: 模型選擇應考慮資料型態、可解釋性、延遲與維護成本。
+  explanation: 模型選擇除了分數，還要看資料型態、可解釋性、延遲、成本與維護風險。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch3
   - sec-sklearn-model-selection
@@ -1237,12 +1237,12 @@ questions:
   text: 在實務應用「模型選擇的實務判斷」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 模型選擇只需比較 accuracy，延遲與維護成本不重要。
   - 表格資料常先用 scikit-learn baseline，再評估是否需要深度學習。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 可解釋性需求越高，越應優先選完全不可解釋模型。
+  - 資料量很小時，直接訓練大型深度模型通常一定最佳。
   correct_index: 1
-  explanation: 表格資料常先用 scikit-learn baseline，再評估是否需要深度學習。
+  explanation: 模型選擇除了分數，還要看資料型態、可解釋性、延遲、成本與維護風險。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch3
   - sec-sklearn-model-selection
@@ -1253,12 +1253,12 @@ questions:
   text: 關於「常見評估指標」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - accuracy 在高度不平衡資料中一定能反映少數類別表現。
+  - precision 低代表模型漏掉了大多數正類樣本。
+  - F1-score 與 precision、recall 無關，只看整體正確率。
   - accuracy 適合類別比例接近平衡的分類問題。
   correct_index: 3
-  explanation: accuracy 適合類別比例接近平衡的分類問題。
+  explanation: 不同指標回答不同問題，類別不平衡時尤其要區分 accuracy、precision、recall 與 F1。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch3
   - sec-sklearn-metrics-detail
@@ -1270,11 +1270,11 @@ questions:
   type: multiple_choice
   options:
   - recall 低代表許多正類被漏掉。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - accuracy 在高度不平衡資料中一定能反映少數類別表現。
+  - precision 低代表模型漏掉了大多數正類樣本。
+  - F1-score 與 precision、recall 無關，只看整體正確率。
   correct_index: 0
-  explanation: recall 低代表許多正類被漏掉。
+  explanation: 不同指標回答不同問題，類別不平衡時尤其要區分 accuracy、precision、recall 與 F1。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch3
   - sec-sklearn-metrics-detail
@@ -1285,12 +1285,12 @@ questions:
   text: 關於「scikit-learn 與深度學習的界線」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - scikit-learn 只能訓練神經網路，不能處理表格 baseline。
+  - 深度學習永遠比 scikit-learn 更適合中小型結構化資料。
   - scikit-learn 適合中小型表格資料與快速 baseline。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 選擇工具時不需要考慮資料規模、特徵型態或部署成本。
   correct_index: 2
-  explanation: scikit-learn 適合中小型表格資料與快速 baseline。
+  explanation: scikit-learn 適合快速 baseline 與中小型結構化資料，深度學習通常用於影像、序列或非結構化資料。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch3
   - sec-sklearn-vs-deep-learning
@@ -1301,12 +1301,12 @@ questions:
   text: 在實務應用「scikit-learn 與深度學習的界線」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - scikit-learn 只能訓練神經網路，不能處理表格 baseline。
   - 影像、語音與大型文字任務通常更適合深度學習框架。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 深度學習永遠比 scikit-learn 更適合中小型結構化資料。
+  - 選擇工具時不需要考慮資料規模、特徵型態或部署成本。
   correct_index: 1
-  explanation: 影像、語音與大型文字任務通常更適合深度學習框架。
+  explanation: scikit-learn 適合快速 baseline 與中小型結構化資料，深度學習通常用於影像、序列或非結構化資料。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch3
   - sec-sklearn-vs-deep-learning
@@ -1317,12 +1317,12 @@ questions:
   text: 關於「statsmodels：統計建模與可解釋分析」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - statsmodels 主要用於影像卷積運算，不適合統計摘要。
+  - p-value 越大通常代表變數越顯著。
   - statsmodels 重視係數、p-value、信賴區間與殘差診斷。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 係數方向與信賴區間不需要搭配領域語意解讀。
   correct_index: 2
-  explanation: statsmodels 重視係數、p-value、信賴區間與殘差診斷。
+  explanation: statsmodels 強調統計估計、係數、信賴區間與檢定，因此適合需要解釋模型假設的分析。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch3
   - sec-statsmodels
@@ -1333,12 +1333,12 @@ questions:
   text: 在實務應用「statsmodels：統計建模與可解釋分析」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - statsmodels 主要用於影像卷積運算，不適合統計摘要。
+  - p-value 越大通常代表變數越顯著。
   - OLS 常需要明確加入 constant 截距項。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 係數方向與信賴區間不需要搭配領域語意解讀。
   correct_index: 2
-  explanation: OLS 常需要明確加入 constant 截距項。
+  explanation: statsmodels 強調統計估計、係數、信賴區間與檢定，因此適合需要解釋模型假設的分析。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch3
   - sec-statsmodels
@@ -1349,12 +1349,12 @@ questions:
   text: 下列哪一項最符合「statsmodels：統計建模與可解釋分析」的核心觀念？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - statsmodels 主要用於影像卷積運算，不適合統計摘要。
   - 若任務重點是解釋變數關係，statsmodels 比只看預測分數更有用。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - p-value 越大通常代表變數越顯著。
+  - 係數方向與信賴區間不需要搭配領域語意解讀。
   correct_index: 1
-  explanation: 若任務重點是解釋變數關係，statsmodels 比只看預測分數更有用。
+  explanation: statsmodels 強調統計估計、係數、信賴區間與檢定，因此適合需要解釋模型假設的分析。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch3
   - sec-statsmodels
@@ -1365,12 +1365,12 @@ questions:
   text: 關於「Matplotlib：資料與模型結果視覺化」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - Matplotlib 只能繪製深度學習模型結構，不能畫資料分布。
+  - 圖表只要顏色多，就一定比標籤清楚的圖更好。
+  - 視覺化不應顯示軸標籤或單位，以免干擾模型分析。
   - Matplotlib 可用於資料分布、訓練曲線與混淆矩陣視覺化。
   correct_index: 3
-  explanation: Matplotlib 可用於資料分布、訓練曲線與混淆矩陣視覺化。
+  explanation: 視覺化應讓資料分布、模型結果或錯誤案例更容易判讀，而不是只追求圖表裝飾。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch3
   - sec-matplotlib-modeling
@@ -1381,12 +1381,12 @@ questions:
   text: 在實務應用「Matplotlib：資料與模型結果視覺化」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - Matplotlib 只能繪製深度學習模型結構，不能畫資料分布。
+  - 圖表只要顏色多，就一定比標籤清楚的圖更好。
+  - 視覺化不應顯示軸標籤或單位，以免干擾模型分析。
   - 訓練 loss 下降但 validation loss 上升常暗示過擬合。
   correct_index: 3
-  explanation: 訓練 loss 下降但 validation loss 上升常暗示過擬合。
+  explanation: 視覺化應讓資料分布、模型結果或錯誤案例更容易判讀，而不是只追求圖表裝飾。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch3
   - sec-matplotlib-modeling
@@ -1397,12 +1397,12 @@ questions:
   text: 下列哪一項最符合「Matplotlib：資料與模型結果視覺化」的核心觀念？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - Matplotlib 只能繪製深度學習模型結構，不能畫資料分布。
   - 混淆矩陣能顯示哪些類別彼此容易誤判。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 圖表只要顏色多，就一定比標籤清楚的圖更好。
+  - 視覺化不應顯示軸標籤或單位，以免干擾模型分析。
   correct_index: 1
-  explanation: 混淆矩陣能顯示哪些類別彼此容易誤判。
+  explanation: 視覺化應讓資料分布、模型結果或錯誤案例更容易判讀，而不是只追求圖表裝飾。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch3
   - sec-matplotlib-modeling

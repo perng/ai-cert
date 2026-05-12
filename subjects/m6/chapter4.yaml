@@ -18,7 +18,7 @@ questions:
   - HSV
   - BGR
   correct_index: 3
-  explanation: OpenCV 預設彩色影像通道順序是 BGR。
+  explanation: OpenCV 預設彩色影像通道順序是 BGR。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch4
   - sec-code-reading
@@ -112,7 +112,7 @@ questions:
   - 邊緣圖
   - 模型權重
   correct_index: 2
-  explanation: Canny 是傳統邊緣偵測方法。
+  explanation: Canny 是傳統邊緣偵測方法。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch4
   - sec-code-reading
@@ -164,7 +164,7 @@ questions:
   - 計算混淆矩陣
   - 轉換 BGR 通道
   correct_index: 1
-  explanation: 顯示影像時常關閉座標軸，讓畫面更清楚。
+  explanation: 顯示影像時常關閉座標軸，讓畫面更清楚。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch4
   - sec-code-reading
@@ -354,7 +354,7 @@ questions:
   - 影像檔案大小
   - 哪些類別彼此容易混淆
   correct_index: 3
-  explanation: 混淆矩陣可以顯示真實類別與預測類別的交叉分布。
+  explanation: 混淆矩陣可以顯示真實類別與預測類別的交叉分布。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch4
   - sec-code-reading
@@ -379,7 +379,7 @@ questions:
   - 影像已轉成 RGB
   - 圖片有 3 個通道
   correct_index: 1
-  explanation: 路徑錯誤或檔案無法讀取時常回傳 None。
+  explanation: 路徑錯誤或檔案無法讀取時常回傳 None。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch4
   - sec-code-reading
@@ -473,7 +473,7 @@ questions:
   - 0 與 255
   - 類別名稱
   correct_index: 2
-  explanation: 二值化通常輸出 0 與最大值 255。
+  explanation: 二值化通常輸出 0 與最大值 255。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch4
   - sec-code-reading
@@ -634,7 +634,7 @@ questions:
   - 改變圖片格式
   - 配合新任務類別數
   correct_index: 3
-  explanation: 分類頭輸出維度需符合新任務類別數。
+  explanation: 分類頭輸出維度需符合新任務類別數。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch4
   - sec-code-reading
@@ -680,7 +680,7 @@ questions:
   - stop words 太多
   - SQL 語法錯誤
   correct_index: 1
-  explanation: 抽查錯誤影像可定位資料品質或類別混淆問題。
+  explanation: 抽查錯誤影像可定位資料品質或類別混淆問題。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch4
   - sec-code-reading
@@ -703,7 +703,7 @@ questions:
   - 真實類別與預測類別
   - query 與 key
   correct_index: 2
-  explanation: 混淆矩陣交叉呈現真實標籤與預測標籤。
+  explanation: 混淆矩陣交叉呈現真實標籤與預測標籤。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
   tags:
   - chap-m6-ch4
   - sec-code-reading
@@ -716,11 +716,11 @@ questions:
   type: multiple_choice
   options:
   - OpenCV 讀取彩色影像預設是 BGR 通道順序。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - OpenCV 讀入影像預設為 RGB，因此不需注意色彩通道。
+  - 影像矩陣只有寬與高，不會包含 channel 維度。
+  - 像素值型別與範圍只影響檔案大小，不影響處理結果。
   correct_index: 0
-  explanation: OpenCV 讀取彩色影像預設是 BGR 通道順序。
+  explanation: OpenCV 以影像矩陣為核心，色彩通道、像素型別與尺寸都會影響後續處理。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略影像通道、尺寸、前處理或資料分布對模型的影響。
   tags:
   - chap-m6-ch4
   - sec-opencv-image-basics
@@ -731,12 +731,12 @@ questions:
   text: 在實務應用「OpenCV 基礎：影像表示與讀寫」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - OpenCV 讀入影像預設為 RGB，因此不需注意色彩通道。
   - cv2.imread 回傳 None 通常表示檔案路徑錯誤或讀取失敗。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 影像矩陣只有寬與高，不會包含 channel 維度。
+  - 像素值型別與範圍只影響檔案大小，不影響處理結果。
   correct_index: 1
-  explanation: cv2.imread 回傳 None 通常表示檔案路徑錯誤或讀取失敗。
+  explanation: OpenCV 以影像矩陣為核心，色彩通道、像素型別與尺寸都會影響後續處理。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略影像通道、尺寸、前處理或資料分布對模型的影響。
   tags:
   - chap-m6-ch4
   - sec-opencv-image-basics
@@ -747,12 +747,12 @@ questions:
   text: 下列哪一項最符合「OpenCV 基礎：影像表示與讀寫」的核心觀念？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - OpenCV 讀入影像預設為 RGB，因此不需注意色彩通道。
   - 影像 shape 常見為 height、width、channels。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 影像矩陣只有寬與高，不會包含 channel 維度。
+  - 像素值型別與範圍只影響檔案大小，不影響處理結果。
   correct_index: 1
-  explanation: 影像 shape 常見為 height、width、channels。
+  explanation: OpenCV 以影像矩陣為核心，色彩通道、像素型別與尺寸都會影響後續處理。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略影像通道、尺寸、前處理或資料分布對模型的影響。
   tags:
   - chap-m6-ch4
   - sec-opencv-image-basics
@@ -763,12 +763,12 @@ questions:
   text: 關於「影像前處理與特徵」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 所有影像前處理都應在標籤資訊之後才決定，以提高測試分數。
+  - 模糊、邊緣與閾值處理適用於所有任務且參數固定。
   - resize 可讓 CNN batch 中的影像尺寸一致。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 前處理越多越好，不需要檢查是否破壞關鍵視覺訊號。
   correct_index: 2
-  explanation: resize 可讓 CNN batch 中的影像尺寸一致。
+  explanation: 影像前處理要服務任務目標，邊緣、閾值、模糊或增強若用錯會破壞關鍵訊號。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項混淆了訓練與推論流程，或忽略轉換規則必須一致。
   tags:
   - chap-m6-ch4
   - sec-opencv-preprocessing
@@ -779,12 +779,12 @@ questions:
   text: 在實務應用「影像前處理與特徵」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 所有影像前處理都應在標籤資訊之後才決定，以提高測試分數。
   - Canny edge detection 可擷取影像邊緣。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 模糊、邊緣與閾值處理適用於所有任務且參數固定。
+  - 前處理越多越好，不需要檢查是否破壞關鍵視覺訊號。
   correct_index: 1
-  explanation: Canny edge detection 可擷取影像邊緣。
+  explanation: 影像前處理要服務任務目標，邊緣、閾值、模糊或增強若用錯會破壞關鍵訊號。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項混淆了訓練與推論流程，或忽略轉換規則必須一致。
   tags:
   - chap-m6-ch4
   - sec-opencv-preprocessing
@@ -796,11 +796,11 @@ questions:
   type: multiple_choice
   options:
   - threshold 常用於產生二值遮罩以分離前景與背景。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 所有影像前處理都應在標籤資訊之後才決定，以提高測試分數。
+  - 模糊、邊緣與閾值處理適用於所有任務且參數固定。
+  - 前處理越多越好，不需要檢查是否破壞關鍵視覺訊號。
   correct_index: 0
-  explanation: threshold 常用於產生二值遮罩以分離前景與背景。
+  explanation: 影像前處理要服務任務目標，邊緣、閾值、模糊或增強若用錯會破壞關鍵訊號。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項混淆了訓練與推論流程，或忽略轉換規則必須一致。
   tags:
   - chap-m6-ch4
   - sec-opencv-preprocessing
@@ -811,12 +811,12 @@ questions:
   text: 關於「Matplotlib：影像與錯誤案例視覺化」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 顯示影像時可以忽略 BGR/RGB 差異，顏色永遠正確。
   - imshow 可用來檢查影像、增強結果與錯誤案例。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 錯誤案例視覺化只需看檔名，不需要看實際影像內容。
+  - 混淆矩陣只能用於文字分類，不能協助分析影像分類錯誤。
   correct_index: 1
-  explanation: imshow 可用來檢查影像、增強結果與錯誤案例。
+  explanation: 視覺化應讓資料分布、模型結果或錯誤案例更容易判讀，而不是只追求圖表裝飾。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch4
   - sec-matplotlib-vision
@@ -828,11 +828,11 @@ questions:
   type: multiple_choice
   options:
   - OpenCV 影像用 Matplotlib 顯示前常需 BGR 轉 RGB。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 顯示影像時可以忽略 BGR/RGB 差異，顏色永遠正確。
+  - 錯誤案例視覺化只需看檔名，不需要看實際影像內容。
+  - 混淆矩陣只能用於文字分類，不能協助分析影像分類錯誤。
   correct_index: 0
-  explanation: OpenCV 影像用 Matplotlib 顯示前常需 BGR 轉 RGB。
+  explanation: 視覺化應讓資料分布、模型結果或錯誤案例更容易判讀，而不是只追求圖表裝飾。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch4
   - sec-matplotlib-vision
@@ -844,11 +844,11 @@ questions:
   type: multiple_choice
   options:
   - 視覺化能提早發現標籤錯誤、裁切錯誤與顏色通道問題。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 顯示影像時可以忽略 BGR/RGB 差異，顏色永遠正確。
+  - 錯誤案例視覺化只需看檔名，不需要看實際影像內容。
+  - 混淆矩陣只能用於文字分類，不能協助分析影像分類錯誤。
   correct_index: 0
-  explanation: 視覺化能提早發現標籤錯誤、裁切錯誤與顏色通道問題。
+  explanation: 視覺化應讓資料分布、模型結果或錯誤案例更容易判讀，而不是只追求圖表裝飾。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch4
   - sec-matplotlib-vision
@@ -859,12 +859,12 @@ questions:
   text: 關於「影像資料進入模型」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 模型輸入可混用 HWC 與 CHW，框架會自動判斷。
+  - 訓練與推論影像尺寸不同時，模型一定仍可正常運作。
+  - Normalize 的 mean/std 可任意填寫，不會影響預訓練模型表現。
   - 影像進入 PyTorch 前通常需 resize、轉 tensor 與 normalize。
   correct_index: 3
-  explanation: 影像進入 PyTorch 前通常需 resize、轉 tensor 與 normalize。
+  explanation: 影像進模型前要確認尺寸、通道順序、張量 layout 與 normalization，尤其使用預訓練模型時更重要。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略 shape、dtype、mask 或輸出目標的限制，實作時會造成錯誤或語意不符。
   tags:
   - chap-m6-ch4
   - sec-opencv-to-model
@@ -876,11 +876,11 @@ questions:
   type: multiple_choice
   options:
   - 訓練與推論的影像前處理必須一致。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 模型輸入可混用 HWC 與 CHW，框架會自動判斷。
+  - 訓練與推論影像尺寸不同時，模型一定仍可正常運作。
+  - Normalize 的 mean/std 可任意填寫，不會影響預訓練模型表現。
   correct_index: 0
-  explanation: 訓練與推論的影像前處理必須一致。
+  explanation: 影像進模型前要確認尺寸、通道順序、張量 layout 與 normalization，尤其使用預訓練模型時更重要。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略 shape、dtype、mask 或輸出目標的限制，實作時會造成錯誤或語意不符。
   tags:
   - chap-m6-ch4
   - sec-opencv-to-model
@@ -892,11 +892,11 @@ questions:
   type: multiple_choice
   options:
   - RGB/BGR 通道錯誤會讓模型輸入與預期不同。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 模型輸入可混用 HWC 與 CHW，框架會自動判斷。
+  - 訓練與推論影像尺寸不同時，模型一定仍可正常運作。
+  - Normalize 的 mean/std 可任意填寫，不會影響預訓練模型表現。
   correct_index: 0
-  explanation: RGB/BGR 通道錯誤會讓模型輸入與預期不同。
+  explanation: 影像進模型前要確認尺寸、通道順序、張量 layout 與 normalization，尤其使用預訓練模型時更重要。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略 shape、dtype、mask 或輸出目標的限制，實作時會造成錯誤或語意不符。
   tags:
   - chap-m6-ch4
   - sec-opencv-to-model
@@ -908,11 +908,11 @@ questions:
   type: multiple_choice
   options:
   - torchvision transforms 可組合 resize、flip、ToTensor 與 Normalize。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - transforms 只會改變標籤，不會影響影像張量。
+  - Dataset 回傳格式不需要固定，DataLoader 會自動理解所有物件。
+  - 預訓練模型不需要對應的輸入尺寸與 normalization。
   correct_index: 0
-  explanation: torchvision transforms 可組合 resize、flip、ToTensor 與 Normalize。
+  explanation: torchvision 的 Dataset、transforms 與預訓練模型要搭配正確輸入格式，才能穩定建立影像管線。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項混淆了訓練與推論流程，或忽略轉換規則必須一致。
   tags:
   - chap-m6-ch4
   - sec-torchvision-basics
@@ -923,12 +923,12 @@ questions:
   text: 在實務應用「torchvision：資料集、Transforms 與預訓練模型」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - transforms 只會改變標籤，不會影響影像張量。
+  - Dataset 回傳格式不需要固定，DataLoader 會自動理解所有物件。
   - ImageFolder 會把子資料夾名稱當作類別標籤。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 預訓練模型不需要對應的輸入尺寸與 normalization。
   correct_index: 2
-  explanation: ImageFolder 會把子資料夾名稱當作類別標籤。
+  explanation: torchvision 的 Dataset、transforms 與預訓練模型要搭配正確輸入格式，才能穩定建立影像管線。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項混淆了訓練與推論流程，或忽略轉換規則必須一致。
   tags:
   - chap-m6-ch4
   - sec-torchvision-basics
@@ -939,12 +939,12 @@ questions:
   text: 下列哪一項最符合「torchvision：資料集、Transforms 與預訓練模型」的核心觀念？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - transforms 只會改變標籤，不會影響影像張量。
+  - Dataset 回傳格式不需要固定，DataLoader 會自動理解所有物件。
   - 訓練資料可使用隨機增強，驗證資料通常使用固定轉換。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 預訓練模型不需要對應的輸入尺寸與 normalization。
   correct_index: 2
-  explanation: 訓練資料可使用隨機增強，驗證資料通常使用固定轉換。
+  explanation: torchvision 的 Dataset、transforms 與預訓練模型要搭配正確輸入格式，才能穩定建立影像管線。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項混淆了訓練與推論流程，或忽略轉換規則必須一致。
   tags:
   - chap-m6-ch4
   - sec-torchvision-basics
@@ -956,11 +956,11 @@ questions:
   type: multiple_choice
   options:
   - transfer learning 常替換最後分類層以符合新類別數。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - transfer learning 一定要從零開始訓練所有卷積層。
+  - 替換分類頭時不需要確認輸出類別數。
+  - 凍結 backbone 後，新的分類頭也不需要訓練。
   correct_index: 0
-  explanation: transfer learning 常替換最後分類層以符合新類別數。
+  explanation: transfer learning 通常保留預訓練 backbone 的特徵能力，再替換或微調符合新任務的分類頭。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略影像通道、尺寸、前處理或資料分布對模型的影響。
   tags:
   - chap-m6-ch4
   - sec-torchvision-transfer-learning
@@ -971,12 +971,12 @@ questions:
   text: 在實務應用「torchvision 預訓練模型與 Transfer Learning」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - transfer learning 一定要從零開始訓練所有卷積層。
+  - 替換分類頭時不需要確認輸出類別數。
   - 預訓練 backbone 可提供通用視覺特徵，降低資料需求。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 凍結 backbone 後，新的分類頭也不需要訓練。
   correct_index: 2
-  explanation: 預訓練 backbone 可提供通用視覺特徵，降低資料需求。
+  explanation: transfer learning 通常保留預訓練 backbone 的特徵能力，再替換或微調符合新任務的分類頭。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略影像通道、尺寸、前處理或資料分布對模型的影響。
   tags:
   - chap-m6-ch4
   - sec-torchvision-transfer-learning
@@ -987,12 +987,12 @@ questions:
   text: 下列哪一項最符合「torchvision 預訓練模型與 Transfer Learning」的核心觀念？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - transfer learning 一定要從零開始訓練所有卷積層。
+  - 替換分類頭時不需要確認輸出類別數。
+  - 凍結 backbone 後，新的分類頭也不需要訓練。
   - 資料少時可先凍結 backbone，只訓練分類頭。
   correct_index: 3
-  explanation: 資料少時可先凍結 backbone，只訓練分類頭。
+  explanation: transfer learning 通常保留預訓練 backbone 的特徵能力，再替換或微調符合新任務的分類頭。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略影像通道、尺寸、前處理或資料分布對模型的影響。
   tags:
   - chap-m6-ch4
   - sec-torchvision-transfer-learning
@@ -1004,11 +1004,11 @@ questions:
   type: multiple_choice
   options:
   - 影像專案應先檢查損毀檔案、尺寸與通道數。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 影像資料流程只要能讀檔即可，不需要記錄 resize 與 normalization。
+  - 資料增強應同時套用在驗證集與測試集以提高隨機性。
+  - 標籤錯誤與檔案路徑錯誤通常不會影響模型訓練。
   correct_index: 0
-  explanation: 影像專案應先檢查損毀檔案、尺寸與通道數。
+  explanation: 實務影像流程要記錄讀檔、清理、resize、augmentation、normalization 與標籤對應，才能重現訓練資料。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略影像通道、尺寸、前處理或資料分布對模型的影響。
   tags:
   - chap-m6-ch4
   - sec-opencv-practical-pipeline
@@ -1020,11 +1020,11 @@ questions:
   type: multiple_choice
   options:
   - 裁切 ROI 可降低背景雜訊並讓模型聚焦目標區域。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 影像資料流程只要能讀檔即可，不需要記錄 resize 與 normalization。
+  - 資料增強應同時套用在驗證集與測試集以提高隨機性。
+  - 標籤錯誤與檔案路徑錯誤通常不會影響模型訓練。
   correct_index: 0
-  explanation: 裁切 ROI 可降低背景雜訊並讓模型聚焦目標區域。
+  explanation: 實務影像流程要記錄讀檔、清理、resize、augmentation、normalization 與標籤對應，才能重現訓練資料。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略影像通道、尺寸、前處理或資料分布對模型的影響。
   tags:
   - chap-m6-ch4
   - sec-opencv-practical-pipeline
@@ -1035,12 +1035,12 @@ questions:
   text: 下列哪一項最符合「OpenCV 實務流程：從原始影像到模型資料」的核心觀念？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 影像資料流程只要能讀檔即可，不需要記錄 resize 與 normalization。
+  - 資料增強應同時套用在驗證集與測試集以提高隨機性。
+  - 標籤錯誤與檔案路徑錯誤通常不會影響模型訓練。
   - 訓練資料增強與驗證標準化應分開設計。
   correct_index: 3
-  explanation: 訓練資料增強與驗證標準化應分開設計。
+  explanation: 實務影像流程要記錄讀檔、清理、resize、augmentation、normalization 與標籤對應，才能重現訓練資料。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略影像通道、尺寸、前處理或資料分布對模型的影響。
   tags:
   - chap-m6-ch4
   - sec-opencv-practical-pipeline
@@ -1051,12 +1051,12 @@ questions:
   text: 關於「傳統電腦視覺與深度學習的分工」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 傳統特徵在所有情境都已失效，不需考慮。
+  - 深度學習不需要資料量，也不需要標註品質。
+  - 規則式 OpenCV 方法無法用於任何工業檢測流程。
   - 固定場景下，閾值、邊緣與輪廓方法可能更便宜且可解釋。
   correct_index: 3
-  explanation: 固定場景下，閾值、邊緣與輪廓方法可能更便宜且可解釋。
+  explanation: 傳統 CV 與深度學習各有適用條件，規則明確或資料少時不一定要直接使用大型模型。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch4
   - sec-opencv-traditional-vs-dl
@@ -1067,12 +1067,12 @@ questions:
   text: 在實務應用「傳統電腦視覺與深度學習的分工」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 傳統特徵在所有情境都已失效，不需考慮。
+  - 深度學習不需要資料量，也不需要標註品質。
+  - 規則式 OpenCV 方法無法用於任何工業檢測流程。
   - 變化大的影像任務通常需要 CNN、偵測或分割模型。
   correct_index: 3
-  explanation: 變化大的影像任務通常需要 CNN、偵測或分割模型。
+  explanation: 傳統 CV 與深度學習各有適用條件，規則明確或資料少時不一定要直接使用大型模型。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch4
   - sec-opencv-traditional-vs-dl
@@ -1083,12 +1083,12 @@ questions:
   text: 下列哪一項最符合「傳統電腦視覺與深度學習的分工」的核心觀念？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 傳統特徵在所有情境都已失效，不需考慮。
+  - 深度學習不需要資料量，也不需要標註品質。
+  - 規則式 OpenCV 方法無法用於任何工業檢測流程。
   - 傳統方法對光線與背景變化通常較敏感。
   correct_index: 3
-  explanation: 傳統方法對光線與背景變化通常較敏感。
+  explanation: 傳統 CV 與深度學習各有適用條件，規則明確或資料少時不一定要直接使用大型模型。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項把工具用途、資料條件或實務限制混在一起，因此不符合本節概念。
   tags:
   - chap-m6-ch4
   - sec-opencv-traditional-vs-dl
@@ -1099,12 +1099,12 @@ questions:
   text: 關於「Computer Vision 錯誤案例分析」，下列哪一項敘述最正確？
   type: multiple_choice
   options:
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只看整體 accuracy 就能知道模型錯在哪些影像條件。
+  - 低光、遮擋與類別相似問題通常不需要分開分析。
+  - 錯誤案例不應回饋到資料收集或標註流程。
   - 影像錯誤分析應檢查低光、遮擋、模糊與相似類別。
   correct_index: 3
-  explanation: 影像錯誤分析應檢查低光、遮擋、模糊與相似類別。
+  explanation: CV 錯誤分析要回到影像內容與資料來源，找出標籤、光線、遮擋、類別相似或 domain shift 問題。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch4
   - sec-cv-error-analysis
@@ -1115,12 +1115,12 @@ questions:
   text: 在實務應用「Computer Vision 錯誤案例分析」時，下列哪一項判斷較合理？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 只看整體 accuracy 就能知道模型錯在哪些影像條件。
+  - 低光、遮擋與類別相似問題通常不需要分開分析。
+  - 錯誤案例不應回饋到資料收集或標註流程。
   - 混淆矩陣可指出哪些類別容易互相誤判。
   correct_index: 3
-  explanation: 混淆矩陣可指出哪些類別容易互相誤判。
+  explanation: CV 錯誤分析要回到影像內容與資料來源，找出標籤、光線、遮擋、類別相似或 domain shift 問題。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch4
   - sec-cv-error-analysis
@@ -1131,12 +1131,12 @@ questions:
   text: 下列哪一項最符合「Computer Vision 錯誤案例分析」的核心觀念？
   type: multiple_choice
   options:
-  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只看整體 accuracy 就能知道模型錯在哪些影像條件。
   - 若錯誤集中在資料品質，應先改善資料而非只加深模型。
-  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
-  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 低光、遮擋與類別相似問題通常不需要分開分析。
+  - 錯誤案例不應回饋到資料收集或標註流程。
   correct_index: 1
-  explanation: 若錯誤集中在資料品質，應先改善資料而非只加深模型。
+  explanation: CV 錯誤分析要回到影像內容與資料來源，找出標籤、光線、遮擋、類別相似或 domain shift 問題。 正確選項符合這個原則，因為它指出了本節概念在資料或模型流程中的正確作用；其他選項忽略了評估資料、錯誤案例或資料品質檢查，容易導致過度樂觀的結論。
   tags:
   - chap-m6-ch4
   - sec-cv-error-analysis
