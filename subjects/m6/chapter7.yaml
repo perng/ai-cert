@@ -1,0 +1,1233 @@
+questions:
+- id: 8051
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: MLP 的基本架構
+  text: MLP 主要由哪一類神經網路層組成？
+  type: multiple_choice
+  options:
+  - 只由資料庫索引組成
+  - 只由 tokenizer 組成
+  - Fully connected / Linear layers
+  - 只由 OpenCV resize 函式組成
+  correct_index: 2
+  explanation: 多層感知器主要由線性層與 activation function 堆疊而成。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-mlp
+  usage: both
+- id: 8052
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: MLP 的基本架構
+  text: 二分類或多類別分類模型最後輸出維度通常應對應什麼？
+  type: multiple_choice
+  options:
+  - 訓練集檔案數
+  - 類別數
+  - Python 版本號
+  - CPU 核心數
+  correct_index: 1
+  explanation: 分類模型通常為每個類別輸出一個 logit，因此最後一層輸出維度對應類別數。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-mlp
+  usage: both
+- id: 8053
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 訓練 MLP
+  text: 標準 PyTorch 訓練步驟中，optimizer.step() 的作用是什麼？
+  type: multiple_choice
+  options:
+  - 根據梯度更新模型參數
+  - 產生 DataFrame 欄位名稱
+  - 將圖片讀成 BGR
+  - 計算 token id
+  correct_index: 0
+  explanation: optimizer.step() 會根據目前梯度與最佳化演算法更新參數。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-train-mlp
+  usage: both
+- id: 8054
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: CNN 的核心觀念
+  text: PyTorch 中影像 batch 給 CNN 的常見 shape 順序是什麼？
+  type: multiple_choice
+  options:
+  - channels, width, batch, height
+  - height, width, batch, channels
+  - batch, channels, height, width
+  - width, text, label, batch
+  correct_index: 2
+  explanation: PyTorch CNN 預設使用 NCHW 格式，也就是 batch、channels、height、width。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-cnn-concepts
+  usage: both
+- id: 8055
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: CNN 的核心觀念
+  text: CNN 中卷積層的主要作用是什麼？
+  type: multiple_choice
+  options:
+  - 將文字還原為字典詞形
+  - 將資料表進行 groupby
+  - 從局部區域學習影像特徵
+  - 管理 Python 虛擬環境
+  correct_index: 2
+  explanation: 卷積層利用 kernel 在局部區域滑動，學習邊緣、紋理與更高階視覺特徵。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-cnn-concepts
+  usage: both
+- id: 8056
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 實作簡單 CNN
+  text: CNN 中 Flatten 層常見用途是什麼？
+  type: multiple_choice
+  options:
+  - 將 BGR 轉成 HSV
+  - 將文字分詞
+  - 將卷積特徵圖攤平成向量，交給線性分類層
+  - 將模型儲存成 CSV
+  correct_index: 2
+  explanation: Flatten 會保留 batch 維度，將其餘維度展平成一個向量供 classifier 使用。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-simple-cnn
+  usage: both
+- id: 8057
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 資料增強與正規化
+  text: 影像資料增強的主要目的為何？
+  type: multiple_choice
+  options:
+  - 增加訓練資料多樣性，降低過擬合
+  - 讓驗證資料也必須隨機變動
+  - 刪除所有標籤
+  - 將模型改成 scikit-learn Pipeline
+  correct_index: 0
+  explanation: 隨機裁切、翻轉與顏色變化等資料增強能讓模型學到較穩健的特徵。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-cnn-augmentation
+  usage: both
+- id: 8058
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 評估 CNN 與常見錯誤
+  text: 驗證或推論 CNN 時使用 torch.no_grad() 的主要目的為何？
+  type: multiple_choice
+  options:
+  - 強制模型進入訓練模式
+  - 關閉梯度記錄，降低記憶體使用並加速推論
+  - 刪除所有模型參數
+  - 將影像轉成文字
+  correct_index: 1
+  explanation: 評估階段不需要反向傳播，no_grad 可避免建立計算圖。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-cnn-eval
+  usage: both
+- id: 8121
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: MLP 的基本架構
+  text: 若 MLP 中完全不使用 activation function，多層線性層本質上會發生什麼？
+  type: multiple_choice
+  options:
+  - loss 一定會等於 0
+  - 模型會自動產生 tokenizer
+  - 多層線性轉換仍可合併為單一線性轉換
+  - 模型會自動變成 CNN
+  correct_index: 2
+  explanation: 沒有非線性 activation 時，多層線性層無法增加非線性表達能力。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-mlp
+  usage: both
+- id: 8122
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 訓練 MLP
+  text: 在 epoch 訓練迴圈中累加 total_loss 的常見用途是什麼？
+  type: multiple_choice
+  options:
+  - 將所有模型參數設為 0
+  - 建立 Pandas merge key
+  - 自動切換 BGR 與 RGB
+  - 計算該 epoch 的平均訓練 loss，觀察訓練趨勢
+  correct_index: 3
+  explanation: 追蹤每個 epoch 的平均 loss 有助於觀察模型是否正在學習。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-train-mlp
+  usage: both
+- id: 8123
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: CNN 的核心觀念
+  text: MaxPool2d 常見作用是什麼？
+  type: multiple_choice
+  options:
+  - 降低特徵圖空間尺寸，保留局部重要訊號
+  - 讀取 CSV 欄位名稱
+  - 將 loss 轉成 optimizer
+  - 將文字轉為 token id
+  correct_index: 0
+  explanation: Pooling 可降低特徵圖大小與計算量，也增加對小幅位移的穩定性。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-cnn-concepts
+  usage: both
+- id: 8124
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 實作簡單 CNN
+  text: 若 CNN 輸入影像尺寸改變，最容易需要同步調整哪一個部分？
+  type: multiple_choice
+  options:
+  - optimizer.zero_grad 的名稱
+  - Flatten 後接到 Linear 層的輸入維度
+  - Python 的 import 語法
+  - YAML 的 usage 欄位
+  correct_index: 1
+  explanation: 卷積與 pooling 後的特徵圖尺寸會影響 Flatten 後大小，因此 Linear 輸入維度可能需要調整。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-simple-cnn
+  usage: both
+- id: 8125
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: MLP 適合與不適合的資料
+  text: 為什麼不建議直接把原始影像攤平成向量交給 MLP 作為主要方法？
+  type: multiple_choice
+  options:
+  - 會失去影像中的空間鄰近結構，CNN 通常更適合
+  - 影像不能轉成 tensor
+  - MLP 完全不能處理任何數值
+  - MLP 只能處理文字
+  correct_index: 0
+  explanation: CNN 利用局部感受野與權重共享保留影像空間結構，通常比直接 flatten 給 MLP 更適合。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-mlp-use-cases
+  usage: both
+- id: 8126
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: Activation、Normalization 與 Dropout
+  text: Dropout 在訓練與推論時的行為有何差異？
+  type: multiple_choice
+  options:
+  - 只會改變影像通道順序
+  - 訓練時完全不作用，推論時隨機刪除標籤
+  - 訓練時隨機關閉部分神經元，推論時關閉這種隨機行為
+  - 只會影響 Pandas DataFrame
+  correct_index: 2
+  explanation: Dropout 是正規化方法，依賴 model.train() 與 model.eval() 切換不同模式。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-network-components
+  usage: both
+- id: 8127
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: Transfer Learning 與預訓練模型
+  text: 影像資料量不大時，使用預訓練 CNN 進行 transfer learning 的主要好處是什麼？
+  type: multiple_choice
+  options:
+  - 保證不需要驗證集
+  - 讓所有模型只能輸出一個類別
+  - 利用模型已學到的通用視覺特徵，降低資料需求與訓練成本
+  - 讓資料標註完全不需要檢查
+  correct_index: 2
+  explanation: 預訓練 backbone 已學到邊緣、紋理與形狀等特徵，常能提升小資料任務效果。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-transfer-learning
+  usage: both
+- id: 8128
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: CNN 專案的錯誤分析方法
+  text: 混淆矩陣在 CNN 分類專案中主要幫助我們觀察什麼？
+  type: multiple_choice
+  options:
+  - optimizer 是否支援 GPU
+  - 哪些類別容易被模型互相混淆
+  - OpenCV 是否以 BGR 讀圖
+  - Python 是否使用虛擬環境
+  correct_index: 1
+  explanation: 混淆矩陣可顯示真實類別與預測類別的對應，幫助找出常見錯誤類別對。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-cnn-error-analysis
+  usage: both
+- id: m6-ch7-code-001
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: MLP 中 nn.Linear(10, 32) 表示什麼？
+  content:
+  - type: text
+    text: MLP 中 nn.Linear(10, 32) 表示什麼？
+  - type: code
+    language: python
+    code: nn.Linear(10, 32)
+  type: multiple_choice
+  options:
+  - 輸入 10 維特徵，輸出 32 維表示
+  - 輸入 32 維，輸出 10 類
+  - 訓練 32 個 epoch
+  - batch size 固定為 10
+  correct_index: 0
+  explanation: Linear(10, 32) 接收 10 個輸入特徵並輸出 32 個神經元。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-002
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: 下列 MLP 最後輸出 shape 對 batch=5 會是什麼？
+  content:
+  - type: text
+    text: 下列 MLP 最後輸出 shape 對 batch=5 會是什麼？
+  - type: code
+    language: python
+    code: 'model = MLP()
+
+      x = torch.randn(5, 10)
+
+      print(model(x).shape)'
+  type: multiple_choice
+  options:
+  - torch.Size([5, 2])
+  - torch.Size([2])
+  - torch.Size([10, 5])
+  - torch.Size([5, 10])
+  correct_index: 0
+  explanation: 模型最後一層輸出 2 維，batch 有 5 筆，因此 shape 是 [5, 2]。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-003
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: total_loss += float(loss) 的主要用途是什麼？
+  content:
+  - type: text
+    text: total_loss += float(loss) 的主要用途是什麼？
+  - type: code
+    language: python
+    code: 'total_loss += float(loss)
+
+      print(total_loss / len(loader))'
+  type: multiple_choice
+  options:
+  - 累積每個 batch 的 loss 以計算平均
+  - 更新模型參數
+  - 建立新資料集
+  - 清空梯度
+  correct_index: 0
+  explanation: 累積 loss 後除以 batch 數，可觀察 epoch 平均訓練 loss。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-004
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: 下列三行的正確訓練意義是什麼？
+  content:
+  - type: text
+    text: 下列三行的正確訓練意義是什麼？
+  - type: code
+    language: python
+    code: 'optimizer.zero_grad()
+
+      loss.backward()
+
+      optimizer.step()'
+  type: multiple_choice
+  options:
+  - 更新參數、清梯度、算梯度
+  - 讀資料、切資料、存模型
+  - 清梯度、算梯度、更新參數
+  - 推論、softmax、argmax
+  correct_index: 2
+  explanation: 這是 PyTorch 標準訓練更新順序。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-005
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: Conv2d(1, 8, kernel_size=3, padding=1) 中 out_channels 是多少？
+  content:
+  - type: text
+    text: Conv2d(1, 8, kernel_size=3, padding=1) 中 out_channels 是多少？
+  - type: code
+    language: python
+    code: nn.Conv2d(1, 8, kernel_size=3, padding=1)
+  type: multiple_choice
+  options:
+  - 8
+  - 3
+  - 28
+  - 1
+  correct_index: 0
+  explanation: 第二個參數 8 是輸出通道數。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-006
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: MaxPool2d(2) 對 28x28 feature map 的空間尺寸通常會變成多少？
+  content:
+  - type: text
+    text: MaxPool2d(2) 對 28x28 feature map 的空間尺寸通常會變成多少？
+  - type: code
+    language: python
+    code: pool = nn.MaxPool2d(2)
+  type: multiple_choice
+  options:
+  - 7x7
+  - 14x14
+  - 28x28
+  - 56x56
+  correct_index: 1
+  explanation: kernel size 2、預設 stride 2 通常會將高寬各減半。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-007
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: SimpleCNN 對 dummy = torch.randn(4, 1, 28, 28) 的輸出 shape 是什麼？
+  content:
+  - type: text
+    text: SimpleCNN 對 dummy = torch.randn(4, 1, 28, 28) 的輸出 shape 是什麼？
+  - type: code
+    language: python
+    code: 'dummy = torch.randn(4, 1, 28, 28)
+
+      print(cnn(dummy).shape)'
+  type: multiple_choice
+  options:
+  - torch.Size([4, 16, 7, 7])
+  - torch.Size([10, 4])
+  - torch.Size([1, 28, 28])
+  - torch.Size([4, 10])
+  correct_index: 3
+  explanation: 分類器最後輸出 10 類 logits，batch 有 4 張影像。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-008
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: nn.Flatten() 在 CNN classifier 中的主要作用是什麼？
+  content:
+  - type: text
+    text: nn.Flatten() 在 CNN classifier 中的主要作用是什麼？
+  - type: code
+    language: python
+    code: "self.classifier = nn.Sequential(\n    nn.Flatten(),\n    nn.Linear(16 * 7 * 7, 10)\n)"
+  type: multiple_choice
+  options:
+  - 將特徵圖攤平成向量以接 Linear
+  - 將 RGB 轉成 BGR
+  - 將類別轉成文字
+  - 執行資料增強
+  correct_index: 0
+  explanation: Linear 層需要向量輸入，因此 Flatten 會把卷積特徵圖攤平。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-009
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: RandomHorizontalFlip() 通常只應用在哪個階段？
+  content:
+  - type: text
+    text: RandomHorizontalFlip() 通常只應用在哪個階段？
+  - type: code
+    language: python
+    code: "train_tfms = transforms.Compose([\n    transforms.RandomHorizontalFlip(),\n    transforms.ToTensor()\n])"
+  type: multiple_choice
+  options:
+  - 最終測試報告撰寫
+  - 模型儲存階段
+  - 訓練階段
+  - loss.backward 階段
+  correct_index: 2
+  explanation: 隨機資料增強通常用於訓練資料，驗證與測試應使用 deterministic transforms。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-010
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: logits.argmax(dim=1) 的用途是什麼？
+  content:
+  - type: text
+    text: logits.argmax(dim=1) 的用途是什麼？
+  - type: code
+    language: python
+    code: pred = logits.argmax(dim=1)
+  type: multiple_choice
+  options:
+  - 計算 loss 梯度
+  - 新增 batch 維度
+  - 取得每筆資料 logit 最大的預測類別
+  - 轉換影像通道
+  correct_index: 2
+  explanation: argmax(dim=1) 會沿類別維度取最大 logit 的類別索引。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-011
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: 下列輸入最適合直接餵給 MLP 的是哪一種？
+  content:
+  - type: text
+    text: 下列輸入最適合直接餵給 MLP 的是哪一種？
+  - type: code
+    language: python
+    code: x = torch.randn(batch_size, num_features)
+  type: multiple_choice
+  options:
+  - 固定長度特徵向量
+  - 未切分長篇文字
+  - 影片串流 frame 原檔
+  - 原始不同大小影像
+  correct_index: 0
+  explanation: MLP 適合處理固定長度向量資料。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-012
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: 如果多層 Linear 中間完全沒有 activation，模型能力接近什麼？
+  content:
+  - type: text
+    text: 如果多層 Linear 中間完全沒有 activation，模型能力接近什麼？
+  - type: code
+    language: python
+    code: nn.Sequential(nn.Linear(10, 8), nn.Linear(8, 2))
+  type: multiple_choice
+  options:
+  - KMeans
+  - CNN
+  - 單層線性模型
+  - Transformer decoder
+  correct_index: 2
+  explanation: 多個線性轉換串接仍等同一個線性轉換，缺少非線性能力。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-013
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: 經兩次 MaxPool2d(2) 後，28x28 會變成多少？
+  content:
+  - type: text
+    text: 經兩次 MaxPool2d(2) 後，28x28 會變成多少？
+  - type: code
+    language: python
+    code: 28x28 -> MaxPool2d(2) -> ? -> MaxPool2d(2) -> ?
+  type: multiple_choice
+  options:
+  - 7x7
+  - 14x14
+  - 56x56
+  - 28x28
+  correct_index: 0
+  explanation: 第一次 28x28 變 14x14，第二次變 7x7。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-014
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: resnet.fc = nn.Linear(in_features, 3) 的主要目的為何？
+  content:
+  - type: text
+    text: resnet.fc = nn.Linear(in_features, 3) 的主要目的為何？
+  - type: code
+    language: python
+    code: 'resnet = models.resnet18(weights=models.ResNet18_Weights.DEFAULT)
+
+      resnet.fc = nn.Linear(in_features, 3)'
+  type: multiple_choice
+  options:
+  - 凍結所有資料
+  - 替換分類頭以符合 3 個新類別
+  - 把模型轉成 NumPy
+  - 刪除所有卷積層
+  correct_index: 1
+  explanation: 修改最後 fc 層可讓預訓練模型輸出新任務的類別數。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-015
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: 混淆矩陣最適合用來觀察什麼？
+  content:
+  - type: text
+    text: 混淆矩陣最適合用來觀察什麼？
+  - type: code
+    language: python
+    code: cm = confusion_matrix(y_true, y_pred)
+  type: multiple_choice
+  options:
+  - 哪些類別彼此容易混淆
+  - optimizer learning rate
+  - 影像檔案大小
+  - GPU 是否可用
+  correct_index: 0
+  explanation: 混淆矩陣可以顯示真實類別與預測類別的交叉分布。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-016
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: nn.Linear(10, 32) 的 10 代表什麼？
+  content:
+  - type: text
+    text: nn.Linear(10, 32) 的 10 代表什麼？
+  - type: code
+    language: python
+    code: nn.Linear(10, 32)
+  type: multiple_choice
+  options:
+  - 輸入特徵維度
+  - 輸出類別數
+  - epoch 數
+  - batch size
+  correct_index: 0
+  explanation: 第一個參數是輸入維度。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-017
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: ReLU 的主要作用是什麼？
+  content:
+  - type: text
+    text: ReLU 的主要作用是什麼？
+  - type: code
+    language: python
+    code: nn.ReLU()
+  type: multiple_choice
+  options:
+  - 加入非線性
+  - 計算 p-value
+  - 轉成 RGB
+  - 執行資料讀取
+  correct_index: 0
+  explanation: activation 提供非線性能力。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-018
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: 二分類 CrossEntropyLoss 模型最後輸出 2 維代表什麼？
+  content:
+  - type: text
+    text: 二分類 CrossEntropyLoss 模型最後輸出 2 維代表什麼？
+  - type: code
+    language: python
+    code: nn.Linear(16, 2)
+  type: multiple_choice
+  options:
+  - 兩個 epoch
+  - 兩個檔案
+  - 兩個類別的 logits
+  - 兩筆資料
+  correct_index: 2
+  explanation: 輸出維度 2 對應兩個類別分數。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-019
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: loss.item() 常用於什麼？
+  content:
+  - type: text
+    text: loss.item() 常用於什麼？
+  - type: code
+    language: python
+    code: total_loss += loss.item()
+  type: multiple_choice
+  options:
+  - 記錄純 Python 數值 loss
+  - 轉換 label
+  - 更新權重
+  - 建立 Conv2d
+  correct_index: 0
+  explanation: item 可取出 scalar tensor 的 Python 數值。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-020
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: Conv2d(3, 16, 3) 的 3 通常代表什麼？
+  content:
+  - type: text
+    text: Conv2d(3, 16, 3) 的 3 通常代表什麼？
+  - type: code
+    language: python
+    code: nn.Conv2d(3, 16, kernel_size=3)
+  type: multiple_choice
+  options:
+  - batch size
+  - 輸出類別數
+  - 圖片高度
+  - 輸入通道數
+  correct_index: 3
+  explanation: 第一個參數是 in_channels。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-021
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: Conv2d(3, 16, 3) 的 16 代表什麼？
+  content:
+  - type: text
+    text: Conv2d(3, 16, 3) 的 16 代表什麼？
+  - type: code
+    language: python
+    code: nn.Conv2d(3, 16, kernel_size=3)
+  type: multiple_choice
+  options:
+  - epoch 數
+  - label 數值
+  - 輸出通道數
+  - 輸入圖片寬度
+  correct_index: 2
+  explanation: 第二個參數是 out_channels。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-022
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: MaxPool2d(2) 通常會如何改變空間尺寸？
+  content:
+  - type: text
+    text: MaxPool2d(2) 通常會如何改變空間尺寸？
+  - type: code
+    language: python
+    code: nn.MaxPool2d(2)
+  type: multiple_choice
+  options:
+  - 高寬約減半
+  - 通道數歸零
+  - 高寬加倍
+  - batch size 加倍
+  correct_index: 0
+  explanation: 2x2 pooling 預設 stride 2，空間尺寸通常減半。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-023
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: Flatten 後接 Linear 的原因是什麼？
+  content:
+  - type: text
+    text: Flatten 後接 Linear 的原因是什麼？
+  - type: code
+    language: python
+    code: nn.Sequential(nn.Flatten(), nn.Linear(16 * 7 * 7, 10))
+  type: multiple_choice
+  options:
+  - Conv2d 需要文字輸入
+  - Dropout 只能處理影像
+  - Linear 需要向量輸入
+  - Pooling 需要 label
+  correct_index: 2
+  explanation: Flatten 把 feature map 攤平成向量。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-024
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: PyTorch 影像 batch 常用格式是什麼？
+  content:
+  - type: text
+    text: PyTorch 影像 batch 常用格式是什麼？
+  - type: code
+    language: python
+    code: x = torch.randn(8, 3, 224, 224)
+  type: multiple_choice
+  options:
+  - HWCN
+  - NCHW
+  - NHWC
+  - CHWN
+  correct_index: 1
+  explanation: PyTorch CNN 常用 batch, channels, height, width。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-025
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: ColorJitter 屬於什麼？
+  content:
+  - type: text
+    text: ColorJitter 屬於什麼？
+  - type: code
+    language: python
+    code: transforms.ColorJitter(brightness=0.2)
+  type: multiple_choice
+  options:
+  - optimizer
+  - 資料增強
+  - loss function
+  - 統計檢定
+  correct_index: 1
+  explanation: ColorJitter 隨機改變影像顏色屬性。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-026
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: pred = logits.argmax(dim=1) 做什麼？
+  content:
+  - type: text
+    text: pred = logits.argmax(dim=1) 做什麼？
+  - type: code
+    language: python
+    code: pred = logits.argmax(dim=1)
+  type: multiple_choice
+  options:
+  - 建立 mask
+  - 更新參數
+  - 計算 loss
+  - 取最大 logit 的類別
+  correct_index: 3
+  explanation: argmax 取預測類別索引。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-027
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: 迴歸 MLP 最後一層常輸出幾維？
+  content:
+  - type: text
+    text: 迴歸 MLP 最後一層常輸出幾維？
+  - type: code
+    language: python
+    code: nn.Linear(32, 1)
+  type: multiple_choice
+  options:
+  - 10 個類別
+  - batch size 個類別
+  - 1 個連續值
+  - 0 維
+  correct_index: 2
+  explanation: 單目標迴歸通常輸出一個數值。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-028
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: Dropout 在訓練時做什麼？
+  content:
+  - type: text
+    text: Dropout 在訓練時做什麼？
+  - type: code
+    language: python
+    code: nn.Dropout(p=0.5)
+  type: multiple_choice
+  options:
+  - 固定所有權重
+  - 隨機關閉部分神經元
+  - 增加圖片大小
+  - 移除 label
+  correct_index: 1
+  explanation: Dropout 是正規化手段。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-029
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: 凍結 backbone 代表什麼？
+  content:
+  - type: text
+    text: 凍結 backbone 代表什麼？
+  - type: code
+    language: python
+    code: "for p in model.features.parameters():\n    p.requires_grad = False"
+  type: multiple_choice
+  options:
+  - 刪除該部分參數
+  - 停用 forward
+  - 不更新該部分參數
+  - 只用 CPU
+  correct_index: 2
+  explanation: requires_grad=False 讓 optimizer 不更新這些參數。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch7-code-030
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 程式閱讀理解
+  text: 若模型常把 A 類預測成 B 類，應先看什麼？
+  content:
+  - type: text
+    text: 若模型常把 A 類預測成 B 類，應先看什麼？
+  - type: code
+    language: python
+    code: cm = confusion_matrix(y_true, y_pred)
+  type: multiple_choice
+  options:
+  - 檔案副檔名
+  - optimizer 名稱
+  - A/B 類混淆樣本
+  - Python 版本
+  correct_index: 2
+  explanation: 類別混淆需要回看錯誤樣本與混淆矩陣。
+  tags:
+  - chap-m6-ch7
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-hc-120
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 訓練 MLP
+  text: 關於「訓練 MLP」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - MLP 訓練仍遵循前向、loss、backward、step 的基本流程。
+  correct_index: 3
+  explanation: MLP 訓練仍遵循前向、loss、backward、step 的基本流程。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-train-mlp
+  usage: both
+- id: m6-hc-121
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 實作簡單 CNN
+  text: 關於「實作簡單 CNN」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - CNN 使用卷積層學習局部視覺特徵。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 2
+  explanation: CNN 使用卷積層學習局部視覺特徵。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-simple-cnn
+  usage: both
+- id: m6-hc-122
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 資料增強與正規化
+  text: 關於「資料增強與正規化」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 訓練階段可用隨機 crop、flip 或 color jitter 增加資料多樣性。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 1
+  explanation: 訓練階段可用隨機 crop、flip 或 color jitter 增加資料多樣性。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-cnn-augmentation
+  usage: both
+- id: m6-hc-123
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 資料增強與正規化
+  text: 在實務應用「資料增強與正規化」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 驗證與測試通常不使用隨機增強。
+  correct_index: 3
+  explanation: 驗證與測試通常不使用隨機增強。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-cnn-augmentation
+  usage: both
+- id: m6-hc-124
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 評估 CNN 與常見錯誤
+  text: 關於「評估 CNN 與常見錯誤」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - CNN 評估時應使用 model.eval() 與 torch.no_grad()。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 2
+  explanation: CNN 評估時應使用 model.eval() 與 torch.no_grad()。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-cnn-eval
+  usage: both
+- id: m6-hc-125
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: 評估 CNN 與常見錯誤
+  text: 在實務應用「評估 CNN 與常見錯誤」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - argmax(dim=1) 常用來從 logits 取預測類別。
+  correct_index: 3
+  explanation: argmax(dim=1) 常用來從 logits 取預測類別。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-cnn-eval
+  usage: both
+- id: m6-hc-126
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: MLP 適合與不適合的資料
+  text: 關於「MLP 適合與不適合的資料」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - MLP 適合固定長度向量或表格特徵。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 2
+  explanation: MLP 適合固定長度向量或表格特徵。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-mlp-use-cases
+  usage: both
+- id: m6-hc-127
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: MLP 適合與不適合的資料
+  text: 在實務應用「MLP 適合與不適合的資料」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 原始影像通常更適合 CNN，因為具有空間結構。
+  correct_index: 3
+  explanation: 原始影像通常更適合 CNN，因為具有空間結構。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-mlp-use-cases
+  usage: both
+- id: m6-hc-128
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: Activation、Normalization 與 Dropout
+  text: 關於「Activation、Normalization 與 Dropout」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - activation 提供非線性，否則多層線性仍近似單層線性。
+  correct_index: 3
+  explanation: activation 提供非線性，否則多層線性仍近似單層線性。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-network-components
+  usage: both
+- id: m6-hc-129
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: Activation、Normalization 與 Dropout
+  text: 在實務應用「Activation、Normalization 與 Dropout」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - Dropout 訓練時啟用，推論時關閉。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 0
+  explanation: Dropout 訓練時啟用，推論時關閉。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-network-components
+  usage: both
+- id: m6-hc-130
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: CNN 中尺寸如何變化
+  text: 關於「CNN 中尺寸如何變化」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - padding=1 且 kernel_size=3 的卷積可保持空間尺寸。
+  correct_index: 3
+  explanation: padding=1 且 kernel_size=3 的卷積可保持空間尺寸。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-cnn-shape-calculation
+  usage: both
+- id: m6-hc-131
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: CNN 中尺寸如何變化
+  text: 在實務應用「CNN 中尺寸如何變化」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - MaxPool2d(2) 通常讓高寬減半。
+  correct_index: 3
+  explanation: MaxPool2d(2) 通常讓高寬減半。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-cnn-shape-calculation
+  usage: both
+- id: m6-hc-132
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: CNN 中尺寸如何變化
+  text: 下列哪一項最符合「CNN 中尺寸如何變化」的核心觀念？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 可用 dummy input 檢查 Flatten 前的 feature map shape。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  correct_index: 2
+  explanation: 可用 dummy input 檢查 Flatten 前的 feature map shape。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-cnn-shape-calculation
+  usage: both
+- id: m6-hc-133
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: Transfer Learning 與預訓練模型
+  text: 關於「Transfer Learning 與預訓練模型」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - transfer learning 常用預訓練 backbone 加新分類頭。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  correct_index: 1
+  explanation: transfer learning 常用預訓練 backbone 加新分類頭。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-transfer-learning
+  usage: both
+- id: m6-hc-134
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: Transfer Learning 與預訓練模型
+  text: 在實務應用「Transfer Learning 與預訓練模型」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 資料量少時可先凍結 backbone，降低過擬合風險。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  correct_index: 0
+  explanation: 資料量少時可先凍結 backbone，降低過擬合風險。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-transfer-learning
+  usage: both
+- id: m6-hc-135
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: CNN 專案的錯誤分析方法
+  text: 關於「CNN 專案的錯誤分析方法」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 錯誤影像可揭露標籤錯誤、遮擋、低光與類別相似問題。
+  correct_index: 3
+  explanation: 錯誤影像可揭露標籤錯誤、遮擋、低光與類別相似問題。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-cnn-error-analysis
+  usage: both
+- id: m6-hc-136
+  chapter_title: PyTorch 實作簡單神經網路與 CNN
+  section_title: CNN 專案的錯誤分析方法
+  text: 在實務應用「CNN 專案的錯誤分析方法」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 若部署資料風格不同，離線評估可能過度樂觀。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 0
+  explanation: 若部署資料風格不同，離線評估可能過度樂觀。
+  tags:
+  - chap-m6-ch7
+  - sec-pytorch-cnn-error-analysis
+  usage: both

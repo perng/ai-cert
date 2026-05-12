@@ -1284,3 +1284,606 @@ questions:
   - sec-past-exam
   - past-exam
   usage: mock
+- id: m4-code-061
+  chapter_title: 機器學習治理與倫理
+  section_title: 程式閱讀理解
+  text: 閱讀下列公平性指標程式，`selection_rate` 衡量什麼？
+  content:
+  - type: text
+    text: 閱讀下列公平性指標程式，`selection_rate` 衡量什麼？
+  - type: code
+    language: python
+    code: 'selection_rate = df.groupby("group")["approved"].mean()
+
+      print(selection_rate)'
+  type: multiple_choice
+  options:
+  - 各群體被核准的比例
+  - 各群體的平均年齡
+  - 模型訓練時間
+  - 資料缺值比例
+  correct_index: 0
+  explanation: approved 是二元結果時，groupby mean 代表各群體正向決策比例，是常見公平性檢查。
+  tags:
+  - chap-m4-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-062
+  chapter_title: 機器學習治理與倫理
+  section_title: 程式閱讀理解
+  text: 閱讀下列 equal opportunity 計算，主要比較什麼？
+  content:
+  - type: text
+    text: 閱讀下列 equal opportunity 計算，主要比較什麼？
+  - type: code
+    language: python
+    code: 'tpr = df[df["y_true"] == 1].groupby("group")["y_pred"].mean()
+
+      gap = tpr.max() - tpr.min()'
+  type: multiple_choice
+  options:
+  - 各群體真實正類中的召回率差距
+  - 各群體樣本數差距
+  - 各群體特徵平均值差距
+  - 各群體訓練時間差距
+  correct_index: 0
+  explanation: 在 y_true=1 子集上 y_pred 平均值是 TPR/recall，比較 TPR gap 可檢查 equal opportunity。
+  tags:
+  - chap-m4-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-063
+  chapter_title: 機器學習治理與倫理
+  section_title: 程式閱讀理解
+  text: 閱讀下列 SHAP 程式，輸出主要用於什麼？
+  content:
+  - type: text
+    text: 閱讀下列 SHAP 程式，輸出主要用於什麼？
+  - type: code
+    language: python
+    code: 'explainer = shap.TreeExplainer(model)
+
+      values = explainer.shap_values(X_sample)
+
+      shap.summary_plot(values, X_sample)'
+  type: multiple_choice
+  options:
+  - 解釋特徵對模型預測的整體影響分佈
+  - 重新訓練模型權重
+  - 加密訓練資料
+  - 刪除低重要性欄位
+  correct_index: 0
+  explanation: SHAP summary plot 呈現特徵影響方向與大小，可協助解釋模型決策。
+  tags:
+  - chap-m4-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-064
+  chapter_title: 機器學習治理與倫理
+  section_title: 程式閱讀理解
+  text: 閱讀下列 LIME 呼叫，LIME 解釋的是什麼層級？
+  content:
+  - type: text
+    text: 閱讀下列 LIME 呼叫，LIME 解釋的是什麼層級？
+  - type: code
+    language: python
+    code: "exp = explainer.explain_instance(\n    X_test.iloc[10].values,\n    model.predict_proba,\n    num_features=6,\n)"
+  type: multiple_choice
+  options:
+  - 單一樣本的局部預測理由
+  - 整個資料湖的 schema
+  - 所有模型版本差異
+  - 訓練集缺值比例
+  correct_index: 0
+  explanation: LIME 建立局部 surrogate model 解釋單筆樣本預測，num_features 控制顯示特徵數。
+  tags:
+  - chap-m4-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-065
+  chapter_title: 機器學習治理與倫理
+  section_title: 程式閱讀理解
+  text: 閱讀下列漂移監控程式，PSI 高於門檻時代表什麼？
+  content:
+  - type: text
+    text: 閱讀下列漂移監控程式，PSI 高於門檻時代表什麼？
+  - type: code
+    language: python
+    code: "psi = compute_psi(expected=train_score_dist, actual=prod_score_dist)\nif psi > 0.25:\n    alert(\"score distribution drift\")"
+  type: multiple_choice
+  options:
+  - 生產分數分佈相對訓練基準已有明顯漂移
+  - 模型準確率必定為 100%
+  - 資料已完成匿名化
+  - 不需要任何人工檢查
+  correct_index: 0
+  explanation: PSI 用於比較分佈穩定性，超過門檻常代表資料或分數分佈漂移，需要調查。
+  tags:
+  - chap-m4-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-066
+  chapter_title: 機器學習治理與倫理
+  section_title: 程式閱讀理解
+  text: 閱讀下列模型卡片欄位，缺少哪項最影響治理？
+  content:
+  - type: text
+    text: 閱讀下列模型卡片欄位，缺少哪項最影響治理？
+  - type: code
+    language: python
+    code: "model_card = {\n    \"owner\": \"risk-ai-team\",\n    \"training_data\": \"loan_2024q1\",\n    \"metrics\": {\"auc\": 0.83},\n    \"limitations\": \"not evaluated for applicants under 20\"\n}"
+  type: multiple_choice
+  options:
+  - 適用限制已列出，但仍需確認公平性與族群切片評估
+  - 模型卡片不需要 owner
+  - metrics 不應出現在模型卡片
+  - training_data 應該永遠隱藏
+  correct_index: 0
+  explanation: 模型卡片已有基本欄位，但高風險模型還需族群切片、公平性與使用邊界評估，才能支援治理。
+  tags:
+  - chap-m4-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-067
+  chapter_title: 機器學習治理與倫理
+  section_title: 程式閱讀理解
+  text: 閱讀下列輸出攔截規則，主要控管哪種風險？
+  content:
+  - type: text
+    text: 閱讀下列輸出攔截規則，主要控管哪種風險？
+  - type: code
+    language: python
+    code: "if contains_sensitive_attribute(prompt) and asks_for_credit_decision(response):\n    require_human_review(case_id)"
+  type: multiple_choice
+  options:
+  - 敏感屬性參與高風險決策時要求人工覆核
+  - 自動提升模型 AUC
+  - 移除所有監控紀錄
+  - 增加訓練 batch size
+  correct_index: 0
+  explanation: 規則偵測敏感屬性與授信決策情境，要求人工覆核，是高風險決策治理。
+  tags:
+  - chap-m4-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-068
+  chapter_title: 機器學習治理與倫理
+  section_title: 程式閱讀理解
+  text: 閱讀下列版本紀錄，哪項最利於可追溯性？
+  content:
+  - type: text
+    text: 閱讀下列版本紀錄，哪項最利於可追溯性？
+  - type: code
+    language: python
+    code: "registry.log_model(\n    name=\"churn_model\",\n    version=\"2.1.0\",\n    training_data_hash=\"a83f...\",\n    code_commit=\"9b71c2d\",\n    metrics={\"f1\": 0.74},\n)"
+  type: multiple_choice
+  options:
+  - 記錄資料 hash、程式 commit 與指標，可回溯模型來源
+  - 只記錄模型名稱即可完整回溯
+  - metrics 會阻止模型部署
+  - version 不應寫入 registry
+  correct_index: 0
+  explanation: 模型登錄若保存資料、程式碼與指標版本，可支援稽核、重現與回滾。
+  tags:
+  - chap-m4-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-069
+  chapter_title: 機器學習治理與倫理
+  section_title: 程式閱讀理解
+  text: 閱讀下列偏見緩解片段，`reweighing` 最可能做什麼？
+  content:
+  - type: text
+    text: 閱讀下列偏見緩解片段，`reweighing` 最可能做什麼？
+  - type: code
+    language: python
+    code: 'weights = compute_reweighing_weights(y_train, sensitive_group)
+
+      model.fit(X_train, y_train, sample_weight=weights)'
+  type: multiple_choice
+  options:
+  - 調整不同群體與標籤組合的樣本權重以降低偏差
+  - 刪除 sensitive_group 欄位後就不訓練
+  - 把所有標籤改成 1
+  - 將模型轉成無監督分群
+  correct_index: 0
+  explanation: Reweighing 是前處理/訓練策略，透過樣本權重修正群體與標籤分佈不平衡。
+  tags:
+  - chap-m4-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-070
+  chapter_title: 機器學習治理與倫理
+  section_title: 程式閱讀理解
+  text: 閱讀下列監控資料，哪個訊號最需要優先處理？
+  content:
+  - type: text
+    text: 閱讀下列監控資料，哪個訊號最需要優先處理？
+  - type: code
+    language: python
+    code: "metrics = {\n    \"latency_p95_ms\": 180,\n    \"auc\": 0.81,\n    \"auc_last_month\": 0.82,\n    \"minority_group_fnr\": 0.41,\n    \"majority_group_fnr\": 0.12,\n}"
+  type: multiple_choice
+  options:
+  - 少數群體與多數群體 FNR 差距過大
+  - latency_p95_ms 為 180
+  - AUC 只下降 0.01
+  - 所有訊號都完全正常
+  correct_index: 0
+  explanation: 少數群體 FNR 明顯高於多數群體，代表公平性與風險問題，尤其高風險應用需優先調查。
+  tags:
+  - chap-m4-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-071
+  chapter_title: 機器學習治理與倫理
+  section_title: 程式閱讀理解
+  text: 閱讀下列資料刪除請求流程，主要滿足哪類要求？
+  content:
+  - type: text
+    text: 閱讀下列資料刪除請求流程，主要滿足哪類要求？
+  - type: code
+    language: python
+    code: "def handle_erasure_request(user_id):\n    delete_from_feature_store(user_id)\n    tombstone_training_dataset(user_id)\n    log_request(user_id, status=\"completed\")"
+  type: multiple_choice
+  options:
+  - 資料主體刪除/被遺忘請求與稽核紀錄
+  - 模型剪枝
+  - 強化學習探索
+  - 交叉驗證切分
+  correct_index: 0
+  explanation: 流程刪除特徵資料、標記訓練資料並留下紀錄，符合資料主體權利與合規稽核需求。
+  tags:
+  - chap-m4-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-072
+  chapter_title: 機器學習治理與倫理
+  section_title: 程式閱讀理解
+  text: 閱讀下列反事實解釋，哪一項最合理？
+  content:
+  - type: text
+    text: 閱讀下列反事實解釋，哪一項最合理？
+  - type: code
+    language: text
+    code: 'original: income=42000, debt_ratio=0.48, decision="reject"
+
+      counterfactual: income=42000, debt_ratio=0.32, decision="approve"'
+  type: multiple_choice
+  options:
+  - 若其他條件不變，降低 debt_ratio 可能改變模型決策
+  - 模型不受 debt_ratio 影響
+  - income 必須增加才可能核准
+  - 反事實解釋等同於真實因果證明
+  correct_index: 0
+  explanation: 反事實解釋顯示在模型內部，將 debt_ratio 從 0.48 降到 0.32 可能使決策改為 approve，但不等於因果證明。
+  tags:
+  - chap-m4-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-073
+  chapter_title: 機器學習治理與倫理
+  section_title: 程式閱讀理解
+  text: 閱讀下列資料切片評估，哪一項最正確？
+  content:
+  - type: text
+    text: 閱讀下列資料切片評估，哪一項最正確？
+  - type: code
+    language: python
+    code: "for group, part in test.groupby(\"age_band\"):\n    print(group, f1_score(part.y_true, part.y_pred))"
+  type: multiple_choice
+  options:
+  - 比較不同年齡切片的模型表現，找出弱勢群體或失效區間
+  - 只計算全體平均 F1
+  - 重新訓練每個年齡模型
+  - 將 age_band 作為加密金鑰
+  correct_index: 0
+  explanation: 按 age_band 分組計算 F1 是切片評估，可發現整體指標掩蓋的局部失效。
+  tags:
+  - chap-m4-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-074
+  chapter_title: 機器學習治理與倫理
+  section_title: 程式閱讀理解
+  text: 閱讀下列告警規則，哪一項會觸發人工審查？
+  content:
+  - type: text
+    text: 閱讀下列告警規則，哪一項會觸發人工審查？
+  - type: code
+    language: python
+    code: "if model_confidence < 0.55 and decision_impact == \"high\":\n    route_to_human_reviewer()"
+  type: multiple_choice
+  options:
+  - 低信心且高影響決策
+  - 高信心且低影響決策
+  - 所有低影響決策
+  - 所有信心大於 0.55 的決策
+  correct_index: 0
+  explanation: 這個 if 條件同時檢查模型信心低於 0.55，且決策影響層級為 high。只有兩個條件都成立時，系統才會把案例轉交人工審查。
+  tags:
+  - chap-m4-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-075
+  chapter_title: 機器學習治理與倫理
+  section_title: 程式閱讀理解
+  text: 閱讀下列治理檢查，部署會被阻擋的原因是什麼？
+  content:
+  - type: text
+    text: 閱讀下列治理檢查，部署會被阻擋的原因是什麼？
+  - type: code
+    language: python
+    code: "checks = {\n    \"model_card\": True,\n    \"bias_report\": False,\n    \"security_review\": True,\n    \"rollback_plan\": True,\n}\nif not all(checks.values()):\n    block_deployment()"
+  type: multiple_choice
+  options:
+  - bias_report 尚未完成
+  - model_card 尚未完成
+  - security_review 尚未完成
+  - rollback_plan 尚未完成
+  correct_index: 0
+  explanation: all(checks.values()) 需要所有檢查為 True；bias_report 為 False，因此部署會被阻擋。
+  tags:
+  - chap-m4-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-116
+  chapter_title: 機器學習治理與倫理
+  section_title: 程式閱讀理解
+  text: 閱讀下列 fairness dashboard 輸出，哪項最需要注意？
+  content:
+  - type: text
+    text: 閱讀下列 fairness dashboard 輸出，哪項最需要注意？
+  - type: code
+    language: yaml
+    code: "selection_rate:\n  group_A: 0.62\n  group_B: 0.31\n  group_C: 0.59"
+  type: multiple_choice
+  options:
+  - group_B 的核准率明顯低於其他群體
+  - group_A 與 group_C 完全不能比較
+  - selection_rate 不是治理指標
+  - 三組完全一致
+  correct_index: 0
+  explanation: group_B selection rate 明顯偏低，可能涉及 disparate impact，需進一步檢查資料、模型與業務規則。
+  tags:
+  - chap-m4-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-117
+  chapter_title: 機器學習治理與倫理
+  section_title: 程式閱讀理解
+  text: 閱讀下列 counterfactual fairness 測試，主要檢查什麼？
+  content:
+  - type: text
+    text: 閱讀下列 counterfactual fairness 測試，主要檢查什麼？
+  - type: code
+    language: python
+    code: 'score_original = model.predict(person)
+
+      person_cf = person.copy()
+
+      person_cf["gender"] = "other"
+
+      score_cf = model.predict(person_cf)
+
+      delta = abs(score_original - score_cf)'
+  type: multiple_choice
+  options:
+  - 只改敏感屬性時模型分數是否大幅變動
+  - 模型訓練時間是否過長
+  - 資料是否符合常態分佈
+  - 特徵是否完成 one-hot
+  correct_index: 0
+  explanation: 反事實公平性檢查在其他條件不變下改變敏感屬性，觀察預測是否不合理改變。
+  tags:
+  - chap-m4-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-118
+  chapter_title: 機器學習治理與倫理
+  section_title: 程式閱讀理解
+  text: 閱讀下列 SHAP 監控，哪種情況最需要調查？
+  content:
+  - type: text
+    text: 閱讀下列 SHAP 監控，哪種情況最需要調查？
+  - type: code
+    language: python
+    code: 'current_top_features = ["zipcode", "device_type", "income"]
+
+      baseline_top_features = ["income", "debt_ratio", "payment_history"]'
+  type: multiple_choice
+  options:
+  - 目前重要特徵突然由 zipcode 主導，可能出現代理變數或漂移
+  - top features 改變永遠正常
+  - SHAP 只能用於圖片
+  - baseline 不應保存
+  correct_index: 0
+  explanation: 重要特徵排序大幅變化，尤其 zipcode 可能作為敏感屬性代理變數，應檢查漂移與偏見風險。
+  tags:
+  - chap-m4-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-119
+  chapter_title: 機器學習治理與倫理
+  section_title: 程式閱讀理解
+  text: 閱讀下列監控告警，哪項最接近概念漂移？
+  content:
+  - type: text
+    text: 閱讀下列監控告警，哪項最接近概念漂移？
+  - type: code
+    language: python
+    code: 'input_psi = 0.03
+
+      label_delay_adjusted_auc_last_month = 0.84
+
+      label_delay_adjusted_auc_current = 0.66'
+  type: multiple_choice
+  options:
+  - 輸入分佈變化小但標籤關係/模型表現明顯下降
+  - 輸入資料大量漂移
+  - 系統延遲升高
+  - 模型檔案遺失
+  correct_index: 0
+  explanation: input PSI 小表示輸入分佈未明顯變，但 AUC 大幅下降，可能是輸入與標籤關係改變，即概念漂移。
+  tags:
+  - chap-m4-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-120
+  chapter_title: 機器學習治理與倫理
+  section_title: 程式閱讀理解
+  text: 閱讀下列模型核准條件，哪一項會阻擋上線？
+  content:
+  - type: text
+    text: 閱讀下列模型核准條件，哪一項會阻擋上線？
+  - type: code
+    language: python
+    code: "checks = {\n    \"auc_minimum_met\": True,\n    \"fairness_gap_below_threshold\": False,\n    \"explainability_report_attached\": True,\n    \"rollback_plan_ready\": True,\n}"
+  type: multiple_choice
+  options:
+  - fairness_gap_below_threshold 為 False
+  - auc_minimum_met 為 True
+  - explainability_report_attached 為 True
+  - rollback_plan_ready 為 True
+  correct_index: 0
+  explanation: 治理 gate 通常要求所有必要檢查通過。公平性差距未低於門檻會阻擋上線。
+  tags:
+  - chap-m4-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-121
+  chapter_title: 機器學習治理與倫理
+  section_title: 程式閱讀理解
+  text: 閱讀下列資料最小化程式，哪一項最符合原則？
+  content:
+  - type: text
+    text: 閱讀下列資料最小化程式，哪一項最符合原則？
+  - type: code
+    language: python
+    code: 'features = raw[["age_band", "income_band", "payment_history"]]
+
+      # raw columns not used: full_name, national_id, exact_birthdate'
+  type: multiple_choice
+  options:
+  - 只取任務需要欄位，避免使用直接識別資訊
+  - 保留 full_name 可提升所有模型公平性
+  - national_id 應作為主要特徵
+  - exact_birthdate 比 age_band 更符合最小化
+  correct_index: 0
+  explanation: 資料最小化要求只使用達成目的所需資料，避免直接識別欄位與過細粒度個資。
+  tags:
+  - chap-m4-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-122
+  chapter_title: 機器學習治理與倫理
+  section_title: 程式閱讀理解
+  text: 閱讀下列人工覆核抽樣，最合理目的為何？
+  content:
+  - type: text
+    text: 閱讀下列人工覆核抽樣，最合理目的為何？
+  - type: code
+    language: python
+    code: "review_sample = predictions[\n    (predictions.confidence.between(0.45, 0.55)) |\n    (predictions.impact == \"high\")\n].sample(200)"
+  type: multiple_choice
+  options:
+  - 抽查低信心或高影響決策以降低自動化風險
+  - 只挑最高信心樣本證明模型正確
+  - 刪除所有高影響決策
+  - 增加訓練資料標籤數
+  correct_index: 0
+  explanation: 低信心與高影響案例更需要人工覆核，以改善品質控管與責任治理。
+  tags:
+  - chap-m4-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-123
+  chapter_title: 機器學習治理與倫理
+  section_title: 程式閱讀理解
+  text: 閱讀下列模型說明 API，最可能的治理價值是什麼？
+  content:
+  - type: text
+    text: 閱讀下列模型說明 API，最可能的治理價值是什麼？
+  - type: code
+    language: python
+    code: "@app.get(\"/decision/{case_id}/explanation\")\ndef explain(case_id):\n    return {\n        \"top_reasons\": get_reason_codes(case_id),\n        \"appeal_url\": build_appeal_url(case_id),\n    }"
+  type: multiple_choice
+  options:
+  - 提供決策理由與申訴管道，提升透明度與可問責性
+  - 讓模型自動重新訓練
+  - 隱藏所有決策原因
+  - 刪除 case_id
+  correct_index: 0
+  explanation: 對高影響決策提供 reason codes 與 appeal link，有助於透明、申訴與問責。
+  tags:
+  - chap-m4-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-124
+  chapter_title: 機器學習治理與倫理
+  section_title: 程式閱讀理解
+  text: 閱讀下列紅隊測試紀錄，哪項最需要修補？
+  content:
+  - type: text
+    text: 閱讀下列紅隊測試紀錄，哪項最需要修補？
+  - type: code
+    language: python
+    code: "red_team_results = {\n    \"prompt_injection_success_rate\": 0.37,\n    \"pii_leakage_cases\": 12,\n    \"toxicity_rate\": 0.01,\n}"
+  type: multiple_choice
+  options:
+  - PII 洩漏案例與提示注入成功率偏高
+  - toxicity_rate 為 0.01
+  - 只有 toxicity 需要看
+  - 所有結果都代表零風險
+  correct_index: 0
+  explanation: PII leakage 是高嚴重度隱私事件，prompt injection 成功率也偏高，均需修補與再測。
+  tags:
+  - chap-m4-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-125
+  chapter_title: 機器學習治理與倫理
+  section_title: 程式閱讀理解
+  text: 閱讀下列審計查詢，主要想找什麼？
+  content:
+  - type: text
+    text: 閱讀下列審計查詢，主要想找什麼？
+  - type: code
+    language: sql
+    code: "SELECT user_id, COUNT(*) AS exports\nFROM audit_log\nWHERE action = 'EXPORT'\n  AND dataset LIKE '%pii%'\n  AND event_time >= current_date - interval '7 days'\nGROUP BY user_id\nHAVING COUNT(*) > 5;"
+  type: multiple_choice
+  options:
+  - 最近 7 天大量匯出 PII 資料的使用者
+  - 所有登入失敗的使用者
+  - 模型 AUC 低於門檻的版本
+  - 沒有任何資料存取紀錄
+  correct_index: 0
+  explanation: 查詢篩選 PII 匯出事件並按使用者統計，HAVING > 5 用於找出高頻匯出者以供稽核。
+  tags:
+  - chap-m4-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz

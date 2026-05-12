@@ -1378,10 +1378,10 @@ questions:
 - id: 114-2-007
   chapter_title: 大數據生態系統
   section_title: 歷屆考題
-  text: |-
-    在資料庫的 ACID 特性中，下列何者為「原子性（Atomicity）」的正確定義？
+  text: '在資料庫的 ACID 特性中，下列何者為「原子性（Atomicity）」的正確定義？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 所有資料欄位必須為相同型別
@@ -1398,10 +1398,10 @@ questions:
 - id: 114-2-018
   chapter_title: 大數據生態系統
   section_title: 歷屆考題
-  text: |-
-    某人工智慧團隊使用分散式資料庫（Distributed Database）儲存模型訓練資料，並在更新訓練樣本時啟用多節點交易。若其中一個節點在交易過程中發生錯誤，但系統仍確保整體資料不會出現部分更新、最終狀態維持一致，下列何者最能說明此現象？
+  text: '某人工智慧團隊使用分散式資料庫（Distributed Database）儲存模型訓練資料，並在更新訓練樣本時啟用多節點交易。若其中一個節點在交易過程中發生錯誤，但系統仍確保整體資料不會出現部分更新、最終狀態維持一致，下列何者最能說明此現象？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 系統透過原子性（Atomicity）確保交易必須全部成功或全部回復（Rollback）
@@ -1418,10 +1418,10 @@ questions:
 - id: 114-2-024
   chapter_title: 大數據生態系統
   section_title: 歷屆考題
-  text: |-
-    某企業建置生成式 AI 系統，利用大量客服紀錄與產品評論資料訓練語言模型，以自動生成客服回覆與知識摘要。由於資料來源多樣，且包含非結構化文字、影像與表格資訊，團隊希望在不降低模型效能的前提下，提升資料處理效率與一致性，下列哪一種資料處理策略最適合？
+  text: '某企業建置生成式 AI 系統，利用大量客服紀錄與產品評論資料訓練語言模型，以自動生成客服回覆與知識摘要。由於資料來源多樣，且包含非結構化文字、影像與表格資訊，團隊希望在不降低模型效能的前提下，提升資料處理效率與一致性，下列哪一種資料處理策略最適合？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 建立資料湖（Data Lake）結構，並以 Apache Spark 或 Ray 進行分散式資料預處理與特徵抽取，再串接至模型訓練管線（Pipeline）
@@ -1435,3 +1435,505 @@ questions:
   - past-exam
   - chap-m3-ch1
   usage: mock
+- id: m3-code-001
+  chapter_title: 大數據架構與儲存
+  section_title: 程式閱讀理解
+  text: 閱讀下列 PySpark 程式碼，判斷輸出的主要意義。
+  content:
+  - type: text
+    text: 閱讀下列 PySpark 程式碼，判斷輸出的主要意義。
+  - type: code
+    language: python
+    code: "from pyspark.sql import functions as F\n\nlogs = spark.read.parquet(\"s3://lake/raw/events/\")\nresult = (\n    logs\n    .filter(F.col(\"event_type\") == \"purchase\")\n    .groupBy(\"country\")\n    .agg(F.sum(\"amount\").alias(\"revenue\"))\n)\nresult.show()"
+  type: multiple_choice
+  options:
+  - 統計每個國家的購買營收總額
+  - 列出每位顧客的最後一次購買
+  - 將所有事件依時間排序
+  - 計算每個國家的事件資料筆數
+  correct_index: 0
+  explanation: 程式先篩選 purchase 事件，再依 country 分組並加總 amount，因此輸出是各國購買營收總額。
+  tags:
+  - chap-m3-ch1
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-002
+  chapter_title: 大數據架構與儲存
+  section_title: 程式閱讀理解
+  text: 閱讀下列 Spark 程式碼，哪一項敘述最正確？
+  content:
+  - type: text
+    text: 閱讀下列 Spark 程式碼，哪一項敘述最正確？
+  - type: code
+    language: python
+    code: 'small_dim = spark.read.parquet("s3://warehouse/dim_country/")
+
+      large_fact = spark.read.parquet("s3://warehouse/fact_events/")
+
+
+      joined = large_fact.join(F.broadcast(small_dim), on="country_id", how="left")'
+  type: multiple_choice
+  options:
+  - broadcast 會把大型 fact table 複製到每個 executor
+  - broadcast 適合小型維度表，可減少 shuffle join 成本
+  - broadcast 會強制輸出依 country_id 排序
+  - left join 會移除 fact table 中沒有匹配的資料
+  correct_index: 1
+  explanation: broadcast 小型維度表可讓 executor 本地完成 join，避免大型資料在網路間大量 shuffle；left join 也會保留左表資料。
+  tags:
+  - chap-m3-ch1
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-003
+  chapter_title: 大數據架構與儲存
+  section_title: 程式閱讀理解
+  text: 閱讀下列 HDFS 指令，判斷其資料可靠性設定。
+  content:
+  - type: text
+    text: 閱讀下列 HDFS 指令，判斷其資料可靠性設定。
+  - type: code
+    language: bash
+    code: 'hdfs dfs -setrep -w 3 /data/customer/events/2025-11-08.parquet
+
+      hdfs dfs -stat %r /data/customer/events/2025-11-08.parquet'
+  type: multiple_choice
+  options:
+  - 將檔案壓縮為 3 個區塊
+  - 將檔案副本數設定為 3 並等待完成
+  - 將檔案切成 3 個 partition
+  - 只保留最近 3 天的資料
+  correct_index: 1
+  explanation: setrep -w 3 會把 HDFS 檔案 replication factor 設成 3，並等待副本調整完成；stat %r 可檢查副本數。
+  tags:
+  - chap-m3-ch1
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-004
+  chapter_title: 大數據架構與儲存
+  section_title: 程式閱讀理解
+  text: 閱讀下列 SQL DDL，這個表格設計最主要支援哪種查詢最佳化？
+  content:
+  - type: text
+    text: 閱讀下列 SQL DDL，這個表格設計最主要支援哪種查詢最佳化？
+  - type: code
+    language: sql
+    code: "CREATE TABLE events_delta (\n  event_date DATE,\n  user_id STRING,\n  event_type STRING,\n  amount DOUBLE\n)\nUSING DELTA\nPARTITIONED BY (event_date);"
+  type: multiple_choice
+  options:
+  - 依 event_date 過濾時可做 partition pruning
+  - 自動加密 user_id 欄位
+  - 讓 amount 欄位只能存整數
+  - 讓所有查詢都不需要掃描檔案
+  correct_index: 0
+  explanation: 以 event_date 分割資料可讓查詢帶有日期條件時只掃描相關 partition，這是 partition pruning 的典型用途。
+  tags:
+  - chap-m3-ch1
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-005
+  chapter_title: 大數據架構與儲存
+  section_title: 程式閱讀理解
+  text: 閱讀下列 Spark 寫入設定，哪一項是最合理的解讀？
+  content:
+  - type: text
+    text: 閱讀下列 Spark 寫入設定，哪一項是最合理的解讀？
+  - type: code
+    language: python
+    code: "(\n    df.repartition(\"event_date\")\n      .write\n      .mode(\"append\")\n      .partitionBy(\"event_date\")\n      .parquet(\"s3://lake/curated/events\")\n)"
+  type: multiple_choice
+  options:
+  - 資料會依 event_date 分割輸出，利於日期條件查詢
+  - repartition 會移除 event_date 欄位
+  - append 會覆蓋整個資料目錄
+  - partitionBy 只能用於 CSV，不能用於 Parquet
+  correct_index: 0
+  explanation: partitionBy("event_date") 會建立以日期為目錄的分割資料；append 是追加寫入，不會覆蓋整個目錄。
+  tags:
+  - chap-m3-ch1
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-006
+  chapter_title: 大數據架構與儲存
+  section_title: 程式閱讀理解
+  text: 閱讀下列偽程式，這最接近哪一種資料處理模式？
+  content:
+  - type: text
+    text: 閱讀下列偽程式，這最接近哪一種資料處理模式？
+  - type: code
+    language: python
+    code: "while True:\n    batch = read_messages(topic=\"iot.telemetry\", max_wait=\"5 seconds\")\n    cleaned = validate_schema(batch)\n    write_to_delta(cleaned, checkpoint=\"s3://chk/iot\")"
+  type: multiple_choice
+  options:
+  - 互動式 OLAP 查詢
+  - 微批次串流處理
+  - 單機手動資料輸入
+  - 離線年度報表產生
+  correct_index: 1
+  explanation: 程式持續從 topic 讀取短時間窗口資料並寫入 checkpoint，符合 Spark Structured Streaming 類型的微批次串流模式。
+  tags:
+  - chap-m3-ch1
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-007
+  chapter_title: 大數據架構與儲存
+  section_title: 程式閱讀理解
+  text: 閱讀下列 CAP 情境程式註解，系統設計偏向犧牲哪一項？
+  content:
+  - type: text
+    text: 閱讀下列 CAP 情境程式註解，系統設計偏向犧牲哪一項？
+  - type: code
+    language: text
+    code: '# 訂單查詢服務部署在多區域 NoSQL 叢集
+
+      # 網路分割時，服務仍接受讀寫請求
+
+      # 分割恢復後再以 last-write-wins 合併版本'
+  type: multiple_choice
+  options:
+  - 可用性 Availability
+  - 分割容忍 Partition tolerance
+  - 強一致性 Consistency
+  - 水平擴展 Scalability
+  correct_index: 2
+  explanation: 網路分割時仍接受讀寫並事後合併，代表系統優先可用性與分割容忍，犧牲強一致性。
+  tags:
+  - chap-m3-ch1
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-008
+  chapter_title: 大數據架構與儲存
+  section_title: 程式閱讀理解
+  text: 閱讀下列資料湖目錄，哪一項問題最可能發生？
+  content:
+  - type: text
+    text: 閱讀下列資料湖目錄，哪一項問題最可能發生？
+  - type: code
+    language: text
+    code: 's3://lake/raw/orders/date=2025-11-08/part-0001.json
+
+      s3://lake/raw/orders/date=2025-11-08/part-0002.csv
+
+      s3://lake/raw/orders/date=2025-11-08/part-0003.parquet'
+  type: multiple_choice
+  options:
+  - 同一 partition 混用格式，會造成讀取與 schema 管理困難
+  - partition 數量太少，必然導致資料遺失
+  - S3 不支援 JSON 檔案
+  - 日期目錄命名不能包含等號
+  correct_index: 0
+  explanation: 同一資料集與 partition 內混用 JSON、CSV、Parquet 會讓讀取器、schema 推論與治理變複雜，應統一格式或分層整理。
+  tags:
+  - chap-m3-ch1
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-009
+  chapter_title: 大數據架構與儲存
+  section_title: 程式閱讀理解
+  text: 閱讀下列 Spark cache 用法，何者最正確？
+  content:
+  - type: text
+    text: 閱讀下列 Spark cache 用法，何者最正確？
+  - type: code
+    language: python
+    code: 'features = spark.read.parquet("s3://lake/features/customer")
+
+      features.cache()
+
+
+      features.filter("age >= 18").count()
+
+      features.groupBy("country").count().show()'
+  type: multiple_choice
+  options:
+  - cache 後第一次 action 才會實際物化快取
+  - cache 會永久寫入 Delta table
+  - cache 會自動刪除原始 Parquet
+  - cache 後所有欄位都會轉成字串
+  correct_index: 0
+  explanation: Spark 的 cache 是惰性操作，需遇到 count、show 等 action 才會計算並物化快取內容。
+  tags:
+  - chap-m3-ch1
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-010
+  chapter_title: 大數據架構與儲存
+  section_title: 程式閱讀理解
+  text: 閱讀下列資料版本查詢，這段程式最適合用於哪個目的？
+  content:
+  - type: text
+    text: 閱讀下列資料版本查詢，這段程式最適合用於哪個目的？
+  - type: code
+    language: python
+    code: 'previous = spark.read.format("delta")     .option("versionAsOf", 42)     .load("s3://lake/curated/features")
+
+
+      current = spark.read.format("delta").load("s3://lake/curated/features")'
+  type: multiple_choice
+  options:
+  - 比較目前資料與歷史版本，追蹤特徵變更
+  - 將 version 42 自動刪除
+  - 把 Delta table 轉為關聯式資料庫
+  - 只讀取第 42 筆資料
+  correct_index: 0
+  explanation: Delta Lake 的 versionAsOf 可做 time travel，常用於回溯、稽核與比較資料版本差異。
+  tags:
+  - chap-m3-ch1
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-051
+  chapter_title: 大數據架構與儲存
+  section_title: 程式閱讀理解
+  text: 閱讀下列 Spark join 規劃，哪一項最可能造成效能瓶頸？
+  content:
+  - type: text
+    text: 閱讀下列 Spark join 規劃，哪一項最可能造成效能瓶頸？
+  - type: code
+    language: python
+    code: 'orders = spark.read.parquet("s3://lake/orders")
+
+      clicks = spark.read.parquet("s3://lake/clicks")
+
+
+      joined = orders.join(clicks, on="user_id")
+
+      joined.groupBy("campaign_id").count().show()'
+  type: multiple_choice
+  options:
+  - 兩個大型資料集直接依 user_id join，可能產生大量 shuffle
+  - groupBy 一定不會產生 shuffle
+  - parquet 不能被 Spark 讀取
+  - show 會永久刪除資料
+  correct_index: 0
+  explanation: 兩個大型表依 user_id join 通常需要跨節點 shuffle，若沒有分桶、分割或廣播策略，會成為效能瓶頸。
+  tags:
+  - chap-m3-ch1
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-052
+  chapter_title: 大數據架構與儲存
+  section_title: 程式閱讀理解
+  text: 閱讀下列分桶表 DDL，主要想改善哪種操作？
+  content:
+  - type: text
+    text: 閱讀下列分桶表 DDL，主要想改善哪種操作？
+  - type: code
+    language: sql
+    code: "CREATE TABLE user_events_bucketed (\n  user_id STRING,\n  event_time TIMESTAMP,\n  event_type STRING\n)\nUSING PARQUET\nCLUSTERED BY (user_id) INTO 64 BUCKETS;"
+  type: multiple_choice
+  options:
+  - 依 user_id 的 join 或聚合
+  - 自動進行個資遮罩
+  - 將時間戳改成日期
+  - 強制所有查詢走單一檔案
+  correct_index: 0
+  explanation: Bucketing 依 key 將資料穩定分佈到 bucket，可降低同 key join 或聚合時的資料移動成本。
+  tags:
+  - chap-m3-ch1
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-053
+  chapter_title: 大數據架構與儲存
+  section_title: 程式閱讀理解
+  text: 閱讀下列 Kafka 消費設定，`startingOffsets="earliest"` 表示什麼？
+  content:
+  - type: text
+    text: 閱讀下列 Kafka 消費設定，`startingOffsets="earliest"` 表示什麼？
+  - type: code
+    language: python
+    code: "df = (spark.readStream\n    .format(\"kafka\")\n    .option(\"subscribe\", \"transactions\")\n    .option(\"startingOffsets\", \"earliest\")\n    .load())"
+  type: multiple_choice
+  options:
+  - 從可用的最早 offset 開始讀取
+  - 只讀最新一筆訊息
+  - 從 offset 0 寫入 Kafka
+  - 刪除 transactions topic
+  correct_index: 0
+  explanation: startingOffsets=earliest 會讓新的串流查詢從 Kafka 保留範圍內最早 offset 開始讀取。
+  tags:
+  - chap-m3-ch1
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-054
+  chapter_title: 大數據架構與儲存
+  section_title: 程式閱讀理解
+  text: 閱讀下列 Delta merge 程式，這段邏輯在做什麼？
+  content:
+  - type: text
+    text: 閱讀下列 Delta merge 程式，這段邏輯在做什麼？
+  - type: code
+    language: python
+    code: "target.alias(\"t\").merge(\n    updates.alias(\"u\"),\n    \"t.customer_id = u.customer_id\"\n).whenMatchedUpdateAll()  .whenNotMatchedInsertAll()  .execute()"
+  type: multiple_choice
+  options:
+  - 依 customer_id 做 upsert，匹配則更新，不匹配則新增
+  - 只刪除匹配資料
+  - 把所有 customer_id 改成空值
+  - 只讀取 target 不寫入
+  correct_index: 0
+  explanation: Delta merge 可實作 upsert。whenMatchedUpdateAll 更新既有列，whenNotMatchedInsertAll 插入新列。
+  tags:
+  - chap-m3-ch1
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-055
+  chapter_title: 大數據架構與儲存
+  section_title: 程式閱讀理解
+  text: 閱讀下列儲存格式選擇，哪一項最適合大量分析查詢？
+  content:
+  - type: text
+    text: 閱讀下列儲存格式選擇，哪一項最適合大量分析查詢？
+  - type: code
+    language: text
+    code: '# 需求：常依欄位 country、event_type、amount 做聚合查詢
+
+      # 資料量：每日數億筆事件
+
+      # 候選格式：CSV / JSON / Parquet'
+  type: multiple_choice
+  options:
+  - Parquet，因為欄式儲存可減少掃描欄位與提升壓縮效率
+  - CSV，因為一定比欄式格式快
+  - JSON，因為 schema 永遠固定
+  - 任意格式效能完全相同
+  correct_index: 0
+  explanation: Parquet 是欄式格式，分析查詢只需讀取相關欄位，並有良好壓縮與 predicate pushdown 支援。
+  tags:
+  - chap-m3-ch1
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-056
+  chapter_title: 大數據架構與儲存
+  section_title: 程式閱讀理解
+  text: 閱讀下列小檔案合併程式，主要目的為何？
+  content:
+  - type: text
+    text: 閱讀下列小檔案合併程式，主要目的為何？
+  - type: code
+    language: python
+    code: 'compact = spark.read.parquet("s3://lake/events/date=2025-11-08")
+
+      compact.coalesce(16).write.mode("overwrite").parquet("s3://lake/events_compacted/date=2025-11-08")'
+  type: multiple_choice
+  options:
+  - 減少小檔案數量，降低讀取排程與 metadata 開銷
+  - 增加每列資料欄位數
+  - 將 Parquet 轉成 JSON
+  - 刪除 date partition
+  correct_index: 0
+  explanation: 大量小檔案會造成 metadata 與 task scheduling 開銷。coalesce 後重寫可合併成較少檔案。
+  tags:
+  - chap-m3-ch1
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-057
+  chapter_title: 大數據架構與儲存
+  section_title: 程式閱讀理解
+  text: 閱讀下列 Cassandra 查詢，資料表最需要以哪個欄位作 partition key？
+  content:
+  - type: text
+    text: 閱讀下列 Cassandra 查詢，資料表最需要以哪個欄位作 partition key？
+  - type: code
+    language: sql
+    code: "-- 主要查詢模式\nSELECT * FROM sensor_readings\nWHERE device_id = 'A17'\n  AND reading_time >= '2025-11-08T00:00:00';"
+  type: multiple_choice
+  options:
+  - device_id
+  - temperature
+  - battery_level
+  - firmware_version
+  correct_index: 0
+  explanation: Cassandra 需要依查詢模式設計 partition key。此查詢固定 device_id 並掃時間範圍，device_id 適合作為 partition key。
+  tags:
+  - chap-m3-ch1
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-058
+  chapter_title: 大數據架構與儲存
+  section_title: 程式閱讀理解
+  text: 閱讀下列資料湖分層註解，silver 層通常代表什麼？
+  content:
+  - type: text
+    text: 閱讀下列資料湖分層註解，silver 層通常代表什麼？
+  - type: code
+    language: text
+    code: 'bronze: raw append-only ingestion
+
+      silver: validated, cleaned, conformed tables
+
+      gold: business aggregates and serving marts'
+  type: multiple_choice
+  options:
+  - 清理驗證後、可供下游整合使用的資料
+  - 完全未處理的原始資料
+  - 只給最終主管儀表板的彙總表
+  - 已刪除的封存資料
+  correct_index: 0
+  explanation: Medallion 架構中 silver 通常是已清理、驗證並對齊 schema 的資料，供特徵或 gold 彙總使用。
+  tags:
+  - chap-m3-ch1
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-059
+  chapter_title: 大數據架構與儲存
+  section_title: 程式閱讀理解
+  text: 閱讀下列 Spark explain 摘要，哪一項最值得優先改善？
+  content:
+  - type: text
+    text: 閱讀下列 Spark explain 摘要，哪一項最值得優先改善？
+  - type: code
+    language: text
+    code: "== Physical Plan ==\nExchange hashpartitioning(user_id, 200)\n+- SortMergeJoin [user_id], [user_id], Inner\n   :- Scan parquet orders\n   +- Scan parquet users_small"
+  type: multiple_choice
+  options:
+  - 小型 users_small 未被 broadcast，導致 SortMergeJoin 與 Exchange
+  - parquet scan 必定錯誤
+  - hashpartitioning 表示沒有 shuffle
+  - Inner join 無法最佳化
+  correct_index: 0
+  explanation: 若 users_small 真的很小，可 broadcast 避免大規模 SortMergeJoin shuffle，降低 Exchange 成本。
+  tags:
+  - chap-m3-ch1
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-060
+  chapter_title: 大數據架構與儲存
+  section_title: 程式閱讀理解
+  text: 閱讀下列檢查點設定，checkpointLocation 的主要作用是什麼？
+  content:
+  - type: text
+    text: 閱讀下列檢查點設定，checkpointLocation 的主要作用是什麼？
+  - type: code
+    language: python
+    code: "query = (stream_df.writeStream\n    .format(\"delta\")\n    .option(\"checkpointLocation\", \"s3://chk/orders\")\n    .start(\"s3://lake/silver/orders\"))"
+  type: multiple_choice
+  options:
+  - 保存串流進度與狀態，支援失敗後恢復
+  - 存放最終模型權重
+  - 讓所有資料只寫入記憶體
+  - 加密 Delta table
+  correct_index: 0
+  explanation: Structured Streaming 使用 checkpoint 記錄 offset、狀態與 metadata，讓查詢重啟時可從正確位置恢復。
+  tags:
+  - chap-m3-ch1
+  - sec-code-reading
+  - code-reading
+  usage: quiz

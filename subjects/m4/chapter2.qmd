@@ -98,3 +98,7 @@ print(model)
 ## 歷屆考題 {#sec-past-exam}
 
 請做測驗看歷屆考題。
+
+## 程式閱讀理解 {#sec-code-reading}
+
+請閱讀深度學習程式碼、模型摘要或訓練輸出，判斷其架構與實務意義。重點包括輸入 shape、層的順序、activation、loss function、optimizer、參數量與 train/eval 模式。看到 CNN、RNN、LSTM、Transformer 或 Keras model summary 時，應能推論資料如何流動、輸出維度是否符合任務，以及訓練曲線是否顯示過擬合、欠擬合或學習率不穩定。實務案例可能是影像分類、文字分類或時間序列預測；讀程式時也要確認批次維度、正規化方式、預訓練權重與推論模式是否正確，避免訓練和部署行為不同。

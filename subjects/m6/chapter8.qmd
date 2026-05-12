@@ -1,10 +1,14 @@
 ---
 title: "PyTorch Transformer 基礎"
-order: 7
-label: chap-m6-ch7
+order: 8
+label: chap-m6-ch8
 ---
 
 Transformer 是現代 NLP、生成式 AI 與多模態模型的重要基礎。本章不追求完整大型語言模型訓練，而是用 PyTorch 建立核心概念：embedding、位置資訊、自注意力與簡化分類器。
+
+在前面的章節中，MLP 處理固定長度向量，CNN 處理影像局部空間結構。Transformer 則特別適合處理序列與上下文關係，例如文字、程式碼、時間序列、語音片段，甚至影像 patch。它的核心能力是讓序列中的每個位置根據任務需要，動態參考其他位置。
+
+對 AI 應用規劃者來說，Transformer 重要不只是因為它能生成文字，而是因為它影響了許多方案選擇：要不要 fine-tune、是否用 embedding 做檢索、RAG 是否比重新訓練更合適、上下文長度是否足夠、推論成本是否可接受。
 
 ## Transformer 的核心想法 {#sec-transformer-core-idea}
 
@@ -34,6 +38,8 @@ flowchart TD
 ```
 
 圖中是一個 Transformer encoder block 的簡化資料流。Embedding 提供語意起點，位置資訊提供順序，自注意力讓每個 token 整合上下文。
+
+一個直覺例子是客服意圖分類。句子「我要取消昨天訂的機票」和「我不想取消機票」都包含「取消」與「機票」，但語意不同。模型不能只看單字出現次數，而需要理解上下文與否定詞。Transformer 的 attention 機制讓模型有機會把「不想」與「取消」連在一起理解。
 
 ## Embedding 與位置資訊 {#sec-transformer-embedding-position}
 
@@ -84,6 +90,19 @@ print(attn_weights.shape)
 ```
 
 在 self-attention 中，query、key、value 都來自同一個序列。注意力權重可解釋為每個 token 對其他 token 的關注程度，但在大型模型中不能把它簡化成完整可解釋性。
+
+以下範例展示 attention 權重的基本形狀。若 batch 有 1 筆、序列長度為 4，權重可以理解成每個位置對其他位置的關注分布：
+
+```{python}
+toy_tokens = torch.tensor([[1, 2, 3, 4]])
+toy_x = embedding(toy_tokens) + pos_embedding(torch.arange(4).unsqueeze(0))
+toy_out, toy_weights = attention(toy_x, toy_x, toy_x)
+
+print(toy_out.shape)
+print(toy_weights[0])
+```
+
+這些權重可用於檢查模型是否完全關注 padding 或異常位置，但不能單獨當成完整決策解釋。
 
 ## Transformer Encoder 分類器 {#sec-transformer-classifier}
 
@@ -207,6 +226,16 @@ Transformer 模型通常不用傳統單字斷詞，而使用 subword tokenizer�
 *   **Prompting**：透過提示設計引導模型完成任務。
 
 選擇方式取決於資料量、任務變動頻率、成本、延遲、準確率要求與是否需要更新知識。若知識常更新，RAG 通常比頻繁 fine-tuning 更合適。
+
+三種常見選擇可以這樣判斷：
+
+| 需求 | 較常見做法 | 理由 |
+|------|------------|------|
+| 公司文件常更新，需要回答內部知識 | RAG | 知識放在檢索庫中，更新較快 |
+| 固定分類任務，有標註資料 | Fine-tuning | 讓模型適應特定標籤與語氣 |
+| 只需要語意相似度或搜尋 | Feature extraction | 用 embedding 即可，不一定要訓練模型 |
+
+例如 FAQ 檢索可以先把問題轉成 embedding，找出最相似的已知問題，再把答案回傳或交給生成模型整理。這種設計通常比直接要求模型背下所有 FAQ 更容易維護。
 
 ## Transformer 常見錯誤與除錯 {#sec-transformer-debugging}
 

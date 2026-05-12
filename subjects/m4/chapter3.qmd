@@ -87,3 +87,7 @@ $$L = \alpha L_{CE}(y, \hat{y}_{student}) + (1-\alpha) L_{KL}(\hat{y}_{teacher},
 ## 歷屆考題 {#sec-past-exam}
 
 請做測驗看歷屆考題。
+
+## 程式閱讀理解 {#sec-code-reading}
+
+請閱讀調參、正規化與模型壓縮程式碼，判斷其效果與風險。題目可能包含 GridSearch、RandomizedSearch、early stopping、dropout、weight decay、剪枝、量化或蒸餾。閱讀時要判斷這些技術是為了改善泛化、降低延遲、減少模型大小還是控制過擬合，同時也要注意搜尋範圍過大、驗證集洩漏、壓縮後精度下降與部署硬體不相容等風險。例如行動裝置部署常需要量化與剪枝，但在醫療或金融模型中，壓縮後仍必須重新檢查校準、公平性、邊界案例與回復機制。

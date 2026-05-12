@@ -1,0 +1,5325 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 代理人基礎概念 — 題庫審閱 — 題庫審閱</title>
+<style>
+  :root {
+    --bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --correct: #d4edda;
+    --correct-border: #28a745;
+    --wrong: #ffffff;
+    --accent: #2563eb;
+    --text: #1a1a2e;
+    --muted: #6c757d;
+    --border: #dee2e6;
+    --section-bg: #e9ecef;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 900px; margin: 0 auto; }
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+    color: var(--accent);
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border);
+  }
+  .stats {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  .stat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+  }
+  .stat-card strong { color: var(--accent); font-size: 1.3rem; }
+  .toc {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .toc h2 { font-size: 1.1rem; margin-bottom: 0.75rem; }
+  .toc ul { list-style: none; padding-left: 0; }
+  .toc li { margin-bottom: 0.3rem; }
+  .toc a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  .toc a:hover { text-decoration: underline; }
+  .toc .toc-section { padding-left: 1.25rem; color: var(--muted); font-size: 0.85rem; }
+
+  .chapter-heading {
+    font-size: 1.4rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+    color: var(--accent);
+  }
+  .section-heading {
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0.75rem;
+    background: var(--section-bg);
+    border-radius: 6px;
+    color: var(--text);
+  }
+
+  .question-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    transition: box-shadow 0.15s;
+  }
+  .question-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+  .q-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.6rem;
+  }
+  .q-id {
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-family: monospace;
+    background: var(--bg);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+  }
+  .q-text {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  .options { list-style: none; padding: 0; }
+  .options li {
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.35rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    font-size: 0.92rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  .options li.correct {
+    background: var(--correct);
+    border-color: var(--correct-border);
+    font-weight: 600;
+  }
+  .options li.correct::before { content: "✅"; }
+  .options li:not(.correct)::before {
+    content: attr(data-label);
+    color: var(--muted);
+    font-weight: 600;
+    min-width: 1.5em;
+  }
+  .explanation {
+    margin-top: 0.6rem;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.88rem;
+    color: #155724;
+    background: #f0fff4;
+    border-left: 3px solid var(--correct-border);
+    border-radius: 0 6px 6px 0;
+  }
+  .tags {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+  .tag {
+    font-size: 0.75rem;
+    background: var(--bg);
+    color: var(--muted);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+  }
+
+  /* Correct-answer index distribution warning */
+  .warning {
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+  }
+  .warning strong { color: #856404; }
+
+  @media print {
+    body { padding: 0.5rem; }
+    .question-card { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>📋 AI 代理人基礎概念 — 題庫審閱</h1>
+<div class="subtitle">模組：m5 ｜ 來源：chapter1.yaml, chapter2.yaml, chapter3.yaml, chapter4.yaml, chapter5.yaml</div>
+<div class="stats">
+<div class="stat-card">題目總數 <strong>302</strong></div>
+<div class="stat-card">章節數 <strong>5</strong></div>
+<div class="stat-card">檔案數 <strong>5</strong></div>
+</div>
+<div class="toc"><h2>目錄</h2><ul>
+<li><a href="#ch-1">AI 代理人基礎概念</a> (63 題)</li>
+<li class="toc-section">— 從聊天到行動：為什麼需要 AI 代理人</li>
+<li class="toc-section">— 代理人的組成：它由哪些部分構成？</li>
+<li class="toc-section">— 代理人如何思考和行動：推理迴圈</li>
+<li class="toc-section">— 代理人的種類</li>
+<li class="toc-section">— 如何評估代理人的好壞</li>
+<li class="toc-section">— 代理推理迴圈</li>
+<li class="toc-section">— 什麼是 AI 代理人</li>
+<li class="toc-section">— 代理人的組成架構</li>
+<li class="toc-section">— 代理人類型</li>
+<li class="toc-section">— Agent 的評估指標</li>
+<li><a href="#ch-2">模型上下文協議 (MCP)</a> (59 題)</li>
+<li class="toc-section">— 問題的起源：為什麼需要 MCP？</li>
+<li class="toc-section">— MCP 的三個角色</li>
+<li class="toc-section">— MCP 提供的三種能力</li>
+<li class="toc-section">— MCP 的通訊方式</li>
+<li class="toc-section">— 在 Claude Desktop 設定 MCP 工具</li>
+<li class="toc-section">— MCP 的安全設計</li>
+<li class="toc-section">— AI 代理人基礎概念回顧</li>
+<li class="toc-section">— 代理人可觀測性與評估</li>
+<li class="toc-section">— MCP 簡介與設計動機</li>
+<li class="toc-section">— MCP 系統架構</li>
+<li class="toc-section">— MCP 核心元件</li>
+<li class="toc-section">— MCP 傳輸機制</li>
+<li class="toc-section">— MCP 安全考量</li>
+<li class="toc-section">— AI 代理人基礎概念</li>
+<li><a href="#ch-3">Agentic Skills 設計</a> (62 題)</li>
+<li class="toc-section">— 光靠提示詞，為什麼不夠？</li>
+<li class="toc-section">— 工具呼叫的實際運作方式</li>
+<li class="toc-section">— 記憶管理：讓代理人「記得事情」</li>
+<li class="toc-section">— 規劃能力：讓代理人「想清楚再做」</li>
+<li class="toc-section">— 技能設計的最佳實踐</li>
+<li class="toc-section">— 上下文工程 (Context Engineering)</li>
+<li class="toc-section">— 技能的核心要素</li>
+<li class="toc-section">— 記憶管理設計</li>
+<li class="toc-section">— 規劃策略設計</li>
+<li class="toc-section">— Skill 設計最佳實踐</li>
+<li class="toc-section">— 工具呼叫機制</li>
+<li><a href="#ch-4">主流 AI 代理框架總覽</a> (59 題)</li>
+<li class="toc-section">— OpenClaw：在你的電腦上運行的個人 AI 助理</li>
+<li class="toc-section">— Hermes Agent：會自我學習的多平台代理</li>
+<li class="toc-section">— AI 代理框架的發展趨勢</li>
+<li class="toc-section">— 多代理協作框架</li>
+<li class="toc-section">— 技術與專業框架</li>
+<li class="toc-section">— 2026 年新興框架</li>
+<li class="toc-section">— 框架比較總覽</li>
+<li><a href="#ch-5">多代理系統與未來發展</a> (59 題)</li>
+<li class="toc-section">— 為什麼需要多個代理人協作？</li>
+<li class="toc-section">— 常見的多代理協作模式</li>
+<li class="toc-section">— 代理人之間如何「說話」：通訊協議</li>
+<li class="toc-section">— 代理安全：當 AI 有了行動能力，風險也來了</li>
+<li class="toc-section">— AI 代理的未來發展方向</li>
+<li class="toc-section">— 自然語言網路 (NLWeb)</li>
+<li class="toc-section">— 代理通訊協議</li>
+<li class="toc-section">— 多代理協作模式</li>
+<li class="toc-section">— 多代理系統概述</li>
+<li class="toc-section">— 代理安全與信任</li>
+<li class="toc-section">— AI 代理技術的未來趨勢</li>
+</ul></div>
+<h2 class="chapter-heading" id="ch-1">AI 代理人基礎概念</h2>
+<h3 class="section-heading">從聊天到行動：為什麼需要 AI 代理人</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">AI 代理人（AI Agent）與傳統聊天機器人最主要的差異是什麼？</div>
+<span class="q-id">#7101</span>
+</div>
+<ol class="options">
+<li data-label="A.">代理人不需要大型語言模型作為其核心運作引擎</li>
+<li data-label="B.">代理人無法理解使用者輸入的自然語言指令</li>
+<li data-label="C.">代理人只能被動回答問題，無法執行動作</li>
+<li class="correct" data-label="D.">代理人能夠自主進行多步驟規劃與工具呼叫，而聊天機器人主要進行單輪問答</li>
+</ol>
+<div class="explanation">💡 AI 代理人的核心特徵是自主性、多步驟執行與工具使用能力，能主動規劃並執行任務，而非僅被動回應。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+<span class="tag">sec-agent-definition</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪一項「不是」AI 代理人的核心特徵？</div>
+<span class="q-id">#7102</span>
+</div>
+<ol class="options">
+<li data-label="A.">自主性 (Autonomy)：無需持續人工干預即可獨立運作</li>
+<li class="correct" data-label="B.">固定性 (Fixedness)：行為模式在部署後不會改變</li>
+<li data-label="C.">持續性 (Persistence)：能跨多個步驟維持狀態與記憶</li>
+<li data-label="D.">目標導向 (Goal-directed)：圍繞明確目標組織其行為</li>
+</ol>
+<div class="explanation">💡 AI 代理人的特徵包括自主性、感知能力、行動能力、目標導向與持續性。「固定性」並非代理人特徵，代理人能夠動態調整策略。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+<span class="tag">sec-agent-definition</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">相較於一般聊天機器人，AI 代理人最核心的差異是什麼？</div>
+<span class="q-id">#900022</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">能根據目標規劃步驟、使用工具並觀察結果後調整行動</li>
+<li data-label="B.">只能回答預先寫好的 FAQ</li>
+<li data-label="C.">必須完全離線執行，不能連接任何外部系統</li>
+<li data-label="D.">只能生成文字，不能處理任務狀態</li>
+</ol>
+<div class="explanation">💡 AI 代理人不只是產生回覆，還會圍繞目標進行規劃、工具調用、狀態追蹤與回饋修正，因此能處理跨步驟任務。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+<span class="tag">sec-agent-definition</span>
+</div>
+</div>
+<h3 class="section-heading">代理人的組成：它由哪些部分構成？</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 AI 代理人的記憶系統中，「向量資料庫（如 Chroma、Pinecone）」屬於哪種記憶類型？</div>
+<span class="q-id">#7103</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">長期記憶 (Long-term Memory)，儲存跨任務的知識與經驗</li>
+<li data-label="B.">短期記憶 (Short-term Memory)，儲存當前對話的上下文</li>
+<li data-label="C.">工作記憶 (Working Memory)，儲存當前任務的中間狀態</li>
+<li data-label="D.">感知記憶 (Sensory Memory)，暫存外部環境的輸入</li>
+</ol>
+<div class="explanation">💡 向量資料庫用於儲存長期記憶，能跨任務保存知識與過往經驗，透過語義相似度搜尋進行召回。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+<span class="tag">sec-agent-architecture</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">代理人架構中「短期記憶」主要對應於什麼？</div>
+<span class="q-id">#7109</span>
+</div>
+<ol class="options">
+<li data-label="A.">外部獨立部署的專屬向量資料庫系統</li>
+<li class="correct" data-label="B.">大型語言模型的當前對話上下文視窗</li>
+<li data-label="C.">代理人執行腳本中的固定區域變數表</li>
+<li data-label="D.">用來指導代理人行為的核心系統提示詞</li>
+</ol>
+<div class="explanation">💡 短期記憶受限於模型的上下文視窗，保存近期的對話互動。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+<span class="tag">sec-agent-architecture</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">代理人架構中「長期記憶」最常依賴的儲存技術是？</div>
+<span class="q-id">#7110</span>
+</div>
+<ol class="options">
+<li data-label="A.">系統環境變數與暫存檔案的動態讀寫</li>
+<li data-label="B.">傳統的關聯式資料庫與表格結構儲存</li>
+<li data-label="C.">電腦處理器內建的高速快取記憶體裝置</li>
+<li class="correct" data-label="D.">透過嵌入模型轉換的向量資料庫系統</li>
+</ol>
+<div class="explanation">💡 向量資料庫能將過往知識轉換為向量，實現跨任務的語意檢索。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+<span class="tag">sec-agent-architecture</span>
+</div>
+</div>
+<h3 class="section-heading">代理人如何思考和行動：推理迴圈</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">ReAct (Reasoning + Acting) 框架的核心思想是什麼？</div>
+<span class="q-id">#7104</span>
+</div>
+<ol class="options">
+<li data-label="A.">使用多個代理人並行執行任務後投票決定結果</li>
+<li class="correct" data-label="B.">交替進行推理（Thought）和行動（Action），並根據觀察結果動態調整</li>
+<li data-label="C.">透過自我反思記錄失敗原因以改進下次的嘗試</li>
+<li data-label="D.">先產生完整計畫再一次性執行所有規劃的步驟</li>
+</ol>
+<div class="explanation">💡 ReAct 框架的精髓在於「思考-行動-觀察」的交替循環，讓代理人能基於真實的工具回傳結果進行推理，減少幻覺並提高可靠性。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+<span class="tag">sec-agent-loop</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Reflexion 框架與 ReAct 框架的主要區別是什麼？</div>
+<span class="q-id">#7105</span>
+</div>
+<ol class="options">
+<li data-label="A.">Reflexion 在運作時需要多個 LLM 模型來協同工作</li>
+<li data-label="B.">Reflexion 框架只能夠適用於數學計算類型的任務</li>
+<li class="correct" data-label="C.">Reflexion 引入自我反思機制，將失敗經驗以文字形式儲存為記憶以改進後續嘗試</li>
+<li data-label="D.">Reflexion 框架在運作時完全不使用工具呼叫</li>
+</ol>
+<div class="explanation">💡 Reflexion 的創新在於讓代理人在任務失敗後生成文字形式的自我反思，並將其作為長期記憶，在後續嘗試中避免重複犯同樣的錯誤。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+<span class="tag">sec-agent-loop</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 AI 代理人的框架中，「後設認知 (Metacognition)」的主要作用是什麼？</div>
+<span class="q-id">#7108</span>
+</div>
+<ol class="options">
+<li data-label="A.">自動為系統中的代理人生成新的工具函數</li>
+<li data-label="B.">用來加速大型語言模型的整體推理速度</li>
+<li data-label="C.">強制代理人按照預先設定的固定腳本執行任務</li>
+<li class="correct" data-label="D.">讓代理人意識到自身的決策過程，並根據經驗進行自我反省與錯誤修正</li>
+</ol>
+<div class="explanation">💡 後設認知也就是「對思考過程的反思」，讓 AI 代理人能評估自身表現、適應環境並修正錯誤。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+<span class="tag">sec-agent-loop</span>
+</div>
+</div>
+<h3 class="section-heading">代理人的種類</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">「Agentic RAG」與「Naive RAG」的主要差異是什麼？</div>
+<span class="q-id">#7106</span>
+</div>
+<ol class="options">
+<li data-label="A.">Agentic RAG 的整體回應速度比 Naive RAG 更快</li>
+<li data-label="B.">Agentic RAG 只能處理文字資料，而 Naive RAG 可處理多模態資料</li>
+<li class="correct" data-label="C.">Agentic RAG 讓代理人主動決定何時和如何進行檢索，可進行多輪查詢</li>
+<li data-label="D.">Agentic RAG 的系統完全不使用向量資料庫</li>
+</ol>
+<div class="explanation">💡 Agentic RAG 將 RAG 融入代理迴圈，代理人能自主判斷何時需要檢索、使用哪種查詢策略，並可多輪迭代查詢以獲得更完整的資訊。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+<span class="tag">sec-agent-types</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">若代理人會先拆解任務、排定步驟，再逐步呼叫搜尋、資料庫與文件工具完成任務，最接近哪一類型？</div>
+<span class="q-id">#900023</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">規劃型代理人</li>
+<li data-label="B.">純規則比對代理人</li>
+<li data-label="C.">靜態 FAQ 機器人</li>
+<li data-label="D.">單次分類器</li>
+</ol>
+<div class="explanation">💡 規劃型代理人會把高層目標拆成可執行步驟，並依任務狀態選擇工具與調整流程。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+<span class="tag">sec-agent-types</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">多代理人系統最適合用在哪一種情境？</div>
+<span class="q-id">#900024</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">需要研究、撰寫、審查與執行等不同角色分工協作的複雜任務</li>
+<li data-label="B.">只需判斷一個數字是否大於零的簡單規則</li>
+<li data-label="C.">完全不需要溝通或共享狀態的單步驟任務</li>
+<li data-label="D.">不能使用任何工具的純文字改寫任務</li>
+</ol>
+<div class="explanation">💡 多代理人系統適合將複雜任務分配給不同專長角色，例如研究代理、程式代理與審查代理，但也需要協調與衝突管理。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+<span class="tag">sec-agent-types</span>
+</div>
+</div>
+<h3 class="section-heading">如何評估代理人的好壞</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">評估 AI 代理人效能時，「步驟效率 (Step Efficiency)」指的是什麼？</div>
+<span class="q-id">#7107</span>
+</div>
+<ol class="options">
+<li data-label="A.">代理人在給定時間內完成任務的比例</li>
+<li class="correct" data-label="B.">代理人完成任務所需的最少步驟數，步驟越少效率越高</li>
+<li data-label="C.">代理人在任務中正確選擇工具的比例</li>
+<li data-label="D.">代理人每秒鐘能夠處理的請求總數量</li>
+</ol>
+<div class="explanation">💡 步驟效率衡量代理人解決問題的簡潔程度，不必要的冗餘步驟會降低效率並增加成本和延遲。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+<span class="tag">sec-agent-eval</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">評估 AI 代理人是否可靠時，下列哪一項指標最能反映任務完成品質？</div>
+<span class="q-id">#900025</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">在限制時間與權限內正確完成端到端任務的比例</li>
+<li data-label="B.">回覆文字是否總是很長</li>
+<li data-label="C.">模型名稱是否最新</li>
+<li data-label="D.">是否完全不產生日誌</li>
+</ol>
+<div class="explanation">💡 代理人評估應看端到端任務成功率、工具使用正確性、成本、延遲、安全性與可追溯性，而不只是文字流暢度。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+<span class="tag">sec-agent-eval</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">為什麼代理人評估需要紀錄工具呼叫與中間步驟？</div>
+<span class="q-id">#900026</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">方便追蹤錯誤來源、檢查權限使用並改善任務流程</li>
+<li data-label="B.">讓代理人輸出更多無關文字</li>
+<li data-label="C.">取代所有測試案例</li>
+<li data-label="D.">避免任何人知道代理人做過什麼</li>
+</ol>
+<div class="explanation">💡 工具呼叫紀錄能支援除錯、稽核、安全檢查與流程優化，尤其在代理人可執行外部動作時更重要。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+<span class="tag">sec-agent-eval</span>
+</div>
+</div>
+<h3 class="section-heading">代理推理迴圈</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Plan-and-Execute 模式在處理任務時的主要優勢是什麼？</div>
+<span class="q-id">#7111</span>
+</div>
+<ol class="options">
+<li data-label="A.">能夠完全避免模型產生幻覺的錯誤情況</li>
+<li data-label="B.">系統的反應速度快且幾乎沒有任何延遲</li>
+<li class="correct" data-label="C.">非常適合處理步驟已經明確的固定任務</li>
+<li data-label="D.">整個過程中不需依賴任何外部工具的輔助</li>
+</ol>
+<div class="explanation">💡 該模式將任務一次性拆解為多個步驟，非常適合邏輯清晰且明確的工作。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Plan-and-Execute 模式在面對何種情況時最容易發生失敗？</div>
+<span class="q-id">#7112</span>
+</div>
+<ol class="options">
+<li data-label="A.">當任務的內容本身過於簡單且缺乏挑戰時</li>
+<li data-label="B.">系統需要進行多次的工具函數呼叫步驟時</li>
+<li data-label="C.">本地電腦的可用記憶體空間不足夠使用時</li>
+<li class="correct" data-label="D.">執行過程中環境發生非預期的突發變化時</li>
+</ol>
+<div class="explanation">💡 由於一開始就制定好所有計畫，一旦執行環境有變，系統往往無法彈性調整。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Reflexion 框架相對於一般迴圈，加入了什麼關鍵機制？</div>
+<span class="q-id">#7115</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">任務失敗之後進行自我反省與改進</li>
+<li data-label="B.">完全隨機地嘗試各種可用的新方法</li>
+<li data-label="C.">將複雜任務分配給其他的協作代理</li>
+<li data-label="D.">任務開始之前先進行詳細的步驟規劃</li>
+</ol>
+<div class="explanation">💡 Reflexion 的核心在於遇到失敗時能進行反思，並將經驗保留給後續嘗試。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 Reflexion 框架中，代理人自我反省的結果通常會如何被儲存？</div>
+<span class="q-id">#7116</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">轉化為長期記憶庫中的歷史經驗紀錄</li>
+<li data-label="B.">直接寫入系統的底層錯誤日誌檔案中</li>
+<li data-label="C.">作為短期記憶區塊中的一次性使用變數</li>
+<li data-label="D.">備份到使用者個人的雲端硬碟儲存空間</li>
+</ol>
+<div class="explanation">💡 反省結果會被存入記憶體中，讓代理人未來面對類似任務時能避開錯誤。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">「後設認知 (Metacognition)」賦予代理人哪一種關鍵能力？</div>
+<span class="q-id">#7117</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">自主偵測行為缺陷並主動修正執行錯誤</li>
+<li data-label="B.">能夠自動產生出全新的後端應用程式碼</li>
+<li data-label="C.">繞過底層安全機制以獲取系統最高權限</li>
+<li data-label="D.">產生出更快的文字串流生成速度與效率</li>
+</ol>
+<div class="explanation">💡 後設認知讓代理人能「思考自己的思考過程」，進而達到修正錯誤與適應環境。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在代理人的推理迴圈中，「Action (行動)」階段的主要作用是？</div>
+<span class="q-id">#7123</span>
+</div>
+<ol class="options">
+<li data-label="A.">評估自身表現的優劣並將其寫入錯誤日誌</li>
+<li class="correct" data-label="B.">實際呼叫外部工具或 API 來改變環境狀態</li>
+<li data-label="C.">觀察並記錄環境在指令執行後的回傳結果</li>
+<li data-label="D.">分析使用者輸入文字背後所隱藏的真實意圖</li>
+</ol>
+<div class="explanation">💡 行動階段是指模型決定好策略後，具體執行工具呼叫來影響外部世界。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在代理人的推理迴圈中，「Observation (觀察)」階段的主要作用是？</div>
+<span class="q-id">#7124</span>
+</div>
+<ol class="options">
+<li data-label="A.">生成給使用者的最終自然語言對話回覆內容</li>
+<li data-label="B.">將整次對話的完整歷史記錄壓縮備份到雲端</li>
+<li data-label="C.">決定下一步應該要呼叫哪一個外部系統的工具</li>
+<li class="correct" data-label="D.">獲取並解析外部工具執行後所回傳的具體結果</li>
+</ol>
+<div class="explanation">💡 觀察階段讓代理人能看到剛才行動的結果，作為後續判斷與推理的依據。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 ReAct 框架中，Thought（思考）階段後通常緊接著哪一個階段？</div>
+<span class="q-id">#7131</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">Action（行動）階段</li>
+<li data-label="B.">記憶儲存階段</li>
+<li data-label="C.">任務規劃階段</li>
+<li data-label="D.">最終答案生成階段</li>
+</ol>
+<div class="explanation">💡 ReAct 循環是「思考→行動→觀察→再思考」，思考後緊接行動。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 Plan-and-Execute 框架中，如果執行階段遇到非預期狀況，通常如何處理？</div>
+<span class="q-id">#7133</span>
+</div>
+<ol class="options">
+<li data-label="A.">忽略錯誤並繼續執行原計劃</li>
+<li class="correct" data-label="B.">退回到規劃階段進行重新規劃</li>
+<li data-label="C.">自動切換到另一組完全不同的工具</li>
+<li data-label="D.">直接將任務標記為失敗</li>
+</ol>
+<div class="explanation">💡 Plan-and-Execute 在遇到問題時可以回到規劃階段動態調整，但不如 ReAct 靈活。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Reflexion 框架中的自我反思機制主要依賴哪一種技術來產生？</div>
+<span class="q-id">#7136</span>
+</div>
+<ol class="options">
+<li data-label="A.">使用傳統的程式碼異常處理機制</li>
+<li data-label="B.">使用固定模板自動生成反省文字</li>
+<li class="correct" data-label="C.">讓語言模型本身以自然語言撰寫反省內容</li>
+<li data-label="D.">透過外部 API 查詢錯誤原因</li>
+</ol>
+<div class="explanation">💡 Reflexion 讓 LLM 用自己的語言描述失敗原因，這種文字形式的反思比結構化記錄更有幫助。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪一個不是 ReAct 框架的核心步驟？</div>
+<span class="q-id">#7142</span>
+</div>
+<ol class="options">
+<li data-label="A.">Observation（觀察）</li>
+<li data-label="B.">Thought（思考）</li>
+<li class="correct" data-label="C.">Reflection（反思）</li>
+<li data-label="D.">Action（行動）</li>
+</ol>
+<div class="explanation">💡 Reflection（反思）是 Reflexion 框架的特色，非 ReAct 的核心步驟。ReAct 的核心是思考→行動→觀察。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 ReAct 循環中，Observation（觀察）階段的結果對後續思考有何影響？</div>
+<span class="q-id">#7145</span>
+</div>
+<ol class="options">
+<li data-label="A.">觀察結果會被忽略，模型仍然按原計劃執行</li>
+<li class="correct" data-label="B.">觀察結果作為新的事實依據，影響下一步的推理與決策</li>
+<li data-label="C.">觀察結果只記錄在日誌中，不影響當次任務</li>
+<li data-label="D.">觀察結果會直接覆寫使用者的原始輸入</li>
+</ol>
+<div class="explanation">💡 觀察結果是下一輪思考的關鍵輸入，讓代理人基於真實回饋動態調整行為。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列何種情境最適合使用 Plan-and-Execute 而非 ReAct？</div>
+<span class="q-id">#7147</span>
+</div>
+<ol class="options">
+<li data-label="A.">需要即時監控多個社群媒體的輿情分析系統</li>
+<li class="correct" data-label="B.">步驟明確且不太需要中途調整的批次資料處理任務</li>
+<li data-label="C.">需要與使用者多輪對話確認需求的客服機器人</li>
+<li data-label="D.">需要頻繁查詢即時股價的投資顧問</li>
+</ol>
+<div class="explanation">💡 Plan-and-Execute 適合步驟可預先確定的任務，批次資料處理是典型應用。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Reflexion 框架中，若代理人在多次嘗試後仍失敗，它通常會怎麼做？</div>
+<span class="q-id">#7150</span>
+</div>
+<ol class="options">
+<li data-label="A.">自動切換到另一個完全不同領域的語言模型</li>
+<li data-label="B.">無限期重試直到成功為止</li>
+<li data-label="C.">直接刪除所有相關記憶並從頭開始</li>
+<li class="correct" data-label="D.">將每次失敗的反思累積起來，不斷改進策略</li>
+</ol>
+<div class="explanation">💡 Reflexion 會累積每次失敗的反思，隨著經驗增加，成功機率也會提高。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">後設認知（Metacognition）賦予代理人下列哪一項能力？</div>
+<span class="q-id">#7155</span>
+</div>
+<ol class="options">
+<li data-label="A.">在工具呼叫失敗時自動切換備用伺服器</li>
+<li data-label="B.">將任務自動分配給其他協作代理人</li>
+<li data-label="C.">以更快的速度生成自然語言文本</li>
+<li class="correct" data-label="D.">評估自身推理品質、識別錯誤並據此調整策略</li>
+</ol>
+<div class="explanation">💡 後設認知是「對思考的思考」，讓代理人能自我評估與修正。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<h3 class="section-heading">什麼是 AI 代理人</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪一項操作屬於代理人的「感知能力 (Perception)」範疇？</div>
+<span class="q-id">#7113</span>
+</div>
+<ol class="options">
+<li data-label="A.">呼叫外部 API 來執行實際的網路請求操作</li>
+<li class="correct" data-label="B.">讀取使用者的文字輸入與系統的運作日誌</li>
+<li data-label="C.">規劃出完成任務所需的詳細後續執行步驟</li>
+<li data-label="D.">根據執行結果進行自我反省與修正錯誤</li>
+</ol>
+<div class="explanation">💡 感知能力指的是代理人接收並理解來自外部環境的輸入資訊。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">當代理人遇到未曾見過的突發情況時，最重要的展現能力是？</div>
+<span class="q-id">#7121</span>
+</div>
+<ol class="options">
+<li data-label="A.">直接中斷執行並回報任務失敗給終端使用者</li>
+<li data-label="B.">忽略所有出現的錯誤訊息並繼續執行既定步驟</li>
+<li data-label="C.">隨機挑選系統中任何一個可用的工具進行測試</li>
+<li class="correct" data-label="D.">基於環境回饋來動態調整策略並尋找替代方案</li>
+</ol>
+<div class="explanation">💡 自主性與適應力是代理人的核心，面對變化時能動態調整是其最大價值。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">相較於寫死的傳統自動化腳本，AI 代理人的核心優勢是什麼？</div>
+<span class="q-id">#7122</span>
+</div>
+<ol class="options">
+<li data-label="A.">程式的執行總耗時必定比傳統腳本更快</li>
+<li data-label="B.">在執行過程中絕對不會產生任何系統錯誤</li>
+<li class="correct" data-label="C.">能夠彈性適應高度不可預測的動態環境</li>
+<li data-label="D.">系統在運作時完全不需要任何人類的監督</li>
+</ol>
+<div class="explanation">💡 傳統腳本只能處理預先定義好的狀況，而代理人能根據上下文彈性處理未知變化。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列何者最適合用來描述 AI 代理人的「目標導向」特徵？</div>
+<span class="q-id">#7134</span>
+</div>
+<ol class="options">
+<li data-label="A.">代理人能同時處理多個使用者的請求</li>
+<li data-label="B.">代理人能自動更新語言模型的訓練資料</li>
+<li class="correct" data-label="C.">代理人圍繞明確目標持續工作直到達成</li>
+<li data-label="D.">代理人能以最快速度生成文字回應</li>
+</ol>
+<div class="explanation">💡 目標導向意味著代理人的所有行為都圍繞一個明確目標，而非隨機回應。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">代理人需要記憶能力的主要原因為何？</div>
+<span class="q-id">#7139</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">為了在對話過程中提供更一致的體驗並避免重複錯誤</li>
+<li data-label="B.">為了減少系統對大型語言模型的依賴</li>
+<li data-label="C.">為了讓模型能夠更快地生成文字回覆</li>
+<li data-label="D.">為了讓系統能在離線環境下正常運作</li>
+</ol>
+<div class="explanation">💡 記憶讓代理人能記住過往互動，避免重複錯誤並提供一致的個人化體驗。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">一個行動能力完整的 AI 代理人，無法做到下列哪一件事？</div>
+<span class="q-id">#7143</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">直接修改自身語言模型的內部權重</li>
+<li data-label="B.">執行簡單的數學計算</li>
+<li data-label="C.">搜尋網路上的即時資訊</li>
+<li data-label="D.">發送電子郵件給使用者</li>
+</ol>
+<div class="explanation">💡 代理人無法修改自身 LLM 的內部權重，那是訓練階段才能做的事。代理人只能透過工具與外部環境互動。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">傳統的「聊天機器人」在下列哪個方面與 AI 代理人最相似？</div>
+<span class="q-id">#7148</span>
+</div>
+<ol class="options">
+<li data-label="A.">都具備跨任務的長期記憶能力</li>
+<li data-label="B.">都能夠自主執行多步驟的任務</li>
+<li data-label="C.">都能夠呼叫外部工具來改變環境</li>
+<li class="correct" data-label="D.">都具備自然語言理解與生成的能力</li>
+</ol>
+<div class="explanation">💡 聊天機器人和代理人都具備自然語言處理能力，但代理人多了自主行動與工具使用能力。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪句話最能總結 AI 代理人與傳統自動化腳本的區別？</div>
+<span class="q-id">#7153</span>
+</div>
+<ol class="options">
+<li data-label="A.">代理人使用程式語言撰寫，腳本使用自然語言</li>
+<li class="correct" data-label="B.">代理人能基於推理動態決策，腳本按照固定規則執行</li>
+<li data-label="C.">代理人只能在雲端執行，腳本只能在本地執行</li>
+<li data-label="D.">代理人的執行速度一定比腳本慢</li>
+</ol>
+<div class="explanation">💡 傳統腳本是固定的 if-then-else 規則，代理人則仰賴 LLM 的動態推理能力。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">AI 代理人使用外部工具時，關於安全性的考量下列何者正確？</div>
+<span class="q-id">#7156</span>
+</div>
+<ol class="options">
+<li data-label="A.">代理人可以完全自由地執行任何工具</li>
+<li data-label="B.">工具使用不需要任何權限管理</li>
+<li class="correct" data-label="C.">高風險工具應加入人類審核機制</li>
+<li data-label="D.">只有 OpenAI 提供的工具才安全</li>
+</ol>
+<div class="explanation">💡 高風險操作（如刪除檔案、發送郵件）應由人類確認後再執行，確保安全。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<h3 class="section-heading">代理人的組成架構</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">AI 代理人設定中的「Persona (角色設定)」主要目的是什麼？</div>
+<span class="q-id">#7114</span>
+</div>
+<ol class="options">
+<li data-label="A.">決定系統預設需要掛載多少工具數量</li>
+<li class="correct" data-label="B.">賦予模型特定的行為邊界與互動風格</li>
+<li data-label="C.">自動減少每次對話的上下文視窗大小</li>
+<li data-label="D.">強制限制模型所能執行的最高運算速度</li>
+</ol>
+<div class="explanation">💡 角色設定能指導代理人該以何種語氣和態度回應，確保行為符合預期。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列何者最符合「工作記憶 (Working Memory)」的典型應用場景？</div>
+<span class="q-id">#7125</span>
+</div>
+<ol class="options">
+<li data-label="A.">記錄系統啟動時載入的預設系統提示詞</li>
+<li data-label="B.">永遠記住使用者的名字與偏好的語言設定</li>
+<li class="correct" data-label="C.">暫存多步驟計算過程中產生的中間變數</li>
+<li data-label="D.">永久保存過去所有專案任務的歷史經驗</li>
+</ol>
+<div class="explanation">💡 工作記憶就像系統的草稿紙，專門用來暫存執行中任務的各種中間狀態。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪一個選項「不屬於」現代 AI 代理人的核心組成要素？</div>
+<span class="q-id">#7127</span>
+</div>
+<ol class="options">
+<li data-label="A.">能夠用來影響外部環境的可呼叫外部工具</li>
+<li class="correct" data-label="B.">只能按照單一路徑執行的固定不變決策樹</li>
+<li data-label="C.">具備自然語言理解能力的大型語言模型</li>
+<li data-label="D.">用來儲存任務狀態與歷史經驗的記憶系統</li>
+</ol>
+<div class="explanation">💡 代理人依賴 LLM 動態推理，而非傳統自動化系統所使用的固定決策樹。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">為什麼功能完善的 AI 代理人系統不可或缺「長期記憶」？</div>
+<span class="q-id">#7128</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">為了在跨越多個獨立對話時仍能保留過往經驗</li>
+<li data-label="B.">為了大幅度減少系統呼叫外部 API 的整體次數</li>
+<li data-label="C.">為了能直接取代大型語言模型本身的內部權重</li>
+<li data-label="D.">為了讓模型能以更快的速度生成文字對話串流</li>
+</ol>
+<div class="explanation">💡 長期記憶讓代理人能記住使用者的偏好與過往互動，提供更個人化的服務。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">AI 代理人所需的「角色設定（Persona）」通常存放在哪個元件中？</div>
+<span class="q-id">#7129</span>
+</div>
+<ol class="options">
+<li data-label="A.">外部向量資料庫的記憶檔案中</li>
+<li class="correct" data-label="B.">系統提示詞或 Profile 設定檔中</li>
+<li data-label="C.">作業系統的環境變數設定檔中</li>
+<li data-label="D.">大型語言模型的內部神經網路權重</li>
+</ol>
+<div class="explanation">💡 角色設定通常是靜態資訊，存放在系統提示詞或 Profile 設定檔中，指導代理人的行為風格與邊界。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">代理人架構中的「工作記憶」與「短期記憶」最主要的差別是什麼？</div>
+<span class="q-id">#7135</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">工作記憶儲存的是執行中的中間狀態，短期記憶儲存對話歷史</li>
+<li data-label="B.">工作記憶的容量比短期記憶大得多</li>
+<li data-label="C.">兩者本質完全相同，只是名稱不同</li>
+<li data-label="D.">工作記憶是永久儲存，短期記憶是暫時儲存</li>
+</ol>
+<div class="explanation">💡 工作記憶專注於當前任務的中間變數，短期記憶主要保存對話上下文。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪一種記憶策略最適合需要「長期記住使用者偏好」的場景？</div>
+<span class="q-id">#7141</span>
+</div>
+<ol class="options">
+<li data-label="A.">只使用短期記憶，每次任務從零開始</li>
+<li data-label="B.">將所有對話歷史直接塞入上下文視窗中</li>
+<li data-label="C.">不使用任何記憶，每次由使用者重新設定</li>
+<li class="correct" data-label="D.">將使用者偏好寫入長期記憶（如向量資料庫）並跨任務檢索</li>
+</ol>
+<div class="explanation">💡 長期記憶能跨任務保存使用者偏好，讓代理人在不同對話中保持一致的行為。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">大型語言模型在代理人架構中扮演什麼角色？</div>
+<span class="q-id">#7146</span>
+</div>
+<ol class="options">
+<li data-label="A.">作為長期記憶的儲存載體</li>
+<li class="correct" data-label="B.">作為核心的推理與決策引擎</li>
+<li data-label="C.">作為網路通訊的傳輸層</li>
+<li data-label="D.">作為工具呼叫的執行環境</li>
+</ol>
+<div class="explanation">💡 LLM 是代理人的「大腦」，負責理解任務、規劃步驟與決定工具使用時機。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在代理人系統中，「外部工具」主要是透過什麼機制與語言模型互動？</div>
+<span class="q-id">#7149</span>
+</div>
+<ol class="options">
+<li data-label="A.">工具直接修改 LLM 的內部參數來影響行為</li>
+<li data-label="B.">工具將結果編碼成 EEG 訊號輸入 LLM</li>
+<li class="correct" data-label="C.">LLM 輸出格式化的工具呼叫請求，由應用程式層執行</li>
+<li data-label="D.">工具透過藍牙或 Wi-Fi 直接與 LLM 硬體連線</li>
+</ol>
+<div class="explanation">💡 LLM 不能直接執行程式，而是輸出結構化請求，由中介層負責執行工具。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪一個選項最適合作為代理人的「短期記憶」範例？</div>
+<span class="q-id">#7154</span>
+</div>
+<ol class="options">
+<li data-label="A.">向量資料庫中所有過往專案的知識</li>
+<li class="correct" data-label="B.">當前對話中使用者剛才問的問題與 AI 的回答</li>
+<li data-label="C.">資料庫中儲存的使用者偏好設定檔</li>
+<li data-label="D.">系統開機時載入的作業系統核心模組</li>
+</ol>
+<div class="explanation">💡 短期記憶對應當前的對話上下文，保存最近的互動內容。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪個選項描述了代理人「感知能力」的最佳範例？</div>
+<span class="q-id">#7158</span>
+</div>
+<ol class="options">
+<li data-label="A.">代理人根據使用者輸入決定下一步行動</li>
+<li data-label="B.">代理人在完成任務後將結果儲存到資料庫</li>
+<li data-label="C.">代理人根據失敗經驗調整未來的行為</li>
+<li class="correct" data-label="D.">代理人從 PDF 檔案中提取文字內容並解析</li>
+</ol>
+<div class="explanation">💡 感知能力是從外部環境獲取資訊，讀取 PDF 檔案並解析內容屬於感知範疇。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<h3 class="section-heading">代理人類型</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Agentic RAG 與傳統的 Naive RAG 最大的區別在於什麼？</div>
+<span class="q-id">#7118</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">代理人是否能主動決定何時進行資料檢索</li>
+<li data-label="B.">系統底層是否依賴強大的向量嵌入模型</li>
+<li data-label="C.">伺服器回傳檢索結果時的速度快慢差異</li>
+<li data-label="D.">向量資料庫所能容納的整體資料容量大小</li>
+</ol>
+<div class="explanation">💡 Agentic RAG 允許代理人根據當下需求，自主判斷是否需要呼叫檢索工具。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在多代理 (Multi-Agent) 系統中，不同的代理人通常是如何進行協作的？</div>
+<span class="q-id">#7126</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">代理人透過標準化協議交換訊息以分配並完成任務</li>
+<li data-label="B.">代理人之間互相競爭搶奪系統中有限的運算資源</li>
+<li data-label="C.">所有代理人共用同一個神經網路模型與內部權重</li>
+<li data-label="D.">代理人會透過直接覆寫對方的短期記憶來傳遞資訊</li>
+</ol>
+<div class="explanation">💡 多代理系統透過定義明確的通訊協議，讓各自專業的代理人能分工協作。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">「工具使用代理人」與一般聊天機器人最大的不同點是什麼？</div>
+<span class="q-id">#7130</span>
+</div>
+<ol class="options">
+<li data-label="A.">工具使用代理人不需要大型語言模型作為核心引擎</li>
+<li data-label="B.">工具使用代理人只能使用預先寫死的工具集</li>
+<li data-label="C.">工具使用代理人的回應速度一定比聊天機器人更快</li>
+<li class="correct" data-label="D.">工具使用代理人能根據任務需求動態選擇並呼叫外部工具</li>
+</ol>
+<div class="explanation">💡 工具使用代理人的核心特徵是能動態選擇工具，而非只能被動回話。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">知識檢索代理人（RAG Agent）的特色是什麼？</div>
+<span class="q-id">#7137</span>
+</div>
+<ol class="options">
+<li data-label="A.">不需要大型語言模型即可獨立運作</li>
+<li data-label="B.">主要用於執行系統層級的檔案管理任務</li>
+<li class="correct" data-label="C.">能從外部知識庫中即時檢索相關資訊來輔助回答</li>
+<li data-label="D.">只能回傳已經存在於訓練資料中的知識</li>
+</ol>
+<div class="explanation">💡 RAG Agent 能在推理過程中從外部知識庫擷取相關資訊，擴展模型的能力範圍。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在多代理系統中，為什麼不讓單一代理人處理所有事情就好？</div>
+<span class="q-id">#7140</span>
+</div>
+<ol class="options">
+<li data-label="A.">因為單一代理人一定會違反系統的安全規範</li>
+<li class="correct" data-label="B.">因為專業分工能讓不同代理人各自專精，提升整體效能</li>
+<li data-label="C.">因為單一模型無法理解多種語言的指令</li>
+<li data-label="D.">因為多代理系統的建置成本一定比單一代理更低</li>
+</ol>
+<div class="explanation">💡 多代理系統讓每個代理人專精特定領域，就像團隊成員各有專長，協作效果優於全能但平庸的個體。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列何者最適合描述「Agentic RAG」的運作方式？</div>
+<span class="q-id">#7151</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">代理人根據問題自主決定是否檢索、檢索什麼、以及需要檢索幾次</li>
+<li data-label="B.">完全不使用外部資料，只依賴模型內部知識</li>
+<li data-label="C.">使用者提問後，系統固定檢索一次就回答</li>
+<li data-label="D.">將所有知識庫內容預先載入語言模型的上下文視窗</li>
+</ol>
+<div class="explanation">💡 Agentic RAG 讓代理人在推理迴圈中動態決定檢索策略，比固定檢索更靈活。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">「寫作代理人」和「程式碼代理人」在多代理系統中如何協作？</div>
+<span class="q-id">#7157</span>
+</div>
+<ol class="options">
+<li data-label="A.">只有一個代理人會真正工作，另一個是備份</li>
+<li class="correct" data-label="B.">各司其職，寫作代理人負責文件生成，程式碼代理人負責開發測試</li>
+<li data-label="C.">兩個代理人輪流執行完全相同的任務以確保一致性</li>
+<li data-label="D.">寫作代理人先完成所有文字，再交給程式碼代理人執行</li>
+</ol>
+<div class="explanation">💡 在多代理系統中，不同專業的代理人分工協作，各自負責擅長的領域。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<h3 class="section-heading">Agent 的評估指標</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在評估代理人表現時，「任務成功率」指的是什麼？</div>
+<span class="q-id">#7119</span>
+</div>
+<ol class="options">
+<li data-label="A.">系統成功呼叫所有外部工具的總次數統計</li>
+<li data-label="B.">代理人生成回覆時所使用的總文字數量</li>
+<li data-label="C.">代理人運行單一任務所耗費的整體時間</li>
+<li class="correct" data-label="D.">代理人最終能順利完成給定目標的比例</li>
+</ol>
+<div class="explanation">💡 任務成功率是最直觀的指標，衡量代理人是否能實際解決使用者交付的問題。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">評估代理人時，「工具準確度」主要是用來衡量什麼？</div>
+<span class="q-id">#7120</span>
+</div>
+<ol class="options">
+<li data-label="A.">外部系統所能支援處理的多國語言數量</li>
+<li data-label="B.">每個外部工具執行時消耗的雲端運算資源</li>
+<li data-label="C.">工具伺服器回應 API 請求時的網路延遲時間</li>
+<li class="correct" data-label="D.">代理人在各種情境下選擇正確工具的比例</li>
+</ol>
+<div class="explanation">💡 工具準確度關注代理人是否能在對的時機挑選並正確呼叫合適的工具。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">代理人的「幻覺率（Hallucination Rate）」指的是什麼？</div>
+<span class="q-id">#7132</span>
+</div>
+<ol class="options">
+<li data-label="A.">代理人在任務中呼叫錯誤工具的比例</li>
+<li data-label="B.">代理人從接收到任務到給出回應所花費的平均時間</li>
+<li class="correct" data-label="C.">代理人生成虛假或與事實不符資訊的頻率</li>
+<li data-label="D.">代理人因為系統錯誤而中斷任務的機率</li>
+</ol>
+<div class="explanation">💡 幻覺率衡量代理人產生不實資訊的傾向，是評估可靠性的關鍵指標。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在衡量代理人效能時，「回應延遲（Response Latency）」指的是什麼？</div>
+<span class="q-id">#7138</span>
+</div>
+<ol class="options">
+<li data-label="A.">系統從啟動到可以開始接受任務的初始化時間</li>
+<li data-label="B.">使用者輸入文字後到看到第一個字元回應的時間</li>
+<li class="correct" data-label="C.">代理人從接到任務到給出最終結果所花費的總時間</li>
+<li data-label="D.">代理人呼叫外部工具後等待回傳結果的時間</li>
+</ol>
+<div class="explanation">💡 回應延遲是衡量代理人效率的重要指標，包含推理、工具呼叫與結果生成的全部時間。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">評估代理人時，「成本效率（Cost Efficiency）」通常如何計算？</div>
+<span class="q-id">#7144</span>
+</div>
+<ol class="options">
+<li data-label="A.">代理人每秒鐘可以處理的請求數量</li>
+<li class="correct" data-label="B.">代理人完成任務所需的總 API 呼叫費用除以任務數量</li>
+<li data-label="C.">系統啟動代理人所需的初始設定費用</li>
+<li data-label="D.">代理人生成每個字元所需的算力成本</li>
+</ol>
+<div class="explanation">💡 成本效率衡量每次成功任務的平均花費，是評估代理人經濟效益的重要指標。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在評估代理人時，為什麼「步驟效率」和「任務成功率」需要同時考量？</div>
+<span class="q-id">#7152</span>
+</div>
+<ol class="options">
+<li data-label="A.">因為這兩個指標合併計算後可以推估模型參數大小</li>
+<li data-label="B.">因為這是業界法規強制規定的評估標準</li>
+<li class="correct" data-label="C.">因為高效率但低成功率的代理人不實用，高成功率但效率低則成本太高</li>
+<li data-label="D.">因為這兩個指標永遠呈反比關係</li>
+</ol>
+<div class="explanation">💡 理想的代理人應同時兼顧效率與成功率，過度追求單一指標可能犧牲另一項。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch1</span>
+</div>
+</div>
+<h2 class="chapter-heading" id="ch-2">模型上下文協議 (MCP)</h2>
+<h3 class="section-heading">問題的起源：為什麼需要 MCP？</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">MCP (Model Context Protocol) 主要解決什麼問題？</div>
+<span class="q-id">#7201</span>
+</div>
+<ol class="options">
+<li data-label="A.">降低 AI 模型的幻覺（Hallucination）問題</li>
+<li data-label="B.">改善 LLM 的訓練效率</li>
+<li class="correct" data-label="C.">解決 AI 模型與外部工具整合的碎片化問題，提供標準化協議</li>
+<li data-label="D.">提升大型語言模型的推理速度</li>
+</ol>
+<div class="explanation">💡 MCP 提供統一標準，讓 AI 系統與工具的整合從 M×N 個客製化整合簡化為 M+N 個標準實作，解決碎片化問題。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-intro</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">MCP 與傳統的客製化 API 整合相比，最大的優勢是什麼？</div>
+<span class="q-id">#7230</span>
+</div>
+<ol class="options">
+<li data-label="A.">MCP 只能用於 Claude 模型</li>
+<li class="correct" data-label="B.">MCP 提供標準化介面，讓整合從 M×N 簡化為 M+N</li>
+<li data-label="C.">MCP 的執行速度永遠比客製化 API 更快</li>
+<li data-label="D.">MCP 不需要任何程式碼即可完成工具整合</li>
+</ol>
+<div class="explanation">💡 MCP 的標準化設計大幅降低了整合複雜度，從乘法級的客製化整合變為加法級的標準實作。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-intro</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">MCP 協議中的「M」代表什麼？</div>
+<span class="q-id">#7237</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">Model（模型）</li>
+<li data-label="B.">Machine（機器）</li>
+<li data-label="C.">Multi（多重）</li>
+<li data-label="D.">Message（訊息）</li>
+</ol>
+<div class="explanation">💡 MCP 全稱為 Model Context Protocol（模型上下文協議），M 代表 Model。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-intro</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">MCP 如何幫助 AI 系統「發現」新的工具？</div>
+<span class="q-id">#7243</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">MCP 伺服器可動態提供可用工具清單與參數定義</li>
+<li data-label="B.">MCP 客戶端會定期掃描網路上的所有可用服務</li>
+<li data-label="C.">使用者必須手動在設定檔中描述每個工具的細節</li>
+<li data-label="D.">LLM 會自動從訓練資料中學習新工具的使用方式</li>
+</ol>
+<div class="explanation">💡 MCP 伺服器會向客戶端揭露可用工具清單與 JSON Schema 參數定義。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-intro</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">MCP 誕生之前，開發者整合 AI 與工具的典型困境為何？</div>
+<span class="q-id">#7250</span>
+</div>
+<ol class="options">
+<li data-label="A.">所有工具都需要收費，開源方案很少</li>
+<li data-label="B.">語言模型完全無法理解任何工具的用途</li>
+<li class="correct" data-label="C.">每個 AI 與每個工具都需要客製化整合，維護成本極高</li>
+<li data-label="D.">工具數量太少，無法滿足需求</li>
+</ol>
+<div class="explanation">💡 在 MCP 之前，每對 AI-工具都需要單獨整合，形成難以維護的 M×N 整合矩陣。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-intro</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">MCP 協議能促進 AI 模型之間的互操作性，這是因為它提供了什麼？</div>
+<span class="q-id">#7257</span>
+</div>
+<ol class="options">
+<li data-label="A.">一套強制所有模型使用的私有通訊協定</li>
+<li data-label="B.">一種通用的 AI 模型效能評分標準</li>
+<li data-label="C.">一個統一的模型訓練框架</li>
+<li class="correct" data-label="D.">標準化的工具與資源描述介面，不受特定模型綁定</li>
+</ol>
+<div class="explanation">💡 MCP 的標準化介面讓不同 AI 模型都能使用相同的工具描述，切換模型時不需重寫整合。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-intro</span>
+</div>
+</div>
+<h3 class="section-heading">MCP 的三個角色</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 MCP 架構中，「主機 (Host)」的主要職責是什麼？</div>
+<span class="q-id">#7202</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">管理 MCP 客戶端生命週期、協調 LLM 與伺服器通訊，並執行授權決策</li>
+<li data-label="B.">充當 LLM 和使用者之間的翻譯層</li>
+<li data-label="C.">只負責將使用者輸入轉換為 JSON 格式</li>
+<li data-label="D.">直接儲存和管理工具的程式碼邏輯</li>
+</ol>
+<div class="explanation">💡 主機是整個 MCP 系統的協調中心，負責管理客戶端、執行安全策略，以及在 LLM 和 MCP 伺服器之間傳遞訊息。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-architecture</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 MCP 架構中，一個「客戶端 (Client)」維護的連線關係是？</div>
+<span class="q-id">#7203</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">每個客戶端維護與單一 MCP 伺服器的一對一連線</li>
+<li data-label="B.">多個客戶端共享同一個 MCP 伺服器連線</li>
+<li data-label="C.">客戶端直接與使用者連線，不與伺服器通訊</li>
+<li data-label="D.">一個客戶端可同時連線多個 MCP 伺服器</li>
+</ol>
+<div class="explanation">💡 MCP 架構設計為每個客戶端維護與單一 MCP 伺服器的連線，主機可以建立多個客戶端以同時連線不同的伺服器。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-architecture</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 MCP 架構中，如果一個應用程式需要同時連接資料庫和檔案系統，它需要建立多少個客戶端？</div>
+<span class="q-id">#7231</span>
+</div>
+<ol class="options">
+<li data-label="A.">不需要客戶端，直接由主機連線</li>
+<li data-label="B.">取決於 LLM 模型的種類</li>
+<li data-label="C.">1 個客戶端同時連線兩個伺服器</li>
+<li class="correct" data-label="D.">2 個客戶端，各連線一個伺服器</li>
+</ol>
+<div class="explanation">💡 每個 MCP 客戶端僅維護與單一伺服器的一對一連線，因此需要為每個伺服器建立獨立的客戶端。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-architecture</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">如果一個 MCP 伺服器崩潰了，對整個系統的影響為何？</div>
+<span class="q-id">#7238</span>
+</div>
+<ol class="options">
+<li data-label="A.">整個主機都會跟著崩潰</li>
+<li data-label="B.">系統會自動重新啟動整個主機</li>
+<li data-label="C.">所有已連線的伺服器都會一起崩潰</li>
+<li class="correct" data-label="D.">只有連線到該伺服器的那個客戶端受影響，其他正常運作</li>
+</ol>
+<div class="explanation">💡 一對一的客戶端-伺服器設計確保了故障隔離，一個伺服器崩潰不會影響其他連線。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-architecture</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 MCP 術語中，「主機（Host）」與「客戶端（Client）」的關係類似於什麼？</div>
+<span class="q-id">#7246</span>
+</div>
+<ol class="options">
+<li data-label="A.">主機是伺服器，客戶端是使用者</li>
+<li data-label="B.">主機是硬體，客戶端是軟體</li>
+<li class="correct" data-label="C.">主機是整體應用程式，客戶端是內部的通訊模組</li>
+<li data-label="D.">主機是作業系統，客戶端是應用程式</li>
+</ol>
+<div class="explanation">💡 主機是使用者直接互動的應用程式（如 Claude Desktop），客戶端是主機內部負責與單一伺服器通訊的模組。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-architecture</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">一個設計良好的 MCP 伺服器應該遵循什麼原則？</div>
+<span class="q-id">#7253</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">專注單一職責，只提供特定領域的能力</li>
+<li data-label="B.">一個伺服器提供所有可能的功能以最大化便利性</li>
+<li data-label="C.">伺服器應該包含完整的 LLM 推理能力</li>
+<li data-label="D.">伺服器不應該對外暴露任何功能描述</li>
+</ol>
+<div class="explanation">💡 遵循單一職責原則，每個 MCP 伺服器專注於一個特定領域（如天氣、資料庫），便於維護與組合。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-architecture</span>
+</div>
+</div>
+<h3 class="section-heading">MCP 提供的三種能力</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">MCP 中的「資源 (Resources)」與「工具 (Tools)」的主要差異是什麼？</div>
+<span class="q-id">#7204</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">資源是 LLM 可讀取的資料，工具是 LLM 可執行的操作</li>
+<li data-label="B.">資源比工具更安全，不需要使用者授權</li>
+<li data-label="C.">資源和工具功能完全相同，只是命名不同</li>
+<li data-label="D.">工具只能回傳文字，資源可回傳二進位資料</li>
+</ol>
+<div class="explanation">💡 資源（Resources）代表可讀取的資料（如檔案、資料庫記錄），透過 URI 定位；工具（Tools）代表可執行的操作（如搜尋、計算），由 LLM 主動呼叫。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-components</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪一項是 MCP 中「工具（Tools）」的典型範例？</div>
+<span class="q-id">#7232</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">發送電子郵件的函數</li>
+<li data-label="B.">顯示系統版本的靜態資訊</li>
+<li data-label="C.">讀取伺服器上的設定檔內容</li>
+<li data-label="D.">預先定義的對話起始模板</li>
+</ol>
+<div class="explanation">💡 工具是可由 LLM 主動呼叫的操作，會產生副作用（如發送郵件），而非單純讀取資料。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-components</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">MCP 的「Prompts（提示範本）」與一般的系統提示詞有何不同？</div>
+<span class="q-id">#7239</span>
+</div>
+<ol class="options">
+<li data-label="A.">Prompts 只能由使用者手動撰寫，不能由伺服器提供</li>
+<li data-label="B.">兩者完全相同，只是 MCP 重新命名</li>
+<li class="correct" data-label="C.">Prompts 是由伺服器動態提供的模板，而非主機預先設定的靜態提示</li>
+<li data-label="D.">Prompts 只能用於除錯目的，不能用在正式環境</li>
+</ol>
+<div class="explanation">💡 MCP Prompts 是伺服器端提供的動態模板，讓主機能根據任務需求載入不同的起始設定。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-components</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪個選項屬於 MCP 的「資源（Resources）」？</div>
+<span class="q-id">#7247</span>
+</div>
+<ol class="options">
+<li data-label="A.">一個負責發送 Slack 通知的函數</li>
+<li data-label="B.">一個計算匯率的數學運算</li>
+<li data-label="C.">一個用於程式碼審查的對話範本</li>
+<li class="correct" data-label="D.">一個位於 file:///reports/summary.pdf 的檔案</li>
+</ol>
+<div class="explanation">💡 資源是可讀取的靜態資料，以 URI 定位。檔案屬於典型的資源。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-components</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">當 LLM 需要執行一個有副作用的操作（如刪除檔案）時，MCP 中應該使用哪一種元件？</div>
+<span class="q-id">#7254</span>
+</div>
+<ol class="options">
+<li data-label="A.">Client（客戶端）</li>
+<li data-label="B.">Prompt（提示範本）</li>
+<li class="correct" data-label="C.">Tool（工具）</li>
+<li data-label="D.">Resource（資源）</li>
+</ol>
+<div class="explanation">💡 有副作用的操作應使用 Tool，因為 Tool 代表可由 LLM 主動呼叫的執行操作。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-components</span>
+</div>
+</div>
+<h3 class="section-heading">MCP 的通訊方式</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">MCP 的「stdio 傳輸」與「HTTP + SSE 傳輸」最主要的適用場景差異是什麼？</div>
+<span class="q-id">#7205</span>
+</div>
+<ol class="options">
+<li data-label="A.">stdio 速度更快但不安全，HTTP + SSE 較慢但安全</li>
+<li class="correct" data-label="B.">stdio 適合本地部署（透過子程序），HTTP + SSE 適合遠端/雲端部署</li>
+<li data-label="C.">兩者完全相同，只是語法不同</li>
+<li data-label="D.">stdio 適合遠端伺服器，HTTP + SSE 適合本地程式</li>
+</ol>
+<div class="explanation">💡 stdio 傳輸透過標準輸入/輸出管道與本地子程序通訊，適合本地安全部署；HTTP + SSE 支援跨網路存取，適合雲端或遠端 MCP 伺服器。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-transport</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪種情況最適合選擇 HTTP + SSE 而非 stdio 傳輸？</div>
+<span class="q-id">#7233</span>
+</div>
+<ol class="options">
+<li data-label="A.">開發者在本機筆電上測試 MCP 伺服器</li>
+<li data-label="B.">使用者的電腦完全沒有網路連線</li>
+<li class="correct" data-label="C.">MCP 伺服器部署在雲端需要跨網路存取</li>
+<li data-label="D.">伺服器需要直接讀取本機檔案系統</li>
+</ol>
+<div class="explanation">💡 HTTP + SSE 支援跨網路遠端通訊，適合部署在雲端的伺服器。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-transport</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">stdio 傳輸方式的主要安全優勢是什麼？</div>
+<span class="q-id">#7240</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">stdio 只在本機子程序間通訊，不暴露網路埠</li>
+<li data-label="B.">stdio 會自動加密所有傳輸的資料</li>
+<li data-label="C.">stdio 支援任何程式語言開發的伺服器</li>
+<li data-label="D.">stdio 傳輸速度比網路傳輸快十倍</li>
+</ol>
+<div class="explanation">💡 stdio 透過標準輸入輸出與本地子程序通訊，不需要開放任何網路埠，減少攻擊面。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-transport</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">stdio 傳輸方式在何種情況下可能不適合使用？</div>
+<span class="q-id">#7248</span>
+</div>
+<ol class="options">
+<li data-label="A.">當主機和伺服器在同一台電腦上時</li>
+<li class="correct" data-label="B.">當 MCP 伺服器需要被多個遠端使用者共享時</li>
+<li data-label="C.">當開發者在本地開發與測試時</li>
+<li data-label="D.">當伺服器需要讀取本地檔案時</li>
+</ol>
+<div class="explanation">💡 stdio 僅限本機通訊，當伺服器需要被遠端存取時應改用 HTTP + SSE。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-transport</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 MCP 的 HTTP + SSE 傳輸模式中，SSE（Server-Sent Events）主要用於傳遞什麼類型的資料？</div>
+<span class="q-id">#7255</span>
+</div>
+<ol class="options">
+<li data-label="A.">客戶端向伺服器發送的工具呼叫請求</li>
+<li data-label="B.">使用者與主機之間的自然語言對話</li>
+<li data-label="C.">LLM 模型的神經網路權重更新</li>
+<li class="correct" data-label="D.">伺服器向客戶端的單向即時事件推送</li>
+</ol>
+<div class="explanation">💡 SSE 是伺服器向客戶端的單向推送機制，適合傳遞即時的事件與狀態更新。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-transport</span>
+</div>
+</div>
+<h3 class="section-heading">在 Claude Desktop 設定 MCP 工具</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">使用 Python MCP SDK (FastMCP) 定義工具時，工具的「description」欄位最重要的用途是什麼？</div>
+<span class="q-id">#7206</span>
+</div>
+<ol class="options">
+<li data-label="A.">用於顯示給最終使用者看的說明文字</li>
+<li data-label="B.">用於產生 API 文件</li>
+<li data-label="C.">定義工具的輸入參數類型</li>
+<li class="correct" data-label="D.">LLM 根據此描述決定何時以及如何呼叫此工具</li>
+</ol>
+<div class="explanation">💡 工具的描述 (description) 是 LLM 判斷在什麼情況下應呼叫此工具的關鍵依據，清晰的描述能顯著提升工具被正確選用的機率。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-server-dev</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">使用 FastMCP 定義工具時，為什麼參數的型別註記（type hint）很重要？</div>
+<span class="q-id">#7236</span>
+</div>
+<ol class="options">
+<li data-label="A.">型別註記會決定工具呼叫的網路傳輸協定</li>
+<li class="correct" data-label="B.">型別註記會自動轉換為 JSON Schema，幫助 LLM 理解參數格式</li>
+<li data-label="C.">型別註記只對人類閱讀有幫助，對 LLM 沒有影響</li>
+<li data-label="D.">型別註記會影響 LLM 選擇工具的意願</li>
+</ol>
+<div class="explanation">💡 FastMCP 會根據型別註記自動生成 JSON Schema 描述，讓 LLM 知道參數的格式與限制。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-server-dev</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 MCP 伺服器中，為什麼工具的描述（description）比工具的名稱更重要？</div>
+<span class="q-id">#7241</span>
+</div>
+<ol class="options">
+<li data-label="A.">因為 description 的長度會影響工具呼叫的優先權</li>
+<li data-label="B.">因為名稱對 LLM 完全沒有意義</li>
+<li class="correct" data-label="C.">因為 LLM 主要根據 description 判斷何時使用工具，名稱只是識別</li>
+<li data-label="D.">因為 description 決定了工具的回傳格式</li>
+</ol>
+<div class="explanation">💡 LLM 透過自然語言理解來決定工具使用時機，清晰描述能大幅提升工具的選用準確率。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-server-dev</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 Claude Desktop 中設定 MCP 伺服器時，使用者需要提供哪些資訊？</div>
+<span class="q-id">#7249</span>
+</div>
+<ol class="options">
+<li data-label="A.">使用者的電子郵件與密碼</li>
+<li class="correct" data-label="B.">工具的名稱、啟動方式、以及存取範圍</li>
+<li data-label="C.">MCP 協議的版本號與原始碼</li>
+<li data-label="D.">LLM 模型的 API 金鑰</li>
+</ol>
+<div class="explanation">💡 設定 MCP 伺服器需要指定工具名稱、如何啟動該伺服器程式，以及允許存取的資源範圍。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-server-dev</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">使用社群提供的現成 MCP 伺服器（如 server-filesystem）時，開發者還需要做什麼？</div>
+<span class="q-id">#7256</span>
+</div>
+<ol class="options">
+<li data-label="A.">需要向原始作者支付授權費用</li>
+<li data-label="B.">必須自行將伺服器重新編譯成可執行檔</li>
+<li data-label="C.">必須從頭閱讀所有原始碼才能使用</li>
+<li class="correct" data-label="D.">只需在設定檔中描述要連接的伺服器與存取範圍</li>
+</ol>
+<div class="explanation">💡 使用現成 MCP 伺服器時，只需在設定中指定伺服器名稱與存取範圍即可使用。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-server-dev</span>
+</div>
+</div>
+<h3 class="section-heading">MCP 的安全設計</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">依照 MCP 安全設計，什麼是防範「提示注入攻擊 (Prompt Injection)」的最佳實踐？</div>
+<span class="q-id">#7207</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">MCP 伺服器應對所有來自 LLM 的輸入進行驗證，不信任任何未經驗證的內容</li>
+<li data-label="B.">將所有工具呼叫結果加密後再回傳</li>
+<li data-label="C.">禁止 LLM 呼叫任何外部工具</li>
+<li data-label="D.">只使用官方提供的 MCP 伺服器</li>
+</ol>
+<div class="explanation">💡 提示注入攻擊可能透過惡意資料偽裝成合法指令。MCP 伺服器應對輸入進行嚴格驗證，避免將未受信任的資料直接用於執行系統命令或資料庫查詢。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-security</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 MCP 的安全設計中，使用者何時會被要求授權工具操作？</div>
+<span class="q-id">#7234</span>
+</div>
+<ol class="options">
+<li data-label="A.">使用者永遠不需要授權，完全信任 LLM</li>
+<li class="correct" data-label="B.">只有高風險操作才需要使用者授權，一般操作可自動執行</li>
+<li data-label="C.">每次工具呼叫都需要使用者手動授權</li>
+<li data-label="D.">授權與否完全由 MCP 伺服器自行決定</li>
+</ol>
+<div class="explanation">💡 MCP 設計讓使用者掌握控制權，高風險操作需要授權，一般操作可設為自動允許。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-security</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">一個天氣查詢用的 MCP 伺服器應該擁有什麼權限？</div>
+<span class="q-id">#7245</span>
+</div>
+<ol class="options">
+<li data-label="A.">可以存取所有使用者的個人資料</li>
+<li data-label="B.">擁有完整的檔案系統讀寫權限</li>
+<li class="correct" data-label="C.">只需要呼叫天氣 API 與回傳結果的權限</li>
+<li data-label="D.">擁有管理員權限以確保穩定性</li>
+</ol>
+<div class="explanation">💡 遵循最小授權原則，天氣伺服器只需要呼叫天氣 API 的能力，不應擁有其他權限。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-security</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">提示注入攻擊（Prompt Injection）如何影響 MCP 系統的安全性？</div>
+<span class="q-id">#7252</span>
+</div>
+<ol class="options">
+<li data-label="A.">攻擊者透過修改 MCP 協議的原始碼入侵系統</li>
+<li data-label="B.">攻擊者直接刪除伺服器上的工具定義檔</li>
+<li data-label="C.">攻擊者透過阻塞網路連線來阻止 MCP 通訊</li>
+<li class="correct" data-label="D.">惡意資料偽裝成正常內容混入上下文，誘導 LLM 呼叫非預期工具</li>
+</ol>
+<div class="explanation">💡 提示注入攻擊將惡意指令藏在看似正常的資料中，讓 LLM 誤以為是合法指令而執行。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-security</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪一項是 MCP 系統中防範提示注入攻擊的最佳做法？</div>
+<span class="q-id">#7259</span>
+</div>
+<ol class="options">
+<li data-label="A.">將所有工具的輸入參數設為必填以減少攻擊面</li>
+<li data-label="B.">只使用 OpenAI 提供的官方 MCP 伺服器</li>
+<li data-label="C.">完全不讓 LLM 存取任何外部資料</li>
+<li class="correct" data-label="D.">對 LLM 請求的所有外部資料內容進行嚴格的驗證與消毒</li>
+</ol>
+<div class="explanation">💡 將外部資料視為不可信任的內容，進行驗證與消毒後再讓 LLM 處理，是防範提示注入的關鍵。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-mcp-security</span>
+</div>
+</div>
+<h3 class="section-heading">AI 代理人基礎概念回顧</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 AI 代理人的運作中，「思考-行動-觀察循環 (Thought-Action-Observation Cycle)」又被稱為什麼？</div>
+<span class="q-id">#7208</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">ReAct 模式</li>
+<li data-label="B.">Reflexion 模式</li>
+<li data-label="C.">MCP 模式</li>
+<li data-label="D.">RAG 模式</li>
+</ol>
+<div class="explanation">💡 思考-行動-觀察循環也被稱為 ReAct (Reason + Act) 模式，是代理人進行內部推理並透過工具與環境互動的核心運作方式。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-agent-fundamentals</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">一個完整的「思考-行動-觀察」循環中，若觀察結果顯示工具呼叫失敗，代理人應如何應對？</div>
+<span class="q-id">#7242</span>
+</div>
+<ol class="options">
+<li data-label="A.">直接終止整個任務並回報錯誤</li>
+<li data-label="B.">重複相同的行動直到成功</li>
+<li class="correct" data-label="C.">根據失敗原因重新思考並嘗試替代方案</li>
+<li data-label="D.">忽略失敗並繼續下一步行動</li>
+</ol>
+<div class="explanation">💡 良好的代理人在工具失敗後，會根據錯誤訊息調整策略並嘗試替代方法。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-agent-fundamentals</span>
+</div>
+</div>
+<h3 class="section-heading">代理人可觀測性與評估</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在監控 AI 代理人的可觀測性時，通常會透過何種技術來捕獲運作時的追蹤 (Traces)、日誌與指標？</div>
+<span class="q-id">#7209</span>
+</div>
+<ol class="options">
+<li data-label="A.">向量資料庫檢索</li>
+<li data-label="B.">提示詞工程 (Prompt Engineering)</li>
+<li class="correct" data-label="C.">儀器化 (Instrumentation)</li>
+<li data-label="D.">記憶壓縮 (Memory Compression)</li>
+</ol>
+<div class="explanation">💡 儀器化 (Instrumentation) 是使用系統（例如 OpenTelemetry）來捕獲代理人運作時的追蹤、日誌與指標，藉此擺脫「黑箱」行為。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-agent-observability</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在系統可觀測性 (Observability) 領域中，「Span」代表什麼意義？</div>
+<span class="q-id">#7217</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">系統內單一操作或函數執行的具體起始與結束時間區間</li>
+<li data-label="B.">大型語言模型在一次生成過程中所輸出的總字數統計</li>
+<li data-label="C.">系統伺服器在執行複雜推論時記憶體使用的最高峰值</li>
+<li data-label="D.">代理人處理完整個使用者對話任務的總計花費時間</li>
+</ol>
+<div class="explanation">💡 Span 用來標記與測量特定操作的持續時間，幫助開發者定位效能瓶頸。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">為 AI 代理人實施儀器化 (Instrumentation) 的最主要好處是什麼？</div>
+<span class="q-id">#7218</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">讓代理人的內部決策過程與工具呼叫狀況變得完全透明化</li>
+<li data-label="B.">能大幅度降低呼叫各大雲端模型 API 的整體使用成本</li>
+<li data-label="C.">能夠自動偵測並完全修正大型語言模型產生的所有錯誤</li>
+<li data-label="D.">直接取代傳統的軟體單元測試與人工驗收測試標準流程</li>
+</ol>
+<div class="explanation">💡 透過追蹤系統運作，開發者能洞察代理人的思考邏輯，使「黑箱」模型具備可解釋性。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在處理多個工具呼叫時，系統日誌常常變得難以閱讀，引入可觀測性工具可以如何解決？</div>
+<span class="q-id">#7219</span>
+</div>
+<ol class="options">
+<li data-label="A.">強迫模型在每次操作後都必須用語音播報執行結果</li>
+<li class="correct" data-label="B.">透過結構化的追蹤 (Traces) 將日誌與特定的操作上下文綁定</li>
+<li data-label="C.">將所有的系統日誌全數刪除以節省開發人員的閱讀時間</li>
+<li data-label="D.">自動把所有日誌翻譯成更易讀的另一種人類自然語言</li>
+</ol>
+<div class="explanation">💡 結構化追蹤可以將錯綜複雜的系統日誌關聯到特定的請求上，大幅簡化除錯難度。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">當代理人發生非預期行為時，哪一種觀測工具最能有效幫助開發者除錯？</div>
+<span class="q-id">#7220</span>
+</div>
+<ol class="options">
+<li data-label="A.">監控伺服器作業系統的 CPU 佔用率與網路頻寬使用情況</li>
+<li class="correct" data-label="B.">透過代理人的追蹤日誌 (Traces) 還原當時的決策與環境上下文</li>
+<li data-label="C.">直接匯出並分析大型語言模型的內部神經網路權重分佈圖</li>
+<li data-label="D.">檢查使用者的瀏覽器搜尋記錄以推測其真實的問題意圖</li>
+</ol>
+<div class="explanation">💡 追蹤日誌能清晰重現代理人收到的提示詞、工具回傳結果與其當時的決策過程。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在系統可觀測性資料中的「Event (事件)」，通常被用來記錄什麼樣的資訊？</div>
+<span class="q-id">#7225</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">系統在某個特定時間點所發生的重要動作、警告或狀態變化</li>
+<li data-label="B.">代理人模型在完成訓練後的完整神經網路權重與參數清單</li>
+<li data-label="C.">執行該次對話任務時伺服器硬碟剩餘可用空間的動態變化</li>
+<li data-label="D.">整個應用程式啟動到結束所持續數分鐘的長時間運作週期</li>
+</ol>
+<div class="explanation">💡 事件代表瞬間發生的狀態標記，例如「使用者點擊同意」、「API 連線失敗」等。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在可觀測性架構中，一個「Trace（追蹤）」通常由哪些基本單位組成？</div>
+<span class="q-id">#7235</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">多個 Spans 組合成一個 Trace</li>
+<li data-label="B.">多個 Events 組合成一個 Span</li>
+<li data-label="C.">多個 Traces 組合成一個 Span</li>
+<li data-label="D.">多個 Metrics 組合成一個 Trace</li>
+</ol>
+<div class="explanation">💡 Trace 由多個 Span 組成，每個 Span 代表系統中的一個操作區間。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-agent-observability</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在使用 Langfuse 或 Arize Phoenix 等可觀測性工具時，主要獲得的幫助是什麼？</div>
+<span class="q-id">#7244</span>
+</div>
+<ol class="options">
+<li data-label="A.">自動生成代理人的程式碼</li>
+<li class="correct" data-label="B.">視覺化代理人的效能指標與決策過程</li>
+<li data-label="C.">自動修正代理人的錯誤決策</li>
+<li data-label="D.">直接降低 LLM API 的呼叫費用</li>
+</ol>
+<div class="explanation">💡 可觀測性工具將代理人的運作過程視覺化，讓開發者能直觀地了解其行為與效能。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-agent-observability</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">「離線評估（Offline Evaluation）」與「線上評估（Online Evaluation）」的主要差別為何？</div>
+<span class="q-id">#7251</span>
+</div>
+<ol class="options">
+<li data-label="A.">離線評估只能在夜間執行，線上評估在白天執行</li>
+<li data-label="B.">離線評估由 AI 執行，線上評估由人類執行</li>
+<li data-label="C.">離線評估不需要 LLM，線上評估需要 LLM</li>
+<li class="correct" data-label="D.">離線評估使用測試資料集，線上評估收集真實使用者回饋</li>
+</ol>
+<div class="explanation">💡 離線評估使用固定基準測試代理人，線上評估則從真實使用者互動中收集效能資料。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-agent-observability</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在代理人系統中實作「儀器化（Instrumentation）」時，通常會使用哪一種開放標準？</div>
+<span class="q-id">#7258</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">OpenTelemetry</li>
+<li data-label="B.">gRPC</li>
+<li data-label="C.">MCP（模型上下文協議）</li>
+<li data-label="D.">HTTP/2</li>
+</ol>
+<div class="explanation">💡 OpenTelemetry 是業界標準的儀器化框架，用於捕獲追蹤、日誌和指標。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+<span class="tag">sec-agent-observability</span>
+</div>
+</div>
+<h3 class="section-heading">MCP 簡介與設計動機</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">MCP (Model Context Protocol) 旨在解決 AI 生態系統中的哪一個痛點？</div>
+<span class="q-id">#7210</span>
+</div>
+<ol class="options">
+<li data-label="A.">訓練最新大型語言模型的整體運算成本過於高昂</li>
+<li data-label="B.">開發者在設計提示詞工程時面臨的語法難度過於複雜</li>
+<li data-label="C.">本地端執行伺服器時的記憶體管理與分配效率太低</li>
+<li class="correct" data-label="D.">AI 系統與各種外部資料源整合時的嚴重碎片化問題</li>
+</ol>
+<div class="explanation">💡 隨著工具與資料源激增，MCP 提供標準化協議來消弭 M×N 的客製化整合噩夢。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">MCP 架構如何顯著提升 AI 代理人的「工具發現」能力？</div>
+<span class="q-id">#7215</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">讓伺服器能動態提供可用工具清單與詳細的使用參數說明</li>
+<li data-label="B.">預先將全球所有的工具特徵寫死在大型語言模型的權重中</li>
+<li data-label="C.">強迫使用者在使用前手動輸入所有工具的底層實作原始碼</li>
+<li data-label="D.">讓代理人透過自動爬蟲不斷搜尋網路上的可用 API 工具</li>
+</ol>
+<div class="explanation">💡 MCP 客戶端能直接向伺服器查詢可用清單，代理人因此能動態發掘並使用新工具。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">MCP 架構本身是如何促進各種不同的 AI 模型之間的互操作性 (Interoperability) 的？</div>
+<span class="q-id">#7223</span>
+</div>
+<ol class="options">
+<li data-label="A.">透過強制要求世界上所有的模型都必須使用完全相同的內部權重</li>
+<li data-label="B.">透過設計一個專屬的私有通訊協定讓模型之間可以直接互相通訊</li>
+<li class="correct" data-label="C.">透過提供一套標準化的通用介面來描述與呼叫外部工具與資源</li>
+<li data-label="D.">透過將所有競爭對手的模型統一部署在同一台巨大的實體伺服器</li>
+</ol>
+<div class="explanation">💡 標準化的介面讓開發者不需修改整合程式碼，就能無痛切換底層使用的語言模型。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">MCP 作為一個完全開源的協議，為整個 AI 生態圈帶來什麼樣的主要優勢？</div>
+<span class="q-id">#7226</span>
+</div>
+<ol class="options">
+<li data-label="A.">保證使用該協議的所有系統絕對不會被任何惡意駭客入侵</li>
+<li data-label="B.">讓各大企業開發的高階模型可以完全免費且無限制地被使用</li>
+<li class="correct" data-label="C.">促進全球開發者社群共同建立豐富且相容的工具伺服器生態</li>
+<li data-label="D.">完全免除軟體開發者在維護與更新伺服器程式碼上的任何責任</li>
+</ol>
+<div class="explanation">💡 開源標準打破了廠商鎖定，吸引更多開發者貢獻相容於 MCP 的通用工具與服務。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+</div>
+</div>
+<h3 class="section-heading">MCP 系統架構</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 MCP 架構中，主要負責管理安全策略與使用者授權決策的元件是？</div>
+<span class="q-id">#7211</span>
+</div>
+<ol class="options">
+<li data-label="A.">負責執行所有推論工作的大型語言模型本身</li>
+<li data-label="B.">直接與伺服器溝通的 MCP 客戶端應用程式</li>
+<li data-label="C.">提供具體工具與資源的外部 MCP 伺服器</li>
+<li class="correct" data-label="D.">統籌管理與協調的 MCP 主機 (Host) 系統</li>
+</ol>
+<div class="explanation">💡 MCP 主機 (Host) 控制整個系統的生命週期，並確保使用者在呼叫高風險工具時能進行審核。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">為什麼開發者在設計 MCP 伺服器時，應該盡可能保持「輕量級」？</div>
+<span class="q-id">#7216</span>
+</div>
+<ol class="options">
+<li data-label="A.">為了節省使用者電腦上寶貴的硬碟與記憶體儲存空間</li>
+<li data-label="B.">為了避免被作業系統內建的防毒軟體誤判為惡意程式</li>
+<li class="correct" data-label="C.">為了專注暴露特定領域的能力並遵循單一職責原則</li>
+<li data-label="D.">為了讓大型語言模型可以直接下載並分析其內部架構</li>
+</ol>
+<div class="explanation">💡 輕量級的伺服器專注於做好一件事情，能提升系統整體的穩定度與易維護性。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在標準的 MCP 系統架構設計中，Client 和 Server 之間的連線關係是？</div>
+<span class="q-id">#7221</span>
+</div>
+<ol class="options">
+<li data-label="A.">多個客戶端共享同一個伺服器狀態的多對多無狀態連線</li>
+<li data-label="B.">多個伺服器輪流服務一個客戶端的多對一輪詢連線模式</li>
+<li data-label="C.">客戶端將訊息向所有伺服器廣播的一對多廣播模式</li>
+<li class="correct" data-label="D.">每個客戶端應用程式維護與單一伺服器的一對一綁定連線</li>
+</ol>
+<div class="explanation">💡 一對一的連線設計簡化了狀態管理，讓客戶端與伺服器間的溝通更加清晰可靠。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+</div>
+</div>
+<h3 class="section-heading">MCP 核心元件</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">一個標準的 MCP 伺服器可以同時對外提供哪些核心功能元件？</div>
+<span class="q-id">#7212</span>
+</div>
+<ol class="options">
+<li data-label="A.">模型本身的神經網路權重與大量的歷史訓練資料</li>
+<li data-label="B.">底層運作所需的網路伺服器與高效能關聯式資料庫</li>
+<li class="correct" data-label="C.">提供模型動態上下文的工具、資源與提示範本</li>
+<li data-label="D.">針對終端使用者設計的圖形介面與豐富的前端佈景</li>
+</ol>
+<div class="explanation">💡 MCP 伺服器主要透過暴露工具、資源和提示範本來為代理人擴展能力。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">MCP 中的「Prompts (提示範本)」所扮演的主要角色是什麼？</div>
+<span class="q-id">#7213</span>
+</div>
+<ol class="options">
+<li data-label="A.">在使用者輸入過慢時自動幫忙補齊尚未打完的文字</li>
+<li data-label="B.">自動記錄使用者過去所輸入過的所有指令與日誌</li>
+<li class="correct" data-label="C.">提供標準化的任務起始上下文與可重用的對話模板</li>
+<li data-label="D.">強制模型遵守所有內建的安全規範與禁止事項</li>
+</ol>
+<div class="explanation">💡 提示範本允許伺服器提供預先定義好的工作流程起點，幫助代理人快速進入狀況。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">資源 (Resources) 與工具 (Tools) 最大的本質差異在於？</div>
+<span class="q-id">#7224</span>
+</div>
+<ol class="options">
+<li data-label="A.">資源具備改變外部環境副作用的能力，工具僅能用於靜態讀取</li>
+<li class="correct" data-label="B.">資源是被動讀取的靜態資料，工具則是由模型主動呼叫的動態操作</li>
+<li data-label="C.">資源需要複雜的非對稱加密傳輸，工具則可以直接使用明文傳輸</li>
+<li data-label="D.">資源只能在本地端電腦上運作，工具則只能部署於雲端伺服器上</li>
+</ol>
+<div class="explanation">💡 資源是被動讀取的上下文資料，而工具是模型主動決定執行的動態操作。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">如果你的 MCP 伺服器需要提供一個「讓代理人讀取本地設定檔」的功能，這個功能應該被定義為？</div>
+<span class="q-id">#7227</span>
+</div>
+<ol class="options">
+<li data-label="A.">MCP Client (客戶端)</li>
+<li class="correct" data-label="B.">MCP Resource (資源)</li>
+<li data-label="C.">MCP Prompt (提示範本)</li>
+<li data-label="D.">MCP Tool (工具)</li>
+</ol>
+<div class="explanation">💡 讀取靜態檔案且不改變系統狀態的操作，最適合使用 MCP Resource 來實作。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">如果你的 MCP 伺服器需要提供一個「幫使用者自動發送電子郵件」的功能，這個功能應該被定義為？</div>
+<span class="q-id">#7228</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">MCP Tool (工具)</li>
+<li data-label="B.">MCP Client (客戶端)</li>
+<li data-label="C.">MCP Resource (資源)</li>
+<li data-label="D.">MCP Prompt (提示範本)</li>
+</ol>
+<div class="explanation">💡 發送電子郵件會改變外部環境的狀態（產生副作用），必須實作為 MCP Tool。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+</div>
+</div>
+<h3 class="section-heading">MCP 傳輸機制</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">當我們在本地電腦開發與部署 MCP 伺服器時，最常使用的傳輸機制是？</div>
+<span class="q-id">#7214</span>
+</div>
+<ol class="options">
+<li data-label="A.">用於即時通訊服務的 WebSockets 雙向資料傳輸協定</li>
+<li class="correct" data-label="B.">透過本地子程序建立的 stdio (標準輸入輸出) 管道</li>
+<li data-label="C.">專為微服務架構設計的 gRPC 遠端程序高速呼叫協定</li>
+<li data-label="D.">適合跨網路存取的 HTTP + SSE 遠端連線傳輸機制</li>
+</ol>
+<div class="explanation">💡 stdio 傳輸方式安全性高且非常適合本地環境，因為它依賴本機程序的執行權限。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+</div>
+</div>
+<h3 class="section-heading">MCP 安全考量</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">面對來自大型語言模型 (LLM) 的工具呼叫請求，MCP 伺服器應當採取什麼安全態度？</div>
+<span class="q-id">#7222</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">伺服器端必須對所有傳入的參數進行嚴格的驗證與邊界檢查</li>
+<li data-label="B.">百分之百信任所有來自知名 LLM 提供商的工具呼叫參數</li>
+<li data-label="C.">為了節省運算效能，盡量停用伺服器端所有的日誌記錄功能</li>
+<li data-label="D.">將所有可能被呼叫的工具設為公開存取以確保最高相容性</li>
+</ol>
+<div class="explanation">💡 為了防止提示詞注入與幻覺帶來的危害，伺服器絕不可盲目信任 LLM 傳來的資料。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+</div>
+</div>
+<h3 class="section-heading">AI 代理人基礎概念</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在代理人的「思考-行動-觀察循環」中，讓「行動」階段得以具體落實的關鍵技術通常是？</div>
+<span class="q-id">#7229</span>
+</div>
+<ol class="options">
+<li data-label="A.">讀取並重新分析使用者過去數個月來的所有對話歷史</li>
+<li class="correct" data-label="B.">呼叫由 MCP 或其他類似協議所定義的標準化外部工具</li>
+<li data-label="C.">依賴大型語言模型內部的自我反思與情緒模擬機制</li>
+<li data-label="D.">深入分析本地作業系統內部的 CPU 與記憶體效能瓶頸</li>
+</ol>
+<div class="explanation">💡 行動階段需要透過工具呼叫的機制，將模型的決策轉化為具體的外部系統操作。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch2</span>
+</div>
+</div>
+<h2 class="chapter-heading" id="ch-3">Agentic Skills 設計</h2>
+<h3 class="section-heading">光靠提示詞，為什麼不夠？</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪個選項最能描述「技能 (Skill)」與「工具 (Tool)」的差異？</div>
+<span class="q-id">#7301</span>
+</div>
+<ol class="options">
+<li data-label="A.">兩者的本質完全相同，只是不同代理框架的命名習慣</li>
+<li data-label="B.">工具具有內部狀態，而技能則是無狀態的底層函數</li>
+<li data-label="C.">技能僅限用於文字處理，工具則可處理所有類型資料</li>
+<li class="correct" data-label="D.">技能是含多步驟的較高層封裝，工具為單一操作呼叫</li>
+</ol>
+<div class="explanation">💡 技能是對能力的高層封裝，可包含複雜邏輯與多個步驟；工具則更接近底層的單一函數呼叫。不過在許多現代框架中兩者常被混用。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-skills-intro</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">相較於上下文工程，單純依賴提示詞工程在代理人場景中最大的限制是什麼？</div>
+<span class="q-id">#7310</span>
+</div>
+<ol class="options">
+<li data-label="A.">進階提示詞的撰寫語法對於多數開發者而言過於困難且複雜</li>
+<li data-label="B.">開發者無法精確控制模型最終生成回應的字數長度與格式</li>
+<li class="correct" data-label="C.">靜態指令難以應對動態變化且不可預測的外部系統環境</li>
+<li data-label="D.">大型語言模型在解析超過一百個字的提示詞時容易發生崩潰</li>
+</ol>
+<div class="explanation">💡 代理人面對的任務環境隨時在變，靜態的提示詞無法涵蓋所有可能的突發狀況。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪一項最能描述提示詞（Prompt）與技能（Skill）的關係？</div>
+<span class="q-id">#7330</span>
+</div>
+<ol class="options">
+<li data-label="A.">提示詞可以完全取代技能，兩者功能相同</li>
+<li data-label="B.">提示詞僅用於除錯，技能用於正式部署</li>
+<li data-label="C.">技能比提示詞更不重要</li>
+<li class="correct" data-label="D.">提示詞決定如何思考與規劃，技能決定能真正做到什麼</li>
+</ol>
+<div class="explanation">💡 提示詞影響 LLM 的推理方式，技能提供實際的行動能力，兩者相輔相成。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-skills-intro</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">提示詞工程的三個主要限制之一是 AI 的知識有截止日期，這代表什麼？</div>
+<span class="q-id">#7336</span>
+</div>
+<ol class="options">
+<li data-label="A.">AI 只能回答關於未來的問題</li>
+<li data-label="B.">AI 無法理解任何 2020 年之前的歷史事件</li>
+<li class="correct" data-label="C.">AI 在訓練完成後就無法知道訓練後發生的事件</li>
+<li data-label="D.">AI 的所有知識在三天後會自動過期</li>
+</ol>
+<div class="explanation">💡 語言模型的知識凍結在訓練截止日期，無法透過提示詞讓它知道訓練後發生的事件。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-skills-intro</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">提示詞無法解決「AI 無法執行真實操作」的限制，這是因為？</div>
+<span class="q-id">#7342</span>
+</div>
+<ol class="options">
+<li data-label="A.">提示詞的語法不支援描述操作</li>
+<li class="correct" data-label="B.">語言模型本身不具備直接執行外部操作的能力</li>
+<li data-label="C.">提示詞的長度限制無法容納操作說明</li>
+<li data-label="D.">作業系統不允許提示詞存取外部資源</li>
+</ol>
+<div class="explanation">💡 無論提示詞寫得多好，LLM 本身無法直接操作外部系統，必須依賴工具呼叫機制。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-skills-intro</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">提示詞無法完成「多步驟複雜任務」，主要原因為何？</div>
+<span class="q-id">#7347</span>
+</div>
+<ol class="options">
+<li data-label="A.">提示詞不支援中文字元</li>
+<li data-label="B.">多步驟任務只能由人類完成</li>
+<li class="correct" data-label="C.">多步驟任務的後續步驟依賴前面步驟的真實結果，提示詞無法提供即時回饋</li>
+<li data-label="D.">提示詞的長度上限太短</li>
+</ol>
+<div class="explanation">💡 多步驟任務需要基於真實的執行結果來決定後續步驟，靜態提示詞無法模擬這種動態過程。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-skills-intro</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Agentic Skills 與傳統 API 的主要差異是什麼？</div>
+<span class="q-id">#7353</span>
+</div>
+<ol class="options">
+<li data-label="A.">Skills 比 API 慢很多</li>
+<li class="correct" data-label="B.">Skills 是為 LLM 設計的，包含自然語言描述讓 LLM 理解用途</li>
+<li data-label="C.">Skills 只能在本機執行，API 只能在雲端執行</li>
+<li data-label="D.">Skills 不需要參數，API 一定需要參數</li>
+</ol>
+<div class="explanation">💡 Agentic Skills 的設計考量了 LLM 的使用方式，透過自然語言描述讓 LLM 知道何時該用。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-skills-intro</span>
+</div>
+</div>
+<h3 class="section-heading">工具呼叫的實際運作方式</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 Claude API 的工具呼叫流程中，當模型決定使用工具時，它實際上做了什麼？</div>
+<span class="q-id">#7302</span>
+</div>
+<ol class="options">
+<li data-label="A.">語言模型會在內部直接執行工具函數並回傳結果</li>
+<li data-label="B.">模型會透過網路請求直接呼叫工具的外部 API</li>
+<li data-label="C.">模型會暫停並等待使用者手動執行工具後再繼續</li>
+<li class="correct" data-label="D.">模型輸出含工具名稱與參數，由應用程式解析執行</li>
+</ol>
+<div class="explanation">💡 LLM 本身無法直接執行外部函數。它輸出格式化的工具呼叫請求（tool_use block），由外部應用程式解析、執行對應函數，再將結果透過 tool_result 回傳給模型。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-tool-calling</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">「並行工具呼叫 (Parallel Tool Calling)」的主要優點是什麼？</div>
+<span class="q-id">#7303</span>
+</div>
+<ol class="options">
+<li data-label="A.">強制確保所有呼叫的工具都能按照特定順序執行</li>
+<li data-label="B.">大幅降低每一次模型 API 網路呼叫的平均成本</li>
+<li data-label="C.">為了減少語言模型在推論過程中產生錯誤的機率</li>
+<li class="correct" data-label="D.">單次回應請求多個工具，以減少來回並提升效率</li>
+</ol>
+<div class="explanation">💡 並行工具呼叫允許模型在一次回應中請求多個獨立工具，應用程式可並行執行這些工具，避免不必要的序列等待，顯著縮短多工具任務的執行時間。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-tool-calling</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">當 LLM 決定呼叫工具時，誰負責實際執行該工具？</div>
+<span class="q-id">#7331</span>
+</div>
+<ol class="options">
+<li data-label="A.">LLM 本身會在內部直接執行工具</li>
+<li data-label="B.">工具會自動執行，不需要任何中介</li>
+<li class="correct" data-label="C.">主機端的應用程式（非 LLM）負責解析請求並執行</li>
+<li data-label="D.">使用者必須手動執行工具並回傳結果</li>
+</ol>
+<div class="explanation">💡 LLM 只輸出格式化的工具呼叫請求，由應用程式層解析請求、執行工具、並回傳結果給 LLM。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-tool-calling</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在工具呼叫流程中，tool_use block 包含哪些必要資訊？</div>
+<span class="q-id">#7337</span>
+</div>
+<ol class="options">
+<li data-label="A.">工具的完整原始碼</li>
+<li data-label="B.">工具的使用者評價與評分</li>
+<li data-label="C.">工具的作者姓名與版本歷史</li>
+<li class="correct" data-label="D.">工具的名稱與傳入的參數</li>
+</ol>
+<div class="explanation">💡 tool_use block 包含工具名稱和參數，由應用程式解析後執行對應函數。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-tool-calling</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">並行工具呼叫在什麼情況下「不適合」使用？</div>
+<span class="q-id">#7343</span>
+</div>
+<ol class="options">
+<li data-label="A.">當需要減少 API 來回次數時</li>
+<li data-label="B.">當多個工具之間沒有依賴關係時</li>
+<li data-label="C.">當所有工具可以同時執行時</li>
+<li class="correct" data-label="D.">當某個工具的輸出是另一個工具的輸入時</li>
+</ol>
+<div class="explanation">💡 工具間存在依賴關係時，必須序列執行，不能並行。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-tool-calling</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">工具的描述（Description）應該避免包含什麼內容？</div>
+<span class="q-id">#7348</span>
+</div>
+<ol class="options">
+<li data-label="A.">工具的使用時機說明</li>
+<li class="correct" data-label="B.">工具的內部程式碼實作細節</li>
+<li data-label="C.">工具的限制與注意事項</li>
+<li data-label="D.">工具的參數格式與型別</li>
+</ol>
+<div class="explanation">💡 內部實作細節對 LLM 的使用決策沒有幫助，描述應聚焦在「能做什麼」和「何時使用」。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-tool-calling</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">語言模型無法直接執行外部函數，這個設計的主要安全考量是什麼？</div>
+<span class="q-id">#7354</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">確保所有操作都經過應用程式層的控制與驗證</li>
+<li data-label="B.">為了減少模型的運算負擔</li>
+<li data-label="C.">因為語言模型沒有足夠的記憶體來執行程式</li>
+<li data-label="D.">因為工具函數只能由人類操作</li>
+</ol>
+<div class="explanation">💡 透過應用程式層中介，可以對每個工具呼叫進行安全檢查與權限驗證，防止惡意執行。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-tool-calling</span>
+</div>
+</div>
+<h3 class="section-heading">記憶管理：讓代理人「記得事情」</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在處理長期對話的記憶管理中，「摘要壓縮 (Summarization)」策略的主要目的是什麼？</div>
+<span class="q-id">#7304</span>
+</div>
+<ol class="options">
+<li data-label="A.">將過去的對話全部轉換為向量形式並儲存於資料庫</li>
+<li data-label="B.">嚴格加密代理人的對話內容以保護使用者的隱私</li>
+<li class="correct" data-label="C.">將舊對話壓縮為摘要，在有限視窗內保留有效資訊</li>
+<li data-label="D.">定期刪除所有非關鍵的對話紀錄以節省記憶空間</li>
+</ol>
+<div class="explanation">💡 上下文視窗大小有限，摘要壓縮策略透過將舊對話歷史濃縮為精簡摘要，保留關鍵資訊的同時騰出空間給近期的對話內容。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-memory-management</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">「滑動視窗（Sliding Window）」記憶策略的主要限制是什麼？</div>
+<span class="q-id">#7332</span>
+</div>
+<ol class="options">
+<li data-label="A.">只能儲存影像資料，無法儲存文字</li>
+<li data-label="B.">實作難度是所有策略中最高的</li>
+<li class="correct" data-label="C.">可能丟失窗口之外的早期重要資訊</li>
+<li data-label="D.">需要大量的向量資料庫支援</li>
+</ol>
+<div class="explanation">💡 滑動視窗只保留最近 N 輪對話，超出視窗的資訊會被直接丟棄，可能遺失關鍵的早期上下文。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-memory-management</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">「外部記憶庫」策略相較於「摘要壓縮」的主要優勢是什麼？</div>
+<span class="q-id">#7338</span>
+</div>
+<ol class="options">
+<li data-label="A.">外部記憶庫不需要嵌入模型</li>
+<li class="correct" data-label="B.">外部記憶庫的容量幾乎無限，且支援語意搜尋</li>
+<li data-label="C.">外部記憶庫不需要任何資料庫系統</li>
+<li data-label="D.">外部記憶庫的實作比摘要壓縮簡單十倍</li>
+</ol>
+<div class="explanation">💡 外部記憶庫（向量資料庫）能儲存大量資訊，並透過語意相似度搜尋精確召回相關內容。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-memory-management</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在長期記憶的設計中，「衰減機制（Fading）」主要的實作方式是什麼？</div>
+<span class="q-id">#7344</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">根據時間遠近調整記憶的檢索權重，越舊的權重越低</li>
+<li data-label="B.">每隔固定時間就刪除所有舊記憶</li>
+<li data-label="C.">將舊記憶移動到離線備份裝置</li>
+<li data-label="D.">將舊記憶轉換為圖片儲存</li>
+</ol>
+<div class="explanation">💡 衰減機制讓較新的記憶在檢索時有更高的優先權，確保代理人關注使用者最近的狀態。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-memory-management</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">當代理人的任務需要在數天的時間跨度內持續進行時，應該優先採用哪一種記憶策略？</div>
+<span class="q-id">#7349</span>
+</div>
+<ol class="options">
+<li data-label="A.">僅使用短期記憶</li>
+<li data-label="B.">滑動視窗（保留最近幾輪）</li>
+<li class="correct" data-label="C.">外部記憶庫（向量資料庫）</li>
+<li data-label="D.">不使用任何記憶</li>
+</ol>
+<div class="explanation">💡 跨日任務需要可靠的長期記憶支援，外部記憶庫能持久保存資訊並支援語意檢索。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-memory-management</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">如果一個代理人需要同時記住「使用者喜歡簡短回答」和「使用者喜歡繁體中文」，這屬於哪種記憶類型？</div>
+<span class="q-id">#7355</span>
+</div>
+<ol class="options">
+<li data-label="A.">語義記憶</li>
+<li data-label="B.">短期記憶</li>
+<li class="correct" data-label="C.">長期記憶（使用者建模）</li>
+<li data-label="D.">工作記憶</li>
+</ol>
+<div class="explanation">💡 使用者的長期偏好應儲存在長期記憶中，跨任務持續使用。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-memory-management</span>
+</div>
+</div>
+<h3 class="section-heading">規劃能力：讓代理人「想清楚再做」</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">「動態重規劃 (Dynamic Replanning)」在代理人設計中解決了什麼問題？</div>
+<span class="q-id">#7305</span>
+</div>
+<ol class="options">
+<li data-label="A.">根據當前環境自動尋找並優化工具的最佳選擇策略</li>
+<li data-label="B.">有效防止代理人在複雜情境下重複執行相同的步驟</li>
+<li data-label="C.">確保代理人永遠能按照最短路徑與最少步驟完成任務</li>
+<li class="correct" data-label="D.">遇到意外情況時動態調整，而非強制執行失效計劃</li>
+</ol>
+<div class="explanation">💡 現實任務往往充滿不確定性。動態重規劃讓代理人在步驟失敗或環境變化時，能根據已執行步驟和失敗原因重新生成後續計劃，而非固執地繼續執行已過時的計劃。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-planning-strategies</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">哪一種規劃策略最適合處理結果不確定、需要反覆嘗試的任務？</div>
+<span class="q-id">#7333</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">動態重規劃（根據中間結果調整後續步驟）</li>
+<li data-label="B.">隨機嘗試模式（完全隨機選擇步驟）</li>
+<li data-label="C.">固定計畫模式（一次規劃到底）</li>
+<li data-label="D.">跳躍模式（跳過困難步驟直接結束）</li>
+</ol>
+<div class="explanation">💡 動態重規劃能根據實際執行結果靈活調整，非常適合結果不確定的任務。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-planning-strategies</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">任務分解（Task Decomposition）通常使用哪種資料結構來表達？</div>
+<span class="q-id">#7339</span>
+</div>
+<ol class="options">
+<li data-label="A.">鏈結串列（Linked List）</li>
+<li data-label="B.">雜湊表（Hash Table）</li>
+<li data-label="C.">堆疊（Stack）</li>
+<li class="correct" data-label="D.">樹狀結構（Tree Structure）</li>
+</ol>
+<div class="explanation">💡 任務分解常以樹狀結構呈現，根節點是總目標，子節點是逐步拆解的細項任務。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-planning-strategies</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">「扇出模式（Fan-out）」的技能組合最適合下列哪一種情境？</div>
+<span class="q-id">#7350</span>
+</div>
+<ol class="options">
+<li data-label="A.">根據檔案類型選擇不同的解析器</li>
+<li data-label="B.">持續搜尋直到找到足夠的參考資料</li>
+<li class="correct" data-label="C.">需要同時向三家供應商查詢報價後比較</li>
+<li data-label="D.">需要依序執行 A→B→C 的資料處理管線</li>
+</ol>
+<div class="explanation">💡 扇出模式並行執行多個獨立技能，適合同時查詢多個來源再合併結果的場景。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-planning-strategies</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在「迴圈模式（Loop）」的技能組合中，決定何時停止重複的關鍵條件是什麼？</div>
+<span class="q-id">#7356</span>
+</div>
+<ol class="options">
+<li data-label="A.">由使用者手動發出停止指令</li>
+<li data-label="B.">固定執行十次後自動停止</li>
+<li class="correct" data-label="C.">達到預先設定的終止條件（如收集到足夠資料）</li>
+<li data-label="D.">系統記憶體耗盡時自動停止</li>
+</ol>
+<div class="explanation">💡 迴圈模式需要明確定義終止條件，避免代理人陷入無限循環。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-planning-strategies</span>
+</div>
+</div>
+<h3 class="section-heading">技能設計的最佳實踐</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">撰寫高品質技能描述時，下列哪個原則「最不重要」？</div>
+<span class="q-id">#7306</span>
+</div>
+<ol class="options">
+<li data-label="A.">列舉技能的限制條件（如格式限制、數量上限）</li>
+<li class="correct" data-label="B.">詳細描述技能的內部演算法邏輯</li>
+<li data-label="C.">說明技能的用途而非實作細節</li>
+<li data-label="D.">包含使用時機的說明</li>
+</ol>
+<div class="explanation">💡 技能描述的目的是幫助 LLM 決定何時以及如何使用技能，因此應著重描述「能做什麼」和「何時使用」，而非內部實作細節，後者對 LLM 的使用決策沒有幫助。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-skill-best-practices</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">技能實作中採用「指數退避 (Exponential Backoff)」重試策略的主要原因是什麼？</div>
+<span class="q-id">#7307</span>
+</div>
+<ol class="options">
+<li data-label="A.">確保代理每次重試時都會隨機使用完全不同的工具</li>
+<li class="correct" data-label="B.">避免服務不穩時頻繁重試導致雪崩，給予恢復機會</li>
+<li data-label="C.">顯著提高各項代理技能在複雜環境中的執行速度</li>
+<li data-label="D.">有效降低所有自訂技能的底層程式碼撰寫複雜度</li>
+</ol>
+<div class="explanation">💡 指數退避（每次重試等待時間倍增）是避免對不穩定服務造成過多壓力的標準做法，能在給服務足夠恢復時間的同時，仍然在最終嘗試成功。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-skill-best-practices</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">為什麼技能的錯誤訊息應該盡量提供詳細的上下文資訊？</div>
+<span class="q-id">#7334</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">為了讓 LLM 能診斷問題並嘗試其他方法</li>
+<li data-label="B.">為了記錄開發者的個人資訊</li>
+<li data-label="C.">為了符合程式碼規範的字數要求</li>
+<li data-label="D.">為了讓使用者能自行修復系統</li>
+</ol>
+<div class="explanation">💡 詳細的錯誤訊息是 LLM 重新規劃的重要輸入，讓代理人能理解為何失敗並嘗試替代方案。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-skill-best-practices</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">「原子技能」設計原則的核心思想是什麼？</div>
+<span class="q-id">#7340</span>
+</div>
+<ol class="options">
+<li data-label="A.">技能之間不應該有任何關聯</li>
+<li data-label="B.">技能的名稱應該使用隨機字串</li>
+<li data-label="C.">每個技能應該越複雜越好，一次完成所有事情</li>
+<li class="correct" data-label="D.">每個技能只做一件事並做好這件事</li>
+</ol>
+<div class="explanation">💡 原子技能保持單一職責，便於組合測試和除錯。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-skill-best-practices</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在「管線模式（Pipeline）」的技能組合中，資料的流動方式是？</div>
+<span class="q-id">#7345</span>
+</div>
+<ol class="options">
+<li data-label="A.">技能隨機選取執行順序</li>
+<li class="correct" data-label="B.">一個技能的輸出自動成為下一個技能的輸入</li>
+<li data-label="C.">多個技能同時執行，結果合併</li>
+<li data-label="D.">技能之間完全獨立，不需要交換資料</li>
+</ol>
+<div class="explanation">💡 管線模式中，技能依序執行，前者的輸出作為後者的輸入，形成處理鏈。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-skill-best-practices</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">為什麼工具的參數定義中應該提供明確的邊界限制（如最大字數）？</div>
+<span class="q-id">#7351</span>
+</div>
+<ol class="options">
+<li data-label="A.">為了減少 API 呼叫的費用</li>
+<li data-label="B.">為了加快 LLM 的推理速度</li>
+<li data-label="C.">為了符合資料庫的欄位長度限制</li>
+<li class="correct" data-label="D.">為了避免 LLM 給出極端值導致系統錯誤</li>
+</ol>
+<div class="explanation">💡 明確的邊界限制能防止 LLM 生成不合理的大參數，確保工具執行的穩定性。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-skill-best-practices</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">為什麼技能的冪等性（Idempotency）對代理人系統特別重要？</div>
+<span class="q-id">#7357</span>
+</div>
+<ol class="options">
+<li data-label="A.">因為冪等性是資料庫的標準要求</li>
+<li data-label="B.">因為冪等性能讓工具執行的速度變快</li>
+<li data-label="C.">因為冪等性能減少程式碼的行數</li>
+<li class="correct" data-label="D.">因為代理人經常需要重試失敗的步驟，冪等性確保重試安全</li>
+</ol>
+<div class="explanation">💡 代理人可能在執行失敗後重試相同操作，冪等性確保重試不會產生非預期的副作用。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-skill-best-practices</span>
+</div>
+</div>
+<h3 class="section-heading">上下文工程 (Context Engineering)</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">「上下文工程 (Context Engineering)」與「提示詞工程 (Prompt Engineering)」最大的差異是什麼？</div>
+<span class="q-id">#7308</span>
+</div>
+<ol class="options">
+<li data-label="A.">兩者概念完全相同，純粹只是不同學術課程中的不同說法</li>
+<li data-label="B.">提示詞工程用於降低 API 成本，上下文用於增加模型參數</li>
+<li data-label="C.">上下文工程只適用於 RAG 系統，提示詞則適用所有情況</li>
+<li class="correct" data-label="D.">提示詞專注靜態指令，上下文則管理動態資訊以確保正確</li>
+</ol>
+<div class="explanation">💡 上下文工程是管理一段動態資訊集（包含初始提示詞）的實踐，讓代理人能隨時取得完成下一步任務的適當資訊。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-context-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">當一次提供數十種工具給模型，導致模型不知所措而呼叫無關工具時，這屬於哪一種上下文失效模式？</div>
+<span class="q-id">#7309</span>
+</div>
+<ol class="options">
+<li data-label="A.">上下文分心 (Context Distraction)</li>
+<li class="correct" data-label="B.">上下文混淆 (Context Confusion)</li>
+<li data-label="C.">上下文衝突 (Context Clash)</li>
+<li data-label="D.">上下文中毒 (Context Poisoning)</li>
+</ol>
+<div class="explanation">💡 上下文混淆是指過多不必要的上下文（如過多工具）讓模型無法判斷最佳選擇。解法是實施工具掛載管理，僅提供最相關的幾個工具。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-context-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">代理人運作時遇到的「上下文中毒 (Context Poisoning)」是指什麼現象？</div>
+<span class="q-id">#7311</span>
+</div>
+<ol class="options">
+<li data-label="A.">系統遭受到惡意使用者的直接網路攻擊，導致伺服器完全停止運作</li>
+<li data-label="B.">代理人因為安全機制過於嚴格而拒絕讀取任何上下文中的敏感內容</li>
+<li data-label="C.">使用者輸入的文字長度大幅超越了系統設定的上下文視窗限制</li>
+<li class="correct" data-label="D.">錯誤的幻覺資訊進入記憶中並被反覆引用，導致模型陷入邏輯死胡同</li>
+</ol>
+<div class="explanation">💡 當錯誤資訊成為後續推理的基礎時，代理人就會不斷做出荒謬或無效的決策。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">要有效防範「上下文中毒」，系統架構上應該採取哪一種策略最為合適？</div>
+<span class="q-id">#7312</span>
+</div>
+<ol class="options">
+<li data-label="A.">為了絕對的資料安全，完全停用代理人的所有長期記憶保存功能</li>
+<li data-label="B.">直接將系統容許的上下文總字數限制增加到原來的一百倍以上</li>
+<li class="correct" data-label="C.">實施嚴格的上下文即時驗證，確保寫入記憶前的資訊是正確的</li>
+<li data-label="D.">將所有可能導致衝突的上下文自動翻譯成模型不熟悉的罕見語言</li>
+</ol>
+<div class="explanation">💡 在資訊被當作事實存入記憶前，透過外部工具進行交叉驗證是防止中毒的關鍵。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">代理人運作時遇到的「上下文分心 (Context Distraction)」是指什麼現象？</div>
+<span class="q-id">#7313</span>
+</div>
+<ol class="options">
+<li data-label="A.">系統的安全過濾機制拒絕執行任何包含潛在風險的工具呼叫請求</li>
+<li class="correct" data-label="B.">模型因為過度關注龐大的歷史紀錄而忽略了當前任務的真實指令</li>
+<li data-label="C.">代理人在多個子系統之間頻繁切換導致伺服器網路連線不穩定</li>
+<li data-label="D.">代理人因為無法獲取任何足夠的上下文資訊而無法生成有效回應</li>
+</ol>
+<div class="explanation">💡 當雜訊過多時，模型的注意力機制會被稀釋，忘記現在最重要應該做什麼事。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">開發者可以透過什麼技術手段來有效減緩「上下文分心」的問題？</div>
+<span class="q-id">#7314</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">定期使用大語言模型摘要技術，將過長的歷史資訊壓縮成精簡的重點</li>
+<li data-label="B.">強制設定系統，讓模型在任何情況下都只能用「是」或「否」來回答問題</li>
+<li data-label="C.">為了確保指令清晰，嚴格禁止終端使用者輸入超過十個英文字母的指令</li>
+<li data-label="D.">在每次對話前，都將過去一年的所有歷史對話紀錄完整地提供給模型</li>
+</ol>
+<div class="explanation">💡 摘要技術能去除冗餘對話，保留核心意義，幫助模型在有限視窗內維持專注。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">若系統一次性提供 50 個不相關的工具給代理人，導致其呼叫錯誤，這屬於何種失效模式？</div>
+<span class="q-id">#7315</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">上下文混淆 (Context Confusion)</li>
+<li data-label="B.">上下文分心 (Context Distraction)</li>
+<li data-label="C.">上下文衝突 (Context Clash)</li>
+<li data-label="D.">上下文中毒 (Context Poisoning)</li>
+</ol>
+<div class="explanation">💡 過多選擇會干擾模型的判斷能力，造成上下文混淆，進而選錯工具。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">實施「工具掛載管理 (Tool Loadout Management)」的主要目的是什麼？</div>
+<span class="q-id">#7316</span>
+</div>
+<ol class="options">
+<li data-label="A.">嚴格限制普通使用者每天可以呼叫系統中特定工具的總次數上限</li>
+<li data-label="B.">讓系統能在背景自動下載並更新所有工具的最新底層程式碼</li>
+<li class="correct" data-label="C.">透過動態檢索，僅提供給代理人當下任務最相關的少量工具集合</li>
+<li data-label="D.">詳細記錄每個工具在過去一個月內的平均執行時間與效能瓶頸</li>
+</ol>
+<div class="explanation">💡 減少不必要的工具干擾，能顯著提升代理人選擇正確工具的準確率。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在代理人的推理過程中，「上下文衝突 (Context Clash)」通常是如何發生的？</div>
+<span class="q-id">#7317</span>
+</div>
+<ol class="options">
+<li data-label="A.">系統傳遞的上下文資料格式不符合底層 API 所規定的嚴格 JSON 標準</li>
+<li data-label="B.">兩個不同功能的代理人為了完成任務，同時搶奪同一個網路連接埠</li>
+<li data-label="C.">系統內剛好存在兩個不同開發者所撰寫且名稱完全一模一樣的工具</li>
+<li class="correct" data-label="D.">代理人的記憶中同時存在著前後矛盾或邏輯完全相反的使用者指示</li>
+</ol>
+<div class="explanation">💡 矛盾的資訊會讓模型無法判斷哪一個才是真實意圖，導致推理不一致。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">當面對「上下文衝突」時，下列哪一種做法是有效的解決方案之一？</div>
+<span class="q-id">#7318</span>
+</div>
+<ol class="options">
+<li data-label="A.">遇到衝突時立即暫停系統所有運作，並發送電子郵件等待人工介入處理</li>
+<li data-label="B.">寫一個程式將所有看起來發生衝突的歷史資訊隨機挑選一個並直接刪除</li>
+<li data-label="C.">不做任何修改，直接把底層模型替換成參數規模大十倍的最新商用版本</li>
+<li class="correct" data-label="D.">提供獨立的暫存區 (Scratchpad) 讓模型有空間先協調與統整衝突資訊</li>
+</ol>
+<div class="explanation">💡 暫存區賦予代理人額外的運算空間來分析矛盾，最終得出一致的行動方針。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">「上下文修剪 (Context Pruning)」技術通常被應用於解決代理人的哪一種內部問題？</div>
+<span class="q-id">#7328</span>
+</div>
+<ol class="options">
+<li data-label="A.">當代理人發現自己的程式碼架構過於老舊時，自動向版本控制系統發送的更新請求</li>
+<li data-label="B.">當代理人需要產生極度冗長的文章時，用來限制其最大輸出字數的控制機制</li>
+<li class="correct" data-label="C.">當新獲得的資訊與舊有記憶產生嚴重矛盾時，主動移除或覆寫已過時的歷史資訊</li>
+<li data-label="D.">當系統的硬碟儲存空間即將耗盡時，自動對所有的多媒體檔案進行深度破壞性壓縮</li>
+</ol>
+<div class="explanation">💡 修剪過時與矛盾的資訊能確保模型在推理時有一個乾淨、邏輯一致的上下文基礎。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在處理極度複雜的任務時，提供給模型一個「暫存區 (Scratchpad)」可以帶來什麼顯著的好處？</div>
+<span class="q-id">#7329</span>
+</div>
+<ol class="options">
+<li data-label="A.">確保每一次的對話記錄都會被永久保存到不可竄改的去中心化區塊鏈網路上</li>
+<li data-label="B.">能夠自動將模型思考過程中所產生的任何有趣見解，直接發布更新到外部的社群媒體平台上</li>
+<li data-label="C.">透過跳過所有複雜的推理步驟直接輸出預設答案，來大幅降低大型語言模型的整體運算成本</li>
+<li class="correct" data-label="D.">賦予模型一段不被使用者直接看見的「思考空間」，以利其整理邏輯、拆解步驟與協調衝突</li>
+</ol>
+<div class="explanation">💡 暫存區如同人類的計算紙，先寫下推理過程再給出最終答案，能大幅提升準確率。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">相較於提示詞工程，上下文工程最核心的差異是什麼？</div>
+<span class="q-id">#7335</span>
+</div>
+<ol class="options">
+<li data-label="A.">上下文工程比提示詞工程更簡單</li>
+<li data-label="B.">上下文工程不需要考慮 LLM 的行為</li>
+<li data-label="C.">上下文工程只能在特定模型上使用</li>
+<li class="correct" data-label="D.">上下文工程管理的是動態變化的資訊，提示詞是靜態的</li>
+</ol>
+<div class="explanation">💡 上下文工程管理動態資訊集，包含即時工具回傳結果與記憶，而提示詞工程主要處理靜態指令。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-context-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪一項是「上下文中毒」的正確解法？</div>
+<span class="q-id">#7341</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">實施上下文驗證，確保資訊正確後才寫入記憶</li>
+<li data-label="B.">定期清除所有記憶，從零開始</li>
+<li data-label="C.">增加更多的工具讓模型有更多選擇</li>
+<li data-label="D.">提供更大的上下文視窗</li>
+</ol>
+<div class="explanation">💡 上下文驗證能在資訊被當作事實存入記憶前確認其正確性，防止錯誤資訊擴散。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-context-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">上下文修剪（Context Pruning）與上下文摘要（Context Summarization）的主要差別是什麼？</div>
+<span class="q-id">#7346</span>
+</div>
+<ol class="options">
+<li data-label="A.">修剪是自動的，摘要是手動的</li>
+<li class="correct" data-label="B.">修剪移除衝突資訊，摘要壓縮冗長資訊</li>
+<li data-label="C.">兩者完全相同</li>
+<li data-label="D.">修剪只用在多代理系統，摘要只用在單代理</li>
+</ol>
+<div class="explanation">💡 上下文修剪用於移除矛盾或過時的資訊，摘要用於將冗長資訊濃縮為精簡版本。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-context-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">實施「工具掛載管理」時，通常使用什麼技術來動態選擇相關工具？</div>
+<span class="q-id">#7352</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">RAG（檢索增強生成）技術</li>
+<li data-label="B.">隨機選擇工具</li>
+<li data-label="C.">由使用者手動指定每次需要哪些工具</li>
+<li data-label="D.">按照工具名稱的字母順序排列</li>
+</ol>
+<div class="explanation">💡 RAG 技術能根據任務內容檢索最相關的工具描述，減少不相關工具的干擾。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-context-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">當代理人同時接收到「幫我省錢」和「幫我訂頭等艙」兩個矛盾指令時，屬於哪一種上下文失效？</div>
+<span class="q-id">#7358</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">上下文衝突</li>
+<li data-label="B.">上下文分心</li>
+<li data-label="C.">上下文混淆</li>
+<li data-label="D.">上下文中毒</li>
+</ol>
+<div class="explanation">💡 兩個矛盾的指令同時存在於上下文中，導致代理人無法判斷真實意圖，屬於上下文衝突。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-context-engineering</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在處理上下文衝突時，提供「暫存區（Scratchpad）」的具體做法是什麼？</div>
+<span class="q-id">#7359</span>
+</div>
+<ol class="options">
+<li data-label="A.">在系統提示詞中加入一段空白文字區域</li>
+<li data-label="B.">建立一個實體的記事本檔案供模型寫入</li>
+<li data-label="C.">使用外部 API 來解決衝突</li>
+<li class="correct" data-label="D.">讓模型先在不受使用者看見的區域中分析矛盾並得出結論</li>
+</ol>
+<div class="explanation">💡 暫存區是模型內部的一段「思考空間」，讓模型有機會先協調衝突資訊再給出最終答案。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-context-engineering</span>
+</div>
+</div>
+<h3 class="section-heading">技能的核心要素</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">一個可重複使用的 Agentic Skill 最應包含哪一組核心資訊？</div>
+<span class="q-id">#900027</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">清楚的觸發情境、輸入輸出、操作步驟、限制條件與錯誤處理方式</li>
+<li data-label="B.">只有技能名稱，不需要描述用途</li>
+<li data-label="C.">只提供模型品牌，不需要任務流程</li>
+<li data-label="D.">只寫成功案例，避免說明失敗情境</li>
+</ol>
+<div class="explanation">💡 技能設計要讓代理人知道何時使用、需要哪些輸入、如何執行、輸出格式為何，以及遇到例外時如何回復或交由人工處理。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-skill-anatomy</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在技能文件中明確定義輸出格式的主要目的為何？</div>
+<span class="q-id">#900028</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">讓後續工具或代理人能穩定解析與接續處理</li>
+<li data-label="B.">讓模型每次都自由決定格式</li>
+<li data-label="C.">增加提示詞長度以提高成本</li>
+<li data-label="D.">避免任何驗證或測試</li>
+</ol>
+<div class="explanation">💡 穩定的輸出格式能降低下游整合風險，例如讓另一個代理人、API 或測試程式能可靠讀取結果。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-skill-anatomy</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">設計可執行外部動作的技能時，哪一項安全設計最重要？</div>
+<span class="q-id">#900029</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">對高風險操作加入權限檢查、確認步驟與可稽核紀錄</li>
+<li data-label="B.">讓代理人永久取得所有系統權限</li>
+<li data-label="C.">隱藏所有工具呼叫紀錄</li>
+<li data-label="D.">禁止定義任何失敗處理</li>
+</ol>
+<div class="explanation">💡 當技能可能發送郵件、修改資料或呼叫外部系統時，權限控管、人工確認與稽核紀錄能降低誤操作與濫用風險。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+<span class="tag">sec-skill-anatomy</span>
+</div>
+</div>
+<h3 class="section-heading">記憶管理設計</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在記憶管理的設計中，實施「衰減機制 (Fading)」的主要用意為何？</div>
+<span class="q-id">#7319</span>
+</div>
+<ol class="options">
+<li data-label="A.">透過加密手段防止未經授權的第三方用戶讀取代理人的敏感資料</li>
+<li data-label="B.">將純文字的對話內容自動轉換為多維度的向量格式以利快速比較</li>
+<li class="correct" data-label="C.">使距離現在較久遠的歷史記憶在檢索時的權重或重要性自然降低</li>
+<li data-label="D.">藉由刪除特定字元來加快整體工具執行的伺服器網路反應時間</li>
+</ol>
+<div class="explanation">💡 衰減機制確保代理人會優先參考使用者近期的狀態或偏好，而非陳舊過時的資訊。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在建立代理人的長期記憶管理系統時，導入向量資料庫最主要是為了解決什麼核心問題？</div>
+<span class="q-id">#7325</span>
+</div>
+<ol class="options">
+<li data-label="A.">確保使用者在登入系統時輸入的密碼與權限能夠被最精確無誤地比對驗證</li>
+<li data-label="B.">為了完全取代電腦傳統的主記憶體 (RAM) 架構，從而大幅度降低系統建置的硬體成本</li>
+<li class="correct" data-label="C.">透過將文字轉化為數學向量，實現語意層級的搜尋，快速召回最相關的歷史經驗</li>
+<li data-label="D.">用來穩定且大量地儲存使用者上傳的高解析度圖片、音訊檔案與高畫質影片資料</li>
+</ol>
+<div class="explanation">💡 向量搜尋超越了傳統的關鍵字比對，讓代理人能理解概念上的相似性並找到對應記憶。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+</div>
+</div>
+<h3 class="section-heading">規劃策略設計</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">代理人運用「任務分解 (Task Decomposition)」策略能夠帶來什麼具體好處？</div>
+<span class="q-id">#7320</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">將過於複雜且難以一次解決的目標，拆解為數個可受控且單純的小步驟</li>
+<li data-label="B.">讓大語言模型在生成文字時的速度與流暢度獲得飛躍性的提升</li>
+<li data-label="C.">從根本上徹底避免模型在撰寫程式碼時產生任何的語法或邏輯錯誤</li>
+<li data-label="D.">大幅減少代理人為了完成任務而呼叫各種外部 API 的總計費用</li>
+</ol>
+<div class="explanation">💡 拆解任務能降低每一步的認知負擔，讓代理人更容易成功達成最終目標。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">當具備「動態重規劃」能力的代理人在執行步驟中途遇到 API 呼叫失敗時，它通常會怎麼應對？</div>
+<span class="q-id">#7326</span>
+</div>
+<ol class="options">
+<li data-label="A.">假裝沒看到錯誤，直接忽略這個失敗的關鍵步驟，並強行跳到計畫中的最後一個步驟</li>
+<li class="correct" data-label="B.">吸收失敗的錯誤訊息作為新上下文，重新思考並生成一條可能成功的全新解決路徑</li>
+<li data-label="C.">不考慮任何其他可能性，持續以極高的頻率不斷重複呼叫同一個 API 直到成功為止</li>
+<li data-label="D.">會立刻判定任務失敗，直接中斷所有背景程式並回報嚴重錯誤給終端使用者</li>
+</ol>
+<div class="explanation">💡 動態重規劃的精髓在於保持目標不變，但通往目標的路徑可以根據現實狀況靈活調整。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+</div>
+</div>
+<h3 class="section-heading">Skill 設計最佳實踐</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在設計 Agentic Skills 的時候，為什麼要盡量確保工具操作具備「冪等性 (Idempotency)」？</div>
+<span class="q-id">#7321</span>
+</div>
+<ol class="options">
+<li data-label="A.">因為這樣可以讓後端工程師在撰寫程式碼的時候看起來更加簡潔優雅</li>
+<li class="correct" data-label="B.">確保代理人在出錯時多次重複執行相同的操作，也不會產生非預期的副作用</li>
+<li data-label="C.">為了在伺服器端大幅度提升工具底層演算法的整體執行效率與運算速度</li>
+<li data-label="D.">為了讓系統能夠自動偵測並修復使用者在輸入對話時所產生的錯別字</li>
+</ol>
+<div class="explanation">💡 代理人經常會重試失敗的步驟，冪等性可保證重試過程是安全的。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">一個設計優良的技能應該回傳清晰完整的錯誤處理訊息，其最主要的目的為何？</div>
+<span class="q-id">#7322</span>
+</div>
+<ol class="options">
+<li data-label="A.">為了滿足大型企業在軟體開發流程中對於程式碼行數的標準合規性規定</li>
+<li data-label="B.">刻意隱藏系統底層的實際網路架構，避免遭到外部駭客針對性的惡意攻擊</li>
+<li class="correct" data-label="C.">讓大型語言模型能讀懂失敗的原因，並據此動態調整參數或嘗試其他策略</li>
+<li data-label="D.">讓終端使用者在看到錯誤畫面時，覺得系統非常有禮貌且富有同理心</li>
+</ol>
+<div class="explanation">💡 錯誤訊息是代理人自我反省的關鍵輸入，沒有清晰的錯誤訊息就無法修正路線。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在定義提供給代理人的技能時，為什麼在提示詞中提供明確的參數邊界限制（例如設定字數上限）非常重要？</div>
+<span class="q-id">#7324</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">能有效避免語言模型給出過於龐大或不切實際的參數，導致後端程式執行崩潰</li>
+<li data-label="B.">主要是為了幫助資料庫管理員節省伺服器硬碟中日益枯竭的儲存空間</li>
+<li data-label="C.">為了讓開發出來的技能在名稱與說明文件上看起來更加符合專業的工業標準</li>
+<li data-label="D.">因為這是多數知名雲端平台在提供 API 服務時所要求的強制性資訊安全規定</li>
+</ol>
+<div class="explanation">💡 明確的限制能防止代理人因為過度發散的想像力而產生導致系統錯誤的極端輸入。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">開發者在替代理人撰寫工具的自然語言描述 (Description) 時，最應當遵守的指導原則是什麼？</div>
+<span class="q-id">#7327</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">應該清楚且精確地說明這個工具「能達成什麼目的」以及「在什麼情境下該被使用」</li>
+<li data-label="B.">為了節省語言模型處理的 token 數量，務必將所有描述的總字數嚴格控制在十個字以內</li>
+<li data-label="C.">為了顯示開發團隊的技術實力，盡量在說明中塞滿各種深奧且難懂的業界專有名詞</li>
+<li data-label="D.">必須鉅細靡遺地詳列出該工具在後端伺服器中的所有程式碼實作邏輯與細節</li>
+</ol>
+<div class="explanation">💡 模型不需要知道底層怎麼實作，只需要知道什麼時候用它、用了會有什麼效果。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+</div>
+</div>
+<h3 class="section-heading">工具呼叫機制</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">有關於「並行工具呼叫 (Parallel Tool Calling)」的敘述，下列何者是正確的？</div>
+<span class="q-id">#7323</span>
+</div>
+<ol class="options">
+<li data-label="A.">這個機制僅適用於那些彼此之間具有高度且嚴格順序依賴的複雜連鎖步驟</li>
+<li class="correct" data-label="B.">代理人能夠在一次的推論回應中，同時觸發並執行多個彼此獨立的工具任務</li>
+<li data-label="C.">系統會強迫所有的工具都必須嚴格按照英文字母順序依次排隊執行</li>
+<li data-label="D.">啟用這個機制通常會導致系統處理任務的整體花費時間大幅度地往上增加</li>
+</ol>
+<div class="explanation">💡 並行工具呼叫省去了多次網路往返的延遲，對於互相獨立的任務能顯著提升效率。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch3</span>
+</div>
+</div>
+<h2 class="chapter-heading" id="ch-4">主流 AI 代理框架總覽</h2>
+<h3 class="section-heading">OpenClaw：在你的電腦上運行的個人 AI 助理</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">OpenClaw 最核心的設計特點是什麼？</div>
+<span class="q-id">#7401</span>
+</div>
+<ol class="options">
+<li data-label="A.">只能在雲端伺服器上運行，需要訂閱付費服務</li>
+<li data-label="B.">需要安裝獨立的操作介面才能使用</li>
+<li data-label="C.">只支援 Claude 模型，不相容其他 AI 模型</li>
+<li class="correct" data-label="D.">在使用者自己的電腦上本地執行，資料不上傳雲端，強調隱私優先</li>
+</ol>
+<div class="explanation">💡 OpenClaw 的核心設計哲學是「隱私優先」——整個系統在本地電腦執行，資料不離開使用者的裝置，並且支援 Claude、GPT 或本地模型等多種選擇。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-openclaw</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">OpenClaw 讓使用者透過哪種方式與 AI 互動？</div>
+<span class="q-id">#7402</span>
+</div>
+<ol class="options">
+<li data-label="A.">只能透過命令列（Terminal）純文字介面輸入指令</li>
+<li data-label="B.">系統強制要求使用者只能透過語音辨識方式輸入指令</li>
+<li class="correct" data-label="C.">透過使用者熟悉的通訊 App（如 Telegram 等）操作</li>
+<li data-label="D.">必須在 OpenClaw 官方網站的專屬聊天介面中操作</li>
+</ol>
+<div class="explanation">💡 OpenClaw 的設計理念是不要求使用者改變習慣，讓他們用已在使用的通訊工具（WhatsApp、Telegram、Discord、Slack、iMessage 等）直接和 AI 對話。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-openclaw</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">OpenClaw 的「心跳（Heartbeat）」機制指的是什麼？</div>
+<span class="q-id">#7403</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">代理在背景主動執行任務並通知使用者，不只等待指令</li>
+<li data-label="B.">系統定期偵測與記錄底層硬體效能的自動監控功能</li>
+<li data-label="C.">用來客觀衡量 AI 模型推論與回應速度的效能指標</li>
+<li data-label="D.">兩個代理之間為了互相確認對方是否存活的網路訊號</li>
+</ol>
+<div class="explanation">💡 心跳機制讓 OpenClaw 從被動轉為主動——它在背景持續運行，自動完成排程任務（如整理每日郵件）並主動通知使用者，而不只是等待指令。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-openclaw</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">OpenClaw 在處理本地檔案時最大的優勢是？</div>
+<span class="q-id">#7412</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">不須上傳資料即可在本地整理文件</li>
+<li data-label="B.">能自動將所有文件翻譯成英文</li>
+<li data-label="C.">能自動破解受密碼保護的檔案</li>
+<li data-label="D.">能把檔案快速備份到公有雲</li>
+</ol>
+<div class="explanation">💡 OpenClaw 在本地運行，能在不暴露隱私的情況下處理本地檔案。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">OpenClaw 如何應對反覆出現的相同任務？</div>
+<span class="q-id">#7415</span>
+</div>
+<ol class="options">
+<li data-label="A.">將任務外包給網路上的其他代理</li>
+<li data-label="B.">每次都從頭開始重新推理一次</li>
+<li data-label="C.">直接拒絕執行並要求使用者自己做</li>
+<li class="correct" data-label="D.">自動將解法封裝成新技能以重用</li>
+</ol>
+<div class="explanation">💡 OpenClaw 能自己寫技能，將反覆任務的解法固定下來。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">OpenClaw 可以透過什麼方式執行電腦上的命令列操作？</div>
+<span class="q-id">#7418</span>
+</div>
+<ol class="options">
+<li data-label="A.">只能執行經過官方數位簽章的指令</li>
+<li data-label="B.">只能透過虛擬機器沙盒進行</li>
+<li data-label="C.">必須要有管理員的圖形介面授權</li>
+<li class="correct" data-label="D.">直接替使用者跑 shell 指令或腳本</li>
+</ol>
+<div class="explanation">💡 OpenClaw 具備底層操作能力，能代為執行本地終端機指令。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">OpenClaw 主要支援透過哪些通訊軟體與使用者互動？</div>
+<span class="q-id">#7421</span>
+</div>
+<ol class="options">
+<li data-label="A.">僅支援語音通話方式互動</li>
+<li data-label="B.">只能透過電子郵件往返通訊</li>
+<li data-label="C.">只能透過 OpenClaw 官方網站上的專屬聊天介面</li>
+<li class="correct" data-label="D.">WhatsApp、Telegram、Discord、Slack 等</li>
+</ol>
+<div class="explanation">💡 OpenClaw 設計讓使用者可以透過常用的通訊 App 直接與 AI 對話，不需學習新工具。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-openclaw</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">OpenClaw 的「心跳（Heartbeat）」機制如何改變使用者與 AI 的互動模式？</div>
+<span class="q-id">#7422</span>
+</div>
+<ol class="options">
+<li data-label="A.">讓 AI 在使用者離線時自動關機節省電力</li>
+<li data-label="B.">讓 AI 定期更換對話的主題以避免無聊</li>
+<li data-label="C.">讓 AI 每隔五分鐘就發送一次問候訊息給使用者</li>
+<li class="correct" data-label="D.">讓 AI 從被動等待指令轉變為主動在背景執行任務</li>
+</ol>
+<div class="explanation">💡 心跳機制讓 OpenClaw 能在背景主動執行排程任務，而非被動等待使用者下指令。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-openclaw</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">OpenClaw 如何在處理敏感資料時保護使用者隱私？</div>
+<span class="q-id">#7427</span>
+</div>
+<ol class="options">
+<li data-label="A.">所有資料即時上傳到雲端進行加密儲存</li>
+<li class="correct" data-label="B.">整個系統在使用者自己的電腦上本地執行，資料不離開裝置</li>
+<li data-label="C.">每次存取資料都需要人臉辨識驗證</li>
+<li data-label="D.">所有資料在處理完後自動永久刪除</li>
+</ol>
+<div class="explanation">💡 OpenClaw 的設計哲學是隱私優先，所有運算在本地完成，資料不離開使用者電腦。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-openclaw</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">OpenClaw 如何處理檔案系統中的文件？</div>
+<span class="q-id">#7431</span>
+</div>
+<ol class="options">
+<li data-label="A.">需要先將檔案上傳到 OpenClaw 雲端伺服器</li>
+<li class="correct" data-label="B.">直接在本地讀取和處理使用者的檔案</li>
+<li data-label="C.">只能處理特定格式的文件（如純文字檔）</li>
+<li data-label="D.">不具備任何檔案處理能力</li>
+</ol>
+<div class="explanation">💡 OpenClaw 在本地執行，可以直接存取使用者的檔案系統來讀取與處理文件。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-openclaw</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">OpenClaw 的「底層操作能力」讓它可以執行什麼類型的任務？</div>
+<span class="q-id">#7435</span>
+</div>
+<ol class="options">
+<li data-label="A.">直接修改硬體韌體設定</li>
+<li data-label="B.">只能進行文字對話與問答</li>
+<li class="correct" data-label="C.">執行本機終端機的 shell 指令或腳本</li>
+<li data-label="D.">控制其他電腦的遠端桌面</li>
+</ol>
+<div class="explanation">💡 OpenClaw 具備執行本地終端機指令的能力，可以進行系統層級的操作。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-openclaw</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">OpenClaw 使用者的對話記錄儲存在什麼地方？</div>
+<span class="q-id">#7439</span>
+</div>
+<ol class="options">
+<li data-label="A.">儲存在區塊鏈網路上</li>
+<li data-label="B.">對話記錄不會被儲存</li>
+<li class="correct" data-label="C.">儲存在使用者自己的電腦上</li>
+<li data-label="D.">儲存在 OpenClaw 公司的雲端伺服器</li>
+</ol>
+<div class="explanation">💡 為保護隱私，所有對話記錄都儲存在使用者的本地電腦，不會上傳到雲端。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-openclaw</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">OpenClaw 支援哪幾種 AI 模型的選擇？</div>
+<span class="q-id">#7441</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">Claude、GPT 或本地模型都可以</li>
+<li data-label="B.">只支援 Claude 模型</li>
+<li data-label="C.">只能使用離線的輕量模型</li>
+<li data-label="D.">只支援 OpenAI 的模型</li>
+</ol>
+<div class="explanation">💡 OpenClaw 具備模型彈性，支援 Claude、GPT 甚至本地模型等多種選擇。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-openclaw</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">OpenClaw 能夠自動將解決反覆任務的方法封裝為什麼？</div>
+<span class="q-id">#7445</span>
+</div>
+<ol class="options">
+<li data-label="A.">新的大型語言模型</li>
+<li data-label="B.">使用者手冊</li>
+<li data-label="C.">系統設定檔</li>
+<li class="correct" data-label="D.">可重用的技能</li>
+</ol>
+<div class="explanation">💡 OpenClaw 會將經常執行的任務解法封裝成技能，方便未來直接重複使用。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-openclaw</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">OpenClaw 如何確保使用者不需要改變既有的溝通習慣？</div>
+<span class="q-id">#7448</span>
+</div>
+<ol class="options">
+<li data-label="A.">要求使用者每天登入官網使用</li>
+<li data-label="B.">提供全新的專屬聊天應用程式</li>
+<li data-label="C.">只提供 API 給開發者整合</li>
+<li class="correct" data-label="D.">讓使用者透過已在使用的通訊軟體操作</li>
+</ol>
+<div class="explanation">💡 OpenClaw 設計成與使用者已在使用的通訊工具整合，無需學習新介面。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-openclaw</span>
+</div>
+</div>
+<h3 class="section-heading">Hermes Agent：會自我學習的多平台代理</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Hermes Agent 宣稱自己是「唯一內建學習迴圈的代理」，這個學習迴圈的核心機制是什麼？</div>
+<span class="q-id">#7404</span>
+</div>
+<ol class="options">
+<li data-label="A.">每隔一段固定時間就會自動重新訓練底層語言模型</li>
+<li data-label="B.">透過讓多個子代理相互競爭來選出最佳的任務解法</li>
+<li class="correct" data-label="C.">評估任務解法並封裝為技能供未來使用，持續優化</li>
+<li data-label="D.">定期自動從網路上抓取最新資料來擴充內部知識庫</li>
+</ol>
+<div class="explanation">💡 Hermes 的學習迴圈讓代理能從每次任務中提煉經驗，自動封裝成可重用的技能。就像新員工把工作步驟記錄成 SOP，下次同樣任務就能更快完成。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-hermes</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Hermes Agent 的技能系統與哪個開放標準相容，讓技能可以跨框架共享？</div>
+<span class="q-id">#7405</span>
+</div>
+<ol class="options">
+<li data-label="A.">OpenAPI 規範（用於描述 REST API）</li>
+<li data-label="B.">MCP（模型上下文協議）</li>
+<li class="correct" data-label="C.">agentskills.io 開放技能標準</li>
+<li data-label="D.">ISO 42001（AI 管理系統標準）</li>
+</ol>
+<div class="explanation">💡 Hermes 的技能與 agentskills.io 開放標準相容，這讓 Hermes 建立的技能可以分享給其他相容框架，也能安裝社群共享的技能，避免重複造輪子。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-hermes</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Hermes Agent 的「模型無關（Model Agnostic）」設計帶來什麼實際好處？</div>
+<span class="q-id">#7406</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">可自由切換不同 LLM 提供商，而完全不需要修改程式碼</li>
+<li data-label="B.">這項設計讓 Hermes 即使沒有任何 LLM 也能獨立運作</li>
+<li data-label="C.">代理可以同時呼叫多個不同的模型來回答同一個問題</li>
+<li data-label="D.">系統會自動幫使用者降低每一次 API 呼叫的實際費用</li>
+</ol>
+<div class="explanation">💡 模型無關設計讓使用者不被綁定在單一 AI 廠商，可以根據費用、速度或能力需求自由切換模型，同時保持整個代理系統的其他設定不變。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-hermes</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">對於複雜任務，Hermes 會如何處理？</div>
+<span class="q-id">#7408</span>
+</div>
+<ol class="options">
+<li data-label="A.">交給其他競爭對手的 AI 模型處理</li>
+<li class="correct" data-label="B.">派生多個子代理 (Subagents) 並行處理</li>
+<li data-label="C.">直接回報任務失敗以節省資源</li>
+<li data-label="D.">要求使用者自行手動將任務拆解</li>
+</ol>
+<div class="explanation">💡 Hermes 支援並行派生子代理來高效率解決複雜多步驟任務。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Hermes 內建的排程功能支援什麼樣的操作方式？</div>
+<span class="q-id">#7411</span>
+</div>
+<ol class="options">
+<li data-label="A.">只能使用滑鼠點擊圖形化選單</li>
+<li data-label="B.">必須手動修改作業系統的登錄檔</li>
+<li class="correct" data-label="C.">支援使用自然語言直接定義排程</li>
+<li data-label="D.">必須撰寫複雜的 Python 腳本</li>
+</ol>
+<div class="explanation">💡 使用者可以直接用自然語言設定任務排程（如每天早上八點...）。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Hermes 的「主動記憶管理」是指什麼？</div>
+<span class="q-id">#7414</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">代理會主動把重要知識寫入記憶</li>
+<li data-label="B.">自動刪除超過三天的所有對話</li>
+<li data-label="C.">自動幫電腦增加虛擬記憶體空間</li>
+<li data-label="D.">強制使用者每小時覆誦一次重點</li>
+</ol>
+<div class="explanation">💡 Hermes 不需要使用者特別指示，也能主動分辨並保存關鍵資訊。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Hermes 的跨會話記憶是透過什麼技術實現的？</div>
+<span class="q-id">#7417</span>
+</div>
+<ol class="options">
+<li data-label="A.">將所有對話無限制地塞入上下文</li>
+<li class="correct" data-label="B.">全文搜尋結合大型語言模型的摘要</li>
+<li data-label="C.">依賴使用者手動為對話加上標籤</li>
+<li data-label="D.">使用外部的付費商業搜尋引擎</li>
+</ol>
+<div class="explanation">💡 透過搜尋與摘要技術，Hermes 能在海量歷史中找到相關脈絡。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Hermes Agent 將成功解決任務的方法封裝成什麼？</div>
+<span class="q-id">#7423</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">可重用的技能（Skill）</li>
+<li data-label="B.">使用者的操作指南</li>
+<li data-label="C.">新的語言模型</li>
+<li data-label="D.">靜態的程式碼片段</li>
+</ol>
+<div class="explanation">💡 Hermes 會將成功解法自動封裝為可重用的技能，類似於把工作流程記錄成 SOP。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-hermes</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Hermes Agent 的「主動記憶管理」與一般代理人的被動記憶有何不同？</div>
+<span class="q-id">#7424</span>
+</div>
+<ol class="options">
+<li data-label="A.">Hermes 不使用任何記憶系統</li>
+<li class="correct" data-label="B.">Hermes 會主動判斷哪些資訊重要並自動存入記憶</li>
+<li data-label="C.">Hermes 的記憶在每次對話後自動清空</li>
+<li data-label="D.">Hermes 的記憶只能由人類手動寫入</li>
+</ol>
+<div class="explanation">💡 Hermes 不需要使用者特別指示，能自動分辨並保存關鍵資訊到長期記憶中。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-hermes</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Hermes 的「模型無關」設計讓使用者可以如何切換 LLM？</div>
+<span class="q-id">#7428</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">不需修改任何程式碼就可以自由更換不同的 LLM</li>
+<li data-label="B.">切換模型後所有技能都會失效</li>
+<li data-label="C.">只能從兩個預設的模型中選擇</li>
+<li data-label="D.">每次切換模型都需要重新安裝整個系統</li>
+</ol>
+<div class="explanation">💡 模型無關設計讓使用者在切換 LLM 提供商時，整個代理系統不需做任何其他修改。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-hermes</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Hermes Agent 的跨會話記憶主要透過哪兩種技術實現？</div>
+<span class="q-id">#7432</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">全文搜尋與大型語言模型的摘要</li>
+<li data-label="B.">圖形資料庫與雲端備份</li>
+<li data-label="C.">區塊鏈與去中心化儲存</li>
+<li data-label="D.">電子郵件與即時通訊</li>
+</ol>
+<div class="explanation">💡 Hermes 結合全文搜尋和 LLM 摘要技術，能在大量歷史對話中找到相關脈絡。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-hermes</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Hermes 的「學習迴圈」最類似於人類的哪一種學習方式？</div>
+<span class="q-id">#7434</span>
+</div>
+<ol class="options">
+<li data-label="A.">閱讀教科書後參加測驗</li>
+<li class="correct" data-label="B.">從工作經驗中總結 SOP（標準作業程序）</li>
+<li data-label="C.">從考試題庫中背誦答案</li>
+<li data-label="D.">觀看教學影片後模仿操作</li>
+</ol>
+<div class="explanation">💡 Hermes 從每次任務中提煉經驗並封裝為可重用的技能，類似人們總結工作流程成 SOP。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-hermes</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Hermes 如何處理需要大量計算的複雜任務？</div>
+<span class="q-id">#7437</span>
+</div>
+<ol class="options">
+<li data-label="A.">要求使用者自行手動完成</li>
+<li class="correct" data-label="B.">派生子代理（Subagents）並行處理</li>
+<li data-label="C.">直接回報任務無法完成</li>
+<li data-label="D.">將任務上傳到雲端超級電腦執行</li>
+</ol>
+<div class="explanation">💡 Hermes 支援動態派生子代理，將複雜任務拆解並交由多個子代理並行處理。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-hermes</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Hermes 的自然語言排程功能可以讓使用者怎麼做？</div>
+<span class="q-id">#7442</span>
+</div>
+<ol class="options">
+<li data-label="A.">排程只能由開發者在程式碼中寫死</li>
+<li class="correct" data-label="B.">用自然語言設定定時任務，如「每天早上八點整理郵件」</li>
+<li data-label="C.">只能用 cron 表達式設定排程</li>
+<li data-label="D.">無法設定任何排程任務</li>
+</ol>
+<div class="explanation">💡 Hermes 支援用自然語言直接定義排程，讓非技術使用者也能輕鬆設定自動化任務。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-hermes</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Hermes 的「模型無關」設計對開發者的實質好處是什麼？</div>
+<span class="q-id">#7446</span>
+</div>
+<ol class="options">
+<li data-label="A.">開發者只能用一個固定的模型</li>
+<li data-label="B.">開發者需要為每個 LLM 維護不同的程式碼分支</li>
+<li data-label="C.">開發者不能使用付費的 LLM</li>
+<li class="correct" data-label="D.">開發者不需為不同 LLM 重寫代理系統</li>
+</ol>
+<div class="explanation">💡 模型無關設計讓開發者只需維護一套代理系統，即可自由切換不同的底層 LLM。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-hermes</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">Hermes 與 agentskills.io 標準相容，這帶來什麼具體好處？</div>
+<span class="q-id">#7449</span>
+</div>
+<ol class="options">
+<li data-label="A.">技能只能在 Hermes 內部使用，無法匯出</li>
+<li data-label="B.">使用者無法自訂或擴展任何技能</li>
+<li class="correct" data-label="C.">使用者可以安裝社群共享的技能，也能分享自己的技能</li>
+<li data-label="D.">使用者只能使用 Hermes 官方提供的技能</li>
+</ol>
+<div class="explanation">💡 與開放標準相容讓技能可以在不同框架間共享，避免重複開發。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-hermes</span>
+</div>
+</div>
+<h3 class="section-heading">AI 代理框架的發展趨勢</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">從 OpenClaw 和 Hermes Agent 的設計可以觀察到，現代 AI 代理的共同發展趨勢是？</div>
+<span class="q-id">#7407</span>
+</div>
+<ol class="options">
+<li data-label="A.">AI 代理正在從需要人類持續監控轉向完全自主運作，不需要任何人類介入</li>
+<li data-label="B.">代理越來越專注於單一任務，減少通用性以提升準確度</li>
+<li class="correct" data-label="C.">強調持久記憶、融入既有工具環境、以及透過開放標準讓能力可跨框架共享</li>
+<li data-label="D.">代理功能越來越集中到單一大型雲端平台，減少本地端部署</li>
+</ol>
+<div class="explanation">💡 兩個框架都展示了相同的趨勢：讓代理融入使用者的既有環境（不要求換工具）、強化持久記憶讓代理越來越「認識你」、並透過 agentskills.io 或 MCP 等開放標準讓能力可移植共享。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-lessons</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">從 OpenClaw 與 Hermes 可以觀察到 AI 代理的哪一種發展趨勢？</div>
+<span class="q-id">#7410</span>
+</div>
+<ol class="options">
+<li data-label="A.">放棄使用任何形式的長期記憶</li>
+<li class="correct" data-label="B.">讓 AI 主動接入使用者已有的環境</li>
+<li data-label="C.">完全取代傳統圖形使用者介面</li>
+<li data-label="D.">強制使用者學習全新的程式語言</li>
+</ol>
+<div class="explanation">💡 代理正逐漸融入人們常用的通訊軟體與工作環境中。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">開放標準（如 agentskills.io）為 AI 代理帶來了什麼好處？</div>
+<span class="q-id">#7419</span>
+</div>
+<ol class="options">
+<li data-label="A.">讓所有的代理都長得一模一樣</li>
+<li class="correct" data-label="B.">讓技能可以跨代理框架互相共享</li>
+<li data-label="C.">強制所有開發者使用相同的程式語言</li>
+<li data-label="D.">讓代理的執行速度獲得十倍提升</li>
+</ol>
+<div class="explanation">💡 標準化讓不同框架開發出來的工具可以互相移植與重用。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">從 OpenClaw 和 Hermes 可以觀察到，現代 AI 代理對「記憶」的看法是什麼？</div>
+<span class="q-id">#7426</span>
+</div>
+<ol class="options">
+<li data-label="A.">記憶只會拖慢系統速度，應該盡量避免</li>
+<li data-label="B.">記憶功能應交由第三方的雲端服務處理</li>
+<li class="correct" data-label="C.">持久記憶是代理能否成為稱職助理的關鍵能力</li>
+<li data-label="D.">記憶僅用於暫存當前對話，不需要長期保存</li>
+</ol>
+<div class="explanation">💡 兩個框架都將持久記憶視為核心競爭力，沒有記憶的代理無法提供連貫的個人化服務。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-lessons</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪一項不是現代 AI 代理的共同發展趨勢？</div>
+<span class="q-id">#7430</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">要求使用者學習全新的操作介面</li>
+<li data-label="B.">強化持久記憶讓代理越來越了解使用者</li>
+<li data-label="C.">透過開放標準讓能力可跨框架共享</li>
+<li data-label="D.">融入使用者的既有工具環境（如通訊軟體）</li>
+</ol>
+<div class="explanation">💡 現代 AI 代理的趨勢是融入使用者現有環境，而非要求使用者改變習慣。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-lessons</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">agentskills.io 開放標準對 AI 代理生態的最大貢獻是什麼？</div>
+<span class="q-id">#7436</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">讓不同框架開發的技能可以互相共享與移植</li>
+<li data-label="B.">讓代理人不再需要大型語言模型</li>
+<li data-label="C.">讓所有代理人的執行速度提升一倍</li>
+<li data-label="D.">強制所有開發者使用同一種程式語言</li>
+</ol>
+<div class="explanation">💡 開放標準打破了框架之間的壁壘，讓技能可以跨框架共享，避免重複開發。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-lessons</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">從 OpenClaw 和 Hermes 的設計可以看出，未來的 AI 代理將會如何與人類的工作流程整合？</div>
+<span class="q-id">#7440</span>
+</div>
+<ol class="options">
+<li data-label="A.">取代人類成為完全自主的系統</li>
+<li data-label="B.">只在特定時段提供服務</li>
+<li data-label="C.">要求人類學習全新的操作模式</li>
+<li class="correct" data-label="D.">被動融入人類已有的溝通工具與工作環境</li>
+</ol>
+<div class="explanation">💡 兩個框架都不要求使用者改變習慣，而是讓代理融入既有的溝通工具與工作流程。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-lessons</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">開放標準（如 MCP 和 agentskills.io）如何促進 AI 代理的發展？</div>
+<span class="q-id">#7444</span>
+</div>
+<ol class="options">
+<li data-label="A.">讓所有開發者使用相同的程式語言</li>
+<li data-label="B.">讓 AI 不再需要訓練資料</li>
+<li class="correct" data-label="C.">讓不同框架之間的工具與能力可以互通</li>
+<li data-label="D.">讓所有代理人的速度變得一樣快</li>
+</ol>
+<div class="explanation">💡 開放標準打破框架壁壘，促進工具與能力在不同系統間互通，加速生態發展。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-lessons</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪一項最能總結 OpenClaw 和 Hermes 代表的 AI 代理發展方向？</div>
+<span class="q-id">#7450</span>
+</div>
+<ol class="options">
+<li data-label="A.">完全依賴雲端運算</li>
+<li data-label="B.">集中化與封閉生態</li>
+<li class="correct" data-label="C.">隱私優先、融入既有環境、開放標準共享</li>
+<li data-label="D.">全面取代人類工作</li>
+</ol>
+<div class="explanation">💡 兩個框架共同展示了「隱私保護、融入既有工具、開放標準」的現代代理發展方向。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-lessons</span>
+</div>
+</div>
+<h3 class="section-heading">多代理協作框架</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">多代理協作框架通常需要哪一種機制來避免不同代理人的輸出互相矛盾？</div>
+<span class="q-id">#900030</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">角色分工、共享狀態、衝突檢查與最終仲裁流程</li>
+<li data-label="B.">讓所有代理人使用完全相同的提示詞</li>
+<li data-label="C.">禁止代理人交換任何資訊</li>
+<li data-label="D.">只保留輸出最長的代理人答案</li>
+</ol>
+<div class="explanation">💡 多代理協作的價值在於分工，但也需要共享上下文、審查與仲裁機制，才能整合成一致且可執行的結果。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-multi-agent-frameworks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在軟體開發情境中，研究代理、程式代理與審查代理分工的主要優點是什麼？</div>
+<span class="q-id">#900031</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">將需求理解、實作與品質檢查拆開，降低單一代理人遺漏風險</li>
+<li data-label="B.">讓每個代理人都重複寫同一段程式</li>
+<li data-label="C.">取消測試與人工審查</li>
+<li data-label="D.">確保所有代理人永遠不會產生不同意見</li>
+</ol>
+<div class="explanation">💡 分工能讓不同代理人專注於不同品質面向，但仍需測試、審查與整合流程來管理成本與一致性。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-multi-agent-frameworks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪一項是多代理系統相較單一代理人更需要注意的風險？</div>
+<span class="q-id">#900032</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">溝通成本、責任歸屬與錯誤在代理人之間傳遞</li>
+<li data-label="B.">完全無法使用任何工具</li>
+<li data-label="C.">只能回答單一句子問題</li>
+<li data-label="D.">不需要任何監控</li>
+</ol>
+<div class="explanation">💡 多代理系統可能放大溝通延遲、上下文漂移與責任不清，因此要設計明確協議、日誌與終止條件。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-multi-agent-frameworks</span>
+</div>
+</div>
+<h3 class="section-heading">技術與專業框架</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">選擇技術型代理框架時，最應優先檢查哪一項能力？</div>
+<span class="q-id">#900033</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">是否支援工具整合、狀態管理、評估追蹤與部署監控</li>
+<li data-label="B.">是否只提供漂亮的聊天介面</li>
+<li data-label="C.">是否完全不允許自訂工具</li>
+<li data-label="D.">是否要求所有資料公開上傳</li>
+</ol>
+<div class="explanation">💡 技術框架的價值在於能支撐真實任務流程，包括工具呼叫、記憶或狀態、測試評估、觀測性與部署治理。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-technical-frameworks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">專業領域代理框架與通用代理框架的主要差異通常是什麼？</div>
+<span class="q-id">#900034</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">會內建特定領域流程、資料格式、合規要求或工具連接器</li>
+<li data-label="B.">完全不使用語言模型</li>
+<li data-label="C.">只能在沒有資料的情況下運作</li>
+<li data-label="D.">永遠不需要人類專家參與</li>
+</ol>
+<div class="explanation">💡 專業框架常針對醫療、法務、金融或軟體開發等場景加入領域流程與控管，但仍需配合專家驗證。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-technical-frameworks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">若企業要把代理人接入內部 ERP 與工單系統，下列哪一項框架能力最關鍵？</div>
+<span class="q-id">#900035</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">可控的工具權限、API 連接器與操作審計</li>
+<li data-label="B.">只能輸出一般聊天文字</li>
+<li data-label="C.">不保存任何執行紀錄</li>
+<li data-label="D.">只支援單機玩具範例</li>
+</ol>
+<div class="explanation">💡 企業系統整合涉及權限、資料安全與可追溯性，因此框架必須能限制工具範圍、記錄操作並支援 API 整合。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-technical-frameworks</span>
+</div>
+</div>
+<h3 class="section-heading">2026 年新興框架</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">評估 2026 年新興代理框架時，哪一種態度最合適？</div>
+<span class="q-id">#900036</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">用小型試點驗證能力、社群活躍度、文件成熟度與維運風險</li>
+<li data-label="B.">只要名稱新就全面替換現有系統</li>
+<li data-label="C.">完全忽略安全與治理功能</li>
+<li data-label="D.">只看宣傳影片，不做任何實測</li>
+</ol>
+<div class="explanation">💡 新興框架可能帶來新能力，但成熟度、相容性與長期維護仍有不確定性，應以試點和可量測指標評估。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-emerging-frameworks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">新興代理框架若主打「開放技能標準」，對企業導入最可能帶來什麼好處？</div>
+<span class="q-id">#900037</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">降低技能被單一平台鎖定的風險，提升重用與移植性</li>
+<li data-label="B.">讓所有技能都不需要測試</li>
+<li data-label="C.">保證任何模型輸出都完全正確</li>
+<li data-label="D.">取消資料權限控管</li>
+</ol>
+<div class="explanation">💡 開放標準有助於跨框架共享技能與降低供應商鎖定，但仍需測試、治理與安全審查。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-emerging-frameworks</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">某新代理框架強調本機執行與隱私保護，最適合優先驗證哪一項？</div>
+<span class="q-id">#900038</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">敏感資料是否能在本機處理，同時維持可接受的延遲與任務成功率</li>
+<li data-label="B.">是否能把所有資料自動公開分享</li>
+<li data-label="C.">是否完全不需要硬體資源</li>
+<li data-label="D.">是否只能回答閒聊問題</li>
+</ol>
+<div class="explanation">💡 本機代理的價值在於資料不外流與低延遲，但仍要測量模型能力、硬體成本、維護方式與安全邊界。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-emerging-frameworks</span>
+</div>
+</div>
+<h3 class="section-heading">框架比較總覽</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在模型選擇上，Hermes 和 OpenClaw 的共通點是？</div>
+<span class="q-id">#7409</span>
+</div>
+<ol class="options">
+<li data-label="A.">兩者都必須依賴特定的硬體加速晶片才能夠正常運作</li>
+<li class="correct" data-label="B.">兩者皆採用模型無關 (Model Agnostic) 的靈活設計</li>
+<li data-label="C.">兩者都只能在離線環境下使用開源的輕量級語言模型</li>
+<li data-label="D.">兩者都被限制只能使用 OpenAI 官方提供的模型</li>
+</ol>
+<div class="explanation">💡 兩者都設計為可自由切換不同的底層語言模型。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">這兩個專案對於「記憶」的態度為何？</div>
+<span class="q-id">#7413</span>
+</div>
+<ol class="options">
+<li data-label="A.">建議只使用系統預設的短期記憶</li>
+<li data-label="B.">認為只有人類才需要擁有記憶</li>
+<li data-label="C.">認為記憶只會降低系統的效能</li>
+<li class="correct" data-label="D.">將持久記憶視為代理的核心競爭力</li>
+</ol>
+<div class="explanation">💡 沒有記憶的代理無法成為稱職助理，持久記憶是未來發展關鍵。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在擴展方式上，OpenClaw 和 Hermes 有何不同？</div>
+<span class="q-id">#7416</span>
+</div>
+<ol class="options">
+<li data-label="A.">前者無法擴展，後者支援無限擴展</li>
+<li class="correct" data-label="B.">兩者皆擁抱社群與開放的擴展標準</li>
+<li data-label="C.">兩者都僅依賴原廠提供的官方外掛</li>
+<li data-label="D.">前者需要付費，後者完全免費</li>
+</ol>
+<div class="explanation">💡 兩者都非常重視開源社群，並支援 MCP 或 agentskills 擴展。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">相較於 OpenClaw，Hermes 更適合哪一種使用者？</div>
+<span class="q-id">#7420</span>
+</div>
+<ol class="options">
+<li data-label="A.">只在乎隱私且從不連上網路的人</li>
+<li class="correct" data-label="B.">希望 AI 能從工作中持續學習改進的人</li>
+<li data-label="C.">電腦硬體配備極度老舊與低階的人</li>
+<li data-label="D.">只想要一個簡單的氣象播報機器人</li>
+</ol>
+<div class="explanation">💡 Hermes 的核心優勢在於自我學習與進化，適合進階的生產力使用者。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">OpenClaw 和 Hermes 都支援哪一種讓代理能力擴展的機制？</div>
+<span class="q-id">#7425</span>
+</div>
+<ol class="options">
+<li data-label="A.">兩者都只能透過官方付費市集擴展</li>
+<li data-label="B.">兩者都只依賴內建的功能，不支援擴展</li>
+<li data-label="C.">兩者都不允許第三方開發者擴展功能</li>
+<li class="correct" data-label="D.">兩者都支援 MCP 或 agentskills.io 等開放標準</li>
+</ol>
+<div class="explanation">💡 兩個專案都很重視開放標準與社群生態，支援透過 MCP 或 agentskills.io 擴展能力。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-comparison</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">如果一個使用者非常重視資料隱私，要求所有資料不能離開自己的電腦，應該選擇哪個框架？</div>
+<span class="q-id">#7429</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">OpenClaw</li>
+<li data-label="B.">AutoGen</li>
+<li data-label="C.">Hermes Agent</li>
+<li data-label="D.">CrewAI</li>
+</ol>
+<div class="explanation">💡 OpenClaw 的核心理念是隱私優先，所有運算在使用者自己的電腦上本地執行。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-comparison</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">OpenClaw 和 Hermes 在處理反覆出現的任務時，共同的策略是什麼？</div>
+<span class="q-id">#7433</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">將解法自動封裝成可重用的技能</li>
+<li data-label="B.">每次都從零開始重新執行</li>
+<li data-label="C.">忽略重複的任務請求</li>
+<li data-label="D.">將任務外包給人類助理</li>
+</ol>
+<div class="explanation">💡 兩者都能將反覆任務的解法固定為技能，未來遇到相同任務時就能直接套用。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-comparison</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪個框架最強調「從任務經驗中自動學習並進化」的能力？</div>
+<span class="q-id">#7438</span>
+</div>
+<ol class="options">
+<li data-label="A.">AutoGen</li>
+<li class="correct" data-label="B.">Hermes Agent</li>
+<li data-label="C.">OpenClaw</li>
+<li data-label="D.">CrewAI</li>
+</ol>
+<div class="explanation">💡 Hermes 的核心特色是內建學習迴圈，能從每次任務中提煉經驗並持續優化。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-comparison</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在擴展性方面，OpenClaw 和 Hermes 有何共通策略？</div>
+<span class="q-id">#7443</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">兩者都擁抱社群貢獻與開放標準</li>
+<li data-label="B.">兩者都只能透過付費擴展功能</li>
+<li data-label="C.">兩者都不允許使用者自訂功能</li>
+<li data-label="D.">兩者都只提供封閉的官方功能</li>
+</ol>
+<div class="explanation">💡 兩個框架都非常重視開源社群，透過 MCP 或 agentskills.io 等開放標準擴展生態。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-comparison</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪個框架的設計最適合需要高度隱私保護且希望資料留在本地的使用者？</div>
+<span class="q-id">#7447</span>
+</div>
+<ol class="options">
+<li data-label="A.">LangGraph</li>
+<li class="correct" data-label="B.">OpenClaw</li>
+<li data-label="C.">Hermes Agent</li>
+<li data-label="D.">AutoGen</li>
+</ol>
+<div class="explanation">💡 OpenClaw 專門為隱私優先設計，所有運算和資料都在使用者的本地電腦上處理。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch4</span>
+<span class="tag">sec-comparison</span>
+</div>
+</div>
+<h2 class="chapter-heading" id="ch-5">多代理系統與未來發展</h2>
+<h3 class="section-heading">為什麼需要多個代理人協作？</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">多代理系統（MAS）能「超越上下文視窗限制」的原理是？</div>
+<span class="q-id">#7501</span>
+</div>
+<ol class="options">
+<li data-label="A.">透過先進的資料壓縮技術大幅縮小上下文佔用的空間</li>
+<li data-label="B.">使用參數規模更大的 LLM 模型來強制增加上下文長度</li>
+<li class="correct" data-label="C.">任務分割給多個代理，各自擁有完整的獨立上下文視窗</li>
+<li data-label="D.">讓所有參與協作的代理輪流使用同一個上下文記憶視窗</li>
+</ol>
+<div class="explanation">💡 每個代理都有自己完整的上下文視窗。透過任務分割，多個代理可以並行處理不同部分，整體系統處理的資訊量遠超任何單一代理的上下文限制。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-mas-overview</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在單一代理人系統中，若處理一個大型任務導致上下文視窗溢出，哪一種方法可以解決？</div>
+<span class="q-id">#7530</span>
+</div>
+<ol class="options">
+<li data-label="A.">直接終止任務並回報失敗</li>
+<li class="correct" data-label="B.">將任務切分給多個代理人各自處理，分散上下文負擔</li>
+<li data-label="C.">升級到更大的語言模型</li>
+<li data-label="D.">降低任務的品質要求</li>
+</ol>
+<div class="explanation">💡 多代理系統將大任務拆解成子任務分配給不同代理人，每個代理人只需要處理自己的部分。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-mas-overview</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">多代理系統中「相互驗證」的優勢是如何實現的？</div>
+<span class="q-id">#7531</span>
+</div>
+<ol class="options">
+<li data-label="A.">讓所有代理人各自完成任務後取平均值</li>
+<li data-label="B.">只有一個代理人有最終決定權</li>
+<li data-label="C.">要求所有代理人輸出完全相同的結果</li>
+<li class="correct" data-label="D.">一個代理人的產出交由另一個代理人審查，互相把關</li>
+</ol>
+<div class="explanation">💡 相互驗證類似於重要文件需雙人簽署，透過多代理人交叉檢查提升可靠性。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-mas-overview</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪一項「不是」多代理系統的固有挑戰？</div>
+<span class="q-id">#7536</span>
+</div>
+<ol class="options">
+<li data-label="A.">代理人之間的協調溝通成本</li>
+<li class="correct" data-label="B.">所有代理人的執行速度一定比單一代理人快</li>
+<li data-label="C.">代理人越多，API 費用越高</li>
+<li data-label="D.">多個代理人可能得出不一致的結論</li>
+</ol>
+<div class="explanation">💡 多代理系統因溝通與協調成本，總執行速度不一定比單一代理人快。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-mas-overview</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">多代理系統的「容錯能力」是如何實現的？</div>
+<span class="q-id">#7541</span>
+</div>
+<ol class="options">
+<li data-label="A.">所有代理人共用同一個備援伺服器</li>
+<li data-label="B.">每次執行任務都會建立全新的代理人實例</li>
+<li class="correct" data-label="C.">單一代理人失敗時不影響其他代理人繼續工作</li>
+<li data-label="D.">所有代理人定時互相備份對方的記憶</li>
+</ol>
+<div class="explanation">💡 多代理系統的分散式設計讓故障被隔離，一個代理人的失敗不會導致整個系統停擺。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-mas-overview</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">若企業需要同時讓多個 AI 代理人協作完成一份市場分析報告，下列哪個架構最適合？</div>
+<span class="q-id">#7546</span>
+</div>
+<ol class="options">
+<li data-label="A.">人類手動處理所有步驟</li>
+<li data-label="B.">單一代理人從頭到尾獨立完成</li>
+<li class="correct" data-label="C.">多代理系統：研究代理收集資料，分析代理處理資料，寫作代理生成報告</li>
+<li data-label="D.">隨機選取一個代理人執行所有步驟</li>
+</ol>
+<div class="explanation">💡 多代理系統能讓專業分工的研究、分析、寫作代理人協作，效率與品質更高。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-mas-overview</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">多代理系統中「並行執行」最主要的商業效益是什麼？</div>
+<span class="q-id">#7551</span>
+</div>
+<ol class="options">
+<li data-label="A.">減少開發者的程式碼撰寫量</li>
+<li data-label="B.">讓代理人不需要網路連線</li>
+<li data-label="C.">減少需要的 LLM 授權數量</li>
+<li class="correct" data-label="D.">縮短整體任務的完成時間</li>
+</ol>
+<div class="explanation">💡 並行執行讓多個獨立的子任務同時進行，大幅縮短任務完成所需的時間。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-mas-overview</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">若兩個代理人在多代理系統中對同一問題得出不同結論，應如何處理？</div>
+<span class="q-id">#7556</span>
+</div>
+<ol class="options">
+<li data-label="A.">忽略其中一個代理人的結論</li>
+<li class="correct" data-label="B.">需要有分歧處理機制，如引入第三個中立代理人仲裁</li>
+<li data-label="C.">直接採納第一個完成的代理人的結論</li>
+<li data-label="D.">不斷重複執行直到結果一致</li>
+</ol>
+<div class="explanation">💡 多代理系統需要設計共識或仲裁機制來處理分歧。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-mas-overview</span>
+</div>
+</div>
+<h3 class="section-heading">常見的多代理協作模式</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">「協調者-執行者模式 (Orchestrator-Worker)」中，協調者代理的主要職責是？</div>
+<span class="q-id">#7502</span>
+</div>
+<ol class="options">
+<li data-label="A.">主要功能是為執行者代理提供各類底層工具呼叫的能力</li>
+<li data-label="B.">負責嚴格監控所有執行者代理的 API 使用量與花費</li>
+<li class="correct" data-label="C.">負責整體任務規劃、分配子任務，並負責整合最終結果</li>
+<li data-label="D.">專門負責執行系統中最困難且最消耗資源的子任務</li>
+</ol>
+<div class="explanation">💡 協調者負責「管理」而非「執行」，它拆解主任務、分配給專業執行者，並在所有子任務完成後整合成最終輸出，是多代理系統的核心指揮角色。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-mas-patterns</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">「辯論模式 (Debate)」的多代理架構主要用於解決什麼問題？</div>
+<span class="q-id">#7503</span>
+</div>
+<ol class="options">
+<li data-label="A.">確保代理之間在傳遞訊息時不會遺失任何重要的參數</li>
+<li data-label="B.">大幅加速整個多代理系統在處理複雜任務時的執行速度</li>
+<li class="correct" data-label="C.">透過不同立場的相互審視來提高答案品質、減少偏見與錯誤</li>
+<li data-label="D.">顯著降低多代理系統在頻繁互動時所產生的 API 呼叫成本</li>
+</ol>
+<div class="explanation">💡 辯論模式讓代理從正反兩方批判性地審視問題，這種對抗性設計能有效揭露單一代理可能忽略的盲點，由裁判代理綜合後得出更平衡的結論。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-mas-patterns</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在協調者-執行者（Orchestrator-Worker）模式中，協調者的主要職責是什麼？</div>
+<span class="q-id">#7532</span>
+</div>
+<ol class="options">
+<li data-label="A.">對執行結果進行最終簽核</li>
+<li data-label="B.">監督所有執行者的安全權限</li>
+<li data-label="C.">執行所有具體的工作任務</li>
+<li class="correct" data-label="D.">拆解任務、分配任務並整合結果</li>
+</ol>
+<div class="explanation">💡 協調者負責管理全局，不親自執行具體工作，而是拆解任務並分配給執行者。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-mas-patterns</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在「辯論模式（Debate）」的多代理架構中，最終結論通常由誰做出？</div>
+<span class="q-id">#7537</span>
+</div>
+<ol class="options">
+<li data-label="A.">由正方代理人決定</li>
+<li data-label="B.">由使用者自行判斷</li>
+<li data-label="C.">由反方代理人決定</li>
+<li class="correct" data-label="D.">由中立的裁判代理人綜合雙方論點後決定</li>
+</ol>
+<div class="explanation">💡 辯論模式中雙方提出正反論點，由裁判代理人綜合評估後給出平衡結論。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-mas-patterns</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">「流水線（Pipeline）」模式與「協調者-執行者」模式最大的區別是什麼？</div>
+<span class="q-id">#7542</span>
+</div>
+<ol class="options">
+<li data-label="A.">流水線模式只能處理文字資料</li>
+<li class="correct" data-label="B.">流水線模式沒有中央協調者，任務依序在各代理人間傳遞</li>
+<li data-label="C.">流水線模式比協調者模式快十倍</li>
+<li data-label="D.">協調者模式不需要執行者</li>
+</ol>
+<div class="explanation">💡 流水線模式中任務像生產線一樣依序通過各代理人，沒有中央協調者統籌分配。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-mas-patterns</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在協調者-執行者模式中，哪個代理人需要了解任務的整體全貌？</div>
+<span class="q-id">#7547</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">只有協調者需要了解整體全貌，執行者只需專注自身任務</li>
+<li data-label="B.">沒有任何代理人需要了解整體全貌</li>
+<li data-label="C.">只有最高權限的執行者需要了解</li>
+<li data-label="D.">所有執行者都需要了解整體全貌</li>
+</ol>
+<div class="explanation">💡 協調者負責全局規劃，而執行者只需專注完成自己被分配到的工作。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-mas-patterns</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">當需要讓 AI 從多個角度審視一個商業計劃的可行性時，最適合採用哪種模式？</div>
+<span class="q-id">#7552</span>
+</div>
+<ol class="options">
+<li data-label="A.">迴圈模式</li>
+<li class="correct" data-label="B.">辯論模式</li>
+<li data-label="C.">流水線模式</li>
+<li data-label="D.">協調者-執行者模式</li>
+</ol>
+<div class="explanation">💡 辯論模式讓不同立場的代理人從不同角度分析，適合需要多方視角的評估。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-mas-patterns</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在流水線模式中，如果中間的某個代理人失敗，系統應如何處理？</div>
+<span class="q-id">#7557</span>
+</div>
+<ol class="options">
+<li data-label="A.">整個流程從頭重新開始</li>
+<li class="correct" data-label="B.">僅重試失敗的那個代理人，成功後繼續後續流程</li>
+<li data-label="C.">將失敗的代理人直接從流程中移除</li>
+<li data-label="D.">忽略失敗並繼續執行後續步驟</li>
+</ol>
+<div class="explanation">💡 流水線模式中可針對失敗節點進行重試，避免整個流程重新執行。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-mas-patterns</span>
+</div>
+</div>
+<h3 class="section-heading">代理人之間如何「說話」：通訊協議</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">A2A (Agent-to-Agent) 協議中的「代理名片 (Agent Card)」的用途是？</div>
+<span class="q-id">#7504</span>
+</div>
+<ol class="options">
+<li data-label="A.">一種專門用來詳細記錄代理所有執行歷史的標準日誌格式</li>
+<li class="correct" data-label="B.">代理以 JSON 格式發布能力描述，供其他代理協作前了解</li>
+<li data-label="C.">作為不同代理之間在傳遞複雜任務時所使用的標準格式</li>
+<li data-label="D.">作為代理之間用於驗證彼此身份與權限的數位安全憑證</li>
+</ol>
+<div class="explanation">💡 代理名片類似微服務的 API 文件，讓其他代理或協調者能在運行時動態發現代理的能力，是實現跨廠商代理互操作性的基礎機制。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-agent-communication</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 A2A (Agent-to-Agent) 協議中，負責將使用者的對話上下文傳遞給遠端代理人的元件是？</div>
+<span class="q-id">#7508</span>
+</div>
+<ol class="options">
+<li data-label="A.">代理名片 (Agent Card)</li>
+<li data-label="B.">工作產物 (Artifact)</li>
+<li data-label="C.">事件佇列 (Event Queue)</li>
+<li class="correct" data-label="D.">代理執行器 (Agent Executor)</li>
+</ol>
+<div class="explanation">💡 代理執行器負責解析傳入的請求，並將對話的上下文傳遞給遠端代理人以利任務執行。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-agent-communication</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">A2A 協議中的「代理名片（Agent Card）」主要包含什麼資訊？</div>
+<span class="q-id">#7533</span>
+</div>
+<ol class="options">
+<li data-label="A.">代理人的個人聯絡電話與地址</li>
+<li class="correct" data-label="B.">代理人的名稱、能力清單與 API 端點</li>
+<li data-label="C.">代理人的開發原始碼與版本歷史</li>
+<li data-label="D.">代理人的硬體設備規格</li>
+</ol>
+<div class="explanation">💡 代理名片用標準格式描述代理人的名稱、能力與聯絡方式，方便其他代理人發現與呼叫。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-agent-communication</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 A2A 通訊中，「工作產物（Artifact）」指的是什麼？</div>
+<span class="q-id">#7538</span>
+</div>
+<ol class="options">
+<li data-label="A.">代理人開發過程中的程式碼版本</li>
+<li class="correct" data-label="B.">遠端代理人完成任務後回傳的結果封裝</li>
+<li data-label="C.">使用者對代理人服務的評價與回饋</li>
+<li data-label="D.">代理人執行任務時的除錯日誌</li>
+</ol>
+<div class="explanation">💡 Artifact 是代理人執行任務後回傳的結果，包含完成工作的具體成果。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-agent-communication</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 A2A 通訊中，「事件佇列（Event Queue）」主要解決什麼問題？</div>
+<span class="q-id">#7543</span>
+</div>
+<ol class="options">
+<li data-label="A.">代理人之間的認證與授權問題</li>
+<li class="correct" data-label="B.">長時間運行的任務中連線過早中斷的問題</li>
+<li data-label="C.">代理人無法並行執行任務的問題</li>
+<li data-label="D.">代理人記憶體不足的問題</li>
+</ol>
+<div class="explanation">💡 事件佇列用於處理長時間任務的更新，確保在任務完成前連線不會被中斷。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-agent-communication</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">NLWeb（自然語言網路）的核心目標是什麼？</div>
+<span class="q-id">#7548</span>
+</div>
+<ol class="options">
+<li data-label="A.">讓所有網站的內容變成純文字格式</li>
+<li data-label="B.">取代現有的全球資訊網</li>
+<li class="correct" data-label="C.">為網站提供自然語言介面，讓 AI 代理人可以探索與互動</li>
+<li data-label="D.">強制所有網站使用同一種程式語言</li>
+</ol>
+<div class="explanation">💡 NLWeb 的目標是讓網站具備自然語言介面，使 AI 代理人能像人類一樣瀏覽網站。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-agent-communication</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">代理名片（Agent Card）在設計時為什麼需要包含版本資訊？</div>
+<span class="q-id">#7553</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">為了讓協調者知道代理人的能力是否過時，以及向後相容性</li>
+<li data-label="B.">為了符合軟體版權法的要求</li>
+<li data-label="C.">為了讓系統能自動更新驅動程式</li>
+<li data-label="D.">為了讓開發者獲得成就感</li>
+</ol>
+<div class="explanation">💡 版本資訊幫助協調者判斷代理人的能力可靠程度與相容性。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-agent-communication</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 NLWeb 中，每個實例同時也是一個 MCP 伺服器端點，這代表什麼？</div>
+<span class="q-id">#7558</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">外部代理人可以透過 MCP 標準向網站發起結構化查詢</li>
+<li data-label="B.">NLWeb 的資料無法被其他代理人存取</li>
+<li data-label="C.">NLWeb 只能與 Claude 模型連線</li>
+<li data-label="D.">NLWeb 不支援 MCP 協議的通訊</li>
+</ol>
+<div class="explanation">💡 NLWeb 實例作為 MCP 伺服器，讓外部代理人能透過標準 MCP 協議對網站進行查詢。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-agent-communication</span>
+</div>
+</div>
+<h3 class="section-heading">代理安全：當 AI 有了行動能力，風險也來了</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">「提示注入攻擊 (Prompt Injection)」在多代理系統中的主要風險是？</div>
+<span class="q-id">#7505</span>
+</div>
+<ol class="options">
+<li data-label="A.">代理在執行任務時不受控制地過度消耗大量的 API 配額</li>
+<li class="correct" data-label="B.">惡意內容透過工具回傳資料誘使代理執行了非預期的操作</li>
+<li data-label="C.">惡意使用者直接取得權限並修改代理系統內部的系統提示</li>
+<li data-label="D.">代理底層程式碼中存在著嚴重的 SQL 注入等資訊安全漏洞</li>
+</ol>
+<div class="explanation">💡 提示注入的特殊危險在於攻擊可以隱藏在看似正常的資料中（如網頁內容、文件、資料庫記錄），當代理讀取這些資料時，惡意指令混入上下文並被 LLM 執行。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-agent-safety</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在代理安全設計中，「執行預算 (Execution Budget)」的主要目的是？</div>
+<span class="q-id">#7506</span>
+</div>
+<ol class="options">
+<li data-label="A.">強制控制代理每一次回覆使用者的文字長度與格式</li>
+<li data-label="B.">限制代理在讀取本地或外部文件時能夠處理的最大檔案大小</li>
+<li class="correct" data-label="C.">設定最大步驟與費用上限，防止代理陷入迴圈或過度消耗</li>
+<li data-label="D.">嚴格限制每個代理在執行任務時可以使用的外部工具數量</li>
+</ol>
+<div class="explanation">💡 執行預算是代理安全的重要防護機制，透過設定步驟數和費用上限，確保即使代理進入異常狀態也不會無限消耗資源，保護系統穩定性和成本控制。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-agent-safety</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">提示注入攻擊中，攻擊者常用的手法是什麼？</div>
+<span class="q-id">#7534</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">將惡意指令藏在網頁或文件內容中，讓代理人讀取後被操控</li>
+<li data-label="B.">偽造使用者的生物特徵驗證</li>
+<li data-label="C.">透過 DDoS 攻擊讓代理人無法回應</li>
+<li data-label="D.">直接入侵 MCP 伺服器的作業系統</li>
+</ol>
+<div class="explanation">💡 提示注入將惡意指令偽裝成正常內容，當代理人讀取這些資料時，惡意指令混入思維中被執行。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-agent-safety</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在安全設計中，「最小授權原則」在多代理系統中如何應用？</div>
+<span class="q-id">#7539</span>
+</div>
+<ol class="options">
+<li data-label="A.">給所有代理人完全相同的完整權限</li>
+<li data-label="B.">不授予任何代理人任何權限</li>
+<li data-label="C.">所有操作都需要全域管理員權限</li>
+<li class="correct" data-label="D.">每個代理人只擁有完成自身任務所需的最小權限</li>
+</ol>
+<div class="explanation">💡 最小授權原則讓研究代理只有讀取權限、通知代理只有發送郵件權限，降低風險。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-agent-safety</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">代理人設定「執行預算」的主要目的是什麼？</div>
+<span class="q-id">#7544</span>
+</div>
+<ol class="options">
+<li data-label="A.">用來估算專案的總開發成本</li>
+<li data-label="B.">確保代理人的執行速度夠快</li>
+<li class="correct" data-label="C.">作為防止代理人失控的保險絲，限制最大步驟數或費用</li>
+<li data-label="D.">用來比較不同代理人的效能</li>
+</ol>
+<div class="explanation">💡 執行預算限制代理人最多執行的步驟或花費，超過就自動停止，防止無限迴圈耗盡資源。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-agent-safety</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">人機協作（Human-in-the-Loop）在哪些操作中最應該被強制執行？</div>
+<span class="q-id">#7549</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">高風險操作如刪除檔案、發送郵件、金融交易</li>
+<li data-label="B.">只需要在系統初始化時確認一次</li>
+<li data-label="C.">所有的工具呼叫都需要人類確認</li>
+<li data-label="D.">人類不需要介入任何操作</li>
+</ol>
+<div class="explanation">💡 高風險操作應要求人類手動確認，在效率與安全之間取得平衡。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-agent-safety</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">下列哪項措施能最有效地防止代理人陷入「無限迴圈」？</div>
+<span class="q-id">#7554</span>
+</div>
+<ol class="options">
+<li data-label="A.">使用更快的語言模型</li>
+<li class="correct" data-label="B.">限制代理人最多執行的步驟數或總費用</li>
+<li data-label="C.">減少代理人的工具數量</li>
+<li data-label="D.">提供更大的上下文視窗</li>
+</ol>
+<div class="explanation">💡 設定明確的上限限制是防止無限迴圈最直接有效的方法。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-agent-safety</span>
+</div>
+</div>
+<h3 class="section-heading">AI 代理的未來發展方向</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">「電腦使用代理 (Computer Use Agent)」的特殊能力是什麼？</div>
+<span class="q-id">#7507</span>
+</div>
+<ol class="options">
+<li data-label="A.">能夠在運算資源不足時，自動且獨立地購買雲端運算資源</li>
+<li data-label="B.">擁有最高權限，能夠自行修改作業系統的底層核心設定</li>
+<li class="correct" data-label="C.">能夠直接控制 GUI 應用程式，如同人類使用滑鼠和鍵盤操作</li>
+<li data-label="D.">能夠跨越網路限制，與其他電腦上的代理程式直接進行通訊</li>
+</ol>
+<div class="explanation">💡 電腦使用代理（如 Anthropic 的 Computer Use）能夠感知螢幕畫面並控制滑鼠鍵盤，讓 AI 代理可以操作任何現有的桌面應用程式，無需特別的 API 整合。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-future-trends</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">「電腦使用代理（Computer Use Agent）」與傳統 API 代理人的核心差異是什麼？</div>
+<span class="q-id">#7535</span>
+</div>
+<ol class="options">
+<li data-label="A.">電腦使用代理不需要任何 AI 模型</li>
+<li data-label="B.">電腦使用代理只能使用文字命令列介面</li>
+<li class="correct" data-label="C.">電腦使用代理能像人類一樣操作圖形使用者介面</li>
+<li data-label="D.">電腦使用代理只能執行預先寫死的腳本</li>
+</ol>
+<div class="explanation">💡 電腦使用代理能看螢幕、移動滑鼠、打字，直接操作任何桌面應用程式。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-future-trends</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">「代理市場生態系統」最類似於現有的哪一種商業模式？</div>
+<span class="q-id">#7540</span>
+</div>
+<ol class="options">
+<li data-label="A.">實體零售商店</li>
+<li data-label="B.">傳統的軟體即服務（SaaS）</li>
+<li data-label="C.">拍賣網站</li>
+<li class="correct" data-label="D.">App Store 應用程式商店</li>
+</ol>
+<div class="explanation">💡 代理市場類似 App Store，讓開發者上架專業代理人，使用者可購買組合使用。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-future-trends</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">「多模態代理」相較於純文字代理人的主要優勢是什麼？</div>
+<span class="q-id">#7545</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">多模態代理能同時處理文字、圖片、音訊、影片等不同形式</li>
+<li data-label="B.">多模態代理不需要大型語言模型</li>
+<li data-label="C.">多模態代理的執行速度一定更快</li>
+<li data-label="D.">多模態代理的成本一定更低</li>
+</ol>
+<div class="explanation">💡 多模態代理能整合多種感知管道，實現更全面的環境感知與決策。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-future-trends</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">未來「可信任代理」發展的核心需求是什麼？</div>
+<span class="q-id">#7550</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">可解釋決策、完整審計日誌、行為對齊</li>
+<li data-label="B.">減少代理人的記憶使用量</li>
+<li data-label="C.">讓代理人的執行速度更快</li>
+<li data-label="D.">讓代理人變得更便宜</li>
+</ol>
+<div class="explanation">💡 隨著代理人自主性增強，使用者需要清楚知道代理人的行為理由與記錄。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-future-trends</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">「長期自主代理」需要克服的最大技術挑戰是什麼？</div>
+<span class="q-id">#7555</span>
+</div>
+<ol class="options">
+<li data-label="A.">需要更昂貴的硬體設備</li>
+<li data-label="B.">需要更多的 CPU 核心數</li>
+<li class="correct" data-label="C.">需要更強大的長期記憶與自我管理能力</li>
+<li data-label="D.">需要更快的網路連線速度</li>
+</ol>
+<div class="explanation">💡 長期任務需要代理人能夠管理數天到數週的記憶，並持續追蹤任務進度。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-future-trends</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">去中心化信任技術在代理系統中的應用場景是什麼？</div>
+<span class="q-id">#7559</span>
+</div>
+<ol class="options">
+<li data-label="A.">用來加速代理人間的資料傳輸</li>
+<li data-label="B.">用來減少 API 呼叫的成本</li>
+<li class="correct" data-label="C.">透過區塊鏈等技術驗證代理人身份與操作記錄</li>
+<li data-label="D.">用來取代大型語言模型</li>
+</ol>
+<div class="explanation">💡 去中心化信任讓多方協作的代理系統能建立可驗證的信任基礎，確保操作記錄不可竄改。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-future-trends</span>
+</div>
+</div>
+<h3 class="section-heading">自然語言網路 (NLWeb)</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">「自然語言網路 (NLWeb)」為網站帶來的主要變革是什麼？</div>
+<span class="q-id">#7509</span>
+</div>
+<ol class="options">
+<li data-label="A.">完全取代傳統的 HTML 與 CSS 架構，改由神經網路直接渲染</li>
+<li data-label="B.">將所有靜態網站的前端介面全自動轉換成語音控制介面</li>
+<li data-label="C.">有效阻止未經授權的外部 AI 模型爬取與分析網站上的資料</li>
+<li class="correct" data-label="D.">為網站提供自然語言介面與 MCP，讓 AI 代理人直接互動</li>
+</ol>
+<div class="explanation">💡 NLWeb 讓網站能透過 MCP 伺服器端點與 AI 代理人互動，並利用向量資料庫提供自然語言介面，擴大代理人的操作範圍。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+<span class="tag">sec-nlweb</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">自然語言網路 (NLWeb) 的核心目標是什麼？</div>
+<span class="q-id">#7512</span>
+</div>
+<ol class="options">
+<li data-label="A.">禁止未經授權的 AI 模型爬取網站的內容</li>
+<li data-label="B.">完全取代網際網路現有的通訊加密協定</li>
+<li data-label="C.">將所有實體網站自動轉換為手機應用程式</li>
+<li class="correct" data-label="D.">為任何網站提供自然語言介面以供 AI 互動</li>
+</ol>
+<div class="explanation">💡 NLWeb 旨在讓網站具備被代理人輕易理解與操作的自然語言介面。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 NLWeb 架構中，網站內容是如何被儲存以便快速檢索的？</div>
+<span class="q-id">#7513</span>
+</div>
+<ol class="options">
+<li data-label="A.">全數轉換為高解析度圖片進行視覺辨識</li>
+<li data-label="B.">直接將 HTML 原始碼儲存在關聯式資料庫</li>
+<li class="correct" data-label="C.">透過嵌入模型轉換為向量並存入資料庫</li>
+<li data-label="D.">印成實體紙本並由人工進行手動建檔</li>
+</ol>
+<div class="explanation">💡 向量資料庫能高效儲存與檢索具有語意特徵的網站內容。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">每個 NLWeb 實例同時也是一個什麼伺服器？</div>
+<span class="q-id">#7514</span>
+</div>
+<ol class="options">
+<li data-label="A.">高效能的區塊鏈節點伺服器</li>
+<li data-label="B.">負責寄發廣告的郵件伺服器</li>
+<li data-label="C.">儲存多媒體檔案的串流伺服器</li>
+<li class="correct" data-label="D.">標準化的 MCP 伺服器端點</li>
+</ol>
+<div class="explanation">💡 NLWeb 整合了 MCP，讓代理人能透過標準化協定查詢網站資料。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">NLWeb 如何處理網站原本複雜的導覽選單與點擊流程？</div>
+<span class="q-id">#7528</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">將其簡化為直接的自然語言對話與結構化的資料查詢</li>
+<li data-label="B.">強制使用者必須先觀看一段教學影片才能開始瀏覽</li>
+<li data-label="C.">將所有的選單按鈕轉換為代理人無法辨識的隨機圖形</li>
+<li data-label="D.">要求網站管理員必須全部重新設計一套全新的圖形介面</li>
+</ol>
+<div class="explanation">💡 自然語言介面讓使用者與代理人能跨越層層選單直接獲取目標。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+</div>
+</div>
+<h3 class="section-heading">代理通訊協議</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在 A2A 協議中，「工作產物 (Artifact)」的主要功用是什麼？</div>
+<span class="q-id">#7510</span>
+</div>
+<ol class="options">
+<li data-label="A.">定義代理人可使用的最大記憶體容量</li>
+<li data-label="B.">記錄系統中所有發生過的錯誤訊息</li>
+<li class="correct" data-label="C.">封裝遠端代理人完成任務後的回傳結果</li>
+<li data-label="D.">作為代理人之間的身份驗證金鑰</li>
+</ol>
+<div class="explanation">💡 Artifact 包含了代理人的工作結果與相關描述，便於協調者整合。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">A2A 協議的「事件佇列 (Event Queue)」設計是為了解決什麼問題？</div>
+<span class="q-id">#7511</span>
+</div>
+<ol class="options">
+<li data-label="A.">加速大型語言模型在生成文字時的速度</li>
+<li data-label="B.">強制代理人只能按照順序逐一執行任務</li>
+<li data-label="C.">讓代理人能夠自動備份所有的對話紀錄</li>
+<li class="correct" data-label="D.">防止因任務執行過久導致連線過早中斷</li>
+</ol>
+<div class="explanation">💡 事件佇列處理長時間運行的狀態更新，確保連線的穩定性。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">A2A 協議解決了多代理系統中的什麼根本問題？</div>
+<span class="q-id">#7524</span>
+</div>
+<ol class="options">
+<li data-label="A.">單一代理人無法處理超過十萬字的超長上下文內容</li>
+<li class="correct" data-label="B.">不同廠商開發的代理人之間無法互相溝通與協作</li>
+<li data-label="C.">大型語言模型在進行複雜數學運算時的精準度太低</li>
+<li data-label="D.">系統在處理多媒體影音檔案時的運算效能嚴重不足</li>
+</ol>
+<div class="explanation">💡 通訊標準打破了系統孤島，讓異質代理人能夠建立合作關係。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+</div>
+</div>
+<h3 class="section-heading">多代理協作模式</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在「協調者-執行者」模式中，若主任務十分複雜，協調者會怎麼做？</div>
+<span class="q-id">#7515</span>
+</div>
+<ol class="options">
+<li data-label="A.">直接宣告任務失敗並停止運作</li>
+<li data-label="B.">自行花費大量時間獨立完成任務</li>
+<li data-label="C.">要求使用者提供更為簡單的指令</li>
+<li class="correct" data-label="D.">將任務拆分為子任務並發配給執行者</li>
+</ol>
+<div class="explanation">💡 協調者的核心價值在於拆解與分派任務，讓專業代理各司其職。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">「辯論模式 (Debate)」在設計上能有效減少什麼問題？</div>
+<span class="q-id">#7517</span>
+</div>
+<ol class="options">
+<li data-label="A.">消耗的雲端運算資源成本</li>
+<li data-label="B.">網路連線的潛在延遲問題</li>
+<li class="correct" data-label="C.">代理人的偏見與邏輯盲點</li>
+<li data-label="D.">系統執行的整體耗費時間</li>
+</ol>
+<div class="explanation">💡 透過不同代理從正反兩面交互詰問，能有效揭露邏輯盲點與偏見。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+</div>
+</div>
+<h3 class="section-heading">多代理系統概述</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">為何多代理系統能夠完成單一大型模型難以做到的複雜工作？</div>
+<span class="q-id">#7516</span>
+</div>
+<ol class="options">
+<li data-label="A.">因為多代理系統必定使用最昂貴的付費模型 API</li>
+<li class="correct" data-label="B.">多個代理人共同分攤了上下文，突破單一視窗限制</li>
+<li data-label="C.">多代理系統能自動幫人類寫出完美無瑕的程式碼</li>
+<li data-label="D.">因為多代理系統可以完全不受到物理硬體的限制</li>
+</ol>
+<div class="explanation">💡 每個代理有自己獨立的上下文，整體系統能處理更龐大的資訊。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">當任務需要高度專業化的知識時，為什麼多代理系統會比單一代理表現更好？</div>
+<span class="q-id">#7523</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">因為可以配置具有不同領域專業與工具的專屬代理</li>
+<li data-label="B.">因為多代理系統必定擁有比單一代理更快的網路連線</li>
+<li data-label="C.">因為多代理系統可以自動上網搜尋最新的專業論文</li>
+<li data-label="D.">因為多代理系統可以完全不受到任何硬體效能的限制</li>
+</ol>
+<div class="explanation">💡 分工可以讓特定代理專精於單一領域，提升整體的決策品質。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">建構多代理系統時，開發者最常面臨的挑戰是什麼？</div>
+<span class="q-id">#7527</span>
+</div>
+<ol class="options">
+<li data-label="A.">使用者的電腦通常缺乏足夠的硬碟空間來儲存系統日誌</li>
+<li class="correct" data-label="B.">如何設計代理人間的溝通機制與維持整體系統的一致性</li>
+<li data-label="C.">找不到任何可以免費使用的大型語言模型 API</li>
+<li data-label="D.">代理人之間的運算速度過快導致人類無法看清楚執行過程</li>
+</ol>
+<div class="explanation">💡 多代理系統的難點在於協作、通訊與避免代理人間發生衝突。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+</div>
+</div>
+<h3 class="section-heading">代理安全與信任</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">當代理人讀取惡意網頁並受到「提示注入攻擊」時，最危險的後果是？</div>
+<span class="q-id">#7518</span>
+</div>
+<ol class="options">
+<li data-label="A.">代理人會自動刪除自身的語言模型權重</li>
+<li data-label="B.">代理人的記憶體會瞬間被無意義資料塞滿</li>
+<li data-label="C.">代理人會突然開始說出不同的語言</li>
+<li class="correct" data-label="D.">代理人被誘騙執行非預期的危險操作</li>
+</ol>
+<div class="explanation">💡 注入攻擊的目標是掌控代理人的行為，利用其權限進行不當操作。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">設立「執行預算 (Execution Budget)」是為了解決什麼潛在風險？</div>
+<span class="q-id">#7519</span>
+</div>
+<ol class="options">
+<li data-label="A.">限制代理人存取網路上的某些受版權保護的內容</li>
+<li data-label="B.">強制代理人只能在上班時間進行運算與資料處理</li>
+<li data-label="C.">確保代理人每次回應的字數都能維持在一定範圍</li>
+<li class="correct" data-label="D.">防止代理人因為陷入無限迴圈而過度消耗資源</li>
+</ol>
+<div class="explanation">💡 預算機制能確保系統在失控時及時止損，控制成本與運算資源。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">在「人機協同 (Human-in-the-loop)」機制中，人類扮演什麼角色？</div>
+<span class="q-id">#7521</span>
+</div>
+<ol class="options">
+<li data-label="A.">負責手動替代理人撰寫每一行底層的程式碼</li>
+<li data-label="B.">只負責提供運算資源與繳交系統維護費用</li>
+<li class="correct" data-label="C.">在代理人執行關鍵或具破壞性操作前進行授權</li>
+<li data-label="D.">只能被動地觀看代理人執行完畢後的結果報告</li>
+</ol>
+<div class="explanation">💡 人類作為安全守門員，負責在關鍵決策節點上給予授權與監督。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">為了落實最小權限原則 (Least Privilege)，系統設計時應該怎麼做？</div>
+<span class="q-id">#7522</span>
+</div>
+<ol class="options">
+<li data-label="A.">要求使用者在每次對話前都重新輸入一次登入密碼</li>
+<li data-label="B.">給予代理人作業系統的最高管理員權限以防出錯</li>
+<li class="correct" data-label="C.">僅提供代理人完成當前任務所絕對需要的最低權限</li>
+<li data-label="D.">將所有的系統密碼直接寫死在代理人的提示詞之中</li>
+</ol>
+<div class="explanation">💡 最小權限原則可降低代理人遭挾持時對系統造成的損害範圍。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">「沙盒 (Sandbox)」技術在 AI 代理安全中扮演什麼功能？</div>
+<span class="q-id">#7526</span>
+</div>
+<ol class="options">
+<li data-label="A.">自動將代理人的記憶體資料備份到一個安全的隱密空間</li>
+<li class="correct" data-label="B.">提供一個被隔離的環境讓代理執行可能不安全的程式碼</li>
+<li data-label="C.">強制將代理人的運算效能限制在一個非常低下的水準</li>
+<li data-label="D.">用來過濾使用者輸入文字中可能包含的各種不雅詞彙</li>
+</ol>
+<div class="explanation">💡 沙盒限制了程式執行的影響範圍，防止惡意操作破壞主系統。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">代理人若擁有撰寫與執行程式碼的能力，最主要的風險在於？</div>
+<span class="q-id">#7529</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">可能會意外寫出具有破壞性或被惡意利用的腳本</li>
+<li data-label="B.">會導致作業系統的圖形介面變得非常不穩定與容易當機</li>
+<li data-label="C.">會自動刪除系統中所有不是由 AI 所產生的原始程式碼</li>
+<li data-label="D.">會佔用過多的網路頻寬導致使用者無法正常上網</li>
+</ol>
+<div class="explanation">💡 程式碼執行權限極高，若未加限制，可能對系統造成嚴重危害。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+</div>
+</div>
+<h3 class="section-heading">AI 代理技術的未來趨勢</h3>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">電腦使用代理 (Computer Use Agent) 的運作方式類似於什麼？</div>
+<span class="q-id">#7520</span>
+</div>
+<ol class="options">
+<li class="correct" data-label="A.">如同人類般透過視覺辨識螢幕並控制滑鼠與鍵盤</li>
+<li data-label="B.">一個專門用來阻擋惡意軟體入侵的系統防火牆</li>
+<li data-label="C.">一個隱藏在背景負責自動備份資料的批次執行檔</li>
+<li data-label="D.">一個只能夠處理文字指令的傳統聊天機器人系統</li>
+</ol>
+<div class="explanation">💡 這類代理不依賴 API，而是透過像素級視覺與 GUI 直接互動。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+</div>
+</div>
+<div class="question-card">
+<div class="q-header">
+<div class="q-text">未來 AI 代理朝向邊緣計算 (Edge Computing) 發展的主要動機為何？</div>
+<span class="q-id">#7525</span>
+</div>
+<ol class="options">
+<li data-label="A.">為了讓代理人可以更容易被集中監控與嚴格管理</li>
+<li data-label="B.">為了強迫使用者購買價格更為昂貴的高階硬體設備</li>
+<li data-label="C.">為了讓所有的 AI 模型都能夠被統一部署在同一個地方</li>
+<li class="correct" data-label="D.">降低對雲端的依賴，提升回應速度與保護本地隱私</li>
+</ol>
+<div class="explanation">💡 邊緣計算將運算推向裝置端，具有低延遲與高隱私的優勢。</div>
+<div class="tags">
+<span class="tag">chap-m5-ch5</span>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,10 +1,16 @@
 ---
-title: "SciPy 與 scikit-learn"
+title: "SciPy、scikit-learn、statsmodels 與 Matplotlib"
 order: 3
 label: chap-m6-ch3
 ---
 
-SciPy 提供科學運算、統計、最佳化與訊號處理工具；scikit-learn 則提供傳統機器學習的標準流程。兩者常與 NumPy、Pandas 一起形成完整的資料分析與模型開發基礎。
+SciPy 提供科學運算、統計、最佳化與訊號處理工具；scikit-learn 則提供傳統機器學習的標準流程。statsmodels 偏向統計建模、係數解釋與時間序列分析；Matplotlib 則用於視覺化資料分布、模型診斷與評估結果。這些工具常與 NumPy、Pandas 一起形成完整的資料分析與模型開發基礎。
+
+如果 NumPy 與 Pandas 解決的是「資料如何表示與整理」，SciPy、scikit-learn 與 statsmodels 解決的就是「如何分析、估計、訓練、解釋與評估」。SciPy 偏向底層科學計算，例如統計分布、最佳化、距離、稀疏矩陣與訊號處理；scikit-learn 則把常見機器學習演算法包成一致的 `fit()`、`predict()`、`transform()` 介面；statsmodels 更重視統計假設、係數、信賴區間與檢定。
+
+實務上，scikit-learn 很適合建立第一版 baseline。當資料是表格、樣本數中等、需要快速比較模型時，通常先用 scikit-learn，而不是直接跳到深度學習。SciPy 則常在背後支撐統計檢定、最佳化或稀疏特徵表示。
+
+Matplotlib 不直接建模，但它是檢查資料與模型結果的基本工具。許多問題，例如類別不平衡、離群值、時間趨勢、殘差異常與模型錯誤集中在哪些區間，都需要先畫出來才容易判斷。
 
 ## SciPy 的角色 {#sec-scipy-role}
 
@@ -26,6 +32,22 @@ print(stats.norm.cdf(z))
 ```
 
 在 AI 專案中，SciPy 常不是最前台的工具，但會在統計檢定、特徵轉換、最佳化與資料表示中被間接使用。
+
+例如要比較兩組模型分數是否有明顯差異，可以用統計檢定輔助判斷，而不是只看平均值：
+
+```{python}
+from scipy import stats
+
+baseline_scores = [0.78, 0.80, 0.77, 0.79, 0.81]
+new_model_scores = [0.82, 0.83, 0.80, 0.84, 0.82]
+
+# 配對 t 檢定常用於比較同一批資料上的兩個模型結果
+result = stats.ttest_rel(new_model_scores, baseline_scores)
+print(result.statistic)
+print(result.pvalue)
+```
+
+p-value 不是模型選擇的唯一依據，但能提醒我們分數差異可能只是切分或抽樣造成的波動。
 
 ## 最佳化與曲線擬合 {#sec-scipy-optimize}
 
@@ -76,6 +98,48 @@ print(accuracy_score(y_test, pred))
 
 這種一致介面讓不同模型能快速替換，也方便進行交叉驗證與超參數搜尋。
 
+同一套 `fit()` 與 `predict()` 介面也適用於其他模型。以下範例把分類器換成 Logistic Regression，流程幾乎不變：
+
+```{python}
+from sklearn.linear_model import LogisticRegression
+
+linear_model = LogisticRegression(max_iter=200)
+linear_model.fit(X_train, y_train)
+linear_pred = linear_model.predict(X_test)
+
+print(accuracy_score(y_test, linear_pred))
+```
+
+這種一致性是 scikit-learn 適合教學、baseline 與模型比較的主要原因。
+
+## scikit-learn 實務補充：ColumnTransformer 與混合欄位 {#sec-sklearn-column-transformer}
+
+真實表格資料通常同時包含數值欄位與類別欄位。scikit-learn 的 `ColumnTransformer` 可以讓不同欄位套用不同前處理，再接到同一個模型。
+
+```python
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
+from sklearn.pipeline import Pipeline
+from sklearn.linear_model import LogisticRegression
+
+numeric_features = ["age", "income"]
+categorical_features = ["city", "plan"]
+
+preprocess = ColumnTransformer([
+    ("num", StandardScaler(), numeric_features),
+    ("cat", OneHotEncoder(handle_unknown="ignore"), categorical_features)
+])
+
+model = Pipeline([
+    ("preprocess", preprocess),
+    ("clf", LogisticRegression(max_iter=200))
+])
+
+model.fit(train_df, y_train)
+```
+
+這種寫法的好處是訓練與推論使用同一套前處理規則，降低資料洩漏與欄位處理不一致的風險。
+
 ## 前處理與 Pipeline {#sec-sklearn-preprocessing-pipeline}
 
 實務模型不只包含演算法，也包含前處理。數值欄位可能需要標準化，類別欄位可能需要 one-hot encoding。Pipeline 能把這些步驟綁在一起，避免資料洩漏。
@@ -121,6 +185,21 @@ scikit-learn 支援多種模型類型：
 | 降維 | PCA、t-SNE | 壓縮特徵、視覺化 |
 
 選模型時應先建立簡單 baseline，再依據問題特性與評估結果提升複雜度。
+
+以下是三種任務的直覺例子：
+
+```python
+# 分類：預測使用者是否會購買
+classifier.fit(user_features, purchased_labels)
+
+# 迴歸：預測下個月銷售額
+regressor.fit(store_features, monthly_revenue)
+
+# 分群：沒有標籤時，先觀察使用者是否自然形成幾群
+clusters = kmeans.fit_predict(user_features)
+```
+
+分類與迴歸需要標籤；分群通常沒有標籤，較適合探索資料結構，而不是直接宣稱預測正確性。
 
 ## 評估、交叉驗證與超參數搜尋 {#sec-sklearn-evaluation}
 
@@ -209,3 +288,107 @@ scikit-learn 很適合傳統機器學習與中小型表格資料，但不適合�
 *   需要可解釋且部署簡單的模型：scikit-learn 可能更合適。
 
 好的 AI 應用規劃不是一開始就選最複雜模型，而是先找出能穩定解決問題的最簡方案。
+
+## statsmodels：統計建模與可解釋分析 {#sec-statsmodels}
+
+statsmodels 和 scikit-learn 都能做迴歸，但定位不同。scikit-learn 重視預測流程與模型泛化；statsmodels 更重視統計推論，例如係數估計、p-value、信賴區間、殘差分析與時間序列模型。
+
+```python
+import statsmodels.api as sm
+
+X = df[["ad_spend", "price"]]
+X = sm.add_constant(X)
+y = df["sales"]
+
+model = sm.OLS(y, X).fit()
+print(model.summary())
+```
+
+這類輸出適合回答「哪些變數和目標有顯著關係」、「係數方向是否合理」、「模型殘差是否有系統性偏誤」等問題。若任務重點是解釋、報告或統計檢定，statsmodels 會比只看預測分數更合適。
+
+除了係數表，statsmodels 也常搭配殘差圖檢查模型是否有系統性偏誤。下列範例建立一組簡單銷售資料並畫出 fitted values 與 residuals：
+
+```{python}
+#| fig-cap: "statsmodels 線性迴歸殘差檢查範例"
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import statsmodels.api as sm
+
+rng = np.random.default_rng(42)
+df_sm = pd.DataFrame({
+    "ad_spend": np.linspace(10, 100, 30),
+    "price": np.linspace(30, 20, 30)
+})
+df_sm["sales"] = 20 + 1.8 * df_sm["ad_spend"] - 0.7 * df_sm["price"] + rng.normal(0, 8, 30)
+
+X_sm = sm.add_constant(df_sm[["ad_spend", "price"]])
+ols_model = sm.OLS(df_sm["sales"], X_sm).fit()
+fitted = ols_model.fittedvalues
+residuals = ols_model.resid
+
+fig, ax = plt.subplots(figsize=(6, 3.5))
+ax.scatter(fitted, residuals, color="#2563eb")
+ax.axhline(0, color="#dc2626", linestyle="--", linewidth=1)
+ax.set_title("Residuals vs fitted values")
+ax.set_xlabel("Fitted values")
+ax.set_ylabel("Residuals")
+plt.show()
+```
+
+statsmodels 也常用於時間序列分析，例如 ARIMA、季節性分解與自相關檢查。若任務是需求預測、營收趨勢或營運指標監控，應先確認資料是否有趨勢、季節性與自相關。
+
+## Matplotlib：資料與模型結果視覺化 {#sec-matplotlib-modeling}
+
+Matplotlib 是最基礎也最通用的 Python 視覺化工具。AI 專案中常用它檢查資料分布、類別比例、訓練曲線、殘差與混淆矩陣。
+
+```{python}
+#| fig-cap: "訓練與驗證 loss 曲線範例"
+import matplotlib.pyplot as plt
+
+history = {
+    "train_loss": [0.92, 0.71, 0.55, 0.43, 0.34, 0.27, 0.22],
+    "val_loss": [0.96, 0.76, 0.61, 0.52, 0.50, 0.53, 0.59]
+}
+
+fig, ax = plt.subplots(figsize=(6, 3.5))
+ax.plot(history["train_loss"], marker="o", label="train")
+ax.plot(history["val_loss"], marker="o", label="validation")
+ax.set_title("Training curve")
+ax.set_xlabel("epoch")
+ax.set_ylabel("loss")
+ax.legend()
+plt.show()
+```
+
+若訓練 loss 持續下降、validation loss 卻上升，通常代表過擬合。這種現象只看最後 accuracy 不一定明顯，但畫出訓練曲線就很容易發現。
+
+分類模型也常需要視覺化混淆矩陣，觀察哪些類別容易被誤判：
+
+```{python}
+#| fig-cap: "混淆矩陣視覺化範例"
+import numpy as np
+import matplotlib.pyplot as plt
+
+classes = ["cat", "dog", "bird"]
+cm = np.array([
+    [18, 2, 0],
+    [3, 14, 3],
+    [1, 4, 15]
+])
+
+fig, ax = plt.subplots(figsize=(4.8, 4))
+im = ax.imshow(cm, cmap="Blues")
+ax.set_xticks(range(len(classes)), labels=classes)
+ax.set_yticks(range(len(classes)), labels=classes)
+ax.set_xlabel("Predicted label")
+ax.set_ylabel("True label")
+ax.set_title("Confusion matrix")
+
+for i in range(cm.shape[0]):
+    for j in range(cm.shape[1]):
+        ax.text(j, i, cm[i, j], ha="center", va="center", color="#111827")
+
+fig.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
+plt.show()
+```

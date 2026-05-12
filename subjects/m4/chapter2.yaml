@@ -1689,3 +1689,626 @@ questions:
   - sec-past-exam
   - past-exam
   usage: mock
+- id: m4-code-016
+  chapter_title: 深度學習框架與架構
+  section_title: 程式閱讀理解
+  text: 閱讀下列 PyTorch 模型，輸出張量形狀最可能是什麼？
+  content:
+  - type: text
+    text: 閱讀下列 PyTorch 模型，輸出張量形狀最可能是什麼？
+  - type: code
+    language: python
+    code: "model = nn.Sequential(\n    nn.Linear(20, 64),\n    nn.ReLU(),\n    nn.Linear(64, 3),\n)\nx = torch.randn(32, 20)\ny = model(x)\nprint(y.shape)"
+  type: multiple_choice
+  options:
+  - torch.Size([32, 3])
+  - torch.Size([20, 64])
+  - torch.Size([64, 3])
+  - torch.Size([32, 20])
+  correct_index: 0
+  explanation: batch size 為 32，最後一層 Linear 輸出 3 維，所以輸出形狀是 [32,3]。
+  tags:
+  - chap-m4-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-017
+  chapter_title: 深度學習框架與架構
+  section_title: 程式閱讀理解
+  text: 閱讀下列 CNN 片段，第一個卷積層的主要效果是什麼？
+  content:
+  - type: text
+    text: 閱讀下列 CNN 片段，第一個卷積層的主要效果是什麼？
+  - type: code
+    language: python
+    code: 'conv = nn.Conv2d(in_channels=3, out_channels=16, kernel_size=3, padding=1)
+
+      x = torch.randn(8, 3, 64, 64)
+
+      y = conv(x)'
+  type: multiple_choice
+  options:
+  - 將 3 通道影像轉成 16 張特徵圖，空間尺寸大致保留
+  - 將 batch size 從 8 改成 16
+  - 把影像轉成文字 token
+  - 刪除 padding 外的所有像素
+  correct_index: 0
+  explanation: padding=1 且 kernel_size=3 時高寬維持 64，out_channels=16 代表輸出 16 張特徵圖。
+  tags:
+  - chap-m4-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-018
+  chapter_title: 深度學習框架與架構
+  section_title: 程式閱讀理解
+  text: 閱讀下列訓練程式，`model.train()` 的主要作用為何？
+  content:
+  - type: text
+    text: 閱讀下列訓練程式，`model.train()` 的主要作用為何？
+  - type: code
+    language: python
+    code: "for epoch in range(epochs):\n    model.train()\n    for xb, yb in train_loader:\n        pred = model(xb)\n        loss = criterion(pred, yb)"
+  type: multiple_choice
+  options:
+  - 啟用 Dropout、BatchNorm 等訓練模式行為
+  - 清空所有模型權重
+  - 固定模型不更新
+  - 將模型輸出轉成 numpy
+  correct_index: 0
+  explanation: model.train() 會切換到訓練模式，使 Dropout 啟用、BatchNorm 使用 batch 統計。
+  tags:
+  - chap-m4-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-019
+  chapter_title: 深度學習框架與架構
+  section_title: 程式閱讀理解
+  text: 閱讀下列評估片段，為什麼使用 `torch.no_grad()`？
+  content:
+  - type: text
+    text: 閱讀下列評估片段，為什麼使用 `torch.no_grad()`？
+  - type: code
+    language: python
+    code: "model.eval()\nwith torch.no_grad():\n    logits = model(x_valid)\n    valid_loss = criterion(logits, y_valid)"
+  type: multiple_choice
+  options:
+  - 避免建立梯度圖，降低記憶體與計算成本
+  - 強制模型進入訓練模式
+  - 讓 loss 永遠為 0
+  - 自動調整 learning rate
+  correct_index: 0
+  explanation: 推論或驗證不需要反向傳播，no_grad 可避免記錄梯度，節省資源。
+  tags:
+  - chap-m4-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-020
+  chapter_title: 深度學習框架與架構
+  section_title: 程式閱讀理解
+  text: 閱讀下列 LSTM 設定，`batch_first=True` 代表什麼？
+  content:
+  - type: text
+    text: 閱讀下列 LSTM 設定，`batch_first=True` 代表什麼？
+  - type: code
+    language: python
+    code: 'lstm = nn.LSTM(input_size=12, hidden_size=32, batch_first=True)
+
+      x = torch.randn(64, 10, 12)
+
+      out, (h, c) = lstm(x)'
+  type: multiple_choice
+  options:
+  - 輸入形狀為 batch, sequence_length, feature
+  - 輸入形狀必須為 sequence_length, batch, feature
+  - hidden_size 會變成 10
+  - LSTM 只能處理影像
+  correct_index: 0
+  explanation: batch_first=True 時 PyTorch LSTM 預期輸入為 [batch, seq_len, input_size]。
+  tags:
+  - chap-m4-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-021
+  chapter_title: 深度學習框架與架構
+  section_title: 程式閱讀理解
+  text: 閱讀下列 Transformer 設定，`nhead=8` 的意義是什麼？
+  content:
+  - type: text
+    text: 閱讀下列 Transformer 設定，`nhead=8` 的意義是什麼？
+  - type: code
+    language: python
+    code: "layer = nn.TransformerEncoderLayer(\n    d_model=256,\n    nhead=8,\n    dim_feedforward=1024,\n)"
+  type: multiple_choice
+  options:
+  - 多頭注意力會分成 8 個 attention heads
+  - 模型會輸出 8 個類別
+  - 序列長度固定為 8
+  - feedforward 維度為 8
+  correct_index: 0
+  explanation: nhead 指 multi-head attention 的頭數，讓模型在不同子空間學習關聯。
+  tags:
+  - chap-m4-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-022
+  chapter_title: 深度學習框架與架構
+  section_title: 程式閱讀理解
+  text: 閱讀下列 transfer learning 程式，哪一層會被訓練？
+  content:
+  - type: text
+    text: 閱讀下列 transfer learning 程式，哪一層會被訓練？
+  - type: code
+    language: python
+    code: "model = torchvision.models.resnet18(weights=\"DEFAULT\")\nfor p in model.parameters():\n    p.requires_grad = False\nmodel.fc = nn.Linear(model.fc.in_features, 5)"
+  type: multiple_choice
+  options:
+  - 新替換的 fc 層
+  - 所有卷積層
+  - BatchNorm 的 running_mean
+  - 沒有任何層
+  correct_index: 0
+  explanation: 先凍結既有參數，再替換 fc；新建 fc 預設 requires_grad=True，因此只訓練分類頭。
+  tags:
+  - chap-m4-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-023
+  chapter_title: 深度學習框架與架構
+  section_title: 程式閱讀理解
+  text: 閱讀下列 Keras 編譯設定，這最適合哪一類任務？
+  content:
+  - type: text
+    text: 閱讀下列 Keras 編譯設定，這最適合哪一類任務？
+  - type: code
+    language: python
+    code: "model.compile(\n    optimizer=\"adam\",\n    loss=\"sparse_categorical_crossentropy\",\n    metrics=[\"accuracy\"],\n)"
+  type: multiple_choice
+  options:
+  - 多類別分類且標籤為整數類別
+  - 連續數值迴歸
+  - 無監督式分群
+  - 二元特徵標準化
+  correct_index: 0
+  explanation: sparse_categorical_crossentropy 適用於多類別分類，且 y 是整數類別索引而非 one-hot。
+  tags:
+  - chap-m4-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-024
+  chapter_title: 深度學習框架與架構
+  section_title: 程式閱讀理解
+  text: 閱讀下列模型摘要，參數量為何是 110？
+  content:
+  - type: text
+    text: 閱讀下列模型摘要，參數量為何是 110？
+  - type: code
+    language: text
+    code: 'Layer: Dense(units=10, input_dim=10)
+
+      Params: 110'
+  type: multiple_choice
+  options:
+  - 10*10 個權重加 10 個 bias
+  - 10 個權重加 10 個 bias
+  - 10*10*10 個權重
+  - 只有 110 個 bias
+  correct_index: 0
+  explanation: Dense 層參數量為 input_dim*units + units bias = 10*10 + 10 = 110。
+  tags:
+  - chap-m4-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-025
+  chapter_title: 深度學習框架與架構
+  section_title: 程式閱讀理解
+  text: 閱讀下列 BatchNorm 與 Dropout 順序，哪一項最正確？
+  content:
+  - type: text
+    text: 閱讀下列 BatchNorm 與 Dropout 順序，哪一項最正確？
+  - type: code
+    language: python
+    code: "block = nn.Sequential(\n    nn.Linear(128, 64),\n    nn.BatchNorm1d(64),\n    nn.ReLU(),\n    nn.Dropout(p=0.3),\n)"
+  type: multiple_choice
+  options:
+  - BatchNorm 正規化 hidden activation，Dropout 隨機遮蔽部分輸出以降低過擬合
+  - Dropout 會固定刪除 30% 權重檔案
+  - BatchNorm 只能用於影像
+  - ReLU 會把輸出轉為機率分佈
+  correct_index: 0
+  explanation: BatchNorm 使用統計量穩定 activation，Dropout 在訓練時隨機置零部分 activation，兩者都常用於深度網路訓練。
+  tags:
+  - chap-m4-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-026
+  chapter_title: 深度學習框架與架構
+  section_title: 程式閱讀理解
+  text: 閱讀下列 softmax 程式，輸出 `probs.sum(dim=1)` 應接近什麼？
+  content:
+  - type: text
+    text: 閱讀下列 softmax 程式，輸出 `probs.sum(dim=1)` 應接近什麼？
+  - type: code
+    language: python
+    code: 'logits = torch.tensor([[1.0, 2.0, 0.5]])
+
+      probs = torch.softmax(logits, dim=1)
+
+      print(probs.sum(dim=1))'
+  type: multiple_choice
+  options:
+  - '1'
+  - '0'
+  - '3.5'
+  - 類別數 3
+  correct_index: 0
+  explanation: softmax 會沿指定維度轉成機率分佈，每列機率總和為 1。
+  tags:
+  - chap-m4-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-027
+  chapter_title: 深度學習框架與架構
+  section_title: 程式閱讀理解
+  text: 閱讀下列 data augmentation 程式，哪一項是主要目的？
+  content:
+  - type: text
+    text: 閱讀下列 data augmentation 程式，哪一項是主要目的？
+  - type: code
+    language: python
+    code: "train_tfms = transforms.Compose([\n    transforms.RandomResizedCrop(224),\n    transforms.RandomHorizontalFlip(),\n    transforms.ToTensor(),\n])"
+  type: multiple_choice
+  options:
+  - 增加影像變化以提升模型泛化能力
+  - 把所有影像轉成灰階
+  - 刪除訓練資料中的標籤
+  - 保證驗證準確率為 100%
+  correct_index: 0
+  explanation: 隨機裁切與翻轉會產生影像變化，讓模型較不依賴固定位置與姿態，提升泛化。
+  tags:
+  - chap-m4-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-028
+  chapter_title: 深度學習框架與架構
+  section_title: 程式閱讀理解
+  text: 閱讀下列梯度裁剪程式，主要用途是什麼？
+  content:
+  - type: text
+    text: 閱讀下列梯度裁剪程式，主要用途是什麼？
+  - type: code
+    language: python
+    code: 'loss.backward()
+
+      torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
+
+      optimizer.step()'
+  type: multiple_choice
+  options:
+  - 限制梯度範數，降低梯度爆炸風險
+  - 將所有權重設為 1
+  - 讓模型停止訓練
+  - 計算測試集準確率
+  correct_index: 0
+  explanation: clip_grad_norm_ 會限制整體梯度範數，常用於 RNN/Transformer 等模型避免梯度爆炸。
+  tags:
+  - chap-m4-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-029
+  chapter_title: 深度學習框架與架構
+  section_title: 程式閱讀理解
+  text: 閱讀下列 embedding 層，輸入與輸出最合理為何？
+  content:
+  - type: text
+    text: 閱讀下列 embedding 層，輸入與輸出最合理為何？
+  - type: code
+    language: python
+    code: 'emb = nn.Embedding(num_embeddings=5000, embedding_dim=128)
+
+      tokens = torch.tensor([[4, 10, 25]])
+
+      out = emb(tokens)'
+  type: multiple_choice
+  options:
+  - 輸入 token id，輸出每個 token 的 128 維向量
+  - 輸入影像像素，輸出卷積核
+  - 輸入 one-hot 圖片，輸出類別名稱
+  - 輸入連續金額，輸出 p 值
+  correct_index: 0
+  explanation: Embedding 將離散 token id 查表映射為 dense vectors，此例每個 token 對應 128 維。
+  tags:
+  - chap-m4-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-030
+  chapter_title: 深度學習框架與架構
+  section_title: 程式閱讀理解
+  text: 閱讀下列混合精度訓練片段，主要好處是什麼？
+  content:
+  - type: text
+    text: 閱讀下列混合精度訓練片段，主要好處是什麼？
+  - type: code
+    language: python
+    code: "with torch.cuda.amp.autocast():\n    pred = model(xb)\n    loss = criterion(pred, yb)\nscaler.scale(loss).backward()\nscaler.step(optimizer)\nscaler.update()"
+  type: multiple_choice
+  options:
+  - 降低 GPU 記憶體並加速部分運算，同時用 scaler 維持數值穩定
+  - 讓 CPU 取代 GPU 訓練
+  - 自動增加資料集大小
+  - 刪除所有 float32 權重
+  correct_index: 0
+  explanation: AMP 以部分低精度運算提升效能與節省記憶體，GradScaler 用來避免 underflow。
+  tags:
+  - chap-m4-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-086
+  chapter_title: 深度學習框架與架構
+  section_title: 程式閱讀理解
+  text: 閱讀下列 PyTorch 輸出，哪一層參數最多？
+  content:
+  - type: text
+    text: 閱讀下列 PyTorch 輸出，哪一層參數最多？
+  - type: code
+    language: text
+    code: 'Conv2d(3, 32, kernel_size=3): 896 params
+
+      Conv2d(32, 64, kernel_size=3): 18496 params
+
+      Linear(3136, 128): 401536 params
+
+      Linear(128, 10): 1290 params'
+  type: multiple_choice
+  options:
+  - Linear(3136, 128)
+  - Conv2d(3, 32)
+  - Conv2d(32, 64)
+  - Linear(128, 10)
+  correct_index: 0
+  explanation: 全連接層參數量為 3136*128+128=401,536，遠高於列出的卷積層。
+  tags:
+  - chap-m4-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-087
+  chapter_title: 深度學習框架與架構
+  section_title: 程式閱讀理解
+  text: 閱讀下列 padding 設定，輸出空間尺寸如何變化？
+  content:
+  - type: text
+    text: 閱讀下列 padding 設定，輸出空間尺寸如何變化？
+  - type: code
+    language: python
+    code: 'conv = nn.Conv2d(16, 16, kernel_size=3, stride=1, padding=0)
+
+      x = torch.randn(4, 16, 32, 32)
+
+      y = conv(x)'
+  type: multiple_choice
+  options:
+  - 高寬由 32 變成 30
+  - 高寬維持 32
+  - 高寬變成 16
+  - batch size 變成 16
+  correct_index: 0
+  explanation: kernel_size=3、stride=1、padding=0 時，每個空間維度會減少 2，因此 32 變 30。
+  tags:
+  - chap-m4-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-088
+  chapter_title: 深度學習框架與架構
+  section_title: 程式閱讀理解
+  text: 閱讀下列 CrossEntropyLoss 用法，target 應是什麼格式？
+  content:
+  - type: text
+    text: 閱讀下列 CrossEntropyLoss 用法，target 應是什麼格式？
+  - type: code
+    language: python
+    code: 'loss_fn = nn.CrossEntropyLoss()
+
+      logits = torch.randn(8, 5)
+
+      target = torch.tensor([0, 2, 1, 4, 3, 0, 1, 2])
+
+      loss = loss_fn(logits, target)'
+  type: multiple_choice
+  options:
+  - 每筆樣本的整數類別索引
+  - one-hot 浮點矩陣
+  - 機率總和為 1 的 softmax 輸出
+  - 文字類別名稱
+  correct_index: 0
+  explanation: PyTorch CrossEntropyLoss 接收 raw logits 與整數 class index target，不需要先 softmax 或 one-hot。
+  tags:
+  - chap-m4-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-089
+  chapter_title: 深度學習框架與架構
+  section_title: 程式閱讀理解
+  text: 閱讀下列 optimizer 順序，缺少哪一步會導致梯度累積？
+  content:
+  - type: text
+    text: 閱讀下列 optimizer 順序，缺少哪一步會導致梯度累積？
+  - type: code
+    language: python
+    code: "for xb, yb in loader:\n    pred = model(xb)\n    loss = loss_fn(pred, yb)\n    loss.backward()\n    optimizer.step()"
+  type: multiple_choice
+  options:
+  - optimizer.zero_grad()
+  - model.eval()
+  - torch.no_grad()
+  - scheduler.step(loss)
+  correct_index: 0
+  explanation: PyTorch 預設梯度會累積；每次反向傳播前通常要 zero_grad 清空上一批梯度。
+  tags:
+  - chap-m4-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-090
+  chapter_title: 深度學習框架與架構
+  section_title: 程式閱讀理解
+  text: 閱讀下列輸出層，最適合哪個任務？
+  content:
+  - type: text
+    text: 閱讀下列輸出層，最適合哪個任務？
+  - type: code
+    language: python
+    code: "head = nn.Sequential(\n    nn.Linear(256, 1),\n    nn.Sigmoid(),\n)"
+  type: multiple_choice
+  options:
+  - 二元分類機率輸出
+  - 多類別 10 類分類
+  - 影像語義分割 256 類
+  - 文字 token embedding
+  correct_index: 0
+  explanation: 單一輸出加 Sigmoid 常用於二元分類機率。實務上也可用 BCEWithLogitsLoss 省略 Sigmoid。
+  tags:
+  - chap-m4-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-091
+  chapter_title: 深度學習框架與架構
+  section_title: 程式閱讀理解
+  text: 閱讀下列梯度凍結檢查，輸出 True 代表什麼？
+  content:
+  - type: text
+    text: 閱讀下列梯度凍結檢查，輸出 True 代表什麼？
+  - type: code
+    language: python
+    code: 'all_frozen = all(not p.requires_grad for p in model.features.parameters())
+
+      print(all_frozen)
+
+      # True'
+  type: multiple_choice
+  options:
+  - features 模組參數不會在反向傳播中更新
+  - classifier 也一定凍結
+  - 模型無法推論
+  - 資料載入失敗
+  correct_index: 0
+  explanation: requires_grad=False 表示 autograd 不會為該參數累積梯度，因此 optimizer 不會更新它。
+  tags:
+  - chap-m4-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-092
+  chapter_title: 深度學習框架與架構
+  section_title: 程式閱讀理解
+  text: 閱讀下列注意力 mask，主要用途為何？
+  content:
+  - type: text
+    text: 閱讀下列注意力 mask，主要用途為何？
+  - type: code
+    language: python
+    code: 'attn_mask = torch.triu(torch.ones(seq_len, seq_len), diagonal=1).bool()
+
+      out = transformer_decoder(tgt, memory, tgt_mask=attn_mask)'
+  type: multiple_choice
+  options:
+  - 防止 decoder 看到未來 token
+  - 讓 encoder 看到所有未來資料
+  - 刪除 padding token 的 embedding
+  - 把序列反轉
+  correct_index: 0
+  explanation: 上三角 causal mask 會遮住當前位置之後的 token，避免自回歸解碼偷看未來。
+  tags:
+  - chap-m4-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-093
+  chapter_title: 深度學習框架與架構
+  section_title: 程式閱讀理解
+  text: 閱讀下列 validation loop，哪一行避免 Dropout 隨機生效？
+  content:
+  - type: text
+    text: 閱讀下列 validation loop，哪一行避免 Dropout 隨機生效？
+  - type: code
+    language: python
+    code: "model.eval()\nwith torch.no_grad():\n    for xb, yb in valid_loader:\n        logits = model(xb)"
+  type: multiple_choice
+  options:
+  - model.eval()
+  - torch.no_grad()
+  - for xb, yb in valid_loader
+  - logits = model(xb)
+  correct_index: 0
+  explanation: model.eval() 切換模組行為，Dropout 停用、BatchNorm 使用 running stats；no_grad 只是不記錄梯度。
+  tags:
+  - chap-m4-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-094
+  chapter_title: 深度學習框架與架構
+  section_title: 程式閱讀理解
+  text: 閱讀下列資料載入設定，`shuffle=True` 最適合用在哪裡？
+  content:
+  - type: text
+    text: 閱讀下列資料載入設定，`shuffle=True` 最適合用在哪裡？
+  - type: code
+    language: python
+    code: 'train_loader = DataLoader(train_ds, batch_size=64, shuffle=True)
+
+      valid_loader = DataLoader(valid_ds, batch_size=64, shuffle=False)'
+  type: multiple_choice
+  options:
+  - 訓練資料，避免模型依固定順序學習
+  - 驗證資料，讓指標隨機變動
+  - 測試資料，改變標籤
+  - 所有資料都必須 shuffle=False
+  correct_index: 0
+  explanation: 訓練時 shuffle 可打散樣本順序；驗證/測試通常不需要 shuffle，以利可重現與對齊輸出。
+  tags:
+  - chap-m4-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-095
+  chapter_title: 深度學習框架與架構
+  section_title: 程式閱讀理解
+  text: 閱讀下列輸出，哪項最可能是梯度爆炸訊號？
+  content:
+  - type: text
+    text: 閱讀下列輸出，哪項最可能是梯度爆炸訊號？
+  - type: code
+    language: text
+    code: 'epoch 1 loss=1.2 grad_norm=4.8
+
+      epoch 2 loss=nan grad_norm=inf'
+  type: multiple_choice
+  options:
+  - loss 變成 NaN 且 grad_norm 無限大
+  - grad_norm 第 1 輪為 4.8
+  - epoch 數太少
+  - loss 第 1 輪為 1.2
+  correct_index: 0
+  explanation: 梯度爆炸常造成梯度範數極大或 inf，進而使 loss 變成 NaN。
+  tags:
+  - chap-m4-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz

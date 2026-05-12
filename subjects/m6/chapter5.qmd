@@ -1,0 +1,179 @@
+---
+title: "Natural Language Processing：NLTK 與文字特徵"
+order: 5
+label: chap-m6-ch5
+---
+
+Natural Language Processing (NLP) 是讓程式處理、分析與生成文字的技術領域。文字資料和表格資料不同，原始內容通常包含大小寫、標點、HTML、錯字、專有名詞、語言混合、斷詞問題與上下文語意。進入模型前，必須先決定如何清理文字、如何切成 token，以及如何轉成模型能處理的數值表示。
+
+本章以 NLTK 和傳統文字特徵為主，建立 NLP 的基礎觀念。NLTK 適合學習 tokenization、stop words、stemming、lemmatization、part-of-speech tagging 等概念；傳統機器學習常搭配 scikit-learn 的 Bag-of-Words 或 TF-IDF。現代 Transformer 雖然常用 subword tokenizer，但這些基本觀念仍有助於資料清理、baseline 建立與錯誤分析。
+
+## NLTK 基礎：文字前處理 {#sec-nltk-text-basics}
+
+NLTK 是經典自然語言處理工具包，適合學習文字處理概念，例如 tokenization、stop words、stemming、lemmatization、part-of-speech tagging。
+
+```python
+import nltk
+from nltk.tokenize import word_tokenize
+
+text = "Python is useful for natural language processing."
+# 將句子切成 token，作為 NLP 前處理的第一步
+tokens = word_tokenize(text)
+print(tokens)
+```
+
+tokenization 是把文字切成較小單位。英文常切成單字與標點；中文則通常需要額外斷詞工具，例如 jieba 或 CKIP。
+
+文字前處理也常包含大小寫、空白與符號整理：
+
+```python
+import re
+
+text = "  AI planning!!!  "
+# 基礎標準化：去除前後空白、轉小寫、壓縮非文字符號
+normalized = text.strip().lower()
+normalized = re.sub(r"[^a-z0-9 ]+", "", normalized)
+print(normalized)
+```
+
+這種標準化要依任務調整。情緒分析可能需要保留驚嘆號；法規文件可能不能任意刪除標點。
+
+## Stop Words、Stemming 與 Lemmatization {#sec-nltk-normalization}
+
+文字前處理常會移除 stop words，例如英文中的 "the"、"is"、"and"。但這不是永遠正確，因為在情緒分析或法律文本中，小字也可能影響語意。
+
+Stemming 會粗略切除字尾，lemmatization 則嘗試還原成字典詞形：
+
+```python
+from nltk.stem import PorterStemmer, WordNetLemmatizer
+
+stemmer = PorterStemmer()
+lemmatizer = WordNetLemmatizer()
+
+# stemming 較粗略，lemmatization 較重視字典詞形
+print(stemmer.stem("running"))
+print(lemmatizer.lemmatize("running", pos="v"))
+```
+
+傳統 NLP 中，這些處理能降低詞彙稀疏性。現代 Transformer 模型雖然使用 subword tokenizer，但理解這些基本概念仍有助於資料清理與錯誤分析。
+
+## 從文字到特徵 {#sec-nltk-text-features}
+
+傳統機器學習常用 Bag-of-Words 或 TF-IDF 把文字轉成稀疏向量。scikit-learn 提供常用工具：
+
+```{python}
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+docs = [
+    "machine learning is useful",
+    "deep learning uses neural networks",
+    "text features can use tfidf"
+]
+
+vectorizer = TfidfVectorizer()
+# fit_transform 會建立詞彙表，並將文件轉成 TF-IDF 稀疏矩陣
+X = vectorizer.fit_transform(docs)
+print(X.shape)
+```
+
+TF-IDF 的思想是：常出現在某篇文件但不常出現在所有文件的詞，通常更能代表該文件。它比單純詞頻更能降低常見詞的影響。
+
+## scikit-learn 文字分類 Baseline {#sec-nlp-sklearn-baseline}
+
+TF-IDF 常與 scikit-learn 分類器組合成簡單但強的文字分類 baseline：
+
+```{python}
+from sklearn.pipeline import Pipeline
+from sklearn.linear_model import LogisticRegression
+
+texts = ["great service", "bad experience", "fast and helpful", "very poor"]
+labels = [1, 0, 1, 0]
+
+text_clf = Pipeline([
+    ("tfidf", TfidfVectorizer()),
+    ("clf", LogisticRegression())
+])
+
+text_clf.fit(texts, labels)
+print(text_clf.predict(["helpful service"]))
+```
+
+在導入大型語言模型前，這類 baseline 能快速確認資料中是否有可學習訊號。若 TF-IDF 加 Logistic Regression 已經表現很好，可能不需要一開始就使用昂貴的 Transformer fine-tuning。
+
+文字資料也可以用簡單圖表做探索。下列範例統計小型語料中的常見詞，並用 Matplotlib 畫出詞頻長條圖：
+
+```{python}
+#| fig-cap: "小型文字語料的詞頻視覺化"
+from collections import Counter
+import re
+import matplotlib.pyplot as plt
+
+docs = [
+    "machine learning makes prediction useful",
+    "deep learning uses neural networks",
+    "machine learning and deep learning both need data",
+    "data quality affects model prediction"
+]
+
+tokens = []
+for doc in docs:
+    tokens.extend(re.findall(r"[a-z]+", doc.lower()))
+
+counts = Counter(tokens)
+top_words = counts.most_common(6)
+words = [word for word, _ in top_words]
+freqs = [freq for _, freq in top_words]
+
+fig, ax = plt.subplots(figsize=(6, 3.5))
+ax.bar(words, freqs, color="#2563eb")
+ax.set_title("Top words in a small corpus")
+ax.set_xlabel("Token")
+ax.set_ylabel("Count")
+plt.show()
+```
+
+## NLP 實務流程：從原始文字到模型特徵 {#sec-nltk-practical-pipeline}
+
+文字專案常見流程如下：
+
+1.  收集文件、留言、客服紀錄或文章。
+2.  清理 HTML、特殊符號、重複資料與無效內容。
+3.  斷詞或 tokenize。
+4.  選擇特徵表示，例如 TF-IDF、word embedding 或 Transformer tokenizer。
+5.  訓練分類、檢索、摘要或問答模型。
+6.  分析錯誤案例，例如否定句、諷刺、領域詞彙、拼字錯誤。
+
+NLTK 適合建立基本 NLP 概念，也適合做小型文字分析。大型現代 NLP 通常使用 Hugging Face Transformers、spaCy、jieba、CKIP 或其他更專門工具。
+
+```{mermaid}
+flowchart LR
+    A["Raw text"] --> B["Cleaning<br/>HTML, symbols, duplicates"]
+    B --> C["Tokenization"]
+    C --> D["Features<br/>TF-IDF / embedding"]
+    D --> E["Model<br/>classifier / retriever / LLM"]
+    E --> F["Error analysis"]
+```
+
+這個流程強調 NLP 不是只選模型。文字品質、斷詞方式、特徵表示與評估資料都會影響結果。
+
+## 中文 NLP 的額外挑戰 {#sec-chinese-nlp}
+
+中文與英文處理差異很大。英文可以用空白大致切詞，但中文句子沒有天然空白。例如「人工智慧應用規劃師」可以切成：
+
+*   人工智慧 / 應用 / 規劃師
+*   人工 / 智慧 / 應用 / 規劃 / 師
+*   人工智慧應用規劃師
+
+不同斷詞結果會影響 TF-IDF、關鍵字抽取與分類效果。中文 NLP 還需要處理繁簡轉換、專有名詞、混合英文縮寫與領域術語。若任務是台灣產業文件或考試資料，繁體中文詞庫與領域詞彙會很重要。
+
+## NLP 錯誤案例分析 {#sec-nlp-error-analysis}
+
+文字模型都應做錯誤案例分析。不要只看整體 accuracy，還要看模型錯在哪裡：
+
+*   文字分類是否常錯在否定句、雙關語、專有名詞？
+*   少數類別是否因樣本不足而 recall 很低？
+*   模型是否把資料來源、格式或模板當成捷徑？
+*   是否有標註不一致或同一句話多種標籤？
+*   中文、英文與混合縮寫是否被 tokenizer 正確處理？
+
+錯誤案例會反過來指導資料收集與前處理策略。若錯誤集中在資料品質，而不是模型能力，盲目換更大模型通常不是最有效解法。

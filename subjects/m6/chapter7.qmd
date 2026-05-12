@@ -1,10 +1,14 @@
 ---
 title: "PyTorch 實作簡單神經網路與 CNN"
-order: 6
-label: chap-m6-ch6
+order: 7
+label: chap-m6-ch7
 ---
 
 本章用 PyTorch 實作兩種常見模型：多層感知器 (MLP) 與卷積神經網路 (CNN)。MLP 適合表格或向量資料，CNN 適合具有空間結構的影像資料。
+
+MLP 與 CNN 是理解深度學習實作的兩個重要起點。MLP 展示神經網路如何從固定長度特徵向量中學習非線性關係；CNN 則展示模型如何利用影像的局部空間結構，例如邊緣、角點、紋理與形狀。兩者都使用前章介紹的 PyTorch 元件：`nn.Module`、loss、optimizer、DataLoader 與訓練迴圈。
+
+選擇模型時，先看資料結構。表格資料通常先試 scikit-learn 或 MLP；影像資料通常用 CNN 或預訓練視覺模型；文字或長序列資料則常用 Transformer。不要把模型當作固定答案，而要看它是否符合資料的形狀與任務需求。
 
 ## MLP 的基本架構 {#sec-pytorch-mlp}
 
@@ -41,6 +45,28 @@ model = MLP()
 ```
 
 輸出維度為 2，代表兩個類別的 logits。若是迴歸任務，最後一層通常輸出 1 或目標維度，loss 也會改用 MSELoss。
+
+MLP 也可以用於迴歸。以下範例輸出單一連續數值，適合預測價格、需求量或風險分數：
+
+```{python}
+class MLPRegressor(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.layers = nn.Sequential(
+            nn.Linear(10, 32),
+            nn.ReLU(),
+            nn.Linear(32, 1)
+        )
+
+    def forward(self, x):
+        return self.layers(x)
+
+reg_model = MLPRegressor()
+regression_output = reg_model(torch.randn(5, 10))
+print(regression_output.shape)
+```
+
+分類與迴歸的差異不只在輸出維度，也包含 label 格式與 loss function。分類常用類別 id 與 `CrossEntropyLoss`，迴歸常用 float target 與 `MSELoss` 或 `L1Loss`。
 
 ## 訓練 MLP {#sec-pytorch-train-mlp}
 
@@ -80,6 +106,13 @@ CNN 使用卷積層提取局部特徵。影像資料通常表示為 `(batch, cha
 *   **padding**：邊界補零。
 
 Pooling 層常用於降低空間尺寸，讓模型對小幅位移更穩定。
+
+卷積層和 MLP 最大差異在於「共享權重」與「局部感受野」。同一個卷積核會在整張影像上滑動，因此能在不同位置偵測相同圖案。這比把每個像素都接到全連接層更有效，也更符合影像資料的空間特性。
+
+```text
+影像局部區域 -> 卷積核 -> 局部特徵
+多個卷積核 -> 多個通道 -> 邊緣、紋理、形狀等特徵圖
+```
 
 ## 實作簡單 CNN {#sec-pytorch-simple-cnn}
 
@@ -227,6 +260,21 @@ with torch.no_grad():
 4.  視資料量與效果決定是否 fine-tune 更多層。
 
 這能利用模型已學到的邊緣、紋理、形狀等通用視覺特徵，降低資料需求與訓練時間。
+
+以 torchvision 為例，實務上常把預訓練模型的最後一層換成任務需要的類別數：
+
+```python
+import torch.nn as nn
+from torchvision import models
+
+# 載入預訓練 ResNet18 作為影像特徵抽取器
+resnet = models.resnet18(weights=models.ResNet18_Weights.DEFAULT)
+in_features = resnet.fc.in_features
+# 假設新任務有 3 個類別，替換最後分類層
+resnet.fc = nn.Linear(in_features, 3)
+```
+
+如果資料很少，可以先凍結 backbone，只訓練最後分類層；若資料較多且類別和預訓練資料差異大，再考慮 fine-tune 更多層。
 
 ## CNN 專案的錯誤分析方法 {#sec-pytorch-cnn-error-analysis}
 

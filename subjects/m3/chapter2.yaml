@@ -1074,10 +1074,10 @@ questions:
 - id: 114-2-005
   chapter_title: 進階資料處理
   section_title: 歷屆考題
-  text: |-
-    在進行資料前處理時，若使用 Label Encoding 將類別變數轉換為數字型態，下列何者為最常見的潛在風險？
+  text: '在進行資料前處理時，若使用 Label Encoding 將類別變數轉換為數字型態，下列何者為最常見的潛在風險？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 無法處理缺值
@@ -1094,10 +1094,10 @@ questions:
 - id: 114-2-006
   chapter_title: 進階資料處理
   section_title: 歷屆考題
-  text: |-
-    在進行資料分析時，會遇到類別型（Categorical）與數值型（Numerical）資料格式。關於這兩種資料格式的處理，下列敘述何者不正確？
+  text: '在進行資料分析時，會遇到類別型（Categorical）與數值型（Numerical）資料格式。關於這兩種資料格式的處理，下列敘述何者不正確？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - One-Hot 編碼（One-Hot Encoding）會將類別變數轉換為多維二元向量，適用於無序（Nominal）類別資料，但在高基數（High Cardinality）特徵下可能造成維度爆炸問題
@@ -1114,10 +1114,10 @@ questions:
 - id: 114-2-008
   chapter_title: 進階資料處理
   section_title: 歷屆考題
-  text: |-
-    資料科學家為分析顧客行為，利用現有欄位「銷售金額」與「瀏覽次數」，計算出新變數「銷售金額/瀏覽次數」。此動作屬於下列哪一類特徵工程方法？
+  text: '資料科學家為分析顧客行為，利用現有欄位「銷售金額」與「瀏覽次數」，計算出新變數「銷售金額/瀏覽次數」。此動作屬於下列哪一類特徵工程方法？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 特徵選擇（Feature Selection）
@@ -1134,10 +1134,10 @@ questions:
 - id: 114-2-009
   chapter_title: 進階資料處理
   section_title: 歷屆考題
-  text: |-
-    在進行數值特徵的標準化（Normalization）時，若資料中存在極端值（Outliers），下列哪一種方法最適合使用？
+  text: '在進行數值特徵的標準化（Normalization）時，若資料中存在極端值（Outliers），下列哪一種方法最適合使用？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - Min-Max 正規化（Min-Max Scaling）
@@ -1154,10 +1154,10 @@ questions:
 - id: 114-2-010
   chapter_title: 進階資料處理
   section_title: 歷屆考題
-  text: |-
-    下列哪一種情境最適合應用異常偵測（Anomaly Detection）技術？
+  text: '下列哪一種情境最適合應用異常偵測（Anomaly Detection）技術？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 根據歷史銷售資料預測特定商品在旺季期間是否會出現供貨短缺，以提前調整庫存策略
@@ -1174,10 +1174,10 @@ questions:
 - id: 114-2-011
   chapter_title: 進階資料處理
   section_title: 歷屆考題
-  text: |-
-    若一家公司需即時監控大量物聯網裝置的異常行為，下列哪一種組合最適合此應用？
+  text: '若一家公司需即時監控大量物聯網裝置的異常行為，下列哪一種組合最適合此應用？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 傳統關聯式資料庫 + 圖形視覺化
@@ -1194,10 +1194,10 @@ questions:
 - id: 114-2-012
   chapter_title: 進階資料處理
   section_title: 歷屆考題
-  text: |-
-    在處理分類問題時，若某一類樣本數明顯少於其他類別，研究人員可能採用隨機過採樣（Random Oversampling）以平衡資料比例，此方法最常造成下列哪一種問題？
+  text: '在處理分類問題時，若某一類樣本數明顯少於其他類別，研究人員可能採用隨機過採樣（Random Oversampling）以平衡資料比例，此方法最常造成下列哪一種問題？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 增加過擬合風險
@@ -1214,10 +1214,10 @@ questions:
 - id: 114-2-017
   chapter_title: 進階資料處理
   section_title: 歷屆考題
-  text: |-
-    某電商公司欲利用顧客行為資料建立消費預測模型，其中「會員等級」欄位包含「一般、白金、黑卡」三種類別。若模型採用梯度提升樹（Gradient Boosting Tree）演算法，資料科學家在進行特徵編碼時應特別注意下列何種情況？
+  text: '某電商公司欲利用顧客行為資料建立消費預測模型，其中「會員等級」欄位包含「一般、白金、黑卡」三種類別。若模型採用梯度提升樹（Gradient Boosting Tree）演算法，資料科學家在進行特徵編碼時應特別注意下列何種情況？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 應優先採用獨熱編碼（One-Hot Encoding），以減少類別之間的相依性與記憶體使用量
@@ -1234,10 +1234,10 @@ questions:
 - id: 114-2-019
   chapter_title: 進階資料處理
   section_title: 歷屆考題
-  text: |-
-    某製造企業導入上萬台物聯網（IoT）感測器以進行設備健康監測。系統需在毫秒級回應異常事件，並同時將完整資料保留於雲端供後續 AI 模型訓練與分析。若企業希望兼顧即時性、資料完整性與可擴展性，下列哪一種資料流程設計最符合此目標？
+  text: '某製造企業導入上萬台物聯網（IoT）感測器以進行設備健康監測。系統需在毫秒級回應異常事件，並同時將完整資料保留於雲端供後續 AI 模型訓練與分析。若企業希望兼顧即時性、資料完整性與可擴展性，下列哪一種資料流程設計最符合此目標？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 感測器 → 雲端 API Gateway → 分散式資料庫 → 批次特徵工程 → 模型推論
@@ -1254,10 +1254,10 @@ questions:
 - id: 114-2-037
   chapter_title: 進階資料處理
   section_title: 歷屆考題
-  text: |-
-    若開發一個用於罕見疾病自動診斷的分類模型，目前資料集中確診樣本僅佔不到 1%，且因為標註成本高，短期內無法取得更多資料。在此情況下，若希望提升模型對少數類的偵測能力，同時避免過擬合，下列哪一種策略最為合理？
+  text: '若開發一個用於罕見疾病自動診斷的分類模型，目前資料集中確診樣本僅佔不到 1%，且因為標註成本高，短期內無法取得更多資料。在此情況下，若希望提升模型對少數類的偵測能力，同時避免過擬合，下列哪一種策略最為合理？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 對少數類進行隨機過採樣（Random Oversampling）
@@ -1277,18 +1277,25 @@ questions:
   text: "一間遊戲市場研究公司正在分析全球電子遊戲銷售情況，並準備建立一份「熱銷遊戲銷售報告」。分析師取得了一份名為 `vgsales.csv` 的資料集，內容包含了全球銷量超過 10 萬份的電子遊戲清單。研究團隊希望透過這份資料，了解不同年份、平台與地區的銷售趨勢。資料集的欄位說明如下，請根據下述資料情境回答 43–47 題。\n\n- `Name`：遊戲名稱\n- `Platform`：遊戲平台（如 PS4、X360、Wii 等）\n- `Year`：發售年份\n- `Genre`：遊戲類型（如 Action、Sports、Role-Playing 等）\n- `Publisher`：發行商名稱\n- `NA_Sales` / `EU_Sales` / `JP_Sales` / `Other_Sales`：各地區銷售量（單位：百萬份）\n- `Global_Sales`：全球總銷售量（單位：百萬份）\n\n資料的欄位概觀如下：\n\n![VGSales dataset overview](assets/images/q43_47_vgsales_head.png)\n\n第 43 題\n\n![Q43 Year column dtype output](assets/images/q43_year_dtype.png)\n\n分析師在載入資料後，檢視 `Year` 欄位的資料型態，發現它是 `float64`，而非一般年份常用的整數。他想了解這樣的情形為什麼會發生。請問下列哪些原因可能導致這種狀況？\n\n原因 A：CSV 檔中 `Year` 欄位有缺失值（NaN），導致 Pandas 自動將整欄轉為浮點數。  \n原因 B：CSV 檔中的年份資料原本是字串（如 `\"2006\"`），Pandas 轉換時出錯而變成浮點數。  \n原因 C：Pandas 預設會將所有數值型態讀取為 `float64`，不論資料是否為整數。  \n原因 D：CSV 檔中的年份資料可能包含小數點（例如 `2006.0`），因此被視為浮點數。\n\n(114年第二梯次)"
   content:
   - type: text
-    text: |-
-      一間遊戲市場研究公司正在分析全球電子遊戲銷售情況，並準備建立一份「熱銷遊戲銷售報告」。分析師取得了一份名為 `vgsales.csv` 的資料集，內容包含了全球銷量超過 10 萬份的電子遊戲清單。研究團隊希望透過這份資料，了解不同年份、平台與地區的銷售趨勢。資料集的欄位說明如下，請根據下述資料情境回答 43–47 題。
+    text: '一間遊戲市場研究公司正在分析全球電子遊戲銷售情況，並準備建立一份「熱銷遊戲銷售報告」。分析師取得了一份名為 `vgsales.csv` 的資料集，內容包含了全球銷量超過 10 萬份的電子遊戲清單。研究團隊希望透過這份資料，了解不同年份、平台與地區的銷售趨勢。資料集的欄位說明如下，請根據下述資料情境回答 43–47 題。
+
 
       - `Name`：遊戲名稱
+
       - `Platform`：遊戲平台（如 PS4、X360、Wii 等）
+
       - `Year`：發售年份
+
       - `Genre`：遊戲類型（如 Action、Sports、Role-Playing 等）
+
       - `Publisher`：發行商名稱
+
       - `NA_Sales` / `EU_Sales` / `JP_Sales` / `Other_Sales`：各地區銷售量（單位：百萬份）
+
       - `Global_Sales`：全球總銷售量（單位：百萬份）
 
-      資料的欄位概觀如下：
+
+      資料的欄位概觀如下：'
   - type: image
     src: assets/images/q43_47_vgsales_head.png
     alt: VGSales dataset overview
@@ -1315,50 +1322,68 @@ questions:
 - id: 114-2-044
   chapter_title: 進階資料處理
   section_title: 歷屆考題
-  text: |-
-    一間遊戲市場研究公司正在分析全球電子遊戲銷售情況，並準備建立一份「熱銷遊戲銷售報告」。分析師取得了一份名為 `vgsales.csv` 的資料集，內容包含了全球銷量超過 10 萬份的電子遊戲清單。研究團隊希望透過這份資料，了解不同年份、平台與地區的銷售趨勢。資料集的欄位說明如下，請根據下述資料情境回答 43–47 題。
+  text: '一間遊戲市場研究公司正在分析全球電子遊戲銷售情況，並準備建立一份「熱銷遊戲銷售報告」。分析師取得了一份名為 `vgsales.csv` 的資料集，內容包含了全球銷量超過 10 萬份的電子遊戲清單。研究團隊希望透過這份資料，了解不同年份、平台與地區的銷售趨勢。資料集的欄位說明如下，請根據下述資料情境回答 43–47 題。
+
 
     - `Name`：遊戲名稱
+
     - `Platform`：遊戲平台（如 PS4、X360、Wii 等）
+
     - `Year`：發售年份
+
     - `Genre`：遊戲類型（如 Action、Sports、Role-Playing 等）
+
     - `Publisher`：發行商名稱
+
     - `NA_Sales` / `EU_Sales` / `JP_Sales` / `Other_Sales`：各地區銷售量（單位：百萬份）
+
     - `Global_Sales`：全球總銷售量（單位：百萬份）
+
 
     資料的欄位概觀如下：
 
+
     ![VGSales dataset overview](assets/images/q43_47_vgsales_head.png)
+
 
     第 44 題
 
+
     研究團隊接下來想要將 `Year` 欄位轉換為整數型態，以便後續進行年份趨勢分析。考慮到資料中可能包含缺失值（NaN），請選出最合適的轉換方式。
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   content:
   - type: text
-    text: |-
-      一間遊戲市場研究公司正在分析全球電子遊戲銷售情況，並準備建立一份「熱銷遊戲銷售報告」。分析師取得了一份名為 `vgsales.csv` 的資料集，內容包含了全球銷量超過 10 萬份的電子遊戲清單。研究團隊希望透過這份資料，了解不同年份、平台與地區的銷售趨勢。資料集的欄位說明如下，請根據下述資料情境回答 43–47 題。
+    text: '一間遊戲市場研究公司正在分析全球電子遊戲銷售情況，並準備建立一份「熱銷遊戲銷售報告」。分析師取得了一份名為 `vgsales.csv` 的資料集，內容包含了全球銷量超過 10 萬份的電子遊戲清單。研究團隊希望透過這份資料，了解不同年份、平台與地區的銷售趨勢。資料集的欄位說明如下，請根據下述資料情境回答 43–47 題。
+
 
       - `Name`：遊戲名稱
+
       - `Platform`：遊戲平台（如 PS4、X360、Wii 等）
+
       - `Year`：發售年份
+
       - `Genre`：遊戲類型（如 Action、Sports、Role-Playing 等）
+
       - `Publisher`：發行商名稱
+
       - `NA_Sales` / `EU_Sales` / `JP_Sales` / `Other_Sales`：各地區銷售量（單位：百萬份）
+
       - `Global_Sales`：全球總銷售量（單位：百萬份）
 
-      資料的欄位概觀如下：
+
+      資料的欄位概觀如下：'
   - type: image
     src: assets/images/q43_47_vgsales_head.png
     alt: VGSales dataset overview
   - type: text
     text: 第 44 題
   - type: text
-    text: |-
-      研究團隊接下來想要將 `Year` 欄位轉換為整數型態，以便後續進行年份趨勢分析。考慮到資料中可能包含缺失值（NaN），請選出最合適的轉換方式。
+    text: '研究團隊接下來想要將 `Year` 欄位轉換為整數型態，以便後續進行年份趨勢分析。考慮到資料中可能包含缺失值（NaN），請選出最合適的轉換方式。
 
-      (114年第二梯次)
+
+      (114年第二梯次)'
   type: multiple_choice
   options:
   - '`data[''Year''] = data[''Year''].astype(int)`'
@@ -1409,3 +1434,523 @@ questions:
   - past-exam
   - chap-m3-ch2
   usage: mock
+- id: m3-code-011
+  chapter_title: 資料處理與特徵工程
+  section_title: 程式閱讀理解
+  text: 閱讀下列 pandas 程式碼，哪個欄位會被標記為缺值比例過高？
+  content:
+  - type: text
+    text: 閱讀下列 pandas 程式碼，哪個欄位會被標記為缺值比例過高？
+  - type: code
+    language: python
+    code: 'missing_rate = df.isna().mean()
+
+      flagged = missing_rate[missing_rate > 0.4]
+
+      print(flagged)
+
+
+      # 輸出：
+
+      # device_id    0.05
+
+      # income       0.47
+
+      # zipcode      0.12'
+  type: multiple_choice
+  options:
+  - device_id
+  - income
+  - zipcode
+  - 三個欄位都會被標記
+  correct_index: 1
+  explanation: 條件是 missing_rate > 0.4，只有 income 的缺值比例 0.47 超過門檻。
+  tags:
+  - chap-m3-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-012
+  chapter_title: 資料處理與特徵工程
+  section_title: 程式閱讀理解
+  text: 閱讀下列特徵工程程式，產生的新欄位代表什麼？
+  content:
+  - type: text
+    text: 閱讀下列特徵工程程式，產生的新欄位代表什麼？
+  - type: code
+    language: python
+    code: df["avg_order_value"] = df["total_revenue"] / df["order_count"]
+  type: multiple_choice
+  options:
+  - 每筆訂單平均收入
+  - 訂單數量的標準差
+  - 顧客最近一次消費日期
+  - 總收入的排名百分位
+  correct_index: 0
+  explanation: total_revenue 除以 order_count 是平均訂單金額，屬於常見的衍生特徵。
+  tags:
+  - chap-m3-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-013
+  chapter_title: 資料處理與特徵工程
+  section_title: 程式閱讀理解
+  text: 閱讀下列 One-Hot 編碼結果，哪一項解讀正確？
+  content:
+  - type: text
+    text: 閱讀下列 One-Hot 編碼結果，哪一項解讀正確？
+  - type: code
+    language: python
+    code: 'import pandas as pd
+
+
+      encoded = pd.get_dummies(df["payment_type"], prefix="pay")
+
+      print(encoded.head(1))
+
+
+      # pay_card  pay_cash  pay_wallet
+
+      #     True     False       False'
+  type: multiple_choice
+  options:
+  - 第一筆資料的 payment_type 是 card
+  - 第一筆資料同時使用三種付款方式
+  - payment_type 欄位缺值
+  - card 欄位代表付款金額
+  correct_index: 0
+  explanation: one-hot 編碼中 pay_card 為 True，其他類別為 False，代表原類別值為 card。
+  tags:
+  - chap-m3-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-014
+  chapter_title: 資料處理與特徵工程
+  section_title: 程式閱讀理解
+  text: 閱讀下列標準化程式，對 X_test 使用 train_mean 與 train_std 的主要原因是什麼？
+  content:
+  - type: text
+    text: 閱讀下列標準化程式，對 X_test 使用 train_mean 與 train_std 的主要原因是什麼？
+  - type: code
+    language: python
+    code: 'train_mean = X_train.mean(axis=0)
+
+      train_std = X_train.std(axis=0)
+
+
+      X_train_scaled = (X_train - train_mean) / train_std
+
+      X_test_scaled = (X_test - train_mean) / train_std'
+  type: multiple_choice
+  options:
+  - 避免測試資料資訊洩漏到訓練流程
+  - 讓測試資料平均值必定為 0
+  - 讓所有測試資料變成 0 到 1
+  - 提高測試資料筆數
+  correct_index: 0
+  explanation: 前處理參數應只由訓練資料估計，再套用到測試資料，避免測試集分佈資訊洩漏。
+  tags:
+  - chap-m3-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-015
+  chapter_title: 資料處理與特徵工程
+  section_title: 程式閱讀理解
+  text: 閱讀下列資料攝取偽程式，這段流程主要在處理哪一類問題？
+  content:
+  - type: text
+    text: 閱讀下列資料攝取偽程式，這段流程主要在處理哪一類問題？
+  - type: code
+    language: text
+    code: "if record.schema_version not in allowed_versions:\n    send_to_quarantine(record)\nelif not validate_required_fields(record):\n    send_to_quarantine(record)\nelse:\n    write_to_bronze(record)"
+  type: multiple_choice
+  options:
+  - 資料品質閘門與隔離區處理
+  - 模型超參數搜尋
+  - 資料視覺化配色
+  - 關聯規則探勘
+  correct_index: 0
+  explanation: 程式檢查 schema 版本與必要欄位，不合格資料送 quarantine，是典型資料品質閘門。
+  tags:
+  - chap-m3-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-016
+  chapter_title: 資料處理與特徵工程
+  section_title: 程式閱讀理解
+  text: 閱讀下列 Airflow DAG 片段，哪個任務會在 transform 完成後執行？
+  content:
+  - type: text
+    text: 閱讀下列 Airflow DAG 片段，哪個任務會在 transform 完成後執行？
+  - type: code
+    language: python
+    code: 'extract >> transform >> load
+
+      transform >> data_quality_check'
+  type: multiple_choice
+  options:
+  - extract
+  - load 與 data_quality_check
+  - 只有 extract
+  - 沒有任何任務
+  correct_index: 1
+  explanation: 依依賴關係，transform 完成後會觸發 load，也會觸發 data_quality_check。
+  tags:
+  - chap-m3-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-017
+  chapter_title: 資料處理與特徵工程
+  section_title: 程式閱讀理解
+  text: 閱讀下列 Spark watermark 設定，主要目的為何？
+  content:
+  - type: text
+    text: 閱讀下列 Spark watermark 設定，主要目的為何？
+  - type: code
+    language: python
+    code: "events = spark.readStream.table(\"bronze_clicks\")\nagg = (\n    events.withWatermark(\"event_time\", \"10 minutes\")\n          .groupBy(window(\"event_time\", \"5 minutes\"), \"campaign_id\")\n          .count()\n)"
+  type: multiple_choice
+  options:
+  - 處理延遲到達資料並限制狀態保留時間
+  - 把 event_time 轉成字串
+  - 強制每 10 分鐘重新訓練模型
+  - 移除所有超過 5 分鐘的活動資料
+  correct_index: 0
+  explanation: watermark 用於串流聚合中處理 late data，同時讓系統知道狀態可保留多久。
+  tags:
+  - chap-m3-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-018
+  chapter_title: 資料處理與特徵工程
+  section_title: 程式閱讀理解
+  text: 閱讀下列目標編碼程式，最需要注意哪個風險？
+  content:
+  - type: text
+    text: 閱讀下列目標編碼程式，最需要注意哪個風險？
+  - type: code
+    language: python
+    code: 'means = train.groupby("city")["churn"].mean()
+
+      train["city_te"] = train["city"].map(means)
+
+      valid["city_te"] = valid["city"].map(means)'
+  type: multiple_choice
+  options:
+  - 若未用交叉方式產生 train 編碼，可能造成目標洩漏或過擬合
+  - city_te 必定是無序類別欄位
+  - valid 不可使用 train 的統計值
+  - groupby 會自動移除 churn 欄位
+  correct_index: 0
+  explanation: 目標編碼使用 y 的統計值，若直接用全訓練資料回填訓練列，模型可能記住類別目標率，尤其高基數類別更易過擬合。
+  tags:
+  - chap-m3-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-019
+  chapter_title: 資料處理與特徵工程
+  section_title: 程式閱讀理解
+  text: 閱讀下列資料治理設定，哪一項最正確？
+  content:
+  - type: text
+    text: 閱讀下列資料治理設定，哪一項最正確？
+  - type: code
+    language: yaml
+    code: "policy:\n  dataset: customer_profile\n  pii_columns:\n    - email\n    - phone\n  allowed_roles:\n    - data_steward\n    - privacy_officer"
+  type: multiple_choice
+  options:
+  - email 與 phone 被標記為個資欄位，只有指定角色可存取
+  - 所有員工都可以讀取 email
+  - policy 會自動提高模型準確率
+  - allowed_roles 代表資料分割欄位
+  correct_index: 0
+  explanation: 設定明確列出 PII 欄位與允許角色，屬於存取控制與資料治理政策。
+  tags:
+  - chap-m3-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-020
+  chapter_title: 資料處理與特徵工程
+  section_title: 程式閱讀理解
+  text: 閱讀下列 PySpark 程式碼，哪一項最能描述 `dropDuplicates` 的效果？
+  content:
+  - type: text
+    text: 閱讀下列 PySpark 程式碼，哪一項最能描述 `dropDuplicates` 的效果？
+  - type: code
+    language: python
+    code: clean = raw.dropDuplicates(["event_id"])
+  type: multiple_choice
+  options:
+  - 依 event_id 移除重複列，只保留其中一筆
+  - 刪除所有 event_id 欄位
+  - 刪除 event_id 為空值的列
+  - 依 event_id 將資料加總
+  correct_index: 0
+  explanation: dropDuplicates(["event_id"]) 會以 event_id 作為判斷重複的鍵，重複資料只保留一筆。
+  tags:
+  - chap-m3-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-061
+  chapter_title: 資料處理與特徵工程
+  section_title: 程式閱讀理解
+  text: 閱讀下列欄位修剪程式，哪一項是主要效果？
+  content:
+  - type: text
+    text: 閱讀下列欄位修剪程式，哪一項是主要效果？
+  - type: code
+    language: python
+    code: selected = raw.select("user_id", "event_time", "event_type", "amount")
+  type: multiple_choice
+  options:
+  - 只保留下游需要的欄位，減少資料寬度與處理成本
+  - 刪除所有列
+  - 將所有欄位轉為字串
+  - 依 amount 排序
+  correct_index: 0
+  explanation: select 只保留指定欄位，能降低後續 I/O、shuffle 與記憶體壓力。
+  tags:
+  - chap-m3-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-062
+  chapter_title: 資料處理與特徵工程
+  section_title: 程式閱讀理解
+  text: 閱讀下列離群值處理，哪一項正確？
+  content:
+  - type: text
+    text: 閱讀下列離群值處理，哪一項正確？
+  - type: code
+    language: python
+    code: 'q1 = df["amount"].quantile(0.25)
+
+      q3 = df["amount"].quantile(0.75)
+
+      iqr = q3 - q1
+
+      filtered = df[(df["amount"] >= q1 - 1.5 * iqr) & (df["amount"] <= q3 + 1.5 * iqr)]'
+  type: multiple_choice
+  options:
+  - 使用 IQR 規則過濾 amount 離群值
+  - 把 amount 標準化成平均 0
+  - 計算 amount 的 one-hot 編碼
+  - 只保留缺值列
+  correct_index: 0
+  explanation: IQR 方法用 Q1-1.5IQR 與 Q3+1.5IQR 作為常見離群值範圍門檻。
+  tags:
+  - chap-m3-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-063
+  chapter_title: 資料處理與特徵工程
+  section_title: 程式閱讀理解
+  text: 閱讀下列類別合併程式，主要目的為何？
+  content:
+  - type: text
+    text: 閱讀下列類別合併程式，主要目的為何？
+  - type: code
+    language: python
+    code: 'counts = df["merchant_category"].value_counts()
+
+      rare = counts[counts < 50].index
+
+      df["merchant_category"] = df["merchant_category"].replace(rare, "OTHER")'
+  type: multiple_choice
+  options:
+  - 降低高基數類別的稀疏性與過擬合風險
+  - 提高類別數量
+  - 把所有類別改成缺值
+  - 計算時間序列移動平均
+  correct_index: 0
+  explanation: 低頻類別樣本少，直接編碼可能稀疏且不穩定；合併為 OTHER 可提升穩定性。
+  tags:
+  - chap-m3-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-064
+  chapter_title: 資料處理與特徵工程
+  section_title: 程式閱讀理解
+  text: 閱讀下列時間特徵程式，哪個新特徵可捕捉週期性？
+  content:
+  - type: text
+    text: 閱讀下列時間特徵程式，哪個新特徵可捕捉週期性？
+  - type: code
+    language: python
+    code: 'df["hour"] = df["event_time"].dt.hour
+
+      df["hour_sin"] = np.sin(2 * np.pi * df["hour"] / 24)
+
+      df["hour_cos"] = np.cos(2 * np.pi * df["hour"] / 24)'
+  type: multiple_choice
+  options:
+  - hour_sin 與 hour_cos
+  - event_time 原始字串
+  - 只使用 hour=23
+  - 刪除 hour 欄位
+  correct_index: 0
+  explanation: sin/cos 週期編碼可表達 23 點與 0 點相鄰的循環關係，適合小時、星期等週期特徵。
+  tags:
+  - chap-m3-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-065
+  chapter_title: 資料處理與特徵工程
+  section_title: 程式閱讀理解
+  text: 閱讀下列資料洩漏情境，哪一欄最應移除？
+  content:
+  - type: text
+    text: 閱讀下列資料洩漏情境，哪一欄最應移除？
+  - type: code
+    language: python
+    code: "features = [\n    \"age\",\n    \"income\",\n    \"days_since_signup\",\n    \"refund_processed_after_churn\",\n]\ntarget = \"churned\""
+  type: multiple_choice
+  options:
+  - refund_processed_after_churn
+  - age
+  - income
+  - days_since_signup
+  correct_index: 0
+  explanation: 欄位名稱顯示它發生在 churn 之後，會把目標事件後資訊洩漏進特徵，應移除。
+  tags:
+  - chap-m3-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-066
+  chapter_title: 資料處理與特徵工程
+  section_title: 程式閱讀理解
+  text: 閱讀下列 `fit_transform` / `transform` 用法，何者正確？
+  content:
+  - type: text
+    text: 閱讀下列 `fit_transform` / `transform` 用法，何者正確？
+  - type: code
+    language: python
+    code: 'imputer = SimpleImputer(strategy="median")
+
+      X_train_imp = imputer.fit_transform(X_train)
+
+      X_valid_imp = imputer.transform(X_valid)'
+  type: multiple_choice
+  options:
+  - 只在訓練集 fit，再把相同中位數規則套用到驗證集
+  - 驗證集也應 fit_transform 才不會洩漏
+  - fit_transform 會刪除所有欄位
+  - transform 會重新估計驗證集中位數
+  correct_index: 0
+  explanation: 前處理器只應在訓練資料 fit，驗證/測試資料只能 transform，避免資料洩漏。
+  tags:
+  - chap-m3-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-067
+  chapter_title: 資料處理與特徵工程
+  section_title: 程式閱讀理解
+  text: 閱讀下列 ETL 任務依賴，哪個任務最後執行？
+  content:
+  - type: text
+    text: 閱讀下列 ETL 任務依賴，哪個任務最後執行？
+  - type: code
+    language: python
+    code: 'extract_customers >> clean_customers
+
+      extract_orders >> clean_orders
+
+      [clean_customers, clean_orders] >> build_features >> validate_features'
+  type: multiple_choice
+  options:
+  - validate_features
+  - extract_customers
+  - clean_orders
+  - build_features 與 validate_features 同時開始
+  correct_index: 0
+  explanation: validate_features 依賴 build_features，而 build_features 又等 clean_customers 與 clean_orders 完成，因此 validate_features 最後執行。
+  tags:
+  - chap-m3-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-068
+  chapter_title: 資料處理與特徵工程
+  section_title: 程式閱讀理解
+  text: 閱讀下列 schema 演進設定，新增 nullable 欄位通常為何較安全？
+  content:
+  - type: text
+    text: 閱讀下列 schema 演進設定，新增 nullable 欄位通常為何較安全？
+  - type: code
+    language: python
+    code: 'old_schema = ["user_id", "amount"]
+
+      new_schema = ["user_id", "amount", "coupon_code"]  # nullable'
+  type: multiple_choice
+  options:
+  - 舊資料沒有 coupon_code 也可被讀取為 null
+  - 會自動重算所有歷史金額
+  - 會刪除 amount 欄位
+  - nullable 欄位不能寫入新資料
+  correct_index: 0
+  explanation: 新增 nullable 欄位通常向後相容，舊檔沒有該欄時可補 null。
+  tags:
+  - chap-m3-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-069
+  chapter_title: 資料處理與特徵工程
+  section_title: 程式閱讀理解
+  text: 閱讀下列特徵存儲查詢，`as_of_time` 的目的為何？
+  content:
+  - type: text
+    text: 閱讀下列特徵存儲查詢，`as_of_time` 的目的為何？
+  - type: code
+    language: python
+    code: "features = store.get_historical_features(\n    entity_df=training_entities,\n    features=[\"customer:avg_30d_spend\", \"customer:txn_count_7d\"],\n    as_of_time=\"event_timestamp\",\n)"
+  type: multiple_choice
+  options:
+  - 取得事件時間點以前可用的特徵，避免時間穿越洩漏
+  - 取得未來 30 天資料
+  - 只查詢目前最新特徵
+  - 刪除 event_timestamp
+  correct_index: 0
+  explanation: 訓練特徵需要 point-in-time correct，as_of_time 可避免使用事件發生後才知道的資料。
+  tags:
+  - chap-m3-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-070
+  chapter_title: 資料處理與特徵工程
+  section_title: 程式閱讀理解
+  text: 閱讀下列 Great Expectations 規則，哪一項資料會失敗？
+  content:
+  - type: text
+    text: 閱讀下列 Great Expectations 規則，哪一項資料會失敗？
+  - type: code
+    language: python
+    code: "expect_column_values_to_be_between(\n    column=\"age\",\n    min_value=18,\n    max_value=100,\n)"
+  type: multiple_choice
+  options:
+  - age=16
+  - age=18
+  - age=52
+  - age=100
+  correct_index: 0
+  explanation: 規則要求 age 介於 18 到 100，age=16 低於最小值，因此驗證失敗。
+  tags:
+  - chap-m3-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz

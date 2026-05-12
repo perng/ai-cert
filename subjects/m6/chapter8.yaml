@@ -1,0 +1,1342 @@
+questions:
+- id: 8061
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Transformer 的核心想法
+  text: Transformer 中 self-attention 的核心作用是什麼？
+  type: multiple_choice
+  options:
+  - 讓每個 token 能根據序列中其他 token 的資訊更新表示
+  - 將 DataFrame 依欄位分組
+  - 自動建立 Python 虛擬環境
+  - 將所有影像轉成灰階
+  correct_index: 0
+  explanation: Self-attention 讓序列中不同位置能互相參考，捕捉上下文關係。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-core-idea
+  usage: both
+- id: 8062
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Transformer 的核心想法
+  text: Transformer 為何需要位置資訊？
+  type: multiple_choice
+  options:
+  - 因為 embedding 只能處理影像
+  - 因為 CrossEntropyLoss 只能讀取日期
+  - Self-attention 本身不內建 token 順序概念
+  - 因為 optimizer 需要知道檔案路徑
+  correct_index: 2
+  explanation: 如果沒有位置資訊，模型難以區分相同 token 在不同位置的序列意義。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-core-idea
+  usage: both
+- id: 8063
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Embedding 與位置資訊
+  text: nn.Embedding 的主要功能是什麼？
+  type: multiple_choice
+  options:
+  - 執行 Pandas merge
+  - 將 token id 映射成可訓練向量表示
+  - 將 RGB 影像轉成 BGR
+  - 清空梯度
+  correct_index: 1
+  explanation: Embedding layer 會把離散 token id 轉成連續向量，供神經網路處理。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-embedding-position
+  usage: both
+- id: 8064
+  chapter_title: PyTorch Transformer 基礎
+  section_title: MultiheadAttention 基礎
+  text: 在 self-attention 中，query、key、value 通常來自哪裡？
+  type: multiple_choice
+  options:
+  - Python 的虛擬環境名稱
+  - OpenCV 的 BGR channel
+  - 同一個輸入序列
+  - 三個完全不相關的資料庫
+  correct_index: 2
+  explanation: Self-attention 的 Q、K、V 都由同一序列轉換而來，使序列內部位置互相注意。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-attention
+  usage: both
+- id: 8065
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Transformer Encoder 分類器
+  text: 在簡化 Transformer 分類器中，pooling 的主要用途是什麼？
+  type: multiple_choice
+  options:
+  - 將 YAML 轉成 HTML
+  - 將 GPU 改成 CPU
+  - 將序列中多個 token 表示整合成單一向量供分類
+  - 將圖片進行邊緣偵測
+  correct_index: 2
+  explanation: 分類器通常需要整體序列表示，因此會使用 mean pooling、CLS token 或其他聚合方式。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-classifier
+  usage: both
+- id: 8066
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Mask 與序列長度
+  text: padding mask 的主要作用是什麼？
+  type: multiple_choice
+  options:
+  - 告訴模型哪些位置是補齊 token，不應當成真實內容
+  - 將 optimizer learning rate 設為 0
+  - 將所有 token 隨機刪除
+  - 將影像大小固定為 224x224
+  correct_index: 0
+  explanation: padding mask 能避免模型把補齊用的 token 當作有效文字內容。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-mask
+  usage: both
+- id: 8067
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Mask 與序列長度
+  text: 自回歸語言模型使用 causal mask 的主要原因是什麼？
+  type: multiple_choice
+  options:
+  - 防止 DataLoader 建立 batch
+  - 防止 Pandas 進行 groupby
+  - 防止模型在訓練時偷看未來 token
+  - 防止 OpenCV 讀取圖片
+  correct_index: 2
+  explanation: 自回歸生成需根據過去預測下一個 token，因此 causal mask 會遮住未來位置。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-mask
+  usage: both
+- id: 8068
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 從簡化模型到大型語言模型
+  text: 從簡化 Transformer 到大型語言模型，哪些基礎元件仍然重要？
+  type: multiple_choice
+  options:
+  - 只有 OpenCV 的 Canny edge detector
+  - 只有 Python 的 print 函式
+  - 只有 Pandas 的 merge
+  - Embedding、attention、feed-forward、normalization 與 optimizer
+  correct_index: 3
+  explanation: LLM 雖然規模巨大，但仍建立在 Transformer 的核心元件與訓練流程上。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-to-llm
+  usage: both
+- id: 8131
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Transformer 的核心想法
+  text: Multi-head attention 中使用多個 head 的主要直覺是什麼？
+  type: multiple_choice
+  options:
+  - 讓模型能在不同子空間學習不同關係
+  - 讓輸入 token 不需要位置資訊
+  - 讓模型不需要 embedding
+  - 讓所有參數固定不訓練
+  correct_index: 0
+  explanation: 多個 attention head 可同時捕捉不同類型的關係，例如局部片語、語法或長距離依賴。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-core-idea
+  usage: both
+- id: 8132
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Embedding 與位置資訊
+  text: 若 positional embedding 的最大長度小於輸入序列長度，最可能發生什麼？
+  type: multiple_choice
+  options:
+  - tokenizer 會改用 OpenCV
+  - loss 會永遠等於 0
+  - 模型會自動變成 CNN
+  - 長文本位置 id 超出可表示範圍，造成錯誤或無法處理
+  correct_index: 3
+  explanation: 可學習位置 embedding 有固定大小，輸入序列長度不可超過其可表示位置範圍。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-embedding-position
+  usage: both
+- id: 8133
+  chapter_title: PyTorch Transformer 基礎
+  section_title: MultiheadAttention 基礎
+  text: 當 nn.MultiheadAttention 設定 batch_first=True 時，輸入 shape 通常為何？
+  type: multiple_choice
+  options:
+  - channels, height, width
+  - batch, seq_len, d_model
+  - rows, columns, labels
+  - seq_len, d_model, batch
+  correct_index: 1
+  explanation: batch_first=True 時，PyTorch attention 接受 batch 在第一維的輸入格式。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-attention
+  usage: both
+- id: 8134
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Attention 的直覺與限制
+  text: Attention 公式中除以 sqrt(d_k) 的主要目的為何？
+  type: multiple_choice
+  options:
+  - 避免 dot product 隨維度變大而使 softmax 過度尖銳
+  - 將所有 token id 轉成文字
+  - 讓模型不需要資料
+  - 取代 optimizer
+  correct_index: 0
+  explanation: scale dot-product attention 會除以 sqrt(d_k)，讓數值範圍較穩定。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-attention-intuition
+  usage: both
+- id: 8135
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Encoder、Decoder 與 Encoder-Decoder
+  text: BERT 類模型通常屬於哪一種 Transformer 架構？
+  type: multiple_choice
+  options:
+  - Encoder-only
+  - Decoder-only
+  - DataFrame-only
+  - OpenCV-only
+  correct_index: 0
+  explanation: BERT 使用 encoder-only 架構，適合理解、分類、檢索與序列標註等任務。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-architectures
+  usage: both
+- id: 8136
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Tokenizer 與 Subword
+  text: Subword tokenizer 的一個重要優點是什麼？
+  type: multiple_choice
+  options:
+  - 會刪除所有位置資訊
+  - 不需要 embedding layer
+  - 能處理罕見詞與新詞，並控制詞彙表大小
+  - 只能處理灰階影像
+  correct_index: 2
+  explanation: BPE、WordPiece、SentencePiece 等 subword 方法可把罕見詞拆成較小片段，降低 unknown token 問題。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-tokenizer
+  usage: both
+- id: 8137
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Transformer 訓練時的 Loss
+  text: 自回歸語言模型訓練中 shifted labels 的核心概念是什麼？
+  type: multiple_choice
+  options:
+  - 每個位置都預測前一張影像
+  - 每個位置學習預測下一個 token
+  - 每個 batch 都不需要 loss
+  - 每個 token 都被轉成 DataFrame 欄位
+  correct_index: 1
+  explanation: 自回歸模型以目前與過去 token 預測下一個 token，因此 target 通常相對 input 位移一格。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-loss
+  usage: both
+- id: 8138
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Fine-tuning、Feature Extraction 與 RAG
+  text: 當知識內容經常更新時，RAG 相較於頻繁 fine-tuning 的常見優勢是什麼？
+  type: multiple_choice
+  options:
+  - 可透過更新外部知識庫反映新資訊，不一定要重訓模型
+  - 一定不需要檢索品質評估
+  - 可完全避免幻覺
+  - 會讓模型參數自動變小
+  correct_index: 0
+  explanation: RAG 將外部知識檢索後放入上下文，知識更新可集中在資料庫或索引，而不必每次重訓模型。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-application-patterns
+  usage: both
+- id: m6-ch8-code-001
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: 在 self-attention 中，Q、K、V 來自哪裡？
+  content:
+  - type: text
+    text: 在 self-attention 中，Q、K、V 來自哪裡？
+  - type: code
+    language: python
+    code: attn_out, attn_weights = attention(x, x, x)
+  type: multiple_choice
+  options:
+  - Pandas 三個欄位名稱
+  - 同一個序列 x
+  - OpenCV 三個色彩通道
+  - 三個不同資料庫
+  correct_index: 1
+  explanation: self-attention 的 query、key、value 都來自同一段序列表示。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-002
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: nn.Embedding(vocab_size, d_model) 的作用是什麼？
+  content:
+  - type: text
+    text: nn.Embedding(vocab_size, d_model) 的作用是什麼？
+  - type: code
+    language: python
+    code: 'embedding = nn.Embedding(vocab_size, d_model)
+
+      x = embedding(tokens)'
+  type: multiple_choice
+  options:
+  - 將 token id 轉成 d_model 維向量
+  - 計算交叉驗證
+  - 刪除 padding
+  - 將影像轉成灰階
+  correct_index: 0
+  explanation: Embedding layer 會把離散整數 token id 映射成連續向量。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-003
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: 若 tokens shape 是 (1, 4)，embedding 後 x.shape 是什麼？
+  content:
+  - type: text
+    text: 若 tokens shape 是 (1, 4)，embedding 後 x.shape 是什麼？
+  - type: code
+    language: python
+    code: 'tokens = torch.tensor([[5, 17, 23, 9]])
+
+      x = embedding(tokens)'
+  type: multiple_choice
+  options:
+  - (1, 4, d_model)
+  - (1, d_model)
+  - (4, 1)
+  - (d_model, 4)
+  correct_index: 0
+  explanation: 每個 token 會變成 d_model 維向量，因此 shape 是 batch、seq_len、d_model。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-004
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: positions = torch.arange(tokens.size(1)).unsqueeze(0) 產生什麼？
+  content:
+  - type: text
+    text: positions = torch.arange(tokens.size(1)).unsqueeze(0) 產生什麼？
+  - type: code
+    language: python
+    code: 'tokens = torch.tensor([[5, 17, 23, 9]])
+
+      positions = torch.arange(tokens.size(1)).unsqueeze(0)'
+  type: multiple_choice
+  options:
+  - - - 5
+      - 17
+      - 23
+      - 9
+  - - - 0
+      - 1
+      - 2
+      - 3
+  - - - 4
+  - - - 1
+      - 1
+      - 1
+      - 1
+  correct_index: 1
+  explanation: tokens.size(1) 是序列長度 4，arange 產生 0 到 3，再加 batch 維度。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-005
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: batch_first=True 時 MultiheadAttention 輸入 shape 應是什麼？
+  content:
+  - type: text
+    text: batch_first=True 時 MultiheadAttention 輸入 shape 應是什麼？
+  - type: code
+    language: python
+    code: attention = nn.MultiheadAttention(d_model, num_heads=4, batch_first=True)
+  type: multiple_choice
+  options:
+  - (channels, height, width)
+  - (seq_len, batch, d_model)
+  - (batch, seq_len, d_model)
+  - (features, batch)
+  correct_index: 2
+  explanation: batch_first=True 代表 batch 維度放在第一維。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-006
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: attn_weights 的直覺意義是什麼？
+  content:
+  - type: text
+    text: attn_weights 的直覺意義是什麼？
+  - type: code
+    language: python
+    code: attn_out, attn_weights = attention(x, x, x)
+  type: multiple_choice
+  options:
+  - 每個 token 對其他 token 的關注分布
+  - 影像邊緣強度
+  - 模型 optimizer 狀態
+  - DataFrame 缺失率
+  correct_index: 0
+  explanation: attention weights 表示 token 之間的關注權重。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-007
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: TinyTransformerClassifier 中 encoded.mean(dim=1) 的用途是什麼？
+  content:
+  - type: text
+    text: TinyTransformerClassifier 中 encoded.mean(dim=1) 的用途是什麼？
+  - type: code
+    language: python
+    code: 'encoded = self.encoder(x)
+
+      pooled = encoded.mean(dim=1)
+
+      return self.classifier(pooled)'
+  type: multiple_choice
+  options:
+  - 建立 causal mask
+  - 計算位置 id
+  - 把序列 token 表示平均成整段文字向量
+  - 刪除 batch 維度
+  correct_index: 2
+  explanation: mean(dim=1) 沿序列長度平均，取得句子或文件層級表示。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-008
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: position id 使用 input_ids.device 的主要原因是什麼？
+  content:
+  - type: text
+    text: position id 使用 input_ids.device 的主要原因是什麼？
+  - type: code
+    language: python
+    code: positions = torch.arange(input_ids.size(1), device=input_ids.device).unsqueeze(0)
+  type: multiple_choice
+  options:
+  - 確保 positions 和 input_ids 在同一 device
+  - 改變 vocab size
+  - 讓 positions 永遠在 CPU
+  - 刪除 padding token
+  correct_index: 0
+  explanation: tensor 運算需要在同一 device，避免 CPU/GPU 不一致錯誤。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-009
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: 閱讀 padding mask 程式，True 代表什麼位置？
+  content:
+  - type: text
+    text: 閱讀 padding mask 程式，True 代表什麼位置？
+  - type: code
+    language: python
+    code: 'input_ids = torch.tensor([[10, 20, 0, 0]])
+
+      padding_mask = input_ids == 0
+
+      print(padding_mask)'
+  type: multiple_choice
+  options:
+  - padding token 位置
+  - 真實 token 位置
+  - 句子開頭
+  - 最大機率類別
+  correct_index: 0
+  explanation: 此例 token id 0 代表 padding，因此等於 0 的位置為 True。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-010
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: 簡化 Transformer 分類器和大型語言模型的共同基礎元件是什麼？
+  content:
+  - type: text
+    text: 簡化 Transformer 分類器和大型語言模型的共同基礎元件是什麼？
+  - type: code
+    language: python
+    code: embedding -> attention -> feed-forward -> normalization
+  type: multiple_choice
+  options:
+  - Pandas merge
+  - embedding、attention、feed-forward 等
+  - OpenCV threshold
+  - KMeans centroid
+  correct_index: 1
+  explanation: 大型模型規模更大，但仍建立在 Transformer 基礎元件上。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-011
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: Attention(Q, K, V) 中 softmax(QK^T / sqrt(d_k)) 的作用是什麼？
+  content:
+  - type: text
+    text: Attention(Q, K, V) 中 softmax(QK^T / sqrt(d_k)) 的作用是什麼？
+  - type: code
+    language: python
+    code: Attention(Q, K, V) = softmax(QK^T / sqrt(d_k)) V
+  type: multiple_choice
+  options:
+  - 將文字切成 CSV
+  - 儲存模型權重
+  - 計算對 value 加權的注意力權重
+  - 把圖片 resize
+  correct_index: 2
+  explanation: QK^T 經縮放與 softmax 形成權重，再加權加總 V。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-012
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: 下列架構最適合自回歸生成任務的是哪一類？
+  content:
+  - type: text
+    text: 下列架構最適合自回歸生成任務的是哪一類？
+  - type: code
+    language: python
+    code: causal_mask = generate_square_subsequent_mask(seq_len)
+  type: multiple_choice
+  options:
+  - Encoder-only
+  - Pandas-only
+  - OpenCV-only
+  - Decoder-only
+  correct_index: 3
+  explanation: 自回歸生成通常使用 decoder-only 或含 decoder 的架構，並搭配 causal mask。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-013
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: Subword tokenizer 的主要優勢是什麼？
+  content:
+  - type: text
+    text: Subword tokenizer 的主要優勢是什麼？
+  - type: code
+    language: python
+    code: 'tokens = tokenizer("unbelievable")  # 可能切成多個 subword'
+  type: multiple_choice
+  options:
+  - 可處理罕見詞並控制詞彙表大小
+  - 會刪除所有位置資訊
+  - 只能處理英文空白
+  - 不需要 embedding
+  correct_index: 0
+  explanation: subword 可把罕見詞拆成較小片段，降低 unknown token 問題。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-014
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: 自回歸語言模型中 shifted labels 的概念是什麼？
+  content:
+  - type: text
+    text: 自回歸語言模型中 shifted labels 的概念是什麼？
+  - type: code
+    language: python
+    code: 'input:  [今, 天, 天, 氣]
+
+      target: [天, 天, 氣, 好]'
+  type: multiple_choice
+  options:
+  - 每個位置預測下一個 token
+  - 不需要 target
+  - 只預測第一個 token
+  - 每個位置預測同一個 token
+  correct_index: 0
+  explanation: target 相對 input 位移一格，讓模型學習下一個 token 預測。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-015
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: 下列流程最接近哪種應用模式？
+  content:
+  - type: text
+    text: 下列流程最接近哪種應用模式？
+  - type: code
+    language: python
+    code: query -> embedding -> vector search -> retrieved documents -> prompt
+  type: multiple_choice
+  options:
+  - RAG
+  - Pandas groupby
+  - OpenCV threshold
+  - 從零訓練 CNN
+  correct_index: 0
+  explanation: 先檢索外部文件再放入 prompt，是 RAG 的典型流程。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-016
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: Embedding 輸入通常是什麼？
+  content:
+  - type: text
+    text: Embedding 輸入通常是什麼？
+  - type: code
+    language: python
+    code: x = embedding(input_ids)
+  type: multiple_choice
+  options:
+  - 整數 token id
+  - RGB 影像
+  - 浮點 loss
+  - DataFrame 欄位名稱
+  correct_index: 0
+  explanation: Embedding 將 token id 映射成向量。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-017
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: 位置 embedding 的目的為何？
+  content:
+  - type: text
+    text: 位置 embedding 的目的為何？
+  - type: code
+    language: python
+    code: x = token_embedding(input_ids) + position_embedding(positions)
+  type: multiple_choice
+  options:
+  - 刪除 padding
+  - 計算 p-value
+  - 加入順序資訊
+  - 轉成 BGR
+  correct_index: 2
+  explanation: Self-attention 本身不含順序，需要位置資訊。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-018
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: batch_first=True 時輸入 shape 是什麼？
+  content:
+  - type: text
+    text: batch_first=True 時輸入 shape 是什麼？
+  - type: code
+    language: python
+    code: nn.MultiheadAttention(d_model, 4, batch_first=True)
+  type: multiple_choice
+  options:
+  - (batch, seq_len, d_model)
+  - (batch, channels, height, width)
+  - (seq_len, batch, d_model)
+  - (features, target)
+  correct_index: 0
+  explanation: batch_first=True 使用 batch 在第一維。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-019
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: attention(x, x, x) 表示什麼？
+  content:
+  - type: text
+    text: attention(x, x, x) 表示什麼？
+  - type: code
+    language: python
+    code: out, weights = attention(x, x, x)
+  type: multiple_choice
+  options:
+  - Q/K/V 都來自同一序列
+  - 執行三次 optimizer
+  - 使用三張圖片
+  - 使用三個模型
+  correct_index: 0
+  explanation: Self-attention 的 Q、K、V 來自同一輸入。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-020
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: num_heads=4 的直覺是什麼？
+  content:
+  - type: text
+    text: num_heads=4 的直覺是什麼？
+  - type: code
+    language: python
+    code: nn.MultiheadAttention(embed_dim=32, num_heads=4)
+  type: multiple_choice
+  options:
+  - 用多個 attention head 學不同關係
+  - 序列長度固定 4
+  - 輸出 4 個類別
+  - batch size 必須為 4
+  correct_index: 0
+  explanation: 多頭注意力可在不同子空間學關係。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-021
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: padding_mask=True 的位置通常代表什麼？
+  content:
+  - type: text
+    text: padding_mask=True 的位置通常代表什麼？
+  - type: code
+    language: python
+    code: padding_mask = input_ids == 0
+  type: multiple_choice
+  options:
+  - 要忽略的 padding token
+  - 類別 label
+  - 第一個真實 token
+  - 最高機率 token
+  correct_index: 0
+  explanation: padding mask 標示補齊位置。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-022
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: causal mask 的主要用途是什麼？
+  content:
+  - type: text
+    text: causal mask 的主要用途是什麼？
+  - type: code
+    language: python
+    code: mask = generate_square_subsequent_mask(seq_len)
+  type: multiple_choice
+  options:
+  - 避免看過去 token
+  - 固定 batch size
+  - 刪除 embedding
+  - 避免看未來 token
+  correct_index: 3
+  explanation: 自回歸生成不能偷看未來位置。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-023
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: encoded.mean(dim=1) 做什麼？
+  content:
+  - type: text
+    text: encoded.mean(dim=1) 做什麼？
+  - type: code
+    language: python
+    code: pooled = encoded.mean(dim=1)
+  type: multiple_choice
+  options:
+  - 刪除 batch
+  - 把 token 表示平均成序列表示
+  - 計算 loss
+  - 建立 tokenizer
+  correct_index: 1
+  explanation: 沿 seq_len 維度平均可得到整段表示。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-024
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: classifier(pooled) 通常輸出什麼？
+  content:
+  - type: text
+    text: classifier(pooled) 通常輸出什麼？
+  - type: code
+    language: python
+    code: logits = self.classifier(pooled)
+  type: multiple_choice
+  options:
+  - attention mask
+  - 類別 logits
+  - 位置 id
+  - tokenizer 詞表
+  correct_index: 1
+  explanation: 分類層將序列表示轉成類別分數。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-025
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: Subword tokenizer 的優勢是什麼？
+  content:
+  - type: text
+    text: Subword tokenizer 的優勢是什麼？
+  - type: code
+    language: python
+    code: tokens = tokenizer("unbelievable")
+  type: multiple_choice
+  options:
+  - 只能處理空白
+  - 不需要詞彙表
+  - 可處理罕見詞片段
+  - 會輸出影像
+  correct_index: 2
+  explanation: subword 可拆解罕見詞降低 unknown 問題。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-026
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: shifted labels 表示什麼？
+  content:
+  - type: text
+    text: shifted labels 表示什麼？
+  - type: code
+    language: text
+    code: 'input:  [A, B, C]
+
+      target: [B, C, D]'
+  type: multiple_choice
+  options:
+  - 不需要 loss
+  - 每個位置預測下一個 token
+  - 只預測第一個 token
+  - 每個位置預測自己
+  correct_index: 1
+  explanation: 語言模型常學習下一 token 預測。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-027
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: BERT 類 encoder-only 架構常用於什麼？
+  content:
+  - type: text
+    text: BERT 類 encoder-only 架構常用於什麼？
+  - type: code
+    language: python
+    code: encoder_output = encoder(input_ids)
+  type: multiple_choice
+  options:
+  - 影像 threshold
+  - 分類與理解任務
+  - 自回歸聊天生成為主
+  - Pandas merge
+  correct_index: 1
+  explanation: Encoder-only 擅長理解與分類。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-028
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: GPT 類 decoder-only 架構常用於什麼？
+  content:
+  - type: text
+    text: GPT 類 decoder-only 架構常用於什麼？
+  - type: code
+    language: python
+    code: next_token = model.generate(input_ids)
+  type: multiple_choice
+  options:
+  - 統計檢定
+  - 資料庫 join
+  - 影像輪廓
+  - 自回歸生成
+  correct_index: 3
+  explanation: Decoder-only 常用於下一 token 生成。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-029
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: RAG 中檢索結果通常放到哪裡？
+  content:
+  - type: text
+    text: RAG 中檢索結果通常放到哪裡？
+  - type: code
+    language: python
+    code: prompt = question + retrieved_context
+  type: multiple_choice
+  options:
+  - OpenCV mask
+  - prompt / context
+  - BatchNorm running mean
+  - optimizer state
+  correct_index: 1
+  explanation: RAG 將外部知識放進模型上下文。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch8-code-030
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 程式閱讀理解
+  text: 標準 self-attention 對序列長度的成本約如何成長？
+  content:
+  - type: text
+    text: 標準 self-attention 對序列長度的成本約如何成長？
+  - type: code
+    language: python
+    code: sequence_length = n
+  type: multiple_choice
+  options:
+  - 約平方成長
+  - 約固定不變
+  - 與 n 無關
+  - 約線性下降
+  correct_index: 0
+  explanation: 標準 attention 計算量約與序列長度平方相關。
+  tags:
+  - chap-m6-ch8
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-hc-137
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Embedding 與位置資訊
+  text: 關於「Embedding 與位置資訊」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - Embedding 將離散 token id 轉成連續向量。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 0
+  explanation: Embedding 將離散 token id 轉成連續向量。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-embedding-position
+  usage: both
+- id: m6-hc-138
+  chapter_title: PyTorch Transformer 基礎
+  section_title: MultiheadAttention 基礎
+  text: 關於「MultiheadAttention 基礎」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - self-attention 中 Q、K、V 來自同一序列。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  correct_index: 0
+  explanation: self-attention 中 Q、K、V 來自同一序列。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-attention
+  usage: both
+- id: m6-hc-139
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Transformer Encoder 分類器
+  text: 關於「Transformer Encoder 分類器」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - Encoder 會輸出每個 token 的上下文表示。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 0
+  explanation: Encoder 會輸出每個 token 的上下文表示。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-classifier
+  usage: both
+- id: m6-hc-140
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Transformer Encoder 分類器
+  text: 在實務應用「Transformer Encoder 分類器」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 分類器可用 mean pooling 或 CLS 表示取得整段文字向量。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 0
+  explanation: 分類器可用 mean pooling 或 CLS 表示取得整段文字向量。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-classifier
+  usage: both
+- id: m6-hc-141
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Mask 與序列長度
+  text: 關於「Mask 與序列長度」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - padding mask 用來避免模型關注補齊 token。
+  correct_index: 3
+  explanation: padding mask 用來避免模型關注補齊 token。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-mask
+  usage: both
+- id: m6-hc-142
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 從簡化模型到大型語言模型
+  text: 關於「從簡化模型到大型語言模型」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 大型語言模型仍建立在 embedding、attention、feed-forward 與 normalization 等元件上。
+  correct_index: 3
+  explanation: 大型語言模型仍建立在 embedding、attention、feed-forward 與 normalization 等元件上。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-to-llm
+  usage: both
+- id: m6-hc-143
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 從簡化模型到大型語言模型
+  text: 在實務應用「從簡化模型到大型語言模型」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 模型規模變大會帶來更多資料、算力與部署成本需求。
+  correct_index: 3
+  explanation: 模型規模變大會帶來更多資料、算力與部署成本需求。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-to-llm
+  usage: both
+- id: m6-hc-144
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Attention 的直覺與限制
+  text: 關於「Attention 的直覺與限制」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - attention 可視為 query 對 key 比較後加權 value。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  correct_index: 2
+  explanation: attention 可視為 query 對 key 比較後加權 value。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-attention-intuition
+  usage: both
+- id: m6-hc-145
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Attention 的直覺與限制
+  text: 在實務應用「Attention 的直覺與限制」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 除以 sqrt(d_k) 可避免 dot product 過大導致 softmax 過尖。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 2
+  explanation: 除以 sqrt(d_k) 可避免 dot product 過大導致 softmax 過尖。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-attention-intuition
+  usage: both
+- id: m6-hc-146
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Encoder、Decoder 與 Encoder-Decoder
+  text: 關於「Encoder、Decoder 與 Encoder-Decoder」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - Encoder-only 架構適合理解、分類與檢索任務。
+  correct_index: 3
+  explanation: Encoder-only 架構適合理解、分類與檢索任務。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-architectures
+  usage: both
+- id: m6-hc-147
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Encoder、Decoder 與 Encoder-Decoder
+  text: 在實務應用「Encoder、Decoder 與 Encoder-Decoder」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - Decoder-only 架構適合自回歸生成。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 2
+  explanation: Decoder-only 架構適合自回歸生成。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-architectures
+  usage: both
+- id: m6-hc-148
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Tokenizer 與 Subword
+  text: 關於「Tokenizer 與 Subword」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - Subword tokenizer 可處理罕見詞與新詞。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 2
+  explanation: Subword tokenizer 可處理罕見詞與新詞。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-tokenizer
+  usage: both
+- id: m6-hc-149
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Tokenizer 與 Subword
+  text: 在實務應用「Tokenizer 與 Subword」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 模型訓練與推論必須使用一致 tokenizer。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 0
+  explanation: 模型訓練與推論必須使用一致 tokenizer。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-tokenizer
+  usage: both
+- id: m6-hc-150
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Transformer 訓練時的 Loss
+  text: 關於「Transformer 訓練時的 Loss」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 文字分類常使用 pooled representation 搭配 CrossEntropyLoss。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  correct_index: 2
+  explanation: 文字分類常使用 pooled representation 搭配 CrossEntropyLoss。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-loss
+  usage: both
+- id: m6-hc-151
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Transformer 訓練時的 Loss
+  text: 在實務應用「Transformer 訓練時的 Loss」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 語言模型通常用 shifted labels 預測下一個 token。
+  correct_index: 3
+  explanation: 語言模型通常用 shifted labels 預測下一個 token。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-loss
+  usage: both
+- id: m6-hc-152
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Fine-tuning、Feature Extraction 與 RAG
+  text: 關於「Fine-tuning、Feature Extraction 與 RAG」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - RAG 適合知識常更新且需要外部資料來源的任務。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 0
+  explanation: RAG 適合知識常更新且需要外部資料來源的任務。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-application-patterns
+  usage: both
+- id: m6-hc-153
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Fine-tuning、Feature Extraction 與 RAG
+  text: 在實務應用「Fine-tuning、Feature Extraction 與 RAG」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - feature extraction 可用預訓練模型產生 embedding 給檢索或下游模型。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 2
+  explanation: feature extraction 可用預訓練模型產生 embedding 給檢索或下游模型。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-application-patterns
+  usage: both
+- id: m6-hc-154
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Transformer 常見錯誤與除錯
+  text: 關於「Transformer 常見錯誤與除錯」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - padding mask 語意錯誤會讓模型關注 padding token。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 1
+  explanation: padding mask 語意錯誤會讓模型關注 padding token。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-debugging
+  usage: both
+- id: m6-hc-155
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Transformer 常見錯誤與除錯
+  text: 在實務應用「Transformer 常見錯誤與除錯」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - tokenizer 不一致會讓訓練與推論輸入表示不同。
+  correct_index: 3
+  explanation: tokenizer 不一致會讓訓練與推論輸入表示不同。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-debugging
+  usage: both
+- id: m6-hc-156
+  chapter_title: PyTorch Transformer 基礎
+  section_title: Transformer 常見錯誤與除錯
+  text: 下列哪一項最符合「Transformer 常見錯誤與除錯」的核心觀念？
+  type: multiple_choice
+  options:
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - sequence length 太長會增加 attention 記憶體與時間成本。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 1
+  explanation: sequence length 太長會增加 attention 記憶體與時間成本。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-debugging
+  usage: both
+- id: m6-hc-157
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 從實作理解應用規劃
+  text: 關於「從實作理解應用規劃」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 應用規劃需評估上下文長度、延遲、成本與更新知識方式。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 2
+  explanation: 應用規劃需評估上下文長度、延遲、成本與更新知識方式。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-planning-perspective
+  usage: both
+- id: m6-hc-158
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 從實作理解應用規劃
+  text: 在實務應用「從實作理解應用規劃」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 若知識常變動，RAG 通常比頻繁 fine-tuning 更容易維護。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  correct_index: 0
+  explanation: 若知識常變動，RAG 通常比頻繁 fine-tuning 更容易維護。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-planning-perspective
+  usage: both
+- id: m6-hc-159
+  chapter_title: PyTorch Transformer 基礎
+  section_title: 從實作理解應用規劃
+  text: 下列哪一項最符合「從實作理解應用規劃」的核心觀念？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 任務若只是語意搜尋，embedding 方案可能比生成模型更簡單。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  correct_index: 2
+  explanation: 任務若只是語意搜尋，embedding 方案可能比生成模型更簡單。
+  tags:
+  - chap-m6-ch8
+  - sec-transformer-planning-perspective
+  usage: both

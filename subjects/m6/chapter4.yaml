@@ -1,0 +1,1143 @@
+questions:
+- id: m6-ch4-code-001
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: OpenCV 讀取彩色影像後，預設通道順序是什麼？
+  content:
+  - type: text
+    text: OpenCV 讀取彩色影像後，預設通道順序是什麼？
+  - type: code
+    language: python
+    code: 'import cv2
+
+      image = cv2.imread("input.jpg")'
+  type: multiple_choice
+  options:
+  - RGB
+  - CMYK
+  - HSV
+  - BGR
+  correct_index: 3
+  explanation: OpenCV 預設彩色影像通道順序是 BGR。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-002
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: 下列程式的主要效果是什麼？
+  content:
+  - type: text
+    text: 下列程式的主要效果是什麼？
+  - type: code
+    language: python
+    code: gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+  type: multiple_choice
+  options:
+  - 把 BGR 彩色影像轉成灰階
+  - 訓練 CNN 模型
+  - 把灰階影像轉成 BGR
+  - 裁切影像中心區域
+  correct_index: 0
+  explanation: COLOR_BGR2GRAY 會將 OpenCV BGR 彩色影像轉為灰階。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-003
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: 若 image.shape 是 (480, 640, 3)，height 的值是多少？
+  content:
+  - type: text
+    text: 若 image.shape 是 (480, 640, 3)，height 的值是多少？
+  - type: code
+    language: python
+    code: 'height, width, channels = image.shape
+
+      print(height)'
+  type: multiple_choice
+  options:
+  - 480
+  - 3
+  - 1120
+  - 640
+  correct_index: 0
+  explanation: OpenCV 影像 shape 通常是 (height, width, channels)，因此 height 是 480。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-004
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: 下列 resize 程式將影像調整成什麼大小？
+  content:
+  - type: text
+    text: 下列 resize 程式將影像調整成什麼大小？
+  - type: code
+    language: python
+    code: resized = cv2.resize(image, (224, 224))
+  type: multiple_choice
+  options:
+  - 224 x 224
+  - 原始尺寸不變
+  - 28 x 28
+  - 448 x 448
+  correct_index: 0
+  explanation: cv2.resize 的 size 參數設定為 (224, 224)。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-005
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: cv2.Canny(gray, 100, 200) 常用來產生什麼？
+  content:
+  - type: text
+    text: cv2.Canny(gray, 100, 200) 常用來產生什麼？
+  - type: code
+    language: python
+    code: edges = cv2.Canny(gray, threshold1=100, threshold2=200)
+  type: multiple_choice
+  options:
+  - DataFrame 欄位
+  - 文字 token
+  - 邊緣圖
+  - 模型權重
+  correct_index: 2
+  explanation: Canny 是傳統邊緣偵測方法。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-006
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: 下列轉換通常是為了讓 Matplotlib 正確顯示什麼？
+  content:
+  - type: text
+    text: 下列轉換通常是為了讓 Matplotlib 正確顯示什麼？
+  - type: code
+    language: python
+    code: 'image_rgb = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB)
+
+      plt.imshow(image_rgb)'
+  type: multiple_choice
+  options:
+  - 正確的 RGB 顏色
+  - padding mask
+  - 類別機率
+  - 模型 loss
+  correct_index: 0
+  explanation: OpenCV 讀取為 BGR，Matplotlib 顯示通常使用 RGB。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-007
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: plt.axis("off") 在影像顯示中常用來做什麼？
+  content:
+  - type: text
+    text: plt.axis("off") 在影像顯示中常用來做什麼？
+  - type: code
+    language: python
+    code: 'plt.imshow(image_rgb)
+
+      plt.axis("off")
+
+      plt.show()'
+  type: multiple_choice
+  options:
+  - 關閉模型訓練
+  - 隱藏座標軸
+  - 計算混淆矩陣
+  - 轉換 BGR 通道
+  correct_index: 1
+  explanation: 顯示影像時常關閉座標軸，讓畫面更清楚。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-008
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: torchvision transforms.Compose 的主要用途是什麼？
+  content:
+  - type: text
+    text: torchvision transforms.Compose 的主要用途是什麼？
+  - type: code
+    language: python
+    code: "train_tfms = transforms.Compose([\n    transforms.Resize((224, 224)),\n    transforms.RandomHorizontalFlip(),\n    transforms.ToTensor()\n])"
+  type: multiple_choice
+  options:
+  - 執行統計檢定
+  - 計算 p-value
+  - 建立文字詞彙表
+  - 依序組合多個影像轉換
+  correct_index: 3
+  explanation: Compose 會把多個 transforms 串成一個影像前處理流程。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-009
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: RandomHorizontalFlip() 通常應用在哪個資料階段？
+  content:
+  - type: text
+    text: RandomHorizontalFlip() 通常應用在哪個資料階段？
+  - type: code
+    language: python
+    code: "train_tfms = transforms.Compose([\n    transforms.RandomHorizontalFlip(),\n    transforms.ToTensor()\n])"
+  type: multiple_choice
+  options:
+  - 最終測試資料的固定轉換
+  - 訓練資料增強
+  - 統計摘要輸出
+  - 模型權重儲存
+  correct_index: 1
+  explanation: 隨機翻轉通常用於訓練資料增強，驗證與測試應避免隨機性。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-010
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: datasets.ImageFolder("data/train", transform=train_tfms) 假設什麼資料結構？
+  content:
+  - type: text
+    text: datasets.ImageFolder("data/train", transform=train_tfms) 假設什麼資料結構？
+  - type: code
+    language: python
+    code: dataset = datasets.ImageFolder("data/train", transform=train_tfms)
+  type: multiple_choice
+  options:
+  - 子資料夾名稱代表類別
+  - 標籤必須存在 SQL 資料庫
+  - 圖片必須先轉成 CSV
+  - 所有圖片必須在同一個資料夾且沒有標籤
+  correct_index: 0
+  explanation: ImageFolder 會把每個子資料夾視為一個類別。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-011
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: 下列程式替換 ResNet 最後一層的主要目的為何？
+  content:
+  - type: text
+    text: 下列程式替換 ResNet 最後一層的主要目的為何？
+  - type: code
+    language: python
+    code: 'model = models.resnet18(weights=models.ResNet18_Weights.DEFAULT)
+
+      in_features = model.fc.in_features
+
+      model.fc = nn.Linear(in_features, 3)'
+  type: multiple_choice
+  options:
+  - 讓模型輸出符合新任務的 3 個類別
+  - 將 RGB 改成 BGR
+  - 刪除所有卷積層
+  - 把模型轉成 OpenCV 影像
+  correct_index: 0
+  explanation: Transfer learning 常替換最後分類層，使輸出類別數符合新任務。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-012
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: cv2.threshold 回傳的 mask 常代表什麼？
+  content:
+  - type: text
+    text: cv2.threshold 回傳的 mask 常代表什麼？
+  - type: code
+    language: python
+    code: _, mask = cv2.threshold(blurred, 120, 255, cv2.THRESH_BINARY)
+  type: multiple_choice
+  options:
+  - 二值前景或區域遮罩
+  - 模型 learning rate
+  - 文字詞彙表
+  - DataFrame 索引
+  correct_index: 0
+  explanation: threshold 常用來產生二值遮罩，以區分前景與背景或目標區域。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-013
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: 下列程式更像傳統電腦視覺還是深度學習？
+  content:
+  - type: text
+    text: 下列程式更像傳統電腦視覺還是深度學習？
+  - type: code
+    language: python
+    code: 'edges = cv2.Canny(gray, 100, 200)
+
+      contours, _ = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)'
+  type: multiple_choice
+  options:
+  - Pandas groupby
+  - Transformer fine-tuning
+  - PyTorch autograd
+  - 傳統電腦視覺
+  correct_index: 3
+  explanation: Canny 與輪廓偵測是 OpenCV 傳統影像處理方法。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-014
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: Normalize(mean=..., std=...) 在 torchvision transforms 中通常用來做什麼？
+  content:
+  - type: text
+    text: Normalize(mean=..., std=...) 在 torchvision transforms 中通常用來做什麼？
+  - type: code
+    language: python
+    code: "transforms.Normalize(mean=[0.485, 0.456, 0.406],\n                     std=[0.229, 0.224, 0.225])"
+  type: multiple_choice
+  options:
+  - 依通道標準化影像 tensor
+  - 將文字轉成 token
+  - 建立資料夾類別
+  - 計算模型 p-value
+  correct_index: 0
+  explanation: Normalize 會依各通道 mean 與 std 標準化影像 tensor。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-015
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: 混淆矩陣最適合用來觀察什麼？
+  content:
+  - type: text
+    text: 混淆矩陣最適合用來觀察什麼？
+  - type: code
+    language: python
+    code: cm = confusion_matrix(y_true, y_pred)
+  type: multiple_choice
+  options:
+  - GPU 是否可用
+  - optimizer learning rate
+  - 影像檔案大小
+  - 哪些類別彼此容易混淆
+  correct_index: 3
+  explanation: 混淆矩陣可以顯示真實類別與預測類別的交叉分布。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-016
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: 若 cv2.imread 回傳 None，通常代表什麼？
+  content:
+  - type: text
+    text: 若 cv2.imread 回傳 None，通常代表什麼？
+  - type: code
+    language: python
+    code: 'image = cv2.imread("missing.jpg")
+
+      print(image is None)'
+  type: multiple_choice
+  options:
+  - 模型訓練完成
+  - 影像讀取失敗
+  - 影像已轉成 RGB
+  - 圖片有 3 個通道
+  correct_index: 1
+  explanation: 路徑錯誤或檔案無法讀取時常回傳 None。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-017
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: 這段程式的主要目的為何？
+  content:
+  - type: text
+    text: 這段程式的主要目的為何？
+  - type: code
+    language: python
+    code: rgb = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)
+  type: multiple_choice
+  options:
+  - 把 OpenCV BGR 轉成 RGB
+  - 建立 optimizer
+  - 計算 p-value
+  - 把文字轉 token
+  correct_index: 0
+  explanation: OpenCV 預設 BGR，常需轉成 RGB 顯示或餵給其他工具。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-018
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: 灰階影像通常少了哪個維度？
+  content:
+  - type: text
+    text: 灰階影像通常少了哪個維度？
+  - type: code
+    language: python
+    code: 'gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+      print(gray.shape)'
+  type: multiple_choice
+  options:
+  - height 維度
+  - channels 維度
+  - width 維度
+  - batch 維度必定存在
+  correct_index: 1
+  explanation: 灰階影像常是 (height, width) 二維陣列。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-019
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: GaussianBlur 常用來做什麼？
+  content:
+  - type: text
+    text: GaussianBlur 常用來做什麼？
+  - type: code
+    language: python
+    code: blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+  type: multiple_choice
+  options:
+  - 增加類別數
+  - 執行斷詞
+  - 降低雜訊
+  - 計算 validation loss
+  correct_index: 2
+  explanation: 模糊化可降低雜訊對 threshold 或邊緣偵測的影響。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-020
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: THRESH_BINARY 產生的影像通常有哪些值？
+  content:
+  - type: text
+    text: THRESH_BINARY 產生的影像通常有哪些值？
+  - type: code
+    language: python
+    code: _, mask = cv2.threshold(gray, 120, 255, cv2.THRESH_BINARY)
+  type: multiple_choice
+  options:
+  - 0 到 1 的浮點機率
+  - 文字 token id
+  - 0 與 255
+  - 類別名稱
+  correct_index: 2
+  explanation: 二值化通常輸出 0 與最大值 255。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-021
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: imshow 顯示 OpenCV 原始 BGR 圖可能出現什麼問題？
+  content:
+  - type: text
+    text: imshow 顯示 OpenCV 原始 BGR 圖可能出現什麼問題？
+  - type: code
+    language: python
+    code: plt.imshow(image_bgr)
+  type: multiple_choice
+  options:
+  - 會刪除原圖
+  - 自動訓練 CNN
+  - 顏色看起來不正確
+  - 影像無法有標題
+  correct_index: 2
+  explanation: Matplotlib 預期 RGB，直接顯示 BGR 顏色會錯。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-022
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: transforms.ToTensor() 主要做什麼？
+  content:
+  - type: text
+    text: transforms.ToTensor() 主要做什麼？
+  - type: code
+    language: python
+    code: tfm = transforms.ToTensor()
+  type: multiple_choice
+  options:
+  - 將文字斷詞
+  - 建立統計模型
+  - 輸出 confusion matrix
+  - 將影像轉成 PyTorch tensor 並縮放到常用範圍
+  correct_index: 3
+  explanation: ToTensor 將 PIL/ndarray 影像轉成 tensor。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-023
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: ImageFolder 如何決定類別？
+  content:
+  - type: text
+    text: ImageFolder 如何決定類別？
+  - type: code
+    language: python
+    code: dataset = datasets.ImageFolder("data/train")
+  type: multiple_choice
+  options:
+  - 依圖片寬度
+  - 依檔案大小
+  - 依子資料夾名稱
+  - 依 RGB 平均值
+  correct_index: 2
+  explanation: ImageFolder 使用子資料夾作為類別標籤。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-024
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: DataLoader 對影像資料的主要功能是什麼？
+  content:
+  - type: text
+    text: DataLoader 對影像資料的主要功能是什麼？
+  - type: code
+    language: python
+    code: loader = DataLoader(dataset, batch_size=32, shuffle=True)
+  type: multiple_choice
+  options:
+  - 批次化與打亂資料
+  - 計算 Canny 邊緣
+  - 轉成灰階
+  - 產生 p-value
+  correct_index: 0
+  explanation: DataLoader 負責批次、shuffle 與載入資料。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-025
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: Normalize 的 mean/std 長度為 3 通常代表什麼？
+  content:
+  - type: text
+    text: Normalize 的 mean/std 長度為 3 通常代表什麼？
+  - type: code
+    language: python
+    code: transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+  type: multiple_choice
+  options:
+  - 三個 epoch
+  - 三個類別
+  - RGB 三個通道
+  - 三個資料夾
+  correct_index: 2
+  explanation: 影像有 3 個通道，因此 mean/std 各有 3 個值。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-026
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: weights=models.ResNet18_Weights.DEFAULT 代表什麼？
+  content:
+  - type: text
+    text: weights=models.ResNet18_Weights.DEFAULT 代表什麼？
+  - type: code
+    language: python
+    code: model = models.resnet18(weights=models.ResNet18_Weights.DEFAULT)
+  type: multiple_choice
+  options:
+  - 轉成 OpenCV 格式
+  - 載入預訓練權重
+  - 隨機刪除權重
+  - 只建立空模型
+  correct_index: 1
+  explanation: DEFAULT 會使用 torchvision 提供的預訓練權重。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-027
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: 替換 model.fc 最常見原因是什麼？
+  content:
+  - type: text
+    text: 替換 model.fc 最常見原因是什麼？
+  - type: code
+    language: python
+    code: model.fc = nn.Linear(in_features, num_classes)
+  type: multiple_choice
+  options:
+  - 執行資料清理
+  - 建立文字特徵
+  - 改變圖片格式
+  - 配合新任務類別數
+  correct_index: 3
+  explanation: 分類頭輸出維度需符合新任務類別數。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-028
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: CNN 輸入影像常見 shape 是什麼？
+  content:
+  - type: text
+    text: CNN 輸入影像常見 shape 是什麼？
+  - type: code
+    language: python
+    code: images.shape
+  type: multiple_choice
+  options:
+  - (batch, channels, height, width)
+  - (height, width, channels, batch)
+  - (seq_len, batch)
+  - (features, labels)
+  correct_index: 0
+  explanation: PyTorch CNN 通常使用 NCHW 格式。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-029
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: 看錯誤影像主要能發現什麼？
+  content:
+  - type: text
+    text: 看錯誤影像主要能發現什麼？
+  - type: code
+    language: python
+    code: wrong = images[pred != labels]
+  type: multiple_choice
+  options:
+  - p-value 太低
+  - 標籤錯誤、模糊、遮擋等資料問題
+  - stop words 太多
+  - SQL 語法錯誤
+  correct_index: 1
+  explanation: 抽查錯誤影像可定位資料品質或類別混淆問題。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch4-code-030
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 程式閱讀理解
+  text: 混淆矩陣中的列與欄通常表示什麼？
+  content:
+  - type: text
+    text: 混淆矩陣中的列與欄通常表示什麼？
+  - type: code
+    language: python
+    code: cm = confusion_matrix(y_true, y_pred)
+  type: multiple_choice
+  options:
+  - height 與 width
+  - mean 與 std
+  - 真實類別與預測類別
+  - query 與 key
+  correct_index: 2
+  explanation: 混淆矩陣交叉呈現真實標籤與預測標籤。
+  tags:
+  - chap-m6-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-hc-052
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: OpenCV 基礎：影像表示與讀寫
+  text: 關於「OpenCV 基礎：影像表示與讀寫」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - OpenCV 讀取彩色影像預設是 BGR 通道順序。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 0
+  explanation: OpenCV 讀取彩色影像預設是 BGR 通道順序。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-image-basics
+  usage: both
+- id: m6-hc-053
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: OpenCV 基礎：影像表示與讀寫
+  text: 在實務應用「OpenCV 基礎：影像表示與讀寫」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - cv2.imread 回傳 None 通常表示檔案路徑錯誤或讀取失敗。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 1
+  explanation: cv2.imread 回傳 None 通常表示檔案路徑錯誤或讀取失敗。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-image-basics
+  usage: both
+- id: m6-hc-054
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: OpenCV 基礎：影像表示與讀寫
+  text: 下列哪一項最符合「OpenCV 基礎：影像表示與讀寫」的核心觀念？
+  type: multiple_choice
+  options:
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 影像 shape 常見為 height、width、channels。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 1
+  explanation: 影像 shape 常見為 height、width、channels。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-image-basics
+  usage: both
+- id: m6-hc-055
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 影像前處理與特徵
+  text: 關於「影像前處理與特徵」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - resize 可讓 CNN batch 中的影像尺寸一致。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 2
+  explanation: resize 可讓 CNN batch 中的影像尺寸一致。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-preprocessing
+  usage: both
+- id: m6-hc-056
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 影像前處理與特徵
+  text: 在實務應用「影像前處理與特徵」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - Canny edge detection 可擷取影像邊緣。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 1
+  explanation: Canny edge detection 可擷取影像邊緣。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-preprocessing
+  usage: both
+- id: m6-hc-057
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 影像前處理與特徵
+  text: 下列哪一項最符合「影像前處理與特徵」的核心觀念？
+  type: multiple_choice
+  options:
+  - threshold 常用於產生二值遮罩以分離前景與背景。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 0
+  explanation: threshold 常用於產生二值遮罩以分離前景與背景。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-preprocessing
+  usage: both
+- id: m6-hc-058
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: Matplotlib：影像與錯誤案例視覺化
+  text: 關於「Matplotlib：影像與錯誤案例視覺化」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - imshow 可用來檢查影像、增強結果與錯誤案例。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 1
+  explanation: imshow 可用來檢查影像、增強結果與錯誤案例。
+  tags:
+  - chap-m6-ch4
+  - sec-matplotlib-vision
+  usage: both
+- id: m6-hc-059
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: Matplotlib：影像與錯誤案例視覺化
+  text: 在實務應用「Matplotlib：影像與錯誤案例視覺化」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - OpenCV 影像用 Matplotlib 顯示前常需 BGR 轉 RGB。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 0
+  explanation: OpenCV 影像用 Matplotlib 顯示前常需 BGR 轉 RGB。
+  tags:
+  - chap-m6-ch4
+  - sec-matplotlib-vision
+  usage: both
+- id: m6-hc-060
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: Matplotlib：影像與錯誤案例視覺化
+  text: 下列哪一項最符合「Matplotlib：影像與錯誤案例視覺化」的核心觀念？
+  type: multiple_choice
+  options:
+  - 視覺化能提早發現標籤錯誤、裁切錯誤與顏色通道問題。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 0
+  explanation: 視覺化能提早發現標籤錯誤、裁切錯誤與顏色通道問題。
+  tags:
+  - chap-m6-ch4
+  - sec-matplotlib-vision
+  usage: both
+- id: m6-hc-061
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 影像資料進入模型
+  text: 關於「影像資料進入模型」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 影像進入 PyTorch 前通常需 resize、轉 tensor 與 normalize。
+  correct_index: 3
+  explanation: 影像進入 PyTorch 前通常需 resize、轉 tensor 與 normalize。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-to-model
+  usage: both
+- id: m6-hc-062
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 影像資料進入模型
+  text: 在實務應用「影像資料進入模型」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 訓練與推論的影像前處理必須一致。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 0
+  explanation: 訓練與推論的影像前處理必須一致。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-to-model
+  usage: both
+- id: m6-hc-063
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 影像資料進入模型
+  text: 下列哪一項最符合「影像資料進入模型」的核心觀念？
+  type: multiple_choice
+  options:
+  - RGB/BGR 通道錯誤會讓模型輸入與預期不同。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 0
+  explanation: RGB/BGR 通道錯誤會讓模型輸入與預期不同。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-to-model
+  usage: both
+- id: m6-hc-064
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: torchvision：資料集、Transforms 與預訓練模型
+  text: 關於「torchvision：資料集、Transforms 與預訓練模型」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - torchvision transforms 可組合 resize、flip、ToTensor 與 Normalize。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  correct_index: 0
+  explanation: torchvision transforms 可組合 resize、flip、ToTensor 與 Normalize。
+  tags:
+  - chap-m6-ch4
+  - sec-torchvision-basics
+  usage: both
+- id: m6-hc-065
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: torchvision：資料集、Transforms 與預訓練模型
+  text: 在實務應用「torchvision：資料集、Transforms 與預訓練模型」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - ImageFolder 會把子資料夾名稱當作類別標籤。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 2
+  explanation: ImageFolder 會把子資料夾名稱當作類別標籤。
+  tags:
+  - chap-m6-ch4
+  - sec-torchvision-basics
+  usage: both
+- id: m6-hc-066
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: torchvision：資料集、Transforms 與預訓練模型
+  text: 下列哪一項最符合「torchvision：資料集、Transforms 與預訓練模型」的核心觀念？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 訓練資料可使用隨機增強，驗證資料通常使用固定轉換。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 2
+  explanation: 訓練資料可使用隨機增強，驗證資料通常使用固定轉換。
+  tags:
+  - chap-m6-ch4
+  - sec-torchvision-basics
+  usage: both
+- id: m6-hc-067
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: torchvision 預訓練模型與 Transfer Learning
+  text: 關於「torchvision 預訓練模型與 Transfer Learning」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - transfer learning 常替換最後分類層以符合新類別數。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  correct_index: 0
+  explanation: transfer learning 常替換最後分類層以符合新類別數。
+  tags:
+  - chap-m6-ch4
+  - sec-torchvision-transfer-learning
+  usage: both
+- id: m6-hc-068
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: torchvision 預訓練模型與 Transfer Learning
+  text: 在實務應用「torchvision 預訓練模型與 Transfer Learning」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 預訓練 backbone 可提供通用視覺特徵，降低資料需求。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 2
+  explanation: 預訓練 backbone 可提供通用視覺特徵，降低資料需求。
+  tags:
+  - chap-m6-ch4
+  - sec-torchvision-transfer-learning
+  usage: both
+- id: m6-hc-069
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: torchvision 預訓練模型與 Transfer Learning
+  text: 下列哪一項最符合「torchvision 預訓練模型與 Transfer Learning」的核心觀念？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 資料少時可先凍結 backbone，只訓練分類頭。
+  correct_index: 3
+  explanation: 資料少時可先凍結 backbone，只訓練分類頭。
+  tags:
+  - chap-m6-ch4
+  - sec-torchvision-transfer-learning
+  usage: both
+- id: m6-hc-070
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: OpenCV 實務流程：從原始影像到模型資料
+  text: 關於「OpenCV 實務流程：從原始影像到模型資料」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 影像專案應先檢查損毀檔案、尺寸與通道數。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  correct_index: 0
+  explanation: 影像專案應先檢查損毀檔案、尺寸與通道數。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-practical-pipeline
+  usage: both
+- id: m6-hc-071
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: OpenCV 實務流程：從原始影像到模型資料
+  text: 在實務應用「OpenCV 實務流程：從原始影像到模型資料」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 裁切 ROI 可降低背景雜訊並讓模型聚焦目標區域。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 0
+  explanation: 裁切 ROI 可降低背景雜訊並讓模型聚焦目標區域。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-practical-pipeline
+  usage: both
+- id: m6-hc-072
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: OpenCV 實務流程：從原始影像到模型資料
+  text: 下列哪一項最符合「OpenCV 實務流程：從原始影像到模型資料」的核心觀念？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 訓練資料增強與驗證標準化應分開設計。
+  correct_index: 3
+  explanation: 訓練資料增強與驗證標準化應分開設計。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-practical-pipeline
+  usage: both
+- id: m6-hc-073
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 傳統電腦視覺與深度學習的分工
+  text: 關於「傳統電腦視覺與深度學習的分工」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 固定場景下，閾值、邊緣與輪廓方法可能更便宜且可解釋。
+  correct_index: 3
+  explanation: 固定場景下，閾值、邊緣與輪廓方法可能更便宜且可解釋。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-traditional-vs-dl
+  usage: both
+- id: m6-hc-074
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 傳統電腦視覺與深度學習的分工
+  text: 在實務應用「傳統電腦視覺與深度學習的分工」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 變化大的影像任務通常需要 CNN、偵測或分割模型。
+  correct_index: 3
+  explanation: 變化大的影像任務通常需要 CNN、偵測或分割模型。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-traditional-vs-dl
+  usage: both
+- id: m6-hc-075
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: 傳統電腦視覺與深度學習的分工
+  text: 下列哪一項最符合「傳統電腦視覺與深度學習的分工」的核心觀念？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 傳統方法對光線與背景變化通常較敏感。
+  correct_index: 3
+  explanation: 傳統方法對光線與背景變化通常較敏感。
+  tags:
+  - chap-m6-ch4
+  - sec-opencv-traditional-vs-dl
+  usage: both
+- id: m6-hc-076
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: Computer Vision 錯誤案例分析
+  text: 關於「Computer Vision 錯誤案例分析」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 影像錯誤分析應檢查低光、遮擋、模糊與相似類別。
+  correct_index: 3
+  explanation: 影像錯誤分析應檢查低光、遮擋、模糊與相似類別。
+  tags:
+  - chap-m6-ch4
+  - sec-cv-error-analysis
+  usage: both
+- id: m6-hc-077
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: Computer Vision 錯誤案例分析
+  text: 在實務應用「Computer Vision 錯誤案例分析」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 混淆矩陣可指出哪些類別容易互相誤判。
+  correct_index: 3
+  explanation: 混淆矩陣可指出哪些類別容易互相誤判。
+  tags:
+  - chap-m6-ch4
+  - sec-cv-error-analysis
+  usage: both
+- id: m6-hc-078
+  chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
+  section_title: Computer Vision 錯誤案例分析
+  text: 下列哪一項最符合「Computer Vision 錯誤案例分析」的核心觀念？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 若錯誤集中在資料品質，應先改善資料而非只加深模型。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 1
+  explanation: 若錯誤集中在資料品質，應先改善資料而非只加深模型。
+  tags:
+  - chap-m6-ch4
+  - sec-cv-error-analysis
+  usage: both

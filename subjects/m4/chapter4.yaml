@@ -1039,3 +1039,608 @@ questions:
   - sec-rl-applications
   id: 6465
   usage: both
+- id: m4-code-046
+  chapter_title: 強化學習
+  section_title: 程式閱讀理解
+  text: 閱讀下列 Q-learning 更新式，`gamma` 代表什麼？
+  content:
+  - type: text
+    text: 閱讀下列 Q-learning 更新式，`gamma` 代表什麼？
+  - type: code
+    language: python
+    code: "Q[s, a] = Q[s, a] + alpha * (\n    reward + gamma * max(Q[next_s, :]) - Q[s, a]\n)"
+  type: multiple_choice
+  options:
+  - 未來獎勵折扣因子
+  - 目前狀態數量
+  - 隨機探索率 epsilon
+  - 神經網路層數
+  correct_index: 0
+  explanation: gamma 是 discount factor，控制未來獎勵在目前價值估計中的權重。
+  tags:
+  - chap-m4-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-047
+  chapter_title: 強化學習
+  section_title: 程式閱讀理解
+  text: 閱讀下列 epsilon-greedy 程式，epsilon 較高代表什麼？
+  content:
+  - type: text
+    text: 閱讀下列 epsilon-greedy 程式，epsilon 較高代表什麼？
+  - type: code
+    language: python
+    code: "if random.random() < epsilon:\n    action = env.action_space.sample()\nelse:\n    action = np.argmax(Q[state])"
+  type: multiple_choice
+  options:
+  - 更常隨機探索
+  - 更常選擇目前最佳動作
+  - 停止更新 Q-table
+  - 只執行終止狀態
+  correct_index: 0
+  explanation: epsilon-greedy 中 random 分支是探索，epsilon 越高隨機動作比例越高。
+  tags:
+  - chap-m4-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-048
+  chapter_title: 強化學習
+  section_title: 程式閱讀理解
+  text: 閱讀下列 Gym 互動程式，`done` 為 True 時通常代表什麼？
+  content:
+  - type: text
+    text: 閱讀下列 Gym 互動程式，`done` 為 True 時通常代表什麼？
+  - type: code
+    language: python
+    code: "obs, reward, done, info = env.step(action)\nif done:\n    obs = env.reset()"
+  type: multiple_choice
+  options:
+  - episode 結束，需要重置環境
+  - 模型訓練永遠完成
+  - 動作空間變成空集合
+  - reward 必定為 0
+  correct_index: 0
+  explanation: done 表示該 episode 到達終止條件或截斷條件，通常需要 reset 開始下一局。
+  tags:
+  - chap-m4-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-049
+  chapter_title: 強化學習
+  section_title: 程式閱讀理解
+  text: 閱讀下列 replay buffer 程式，主要目的為何？
+  content:
+  - type: text
+    text: 閱讀下列 replay buffer 程式，主要目的為何？
+  - type: code
+    language: python
+    code: 'buffer.append((state, action, reward, next_state, done))
+
+      batch = random.sample(buffer, batch_size)'
+  type: multiple_choice
+  options:
+  - 打散時間相關性並重複利用經驗訓練 DQN
+  - 保證每次動作都相同
+  - 只儲存最後一筆經驗
+  - 刪除低 reward 樣本
+  correct_index: 0
+  explanation: Experience replay 隨機抽取過去經驗，可降低樣本時間相關性並提升資料利用率。
+  tags:
+  - chap-m4-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-050
+  chapter_title: 強化學習
+  section_title: 程式閱讀理解
+  text: 閱讀下列 target network 更新，目的為何？
+  content:
+  - type: text
+    text: 閱讀下列 target network 更新，目的為何？
+  - type: code
+    language: python
+    code: "if step % 1000 == 0:\n    target_net.load_state_dict(policy_net.state_dict())"
+  type: multiple_choice
+  options:
+  - 讓 TD target 較穩定，降低訓練震盪
+  - 每 1000 步刪除模型
+  - 強制探索率變為 1
+  - 把環境狀態複製成 action
+  correct_index: 0
+  explanation: DQN 使用 target network 產生較穩定的目標值，定期同步可降低 moving target 問題。
+  tags:
+  - chap-m4-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-051
+  chapter_title: 強化學習
+  section_title: 程式閱讀理解
+  text: 閱讀下列 reward shaping，哪一項風險最需要注意？
+  content:
+  - type: text
+    text: 閱讀下列 reward shaping，哪一項風險最需要注意？
+  - type: code
+    language: python
+    code: reward = goal_reward - 0.01 * steps - 5.0 * collision
+  type: multiple_choice
+  options:
+  - 代理人可能過度追求 shaping 訊號而偏離真實業務目標
+  - reward shaping 會讓環境無法 reset
+  - collision 不能放入 reward
+  - steps 懲罰必定造成隨機策略
+  correct_index: 0
+  explanation: Reward shaping 可加速學習，但若設計不當，代理人可能最佳化錯誤替代目標。
+  tags:
+  - chap-m4-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-052
+  chapter_title: 強化學習
+  section_title: 程式閱讀理解
+  text: 閱讀下列 policy gradient 片段，`log_prob * return` 的角色是什麼？
+  content:
+  - type: text
+    text: 閱讀下列 policy gradient 片段，`log_prob * return` 的角色是什麼？
+  - type: code
+    language: python
+    code: "loss = 0\nfor log_prob, Gt in trajectory:\n    loss += -log_prob * Gt\nloss.backward()"
+  type: multiple_choice
+  options:
+  - 提高高回報動作的機率，降低低回報動作的機率
+  - 計算 K-means 中心點
+  - 執行特徵標準化
+  - 估計資料缺值比例
+  correct_index: 0
+  explanation: Policy gradient 透過回報加權 log probability，使高回報軌跡的動作機率上升。
+  tags:
+  - chap-m4-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-053
+  chapter_title: 強化學習
+  section_title: 程式閱讀理解
+  text: 閱讀下列 Actor-Critic 變數，advantage 最接近什麼？
+  content:
+  - type: text
+    text: 閱讀下列 Actor-Critic 變數，advantage 最接近什麼？
+  - type: code
+    language: python
+    code: 'advantage = returns - value_estimates
+
+      actor_loss = -(log_probs * advantage.detach()).mean()
+
+      critic_loss = advantage.pow(2).mean()'
+  type: multiple_choice
+  options:
+  - 實際回報相對於 critic 預估價值的差距
+  - 動作空間大小
+  - 環境影像解析度
+  - 學習率衰減比例
+  correct_index: 0
+  explanation: Advantage 衡量某行動結果比狀態價值預期好或差多少，用於更新 actor 並訓練 critic。
+  tags:
+  - chap-m4-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-054
+  chapter_title: 強化學習
+  section_title: 程式閱讀理解
+  text: 閱讀下列狀態設計，哪項最可能造成部分可觀測問題？
+  content:
+  - type: text
+    text: 閱讀下列狀態設計，哪項最可能造成部分可觀測問題？
+  - type: code
+    language: python
+    code: "state = {\n    \"current_speed\": car.speed,\n    \"distance_to_goal\": route.remaining_distance,\n}\n# 未包含前方障礙物位置與交通燈狀態"
+  type: multiple_choice
+  options:
+  - 狀態缺少影響決策的重要環境資訊
+  - 狀態包含太多隱私欄位
+  - distance_to_goal 不能是數值
+  - current_speed 會讓模型無法學習
+  correct_index: 0
+  explanation: 若狀態未包含障礙物與交通燈等決策關鍵資訊，代理人無法完整觀測環境。
+  tags:
+  - chap-m4-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-055
+  chapter_title: 強化學習
+  section_title: 程式閱讀理解
+  text: 閱讀下列離線 RL 訓練片段，主要風險是什麼？
+  content:
+  - type: text
+    text: 閱讀下列離線 RL 訓練片段，主要風險是什麼？
+  - type: code
+    language: python
+    code: '# 只使用歷史客服策略產生的紀錄訓練新策略
+
+      policy.train(offline_logs)
+
+      # 不允許在線上環境探索'
+  type: multiple_choice
+  options:
+  - 資料只涵蓋舊策略行為，新策略分佈外動作的價值估計可能不可靠
+  - 離線 RL 一定比線上探索更準確
+  - 不能使用歷史資料訓練
+  - reward 會自動變成 0
+  correct_index: 0
+  explanation: 離線資料受行為策略限制，對資料外 action 的估計不可靠，是 offline RL 的核心風險。
+  tags:
+  - chap-m4-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-056
+  chapter_title: 強化學習
+  section_title: 程式閱讀理解
+  text: 閱讀下列 Bellman target，哪一項正確？
+  content:
+  - type: text
+    text: 閱讀下列 Bellman target，哪一項正確？
+  - type: code
+    language: python
+    code: 'target = reward + gamma * V[next_state]
+
+      error = target - V[state]'
+  type: multiple_choice
+  options:
+  - 用下一狀態價值估計目前狀態的 TD target
+  - 只計算目前 reward，不看未來
+  - 將 V[state] 設為固定常數
+  - 這是 SQL join 條件
+  correct_index: 0
+  explanation: Bellman 更新以 reward 加上折扣後的 next_state value 作為目前狀態的目標。
+  tags:
+  - chap-m4-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-057
+  chapter_title: 強化學習
+  section_title: 程式閱讀理解
+  text: 閱讀下列探索率衰減，結果是什麼？
+  content:
+  - type: text
+    text: 閱讀下列探索率衰減，結果是什麼？
+  - type: code
+    language: python
+    code: epsilon = max(0.05, epsilon * 0.995)
+  type: multiple_choice
+  options:
+  - epsilon 逐步下降但不低於 0.05
+  - epsilon 會無限制下降到負數
+  - epsilon 每步增加 0.995
+  - epsilon 固定為 0
+  correct_index: 0
+  explanation: max 設定探索率下限，因此 epsilon 乘上 0.995 衰減但最低保持 0.05。
+  tags:
+  - chap-m4-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-058
+  chapter_title: 強化學習
+  section_title: 程式閱讀理解
+  text: 閱讀下列訓練監控輸出，最合理判斷是什麼？
+  content:
+  - type: text
+    text: 閱讀下列訓練監控輸出，最合理判斷是什麼？
+  - type: code
+    language: yaml
+    code: "episode_reward_mean:\n  100 episodes ago: 42\n  current: 41\npolicy_entropy:\n  100 episodes ago: 0.91\n  current: 0.05"
+  type: multiple_choice
+  options:
+  - 策略熵大幅下降但 reward 未提升，可能過早收斂且探索不足
+  - 模型一定已達最佳策略
+  - reward 穩定代表不需監控
+  - entropy 越低探索越多
+  correct_index: 0
+  explanation: Entropy 下降表示策略變得確定，若 reward 沒提升，可能探索不足或陷入次佳策略。
+  tags:
+  - chap-m4-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-059
+  chapter_title: 強化學習
+  section_title: 程式閱讀理解
+  text: 閱讀下列動作遮罩，主要目的為何？
+  content:
+  - type: text
+    text: 閱讀下列動作遮罩，主要目的為何？
+  - type: code
+    language: python
+    code: 'valid_actions = get_valid_actions(state)
+
+      q_values[~valid_actions] = -float("inf")
+
+      action = q_values.argmax()'
+  type: multiple_choice
+  options:
+  - 避免代理人選到目前狀態不合法的動作
+  - 增加所有非法動作機率
+  - 刪除 state 特徵
+  - 固定每次都選隨機動作
+  correct_index: 0
+  explanation: 將非法動作 Q 值設為負無限，可在 argmax 時排除不合法 action。
+  tags:
+  - chap-m4-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-060
+  chapter_title: 強化學習
+  section_title: 程式閱讀理解
+  text: 閱讀下列多臂賭徒更新，`N[action]` 的作用是什麼？
+  content:
+  - type: text
+    text: 閱讀下列多臂賭徒更新，`N[action]` 的作用是什麼？
+  - type: code
+    language: python
+    code: 'N[action] += 1
+
+      Q[action] += (reward - Q[action]) / N[action]'
+  type: multiple_choice
+  options:
+  - 以遞增平均更新該 action 的估計價值
+  - 計算神經網路參數量
+  - 儲存環境圖片數
+  - 控制 episode 結束條件
+  correct_index: 0
+  explanation: 這是 sample-average 更新，N[action] 是該 action 被選次數，用於更新平均 reward。
+  tags:
+  - chap-m4-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-106
+  chapter_title: 強化學習
+  section_title: 程式閱讀理解
+  text: 閱讀下列 reward 設計，哪項最可能導致代理人原地不動？
+  content:
+  - type: text
+    text: 閱讀下列 reward 設計，哪項最可能導致代理人原地不動？
+  - type: code
+    language: python
+    code: 'reward = 0.1 if not collision else -10
+
+      # 沒有抵達目標的正獎勵，也沒有時間懲罰'
+  type: multiple_choice
+  options:
+  - 只要不碰撞就有小獎勵，代理人可能學會避免行動而不達成目標
+  - 碰撞懲罰太大會讓代理人更快到目標
+  - 沒有任何 reward shaping
+  - 此 reward 一定最佳
+  correct_index: 0
+  explanation: 若不碰撞即可持續得分且沒有目標獎勵/時間成本，代理人可能學到停滯策略。
+  tags:
+  - chap-m4-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-107
+  chapter_title: 強化學習
+  section_title: 程式閱讀理解
+  text: 閱讀下列 value iteration，迴圈中的 max 代表什麼？
+  content:
+  - type: text
+    text: 閱讀下列 value iteration，迴圈中的 max 代表什麼？
+  - type: code
+    language: python
+    code: "V[s] = max(\n    sum(P[s,a,s2] * (R[s,a,s2] + gamma * V[s2]) for s2 in states)\n    for a in actions\n)"
+  type: multiple_choice
+  options:
+  - 在所有動作中選擇期望回報最高者
+  - 隨機選擇下一狀態
+  - 計算資料最大值
+  - 固定採取第一個 action
+  correct_index: 0
+  explanation: Bellman optimality update 對所有 action 的期望回報取最大值，估計最佳狀態價值。
+  tags:
+  - chap-m4-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-108
+  chapter_title: 強化學習
+  section_title: 程式閱讀理解
+  text: 閱讀下列 SARSA 更新，與 Q-learning 的主要差異是什麼？
+  content:
+  - type: text
+    text: 閱讀下列 SARSA 更新，與 Q-learning 的主要差異是什麼？
+  - type: code
+    language: python
+    code: 'target = reward + gamma * Q[next_state, next_action]
+
+      Q[state, action] += alpha * (target - Q[state, action])'
+  type: multiple_choice
+  options:
+  - 使用實際下一個動作 next_action，是 on-policy 更新
+  - 永遠使用 max Q[next_state]
+  - 不需要 reward
+  - 只能用於連續 action
+  correct_index: 0
+  explanation: SARSA 使用行為策略實際選到的 next_action 更新，屬於 on-policy；Q-learning 通常用 max next Q。
+  tags:
+  - chap-m4-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-109
+  chapter_title: 強化學習
+  section_title: 程式閱讀理解
+  text: 閱讀下列 PPO clipping 片段，主要目的為何？
+  content:
+  - type: text
+    text: 閱讀下列 PPO clipping 片段，主要目的為何？
+  - type: code
+    language: python
+    code: 'ratio = new_prob / old_prob
+
+      loss = -torch.min(ratio * adv, torch.clamp(ratio, 0.8, 1.2) * adv).mean()'
+  type: multiple_choice
+  options:
+  - 限制策略更新幅度，避免一步更新過大
+  - 讓 reward 永遠為正
+  - 刪除 old_prob
+  - 把 action 轉成 one-hot
+  correct_index: 0
+  explanation: PPO clip objective 限制新舊策略機率比，降低策略更新過大造成的崩壞風險。
+  tags:
+  - chap-m4-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-110
+  chapter_title: 強化學習
+  section_title: 程式閱讀理解
+  text: 閱讀下列 continuous action 輸出，這較像哪種策略？
+  content:
+  - type: text
+    text: 閱讀下列 continuous action 輸出，這較像哪種策略？
+  - type: code
+    language: python
+    code: 'mu, log_std = actor(state)
+
+      dist = Normal(mu, log_std.exp())
+
+      action = dist.sample()'
+  type: multiple_choice
+  options:
+  - 連續動作空間的隨機策略
+  - 離散 Q-table argmax
+  - K-means 分群
+  - 資料庫查詢策略
+  correct_index: 0
+  explanation: 策略輸出 Normal distribution 並 sample action，常見於連續控制的 policy gradient / actor-critic。
+  tags:
+  - chap-m4-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-111
+  chapter_title: 強化學習
+  section_title: 程式閱讀理解
+  text: 閱讀下列 reward normalization，主要目的為何？
+  content:
+  - type: text
+    text: 閱讀下列 reward normalization，主要目的為何？
+  - type: code
+    language: python
+    code: returns = (returns - returns.mean()) / (returns.std() + 1e-8)
+  type: multiple_choice
+  options:
+  - 穩定 policy gradient 更新尺度
+  - 把環境狀態加密
+  - 刪除低回報 episode
+  - 保證最優策略
+  correct_index: 0
+  explanation: 標準化 returns 可降低尺度差異，使梯度更新更穩定，但不保證最優。
+  tags:
+  - chap-m4-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-112
+  chapter_title: 強化學習
+  section_title: 程式閱讀理解
+  text: 閱讀下列 n-step return，n 增加會帶來什麼取捨？
+  content:
+  - type: text
+    text: 閱讀下列 n-step return，n 增加會帶來什麼取捨？
+  - type: code
+    language: python
+    code: G = r0 + gamma*r1 + gamma**2*r2 + gamma**3*V(s3)
+  type: multiple_choice
+  options:
+  - 使用更多實際 reward，通常降低偏差但可能增加方差
+  - 完全不使用未來獎勵
+  - 只能用於 bandit
+  - 保證方差為 0
+  correct_index: 0
+  explanation: n-step return 介於 TD(0) 與 Monte Carlo 之間，n 越大使用更多實際回報，偏差/方差取捨改變。
+  tags:
+  - chap-m4-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-113
+  chapter_title: 強化學習
+  section_title: 程式閱讀理解
+  text: 閱讀下列 off-policy 資料，重要性採樣 ratio 用來做什麼？
+  content:
+  - type: text
+    text: 閱讀下列 off-policy 資料，重要性採樣 ratio 用來做什麼？
+  - type: code
+    language: python
+    code: 'rho = target_policy_prob(action, state) / behavior_policy_prob(action, state)
+
+      weighted_return = rho * observed_return'
+  type: multiple_choice
+  options:
+  - 修正目標策略與行為策略產生資料分佈不同的偏差
+  - 計算 CNN 通道數
+  - 刪除低機率 action
+  - 讓兩個策略必定相同
+  correct_index: 0
+  explanation: Importance sampling ratio 用於 off-policy 評估/學習，修正資料由 behavior policy 產生而非 target policy 的差異。
+  tags:
+  - chap-m4-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-114
+  chapter_title: 強化學習
+  section_title: 程式閱讀理解
+  text: 閱讀下列環境 wrapper，主要用途為何？
+  content:
+  - type: text
+    text: 閱讀下列環境 wrapper，主要用途為何？
+  - type: code
+    language: python
+    code: "class FrameStackWrapper(gym.Wrapper):\n    def observation(self, obs):\n        return stack_last_k_frames(obs, k=4)"
+  type: multiple_choice
+  options:
+  - 把最近多幀疊在一起，讓代理人感知速度與方向
+  - 減少 action 數量為 4
+  - 刪除 reward
+  - 固定每局 4 步結束
+  correct_index: 0
+  explanation: 單張影像可能看不出速度，frame stacking 讓觀測包含短期動態資訊。
+  tags:
+  - chap-m4-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-115
+  chapter_title: 強化學習
+  section_title: 程式閱讀理解
+  text: 閱讀下列安全限制，這是哪一類 RL 實務設計？
+  content:
+  - type: text
+    text: 閱讀下列安全限制，這是哪一類 RL 實務設計？
+  - type: code
+    language: python
+    code: "proposed_action = policy(state)\nif violates_safety_rule(proposed_action, state):\n    action = safe_fallback_action(state)\nelse:\n    action = proposed_action"
+  type: multiple_choice
+  options:
+  - 安全約束或 action shielding
+  - 隨機探索率衰減
+  - 經驗回放壓縮
+  - Q-table 初始化
+  correct_index: 0
+  explanation: 在執行前檢查 action 是否違反安全規則，必要時改用 fallback，是安全 RL/action shielding 概念。
+  tags:
+  - chap-m4-ch4
+  - sec-code-reading
+  - code-reading
+  usage: quiz

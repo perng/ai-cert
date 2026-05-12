@@ -1042,10 +1042,10 @@ questions:
 - id: 114-2-013
   chapter_title: 大數據治理
   section_title: 歷屆考題
-  text: |-
-    下列何者為同態加密（Homomorphic Encryption）技術的核心特性？
+  text: '下列何者為同態加密（Homomorphic Encryption）技術的核心特性？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 將資料轉換為匿名識別碼以隱藏身分
@@ -1062,10 +1062,10 @@ questions:
 - id: 114-2-020
   chapter_title: 大數據治理
   section_title: 歷屆考題
-  text: |-
-    某銀行計畫將信用風險評估模型部署至雲端平台，以便即時分析客戶交易行為。由於涉及大量敏感金融資料，銀行要求雲端服務商在不解密原始資料的情況下仍能執行模型運算。為達成此目標，最適合採用下列哪一項技術？
+  text: '某銀行計畫將信用風險評估模型部署至雲端平台，以便即時分析客戶交易行為。由於涉及大量敏感金融資料，銀行要求雲端服務商在不解密原始資料的情況下仍能執行模型運算。為達成此目標，最適合採用下列哪一項技術？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 在上傳資料前進行匿名化（Anonymization），僅保留可識別代碼供比對使用
@@ -1082,10 +1082,10 @@ questions:
 - id: 114-2-032
   chapter_title: 大數據治理
   section_title: 歷屆考題
-  text: |-
-    某電信公司導入生成式 AI 客服系統，利用過去對話紀錄與用戶行為資料訓練語言模型，在資料治理與合規審查過程中，團隊發現模型可能會在回答中生成包含真實姓名、電話或交易資訊的內容。為確保系統符合個資法及生成式 AI 的安全與隱私要求，下列哪一項作法最符合實務可行及法規原則？
+  text: '某電信公司導入生成式 AI 客服系統，利用過去對話紀錄與用戶行為資料訓練語言模型，在資料治理與合規審查過程中，團隊發現模型可能會在回答中生成包含真實姓名、電話或交易資訊的內容。為確保系統符合個資法及生成式 AI 的安全與隱私要求，下列哪一項作法最符合實務可行及法規原則？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 在訓練資料前進行資料匿名化（Anonymization）或偽匿名化（Pseudonymization）處理，並建立輸出內容稽核機制
@@ -1099,3 +1099,479 @@ questions:
   - past-exam
   - chap-m3-ch5
   usage: mock
+- id: m3-code-041
+  chapter_title: 資料治理與隱私保護
+  section_title: 程式閱讀理解
+  text: 閱讀下列去識別化程式，輸出的 email_hash 最主要用途是什麼？
+  content:
+  - type: text
+    text: 閱讀下列去識別化程式，輸出的 email_hash 最主要用途是什麼？
+  - type: code
+    language: python
+    code: "import hashlib\n\ndef hash_email(email):\n    return hashlib.sha256(email.lower().encode()).hexdigest()\n\ndf[\"email_hash\"] = df[\"email\"].apply(hash_email)\ndf = df.drop(columns=[\"email\"])"
+  type: multiple_choice
+  options:
+  - 以不可直接辨識的雜湊值取代原始 email，降低識別風險
+  - 把 email 加密後仍可直接還原
+  - 讓模型一定更準確
+  - 刪除所有重複顧客
+  correct_index: 0
+  explanation: 雜湊後移除原始 email 可降低直接識別風險，但若無 salt 仍可能受字典攻擊，需視情境補強。
+  tags:
+  - chap-m3-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-042
+  chapter_title: 資料治理與隱私保護
+  section_title: 程式閱讀理解
+  text: 閱讀下列差分隱私片段，epsilon 較小通常代表什麼？
+  content:
+  - type: text
+    text: 閱讀下列差分隱私片段，epsilon 較小通常代表什麼？
+  - type: code
+    language: python
+    code: release = true_count + np.random.laplace(loc=0, scale=1/epsilon)
+  type: multiple_choice
+  options:
+  - 加入的雜訊較大，隱私保護較強但效用可能下降
+  - 完全不加入雜訊
+  - 一定提高資料精確度
+  - 只能用於影像資料
+  correct_index: 0
+  explanation: Laplace 機制中 scale 與 1/epsilon 成正比，epsilon 越小雜訊越大，隱私保護較強但資料效用可能下降。
+  tags:
+  - chap-m3-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-043
+  chapter_title: 資料治理與隱私保護
+  section_title: 程式閱讀理解
+  text: 閱讀下列資料品質規則，哪一筆資料會違反規則？
+  content:
+  - type: text
+    text: 閱讀下列資料品質規則，哪一筆資料會違反規則？
+  - type: code
+    language: yaml
+    code: "rules:\n  age:\n    min: 0\n    max: 120\n  consent_flag:\n    allowed: [true]"
+  type: multiple_choice
+  options:
+  - age=34, consent_flag=true
+  - age=151, consent_flag=true
+  - age=20, consent_flag=true
+  - age=0, consent_flag=true
+  correct_index: 1
+  explanation: age=151 超過 max 120，違反資料品質範圍規則。consent_flag=true 則符合允許值。
+  tags:
+  - chap-m3-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-044
+  chapter_title: 資料治理與隱私保護
+  section_title: 程式閱讀理解
+  text: 閱讀下列 RBAC 設定，哪個角色可以讀取 raw_customer 表？
+  content:
+  - type: text
+    text: 閱讀下列 RBAC 設定，哪個角色可以讀取 raw_customer 表？
+  - type: code
+    language: yaml
+    code: "grants:\n  raw_customer:\n    read: [privacy_officer]\n    write: [data_engineer]\n  customer_features:\n    read: [data_scientist, data_engineer]"
+  type: multiple_choice
+  options:
+  - privacy_officer
+  - data_scientist
+  - 所有角色
+  - 只有 data_engineer
+  correct_index: 0
+  explanation: 設定中 raw_customer 的 read 權限只授予 privacy_officer；data_engineer 是 write，不是 read。
+  tags:
+  - chap-m3-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-045
+  chapter_title: 資料治理與隱私保護
+  section_title: 程式閱讀理解
+  text: 閱讀下列稽核紀錄，最應優先調查哪一項？
+  content:
+  - type: text
+    text: 閱讀下列稽核紀錄，最應優先調查哪一項？
+  - type: code
+    language: text
+    code: '2025-11-08T10:00 user=analyst_01 action=read dataset=customer_features rows=500
+
+      2025-11-08T10:05 user=intern_07 action=export dataset=raw_customer rows=200000
+
+      2025-11-08T10:06 user=pipeline action=write dataset=quality_report rows=1'
+  type: multiple_choice
+  options:
+  - intern_07 匯出大量 raw_customer 資料
+  - pipeline 寫入 quality_report
+  - analyst_01 讀取 customer_features
+  - 所有紀錄風險完全相同
+  correct_index: 0
+  explanation: 實習角色大量匯出原始客戶資料風險最高，可能涉及權限濫用或個資外洩，應優先調查。
+  tags:
+  - chap-m3-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-046
+  chapter_title: 資料治理與隱私保護
+  section_title: 程式閱讀理解
+  text: 閱讀下列資料保留政策，哪項行為符合設定？
+  content:
+  - type: text
+    text: 閱讀下列資料保留政策，哪項行為符合設定？
+  - type: code
+    language: yaml
+    code: "retention:\n  raw_clickstream: 30 days\n  aggregated_metrics: 730 days"
+  type: multiple_choice
+  options:
+  - 原始點擊資料保留 30 天後刪除或封存
+  - 原始點擊資料永久保留
+  - 彙總指標只能保留 30 天
+  - 所有資料保留 730 天
+  correct_index: 0
+  explanation: policy 指定 raw_clickstream 保留 30 天，aggregated_metrics 保留 730 天，兩者保留期限不同。
+  tags:
+  - chap-m3-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-047
+  chapter_title: 資料治理與隱私保護
+  section_title: 程式閱讀理解
+  text: 閱讀下列資料血緣設定，哪一項最正確？
+  content:
+  - type: text
+    text: 閱讀下列資料血緣設定，哪一項最正確？
+  - type: code
+    language: yaml
+    code: "lineage:\n  customer_features:\n    sources:\n      - raw_customer\n      - raw_transactions\n    produced_by: jobs/build_customer_features.py"
+  type: multiple_choice
+  options:
+  - customer_features 由 raw_customer 與 raw_transactions 產生
+  - raw_customer 由 customer_features 產生
+  - 這是模型評估指標設定
+  - produced_by 表示資料擁有者一定是法務
+  correct_index: 0
+  explanation: lineage 記錄 customer_features 的來源資料與產生程式，有助於追蹤變更與稽核。
+  tags:
+  - chap-m3-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-048
+  chapter_title: 資料治理與隱私保護
+  section_title: 程式閱讀理解
+  text: 閱讀下列遮罩程式，輸出 phone_masked 的形式最可能為何？
+  content:
+  - type: text
+    text: 閱讀下列遮罩程式，輸出 phone_masked 的形式最可能為何？
+  - type: code
+    language: python
+    code: "def mask_phone(phone):\n    return phone[:3] + \"****\" + phone[-2:]\n\nprint(mask_phone(\"0912345678\"))"
+  type: multiple_choice
+  options:
+  - 091****78
+  - 0912345678
+  - '**********'
+  - 0912****678
+  correct_index: 0
+  explanation: phone[:3] 取前三碼 091，phone[-2:] 取最後兩碼 78，中間補 ****，結果為 091****78。
+  tags:
+  - chap-m3-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-049
+  chapter_title: 資料治理與隱私保護
+  section_title: 程式閱讀理解
+  text: 閱讀下列模型輸出檢查規則，主要治理目的為何？
+  content:
+  - type: text
+    text: 閱讀下列模型輸出檢查規則，主要治理目的為何？
+  - type: code
+    language: python
+    code: "if contains_personal_id(response_text):\n    block_response()\n    create_incident(\"PII leakage risk\")"
+  type: multiple_choice
+  options:
+  - 防止模型輸出個資並建立事件紀錄
+  - 提高模型訓練速度
+  - 將所有回答轉為英文
+  - 自動增加訓練資料量
+  correct_index: 0
+  explanation: 規則偵測回應是否包含個人識別資訊，若有則阻擋並建立事件，屬於輸出治理與隱私防護。
+  tags:
+  - chap-m3-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-050
+  chapter_title: 資料治理與隱私保護
+  section_title: 程式閱讀理解
+  text: 閱讀下列資料合規檢查，哪一項最合理？
+  content:
+  - type: text
+    text: 閱讀下列資料合規檢查，哪一項最合理？
+  - type: code
+    language: python
+    code: "required = {\"purpose\", \"legal_basis\", \"retention_days\", \"owner\"}\nmissing = required - set(dataset_metadata.keys())\nif missing:\n    raise ValueError(f\"missing metadata: {missing}\")"
+  type: multiple_choice
+  options:
+  - 若資料集缺少用途、合法依據、保留期限或擁有者，就阻止上架
+  - 自動補齊所有缺失 metadata
+  - 只檢查資料筆數是否足夠
+  - 將 metadata 轉成訓練特徵
+  correct_index: 0
+  explanation: 程式檢查資料集是否具備治理必要 metadata，缺漏時丟出錯誤，可避免不合規資料進入平台。
+  tags:
+  - chap-m3-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-091
+  chapter_title: 資料治理與隱私保護
+  section_title: 程式閱讀理解
+  text: 閱讀下列 k-anonymity 檢查，哪一項最正確？
+  content:
+  - type: text
+    text: 閱讀下列 k-anonymity 檢查，哪一項最正確？
+  - type: code
+    language: python
+    code: 'groups = df.groupby(["zipcode", "age_band", "gender"]).size()
+
+      violations = groups[groups < 5]'
+  type: multiple_choice
+  options:
+  - 找出準識別欄位組合下少於 5 筆的群組
+  - 計算模型 AUC
+  - 刪除所有 zipcode
+  - 檢查 email 格式
+  correct_index: 0
+  explanation: k-anonymity 要求每個準識別組合至少有 k 筆。groups < 5 是找出違反 5-anonymity 的群組。
+  tags:
+  - chap-m3-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-092
+  chapter_title: 資料治理與隱私保護
+  section_title: 程式閱讀理解
+  text: 閱讀下列 tokenization 程式，哪一項是主要治理價值？
+  content:
+  - type: text
+    text: 閱讀下列 tokenization 程式，哪一項是主要治理價值？
+  - type: code
+    language: python
+    code: 'token = vault.create_token(raw_value=customer_ssn)
+
+      df["ssn_token"] = token
+
+      df = df.drop(columns=["ssn"])'
+  type: multiple_choice
+  options:
+  - 以代碼替代敏感識別值，降低資料集直接暴露風險
+  - 讓 ssn 可公開下載
+  - 自動提升召回率
+  - 將 ssn 轉成模型標籤
+  correct_index: 0
+  explanation: Tokenization 將敏感值映射到受控 vault 中的 token，分析資料不直接保存原始 SSN。
+  tags:
+  - chap-m3-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-093
+  chapter_title: 資料治理與隱私保護
+  section_title: 程式閱讀理解
+  text: 閱讀下列資料契約，哪項變更應視為 breaking change？
+  content:
+  - type: text
+    text: 閱讀下列資料契約，哪項變更應視為 breaking change？
+  - type: code
+    language: yaml
+    code: "contract:\n  fields:\n    amount: float, required\n    event_time: timestamp, required\n    user_id: string, required"
+  type: multiple_choice
+  options:
+  - 刪除 required 欄位 user_id
+  - 新增 nullable 欄位 coupon_code
+  - 增加欄位描述文字
+  - 新增資料擁有者 metadata
+  correct_index: 0
+  explanation: 刪除必要欄位會破壞依賴該欄位的下游流程，通常是 breaking change。
+  tags:
+  - chap-m3-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-094
+  chapter_title: 資料治理與隱私保護
+  section_title: 程式閱讀理解
+  text: 閱讀下列 consent filter，主要目的為何？
+  content:
+  - type: text
+    text: 閱讀下列 consent filter，主要目的為何？
+  - type: code
+    language: python
+    code: training_data = raw[(raw["consent_ml"] == True) & (raw["deleted_at"].isna())]
+  type: multiple_choice
+  options:
+  - 只使用同意 ML 用途且未刪除的資料
+  - 只使用已刪除資料
+  - 忽略同意狀態
+  - 將 consent_ml 當預測目標
+  correct_index: 0
+  explanation: 條件同時要求 consent_ml 為 True 且 deleted_at 為空，符合用途同意與刪除權處理。
+  tags:
+  - chap-m3-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-095
+  chapter_title: 資料治理與隱私保護
+  section_title: 程式閱讀理解
+  text: 閱讀下列資料品質 SLA，哪一項會觸發告警？
+  content:
+  - type: text
+    text: 閱讀下列資料品質 SLA，哪一項會觸發告警？
+  - type: code
+    language: yaml
+    code: "sla:\n  freshness_hours: 6\n  max_null_rate:\n    customer_id: 0.001\nobserved:\n  freshness_hours: 8\n  customer_id_null_rate: 0.0005"
+  type: multiple_choice
+  options:
+  - freshness_hours 超過 6 小時
+  - customer_id_null_rate 超過門檻
+  - 兩項都通過
+  - 沒有任何 SLA 可檢查
+  correct_index: 0
+  explanation: 觀測 freshness 8 小時超過 SLA 6 小時，雖然 customer_id 缺值率未超標，仍應告警。
+  tags:
+  - chap-m3-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-096
+  chapter_title: 資料治理與隱私保護
+  section_title: 程式閱讀理解
+  text: 閱讀下列加密欄位設定，哪一欄最可能需要欄位級加密？
+  content:
+  - type: text
+    text: 閱讀下列加密欄位設定，哪一欄最可能需要欄位級加密？
+  - type: code
+    language: python
+    code: "columns = {\n    \"customer_id\": \"pseudonymous_id\",\n    \"email\": \"direct_identifier\",\n    \"signup_month\": \"low_risk\",\n    \"plan_type\": \"business_attribute\",\n}"
+  type: multiple_choice
+  options:
+  - email
+  - signup_month
+  - plan_type
+  - 所有欄位都不可能加密
+  correct_index: 0
+  explanation: email 是 direct identifier，通常需要更嚴格保護，例如欄位級加密、遮罩或 tokenization。
+  tags:
+  - chap-m3-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-097
+  chapter_title: 資料治理與隱私保護
+  section_title: 程式閱讀理解
+  text: 閱讀下列存取審查輸出，哪項最應撤銷？
+  content:
+  - type: text
+    text: 閱讀下列存取審查輸出，哪項最應撤銷？
+  - type: code
+    language: python
+    code: "access_review = [\n    {\"user\": \"alice\", \"role\": \"privacy_officer\", \"last_used_days\": 3},\n    {\"user\": \"bob\", \"role\": \"raw_pii_reader\", \"last_used_days\": 420},\n    {\"user\": \"svc_pipeline\", \"role\": \"feature_writer\", \"last_used_days\": 1},\n]"
+  type: multiple_choice
+  options:
+  - bob 的 raw_pii_reader 權限長期未使用
+  - alice 最近使用 privacy_officer
+  - svc_pipeline 最近使用 feature_writer
+  - 三者都必須保留
+  correct_index: 0
+  explanation: 最小權限與定期審查要求撤銷長期未使用的高風險 PII 讀取權限。
+  tags:
+  - chap-m3-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-098
+  chapter_title: 資料治理與隱私保護
+  section_title: 程式閱讀理解
+  text: 閱讀下列資料刪除傳播流程，哪一項最容易被漏掉？
+  content:
+  - type: text
+    text: 閱讀下列資料刪除傳播流程，哪一項最容易被漏掉？
+  - type: code
+    language: python
+    code: 'delete_user(user_id)
+
+      remove_from_feature_store(user_id)
+
+      remove_from_serving_cache(user_id)
+
+      # TODO: handle derived training snapshots'
+  type: multiple_choice
+  options:
+  - 衍生訓練快照中的使用者資料
+  - 線上 serving cache
+  - feature store
+  - 主資料表
+  correct_index: 0
+  explanation: 註解指出 derived training snapshots 尚未處理，這類衍生資料常是刪除請求傳播的難點。
+  tags:
+  - chap-m3-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-099
+  chapter_title: 資料治理與隱私保護
+  section_title: 程式閱讀理解
+  text: 閱讀下列 DLP 規則，會攔截哪種內容？
+  content:
+  - type: text
+    text: 閱讀下列 DLP 規則，會攔截哪種內容？
+  - type: code
+    language: python
+    code: "patterns = [r\"\\b\\d{3}-\\d{2}-\\d{4}\\b\", r\"[\\w.-]+@[\\w.-]+\"]\nif any(re.search(p, text) for p in patterns):\n    block_export()"
+  type: multiple_choice
+  options:
+  - 含類似 SSN 或 email 格式的文字
+  - 所有數字 0 到 9
+  - 不含任何符號的文字
+  - 只有空白字串
+  correct_index: 0
+  explanation: 第一個 regex 偵測類 SSN 格式，第二個偵測 email。符合任一模式就阻擋匯出。
+  tags:
+  - chap-m3-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-100
+  chapter_title: 資料治理與隱私保護
+  section_title: 程式閱讀理解
+  text: 閱讀下列資料目錄 metadata，哪一項最支持問責？
+  content:
+  - type: text
+    text: 閱讀下列資料目錄 metadata，哪一項最支持問責？
+  - type: code
+    language: python
+    code: "metadata = {\n    \"dataset\": \"customer_features\",\n    \"owner\": \"growth-data-team\",\n    \"steward\": \"mei.chen\",\n    \"purpose\": \"churn prediction\",\n    \"retention_days\": 365,\n}"
+  type: multiple_choice
+  options:
+  - owner、steward、purpose 與 retention_days 明確記錄
+  - 只記錄 dataset 名稱
+  - 完全不需要 metadata
+  - retention_days 應永遠留空
+  correct_index: 0
+  explanation: 資料目錄若記錄擁有者、資料 steward、用途與保留期限，可支援責任歸屬、審查與合規管理。
+  tags:
+  - chap-m3-ch5
+  - sec-code-reading
+  - code-reading
+  usage: quiz

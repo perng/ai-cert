@@ -1,0 +1,1409 @@
+questions:
+- id: 8021
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: SciPy 的角色
+  text: SciPy 主要建立在哪個 Python 數值運算套件之上？
+  type: multiple_choice
+  options:
+  - NLTK
+  - OpenCV
+  - NumPy
+  - Flask
+  correct_index: 2
+  explanation: SciPy 建立在 NumPy 之上，提供統計、最佳化、稀疏矩陣與訊號處理等高階科學運算功能。
+  tags:
+  - chap-m6-ch3
+  - sec-scipy-role
+  usage: both
+- id: 8022
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: SciPy 的角色
+  text: 若需要使用統計分布、假設檢定與相關係數，SciPy 中最相關的模組是哪一個？
+  type: multiple_choice
+  options:
+  - scipy.router
+  - scipy.stats
+  - scipy.tokenizer
+  - scipy.camera
+  correct_index: 1
+  explanation: scipy.stats 提供統計分布、檢定與相關統計工具。
+  tags:
+  - chap-m6-ch3
+  - sec-scipy-role
+  usage: both
+- id: 8023
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 最佳化與曲線擬合
+  text: 機器學習訓練常被視為最佳化問題，主要是在尋找什麼？
+  type: multiple_choice
+  options:
+  - 讓所有特徵都變成字串的轉換方式
+  - 讓損失函數盡可能小的模型參數
+  - 讓程式碼行數最多的實作方式
+  - 讓檔案名稱最短的資料集
+  correct_index: 1
+  explanation: 模型訓練通常是調整參數以最小化 loss，使預測更接近目標。
+  tags:
+  - chap-m6-ch3
+  - sec-scipy-optimize
+  usage: both
+- id: 8024
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: scikit-learn 的標準流程
+  text: scikit-learn estimator 的常見使用流程為何？
+  type: multiple_choice
+  options:
+  - 只呼叫 print 即可完成模型訓練
+  - 先刪除資料、再隨機輸出答案
+  - 建立模型、fit 訓練、predict 或 transform 使用
+  - 先部署到雲端才允許訓練
+  correct_index: 2
+  explanation: scikit-learn API 通常遵循 fit、predict、transform 等一致介面。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-workflow
+  usage: both
+- id: 8025
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 前處理與 Pipeline
+  text: scikit-learn Pipeline 的重要優點是什麼？
+  type: multiple_choice
+  options:
+  - 讓模型完全不需要資料
+  - 將所有模型轉成影像檔
+  - 將前處理與模型訓練串成一致流程，降低資料洩漏風險
+  - 強制模型只能做分群
+  correct_index: 2
+  explanation: Pipeline 可把 scaler、encoder、classifier 等步驟一起 fit，避免測試資料資訊滲入訓練流程。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-preprocessing-pipeline
+  usage: both
+- id: 8026
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 分類、迴歸與分群
+  text: 下列哪一類任務的目標是預測連續數值？
+  type: multiple_choice
+  options:
+  - 分群
+  - 分類
+  - 迴歸
+  - Tokenization
+  correct_index: 2
+  explanation: 迴歸任務預測連續數值，例如價格、溫度或需求量。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-model-types
+  usage: both
+- id: 8027
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 評估、交叉驗證與超參數搜尋
+  text: 使用交叉驗證的主要目的為何？
+  type: multiple_choice
+  options:
+  - 讓模型不用評估
+  - 把影像轉成灰階
+  - 將所有資料永久刪除
+  - 降低單一次資料切分造成的評估偶然性
+  correct_index: 3
+  explanation: 交叉驗證會使用多個切分進行訓練與驗證，使評估結果較穩定。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-evaluation
+  usage: both
+- id: 8028
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 評估、交叉驗證與超參數搜尋
+  text: 在分類不平衡問題中，只看 accuracy 可能有什麼風險？
+  type: multiple_choice
+  options:
+  - 會讓訓練資料變成非結構化資料
+  - 可能掩蓋少數類別預測很差的事實
+  - 會自動造成 GPU 記憶體不足
+  - 一定會讓模型無法執行
+  correct_index: 1
+  explanation: 多數類別比例很高時，模型只預測多數類別也可能有高 accuracy，因此還需觀察 precision、recall、F1 等指標。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-evaluation
+  usage: both
+- id: 8091
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: SciPy 的角色
+  text: scipy.sparse 特別常用於哪一類資料表示？
+  type: multiple_choice
+  options:
+  - RGB 影像的通道轉換
+  - PyTorch 模型的 state_dict
+  - 高維但大多數元素為 0 的稀疏矩陣，例如文字特徵
+  - Docker container 的網路設定
+  correct_index: 2
+  explanation: 文字特徵如 Bag-of-Words 或 TF-IDF 常是高維稀疏矩陣，適合用 scipy.sparse 表示。
+  tags:
+  - chap-m6-ch3
+  - sec-scipy-role
+  usage: both
+- id: 8092
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 最佳化與曲線擬合
+  text: 若最佳化問題中的 learning rate 或步長過大，常見結果是什麼？
+  type: multiple_choice
+  options:
+  - 資料集會自動變大
+  - 所有特徵都會變成類別欄位
+  - 可能跳過最小值或導致 loss 發散
+  - 模型一定會完美收斂
+  correct_index: 2
+  explanation: 步長過大可能讓參數更新過度，無法穩定接近最佳解。
+  tags:
+  - chap-m6-ch3
+  - sec-scipy-optimize
+  usage: both
+- id: 8093
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 前處理與 Pipeline
+  text: 在 Pipeline 中，StandardScaler 應該在哪個資料集上 fit？
+  type: multiple_choice
+  options:
+  - 在測試資料上 fit，再回頭套用到訓練資料
+  - 只在訓練資料上 fit，再套用到驗證或測試資料
+  - 不需要 fit，直接隨機產生平均值
+  - 在全部資料上 fit 後再切分
+  correct_index: 1
+  explanation: 前處理參數應只由訓練資料學得，否則測試資料資訊會洩漏到訓練流程。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-preprocessing-pipeline
+  usage: both
+- id: 8094
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 建立 Baseline 的重要性
+  text: 建立 baseline 模型的主要目的不是什麼？
+  type: multiple_choice
+  options:
+  - 快速檢查資料是否有可學習訊號
+  - 作為複雜模型的比較基準
+  - 檢查評估流程是否合理
+  - 一開始就保證達到最佳商業結果
+  correct_index: 3
+  explanation: baseline 是簡單基準，用於比較與檢查，不保證是最佳最終模型。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-baseline
+  usage: both
+- id: 8095
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: Train、Validation、Test 的分工
+  text: Validation set 的主要用途是什麼？
+  type: multiple_choice
+  options:
+  - 替代所有測試資料
+  - 選模型與調整超參數
+  - 作為唯一訓練資料
+  - 儲存模型權重
+  correct_index: 1
+  explanation: Validation set 會參與模型選擇與調參決策，因此不應當作最終客觀評估。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-data-splits
+  usage: both
+- id: 8096
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 模型選擇的實務判斷
+  text: 若資料是中小型表格資料，且需要快速建立 baseline，通常可優先考慮哪類工具？
+  type: multiple_choice
+  options:
+  - scikit-learn 的傳統機器學習模型
+  - 從零訓練大型語言模型
+  - 手寫 CUDA kernel
+  - 只使用 OpenCV 閾值處理
+  correct_index: 0
+  explanation: scikit-learn 對中小型表格資料、baseline 與傳統模型流程非常適合。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-model-selection
+  usage: both
+- id: 8097
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 常見評估指標
+  text: 在迴歸任務中，MAE 與 RMSE 主要用來評估什麼？
+  type: multiple_choice
+  options:
+  - 文字 tokenizer 的詞彙表大小
+  - 預測連續數值的誤差大小
+  - DataLoader 的批次順序
+  - 影像通道順序
+  correct_index: 1
+  explanation: MAE 與 RMSE 都是迴歸誤差指標，用於衡量預測值與真實連續目標的差距。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-metrics-detail
+  usage: both
+- id: 8098
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: scikit-learn 與深度學習的界線
+  text: 下列哪一種任務通常更適合使用 PyTorch 而不是 scikit-learn？
+  type: multiple_choice
+  options:
+  - 小型表格資料的 Logistic Regression baseline
+  - CSV 欄位統計摘要
+  - 需要自訂神經網路並使用 GPU 訓練影像模型
+  - Pandas groupby 報表
+  correct_index: 2
+  explanation: PyTorch 適合自訂深度學習架構、GPU 訓練與影像、文字、語音等複雜資料。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-vs-deep-learning
+  usage: both
+- id: m6-ch3-code-001
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: 閱讀程式碼，stats.norm.cdf(0) 約等於多少？
+  content:
+  - type: text
+    text: 閱讀程式碼，stats.norm.cdf(0) 約等於多少？
+  - type: code
+    language: python
+    code: 'from scipy import stats
+
+      print(stats.norm.cdf(0))'
+  type: multiple_choice
+  options:
+  - 0.0
+  - 1.96
+  - 1.0
+  - 0.5
+  correct_index: 3
+  explanation: 標準常態分布在 z=0 左側機率為 0.5。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-002
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: 下列 minimize 目標函式的最小值位置接近哪裡？
+  content:
+  - type: text
+    text: 下列 minimize 目標函式的最小值位置接近哪裡？
+  - type: code
+    language: python
+    code: "def loss(w):\n    return (w[0] - 3) ** 2 + (w[1] + 2) ** 2\n\nresult = minimize(loss, x0=[0, 0])\nprint(result.x)"
+  type: multiple_choice
+  options:
+  - - 0
+    - 0
+  - - 1
+    - 1
+  - - 3
+    - -2
+  - - -3
+    - 2
+  correct_index: 2
+  explanation: 平方項在 w[0]=3 且 w[1]=-2 時最小。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-003
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: 在 scikit-learn 中，model.fit(X_train, y_train) 的主要作用是什麼？
+  content:
+  - type: text
+    text: 在 scikit-learn 中，model.fit(X_train, y_train) 的主要作用是什麼？
+  - type: code
+    language: python
+    code: 'model = RandomForestClassifier(random_state=42)
+
+      model.fit(X_train, y_train)
+
+      pred = model.predict(X_test)'
+  type: multiple_choice
+  options:
+  - 計算 Python 版本
+  - 將 y_train 轉成圖檔
+  - 用訓練資料學習模型參數或規則
+  - 刪除測試資料
+  correct_index: 2
+  explanation: fit() 是 scikit-learn estimator 的訓練步驟。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-004
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: 閱讀程式碼，predict 使用的是哪一份資料？
+  content:
+  - type: text
+    text: 閱讀程式碼，predict 使用的是哪一份資料？
+  - type: code
+    language: python
+    code: 'model.fit(X_train, y_train)
+
+      pred = model.predict(X_test)'
+  type: multiple_choice
+  options:
+  - y_train
+  - X_test
+  - X_train
+  - y_test
+  correct_index: 1
+  explanation: predict(X_test) 代表對測試特徵產生預測。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-005
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: Pipeline 中 StandardScaler 放在 LogisticRegression 前面的主要原因是什麼？
+  content:
+  - type: text
+    text: Pipeline 中 StandardScaler 放在 LogisticRegression 前面的主要原因是什麼？
+  - type: code
+    language: python
+    code: "pipe = Pipeline([\n    (\"scaler\", StandardScaler()),\n    (\"clf\", LogisticRegression(max_iter=200))\n])"
+  type: multiple_choice
+  options:
+  - 先刪除所有標籤
+  - 讓模型只能輸出字串
+  - 把分類器轉成 DataFrame
+  - 先標準化特徵再訓練分類器
+  correct_index: 3
+  explanation: Pipeline 會依序執行 scaler 與分類器，確保前處理與模型一起管理。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-006
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: pipe.score(X_test, y_test) 通常回傳什麼？
+  content:
+  - type: text
+    text: pipe.score(X_test, y_test) 通常回傳什麼？
+  - type: code
+    language: python
+    code: 'pipe.fit(X_train, y_train)
+
+      print(pipe.score(X_test, y_test))'
+  type: multiple_choice
+  options:
+  - 訓練資料筆數
+  - 分類器在測試資料上的預設評分
+  - 欄位名稱清單
+  - 模型檔案大小
+  correct_index: 1
+  explanation: 分類器的 score 通常回傳測試集 accuracy。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-007
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: 下列程式屬於哪一類任務？
+  content:
+  - type: text
+    text: 下列程式屬於哪一類任務？
+  - type: code
+    language: python
+    code: 'from sklearn.cluster import KMeans
+
+      clusters = KMeans(n_clusters=3).fit_predict(X)'
+  type: multiple_choice
+  options:
+  - 分類
+  - 文字斷詞
+  - 迴歸
+  - 分群
+  correct_index: 3
+  explanation: KMeans 是無監督分群演算法，fit_predict 會回傳群集編號。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-008
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: cross_val_score(pipe, X, y, cv=5) 中 cv=5 代表什麼？
+  content:
+  - type: text
+    text: cross_val_score(pipe, X, y, cv=5) 中 cv=5 代表什麼？
+  - type: code
+    language: python
+    code: 'scores = cross_val_score(pipe, X, y, cv=5)
+
+      print(scores.mean())'
+  type: multiple_choice
+  options:
+  - 5 張 GPU
+  - 5 折交叉驗證
+  - 5 個缺失值
+  - 5 個輸出類別
+  correct_index: 1
+  explanation: cv=5 表示把資料切成 5 折輪流訓練與驗證。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-009
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: 下列 baseline 對文字分類的典型組合是什麼？
+  content:
+  - type: text
+    text: 下列 baseline 對文字分類的典型組合是什麼？
+  - type: code
+    language: python
+    code: "pipe = Pipeline([\n    (\"tfidf\", TfidfVectorizer()),\n    (\"clf\", LogisticRegression())\n])"
+  type: multiple_choice
+  options:
+  - TF-IDF 加 Logistic Regression
+  - DataFrame 加 CUDA kernel
+  - KMeans 加 PyTorch autograd
+  - CNN 加 OpenCV threshold
+  correct_index: 0
+  explanation: TF-IDF 搭配 Logistic Regression 是常見文字分類 baseline。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-010
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: 閱讀時間切分程式，test 包含哪些日期？
+  content:
+  - type: text
+    text: 閱讀時間切分程式，test 包含哪些日期？
+  - type: code
+    language: python
+    code: 'train = df[df["date"] < "2025-01-01"]
+
+      test = df[df["date"] >= "2025-01-01"]'
+  type: multiple_choice
+  options:
+  - 所有資料
+  - 2025-01-01 以前
+  - 2025-01-01 之後但不含當天
+  - 2025-01-01 當天與之後
+  correct_index: 3
+  explanation: 條件 >= "2025-01-01" 會包含當天與之後的資料。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-011
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: 下列程式最像是在建立哪一種模型？
+  content:
+  - type: text
+    text: 下列程式最像是在建立哪一種模型？
+  - type: code
+    language: python
+    code: 'from sklearn.linear_model import LinearRegression
+
+      model = LinearRegression()
+
+      model.fit(X_train, revenue_train)'
+  type: multiple_choice
+  options:
+  - 影像邊緣偵測器
+  - GPU memory profiler
+  - 文字 tokenizer
+  - 連續數值預測模型
+  correct_index: 3
+  explanation: LinearRegression 用於迴歸任務，常預測 revenue 等連續數值。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-012
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: 閱讀程式碼，recall_score 低通常代表什麼？
+  content:
+  - type: text
+    text: 閱讀程式碼，recall_score 低通常代表什麼？
+  - type: code
+    language: python
+    code: 'from sklearn.metrics import recall_score
+
+      recall = recall_score(y_true, y_pred)'
+  type: multiple_choice
+  options:
+  - 所有預測都正確
+  - 模型沒有任何 false positive
+  - 資料沒有標籤
+  - 漏掉許多正類案例
+  correct_index: 3
+  explanation: Recall 衡量正類被找回的比例，低 recall 代表許多正類被漏掉。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-013
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: 下列程式更偏向傳統機器學習還是深度學習？
+  content:
+  - type: text
+    text: 下列程式更偏向傳統機器學習還是深度學習？
+  - type: code
+    language: python
+    code: 'from sklearn.ensemble import RandomForestClassifier
+
+      model = RandomForestClassifier()'
+  type: multiple_choice
+  options:
+  - OpenCV 影像濾波
+  - NLTK 詞形還原
+  - PyTorch 深度學習
+  - 傳統機器學習
+  correct_index: 3
+  explanation: RandomForestClassifier 是 scikit-learn 中的傳統機器學習模型。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-014
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: 為什麼這段流程可能造成資料洩漏？
+  content:
+  - type: text
+    text: 為什麼這段流程可能造成資料洩漏？
+  - type: code
+    language: python
+    code: 'scaler = StandardScaler()
+
+      X_scaled = scaler.fit_transform(X_all)
+
+      X_train, X_test, y_train, y_test = train_test_split(X_scaled, y)'
+  type: multiple_choice
+  options:
+  - 使用了 LogisticRegression
+  - 在切分前用全部資料 fit scaler
+  - X_all 是 NumPy array
+  - 呼叫了 train_test_split
+  correct_index: 1
+  explanation: 標準化參數先看過全部資料，測試集資訊會進入前處理。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-015
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: GridSearchCV 的主要用途是什麼？
+  content:
+  - type: text
+    text: GridSearchCV 的主要用途是什麼？
+  - type: code
+    language: python
+    code: 'search = GridSearchCV(pipe, param_grid={"clf__C": [0.1, 1, 10]}, cv=5)
+
+      search.fit(X_train, y_train)'
+  type: multiple_choice
+  options:
+  - 建立 PyTorch tensor
+  - 將影像轉成灰階
+  - 搜尋超參數組合並用交叉驗證評估
+  - 刪除低分樣本
+  correct_index: 2
+  explanation: GridSearchCV 會嘗試 param_grid 中的組合，並用交叉驗證比較表現。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-016
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: stats.ttest_rel 常用於什麼？
+  content:
+  - type: text
+    text: stats.ttest_rel 常用於什麼？
+  - type: code
+    language: python
+    code: result = stats.ttest_rel(model_a_scores, model_b_scores)
+  type: multiple_choice
+  options:
+  - 影像 resize
+  - 文字斷詞
+  - 比較配對分數差異
+  - GPU 記憶體釋放
+  correct_index: 2
+  explanation: 配對 t 檢定可比較同一批資料上的兩組分數。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-017
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: 閱讀程式碼，最小值接近哪個 x？
+  content:
+  - type: text
+    text: 閱讀程式碼，最小值接近哪個 x？
+  - type: code
+    language: python
+    code: "def loss(x):\n    return (x[0] - 2) ** 2\nresult = minimize(loss, x0=[0])"
+  type: multiple_choice
+  options:
+  - '1'
+  - '-2'
+  - '0'
+  - '2'
+  correct_index: 3
+  explanation: 平方項在 x[0]=2 時最小。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-018
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: model.fit(X_train, y_train) 的主要用途是什麼？
+  content:
+  - type: text
+    text: model.fit(X_train, y_train) 的主要用途是什麼？
+  - type: code
+    language: python
+    code: model.fit(X_train, y_train)
+  type: multiple_choice
+  options:
+  - 刪除資料
+  - 訓練模型
+  - 產生 Matplotlib 圖
+  - 建立 HTML
+  correct_index: 1
+  explanation: fit 會讓模型從訓練資料學習。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-019
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: 閱讀程式碼，pred 代表什麼？
+  content:
+  - type: text
+    text: 閱讀程式碼，pred 代表什麼？
+  - type: code
+    language: python
+    code: 'model.fit(X_train, y_train)
+
+      pred = model.predict(X_test)'
+  type: multiple_choice
+  options:
+  - 模型參數名稱
+  - 測試資料預測結果
+  - 交叉驗證折數
+  - 訓練資料標籤
+  correct_index: 1
+  explanation: predict 對 X_test 產生預測。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-020
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: Pipeline 的主要好處是什麼？
+  content:
+  - type: text
+    text: Pipeline 的主要好處是什麼？
+  - type: code
+    language: python
+    code: pipe = Pipeline([("scaler", StandardScaler()), ("clf", LogisticRegression())])
+  type: multiple_choice
+  options:
+  - 把前處理與模型串成一致流程
+  - 把文字轉影像
+  - 強制使用 GPU
+  - 刪除 validation set
+  correct_index: 0
+  explanation: Pipeline 可確保前處理與模型訓練/推論一致。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-021
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: ColumnTransformer 適合處理哪種資料？
+  content:
+  - type: text
+    text: ColumnTransformer 適合處理哪種資料？
+  - type: code
+    language: python
+    code: "preprocess = ColumnTransformer([\n    (\"num\", StandardScaler(), [\"age\"]),\n    (\"cat\", OneHotEncoder(), [\"city\"])\n])"
+  type: multiple_choice
+  options:
+  - 混合數值與類別欄位
+  - NLTK stop words
+  - 單張 RGB 圖片
+  - PyTorch 梯度
+  correct_index: 0
+  explanation: 它可讓不同欄位套用不同前處理。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-022
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: accuracy_score(y_test, pred) 計算什麼？
+  content:
+  - type: text
+    text: accuracy_score(y_test, pred) 計算什麼？
+  - type: code
+    language: python
+    code: score = accuracy_score(y_test, pred)
+  type: multiple_choice
+  options:
+  - 迴歸殘差圖
+  - 資料缺失率
+  - 分類正確率
+  - 模型參數數量
+  correct_index: 2
+  explanation: accuracy 是分類預測正確比例。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-023
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: cv=5 表示什麼？
+  content:
+  - type: text
+    text: cv=5 表示什麼？
+  - type: code
+    language: python
+    code: scores = cross_val_score(model, X, y, cv=5)
+  type: multiple_choice
+  options:
+  - 5 張圖片
+  - 5 個類別
+  - 5 折交叉驗證
+  - 5 個模型輸出
+  correct_index: 2
+  explanation: cv=5 代表 5-fold cross validation。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-024
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: GridSearchCV 的主要功能是什麼？
+  content:
+  - type: text
+    text: GridSearchCV 的主要功能是什麼？
+  - type: code
+    language: python
+    code: search = GridSearchCV(pipe, param_grid, cv=5)
+  type: multiple_choice
+  options:
+  - 計算 BGR 通道
+  - 讀取影像
+  - 搜尋超參數組合
+  - 做詞形還原
+  correct_index: 2
+  explanation: GridSearchCV 會用交叉驗證比較不同參數組合。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-025
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: sm.add_constant(X) 通常加入什麼？
+  content:
+  - type: text
+    text: sm.add_constant(X) 通常加入什麼？
+  - type: code
+    language: python
+    code: X = sm.add_constant(X)
+  type: multiple_choice
+  options:
+  - GPU device
+  - 影像通道
+  - 文字 token
+  - 截距項
+  correct_index: 3
+  explanation: statsmodels OLS 常需要明確加入常數截距項。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-026
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: model.summary() 主要提供什麼資訊？
+  content:
+  - type: text
+    text: model.summary() 主要提供什麼資訊？
+  - type: code
+    language: python
+    code: 'model = sm.OLS(y, X).fit()
+
+      print(model.summary())'
+  type: multiple_choice
+  options:
+  - OpenCV 色彩表
+  - 係數、p-value 與診斷資訊
+  - CNN 特徵圖
+  - token id
+  correct_index: 1
+  explanation: statsmodels summary 著重統計係數與檢定資訊。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-027
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: 這段程式主要畫出什麼？
+  content:
+  - type: text
+    text: 這段程式主要畫出什麼？
+  - type: code
+    language: python
+    code: 'plt.plot(history["train_loss"], label="train")
+
+      plt.plot(history["val_loss"], label="validation")
+
+      plt.legend()'
+  type: multiple_choice
+  options:
+  - 詞彙表
+  - 影像遮罩
+  - 資料庫索引
+  - 訓練與驗證 loss 曲線
+  correct_index: 3
+  explanation: plot 兩條 loss 曲線可觀察訓練過程。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-028
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: 若資料嚴重不平衡，只看 accuracy 可能有什麼問題？
+  content:
+  - type: text
+    text: 若資料嚴重不平衡，只看 accuracy 可能有什麼問題？
+  - type: code
+    language: python
+    code: print(accuracy_score(y_true, y_pred))
+  type: multiple_choice
+  options:
+  - 會自動修正 label
+  - 不能用於分類
+  - 可能掩蓋少數類別表現很差
+  - 一定比 F1 更可靠
+  correct_index: 2
+  explanation: 不平衡分類常需看 precision、recall、F1 等指標。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-029
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: 這段切分主要避免什麼？
+  content:
+  - type: text
+    text: 這段切分主要避免什麼？
+  - type: code
+    language: python
+    code: 'train = df[df["date"] < "2025-01-01"]
+
+      test = df[df["date"] >= "2025-01-01"]'
+  type: multiple_choice
+  options:
+  - 影像顏色錯誤
+  - tokenizer 不一致
+  - 模型沒有截距
+  - 未來資訊洩漏
+  correct_index: 3
+  explanation: 時間序列應用過去預測未來，避免未來資料進入訓練。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch3-code-030
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 程式閱讀理解
+  text: DummyClassifier 最適合用來做什麼？
+  content:
+  - type: text
+    text: DummyClassifier 最適合用來做什麼？
+  - type: code
+    language: python
+    code: 'baseline = DummyClassifier(strategy="most_frequent")
+
+      baseline.fit(X_train, y_train)'
+  type: multiple_choice
+  options:
+  - 執行 OpenCV threshold
+  - 訓練 Transformer
+  - 畫出 RGB 圖
+  - 建立最低基準表現
+  correct_index: 3
+  explanation: DummyClassifier 可建立簡單 baseline 供模型比較。
+  tags:
+  - chap-m6-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-hc-026
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 最佳化與曲線擬合
+  text: 關於「最佳化與曲線擬合」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 最佳化的目標是尋找讓損失函數最小或目標函數最佳的參數。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  correct_index: 2
+  explanation: 最佳化的目標是尋找讓損失函數最小或目標函數最佳的參數。
+  tags:
+  - chap-m6-ch3
+  - sec-scipy-optimize
+  usage: both
+- id: m6-hc-027
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: scikit-learn 的標準流程
+  text: 關於「scikit-learn 的標準流程」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - scikit-learn estimator 通常遵循 fit、predict 或 transform 的一致介面。
+  correct_index: 3
+  explanation: scikit-learn estimator 通常遵循 fit、predict 或 transform 的一致介面。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-workflow
+  usage: both
+- id: m6-hc-028
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: scikit-learn 的標準流程
+  text: 在實務應用「scikit-learn 的標準流程」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - train_test_split 用於把資料分成訓練與測試，避免只看訓練表現。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 2
+  explanation: train_test_split 用於把資料分成訓練與測試，避免只看訓練表現。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-workflow
+  usage: both
+- id: m6-hc-029
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: scikit-learn 實務補充：ColumnTransformer 與混合欄位
+  text: 關於「scikit-learn 實務補充：ColumnTransformer 與混合欄位」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - ColumnTransformer 可讓數值欄位與類別欄位套用不同前處理。
+  correct_index: 3
+  explanation: ColumnTransformer 可讓數值欄位與類別欄位套用不同前處理。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-column-transformer
+  usage: both
+- id: m6-hc-030
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: scikit-learn 實務補充：ColumnTransformer 與混合欄位
+  text: 在實務應用「scikit-learn 實務補充：ColumnTransformer 與混合欄位」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - OneHotEncoder(handle_unknown="ignore") 可降低推論遇到新類別時的錯誤風險。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 0
+  explanation: OneHotEncoder(handle_unknown="ignore") 可降低推論遇到新類別時的錯誤風險。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-column-transformer
+  usage: both
+- id: m6-hc-031
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: scikit-learn 實務補充：ColumnTransformer 與混合欄位
+  text: 下列哪一項最符合「scikit-learn 實務補充：ColumnTransformer 與混合欄位」的核心觀念？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 把 ColumnTransformer 放進 Pipeline 可讓訓練與推論共用同一套轉換規則。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 1
+  explanation: 把 ColumnTransformer 放進 Pipeline 可讓訓練與推論共用同一套轉換規則。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-column-transformer
+  usage: both
+- id: m6-hc-032
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 前處理與 Pipeline
+  text: 關於「前處理與 Pipeline」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - Pipeline 可避免前處理在訓練與測試之間不一致。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 1
+  explanation: Pipeline 可避免前處理在訓練與測試之間不一致。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-preprocessing-pipeline
+  usage: both
+- id: m6-hc-033
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 分類、迴歸與分群
+  text: 關於「分類、迴歸與分群」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 分類預測離散類別，迴歸預測連續數值。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  correct_index: 2
+  explanation: 分類預測離散類別，迴歸預測連續數值。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-model-types
+  usage: both
+- id: m6-hc-034
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 分類、迴歸與分群
+  text: 在實務應用「分類、迴歸與分群」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 分群是無監督方法，常用於探索資料自然群組。
+  correct_index: 3
+  explanation: 分群是無監督方法，常用於探索資料自然群組。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-model-types
+  usage: both
+- id: m6-hc-035
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 評估、交叉驗證與超參數搜尋
+  text: 關於「評估、交叉驗證與超參數搜尋」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 交叉驗證可降低單一次資料切分造成的評估偶然性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 2
+  explanation: 交叉驗證可降低單一次資料切分造成的評估偶然性。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-evaluation
+  usage: both
+- id: m6-hc-036
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 建立 Baseline 的重要性
+  text: 關於「建立 Baseline 的重要性」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - baseline 用來判斷資料是否有可學習訊號。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  correct_index: 0
+  explanation: baseline 用來判斷資料是否有可學習訊號。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-baseline
+  usage: both
+- id: m6-hc-037
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 建立 Baseline 的重要性
+  text: 在實務應用「建立 Baseline 的重要性」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 複雜模型若沒有明顯超過 baseline，可能不值得增加成本。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  correct_index: 1
+  explanation: 複雜模型若沒有明顯超過 baseline，可能不值得增加成本。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-baseline
+  usage: both
+- id: m6-hc-038
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: Train、Validation、Test 的分工
+  text: 關於「Train、Validation、Test 的分工」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - training set 用於 fit 模型與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  correct_index: 1
+  explanation: training set 用於 fit 模型與前處理。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-data-splits
+  usage: both
+- id: m6-hc-039
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: Train、Validation、Test 的分工
+  text: 在實務應用「Train、Validation、Test 的分工」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - validation set 用於模型選擇與超參數調整。
+  correct_index: 3
+  explanation: validation set 用於模型選擇與超參數調整。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-data-splits
+  usage: both
+- id: m6-hc-040
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 模型選擇的實務判斷
+  text: 關於「模型選擇的實務判斷」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 模型選擇應考慮資料型態、可解釋性、延遲與維護成本。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 1
+  explanation: 模型選擇應考慮資料型態、可解釋性、延遲與維護成本。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-model-selection
+  usage: both
+- id: m6-hc-041
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 模型選擇的實務判斷
+  text: 在實務應用「模型選擇的實務判斷」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 表格資料常先用 scikit-learn baseline，再評估是否需要深度學習。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 1
+  explanation: 表格資料常先用 scikit-learn baseline，再評估是否需要深度學習。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-model-selection
+  usage: both
+- id: m6-hc-042
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 常見評估指標
+  text: 關於「常見評估指標」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - accuracy 適合類別比例接近平衡的分類問題。
+  correct_index: 3
+  explanation: accuracy 適合類別比例接近平衡的分類問題。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-metrics-detail
+  usage: both
+- id: m6-hc-043
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: 常見評估指標
+  text: 在實務應用「常見評估指標」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - recall 低代表許多正類被漏掉。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  correct_index: 0
+  explanation: recall 低代表許多正類被漏掉。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-metrics-detail
+  usage: both
+- id: m6-hc-044
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: scikit-learn 與深度學習的界線
+  text: 關於「scikit-learn 與深度學習的界線」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - scikit-learn 適合中小型表格資料與快速 baseline。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 2
+  explanation: scikit-learn 適合中小型表格資料與快速 baseline。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-vs-deep-learning
+  usage: both
+- id: m6-hc-045
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: scikit-learn 與深度學習的界線
+  text: 在實務應用「scikit-learn 與深度學習的界線」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 影像、語音與大型文字任務通常更適合深度學習框架。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 1
+  explanation: 影像、語音與大型文字任務通常更適合深度學習框架。
+  tags:
+  - chap-m6-ch3
+  - sec-sklearn-vs-deep-learning
+  usage: both
+- id: m6-hc-046
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: statsmodels：統計建模與可解釋分析
+  text: 關於「statsmodels：統計建模與可解釋分析」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - statsmodels 重視係數、p-value、信賴區間與殘差診斷。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 2
+  explanation: statsmodels 重視係數、p-value、信賴區間與殘差診斷。
+  tags:
+  - chap-m6-ch3
+  - sec-statsmodels
+  usage: both
+- id: m6-hc-047
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: statsmodels：統計建模與可解釋分析
+  text: 在實務應用「statsmodels：統計建模與可解釋分析」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - OLS 常需要明確加入 constant 截距項。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 2
+  explanation: OLS 常需要明確加入 constant 截距項。
+  tags:
+  - chap-m6-ch3
+  - sec-statsmodels
+  usage: both
+- id: m6-hc-048
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: statsmodels：統計建模與可解釋分析
+  text: 下列哪一項最符合「statsmodels：統計建模與可解釋分析」的核心觀念？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 若任務重點是解釋變數關係，statsmodels 比只看預測分數更有用。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 1
+  explanation: 若任務重點是解釋變數關係，statsmodels 比只看預測分數更有用。
+  tags:
+  - chap-m6-ch3
+  - sec-statsmodels
+  usage: both
+- id: m6-hc-049
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: Matplotlib：資料與模型結果視覺化
+  text: 關於「Matplotlib：資料與模型結果視覺化」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - Matplotlib 可用於資料分布、訓練曲線與混淆矩陣視覺化。
+  correct_index: 3
+  explanation: Matplotlib 可用於資料分布、訓練曲線與混淆矩陣視覺化。
+  tags:
+  - chap-m6-ch3
+  - sec-matplotlib-modeling
+  usage: both
+- id: m6-hc-050
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: Matplotlib：資料與模型結果視覺化
+  text: 在實務應用「Matplotlib：資料與模型結果視覺化」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 訓練 loss 下降但 validation loss 上升常暗示過擬合。
+  correct_index: 3
+  explanation: 訓練 loss 下降但 validation loss 上升常暗示過擬合。
+  tags:
+  - chap-m6-ch3
+  - sec-matplotlib-modeling
+  usage: both
+- id: m6-hc-051
+  chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
+  section_title: Matplotlib：資料與模型結果視覺化
+  text: 下列哪一項最符合「Matplotlib：資料與模型結果視覺化」的核心觀念？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 混淆矩陣能顯示哪些類別彼此容易誤判。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 1
+  explanation: 混淆矩陣能顯示哪些類別彼此容易誤判。
+  tags:
+  - chap-m6-ch3
+  - sec-matplotlib-modeling
+  usage: both

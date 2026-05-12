@@ -1,0 +1,1297 @@
+questions:
+- id: 8041
+  chapter_title: PyTorch 基礎
+  section_title: Tensor 與裝置
+  text: PyTorch Tensor 與 NumPy array 相比，對深度學習特別重要的能力是什麼？
+  type: multiple_choice
+  options:
+  - 可支援 GPU 運算與自動微分
+  - 只能儲存文字
+  - 只能在瀏覽器中執行
+  - 不允許矩陣運算
+  correct_index: 0
+  explanation: PyTorch Tensor 支援裝置管理與 autograd，是深度學習訓練的核心。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-tensor-device
+  usage: both
+- id: 8042
+  chapter_title: PyTorch 基礎
+  section_title: Tensor 與裝置
+  text: PyTorch 中模型與輸入 tensor 在不同 device 時，通常會發生什麼？
+  type: multiple_choice
+  options:
+  - 模型會自動轉成 HTML
+  - 可能產生執行錯誤，因為運算要求資料與模型在同一裝置
+  - loss 永遠等於 0
+  - optimizer 會自動刪除資料集
+  correct_index: 1
+  explanation: 模型參數與輸入 tensor 必須在同一 device，例如都在 CPU 或都在同一張 GPU。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-tensor-device
+  usage: both
+- id: 8043
+  chapter_title: PyTorch 基礎
+  section_title: Autograd 與反向傳播
+  text: 在 PyTorch 中呼叫 loss.backward() 的主要作用是什麼？
+  type: multiple_choice
+  options:
+  - 把文字切成 token
+  - 自動儲存模型到雲端
+  - 將所有 tensor 轉成 Pandas DataFrame
+  - 根據計算圖計算參數梯度
+  correct_index: 3
+  explanation: backward 會依照計算圖執行反向傳播，將梯度累積到需要梯度的參數上。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-autograd
+  usage: both
+- id: 8044
+  chapter_title: PyTorch 基礎
+  section_title: Autograd 與反向傳播
+  text: 訓練迴圈中通常需要呼叫 optimizer.zero_grad()，原因是什麼？
+  type: multiple_choice
+  options:
+  - 將 learning rate 設為 0
+  - 刪除模型所有權重
+  - 關閉 Dataset
+  - 清空上一輪累積的梯度，避免梯度被不當累加
+  correct_index: 3
+  explanation: PyTorch 預設梯度會累加，因此每次更新前通常要清空舊梯度。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-autograd
+  usage: both
+- id: 8045
+  chapter_title: PyTorch 基礎
+  section_title: Dataset 與 DataLoader
+  text: PyTorch DataLoader 的主要責任是什麼？
+  type: multiple_choice
+  options:
+  - 自動撰寫模型論文
+  - 批次化、打亂與載入 Dataset 中的資料
+  - 修改 Python 語言語法
+  - 將所有模型轉成 scikit-learn estimator
+  correct_index: 1
+  explanation: DataLoader 根據 Dataset 產生 mini-batch，並可處理 shuffle 與平行讀取。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-dataset-dataloader
+  usage: both
+- id: 8046
+  chapter_title: PyTorch 基礎
+  section_title: nn.Module 與模型定義
+  text: 自訂 PyTorch 模型時，forward 方法主要定義什麼？
+  type: multiple_choice
+  options:
+  - 輸入資料如何通過模型各層得到輸出
+  - GPU 如何製造
+  - CSV 檔案如何合併
+  - 套件如何安裝
+  correct_index: 0
+  explanation: forward 定義模型的前向傳播邏輯，通常透過 model(x) 間接呼叫。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-nn-module
+  usage: both
+- id: 8047
+  chapter_title: PyTorch 基礎
+  section_title: Loss、Optimizer 與訓練迴圈
+  text: 使用 nn.CrossEntropyLoss 做多類別分類時，模型最後通常應輸出什麼？
+  type: multiple_choice
+  options:
+  - Pandas groupby 物件
+  - 已經轉成字串的機率表
+  - 圖片檔案路徑
+  - 未經 softmax 的 logits
+  correct_index: 3
+  explanation: CrossEntropyLoss 內部會處理 log-softmax，因此模型輸出 logits 即可。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-training-loop
+  usage: both
+- id: 8048
+  chapter_title: PyTorch 基礎
+  section_title: 儲存與載入模型
+  text: PyTorch 實務上常儲存模型的 state_dict，主要保存的是什麼？
+  type: multiple_choice
+  options:
+  - 模型參數權重的字典
+  - 原始訓練資料全部內容
+  - 作業系統使用者密碼
+  - Jupyter Notebook 的所有輸出圖片
+  correct_index: 0
+  explanation: state_dict 保存模型各層參數，可由同樣架構的模型載入。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-save-load
+  usage: both
+- id: 8111
+  chapter_title: PyTorch 基礎
+  section_title: Tensor 與裝置
+  text: 若要把 tensor 移到與模型相同的 GPU 或 CPU，通常會使用哪個方法？
+  type: multiple_choice
+  options:
+  - groupby()
+  - fit_transform()
+  - cvtColor()
+  - to(device)
+  correct_index: 3
+  explanation: PyTorch 中可用 tensor.to(device) 或 model.to(device) 將資料與模型移到指定裝置。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-tensor-device
+  usage: both
+- id: 8112
+  chapter_title: PyTorch 基礎
+  section_title: Dataset 與 DataLoader
+  text: DataLoader 中 shuffle=True 通常在訓練資料上有什麼作用？
+  type: multiple_choice
+  options:
+  - 自動增加模型層數
+  - 將資料轉成 BGR
+  - 將標籤全部改成 0
+  - 每個 epoch 打亂資料順序，降低模型依賴固定順序
+  correct_index: 3
+  explanation: 訓練時打亂資料能讓 mini-batch 更隨機，通常有助於穩定訓練。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-dataset-dataloader
+  usage: both
+- id: 8113
+  chapter_title: PyTorch 基礎
+  section_title: nn.Module 與模型定義
+  text: 為什麼通常用 model(x) 而不是直接呼叫 model.forward(x)？
+  type: multiple_choice
+  options:
+  - forward 不能接收任何 tensor
+  - forward 只適用於 NumPy
+  - model(x) 會自動下載資料集
+  - model(x) 會經過 PyTorch Module 的標準呼叫流程與 hooks
+  correct_index: 3
+  explanation: 直接呼叫 model(x) 會觸發 Module 的 __call__ 流程，包含 hooks 等 PyTorch 機制。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-nn-module
+  usage: both
+- id: 8114
+  chapter_title: PyTorch 基礎
+  section_title: Loss、Optimizer 與訓練迴圈
+  text: 訓練分類模型時，loss.backward() 與 optimizer.step() 的先後順序通常為何？
+  type: multiple_choice
+  options:
+  - 只需要 step，不需要 backward
+  - 先 backward 計算梯度，再 step 更新參數
+  - 兩者順序永遠不重要
+  - 先 step 更新參數，再 backward 清空資料
+  correct_index: 1
+  explanation: optimizer.step() 依賴已計算好的梯度，因此必須先執行 loss.backward()。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-training-loop
+  usage: both
+- id: 8115
+  chapter_title: PyTorch 基礎
+  section_title: PyTorch 訓練流程的完整心智模型
+  text: PyTorch 訓練流程中，保存最佳模型通常應依據哪一類資料集表現？
+  type: multiple_choice
+  options:
+  - Training set 最後一個 batch 的 loss
+  - 未切分的全部資料
+  - Validation set 表現
+  - 原始 CSV 檔案大小
+  correct_index: 2
+  explanation: Validation set 用於模型選擇，常以其指標決定是否保存目前最佳模型。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-training-mental-model
+  usage: both
+- id: 8116
+  chapter_title: PyTorch 基礎
+  section_title: Tensor Shape 與 dtype 常見規則
+  text: 使用 CrossEntropyLoss 時，分類 target 通常應是什麼格式？
+  type: multiple_choice
+  options:
+  - one-hot float 矩陣，且必須先 softmax
+  - BGR 影像陣列
+  - Pandas DataFrame 欄位名稱
+  - LongTensor 類別 id，shape 通常為 (batch,)
+  correct_index: 3
+  explanation: CrossEntropyLoss 預期輸入為 logits，target 通常是 long 型別的類別 id。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-shape-dtype
+  usage: both
+- id: 8117
+  chapter_title: PyTorch 基礎
+  section_title: Learning Rate 與 Optimizer
+  text: AdamW 與 Transformer 訓練中常見的 weight decay 有什麼關係？
+  type: multiple_choice
+  options:
+  - AdamW 只能用於 OpenCV
+  - AdamW 將 weight decay 與 Adam 更新解耦，常用於 Transformer 訓練
+  - AdamW 會自動建立 tokenizer
+  - AdamW 不需要梯度
+  correct_index: 1
+  explanation: AdamW 是深度學習常見 optimizer，尤其在 Transformer 訓練與微調中很常使用。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-optimizer-detail
+  usage: both
+- id: 8118
+  chapter_title: PyTorch 基礎
+  section_title: PyTorch 常見錯誤排查
+  text: 若模型連 20 筆小資料都無法 overfit，最可能代表什麼？
+  type: multiple_choice
+  options:
+  - 訓練程式、資料、loss 或標籤設定可能有基本錯誤
+  - 測試資料太大
+  - 模型一定已經泛化得很好
+  - Pandas 沒有安裝
+  correct_index: 0
+  explanation: 小資料 overfit 測試是檢查訓練流程是否基本正確的常用方法。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-debugging
+  usage: both
+- id: m6-ch6-code-001
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: 閱讀程式碼，x.shape 是什麼？
+  content:
+  - type: text
+    text: 閱讀程式碼，x.shape 是什麼？
+  - type: code
+    language: python
+    code: 'x = torch.tensor([[1.0, 2.0], [3.0, 4.0]])
+
+      print(x.shape)'
+  type: multiple_choice
+  options:
+  - torch.Size([2])
+  - torch.Size([1, 4])
+  - torch.Size([4])
+  - torch.Size([2, 2])
+  correct_index: 3
+  explanation: x 是 2x2 tensor，因此 shape 是 [2, 2]。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-002
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: 下列程式的主要目的為何？
+  content:
+  - type: text
+    text: 下列程式的主要目的為何？
+  - type: code
+    language: python
+    code: 'device = "cuda" if torch.cuda.is_available() else "cpu"
+
+      x = x.to(device)'
+  type: multiple_choice
+  options:
+  - 將 tensor 移到可用裝置
+  - 計算 accuracy
+  - 把 tensor 轉成 DataFrame
+  - 建立 tokenizer
+  correct_index: 0
+  explanation: 程式會優先使用 CUDA，否則使用 CPU，並把 x 移到該裝置。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-003
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: 閱讀程式碼，loss.backward() 後 w.grad 代表什麼？
+  content:
+  - type: text
+    text: 閱讀程式碼，loss.backward() 後 w.grad 代表什麼？
+  - type: code
+    language: python
+    code: 'w = torch.tensor([2.0], requires_grad=True)
+
+      loss = (w - 5) ** 2
+
+      loss.backward()
+
+      print(w.grad)'
+  type: multiple_choice
+  options:
+  - optimizer 狀態名稱
+  - 資料 batch size
+  - 模型預測類別
+  - loss 對 w 的梯度
+  correct_index: 3
+  explanation: autograd 會計算 loss 對 requires_grad tensor 的梯度。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-004
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: 為什麼訓練迴圈通常要呼叫 optimizer.zero_grad()？
+  content:
+  - type: text
+    text: 為什麼訓練迴圈通常要呼叫 optimizer.zero_grad()？
+  - type: code
+    language: python
+    code: 'optimizer.zero_grad()
+
+      loss.backward()
+
+      optimizer.step()'
+  type: multiple_choice
+  options:
+  - 避免梯度在 batch 之間累加
+  - 刪除模型參數
+  - 將 logits 轉成文字
+  - 關閉 DataLoader
+  correct_index: 0
+  explanation: PyTorch 預設梯度會累加，因此每次更新前通常要清空舊梯度。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-005
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: 閱讀程式碼，batch_x.shape 的第一維代表什麼？
+  content:
+  - type: text
+    text: 閱讀程式碼，batch_x.shape 的第一維代表什麼？
+  - type: code
+    language: python
+    code: 'loader = DataLoader(dataset, batch_size=16, shuffle=True)
+
+      batch_x, batch_y = next(iter(loader))
+
+      print(batch_x.shape)'
+  type: multiple_choice
+  options:
+  - 特徵欄位名稱
+  - batch 中的樣本數
+  - 類別總數
+  - epoch 數
+  correct_index: 1
+  explanation: batch 第一維通常是批次大小，也就是一次取出的樣本數。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-006
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: TensorDataset(X, y) 的主要用途是什麼？
+  content:
+  - type: text
+    text: TensorDataset(X, y) 的主要用途是什麼？
+  - type: code
+    language: python
+    code: dataset = TensorDataset(X, y)
+  type: multiple_choice
+  options:
+  - 將影像轉成灰階
+  - 自動建立 CNN
+  - 把特徵 tensor 與標籤 tensor 包成可索引資料集
+  - 訓練 optimizer
+  correct_index: 2
+  explanation: TensorDataset 會讓 X 與 y 可用索引成對取出。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-007
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: TinyClassifier 的最後一層 nn.Linear(8, 2) 代表什麼？
+  content:
+  - type: text
+    text: TinyClassifier 的最後一層 nn.Linear(8, 2) 代表什麼？
+  - type: code
+    language: python
+    code: "self.net = nn.Sequential(\n    nn.Linear(4, 8),\n    nn.ReLU(),\n    nn.Linear(8, 2)\n)"
+  type: multiple_choice
+  options:
+  - batch size 固定為 2
+  - 模型有 2 個 epoch
+  - 輸入必須是 2 張影像
+  - 輸出 2 個類別的 logits
+  correct_index: 3
+  explanation: 最後 Linear 輸出維度為 2，通常代表二分類的兩個 logits。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-008
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: CrossEntropyLoss 預期模型輸出通常是什麼？
+  content:
+  - type: text
+    text: CrossEntropyLoss 預期模型輸出通常是什麼？
+  - type: code
+    language: python
+    code: 'logits = model(batch_x)
+
+      loss = nn.CrossEntropyLoss()(logits, batch_y)'
+  type: multiple_choice
+  options:
+  - OpenCV 影像
+  - 未經 softmax 的 logits
+  - one-hot 文字
+  - Pandas DataFrame
+  correct_index: 1
+  explanation: CrossEntropyLoss 內部包含 log-softmax，輸入應是 logits。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-009
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: optimizer.step() 的主要作用是什麼？
+  content:
+  - type: text
+    text: optimizer.step() 的主要作用是什麼？
+  - type: code
+    language: python
+    code: 'loss.backward()
+
+      optimizer.step()'
+  type: multiple_choice
+  options:
+  - 讀取 CSV
+  - 切換成 eval mode
+  - 根據梯度更新模型參數
+  - 計算 tokenizer
+  correct_index: 2
+  explanation: optimizer.step() 會使用目前梯度更新可訓練參數。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-010
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: torch.save(model.state_dict(), "model.pt") 儲存的是什麼？
+  content:
+  - type: text
+    text: torch.save(model.state_dict(), "model.pt") 儲存的是什麼？
+  - type: code
+    language: python
+    code: torch.save(model.state_dict(), "model.pt")
+  type: multiple_choice
+  options:
+  - Python 解譯器
+  - 模型權重參數字典
+  - 所有訓練影像
+  - 完整資料集
+  correct_index: 1
+  explanation: state_dict 是模型參數名稱到 tensor 權重的字典。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-011
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: 驗證階段使用 torch.no_grad() 的主要原因是什麼？
+  content:
+  - type: text
+    text: 驗證階段使用 torch.no_grad() 的主要原因是什麼？
+  - type: code
+    language: python
+    code: "model.eval()\nwith torch.no_grad():\n    logits = model(x)"
+  type: multiple_choice
+  options:
+  - 強制模型進入 train mode
+  - 避免建立梯度圖，節省記憶體與計算
+  - 自動增加 dropout
+  - 把 label 轉成 one-hot
+  correct_index: 1
+  explanation: 驗證不需要反向傳播，因此 no_grad 可降低記憶體與計算成本。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-012
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: CrossEntropyLoss 的分類 target 通常應該是哪種 dtype？
+  content:
+  - type: text
+    text: CrossEntropyLoss 的分類 target 通常應該是哪種 dtype？
+  - type: code
+    language: python
+    code: target = torch.tensor([0, 1, 1], dtype=torch.long)
+  type: multiple_choice
+  options:
+  - torch.long 類別 id
+  - Pandas category
+  - torch.float one-hot 機率
+  - 字串 label
+  correct_index: 0
+  explanation: CrossEntropyLoss 的 target 通常是 LongTensor 類別索引。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-013
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: Adam(model.parameters(), lr=1e-3) 中 lr 代表什麼？
+  content:
+  - type: text
+    text: Adam(model.parameters(), lr=1e-3) 中 lr 代表什麼？
+  - type: code
+    language: python
+    code: optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
+  type: multiple_choice
+  options:
+  - log recall
+  - label ratio
+  - learning rate
+  - linear regression
+  correct_index: 2
+  explanation: lr 是 learning rate，控制每次參數更新步伐。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-014
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: torch.manual_seed(seed) 的主要用途是什麼？
+  content:
+  - type: text
+    text: torch.manual_seed(seed) 的主要用途是什麼？
+  - type: code
+    language: python
+    code: 'seed = 42
+
+      torch.manual_seed(seed)'
+  type: multiple_choice
+  options:
+  - 刪除隨機資料
+  - 將模型移到 GPU
+  - 固定 PyTorch 隨機來源，提升實驗可重現性
+  - 提高模型上限
+  correct_index: 2
+  explanation: manual_seed 可固定 PyTorch 隨機數產生器，使實驗較容易重現。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-015
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: 若模型在 cuda，batch_x 在 cpu，最可能發生什麼？
+  content:
+  - type: text
+    text: 若模型在 cuda，batch_x 在 cpu，最可能發生什麼？
+  - type: code
+    language: python
+    code: 'model = model.to("cuda")
+
+      logits = model(batch_x)'
+  type: multiple_choice
+  options:
+  - 自動轉成 Pandas
+  - loss 一定變成 0
+  - device mismatch 錯誤
+  - 自動啟用 NLTK
+  correct_index: 2
+  explanation: 模型與輸入 tensor 必須在同一 device，否則會發生裝置不一致錯誤。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-016
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: torch.tensor([[1,2],[3,4]]).shape 是什麼？
+  content:
+  - type: text
+    text: torch.tensor([[1,2],[3,4]]).shape 是什麼？
+  - type: code
+    language: python
+    code: 'x = torch.tensor([[1, 2], [3, 4]])
+
+      print(x.shape)'
+  type: multiple_choice
+  options:
+  - torch.Size([2])
+  - torch.Size([4])
+  - torch.Size([1, 2])
+  - torch.Size([2, 2])
+  correct_index: 3
+  explanation: 這是 2x2 tensor。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-017
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: 分類標籤通常需要哪種 dtype？
+  content:
+  - type: text
+    text: 分類標籤通常需要哪種 dtype？
+  - type: code
+    language: python
+    code: y = torch.tensor([0, 1, 2], dtype=torch.long)
+  type: multiple_choice
+  options:
+  - torch.long
+  - torch.bool
+  - str
+  - torch.float32
+  correct_index: 0
+  explanation: CrossEntropyLoss 的 target 通常是 long 類別 id。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-018
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: x.to(device) 的主要用途是什麼？
+  content:
+  - type: text
+    text: x.to(device) 的主要用途是什麼？
+  - type: code
+    language: python
+    code: x = x.to(device)
+  type: multiple_choice
+  options:
+  - 建立 DataLoader
+  - 將 tensor 轉成 dict
+  - 刪除梯度
+  - 將 tensor 移到指定裝置
+  correct_index: 3
+  explanation: to(device) 可在 CPU/GPU 間搬移 tensor。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-019
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: requires_grad=True 表示什麼？
+  content:
+  - type: text
+    text: requires_grad=True 表示什麼？
+  - type: code
+    language: python
+    code: w = torch.tensor([1.0], requires_grad=True)
+  type: multiple_choice
+  options:
+  - 在 CPU 外部
+  - 不可被訓練
+  - 是整數標籤
+  - 需要追蹤梯度
+  correct_index: 3
+  explanation: Autograd 會追蹤該 tensor 的運算以計算梯度。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-020
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: loss.backward() 之後梯度存在哪裡？
+  content:
+  - type: text
+    text: loss.backward() 之後梯度存在哪裡？
+  - type: code
+    language: python
+    code: 'loss.backward()
+
+      print(w.grad)'
+  type: multiple_choice
+  options:
+  - loss.value
+  - model.eval
+  - optimizer.lr
+  - w.grad
+  correct_index: 3
+  explanation: 梯度會累積在參數的 .grad 屬性。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-021
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: zero_grad 的目的為何？
+  content:
+  - type: text
+    text: zero_grad 的目的為何？
+  - type: code
+    language: python
+    code: optimizer.zero_grad()
+  type: multiple_choice
+  options:
+  - 關閉模型
+  - 刪除 loss
+  - 清空資料集
+  - 清空舊梯度
+  correct_index: 3
+  explanation: PyTorch 梯度會累加，因此更新前要清空。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-022
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: shuffle=True 的作用是什麼？
+  content:
+  - type: text
+    text: shuffle=True 的作用是什麼？
+  - type: code
+    language: python
+    code: loader = DataLoader(dataset, batch_size=32, shuffle=True)
+  type: multiple_choice
+  options:
+  - 固定輸出類別
+  - 每個 epoch 打亂資料順序
+  - 計算 p-value
+  - 轉成 GPU
+  correct_index: 1
+  explanation: shuffle 可降低訓練順序偏差。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-023
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: __len__ 在自訂 Dataset 中應回傳什麼？
+  content:
+  - type: text
+    text: __len__ 在自訂 Dataset 中應回傳什麼？
+  - type: code
+    language: python
+    code: "def __len__(self):\n    return len(self.texts)"
+  type: multiple_choice
+  options:
+  - 資料筆數
+  - epoch 數
+  - 類別數
+  - GPU 數
+  correct_index: 0
+  explanation: __len__ 讓 DataLoader 知道資料集大小。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-024
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: forward 方法定義什麼？
+  content:
+  - type: text
+    text: forward 方法定義什麼？
+  - type: code
+    language: python
+    code: "def forward(self, x):\n    return self.net(x)"
+  type: multiple_choice
+  options:
+  - 如何畫圖
+  - 資料如何通過模型
+  - 如何切分 train/test
+  - 如何讀檔
+  correct_index: 1
+  explanation: forward 定義前向傳播邏輯。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-025
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: CrossEntropyLoss 前是否需要 softmax？
+  content:
+  - type: text
+    text: CrossEntropyLoss 前是否需要 softmax？
+  - type: code
+    language: python
+    code: loss = nn.CrossEntropyLoss()(logits, y)
+  type: multiple_choice
+  options:
+  - 一定需要
+  - 只能用 sigmoid
+  - 只能用 argmax
+  - 不需要
+  correct_index: 3
+  explanation: CrossEntropyLoss 內部包含 log-softmax。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-026
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: model.eval() 會影響哪些層？
+  content:
+  - type: text
+    text: model.eval() 會影響哪些層？
+  - type: code
+    language: python
+    code: model.eval()
+  type: multiple_choice
+  options:
+  - Linear 權重維度
+  - DataLoader 長度
+  - optimizer 類型
+  - Dropout 與 BatchNorm 等
+  correct_index: 3
+  explanation: eval 會切換訓練/推論行為。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-027
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: torch.no_grad() 用於什麼？
+  content:
+  - type: text
+    text: torch.no_grad() 用於什麼？
+  - type: code
+    language: python
+    code: "with torch.no_grad():\n    pred = model(x)"
+  type: multiple_choice
+  options:
+  - 建立 optimizer
+  - 推論時不建立梯度圖
+  - 保存資料集
+  - 訓練時增加梯度
+  correct_index: 1
+  explanation: 推論不需要梯度，可節省記憶體。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-028
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: state_dict 儲存什麼？
+  content:
+  - type: text
+    text: state_dict 儲存什麼？
+  - type: code
+    language: python
+    code: torch.save(model.state_dict(), "model.pt")
+  type: multiple_choice
+  options:
+  - 完整 Python 環境
+  - 訓練資料原文
+  - 模型參數字典
+  - Matplotlib 圖
+  correct_index: 2
+  explanation: state_dict 包含模型權重參數。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-029
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: Keras model.compile 主要設定什麼？
+  content:
+  - type: text
+    text: Keras model.compile 主要設定什麼？
+  - type: code
+    language: python
+    code: model.compile(optimizer="adam", loss="sparse_categorical_crossentropy", metrics=["accuracy"])
+  type: multiple_choice
+  options:
+  - DataLoader shuffle
+  - 影像路徑
+  - optimizer、loss 與 metrics
+  - OpenCV 色彩空間
+  correct_index: 2
+  explanation: compile 會指定訓練所需 optimizer、loss 和評估指標。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch6-code-030
+  chapter_title: PyTorch 基礎
+  section_title: 程式閱讀理解
+  text: 用很小資料集測試能否 overfit 的目的？
+  content:
+  - type: text
+    text: 用很小資料集測試能否 overfit 的目的？
+  - type: code
+    language: python
+    code: train_on_20_examples(model)
+  type: multiple_choice
+  options:
+  - 取代 validation set
+  - 提升正式準確率
+  - 降低資料標註成本
+  - 檢查訓練程式是否基本可學習
+  correct_index: 3
+  explanation: 小資料能 overfit 是訓練流程基本正確的檢查方式。
+  tags:
+  - chap-m6-ch6
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-hc-100
+  chapter_title: PyTorch 基礎
+  section_title: Autograd 與反向傳播
+  text: 關於「Autograd 與反向傳播」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - autograd 會追蹤 tensor 運算並自動計算梯度。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 2
+  explanation: autograd 會追蹤 tensor 運算並自動計算梯度。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-autograd
+  usage: both
+- id: m6-hc-101
+  chapter_title: PyTorch 基礎
+  section_title: Dataset 與 DataLoader
+  text: 關於「Dataset 與 DataLoader」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - Dataset 定義如何取得單筆資料。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  correct_index: 1
+  explanation: Dataset 定義如何取得單筆資料。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-dataset-dataloader
+  usage: both
+- id: m6-hc-102
+  chapter_title: PyTorch 基礎
+  section_title: nn.Module 與模型定義
+  text: 關於「nn.Module 與模型定義」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - nn.Module 的 __init__ 定義層，forward 定義資料流。
+  correct_index: 3
+  explanation: nn.Module 的 __init__ 定義層，forward 定義資料流。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-nn-module
+  usage: both
+- id: m6-hc-103
+  chapter_title: PyTorch 基礎
+  section_title: Loss、Optimizer 與訓練迴圈
+  text: 關於「Loss、Optimizer 與訓練迴圈」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - CrossEntropyLoss 預期輸入 logits，不需先 softmax。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 2
+  explanation: CrossEntropyLoss 預期輸入 logits，不需先 softmax。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-training-loop
+  usage: both
+- id: m6-hc-104
+  chapter_title: PyTorch 基礎
+  section_title: 儲存與載入模型
+  text: 關於「儲存與載入模型」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - state_dict 儲存模型參數名稱與 tensor 權重。
+  correct_index: 3
+  explanation: state_dict 儲存模型參數名稱與 tensor 權重。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-save-load
+  usage: both
+- id: m6-hc-105
+  chapter_title: PyTorch 基礎
+  section_title: 儲存與載入模型
+  text: 在實務應用「儲存與載入模型」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 載入 state_dict 前需先建立相同架構的模型物件。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 2
+  explanation: 載入 state_dict 前需先建立相同架構的模型物件。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-save-load
+  usage: both
+- id: m6-hc-106
+  chapter_title: PyTorch 基礎
+  section_title: PyTorch 訓練流程的完整心智模型
+  text: 關於「PyTorch 訓練流程的完整心智模型」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 完整訓練流程包含資料、模型、loss、optimizer、訓練與驗證。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 1
+  explanation: 完整訓練流程包含資料、模型、loss、optimizer、訓練與驗證。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-training-mental-model
+  usage: both
+- id: m6-hc-107
+  chapter_title: PyTorch 基礎
+  section_title: PyTorch 訓練流程的完整心智模型
+  text: 在實務應用「PyTorch 訓練流程的完整心智模型」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 訓練用 model.train()，驗證與推論用 model.eval()。
+  correct_index: 3
+  explanation: 訓練用 model.train()，驗證與推論用 model.eval()。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-training-mental-model
+  usage: both
+- id: m6-hc-108
+  chapter_title: PyTorch 基礎
+  section_title: Tensor Shape 與 dtype 常見規則
+  text: 關於「Tensor Shape 與 dtype 常見規則」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 影像分類輸入常是 batch、channels、height、width。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  correct_index: 1
+  explanation: 影像分類輸入常是 batch、channels、height、width。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-shape-dtype
+  usage: both
+- id: m6-hc-109
+  chapter_title: PyTorch 基礎
+  section_title: Tensor Shape 與 dtype 常見規則
+  text: 在實務應用「Tensor Shape 與 dtype 常見規則」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - CrossEntropyLoss 的 target 通常是 LongTensor 類別 id。
+  correct_index: 3
+  explanation: CrossEntropyLoss 的 target 通常是 LongTensor 類別 id。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-shape-dtype
+  usage: both
+- id: m6-hc-110
+  chapter_title: PyTorch 基礎
+  section_title: Learning Rate 與 Optimizer
+  text: 關於「Learning Rate 與 Optimizer」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - learning rate 太大可能造成 loss 發散。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 2
+  explanation: learning rate 太大可能造成 loss 發散。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-optimizer-detail
+  usage: both
+- id: m6-hc-111
+  chapter_title: PyTorch 基礎
+  section_title: Learning Rate 與 Optimizer
+  text: 在實務應用「Learning Rate 與 Optimizer」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - Adam 常用於原型開發，AdamW 常見於 Transformer。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 1
+  explanation: Adam 常用於原型開發，AdamW 常見於 Transformer。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-optimizer-detail
+  usage: both
+- id: m6-hc-112
+  chapter_title: PyTorch 基礎
+  section_title: Reproducibility 與實驗紀錄
+  text: 關於「Reproducibility 與實驗紀錄」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 固定 random seed 有助於實驗重現。
+  correct_index: 3
+  explanation: 固定 random seed 有助於實驗重現。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-reproducibility
+  usage: both
+- id: m6-hc-113
+  chapter_title: PyTorch 基礎
+  section_title: Reproducibility 與實驗紀錄
+  text: 在實務應用「Reproducibility 與實驗紀錄」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 應紀錄資料版本、切分方式、模型架構與超參數。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 1
+  explanation: 應紀錄資料版本、切分方式、模型架構與超參數。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-reproducibility
+  usage: both
+- id: m6-hc-114
+  chapter_title: PyTorch 基礎
+  section_title: Reproducibility 與實驗紀錄
+  text: 下列哪一項最符合「Reproducibility 與實驗紀錄」的核心觀念？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 深度學習完全可重現有時會犧牲效能，但基本紀錄仍必要。
+  correct_index: 3
+  explanation: 深度學習完全可重現有時會犧牲效能，但基本紀錄仍必要。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-reproducibility
+  usage: both
+- id: m6-hc-115
+  chapter_title: PyTorch 基礎
+  section_title: Keras：高階深度學習 API 的定位
+  text: 關於「Keras：高階深度學習 API 的定位」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - Keras 強調用較少程式碼快速建立標準深度學習模型。
+  correct_index: 3
+  explanation: Keras 強調用較少程式碼快速建立標準深度學習模型。
+  tags:
+  - chap-m6-ch6
+  - sec-keras-overview
+  usage: both
+- id: m6-hc-116
+  chapter_title: PyTorch 基礎
+  section_title: Keras：高階深度學習 API 的定位
+  text: 在實務應用「Keras：高階深度學習 API 的定位」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - model.compile 會設定 optimizer、loss 與 metrics。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  correct_index: 0
+  explanation: model.compile 會設定 optimizer、loss 與 metrics。
+  tags:
+  - chap-m6-ch6
+  - sec-keras-overview
+  usage: both
+- id: m6-hc-117
+  chapter_title: PyTorch 基礎
+  section_title: Keras：高階深度學習 API 的定位
+  text: 下列哪一項最符合「Keras：高階深度學習 API 的定位」的核心觀念？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 需要高度客製化訓練邏輯時，PyTorch 通常更直覺。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 1
+  explanation: 需要高度客製化訓練邏輯時，PyTorch 通常更直覺。
+  tags:
+  - chap-m6-ch6
+  - sec-keras-overview
+  usage: both
+- id: m6-hc-118
+  chapter_title: PyTorch 基礎
+  section_title: PyTorch 常見錯誤排查
+  text: 關於「PyTorch 常見錯誤排查」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - device mismatch 常發生在模型與 tensor 不在同一裝置。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  correct_index: 0
+  explanation: device mismatch 常發生在模型與 tensor 不在同一裝置。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-debugging
+  usage: both
+- id: m6-hc-119
+  chapter_title: PyTorch 基礎
+  section_title: PyTorch 常見錯誤排查
+  text: 在實務應用「PyTorch 常見錯誤排查」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - loss 不下降時可先用小資料集測試是否能 overfit。
+  correct_index: 3
+  explanation: loss 不下降時可先用小資料集測試是否能 overfit。
+  tags:
+  - chap-m6-ch6
+  - sec-pytorch-debugging
+  usage: both

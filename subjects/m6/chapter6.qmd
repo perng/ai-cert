@@ -1,10 +1,14 @@
 ---
 title: "PyTorch 基礎"
-order: 5
-label: chap-m6-ch5
+order: 6
+label: chap-m6-ch6
 ---
 
 PyTorch 是常用深度學習框架，特色是動態計算圖、Pythonic API、除錯直覺，並且有成熟的 GPU、資料載入與模型部署生態。
+
+和 scikit-learn 相比，PyTorch 提供的不是固定演算法清單，而是一套建立與訓練神經網路的底層積木。開發者可以自訂模型層、loss、訓練迴圈、資料載入方式與 GPU 執行流程。這讓 PyTorch 特別適合影像、語音、文字、推薦系統、生成式 AI 與需要客製化架構的研究原型。
+
+PyTorch 專案通常由幾個核心元件組成：tensor 表示資料、`Dataset` 與 `DataLoader` 提供批次資料、`nn.Module` 定義模型、loss function 衡量錯誤、optimizer 更新參數。學會這些元件，就能看懂大多數深度學習訓練程式。
 
 ## Tensor 與裝置 {#sec-pytorch-tensor-device}
 
@@ -28,6 +32,21 @@ x = x.to(device)
 ```
 
 實務上最常見錯誤之一，是模型在 GPU、資料卻在 CPU，或反過來。模型與 tensor 必須在同一個 device。
+
+Tensor 也可以和 NumPy 互相轉換。這是從傳統資料處理進入深度學習時的常見橋接：
+
+```{python}
+import numpy as np
+
+features_np = np.array([[0.1, 1.2], [0.3, 0.7]], dtype="float32")
+# 從 NumPy array 轉成 PyTorch tensor
+features_tensor = torch.from_numpy(features_np)
+
+print(features_tensor)
+print(features_tensor.dtype)
+```
+
+模型訓練通常需要浮點數特徵；分類標籤則常需要 long dtype。dtype 不對時，loss function 可能直接報錯。
 
 ## Autograd 與反向傳播 {#sec-pytorch-autograd}
 
@@ -86,6 +105,28 @@ print(batch_x.shape, batch_y.shape)
 
 batch size 影響記憶體使用、梯度估計穩定度與訓練速度。太大可能超出 GPU 記憶體，太小可能訓練震盪較大。
 
+真實專案常會自訂 `Dataset`，把資料讀取與單筆樣本轉換包起來：
+
+```python
+from torch.utils.data import Dataset
+
+class ReviewDataset(Dataset):
+    def __init__(self, texts, labels, tokenizer):
+        self.texts = texts
+        self.labels = labels
+        self.tokenizer = tokenizer
+
+    def __len__(self):
+        return len(self.texts)
+
+    def __getitem__(self, idx):
+        encoded = self.tokenizer(self.texts[idx])
+        label = torch.tensor(self.labels[idx], dtype=torch.long)
+        return encoded, label
+```
+
+`Dataset` 負責「如何取得一筆資料」，`DataLoader` 負責「如何組成一批資料」。這個分工讓訓練迴圈不需要知道資料原本存在 CSV、圖檔、資料庫或記憶體中。
+
 ## nn.Module 與模型定義 {#sec-pytorch-nn-module}
 
 模型通常繼承 `torch.nn.Module`，在 `__init__` 定義層，在 `forward` 定義資料如何流動：
@@ -138,6 +179,20 @@ print(float(loss))
 ```
 
 訓練時使用 `model.train()`，驗證或推論時使用 `model.eval()` 並搭配 `torch.no_grad()`。這會影響 dropout、batch normalization 與梯度記錄。
+
+推論時通常只需要 logits 或機率，不需要梯度：
+
+```{python}
+model.eval()
+with torch.no_grad():
+    logits = model(batch_x)
+    probabilities = torch.softmax(logits, dim=1)
+    predicted_class = probabilities.argmax(dim=1)
+
+print(predicted_class[:5])
+```
+
+`softmax` 常用於把分類 logits 轉成機率，但訓練 `CrossEntropyLoss` 時不要先手動 softmax，因為 loss 內部已經包含對應的數值穩定處理。
 
 ## 儲存與載入模型 {#sec-pytorch-save-load}
 
@@ -251,6 +306,32 @@ torch.manual_seed(seed)
 ```
 
 完全可重現有時會犧牲效能，尤其在 GPU 上，但基本 seed 與設定紀錄仍是必要工程習慣。
+
+## Keras：高階深度學習 API 的定位 {#sec-keras-overview}
+
+Keras 是常見的高階深度學習 API，現在多數情境下透過 TensorFlow 生態使用。和 PyTorch 相比，Keras 更強調用較少程式碼快速定義、訓練與評估標準模型；PyTorch 則讓開發者更直接控制 forward pass、loss 計算與訓練迴圈。
+
+典型 Keras 模型會用 `Sequential` 或 Functional API 定義：
+
+```python
+from tensorflow import keras
+from tensorflow.keras import layers
+
+model = keras.Sequential([
+    layers.Dense(32, activation="relu", input_shape=(10,)),
+    layers.Dense(2, activation="softmax")
+])
+
+model.compile(
+    optimizer="adam",
+    loss="sparse_categorical_crossentropy",
+    metrics=["accuracy"]
+)
+
+model.fit(X_train, y_train, epochs=5, batch_size=32)
+```
+
+Keras 適合快速建立標準 MLP、CNN、RNN 或 transfer learning 原型，也適合教學與需要簡潔訓練流程的專案。若任務需要高度客製化訓練邏輯、複雜資料流、研究型模型或逐步除錯，PyTorch 通常更直覺。兩者不是誰取代誰，而是抽象層級與控制程度不同。
 
 ## PyTorch 常見錯誤排查 {#sec-pytorch-debugging}
 

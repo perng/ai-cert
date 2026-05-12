@@ -1090,10 +1090,10 @@ questions:
 - id: 114-2-001
   chapter_title: 進階分析方法
   section_title: 歷屆考題
-  text: |-
-    若某數據點的 Z 分數（Z-Score）= 2，請問代表下列哪一種意涵？
+  text: '若某數據點的 Z 分數（Z-Score）= 2，請問代表下列哪一種意涵？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 代表該數據點之原始數值為 2
@@ -1110,10 +1110,10 @@ questions:
 - id: 114-2-002
   chapter_title: 進階分析方法
   section_title: 歷屆考題
-  text: |-
-    使用 Python 的 pandas 套件處理各商品銷售數據（變數為 `df`）時，若需計算「總銷售額」欄位的敘述性統計量（如平均值、標準差等），應使用下列哪一種語法？
+  text: '使用 Python 的 pandas 套件處理各商品銷售數據（變數為 `df`）時，若需計算「總銷售額」欄位的敘述性統計量（如平均值、標準差等），應使用下列哪一種語法？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - '`df[''總銷售額''].sum()`'
@@ -1130,18 +1130,19 @@ questions:
 - id: 114-2-003
   chapter_title: 進階分析方法
   section_title: 歷屆考題
-  text: |-
-    附圖為某資料之分佈圖，此圖資料之偏態（Skewness）值較有可能為下列哪個選項？
+  text: '附圖為某資料之分佈圖，此圖資料之偏態（Skewness）值較有可能為下列哪個選項？
+
 
     ![Q3 distribution plot for skewness](assets/images/q03_skewness_distribution.png)
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   content:
   - type: text
-    text: |-
-      附圖為某資料之分佈圖，此圖資料之偏態（Skewness）值較有可能為下列哪個選項？
+    text: '附圖為某資料之分佈圖，此圖資料之偏態（Skewness）值較有可能為下列哪個選項？
 
-      (114年第二梯次)
+
+      (114年第二梯次)'
   - type: image
     src: assets/images/q03_skewness_distribution.png
     alt: Q3 distribution plot for skewness
@@ -1161,10 +1162,10 @@ questions:
 - id: 114-2-004
   chapter_title: 進階分析方法
   section_title: 歷屆考題
-  text: |-
-    累積分佈函數（Cumulative Distribution Function, CDF）可用於描述隨機變數的機率分佈特性，其數學定義為下列何者？
+  text: '累積分佈函數（Cumulative Distribution Function, CDF）可用於描述隨機變數的機率分佈特性，其數學定義為下列何者？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 機率密度函數（Probability Density Function, PDF）的平均值
@@ -1181,28 +1182,33 @@ questions:
 - id: 114-2-014
   chapter_title: 進階分析方法
   section_title: 歷屆考題
-  text: |-
-    某組資料共 10 項標籤如下：
+  text: '某組資料共 10 項標籤如下：
+
 
     ```text
+
     A, A, A, A, A, B, B, B, B, B
+
     ```
+
 
     若該標籤僅有 A、B 兩種，請問這組資料的「正規化吉尼不純度（Normalized Gini impurity）」為何？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   content:
   - type: text
     text: 某組資料共 10 項標籤如下：
   - type: code
-    code: |
-      A, A, A, A, A, B, B, B, B, B
+    code: 'A, A, A, A, A, B, B, B, B, B
+
+      '
     language: text
   - type: text
-    text: |-
-      若該標籤僅有 A、B 兩種，請問這組資料的「正規化吉尼不純度（Normalized Gini impurity）」為何？
+    text: '若該標籤僅有 A、B 兩種，請問這組資料的「正規化吉尼不純度（Normalized Gini impurity）」為何？
 
-      (114年第二梯次)
+
+      (114年第二梯次)'
   type: multiple_choice
   options:
   - '0'
@@ -1219,10 +1225,10 @@ questions:
 - id: 114-2-015
   chapter_title: 進階分析方法
   section_title: 歷屆考題
-  text: |-
-    某家客服中心統計資料發現，平均每小時會接到約 20 通顧客來電，但每分鐘的來電數量不固定，可能為 0、1、2 通不等。這些來電事件彼此獨立，且在短時間內，發生的機率與時間長短成正比。若要以機率模型描述「每分鐘接到幾通來電」的機率分佈，下列哪一種最適合使用？
+  text: '某家客服中心統計資料發現，平均每小時會接到約 20 通顧客來電，但每分鐘的來電數量不固定，可能為 0、1、2 通不等。這些來電事件彼此獨立，且在短時間內，發生的機率與時間長短成正比。若要以機率模型描述「每分鐘接到幾通來電」的機率分佈，下列哪一種最適合使用？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 均勻分佈（Uniform distribution）
@@ -1239,10 +1245,10 @@ questions:
 - id: 114-2-016
   chapter_title: 進階分析方法
   section_title: 歷屆考題
-  text: |-
-    某金融科技公司以 Z 分數（Z-Score）監控交易金額異常狀況。若交易金額平均為新台幣 2,000 元，標準差為 400 元，某筆交易金額為 3,200 元，且公司以 |Z| ≥ 3 判定為異常值（Outlier），下列判斷何者最為正確？
+  text: '某金融科技公司以 Z 分數（Z-Score）監控交易金額異常狀況。若交易金額平均為新台幣 2,000 元，標準差為 400 元，某筆交易金額為 3,200 元，且公司以 |Z| ≥ 3 判定為異常值（Outlier），下列判斷何者最為正確？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 該筆交易的 Z 分數為 3，應標記為異常值
@@ -1259,10 +1265,10 @@ questions:
 - id: 114-2-023
   chapter_title: 進階分析方法
   section_title: 歷屆考題
-  text: |-
-    某研究團隊以單樣本 t 檢定（one-sample t-test）檢驗「新行銷策略後的平均月銷售額是否與原本的 100 萬元不同」，顯著水準設定為 α = 0.05。檢定結果顯示：p 值 = 0.08，且 95% 信賴區間為 [95 萬元, 108 萬元]。根據上述結果，下列敘述何者正確？
+  text: '某研究團隊以單樣本 t 檢定（one-sample t-test）檢驗「新行銷策略後的平均月銷售額是否與原本的 100 萬元不同」，顯著水準設定為 α = 0.05。檢定結果顯示：p 值 = 0.08，且 95% 信賴區間為 [95 萬元, 108 萬元]。根據上述結果，下列敘述何者正確？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 因 p 值 < 0.05，可拒絕虛無假設
@@ -1279,10 +1285,10 @@ questions:
 - id: 114-2-026
   chapter_title: 進階分析方法
   section_title: 歷屆考題
-  text: |-
-    某串流影音平台運用關聯規則學習（Association Rule Learning）分析用戶的觀影行為，發現若使用者觀看了科幻影集，則有較高機率接著觀看超級英雄電影。分析顯示，同時觀看這兩種類型的使用者約佔全部觀影紀錄的 12%，而觀看科幻影集的使用者中，有 50% 也觀看了超級英雄電影，該規則的提升度（Lift）為 1.8。根據上述資訊，下列哪一項推論最為正確？
+  text: '某串流影音平台運用關聯規則學習（Association Rule Learning）分析用戶的觀影行為，發現若使用者觀看了科幻影集，則有較高機率接著觀看超級英雄電影。分析顯示，同時觀看這兩種類型的使用者約佔全部觀影紀錄的 12%，而觀看科幻影集的使用者中，有 50% 也觀看了超級英雄電影，該規則的提升度（Lift）為 1.8。根據上述資訊，下列哪一項推論最為正確？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 支持度（Support）過低，代表此規則不具任何商業價值
@@ -1299,10 +1305,10 @@ questions:
 - id: 114-2-027
   chapter_title: 進階分析方法
   section_title: 歷屆考題
-  text: |-
-    某金融科技公司分析每日上億筆交易資料，以監控客戶轉帳金額分佈與異常波動。由於資料量極大，為兼顧效率與準確度，團隊決定採用「近似分位數（Approximate Quantile）」方法進行資料摘要統計。下列何者最能正確反映該技術的核心目的？
+  text: '某金融科技公司分析每日上億筆交易資料，以監控客戶轉帳金額分佈與異常波動。由於資料量極大，為兼顧效率與準確度，團隊決定採用「近似分位數（Approximate Quantile）」方法進行資料摘要統計。下列何者最能正確反映該技術的核心目的？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 確保每個分位值的結果完全精確，即使計算時間較長
@@ -1319,10 +1325,10 @@ questions:
 - id: 114-2-028
   chapter_title: 進階分析方法
   section_title: 歷屆考題
-  text: |-
-    若在高維度（>500 維）的資料上應用 DBSCAN（Density-Based Spatial Clustering of Applications with Noise）演算法，卻發現所有資料點皆被判定為雜訊（Noise），下列何者為最有可能的原因？
+  text: '若在高維度（>500 維）的資料上應用 DBSCAN（Density-Based Spatial Clustering of Applications with Noise）演算法，卻發現所有資料點皆被判定為雜訊（Noise），下列何者為最有可能的原因？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 高維下距離變化趨同，導致 ε（Epsilon）閾值選擇失效
@@ -1339,10 +1345,10 @@ questions:
 - id: 114-2-029
   chapter_title: 進階分析方法
   section_title: 歷屆考題
-  text: |-
-    某團隊在開發風險評估模型時，使用主成分分析（Principal Component Analysis, PCA）進行降維。輸入資料包含三個數值欄位：「交易金額（單位：新台幣）」、「交易次數（次／月）」與「年齡（歲）」，其數值量級分別約為 10⁵、10¹ 與 10²。分析人員直接將原始數據帶入 PCA，結果第一主成分（PC1）幾乎完全由「交易金額」主導。下列哪一項作法或判斷最合理？
+  text: '某團隊在開發風險評估模型時，使用主成分分析（Principal Component Analysis, PCA）進行降維。輸入資料包含三個數值欄位：「交易金額（單位：新台幣）」、「交易次數（次／月）」與「年齡（歲）」，其數值量級分別約為 10⁵、10¹ 與 10²。分析人員直接將原始數據帶入 PCA，結果第一主成分（PC1）幾乎完全由「交易金額」主導。下列哪一項作法或判斷最合理？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 這是正常現象，金額本身變異較大，應主導主要成分
@@ -1359,10 +1365,10 @@ questions:
 - id: 114-2-030
   chapter_title: 進階分析方法
   section_title: 歷屆考題
-  text: |-
-    某行銷團隊想了解「廣告預算」與「銷售金額」之間的關聯程度。經繪製散佈圖後發現兩者呈現明顯線性趨勢，且資料中無明顯離群值（Outliers）。若希望衡量兩者之間線性關係的強度與方向，下列哪一種方法最適合？
+  text: '某行銷團隊想了解「廣告預算」與「銷售金額」之間的關聯程度。經繪製散佈圖後發現兩者呈現明顯線性趨勢，且資料中無明顯離群值（Outliers）。若希望衡量兩者之間線性關係的強度與方向，下列哪一種方法最適合？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 均方根誤差（Root Mean Squared Error, RMSE）
@@ -1379,10 +1385,10 @@ questions:
 - id: 114-2-031
   chapter_title: 進階分析方法
   section_title: 歷屆考題
-  text: |-
-    某電商團隊觀察到，每位顧客對廣告推播的點擊行為可視為一次伯努利試驗（Bernoulli Trial），單次點擊成功機率為 p = 0.4。當推播對象擴增至 5,000 位顧客時，團隊想快速預估「成功點擊總數」的分佈情形，以進行模型效能模擬與預測。若希望以常態分佈（Normal Distribution）近似原始分佈，下列哪一項判斷最為合理？
+  text: '某電商團隊觀察到，每位顧客對廣告推播的點擊行為可視為一次伯努利試驗（Bernoulli Trial），單次點擊成功機率為 p = 0.4。當推播對象擴增至 5,000 位顧客時，團隊想快速預估「成功點擊總數」的分佈情形，以進行模型效能模擬與預測。若希望以常態分佈（Normal Distribution）近似原始分佈，下列哪一項判斷最為合理？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 因樣本數極大，可直接以常態分佈近似二項分佈（Binomial Distribution）
@@ -1399,10 +1405,10 @@ questions:
 - id: 114-2-033
   chapter_title: 進階分析方法
   section_title: 歷屆考題
-  text: |-
-    某金融機構的量化分析師在建立資產風險評估模型時，發現報酬率資料分佈明顯非對稱，且出現多次極端損失事件，使得傳統假設常態分佈的模型無法準確反映真實風險。若希望在不依賴常態分佈假設的前提下，採取更能捕捉資料極端情況的建模策略，下列哪一種方法最為合適？
+  text: '某金融機構的量化分析師在建立資產風險評估模型時，發現報酬率資料分佈明顯非對稱，且出現多次極端損失事件，使得傳統假設常態分佈的模型無法準確反映真實風險。若希望在不依賴常態分佈假設的前提下，採取更能捕捉資料極端情況的建模策略，下列哪一種方法最為合適？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 採用線性迴歸模型（Linear Regression Model），以常態分佈殘差（Residuals）為基礎進行推估
@@ -1419,10 +1425,10 @@ questions:
 - id: 114-2-034
   chapter_title: 進階分析方法
   section_title: 歷屆考題
-  text: |-
-    在圖形資料庫（Graph Database）中建模社群平台資料時，若每筆「按讚」行為都包含時間戳記（Timestamp）與裝置類型（Device Type）等資訊。若希望同時保留使用者與貼文之間的互動關係，並能有效查詢「按讚」的行為屬性，下列哪一種設計方式最為合適？
+  text: '在圖形資料庫（Graph Database）中建模社群平台資料時，若每筆「按讚」行為都包含時間戳記（Timestamp）與裝置類型（Device Type）等資訊。若希望同時保留使用者與貼文之間的互動關係，並能有效查詢「按讚」的行為屬性，下列哪一種設計方式最為合適？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 將「按讚」視為節點（Node），與使用者建立邊（Edge）
@@ -1439,10 +1445,10 @@ questions:
 - id: 114-2-035
   chapter_title: 進階分析方法
   section_title: 歷屆考題
-  text: |-
-    某企業欲建構知識圖譜（Knowledge Graph），以整合內部的研究報告、專利資料與專家知識，並支援語意查詢與關聯推理。若希望模型能具備良好的語意擴展性與高效推理能力，下列哪一種圖模型設計最為合適？
+  text: '某企業欲建構知識圖譜（Knowledge Graph），以整合內部的研究報告、專利資料與專家知識，並支援語意查詢與關聯推理。若希望模型能具備良好的語意擴展性與高效推理能力，下列哪一種圖模型設計最為合適？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 僅以節點（Node）與邊（Edge）表示，所有資訊存放於節點屬性中
@@ -1459,10 +1465,10 @@ questions:
 - id: 114-2-036
   chapter_title: 進階分析方法
   section_title: 歷屆考題
-  text: |-
-    某研究人員欲使用線性迴歸模型（Linear Regression Model）分析變數 Y 與 X 之間的關係，但發現 Y 的分佈明顯右偏，且其變異數隨 X 的增大而增加。為滿足模型假設並提升配適效果，下列哪一種前處理方法最為合適？
+  text: '某研究人員欲使用線性迴歸模型（Linear Regression Model）分析變數 Y 與 X 之間的關係，但發現 Y 的分佈明顯右偏，且其變異數隨 X 的增大而增加。為滿足模型假設並提升配適效果，下列哪一種前處理方法最為合適？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 對 X 進行標準化（Standardization）
@@ -1479,10 +1485,10 @@ questions:
 - id: 114-2-038
   chapter_title: 進階分析方法
   section_title: 歷屆考題
-  text: |-
-    一家製造廠評估新生產線推出後，產品良率是否較原生產線提升。工程師分別從兩條生產線各抽樣 100 件產品，原生產線良率為 95%，新生產線為 97%。若欲檢定兩條生產線良率的差異是否具有統計意義，下列哪一種方法最為合適？
+  text: '一家製造廠評估新生產線推出後，產品良率是否較原生產線提升。工程師分別從兩條生產線各抽樣 100 件產品，原生產線良率為 95%，新生產線為 97%。若欲檢定兩條生產線良率的差異是否具有統計意義，下列哪一種方法最為合適？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 雙樣本平均數 t 檢定（Two-sample t-test）
@@ -1499,10 +1505,10 @@ questions:
 - id: 114-2-039
   chapter_title: 進階分析方法
   section_title: 歷屆考題
-  text: |-
-    若評估一個新開發的腫瘤分類模型，其資料集中有 80% 的樣本來自良性病例。若直接使用 5-fold 交叉驗證（Cross-Validation）進行模型評估，可能導致模型效能評估出現偏差，為避免此問題，下列哪一種作法最合適？
+  text: '若評估一個新開發的腫瘤分類模型，其資料集中有 80% 的樣本來自良性病例。若直接使用 5-fold 交叉驗證（Cross-Validation）進行模型評估，可能導致模型效能評估出現偏差，為避免此問題，下列哪一種作法最合適？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   type: multiple_choice
   options:
   - 降低 K 值以減少交叉驗證次數
@@ -1519,18 +1525,19 @@ questions:
 - id: 114-2-040
   chapter_title: 進階分析方法
   section_title: 歷屆考題
-  text: |-
-    請參考附圖，下列虛擬程式碼（pseudocode）最可能是在描述何種驗證法？
+  text: '請參考附圖，下列虛擬程式碼（pseudocode）最可能是在描述何種驗證法？
+
 
     ![Q40 pseudocode: leave-one-out validation algorithm](assets/images/q40_loocv_pseudocode.png)
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   content:
   - type: text
-    text: |-
-      請參考附圖，下列虛擬程式碼（pseudocode）最可能是在描述何種驗證法？
+    text: '請參考附圖，下列虛擬程式碼（pseudocode）最可能是在描述何種驗證法？
 
-      (114年第二梯次)
+
+      (114年第二梯次)'
   - type: image
     src: assets/images/q40_loocv_pseudocode.png
     alt: 'Q40 pseudocode: leave-one-out validation algorithm'
@@ -1550,18 +1557,19 @@ questions:
 - id: 114-2-041
   chapter_title: 進階分析方法
   section_title: 歷屆考題
-  text: |-
-    請參考附圖，下列虛擬程式碼（pseudocode）最可能是在描述何種演算法？
+  text: '請參考附圖，下列虛擬程式碼（pseudocode）最可能是在描述何種演算法？
+
 
     ![Q41 pseudocode: clustering algorithm](assets/images/q41_kmeans_pseudocode.png)
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   content:
   - type: text
-    text: |-
-      請參考附圖，下列虛擬程式碼（pseudocode）最可能是在描述何種演算法？
+    text: '請參考附圖，下列虛擬程式碼（pseudocode）最可能是在描述何種演算法？
 
-      (114年第二梯次)
+
+      (114年第二梯次)'
   - type: image
     src: assets/images/q41_kmeans_pseudocode.png
     alt: 'Q41 pseudocode: clustering algorithm'
@@ -1581,18 +1589,19 @@ questions:
 - id: 114-2-042
   chapter_title: 進階分析方法
   section_title: 歷屆考題
-  text: |-
-    考慮某生產線每小時出現瑕疵品的個數符合卜瓦松分佈（Poisson Distribution），已知平均每小時產生 5 個瑕疵品，附圖程式碼展示資料處理，請問下列敘述何者正確？
+  text: '考慮某生產線每小時出現瑕疵品的個數符合卜瓦松分佈（Poisson Distribution），已知平均每小時產生 5 個瑕疵品，附圖程式碼展示資料處理，請問下列敘述何者正確？
+
 
     ![Q42 Python code using poisson.pmf](assets/images/q42_poisson_code.png)
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   content:
   - type: text
-    text: |-
-      考慮某生產線每小時出現瑕疵品的個數符合卜瓦松分佈（Poisson Distribution），已知平均每小時產生 5 個瑕疵品，附圖程式碼展示資料處理，請問下列敘述何者正確？
+    text: '考慮某生產線每小時出現瑕疵品的個數符合卜瓦松分佈（Poisson Distribution），已知平均每小時產生 5 個瑕疵品，附圖程式碼展示資料處理，請問下列敘述何者正確？
 
-      (114年第二梯次)
+
+      (114年第二梯次)'
   - type: image
     src: assets/images/q42_poisson_code.png
     alt: Q42 Python code using poisson.pmf
@@ -1612,20 +1621,25 @@ questions:
 - id: 114-2-048
   chapter_title: 進階分析方法
   section_title: 歷屆考題
-  text: |-
-    使用銷售資料集（`marketing.csv`）進行迴歸分析，附圖程式碼展示資料載入與處理。
+  text: '使用銷售資料集（`marketing.csv`）進行迴歸分析，附圖程式碼展示資料載入與處理。
+
 
     ![Marketing CSV loading code](assets/images/q48_50_marketing_load.png)
 
+
     下圖顯示資料集的前 5 筆資料與相關資訊。
+
 
     ![Marketing dataset head and describe output](assets/images/q48_head_describe.png)
 
+
     第 48 題
+
 
     根據上述結果，下列何者正確？
 
-    (114年第二梯次)
+
+    (114年第二梯次)'
   content:
   - type: text
     text: 使用銷售資料集（`marketing.csv`）進行迴歸分析，附圖程式碼展示資料載入與處理。
@@ -1640,10 +1654,10 @@ questions:
   - type: text
     text: 第 48 題
   - type: text
-    text: |-
-      根據上述結果，下列何者正確？
+    text: '根據上述結果，下列何者正確？
 
-      (114年第二梯次)
+
+      (114年第二梯次)'
   type: multiple_choice
   options:
   - 資料集個數為 199 筆，變數個數為 4 個
@@ -1694,3 +1708,503 @@ questions:
   - past-exam
   - chap-m3-ch3
   usage: mock
+- id: m3-code-021
+  chapter_title: 統計分析與進階分析
+  section_title: 程式閱讀理解
+  text: 閱讀下列時間序列程式，`rolling(7).mean()` 代表什麼？
+  content:
+  - type: text
+    text: 閱讀下列時間序列程式，`rolling(7).mean()` 代表什麼？
+  - type: code
+    language: python
+    code: df["sales_ma7"] = df["sales"].rolling(7).mean()
+  type: multiple_choice
+  options:
+  - 7 期移動平均
+  - 7 個欄位的平均
+  - 第 7 筆資料的銷售額
+  - 每 7 年重訓一次模型
+  correct_index: 0
+  explanation: rolling(7).mean() 會對目前列與前面窗口共 7 期計算移動平均，常用於平滑時間序列。
+  tags:
+  - chap-m3-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-022
+  chapter_title: 統計分析與進階分析
+  section_title: 程式閱讀理解
+  text: 閱讀下列 ADF 檢定輸出，最合理的判斷是什麼？
+  content:
+  - type: text
+    text: 閱讀下列 ADF 檢定輸出，最合理的判斷是什麼？
+  - type: code
+    language: text
+    code: 'ADF statistic: -1.42
+
+      p-value: 0.57
+
+      critical value (5%): -2.86'
+  type: multiple_choice
+  options:
+  - p-value 較高，無法拒絕單根假設，序列可能非平穩
+  - p-value 較高，代表序列一定平穩
+  - ADF statistic 大於 0，代表資料無缺值
+  - critical value 可直接當預測值
+  correct_index: 0
+  explanation: ADF 的虛無假設通常是存在單根。p-value=0.57 高於 0.05，無法拒絕虛無假設，序列可能非平穩。
+  tags:
+  - chap-m3-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-023
+  chapter_title: 統計分析與進階分析
+  section_title: 程式閱讀理解
+  text: 閱讀下列 NetworkX 程式，輸出最高的節點代表什麼？
+  content:
+  - type: text
+    text: 閱讀下列 NetworkX 程式，輸出最高的節點代表什麼？
+  - type: code
+    language: python
+    code: 'centrality = nx.degree_centrality(G)
+
+      top_node = max(centrality, key=centrality.get)
+
+      print(top_node, centrality[top_node])'
+  type: multiple_choice
+  options:
+  - 連接數相對最多的節點
+  - 邊權重總和最低的節點
+  - 圖中唯一的孤立節點
+  - 最晚加入圖的節點
+  correct_index: 0
+  explanation: degree centrality 衡量節點連接程度，最高者代表相對連接數最多。
+  tags:
+  - chap-m3-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-024
+  chapter_title: 統計分析與進階分析
+  section_title: 程式閱讀理解
+  text: 閱讀下列 t 檢定結果，哪一項解讀正確？
+  content:
+  - type: text
+    text: 閱讀下列 t 檢定結果，哪一項解讀正確？
+  - type: code
+    language: python
+    code: 'from scipy.stats import ttest_ind
+
+
+      stat, p = ttest_ind(group_a, group_b, equal_var=False)
+
+      print(p)
+
+      # 0.018'
+  type: multiple_choice
+  options:
+  - 在顯著水準 0.05 下，可拒絕兩組平均數相等的虛無假設
+  - p=0.018 代表兩組資料完全相同
+  - 此檢定只能用於類別資料
+  - equal_var=False 代表使用配對樣本 t 檢定
+  correct_index: 0
+  explanation: p 值 0.018 小於 0.05，Welch t 檢定下可拒絕兩組平均數相等的虛無假設。
+  tags:
+  - chap-m3-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-025
+  chapter_title: 統計分析與進階分析
+  section_title: 程式閱讀理解
+  text: 閱讀下列卡方檢定程式，這段程式最適合回答哪個問題？
+  content:
+  - type: text
+    text: 閱讀下列卡方檢定程式，這段程式最適合回答哪個問題？
+  - type: code
+    language: python
+    code: 'table = pd.crosstab(df["gender"], df["purchased"])
+
+      chi2, p, dof, expected = chi2_contingency(table)'
+  type: multiple_choice
+  options:
+  - 性別與是否購買是否獨立
+  - 購買金額的平均值是否為 0
+  - 兩個連續變數是否線性相關
+  - 模型是否過擬合
+  correct_index: 0
+  explanation: 卡方獨立性檢定適合檢查兩個類別變數是否存在關聯，例如 gender 與 purchased。
+  tags:
+  - chap-m3-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-026
+  chapter_title: 統計分析與進階分析
+  section_title: 程式閱讀理解
+  text: 閱讀下列相關係數程式，哪一項最正確？
+  content:
+  - type: text
+    text: 閱讀下列相關係數程式，哪一項最正確？
+  - type: code
+    language: python
+    code: 'r = df["ad_spend"].corr(df["sales"], method="pearson")
+
+      print(round(r, 2))
+
+      # 0.86'
+  type: multiple_choice
+  options:
+  - ad_spend 與 sales 有強正線性相關
+  - ad_spend 造成 sales 增加已被證明
+  - 兩欄完全無關
+  - Pearson 只能用於文字欄位
+  correct_index: 0
+  explanation: Pearson r=0.86 表示兩個連續變數具有強正線性相關，但相關不等於因果。
+  tags:
+  - chap-m3-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-027
+  chapter_title: 統計分析與進階分析
+  section_title: 程式閱讀理解
+  text: 閱讀下列比例檢定輸出，最合理解讀是什麼？
+  content:
+  - type: text
+    text: 閱讀下列比例檢定輸出，最合理解讀是什麼？
+  - type: code
+    language: python
+    code: 'count = np.array([120, 150])
+
+      nobs = np.array([1000, 1000])
+
+      stat, p = proportions_ztest(count, nobs)
+
+      print(p)
+
+      # 0.041'
+  type: multiple_choice
+  options:
+  - 兩組比例在 0.05 顯著水準下有顯著差異
+  - 兩組平均數完全相等
+  - 樣本數不足以計算比例
+  - p 值代表第二組比例為 4.1%
+  correct_index: 0
+  explanation: p=0.041 小於 0.05，可拒絕兩組比例相等的虛無假設。
+  tags:
+  - chap-m3-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-028
+  chapter_title: 統計分析與進階分析
+  section_title: 程式閱讀理解
+  text: 閱讀下列近似分位數程式，relativeError=0.01 的意義是什麼？
+  content:
+  - type: text
+    text: 閱讀下列近似分位數程式，relativeError=0.01 的意義是什麼？
+  - type: code
+    language: python
+    code: q = df.approxQuantile("amount", [0.5, 0.9, 0.99], 0.01)
+  type: multiple_choice
+  options:
+  - 允許約 1% 的相對排序誤差以加速大規模分位數估算
+  - 只回傳前 1% 的資料
+  - 將 amount 四捨五入到小數點後兩位
+  - 要求結果完全精確
+  correct_index: 0
+  explanation: approxQuantile 在大資料上用可容忍誤差換取速度，relativeError=0.01 表示允許近似誤差。
+  tags:
+  - chap-m3-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-029
+  chapter_title: 統計分析與進階分析
+  section_title: 程式閱讀理解
+  text: 閱讀下列 Box-Cox 程式，最可能的目的為何？
+  content:
+  - type: text
+    text: 閱讀下列 Box-Cox 程式，最可能的目的為何？
+  - type: code
+    language: python
+    code: 'from scipy.stats import boxcox
+
+
+      y_transformed, fitted_lambda = boxcox(df["claim_amount"] + 1)'
+  type: multiple_choice
+  options:
+  - 降低右偏資料的偏態，使模型假設更接近常態或等變異
+  - 將類別欄位轉為 one-hot
+  - 計算兩組比例差異
+  - 建立圖資料庫節點
+  correct_index: 0
+  explanation: Box-Cox 常用於正值連續變數的變換，可降低偏態並改善線性模型假設。
+  tags:
+  - chap-m3-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-030
+  chapter_title: 統計分析與進階分析
+  section_title: 程式閱讀理解
+  text: 閱讀下列 Prophet 欄位命名，哪一項正確？
+  content:
+  - type: text
+    text: 閱讀下列 Prophet 欄位命名，哪一項正確？
+  - type: code
+    language: python
+    code: 'model_df = raw.rename(columns={"date": "ds", "revenue": "y"})
+
+      model.fit(model_df[["ds", "y"]])'
+  type: multiple_choice
+  options:
+  - Prophet 預期時間欄位為 ds、目標欄位為 y
+  - Prophet 只能使用欄位名 date 與 revenue
+  - ds 代表資料來源，y 代表年份
+  - rename 會刪除原始資料列
+  correct_index: 0
+  explanation: Prophet 的基本輸入格式要求日期欄位命名為 ds，目標值欄位命名為 y。
+  tags:
+  - chap-m3-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-071
+  chapter_title: 統計分析與進階分析
+  section_title: 程式閱讀理解
+  text: 閱讀下列 ARIMA 差分程式，主要目的為何？
+  content:
+  - type: text
+    text: 閱讀下列 ARIMA 差分程式，主要目的為何？
+  - type: code
+    language: python
+    code: df["sales_diff"] = df["sales"].diff()
+  type: multiple_choice
+  options:
+  - 降低趨勢造成的非平穩性
+  - 將銷售額轉為類別
+  - 計算交叉驗證折數
+  - 建立圖中心性
+  correct_index: 0
+  explanation: 一次差分常用於移除趨勢，使時間序列更接近平穩，利於 ARIMA 建模。
+  tags:
+  - chap-m3-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-072
+  chapter_title: 統計分析與進階分析
+  section_title: 程式閱讀理解
+  text: 閱讀下列 ACF 判讀，哪一項最合理？
+  content:
+  - type: text
+    text: 閱讀下列 ACF 判讀，哪一項最合理？
+  - type: code
+    language: text
+    code: '# ACF 在 lag=7,14,21 明顯尖峰
+
+      # 其他 lag 快速衰減'
+  type: multiple_choice
+  options:
+  - 序列可能有 7 期季節性
+  - 序列完全隨機且無季節性
+  - 資料一定不能建模
+  - lag=7 代表缺值比例為 7%
+  correct_index: 0
+  explanation: ACF 在 7 的倍數有尖峰，常表示週期長度約為 7 的季節性。
+  tags:
+  - chap-m3-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-073
+  chapter_title: 統計分析與進階分析
+  section_title: 程式閱讀理解
+  text: 閱讀下列 Spearman 相關程式，何時比 Pearson 更合適？
+  content:
+  - type: text
+    text: 閱讀下列 Spearman 相關程式，何時比 Pearson 更合適？
+  - type: code
+    language: python
+    code: rho, p = spearmanr(df["rank_score"], df["satisfaction"])
+  type: multiple_choice
+  options:
+  - 關係單調但不一定線性，或資料以排名尺度呈現
+  - 兩欄都是二元類別且要做卡方檢定
+  - 需要估計平均數差異
+  - 只處理影像資料
+  correct_index: 0
+  explanation: Spearman 使用排名相關，適合單調非線性或 ordinal/rank 資料。
+  tags:
+  - chap-m3-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-074
+  chapter_title: 統計分析與進階分析
+  section_title: 程式閱讀理解
+  text: 閱讀下列 Mann-Whitney U 檢定，主要比較什麼？
+  content:
+  - type: text
+    text: 閱讀下列 Mann-Whitney U 檢定，主要比較什麼？
+  - type: code
+    language: python
+    code: stat, p = mannwhitneyu(group_a, group_b, alternative="two-sided")
+  type: multiple_choice
+  options:
+  - 兩個獨立樣本分佈位置是否有差異
+  - 兩個類別變數是否獨立
+  - 三組平均數是否相等
+  - 單一比例是否等於 0.5
+  correct_index: 0
+  explanation: Mann-Whitney U 是兩獨立樣本的非參數檢定，常用於不假設常態時比較分佈位置。
+  tags:
+  - chap-m3-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-075
+  chapter_title: 統計分析與進階分析
+  section_title: 程式閱讀理解
+  text: 閱讀下列 Kruskal-Wallis 檢定，最適合哪個情境？
+  content:
+  - type: text
+    text: 閱讀下列 Kruskal-Wallis 檢定，最適合哪個情境？
+  - type: code
+    language: python
+    code: stat, p = kruskal(plan_a, plan_b, plan_c)
+  type: multiple_choice
+  options:
+  - 三組以上獨立樣本且不想假設常態分佈
+  - 一個樣本平均數與常數比較
+  - 兩個類別變數做列聯表
+  - 時間序列做差分
+  correct_index: 0
+  explanation: Kruskal-Wallis 是多組獨立樣本的非參數檢定，可視為 ANOVA 的非參數替代。
+  tags:
+  - chap-m3-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-076
+  chapter_title: 統計分析與進階分析
+  section_title: 程式閱讀理解
+  text: 閱讀下列 bootstrap 程式，輸出區間代表什麼？
+  content:
+  - type: text
+    text: 閱讀下列 bootstrap 程式，輸出區間代表什麼？
+  - type: code
+    language: python
+    code: "means = []\nfor _ in range(2000):\n    sample = df[\"amount\"].sample(frac=1, replace=True)\n    means.append(sample.mean())\nci = np.percentile(means, [2.5, 97.5])"
+  type: multiple_choice
+  options:
+  - 以重抽樣估計平均數的 95% 信賴區間
+  - 計算資料缺值比例
+  - 執行 K-means 分群
+  - 訓練深度神經網路
+  correct_index: 0
+  explanation: Bootstrap 透過有放回抽樣建立統計量分佈，再取百分位估計信賴區間。
+  tags:
+  - chap-m3-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-077
+  chapter_title: 統計分析與進階分析
+  section_title: 程式閱讀理解
+  text: 閱讀下列 Prophet 加入節日效果，主要目的為何？
+  content:
+  - type: text
+    text: 閱讀下列 Prophet 加入節日效果，主要目的為何？
+  - type: code
+    language: python
+    code: 'model = Prophet(holidays=holiday_df)
+
+      model.fit(train_df)'
+  type: multiple_choice
+  options:
+  - 讓模型捕捉節假日對時間序列目標的額外影響
+  - 刪除所有週期性
+  - 將日期欄位改成類別標籤
+  - 強制預測值為整數
+  correct_index: 0
+  explanation: Prophet 的 holidays 讓模型估計特定日期或期間對目標值的影響，改善節日尖峰或低谷預測。
+  tags:
+  - chap-m3-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-078
+  chapter_title: 統計分析與進階分析
+  section_title: 程式閱讀理解
+  text: 閱讀下列圖分析程式，`nx.connected_components(G)` 對無向圖回傳什麼？
+  content:
+  - type: text
+    text: 閱讀下列圖分析程式，`nx.connected_components(G)` 對無向圖回傳什麼？
+  - type: code
+    language: python
+    code: 'components = list(nx.connected_components(G))
+
+      sizes = [len(c) for c in components]'
+  type: multiple_choice
+  options:
+  - 彼此連通的節點集合
+  - 每條邊的權重
+  - 所有節點的 PageRank 值
+  - 圖中所有三角形面積
+  correct_index: 0
+  explanation: connected_components 會找出無向圖中互相可達的節點集合。
+  tags:
+  - chap-m3-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-079
+  chapter_title: 統計分析與進階分析
+  section_title: 程式閱讀理解
+  text: 閱讀下列 Moran-like 空間檢查偽程式，主要目的為何？
+  content:
+  - type: text
+    text: 閱讀下列 Moran-like 空間檢查偽程式，主要目的為何？
+  - type: code
+    language: text
+    code: "for region in regions:\n    neighbor_mean = mean(value[n] for n in neighbors(region))\n    compare(value[region], neighbor_mean)"
+  type: multiple_choice
+  options:
+  - 檢查地理鄰近區域的數值是否呈現空間自相關
+  - 計算文字情感分數
+  - 訓練 CNN 卷積核
+  - 建立資料庫 ACID 交易
+  correct_index: 0
+  explanation: 把區域值與鄰近區域平均相比，是檢查空間聚集或空間自相關的基本概念。
+  tags:
+  - chap-m3-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m3-code-080
+  chapter_title: 統計分析與進階分析
+  section_title: 程式閱讀理解
+  text: 閱讀下列多重檢定修正程式，主要目的為何？
+  content:
+  - type: text
+    text: 閱讀下列多重檢定修正程式，主要目的為何？
+  - type: code
+    language: python
+    code: reject, p_adj, _, _ = multipletests(p_values, alpha=0.05, method="fdr_bh")
+  type: multiple_choice
+  options:
+  - 控制大量假設檢定下的假發現率
+  - 把所有 p 值改成 0
+  - 計算模型推論延遲
+  - 執行資料標準化
+  correct_index: 0
+  explanation: Benjamini-Hochberg FDR 修正常用於多重檢定，降低大量比較造成的假陽性風險。
+  tags:
+  - chap-m3-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz

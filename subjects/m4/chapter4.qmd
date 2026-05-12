@@ -94,3 +94,7 @@ env.close()
 ## 歷屆考題 {#sec-past-exam}
 
 請做測驗看歷屆考題。
+
+## 程式閱讀理解 {#sec-code-reading}
+
+請閱讀強化學習環境、更新公式或訓練流程，判斷其狀態、行動與獎勵設計。應能辨認 agent、environment、state、action、reward、policy 與 value function 在程式中的對應位置。看到 Q-learning、epsilon-greedy、experience replay 或 episode loop 時，要能說明探索與利用如何平衡，以及 reward 設計是否可能造成短視、作弊或與真實目標不一致。

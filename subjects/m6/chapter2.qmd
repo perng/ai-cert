@@ -6,6 +6,26 @@ label: chap-m6-ch2
 
 NumPy 與 Pandas 是 Python 資料科學的核心。NumPy 負責高效率數值陣列運算，Pandas 負責表格資料處理。大多數機器學習專案都會先經過這兩個工具，才進入 scikit-learn 或深度學習框架。
 
+兩者的差異可以用一句話理解：Pandas 關心「資料欄位的語意」，NumPy 關心「數值陣列的運算」。當資料還有欄位名稱、缺失值、類別、日期與多來源合併問題時，通常先用 Pandas；當資料已經整理成模型需要的純數值矩陣時，通常用 NumPy 或 tensor。
+
+例如電商點擊率預測資料可能先長得像表格：`age`、`city`、`last_login_at`、`clicked`。Pandas 適合清理這些欄位；模型訓練前再把特徵欄位轉成 NumPy array。
+
+```{python}
+import pandas as pd
+
+raw_users = pd.DataFrame({
+    "age": [22, 35, None],
+    "city": ["Taipei", "Tainan", "Taipei"],
+    "clicked": [0, 1, 1]
+})
+
+# Pandas 保留欄位名稱，適合做清理與類別轉換
+raw_users["age"] = raw_users["age"].fillna(raw_users["age"].median())
+features = pd.get_dummies(raw_users[["age", "city"]])
+
+print(features)
+```
+
 ## NumPy 陣列與向量化 {#sec-numpy-array-vectorization}
 
 NumPy 的核心物件是 `ndarray`。它和 Python list 最大差異在於：NumPy 陣列通常儲存同一種資料型別，並且底層用連續記憶體與 C 實作加速數值運算。
@@ -29,6 +49,20 @@ scores = np.array([72, 85, 91, 64])
 passed = scores >= 70
 print(passed)
 print(scores[passed])
+```
+
+向量化也常用於模型評估。例如二分類模型輸出機率後，可以一次計算預測類別與正確率：
+
+```{python}
+y_true = np.array([1, 0, 1, 1])
+y_prob = np.array([0.88, 0.22, 0.61, 0.45])
+
+# 一次把機率轉成 0/1 類別
+y_pred = (y_prob >= 0.5).astype(int)
+accuracy = (y_pred == y_true).mean()
+
+print(y_pred)
+print(accuracy)
 ```
 
 ## Shape、Broadcasting 與矩陣運算 {#sec-numpy-shape-broadcast}
@@ -89,6 +123,22 @@ high_income = df[df["income"] > 50000]
 # 新增以千元為單位的收入欄位
 df["income_k"] = df["income"] / 1000
 print(high_income)
+```
+
+DataFrame 的優勢在於能保留資料脈絡。以下範例把原始營運欄位轉成一個可建模特徵：
+
+```{python}
+events = pd.DataFrame({
+    "user_id": [1, 2, 3],
+    "last_login_days": [2, 45, 12],
+    "orders_30d": [3, 0, 1]
+})
+
+# 用業務規則建立簡單流失風險特徵
+events["inactive_user"] = events["last_login_days"] > 30
+events["active_buyer"] = events["orders_30d"] > 0
+
+print(events)
 ```
 
 ## 缺失值、類別資料與特徵整理 {#sec-pandas-cleaning-features}
@@ -206,6 +256,23 @@ audit = pd.DataFrame({
 })
 
 print(audit)
+```
+
+資料品質檢查也很適合視覺化。下圖用長條圖快速呈現各欄位缺失率，讓高風險欄位更容易被發現：
+
+```{python}
+#| fig-cap: "欄位缺失率檢查範例"
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(figsize=(6, 3.5))
+ax.bar(audit["feature"], audit["missing_rate"], color=["#2563eb", "#dc2626", "#16a34a"])
+ax.axhline(0.1, color="#f59e0b", linestyle="--", linewidth=1, label="10% threshold")
+ax.set_title("Missing rate by feature")
+ax.set_xlabel("Feature")
+ax.set_ylabel("Missing rate")
+ax.set_ylim(0, 0.2)
+ax.legend()
+plt.show()
 ```
 
 這類檢查應成為固定流程，而不是模型效果不好後才補做。

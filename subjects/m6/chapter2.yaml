@@ -1,0 +1,1261 @@
+questions:
+- id: 8011
+  chapter_title: NumPy 與 Pandas
+  section_title: NumPy 陣列與向量化
+  text: NumPy 陣列相較於 Python list，在數值運算上通常較有效率的主要原因是什麼？
+  type: multiple_choice
+  options:
+  - NumPy 陣列通常儲存同質資料並使用底層最佳化運算
+  - NumPy 陣列只能儲存字串
+  - NumPy 陣列完全不需要記憶體
+  - NumPy 會自動替所有模型調整超參數
+  correct_index: 0
+  explanation: NumPy ndarray 通常以同質型別與連續記憶體表示資料，並透過底層最佳化提升數值運算效率。
+  tags:
+  - chap-m6-ch2
+  - sec-numpy-array-vectorization
+  usage: both
+- id: 8012
+  chapter_title: NumPy 與 Pandas
+  section_title: NumPy 陣列與向量化
+  text: 向量化 (Vectorization) 的核心精神是什麼？
+  type: multiple_choice
+  options:
+  - 儘量使用 Python 層逐筆 for 迴圈完成數值計算
+  - 把所有資料都轉成文字
+  - 只使用 GPU 而不使用 CPU
+  - 用陣列層級的批次運算取代逐筆迴圈
+  correct_index: 3
+  explanation: 向量化透過陣列運算一次處理多筆資料，通常比 Python 逐筆迴圈更快。
+  tags:
+  - chap-m6-ch2
+  - sec-numpy-array-vectorization
+  usage: both
+- id: 8013
+  chapter_title: NumPy 與 Pandas
+  section_title: Shape、Broadcasting 與矩陣運算
+  text: 在 NumPy 與深度學習中，理解 shape 最主要是為了避免什麼問題？
+  type: multiple_choice
+  options:
+  - 避免 Python 程式使用函式
+  - 避免資料集需要標籤
+  - 避免模型產生任何 loss
+  - 避免矩陣或張量維度不相容造成運算錯誤
+  correct_index: 3
+  explanation: 大量資料與模型運算都依賴維度對齊，shape 不相容會造成矩陣乘法或 broadcasting 錯誤。
+  tags:
+  - chap-m6-ch2
+  - sec-numpy-shape-broadcast
+  usage: both
+- id: 8014
+  chapter_title: NumPy 與 Pandas
+  section_title: Pandas DataFrame 基礎
+  text: Pandas DataFrame 最適合用來表示哪一類資料？
+  type: multiple_choice
+  options:
+  - 作業系統核心排程
+  - 單一 GPU kernel
+  - 未經 tokenize 的模型權重
+  - 有列與欄位的表格資料
+  correct_index: 3
+  explanation: DataFrame 是有索引與欄位名稱的表格資料結構，常用於 CSV、Excel 與資料庫查詢結果。
+  tags:
+  - chap-m6-ch2
+  - sec-pandas-dataframe
+  usage: both
+- id: 8015
+  chapter_title: NumPy 與 Pandas
+  section_title: 缺失值、類別資料與特徵整理
+  text: one-hot encoding 的主要用途是什麼？
+  type: multiple_choice
+  options:
+  - 將所有數值欄位刪除
+  - 自動完成模型部署
+  - 把類別欄位轉成模型可處理的數值欄位
+  - 將影像從 BGR 轉成 RGB
+  correct_index: 2
+  explanation: one-hot encoding 會為不同類別建立指示欄位，讓機器學習模型能處理類別資料。
+  tags:
+  - chap-m6-ch2
+  - sec-pandas-cleaning-features
+  usage: both
+- id: 8016
+  chapter_title: NumPy 與 Pandas
+  section_title: GroupBy、合併與時間序列
+  text: Pandas 的 groupby 常用於哪一種工作？
+  type: multiple_choice
+  options:
+  - 訓練卷積神經網路
+  - 依照某個欄位分組後計算統計量
+  - 將 Python 程式碼編譯成 Java
+  - 自動產生 tokenizer
+  correct_index: 1
+  explanation: groupby 適合做分群統計，例如依店家、月份或類別計算平均、總和與筆數。
+  tags:
+  - chap-m6-ch2
+  - sec-pandas-groupby-merge-time
+  usage: both
+- id: 8017
+  chapter_title: NumPy 與 Pandas
+  section_title: 從 Pandas 到模型輸入
+  text: 在監督式學習中，通常用 X 與 y 分別代表什麼？
+  type: multiple_choice
+  options:
+  - X 是資料夾名稱，y 是檔案副檔名
+  - X 是模型權重，y 是 optimizer
+  - X 是 GPU，y 是 CPU
+  - X 是特徵矩陣，y 是目標標籤或目標值
+  correct_index: 3
+  explanation: X 表示模型輸入特徵，y 表示希望模型預測的標籤或連續目標。
+  tags:
+  - chap-m6-ch2
+  - sec-pandas-to-model
+  usage: both
+- id: 8018
+  chapter_title: NumPy 與 Pandas
+  section_title: 缺失值、類別資料與特徵整理
+  text: 處理缺失值時，下列哪一項做法較合理？
+  type: multiple_choice
+  options:
+  - 將所有缺失值固定改成文字 "GPU"
+  - 把整個資料集隨機打亂後忽略欄位名稱
+  - 根據欄位語意使用填補、刪除或建立 Unknown 類別等策略
+  - 不檢查缺失值，直接假設模型會自動理解
+  correct_index: 2
+  explanation: 缺失值處理應依據資料語意與模型需求選擇策略，不能盲目套用同一規則。
+  tags:
+  - chap-m6-ch2
+  - sec-pandas-cleaning-features
+  usage: both
+- id: 8081
+  chapter_title: NumPy 與 Pandas
+  section_title: Shape、Broadcasting 與矩陣運算
+  text: NumPy broadcasting 的主要用途是什麼？
+  type: multiple_choice
+  options:
+  - 將資料自動上傳到雲端
+  - 將所有陣列轉成 Python dict
+  - 自動建立神經網路架構
+  - 在規則允許下自動對齊不同 shape 的陣列進行運算
+  correct_index: 3
+  explanation: broadcasting 讓較小陣列能依規則擴展到較大陣列的 shape，常用於中心化、標準化等操作。
+  tags:
+  - chap-m6-ch2
+  - sec-numpy-shape-broadcast
+  usage: both
+- id: 8082
+  chapter_title: NumPy 與 Pandas
+  section_title: Pandas DataFrame 基礎
+  text: 使用 df.head() 的主要目的通常是什麼？
+  type: multiple_choice
+  options:
+  - 快速查看資料前幾列與欄位格式
+  - 將資料全部刪除
+  - 將 CSV 轉成影像
+  - 訓練 Transformer 模型
+  correct_index: 0
+  explanation: head() 可快速檢查資料內容、欄位名稱與大致格式，是讀取資料後常見的第一步檢查。
+  tags:
+  - chap-m6-ch2
+  - sec-pandas-dataframe
+  usage: both
+- id: 8083
+  chapter_title: NumPy 與 Pandas
+  section_title: GroupBy、合併與時間序列
+  text: Pandas merge 通常用於哪一種情境？
+  type: multiple_choice
+  options:
+  - 將模型參數歸零
+  - 根據共同 key 合併多張表格
+  - 自動計算梯度
+  - 將影像通道順序改成 BGR
+  correct_index: 1
+  explanation: merge 會根據共同欄位或索引把不同表格串接起來，例如訂單表與使用者表。
+  tags:
+  - chap-m6-ch2
+  - sec-pandas-groupby-merge-time
+  usage: both
+- id: 8084
+  chapter_title: NumPy 與 Pandas
+  section_title: NumPy 與 Pandas 的分工
+  text: 下列哪一種情境通常較適合先使用 Pandas 而不是直接使用 NumPy？
+  type: multiple_choice
+  options:
+  - 建立 CNN 卷積層
+  - 計算 GPU 反向傳播
+  - 讀取 CSV 並依欄位名稱清理表格資料
+  - 執行純矩陣乘法
+  correct_index: 2
+  explanation: Pandas 保留欄位名稱與表格語意，適合資料讀取、清理、合併與特徵整理。
+  tags:
+  - chap-m6-ch2
+  - sec-numpy-pandas-division
+  usage: both
+- id: 8085
+  chapter_title: NumPy 與 Pandas
+  section_title: 資料品質檢查清單
+  text: 建模前檢查目標欄位分布的原因是什麼？
+  type: multiple_choice
+  options:
+  - 確認分類是否不平衡或迴歸目標是否有極端值
+  - 讓模型跳過訓練階段
+  - 將所有欄位改成字串
+  - 避免 DataFrame 顯示欄位名稱
+  correct_index: 0
+  explanation: 目標分布會影響評估指標、切分策略與模型選擇，例如分類不平衡時不能只看 accuracy。
+  tags:
+  - chap-m6-ch2
+  - sec-pandas-quality-checklist
+  usage: both
+- id: 8086
+  chapter_title: NumPy 與 Pandas
+  section_title: 效能與記憶體觀念
+  text: 在大量資料上，Pandas 向量化操作通常比逐列 apply 更好的原因是什麼？
+  type: multiple_choice
+  options:
+  - 向量化只能用於文字資料
+  - 向量化會自動刪除缺失值
+  - 向量化操作通常由底層最佳化實作，速度較快且更簡潔
+  - apply 永遠不能處理數值資料
+  correct_index: 2
+  explanation: 向量化操作減少 Python 層逐筆迴圈，通常能提升效能並讓程式更清楚。
+  tags:
+  - chap-m6-ch2
+  - sec-pandas-performance
+  usage: both
+- id: 8087
+  chapter_title: NumPy 與 Pandas
+  section_title: 特徵工程範例：從原始欄位到模型欄位
+  text: 為什麼目標欄位 purchased 不應放入模型輸入特徵 X？
+  type: multiple_choice
+  options:
+  - 因為 Pandas 不支援布林欄位
+  - 因為它是模型要預測的答案，放入 X 會造成資料洩漏
+  - 因為 scikit-learn 只能讀取日期
+  - 因為 NumPy 不能處理 0 和 1
+  correct_index: 1
+  explanation: 目標欄位是 y，若也放進 X，模型等於直接看到答案，離線評估會失真。
+  tags:
+  - chap-m6-ch2
+  - sec-pandas-feature-example
+  usage: both
+- id: 8088
+  chapter_title: NumPy 與 Pandas
+  section_title: 資料品質檢查清單
+  text: 對時間序列問題誤用隨機切分，最可能造成什麼問題？
+  type: multiple_choice
+  options:
+  - DataFrame 會自動轉成 list
+  - 模型會無法使用任何數值欄位
+  - 所有類別欄位都會消失
+  - 未來資料資訊可能進入訓練流程，導致評估過度樂觀
+  correct_index: 3
+  explanation: 時間序列任務應模擬真實部署，用過去預測未來；隨機切分可能讓未來資訊滲入訓練。
+  tags:
+  - chap-m6-ch2
+  - sec-pandas-quality-checklist
+  usage: both
+- id: m6-ch2-code-001
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: 閱讀 NumPy 程式碼，輸出結果是什麼？
+  content:
+  - type: text
+    text: 閱讀 NumPy 程式碼，輸出結果是什麼？
+  - type: code
+    language: python
+    code: 'import numpy as np
+
+      x = np.array([1, 2, 3])
+
+      y = np.array([10, 20, 30])
+
+      print(x + y)'
+  type: multiple_choice
+  options:
+  - - 9 18 27
+  - - 1 2 3 10 20 30
+  - - 10 40 90
+  - - 11 22 33
+  correct_index: 3
+  explanation: NumPy 陣列相加會逐元素相加，得到 [11 22 33]。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-002
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: 閱讀程式碼，scores[passed] 的結果是什麼？
+  content:
+  - type: text
+    text: 閱讀程式碼，scores[passed] 的結果是什麼？
+  - type: code
+    language: python
+    code: 'scores = np.array([72, 85, 91, 64])
+
+      passed = scores >= 70
+
+      print(scores[passed])'
+  type: multiple_choice
+  options:
+  - - 64
+  - - 70
+  - - True  True  True False
+  - - 72 85 91
+  correct_index: 3
+  explanation: 布林遮罩 passed 會選出大於等於 70 的分數。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-003
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: 閱讀程式碼，X.shape 是什麼？
+  content:
+  - type: text
+    text: 閱讀程式碼，X.shape 是什麼？
+  - type: code
+    language: python
+    code: 'X = np.array([[1, 2, 3], [4, 5, 6]])
+
+      print(X.shape)'
+  type: multiple_choice
+  options:
+  - (6,)
+  - (3, 2)
+  - (2,)
+  - (2, 3)
+  correct_index: 3
+  explanation: X 有 2 列、3 欄，因此 shape 是 (2, 3)。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-004
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: 閱讀 broadcasting 程式，centered 第一列是多少？
+  content:
+  - type: text
+    text: 閱讀 broadcasting 程式，centered 第一列是多少？
+  - type: code
+    language: python
+    code: 'X = np.array([[1, 2, 3], [4, 5, 6]])
+
+      mean = X.mean(axis=0)
+
+      centered = X - mean
+
+      print(centered[0])'
+  type: multiple_choice
+  options:
+  - - -1.5 -1.5 -1.5
+  - - 3 3 3
+  - - 1 2 3
+  - - 2.5 3.5 4.5
+  correct_index: 0
+  explanation: 每欄平均是 [2.5, 3.5, 4.5]，第一列相減得到 [-1.5, -1.5, -1.5]。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-005
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: 閱讀矩陣乘法，prediction 的結果是什麼？
+  content:
+  - type: text
+    text: 閱讀矩陣乘法，prediction 的結果是什麼？
+  - type: code
+    language: python
+    code: 'X = np.array([[1, 2, 3], [4, 5, 6]])
+
+      w = np.array([0.2, 0.5, 0.3])
+
+      prediction = X @ w
+
+      print(prediction)'
+  type: multiple_choice
+  options:
+  - - 2.1 5.1
+  - - 6 15
+  - - 1. 1.
+  - - 0.2 1.0 0.9
+  correct_index: 0
+  explanation: 第一列加權和為 0.2+1.0+0.9=2.1，第二列為 0.8+2.5+1.8=5.1。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-006
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: 閱讀 Pandas 程式碼，df["income"].mean() 是多少？
+  content:
+  - type: text
+    text: 閱讀 Pandas 程式碼，df["income"].mean() 是多少？
+  - type: code
+    language: python
+    code: "df = pd.DataFrame({\n    \"income\": [32000, 58000, 76000]\n})\nprint(df[\"income\"].mean())"
+  type: multiple_choice
+  options:
+  - 55333.333333333336
+  - 58000
+  - 32000
+  - 166000
+  correct_index: 0
+  explanation: 三個收入平均為 166000 / 3 = 55333.333333333336。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-007
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: 閱讀程式碼，high_income 有幾列？
+  content:
+  - type: text
+    text: 閱讀程式碼，high_income 有幾列？
+  - type: code
+    language: python
+    code: 'df = pd.DataFrame({"income": [32000, 58000, 76000]})
+
+      high_income = df[df["income"] > 50000]
+
+      print(len(high_income))'
+  type: multiple_choice
+  options:
+  - 1
+  - 3
+  - 2
+  - 0
+  correct_index: 2
+  explanation: 58000 與 76000 大於 50000，因此有 2 列。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-008
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: 閱讀程式碼，clean["city"] 第三筆會是什麼？
+  content:
+  - type: text
+    text: 閱讀程式碼，clean["city"] 第三筆會是什麼？
+  - type: code
+    language: python
+    code: 'raw = pd.DataFrame({"city": ["Taipei", "Tainan", None]})
+
+      clean = raw.copy()
+
+      clean["city"] = clean["city"].fillna("Unknown")
+
+      print(clean["city"].iloc[2])'
+  type: multiple_choice
+  options:
+  - Unknown
+  - NaN
+  - None
+  - Taipei
+  correct_index: 0
+  explanation: fillna("Unknown") 會把缺失城市補成 Unknown。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-009
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: pd.get_dummies(clean, columns=["city"]) 的主要效果是什麼？
+  content:
+  - type: text
+    text: pd.get_dummies(clean, columns=["city"]) 的主要效果是什麼？
+  - type: code
+    language: python
+    code: 'clean = pd.DataFrame({"city": ["Taipei", "Tainan", "Unknown"]})
+
+      encoded = pd.get_dummies(clean, columns=["city"])
+
+      print(encoded.columns.tolist())'
+  type: multiple_choice
+  options:
+  - 保留單一 city 文字欄位
+  - 將 city 展開成多個 0/1 指示欄位
+  - 刪除所有列
+  - 計算 city 平均值
+  correct_index: 1
+  explanation: get_dummies 會把類別欄位轉成多個 one-hot 指示欄位。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-010
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: 閱讀 groupby 程式，店家 A 的平均銷售額是多少？
+  content:
+  - type: text
+    text: 閱讀 groupby 程式，店家 A 的平均銷售額是多少？
+  - type: code
+    language: python
+    code: "sales = pd.DataFrame({\n    \"store\": [\"A\", \"A\", \"B\", \"B\"],\n    \"amount\": [100, 120, 80, 160]\n})\nprint(sales.groupby(\"store\")[\"amount\"].mean())"
+  type: multiple_choice
+  options:
+  - 110
+  - 220
+  - 120
+  - 100
+  correct_index: 0
+  explanation: 店家 A 的 amount 是 100 與 120，平均為 110。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-011
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: 閱讀 merge 程式，合併後第一列 city 是什麼？
+  content:
+  - type: text
+    text: 閱讀 merge 程式，合併後第一列 city 是什麼？
+  - type: code
+    language: python
+    code: 'users = pd.DataFrame({"user_id": [1, 2], "city": ["Taipei", "Kaohsiung"]})
+
+      orders = pd.DataFrame({"user_id": [1, 2], "amount": [50, 90]})
+
+      merged = orders.merge(users, on="user_id")
+
+      print(merged.loc[0, "city"])'
+  type: multiple_choice
+  options:
+  - user_id
+  - Kaohsiung
+  - 50
+  - Taipei
+  correct_index: 3
+  explanation: 第一筆 order 的 user_id 是 1，合併後對應到 Taipei。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-012
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: 閱讀程式碼，features.shape 是什麼？
+  content:
+  - type: text
+    text: 閱讀程式碼，features.shape 是什麼？
+  - type: code
+    language: python
+    code: "df = pd.DataFrame({\n    \"age\": [22, 35, 47],\n    \"income_k\": [32, 58, 76],\n    \"clicked\": [0, 1, 1]\n})\nfeatures = df[[\"age\", \"income_k\"]].to_numpy()\nprint(features.shape)"
+  type: multiple_choice
+  options:
+  - (2, 3)
+  - (3, 2)
+  - (3,)
+  - (2,)
+  correct_index: 1
+  explanation: 選了 3 列與 2 個特徵欄位，因此 shape 是 (3, 2)。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-013
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: 閱讀程式碼，哪個欄位缺失率最高？
+  content:
+  - type: text
+    text: 閱讀程式碼，哪個欄位缺失率最高？
+  - type: code
+    language: python
+    code: "audit = pd.DataFrame({\n    \"feature\": [\"age\", \"income\", \"clicked\"],\n    \"missing_rate\": [0.02, 0.15, 0.00]\n})\nprint(audit.sort_values(\"missing_rate\", ascending=False).iloc[0][\"feature\"])"
+  type: multiple_choice
+  options:
+  - income
+  - clicked
+  - age
+  - missing_rate
+  correct_index: 0
+  explanation: missing_rate 最大的是 income 的 0.15。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-014
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: 下列向量化程式產生的 is_high 欄位型別概念是什麼？
+  content:
+  - type: text
+    text: 下列向量化程式產生的 is_high 欄位型別概念是什麼？
+  - type: code
+    language: python
+    code: df["is_high"] = df["income"] > 50000
+  type: multiple_choice
+  options:
+  - 神經網路權重
+  - 日期索引
+  - 布林值欄位
+  - 字串清單
+  correct_index: 2
+  explanation: 比較運算會產生 True/False 布林值欄位。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-015
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: 閱讀程式碼，X 中不包含哪個欄位？
+  content:
+  - type: text
+    text: 閱讀程式碼，X 中不包含哪個欄位？
+  - type: code
+    language: python
+    code: 'df = pd.DataFrame({"age": [20], "city_Taipei": [1], "purchased": [0]})
+
+      X = df.drop(columns=["purchased"])
+
+      y = df["purchased"]
+
+      print(X.columns.tolist())'
+  type: multiple_choice
+  options:
+  - purchased
+  - city_Taipei
+  - purchased 與 y
+  - age
+  correct_index: 0
+  explanation: purchased 是目標欄位，被 drop 後不會出現在 X 中。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-016
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: 閱讀程式碼，輸出結果是什麼？
+  content:
+  - type: text
+    text: 閱讀程式碼，輸出結果是什麼？
+  - type: code
+    language: python
+    code: 'x = np.array([1, 2, 3])
+
+      print(x + 1)'
+  type: multiple_choice
+  options:
+  - '[1 2 3 1]'
+  - '[2 3 4]'
+  - '[1 3 4]'
+  - '[0 1 2]'
+  correct_index: 1
+  explanation: NumPy 會將純量 1 broadcast 到每個元素。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-017
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: 閱讀程式碼，x.dtype 大致會是什麼？
+  content:
+  - type: text
+    text: 閱讀程式碼，x.dtype 大致會是什麼？
+  - type: code
+    language: python
+    code: 'x = np.array([1.0, 2.0, 3.0])
+
+      print(x.dtype)'
+  type: multiple_choice
+  options:
+  - 布林型別
+  - 浮點數型別
+  - 字串型別
+  - 整數型別
+  correct_index: 1
+  explanation: 陣列元素是浮點數，因此 dtype 是 float 類型。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-018
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: 閱讀程式碼，輸出 shape 是什麼？
+  content:
+  - type: text
+    text: 閱讀程式碼，輸出 shape 是什麼？
+  - type: code
+    language: python
+    code: 'X = np.zeros((4, 3))
+
+      print(X.shape)'
+  type: multiple_choice
+  options:
+  - (12,)
+  - (4, 3)
+  - (4,)
+  - (3, 4)
+  correct_index: 1
+  explanation: np.zeros((4, 3)) 建立 4 列 3 欄。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-019
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: 閱讀程式碼，y 的結果是什麼？
+  content:
+  - type: text
+    text: 閱讀程式碼，y 的結果是什麼？
+  - type: code
+    language: python
+    code: 'X = np.array([[1, 2], [3, 4]])
+
+      w = np.array([10, 1])
+
+      y = X @ w
+
+      print(y)'
+  type: multiple_choice
+  options:
+  - '[10 1]'
+  - '[11 31]'
+  - '[12 34]'
+  - '[40 6]'
+  correct_index: 2
+  explanation: 第一列 1*10+2*1=12，第二列 3*10+4*1=34。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-020
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: 閱讀程式碼，輸出結果是什麼？
+  content:
+  - type: text
+    text: 閱讀程式碼，輸出結果是什麼？
+  - type: code
+    language: python
+    code: 'scores = np.array([0.2, 0.8, 0.6])
+
+      print(scores[scores >= 0.6])'
+  type: multiple_choice
+  options:
+  - '[0.6]'
+  - '[0.8 0.6]'
+  - '[0.2]'
+  - '[ True False True]'
+  correct_index: 1
+  explanation: 條件選出 0.8 與 0.6。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-021
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: 閱讀程式碼，輸出結果是什麼？
+  content:
+  - type: text
+    text: 閱讀程式碼，輸出結果是什麼？
+  - type: code
+    language: python
+    code: 'df = pd.DataFrame({"age": [20, 30], "city": ["A", "B"]})
+
+      print(df["age"].tolist())'
+  type: multiple_choice
+  options:
+  - '["age", "city"]'
+  - '[20, 30]'
+  - '2'
+  - '["A", "B"]'
+  correct_index: 1
+  explanation: df["age"] 取出 age 欄位。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-022
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: 閱讀程式碼，filtered 有幾列？
+  content:
+  - type: text
+    text: 閱讀程式碼，filtered 有幾列？
+  - type: code
+    language: python
+    code: 'df = pd.DataFrame({"age": [20, 30, 40]})
+
+      filtered = df[df["age"] >= 30]
+
+      print(len(filtered))'
+  type: multiple_choice
+  options:
+  - '1'
+  - '3'
+  - '0'
+  - '2'
+  correct_index: 3
+  explanation: 30 與 40 符合條件，因此有 2 列。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-023
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: 閱讀程式碼，第二筆 age 會變成什麼？
+  content:
+  - type: text
+    text: 閱讀程式碼，第二筆 age 會變成什麼？
+  - type: code
+    language: python
+    code: 'df = pd.DataFrame({"age": [20, None, 40]})
+
+      df["age"] = df["age"].fillna(df["age"].median())
+
+      print(df["age"].iloc[1])'
+  type: multiple_choice
+  options:
+  - '40'
+  - None
+  - '20'
+  - '30'
+  correct_index: 3
+  explanation: 20 與 40 的中位數是 30。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-024
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: pd.get_dummies 的主要輸出是什麼？
+  content:
+  - type: text
+    text: pd.get_dummies 的主要輸出是什麼？
+  - type: code
+    language: python
+    code: 'df = pd.DataFrame({"city": ["Taipei", "Tainan"]})
+
+      encoded = pd.get_dummies(df, columns=["city"])'
+  type: multiple_choice
+  options:
+  - 影像 tensor
+  - 模型 loss
+  - 統計檢定表
+  - 類別指示欄位
+  correct_index: 3
+  explanation: get_dummies 會把 city 展開為 one-hot 欄位。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-025
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: 閱讀程式碼，A 組總和是多少？
+  content:
+  - type: text
+    text: 閱讀程式碼，A 組總和是多少？
+  - type: code
+    language: python
+    code: 'df = pd.DataFrame({"g": ["A", "A", "B"], "v": [1, 2, 5]})
+
+      print(df.groupby("g")["v"].sum().loc["A"])'
+  type: multiple_choice
+  options:
+  - '5'
+  - '2'
+  - '1'
+  - '3'
+  correct_index: 3
+  explanation: A 組 v 為 1 和 2，總和為 3。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-026
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: 閱讀程式碼，merged 有幾列？
+  content:
+  - type: text
+    text: 閱讀程式碼，merged 有幾列？
+  - type: code
+    language: python
+    code: 'left = pd.DataFrame({"id": [1, 2]})
+
+      right = pd.DataFrame({"id": [2, 3]})
+
+      merged = left.merge(right, on="id")
+
+      print(len(merged))'
+  type: multiple_choice
+  options:
+  - '1'
+  - '0'
+  - '2'
+  - '3'
+  correct_index: 0
+  explanation: inner merge 只保留共同 id=2。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-027
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: pd.to_datetime 的主要用途是什麼？
+  content:
+  - type: text
+    text: pd.to_datetime 的主要用途是什麼？
+  - type: code
+    language: python
+    code: df["date"] = pd.to_datetime(df["date"])
+  type: multiple_choice
+  options:
+  - 將日期字串解析成 datetime
+  - 將日期刪除
+  - 計算 TF-IDF
+  - 將模型轉成日期
+  correct_index: 0
+  explanation: to_datetime 會把日期字串轉成 datetime 型別。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-028
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: 閱讀程式碼，y.shape 是什麼？
+  content:
+  - type: text
+    text: 閱讀程式碼，y.shape 是什麼？
+  - type: code
+    language: python
+    code: 'df = pd.DataFrame({"x1": [1, 2, 3], "target": [0, 1, 0]})
+
+      y = df["target"].to_numpy()
+
+      print(y.shape)'
+  type: multiple_choice
+  options:
+  - (2,)
+  - (1, 3)
+  - (3, 1)
+  - (3,)
+  correct_index: 3
+  explanation: 單一欄位轉 NumPy 後是一維長度 3。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-029
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: 這段程式的主要問題是什麼？
+  content:
+  - type: text
+    text: 這段程式的主要問題是什麼？
+  - type: code
+    language: python
+    code: 'X = df[["age", "purchased"]]
+
+      y = df["purchased"]'
+  type: multiple_choice
+  options:
+  - X 必須是 list
+  - age 欄位不能使用
+  - 目標欄位被放入特徵造成資料洩漏
+  - y 必須是 DataFrame
+  correct_index: 2
+  explanation: purchased 是答案欄位，同時放入 X 會讓模型看到答案。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-ch2-code-030
+  chapter_title: NumPy 與 Pandas
+  section_title: 程式閱讀理解
+  text: 下列哪行是向量化寫法？
+  content:
+  - type: text
+    text: 下列哪行是向量化寫法？
+  - type: code
+    language: python
+    code: df["is_high"] = df["income"] > 50000
+  type: multiple_choice
+  options:
+  - 逐列手動 for 迴圈
+  - 模型反向傳播
+  - 使用 Pandas 向量化比較
+  - 自訂 Python 例外
+  correct_index: 2
+  explanation: 整欄比較是 Pandas 向量化操作。
+  tags:
+  - chap-m6-ch2
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m6-hc-012
+  chapter_title: NumPy 與 Pandas
+  section_title: NumPy 陣列與向量化
+  text: 關於「NumPy 陣列與向量化」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - NumPy 向量化可減少 Python 層逐筆迴圈，提升數值計算效率。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 1
+  explanation: NumPy 向量化可減少 Python 層逐筆迴圈，提升數值計算效率。
+  tags:
+  - chap-m6-ch2
+  - sec-numpy-array-vectorization
+  usage: both
+- id: m6-hc-013
+  chapter_title: NumPy 與 Pandas
+  section_title: Shape、Broadcasting 與矩陣運算
+  text: 關於「Shape、Broadcasting 與矩陣運算」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - shape 是檢查矩陣乘法與模型輸入是否相容的第一步。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 1
+  explanation: shape 是檢查矩陣乘法與模型輸入是否相容的第一步。
+  tags:
+  - chap-m6-ch2
+  - sec-numpy-shape-broadcast
+  usage: both
+- id: m6-hc-014
+  chapter_title: NumPy 與 Pandas
+  section_title: Pandas DataFrame 基礎
+  text: 關於「Pandas DataFrame 基礎」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - DataFrame 保留欄位名稱與索引，適合處理表格資料。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 2
+  explanation: DataFrame 保留欄位名稱與索引，適合處理表格資料。
+  tags:
+  - chap-m6-ch2
+  - sec-pandas-dataframe
+  usage: both
+- id: m6-hc-015
+  chapter_title: NumPy 與 Pandas
+  section_title: 缺失值、類別資料與特徵整理
+  text: 關於「缺失值、類別資料與特徵整理」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 缺失值處理應依欄位語意選擇填補、刪除或 Unknown 類別。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  correct_index: 2
+  explanation: 缺失值處理應依欄位語意選擇填補、刪除或 Unknown 類別。
+  tags:
+  - chap-m6-ch2
+  - sec-pandas-cleaning-features
+  usage: both
+- id: m6-hc-016
+  chapter_title: NumPy 與 Pandas
+  section_title: GroupBy、合併與時間序列
+  text: 關於「GroupBy、合併與時間序列」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - groupby 適合依類別、店家或月份計算統計量。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 0
+  explanation: groupby 適合依類別、店家或月份計算統計量。
+  tags:
+  - chap-m6-ch2
+  - sec-pandas-groupby-merge-time
+  usage: both
+- id: m6-hc-017
+  chapter_title: NumPy 與 Pandas
+  section_title: 從 Pandas 到模型輸入
+  text: 關於「從 Pandas 到模型輸入」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 監督式學習通常把特徵欄位整理成 X，把目標欄位整理成 y。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 1
+  explanation: 監督式學習通常把特徵欄位整理成 X，把目標欄位整理成 y。
+  tags:
+  - chap-m6-ch2
+  - sec-pandas-to-model
+  usage: both
+- id: m6-hc-018
+  chapter_title: NumPy 與 Pandas
+  section_title: 從 Pandas 到模型輸入
+  text: 在實務應用「從 Pandas 到模型輸入」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 進入模型前應確認 X 沒有包含答案欄位，避免資料洩漏。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 0
+  explanation: 進入模型前應確認 X 沒有包含答案欄位，避免資料洩漏。
+  tags:
+  - chap-m6-ch2
+  - sec-pandas-to-model
+  usage: both
+- id: m6-hc-019
+  chapter_title: NumPy 與 Pandas
+  section_title: NumPy 與 Pandas 的分工
+  text: 關於「NumPy 與 Pandas 的分工」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - Pandas 適合保留欄位語意並清理表格資料。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  correct_index: 1
+  explanation: Pandas 適合保留欄位語意並清理表格資料。
+  tags:
+  - chap-m6-ch2
+  - sec-numpy-pandas-division
+  usage: both
+- id: m6-hc-020
+  chapter_title: NumPy 與 Pandas
+  section_title: NumPy 與 Pandas 的分工
+  text: 在實務應用「NumPy 與 Pandas 的分工」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - NumPy 適合已整理好的純數值矩陣與線性代數運算。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 1
+  explanation: NumPy 適合已整理好的純數值矩陣與線性代數運算。
+  tags:
+  - chap-m6-ch2
+  - sec-numpy-pandas-division
+  usage: both
+- id: m6-hc-021
+  chapter_title: NumPy 與 Pandas
+  section_title: 資料品質檢查清單
+  text: 關於「資料品質檢查清單」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 建模前檢查目標分布可發現類別不平衡與極端值。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  correct_index: 0
+  explanation: 建模前檢查目標分布可發現類別不平衡與極端值。
+  tags:
+  - chap-m6-ch2
+  - sec-pandas-quality-checklist
+  usage: both
+- id: m6-hc-022
+  chapter_title: NumPy 與 Pandas
+  section_title: 效能與記憶體觀念
+  text: 關於「效能與記憶體觀念」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 只讀取必要欄位可降低 Pandas 記憶體使用。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 1
+  explanation: 只讀取必要欄位可降低 Pandas 記憶體使用。
+  tags:
+  - chap-m6-ch2
+  - sec-pandas-performance
+  usage: both
+- id: m6-hc-023
+  chapter_title: NumPy 與 Pandas
+  section_title: 效能與記憶體觀念
+  text: 在實務應用「效能與記憶體觀念」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 高重複字串欄位可考慮轉成 category 降低記憶體。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 0
+  explanation: 高重複字串欄位可考慮轉成 category 降低記憶體。
+  tags:
+  - chap-m6-ch2
+  - sec-pandas-performance
+  usage: both
+- id: m6-hc-024
+  chapter_title: NumPy 與 Pandas
+  section_title: 特徵工程範例：從原始欄位到模型欄位
+  text: 關於「特徵工程範例：從原始欄位到模型欄位」，下列哪一項敘述最正確？
+  type: multiple_choice
+  options:
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 日期欄位常可轉成距今天數、星期幾或月份等模型特徵。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  correct_index: 1
+  explanation: 日期欄位常可轉成距今天數、星期幾或月份等模型特徵。
+  tags:
+  - chap-m6-ch2
+  - sec-pandas-feature-example
+  usage: both
+- id: m6-hc-025
+  chapter_title: NumPy 與 Pandas
+  section_title: 特徵工程範例：從原始欄位到模型欄位
+  text: 在實務應用「特徵工程範例：從原始欄位到模型欄位」時，下列哪一項判斷較合理？
+  type: multiple_choice
+  options:
+  - 目標欄位應作為 y，不應放入 X。
+  - 實務上通常不需要考慮資料切分、部署情境或可維護性。
+  - 只要模型夠複雜，就可以忽略資料格式與前處理。
+  - 此概念主要用來取代所有模型評估與錯誤分析。
+  correct_index: 0
+  explanation: 目標欄位應作為 y，不應放入 X。
+  tags:
+  - chap-m6-ch2
+  - sec-pandas-feature-example
+  usage: both

@@ -6,6 +6,10 @@ label: chap-m6-ch1
 
 Python 是 AI 與資料科學最常用的語言之一，原因不是它執行速度最快，而是語法簡潔、套件生態成熟，並且能把資料處理、模型訓練、服務部署與自動化串在同一個工作流程中。
 
+在 AI 專案中，Python 常扮演「協調者」角色。資料可能從 CSV、資料庫、API 或雲端儲存進來，接著交給 Pandas 清理、NumPy 轉成矩陣、scikit-learn 建立 baseline、PyTorch 訓練模型，最後再把結果寫回檔案或服務。理解 Python 基礎語法，就是理解這些工具如何被串起來。
+
+舉例來說，一個最小的 AI 資料處理腳本可能會做三件事：讀取資料、轉換資料、輸出結果。即使尚未開始訓練模型，這類自動化也已經是 AI 專案的重要部分。
+
 ## Python 的定位與執行方式 {#sec-python-runtime}
 
 Python 屬於高階、直譯式、動態型別語言。開發者不需要先編譯成機器碼才能執行，常見執行方式包括：
@@ -25,6 +29,22 @@ print(type(x))
 ```
 
 這帶來開發速度，也代表大型專案通常會搭配 type hints、測試與 lint 工具降低錯誤。
+
+以下範例模擬一個非常小的推論後處理流程：模型輸出機率後，Python 依門檻轉成可讀結果。
+
+```{python}
+# 模擬模型對三筆資料輸出的正類機率
+probabilities = [0.92, 0.41, 0.77]
+threshold = 0.7
+
+labels = []
+for p in probabilities:
+    labels.append("positive" if p >= threshold else "negative")
+
+print(labels)
+```
+
+這段程式沒有使用任何 AI 套件，但它展示了 Python 在 AI 工作流中的常見任務：讀取模型輸出、套用規則、產生後續系統能使用的結果。
 
 ## 變數、型別與資料結構 {#sec-python-data-structures}
 
@@ -140,6 +160,20 @@ print(mean([1, 2, 3]))
 ```
 
 當專案變大時，應把資料讀取、特徵工程、模型定義與訓練流程拆成不同模組。這樣做的目的不是讓檔案變多，而是讓每個檔案有清楚責任，方便測試與維護。
+
+例如資料讀取函式可以獨立成一個可重用單位：
+
+```python
+from pathlib import Path
+
+def read_lines(path: str) -> list[str]:
+    # 將路徑處理與檔案讀取集中在同一個函式中
+    file_path = Path(path)
+    with file_path.open("r", encoding="utf-8") as f:
+        return [line.strip() for line in f if line.strip()]
+```
+
+後續訓練、評估或資料稽核都可以呼叫同一個函式，避免多處出現略有不同的讀檔邏輯。
 
 ## Python 在 AI 專案中的典型檔案結構 {#sec-python-project-structure}
 

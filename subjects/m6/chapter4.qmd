@@ -1,0 +1,215 @@
+---
+title: "Computer Vision：OpenCV、Matplotlib 與 torchvision"
+order: 4
+label: chap-m6-ch4
+---
+
+Computer Vision 是讓程式理解、轉換與分析影像資料的技術領域。在 AI 專案中，影像通常不能直接丟進模型：需要先確認檔案能否讀取、尺寸是否一致、色彩通道是否正確、影像品質是否合理，並且把資料轉成模型能接受的 tensor。這一章聚焦三個常用工具：OpenCV、Matplotlib 與 torchvision。
+
+OpenCV 偏向影像工程與傳統電腦視覺，適合讀寫影像、色彩轉換、濾波、邊緣偵測、輪廓分析與品質檢查。Matplotlib 適合在 Notebook 或報告中視覺化影像、特徵與錯誤案例。torchvision 則是 PyTorch 生態中的視覺工具包，提供影像資料集、transforms、資料增強與預訓練模型。
+
+## OpenCV 基礎：影像表示與讀寫 {#sec-opencv-image-basics}
+
+OpenCV 讀取影像後通常得到 NumPy 陣列，shape 常見為 `(height, width, channels)`。需要注意的是，OpenCV 預設色彩順序是 BGR，不是一般網頁、Pillow 或 Matplotlib 常見的 RGB。
+
+```python
+import cv2
+
+# OpenCV 讀進來的彩色影像預設是 BGR 順序
+image = cv2.imread("input.jpg")
+if image is None:
+    raise ValueError("image file cannot be read")
+
+# 將彩色影像轉成灰階，方便後續處理
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+cv2.imwrite("gray.jpg", gray)
+```
+
+這段程式代表三件事：讀取檔案、檢查是否成功、轉為灰階並輸出新檔案。實務上第一步通常不是直接訓練模型，而是先確認影像尺寸、通道數與檔案格式。
+
+```python
+height, width, channels = image.shape
+print(height, width, channels)
+```
+
+這類檢查可以提早發現損毀檔案、錯誤路徑或資料集格式不一致。
+
+## 影像前處理與特徵 {#sec-opencv-preprocessing}
+
+常見影像前處理包括 resize、normalization、blur、threshold、edge detection：
+
+```python
+import cv2
+
+image = cv2.imread("input.jpg")
+# CNN 常需要固定輸入大小
+resized = cv2.resize(image, (224, 224))
+gray = cv2.cvtColor(resized, cv2.COLOR_BGR2GRAY)
+# Canny 可擷取影像邊緣
+edges = cv2.Canny(gray, threshold1=100, threshold2=200)
+```
+
+在深度學習中，resize 到固定尺寸很常見，因為 CNN 通常需要批次影像具有一致 shape。傳統影像處理中的邊緣、輪廓、形態學操作，仍常用於工業檢測、文件掃描與影像品質檢查。
+
+## Matplotlib：影像與錯誤案例視覺化 {#sec-matplotlib-vision}
+
+Matplotlib 是 Python 最常見的繪圖工具之一，在 Computer Vision 工作流中常用來檢查影像、模型預測、混淆矩陣與錯誤案例。若影像由 OpenCV 讀取，顯示前通常要把 BGR 轉成 RGB。
+
+```python
+import cv2
+import matplotlib.pyplot as plt
+
+image_bgr = cv2.imread("input.jpg")
+image_rgb = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB)
+
+plt.imshow(image_rgb)
+plt.axis("off")
+plt.title("Input image")
+plt.show()
+```
+
+Matplotlib 不負責訓練模型，但它能讓資料問題更早被看見。例如顏色不對、裁切錯誤、標籤錯誤、影像太暗或資料增強過強，通常都能透過視覺化快速發現。
+
+為了讓教材可以直接產生圖形，下面用 NumPy 建立一張合成 RGB 影像，再用 Matplotlib 顯示原圖、灰階圖與邊緣圖：
+
+```{python}
+#| fig-cap: "Matplotlib 顯示影像、灰階與邊緣偵測結果"
+import numpy as np
+import cv2
+import matplotlib.pyplot as plt
+
+# 建立一張簡單合成影像：藍色背景、綠色矩形、紅色圓形
+image_rgb = np.zeros((120, 160, 3), dtype=np.uint8)
+image_rgb[:, :] = [40, 90, 180]
+cv2.rectangle(image_rgb, (25, 25), (95, 90), (60, 180, 80), thickness=-1)
+cv2.circle(image_rgb, (115, 60), 28, (220, 60, 60), thickness=-1)
+
+gray = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2GRAY)
+edges = cv2.Canny(gray, threshold1=60, threshold2=140)
+
+fig, axes = plt.subplots(1, 3, figsize=(9, 3))
+axes[0].imshow(image_rgb)
+axes[0].set_title("RGB image")
+axes[1].imshow(gray, cmap="gray")
+axes[1].set_title("Grayscale")
+axes[2].imshow(edges, cmap="gray")
+axes[2].set_title("Canny edges")
+
+for ax in axes:
+    ax.axis("off")
+
+plt.tight_layout()
+plt.show()
+```
+
+## 影像資料進入模型 {#sec-opencv-to-model}
+
+若影像要進入 PyTorch，常見流程是：
+
+1.  讀取影像。
+2.  轉成 RGB。
+3.  resize 或 crop。
+4.  轉成 tensor。
+5.  normalize。
+
+OpenCV 負責讀取與基本處理，PyTorch 或 torchvision 負責 tensor 轉換與資料增強。若忘記 BGR/RGB 差異，模型輸入顏色會錯，視覺化結果也會異常。
+
+## torchvision：資料集、Transforms 與預訓練模型 {#sec-torchvision-basics}
+
+torchvision 是 PyTorch 官方視覺工具包，常用於三類工作：
+
+*   使用內建資料集，例如 MNIST、CIFAR-10、ImageFolder。
+*   建立 transforms，例如 resize、crop、flip、normalize。
+*   載入預訓練模型，例如 ResNet、MobileNet、EfficientNet。
+
+```python
+from torchvision import datasets, transforms
+
+train_tfms = transforms.Compose([
+    transforms.Resize((224, 224)),
+    transforms.RandomHorizontalFlip(),
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.485, 0.456, 0.406],
+                         std=[0.229, 0.224, 0.225])
+])
+
+dataset = datasets.ImageFolder("data/train", transform=train_tfms)
+```
+
+`ImageFolder` 假設資料夾名稱就是類別名稱，例如：
+
+```text
+data/train/
+  cat/
+    image001.jpg
+  dog/
+    image002.jpg
+```
+
+這種結構很適合快速建立影像分類原型。
+
+## torchvision 預訓練模型與 Transfer Learning {#sec-torchvision-transfer-learning}
+
+影像任務若資料量不大，常不會從零訓練 CNN，而是使用預訓練模型。torchvision 提供許多已在大型影像資料上訓練過的模型。
+
+```python
+import torch.nn as nn
+from torchvision import models
+
+# 載入預訓練 ResNet18
+model = models.resnet18(weights=models.ResNet18_Weights.DEFAULT)
+in_features = model.fc.in_features
+
+# 假設新任務有 3 個類別，替換最後分類層
+model.fc = nn.Linear(in_features, 3)
+```
+
+Transfer learning 的重點是利用預訓練模型已學到的邊緣、紋理、形狀等通用視覺特徵。資料少時可先凍結 backbone，只訓練分類頭；資料較多或任務差異較大時，再 fine-tune 更多層。
+
+## OpenCV 實務流程：從原始影像到模型資料 {#sec-opencv-practical-pipeline}
+
+影像專案常見流程如下：
+
+1.  收集影像與標註。
+2.  檢查影像尺寸、格式、通道數與損毀檔案。
+3.  將影像轉成統一格式，例如 RGB、固定大小、固定資料型別。
+4.  建立訓練與驗證資料切分。
+5.  套用訓練資料增強與驗證資料標準化。
+6.  訓練模型並檢查錯誤案例。
+
+OpenCV 在第 2 與第 3 步特別常用。例如工業檢測中，模型訓練前可能先用 OpenCV 找出產品區域、裁切 ROI、去除背景或檢查曝光是否異常。
+
+```python
+image = cv2.imread("part.jpg")
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+# 先模糊化可降低雜訊對閾值處理的影響
+blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+# 產生二值遮罩，常用於找出前景或產品區域
+_, mask = cv2.threshold(blurred, 120, 255, cv2.THRESH_BINARY)
+```
+
+這類傳統處理不一定取代深度學習，但能讓模型輸入更穩定，也能降低資料雜訊。
+
+## 傳統電腦視覺與深度學習的分工 {#sec-opencv-traditional-vs-dl}
+
+傳統 OpenCV 方法與深度學習各有適用情境：
+
+| 方法 | 優點 | 限制 | 適合情境 |
+|------|------|------|----------|
+| 閾值、邊緣、輪廓 | 快、可解釋、不需訓練資料 | 對光線與背景變化敏感 | 文件掃描、固定場景檢測 |
+| SIFT/ORB 等特徵 | 可做匹配與定位 | 複雜場景表現有限 | 影像拼接、物件匹配 |
+| CNN/YOLO/Segmentation | 可學習複雜模式 | 需要標註資料與訓練成本 | 物件辨識、瑕疵檢測 |
+
+如果場景高度固定，傳統方法可能更便宜、更可靠；如果變化大且資料充足，深度學習通常表現更好。
+
+## Computer Vision 錯誤案例分析 {#sec-cv-error-analysis}
+
+影像模型不應只看整體 accuracy，還要抽出錯誤圖片檢查：
+
+*   是否標籤本身有錯？
+*   是否某些類別資料太少？
+*   是否模型常錯在相似類別？
+*   是否圖片太暗、太小、模糊或被遮擋？
+*   是否訓練資料與部署資料風格不同？
+
+混淆矩陣能快速看出哪些類別容易互相混淆。若錯誤集中在資料品質，應先改善資料，而不是只加深模型。

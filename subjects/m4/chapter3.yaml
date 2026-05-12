@@ -1615,3 +1615,609 @@ questions:
   - sec-past-exam
   - past-exam
   usage: mock
+- id: m4-code-031
+  chapter_title: 模型調校與優化
+  section_title: 程式閱讀理解
+  text: 閱讀下列 GridSearchCV，實際會評估多少組超參數組合？
+  content:
+  - type: text
+    text: 閱讀下列 GridSearchCV，實際會評估多少組超參數組合？
+  - type: code
+    language: python
+    code: "param_grid = {\n    \"max_depth\": [3, 5, 7],\n    \"learning_rate\": [0.01, 0.1],\n    \"subsample\": [0.8, 1.0],\n}\nsearch = GridSearchCV(model, param_grid, cv=5)"
+  type: multiple_choice
+  options:
+  - 12 組，每組再做 5 折交叉驗證
+  - 5 組，因為 cv=5
+  - 3 組，只看 max_depth
+  - 2 組，只看 learning_rate
+  correct_index: 0
+  explanation: 組合數為 3*2*2=12，GridSearchCV 會對每組參數執行 5 折交叉驗證。
+  tags:
+  - chap-m4-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-032
+  chapter_title: 模型調校與優化
+  section_title: 程式閱讀理解
+  text: 閱讀下列 RandomizedSearchCV，`n_iter=20` 代表什麼？
+  content:
+  - type: text
+    text: 閱讀下列 RandomizedSearchCV，`n_iter=20` 代表什麼？
+  - type: code
+    language: python
+    code: "search = RandomizedSearchCV(\n    estimator=model,\n    param_distributions=space,\n    n_iter=20,\n    cv=3,\n)"
+  type: multiple_choice
+  options:
+  - 隨機抽取 20 組超參數設定評估
+  - 每組參數訓練 20 個 epoch
+  - 只允許 20 筆資料
+  - 固定產生 20 個類別
+  correct_index: 0
+  explanation: RandomizedSearchCV 不枚舉全部空間，而是隨機抽樣 n_iter 組參數設定。
+  tags:
+  - chap-m4-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-033
+  chapter_title: 模型調校與優化
+  section_title: 程式閱讀理解
+  text: 閱讀下列 early stopping 設定，何時最可能停止？
+  content:
+  - type: text
+    text: 閱讀下列 early stopping 設定，何時最可能停止？
+  - type: code
+    language: python
+    code: "callback = EarlyStopping(\n    monitor=\"val_loss\",\n    patience=5,\n    restore_best_weights=True,\n)"
+  type: multiple_choice
+  options:
+  - 驗證損失連續 5 輪沒有改善後停止，並回復最佳權重
+  - 訓練損失第一次下降時停止
+  - 固定第 5 輪停止
+  - 驗證準確率達 5% 時停止
+  correct_index: 0
+  explanation: patience=5 表示監控指標 val_loss 多輪未改善才停止，restore_best_weights 會回復最佳時點權重。
+  tags:
+  - chap-m4-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-034
+  chapter_title: 模型調校與優化
+  section_title: 程式閱讀理解
+  text: 閱讀下列 L2 正規化，主要效果是什麼？
+  content:
+  - type: text
+    text: 閱讀下列 L2 正規化，主要效果是什麼？
+  - type: code
+    language: python
+    code: model = LogisticRegression(penalty="l2", C=0.1)
+  type: multiple_choice
+  options:
+  - 懲罰大權重，使係數較小並降低過擬合風險
+  - 讓部分係數必定變成 0
+  - 把分類問題改成分群問題
+  - 提高特徵維度
+  correct_index: 0
+  explanation: L2 正規化會懲罰權重平方，使權重縮小但通常不會像 L1 一樣產生稀疏係數。
+  tags:
+  - chap-m4-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-035
+  chapter_title: 模型調校與優化
+  section_title: 程式閱讀理解
+  text: 閱讀下列 L1 模型，何者最正確？
+  content:
+  - type: text
+    text: 閱讀下列 L1 模型，何者最正確？
+  - type: code
+    language: python
+    code: 'model = LogisticRegression(penalty="l1", solver="liblinear")
+
+      model.fit(X_train, y_train)
+
+      print((model.coef_ == 0).sum())'
+  type: multiple_choice
+  options:
+  - L1 可能讓部分係數為 0，具有特徵選擇效果
+  - L1 會讓所有係數完全相同
+  - L1 只能用於 CNN
+  - 係數為 0 表示資料缺值
+  correct_index: 0
+  explanation: L1 懲罰可使不重要特徵係數收斂為 0，因此常被視為內嵌式特徵選擇。
+  tags:
+  - chap-m4-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-036
+  chapter_title: 模型調校與優化
+  section_title: 程式閱讀理解
+  text: 閱讀下列 dropout 設定，訓練時的行為為何？
+  content:
+  - type: text
+    text: 閱讀下列 dropout 設定，訓練時的行為為何？
+  - type: code
+    language: python
+    code: 'layer = nn.Dropout(p=0.5)
+
+      model.train()
+
+      y = layer(x)'
+  type: multiple_choice
+  options:
+  - 隨機將約一半 activation 置零
+  - 永久刪除一半神經元參數
+  - 將輸出排序
+  - 把 activation 全部變成 0.5
+  correct_index: 0
+  explanation: Dropout 在訓練模式會以機率 p 隨機置零 activation，降低共適應。
+  tags:
+  - chap-m4-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-037
+  chapter_title: 模型調校與優化
+  section_title: 程式閱讀理解
+  text: 閱讀下列 BatchNorm 評估片段，`model.eval()` 後 BatchNorm 使用什麼？
+  content:
+  - type: text
+    text: 閱讀下列 BatchNorm 評估片段，`model.eval()` 後 BatchNorm 使用什麼？
+  - type: code
+    language: python
+    code: "model.eval()\nwith torch.no_grad():\n    y = model(x)"
+  type: multiple_choice
+  options:
+  - 訓練期間累積的 running mean / variance
+  - 目前 batch 的統計量並更新參數
+  - 隨機遮蔽 activation
+  - 刪除 bias
+  correct_index: 0
+  explanation: eval 模式下 BatchNorm 使用訓練累積的 running statistics，不再用當前 batch 統計更新狀態。
+  tags:
+  - chap-m4-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-038
+  chapter_title: 模型調校與優化
+  section_title: 程式閱讀理解
+  text: 閱讀下列學習率排程器，哪一項正確？
+  content:
+  - type: text
+    text: 閱讀下列學習率排程器，哪一項正確？
+  - type: code
+    language: python
+    code: "scheduler = ReduceLROnPlateau(optimizer, mode=\"min\", patience=3, factor=0.5)\nfor epoch in range(epochs):\n    train(...)\n    val_loss = validate(...)\n    scheduler.step(val_loss)"
+  type: multiple_choice
+  options:
+  - val_loss 多輪未改善時降低 learning rate
+  - 每個 batch 都把 learning rate 加倍
+  - 只在訓練準確率上升時停止訓練
+  - 把 optimizer 改成 Adam
+  correct_index: 0
+  explanation: ReduceLROnPlateau 監控 val_loss，若 patience 內沒有改善，就按 factor 降低學習率。
+  tags:
+  - chap-m4-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-039
+  chapter_title: 模型調校與優化
+  section_title: 程式閱讀理解
+  text: 閱讀下列剪枝程式，`amount=0.3` 的效果為何？
+  content:
+  - type: text
+    text: 閱讀下列剪枝程式，`amount=0.3` 的效果為何？
+  - type: code
+    language: python
+    code: 'import torch.nn.utils.prune as prune
+
+
+      prune.l1_unstructured(model.fc, name="weight", amount=0.3)'
+  type: multiple_choice
+  options:
+  - 依 L1 大小將 fc.weight 中約 30% 權重剪為 0
+  - 刪除 30% 訓練資料
+  - 新增 30% 神經元
+  - 把權重全部乘以 0.3
+  correct_index: 0
+  explanation: l1_unstructured 會依權重絕對值大小做非結構化剪枝，amount=0.3 表示剪掉約 30% 權重。
+  tags:
+  - chap-m4-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-040
+  chapter_title: 模型調校與優化
+  section_title: 程式閱讀理解
+  text: 閱讀下列量化程式，主要目的為何？
+  content:
+  - type: text
+    text: 閱讀下列量化程式，主要目的為何？
+  - type: code
+    language: python
+    code: "quantized = torch.quantization.quantize_dynamic(\n    model,\n    {nn.Linear},\n    dtype=torch.qint8,\n)"
+  type: multiple_choice
+  options:
+  - 將部分 Linear 層動態量化為 int8 以減少模型大小與推論成本
+  - 將模型轉為 one-hot 編碼
+  - 讓訓練資料變成 8 筆
+  - 刪除所有 Linear 層
+  correct_index: 0
+  explanation: dynamic quantization 常用於 Linear/LSTM 等層，將權重轉為 int8，降低模型大小並可能加速 CPU 推論。
+  tags:
+  - chap-m4-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-041
+  chapter_title: 模型調校與優化
+  section_title: 程式閱讀理解
+  text: 閱讀下列知識蒸餾損失，學生模型學習了什麼？
+  content:
+  - type: text
+    text: 閱讀下列知識蒸餾損失，學生模型學習了什麼？
+  - type: code
+    language: python
+    code: loss = alpha * CE(student_logits, hard_labels) +        (1 - alpha) * KL(student_logits / T, teacher_logits / T)
+  type: multiple_choice
+  options:
+  - 同時學習真實標籤與教師模型的軟目標分佈
+  - 只學習未標記資料的群集中心
+  - 只最大化模型參數量
+  - 把教師模型權重直接複製到學生模型
+  correct_index: 0
+  explanation: 蒸餾通常結合 hard labels 與 teacher soft targets，使小模型學習教師輸出的類別關係。
+  tags:
+  - chap-m4-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-042
+  chapter_title: 模型調校與優化
+  section_title: 程式閱讀理解
+  text: 閱讀下列 Optuna objective，trial 主要負責什麼？
+  content:
+  - type: text
+    text: 閱讀下列 Optuna objective，trial 主要負責什麼？
+  - type: code
+    language: python
+    code: "def objective(trial):\n    lr = trial.suggest_float(\"lr\", 1e-5, 1e-2, log=True)\n    depth = trial.suggest_int(\"depth\", 2, 8)\n    return train_and_validate(lr, depth)"
+  type: multiple_choice
+  options:
+  - 提出一組候選超參數並取得驗證分數
+  - 固定模型權重不訓練
+  - 輸出資料缺值比例
+  - 將分類改成迴歸
+  correct_index: 0
+  explanation: Optuna trial 會根據搜尋策略建議超參數，objective 回傳該組設定的驗證表現。
+  tags:
+  - chap-m4-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-043
+  chapter_title: 模型調校與優化
+  section_title: 程式閱讀理解
+  text: 閱讀下列混淆矩陣，若重視少數類召回率，應注意哪個值？
+  content:
+  - type: text
+    text: 閱讀下列混淆矩陣，若重視少數類召回率，應注意哪個值？
+  - type: code
+    language: text
+    code: '# rows=true, cols=pred
+
+      #        pred_0 pred_1
+
+      # true_0   950     20
+
+      # true_1    18     12'
+  type: multiple_choice
+  options:
+  - true_1 被預測為 pred_0 的 18 筆漏判
+  - true_0 被預測為 pred_0 的 950 筆
+  - pred_1 總數 32 筆
+  - 所有 true_0 樣本
+  correct_index: 0
+  explanation: 少數類 true_1 的 recall 受 FN 影響，18 筆 true_1 被判為 pred_0 是漏判，需特別關注。
+  tags:
+  - chap-m4-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-044
+  chapter_title: 模型調校與優化
+  section_title: 程式閱讀理解
+  text: 閱讀下列校準程式，主要目的為何？
+  content:
+  - type: text
+    text: 閱讀下列校準程式，主要目的為何？
+  - type: code
+    language: python
+    code: 'calibrated = CalibratedClassifierCV(base_estimator=svc, method="isotonic", cv=5)
+
+      calibrated.fit(X_train, y_train)'
+  type: multiple_choice
+  options:
+  - 讓分類器輸出的機率更接近實際發生率
+  - 提高特徵數量
+  - 將 SVC 轉為 KMeans
+  - 移除所有 false positive
+  correct_index: 0
+  explanation: 機率校準用於改善 predicted probability 的可信度，使機率值與實際比例更一致。
+  tags:
+  - chap-m4-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-045
+  chapter_title: 模型調校與優化
+  section_title: 程式閱讀理解
+  text: 閱讀下列驗證結果，哪一項最合理？
+  content:
+  - type: text
+    text: 閱讀下列驗證結果，哪一項最合理？
+  - type: code
+    language: text
+    code: 'train_auc = 0.99
+
+      valid_auc = 0.72'
+  type: multiple_choice
+  options:
+  - 模型可能過擬合，需考慮正規化、資料切分或模型複雜度
+  - 模型必定欠擬合
+  - 驗證集表現高於訓練集
+  - AUC 無法用於分類
+  correct_index: 0
+  explanation: 訓練 AUC 極高但驗證 AUC 明顯較低，是常見過擬合訊號。
+  tags:
+  - chap-m4-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-096
+  chapter_title: 模型調校與優化
+  section_title: 程式閱讀理解
+  text: 閱讀下列 Optuna pruning，trial 何時可能被停止？
+  content:
+  - type: text
+    text: 閱讀下列 Optuna pruning，trial 何時可能被停止？
+  - type: code
+    language: python
+    code: "for epoch in range(20):\n    score = train_one_epoch(...)\n    trial.report(score, epoch)\n    if trial.should_prune():\n        raise optuna.TrialPruned()"
+  type: multiple_choice
+  options:
+  - 中途表現不佳時被剪枝以節省搜尋成本
+  - 每個 trial 都固定第 20 輪停止
+  - 只有最佳 trial 被停止
+  - 資料缺值時才停止
+  correct_index: 0
+  explanation: Optuna pruner 可根據中途指標提前終止前景不佳的 trial，提高搜尋效率。
+  tags:
+  - chap-m4-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-097
+  chapter_title: 模型調校與優化
+  section_title: 程式閱讀理解
+  text: 閱讀下列正規化強度，C 變小代表什麼？
+  content:
+  - type: text
+    text: 閱讀下列正規化強度，C 變小代表什麼？
+  - type: code
+    language: python
+    code: model = LogisticRegression(C=0.01, penalty="l2")
+  type: multiple_choice
+  options:
+  - 正規化更強
+  - 正規化更弱
+  - 不使用正規化
+  - 改成 L1 正規化
+  correct_index: 0
+  explanation: 在 sklearn LogisticRegression 中 C 是正規化強度的反比，C 越小懲罰越強。
+  tags:
+  - chap-m4-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-098
+  chapter_title: 模型調校與優化
+  section_title: 程式閱讀理解
+  text: 閱讀下列 label smoothing，主要效果為何？
+  content:
+  - type: text
+    text: 閱讀下列 label smoothing，主要效果為何？
+  - type: code
+    language: python
+    code: loss = nn.CrossEntropyLoss(label_smoothing=0.1)
+  type: multiple_choice
+  options:
+  - 避免模型對硬標籤過度自信，可能改善泛化
+  - 將標籤全部改成 0
+  - 只適用於迴歸
+  - 刪除少數類樣本
+  correct_index: 0
+  explanation: Label smoothing 將 one-hot 硬標籤平滑化，降低過度自信與過擬合風險。
+  tags:
+  - chap-m4-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-099
+  chapter_title: 模型調校與優化
+  section_title: 程式閱讀理解
+  text: 閱讀下列 weight decay 設定，它等同於常見哪種約束？
+  content:
+  - type: text
+    text: 閱讀下列 weight decay 設定，它等同於常見哪種約束？
+  - type: code
+    language: python
+    code: optimizer = torch.optim.AdamW(model.parameters(), lr=1e-3, weight_decay=0.01)
+  type: multiple_choice
+  options:
+  - 對權重大小施加 L2 類型懲罰
+  - 隨機刪除 1% 樣本
+  - 讓 learning rate 每步增加
+  - 把 bias 全部設為 0
+  correct_index: 0
+  explanation: Weight decay 會懲罰權重大小，AdamW 使用 decoupled weight decay，常作為 L2 類型正規化。
+  tags:
+  - chap-m4-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-100
+  chapter_title: 模型調校與優化
+  section_title: 程式閱讀理解
+  text: 閱讀下列學習率 warmup，主要目的為何？
+  content:
+  - type: text
+    text: 閱讀下列學習率 warmup，主要目的為何？
+  - type: code
+    language: python
+    code: "if step < warmup_steps:\n    lr = base_lr * step / warmup_steps\nelse:\n    lr = base_lr"
+  type: multiple_choice
+  options:
+  - 訓練初期逐步提高學習率，降低不穩定更新風險
+  - 訓練後期刪除模型
+  - 固定 learning rate 為 0
+  - 只更新 bias
+  correct_index: 0
+  explanation: Warmup 在初期用較小學習率逐步升高，常用於 Transformer 或大 batch 訓練穩定收斂。
+  tags:
+  - chap-m4-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-101
+  chapter_title: 模型調校與優化
+  section_title: 程式閱讀理解
+  text: 閱讀下列結構化剪枝，與非結構化剪枝相比差異是什麼？
+  content:
+  - type: text
+    text: 閱讀下列結構化剪枝，與非結構化剪枝相比差異是什麼？
+  - type: code
+    language: python
+    code: '# 移除整個 channel/filter，而不是單一權重
+
+      prune_channels(model.layer3, ratio=0.25)'
+  type: multiple_choice
+  options:
+  - 移除完整通道，較容易帶來實際硬體加速
+  - 只把零散權重設為 0
+  - 不能減少模型大小
+  - 只適用於文字資料
+  correct_index: 0
+  explanation: 結構化剪枝移除 channel/filter 等完整結構，比零散稀疏更容易被硬體與框架加速。
+  tags:
+  - chap-m4-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-102
+  chapter_title: 模型調校與優化
+  section_title: 程式閱讀理解
+  text: 閱讀下列蒸餾 temperature，T 較高通常使 soft target 如何變化？
+  content:
+  - type: text
+    text: 閱讀下列蒸餾 temperature，T 較高通常使 soft target 如何變化？
+  - type: code
+    language: python
+    code: soft_targets = softmax(teacher_logits / T)
+  type: multiple_choice
+  options:
+  - 機率分佈更平滑，揭露類別間相似性
+  - 機率分佈變成 one-hot
+  - 所有類別機率都為 0
+  - 只保留最大類別
+  correct_index: 0
+  explanation: 較高 temperature 會平滑 teacher 機率分佈，讓學生學到非最大類別的相對關係。
+  tags:
+  - chap-m4-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-103
+  chapter_title: 模型調校與優化
+  section_title: 程式閱讀理解
+  text: 閱讀下列校準評估，ECE 高代表什麼？
+  content:
+  - type: text
+    text: 閱讀下列校準評估，ECE 高代表什麼？
+  - type: code
+    language: python
+    code: 'ece = expected_calibration_error(y_true, y_prob, n_bins=10)
+
+      print(ece)
+
+      # 0.18'
+  type: multiple_choice
+  options:
+  - 預測信心與實際正確率落差較大
+  - 模型參數較少
+  - 資料已完成標準化
+  - AUC 必定為 0.18
+  correct_index: 0
+  explanation: Expected Calibration Error 衡量各信心區間的信心與實際準確率差距，越高代表校準越差。
+  tags:
+  - chap-m4-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-104
+  chapter_title: 模型調校與優化
+  section_title: 程式閱讀理解
+  text: 閱讀下列 class_weight，主要用途為何？
+  content:
+  - type: text
+    text: 閱讀下列 class_weight，主要用途為何？
+  - type: code
+    language: python
+    code: 'clf = LogisticRegression(class_weight={0: 1, 1: 8})'
+  type: multiple_choice
+  options:
+  - 提高少數正類錯分的損失權重
+  - 將正類樣本複製 8 次到原始檔
+  - 把負類標籤改成 8
+  - 刪除所有負類
+  correct_index: 0
+  explanation: class_weight 會在損失函數中提高指定類別權重，常用於不平衡分類。
+  tags:
+  - chap-m4-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz
+- id: m4-code-105
+  chapter_title: 模型調校與優化
+  section_title: 程式閱讀理解
+  text: 閱讀下列驗證曲線結果，哪一項最合理？
+  content:
+  - type: text
+    text: 閱讀下列驗證曲線結果，哪一項最合理？
+  - type: code
+    language: text
+    code: 'max_depth:      2    4    8    16
+
+      train_score:  .72  .86  .98  1.00
+
+      valid_score:  .70  .82  .79  .68'
+  type: multiple_choice
+  options:
+  - max_depth=4 較合理，深度再增加開始過擬合
+  - max_depth=16 最佳，因為訓練分數最高
+  - max_depth=2 一定最佳
+  - 所有深度表現相同
+  correct_index: 0
+  explanation: 驗證分數在 depth=4 最高，之後訓練分數上升但驗證下降，是過擬合訊號。
+  tags:
+  - chap-m4-ch3
+  - sec-code-reading
+  - code-reading
+  usage: quiz

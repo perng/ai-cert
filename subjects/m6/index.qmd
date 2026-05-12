@@ -1,0 +1,70 @@
+# 前言 {.unnumbered}
+
+歡迎來到《Python AI 實作工具鏈》。本書聚焦在 AI 應用規劃與原型開發最常見的 Python 技術棧，從語言基礎、資料處理、科學運算、機器學習，到電腦視覺、自然語言處理與 PyTorch 深度學習實作。
+
+這個模組的目標不是把每個函式庫的 API 全部背起來，而是建立一套實務判斷：看到一個 AI 問題時，能知道資料應該先用什麼工具讀取、清理、轉換、建模與評估。Python 是串接語言；NumPy 與 Pandas 是資料整理基礎；SciPy、scikit-learn、statsmodels 與 Matplotlib 支援科學運算、統計建模、傳統機器學習與視覺化；OpenCV、torchvision 與 NLTK 處理影像與文字；PyTorch 與 Keras 則負責深度學習模型原型。
+
+::: {.callout-important}
+### 關於本補充教材
+
+AI 應用規劃不只需要理解模型概念，也需要知道常見工具各自解決什麼問題、資料如何進入模型、訓練流程如何組織，以及原型程式碼大致長什麼樣子。本書不追求把每個套件變成完整 API 手冊，而是建立「看得懂、選得對、能做出簡單實作」的能力。
+:::
+
+## 本書架構
+
+本書共分為八章：
+
+1.  **Basic Python Language**：整理 Python 語法、資料結構、函式、例外處理、模組與虛擬環境。
+2.  **NumPy 與 Pandas**：介紹陣列運算、向量化、DataFrame、資料清理與特徵整理。
+3.  **SciPy、scikit-learn、statsmodels 與 Matplotlib**：說明科學運算、傳統機器學習流程、統計建模與資料視覺化。
+4.  **Computer Vision：OpenCV、Matplotlib 與 torchvision**：涵蓋影像讀寫、前處理、視覺化、資料增強與預訓練視覺模型。
+5.  **Natural Language Processing：NLTK 與文字特徵**：介紹文字清理、斷詞、詞形處理、TF-IDF 與 NLP baseline。
+6.  **PyTorch 基礎**：建立 Tensor、Autograd、Dataset、DataLoader、模型與訓練迴圈概念，並比較 Keras 的高階 API 定位。
+7.  **PyTorch 實作簡單神經網路與 CNN**：以 MLP 與卷積神經網路說明分類模型的實作方式。
+8.  **PyTorch Transformer 基礎**：介紹 Embedding、位置編碼、自注意力與簡化 Transformer 分類器。
+
+## 工具鏈總覽
+
+AI 專案很少只使用單一函式庫。更常見的是多個工具各自負責一段流程：
+
+| 階段 | 常見工具 | 典型輸入 | 典型輸出 |
+|------|----------|----------|----------|
+| 程式組織與自動化 | Python | 檔案、設定、API 回傳 | 可重複執行的腳本或模組 |
+| 表格資料清理 | Pandas | CSV、Excel、資料庫查詢 | 乾淨的 DataFrame |
+| 數值運算 | NumPy | 數值矩陣、特徵陣列 | 模型可用的 array |
+| 科學運算 | SciPy | 統計樣本、方程式、稀疏矩陣 | 統計量、最佳化結果 |
+| 傳統機器學習 | scikit-learn | `X` 特徵矩陣、`y` 標籤 | baseline、預測、評估指標 |
+| 統計建模 | statsmodels | DataFrame、時間序列 | 係數、檢定、殘差分析 |
+| 視覺化 | Matplotlib | 數值、圖像、訓練紀錄 | 圖表、影像檢查、診斷圖 |
+| 影像前處理 | OpenCV / torchvision | 圖檔或影片 frame | resize、灰階、遮罩、tensor |
+| 文字前處理 | NLTK | 原始文字 | token、詞形、語料統計 |
+| 深度學習 | PyTorch / Keras | tensor、Dataset、DataLoader | 可訓練神經網路與權重檔 |
+
+例如一個「客服留言分類」專案可能先用 Python 讀取資料，用 Pandas 清理欄位，用 NLTK 或 tokenizer 處理文字，再用 scikit-learn 建立 TF-IDF baseline，最後視需求用 PyTorch 訓練 Transformer。另一個「產品瑕疵影像分類」專案則可能用 OpenCV 檢查影像品質與裁切產品區域，再用 PyTorch CNN 或預訓練模型進行分類。
+
+## 學習方式建議
+
+本書建議用「工具定位 → 資料流程 → 最小可行實作 → 常見錯誤」的方式閱讀。每個工具都不只是一組函式，而是在 AI 專案中負責特定階段：
+
+*   Python 負責把資料、模型、檔案與自動化流程串起來。
+*   NumPy 與 Pandas 負責把原始資料整理成可運算的陣列與表格。
+*   SciPy、statsmodels 與 scikit-learn 負責統計分析、傳統機器學習、baseline 與評估。
+*   Matplotlib 負責把資料分布、訓練曲線與錯誤案例視覺化。
+*   OpenCV、torchvision 與 NLTK 負責影像與文字等非結構化資料的前處理。
+*   PyTorch 與 Keras 負責深度學習模型的張量運算、訓練迴圈與快速原型。
+
+讀者不需要背誦所有 API，但需要能判斷「現在問題卡在哪個階段」：是資料格式錯誤、特徵工程不足、模型選擇不合適、訓練流程有 bug，還是評估方式不合理。這種判斷能力比記住單一函式名稱更重要。
+
+```{mermaid}
+flowchart LR
+    A["Python 語言基礎"] --> B["NumPy / Pandas<br/>整理資料"]
+    B --> C["SciPy / scikit-learn / statsmodels<br/>baseline、統計與評估"]
+    B --> D["OpenCV / torchvision / NLTK<br/>非結構化資料前處理"]
+    C --> H["Matplotlib<br/>資料與模型視覺化"]
+    C --> E["PyTorch<br/>深度學習訓練"]
+    D --> E
+    E --> F["MLP / CNN / Transformer<br/>任務模型"]
+    F --> G["評估、除錯、部署規劃"]
+```
+
+上圖呈現本書的學習路線：先建立 Python 與資料處理基礎，再進入傳統機器學習與非結構化資料前處理，最後銜接 PyTorch 深度學習模型。
