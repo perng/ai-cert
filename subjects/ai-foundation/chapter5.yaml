@@ -738,7 +738,7 @@ questions:
 - id: 11421
   chapter_title: 監督式學習演算法
   section_title: 歷屆考題
-  text: 某金融科技公司正開發一套違約風險預測系統，需大量處理不同客戶 的財務特徵資料。考量到資料特徵數量眾多，且希望提升預測的穩定性 與泛化能力，下列哪一種鑑別式 AI 模型最適合？ (114年第四梯次)
+  text: 某金融科技公司正開發一套違約風險預測系統，需大量處理不同客戶的財務特徵資料。考量到資料特徵數量眾多，且希望提升預測的穩定性與泛化能力，下列哪一種鑑別式 AI 模型最適合？ (114年第四梯次)
   type: multiple_choice
   options:
   - 邏輯迴歸（Logistic Regression）
@@ -746,7 +746,7 @@ questions:
   - 決策樹（Decision Tree）
   - 隨機森林（Random Forest）
   correct_index: 3
-  explanation: 此題涉及 分類演算法 的核心概念。正確答案為「隨機森林（Random Forest）」。
+  explanation: 此題涉及分類演算法的核心概念。正確答案為「隨機森林（Random Forest）」。
   tags:
   - sec-past-exam
   - past-exam
@@ -757,7 +757,7 @@ questions:
 - id: 11407
   chapter_title: 監督式學習演算法
   section_title: 歷屆考題
-  text: 貝氏分類器（Naive Bayes Classifier）常被應用於文字分類、垃圾郵 件過濾等場景。依據模型特性，它最適合歸類於下列哪一類？ (114年第四梯次)
+  text: 貝氏分類器（Naive Bayes Classifier）常被應用於文字分類、垃圾郵件過濾等場景。依據模型特性，它最適合歸類於下列哪一類？ (114年第四梯次)
   type: multiple_choice
   options:
   - 透過直接學習輸入特徵與目標標籤之間的邊界或關係來進行分類的模型
@@ -765,7 +765,7 @@ questions:
   - 側重探索資料中樣本間的相似性，將資料自動分成不同群組的模型
   - 透過試錯學習，根據行動結果的獎勵或懲罰來優化決策策略的模型
   correct_index: 1
-  explanation: 此題涉及分類演算法 的核心概念。正確答案為「透過建構資料的整體分布，並利用條件關係進行推斷和分類的模型」。
+  explanation: 此題涉及分類演算法的核心概念。正確答案為「透過建構資料的整體分布，並利用條件關係進行推斷和分類的模型」。
   tags:
   - sec-past-exam
   - past-exam
@@ -776,7 +776,7 @@ questions:
 - id: 11420
   chapter_title: 監督式學習演算法
   section_title: 歷屆考題
-  text: 某醫院希望開發一個系統，根據患者的年齡、血壓與BMI 等資訊，預測 其罹患糖尿病的機率（0~1） ，並依據預測值是否超過0.5 做出風險警 示。下列哪一種模型最適合用於此分類任務？ (114年第四梯次)
+  text: 某醫院希望開發一個系統，根據患者的年齡、血壓與BMI 等資訊，預測其罹患糖尿病的機率（0~1） ，並依據預測值是否超過0.5 做出風險警示。下列哪一種模型最適合用於此分類任務？ (114年第四梯次)
   type: multiple_choice
   options:
   - 邏輯迴歸（Logistic Regression）
@@ -784,7 +784,7 @@ questions:
   - 決策樹（Decision Tree）
   - K 平均演算法（K-means）
   correct_index: 0
-  explanation: 此題涉及 分類演算法 的核心概念。正確答案為「邏輯迴歸（Logistic Regression）」。
+  explanation: 此題涉及分類演算法的核心概念。正確答案為「邏輯迴歸（Logistic Regression）」。
   tags:
   - sec-past-exam
   - past-exam
@@ -795,7 +795,7 @@ questions:
 - id: 11415
   chapter_title: 監督式學習演算法
   section_title: 歷屆考題
-  text: 某模型使用 K-近鄰演算法（KNN）進行分類，K 設為 3。 一筆新的測 試資料輸入後，與其最接近的3 筆資料的類別如下：鄰近樣本1：類別 A；鄰近樣本 2：類別B；鄰近樣本 3：類別A。請問模型會將這筆資料 預測為哪一類別？ (114年第四梯次)
+  text: 某模型使用 K-近鄰演算法（KNN）進行分類，K 設為 3。 一筆新的測試資料輸入後，與其最接近的3 筆資料的類別如下：鄰近樣本1：類別 A；鄰近樣本 2：類別B；鄰近樣本 3：類別A。請問模型會將這筆資料預測為哪一類別？ (114年第四梯次)
   type: multiple_choice
   options:
   - 類別 A
@@ -803,7 +803,7 @@ questions:
   - 類別 A 與 B 各一半，無法分類
   - 類別 A 或 B，視距離遠近加權而定
   correct_index: 0
-  explanation: 此題涉及 分類演算法 的核心概念。正確答案為「類別 A」。
+  explanation: 此題涉及分類演算法的核心概念。正確答案為「類別 A」。
   tags:
   - sec-past-exam
   - past-exam

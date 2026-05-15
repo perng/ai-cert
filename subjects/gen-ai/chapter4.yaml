@@ -421,7 +421,7 @@ questions:
   text: BFS 與 DFS 都是在哪種結構上進行的搜尋策略？
   type: multiple_choice
   options:
-  - 圖 (Graph) 或 樹 (Tree) (Graph or Tree)，非線性資料結構。
+  - 圖 (Graph) 或樹 (Tree) (Graph or Tree)，非線性資料結構。
   - 佇列 (Queue)，先進先出的線性結構。
   - 堆疊 (Stack)，後進先出的線性結構。
   - 列表 (List)，有序的線性結構。
@@ -434,7 +434,7 @@ questions:
 - id: '4028_1'
   chapter_title: AI 代理人與自動化
   section_title: 多代理系統 (MAS)
-  text: 工程師 Agent 與 測試 Agent 的關係通常是？
+  text: 工程師 Agent 與測試 Agent 的關係通常是？
   type: multiple_choice
   options:
   - '協作與回饋循環 (Collaboration and Feedback Loop: Engineer Writes -> Tester Tests -> Reports Bug -> Engineer Fixes)'
@@ -866,7 +866,7 @@ questions:
 - id: '11408_2'
   chapter_title: AI 代理人 (AI Agents)
   section_title: 歷屆考題
-  text: 在 Agent-to-Agent（A2A）架構中，不同代理人之間會分工合作。一般 而言，下列敘述何者最符合 Client Agent 與 Remote Agent 的互動流 程？ (114年第四梯次)
+  text: 在 Agent-to-Agent（A2A）架構中，不同代理人之間會分工合作。一般而言，下列敘述何者最符合 Client Agent 與 Remote Agent 的互動流程？ (114年第四梯次)
   type: multiple_choice
   options:
   - Remote Agent 主動分派任務給Client Agent (Remote Agent Assigns Tasks to Client Agent)
@@ -885,7 +885,7 @@ questions:
 - id: '11411_2'
   chapter_title: AI 代理人 (AI Agents)
   section_title: 歷屆考題
-  text: Agentic AI 在解決方案圖譜（Solution Graph）上尋找最佳解決路徑 時，通常會使用什麼樣的搜尋策略？ (114年第四梯次)
+  text: Agentic AI 在解決方案圖譜（Solution Graph）上尋找最佳解決路徑時，通常會使用什麼樣的搜尋策略？ (114年第四梯次)
   type: multiple_choice
   options:
   - 使用廣度優先、深度優先或最佳優先等演算法進行探索
@@ -923,7 +923,7 @@ questions:
 - id: '11406_2'
   chapter_title: AI 代理人 (AI Agents)
   section_title: 歷屆考題
-  text: 某設計團隊計畫在短時間內完成一款行動應用程式，必須同時達到高 度個人化體驗、快速生成介面與行銷內容自動產出等需求。若結合 No Code/Low Code平台與生成式AI 技術，以下哪一種整合策略最能符合 目標？ (114年第四梯次)
+  text: 某設計團隊計畫在短時間內完成一款行動應用程式，必須同時達到高度個人化體驗、快速生成介面與行銷內容自動產出等需求。若結合 No Code/Low Code平台與生成式AI 技術，以下哪一種整合策略最能符合目標？ (114年第四梯次)
   type: multiple_choice
   options:
   - 使用生成式 AI 自動產生 API 呼叫與元件配置，並由開發者手動整合至 No Code 平台流程
@@ -942,7 +942,7 @@ questions:
 - id: '11414_2'
   chapter_title: AI 代理人 (AI Agents)
   section_title: 歷屆考題
-  text: 某電商公司導入 Agentic AI 來處理客服工作。測試發現 Agent 在回答 產品 FAQ 時經常出錯，且無法幫客戶修改訂單。這種情況最可能是因 為缺少下列哪兩項工具或技術？ (114年第四梯次)
+  text: 某電商公司導入 Agentic AI 來處理客服工作。測試發現 Agent 在回答產品 FAQ 時經常出錯，且無法幫客戶修改訂單。這種情況最可能是因為缺少下列哪兩項工具或技術？ (114年第四梯次)
   type: multiple_choice
   options:
   - API 調用（API Calling）＋ 任務規劃器（Task Planner）
@@ -961,7 +961,7 @@ questions:
 - id: '11450_8'
   chapter_title: AI 代理人 (AI Agents)
   section_title: 歷屆考題
-  text: 小明想開發一個部落格寫作工具，讓用戶輸入文章開頭後，系統自動幫 忙寫出後續內容，例如輸入「今天去了台北木柵動物園...」 ，系統就能 續寫。若要實現這樣的功能，最適合選擇下列哪一類任務？ (114年第四梯次)
+  text: 小明想開發一個部落格寫作工具，讓用戶輸入文章開頭後，系統自動幫忙寫出後續內容，例如輸入「今天去了台北木柵動物園...」 ，系統就能續寫。若要實現這樣的功能，最適合選擇下列哪一類任務？ (114年第四梯次)
   type: multiple_choice
   options:
   - 序列到序列建模（Sequence-to-Sequence Modeling） ，透過輸入序列產生新的輸出序列
@@ -980,7 +980,7 @@ questions:
 - id: '11430_3'
   chapter_title: AI 代理人 (AI Agents)
   section_title: 歷屆考題
-  text: 某大型物流公司計畫導入 AI 系統，以改善客服與配送作業的效率。專 案團隊規劃了以下四個步驟，請問正確的執行順序為何？ 1. 建立符合公司服務流程的 AI 對話邏輯與應答範本，確保顧客體驗 一致 2. 明確定義導入 AI 的目標並設定關鍵績效指標（KPI） 3. 蒐集與清理過往客服紀錄與配送相關資料，作為模型訓練素材 4. 評估並選擇合適的 AI 技術供應商或開源方案，確立技術方向與架 構 (114年第四梯次)
+  text: 某大型物流公司計畫導入 AI 系統，以改善客服與配送作業的效率。專案團隊規劃了以下四個步驟，請問正確的執行順序為何？ 1. 建立符合公司服務流程的 AI 對話邏輯與應答範本，確保顧客體驗一致 2. 明確定義導入 AI 的目標並設定關鍵績效指標（KPI） 3. 蒐集與清理過往客服紀錄與配送相關資料，作為模型訓練素材 4. 評估並選擇合適的 AI 技術供應商或開源方案，確立技術方向與架構 (114年第四梯次)
   type: multiple_choice
   options:
   - 2 → 3 → 4 → 1
@@ -988,7 +988,7 @@ questions:
   - 2 → 1 → 3 → 4
   - 1 → 4 → 3 → 2
   correct_index: 0
-  explanation: 此題涉及 某大型物流公司計畫導... 的核心概念。正確答案為「2 → 3 → 4 → 1；」。
+  explanation: 此題涉及某大型物流公司計畫導... 的核心概念。正確答案為「2 → 3 → 4 → 1；」。
   tags:
   - sec-past-exam
   - past-exam
@@ -999,7 +999,7 @@ questions:
 - id: '11435_3'
   chapter_title: AI 代理人 (AI Agents)
   section_title: 歷屆考題
-  text: 在即時客服系統的效能測試中，若針對延遲測試（Latency Testing） 進行評估，下列哪一項指標最能反映系統是否符合用戶即時互動需 求？(114年第四梯次)
+  text: 在即時客服系統的效能測試中，若針對延遲測試（Latency Testing） 進行評估，下列哪一項指標最能反映系統是否符合用戶即時互動需求？(114年第四梯次)
   type: multiple_choice
   options:
   - AI 模型在同一分鐘內可完成的回覆訊息數量
@@ -1018,7 +1018,7 @@ questions:
 - id: '11420_3'
   chapter_title: AI 代理人 (AI Agents)
   section_title: 歷屆考題
-  text: 某醫院正在規劃一個 AI專案，目的是協助醫師從胸腔X 光影像中判斷 是否存在肺炎徵兆，團隊卻誤將生成式 AI 模型運用於影像診斷。下列 哪一項最可能成為主要風險？ (114年第四梯次)
+  text: 某醫院正在規劃一個 AI專案，目的是協助醫師從胸腔X 光影像中判斷是否存在肺炎徵兆，團隊卻誤將生成式 AI 模型運用於影像診斷。下列哪一項最可能成為主要風險？ (114年第四梯次)
   type: multiple_choice
   options:
   - 模型在生成報告時語句流暢，但僅在文字表達上有差異，對診斷結果沒有重大影響
@@ -1026,7 +1026,7 @@ questions:
   - 模型偏向生成內容而非分類，但此差異僅影響效率，不會造成誤診風險
   - 模型可能生成與實際影像不符的診斷結論，導致誤判並引發醫療與法律風險
   correct_index: 3
-  explanation: 此題涉及 某醫院正在規劃一個 ... 的核心概念。正確答案為「模型可能生成與實際影像不符的診斷結論，導致誤判並引發醫療與法律風險；」。生成式 AI 有幻覺風險，不適合直接用於要求高準確度的醫療影像診斷。
+  explanation: 此題涉及某醫院正在規劃一個 ... 的核心概念。正確答案為「模型可能生成與實際影像不符的診斷結論，導致誤判並引發醫療與法律風險；」。生成式 AI 有幻覺風險，不適合直接用於要求高準確度的醫療影像診斷。
   tags:
   - sec-past-exam
   - past-exam
@@ -1037,7 +1037,7 @@ questions:
 - id: '11424_3'
   chapter_title: AI 代理人 (AI Agents)
   section_title: 歷屆考題
-  text: 某保險公司計畫導入生成式 AI 的內部合約查詢系統，協助業務員與法 務部門快速解讀保單條款與理賠規範。高層特別強調客戶資料隱私與 合規風險控管，即使需要投入較多資源，也必須確保資料不會外洩。在此情況下，下列哪一種策略最符合公司的資料安全與合規優先考量？ (114年第四梯次)
+  text: 某保險公司計畫導入生成式 AI 的內部合約查詢系統，協助業務員與法務部門快速解讀保單條款與理賠規範。高層特別強調客戶資料隱私與合規風險控管，即使需要投入較多資源，也必須確保資料不會外洩。在此情況下，下列哪一種策略最符合公司的資料安全與合規優先考量？ (114年第四梯次)
   type: multiple_choice
   options:
   - 導入開源模型並由 IT 團隊自建，後續再逐步補強隱私與合規控管

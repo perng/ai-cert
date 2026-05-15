@@ -166,8 +166,8 @@ questions:
   type: multiple_choice
   options:
   - -1 到 1 之間 (Range [-1, 1])
-  - 0 到 無窮大 (Range [0, infinity])
-  - 負無窮大 到 正無窮大 (Range [-infinity, infinity])
+  - 0 到無窮大 (Range [0, infinity])
+  - 負無窮大到正無窮大 (Range [-infinity, infinity])
   - 0 到 1 之間 (Range [0, 1])
   correct_index: 3
   explanation: Sigmoid 將輸入壓縮到 (0, 1) 區間，常用於二元分類的輸出層表示機率。
@@ -325,8 +325,8 @@ questions:
   text: Tanh 活化函數的輸出範圍是？
   type: multiple_choice
   options:
-  - 0 到 無窮大 (Range [0, infinity])
-  - 負無窮大 到 正無窮大 (Range [-infinity, infinity])
+  - 0 到無窮大 (Range [0, infinity])
+  - 負無窮大到正無窮大 (Range [-infinity, infinity])
   - -1 到 1 之間 (Range [-1, 1])
   - 0 到 1 之間 (Range [0, 1])
   correct_index: 2

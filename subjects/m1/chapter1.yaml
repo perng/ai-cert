@@ -772,7 +772,7 @@ questions:
   text: 情境：在推薦系統中，若想計算兩個使用者對電影喜好的相似程度，常計算其特徵向量的？
   type: multiple_choice
   options:
-  - 內積 (Dot Product) 或 餘弦相似度 (Cosine Similarity)
+  - 內積 (Dot Product) 或餘弦相似度 (Cosine Similarity)
   - 外積 (Outer Product)
   - 行列式值 (Determinant)
   - 特徵值 (Eigenvalue)

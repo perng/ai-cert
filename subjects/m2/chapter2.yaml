@@ -998,7 +998,7 @@ questions:
   options:
   - 將詞彙刪除 (Delete Word)
   - 將詞彙轉為圖片 (Word to Image)
-  - 將詞彙轉換為具有語意關係的向量 (如 國王-男人+女人=皇后) (Semantic Vectors)
+  - 將詞彙轉換為具有語意關係的向量 (如國王-男人+女人=皇后) (Semantic Vectors)
   - 將詞彙轉為聲音 (Word to Sound)
   correct_index: 2
   explanation: Word Embeddings 讓電腦能透過向量運算理解詞彙間的類比與語意關係。

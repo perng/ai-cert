@@ -706,15 +706,15 @@ questions:
 - id: 11439
   chapter_title: 模型評估與優化
   section_title: 歷屆考題
-  text: 某醫院計畫開發住院日數預測模型，以協助病房調度。多數病人的住院 日數集中在 3–7 天，但仍有少數重症患者因治療需求而住院日數明顯 偏長。醫院希望採用一種合適的評估方式，既能兼顧大部分病人的預測 準確度，也能確保對重症個案的預測維持穩健。下列哪一種方法最符合 此需求？ (114年第四梯次)
+  text: 某醫院計畫開發住院日數預測模型，以協助病房調度。多數病人的住院日數集中在 3–7 天，但仍有少數重症患者因治療需求而住院日數明顯偏長。醫院希望採用一種合適的評估方式，既能兼顧大部分病人的預測準確度，也能確保對重症個案的預測維持穩健。下列哪一種方法最符合此需求？ (114年第四梯次)
   type: multiple_choice
   options:
-  - 在模型檢核時，同時呈現平均絕對誤差（MAE）與重症子群的誤差指 標 (During Model Validation, Simultaneously Presenting MAE and Error Indicators for Critical Care Subgroup)
+  - 在模型檢核時，同時呈現平均絕對誤差（MAE）與重症子群的誤差指標 (During Model Validation, Simultaneously Presenting MAE and Error Indicators for Critical Care Subgroup)
   - 僅針對一般病人樣本進行交叉驗證，以避免重症個案拉高誤差 (Only Performing Cross-Validation on General Patient Samples to Avoid Critical Cases Raising Error)
-  - 將所有病人的住院日數進行標準化處理，以減少數值範圍差異的影 響 (Standardizing All Patients' Length of Stay to Reduce Impact of Value Range Differences)
+  - 將所有病人的住院日數進行標準化處理，以減少數值範圍差異的影響 (Standardizing All Patients' Length of Stay to Reduce Impact of Value Range Differences)
   - 只採用單一的整體決定係數 (R²) 作為模型優劣的判斷依據 (Only Using Single Overall R² as Model Quality Judgment Criterion)
   correct_index: 0
-  explanation: 此題涉及 評估指標 的核心概念。正確答案為「在模型檢核時，同時呈現平均絕對誤差（MAE）與重症子群的誤差指 標」。
+  explanation: 此題涉及評估指標的核心概念。正確答案為「在模型檢核時，同時呈現平均絕對誤差（MAE）與重症子群的誤差指標」。
   tags:
   - sec-past-exam
   - past-exam
@@ -725,7 +725,7 @@ questions:
 - id: 11406
   chapter_title: 模型評估與優化
   section_title: 歷屆考題
-  text: 在 Lasso 模型中，L1 正則化（Regularization）導致參數收斂為零的 原因為何？ (114年第四梯次)
+  text: 在 Lasso 模型中，L1 正則化（Regularization）導致參數收斂為零的原因為何？ (114年第四梯次)
   type: multiple_choice
   options:
   - L1 正則化忽略目標變數 (L1 Regularization Ignores Target Variable)，不考慮預測目標。
@@ -744,7 +744,7 @@ questions:
 - id: 11443
   chapter_title: 模型評估與優化
   section_title: 歷屆考題
-  text: 某公司欲建立員工離職風險預測模型，資料集中包含 「年度績效分數」 、 「平均每月加班時數」 、 「年齡」等數值型特徵。由於各特徵的數值範圍 差異極大（例如績效分數1–5、加班時數0–80、年齡20–65） ，若直 接輸入至使用梯度下降的邏輯迴歸(Logistic Regression)模型，可能 導致模型收斂緩慢或權重偏斜。為提升模型訓練效率與準確度，下列哪 一種特徵工程方法最適合應用於這些數值特徵？ (114年第四梯次)
+  text: 某公司欲建立員工離職風險預測模型，資料集中包含 「年度績效分數」 、 「平均每月加班時數」 、 「年齡」等數值型特徵。由於各特徵的數值範圍差異極大（例如績效分數1–5、加班時數0–80、年齡20–65） ，若直接輸入至使用梯度下降的邏輯迴歸(Logistic Regression)模型，可能導致模型收斂緩慢或權重偏斜。為提升模型訓練效率與準確度，下列哪一種特徵工程方法最適合應用於這些數值特徵？ (114年第四梯次)
   type: multiple_choice
   options:
   - 布林轉換（Boolean Conversion），將數值轉換為布林值。
@@ -752,7 +752,7 @@ questions:
   - One-hot 編碼（One-hot Encoding），將類別轉換為二元欄位。
   - 數值標準化（Numerical Standardization），統一數值範圍以提升訓練效率。
   correct_index: 3
-  explanation: 此題涉及 評估指標 的核心概念。正確答案為「數值標準化（Numerical Standardization）」。
+  explanation: 此題涉及評估指標的核心概念。正確答案為「數值標準化（Numerical Standardization）」。
   tags:
   - sec-past-exam
   - past-exam
@@ -763,7 +763,7 @@ questions:
 - id: 11419
   chapter_title: 模型評估與優化
   section_title: 歷屆考題
-  text: 在訓練機器學習模型時，若任務為預測房價，應選用下列哪一種損失函 數（Loss Function）來衡量預測誤差？ (114年第四梯次)
+  text: 在訓練機器學習模型時，若任務為預測房價，應選用下列哪一種損失函數（Loss Function）來衡量預測誤差？ (114年第四梯次)
   type: multiple_choice
   options:
   - 均方誤差（MSE）(Mean Squared Error)，用於迴歸任務的損失函數。
@@ -771,7 +771,7 @@ questions:
   - Hinge 損失（Hinge Loss），用於 SVM 的損失函數。
   - KL 散度（Kullback-Leibler Divergence），衡量兩個機率分佈差異的指標。
   correct_index: 0
-  explanation: 此題涉及 誤差分析與優化 的核心概念。正確答案為「均方誤差（MSE）」。
+  explanation: 此題涉及誤差分析與優化的核心概念。正確答案為「均方誤差（MSE）」。
   tags:
   - sec-past-exam
   - past-exam

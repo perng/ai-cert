@@ -864,7 +864,7 @@ questions:
   - 以切分並過濾文件片段，減少上下文長度帶來的 Token 負擔
   - 透過調整生成階段的溫度參數，使模型在回覆時更穩定一致
   correct_index: 0
-  explanation: 此題涉及 某開發團隊在建置企業... 的核心概念。正確答案為「支援同時處理多種資訊表示，提升跨文本型態的檢索效果；」。
+  explanation: 此題涉及某開發團隊在建置企業... 的核心概念。正確答案為「支援同時處理多種資訊表示，提升跨文本型態的檢索效果；」。
   tags:
   - sec-past-exam
   - past-exam
@@ -875,7 +875,7 @@ questions:
 - id: '11417_3'
   chapter_title: 檢索增強生成 (RAG) 與模型微調
   section_title: 歷屆考題
-  text: 某公司部署結合 Fine-tuning 與檢索增強生成（RAG）的語言模型系統 作為內部文件助理。系統需同時確保回覆語氣一致、能即時查詢每日新 增文件、維持效能穩定，並避免頻繁重新訓練。在長期維護與效能平衡 下，下列哪一種策略最合適？ (114年第四梯次)
+  text: 某公司部署結合 Fine-tuning 與檢索增強生成（RAG）的語言模型系統作為內部文件助理。系統需同時確保回覆語氣一致、能即時查詢每日新增文件、維持效能穩定，並避免頻繁重新訓練。在長期維護與效能平衡下，下列哪一種策略最合適？ (114年第四梯次)
   type: multiple_choice
   options:
   - 每週重新 Fine-tune模型，將新文件整合進模型知識，逐步取代RAG 模組
@@ -894,7 +894,7 @@ questions:
 - id: '11419_3'
   chapter_title: 檢索增強生成 (RAG) 與模型微調
   section_title: 歷屆考題
-  text: 某醫院導入了一套智慧系統，由三個模組構成：語音辨識 （ASR） → 語 言模型生成（LLM） → 查詢醫療資料庫 API。近期發現部分查詢結果錯誤，例如醫師詢問「術後復健流程」時，系統卻誤判為要查詢「術前 注意事項」 ，因此查詢到錯誤的文件。經檢查已排除語音辨識的錯誤， 下列何者最可能是造成查詢錯誤的來源？ (114年第四梯次)
+  text: 某醫院導入了一套智慧系統，由三個模組構成：語音辨識 （ASR） → 語言模型生成（LLM） → 查詢醫療資料庫 API。近期發現部分查詢結果錯誤，例如醫師詢問「術後復健流程」時，系統卻誤判為要查詢「術前注意事項」 ，因此查詢到錯誤的文件。經檢查已排除語音辨識的錯誤， 下列何者最可能是造成查詢錯誤的來源？ (114年第四梯次)
   type: multiple_choice
   options:
   - 醫療資料庫 API 對應規則設計不清，造成意圖映射模糊
@@ -913,7 +913,7 @@ questions:
 - id: '11421_3'
   chapter_title: 檢索增強生成 (RAG) 與模型微調
   section_title: 歷屆考題
-  text: 某公司開發的智慧車載語音助理，可透過語音辨識（ASR）辨識駕駛語 音，再由 LLM 生成回答並查詢車載 API。測試中發現：ASR 對汽車專 業術語辨識錯誤率高；LLM 的回覆常不精確；系統回覆延遲雖存在但仍 可接受。若目標是「優先提升準確性與回答品質」 ，下列改進步驟的最 合理執行順序為何？ 1. 擴充並標註汽車領域語音資料，微調 ASR 模型 2. 微調 LLM 並加入檢索增強（RAG） 3. 優化系統架構，引入批次推論降低延遲 4. 動態調整生成溫度，平衡準確度與多樣性 (114年第四梯次)
+  text: 某公司開發的智慧車載語音助理，可透過語音辨識（ASR）辨識駕駛語音，再由 LLM 生成回答並查詢車載 API。測試中發現：ASR 對汽車專業術語辨識錯誤率高；LLM 的回覆常不精確；系統回覆延遲雖存在但仍可接受。若目標是「優先提升準確性與回答品質」 ，下列改進步驟的最合理執行順序為何？ 1. 擴充並標註汽車領域語音資料，微調 ASR 模型 2. 微調 LLM 並加入檢索增強（RAG） 3. 優化系統架構，引入批次推論降低延遲 4. 動態調整生成溫度，平衡準確度與多樣性 (114年第四梯次)
   type: multiple_choice
   options:
   - 1 → 2 → 4 → 3
@@ -932,7 +932,7 @@ questions:
 - id: '11442_3'
   chapter_title: 檢索增強生成 (RAG) 與模型微調
   section_title: 歷屆考題
-  text: 某金融機構導入檢索增強生成（ Retrieval-Augmented Generation, RAG）模型，用於客服文件查詢與自動回覆。由於大型模型運算成本過 高，若考慮引入知識蒸餾（Knowledge Distillation, KD）技術，下列 何者為帶來的主要效益？ (114年第四梯次)
+  text: 某金融機構導入檢索增強生成（ Retrieval-Augmented Generation, RAG）模型，用於客服文件查詢與自動回覆。由於大型模型運算成本過高，若考慮引入知識蒸餾（Knowledge Distillation, KD）技術，下列何者為帶來的主要效益？ (114年第四梯次)
   type: multiple_choice
   options:
   - 讓小型模型學習大型模型的知識，在降低運算成本的同時維持檢索與生成品質
@@ -951,7 +951,7 @@ questions:
 - id: '11447_6'
   chapter_title: 檢索增強生成 (RAG) 與模型微調
   section_title: 歷屆考題
-  text: 某顧問公司導入生成式 AI，協助團隊快速檢索並摘要長篇的法規文件。 為了改善檢索結果常出現不相關或過於分散內容的問題，下列何者為 團隊決定對文件進行文本切分（Chunking）的主要目的？ (114年第四梯次)
+  text: 某顧問公司導入生成式 AI，協助團隊快速檢索並摘要長篇的法規文件。 為了改善檢索結果常出現不相關或過於分散內容的問題，下列何者為團隊決定對文件進行文本切分（Chunking）的主要目的？ (114年第四梯次)
   type: multiple_choice
   options:
   - 讓模型在回答時能加快推理速度
@@ -1036,7 +1036,7 @@ questions:
   text: 情境：混合搜尋 (Hybrid Search) 結合了哪兩種搜尋方式？
   type: multiple_choice
   options:
-  - 關鍵字搜尋 (Keyword Search) 與 向量搜尋 (Vector Search)
+  - 關鍵字搜尋 (Keyword Search) 與向量搜尋 (Vector Search)
   - 圖片搜尋與文字搜尋
   - Google 搜尋與 Bing 搜尋
   - 深度優先與廣度優先
@@ -1290,7 +1290,7 @@ questions:
 - id: 115010
   chapter_title: 進階 RAG 與系統架構
   section_title: 歷屆考題
-  text: 某企業建置檢索增強生成（Retrieval-augmented generation, RAG）系統支援內部知 識查詢。隨著使用量提升，團隊發現模型回覆品質穩定，但推論延遲與運算成本 逐漸增加。專案規劃在維持回覆品質前提下進行效能優化。在此情境下，若採用 知識蒸餾（Knowledge Distillation） ，下列敘述何者最為合理？（115年第一梯次）
+  text: 某企業建置檢索增強生成（Retrieval-augmented generation, RAG）系統支援內部知識查詢。隨著使用量提升，團隊發現模型回覆品質穩定，但推論延遲與運算成本逐漸增加。專案規劃在維持回覆品質前提下進行效能優化。在此情境下，若採用知識蒸餾（Knowledge Distillation） ，下列敘述何者最為合理？（115年第一梯次）
   options:
   - 將檢索資料轉換為結構化規則以取代模型；
   - 僅透過增加檢索文件數量改善效能；
@@ -1322,7 +1322,7 @@ questions:
 - id: 115013
   chapter_title: 進階 RAG 與系統架構
   section_title: 歷屆考題
-  text: 某企業建置文件型知識查詢系統，將大量長篇內部文件轉換為可供生成式 AI 使用 的知識來源。在測試過程中，團隊發現若直接以整份文件進行檢索，模型回覆常 包含無關內容，且引用段落不夠精準。團隊評估後，決定導入 Chunking 機制的主 要目的為何？（115年第一梯次）
+  text: 某企業建置文件型知識查詢系統，將大量長篇內部文件轉換為可供生成式 AI 使用的知識來源。在測試過程中，團隊發現若直接以整份文件進行檢索，模型回覆常包含無關內容，且引用段落不夠精準。團隊評估後，決定導入 Chunking 機制的主要目的為何？（115年第一梯次）
   options:
   - 透過縮短輸入長度，加速模型推理流程；
   - 提升檢索結果的語意對齊程度，並降低長文件帶來的干擾；
@@ -1354,12 +1354,12 @@ questions:
 - id: 115018
   chapter_title: 進階 RAG 與系統架構
   section_title: 歷屆考題
-  text: 關於 ChatGPT、Anthropic Claude、GitHub Copilot 等 AI 程式碼輔助工具的運作原 理，下列敘述何者正確？（115年第一梯次）
+  text: 關於 ChatGPT、Anthropic Claude、GitHub Copilot 等 AI 程式碼輔助工具的運作原理，下列敘述何者正確？（115年第一梯次）
   options:
-  - 這些工具基於大型語言模型，經由大量程式碼與文本訓練，透過預測下一個符 號來生成程式碼，但不保證產生程式碼的正確性；
-  - GitHub Copilot 會在提供程式碼建議前執行並驗證該程式碼，確保其執行結果 正確無誤；
-  - Anthropic Claude 的程式碼建議並非即時生成，而是從事先整理的已知解答資料 庫中檢索而得；
-  - ChatGPT 內建完整的編譯器，可在輸出程式碼前自動編譯並更正所有語法與邏 輯錯誤
+  - 這些工具基於大型語言模型，經由大量程式碼與文本訓練，透過預測下一個符號來生成程式碼，但不保證產生程式碼的正確性；
+  - GitHub Copilot 會在提供程式碼建議前執行並驗證該程式碼，確保其執行結果正確無誤；
+  - Anthropic Claude 的程式碼建議並非即時生成，而是從事先整理的已知解答資料庫中檢索而得；
+  - ChatGPT 內建完整的編譯器，可在輸出程式碼前自動編譯並更正所有語法與邏輯錯誤
   correct_index: 0
   explanation: 如 Copilot 這類的程式碼輔助工具是基於語言模型預測下一個 Token 來生成程式碼，雖然語法通常正確，但並無法保證邏輯絕對正確，仍需開發者審查。
   type: multiple_choice
@@ -1370,7 +1370,7 @@ questions:
 - id: 115020
   chapter_title: 進階 RAG 與系統架構
   section_title: 歷屆考題
-  text: 在規劃生成式 AI 解決方案時，下列何種應用場景最適合採用 GPT-Realtime 類型 模型？（115年第一梯次）
+  text: 在規劃生成式 AI 解決方案時，下列何種應用場景最適合採用 GPT-Realtime 類型模型？（115年第一梯次）
   options:
   - 需長時間批次處理的大規模報表生成任務；
   - 即時資料查詢與結構化資訊檢索系統；
@@ -1386,7 +1386,7 @@ questions:
 - id: 115026
   chapter_title: 進階 RAG 與系統架構
   section_title: 歷屆考題
-  text: 某支付平台為了強化洗錢行為檢測，計劃導入生成式 AI 技術來輔助分析可疑交易 模式。該平台擁有大量歷史交易記錄和已知洗錢案例資料，希望 AI 能自動生成可 疑交易的特徵描述報告。下列哪一種生成式 AI 技術最適合此需求？（115年第一梯次）
+  text: 某支付平台為了強化洗錢行為檢測，計劃導入生成式 AI 技術來輔助分析可疑交易模式。該平台擁有大量歷史交易記錄和已知洗錢案例資料，希望 AI 能自動生成可疑交易的特徵描述報告。下列哪一種生成式 AI 技術最適合此需求？（115年第一梯次）
   options:
   - 使用 Midjourney 生成交易流程圖像；
   - 採用 Few-shot Learning 訓練圖像識別模型；
@@ -1402,10 +1402,10 @@ questions:
 - id: 115035
   chapter_title: 進階 RAG 與系統架構
   section_title: 歷屆考題
-  text: 在生成式 AI 文字生成模型設計中，Encoder–Decoder 與 Decoder-only 為常見架 構。下列何者最能正確說明兩者在資訊處理與生成機制上的核心差異？（115年第一梯次）
+  text: 在生成式 AI 文字生成模型設計中，Encoder–Decoder 與 Decoder-only 為常見架構。下列何者最能正確說明兩者在資訊處理與生成機制上的核心差異？（115年第一梯次）
   options:
-  - Encoder–Decoder 透過編碼與解碼階段處理序列，Decoder-only 則以單一模型完 成處理；
-  - Encoder–Decoder 區分輸入理解與內容生成階段，Decoder-only 以單一模型同時 處理上下文與生成；
+  - Encoder–Decoder 透過編碼與解碼階段處理序列，Decoder-only 則以單一模型完成處理；
+  - Encoder–Decoder 區分輸入理解與內容生成階段，Decoder-only 以單一模型同時處理上下文與生成；
   - Decoder-only 架構主要依賴外部知識檢索，Encoder–Decoder 則不需要；
   - Encoder–Decoder 架構僅適用於翻譯任務，Decoder-only 架構較適合對話任務
   correct_index: 1
@@ -1418,7 +1418,7 @@ questions:
 - id: 115040
   chapter_title: 進階 RAG 與系統架構
   section_title: 歷屆考題
-  text: 某企業導入大型語言模型（LLM）進行客服自動化，並已透過 Fine-Tuning 學習企 業標準問答範例，但在實務運作中仍出現回應策略未符合服務優先順序及語氣與 品牌風格不一致的情況，因此技術團隊建議再導入 Reinforcement Fine-tuning （RFT）機制進行優化，其主要目的為何？（115年第一梯次）
+  text: 某企業導入大型語言模型（LLM）進行客服自動化，並已透過 Fine-Tuning 學習企業標準問答範例，但在實務運作中仍出現回應策略未符合服務優先順序及語氣與品牌風格不一致的情況，因此技術團隊建議再導入 Reinforcement Fine-tuning （RFT）機制進行優化，其主要目的為何？（115年第一梯次）
   options:
   - 擴展模型的知識涵蓋範圍與資料記憶能力；
   - 透過 reward 訊號調整模型回應策略與行為偏好；

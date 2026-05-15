@@ -343,7 +343,7 @@ questions:
   options:
   - 卷積與池化 (Convolution and Pooling)，CNN 的核心技術。
   - 遞歸與注意力 (Recurrence and Attention)，RNN 與 Transformer 的技術。
-  - 動量 (Momentum) 與 自適應學習率 (Momentum and Adaptive Learning Rate)
+  - 動量 (Momentum) 與自適應學習率 (Momentum and Adaptive Learning Rate)
   - 隨機與確定 (Random and Deterministic)，隨機性與確定性的概念。
   correct_index: 2
   explanation: ADAM 結合了 Momentum（慣性）和 RMSprop（自適應學習率），是目前最常用的優化器。
@@ -738,7 +738,7 @@ questions:
 - id: '11416_2'
   chapter_title: 神經網路與深度學習
   section_title: 歷屆考題
-  text: 某團隊想採用循環神經網路（Recurrent Neural Network, RNN）建構 長期氣候數據的預測模型，以下哪一項敘述最符合使用 RNN 可能會遇 到的挑戰？ (114年第四梯次)
+  text: 某團隊想採用循環神經網路（Recurrent Neural Network, RNN）建構長期氣候數據的預測模型，以下哪一項敘述最符合使用 RNN 可能會遇到的挑戰？ (114年第四梯次)
   type: multiple_choice
   options:
   - RNN 無法處理可變長度的序列輸入，因此在實務上限制極大
@@ -757,7 +757,7 @@ questions:
 - id: '11447_3'
   chapter_title: 神經網路與深度學習
   section_title: 歷屆考題
-  text: 在訓練神經網路時，為了提升模型收斂速度與穩定性，避免梯度消失或 梯度爆炸，下列哪一種做法最常被使用？ (114年第四梯次)
+  text: 在訓練神經網路時，為了提升模型收斂速度與穩定性，避免梯度消失或梯度爆炸，下列哪一種做法最常被使用？ (114年第四梯次)
   type: multiple_choice
   options:
   - 對輸入資料進行隨機旋轉或水平翻轉，以增加資料多樣性
@@ -765,7 +765,7 @@ questions:
   - 減少樣本量提升訓練速度
   - 對目標變數或特徵進行標準化
   correct_index: 1
-  explanation: 此題涉及 神經網路基礎 的核心概念。正確答案為「選用 ReLU 或其變體作為隱藏層的啟動函數，以改善梯度傳播」。
+  explanation: 此題涉及神經網路基礎的核心概念。正確答案為「選用 ReLU 或其變體作為隱藏層的啟動函數，以改善梯度傳播」。
   tags:
   - sec-past-exam
   - past-exam
@@ -776,15 +776,15 @@ questions:
 - id: '11424_2'
   chapter_title: 神經網路與深度學習
   section_title: 歷屆考題
-  text: 在保持 GPT-OSS 模型架構不變的前提下，如果將模型參數量從20 億提 升至 120 億，並假設有足夠的訓練資料支撐，下列敘述何者最正確？ (114年第四梯次)
+  text: 在保持 GPT-OSS 模型架構不變的前提下，如果將模型參數量從20 億提升至 120 億，並假設有足夠的訓練資料支撐，下列敘述何者最正確？ (114年第四梯次)
   type: multiple_choice
   options:
-  - 模型參數增加會線性提升效能，且即使訓練資料不變也不會遇到瓶 頸
+  - 模型參數增加會線性提升效能，且即使訓練資料不變也不會遇到瓶頸
   - 參數越多模型推理越快，因為每層可以並行計算更多參數
-  - 較大的參數量能提升模型的表達能力與預測效能，但需足夠訓練資 料支持
+  - 較大的參數量能提升模型的表達能力與預測效能，但需足夠訓練資料支持
   - 增加參數量不影響記憶體使用，只會影響計算速度
   correct_index: 2
-  explanation: 此題涉及 Transformer 與自注意力機制 的核心概念。正確答案為「較大的參數量能提升模型的表達能力與預測效能，但需足夠訓練資 料支持」。
+  explanation: 此題涉及 Transformer 與自注意力機制的核心概念。正確答案為「較大的參數量能提升模型的表達能力與預測效能，但需足夠訓練資料支持」。
   tags:
   - sec-past-exam
   - past-exam
@@ -795,13 +795,13 @@ questions:
 - id: '11427_2'
   chapter_title: 神經網路與深度學習
   section_title: 歷屆考題
-  text: 在大型 Transformer 模型的效能優化過程中，常見的方法之一是「剪 枝（Pruning） 」 。下列哪一項最符合該方法的核心概念？ (114年第四梯次)
+  text: 在大型 Transformer 模型的效能優化過程中，常見的方法之一是「剪枝（Pruning） 」 。下列哪一項最符合該方法的核心概念？ (114年第四梯次)
   type: multiple_choice
   options:
   - 將模型中所有權重按比例縮小，使其值更接近零，以降低計算量
-  - 移除模型中影響較小或冗餘的部分權重參數，以減少模型大小並提 升推理效率
-  - 在訓練時僅更新部分權重而將其他權重凍結，從而減少需要調整的 參數數量
-  - 根據注意力分數動態跳過處理部分輸入 Token，以減少每次前向傳 播的計算
+  - 移除模型中影響較小或冗餘的部分權重參數，以減少模型大小並提升推理效率
+  - 在訓練時僅更新部分權重而將其他權重凍結，從而減少需要調整的參數數量
+  - 根據注意力分數動態跳過處理部分輸入 Token，以減少每次前向傳播的計算
   correct_index: 1
   explanation: Transformer 架構的核心是 Self-Attention 機制，它能平行處理序列數據並捕捉長距離依賴，解決了 RNN 無法平行化且易遺忘的問題。
   tags:
@@ -814,13 +814,13 @@ questions:
 - id: '11428_2'
   chapter_title: 神經網路與深度學習
   section_title: 歷屆考題
-  text: 對非常長的輸入序列進行推理（Inference），Transformer 模型推理的 主要計算瓶頸通常是什麼？ (114年第四梯次)
+  text: 對非常長的輸入序列進行推理（Inference），Transformer 模型推理的主要計算瓶頸通常是什麼？ (114年第四梯次)
   type: multiple_choice
   options:
-  - 模型輸出層產生文本的過程，因為每生成一個詞都必須重新訓練整 個模型一次
-  - 詞嵌入 (Embedding) 查找操作，因為其時間複雜度隨詞彙表大小 指數級增長
+  - 模型輸出層產生文本的過程，因為每生成一個詞都必須重新訓練整個模型一次
+  - 詞嵌入 (Embedding) 查找操作，因為其時間複雜度隨詞彙表大小指數級增長
   - Softmax 函數的計算，因為對每個 Token 都需要執行繁重的運算
-  - 自注意力層的計算和其記憶體使用，因為注意力矩陣的大小隨序列 長度呈平方級增長
+  - 自注意力層的計算和其記憶體使用，因為注意力矩陣的大小隨序列長度呈平方級增長
   correct_index: 3
   explanation: Transformer 架構的核心是 Self-Attention 機制，它能平行處理序列數據並捕捉長距離依賴，解決了 RNN 無法平行化且易遺忘的問題。
   tags:

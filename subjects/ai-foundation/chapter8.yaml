@@ -706,7 +706,7 @@ questions:
 - id: '11422_1'
   chapter_title: 生成式 AI 與大型語言模型
   section_title: 歷屆考題
-  text: 關於變分自編碼器（Variational Autoencoder, VAE）的運作流程，下 列何者敘述最為正確？ (114年第四梯次)
+  text: 關於變分自編碼器（Variational Autoencoder, VAE）的運作流程，下列何者敘述最為正確？ (114年第四梯次)
   type: multiple_choice
   options:
   - 解碼器的任務是將低維壓縮向量分類為不同類別 (Decoder's Task Is to Classify Low-Dimensional Compressed Vectors into Different Categories)，屬於分類任務。
@@ -714,7 +714,7 @@ questions:
   - 編碼器將資料轉換為潛在空間表示，解碼器再重建資料 (Encoder Converts Data to Latent Space Representation, Decoder Reconstructs Data)
   - 編碼器利用最大邊際機率對資料進行異常點偵測 (Encoder Uses Maximum Marginal Probability for Anomaly Detection)，屬於異常偵測。
   correct_index: 2
-  explanation: 此題涉及 生成式 AI 原理 的核心概念。正確答案為「編碼器將資料轉換為潛在空間表示，解碼器再重建資料」。
+  explanation: 此題涉及生成式 AI 原理的核心概念。正確答案為「編碼器將資料轉換為潛在空間表示，解碼器再重建資料」。
   tags:
   - sec-past-exam
   - past-exam
@@ -725,15 +725,15 @@ questions:
 - id: '11426_1'
   chapter_title: 生成式 AI 與大型語言模型
   section_title: 歷屆考題
-  text: 在深度學習模型的微調（Fine-tuning）過程中，可能出現所謂的「災 難性遺忘 （Catastrophic Forgetting） 」 。 此現象最可能造成哪種情況？ (114年第四梯次)
+  text: 在深度學習模型的微調（Fine-tuning）過程中，可能出現所謂的「災難性遺忘 （Catastrophic Forgetting） 」 。 此現象最可能造成哪種情況？ (114年第四梯次)
   type: multiple_choice
   options:
   - 由於計算資源或訓練步驟不足，模型在微調過程中無法完整收斂， 導致學習效果受限
   - 微調後模型的表現變得隨機，無法有效記憶新學到的模式與知識
-  - 微調後模型的部分權重產生偏移，導致模型無法針對較長的文字進 行回應
-  - 模型過度適應微調的資料分佈，逐漸遺忘先前預訓練所獲得的廣泛 知識，在原有任務或廣泛領域上表現變差
+  - 微調後模型的部分權重產生偏移，導致模型無法針對較長的文字進行回應
+  - 模型過度適應微調的資料分佈，逐漸遺忘先前預訓練所獲得的廣泛知識，在原有任務或廣泛領域上表現變差
   correct_index: 3
-  explanation: 此題涉及 LLM 技術與應用 的核心概念。正確答案為「模型過度適應微調的資料分佈，逐漸遺忘先前預訓練所獲得的廣泛 知識，在原有任務或廣泛領域上表現變差」。
+  explanation: 此題涉及 LLM 技術與應用的核心概念。正確答案為「模型過度適應微調的資料分佈，逐漸遺忘先前預訓練所獲得的廣泛知識，在原有任務或廣泛領域上表現變差」。
   tags:
   - sec-past-exam
   - past-exam
@@ -752,7 +752,7 @@ questions:
   - 強化學習 Q-learning函數模型 (Reinforcement Learning Q-learning Function Model)，用於強化學習的價值函數。
   - 基因演算法（Genetic Algorithm），基於生物進化的優化演算法。
   correct_index: 1
-  explanation: 此題涉及 生成式 AI 原理 的核心概念。正確答案為「條件語言模型（Conditional Language Model）」。
+  explanation: 此題涉及生成式 AI 原理的核心概念。正確答案為「條件語言模型（Conditional Language Model）」。
   tags:
   - sec-past-exam
   - past-exam
@@ -763,12 +763,12 @@ questions:
 - id: '11438_1'
   chapter_title: 生成式 AI 與大型語言模型
   section_title: 歷屆考題
-  text: 某公司建置基於檢索增強生成（RAG）的知識查詢系統，需同時兼顧查 詢效能與資料的即時更新。近期發現回應內容偶爾過時，且每次更新文 件都需完整重建索引，導致系統在更新期間無法服務。若要解決此問題 並提升整體穩健性，下列哪項做法最適合？ (114年第四梯次)
+  text: 某公司建置基於檢索增強生成（RAG）的知識查詢系統，需同時兼顧查詢效能與資料的即時更新。近期發現回應內容偶爾過時，且每次更新文件都需完整重建索引，導致系統在更新期間無法服務。若要解決此問題並提升整體穩健性，下列哪項做法最適合？ (114年第四梯次)
   type: multiple_choice
   options:
   - 調整生成模型的回應隨機性參數，以降低答案偏差並提升一致性
   - 提升檢索與索引的運算效能，以縮短查詢與更新所需時間
-  - 採用索引的增量或分段更新方式，使新資料能即時納入而不需全部 重建
+  - 採用索引的增量或分段更新方式，使新資料能即時納入而不需全部重建
   - 建立常見問題的標準答案集，透過快速檢索回應以降低模型負擔
   correct_index: 2
   explanation: RAG (檢索增強生成) 結合了檢索系統與生成模型，能讓 LLM 參考外部知識庫回答問題，有效減少幻覺並確保資訊時效性。
@@ -782,15 +782,15 @@ questions:
 - id: '11450_2'
   chapter_title: 生成式 AI 與大型語言模型
   section_title: 歷屆考題
-  text: 某雲端服務公司計畫將大型語言模型部署於線上系統，並以批次推論 （Batch Inference）方式處理每日上百萬筆用戶請求。專案團隊在評 估可能遇到的挑戰時，下列哪一項通常不會被視為批次推論階段的主 要難題？ (114年第四梯次)
+  text: 某雲端服務公司計畫將大型語言模型部署於線上系統，並以批次推論 （Batch Inference）方式處理每日上百萬筆用戶請求。專案團隊在評估可能遇到的挑戰時，下列哪一項通常不會被視為批次推論階段的主要難題？ (114年第四梯次)
   type: multiple_choice
   options:
-  - 如何確保訓練語料的涵蓋性與標註品質，以避免模型偏差影響輸 出
+  - 如何確保訓練語料的涵蓋性與標註品質，以避免模型偏差影響輸出
   - 當批次規模增大時，如何降低推論延遲並保持即時回應能力
-  - 在推論過程中，有效管理與分配龐大的輸入資料量以避免資源壅 塞
-  - 在叢集環境中精確安排推論任務，以提升GPU/TPU 等硬體資源的利 用率 《以下空白》
+  - 在推論過程中，有效管理與分配龐大的輸入資料量以避免資源壅塞
+  - 在叢集環境中精確安排推論任務，以提升GPU/TPU 等硬體資源的利用率 《以下空白》
   correct_index: 0
-  explanation: 此題涉及 LLM 技術與應用 的核心概念。正確答案為「如何確保訓練語料的涵蓋性與標註品質，以避免模型偏差影響輸 出」。
+  explanation: 此題涉及 LLM 技術與應用的核心概念。正確答案為「如何確保訓練語料的涵蓋性與標註品質，以避免模型偏差影響輸出」。
   tags:
   - sec-past-exam
   - past-exam

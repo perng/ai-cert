@@ -229,10 +229,10 @@ questions:
   text: Sigmoid 函數的輸出範圍是？
   type: multiple_choice
   options:
-  - 0 到 無窮大 (Range [0, infinity])
+  - 0 到無窮大 (Range [0, infinity])
   - -1 到 1 之間 (Range [-1, 1])
   - 0 到 1 之間 (Range [0, 1])
-  - 負無窮大 到 正無窮大 (Range [-infinity, infinity])
+  - 負無窮大到正無窮大 (Range [-infinity, infinity])
   correct_index: 2
   explanation: Sigmoid 函數 $\sigma(z) = 1 / (1 + e^{-z})$ 將任意實數映射到 (0, 1) 區間，適合表示機率。
   tags:

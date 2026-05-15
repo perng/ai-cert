@@ -980,7 +980,7 @@ questions:
   text: 情境：Label Encoding 適合處理？
   type: multiple_choice
   options:
-  - 有序的類別變數 (Ordinal Variables)，如 低/中/高
+  - 有序的類別變數 (Ordinal Variables)，如低/中/高
   - 無序的類別變數 (Nominal)
   - 影像數據
   - 純文本數據

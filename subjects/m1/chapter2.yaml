@@ -230,7 +230,7 @@ questions:
   type: multiple_choice
   options:
   - 超過平均值 3 個標準差 (3-Sigma Rule)
-  - 小於 Q1 - 1.5*IQR 或 大於 Q3 + 1.5*IQR (Boxplot Rule)
+  - 小於 Q1 - 1.5*IQR 或大於 Q3 + 1.5*IQR (Boxplot Rule)
   - 數值為負數 (Negative Values)
   - 數值最大的前 1% (Top 1 Percentile)
   correct_index: 1

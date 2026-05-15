@@ -422,7 +422,7 @@ questions:
   type: multiple_choice
   options:
   - Q-learning 和 SARSA 演算法
-  - 策略梯度 (Actor) 和 價值函數 (Critic) 方法
+  - 策略梯度 (Actor) 和價值函數 (Critic) 方法
   - DQN 和 CNN 架構
   - 隨機森林和 SVM 模型
   correct_index: 1

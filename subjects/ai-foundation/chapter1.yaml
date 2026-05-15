@@ -645,10 +645,10 @@ questions:
   text: 情境題：某醫院引進一套 AI 系統協助判讀 CT 影像，該系統會自動標記出疑似腫瘤的位置，但最終診斷報告必須由放射科醫師檢視並簽名確認後才能發出。請問此系統屬於哪種 AI 類型與協作模式？
   type: multiple_choice
   options:
-  - 強 AI (AGI) 搭配 人在迴圈外 (HOOTL)，通用 AI 完全自動化運作。
-  - 弱 AI (ANI) 搭配 人在迴圈上 (HOTL)，專精 AI 由人類監督運作。
-  - 弱 AI (ANI) 搭配 人在迴圈中 (HITL)，專精 AI 需要人類確認決策。
-  - 符號式 AI 搭配 人在迴圈外 (HOOTL)，規則式 AI 完全自動化運作。
+  - 強 AI (AGI) 搭配人在迴圈外 (HOOTL)，通用 AI 完全自動化運作。
+  - 弱 AI (ANI) 搭配人在迴圈上 (HOTL)，專精 AI 由人類監督運作。
+  - 弱 AI (ANI) 搭配人在迴圈中 (HITL)，專精 AI 需要人類確認決策。
+  - 符號式 AI 搭配人在迴圈外 (HOOTL)，規則式 AI 完全自動化運作。
   correct_index: 2
   explanation: 該系統專精於影像判讀（弱 AI），且必須由人類確認才能完成任務（人在迴圈中 HITL）。
   tags:
