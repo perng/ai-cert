@@ -45,6 +45,12 @@ label: chap-ai-foundation-chapter7
 
 ![Activation Functions](images/activation-functions.webp)
 
+### 神經網路內部構件補充 {#sec-nn-components}
+
+*   **權重與偏置 (Weight and Bias)**：權重決定輸入特徵對輸出的影響大小，偏置則調整神經元啟動門檻。訓練過程實際更新的主要參數，就是這些權重與偏置。
+*   **層正規化 (Layer Normalization)**：在單一樣本的特徵維度上做正規化，讓每層輸入的數值尺度較穩定。Transformer 常用 Layer Normalization 來穩定深層網路訓練。
+*   **容易混淆**：Batch Normalization 通常跨 batch 統計；Layer Normalization 主要在同一筆樣本內統計，因此更適合序列模型與小批次推論場景。
+
 ### 反向傳播 (Backpropagation) 與優化器(Optimizer) {#sec-backpropagation}
 
 神經網路是如何「學習」的？這是一個**試誤 (Trial and Error)** 的過程。
@@ -238,4 +244,3 @@ Transformer 由 Encoder（編碼器）和 Decoder（解碼器）組成，後來�
 ## 歷屆考題 {#sec-past-exam}
 
 請做測驗看歷屆考題。
-

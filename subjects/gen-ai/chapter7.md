@@ -213,9 +213,17 @@ AI 不只要強大，還要善良且可信。
 
 ![負責任 AI](./images/responsible-ai.webp)
 
+### 5. 安全攻擊與治理文件補充 {.unnumbered}
+
+*   **模型萃取攻擊 (Model Extraction)**：攻擊者透過大量查詢模型輸入與輸出，反推近似模型或敏感行為。企業應用 API rate limit、異常查詢偵測與最小權限控制降低風險。
+*   **對抗樣本 (Adversarial Example)**：在輸入中加入人眼難以察覺、但會誤導模型的擾動。影像分類、語音辨識與文字分類都可能受影響。
+*   **NIST AI RMF (NIST AI Risk Management Framework)**：美國 NIST 提出的 AI 風險管理框架，核心動詞包含 Govern、Map、Measure、Manage，適合用來設計企業 AI 治理流程。
+*   **OWASP LLM Top 10 (OWASP Top 10 for LLM Applications)**：整理 LLM 應用常見風險，例如 prompt injection、不安全輸出處理、敏感資訊外洩、供應鏈風險與過度代理權限。
+*   **模型卡文件 (Model Card Documentation)**：Model Cards 的文件化版本，應記錄模型用途、限制、訓練資料、評估結果、風險與適用邊界。
+*   **資料卡 / 資料集說明書 (Data Card / Datasheet for Datasets)**：Data Card / Datasheet 用來說明資料來源、蒐集方式、授權、欄位意義、偏差風險與適用限制，是資料治理與稽核的重要材料。
+
 
 ## 歷屆考題 {#sec-past-exam}
 
 請做測驗看歷屆考題。
-
 

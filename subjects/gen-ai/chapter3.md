@@ -59,16 +59,29 @@ RAG 的運作可以分為五個標準步驟：
 
 > **最佳實務**：通常建議**先 RAG，後 Fine-tuning**。先用 RAG 解決知識獲取問題，如果發現模型聽不懂專業術語或語氣不對，再考慮 Fine-tuning。
 
+### 微調與持續學習補充 {.unnumbered}
+
+*   **DPO (Direct Preference Optimization)**：直接用偏好資料讓模型偏向較好的回答，常被視為 RLHF 的簡化替代方案；不需要完整建立 reward model 與強化學習流程。
+*   **Adapter (Adapter Tuning)**：在原模型中插入小型可訓練模組，只更新 adapter 參數，降低微調成本，也便於多任務切換。
+*   **提示微調 (Prompt Tuning)**：不改動大模型權重，而是訓練一組可學習的軟提示向量，引導模型適應特定任務。
+*   **QLoRA (Quantized LoRA)**：先把基礎模型量化，再用 LoRA 進行低秩微調，常用於資源有限時微調大型模型。
+*   **彈性權重鞏固 (EWC)**：持續學習中用來減少災難性遺忘的方法，會保護舊任務中重要的參數，使新任務訓練不容易破壞舊能力。
+*   **參數隔離 (Parameter Isolation)**：替不同任務保留不同 adapter、mask 或子網路，把任務間的參數干擾降到最低。
+
 ### 2. 進階 RAG 技術 (Advanced RAG) {.unnumbered}
 為了提升檢索的準確度，除了標準流程外，還有許多優化技巧：
 
-*   **混合搜尋 (Hybrid Search)**：
+*   **混合檢索 (Hybrid Retrieval) / 混合搜尋 (Hybrid Search)**：
     *   同時使用 **關鍵字搜尋 (Keyword Search/BM25)** 與 **向量搜尋 (Vector Search)**。
     *   *優點*：結合了關鍵字的精準度（如專有名詞、型號）與向量的語意理解能力。
 
 *   **重排序 (Re-ranking)**：
     *   先檢索出較多候選片段 (Top-50)，再用一個精準的 Cross-Encoder 模型對這 50 個片段進行詳細評分與排序，最後只取 Top-5 給 LLM。
     *   *類比*：海選 (Retrieval) 先撈一堆人，決賽 (Re-ranking) 再由評審仔細打分。
+
+*   **接地 (Grounding)**：
+    *   讓模型回答明確依據外部資料、檢索片段或工具結果，而不是只靠參數記憶。
+    *   *重點*：Grounding 能降低幻覺風險，但仍需要檢索品質、引用與防護欄配合。
 
 *   **查詢轉換 (Query Transformation)**：
     *   LLM 在檢索前先改寫使用者的問題。
@@ -150,5 +163,4 @@ MCP 定義了三種主要的互動模式：
 ## 歷屆考題 {#sec-past-exam}
 
 請做測驗看歷屆考題。
-
 

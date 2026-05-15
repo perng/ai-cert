@@ -340,3 +340,5 @@ future/
 **/*_files/
 
 site_libs/
+
+subjects/*/*.html

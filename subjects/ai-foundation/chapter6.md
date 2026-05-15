@@ -73,6 +73,14 @@ label: chap-ai-foundation-chapter6
 
 ![DBSCAN](images/dbscan.webp)
 
+### 高斯混合模型 (Gaussian Mixture Model) {#sec-gmm}
+
+**高斯混合模型 (Gaussian Mixture Model, GMM)** 是一種機率式分群方法，假設資料由多個高斯分布混合而成。它不像 K-means 只給每筆資料一個硬分群，而是輸出「屬於每一群的機率」。
+
+*   **適用情境**：群體邊界模糊、資料可能呈橢圓形分布、需要知道不確定性時。
+*   **常見考點**：K-means 是距離導向、硬分群；GMM 是機率導向、軟分群。
+*   **限制**：仍需設定成分數量，且對初始化與分布假設敏感。
+
 ## 關聯規則與降維 {#sec-association-rules}
 
 ### Apriori 演算法 (購物籃分析) {#sec-apriori}
@@ -244,4 +252,3 @@ label: chap-ai-foundation-chapter6
 ## 歷屆考題 {#sec-past-exam}
 
 請做測驗看歷屆考題。
-

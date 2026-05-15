@@ -38,6 +38,7 @@ label: chap-ai-foundation-chapter9
 *   **優點**：
     *   **不浪費資料**：每一筆資料都有機會被用來訓練，也有機會被用來驗證。
     *   **穩健 (Robust)**：評估結果更客觀，不會因為運氣好切到簡單的資料就以為模型很強。
+*   **K折交叉驗證 (K-fold Cross Validation)**：中文考題常把 K-fold 寫成 K折，意思相同；重點是每一折輪流當驗證集，最後取平均表現。
 
 ![K-fold 交叉驗證](images/cross-validation.webp)
 
@@ -62,6 +63,7 @@ label: chap-ai-foundation-chapter9
 *   **F1-Score**：Precision 和 Recall 的調和平均數。
     *   $$ F1 = 2 \times \frac{Precision \times Recall}{Precision + Recall} $$
     *   當需要兼顧兩者時使用。
+*   **平衡準確率 (Balanced Accuracy)**：先分別計算各類別的召回率，再取平均。當正負類比例差很多時，比一般 Accuracy 更能反映少數類表現。
 
 ![分類指標](images/classification-metrics.webp)
 
@@ -76,6 +78,26 @@ label: chap-ai-foundation-chapter9
         *   **AUC = 1.0**：完美神人（但通常是資料洩漏）。
     *   *類比*：**排隊能力**。AUC 越高，代表模型越能把「有病的人」排在「沒病的人」前面（機率值較高）。
 
+*   **PR 曲線 (Precision-Recall Curve)**：
+    *   **概念**：觀察不同決策閾值下 Precision 與 Recall 的取捨。
+    *   **適用**：正類很少、特別在意少數類抓取能力時，PR 曲線通常比 ROC 曲線更有判讀價值。
+
+*   **Top-K 指標 (Top-K Metric)**：
+    *   **概念**：只要正確答案出現在模型排名前 K 個候選中，就算命中。
+    *   **應用**：推薦系統、搜尋、影像分類候選清單。
+
+*   **MRR (Mean Reciprocal Rank)**：
+    *   **概念**：看第一個正確答案出現在第幾名，名次越前分數越高。
+    *   **應用**：問答系統、搜尋排序、RAG 檢索評估。
+
+*   **NDCG (Normalized Discounted Cumulative Gain)**：
+    *   **概念**：不只看是否命中，也看相關文件的排序位置與相關程度；越相關的結果排越前，分數越高。
+    *   **應用**：搜尋引擎、推薦系統、文件檢索。
+
+*   **校準誤差與可靠性圖 (ECE / Reliability Diagram)**：
+    *   **概念**：檢查模型說「80% 有把握」時，實際是否大約 80% 正確。
+    *   **重點**：模型排序能力好，不代表機率校準好；醫療、金融等風險決策常需要校準。
+
 ![AUC-ROC 曲線](images/auc-roc.webp)
 
 ### 迴歸指標 (Regression Metrics) {#sec-regression-metrics}
@@ -86,6 +108,9 @@ label: chap-ai-foundation-chapter9
 *   **平均絕對誤差 (MAE, Mean Absolute Error)**：
     *   $$ MAE = \frac{1}{n} \sum |y_{true} - y_{pred}| $$
     *   **特點**：對離群值較不敏感，解釋直觀（平均差幾分）。
+*   **平均絕對百分比誤差 (MAPE)**：
+    *   $$ MAPE = \frac{100\%}{n} \sum \left| \frac{y_{true} - y_{pred}}{y_{true}} \right| $$
+    *   **特點**：用百分比表示誤差，方便跨產品或跨市場比較；但真實值接近 0 時會不穩定。
 *   **R-squared (R<sup>2</sup>, 決定係數)**：
     *   $$ R^2 = 1 - \frac{SS_{res}}{SS_{tot}} = 1 - \frac{\sum (y_{true} - y_{pred})^2}{\sum (y_{true} - y_{mean})^2} $$
     *   **意義**：衡量模型解釋了資料多少變異。
@@ -243,4 +268,3 @@ label: chap-ai-foundation-chapter9
 ## 歷屆考題 {#sec-past-exam}
 
 請做測驗看歷屆考題。
-

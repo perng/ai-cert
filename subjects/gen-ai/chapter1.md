@@ -171,6 +171,12 @@ Transformer 模型自 2017 年問世以來，已成為自然語言處理 (NLP) �
     *   *缺點*：運算量大，速度較慢。
     *   *注意*：在現代 LLM (如 GPT-4) 中，通常預設使用 Sampling (Temperature/Top-P) 而非 Beam Search，因為 Sampling 更能產生多樣化的內容。
 
+### 7. 預訓練任務與推論加速 {.unnumbered}
+
+*   **自迴歸生成 (Autoregressive Generation)**：模型一次產生一個 token，並把已產生的 token 當成下一步輸入。GPT 類模型屬於這種 decoder-only 生成方式，適合文字續寫、對話與程式碼生成。
+*   **遮罩語言模型 (Masked Language Modeling)**：訓練時遮住句子中的部分 token，要求模型猜回被遮住的內容。BERT 類 encoder-only 模型常用這種任務，適合分類、檢索與理解任務。
+*   **KV Cache (Key-Value Cache)**：推論時保存前面 token 的 Key / Value attention 狀態，避免每產生一個新 token 都重新計算整段上下文。Key-Value Cache 能降低延遲，但會增加記憶體使用量。
+
 
 ## 官方學習指引補充：生成式 AI 應用領域與工具使用
 
@@ -283,5 +289,4 @@ Transformer 模型自 2017 年問世以來，已成為自然語言處理 (NLP) �
 ## 歷屆考題 {#sec-past-exam}
 
 請做測驗看歷屆考題。
-
 
