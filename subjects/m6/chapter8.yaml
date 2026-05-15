@@ -257,7 +257,7 @@ questions:
   usage: both
 - id: m6-ch8-code-001
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: MultiheadAttention 基礎
   text: 在 self-attention 中，Q、K、V 來自哪裡？
   content:
   - type: text
@@ -275,12 +275,12 @@ questions:
   explanation: self-attention 的 query、key、value 都來自同一段序列表示。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-attention
   - code-reading
   usage: quiz
 - id: m6-ch8-code-002
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: Embedding 與位置資訊
   text: nn.Embedding(vocab_size, d_model) 的作用是什麼？
   content:
   - type: text
@@ -300,12 +300,12 @@ questions:
   explanation: Embedding layer 會把離散整數 token id 映射成連續向量。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-embedding-position
   - code-reading
   usage: quiz
 - id: m6-ch8-code-003
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: Embedding 與位置資訊
   text: 若 tokens shape 是 (1, 4)，embedding 後 x.shape 是什麼？
   content:
   - type: text
@@ -325,12 +325,12 @@ questions:
   explanation: 每個 token 會變成 d_model 維向量，因此 shape 是 batch、seq_len、d_model。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-embedding-position
   - code-reading
   usage: quiz
 - id: m6-ch8-code-004
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: Embedding 與位置資訊
   text: positions = torch.arange(tokens.size(1)).unsqueeze(0) 產生什麼？
   content:
   - type: text
@@ -359,12 +359,12 @@ questions:
   explanation: tokens.size(1) 是序列長度 4，arange 產生 0 到 3，再加 batch 維度。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-embedding-position
   - code-reading
   usage: quiz
 - id: m6-ch8-code-005
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: MultiheadAttention 基礎
   text: batch_first=True 時 MultiheadAttention 輸入 shape 應是什麼？
   content:
   - type: text
@@ -382,12 +382,12 @@ questions:
   explanation: batch_first=True 代表 batch 維度放在第一維。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-attention
   - code-reading
   usage: quiz
 - id: m6-ch8-code-006
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: MultiheadAttention 基礎
   text: attn_weights 的直覺意義是什麼？
   content:
   - type: text
@@ -405,12 +405,12 @@ questions:
   explanation: attention weights 表示 token 之間的關注權重。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-attention
   - code-reading
   usage: quiz
 - id: m6-ch8-code-007
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: Transformer Encoder 分類器
   text: TinyTransformerClassifier 中 encoded.mean(dim=1) 的用途是什麼？
   content:
   - type: text
@@ -432,12 +432,12 @@ questions:
   explanation: mean(dim=1) 沿序列長度平均，取得句子或文件層級表示。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-classifier
   - code-reading
   usage: quiz
 - id: m6-ch8-code-008
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: Transformer Encoder 分類器
   text: position id 使用 input_ids.device 的主要原因是什麼？
   content:
   - type: text
@@ -455,12 +455,12 @@ questions:
   explanation: tensor 運算需要在同一 device，避免 CPU/GPU 不一致錯誤。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-classifier
   - code-reading
   usage: quiz
 - id: m6-ch8-code-009
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: Mask 與序列長度
   text: 閱讀 padding mask 程式，True 代表什麼位置？
   content:
   - type: text
@@ -482,12 +482,12 @@ questions:
   explanation: 此例 token id 0 代表 padding，因此等於 0 的位置為 True。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-mask
   - code-reading
   usage: quiz
 - id: m6-ch8-code-010
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: 從簡化模型到大型語言模型
   text: 簡化 Transformer 分類器和大型語言模型的共同基礎元件是什麼？
   content:
   - type: text
@@ -505,12 +505,12 @@ questions:
   explanation: 大型模型規模更大，但仍建立在 Transformer 基礎元件上。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-to-llm
   - code-reading
   usage: quiz
 - id: m6-ch8-code-011
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: Attention 的直覺與限制
   text: Attention(Q, K, V) 中 softmax(QK^T / sqrt(d_k)) 的作用是什麼？
   content:
   - type: text
@@ -528,12 +528,12 @@ questions:
   explanation: QK^T 經縮放與 softmax 形成權重，再加權加總 V。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-attention-intuition
   - code-reading
   usage: quiz
 - id: m6-ch8-code-012
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: Encoder、Decoder 與 Encoder-Decoder
   text: 下列架構最適合自回歸生成任務的是哪一類？
   content:
   - type: text
@@ -551,12 +551,12 @@ questions:
   explanation: 自回歸生成通常使用 decoder-only 或含 decoder 的架構，並搭配 causal mask。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-architectures
   - code-reading
   usage: quiz
 - id: m6-ch8-code-013
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: Tokenizer 與 Subword
   text: Subword tokenizer 的主要優勢是什麼？
   content:
   - type: text
@@ -574,12 +574,12 @@ questions:
   explanation: subword 可把罕見詞拆成較小片段，降低 unknown token 問題。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-tokenizer
   - code-reading
   usage: quiz
 - id: m6-ch8-code-014
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: Transformer 訓練時的 Loss
   text: 自回歸語言模型中 shifted labels 的概念是什麼？
   content:
   - type: text
@@ -599,12 +599,12 @@ questions:
   explanation: target 相對 input 位移一格，讓模型學習下一個 token 預測。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-loss
   - code-reading
   usage: quiz
 - id: m6-ch8-code-015
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: Fine-tuning、Feature Extraction 與 RAG
   text: 下列流程最接近哪種應用模式？
   content:
   - type: text
@@ -622,12 +622,12 @@ questions:
   explanation: 先檢索外部文件再放入 prompt，是 RAG 的典型流程。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-application-patterns
   - code-reading
   usage: quiz
 - id: m6-ch8-code-016
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: Embedding 與位置資訊
   text: Embedding 輸入通常是什麼？
   content:
   - type: text
@@ -645,12 +645,12 @@ questions:
   explanation: Embedding 將 token id 映射成向量。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-embedding-position
   - code-reading
   usage: quiz
 - id: m6-ch8-code-017
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: Embedding 與位置資訊
   text: 位置 embedding 的目的為何？
   content:
   - type: text
@@ -668,12 +668,12 @@ questions:
   explanation: Self-attention 本身不含順序，需要位置資訊。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-embedding-position
   - code-reading
   usage: quiz
 - id: m6-ch8-code-018
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: MultiheadAttention 基礎
   text: batch_first=True 時輸入 shape 是什麼？
   content:
   - type: text
@@ -691,12 +691,12 @@ questions:
   explanation: batch_first=True 使用 batch 在第一維。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-attention
   - code-reading
   usage: quiz
 - id: m6-ch8-code-019
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: MultiheadAttention 基礎
   text: attention(x, x, x) 表示什麼？
   content:
   - type: text
@@ -714,12 +714,12 @@ questions:
   explanation: Self-attention 的 Q、K、V 來自同一輸入。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-attention
   - code-reading
   usage: quiz
 - id: m6-ch8-code-020
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: MultiheadAttention 基礎
   text: num_heads=4 的直覺是什麼？
   content:
   - type: text
@@ -734,15 +734,15 @@ questions:
   - 輸出 4 個類別
   - batch size 必須為 4
   correct_index: 0
-  explanation: 多頭注意力可在不同子空間學關係。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: 多頭注意力可在不同子空間學關係。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-attention
   - code-reading
   usage: quiz
 - id: m6-ch8-code-021
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: Mask 與序列長度
   text: padding_mask=True 的位置通常代表什麼？
   content:
   - type: text
@@ -757,15 +757,15 @@ questions:
   - 第一個真實 token
   - 最高機率 token
   correct_index: 0
-  explanation: padding mask 標示補齊位置。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: padding mask 標示補齊位置。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-mask
   - code-reading
   usage: quiz
 - id: m6-ch8-code-022
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: Mask 與序列長度
   text: causal mask 的主要用途是什麼？
   content:
   - type: text
@@ -780,15 +780,15 @@ questions:
   - 刪除 embedding
   - 避免看未來 token
   correct_index: 3
-  explanation: 自回歸生成不能偷看未來位置。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: 自回歸生成不能偷看未來位置。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-mask
   - code-reading
   usage: quiz
 - id: m6-ch8-code-023
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: Transformer Encoder 分類器
   text: encoded.mean(dim=1) 做什麼？
   content:
   - type: text
@@ -803,15 +803,15 @@ questions:
   - 計算 loss
   - 建立 tokenizer
   correct_index: 1
-  explanation: 沿 seq_len 維度平均可得到整段表示。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: 沿 seq_len 維度平均可得到整段表示。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-classifier
   - code-reading
   usage: quiz
 - id: m6-ch8-code-024
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: Transformer Encoder 分類器
   text: classifier(pooled) 通常輸出什麼？
   content:
   - type: text
@@ -826,15 +826,15 @@ questions:
   - 位置 id
   - tokenizer 詞表
   correct_index: 1
-  explanation: 分類層將序列表示轉成類別分數。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: 分類層將序列表示轉成類別分數。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-classifier
   - code-reading
   usage: quiz
 - id: m6-ch8-code-025
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: Tokenizer 與 Subword
   text: Subword tokenizer 的優勢是什麼？
   content:
   - type: text
@@ -852,12 +852,12 @@ questions:
   explanation: subword 可拆解罕見詞降低 unknown 問題。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-tokenizer
   - code-reading
   usage: quiz
 - id: m6-ch8-code-026
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: Transformer 訓練時的 Loss
   text: shifted labels 表示什麼？
   content:
   - type: text
@@ -874,15 +874,15 @@ questions:
   - 只預測第一個 token
   - 每個位置預測自己
   correct_index: 1
-  explanation: 語言模型常學習下一 token 預測。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: 語言模型常學習下一 token 預測。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-loss
   - code-reading
   usage: quiz
 - id: m6-ch8-code-027
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: Encoder、Decoder 與 Encoder-Decoder
   text: BERT 類 encoder-only 架構常用於什麼？
   content:
   - type: text
@@ -897,15 +897,15 @@ questions:
   - 自回歸聊天生成為主
   - Pandas merge
   correct_index: 1
-  explanation: Encoder-only 擅長理解與分類。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: Encoder-only 擅長理解與分類。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-architectures
   - code-reading
   usage: quiz
 - id: m6-ch8-code-028
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: Encoder、Decoder 與 Encoder-Decoder
   text: GPT 類 decoder-only 架構常用於什麼？
   content:
   - type: text
@@ -923,12 +923,12 @@ questions:
   explanation: Decoder-only 常用於下一 token 生成。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-architectures
   - code-reading
   usage: quiz
 - id: m6-ch8-code-029
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: Fine-tuning、Feature Extraction 與 RAG
   text: RAG 中檢索結果通常放到哪裡？
   content:
   - type: text
@@ -943,15 +943,15 @@ questions:
   - BatchNorm running mean
   - optimizer state
   correct_index: 1
-  explanation: RAG 將外部知識放進模型上下文。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: RAG 將外部知識放進模型上下文。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-application-patterns
   - code-reading
   usage: quiz
 - id: m6-ch8-code-030
   chapter_title: PyTorch Transformer 基礎
-  section_title: 程式閱讀理解
+  section_title: Transformer 常見錯誤與除錯
   text: 標準 self-attention 對序列長度的成本約如何成長？
   content:
   - type: text
@@ -969,7 +969,7 @@ questions:
   explanation: 標準 attention 計算量約與序列長度平方相關。
   tags:
   - chap-m6-ch8
-  - sec-code-reading
+  - sec-transformer-debugging
   - code-reading
   usage: quiz
 - id: m6-hc-137

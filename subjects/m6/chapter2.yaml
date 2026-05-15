@@ -257,7 +257,7 @@ questions:
   usage: both
 - id: m6-ch2-code-001
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
+  section_title: NumPy 陣列與向量化
   text: 閱讀 NumPy 程式碼，輸出結果是什麼？
   content:
   - type: text
@@ -281,12 +281,12 @@ questions:
   explanation: NumPy 陣列相加會逐元素相加，得到 [11 22 33]。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-numpy-array-vectorization
   - code-reading
   usage: quiz
 - id: m6-ch2-code-002
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
+  section_title: NumPy 陣列與向量化
   text: 閱讀程式碼，scores[passed] 的結果是什麼？
   content:
   - type: text
@@ -308,12 +308,12 @@ questions:
   explanation: 布林遮罩 passed 會選出大於等於 70 的分數。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-numpy-array-vectorization
   - code-reading
   usage: quiz
 - id: m6-ch2-code-003
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
+  section_title: Shape、Broadcasting 與矩陣運算
   text: 閱讀程式碼，X.shape 是什麼？
   content:
   - type: text
@@ -333,12 +333,12 @@ questions:
   explanation: X 有 2 列、3 欄，因此 shape 是 (2, 3)。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-numpy-shape-broadcast
   - code-reading
   usage: quiz
 - id: m6-ch2-code-004
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
+  section_title: Shape、Broadcasting 與矩陣運算
   text: 閱讀 broadcasting 程式，centered 第一列是多少？
   content:
   - type: text
@@ -362,12 +362,12 @@ questions:
   explanation: 每欄平均是 [2.5, 3.5, 4.5]，第一列相減得到 [-1.5, -1.5, -1.5]。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-numpy-shape-broadcast
   - code-reading
   usage: quiz
 - id: m6-ch2-code-005
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
+  section_title: Shape、Broadcasting 與矩陣運算
   text: 閱讀矩陣乘法，prediction 的結果是什麼？
   content:
   - type: text
@@ -391,12 +391,12 @@ questions:
   explanation: 第一列加權和為 0.2+1.0+0.9=2.1，第二列為 0.8+2.5+1.8=5.1。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-numpy-shape-broadcast
   - code-reading
   usage: quiz
 - id: m6-ch2-code-006
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
+  section_title: Pandas DataFrame 基礎
   text: 閱讀 Pandas 程式碼，df["income"].mean() 是多少？
   content:
   - type: text
@@ -414,12 +414,12 @@ questions:
   explanation: 三個收入平均為 166000 / 3 = 55333.333333333336。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-pandas-dataframe
   - code-reading
   usage: quiz
 - id: m6-ch2-code-007
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
+  section_title: Pandas DataFrame 基礎
   text: 閱讀程式碼，high_income 有幾列？
   content:
   - type: text
@@ -441,12 +441,12 @@ questions:
   explanation: 58000 與 76000 大於 50000，因此有 2 列。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-pandas-dataframe
   - code-reading
   usage: quiz
 - id: m6-ch2-code-008
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
+  section_title: 缺失值、類別資料與特徵整理
   text: 閱讀程式碼，clean["city"] 第三筆會是什麼？
   content:
   - type: text
@@ -470,12 +470,12 @@ questions:
   explanation: fillna("Unknown") 會把缺失城市補成 Unknown。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-pandas-cleaning-features
   - code-reading
   usage: quiz
 - id: m6-ch2-code-009
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
+  section_title: 缺失值、類別資料與特徵整理
   text: pd.get_dummies(clean, columns=["city"]) 的主要效果是什麼？
   content:
   - type: text
@@ -497,12 +497,12 @@ questions:
   explanation: get_dummies 會把類別欄位轉成多個 one-hot 指示欄位。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-pandas-cleaning-features
   - code-reading
   usage: quiz
 - id: m6-ch2-code-010
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
+  section_title: GroupBy、合併與時間序列
   text: 閱讀 groupby 程式，店家 A 的平均銷售額是多少？
   content:
   - type: text
@@ -520,12 +520,12 @@ questions:
   explanation: 店家 A 的 amount 是 100 與 120，平均為 110。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-pandas-groupby-merge-time
   - code-reading
   usage: quiz
 - id: m6-ch2-code-011
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
+  section_title: GroupBy、合併與時間序列
   text: 閱讀 merge 程式，合併後第一列 city 是什麼？
   content:
   - type: text
@@ -549,12 +549,12 @@ questions:
   explanation: 第一筆 order 的 user_id 是 1，合併後對應到 Taipei。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-pandas-groupby-merge-time
   - code-reading
   usage: quiz
 - id: m6-ch2-code-012
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
+  section_title: 從 Pandas 到模型輸入
   text: 閱讀程式碼，features.shape 是什麼？
   content:
   - type: text
@@ -572,12 +572,12 @@ questions:
   explanation: 選了 3 列與 2 個特徵欄位，因此 shape 是 (3, 2)。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-pandas-to-model
   - code-reading
   usage: quiz
 - id: m6-ch2-code-013
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
+  section_title: 資料品質檢查清單
   text: 閱讀程式碼，哪個欄位缺失率最高？
   content:
   - type: text
@@ -595,12 +595,12 @@ questions:
   explanation: missing_rate 最大的是 income 的 0.15。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-pandas-quality-checklist
   - code-reading
   usage: quiz
 - id: m6-ch2-code-014
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
+  section_title: 效能與記憶體觀念
   text: 下列向量化程式產生的 is_high 欄位型別概念是什麼？
   content:
   - type: text
@@ -618,12 +618,12 @@ questions:
   explanation: 比較運算會產生 True/False 布林值欄位。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-pandas-performance
   - code-reading
   usage: quiz
 - id: m6-ch2-code-015
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
+  section_title: 特徵工程範例：從原始欄位到模型欄位
   text: 閱讀程式碼，X 中不包含哪個欄位？
   content:
   - type: text
@@ -647,16 +647,16 @@ questions:
   explanation: purchased 是目標欄位，被 drop 後不會出現在 X 中。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-pandas-feature-example
   - code-reading
   usage: quiz
 - id: m6-ch2-code-016
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
-  text: 閱讀程式碼，輸出結果是什麼？
+  section_title: NumPy 陣列與向量化
+  text: 閱讀程式碼，x + 1 的輸出是什麼？
   content:
   - type: text
-    text: 閱讀程式碼，輸出結果是什麼？
+    text: 閱讀程式碼，x + 1 的輸出是什麼？
   - type: code
     language: python
     code: 'x = np.array([1, 2, 3])
@@ -672,12 +672,12 @@ questions:
   explanation: NumPy 會將純量 1 broadcast 到每個元素。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-numpy-array-vectorization
   - code-reading
   usage: quiz
 - id: m6-ch2-code-017
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
+  section_title: NumPy 陣列與向量化
   text: 閱讀程式碼，x.dtype 大致會是什麼？
   content:
   - type: text
@@ -697,12 +697,12 @@ questions:
   explanation: 陣列元素是浮點數，因此 dtype 是 float 類型。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-numpy-array-vectorization
   - code-reading
   usage: quiz
 - id: m6-ch2-code-018
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
+  section_title: Shape、Broadcasting 與矩陣運算
   text: 閱讀程式碼，輸出 shape 是什麼？
   content:
   - type: text
@@ -722,12 +722,12 @@ questions:
   explanation: np.zeros((4, 3)) 建立 4 列 3 欄。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-numpy-shape-broadcast
   - code-reading
   usage: quiz
 - id: m6-ch2-code-019
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
+  section_title: Shape、Broadcasting 與矩陣運算
   text: 閱讀程式碼，y 的結果是什麼？
   content:
   - type: text
@@ -751,16 +751,16 @@ questions:
   explanation: 第一列 1*10+2*1=12，第二列 3*10+4*1=34。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-numpy-shape-broadcast
   - code-reading
   usage: quiz
 - id: m6-ch2-code-020
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
-  text: 閱讀程式碼，輸出結果是什麼？
+  section_title: NumPy 陣列與向量化
+  text: 閱讀程式碼，scores[scores >= 0.6] 的輸出是什麼？
   content:
   - type: text
-    text: 閱讀程式碼，輸出結果是什麼？
+    text: 閱讀程式碼，scores[scores >= 0.6] 的輸出是什麼？
   - type: code
     language: python
     code: 'scores = np.array([0.2, 0.8, 0.6])
@@ -773,19 +773,19 @@ questions:
   - '[0.2]'
   - '[ True False True]'
   correct_index: 1
-  explanation: 條件選出 0.8 與 0.6。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: 條件選出 0.8 與 0.6。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-numpy-array-vectorization
   - code-reading
   usage: quiz
 - id: m6-ch2-code-021
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
-  text: 閱讀程式碼，輸出結果是什麼？
+  section_title: Pandas DataFrame 基礎
+  text: 閱讀程式碼，df["age"].tolist() 的輸出是什麼？
   content:
   - type: text
-    text: 閱讀程式碼，輸出結果是什麼？
+    text: 閱讀程式碼，df["age"].tolist() 的輸出是什麼？
   - type: code
     language: python
     code: 'df = pd.DataFrame({"age": [20, 30], "city": ["A", "B"]})
@@ -798,15 +798,15 @@ questions:
   - '2'
   - '["A", "B"]'
   correct_index: 1
-  explanation: df["age"] 取出 age 欄位。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: df["age"] 取出 age 欄位。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-pandas-dataframe
   - code-reading
   usage: quiz
 - id: m6-ch2-code-022
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
+  section_title: Pandas DataFrame 基礎
   text: 閱讀程式碼，filtered 有幾列？
   content:
   - type: text
@@ -825,15 +825,15 @@ questions:
   - '0'
   - '2'
   correct_index: 3
-  explanation: 30 與 40 符合條件，因此有 2 列。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: 30 與 40 符合條件，因此有 2 列。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-pandas-dataframe
   - code-reading
   usage: quiz
 - id: m6-ch2-code-023
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
+  section_title: 缺失值、類別資料與特徵整理
   text: 閱讀程式碼，第二筆 age 會變成什麼？
   content:
   - type: text
@@ -852,15 +852,15 @@ questions:
   - '20'
   - '30'
   correct_index: 3
-  explanation: 20 與 40 的中位數是 30。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: 20 與 40 的中位數是 30。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-pandas-cleaning-features
   - code-reading
   usage: quiz
 - id: m6-ch2-code-024
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
+  section_title: 缺失值、類別資料與特徵整理
   text: pd.get_dummies 的主要輸出是什麼？
   content:
   - type: text
@@ -880,12 +880,12 @@ questions:
   explanation: get_dummies 會把 city 展開為 one-hot 欄位。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-pandas-cleaning-features
   - code-reading
   usage: quiz
 - id: m6-ch2-code-025
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
+  section_title: GroupBy、合併與時間序列
   text: 閱讀程式碼，A 組總和是多少？
   content:
   - type: text
@@ -902,15 +902,15 @@ questions:
   - '1'
   - '3'
   correct_index: 3
-  explanation: A 組 v 為 1 和 2，總和為 3。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: A 組 v 為 1 和 2，總和為 3。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-pandas-groupby-merge-time
   - code-reading
   usage: quiz
 - id: m6-ch2-code-026
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
+  section_title: GroupBy、合併與時間序列
   text: 閱讀程式碼，merged 有幾列？
   content:
   - type: text
@@ -931,15 +931,15 @@ questions:
   - '2'
   - '3'
   correct_index: 0
-  explanation: inner merge 只保留共同 id=2。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: inner merge 只保留共同 id=2。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-pandas-groupby-merge-time
   - code-reading
   usage: quiz
 - id: m6-ch2-code-027
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
+  section_title: GroupBy、合併與時間序列
   text: pd.to_datetime 的主要用途是什麼？
   content:
   - type: text
@@ -957,12 +957,12 @@ questions:
   explanation: to_datetime 會把日期字串轉成 datetime 型別。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-pandas-groupby-merge-time
   - code-reading
   usage: quiz
 - id: m6-ch2-code-028
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
+  section_title: 從 Pandas 到模型輸入
   text: 閱讀程式碼，y.shape 是什麼？
   content:
   - type: text
@@ -981,15 +981,15 @@ questions:
   - (3, 1)
   - (3,)
   correct_index: 3
-  explanation: 單一欄位轉 NumPy 後是一維長度 3。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: 單一欄位轉 NumPy 後是一維長度 3。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-pandas-to-model
   - code-reading
   usage: quiz
 - id: m6-ch2-code-029
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
+  section_title: 特徵工程範例：從原始欄位到模型欄位
   text: 這段程式的主要問題是什麼？
   content:
   - type: text
@@ -1009,12 +1009,12 @@ questions:
   explanation: purchased 是答案欄位，同時放入 X 會讓模型看到答案。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-pandas-feature-example
   - code-reading
   usage: quiz
 - id: m6-ch2-code-030
   chapter_title: NumPy 與 Pandas
-  section_title: 程式閱讀理解
+  section_title: 效能與記憶體觀念
   text: 下列哪行是向量化寫法？
   content:
   - type: text
@@ -1029,10 +1029,10 @@ questions:
   - 使用 Pandas 向量化比較
   - 自訂 Python 例外
   correct_index: 2
-  explanation: 整欄比較是 Pandas 向量化操作。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: 整欄比較是 Pandas 向量化操作。
   tags:
   - chap-m6-ch2
-  - sec-code-reading
+  - sec-pandas-performance
   - code-reading
   usage: quiz
 - id: m6-hc-012

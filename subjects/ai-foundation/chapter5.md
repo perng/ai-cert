@@ -25,6 +25,7 @@ label: chap-ai-foundation-chapter5
     *   **缺點**：資料量大時效率低，最壞情況要檢查所有資料 (時間複雜度 $O(n)$)。
     *   **實務例子**：在未排序的客戶名單 (如 Excel 表格) 中逐筆尋找某位客戶的姓名。
     *   **虛擬碼 (Pseudo Code)**：
+
         ```python
         def linear_search(arr, target):
             for i in range(len(arr)):
@@ -39,6 +40,7 @@ label: chap-ai-foundation-chapter5
     *   **缺點**：前提是資料已排序；若資料經常新增刪除，維持排序也有成本。
     *   **實務例子**：在已排序的產品價格表中快速找出特定價格，或是在字典中找單字。
     *   **虛擬碼 (Pseudo Code)**：
+
         ```python
         def binary_search(arr, target):
             left, right = 0, len(arr) - 1
@@ -382,4 +384,3 @@ DFS 與 BFS 常用於樹狀或圖形資料，例如路徑搜尋、關係網路�
 ## 歷屆考題 {#sec-past-exam}
 
 請做測驗看歷屆考題。
-

@@ -469,15 +469,15 @@ questions:
 - id: 7422
   chapter_title: 主流 AI 代理框架總覽
   section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
-  text: OpenClaw 的「心跳（Heartbeat）」機制如何改變使用者與 AI 的互動模式？
+  text: 下列哪一種任務最符合 OpenClaw「心跳（Heartbeat）」機制的用途？
   type: multiple_choice
   options:
-  - 讓 AI 在使用者離線時自動關機節省電力
-  - 讓 AI 定期更換對話的主題以避免無聊
-  - 讓 AI 每隔五分鐘就發送一次問候訊息給使用者
-  - 讓 AI 從被動等待指令轉變為主動在背景執行任務
-  correct_index: 3
-  explanation: 心跳機制讓 OpenClaw 能在背景主動執行排程任務，而非被動等待使用者下指令。
+  - 每天早上自動整理行程和重要郵件，再傳送摘要給使用者
+  - 將所有對話內容永久公開到社群技能市集
+  - 在每次使用者輸入前強制重新安裝所有技能
+  - 只在使用者輸入完整指令後才開始一次性回答
+  correct_index: 0
+  explanation: Heartbeat 讓代理能在背景依排程主動執行任務並通知使用者，適合每日摘要、例行檢查等主動助理場景。
   tags:
   - chap-m5-ch4
   - sec-openclaw

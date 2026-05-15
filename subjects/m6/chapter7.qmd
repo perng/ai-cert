@@ -276,14 +276,14 @@ resnet.fc = nn.Linear(in_features, 3)
 
 如果資料很少，可以先凍結 backbone，只訓練最後分類層；若資料較多且類別和預訓練資料差異大，再考慮 fine-tune 更多層。
 
-## CNN 專案的錯誤分析方法 {#sec-pytorch-cnn-error-analysis}
+## CNN 訓練失敗的排查順序 {#sec-pytorch-cnn-error-analysis}
 
-CNN 評估不應只看 accuracy。應抽出錯誤影像檢查：
+CNN 評估不應只看 accuracy。當模型表現不穩定或驗證分數偏低時，應優先檢查訓練流程中最常出錯的環節：
 
-*   是否標籤本身有錯？
-*   是否某些類別資料太少？
-*   是否模型常錯在相似類別？
-*   是否圖片太暗、太小、模糊或被遮擋？
-*   是否訓練資料與部署資料風格不同？
+*   輸入 tensor 是否為 `(batch, channels, height, width)`。
+*   訓練與驗證 transforms 是否一致地處理 resize、to tensor 與 normalize。
+*   最後分類層輸出維度是否等於類別數。
+*   label id 是否從 0 開始且沒有錯位。
+*   驗證時是否使用 `model.eval()` 與 `torch.no_grad()`。
 
-混淆矩陣能快速看出哪些類別容易互相混淆。若錯誤集中在資料品質，應先改善資料，而不是只加深模型。
+若流程正確，再回到錯誤影像與混淆矩陣檢查類別混淆、資料不足或標註品質。這樣能先排除實作錯誤，再判斷是否需要更多資料、資料增強或更合適的模型。

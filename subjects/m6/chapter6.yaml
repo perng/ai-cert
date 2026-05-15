@@ -257,7 +257,7 @@ questions:
   usage: both
 - id: m6-ch6-code-001
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: Tensor 與裝置
   text: 閱讀程式碼，x.shape 是什麼？
   content:
   - type: text
@@ -277,12 +277,12 @@ questions:
   explanation: x 是 2x2 tensor，因此 shape 是 [2, 2]。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-tensor-device
   - code-reading
   usage: quiz
 - id: m6-ch6-code-002
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: Tensor 與裝置
   text: 下列程式的主要目的為何？
   content:
   - type: text
@@ -302,12 +302,12 @@ questions:
   explanation: 程式會優先使用 CUDA，否則使用 CPU，並把 x 移到該裝置。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-tensor-device
   - code-reading
   usage: quiz
 - id: m6-ch6-code-003
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: Autograd 與反向傳播
   text: 閱讀程式碼，loss.backward() 後 w.grad 代表什麼？
   content:
   - type: text
@@ -331,12 +331,12 @@ questions:
   explanation: autograd 會計算 loss 對 requires_grad tensor 的梯度。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-autograd
   - code-reading
   usage: quiz
 - id: m6-ch6-code-004
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: Autograd 與反向傳播
   text: 為什麼訓練迴圈通常要呼叫 optimizer.zero_grad()？
   content:
   - type: text
@@ -358,12 +358,12 @@ questions:
   explanation: PyTorch 預設梯度會累加，因此每次更新前通常要清空舊梯度。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-autograd
   - code-reading
   usage: quiz
 - id: m6-ch6-code-005
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: Dataset 與 DataLoader
   text: 閱讀程式碼，batch_x.shape 的第一維代表什麼？
   content:
   - type: text
@@ -385,12 +385,12 @@ questions:
   explanation: batch 第一維通常是批次大小，也就是一次取出的樣本數。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-dataset-dataloader
   - code-reading
   usage: quiz
 - id: m6-ch6-code-006
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: Dataset 與 DataLoader
   text: TensorDataset(X, y) 的主要用途是什麼？
   content:
   - type: text
@@ -408,12 +408,12 @@ questions:
   explanation: TensorDataset 會讓 X 與 y 可用索引成對取出。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-dataset-dataloader
   - code-reading
   usage: quiz
 - id: m6-ch6-code-007
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: nn.Module 與模型定義
   text: TinyClassifier 的最後一層 nn.Linear(8, 2) 代表什麼？
   content:
   - type: text
@@ -431,12 +431,12 @@ questions:
   explanation: 最後 Linear 輸出維度為 2，通常代表二分類的兩個 logits。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-nn-module
   - code-reading
   usage: quiz
 - id: m6-ch6-code-008
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: Loss、Optimizer 與訓練迴圈
   text: CrossEntropyLoss 預期模型輸出通常是什麼？
   content:
   - type: text
@@ -456,12 +456,12 @@ questions:
   explanation: CrossEntropyLoss 內部包含 log-softmax，輸入應是 logits。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-training-loop
   - code-reading
   usage: quiz
 - id: m6-ch6-code-009
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: Loss、Optimizer 與訓練迴圈
   text: optimizer.step() 的主要作用是什麼？
   content:
   - type: text
@@ -481,12 +481,12 @@ questions:
   explanation: optimizer.step() 會使用目前梯度更新可訓練參數。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-training-loop
   - code-reading
   usage: quiz
 - id: m6-ch6-code-010
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: 儲存與載入模型
   text: torch.save(model.state_dict(), "model.pt") 儲存的是什麼？
   content:
   - type: text
@@ -504,12 +504,12 @@ questions:
   explanation: state_dict 是模型參數名稱到 tensor 權重的字典。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-save-load
   - code-reading
   usage: quiz
 - id: m6-ch6-code-011
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: Loss、Optimizer 與訓練迴圈
   text: 驗證階段使用 torch.no_grad() 的主要原因是什麼？
   content:
   - type: text
@@ -527,12 +527,12 @@ questions:
   explanation: 驗證不需要反向傳播，因此 no_grad 可降低記憶體與計算成本。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-training-loop
   - code-reading
   usage: quiz
 - id: m6-ch6-code-012
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: Tensor Shape 與 dtype 常見規則
   text: CrossEntropyLoss 的分類 target 通常應該是哪種 dtype？
   content:
   - type: text
@@ -550,12 +550,12 @@ questions:
   explanation: CrossEntropyLoss 的 target 通常是 LongTensor 類別索引。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-shape-dtype
   - code-reading
   usage: quiz
 - id: m6-ch6-code-013
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: Learning Rate 與 Optimizer
   text: Adam(model.parameters(), lr=1e-3) 中 lr 代表什麼？
   content:
   - type: text
@@ -573,12 +573,12 @@ questions:
   explanation: lr 是 learning rate，控制每次參數更新步伐。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-optimizer-detail
   - code-reading
   usage: quiz
 - id: m6-ch6-code-014
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: Reproducibility 與實驗紀錄
   text: torch.manual_seed(seed) 的主要用途是什麼？
   content:
   - type: text
@@ -598,12 +598,12 @@ questions:
   explanation: manual_seed 可固定 PyTorch 隨機數產生器，使實驗較容易重現。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-reproducibility
   - code-reading
   usage: quiz
 - id: m6-ch6-code-015
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: Tensor 與裝置
   text: 若模型在 cuda，batch_x 在 cpu，最可能發生什麼？
   content:
   - type: text
@@ -623,12 +623,12 @@ questions:
   explanation: 模型與輸入 tensor 必須在同一 device，否則會發生裝置不一致錯誤。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-tensor-device
   - code-reading
   usage: quiz
 - id: m6-ch6-code-016
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: Tensor 與裝置
   text: torch.tensor([[1,2],[3,4]]).shape 是什麼？
   content:
   - type: text
@@ -645,15 +645,15 @@ questions:
   - torch.Size([1, 2])
   - torch.Size([2, 2])
   correct_index: 3
-  explanation: 這是 2x2 tensor。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: 這是 2x2 tensor。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-tensor-device
   - code-reading
   usage: quiz
 - id: m6-ch6-code-017
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: Tensor Shape 與 dtype 常見規則
   text: 分類標籤通常需要哪種 dtype？
   content:
   - type: text
@@ -671,12 +671,12 @@ questions:
   explanation: CrossEntropyLoss 的 target 通常是 long 類別 id。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-shape-dtype
   - code-reading
   usage: quiz
 - id: m6-ch6-code-018
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: Tensor 與裝置
   text: x.to(device) 的主要用途是什麼？
   content:
   - type: text
@@ -694,12 +694,12 @@ questions:
   explanation: to(device) 可在 CPU/GPU 間搬移 tensor。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-tensor-device
   - code-reading
   usage: quiz
 - id: m6-ch6-code-019
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: Autograd 與反向傳播
   text: requires_grad=True 表示什麼？
   content:
   - type: text
@@ -717,12 +717,12 @@ questions:
   explanation: Autograd 會追蹤該 tensor 的運算以計算梯度。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-autograd
   - code-reading
   usage: quiz
 - id: m6-ch6-code-020
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: Autograd 與反向傳播
   text: loss.backward() 之後梯度存在哪裡？
   content:
   - type: text
@@ -739,15 +739,15 @@ questions:
   - optimizer.lr
   - w.grad
   correct_index: 3
-  explanation: 梯度會累積在參數的 .grad 屬性。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: 梯度會累積在參數的 .grad 屬性。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-autograd
   - code-reading
   usage: quiz
 - id: m6-ch6-code-021
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: Autograd 與反向傳播
   text: zero_grad 的目的為何？
   content:
   - type: text
@@ -762,15 +762,15 @@ questions:
   - 清空資料集
   - 清空舊梯度
   correct_index: 3
-  explanation: PyTorch 梯度會累加，因此更新前要清空。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: PyTorch 梯度會累加，因此更新前要清空。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-autograd
   - code-reading
   usage: quiz
 - id: m6-ch6-code-022
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: Dataset 與 DataLoader
   text: shuffle=True 的作用是什麼？
   content:
   - type: text
@@ -785,15 +785,15 @@ questions:
   - 計算 p-value
   - 轉成 GPU
   correct_index: 1
-  explanation: shuffle 可降低訓練順序偏差。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: shuffle 可降低訓練順序偏差。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-dataset-dataloader
   - code-reading
   usage: quiz
 - id: m6-ch6-code-023
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: Dataset 與 DataLoader
   text: __len__ 在自訂 Dataset 中應回傳什麼？
   content:
   - type: text
@@ -811,12 +811,12 @@ questions:
   explanation: __len__ 讓 DataLoader 知道資料集大小。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-dataset-dataloader
   - code-reading
   usage: quiz
 - id: m6-ch6-code-024
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: nn.Module 與模型定義
   text: forward 方法定義什麼？
   content:
   - type: text
@@ -831,15 +831,15 @@ questions:
   - 如何切分 train/test
   - 如何讀檔
   correct_index: 1
-  explanation: forward 定義前向傳播邏輯。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: forward 定義前向傳播邏輯。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-nn-module
   - code-reading
   usage: quiz
 - id: m6-ch6-code-025
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: Loss、Optimizer 與訓練迴圈
   text: CrossEntropyLoss 前是否需要 softmax？
   content:
   - type: text
@@ -857,12 +857,12 @@ questions:
   explanation: CrossEntropyLoss 內部包含 log-softmax。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-training-loop
   - code-reading
   usage: quiz
 - id: m6-ch6-code-026
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: Loss、Optimizer 與訓練迴圈
   text: model.eval() 會影響哪些層？
   content:
   - type: text
@@ -877,15 +877,15 @@ questions:
   - optimizer 類型
   - Dropout 與 BatchNorm 等
   correct_index: 3
-  explanation: eval 會切換訓練/推論行為。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: eval 會切換訓練/推論行為。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-training-loop
   - code-reading
   usage: quiz
 - id: m6-ch6-code-027
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: Loss、Optimizer 與訓練迴圈
   text: torch.no_grad() 用於什麼？
   content:
   - type: text
@@ -900,15 +900,15 @@ questions:
   - 保存資料集
   - 訓練時增加梯度
   correct_index: 1
-  explanation: 推論不需要梯度，可節省記憶體。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: 推論不需要梯度，可節省記憶體。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-training-loop
   - code-reading
   usage: quiz
 - id: m6-ch6-code-028
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: 儲存與載入模型
   text: state_dict 儲存什麼？
   content:
   - type: text
@@ -923,15 +923,15 @@ questions:
   - 模型參數字典
   - Matplotlib 圖
   correct_index: 2
-  explanation: state_dict 包含模型權重參數。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: state_dict 包含模型權重參數。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-save-load
   - code-reading
   usage: quiz
 - id: m6-ch6-code-029
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: Keras：高階深度學習 API 的定位
   text: Keras model.compile 主要設定什麼？
   content:
   - type: text
@@ -949,12 +949,12 @@ questions:
   explanation: compile 會指定訓練所需 optimizer、loss 和評估指標。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-keras-overview
   - code-reading
   usage: quiz
 - id: m6-ch6-code-030
   chapter_title: PyTorch 基礎
-  section_title: 程式閱讀理解
+  section_title: PyTorch 常見錯誤排查
   text: 用很小資料集測試能否 overfit 的目的？
   content:
   - type: text
@@ -972,7 +972,7 @@ questions:
   explanation: 小資料能 overfit 是訓練流程基本正確的檢查方式。
   tags:
   - chap-m6-ch6
-  - sec-code-reading
+  - sec-pytorch-debugging
   - code-reading
   usage: quiz
 - id: m6-hc-100

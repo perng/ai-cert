@@ -389,15 +389,15 @@ questions:
 - id: 7323
   chapter_title: Agentic Skills 設計
   section_title: 工具呼叫機制
-  text: 有關於「並行工具呼叫 (Parallel Tool Calling)」的敘述，下列何者是正確的？
+  text: 關於「並行工具呼叫 (Parallel Tool Calling)」，哪一種情境不適合並行執行？
   type: multiple_choice
   options:
-  - 這個機制僅適用於那些彼此之間具有高度且嚴格順序依賴的複雜連鎖步驟
-  - 代理人能夠在一次的推論回應中，同時觸發並執行多個彼此獨立的工具任務
-  - 系統會強迫所有的工具都必須嚴格按照英文字母順序依次排隊執行
-  - 啟用這個機制通常會導致系統處理任務的整體花費時間大幅度地往上增加
-  correct_index: 1
-  explanation: 並行工具呼叫省去了多次網路往返的延遲，對於互相獨立的任務能顯著提升效率。
+  - 多個工具查詢彼此獨立，例如同時查詢多家公司股價
+  - 每個工具都只是讀取資料，不會改變外部系統狀態
+  - 前一個工具的輸出是下一個工具的必要輸入
+  - 多個資料來源可以同時查詢，最後再彙整結果
+  correct_index: 2
+  explanation: 並行工具呼叫適合彼此獨立的任務；若後一步必須依賴前一步輸出，就應依序執行。
   tags:
   - chap-m5-ch3
   usage: both

@@ -902,15 +902,15 @@ questions:
 - id: 7155
   chapter_title: AI 代理人基礎概念
   section_title: 代理推理迴圈
-  text: 後設認知（Metacognition）賦予代理人下列哪一項能力？
+  text: 在 Reflexion 框架中，哪一種行為最能體現後設認知（Metacognition）？
   type: multiple_choice
   options:
-  - 在工具呼叫失敗時自動切換備用伺服器
-  - 將任務自動分配給其他協作代理人
-  - 以更快的速度生成自然語言文本
-  - 評估自身推理品質、識別錯誤並據此調整策略
-  correct_index: 3
-  explanation: 後設認知是「對思考的思考」，讓代理人能自我評估與修正。
+  - 工具失敗後直接重複相同請求，直到結果改變
+  - 任務失敗後分析失敗原因，將教訓寫入記憶並調整下一次嘗試
+  - 將所有可用工具一次全部呼叫，避免遺漏可能的答案
+  - 固定依照原始計畫執行，不受觀察結果影響
+  correct_index: 1
+  explanation: Reflexion 透過反思失敗原因、保存教訓並調整後續策略，展現後設認知的自我監控與修正能力。
   tags:
   - chap-m5-ch1
   usage: both

@@ -1,7 +1,7 @@
 questions:
 - id: m6-ch5-code-001
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: NLTK 基礎：文字前處理
   text: word_tokenize(text) 的主要功能是什麼？
   content:
   - type: text
@@ -21,12 +21,12 @@ questions:
   explanation: tokenization 會把文字切成單字、標點等 token。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-nltk-text-basics
   - code-reading
   usage: quiz
 - id: m6-ch5-code-002
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: NLTK 基礎：文字前處理
   text: 下列程式會先做哪兩個基礎文字標準化？
   content:
   - type: text
@@ -46,12 +46,12 @@ questions:
   explanation: strip() 移除前後空白，lower() 轉成小寫。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-nltk-text-basics
   - code-reading
   usage: quiz
 - id: m6-ch5-code-003
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: NLTK 基礎：文字前處理
   text: re.sub 這行在此例中主要做什麼？
   content:
   - type: text
@@ -69,12 +69,12 @@ questions:
   explanation: 正規表示式會保留 a-z、0-9 與空白，其餘符號被替換成空字串。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-nltk-text-basics
   - code-reading
   usage: quiz
 - id: m6-ch5-code-004
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: Stop Words、Stemming 與 Lemmatization
   text: PorterStemmer().stem("running") 大致會得到什麼？
   content:
   - type: text
@@ -94,12 +94,12 @@ questions:
   explanation: PorterStemmer 會粗略切除字尾，running 通常會變成 run。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-nltk-normalization
   - code-reading
   usage: quiz
 - id: m6-ch5-code-005
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: Stop Words、Stemming 與 Lemmatization
   text: WordNetLemmatizer().lemmatize("running", pos="v") 的 pos="v" 表示什麼？
   content:
   - type: text
@@ -117,12 +117,12 @@ questions:
   explanation: pos="v" 表示用動詞詞性做 lemmatization。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-nltk-normalization
   - code-reading
   usage: quiz
 - id: m6-ch5-code-006
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: 從文字到特徵
   text: TfidfVectorizer().fit_transform(docs) 會回傳什麼？
   content:
   - type: text
@@ -142,12 +142,12 @@ questions:
   explanation: TF-IDF 會將文字文件轉成可供模型使用的稀疏數值特徵。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-nltk-text-features
   - code-reading
   usage: quiz
 - id: m6-ch5-code-007
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: scikit-learn 文字分類 Baseline
   text: 下列 Pipeline 最適合哪種任務 baseline？
   content:
   - type: text
@@ -165,12 +165,12 @@ questions:
   explanation: TF-IDF 加 Logistic Regression 是常見文字分類 baseline。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-nlp-sklearn-baseline
   - code-reading
   usage: quiz
 - id: m6-ch5-code-008
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: scikit-learn 文字分類 Baseline
   text: text_clf.predict(["helpful service"]) 會做什麼？
   content:
   - type: text
@@ -190,12 +190,12 @@ questions:
   explanation: predict 會使用已訓練的 Pipeline 對新文字產生預測標籤。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-nlp-sklearn-baseline
   - code-reading
   usage: quiz
 - id: m6-ch5-code-009
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: scikit-learn 文字分類 Baseline
   text: Pipeline 中 ("tfidf", TfidfVectorizer()) 應位於分類器前面的原因是什麼？
   content:
   - type: text
@@ -213,12 +213,12 @@ questions:
   explanation: 傳統分類器不能直接處理原始字串，需先轉成數值特徵。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-nlp-sklearn-baseline
   - code-reading
   usage: quiz
 - id: m6-ch5-code-010
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: NLP 實務流程：從原始文字到模型特徵
   text: 下列流程中的 Tokenization 位於哪個階段？
   content:
   - type: text
@@ -236,12 +236,12 @@ questions:
   explanation: 常見 NLP 流程會先清理文字，再 tokenize，接著轉成特徵。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-nltk-practical-pipeline
   - code-reading
   usage: quiz
 - id: m6-ch5-code-011
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: 中文 NLP 的額外挑戰
   text: 為什麼中文文字通常不能只用空白 split 斷詞？
   content:
   - type: text
@@ -259,12 +259,12 @@ questions:
   explanation: 中文不像英文常用空白分隔單字，因此需要中文斷詞或 subword tokenizer。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-chinese-nlp
   - code-reading
   usage: quiz
 - id: m6-ch5-code-012
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: 中文 NLP 的額外挑戰
   text: 下列切詞差異最可能影響什麼？
   content:
   - type: text
@@ -284,12 +284,12 @@ questions:
   explanation: 不同斷詞結果會改變文字特徵，因此影響關鍵字與分類模型。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-chinese-nlp
   - code-reading
   usage: quiz
 - id: m6-ch5-code-013
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: NLP 錯誤案例分析
   text: 下列錯誤案例分析最適合檢查哪類問題？
   content:
   - type: text
@@ -307,12 +307,12 @@ questions:
   explanation: 句子包含 not want to cancel，但模型預測為取消請求，代表否定語意可能沒處理好。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-nlp-error-analysis
   - code-reading
   usage: quiz
 - id: m6-ch5-code-014
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: NLP 錯誤案例分析
   text: 若少數類別 recall 很低，代表什麼？
   content:
   - type: text
@@ -334,12 +334,12 @@ questions:
   explanation: recall 低代表該類別真實樣本中，被模型找回的比例低。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-nlp-error-analysis
   - code-reading
   usage: quiz
 - id: m6-ch5-code-015
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: Stop Words、Stemming 與 Lemmatization
   text: stop words 移除策略為什麼不能無條件套用？
   content:
   - type: text
@@ -357,12 +357,12 @@ questions:
   explanation: 在情緒分析等任務中，not 這類詞會改變語意，不能盲目移除。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-nltk-normalization
   - code-reading
   usage: quiz
 - id: m6-ch5-code-016
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: NLTK 基礎：文字前處理
   text: word_tokenize 後 tokens 通常是什麼型態？
   content:
   - type: text
@@ -380,12 +380,12 @@ questions:
   explanation: word_tokenize 會產生 token 清單。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-nltk-text-basics
   - code-reading
   usage: quiz
 - id: m6-ch5-code-017
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: NLTK 基礎：文字前處理
   text: lower() 的主要效果是什麼？
   content:
   - type: text
@@ -402,15 +402,15 @@ questions:
   - model
   - AI MODEL
   correct_index: 1
-  explanation: lower 將字母轉成小寫。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: lower 將字母轉成小寫。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-nltk-text-basics
   - code-reading
   usage: quiz
 - id: m6-ch5-code-018
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: NLTK 基礎：文字前處理
   text: 這段正規表示式保留什麼？
   content:
   - type: text
@@ -425,15 +425,15 @@ questions:
   - 影像通道
   - 小寫英文字母、數字與空白
   correct_index: 3
-  explanation: 字元集合以外的符號會被移除。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: 字元集合以外的符號會被移除。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-nltk-text-basics
   - code-reading
   usage: quiz
 - id: m6-ch5-code-019
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: Stop Words、Stemming 與 Lemmatization
   text: 移除 stop words 可能的風險是什麼？
   content:
   - type: text
@@ -451,12 +451,12 @@ questions:
   explanation: 否定詞等 stop words 在某些任務中很重要。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-nltk-normalization
   - code-reading
   usage: quiz
 - id: m6-ch5-code-020
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: Stop Words、Stemming 與 Lemmatization
   text: stemming 的特色是什麼？
   content:
   - type: text
@@ -471,15 +471,15 @@ questions:
   - 粗略切字尾
   - 精確查資料庫
   correct_index: 2
-  explanation: Stemming 通常以規則方式粗略還原詞幹。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: Stemming 通常以規則方式粗略還原詞幹。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-nltk-normalization
   - code-reading
   usage: quiz
 - id: m6-ch5-code-021
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: Stop Words、Stemming 與 Lemmatization
   text: lemmatization 和 stemming 相比通常更重視什麼？
   content:
   - type: text
@@ -494,15 +494,15 @@ questions:
   - GPU 記憶體
   - 字典詞形與詞性
   correct_index: 3
-  explanation: Lemmatization 會考慮詞形與詞性。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: Lemmatization 會考慮詞形與詞性。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-nltk-normalization
   - code-reading
   usage: quiz
 - id: m6-ch5-code-022
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: 從文字到特徵
   text: TF-IDF 中 IDF 的直覺是什麼？
   content:
   - type: text
@@ -517,15 +517,15 @@ questions:
   - 增加所有停用詞權重
   - 降低所有文件都常見詞的權重
   correct_index: 3
-  explanation: IDF 會降低出現在很多文件中的常見詞影響。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: IDF 會降低出現在很多文件中的常見詞影響。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-nltk-text-features
   - code-reading
   usage: quiz
 - id: m6-ch5-code-023
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: 從文字到特徵
   text: vectorizer.vocabulary_ 儲存什麼？
   content:
   - type: text
@@ -545,12 +545,12 @@ questions:
   explanation: vocabulary_ 是詞到特徵欄位索引的字典。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-nltk-text-features
   - code-reading
   usage: quiz
 - id: m6-ch5-code-024
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: 從文字到特徵
   text: TF-IDF 輸出常是稀疏矩陣，原因是什麼？
   content:
   - type: text
@@ -565,15 +565,15 @@ questions:
   - 大多數文件只包含詞彙表的一小部分詞
   - 影像尺寸固定
   correct_index: 2
-  explanation: 文字特徵高維且大多為 0，因此適合稀疏表示。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: 文字特徵高維且大多為 0，因此適合稀疏表示。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-nltk-text-features
   - code-reading
   usage: quiz
 - id: m6-ch5-code-025
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: scikit-learn 文字分類 Baseline
   text: Pipeline 中 TfidfVectorizer 在分類器前的原因是什麼？
   content:
   - type: text
@@ -588,15 +588,15 @@ questions:
   - 先把圖片轉 RGB
   - 先計算 p-value
   correct_index: 0
-  explanation: 傳統分類器需要數值矩陣。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: 傳統分類器需要數值矩陣。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-nlp-sklearn-baseline
   - code-reading
   usage: quiz
 - id: m6-ch5-code-026
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: 中文 NLP 的額外挑戰
   text: 中文 NLP 常需要斷詞的原因是什麼？
   content:
   - type: text
@@ -611,15 +611,15 @@ questions:
   - 中文沒有專有名詞
   - 中文只能用 OpenCV
   correct_index: 1
-  explanation: 中文沒有天然空白分隔，切詞策略會影響特徵。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: 中文沒有天然空白分隔，切詞策略會影響特徵。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-chinese-nlp
   - code-reading
   usage: quiz
 - id: m6-ch5-code-027
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: NLP 錯誤案例分析
   text: 模型將 not good 判成 positive，可能代表什麼？
   content:
   - type: text
@@ -634,15 +634,15 @@ questions:
   - 影像太暗
   - 否定詞處理不佳
   correct_index: 3
-  explanation: not 會反轉語意，模型忽略否定詞可能出錯。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: not 會反轉語意，模型忽略否定詞可能出錯。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-nlp-error-analysis
   - code-reading
   usage: quiz
 - id: m6-ch5-code-028
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: NLP 錯誤案例分析
   text: 低 recall 對客服投訴分類代表什麼？
   content:
   - type: text
@@ -657,15 +657,15 @@ questions:
   - 沒有假陽性
   - precision 一定為 1
   correct_index: 1
-  explanation: Recall 低表示真實投訴中只有少部分被找回。 這類題目要依照程式執行順序、索引位置、條件判斷或 API 行為逐步推導，不能只根據變數名稱猜測。
+  explanation: Recall 低表示真實投訴中只有少部分被找回。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-nlp-error-analysis
   - code-reading
   usage: quiz
 - id: m6-ch5-code-029
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: scikit-learn 文字分類 Baseline
   text: 使用 TF-IDF baseline 的主要價值是什麼？
   content:
   - type: text
@@ -683,12 +683,12 @@ questions:
   explanation: 簡單 baseline 可作為導入複雜模型前的比較基準。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-nlp-sklearn-baseline
   - code-reading
   usage: quiz
 - id: m6-ch5-code-030
   chapter_title: Natural Language Processing：NLTK 與文字特徵
-  section_title: 程式閱讀理解
+  section_title: NLP 實務流程：從原始文字到模型特徵
   text: 訓練與推論 tokenizer 不一致會怎樣？
   content:
   - type: text
@@ -706,7 +706,7 @@ questions:
   explanation: tokenizer 是模型輸入處理的一部分，需保持一致。
   tags:
   - chap-m6-ch5
-  - sec-code-reading
+  - sec-nltk-practical-pipeline
   - code-reading
   usage: quiz
 - id: m6-hc-079

@@ -296,15 +296,15 @@ questions:
 - id: 7520
   chapter_title: 多代理系統與未來發展
   section_title: AI 代理技術的未來趨勢
-  text: 電腦使用代理 (Computer Use Agent) 的運作方式類似於什麼？
+  text: 電腦使用代理 (Computer Use Agent) 特別適合解決哪一類問題？
   type: multiple_choice
   options:
-  - 如同人類般透過視覺辨識螢幕並控制滑鼠與鍵盤
-  - 一個專門用來阻擋惡意軟體入侵的系統防火牆
-  - 一個隱藏在背景負責自動備份資料的批次執行檔
-  - 一個只能夠處理文字指令的傳統聊天機器人系統
+  - 目標軟體沒有 API，但可以透過圖形介面完成操作
+  - 所有資料都已整理成單一向量資料庫，且只需要語意搜尋
+  - 任務只需要一次文字分類，不涉及任何外部系統
+  - 使用者只想比較兩個模型的訓練參數量
   correct_index: 0
-  explanation: 這類代理不依賴 API，而是透過像素級視覺與 GUI 直接互動。
+  explanation: 電腦使用代理能讀取螢幕並操作滑鼠鍵盤，特別適合沒有 API、但仍可透過 GUI 操作的既有軟體。
   tags:
   - chap-m5-ch5
   usage: both
