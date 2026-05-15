@@ -908,8 +908,8 @@ questions:
   - 利用控制變量（Control Tokens）或風格標籤在同一模型內動態調整風格
   - 利用生成對抗網路（GAN）生成不同風格文本，並透過人工篩選最終答案
   - 採用規則式替換方法，替換回覆詞彙以符合不同風格要求
-  correct_index: 0
-  explanation: 此題涉及 某客服自動回應系統希... 的核心概念。正確答案為「直接微調預訓練模型針對每個客戶群體分別訓練不同風格模型；」。
+  correct_index: 1
+  explanation: 控制變量或風格標籤能在同一模型內動態切換回覆風格，兼顧即時性與維護成本。
   tags:
   - sec-past-exam
   - past-exam
@@ -927,8 +927,8 @@ questions:
   - 將語音逐段切分並建立關鍵字索引，以利摘要模型從中擷取核心內容生成會議重點
   - 將語音轉文字後標註發言角色與主題邊界，結合語意分群進行動態摘要
   - 將所有語音內容儲存為完整紀錄，提供事後人工摘要比對用
-  correct_index: 0
-  explanation: 此題涉及 某企業已建置 AI ... 的核心概念。正確答案為「使用語音轉文字模型即時輸出逐字稿並轉入 GPT 摘要；」。
+  correct_index: 2
+  explanation: 會議摘要需保留語意脈絡，將轉錄內容標註發言角色與主題邊界，再結合語意分群，可提升摘要品質與可用性。
   tags:
   - sec-past-exam
   - past-exam
@@ -946,8 +946,8 @@ questions:
   - 模型是用來抽象描述資料結構、業務流程與介面邏輯的核心元素，影響應用的設計與維護
   - 模型僅依循 UML（Unified Modeling Language）等傳統建模方式，缺乏針對 Low Code 環境的延展性
   - 模型在 Low Code 平台中已被自動程式碼生成全面取代，實際價值有限
-  correct_index: 0
-  explanation: Low/No Code 平台降低了 AI 開發門檻，讓非技術人員也能透過圖形化介面快速構建與部署 AI 應用。
+  correct_index: 1
+  explanation: Low Code 中的模型用來抽象描述資料結構、業務流程與介面邏輯，會直接影響應用設計與後續維護。
   tags:
   - sec-past-exam
   - past-exam
@@ -965,8 +965,8 @@ questions:
   - GitHub Copilot 僅適用於GitHub 上的開源專案，無法在私有程式碼庫或本地環境中提供程式碼補全建議
   - GitHub Copilot利用靜態分析技術分析程式碼，根據邏輯流程推導下一步應寫的程式碼
   - GitHub Copilot 由OpenAI 的 Codex 模型提供技術支援，可即時在開發者編輯程式碼時給出整行或整個函式建議
-  correct_index: 0
-  explanation: 此題涉及 關於 GitHub ... 的核心概念。正確答案為「GitHub Copilot 基於程式碼片段查詢工具，透過後端搜尋大型程式 碼資料庫提供建議； 第二科：生成式 AI 應用與規劃」。
+  correct_index: 3
+  explanation: GitHub Copilot 可在開發者編輯程式碼時提供整行或整個函式建議，題組公告答案為其由 OpenAI Codex 技術支援。
   tags:
   - sec-past-exam
   - past-exam
@@ -1412,7 +1412,7 @@ questions:
 - id: 115033
   chapter_title: No Code / Low Code 平台與 AI 開發工具
   section_title: 歷屆考題
-  text: 某醫療院所希望改善行政效率，規劃讓各科室人員可自行建立行政回報與內部申 請表單，並導入 AI 功能以自動判讀與分類填寫內容（如問題類型或需求性質） ， 同時需兼顧流程調整彈性與降低系統開發維運負擔。下列哪一種技術組合最適 第二科：生成式 AI 應用與規劃 合？（115年第一梯次）
+  text: 某醫療院所希望改善行政效率，規劃讓各科室人員可自行建立行政回報與內部申 請表單，並導入 AI 功能以自動判讀與分類填寫內容（如問題類型或需求性質） ， 同時需兼顧流程調整彈性與降低系統開發維運負擔。下列哪一種技術組合最適合？（115年第一梯次）
   options:
   - Low-Code 平台 × 預訓練語言模型 API；
   - No-Code 平台 × 規則式自動化（Rule-based Automation）；

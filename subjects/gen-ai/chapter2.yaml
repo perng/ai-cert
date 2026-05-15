@@ -905,8 +905,8 @@ questions:
   - 可能生成幻覺或隨機採信其中一方的內容 (Hallucination or Random Selection)
   - 拒絕回答，並要求提供更一致的輸入 (Refuse to Answer)
   - 自動判斷並只選擇正確的資訊 (Auto Correct)
-  correct_index: 0
-  explanation: 此題涉及 某公司在導入生成式 ... 的核心概念。正確答案為「永遠選擇第一段資訊作為答案依據；」。
+  correct_index: 1
+  explanation: 上下文互相矛盾時，模型通常無法自動判斷真實答案，可能產生幻覺或隨機採信其中一方。
   tags:
   - sec-past-exam
   - past-exam
@@ -924,8 +924,8 @@ questions:
   - Graph Prompting 僅需單次提示，即可避免多輪推理的誤差累積 (Single Prompt)
   - Graph Prompting 的生成速度通常更快，因此效率更高 (Faster Speed)
   - Graph Prompting 能捕捉非線性結構與上下文關聯，適合處理網絡化資訊 (Non-linear Structure & Context)
-  correct_index: 0
-  explanation: Chain-of-Thought (CoT) 透過引導模型逐步推理（Step-by-step），能顯著提升複雜邏輯與數學問題的解題能力。
+  correct_index: 3
+  explanation: Graph Prompting 能保留節點與關係的非線性結構，因此比線性的 CoT 更適合處理網絡化資訊與複雜關係。
   tags:
   - sec-past-exam
   - past-exam
@@ -974,15 +974,15 @@ questions:
 - id: '11416_3'
   chapter_title: 提示工程 (Prompt Engineering)
   section_title: 歷屆考題
-  text: 在建置多代理大型語言模型（Multi-agent LLMs）系統時，如果沒有清 楚定義每個代理的任務啟動條件和角色分工，最可能出現什麼問題？ (114年第四梯次)
+  text: 在建置多代理大型語言模型（Multi-agent LLMs）系統時，如果沒有清楚定義每個代理的任務啟動條件和角色分工，最可能出現什麼問題？ (114年第四梯次)
   type: multiple_choice
   options:
   - 回覆內容前後不連貫，系統邏輯斷裂 (Inconsistent Response)
   - 不同代理的答案互相衝突，無法判斷最終決策 (Conflicting Answers)
   - 系統陷入無限對話循環，導致資源耗盡 (Infinite Loop)
   - 多個代理重複做同樣的任務，造成效率低落 (Redundant Tasks)
-  correct_index: 0
-  explanation: AI Agent 具備感知、規劃、記憶與工具使用能力，能自主拆解目標並執行一連串行動以完成複雜任務。
+  correct_index: 3
+  explanation: 未清楚定義代理人的啟動條件與角色分工時，最容易造成多個代理重複執行同一任務，降低整體效率。
   tags:
   - sec-past-exam
   - past-exam
@@ -1000,8 +1000,8 @@ questions:
   - MCP Client →AI Host →MCP Server →資料查詢→結果回傳 AI Host (Client -> Host -> Server)
   - AI Host →MCP Client → MCP Server →資料查詢→結果回傳 AI Host (Host -> Client -> Server)
   - AI Host→MCP Server→MCP Client→資料查詢→結果回傳 AI Host (Host -> Server -> Client)
-  correct_index: 0
-  explanation: Model Context Protocol (MCP) 是一種標準化協議，旨在簡化 AI 模型與外部數據、工具及資源的連接與互動。
+  correct_index: 2
+  explanation: MCP 流程由 AI Host 發起需求，透過 MCP Client 與 MCP Server 溝通，再由 Server 執行資料查詢並回傳結果。
   tags:
   - sec-past-exam
   - past-exam
@@ -1019,7 +1019,7 @@ questions:
   - 「以下是兩組客服對話範例，請依照相同風格回覆新的顧客問題」 (Few-shot Examples)
   - 「請逐步分析顧客投訴的原因，並依照推理過程生成合適回覆」 (Chain of Thought)
   - 「請以正式的語氣回覆顧客的提問」 (Tone Instruction)
-  correct_index: 0
+  correct_index: 1
   explanation: Few-shot Prompting 透過提供少量範例（Examples），讓模型快速學習任務模式與輸出格式，無需更新參數。
   tags:
   - sec-past-exam
@@ -1038,8 +1038,8 @@ questions:
   - 要求模型將一段新聞摘要濃縮為一句話 (Summarization)
   - 要求模型將一段繁體中文翻譯成英文 (Translation)
   - 要求模型從表格中擷取所有城市的最高氣溫 (Table Extraction)
-  correct_index: 0
-  explanation: Zero-shot Prompting 不提供任何範例，直接依靠模型預訓練的知識來解決任務，考驗模型的泛化能力。
+  correct_index: 3
+  explanation: 從表格擷取所有城市的最高氣溫需要明確的格式與抽取規則，零樣本提示缺少示範時較容易出現結構錯誤。
   tags:
   - sec-past-exam
   - past-exam
@@ -1050,15 +1050,15 @@ questions:
 - id: '11405_2'
   chapter_title: 提示工程 (Prompt Engineering)
   section_title: 歷屆考題
-  text: 在超長上下文任務中使用自動提示工程 （Automatic Prompt Engineer, 第二科：生成式 AI 應用與規劃 APE）時，可能面臨的最大限制是什麼？ (114年第四梯次)
+  text: 在超長上下文任務中使用自動提示工程 （Automatic Prompt Engineer, APE）時，可能面臨的最大限制是什麼？ (114年第四梯次)
   type: multiple_choice
   options:
   - 迭代優化難以因應上下文的不斷變動，導致調整失效 (Dynamic Context Issue)
   - 模型的記憶容量有限，無法完整保留所有長篇資訊 (Memory Limit)
   - 提示內容難以有效分解，無法支援複雜任務拆解 (Decomposition Issue)
   - 回饋機制通常僅針對局部片段，難以全面評估最終輸出品質 (Partial Feedback)
-  correct_index: 0
-  explanation: 此題涉及 在超長上下文任務中使... 的核心概念。正確答案為「迭代優化難以因應上下文的不斷變動，導致調整失效；」。
+  correct_index: 3
+  explanation: 超長上下文任務的輸出品質受整體脈絡影響，APE 的回饋若只涵蓋局部片段，難以全面評估最終輸出。
   tags:
   - sec-past-exam
   - past-exam
@@ -1076,8 +1076,8 @@ questions:
   - 優化提示與上下文 (Optimize Prompt & Context)
   - 增加模型參數數量 (Increase Parameters)
   - 優化 Fine-tuning 正確率 (Optimize Fine-tuning Accuracy)
-  correct_index: 0
-  explanation: 此題涉及 在導入生成式 AI ... 的核心概念。正確答案為「縮短模型訓練時間；」。
+  correct_index: 1
+  explanation: 上下文工程的核心是設計與管理提示、背景資料與任務脈絡，使模型能取得完成任務所需的正確上下文。
   tags:
   - sec-past-exam
   - past-exam
@@ -1088,7 +1088,7 @@ questions:
 - id: '11439_4'
   chapter_title: 提示工程 (Prompt Engineering)
   section_title: 歷屆考題
-  text: 在提示工程 （Prompt Engineering） 的應用中，Chain-of-Thought（CoT） 與 Tree of Thoughts（ToT）各適用於不同的推理情境，請問以下兩個 情境，分別最適合採用哪一種方法？ 第二科：生成式 AI 應用與規劃 情境一：電商公司開發客服助理，用來協助客戶查詢退款流程與相關規 範 情境二：活動策劃團隊使用AI 協助規劃多場跨部門行銷活動，需要同 時考量預算、場地、時程與人力資源，並比較不同方案的可行性。 (114年第四梯次)
+  text: 在提示工程 （Prompt Engineering） 的應用中，Chain-of-Thought（CoT） 與 Tree of Thoughts（ToT）各適用於不同的推理情境，請問以下兩個 情境，分別最適合採用哪一種方法？情境一：電商公司開發客服助理，用來協助客戶查詢退款流程與相關規 範 情境二：活動策劃團隊使用AI 協助規劃多場跨部門行銷活動，需要同 時考量預算、場地、時程與人力資源，並比較不同方案的可行性。 (114年第四梯次)
   type: multiple_choice
   options:
   - '情境一採用 CoT，情境二採用ToT (Scenario 1: CoT, Scenario 2: ToT)'
@@ -1448,7 +1448,7 @@ questions:
   - 模型容易對單一範例產生過度記憶；
   - 少量範例難以涵蓋新情境的資料差異；
   - Prompt 設計無法引導模型擷取共通特徵；
-  - 模型推理能力不足以完成分類任務 第二科：生成式 AI 應用與規劃
+  - 模型推理能力不足以完成分類任務
   correct_index: 1
   explanation: Few-shot Prompting 的效果高度依賴範例的代表性。當應用至新市場時，既有範例無法涵蓋新資料的差異性，導致模型分類結果不穩定。
   type: multiple_choice
@@ -1509,7 +1509,7 @@ questions:
   section_title: 歷屆考題
   text: 某電商平台導入生成式 AI 客服助理，用於自動回覆顧客詢問。營運需求包含：需 即時反映每日更新的促銷活動與商品資訊，同時維持品牌一致的回覆語氣，且企 業希望避免因模型重新訓練所造成的成本增加與系統不穩定。在此情境下，下列 哪一種技術策略最合理？（115年第一梯次）
   options:
-  - 僅進行 Fine-tuning，使模型同時學習品牌語氣與即時促銷內容； 第二科：生成式 AI 應用與規劃
+  - 僅進行 Fine-tuning，使模型同時學習品牌語氣與即時促銷內容；
   - 僅導入 RAG 更新促銷資訊，期望模型直接從檢索內容學習品牌語氣；
   - 透過 Prompt Engineering 控制回覆風格，並以 RAG 引入最新商品與活動資訊；
   - 持續進行增量 Fine-tuning，以確保活動資訊同步更新

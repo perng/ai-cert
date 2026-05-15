@@ -946,44 +946,6 @@ questions:
   - chap-gen-chapter6
   - sec-performance-metrics
   usage: both
-- id: '11404_2'
-  chapter_title: 生成式 AI 的專案規劃與評估
-  section_title: 歷屆考題
-  text: ' 動態調整生成溫度，平衡準確度與多樣性 (114年第四梯次)'
-  type: multiple_choice
-  options:
-  - 1 → 2 → 4 → 3；
-  - 2 → 1→ 3 → 4；
-  - 1 → 3 → 2 → 4；
-  - 3 → 1 → 2 → 4 C 22.  一家顧問公司使用生成式 AI 協助撰寫數據分析報告。雖然模型在測試 中表現優異，但其生成的報告多半僅遵循固定段落結構，替換數值或關 鍵詞即可完成，卻未能展現針對不同專案的多樣化推理與分析。下列何 者為造成這種現象的最合理解釋？
-  correct_index: 0
-  explanation: 溫度 (Temperature) 參數控制生成結果的隨機性。較高的溫度（如 0.8）使輸出更多樣且具創意；較低的溫度（如 0.2）使輸出更確定且聚焦。
-  tags:
-  - sec-past-exam
-  - past-exam
-  - 114-4
-  - chap-gen-chapter6
-  - sec-performance-metrics
-  usage: both
-- id: '11404_3'
-  chapter_title: 生成式 AI 的專案規劃與評估
-  section_title: 歷屆考題
-  text: ' 評估並選擇合適的 AI 技術供應商或開源方案，確立技術方向與架 構 (114年第四梯次)'
-  type: multiple_choice
-  options:
-  - 2 → 3 → 4 → 1；
-  - 3 → 2 → 1 → 4；
-  - 2 → 1 → 3 → 4；
-  - 1 → 4 → 3 → 2 B 31.  某跨國電商企業導入生成式 AI，協助處理顧客服務請求，並根據顧客 歷史訂單提供個人化建議。資安與法遵部門擔心AI 在回覆時可能洩漏 顧客個資，若要在導入初期優先避免觸法風險，下列哪一項措施最符合 要求？
-  correct_index: 0
-  explanation: 此題涉及  評估並選擇合適的 ... 的核心概念。正確答案為「2 → 3 → 4 → 1；」。
-  tags:
-  - sec-past-exam
-  - past-exam
-  - 114-4
-  - chap-gen-chapter6
-  - sec-performance-metrics
-  usage: both
 - id: '11422_3'
   chapter_title: 生成式 AI 的專案規劃與評估
   section_title: 歷屆考題
@@ -994,8 +956,8 @@ questions:
   - 測試資料涵蓋過多統計圖表，導致模型無法專注於文字內容的多樣 化表達；
   - 模型過度依賴訓練語料中的常見報告範式，導致生成結果以樣板化 結構取代真正的推理；
   - 模型因無法正確辨識報告中的頁碼與標題層級，才出現樣板化的結 果
-  correct_index: 0
-  explanation: 此題涉及 一家顧問公司使用生成... 的核心概念。正確答案為「模型在生成過程中缺乏對字體與排版的優化能力，因此無法展現分 析邏輯；」。
+  correct_index: 2
+  explanation: 報告只套用固定段落與替換數值，表示模型過度依賴常見報告範式，以樣板化結構取代真正推理。
   tags:
   - sec-past-exam
   - past-exam
@@ -1013,8 +975,8 @@ questions:
   - 大模型在多數情境下表現較好，但在特定任務上略遜於小模型；
   - 模型規模與基準測試結果完全無關，影響主要來自測試設計；
   - 模型越大，Benchmark 結果可能提升，但幅度取決於訓練數據品質 與資源配置
-  correct_index: 0
-  explanation: 此題涉及 在評估大型語言模型，... 的核心概念。正確答案為「小模型在正確調整下能超越大模型，因此模型大小並不重要； 第二科：生成式 AI 應用與規劃」。
+  correct_index: 3
+  explanation: 模型規模變大通常可能提升 Benchmark 表現，但實際幅度仍取決於訓練資料品質、方法與資源配置。
   tags:
   - sec-past-exam
   - past-exam
@@ -1032,8 +994,8 @@ questions:
   - 生成內容的醫療準確性與臨床一致性，避免出現錯誤或誤導性資 訊；
   - 模型在不同病例語境下的泛化能力，確保不因個別樣本而偏差；
   - 系統回應時間的穩定性，以支援醫療場域中可能的即時需求
-  correct_index: 0
-  explanation: 此題涉及 某醫療機構計畫導入生... 的核心概念。正確答案為「資料儲存與存取架構的完整性，確保長期運作過程中的數據可追溯 性；」。
+  correct_index: 1
+  explanation: 醫療病歷摘要屬高風險臨床應用，技術測試應優先確認生成內容的醫療準確性與臨床一致性。
   tags:
   - sec-past-exam
   - past-exam
@@ -1051,8 +1013,8 @@ questions:
   - 導入可重複執行的自動化測試流程，並透過 API 或服務虛擬化進 行模組化驗證；
   - 將測試聚焦於使用者介面互動與操作流程驗證，檢查系統表面功 能；
   - 依靠使用者回饋與正式上線後的監控資料，作為修正依據
-  correct_index: 0
-  explanation: Low/No Code 平台降低了 AI 開發門檻，讓非技術人員也能透過圖形化介面快速構建與部署 AI 應用。
+  correct_index: 1
+  explanation: 跨部門流程與外部服務整合需要可重複的自動化測試，並透過 API 或服務虛擬化進行模組化驗證。
   tags:
   - sec-past-exam
   - past-exam
@@ -1070,8 +1032,8 @@ questions:
   - 模型的預測能力會比在雲端運行時更精度，因為本地環境更加可 靠；
   - 可確保輸入模型的敏感資料不會傳輸給第三方，提升資料隱私和自 主控制；
   - 以上皆是
-  correct_index: 0
-  explanation: 此題涉及 某企業考慮將開源大型... 的核心概念。正確答案為「可以達到無運算成本，因為本地部署模型不會產生額外的資源消 耗；」。
+  correct_index: 2
+  explanation: 本地部署的實際好處是敏感資料不需傳給第三方，可提升資料隱私、自主控制與合規掌握度。
   tags:
   - sec-past-exam
   - past-exam
@@ -1089,8 +1051,8 @@ questions:
   - 提升運算基礎設施的可擴展性，以因應大規模服務需求；
   - 透過可視化建模介面，降低技術門檻並促進跨部門協作；
   - 提供進階特徵工程能力，優化高維度數據的處理效率
-  correct_index: 0
-  explanation: Low/No Code 平台降低了 AI 開發門檻，讓非技術人員也能透過圖形化介面快速構建與部署 AI 應用。
+  correct_index: 2
+  explanation: No Code 平台主要透過可視化建模介面降低技術門檻，促進非工程部門參與與跨部門協作。
   tags:
   - sec-past-exam
   - past-exam
@@ -1482,7 +1444,7 @@ questions:
 - id: 115005
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 歷屆考題
-  text: 某企業導入生成式 AI 系統，希望自動產出客服回覆與內部文件摘要。系統需能理 解使用者輸入的完整語句內容，並在回覆中維持語意連貫，即使對話內容較長仍 能保持上下文一致性。基於上述需求，下列何種模型架構最為適合？ 第二科：生成式 AI 應用與規劃（115年第一梯次）
+  text: 某企業導入生成式 AI 系統，希望自動產出客服回覆與內部文件摘要。系統需能理 解使用者輸入的完整語句內容，並在回覆中維持語意連貫，即使對話內容較長仍 能保持上下文一致性。基於上述需求，下列何種模型架構最為適合？（115年第一梯次）
   options:
   - 卷積神經網路（Convolutional Neural Network, CNN）；
   - 遞迴神經網路（Recurrent Neural Network, RNN）；
@@ -1498,7 +1460,7 @@ questions:
 - id: 115014
   chapter_title: 生成式 AI 專案管理與評估
   section_title: 歷屆考題
-  text: 某企業導入大型語言模型（LLM）分析內部報表，使用者經常提供 Excel 匯出的 表格資料（如銷售數據與統計表） 。測試時發現，模型對原始表格解析效果不穩 定。為提升模型理解與回應品質，下列哪一種上下文工程（Context Engineering） 作法較為適當？ 第二科：生成式 AI 應用與規劃（115年第一梯次）
+  text: 某企業導入大型語言模型（LLM）分析內部報表，使用者經常提供 Excel 匯出的 表格資料（如銷售數據與統計表） 。測試時發現，模型對原始表格解析效果不穩 定。為提升模型理解與回應品質，下列哪一種上下文工程（Context Engineering） 作法較為適當？（115年第一梯次）
   options:
   - 將表格內容轉換為結構化 JSON 或 Markdown table；
   - 在維持原始表格呈現方式下，補充欄位與數據說明；
@@ -1567,7 +1529,7 @@ questions:
   - 每次 API 呼叫所需的輸入 Token 數量；
   - 生成報告內容所消耗的輸出 Token 費用；
   - AI 模型訓練階段使用 Token 數量所需的 GPU 記憶體成本；
-  - 模型推理過程中的 Token 使用量統計 第二科：生成式 AI 應用與規劃
+  - 模型推理過程中的 Token 使用量統計
   correct_index: 2
   explanation: Token Economics 專注於評估模型在推論（Inference）時消耗的輸入與輸出 Token 費用。模型訓練階段的 GPU 運算與記憶體成本屬於基礎設施投資，不包含在內。
   type: multiple_choice

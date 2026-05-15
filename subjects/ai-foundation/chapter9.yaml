@@ -706,7 +706,7 @@ questions:
 - id: 11439
   chapter_title: 模型評估與優化
   section_title: 歷屆考題
-  text: 某醫院計畫開發住院日數預測模型，以協助病房調度。多數病人的住院 日數集中在 3–7 天，但仍有少數重症患者因治療需求而住院日數明顯 偏長。醫院希望採用一種合適的評估方式，既能兼顧大部分病人的預測 準確度，也能確保對重症個案的預測維持穩健。下列哪一種方法最符合 此需求？  答案 題    目 (114年第四梯次)
+  text: 某醫院計畫開發住院日數預測模型，以協助病房調度。多數病人的住院 日數集中在 3–7 天，但仍有少數重症患者因治療需求而住院日數明顯 偏長。醫院希望採用一種合適的評估方式，既能兼顧大部分病人的預測 準確度，也能確保對重症個案的預測維持穩健。下列哪一種方法最符合 此需求？ (114年第四梯次)
   type: multiple_choice
   options:
   - 在模型檢核時，同時呈現平均絕對誤差（MAE）與重症子群的誤差指 標 (During Model Validation, Simultaneously Presenting MAE and Error Indicators for Critical Care Subgroup)
@@ -1171,7 +1171,7 @@ questions:
   - F1-score
   - 均方誤差（Root Mean Squared Error, RMSE）
   - 準確率（Accuracy）
-  - "判定係數（R², Coefficient of Determination） \n115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 \n第一科：人工智慧基礎概論 \n考試日期：115 年 03 月 21 日 \n第 10 頁，共 12 頁 \n \n答案 題目"
+  - "判定係數（R², Coefficient of Determination）"
   correct_index: 0
   explanation: 本題測驗相關核心概念。正確解答為「F1-score」，因為這最符合題幹中描述的情境與技術特性。
   tags:

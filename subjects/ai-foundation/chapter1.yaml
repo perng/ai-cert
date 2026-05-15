@@ -1189,7 +1189,7 @@ questions:
   usage: mock
   section_title: AI 應用規劃師認證考點
 - id: 115-1-2
-  text: 某智慧城市專案導入 AI 技術，以優化垃圾收集路線調度並即時監測空氣品質變化。系統需持續蒐集環境數據（如 PM2.5、氣體濃度）與設備狀態（如垃圾桶滿溢度） 。下列何種技術最直接支援上述需求？     （115年第一梯次）
+  text: 某智慧城市專案導入 AI 技術，以優化垃圾收集路線調度並即時監測空氣品質變化。系統需持續蒐集環境數據（如 PM2.5、氣體濃度）與設備狀態（如垃圾桶滿溢度） 。下列何種技術最直接支援上述需求？（115年第一梯次）
   type: multiple_choice
   options:
   - 專家系統（Expert System）
@@ -1253,7 +1253,7 @@ questions:
   usage: mock
   section_title: AI 應用規劃師認證考點
 - id: 115-1-28
-  text: 在金融業導入 AI 模型與可解釋性技術時，反事實解釋（Counterfactual 115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 第一科：人工智慧基礎概論 考試日期：115 年 03 月 21 日 第 7 頁，共 12 頁  答案 題目 Explanation）最符合下列哪一種應用？ （115年第一梯次）
+  text: 在金融業導入 AI 模型與可解釋性技術時，反事實解釋（Counterfactual Explanation）最符合下列哪一種應用？ （115年第一梯次）
   type: multiple_choice
   options:
   - 分析整體客戶群的信用風險分布，以預測未來違約率趨勢
@@ -1291,7 +1291,7 @@ questions:
   - 增加模型參數規模，使模型具備更強表達能力
   - 透過資料增強（Data Augmentation）擴展影像變化，以提升模型穩定性
   - 重新蒐集大量影像並進行完整人工標註
-  - 採用遷移學習（Transfer Learning） ，利用既有預訓練模型進行調整
+  - 採用遷移學習（Transfer Learning），利用既有預訓練模型進行調整
   correct_index: 3
   explanation: 本題測驗相關核心概念。正確解答為「採用遷移學習（Transfer Learning） ，利用既有預訓練模型進行調整」，因為這最符合題幹中描述的情境與技術特性。
   tags:

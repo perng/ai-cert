@@ -956,8 +956,8 @@ questions:
   - 增加提示詞複雜度，引導模型風格一致 (Complex Prompting)
   - 降低生成溫度，以減少隨機性並提升風格一致性 (Lower Temperature)
   - 使用全連接神經網路對生成結果後期篩選 (Post-processing with NN)
-  correct_index: 0
-  explanation: 此題涉及 某電商平台希望生成的... 的核心概念。正確答案為「擴充語料庫並微調模型，使風格統一；」。
+  correct_index: 2
+  explanation: 題幹要求風格與用詞一致且不需新增專業知識，調低生成溫度可降低隨機性，使輸出更穩定一致。
   tags:
   - sec-past-exam
   - past-exam
@@ -1352,7 +1352,7 @@ questions:
 - id: 115042
   chapter_title: 生成式 AI 模型架構與機制
   section_title: 歷屆考題
-  text: 某企業希望利用含敏感資訊的資料進行 AI 模型訓練，但政策要求原始資料不得外 洩，且資料可集中於安全環境中處理。同時，企業希望在資料使用過程中，即使 資料處於加密狀態，仍能完成模型計算。在此需求下，下列哪一種技術最為適 第二科：生成式 AI 應用與規劃 合？（115年第一梯次）
+  text: 某企業希望利用含敏感資訊的資料進行 AI 模型訓練，但政策要求原始資料不得外洩，且資料可集中於安全環境中處理。同時，企業希望在資料使用過程中，即使 資料處於加密狀態，仍能完成模型計算。在此需求下，下列哪一種技術最為適合？（115年第一梯次）
   options:
   - 聯邦學習（Federated Learning）；
   - 同態加密（Homomorphic Encryption）；

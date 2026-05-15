@@ -728,7 +728,7 @@ questions:
 - id: '11425_2'
   chapter_title: AI 治理、法規與倫理
   section_title: 歷屆考題
-  text: 在自然語言處理任務中，為了減少訓練語料中偏見對模型的影響，下列  答案 題    目 哪種資料處理策略屬於常見的「資料去偏（Data Debiasing） 」做法？ (114年第四梯次)
+  text: 在自然語言處理任務中，為了減少訓練語料中偏見對模型的影響，下列 哪種資料處理策略屬於常見的「資料去偏（Data Debiasing） 」做法？ (114年第四梯次)
   type: multiple_choice
   options:
   - 讓模型在訓練時隨機替換輸出，以抵消資料中存在的系統性偏差 (Randomly Replacing Outputs During Training to Offset Systematic Bias in Data)，隨機替換輸出。
@@ -747,7 +747,7 @@ questions:
 - id: '11442_1'
   chapter_title: AI 治理、法規與倫理
   section_title: 歷屆考題
-  text: 一家跨國醫療研究機構希望利用各地醫院的病患資料，建立一個能夠 預測疾病早期風險的機器學習模型。由於各國法規限制，病患的原始資  答案 題    目 料無法集中到單一伺服器。在此情境下，下列哪一種方法最能同時滿足 「各醫院保留資料不外流」與「模型仍能跨院學習」的需求？ (114年第四梯次)
+  text: 一家跨國醫療研究機構希望利用各地醫院的病患資料，建立一個能夠 預測疾病早期風險的機器學習模型。由於各國法規限制，病患的原始資 料無法集中到單一伺服器。在此情境下，下列哪一種方法最能同時滿足 「各醫院保留資料不外流」與「模型仍能跨院學習」的需求？ (114年第四梯次)
   type: multiple_choice
   options:
   - 資料匿名化（Data Anonymization）(Data Anonymization)，移除個人識別資訊。

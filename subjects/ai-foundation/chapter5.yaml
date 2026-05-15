@@ -760,12 +760,12 @@ questions:
   text: 貝氏分類器（Naive Bayes Classifier）常被應用於文字分類、垃圾郵 件過濾等場景。依據模型特性，它最適合歸類於下列哪一類？ (114年第四梯次)
   type: multiple_choice
   options:
-  - 透過直接學習輸入特徵與目標標籤之間的邊界或關係來進行分類 的模型
-  - 透過建構資料的整體分布，並利用條件關係進行推斷和分類的模 型
-  - 側重探索資料中樣本間的相似性，將資料自動分成不同群組的模 型
+  - 透過直接學習輸入特徵與目標標籤之間的邊界或關係來進行分類的模型
+  - 透過建構資料的整體分布，並利用條件關係進行推斷和分類的模型
+  - 側重探索資料中樣本間的相似性，將資料自動分成不同群組的模型
   - 透過試錯學習，根據行動結果的獎勵或懲罰來優化決策策略的模型
   correct_index: 1
-  explanation: 此題涉及 分類演算法 的核心概念。正確答案為「透過建構資料的整體分布，並利用條件關係進行推斷和分類的模 型」。
+  explanation: 此題涉及分類演算法 的核心概念。正確答案為「透過建構資料的整體分布，並利用條件關係進行推斷和分類的模型」。
   tags:
   - sec-past-exam
   - past-exam
@@ -776,7 +776,7 @@ questions:
 - id: 11420
   chapter_title: 監督式學習演算法
   section_title: 歷屆考題
-  text: 某醫院希望開發一個系統，根據患者的年齡、血壓與BMI 等資訊，預測  答案 題    目 其罹患糖尿病的機率（0~1） ，並依據預測值是否超過0.5 做出風險警 示。下列哪一種模型最適合用於此分類任務？ (114年第四梯次)
+  text: 某醫院希望開發一個系統，根據患者的年齡、血壓與BMI 等資訊，預測 其罹患糖尿病的機率（0~1） ，並依據預測值是否超過0.5 做出風險警 示。下列哪一種模型最適合用於此分類任務？ (114年第四梯次)
   type: multiple_choice
   options:
   - 邏輯迴歸（Logistic Regression）
@@ -799,7 +799,7 @@ questions:
   type: multiple_choice
   options:
   - 類別 A
-  - 類別 B；  答案 題    目
+  - 類別 B；
   - 類別 A 與 B 各一半，無法分類
   - 類別 A 或 B，視距離遠近加權而定
   correct_index: 0
@@ -1212,15 +1212,15 @@ questions:
   usage: mock
   section_title: AI 應用規劃師認證考點
 - id: 115-1-10
-  text: 某設計公司導入生成式 AI（Generative AI）工具，用於自動產生產品概念圖與風格草圖。為了讓系統能依據既有圖像資料產生具有變化且風格一致的新圖像，模型必須具備學習資料特性並生成新樣本的能力。下列哪一種模型技術或方法最符合上述需求？    （115年第一梯次）
+  text: 某設計公司導入生成式 AI（Generative AI）工具，用於自動產生產品概念圖與風格草圖。為了讓系統能依據既有圖像資料產生具有變化且風格一致的新圖像，模型必須具備學習資料特性並生成新樣本的能力。下列哪一種模型技術或方法最符合上述需求？ （115年第一梯次）
   type: multiple_choice
   options:
-  - 隱變量自編碼器（Variational Autoencoder, V AE）
+  - 隱變量自編碼器（Variational Autoencoder, VAE）
   - 隨機森林（Random Forest）
   - K-近鄰演算法（K-Nearest Neighbors, KNN）
   - 貝氏網路（Bayesian Network）
   correct_index: 0
-  explanation: 本題測驗相關核心概念。正確解答為「隱變量自編碼器（Variational Autoencoder, V AE）」，因為這最符合題幹中描述的情境與技術特性。
+  explanation: 本題測驗相關核心概念。正確解答為「隱變量自編碼器（Variational Autoencoder, VAE）」，因為這最符合題幹中描述的情境與技術特性。
   tags:
   - sec-past-exam
   - past-exam
@@ -1228,7 +1228,7 @@ questions:
   usage: mock
   section_title: AI 應用規劃師認證考點
 - id: 115-1-20
-  text: 某團隊訓練影像分類模型，發現模型在訓練資料上的準確率達 98%，但在測試資115 年第一次 AI 應用規劃師-初級能力鑑定【公告試題】 第一科：人工智慧基礎概論 考試日期：115 年 03 月 21 日 第 5 頁，共 12 頁  答案 題目 料上僅有 72%。若團隊希望提升模型對新資料的適應能力，並增加訓練資料的多樣性，下列何者最適合？    （115年第一梯次）
+  text: 某團隊訓練影像分類模型，發現模型在訓練資料上的準確率達 98%，但在測試資料上僅有 72%。若團隊希望提升模型對新資料的適應能力，並增加訓練資料的多樣性，下列何者最適合？    （115年第一梯次）
   type: multiple_choice
   options:
   - 增加模型的深度與參數量，使模型學習更多細節
@@ -1265,7 +1265,7 @@ questions:
   options:
   - 使用支援向量機（Support Vector Machine, SVM）建立異常分類模型
   - 以決策樹（Decision Tree）學習異常類型的判斷規則
-  - 採用變分自編碼器（Variational Autoencoder, V AE）學習正常資料分佈
+  - 採用變分自編碼器（Variational Autoencoder, VAE）學習正常資料分佈
   - 使用生成對抗網路（Generative Adversarial Network, GAN）直接預測異常標籤
   correct_index: 2
   explanation: 本題測驗相關核心概念。正確解答為「採用變分自編碼器（Variational Autoencoder, V AE）學習正常資料分佈」，因為這最符合題幹中描述的情境與技術特性。

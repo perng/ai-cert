@@ -893,7 +893,7 @@ questions:
   - 只執行事先假定的一條路徑，失敗就停止
   - 完全依靠 LLM 一次性推斷最優完整路徑
   correct_index: 0
-  explanation: AI Agent 具備感知、規劃、記憶與工具使用能力，能自主拆解目標並執行一連串行動以完成複雜任務。
+  explanation: Agentic AI 在 Solution Graph 上尋找路徑時，通常會用廣度優先、深度優先或最佳優先等搜尋策略探索可行解。
   tags:
   - sec-past-exam
   - past-exam
@@ -904,15 +904,15 @@ questions:
 - id: '11449_8'
   chapter_title: AI 代理人 (AI Agents)
   section_title: 歷屆考題
-  text: 在 Agentic AI 的架構中，解決方案圖譜（Solution Graph）常被用來 輔助代理的任務執行，其主要作用為何？ (114年第四梯次)
+  text: 在 Agentic AI 的架構中，解決方案圖譜（Solution Graph）常被用來輔助代理的任務執行，其主要作用為何？ (114年第四梯次)
   type: multiple_choice
   options:
   - 透過圖形結構完全取代大型語言模型的推理，讓代理只依靠圖演算法完成任務
   - 僅用於保存代理的輸出結果，方便後續檢視與審計，而不影響實際推理流程
   - 將代理限制在既定流程內，避免其產生偏離設計腳本的行為
   - 作為代理在執行過程中的參考框架，用於組織決策步驟並支援任務推理
-  correct_index: 0
-  explanation: AI Agent 具備感知、規劃、記憶與工具使用能力，能自主拆解目標並執行一連串行動以完成複雜任務。
+  correct_index: 3
+  explanation: Solution Graph 是代理執行任務時的決策參考框架，用於組織步驟、狀態與可行路徑，支援任務推理。
   tags:
   - sec-past-exam
   - past-exam
@@ -930,8 +930,8 @@ questions:
   - 透過生成式 AI 在 No Code 平台中自動建立介面模板，並結合使用者數據即時生成個人化功能與行銷推播內容
   - 在 No Code平台中導入生成式 AI，快速建立跨專案可重用的通用模組，專注於提升開發速度
   - 在 No Code 平台中完全依賴生成式 AI 自動產生所有應用功能與流程，不經人工設計或驗證
-  correct_index: 0
-  explanation: Low/No Code 平台降低了 AI 開發門檻，讓非技術人員也能透過圖形化介面快速構建與部署 AI 應用。
+  correct_index: 1
+  explanation: 題幹同時要求快速生成介面、高度個人化與行銷內容自動產出，應結合平台模板、使用者資料與生成式 AI。
   tags:
   - sec-past-exam
   - past-exam
@@ -949,8 +949,8 @@ questions:
   - 向量資料庫檢索（Vector Retrieval）＋API 調用（API Calling）
   - 向量資料庫檢索（ Vector Retrieval ）＋任務規劃器（ Task Planner）
   - 任務規劃器（Task Planner）＋溫度參數（Temperature）設定
-  correct_index: 0
-  explanation: AI Agent 具備感知、規劃、記憶與工具使用能力，能自主拆解目標並執行一連串行動以完成複雜任務。
+  correct_index: 1
+  explanation: FAQ 回答錯誤需要向量檢索補足產品知識，無法修改訂單則需要 API 調用來操作外部系統。
   tags:
   - sec-past-exam
   - past-exam
@@ -968,8 +968,8 @@ questions:
   - 遮罩語言建模（Masked Language Modeling ） ，補齊文字中缺失的詞語或片段
   - 生成式語言建模（Text Generation） ，依據上下文持續產生新的內容
   - 文本分類（Text Classification） ，針對輸入文本判斷情感、主題或標籤
-  correct_index: 0
-  explanation: 此題涉及 小明想開發一個部落格... 的核心概念。正確答案為「序列到序列建模（Sequence-to-Sequence Modeling） ，透過輸入序 列產生新的輸出序列；」。
+  correct_index: 2
+  explanation: 依據文章開頭持續續寫內容屬於生成式語言建模，核心是根據上下文產生後續文本。
   tags:
   - sec-past-exam
   - past-exam
@@ -999,15 +999,15 @@ questions:
 - id: '11435_3'
   chapter_title: AI 代理人 (AI Agents)
   section_title: 歷屆考題
-  text: 在即時客服系統的效能測試中，若針對延遲測試（Latency Testing） 進行評估，下列哪一項指標最能反映系統是否符合用戶即時互動需 求？ 第二科：生成式 AI 應用與規劃 (114年第四梯次)
+  text: 在即時客服系統的效能測試中，若針對延遲測試（Latency Testing） 進行評估，下列哪一項指標最能反映系統是否符合用戶即時互動需 求？(114年第四梯次)
   type: multiple_choice
   options:
   - AI 模型在同一分鐘內可完成的回覆訊息數量
   - 客戶從輸入問題到收到第一個完整回應所需的時間
   - 客服系統能連續提供服務的運行時長
   - AI 產生回答時用詞的多樣性與表達創意程度
-  correct_index: 0
-  explanation: 此題涉及 在即時客服系統的效能... 的核心概念。正確答案為「AI 模型在同一分鐘內可完成的回覆訊息數量；」。
+  correct_index: 1
+  explanation: Latency 測試衡量使用者等待時間，因此最能反映即時互動體驗的是從輸入問題到收到完整回應所需的時間。
   tags:
   - sec-past-exam
   - past-exam
@@ -1037,15 +1037,15 @@ questions:
 - id: '11424_3'
   chapter_title: AI 代理人 (AI Agents)
   section_title: 歷屆考題
-  text: 某保險公司計畫導入生成式 AI 的內部合約查詢系統，協助業務員與法 務部門快速解讀保單條款與理賠規範。高層特別強調客戶資料隱私與 合規風險控管，即使需要投入較多資源，也必須確保資料不會外洩。在 第二科：生成式 AI 應用與規劃 此情況下，下列哪一種策略最符合公司的資料安全與合規優先考量？ (114年第四梯次)
+  text: 某保險公司計畫導入生成式 AI 的內部合約查詢系統，協助業務員與法 務部門快速解讀保單條款與理賠規範。高層特別強調客戶資料隱私與 合規風險控管，即使需要投入較多資源，也必須確保資料不會外洩。在此情況下，下列哪一種策略最符合公司的資料安全與合規優先考量？ (114年第四梯次)
   type: multiple_choice
   options:
   - 導入開源模型並由 IT 團隊自建，後續再逐步補強隱私與合規控管
   - 在需求確認階段即納入法遵與稽核單位，設定準確率 KPI，並透過 MVP 驗證成效
   - 優先使用雲端大型 API 模型快速部署，並根據使用數據持續調整
   - 投入資源自訓並私有化部署 LLM，並同步建立自動化風控機制
-  correct_index: 0
-  explanation: 此題涉及 某保險公司計畫導入生... 的核心概念。正確答案為「導入開源模型並由 IT 團隊自建，後續再逐步補強隱私與合規控管；」。
+  correct_index: 3
+  explanation: 題幹以資料安全與合規為最高優先，私有化部署並同步建立自動化風控機制最能降低資料外洩與法遵風險。
   tags:
   - sec-past-exam
   - past-exam

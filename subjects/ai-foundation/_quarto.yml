@@ -25,7 +25,6 @@ book:
       chapters:
         - chapter7.md
         - chapter8.md
-        - chapter12.md
     - part: "第五部：模型評估、可解釋性與治理"
       chapters:
         - chapter9.md
