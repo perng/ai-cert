@@ -643,7 +643,7 @@ questions:
   usage: both
 - id: 6141
   chapter_title: 進階機器學習演算法
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你正在參加一個預測房價的 Kaggle 比賽。你已經訓練了 XGBoost, LightGBM, 和 Random Forest 三個模型，它們的表現都差不多，但預測結果的相關性不高。為了進一步提升排名，你應該怎麼做？
   type: multiple_choice
   options:
@@ -656,10 +656,10 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 6142
   chapter_title: 進階機器學習演算法
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你負責一家超市的銷售分析，發現「尿布 -> 啤酒」的 Lift 值高達 3.5。這對行銷策略有什麼啟示？
   type: multiple_choice
   options:
@@ -672,10 +672,10 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 6143
   chapter_title: 進階機器學習演算法
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你使用孤立森林檢測信用卡詐欺，發現檢測出的異常點中有很多是 VIP 客戶的大額消費（偽陽性）。你該如何改進？
   type: multiple_choice
   options:
@@ -688,10 +688,10 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 6144
   chapter_title: 進階機器學習演算法
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你的 XGBoost 模型在訓練集上準確率 99%，但在測試集上只有 70%。你應該調整哪些參數來解決這個問題？
   type: multiple_choice
   options:
@@ -704,10 +704,10 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 6145
   chapter_title: 進階機器學習演算法
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你正在處理一個包含大量類別特徵（如用戶 ID、商品 ID）的推薦系統數據集。為了快速建立基準模型，你會優先選擇哪個演算法？
   type: multiple_choice
   options:
@@ -720,7 +720,7 @@ questions:
   tags:
   - chap-m4-ch1
   - sec-scenario
-  usage: mock
+  usage: both
 - chapter_title: 進階機器學習演算法
   section_title: 整合方法
   text: 情境：隨機森林 (Random Forest) 透過什麼機制來減少過擬合 (Overfitting)？
@@ -2429,3 +2429,163 @@ questions:
   - sec-code-reading
   - code-reading
   usage: quiz
+- id: m4-ch1-scenario-006
+  chapter_title: 進階機器學習演算法
+  section_title: 情境題
+  text: 情境：三個模型錯誤類型不同，單獨表現相近。想提升穩定性可用什麼？
+  type: multiple_choice
+  options:
+  - 集成學習，如 voting、bagging 或 stacking
+  - 只保留最複雜模型
+  - 把三個模型輸出相加當資料欄位名稱
+  - 刪除驗證集
+  correct_index: 0
+  explanation: 模型多樣性高時集成常能降低方差。
+  tags:
+  - chap-m4-ch1
+  - sec-scenario
+  usage: both
+- id: m4-ch1-scenario-007
+  chapter_title: 進階機器學習演算法
+  section_title: 情境題
+  text: 情境：XGBoost 過擬合，訓練分數高但驗證差。可先調整什麼？
+  type: multiple_choice
+  options:
+  - 增加樹深直到完全記住資料
+  - 降低 max_depth、增加正則化或降低 learning_rate
+  - 移除驗證集
+  - 把所有特徵複製多次
+  correct_index: 1
+  explanation: 樹模型過深容易過擬合，可用正則化與深度限制。
+  tags:
+  - chap-m4-ch1
+  - sec-scenario
+  usage: both
+- id: m4-ch1-scenario-008
+  chapter_title: 進階機器學習演算法
+  section_title: 情境題
+  text: 情境：關聯規則 A -> B 的 Confidence 高，但 B 本來就很常被購買。還應看什麼？
+  type: multiple_choice
+  options:
+  - 只看商品名稱長度
+  - 只看訓練時間
+  - Lift，判斷 A 是否真正提升 B 的機率
+  - 只看資料列數
+  correct_index: 2
+  explanation: Lift 可排除後件本身熱門造成的假象。
+  tags:
+  - chap-m4-ch1
+  - sec-scenario
+  usage: both
+- id: m4-ch1-scenario-009
+  chapter_title: 進階機器學習演算法
+  section_title: 情境題
+  text: 情境：異常偵測模型把季節性高峰都當異常。應如何改善？
+  type: multiple_choice
+  options:
+  - 刪除所有高峰資料
+  - 把高峰視為詐欺
+  - 只提高圖表解析度
+  - 加入季節性基準或依時段分群建立異常門檻
+  correct_index: 3
+  explanation: 異常需相對於合理基準判斷，季節性要納入。
+  tags:
+  - chap-m4-ch1
+  - sec-scenario
+  usage: both
+- id: m4-ch1-scenario-010
+  chapter_title: 進階機器學習演算法
+  section_title: 情境題
+  text: 情境：資料有大量類別特徵，且需要快速建立表格資料基準。可考慮哪類方法？
+  type: multiple_choice
+  options:
+  - CatBoost、LightGBM 或適合類別特徵的梯度提升樹
+  - 只使用 CNN 影像模型
+  - 只使用 ARIMA
+  - 只使用文字生成模型
+  correct_index: 0
+  explanation: 梯度提升樹常是表格資料強基準，部分方法善於處理類別特徵。
+  tags:
+  - chap-m4-ch1
+  - sec-scenario
+  usage: both
+- id: m4-ch1-scenario-011
+  chapter_title: 進階機器學習演算法
+  section_title: 情境題
+  text: 情境：Stacking 模型在驗證集好，但測試集差，懷疑 meta-model 看到了基模型的訓練答案。應如何避免？
+  type: multiple_choice
+  options:
+  - 用同一訓練資料直接產生基模型預測給 meta-model
+  - 使用 out-of-fold 預測訓練 meta-model
+  - 刪除所有基模型
+  - 只用測試集訓練 meta-model
+  correct_index: 1
+  explanation: Stacking 需避免 meta-model 接觸洩漏預測。
+  tags:
+  - chap-m4-ch1
+  - sec-scenario
+  usage: both
+- id: m4-ch1-scenario-012
+  chapter_title: 進階機器學習演算法
+  section_title: 情境題
+  text: 情境：隨機森林中某特徵重要性很高，但該特徵是使用者 ID。應如何解讀？
+  type: multiple_choice
+  options:
+  - 一定代表使用者 ID 是可解釋因果因素
+  - 直接用它做唯一特徵
+  - 可能是洩漏或記憶個體，需檢查泛化與特徵合理性
+  - 刪除所有其他資料
+  correct_index: 2
+  explanation: 高基數 ID 特徵可能造成記憶或洩漏。
+  tags:
+  - chap-m4-ch1
+  - sec-scenario
+  usage: both
+- id: m4-ch1-scenario-013
+  chapter_title: 進階機器學習演算法
+  section_title: 情境題
+  text: 情境：Bagging 對高方差模型有效，主要原因是什麼？
+  type: multiple_choice
+  options:
+  - 讓每棵樹使用完全相同資料和完全相同錯誤
+  - 把偏差提高到無限大
+  - 取消所有隨機性
+  - 透過多個 bootstrap 模型平均降低方差
+  correct_index: 3
+  explanation: Bagging 利用重抽樣與平均降低不穩定模型方差。
+  tags:
+  - chap-m4-ch1
+  - sec-scenario
+  usage: both
+- id: m4-ch1-scenario-014
+  chapter_title: 進階機器學習演算法
+  section_title: 情境題
+  text: 情境：Isolation Forest 偵測異常時 contamination 設太高。可能發生什麼？
+  type: multiple_choice
+  options:
+  - 過多正常樣本被標成異常
+  - 所有異常都會消失
+  - 模型變成監督式分類器
+  - 資料會自動標準化
+  correct_index: 0
+  explanation: contamination 影響異常比例假設，太高會增加偽陽性。
+  tags:
+  - chap-m4-ch1
+  - sec-scenario
+  usage: both
+- id: m4-ch1-scenario-015
+  chapter_title: 進階機器學習演算法
+  section_title: 情境題
+  text: 情境：你想解釋梯度提升模型對單一客戶預測的主要因素。可使用什麼？
+  type: multiple_choice
+  options:
+  - 只看整體 Accuracy
+  - SHAP 值分析個別預測貢獻
+  - 只看資料表欄位順序
+  - 只看訓練耗時
+  correct_index: 1
+  explanation: SHAP 可解釋個別預測中各特徵的貢獻。
+  tags:
+  - chap-m4-ch1
+  - sec-scenario
+  usage: both

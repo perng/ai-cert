@@ -641,7 +641,7 @@ questions:
   usage: both
 - id: 4441
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你使用 GAN 生成人臉，發現生成的臉雖然逼真，但永遠都是同一張臉（或非常相似）。這是什麼問題？應如何解決？
   type: multiple_choice
   options:
@@ -654,10 +654,10 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 4442
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你正在訓練一個擴散模型，發現生成的圖像充滿雜訊，完全看不出內容。檢查程式碼發現前向過程 (Forward Process) 沒問題。最可能的問題出在哪裡？
   type: multiple_choice
   options:
@@ -670,10 +670,10 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 4443
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你的公司想開發一個「以圖搜圖」的電商應用。你會優先選擇哪種模型架構？為什麼？
   type: multiple_choice
   options:
@@ -686,10 +686,10 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 4444
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你使用 VAE 生成手寫數字，發現生成的數字雖然結構正確，但邊緣總是模糊不清。這是 VAE 的什麼特性造成的？
   type: multiple_choice
   options:
@@ -702,10 +702,10 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 4445
   chapter_title: 生成式 AI 與多模態 AI
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你想要生成高品質的「貓咪騎機車」圖片。你輸入 Prompt "Cat riding a motorcycle"，但生成的圖片裡貓咪有 6 條腿，機車輪子是方形的。這說明了目前生成式 AI 的什麼局限？
   type: multiple_choice
   options:
@@ -718,7 +718,7 @@ questions:
   tags:
   - chap-m2-ch4
   - sec-scenario
-  usage: mock
+  usage: both
 - chapter_title: 生成式 AI 與多模態 AI
   section_title: 生成模型 (Generative Models)
   text: 情境：GAN (生成對抗網路) 中的生成器 (Generator) 的目標是？
@@ -1224,3 +1224,163 @@ questions:
   - sec-past-exam
   - past-exam
   usage: mock
+- id: m2-ch4-scenario-006
+  chapter_title: 生成式 AI 與多模態 AI
+  section_title: 情境題
+  text: 情境：GAN 訓練時判別器太強，生成器梯度幾乎消失。可怎麼調整？
+  type: multiple_choice
+  options:
+  - 平衡生成器與判別器訓練，如調整學習率或更新頻率
+  - 只增加判別器深度，讓它更強
+  - 停止訓練生成器
+  - 把所有真實圖像刪除
+  correct_index: 0
+  explanation: GAN 需維持兩者競爭平衡，判別器過強會使生成器難學。
+  tags:
+  - chap-m2-ch4
+  - sec-scenario
+  usage: both
+- id: m2-ch4-scenario-007
+  chapter_title: 生成式 AI 與多模態 AI
+  section_title: 情境題
+  text: 情境：擴散模型生成品質好但推論慢。產品要求即時互動。可優先研究什麼？
+  type: multiple_choice
+  options:
+  - 增加採樣步數到無限大
+  - 減少採樣步數、蒸餾或使用加速採樣器
+  - 改用人工標註每張圖
+  - 取消所有文字提示
+  correct_index: 1
+  explanation: 擴散模型推論常受多步去噪限制，可用加速方法。
+  tags:
+  - chap-m2-ch4
+  - sec-scenario
+  usage: both
+- id: m2-ch4-scenario-008
+  chapter_title: 生成式 AI 與多模態 AI
+  section_title: 情境題
+  text: 情境：VAE 生成圖片偏模糊，但潛在空間連續可解釋。這反映 VAE 的哪個特性？
+  type: multiple_choice
+  options:
+  - VAE 無法學習任何資料分佈
+  - VAE 只能做文字分類
+  - 以機率重建與正則化換取平滑潛在空間
+  - VAE 沒有編碼器
+  correct_index: 2
+  explanation: VAE 的重建目標與 KL 正則化常帶來平滑但較模糊輸出。
+  tags:
+  - chap-m2-ch4
+  - sec-scenario
+  usage: both
+- id: m2-ch4-scenario-009
+  chapter_title: 生成式 AI 與多模態 AI
+  section_title: 情境題
+  text: 情境：行銷想用文字生成商品圖，但必須避免商標侵權與不當內容。系統需加入什麼？
+  type: multiple_choice
+  options:
+  - 只提高解析度，不管內容來源
+  - 讓模型自由生成所有品牌商標
+  - 關閉所有日誌，避免追蹤
+  - 內容安全審查、版權風險控管與人工審核流程
+  correct_index: 3
+  explanation: 生成式 AI 應納入內容治理與權利風險。
+  tags:
+  - chap-m2-ch4
+  - sec-scenario
+  usage: both
+- id: m2-ch4-scenario-010
+  chapter_title: 生成式 AI 與多模態 AI
+  section_title: 情境題
+  text: 情境：多模態模型能看圖回答，但把圖片中的數字讀錯。應補強哪類評估？
+  type: multiple_choice
+  options:
+  - OCR/視覺細節理解與事實一致性測試
+  - 只評估回答是否有禮貌
+  - 只看模型參數數量
+  - 只測試純文字問答
+  correct_index: 0
+  explanation: 多模態模型需針對視覺細節和文字讀取能力評估。
+  tags:
+  - chap-m2-ch4
+  - sec-scenario
+  usage: both
+- id: m2-ch4-scenario-011
+  chapter_title: 生成式 AI 與多模態 AI
+  section_title: 情境題
+  text: 情境：你要產生同一角色的多張宣傳圖，但每張臉都不一樣。需要改善什麼能力？
+  type: multiple_choice
+  options:
+  - 資料庫交易一致性
+  - 角色一致性或參考圖條件控制
+  - 強化學習獎勵設計
+  - 文字斷詞精度
+  correct_index: 1
+  explanation: 生成圖像的角色一致性需額外控制或微調。
+  tags:
+  - chap-m2-ch4
+  - sec-scenario
+  usage: both
+- id: m2-ch4-scenario-012
+  chapter_title: 生成式 AI 與多模態 AI
+  section_title: 情境題
+  text: 情境：公司想用生成模型補足少數類別訓練資料。最應注意什麼？
+  type: multiple_choice
+  options:
+  - 合成資料越多越好，不需驗證
+  - 只要圖片漂亮就一定提升模型
+  - 合成資料品質、多樣性與是否引入偏差
+  - 將合成資料放入測試集評估模型
+  correct_index: 2
+  explanation: 合成資料可能放大偏差或過於單一，需驗證實際效益。
+  tags:
+  - chap-m2-ch4
+  - sec-scenario
+  usage: both
+- id: m2-ch4-scenario-013
+  chapter_title: 生成式 AI 與多模態 AI
+  section_title: 情境題
+  text: 情境：文字生成模型常產生看似合理但不存在的引用文獻。這是什麼問題？
+  type: multiple_choice
+  options:
+  - 模式崩潰
+  - 梯度爆炸
+  - 影像遮擋
+  - 幻覺，需要檢索佐證或引用驗證
+  correct_index: 3
+  explanation: 生成模型可能編造事實，需外部驗證。
+  tags:
+  - chap-m2-ch4
+  - sec-scenario
+  usage: both
+- id: m2-ch4-scenario-014
+  chapter_title: 生成式 AI 與多模態 AI
+  section_title: 情境題
+  text: 情境：影像生成結果符合文字，但構圖不穩且手部常錯。合理解讀是什麼？
+  type: multiple_choice
+  options:
+  - 模型仍可能缺乏精確結構與物理一致性控制
+  - 只要提示詞加長就必然完全解決
+  - 代表資料庫損壞
+  - 代表 GAN 一定比所有模型好
+  correct_index: 0
+  explanation: 生成模型對細節結構仍可能出錯。
+  tags:
+  - chap-m2-ch4
+  - sec-scenario
+  usage: both
+- id: m2-ch4-scenario-015
+  chapter_title: 生成式 AI 與多模態 AI
+  section_title: 情境題
+  text: 情境：你要讓模型同時理解語音指令、螢幕截圖與文字紀錄。這屬於哪種 AI 應用方向？
+  type: multiple_choice
+  options:
+  - 單一表格回歸
+  - 多模態 AI，整合不同資料型態進行推理
+  - 純文字 One-Hot 編碼
+  - 只用關聯規則探勘
+  correct_index: 1
+  explanation: 多模態模型整合文字、影像、語音等訊號。
+  tags:
+  - chap-m2-ch4
+  - sec-scenario
+  usage: both

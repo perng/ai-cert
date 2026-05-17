@@ -50,7 +50,7 @@ questions:
 - id: 8044
   chapter_title: PyTorch 基礎
   section_title: Autograd 與反向傳播
-  text: 訓練迴圈中通常需要呼叫 optimizer.zero_grad()，原因是什麼？
+  text: 若不在每個 batch 前清梯度，PyTorch 訓練最可能出現什麼問題？
   type: multiple_choice
   options:
   - 將 learning rate 設為 0
@@ -337,7 +337,7 @@ questions:
 - id: m6-ch6-code-004
   chapter_title: PyTorch 基礎
   section_title: Autograd 與反向傳播
-  text: 為什麼訓練迴圈通常要呼叫 optimizer.zero_grad()？
+  text: 這三行訓練步驟中，第一行負責處理哪件事？
   content:
   - type: text
     text: 為什麼訓練迴圈通常要呼叫 optimizer.zero_grad()？
@@ -978,7 +978,7 @@ questions:
 - id: m6-hc-100
   chapter_title: PyTorch 基礎
   section_title: Autograd 與反向傳播
-  text: 關於「Autograd 與反向傳播」，下列哪一項敘述最正確？
+  text: 哪個選項最能反映「Autograd 與反向傳播」的實務重點？
   type: multiple_choice
   options:
   - 呼叫 backward 會自動更新參數，不需要 optimizer.step。
@@ -994,7 +994,7 @@ questions:
 - id: m6-hc-101
   chapter_title: PyTorch 基礎
   section_title: Dataset 與 DataLoader
-  text: 關於「Dataset 與 DataLoader」，下列哪一項敘述最正確？
+  text: 處理「Dataset 與 DataLoader」相關問題時，哪個判斷最合理？
   type: multiple_choice
   options:
   - Dataset 應一次回傳整個資料集，而不是單筆樣本。
@@ -1010,7 +1010,7 @@ questions:
 - id: m6-hc-102
   chapter_title: PyTorch 基礎
   section_title: nn.Module 與模型定義
-  text: 關於「nn.Module 與模型定義」，下列哪一項敘述最正確？
+  text: 下列何者是「nn.Module 與模型定義」最重要的操作原則？
   type: multiple_choice
   options:
   - nn.Module 不需要定義 forward，PyTorch 會自動猜測網路流程。
@@ -1026,7 +1026,7 @@ questions:
 - id: m6-hc-103
   chapter_title: PyTorch 基礎
   section_title: Loss、Optimizer 與訓練迴圈
-  text: 關於「Loss、Optimizer 與訓練迴圈」，下列哪一項敘述最正確？
+  text: 針對「Loss、Optimizer 與訓練迴圈」，哪個說法符合教材觀點？
   type: multiple_choice
   options:
   - optimizer.zero_grad 可省略，梯度不會累積。
@@ -1042,7 +1042,7 @@ questions:
 - id: m6-hc-104
   chapter_title: PyTorch 基礎
   section_title: 儲存與載入模型
-  text: 關於「儲存與載入模型」，下列哪一項敘述最正確？
+  text: 哪一項最能避免「儲存與載入模型」常見誤解？
   type: multiple_choice
   options:
   - 只儲存模型檔即可，不需要記錄模型架構或前處理設定。
@@ -1058,7 +1058,7 @@ questions:
 - id: m6-hc-105
   chapter_title: PyTorch 基礎
   section_title: 儲存與載入模型
-  text: 在實務應用「儲存與載入模型」時，下列哪一項判斷較合理？
+  text: 學習「儲存與載入模型」時，應優先掌握哪個觀念？
   type: multiple_choice
   options:
   - 只儲存模型檔即可，不需要記錄模型架構或前處理設定。
@@ -1074,7 +1074,7 @@ questions:
 - id: m6-hc-106
   chapter_title: PyTorch 基礎
   section_title: PyTorch 訓練流程的完整心智模型
-  text: 關於「PyTorch 訓練流程的完整心智模型」，下列哪一項敘述最正確？
+  text: 把「PyTorch 訓練流程的完整心智模型」用在 AI 專案中時，哪個做法較恰當？
   type: multiple_choice
   options:
   - 訓練迴圈不需要區分 train 與 eval 模式。
@@ -1090,7 +1090,7 @@ questions:
 - id: m6-hc-107
   chapter_title: PyTorch 基礎
   section_title: PyTorch 訓練流程的完整心智模型
-  text: 在實務應用「PyTorch 訓練流程的完整心智模型」時，下列哪一項判斷較合理？
+  text: 下列哪個情境最能說明「PyTorch 訓練流程的完整心智模型」的用途？
   type: multiple_choice
   options:
   - 訓練迴圈不需要區分 train 與 eval 模式。
@@ -1106,7 +1106,7 @@ questions:
 - id: m6-hc-108
   chapter_title: PyTorch 基礎
   section_title: Tensor Shape 與 dtype 常見規則
-  text: 關於「Tensor Shape 與 dtype 常見規則」，下列哪一項敘述最正確？
+  text: 哪個選項最能反映「Tensor Shape 與 dtype 常見規則」的實務重點？
   type: multiple_choice
   options:
   - CrossEntropyLoss 的 label 通常應是 one-hot float 矩陣。
@@ -1122,7 +1122,7 @@ questions:
 - id: m6-hc-109
   chapter_title: PyTorch 基礎
   section_title: Tensor Shape 與 dtype 常見規則
-  text: 在實務應用「Tensor Shape 與 dtype 常見規則」時，下列哪一項判斷較合理？
+  text: 處理「Tensor Shape 與 dtype 常見規則」相關問題時，哪個判斷最合理？
   type: multiple_choice
   options:
   - CrossEntropyLoss 的 label 通常應是 one-hot float 矩陣。
@@ -1138,7 +1138,7 @@ questions:
 - id: m6-hc-110
   chapter_title: PyTorch 基礎
   section_title: Learning Rate 與 Optimizer
-  text: 關於「Learning Rate 與 Optimizer」，下列哪一項敘述最正確？
+  text: 下列何者是「Learning Rate 與 Optimizer」最重要的操作原則？
   type: multiple_choice
   options:
   - learning rate 越大越穩定，通常不會發散。
@@ -1154,7 +1154,7 @@ questions:
 - id: m6-hc-111
   chapter_title: PyTorch 基礎
   section_title: Learning Rate 與 Optimizer
-  text: 在實務應用「Learning Rate 與 Optimizer」時，下列哪一項判斷較合理？
+  text: 針對「Learning Rate 與 Optimizer」，哪個說法符合教材觀點？
   type: multiple_choice
   options:
   - learning rate 越大越穩定，通常不會發散。
@@ -1170,7 +1170,7 @@ questions:
 - id: m6-hc-112
   chapter_title: PyTorch 基礎
   section_title: Reproducibility 與實驗紀錄
-  text: 關於「Reproducibility 與實驗紀錄」，下列哪一項敘述最正確？
+  text: 哪一項最能避免「Reproducibility 與實驗紀錄」常見誤解？
   type: multiple_choice
   options:
   - 只設定一次 random seed 就能保證所有硬體完全相同。
@@ -1186,7 +1186,7 @@ questions:
 - id: m6-hc-113
   chapter_title: PyTorch 基礎
   section_title: Reproducibility 與實驗紀錄
-  text: 在實務應用「Reproducibility 與實驗紀錄」時，下列哪一項判斷較合理？
+  text: 學習「Reproducibility 與實驗紀錄」時，應優先掌握哪個觀念？
   type: multiple_choice
   options:
   - 只設定一次 random seed 就能保證所有硬體完全相同。
@@ -1202,7 +1202,7 @@ questions:
 - id: m6-hc-114
   chapter_title: PyTorch 基礎
   section_title: Reproducibility 與實驗紀錄
-  text: 下列哪一項最符合「Reproducibility 與實驗紀錄」的核心觀念？
+  text: 把「Reproducibility 與實驗紀錄」用在 AI 專案中時，哪個做法較恰當？
   type: multiple_choice
   options:
   - 只設定一次 random seed 就能保證所有硬體完全相同。
@@ -1218,7 +1218,7 @@ questions:
 - id: m6-hc-115
   chapter_title: PyTorch 基礎
   section_title: Keras：高階深度學習 API 的定位
-  text: 關於「Keras：高階深度學習 API 的定位」，下列哪一項敘述最正確？
+  text: 下列哪個情境最能說明「Keras：高階深度學習 API 的定位」的用途？
   type: multiple_choice
   options:
   - Keras 必須手寫完整 backward 與 optimizer step。
@@ -1234,7 +1234,7 @@ questions:
 - id: m6-hc-116
   chapter_title: PyTorch 基礎
   section_title: Keras：高階深度學習 API 的定位
-  text: 在實務應用「Keras：高階深度學習 API 的定位」時，下列哪一項判斷較合理？
+  text: 哪個選項最能反映「Keras：高階深度學習 API 的定位」的實務重點？
   type: multiple_choice
   options:
   - model.compile 會設定 optimizer、loss 與 metrics。
@@ -1250,7 +1250,7 @@ questions:
 - id: m6-hc-117
   chapter_title: PyTorch 基礎
   section_title: Keras：高階深度學習 API 的定位
-  text: 下列哪一項最符合「Keras：高階深度學習 API 的定位」的核心觀念？
+  text: 處理「Keras：高階深度學習 API 的定位」相關問題時，哪個判斷最合理？
   type: multiple_choice
   options:
   - Keras 必須手寫完整 backward 與 optimizer step。
@@ -1266,7 +1266,7 @@ questions:
 - id: m6-hc-118
   chapter_title: PyTorch 基礎
   section_title: PyTorch 常見錯誤排查
-  text: 關於「PyTorch 常見錯誤排查」，下列哪一項敘述最正確？
+  text: 下列何者是「PyTorch 常見錯誤排查」最重要的操作原則？
   type: multiple_choice
   options:
   - device mismatch 常發生在模型與 tensor 不在同一裝置。
@@ -1282,7 +1282,7 @@ questions:
 - id: m6-hc-119
   chapter_title: PyTorch 基礎
   section_title: PyTorch 常見錯誤排查
-  text: 在實務應用「PyTorch 常見錯誤排查」時，下列哪一項判斷較合理？
+  text: 針對「PyTorch 常見錯誤排查」，哪個說法符合教材觀點？
   type: multiple_choice
   options:
   - device mismatch 可透過刪除 loss function 解決。

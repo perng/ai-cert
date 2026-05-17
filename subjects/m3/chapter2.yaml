@@ -641,7 +641,7 @@ questions:
   usage: both
 - id: 5241
   chapter_title: 進階資料處理
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你正在處理一個房價預測的數據集，發現「房屋面積」這個特徵有一些極端大的豪宅數據（異常值），導致模型預測失準。你應該優先考慮哪種標準化方法？
   type: multiple_choice
   options:
@@ -654,10 +654,10 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 5242
   chapter_title: 進階資料處理
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你的電商推薦系統需要即時處理用戶的點擊流數據，並在 1 秒內更新推薦清單。你應該選擇哪種資料處理架構？
   type: multiple_choice
   options:
@@ -670,10 +670,10 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 5243
   chapter_title: 進階資料處理
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你正在訓練一個醫療影像診斷模型，但標註好的 X 光片非常少。為了提升模型效能，你應該優先嘗試哪種特徵工程技術？
   type: multiple_choice
   options:
@@ -686,10 +686,10 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 5244
   chapter_title: 進階資料處理
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你的 ETL 流程經常因為網路波動而失敗，導致下游報表空白。在 Airflow 中，你應該如何改進 DAG 定義？
   type: multiple_choice
   options:
@@ -702,10 +702,10 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 5245
   chapter_title: 進階資料處理
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：公司計畫將客戶數據用於訓練行銷模型，但擔心違反個資法。作為資料工程師，你建議採用什麼技術來平衡數據利用與隱私保護？
   type: multiple_choice
   options:
@@ -718,7 +718,7 @@ questions:
   tags:
   - chap-m3-ch2
   - sec-scenario
-  usage: mock
+  usage: both
 - chapter_title: 進階資料處理
   section_title: 資料攝取
   text: 情境：Kafka 在大數據架構中扮演什麼角色？
@@ -1954,3 +1954,163 @@ questions:
   - sec-code-reading
   - code-reading
   usage: quiz
+- id: m3-ch2-scenario-006
+  chapter_title: 進階資料處理
+  section_title: 情境題
+  text: 情境：每日 ETL 常因上游延遲而失敗。Airflow DAG 應加入什麼設計？
+  type: multiple_choice
+  options:
+  - 依賴檢查、重試、告警與適當排程
+  - 把所有 task 合併成一行程式
+  - 關閉失敗通知
+  - 每天手動重跑即可
+  correct_index: 0
+  explanation: 工作流需處理上游延遲與失敗。
+  tags:
+  - chap-m3-ch2
+  - sec-scenario
+  usage: both
+- id: m3-ch2-scenario-007
+  chapter_title: 進階資料處理
+  section_title: 情境題
+  text: 情境：客戶資料有重複帳號，姓名略有差異但電話相同。應先做什麼？
+  type: multiple_choice
+  options:
+  - 直接把所有重複資料當新客戶
+  - 資料去重與實體解析
+  - 刪除電話欄位
+  - 只依姓名字母排序
+  correct_index: 1
+  explanation: 重複實體會影響分析與模型，需去重整併。
+  tags:
+  - chap-m3-ch2
+  - sec-scenario
+  usage: both
+- id: m3-ch2-scenario-008
+  chapter_title: 進階資料處理
+  section_title: 情境題
+  text: 情境：資料欄位有 20% 缺失，且缺失集中在特定通路。應如何判斷？
+  type: multiple_choice
+  options:
+  - 直接用平均值填補即可，不需調查
+  - 刪除所有非缺失資料
+  - 缺失可能不是隨機，需分析缺失機制與通路流程
+  - 把缺失視為模型目標
+  correct_index: 2
+  explanation: 缺失集中於特定群體可能帶有偏差或流程問題。
+  tags:
+  - chap-m3-ch2
+  - sec-scenario
+  usage: both
+- id: m3-ch2-scenario-009
+  chapter_title: 進階資料處理
+  section_title: 情境題
+  text: 情境：即時推薦需要同時用最近點擊與長期偏好。特徵管線應如何設計？
+  type: multiple_choice
+  options:
+  - 只用一年前的離線特徵
+  - 只用人工輸入特徵
+  - 每次請使用者重新填問卷
+  - 結合串流特徵與離線特徵，並確保線上線下一致
+  correct_index: 3
+  explanation: 即時系統常需 feature store 管理線上與離線特徵一致性。
+  tags:
+  - chap-m3-ch2
+  - sec-scenario
+  usage: both
+- id: m3-ch2-scenario-010
+  chapter_title: 進階資料處理
+  section_title: 情境題
+  text: 情境：訓練資料欄位順序改變後模型預測錯亂。應補強什麼？
+  type: multiple_choice
+  options:
+  - Schema 驗證與特徵名稱對齊
+  - 只提高模型學習率
+  - 把欄位順序隨機化
+  - 刪除模型版本
+  correct_index: 0
+  explanation: 欄位順序與型別錯誤會造成推論災難，需 schema checks。
+  tags:
+  - chap-m3-ch2
+  - sec-scenario
+  usage: both
+- id: m3-ch2-scenario-011
+  chapter_title: 進階資料處理
+  section_title: 情境題
+  text: 情境：公司想在不暴露個資下做跨部門分析。可用哪種資料處理策略？
+  type: multiple_choice
+  options:
+  - 把所有原始資料寄給所有人
+  - 去識別化、權限分級與必要時使用隱私保護技術
+  - 將密碼放在欄位名稱中
+  - 取消資料存取紀錄
+  correct_index: 1
+  explanation: 資料治理需平衡可用性與隱私安全。
+  tags:
+  - chap-m3-ch2
+  - sec-scenario
+  usage: both
+- id: m3-ch2-scenario-012
+  chapter_title: 進階資料處理
+  section_title: 情境題
+  text: 情境：批次 ETL 每晚跑 8 小時，已影響早上報表。可先檢查什麼？
+  type: multiple_choice
+  options:
+  - 報表字體大小
+  - 是否使用太多中文欄位名
+  - 瓶頸 task、分區策略、增量處理與資源配置
+  - 模型是否過擬合
+  correct_index: 2
+  explanation: ETL 優化需找瓶頸並避免全量重算。
+  tags:
+  - chap-m3-ch2
+  - sec-scenario
+  usage: both
+- id: m3-ch2-scenario-013
+  chapter_title: 進階資料處理
+  section_title: 情境題
+  text: 情境：原始資料單位有台幣與美元混用。清理時應做什麼？
+  type: multiple_choice
+  options:
+  - 直接相加，讓模型自行學習
+  - 全部改成字串避免計算
+  - 刪除金額欄位
+  - 標準化幣別並保存轉換規則與匯率來源
+  correct_index: 3
+  explanation: 單位不一致會造成錯誤分析，需標準化。
+  tags:
+  - chap-m3-ch2
+  - sec-scenario
+  usage: both
+- id: m3-ch2-scenario-014
+  chapter_title: 進階資料處理
+  section_title: 情境題
+  text: 情境：資料攝取後要能追蹤每筆資料是否通過品質規則。應保留什麼？
+  type: multiple_choice
+  options:
+  - 品質檢查結果、錯誤原因與處理狀態
+  - 只有最終成功筆數
+  - 只保留檔案名稱
+  - 刪除失敗資料不留紀錄
+  correct_index: 0
+  explanation: 品質可觀測性有助於追蹤與修復資料問題。
+  tags:
+  - chap-m3-ch2
+  - sec-scenario
+  usage: both
+- id: m3-ch2-scenario-015
+  chapter_title: 進階資料處理
+  section_title: 情境題
+  text: 情境：模型訓練需要「過去 7 天消費金額」，但不能包含預測當天之後資料。應注意什麼？
+  type: multiple_choice
+  options:
+  - 把全資料平均放進特徵
+  - 時間窗定義與 point-in-time correctness
+  - 使用未來 7 天資料提高準確率
+  - 忽略時間戳，降低複雜度
+  correct_index: 1
+  explanation: 時間特徵必須符合預測當下可得資訊，避免洩漏。
+  tags:
+  - chap-m3-ch2
+  - sec-scenario
+  usage: both

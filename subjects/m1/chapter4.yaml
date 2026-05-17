@@ -641,7 +641,7 @@ questions:
   usage: both
 - id: 3441
   chapter_title: 深度學習簡介
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你正在訓練一個深層神經網路，發現前幾層的權重幾乎不更新，導致模型無法學習。檢查後發現你使用了 Sigmoid 活化函數。這是什麼問題？應如何解決？
   type: multiple_choice
   options:
@@ -654,10 +654,10 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 3442
   chapter_title: 深度學習簡介
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你使用 Adam 最佳化器訓練模型，初期損失下降很快，但到後期損失在一個較高值附近震盪，無法進一步下降。你應該嘗試調整什麼？
   type: multiple_choice
   options:
@@ -670,10 +670,10 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 3443
   chapter_title: 深度學習簡介
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你的模型在訓練集上表現極好 (Loss 接近 0)，但在測試集上表現很差。你決定使用 Dropout。請問 Dropout 應該加在哪裡？測試階段 (Inference) 需要保留 Dropout 嗎？
   type: multiple_choice
   options:
@@ -686,10 +686,10 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 3444
   chapter_title: 深度學習簡介
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你正在處理一個多標籤分類問題 (Multi-label Classification)，即一張圖片可能同時包含「貓」和「狗」。你的輸出層應該有多少個神經元？使用什麼活化函數？
   type: multiple_choice
   options:
@@ -702,10 +702,10 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 3445
   chapter_title: 深度學習簡介
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：在訓練過程中，Loss 突然變成 NaN (Not a Number)。這最可能是什麼原因造成的？應如何排查？
   type: multiple_choice
   options:
@@ -718,7 +718,7 @@ questions:
   tags:
   - chap-m1-ch4
   - sec-scenario
-  usage: mock
+  usage: both
 - chapter_title: 深度學習簡介
   section_title: 神經網路
   text: 情境：感知器 (Perceptron) 包含哪兩個主要運算步驟？
@@ -1038,4 +1038,164 @@ questions:
   - chap-m1-ch4
   - sec-neural-networks
   id: 3465
+  usage: both
+- id: m1-ch4-scenario-006
+  chapter_title: 深度學習簡介
+  section_title: 情境題
+  text: 情境：深層網路訓練時前面幾層梯度接近 0，模型學不動。較可能的改善是什麼？
+  type: multiple_choice
+  options:
+  - 改用 ReLU 類活化函數、合適初始化或正規化層
+  - 把學習率設成 0，避免梯度變化
+  - 只增加測試資料，不改模型
+  - 刪除所有隱藏層，保留輸出層
+  correct_index: 0
+  explanation: 梯度消失常與飽和活化函數和不佳初始化有關。
+  tags:
+  - chap-m1-ch4
+  - sec-scenario
+  usage: both
+- id: m1-ch4-scenario-007
+  chapter_title: 深度學習簡介
+  section_title: 情境題
+  text: 情境：模型在小批次訓練時 Loss 波動很大，但整體趨勢下降。合理判斷是什麼？
+  type: multiple_choice
+  options:
+  - 只要有波動就代表模型完全失敗
+  - Mini-batch 梯度含噪聲，觀察移動平均或調整 batch size
+  - Loss 波動代表測試集被洩漏
+  - 必須把所有權重改成相同值
+  correct_index: 1
+  explanation: 小批次訓練本來會有隨機波動，需看整體趨勢。
+  tags:
+  - chap-m1-ch4
+  - sec-scenario
+  usage: both
+- id: m1-ch4-scenario-008
+  chapter_title: 深度學習簡介
+  section_title: 情境題
+  text: 情境：多類別分類有 10 個互斥類別。輸出層與損失函數較合適的組合是什麼？
+  type: multiple_choice
+  options:
+  - 1 個神經元搭配線性輸出和 MSE
+  - 10 個神經元搭配 ReLU 且不需損失函數
+  - 10 個神經元搭配 Softmax 與 cross-entropy
+  - 每個類別各訓練一個 PCA 模型
+  correct_index: 2
+  explanation: 互斥多類別分類常用 Softmax 機率分佈與交叉熵。
+  tags:
+  - chap-m1-ch4
+  - sec-scenario
+  usage: both
+- id: m1-ch4-scenario-009
+  chapter_title: 深度學習簡介
+  section_title: 情境題
+  text: 情境：二元分類模型輸出機率，但資料嚴重不平衡。除了調整模型，訓練時可採用哪個策略？
+  type: multiple_choice
+  options:
+  - 把所有標籤改成多類別標籤
+  - 只看訓練集 Accuracy
+  - 把 Sigmoid 換成矩陣乘法
+  - 使用 class weight 或重抽樣，讓少數類別錯誤更受重視
+  correct_index: 3
+  explanation: 類別權重可讓少數類別在損失中有較大影響。
+  tags:
+  - chap-m1-ch4
+  - sec-scenario
+  usage: both
+- id: m1-ch4-scenario-010
+  chapter_title: 深度學習簡介
+  section_title: 情境題
+  text: 情境：Batch Normalization 後模型可用較大學習率且訓練更穩定。主要原因是什麼？
+  type: multiple_choice
+  options:
+  - 它穩定中間層輸入分佈，改善最佳化條件
+  - 它會刪除所有錯誤標籤
+  - 它讓模型不需要反向傳播
+  - 它把所有特徵變成文字
+  correct_index: 0
+  explanation: BatchNorm 可降低中間表示分佈變動，使訓練更穩定。
+  tags:
+  - chap-m1-ch4
+  - sec-scenario
+  usage: both
+- id: m1-ch4-scenario-011
+  chapter_title: 深度學習簡介
+  section_title: 情境題
+  text: 情境：訓練集很小，神經網路很大，驗證集表現不穩。下列哪個正則化組合較合理？
+  type: multiple_choice
+  options:
+  - 移除驗證集，讓訓練資料更多
+  - Dropout、L2 regularization 與資料增強
+  - 增加模型深度且取消所有正則化
+  - 把所有輸入特徵設為常數
+  correct_index: 1
+  explanation: 小資料大模型容易過擬合，需正則化與資料增強。
+  tags:
+  - chap-m1-ch4
+  - sec-scenario
+  usage: both
+- id: m1-ch4-scenario-012
+  chapter_title: 深度學習簡介
+  section_title: 情境題
+  text: 情境：你用 MSE 訓練分類模型，收斂慢且機率校準差。較常見的替代損失是什麼？
+  type: multiple_choice
+  options:
+  - MAE，因為分類只需要絕對誤差
+  - Huber loss，因為所有分類都有離群值
+  - 交叉熵損失，直接懲罰錯誤類別機率分配
+  - PCA loss，因為分類需要降維
+  correct_index: 2
+  explanation: 分類通常使用交叉熵，更符合機率輸出。
+  tags:
+  - chap-m1-ch4
+  - sec-scenario
+  usage: both
+- id: m1-ch4-scenario-013
+  chapter_title: 深度學習簡介
+  section_title: 情境題
+  text: 情境：Adam 初期很快，但最終泛化不如 SGD with momentum。可嘗試什麼訓練策略？
+  type: multiple_choice
+  options:
+  - 永遠固定使用同一學習率，不做任何排程
+  - 刪除 momentum，讓更新完全隨機
+  - 只增加輸出類別數
+  - 先用 Adam 快速收斂，再用 SGD 或調整學習率微調
+  correct_index: 3
+  explanation: 不同優化器有不同收斂與泛化特性，可分階段訓練。
+  tags:
+  - chap-m1-ch4
+  - sec-scenario
+  usage: both
+- id: m1-ch4-scenario-014
+  chapter_title: 深度學習簡介
+  section_title: 情境題
+  text: 情境：模型輸入影像像素未正規化，訓練 Loss 很不穩定。應先檢查什麼？
+  type: multiple_choice
+  options:
+  - 輸入尺度是否轉為一致範圍，如 0 到 1 或標準化
+  - 模型是否使用太少中文字
+  - 輸出類別是否依字母排序
+  - 測試集是否比訓練集更大
+  correct_index: 0
+  explanation: 神經網路對輸入尺度敏感，正規化可改善穩定性。
+  tags:
+  - chap-m1-ch4
+  - sec-scenario
+  usage: both
+- id: m1-ch4-scenario-015
+  chapter_title: 深度學習簡介
+  section_title: 情境題
+  text: 情境：訓練過程中驗證 Loss 已連續多輪不再下降。為節省資源並避免過擬合，可使用什麼機制？
+  type: multiple_choice
+  options:
+  - Late starting，等模型發散後再開始訓練
+  - Early stopping，保存驗證表現最佳的模型
+  - Random labeling，讓模型學更多模式
+  - 固定訓練到最大輪數，不看驗證結果
+  correct_index: 1
+  explanation: Early stopping 可在泛化表現停止改善時終止訓練。
+  tags:
+  - chap-m1-ch4
+  - sec-scenario
   usage: both

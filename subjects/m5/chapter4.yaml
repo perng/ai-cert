@@ -34,7 +34,7 @@ questions:
 - id: 7403
   chapter_title: 主流 AI 代理框架總覽
   section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
-  text: OpenClaw 的「心跳（Heartbeat）」機制指的是什麼？
+  text: OpenClaw 即使沒有收到新的聊天訊息，也能在背景檢查例行事項並提醒使用者；這描述的是哪一個機制？
   type: multiple_choice
   options:
   - 代理在背景主動執行任務並通知使用者，不只等待指令
@@ -98,7 +98,7 @@ questions:
 - id: 7407
   chapter_title: 主流 AI 代理框架總覽
   section_title: AI 代理框架的發展趨勢
-  text: 從 OpenClaw 和 Hermes Agent 的設計可以觀察到，現代 AI 代理的共同發展趨勢是？
+  text: 把 OpenClaw 與 Hermes 放在一起觀察時，哪一個趨勢最能涵蓋記憶、工具整合與能力共享三個面向？
   type: multiple_choice
   options:
   - AI 代理正在從需要人類持續監控轉向完全自主運作，不需要任何人類介入
@@ -288,7 +288,7 @@ questions:
 - id: 7410
   chapter_title: 主流 AI 代理框架總覽
   section_title: AI 代理框架的發展趨勢
-  text: 從 OpenClaw 與 Hermes 可以觀察到 AI 代理的哪一種發展趨勢？
+  text: OpenClaw 接入使用者原本的通訊軟體與本地環境，Hermes 支援跨平台任務；這共同反映哪一種代理發展方向？
   type: multiple_choice
   options:
   - 放棄使用任何形式的長期記憶
@@ -378,7 +378,7 @@ questions:
 - id: 7416
   chapter_title: 主流 AI 代理框架總覽
   section_title: 框架比較總覽
-  text: 在擴展方式上，OpenClaw 和 Hermes 有何不同？
+  text: 比較 OpenClaw 與 Hermes 的擴展方式時，哪一項最能描述它們對社群與開放標準的態度？
   type: multiple_choice
   options:
   - 前者無法擴展，後者支援無限擴展
@@ -423,7 +423,7 @@ questions:
 - id: 7419
   chapter_title: 主流 AI 代理框架總覽
   section_title: AI 代理框架的發展趨勢
-  text: 開放標準（如 agentskills.io）為 AI 代理帶來了什麼好處？
+  text: 對開發者而言，agentskills.io 這類開放標準最直接改善了技能在不同代理框架之間的哪個問題？
   type: multiple_choice
   options:
   - 讓所有的代理都長得一模一樣
@@ -469,7 +469,7 @@ questions:
 - id: 7422
   chapter_title: 主流 AI 代理框架總覽
   section_title: OpenClaw：在你的電腦上運行的個人 AI 助理
-  text: 下列哪一種任務最符合 OpenClaw「心跳（Heartbeat）」機制的用途？
+  text: 若要用 OpenClaw 自動處理每天早上的例行摘要，哪一個任務最符合 Heartbeat 的設計目的？
   type: multiple_choice
   options:
   - 每天早上自動整理行程和重要郵件，再傳送摘要給使用者
@@ -533,7 +533,7 @@ questions:
 - id: 7426
   chapter_title: 主流 AI 代理框架總覽
   section_title: AI 代理框架的發展趨勢
-  text: 從 OpenClaw 和 Hermes 可以觀察到，現代 AI 代理對「記憶」的看法是什麼？
+  text: 從 OpenClaw 的本地記錄與 Hermes 的跨會話記憶來看，現代代理為何越來越重視持久記憶？
   type: multiple_choice
   options:
   - 記憶只會拖慢系統速度，應該盡量避免
@@ -693,7 +693,7 @@ questions:
 - id: 7436
   chapter_title: 主流 AI 代理框架總覽
   section_title: AI 代理框架的發展趨勢
-  text: agentskills.io 開放標準對 AI 代理生態的最大貢獻是什麼？
+  text: 若一個團隊不想為每個代理框架重寫同一個技能，agentskills.io 標準能提供什麼價值？
   type: multiple_choice
   options:
   - 讓不同框架開發的技能可以互相共享與移植
@@ -805,7 +805,7 @@ questions:
 - id: 7443
   chapter_title: 主流 AI 代理框架總覽
   section_title: 框架比較總覽
-  text: 在擴展性方面，OpenClaw 和 Hermes 有何共通策略？
+  text: 若企業評估 OpenClaw 與 Hermes 的長期擴充性，兩者在哪一個策略上最相似？
   type: multiple_choice
   options:
   - 兩者都擁抱社群貢獻與開放標準
@@ -821,7 +821,7 @@ questions:
 - id: 7444
   chapter_title: 主流 AI 代理框架總覽
   section_title: AI 代理框架的發展趨勢
-  text: 開放標準（如 MCP 和 agentskills.io）如何促進 AI 代理的發展？
+  text: MCP 側重工具連接，agentskills.io 側重技能封裝；這些開放標準合在一起如何推動代理生態？
   type: multiple_choice
   options:
   - 讓所有開發者使用相同的程式語言
@@ -929,4 +929,52 @@ questions:
   tags:
   - chap-m5-ch4
   - sec-lessons
+  usage: both
+- id: m5-ch4-scenario-001
+  chapter_title: 主流 AI 代理框架總覽
+  section_title: 情境題
+  text: 情境：大型跨國電商要在購物節前升級客服系統，需求包含高併發、嚴格 SOP、可隨時轉真人客服，以及低不可控風險。哪一組代理框架搭配最合理？
+  type: multiple_choice
+  options:
+  - AutoGen 與 CrewAI：讓客服代理人和品管代理人自由群聊，邊服務客戶邊討論最佳答案。
+  - AgentScope 與 LangGraph：用 AgentScope 支援高併發訊息驅動架構，再用 LangGraph 的有向圖控管 SOP 與人工轉接節點。
+  - CrewAI 與 OpenClaw：為每筆客訴建立長線專家團隊，並在本機自動執行退款腳本。
+  - Hermes 與 AutoGen：讓客服系統透過自我學習迴圈持續改變應對方式，並與使用者自由交談。
+  correct_index: 1
+  explanation: 電商前線客服重視高併發、穩定流程與可控轉接。AgentScope 適合大規模訊息處理，LangGraph 適合以狀態機定義 SOP 與人工介入點。
+  tags:
+  - chap-m5-ch4
+  - sec-scenario
+  usage: both
+- id: m5-ch4-scenario-002
+  chapter_title: 主流 AI 代理框架總覽
+  section_title: 情境題
+  text: 情境：金融公司要打造信貸風控與審批系統，每一步都必須合規、可追溯，且高風險案件與最終放款都要暫停交給真人審核。哪個框架理念最符合？
+  type: multiple_choice
+  options:
+  - CAMEL：設定 AI 風控長與 AI 稽核員角色扮演，自主討論出貸款額度。
+  - LangGraph：把審批流程建模為有向圖與狀態機，將審查步驟、條件分支與人工審核節點明確定義。
+  - AutoGen：建立多個代理人的群組聊天室，讓它們自由對話完成貸款審批。
+  - AgentScope：讓單一代理人靠自我反思取代狀態機，以提高決策彈性。
+  correct_index: 1
+  explanation: 金融風控最需要確定性、可追溯與人工介入。LangGraph 的狀態機與中斷節點能明確控管流程，不適合交給自由對話或角色扮演自行決定。
+  tags:
+  - chap-m5-ch4
+  - sec-scenario
+  usage: both
+- id: m5-ch4-scenario-003
+  chapter_title: 主流 AI 代理框架總覽
+  section_title: 情境題
+  text: 情境：研究機構想開發科研論文寫作輔助平台，希望系統能協助文獻回顧、實驗設計與寫作，並讓不同專家角色進行多輪討論。為何 CAMEL 會是合適選擇？
+  type: multiple_choice
+  options:
+  - 因為 CAMEL 以有向圖將流程建模為狀態機，最適合嚴格控管每一步審批。
+  - 因為 CAMEL 強調角色扮演與起始提示，可設定研究員、寫作者等角色進行深度協作與多輪討論。
+  - 因為 CAMEL 採用訊息驅動架構，專門處理每秒數千個客服請求。
+  - 因為 CAMEL 只使用單一全能代理人，刻意消除所有角色分工與討論成本。
+  correct_index: 1
+  explanation: CAMEL 的核心是透過角色扮演與起始提示促成多代理協作，適合需要創意、推理與專家對話的科研寫作場景。
+  tags:
+  - chap-m5-ch4
+  - sec-scenario
   usage: both

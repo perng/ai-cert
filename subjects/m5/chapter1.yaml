@@ -114,7 +114,7 @@ questions:
 - id: 7108
   chapter_title: AI 代理人基礎概念
   section_title: 代理人如何思考和行動：推理迴圈
-  text: 在 AI 代理人的框架中，「後設認知 (Metacognition)」的主要作用是什麼？
+  text: 設計需要長時間處理任務的代理人時，加入後設認知 (Metacognition) 主要是為了讓系統具備什麼能力？
   type: multiple_choice
   options:
   - 自動為系統中的代理人生成新的工具函數
@@ -177,7 +177,7 @@ questions:
 - id: 900022
   chapter_title: AI 代理人基礎概念
   section_title: 從聊天到行動：為什麼需要 AI 代理人
-  text: 相較於一般聊天機器人，AI 代理人最核心的差異是什麼？
+  text: 使用者要求「找出三家供應商、比較價格、寄出詢價信並回報進度」時，哪一項能力最能說明這需要 AI 代理人而不是一般聊天機器人？
   type: multiple_choice
   options:
   - 能根據目標規劃步驟、使用工具並觀察結果後調整行動
@@ -185,7 +185,7 @@ questions:
   - 必須完全離線執行，不能連接任何外部系統
   - 只能生成文字，不能處理任務狀態
   correct_index: 0
-  explanation: AI 代理人不只是產生回覆，還會圍繞目標進行規劃、工具調用、狀態追蹤與回饋修正，因此能處理跨步驟任務。
+  explanation: AI 代理人不只是產生回覆，還會圍繞目標進行規劃、工具呼叫、狀態追蹤與回饋修正，因此能處理跨步驟任務。
   tags:
   - chap-m5-ch1
   - sec-agent-definition
@@ -332,7 +332,7 @@ questions:
 - id: 7117
   chapter_title: AI 代理人基礎概念
   section_title: 代理推理迴圈
-  text: 「後設認知 (Metacognition)」賦予代理人哪一種關鍵能力？
+  text: 代理人發現自己連續選錯工具後，能主動檢討並改變下一輪策略；這體現後設認知的哪一種能力？
   type: multiple_choice
   options:
   - 自主偵測行為缺陷並主動修正執行錯誤
@@ -347,7 +347,7 @@ questions:
 - id: 7118
   chapter_title: AI 代理人基礎概念
   section_title: 代理人類型
-  text: Agentic RAG 與傳統的 Naive RAG 最大的區別在於什麼？
+  text: 在回答複雜研究問題時，Agentic RAG 何時會展現出傳統 Naive RAG 較缺乏的能力？
   type: multiple_choice
   options:
   - 代理人是否能主動決定何時進行資料檢索
@@ -407,7 +407,7 @@ questions:
 - id: 7122
   chapter_title: AI 代理人基礎概念
   section_title: 什麼是 AI 代理人
-  text: 相較於寫死的傳統自動化腳本，AI 代理人的核心優勢是什麼？
+  text: 當任務流程會因外部回傳結果而改變時，AI 代理人相較於固定腳本的主要價值是什麼？
   type: multiple_choice
   options:
   - 程式的執行總耗時必定比傳統腳本更快
@@ -422,7 +422,7 @@ questions:
 - id: 7123
   chapter_title: AI 代理人基礎概念
   section_title: 代理推理迴圈
-  text: 在代理人的推理迴圈中，「Action (行動)」階段的主要作用是？
+  text: 代理人已判斷需要查詢庫存 API；在推理迴圈中，接下來的 Action 階段負責什麼？
   type: multiple_choice
   options:
   - 評估自身表現的優劣並將其寫入錯誤日誌
@@ -437,7 +437,7 @@ questions:
 - id: 7124
   chapter_title: AI 代理人基礎概念
   section_title: 代理推理迴圈
-  text: 在代理人的推理迴圈中，「Observation (觀察)」階段的主要作用是？
+  text: 工具回傳「商品已缺貨」後，Observation 階段最重要的任務是什麼？
   type: multiple_choice
   options:
   - 生成給使用者的最終自然語言對話回覆內容
@@ -542,7 +542,7 @@ questions:
 - id: 7131
   chapter_title: AI 代理人基礎概念
   section_title: 代理推理迴圈
-  text: 在 ReAct 框架中，Thought（思考）階段後通常緊接著哪一個階段？
+  text: ReAct 代理人完成 Thought（思考）並決定「需要查詢外部資料」後，流程通常會進入哪一個階段？
   type: multiple_choice
   options:
   - Action（行動）階段
@@ -707,7 +707,7 @@ questions:
 - id: 7142
   chapter_title: AI 代理人基礎概念
   section_title: 代理推理迴圈
-  text: 下列哪一個不是 ReAct 框架的核心步驟？
+  text: 若要判斷某個流程是否仍屬於標準 ReAct，哪一個步驟不應被列為其核心循環的一部分？
   type: multiple_choice
   options:
   - Observation（觀察）
@@ -752,7 +752,7 @@ questions:
 - id: 7145
   chapter_title: AI 代理人基礎概念
   section_title: 代理推理迴圈
-  text: 在 ReAct 循環中，Observation（觀察）階段的結果對後續思考有何影響？
+  text: 在 ReAct 中，搜尋工具回傳的最新事實與原本假設不同時，Observation 應如何影響下一輪 Thought？
   type: multiple_choice
   options:
   - 觀察結果會被忽略，模型仍然按原計劃執行
@@ -827,7 +827,7 @@ questions:
 - id: 7150
   chapter_title: AI 代理人基礎概念
   section_title: 代理推理迴圈
-  text: Reflexion 框架中，若代理人在多次嘗試後仍失敗，它通常會怎麼做？
+  text: Reflexion 代理人多次嘗試仍未成功時，理想上會如何利用過去的失敗紀錄？
   type: multiple_choice
   options:
   - 自動切換到另一個完全不同領域的語言模型
@@ -872,7 +872,7 @@ questions:
 - id: 7153
   chapter_title: AI 代理人基礎概念
   section_title: 什麼是 AI 代理人
-  text: 下列哪句話最能總結 AI 代理人與傳統自動化腳本的區別？
+  text: 客服系統需要依照信件內容決定查 CRM、建立退款單或升級給人工處理時，下列哪句話最能說明代理人與固定自動化腳本的差別？
   type: multiple_choice
   options:
   - 代理人使用程式語言撰寫，腳本使用自然語言
@@ -902,7 +902,7 @@ questions:
 - id: 7155
   chapter_title: AI 代理人基礎概念
   section_title: 代理推理迴圈
-  text: 在 Reflexion 框架中，哪一種行為最能體現後設認知（Metacognition）？
+  text: 代理人在訂票任務失敗後，分析失敗原因並把教訓存入記憶，下一次改用不同查詢策略；這最能體現哪一種後設認知行為？
   type: multiple_choice
   options:
   - 工具失敗後直接重複相同請求，直到結果改變
@@ -958,4 +958,68 @@ questions:
   explanation: 感知能力是從外部環境獲取資訊，讀取 PDF 檔案並解析內容屬於感知範疇。
   tags:
   - chap-m5-ch1
+  usage: both
+- id: m5-ch1-scenario-001
+  chapter_title: AI 代理人基礎概念
+  section_title: 情境題
+  text: 情境：一輛行駛在高速公路上具備自動輔助駕駛系統的車遇到緊急避障情況。下列關於其 AI 代理人特徵與分類的分析，哪一項是錯誤的？
+  type: multiple_choice
+  options:
+  - 從時間與反應性來看，它偏向反應型 AI 代理人，因為必須在極短時間內依感測資訊做出避險反應。
+  - 從內部決策架構來看，它屬於簡單反射型代理人，因為緊急煞車只依賴當下單一瞬間的視覺資料，不需要任何內部世界模型。
+  - 從知識表示來看，它可視為神經符號混合設計：感知高度依賴深度學習，安全約束則會結合物理規則與邏輯判斷。
+  - 它具備感知環境、計算決策、控制煞車與追求安全行駛目標的能力，因此符合 AI 代理人的基本定義。
+  correct_index: 1
+  explanation: 錯誤的是「簡單反射型代理人」。自動輔助駕駛的緊急避障通常需要整合車輛狀態、周遭物體位置與環境模型，比單純依照一條 if-then 規則反應更接近基於模型的反射型代理人。
+  tags:
+  - chap-m5-ch1
+  - sec-scenario
+  usage: both
+- id: m5-ch1-scenario-002
+  chapter_title: AI 代理人基礎概念
+  section_title: 情境題
+  text: 情境：團隊要設計一套多代理人的智慧健身教練系統。下列哪一種架構最符合多代理系統的核心理念？
+  type: multiple_choice
+  options:
+  - 由單一大型模型包辦心率監測、飲食規劃、動作辨識與課表安排，所有工作都集中在同一個代理人。
+  - 拆分成飲食分析代理人、動作辨識代理人與課表規劃代理人，各自負責專長任務，並透過訊息或共享記憶交換資訊。
+  - 完全不使用 AI 模型，把所有使用者資料轉給真人教練在後台人工回覆。
+  - 要求使用者訓練時同時開啟多個互不連動的 App，分別取得飲食、心率、重訓與伸展建議。
+  correct_index: 1
+  explanation: 多代理系統的重點是分工協作。不同代理人各自負責專門任務，再透過溝通或共享狀態協同完成更複雜的目標。
+  tags:
+  - chap-m5-ch1
+  - sec-scenario
+  usage: both
+- id: m5-ch1-scenario-003
+  chapter_title: AI 代理人基礎概念
+  section_title: 情境題
+  text: 情境：智慧健身系統中的課表規劃代理人收到使用者語音：「我今天覺得大腿有點緊繃痠痛。」在 ReAct 框架的 Thought（思考）階段，最合理的內部產出是什麼？
+  type: multiple_choice
+  options:
+  - 立刻呼叫 reduce_weight(target="legs", percentage=20%)，不需要先查詢任何背景資料。
+  - 回覆：「無法辨識緊繃痠痛的數值，請重新輸入標準化體能狀態。」
+  - 推理：「使用者反映大腿痠痛，可能和近期腿部訓練有關。我應先查詢訓練紀錄，再判斷今天是否要調整為恢復性課表。」
+  - 直接播放語音：「加油！No pain, no gain！撐下去！」
+  correct_index: 2
+  explanation: ReAct 強調先 Reason 再 Act。Thought 階段應先理解使用者狀態、提出可能原因，並規劃下一步需要呼叫的工具，而不是直接執行動作或輸出最終回覆。
+  tags:
+  - chap-m5-ch1
+  - sec-scenario
+  usage: both
+- id: m5-ch1-scenario-004
+  chapter_title: AI 代理人基礎概念
+  section_title: 情境題
+  text: 情境：動作辨識代理人在使用者深蹲到底部時偵測到嚴重膝蓋內夾（knee cave）。若結合多代理協作與 ReAct，最完整的處理方式是什麼？
+  type: multiple_choice
+  options:
+  - 立即中斷手機畫面並自動撥打 119，因為任何姿勢錯誤都必須視為緊急醫療事件。
+  - 動作辨識代理人先判斷受傷風險並發出即時語音提醒，同時把觀察結果傳給課表規劃代理人，讓它重新評估後續重量與組數。
+  - 忽略當下姿勢，因為動作辨識代理人只能記錄資料，不能影響訓練過程。
+  - 因為跨代理通訊過於複雜，系統應要求使用者重新啟動 App 後再繼續訓練。
+  correct_index: 1
+  explanation: 這同時考到 ReAct 與多代理協作：動作辨識代理人根據觀察做出即時行動，並將重要狀態同步給課表規劃代理人，讓後續課表能動態調整。
+  tags:
+  - chap-m5-ch1
+  - sec-scenario
   usage: both

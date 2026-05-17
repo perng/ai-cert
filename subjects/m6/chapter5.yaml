@@ -574,7 +574,7 @@ questions:
 - id: m6-ch5-code-025
   chapter_title: Natural Language Processing：NLTK 與文字特徵
   section_title: scikit-learn 文字分類 Baseline
-  text: Pipeline 中 TfidfVectorizer 在分類器前的原因是什麼？
+  text: 這個 Pipeline 為何要先執行 TfidfVectorizer？
   content:
   - type: text
     text: Pipeline 中 TfidfVectorizer 在分類器前的原因是什麼？
@@ -712,7 +712,7 @@ questions:
 - id: m6-hc-079
   chapter_title: Natural Language Processing：NLTK 與文字特徵
   section_title: NLTK 基礎：文字前處理
-  text: 關於「NLTK 基礎：文字前處理」，下列哪一項敘述最正確？
+  text: 哪個選項最能反映「NLTK 基礎：文字前處理」的實務重點？
   type: multiple_choice
   options:
   - 英文與中文都能可靠地只用空白完成斷詞。
@@ -728,7 +728,7 @@ questions:
 - id: m6-hc-080
   chapter_title: Natural Language Processing：NLTK 與文字特徵
   section_title: NLTK 基礎：文字前處理
-  text: 在實務應用「NLTK 基礎：文字前處理」時，下列哪一項判斷較合理？
+  text: 處理「NLTK 基礎：文字前處理」相關問題時，哪個判斷最合理？
   type: multiple_choice
   options:
   - 英文與中文都能可靠地只用空白完成斷詞。
@@ -744,7 +744,7 @@ questions:
 - id: m6-hc-081
   chapter_title: Natural Language Processing：NLTK 與文字特徵
   section_title: NLTK 基礎：文字前處理
-  text: 下列哪一項最符合「NLTK 基礎：文字前處理」的核心觀念？
+  text: 下列何者是「NLTK 基礎：文字前處理」最重要的操作原則？
   type: multiple_choice
   options:
   - 英文與中文都能可靠地只用空白完成斷詞。
@@ -760,7 +760,7 @@ questions:
 - id: m6-hc-082
   chapter_title: Natural Language Processing：NLTK 與文字特徵
   section_title: Stop Words、Stemming 與 Lemmatization
-  text: 關於「Stop Words、Stemming 與 Lemmatization」，下列哪一項敘述最正確？
+  text: 為什麼 stop words 不能在所有 NLP 任務中一律移除？
   type: multiple_choice
   options:
   - stop words 不應無條件移除，否定詞可能影響語意。
@@ -776,7 +776,7 @@ questions:
 - id: m6-hc-083
   chapter_title: Natural Language Processing：NLTK 與文字特徵
   section_title: Stop Words、Stemming 與 Lemmatization
-  text: 在實務應用「Stop Words、Stemming 與 Lemmatization」時，下列哪一項判斷較合理？
+  text: 哪一項最能避免「Stop Words、Stemming 與 Lemmatization」常見誤解？
   type: multiple_choice
   options:
   - stop words 在所有任務中都應移除，包含否定詞。
@@ -792,7 +792,7 @@ questions:
 - id: m6-hc-084
   chapter_title: Natural Language Processing：NLTK 與文字特徵
   section_title: Stop Words、Stemming 與 Lemmatization
-  text: 下列哪一項最符合「Stop Words、Stemming 與 Lemmatization」的核心觀念？
+  text: lemmatization 和粗略 stemming 的關鍵差異是什麼？
   type: multiple_choice
   options:
   - stop words 在所有任務中都應移除，包含否定詞。
@@ -808,7 +808,7 @@ questions:
 - id: m6-hc-085
   chapter_title: Natural Language Processing：NLTK 與文字特徵
   section_title: 從文字到特徵
-  text: 關於「從文字到特徵」，下列哪一項敘述最正確？
+  text: 把「從文字到特徵」用在 AI 專案中時，哪個做法較恰當？
   type: multiple_choice
   options:
   - TF-IDF 可把文字文件轉成稀疏數值矩陣。
@@ -824,7 +824,7 @@ questions:
 - id: m6-hc-086
   chapter_title: Natural Language Processing：NLTK 與文字特徵
   section_title: 從文字到特徵
-  text: 在實務應用「從文字到特徵」時，下列哪一項判斷較合理？
+  text: 下列哪個情境最能說明「從文字到特徵」的用途？
   type: multiple_choice
   options:
   - IDF 會降低所有文件都常見詞的權重。
@@ -840,7 +840,7 @@ questions:
 - id: m6-hc-087
   chapter_title: Natural Language Processing：NLTK 與文字特徵
   section_title: 從文字到特徵
-  text: 下列哪一項最符合「從文字到特徵」的核心觀念？
+  text: 哪個選項最能反映「從文字到特徵」的實務重點？
   type: multiple_choice
   options:
   - Bag-of-Words 會保留完整語序，因此能直接理解長距離上下文。
@@ -856,7 +856,7 @@ questions:
 - id: m6-hc-088
   chapter_title: Natural Language Processing：NLTK 與文字特徵
   section_title: scikit-learn 文字分類 Baseline
-  text: 關於「scikit-learn 文字分類 Baseline」，下列哪一項敘述最正確？
+  text: 處理「scikit-learn 文字分類 Baseline」相關問題時，哪個判斷最合理？
   type: multiple_choice
   options:
   - TF-IDF 與 Logistic Regression 不能放進 Pipeline。
@@ -872,7 +872,7 @@ questions:
 - id: m6-hc-089
   chapter_title: Natural Language Processing：NLTK 與文字特徵
   section_title: scikit-learn 文字分類 Baseline
-  text: 在實務應用「scikit-learn 文字分類 Baseline」時，下列哪一項判斷較合理？
+  text: 下列何者是「scikit-learn 文字分類 Baseline」最重要的操作原則？
   type: multiple_choice
   options:
   - TF-IDF 與 Logistic Regression 不能放進 Pipeline。
@@ -888,7 +888,7 @@ questions:
 - id: m6-hc-090
   chapter_title: Natural Language Processing：NLTK 與文字特徵
   section_title: scikit-learn 文字分類 Baseline
-  text: 下列哪一項最符合「scikit-learn 文字分類 Baseline」的核心觀念？
+  text: 針對「scikit-learn 文字分類 Baseline」，哪個說法符合教材觀點？
   type: multiple_choice
   options:
   - TF-IDF 與 Logistic Regression 不能放進 Pipeline。
@@ -904,7 +904,7 @@ questions:
 - id: m6-hc-091
   chapter_title: Natural Language Processing：NLTK 與文字特徵
   section_title: NLP 實務流程：從原始文字到模型特徵
-  text: 關於「NLP 實務流程：從原始文字到模型特徵」，下列哪一項敘述最正確？
+  text: 哪一項最能避免「NLP 實務流程：從原始文字到模型特徵」常見誤解？
   type: multiple_choice
   options:
   - 清理 HTML、重複內容與無效文字通常不會影響模型。
@@ -920,7 +920,7 @@ questions:
 - id: m6-hc-092
   chapter_title: Natural Language Processing：NLTK 與文字特徵
   section_title: NLP 實務流程：從原始文字到模型特徵
-  text: 在實務應用「NLP 實務流程：從原始文字到模型特徵」時，下列哪一項判斷較合理？
+  text: 學習「NLP 實務流程：從原始文字到模型特徵」時，應優先掌握哪個觀念？
   type: multiple_choice
   options:
   - 清理 HTML、重複內容與無效文字通常不會影響模型。
@@ -936,7 +936,7 @@ questions:
 - id: m6-hc-093
   chapter_title: Natural Language Processing：NLTK 與文字特徵
   section_title: NLP 實務流程：從原始文字到模型特徵
-  text: 下列哪一項最符合「NLP 實務流程：從原始文字到模型特徵」的核心觀念？
+  text: 把「NLP 實務流程：從原始文字到模型特徵」用在 AI 專案中時，哪個做法較恰當？
   type: multiple_choice
   options:
   - 清理 HTML、重複內容與無效文字通常不會影響模型。
@@ -952,7 +952,7 @@ questions:
 - id: m6-hc-094
   chapter_title: Natural Language Processing：NLTK 與文字特徵
   section_title: 中文 NLP 的額外挑戰
-  text: 關於「中文 NLP 的額外挑戰」，下列哪一項敘述最正確？
+  text: 下列哪個情境最能說明「中文 NLP 的額外挑戰」的用途？
   type: multiple_choice
   options:
   - 中文句子天然以空白分隔詞，因此不需要斷詞工具。
@@ -968,7 +968,7 @@ questions:
 - id: m6-hc-095
   chapter_title: Natural Language Processing：NLTK 與文字特徵
   section_title: 中文 NLP 的額外挑戰
-  text: 在實務應用「中文 NLP 的額外挑戰」時，下列哪一項判斷較合理？
+  text: 哪個選項最能反映「中文 NLP 的額外挑戰」的實務重點？
   type: multiple_choice
   options:
   - 中文句子天然以空白分隔詞，因此不需要斷詞工具。
@@ -984,7 +984,7 @@ questions:
 - id: m6-hc-096
   chapter_title: Natural Language Processing：NLTK 與文字特徵
   section_title: 中文 NLP 的額外挑戰
-  text: 下列哪一項最符合「中文 NLP 的額外挑戰」的核心觀念？
+  text: 處理「中文 NLP 的額外挑戰」相關問題時，哪個判斷最合理？
   type: multiple_choice
   options:
   - 中文句子天然以空白分隔詞，因此不需要斷詞工具。
@@ -1000,7 +1000,7 @@ questions:
 - id: m6-hc-097
   chapter_title: Natural Language Processing：NLTK 與文字特徵
   section_title: NLP 錯誤案例分析
-  text: 關於「NLP 錯誤案例分析」，下列哪一項敘述最正確？
+  text: 下列何者是「NLP 錯誤案例分析」最重要的操作原則？
   type: multiple_choice
   options:
   - 只看整體 accuracy 就能知道模型是否理解否定句與諷刺。
@@ -1016,7 +1016,7 @@ questions:
 - id: m6-hc-098
   chapter_title: Natural Language Processing：NLTK 與文字特徵
   section_title: NLP 錯誤案例分析
-  text: 在實務應用「NLP 錯誤案例分析」時，下列哪一項判斷較合理？
+  text: 針對「NLP 錯誤案例分析」，哪個說法符合教材觀點？
   type: multiple_choice
   options:
   - 只看整體 accuracy 就能知道模型是否理解否定句與諷刺。
@@ -1032,7 +1032,7 @@ questions:
 - id: m6-hc-099
   chapter_title: Natural Language Processing：NLTK 與文字特徵
   section_title: NLP 錯誤案例分析
-  text: 下列哪一項最符合「NLP 錯誤案例分析」的核心觀念？
+  text: 哪一項最能避免「NLP 錯誤案例分析」常見誤解？
   type: multiple_choice
   options:
   - 只看整體 accuracy 就能知道模型是否理解否定句與諷刺。

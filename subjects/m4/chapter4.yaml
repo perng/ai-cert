@@ -641,7 +641,7 @@ questions:
   usage: both
 - id: 6441
   chapter_title: 強化學習
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你訓練一個玩迷宮遊戲的 AI，但發現它一直在原地打轉，不肯去終點。檢查發現你設定每走一步扣 0.01 分（為了鼓勵走最短路徑），終點給 10 分。為什麼它會打轉？
   type: multiple_choice
   options:
@@ -654,10 +654,10 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 6442
   chapter_title: 強化學習
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：在訓練機械手臂抓取物體時，你發現模擬環境中訓練完美的模型，在真實世界完全無法工作。這叫什麼問題？該如何解決？
   type: multiple_choice
   options:
@@ -670,10 +670,10 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 6443
   chapter_title: 強化學習
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：使用 DQN 玩 Atari 遊戲時，訓練初期 Loss 波動非常大且不收斂。你檢查了程式碼沒錯。最可能忽略了什麼機制？
   type: multiple_choice
   options:
@@ -686,10 +686,10 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 6444
   chapter_title: 強化學習
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你的代理在訓練過程中表現極不穩定，有時候很高分，有時候很低分。你使用的是策略梯度方法。這可能是什麼原因？
   type: multiple_choice
   options:
@@ -702,10 +702,10 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 6445
   chapter_title: 強化學習
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你希望訓練一個 AI 控制數據中心的冷卻系統以節省電費。這是一個連續控制問題（調節風扇轉速、溫度設定）。你應該首選哪種演算法？
   type: multiple_choice
   options:
@@ -718,7 +718,7 @@ questions:
   tags:
   - chap-m4-ch4
   - sec-scenario
-  usage: mock
+  usage: both
 - chapter_title: 強化學習
   section_title: 基本概念
   text: 情境：強化學習 (RL) 的目標是最大化？
@@ -1644,3 +1644,163 @@ questions:
   - sec-code-reading
   - code-reading
   usage: quiz
+- id: m4-ch4-scenario-006
+  chapter_title: 強化學習
+  section_title: 情境題
+  text: 情境：代理只追求短期獎勵，長期總報酬反而差。可調整什麼？
+  type: multiple_choice
+  options:
+  - 折扣因子與獎勵設計，讓長期回報被重視
+  - 刪除狀態空間
+  - 把所有動作設成同一個
+  - 只增加圖表顏色
+  correct_index: 0
+  explanation: 折扣因子和 reward shaping 影響長短期權衡。
+  tags:
+  - chap-m4-ch4
+  - sec-scenario
+  usage: both
+- id: m4-ch4-scenario-007
+  chapter_title: 強化學習
+  section_title: 情境題
+  text: 情境：Q-learning 表格在狀態空間巨大時不可行。可改用什麼？
+  type: multiple_choice
+  options:
+  - 手動列出所有可能狀態
+  - 以神經網路近似價值函數，如 DQN
+  - 把狀態改成圖片檔名
+  - 取消探索
+  correct_index: 1
+  explanation: 大狀態空間需函數近似。
+  tags:
+  - chap-m4-ch4
+  - sec-scenario
+  usage: both
+- id: m4-ch4-scenario-008
+  chapter_title: 強化學習
+  section_title: 情境題
+  text: 情境：代理訓練初期只走熟悉路徑，不嘗試新動作。這是哪個問題？
+  type: multiple_choice
+  options:
+  - 資料庫一致性不足
+  - 影像解析度不足
+  - 探索不足，需要 epsilon-greedy 或其他探索策略
+  - 特徵標準化過度
+  correct_index: 2
+  explanation: 強化學習需平衡探索與利用。
+  tags:
+  - chap-m4-ch4
+  - sec-scenario
+  usage: both
+- id: m4-ch4-scenario-009
+  chapter_title: 強化學習
+  section_title: 情境題
+  text: 情境：機械手臂動作是連續角度控制。較適合哪類演算法？
+  type: multiple_choice
+  options:
+  - 純表格 Q-learning 列舉所有角度
+  - Apriori 關聯規則
+  - K-Means 分群
+  - Actor-Critic 或 policy gradient 的連續控制方法
+  correct_index: 3
+  explanation: 連續動作空間需能輸出連續策略的演算法。
+  tags:
+  - chap-m4-ch4
+  - sec-scenario
+  usage: both
+- id: m4-ch4-scenario-010
+  chapter_title: 強化學習
+  section_title: 情境題
+  text: 情境：模擬訓練成功，真實部署失敗。可加入什麼改善？
+  type: multiple_choice
+  options:
+  - Domain randomization 與真實資料微調
+  - 只在同一模擬設定訓練更久
+  - 刪除所有感測器噪聲
+  - 不做任何實地測試
+  correct_index: 0
+  explanation: Sim-to-real gap 可用隨機化和真實校正降低。
+  tags:
+  - chap-m4-ch4
+  - sec-scenario
+  usage: both
+- id: m4-ch4-scenario-011
+  chapter_title: 強化學習
+  section_title: 情境題
+  text: 情境：代理找到漏洞，不完成任務卻反覆觸發獎勵。這表示什麼？
+  type: multiple_choice
+  options:
+  - 模型已達成人類真正目標
+  - Reward hacking，需要重新設計獎勵與約束
+  - 探索率太低一定造成
+  - 資料視覺化錯誤
+  correct_index: 1
+  explanation: 代理會最佳化明確獎勵，不一定符合人類意圖。
+  tags:
+  - chap-m4-ch4
+  - sec-scenario
+  usage: both
+- id: m4-ch4-scenario-012
+  chapter_title: 強化學習
+  section_title: 情境題
+  text: 情境：DQN 訓練樣本高度相關，造成不穩定。應使用什麼？
+  type: multiple_choice
+  options:
+  - 只使用最新一筆經驗
+  - 刪除 target network
+  - Experience replay 打散樣本相關性
+  - 固定所有動作不變
+  correct_index: 2
+  explanation: 經驗回放可降低連續樣本相關性。
+  tags:
+  - chap-m4-ch4
+  - sec-scenario
+  usage: both
+- id: m4-ch4-scenario-013
+  chapter_title: 強化學習
+  section_title: 情境題
+  text: 情境：自動駕駛強化學習不能在真實道路隨意探索危險動作。應如何處理？
+  type: multiple_choice
+  options:
+  - 直接在尖峰道路探索
+  - 取消所有安全規則
+  - 只用遊戲分數評估
+  - 先在安全模擬環境訓練並設安全約束
+  correct_index: 3
+  explanation: 高風險 RL 需安全探索與模擬驗證。
+  tags:
+  - chap-m4-ch4
+  - sec-scenario
+  usage: both
+- id: m4-ch4-scenario-014
+  chapter_title: 強化學習
+  section_title: 情境題
+  text: 情境：策略梯度估計方差很大，學習不穩。常見改善是什麼？
+  type: multiple_choice
+  options:
+  - 加入 baseline 或 advantage function 降低方差
+  - 把 reward 全部設為零
+  - 增加隨機噪聲到無限大
+  - 刪除所有 episode
+  correct_index: 0
+  explanation: baseline 可降低 policy gradient 的估計方差。
+  tags:
+  - chap-m4-ch4
+  - sec-scenario
+  usage: both
+- id: m4-ch4-scenario-015
+  chapter_title: 強化學習
+  section_title: 情境題
+  text: 情境：倉儲機器人任務有稀疏獎勵，只有成功送達才得分。可怎麼改善學習？
+  type: multiple_choice
+  options:
+  - 取消終點獎勵
+  - 設計中間獎勵或使用 curriculum learning
+  - 讓機器人不觀察狀態
+  - 只縮短訓練時間
+  correct_index: 1
+  explanation: 稀疏獎勵學習困難，可用 reward shaping 或課程學習。
+  tags:
+  - chap-m4-ch4
+  - sec-scenario
+  usage: both

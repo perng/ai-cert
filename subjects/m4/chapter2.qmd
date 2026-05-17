@@ -91,7 +91,7 @@ print(model)
 ```
 
 
-## 深度思考情境題 {#sec-scenario}
+## 情境題 {#sec-scenario}
 
 深度學習框架與架構情境題會把任務需求映射到模型結構。影像任務常使用 CNN、ResNet、EfficientNet 或 ViT；序列與語言任務常使用 RNN、LSTM、GRU 或 Transformer；資料量少時可使用遷移學習，先凍結預訓練模型作特徵提取，再視任務差異進行微調。框架選擇也有差異：PyTorch 適合研究與除錯，TensorFlow 生態適合部署，JAX 適合高效數值研究。實務上需同時評估算力、資料量、可維護性與推論限制。
 

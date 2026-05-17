@@ -170,7 +170,7 @@ MCP 定義了兩種主機和伺服器之間傳遞訊息的方式：
 ### 其他 AI 助理的支援狀況：Antigravity 與 OpenAI Codex
 雖然 MCP 最初由 Anthropic (Claude) 發表與推廣，但作為開放標準，其他強大的 AI 助理也陸續支援或具備類似能力：
 
-- **Antigravity**：這類進階的代理式 AI 助理（Agentic Assistant）本身即內建強大的本地環境操作能力（如終端機操作、檔案讀寫等）。隨著 MCP 成為標準，Antigravity 等工具也開始支援或相容於 MCP 伺服器，讓代理人能直接調用社群豐富的資源。
+- **Antigravity**：這類進階的代理式 AI 助理（Agentic Assistant）本身即內建強大的本地環境操作能力（如終端機操作、檔案讀寫等）。隨著 MCP 成為標準，Antigravity 等工具也開始支援或相容於 MCP 伺服器，讓代理人能直接呼叫社群豐富的資源。
 - **OpenAI Codex 與新型 AI IDEs**：像 OpenAI Codex 或 Cursor 等新一代 AI 程式開發環境，也正陸續將 MCP 支援整合進編輯器生態中。這讓開發者可以設定 MCP 伺服器，讓 AI 助理直接在開發環境內部連線到 PostgreSQL 或 GitHub 進行操作。
 :::
 

@@ -365,7 +365,7 @@ questions:
 - id: m6-ch8-code-005
   chapter_title: PyTorch Transformer 基礎
   section_title: MultiheadAttention 基礎
-  text: batch_first=True 時 MultiheadAttention 輸入 shape 應是什麼？
+  text: 啟用 batch_first 後，attention layer 期待哪個維度排在最前面？
   content:
   - type: text
     text: batch_first=True 時 MultiheadAttention 輸入 shape 應是什麼？
@@ -557,7 +557,7 @@ questions:
 - id: m6-ch8-code-013
   chapter_title: PyTorch Transformer 基礎
   section_title: Tokenizer 與 Subword
-  text: Subword tokenizer 的主要優勢是什麼？
+  text: 遇到 unbelievable 這類罕見詞時，subword tokenizer 有什麼好處？
   content:
   - type: text
     text: Subword tokenizer 的主要優勢是什麼？
@@ -580,7 +580,7 @@ questions:
 - id: m6-ch8-code-014
   chapter_title: PyTorch Transformer 基礎
   section_title: Transformer 訓練時的 Loss
-  text: 自回歸語言模型中 shifted labels 的概念是什麼？
+  text: input 與 target 位移一格，是要訓練模型學會什麼？
   content:
   - type: text
     text: 自回歸語言模型中 shifted labels 的概念是什麼？
@@ -835,7 +835,7 @@ questions:
 - id: m6-ch8-code-025
   chapter_title: PyTorch Transformer 基礎
   section_title: Tokenizer 與 Subword
-  text: Subword tokenizer 的優勢是什麼？
+  text: 把罕見詞拆成詞片段，可以降低哪一類 tokenizer 問題？
   content:
   - type: text
     text: Subword tokenizer 的優勢是什麼？
@@ -883,7 +883,7 @@ questions:
 - id: m6-ch8-code-027
   chapter_title: PyTorch Transformer 基礎
   section_title: Encoder、Decoder 與 Encoder-Decoder
-  text: BERT 類 encoder-only 架構常用於什麼？
+  text: 若任務是句子分類或語意理解，BERT 類架構通常扮演什麼角色？
   content:
   - type: text
     text: BERT 類 encoder-only 架構常用於什麼？
@@ -906,7 +906,7 @@ questions:
 - id: m6-ch8-code-028
   chapter_title: PyTorch Transformer 基礎
   section_title: Encoder、Decoder 與 Encoder-Decoder
-  text: GPT 類 decoder-only 架構常用於什麼？
+  text: 若任務是逐步生成下一個 token，GPT 類架構通常扮演什麼角色？
   content:
   - type: text
     text: GPT 類 decoder-only 架構常用於什麼？
@@ -975,7 +975,7 @@ questions:
 - id: m6-hc-137
   chapter_title: PyTorch Transformer 基礎
   section_title: Embedding 與位置資訊
-  text: 關於「Embedding 與位置資訊」，下列哪一項敘述最正確？
+  text: 哪個選項最能反映「Embedding 與位置資訊」的實務重點？
   type: multiple_choice
   options:
   - Embedding 將離散 token id 轉成連續向量。
@@ -991,7 +991,7 @@ questions:
 - id: m6-hc-138
   chapter_title: PyTorch Transformer 基礎
   section_title: MultiheadAttention 基礎
-  text: 關於「MultiheadAttention 基礎」，下列哪一項敘述最正確？
+  text: 處理「MultiheadAttention 基礎」相關問題時，哪個判斷最合理？
   type: multiple_choice
   options:
   - self-attention 中 Q、K、V 來自同一序列。
@@ -1007,7 +1007,7 @@ questions:
 - id: m6-hc-139
   chapter_title: PyTorch Transformer 基礎
   section_title: Transformer Encoder 分類器
-  text: 關於「Transformer Encoder 分類器」，下列哪一項敘述最正確？
+  text: Transformer encoder 處理完序列後，輸出的表示具有什麼特性？
   type: multiple_choice
   options:
   - Encoder 會輸出每個 token 的上下文表示。
@@ -1023,7 +1023,7 @@ questions:
 - id: m6-hc-140
   chapter_title: PyTorch Transformer 基礎
   section_title: Transformer Encoder 分類器
-  text: 在實務應用「Transformer Encoder 分類器」時，下列哪一項判斷較合理？
+  text: 用 Transformer 做分類時，如何把 token 序列轉成整段文字表示？
   type: multiple_choice
   options:
   - 分類器可用 mean pooling 或 CLS 表示取得整段文字向量。
@@ -1039,7 +1039,7 @@ questions:
 - id: m6-hc-141
   chapter_title: PyTorch Transformer 基礎
   section_title: Mask 與序列長度
-  text: 關於「Mask 與序列長度」，下列哪一項敘述最正確？
+  text: 哪一項最能避免「Mask 與序列長度」常見誤解？
   type: multiple_choice
   options:
   - padding token 應和真實 token 一樣被模型關注。
@@ -1055,7 +1055,7 @@ questions:
 - id: m6-hc-142
   chapter_title: PyTorch Transformer 基礎
   section_title: 從簡化模型到大型語言模型
-  text: 關於「從簡化模型到大型語言模型」，下列哪一項敘述最正確？
+  text: 學習「從簡化模型到大型語言模型」時，應優先掌握哪個觀念？
   type: multiple_choice
   options:
   - 大型語言模型與 attention、embedding 等元件無關。
@@ -1071,7 +1071,7 @@ questions:
 - id: m6-hc-143
   chapter_title: PyTorch Transformer 基礎
   section_title: 從簡化模型到大型語言模型
-  text: 在實務應用「從簡化模型到大型語言模型」時，下列哪一項判斷較合理？
+  text: 把「從簡化模型到大型語言模型」用在 AI 專案中時，哪個做法較恰當？
   type: multiple_choice
   options:
   - 大型語言模型與 attention、embedding 等元件無關。
@@ -1087,7 +1087,7 @@ questions:
 - id: m6-hc-144
   chapter_title: PyTorch Transformer 基礎
   section_title: Attention 的直覺與限制
-  text: 關於「Attention 的直覺與限制」，下列哪一項敘述最正確？
+  text: 下列哪個情境最能說明「Attention 的直覺與限制」的用途？
   type: multiple_choice
   options:
   - attention 權重永遠等同於人類可接受的因果解釋。
@@ -1103,7 +1103,7 @@ questions:
 - id: m6-hc-145
   chapter_title: PyTorch Transformer 基礎
   section_title: Attention 的直覺與限制
-  text: 在實務應用「Attention 的直覺與限制」時，下列哪一項判斷較合理？
+  text: 哪個選項最能反映「Attention 的直覺與限制」的實務重點？
   type: multiple_choice
   options:
   - attention 權重永遠等同於人類可接受的因果解釋。
@@ -1119,7 +1119,7 @@ questions:
 - id: m6-hc-146
   chapter_title: PyTorch Transformer 基礎
   section_title: Encoder、Decoder 與 Encoder-Decoder
-  text: 關於「Encoder、Decoder 與 Encoder-Decoder」，下列哪一項敘述最正確？
+  text: 處理「Encoder、Decoder 與 Encoder-Decoder」相關問題時，哪個判斷最合理？
   type: multiple_choice
   options:
   - Encoder-only 架構最適合逐 token 自回歸生成。
@@ -1135,7 +1135,7 @@ questions:
 - id: m6-hc-147
   chapter_title: PyTorch Transformer 基礎
   section_title: Encoder、Decoder 與 Encoder-Decoder
-  text: 在實務應用「Encoder、Decoder 與 Encoder-Decoder」時，下列哪一項判斷較合理？
+  text: 下列何者是「Encoder、Decoder 與 Encoder-Decoder」最重要的操作原則？
   type: multiple_choice
   options:
   - Encoder-only 架構最適合逐 token 自回歸生成。
@@ -1151,7 +1151,7 @@ questions:
 - id: m6-hc-148
   chapter_title: PyTorch Transformer 基礎
   section_title: Tokenizer 與 Subword
-  text: 關於「Tokenizer 與 Subword」，下列哪一項敘述最正確？
+  text: 針對「Tokenizer 與 Subword」，哪個說法符合教材觀點？
   type: multiple_choice
   options:
   - Tokenizer 可在訓練與推論時任意更換，不影響 token id。
@@ -1167,7 +1167,7 @@ questions:
 - id: m6-hc-149
   chapter_title: PyTorch Transformer 基礎
   section_title: Tokenizer 與 Subword
-  text: 在實務應用「Tokenizer 與 Subword」時，下列哪一項判斷較合理？
+  text: 哪一項最能避免「Tokenizer 與 Subword」常見誤解？
   type: multiple_choice
   options:
   - 模型訓練與推論必須使用一致 tokenizer。
@@ -1183,7 +1183,7 @@ questions:
 - id: m6-hc-150
   chapter_title: PyTorch Transformer 基礎
   section_title: Transformer 訓練時的 Loss
-  text: 關於「Transformer 訓練時的 Loss」，下列哪一項敘述最正確？
+  text: 學習「Transformer 訓練時的 Loss」時，應優先掌握哪個觀念？
   type: multiple_choice
   options:
   - CrossEntropyLoss 通常要求模型輸出已經 argmax 後的類別。
@@ -1199,7 +1199,7 @@ questions:
 - id: m6-hc-151
   chapter_title: PyTorch Transformer 基礎
   section_title: Transformer 訓練時的 Loss
-  text: 在實務應用「Transformer 訓練時的 Loss」時，下列哪一項判斷較合理？
+  text: 把「Transformer 訓練時的 Loss」用在 AI 專案中時，哪個做法較恰當？
   type: multiple_choice
   options:
   - CrossEntropyLoss 通常要求模型輸出已經 argmax 後的類別。
@@ -1215,7 +1215,7 @@ questions:
 - id: m6-hc-152
   chapter_title: PyTorch Transformer 基礎
   section_title: Fine-tuning、Feature Extraction 與 RAG
-  text: 關於「Fine-tuning、Feature Extraction 與 RAG」，下列哪一項敘述最正確？
+  text: 公司文件經常更新時，哪種 Transformer 應用模式較容易維護？
   type: multiple_choice
   options:
   - RAG 適合知識常更新且需要外部資料來源的任務。
@@ -1231,7 +1231,7 @@ questions:
 - id: m6-hc-153
   chapter_title: PyTorch Transformer 基礎
   section_title: Fine-tuning、Feature Extraction 與 RAG
-  text: 在實務應用「Fine-tuning、Feature Extraction 與 RAG」時，下列哪一項判斷較合理？
+  text: 只需要語意搜尋或下游分類時，預訓練模型可先產生什麼？
   type: multiple_choice
   options:
   - RAG 需要把所有外部文件永久寫入模型權重。
@@ -1247,7 +1247,7 @@ questions:
 - id: m6-hc-154
   chapter_title: PyTorch Transformer 基礎
   section_title: Transformer 常見錯誤與除錯
-  text: 關於「Transformer 常見錯誤與除錯」，下列哪一項敘述最正確？
+  text: 處理「Transformer 常見錯誤與除錯」相關問題時，哪個判斷最合理？
   type: multiple_choice
   options:
   - padding mask 錯誤只會影響輸出格式，不會影響注意力。
@@ -1263,7 +1263,7 @@ questions:
 - id: m6-hc-155
   chapter_title: PyTorch Transformer 基礎
   section_title: Transformer 常見錯誤與除錯
-  text: 在實務應用「Transformer 常見錯誤與除錯」時，下列哪一項判斷較合理？
+  text: 訓練和推論使用不同 tokenizer 時，最直接的風險是什麼？
   type: multiple_choice
   options:
   - padding mask 錯誤只會影響輸出格式，不會影響注意力。
@@ -1279,7 +1279,7 @@ questions:
 - id: m6-hc-156
   chapter_title: PyTorch Transformer 基礎
   section_title: Transformer 常見錯誤與除錯
-  text: 下列哪一項最符合「Transformer 常見錯誤與除錯」的核心觀念？
+  text: 處理長序列時，self-attention 最需要注意哪個成本問題？
   type: multiple_choice
   options:
   - padding mask 錯誤只會影響輸出格式，不會影響注意力。
@@ -1295,7 +1295,7 @@ questions:
 - id: m6-hc-157
   chapter_title: PyTorch Transformer 基礎
   section_title: 從實作理解應用規劃
-  text: 關於「從實作理解應用規劃」，下列哪一項敘述最正確？
+  text: 哪一項最能避免「從實作理解應用規劃」常見誤解？
   type: multiple_choice
   options:
   - 語意搜尋任務一定要用生成模型產生長答案。
@@ -1311,7 +1311,7 @@ questions:
 - id: m6-hc-158
   chapter_title: PyTorch Transformer 基礎
   section_title: 從實作理解應用規劃
-  text: 在實務應用「從實作理解應用規劃」時，下列哪一項判斷較合理？
+  text: 學習「從實作理解應用規劃」時，應優先掌握哪個觀念？
   type: multiple_choice
   options:
   - 若知識常變動，RAG 通常比頻繁 fine-tuning 更容易維護。
@@ -1327,7 +1327,7 @@ questions:
 - id: m6-hc-159
   chapter_title: PyTorch Transformer 基礎
   section_title: 從實作理解應用規劃
-  text: 下列哪一項最符合「從實作理解應用規劃」的核心觀念？
+  text: 把「從實作理解應用規劃」用在 AI 專案中時，哪個做法較恰當？
   type: multiple_choice
   options:
   - 語意搜尋任務一定要用生成模型產生長答案。

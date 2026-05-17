@@ -641,7 +641,7 @@ questions:
   usage: both
 - id: 3241
   chapter_title: 資料處理基礎
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你正在為一個即時詐欺偵測系統建立模型。數據集包含數百萬筆交易，但其中只有 0.1% 是詐欺（嚴重類別不平衡）。在進行特徵工程與預處理時，你應避免下列哪種操作？
   type: multiple_choice
   options:
@@ -654,10 +654,10 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 3242
   chapter_title: 資料處理基礎
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你正在處理一個包含「國家」特徵的全球銷售數據集，共有 180 個不同的國家。若直接使用 One-Hot Encoding，會產生 180 個新欄位，導致維度災難。下列哪種替代方案最不合適？
   type: multiple_choice
   options:
@@ -670,10 +670,10 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 3243
   chapter_title: 資料處理基礎
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：在房價預測任務中，你發現訓練集和測試集的特徵分佈有顯著差異（Covariate Shift），例如訓練集多為市中心小豪宅，測試集多為郊區大別墅。這時進行標準化 (Standardization) 應注意什麼？
   type: multiple_choice
   options:
@@ -686,10 +686,10 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 3244
   chapter_title: 資料處理基礎
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你使用 PCA 將數據降維到 2D 進行視覺化，發現不同類別的點混雜在一起，無法區分。這是否代表這些數據在本質上無法分類？
   type: multiple_choice
   options:
@@ -702,10 +702,10 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 3245
   chapter_title: 資料處理基礎
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：某特徵存在大量缺失值，你決定使用 KNN (K-Nearest Neighbors) 進行填補。在執行 KNN 填補之前，必須先執行哪項預處理步驟？為什麼？
   type: multiple_choice
   options:
@@ -718,7 +718,7 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-scenario
-  usage: mock
+  usage: both
 - chapter_title: 資料處理基礎
   section_title: 資料預處理
   text: 情境：在處理問卷資料時，發現「年齡」欄位有部分空白。若該欄位數值分佈均勻且無極端值，適合用什麼填補？
@@ -1070,4 +1070,164 @@ questions:
   tags:
   - chap-m1-ch2
   - sec-feature-engineering
+  usage: both
+- id: m1-ch2-scenario-006
+  chapter_title: 資料處理基礎
+  section_title: 情境題
+  text: 情境：顧客年齡欄位少量缺失，且缺失比例在各客群相近。若要快速建立基準模型，較合理的處理方式是什麼？
+  type: multiple_choice
+  options:
+  - 以中位數或模型式插補並加入缺失指標欄位
+  - 直接刪除整個年齡欄位，避免任何處理
+  - 用目標變數答案填補年齡，提升模型準確率
+  - 把缺失值全部改成最大年齡，製造明顯訊號
+  correct_index: 0
+  explanation: 少量缺失可插補；缺失本身可能含資訊，加入指標可保留訊號。
+  tags:
+  - chap-m1-ch2
+  - sec-scenario
+  usage: both
+- id: m1-ch2-scenario-007
+  chapter_title: 資料處理基礎
+  section_title: 情境題
+  text: 情境：訓練資料中的「城市」有上千種取值，直接 One-Hot 後特徵暴增。下列哪個做法較適合？
+  type: multiple_choice
+  options:
+  - 把所有城市都改成同一個值，避免維度過高
+  - 使用頻率編碼、目標編碼或嵌入表示並注意避免資料洩漏
+  - 只保留字母排序最前面的 10 個城市
+  - 將城市名稱轉成電話區碼後當成連續數值
+  correct_index: 1
+  explanation: 高基數類別特徵可用壓縮表示，但目標編碼必須避免使用驗證資料答案。
+  tags:
+  - chap-m1-ch2
+  - sec-scenario
+  usage: both
+- id: m1-ch2-scenario-008
+  chapter_title: 資料處理基礎
+  section_title: 情境題
+  text: 情境：你要把交易金額和登入次數餵給距離式模型，兩者尺度差很多。應先做什麼？
+  type: multiple_choice
+  options:
+  - 把小尺度特徵刪除，讓模型只看交易金額
+  - 將所有值轉成字串，避免尺度差異
+  - 標準化或正規化，避免大尺度特徵主導距離
+  - 只調整目標變數，不處理輸入特徵
+  correct_index: 2
+  explanation: KNN、K-Means 等距離式方法對尺度敏感，需先縮放特徵。
+  tags:
+  - chap-m1-ch2
+  - sec-scenario
+  usage: both
+- id: m1-ch2-scenario-009
+  chapter_title: 資料處理基礎
+  section_title: 情境題
+  text: 情境：訓練集與測試集都需要標準化。為避免資料洩漏，平均數與標準差應如何取得？
+  type: multiple_choice
+  options:
+  - 用訓練集和測試集合併估計，讓分佈更穩定
+  - 分別對每個測試樣本單獨估計，讓每筆資料更準
+  - 使用目標變數的平均值取代所有特徵平均值
+  - 只用訓練集估計，再套用到驗證集與測試集
+  correct_index: 3
+  explanation: 前處理參數應只由訓練資料學得，避免測試資訊洩漏。
+  tags:
+  - chap-m1-ch2
+  - sec-scenario
+  usage: both
+- id: m1-ch2-scenario-010
+  chapter_title: 資料處理基礎
+  section_title: 情境題
+  text: 情境：詐欺偵測資料中正例很少，團隊想用 SMOTE 增加少數類別。正確時機是什麼？
+  type: multiple_choice
+  options:
+  - 只在訓練集上做重抽樣，驗證與測試集保持原始分佈
+  - 先對全資料做 SMOTE，再切分訓練與測試
+  - 只對測試集做 SMOTE，讓評估更平衡
+  - 對目標欄位做標準化後再 SMOTE
+  correct_index: 0
+  explanation: 重抽樣若在切分前做，合成樣本可能造成資料洩漏。
+  tags:
+  - chap-m1-ch2
+  - sec-scenario
+  usage: both
+- id: m1-ch2-scenario-011
+  chapter_title: 資料處理基礎
+  section_title: 情境題
+  text: 情境：模型上線後發現新資料的某欄位單位從公尺變成公分，預測大幅偏移。這是哪類問題？
+  type: multiple_choice
+  options:
+  - 模型容量不足，只要加深神經網路即可
+  - 資料品質與特徵定義不一致，需要資料驗證規則
+  - 類別不平衡，只要改評估指標即可
+  - 標籤洩漏，因為單位改變一定來自答案欄位
+  correct_index: 1
+  explanation: 特徵單位變更會破壞訓練與推論的一致性，應用 schema 與範圍檢查。
+  tags:
+  - chap-m1-ch2
+  - sec-scenario
+  usage: both
+- id: m1-ch2-scenario-012
+  chapter_title: 資料處理基礎
+  section_title: 情境題
+  text: 情境：文字評論長短差異很大，要建立情感分類模型。下列哪個特徵工程較合理？
+  type: multiple_choice
+  options:
+  - 只使用評論字元總數，不需要文本內容
+  - 把每篇評論轉成隨機數，避免偏見
+  - 使用 TF-IDF、詞嵌入或語言模型表示文本語意
+  - 刪除所有否定詞，讓文字更乾淨
+  correct_index: 2
+  explanation: 文字任務需保留語意資訊；只看長度通常不足以判斷情感。
+  tags:
+  - chap-m1-ch2
+  - sec-scenario
+  usage: both
+- id: m1-ch2-scenario-013
+  chapter_title: 資料處理基礎
+  section_title: 情境題
+  text: 情境：你發現某個特徵是在訂單完成後才產生，但模型要在下單當下預測取消風險。應如何處理？
+  type: multiple_choice
+  options:
+  - 保留該特徵，因為它能大幅提升離線準確率
+  - 將該特徵複製十次，讓模型更重視它
+  - 把該特徵設為目標變數，避免資料洩漏
+  - 移除該特徵，因為它在預測時間點不可用且會造成洩漏
+  correct_index: 3
+  explanation: 預測時不可取得的事後資訊會造成資料洩漏，上線後無法使用。
+  tags:
+  - chap-m1-ch2
+  - sec-scenario
+  usage: both
+- id: m1-ch2-scenario-014
+  chapter_title: 資料處理基礎
+  section_title: 情境題
+  text: 情境：使用 PCA 前，某些特徵尺度遠大於其他特徵。若不處理，會有什麼風險？
+  type: multiple_choice
+  options:
+  - 主成分可能主要反映大尺度特徵，而非真正重要結構
+  - PCA 會自動完全忽略尺度差異，不需處理
+  - 所有主成分都會變成分類標籤
+  - 資料一定會變成線性可分
+  correct_index: 0
+  explanation: PCA 依變異量找方向，尺度大的特徵會主導變異。
+  tags:
+  - chap-m1-ch2
+  - sec-scenario
+  usage: both
+- id: m1-ch2-scenario-015
+  chapter_title: 資料處理基礎
+  section_title: 情境題
+  text: 情境：資料集中「未知」被填成 999，模型把 999 當成高數值。較好的處理方式是什麼？
+  type: multiple_choice
+  options:
+  - 保留 999，因為數字越大代表資訊越多
+  - 將 999 還原為缺失值，再依欄位意義做插補或類別處理
+  - 把所有正常值也加上 999，保持一致
+  - 刪除目標變數，避免模型誤解
+  correct_index: 1
+  explanation: 特殊缺失碼應轉回缺失或類別，不應直接當連續數值。
+  tags:
+  - chap-m1-ch2
+  - sec-scenario
   usage: both

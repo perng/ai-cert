@@ -683,7 +683,7 @@ questions:
 - id: m6-ch3-code-018
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: scikit-learn 的標準流程
-  text: model.fit(X_train, y_train) 的主要用途是什麼？
+  text: 呼叫 fit 後，estimator 會進入哪個狀態？
   content:
   - type: text
     text: model.fit(X_train, y_train) 的主要用途是什麼？
@@ -823,7 +823,7 @@ questions:
 - id: m6-ch3-code-024
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: 評估、交叉驗證與超參數搜尋
-  text: GridSearchCV 的主要功能是什麼？
+  text: 這個 GridSearchCV 物件會比較什麼？
   content:
   - type: text
     text: GridSearchCV 的主要功能是什麼？
@@ -994,7 +994,7 @@ questions:
 - id: m6-hc-026
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: 最佳化與曲線擬合
-  text: 關於「最佳化與曲線擬合」，下列哪一項敘述最正確？
+  text: 哪個選項最能反映「最佳化與曲線擬合」的實務重點？
   type: multiple_choice
   options:
   - 最佳化只用來讓圖形更平滑，與參數估計無關。
@@ -1010,7 +1010,7 @@ questions:
 - id: m6-hc-027
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: scikit-learn 的標準流程
-  text: 關於「scikit-learn 的標準流程」，下列哪一項敘述最正確？
+  text: 處理「scikit-learn 的標準流程」相關問題時，哪個判斷最合理？
   type: multiple_choice
   options:
   - scikit-learn estimator 通常先 predict 再 fit。
@@ -1026,7 +1026,7 @@ questions:
 - id: m6-hc-028
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: scikit-learn 的標準流程
-  text: 在實務應用「scikit-learn 的標準流程」時，下列哪一項判斷較合理？
+  text: 切分訓練與測試資料時，最需要避免哪種評估偏誤？
   type: multiple_choice
   options:
   - scikit-learn estimator 通常先 predict 再 fit。
@@ -1042,7 +1042,7 @@ questions:
 - id: m6-hc-029
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: scikit-learn 實務補充：ColumnTransformer 與混合欄位
-  text: 關於「scikit-learn 實務補充：ColumnTransformer 與混合欄位」，下列哪一項敘述最正確？
+  text: 同一張表同時有數值與類別欄位時，哪個前處理策略最合適？
   type: multiple_choice
   options:
   - ColumnTransformer 只能處理數值欄位，不能處理類別欄位。
@@ -1058,7 +1058,7 @@ questions:
 - id: m6-hc-030
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: scikit-learn 實務補充：ColumnTransformer 與混合欄位
-  text: 在實務應用「scikit-learn 實務補充：ColumnTransformer 與混合欄位」時，下列哪一項判斷較合理？
+  text: 推論資料出現訓練時沒看過的 city 類別時，哪個設定可降低錯誤風險？
   type: multiple_choice
   options:
   - OneHotEncoder(handle_unknown="ignore") 可降低推論遇到新類別時的錯誤風險。
@@ -1074,7 +1074,7 @@ questions:
 - id: m6-hc-031
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: scikit-learn 實務補充：ColumnTransformer 與混合欄位
-  text: 下列哪一項最符合「scikit-learn 實務補充：ColumnTransformer 與混合欄位」的核心觀念？
+  text: 為什麼要把 ColumnTransformer 放進 Pipeline？
   type: multiple_choice
   options:
   - ColumnTransformer 只能處理數值欄位，不能處理類別欄位。
@@ -1090,7 +1090,7 @@ questions:
 - id: m6-hc-032
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: 前處理與 Pipeline
-  text: 關於「前處理與 Pipeline」，下列哪一項敘述最正確？
+  text: 把「前處理與 Pipeline」用在 AI 專案中時，哪個做法較恰當？
   type: multiple_choice
   options:
   - 前處理應先在全資料 fit，再切分訓練與測試以提高分數。
@@ -1106,7 +1106,7 @@ questions:
 - id: m6-hc-033
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: 分類、迴歸與分群
-  text: 關於「分類、迴歸與分群」，下列哪一項敘述最正確？
+  text: 下列哪個情境最能說明「分類、迴歸與分群」的用途？
   type: multiple_choice
   options:
   - 迴歸任務通常預測離散標籤，例如貓或狗。
@@ -1122,7 +1122,7 @@ questions:
 - id: m6-hc-034
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: 分類、迴歸與分群
-  text: 在實務應用「分類、迴歸與分群」時，下列哪一項判斷較合理？
+  text: 哪個選項最能反映「分類、迴歸與分群」的實務重點？
   type: multiple_choice
   options:
   - 迴歸任務通常預測離散標籤，例如貓或狗。
@@ -1138,7 +1138,7 @@ questions:
 - id: m6-hc-035
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: 評估、交叉驗證與超參數搜尋
-  text: 關於「評估、交叉驗證與超參數搜尋」，下列哪一項敘述最正確？
+  text: 處理「評估、交叉驗證與超參數搜尋」相關問題時，哪個判斷最合理？
   type: multiple_choice
   options:
   - 交叉驗證會把測試集答案提供給模型訓練。
@@ -1154,7 +1154,7 @@ questions:
 - id: m6-hc-036
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: 建立 Baseline 的重要性
-  text: 關於「建立 Baseline 的重要性」，下列哪一項敘述最正確？
+  text: 下列何者是「建立 Baseline 的重要性」最重要的操作原則？
   type: multiple_choice
   options:
   - baseline 用來判斷資料是否有可學習訊號。
@@ -1170,7 +1170,7 @@ questions:
 - id: m6-hc-037
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: 建立 Baseline 的重要性
-  text: 在實務應用「建立 Baseline 的重要性」時，下列哪一項判斷較合理？
+  text: 針對「建立 Baseline 的重要性」，哪個說法符合教材觀點？
   type: multiple_choice
   options:
   - baseline 的目的只是讓報告有更多模型名稱。
@@ -1186,7 +1186,7 @@ questions:
 - id: m6-hc-038
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: Train、Validation、Test 的分工
-  text: 關於「Train、Validation、Test 的分工」，下列哪一項敘述最正確？
+  text: 哪一項最能避免「Train、Validation、Test 的分工」常見誤解？
   type: multiple_choice
   options:
   - test set 可在每次調參時反覆查看以挑選模型。
@@ -1202,7 +1202,7 @@ questions:
 - id: m6-hc-039
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: Train、Validation、Test 的分工
-  text: 在實務應用「Train、Validation、Test 的分工」時，下列哪一項判斷較合理？
+  text: 學習「Train、Validation、Test 的分工」時，應優先掌握哪個觀念？
   type: multiple_choice
   options:
   - test set 可在每次調參時反覆查看以挑選模型。
@@ -1218,7 +1218,7 @@ questions:
 - id: m6-hc-040
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: 模型選擇的實務判斷
-  text: 關於「模型選擇的實務判斷」，下列哪一項敘述最正確？
+  text: 把「模型選擇的實務判斷」用在 AI 專案中時，哪個做法較恰當？
   type: multiple_choice
   options:
   - 模型選擇只需比較 accuracy，延遲與維護成本不重要。
@@ -1234,7 +1234,7 @@ questions:
 - id: m6-hc-041
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: 模型選擇的實務判斷
-  text: 在實務應用「模型選擇的實務判斷」時，下列哪一項判斷較合理？
+  text: 下列哪個情境最能說明「模型選擇的實務判斷」的用途？
   type: multiple_choice
   options:
   - 模型選擇只需比較 accuracy，延遲與維護成本不重要。
@@ -1250,7 +1250,7 @@ questions:
 - id: m6-hc-042
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: 常見評估指標
-  text: 關於「常見評估指標」，下列哪一項敘述最正確？
+  text: 哪個選項最能反映「常見評估指標」的實務重點？
   type: multiple_choice
   options:
   - accuracy 在高度不平衡資料中一定能反映少數類別表現。
@@ -1266,7 +1266,7 @@ questions:
 - id: m6-hc-043
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: 常見評估指標
-  text: 在實務應用「常見評估指標」時，下列哪一項判斷較合理？
+  text: 處理「常見評估指標」相關問題時，哪個判斷最合理？
   type: multiple_choice
   options:
   - recall 低代表許多正類被漏掉。
@@ -1282,7 +1282,7 @@ questions:
 - id: m6-hc-044
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: scikit-learn 與深度學習的界線
-  text: 關於「scikit-learn 與深度學習的界線」，下列哪一項敘述最正確？
+  text: 什麼情境下 scikit-learn 通常比直接使用深度學習更務實？
   type: multiple_choice
   options:
   - scikit-learn 只能訓練神經網路，不能處理表格 baseline。
@@ -1298,7 +1298,7 @@ questions:
 - id: m6-hc-045
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: scikit-learn 與深度學習的界線
-  text: 在實務應用「scikit-learn 與深度學習的界線」時，下列哪一項判斷較合理？
+  text: 針對「scikit-learn 與深度學習的界線」，哪個說法符合教材觀點？
   type: multiple_choice
   options:
   - scikit-learn 只能訓練神經網路，不能處理表格 baseline。
@@ -1314,7 +1314,7 @@ questions:
 - id: m6-hc-046
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: statsmodels：統計建模與可解釋分析
-  text: 關於「statsmodels：統計建模與可解釋分析」，下列哪一項敘述最正確？
+  text: 哪一項最能避免「statsmodels：統計建模與可解釋分析」常見誤解？
   type: multiple_choice
   options:
   - statsmodels 主要用於影像卷積運算，不適合統計摘要。
@@ -1330,7 +1330,7 @@ questions:
 - id: m6-hc-047
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: statsmodels：統計建模與可解釋分析
-  text: 在實務應用「statsmodels：統計建模與可解釋分析」時，下列哪一項判斷較合理？
+  text: 學習「statsmodels：統計建模與可解釋分析」時，應優先掌握哪個觀念？
   type: multiple_choice
   options:
   - statsmodels 主要用於影像卷積運算，不適合統計摘要。
@@ -1346,7 +1346,7 @@ questions:
 - id: m6-hc-048
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: statsmodels：統計建模與可解釋分析
-  text: 下列哪一項最符合「statsmodels：統計建模與可解釋分析」的核心觀念？
+  text: 把「statsmodels：統計建模與可解釋分析」用在 AI 專案中時，哪個做法較恰當？
   type: multiple_choice
   options:
   - statsmodels 主要用於影像卷積運算，不適合統計摘要。
@@ -1362,7 +1362,7 @@ questions:
 - id: m6-hc-049
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: Matplotlib：資料與模型結果視覺化
-  text: 關於「Matplotlib：資料與模型結果視覺化」，下列哪一項敘述最正確？
+  text: 下列哪個情境最能說明「Matplotlib：資料與模型結果視覺化」的用途？
   type: multiple_choice
   options:
   - Matplotlib 只能繪製深度學習模型結構，不能畫資料分布。
@@ -1378,7 +1378,7 @@ questions:
 - id: m6-hc-050
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: Matplotlib：資料與模型結果視覺化
-  text: 在實務應用「Matplotlib：資料與模型結果視覺化」時，下列哪一項判斷較合理？
+  text: 哪個選項最能反映「Matplotlib：資料與模型結果視覺化」的實務重點？
   type: multiple_choice
   options:
   - Matplotlib 只能繪製深度學習模型結構，不能畫資料分布。
@@ -1394,7 +1394,7 @@ questions:
 - id: m6-hc-051
   chapter_title: SciPy、scikit-learn、statsmodels 與 Matplotlib
   section_title: Matplotlib：資料與模型結果視覺化
-  text: 下列哪一項最符合「Matplotlib：資料與模型結果視覺化」的核心觀念？
+  text: 處理「Matplotlib：資料與模型結果視覺化」相關問題時，哪個判斷最合理？
   type: multiple_choice
   options:
   - Matplotlib 只能繪製深度學習模型結構，不能畫資料分布。

@@ -641,7 +641,7 @@ questions:
   usage: both
 - id: 6341
   chapter_title: 模型最佳化與調校
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你正在訓練一個圖像分類模型，發現訓練準確率一直卡在 99%，但驗證準確率只有 70%。你嘗試了增加數據但效果有限。你應該優先嘗試什麼？
   type: multiple_choice
   options:
@@ -654,10 +654,10 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 6342
   chapter_title: 模型最佳化與調校
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你需要將一個 BERT 模型部署到手機 App 上，要求模型大小小於 50MB，且推論時間小於 100ms。目前的模型大小是 400MB。你應該採取什麼策略？
   type: multiple_choice
   options:
@@ -670,10 +670,10 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 6343
   chapter_title: 模型最佳化與調校
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你使用網格搜尋 (Grid Search) 調優 XGBoost 的 5 個超參數，每個參數設 5 個候選值。發現預計需要跑 1 個月才能跑完。你該怎麼辦？
   type: multiple_choice
   options:
@@ -686,10 +686,10 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 6344
   chapter_title: 模型最佳化與調校
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你的模型在訓練初期 Loss 下降非常慢，甚至不動。檢查數據沒問題。最可能的原因是什麼？
   type: multiple_choice
   options:
@@ -702,10 +702,10 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 6345
   chapter_title: 模型最佳化與調校
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你使用了 Dropout (rate=0.5)，發現訓練時的 Loss 比驗證時的 Loss 還要高。這正常嗎？
   type: multiple_choice
   options:
@@ -718,7 +718,7 @@ questions:
   tags:
   - chap-m4-ch3
   - sec-scenario
-  usage: mock
+  usage: both
 - chapter_title: 模型最佳化與調校
   section_title: 超參數調校
   text: 情境：網格搜尋 (Grid Search) 的主要缺點是？
@@ -2221,3 +2221,163 @@ questions:
   - sec-code-reading
   - code-reading
   usage: quiz
+- id: m4-ch3-scenario-006
+  chapter_title: 模型最佳化與調校
+  section_title: 情境題
+  text: 情境：Grid Search 太慢，且只有少數超參數重要。可改用什麼？
+  type: multiple_choice
+  options:
+  - Random Search 或 Bayesian Optimization
+  - 窮舉更多無關參數
+  - 手動猜一次後停止
+  - 刪除驗證集
+  correct_index: 0
+  explanation: Random search 和 Bayesian optimization 更有效率。
+  tags:
+  - chap-m4-ch3
+  - sec-scenario
+  usage: both
+- id: m4-ch3-scenario-007
+  chapter_title: 模型最佳化與調校
+  section_title: 情境題
+  text: 情境：模型訓練 loss 下降但驗證 loss 上升。可先加入什麼？
+  type: multiple_choice
+  options:
+  - 增加訓練 epoch 直到驗證更差
+  - 正規化、資料增強或 early stopping
+  - 把驗證集併入訓練集
+  - 提高模型容量不加限制
+  correct_index: 1
+  explanation: 驗證惡化代表過擬合，需抑制。
+  tags:
+  - chap-m4-ch3
+  - sec-scenario
+  usage: both
+- id: m4-ch3-scenario-008
+  chapter_title: 模型最佳化與調校
+  section_title: 情境題
+  text: 情境：你要壓縮模型但希望盡量保留準確率。可用教師模型產生軟標籤訓練小模型，這是什麼？
+  type: multiple_choice
+  options:
+  - 資料去識別化
+  - 關聯規則
+  - 知識蒸餾
+  - 時間序列差分
+  correct_index: 2
+  explanation: 知識蒸餾用大模型指導小模型。
+  tags:
+  - chap-m4-ch3
+  - sec-scenario
+  usage: both
+- id: m4-ch3-scenario-009
+  chapter_title: 模型最佳化與調校
+  section_title: 情境題
+  text: 情境：量化後模型變小變快，但準確率下降。應如何處理？
+  type: multiple_choice
+  options:
+  - 直接刪除測試集
+  - 把位元數降得更低
+  - 忽略準確率只看速度
+  - 做量化感知訓練或校正代表性資料
+  correct_index: 3
+  explanation: 量化需校正與測試，必要時用 QAT 降低損失。
+  tags:
+  - chap-m4-ch3
+  - sec-scenario
+  usage: both
+- id: m4-ch3-scenario-010
+  chapter_title: 模型最佳化與調校
+  section_title: 情境題
+  text: 情境：L1 正規化後許多權重變成 0。這帶來什麼效果？
+  type: multiple_choice
+  options:
+  - 促進稀疏性，有助特徵選擇或壓縮
+  - 讓所有權重都變成相同常數
+  - 保證模型無偏差
+  - 使資料自動平衡
+  correct_index: 0
+  explanation: L1 會推動部分係數為零。
+  tags:
+  - chap-m4-ch3
+  - sec-scenario
+  usage: both
+- id: m4-ch3-scenario-011
+  chapter_title: 模型最佳化與調校
+  section_title: 情境題
+  text: 情境：Dropout 訓練時啟用，但推論時忘了關閉。可能造成什麼？
+  type: multiple_choice
+  options:
+  - 模型一定完全正確
+  - 推論結果不穩定且效能下降
+  - 所有神經元都永久刪除
+  - 訓練資料會外洩
+  correct_index: 1
+  explanation: Dropout 推論時應停用或使用推論模式。
+  tags:
+  - chap-m4-ch3
+  - sec-scenario
+  usage: both
+- id: m4-ch3-scenario-012
+  chapter_title: 模型最佳化與調校
+  section_title: 情境題
+  text: 情境：超參數調校多次查看測試集結果後選最佳模型。問題是什麼？
+  type: multiple_choice
+  options:
+  - 這是標準做法，沒有問題
+  - 測試集會自動變成訓練集
+  - 測試集被用於模型選擇，評估會樂觀偏差
+  - 只會影響訓練速度
+  correct_index: 2
+  explanation: 測試集應保留到最後一次客觀評估。
+  tags:
+  - chap-m4-ch3
+  - sec-scenario
+  usage: both
+- id: m4-ch3-scenario-013
+  chapter_title: 模型最佳化與調校
+  section_title: 情境題
+  text: 情境：剪枝移除低重要性權重後，準確率略降。常見下一步是什麼？
+  type: multiple_choice
+  options:
+  - 立即把所有權重刪光
+  - 改用未標註資料當標籤
+  - 取消所有驗證
+  - 微調剪枝後模型恢復表現
+  correct_index: 3
+  explanation: 剪枝後 fine-tuning 可恢復部分準確率。
+  tags:
+  - chap-m4-ch3
+  - sec-scenario
+  usage: both
+- id: m4-ch3-scenario-014
+  chapter_title: 模型最佳化與調校
+  section_title: 情境題
+  text: 情境：Batch size 調很大後泛化變差。可嘗試什麼？
+  type: multiple_choice
+  options:
+  - 調整學習率、加入正則化或使用較小 batch
+  - 完全取消隨機性
+  - 只看訓練集 loss
+  - 把資料排序固定不變
+  correct_index: 0
+  explanation: Batch size 影響最佳化噪聲與泛化。
+  tags:
+  - chap-m4-ch3
+  - sec-scenario
+  usage: both
+- id: m4-ch3-scenario-015
+  chapter_title: 模型最佳化與調校
+  section_title: 情境題
+  text: 情境：模型需要在低功耗晶片上執行，乘法成本高。哪種壓縮方向有幫助？
+  type: multiple_choice
+  options:
+  - 增加浮點精度到 64-bit
+  - 低位元量化與硬體友善算子
+  - 使用更大的全連接層
+  - 把模型輸出改成長文字
+  correct_index: 1
+  explanation: 低位元運算可降低記憶體與計算成本。
+  tags:
+  - chap-m4-ch3
+  - sec-scenario
+  usage: both

@@ -146,7 +146,7 @@ questions:
 - id: 7210
   chapter_title: 模型上下文協議 (MCP)
   section_title: MCP 簡介與設計動機
-  text: MCP (Model Context Protocol) 旨在解決 AI 生態系統中的哪一個痛點？
+  text: 當團隊同時維護多個 AI 應用與多種資料源時，MCP 想優先降低哪一類整合成本？
   type: multiple_choice
   options:
   - 訓練最新大型語言模型的整體運算成本過於高昂
@@ -401,7 +401,7 @@ questions:
 - id: 7227
   chapter_title: 模型上下文協議 (MCP)
   section_title: MCP 核心元件
-  text: 如果你的 MCP 伺服器需要提供一個「讓代理人讀取本地設定檔」的功能，這個功能應該被定義為？
+  text: MCP 伺服器若只是暴露一份可讀的本地設定檔，讓代理人取用其中內容，應該把它建模為哪一種能力？
   type: multiple_choice
   options:
   - MCP Client (客戶端)
@@ -416,7 +416,7 @@ questions:
 - id: 7228
   chapter_title: 模型上下文協議 (MCP)
   section_title: MCP 核心元件
-  text: 如果你的 MCP 伺服器需要提供一個「幫使用者自動發送電子郵件」的功能，這個功能應該被定義為？
+  text: MCP 伺服器若要代表使用者寄出電子郵件，因為會造成外部副作用，應該把它建模為哪一種能力？
   type: multiple_choice
   options:
   - MCP Tool (工具)
@@ -702,7 +702,7 @@ questions:
 - id: 7246
   chapter_title: 模型上下文協議 (MCP)
   section_title: MCP 的三個角色
-  text: 在 MCP 術語中，「主機（Host）」與「客戶端（Client）」的關係類似於什麼？
+  text: 若 Claude Desktop 負責整體使用者體驗，而內部模組各自連到不同 MCP 伺服器，這對應到哪一種 Host 與 Client 關係？
   type: multiple_choice
   options:
   - 主機是伺服器，客戶端是使用者
@@ -718,7 +718,7 @@ questions:
 - id: 7247
   chapter_title: 模型上下文協議 (MCP)
   section_title: MCP 提供的三種能力
-  text: 下列哪個選項屬於 MCP 的「資源（Resources）」？
+  text: 判斷某個 MCP 能力是否屬於 Resources 時，哪一個例子最符合「可讀取內容」而非「執行動作」？
   type: multiple_choice
   options:
   - 一個負責發送 Slack 通知的函數
@@ -734,7 +734,7 @@ questions:
 - id: 7248
   chapter_title: 模型上下文協議 (MCP)
   section_title: MCP 的通訊方式
-  text: stdio 傳輸方式在何種情況下可能不適合使用？
+  text: 團隊想讓同一個 MCP 服務被多台遠端客戶端共用時，為什麼 stdio 可能不是合適的傳輸方式？
   type: multiple_choice
   options:
   - 當主機和伺服器在同一台電腦上時
@@ -766,7 +766,7 @@ questions:
 - id: 7250
   chapter_title: 模型上下文協議 (MCP)
   section_title: 問題的起源：為什麼需要 MCP？
-  text: MCP 誕生之前，開發者整合 AI 與工具的典型困境為何？
+  text: 在沒有 MCP 標準前，新增一個資料庫工具到多個 AI 應用時，開發者通常會遇到什麼維護困境？
   type: multiple_choice
   options:
   - 所有工具都需要收費，開源方案很少
@@ -798,7 +798,7 @@ questions:
 - id: 7252
   chapter_title: 模型上下文協議 (MCP)
   section_title: MCP 的安全設計
-  text: 提示注入攻擊（Prompt Injection）如何影響 MCP 系統的安全性？
+  text: 若代理人讀取到惡意網頁內容並被誘導去呼叫高風險工具，這屬於提示注入對 MCP 系統造成的哪種安全問題？
   type: multiple_choice
   options:
   - 攻擊者透過修改 MCP 協議的原始碼入侵系統

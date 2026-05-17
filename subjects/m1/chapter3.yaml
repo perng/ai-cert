@@ -641,7 +641,7 @@ questions:
   usage: both
 - id: 3341
   chapter_title: 機器學習基礎概念
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你正在訓練一個癌症預測模型，數據集中 99% 是健康樣本，1% 是癌症樣本。你發現模型的 Accuracy 為 99%，但 Recall 為 0%。這意味著什麼？你該如何向非技術背景的主管解釋這個問題的嚴重性？
   type: multiple_choice
   options:
@@ -654,10 +654,10 @@ questions:
   tags:
   - chap-m1-ch3
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 3342
   chapter_title: 機器學習基礎概念
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：在房價預測比賽中，你使用決策樹模型，發現訓練誤差幾乎為 0，但測試誤差很高。你嘗試增加樹的深度，結果測試誤差更高了。這是什麼現象？你應該採取什麼反向操作？
   type: multiple_choice
   options:
@@ -670,10 +670,10 @@ questions:
   tags:
   - chap-m1-ch3
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 3343
   chapter_title: 機器學習基礎概念
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你正在使用 K-Means 對客戶進行分群。你發現無論怎麼調整 K 值，分群結果都不太合理，且可視化發現數據呈現「甜甜圈」狀（一圈包一圈）。為什麼 K-Means 失效了？應改用什麼演算法？
   type: multiple_choice
   options:
@@ -686,10 +686,10 @@ questions:
   tags:
   - chap-m1-ch3
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 3344
   chapter_title: 機器學習基礎概念
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你的模型在訓練集和測試集上的表現都很差（高偏差）。你的同事建議「增加更多數據」來解決問題。你認為這個建議有效嗎？為什麼？
   type: multiple_choice
   options:
@@ -702,10 +702,10 @@ questions:
   tags:
   - chap-m1-ch3
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 3345
   chapter_title: 機器學習基礎概念
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你正在構建一個推薦系統，使用矩陣分解 (Matrix Factorization)。你發現模型傾向於推薦熱門商品給所有人。為了增加推薦的「多樣性」和「驚喜度」，你可以在損失函數中加入什麼項？
   type: multiple_choice
   options:
@@ -718,7 +718,7 @@ questions:
   tags:
   - chap-m1-ch3
   - sec-scenario
-  usage: mock
+  usage: both
 - chapter_title: 機器學習基礎概念
   section_title: 監督式學習
   text: 情境：若你想預測明天的房價（連續數值），應使用哪種模型？
@@ -1086,4 +1086,164 @@ questions:
   tags:
   - chap-m1-ch3
   - sec-model-evaluation
+  usage: both
+- id: m1-ch3-scenario-006
+  chapter_title: 機器學習基礎概念
+  section_title: 情境題
+  text: 情境：信用評分模型在訓練集表現好、驗證集表現差。你想先判斷是否過擬合，應看哪個訊號？
+  type: multiple_choice
+  options:
+  - 訓練誤差低但驗證誤差高，兩者落差明顯
+  - 訓練誤差和驗證誤差都高
+  - 訓練資料筆數比特徵數多
+  - 模型輸出類別名稱為中文
+  correct_index: 0
+  explanation: 過擬合的典型特徵是記住訓練資料但泛化差。
+  tags:
+  - chap-m1-ch3
+  - sec-scenario
+  usage: both
+- id: m1-ch3-scenario-007
+  chapter_title: 機器學習基礎概念
+  section_title: 情境題
+  text: 情境：你用 K-Means 分群顧客，但每次初始化得到不同群。較合理的改善方式是什麼？
+  type: multiple_choice
+  options:
+  - 只固定 K=1，避免群結果不同
+  - 多次初始化並用輪廓係數等指標比較分群品質
+  - 把所有特徵都改成類別文字
+  - 用測試標籤直接指定群中心
+  correct_index: 1
+  explanation: K-Means 對初始化敏感，應多次初始化並評估分群品質。
+  tags:
+  - chap-m1-ch3
+  - sec-scenario
+  usage: both
+- id: m1-ch3-scenario-008
+  chapter_title: 機器學習基礎概念
+  section_title: 情境題
+  text: 情境：醫療篩檢模型必須盡量少漏掉病人，即使誤報稍多也可接受。應優先提高哪個指標？
+  type: multiple_choice
+  options:
+  - Precision，因為它只關心預測陽性的正確率
+  - Accuracy，因為類別不平衡時一定可靠
+  - Recall，因為它衡量實際陽性中被抓到的比例
+  - 訓練速度，因為速度越快越少漏診
+  correct_index: 2
+  explanation: 少漏診代表降低 False Negative，對應提高 Recall。
+  tags:
+  - chap-m1-ch3
+  - sec-scenario
+  usage: both
+- id: m1-ch3-scenario-009
+  chapter_title: 機器學習基礎概念
+  section_title: 情境題
+  text: 情境：模型的 ROC-AUC 高，但在實際門檻下 Precision 很低，業務抱怨誤報太多。下一步較合理的是什麼？
+  type: multiple_choice
+  options:
+  - 完全忽略門檻，因為 AUC 高就代表上線必定好
+  - 把所有負例刪掉，提高 Precision
+  - 改用訓練集評估，避免業務抱怨
+  - 調整決策門檻並檢視 PR 曲線與成本權衡
+  correct_index: 3
+  explanation: AUC 是排序能力，實務仍需選擇符合成本的門檻。
+  tags:
+  - chap-m1-ch3
+  - sec-scenario
+  usage: both
+- id: m1-ch3-scenario-010
+  chapter_title: 機器學習基礎概念
+  section_title: 情境題
+  text: 情境：房價預測模型的殘差在高價房明顯偏大。這代表什麼可能問題？
+  type: multiple_choice
+  options:
+  - 模型對高價區間學習不足，需檢查特徵、分段模型或轉換目標
+  - 模型已完美，殘差越大代表資訊越多
+  - 所有高價房都應從資料中刪除
+  - 分類門檻設定錯誤
+  correct_index: 0
+  explanation: 殘差呈現系統性模式表示模型未捕捉某些結構。
+  tags:
+  - chap-m1-ch3
+  - sec-scenario
+  usage: both
+- id: m1-ch3-scenario-011
+  chapter_title: 機器學習基礎概念
+  section_title: 情境題
+  text: 情境：你用 DBSCAN 分群，很多點被標成噪聲。最應先檢查哪兩個因素？
+  type: multiple_choice
+  options:
+  - 訓練輪數與學習率是否太低
+  - eps、min_samples 以及資料尺度是否合理
+  - 輸出層是否使用 Softmax
+  - 測試集標籤是否已 One-Hot
+  correct_index: 1
+  explanation: DBSCAN 對距離尺度與密度參數敏感。
+  tags:
+  - chap-m1-ch3
+  - sec-scenario
+  usage: both
+- id: m1-ch3-scenario-012
+  chapter_title: 機器學習基礎概念
+  section_title: 情境題
+  text: 情境：推薦模型準確率高，但只推薦熱門商品，長尾商品曝光很低。應補充哪類評估？
+  type: multiple_choice
+  options:
+  - 只看 RMSE，因為越低一定代表推薦越好
+  - 只看模型參數量，因為越大越公平
+  - 覆蓋率、多樣性與新穎性等推薦品質指標
+  - 只看訓練時間，因為越短越能推薦長尾商品
+  correct_index: 2
+  explanation: 推薦系統除了準確率，也需評估多樣性、覆蓋率與商業目標。
+  tags:
+  - chap-m1-ch3
+  - sec-scenario
+  usage: both
+- id: m1-ch3-scenario-013
+  chapter_title: 機器學習基礎概念
+  section_title: 情境題
+  text: 情境：使用交叉驗證時，時間序列資料被隨機切分，結果離線表現很好，上線很差。問題是什麼？
+  type: multiple_choice
+  options:
+  - 模型沒有使用足夠多的類別特徵
+  - 資料一定太少，交叉驗證不能用
+  - 時間序列不需要驗證集
+  - 切分破壞時間順序，未模擬用過去預測未來
+  correct_index: 3
+  explanation: 時間序列應用 rolling 或 forward chaining，避免未來資訊洩漏。
+  tags:
+  - chap-m1-ch3
+  - sec-scenario
+  usage: both
+- id: m1-ch3-scenario-014
+  chapter_title: 機器學習基礎概念
+  section_title: 情境題
+  text: 情境：多分類模型常把 A 類誤判成 B 類。最直接的診斷工具是什麼？
+  type: multiple_choice
+  options:
+  - 混淆矩陣，用來觀察各類別之間的錯誤模式
+  - 箱型圖，用來顯示四分位距
+  - PCA 特徵值表，用來找主成分
+  - 學習率排程圖，用來顯示更新步伐
+  correct_index: 0
+  explanation: 混淆矩陣可顯示類別間誤判方向。
+  tags:
+  - chap-m1-ch3
+  - sec-scenario
+  usage: both
+- id: m1-ch3-scenario-015
+  chapter_title: 機器學習基礎概念
+  section_title: 情境題
+  text: 情境：你只有少量標註資料，卻有大量未標註資料，希望先找自然群組輔助理解資料。可先嘗試哪類方法？
+  type: multiple_choice
+  options:
+  - 完全監督式分類，且不需要標籤
+  - 非監督式分群或降維探索
+  - 只計算 Accuracy
+  - 刪除未標註資料，因為完全無用
+  correct_index: 1
+  explanation: 未標註資料可用非監督方法探索結構。
+  tags:
+  - chap-m1-ch3
+  - sec-scenario
   usage: both

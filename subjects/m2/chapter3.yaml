@@ -641,7 +641,7 @@ questions:
   usage: both
 - id: 4341
   chapter_title: 電腦視覺 (CV)
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你訓練了一個安全帽偵測模型，在測試集上 IoU 高達 0.9。但部署到工地現場後，發現工人只要「側著頭」或「低頭」，模型就偵測不到安全帽。這顯示訓練資料缺乏什麼？應如何改善？
   type: multiple_choice
   options:
@@ -654,10 +654,10 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 4342
   chapter_title: 電腦視覺 (CV)
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你的自駕車模型在白天表現完美，但在下雨的夜晚經常誤判路況。這屬於什麼現象？在不重新收集大量夜間數據的情況下，可以嘗試什麼技術來緩解？
   type: multiple_choice
   options:
@@ -670,10 +670,10 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 4343
   chapter_title: 電腦視覺 (CV)
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你正在開發一個手機端的即時手勢識別 App。你發現使用 ResNet-50 雖然準確，但每秒只能跑 5 幀 (5 FPS)，導致體驗卡頓。你應該優先考慮什麼優化策略？
   type: multiple_choice
   options:
@@ -686,10 +686,10 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 4344
   chapter_title: 電腦視覺 (CV)
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：醫療團隊請你開發一個 AI 模型來自動圈選 X 光片中的微小腫瘤。你選擇了 YOLO 模型，但醫生回饋說「位置大概對，但輪廓不夠精確，無法用於手術規劃」。你應該改用什麼模型？
   type: multiple_choice
   options:
@@ -702,10 +702,10 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 4345
   chapter_title: 電腦視覺 (CV)
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你的公司計畫在商場安裝人臉辨識系統以分析客群。法務部門警告這可能違反個資法。除了取得顧客同意外，在技術架構上可以採取什麼「隱私設計 (Privacy by Design)」措施？
   type: multiple_choice
   options:
@@ -718,7 +718,7 @@ questions:
   tags:
   - chap-m2-ch3
   - sec-scenario
-  usage: mock
+  usage: both
 - chapter_title: 電腦視覺 (CV)
   section_title: 核心任務與模型
   text: 情境：CNN (卷積神經網路) 中的「池化層 (Pooling Layer)」主要功能是？
@@ -1139,3 +1139,163 @@ questions:
   - sec-past-exam
   - past-exam
   usage: mock
+- id: m2-ch3-scenario-006
+  chapter_title: 電腦視覺 (CV)
+  section_title: 情境題
+  text: 情境：安全帽偵測模型在測試集好，但現場背光時失準。應優先補強什麼？
+  type: multiple_choice
+  options:
+  - 增加不同光照、角度與遮擋情境的資料或增強
+  - 只提高分類閾值，不需要新資料
+  - 改成文字情感分析模型
+  - 刪除所有背光影像，讓測試更乾淨
+  correct_index: 0
+  explanation: 視覺模型需涵蓋部署環境的變異。
+  tags:
+  - chap-m2-ch3
+  - sec-scenario
+  usage: both
+- id: m2-ch3-scenario-007
+  chapter_title: 電腦視覺 (CV)
+  section_title: 情境題
+  text: 情境：醫師需要精準腫瘤邊界，而不是只知道有無腫瘤。應選哪類任務？
+  type: multiple_choice
+  options:
+  - 影像分類
+  - 語意或實例分割
+  - 文字摘要
+  - 推薦排序
+  correct_index: 1
+  explanation: 需要像素級輪廓時，分割比分類或偵測更適合。
+  tags:
+  - chap-m2-ch3
+  - sec-scenario
+  usage: both
+- id: m2-ch3-scenario-008
+  chapter_title: 電腦視覺 (CV)
+  section_title: 情境題
+  text: 情境：倉儲攝影機需即時辨識包裹位置並框出座標。較適合哪類模型？
+  type: multiple_choice
+  options:
+  - 只做影像分類的 CNN
+  - 只做 PCA 降維
+  - 物件偵測模型，如 YOLO 或 Faster R-CNN
+  - 只做語音辨識模型
+  correct_index: 2
+  explanation: 需要位置框與類別時使用物件偵測。
+  tags:
+  - chap-m2-ch3
+  - sec-scenario
+  usage: both
+- id: m2-ch3-scenario-009
+  chapter_title: 電腦視覺 (CV)
+  section_title: 情境題
+  text: 情境：模型在高解析影像上準確，但邊緣設備太慢。可先採取哪個策略？
+  type: multiple_choice
+  options:
+  - 把影像解析度無限提高
+  - 改用全參數大型語言模型
+  - 取消推論延遲需求
+  - 模型壓縮、量化或改用輕量架構
+  correct_index: 3
+  explanation: 邊緣部署需在準確率、模型大小與延遲間取捨。
+  tags:
+  - chap-m2-ch3
+  - sec-scenario
+  usage: both
+- id: m2-ch3-scenario-010
+  chapter_title: 電腦視覺 (CV)
+  section_title: 情境題
+  text: 情境：人臉辨識系統將特定族群誤判率明顯提高。除了技術修正，還應做什麼？
+  type: multiple_choice
+  options:
+  - 進行公平性評估、資料代表性檢查與合規審查
+  - 只公布整體準確率，避免細分族群
+  - 刪除所有少數族群資料
+  - 把錯誤歸因於使用者長相
+  correct_index: 0
+  explanation: 生物辨識涉及公平與隱私，需分群評估。
+  tags:
+  - chap-m2-ch3
+  - sec-scenario
+  usage: both
+- id: m2-ch3-scenario-011
+  chapter_title: 電腦視覺 (CV)
+  section_title: 情境題
+  text: 情境：資料標註員對同一張影像中的模糊物體標註不一致。應如何改善？
+  type: multiple_choice
+  options:
+  - 只保留第一位標註員的結果
+  - 制定標註規範並檢查標註者一致性
+  - 讓模型自行猜測正確標籤
+  - 把所有模糊物體標成背景
+  correct_index: 1
+  explanation: 視覺標註品質需明確規則與一致性管理。
+  tags:
+  - chap-m2-ch3
+  - sec-scenario
+  usage: both
+- id: m2-ch3-scenario-012
+  chapter_title: 電腦視覺 (CV)
+  section_title: 情境題
+  text: 情境：自駕模型在模擬資料表現好，真實道路表現差。這反映什麼問題？
+  type: multiple_choice
+  options:
+  - 模型不需要任何驗證
+  - 訓練集太真實
+  - Domain gap，需要真實資料、域適應或模擬隨機化
+  - 標籤數量一定太多
+  correct_index: 2
+  explanation: 模擬與真實分佈不同會造成落差。
+  tags:
+  - chap-m2-ch3
+  - sec-scenario
+  usage: both
+- id: m2-ch3-scenario-013
+  chapter_title: 電腦視覺 (CV)
+  section_title: 情境題
+  text: 情境：以圖搜圖系統希望文字和圖片可映射到同一語意空間。較適合哪種模型概念？
+  type: multiple_choice
+  options:
+  - 單純的 K-Means 分群
+  - 只輸出邊界框的偵測器
+  - 只處理時間序列的 ARIMA
+  - CLIP 類多模態對齊模型
+  correct_index: 3
+  explanation: CLIP 透過圖文對齊支援跨模態檢索。
+  tags:
+  - chap-m2-ch3
+  - sec-scenario
+  usage: both
+- id: m2-ch3-scenario-014
+  chapter_title: 電腦視覺 (CV)
+  section_title: 情境題
+  text: 情境：OCR 模型在掃描文件上好，但手機拍攝歪斜文件失準。前處理應補強什麼？
+  type: multiple_choice
+  options:
+  - 透視校正、去噪與資料增強
+  - 把文字翻譯成英文
+  - 增加推薦系統特徵
+  - 刪除所有空白頁
+  correct_index: 0
+  explanation: 文件影像常需校正角度、光照與雜訊。
+  tags:
+  - chap-m2-ch3
+  - sec-scenario
+  usage: both
+- id: m2-ch3-scenario-015
+  chapter_title: 電腦視覺 (CV)
+  section_title: 情境題
+  text: 情境：工廠瑕疵樣本很少，但正常樣本很多。可優先考慮哪類方法？
+  type: multiple_choice
+  options:
+  - 只訓練大型分類器且不處理不平衡
+  - 異常偵測或少樣本學習
+  - 把正常樣本全部刪除
+  - 將影像改成音訊資料
+  correct_index: 1
+  explanation: 瑕疵少時，異常偵測可利用大量正常樣本建立基準。
+  tags:
+  - chap-m2-ch3
+  - sec-scenario
+  usage: both

@@ -641,7 +641,7 @@ questions:
   usage: both
 - id: 5541
   chapter_title: 大數據治理
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你是一家醫院的資料科學家，想與另一家醫院合作訓練疾病預測模型，但雙方都受限於法規不能交換病歷資料。你應該建議採用什麼技術？
   type: multiple_choice
   options:
@@ -654,10 +654,10 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 5542
   chapter_title: 大數據治理
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：公司決定發布一份匿名的用戶行為數據集供學術研究。你使用了 k-匿名技術，但發現某個分組裡的所有用戶都購買了同一種敏感商品。這存在什麼風險？應如何改進？
   type: multiple_choice
   options:
@@ -670,10 +670,10 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 5543
   chapter_title: 大數據治理
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：行銷部門要求你提供客戶名單進行精準行銷，但該名單當初蒐集時的使用條款僅註明「用於改善服務品質」。你應該如何處理？
   type: multiple_choice
   options:
@@ -686,10 +686,10 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 5544
   chapter_title: 大數據治理
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你正在設計一個需要高隱私保護的統計查詢系統。為了防止差分攻擊，你決定引入差分隱私。當你將隱私預算 (epsilon) 設定得非常小時，會發生什麼事？
   type: multiple_choice
   options:
@@ -702,10 +702,10 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 5545
   chapter_title: 大數據治理
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：公司計畫將核心業務數據上傳至公有雲進行 AI 分析，但資安長擔心雲端供應商會偷看數據。哪種技術能從根本上消除這個疑慮？
   type: multiple_choice
   options:
@@ -718,7 +718,7 @@ questions:
   tags:
   - chap-m3-ch5
   - sec-scenario
-  usage: mock
+  usage: both
 - chapter_title: 大數據治理
   section_title: 隱私保護
   text: 情境：差分隱私 (Differential Privacy) 中的 Epsilon (隱私預算) 越小，代表？
@@ -1575,3 +1575,163 @@ questions:
   - sec-code-reading
   - code-reading
   usage: quiz
+- id: m3-ch5-scenario-006
+  chapter_title: 大數據治理
+  section_title: 情境題
+  text: 情境：研究單位發布匿名資料後，外部可用郵遞區號與生日重新識別個人。這表示什麼？
+  type: multiple_choice
+  options:
+  - 去識別不足，準識別欄位仍可能造成重識別
+  - 資料完全安全，因為姓名已刪除
+  - 模型過擬合
+  - 視覺化配色錯誤
+  correct_index: 0
+  explanation: 匿名化需考慮準識別欄位組合風險。
+  tags:
+  - chap-m3-ch5
+  - sec-scenario
+  usage: both
+- id: m3-ch5-scenario-007
+  chapter_title: 大數據治理
+  section_title: 情境題
+  text: 情境：跨國資料要移轉到海外雲端訓練。應先確認什麼？
+  type: multiple_choice
+  options:
+  - 只確認雲端價格最低
+  - 資料跨境傳輸法規、合約與保護措施
+  - 只看 GPU 型號
+  - 只問模型是否支援中文
+  correct_index: 1
+  explanation: 跨境資料涉及法規與合約義務。
+  tags:
+  - chap-m3-ch5
+  - sec-scenario
+  usage: both
+- id: m3-ch5-scenario-008
+  chapter_title: 大數據治理
+  section_title: 情境題
+  text: 情境：使用者撤回同意後，資料仍在下游特徵表中。治理流程需具備什麼？
+  type: multiple_choice
+  options:
+  - 只刪除前端畫面上的姓名
+  - 保留所有副本不需通知
+  - 資料刪除/停用的血緣追蹤與下游同步機制
+  - 把撤回視為新標籤
+  correct_index: 2
+  explanation: 資料權利請求需追蹤下游使用。
+  tags:
+  - chap-m3-ch5
+  - sec-scenario
+  usage: both
+- id: m3-ch5-scenario-009
+  chapter_title: 大數據治理
+  section_title: 情境題
+  text: 情境：模型訓練使用敏感資料，團隊想降低單筆資料被反推出來的風險。可考慮什麼？
+  type: multiple_choice
+  options:
+  - 提高訓練輪數到無限大
+  - 把資料全部公開增加透明度
+  - 只改變圖表顏色
+  - 差分隱私或隱私保護訓練技術
+  correct_index: 3
+  explanation: 差分隱私可限制單筆資料對輸出的影響。
+  tags:
+  - chap-m3-ch5
+  - sec-scenario
+  usage: both
+- id: m3-ch5-scenario-010
+  chapter_title: 大數據治理
+  section_title: 情境題
+  text: 情境：兩家醫院不能交換原始資料，但想共同訓練模型。可採用什麼？
+  type: multiple_choice
+  options:
+  - 聯邦學習搭配安全聚合
+  - 把所有病歷寄到同一個信箱
+  - 只訓練其中一家醫院資料
+  - 手動複製病患姓名
+  correct_index: 0
+  explanation: 聯邦學習讓資料留在本地，只交換模型更新。
+  tags:
+  - chap-m3-ch5
+  - sec-scenario
+  usage: both
+- id: m3-ch5-scenario-011
+  chapter_title: 大數據治理
+  section_title: 情境題
+  text: 情境：資料目錄中找不到資料負責人，問題資料無人修正。治理上缺少什麼？
+  type: multiple_choice
+  options:
+  - 更多模型層數
+  - 資料擁有者與 steward 責任分工
+  - 更大的 batch size
+  - 更多圖表動畫
+  correct_index: 1
+  explanation: 資料治理需明確責任角色。
+  tags:
+  - chap-m3-ch5
+  - sec-scenario
+  usage: both
+- id: m3-ch5-scenario-012
+  chapter_title: 大數據治理
+  section_title: 情境題
+  text: 情境：業務想用原本為客服蒐集的錄音訓練行銷模型。應先檢查什麼？
+  type: multiple_choice
+  options:
+  - 錄音檔名是否好看
+  - 模型是否能輸出英文
+  - 原始告知與同意範圍是否涵蓋新用途
+  - 資料大小是否剛好為整數
+  correct_index: 2
+  explanation: 資料使用目的變更需符合告知與同意。
+  tags:
+  - chap-m3-ch5
+  - sec-scenario
+  usage: both
+- id: m3-ch5-scenario-013
+  chapter_title: 大數據治理
+  section_title: 情境題
+  text: 情境：公開統計查詢系統允許使用者反覆查詢小群體。可能有什麼風險？
+  type: multiple_choice
+  options:
+  - 查詢速度一定變快
+  - 資料品質一定提升
+  - 模型會自動公平
+  - 差分攻擊或成員推論風險
+  correct_index: 3
+  explanation: 小群體重複查詢可能洩漏個人資訊。
+  tags:
+  - chap-m3-ch5
+  - sec-scenario
+  usage: both
+- id: m3-ch5-scenario-014
+  chapter_title: 大數據治理
+  section_title: 情境題
+  text: 情境：AI 治理委員會要求所有高風險模型上線前完成審查。審查材料應包含什麼？
+  type: multiple_choice
+  options:
+  - 資料來源、用途、風險、評估結果與監控計畫
+  - 只包含模型 Logo
+  - 只包含開發者個人喜好
+  - 只包含硬體價格
+  correct_index: 0
+  explanation: 高風險模型需完整治理文件。
+  tags:
+  - chap-m3-ch5
+  - sec-scenario
+  usage: both
+- id: m3-ch5-scenario-015
+  chapter_title: 大數據治理
+  section_title: 情境題
+  text: 情境：資料科學家直接下載生產資料到個人筆電分析。最應補強哪項控制？
+  type: multiple_choice
+  options:
+  - 提高筆電螢幕亮度
+  - 存取權限、稽核紀錄與安全分析環境
+  - 改用不同圖表工具
+  - 增加模型參數量
+  correct_index: 1
+  explanation: 敏感資料分析需受控環境與稽核。
+  tags:
+  - chap-m3-ch5
+  - sec-scenario
+  usage: both

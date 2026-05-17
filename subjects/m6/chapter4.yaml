@@ -712,7 +712,7 @@ questions:
 - id: m6-hc-052
   chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
   section_title: OpenCV 基礎：影像表示與讀寫
-  text: 關於「OpenCV 基礎：影像表示與讀寫」，下列哪一項敘述最正確？
+  text: 哪個選項最能反映「OpenCV 基礎：影像表示與讀寫」的實務重點？
   type: multiple_choice
   options:
   - OpenCV 讀取彩色影像預設是 BGR 通道順序。
@@ -728,7 +728,7 @@ questions:
 - id: m6-hc-053
   chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
   section_title: OpenCV 基礎：影像表示與讀寫
-  text: 在實務應用「OpenCV 基礎：影像表示與讀寫」時，下列哪一項判斷較合理？
+  text: 處理「OpenCV 基礎：影像表示與讀寫」相關問題時，哪個判斷最合理？
   type: multiple_choice
   options:
   - OpenCV 讀入影像預設為 RGB，因此不需注意色彩通道。
@@ -744,7 +744,7 @@ questions:
 - id: m6-hc-054
   chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
   section_title: OpenCV 基礎：影像表示與讀寫
-  text: 下列哪一項最符合「OpenCV 基礎：影像表示與讀寫」的核心觀念？
+  text: 下列何者是「OpenCV 基礎：影像表示與讀寫」最重要的操作原則？
   type: multiple_choice
   options:
   - OpenCV 讀入影像預設為 RGB，因此不需注意色彩通道。
@@ -760,7 +760,7 @@ questions:
 - id: m6-hc-055
   chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
   section_title: 影像前處理與特徵
-  text: 關於「影像前處理與特徵」，下列哪一項敘述最正確？
+  text: 針對「影像前處理與特徵」，哪個說法符合教材觀點？
   type: multiple_choice
   options:
   - 所有影像前處理都應在標籤資訊之後才決定，以提高測試分數。
@@ -776,7 +776,7 @@ questions:
 - id: m6-hc-056
   chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
   section_title: 影像前處理與特徵
-  text: 在實務應用「影像前處理與特徵」時，下列哪一項判斷較合理？
+  text: 哪一項最能避免「影像前處理與特徵」常見誤解？
   type: multiple_choice
   options:
   - 所有影像前處理都應在標籤資訊之後才決定，以提高測試分數。
@@ -792,7 +792,7 @@ questions:
 - id: m6-hc-057
   chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
   section_title: 影像前處理與特徵
-  text: 下列哪一項最符合「影像前處理與特徵」的核心觀念？
+  text: 學習「影像前處理與特徵」時，應優先掌握哪個觀念？
   type: multiple_choice
   options:
   - threshold 常用於產生二值遮罩以分離前景與背景。
@@ -808,7 +808,7 @@ questions:
 - id: m6-hc-058
   chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
   section_title: Matplotlib：影像與錯誤案例視覺化
-  text: 關於「Matplotlib：影像與錯誤案例視覺化」，下列哪一項敘述最正確？
+  text: 把「Matplotlib：影像與錯誤案例視覺化」用在 AI 專案中時，哪個做法較恰當？
   type: multiple_choice
   options:
   - 顯示影像時可以忽略 BGR/RGB 差異，顏色永遠正確。
@@ -824,7 +824,7 @@ questions:
 - id: m6-hc-059
   chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
   section_title: Matplotlib：影像與錯誤案例視覺化
-  text: 在實務應用「Matplotlib：影像與錯誤案例視覺化」時，下列哪一項判斷較合理？
+  text: 下列哪個情境最能說明「Matplotlib：影像與錯誤案例視覺化」的用途？
   type: multiple_choice
   options:
   - OpenCV 影像用 Matplotlib 顯示前常需 BGR 轉 RGB。
@@ -840,7 +840,7 @@ questions:
 - id: m6-hc-060
   chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
   section_title: Matplotlib：影像與錯誤案例視覺化
-  text: 下列哪一項最符合「Matplotlib：影像與錯誤案例視覺化」的核心觀念？
+  text: 哪個選項最能反映「Matplotlib：影像與錯誤案例視覺化」的實務重點？
   type: multiple_choice
   options:
   - 視覺化能提早發現標籤錯誤、裁切錯誤與顏色通道問題。
@@ -856,7 +856,7 @@ questions:
 - id: m6-hc-061
   chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
   section_title: 影像資料進入模型
-  text: 關於「影像資料進入模型」，下列哪一項敘述最正確？
+  text: 處理「影像資料進入模型」相關問題時，哪個判斷最合理？
   type: multiple_choice
   options:
   - 模型輸入可混用 HWC 與 CHW，框架會自動判斷。
@@ -872,7 +872,7 @@ questions:
 - id: m6-hc-062
   chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
   section_title: 影像資料進入模型
-  text: 在實務應用「影像資料進入模型」時，下列哪一項判斷較合理？
+  text: 下列何者是「影像資料進入模型」最重要的操作原則？
   type: multiple_choice
   options:
   - 訓練與推論的影像前處理必須一致。
@@ -888,7 +888,7 @@ questions:
 - id: m6-hc-063
   chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
   section_title: 影像資料進入模型
-  text: 下列哪一項最符合「影像資料進入模型」的核心觀念？
+  text: 針對「影像資料進入模型」，哪個說法符合教材觀點？
   type: multiple_choice
   options:
   - RGB/BGR 通道錯誤會讓模型輸入與預期不同。
@@ -904,7 +904,7 @@ questions:
 - id: m6-hc-064
   chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
   section_title: torchvision：資料集、Transforms 與預訓練模型
-  text: 關於「torchvision：資料集、Transforms 與預訓練模型」，下列哪一項敘述最正確？
+  text: 哪一項最能避免「torchvision：資料集、Transforms 與預訓練模型」常見誤解？
   type: multiple_choice
   options:
   - torchvision transforms 可組合 resize、flip、ToTensor 與 Normalize。
@@ -920,7 +920,7 @@ questions:
 - id: m6-hc-065
   chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
   section_title: torchvision：資料集、Transforms 與預訓練模型
-  text: 在實務應用「torchvision：資料集、Transforms 與預訓練模型」時，下列哪一項判斷較合理？
+  text: 學習「torchvision：資料集、Transforms 與預訓練模型」時，應優先掌握哪個觀念？
   type: multiple_choice
   options:
   - transforms 只會改變標籤，不會影響影像張量。
@@ -936,7 +936,7 @@ questions:
 - id: m6-hc-066
   chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
   section_title: torchvision：資料集、Transforms 與預訓練模型
-  text: 下列哪一項最符合「torchvision：資料集、Transforms 與預訓練模型」的核心觀念？
+  text: 把「torchvision：資料集、Transforms 與預訓練模型」用在 AI 專案中時，哪個做法較恰當？
   type: multiple_choice
   options:
   - transforms 只會改變標籤，不會影響影像張量。
@@ -952,7 +952,7 @@ questions:
 - id: m6-hc-067
   chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
   section_title: torchvision 預訓練模型與 Transfer Learning
-  text: 關於「torchvision 預訓練模型與 Transfer Learning」，下列哪一項敘述最正確？
+  text: 把 ResNet 用到新影像分類任務時，通常要先改哪個部分？
   type: multiple_choice
   options:
   - transfer learning 常替換最後分類層以符合新類別數。
@@ -968,7 +968,7 @@ questions:
 - id: m6-hc-068
   chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
   section_title: torchvision 預訓練模型與 Transfer Learning
-  text: 在實務應用「torchvision 預訓練模型與 Transfer Learning」時，下列哪一項判斷較合理？
+  text: 資料量不大時，預訓練 backbone 能帶來哪個優勢？
   type: multiple_choice
   options:
   - transfer learning 一定要從零開始訓練所有卷積層。
@@ -984,7 +984,7 @@ questions:
 - id: m6-hc-069
   chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
   section_title: torchvision 預訓練模型與 Transfer Learning
-  text: 下列哪一項最符合「torchvision 預訓練模型與 Transfer Learning」的核心觀念？
+  text: 處理「torchvision 預訓練模型與 Transfer Learning」相關問題時，哪個判斷最合理？
   type: multiple_choice
   options:
   - transfer learning 一定要從零開始訓練所有卷積層。
@@ -1000,7 +1000,7 @@ questions:
 - id: m6-hc-070
   chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
   section_title: OpenCV 實務流程：從原始影像到模型資料
-  text: 關於「OpenCV 實務流程：從原始影像到模型資料」，下列哪一項敘述最正確？
+  text: 下列何者是「OpenCV 實務流程：從原始影像到模型資料」最重要的操作原則？
   type: multiple_choice
   options:
   - 影像專案應先檢查損毀檔案、尺寸與通道數。
@@ -1016,7 +1016,7 @@ questions:
 - id: m6-hc-071
   chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
   section_title: OpenCV 實務流程：從原始影像到模型資料
-  text: 在實務應用「OpenCV 實務流程：從原始影像到模型資料」時，下列哪一項判斷較合理？
+  text: 針對「OpenCV 實務流程：從原始影像到模型資料」，哪個說法符合教材觀點？
   type: multiple_choice
   options:
   - 裁切 ROI 可降低背景雜訊並讓模型聚焦目標區域。
@@ -1032,7 +1032,7 @@ questions:
 - id: m6-hc-072
   chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
   section_title: OpenCV 實務流程：從原始影像到模型資料
-  text: 下列哪一項最符合「OpenCV 實務流程：從原始影像到模型資料」的核心觀念？
+  text: 哪一項最能避免「OpenCV 實務流程：從原始影像到模型資料」常見誤解？
   type: multiple_choice
   options:
   - 影像資料流程只要能讀檔即可，不需要記錄 resize 與 normalization。
@@ -1048,7 +1048,7 @@ questions:
 - id: m6-hc-073
   chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
   section_title: 傳統電腦視覺與深度學習的分工
-  text: 關於「傳統電腦視覺與深度學習的分工」，下列哪一項敘述最正確？
+  text: 學習「傳統電腦視覺與深度學習的分工」時，應優先掌握哪個觀念？
   type: multiple_choice
   options:
   - 傳統特徵在所有情境都已失效，不需考慮。
@@ -1064,7 +1064,7 @@ questions:
 - id: m6-hc-074
   chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
   section_title: 傳統電腦視覺與深度學習的分工
-  text: 在實務應用「傳統電腦視覺與深度學習的分工」時，下列哪一項判斷較合理？
+  text: 把「傳統電腦視覺與深度學習的分工」用在 AI 專案中時，哪個做法較恰當？
   type: multiple_choice
   options:
   - 傳統特徵在所有情境都已失效，不需考慮。
@@ -1080,7 +1080,7 @@ questions:
 - id: m6-hc-075
   chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
   section_title: 傳統電腦視覺與深度學習的分工
-  text: 下列哪一項最符合「傳統電腦視覺與深度學習的分工」的核心觀念？
+  text: 下列哪個情境最能說明「傳統電腦視覺與深度學習的分工」的用途？
   type: multiple_choice
   options:
   - 傳統特徵在所有情境都已失效，不需考慮。
@@ -1096,7 +1096,7 @@ questions:
 - id: m6-hc-076
   chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
   section_title: Computer Vision 錯誤案例分析
-  text: 關於「Computer Vision 錯誤案例分析」，下列哪一項敘述最正確？
+  text: 哪個選項最能反映「Computer Vision 錯誤案例分析」的實務重點？
   type: multiple_choice
   options:
   - 只看整體 accuracy 就能知道模型錯在哪些影像條件。
@@ -1112,7 +1112,7 @@ questions:
 - id: m6-hc-077
   chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
   section_title: Computer Vision 錯誤案例分析
-  text: 在實務應用「Computer Vision 錯誤案例分析」時，下列哪一項判斷較合理？
+  text: 處理「Computer Vision 錯誤案例分析」相關問題時，哪個判斷最合理？
   type: multiple_choice
   options:
   - 只看整體 accuracy 就能知道模型錯在哪些影像條件。
@@ -1128,7 +1128,7 @@ questions:
 - id: m6-hc-078
   chapter_title: Computer Vision：OpenCV、Matplotlib 與 torchvision
   section_title: Computer Vision 錯誤案例分析
-  text: 下列哪一項最符合「Computer Vision 錯誤案例分析」的核心觀念？
+  text: 下列何者是「Computer Vision 錯誤案例分析」最重要的操作原則？
   type: multiple_choice
   options:
   - 只看整體 accuracy 就能知道模型錯在哪些影像條件。

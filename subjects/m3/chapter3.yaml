@@ -641,7 +641,7 @@ questions:
   usage: both
 - id: 5341
   chapter_title: 進階分析方法
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你正在分析公司網站的改版效果。A/B 測試顯示新版網頁的轉換率比舊版高 0.5%，p-value 為 0.03。但老闆認為 0.5% 的提升太小，不值得花錢改版。這反映了什麼統計概念與實務決策的衝突？
   type: multiple_choice
   options:
@@ -654,10 +654,10 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 5342
   chapter_title: 進階分析方法
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你使用 ARIMA 預測下個月的銷售額，但預測結果是一條水平直線，完全沒有捕捉到過去幾年的明顯增長趨勢。最可能的原因是什麼？
   type: multiple_choice
   options:
@@ -670,10 +670,10 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 5343
   chapter_title: 進階分析方法
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你想找出社交網絡中的「關鍵意見領袖 (KOL)」，希望找到那些能最快將訊息傳播給所有人的人。你應該參考哪個中心性指標？
   type: multiple_choice
   options:
@@ -686,10 +686,10 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 5344
   chapter_title: 進階分析方法
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你正在比較三個不同廣告活動的轉換率。ANOVA 檢定結果顯著 (p < 0.05)。接下來你應該做什麼？
   type: multiple_choice
   options:
@@ -702,10 +702,10 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 5345
   chapter_title: 進階分析方法
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你發現某個變數與目標變數的皮爾森相關係數接近 0，但畫出散佈圖卻發現兩者呈現明顯的 U 型關係。這時你應該？
   type: multiple_choice
   options:
@@ -718,7 +718,7 @@ questions:
   tags:
   - chap-m3-ch3
   - sec-scenario
-  usage: mock
+  usage: both
 - chapter_title: 進階分析方法
   section_title: 統計檢定與推論 (Statistical Hypothesis Testing)
   text: 情境：若 p-value < 0.05，我們通常會？
@@ -2208,3 +2208,163 @@ questions:
   - sec-code-reading
   - code-reading
   usage: quiz
+- id: m3-ch3-scenario-006
+  chapter_title: 進階分析方法
+  section_title: 情境題
+  text: 情境：銷售資料有明顯週期性，每週末都升高。建模時應加入什麼？
+  type: multiple_choice
+  options:
+  - 季節性或週期特徵
+  - 只取全期間平均值
+  - 刪除週末資料
+  - 把日期改成隨機數
+  correct_index: 0
+  explanation: 時間序列週期需用季節性特徵或模型處理。
+  tags:
+  - chap-m3-ch3
+  - sec-scenario
+  usage: both
+- id: m3-ch3-scenario-007
+  chapter_title: 進階分析方法
+  section_title: 情境題
+  text: 情境：ARIMA 模型殘差仍有自相關。這代表什麼？
+  type: multiple_choice
+  options:
+  - 模型已完美，不需調整
+  - 模型尚未捕捉完整時間結構
+  - 資料不能做任何預測
+  - p-value 一定為 1
+  correct_index: 1
+  explanation: 殘差若有自相關，表示仍有可建模訊號。
+  tags:
+  - chap-m3-ch3
+  - sec-scenario
+  usage: both
+- id: m3-ch3-scenario-008
+  chapter_title: 進階分析方法
+  section_title: 情境題
+  text: 情境：你想找社群中連接不同群體的橋樑人物。應看哪種中心性？
+  type: multiple_choice
+  options:
+  - Degree centrality 只看直接連結數
+  - Closeness 一定只找最多粉絲者
+  - Betweenness centrality
+  - PageRank 只適合表格資料
+  correct_index: 2
+  explanation: 介數中心性衡量節點位於最短路徑上的程度。
+  tags:
+  - chap-m3-ch3
+  - sec-scenario
+  usage: both
+- id: m3-ch3-scenario-009
+  chapter_title: 進階分析方法
+  section_title: 情境題
+  text: 情境：A/B 測試 p-value 顯著，但效果量極小且開發成本高。應如何決策？
+  type: multiple_choice
+  options:
+  - 只要 p-value 顯著就必須上線
+  - 忽略樣本數與成本
+  - 改看訓練 loss
+  - 同時考慮統計顯著與實務顯著
+  correct_index: 3
+  explanation: 統計顯著不等於商業值得投入。
+  tags:
+  - chap-m3-ch3
+  - sec-scenario
+  usage: both
+- id: m3-ch3-scenario-010
+  chapter_title: 進階分析方法
+  section_title: 情境題
+  text: 情境：比較四個促銷方案後 ANOVA 顯著。下一步應做什麼？
+  type: multiple_choice
+  options:
+  - 進行事後檢定找出哪些組別差異顯著
+  - 直接宣稱所有組別彼此不同
+  - 停止分析，因為 ANOVA 已給完整答案
+  - 把四組合併成一組
+  correct_index: 0
+  explanation: ANOVA 只告訴至少一組不同，需 post-hoc 找差異來源。
+  tags:
+  - chap-m3-ch3
+  - sec-scenario
+  usage: both
+- id: m3-ch3-scenario-011
+  chapter_title: 進階分析方法
+  section_title: 情境題
+  text: 情境：地圖上疾病案例在某些行政區聚集。適合先做什麼分析？
+  type: multiple_choice
+  options:
+  - 只用文字雲呈現病例
+  - 空間自相關或熱點分析
+  - 把經緯度刪除
+  - 只看全國平均值
+  correct_index: 1
+  explanation: 地理空間資料需分析位置相關性與聚集。
+  tags:
+  - chap-m3-ch3
+  - sec-scenario
+  usage: both
+- id: m3-ch3-scenario-012
+  chapter_title: 進階分析方法
+  section_title: 情境題
+  text: 情境：兩變數相關係數高，但時間上目標變數先發生。應提醒什麼？
+  type: multiple_choice
+  options:
+  - 相關係數高就必定有因果
+  - 時間順序不重要
+  - 相關不代表因果，且時間順序不支持該因果解釋
+  - 應刪除所有時間欄位
+  correct_index: 2
+  explanation: 因果判斷需時間順序與控制混雜。
+  tags:
+  - chap-m3-ch3
+  - sec-scenario
+  usage: both
+- id: m3-ch3-scenario-013
+  chapter_title: 進階分析方法
+  section_title: 情境題
+  text: 情境：網站流量預測遇到突發節日活動，模型低估流量。可加入什麼？
+  type: multiple_choice
+  options:
+  - 只減少訓練資料
+  - 把所有尖峰視為錯誤刪除
+  - 改用圓餅圖預測
+  - 外生變數如節日、活動與行銷投放
+  correct_index: 3
+  explanation: 外部事件會影響時間序列，可作為 exogenous features。
+  tags:
+  - chap-m3-ch3
+  - sec-scenario
+  usage: both
+- id: m3-ch3-scenario-014
+  chapter_title: 進階分析方法
+  section_title: 情境題
+  text: 情境：網路圖節點數巨大，你想先找相似社群。可使用哪類方法？
+  type: multiple_choice
+  options:
+  - 社群偵測演算法，如 Louvain
+  - 線性回歸只輸出一條線
+  - 單變量 t 檢定
+  - 影像分割模型
+  correct_index: 0
+  explanation: 圖社群偵測可找緊密連結群體。
+  tags:
+  - chap-m3-ch3
+  - sec-scenario
+  usage: both
+- id: m3-ch3-scenario-015
+  chapter_title: 進階分析方法
+  section_title: 情境題
+  text: 情境：資料有極端離群值，平均值被嚴重拉動。報告中應補充什麼統計摘要？
+  type: multiple_choice
+  options:
+  - 只保留平均值
+  - 中位數、IQR 或截尾平均等穩健摘要
+  - 把所有離群值改成最大值
+  - 只看欄位名稱
+  correct_index: 1
+  explanation: 穩健統計能減少離群值影響。
+  tags:
+  - chap-m3-ch3
+  - sec-scenario
+  usage: both

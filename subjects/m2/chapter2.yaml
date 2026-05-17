@@ -673,7 +673,7 @@ questions:
   usage: both
 - id: 4241
   chapter_title: 自然語言處理 (NLP)
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你正在開發一個法律諮詢 AI，使用 RAG 技術。然而，使用者回報 AI 引用了已經廢除的舊法條。這最可能是 RAG 系統的哪個環節出了問題？應如何改善？
   type: multiple_choice
   options:
@@ -686,10 +686,10 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 4242
   chapter_title: 自然語言處理 (NLP)
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你的公司想微調一個 LLM 來撰寫專業的醫療報告，但只有 100 份高品質的醫生手寫報告範例。直接進行全參數微調 (Full Fine-tuning) 容易導致什麼問題？應改用什麼策略？
   type: multiple_choice
   options:
@@ -702,10 +702,10 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 4243
   chapter_title: 自然語言處理 (NLP)
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：在情感分析任務中，你發現模型對於「這部電影不算太差」這句話判斷錯誤，認為是負面評價（因為看到「差」字）。這顯示模型可能過度依賴什麼？應如何改進？
   type: multiple_choice
   options:
@@ -718,10 +718,10 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 4244
   chapter_title: 自然語言處理 (NLP)
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：攻擊者發現你的公開聊天機器人會洩漏訓練數據中的個資。他最可能使用了什麼攻擊手法？你該如何防禦？
   type: multiple_choice
   options:
@@ -734,10 +734,10 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 4245
   chapter_title: 自然語言處理 (NLP)
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你使用 Word2Vec 訓練詞向量，發現 "Doctor" - "Man" + "Woman" 的結果竟然接近 "Nurse" 而非 "Doctor"。這揭示了什麼問題？
   type: multiple_choice
   options:
@@ -750,7 +750,7 @@ questions:
   tags:
   - chap-m2-ch2
   - sec-scenario
-  usage: mock
+  usage: both
 - chapter_title: 自然語言處理 (NLP)
   section_title: 定義與範疇
   text: 情境：當你對 Siri 說「設定明天早上七點的鬧鐘」時，負責理解你的意圖是「設定鬧鐘」的技術屬於？
@@ -1341,3 +1341,163 @@ questions:
   - sec-past-exam
   - past-exam
   usage: mock
+- id: m2-ch2-scenario-006
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 情境題
+  text: 情境：客服機器人常把過期政策當成最新答案。RAG 系統應優先改善哪一環節？
+  type: multiple_choice
+  options:
+  - 文件更新、索引重建與檢索資料時效管理
+  - 把生成溫度調到最高，增加回答創意
+  - 停用所有外部知識，只靠模型記憶
+  - 把使用者問題翻譯成多國語言
+  correct_index: 0
+  explanation: RAG 答案依賴檢索內容，知識庫時效性很關鍵。
+  tags:
+  - chap-m2-ch2
+  - sec-scenario
+  usage: both
+- id: m2-ch2-scenario-007
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 情境題
+  text: 情境：模型能生成流暢摘要，但常漏掉否定詞，導致醫療紀錄意思相反。應補強什麼？
+  type: multiple_choice
+  options:
+  - 只增加摘要長度，不需要評估語意
+  - 針對關鍵語意與否定表達做評估與資料增強
+  - 把所有否定詞刪除，避免混淆
+  - 改用圖片分類模型
+  correct_index: 1
+  explanation: 醫療 NLP 需特別評估語意保真與否定句。
+  tags:
+  - chap-m2-ch2
+  - sec-scenario
+  usage: both
+- id: m2-ch2-scenario-008
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 情境題
+  text: 情境：公司只有少量領域資料，卻想讓 LLM 熟悉內部術語。較省資源的策略是什麼？
+  type: multiple_choice
+  options:
+  - 從零訓練大型語言模型
+  - 刪除所有內部術語，避免模型學習
+  - 使用 RAG 或參數高效微調，如 LoRA
+  - 只調整前端字型
+  correct_index: 2
+  explanation: 少量領域資料通常不適合全參數訓練，可用 RAG 或 PEFT。
+  tags:
+  - chap-m2-ch2
+  - sec-scenario
+  usage: both
+- id: m2-ch2-scenario-009
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 情境題
+  text: 情境：情感分析模型把「不錯」判成負面。這反映傳統詞袋方法的哪個限制？
+  type: multiple_choice
+  options:
+  - 無法計算字數
+  - 無法處理任何中文資料
+  - 一定需要影像輸入
+  - 忽略上下文與語序，難理解否定與語氣
+  correct_index: 3
+  explanation: 只看詞頻容易誤解否定、反諷和上下文。
+  tags:
+  - chap-m2-ch2
+  - sec-scenario
+  usage: both
+- id: m2-ch2-scenario-010
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 情境題
+  text: 情境：你要讓企業知識問答可引用來源。生成回答時最應加入哪個設計？
+  type: multiple_choice
+  options:
+  - 回傳引用文件片段與來源連結，支援事後查證
+  - 只輸出最短答案，避免使用者追問
+  - 禁止顯示任何檢索內容
+  - 讓模型自行編造參考文獻
+  correct_index: 0
+  explanation: 可引用來源能降低幻覺風險並提升信任。
+  tags:
+  - chap-m2-ch2
+  - sec-scenario
+  usage: both
+- id: m2-ch2-scenario-011
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 情境題
+  text: 情境：公開聊天機器人被使用者誘導輸出系統提示詞。這屬於哪類風險？
+  type: multiple_choice
+  options:
+  - 資料正規化錯誤
+  - Prompt injection 或 prompt leakage，需要安全防護與輸出限制
+  - 影像解析度不足
+  - 批次大小太小
+  correct_index: 1
+  explanation: 提示攻擊可能洩漏內部指令或繞過規則。
+  tags:
+  - chap-m2-ch2
+  - sec-scenario
+  usage: both
+- id: m2-ch2-scenario-012
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 情境題
+  text: 情境：文字分類模型在訓練資料表現好，但遇到新流行語就失準。較可能原因是什麼？
+  type: multiple_choice
+  options:
+  - 模型已經完全泛化
+  - 輸出類別太少一定導致失準
+  - 語料分佈改變或詞彙覆蓋不足，需要持續更新資料
+  - 使用者輸入太短所以不能分類
+  correct_index: 2
+  explanation: 語言資料會隨時間變化，需監控資料漂移與更新。
+  tags:
+  - chap-m2-ch2
+  - sec-scenario
+  usage: both
+- id: m2-ch2-scenario-013
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 情境題
+  text: 情境：你要比較兩段文字語意是否相近，而不是字面是否相同。較適合使用什麼表示？
+  type: multiple_choice
+  options:
+  - ASCII 編碼總和
+  - 文字檔大小
+  - 標點符號數量
+  - 句向量或語意嵌入
+  correct_index: 3
+  explanation: 語意嵌入能捕捉同義與語境相似。
+  tags:
+  - chap-m2-ch2
+  - sec-scenario
+  usage: both
+- id: m2-ch2-scenario-014
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 情境題
+  text: 情境：LLM 回答內部政策時自信但錯誤。除了 RAG，評估上應加入什麼？
+  type: multiple_choice
+  options:
+  - 事實一致性與引用正確性檢查
+  - 只看回答是否夠長
+  - 只看模型是否使用繁體中文
+  - 只看 GPU 使用率
+  correct_index: 0
+  explanation: 生成式 NLP 需評估事實正確性，不只流暢度。
+  tags:
+  - chap-m2-ch2
+  - sec-scenario
+  usage: both
+- id: m2-ch2-scenario-015
+  chapter_title: 自然語言處理 (NLP)
+  section_title: 情境題
+  text: 情境：使用者要求模型摘要一份長合約，但內容超過上下文長度。較合理策略是什麼？
+  type: multiple_choice
+  options:
+  - 只讀最後一頁，通常最重要
+  - 分段摘要再彙整，並保留關鍵條款追蹤
+  - 直接截斷前半部內容
+  - 把字體縮小即可放入模型
+  correct_index: 1
+  explanation: 長文件需分段處理與彙整，避免遺漏關鍵資訊。
+  tags:
+  - chap-m2-ch2
+  - sec-scenario
+  usage: both

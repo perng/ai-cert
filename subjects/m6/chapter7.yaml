@@ -617,7 +617,7 @@ questions:
 - id: m6-ch7-code-016
   chapter_title: PyTorch 實作簡單神經網路與 CNN
   section_title: MLP 的基本架構
-  text: nn.Linear(10, 32) 的 10 代表什麼？
+  text: 這個 Linear layer 預期每筆輸入有幾個特徵？
   content:
   - type: text
     text: nn.Linear(10, 32) 的 10 代表什麼？
@@ -709,7 +709,7 @@ questions:
 - id: m6-ch7-code-020
   chapter_title: PyTorch 實作簡單神經網路與 CNN
   section_title: CNN 的核心觀念
-  text: Conv2d(3, 16, 3) 的 3 通常代表什麼？
+  text: 這個 Conv2d 設定表示輸入影像有幾個通道？
   content:
   - type: text
     text: Conv2d(3, 16, 3) 的 3 通常代表什麼？
@@ -732,7 +732,7 @@ questions:
 - id: m6-ch7-code-021
   chapter_title: PyTorch 實作簡單神經網路與 CNN
   section_title: CNN 的核心觀念
-  text: Conv2d(3, 16, 3) 的 16 代表什麼？
+  text: 這個 Conv2d 會產生幾張輸出 feature maps？
   content:
   - type: text
     text: Conv2d(3, 16, 3) 的 16 代表什麼？
@@ -847,7 +847,7 @@ questions:
 - id: m6-ch7-code-026
   chapter_title: PyTorch 實作簡單神經網路與 CNN
   section_title: 評估 CNN 與常見錯誤
-  text: pred = logits.argmax(dim=1) 做什麼？
+  text: 評估分類模型時，這行如何把 logits 轉成預測標籤？
   content:
   - type: text
     text: pred = logits.argmax(dim=1) 做什麼？
@@ -962,7 +962,7 @@ questions:
 - id: m6-hc-120
   chapter_title: PyTorch 實作簡單神經網路與 CNN
   section_title: 訓練 MLP
-  text: 關於「訓練 MLP」，下列哪一項敘述最正確？
+  text: 哪個選項最能反映「訓練 MLP」的實務重點？
   type: multiple_choice
   options:
   - MLP 不需要 activation，多層線性堆疊已能提供非線性能力。
@@ -978,7 +978,7 @@ questions:
 - id: m6-hc-121
   chapter_title: PyTorch 實作簡單神經網路與 CNN
   section_title: 實作簡單 CNN
-  text: 關於「實作簡單 CNN」，下列哪一項敘述最正確？
+  text: 處理「實作簡單 CNN」相關問題時，哪個判斷最合理？
   type: multiple_choice
   options:
   - CNN 的卷積層不會保留空間鄰近資訊。
@@ -994,7 +994,7 @@ questions:
 - id: m6-hc-122
   chapter_title: PyTorch 實作簡單神經網路與 CNN
   section_title: 資料增強與正規化
-  text: 關於「資料增強與正規化」，下列哪一項敘述最正確？
+  text: 下列何者是「資料增強與正規化」最重要的操作原則？
   type: multiple_choice
   options:
   - 驗證集應使用隨機翻轉與隨機裁切來提高不可重現性。
@@ -1010,7 +1010,7 @@ questions:
 - id: m6-hc-123
   chapter_title: PyTorch 實作簡單神經網路與 CNN
   section_title: 資料增強與正規化
-  text: 在實務應用「資料增強與正規化」時，下列哪一項判斷較合理？
+  text: 針對「資料增強與正規化」，哪個說法符合教材觀點？
   type: multiple_choice
   options:
   - 驗證集應使用隨機翻轉與隨機裁切來提高不可重現性。
@@ -1026,7 +1026,7 @@ questions:
 - id: m6-hc-124
   chapter_title: PyTorch 實作簡單神經網路與 CNN
   section_title: 評估 CNN 與常見錯誤
-  text: 關於「評估 CNN 與常見錯誤」，下列哪一項敘述最正確？
+  text: 哪一項最能避免「評估 CNN 與常見錯誤」常見誤解？
   type: multiple_choice
   options:
   - 評估時保持 model.train() 可避免 Dropout 影響結果。
@@ -1042,7 +1042,7 @@ questions:
 - id: m6-hc-125
   chapter_title: PyTorch 實作簡單神經網路與 CNN
   section_title: 評估 CNN 與常見錯誤
-  text: 在實務應用「評估 CNN 與常見錯誤」時，下列哪一項判斷較合理？
+  text: 學習「評估 CNN 與常見錯誤」時，應優先掌握哪個觀念？
   type: multiple_choice
   options:
   - 評估時保持 model.train() 可避免 Dropout 影響結果。
@@ -1058,7 +1058,7 @@ questions:
 - id: m6-hc-126
   chapter_title: PyTorch 實作簡單神經網路與 CNN
   section_title: MLP 適合與不適合的資料
-  text: 關於「MLP 適合與不適合的資料」，下列哪一項敘述最正確？
+  text: 把「MLP 適合與不適合的資料」用在 AI 專案中時，哪個做法較恰當？
   type: multiple_choice
   options:
   - MLP 天生保留影像二維空間結構，因此通常優於 CNN。
@@ -1074,7 +1074,7 @@ questions:
 - id: m6-hc-127
   chapter_title: PyTorch 實作簡單神經網路與 CNN
   section_title: MLP 適合與不適合的資料
-  text: 在實務應用「MLP 適合與不適合的資料」時，下列哪一項判斷較合理？
+  text: 下列哪個情境最能說明「MLP 適合與不適合的資料」的用途？
   type: multiple_choice
   options:
   - MLP 天生保留影像二維空間結構，因此通常優於 CNN。
@@ -1090,7 +1090,7 @@ questions:
 - id: m6-hc-128
   chapter_title: PyTorch 實作簡單神經網路與 CNN
   section_title: Activation、Normalization 與 Dropout
-  text: 關於「Activation、Normalization 與 Dropout」，下列哪一項敘述最正確？
+  text: 哪個選項最能反映「Activation、Normalization 與 Dropout」的實務重點？
   type: multiple_choice
   options:
   - Dropout 在推論時應保持啟用，讓結果更隨機。
@@ -1106,7 +1106,7 @@ questions:
 - id: m6-hc-129
   chapter_title: PyTorch 實作簡單神經網路與 CNN
   section_title: Activation、Normalization 與 Dropout
-  text: 在實務應用「Activation、Normalization 與 Dropout」時，下列哪一項判斷較合理？
+  text: 處理「Activation、Normalization 與 Dropout」相關問題時，哪個判斷最合理？
   type: multiple_choice
   options:
   - Dropout 訓練時啟用，推論時關閉。
@@ -1122,7 +1122,7 @@ questions:
 - id: m6-hc-130
   chapter_title: PyTorch 實作簡單神經網路與 CNN
   section_title: CNN 中尺寸如何變化
-  text: 關於「CNN 中尺寸如何變化」，下列哪一項敘述最正確？
+  text: 下列何者是「CNN 中尺寸如何變化」最重要的操作原則？
   type: multiple_choice
   options:
   - MaxPool2d(2) 通常會讓高寬加倍。
@@ -1138,7 +1138,7 @@ questions:
 - id: m6-hc-131
   chapter_title: PyTorch 實作簡單神經網路與 CNN
   section_title: CNN 中尺寸如何變化
-  text: 在實務應用「CNN 中尺寸如何變化」時，下列哪一項判斷較合理？
+  text: 針對「CNN 中尺寸如何變化」，哪個說法符合教材觀點？
   type: multiple_choice
   options:
   - MaxPool2d(2) 通常會讓高寬加倍。
@@ -1154,7 +1154,7 @@ questions:
 - id: m6-hc-132
   chapter_title: PyTorch 實作簡單神經網路與 CNN
   section_title: CNN 中尺寸如何變化
-  text: 下列哪一項最符合「CNN 中尺寸如何變化」的核心觀念？
+  text: 哪一項最能避免「CNN 中尺寸如何變化」常見誤解？
   type: multiple_choice
   options:
   - MaxPool2d(2) 通常會讓高寬加倍。
@@ -1170,7 +1170,7 @@ questions:
 - id: m6-hc-133
   chapter_title: PyTorch 實作簡單神經網路與 CNN
   section_title: Transfer Learning 與預訓練模型
-  text: 關於「Transfer Learning 與預訓練模型」，下列哪一項敘述最正確？
+  text: 學習「Transfer Learning 與預訓練模型」時，應優先掌握哪個觀念？
   type: multiple_choice
   options:
   - 預訓練 backbone 的輸入 normalization 可任意替換。
@@ -1186,7 +1186,7 @@ questions:
 - id: m6-hc-134
   chapter_title: PyTorch 實作簡單神經網路與 CNN
   section_title: Transfer Learning 與預訓練模型
-  text: 在實務應用「Transfer Learning 與預訓練模型」時，下列哪一項判斷較合理？
+  text: 把「Transfer Learning 與預訓練模型」用在 AI 專案中時，哪個做法較恰當？
   type: multiple_choice
   options:
   - 資料量少時可先凍結 backbone，降低過擬合風險。
@@ -1202,7 +1202,7 @@ questions:
 - id: m6-hc-135
   chapter_title: PyTorch 實作簡單神經網路與 CNN
   section_title: CNN 專案的錯誤分析方法
-  text: 關於「CNN 專案的錯誤分析方法」，下列哪一項敘述最正確？
+  text: 下列哪個情境最能說明「CNN 專案的錯誤分析方法」的用途？
   type: multiple_choice
   options:
   - 錯誤影像不需要查看，混淆矩陣分數已足夠定位問題。
@@ -1218,7 +1218,7 @@ questions:
 - id: m6-hc-136
   chapter_title: PyTorch 實作簡單神經網路與 CNN
   section_title: CNN 專案的錯誤分析方法
-  text: 在實務應用「CNN 專案的錯誤分析方法」時，下列哪一項判斷較合理？
+  text: 哪個選項最能反映「CNN 專案的錯誤分析方法」的實務重點？
   type: multiple_choice
   options:
   - 若部署資料風格不同，離線評估可能過度樂觀。

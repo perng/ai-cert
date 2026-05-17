@@ -641,7 +641,7 @@ questions:
   usage: both
 - id: 4541
   chapter_title: 系統部署與 MLOps
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你的團隊開發了一個推薦系統，線下測試準確率很高，但上線後用戶點擊率卻沒有提升。這可能是什麼原因？應如何調查？
   type: multiple_choice
   options:
@@ -654,10 +654,10 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 4542
   chapter_title: 系統部署與 MLOps
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：公司要求將一個巨大的 LLM 部署到工廠的邊緣設備上，且不能連網。設備記憶體只有 4GB。你該採取什麼策略？
   type: multiple_choice
   options:
@@ -670,10 +670,10 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 4543
   chapter_title: 系統部署與 MLOps
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你的模型 API 偶爾會因為流量暴衝而崩潰 (OOM)。在不修改程式碼的前提下，最快的架構級解決方案是？
   type: multiple_choice
   options:
@@ -686,10 +686,10 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 4544
   chapter_title: 系統部署與 MLOps
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你發現每當促銷活動開始，詐欺偵測模型的誤判率就飆升。這屬於哪種漂移？應如何建立自動化機制應對？
   type: multiple_choice
   options:
@@ -702,10 +702,10 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 4545
   chapter_title: 系統部署與 MLOps
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：開發團隊每次更新模型，都需要手動跑測試、手動打包 Docker、手動 SSH 到伺服器部署，常出錯且耗時。你建議引入 CI/CD，第一步應該做什麼？
   type: multiple_choice
   options:
@@ -718,7 +718,7 @@ questions:
   tags:
   - chap-m2-ch5
   - sec-scenario
-  usage: mock
+  usage: both
 - chapter_title: 系統部署與 MLOps
   section_title: MLOps 核心概念
   text: 情境：團隊發現模型在開發環境表現良好，但部署到生產環境後經常因為套件版本衝突而崩潰。引入哪項技術最能解決此問題？
@@ -1258,3 +1258,163 @@ questions:
   - sec-past-exam
   - past-exam
   usage: mock
+- id: m2-ch5-scenario-006
+  chapter_title: 系統部署與 MLOps
+  section_title: 情境題
+  text: 情境：模型上線後流量突增導致延遲升高。MLOps 首要監控哪類指標？
+  type: multiple_choice
+  options:
+  - 延遲、吞吐量、錯誤率與資源使用率
+  - 只監控訓練集大小
+  - 只監控簡報頁數
+  - 只監控程式註解數
+  correct_index: 0
+  explanation: 部署後需監控系統與模型服務健康度。
+  tags:
+  - chap-m2-ch5
+  - sec-scenario
+  usage: both
+- id: m2-ch5-scenario-007
+  chapter_title: 系統部署與 MLOps
+  section_title: 情境題
+  text: 情境：新模型離線 AUC 較高，但線上轉換率下降。應採取什麼？
+  type: multiple_choice
+  options:
+  - 立即全面回滾所有 AI 系統且不分析原因
+  - 做 A/B 測試與線上指標分析，檢查離線指標是否對齊業務
+  - 只看離線 AUC，不看使用者行為
+  - 刪除線上日誌，避免噪音
+  correct_index: 1
+  explanation: 離線指標不一定等於線上成效，需實驗驗證。
+  tags:
+  - chap-m2-ch5
+  - sec-scenario
+  usage: both
+- id: m2-ch5-scenario-008
+  chapter_title: 系統部署與 MLOps
+  section_title: 情境題
+  text: 情境：你需要保留每次模型訓練的資料版本、參數與結果。應導入什麼？
+  type: multiple_choice
+  options:
+  - 手寫紙本筆記即可，不需版本化
+  - 只保存最後一個模型檔
+  - 實驗追蹤與模型註冊表
+  - 把參數放在個人聊天紀錄
+  correct_index: 2
+  explanation: MLOps 需要可重現與可追蹤。
+  tags:
+  - chap-m2-ch5
+  - sec-scenario
+  usage: both
+- id: m2-ch5-scenario-009
+  chapter_title: 系統部署與 MLOps
+  section_title: 情境題
+  text: 情境：模型 API 需獨立擴容，不應拖慢主網站。架構上可怎麼設計？
+  type: multiple_choice
+  options:
+  - 把模型直接寫死在前端按鈕中
+  - 所有服務共用單一程序且不可擴容
+  - 禁止任何健康檢查
+  - 將模型服務包成獨立微服務並透過 API 整合
+  correct_index: 3
+  explanation: 微服務可獨立部署、擴容與監控。
+  tags:
+  - chap-m2-ch5
+  - sec-scenario
+  usage: both
+- id: m2-ch5-scenario-010
+  chapter_title: 系統部署與 MLOps
+  section_title: 情境題
+  text: 情境：模型輸入特徵分佈逐週偏移，但準確率尚未明顯下降。應如何處理？
+  type: multiple_choice
+  options:
+  - 建立資料漂移監控與告警，必要時觸發再訓練評估
+  - 等到使用者大量投訴再處理
+  - 刪除監控避免誤報
+  - 永久停用模型
+  correct_index: 0
+  explanation: 資料漂移可能預示未來性能下降，需及早監控。
+  tags:
+  - chap-m2-ch5
+  - sec-scenario
+  usage: both
+- id: m2-ch5-scenario-011
+  chapter_title: 系統部署與 MLOps
+  section_title: 情境題
+  text: 情境：每次模型部署都手動複製檔案，常部署錯版本。應優先建立什麼？
+  type: multiple_choice
+  options:
+  - 更多人工簽名欄位
+  - CI/CD pipeline 與自動化部署流程
+  - 更長的會議討論時間
+  - 把模型檔名改得更可愛
+  correct_index: 1
+  explanation: 自動化部署降低人為錯誤並提升可追蹤性。
+  tags:
+  - chap-m2-ch5
+  - sec-scenario
+  usage: both
+- id: m2-ch5-scenario-012
+  chapter_title: 系統部署與 MLOps
+  section_title: 情境題
+  text: 情境：邊緣設備離線運作且資源有限。部署大型模型前應先考慮什麼？
+  type: multiple_choice
+  options:
+  - 直接部署最大模型，準確率最重要
+  - 要求設備永久連上雲端
+  - 量化、剪枝、蒸餾與硬體限制測試
+  - 取消所有效能測試
+  correct_index: 2
+  explanation: 邊緣部署需符合記憶體、算力與離線限制。
+  tags:
+  - chap-m2-ch5
+  - sec-scenario
+  usage: both
+- id: m2-ch5-scenario-013
+  chapter_title: 系統部署與 MLOps
+  section_title: 情境題
+  text: 情境：新模型只對少數 VIP 客戶開放試用，以降低風險。這是哪種部署策略？
+  type: multiple_choice
+  options:
+  - 藍綠部署中的完全切換
+  - 資料清理
+  - 特徵標準化
+  - 金絲雀發布或分階段 rollout
+  correct_index: 3
+  explanation: 小比例流量先試可降低全面故障風險。
+  tags:
+  - chap-m2-ch5
+  - sec-scenario
+  usage: both
+- id: m2-ch5-scenario-014
+  chapter_title: 系統部署與 MLOps
+  section_title: 情境題
+  text: 情境：模型服務依賴外部 API，該 API 偶爾逾時。系統整合應加入什麼？
+  type: multiple_choice
+  options:
+  - 重試、逾時、降級與熔斷機制
+  - 無限等待外部 API 回覆
+  - 把逾時視為正確預測
+  - 刪除所有錯誤日誌
+  correct_index: 0
+  explanation: 可靠系統需處理外部依賴失敗。
+  tags:
+  - chap-m2-ch5
+  - sec-scenario
+  usage: both
+- id: m2-ch5-scenario-015
+  chapter_title: 系統部署與 MLOps
+  section_title: 情境題
+  text: 情境：監控發現某版本模型只在特定地區準確率下降。下一步應做什麼？
+  type: multiple_choice
+  options:
+  - 只看全體平均準確率
+  - 分群分析資料與錯誤案例，檢查地區分佈或資料品質變化
+  - 立即刪除該地區資料
+  - 把所有地區合併成一個欄位
+  correct_index: 1
+  explanation: 整體指標可能掩蓋子群體問題，需切片分析。
+  tags:
+  - chap-m2-ch5
+  - sec-scenario
+  usage: both

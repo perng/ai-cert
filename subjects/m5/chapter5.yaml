@@ -18,7 +18,7 @@ questions:
 - id: 7502
   chapter_title: 多代理系統與未來發展
   section_title: 常見的多代理協作模式
-  text: 「協調者-執行者模式 (Orchestrator-Worker)」中，協調者代理的主要職責是？
+  text: 大型研究任務被拆成資料蒐集、分析與簡報三個子任務時，協調者代理最核心的責任是什麼？
   type: multiple_choice
   options:
   - 主要功能是為執行者代理提供各類底層工具呼叫的能力
@@ -34,7 +34,7 @@ questions:
 - id: 7503
   chapter_title: 多代理系統與未來發展
   section_title: 常見的多代理協作模式
-  text: 「辯論模式 (Debate)」的多代理架構主要用於解決什麼問題？
+  text: 當系統需要讓兩個代理分別提出支持與反對觀點，再檢查論證品質時，辯論模式主要解決什麼問題？
   type: multiple_choice
   options:
   - 確保代理之間在傳遞訊息時不會遺失任何重要的參數
@@ -98,7 +98,7 @@ questions:
 - id: 7507
   chapter_title: 多代理系統與未來發展
   section_title: AI 代理的未來發展方向
-  text: 「電腦使用代理 (Computer Use Agent)」的特殊能力是什麼？
+  text: 當目標系統沒有 API，只能透過按鈕、表單與視窗操作時，電腦使用代理的特殊能力是什麼？
   type: multiple_choice
   options:
   - 能夠在運算資源不足時，自動且獨立地購買雲端運算資源
@@ -130,7 +130,7 @@ questions:
 - id: 7509
   chapter_title: 多代理系統與未來發展
   section_title: 自然語言網路 (NLWeb)
-  text: 「自然語言網路 (NLWeb)」為網站帶來的主要變革是什麼？
+  text: 網站導入 NLWeb 後，不只讓人類瀏覽，也讓代理能用自然語言查詢與探索內容；這代表網站發生了什麼變革？
   type: multiple_choice
   options:
   - 完全取代傳統的 HTML 與 CSS 架構，改由神經網路直接渲染
@@ -146,7 +146,7 @@ questions:
 - id: 7510
   chapter_title: 多代理系統與未來發展
   section_title: 代理通訊協議
-  text: 在 A2A 協議中，「工作產物 (Artifact)」的主要功用是什麼？
+  text: 遠端代理完成資料分析後，需要把圖表、摘要或檔案回傳給請求方；A2A 中哪個概念負責封裝這些結果？
   type: multiple_choice
   options:
   - 定義代理人可使用的最大記憶體容量
@@ -161,7 +161,7 @@ questions:
 - id: 7511
   chapter_title: 多代理系統與未來發展
   section_title: 代理通訊協議
-  text: A2A 協議的「事件佇列 (Event Queue)」設計是為了解決什麼問題？
+  text: 遠端代理可能需要數分鐘才能完成工作時，A2A 的事件佇列主要避免哪一種通訊問題？
   type: multiple_choice
   options:
   - 加速大型語言模型在生成文字時的速度
@@ -176,7 +176,7 @@ questions:
 - id: 7512
   chapter_title: 多代理系統與未來發展
   section_title: 自然語言網路 (NLWeb)
-  text: 自然語言網路 (NLWeb) 的核心目標是什麼？
+  text: 從網站經營者角度看，NLWeb 的核心目標是讓既有網站多出哪一種代理可用的互動介面？
   type: multiple_choice
   options:
   - 禁止未經授權的 AI 模型爬取網站的內容
@@ -281,7 +281,7 @@ questions:
 - id: 7519
   chapter_title: 多代理系統與未來發展
   section_title: 代理安全與信任
-  text: 設立「執行預算 (Execution Budget)」是為了解決什麼潛在風險？
+  text: 長期自主代理在沒有預算限制時可能無止境呼叫工具；Execution Budget 主要用來控制哪一種問題？
   type: multiple_choice
   options:
   - 限制代理人存取網路上的某些受版權保護的內容
@@ -296,7 +296,7 @@ questions:
 - id: 7520
   chapter_title: 多代理系統與未來發展
   section_title: AI 代理技術的未來趨勢
-  text: 電腦使用代理 (Computer Use Agent) 特別適合解決哪一類問題？
+  text: 企業仍使用只能透過桌面介面操作的舊系統時，為何電腦使用代理特別適合這類問題？
   type: multiple_choice
   options:
   - 目標軟體沒有 API，但可以透過圖形介面完成操作
@@ -478,7 +478,7 @@ questions:
 - id: 7532
   chapter_title: 多代理系統與未來發展
   section_title: 常見的多代理協作模式
-  text: 在協調者-執行者（Orchestrator-Worker）模式中，協調者的主要職責是什麼？
+  text: 在協調者-執行者模式中，如果多個執行者各自完成部分結果，協調者最後必須負責哪件事？
   type: multiple_choice
   options:
   - 對執行結果進行最終簽核
@@ -494,7 +494,7 @@ questions:
 - id: 7533
   chapter_title: 多代理系統與未來發展
   section_title: 代理人之間如何「說話」：通訊協議
-  text: A2A 協議中的「代理名片（Agent Card）」主要包含什麼資訊？
+  text: 協調者第一次連接某個遠端代理前，會先讀取 Agent Card；它主要需要取得哪些資訊？
   type: multiple_choice
   options:
   - 代理人的個人聯絡電話與地址
@@ -526,7 +526,7 @@ questions:
 - id: 7535
   chapter_title: 多代理系統與未來發展
   section_title: AI 代理的未來發展方向
-  text: 「電腦使用代理（Computer Use Agent）」與傳統 API 代理人的核心差異是什麼？
+  text: 若一個代理不呼叫 API，而是像人類一樣點擊瀏覽器與桌面應用，這與傳統 API 代理最大的差異是什麼？
   type: multiple_choice
   options:
   - 電腦使用代理不需要任何 AI 模型
@@ -558,7 +558,7 @@ questions:
 - id: 7537
   chapter_title: 多代理系統與未來發展
   section_title: 常見的多代理協作模式
-  text: 在「辯論模式（Debate）」的多代理架構中，最終結論通常由誰做出？
+  text: 辯論模式中，多個代理提出不同立場後，通常由哪個角色或機制形成最後結論？
   type: multiple_choice
   options:
   - 由正方代理人決定
@@ -574,7 +574,7 @@ questions:
 - id: 7538
   chapter_title: 多代理系統與未來發展
   section_title: 代理人之間如何「說話」：通訊協議
-  text: 在 A2A 通訊中，「工作產物（Artifact）」指的是什麼？
+  text: 在 A2A 中，如果回傳內容不是單純文字，而是一組任務成果封裝，這通常稱為什麼？
   type: multiple_choice
   options:
   - 代理人開發過程中的程式碼版本
@@ -654,7 +654,7 @@ questions:
 - id: 7543
   chapter_title: 多代理系統與未來發展
   section_title: 代理人之間如何「說話」：通訊協議
-  text: 在 A2A 通訊中，「事件佇列（Event Queue）」主要解決什麼問題？
+  text: A2A 任務執行時間很長，請求方仍要持續接收進度與結果；事件佇列主要解決哪個問題？
   type: multiple_choice
   options:
   - 代理人之間的認證與授權問題
@@ -670,7 +670,7 @@ questions:
 - id: 7544
   chapter_title: 多代理系統與未來發展
   section_title: 代理安全：當 AI 有了行動能力，風險也來了
-  text: 代理人設定「執行預算」的主要目的是什麼？
+  text: 若代理人可能因錯誤策略不斷重試同一任務，設定執行預算主要是為了限制什麼風險？
   type: multiple_choice
   options:
   - 用來估算專案的總開發成本
@@ -734,7 +734,7 @@ questions:
 - id: 7548
   chapter_title: 多代理系統與未來發展
   section_title: 代理人之間如何「說話」：通訊協議
-  text: NLWeb（自然語言網路）的核心目標是什麼？
+  text: 在代理通訊情境中，NLWeb 讓網站更容易被 AI 代理探索與互動，這個目標最接近哪一項描述？
   type: multiple_choice
   options:
   - 讓所有網站的內容變成純文字格式
@@ -814,7 +814,7 @@ questions:
 - id: 7553
   chapter_title: 多代理系統與未來發展
   section_title: 代理人之間如何「說話」：通訊協議
-  text: 代理名片（Agent Card）在設計時為什麼需要包含版本資訊？
+  text: 當遠端代理升級能力或 API 格式時，Agent Card 中的版本資訊主要幫助協調者判斷什麼？
   type: multiple_choice
   options:
   - 為了讓協調者知道代理人的能力是否過時，以及向後相容性

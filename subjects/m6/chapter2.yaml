@@ -703,7 +703,7 @@ questions:
 - id: m6-ch2-code-018
   chapter_title: NumPy 與 Pandas
   section_title: Shape、Broadcasting 與矩陣運算
-  text: 閱讀程式碼，輸出 shape 是什麼？
+  text: np.zeros((4, 3)) 建立出的陣列維度為何？
   content:
   - type: text
     text: 閱讀程式碼，輸出 shape 是什麼？
@@ -963,7 +963,7 @@ questions:
 - id: m6-ch2-code-028
   chapter_title: NumPy 與 Pandas
   section_title: 從 Pandas 到模型輸入
-  text: 閱讀程式碼，y.shape 是什麼？
+  text: target 欄位轉成 NumPy 後會得到哪種向量 shape？
   content:
   - type: text
     text: 閱讀程式碼，y.shape 是什麼？
@@ -1038,7 +1038,7 @@ questions:
 - id: m6-hc-012
   chapter_title: NumPy 與 Pandas
   section_title: NumPy 陣列與向量化
-  text: 關於「NumPy 陣列與向量化」，下列哪一項敘述最正確？
+  text: 哪個選項最能反映「NumPy 陣列與向量化」的實務重點？
   type: multiple_choice
   options:
   - 向量化代表把所有運算改成 Python for loop 逐筆處理。
@@ -1054,7 +1054,7 @@ questions:
 - id: m6-hc-013
   chapter_title: NumPy 與 Pandas
   section_title: Shape、Broadcasting 與矩陣運算
-  text: 關於「Shape、Broadcasting 與矩陣運算」，下列哪一項敘述最正確？
+  text: 處理「Shape、Broadcasting 與矩陣運算」相關問題時，哪個判斷最合理？
   type: multiple_choice
   options:
   - broadcasting 會自動修正所有不相容 shape，因此不用檢查維度。
@@ -1070,7 +1070,7 @@ questions:
 - id: m6-hc-014
   chapter_title: NumPy 與 Pandas
   section_title: Pandas DataFrame 基礎
-  text: 關於「Pandas DataFrame 基礎」，下列哪一項敘述最正確？
+  text: 下列何者是「Pandas DataFrame 基礎」最重要的操作原則？
   type: multiple_choice
   options:
   - DataFrame 會自動理解每個欄位的商業語意，不需要人工檢查。
@@ -1086,7 +1086,7 @@ questions:
 - id: m6-hc-015
   chapter_title: NumPy 與 Pandas
   section_title: 缺失值、類別資料與特徵整理
-  text: 關於「缺失值、類別資料與特徵整理」，下列哪一項敘述最正確？
+  text: 針對「缺失值、類別資料與特徵整理」，哪個說法符合教材觀點？
   type: multiple_choice
   options:
   - 所有缺失值都應直接填 0，避免保留 Unknown 類別。
@@ -1102,7 +1102,7 @@ questions:
 - id: m6-hc-016
   chapter_title: NumPy 與 Pandas
   section_title: GroupBy、合併與時間序列
-  text: 關於「GroupBy、合併與時間序列」，下列哪一項敘述最正確？
+  text: 哪一項最能避免「GroupBy、合併與時間序列」常見誤解？
   type: multiple_choice
   options:
   - groupby 適合依類別、店家或月份計算統計量。
@@ -1118,7 +1118,7 @@ questions:
 - id: m6-hc-017
   chapter_title: NumPy 與 Pandas
   section_title: 從 Pandas 到模型輸入
-  text: 關於「從 Pandas 到模型輸入」，下列哪一項敘述最正確？
+  text: 學習「從 Pandas 到模型輸入」時，應優先掌握哪個觀念？
   type: multiple_choice
   options:
   - X 應包含目標欄位，模型才能知道正確答案。
@@ -1134,7 +1134,7 @@ questions:
 - id: m6-hc-018
   chapter_title: NumPy 與 Pandas
   section_title: 從 Pandas 到模型輸入
-  text: 在實務應用「從 Pandas 到模型輸入」時，下列哪一項判斷較合理？
+  text: 把「從 Pandas 到模型輸入」用在 AI 專案中時，哪個做法較恰當？
   type: multiple_choice
   options:
   - 進入模型前應確認 X 沒有包含答案欄位，避免資料洩漏。
@@ -1150,7 +1150,7 @@ questions:
 - id: m6-hc-019
   chapter_title: NumPy 與 Pandas
   section_title: NumPy 與 Pandas 的分工
-  text: 關於「NumPy 與 Pandas 的分工」，下列哪一項敘述最正確？
+  text: 下列哪個情境最能說明「NumPy 與 Pandas 的分工」的用途？
   type: multiple_choice
   options:
   - NumPy 主要負責欄位名稱管理與資料表 join。
@@ -1166,7 +1166,7 @@ questions:
 - id: m6-hc-020
   chapter_title: NumPy 與 Pandas
   section_title: NumPy 與 Pandas 的分工
-  text: 在實務應用「NumPy 與 Pandas 的分工」時，下列哪一項判斷較合理？
+  text: 哪個選項最能反映「NumPy 與 Pandas 的分工」的實務重點？
   type: multiple_choice
   options:
   - NumPy 主要負責欄位名稱管理與資料表 join。
@@ -1182,7 +1182,7 @@ questions:
 - id: m6-hc-021
   chapter_title: NumPy 與 Pandas
   section_title: 資料品質檢查清單
-  text: 關於「資料品質檢查清單」，下列哪一項敘述最正確？
+  text: 處理「資料品質檢查清單」相關問題時，哪個判斷最合理？
   type: multiple_choice
   options:
   - 建模前檢查目標分布可發現類別不平衡與極端值。
@@ -1198,7 +1198,7 @@ questions:
 - id: m6-hc-022
   chapter_title: NumPy 與 Pandas
   section_title: 效能與記憶體觀念
-  text: 關於「效能與記憶體觀念」，下列哪一項敘述最正確？
+  text: 下列何者是「效能與記憶體觀念」最重要的操作原則？
   type: multiple_choice
   options:
   - 讀取所有欄位通常比選取必要欄位更節省記憶體。
@@ -1214,7 +1214,7 @@ questions:
 - id: m6-hc-023
   chapter_title: NumPy 與 Pandas
   section_title: 效能與記憶體觀念
-  text: 在實務應用「效能與記憶體觀念」時，下列哪一項判斷較合理？
+  text: 針對「效能與記憶體觀念」，哪個說法符合教材觀點？
   type: multiple_choice
   options:
   - 高重複字串欄位可考慮轉成 category 降低記憶體。
@@ -1230,7 +1230,7 @@ questions:
 - id: m6-hc-024
   chapter_title: NumPy 與 Pandas
   section_title: 特徵工程範例：從原始欄位到模型欄位
-  text: 關於「特徵工程範例：從原始欄位到模型欄位」，下列哪一項敘述最正確？
+  text: 哪一項最能避免「特徵工程範例：從原始欄位到模型欄位」常見誤解？
   type: multiple_choice
   options:
   - 原始日期字串應直接丟給所有模型，不需拆解或轉換。
@@ -1246,7 +1246,7 @@ questions:
 - id: m6-hc-025
   chapter_title: NumPy 與 Pandas
   section_title: 特徵工程範例：從原始欄位到模型欄位
-  text: 在實務應用「特徵工程範例：從原始欄位到模型欄位」時，下列哪一項判斷較合理？
+  text: 學習「特徵工程範例：從原始欄位到模型欄位」時，應優先掌握哪個觀念？
   type: multiple_choice
   options:
   - 目標欄位應作為 y，不應放入 X。

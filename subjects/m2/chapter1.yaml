@@ -641,7 +641,7 @@ questions:
   usage: both
 - id: 4141
   chapter_title: AI 專案生命週期
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：公司決定導入 AI 客服，POC 階段模型準確率達 95%。但上線一週後，客服投訴率反而上升。經調查發現，AI 對於憤怒客戶的語氣無法辨識，仍使用制式回答激怒客戶。這反映了 POC 設計時忽略了什麼？
   type: multiple_choice
   options:
@@ -654,10 +654,10 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 4142
   chapter_title: AI 專案生命週期
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你是 PM，開發團隊表示模型準確率已達 99%，建議立即上線。但你發現該模型是用於預測生產線機台故障（故障率極低）。你應該問團隊什麼問題來確認模型真的可用？
   type: multiple_choice
   options:
@@ -670,10 +670,10 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 4143
   chapter_title: AI 專案生命週期
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：公司計畫將客戶資料送往雲端 AI 平台進行分析。法務部門擔心違反 GDPR。作為技術負責人，你可以提出什麼技術方案來緩解這個風險？
   type: multiple_choice
   options:
@@ -686,10 +686,10 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 4144
   chapter_title: AI 專案生命週期
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：一個用於招聘篩選的 AI 模型被發現傾向於錄取男性。經檢查，訓練資料反映了過去 10 年公司多錄取男性的歷史事實。這屬於哪種偏見？應如何修正？
   type: multiple_choice
   options:
@@ -702,10 +702,10 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 4145
   chapter_title: AI 專案生命週期
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：專案進入開發階段，但資料標註進度嚴重落後，導致模型無法訓練。作為 PM，你發現標註品質也參差不齊。下列哪個應對措施最有效？
   type: multiple_choice
   options:
@@ -718,7 +718,7 @@ questions:
   tags:
   - chap-m2-ch1
   - sec-scenario
-  usage: mock
+  usage: both
 - chapter_title: AI 專案生命週期
   section_title: 風險管理
   text: 情境：某醫院導入 AI 輔助診斷系統，模型準確率高達 98%，但醫生因無法理解 AI 的判斷依據而拒絕使用。為了改善此狀況，專案團隊應優先導入哪項技術？
@@ -1243,3 +1243,163 @@ questions:
   - sec-past-exam
   - past-exam
   usage: mock
+- id: m2-ch1-scenario-006
+  chapter_title: AI 專案生命週期
+  section_title: 情境題
+  text: 情境：公司想導入 AI 審核貸款，但缺乏歷史核准與違約資料。導入前最應先評估什麼？
+  type: multiple_choice
+  options:
+  - 資料可用性與標籤品質是否足以支撐模型訓練
+  - 先購買最大 GPU 叢集，資料之後再補
+  - 直接上線人工智慧審核，快速累積資料
+  - 只評估介面顏色是否符合品牌
+  correct_index: 0
+  explanation: AI 專案可行性取決於資料與標籤是否能支持目標。
+  tags:
+  - chap-m2-ch1
+  - sec-scenario
+  usage: both
+- id: m2-ch1-scenario-007
+  chapter_title: AI 專案生命週期
+  section_title: 情境題
+  text: 情境：POC 準確率很高，但業務流程需要 50 毫秒內回覆，模型推論需 3 秒。這表示忽略了哪項可行性？
+  type: multiple_choice
+  options:
+  - 模型倫理可行性
+  - 效能與系統整合可行性
+  - 資料標註美觀性
+  - 簡報格式一致性
+  correct_index: 1
+  explanation: POC 不只看準確率，也要驗證延遲、吞吐量和流程限制。
+  tags:
+  - chap-m2-ch1
+  - sec-scenario
+  usage: both
+- id: m2-ch1-scenario-008
+  chapter_title: AI 專案生命週期
+  section_title: 情境題
+  text: 情境：AI 專案 ROI 看似高，但需跨部門改造流程且一線員工抗拒。專案規劃應補強什麼？
+  type: multiple_choice
+  options:
+  - 只提高模型準確率，不需要處理人員接受度
+  - 把所有決策交給外包廠商
+  - 變革管理、使用者訓練與利害關係人溝通
+  - 取消所有 POC，直接全面導入
+  correct_index: 2
+  explanation: AI 導入涉及組織流程與採用，不只是模型效能。
+  tags:
+  - chap-m2-ch1
+  - sec-scenario
+  usage: both
+- id: m2-ch1-scenario-009
+  chapter_title: AI 專案生命週期
+  section_title: 情境題
+  text: 情境：醫院要導入診斷輔助 AI，錯誤建議可能造成醫療風險。上線策略最適合哪一種？
+  type: multiple_choice
+  options:
+  - 直接取代醫師以降低人力成本
+  - 只用訓練集準確率作為上線依據
+  - 禁止記錄任何使用過程，避免稽核麻煩
+  - 先小規模試點並保留醫師最終決策權
+  correct_index: 3
+  explanation: 高風險場景應漸進導入並有人類審核。
+  tags:
+  - chap-m2-ch1
+  - sec-scenario
+  usage: both
+- id: m2-ch1-scenario-010
+  chapter_title: AI 專案生命週期
+  section_title: 情境題
+  text: 情境：供應商承諾模型 99% 準確，但不提供測試資料來源與錯誤分析。你應要求什麼？
+  type: multiple_choice
+  options:
+  - 明確評估資料、指標定義、錯誤案例與驗證方法
+  - 只要求更漂亮的展示影片
+  - 只比較報價，不需要技術文件
+  - 要求供應商刪除所有低分案例
+  correct_index: 0
+  explanation: 評估結果需可追溯，否則難判斷是否符合實際場景。
+  tags:
+  - chap-m2-ch1
+  - sec-scenario
+  usage: both
+- id: m2-ch1-scenario-011
+  chapter_title: AI 專案生命週期
+  section_title: 情境題
+  text: 情境：敏感個資需用於模型訓練，法務要求最小化資料使用。技術上較合適的做法是什麼？
+  type: multiple_choice
+  options:
+  - 把資料寄給所有團隊成員方便分析
+  - 資料去識別化、權限控管與用途限制
+  - 永久保存原始資料，不設存取紀錄
+  - 把個資放進模型名稱中方便搜尋
+  correct_index: 1
+  explanation: 隱私合規要求最小化、保護與稽核個資使用。
+  tags:
+  - chap-m2-ch1
+  - sec-scenario
+  usage: both
+- id: m2-ch1-scenario-012
+  chapter_title: AI 專案生命週期
+  section_title: 情境題
+  text: 情境：AI 專案每週需求都大幅改變，團隊無法穩定交付。PM 應先做什麼？
+  type: multiple_choice
+  options:
+  - 要求資料科學家每天更換演算法
+  - 把所有需求都放進第一版
+  - 重新確認問題定義、成功指標與範圍邊界
+  - 停止與業務溝通，避免變更
+  correct_index: 2
+  explanation: 需求不清會拖垮 AI 專案，需先對齊目標與範圍。
+  tags:
+  - chap-m2-ch1
+  - sec-scenario
+  usage: both
+- id: m2-ch1-scenario-013
+  chapter_title: AI 專案生命週期
+  section_title: 情境題
+  text: 情境：模型可能影響求職者錄取，稽核單位要求事後追蹤決策依據。系統需設計什麼能力？
+  type: multiple_choice
+  options:
+  - 只保留最終分數，不留其他資料
+  - 每次部署都覆蓋舊模型，避免混亂
+  - 禁止人工覆核，確保自動化
+  - 保留模型版本、輸入特徵、決策紀錄與解釋資訊
+  correct_index: 3
+  explanation: 高影響決策需要可追溯性與可解釋性。
+  tags:
+  - chap-m2-ch1
+  - sec-scenario
+  usage: both
+- id: m2-ch1-scenario-014
+  chapter_title: AI 專案生命週期
+  section_title: 情境題
+  text: 情境：資料標註由多名外包人員完成，同一樣本標註差異很大。最應先處理什麼？
+  type: multiple_choice
+  options:
+  - 建立標註準則、一致性檢查與抽樣複審流程
+  - 直接平均所有標籤，不問原因
+  - 只保留最快標註者的結果
+  - 把標註差異視為模型正則化
+  correct_index: 0
+  explanation: 標註品質會直接影響模型，需控管一致性。
+  tags:
+  - chap-m2-ch1
+  - sec-scenario
+  usage: both
+- id: m2-ch1-scenario-015
+  chapter_title: AI 專案生命週期
+  section_title: 情境題
+  text: 情境：專案團隊只設定模型準確率，沒有設定業務 KPI。可能造成什麼問題？
+  type: multiple_choice
+  options:
+  - 模型一定無法訓練
+  - 模型表現提升但無法證明對業務有實際價值
+  - 資料庫一定會損壞
+  - 所有使用者都會自動採用系統
+  correct_index: 1
+  explanation: AI 專案需連結業務成效，否則難評估導入價值。
+  tags:
+  - chap-m2-ch1
+  - sec-scenario
+  usage: both

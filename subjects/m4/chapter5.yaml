@@ -641,7 +641,7 @@ questions:
   usage: both
 - id: 6541
   chapter_title: 機器學習治理與倫理
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你的銀行信用評分模型被投訴對女性申請者不公。你檢查了特徵，發現已經刪除了「性別」欄位。這時你應該懷疑什麼？如何驗證？
   type: multiple_choice
   options:
@@ -654,10 +654,10 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 6542
   chapter_title: 機器學習治理與倫理
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你使用深度學習模型預測房價，準確率很高，但客戶要求解釋為什麼他的房子被估這麼低。你應該使用什麼工具？
   type: multiple_choice
   options:
@@ -670,10 +670,10 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 6543
   chapter_title: 機器學習治理與倫理
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你的模型上線一個月後，準確率從 90% 掉到 70%。檢查發現輸入數據的分佈與訓練時有很大差異。這是什麼現象？應如何處理？
   type: multiple_choice
   options:
@@ -686,10 +686,10 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 6544
   chapter_title: 機器學習治理與倫理
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：在醫療影像診斷中，你發現模型過度依賴圖片邊緣的標記（醫院浮水印）來判斷疾病，而不是看病灶。這屬於什麼問題？如何發現的？
   type: multiple_choice
   options:
@@ -702,10 +702,10 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 6545
   chapter_title: 機器學習治理與倫理
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：為了保護隱私，你決定在發布數據前加入雜訊。但業務部門抱怨數據變得不可用。這反映了什麼權衡？
   type: multiple_choice
   options:
@@ -718,7 +718,7 @@ questions:
   tags:
   - chap-m4-ch5
   - sec-scenario
-  usage: mock
+  usage: both
 - chapter_title: 機器學習治理與倫理
   section_title: 解決偏見與確保可解釋性 (XAI)
   text: 情境：SHAP (SHapley Additive exPlanations) 的核心概念源自？
@@ -1887,3 +1887,163 @@ questions:
   - sec-code-reading
   - code-reading
   usage: quiz
+- id: m4-ch5-scenario-006
+  chapter_title: 機器學習治理與倫理
+  section_title: 情境題
+  text: 情境：刪除性別欄位後，模型仍對女性不利，因為職業與休假紀錄可推測性別。這是什麼問題？
+  type: multiple_choice
+  options:
+  - 代理變數造成的間接偏見
+  - 模型完全公平
+  - 資料已完全匿名
+  - 強化學習探索不足
+  correct_index: 0
+  explanation: 敏感屬性可由代理特徵間接反映。
+  tags:
+  - chap-m4-ch5
+  - sec-scenario
+  usage: both
+- id: m4-ch5-scenario-007
+  chapter_title: 機器學習治理與倫理
+  section_title: 情境題
+  text: 情境：銀行模型拒貸，客戶要求知道主要原因。可用什麼方法提供局部解釋？
+  type: multiple_choice
+  options:
+  - 只提供整體準確率
+  - LIME 或 SHAP 分析個別預測
+  - 只顯示模型檔案大小
+  - 要求客戶自行理解神經網路
+  correct_index: 1
+  explanation: 局部可解釋方法可說明單筆預測因素。
+  tags:
+  - chap-m4-ch5
+  - sec-scenario
+  usage: both
+- id: m4-ch5-scenario-008
+  chapter_title: 機器學習治理與倫理
+  section_title: 情境題
+  text: 情境：模型對所有群體整體準確率高，但某少數群體召回率低。應補充哪類評估？
+  type: multiple_choice
+  options:
+  - 只看全體平均
+  - 只看訓練時間
+  - 分群公平性指標與錯誤分析
+  - 只看資料列數
+  correct_index: 2
+  explanation: 全體平均可能掩蓋子群體傷害。
+  tags:
+  - chap-m4-ch5
+  - sec-scenario
+  usage: both
+- id: m4-ch5-scenario-009
+  chapter_title: 機器學習治理與倫理
+  section_title: 情境題
+  text: 情境：模型上線後輸入資料分佈改變，公平性也惡化。治理上需建立什麼？
+  type: multiple_choice
+  options:
+  - 只保存初次訓練報告
+  - 永久禁止更新模型
+  - 只監控伺服器外觀
+  - 持續監控資料漂移、效能與公平性指標
+  correct_index: 3
+  explanation: 治理需部署後持續監控。
+  tags:
+  - chap-m4-ch5
+  - sec-scenario
+  usage: both
+- id: m4-ch5-scenario-010
+  chapter_title: 機器學習治理與倫理
+  section_title: 情境題
+  text: 情境：醫療 AI 建議與醫師判斷衝突。高風險流程中應如何設計責任？
+  type: multiple_choice
+  options:
+  - 保留人類最終決策、審核紀錄與申訴機制
+  - 完全交給 AI 且不記錄
+  - 禁止醫師覆核
+  - 只依模型信心分數決定責任
+  correct_index: 0
+  explanation: 高風險 AI 需人機協作與責任追蹤。
+  tags:
+  - chap-m4-ch5
+  - sec-scenario
+  usage: both
+- id: m4-ch5-scenario-011
+  chapter_title: 機器學習治理與倫理
+  section_title: 情境題
+  text: 情境：資料集中某族群樣本很少，模型在該族群表現差。改善方向是什麼？
+  type: multiple_choice
+  options:
+  - 刪除該族群避免錯誤
+  - 補足代表性資料、重加權或分群評估
+  - 只提高整體 Accuracy
+  - 不允許該族群使用服務
+  correct_index: 1
+  explanation: 代表性不足會造成不公平表現，需資料與評估改善。
+  tags:
+  - chap-m4-ch5
+  - sec-scenario
+  usage: both
+- id: m4-ch5-scenario-012
+  chapter_title: 機器學習治理與倫理
+  section_title: 情境題
+  text: 情境：企業使用黑盒模型做重大決策，但法規要求可解釋。應如何取捨？
+  type: multiple_choice
+  options:
+  - 完全忽略法規要求
+  - 只提高模型複雜度
+  - 選擇可解釋模型或搭配可靠解釋與審核文件
+  - 刪除所有使用者查詢紀錄
+  correct_index: 2
+  explanation: 受監管場景需符合法規可解釋與稽核要求。
+  tags:
+  - chap-m4-ch5
+  - sec-scenario
+  usage: both
+- id: m4-ch5-scenario-013
+  chapter_title: 機器學習治理與倫理
+  section_title: 情境題
+  text: 情境：差分隱私 epsilon 設得很小，報表數值變得不穩。這反映什麼權衡？
+  type: multiple_choice
+  options:
+  - 模型參數量與螢幕大小的取捨
+  - 分類類別與圖表顏色的取捨
+  - 資料庫名稱與檔案格式的取捨
+  - 隱私保護與資料效用之間的取捨
+  correct_index: 3
+  explanation: 更強隱私通常會加入更多噪聲，降低效用。
+  tags:
+  - chap-m4-ch5
+  - sec-scenario
+  usage: both
+- id: m4-ch5-scenario-014
+  chapter_title: 機器學習治理與倫理
+  section_title: 情境題
+  text: 情境：模型卡（Model Card）應用於企業 AI 治理，最應記錄什麼？
+  type: multiple_choice
+  options:
+  - 用途、資料、限制、評估結果與倫理風險
+  - 只記錄模型暱稱
+  - 只記錄開發者喜歡的顏色
+  - 只記錄公司地址
+  correct_index: 0
+  explanation: Model Card 用來透明揭露模型適用範圍與限制。
+  tags:
+  - chap-m4-ch5
+  - sec-scenario
+  usage: both
+- id: m4-ch5-scenario-015
+  chapter_title: 機器學習治理與倫理
+  section_title: 情境題
+  text: 情境：使用者可對 AI 決策提出異議，企業需重新審查。這屬於哪種治理設計？
+  type: multiple_choice
+  options:
+  - 模型壓縮
+  - 申訴與人工覆核機制
+  - 資料視覺化
+  - 特徵標準化
+  correct_index: 1
+  explanation: 負責任 AI 應提供救濟與覆核管道。
+  tags:
+  - chap-m4-ch5
+  - sec-scenario
+  usage: both

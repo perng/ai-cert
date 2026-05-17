@@ -641,7 +641,7 @@ questions:
   usage: both
 - id: 3141
   chapter_title: 人工智慧數學基礎
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你正在開發一個用於檢測罕見疾病的 AI 模型。該疾病的發病率僅為 0.1%。如果你訓練的模型預測所有人都「沒病」，其準確率 (Accuracy) 將高達 99.9%。請問這個指標是否足以評估模型好壞？為什麼？
   type: multiple_choice
   options:
@@ -654,10 +654,10 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 3142
   chapter_title: 人工智慧數學基礎
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：在訓練神經網路時，你發現損失函數 (Loss) 在訓練集上持續下降，但在驗證集 (Validation Set) 上卻開始上升。這代表發生了什麼現象？應採取什麼數學上的策略來解決？
   type: multiple_choice
   options:
@@ -670,10 +670,10 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 3143
   chapter_title: 人工智慧數學基礎
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：某電商平台希望透過 A/B 測試來評估新版網頁是否能提升購買率。經過一週測試，A 組購買率 5.0%，B 組 5.2%，p-value 為 0.03。若顯著水準設為 0.05，你應如何解讀並建議？
   type: multiple_choice
   options:
@@ -686,10 +686,10 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 3144
   chapter_title: 人工智慧數學基礎
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：在使用梯度下降法訓練模型時，若損失函數的曲面呈現狹長的峽谷狀（在一個方向坡度陡，另一個方向坡度緩），標準 SGD 容易發生什麼問題？應如何改善？
   type: multiple_choice
   options:
@@ -702,10 +702,10 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 3145
   chapter_title: 人工智慧數學基礎
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你正在處理一個高維度的數據集（如 1000 個特徵），打算使用 PCA 進行降維。PCA 透過特徵值分解找到主成分。若前兩個主成分的特徵值總和佔所有特徵值總和的 95%，這代表什麼幾何意義？
   type: multiple_choice
   options:
@@ -718,7 +718,7 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-scenario
-  usage: mock
+  usage: both
 - chapter_title: 人工智慧數學基礎
   section_title: 機率與統計
   text: 情境：在分析公司員工薪資時，發現有少數幾位高階主管的薪資極高，導致平均薪資被拉高。若想了解一般員工的薪資水準，應參考哪個統計量？
@@ -1070,4 +1070,164 @@ questions:
   tags:
   - chap-m1-ch1
   - sec-calculus-optimization
+  usage: both
+- id: m1-ch1-scenario-006
+  chapter_title: 人工智慧數學基礎
+  section_title: 情境題
+  text: 情境：銀行偵測信用卡盜刷時，盜刷比例極低，但漏抓一筆盜刷成本很高。選擇模型評估指標時，最應優先看哪一組指標？
+  type: multiple_choice
+  options:
+  - Precision、Recall 與 F1-score，並依漏抓與誤報成本調整門檻
+  - 只看 Accuracy，因為整體正確率越高越好
+  - 只看訓練時間，因為越快訓練完成代表模型越可靠
+  - 只看特徵數量，因為特徵越多代表資訊越完整
+  correct_index: 0
+  explanation: 類別不平衡且錯誤成本不對稱時，Accuracy 容易誤導，應看少數類別的召回與精確率。
+  tags:
+  - chap-m1-ch1
+  - sec-scenario
+  usage: both
+- id: m1-ch1-scenario-007
+  chapter_title: 人工智慧數學基礎
+  section_title: 情境題
+  text: 情境：客服中心平均每小時接到 12 通電話，主管想估計下一小時接到 20 通以上的機率。最適合採用哪種分佈建模？
+  type: multiple_choice
+  options:
+  - 常態分佈，因為所有資料都應先假設為鐘形曲線
+  - 泊松分佈，因為它適合描述固定時間區間內事件發生次數
+  - 伯努利分佈，因為電話數量只有成功與失敗兩種結果
+  - 均勻分佈，因為每個電話量都同樣可能
+  correct_index: 1
+  explanation: 固定時間內獨立事件的發生次數常以泊松分佈近似。
+  tags:
+  - chap-m1-ch1
+  - sec-scenario
+  usage: both
+- id: m1-ch1-scenario-008
+  chapter_title: 人工智慧數學基礎
+  section_title: 情境題
+  text: 情境：疾病快篩陽性後，醫師還想知道病人實際患病的機率，並已知盛行率、敏感度與特異度。應使用哪個概念？
+  type: multiple_choice
+  options:
+  - 中央極限定理，用樣本平均數近似常態分佈
+  - 梯度下降，用反覆更新參數找最小值
+  - 貝氏定理，用先驗機率與檢測條件機率更新後驗機率
+  - 特徵值分解，用矩陣方向解釋變異量
+  correct_index: 2
+  explanation: 陽性後真正患病機率是後驗機率，需要結合先驗盛行率與檢測準確性。
+  tags:
+  - chap-m1-ch1
+  - sec-scenario
+  usage: both
+- id: m1-ch1-scenario-009
+  chapter_title: 人工智慧數學基礎
+  section_title: 情境題
+  text: 情境：兩個商品向量的餘弦相似度接近 1，但歐氏距離很大。若推薦系統只關心偏好方向而非購買量大小，應如何解讀？
+  type: multiple_choice
+  options:
+  - 兩者完全不相似，因為歐氏距離才是唯一有效指標
+  - 兩者一定是同一商品，因為餘弦相似度接近 1
+  - 需要刪除其中一個向量，因為兩個指標不能同時存在
+  - 兩者偏好模式方向相近，仍可能被視為相似商品
+  correct_index: 3
+  explanation: 餘弦相似度衡量方向相似，適合比較偏好型態；歐氏距離則受尺度影響較大。
+  tags:
+  - chap-m1-ch1
+  - sec-scenario
+  usage: both
+- id: m1-ch1-scenario-010
+  chapter_title: 人工智慧數學基礎
+  section_title: 情境題
+  text: 情境：用梯度下降訓練模型時，Loss 一開始快速下降，後來在最小值附近來回震盪。最可能的調整是什麼？
+  type: multiple_choice
+  options:
+  - 降低學習率或使用學習率衰減，讓更新步伐變小
+  - 把訓練資料全部打亂刪除，避免模型記住資料
+  - 改用更大的學習率，讓模型更快跨過震盪區
+  - 只增加輸出層神經元數量，不改最佳化設定
+  correct_index: 0
+  explanation: 震盪常代表步伐過大，降低或衰減學習率可提升收斂穩定性。
+  tags:
+  - chap-m1-ch1
+  - sec-scenario
+  usage: both
+- id: m1-ch1-scenario-011
+  chapter_title: 人工智慧數學基礎
+  section_title: 情境題
+  text: 情境：資料集中收入欄位有極端高值，團隊要建立穩健的房貸風險特徵。下列哪個統計量最適合作為中心趨勢？
+  type: multiple_choice
+  options:
+  - 最大值，因為可直接代表所有人的收入能力
+  - 中位數，因為它比平均數更不受極端值影響
+  - 平均數，因為它一定能代表一般收入水準
+  - 變異數，因為它直接等於資料中心位置
+  correct_index: 1
+  explanation: 中位數對離群值較穩健，適合描述偏態收入資料的典型水準。
+  tags:
+  - chap-m1-ch1
+  - sec-scenario
+  usage: both
+- id: m1-ch1-scenario-012
+  chapter_title: 人工智慧數學基礎
+  section_title: 情境題
+  text: 情境：模型輸出三個類別的機率分別為 0.50、0.49、0.01。PM 只看到第一類最高就想自動決策。你應提醒什麼？
+  type: multiple_choice
+  options:
+  - 只要最高機率超過 0，就一定可以自動決策
+  - 第三類機率很低，所以前兩類都不需要再評估
+  - 最高機率與第二名太接近，應考慮信心門檻或人工覆核
+  - 應把所有機率四捨五入成整數再判斷
+  correct_index: 2
+  explanation: 機率差距小表示不確定性高，實務決策可加入信心門檻。
+  tags:
+  - chap-m1-ch1
+  - sec-scenario
+  usage: both
+- id: m1-ch1-scenario-013
+  chapter_title: 人工智慧數學基礎
+  section_title: 情境題
+  text: 情境：A/B 測試樣本數很小，B 版短期轉換率高於 A 版，但信賴區間很寬。合理結論是什麼？
+  type: multiple_choice
+  options:
+  - B 版一定較好，因為觀察到的平均值較高
+  - A 版一定較好，因為信賴區間寬代表 B 版錯誤
+  - 信賴區間與樣本數無關，可以忽略
+  - 目前估計不夠精確，應收集更多資料再決策
+  correct_index: 3
+  explanation: 信賴區間寬表示不確定性大，樣本不足時不宜過度解讀短期差異。
+  tags:
+  - chap-m1-ch1
+  - sec-scenario
+  usage: both
+- id: m1-ch1-scenario-014
+  chapter_title: 人工智慧數學基礎
+  section_title: 情境題
+  text: 情境：PCA 後第一主成分主要由「價格、面積、房間數」共同貢獻。這個主成分較可能代表什麼？
+  type: multiple_choice
+  options:
+  - 資料中一個綜合的住宅規模或價值方向
+  - 資料中的隨機雜訊，應立即刪除
+  - 模型的最終預測答案，不需要再訓練
+  - 所有變數彼此完全獨立
+  correct_index: 0
+  explanation: 主成分是多個原始特徵的線性組合，可解釋主要變異方向。
+  tags:
+  - chap-m1-ch1
+  - sec-scenario
+  usage: both
+- id: m1-ch1-scenario-015
+  chapter_title: 人工智慧數學基礎
+  section_title: 情境題
+  text: 情境：某損失函數有多個局部低點，團隊發現不同初始化得到不同結果。較合理的做法是什麼？
+  type: multiple_choice
+  options:
+  - 固定只跑一次，因為最佳化一定找到全域最小值
+  - 使用多次隨機初始化並比較驗證表現
+  - 把驗證集併入訓練集，避免結果不同
+  - 刪除所有權重，只保留偏置項
+  correct_index: 1
+  explanation: 非凸最佳化受初始化影響，多次初始化可降低偶然落入較差解的風險。
+  tags:
+  - chap-m1-ch1
+  - sec-scenario
   usage: both

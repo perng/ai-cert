@@ -641,7 +641,7 @@ questions:
   usage: both
 - id: 5141
   chapter_title: 大數據生態系統
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你的公司需要建立一個即時戰情室，顯示全台 1000 家門市的即時銷售額。數據源是 Kafka 串流。你會選擇哪種儲存與查詢方案？
   type: multiple_choice
   options:
@@ -654,10 +654,10 @@ questions:
   tags:
   - chap-m3-ch1
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 5142
   chapter_title: 大數據生態系統
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你需要分析過去 10 年的銷售數據（約 100TB），主要進行依據地區和產品類別的聚合查詢 (Group By)。你會選擇哪種檔案格式存儲這些數據？
   type: multiple_choice
   options:
@@ -670,10 +670,10 @@ questions:
   tags:
   - chap-m3-ch1
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 5143
   chapter_title: 大數據生態系統
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你的銀行核心交易系統需要升級資料庫。業務要求絕對的數據一致性，不能有任何差錯。你應該選擇？
   type: multiple_choice
   options:
@@ -686,10 +686,10 @@ questions:
   tags:
   - chap-m3-ch1
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 5144
   chapter_title: 大數據生態系統
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：資料科學團隊抱怨從資料倉儲取數據太慢且格式受限，無法進行探索性分析。作為資料架構師，你建議引入什麼架構？
   type: multiple_choice
   options:
@@ -702,10 +702,10 @@ questions:
   tags:
   - chap-m3-ch1
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 5145
   chapter_title: 大數據生態系統
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你的 Spark 任務執行非常慢，檢查後發現大量時間花在 Shuffle 階段。這通常意味著什麼？
   type: multiple_choice
   options:
@@ -718,7 +718,7 @@ questions:
   tags:
   - chap-m3-ch1
   - sec-scenario
-  usage: mock
+  usage: both
 - chapter_title: 大數據生態系統
   section_title: 分散式運算框架
   text: 情境：某電商平台需要在「雙11」期間即時分析每秒數百萬筆的交易數據，以動態調整促銷策略。應優先選擇哪個運算框架？
@@ -1937,3 +1937,163 @@ questions:
   - sec-code-reading
   - code-reading
   usage: quiz
+- id: m3-ch1-scenario-006
+  chapter_title: 大數據生態系統
+  section_title: 情境題
+  text: 情境：公司要對 200TB 歷史交易做批次彙總，每天產出報表。較適合哪種處理模式？
+  type: multiple_choice
+  options:
+  - 使用 Spark 等分散式批次處理框架
+  - 用單機試算表手動開檔
+  - 使用即時串流但不保存狀態
+  - 只用前端 JavaScript 處理全部資料
+  correct_index: 0
+  explanation: 大規模歷史資料聚合適合分散式批次處理。
+  tags:
+  - chap-m3-ch1
+  - sec-scenario
+  usage: both
+- id: m3-ch1-scenario-007
+  chapter_title: 大數據生態系統
+  section_title: 情境題
+  text: 情境：IoT 感測器每秒送出資料，系統需在 5 秒內偵測異常。較適合哪種架構？
+  type: multiple_choice
+  options:
+  - 每月底手動匯入 CSV
+  - 串流處理，如 Kafka 搭配 Flink 或 Spark Streaming
+  - 只存成 PDF 報告
+  - 離線一年後再訓練
+  correct_index: 1
+  explanation: 低延遲偵測需串流攝取與處理。
+  tags:
+  - chap-m3-ch1
+  - sec-scenario
+  usage: both
+- id: m3-ch1-scenario-008
+  chapter_title: 大數據生態系統
+  section_title: 情境題
+  text: 情境：資料湖中有大量欄位，但查詢通常只讀少數欄位。應優先使用哪種格式？
+  type: multiple_choice
+  options:
+  - 純文字 TXT，每次讀完整列
+  - PNG 圖片檔
+  - Parquet 或 ORC 這類欄式儲存格式
+  - Word 文件
+  correct_index: 2
+  explanation: 欄式格式可只讀需要欄位，適合分析查詢。
+  tags:
+  - chap-m3-ch1
+  - sec-scenario
+  usage: both
+- id: m3-ch1-scenario-009
+  chapter_title: 大數據生態系統
+  section_title: 情境題
+  text: 情境：交易系統要求強一致性與 rollback。較適合哪類資料庫？
+  type: multiple_choice
+  options:
+  - 只追求最終一致性的快取
+  - 沒有交易機制的文字檔
+  - 只用圖像資料庫
+  - 支援 ACID 的關聯式資料庫
+  correct_index: 3
+  explanation: 核心交易需 ACID 保證。
+  tags:
+  - chap-m3-ch1
+  - sec-scenario
+  usage: both
+- id: m3-ch1-scenario-010
+  chapter_title: 大數據生態系統
+  section_title: 情境題
+  text: 情境：資料科學家要探索原始、半結構化與結構化資料。較適合建立什麼？
+  type: multiple_choice
+  options:
+  - 資料湖或湖倉架構，保留多型態資料
+  - 只建立固定欄位的單一 Excel
+  - 只保留最終報表，不留原始資料
+  - 只使用應用程式記憶體
+  correct_index: 0
+  explanation: 資料湖支援多格式資料探索，湖倉兼顧治理與分析。
+  tags:
+  - chap-m3-ch1
+  - sec-scenario
+  usage: both
+- id: m3-ch1-scenario-011
+  chapter_title: 大數據生態系統
+  section_title: 情境題
+  text: 情境：Spark job 因 key 分佈極度不均，少數 task 跑很久。這是什麼問題？
+  type: multiple_choice
+  options:
+  - 硬碟命名錯誤
+  - 資料傾斜，需要重新分區、加鹽或調整 join 策略
+  - 模型過擬合
+  - 資料視覺化配色不佳
+  correct_index: 1
+  explanation: 資料傾斜會讓少數分區成為瓶頸。
+  tags:
+  - chap-m3-ch1
+  - sec-scenario
+  usage: both
+- id: m3-ch1-scenario-012
+  chapter_title: 大數據生態系統
+  section_title: 情境題
+  text: 情境：HDFS 將資料切成區塊並複製到多台機器。主要目的為何？
+  type: multiple_choice
+  options:
+  - 讓資料無法被任何程式讀取
+  - 壓縮所有資料到單一檔案
+  - 提升容錯能力與分散讀取效能
+  - 保證資料永遠不需要備份
+  correct_index: 2
+  explanation: 分散式檔案系統透過 replication 提供容錯。
+  tags:
+  - chap-m3-ch1
+  - sec-scenario
+  usage: both
+- id: m3-ch1-scenario-013
+  chapter_title: 大數據生態系統
+  section_title: 情境題
+  text: 情境：分析師查詢資料倉儲很快，但資料更新不是即時。這通常代表什麼取捨？
+  type: multiple_choice
+  options:
+  - 資料倉儲只能處理圖片
+  - 資料一定不正確
+  - 所有查詢都在交易系統上執行
+  - 偏向分析查詢最佳化，延遲可接受
+  correct_index: 3
+  explanation: 資料倉儲常為 OLAP 最佳化，不一定即時。
+  tags:
+  - chap-m3-ch1
+  - sec-scenario
+  usage: both
+- id: m3-ch1-scenario-014
+  chapter_title: 大數據生態系統
+  section_title: 情境題
+  text: 情境：需要記錄資料從來源到報表的每次轉換。應建立什麼能力？
+  type: multiple_choice
+  options:
+  - 資料血緣與 metadata 管理
+  - 只記錄最後檔案大小
+  - 只保存截圖
+  - 把所有欄位改名為 col1
+  correct_index: 0
+  explanation: 血緣可追蹤資料來源、轉換與影響範圍。
+  tags:
+  - chap-m3-ch1
+  - sec-scenario
+  usage: both
+- id: m3-ch1-scenario-015
+  chapter_title: 大數據生態系統
+  section_title: 情境題
+  text: 情境：多團隊共用資料平台，欄位定義常不一致。應優先推動什麼？
+  type: multiple_choice
+  options:
+  - 讓每個團隊自行定義同名欄位
+  - 資料目錄、共同指標定義與治理流程
+  - 禁止查詢歷史資料
+  - 只增加硬體容量
+  correct_index: 1
+  explanation: 共享資料需共同語意與治理。
+  tags:
+  - chap-m3-ch1
+  - sec-scenario
+  usage: both

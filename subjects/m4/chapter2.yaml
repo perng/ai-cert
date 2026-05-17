@@ -641,7 +641,7 @@ questions:
   usage: both
 - id: 6241
   chapter_title: 深度學習框架與架構
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你需要開發一個即時的手機端人臉識別 App。你會選擇哪個模型架構？
   type: multiple_choice
   options:
@@ -654,10 +654,10 @@ questions:
   tags:
   - chap-m4-ch2
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 6242
   chapter_title: 深度學習框架與架構
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你只有 100 張醫學影像，想訓練一個分類模型。直接訓練效果很差。你應該？
   type: multiple_choice
   options:
@@ -670,10 +670,10 @@ questions:
   tags:
   - chap-m4-ch2
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 6243
   chapter_title: 深度學習框架與架構
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你在訓練一個深層 RNN 時遇到梯度爆炸 (Gradient Exploding)，導致 Loss 變成 NaN。最有效的解決方法是？
   type: multiple_choice
   options:
@@ -686,10 +686,10 @@ questions:
   tags:
   - chap-m4-ch2
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 6244
   chapter_title: 深度學習框架與架構
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你正在做一個學術研究，需要頻繁修改網路結構並查看中間層的梯度變化。你會首選哪個框架？
   type: multiple_choice
   options:
@@ -702,10 +702,10 @@ questions:
   tags:
   - chap-m4-ch2
   - sec-scenario
-  usage: mock
+  usage: both
 - id: 6245
   chapter_title: 深度學習框架與架構
-  section_title: 深度思考情境題
+  section_title: 情境題
   text: 情境：你的模型在訓練集和驗證集上表現都很好，但部署到實際環境後，發現對於「模糊」或「遮擋」的圖片辨識率極低。這說明了什麼？
   type: multiple_choice
   options:
@@ -718,7 +718,7 @@ questions:
   tags:
   - chap-m4-ch2
   - sec-scenario
-  usage: mock
+  usage: both
 - chapter_title: 深度學習框架與架構
   section_title: 深度學習框架
   text: 情境：PyTorch 相比於 TensorFlow 1.x 的主要特點是？
@@ -2312,3 +2312,163 @@ questions:
   - sec-code-reading
   - code-reading
   usage: quiz
+- id: m4-ch2-scenario-006
+  chapter_title: 深度學習框架與架構
+  section_title: 情境題
+  text: 情境：手機端即時分類需要低延遲與小模型。適合選哪類架構？
+  type: multiple_choice
+  options:
+  - MobileNet、EfficientNet-Lite 等輕量 CNN
+  - 最大的 Transformer 模型
+  - 未壓縮的 ResNet-152
+  - 只在雲端批次處理的模型
+  correct_index: 0
+  explanation: 行動端需輕量化架構。
+  tags:
+  - chap-m4-ch2
+  - sec-scenario
+  usage: both
+- id: m4-ch2-scenario-007
+  chapter_title: 深度學習框架與架構
+  section_title: 情境題
+  text: 情境：只有 200 張標註影像，想做高準確分類。較合理策略是什麼？
+  type: multiple_choice
+  options:
+  - 從零訓練大型 CNN
+  - 使用預訓練模型做遷移學習與資料增強
+  - 刪除預訓練權重
+  - 只看訓練集準確率
+  correct_index: 1
+  explanation: 小資料場景適合 transfer learning。
+  tags:
+  - chap-m4-ch2
+  - sec-scenario
+  usage: both
+- id: m4-ch2-scenario-008
+  chapter_title: 深度學習框架與架構
+  section_title: 情境題
+  text: 情境：長文本分類需捕捉遠距依賴。相較傳統 RNN，Transformer 優勢是什麼？
+  type: multiple_choice
+  options:
+  - 只能逐字從左到右讀取，無法平行
+  - 完全不需要位置資訊
+  - 自注意力能直接建模任意位置 token 關係
+  - 只能處理影像像素
+  correct_index: 2
+  explanation: Self-attention 擅長捕捉長距關係並可平行化。
+  tags:
+  - chap-m4-ch2
+  - sec-scenario
+  usage: both
+- id: m4-ch2-scenario-009
+  chapter_title: 深度學習框架與架構
+  section_title: 情境題
+  text: 情境：訓練 RNN 時梯度爆炸導致 Loss NaN。可採用什麼？
+  type: multiple_choice
+  options:
+  - 增加序列長度到無限大
+  - 移除所有正則化並提高學習率
+  - 只更換資料視覺化工具
+  - Gradient clipping
+  correct_index: 3
+  explanation: 梯度裁剪可限制梯度範圍。
+  tags:
+  - chap-m4-ch2
+  - sec-scenario
+  usage: both
+- id: m4-ch2-scenario-010
+  chapter_title: 深度學習框架與架構
+  section_title: 情境題
+  text: 情境：BERT 微調在小資料上很快過擬合。可先調整什麼？
+  type: multiple_choice
+  options:
+  - 降低學習率、增加 dropout、凍結部分層或 early stopping
+  - 大幅提高學習率
+  - 訓練更多 epoch 直到記住資料
+  - 刪除驗證集
+  correct_index: 0
+  explanation: 預訓練模型小資料微調需謹慎控制過擬合。
+  tags:
+  - chap-m4-ch2
+  - sec-scenario
+  usage: both
+- id: m4-ch2-scenario-011
+  chapter_title: 深度學習框架與架構
+  section_title: 情境題
+  text: 情境：CNN 第一層濾波器學到邊緣與紋理。這說明 CNN 的哪個特性？
+  type: multiple_choice
+  options:
+  - 只能記住檔名
+  - 逐層學習由低階到高階的空間特徵
+  - 完全不使用局部感受野
+  - 只適合表格資料
+  correct_index: 1
+  explanation: CNN 透過卷積層逐步組合空間特徵。
+  tags:
+  - chap-m4-ch2
+  - sec-scenario
+  usage: both
+- id: m4-ch2-scenario-012
+  chapter_title: 深度學習框架與架構
+  section_title: 情境題
+  text: 情境：模型部署後遇到訓練資料沒有的拍攝角度而失準。訓練時可補強什麼？
+  type: multiple_choice
+  options:
+  - 只增加輸出神經元
+  - 取消所有驗證
+  - 資料增強與更貼近場域的驗證資料
+  - 把圖片改成純文字
+  correct_index: 2
+  explanation: 資料增強可提升對角度、光照等變化的魯棒性。
+  tags:
+  - chap-m4-ch2
+  - sec-scenario
+  usage: both
+- id: m4-ch2-scenario-013
+  chapter_title: 深度學習框架與架構
+  section_title: 情境題
+  text: 情境：需要同時輸出圖片類別與物件框。可考慮什麼架構設計？
+  type: multiple_choice
+  options:
+  - 只用單一線性回歸輸出文字
+  - 只使用資料庫索引
+  - 只保留輸出層
+  - 共享 backbone 加上分類與偵測 head 的多任務模型
+  correct_index: 3
+  explanation: 多任務可共用特徵抽取器並輸出不同任務結果。
+  tags:
+  - chap-m4-ch2
+  - sec-scenario
+  usage: both
+- id: m4-ch2-scenario-014
+  chapter_title: 深度學習框架與架構
+  section_title: 情境題
+  text: 情境：PyTorch 動態圖讓研究者容易逐步 debug。這適合什麼情境？
+  type: multiple_choice
+  options:
+  - 快速實驗與自訂模型結構研究
+  - 只能做固定圖部署，不適合研究
+  - 只能處理 SQL 查詢
+  - 只能建立儀表板
+  correct_index: 0
+  explanation: 動態計算圖方便研究與除錯。
+  tags:
+  - chap-m4-ch2
+  - sec-scenario
+  usage: both
+- id: m4-ch2-scenario-015
+  chapter_title: 深度學習框架與架構
+  section_title: 情境題
+  text: 情境：微調大型模型時 GPU 記憶體不足。可採用哪個策略？
+  type: multiple_choice
+  options:
+  - 把 batch size 加到更大
+  - 梯度累積、混合精度或參數高效微調
+  - 關閉所有檢查點
+  - 把資料複製更多份
+  correct_index: 1
+  explanation: 記憶體受限時可用混合精度、梯度累積和 PEFT。
+  tags:
+  - chap-m4-ch2
+  - sec-scenario
+  usage: both

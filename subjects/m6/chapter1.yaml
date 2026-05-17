@@ -775,7 +775,7 @@ questions:
 - id: m6-ch1-code-021
   chapter_title: Basic Python Language
   section_title: List Comprehension 與 Generator
-  text: 閱讀程式碼，result 是什麼？
+  text: list comprehension 這行會保留哪些 nums 元素？
   content:
   - type: text
     text: 閱讀程式碼，result 是什麼？
@@ -1023,7 +1023,7 @@ questions:
 - id: m6-hc-001
   chapter_title: Basic Python Language
   section_title: Python 的定位與執行方式
-  text: 關於「Python 的定位與執行方式」，下列哪一項敘述最正確？
+  text: 哪個選項最能反映「Python 的定位與執行方式」的實務重點？
   type: multiple_choice
   options:
   - Python 適合把資料處理、模型訓練與自動化流程串接在同一個工作流中。
@@ -1039,7 +1039,7 @@ questions:
 - id: m6-hc-002
   chapter_title: Basic Python Language
   section_title: 變數、型別與資料結構
-  text: 關於「變數、型別與資料結構」，下列哪一項敘述最正確？
+  text: 處理「變數、型別與資料結構」相關問題時，哪個判斷最合理？
   type: multiple_choice
   options:
   - list 最適合表示 key-value 對應，查找標籤時比 dict 更清楚。
@@ -1055,7 +1055,7 @@ questions:
 - id: m6-hc-003
   chapter_title: Basic Python Language
   section_title: 流程控制與函式
-  text: 關於「流程控制與函式」，下列哪一項敘述最正確？
+  text: 下列何者是「流程控制與函式」最重要的操作原則？
   type: multiple_choice
   options:
   - 把所有資料處理寫在全域區塊中，通常比函式更容易測試。
@@ -1071,7 +1071,7 @@ questions:
 - id: m6-hc-004
   chapter_title: Basic Python Language
   section_title: List Comprehension 與 Generator
-  text: 關於「List Comprehension 與 Generator」，下列哪一項敘述最正確？
+  text: 針對「List Comprehension 與 Generator」，哪個說法符合教材觀點？
   type: multiple_choice
   options:
   - list comprehension 適合放入大量副作用，讓資料處理流程更隱晦。
@@ -1087,7 +1087,7 @@ questions:
 - id: m6-hc-005
   chapter_title: Basic Python Language
   section_title: 模組、套件與匯入
-  text: 關於「模組、套件與匯入」，下列哪一項敘述最正確？
+  text: 哪一項最能避免「模組、套件與匯入」常見誤解？
   type: multiple_choice
   options:
   - import 會複製整個套件原始碼到目前檔案中。
@@ -1103,7 +1103,7 @@ questions:
 - id: m6-hc-006
   chapter_title: Basic Python Language
   section_title: 模組、套件與匯入
-  text: 在實務應用「模組、套件與匯入」時，下列哪一項判斷較合理？
+  text: 學習「模組、套件與匯入」時，應優先掌握哪個觀念？
   type: multiple_choice
   options:
   - 將資料讀取、特徵工程與模型訓練拆成模組，可提升測試與維護性。
@@ -1119,7 +1119,7 @@ questions:
 - id: m6-hc-007
   chapter_title: Basic Python Language
   section_title: Python 在 AI 專案中的典型檔案結構
-  text: 關於「Python 在 AI 專案中的典型檔案結構」，下列哪一項敘述最正確？
+  text: 把「Python 在 AI 專案中的典型檔案結構」用在 AI 專案中時，哪個做法較恰當？
   type: multiple_choice
   options:
   - notebooks 適合探索與紀錄，src 目錄適合存放可重複執行的核心邏輯。
@@ -1135,7 +1135,7 @@ questions:
 - id: m6-hc-008
   chapter_title: Basic Python Language
   section_title: Python 在 AI 專案中的典型檔案結構
-  text: 在實務應用「Python 在 AI 專案中的典型檔案結構」時，下列哪一項判斷較合理？
+  text: 下列哪個情境最能說明「Python 在 AI 專案中的典型檔案結構」的用途？
   type: multiple_choice
   options:
   - notebooks 應作為唯一正式部署入口，避免建立 src 目錄。
@@ -1151,7 +1151,7 @@ questions:
 - id: m6-hc-009
   chapter_title: Basic Python Language
   section_title: 可讀性與可維護性原則
-  text: 關於「可讀性與可維護性原則」，下列哪一項敘述最正確？
+  text: 哪個選項最能反映「可讀性與可維護性原則」的實務重點？
   type: multiple_choice
   options:
   - 縮短所有變數名稱能讓 AI 專案更容易交接。
@@ -1167,7 +1167,7 @@ questions:
 - id: m6-hc-010
   chapter_title: Basic Python Language
   section_title: 常見錯誤與除錯方法
-  text: 關於「常見錯誤與除錯方法」，下列哪一項敘述最正確？
+  text: 處理「常見錯誤與除錯方法」相關問題時，哪個判斷最合理？
   type: multiple_choice
   options:
   - 遇到 traceback 時應先修改最後一行套件內部程式碼。
@@ -1183,7 +1183,7 @@ questions:
 - id: m6-hc-011
   chapter_title: Basic Python Language
   section_title: 常見錯誤與除錯方法
-  text: 在實務應用「常見錯誤與除錯方法」時，下列哪一項判斷較合理？
+  text: 下列何者是「常見錯誤與除錯方法」最重要的操作原則？
   type: multiple_choice
   options:
   - 遇到 traceback 時，應先找到第一個屬於自己專案的檔案與行號。
