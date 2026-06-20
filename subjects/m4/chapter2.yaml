@@ -553,7 +553,7 @@ questions:
   - 模型計算速度太慢
   - 數據標籤錯誤率太高
   - 訓練數據和測試數據的分佈不同 (Distribution Shift)
-  correct_index: 0
+  correct_index: 3
   explanation: 例如在白天圖片上訓練的自駕車模型，要遷移到晚上場景。雖然任務一樣（開車），但數據分佈（光照）變了。
   tags:
   - chap-m4-ch2
